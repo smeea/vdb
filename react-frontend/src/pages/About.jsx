@@ -8,7 +8,7 @@ import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import Globe2 from 'assets/images/icons/globe2.svg';
 import { Banner } from 'components';
 
-function About(props) {
+const About = (props) => {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
@@ -55,41 +55,53 @@ function About(props) {
             <div className="pt-3">
               <h5>TROUBLESHOOTING</h5>
               <p>
-                If you experience problems like page crashes or something start
-                to behave not as expected, try to reload page with browser cache
-                update (Ctrl+F5 on Windows/Linux or Command+Shift+R on MacOS)
-                <br />
-                If this does not help, please contact me (see below)
+                If you experience problems like white screen or strange
+                behavior, reload page (Ctrl+F5 on Windows/Linux or
+                Command+Shift+R on MacOS)
               </p>
+              <p>If this does not help, please contact me (see below)</p>
             </div>
 
             <div className="py-3">
               <h5>VERSION</h5>
               <p>
                 Card text based on{' '}
-                <a href="http://www.vekn.net/card-lists">
+                <a href="https://www.vekn.net/card-lists">
                   vekn.net official list
                 </a>
-                : 2022-01-12
+                : 2022-05-17
               </p>
 
-              <h6>Last update [2022-04-09]:</h6>
+              <h6>Last update [2022-05-17]:</h6>
               <ul>
+                <li>Update card base with New Blood set</li>
+                <li>Update TWDA</li>
                 <li>
-                  Add logic switch (AND / NOT) button for text search filters
-                  (each of multiple text filters can use its own logic for
-                  searches like [!]unique [&]mortal Type:Ally)
+                  Add QR-code (live link to editable deck and non-editable
+                  deck-in-url) as an option for Copy Deck URL
                 </li>
                 <li>
-                  Add detailed disciplines summary for crypt searches like in
-                  Deck ([i] button)
+                  Add Freeze Deck button (in advanced deck select and after deck
+                  name) which will disable deck crypt/library edition unless
+                  turned off to protect established decks from misclicks and
+                  everything
                 </li>
                 <li>
-                  Export Deck in TWD format will add standard info block
-                  required for TWD reports
+                  Add Reprint option for Set/Precon search which will return
+                  only reprinted cards (will includes Promos if first printed as
+                  such)
                 </li>
-                <li>Fix bug with empty decks/inventory after login</li>
-                <li>Other bug fixes and small improvements</li>
+                <li>
+                  Newly add inventory cards (which were not in inventory) will
+                  have q-ty box focused by default to speed up adding collection
+                </li>
+                <li>Add sorting for inventory</li>
+                <li>
+                  Moved card selector to bottom in /Cards on mobile (useful for
+                  those having thumbs shorter than 5&quot;)
+                </li>
+                <li>Fixed card selector auto-focus on mobile</li>
+                <li>Many other fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
@@ -102,7 +114,15 @@ function About(props) {
                 </a>
                 <br />
                 Online card search and deck-building tool. I use *many* ideas
-                from Amaranth
+                from Amaranth. Discontinued
+              </p>
+
+              <p>
+                <a href="https://vtesdecks.com/">
+                  <b>VTES Decks</b>
+                </a>
+                <br />
+                Online deck builder and TWD browser
               </p>
 
               <p>
@@ -150,7 +170,7 @@ function About(props) {
             <div className="pt-3">
               <h5>ACKNOWLEDGMENTS</h5>
               <ul>
-                <li>Card images by Fernando &quot;Sydnnelson&quot; Cesar</li>
+                <li>Card images by Fernando &quot;Sydnelson&quot; Cesar</li>
                 <li>
                   Rulings by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
                   <a href="https://static.krcg.org/">KRCG</a>
@@ -228,6 +248,6 @@ function About(props) {
       </Row>
     </Container>
   );
-}
+};
 
 export default About;

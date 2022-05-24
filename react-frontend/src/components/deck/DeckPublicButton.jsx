@@ -9,38 +9,46 @@ import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
-function DeckPublicButton(props) {
-  const { setDecks, setActiveDeck, isMobile } = useApp();
+const DeckPublicButton = ({ deck, noText }) => {
+  const {
+    decks,
+    setDecks,
+    setActiveDeck,
+    setSharedDeck,
+    setShowMenuButtons,
+    setShowFloatingButtons,
+  } = useApp();
   const [showCreateOrDeleteConfirmation, setShowCreateOrDeleteConfirmation] =
     useState(false);
   const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
 
-  const isChild = props.deck.public_parent ? true : false;
-  const isPublished =
-    props.deck.public_parent || props.deck.public_child ? true : false;
+  const isChild = deck.public_parent ? true : false;
+  const isPublished = deck.public_parent || deck.public_child ? true : false;
 
   const handleCreateOrDelete = () => {
     createOrDelete();
     setShowCreateOrDeleteConfirmation(false);
-    isMobile && props.setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const handleSync = () => {
     syncPublic();
     setShowSyncConfirmation(false);
-    isMobile && props.setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const handleSwitch = () => {
     setActiveDeck({
       src: isChild ? 'my' : 'shared',
-      deckid: isChild ? props.deck.public_parent : props.deck.public_child,
+      deckid: isChild ? deck.public_parent : deck.public_child,
     });
   };
 
   const createOrDelete = () => {
-    const url = `${process.env.API_URL}pda/${props.deck.deckid}`;
+    const url = `${process.env.API_URL}pda/${deck.deckid}`;
     const options = {
       method: isPublished ? 'DELETE' : 'POST',
       mode: 'cors',
@@ -54,22 +62,20 @@ function DeckPublicButton(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        setDecks((prevState) => {
-          return {
-            ...prevState,
-            [data.parent]: {
-              ...prevState[data.parent],
-              public_child: isPublished ? null : data.child,
-            },
-          };
-        });
+        setDecks((prevState) => ({
+          ...prevState,
+          [data.parent]: {
+            ...prevState[data.parent],
+            public_child: isPublished ? null : data.child,
+          },
+        }));
       });
 
     setSpinnerState(false);
   };
 
   const syncPublic = () => {
-    const url = `${process.env.API_URL}pda/${props.deck.deckid}`;
+    const url = `${process.env.API_URL}pda/${deck.deckid}`;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -79,14 +85,25 @@ function DeckPublicButton(props) {
       },
     };
     setSpinnerState(true);
-    fetch(url, options);
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setSharedDeck((prevState) => ({
+          ...prevState,
+          [data.child]: {
+            ...prevState[data.child],
+            crypt: { ...decks[data.parent].crypt },
+            library: { ...decks[data.parent].library },
+          },
+        }));
+      });
     setSpinnerState(false);
   };
 
   const ButtonOptions = (
     <>
       {isPublished && (
-        <Dropdown.Item onClick={() => handleSwitch(props.deck.deckid)}>
+        <Dropdown.Item onClick={() => handleSwitch(deck.deckid)}>
           {isChild ? 'Go to Main Deck' : 'Go to Public Deck'}
         </Dropdown.Item>
       )}
@@ -105,6 +122,8 @@ function DeckPublicButton(props) {
     </>
   );
 
+  const changes = null; // TODO: SHOW CHANGES FROM BASE
+
   return (
     <>
       <DropdownButton
@@ -115,7 +134,7 @@ function DeckPublicButton(props) {
             title="Public Deck Archive Actions"
             className="d-flex justify-content-center align-items-center"
           >
-            <div className={`d-flex ${props.noText ? null : 'pe-2'}`}>
+            <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
               {!spinnerState ? (
                 <PeopleFill />
               ) : (
@@ -133,8 +152,8 @@ function DeckPublicButton(props) {
         show={showSyncConfirmation}
         handleConfirm={handleSync}
         handleCancel={() => setShowSyncConfirmation(false)}
-        headerText={`Sync "${props.deck.name}" with Public Deck Archive?`}
-        mainText={props.deck.public_child ? '' : ''} // TODO
+        headerText={`Sync "${deck.name}" with Public Deck Archive?`}
+        mainText={changes}
         buttonText="Sync"
       />
 
@@ -144,14 +163,13 @@ function DeckPublicButton(props) {
         handleCancel={() => setShowCreateOrDeleteConfirmation(false)}
         headerText={
           isPublished
-            ? `Remove "${props.deck.name}" from Public Deck Archive?`
-            : `Add "${props.deck.name}" to Public Deck Archive?`
+            ? `Remove "${deck.name}" from Public Deck Archive?`
+            : `Add "${deck.name}" to Public Deck Archive?`
         }
-        mainText={props.deck.public_child ? '' : ''} // TODO
         buttonText={`${isPublished ? 'Remove' : 'Make'} Public`}
       />
     </>
   );
-}
+};
 
 export default DeckPublicButton;

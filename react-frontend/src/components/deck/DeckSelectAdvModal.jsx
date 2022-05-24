@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Form, Row, Col, FormControl, Button } from 'react-bootstrap';
+import {
+  Modal,
+  Form,
+  Row,
+  Col,
+  FormControl,
+  Button,
+  Stack,
+} from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -13,8 +21,8 @@ import {
   DeckSelectAdvModalTotal,
   DeckDeleteButton,
   DeckHideButton,
+  DeckFreezeButton,
   DeckBranchDeleteButton,
-  DeckProxyButton,
   DeckCopyUrlButton,
   DeckTogglePublicButton,
   DeckSelectSortForm,
@@ -44,8 +52,6 @@ const DeckSelectAdvModal = (props) => {
   const [nameFilter, setNameFilter] = useState('');
   const [tagsFilter, setTagsFilter] = useState([]);
   const [clanFilter, setClanFilter] = useState('any');
-
-  let resultTrClass;
 
   const handleChangeNameFilter = (event) => {
     setNameFilter(event.target.value);
@@ -91,7 +97,7 @@ const DeckSelectAdvModal = (props) => {
   };
 
   const allDecksClans = [];
-  Object.values(decks).map((deck, index) => {
+  Object.values(decks).map((deck) => {
     const clans = {};
     let cryptTotal = 0;
 
@@ -128,7 +134,8 @@ const DeckSelectAdvModal = (props) => {
       label: 'NONE',
     },
   ];
-  allDecksClans.sort().forEach((i, index) => {
+
+  allDecksClans.sort().forEach((i) => {
     clanOptions.push({
       value: i.toLowerCase(),
       name: 'clan',
@@ -209,13 +216,7 @@ const DeckSelectAdvModal = (props) => {
     }
   }, [decks, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);
 
-  const deckRows = sortedDecks.map((deck, index) => {
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
-
+  const deckRows = sortedDecks.map((deck, idx) => {
     const clans = {};
     let cryptTotal = 0;
 
@@ -240,23 +241,26 @@ const DeckSelectAdvModal = (props) => {
       }
     });
 
-    const toggleInventoryState = () => {
-      const inventoryType = deck.inventory_type;
+    const inventoryType = deck.inventory_type;
+    const toggleInventoryState = (deckid) => {
       if (!inventoryType) {
-        deckUpdate(deck.deckid, 'makeFlexible', 'all');
-      } else if (inventoryType == 's') {
-        deckUpdate(deck.deckid, 'makeFixed', 'all');
-      } else if (inventoryType == 'h') {
-        deckUpdate(deck.deckid, 'makeClear', 'all');
+        deckUpdate(deckid, 'inventory_type', 's');
+      } else if (inventoryType === 's') {
+        deckUpdate(deckid, 'inventory_type', 'h');
+      } else if (inventoryType === 'h') {
+        deckUpdate(deckid, 'inventory_type', '');
       }
     };
 
     return (
       <React.Fragment key={deck.deckid}>
         {decks[deck.deckid] && (
-          <tr className={resultTrClass}>
+          <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
             {inventoryMode && !isMobile && (
-              <td className="inventory" onClick={() => toggleInventoryState()}>
+              <td
+                className="inventory"
+                onClick={() => toggleInventoryState(deck.deckid)}
+              >
                 <div
                   className="px-2"
                   title={
@@ -306,7 +310,6 @@ const DeckSelectAdvModal = (props) => {
                   <OverlayTooltip
                     placement="right"
                     show={showDeck === deck.deckid}
-                    className="adv-preview"
                     text={
                       <Row className="align-items-start">
                         <Col
@@ -359,25 +362,25 @@ const DeckSelectAdvModal = (props) => {
               />
             </td>
             <td className="buttons">
-              <div className="d-inline pe-1">
+              <Stack
+                className="justify-content-end pe-1"
+                direction="horizontal"
+                gap={1}
+              >
                 <DeckHideButton deckid={deck.deckid} />
-              </div>
-              <div className="d-inline pe-1">
-                <DeckTogglePublicButton deck={deck} />
-              </div>
-              {isDesktop && (
-                <>
-                  <div className="d-inline pe-1">
+                {!isMobile && (
+                  <>
+                    <DeckFreezeButton deckid={deck.deckid} />
+                    <DeckTogglePublicButton deck={deck} />
+                  </>
+                )}
+                {isDesktop && (
+                  <>
                     <DeckCopyUrlButton
                       noText={true}
                       isAuthor={true}
                       deck={deck}
                     />
-                  </div>
-                  <div className="d-inline pe-1">
-                    <DeckProxyButton noText={true} deck={deck} />
-                  </div>
-                  <div className="d-inline pe-1">
                     {revFilter &&
                     (deck.master ||
                       (deck.branches && deck.branches.length > 0)) ? (
@@ -385,9 +388,9 @@ const DeckSelectAdvModal = (props) => {
                     ) : (
                       <DeckDeleteButton noText={true} deck={deck} />
                     )}
-                  </div>
-                </>
-              )}
+                  </>
+                )}
+              </Stack>
             </td>
           </tr>
         )}
@@ -400,7 +403,7 @@ const DeckSelectAdvModal = (props) => {
       show={props.show}
       onHide={props.handleClose}
       animation={false}
-      dialogClassName={`modal-x-wide ${isMobile ? 'm-0' : null}`}
+      dialogClassName={`modal-x-wide ${isMobile ? 'm-0' : ''}`}
     >
       <Modal.Header
         className={
@@ -458,21 +461,23 @@ const DeckSelectAdvModal = (props) => {
               </th>
               <th className="buttons">
                 <div
-                  className={
+                  className={`${
                     isMobile
-                      ? 'px-1'
-                      : 'd-flex justify-content-end align-items-center pe-1'
-                  }
+                      ? ''
+                      : 'd-flex justify-content-end align-items-center '
+                  } px-1`}
                 >
                   <Form.Check
-                    className={isMobile ? null : 'pt-05 pe-3'}
+                    className={isMobile ? '' : 'pt-05 pe-3'}
                     type="checkbox"
                     id="revFilter"
-                    label={isDesktop ? 'Revisions' : 'Rv'}
+                    label={isDesktop ? 'Show Revisions' : 'Rev'}
                     checked={revFilter}
                     onChange={() => setRevFilter(!revFilter)}
                   />
-                  <DeckSelectSortForm onChange={setSortMethod} />
+                  <div className="d-flex justify-content-end">
+                    <DeckSelectSortForm onChange={setSortMethod} />
+                  </div>
                 </div>
               </th>
             </tr>

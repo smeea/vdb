@@ -2,57 +2,49 @@ import React, { useState } from 'react';
 import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckCopyUrlButton = (props) => {
-  const { isMobile } = useApp();
+const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
+  const { setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
-    const deckUrl = `${process.env.ROOT_URL}decks?id=${props.deck.deckid}`;
-
-    navigator.clipboard.writeText(deckUrl);
-    setState(true);
-    setTimeout(() => {
-      setState(false);
-      isMobile && props.setShowButtons(false);
-    }, 1000);
-  };
-
-  const handleDeckInUrlButton = () => {
-    const cards = [];
-
-    Object.keys(props.deck.crypt).map((card) => {
-      cards.push(`${card}=${props.deck.crypt[card].q};`);
-    });
-    Object.keys(props.deck.library).map((card) => {
-      cards.push(`${card}=${props.deck.library[card].q};`);
-    });
-
-    const info = [];
-    props.deck.name && info.push(encodeURI(`name=${props.deck.name}`));
-    props.deck.author && info.push(encodeURI(`author=${props.deck.author}`));
-    props.deck.description &&
-      info.push(
-        encodeURI(`description=${props.deck.description.substring(0, 7168)}`)
-          .replace(/#/g, '%23')
-          .replace(/&/g, '%26')
-          .replace(/,/g, '%2C')
-      );
-
-    const url = `${process.env.ROOT_URL}decks?${info
-      .toString()
-      .replace(/,/g, '&')}#${cards
-      .toString()
-      .replace(/,/g, '')
-      .replace(/;$/, '')}`;
+    const url = `${process.env.ROOT_URL}decks?id=${deck.deckid}`;
 
     navigator.clipboard.writeText(url);
     setState(true);
     setTimeout(() => {
       setState(false);
-      isMobile && props.setShowButtons(false);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
     }, 1000);
+  };
+
+  const handleStandardQrButton = () => {
+    const url = `${process.env.ROOT_URL}decks?id=${deck.deckid}`;
+
+    setShowMenuButtons(false);
+    setShowFloatingButtons(false);
+    setShowQr(url);
+  };
+
+  const handleDeckInUrlButton = () => {
+    const url = getDeckInUrl();
+
+    navigator.clipboard.writeText(url);
+    setState(true);
+    setTimeout(() => {
+      setState(false);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
+    }, 1000);
+  };
+
+  const handleDeckInQrButton = () => {
+    const url = getDeckInUrl();
+
+    setShowMenuButtons(false);
+    setShowFloatingButtons(false);
+    setShowQr(url);
   };
 
   const handleSnapshotButton = () => {
@@ -66,7 +58,7 @@ const DeckCopyUrlButton = (props) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        target: props.deck.deckid,
+        target: deck.deckid,
       }),
     };
 
@@ -74,75 +66,119 @@ const DeckCopyUrlButton = (props) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          const deckUrl = `${process.env.ROOT_URL}decks?id=${data.deckid}`;
-          navigator.clipboard.writeText(deckUrl);
+          const url = `${process.env.ROOT_URL}decks?id=${data.deckid}`;
+          navigator.clipboard.writeText(url);
         }
       })
       .then(() => {
         setState(true);
         setTimeout(() => {
           setState(false);
-          isMobile && props.setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         }, 1000);
       });
   };
 
   const ButtonOptions = (
     <>
-      <Dropdown.Item
-        onClick={handleStandardButton}
-        title="Copy URL (will follow deck changes, if any)"
-      >
-        Standard URL
-      </Dropdown.Item>
-      <Dropdown.Item
-        onClick={handleDeckInUrlButton}
-        title="Copy long URL containing full deck info (will not follow deck changes)"
-      >
-        Deck-in-URL
-      </Dropdown.Item>
-      <Dropdown.Item
-        onClick={handleSnapshotButton}
-        title="Copy URL to snapshot of the deck (will not follow deck changes)"
-      >
-        Snapshot URL
-      </Dropdown.Item>
+      {deck.deckid !== 'deckInUrl' && (
+        <>
+          <Dropdown.Item
+            onClick={handleStandardButton}
+            title="Copy URL (will follow deck changes, if any)"
+          >
+            Standard URL
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={handleStandardQrButton}
+            title="Create QR with Standard URL (will follow deck changes, if any)"
+          >
+            Standard URL - QR
+          </Dropdown.Item>
+        </>
+      )}
+      {(deck.deckid.length === 32 || deck.deckid === 'deckInUrl') && (
+        <>
+          <Dropdown.Item
+            onClick={handleDeckInUrlButton}
+            title="Copy long URL containing full deck info (will not follow deck changes)"
+          >
+            Deck-in-URL
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={handleDeckInQrButton}
+            title="Create QR with long URL containing full deck info (will not follow deck changes)"
+          >
+            Deck-in-QR
+          </Dropdown.Item>
+        </>
+      )}
+      {deck.deckid.length === 32 && (
+        <Dropdown.Item
+          onClick={handleSnapshotButton}
+          title="Copy URL to snapshot of the deck (will not follow deck changes)"
+        >
+          Snapshot URL
+        </Dropdown.Item>
+      )}
     </>
   );
 
+  const getDeckInUrl = () => {
+    const cards = [];
+
+    Object.keys(deck.crypt).map((card) => {
+      cards.push(`${card}=${deck.crypt[card].q};`);
+    });
+    Object.keys(deck.library).map((card) => {
+      cards.push(`${card}=${deck.library[card].q};`);
+    });
+
+    const info = [];
+    deck.name && info.push(encodeURI(`name=${deck.name}`));
+    deck.author && info.push(encodeURI(`author=${deck.author}`));
+    deck.description &&
+      info.push(
+        encodeURI(`description=${deck.description.substring(0, 7168)}`)
+          .replace(/#/g, '%23')
+          .replace(/&/g, '%26')
+          .replace(/,/g, '%2C')
+      );
+
+    const url = `${process.env.ROOT_URL}decks?${info
+      .toString()
+      .replace(/,/g, '&')}#${cards
+      .toString()
+      .replace(/,/g, '')
+      .replace(/;$/, '')}`;
+
+    return url;
+  };
+
   return (
     <>
-      {props.deck.deckid.length == 32 ? (
-        <DropdownButton
-          as={ButtonGroup}
-          variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
-          title={
-            <div
-              title="Copy URL"
-              className="d-flex justify-content-center align-items-center"
-            >
-              <div className={`d-flex ${props.noText ? null : 'pe-2'}`}>
-                <Link45Deg
-                  width={props.noText ? '18' : '21'}
-                  height={props.noText ? '23' : '21'}
-                  viewBox="0 0 15 15"
-                />
-              </div>
-              {!props.noText && (state ? 'Copied' : 'Copy URL')}
+      <DropdownButton
+        as={ButtonGroup}
+        variant={state ? 'success' : noText ? 'primary' : 'secondary'}
+        title={
+          <div
+            title="Copy URL"
+            className="d-flex justify-content-center align-items-center"
+          >
+            <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
+              <Link45Deg
+                width={noText ? '18' : '21'}
+                height={noText ? '23' : '21'}
+                viewBox="0 0 15 15"
+              />
             </div>
-          }
-        >
-          {ButtonOptions}
-        </DropdownButton>
-      ) : (
-        <ButtonIconed
-          variant={state ? 'success' : 'secondary'}
-          onClick={handleStandardButton}
-          title="Copy Standard Deck URL (will follow future deck changes)"
-          icon={<Link45Deg width="19" height="19" viewBox="0 0 15 15" />}
-          text={state ? 'Copied' : 'Copy URL'}
-        />
-      )}
+            {!noText && (state ? 'Copied' : 'Copy URL')}
+          </div>
+        }
+      >
+        {ButtonOptions}
+      </DropdownButton>
     </>
   );
 };

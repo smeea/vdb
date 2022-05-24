@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 
-function CryptSearchFormTraits(props) {
+const CryptSearchFormTraits = ({ value, onChange }) => {
   const traitsLeft = [
     ['1 intercept', '+1 intercept'],
     ['1 stealth', '+1 stealth'],
@@ -38,8 +38,8 @@ function CryptSearchFormTraits(props) {
         type="checkbox"
         id={`traits-${i[0]}`}
         label={i[1]}
-        checked={props.value[i[0]]}
-        onChange={(e) => props.onChange(e)}
+        checked={value[i[0]]}
+        onChange={(e) => onChange(e)}
       />
     );
   });
@@ -53,8 +53,8 @@ function CryptSearchFormTraits(props) {
         type="checkbox"
         id={`traits-${i[0]}`}
         label={i[1]}
-        checked={props.value[i[0]]}
-        onChange={(e) => props.onChange(e)}
+        checked={value[i[0]]}
+        onChange={(e) => onChange(e)}
       />
     );
   });
@@ -76,6 +76,6 @@ function CryptSearchFormTraits(props) {
       </Row>
     </>
   );
-}
+};
 
 export default CryptSearchFormTraits;

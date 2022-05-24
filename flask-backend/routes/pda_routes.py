@@ -12,7 +12,7 @@ from search_decks_components import (
     match_inventory,
 )
 from api import app, db, login
-from models import User, Deck
+from models import Deck
 
 
 @login.unauthorized_handler
@@ -75,6 +75,7 @@ def searchPdaRoute():
         "capacity",
         "disciplines",
         "cardtypes",
+        "similar",
     ]
 
     queries = [
@@ -103,117 +104,105 @@ def searchPdaRoute():
 @app.route("/api/pda/<string:parent_id>", methods=["POST"])
 @login_required
 def newPublicDeck(parent_id):
-    try:
-        parent = Deck.query.get(parent_id)
-        if parent.author != current_user:
-            abort(401)
-        if parent.public_child:
-            return jsonify({"PDA already exist for": parent_id})
+    parent = Deck.query.get(parent_id)
+    if parent.author != current_user:
+        abort(401)
+    if parent.public_child:
+        return jsonify({"PDA already exist for": parent_id})
 
-        child_id = uuid.uuid4().hex
-        m = get_missing_fields(parent)
+    child_id = uuid.uuid4().hex
+    m = get_missing_fields(parent)
 
-        child = Deck(
-            deckid=child_id,
-            public_parent=parent.deckid,
-            name=parent.name,
-            author=parent.author,
-            author_public_name=parent.author_public_name,
-            description=parent.description,
-            cards=parent.cards,
-            tags=parent.tags,
-            creation_date=date.today().strftime("%Y-%m-%d"),
-            crypt_total=m["crypt_total"],
-            library_total=m["library_total"],
-            capacity=m["capacity"],
-            cardtypes_ratio=m["cardtypes_ratio"],
-            clan=m["clan"],
-            disciplines=m["disciplines"],
-            traits=m["traits"],
-        )
+    child = Deck(
+        deckid=child_id,
+        public_parent=parent.deckid,
+        name=parent.name,
+        author=parent.author,
+        author_public_name=parent.author_public_name,
+        description=parent.description,
+        cards=parent.cards,
+        tags=parent.tags,
+        creation_date=date.today().strftime("%Y-%m-%d"),
+        crypt_total=m["crypt_total"],
+        library_total=m["library_total"],
+        capacity=m["capacity"],
+        cardtypes_ratio=m["cardtypes_ratio"],
+        clan=m["clan"],
+        disciplines=m["disciplines"],
+        traits=m["traits"],
+    )
 
-        parent.public_child = child_id
+    parent.public_child = child_id
 
-        db.session.add(child)
-        db.session.commit()
+    db.session.add(child)
+    db.session.commit()
 
-        return jsonify(
-            {
-                "parent": parent.deckid,
-                "child": child.deckid,
-            }
-        )
-
-    except Exception:
-        print("Error new PDA", current_user.username, parent_id)
+    return jsonify(
+        {
+            "parent": parent.deckid,
+            "child": child.deckid,
+        }
+    )
 
 
 @app.route("/api/pda/<string:child_id>", methods=["PUT"])
 @login_required
 def updatePublicDeck(child_id):
-    try:
-        child = Deck.query.get(child_id)
-        if not child:
-            print("bad deck request\n", child_id, current_user.username, request.json)
-            return jsonify({"error": "no deck"})
+    child = Deck.query.get(child_id)
+    if not child:
+        print("bad deck request\n", child_id, current_user.username, request.json)
+        return jsonify({"error": "no deck"})
 
-        elif child.author != current_user:
-            abort(401)
+    elif child.author != current_user:
+        abort(401)
 
-        parent = Deck.query.get(child.public_parent)
-        m = get_missing_fields(parent)
+    parent = Deck.query.get(child.public_parent)
+    m = get_missing_fields(parent)
 
-        child.name = parent.name
-        child.timestamp = datetime.utcnow()
-        child.cards = parent.cards
-        child.author_public_name = parent.author_public_name
-        child.description = parent.description
-        child.tags = parent.tags
-        child.crypt_total = m["crypt_total"]
-        child.library_total = m["library_total"]
-        child.capacity = m["capacity"]
-        child.cardtypes_ratio = m["cardtypes_ratio"]
-        child.clan = m["clan"]
-        child.disciplines = m["disciplines"]
-        child.traits = m["traits"]
+    child.name = parent.name
+    child.timestamp = datetime.utcnow()
+    child.cards = parent.cards
+    child.author_public_name = parent.author_public_name
+    child.description = parent.description
+    child.tags = parent.tags
+    child.crypt_total = m["crypt_total"]
+    child.library_total = m["library_total"]
+    child.capacity = m["capacity"]
+    child.cardtypes_ratio = m["cardtypes_ratio"]
+    child.clan = m["clan"]
+    child.disciplines = m["disciplines"]
+    child.traits = m["traits"]
 
-        db.session.commit()
+    db.session.commit()
 
-        return jsonify(
-            {
-                "parent": parent.deckid,
-                "child": child.deckid,
-            }
-        )
-
-    except Exception:
-        print("Error sync PDA", current_user.username, child_id)
+    return jsonify(
+        {
+            "parent": parent.deckid,
+            "child": child.deckid,
+        }
+    )
 
 
 @app.route("/api/pda/<string:child_id>", methods=["DELETE"])
 @login_required
 def deletePublicDeck(child_id):
-    try:
-        d = Deck.query.get(child_id)
-        if d.author != current_user:
-            abort(401)
+    d = Deck.query.get(child_id)
+    if d.author != current_user:
+        abort(401)
 
-        parent = Deck.query.get(d.public_parent)
-        if parent:
-            parent.public_child = None
+    parent = Deck.query.get(d.public_parent)
+    if parent:
+        parent.public_child = None
 
-        db.session.delete(d)
-        db.session.commit()
+    db.session.delete(d)
+    db.session.commit()
 
-        return jsonify(
-            {
-                "parent": parent.deckid,
-                "child": child_id,
-            }
-        )
-
-    except Exception:
-        print("Error delete PDA", current_user.username, child_id)
+    return jsonify(
+        {
+            "parent": parent.deckid,
+            "child": child_id,
+        }
+    )
 
 
 @app.route("/api/pda/new/<int:quantity>", methods=["GET"])

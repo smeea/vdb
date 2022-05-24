@@ -18,6 +18,7 @@ function PdaResult(props) {
     libraryCardBase,
     showImage,
     isMobile,
+    showFloatingButtons,
   } = useApp();
 
   const { pdaResults, setPdaResults } = useSearchResults();
@@ -35,98 +36,90 @@ function PdaResult(props) {
   };
 
   useEffect(() => {
-    setDeckCounter(Object.keys(pdaResults).length);
-    setShowCounter(showCounterStep);
+    if (pdaResults) {
+      setDeckCounter(Object.keys(pdaResults).length);
+      setShowCounter(showCounterStep);
+    }
   }, [pdaResults]);
 
   useEffect(() => {
-    let newCounter = showCounter;
+    if (pdaResults) {
+      let newCounter = showCounter;
 
-    setRows(
-      pdaResults.map((deck, index) => {
-        while (newCounter > 0) {
-          newCounter -= 1;
+      setRows(
+        pdaResults.map((deck, index) => {
+          while (newCounter > 0) {
+            newCounter -= 1;
 
-          deck.crypt = {};
-          deck.library = {};
-          Object.keys(deck.cards).map((i) => {
-            if (deck.cards[i] > 0) {
-              if (i > 200000) {
-                deck.crypt[i] = {
-                  q: deck.cards[i],
-                  c: cryptCardBase[i],
-                };
-              } else {
-                deck.library[i] = {
-                  q: deck.cards[i],
-                  c: libraryCardBase[i],
-                };
+            deck.crypt = {};
+            deck.library = {};
+            Object.keys(deck.cards).map((i) => {
+              if (deck.cards[i] > 0) {
+                if (i > 200000) {
+                  deck.crypt[i] = {
+                    q: deck.cards[i],
+                    c: cryptCardBase[i],
+                  };
+                } else {
+                  deck.library[i] = {
+                    q: deck.cards[i],
+                    c: libraryCardBase[i],
+                  };
+                }
               }
-            }
-          });
+            });
 
-          return (
-            <React.Fragment key={deck['deckid']}>
-              <Row className="py-2 px-0 mx-0">
-                <Col
-                  xs={12}
-                  md={12}
-                  xl={3}
-                  className={isMobile ? 'px-0' : 'ps-0 pe-2'}
-                >
-                  <PdaResultDescription deck={deck} />
-                </Col>
-                {isMobile ? (
-                  <>
-                    <Col xs={6} className="ps-0 pe-1">
-                      <TwdResultCrypt
-                        crypt={deck['crypt']}
-                        setShowFloatingButtons={props.setShowFloatingButtons}
-                      />
-                    </Col>
-                    <Col xs={6} className="ps-1 pe-0">
-                      <TwdResultLibraryKeyCards
-                        library={deck['library']}
-                        setShowFloatingButtons={props.setShowFloatingButtons}
-                      />
-                    </Col>
-                  </>
-                ) : (
-                  <>
-                    <Col xs={12} md={4} xl={3} className="px-2">
-                      <TwdResultCrypt
-                        crypt={deck['crypt']}
-                        setShowFloatingButtons={props.setShowFloatingButtons}
-                      />
-                    </Col>
-                    <Col xs={12} md={4} xl={3} className="px-2">
-                      <TwdResultLibraryByType library={deck['library']} />
-                    </Col>
-                    <Col xs={12} md={4} xl={3} className="pe-0 ps-2">
-                      <TwdResultLibraryKeyCards
-                        library={deck['library']}
-                        setShowFloatingButtons={props.setShowFloatingButtons}
-                      />
-                    </Col>
-                  </>
-                )}
-              </Row>
-              {index + 1 < showCounter && <hr className="mx-0 thick" />}
-            </React.Fragment>
-          );
-        }
-      })
-    );
+            return (
+              <React.Fragment key={deck['deckid']}>
+                <Row className="py-2 px-0 mx-0">
+                  <Col
+                    xs={12}
+                    md={12}
+                    xl={3}
+                    className={isMobile ? 'px-0' : 'ps-0 pe-2'}
+                  >
+                    <PdaResultDescription deck={deck} />
+                  </Col>
+                  {isMobile ? (
+                    <>
+                      <Col xs={6} className="ps-0 pe-1">
+                        <TwdResultCrypt crypt={deck['crypt']} />
+                      </Col>
+                      <Col xs={6} className="ps-1 pe-0">
+                        <TwdResultLibraryKeyCards library={deck['library']} />
+                      </Col>
+                    </>
+                  ) : (
+                    <>
+                      <Col xs={12} md={4} xl={3} className="px-2">
+                        <TwdResultCrypt crypt={deck['crypt']} />
+                      </Col>
+                      <Col xs={12} md={4} xl={3} className="px-2">
+                        <TwdResultLibraryByType library={deck['library']} />
+                      </Col>
+                      <Col xs={12} md={4} xl={3} className="pe-0 ps-2">
+                        <TwdResultLibraryKeyCards library={deck['library']} />
+                      </Col>
+                    </>
+                  )}
+                </Row>
+                {index + 1 < showCounter && <hr className="mx-0 thick" />}
+              </React.Fragment>
+            );
+          }
+        })
+      );
+    }
   }, [pdaResults, showCounter, showImage]);
 
   return (
     <>
-      {!isMobile && pdaResults.length == 0 && (
+      {!isMobile && (pdaResults === null || pdaResults.length === 0) && (
         <div className="d-flex align-items-center justify-content-center error-message">
-          <b>NO DECKS FOUND</b>
+          <b>{pdaResults === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
         </div>
       )}
-      {pdaResults.length > 0 && (
+      {pdaResults && pdaResults.length > 0 && (
         <>
           <TwdResultTotal decks={pdaResults} />
           {rows}
@@ -142,7 +135,7 @@ function PdaResult(props) {
           )}
         </>
       )}
-      {isMobile && props.showFloatingButtons && (
+      {isMobile && showFloatingButtons && (
         <>
           <div
             onClick={handleClear}

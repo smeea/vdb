@@ -11,8 +11,16 @@ import { DeckProxySelectModal } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckProxyButton = (props) => {
-  const { lang, inventoryMode, isMobile } = useApp();
+const DeckProxyButton = ({
+  deck,
+  missingCrypt,
+  missingLibrary,
+  noText,
+  inDiff,
+}) => {
+  const { lang, inventoryMode, setShowFloatingButtons, setShowMenuButtons } =
+    useApp();
+
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState(undefined);
@@ -27,7 +35,13 @@ const DeckProxyButton = (props) => {
           Missing in Inventory
         </Dropdown.Item>
       )}
-      <Dropdown.Item href="" onClick={() => setShowSelectModal(true)}>
+      <Dropdown.Item
+        href=""
+        onClick={() => {
+          setShowSelectModal(true);
+          setShowFloatingButtons(false);
+        }}
+      >
         Select Cards
       </Dropdown.Item>
     </>
@@ -35,17 +49,17 @@ const DeckProxyButton = (props) => {
 
   const proxyDeck = () => {
     const cards = {};
-    Object.keys(props.deck.crypt).map((key) => {
-      if (props.deck.crypt[key].q > 0) {
+    Object.keys(deck.crypt).map((key) => {
+      if (deck.crypt[key].q > 0) {
         cards[key] = {
-          q: props.deck.crypt[key].q,
+          q: deck.crypt[key].q,
         };
       }
     });
-    Object.keys(props.deck.library).map((key) => {
-      if (props.deck.library[key].q > 0) {
+    Object.keys(deck.library).map((key) => {
+      if (deck.library[key].q > 0) {
         cards[key] = {
-          q: props.deck.library[key].q,
+          q: deck.library[key].q,
         };
       }
     });
@@ -54,17 +68,17 @@ const DeckProxyButton = (props) => {
 
   const proxyMissing = () => {
     const cards = {};
-    Object.keys(props.missingCrypt).map((key) => {
-      if (props.missingCrypt[key].q > 0) {
+    Object.keys(missingCrypt).map((key) => {
+      if (missingCrypt[key].q > 0) {
         cards[key] = {
-          q: props.missingCrypt[key].q,
+          q: missingCrypt[key].q,
         };
       }
     });
-    Object.keys(props.missingLibrary).map((key) => {
-      if (props.missingLibrary[key].q > 0) {
+    Object.keys(missingLibrary).map((key) => {
+      if (missingLibrary[key].q > 0) {
         cards[key] = {
-          q: props.missingLibrary[key].q,
+          q: missingLibrary[key].q,
         };
       }
     });
@@ -73,7 +87,7 @@ const DeckProxyButton = (props) => {
 
   const proxyCards = (cards) => {
     setDeckError(false);
-    if (props.deck) {
+    if (deck) {
       setSpinnerState(true);
 
       const url = `${process.env.API_URL}decks/proxy`;
@@ -96,9 +110,10 @@ const DeckProxyButton = (props) => {
         .then((response) => response.text())
         .then((data) => {
           const file = 'data:application/pdf;base64,' + data;
-          saveAs(file, `${props.deck['name']}.pdf`);
+          saveAs(file, `${deck['name']}.pdf`);
           setSpinnerState(false);
-          isMobile && props.setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         })
         .catch((error) => {
           setSpinnerState(false);
@@ -110,7 +125,7 @@ const DeckProxyButton = (props) => {
 
   return (
     <>
-      {props.inDiff ? (
+      {inDiff ? (
         <ButtonIconed
           variant="secondary"
           onClick={() => proxyMissing()}
@@ -121,24 +136,24 @@ const DeckProxyButton = (props) => {
       ) : (
         <DropdownButton
           as={ButtonGroup}
-          variant={props.noText ? 'primary' : 'secondary'}
+          variant={noText ? 'primary' : 'secondary'}
           title={
             <div
               title="Proxy PDF"
               className="d-flex justify-content-center align-items-center"
             >
-              <div className={`d-flex ${props.noText ? null : 'pe-2'}`}>
+              <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
                 {spinnerState ? (
                   <Spinner animation="border" size="sm" />
                 ) : (
                   <Printer
-                    width={props.noText ? '18' : '18'}
-                    height={props.noText ? '22' : '18'}
+                    width={noText ? '18' : '18'}
+                    height={noText ? '22' : '18'}
                     viewBox="0 0 18 16"
                   />
                 )}
               </div>
-              {!props.noText && 'PDF Proxy'}
+              {!noText && 'PDF Proxy'}
             </div>
           }
         >
@@ -153,10 +168,14 @@ const DeckProxyButton = (props) => {
       {showSelectModal && (
         <DeckProxySelectModal
           show={showSelectModal}
-          setShow={setShowSelectModal}
-          deck={props.deck}
-          missingCrypt={props.missingCrypt}
-          missingLibrary={props.missingLibrary}
+          handleClose={() => {
+            setShowSelectModal(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
+          }}
+          deck={deck}
+          missingCrypt={missingCrypt}
+          missingLibrary={missingLibrary}
           proxyCards={proxyCards}
         />
       )}

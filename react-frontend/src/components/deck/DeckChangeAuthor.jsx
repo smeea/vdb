@@ -4,7 +4,7 @@ import Check2 from 'assets/images/icons/check2.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import { useApp } from 'context';
 
-function DeckChangeAuthor(props) {
+const DeckChangeAuthor = ({ deckid, author, isAuthor, isPublic }) => {
   const { deckUpdate, isMobile } = useApp();
 
   const [state, setState] = useState('');
@@ -15,7 +15,7 @@ function DeckChangeAuthor(props) {
   };
 
   const deckChangeAuthor = () => {
-    deckUpdate(props.deckid, 'author', state);
+    deckUpdate(deckid, 'author', state);
     setButtonState(true);
     setTimeout(() => {
       setButtonState(false);
@@ -28,14 +28,14 @@ function DeckChangeAuthor(props) {
   };
 
   const handleOnBlur = () => {
-    if (state != props.author) {
+    if (state != author) {
       deckChangeAuthor();
     }
   };
 
   useEffect(() => {
-    setState(props.author);
-  }, [props.author]);
+    setState(author);
+  }, [author]);
 
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
@@ -49,9 +49,9 @@ function DeckChangeAuthor(props) {
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}
-          readOnly={!props.isAuthor}
+          readOnly={!isAuthor || isPublic}
         />
-        {isMobile && props.isAuthor && (
+        {isMobile && isAuthor && (
           <Button variant={buttonState ? 'success' : 'primary'} type="submit">
             <Check2 />
           </Button>
@@ -59,6 +59,6 @@ function DeckChangeAuthor(props) {
       </InputGroup>
     </Form>
   );
-}
+};
 
 export default DeckChangeAuthor;

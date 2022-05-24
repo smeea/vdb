@@ -7,9 +7,9 @@ import {
   SearchFormButtonDel,
 } from './';
 import { useApp } from 'context';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-function SearchFormSet(props) {
+const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
   const { isMobile } = useApp();
 
   const preOptions = Object.keys(setsAndPrecons).map((i) => {
@@ -82,33 +82,58 @@ function SearchFormSet(props) {
         value={i.value}
         type="checkbox"
         className="small pe-1"
-        id={`set-${i.label}`}
+        id={`set-${i.value}`}
         label={i.label}
-        disabled={props.value.value.length > 1}
         title={i.title}
-        checked={props.value['age'] === i.value}
-        onChange={(e) => props.onChangeOptions(e)}
+        disabled={
+          value.value.length > 1 ||
+          value.value[0] === 'bcp' ||
+          value.value[0] === 'Promo' ||
+          value.value[0] === 'POD'
+        }
+        checked={value['age'] === i.value}
+        onChange={(e) => onChangeOptions(e)}
       />
     );
   });
 
-  const additionalFormOptions = [
-    ['only in', 'Only In'],
-    ['first print', 'First Printed In'],
+  const printFormOptions = [
+    {
+      value: 'only',
+      label: 'Only In',
+      title: 'Printed only in selected Set',
+    },
+    {
+      value: 'first',
+      label: 'First Print',
+      title: 'Printed first in selected Set',
+    },
+    {
+      value: 'reprint',
+      label: 'Reprint',
+      title: 'Reprinted in selected Set',
+    },
   ];
 
-  const additionalForm = additionalFormOptions.map((i, index) => {
+  const printForm = printFormOptions.map((i, index) => {
     return (
       <Form.Check
         key={index}
         name="set"
-        value={i[0]}
+        value={i.value}
         type="checkbox"
         className="small"
-        id={`set-${i[0]}`}
-        label={i[1]}
-        checked={props.value[i[0]]}
-        onChange={(e) => props.onChangeOptions(e)}
+        id={`set-${i.value}`}
+        label={i.label}
+        title={i.title}
+        disabled={
+          (value.value[0] === 'bcp' ||
+            value.value[0] === 'Promo' ||
+            value.value[0] === 'POD') &&
+          i.value === 'reprint'
+        }
+        checked={value['print'] === i.value}
+        onChange={(e) => onChangeOptions(e)}
       />
     );
   });
@@ -135,17 +160,17 @@ function SearchFormSet(props) {
           className="d-flex justify-content-between align-items-center px-0"
         >
           <div className="bold blue">Set:</div>
-          {props.value.value[0] !== 'any' && (
+          {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
-              {props.value.value.length == 1 ? (
+              {value.value.length == 1 ? (
                 <SearchFormButtonAdd
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                 />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                   i={0}
                 />
               )}
@@ -161,17 +186,17 @@ function SearchFormSet(props) {
             maxMenuHeight={isMobile ? window.innerHeight - 200 : 550}
             filterOption={filterOption}
             name={0}
-            value={options.find((obj) => obj.value === props.value.value[0])}
-            onChange={props.onChange}
+            value={options.find((obj) => obj.value === value.value[0])}
+            onChange={onChange}
           />
         </Col>
       </Row>
       <SearchAdditionalForms
         menuPlacement={isMobile ? 'top' : 'bottom'}
-        value={props.value}
+        value={value}
         options={options}
-        onChange={props.onChange}
-        setFormState={props.setFormState}
+        onChange={onChange}
+        setFormState={setFormState}
       />
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">
@@ -183,12 +208,12 @@ function SearchFormSet(props) {
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">
           <Stack direction="horizontal" gap={3}>
-            {additionalForm}
+            {printForm}
           </Stack>
         </Col>
       </Row>
     </>
   );
-}
+};
 
 export default SearchFormSet;

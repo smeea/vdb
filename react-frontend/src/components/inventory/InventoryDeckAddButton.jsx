@@ -5,38 +5,47 @@ import Plus from 'assets/images/icons/plus.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
-function InventoryDeckAddButton(props) {
-  const { isMobile } = useApp();
+const InventoryDeckAddButton = ({ deck, inInventory, inventoryDeckAdd }) => {
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
-    props.inventoryDeckAdd(props.deck);
+    inventoryDeckAdd(deck);
     setShowConfirmation(false);
-    isMobile && props.setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   return (
     <>
       <Button
-        className={props.inInventory ? 'inventory-in' : ''}
+        className={inInventory ? 'inventory-in' : ''}
         variant="primary"
         onClick={() => setShowConfirmation(true)}
-        title={
-          props.inInventory ? 'Already in Inventory' : 'Add Deck to Inventory'
-        }
+        title={inInventory ? 'Already in Inventory' : 'Add Deck to Inventory'}
       >
-        {props.inInventory ? <Check2 /> : <Plus />}
+        {inInventory ? (
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex pe-1">
+              <Check2 />
+            </div>
+            {inInventory}
+          </div>
+        ) : (
+          <Plus />
+        )}
       </Button>
       <ModalConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
         buttonText="Add"
-        headerText={'Add deck ' + props.deck.name + ' to Inventory?'}
+        headerText={'Add deck ' + deck.name + ' to Inventory?'}
+        nested={true}
       />
     </>
   );
-}
+};
 
 export default InventoryDeckAddButton;

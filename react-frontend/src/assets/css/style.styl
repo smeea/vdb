@@ -111,11 +111,22 @@ div.h6
 .languages
   font-size: 0.875rem
 
+.vh-60
+  height: 60vh
+
 .vh-80
   height: 80vh
 
 code
   color: var(--fg-primary)
+
+.border-dashed
+    border: 2px dashed var(--border-primary)
+    border-radius: 5px
+
+.border-dashed-thick
+    border: 3px dashed var(--fg-secondary)
+    border-radius: 5px
 
 div.quick-cards
   .bordered
@@ -424,7 +435,6 @@ button.btn-danger:hover
   border: 1px solid var(--border-button)
 
 .logo-image
-  height: 48px
   filter: brightness(var(--logo-brightness))
 
 .logo-text
@@ -532,20 +542,24 @@ td.prob
     width: 30px
 
 .inventory-container-crypt
-  height: calc(100vh - 165px)
+  height: calc(100vh - 183px)
   @media (max-width: 767px)
-    height: calc(100vh - 132px)
+    height: calc(100vh - 160px)
 
 .inventory-container-library
-  height: calc(100vh - 205px)
+  height: calc(100vh - 225px)
   @media (max-width: 767px)
-    height: calc(100vh - 172px)
+    height: calc(100vh - 204px)
 
-.inventory-container-crypt-with-compact,
-.inventory-container-library-with-compact
-  height: calc(100vh - 226px)
+.inventory-container-crypt-with-compact
+  height: calc(100vh - 245px)
   @media (max-width: 767px)
-    height: calc(100vh - 177px)
+    height: calc(100vh - 206px)
+
+.inventory-container-library-with-compact
+  height: calc(100vh - 286px)
+  @media (max-width: 767px)
+    height: calc(100vh - 247px)
 
 .inventory-crypt-table,
 .inventory-library-table
@@ -685,9 +699,9 @@ div.name
     min-width: 93px
   .name
     cursor: pointer
-    min-width: 250px
+    min-width: 25vw
     @media (max-width: 767px)
-      min-width: 200px
+      min-width: 45vw
   .revision
     color: var(--fg-button)
   .date
@@ -697,11 +711,6 @@ div.name
     white-space: nowrap
   .tags
     width: 100%
-  .buttons
-    min-width: 245px
-    @media (max-width: 1199px)
-      min-width: 110px
-    text-align: right
   th
     font-weight: normal
 
@@ -724,7 +733,7 @@ div.name
     min-width: 250px
     max-width: 250px
   .buttons
-    min-width: 95px
+    min-width: 110px
     text-align: right
 
 .inv-import-decks-table
@@ -998,7 +1007,7 @@ div.sticky-modal-library
 label.group-form:hover
   background-color: darkgray
 
-img.full-width
+.full-width
   width: 100%
   height: auto
 
@@ -1132,11 +1141,17 @@ div.float-random svg
 .modal-tooltip
   z-index: 1100
 
-.modal-tooltip-preview
-  z-index: 1055
-
 .opacity-035
   opacity: 0.35
+
+.above-nav-bottom
+  position: fixed
+  background-color: var(--bg-primary)
+  bottom: 40px
+  width: 100%
+
+.above-card-select-bottom
+  padding-bottom: 72px
 
 div.inventory-card-custom
   position: absolute

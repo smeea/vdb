@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
-import { cardServices, inventoryServices } from 'services';
+import { cardServices, inventoryServices, deckServices } from 'services';
 import { useWindowSize } from 'hooks';
 
 const AppContext = React.createContext();
@@ -33,23 +33,14 @@ export const AppProvider = (props) => {
   const [cryptSearchSort, setCryptSearchSort] = useState(undefined);
   const [librarySearchSort, setLibrarySearchSort] = useState(undefined);
 
-  const [cryptCardBase, setCryptCardBase] = useState(
-    cardServices.getCryptBase()
-  );
-  const [libraryCardBase, setLibraryCardBase] = useState(
-    cardServices.getLibraryBase()
-  );
-  const nativeCrypt = cardServices.getNativeText(cryptCardBase);
-  const nativeLibrary = cardServices.getNativeText(libraryCardBase);
+  const [cryptCardBase, setCryptCardBase] = useState(undefined);
+  const [libraryCardBase, setLibraryCardBase] = useState(undefined);
+  const [nativeCrypt, setNativeCrypt] = useState(undefined);
+  const [nativeLibrary, setNativeLibrary] = useState(undefined);
+  const [localizedCrypt, setLocalizedCrypt] = useState(undefined);
+  const [localizedLibrary, setLocalizedLibrary] = useState(undefined);
 
-  const [localizedCrypt, setLocalizedCrypt] = useState({
-    'en-EN': nativeCrypt,
-  });
-  const [localizedLibrary, setLocalizedLibrary] = useState({
-    'en-EN': nativeLibrary,
-  });
-
-  const preconDecks = cardServices.getPreconDecks();
+  const [preconDecks, setPreconDecks] = useState({});
 
   const [showPdaSearch, setShowPdaSearch] = useState(true);
   const [showTwdSearch, setShowTwdSearch] = useState(true);
@@ -71,12 +62,33 @@ export const AppProvider = (props) => {
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [sharedDeck, setSharedDeck] = useState({});
   const [recentDecks, setRecentDecks] = useState([]);
+  const [lastDeckId, setLastDeckId] = useState(undefined);
+
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
+
+  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
+  const [showMenuButtons, setShowMenuButtons] = useState(false);
+
+  // ---------------------------------------------------------------------------
+  //                            CARD BASE
+  // ---------------------------------------------------------------------------
+
+  useEffect(() => {
+    cardServices.getCardBase().then((data) => {
+      setCryptCardBase(data.crypt);
+      setLibraryCardBase(data.library);
+      setNativeCrypt(data.nativeCrypt);
+      setNativeLibrary(data.nativeLibrary);
+      setLocalizedCrypt({ 'en-EN': data.nativeCrypt });
+      setLocalizedLibrary({ 'en-EN': data.nativeLibrary });
+    });
+  }, []);
 
   // ---------------------------------------------------------------------------
   //                            USER FUNCTIONS
   // ---------------------------------------------------------------------------
+
   const whoAmI = () => {
     const url = `${process.env.API_URL}login`;
     const options = {
@@ -97,21 +109,34 @@ export const AppProvider = (props) => {
   };
 
   const initializeUserData = (data) => {
+    const inventory = parseInventoryData(data.inventory);
     setUsername(data.username);
     setPublicName(data.public_name);
     setEmail(data.email);
-    getInventory();
-    getDecks();
+    setInventoryCrypt(inventory.crypt);
+    setInventoryLibrary(inventory.library);
+    setDecks(parseDecksData(data.decks));
   };
 
   const initializeUnauthenticatedUser = () => {
+    setAddMode(false);
     setInventoryMode(false);
     setInventoryCrypt({});
     setInventoryLibrary({});
+    setUsername(undefined);
     setDecks(undefined);
     setActiveDeck({ src: null, deckid: null });
     setEmail(undefined);
   };
+
+  useEffect(() => {
+    if (cryptCardBase && libraryCardBase) {
+      whoAmI();
+      setPreconDecks(
+        cardServices.getPreconDecks(cryptCardBase, libraryCardBase)
+      );
+    }
+  }, [cryptCardBase, libraryCardBase]);
 
   // ---------------------------------------------------------------------------
   //                          LANGUAGE FUNCTIONS
@@ -141,37 +166,32 @@ export const AppProvider = (props) => {
 
   // Load the localized info for the first time
   const initializeLocalizedInfo = async (lang) => {
-    const localizedCrypt = await cardServices.getLocalizedCrypt(lang);
-    const localizedLibrary = await cardServices.getLocalizedLibrary(lang);
+    cardServices.getLocalizedCardBase(lang).then((data) => {
+      setLocalizedCrypt((prevState) => ({
+        ...prevState,
+        [lang]: data.crypt,
+      }));
 
-    setLocalizedCrypt((prevState) => ({
-      ...prevState,
-      [lang]: localizedCrypt,
-    }));
+      setLocalizedLibrary((prevState) => ({
+        ...prevState,
+        [lang]: data.library,
+      }));
 
-    setLocalizedLibrary((prevState) => ({
-      ...prevState,
-      [lang]: localizedLibrary,
-    }));
-
-    changeBaseTextToLocalizedText(
-      setCryptCardBase,
-      localizedCrypt,
-      nativeCrypt
-    );
-    changeBaseTextToLocalizedText(
-      setLibraryCardBase,
-      localizedLibrary,
-      nativeLibrary
-    );
+      changeBaseTextToLocalizedText(setCryptCardBase, data.crypt, nativeCrypt);
+      changeBaseTextToLocalizedText(
+        setLibraryCardBase,
+        data.library,
+        nativeLibrary
+      );
+    });
   };
 
   // Trigger the language change
   useEffect(() => {
     async function triggerLangChange() {
-      if (!localizedCrypt[lang] || !localizedLibrary[lang])
+      if (!localizedCrypt[lang] || !localizedLibrary[lang]) {
         await initializeLocalizedInfo(lang);
-      else {
+      } else {
         changeBaseTextToLocalizedText(
           setCryptCardBase,
           localizedCrypt[lang],
@@ -184,8 +204,11 @@ export const AppProvider = (props) => {
         );
       }
     }
-    triggerLangChange();
-  }, [lang]);
+
+    if (cryptCardBase && libraryCardBase) {
+      triggerLangChange();
+    }
+  }, [lang, nativeCrypt, nativeLibrary]);
 
   // ---------------------------------------------------------------------------
   //                          APP DATA FUNCTIONS
@@ -222,11 +245,17 @@ export const AppProvider = (props) => {
   };
 
   const addRecentDeck = (deck) => {
-    const d = [...recentDecks];
+    const src =
+      deck.deckid.length != 32 ? 'twd' : deck.public_parent ? 'pda' : 'shared';
+    let d = [...recentDecks];
     const idx = recentDecks.map((v) => v.deckid).indexOf(deck.deckid);
     if (idx !== -1) d.splice(idx, 1);
-    d.unshift({ deckid: deck.deckid, name: deck.name });
-    if (d.length > 10) d.slice(0, 10);
+    d.unshift({
+      deckid: deck.deckid,
+      name: deck.name,
+      src: src,
+    });
+    if (d.length > 10) d = d.slice(0, 10);
     setRecentDecks(d);
     setLocalStorage('recentDecks', d);
   };
@@ -255,9 +284,7 @@ export const AppProvider = (props) => {
   //                          DECK FUNCTIONS
   // ---------------------------------------------------------------------------
 
-  const getDecks = async () => {
-    const decksData = await inventoryServices.getDecks();
-
+  const parseDecksData = (decksData) => {
     Object.keys(decksData).map((deckid) => {
       decksData[deckid].crypt = {};
       decksData[deckid].library = {};
@@ -289,14 +316,110 @@ export const AppProvider = (props) => {
           }
         });
       }
+
+      decksData[deckid].is_yours = true;
+      delete decksData[deckid].cards;
     });
 
-    delete decksData.cards;
-    setDecks(decksData);
+    return decksData;
+  };
+
+  const changeMaster = (deckid) => {
+    const masterid = decks[deckid].master;
+    if (masterid) {
+      setDecks((prevState) => {
+        const branches = prevState[masterid].branches;
+        branches.splice(branches.indexOf(deckid), 1);
+        branches.push(masterid);
+        branches.map((b) => {
+          prevState[b].master = deckid;
+        });
+
+        return {
+          ...prevState,
+          [masterid]: {
+            ...prevState[masterid],
+            branches: null,
+          },
+          [deckid]: {
+            ...prevState[deckid],
+            branches: branches,
+            master: null,
+          },
+        };
+      });
+    }
+  };
+
+  const branchesUpdate = (deckid, field, value) => {
+    setDecks((prevState) => {
+      let revisions = [];
+      if (decks[deckid].master) {
+        revisions = [
+          decks[deckid].master,
+          ...decks[decks[deckid].master].branches,
+        ];
+      } else {
+        revisions = [deckid, ...decks[deckid].branches];
+      }
+
+      const newState = { ...prevState };
+      revisions.map((d) => {
+        newState[d] = {
+          ...newState[d],
+          [field]: value,
+        };
+      });
+
+      return newState;
+    });
   };
 
   const deckUpdate = (deckid, field, value) => {
-    inventoryServices.deckUpdate(deckid, field, value).then(() => getDecks());
+    deckServices.deckUpdate(deckid, field, value).then(() => {
+      if (field === 'used_in_inventory') {
+        setDecks((prevState) => {
+          const newState = { ...prevState };
+          Object.keys(value).map((cardid) => {
+            if (cardid > 200000) {
+              newState[deckid].crypt[cardid].i = value[cardid];
+            } else {
+              newState[deckid].library[cardid].i = value[cardid];
+            }
+          });
+          return newState;
+        });
+      } else {
+        setDecks((prevState) => {
+          const newState = { ...prevState };
+          newState[deckid] = {
+            ...newState[deckid],
+            [field]: value,
+          };
+
+          if (field === 'inventory_type') {
+            Object.keys(newState[deckid].crypt).map((cardid) => {
+              newState[deckid].crypt[cardid].i = '';
+            });
+            Object.keys(newState[deckid].library).map((cardid) => {
+              newState[deckid].library[cardid].i = '';
+            });
+          }
+
+          return newState;
+        });
+      }
+
+      const branchesUpdateFields = ['name', 'author'];
+      if (
+        branchesUpdateFields.includes(field) &&
+        (decks[deckid].branches || decks[deckid].master)
+      ) {
+        branchesUpdate(deckid, field, value);
+      }
+
+      changeMaster(deckid);
+    });
   };
 
   const deckCardChange = (deckid, cardid, count) => {
@@ -311,35 +434,52 @@ export const AppProvider = (props) => {
       body: JSON.stringify({ cardChange: { [cardid]: count } }),
     };
 
-    const oldState = { ...decks };
+    const cardType = cardid > 200000 ? 'crypt' : 'library';
+    const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
+    let initialState = {};
 
-    fetch(url, options).catch((error) => {
-      setDecks(oldState);
-    });
-    let cardType;
-    let cardBase;
-    if (cardid > 200000) {
-      cardType = 'crypt';
-      cardBase = cryptCardBase;
-    } else {
-      cardType = 'library';
-      cardBase = libraryCardBase;
-    }
+    if (deckid in decks) {
+      initialState = JSON.parse(JSON.stringify(decks));
 
-    if (count >= 0) {
-      const oldState = { ...decks };
-      oldState[deckid][cardType][cardid] = {
-        c: cardBase[cardid],
-        q: count,
-      };
-      setDecks(oldState);
-    } else {
       setDecks((prevState) => {
         const oldState = { ...prevState };
-        delete oldState[deckid][cardType][cardid];
+        if (count >= 0) {
+          oldState[deckid][cardType][cardid] = {
+            c: cardBase[cardid],
+            q: count,
+          };
+        } else {
+          delete oldState[deckid][cardType][cardid];
+        }
+
+        return oldState;
+      });
+
+      changeMaster(deckid);
+    } else if (deckid in sharedDeck) {
+      initialState = JSON.parse(JSON.stringify(sharedDeck));
+
+      setSharedDeck((prevState) => {
+        const oldState = { ...prevState };
+        if (count >= 0) {
+          oldState[deckid][cardType][cardid] = {
+            c: cardBase[cardid],
+            q: count,
+          };
+        } else {
+          delete oldState[deckid][cardType][cardid];
+        }
         return oldState;
       });
     }
+
+    fetch(url, options).catch((error) => {
+      if (deckid in decks) {
+        setDecks(initialState);
+      } else if (deckid in sharedDeck) {
+        setSharedDeck(initialState);
+      }
+    });
 
     const startTimer = () => {
       let counter = 1;
@@ -377,22 +517,45 @@ export const AppProvider = (props) => {
     }
   };
 
+  useEffect(() => {
+    const byTimestamp = (a, b) => {
+      return new Date(b.timestamp) - new Date(a.timestamp);
+    };
+
+    if (decks && Object.keys(decks).length) {
+      const lastDeckArray = Object.values(decks).sort(byTimestamp);
+      setLastDeckId(lastDeckArray[0].deckid);
+    }
+  }, [decks]);
+
+  useEffect(() => {
+    if (decks) {
+      const d = recentDecks.filter((v) => !decks[v.deckid]);
+      if (d.length < recentDecks.length) {
+        updateRecentDecks(d);
+      }
+    }
+  }, [decks, recentDecks]);
+
+  useEffect(() => {
+    if (lastDeckId && !activeDeck.deckid) {
+      setActiveDeck({ src: 'my', deckid: lastDeckId });
+    }
+  }, [lastDeckId]);
+
   // ---------------------------------------------------------------------------
   //                          INVENTORY FUNCTIONS
   // ---------------------------------------------------------------------------
 
-  const getInventory = async () => {
-    const inventoryData = await inventoryServices.getInventory();
-    if (inventoryData) {
-      Object.keys(inventoryData.crypt).map((i) => {
-        inventoryData.crypt[i].c = cryptCardBase[i];
-      });
-      Object.keys(inventoryData.library).map((i) => {
-        inventoryData.library[i].c = libraryCardBase[i];
-      });
-      setInventoryCrypt(inventoryData.crypt);
-      setInventoryLibrary(inventoryData.library);
-    }
+  const parseInventoryData = (inventoryData) => {
+    Object.keys(inventoryData.crypt).map((i) => {
+      inventoryData.crypt[i].c = cryptCardBase[i];
+    });
+    Object.keys(inventoryData.library).map((i) => {
+      inventoryData.library[i].c = libraryCardBase[i];
+    });
+
+    return { crypt: inventoryData.crypt, library: inventoryData.library };
   };
 
   // Trigger  Hard and Soft count function on changing decks
@@ -513,14 +676,14 @@ export const AppProvider = (props) => {
   };
 
   const inventoryAddToState = (cards) => {
-    inventoryServices.addtoStateByType(
+    inventoryServices.addToStateByType(
       setInventoryCrypt,
       cryptCardBase,
       Object.keys(cards).filter((cardid) => cardid > 200000),
       cards
     );
 
-    inventoryServices.addtoStateByType(
+    inventoryServices.addToStateByType(
       setInventoryLibrary,
       libraryCardBase,
       Object.keys(cards).filter((cardid) => cardid < 200000),
@@ -613,6 +776,10 @@ export const AppProvider = (props) => {
         toggleAddMode, // move to listing??
         showImage,
         toggleShowImage,
+        showFloatingButtons,
+        setShowFloatingButtons,
+        showMenuButtons,
+        setShowMenuButtons,
 
         // 2 - USER Context
         whoAmI,
@@ -622,6 +789,8 @@ export const AppProvider = (props) => {
         setPublicName,
         email,
         setEmail,
+        initializeUserData,
+        initializeUnauthenticatedUser,
 
         // 3 - CARDBASE Context
         cryptCardBase,
@@ -640,8 +809,6 @@ export const AppProvider = (props) => {
         inventoryDeckDelete,
         inventoryAddToState,
         inventoryDeleteFromState,
-        getInventory,
-
         usedCryptCards,
         usedLibraryCards,
         inventoryCardChange,
@@ -649,22 +816,21 @@ export const AppProvider = (props) => {
         // 5 - DECK Context
         preconDecks,
         decks,
+        setDecks,
         activeDeck,
         setActiveDeck,
         sharedDeck,
         setSharedDeck,
+        lastDeckId,
         recentDecks,
         addRecentDeck,
         updateRecentDecks,
-        setDecks,
-        getDecks,
         deckRouter,
         deckUpdate,
         deckCardChange,
         changeTimer,
 
-        // 6 - LISTING Context (NEED REVIEW)
-
+        // 6 - LISTING Context
         showPdaSearch,
         setShowPdaSearch,
         showTwdSearch,
@@ -674,11 +840,11 @@ export const AppProvider = (props) => {
         showLibrarySearch,
         setShowLibrarySearch,
 
-        // SORTING Context (NEED REVIEW)
-        cryptSearchSort, // LOCAL ResultCrypt.jsx
-        changeCryptSearchSort, // LOCAL ResultCrypt.jsx
-        librarySearchSort, // LOCAL ResultLibrary.jsx
-        changeLibrarySearchSort, // LOCAL ResultLibrary.jsx
+        // 7 - SORTING Context
+        cryptSearchSort,
+        changeCryptSearchSort,
+        librarySearchSort,
+        changeLibrarySearchSort,
         cryptDeckSort,
         changeCryptDeckSort,
       }}

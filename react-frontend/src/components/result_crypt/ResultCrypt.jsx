@@ -8,9 +8,9 @@ import {
   ResultCryptTotalInfo,
 } from 'components';
 import { resultCryptSort } from 'utils';
-import { useApp, useSearchResults } from 'context';
+import { useApp } from 'context';
 
-function ResultCrypt(props) {
+const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
   const {
     showCryptSearch,
     setShowCryptSearch,
@@ -19,58 +19,68 @@ function ResultCrypt(props) {
     isMobile,
     cryptSearchSort,
     changeCryptSearchSort,
+    showFloatingButtons,
   } = useApp();
 
-  const { cryptResults, setCryptResults } = useSearchResults();
-
   const [sortedCards, setSortedCards] = useState([]);
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const className = 'search-crypt-table';
   const navigate = useNavigate();
+
+  const sortMethods = {
+    Name: 'N',
+    Clan: 'Cl',
+    Group: 'G',
+    'Capacity - Min to Max': 'C↑',
+    'Capacity - Max to Min': 'C↓',
+  };
 
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
 
-  const handleChange = (method) => {
+  const setSortMethod = (method) => {
     changeCryptSearchSort(method);
-    setSortedCards(() => resultCryptSort(cryptResults, method));
+    setSortedCards(() => resultCryptSort(cards, method));
   };
 
   const handleClear = () => {
     navigate('/crypt');
-    setCryptResults(undefined);
+    setCards(undefined);
     setShowCryptSearch(!showCryptSearch);
   };
 
   useEffect(() => {
-    setSortedCards(() => resultCryptSort(cryptResults, cryptSearchSort));
-  }, [cryptResults]);
+    if (cards) {
+      setSortedCards(() => resultCryptSort(cards, cryptSearchSort));
+    }
+  }, [cards]);
 
   return (
     <>
-      {!isMobile && cryptResults.length == 0 && (
+      {!isMobile && (cards === null || cards.length === 0) && (
         <div className="d-flex align-items-center justify-content-center error-message">
-          <b>NO CARDS FOUND</b>
+          <b>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</b>
         </div>
       )}
-      {cryptResults.length > 0 && (
+      {cards && cards.length > 0 && (
         <>
           <ResultCryptTotal
-            cards={cryptResults}
+            inCompare={inCompare}
+            cards={cards}
             toggleShowInfo={toggleShowInfo}
-            handleChange={handleChange}
+            sortMethods={sortMethods}
+            sortMethod={cryptSearchSort}
+            setSortMethod={setSortMethod}
           />
           {showInfo && (
             <div className="info-message px-2">
-              <ResultCryptTotalInfo cards={cryptResults} />
+              <ResultCryptTotalInfo cards={cards} />
             </div>
           )}
           <ResultCryptTable
             className={className}
-            crypt={props.crypt}
-            activeDeck={props.activeDeck}
+            crypt={crypt}
+            activeDeck={activeDeck}
             resultCards={sortedCards}
-            setShowFloatingButtons={setShowFloatingButtons}
           />
         </>
       )}
@@ -82,7 +92,7 @@ function ResultCrypt(props) {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && props.activeDeck.src === 'my' && (
+      {isMobile && showFloatingButtons && activeDeck.src === 'my' && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${
@@ -94,6 +104,6 @@ function ResultCrypt(props) {
       )}
     </>
   );
-}
+};
 
 export default ResultCrypt;

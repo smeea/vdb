@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { PdaResult, PdaSearchForm } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-function Pda(props) {
+const Pda = (props) => {
   const { showPdaSearch, isMobile } = useApp();
   const { pdaResults } = useSearchResults();
 
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
-
   return (
-    <Container
-      className={isMobile ? 'main-container' : 'main-container py-3 px-4'}
-    >
+    <Container className="main-container p-md-3">
       <Row className="justify-content-center">
         <Col
           xs={12}
@@ -24,12 +20,7 @@ function Pda(props) {
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
-          {pdaResults && (
-            <PdaResult
-              showFloatingButtons={showFloatingButtons}
-              setShowFloatingButtons={setShowFloatingButtons}
-            />
-          )}
+          {pdaResults !== undefined && <PdaResult />}
         </Col>
         <Col
           xs={12}
@@ -37,9 +28,7 @@ function Pda(props) {
           xl={3}
           className={
             !isMobile || (isMobile && showPdaSearch)
-              ? isMobile
-                ? 'p-1'
-                : 'px-md-2 px-xl-0'
+              ? 'p-1 py-md-0 px-md-2 px-xl-0'
               : 'col-hide'
           }
         >
@@ -48,6 +37,6 @@ function Pda(props) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Pda;

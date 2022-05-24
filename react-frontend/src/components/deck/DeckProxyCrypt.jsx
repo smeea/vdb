@@ -1,13 +1,18 @@
 import React from 'react';
-import { DeckProxyCryptTable, ResultCryptModal } from 'components';
+import { DeckProxyCryptTable, ResultModal } from 'components';
 import { useApp } from 'context';
 import { countCards } from 'utils';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
-const DeckProxyCrypt = (props) => {
-  const { cards, proxySelected, setShowFloatingButtons } = props;
-  const { handleProxySelector, handleSetSelector, handleProxyCounter } = props;
-  const { cryptDeckSort, changeTimer, isMobile } = useApp();
+const DeckProxyCrypt = ({
+  cards,
+  proxySelected,
+  handleProxySelector,
+  handleSetSelector,
+  handleProxyCounter,
+}) => {
+  const { cryptDeckSort, changeTimer, isMobile, setShowFloatingButtons } =
+    useApp();
 
   const { cryptSide, cryptTotal, sortedCards, sortedCardsSide } = useDeckCrypt(
     cards,
@@ -41,7 +46,7 @@ const DeckProxyCrypt = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
   return (
     <>
@@ -62,7 +67,6 @@ const DeckProxyCrypt = (props) => {
         handleSetSelector={handleSetSelector}
         handleProxyCounter={handleProxyCounter}
         proxySelected={proxySelected}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
@@ -79,12 +83,11 @@ const DeckProxyCrypt = (props) => {
             handleSetSelector={handleSetSelector}
             handleProxyCounter={handleProxyCounter}
             proxySelected={proxySelected}
-            setShowFloatingButtons={setShowFloatingButtons}
           />
         </div>
       )}
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { ResultLibraryClan } from 'components';
 import { useApp } from 'context';
 
@@ -84,7 +84,7 @@ function DeckSelectPrecon(props) {
         maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
         filterOption={filterOption}
         placeholder="Select Deck"
-        value={options.find((obj) => obj.value === props.deckId)}
+        value={options.find((obj) => obj.value === props.deckid)}
         onChange={(e) => {
           props.setActiveDeck
             ? props.setActiveDeck({ src: 'precons', deckid: e.value })

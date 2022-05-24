@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Overlay, Popover } from 'react-bootstrap';
 import PersonFill from 'assets/images/icons/person-fill.svg';
@@ -12,10 +12,9 @@ import List from 'assets/images/icons/list.svg';
 import { LanguageSelect } from 'components';
 import { useApp, useTheme } from 'context';
 
-const NavMobileMenu = (props) => {
+const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   const { inventoryMode, toggleInventoryMode, username } = useApp();
   const { theme, toggleTheme } = useTheme();
-  const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
 
   return (
@@ -39,9 +38,10 @@ const NavMobileMenu = (props) => {
               },
             ],
           }}
+          transition={false}
+          placement="bottom"
           target={menuRef}
           show={showMenu}
-          placement="bottom"
         >
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
             <Popover {...props} className="nav-menu large">

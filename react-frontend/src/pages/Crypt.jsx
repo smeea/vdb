@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-function Crypt({ lastDeckId }) {
+const Crypt = ({ lastDeckId }) => {
   const {
     deckRouter,
     showCryptSearch,
@@ -19,7 +19,8 @@ function Crypt({ lastDeckId }) {
     activeDeck,
   } = useApp();
 
-  const { cryptResults } = useSearchResults();
+  const { cryptResults, setCryptResults, cryptCompare, setCryptCompare } =
+    useSearchResults();
 
   let myActiveDeck;
   if (isMobile) {
@@ -32,7 +33,7 @@ function Crypt({ lastDeckId }) {
   }
 
   const deckData = deckRouter(myActiveDeck);
-  const deckId = myActiveDeck.deckid;
+  const deckid = myActiveDeck.deckid;
 
   const showSearchForm = useMemo(() => {
     return (
@@ -43,8 +44,8 @@ function Crypt({ lastDeckId }) {
   }, [isMobile, isDesktop, addMode, showCryptSearch, cryptResults]);
 
   const showToggleAddMode = useMemo(() => {
-    return deckId && cryptResults && !isMobile && !isDesktop;
-  }, [deckId, isMobile, isDesktop, cryptResults]);
+    return deckid && cryptResults && !isMobile && !isDesktop;
+  }, [deckid, isMobile, isDesktop, cryptResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showCryptSearch));
 
@@ -55,7 +56,7 @@ function Crypt({ lastDeckId }) {
           <Col
             md={!showSearchForm ? 5 : 1}
             lg={!showSearchForm ? 6 : 1}
-            xl={deckId && addMode ? 4 : 2}
+            xl={deckid && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
             {deckData && (isDesktop || (!isDesktop && !showSearchForm)) && (
@@ -64,9 +65,23 @@ function Crypt({ lastDeckId }) {
           </Col>
         )}
         {showResultCol && (
-          <Col md={7} lg={6} xl={5} className={'px-0 px-md-2 px-xl-3 py-md-3'}>
-            {cryptResults && (
+          <Col md={7} lg={6} xl={5} className="px-0 px-md-2 py-md-3 px-xl-3">
+            {((isMobile && cryptCompare && cryptResults) ||
+              (!isMobile && cryptCompare)) && (
+              <div className="pb-3">
+                <ResultCrypt
+                  inCompare={true}
+                  cards={cryptCompare}
+                  setCards={setCryptCompare}
+                  crypt={deckData && deckData.crypt}
+                  activeDeck={myActiveDeck}
+                />
+              </div>
+            )}
+            {cryptResults !== undefined && (
               <ResultCrypt
+                cards={cryptResults}
+                setCards={setCryptResults}
                 crypt={deckData && deckData.crypt}
                 activeDeck={myActiveDeck}
               />
@@ -74,7 +89,7 @@ function Crypt({ lastDeckId }) {
           </Col>
         )}
         {showSearchForm && (
-          <Col md={4} lg={4} xl={3} className={'p-1 px-md-2 pe-xl-0 py-md-3'}>
+          <Col md={4} lg={4} xl={3} className="p-1 p-md-3 pe-xl-0">
             <CryptSearchForm />
           </Col>
         )}
@@ -87,6 +102,6 @@ function Crypt({ lastDeckId }) {
       )}
     </Container>
   );
-}
+};
 
 export default Crypt;

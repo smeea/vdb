@@ -1,6 +1,6 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
-import icons from 'components/forms_data/disciplineIcons.json';
+import icons from 'assets/data/disciplineIcons.json';
 import { useApp } from 'context';
 import {
   CardPopover,
@@ -9,7 +9,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 
-const ResultLayoutTextRulings = (props) => {
+const ResultLayoutTextRulings = ({ rulings, placement }) => {
   const {
     nativeCrypt,
     nativeLibrary,
@@ -18,10 +18,13 @@ const ResultLayoutTextRulings = (props) => {
     isMobile,
   } = useApp();
 
-  const Rulings = Object(props.rulings).map((k, index) => {
-    const Refs = Object.keys(k['refs']).map((j, idx) => {
+  const Rulings = Object(rulings).map((k, idxRuling) => {
+    const Refs = Object.keys(k['refs']).map((j) => {
       return (
-        <div className="d-inline small ps-1" key={idx}>
+        <div
+          key={`${idxRuling}-rulingRef-${j}`}
+          className="d-inline small ps-1"
+        >
           <a target="_blank" rel="noreferrer" href={k['refs'][j]}>
             {j}
           </a>
@@ -31,12 +34,12 @@ const ResultLayoutTextRulings = (props) => {
 
     const text = k.text.replace(/\(D\)/g, '\u24B9').split('\n');
 
-    const RulingText = text.map((i, index) => {
+    const RulingText = text.map((i, idxText) => {
       let replacedText;
 
       replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => (
         <img
-          key={idx}
+          key={`${idxRuling}-${idxText}-icon-${idx}`}
           className="discipline-base-image-results"
           src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
           title={match}
@@ -54,9 +57,9 @@ const ResultLayoutTextRulings = (props) => {
 
           if (cardid) {
             return (
-              <span key={`${cardid}-${idx}`}>
+              <span key={`${idxRuling}-${idxText}-cardRef-${idx}`}>
                 <ConditionalOverlayTrigger
-                  placement={props.placement}
+                  placement={placement}
                   overlay={
                     <CardPopover
                       card={
@@ -80,17 +83,23 @@ const ResultLayoutTextRulings = (props) => {
             );
           } else {
             return (
-              <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>
+              <React.Fragment key={`${idxRuling}-${idxText}-ref-${idx}`}>
+                &#123;{match}&#125;
+              </React.Fragment>
             );
           }
         }
       );
 
-      return <React.Fragment key={index}>{replacedText}</React.Fragment>;
+      return (
+        <React.Fragment key={`${idxRuling}-${idxText}`}>
+          {replacedText}
+        </React.Fragment>
+      );
     });
 
     return (
-      <li className="rulings" key={index}>
+      <li className="rulings" key={idxRuling}>
         <div className="d-inline">{RulingText}</div>
         {Refs}
       </li>

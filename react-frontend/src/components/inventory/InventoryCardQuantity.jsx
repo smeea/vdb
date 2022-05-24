@@ -2,14 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { useApp } from 'context';
 
-function InventoryCardQuantity(props) {
+const InventoryCardQuantity = ({
+  q,
+  cardid,
+  softUsedMax,
+  hardUsedTotal,
+  compact,
+}) => {
   const { inventoryCardChange, isMobile } = useApp();
-  const [manual, setManual] = useState(false);
-  const [state, setState] = useState(props.q);
+  const [manual, setManual] = useState();
+  const [state, setState] = useState(q);
 
   useEffect(() => {
-    setState(props.q);
-  }, [props.q]);
+    setState(q ? q : '');
+  }, [q]);
+
+  useEffect(() => {
+    if (compact && q === 0) setManual(true);
+  }, [cardid]);
 
   const handleManualChange = (event) => {
     setState(event.target.value ? event.target.value : '');
@@ -17,13 +27,13 @@ function InventoryCardQuantity(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    inventoryCardChange(props.cardid, state ? parseInt(state) : 0);
+    inventoryCardChange(cardid, state ? parseInt(state) : 0);
     setManual(false);
   };
 
   const handleQuantityChange = (diff) => {
-    if (state + diff >= 0) setState(state + diff);
-    inventoryCardChange(props.cardid, state + diff);
+    if (diff + state >= 0) setState(diff + state);
+    inventoryCardChange(cardid, parseInt(diff + state));
   };
 
   return (
@@ -37,7 +47,7 @@ function InventoryCardQuantity(props) {
           </a>
           <div
             className={
-              state < props.softUsedMax + props.hardUsedTotal
+              state < softUsedMax + hardUsedTotal
                 ? 'px-1 mx-1 inv-miss-full'
                 : 'px-1'
             }
@@ -65,7 +75,7 @@ function InventoryCardQuantity(props) {
             className={
               manual
                 ? 'px-0'
-                : state < props.softUsedMax + props.hardUsedTotal
+                : state < softUsedMax + hardUsedTotal
                 ? 'px-1 mx-1 inv-miss-full'
                 : 'px-1'
             }
@@ -101,6 +111,6 @@ function InventoryCardQuantity(props) {
       )}
     </div>
   );
-}
+};
 
 export default InventoryCardQuantity;

@@ -26,7 +26,7 @@ import { sanitizeFormState } from 'utils';
 import { useFilters } from 'hooks';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-function CryptSearchForm(props) {
+const CryptSearchForm = (props) => {
   const {
     cryptCardBase,
     hideMissing,
@@ -50,7 +50,7 @@ function CryptSearchForm(props) {
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
-    if (cryptCardBase && query) {
+    if (query) {
       setCryptFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
@@ -65,9 +65,9 @@ function CryptSearchForm(props) {
         return state;
       });
     }
-  }, [cryptCardBase]);
+  }, []);
 
-  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState(false);
   const refError = useRef(null);
 
   const handleTextChange = (event) => {
@@ -129,6 +129,8 @@ function CryptSearchForm(props) {
     const newState = cryptFormState[name];
     if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
       newState['age'] = newState['age'] === value ? false : value;
+    } else if (['only', 'first', 'reprint'].includes(value)) {
+      newState['print'] = newState['print'] === value ? false : value;
     } else {
       newState[value] = !newState[value];
     }
@@ -179,7 +181,7 @@ function CryptSearchForm(props) {
     setCryptFormState(JSON.parse(JSON.stringify(defaults)));
     setCryptResults(undefined);
     setPreresults(undefined);
-    setShowError(false);
+    setError(false);
   };
 
   const handleSubmitButton = (event) => {
@@ -225,14 +227,13 @@ function CryptSearchForm(props) {
     if (isMobile && query && cryptFormState) {
       processSearch();
     }
-  }, [cryptFormState]);
+  }, [cryptFormState, cryptCardBase]);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && cryptCardBase) {
       const input = sanitizeFormState('crypt', cryptFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
-          navigate('/crypt');
           setCryptResults(undefined);
           setPreresults(undefined);
         }
@@ -243,7 +244,7 @@ function CryptSearchForm(props) {
         processSearch();
       }
     }
-  }, [cryptFormState, hideMissing, inventoryMode]);
+  }, [cryptFormState, hideMissing, inventoryMode, cryptCardBase]);
 
   useEffect(() => {
     if (!isMobile && preresults) {
@@ -344,17 +345,17 @@ function CryptSearchForm(props) {
               <Spinner animation="border" variant="light" />
             )}
             <ErrorOverlay
-              show={showError}
+              show={error}
               target={refError.current}
               placement="left"
             >
-              {showError === true ? 'NO CARDS FOUND' : showError}
+              {error}
             </ErrorOverlay>
           </div>
         </>
       )}
     </Form>
   );
-}
+};
 
 export default CryptSearchForm;

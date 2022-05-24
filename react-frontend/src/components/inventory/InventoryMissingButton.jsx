@@ -4,7 +4,7 @@ import { DeckMissingModal } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const InventoryMissingButton = (props) => {
+const InventoryMissingButton = ({ type, clan, discipline }) => {
   const {
     inventoryCrypt,
     inventoryLibrary,
@@ -12,8 +12,9 @@ const InventoryMissingButton = (props) => {
     usedLibraryCards,
     cryptCardBase,
     libraryCardBase,
-    isMobile,
     username,
+    setShowFloatingButtons,
+    setShowMenuButtons,
   } = useApp();
 
   const [showModal, setShowModal] = useState(undefined);
@@ -26,8 +27,7 @@ const InventoryMissingButton = (props) => {
 
     Object.keys(inventoryCrypt)
       .filter((card) => {
-        if (props.clan === 'All' || cryptCardBase[card].Clan === props.clan)
-          return true;
+        if (clan === 'All' || cryptCardBase[card].Clan === clan) return true;
       })
       .map((card) => {
         let softUsedMax = 0;
@@ -55,14 +55,11 @@ const InventoryMissingButton = (props) => {
 
     Object.keys(inventoryLibrary)
       .filter((card) => {
-        if (
-          props.type !== 'All' &&
-          !libraryCardBase[card].Type.includes(props.type)
-        )
+        if (type !== 'All' && !libraryCardBase[card].Type.includes(type))
           return false;
         if (
-          props.discipline !== 'All' &&
-          !libraryCardBase[card].Discipline.includes(props.discipline)
+          discipline !== 'All' &&
+          !libraryCardBase[card].Discipline.includes(discipline)
         )
           return false;
         return true;
@@ -93,8 +90,7 @@ const InventoryMissingButton = (props) => {
 
     Object.keys(usedCryptCards.soft)
       .filter((card) => {
-        if (props.clan === 'All' || cryptCardBase[card].Clan === props.clan)
-          return true;
+        if (clan === 'All' || cryptCardBase[card].Clan === clan) return true;
       })
       .map((card) => {
         if (!inventoryCrypt[card]) {
@@ -111,14 +107,11 @@ const InventoryMissingButton = (props) => {
 
     Object.keys(usedLibraryCards.soft)
       .filter((card) => {
-        if (
-          props.type !== 'All' &&
-          !libraryCardBase[card].Type.includes(props.type)
-        )
+        if (type !== 'All' && !libraryCardBase[card].Type.includes(type))
           return false;
         if (
-          props.discipline !== 'All' &&
-          !libraryCardBase[card].Discipline.includes(props.discipline)
+          discipline !== 'All' &&
+          !libraryCardBase[card].Discipline.includes(discipline)
         )
           return false;
         return true;
@@ -138,8 +131,7 @@ const InventoryMissingButton = (props) => {
 
     Object.keys(usedCryptCards.hard)
       .filter((card) => {
-        if (props.clan === 'All' || cryptCardBase[card].Clan === props.clan)
-          return true;
+        if (clan === 'All' || cryptCardBase[card].Clan === clan) return true;
       })
       .map((card) => {
         if (!inventoryCrypt[card]) {
@@ -160,14 +152,11 @@ const InventoryMissingButton = (props) => {
 
     Object.keys(usedLibraryCards.hard)
       .filter((card) => {
-        if (
-          props.type !== 'All' &&
-          !libraryCardBase[card].Type.includes(props.type)
-        )
+        if (type !== 'All' && !libraryCardBase[card].Type.includes(type))
           return false;
         if (
-          props.discipline !== 'All' &&
-          !libraryCardBase[card].Discipline.includes(props.discipline)
+          discipline !== 'All' &&
+          !libraryCardBase[card].Discipline.includes(discipline)
         )
           return false;
         return true;
@@ -196,9 +185,10 @@ const InventoryMissingButton = (props) => {
     setMissingLibrary(missingLibrary);
   };
 
-  const handleCloseModal = () => {
+  const handleClose = () => {
     setShowModal(false);
-    isMobile && props.setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   useEffect(() => {
@@ -226,9 +216,7 @@ const InventoryMissingButton = (props) => {
             library: missingLibrary,
           }}
           show={showModal}
-          setShow={setShowModal}
-          handleClose={handleCloseModal}
-          setShowButtons={props.setShowButtons}
+          handleClose={handleClose}
           inInventory={true}
         />
       )}

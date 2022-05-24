@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { DeckRecommendationModal } from 'components';
 import { useApp } from 'context';
 
-function DeckRecommendation(props) {
-  const { cryptCardBase, libraryCardBase } = useApp();
+const DeckRecommendation = ({ setShow, isAuthor, deck }) => {
+  const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();
   const [showModal, setShowModal] = useState(false);
   const [crypt, setCrypt] = useState(undefined);
   const [library, setLibrary] = useState(undefined);
 
   const getRecommendation = () => {
-    const url = `${process.env.API_URL}deck/${props.deck.deckid}/recommendation`;
+    const url = `${process.env.API_URL}deck/${deck.deckid}/recommendation`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -35,22 +35,22 @@ function DeckRecommendation(props) {
 
   const handleCloseModal = () => {
     setShowModal(false);
-    props.setShow(false);
-    props.setShowFloatingButtons(true);
+    setShow(false);
+    setShowFloatingButtons(true);
   };
 
   useEffect(() => {
     setShowModal(true);
     getRecommendation();
-    props.setShowFloatingButtons(false);
+    setShowFloatingButtons(false);
   }, []);
 
   return (
     <>
       {showModal && (
         <DeckRecommendationModal
-          isAuthor={props.isAuthor}
-          activeDeck={props.deck}
+          isAuthor={isAuthor}
+          activeDeck={deck}
           handleClose={handleCloseModal}
           show={showModal}
           crypt={crypt}
@@ -59,6 +59,6 @@ function DeckRecommendation(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckRecommendation;

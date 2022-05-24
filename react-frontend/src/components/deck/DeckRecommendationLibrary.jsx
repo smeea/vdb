@@ -2,17 +2,15 @@ import React from 'react';
 import {
   ResultLibraryType,
   DeckRecommendationLibraryTable,
-  ResultLibraryModal,
+  ResultModal,
 } from 'components';
 import { useApp } from 'context';
 import { resultLibrarySort, getCardsGroupedBy } from 'utils';
 import { useModalCardController } from 'hooks';
 import { GROUPED_TYPE, TYPE } from 'utils/constants';
 
-function DeckRecommendationLibrary(props) {
-  const { cards, activeDeck, isAuthor, setShowFloatingButtons } = props;
-  const { isMobile } = useApp();
-  // const [LibraryByTypeTable, setLibraryByTypeTable] = useState([]);
+const DeckRecommendationLibrary = ({ cards, activeDeck, isAuthor }) => {
+  const { setShowFloatingButtons } = useApp();
 
   const sortedLibrary = resultLibrarySort(cards, GROUPED_TYPE);
   const libraryByType = getCardsGroupedBy(sortedLibrary, TYPE);
@@ -28,7 +26,7 @@ function DeckRecommendationLibrary(props) {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -45,13 +43,12 @@ function DeckRecommendationLibrary(props) {
             library={activeDeck.library}
             cards={libraryByType[cardtype]}
             isAuthor={isAuthor}
-            setShowFloatingButtons={setShowFloatingButtons}
           />
         </div>
       ))}
 
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}
@@ -59,6 +56,6 @@ function DeckRecommendationLibrary(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckRecommendationLibrary;

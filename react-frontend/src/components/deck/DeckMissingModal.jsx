@@ -4,13 +4,13 @@ import X from 'assets/images/icons/x.svg';
 import { DeckCrypt, DeckLibrary, DeckExportButton } from 'components';
 import { useApp } from 'context';
 
-function DeckMissingModal(props) {
+const DeckMissingModal = ({ deck, show, handleClose, inInventory }) => {
   const { isMobile } = useApp();
 
   return (
     <Modal
-      show={props.show}
-      onHide={props.handleClose}
+      show={show}
+      onHide={handleClose}
       animation={false}
       dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
@@ -21,11 +21,8 @@ function DeckMissingModal(props) {
             : 'no-border pt-3 pb-1 px-4'
         }
       >
-        <h5>{props.deck.name}</h5>
-        <Button
-          variant="outline-secondary"
-          onClick={() => props.setShow(false)}
-        >
+        <h5>{deck.name}</h5>
+        <Button variant="outline-secondary" onClick={() => handleClose()}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -33,13 +30,9 @@ function DeckMissingModal(props) {
         <Container fluid>
           <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
             <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
-              <div
-                className={
-                  isMobile || props.inInventory ? null : 'sticky-modal'
-                }
-              >
+              <div className={isMobile || inInventory ? null : 'sticky-modal'}>
                 <DeckCrypt
-                  cards={props.deck.crypt}
+                  cards={deck.crypt}
                   isAuthor={false}
                   inMissing={true}
                 />
@@ -47,7 +40,7 @@ function DeckMissingModal(props) {
             </Col>
             <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
               <DeckLibrary
-                cards={props.deck.library}
+                cards={deck.library}
                 isAuthor={false}
                 inMissing={true}
               />
@@ -63,9 +56,8 @@ function DeckMissingModal(props) {
             <div className="ps-2">
               <DeckExportButton
                 inMissing={true}
-                deck={props.deck}
+                deck={deck}
                 activeDeck={{ src: 'shared', deckid: 'deckInUrl' }}
-                setShowButtons={props.setShowButtons}
               />
             </div>
           </div>
@@ -73,6 +65,6 @@ function DeckMissingModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default DeckMissingModal;

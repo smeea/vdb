@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import LightningFill from 'assets/images/icons/lightning-fill.svg';
@@ -17,7 +17,7 @@ import twdDefaults from 'components/forms_data/defaultsTwdForm.json';
 import pdaDefaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 
-function Navigation(props) {
+const Navigation = (props) => {
   const { inventoryMode, toggleInventoryMode, isMobile, username, activeDeck } =
     useApp();
 
@@ -25,6 +25,8 @@ function Navigation(props) {
     useSearchForms();
 
   const { theme, toggleTheme } = useTheme();
+  const [showMenu, setShowMenu] = useState(false);
+
   const location = useLocation();
 
   let pdaUrl = '/pda';
@@ -64,10 +66,10 @@ function Navigation(props) {
       <Nav className="container justify-content-between px-0">
         <div className="d-flex align-items-center">
           {isMobile ? (
-            <NavMobileMenu />
+            <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
           ) : (
             <>
-              <LanguageSelect />
+              <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
               <div
                 className="d-flex small white-font px-3"
                 onClick={() => toggleTheme()}
@@ -84,12 +86,11 @@ function Navigation(props) {
           )}
           {username &&
             !isMobile &&
-            (location.pathname == '/decks' ||
-              location.pathname == '/crypt' ||
-              location.pathname == '/diff' ||
-              location.pathname == '/library' ||
-              location.pathname == '/pda' ||
-              location.pathname == '/twd') && (
+            location.pathname !== '/account' &&
+            location.pathname !== '/about' &&
+            location.pathname !== '/changelog' &&
+            location.pathname !== '/documentation' &&
+            location.pathname !== '/inventory' && (
               <div
                 className="d-flex align-items-center px-3"
                 onClick={() => {
@@ -157,6 +158,6 @@ function Navigation(props) {
       </Nav>
     </Navbar>
   );
-}
+};
 
 export default Navigation;

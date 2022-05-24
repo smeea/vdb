@@ -108,25 +108,33 @@ def get_crypt_by_traits(traits, crypt):
 
             elif trait == "1 bleed":
                 if re.search(
-                    r"{}".format("[:.] \+. bleed."), card["Card Text"], re.IGNORECASE
+                    r"{}".format("[:.] \+[1-9] bleed."),
+                    card["Card Text"],
+                    re.IGNORECASE,
                 ):
                     counter += 1
 
             elif trait == "2 bleed":
                 if re.search(
-                    r"{}".format("[:.] \+2 bleed."), card["Card Text"], re.IGNORECASE
+                    r"{}".format("[:.] \+[2-9] bleed."),
+                    card["Card Text"],
+                    re.IGNORECASE,
                 ):
                     counter += 1
 
             elif trait == "1 strength":
                 if re.search(
-                    r"{}".format("[:.] \+. strength."), card["Card Text"], re.IGNORECASE
+                    r"{}".format("[:.] \+[1-9] strength."),
+                    card["Card Text"],
+                    re.IGNORECASE,
                 ):
                     counter += 1
 
             elif trait == "2 strength":
                 if re.search(
-                    r"{}".format("[:.] \+2 strength."), card["Card Text"], re.IGNORECASE
+                    r"{}".format("[:.] \+[2-9] strength."),
+                    card["Card Text"],
+                    re.IGNORECASE,
                 ):
                     counter += 1
 
@@ -373,7 +381,7 @@ def get_crypt_by_group(group_list, crypt):
 
     match_cards = []
     for card in crypt:
-        if card["Group"] in group_list or card["Group"] == "any":
+        if card["Group"] in group_list or card["Group"] == "ANY":
             match_cards.append(card)
 
     return match_cards
@@ -384,20 +392,26 @@ def get_crypt_by_set(request, crypt):
         sets_data = json.load(set_file)
 
     BCP_START = "2018-01-01"
+    FUTURE = "2077-01-01"
     match_cards = []
     r_sets = request["value"]
+    r_print = request["print"] if "print" in request else None
+    r_age = request["age"] if "age" in request else None
 
     for idx, card in enumerate(crypt):
         dates = []
+        promo_dates = []
         for k in card["Set"].keys():
             if sets_data[k]["date"]:
                 dates.append(sets_data[k]["date"])
 
             elif k == "Promo":
                 dates.extend(card["Set"]["Promo"].keys())
+                promo_dates.extend(card["Set"]["Promo"].keys())
 
         crypt[idx]["min_date"] = min(dates)
         crypt[idx]["max_date"] = max(dates)
+        crypt[idx]["min_promo_date"] = min(promo_dates) if promo_dates else FUTURE
 
     for r_set in r_sets:
         r_date = sets_data[r_set]["date"] if r_set != "bcp" else None
@@ -407,35 +421,52 @@ def get_crypt_by_set(request, crypt):
                 continue
 
             if r_set == "bcp":
-                if "only in" in request or "first print" in request:
-                    if card["min_date"] >= BCP_START:
-                        match_cards.append(card)
+                if r_print:
+                    match r_print:
+                        case "only" | "first":
+                            if card["min_date"] >= BCP_START:
+                                match_cards.append(card)
 
                 elif card["max_date"] >= BCP_START:
                     match_cards.append(card)
 
-            elif "age" in request:
-                if request["age"] == "or-newer" and r_date <= card["max_date"]:
-                    match_cards.append(card)
+            else:
+                counter = 0
 
-                if request["age"] == "or-older" and r_date >= card["min_date"]:
-                    match_cards.append(card)
+                if r_age:
+                    if r_age == "or-newer" and r_date <= card["max_date"]:
+                        counter += 1
 
-                if request["age"] == "not-newer" and r_date >= card["max_date"]:
-                    match_cards.append(card)
+                    if r_age == "or-older" and r_date >= card["min_date"]:
+                        counter += 1
 
-                if request["age"] == "not-older" and r_date <= card["min_date"]:
-                    match_cards.append(card)
+                    if r_age == "not-newer" and r_date >= card["max_date"]:
+                        counter += 1
 
-            elif r_set in card["Set"]:
-                if "only in" in request:
-                    if len(card["Set"].keys()) == 1:
-                        match_cards.append(card)
+                    if r_age == "not-older" and r_date <= card["min_date"]:
+                        counter += 1
 
-                elif "first print" in request:
-                    if card["min_date"] == r_date:
-                        match_cards.append(card)
-                else:
+                elif r_set in card["Set"]:
+                    counter += 1
+
+                if r_print:
+                    counter -= 1
+
+                    if r_print == "only" and len(card["Set"].keys()) == 1:
+                        counter += 1
+
+                    if r_print == "first":
+                        if r_set == "Promo":
+                            if card["min_promo_date"] <= card["min_date"]:
+                                counter += 1
+
+                        elif card["min_date"] == r_date:
+                            counter += 1
+
+                    if r_print == "reprint" and card["min_date"] < r_date:
+                        counter += 1
+
+                if counter == 1:
                     match_cards.append(card)
 
     return match_cards
@@ -446,22 +477,25 @@ def get_crypt_by_precon(request, crypt):
         sets_data = json.load(set_file)
 
     BCP_START = "2018-01-01"
+    FUTURE = "2077-01-01"
+    PAST = "1984-01-01"
     match_cards = []
     reqs = request["value"]
+    r_print = request["print"] if "print" in request else None
 
     for idx, card in enumerate(crypt):
         dates = []
+        promo_dates = []
         for k in card["Set"].keys():
             if sets_data[k]["date"]:
                 dates.append(sets_data[k]["date"])
 
-        if dates:
-            crypt[idx]["min_date"] = min(dates)
-            crypt[idx]["max_date"] = max(dates)
-        else:
-            # Ignore Promos
-            crypt[idx]["min_date"] = "0"
-            crypt[idx]["max_date"] = "0"
+            elif k == "Promo":
+                promo_dates.extend(card["Set"]["Promo"].keys())
+
+        crypt[idx]["min_date"] = min(dates) if dates else FUTURE
+        crypt[idx]["max_date"] = max(dates) if dates else PAST
+        crypt[idx]["min_promo_date"] = min(promo_dates) if promo_dates else FUTURE
 
     for req in reqs:
         [r_set, r_subset] = req.split(":") if req != "bcp" else [None, None]
@@ -472,33 +506,47 @@ def get_crypt_by_precon(request, crypt):
                 continue
 
             if req == "bcp":
-                if "only in" in request:
-                    counter = 0
-                    for c_set in card["Set"].keys():
-                        if sets_data[c_set]["date"] >= BCP_START:
-                            counter += 1
+                if r_print:
+                    match r_print:
+                        case "only":
+                            counter = 0
+                            for c_set in card["Set"].keys():
+                                if sets_data[c_set]["date"] >= BCP_START:
+                                    counter += 1
 
-                    if counter == len(card["Set"].keys()):
-                        match_cards.append(card)
+                            if counter == len(card["Set"].keys()):
+                                match_cards.append(card)
 
-                elif "first print" in request:
-                    if card["min_date"] >= BCP_START:
-                        match_cards.append(card)
+                        case "first":
+                            if (
+                                card["min_date"] >= BCP_START
+                                and card["min_date"] <= card["min_promo_date"]
+                            ):
+                                match_cards.append(card)
 
                 elif card["max_date"] >= BCP_START:
                     match_cards.append(card)
 
             elif r_set in card["Set"] and r_subset in card["Set"][r_set]:
-                if "only in" in request:
-                    if (
-                        len(card["Set"].keys()) == 1
-                        and len(card["Set"][r_set].keys()) == 1
-                    ):
-                        match_cards.append(card)
+                if r_print:
+                    match r_print:
+                        case "only":
+                            if (
+                                len(card["Set"].keys()) == 1
+                                and len(card["Set"][r_set].keys()) == 1
+                            ):
+                                match_cards.append(card)
 
-                elif "first print" in request:
-                    if card["min_date"] == r_date:
-                        match_cards.append(card)
+                        case "first":
+                            if (
+                                card["min_date"] == r_date
+                                and card["min_date"] < card["min_promo_date"]
+                            ):
+                                match_cards.append(card)
+
+                        case "reprint":
+                            if min(card["min_date"], card["min_promo_date"]) < r_date:
+                                match_cards.append(card)
 
                 else:
                     match_cards.append(card)

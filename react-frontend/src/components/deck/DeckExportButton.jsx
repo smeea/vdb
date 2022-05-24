@@ -10,8 +10,9 @@ import Download from 'assets/images/icons/download.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-const DeckExportButton = (props) => {
-  const { username, decks, isMobile } = useApp();
+const DeckExportButton = ({ deck, src, inMissing }) => {
+  const { username, decks, setShowFloatingButtons, setShowMenuButtons } =
+    useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -25,7 +26,7 @@ const DeckExportButton = (props) => {
       <Dropdown.Item href="" onClick={() => saveDeck('twd')}>
         Save as file - TWD
       </Dropdown.Item>
-      {!props.inMissing && (
+      {!inMissing && (
         <>
           <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
             Save as file - Lackey
@@ -38,7 +39,7 @@ const DeckExportButton = (props) => {
       <Dropdown.Item href="" onClick={() => saveDeck('xlsx')}>
         Save as file - Excel
       </Dropdown.Item>
-      {!props.inMissing && (
+      {!inMissing && (
         <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
           Save as file - CSV
         </Dropdown.Item>
@@ -50,7 +51,7 @@ const DeckExportButton = (props) => {
       <Dropdown.Item href="" onClick={() => copyDeck('twd')}>
         Copy to Clipboard - TWD
       </Dropdown.Item>
-      {!props.inMissing && (
+      {!inMissing && (
         <>
           <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
             Copy to Clipboard - Lackey
@@ -60,7 +61,7 @@ const DeckExportButton = (props) => {
           </Dropdown.Item>
         </>
       )}
-      {!props.inMissing && username && decks && Object.keys(decks).length > 1 && (
+      {!inMissing && username && decks && Object.keys(decks).length > 1 && (
         <>
           <Dropdown.Divider />
           <Dropdown.Item href="" onClick={() => exportAll('text')}>
@@ -88,142 +89,137 @@ const DeckExportButton = (props) => {
 
   const copyDeck = (format) => {
     setError(false);
-    if (props.activeDeck) {
-      setSpinnerState(true);
+    setSpinnerState(true);
 
-      const input = {
-        deckid: props.activeDeck.deckid,
-        format: format,
-        src: props.activeDeck.src,
+    const input = {
+      deckid: deck.deckid,
+      format: format,
+      src: src,
+    };
+
+    if (input.deckid == 'deckInUrl') {
+      const cards = {};
+      Object.keys(deck.crypt).map((key) => {
+        cards[key] = deck.crypt[key].q;
+      });
+      Object.keys(deck.library).map((key) => {
+        cards[key] = deck.library[key].q;
+      });
+
+      input.deck = {
+        cards: cards,
+        name: deck.name,
+        description: deck.description,
+        author: deck.author,
       };
+    }
 
-      if (input.deckid == 'deckInUrl') {
-        const cards = {};
-        Object.keys(props.deck.crypt).map((key) => {
-          cards[key] = props.deck.crypt[key].q;
-        });
-        Object.keys(props.deck.library).map((key) => {
-          cards[key] = props.deck.library[key].q;
-        });
+    const url = `${process.env.API_URL}decks/export`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(input),
+    };
 
-        input.deck = {
-          cards: cards,
-          name: props.deck.name,
-          description: props.deck.description,
-          author: props.deck.author,
-        };
-      }
+    const fetchPromise = fetch(url, options);
 
-      const url = `${process.env.API_URL}decks/export`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
+    fetchPromise
+      .then((response) => response.json())
+      .then((data) => {
+        setSpinnerState(false);
+        navigator.clipboard.writeText(data.deck);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+      })
+      .catch((error) => {
+        setSpinnerState(false);
+        setError(true);
+      });
+  };
+
+  const saveDeck = (format) => {
+    setError(false);
+    setSpinnerState(true);
+
+    const input = {
+      deckid: deck.deckid,
+      format: format,
+      src: src,
+    };
+
+    if (input.deckid == 'deckInUrl') {
+      const cards = {};
+      Object.keys(deck.crypt).map((key) => {
+        cards[key] = deck.crypt[key].q;
+      });
+      Object.keys(deck.library).map((key) => {
+        cards[key] = deck.library[key].q;
+      });
+
+      input.deck = {
+        cards: cards,
+        name: deck.name,
+        description: deck.description,
+        author: deck.author,
       };
+    }
 
-      const fetchPromise = fetch(url, options);
+    const url = `${process.env.API_URL}decks/export`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(input),
+    };
 
+    const fetchPromise = fetch(url, options);
+
+    if (format === 'xlsx' || format === 'csv') {
       fetchPromise
-        .then((response) => response.json())
+        .then((response) => response.text())
         .then((data) => {
+          let mime = 'data:text/csv';
+          let extension = 'csv';
+          if (format === 'xlsx') {
+            mime =
+              'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+            extension = 'xlsx';
+          }
+          const file = `${mime};base64,${data}`;
+          saveAs(file, `${deck['name']}.${extension}`);
           setSpinnerState(false);
-          navigator.clipboard.writeText(data.deck);
-          isMobile && props.setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         })
         .catch((error) => {
           setSpinnerState(false);
           setError(true);
         });
     } else {
-      setError(true);
-    }
-  };
-
-  const saveDeck = (format) => {
-    setError(false);
-    if (props.activeDeck) {
-      setSpinnerState(true);
-
-      const input = {
-        deckid: props.activeDeck.deckid,
-        format: format,
-        src: props.activeDeck.src,
-      };
-
-      if (input.deckid == 'deckInUrl') {
-        const cards = {};
-        Object.keys(props.deck.crypt).map((key) => {
-          cards[key] = props.deck.crypt[key].q;
+      fetchPromise
+        .then((response) => response.json())
+        .then((data) => {
+          const file = new File(
+            [data.deck],
+            `${data.name} [${data.format}].txt`,
+            { type: 'text/plain;charset=utf-8' }
+          );
+          saveAs(file);
+          setSpinnerState(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
+        })
+        .catch((error) => {
+          setSpinnerState(false);
+          setError(true);
         });
-        Object.keys(props.deck.library).map((key) => {
-          cards[key] = props.deck.library[key].q;
-        });
-
-        input.deck = {
-          cards: cards,
-          name: props.deck.name,
-          description: props.deck.description,
-          author: props.deck.author,
-        };
-      }
-
-      const url = `${process.env.API_URL}decks/export`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
-      };
-
-      const fetchPromise = fetch(url, options);
-
-      if (format === 'xlsx' || format === 'csv') {
-        fetchPromise
-          .then((response) => response.text())
-          .then((data) => {
-            let mime = 'data:text/csv';
-            let extension = 'csv';
-            if (format === 'xlsx') {
-              mime =
-                'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-              extension = 'xlsx';
-            }
-            const file = `${mime};base64,${data}`;
-            saveAs(file, `${props.deck['name']}.${extension}`);
-            setSpinnerState(false);
-            isMobile && props.setShowButtons(false);
-          })
-          .catch((error) => {
-            setSpinnerState(false);
-            setError(true);
-          });
-      } else {
-        fetchPromise
-          .then((response) => response.json())
-          .then((data) => {
-            const file = new File(
-              [data.deck],
-              `${data.name} [${data.format}].txt`,
-              { type: 'text/plain;charset=utf-8' }
-            );
-            saveAs(file);
-            setSpinnerState(false);
-            isMobile && props.setShowButtons(false);
-          })
-          .catch((error) => {
-            setSpinnerState(false);
-            setError(true);
-          });
-      }
-    } else {
-      setError(true);
     }
   };
 
@@ -283,7 +279,7 @@ const DeckExportButton = (props) => {
     <>
       <DropdownButton
         as={ButtonGroup}
-        variant={props.inMissing ? 'primary' : 'secondary'}
+        variant={inMissing ? 'primary' : 'secondary'}
         title={
           <div
             title="Export Deck"
@@ -296,7 +292,7 @@ const DeckExportButton = (props) => {
                 <Download />
               )}
             </div>
-            Export {props.inMissing ? 'Missing' : 'Deck'}
+            Export {inMissing ? 'Missing' : 'Deck'}
           </div>
         }
       >

@@ -1,8 +1,7 @@
-import { loadUsingSWR, loadAndWait } from './utils';
 import preconDecksData from 'assets/data/preconDecks.json';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const VERSION = '2022-03-20';
+const VERSION = '2022-05-17';
 const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
 const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=${VERSION}`;
 const urlLocalizedCrypt = (lang) =>
@@ -10,34 +9,55 @@ const urlLocalizedCrypt = (lang) =>
 const urlLocalizedLibrary = (lang) =>
   `${process.env.ROOT_URL}cardbase_lib.${lang}.json`;
 
-export const getCryptBase = () => {
-  return loadUsingSWR(urlCrypt);
-};
+export const getCardBase = async () => {
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+  };
 
-export const getLibraryBase = () => {
-  return loadUsingSWR(urlLibrary);
-};
+  const cryptResponse = await fetch(urlCrypt, options);
+  const libraryResponse = await fetch(urlLibrary, options);
+  const crypt = await cryptResponse.json();
+  const library = await libraryResponse.json();
 
-export const getLocalizedCrypt = async (lang) => {
-  return await loadAndWait(urlLocalizedCrypt(lang));
-};
-
-export const getLocalizedLibrary = async (lang) => {
-  return await loadAndWait(urlLocalizedLibrary(lang));
-};
-
-export const getNativeText = (base = []) => {
-  const en = {};
-  Object.keys(base).map((id) => {
-    en[id] = {
-      Name: base[id]['Name'],
-      'Card Text': base[id]['Card Text'],
+  const nativeCrypt = {};
+  const nativeLibrary = {};
+  Object.values({ ...crypt, ...library }).map((card) => {
+    const target = card.Id > 200000 ? nativeCrypt : nativeLibrary;
+    target[card.Id] = {
+      Name: card['Name'],
+      'Card Text': card['Card Text'],
     };
   });
-  return en;
+
+  return {
+    crypt: crypt,
+    library: library,
+    nativeCrypt: nativeCrypt,
+    nativeLibrary: nativeLibrary,
+  };
 };
 
-export const getPreconDecks = () => {
+export const getLocalizedCardBase = async (lang) => {
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+  };
+
+  const cryptResponse = await fetch(urlLocalizedCrypt(lang), options);
+  const libraryResponse = await fetch(urlLocalizedLibrary(lang), options);
+  const crypt = await cryptResponse.json();
+  const library = await libraryResponse.json();
+
+  return {
+    crypt: crypt,
+    library: library,
+  };
+};
+
+export const getPreconDecks = (cryptCardBase, libraryCardBase) => {
   const precons = {};
 
   Object.keys(preconDecksData).map((set) => {
@@ -56,12 +76,12 @@ export const getPreconDecks = () => {
       Object.keys(preconDecksData[set][precon]).map((card) => {
         if (card > 200000) {
           precons[deckid]['crypt'][card] = {
-            c: getCryptBase()[card],
+            c: cryptCardBase[card],
             q: preconDecksData[set][precon][card],
           };
         } else {
           precons[deckid]['library'][card] = {
-            c: getLibraryBase()[card],
+            c: libraryCardBase[card],
             q: preconDecksData[set][precon][card],
           };
         }

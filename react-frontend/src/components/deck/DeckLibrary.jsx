@@ -6,7 +6,7 @@ import {
   DeckLibraryTotalInfo,
   DeckNewLibraryCard,
   ResultLibraryType,
-  ResultLibraryModal,
+  ResultModal,
   DeckDrawProbabilityModal,
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
@@ -16,12 +16,21 @@ import { useApp } from 'context';
 import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const DeckLibrary = (props) => {
-  const { cards, deckid, isAuthor, isPublic, inDeckTab, inMissing, inSearch } =
-    props;
-  const { showFloatingButtons, setShowFloatingButtons } = props;
-
-  const { nativeLibrary, isMobile } = useApp();
+const DeckLibrary = ({
+  cards,
+  deckid,
+  isAuthor,
+  isPublic,
+  inDeckTab,
+  inMissing,
+  inSearch,
+}) => {
+  const {
+    nativeLibrary,
+    isMobile,
+    showFloatingButtons,
+    setShowFloatingButtons,
+  } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -56,7 +65,7 @@ const DeckLibrary = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
@@ -87,14 +96,13 @@ const DeckLibrary = (props) => {
         isPublic={isPublic}
         inSearch={inSearch}
         inMissing={inMissing}
-        setShowFloatingButtons={setShowFloatingButtons}
         isModalOpen={shouldShowModal}
       />
     </div>
   ));
 
   const LibrarySideDeck = Object.keys(librarySideByType).map((cardtype) => (
-    <div key={cardtype}>
+    <div key={cardtype} className="pt-2">
       <ResultLibraryType
         cardtype={cardtype}
         total={0}
@@ -108,7 +116,6 @@ const DeckLibrary = (props) => {
         isPublic={isPublic}
         inSearch={inSearch}
         inMissing={inMissing}
-        setShowFloatingButtons={setShowFloatingButtons}
         isModalOpen={shouldShowModal}
       />
     </div>
@@ -132,7 +139,7 @@ const DeckLibrary = (props) => {
           isPublic={isPublic}
         />
         {showInfo && (
-          <div className="info-message ps-2">
+          <div className="info-message px-2">
             <DeckLibraryTotalInfo
               byDisciplines={libraryByDisciplinesTotal}
               byTypes={libraryByTypeTotal}
@@ -176,8 +183,10 @@ const DeckLibrary = (props) => {
       </div>
       {LibraryDeck}
       {librarySide.length > 0 && (
-        <div className="deck-sidelibrary pt-2">
-          <b>Side Library</b>
+        <div className="deck-sidelibrary pt-3">
+          <div className="info-message px-2 py-1">
+            <b>Side Library</b>
+          </div>
           {LibrarySideDeck}
         </div>
       )}
@@ -195,7 +204,7 @@ const DeckLibrary = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

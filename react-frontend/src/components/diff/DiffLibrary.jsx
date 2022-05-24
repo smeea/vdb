@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import {
   DiffLibraryTable,
   ResultLibraryType,
-  ResultLibraryModal,
+  ResultModal,
   DeckLibraryTotalInfo,
   DeckNewLibraryCard,
   DeckDrawProbabilityModal,
@@ -15,11 +15,17 @@ import { MASTER } from 'utils/constants';
 import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const DiffLibrary = (props) => {
-  const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
-  const { cardsFrom, cardsTo, deckid, isAuthor, isPublic, inMissing } = props;
-
-  const { nativeLibrary, isMobile } = useApp();
+const DiffLibrary = ({
+  handleClose,
+  showFloatingButtons,
+  cardsFrom,
+  cardsTo,
+  deckid,
+  isAuthor,
+  isPublic,
+  inMissing,
+}) => {
+  const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -54,7 +60,7 @@ const DiffLibrary = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
@@ -85,7 +91,6 @@ const DiffLibrary = (props) => {
         cardsTo={cardsTo}
         isAuthor={isAuthor}
         isPublic={isPublic}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
   ));
@@ -105,7 +110,6 @@ const DiffLibrary = (props) => {
         cardsTo={cardsTo}
         isAuthor={isAuthor}
         isPublic={isPublic}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
   ));
@@ -186,7 +190,7 @@ const DiffLibrary = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

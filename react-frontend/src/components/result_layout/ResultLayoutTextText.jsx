@@ -1,6 +1,6 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
-import icons from 'components/forms_data/disciplineIcons.json';
+import icons from 'assets/data/disciplineIcons.json';
 import { useApp } from 'context';
 import {
   CardPopover,

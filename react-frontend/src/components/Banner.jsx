@@ -15,6 +15,8 @@ function Banner(props) {
           className="logo-image"
           src={`${process.env.ROOT_URL}images/misc/logo.svg`}
           title="logo"
+          width="48"
+          height="48"
         />
         <div className="d-inline logo-text ps-2">VDB</div>
       </div>

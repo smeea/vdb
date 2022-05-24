@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResultDisciplineImage } from 'components';
-import disciplinesList from 'components/deck/forms_data/disciplinesList.json';
-import virtuesList from 'components/deck/forms_data/virtuesList.json';
+import disciplinesList from 'assets/data/disciplinesList.json';
+import virtuesList from 'assets/data/virtuesList.json';
 
 function TwdSearchFormDisciplines(props) {
   const disciplinesForm = disciplinesList.map((i, index) => {

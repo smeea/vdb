@@ -11,15 +11,15 @@ function DeckLibraryTotalInfo(props) {
 
   const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
     return (
-      <span key={idx} className="d-inline-block nobr ps-0 pe-3">
+      <div key={idx} className="d-inline-block nobr ps-0 pe-3">
         <div className="d-flex align-items-center">
           <ResultLibraryTypeImage value={t} />
-          {props.byTypes[t]}{' '}
+          <div className="d-flex px-1">{props.byTypes[t]}</div>
           <span className="gray">
             ({Math.round((props.byTypes[t] / total) * 100)}%)
           </span>
         </div>
-      </span>
+      </div>
     );
   });
 
@@ -33,46 +33,38 @@ function DeckLibraryTotalInfo(props) {
 
   const DisciplinesInfo = byDisciplinesSorted.map((d, idx) => {
     return (
-      <span key={idx} className="d-inline-block nobr ps-0 pe-3">
-        {d === 'any' ? (
-          <>
-            <span title="No Disciplines">
-              <b>ND</b>
-            </span>{' '}
-            {props.byDisciplines['any']}{' '}
-          </>
-        ) : (
-          <>
-            <ResultLibraryDisciplines value={d} />
-            {props.byDisciplines[d]}{' '}
-          </>
-        )}
-        <span className="gray">
-          ({Math.round((props.byDisciplines[d] / totalExMasters) * 100)}%)
-        </span>
-      </span>
+      <div key={idx} className="d-inline-block nobr ps-0 pe-3">
+        <div className="d-flex align-items-center">
+          <ResultLibraryDisciplines value={d} />
+          <div className="d-flex px-1">{props.byDisciplines[d]}</div>
+          <span className="gray">
+            ({Math.round((props.byDisciplines[d] / totalExMasters) * 100)}%)
+          </span>
+        </div>
+      </div>
     );
   });
 
   const ClansInfo = byClansSorted.map((d, idx) => {
     return (
-      <span key={idx} className="d-inline-block nobr ps-0 pe-3">
+      <div key={idx} className="d-inline-block nobr ps-0 pe-3">
         <div className="d-flex align-items-center">
-          <ResultLibraryClan value={d} /> {props.byClans[d]}{' '}
+          <ResultLibraryClan value={d} />
+          <div className="d-flex px-1">{props.byClans[d]}</div>
           <span className="gray">
             ({Math.round((props.byClans[d] / total) * 100)}%)
           </span>
         </div>
-      </span>
+      </div>
     );
   });
 
   return (
     <>
       <div className="py-1">{TypesInfo}</div>
-      <div className="pt-1">Excluding Masters:</div>
+      <div className="pt-1">Excluding Master / Event:</div>
       <div className="py-1">{DisciplinesInfo}</div>
-      <div className="pb-2">{ClansInfo}</div>
+      <div className="py-1">{ClansInfo}</div>
     </>
   );
 }

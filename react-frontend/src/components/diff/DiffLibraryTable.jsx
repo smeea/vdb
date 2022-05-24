@@ -22,7 +22,18 @@ import {
 import { drawProbability } from 'utils';
 import { useApp } from 'context';
 
-function DiffLibraryTable(props) {
+const DiffLibraryTable = ({
+  deckid,
+  cards,
+  cardsFrom,
+  cardsTo,
+  isPublic,
+  isAuthor,
+  placement,
+  showInfo,
+  libraryTotal,
+  handleModalCardOpen,
+}) => {
   const {
     decks,
     inventoryMode,
@@ -31,23 +42,16 @@ function DiffLibraryTable(props) {
     nativeLibrary,
     isMobile,
     deckCardChange,
+    setShowFloatingButtons,
   } = useApp();
-
-  let resultTrClass;
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
-  const cardRows = props.cards.map((card) => {
+  const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
-      props.handleModalCardOpen(card.c);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(card.c);
+      setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     let DisciplineOrClan;
     if (card.c.Clan) {
@@ -80,8 +84,8 @@ function DiffLibraryTable(props) {
       }
     }
 
-    const qFrom = props.cardsFrom[card.c.Id] ? props.cardsFrom[card.c.Id].q : 0;
-    const qTo = props.cardsTo[card.c.Id] ? props.cardsTo[card.c.Id].q : 0;
+    const qFrom = cardsFrom[card.c.Id] ? cardsFrom[card.c.Id].q : 0;
+    const qTo = cardsTo[card.c.Id] ? cardsTo[card.c.Id].q : 0;
 
     const DiffStatus = () => {
       if (qFrom == qTo) {
@@ -109,8 +113,8 @@ function DiffLibraryTable(props) {
 
     return (
       <React.Fragment key={card.c.Id}>
-        <tr className={resultTrClass}>
-          {props.isAuthor && !props.isPublic ? (
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+          {isAuthor && !isPublic ? (
             <>
               {inventoryMode && decks ? (
                 <OverlayTrigger
@@ -121,12 +125,12 @@ function DiffLibraryTable(props) {
                     <DeckCardQuantity
                       cardid={card.c.Id}
                       q={qFrom}
-                      deckid={props.deckid}
+                      deckid={deckid}
                       cardChange={deckCardChange}
                       inInventory={inInventory}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
-                      inventoryType={decks[props.deckid].inventory_type}
+                      inventoryType={decks[deckid].inventory_type}
                     />
                   </td>
                 </OverlayTrigger>
@@ -135,7 +139,7 @@ function DiffLibraryTable(props) {
                   <DeckCardQuantity
                     cardid={card.c.Id}
                     q={qFrom}
-                    deckid={props.deckid}
+                    deckid={deckid}
                     cardChange={deckCardChange}
                   />
                 </td>
@@ -149,7 +153,7 @@ function DiffLibraryTable(props) {
           </td>
 
           <ConditionalOverlayTrigger
-            placement={props.placement}
+            placement={placement}
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
@@ -176,7 +180,7 @@ function DiffLibraryTable(props) {
               value={nativeLibrary[card.c.Id]['Card Text']}
             />
           </td>
-          {props.showInfo && (
+          {showInfo && (
             <td className="prob px-1">
               {isMobile ? (
                 <div
@@ -185,7 +189,7 @@ function DiffLibraryTable(props) {
                       name: card.c['Name'],
                       prob: (
                         <DeckDrawProbabilityText
-                          N={props.libraryTotal}
+                          N={libraryTotal}
                           n={7}
                           k={card.q}
                         />
@@ -194,7 +198,7 @@ function DiffLibraryTable(props) {
                   }
                 >
                   {`${Math.floor(
-                    drawProbability(1, props.libraryTotal, 7, card.q) * 100
+                    drawProbability(1, libraryTotal, 7, card.q) * 100
                   )}%`}
                 </div>
               ) : (
@@ -202,14 +206,14 @@ function DiffLibraryTable(props) {
                   placement="right"
                   text={
                     <DeckDrawProbabilityText
-                      N={props.libraryTotal}
+                      N={libraryTotal}
                       n={7}
                       k={card.q}
                     />
                   }
                 >
                   <div>{`${Math.floor(
-                    drawProbability(1, props.libraryTotal, 7, card.q) * 100
+                    drawProbability(1, libraryTotal, 7, card.q) * 100
                   )}%`}</div>
                 </OverlayTooltip>
               )}
@@ -233,6 +237,6 @@ function DiffLibraryTable(props) {
       )}
     </>
   );
-}
+};
 
 export default DiffLibraryTable;

@@ -97,8 +97,8 @@ function AccountChangePassword(props) {
   };
 
   return (
-    <>
-      <h6 className="d-flex align-items-center px-1">
+    <div>
+      <h6 className="d-flex align-items-center p-1">
         <LockFill />
         <span className="ms-2">Change password</span>
       </h6>
@@ -185,7 +185,7 @@ function AccountChangePassword(props) {
           placement="bottom"
         ></ErrorOverlay>
       </Form>
-    </>
+    </div>
   );
 }
 

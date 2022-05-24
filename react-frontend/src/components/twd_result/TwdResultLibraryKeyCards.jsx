@@ -6,7 +6,7 @@ import {
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
   ResultLibraryClan,
-  ResultLibraryModal,
+  ResultModal,
   ConditionalOverlayTrigger,
 } from 'components';
 import { GROUPED_TYPE, ASCII_NAME } from 'utils/constants';
@@ -14,18 +14,19 @@ import { useApp } from 'context';
 import { countCards, resultLibrarySort, getHardTotal } from 'utils';
 import { useModalCardController } from 'hooks';
 
-const TwdResultLibraryKeyCards = (props) => {
-  const { library, setShowFloatingButtons } = props;
-  const { inventoryLibrary, usedLibraryCards, inventoryMode, isMobile } =
-    useApp();
+const TwdResultLibraryKeyCards = ({ library }) => {
+  const {
+    inventoryLibrary,
+    usedLibraryCards,
+    inventoryMode,
+    isMobile,
+    setShowFloatingButtons,
+  } = useApp();
 
   const sortedLibrary = resultLibrarySort(Object.values(library), GROUPED_TYPE);
   const libraryTotal = countCards(sortedLibrary);
 
   const keyCards = sortedLibrary.filter((card) => card.q >= 4);
-
-  let resultTrClass = 'result-even';
-
   keyCards.sort((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
 
   // Modal Card Controller
@@ -39,20 +40,14 @@ const TwdResultLibraryKeyCards = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
-  const cardRows = keyCards.map((card, index) => {
+  const cardRows = keyCards.map((card, idx) => {
     const handleClick = () => {
-      handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      handleModalCardOpen(idx);
+      setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
 
     let inInventory = 0;
     let hardUsedTotal = 0;
@@ -68,7 +63,7 @@ const TwdResultLibraryKeyCards = (props) => {
     }
 
     return (
-      <tr key={card.c.Id} className={resultTrClass}>
+      <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
           <ConditionalOverlayTrigger
             overlay={<UsedPopover cardid={card.c.Id} />}
@@ -125,7 +120,7 @@ const TwdResultLibraryKeyCards = (props) => {
         </table>
       </div>
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

@@ -4,57 +4,68 @@ import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-function ModalConfirmation(props) {
+const ModalConfirmation = ({
+  show,
+  headerText,
+  mainText,
+  buttonText,
+  withConfirmation,
+  handleConfirm,
+  handleCancel,
+  nested,
+}) => {
   const { isMobile } = useApp();
   const [confirmation, setConfirmation] = useState('');
   const [errorConfirmation, setErrorConfirmation] = useState(false);
   const refConfirmation = useRef(null);
 
-  const handleConfirm = () => {
-    if (props.withConfirmation) {
+  const confirm = () => {
+    if (withConfirmation) {
       if (confirmation === 'YES') {
         setErrorConfirmation(false);
-        props.handleConfirm();
+        setConfirmation('');
+        handleConfirm();
       } else {
         setErrorConfirmation(true);
       }
     } else {
-      props.handleConfirm();
+      handleConfirm();
     }
   };
 
-  const handleCancel = () => {
+  const cancel = () => {
     setErrorConfirmation(false);
     setConfirmation('');
-    props.handleCancel();
+    handleCancel();
   };
 
   return (
     <>
       <Modal
-        show={props.show}
-        onHide={handleCancel}
+        show={show}
+        onHide={cancel}
         animation={false}
         centered={isMobile}
+        dialogClassName={nested ? 'nested-modal' : 'no-border'}
       >
         <Modal.Header
           className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
         >
-          <h5>{props.headerText}</h5>
-          <Button variant="outline-secondary" onClick={handleCancel}>
+          <h5>{headerText}</h5>
+          <Button variant="outline-secondary" onClick={cancel}>
             <X width="32" height="32" viewBox="0 0 16 16" />
           </Button>
         </Modal.Header>
-        {props.mainText && (
+        {mainText && (
           <Modal.Body>
             <div className="pt-2">
-              <h6>{props.mainText}</h6>
+              <h6>{mainText}</h6>
             </div>
           </Modal.Body>
         )}
         <Modal.Footer>
-          {props.withConfirmation && (
-            <Form onSubmit={handleConfirm}>
+          {withConfirmation && (
+            <Form onSubmit={confirm}>
               <InputGroup>
                 <FormControl
                   placeholder="Type 'YES' to confirm"
@@ -75,16 +86,16 @@ function ModalConfirmation(props) {
               </ErrorOverlay>
             </Form>
           )}
-          <Button variant="danger" onClick={handleConfirm}>
-            {props.buttonText}
+          <Button variant="danger" onClick={confirm}>
+            {buttonText}
           </Button>
-          <Button variant="primary" onClick={handleCancel}>
+          <Button variant="primary" onClick={cancel}>
             Cancel
           </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
-}
+};
 
 export default ModalConfirmation;

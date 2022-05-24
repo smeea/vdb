@@ -1,14 +1,15 @@
-from flask import jsonify, request, abort, Response
+from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user, login_required
-import json
 
 from api import app, db, login
 from models import User
+from routes.decks_routes import parse_user_decks
+from routes.inventory_routes import parse_user_inventory
 
 
 @login.unauthorized_handler
 def unauthorized_handler():
-    return Response(json.dumps({"Not logged in": True}), 401)
+    abort(401)
 
 
 @app.route("/api/register", methods=["POST"])
@@ -16,18 +17,19 @@ def register():
     if current_user.is_authenticated:
         return jsonify({"already logged as:": current_user.username})
 
-    try:
+    if User.query.filter_by(username=request.json["username"].lower()).first():
+        abort(409)
+    else:
         user = User(
             username=request.json["username"].lower(),
+            email=request.json["email"],
             public_name=request.json["username"],
         )
         user.set_password(request.json["password"])
         db.session.add(user)
         db.session.commit()
         login_user(user)
-        return jsonify({"registered as": user.username})
-    except Exception:
-        abort(400)
+        return jsonify({"username": user.username, "email": user.email})
 
 
 @app.route("/api/login", methods=["GET", "POST"])
@@ -39,10 +41,13 @@ def login():
                     "username": current_user.username,
                     "email": current_user.email,
                     "public_name": current_user.public_name,
+                    "decks": parse_user_decks(current_user.decks.all()),
+                    "inventory": parse_user_inventory(current_user.inventory),
                 }
             )
         else:
             return jsonify({"username": ""})
+
     elif request.method == "POST":
         try:
             user = User.query.filter_by(
@@ -50,12 +55,15 @@ def login():
             ).first()
             if user is None or not user.check_password(request.json["password"]):
                 return jsonify({"error": "invalid username or password"}), 401
+
             login_user(user, remember=request.json["remember"])
             return jsonify(
                 {
                     "username": current_user.username,
                     "email": current_user.email,
                     "public_name": current_user.public_name,
+                    "decks": parse_user_decks(current_user.decks.all()),
+                    "inventory": parse_user_inventory(current_user.inventory),
                 }
             )
         except KeyError:

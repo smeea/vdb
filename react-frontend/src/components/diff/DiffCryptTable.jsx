@@ -23,7 +23,21 @@ import {
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 import { useApp } from 'context';
 
-function DiffCryptTable(props) {
+const DiffCryptTable = ({
+  deckid,
+  disciplinesSet,
+  keyDisciplines,
+  nonKeyDisciplines,
+  cards,
+  cardsFrom,
+  cardsTo,
+  isPublic,
+  isAuthor,
+  placement,
+  showInfo,
+  cryptTotal,
+  handleModalCardOpen,
+}) => {
   const {
     decks,
     inventoryMode,
@@ -32,32 +46,26 @@ function DiffCryptTable(props) {
     isMobile,
     isWide,
     deckCardChange,
+    setShowFloatingButtons,
   } = useApp();
 
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
-  let resultTrClass;
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
   let maxDisciplines = 0;
-  props.cards.map((card) => {
+  cards.map((card) => {
     const n = Object.keys(card.c.Disciplines).length;
     if (maxDisciplines < n) {
       maxDisciplines = n;
     }
   });
 
-  const cardRows = props.cards.map((card) => {
+  const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
-      props.handleModalCardOpen(card.c);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(card.c);
+      setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     let inInventory = 0;
     let softUsedMax = 0;
@@ -74,8 +82,8 @@ function DiffCryptTable(props) {
       }
     }
 
-    const qFrom = props.cardsFrom[card.c.Id] ? props.cardsFrom[card.c.Id].q : 0;
-    const qTo = props.cardsTo[card.c.Id] ? props.cardsTo[card.c.Id].q : 0;
+    const qFrom = cardsFrom[card.c.Id] ? cardsFrom[card.c.Id].q : 0;
+    const qTo = cardsTo[card.c.Id] ? cardsTo[card.c.Id].q : 0;
 
     const DiffStatus = () => {
       if (qFrom == qTo) {
@@ -103,8 +111,8 @@ function DiffCryptTable(props) {
 
     return (
       <React.Fragment key={card.c.Id}>
-        <tr className={resultTrClass}>
-          {props.isAuthor && !props.isPublic ? (
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+          {isAuthor && !isPublic ? (
             <>
               {inventoryMode && decks ? (
                 <OverlayTrigger
@@ -115,12 +123,12 @@ function DiffCryptTable(props) {
                     <DeckCardQuantity
                       cardid={card.c.Id}
                       q={qFrom}
-                      deckid={props.deckid}
+                      deckid={deckid}
                       cardChange={deckCardChange}
                       inInventory={inInventory}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
-                      inventoryType={decks[props.deckid].inventory_type}
+                      inventoryType={decks[deckid].inventory_type}
                     />
                   </td>
                 </OverlayTrigger>
@@ -129,7 +137,7 @@ function DiffCryptTable(props) {
                   <DeckCardQuantity
                     cardid={card.c.Id}
                     q={qFrom}
-                    deckid={props.deckid}
+                    deckid={deckid}
                     cardChange={deckCardChange}
                   />
                 </td>
@@ -148,12 +156,12 @@ function DiffCryptTable(props) {
             <ResultCryptCapacity value={card.c.Capacity} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
-            {props.disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
+            {disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
               <DeckCryptDisciplines
                 value={card.c.Disciplines}
-                disciplinesSet={props.disciplinesSet}
-                keyDisciplines={props.keyDisciplines}
-                nonKeyDisciplines={props.nonKeyDisciplines}
+                disciplinesSet={disciplinesSet}
+                keyDisciplines={keyDisciplines}
+                nonKeyDisciplines={nonKeyDisciplines}
               />
             ) : (
               <ResultCryptDisciplines
@@ -164,7 +172,7 @@ function DiffCryptTable(props) {
           </td>
 
           <ConditionalOverlayTrigger
-            placement={props.placement}
+            placement={placement}
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
@@ -199,7 +207,7 @@ function DiffCryptTable(props) {
               </td>
             </>
           )}
-          {props.showInfo && (
+          {showInfo && (
             <td className="prob px-1">
               {isMobile ? (
                 <div
@@ -208,7 +216,7 @@ function DiffCryptTable(props) {
                       name: card.c['Name'],
                       prob: (
                         <DeckDrawProbabilityText
-                          N={props.cryptTotal}
+                          N={cryptTotal}
                           n={4}
                           k={card.q}
                         />
@@ -217,22 +225,18 @@ function DiffCryptTable(props) {
                   }
                 >
                   {`${Math.floor(
-                    drawProbability(1, props.cryptTotal, 4, card.q) * 100
+                    drawProbability(1, cryptTotal, 4, card.q) * 100
                   )}%`}
                 </div>
               ) : (
                 <OverlayTooltip
                   placement="right"
                   text={
-                    <DeckDrawProbabilityText
-                      N={props.cryptTotal}
-                      n={4}
-                      k={card.q}
-                    />
+                    <DeckDrawProbabilityText N={cryptTotal} n={4} k={card.q} />
                   }
                 >
                   <div>{`${Math.floor(
-                    drawProbability(1, props.cryptTotal, 4, card.q) * 100
+                    drawProbability(1, cryptTotal, 4, card.q) * 100
                   )}%`}</div>
                 </OverlayTooltip>
               )}
@@ -256,6 +260,6 @@ function DiffCryptTable(props) {
       )}
     </>
   );
-}
+};
 
 export default DiffCryptTable;

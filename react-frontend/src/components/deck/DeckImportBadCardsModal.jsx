@@ -28,10 +28,10 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
     }
   };
 
-  const handleSetCardId = (cardid, idx) => {
+  const handleSetCard = (card, idx) => {
     setCards((prevState) => {
       const newState = { ...prevState };
-      newState[idx].cardid = cardid;
+      newState[idx].cardid = card.Id;
       return newState;
     });
   };
@@ -67,8 +67,9 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
               </Col>
               <Col md={6}>
                 <QuickSelect
-                  setCardId={(cardid) => handleSetCardId(cardid, idx)}
-                  selectedCard={cards[idx]?.cardid}
+                  setCard={(card) => handleSetCard(card, idx)}
+                  selectedCardid={cards[idx]?.cardid}
+                  inBadImport={true}
                 />
               </Col>
             </Row>

@@ -6,15 +6,16 @@ from random import random
 from search_decks import search_decks
 from search_decks_components import sanitize_twd, match_inventory
 from api import app
+from models import Deck
 
 
-with open("twdLocations.json", "r") as twd_locations_file:
+with open("twd_locations.json", "r") as twd_locations_file:
     twd_locations = json.load(twd_locations_file)
 
-with open("twdPlayers.json", "r") as twd_players_file:
+with open("twd_players.json", "r") as twd_players_file:
     twd_players = json.load(twd_players_file)
 
-with open("twdDecks.json", "r") as twd_file:
+with open("twd_decks.json", "r") as twd_file:
     twd_decks = json.load(twd_file)
     for deck in twd_decks:
         deck["crypt"] = {}
@@ -35,6 +36,34 @@ def getLocations():
 @app.route("/api/twd/authors", methods=["GET"])
 def getTwdAuthors():
     return jsonify(twd_players)
+
+
+@app.route("/api/twd/similar", methods=["POST"])
+def searchSimilarTwd():
+    cards = {}
+
+    if "deckid" in request.json:
+        deckid = request.json["deckid"]
+
+        if len(deckid) == 32:
+            cards = Deck.query.get(deckid).cards
+
+        else:
+            with open("twd_decks_by_id.json", "r") as twd_decks_file:
+                twd_decks = json.load(twd_decks_file)
+                for cardid, q in twd_decks[deckid]["cards"].items():
+                    cards[int(cardid)] = q
+
+    else:
+        for cardid, q in request.json["cards"].items():
+            cards[int(cardid)] = q
+
+    result = search_decks([{"option": "similar", "value": cards}], twd_decks)
+
+    if result != 400:
+        return jsonify(result)
+    else:
+        abort(400)
 
 
 @app.route("/api/twd/new/<int:quantity>", methods=["GET"])
@@ -76,6 +105,7 @@ def searchTwdRoute():
         "capacity",
         "disciplines",
         "cardtypes",
+        "similar",
     ]
     queries = [
         {"option": q, "value": request.json[q]}

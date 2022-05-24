@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Banner } from 'components';
 
-function Changelog(props) {
+const Changelog = (props) => {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
@@ -11,6 +11,85 @@ function Changelog(props) {
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
+
+            <h6>2022-05-17:</h6>
+            <ul>
+              <li>Update card base with New Blood set</li>
+              <li>Update TWDA</li>
+              <li>
+                Add QR-code (live link to editable deck and non-editable
+                deck-in-url) as an option for Copy Deck URL
+              </li>
+              <li>
+                Add Freeze Deck button (in advanced deck select and after deck
+                name) which will disable deck crypt/library edition unless
+                turned off to protect established decks from misclicks and
+                everything
+              </li>
+              <li>
+                Add Reprint option for Set/Precon search which will return only
+                reprinted cards (will includes Promos if first printed as such)
+              </li>
+              <li>
+                Newly add inventory cards (which were not in inventory) will
+                have q-ty box focused by default to speed up adding collection
+              </li>
+              <li>Add sorting for inventory</li>
+              <li>
+                Moved card selector to bottom in /Cards on mobile (useful for
+                those having thumbs shorter than 5&quot;)
+              </li>
+              <li>Fixed card selector auto-focus on mobile</li>
+              <li>Many other fixes</li>
+            </ul>
+
+            <h6>2022-05-07:</h6>
+            <ul>
+              <li>
+                Significant internal reworks which will slightly decrease
+                network calls and will help in the future development (but as a
+                result it may bring some new bugs, so dont hesitate to report
+                and refresh the page as a first measure when encountering new
+                problem)
+              </li>
+              <li>
+                Split Anthology set into Anthology (2017, 100-cards bundle) and
+                Anthology I (2019, 89-card bundle)
+              </li>
+              <li>Fix deck preview in inventory import from deck/precon</li>
+              <li>
+                Show q-ty of decks/precons you have in inventory when adding
+                card from decks/precons
+              </li>
+              <li>
+                Fix deck import (including to accept The Cardname and Cardname,
+                The and some other bugs)
+              </li>
+              <li>Fix deck library detailed info (no-discipline cards)</li>
+              <li>Some other fixes</li>
+            </ul>
+
+            <h6>2022-04-30:</h6>
+            <ul>
+              <li>
+                Add search similar Deck in TWD/PDA (symmetry-iconed button in
+                Decks page)
+              </li>
+              <li>Improved deck description layout in TWD (players count)</li>
+              <li>
+                Add separate messages for NO CARDS FOUND and NO CONNECTION
+              </li>
+              <li>Other bug fixes</li>
+            </ul>
+
+            <h6>2022-04-15:</h6>
+            <ul>
+              <li>
+                Add Crypt/Library cards compare feature (open card window and
+                click Compare Card button [Magnifiying Glass with Heart icon])
+              </li>
+              <li>Bug fixes and small improvements</li>
+            </ul>
 
             <h6>2022-04-09:</h6>
             <ul>
@@ -1226,6 +1305,6 @@ function Changelog(props) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Changelog;

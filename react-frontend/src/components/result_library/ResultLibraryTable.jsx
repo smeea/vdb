@@ -8,7 +8,7 @@ import {
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
-  ResultLibraryModal,
+  ResultModal,
   ResultLibraryName,
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
@@ -19,9 +19,7 @@ import { getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const ResultLibraryTable = (props) => {
-  const { resultCards, library, placement, setShowFloatingButtons } = props;
-
+const ResultLibraryTable = ({ resultCards, library, placement }) => {
   const {
     activeDeck,
     inventoryLibrary,
@@ -31,9 +29,8 @@ const ResultLibraryTable = (props) => {
     nativeLibrary,
     isMobile,
     isDesktop,
+    setShowFloatingButtons,
   } = useApp();
-
-  let resultTrClass;
 
   const {
     currentModalCard,
@@ -45,20 +42,14 @@ const ResultLibraryTable = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
-  const cardRows = resultCards.map((card, index) => {
+  const cardRows = resultCards.map((card, idx) => {
     const handleClick = () => {
-      handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      handleModalCardOpen(idx);
+      setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     const inDeck = (library && library[card.Id] && library[card.Id].q) || 0;
 
@@ -77,7 +68,7 @@ const ResultLibraryTable = (props) => {
 
     return (
       <React.Fragment key={card.Id}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {activeDeck.src === 'my' && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
@@ -90,7 +81,7 @@ const ResultLibraryTable = (props) => {
           )}
           {inventoryMode && (
             <OverlayTrigger
-              placement={isDesktop ? 'left' : 'right'}
+              placement={isDesktop ? 'left' : 'bottom'}
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <td className="used">
@@ -161,7 +152,7 @@ const ResultLibraryTable = (props) => {
         <tbody>{cardRows}</tbody>
       </table>
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

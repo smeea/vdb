@@ -1,13 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Overlay, Popover } from 'react-bootstrap';
 import FlagEn from 'assets/images/flags/en.svg';
 import FlagEs from 'assets/images/flags/es.svg';
 import FlagFr from 'assets/images/flags/fr.svg';
 import { useApp } from 'context';
 
-const LanguageSelect = (props) => {
+const LanguageSelect = ({ showMenu, setShowMenu }) => {
   const { isMobile, lang, changeLang } = useApp();
-  const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
 
   const languages = { 'en-EN': FlagEn, 'es-ES': FlagEs, 'fr-FR': FlagFr };
@@ -21,7 +20,6 @@ const LanguageSelect = (props) => {
         onClick={() => {
           changeLang(l);
           setShowMenu(false);
-          isMobile && props.setShowMenu(false);
         }}
       >
         <Flag width="22" height="22" viewBox="0 0 515 525" />
@@ -56,9 +54,6 @@ const LanguageSelect = (props) => {
             <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
           </div>
           <Overlay
-            target={menuRef}
-            show={showMenu}
-            placement="bottom"
             popperConfig={{
               modifiers: [
                 {
@@ -69,6 +64,10 @@ const LanguageSelect = (props) => {
                 },
               ],
             }}
+            transition={false}
+            placement="bottom"
+            target={menuRef}
+            show={showMenu}
           >
             {({
               placement,

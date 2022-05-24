@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Stack } from 'react-bootstrap';
-import { InventoryLibraryTable, InventoryFilterForm } from 'components';
+import {
+  InventoryLibraryTable,
+  InventoryFilterForm,
+  SortButton,
+} from 'components';
 import { useApp } from 'context';
 import { cardtypeSorted } from 'utils/constants';
-import disciplinesList from 'components/deck/forms_data/disciplinesList.json';
-import virtuesList from 'components/deck/forms_data/virtuesList.json';
+import disciplinesList from 'assets/data/disciplinesList.json';
+import virtuesList from 'assets/data/virtuesList.json';
 
-function InventoryLibrary({
+const InventoryLibrary = ({
   compact,
   withCompact,
   category,
   cards,
-  showFloatingButtons,
-  setShowFloatingButtons,
   type,
   setType,
   discipline,
   setDiscipline,
-}) {
+}) => {
   const { usedLibraryCards, libraryCardBase } = useApp();
+  const [sortMethod, setSortMethod] = useState('Name');
+  const sortMethods = {
+    Name: 'N',
+    Quantity: 'Q',
+    Type: 'T',
+    'Clan / Discipline': 'C/D',
+    'Cost - Min to Max': 'C↑',
+    'Cost - Max to Min': 'C↓',
+  };
 
   const libraryByType = {};
   const libraryByTypeTotal = {};
@@ -362,9 +373,7 @@ function InventoryLibrary({
                   target="discipline"
                 />
               </Stack>
-            </div>
-            <div className="gray px-1">
-              <b>
+              <div className="d-flex justify-content-end gray bold px-1">
                 {missingLibraryByTypeTotal[type] ? (
                   <>
                     {missingLibraryByTypeTotal[type]} (
@@ -372,12 +381,18 @@ function InventoryLibrary({
                     miss
                   </>
                 ) : null}
-              </b>
+              </div>
             </div>
+            <SortButton
+              sortMethods={sortMethods}
+              sortMethod={sortMethod}
+              setSortMethod={setSortMethod}
+            />
           </div>
         </>
       )}
       <InventoryLibraryTable
+        sortMethod={sortMethod}
         compact={compact}
         withCompact={withCompact}
         cards={
@@ -387,11 +402,9 @@ function InventoryLibrary({
                 return libraryByDiscipline[discipline][i.c.Id];
               })
         }
-        showFloatingButtons={showFloatingButtons}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
     </>
   );
-}
+};
 
 export default InventoryLibrary;

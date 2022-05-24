@@ -5,17 +5,37 @@ import {
   DiffCryptTable,
   DeckCryptTotalInfo,
   DeckNewCryptCard,
-  ResultCryptModal,
+  ResultModal,
   DeckCryptHeader,
 } from 'components';
-
 import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
-const DiffCrypt = (props) => {
-  const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
-  const { cardsFrom, cardsTo, deckid, isPublic, isAuthor, inMissing } = props;
-  const { cryptDeckSort, changeTimer, isMobile } = useApp();
+const DiffCrypt = ({
+  handleClose,
+  showFloatingButtons,
+  cardsFrom,
+  cardsTo,
+  deckid,
+  isPublic,
+  isAuthor,
+  inMissing,
+}) => {
+  const {
+    cryptDeckSort,
+    changeCryptDeckSort,
+    changeTimer,
+    isMobile,
+    setShowFloatingButtons,
+  } = useApp();
+
+  const sortMethods = {
+    Quantity: 'Q',
+    Capacity: 'C',
+    Name: 'N',
+    Group: 'G',
+    Clan: 'Cl',
+  };
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -52,7 +72,7 @@ const DiffCrypt = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -66,6 +86,9 @@ const DiffCrypt = (props) => {
         hasBanned={hasBanned}
         isAuthor={isAuthor}
         isPublic={isPublic}
+        sortMethods={sortMethods}
+        sortMethod={cryptDeckSort}
+        setSortMethod={changeCryptDeckSort}
       />
       {showInfo && (
         <div className="info-message px-2">
@@ -118,7 +141,6 @@ const DiffCrypt = (props) => {
         isPublic={isPublic}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
@@ -136,7 +158,6 @@ const DiffCrypt = (props) => {
             isPublic={isPublic}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
-            setShowFloatingButtons={setShowFloatingButtons}
           />
         </div>
       )}
@@ -154,7 +175,7 @@ const DiffCrypt = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

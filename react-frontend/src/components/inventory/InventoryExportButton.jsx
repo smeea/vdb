@@ -11,7 +11,7 @@ import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
 const InventoryExportButton = (props) => {
-  const { isMobile } = useApp();
+  const { setShowMenuButtons, setShowFloatingButtons } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -64,7 +64,8 @@ const InventoryExportButton = (props) => {
       .then((response) => response.json())
       .then((data) => {
         navigator.clipboard.writeText(data.deck);
-        isMobile && props.setShowButtons(false);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
         setSpinnerState(false);
       })
       .catch((error) => {
@@ -111,7 +112,8 @@ const InventoryExportButton = (props) => {
           const file = `${mime};base64,${data}`;
           saveAs(file, `Inventory ${date}.${extension}`);
           setSpinnerState(false);
-          isMobile && props.setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         })
         .catch((error) => {
           setSpinnerState(false);
@@ -128,7 +130,8 @@ const InventoryExportButton = (props) => {
           );
           FileSaver.saveAs(file);
           setSpinnerState(false);
-          isMobile && props.setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         })
         .catch((error) => {
           setError(true);

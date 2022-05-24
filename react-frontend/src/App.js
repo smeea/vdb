@@ -24,60 +24,13 @@ import Navigation from 'pages/Navigation.jsx';
 import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
 
-import 'assets/css/bootstrap.min.css';
+import '~/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'assets/css/style.styl';
 
 const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
 
-function App(props) {
-  const {
-    whoAmI,
-    decks,
-    recentDecks,
-    updateRecentDecks,
-    activeDeck,
-    setActiveDeck,
-  } = useApp();
-
-  const [lastDeck, setLastDeck] = useState({});
-
-  useEffect(() => {
-    const byTimestamp = (a, b) => {
-      return new Date(b[1]) - new Date(a[1]);
-    };
-
-    if (decks) {
-      const decksForSort = [];
-
-      Object.keys(decks).map((key) => {
-        decksForSort.push([decks[key], decks[key].timestamp]);
-      });
-
-      const lastDeckArray = decksForSort.sort(byTimestamp)[0];
-      if (lastDeckArray) {
-        setLastDeck(lastDeckArray[0]);
-      }
-    }
-  }, [decks]);
-
-  useEffect(() => {
-    whoAmI();
-  }, []);
-
-  useEffect(() => {
-    if (decks) {
-      const d = recentDecks.filter((v) => !decks[v.deckid]);
-      if (d.length < recentDecks.length) {
-        updateRecentDecks(d);
-      }
-    }
-  }, [decks, recentDecks]);
-
-  useEffect(() => {
-    if (lastDeck && lastDeck.deckid && !activeDeck.deckid) {
-      setActiveDeck({ src: 'my', deckid: lastDeck.deckid });
-    }
-  }, [lastDeck]);
+const App = (props) => {
+  const { lastDeckId } = useApp();
 
   return (
     <div className="App">
@@ -106,21 +59,15 @@ function App(props) {
               <Route path="decks" element={<Decks />} />
               <Route path="pda" element={<Pda />} />
               <Route path="twd" element={<Twd />} />
-              <Route
-                path="crypt"
-                element={<Crypt lastDeckId={lastDeck.deckid} />}
-              />
+              <Route path="crypt" element={<Crypt lastDeckId={lastDeckId} />} />
               <Route
                 path="library"
-                element={<Library lastDeckId={lastDeck.deckid} />}
+                element={<Library lastDeckId={lastDeckId} />}
               />
-              <Route
-                path="cards"
-                element={<Cards lastDeckId={lastDeck.deckid} />}
-              />
+              <Route path="cards" element={<Cards lastDeckId={lastDeckId} />} />
               <Route
                 path="cards/:id"
-                element={<Cards lastDeckId={lastDeck.deckid} />}
+                element={<Cards lastDeckId={lastDeckId} />}
               />
             </Routes>
           </SearchResultsProvider>
@@ -128,6 +75,6 @@ function App(props) {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

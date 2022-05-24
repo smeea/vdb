@@ -3,12 +3,17 @@ import NodePlusFill from 'assets/images/icons/node-plus-fill.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckBranchCreateButton = (props) => {
-  const { getDecks, setActiveDeck, isMobile } = useApp();
+const DeckBranchCreateButton = ({ deck }) => {
+  const {
+    setDecks,
+    setActiveDeck,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
 
   const branchCreate = () => {
-    let newdeckid;
     const url = `${process.env.API_URL}branch/create`;
+    const master = deck.master ? deck.master : deck.deckid;
 
     const options = {
       method: 'POST',
@@ -18,19 +23,38 @@ const DeckBranchCreateButton = (props) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        master: props.deck.master ? props.deck.master : props.deck.deckid,
-        source: props.deck.deckid,
+        master: master,
+        source: deck.deckid,
       }),
     };
 
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        if (data.error === undefined) newdeckid = data.deckid;
-      })
-      .then(() => getDecks())
-      .then(() => setActiveDeck({ src: 'my', deckid: newdeckid }))
-      .then(() => isMobile && props.setShowButtons(false));
+        const now = new Date();
+        setDecks((prevState) => ({
+          ...prevState,
+          [master]: {
+            ...prevState[master],
+            branches: prevState[master].branches
+              ? [...prevState[master].branches, data.deckid]
+              : [data.deckid],
+          },
+          [data.deckid]: {
+            ...deck,
+            deckid: data.deckid,
+            crypt: { ...deck.crypt },
+            library: { ...deck.library },
+            inventory_type: '',
+            master: master,
+            branchName: data.branch_name,
+            timestamp: now.toUTCString(),
+          },
+        }));
+        setActiveDeck({ src: 'my', deckid: data.deckid });
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+      });
   };
 
   return (

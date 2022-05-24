@@ -6,13 +6,11 @@ flask-backend/.flaskenv
 flask-backend/gunicorn.conf.py
 react-frontend/.parcel-cache/
 react-frontend/.log/
+react-frontend/.cache/
+react-frontend/.nvmrc
 react-frontend/node_modules/
 react-frontend/dist/*
 !react-frontend/dist/images/
 !react-frontend/dist/favicon.ico
 !react-frontend/dist/amaranth_ids.json
 !react-frontend/dist/cardbase_*
-!react-frontend/dist/artistsCrypt.json
-!react-frontend/dist/artistsLibrary.json
-react-frontend/.cache/
-react-frontend/.nvmrc

@@ -1,11 +1,20 @@
 import React from 'react';
-import { Button, Stack } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import X from 'assets/images/icons/x.svg';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
-import { ResultCryptSortForm } from 'components';
-import { useApp } from 'context';
+import { ANY } from 'utils/constants';
+import { SortButton } from 'components';
+import { useSearchResults } from 'context';
 
-function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
-  const { isMobile } = useApp();
+const ResultCryptTotal = ({
+  cards,
+  sortMethods,
+  sortMethod,
+  setSortMethod,
+  toggleShowInfo,
+  inCompare,
+}) => {
+  const { setCryptCompare } = useSearchResults();
 
   const byGroups = {};
   const byGroupsCapacityTotal = {};
@@ -29,7 +38,7 @@ function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
     return (
       <span key={k} className="d-inline-block nobr pe-3">
         <span className="blue">
-          <b>G{k}:</b>
+          <b>G{k == ANY ? 'X' : k}:</b>
         </span>
         {byGroups[k]}
         <div
@@ -45,20 +54,40 @@ function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
   const value = (
     <>
       <div className="px-2 nobr">
-        <b>TOTAL: {total}</b>
+        <b>
+          {inCompare ? 'COMPARE' : 'TOTAL'}: {total}
+        </b>
       </div>
       <div>{totalOutput}</div>
-      <div>
-        <div className="mb-1">
-          <ResultCryptSortForm onChange={handleChange} />
-        </div>
-        <Button
-          title="Additional Info"
-          variant="primary"
-          onClick={() => toggleShowInfo()}
-        >
-          <InfoCircle />
-        </Button>
+      <div className={inCompare ? 'd-flex' : ''}>
+        {!inCompare ? (
+          <>
+            <div className="d-flex justify-content-end mb-1">
+              <Button
+                title="Additional Info"
+                variant="primary"
+                onClick={() => toggleShowInfo()}
+              >
+                <InfoCircle />
+              </Button>
+            </div>
+            <SortButton
+              sortMethod={sortMethod}
+              sortMethods={sortMethods}
+              setSortMethod={setSortMethod}
+            />
+          </>
+        ) : (
+          <div className="ms-1">
+            <Button
+              title="Clear Compare"
+              variant="primary"
+              onClick={() => setCryptCompare(undefined)}
+            >
+              <X width="16" height="20" viewBox="0 0 16 16" />
+            </Button>
+          </div>
+        )}
       </div>
     </>
   );
@@ -68,6 +97,6 @@ function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
       {value}
     </div>
   );
-}
+};
 
 export default ResultCryptTotal;

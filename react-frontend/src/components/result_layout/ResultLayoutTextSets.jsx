@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ResultLayoutTextSetsModal, OverlayTooltip } from 'components';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp } from 'context';
 
 const ResultLayoutTextSets = (props) => {

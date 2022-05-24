@@ -7,35 +7,32 @@ import {
   DeckMissingButton,
 } from 'components';
 
-const DiffButtons = (props) => {
+const DiffButtons = ({
+  deck,
+  toQuery,
+  fromQuery,
+  missingCrypt,
+  missingLibrary,
+}) => {
   return (
     <Stack gap={1}>
-      {props.deck && <DiffBackButton deckid={props.deck.deckid} />}
-      {props.deck && (
-        <DiffCopyUrlButton
-          fromQuery={props.fromQuery}
-          toQuery={props.toQuery}
-          setShowButtons={props.setShowButtons}
-        />
-      )}
-      {props.deck && (
-        <DeckProxyButton
-          deck={props.deck}
-          missingCrypt={props.missingCrypt}
-          missingLibrary={props.missingLibrary}
-          setShowButtons={props.setShowButtons}
-          setShowProxySelect={props.setShowProxySelect}
-          inDiff={true}
-        />
-      )}
-      {props.deck && (
-        <DeckMissingButton
-          deck={props.deck}
-          missingCrypt={props.missingCrypt}
-          missingLibrary={props.missingLibrary}
-          setShowButtons={props.setShowButtons}
-          inDiff={true}
-        />
+      {deck && (
+        <>
+          <DiffBackButton deckid={deck.deckid} />
+          <DiffCopyUrlButton fromQuery={fromQuery} toQuery={toQuery} />
+          <DeckProxyButton
+            deck={deck}
+            missingCrypt={missingCrypt}
+            missingLibrary={missingLibrary}
+            inDiff={true}
+          />
+          <DeckMissingButton
+            deck={deck}
+            missingCrypt={missingCrypt}
+            missingLibrary={missingLibrary}
+            inDiff={true}
+          />
+        </>
       )}
     </Stack>
   );

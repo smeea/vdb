@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ModalConfirmation } from 'components';
-import { useApp } from 'context';
 
-function InventoryDeckDeleteButton(props) {
-  const { isMobile } = useApp();
+const InventoryDeckDeleteButton = ({
+  deck,
+  inventoryDeckDelete,
+  inInventory,
+}) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
-    props.inventoryDeckDelete(props.deck);
+    inventoryDeckDelete(deck);
     setShowConfirmation(false);
-    isMobile && props.setShowButtons(false);
   };
 
   return (
@@ -21,7 +22,7 @@ function InventoryDeckDeleteButton(props) {
         variant="primary"
         onClick={() => setShowConfirmation(true)}
         title="Remove Deck from Inventory"
-        disabled={!props.inInventory}
+        disabled={!inInventory}
       >
         <TrashFill />
       </Button>
@@ -30,10 +31,11 @@ function InventoryDeckDeleteButton(props) {
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
         buttonText="Remove"
-        headerText={'Remove deck ' + props.deck.name + ' from Inventory?'}
+        headerText={'Remove deck ' + deck.name + ' from Inventory?'}
+        nested={true}
       />
     </>
   );
-}
+};
 
 export default InventoryDeckDeleteButton;

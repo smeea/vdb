@@ -3,15 +3,16 @@ import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckRecommendationButton = (props) => {
-  const { isMobile } = useApp();
+const DeckRecommendationButton = ({ setShowRecommendation }) => {
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
 
   return (
     <ButtonIconed
       variant="secondary"
       onClick={() => {
-        isMobile && props.setShowButtons(false);
-        props.setShowRecommendation(true);
+        setShowRecommendation(true);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(false);
       }}
       title="Get Recommendation based on TWD with similar cards"
       icon={<LightbulbFill />}

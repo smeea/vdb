@@ -14,17 +14,22 @@ import {
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
-  ResultCryptModal,
+  ResultModal,
   ConditionalOverlayTrigger,
 } from 'components';
-import { deckSort, getHardTotal, getSoftMax } from 'utils';
+import { inventoryCryptSort, getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const InventoryCryptTable = (props) => {
-  const { cards, setShowFloatingButtons, placement, compact, withCompact } =
-    props;
-  const { usedCryptCards, isMobile, isNarrow, isWide } = useApp();
+const InventoryCryptTable = ({
+  cards,
+  placement,
+  sortMethod,
+  compact,
+  withCompact,
+}) => {
+  const { usedCryptCards, isMobile, isNarrow, isWide, setShowFloatingButtons } =
+    useApp();
 
   // Modal Card Controller
   const {
@@ -37,15 +42,15 @@ const InventoryCryptTable = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
-  const sortedCards = deckSort(cards, 'Name');
+  const sortedCards = inventoryCryptSort(cards, sortMethod);
 
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     const { c: card, q: qty } = cardInfo;
@@ -70,7 +75,7 @@ const InventoryCryptTable = (props) => {
             />
           ) : (
             <OverlayTrigger
-              placement={placement ? placement : 'right'}
+              placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div className="w-100">
@@ -79,6 +84,7 @@ const InventoryCryptTable = (props) => {
                   q={qty}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
+                  compact={compact}
                 />
               </div>
             </OverlayTrigger>
@@ -106,7 +112,7 @@ const InventoryCryptTable = (props) => {
             </>
           ) : (
             <OverlayTrigger
-              placement={placement ? placement : 'right'}
+              placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div
@@ -229,7 +235,7 @@ const InventoryCryptTable = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

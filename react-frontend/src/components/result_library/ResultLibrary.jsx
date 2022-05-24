@@ -4,9 +4,9 @@ import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultLibraryTable, ResultLibraryTotal } from 'components';
 import { resultLibrarySort } from 'utils';
-import { useApp, useSearchResults } from 'context';
+import { useApp } from 'context';
 
-function ResultLibrary(props) {
+const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
   const {
     showLibrarySearch,
     setShowLibrarySearch,
@@ -15,47 +15,57 @@ function ResultLibrary(props) {
     isMobile,
     librarySearchSort,
     changeLibrarySearchSort,
+    showFloatingButtons,
   } = useApp();
 
-  const { libraryResults, setLibraryResults } = useSearchResults();
-
   const [sortedCards, setSortedCards] = useState([]);
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const navigate = useNavigate();
 
-  const handleChange = (method) => {
+  const sortMethods = {
+    Name: 'N',
+    'Clan / Discipline': 'C/D',
+    Type: 'T',
+    'Cost - Min to Max': 'C↑',
+    'Cost - Max to Min': 'C↓',
+  };
+
+  const setSortMethod = (method) => {
     changeLibrarySearchSort(method);
-    setSortedCards(() => resultLibrarySort(libraryResults, method));
+    setSortedCards(() => resultLibrarySort(cards, method));
   };
 
   const handleClear = () => {
     navigate('/library');
-    setLibraryResults(undefined);
+    setCards(undefined);
     setShowLibrarySearch(!showLibrarySearch);
   };
 
   useEffect(() => {
-    setSortedCards(() => resultLibrarySort(libraryResults, librarySearchSort));
-  }, [libraryResults]);
+    if (cards) {
+      setSortedCards(() => resultLibrarySort(cards, librarySearchSort));
+    }
+  }, [cards, librarySearchSort]);
 
   return (
     <>
-      {!isMobile && libraryResults.length == 0 && (
+      {!isMobile && (cards === null || cards.length === 0) && (
         <div className="d-flex align-items-center justify-content-center error-message">
-          <b>NO CARDS FOUND</b>
+          <b>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</b>
         </div>
       )}
-      {libraryResults.length > 0 && (
+      {cards && cards.length > 0 && (
         <>
           <ResultLibraryTotal
-            cards={libraryResults}
-            handleChange={handleChange}
+            inCompare={inCompare}
+            cards={cards}
+            sortMethods={sortMethods}
+            sortMethod={librarySearchSort}
+            setSortMethod={setSortMethod}
           />
           <ResultLibraryTable
-            library={props.library}
-            activeDeck={props.activeDeck}
+            library={library}
+            activeDeck={activeDeck}
             resultCards={sortedCards}
-            setShowFloatingButtons={setShowFloatingButtons}
           />
         </>
       )}
@@ -67,7 +77,7 @@ function ResultLibrary(props) {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && props.activeDeck.src === 'my' && (
+      {isMobile && showFloatingButtons && activeDeck.src === 'my' && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${
@@ -79,6 +89,6 @@ function ResultLibrary(props) {
       )}
     </>
   );
-}
+};
 
 export default ResultLibrary;

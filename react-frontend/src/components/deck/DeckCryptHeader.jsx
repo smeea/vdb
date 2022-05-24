@@ -1,21 +1,22 @@
 import React from 'react';
 import { Button, Stack } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
-import { DeckCryptSortButton } from 'components';
+import { SortButton } from 'components';
 import { useApp } from 'context';
 
-const DeckCryptHeader = (props) => {
-  const {
-    cryptTotal,
-    inMissing,
-    cryptGroups,
-    toggleShowInfo,
-    toggleShowAdd,
-    hasBanned,
-    isAuthor,
-    isPublic,
-  } = props;
-
+const DeckCryptHeader = ({
+  cryptTotal,
+  inMissing,
+  cryptGroups,
+  toggleShowInfo,
+  toggleShowAdd,
+  hasBanned,
+  isAuthor,
+  isPublic,
+  sortMethods,
+  sortMethod,
+  setSortMethod,
+}) => {
   const { isMobile } = useApp();
 
   return (
@@ -34,7 +35,11 @@ const DeckCryptHeader = (props) => {
       </b>
       <div className="d-flex align-items-center justify-content-between ps-2 pe-md-0 info-message">
         <Stack direction="horizontal" gap={1}>
-          <DeckCryptSortButton />
+          <SortButton
+            sortMethods={sortMethods}
+            sortMethod={sortMethod}
+            setSortMethod={setSortMethod}
+          />
           <Button
             title="Additional Info"
             variant="primary"

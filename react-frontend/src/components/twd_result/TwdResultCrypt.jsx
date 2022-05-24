@@ -5,7 +5,7 @@ import {
   ResultCryptName,
   ResultCryptCapacity,
   ResultClanImage,
-  ResultCryptModal,
+  ResultModal,
   ConditionalOverlayTrigger,
 } from 'components';
 import { ANY } from 'utils/constants';
@@ -14,11 +14,14 @@ import { useApp } from 'context';
 
 import { useModalCardController } from 'hooks';
 
-function TwdResultCrypt(props) {
-  const { crypt, setShowFloatingButtons } = props;
-  const { inventoryMode, inventoryCrypt, usedCryptCards, isMobile } = useApp();
-
-  let resultTrClass = 'result-even';
+const TwdResultCrypt = ({ crypt }) => {
+  const {
+    inventoryMode,
+    inventoryCrypt,
+    usedCryptCards,
+    isMobile,
+    setShowFloatingButtons,
+  } = useApp();
 
   // Sort cards
   const SortByQuantity = (a, b) => b.q - a.q;
@@ -70,20 +73,14 @@ function TwdResultCrypt(props) {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
-  const cardLines = sortedCards.map((card, index) => {
+  const cardLines = sortedCards.map((card, idx) => {
     const handleClick = () => {
-      handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      handleModalCardOpen(idx);
+      setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
 
     let inInventory = 0;
     let hardUsedTotal = 0;
@@ -97,7 +94,7 @@ function TwdResultCrypt(props) {
     }
 
     return (
-      <tr key={card.c.Id} className={resultTrClass}>
+      <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
           <ConditionalOverlayTrigger
             overlay={<UsedPopover cardid={card.c.Id} />}
@@ -152,7 +149,7 @@ function TwdResultCrypt(props) {
         <tbody>{cardLines}</tbody>
       </table>
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}
@@ -160,6 +157,6 @@ function TwdResultCrypt(props) {
       )}
     </>
   );
-}
+};
 
 export default TwdResultCrypt;

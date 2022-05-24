@@ -10,24 +10,21 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
   ButtonAddCard,
-  ResultCryptModal,
+  ResultModal,
   ConditionalOverlayTrigger,
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const ResultCryptTable = (props) => {
-  const {
-    resultCards,
-    inRecommendation,
-    isAuthor,
-    placement,
-    className,
-    crypt,
-  } = props;
-  const { setShowFloatingButtons } = props;
-
+const ResultCryptTable = ({
+  resultCards,
+  inRecommendation,
+  isAuthor,
+  placement,
+  className,
+  crypt,
+}) => {
   const {
     activeDeck,
     inventoryCrypt,
@@ -37,9 +34,9 @@ const ResultCryptTable = (props) => {
     isMobile,
     isDesktop,
     isWide,
+    setShowFloatingButtons,
   } = useApp();
 
-  let resultTrClass;
   let maxDisciplines = 0;
   resultCards.map((card) => {
     const n = Object.keys(card.Disciplines).length;
@@ -59,26 +56,19 @@ const ResultCryptTable = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
-  const cardRows = resultCards.map((card, index) => {
+  const cardRows = resultCards.map((card, idx) => {
     const handleClick = () => {
-      handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      handleModalCardOpen(idx);
+      setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     const inDeck = (crypt && crypt[card.Id] && crypt[card.Id].q) || 0;
 
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-
     let inInventory = 0;
 
     if (inventoryMode) {
@@ -92,7 +82,7 @@ const ResultCryptTable = (props) => {
 
     return (
       <React.Fragment key={card.Id}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {(inRecommendation
             ? isAuthor
             : activeDeck.src === 'my' && addMode) && (
@@ -107,7 +97,7 @@ const ResultCryptTable = (props) => {
           )}
           {inventoryMode && (
             <OverlayTrigger
-              placement={isDesktop ? 'left' : 'right'}
+              placement={isDesktop ? 'left' : 'bottom'}
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <td className="used">
@@ -196,7 +186,7 @@ const ResultCryptTable = (props) => {
         <tbody>{cardRows}</tbody>
       </table>
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

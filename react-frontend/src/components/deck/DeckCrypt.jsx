@@ -6,24 +6,36 @@ import {
   DeckCryptTable,
   DeckNewCryptCard,
   DeckCryptHeader,
-  ResultCryptModal,
+  ResultModal,
 } from 'components';
 import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
-const DeckCrypt = (props) => {
+const DeckCrypt = ({
+  cards,
+  deckid,
+  isPublic,
+  isAuthor,
+  inSearch,
+  inAdvSelect,
+  inMissing,
+}) => {
   const {
-    cards,
+    cryptDeckSort,
+    changeCryptDeckSort,
+    changeTimer,
+    isMobile,
     showFloatingButtons,
     setShowFloatingButtons,
-    deckid,
-    isPublic,
-    isAuthor,
-    inSearch,
-    inAdvSelect,
-    inMissing,
-  } = props;
-  const { cryptDeckSort, changeTimer, isMobile } = useApp();
+  } = useApp();
+
+  const sortMethods = {
+    Quantity: 'Q',
+    Capacity: 'C',
+    Name: 'N',
+    Group: 'G',
+    Clan: 'Cl',
+  };
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -60,7 +72,7 @@ const DeckCrypt = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -78,6 +90,9 @@ const DeckCrypt = (props) => {
         hasBanned={hasBanned}
         isAuthor={isAuthor}
         isPublic={isPublic}
+        sortMethods={sortMethods}
+        sortMethod={cryptDeckSort}
+        setSortMethod={changeCryptDeckSort}
       />
       {showInfo && (
         <div className="info-message px-2">
@@ -135,7 +150,6 @@ const DeckCrypt = (props) => {
         nonKeyDisciplines={nonKeyDisciplines}
         inSearch={inSearch}
         inMissing={inMissing}
-        setShowFloatingButtons={setShowFloatingButtons}
         isModalOpen={shouldShowModal}
       />
       {Object.keys(cryptSide).length > 0 && (
@@ -154,7 +168,6 @@ const DeckCrypt = (props) => {
             nonKeyDisciplines={nonKeyDisciplines}
             inSearch={inSearch}
             inMissing={inMissing}
-            setShowFloatingButtons={setShowFloatingButtons}
             isModalOpen={shouldShowModal}
           />
         </div>
@@ -173,7 +186,7 @@ const DeckCrypt = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

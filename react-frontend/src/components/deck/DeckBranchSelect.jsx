@@ -1,46 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import { useApp } from 'context';
 
 const DeckBranchSelect = (props) => {
-  const { setActiveDeck, decks } = useApp();
+  const { activeDeck, setActiveDeck, decks } = useApp();
+  const [branches, setBranches] = useState([]);
+  const [options, setOptions] = useState([]);
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
   };
 
-  const deck = decks[props.deckId];
-  const master = decks[deck.master];
+  useEffect(() => {
+    const deck = decks[props.deckid];
+    const master = decks[deck.master];
+    const target = master ? master : deck;
 
-  let branches;
-  if (master) {
-    branches = { [master.deckid]: master };
-    master.branches.map((i) => {
-      branches[i] = decks[i];
-    });
-  } else {
-    branches = { [deck.deckid]: deck };
-    if (deck.branches) {
-      deck.branches.map((i) => {
-        branches[i] = decks[i];
+    const b = {
+      [target.deckid]: {
+        deckid: target.deckid,
+        branchName: target.branchName,
+        name: target.name,
+        timestamp: target.timestamp,
+      },
+    };
+
+    if (target.branches) {
+      target.branches.map((i) => {
+        b[i] = {
+          deckid: decks[i].deckid,
+          branchName: decks[i].branchName,
+          name: decks[i].name,
+          timestamp: decks[i].timestamp,
+        };
       });
     }
-  }
 
-  const preOptions = Object.keys(branches).map((i, index) => {
-    return [
-      {
-        value: i,
-        name: 'deck',
-        label: decks[i].branchName,
-      },
-      decks[i]['timestamp'],
-    ];
-  });
+    if (JSON.stringify(branches) != JSON.stringify(b)) {
+      setBranches(b);
+    }
+  }, [activeDeck, decks]);
 
-  const options = preOptions.sort(byTimestamp).map((i, index) => {
-    return i[0];
-  });
+  useEffect(() => {
+    const preOptions = Object.keys(branches).map((i, index) => {
+      return [
+        {
+          value: i,
+          name: 'deck',
+          label: decks[i].branchName,
+        },
+        decks[i]['timestamp'],
+      ];
+    });
+
+    setOptions(
+      preOptions.sort(byTimestamp).map((i, index) => {
+        return i[0];
+      })
+    );
+  }, [branches]);
 
   return (
     <Select
@@ -48,8 +66,8 @@ const DeckBranchSelect = (props) => {
       options={options}
       isSearchable={false}
       name="decks"
-      placeholder="Select Deck"
-      value={options.find((obj) => obj.value === props.deckId)}
+      placeholder=""
+      value={options.find((obj) => obj.value === props.deckid)}
       onChange={(e) => {
         props.setActiveDeck
           ? props.setActiveDeck({ src: 'my', deckid: e.value })

@@ -13,19 +13,30 @@ import {
   ResultLibraryCost,
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
-  ResultLibraryModal,
+  ResultModal,
   ResultLibraryName,
   ResultLibraryTrifle,
   ConditionalOverlayTrigger,
 } from 'components';
 import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
-import { deckSort, getHardTotal, getSoftMax } from 'utils';
+import { inventoryLibrarySort, getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const InventoryLibraryTable = (props) => {
-  const { cards, setShowFloatingButtons } = props;
-  const { usedLibraryCards, nativeLibrary, isMobile, isWide } = useApp();
+const InventoryLibraryTable = ({
+  cards,
+  placement,
+  sortMethod,
+  compact,
+  withCompact,
+}) => {
+  const {
+    usedLibraryCards,
+    nativeLibrary,
+    isMobile,
+    isWide,
+    setShowFloatingButtons,
+  } = useApp();
 
   // Modal Card Controller
   const {
@@ -38,15 +49,15 @@ const InventoryLibraryTable = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
-  const sortedCards = deckSort(cards, 'Name');
+  const sortedCards = inventoryLibrarySort(cards, sortMethod);
 
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     const { c: card, q: qty } = cardInfo;
@@ -76,7 +87,7 @@ const InventoryLibraryTable = (props) => {
             />
           ) : (
             <OverlayTrigger
-              placement="right"
+              placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div className="w-100">
@@ -85,6 +96,7 @@ const InventoryLibraryTable = (props) => {
                   q={qty}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
+                  compact={compact}
                 />
               </div>
             </OverlayTrigger>
@@ -112,7 +124,7 @@ const InventoryLibraryTable = (props) => {
             </>
           ) : (
             <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
+              placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div
@@ -141,7 +153,7 @@ const InventoryLibraryTable = (props) => {
         </div>
 
         <ConditionalOverlayTrigger
-          placement={props.placement}
+          placement={placement}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
         >
@@ -221,14 +233,14 @@ const InventoryLibraryTable = (props) => {
 
   return (
     <>
-      {props.compact ? (
+      {compact ? (
         <div className="d-flex inventory-library-table bordered result-odd compact">
           {cardRows[0]}
         </div>
       ) : (
         <div
           className={`inventory-container-library${
-            props.withCompact ? '-with-compact' : ''
+            withCompact ? '-with-compact' : ''
           }`}
         >
           <AutoSizer>
@@ -247,7 +259,7 @@ const InventoryLibraryTable = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

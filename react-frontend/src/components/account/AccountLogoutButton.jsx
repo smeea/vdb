@@ -5,10 +5,10 @@ import { userServices } from 'services';
 import { ButtonIconed } from 'components';
 
 const AccountLogoutButton = (props) => {
-  const { setUsername } = useApp();
+  const { initializeUnauthenticatedUser } = useApp();
 
   const logoutUser = () => {
-    setUsername(undefined);
+    initializeUnauthenticatedUser();
     userServices.logout();
   };
 

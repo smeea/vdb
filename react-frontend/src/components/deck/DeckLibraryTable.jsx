@@ -20,7 +20,24 @@ import {
 import { drawProbability } from 'utils';
 import { useApp } from 'context';
 
-function DeckLibraryTable(props) {
+const DeckLibraryTable = ({
+  deckid,
+  disciplinesSet,
+  keyDisciplines,
+  nonKeyDisciplines,
+  cards,
+  cardsFrom,
+  cardsTo,
+  isPublic,
+  isAuthor,
+  placement,
+  showInfo,
+  libraryTotal,
+  handleModalCardOpen,
+  inSearch,
+  inMissing,
+  isModalOpen,
+}) => {
   const {
     decks,
     inventoryMode,
@@ -33,17 +50,17 @@ function DeckLibraryTable(props) {
     isWide,
     deckUpdate,
     deckCardChange,
+    setShowFloatingButtons,
   } = useApp();
 
-  let resultTrClass;
   let deckInvType = null;
-  if (inventoryMode && decks && props.deckid && decks[props.deckid]) {
-    deckInvType = decks[props.deckid].inventory_type;
+  if (inventoryMode && decks && deckid && decks[deckid]) {
+    deckInvType = decks[deckid].inventory_type;
   }
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
-  props.cards.sort((a, b) => {
+  cards.sort((a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {
       return -1;
     }
@@ -53,21 +70,15 @@ function DeckLibraryTable(props) {
   });
 
   const disableOverlay = useMemo(
-    () => isMobile || (!isDesktop && props.isModalOpen),
-    [isMobile, isDesktop, props.isModalOpen]
+    () => isMobile || (!isDesktop && isModalOpen),
+    [isMobile, isDesktop, isModalOpen]
   );
 
-  const cardRows = props.cards.map((card) => {
+  const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
-      props.handleModalCardOpen(card.c);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(card.c);
+      setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     let cardInvType = null;
     let inInventory = 0;
@@ -96,14 +107,21 @@ function DeckLibraryTable(props) {
       }
     }
 
+    const toggleInventoryState = (deckid, cardid) => {
+      const value = cardInvType ? '' : deckInvType === 's' ? 'h' : 's';
+      deckUpdate(deckid, 'used_in_inventory', {
+        [cardid]: value,
+      });
+    };
+
     return (
       <React.Fragment key={card.c.Id}>
-        <tr className={resultTrClass}>
-          {props.isAuthor && !props.isPublic ? (
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+          {isAuthor && !isPublic ? (
             <>
               {inventoryMode && decks ? (
                 <>
-                  {deckInvType && !props.inSearch ? (
+                  {deckInvType && !inSearch && !isMobile && (
                     <td>
                       <div className="d-flex relative align-items-center">
                         <div
@@ -113,24 +131,16 @@ function DeckLibraryTable(props) {
                               : 'inventory-card-custom not-selected'
                           }
                           onClick={() =>
-                            deckUpdate(
-                              props.deckid,
-                              cardInvType
-                                ? 'makeClear'
-                                : deckInvType == 's'
-                                ? 'makeFixed'
-                                : 'makeFlexible',
-                              card.c.Id
-                            )
+                            toggleInventoryState(deckid, card.c.Id)
                           }
                         >
                           {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
                         </div>
                       </div>
                     </td>
-                  ) : null}
-
+                  )}
                   <ConditionalOverlayTrigger
+                    placement="bottom"
                     overlay={<UsedPopover cardid={card.c.Id} />}
                     disabled={disableOverlay}
                   >
@@ -138,12 +148,12 @@ function DeckLibraryTable(props) {
                       <DeckCardQuantity
                         cardid={card.c.Id}
                         q={card.q}
-                        deckid={props.deckid}
+                        deckid={deckid}
                         cardChange={deckCardChange}
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
-                        inventoryType={decks[props.deckid].inventory_type}
+                        inventoryType={decks[deckid].inventory_type}
                       />
                     </td>
                   </ConditionalOverlayTrigger>
@@ -153,7 +163,7 @@ function DeckLibraryTable(props) {
                   <DeckCardQuantity
                     cardid={card.c.Id}
                     q={card.q}
-                    deckid={props.deckid}
+                    deckid={deckid}
                     cardChange={deckCardChange}
                   />
                 </td>
@@ -163,13 +173,14 @@ function DeckLibraryTable(props) {
             <>
               {inventoryMode && decks ? (
                 <ConditionalOverlayTrigger
+                  placement="bottom"
                   overlay={<UsedPopover cardid={card.c.Id} />}
                   disabled={disableOverlay}
                 >
                   <td className="quantity-no-buttons px-1">
                     <div
                       className={
-                        props.inMissing
+                        inMissing
                           ? null
                           : inInventory < card.q
                           ? 'inv-miss-full'
@@ -189,7 +200,7 @@ function DeckLibraryTable(props) {
           )}
           {!isMobile ? (
             <ConditionalOverlayTrigger
-              placement={props.placement}
+              placement={placement}
               overlay={<CardPopover card={card.c} />}
               disabled={disableOverlay}
             >
@@ -202,7 +213,7 @@ function DeckLibraryTable(props) {
               <ResultLibraryName card={card.c} />
             </td>
           )}
-          {(!props.inSearch || (!isDesktop && !isNarrow) || isWide) && (
+          {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td
               className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
               onClick={() => handleClick()}
@@ -218,7 +229,7 @@ function DeckLibraryTable(props) {
             {card.c.Discipline && card.c.Clan && '+'}
             <ResultLibraryDisciplines value={card.c.Discipline} />
           </td>
-          {(!props.inSearch || (!isDesktop && !isNarrow) || isWide) && (
+          {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td className="burn" onClick={() => handleClick()}>
               <ResultLibraryBurn value={card.c['Burn Option']} />
               <ResultLibraryTrifle
@@ -226,7 +237,7 @@ function DeckLibraryTable(props) {
               />
             </td>
           )}
-          {props.showInfo && (
+          {showInfo && (
             <td className="prob px-1">
               {isMobile ? (
                 <div
@@ -235,7 +246,7 @@ function DeckLibraryTable(props) {
                       name: card.c['Name'],
                       prob: (
                         <DeckDrawProbabilityText
-                          N={props.libraryTotal}
+                          N={libraryTotal}
                           n={7}
                           k={card.q}
                         />
@@ -244,7 +255,7 @@ function DeckLibraryTable(props) {
                   }
                 >
                   {`${Math.floor(
-                    drawProbability(1, props.libraryTotal, 7, card.q) * 100
+                    drawProbability(1, libraryTotal, 7, card.q) * 100
                   )}%`}
                 </div>
               ) : (
@@ -252,14 +263,14 @@ function DeckLibraryTable(props) {
                   placement="right"
                   text={
                     <DeckDrawProbabilityText
-                      N={props.libraryTotal}
+                      N={libraryTotal}
                       n={7}
                       k={card.q}
                     />
                   }
                 >
                   <div>{`${Math.floor(
-                    drawProbability(1, props.libraryTotal, 7, card.q) * 100
+                    drawProbability(1, libraryTotal, 7, card.q) * 100
                   )}%`}</div>
                 </OverlayTooltip>
               )}
@@ -283,6 +294,6 @@ function DeckLibraryTable(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckLibraryTable;

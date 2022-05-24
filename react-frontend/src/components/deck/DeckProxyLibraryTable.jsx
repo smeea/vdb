@@ -15,10 +15,18 @@ import {
   CardImage,
   ConditionalOverlayTrigger,
 } from 'components';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp } from 'context';
 
-function DeckProxyLibraryTable(props) {
+const DeckProxyLibraryTable = ({
+  handleModalCardOpen,
+  cards,
+  proxySelected,
+  handleProxySelector,
+  handleProxyCounter,
+  handleSetSelector,
+  placement,
+}) => {
   const {
     decks,
     inventoryMode,
@@ -26,21 +34,14 @@ function DeckProxyLibraryTable(props) {
     usedLibraryCards,
     nativeLibrary,
     isMobile,
+    setShowFloatingButtons,
   } = useApp();
 
-  let resultTrClass;
-
-  const cardRows = props.cards.map((card) => {
+  const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
-      props.handleModalCardOpen(card.c);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(card.c);
+      setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     let inInventory = 0;
     let softUsedMax = 0;
@@ -92,7 +93,7 @@ function DeckProxyLibraryTable(props) {
 
     return (
       <React.Fragment key={card.c.Id}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           <td className="proxy-selector">
             <Form.Check
               className="px-1"
@@ -100,11 +101,11 @@ function DeckProxyLibraryTable(props) {
               id={card.c.Id}
               name="print"
               checked={
-                props.proxySelected[card.c.Id]
-                  ? props.proxySelected[card.c.Id].print
+                proxySelected[card.c.Id]
+                  ? proxySelected[card.c.Id].print
                   : false
               }
-              onChange={(e) => props.handleProxySelector(e)}
+              onChange={(e) => handleProxySelector(e)}
             />
           </td>
           {inventoryMode && decks ? (
@@ -116,19 +117,14 @@ function DeckProxyLibraryTable(props) {
                 <DeckCardQuantity
                   cardid={card.c.Id}
                   deckid={null}
-                  q={
-                    props.proxySelected[card.c.Id]
-                      ? props.proxySelected[card.c.Id].q
-                      : 0
-                  }
+                  q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
                   inProxy={true}
                   inInventory={inInventory}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
-                  cardChange={props.handleProxyCounter}
+                  cardChange={handleProxyCounter}
                   isSelected={
-                    props.proxySelected[card.c.Id] &&
-                    props.proxySelected[card.c.Id].print
+                    proxySelected[card.c.Id] && proxySelected[card.c.Id].print
                   }
                 />
               </td>
@@ -138,17 +134,13 @@ function DeckProxyLibraryTable(props) {
               <DeckCardQuantity
                 cardid={card.c.Id}
                 deckid={null}
-                q={
-                  props.proxySelected[card.c.Id]
-                    ? props.proxySelected[card.c.Id].q
-                    : 0
-                }
-                cardChange={props.handleProxyCounter}
+                q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
+                cardChange={handleProxyCounter}
               />
             </td>
           )}
           <ConditionalOverlayTrigger
-            placement={props.placement}
+            placement={placement}
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
@@ -185,14 +177,13 @@ function DeckProxyLibraryTable(props) {
                   placeholder="Set"
                   value={setOptions.find((obj) => {
                     if (
-                      props.proxySelected[card.c.Id] &&
-                      props.proxySelected[card.c.Id].set
+                      proxySelected[card.c.Id] &&
+                      proxySelected[card.c.Id].set
                     ) {
-                      obj.value ===
-                        props.proxySelected[card.c.Id].set.toLowerCase();
+                      obj.value === proxySelected[card.c.Id].set.toLowerCase();
                     }
                   })}
-                  onChange={props.handleSetSelector}
+                  onChange={handleSetSelector}
                 />
               </td>
               <OverlayTrigger
@@ -203,8 +194,8 @@ function DeckProxyLibraryTable(props) {
                       <CardImage
                         card={card.c}
                         set={
-                          props.proxySelected[card.c.Id] &&
-                          props.proxySelected[card.c.Id].set
+                          proxySelected[card.c.Id] &&
+                          proxySelected[card.c.Id].set
                         }
                       />
                     </Popover.Body>
@@ -231,6 +222,6 @@ function DeckProxyLibraryTable(props) {
       </table>
     </>
   );
-}
+};
 
 export default DeckProxyLibraryTable;

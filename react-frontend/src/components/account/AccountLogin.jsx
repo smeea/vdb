@@ -16,14 +16,7 @@ import { useApp } from 'context';
 import { userServices } from 'services';
 
 function AccountLogin(props) {
-  const {
-    setPublicName,
-    setEmail,
-    setUsername,
-    isMobile,
-    getDecks,
-    getInventory,
-  } = useApp();
+  const { isMobile, initializeUserData } = useApp();
 
   const [formUserName, setFormUserName] = useState('');
   const [formPassword, setFormPassword] = useState('');
@@ -51,11 +44,7 @@ function AccountLogin(props) {
 
   const onSuccess = (data) => {
     setSpinnerState(false);
-    setUsername(data.username);
-    setPublicName(data.public_name);
-    setEmail(data.email);
-    getInventory();
-    getDecks();
+    initializeUserData(data);
   };
 
   const loginUser = () => {
@@ -103,8 +92,8 @@ function AccountLogin(props) {
   );
 
   return (
-    <>
-      <h6 className="d-flex align-items-center">
+    <div>
+      <h6 className="d-flex align-items-center p-1">
         <DoorOpenFill />
         <span className="ms-2">Login</span>
         {!isMobile ? (
@@ -186,7 +175,7 @@ function AccountLogin(props) {
         </ErrorOverlay>
       </Form>
       {!isMobile ? (
-        <div className="d-flex justify-content-center small ms-3 ps-4">
+        <div className="d-flex justify-content-center small ms-4 ps-4">
           <OverlayTooltip
             delay={{ show: 0, hide: 2000 }}
             placement="bottom"
@@ -214,7 +203,7 @@ function AccountLogin(props) {
           setShow={setShowModal}
         />
       )}
-    </>
+    </div>
   );
 }
 

@@ -14,17 +14,22 @@ import {
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp } from 'context';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-function InventoryAddDeckModal(props) {
-  const { inventoryCrypt, inventoryLibrary, preconDecks, isMobile } = useApp();
+const InventoryAddDeckModal = ({
+  inventoryDeckAdd,
+  inventoryDeckDelete,
+  show,
+  handleClose,
+}) => {
+  const { inventoryCrypt, inventoryLibrary, preconDecks, isDesktop, isMobile } =
+    useApp();
 
   const [sortMethod, setSortMethod] = useState('byDate');
   const [sortedDecks, setSortedDecks] = useState([]);
   const [showDeck, setShowDeck] = useState(undefined);
   const [nameFilter, setNameFilter] = useState('');
   const [setFilter, setSetFilter] = useState('');
-  let resultTrClass;
 
   const handleChangeNameFilter = (event) => {
     setNameFilter(event.target.value);
@@ -62,46 +67,47 @@ function InventoryAddDeckModal(props) {
     }
   }, [preconDecks, nameFilter, setFilter, sortMethod]);
 
-  const deckRows = sortedDecks.map((deck, index) => {
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
-
-    let cryptInInventory = true;
-    let libraryInInventory = true;
+  const deckRows = sortedDecks.map((deck, idx) => {
+    let cryptInInventory;
+    let libraryInInventory;
 
     Object.keys(deck.crypt).map((cardid) => {
-      if (deck.crypt[cardid].q != 0) {
-        if (
-          !inventoryCrypt[cardid] ||
-          inventoryCrypt[cardid].q < deck.crypt[cardid].q
-        ) {
-          cryptInInventory = false;
+      if (deck.crypt[cardid].q > 0) {
+        if (inventoryCrypt[cardid]) {
+          const inInventory = Math.floor(
+            inventoryCrypt[cardid].q / deck.crypt[cardid].q
+          );
+          if (!cryptInInventory || inInventory < cryptInInventory) {
+            cryptInInventory = inInventory;
+          }
+        } else {
+          cryptInInventory = 0;
         }
       }
     });
 
     Object.keys(deck.library).map((cardid) => {
-      if (deck.library[cardid].q != 0) {
-        if (
-          !inventoryLibrary[cardid] ||
-          inventoryLibrary[cardid].q < deck.library[cardid].q
-        ) {
-          libraryInInventory = false;
+      if (deck.library[cardid].q > 0) {
+        if (inventoryLibrary[cardid]) {
+          const inInventory = Math.floor(
+            inventoryLibrary[cardid].q / deck.library[cardid].q
+          );
+          if (!libraryInInventory || inInventory < libraryInInventory) {
+            libraryInInventory = inInventory;
+          }
+        } else {
+          libraryInInventory = 0;
         }
       }
     });
 
-    const inInventory = cryptInInventory && libraryInInventory ? true : false;
-
+    const inInventory = Math.min(cryptInInventory, libraryInInventory);
     const [set, precon] = deck.deckid.split(':');
     const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
-    const clanImages = clans.map((clan, index) => {
+    const clanImages = clans.map((clan, idx) => {
       return (
-        <div className="d-inline px-1" key={index}>
+        <div className="d-inline px-1" key={idx}>
           {clan === 'Bundle' ? (
             <div className="d-inline clan-image-results">
               <GiftFill />
@@ -115,7 +121,7 @@ function InventoryAddDeckModal(props) {
 
     return (
       <React.Fragment key={deck.deckid}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {!isMobile && (
             <td className="clan">{clanImages.length > 0 && clanImages}</td>
           )}
@@ -137,7 +143,7 @@ function InventoryAddDeckModal(props) {
                 )}
             </div>
           </td>
-          {!isMobile && (
+          {isDesktop && (
             <td className="preview">
               <div
                 className="m-2"
@@ -147,7 +153,6 @@ function InventoryAddDeckModal(props) {
                 <OverlayTooltip
                   placement="right"
                   show={showDeck === deck.deckid}
-                  className="modal-tooltip-preview"
                   text={
                     <Row>
                       <Col
@@ -156,8 +161,13 @@ function InventoryAddDeckModal(props) {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
+                        className="scroll"
                       >
-                        <DeckCrypt deckid={deck.deckid} cards={deck.crypt} />
+                        <DeckCrypt
+                          inAdvSelect={true}
+                          deckid={deck.deckid}
+                          cards={deck.crypt}
+                        />
                       </Col>
                       <Col
                         md={5}
@@ -165,6 +175,7 @@ function InventoryAddDeckModal(props) {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
+                        className="scroll"
                       >
                         <DeckLibrary
                           deckid={deck.deckid}
@@ -200,14 +211,14 @@ function InventoryAddDeckModal(props) {
           <td className="buttons">
             <div className="d-inline pe-1">
               <InventoryDeckAddButton
-                inventoryDeckAdd={props.inventoryDeckAdd}
+                inventoryDeckAdd={inventoryDeckAdd}
                 deck={deck}
                 inInventory={inInventory}
               />
             </div>
             <div className="d-inline pe-1">
               <InventoryDeckDeleteButton
-                inventoryDeckDelete={props.inventoryDeckDelete}
+                inventoryDeckDelete={inventoryDeckDelete}
                 deck={deck}
                 inInventory={inInventory}
               />
@@ -220,8 +231,8 @@ function InventoryAddDeckModal(props) {
 
   return (
     <Modal
-      show={props.show}
-      onHide={props.handleClose}
+      show={show}
+      onHide={handleClose}
       animation={false}
       size="xl"
       dialogClassName={isMobile ? 'm-0' : null}
@@ -234,7 +245,7 @@ function InventoryAddDeckModal(props) {
         }
       >
         <h5>Import Precon to Inventory</h5>
-        <Button variant="outline-secondary" onClick={props.handleClose}>
+        <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -254,7 +265,7 @@ function InventoryAddDeckModal(props) {
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              {!isMobile && <th className="preview"></th>}
+              {isDesktop && <th className="preview"></th>}
               <th className="set">
                 <FormControl
                   placeholder="Filter by Set"
@@ -278,6 +289,6 @@ function InventoryAddDeckModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default InventoryAddDeckModal;

@@ -16,20 +16,28 @@ import {
 import { drawProbability } from 'utils';
 import { useApp } from 'context';
 
-function DeckDrawCryptTable(props) {
+const DeckDrawCryptTable = ({
+  handleClick,
+  restCards,
+  resultCards,
+  className,
+  disciplinesSet,
+  keyDisciplines,
+  nonKeyDisciplines,
+  ashHeap,
+}) => {
   const { isMobile, isWide } = useApp();
   const [modalDraw, setModalDraw] = useState(undefined);
-  let resultTrClass;
 
   let N = 0;
   let n = 0;
   const nonPlayed = {};
 
-  if (props.restCards && props.resultCards) {
-    N = props.restCards.length + props.resultCards.length;
-    n = props.resultCards.length;
+  if (restCards && resultCards) {
+    N = restCards.length + resultCards.length;
+    n = resultCards.length;
 
-    [...props.restCards, ...props.resultCards].forEach((c) => {
+    [...restCards, ...resultCards].forEach((c) => {
       if (c.Id in nonPlayed) {
         nonPlayed[c.Id] += 1;
       } else {
@@ -38,59 +46,49 @@ function DeckDrawCryptTable(props) {
     });
   }
 
-  const cardRows = props.resultCards.map((card, index) => {
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
-
+  const cardRows = resultCards.map((card, idx) => {
     const k = nonPlayed[card.Id];
 
     return (
-      <React.Fragment key={`${index}-${card.Id}`}>
-        <tr className={resultTrClass}>
+      <React.Fragment key={`${idx}-${card.Id}`}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           <td
             className={isMobile ? 'capacity px-1' : 'capacity px-2'}
-            onClick={() => props.handleClick(index)}
+            onClick={() => handleClick(idx)}
           >
             <ResultCryptCapacity value={card.Capacity} />
           </td>
-          <td className="disciplines" onClick={() => props.handleClick(index)}>
+          <td className="disciplines" onClick={() => handleClick(idx)}>
             <DeckCryptDisciplines
               value={card.Disciplines}
-              disciplinesSet={props.disciplinesSet}
-              keyDisciplines={props.keyDisciplines}
-              nonKeyDisciplines={props.nonKeyDisciplines}
+              disciplinesSet={disciplinesSet}
+              keyDisciplines={keyDisciplines}
+              nonKeyDisciplines={nonKeyDisciplines}
             />
           </td>
 
           <ConditionalOverlayTrigger
-            placement={props.placement}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >
-            <td className="name px-1" onClick={() => props.handleClick(index)}>
+            <td className="name px-1" onClick={() => handleClick(idx)}>
               <ResultCryptName card={card} />
             </td>
           </ConditionalOverlayTrigger>
           {isWide ? (
             <>
-              <td
-                className="title pe-2"
-                onClick={() => props.handleClick(index)}
-              >
+              <td className="title pe-2" onClick={() => handleClick(idx)}>
                 <ResultCryptTitle value={card.Title} />
               </td>
-              <td className="clan" onClick={() => props.handleClick(index)}>
+              <td className="clan" onClick={() => handleClick(idx)}>
                 <ResultClanImage value={card.Clan} />
               </td>
-              <td className="group" onClick={() => props.handleClick(index)}>
+              <td className="group" onClick={() => handleClick(idx)}>
                 <ResultCryptGroup value={card.Group} />
               </td>
             </>
           ) : (
-            <td className="clan-group" onClick={() => props.handleClick(index)}>
+            <td className="clan-group" onClick={() => handleClick(idx)}>
               <div>
                 <ResultClanImage value={card.Clan} />
               </div>
@@ -103,7 +101,7 @@ function DeckDrawCryptTable(props) {
             </td>
           )}
           <td className="prob px-1">
-            {!props.ashHeap && (
+            {!ashHeap && (
               <>
                 {isMobile ? (
                   <div
@@ -136,7 +134,7 @@ function DeckDrawCryptTable(props) {
 
   return (
     <>
-      <table className={props.className}>
+      <table className={className}>
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (
@@ -147,6 +145,6 @@ function DeckDrawCryptTable(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckDrawCryptTable;

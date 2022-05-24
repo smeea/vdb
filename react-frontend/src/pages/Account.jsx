@@ -28,28 +28,24 @@ function Account(props) {
                     <span className="ms-2">Logged as: {username}</span>
                   </h6>
                 </div>
-                <div>
-                  <AccountChangeName />
-                </div>
-                <div>
-                  <AccountChangePassword />
-                </div>
-                <div>
-                  <AccountChangeEmail />
-                </div>
-                <AccountLogoutButton />
-                <AccountDeleteButton />
+                <AccountChangeName />
+                <AccountChangePassword />
+                <AccountChangeEmail />
+                <Stack gap={3}>
+                  <AccountLogoutButton />
+                  <AccountDeleteButton />
+                </Stack>
               </Stack>
             </>
           ) : (
-            <Stack gap={4}>
-              <div>
+            <>
+              <div className="py-4">
                 <AccountLogin />
               </div>
-              <div>
+              <div className="py-4">
                 <AccountRegister />
               </div>
-            </Stack>
+            </>
           )}
         </Col>
       </Row>

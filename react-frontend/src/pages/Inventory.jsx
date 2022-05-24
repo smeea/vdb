@@ -16,7 +16,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-function Inventory(props) {
+const Inventory = (props) => {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -28,27 +28,21 @@ function Inventory(props) {
     isMobile,
     inventoryDeckAdd,
     inventoryDeckDelete,
-    inventoryAddToState,
-    setInventoryCrypt,
-    setInventoryLibrary,
+    showFloatingButtons,
+    setShowFloatingButtons,
+    showMenuButtons,
+    setShowMenuButtons,
   } = useApp();
 
   const [newCryptId, setNewCryptId] = useState(undefined);
   const [newLibraryId, setNewLibraryId] = useState(undefined);
   const [category, setCategory] = useState('all');
   const [showCrypt, setShowCrypt] = useState(true);
-  const [showMenuButtons, setShowMenuButtons] = useState(false);
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
   const [clan, setClan] = useState('All');
   const [type, setType] = useState('All');
   const [discipline, setDiscipline] = useState('All');
-
-  const handleShowButtons = (state) => {
-    setShowMenuButtons(state);
-    setShowFloatingButtons(!state);
-  };
 
   return (
     <Container className="main-container p-0 px-md-1">
@@ -73,8 +67,6 @@ function Inventory(props) {
                             : { c: cryptCardBase[newCryptId], q: 0 },
                         }}
                         compact={true}
-                        showFloatingButtons={showFloatingButtons}
-                        setShowFloatingButtons={setShowFloatingButtons}
                       />
                     </div>
                   )}
@@ -85,8 +77,6 @@ function Inventory(props) {
                           withCompact={newCryptId}
                           category={category}
                           cards={inventoryCrypt}
-                          showFloatingButtons={showFloatingButtons}
-                          setShowFloatingButtons={setShowFloatingButtons}
                           clan={clan}
                           setClan={setClan}
                         />
@@ -110,8 +100,6 @@ function Inventory(props) {
                             : { c: libraryCardBase[newLibraryId], q: 0 },
                         }}
                         compact={true}
-                        showFloatingButtons={showFloatingButtons}
-                        setShowFloatingButtons={setShowFloatingButtons}
                       />
                     </div>
                   )}
@@ -122,8 +110,6 @@ function Inventory(props) {
                           withCompact={newLibraryId}
                           category={category}
                           cards={inventoryLibrary}
-                          showFloatingButtons={showFloatingButtons}
-                          setShowFloatingButtons={setShowFloatingButtons}
                           type={type}
                           setType={setType}
                           discipline={discipline}
@@ -163,8 +149,6 @@ function Inventory(props) {
                           : { c: cryptCardBase[newCryptId], q: 0 },
                       }}
                       compact={true}
-                      showFloatingButtons={showFloatingButtons}
-                      setShowFloatingButtons={setShowFloatingButtons}
                     />
                   </div>
                 )}
@@ -175,8 +159,6 @@ function Inventory(props) {
                         withCompact={newCryptId}
                         category={category}
                         cards={inventoryCrypt}
-                        showFloatingButtons={showFloatingButtons}
-                        setShowFloatingButtons={setShowFloatingButtons}
                         clan={clan}
                         setClan={setClan}
                       />
@@ -199,8 +181,6 @@ function Inventory(props) {
                           : { c: libraryCardBase[newLibraryId], q: 0 },
                       }}
                       compact={true}
-                      showFloatingButtons={showFloatingButtons}
-                      setShowFloatingButtons={setShowFloatingButtons}
                     />
                   </div>
                 )}
@@ -211,8 +191,6 @@ function Inventory(props) {
                         withCompact={newLibraryId}
                         category={category}
                         cards={inventoryLibrary}
-                        showFloatingButtons={showFloatingButtons}
-                        setShowFloatingButtons={setShowFloatingButtons}
                         type={type}
                         setType={setType}
                         discipline={discipline}
@@ -226,10 +204,6 @@ function Inventory(props) {
                   <InventoryButtons
                     setShowAddDeck={setShowAddDeck}
                     setShowAddPrecon={setShowAddPrecon}
-                    inventoryAddToState={inventoryAddToState}
-                    setInventoryCrypt={setInventoryCrypt}
-                    setInventoryLibrary={setInventoryLibrary}
-                    setShowButtons={handleShowButtons}
                     clan={clan}
                     discipline={discipline}
                     type={type}
@@ -251,10 +225,10 @@ function Inventory(props) {
             <div className="d-flex justify-content-center pb-3">
               <h6>Login required to manage inventory</h6>
             </div>
-            <div className="py-2">
+            <div className="py-4">
               <AccountLogin />
             </div>
-            <div className="py-2">
+            <div className="py-4">
               <AccountRegister />
             </div>
           </Col>
@@ -298,10 +272,6 @@ function Inventory(props) {
               <InventoryButtons
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}
-                inventoryAddToState={inventoryAddToState}
-                setInventoryCrypt={setInventoryCrypt}
-                setInventoryLibrary={setInventoryLibrary}
-                setShowButtons={handleShowButtons}
                 clan={clan}
                 discipline={discipline}
                 type={type}
@@ -319,7 +289,11 @@ function Inventory(props) {
       {showAddDeck && (
         <InventoryAddDeckModal
           show={showAddDeck}
-          handleClose={() => setShowAddDeck(false)}
+          handleClose={() => {
+            setShowAddDeck(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
+          }}
           inventoryDeckAdd={inventoryDeckAdd}
           inventoryDeckDelete={inventoryDeckDelete}
         />
@@ -327,13 +301,17 @@ function Inventory(props) {
       {showAddPrecon && (
         <InventoryAddPreconModal
           show={showAddPrecon}
-          handleClose={() => setShowAddPrecon(false)}
+          handleClose={() => {
+            setShowAddPrecon(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
+          }}
           inventoryDeckAdd={inventoryDeckAdd}
           inventoryDeckDelete={inventoryDeckDelete}
         />
       )}
     </Container>
   );
-}
+};
 
 export default Inventory;

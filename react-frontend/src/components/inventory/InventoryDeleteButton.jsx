@@ -4,15 +4,22 @@ import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function InventoryDelete(props) {
-  const { isMobile } = useApp();
+const InventoryDelete = (props) => {
+  const {
+    setInventoryCrypt,
+    setInventoryLibrary,
+    setShowMenuButtons,
+    setShowFloatingButtons,
+    isMobile,
+  } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     deleteInventory();
     setShowConfirmation(false);
-    isMobile && props.setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const deleteInventory = () => {
@@ -24,8 +31,8 @@ function InventoryDelete(props) {
     };
 
     fetch(url, options).then(() => {
-      props.setInventoryCrypt({});
-      props.setInventoryLibrary({});
+      setInventoryCrypt({});
+      setInventoryLibrary({});
     });
   };
 
@@ -46,9 +53,10 @@ function InventoryDelete(props) {
         headerText={`Delete Inventory`}
         mainText="THIS CANNOT BE UNDONE!"
         buttonText="Delete"
+        nested={isMobile}
       />
     </>
   );
-}
+};
 
 export default InventoryDelete;

@@ -25,7 +25,7 @@ import defaults from 'components/forms_data/defaultsTwdForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-function TwdSearchForm(props) {
+const TwdSearchForm = (props) => {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -35,7 +35,7 @@ function TwdSearchForm(props) {
   } = useApp();
 
   const { twdFormState, setTwdFormState } = useSearchForms();
-  const { twdResults, setTwdResults } = useSearchResults();
+  const { setTwdResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;
@@ -61,12 +61,12 @@ function TwdSearchForm(props) {
   }, [cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (isMobile && query && twdFormState) {
+    if (isMobile && query && twdFormState && cryptCardBase && libraryCardBase) {
       launchRequest();
     }
-  }, [twdFormState]);
+  }, [twdFormState, cryptCardBase, libraryCardBase]);
 
-  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState(false);
   const refError = useRef(null);
 
   const handleEventChange = (event) => {
@@ -152,13 +152,13 @@ function TwdSearchForm(props) {
   const handleClearButton = () => {
     setTwdFormState(JSON.parse(JSON.stringify(defaults)));
     setTwdResults(undefined);
-    setShowError(false);
+    setError(false);
     navigate('/twd');
   };
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    launchRequest();
+    cryptCardBase && libraryCardBase && launchRequest();
   };
 
   const launchRequest = () => {
@@ -166,7 +166,7 @@ function TwdSearchForm(props) {
     const input = sanitizeFormState('twd', twdFormState);
 
     if (Object.entries(input).length === 0) {
-      setShowError('EMPTY REQUEST');
+      setError('EMPTY REQUEST');
       return;
     }
 
@@ -182,7 +182,7 @@ function TwdSearchForm(props) {
       body: JSON.stringify(input),
     };
 
-    setShowError(false);
+    setError(false);
     setSpinnerState(true);
 
     fetch(url, options)
@@ -197,20 +197,20 @@ function TwdSearchForm(props) {
       })
       .catch((error) => {
         setSpinnerState(false);
-        setTwdResults([]);
-        if (
-          error.message == 'NetworkError when attempting to fetch resource.'
-        ) {
-          setShowError('CONNECTION PROBLEM');
+
+        if (error.message == 400) {
+          setTwdResults([]);
+          setError('NO DECKS FOUND');
         } else {
-          setShowError(true);
+          setTwdResults(null);
+          setError('CONNECTION PROBLEM');
         }
       });
   };
 
   const getNewTwd = (q) => {
     setSpinnerState(true);
-    setShowError(false);
+    setError(false);
     setTwdFormState(JSON.parse(JSON.stringify(defaults)));
     navigate('/twd');
 
@@ -222,7 +222,10 @@ function TwdSearchForm(props) {
     };
 
     fetch(url, options)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
       .then((data) => {
         setSpinnerState(false);
         setShowTwdSearch(false);
@@ -230,14 +233,20 @@ function TwdSearchForm(props) {
       })
       .catch((error) => {
         setSpinnerState(false);
-        setTwdResults([]);
-        setShowError(true);
+
+        if (error.message == 400) {
+          setTwdResults([]);
+          setError('NO DECKS FOUND');
+        } else {
+          setTwdResults(null);
+          setError('CONNECTION PROBLEM');
+        }
       });
   };
 
   const getRandomTwd = (q) => {
     setSpinnerState(true);
-    setShowError(false);
+    setError(false);
     setTwdFormState(JSON.parse(JSON.stringify(defaults)));
     navigate('/twd');
 
@@ -257,14 +266,19 @@ function TwdSearchForm(props) {
       })
       .catch((error) => {
         setSpinnerState(false);
-        if (twdResults) {
+
+        if (error.message == 400) {
           setTwdResults([]);
+          setError('NO DECKS FOUND');
+        } else {
+          setTwdResults(null);
+          setError('CONNECTION PROBLEM');
         }
       });
   };
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && cryptCardBase && libraryCardBase) {
       const input = sanitizeFormState('twd', twdFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
@@ -275,7 +289,7 @@ function TwdSearchForm(props) {
         launchRequest();
       }
     }
-  }, [twdFormState]);
+  }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   return (
     <Form onSubmit={handleSubmitButton}>
@@ -499,17 +513,17 @@ function TwdSearchForm(props) {
               <Spinner animation="border" variant="light" />
             )}
             <ErrorOverlay
-              show={showError}
+              show={error}
               target={refError.current}
               placement="left"
             >
-              {showError === true ? 'NO DECKS FOUND' : showError}
+              {error}
             </ErrorOverlay>
           </div>
         </>
       )}
     </Form>
   );
-}
+};
 
 export default TwdSearchForm;

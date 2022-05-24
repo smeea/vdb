@@ -48,10 +48,10 @@ function SearchFormTextAndButtons(props) {
         label={opt.label}
         checked={
           opt.value === 'regex'
-            ? props.value[0].regex
+            ? props.value[0].regex || false
             : props.value[0].in === opt.value
         }
-        onChange={(e) => props.onChangeOptions(e)}
+        onChange={props.onChangeOptions}
       />
     );
   });
@@ -96,7 +96,7 @@ function SearchFormTextAndButtons(props) {
         </InputGroup>
       )}
       <Row className="mx-0 px-0 pt-1">
-        <Col xs={isWide || isMobile ? 2 : 3} className="px-0">
+        <Col xs={3} md={2} className="px-0">
           <Stack direction="horizontal" gap={1}>
             {props.value[0].value !== '' && (
               <>

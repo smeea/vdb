@@ -3,12 +3,13 @@ import Cart4 from 'assets/images/icons/cart4.svg';
 import { ButtonIconed, DeckMissingModal } from 'components';
 import { useApp } from 'context';
 
-function DeckMissing(props) {
-  const { isMobile } = useApp();
+const DeckMissing = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showModal, setShowModal] = useState(undefined);
-  const handleCloseModal = () => {
+  const handleClose = () => {
     setShowModal(false);
-    isMobile && props.setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -18,24 +19,22 @@ function DeckMissing(props) {
         onClick={() => setShowModal(true)}
         title="Get Missing in Inventory Cards"
         icon={<Cart4 />}
-        text={props.inDiff ? 'Differences' : 'Missing Cards'}
+        text={inDiff ? 'Differences' : 'Missing Cards'}
       />
       {showModal && (
         <DeckMissingModal
           deck={{
-            ...props.deck,
-            name: `Missing card for ${props.deck.name}`,
-            crypt: props.missingCrypt,
-            library: props.missingLibrary,
+            ...deck,
+            name: `Missing card for ${deck.name}`,
+            crypt: missingCrypt,
+            library: missingLibrary,
           }}
           show={showModal}
-          setShow={setShowModal}
-          handleClose={handleCloseModal}
-          setShowButtons={props.setShowButtons}
+          handleClose={handleClose}
         />
       )}
     </>
   );
-}
+};
 
 export default DeckMissing;

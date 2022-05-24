@@ -22,11 +22,11 @@ import { useApp } from 'context';
 function InventoryAddDeckModal(props) {
   const {
     cryptCardBase,
-    libraryCardBase,
     inventoryCrypt,
     inventoryLibrary,
     decks,
     deckUpdate,
+    isDesktop,
     isMobile,
   } = useApp();
 
@@ -36,7 +36,6 @@ function InventoryAddDeckModal(props) {
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
   const [tagsFilter, setTagsFilter] = useState([]);
-  let resultTrClass;
 
   const handleChangeNameFilter = (event) => {
     setNameFilter(event.target.value);
@@ -93,26 +92,24 @@ function InventoryAddDeckModal(props) {
     }
   }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
 
-  const deckRows = sortedDecks.map((deck, index) => {
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
-
-    let cryptInInventory = true;
-    let libraryInInventory = true;
+  const deckRows = sortedDecks.map((deck, idx) => {
+    let cryptInInventory = null;
+    let libraryInInventory = null;
 
     const clans = {};
     let cryptTotal = 0;
 
     Object.keys(deck.crypt).map((cardid) => {
-      if (deck.crypt[cardid].q != 0) {
-        if (
-          !inventoryCrypt[cardid] ||
-          inventoryCrypt[cardid].q < deck.crypt[cardid].q
-        ) {
-          cryptInInventory = false;
+      if (deck.crypt[cardid].q > 0) {
+        if (inventoryCrypt[cardid]) {
+          const inInventory = Math.floor(
+            inventoryCrypt[cardid].q / deck.crypt[cardid].q
+          );
+          if (cryptInInventory === null || inInventory < cryptInInventory) {
+            cryptInInventory = inInventory;
+          }
+        } else {
+          cryptInInventory = 0;
         }
       }
 
@@ -127,24 +124,24 @@ function InventoryAddDeckModal(props) {
           cryptTotal += deck.crypt[cardid].q;
         }
       }
-
-      return <div key={cardid}>{cryptCardBase[cardid].Name}</div>;
     });
 
     Object.keys(deck.library).map((cardid) => {
-      if (deck.library[cardid].q != 0) {
-        if (
-          !inventoryLibrary[cardid] ||
-          inventoryLibrary[cardid].q < deck.library[cardid].q
-        ) {
-          libraryInInventory = false;
+      if (deck.library[cardid].q > 0) {
+        if (inventoryLibrary[cardid] && deck.library[cardid].q > 0) {
+          const inInventory = Math.floor(
+            inventoryLibrary[cardid].q / deck.library[cardid].q
+          );
+          if (libraryInInventory === null || inInventory < libraryInInventory) {
+            libraryInInventory = inInventory;
+          }
+        } else {
+          libraryInInventory = 0;
         }
       }
-
-      return <div key={cardid}>{libraryCardBase[cardid].Name}</div>;
     });
 
-    const inInventory = cryptInInventory && libraryInInventory ? true : false;
+    const inInventory = Math.min(cryptInInventory, libraryInInventory);
 
     let clan;
     Object.keys(clans).forEach((c) => {
@@ -153,22 +150,25 @@ function InventoryAddDeckModal(props) {
       }
     });
 
-    const toggleInventoryState = () => {
-      const inventoryType = deck.inventory_type;
+    const inventoryType = deck.inventory_type;
+    const toggleInventoryState = (deckid) => {
       if (!inventoryType) {
-        deckUpdate(deck.deckid, 'makeFlexible', 'all');
-      } else if (inventoryType == 's') {
-        deckUpdate(deck.deckid, 'makeFixed', 'all');
-      } else if (inventoryType == 'h') {
-        deckUpdate(deck.deckid, 'makeClear', 'all');
+        deckUpdate(deckid, 'inventory_type', 's');
+      } else if (inventoryType === 's') {
+        deckUpdate(deckid, 'inventory_type', 'h');
+      } else if (inventoryType === 'h') {
+        deckUpdate(deckid, 'inventory_type', '');
       }
     };
 
     return (
       <React.Fragment key={deck.deckid}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {!isMobile && (
-            <td className="inventory" onClick={() => toggleInventoryState()}>
+            <td
+              className="inventory"
+              onClick={() => toggleInventoryState(deck.deckid)}
+            >
               <div
                 className="px-2"
                 title={
@@ -206,7 +206,7 @@ function InventoryAddDeckModal(props) {
                 )}
             </div>
           </td>
-          {!isMobile && (
+          {isDesktop && (
             <td className="preview">
               <div
                 className="m-2"
@@ -216,7 +216,6 @@ function InventoryAddDeckModal(props) {
                 <OverlayTooltip
                   placement="right"
                   show={showDeck === deck.deckid}
-                  className="modal-tooltip-preview"
                   text={
                     <Row>
                       <Col
@@ -225,8 +224,13 @@ function InventoryAddDeckModal(props) {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
+                        className="scroll"
                       >
-                        <DeckCrypt deckid={deck.deckid} cards={deck.crypt} />
+                        <DeckCrypt
+                          inAdvSelect={true}
+                          deckid={deck.deckid}
+                          cards={deck.crypt}
+                        />
                       </Col>
                       <Col
                         md={5}
@@ -234,6 +238,7 @@ function InventoryAddDeckModal(props) {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
+                        className="scroll"
                       >
                         <DeckLibrary
                           deckid={deck.deckid}
@@ -318,7 +323,7 @@ function InventoryAddDeckModal(props) {
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              {!isMobile && <th className="preview"></th>}
+              {isDesktop && <th className="preview"></th>}
               {!isMobile && <th className="date"></th>}
               {!isMobile && (
                 <th className="tags">

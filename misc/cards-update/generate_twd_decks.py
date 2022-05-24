@@ -22,7 +22,7 @@ def generate_twd(i):
         "crypt_total": i["crypt"]["count"],
         "library_total": i["library"]["count"],
         "link": i["event_link"] if "event_link" in i else "",
-        "location": i["place"],
+        "location": i["place"] if "place" in i else "Unknown",
         "name": i["name"] if "name" in i else "Unknown",
         "author": i["player"] if "player" in i else "Unknown",
         "players": i["players_count"] if "players_count" in i else "Unknown",
@@ -74,11 +74,11 @@ def generate_twd(i):
     if len(clans) <= 1 and "monoclan" not in deck["traits"]:
         deck["traits"].append("monoclan")
 
-    deck["capacity"] = total_capacity / total_crypt_ex_ac
+    deck["capacity"] = round(total_capacity / total_crypt_ex_ac, 1)
 
     for ct in i["library"]["cards"]:
-        deck["cardtypes_ratio"][ct["type"].lower()] = (
-            ct["count"] / deck["library_total"]
+        deck["cardtypes_ratio"][ct["type"].lower()] = round(
+            ct["count"] / deck["library_total"], 2
         )
 
         for card in ct["cards"]:
@@ -102,14 +102,14 @@ def generate_twd(i):
     return deck
 
 
-with open("twda.json", "r") as twda_input, open(
-    "twdDecks.json", "w"
-) as twdaDecks_file, open("twdDecksById.json", "w") as twdaDecksById_file:
+with open("twda.json", "r") as twd_input, open(
+    "twd_decks.json", "w"
+) as twd_decks_file, open("twd_decks_by_id.json", "w") as twd_decks_by_id_file:
 
     decks = []
     decks_by_id = {}
 
-    twda = json.load(twda_input)
+    twda = json.load(twd_input)
     total = len(twda)
 
     pool = multiprocessing.Pool(processes=4)
@@ -118,34 +118,37 @@ with open("twda.json", "r") as twda_input, open(
     for deck in decks:
         decks_by_id[deck["deckid"]] = deck
 
-    json.dump(decks, twdaDecks_file, indent=4, separators=(",", ":"))
-    json.dump(decks_by_id, twdaDecksById_file, indent=4, separators=(",", ":"))
+    json.dump(decks, twd_decks_file, indent=4, separators=(",", ":"))
+    json.dump(decks_by_id, twd_decks_by_id_file, indent=4, separators=(",", ":"))
 
-with open("twda.json", "r") as twda_input, open(
-    "twdLocations.json", "w"
-) as twdaLocations_file, open("twdPlayers.json", "w") as twdaPlayers_file:
+with open("twda.json", "r") as twd_input, open(
+    "twd_locations.json", "w"
+) as twd_locations_file, open("twd_players.json", "w") as twd_players_file:
 
-    twda = json.load(twda_input)
+    twda = json.load(twd_input)
     locations = set(())
     players = set(())
     total = len(twda)
 
     for i in twda:
-        place = i["place"].split(", ")
-        locations.add(place.pop())
-        locations.add(i["place"])
+        if "place" in i:
+            place = i["place"].split(", ")
+            locations.add(place.pop())
+            locations.add(i["place"])
+        else:
+            locations.add("Unknown")
 
         players.add(i["player"])
 
     locations = sorted(locations)
-    locationsOptions = []
+    locations_options = []
     for i in locations:
-        locationsOptions.append({"label": i, "value": i})
+        locations_options.append({"label": i, "value": i})
 
     players = sorted(players)
-    playersOptions = []
+    players_options = []
     for i in players:
-        playersOptions.append({"label": i, "value": i})
+        players_options.append({"label": i, "value": i})
 
-    json.dump(playersOptions, twdaPlayers_file, indent=4, separators=(",", ":"))
-    json.dump(locationsOptions, twdaLocations_file, indent=4, separators=(",", ":"))
+    json.dump(players_options, twd_players_file, indent=4, separators=(",", ":"))
+    json.dump(locations_options, twd_locations_file, indent=4, separators=(",", ":"))

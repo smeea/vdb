@@ -4,11 +4,22 @@ import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-function DeckImportText(props) {
-  const { getDecks, setActiveDeck, isMobile } = useApp();
+const DeckImportText = ({
+  anonymous,
+  setBadCards,
+  handleCloseModal,
+  show,
+  addImportedDeckToState,
+}) => {
+  const {
+    setActiveDeck,
+    isMobile,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
 
   const [deckText, setDeckText] = useState('');
-  const [emptyDeckText, setEmptyDeckText] = useState(false);
+  const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
   const refText = useRef(null);
 
@@ -18,17 +29,19 @@ function DeckImportText(props) {
     setDeckText(event.target.value);
   };
 
+  const handleClose = () => {
+    handleCloseModal();
+    setDeckText('');
+  };
+
   const importDeckFromText = () => {
     setImportError(false);
 
     if (deckText) {
-      setEmptyDeckText(false);
+      setEmptyError(false);
       setSpinnerState(true);
 
-      let newDeckId;
-      const url = `${process.env.API_URL}decks/${
-        props.anonymous ? 'anonymous_' : ''
-      }import`;
+      const url = `${process.env.API_URL}decks/import`;
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -38,6 +51,7 @@ function DeckImportText(props) {
         },
         body: JSON.stringify({
           deckText: deckText,
+          anonymous: anonymous,
         }),
       };
 
@@ -46,26 +60,24 @@ function DeckImportText(props) {
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          newDeckId = data.deckid;
-          props.setBadCards(data.bad_cards);
-        })
-        .then(() => !props.anonymous && getDecks())
-        .then(() => {
+          addImportedDeckToState({ data, anonymous });
+          setBadCards(data.bad_cards);
           setActiveDeck({
-            src: props.anonymous ? 'shared' : 'my',
-            deckid: newDeckId,
+            src: anonymous ? 'shared' : 'my',
+            deckid: data.deckid,
           });
-          isMobile && props.setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
           setDeckText('');
           setSpinnerState(false);
-          props.handleClose();
+          handleClose();
         })
         .catch((error) => {
           setImportError(true);
           setSpinnerState(false);
         });
     } else {
-      setEmptyDeckText(true);
+      setEmptyError(true);
     }
   };
 
@@ -91,8 +103,8 @@ It will skip other (useless) lines, you don't have to remove it yourself.
 
   return (
     <Modal
-      show={props.show}
-      onHide={props.handleClose}
+      show={show}
+      onHide={handleClose}
       onShow={() => refText.current.focus()}
       animation={false}
       size="lg"
@@ -102,7 +114,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
         className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
       >
         <h5>Import from Text</h5>
-        <Button variant="outline-secondary" onClick={props.handleClose}>
+        <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -136,7 +148,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
           )}
         </div>
         <ErrorOverlay
-          show={emptyDeckText}
+          show={emptyError}
           target={refText.current}
           placement="bottom"
           modal={true}
@@ -154,6 +166,6 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default DeckImportText;

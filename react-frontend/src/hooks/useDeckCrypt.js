@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { countCards, containCard, deckSort } from 'utils';
+import { countCards, containCard, deckCryptSort } from 'utils';
 import { ANY } from 'utils/constants';
 
 const useDeckCrypt = (cardsList, sortMethod, timer, deckid, cardsToList) => {
@@ -60,10 +60,10 @@ const useDeckCrypt = (cardsList, sortMethod, timer, deckid, cardsToList) => {
 
   // Sort cards
   const [sortedState, setSortedState] = useState(
-    deckSort(crypt, sortMethod).map((c) => c.c.Id)
+    deckCryptSort(crypt, sortMethod).map((c) => c.c.Id)
   );
   const [sortedSideState, setSortedSideState] = useState(
-    deckSort(cryptSide, sortMethod).map((c) => c.c.Id)
+    deckCryptSort(cryptSide, sortMethod).map((c) => c.c.Id)
   );
 
   const sortedCards = crypt.sort((a, b) => {
@@ -74,9 +74,11 @@ const useDeckCrypt = (cardsList, sortMethod, timer, deckid, cardsToList) => {
   });
 
   useEffect(() => {
-    if (deckSort) {
-      setSortedState(deckSort(crypt, sortMethod).map((c) => c.c.Id));
-      setSortedSideState(deckSort(cryptSide, sortMethod).map((c) => c.c.Id));
+    if (deckCryptSort) {
+      setSortedState(deckCryptSort(crypt, sortMethod).map((c) => c.c.Id));
+      setSortedSideState(
+        deckCryptSort(cryptSide, sortMethod).map((c) => c.c.Id)
+      );
     }
   }, [timer, sortMethod, cardsToList]);
 

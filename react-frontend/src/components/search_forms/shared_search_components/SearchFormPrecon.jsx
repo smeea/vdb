@@ -9,9 +9,14 @@ import {
   SearchFormButtonDel,
 } from './';
 import { useApp } from 'context';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-function SearchFormPrecon(props) {
+const SearchFormPrecon = ({
+  value,
+  setFormState,
+  onChange,
+  onChangeOptions,
+}) => {
   const { isMobile } = useApp();
 
   const preOptions = [];
@@ -100,23 +105,38 @@ function SearchFormPrecon(props) {
     }
   });
 
-  const preconOptions = [
-    ['only in', 'Only In'],
-    ['first print', 'First Printed In'],
+  const printFormOptions = [
+    {
+      value: 'only',
+      label: 'Only In',
+      title: 'Printed only in selected Set',
+    },
+    {
+      value: 'first',
+      label: 'First Print',
+      title: 'Printed first in selected Set',
+    },
+    {
+      value: 'reprint',
+      label: 'Reprint',
+      title: 'Reprinted in selected Set',
+    },
   ];
 
-  const preconOptionsForm = preconOptions.map((i, index) => {
+  const printForm = printFormOptions.map((i, index) => {
     return (
       <Form.Check
         key={index}
         name="precon"
-        value={i[0]}
-        className="small"
+        value={i.value}
         type="checkbox"
-        id={`precon-${i[0]}`}
-        label={i[1]}
-        checked={props.value[i[0]]}
-        onChange={(e) => props.onChangeOptions(e)}
+        className="small"
+        id={`precon-${i.value}`}
+        label={i.label}
+        title={i.title}
+        disabled={value.value[0] === 'bcp' && i.value === 'reprint'}
+        checked={value['print'] === i.value}
+        onChange={(e) => onChangeOptions(e)}
       />
     );
   });
@@ -143,17 +163,17 @@ function SearchFormPrecon(props) {
           className="d-flex justify-content-between align-items-center px-0"
         >
           <div className="bold blue">Precon:</div>
-          {props.value.value[0] !== 'any' && (
+          {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
-              {props.value.value.length == 1 ? (
+              {value.value.length == 1 ? (
                 <SearchFormButtonAdd
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                 />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                   i={0}
                 />
               )}
@@ -169,27 +189,27 @@ function SearchFormPrecon(props) {
             maxMenuHeight={isMobile ? window.innerHeight - 200 : 550}
             filterOption={filterOption}
             name={0}
-            value={options.find((obj) => obj.value === props.value.value[0])}
-            onChange={props.onChange}
+            value={options.find((obj) => obj.value === value.value[0])}
+            onChange={onChange}
           />
         </Col>
       </Row>
       <SearchAdditionalForms
         menuPlacement={isMobile ? 'top' : 'bottom'}
-        value={props.value}
+        value={value}
         options={options}
-        onChange={props.onChange}
-        setFormState={props.setFormState}
+        onChange={onChange}
+        setFormState={setFormState}
       />
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">
           <Stack direction="horizontal" gap={3}>
-            {preconOptionsForm}
+            {printForm}
           </Stack>
         </Col>
       </Row>
     </>
   );
-}
+};
 
 export default SearchFormPrecon;

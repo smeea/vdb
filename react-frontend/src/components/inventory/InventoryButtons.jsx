@@ -10,26 +10,29 @@ import FolderPlus from 'assets/images/icons/folder-plus.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function InventoryButtons(props) {
-  const { decks, preconDecks } = useApp();
+const InventoryButtons = ({
+  setShowAddDeck,
+  setShowAddPrecon,
+  clan,
+  type,
+  discipline,
+}) => {
+  const { decks, preconDecks, setShowFloatingButtons, setShowMenuButtons } =
+    useApp();
 
   return (
     <Stack gap={1}>
-      <InventoryExportButton setShowButtons={props.setShowButtons} />
-      <DeckImport
-        inventoryAddToState={props.inventoryAddToState}
-        setShowButtons={props.setShowButtons}
-        inInventory={true}
-      />
-      <InventoryDeleteButton
-        setInventoryCrypt={props.setInventoryCrypt}
-        setInventoryLibrary={props.setInventoryLibrary}
-        setShowButtons={props.setShowButtons}
-      />
+      <InventoryExportButton />
+      <DeckImport inInventory={true} />
+      <InventoryDeleteButton />
       {decks && (
         <ButtonIconed
           variant="secondary"
-          onClick={() => props.setShowAddDeck(true)}
+          onClick={() => {
+            setShowAddDeck(true);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(false);
+          }}
           title="Add from your Deck"
           icon={<FolderPlus />}
           text="Add from Deck"
@@ -38,20 +41,19 @@ function InventoryButtons(props) {
       {preconDecks && (
         <ButtonIconed
           variant="secondary"
-          onClick={() => props.setShowAddPrecon(true)}
+          onClick={() => {
+            setShowAddPrecon(true);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(false);
+          }}
           title="Add from Preconstructed Deck"
           icon={<FolderPlus />}
           text="Add from Precon"
         />
       )}
-      <InventoryMissingButton
-        setShowButtons={props.setShowButtons}
-        clan={props.clan}
-        type={props.type}
-        discipline={props.discipline}
-      />
+      <InventoryMissingButton clan={clan} type={type} discipline={discipline} />
     </Stack>
   );
-}
+};
 
 export default InventoryButtons;

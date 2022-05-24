@@ -1,15 +1,34 @@
 import React from 'react';
 import Select from 'react-select';
+import TrophyFill from 'assets/images/icons/trophy-fill.svg';
+import PeopleFill from 'assets/images/icons/people-fill.svg';
+
 import { useApp } from 'context';
 
-function DeckSelectRecent(props) {
+const DeckSelectRecent = (props) => {
+  // setActiveDeck is default and props.setActiveDeck is used in Diff
+  // to select deckFrom or deckTo
   const { setActiveDeck, recentDecks, isMobile } = useApp();
+
+  const getIcon = (src) => {
+    switch (src) {
+      case 'twd':
+        return <TrophyFill />;
+      case 'pda':
+        return <PeopleFill />;
+    }
+  };
 
   const options = recentDecks.map((i) => {
     return {
       value: i.deckid,
       name: 'deck',
-      label: `${i.name} ${i.deckid.length === 32 ? '' : '[TWD] '}`,
+      label: (
+        <div className="d-flex justify-content-between">
+          {i.name}
+          <span className="gray">{getIcon(i.src)}</span>
+        </div>
+      ),
     };
   });
 
@@ -33,10 +52,10 @@ function DeckSelectRecent(props) {
       name="decks"
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
-      value={options.find((obj) => obj.value === props.deckId)}
+      value={options.find((obj) => obj.value === props.deckid)}
       onChange={handleChange}
     />
   );
-}
+};
 
 export default DeckSelectRecent;

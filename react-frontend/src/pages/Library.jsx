@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-function Library({ lastDeckId }) {
+const Library = ({ lastDeckId }) => {
   const {
     deckRouter,
     showLibrarySearch,
@@ -19,7 +19,12 @@ function Library({ lastDeckId }) {
     activeDeck,
   } = useApp();
 
-  const { libraryResults } = useSearchResults();
+  const {
+    libraryResults,
+    setLibraryResults,
+    libraryCompare,
+    setLibraryCompare,
+  } = useSearchResults();
 
   let myActiveDeck;
   if (isMobile) {
@@ -32,7 +37,7 @@ function Library({ lastDeckId }) {
   }
 
   const deckData = deckRouter(myActiveDeck);
-  const deckId = myActiveDeck.deckid;
+  const deckid = myActiveDeck.deckid;
 
   const showSearchForm = useMemo(() => {
     return (
@@ -43,8 +48,8 @@ function Library({ lastDeckId }) {
   }, [isMobile, isDesktop, addMode, showLibrarySearch, libraryResults]);
 
   const showToggleAddMode = useMemo(() => {
-    return deckId && libraryResults && !isMobile && !isDesktop;
-  }, [deckId, isMobile, isDesktop, libraryResults]);
+    return deckid && libraryResults && !isMobile && !isDesktop;
+  }, [deckid, isMobile, isDesktop, libraryResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showLibrarySearch));
 
@@ -55,7 +60,7 @@ function Library({ lastDeckId }) {
           <Col
             md={!showSearchForm ? 5 : 1}
             lg={!showSearchForm ? 6 : 1}
-            xl={deckId && addMode ? 4 : 2}
+            xl={deckid && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
             {deckData && (isDesktop || (!isDesktop && !showSearchForm)) && (
@@ -64,9 +69,23 @@ function Library({ lastDeckId }) {
           </Col>
         )}
         {showResultCol && (
-          <Col md={7} lg={6} xl={5} className={'px-0 px-md-2 px-xl-3 py-md-3'}>
-            {libraryResults && (
+          <Col md={7} lg={6} xl={5} className="px-0 px-md-2 px-xl-3 py-md-3">
+            {((isMobile && libraryCompare && libraryResults) ||
+              (!isMobile && libraryCompare)) && (
+              <div className="pb-3">
+                <ResultLibrary
+                  inCompare={true}
+                  cards={libraryCompare}
+                  setCards={setLibraryCompare}
+                  library={deckData && deckData.library}
+                  activeDeck={myActiveDeck}
+                />
+              </div>
+            )}
+            {libraryResults !== undefined && (
               <ResultLibrary
+                cards={libraryResults}
+                setCards={setLibraryResults}
                 library={deckData && deckData.library}
                 activeDeck={myActiveDeck}
               />
@@ -74,7 +93,7 @@ function Library({ lastDeckId }) {
           </Col>
         )}
         {showSearchForm && (
-          <Col md={4} lg={4} xl={3} className={'p-1 px-md-2 pe-xl-0 py-md-3'}>
+          <Col md={4} lg={4} xl={3} className="p-1 p-md-3 pe-xl-0">
             <LibrarySearchForm />
           </Col>
         )}
@@ -87,6 +106,6 @@ function Library({ lastDeckId }) {
       )}
     </Container>
   );
-}
+};
 
 export default Library;

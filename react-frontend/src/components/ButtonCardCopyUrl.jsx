@@ -3,12 +3,12 @@ import { Button } from 'react-bootstrap';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 
-function ButtonCardCopyUrl(props) {
-  const { isMobile } = useApp();
+const ButtonCardCopyUrl = ({ cardid }) => {
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
 
   const [state, setState] = useState(false);
 
-  const deckUrl = `${process.env.ROOT_URL}cards/${props.id}`;
+  const deckUrl = `${process.env.ROOT_URL}cards/${cardid}`;
 
   const handleButton = () => {
     navigator.clipboard.writeText(deckUrl);
@@ -16,7 +16,8 @@ function ButtonCardCopyUrl(props) {
     setTimeout(() => {
       setState(false);
     }, 1000);
-    isMobile && props.setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -39,6 +40,6 @@ function ButtonCardCopyUrl(props) {
       )}
     </>
   );
-}
+};
 
 export default ButtonCardCopyUrl;

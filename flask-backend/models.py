@@ -39,6 +39,7 @@ class Deck(db.Model):
     cards = db.Column(db.PickleType, default={})
     description = db.Column(db.String(32768), default="")
     hidden = db.Column(db.Boolean, default=False)
+    frozen = db.Column(db.Boolean, default=False)
     inventory_type = db.Column(db.String(1), default="")
     master = db.Column(db.String(32))
     name = db.Column(db.String(64), default="New Deck")

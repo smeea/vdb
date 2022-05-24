@@ -13,25 +13,23 @@ import {
 import { BURN_OPTION, POOL_COST, BLOOD_COST, CARD_TEXT } from 'utils/constants';
 import { useApp } from 'context';
 
-function DeckRecommendationLibraryTable(props) {
-  const { nativeLibrary, isMobile } = useApp();
-  let resultTrClass;
+const DeckRecommendationLibraryTable = ({
+  handleModalCardOpen,
+  cards,
+  library,
+  activeDeck,
+  isAuthor,
+  placement,
+}) => {
+  const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
 
-  const cardRows = props.cards.map((card, index) => {
+  const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
-      props.handleModalCardOpen(props.cards[index]);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(cards[idx]);
+      setShowFloatingButtons(false);
     };
 
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
-
-    const inDeck =
-      (props.library && props.library[card.Id] && props.library[card.Id].q) ||
-      0;
+    const inDeck = (library && library[card.Id] && library[card.Id].q) || 0;
 
     const DisciplineOrClan = card.Clan ? (
       <ResultLibraryClan value={card.Clan} />
@@ -41,19 +39,19 @@ function DeckRecommendationLibraryTable(props) {
 
     return (
       <React.Fragment key={card.Id}>
-        <tr className={resultTrClass}>
-          {props.isAuthor && props.activeDeck.deckid && (
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+          {isAuthor && activeDeck.deckid && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}
-                deckid={props.activeDeck.deckid}
+                deckid={activeDeck.deckid}
                 card={card}
                 inDeck={inDeck}
               />
             </td>
           )}
           <ConditionalOverlayTrigger
-            placement={props.placement}
+            placement={placement}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >
@@ -90,6 +88,6 @@ function DeckRecommendationLibraryTable(props) {
       </table>
     </>
   );
-}
+};
 
 export default DeckRecommendationLibraryTable;

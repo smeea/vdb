@@ -26,7 +26,7 @@ import { sanitizeFormState } from 'utils';
 import { useFilters } from 'hooks';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-function LibrarySearchForm(props) {
+const LibrarySearchForm = (props) => {
   const {
     libraryCardBase,
     hideMissing,
@@ -67,7 +67,7 @@ function LibrarySearchForm(props) {
     }
   }, [libraryCardBase]);
 
-  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState(false);
   const refError = useRef(null);
 
   const handleTextChange = (event) => {
@@ -129,6 +129,8 @@ function LibrarySearchForm(props) {
     const newState = libraryFormState[name];
     if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
       newState['age'] = newState['age'] === value ? false : value;
+    } else if (['only', 'first', 'reprint'].includes(value)) {
+      newState['print'] = newState['print'] === value ? false : value;
     } else {
       newState[value] = !newState[value];
     }
@@ -163,7 +165,7 @@ function LibrarySearchForm(props) {
     setLibraryFormState(JSON.parse(JSON.stringify(defaults)));
     setLibraryResults(undefined);
     setPreresults(undefined);
-    setShowError(false);
+    setError(false);
   };
 
   const handleSubmitButton = (event) => {
@@ -210,14 +212,13 @@ function LibrarySearchForm(props) {
     if (isMobile && query && libraryFormState) {
       processSearch();
     }
-  }, [libraryFormState]);
+  }, [libraryFormState, libraryCardBase]);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && libraryCardBase) {
       const input = sanitizeFormState('library', libraryFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
-          navigate('/library');
           setLibraryResults(undefined);
           setPreresults(undefined);
         }
@@ -228,7 +229,7 @@ function LibrarySearchForm(props) {
         processSearch();
       }
     }
-  }, [libraryFormState, hideMissing, inventoryMode]);
+  }, [libraryFormState, hideMissing, inventoryMode, libraryCardBase]);
 
   useEffect(() => {
     if (!isMobile && preresults) {
@@ -335,17 +336,17 @@ function LibrarySearchForm(props) {
               <Spinner animation="border" variant="light" />
             )}
             <ErrorOverlay
-              show={showError}
+              show={error}
               target={refError.current}
               placement="left"
             >
-              {showError === true ? 'NO CARDS FOUND' : showError}
+              {error}
             </ErrorOverlay>
           </div>
         </>
       )}
     </Form>
   );
-}
+};
 
 export default LibrarySearchForm;

@@ -4,16 +4,17 @@ import PlusSlashMinus from 'assets/images/icons/plus-slash-minus.svg';
 import { useApp } from 'context';
 import { ButtonIconed } from 'components';
 
-const DeckDiffButton = (props) => {
-  const { isMobile } = useApp();
+const DeckDiffButton = ({ deckid }) => {
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
 
   return (
     <ButtonIconed
       variant="secondary"
       onClick={() => {
-        isMobile && props.setShowButtons(false);
-        navigate(`/diff?from=${props.deckid}&to=${props.deckid}`);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+        navigate(`/diff?from=${deckid}&to=${deckid}`);
       }}
       title="Compare Decks"
       icon={<PlusSlashMinus />}
