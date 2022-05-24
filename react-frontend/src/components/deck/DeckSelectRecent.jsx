@@ -1,5 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
+import TrophyFill from 'assets/images/icons/trophy-fill.svg';
+import PeopleFill from 'assets/images/icons/people-fill.svg';
+
 import { useApp } from 'context';
 
 const DeckSelectRecent = (props) => {
@@ -7,11 +10,25 @@ const DeckSelectRecent = (props) => {
   // to select deckFrom or deckTo
   const { setActiveDeck, recentDecks, isMobile } = useApp();
 
+  const getIcon = (src) => {
+    switch (src) {
+      case 'twd':
+        return <TrophyFill />;
+      case 'pda':
+        return <PeopleFill />;
+    }
+  };
+
   const options = recentDecks.map((i) => {
     return {
       value: i.deckid,
       name: 'deck',
-      label: i.name,
+      label: (
+        <div className="d-flex justify-content-between">
+          {i.name}
+          <span className="gray">{getIcon(i.src)}</span>
+        </div>
+      ),
     };
   });
 

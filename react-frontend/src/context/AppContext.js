@@ -245,11 +245,17 @@ export const AppProvider = (props) => {
   };
 
   const addRecentDeck = (deck) => {
-    const d = [...recentDecks];
+    const src =
+      deck.deckid.length != 32 ? 'twd' : deck.public_parent ? 'pda' : 'shared';
+    let d = [...recentDecks];
     const idx = recentDecks.map((v) => v.deckid).indexOf(deck.deckid);
     if (idx !== -1) d.splice(idx, 1);
-    d.unshift({ deckid: deck.deckid, name: deck.name });
-    if (d.length > 10) d.slice(0, 10);
+    d.unshift({
+      deckid: deck.deckid,
+      name: deck.name,
+      src: src,
+    });
+    if (d.length > 10) d = d.slice(0, 10);
     setRecentDecks(d);
     setLocalStorage('recentDecks', d);
   };
