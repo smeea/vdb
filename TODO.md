@@ -21,7 +21,6 @@
 - Check fields matching between server answers and setState for addImportedDeckToState
 
 # IMPROVE TECHNOLOGY - BACKEND
-- Remove 'owner' from backend (change to is_yours)
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)

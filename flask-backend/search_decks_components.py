@@ -316,7 +316,6 @@ def get_deck_for_frontend(deckid):
         "deckid": d.deckid,
         "name": d.name,
         "author": d.author_public_name,
-        "owner": d.author.username,
         "isFavorited": False,
         "favoritedBy": len(d.favorited),
         "description": d.description,
