@@ -12,6 +12,11 @@ const Changelog = (props) => {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-05-25:</h6>
+            <ul>
+              <li>Many bug fixes</li>
+            </ul>
+
             <h6>2022-05-17:</h6>
             <ul>
               <li>Update card base with New Blood set</li>
