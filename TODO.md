@@ -1,7 +1,5 @@
 # FIX
-- Public deck - refresh after sync button
 - Add Kuyen image
-- Search pda deck by src (my)
 
 # FEATURES
 - Export all in xlsx and csv

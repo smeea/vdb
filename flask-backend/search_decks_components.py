@@ -229,7 +229,7 @@ def get_decks_by_src(src, decks):
     match_decks = []
     for deck in decks:
         if src == "my":
-            if Deck.query.get(deck["deckid"]).author == deck["owner"]:
+            if deck["owner"] == current_user:
                 match_decks.append(deck)
 
         elif src == "favorites":
