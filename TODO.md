@@ -17,8 +17,6 @@
 - Move import to frontend
 - Transit from useContext to Recoil
 - Reduce re-renders
-- Refactor setDecks calls (import/create/clone) into addImportedDeckToState
-- Check fields matching between server answers and setState for addImportedDeckToState
 
 # IMPROVE TECHNOLOGY - BACKEND
 

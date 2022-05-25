@@ -592,15 +592,21 @@ def importDeck():
 
     deck = deck_import(request.json["deckText"])
 
+    author = current_user if not anonymous else None
+    author_public_name = deck["author"]
+    if not deck["author"] and not anonymous:
+        author_public_name = current_user.username
+
     deckid = uuid.uuid4().hex
     d = Deck(
         deckid=deckid,
         name=deck["name"],
-        author_public_name=deck["author"],
+        author_public_name=author_public_name,
         description=deck["description"],
-        author=current_user if not anonymous else None,
+        author=author,
         cards=deck["cards"],
     )
+
     db.session.add(d)
     db.session.commit()
 
@@ -610,7 +616,8 @@ def importDeck():
             "bad_cards": deck["bad_cards"],
             "cards": deck["cards"],
             "name": deck["name"],
-            "author": deck["author"],
+            "author": author_public_name,
+            "is_yours": bool(author),
             "description": deck["description"],
         }
     )
