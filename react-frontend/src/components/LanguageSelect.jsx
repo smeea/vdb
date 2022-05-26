@@ -3,13 +3,19 @@ import { Overlay, Popover } from 'react-bootstrap';
 import FlagEn from 'assets/images/flags/en.svg';
 import FlagEs from 'assets/images/flags/es.svg';
 import FlagFr from 'assets/images/flags/fr.svg';
+import FlagPt from 'assets/images/flags/pt.svg';
 import { useApp } from 'context';
 
 const LanguageSelect = ({ showMenu, setShowMenu }) => {
   const { isMobile, lang, changeLang } = useApp();
   const menuRef = useRef(null);
 
-  const languages = { 'en-EN': FlagEn, 'es-ES': FlagEs, 'fr-FR': FlagFr };
+  const languages = {
+    'en-EN': FlagEn,
+    'es-ES': FlagEs,
+    'fr-FR': FlagFr,
+    'pt-PT': FlagPt,
+  };
 
   const options = Object.keys(languages).map((l) => {
     const Flag = languages[l];

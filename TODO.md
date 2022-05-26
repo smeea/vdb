@@ -1,10 +1,12 @@
 # FIX
 - Add Kuyen image
+- Autosave to description
 
 # FEATURES
 - Export all in xlsx and csv
 - Add to compare notification/title
 - Documentation discoverability (links to pages?)
+- Portugese images
 
 # MAYBE LATER FEATURES
 - Comments for PDA
