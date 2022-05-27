@@ -1,6 +1,5 @@
 # FIX
 - Add Kuyen image
-- Autosave to description
 
 # FEATURES
 - Export all in xlsx and csv

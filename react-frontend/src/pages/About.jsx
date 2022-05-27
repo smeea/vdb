@@ -72,9 +72,19 @@ const About = (props) => {
                 : 2022-05-17
               </p>
 
-              <h6>Last update [2022-05-25]:</h6>
+              <h6>Last update [2022-05-27]:</h6>
               <ul>
-                <li>Many bug fixes</li>
+                <li>
+                  Add Brazilian Portuguese card images and card texts. Not all
+                  cards available so far, but that is still GREAT (big thanks to
+                  Helton &quot;Helt&quot; Matiazi efforts!)
+                </li>
+                <li>
+                  Fixed bug with non-english languages sometimes displaying
+                  black box instead of card image. Now if localized image is not
+                  available it will always fallback to English image.
+                </li>
+                <li>Small other fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>

@@ -212,10 +212,6 @@ function Documentation(props) {
 
             <div className="pt-3">
               <h5 id="pda">PDA SEARCH</h5>
-              <h6 className="red">
-                PDA IS BETA FEATURE AND MAY BE UNSTABLE. PLEASE BACKUP (EXPORT)
-                YOUR DECKS BEFORE USING IT.
-              </h6>
               <p>
                 Public Deck Archive (PDA) let you share your decks with other
                 players and search other players shared decks
@@ -268,6 +264,14 @@ function Documentation(props) {
 
               <h6>Hints</h6>
               <ul>
+                <li>
+                  VDB save changes automatically, you don&apos;t have to do
+                  anything to save the deck. If it cannot save the change (i.e.
+                  network problem) it will immediatelly revert the change, the
+                  cards you see in the deck is what actually saved on the
+                  server. You can close the page anytime without losing
+                  progress.
+                </li>
                 <li>
                   You can change card quantity by clicking on the quantity to
                   enter number manual
