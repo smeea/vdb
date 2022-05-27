@@ -277,6 +277,7 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
                         text = match.group(1)
                         text = re.sub(r"{The (\w+)}", r"{\1, The}", text)
                         text = text.replace("Thaumaturgy", "Blood Sorcery")
+                        text = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", text)
                         card["Rulings"].append(
                             {
                                 "text": text,

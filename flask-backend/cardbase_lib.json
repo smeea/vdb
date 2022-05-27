@@ -12966,7 +12966,7 @@
                 }
             },
             {
-                "text":"Is a political action but not a \"political action card\" [POLITICAL ACTION] (eg. {Luna Giovanni}'s ability cannot target it, it cannot be discarded for a vote). ",
+                "text":"Is a political action but not a \"political action card\" [POLITICALACTION] (eg. {Luna Giovanni}'s ability cannot target it, it cannot be discarded for a vote). ",
                 "refs":{
                     "[LSJ 20070927]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VaSQ7JL2N2Y/m/BenDHsAETG4J",
                     "[LSJ 20050407]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fDl3t2lJ3Pc/m/pdmWZOwllPMJ"
@@ -22322,7 +22322,7 @@
                 }
             },
             {
-                "text":"[ACTION MODIFIER] If the minion is burned because of a referendum or as a side-effect of the action, this does not count as the acting minion burning him. (eg. {War Ghoul} when recruited, {Brigitte Gebauer} using her last life, {Kamiri wa Itherero}'s ability). ",
+                "text":"[ACTIONMODIFIER] If the minion is burned because of a referendum or as a side-effect of the action, this does not count as the acting minion burning him. (eg. {War Ghoul} when recruited, {Brigitte Gebauer} using her last life, {Kamiri wa Itherero}'s ability). ",
                 "refs":{
                     "[LSJ 20090922]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/UdvGbJqOeo4/qFeNdWilXzUJ",
                     "[RTR 19960124]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wF82VdVPlm0/cSshmBFQs-EJ",
@@ -22330,7 +22330,7 @@
                 }
             },
             {
-                "text":"[ACTION MODIFIER] If played on a diablerie, can be played before or after getting a Discipline card (if any), but must be played before the Blood Hunt. ",
+                "text":"[ACTIONMODIFIER] If played on a diablerie, can be played before or after getting a Discipline card (if any), but must be played before the Blood Hunt. ",
                 "refs":{
                     "[RTR 19991206]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/N7iEmqgP9WU/gX80TroOBsUJ"
                 }
@@ -29085,7 +29085,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[PRE] [ACTION MODIFIER] Cards and effects that can be played \"as the action is announced\" (and only them) can be played before it. ",
+                "text":"[PRE] [ACTIONMODIFIER] Cards and effects that can be played \"as the action is announced\" (and only them) can be played before it. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -31901,7 +31901,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[obe] [ACTION MODIFIER][REACTION] The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"[obe] [ACTIONMODIFIER][REACTION] The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
@@ -33770,13 +33770,13 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[tem] [ACTION MODIFIER][REACTION] Cards are not replaced during the \"as played\" window. ",
+                "text":"[tem] [ACTIONMODIFIER][REACTION] Cards are not replaced during the \"as played\" window. ",
                 "refs":{
                     "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
                 }
             },
             {
-                "text":"[tem] [ACTION MODIFIER][REACTION] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "text":"[tem] [ACTIONMODIFIER][REACTION] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
                 "refs":{
                     "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
@@ -35327,7 +35327,7 @@
                 }
             },
             {
-                "text":"[ACTION MODIFIER] [1 CONVICTION] Cards and effects that can be played \"as the action is announced\" (and only them) can be played before it. ",
+                "text":"[ACTIONMODIFIER] [1CONVICTION] Cards and effects that can be played \"as the action is announced\" (and only them) can be played before it. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -56209,7 +56209,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[abo] [ACTION MODIFIER] Cards and effects that can be played \"as the action is announced\" (and only them) can be played before it. ",
+                "text":"[abo] [ACTIONMODIFIER] Cards and effects that can be played \"as the action is announced\" (and only them) can be played before it. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -58255,7 +58255,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[aus][tem] [ACTION MODIFIER][REACTION] Cannot be burned during a referendum that is automatically passing. ",
+                "text":"[aus][tem] [ACTIONMODIFIER][REACTION] Cannot be burned during a referendum that is automatically passing. ",
                 "refs":{
                     "[PIB 20150105]":"http://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                     "[LSJ 19980107]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/aUUs4VCR_Ec/PLecvfrEqbgJ"
@@ -66189,7 +66189,7 @@
                 }
             },
             {
-                "text":"[OBF][POT][ACTION MODIFIER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[OBF][POT][ACTIONMODIFIER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -70007,7 +70007,7 @@
                 }
             },
             {
-                "text":"[ACTION MODIFIER] If the minion is burned because of a referendum or as a side-effect of the action, this does not count as the acting minion burning him. (eg. {War Ghoul} when recruited, {Brigitte Gebauer} using her last life, {Kamiri wa Itherero}'s ability). ",
+                "text":"[ACTIONMODIFIER] If the minion is burned because of a referendum or as a side-effect of the action, this does not count as the acting minion burning him. (eg. {War Ghoul} when recruited, {Brigitte Gebauer} using her last life, {Kamiri wa Itherero}'s ability). ",
                 "refs":{
                     "[LSJ 20090922]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/UdvGbJqOeo4/qFeNdWilXzUJ",
                     "[RTR 19960124]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wF82VdVPlm0/cSshmBFQs-EJ",
@@ -70015,7 +70015,7 @@
                 }
             },
             {
-                "text":"[ACTION MODIFIER] If played on a diablerie, can be played before or after getting a Discipline card (if any), but must be played before the Blood Hunt. ",
+                "text":"[ACTIONMODIFIER] If played on a diablerie, can be played before or after getting a Discipline card (if any), but must be played before the Blood Hunt. ",
                 "refs":{
                     "[RTR 19991206]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/N7iEmqgP9WU/gX80TroOBsUJ"
                 }
@@ -73599,7 +73599,7 @@
                 }
             },
             {
-                "text":"[abo] [ACTION MODIFIER] If the minion is burned because of a referendum or as a side-effect of the action, this does not count as the acting minion burning him. (eg. {War Ghoul} when recruited, {Brigitte Gebauer} using her last life, {Kamiri wa Itherero}'s ability). ",
+                "text":"[abo] [ACTIONMODIFIER] If the minion is burned because of a referendum or as a side-effect of the action, this does not count as the acting minion burning him. (eg. {War Ghoul} when recruited, {Brigitte Gebauer} using her last life, {Kamiri wa Itherero}'s ability). ",
                 "refs":{
                     "[LSJ 20090922]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/UdvGbJqOeo4/qFeNdWilXzUJ",
                     "[RTR 19960124]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wF82VdVPlm0/cSshmBFQs-EJ",
@@ -73607,7 +73607,7 @@
                 }
             },
             {
-                "text":"[abo] [ACTION MODIFIER] If played on a diablerie, can be played before or after getting a Discipline card (if any), but must be played before the Blood Hunt. ",
+                "text":"[abo] [ACTIONMODIFIER] If played on a diablerie, can be played before or after getting a Discipline card (if any), but must be played before the Blood Hunt. ",
                 "refs":{
                     "[RTR 19991206]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/N7iEmqgP9WU/gX80TroOBsUJ"
                 }
@@ -81069,14 +81069,14 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[REACTION] [1 CONVICTION] Can be used only when reactions can be used (during an action). It does not count as playing a reaction card. ",
+                "text":"[REACTION] [1CONVICTION] Can be used only when reactions can be used (during an action). It does not count as playing a reaction card. ",
                 "refs":{
                     "[LSJ 20070403]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/TJ2ktt_1tjk/fdH_x9tDmN8J",
                     "[LSJ 20070413]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/umdINigMKqs/lfUAxTnfttIJ"
                 }
             },
             {
-                "text":"[ACTION MODIFIER] Cards and effects that can be played \"after resolution\" (and only them) can be played after its use. ",
+                "text":"[ACTIONMODIFIER] Cards and effects that can be played \"after resolution\" (and only them) can be played after its use. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -82028,20 +82028,20 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[ACTION MODIFIER] A hunt is not successful if no blood is gained, even if the hunt action is still successful. ",
+                "text":"[ACTIONMODIFIER] A hunt is not successful if no blood is gained, even if the hunt action is still successful. ",
                 "refs":{
                     "[LSJ 20050720-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/1vbIkgvKDJ0/3ErIIMXFgPIJ"
                 }
             },
             {
-                "text":"[ACTION MODIFIER] The hunt bonus applies to non-standard hunt actions, blood comes from the target of the hunt. ",
+                "text":"[ACTIONMODIFIER] The hunt bonus applies to non-standard hunt actions, blood comes from the target of the hunt. ",
                 "refs":{
                     "[RTR 20030519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NOBWXWrd-vA/iEOpQp1uhvAJ",
                     "[RTR 20180511]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
                 }
             },
             {
-                "text":"[ACTION MODIFIER][REACTION] Cannot be used during a referendum that is automatically passing. ",
+                "text":"[ACTIONMODIFIER][REACTION] Cannot be used during a referendum that is automatically passing. ",
                 "refs":{
                     "[PIB 20150105]":"http://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                     "[LSJ 19980107]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/aUUs4VCR_Ec/PLecvfrEqbgJ"
