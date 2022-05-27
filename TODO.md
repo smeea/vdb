@@ -1,5 +1,4 @@
 # FIX
-- Add Kuyen image
 
 # FEATURES
 - Export all in xlsx and csv
