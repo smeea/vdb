@@ -1,45 +1,51 @@
 import React from 'react';
 import { useApp } from 'context';
 
-const CardImage = (props) => {
-  const { localizedCrypt, localizedLibrary, lang } = useApp();
+const CardImage = ({ card, set, className, onClick }) => {
+  const { lang } = useApp();
 
+  let imgEnSrc = null;
   let imgSrc = null;
 
-  if (props.card.Id > 200000) {
-    imgSrc = `${process.env.ROOT_URL}images/cards/${
-      props.set
-        ? `set/${props.set}`
-        : localizedCrypt &&
-          localizedCrypt[lang] &&
-          localizedCrypt[lang][props.card.Id]
-        ? lang
-        : 'en-EN'
-    }/${props.card['ASCII Name']
+  if (card.Id > 200000) {
+    imgEnSrc = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}
-g${props.card.Group.toLowerCase()}
-${props.card.Adv[0] ? 'adv' : ''}.jpg`;
+g${card.Group.toLowerCase()}
+${card.Adv[0] ? 'adv' : ''}.jpg`;
+    imgSrc = imgEnSrc;
   } else {
-    imgSrc = `${process.env.ROOT_URL}images/cards/${
-      props.set
-        ? 'set/' + props.set + '/'
-        : localizedLibrary &&
-          localizedLibrary[lang] &&
-          localizedLibrary[lang][props.card.Id]
-        ? lang + '/'
-        : 'en-EN/'
-    }${props.card['ASCII Name']
+    imgEnSrc = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
+    imgSrc = imgEnSrc;
   }
+
+  if (lang !== 'en-EN' || set) {
+    if (card.Id > 200000) {
+      imgSrc = `${process.env.ROOT_URL}images/cards/${
+        set ? `set/${set}` : lang
+      }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}
+g${card.Group.toLowerCase()}
+${card.Adv[0] ? 'adv' : ''}.jpg`;
+    } else {
+      imgSrc = `${process.env.ROOT_URL}images/cards/${
+        set ? `set/${set}` : lang
+      }/${card['ASCII Name']
+        .toLowerCase()
+        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
+    }
+  }
+
+  const resetImgSrc = (event) => (event.target.src = imgEnSrc);
 
   return (
     <img
-      className={props.className ? props.className : 'card-popover'}
+      className={className ? className : 'card-popover'}
       src={imgSrc}
-      alt={props.card['Name']}
-      onClick={props.onClick}
+      alt={card['Name']}
+      onClick={onClick}
+      onError={resetImgSrc}
     />
   );
 };

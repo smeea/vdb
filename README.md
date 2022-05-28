@@ -11,16 +11,18 @@ VDB consist of two components communicating with each other.
 ### FRONTEND
 Uses the following stack to serve UI, accessible with any modern browser:
 ```
-   ReactJS - framework
-   React-Bootstrap - CSS components
+   Node.js (tested on v16)
+   ReactJS
+   React-Bootstrap
 ```
 
 ### BACKEND
 Performs search in official VTES card database and stores account/decks/inventory with:
 
 ```
-   Flask - framework
-   SQLite - database
+   Python (v3.10+)
+   Flask
+   SQLite
 ```
 
 ## INSTALLATION

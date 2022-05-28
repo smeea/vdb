@@ -124,8 +124,9 @@ export const AppProvider = (props) => {
     setInventoryCrypt({});
     setInventoryLibrary({});
     setUsername(undefined);
-    setDecks(undefined);
-    setActiveDeck({ src: null, deckid: null });
+    if (activeDeck.deckid !== 'deckInUrl' && activeDeck.deckid !== null) {
+      setActiveDeck({ src: null, deckid: null });
+    }
     setEmail(undefined);
   };
 

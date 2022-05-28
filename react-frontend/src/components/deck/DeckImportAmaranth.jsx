@@ -144,7 +144,7 @@ const DeckImportAmaranth = ({
                 description: b.comments || '',
                 crypt: crypt,
                 library: library,
-                owner: username,
+                is_yours: true,
                 timestamp: now.toUTCString(),
               };
             });
@@ -159,7 +159,7 @@ const DeckImportAmaranth = ({
               description: deck.description || '',
               crypt: crypt,
               library: library,
-              owner: username,
+              is_yours: true,
               timestamp: now.toUTCString(),
             };
 

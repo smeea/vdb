@@ -1,6 +1,4 @@
 # FIX
-- Public deck - refresh after sync button
-- Add Kuyen image
 
 # FEATURES
 - Export all in xlsx and csv
@@ -11,6 +9,7 @@
 - Comments for PDA
 - Sorting by new/favorites/comments in PDA/TWD
 - Script to update images from static.krcg.org
+- Use DTC list from https://docs.google.com/spreadsheets/d/1RmtZqybXQfvohPEs0F043tayv6hSfhFfqWpVeo4wQrc/
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move search to frontend
@@ -18,9 +17,6 @@
 - Move import to frontend
 - Transit from useContext to Recoil
 - Reduce re-renders
-- Refactor setDecks calls (import/create/clone) into addImportedDeckToState
-- Check fields matching between server answers and setState for addImportedDeckToState
-- Remove 'owner' from frontend (change to is_yours)
 
 # IMPROVE TECHNOLOGY - BACKEND
 

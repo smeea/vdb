@@ -72,36 +72,19 @@ const About = (props) => {
                 : 2022-05-17
               </p>
 
-              <h6>Last update [2022-05-17]:</h6>
+              <h6>Last update [2022-05-27]:</h6>
               <ul>
-                <li>Update card base with New Blood set</li>
-                <li>Update TWDA</li>
                 <li>
-                  Add QR-code (live link to editable deck and non-editable
-                  deck-in-url) as an option for Copy Deck URL
+                  Add Brazilian Portuguese card images and card texts. Not all
+                  cards available so far, but that is still GREAT (big thanks to
+                  Helton &quot;Helt&quot; Matiazi efforts!)
                 </li>
                 <li>
-                  Add Freeze Deck button (in advanced deck select and after deck
-                  name) which will disable deck crypt/library edition unless
-                  turned off to protect established decks from misclicks and
-                  everything
+                  Fixed bug with non-english languages sometimes displaying
+                  black box instead of card image. Now if localized image is not
+                  available it will always fallback to English image.
                 </li>
-                <li>
-                  Add Reprint option for Set/Precon search which will return
-                  only reprinted cards (will includes Promos if first printed as
-                  such)
-                </li>
-                <li>
-                  Newly add inventory cards (which were not in inventory) will
-                  have q-ty box focused by default to speed up adding collection
-                </li>
-                <li>Add sorting for inventory</li>
-                <li>
-                  Moved card selector to bottom in /Cards on mobile (useful for
-                  those having thumbs shorter than 5&quot;)
-                </li>
-                <li>Fixed card selector auto-focus on mobile</li>
-                <li>Many other fixes</li>
+                <li>Small other fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>

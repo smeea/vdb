@@ -370,7 +370,7 @@ const DeckSelectAdvModal = (props) => {
                 <DeckHideButton deckid={deck.deckid} />
                 {!isMobile && (
                   <>
-                    <DeckFreezeButton deckid={deck.deckid} />
+                    <DeckFreezeButton deck={deck} />
                     <DeckTogglePublicButton deck={deck} />
                   </>
                 )}

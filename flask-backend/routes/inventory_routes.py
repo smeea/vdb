@@ -30,13 +30,6 @@ def unauthorized_handler():
     return Response(json.dumps({"Not logged in": True}), 401)
 
 
-# DEPRECATED (LEFT FOR BACKWARD COMPATIBILITY AND 3RD PARTY TOOLS)
-@app.route("/api/inventory", methods=["GET"])
-@login_required
-def listInventory():
-    return jsonify(parse_user_inventory(current_user.inventory))
-
-
 @app.route("/api/inventory/export", methods=["POST"])
 def inventoryExportRoute():
     try:

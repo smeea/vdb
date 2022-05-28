@@ -19,14 +19,6 @@ def parse_user_decks(user_decks):
         if deck.public_parent:
             continue
 
-        # Fix bad imports
-        if "undefined" in deck.cards:
-            print(deck.deckid, "del undefined cards")
-            new_cards = deck.cards.copy()
-            del new_cards["undefined"]
-            deck.cards = new_cards
-            db.session.commit()
-
         # Fix masters / branches
         if deck.master:
             d = Deck.query.get(deck.master)
@@ -66,7 +58,6 @@ def parse_user_decks(user_decks):
         decks[deck.deckid] = {
             "name": deck.name,
             "branchName": deck.branch_name,
-            "owner": deck.author.username,  # DEPRECATED
             "author": deck.author_public_name,
             "description": deck.description,
             "cards": deck.cards,
@@ -118,7 +109,6 @@ def showDeck(deckid):
             "timestamp": deck.timestamp,
             "tags": deck.tags,
             "favorited": deck.favorited,
-            "owner": deck.author.username if deck.author else None,  # DEPRECATED
             "is_yours": current_user == deck.author,
             "public_child": public_child,
             "public_parent": public_parent,
@@ -301,17 +291,6 @@ def updateDeck(deckid):
     return jsonify({"updated deck": d.deckid})
 
 
-# DEPRECATED (LEFT FOR BACKWARD COMPATIBILITY AND 3RD PARTY TOOLS)
-@app.route("/api/decks", methods=["GET"])
-def listDecks():
-    try:
-        decks = parse_user_decks(current_user.decks.all())
-        return jsonify(decks)
-
-    except AttributeError:
-        return jsonify({"error": "not logged"})
-
-
 @app.route("/api/decks/create", methods=["POST"])
 @login_required
 def newDeck():
@@ -349,7 +328,6 @@ def newDeck():
                 "timestamp": d.timestamp,
                 "deckid": d.deckid,
                 "name": d.name,
-                "owner": d.author.username,
                 "author": d.author_public_name,
                 "description": d.description,
                 "cards": d.cards,
@@ -614,15 +592,21 @@ def importDeck():
 
     deck = deck_import(request.json["deckText"])
 
+    author = current_user if not anonymous else None
+    author_public_name = deck["author"]
+    if not deck["author"] and not anonymous:
+        author_public_name = current_user.username
+
     deckid = uuid.uuid4().hex
     d = Deck(
         deckid=deckid,
         name=deck["name"],
-        author_public_name=deck["author"],
+        author_public_name=author_public_name,
         description=deck["description"],
-        author=current_user if not anonymous else None,
+        author=author,
         cards=deck["cards"],
     )
+
     db.session.add(d)
     db.session.commit()
 
@@ -632,7 +616,8 @@ def importDeck():
             "bad_cards": deck["bad_cards"],
             "cards": deck["cards"],
             "name": deck["name"],
-            "author": deck["author"],
+            "author": author_public_name,
+            "is_yours": bool(author),
             "description": deck["description"],
         }
     )

@@ -106,7 +106,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
         ...prevState,
         [data.deckid]: {
           ...deck,
-          owner: username,
+          is_yours: true,
         },
       }));
     }
