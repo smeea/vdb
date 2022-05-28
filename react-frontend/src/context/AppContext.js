@@ -32,6 +32,8 @@ export const AppProvider = (props) => {
   const [cryptDeckSort, setCryptDeckSort] = useState(undefined);
   const [cryptSearchSort, setCryptSearchSort] = useState(undefined);
   const [librarySearchSort, setLibrarySearchSort] = useState(undefined);
+  const [twdSearchSort, setTwdSearchSort] = useState(undefined);
+  const [pdaSearchSort, setPdaSearchSort] = useState(undefined);
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
@@ -240,6 +242,16 @@ export const AppProvider = (props) => {
     setLocalStorage('librarySearchSort', method);
   };
 
+  const changeTwdSearchSort = (method) => {
+    setTwdSearchSort(method);
+    setLocalStorage('twdSearchSort', method);
+  };
+
+  const changePdaSearchSort = (method) => {
+    setPdaSearchSort(method);
+    setLocalStorage('pdaSearchSort', method);
+  };
+
   const toggleAddMode = () => {
     setAddMode(!addMode);
     setLocalStorage('addMode', !addMode);
@@ -274,6 +286,8 @@ export const AppProvider = (props) => {
     );
     initFromStorage('cryptDeckSort', 'Quantity', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
+    initFromStorage('twdSearchSort', 'Date - New to Old', setTwdSearchSort);
+    initFromStorage('pdaSearchSort', 'Date - New to Old', setPdaSearchSort);
     initFromStorage('lang', 'en-EN', setLang);
     initFromStorage('addMode', isDesktop ? true : false, setAddMode);
     initFromStorage('inventoryMode', false, setInventoryMode);
@@ -844,6 +858,10 @@ export const AppProvider = (props) => {
         changeLibrarySearchSort,
         cryptDeckSort,
         changeCryptDeckSort,
+        twdSearchSort,
+        changeTwdSearchSort,
+        pdaSearchSort,
+        changePdaSearchSort,
       }}
     >
       {props.children}

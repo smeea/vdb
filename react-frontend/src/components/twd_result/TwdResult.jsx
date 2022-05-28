@@ -9,44 +9,60 @@ import {
   TwdResultLibraryByType,
   TwdResultLibraryKeyCards,
 } from 'components';
+import { resultDecksSort } from 'utils';
 import { useApp, useSearchResults } from 'context';
 
-function TwdResult(props) {
+const TwdResult = ({ showSearch }) => {
   const {
     setShowTwdSearch,
     cryptCardBase,
     libraryCardBase,
-    showImage,
     isMobile,
     showFloatingButtons,
+    twdSearchSort,
+    changeTwdSearchSort,
   } = useApp();
 
   const { twdResults, setTwdResults } = useSearchResults();
 
   const navigate = useNavigate();
   const showCounterStep = 20;
-  const [twdRows, setTwdRows] = useState([]);
+  const [sortedDecks, setSortedDecks] = useState([]);
+  const [results, setResults] = useState([]);
   const [showCounter, setShowCounter] = useState(0);
   const [deckCounter, setDeckCounter] = useState(0);
+
+  const sortMethods = {
+    'Date - New to Old': 'D↓',
+    'Date - Old to New': 'D↑',
+    Players: 'P',
+  };
+
+  const setSortMethod = (method) => {
+    changeTwdSearchSort(method);
+    setSortedDecks(() => resultDecksSort(twdResults, method));
+  };
 
   const handleClear = () => {
     navigate('/twd');
     setTwdResults(undefined);
-    setShowTwdSearch(!props.showSearch);
+    setShowTwdSearch(!showSearch);
   };
 
   useEffect(() => {
     if (twdResults) {
       setDeckCounter(Object.keys(twdResults).length);
       setShowCounter(showCounterStep);
+      setSortedDecks(() => resultDecksSort(twdResults, twdSearchSort));
     }
   }, [twdResults]);
 
   useEffect(() => {
-    if (twdResults) {
+    if (sortedDecks) {
       let newCounter = showCounter;
-      setTwdRows(
-        twdResults.map((deck, index) => {
+
+      setResults(
+        sortedDecks.map((deck, index) => {
           while (newCounter > 0) {
             newCounter -= 1;
 
@@ -107,7 +123,7 @@ function TwdResult(props) {
         })
       );
     }
-  }, [twdResults, showCounter, showImage]);
+  }, [sortedDecks, showCounter, twdSearchSort]);
 
   return (
     <>
@@ -118,8 +134,13 @@ function TwdResult(props) {
       )}
       {twdResults && twdResults.length > 0 && (
         <>
-          <TwdResultTotal decks={twdResults} />
-          {twdRows}
+          <TwdResultTotal
+            decks={twdResults}
+            sortMethods={sortMethods}
+            sortMethod={twdSearchSort}
+            setSortMethod={setSortMethod}
+          />
+          {results}
           {deckCounter > showCounter && (
             <div className="d-flex justify-content-center pb-4 pt-2">
               <Button
@@ -144,6 +165,6 @@ function TwdResult(props) {
       )}
     </>
   );
-}
+};
 
 export default TwdResult;

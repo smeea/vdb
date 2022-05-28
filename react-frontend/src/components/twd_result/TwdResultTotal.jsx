@@ -1,6 +1,7 @@
 import React from 'react';
+import { SortButton } from 'components';
 
-function TwdResultTotal({ decks }) {
+const TwdResultTotal = ({ decks, sortMethods, sortMethod, setSortMethod }) => {
   const byYear = {};
   let total = 0;
 
@@ -31,7 +32,11 @@ function TwdResultTotal({ decks }) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <div />
+      <SortButton
+        sortMethod={sortMethod}
+        sortMethods={sortMethods}
+        setSortMethod={setSortMethod}
+      />
     </>
   );
 
@@ -40,5 +45,5 @@ function TwdResultTotal({ decks }) {
       {value}
     </div>
   );
-}
+};
 export default TwdResultTotal;

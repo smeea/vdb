@@ -7,7 +7,6 @@
 
 # MAYBE LATER FEATURES
 - Comments for PDA
-- Sorting by new/favorites/comments in PDA/TWD
 - Script to update images from static.krcg.org
 - Use DTC list from https://docs.google.com/spreadsheets/d/1RmtZqybXQfvohPEs0F043tayv6hSfhFfqWpVeo4wQrc/
 
