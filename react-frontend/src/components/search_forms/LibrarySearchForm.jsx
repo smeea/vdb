@@ -179,10 +179,10 @@ const LibrarySearchForm = (props) => {
 
   const processSearch = () => {
     const sanitizeForm = sanitizeFormState('library', libraryFormState);
-    setShowError(false);
+    setError(false);
 
     if (Object.entries(sanitizeForm).length === 0) {
-      setShowError('EMPTY REQUEST');
+      setError('EMPTY REQUEST');
       return;
     }
 
