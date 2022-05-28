@@ -76,7 +76,9 @@ const ResultLayoutText = ({
           <ButtonIconed
             variant={cardInCompare ? 'third' : 'primary'}
             onClick={() => handleCompare()}
-            title="Compare Card"
+            title={`Add Card to Compare: it will be displayed above search results in ${
+              card.Id > 200000 ? 'Crypt' : 'Library'
+            }`}
             icon={
               <SearchHeartFill width="16" height="24" viewBox="0 0 16 16" />
             }

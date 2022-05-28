@@ -2,8 +2,6 @@
 
 # FEATURES
 - Export all in xlsx and csv
-- Add to compare notification/title
-- Documentation discoverability (links to pages?)
 
 # MAYBE LATER FEATURES
 - Comments for PDA
