@@ -2,6 +2,7 @@
 
 # FEATURES
 - Export all in xlsx and csv
+- Embrace-like trait
 
 # MAYBE LATER FEATURES
 - Comments for PDA

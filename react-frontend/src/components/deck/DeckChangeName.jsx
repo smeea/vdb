@@ -53,7 +53,8 @@ const DeckChangeName = ({ deck, isAuthor, isPublic }) => {
           onBlur={handleOnBlur}
           readOnly={!isAuthor || isPublic}
         />
-        {(isPublic || deck.deckid.length != 32) && (
+        {(isPublic ||
+          (deck.deckid !== 'deckInUrl' && deck.deckid.length !== 32)) && (
           <InputGroup.Text
             title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}
           >
