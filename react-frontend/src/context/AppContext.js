@@ -78,6 +78,9 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     cardServices.getCardBase().then((data) => {
+      Object.values(data.crypt).map((card) => {
+        data.crypt[card.Id].Sect = card['Card Text'].split(/\W/)[0];
+      });
       setCryptCardBase(data.crypt);
       setLibraryCardBase(data.library);
       setNativeCrypt(data.nativeCrypt);
