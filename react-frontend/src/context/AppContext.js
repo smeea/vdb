@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { cardServices, inventoryServices, deckServices } from 'services';
 import { useWindowSize } from 'hooks';
+import imbuedClansList from 'assets/data/imbuedClansList.json';
 
 const AppContext = React.createContext();
 
@@ -79,7 +80,15 @@ export const AppProvider = (props) => {
   useEffect(() => {
     cardServices.getCardBase().then((data) => {
       Object.values(data.crypt).map((card) => {
-        data.crypt[card.Id].Sect = card['Card Text'].split(/\W/)[0];
+        let sect;
+        if (imbuedClansList.includes(card['Clan'])) {
+          sect = 'Imbued';
+        } else {
+          const cardText = card['Card Text'].split(/\W+/);
+          sect = cardText[0] === 'Advanced' ? cardText[1] : cardText[0];
+        }
+
+        data.crypt[card.Id].Sect = sect;
       });
       setCryptCardBase(data.crypt);
       setLibraryCardBase(data.library);
