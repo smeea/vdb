@@ -31,7 +31,7 @@ import {
   OverlayTooltip,
 } from 'components';
 
-import { decksSort } from 'utils';
+import { resultDecksSort } from 'utils';
 import { useApp } from 'context';
 
 const DeckSelectAdvModal = (props) => {
@@ -211,7 +211,7 @@ const DeckSelectAdvModal = (props) => {
         });
       }
 
-      const sorted = decksSort(filtered, sortMethod);
+      const sorted = resultDecksSort(filtered, sortMethod);
       setSortedDecks(sorted);
     }
   }, [decks, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);

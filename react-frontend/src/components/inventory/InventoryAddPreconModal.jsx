@@ -12,7 +12,7 @@ import {
   OverlayTooltip,
   ResultLibraryClan,
 } from 'components';
-import { decksSort } from 'utils';
+import { resultDecksSort } from 'utils';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
@@ -62,7 +62,7 @@ const InventoryAddDeckModal = ({
         });
       }
 
-      const sorted = decksSort(filtered, sortMethod);
+      const sorted = resultDecksSort(filtered, sortMethod);
       setSortedDecks(sorted);
     }
   }, [preconDecks, nameFilter, setFilter, sortMethod]);
