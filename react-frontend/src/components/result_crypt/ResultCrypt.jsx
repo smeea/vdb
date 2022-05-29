@@ -27,11 +27,12 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
   const navigate = useNavigate();
 
   const sortMethods = {
-    Name: 'N',
+    'Capacity - Max to Min': 'C↓',
+    'Capacity - Min to Max': 'C↑',
     Clan: 'Cl',
     Group: 'G',
-    'Capacity - Min to Max': 'C↑',
-    'Capacity - Max to Min': 'C↓',
+    Name: 'N',
+    Sect: 'S',
   };
 
   const [showInfo, setShowInfo] = useState(false);

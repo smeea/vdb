@@ -30,11 +30,12 @@ const DiffCrypt = ({
   } = useApp();
 
   const sortMethods = {
-    Quantity: 'Q',
     Capacity: 'C',
-    Name: 'N',
-    Group: 'G',
     Clan: 'Cl',
+    Group: 'G',
+    Name: 'N',
+    Quantity: 'Q',
+    Sect: 'S',
   };
 
   const [showAdd, setShowAdd] = useState(false);

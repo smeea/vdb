@@ -74,12 +74,10 @@ const useDeckCrypt = (cardsList, sortMethod, timer, deckid, cardsToList) => {
   });
 
   useEffect(() => {
-    if (resultCryptSort) {
-      setSortedState(resultCryptSort(crypt, sortMethod).map((c) => c.c.Id));
-      setSortedSideState(
-        resultCryptSort(cryptSide, sortMethod).map((c) => c.c.Id)
-      );
-    }
+    setSortedState(resultCryptSort(crypt, sortMethod).map((c) => c.c.Id));
+    setSortedSideState(
+      resultCryptSort(cryptSide, sortMethod).map((c) => c.c.Id)
+    );
   }, [timer, sortMethod, cardsToList]);
 
   return {

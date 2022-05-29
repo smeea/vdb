@@ -59,11 +59,7 @@ const resultCryptSort = (cards, sortMethod) => {
       case 'Group':
         return cards.sort(byName).sort(byCapacity).sort(byGroup);
       case 'Sect':
-        return cards
-          .sort(byName)
-          .sort(byCapacity)
-          .sort(byQuantity)
-          .sort(bySect);
+        return cards.sort(byName).sort(byCapacity).sort(bySect);
       default:
         return cards;
     }
