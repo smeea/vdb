@@ -27,6 +27,7 @@ const InventoryCryptTable = ({
   sortMethod,
   compact,
   withCompact,
+  newFocus,
 }) => {
   const { usedCryptCards, isMobile, isNarrow, isWide, setShowFloatingButtons } =
     useApp();
@@ -72,6 +73,7 @@ const InventoryCryptTable = ({
             softUsedMax={softUsedMax}
             hardUsedTotal={hardUsedTotal}
             compact={compact}
+            newFocus={newFocus}
           />
         </div>
         <div className="d-flex align-items-center justify-content-center used">

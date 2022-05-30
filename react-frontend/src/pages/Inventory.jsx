@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import X from 'assets/images/icons/x.svg';
@@ -44,6 +44,11 @@ const Inventory = (props) => {
   const [type, setType] = useState('All');
   const [discipline, setDiscipline] = useState('All');
 
+  const newCryptFocus = () => newCryptRef.current.focus();
+  const newCryptRef = useRef(null);
+  const newLibraryFocus = () => newLibraryRef.current.focus();
+  const newLibraryRef = useRef(null);
+
   return (
     <Container className="main-container p-0 px-md-1">
       {username ? (
@@ -56,6 +61,7 @@ const Inventory = (props) => {
                     <InventoryNewCryptCard
                       cards={inventoryCrypt}
                       setNewId={setNewCryptId}
+                      newRef={newCryptRef}
                     />
                   </div>
                   {newCryptId && (
@@ -67,6 +73,7 @@ const Inventory = (props) => {
                             : { c: cryptCardBase[newCryptId], q: 0 },
                         }}
                         compact={true}
+                        newFocus={newCryptFocus}
                       />
                     </div>
                   )}
@@ -89,6 +96,7 @@ const Inventory = (props) => {
                     <InventoryNewLibraryCard
                       cards={inventoryLibrary}
                       setNewId={setNewLibraryId}
+                      newRef={newLibraryRef}
                     />
                   </div>
                   {newLibraryId && (
@@ -100,6 +108,7 @@ const Inventory = (props) => {
                             : { c: libraryCardBase[newLibraryId], q: 0 },
                         }}
                         compact={true}
+                        newFocus={newLibraryFocus}
                       />
                     </div>
                   )}
@@ -138,6 +147,7 @@ const Inventory = (props) => {
                   <InventoryNewCryptCard
                     cards={inventoryCrypt}
                     setNewId={setNewCryptId}
+                    newRef={newCryptRef}
                   />
                 </div>
                 {newCryptId && (
@@ -149,6 +159,7 @@ const Inventory = (props) => {
                           : { c: cryptCardBase[newCryptId], q: 0 },
                       }}
                       compact={true}
+                      newFocus={newCryptFocus}
                     />
                   </div>
                 )}
@@ -170,6 +181,7 @@ const Inventory = (props) => {
                   <InventoryNewLibraryCard
                     cards={inventoryLibrary}
                     setNewId={setNewLibraryId}
+                    newRef={newLibraryRef}
                   />
                 </div>
                 {newLibraryId && (
@@ -181,6 +193,7 @@ const Inventory = (props) => {
                           : { c: libraryCardBase[newLibraryId], q: 0 },
                       }}
                       compact={true}
+                      newFocus={newLibraryFocus}
                     />
                   </div>
                 )}
@@ -274,7 +287,6 @@ const Inventory = (props) => {
                 setShowAddPrecon={setShowAddPrecon}
                 clan={clan}
                 discipline={discipline}
-                type={type}
               />
               <div className="px-4 py-2">
                 <InventoryShowSelect

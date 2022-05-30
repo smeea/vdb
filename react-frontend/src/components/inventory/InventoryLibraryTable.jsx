@@ -29,6 +29,7 @@ const InventoryLibraryTable = ({
   sortMethod,
   compact,
   withCompact,
+  newFocus,
 }) => {
   const {
     usedLibraryCards,
@@ -84,6 +85,7 @@ const InventoryLibraryTable = ({
             softUsedMax={softUsedMax}
             hardUsedTotal={hardUsedTotal}
             compact={compact}
+            newFocus={newFocus}
           />
         </div>
         <div className="d-flex align-items-center justify-content-center used">

@@ -15,6 +15,7 @@ const InventoryCrypt = ({
   cards,
   clan,
   setClan,
+  newFocus,
 }) => {
   const { usedCryptCards, cryptCardBase } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
@@ -215,6 +216,7 @@ const InventoryCrypt = ({
             ? Object.values(cryptByClan['All'])
             : Object.values(cryptByClan[clan])
         }
+        newFocus={newFocus}
       />
     </>
   );

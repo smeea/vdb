@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { NewLibraryCard } from 'components';
 
-function InventoryNewLibraryCard(props) {
+const InventoryNewLibraryCard = ({ setNewId, setShowAdd, newRef }) => {
   const [selectedValue, setSelectedValue] = useState(null);
 
   const addNewCard = () => {
-    props.setNewId(selectedValue);
+    setNewId(selectedValue);
     setSelectedValue('');
-    props.setShowAdd && props.setShowAdd(false);
+    setShowAdd && setShowAdd(false);
   };
 
   useEffect(() => {
@@ -19,8 +19,9 @@ function InventoryNewLibraryCard(props) {
       selectedValue={selectedValue}
       onChange={(value) => setSelectedValue(value.value)}
       inInventory={true}
+      newRef={newRef}
     />
   );
-}
+};
 
 export default InventoryNewLibraryCard;

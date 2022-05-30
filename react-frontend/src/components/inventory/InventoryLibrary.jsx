@@ -19,6 +19,7 @@ const InventoryLibrary = ({
   setType,
   discipline,
   setDiscipline,
+  newFocus,
 }) => {
   const { usedLibraryCards, libraryCardBase } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
@@ -402,6 +403,7 @@ const InventoryLibrary = ({
                 return libraryByDiscipline[discipline][i.c.Id];
               })
         }
+        newFocus={newFocus}
       />
     </>
   );

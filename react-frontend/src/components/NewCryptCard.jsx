@@ -2,11 +2,15 @@ import React from 'react';
 import AsyncSelect from 'react-select/async';
 import { SelectLabelCrypt } from 'components';
 
-function NewCryptCard(props) {
+const NewCryptCard = ({
+  inInventory,
+  selectedValue,
+  onChange,
+  autoFocus,
+  newRef,
+}) => {
   const getOptionLabel = (option) => {
-    return (
-      <SelectLabelCrypt cardid={option.value} inInventory={props.inInventory} />
-    );
+    return <SelectLabelCrypt cardid={option.value} inInventory={inInventory} />;
   };
 
   const loadOptions = async (inputValue) => {
@@ -35,16 +39,17 @@ function NewCryptCard(props) {
 
   return (
     <AsyncSelect
+      ref={newRef}
       classNamePrefix="react-select"
       cacheOptions
-      autoFocus={props.autoFocus}
-      value={props.selectedValue}
+      autoFocus={autoFocus}
+      value={selectedValue}
       placeholder="Add Crypt Card"
       loadOptions={loadOptions}
       getOptionLabel={getOptionLabel}
-      onChange={props.onChange}
+      onChange={onChange}
     />
   );
-}
+};
 
 export default NewCryptCard;

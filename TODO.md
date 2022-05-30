@@ -1,6 +1,4 @@
 # FIX
-- Quick add to inventory to docs
-- Autofocus on new card add
 
 # FEATURES
 - Export all in xlsx and csv
