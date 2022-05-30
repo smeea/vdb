@@ -72,19 +72,26 @@ const About = (props) => {
                 : 2022-05-17
               </p>
 
-              <h6>Last update [2022-05-27]:</h6>
+              <h6>Last update [2022-05-31]:</h6>
               <ul>
                 <li>
-                  Add Brazilian Portuguese card images and card texts. Not all
-                  cards available so far, but that is still GREAT (big thanks to
-                  Helton &quot;Helt&quot; Matiazi efforts!)
+                  Add sorting in TWD/PDA by Date/Players/Favorites, and in
+                  Deck/Crypt by Sect
                 </li>
                 <li>
-                  Fixed bug with non-english languages sometimes displaying
-                  black box instead of card image. Now if localized image is not
-                  available it will always fallback to English image.
+                  Simplify add many cards to Inventory by autofocusing new-card
+                  form after entering q-ty for new card
                 </li>
-                <li>Small other fixes</li>
+                <li>
+                  Removed used-in-inventory popup from card q-ty buttons in
+                  inventory (still available few pixels to the right on
+                  +-summary)
+                </li>
+                <li>
+                  Significantly reduced answer size from server when searching
+                  for TWD (and slighly for PDA)
+                </li>
+                <li>More Brazilian Portuguese translations.</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
