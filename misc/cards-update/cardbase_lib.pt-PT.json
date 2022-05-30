@@ -733,7 +733,7 @@
     },
     "100103":{
         "Name":"Carni\u00e7al Asanbonsam",
-        "Card Text":"Carni\u00e7al com 3 de vida. 2 de for\u00e7a, 0 de sangrar.\nCarni\u00e7al Asanbonsam recebe +1 de percep\u00e7\u00e3o durante a\u00e7\u00f5es indiretas. Se Carni\u00e7al Asanbonsam bloquear uma a\u00e7\u00e3o direta, sete a dist\u00e2ncia para o combate resultante para perto."
+        "Card Text":"Carni\u00e7al com 3 de vida. 2 de for\u00e7a, 0 de sangrar.\nCarni\u00e7al Asanbonsam recebe +1 de percep\u00e7\u00e3o durante a\u00e7\u00f5es diretas. Se Carni\u00e7al Asanbonsam bloquear uma a\u00e7\u00e3o direta, sete a dist\u00e2ncia para o combate resultante para perto."
     },
     "100160":{
         "Name":"Bima",
@@ -1629,7 +1629,7 @@
     },
     "102219":{
         "Name":"Ecologia Profunda",
-        "Card Text":"Requer um Anarquista.\n[ani] Somente utiliz\u00e1vel durante uma a\u00e7\u00e3o direcionada a voc\u00ea (ou a uma carta que voc\u00ea controle) +2 de percpe\u00e7\u00e3o.\n[for] Reduza um sangrar contra voc\u00ea em 2.\n[pro] Somente utiliz\u00e1vel por um vampiro travado. Este vampiro queima 1 de sangue e destrava."
+        "Card Text":"Requer um Anarquista.\n[ani] Somente utiliz\u00e1vel durante uma a\u00e7\u00e3o direcionada a voc\u00ea (ou a uma carta que voc\u00ea controle) +2 de percpe\u00e7\u00e3o.\n[for] Reduza um sangrar contra voc\u00ea em 2.\n[pro] Somente utiliz\u00e1vel por um vampiro travado. Este vampiro queima 1 de sangue e destrava.\n\n"
     },
     "102222":{
         "Name":"Olhos da Selva",
@@ -1637,7 +1637,7 @@
     },
     "102224":{
         "Name":"Forma de Cobra",
-        "Card Text":"[pro] [COMBAT] Golpe: Roube 1 de sangue ou vida (se tornando sangue).\n[PRO] [ACTIONMODIFIER] Somente utiliz\u00e1vel quando a a\u00e7\u00e3o \u00e9 anunciada. +1 de furtividade, mesmo se furtividade ainda n\u00e3o for necess\u00e1ria."
+        "Card Text":"[pro] [COMBAT] Golpe: Roube 1 de sangue ou vida (se tornando sangue).\n[PRO] [ACTIONMODIFIER] Somente utiliz\u00e1vel quando a a\u00e7\u00e3o \u00e9 anunciada. +1 de furtividade, mesmo se furtividade ainda n\u00e3o for necess\u00e1ria.\n\n"
     },
     "102231":{
         "Name":"Festa fora dos Limites",
@@ -1654,5 +1654,9 @@
     "102232":{
         "Name":"O Protocolo de Platina",
         "Card Text":"Requer um Anarquista. Mais de uma disciplina pode ser usada para jogar esta carta. (D) Sangrar.\n[obf] Esta a\u00e7\u00e3o tem +1 de furtividade.\n[pre] Este sangrar tem +1 de sangrar.\n[pro] Coloque um marcador de corrup\u00e7\u00e3o em um servo controlado pelo Matusal\u00e9m alvo se o sangramento for bem suscedido (por 1 ou mais)."
+    },
+    "101056":{
+        "Name":"Contestar os Recursos do Rebanho",
+        "Card Text":"Aloque 4 pontos entre dois ou mais Matusal\u00e9ns. Se o referendo for aprovado, cada Matusal\u00e9m queima 1 de recurso para cada ponto alocado."
     }
 }

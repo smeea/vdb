@@ -1,210 +1,363 @@
 "Id","Name pt-PT","Card Text"
-200057,Allonzo Montoya,Independente: Allonzo recebe +1 de furtividade em ações que requerem Serpentis [ser]. Allonzo não pode bloquear ações indiretas. Escarço. Estéril.
-200859,Lorrie Dunsirn,"Independente: Lorrie não pode jogar cartas de reação, possuir equipamento ou lacaios, manobrar para longa distância ou pressionar para terminar o combate. Ela recebe um golpe adicional (limitado) a cada round e um pressionar a cada combate. Ações que não sejam de caçar cutam a ela 1 de sangue adicional. +1 de força. Escarço. Estéril.".
-201094,Pariah,"Independente: Durante sua fase mestre, descarte uma carta mestre ou trave Pariah. Pariah não pode fazer ações não-direcionadas exceto caçar. Ele pode entrar em combate com um servo como uma ação (D). +1 de força. Escarço. Estéril.".
-201510,Zubeida,Sabá: Mão Negra: Zubeida recebe +1 de sangrar quando sangra um Matusalém que não controle nenhum vampiro pronto com capacidade acima de 6. Escarço. Estéril.
-200607,Uivadora,Sabá: Uivadora recebe 1 manobra opcional a cada combate. Ela não pode usar armas. +1 de força. Estéril.
-200306,Cynthia Ingold,Sabá: Cynthia recebe +1 de força em combate com um vampiro da Camarilla. Estéril.
-200730,Juanita Santiago,Sabá: Estéril.
-201051,Nettie Hale,Sabá: Nettie tem +1 de furtividade quando emprega lacaios ou recruta aliados. Estéril.
+200605,A Horda,"Independente: Durante uma ação de sangrar, a Horda pode travar para dar a outro lacaio infernal agente +1 de sangrar. Infernal. Não-único."
 201285,A Siamesa,Sabá: +1 de sangrar. Estéril.
-200322,Darlene Killian,Sabá: Aliados e lacaios custam a Darlene 1 de sangue adicional. Estéril.
-200371,Dovey Ebfwe,Sabá: Dovey recebe +1 de furtividade quando recruta lacaios. Mão Negra. Estéril.
-200585,Helen Fairchild,Sabá: Helen não pode usar ou possuir equipamento. Estéril.
-201220,Sahana,Sabá: Estéril.
-201330,Sylvie Helgon,"Sabá: Durante uma ação, Sylvie pode descartar uma carta de ação política para receber +1 de furtividade ou percepção. Estéril.".
-200032,"Aiyana, A Pega-Lobos","Sabá: Aiyana recebe um pressionar opcional a cada combate quando em combate com um lobisomem, e ela pode queimar 1 sangue a cada round para previnir todo o dano que um lobisomem infligiria a ela naquele combate. Estéril.".
-200404,Effie Lowery,Sabá: Estéril.
-200505,Gentha Shale,Sabbat: Gentha gets +1 bleed when bleeding a Methuselah who controls a ready Follower of Set. Sterile.
-200923,Maria Stone,"Avançada,  Sabá: -1 de força. Estéril.
-[MERGED] Maria não sofre o -1 de força de seu texto especial, e ela tem Spiritus superior [SPI].".
-201023,Muricia,"Sabá: Durante sua fase de destravar, um Gangrle antitribu que você controla pode queimar 1 de sangue para se tornar um Ahrimane estéril e ganhar 1 nível de Spiritus [spi]. +1 de força. Estéril.".
-200028,Aisata Swanou,"Laibon: Durante sua fase mestra, você pode comprar uma carta e mover uma carta de sua mão para sua pilha de cinzas ou o topo de sua biblioteca.".
-200750,Kamiri wa Itherero,"Avançado, Laibon: Kamiri pode infligir 2 de dano imprevinível em um servo como uma ação (D).
-[MERGED] Uma vez por ação, Kamiri pode queimar 1 de sangue para dar a um Laibon agente +1 de furtividade.".
-201050,Nestor Kaba,Laibon.
-201303,Socrate Cidibe,Laibon.
-201406,Umdava,Laibon Magaji: Você pode usar uma ação de fase mestra para procurar em sua biblioteca ou pilha de cinzas por um Aye ou Orun e colocá-lo e um Laibon pronto.
-200066,Amavi,Laibon: +1 de sangrar.
-200353,Dolie,Laibon.
-200749,Kamiri wa Itherero,"Laibon: Vampiros mais jovens precisam queimar 1 de sangue para tentar bloquear Kamiri. Se um aliado bloquear Kamiri e combate acontecer, queime o aliado no fim da ação.".
-200977,Meno Ngari,Laibon.
-201234,Sanjo,Laibon.
-201401,Uchenna,"Magaji Laibon: Durante sua fase mestra, Uchenna pode queimar 1 de sangue para queimar uma carta de sua mão. Compre para seu tamanho de mão.".
-200576,Hasani,Laibon.
-200731,Jubal,Laibon: Jubal recebe +1 de percepção quando tenta bloquear Seguidores de Set.
-200783,"Kikiyaon,  O","Laibon: Uma vez por combate, o Kikiyaon pode queimar 1 de sangue para receber uma manobra. Vôo [FLIGHT].".
-200957,Matata,Laibon: Matata recebe um pressionar opcional a cada combate. +1 de força.
-201064,Nkule Galadima,"Magaji Laibon: Lasombra não podem lançar votos ou sub-votos em referendos chamados por Nkule. Enquanto ele está pronto, se você queimar a vantagem para ganhar um voto, você ganha dois votos adicionais.".
 200004,Abd al-Rashid,Independente: Sangue Amaldiçoado.
+200007,"Abid bin Haji, Estudioso dos Espelhos",Camarilla: Sangue Amaldiçoado.
+200011,Adana de Sforza,Brujah do Círculo Interno da Camarilla: Cartas de combate custam 1 de sangue a menos para Adana. +2 de sangrar.
+200028,Aisata Swanou,"Laibon: Durante sua fase mestra, você pode comprar uma carta e mover uma carta de sua mão para sua pilha de cinzas ou o topo de sua biblioteca."
+200032,"Aiyana, A Pega-Lobos","Sabá: Aiyana recebe um pressionar opcional a cada combate quando em combate com um lobisomem, e ela pode queimar 1 sangue a cada round para previnir todo o dano que um lobisomem infligiria a ela naquele combate. Estéril."
 200035,"Al-Ashrad, Amr de Alamut",Independente: Al-Ashrad pode queimar um local que requeira um clã como uma ação (D) que custa 2 de sangue. Sangue Amaldiçoado. +1 de sangrar.
-200569,Harika Guljan,Independente: Sangue Amaldiçoado.
-200614,Husamettin,"Independente: Depois que Husamettin queimar um vampiro com um contrato, você pode procurar em sua biblioteca por uma carta mestra de Disciplina e colocá-la nele (embaralhe após isso). Sangue Amaldiçoado.".
-200745,Kalinda,Independente: Kalinda pode sangrar como +1 de sangrar como uma ação (D) com +1 de furtividade que custa 2 de sangue. Sangue Amaldiçoado.
-200752,Kanya Akhtar,Independente: Sangue Amaldiçoado.
-200969,Melek,"Independente: Uma vez por combate, Melek pode golpear: esquiva. Sangue Amaldiçoado.".
-201096,Parnassus,Independente: Sangue Amaldiçoado. +1 de força.
-201340,Tansu Bekir,Independente: Sangue Amaldiçoado.
-201365,"Thetmes, Califa def Alamute",Independente. 2 votos (titulado): Dano dos golpes de mão de Thetmes é agravado. Sangue Amaldiçoado.
+200036,"Al-Ashrad, Amr de Alamut","Camarilla: Durante o primeiro round de combate, Al-Ashrad pode usar golpes que requeiram Feitiçaria de Sangue [tha] que não podem ser usados no primeiro round. Sangue Amaldiçoado.
+[MERGED] Círculo Interno Assamita: +1 de sangrar."
+200046,Alessandro Garcia,Sabá: Alessandro recebe +1 de força em combate com um Lasombra.
+200047,Alex Camille,"Sabá: Durante uma ação, Alex pode queimar 1 de sangue para ganhar +1 de percepção."
 200053,Ali Kar,Independente: Sangue Amaldiçoado.
-201353,"Tegyrius, Vizir","Camarilla: While Tegyrius is ready, each Camarilla Assamite can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.
-[MERGED] Assamite Justicar.".
-201485,Yazid Tamari,Sabbat: Black Hand. Seraph. +1 bleed.
-200754,Karif al Numair,"Sabá: Durante o seu turno, você pode travar ou destravar outro vampiro pronto da Mão Negra. Mão Negra. +1 de força. +1 de sangrar.".
-201095,Parmenides,"Independente: Quando Parmenides entra em jogo, seu predador recebe controle dele até sua próxima fase de destravar. Sangue Amaldiçoada. +1 de força.".
-201413,"Ur-Shulgi,  O Pastoreiro","Independente. 2 votos (titulado): Se Ur-Shulgi estiver pronto durante sua fase de destravar, você pode procurar em sua biblioteca por uma carta chamada Tajdid, revelá-la e colocála em sua mão. Sangue Amaldiçoado. +1 de sangrar.".
+201576,Aline Gädeke,"Barão Anarquista de Mannheim: Uma vez por turno, Aline pode queimar 1 de sangue para destravar depois que outro Anarquista que você controle realizar uma ação bem-sucedida."
+200056,Allison Maller,Camarilla.
+200057,Allonzo Montoya,Independente: Allonzo recebe +1 de furtividade em ações que requerem Serpentis [ser]. Allonzo não pode bloquear ações indiretas. Escarço. Estéril.
+200597,Alto Sacerdote Angra Mainyu,"Independente: Enquanto Angra está pronto, o tamanho da mão de sua presa é 1 carta menor. Você pode queimar a Vantagem para dar +1 de furtividade a Angra em uma ação que não seja de sangrar. Infernal."
+200062,Alu,Independente: Sangue Amaldiçoado.
+201577,Aluc Romas de Leon,Anarquista.
+200065,Amaravati,"Independente: Durante a etapa de votação de uma ação política, Amaravati pode queimar 2 de sangue para dar a cada Assamita pronto que você controla +1 voto. Sangue amaldiçoado."
+200066,Amavi,Laibon: +1 de sangrar.
+200071,Amelia,Bispo do Sabá: Amelia pode entrar em combate com qualquer vampiro de capacidade abaixo de 4 controlado por outro Matusalém como uma ação (D) com +1 de furtividade.
+200088,Angel,Camarilla.
+200104,Annazir,Independente. 2 votos (titulado): Annazir pode queimar um local ou roubar um equipamento como uma ação (D). Infernal. +1 de sangrar.
+200108,Antara,Independente: Antara recebe +1 de interceptação contra vampiros do Sabá. Ele queima 1 sangue após qualquer Matusalém jogar um evento da Gehenna. Sangue amaldiçoado.
+200115,Antonino,Independente: Antonino recebe +1 de furtividade em ações indiretas.
+200118,Antonio Veradas,"Bispo do Sabá: Antonio recebe +1 de furtividade ao equipar com uma arma. Durante sua fase de descarte, Antonio pode queimar 1 sangue para destravar."
+200120,Anvil,Primogênito Camarilla.
 200121,Anwar,Independente: Sangue Amaldiçoado.
+200125,Appolonius,Primogênito da Camarilla: Appolonius recebe um pressionar opcional a cada combate. +1 de sangrar.
+200126,Appolonius,"Anarquista: Appolonius recebe +1 de sangrar para cada vampiro titulado controlado pelo Matusalém alvo.
+[MERGED] Barão de Londres: Appolonius pode entrar em combate co mum servo como uma ação (D)"
+200126,Appolonius,"Anarquista: Appolonius recebe +1 de sangrar para cada vampiro titulado controlado pelo Matusalém alvo.
+[MERGED] Barão de Londres: Appolonius pode entrar em combate co mum servo como uma ação (D)"
+200132,Ariane,Anarquista: Ariane recebe -1 de furtividade durante uma ações indiretas.
+200136,Arishat,"Independente. 1 voto (titulado): Durante a fase de votação de qualquer referendo, Arishat pode queimar 1 de sangue para forçar qualquer vampiro a se abster. Infernal."
+200138,Armin Brenner,"Arcebispo do Sabá de Washington, D.C.: Quando um referendo que Armin convoca passa, você ganha 1 de recurso após a resolução do referendo."
+200139,Arnold Simpson,Camarilla.
+200142,Art Morgan,"Primógeno Camarilla: Se Art estiver pronto durante sua fase de servo, você pode desvirar um lobisomem que você controla."
+201578,Asmin Kobane,Camarilla.
+201579,Atiena,Barão Anarquista de Mombasa
+200151,Axel Von Anders,Sabá.
+200154,Azaneal,Independente: Ações para colocar vampiros em jogo custam a Azaneal 1 sangue ou recurso a menos. Infernal.
 200155,"Aziz, Dammar de Istanbul",Independente. 2 votos (titulado): Ponha um contador de Status em Azis depois que um vampiro se opondo a ele for queimado em combate. Ele recebe +1 voto para cada contador de status que possuir. Sangue Amaldiçoado. +1 de força.
 200161,Badr al-Budur,Independente: Sangue Amaldiçoado.
-200162,Bajazet al-Nasir,"Independente: Uma vez por combate, Bajazet pode queimar 1 de sangue para fazer com que o dano de seus golpes de mão seja agravado para o round atual. Sangue Amaldiçoado.".
-200466,Fida'i,"Independente: Fida'i não destrava normalmente. Durante sua fase de destravar, qualquer Assamita pronto com capacidade 7  ou maior pode queimar 1 de sangue para destravar este Fida'i. Sangue Amaldiçoado. Não-único.".
-200666,Jalal Sayad,"Independente: Uma vez por turno depois que um combate acabar, Jalal pode queimar 1 de sangue para iniciar um novo combate contra o servo opositor. Sangue Amaldiçoado.".
-201137,Qadir ul-Ghani,Independente: Qadir pode mudar seu clã para qualquer outro clã como uma ação com +1 de furtividade que custa 1 de sangue. Sangue Amaldiçoado. +1 de sangrar.
-201344,"Tariq, O Silêncioso","Independente: Enquanto Tariq estiver controlado, ele recebe -4 de capacidade. Ele pode entrar em combate com um vampiro como uma ação (D). Caçadas de sangue não podem ser chamadas nele.".
-201352,"Tegyrius, Vizir","Camarilla: Se Tegyrius estiver pronto, qualquer Assamita pode colocar um contador de fidelidade em si mesmo como uma ação com +1 de furtividade. Qualquer Assamita com quaisquer contadores de fidelidade é considerado Camarilla. Sangue amaldiçoado. +1 de força.".
-201185,"Reza Fatir, O Anjo Negro",Sabá: Mão Negra.
-200748,Kamau Jafari,Laibon.
-200192,Bertrand d'Anjou,Independente: Sangue Amaldiçoado.
-200445,Evan Rogers,Independente: Sangue Amaldiçoado.
-200818,Layla bint-Nadr,Independente: Sangue Amaldiçoado.
-200062,Alu,Independente: Sangue Amaldiçoado.
-200348,"Djuhah, O Arco de Bronze",Sabá: Mão Negra. Serafim.
-200007,"Abid bin Haji, Estudioso dos Espelhos",Camarilla: Sangue Amaldiçoado.
-200036,"Al-Ashrad, Amr de Alamut","Camarilla: Durante o primeiro round de combate, Al-Ashrad pode usar golpes que requeiram Feitiçaria de Sangue [tha] que não podem ser usados no primeiro round. Sangue Amaldiçoado.
-[MERGED] Círculo Interno Assamita: +1 de sangrar.".
-200422,Enam,Príncipe Camarilla de Cordoba: Sangue Amaldiçoado.
-200630,Imanna,Independente. 1 voto (titulado): Imanna recebe +1 voto em referendos que ela chama. Sangue Amaldiçoado.
-200959,"Mateusz Kazimirski, Motoqueiro Sangrento","Sabá: Se Mateuz é Sabá e não é Mão Negra, ele pode se tornar Mão Negra como uma ação com +1 de furtividade que custa 1 de Sangue.".
-201170,Rebekah,"Príncipe Camarilla de Atenas: Durante a fase de votação de qualquer referendo, Rebekah pode discartar uma carta que requeira Auspícios [aus] para receber +2 votos. Sangue Amaldiçoado.".
-201472,Sapo Sabio,Camarilla: Sapo Sábio golpeia com golpe rápido em combate com vampiros mais jovens. Sangue Amaldiçoado.
-200469,"Flavia, Anjo Vingador",Independente: Sangue Amaldiçoado.
-201080,Omer,Independente: Sangue Amaldiçoado.
-200132,Ariane,Anarquista: Ariane recebe -1 de furtividade durante uma ações indiretas.
-200503,Gengis,"Anarquista: Se Gengis for bloqueado por um vampiro titulado, ele não destrava normalmente durante sua próxima fase de destravar.
-[MERGED] Gengis recebe +1 nível de Auspícios [aus] e Rapidez [cel].".
-200921,Marguerite Foccart,"Anarquista: Marguerite recebe +1 de força em combate com um vampiro titulado. .
-[MERGED] +1 de força.".
-200126,Appolonius,"Anarquista: Appolonius recebe +1 de sangrar para cada vampiro titulado controlado pelo Matusalém alvo.
-[MERGED] Barão de Londres: Appolonius pode entrar em combate co mum servo como uma ação (D)".
-201226,Salvador Garcia,"Anarquista: Enquanto Salvador estiver pronto, cartas que requeiram Anarquista custam a você e seus Anarquistas um de sangue ou recurso a menos.".
-201317,Steve Booth,Camarilla.
-200693,Jeremy MacNeil,Camarilla.
-200139,Arnold Simpson,Camarilla.
-200926,Mariano Pomposo,Sabá. Mão Negra.
-200321,Selina Sombria,Cardeal Sabá: Selina tem +1 de furtividade durante ações políticas.
-200115,Antonino,Independente: Antonino recebe +1 de furtividade em ações indiretas.
-200211,Bobby Lemon,Independente.
+200162,Bajazet al-Nasir,"Independente: Uma vez por combate, Bajazet pode queimar 1 de sangue para fazer com que o dano de seus golpes de mão seja agravado para o round atual. Sangue Amaldiçoado."
+200163,Bakr,Independente: Bakr pode entrar em combate com um servo como uma ação com +1 de furtividade que custa 1 sangue. Sangue amaldiçoado.
+200166,Barbaro Lucchese,"Independente: Bárbaro pode colocar um marcador de mácula em um servo como uma ação (D) com +1 de furtividade. Se um servo tiver 2 marcadores de mácula, queime esses marcadores para torná-lo infernal. Bárbaro pode mudar seu clã para Tremere antitribu como ação com +1 de furtividade. Infernal."
 200183,Beckett,Independente: Beckett pode fazer com que você compre 3 cartas de sua biblioteca com uma ação com +1 de furtividade. Descarte para seu tamanho de mão após isso.
-200853,Lorde Ashton,"Independente: Qualquer outro Gangrel pode procurar na biblioteca de seu controlador por uma carta Mestra: Disciplina de Animalismo, Fortitude ou Metamorfose e movê-la para si mesmo como uma ação com +1 de furtividade.".
-200373,Dr. Allan Woodstock,Independente.
-200214,Bothwell,Independente.
-200223,Brunilda ,"Barão Anarquista de Estocolmo: Ações para se tornar Anarquista custam aos vampiros que você controla 0 de sangue.
-[MERGED] Brunilda pode entrar em combate com um vampiro não Anarquista com uma ação (D).".
-200303,Corvo,Anarquista.
-200317,Danielle Diron,"Anarquista: Durante a fase de votação de qualquer referendo, Danielle pode queimar 1 de sangue para receber +1 voto.
-[MERGED] Barão de  Berlin.".
-201460,Vulture,"Anarquista: Uma vez por turno, um Anarquista que você controla pode destravar depois de equipar um veículo com sucesso de sua mão.".
-201499,Zack North,"Anarquista.
-[MERGED] Uma vez por round de combate, Zack pode queimar 1 de sangue para fazer o dano de seus golpes de mão ser agravado por aquele round.".
-200224,Brunilda,"Barão Anarquista de Estocolmo: Ações para se tornar Anarquista custam aos vampiros que você controla 0 de sangue.
-[MERGED] Brunilda pode entrar em combate com um vampiro não Anarquista com uma ação (D).".
-201423,Valquíria,Independente: Valquíria não pode realizar ações direcionadas a não ser que /Brunilda/ esteja pronta. Não único. +1 de força.
-200142,Art Morgan,"Primógeno Camarilla: Se Art estiver pronto durante sua fase de servo, você pode desvirar um lobisomem que você controla.".
-201203,Rosa Hernández,Independente: Rosa recebe +1 de furtividade quando emprega lacaios.
-200937,Mark Decker,Príncipe Camarilla de Milwaukee: Mark recebe +1 de força adicional em combate contra um lobisomem. +1 de força.
-201478,Xaviar,Justicar Camarilla Gangrel: Você pode destravar Xaviar após um referendo que ele convocar for aprovado.
-200638,Inyanga,Primogênito Camarilla: Aliados que requerem um Gangrel custam a Inyanga 1 de sangue ou recurso a menos. +1 de percepção.
-200956,Matasuntha,"Independente: Após um servo em combate com Matasuntha deixar a região pronta, você pode ganhar 1 de recurso. +2 de força.".
-201251,Scarlet Carson O'Toole,Sabá.
-200047,Alex Camille,"Sabá: Durante uma ação, Alex pode queimar 1 de sangue para ganhar +1 de percepção.".
-200991,Mimir,Cardeal Sabá: Outros Matusaléns não podem jogar cartas de mestre em Mimir. +1 de sangrar.
-201332,Synner-G,Sabá: Synner-G pode destravar após equipar com sucesso um equipamento eletrônico de sua mão.
-200557,Haakon Mortensen,"Sabbat: During your unlock phase, you can move 1 blood from Haakon to any Gangrel or Gangrel antitribu in your uncontrolled region. Haakon can take an action to move 1 blood from the blood bank to any unlocked vampire.".
-200965,Max Lowell,Sabá.
-201407,Una,Arcebispo Sabá de Dublin: Cartas de combate que requerem Fortitude [for] custam a Una 1 de sangue a menos.
-200575,Hartmut Stover,"Arcebispo Sabá de Berlim: Qualquer vampiro que declarar votos ou sub-votos contra em um referendo convocado por Hartmut queima 1 de sangue assim que o resultado for apurado. Durante sua fase de descarte, você pode queimar a Vantagem para ganhar 1 de recurso.".
-200336,Denette Stensen,Sabá.
-200687,Jeffrey Mullins,Sabá.
-201110,Persephone Tar-Anis,Sabá: +1 de sangrar.
-200732,Judah,Primogênito Camarilla.
-200817,Laurent de Valois,Camarilla.
-200892,Lydia Van Cuelen,Camarilla: +1 de sangrar.
-200481,Frank Weisshadel,Camarilla.
-201346,Tarrence Moore,Camarilla.
-200280,Claus Wegener,Camarilla.
-200279,Claudio Severino,"Camarilla: Se Claudio estiver pronto, você pode usar uam ação de fase de descartes para descartar uma carta que requer Feitiçaria de Sangue [tha] para ganhar 1 de recurso. .
-[MERGED] Claudio pode queimar 1 de sangue para ganhar +1 de furtividade.".
-200221,Brooke,Sabá.
-200225,Bryan Van Duesen,Sabá: +1 de sangrar.
-201193,Robin Withers,Camarilla.
-200298,Courtland Leighton,Camarilla.
-201210,Rufina Soledad,Camarilla.
-200516,Gideon Fontaine,Camarilla.
-201200,Roland Loussarian,Camarilla.
-201450,Violette Prentiss,Camarilla.
-200660,Jackson Asher,Camarilla.
+200187,Bela Kardoza,"Sabá: Durante um referendo, Bela pode queimar X sangue para obter X votos adicionais."
+200192,Bertrand d'Anjou,Independente: Sangue Amaldiçoado.
 200193,Beth Malcolm,Camarilla: +1 de sangrar.
-200657,Jack Tredegar,Camarilla.
-200862,Louis Fortier,Camarilla.
-201539,Brock Sterling,Camarilla.
-201541,Chelsea Blake,Camarilla.
-201557,Madison,Camarilla.
-201562,Naomi Stewart,Camarilla.
-201565,Oshri Dahan,Camarilla.
-200266,Charice Fontaigne,Sabá.
-201294,Sister Evelyn,Sabá.
-200394,Dylan,Sabá: +1 de sangrar.
-200509,Gerard,Sabá.
-200940,"Marlene, The Infernalist",Sabá.
-201425,Vanessa,Sabá.
-200198,Billy,Sabá.
-200635,Ingrid Russo,Sabá.
-200729,Juan Cali,Sabá.
-201231,Samson,Sabá.
-200845,Little Willie,Sabá.
-200861,Louis de Maisonneuve,Sabá.
-201161,"Randel, The Coward",Sabá.
-201403,Ulrike Rothbart,Sabá.
-200686,Jefferson Foster,Bispo Sabá.
-200691,Jephta Hester,Sabá.
-200930,Mariel St. John,Sabá.
-201581,Brandon Grime,Anarquista.
-201585,Elen Kamjian,"Anarquista: Anarquista: Se você controlar um servo travado, Elen precisa sangrar com +1 de sangrar como uma ação (D), a menos que ela precise caçar.".
-201609,Octane,Anarquista.
-201610,Rayne,Anarquista.
-201612,Siarhei Levchenko,Anarquista.
-201613,Theo Bell,Anarquista: Theo pode entrar em combate com um servo como uma ação (D). +1 de Força.
-201614,Valeriya Zinovieva,Barão Anarquista de Moscou: +1 de Força.
-201576,Aline Gädeke,"Barão Anarquista de Mannheim: Uma vez por turno, Aline pode queimar 1 de sangue para destravar depois que outro Anarquista que você controle realizar uma ação bem-sucedida.".
-201579,Atiena,Barão Anarquista de Mombasa.
-201578,Asmin Kobane,Camarilla.
+200196,Bianca,Camarilla: +1 de Força
 201580,Bijou,Camarilla.
-201587,Farah Sarroub,Príncipe Camarilla de Detroit.
-201589,Greg Mazouni,Camarilla.
-201596,Kalinda,"Primogênito da Camarilla: Durante seu turno, você pode queimar a vantagem para destravar Kalinda.".
-201598,Kasim Bayar,"Justicar Assamita da Camarilla: Uma vez por combate, Kasim pode descartar uma carta de ação política antes da distância ser determinada para receber +2 de Força naquele combate. +1 de Sangrar.".
-201599,Khadija Al-Kindi,"Primogênito da Camarilla: Durante seu turno, você pode queimar a vantagem para destravar Kalinda.".
-201607,Nayarana,Camarilla.
-201604,Kassandra Tassaki,Príncipe Camarilla de Tessalônica.
-201594,Warmaksan,Príncipe Camarilla de Argel.
-201583,Dario Ziggler,Anarquista.
-201590,Hanna Nokelainen,Anarquista.
-201592,Indira,Anarquista.
-201595,Joaquín de Cádiz,Anarquista.
-201597,Kamile Paukstys,Anarquista: +1 de Sangrar.
-201606,Nathan Turner,Anarquista.
-201611,Ruslan Fedorenko,Anarquista.
-201601,Martina Srnankova,Anarquista: Martina recebe +1 de percepção durante ações de sangrar.
-201602,Massimiliano,Barão Anarquista de Belo Horizonte. +1 de Sangrar.
-201577,Aluc Romas de Leon,Anarquista.
+200198,Billy,Sabá.
+200211,Bobby Lemon,Independente.
+200214,Bothwell,Independente.
+201581,Brandon Grime,Anarquista.
+201539,Brock Sterling,Camarilla.
+200220,Bronwen,"Priscus do Sabá: Uma vez a cada combate, Bronwen pode se esquivar como um golpe."
+200221,Brooke,Sabá.
+200224,Brunilda,"Barão Anarquista de Estocolmo: Ações para se tornar Anarquista custam aos vampiros que você controla 0 de sangue.
+[MERGED] Brunilda pode entrar em combate com um vampiro não Anarquista com uma ação (D)."
+200223,Brunilda,"Barão Anarquista de Estocolmo: Ações para se tornar Anarquista custam aos vampiros que você controla 0 de sangue.
+[MERGED] Brunilda pode entrar em combate com um vampiro não Anarquista com uma ação (D)."
+200225,Bryan Van Duesen,Sabá: +1 de sangrar.
+200244,Carlak,"Príncipe Camarilla de Praga: Uma vez que os resultados de um referendo são computados, Carlak ganha 1 sangue para cada Matusalém que não votar a favor e lançar 1 ou mais votos contra o referendo. Ele recebe 1 pressionar opcional a cada combate."
+200266,Charice Fontaigne,Sabá.
+201541,Chelsea Blake,Camarilla.
+200279,Claudio Severino,"Camarilla: Se Claudio estiver pronto, você pode usar uam ação de fase de descartes para descartar uma carta que requer Feitiçaria de Sangue [tha] para ganhar 1 de recurso.
+[MERGED] Claudio pode queimar 1 de sangue para ganhar +1 de furtividade."
+200280,Claus Wegener,Camarilla.
+200283,Clifton Derrik,Camarilla.
+200293,Conde Germaine,"Independente: Germaine recebe +2 de sangrar contra um Matusalém que controla um vampiro titulado não-Independente, não-Anarquista. Lista Vermelha.
+[MERGED] Anarquista: Germaine recebe 1 pressionar opcional a cada combate."
+200289,Constanza Vinti,Príncipe Camarilla de Rome: Constanza recebe +2 de sangrar ao sangrar um Matusalém que controla um Ventrue pronto.
+200303,Corvo,Anarquista.
+200292,Count Germaine,Camarilla: Servos que se opõem a Germaine em combate não podem usar armas. Germaine pode entrar em combate com qualquer Toreador controlado por outro Matusalém como uma ação (D).
+200298,Courtland Leighton,Camarilla.
 201582,Crystal Lynn,Anarquista.
+200305,Cybele,"Independente: Se Cybele estiver destravada durante sua fase mestre, você recebe uma ação adicional da fase mestre. Cibele pode sangrar com +2 de sangrar como ação (D) que custa 1 sangue. Infernal."
+200306,Cynthia Ingold,Sabá: Cynthia recebe +1 de força em combate com um vampiro da Camarilla. Estéril.
+200317,Danielle Diron,"Anarquista: Durante a fase de votação de qualquer referendo, Danielle pode queimar 1 de sangue para receber +1 voto.
+[MERGED] Barão de Berlin."
+201583,Dario Ziggler,Anarquista.
+200322,Darlene Killian,Sabá: Aliados e lacaios custam a Darlene 1 de sangue adicional. Estéril.
+200336,Denette Stensen,Sabá.
+200337,DeSalle,"Sabá: Quando DeSalle está agindo, um vampiro Sabá pode queimar 1 de sangue para obter +1 de percepção uma vez nessa ação. +1 de furtividade."
+200348,"Djuhah, O Arco de Bronze",Sabá: Mão Negra. Serafim.
+200349,Dmitra Ilyanova,Brujah Justicar da Camarilla: Dmitra pode convocar um referendo para distribuir 4 de sangue do banco de sangue entre um ou mais vampiros prontos como uma ação política com +1 de furtividade.
+200350,Dmitri Borodin,"Independente: Uma vez a cada combate, Dmitri pode queimar 1 sangue para evitar todo o dano do ataque de um servo oponente. Durante uma ação, ele pode queimar 1 sangue para obter +1 de furtividade. Sangue amaldiçoado."
+200351,Doctor Streck,"Sabá: Quando Streck sangra com sucesso, o Matusalém alvo descarta uma carta aleatoriamente de sua mão."
+200352,Dodd,Sabá.
+200353,Dolie,Laibon.
+200360,Don Caravelli,"Camarilla: Uma vez a cada combate envolvendo outro vampiro que você controla, Don Caravelli pode queimar 1 sangue para dar 1 pressionar a esse vampiro."
+200361,Don Cerro,Camarilla.
+200362,"Don Cruez, O idealista","Brujah Justicar da Camarilla: Uma vez a cada combate, Don Cruez pode queimar 1 sangue para ganhar uma manobra."
+200364,Dónal O'Connor,"Príncipe Camarilla de Dublin: Qualquer vampiro que bloqueie Dónal queima 1 sangue (antes do início do combate, se houver)."
 201584,Doutor Morocco,Anarquista.
-201586,Elisha Tucker,Barão Anarquista de Pitsburgo.
-201588,Faruq Abd al-Qadir,"Anarquista: Em combate com Faruq, servos com com seus marcadores de corrupção não podem golpear: fim de combate. +1 de Força.".
+200371,Dovey Ebfwe,Sabá: Dovey recebe +1 de furtividade quando recruta lacaios. Mão Negra. Estéril.
+200373,Dr. Allan Woodstock,Independente.
+200387,"Dre, Lider da Aurora Gélida",Camarilla.
+200394,Dylan,Sabá: +1 de sangrar.
+200404,Effie Lowery,Sabá: Estéril.
+201585,Elen Kamjian,"Anarquista: Anarquista: Se você controlar um servo travado, Elen precisa sangrar com +1 de sangrar como uma ação (D), a menos que ela precise caçar."
+200409,Elihu,Independente: Elihu inflige +2 de dano com armas brancas. Seus ataques com armas brancas não podem ser esquivados. Infernal.
+201586,Elisha Tucker,Barão Anarquista de Pitsburgo
+200422,Enam,Príncipe Camarilla de Cordoba: Sangue Amaldiçoado.
+200304,Esmagador,"Primogênito da Camarilla: Uma vez a cada combate, Esmagador pode se esquivar como um golpe que custa 1 sangue. +1 força."
+200445,Evan Rogers,Independente: Sangue Amaldiçoado.
+200446,Evangeline,Sabá.
+200454,Fairuza,Sabá: Fairuza pode queimar 1 sangue ou vida de um servo controlado por sua presa como uma ação (D). Ela recebe -1 de sangrar ao sangrar um Matusalém que controla um servo pronto.
+201587,Farah Sarroub,Príncipe Camarilla de Detroit.
+201588,Faruq Abd al-Qadir,"Anarquista: Em combate com Faruq, servos com com seus marcadores de corrupção não podem golpear: fim de combate. +1 de Força."
+200458,Father Juan Carlos,"Sabá: Durante uma ação de sangrar, Padre Juan pode queimar um sangue para obter -1 de sangrar e +1 de furtividade."
+200459,Fatima al-Faqadi,"Independent: Once each combat, before range is determined, Fatima can equip with a weapon from your hand (requirements and cost apply as normal). Blood cursed."
+200466,Fida'i,"Independente: Fida'i não destrava normalmente. Durante sua fase de destravar, qualquer Assamita pronto com capacidade 7 ou maior pode queimar 1 de sangue para destravar este Fida'i. Sangue Amaldiçoado. Não-único."
+200469,"Flavia, Anjo Vingador",Independente: Sangue Amaldiçoado.
+200481,Frank Weisshadel,Camarilla.
+200483,Frederick the Weak,Sabá.
+200494,Garret,Camarilla.
+200201,Gata Negra,Camarilla: Equipamento custa Gata Negra 1 de recurso a menos (mas nunca menos que 0 recursos).
+200496,Gatjil Munyarryun,Sabá. Mão Negra.
+200502,Gengis,Camarilla: Qualquer Brujah controlado por outro Matusalém pode realizar uma ação (D) para desbloquear Gengis e tomar o controle dele até o final do turno. Gengis não pode bloquear essa ação.
+200503,Gengis,"Anarquista: Se Gengis for bloqueado por um vampiro titulado, ele não destrava normalmente durante sua próxima fase de destravar.
+[MERGED] Gengis recebe +1 nível de Auspícios [aus] e Rapidez [cel]."
+200505,Gentha Shale,Sabbat: Gentha gets +1 bleed when bleeding a Methuselah who controls a ready Follower of Set. Sterile.
+200509,Gerard,Sabá.
+200516,Gideon Fontaine,Camarilla.
+200520,Giotto Verducci,"Independente: Durante a fase de descarte de qualquer outro Matusalém, você pode descartar uma carta da sua mão (e comprar uma nova). Vampiros devem queimar 1 de sangue para tentar bloquear Giotto. Infernal."
+200527,Gold Pan Dan,"Sabá: Uma vez por turno após um combate envolvendo Dan terminar, Dan pode queimar 1 de sangue para destravar se o servo oponente não estiver pronto."
+200531,Gracetius,"Camarilla: Enquanto você tem a Vantagem, Gracetius pode acordar. +1 de força."
+201589,Greg Mazouni,Camarilla.
+200554,Gwendolyn,Brujah do Círculo Interno da Camarilla: +2 de sangrar.
+200557,Haakon Mortensen,"Sabbat: During your unlock phase, you can move 1 blood from Haakon to any Gangrel or Gangrel antitribu in your uncontrolled region. Haakon can take an action to move 1 blood from the blood bank to any unlocked vampire."
+200559,"Hafsa, O Observador",Camarilla: Vampiros da Camarilla preciam queimar 1 de sangue para tentar bloquear Hafsa. Assamitas recebem +1 de sangrar contra você. Sangue amaldiçoado.
+201590,Hanna Nokelainen,Anarquista.
+200569,Harika Guljan,Independente: Sangue Amaldiçoado.
+200575,Hartmut Stover,"Arcebispo Sabá de Berlim: Qualquer vampiro que declarar votos ou sub-votos contra em um referendo convocado por Hartmut queima 1 de sangue assim que o resultado for apurado. Durante sua fase de descarte, você pode queimar a Vantagem para ganhar 1 de recurso."
+200576,Hasani,Laibon.
+200581,Hector Sosa,Camarilla.
+200584,Hektor,Priscus do Sabá: O dano dos golpes de mão de Hektor é agravado. Baali recebem +1 de sangrar ao sangrar você.
+200585,Helen Fairchild,Sabá: Helen não pode usar ou possuir equipamento. Estéril.
+200590,Henry Taylor,"Sabá: Após uma ação, você pode mover uma carta de combate que Henry jogou durante aquela ação de seu monte de cinzas para o topo de seu grimório."
+200591,Herbert Westin,Camarilla: Você pode comprar 1 carta após Herbert realizar uma ação de equipar bem-sucedida (descartar depois).
 201591,Hesha Ruhadze,Anarquista: Hesha recebe +1 de sangrar para cada equipamento único equipado nele.
+200596,Hezekiah Rutledge,Camarilla.
+200601,Honest Abe,Camarilla.
+200610,Hugo,Sabá: Hugo recebe -1 de interceptação contra Lasombra e Tzimisce.
+200611,Huitzilopochtli,"Independente: Durante sua fase mestra, você pode pagar um reservo para ganhar uma ação de fase de mestre se Huitzilopochtli estiver pronto. +1 de sangrar. Infernal."
+200614,Husamettin,"Independente: Depois que Husamettin queimar um vampiro com um contrato, você pode procurar em sua biblioteca por uma carta mestra de Disciplina e colocá-la nele (embaralhe após isso). Sangue Amaldiçoado."
+200630,Imanna,Independente. 1 voto (titulado): Imanna recebe +1 voto em referendos que ela chama. Sangue Amaldiçoado.
+201592,Indira,Anarquista.
+200635,Ingrid Russo,Sabá.
+200638,Inyanga,Primogênito Camarilla: Aliados que requerem um Gangrel custam a Inyanga 1 de sangue ou recurso a menos. +1 de percepção.
+200650,Izhim abd Azrael,Sabá: Cartas que requerem Quietus [qui] custam a Izhim 1 de sangue a menos. Armas lhe custam 1 sangue ou recurso a menos. Mão Negra. Serafim.
+200655,Jack Drake,"Anarquista: Quando você coloca em jogo um vampiro mais jovem de sua região não controlada, esse vampiro pode queimar um sangue para se tornar anarquista. +1 de força."
+200657,Jack Tredegar,Camarilla.
+200659,Jacko,"Sabá: Durante a primeira rodada de combate, Jacko recebe 1 golpe adicional opcional que não conta no limite."
+200660,Jackson Asher,Camarilla.
+200662,Jacob Bragg,Sabá.
+200664,Jacques Molay,Sabá: Jacques pode entrar em combate com um aliado ou vampiro mais jovem como uma ação (D). +1 de força.
+200666,Jalal Sayad,"Independente: Uma vez por turno depois que um combate acabar, Jalal pode queimar 1 de sangue para iniciar um novo combate contra o servo opositor. Sangue Amaldiçoado."
+200668,Jamal,Independente. 2 votos (titulado): Jamal recebe +1 de força em combate com um aliado ou um vampiro da Camarilla. Sangue amaldiçoado. Lista Vermelha. +1 sangrar.
+200675,Jann Berger,Príncipe Camarilla de Monaco: Cartas que exigem Potência [pot] custam a Jann 1 de sangue a menos. +1 de sangrar.
+200676,Janni,Independente: Janni inflige +1 de dano ao atacar com uma arma. Ela pode entrar em combate com um Seguidor de Set como uma ação (D). Sangue amaldiçoado.
+200678,Jaroslav Pascek,Justicar Brujah da Camarilla: Jaroslav inflige +2 de dano com armas brancas. Ele pode infligir 1 de dano em cada um dos vampiros do Sabá de sua presa como uma ação (D). +1 de percepção.
+200683,Jayne Jonestown,"Sabá. Lista Vermelha: Jayne recebe +1 de furtividade adicional ao caçar, mas -1 de furtividade em qualquer outra ação. Se Jayne estiver pronto durante sua fase de destravar e a Sociedade de Leopoldo estiver em jogo, você pode mover a Sociedade para qualquer vampiro pronto."
+200686,Jefferson Foster,Bispo Sabá.
+200687,Jeffrey Mullins,Sabá.
+200690,"Jennifer ""Flame61"" Vidisania",Armas custam a Jennifer 1 a menos de recurso ou sangue. +1 de sangrar. -1 de furtividade.
 201593,Jenny Silver,Anarquista.
+200691,Jephta Hester,Sabá.
+200692,Jeremiah Noble,Sabá.
+200693,Jeremy MacNeil,Camarilla.
+200694,Jeremy MacNeil,"Avançado, Independente: Jeremy pode entrar em combate com um vampiro mais jovem controlado por seu predador ou presa como uma ação (D).
+[MERGED] Barão Anarquista de Los Angeles."
+201595,Joaquín de Cádiz,Anarquista.
+200710,"Joe ""Bota"" Hill",Sabá: Joe pode entrar em combate com um lobisomem como uma ação (D) com +1 de furtividade e recebe 1 manobra opcional durante esse combate. Mão Negra. +1 força.
+200715,"John ""Cop90"" O'Malley",John pode entrar em combate com um monstro como uma ação (D) que custa 1 convicção [1 CONVICTION].
+200726,Joshua Tarnopolski,Camarilla: Aliados e lacaios custam a Joshua 1 recurso ou sangue a menos para recrutar ou empregar. Ele recebe +2 de força em combate com um vampiro do Sabá.
+200729,Juan Cali,Sabá.
+200730,Juanita Santiago,Sabá: Estéril.
+200731,Jubal,Laibon: Jubal recebe +1 de percepção quando tenta bloquear Seguidores de Set.
+200732,Judah,Primogênito Camarilla.
+200735,Julian Sanders,Sabá: Julian recebe um pressionar opcional a cada combate.
+200741,Kabede Maru,Laibon magaji: Kabede gets +1 intercept during political actions.
+200745,Kalinda,Independente: Kalinda pode sangrar como +1 de sangrar como uma ação (D) com +1 de furtividade que custa 2 de sangue. Sangue Amaldiçoado.
+201596,Kalinda,"Primogênito da Camarilla: Durante seu turno, você pode queimar a vantagem para destravar Kalinda."
+200748,Kamau Jafari,Laibon.
+201597,Kamile Paukstys,Anarquista: +1 de Sangrar.
+200749,Kamiri wa Itherero,"Laibon: Vampiros mais jovens precisam queimar 1 de sangue para tentar bloquear Kamiri. Se um aliado bloquear Kamiri e combate acontecer, queime o aliado no fim da ação."
+200750,Kamiri wa Itherero,"Avançado, Laibon: Kamiri pode infligir 2 de dano imprevinível em um servo como uma ação (D).
+[MERGED] Uma vez por ação, Kamiri pode queimar 1 de sangue para dar a um Laibon agente +1 de furtividade."
+200752,Kanya Akhtar,Independente: Sangue Amaldiçoado.
+200753,Karen Suadela,"Príncipe Camarilla de Houston: Enquanto Karen é um príncipe, os eventos da Gehenna não a afetam. Ela recebe +1 de furtividade em ações não direcionadas."
+200754,Karif al Numair,"Sabá: Durante o seu turno, você pode travar ou destravar outro vampiro pronto da Mão Negra. Mão Negra. +1 de força. +1 de sangrar."
+200759,Kashan,Independente. 1 voto (titulado): Sangue amaldiçoado.
+201598,Kasim Bayar,"Justicar Assamita da Camarilla: Uma vez por combate, Kasim pode descartar uma carta de ação política antes da distância ser determinada para receber +2 de Força naquele combate. +1 de Sangrar."
+201604,Kassandra Tassaki,Príncipe Camarilla de Tessalônica
+201599,Khadija Al-Kindi,"Primogênito da Camarilla: Durante seu turno, você pode queimar a vantagem para destravar Kalinda."
+200783,"Kikiyaon, O","Laibon: Uma vez por combate, o Kikiyaon pode queimar 1 de sangue para receber uma manobra. Vôo [FLIGHT]."
+200816,Laura Goldman,Anarquista.
+200817,Laurent de Valois,Camarilla.
+200818,Layla bint-Nadr,Independente: Sangue Amaldiçoado.
+201526,Leumeah,Barão Anarquista de Canberra.
+200845,Little Willie,Sabá.
+200852,Lord Aaron Wesley Wilkshire,Sabá. Mão Negra: Cartas de Frenesi jogadas em Aaron custam um sangue ou recurso adicional.
+200853,Lorde Ashton,"Independente: Qualquer outro Gangrel pode procurar na biblioteca de seu controlador por uma carta Mestra: Disciplina de Animalismo, Fortitude ou Metamorfose e movê-la para si mesmo como uma ação com +1 de furtividade."
+200859,Lorrie Dunsirn,"Independente: Lorrie não pode jogar cartas de reação, possuir equipamento ou lacaios, manobrar para longa distância ou pressionar para terminar o combate. Ela recebe um golpe adicional (limitado) a cada round e um pressionar a cada combate. Ações que não sejam de caçar cutam a ela 1 de sangue adicional. +1 de força. Escarço. Estéril."
+200861,Louis de Maisonneuve,Sabá.
+200862,Louis Fortier,Camarilla.
+200887,Lupo,Camarilla.
+200892,Lydia Van Cuelen,Camarilla: +1 de sangrar.
+200893,Lynn Thompson,Camarilla: Lynn não pode ter um refúgio (em vez disso qualquer refúgio que ela receberia é queimado).
+201557,Madison,Camarilla.
+200733,Malabarista,"Camarilla: Uma vez a cada combate, se a distância for longa, o Malabarista pode queimar 1 sangue para golpear:esquiva e ganhar um golpe adicional {(limitado)}. Uma vez a cada combate, o Malabarista pode queimar 1 sangue para conseguir uma manobra."
 201600,Marcel,Anarquista.
+200909,Marcel de Breau,"Arcebispo do Sabá de Paris: Se você tiver a Vantagem, você ganha uma recurso quando qualquer Matusalém jogar uma carta da Gehenna. +1 de sangrar."
+200920,Marguerite Foccart,Camarilla: Marguerite recebe +1 de percepção contra ações políticas.
+200921,Marguerite Foccart,"Anarquista: Marguerite recebe +1 de força em combate com um vampiro titulado.
+[MERGED] +1 de força."
+200921,Marguerite Foccart,"Anarquista: Marguerite recebe +1 de força em combate com um vampiro titulado.
+[MERGED] +1 de força."
+200923,Maria Stone,"Avançada, Sabá: -1 de força. Estéril.
+[MERGED] Maria não sofre o -1 de força de seu texto especial, e ela tem Spiritus superior [SPI]."
+200926,Mariano Pomposo,Sabá. Mão Negra.
+200930,Mariel St. John,Sabá.
+200937,Mark Decker,Príncipe Camarilla de Milwaukee: Mark recebe +1 de força adicional em combate contra um lobisomem. +1 de força.
+200939,Marlena,Camarilla: Marlena não trava ao realizar uma ação de recrutar aliado. Ela pode realizar apenas 1 ação de recrutar aliado a cada turno.
+200940,"Marlene, The Infernalist",Sabá.
+201601,Martina Srnankova,Anarquista: Martina recebe +1 de percepção durante ações de sangrar.
+200948,Mary a Negra,"Independente: Uma vez a cada rodada, Mary pode queimar um sangue para fazer com que o dano de seus golpes de mão seja agravado para o round atual. Infernal."
+201602,Massimiliano,Barão Anarquista de Belo Horizonte. +1 de Sangrar.
+200956,Matasuntha,"Independente: Após um servo em combate com Matasuntha deixar a região pronta, você pode ganhar 1 de recurso. +2 de força."
+200957,Matata,Laibon: Matata recebe um pressionar opcional a cada combate. +1 de força.
+200959,"Mateusz Kazimirski, Motoqueiro Sangrento","Sabá: Se Mateuz é Sabá e não é Mão Negra, ele pode se tornar Mão Negra como uma ação com +1 de furtividade que custa 1 de Sangue."
+200964,"Maureen, Sacerdotisa Negra","Independente: Maureen tem 1 voto (titulado). Uma vez a cada turno, quando Maureen realizar com sucesso uma ação que exija Baali ou Daimoinon [dai], você ganha 1 de recurso. Infernal."
+200965,Max Lowell,Sabá.
+200966,Maxwell,"Camarilla: Uma vez a cada turno, Maxwell pode queimar um sangue para obter +1 de furtividade em uma ação que requer Presença [pre]. Se ele não tiver um título, ele pode convocar um referendo para se tornar o Príncipe de Chicago como uma ação política com +1 de furtividade."
+200967,Mazz,Camarilla.
 201603,Melech,Anarquista.
+200969,Melek,"Independente: Uma vez por combate, Melek pode golpear: esquiva. Sangue Amaldiçoado."
+200975,Menele,"Camarilla: Durante sua fase de destravar, você pode mover 2 de sangue de Menele para um vampiro mais jovem em sua região não-controlada. +1 sangrar."
+200976,Menele,"Independente: Enquanto Helena estiver pronta, as cartas de servo custam a Menele 1 sangue a menos.
+[MERGED] Menele pode atacar: roubar 2 de sangue ou vida (tornar-se sangue)."
+200977,Meno Ngari,Laibon.
+200981,Michael diCarlo,"Sabá: Se Michael realizar uma ação bem sucedida para entrar em combate com um servo, ele pode definir a distância para a primeira rodada do combate resultante como longo."
+200987,Miguel Santo Domingo,"Sabá: Durante uma ação de sangrar, Miguel pode queimar 1 sangue para dar +1 de sangrar a qualquer outro vampiro atuante do Sabá que você controle."
 201605,Milton Fox,Anarquista.
-201608,Nonu Dis,"Anarquista: Se Nonu Dis estiver pronto durante sua fase mestra, você pode adicionar 1 de sangue a um Ministro que você controla depois de jogar uma carta mestra. +1 de Sangrar.".
+200991,Mimir,Cardeal Sabá: Outros Matusaléns não podem jogar cartas de mestre em Mimir. +1 de sangrar.
+200993,Miranda Sanova,Primogênito da Camarilla: Outros Brujah recebem -1 de percepção ao tentar bloquear Miranda.
+201008,Monty Coven,"Sabá: Depois que Monty queimar um vampiro titulado, ele pode se tornar um bispo. Se o título do vampiro queimado valer 3 ou mais votos, ele pode se tornar um priscus."
+201023,Muricia,"Sabá: Durante sua fase de destravar, um Gangrle antitribu que você controla pode queimar 1 de sangue para se tornar um Ahrimane estéril e ganhar 1 nível de Spiritus [spi]. +1 de força. Estéril."
+201562,Naomi Stewart,Camarilla.
+201606,Nathan Turner,Anarquista.
+201607,Nayarana,Camarilla.
+201049,Nergal,"Independente: Enquanto Nergal está agindo, as cartas de reação custam 1 de sangue adicional. Uma vez a cada ação, ele pode queimar 1 sangue para obter +1 de furtividade. Infernal."
+201050,Nestor Kaba,Laibon.
+201051,Nettie Hale,Sabá: Nettie tem +1 de furtividade quando emprega lacaios ou recruta aliados. Estéril.
+201062,Nizzam al-Latif,Sabá: O dano dos golpes de mão de Nizzam é ​​agravado. Mão Negra.
+201064,Nkule Galadima,"Magaji Laibon: Lasombra não podem lançar votos ou sub-votos em referendos chamados por Nkule. Enquanto ele está pronto, se você queimar a vantagem para ganhar um voto, você ganha dois votos adicionais."
+201608,Nonu Dis,"Anarquista: Se Nonu Dis estiver pronto durante sua fase mestra, você pode adicionar 1 de sangue a um Ministro que você controla depois de jogar uma carta mestra. +1 de Sangrar."
+201411,O Sem Nome,Independente: O Sem Nome pode queimar 1 sangue para golpear: 2R de dano agravado. Você pode ganhar 2 de recurso depois dele sangrar com sucesso. Infernal.
+201609,Octane,Anarquista.
+201078,Olugbenga,"Laibon magaji: Se você está contestando um vampiro, você pode usar o sangue daquele vampiro ou de Olugbenga como recurso para pagar por aquele contesto. Ele recebe +1 de percepção durante ações de sangrar."
+201080,Omer,Independente: Sangue Amaldiçoado.
+201565,Oshri Dahan,Camarilla.
+201094,Pariah,"Independente: Durante sua fase mestre, descarte uma carta mestre ou trave Pariah. Pariah não pode fazer ações não-direcionadas exceto caçar. Ele pode entrar em combate com um servo como uma ação (D). +1 de força. Escarço. Estéril."
+201095,Parmenides,"Independente: Quando Parmenides entra em jogo, seu predador recebe controle dele até sua próxima fase de destravar. Sangue Amaldiçoada. +1 de força."
+201096,Parnassus,Independente: Sangue Amaldiçoado. +1 de força.
+201099,Paul Calderone,Camarilla.
+201108,Pedro Cortez,#ERROR!
+201110,Persephone Tar-Anis,Sabá: +1 de sangrar.
+201113,Petaniqua,"Avançado, Independente. Lista Vermelha: Uma vez a cada combate, Petaniqua pode queimar um sangue para ganhar um pressionar. Petaniqua pode recrutar um aliado lobisomem como se ele atendesse aos requisitos de jogar essa carta. +1 força. Infernal."
+201135,Pug Jackson,Primogênito Camarilla.
+201137,Qadir ul-Ghani,Independente: Qadir pode mudar seu clã para qualquer outro clã como uma ação com +1 de furtividade que custa 1 de sangue. Sangue Amaldiçoado. +1 de sangrar.
+201155,Rake,Príncipe Camarilla de Atlanta: Rake ganha +1 de força em combate com Ventrue.
+201161,"Randel, The Coward",Sabá.
+201610,Rayne,Anarquista.
+201170,Rebekah,"Príncipe Camarilla de Atenas: Durante a fase de votação de qualquer referendo, Rebekah pode discartar uma carta que requeira Auspícios [aus] para receber +2 votos. Sangue Amaldiçoado."
+201176,Reginald Moore,Primogênito da Camarilla: Reginald recebe +1 de força em combate com um Tremere ou Tremere antitribu. Ele não pode bloquear vampiros desses clãs ou realizar ações para entrar em combate com eles.
+201185,"Reza Fatir, O Anjo Negro",Sabá: Mão Negra.
+201187,"Richter, The Templar of Du Mont",Sabá: +1 de força.
+201190,"Rigby, Crusade Vanguard","Sabá: Se Rigby tentar bloquear um vampiro do Sabá e falhar, e qualquer um dos bispos de seu predador não estiver com capacidade cheia, mova 1 de sangue de Rigby para um desses bispos."
+201193,Robin Withers,Camarilla.
+201200,Roland Loussarian,Camarilla.
+201203,Rosa Hernández,Independente: Rosa recebe +1 de furtividade quando emprega lacaios.
+201210,Rufina Soledad,Camarilla.
+201611,Ruslan Fedorenko,Anarquista.
+201220,Sahana,Sabá: Estéril.
+201223,Sajid al Misbah,Independente: Cartas que requerem Quietus [qui] custam a Sajid 1 de sangue a menos. Ele não pode bloquear vampiros mais velhos. Sangue amaldiçoado.
+201225,Salinger,"Arcebispo do Sabá da Filadélfia: Como uma ação (D), Salinger pode entrar em combate com qualquer Lasombra ou Tzimisce pronto controlado por outro Matusalém. +1 de sangrar."
+201226,Salvador Garcia,"Anarquista: Enquanto Salvador estiver pronto, cartas que requeiram Anarquista custam a você e seus Anarquistas um de sangue ou recurso a menos."
+201231,Samson,Sabá.
+201234,Sanjo,Laibon.
+201472,Sapo Sabio,Camarilla: Sapo Sábio golpeia com golpe rápido em combate com vampiros mais jovens. Sangue Amaldiçoado.
+201237,Sarah Brando,Sabá: Sara recebe -1 furtividade em cada ação (D) que ela realiza contra um Matusalém que controla um bispo ou arcebispo pronto.
+201240,Sargon,"Independente: Sempre que Sargon realiza uma ação com sucesso, você obtém a Vantagem. +1 força. Infernal."
+201251,Scarlet Carson O'Toole,Sabá.
+201260,Sela,"Avançado, Arcebispo Sabá de Roma: Sela recebe +1 de furtividade em ações (D) direcionadas a um Matusalém que controla um bispo pronto."
+200321,Selina Sombria,Cardeal Sabá: Selina tem +1 de furtividade durante ações políticas.
+201278,Shawnda Dorrit,Priscus do Sabá.
+201612,Siarhei Levchenko,Anarquista.
+201291,Sir Ralph Hamilton,Camarilla: Ralph recebe +1 de força em combate com um vampiro mais jovem da Camarilla. Seguidores de Set recebem +1 de sangrar ao sangrar o controlador de Ralph.
+201294,Sister Evelyn,Sabá.
+201300,Smash,Sabá.
+201303,Socrate Cidibe,Laibon.
+201317,Steve Booth,Camarilla.
+201317,Steve Booth,Camarilla.
+201323,Sukainah,Independente: Sangue Amaldiçoado.
+201330,Sylvie Helgon,"Sabá: Durante uma ação, Sylvie pode descartar uma carta de ação política para receber +1 de furtividade ou percepção. Estéril."
+201332,Synner-G,Sabá: Synner-G pode destravar após equipar com sucesso um equipamento eletrônico de sua mão.
+201340,Tansu Bekir,Independente: Sangue Amaldiçoado.
+201341,Tara,Camarilla Prince de São Diego.
+201345,"Tariq, O Silencioso","Sabbat: Enquanto Tariq é controlado, ele recebe -4 de capacidade. Ele pode atacar, à distância: roubar 1 sangue ou vida (tornando-se sangue). Mão Negra. Lista Vermelha.
+[MERGED] Independente: a capacidade de Tariq não é reduzida pelo texto de seu cartão."
+201344,"Tariq, O Silêncioso","Independente: Enquanto Tariq estiver controlado, ele recebe -4 de capacidade. Ele pode entrar em combate com um vampiro como uma ação (D). Caçadas de sangue não podem ser chamadas nele."
+201346,Tarrence Moore,Camarilla.
+201350,Tayshawn Kearns,Camarilla.
+201352,"Tegyrius, Vizir","Camarilla: Se Tegyrius estiver pronto, qualquer Assamita pode colocar um contador de fidelidade em si mesmo como uma ação com +1 de furtividade. Qualquer Assamita com quaisquer contadores de fidelidade é considerado Camarilla. Sangue amaldiçoado. +1 de força."
+201353,"Tegyrius, Vizir","Camarilla: Enquanto Tegyrius estiver pronto, cada Camarilla Assamita pode queimar 1 sangue para obter +1 voto durante a fase de votação de qualquer referendo. Sangue amaldiçoado.
+[MERGED] Justicar Assamita."
+201361,ThemistoclesTemístocles,Camarilla: Temístocles pode queimar um local como uma ação (D) que custa 1 de sangue.
+201362,Theo Bell,"Camarilla: Theo pode entrar em combate com qualquer servo controlado por outro Matusalém como uma ação (D). Se você controla um príncipe ou justicar pronto, caçadas de sangue não podem ser convocadas contra Theo."
+201363,Theo Bell,"Avançado, Independente: +1 de força. Se houver alguma carta da Gehenna em jogo, qualquer justicar ou membro do Círculo Interno pode convocar um referendo para queimar Theo como uma ação política com +1 de furtividade. Se esse referendo for cancelado ou falhar, o vampiro atuante entra em torpor."
+201613,Theo Bell,Anarquista: Theo pode entrar em combate com um servo como uma ação (D). +1 de Força.
+201365,"Thetmes, Califa def Alamute",Independente. 2 votos (titulado): Dano dos golpes de mão de Thetmes é agravado. Sangue Amaldiçoado.
+201370,Thucimia,"Independente. 1 voto (titulado): Durante uma ação de sangrar, Thucimia pode lhe dar -2 de tamanho de mão até sua próxima fase de desbloqueio para obter +1 de sangrar. Sangue amaldiçoado. +1 de tamanho de mão."
+201379,Tomaine,"Primogênito da Camarilla: Enquanto Tomaine estiver pronto e sua presa controlar um vampiro do Sabá pronto, sua presa recebe +1 de tamanho de mão."
+201394,Tura Vaughn,Primogênito da Camarilla: Tura recebe +1 de percepção ao tentar bloquear outros Brujah.
+201397,Tyler,"Primogênito da Camarilla: Quando Tyler diableriza um vampiro, ela desbloqueia e ganha 1 de sangue do banco de sangue. Uma vez por turno, ela pode queimar 1 de sangue para obter +1 de sangrar ou um voto adicional."
+201401,Uchenna,"Magaji Laibon: Durante sua fase mestra, Uchenna pode queimar 1 de sangue para queimar uma carta de sua mão. Compre para seu tamanho de mão."
+200607,Uivadora,Sabá: Uivadora recebe 1 manobra opcional a cada combate. Ela não pode usar armas. +1 de força. Estéril.
+201403,Ulrike Rothbart,Sabá.
+201405,Uma Hatch,Camarilla.
+201406,Umdava,Laibon Magaji: Você pode usar uma ação de fase mestra para procurar em sua biblioteca ou pilha de cinzas por um Aye ou Orun e colocá-lo e um Laibon pronto.
+201407,Una,Arcebispo Sabá de Dublin: Cartas de combate que requerem Fortitude [for] custam a Una 1 de sangue a menos.
+201413,"Ur-Shulgi, O Pastoreiro","Independente. 2 votos (titulado): Se Ur-Shulgi estiver pronto durante sua fase de destravar, você pode procurar em sua biblioteca por uma carta chamada Tajdid, revelá-la e colocála em sua mão. Sangue Amaldiçoado. +1 de sangrar."
+201417,Urraca,"Bispo do Sabá: Enquanto você controla a Vantagem, Urraca recebe +1 de sangrar."
+201614,Valeriya Zinovieva,Barão Anarquista de Moscou: +1 de Força.
+201423,Valquíria,Independente: Valquíria não pode realizar ações direcionadas a não ser que /Brunilda/ esteja pronta. Não único. +1 de força.
+201425,Vanessa,Sabá.
+201426,Vardar Vardarian,Independente: Seguidores de Set recebem -1 de força em combate com Vardar. Sangue amaldiçoado.
+201442,Victor Tolliver,Sabá.
+201450,Violette Prentiss,Camarilla.
 201615,Vivian VI,Barão Anarquista de Joanesburgo.
+201458,"Volker, The Puppet Prince",Príncipe Camarilla de Frankfurt: Volker não pode tentar bloquear primógenitos.
+201460,Vulture,"Anarquista: Uma vez por turno, um Anarquista que você controla pode destravar depois de equipar um veículo com sucesso de sua mão."
+201461,Wah Chun-Yuen,Sabá. Mão Negra.
+201594,Warmaksan,Príncipe Camarilla de Argel
+201478,Xaviar,Justicar Camarilla Gangrel: Você pode destravar Xaviar após um referendo que ele convocar for aprovado.
+201480,"Xeper, Sultão dos Leprosos",Independente: Xeper recebe +1 voto para cada vampiro infernal único pronto que você controla. Ele pode roubar um aliado controlado por outro Matusalém como uma ação (D). Infernal.
+201485,Yazid Tamari,Sabá: Mão negra. Serafim. +1 de sangrar.
+201486,Yazid Tamari,"Sabbat: Yazid recebe +1 de furtividade durante ações diretas. Mão Negra.
+[MERGED] Anarquista."
+201493,"Yuri, The Talon",Camarilla.
+201495,"Yusuf, Escriba Alamut","Independente: Se Yusuf realizar uma ação bem-sucedida para equipar um equipamento que exija um Assamita, ele poderá desbloquear durante a fase de descarte. Sangue amaldiçoado."
+201499,Zack North,"Anarquista.
+[MERGED] Uma vez por round de combate, Zack pode queimar 1 de sangue para fazer o dano de seus golpes de mão ser agravado por aquele round."
+201500,"Zahir, Mãe de Silsila","Independente: Zahir pode procurar em sua biblioteca por uma carta de contrato, revelá-lo e movê-lo para sua mão como uma ação com +1 de furtividade (embaralhe e descarte depois). Sangue amaldiçoado."
+201510,Zubeida,Sabá: Mão Negra: Zubeida recebe +1 de sangrar quando sangra um Matusalém que não controle nenhum vampiro pronto com capacidade acima de 6. Escarço. Estéril.

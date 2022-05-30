@@ -1,4 +1,7 @@
 # FIX
+- Quick add to inventory to docs
+- Autofocus on new card add
+- Hide bubble form in inventory
 
 # FEATURES
 - Export all in xlsx and csv
@@ -14,6 +17,7 @@
 - Move export to frontend
 - Move import to frontend
 - Transit from useContext to Recoil
+- Dont send descriptions in pda/twd results
 - Reduce re-renders
 
 # IMPROVE TECHNOLOGY - BACKEND

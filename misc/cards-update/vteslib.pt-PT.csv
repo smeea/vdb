@@ -479,7 +479,7 @@ O Informante não pode agir ou bloquear. Durante sua fas de destravar, qulquer M
 101317,Ohoyo Hopoksia (Bastet),"Lobisomem unico com 3 de vida. 3 de força, 0 de sangrar.
 Quando um servo que você controle entraria em combate com um servo agente, você pode travar Ohoyo para cancelar aquele combate e fazer com que Ohoyo entre em combate com o servo agente ao invés disso. Ela recebe uma manobra opcional por combate. Se ela tem menos que 3 de vida durante sua fase de destravar, ela ganha 1 de sangue do banco de sangue."
 100103,Carniçal Asanbonsam,"Carniçal com 3 de vida. 2 de força, 0 de sangrar.
-Carniçal Asanbonsam recebe +1 de percepção durante ações indiretas. Se Carniçal Asanbonsam bloquear uma ação direta, sete a distância para o combate resultante para perto."
+Carniçal Asanbonsam recebe +1 de percepção durante ações diretas. Se Carniçal Asanbonsam bloquear uma ação direta, sete a distância para o combate resultante para perto."
 100160,Bima,"Carniçal com com 2 de vida. 2 de força, 1 de sangrar.
 Depois de Bima entrar em jogo, coloque uma carta de disciplina nele de sua mão ou queime Bima. Bima pode jogar cartas que requerem o nível básico daquela Disciplina como um vampiro."
 101273,Nephren-Ka,"Mumia unica com 5 de vida. 2 de força, 0 de sangrar.
@@ -1051,11 +1051,15 @@ Um anarquista que você controla recebe +1 de percepção. Também é utilizáve
 102219,Ecologia Profunda,"Requer um Anarquista.
 [ani] Somente utilizável durante uma ação direcionada a você (ou a uma carta que você controle) +2 de percpeção.
 [for] Reduza um sangrar contra você em 2.
-[pro] Somente utilizável por um vampiro travado. Este vampiro queima 1 de sangue e destrava."
+[pro] Somente utilizável por um vampiro travado. Este vampiro queima 1 de sangue e destrava.
+
+"
 102222,Olhos da Selva,"Somente utilizável por um Gangrel travado.
 Este Gangrel destrava e tenta bloquear. Durante esta ação, este Gangrel pode queimar 1 de sangue para receber +1 de percepção. Trave este Gangrel após a resolução da ação se ele ou ela não bloqueou esta ação."
 102224,Forma de Cobra,"[pro] [COMBAT] Golpe: Roube 1 de sangue ou vida (se tornando sangue).
-[PRO] [ACTION MODIFIER] Somente utilizável quando a ação é anunciada. +1 de furtividade, mesmo se furtividade ainda não for necessária."
+[PRO] [ACTION MODIFIER] Somente utilizável quando a ação é anunciada. +1 de furtividade, mesmo se furtividade ainda não for necessária.
+
+"
 102231,Festa fora dos Limites,"Requer um Anarquista.
 [obf] Reduza um sangrar contra você em 2.
 [pre] Somente utilizável durante a fase de votação de uma ação política. Este vampiro recebe 2 votos adicionais.
@@ -1069,3 +1073,4 @@ Este Gangrel destrava e tenta bloquear. Durante esta ação, este Gangrel pode q
 [obf] Esta ação tem +1 de furtividade.
 [pre] Este sangrar tem +1 de sangrar.
 [pro] Coloque um marcador de corrupção em um servo controlado pelo Matusalém alvo se o sangramento for bem suscedido (por 1 ou mais)."
+101056,Contestar os Recursos do Rebanho,"Aloque 4 pontos entre dois ou mais Matusaléns. Se o referendo for aprovado, cada Matusalém queima 1 de recurso para cada ponto alocado."
