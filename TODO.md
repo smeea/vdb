@@ -1,7 +1,6 @@
 # FIX
 - Quick add to inventory to docs
 - Autofocus on new card add
-- Hide bubble form in inventory
 
 # FEATURES
 - Export all in xlsx and csv
