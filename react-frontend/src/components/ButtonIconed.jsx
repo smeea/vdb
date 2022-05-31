@@ -1,9 +1,14 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const ButtonIconed = ({ onClick, variant, title, text, icon }) => {
+const ButtonIconed = ({ onClick, variant, title, text, icon, disabled }) => {
   return (
-    <Button variant={variant} onClick={onClick} title={title}>
+    <Button
+      variant={variant}
+      onClick={onClick}
+      title={title}
+      disabled={disabled}
+    >
       <div className="d-flex justify-content-center align-items-center">
         <div
           className={`d-flex ${

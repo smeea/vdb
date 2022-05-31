@@ -475,6 +475,7 @@ const Decks = (props) => {
                         isAuthor={isAuthor}
                         isPublic={isPublic}
                         isFrozen={isFrozen}
+                        nonEditable={deckRouter(activeDeck).non_editable}
                       />
                     </Col>
                     {isBranches && (

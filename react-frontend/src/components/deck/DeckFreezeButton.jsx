@@ -12,12 +12,19 @@ const DeckFreezeButton = ({ deck, inName }) => {
 
   return (
     <ButtonIconed
-      variant={deck.frozen ? 'third' : inName ? 'secondary' : 'primary'}
+      variant={
+        deck.frozen || deck.non_editable
+          ? 'third'
+          : inName
+          ? 'secondary'
+          : 'primary'
+      }
       onClick={handleClick}
       title={`${deck.frozen ? 'Disabled' : 'Enabled'} Crypt/Library Edition`}
+      disabled={deck.non_editable}
       icon={
         <Snow
-          className={deck.frozen ? '' : 'gray'}
+          className={deck.frozen || deck.non_editable ? '' : 'gray'}
           width="16"
           height="23"
           viewBox="0 0 16 16"

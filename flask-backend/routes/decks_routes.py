@@ -110,6 +110,7 @@ def showDeck(deckid):
             "tags": deck.tags,
             "favorited": deck.favorited,
             "is_yours": current_user == deck.author,
+            "non_editable": bool(not deck.author),
             "public_child": public_child,
             "public_parent": public_parent,
         }
