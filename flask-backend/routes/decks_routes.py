@@ -123,7 +123,9 @@ def showDeck(deckid):
 
             try:
                 deck = twd_decks[deckid]
-                comments = deck["description"]
+                comments = (
+                    deck["description"] if deck["description"] != "Unknown" else ""
+                )
                 deck["description"] = "Date: " + deck["creation_date"] + "\n"
                 deck["description"] += "Players: " + str(deck["players"]) + "\n"
                 deck["description"] += "Event: " + deck["event"] + "\n"

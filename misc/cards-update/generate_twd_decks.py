@@ -15,7 +15,7 @@ def generate_twd(i):
         "clan": "",
         "creation_date": i["date"],
         "deckid": i["id"],
-        "description": i["comments"] if "comments" in i else "x",
+        "description": i["comments"] if "comments" in i else "Unknown",
         "disciplines": [],
         "event": i["event"],
         "format": i["tournament_format"] if "tournament_format" in i else "Unknown",
