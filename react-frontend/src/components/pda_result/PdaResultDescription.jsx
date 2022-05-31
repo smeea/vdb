@@ -70,13 +70,7 @@ const PdaResultDescription = ({ deck }) => {
   const Buttons = (
     <Stack gap={1}>
       <TwdOpenDeckButton deckid={deck['deckid']} inPda />
-      {username && (
-        <DeckCloneButton
-          deck={deck}
-          activeDeck={{ src: 'shared', deckid: deck.deckid }}
-          inPda
-        />
-      )}
+      {username && <DeckCloneButton deck={deck} src="pda" inPda />}
       <div>
         <PdaFavoriteButton deck={deck} />
       </div>

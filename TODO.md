@@ -3,6 +3,7 @@
 # FEATURES
 - Export all in xlsx and csv
 - Embrace-like trait
+- Frozen indicator for snapshot decks (on deck page and in URL button)
 
 # MAYBE LATER FEATURES
 - Comments for PDA

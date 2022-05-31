@@ -7,7 +7,6 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
   const {
     setDecks,
     setActiveDeck,
-    username,
     setShowFloatingButtons,
     setShowMenuButtons,
   } = useApp();
