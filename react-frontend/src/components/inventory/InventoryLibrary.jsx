@@ -82,7 +82,7 @@ const InventoryLibrary = ({
     Object.keys(cards).map((card) => {
       const types = cards[card].c.Type.split('/');
       const d = libraryCardBase[card].Discipline;
-      let disciplines = null;
+      let disciplines = ['None'];
       if (d.includes('/')) {
         disciplines = d.split('/');
       } else if (d.includes(' & ')) {
@@ -129,7 +129,6 @@ const InventoryLibrary = ({
       }
 
       const miss = softUsedMax + hardUsedTotal - cards[card].q;
-
       if (miss > 0) {
         types.map((t) => {
           missingByType[t][card] = {
@@ -193,7 +192,7 @@ const InventoryLibrary = ({
       if (!cards[card]) {
         const types = libraryCardBase[card].Type.split('/');
         const d = libraryCardBase[card].Discipline;
-        let disciplines = null;
+        let disciplines = ['None'];
         if (d.includes('/')) {
           disciplines = d.split('/');
         } else if (d.includes(' & ')) {
@@ -261,7 +260,7 @@ const InventoryLibrary = ({
       if (!cards[card]) {
         const types = libraryCardBase[card].Type.split('/');
         const d = libraryCardBase[card].Discipline;
-        let disciplines = null;
+        let disciplines = ['None'];
         if (d.includes('/')) {
           disciplines = d.split('/');
         } else if (d.includes(' & ')) {
