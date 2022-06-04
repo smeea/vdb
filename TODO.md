@@ -1,4 +1,5 @@
 # FIX
+- Inventory missing use discipline filter
 
 # FEATURES
 - Export all in xlsx and csv
