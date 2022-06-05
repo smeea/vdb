@@ -18,8 +18,19 @@ import {
 } from '../shared_search_components';
 import { useApp } from 'context';
 
-function SearchFormTextAndButtons(props) {
-  const { inventoryMode, isMobile, isWide } = useApp();
+const SearchFormTextAndButtons = ({
+  value,
+  preresults,
+  showLimit,
+  onChange,
+  onChangeOptions,
+  handleShowResults,
+  handleClearButton,
+  setFormState,
+  hideMissing,
+  setHideMissing,
+}) => {
+  const { inventoryMode, isMobile } = useApp();
 
   const options = [
     {
@@ -48,10 +59,10 @@ function SearchFormTextAndButtons(props) {
         label={opt.label}
         checked={
           opt.value === 'regex'
-            ? props.value[0].regex || false
-            : props.value[0].in === opt.value
+            ? value[0].regex || false
+            : value[0].in === opt.value
         }
-        onChange={props.onChangeOptions}
+        onChange={onChangeOptions}
       />
     );
   });
@@ -65,8 +76,8 @@ function SearchFormTextAndButtons(props) {
           name={0}
           autoComplete="off"
           spellCheck="false"
-          value={props.value[0].value}
-          onChange={props.onChange}
+          value={value[0].value}
+          onChange={onChange}
         />
       ) : (
         <InputGroup className="px-0">
@@ -76,18 +87,18 @@ function SearchFormTextAndButtons(props) {
             name={0}
             autoComplete="off"
             spellCheck="false"
-            value={props.value[0].value}
-            onChange={props.onChange}
+            value={value[0].value}
+            onChange={onChange}
           />
-          {props.preresults > props.showLimit && (
-            <Button variant="primary" onClick={props.handleShowResults}>
-              <Check2 /> FOUND {props.preresults}
+          {preresults > showLimit && (
+            <Button variant="primary" onClick={handleShowResults}>
+              <Check2 /> FOUND {preresults}
             </Button>
           )}
           <Button
             title="Clear Forms & Results"
             variant="primary"
-            onClick={props.handleClearButton}
+            onClick={handleClearButton}
           >
             <div className="d-flex align-items-center">
               <X />
@@ -98,19 +109,19 @@ function SearchFormTextAndButtons(props) {
       <Row className="mx-0 px-0 pt-1">
         <Col xs={3} md={2} className="px-0">
           <Stack direction="horizontal" gap={1}>
-            {props.value[0].value !== '' && (
+            {value[0].value !== '' && (
               <>
                 <SearchFormButtonGroupToggle
-                  value={{ name: 'text', ...props.value[0] }}
+                  value={{ name: 'text', ...value[0] }}
                   i={0}
-                  setFormState={props.setFormState}
+                  setFormState={setFormState}
                 />
-                {props.value.length == 1 ? (
-                  <SearchFormButtonAddText setFormState={props.setFormState} />
+                {value.length == 1 ? (
+                  <SearchFormButtonAddText setFormState={setFormState} />
                 ) : (
                   <SearchFormButtonDelText
-                    setFormState={props.setFormState}
-                    value={props.value}
+                    setFormState={setFormState}
+                    value={value}
                     i={0}
                   />
                 )}
@@ -125,11 +136,11 @@ function SearchFormTextAndButtons(props) {
         </Col>
       </Row>
       <SearchAdditionalFormsText
-        value={props.value}
+        value={value}
         name="text"
-        onChange={props.onChange}
-        onChangeOptions={props.onChangeOptions}
-        setFormState={props.setFormState}
+        onChange={onChange}
+        onChangeOptions={onChangeOptions}
+        setFormState={setFormState}
       />
       {inventoryMode && (
         <Form.Check
@@ -139,12 +150,12 @@ function SearchFormTextAndButtons(props) {
           className="small pt-1"
           id="text-hideMissing"
           label="Search In Inventory"
-          checked={props.value[0].hideMissing}
-          onChange={(e) => props.setHideMissing(!props.hideMissing)}
+          checked={value[0].hideMissing}
+          onChange={(e) => setHideMissing(!hideMissing)}
         />
       )}
     </Row>
   );
-}
+};
 
 export default SearchFormTextAndButtons;

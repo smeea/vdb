@@ -110,9 +110,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       size="lg"
       dialogClassName={isMobile ? 'm-0' : null}
     >
-      <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-      >
+      <Modal.Header className="no-border pt-2 pt-md-3 pb-0 px-2 px-md-4">
         <h5>Import from Text</h5>
         <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
@@ -121,7 +119,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       <Modal.Body className={isMobile ? 'px-0 pt-0' : 'px-4 pt-2'}>
         <FormControl
           as="textarea"
-          className="mb-3"
+          className="deck-import mb-3"
           rows={isMobile ? '20' : '25'}
           value={deckText}
           placeholder={placeholder}
