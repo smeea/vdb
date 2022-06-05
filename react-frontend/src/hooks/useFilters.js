@@ -44,6 +44,9 @@ const useFilters = (cards = {}) => {
       // Artist
       if (missingArtist(filter.artist, card)) return false;
 
+      // Name
+      if (missingNameOrInitials(filter.name, card)) return false;
+
       return true;
     });
   };
@@ -88,6 +91,9 @@ const useFilters = (cards = {}) => {
 
       // Artist
       if (missingArtist(filter.artist, card)) return false;
+
+      // Name
+      if (missingNameOrInitials(filter.name, card)) return false;
 
       return true;
     });
@@ -169,23 +175,6 @@ const missingTextQuery = (query, card) => {
 
   // matches the result with the logic
   return !((match && hasToMatch) || (!match && !hasToMatch));
-};
-
-const missingNameOrInitials = (search, card) => {
-  if (!search) return false;
-
-  const charRegExp = '^' + search.split('').join('(\\w* )?');
-  const checkInitials = RegExp(charRegExp, 'i');
-
-  const nameASCII = card['ASCII Name'].toLowerCase();
-  const name = card['Name'].toLowerCase();
-
-  return !(
-    name.includes(search) ||
-    nameASCII.includes(search) ||
-    checkInitials.test(name) ||
-    checkInitials.test(nameASCII)
-  );
 };
 
 //  ------------------------------------------------------
@@ -641,6 +630,27 @@ const missingArtist = (filterArtist, card) => {
   if (!filterArtist || filterArtist === 'any') return false;
 
   return !card['Artist'].includes(filterArtist);
+};
+
+//  ------------------------------------------------------
+//  ------------  MISSING NAME OR INITIALS  --------------
+//  ------------------------------------------------------
+
+const missingNameOrInitials = (filterName, card) => {
+  if (!filterName) return false;
+
+  const charRegExp = '^' + filterName.split('').join('(\\w* )?');
+  const checkInitials = RegExp(charRegExp, 'i');
+
+  const nameASCII = card['ASCII Name'].toLowerCase();
+  const name = card['Name'].toLowerCase();
+
+  return !(
+    name.includes(filterName) ||
+    nameASCII.includes(filterName) ||
+    checkInitials.test(name) ||
+    checkInitials.test(nameASCII)
+  );
 };
 
 // ------------------------------------------------------
