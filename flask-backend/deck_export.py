@@ -193,23 +193,33 @@ def deck_export(d, format, crypt_base=None, library_base=None):
             cryptMax += capacityList[-i - 1]
 
         if format == "twd":
-            twd_info = (
-                f"Event Name, e.g. Nosferatu Hosting Loughman's Birthday\n"
-                f"Event Location, e.g. Heath, Ohio\n"
-                f"Event Date, e.g. December 5th 2021\n"
-                f"Number of Rounds, e.g. 2R+F\n"
-                f"Number of Players, e.g. 13 players\n"
-                f"Winner, e.g. {d['author']}\n"
-                f"Scores, e.g. 2gw8 + 3vp in final\n"
-                f"\n"
-            )
-            deck.append(twd_info)
+            deck.append(
+                f"""# REPLACE BELOW LINES WITH YOUR EVENT DATA
+# REMOVE EVERYTHING STARTING FROM "#" ON EACH LINE (FIRST LINE WILL BE "EVENT NAME")
+#
+Nosferatu Hosting Loughman's Birthday                  # Event Name
+Heath, Ohio                                            # Event Location
+December 5th 2021                                      # Event Date
+2R+F                                                   # Number of Rounds
+13 players                                             # Number of Players
+Karl Schaefer                                          # Winner
+https://www.vekn.net/event-calendar/event/9953         # Event Link
 
-        deck.append(f"Deck Name: {deck_name}\n")
-        if format == "text":
+-- 2gw8 + 3vp in final                                 # Scores
+
+{deck_name}{' ' * (50 - len(deck_name))}     # Deck Name
+
+{d['description'] if d['description'] else '''I was hoping to play the new Ministry today, but       # Deck description
+with so many others planning to do the same, I         # Can be multiline (no
+played this instead.                                   # line length limit)'''}
+
+"""
+            )
+
+        elif format == "text":
+            deck.append(f"Deck Name: {deck_name}\n")
             deck.append(f"Author: {d['author']}\n")
-        deck.append(f"Description: {d['description']}\n")
-        deck.append("\n")
+            deck.append("\n")
 
         cryptTitle = (
             "Crypt ("
@@ -367,6 +377,7 @@ def deck_export(d, format, crypt_base=None, library_base=None):
 
                 deck.append("\n")
 
+    deck.pop(-1)
     deck_str = "".join(deck)
 
     return {"name": deck_name, "format": format, "deck": deck_str}
