@@ -4,7 +4,8 @@ import {
   InventoryFilterForm,
   SortButton,
 } from 'components';
-import clansList from '~/src/assets/data/clansList.json';
+import imbuedClansList from 'assets/data/imbuedClansList.json';
+import vampireClansList from 'assets/data/vampireClansList.json';
 import { useApp } from 'context';
 
 const InventoryCrypt = ({
@@ -14,6 +15,7 @@ const InventoryCrypt = ({
   cards,
   clan,
   setClan,
+  newFocus,
 }) => {
   const { usedCryptCards, cryptCardBase } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
@@ -32,7 +34,7 @@ const InventoryCrypt = ({
   const missingCryptByClan = {};
   const missingCryptByClanTotal = {};
 
-  const clansSorted = ['All', ...clansList];
+  const clansSorted = ['All', ...vampireClansList, ...imbuedClansList];
 
   clansSorted.map((i) => {
     cryptByClan[i] = {};
@@ -214,6 +216,7 @@ const InventoryCrypt = ({
             ? Object.values(cryptByClan['All'])
             : Object.values(cryptByClan[clan])
         }
+        newFocus={newFocus}
       />
     </>
   );

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
+import { Modal, Button, Container, Row, Col, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
+import StackIcon from 'assets/images/icons/stack.svg';
 import {
   ResultModal,
   DeckDrawCryptTable,
@@ -85,7 +86,15 @@ const DeckDrawModal = ({
                     <div className="d-flex align-items-center pe-2">
                       <b>{initialTransfers}t</b>
                     </div>
-                    <div className="pe-1">
+                    <Stack direction="horizontal" gap={1}>
+                      <Button
+                        title="Draw All"
+                        variant="primary"
+                        onClick={() => handleCryptHandSize(restCrypt.length)}
+                        disabled={restCrypt.length < 1}
+                      >
+                        <StackIcon />
+                      </Button>
                       <Button
                         title="Hand Size -1"
                         variant="primary"
@@ -94,18 +103,14 @@ const DeckDrawModal = ({
                       >
                         -1
                       </Button>
-                    </div>
-                    <Button
-                      title="Re-Draw"
-                      variant="primary"
-                      onClick={handleReDrawCrypt}
-                      disabled={cryptTotal < 4}
-                    >
-                      <span className="align-items-center">
+                      <Button
+                        title="Re-Draw"
+                        variant="primary"
+                        onClick={handleReDrawCrypt}
+                        disabled={cryptTotal < 4}
+                      >
                         <ArrowRepeat />
-                      </span>
-                    </Button>
-                    <div className="ps-1">
+                      </Button>
                       <Button
                         title="Hand Size +1"
                         variant="primary"
@@ -114,7 +119,7 @@ const DeckDrawModal = ({
                       >
                         +1
                       </Button>
-                    </div>
+                    </Stack>
                   </div>
                 </div>
                 {cryptTotal < 4 && (
@@ -143,17 +148,23 @@ const DeckDrawModal = ({
                     {drawedLibrary.length} + {restLibrary.length}
                   </b>
                 </div>
-                <div className="d-flex">
-                  <div className="pe-1">
-                    <Button
-                      title="Hand Size -1"
-                      variant="primary"
-                      onClick={() => handleLibraryHandSize(-1)}
-                      disabled={drawedLibrary.length < 1}
-                    >
-                      -1
-                    </Button>
-                  </div>
+                <Stack direction="horizontal" gap={1}>
+                  <Button
+                    title="Draw All"
+                    variant="primary"
+                    onClick={() => handleLibraryHandSize(restLibrary.length)}
+                    disabled={restLibrary.length < 1}
+                  >
+                    <StackIcon />
+                  </Button>
+                  <Button
+                    title="Hand Size -1"
+                    variant="primary"
+                    onClick={() => handleLibraryHandSize(-1)}
+                    disabled={drawedLibrary.length < 1}
+                  >
+                    -1
+                  </Button>
                   <Button
                     title="Re-Draw"
                     variant="primary"
@@ -162,17 +173,15 @@ const DeckDrawModal = ({
                   >
                     <ArrowRepeat />
                   </Button>
-                  <div className="ps-1">
-                    <Button
-                      title="Hand Size +1"
-                      variant="primary"
-                      onClick={() => handleLibraryHandSize(1)}
-                      disabled={restLibrary.length < 1}
-                    >
-                      +1
-                    </Button>
-                  </div>
-                </div>
+                  <Button
+                    title="Hand Size +1"
+                    variant="primary"
+                    onClick={() => handleLibraryHandSize(1)}
+                    disabled={restLibrary.length < 1}
+                  >
+                    +1
+                  </Button>
+                </Stack>
               </div>
               {libraryTotal < 7 && (
                 <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">

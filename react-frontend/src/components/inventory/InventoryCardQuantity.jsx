@@ -8,6 +8,7 @@ const InventoryCardQuantity = ({
   softUsedMax,
   hardUsedTotal,
   compact,
+  newFocus,
 }) => {
   const { inventoryCardChange, isMobile } = useApp();
   const [manual, setManual] = useState();
@@ -27,6 +28,7 @@ const InventoryCardQuantity = ({
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
+    if (compact && q === 0) newFocus();
     inventoryCardChange(cardid, state ? parseInt(state) : 0);
     setManual(false);
   };

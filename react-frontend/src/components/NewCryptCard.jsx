@@ -4,14 +4,18 @@ import { SelectLabelCrypt } from 'components';
 import { useFilters } from 'hooks';
 import { useApp } from 'context';
 
-function NewCryptCard(props) {
+const NewCryptCard = ({
+  inInventory,
+  selectedValue,
+  onChange,
+  autoFocus,
+  newRef,
+}) => {
   const { cryptCardBase } = useApp();
   const { filterCrypt } = useFilters(cryptCardBase);
 
   const getOptionLabel = (option) => {
-    return (
-      <SelectLabelCrypt cardid={option.value} inInventory={props.inInventory} />
-    );
+    return <SelectLabelCrypt cardid={option.value} inInventory={inInventory} />;
   };
 
   const loadOptions = async (inputValue) => {
@@ -28,16 +32,17 @@ function NewCryptCard(props) {
 
   return (
     <AsyncSelect
+      ref={newRef}
       classNamePrefix="react-select"
       cacheOptions
-      autoFocus={props.autoFocus}
-      value={props.selectedValue}
+      autoFocus={autoFocus}
+      value={selectedValue}
       placeholder="Add Crypt Card"
       loadOptions={loadOptions}
       getOptionLabel={getOptionLabel}
-      onChange={props.onChange}
+      onChange={onChange}
     />
   );
-}
+};
 
 export default NewCryptCard;

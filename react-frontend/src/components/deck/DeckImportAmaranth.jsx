@@ -10,7 +10,7 @@ const DeckImportAmaranth = ({
   handleCloseModal,
   show,
 }) => {
-  const { setDecks, setActiveDeck, isMobile, username } = useApp();
+  const { setDecks, setActiveDeck, isMobile } = useApp();
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);

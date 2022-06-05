@@ -467,10 +467,6 @@
         "Name":"Poder Her\u00f3ico",
         "Card Text":"A\u00e7\u00e3o com +3 de furtividade.\n[pot] Coloque esta carta neste vampiro. Este vampiro recebe +1 de for\u00e7a. Este vampiro pode golpear: queimar equipamento. Queime esta carta se este vampiro estiver em torpor. Um vampiro s\u00f3 pode ter um Poder Her\u00f3ico.\n[POT] Como acima, mas com +1 de for\u00e7a adicional, e este vampiro pode golpear: 2Di de dano."
     },
-    "":{
-        "Name":"101501",
-        "Card Text":""
-    },
     "102100":{
         "Name":"L\u00edngua de Veludo",
         "Card Text":"[ser] Somente utiliz\u00e1vel durante a etapa de vota\u00e7\u00e3o de uma a\u00e7\u00e3o pol\u00edtica. Coloque um contador de corrup\u00e7\u00e3o em um servo lan\u00e7ando votos ou sub-votos neste referendo.\n[SER] Somente utiliz\u00e1vel durante a etapa de vota\u00e7\u00e3o de uma a\u00e7\u00e3o pol\u00edtica antes dos votos e sub-votos serem lan\u00e7ados. Servos com contadores de corrup\u00e7\u00e3o n\u00e3o podem lan\u00e7ar votos ou sub-votos durante esse referendo."
@@ -737,7 +733,7 @@
     },
     "100103":{
         "Name":"Carni\u00e7al Asanbonsam",
-        "Card Text":"Carni\u00e7al com 3 de vida. 2 de for\u00e7a, 0 de sangrar.\nCarni\u00e7al Asanbonsam recebe +1 de percep\u00e7\u00e3o durante a\u00e7\u00f5es indiretas. Se Carni\u00e7al Asanbonsam bloquear uma a\u00e7\u00e3o direta, sete a dist\u00e2ncia para o combate resultante para perto."
+        "Card Text":"Carni\u00e7al com 3 de vida. 2 de for\u00e7a, 0 de sangrar.\nCarni\u00e7al Asanbonsam recebe +1 de percep\u00e7\u00e3o durante a\u00e7\u00f5es diretas. Se Carni\u00e7al Asanbonsam bloquear uma a\u00e7\u00e3o direta, sete a dist\u00e2ncia para o combate resultante para perto."
     },
     "100160":{
         "Name":"Bima",
@@ -1583,6 +1579,10 @@
         "Name":"Abandonar a Carne",
         "Card Text":"Somente utiliz\u00e1vel por um vampiro sendo queimado. Utiliz\u00e1vel por um vampiro em torpor.\n[dem] Remova esse vampiro do jogo (diablerie, se poss\u00edvel, ainda \u00e9 bem suscedida). e coloque essa carta em jogo.\nVoc\u00ea n\u00e3o pode jogar essa carta se j\u00e1 possuir um Abandonando a Carne em jogo. Trave durante uma a\u00e7\u00e3o de sangrar para dar ao vampiro agente com Dem\u00eancia [dem] +1 de sangrar."
     },
+    "":{
+        "Name":"101501",
+        "Card Text":""
+    },
     "100447":{
         "Name":"Furia Carmesim",
         "Card Text":"Somente utiliz\u00e1vel quando esse vampiro est\u00e1 sendo diablerizado. Utiliz\u00e1vel por um vampiro travado. Utiliz\u00e1vel por um vampiro em torpor.\n[ani] A diablerie \u00e9 cancelada e o diablerista queima 1 de sangue.\n[ANI] Queime o diablerista e esse vampiro. (A diablerie ainda \u00e9 considerada bem suscedida)."
@@ -1654,5 +1654,9 @@
     "102232":{
         "Name":"O Protocolo de Platina",
         "Card Text":"Requer um Anarquista. Mais de uma disciplina pode ser usada para jogar esta carta. (D) Sangrar.\n[obf] Esta a\u00e7\u00e3o tem +1 de furtividade.\n[pre] Este sangrar tem +1 de sangrar.\n[pro] Coloque um marcador de corrup\u00e7\u00e3o em um servo controlado pelo Matusal\u00e9m alvo se o sangramento for bem suscedido (por 1 ou mais)."
+    },
+    "101056":{
+        "Name":"Contestar os Recursos do Rebanho",
+        "Card Text":"Aloque 4 pontos entre dois ou mais Matusal\u00e9ns. Se o referendo for aprovado, cada Matusal\u00e9m queima 1 de recurso para cada ponto alocado."
     }
 }

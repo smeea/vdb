@@ -4,16 +4,19 @@ import { SelectLabelLibrary } from 'components';
 import { useFilters } from 'hooks';
 import { useApp } from 'context';
 
-function NewLibraryCard(props) {
+const NewLibraryCard = ({
+  inInventory,
+  selectedValue,
+  onChange,
+  autoFocus,
+  newRef,
+}) => {
   const { libraryCardBase } = useApp();
   const { filterLibrary } = useFilters(libraryCardBase);
 
   const getOptionLabel = (option) => {
     return (
-      <SelectLabelLibrary
-        cardid={option.value}
-        inInventory={props.inInventory}
-      />
+      <SelectLabelLibrary cardid={option.value} inInventory={inInventory} />
     );
   };
 
@@ -31,16 +34,17 @@ function NewLibraryCard(props) {
 
   return (
     <AsyncSelect
+      ref={newRef}
       classNamePrefix="react-select"
       cacheOptions
-      autoFocus={props.autoFocus}
-      value={props.selectedValue}
+      autoFocus={autoFocus}
+      value={selectedValue}
       placeholder="Add Library Card"
       loadOptions={loadOptions}
       getOptionLabel={getOptionLabel}
-      onChange={props.onChange}
+      onChange={onChange}
     />
   );
-}
+};
 
 export default NewLibraryCard;

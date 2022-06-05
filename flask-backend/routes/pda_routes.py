@@ -7,7 +7,6 @@ from random import random
 
 from search_decks import search_decks
 from search_decks_components import (
-    get_deck_for_frontend,
     get_missing_fields,
     match_inventory,
 )
@@ -18,6 +17,24 @@ from models import Deck
 @login.unauthorized_handler
 def unauthorized_handler():
     return Response(json.dumps({"Not logged in": True}), 401)
+
+
+def sanitize_pda(d):
+    deck = {
+        "deckid": d.deckid,
+        "name": d.name,
+        "author": d.author_public_name,
+        "isFavorited": False,
+        "favoritedBy": len(d.favorited),
+        "creation_date": d.creation_date,
+        "timestamp": d.timestamp,
+        "cards": d.cards,
+    }
+
+    if current_user.is_authenticated and current_user.id in d.favorited:
+        deck["isFavorited"] = True
+
+    return deck
 
 
 @app.route("/api/pda/authors", methods=["GET"])
@@ -96,7 +113,7 @@ def searchPdaRoute():
             )
 
     if result != 400:
-        return jsonify([get_deck_for_frontend(d["deckid"]) for d in result])
+        return jsonify([sanitize_pda(Deck.query.get(d["deckid"])) for d in result])
     else:
         abort(400)
 
@@ -219,7 +236,7 @@ def getNewPda(quantity):
             break
 
         counter += 1
-        decks.append(get_deck_for_frontend(d.deckid))
+        decks.append(sanitize_pda(d))
 
     return jsonify(decks)
 
@@ -237,7 +254,7 @@ def getRandomPda(quantity):
         if id not in decks_ids:
             counter += 1
             decks_ids.append(id)
-            decks.append(get_deck_for_frontend(all_decks[id].deckid))
+            decks.append(sanitize_pda(all_decks[id]))
 
     return jsonify(decks)
 

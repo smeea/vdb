@@ -309,27 +309,6 @@ with open("cardbase_lib.json", "r") as library_file:
     library_db = json.load(library_file)
 
 
-def get_deck_for_frontend(deckid):
-    d = Deck.query.get(deckid)
-
-    deck = {
-        "deckid": d.deckid,
-        "name": d.name,
-        "author": d.author_public_name,
-        "isFavorited": False,
-        "favoritedBy": len(d.favorited),
-        "description": d.description,
-        "creation_date": d.creation_date,
-        "timestamp": d.timestamp,
-        "cards": d.cards,
-    }
-
-    if current_user.is_authenticated and current_user.id in d.favorited:
-        deck["isFavorited"] = True
-
-    return deck
-
-
 def get_missing_fields(source):
     deck = {
         "crypt_total": 0,
@@ -487,20 +466,3 @@ def get_decks_by_similar(deckid, decks):
             match_decks.append(deck)
 
     return match_decks
-
-
-def sanitize_twd(deck):
-    d = deck.copy()
-    del d["description"]
-    del d["disciplines"]
-    del d["format"]
-    del d["link"]
-    del d["score"]
-    del d["cardtypes_ratio"]
-    del d["crypt_total"]
-    del d["library_total"]
-    del d["clan"]
-    del d["capacity"]
-    del d["traits"]
-
-    return d

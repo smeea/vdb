@@ -104,13 +104,7 @@ const TwdResultDescription = ({ deck }) => {
           {Description}
           <Stack gap={1} className="py-2">
             <TwdOpenDeckButton deckid={deck['deckid']} />
-            {username && (
-              <DeckCloneButton
-                deck={deck}
-                activeDeck={{ src: 'twd', deckid: deck.deckid }}
-                inTwd
-              />
-            )}
+            {username && <DeckCloneButton deck={deck} src="twd" inTwd />}
           </Stack>
         </>
       ) : (
@@ -133,13 +127,7 @@ const TwdResultDescription = ({ deck }) => {
                 {deck['players']}
               </div>
               <TwdOpenDeckButton deckid={deck['deckid']} />
-              {username && (
-                <DeckCloneButton
-                  deck={deck}
-                  activeDeck={{ src: 'twd', deckid: deck.deckid }}
-                  inTwd
-                />
-              )}
+              {username && <DeckCloneButton deck={deck} src="twd" inTwd />}
             </Stack>
           </Col>
         </Row>

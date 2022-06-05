@@ -9,45 +9,60 @@ import {
   TwdResultLibraryByType,
   TwdResultLibraryKeyCards,
 } from 'components';
+import { resultDecksSort } from 'utils';
 import { useApp, useSearchResults } from 'context';
 
-function PdaResult(props) {
+const PdaResult = ({ showSearch }) => {
   const {
     setShowPdaSearch,
     cryptCardBase,
     libraryCardBase,
-    showImage,
     isMobile,
     showFloatingButtons,
+    pdaSearchSort,
+    changePdaSearchSort,
   } = useApp();
 
   const { pdaResults, setPdaResults } = useSearchResults();
 
   const navigate = useNavigate();
   const showCounterStep = 20;
-  const [rows, setRows] = useState([]);
+  const [sortedDecks, setSortedDecks] = useState([]);
+  const [results, setResults] = useState([]);
   const [showCounter, setShowCounter] = useState(0);
   const [deckCounter, setDeckCounter] = useState(0);
+
+  const sortMethods = {
+    'Date - New to Old': 'D↓',
+    'Date - Old to New': 'D↑',
+    Favorites: 'F',
+  };
+
+  const setSortMethod = (method) => {
+    changePdaSearchSort(method);
+    setSortedDecks(() => resultDecksSort(pdaResults, method));
+  };
 
   const handleClear = () => {
     navigate('/pda');
     setPdaResults(undefined);
-    setShowPdaSearch(!props.showSearch);
+    setShowPdaSearch(!showSearch);
   };
 
   useEffect(() => {
     if (pdaResults) {
       setDeckCounter(Object.keys(pdaResults).length);
       setShowCounter(showCounterStep);
+      setSortedDecks(() => resultDecksSort(pdaResults, pdaSearchSort));
     }
   }, [pdaResults]);
 
   useEffect(() => {
-    if (pdaResults) {
+    if (sortedDecks) {
       let newCounter = showCounter;
 
-      setRows(
-        pdaResults.map((deck, index) => {
+      setResults(
+        sortedDecks.map((deck, index) => {
           while (newCounter > 0) {
             newCounter -= 1;
 
@@ -110,7 +125,7 @@ function PdaResult(props) {
         })
       );
     }
-  }, [pdaResults, showCounter, showImage]);
+  }, [sortedDecks, showCounter, pdaSearchSort]);
 
   return (
     <>
@@ -121,8 +136,13 @@ function PdaResult(props) {
       )}
       {pdaResults && pdaResults.length > 0 && (
         <>
-          <TwdResultTotal decks={pdaResults} />
-          {rows}
+          <TwdResultTotal
+            decks={pdaResults}
+            sortMethods={sortMethods}
+            sortMethod={pdaSearchSort}
+            setSortMethod={setSortMethod}
+          />
+          {results}
           {deckCounter > showCounter && (
             <div className="d-flex justify-content-center pb-4 pt-2">
               <Button
@@ -147,6 +167,6 @@ function PdaResult(props) {
       )}
     </>
   );
-}
+};
 
 export default PdaResult;

@@ -67,21 +67,22 @@ const PdaResultDescription = ({ deck }) => {
     </table>
   );
 
+  const Buttons = (
+    <Stack gap={1}>
+      <TwdOpenDeckButton deckid={deck['deckid']} inPda />
+      {username && <DeckCloneButton deck={deck} src="pda" inPda />}
+      <div>
+        <PdaFavoriteButton deck={deck} />
+      </div>
+    </Stack>
+  );
+
   return (
     <>
       {isDesktop ? (
         <>
-          {Description}
-          <Stack gap={1} className="py-2">
-            <TwdOpenDeckButton deckid={deck['deckid']} inPda />
-            {username && (
-              <DeckCloneButton
-                deck={deck}
-                activeDeck={{ src: 'shared', deckid: deck.deckid }}
-                inPda
-              />
-            )}
-          </Stack>
+          <div className="pb-2">{Description}</div>
+          {Buttons}
         </>
       ) : (
         <Row className="pb-1 mx-0">
@@ -89,19 +90,7 @@ const PdaResultDescription = ({ deck }) => {
             {Description}
           </Col>
           <Col xs={3} className="px-1">
-            <Stack gap={1}>
-              <TwdOpenDeckButton deckid={deck['deckid']} />
-              {username && (
-                <DeckCloneButton
-                  deck={deck}
-                  activeDeck={{ src: 'shared', deckid: deck.deckid }}
-                  inPda
-                />
-              )}
-            </Stack>
-            <div className="pt-1 pb-2">
-              <PdaFavoriteButton deck={deck} />
-            </div>
+            {Buttons}
           </Col>
         </Row>
       )}

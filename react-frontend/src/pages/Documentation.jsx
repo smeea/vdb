@@ -3,7 +3,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import At from 'assets/images/icons/at.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
+import SearchHeartFill from 'assets/images/icons/search-heart-fill.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
+import ImageAlt from 'assets/images/icons/image-alt.svg';
 import { Banner } from 'components';
 
 function Documentation(props) {
@@ -36,6 +38,9 @@ function Documentation(props) {
                 </li>
                 <li>
                   <a href="#pda">PDA search</a>
+                </li>
+                <li>
+                  <a href="#cards">Card View</a>
                 </li>
                 <li>
                   <a href="#decks">Deck view</a>
@@ -255,6 +260,24 @@ function Documentation(props) {
                   Deck author name is public author name (same you see in Deck
                   view page), it is not unique (no ownership), can be different
                   from your account name and can be changed anytime
+                </li>
+              </ul>
+            </div>
+
+            <div className="pt-3">
+              <h5 id="cards">CARD VIEW</h5>
+              <ul>
+                <li>Clicking on the card will open detailed card view.</li>
+                <li>
+                  Hovering over card name will popup card image or textual card
+                  description. To switch between image/text layouts click{' '}
+                  <ImageAlt /> button.
+                </li>
+                <li>
+                  Compare (<SearchHeartFill />) button will add the card to
+                  Compare: it will appear above Crypt/Library search results
+                  (and will be saved between different searches or page
+                  changes).
                 </li>
               </ul>
             </div>

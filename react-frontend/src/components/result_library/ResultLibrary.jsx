@@ -22,11 +22,11 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
   const navigate = useNavigate();
 
   const sortMethods = {
-    Name: 'N',
     'Clan / Discipline': 'C/D',
-    Type: 'T',
-    'Cost - Min to Max': 'C↑',
     'Cost - Max to Min': 'C↓',
+    'Cost - Min to Max': 'C↑',
+    Name: 'N',
+    Type: 'T',
   };
 
   const setSortMethod = (method) => {

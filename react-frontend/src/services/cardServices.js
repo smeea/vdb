@@ -1,13 +1,13 @@
 import preconDecksData from 'assets/data/preconDecks.json';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const VERSION = '2022-05-27';
+const VERSION = '2022-05-30';
 const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
 const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=${VERSION}`;
 const urlLocalizedCrypt = (lang) =>
-  `${process.env.ROOT_URL}cardbase_crypt.${lang}.json`;
+  `${process.env.ROOT_URL}cardbase_crypt.${lang}.json?v=${VERSION}`;
 const urlLocalizedLibrary = (lang) =>
-  `${process.env.ROOT_URL}cardbase_lib.${lang}.json`;
+  `${process.env.ROOT_URL}cardbase_lib.${lang}.json?v=${VERSION}`;
 
 export const getCardBase = async () => {
   const options = {

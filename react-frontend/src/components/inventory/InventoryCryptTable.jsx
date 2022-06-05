@@ -27,6 +27,7 @@ const InventoryCryptTable = ({
   sortMethod,
   compact,
   withCompact,
+  newFocus,
 }) => {
   const { usedCryptCards, isMobile, isNarrow, isWide, setShowFloatingButtons } =
     useApp();
@@ -66,29 +67,14 @@ const InventoryCryptTable = ({
     return (
       <>
         <div className="d-flex align-items-center justify-content-center quantity px-1">
-          {isMobile ? (
-            <InventoryCardQuantity
-              cardid={card.Id}
-              q={qty}
-              softUsedMax={softUsedMax}
-              hardUsedTotal={hardUsedTotal}
-            />
-          ) : (
-            <OverlayTrigger
-              placement="bottom"
-              overlay={<UsedPopover cardid={card.Id} />}
-            >
-              <div className="w-100">
-                <InventoryCardQuantity
-                  cardid={card.Id}
-                  q={qty}
-                  softUsedMax={softUsedMax}
-                  hardUsedTotal={hardUsedTotal}
-                  compact={compact}
-                />
-              </div>
-            </OverlayTrigger>
-          )}
+          <InventoryCardQuantity
+            cardid={card.Id}
+            q={qty}
+            softUsedMax={softUsedMax}
+            hardUsedTotal={hardUsedTotal}
+            compact={compact}
+            newFocus={newFocus}
+          />
         </div>
         <div className="d-flex align-items-center justify-content-center used">
           {isMobile ? (

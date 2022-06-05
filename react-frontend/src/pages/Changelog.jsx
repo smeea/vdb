@@ -12,6 +12,27 @@ const Changelog = (props) => {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-05-31:</h6>
+            <ul>
+              <li>
+                Add sorting in TWD/PDA by Date/Players/Favorites, and in
+                Deck/Crypt by Sect
+              </li>
+              <li>
+                Simplify add many cards to Inventory by autofocusing new-card
+                form after entering q-ty for new card
+              </li>
+              <li>
+                Removed used-in-inventory popup from card q-ty buttons in
+                inventory (still available few pixels to the right on +-summary)
+              </li>
+              <li>
+                Significantly reduced answer size from server when searching for
+                TWD (and slighly for PDA)
+              </li>
+              <li>More Brazilian Portuguese translations.</li>
+            </ul>
+
             <h6>2022-05-27:</h6>
             <ul>
               <li>

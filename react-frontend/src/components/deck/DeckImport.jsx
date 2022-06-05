@@ -16,7 +16,6 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
     activeDeck,
     setActiveDeck,
     setSharedDeck,
-    username,
     inventoryAddToState,
     setShowMenuButtons,
     setShowFloatingButtons,
@@ -140,6 +139,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
             crypt: crypt,
             library: library,
             branchName: '#0',
+            is_yours: true,
           },
         }));
         setShowInfo(true);

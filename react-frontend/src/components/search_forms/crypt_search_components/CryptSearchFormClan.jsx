@@ -8,13 +8,14 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
-import clansList from '~/src/assets/data/clansList.json';
+import imbuedClansList from 'assets/data/imbuedClansList.json';
+import vampireClansList from 'assets/data/vampireClansList.json';
 import { useApp } from 'context';
 
-function CryptSearchFormClan(props) {
+const CryptSearchFormClan = ({ value, setFormState, onChange }) => {
   const { isMobile } = useApp();
 
-  const clans = ['ANY', ...clansList];
+  const clans = ['ANY', ...vampireClansList, ...imbuedClansList];
 
   const options = [];
 
@@ -54,23 +55,23 @@ function CryptSearchFormClan(props) {
           className="d-flex justify-content-between align-items-center px-0"
         >
           <div className="bold blue">Clan:</div>
-          {props.value.value[0] !== 'any' && (
+          {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonGroupToggle
-                  value={props.value}
-                  setFormState={props.setFormState}
+                  value={value}
+                  setFormState={setFormState}
                 />
               </div>
-              {props.value.value.length == 1 ? (
+              {value.value.length == 1 ? (
                 <SearchFormButtonAdd
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                 />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                   i={0}
                 />
               )}
@@ -85,20 +86,20 @@ function CryptSearchFormClan(props) {
             name={0}
             maxMenuHeight={isMobile ? 330 : 550}
             value={options.find(
-              (obj) => obj.value === props.value.value[0].toLowerCase()
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </Col>
       </Row>
       <SearchAdditionalForms
-        value={props.value}
+        value={value}
         options={options}
-        onChange={props.onChange}
-        setFormState={props.setFormState}
+        onChange={onChange}
+        setFormState={setFormState}
       />
     </>
   );
-}
+};
 
 export default CryptSearchFormClan;

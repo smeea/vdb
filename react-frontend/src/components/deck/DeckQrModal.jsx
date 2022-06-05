@@ -30,7 +30,7 @@ const DeckQrModal = ({ show, setShow, deck }) => {
       <Modal.Header className="no-border pt-3 pb-0">
         <h5>QR for {deck.name}</h5>
         <div className="d-flex align-items-center">
-          {!url.includes('decks?id=') && (
+          {(deck.non_editable || !url.includes('decks?id=')) && (
             <div title="Non-editable" className="d-flex blue px-2">
               <Snow width="26" height="26" viewBox="0 0 16 16" />
             </div>

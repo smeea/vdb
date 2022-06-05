@@ -16,7 +16,7 @@ import {
   ResultClanImage,
   OverlayTooltip,
 } from 'components';
-import { decksSort } from 'utils';
+import { resultDecksSort } from 'utils';
 import { useApp } from 'context';
 
 function InventoryAddDeckModal(props) {
@@ -87,7 +87,7 @@ function InventoryAddDeckModal(props) {
         });
       }
 
-      const sorted = decksSort(filtered, sortMethod);
+      const sorted = resultDecksSort(filtered, sortMethod);
       setSortedDecks(sorted);
     }
   }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);

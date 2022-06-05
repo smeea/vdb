@@ -4,7 +4,7 @@ import json
 from random import random
 
 from search_decks import search_decks
-from search_decks_components import sanitize_twd, match_inventory
+from search_decks_components import match_inventory
 from api import app
 from models import Deck
 
@@ -26,6 +26,21 @@ with open("twd_decks.json", "r") as twd_file:
                 deck["crypt"][id] = q
             else:
                 deck["library"][id] = q
+
+
+def sanitize_twd(d):
+    deck = {
+        "deckid": d["deckid"],
+        "name": d["name"],
+        "author": d["author"],
+        "event": d["event"],
+        "players": d["players"],
+        "location": d["location"],
+        "creation_date": d["creation_date"],
+        "cards": d["cards"],
+    }
+
+    return deck
 
 
 @app.route("/api/twd/locations", methods=["GET"])
@@ -126,6 +141,6 @@ def searchTwdRoute():
             )
 
     if result != 400:
-        return jsonify(result)
+        return jsonify([sanitize_twd(d) for d in result])
     else:
         abort(400)
