@@ -3,6 +3,7 @@
 // in case of missing filter or matching them the method returns false, meaning there's no missing criteria
 // if the filter is present and the card dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that card check.
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const useFilters = (cards = {}) => {
   const filterCrypt = (filter) => {
@@ -527,13 +528,58 @@ const missingType = (filterType, card) => {
 //  ------------------------------------------------------
 //  ------------------  MISSING SET  ---------------------
 //  ------------------------------------------------------
+const BCP_START = '2018-01-01';
+const FUTURE = '2077-01-01';
+const PAST = '1984-01-01';
 
 const missingSet = (filterSet, card) => {
   if (!filterSet || filterSet === 'any') return false;
 
-  // TODO: implement filtering logic
+  if (!card.Set || card.Set.length === 0) return true;
 
-  return false;
+  const sets = filterSet.value;
+  const print = filterSet.print ? filterSet.print : null;
+  const age = filterSet.age ? filterSet.age : null;
+
+  const dates = cardDates(card, true);
+
+  return !sets.some((set) => {
+    if (set === 'bcp') {
+      if ((print === 'only' || print === 'first') && dates.min >= BCP_START)
+        return true;
+      else if (dates.max >= BCP_START) return true;
+    } else {
+      let counter = 0;
+      const setDate = set !== 'bcp' ? setsAndPrecons[set].date : null;
+
+      if (age) {
+        if (
+          (age === 'or-newer' && setDate <= dates.max) ||
+          (age === 'or-older' && setDate >= dates.min) ||
+          (age === 'not-newer' && setDate >= dates.max) ||
+          (age === 'not-older' && setDate <= dates.min)
+        )
+          counter += 1;
+      } else if (set in card.Set) counter += 1;
+
+      if (print) {
+        counter -= 1;
+
+        if (print === 'only' && Object.keys(card.Set).length === 1)
+          counter += 1;
+
+        if (
+          print === 'first' &&
+          ((set === 'Promo' && dates.minPromo <= dates.min) ||
+            dates.min === setDate)
+        )
+          counter += 1;
+
+        if (print === 'reprint' && dates.min < setDate) counter += 1;
+      }
+      return counter === 1;
+    }
+  });
 };
 
 //  ------------------------------------------------------
@@ -542,10 +588,49 @@ const missingSet = (filterSet, card) => {
 
 const missingPrecon = (filterPrecon, card) => {
   if (!filterPrecon || filterPrecon === 'any') return false;
+  if (!card.Set || card.Set.length === 0) return true;
 
-  // TODO: implement filtering logic
+  const setsAndSub = filterPrecon.value;
+  const print = filterPrecon.print ? filterPrecon.print : null;
 
-  return false;
+  const dates = cardDates(card, false);
+
+  return !setsAndSub.some((setAndSub) => {
+    const [set, subSet] = setAndSub.split(':');
+
+    if (setAndSub === 'bcp') {
+      if (print) {
+        if (print === 'only' && dates.min >= BCP_START) return true;
+        else if (
+          print === 'first' &&
+          dates.min >= BCP_START &&
+          dates.min <= dates.minPromo
+        )
+          return true;
+      } else if (dates.max >= BCP_START) return true;
+    } else if (
+      Object.keys(card.Set).includes(set) &&
+      Object.keys(card.Set[set]).includes(subSet)
+    ) {
+      if (print) {
+        const setDate = set !== 'bcp' ? setsAndPrecons[set].date : null;
+        switch (print) {
+          case 'only':
+            return (
+              Object.keys(card.Set).length === 1 &&
+              Object.keys(card.Set[set]).length === 1
+            );
+            break;
+          case 'first':
+            return dates.min === setDate && dates.min < dates.minPromo;
+            break;
+          case 'reprint':
+            return dates.min < setDate || dates.minPromo < setDate;
+            break;
+        }
+      } else return true;
+    }
+  });
 };
 
 //  ------------------------------------------------------
@@ -591,4 +676,23 @@ const missingCostCheck = (logic, filterCost, cardCost) => {
     (logic === 'ge' && cardCost >= filterCost) ||
     (logic === 'eq' && cardCost === filterCost)
   );
+};
+
+const cardDates = (card, addPromo = false) => {
+  const cardSets = Object.keys(card.Set).filter((set) => set !== 'Promo');
+  const setsDates = cardSets
+    .map((key) => setsAndPrecons[key].date)
+    .filter((date) => date);
+  const promoDates = card.Set.Promo ? Object.keys(card.Set.Promo) : [];
+  promoDates.sort();
+
+  const allDates =
+    addPromo && promoDates ? setsDates.concat(promoDates) : setsDates;
+  allDates.sort();
+
+  const minDate = allDates ? allDates[0] : FUTURE;
+  const maxDate = allDates ? allDates[allDates.length - 1] : PAST;
+  const minPromoDate = promoDates.length >= 1 ? promoDates[0] : FUTURE;
+
+  return { min: minDate, max: maxDate, minPromo: minPromoDate };
 };
