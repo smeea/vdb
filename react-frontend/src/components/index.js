@@ -9,6 +9,7 @@ export * from 'components/result_library';
 export * from 'components/result_common';
 export * from 'components/twd_result';
 export * from 'components/pda_result';
+export * from 'components/twd_check';
 
 // Search Forms
 export { default as LibrarySearchForm } from 'components/search_forms/LibrarySearchForm.jsx';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -23,6 +23,7 @@ import Library from 'pages/Library.jsx';
 import Navigation from 'pages/Navigation.jsx';
 import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
+import TwdCheck from 'pages/TwdCheck.jsx';
 
 import '~/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'assets/css/style.styl';
@@ -59,6 +60,7 @@ const App = (props) => {
               <Route path="decks" element={<Decks />} />
               <Route path="pda" element={<Pda />} />
               <Route path="twd" element={<Twd />} />
+              <Route path="twd_check" element={<TwdCheck />} />
               <Route path="crypt" element={<Crypt lastDeckId={lastDeckId} />} />
               <Route
                 path="library"
