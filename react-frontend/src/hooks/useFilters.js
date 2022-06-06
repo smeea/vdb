@@ -161,7 +161,7 @@ const missingTextQuery = (query, card) => {
 
   if (query.regex) {
     // in case of regex
-    regexExp = new RegExp(search, 'i');
+    const regexExp = new RegExp(search, 'i');
     match =
       (query.in !== 'text' &&
         (cardName.match(regexExp) || cardASCII.match(regexExp))) ||
@@ -231,7 +231,7 @@ const CryptTraitsRegexMap = {
 
   'optional press': () => /gets (.*)?optional press/i,
   '1 bleed': () => /[:.] \+. bleed./i,
-  '2 bleed': () => /[:.] \+2 bleed./i,
+  '2 bleed': () => /[:.] \+[2-9] bleed./i,
   '1 strength': () => /[:.] \+. strength./i,
   '2 strength': () => /[:.] \+2 strength./i,
   '1 intercept': () => /[:.] \+1 intercept./i,
@@ -371,8 +371,8 @@ const missingCapacityLibrary = (filterCapacity, card) => {
   const capacity = parseInt(filterCapacity.capacity);
   const moreless = filterCapacity.moreless;
 
-  match1 = capacityRegex[moreless + '1'].exec(card['Card Text']);
-  match2 = capacityRegex[moreless + '2'].exec(card['Card Text']);
+  const match1 = capacityRegex[moreless + '1'].exec(card['Card Text']);
+  const match2 = capacityRegex[moreless + '2'].exec(card['Card Text']);
 
   if (!match1 && !match2) return true;
 
@@ -460,7 +460,8 @@ const requiredSectList = [
 //  ------------------------------------------------------
 
 const missingGroup = (filterGroup, card) => {
-  if (!filterGroup || card['Group'] === 'any') return false;
+  console.log(card['Group']);
+  if (!filterGroup || card['Group'].toLowerCase() === 'any') return false;
 
   const groups = Object.keys(filterGroup);
 
