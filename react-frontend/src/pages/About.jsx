@@ -104,7 +104,7 @@ const About = (props) => {
                 </a>
                 <br />
                 Online card search and deck-building tool. I use *many* ideas
-                from Amaranth. Discontinued
+                from Amaranth. Discontinued (no new cards)
               </p>
 
               <p>
@@ -121,6 +121,14 @@ const About = (props) => {
                 </a>
                 <br />
                 Strategy portal
+              </p>
+
+              <p>
+                <a href="https://vtes-hook.com/">
+                  <b>VTES Hook</b>
+                </a>
+                <br />
+                Events portal
               </p>
 
               <p>
