@@ -460,7 +460,6 @@ const requiredSectList = [
 //  ------------------------------------------------------
 
 const missingGroup = (filterGroup, card) => {
-  console.log(card['Group']);
   if (!filterGroup || card['Group'].toLowerCase() === 'any') return false;
 
   const groups = Object.keys(filterGroup);
