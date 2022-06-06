@@ -41866,7 +41866,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready vampire with capacity above 7. +1 stealth action.\nPut this card on this acting vampire. This non-Sterile vampire can put a Master Discipline card from your hand or ash heap in play to represent a fledgling with 1 level of that Discipline and discard the rest of your hand as a +2 stealth action. The fledgling is a 1-capacity, non-unique vampire of the same clan as this vampire. The fledgling cannot act or block or play cards if this vampire is not ready.",
+        "Card Text":"Requires a ready vampire with capacity above 7. +1 stealth action.\nPut this card on this acting vampire. This non-Sterile vampire can put a Master Discipline card from your hand or ash heap in play to represent a fledgling with 1 level of that Discipline and discard the rest of your hand as a +2 stealth action. The fledgling is a 1-capacity, non-unique vampire of the same clan and sect as this vampire. The fledgling cannot act or block or play cards if this vampire is not ready.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",

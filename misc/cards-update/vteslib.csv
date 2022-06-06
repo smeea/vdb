@@ -1,4 +1,4 @@
-﻿"Id","Name","Aka","Type","Clan","Discipline","Pool Cost","Blood Cost","Conviction Cost","Burn Option","Card Text","Flavor Text","Set","Banned","Artist","Capacity"
+"Id","Name","Aka","Type","Clan","Discipline","Pool Cost","Blood Cost","Conviction Cost","Burn Option","Card Text","Flavor Text","Set","Banned","Artist","Capacity"
 "100001",".44 Magnum","","Equipment","","","2","","","","Weapon: gun.
 Strike: 2R damage, with 1 optional maneuver each combat.","","Jyhad:C, VTES:C, Sabbat:C, SW:PB, CE:PTo3, LoB:PO3, FB:PTr2, V5:PTr1","","Né Né Thomas; Greg Simanson",""
 "100002","419 Operation","","Action","Osebo","","","","","","+1 stealth action.
@@ -2827,7 +2827,7 @@ Baluba proverb","LoB:C","","Glenn Osterberger",""
 "101091","Legendary Vampire","","Master","","","2","","","","Unique.
 Put this card on a vampire with capacity 7 or more who entered your ready region during your last influence phase. This vampire gets +2 bleed and +2 votes. Any vampire can call a referendum to burn this card as a +1 stealth political action.","","DS:U2, FN:PA, LoB:PG, 25th:1","","Pete Venters",""
 "101092","Legion","","Action","","","","","","","Requires a ready vampire with capacity above 7. +1 stealth action.
-Put this card on this acting vampire. This non-Sterile vampire can put a Master Discipline card from your hand or ash heap in play to represent a fledgling with 1 level of that Discipline and discard the rest of your hand as a +2 stealth action. The fledgling is a 1-capacity, non-unique vampire of the same clan as this vampire. The fledgling cannot act or block or play cards if this vampire is not ready.","","Promo-20030901","","Leif Jones",""
+Put this card on this acting vampire. This non-Sterile vampire can put a Master Discipline card from your hand or ash heap in play to represent a fledgling with 1 level of that Discipline and discard the rest of your hand as a +2 stealth action. The fledgling is a 1-capacity, non-unique vampire of the same clan {and sect} as this vampire. The fledgling cannot act or block or play cards if this vampire is not ready.","","Promo-20030901","","Leif Jones",""
 "101093","Legwork","","Reaction","","","","1","","","Do not replace until your next unlock phase.
 +1 intercept. Not usable by a vampire with more than 0 intercept.","","BH:C, Third:C","","Andrew Bates",""
 "101094","Leonardo, Mortician","","Ally","Giovanni","","1","","","","Unique mortal with 2 life. 1 strength, 0 bleed.
