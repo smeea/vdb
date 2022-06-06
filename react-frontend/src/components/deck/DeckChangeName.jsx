@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
+import Snow from 'assets/images/icons/snow.svg';
 import TagFill from 'assets/images/icons/tag-fill.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { useApp } from 'context';
-import DeckFreezeButton from './DeckFreezeButton';
+import { DeckFreezeButton } from 'components';
 
 const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
   const { deckUpdate, isMobile } = useApp();
@@ -61,9 +62,13 @@ const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
             {isPublic ? <PeopleFill /> : <TrophyFill />}
           </InputGroup.Text>
         )}
-        {(nonEditable || (isAuthor && !isPublic)) && (
-          <DeckFreezeButton deck={deck} inName />
+        {nonEditable && (
+          <InputGroup.Text title="Deck is non-editable and will never change">
+            <Snow width="16" height="23" viewBox="0 0 16 16" />
+          </InputGroup.Text>
         )}
+        {isAuthor && !isPublic && <DeckFreezeButton deck={deck} inName />}
+
         {isMobile && isAuthor && (
           <Button variant={buttonState ? 'success' : 'primary'} type="submit">
             <Check2 />
