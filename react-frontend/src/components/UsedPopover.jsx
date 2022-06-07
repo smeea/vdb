@@ -44,7 +44,7 @@ const UsedPopover = React.forwardRef((props, ref) => {
         <UsedDescription
           key={id}
           q={usedCards.soft[cardid][id]}
-          deckName={decks[id]['name']}
+          deck={decks[id]}
           t="s"
         />
       );
@@ -58,7 +58,7 @@ const UsedPopover = React.forwardRef((props, ref) => {
         <UsedDescription
           key={id}
           q={usedCards.hard[cardid][id]}
-          deckName={decks[id]['name']}
+          deck={decks[id]}
           t="h"
         />
       );
