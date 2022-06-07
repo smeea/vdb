@@ -44,7 +44,7 @@ const ResultLayoutTextInventory = (props) => {
           <UsedDescription
             key={id}
             q={usedCards.soft[props.cardid][id]}
-            deckName={decks[id]['name']}
+            deck={decks[id]}
             t="s"
           />
         );
@@ -60,7 +60,7 @@ const ResultLayoutTextInventory = (props) => {
           <UsedDescription
             key={id}
             q={usedCards.hard[props.cardid][id]}
-            deckName={decks[id]['name']}
+            deck={decks[id]}
             t="h"
           />
         );
