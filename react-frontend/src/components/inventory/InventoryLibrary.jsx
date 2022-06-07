@@ -348,49 +348,52 @@ const InventoryLibrary = ({
   const cardsFilteredByType = {};
   const cardsFilteredByTypeTotal = {};
   const cardsFilteredByTypeUnique = {};
-  Object.keys(cardsByDiscipline).map((d) => {
-    cardsFilteredByType[d] = {};
-    cardsFilteredByTypeTotal[d] = 0;
-    cardsFilteredByTypeUnique[d] = 0;
-  });
-
-  Object.keys(cardsByType[type]).map((cardid) => {
-    Object.keys(cardsByDiscipline).map((d) => {
-      if (cardsByDiscipline[d][cardid]) {
-        cardsFilteredByType[d][cardid] = cardsByDiscipline[d][cardid];
-        cardsFilteredByTypeTotal[d] += cardsByDiscipline[d][cardid].q;
-        cardsFilteredByTypeUnique[d] += 1;
-      }
-    });
-  });
-
   const cardsFilteredByDiscipline = {};
   const cardsFilteredByDisciplineTotal = {};
   const cardsFilteredByDisciplineUnique = {};
-  Object.keys(cardsByType).map((t) => {
-    cardsFilteredByDiscipline[t] = {};
-    cardsFilteredByDisciplineTotal[t] = 0;
-    cardsFilteredByDisciplineUnique[t] = 0;
-  });
-
-  Object.keys(cardsByDiscipline[discipline]).map((cardid) => {
-    Object.keys(cardsByType).map((t) => {
-      if (cardsByType[t][cardid]) {
-        cardsFilteredByDiscipline[t][cardid] = cardsByType[t][cardid];
-        cardsFilteredByDisciplineTotal[t] += cardsByType[t][cardid].q;
-        cardsFilteredByDisciplineUnique[t] += 1;
-      }
-    });
-  });
-
   const missingFiltered = {};
   let missingFilteredTotal = 0;
-  Object.keys(missingByType[type])
-    .filter((card) => missingByDiscipline[discipline][card])
-    .map((cardid) => {
-      missingFiltered[cardid] = missingByType[type][cardid];
-      missingFilteredTotal += missingByType[type][cardid].q;
+
+  if (!compact) {
+    Object.keys(cardsByDiscipline).map((d) => {
+      cardsFilteredByType[d] = {};
+      cardsFilteredByTypeTotal[d] = 0;
+      cardsFilteredByTypeUnique[d] = 0;
     });
+
+    Object.keys(cardsByType[type]).map((cardid) => {
+      Object.keys(cardsByDiscipline).map((d) => {
+        if (cardsByDiscipline[d][cardid]) {
+          cardsFilteredByType[d][cardid] = cardsByDiscipline[d][cardid];
+          cardsFilteredByTypeTotal[d] += cardsByDiscipline[d][cardid].q;
+          cardsFilteredByTypeUnique[d] += 1;
+        }
+      });
+    });
+
+    Object.keys(cardsByType).map((t) => {
+      cardsFilteredByDiscipline[t] = {};
+      cardsFilteredByDisciplineTotal[t] = 0;
+      cardsFilteredByDisciplineUnique[t] = 0;
+    });
+
+    Object.keys(cardsByDiscipline[discipline]).map((cardid) => {
+      Object.keys(cardsByType).map((t) => {
+        if (cardsByType[t][cardid]) {
+          cardsFilteredByDiscipline[t][cardid] = cardsByType[t][cardid];
+          cardsFilteredByDisciplineTotal[t] += cardsByType[t][cardid].q;
+          cardsFilteredByDisciplineUnique[t] += 1;
+        }
+      });
+    });
+
+    Object.keys(missingByType[type])
+      .filter((card) => missingByDiscipline[discipline][card])
+      .map((cardid) => {
+        missingFiltered[cardid] = missingByType[type][cardid];
+        missingFilteredTotal += missingByType[type][cardid].q;
+      });
+  }
 
   return (
     <>

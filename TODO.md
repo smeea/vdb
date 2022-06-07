@@ -1,4 +1,5 @@
 # FIX
+- Card image loop if no image available (i.e. /Cards offline search)
 
 # FEATURES
 - Export all in xlsx and csv
@@ -10,13 +11,14 @@
 - Use DTC list from https://docs.google.com/spreadsheets/d/1RmtZqybXQfvohPEs0F043tayv6hSfhFfqWpVeo4wQrc/
 
 # IMPROVE TECHNOLOGY - FRONTEND
-- Move search to frontend
 - Move export to frontend
 - Move import to frontend
 - Transit from useContext to Recoil
 - Reduce re-renders
+- Add "Update (reload page)" button
 
 # IMPROVE TECHNOLOGY - BACKEND
+- Remove deprecated search code
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)
