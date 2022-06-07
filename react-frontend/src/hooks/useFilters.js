@@ -245,8 +245,8 @@ const CryptTraitsRegexMap = {
   'red list': () => /red list[.:]/i,
   flight: () => /\[flight\]\./i,
   'additional strike': () => /additional strike/i,
-  aggravated: () => /(?<!non-)aggravated/i,
-  prevent: () => /(?<!un)prevent(?<!able)/i,
+  aggravated: () => /(?:[^non-])aggravated/i,
+  prevent: () => /(?:[^un])prevent(?:[^able])/i,
 };
 
 // REGEX for each library trait.
@@ -261,8 +261,8 @@ const LibraryTraitsRegexMap = {
   unlock: () => /(?!not )unlock(?! phase|ed)|wakes/i,
   'votes-title': () => /\+. vote|additional vote|represent the .* title/i,
   'reduce bleed': () => /reduce a bleed/i,
-  aggravated: () => /(?<!non-)aggravated/i,
-  prevent: () => /(?<!un)prevent(?<!able)/i,
+  aggravated: () => /(?:[^non-])aggravated/i,
+  prevent: () => /(?:[^un])prevent(?:[^able])/i,
 };
 
 //  ------------------------------------------------------
