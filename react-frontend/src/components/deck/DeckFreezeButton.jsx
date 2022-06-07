@@ -15,7 +15,7 @@ const DeckFreezeButton = ({ deck, inName }) => {
     <ButtonIconed
       variant="primary"
       onClick={handleClick}
-      title={`${deck.frozen ? 'Disabled' : 'Enabled'} Crypt/Library Edition`}
+      title={`${deck.frozen ? 'Disabled' : 'Enabled'} Crypt/Library Editing`}
       icon={
         deck.frozen ? (
           <LockFill width="16" height="23" viewBox="0 0 16 16" />

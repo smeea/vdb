@@ -377,7 +377,8 @@ played this instead.                                   # line length limit)'''}
 
                 deck.append("\n")
 
-    deck.pop(-1)
+        deck.pop(-1)
+
     deck_str = "".join(deck)
 
     return {"name": deck_name, "format": format, "deck": deck_str}

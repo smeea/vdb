@@ -113,7 +113,7 @@ const About = (props) => {
                 </a>
                 <br />
                 Online card search and deck-building tool. I use *many* ideas
-                from Amaranth. Discontinued (no new cards)
+                from Amaranth
               </p>
 
               <p>
