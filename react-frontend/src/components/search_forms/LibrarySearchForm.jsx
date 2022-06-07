@@ -50,7 +50,7 @@ const LibrarySearchForm = (props) => {
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
-    if (libraryCardBase && query) {
+    if (query) {
       setLibraryFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
@@ -65,7 +65,7 @@ const LibrarySearchForm = (props) => {
         return state;
       });
     }
-  }, [libraryCardBase]);
+  }, []);
 
   const [error, setError] = useState(false);
   const refError = useRef(null);
@@ -193,7 +193,6 @@ const LibrarySearchForm = (props) => {
     const filteredCards = filterLibrary(sanitizeForm);
 
     setSpinnerState(false);
-    setShowLibrarySearch(false);
 
     if (!isMobile) {
       if (hideMissing && inventoryMode) {
@@ -205,6 +204,12 @@ const LibrarySearchForm = (props) => {
       }
     } else {
       setLibraryResults(filteredCards);
+      if (filteredCards.length == 0) {
+        navigate('/library');
+        setError('NO CARDS FOUND');
+      } else {
+        setShowLibrarySearch(false);
+      }
     }
   };
 

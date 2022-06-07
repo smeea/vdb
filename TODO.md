@@ -1,5 +1,6 @@
 # FIX
 - Card image loop if no image available (i.e. /Cards offline search)
+- Search on mobile with open url
 
 # FEATURES
 - Export all in xlsx and csv

@@ -207,7 +207,6 @@ const CryptSearchForm = (props) => {
 
     const filteredCards = filterCrypt(sanitizeForm);
 
-    setShowCryptSearch(false);
     setSpinnerState(false);
 
     if (!isMobile) {
@@ -220,6 +219,12 @@ const CryptSearchForm = (props) => {
       }
     } else {
       setCryptResults(filteredCards);
+      if (filteredCards.length == 0) {
+        navigate('/crypt');
+        setError('NO CARDS FOUND');
+      } else {
+        setShowCryptSearch(false);
+      }
     }
   };
 
