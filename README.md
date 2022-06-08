@@ -9,7 +9,7 @@ Public instance is available at https://vdb.im.
 VDB consist of two components communicating with each other.
 
 ### FRONTEND
-Uses the following stack to serve UI, accessible with any modern browser:
+Serve the UI, accessible with any modern browser, using:
 ```
    Node.js (tested on v16)
    ReactJS
@@ -17,7 +17,7 @@ Uses the following stack to serve UI, accessible with any modern browser:
 ```
 
 ### BACKEND
-Performs search in official VTES card database and stores account/decks/inventory with:
+Store user data decks/inventory, using:
 
 ```
    Python (v3.10+)
@@ -43,8 +43,6 @@ Start backend:
     python -m venv venv
     source venv/bin/activate
     python -m pip install -r requirements.txt
-    export FLASK_APP=api
-    export FLASK_ENV=development
     flask db init
     flask db migrate
     flask db upgrade

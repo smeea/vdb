@@ -1,10 +1,13 @@
 # FIX
 - Card image loop if no image available (i.e. /Cards offline search)
 - Search on mobile with open url
+- Check to use sect entry in search
+- Treaty of Laibach clan
 
 # FEATURES
 - Export all in xlsx and csv
 - Embrace-like trait
+- Multiforms for capacity
 
 # MAYBE LATER FEATURES
 - Comments for PDA
