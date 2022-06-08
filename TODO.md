@@ -2,7 +2,7 @@
 - Card image loop if no image available (i.e. /Cards offline search)
 - Search on mobile with open url
 - Check to use sect entry in search
-- Treaty of Laibach clan
+- Check and fix searches with logic and multi-options in card value (i.e. Discipline+Discipline or Discipline/Discipline/Discipline)
 
 # FEATURES
 - Export all in xlsx and csv

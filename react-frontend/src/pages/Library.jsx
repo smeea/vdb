@@ -69,7 +69,13 @@ const Library = ({ lastDeckId }) => {
           </Col>
         )}
         {showResultCol && (
-          <Col md={7} lg={6} xl={5} className="px-0 px-md-2 px-xl-3 py-md-3">
+          <Col
+            md={7}
+            lg={6}
+            xl={deckid && addMode ? 5 : 6}
+            xxl={5}
+            className="px-0 px-md-2 py-md-3 px-xl-3"
+          >
             {((isMobile && libraryCompare && libraryResults) ||
               (!isMobile && libraryCompare)) && (
               <div className="pb-3">
@@ -93,7 +99,12 @@ const Library = ({ lastDeckId }) => {
           </Col>
         )}
         {showSearchForm && (
-          <Col md={4} lg={4} xl={3} className="p-1 p-md-3 pe-xl-0">
+          <Col
+            md={4}
+            xl={deckid && addMode ? 3 : 4}
+            xxl={3}
+            className="p-1 p-md-3 pe-xl-0"
+          >
             <LibrarySearchForm />
           </Col>
         )}
