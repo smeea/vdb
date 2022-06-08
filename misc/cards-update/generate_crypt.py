@@ -111,9 +111,15 @@ useless_fields = ["Aka"]
 
 with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
     "cardbase_crypt.json", "w", encoding="utf8"
-) as cardbase_file, open("vtes.json", "r", encoding="utf8") as krcg_file, open(
+) as cardbase_file, open(
+    "cardbase_crypt.min.json", "w", encoding="utf8"
+) as cardbase_file_min, open(
+    "vtes.json", "r", encoding="utf8"
+) as krcg_file, open(
     "artistsCrypt.json", "w", encoding="utf8"
 ) as artists_file, open(
+    "artistsCrypt.min.json", "w", encoding="utf8"
+) as artists_file_min, open(
     "twda.json", "r"
 ) as twda_input:
 
@@ -364,7 +370,7 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
 
     artists = sorted(artists_set)
 
-    # json.dump(cards, f_json, separators=(',', ':'))
-    # Use this instead, for output with indentation (e.g. for debug)
+    json.dump(cardbase, cardbase_file_min, separators=(",", ":"))
+    json.dump(artists, artists_file_min, separators=(",", ":"))
     json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))
     json.dump(artists, artists_file, indent=4, separators=(",", ":"))

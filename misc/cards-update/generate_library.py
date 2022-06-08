@@ -42,10 +42,14 @@ useless_fields = ["Aka", "Flavor Text"]
 with open("vteslib.csv", "r", encoding="utf-8-sig") as main__csv, open(
     "vteslibmeta.csv", "r", encoding="utf-8-sig"
 ) as meta_csv, open("cardbase_lib.json", "w", encoding="utf8") as cardbase_file, open(
+    "cardbase_lib.min.json", "w", encoding="utf8"
+) as cardbase_file_min, open(
     "vtes.json", "r", encoding="utf8"
 ) as krcg_file, open(
     "artistsLib.json", "w", encoding="utf8"
 ) as artists_file, open(
+    "artistsLib.min.json", "w", encoding="utf8"
+) as artists_file_min, open(
     "twda.json", "r"
 ) as twda_input:
 
@@ -295,7 +299,7 @@ with open("vteslib.csv", "r", encoding="utf-8-sig") as main__csv, open(
 
     artists = sorted(artists_set)
 
-    # json.dump(cards, f_json, separators=(',', ':'))
-    # Use this instead, for output with indentation (e.g. for debug)
+    json.dump(cardbase, cardbase_file_min, separators=(",", ":"))
+    json.dump(artists, artists_file_min, separators=(",", ":"))
     json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))
     json.dump(artists, artists_file, indent=4, separators=(",", ":"))

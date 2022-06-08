@@ -8,10 +8,11 @@ for lang in languages:
     for i in ["crypt", "lib"]:
         filename_in = f"vtes{i}.{lang}.csv"
         filename_out = f"cardbase_{i}.{lang}.json"
+        filename_out_min = f"cardbase_{i}.{lang}.min.json"
 
         with open(filename_in, "r", encoding="utf8") as f_in, open(
             filename_out, "w", encoding="utf8"
-        ) as f_out:
+        ) as f_out, open(filename_out_min, "w", encoding="utf8") as f_out_min:
 
             reader = csv.reader(f_in)
             fieldnames = next(reader)
@@ -32,6 +33,5 @@ for lang in languages:
                     "Card Text": card["Card Text"],
                 }
 
-            # json.dump(cards, f_out, separators=(',', ':'))
-            # Use this instead, for output with indentation (e.g. for debug)
+            json.dump(cards_localized, f_out_min, separators=(",", ":"))
             json.dump(cards_localized, f_out, indent=4, separators=(",", ":"))

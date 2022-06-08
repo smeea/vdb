@@ -138,7 +138,9 @@ bundles = {
 
 with open("cardbase_crypt.json", "r") as crypt_file, open(
     "cardbase_lib.json", "r"
-) as library_file, open("preconDecks.json", "w") as precons_file:
+) as library_file, open("preconDecks.json", "w") as precons_file, open(
+    "preconDecks.min.json", "w"
+) as precons_file_min:
     crypt = list(json.load(crypt_file).values())
     library = list(json.load(library_file).values())
 
@@ -151,6 +153,5 @@ with open("cardbase_crypt.json", "r") as crypt_file, open(
                             card_precons[precon]
                         )
 
-    # json.dump(precons, precons_file, separators=(',', ':'))
-    # Use this instead, for output with indentation (e.g. for debug)
+    json.dump(bundles, precons_file_min, separators=(",", ":"))
     json.dump(bundles, precons_file, indent=4, separators=(",", ":"))
