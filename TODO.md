@@ -1,7 +1,6 @@
 # FIX
 - Card image loop if no image available (i.e. /Cards offline search)
 - Search on mobile with open url
-- Check to use sect entry in search
 - Non valid regex (i.e. '+') stop breaking page (ideally show error)
 - Iphone clipboard (export deck / copy url)
 - Check and fix searches with logic and multi-options in card value (i.e. Discipline+Discipline or Discipline/Discipline/Discipline)

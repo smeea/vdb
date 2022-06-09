@@ -415,18 +415,13 @@ const missingClan = (filterClan, card) => {
 const missingSectCrypt = (filterSect, card) => {
   if (!filterSect || filterSect.value['0'] === 'any') return false;
 
-  const sects = filterSect.value;
-  const logic = filterSect.logic;
+  const requirements = card.Sect.toLowerCase();
 
-  return (logic === 'or') !== crytpCardHasSect(card, sects);
-};
-
-const crytpCardHasSect = (card, sects) => {
-  const checkSect = RegExp(`^(advanced\,\ )?(${sects.join('|')})[:. $]`, 'i');
-  const isImbued = card['Type'].toLowerCase() === 'imbued';
-
-  return (
-    (isImbued && sects.includes('imbued')) || checkSect.test(card['Card Text'])
+  return missingRequirementsCheck(
+    filterSect.logic,
+    filterSect.value,
+    requirements,
+    false
   );
 };
 
