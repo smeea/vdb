@@ -10,9 +10,9 @@ const CardImage = ({ card, set, className, onClick }) => {
   if (card.Id > 200000) {
     imgEnSrc = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
       .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}
-g${card.Group.toLowerCase()}
-${card.Adv[0] ? 'adv' : ''}.jpg`;
+      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
+      card.Adv[0] ? 'adv' : ''
+    }.jpg`;
     imgSrc = imgEnSrc;
   } else {
     imgEnSrc = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
@@ -37,7 +37,11 @@ ${card.Adv[0] ? 'adv' : ''}.jpg`;
     }
   }
 
-  const resetImgSrc = (event) => (event.target.src = imgEnSrc);
+  const resetImgSrc = (event) => {
+    if (event.target.src != imgEnSrc) {
+      event.target.src = imgEnSrc;
+    }
+  };
 
   return (
     <img

@@ -1,5 +1,4 @@
 # FIX
-- Card image loop if no image available (i.e. /Cards offline search)
 - Search on mobile with open url
 - Non valid regex (i.e. '+') stop breaking page (ideally show error)
 - Iphone clipboard (export deck / copy url)
