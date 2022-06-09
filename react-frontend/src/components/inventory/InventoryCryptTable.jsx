@@ -32,6 +32,8 @@ const InventoryCryptTable = ({
   const { usedCryptCards, isMobile, isNarrow, isWide, setShowFloatingButtons } =
     useApp();
 
+  const sortedCards = inventoryCryptSort(cards, sortMethod);
+
   // Modal Card Controller
   const {
     currentModalCard,
@@ -39,14 +41,12 @@ const InventoryCryptTable = ({
     handleModalCardOpen,
     handleModalCardChange,
     handleModalCardClose,
-  } = useModalCardController(cards);
+  } = useModalCardController(sortedCards);
 
   const handleCloseModal = () => {
     handleModalCardClose();
     setShowFloatingButtons(true);
   };
-
-  const sortedCards = inventoryCryptSort(cards, sortMethod);
 
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {

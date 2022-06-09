@@ -39,6 +39,8 @@ const InventoryLibraryTable = ({
     setShowFloatingButtons,
   } = useApp();
 
+  const sortedCards = inventoryLibrarySort(cards, sortMethod);
+
   // Modal Card Controller
   const {
     currentModalCard,
@@ -46,14 +48,12 @@ const InventoryLibraryTable = ({
     handleModalCardOpen,
     handleModalCardChange,
     handleModalCardClose,
-  } = useModalCardController(cards);
+  } = useModalCardController(sortedCards);
 
   const handleCloseModal = () => {
     handleModalCardClose();
     setShowFloatingButtons(true);
   };
-
-  const sortedCards = inventoryLibrarySort(cards, sortMethod);
 
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {
