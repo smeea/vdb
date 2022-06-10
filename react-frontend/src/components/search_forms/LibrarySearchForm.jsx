@@ -228,8 +228,8 @@ const LibrarySearchForm = (props) => {
           setPreresults(undefined);
         }
       } else if (
-        !libraryFormState.text.value ||
-        libraryFormState.text.value.length > 2
+        !libraryFormState.text[0].value ||
+        libraryFormState.text[0].value.length > 2
       ) {
         processSearch();
       }

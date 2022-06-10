@@ -160,14 +160,18 @@ const missingTextQuery = (query, card) => {
   let match;
 
   if (query.regex) {
-    // in case of regex
-    const regexExp = new RegExp(search, 'i');
+    let regexExp;
+    try {
+      regexExp = RegExp(search, 'i');
+    } catch (err) {
+      // TODO show 'bad regex' error in UI
+      return true;
+    }
     match =
       (query.in !== 'text' &&
         (cardName.match(regexExp) || cardASCII.match(regexExp))) ||
       (query.in !== 'name' && cardText.match(regexExp));
   } else {
-    // for normal text
     match =
       (query.in !== 'text' && !missingNameOrInitials(search, card)) ||
       (query.in !== 'name' && cardText.includes(search));
@@ -635,7 +639,13 @@ const missingNameOrInitials = (filterName, card) => {
   if (!filterName) return false;
 
   const charRegExp = '^' + filterName.split('').join('(\\w* )?');
-  const checkInitials = RegExp(charRegExp, 'i');
+  let checkInitials;
+  try {
+    checkInitials = RegExp(charRegExp, 'i');
+  } catch (err) {
+    // TODO show 'bad regex' error in UI
+    return true;
+  }
 
   const nameASCII = card['ASCII Name'].toLowerCase();
   const name = card['Name'].toLowerCase();

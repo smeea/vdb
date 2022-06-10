@@ -1,6 +1,5 @@
 # FIX
 - Search on mobile with open url
-- Non valid regex (i.e. '+') stop breaking page (ideally show error)
 - Iphone clipboard (export deck / copy url)
 - Check and fix searches with logic and multi-options in card value (i.e. Discipline+Discipline or Discipline/Discipline/Discipline)
 
@@ -8,6 +7,7 @@
 - Export all in xlsx and csv
 - Embrace-like trait
 - Multiforms for capacity
+- Show 'bad regex' error in text search
 
 # MAYBE LATER FEATURES
 - Comments for PDA
