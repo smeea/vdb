@@ -8,43 +8,18 @@ import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 const useFilters = (cards = {}) => {
   const filterCrypt = (filter) => {
     return Object.values(cards).filter((card) => {
-      // Disciplines
       if (missingDisciplinesCrypt(filter.disciplines, card)) return false;
-
-      // Text
       if (missingTextQueries(filter.text, card)) return false;
-
-      // Traits
       if (missingTraitsCrypt(filter.traits, card)) return false;
-
-      // Titles
       if (missingTitleCrypt(filter.titles, card)) return false;
-
-      // Votes
       if (missingVotes(filter.votes, card)) return false;
-
-      // Capacity
       if (missingCapacityCrypt(filter.capacity, card)) return false;
-
-      // Clan
       if (missingClan(filter.clan, card)) return false;
-
-      // Sect
       if (missingSectCrypt(filter.sect, card)) return false;
-
-      // Group
       if (missingGroup(filter.group, card)) return false;
-
-      // Set !!!!!!!!!
       if (missingSet(filter.set, card)) return false;
-
-      // Precon !!!!!!!!!!
       if (missingPrecon(filter.precon, card)) return false;
-
-      // Artist
       if (missingArtist(filter.artist, card)) return false;
-
-      // Name
       if (missingNameOrInitials(filter.name, card)) return false;
 
       return true;
@@ -53,46 +28,19 @@ const useFilters = (cards = {}) => {
 
   const filterLibrary = (filter) => {
     return Object.values(cards).filter((card) => {
-      // Text
       if (missingTextQueries(filter.text, card)) return false;
-
-      // Disciplines
       if (missingDisciplinesLibrary(filter.discipline, card)) return false;
-
-      // Clan
       if (missingClan(filter.clan, card)) return false;
-
-      // Titles
       if (missingTitleLibrary(filter.title, card)) return false;
-
-      // Type
       if (missingType(filter.type, card)) return false;
-
-      // Sect
       if (missingSectLibrary(filter.sect, card)) return false;
-
-      // Blood
       if (missingBloodCost(filter.blood, card)) return false;
-
-      // Pool
       if (missingPoolCost(filter.pool, card)) return false;
-
-      // Traits
       if (missingTraitsLibrary(filter.traits, card)) return false;
-
-      // Capacity
       if (missingCapacityLibrary(filter.capacity, card)) return false;
-
-      // Set !!!!!!!!!!
       if (missingSet(filter.set, card)) return false;
-
-      // Precon !!!!!!!!!!!
       if (missingPrecon(filter.precon, card)) return false;
-
-      // Artist
       if (missingArtist(filter.artist, card)) return false;
-
-      // Name
       if (missingNameOrInitials(filter.name, card)) return false;
 
       return true;
@@ -128,12 +76,27 @@ const missingDisciplinesCrypt = (filterDiscipline, card) => {
 const missingDisciplinesLibrary = (filterDiscipline, card) => {
   if (!filterDiscipline) return false;
 
-  return missingRequirementsCheck(
-    filterDiscipline.logic,
-    filterDiscipline.value,
-    card.Discipline.toLowerCase(),
-    !card.Discipline
-  );
+  const disciplines = filterDiscipline.value;
+  const logic = filterDiscipline.logic;
+
+  switch (logic) {
+    case 'and':
+      return !disciplines.every((discipline) => {
+        if (discipline === 'not required' && !card['Discipline']) return true;
+        if (card['Discipline'].toLowerCase().includes(discipline)) return true;
+      });
+
+    case 'or':
+      return !disciplines.some((discipline) => {
+        if (discipline === 'not required' && !card['Discipline']) return true;
+        if (card['Discipline'].toLowerCase().includes(discipline)) return true;
+      });
+    case 'not':
+      return disciplines.some((discipline) => {
+        if (discipline === 'not required' && !card['Discipline']) return true;
+        if (card['Discipline'].toLowerCase().includes(discipline)) return true;
+      });
+  }
 };
 
 //  ------------------------------------------------------
@@ -225,22 +188,20 @@ const missingTrait = (trait, card, traitsRegexMap) => {
   }
 };
 
-// REGEX for each crypt trait.
 const CryptTraitsRegexMap = {
-  // Crypt
   'enter combat': (card) =>
     '(he|she|it|they|' +
-    card['Name'].match(/^[a-záàâãéèêíïóôõöúçñ]+/i)[0] +
+    card['Name'].match(/^\S+/i)[0] +
     ') (can|may)( .* to)? enter combat',
 
   'optional press': () => /gets (.*)?optional press/i,
-  '1 bleed': () => /[:.] \+. bleed./i,
+  '1 bleed': () => /[:.] \+[1-9] bleed./i,
   '2 bleed': () => /[:.] \+[2-9] bleed./i,
-  '1 strength': () => /[:.] \+. strength./i,
-  '2 strength': () => /[:.] \+2 strength./i,
-  '1 intercept': () => /[:.] \+1 intercept./i,
+  '1 strength': () => /[:.] \+[1-9] strength./i,
+  '2 strength': () => /[:.] \+[2-9] strength./i,
+  '1 intercept': () => /[:.] \+[1-9] intercept./i,
   '1 stealth': () =>
-    /([:.] \+1 stealth.|gets \+1 stealth on each of (his|her|they) actions)/i,
+    /([:.] \+[1-9] stealth.|gets \+[1-9] stealth on each of (his|her|they) actions)/i,
 
   unlock: () => /(?!not )unlock(?! phase|ed)|wakes/i,
   'black hand': () => /black hand[ .:]/i,
@@ -253,7 +214,6 @@ const CryptTraitsRegexMap = {
   prevent: () => /(?:[^un])prevent(?:[^able])/i,
 };
 
-// REGEX for each library trait.
 const LibraryTraitsRegexMap = {
   intercept: () =>
     /\-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
@@ -406,11 +366,18 @@ const missingClan = (filterClan, card) => {
   const clans = filterClan.value;
   const logic = filterClan.logic;
 
-  return (
-    (logic === 'or') !==
-    (clans.includes(card['Clan'].toLowerCase()) ||
-      (!card['Clan'] && clans.includes('not required')))
-  );
+  switch (logic) {
+    case 'or':
+      return !clans.some((clan) => {
+        if (card['Clan'].toLowerCase().split('/').includes(clan)) return true;
+        if (clan === 'not required' && !card['Clan']) return true;
+      });
+    case 'not':
+      return clans.some((clan) => {
+        if (card['Clan'].toLowerCase().split('/').includes(clan)) return true;
+        if (clan === 'not required' && !card['Clan']) return true;
+      });
+  }
 };
 
 //  ------------------------------------------------------
@@ -507,10 +474,21 @@ const missingType = (filterType, card) => {
   const types = filterType.value;
   const logic = filterType.logic;
 
-  return (
-    (logic === 'or') !==
-    types.some((type) => card['Type'].toLowerCase().split('/').includes(type))
-  );
+  switch (logic) {
+    case 'and':
+      return !types.every((type) =>
+        card['Type'].toLowerCase().split('/').includes(type)
+      );
+
+    case 'or':
+      return !types.some((type) =>
+        card['Type'].toLowerCase().split('/').includes(type)
+      );
+    case 'not':
+      return types.some((type) =>
+        card['Type'].toLowerCase().split('/').includes(type)
+      );
+  }
 };
 
 //  ------------------------------------------------------
@@ -662,25 +640,29 @@ const missingNameOrInitials = (filterName, card) => {
 // -------------------  UTILS  --------------------------
 // ------------------------------------------------------
 
-// checks and filter with multiple itens and logic againts the a requirements list.
+// checks and filter with multiple items and logic againts the a requirements list.
 const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
-  if (logic === 'and') {
-    return array.some(
-      (name) =>
-        !(
+  switch (logic) {
+    case 'and':
+      return array.some(
+        (name) =>
+          !(
+            RegExp('(^|[, ])' + name, 'i').test(value) ||
+            (name === 'not required' && hasNoRequirement)
+          )
+      );
+    case 'or':
+      !array.some(
+        (name) =>
           RegExp('(^|[, ])' + name, 'i').test(value) ||
           (name === 'not required' && hasNoRequirement)
-        )
-    );
-  } else {
-    return (
-      (logic === 'or') !==
+      );
+    case 'not':
       array.some(
         (name) =>
           RegExp('(^|[, ])' + name, 'i').test(value) ||
           (name === 'not required' && hasNoRequirement)
-      )
-    );
+      );
   }
 };
 
