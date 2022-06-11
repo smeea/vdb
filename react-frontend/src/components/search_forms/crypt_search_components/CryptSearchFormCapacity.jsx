@@ -66,7 +66,7 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="px-0">
           <div className="bold blue">Capacity:</div>
-          {value.value[0] !== 'any' && (
+          {value.value[0].capacity !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonGroupToggle

@@ -113,10 +113,15 @@ const CryptSearchForm = (props) => {
 
     setCryptFormState((prevState) => {
       const v = prevState[name].value;
-      if (['le', 'ge', 'eq'].includes(value)) {
-        v[i]['moreless'] = value;
+
+      if (['capacity'].includes(name)) {
+        if (['le', 'ge', 'eq'].includes(value)) {
+          v[i]['moreless'] = value;
+        } else {
+          v[i][name] = value;
+        }
       } else {
-        v[i][name] = value;
+        v[i] = value;
       }
 
       return {
