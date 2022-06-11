@@ -73,7 +73,11 @@ const DeckTogglePublicButton = ({ deck }) => {
             ? `Remove "${deck.name}" from Public Deck Archive?`
             : `Add "${deck.name}" to Public Deck Archive?`
         }
-        mainText={deck.public_child ? '' : ''} // TODO
+        mainText={
+          isPublished
+            ? 'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
+            : 'You can remove it from Public Deck Archive at any time'
+        }
         buttonText={`${isPublished ? 'Remove' : 'Make'} Public`}
       />
     </>
