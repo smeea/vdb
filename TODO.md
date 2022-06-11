@@ -1,5 +1,4 @@
 # FIX
-- Search on mobile with open url
 - Iphone clipboard (export deck / copy url)
 - Check and fix searches with logic and multi-options in card value (i.e. Discipline+Discipline or Discipline/Discipline/Discipline)
 

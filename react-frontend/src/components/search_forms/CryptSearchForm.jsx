@@ -229,7 +229,7 @@ const CryptSearchForm = (props) => {
   };
 
   useEffect(() => {
-    if (isMobile && query && cryptFormState) {
+    if (isMobile && query && cryptFormState && cryptCardBase) {
       processSearch();
     }
   }, [cryptFormState, cryptCardBase]);

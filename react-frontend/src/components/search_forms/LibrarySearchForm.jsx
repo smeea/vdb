@@ -214,7 +214,7 @@ const LibrarySearchForm = (props) => {
   };
 
   useEffect(() => {
-    if (isMobile && query && libraryFormState) {
+    if (isMobile && query && libraryFormState && libraryCardBase) {
       processSearch();
     }
   }, [libraryFormState, libraryCardBase]);
