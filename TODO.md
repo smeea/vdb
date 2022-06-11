@@ -20,7 +20,6 @@
 - Add "Update (reload page)" button
 
 # IMPROVE TECHNOLOGY - BACKEND
-- Remove deprecated search code
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)

@@ -15,7 +15,6 @@ from routes import (
     account_routes,
     decks_routes,
     inventory_routes,
-    search_routes,
     twd_routes,
     pda_routes,
 )
