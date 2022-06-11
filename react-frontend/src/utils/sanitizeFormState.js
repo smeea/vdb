@@ -98,9 +98,6 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case 'crypt':
-      forms = ['capacity'];
-      break;
     case 'library':
       forms = ['blood', 'pool', 'capacity'];
       break;
@@ -111,6 +108,22 @@ const sanitizeFormState = (target, state) => {
     if (input[i][i] == 'any') {
       delete input[i];
     }
+  });
+
+  switch (target) {
+    case 'crypt':
+      forms = ['capacity'];
+      break;
+    default:
+      forms = [];
+      break;
+  }
+  forms.map((i) => {
+    input[i].value.map((j, idx) => {
+      if (j[i] === 'any') {
+        input[i].value.splice(idx, 1);
+      }
+    });
   });
 
   switch (target) {

@@ -113,7 +113,12 @@ const CryptSearchForm = (props) => {
 
     setCryptFormState((prevState) => {
       const v = prevState[name].value;
-      v[i] = value;
+      if (['le', 'ge', 'eq'].includes(value)) {
+        v[i]['moreless'] = value;
+      } else {
+        v[i][name] = value;
+      }
+
       return {
         ...prevState,
         [name]: {
@@ -134,26 +139,6 @@ const CryptSearchForm = (props) => {
     } else {
       newState[value] = !newState[value];
     }
-    setCryptFormState((prevState) => ({
-      ...prevState,
-      [name]: newState,
-    }));
-  };
-
-  const handleNestedChange = (event) => {
-    const { name, value } = event;
-    const newState = cryptFormState[name];
-    newState[name] = value;
-    setCryptFormState((prevState) => ({
-      ...prevState,
-      [name]: newState,
-    }));
-  };
-
-  const handleMorelessChange = (event) => {
-    const { name, value } = event;
-    const newState = cryptFormState[name];
-    newState['moreless'] = value;
     setCryptFormState((prevState) => ({
       ...prevState,
       [name]: newState,
@@ -284,9 +269,9 @@ const CryptSearchForm = (props) => {
         onChange={handleDisciplinesChange}
       />
       <CryptSearchFormCapacity
-        value={cryptFormState.capacity}
-        onChange={handleNestedChange}
-        onMorelessChange={handleMorelessChange}
+        value={{ name: 'capacity', ...cryptFormState.capacity }}
+        onChange={handleMultiSelectChange}
+        setFormState={setCryptFormState}
       />
       <CryptSearchFormClan
         value={{ name: 'clan', ...cryptFormState.clan }}

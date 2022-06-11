@@ -7,43 +7,89 @@ import {
 } from '../shared_search_components';
 import { useApp } from 'context';
 
-const SearchAdditionalForms = (props) => {
+const SearchAdditionalForms = ({
+  value,
+  onChange,
+  options,
+  withMoreless,
+  morelessOptions,
+  menuPlacement,
+  setFormState,
+}) => {
   const { isMobile } = useApp();
 
   const forms = [];
 
-  for (let i = 1; i < props.value.value.length; i++) {
+  for (let i = 1; i < value.value.length; i++) {
     forms.push(
       <Row key={i} className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex justify-content-end px-0 pe-1">
           <Stack direction="horizontal" gap={1}>
-            {i == props.value.value.length - 1 && (
+            {i == value.value.length - 1 && (
               <SearchFormButtonAdd
-                setFormState={props.setFormState}
-                value={props.value}
+                setFormState={setFormState}
+                value={value}
+                withMoreless={withMoreless}
               />
             )}
             <SearchFormButtonDel
-              setFormState={props.setFormState}
-              value={props.value}
+              setFormState={setFormState}
+              value={value}
               i={i}
             />
           </Stack>
         </Col>
-        <Col xs={9} className="d-inline px-0">
-          <Select
-            classNamePrefix="react-select"
-            options={props.options}
-            isSearchable={!isMobile}
-            defaultMenuIsOpen={props.value.value[i] === 'any'}
-            menuPlacement={props.menuPlacement ? props.menuPlacement : 'bottom'}
-            name={i}
-            value={props.options.find(
-              (obj) => obj.value === props.value.value[i]
-            )}
-            onChange={props.onChange}
-          />
-        </Col>
+        {withMoreless ? (
+          <>
+            <Col xs={4} className="d-inline px-0">
+              <Select
+                classNamePrefix="react-select"
+                options={morelessOptions}
+                isSearchable={false}
+                menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
+                name={i}
+                value={morelessOptions.find(
+                  (obj) => obj.value === value.value[i].moreless
+                )}
+                onChange={onChange}
+              />
+            </Col>
+            <Col xs={5} className="d-inline pe-0 ps-1">
+              <Select
+                classNamePrefix="react-select"
+                options={options}
+                isSearchable={false}
+                defaultMenuIsOpen={
+                  value.value[i][
+                    Object.keys(value.value[i]).filter((k) => {
+                      return k !== 'moreless';
+                    })[0]
+                  ] === 'any'
+                }
+                menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
+                name={i}
+                maxMenuHeight={isMobile ? 330 : 550}
+                value={options.find(
+                  (obj) => obj.value === value.value[i].capacity
+                )}
+                onChange={onChange}
+              />
+            </Col>
+          </>
+        ) : (
+          <Col xs={9} className="d-inline px-0">
+            <Select
+              classNamePrefix="react-select"
+              options={options}
+              isSearchable={!isMobile}
+              defaultMenuIsOpen={value.value[i] === 'any'}
+              menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
+              name={i}
+              value={options.find((obj) => obj.value === value.value[i])}
+              onChange={onChange}
+            />
+          </Col>
+        )}
       </Row>
     );
   }

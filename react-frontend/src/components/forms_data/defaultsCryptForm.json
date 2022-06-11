@@ -45,8 +45,13 @@
     "Vision": 0
   },
   "capacity": {
-    "capacity": "any",
-    "moreless": "le"
+    "value": [
+      {
+        "capacity": "any",
+        "moreless": "le"
+      }
+    ],
+    "logic": "or"
   },
   "clan": {
     "value": [

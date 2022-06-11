@@ -2,12 +2,18 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
+import {
+  SearchAdditionalForms,
+  SearchFormButtonGroupToggle,
+  SearchFormButtonAdd,
+  SearchFormButtonDel,
+} from '../shared_search_components';
 
-function CryptSearchFormCapacity(props) {
+const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
   const { isMobile } = useApp();
 
   const capacity = [
-    'ANY',
+    'any',
     '1',
     '2',
     '3',
@@ -23,16 +29,13 @@ function CryptSearchFormCapacity(props) {
   const options = [];
 
   capacity.map((i, index) => {
-    let v;
-    i == 'ANY' ? (v = i.toLowerCase()) : (v = i);
-
     options.push({
-      value: v,
+      value: i,
       name: 'capacity',
       label: (
         <>
           <span className="me-3 me-sm-1 me-lg-3" />
-          {i}
+          {i.toUpperCase()}
         </>
       ),
     });
@@ -59,35 +62,68 @@ function CryptSearchFormCapacity(props) {
   });
 
   return (
-    <Row className="py-1 ps-1 mx-0 align-items-center">
-      <Col xs={3} className="d-flex px-0">
-        <div className="bold blue">Capacity:</div>
-      </Col>
-      <Col xs={4} className="d-inline px-0">
-        <Select
-          classNamePrefix="react-select"
-          options={morelessOptions}
-          isSearchable={false}
-          name="capacity-moreless"
-          value={morelessOptions.find(
-            (obj) => obj.value === props.value.moreless
+    <>
+      <Row className="py-1 ps-1 mx-0 align-items-center">
+        <Col xs={3} className="px-0">
+          <div className="bold blue">Capacity:</div>
+          {value.value[0] !== 'any' && (
+            <div className="d-flex justify-content-end pe-1">
+              <div className="pe-1">
+                <SearchFormButtonGroupToggle
+                  value={value}
+                  setFormState={setFormState}
+                />
+              </div>
+              {value.value.length == 1 ? (
+                <SearchFormButtonAdd
+                  setFormState={setFormState}
+                  value={value}
+                  withMoreless={true}
+                />
+              ) : (
+                <SearchFormButtonDel
+                  setFormState={setFormState}
+                  value={value}
+                  i={0}
+                />
+              )}
+            </div>
           )}
-          onChange={props.onMorelessChange}
-        />
-      </Col>
-      <Col xs={5} className="d-inline pe-0 ps-1">
-        <Select
-          classNamePrefix="react-select"
-          options={options}
-          isSearchable={false}
-          name="capacity"
-          maxMenuHeight={isMobile ? 330 : 550}
-          value={options.find((obj) => obj.value === props.value.capacity)}
-          onChange={props.onChange}
-        />
-      </Col>
-    </Row>
+        </Col>
+        <Col xs={4} className="d-inline px-0">
+          <Select
+            classNamePrefix="react-select"
+            options={morelessOptions}
+            isSearchable={false}
+            name={0}
+            value={morelessOptions.find(
+              (obj) => obj.value === value.value[0].moreless
+            )}
+            onChange={onChange}
+          />
+        </Col>
+        <Col xs={5} className="d-inline pe-0 ps-1">
+          <Select
+            classNamePrefix="react-select"
+            options={options}
+            isSearchable={false}
+            name={0}
+            maxMenuHeight={isMobile ? 330 : 550}
+            value={options.find((obj) => obj.value === value.value[0].capacity)}
+            onChange={onChange}
+          />
+        </Col>
+      </Row>
+      <SearchAdditionalForms
+        value={value}
+        options={options}
+        onChange={onChange}
+        setFormState={setFormState}
+        withMoreless={true}
+        morelessOptions={morelessOptions}
+      />
+    </>
   );
-}
+};
 
 export default CryptSearchFormCapacity;

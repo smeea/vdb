@@ -321,13 +321,40 @@ const titleWorth = {
 
 const missingCapacityCrypt = (filterCapacity, card) => {
   if (!filterCapacity) return false;
-  const capacity = parseInt(filterCapacity.capacity);
-  const moreless = filterCapacity.moreless;
 
-  return (
-    (card['Capacity'] > capacity && moreless !== 'ge') ||
-    (card['Capacity'] < capacity && moreless !== 'le')
-  );
+  const values = filterCapacity.value;
+  const logic = filterCapacity.logic;
+
+  switch (logic) {
+    case 'or':
+      return !values.some((value) => {
+        const capacity = parseInt(value.capacity);
+        const moreless = value.moreless;
+
+        switch (moreless) {
+          case 'ge':
+            return card['Capacity'] >= capacity;
+          case 'le':
+            return card['Capacity'] <= capacity;
+          case 'eq':
+            return card['Capacity'] == capacity;
+        }
+      });
+    case 'not':
+      return !values.every((value) => {
+        const capacity = parseInt(value.capacity);
+        const moreless = value.moreless;
+
+        switch (moreless) {
+          case 'ge':
+            return card['Capacity'] < capacity;
+          case 'le':
+            return card['Capacity'] > capacity;
+          case 'eq':
+            return card['Capacity'] != capacity;
+        }
+      });
+  }
 };
 
 const missingCapacityLibrary = (filterCapacity, card) => {

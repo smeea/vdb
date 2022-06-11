@@ -2,12 +2,16 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import Plus from 'assets/images/icons/plus.svg';
 
-const SearchFormButtonAdd = (props) => {
+const SearchFormButtonAdd = ({ value, setFormState, withMoreless }) => {
   const addForm = () => {
-    props.setFormState((prevState) => {
-      const name = props.value.name;
+    setFormState((prevState) => {
+      const name = value.name;
       const v = prevState[name].value;
-      v.push('any');
+      if (withMoreless) {
+        v.push({ capacity: 'any', moreless: 'le' });
+      } else {
+        v.push('any');
+      }
 
       return {
         ...prevState,

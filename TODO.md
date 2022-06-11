@@ -4,7 +4,6 @@
 # FEATURES
 - Export all in xlsx and csv
 - Embrace-like trait
-- Multiforms for capacity
 - Show 'bad regex' error in text search
 
 # MAYBE LATER FEATURES
