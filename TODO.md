@@ -3,7 +3,6 @@
 
 # FEATURES
 - Export all in xlsx and csv
-- Embrace-like trait
 - Show 'bad regex' error in text search
 
 # MAYBE LATER FEATURES

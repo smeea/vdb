@@ -25,6 +25,7 @@ function LibrarySearchFormTraits(props) {
     ['black hand', 'Black Hand'],
     ['seraph', 'Seraph'],
     ['infernal', 'Infernal'],
+    ['embrace', 'Create vampire'],
     ['burn', 'Burn Option'],
     ['banned', 'Banned'],
     ['non-twd', 'Not in TWD'],
