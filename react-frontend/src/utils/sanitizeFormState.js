@@ -89,8 +89,10 @@ const sanitizeFormState = (target, state) => {
   forms.map((i) => {
     Object.keys(input[i]).forEach((k) => {
       input[i][k] === false && delete input[i][k];
-      input[i].value.map((j) => {
-        j === 'any' && input[i].value.splice(j, 1);
+      input[i].value.map((j, idx) => {
+        if (j === 'any') {
+          input[i].value.splice(idx, 1);
+        }
       });
     });
   });
