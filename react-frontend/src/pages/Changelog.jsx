@@ -15,6 +15,22 @@ const Changelog = (props) => {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-06-11:</h6>
+            <ul>
+              <li>Fix bugs in card search introduced after last update</li>
+              <li>
+                Use more screen width in crypt/library search page on narrow
+                desktop resolutions (1200-1400px)
+              </li>
+              <li>Add multi-form search to capacity search in Crypt</li>
+              <li>
+                Add &quot;Create vampire&quot; trait to library search
+                (Embrace-like actions)
+              </li>
+              <li>Reduce cardbase bundle size</li>
+              <li>Some other fixes</li>
+            </ul>
+
             <h6>2022-06-07:</h6>
             <ul>
               <li>

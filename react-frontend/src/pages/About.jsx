@@ -1,9 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import LockFill from 'assets/images/icons/lock-fill.svg';
-import UnlockFill from 'assets/images/icons/unlock-fill.svg';
-import Snow from 'assets/images/icons/snow.svg';
 import Telegram from 'assets/images/icons/telegram.svg';
 import Github from 'assets/images/icons/github.svg';
 import Discord from 'assets/images/icons/discord.svg';
@@ -75,32 +72,20 @@ const About = (props) => {
                 : 2022-05-17
               </p>
 
-              <h6>Last update [2022-06-07]:</h6>
+              <h6>Last update [2022-06-11]:</h6>
               <ul>
+                <li>Fix bugs in card search introduced after last update</li>
                 <li>
-                  New crypt/library search algorithm working in-browser without
-                  server calls, which will result in much faster search and card
-                  search is network-independent now (many thanks to Andrey
-                  &quot;Vaughnad&quot; Davino)
+                  Use more screen width in crypt/library search page on narrow
+                  desktop resolutions (1200-1400px)
                 </li>
+                <li>Add multi-form search to capacity search in Crypt</li>
                 <li>
-                  Temporary locking your deck from edits will now use{' '}
-                  <LockFill />
-                  /<UnlockFill /> icons (after deck name in Deck page), and
-                  there is dedicated <Snow /> indicator for permanent
-                  non-editable decks (created by Copy URL - Snapshot URL), so
-                  you will always see that deck you are seeing cannot be changed
-                  in the future. Same indicator available in QR URL window to
-                  check that link is non-editable (useful when scanning deck
-                  links during events)
+                  Add &quot;Create vampire&quot; trait to library search
+                  (Embrace-like actions)
                 </li>
-                <li>
-                  Inventory Type/Discipline filters for library will now respect
-                  each other to show card q-ty for different options, and
-                  correctly recalculate missing (in gray under filters)
-                </li>
-                <li>Add draw all cards button to draw deck window</li>
-                <li>Small other fixes</li>
+                <li>Reduce cardbase bundle size</li>
+                <li>Some other fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
