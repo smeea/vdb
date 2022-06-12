@@ -22,8 +22,6 @@ function LibrarySearchFormTitle(props) {
     'Justicar',
     'Inner Circle',
     'Baron',
-    '1 vote',
-    '2 votes',
     'Bishop',
     'Archbishop',
     'Priscus',

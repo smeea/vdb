@@ -680,13 +680,13 @@ const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
           )
       );
     case 'or':
-      !array.some(
+      return !array.some(
         (name) =>
           RegExp('(^|[, ])' + name, 'i').test(value) ||
           (name === 'not required' && hasNoRequirement)
       );
     case 'not':
-      array.some(
+      return array.some(
         (name) =>
           RegExp('(^|[, ])' + name, 'i').test(value) ||
           (name === 'not required' && hasNoRequirement)
