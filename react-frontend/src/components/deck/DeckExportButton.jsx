@@ -18,70 +18,60 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
   const [error, setError] = useState(false);
   const ref = useRef(null);
 
+  const ExportDropdown = ({ action, format }) => {
+    const formats = {
+      twd: 'TWD',
+      text: 'Text',
+      lackey: 'Lackey',
+      jol: 'JOL',
+      xlsx: 'Excel',
+      csv: 'CSV',
+    };
+
+    const actions = {
+      save: [saveDeck, 'Save as File'],
+      copy: [copyDeck, 'Copy to Clipboard'],
+      exportAll: [exportAll, 'Export all Decks'],
+    };
+
+    return (
+      <Dropdown.Item href="" onClick={() => actions[action][0](format)}>
+        {actions[action][1]} - {formats[format]}
+      </Dropdown.Item>
+    );
+  };
+
   const ButtonOptions = (
     <>
-      <Dropdown.Item href="" onClick={() => saveDeck('text')}>
-        Save as file - Text
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => saveDeck('twd')}>
-        Save as file - TWD
-      </Dropdown.Item>
+      <ExportDropdown action="save" format="text" />
+      <ExportDropdown action="save" format="twd" />
       {!inMissing && (
         <>
-          <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
-            Save as file - Lackey
-          </Dropdown.Item>
-          <Dropdown.Item href="" onClick={() => saveDeck('jol')}>
-            Save as file - JOL
-          </Dropdown.Item>
+          <ExportDropdown action="save" format="lackey" />
+          <ExportDropdown action="save" format="jol" />
         </>
       )}
-      <Dropdown.Item href="" onClick={() => saveDeck('xlsx')}>
-        Save as file - Excel
-      </Dropdown.Item>
-      {!inMissing && (
-        <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
-          Save as file - CSV
-        </Dropdown.Item>
-      )}
+      <ExportDropdown action="save" format="xlsx" />
+      {!inMissing && <ExportDropdown action="save" format="csv" />}
       <Dropdown.Divider />
-      <Dropdown.Item href="" onClick={() => copyDeck('text')}>
-        Copy to Clipboard - Text
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => copyDeck('twd')}>
-        Copy to Clipboard - TWD
-      </Dropdown.Item>
+
+      <ExportDropdown action="copy" format="text" />
+      <ExportDropdown action="copy" format="twd" />
       {!inMissing && (
         <>
-          <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
-            Copy to Clipboard - Lackey
-          </Dropdown.Item>
-          <Dropdown.Item href="" onClick={() => copyDeck('jol')}>
-            Copy to Clipboard - JOL
-          </Dropdown.Item>
+          <ExportDropdown action="copy" format="lackey" />
+          <ExportDropdown action="copy" format="jol" />
         </>
       )}
       {!inMissing && username && decks && Object.keys(decks).length > 1 && (
         <>
           <Dropdown.Divider />
-          <Dropdown.Item href="" onClick={() => exportAll('text')}>
-            Save all decks - Text
-          </Dropdown.Item>
-          <Dropdown.Item href="" onClick={() => exportAll('twd')}>
-            Save all decks - TWD
-          </Dropdown.Item>
-          <Dropdown.Item href="" onClick={() => exportAll('lackey')}>
-            Save all decks - Lackey
-          </Dropdown.Item>
-          <Dropdown.Item href="" onClick={() => exportAll('jol')}>
-            Save all decks - JOL
-          </Dropdown.Item>
-          {/* <Dropdown.Item href="" onClick={() => exportAll('xlsx')}> */}
-          {/*   Save all decks - Excel */}
-          {/* </Dropdown.Item> */}
-          {/* <Dropdown.Item href="" onClick={() => exportAll('csv')}> */}
-          {/*   Save all decks - CSV */}
-          {/* </Dropdown.Item> */}
+          <ExportDropdown action="exportAll" format="text" />
+          <ExportDropdown action="exportAll" format="twd" />
+          <ExportDropdown action="exportAll" format="lackey" />
+          <ExportDropdown action="exportAll" format="jol" />
+          <ExportDropdown action="exportAll" format="xlsx" />
+          <ExportDropdown action="exportAll" format="csv" />
         </>
       )}
     </>
@@ -125,9 +115,7 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
       body: JSON.stringify(input),
     };
 
-    const fetchPromise = fetch(url, options);
-
-    fetchPromise
+    fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
         setSpinnerState(false);
@@ -186,14 +174,13 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
         .then((response) => response.text())
         .then((data) => {
           let mime = 'data:text/csv';
-          let extension = 'csv';
           if (format === 'xlsx') {
             mime =
               'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-            extension = 'xlsx';
           }
+
           const file = `${mime};base64,${data}`;
-          saveAs(file, `${deck['name']}.${extension}`);
+          saveAs(file, `${deck['name']}.${format}`);
           setSpinnerState(false);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
@@ -225,42 +212,83 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
 
   const exportAll = (format) => {
     setError(false);
-
     setSpinnerState(true);
-
     const url = `${process.env.API_URL}decks/export`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        deckid: 'all',
-        format: format,
-      }),
-    };
-
-    const fetchPromise = fetch(url, options);
 
     if (format === 'xlsx' || format === 'csv') {
-      // TODO
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: null,
+      };
+
+      import('jszip').then((Jszip) => {
+        const zip = new Jszip();
+        const date = new Date().toISOString().substring(0, 10);
+
+        const folder = zip.folder(`Decks ${date} [${format}]`);
+
+        const fetchPromises = Object.keys(decks).map((deckid) => {
+          options.body = JSON.stringify({
+            deckid: deckid,
+            format: format,
+            src: 'my',
+          });
+
+          return fetch(url, options)
+            .then((response) => response.text())
+            .then((data) => {
+              folder.file(`${decks[deckid].name}.${format}`, data, {
+                base64: true,
+              });
+
+              setSpinnerState(false);
+              setShowMenuButtons(false);
+              setShowFloatingButtons(true);
+            })
+            .catch((error) => {
+              setSpinnerState(false);
+              setError(true);
+            });
+        });
+
+        Promise.all(fetchPromises).then(() => {
+          zip
+            .generateAsync({ type: 'blob' })
+            .then((blob) => saveAs(blob, `Decks ${date} [${format}].zip`));
+          setSpinnerState(false);
+        });
+      });
     } else {
-      fetchPromise
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          deckid: 'all',
+          format: format,
+        }),
+      };
+
+      fetch(url, options)
         .then((response) => response.json())
         .then((data) => {
           import('jszip')
             .then((Jszip) => {
               const zip = new Jszip();
-              const d = new Date();
-              const date = `${d.getFullYear()}-${d.getMonth() < 9 ? 0 : ''}${
-                d.getMonth() + 1
-              }-${d.getDate() < 10 ? 0 : ''}${d.getDate()}`;
+              const date = new Date().toISOString().substring(0, 10);
+
               data.map((d) => {
                 zip
                   .folder(`Decks ${date} [${format}]`)
-                  .file(`${d.name} [${d.format}].txt`, d.deck);
+                  .file(`${d.name}.txt`, d.deck);
               });
               zip
                 .generateAsync({ type: 'blob' })

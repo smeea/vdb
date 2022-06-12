@@ -2,7 +2,6 @@
 - Iphone clipboard (export deck / copy url)
 
 # FEATURES
-- Export all in xlsx and csv
 
 # MAYBE LATER FEATURES
 - Comments for PDA

@@ -127,7 +127,6 @@ const missingTextQuery = (query, card) => {
     try {
       regexExp = RegExp(search, 'i');
     } catch (err) {
-      // TODO show 'bad regex' error in UI
       return true;
     }
     match =
@@ -649,7 +648,6 @@ const missingNameOrInitials = (filterName, card) => {
   try {
     checkInitials = RegExp(charRegExp, 'i');
   } catch (err) {
-    // TODO show 'bad regex' error in UI
     return true;
   }
 
