@@ -18,12 +18,3 @@ from routes import (
     twd_routes,
     pda_routes,
 )
-
-# Everything below only required for `flask shell` to play with database
-# from models import User, Deck
-# from api import db
-
-
-# @app.shell_context_processor
-# def make_shell_context():
-#     return {"db": db, "User": User, "Deck": Deck}
