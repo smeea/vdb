@@ -13,8 +13,6 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move export to frontend
 - Move import to frontend
-- Transit from useContext to Recoil
-- Reduce re-renders
 - Move changelog from html to json with generation
 
 # IMPROVE TECHNOLOGY - BACKEND

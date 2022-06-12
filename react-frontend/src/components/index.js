@@ -23,6 +23,7 @@ export { default as ErrorOverlay } from 'components/ErrorOverlay.jsx';
 export { default as NewLibraryCard } from 'components/NewLibraryCard.jsx';
 export { default as UsedPopover } from 'components/UsedPopover.jsx';
 export { default as LanguageSelect } from 'components/LanguageSelect.jsx';
+export { default as ThemeSelect } from 'components/ThemeSelect.jsx';
 export { default as OverlayTooltip } from 'components/OverlayTooltip.jsx';
 export { default as ButtonAddCard } from 'components/ButtonAddCard.jsx';
 export { default as ButtonIconed } from 'components/ButtonIconed.jsx';

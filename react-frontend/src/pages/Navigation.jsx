@@ -6,11 +6,8 @@ import PersonFill from 'assets/images/icons/person-fill.svg';
 import InfoCircleFill from 'assets/images/icons/info-circle-fill.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import CloudSunFill from 'assets/images/icons/cloud-sun-fill.svg';
-import SunFill from 'assets/images/icons/sun-fill.svg';
-import MoonFill from 'assets/images/icons/moon-fill.svg';
-import { useApp, useTheme, useSearchForms } from 'context';
-import { NavMobileMenu, LanguageSelect } from 'components';
+import { useApp, useSearchForms } from 'context';
+import { NavMobileMenu, LanguageSelect, ThemeSelect } from 'components';
 import cryptDefaults from 'components/forms_data/defaultsCryptForm.json';
 import libraryDefaults from 'components/forms_data/defaultsLibraryForm.json';
 import twdDefaults from 'components/forms_data/defaultsTwdForm.json';
@@ -24,7 +21,6 @@ const Navigation = (props) => {
   const { pdaFormState, twdFormState, cryptFormState, libraryFormState } =
     useSearchForms();
 
-  const { theme, toggleTheme } = useTheme();
   const [showMenu, setShowMenu] = useState(false);
 
   const location = useLocation();
@@ -70,18 +66,7 @@ const Navigation = (props) => {
           ) : (
             <>
               <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
-              <div
-                className="d-flex small white-font px-3"
-                onClick={() => toggleTheme()}
-              >
-                {theme === 'dark' && <MoonFill />}
-                {theme === 'light' && <SunFill />}
-                {theme !== 'dark' && theme !== 'light' && (
-                  <>
-                    <CloudSunFill />A
-                  </>
-                )}
-              </div>
+              <ThemeSelect />
             </>
           )}
           {username &&
