@@ -15,9 +15,10 @@
 - Move import to frontend
 - Transit from useContext to Recoil
 - Reduce re-renders
-- Add "Update (reload page)" button
+- Move changelog from html to json with generation
 
 # IMPROVE TECHNOLOGY - BACKEND
+- Improve API endpoints addresses
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)

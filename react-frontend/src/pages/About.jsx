@@ -7,6 +7,7 @@ import Discord from 'assets/images/icons/discord.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import Globe2 from 'assets/images/icons/globe2.svg';
 import { Banner } from 'components';
+import lastChanges from '../../../last_changes.json';
 
 const About = (props) => {
   return (
@@ -72,20 +73,11 @@ const About = (props) => {
                 : 2022-05-17
               </p>
 
-              <h6>Last update [2022-06-11]:</h6>
+              <h6>Last update [{lastChanges.version}]:</h6>
               <ul>
-                <li>Fix bugs in card search introduced after last update</li>
-                <li>
-                  Use more screen width in crypt/library search page on narrow
-                  desktop resolutions (1200-1400px)
-                </li>
-                <li>Add multi-form search to capacity search in Crypt</li>
-                <li>
-                  Add &quot;Create vampire&quot; trait to library search
-                  (Embrace-like actions)
-                </li>
-                <li>Reduce cardbase bundle size</li>
-                <li>Some other fixes</li>
+                {lastChanges.changes.map((change, idx) => (
+                  <li key={idx}>{change}</li>
+                ))}
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>

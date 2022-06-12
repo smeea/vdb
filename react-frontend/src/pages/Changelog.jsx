@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import LockFill from 'assets/images/icons/lock-fill.svg';
-import UnlockFill from 'assets/images/icons/unlock-fill.svg';
-import Snow from 'assets/images/icons/snow.svg';
 import { Banner } from 'components';
 
 const Changelog = (props) => {
@@ -40,13 +37,13 @@ const Changelog = (props) => {
                 &quot;Vaughnad&quot; Davino)
               </li>
               <li>
-                Temporary locking your deck from edits will now use <LockFill />
-                /<UnlockFill /> icons (after deck name in Deck page), and there
-                is dedicated <Snow /> indicator for permanent non-editable decks
-                (created by Copy URL - Snapshot URL), so you will always see
-                that deck you are seeing cannot be changed in the future. Same
-                indicator available in QR URL window to check that link is
-                non-editable (useful when scanning deck links during events)
+                Temporary locking your deck from edits will now use LOCK/UNLOCK
+                icons (after deck name in Deck page), and there is dedicated
+                SNOW indicator for permanent non-editable decks (created by Copy
+                URL - Snapshot URL), so you will always see that deck you are
+                seeing cannot be changed in the future. Same indicator available
+                in QR URL window to check that link is non-editable (useful when
+                scanning deck links during events)
               </li>
               <li>
                 Inventory Type/Discipline filters for library will now respect

@@ -1,5 +1,6 @@
 from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user, login_required
+import json
 
 from api import app, db, login
 from models import User
@@ -30,6 +31,14 @@ def register():
         db.session.commit()
         login_user(user)
         return jsonify({"username": user.username, "email": user.email})
+
+
+@app.route("/api/version", methods=["GET"])
+def version():
+    with open("../last_changes.json", "r") as last_changes_file:
+        changes = json.load(last_changes_file)
+
+        return jsonify(changes)
 
 
 @app.route("/api/login", methods=["GET", "POST"])
