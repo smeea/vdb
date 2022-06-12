@@ -7,7 +7,7 @@ import Discord from 'assets/images/icons/discord.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import Globe2 from 'assets/images/icons/globe2.svg';
 import { Banner } from 'components';
-import lastChanges from '../../../last_changes.json';
+import changes from '../../../CHANGES.json';
 
 const About = (props) => {
   return (
@@ -73,9 +73,9 @@ const About = (props) => {
                 : 2022-05-17
               </p>
 
-              <h6>Last update [{lastChanges.version}]:</h6>
+              <h6>Last update [{changes[0].version}]:</h6>
               <ul>
-                {lastChanges.changes.map((change, idx) => (
+                {changes[0].changes.map((change, idx) => (
                   <li key={idx}>{change}</li>
                 ))}
               </ul>

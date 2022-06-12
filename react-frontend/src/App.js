@@ -28,7 +28,7 @@ import { UpdateNotification } from 'components';
 
 import '~/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'assets/css/style.styl';
-import lastChanges from '../../last_changes.json';
+import changes from '../../CHANGES.json';
 
 const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
 
@@ -77,7 +77,7 @@ const App = (props) => {
           </SearchResultsProvider>
         </SearchFormsProvider>
       </Router>
-      <UpdateNotification appVersion={lastChanges.version} />
+      <UpdateNotification appVersion={changes[0].version} />
     </div>
   );
 };

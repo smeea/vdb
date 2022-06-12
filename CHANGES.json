@@ -1,0 +1,699 @@
+[
+  {
+    "version": "2022-06-11",
+    "changes": [
+      "Fix bugs in card search introduced after last update",
+      "Use more screen width in crypt/library search page on narrow desktop resolutions (1200-1400px)",
+      "Add multi-form search to capacity search in Crypt",
+      "Add 'Create vampire' trait to library search (Embrace-like actions)",
+      "Reduce cardbase bundle size",
+      "Some other fixes"
+    ]
+  },
+  {
+    "version": "2022-06-07",
+    "changes": [
+      "New crypt/library search algorithm working in-browser without server calls, which will result in much faster search and card search is network-independent now (many thanks to Andrey 'Vaughnad' Davino)",
+      "Temporary locking your deck from edits will now use LOCK/UNLOCK icons (after deck name in Deck page), and there is dedicated SNOW indicator for permanent non-editable decks (created by Copy URL - Snapshot URL), so you will always see that deck you are seeing cannot be changed in the future. Same indicator available in QR URL window to check that link is non-editable (useful when scanning deck links during events)",
+      "Inventory Type/Discipline filters for library will now respect each other to show card q-ty for different options, and correctly recalculate missing (in gray under filters)",
+      "Add draw all cards button to draw deck window",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2022-05-31",
+    "changes": [
+      "Add sorting in TWD/PDA by Date/Players/Favorites, and in Deck/Crypt by Sect",
+      "Simplify add many cards to Inventory by autofocusing new-card form after entering q-ty for new card",
+      "Removed used-in-inventory popup from card q-ty buttons in inventory (still available few pixels to the right on +-summary)",
+      "Significantly reduced answer size from server when searching for TWD (and slighly for PDA)",
+      "More Brazilian Portuguese translations."
+    ]
+  },
+  {
+    "version": "2022-05-27",
+    "changes": [
+      "Add Brazilian Portuguese card images and card texts. Not all cards available so far, but that is still GREAT (big thanks to Helton 'Helt' Matiazi efforts!)",
+      "Fixed bug with non-english languages sometimes displaying black box instead of card image. Now if localized image is not available it will always fallback to English image.",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2022-05-25",
+    "changes": [
+      "Many bug fixes"
+    ]
+  },
+  {
+    "version": "2022-05-17",
+    "changes": [
+      "Update card base with New Blood set",
+      "Update TWDA",
+      "Add QR-code (live link to editable deck and non-editable deck-in-url) as an option for Copy Deck URL",
+      "Add Freeze Deck button (in advanced deck select and after deck name) which will disable deck crypt/library edition unless turned off to protect established decks from misclicks and everything",
+      "Add Reprint option for Set/Precon search which will return only reprinted cards (will includes Promos if first printed as such)",
+      "Newly add inventory cards (which were not in inventory) will have q-ty box focused by default to speed up adding collection",
+      "Add sorting for inventory",
+      "Moved card selector to bottom in /Cards on mobile (useful for those having thumbs shorter than 5')",
+      "Fixed card selector auto-focus on mobile",
+      "Many other fixes"
+    ]
+  },
+  {
+    "version": "2022-05-07",
+    "changes": [
+      "Significant internal reworks which will slightly decrease network calls and will help in the future development (but as a result it may bring some new bugs, so dont hesitate to report and refresh the page as a first measure when encountering new problem)",
+      "Split Anthology set into Anthology (2017, 100-cards bundle) and Anthology I (2019,      89-card bundle)",
+      "Fix deck preview in inventory import from deck/precon",
+      "Show q-ty of decks/precons you have in inventory when adding card from decks/precons",
+      "Fix deck import (including to accept The Cardname and Cardname, The and some other bugs)",
+      "Fix deck library detailed info (no-discipline cards)",
+      "Some other fixes"
+    ]
+  },
+  {
+    "version": "2022-04-30",
+    "changes": [
+      "Add search similar Deck in TWD/PDA (symmetry-iconed button in Decks page)",
+      "Improved deck description layout in TWD (players count)",
+      "Add separate messages for NO CARDS FOUND and NO CONNECTION",
+      "Other bug fixes"
+    ]
+  },
+  {
+    "version": "2022-04-15",
+    "changes": [
+      "Add Crypt/Library cards compare feature (open card window and click Compare Card button [Magnifiying Glass with Heart icon])",
+      "Bug fixes and small improvements"
+    ]
+  },
+  {
+    "version": "2022-04-09",
+    "changes": [
+      "Add logic switch (AND / NOT) button for text search filters (each of multiple text filters can use its own logic for searches like [!] unique [&] mortal Type:Ally)",
+      "Add detailed disciplines summary for crypt searches like in Deck ([i] button)",
+      "Export Deck in TWD format will add standard info block required for TWD reports",
+      "Fix bug with empty decks/inventory after login",
+      "Other bug fixes and small improvements"
+    ]
+  },
+  {
+    "version": "2022-03-29",
+    "changes": [
+      "Add post-deck-import window with non-imported cards (mistakes in card names or something like this) which enable to manually recognize and add cards",
+      "Add search Only-In-Name option to card text search",
+      "Don't autoadd card to inventory with 1x q-ty if card not in inventory",
+      "Add button to Card Preview to search TWD with the card",
+      "Sort clans in clan filter in Advanced Deck Selector",
+      "Fix Set search filter to correctly work with any-BCP option, and now Precon any-BCP filter will only return BCP cards in BCP precons ignoring Promos, which will be included in any-BCP Set search",
+      "Other bug fixes"
+    ]
+  },
+  {
+    "version": "2022-03-20",
+    "changes": [
+      "Update TWDA",
+      "Update Rulings",
+      "Multiple text search forms in Crypt/Library",
+      "Add sort crypt by clan in Decks",
+      "Add 'Not newer' and 'Not Older' options for Set search in Crypt/Library (in addition to 'Or Newer' and 'Or Older' which will show cards printed in selected Set or any newer/older Set without restrictions of being printed also earlier/later)",
+      "Bug fixes"
+    ]
+  },
+  {
+    "version": "2022-03-07",
+    "changes": [
+      "Add Favorites counter to PDA",
+      "Many bug-fixes"
+    ]
+  },
+  {
+    "version": "2022-02-26",
+    "changes": [
+      "Add Public Deck Archive (PDA) In Beta! Please read documentation",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2022-02-04",
+    "changes": [
+      "Add localized proxy (only for cards with translated images)",
+      "Add 'auto' color theme option which will follow system preferences",
+      "Merged 'import without account' options into main import/new button",
+      "Fix buttons with dropdown menu not to go partially off screen",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2022-01-29",
+    "changes": [
+      "Missing cards in Inventory now respect applied filters (clan/discipline/card type), including export from Missing card window",
+      "Add popup with detailed Set info on click in card view on mobile (same as on mouse hover on desktop)",
+      "Fixed Inventory Mode not properly coloring quantity of cards in not-your (precons, twd, other urls) decks. Now should paint in yellow cards you have enough in total, but need to use cards from Fixed decks, red where you dont have enough cards at all, and no coloring where everything is OK (cards are free or in Flexible decks)",
+      "Fix twd search by cards (was problem with 0>=; logic)",
+      "Fix add crypt card button from recommended cards not visible sometimes",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2022-01-20",
+    "changes": [
+      "Add import deck without account. This will allow to upload the deck without adding it to your account (possible without having account at all). One of the use case is to upload decks for TWD reports to put the links without messing your account",
+      "Updated Rulings",
+      "Added bright halos to some icons in dark theme (like in disciplines icons) to slightly improve visibility",
+      "Other fixes"
+    ]
+  },
+  {
+    "version": "2022-01-12",
+    "changes": [
+      "Add ES/FR translation for V5 Anarch sets",
+      "Add Kyuen promo",
+      "Add deck crypt discipline distribution under info (i) button",
+      "Add export for missing cards in deck (inventory-mode)",
+      "Add to TWD search by card quantity 'less than and may not include (0<=)' optional logic (previously '<=' only search for deck including card which is now available under '1<=;' option).",
+      "Increased deck description size to 32768 symbols and default unfolded description length to 12 rows",
+      "Make pdf proxy delimiters slightly bigger and brighter",
+      "Fixed crypt/library pages layout for unlogged users",
+      "Many small other fixes"
+    ]
+  },
+  {
+    "version": "2022-01-05",
+    "changes": [
+      "Add checkboxes for text search in Crypt/Library to search only in card text and to search using regex (default is name+text without regex)",
+      "Many fixes"
+    ]
+  },
+  {
+    "version": "2021-12-31",
+    "changes": [
+      "Add Discipline filter to library in Inventory",
+      "Fix Advanced Deck Selection window on tablet-size resolutions",
+      "Fix 'Search in Inventory' in Crypt/Library"
+    ]
+  },
+  {
+    "version": "2021-12-25",
+    "changes": [
+      "Many improvements on page layouts and adaptiveness for tablet-size screens. Those who were dissapointed by VDB being unusable on their tablets should give it another try now!",
+      "Fix AU/DM/TU set images to show original PDF-release images, and move newer Kickstarter images to KSU set",
+      "Fix import decks with new V5A cards from Amaranth",
+      "Fixes for bugs introduced by new multigroup vampires (deck export, proxy generation, etc)"
+    ]
+  },
+  {
+    "version": "2021-12-15",
+    "changes": [
+      "Add Card Ideas ('recommendation') feature to Deck, based on card compatibility in TWDA"
+    ]
+  },
+  {
+    "version": "2021-12-09",
+    "changes": [
+      "Updated card images from KRCG",
+      "Fixed deck bug causing to sometimes restore deck to much older state after deleting card",
+      "Fix card sorting in Deck-Library (thanks emime)",
+      "Fixed set/precon search to respect Promo card release dates (thanks emime)",
+      "Fixed deck delete to sometimes not delete all revisions",
+      "Other small UI fixes/improvements"
+    ]
+  },
+  {
+    "version": "2021-12-05",
+    "changes": [
+      "Fix critical bug with promo cards from HB2 (Dracon, Capucin, etc)",
+      "Rename Thaumaturgy to Blood Sorcery",
+      "Add library search traits 'reduce bleed' and '+votes / title'"
+    ]
+  },
+  {
+    "version": "2021-12-03",
+    "changes": [
+      "Finalize transition to Banu Haqim/Ministry",
+      "In pdf proxy sort library cards by card type (Master, Action, etc)",
+      "Add Recent Deck selection to Deck Compare",
+      "Increased height of some (opened) filters",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2021-12-01",
+    "changes": [
+      "Add new V5 (Anarchs) precons",
+      "Add Recent decks to Deck selection, will store last 10 decks (shared by url or twd) you have seen (to quickly come back to deck-friend-shared-last-week) - do not sync between devices (stored locally in your browser)",
+      "Import Versions (called Revisions in VDB) when importing deck from Amaranth",
+      "Add Changelog page",
+      "Add additional (type 'YES') confirmation to delete Inventory and Decks with revisions (not to accidentally remove full deck missclicking Delete Revision)",
+      "Various small other fixes and improvements"
+    ]
+  },
+  {
+    "version": "2021-11-23",
+    "changes": [
+      "Added 'Or Older' filter option for Set search",
+      "Fixed Import/Export for new multigroup vampires (Victoria Ash, etc). Will append '(GX)' after name, confirmed to be implemented same way in Lackey",
+      "Many other small fixes (mainly UI)"
+    ]
+  },
+  {
+    "version": "2021-11-13",
+    "changes": [
+      "Reworked Inventory page with significant performance improvement (most noticeable on BIG inventories) for both rendering and Import",
+      "Small other fixes/improvements"
+    ]
+  },
+  {
+    "version": "2021-11-06",
+    "changes": [
+      "Update card base to 2021-10-27 (no new precons yet, just Promos and Ravnos/Chimersty POD reprints). New crypt 'revival' cards with different groups are not yet working correctly with import/export, it will be fixed later Add 'negative' option to some crypt/library filters (logic options are OR ' //', AND '&' and NOT '!' or just OR/NOT depending on filter). THIS IS BREAKING CHANGE FOR OLD SEARCH URLs working with this filters,  please update them if you shared it publicly and expect to continue to work. I dont like to break things, but sometimes it's necessary",
+      "Make 'See ADV/Base' clickable in card popup",
+      "Fix library search sort by discipline",
+      "Fix library search cards with <=0 pool or blood cost not showing no-cost cards",
+      "Fix removing cards from TWD search by cards Fix Inventory-Mode for Deck Compare"
+    ]
+  },
+  {
+    "version": "2021-10-29",
+    "changes": [
+      "Add buttons to Deck Compare page: Show missing cards in popup window Proxy missing cards Back to Decks Copy URL to compare (simple way to share your ideas of how to improve friend's deck: clone his deck into your account, change it as you like, compare both and share compare url with friend).",
+      "Added >= (less-or-equal) and = (equal) options for TWD search by Crypt and Library cards",
+      "Add inventory import from FELDB (.csv format)."
+    ]
+  },
+  {
+    "version": "2021-10-26",
+    "changes": [
+      "Add Deck Compare feature (can choose from your decks, precons or any other shared or TWD deck by URL or ID)",
+      "Show banned year",
+      "Small fixes"
+    ]
+  },
+  {
+    "version": "2021-10-20",
+    "changes": [
+      "Added Hide deck option ('bulb' button in advanced deck selection, the 'binoculars' button) which hides the deck from main deck selector. Can be useful to 'archive' the decks and simplify navigation between active decks.",
+      "Added By-Group and By-Name sorting for crypt in Deck",
+      "Added multi-set and multi-setprecon search in Crypt and Library",
+      "Added By-Clan stats in library summary info for Deck ( (i) button), added none-discipline/clan category and calculation of % are done now agains library total excluding masters",
+      "Search TWD by In-Inventory match supplied with additional option of rescale to 75 cards",
+      "Rulings opens in separate browser tab on click by default",
+      "Many small UI improvements and fixes"
+    ]
+  },
+  {
+    "version": "2021-10-12",
+    "changes": [
+      "Updated TWDA",
+      "Fixed sorting of multi-types and multi-disciplines to alphabet order (e.g. it is always Action/Combat and not Combat/Action and same for disciplines, regardless of Basic/Superior)",
+      "Account names are now case-insensitive (both for new and old accounts)",
+      "Small other UI fixes"
+    ]
+  },
+  {
+    "version": "2021-10-09",
+    "changes": [
+      "Add set selection for Proxy (with original scans)",
+      "Add card scans (Kickstarter Unleashed, KoT and HttB reprints)",
+      "Fix tag remove in advanced deck selection window",
+      "Fix deck author in exported decks. Thanks to Karl Schaefer",
+      "Many small UI fixes"
+    ]
+  },
+  {
+    "version": "2021-10-05",
+    "changes": [
+      "Nothing 'new', just many tiny UI improvements (under the hood they are not that small, so please report problems/glitches/etc they are expected) and some bugfixes (also rulings update)"
+    ]
+  },
+  {
+    "version": "2021-09-23",
+    "changes": [
+      "Add clan filter for Deck Selection window ('goggles' icon)",
+      "Add draw chances in open hand for card-types in library",
+      "Add 'Missing Cards' window for Inventory",
+      "Add import from Lackey .dek format (I don't use Lackey so cannot extensively test it, please report bugs if you find it)",
+      "Moved Navigation bar to bottom on mobile",
+      "Move inventory-mode switch to burger menu in Navigation bar on mobile"
+    ]
+  },
+  {
+    "version": "2021-09-21",
+    "changes": [
+      "Improved Inventory quantity calculation (shows Total+Unique and Missing+Unique) consistently regardless of chosen filter (All / Owned / Problem).",
+      "Add Discipline summary in Deck library info. Thanks to Igor Beslin for proposal!",
+      "Improved internal URL-ing between tabs, going back-forward with browser methods will be better (still not perfect, though).",
+      "Crypt search for Title trait will show vampires with relevant title while merged. For other traits no changes (title is visible in result line and other traits requires reading card, so will be too confusing to clarify who have trait in-built and who needs merge). Thanks to Hobbesgoblin for proposal!",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2021-09-16",
+    "changes": [
+      "Add tags info into main deck window long-awaited necessary feature, I apologize for delaying with it",
+      "Add deck/intentory export to Excel format (.xslx)",
+      "Export to CSV format changed into 'Quantity,Card ID' (ID's according to VEKN CSV cardbase) will be more convenient for any kind of automation (Card ID is much more reliable than name), and end-users with spreadsheets should be satisfied with Excel",
+      "Export All decks now returns zip-archive with all files to simplify saving (also with timestamp, so your 'MY BEST DECKS FOR PROGENY' folder is now easier to manage). Now only for text formats (lackey, twd, etc), but will also support CSV, Excel in the future",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2021-09-14",
+    "changes": [
+      "Add chance calculation of drawing X unique crypt cards (click (i) button). Was not easy to do it, but totally worth it.",
+      "Add banned card indication for TWD and user deck",
+      "Improved many popoup (modal) windows on mobile (like advanced deck select, import from precon/deck to inventory, etc). They are not as detailed as wide desktop windows, but at least usable.",
+      "Some other fixes (incl. last report by Hobbesgoblin)"
+    ]
+  },
+  {
+    "version": "2021-09-12",
+    "changes": [
+      "Add Unleased Kickstarter as a Set/Precons (it's not an 'official' set, but should be more useful like this)",
+      "Fix deck crypt discipline layout for decks with many different disciplines in crypt (as in bundles or in some decks like 'Girls will find...')",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2021-09-10",
+    "changes": [
+      "Add images of banned reprints (Ashlesha, etc)",
+      "Add clan images to precon filter in crypt/library search",
+      "Save crypt/library sorting to browser local storage",
+      "Decrease discipline/clan icons sizes (most notable on mobile)",
+      "Improved crypt discipline alignment on mobile (should be better on wider resultions, but may cause problems on narrower- will try to fix it in the future, idk how though)",
+      "Other small fixes & improvements"
+    ]
+  },
+  {
+    "version": "2021-09-08",
+    "changes": [
+      "Add 'Advancement' trait for Crypt search, showing all Advanced vampires and their Base versions",
+      "Add reference to/from Base/Adv vampires in detailed card view (hover over to see another version)",
+      "Save 'Add Mode' state to browser local storage",
+      "Copy URL buttons grouped in menu and 'Immutable URL' renamed to 'Snapshot URL'",
+      "Fix draw chances to exclude already 'played' cards from calculation",
+      "Fix 'None' Discipline search in Library",
+      "Fix removing additional filters of Discipline/Type in Library. Thanks to inm8",
+      "Many other small fixes & improvements"
+    ]
+  },
+  {
+    "version": "2021-08-30",
+    "changes": [
+      "Changed colors in light theme. I know theming it's very subjective topic, but I hope you will soon get used to it and like it",
+      "Added AND/OR switch for Type and Discipline search in Library when searching with multiple filters. Newly added filter form opens by default after you click [+] button.",
+      "Disciplines in crypt draw are now aligned same as in deck view.",
+      "Added 'Immutable URL' which will gives permanent URL for freezed current deck state, which is good when you want to freeze the deck and share it, while continue to edit in your deck archive (e.g. blog posts, etc). Same purpose as Deck-in-URL, but instead of storing everything about the deck in URL it just store non-editable deck copy on the server (Deck-in-URL is longer, but bulletproof can be 'decoded' even if VDB is dead, and can be 'generated' with 3rd-party tools)."
+    ]
+  },
+  {
+    "version": "2021-08-21",
+    "changes": [
+      "Some elements will 'stick' during scrolling (like crypt in /Deck, library info line in /Deck, side buttons in /Crypt and /Inventory, deck change menu in /Crypt and /Library)",
+      "Add inventory-mode highlight in pdf proxy selection it will show RED untill you select quantity required to resolve all inventory problems (can require even more copies than in this decks if you dont have enough even for other decks).",
+      "Add button 'Add missing in Inventory' to pdf proxy selection it will check & set minumum quantity to resolve inventory problems for this deck (opposite to color-highlight as said above which shows problems for entire deck collection, this button will not set quantity for more than required for this deck)",
+      "Fixed blury capacity/blood/pool cost icons in Chrome",
+      "Another small fixes and improvements"
+    ]
+  },
+  {
+    "version": "2021-08-15",
+    "changes": [
+      "Fix inventory used card calculation for fixed decks.",
+      "Add deck export to JOL format (deckserver.et/jol/) Add deck/inventory export to CSV format (MS Excel, etc)",
+      "Add total controlled capacity for crypt in deck draw",
+      "Add initial transfers in deck draw (valid for 5 players with double chance of having 4 transfers)",
+      "Add deck crypt sort by capacity",
+      "Add button to add cards to active deck from quick card search ('lightning' icon /cards),",
+      "Small other fixes"
+    ]
+  },
+  {
+    "version": "2021-08-12",
+    "changes": [
+      "Fix deck and inventory export",
+      "Fix library search sect filter Fix crash in deck draw after burning card when library is empty Update cards to 2021-08-04 and rulings to 2021-07-22"
+    ]
+  },
+  {
+    "version": "2021-07-21",
+    "changes": [
+      "Updated card base to 2020-07-19 (kickstarted update)",
+      "Updated TWD base to 2021-05-16 (last TWD in the archive at the moment) Added clear button for Player and Location in TWD",
+      "Added Capacity filter to Library search. It only refer to requirement of who can play card (written in bold on top), not restriction of target. Added 'Or newer' checkbox for Set search in Crypt/Library (will show all cards in this Set or Newer, excluding Promo/Print-on-Demand)",
+      "Added 'No requirements' trait to Library, which will show cards with no requirements (sect / clan / title / capacity / black hand / seraph etc). Please not that 'require a vampire' is requirement",
+      "Fixed inventory card quantity not in-sync between main list and add-one-card 'list'",
+      "Fixed Crypt/Library 'Search in Inventory' to correctly count total for Inventory cards and not require to click 'V FOUND XX' if your Inventory results are smaller than standards results threshold (300 pcs) regardless of overall results (from all cards)",
+      "Limited width of card popup in text layout (were too wide sometimes) Added saving of inventory-mode and image/text popup to browser storage (will not be lost after reloading)",
+      "Added auto-search when opening url with search query in TWD",
+      "Fixed auto-search when opening url with search query on mobile in Library",
+      "Fixed deck name taking too much width of advanced deck select window ('binoculars' button)",
+      "Fixed empty image when switching between cards with selected old (scanned) image in detailed card view with arrows ({'< & >'})",
+      "Fixed several crashes"
+    ]
+  },
+  {
+    "version": "2021-07-17",
+    "changes": [
+      "Add reduce hand size button to Deck Draw",
+      "Auto-open results on Mobile if you open url with search query (previously it just sets filters and you need to manually click 'V' button)",
+      "Advanced deck select window Name filter will ignore accents (will return decks with 'á' if you type 'a')",
+      "Advanced deck select window Name filter now also looks for card names in decks (e.g. 'arika' will return both decks with 'arika' in name, and decks containing 'arika' in card name)",
+      "Fix bug with some inventory-mode icons being almost invisible due to too low opacity",
+      "Fix Hide Missing in Inventory checkbox not working (crypt/library search through inventory works again!)"
+    ]
+  },
+  {
+    "version": "2021-07-09",
+    "changes": [
+      "Show blood/pool cost of ash heap in draw",
+      "Add hand size for crypt/library in draw",
+      "Autoswitch to newly imported deck",
+      "After opening TWD deck deck selection category to be defaulted as 'my' instead of 'precons'",
+      "Mobile burger menu (top-left corner) to hide after any option selected"
+    ]
+  },
+  {
+    "version": "2021-07-05",
+    "changes": [
+      "Add multiple selections for clan, sect, types, title filters in Crypt and Library. Now work as 'OR', maybe one day will be OR/AND toggle",
+      "Add not-in-twd filter for Crypt and Library",
+      "Add 'show random card' buttons to Cards (quick card ⚡)",
+      "Add titled and non-titled options for title filter in Library",
+      "Small fixes"
+    ]
+  },
+  {
+    "version": "2021-06-20",
+    "changes": [
+      "Added inventory import from preconstructed decks",
+      "Inventory import from deck/precon buttons now show if it's already in inventory (and delete button disabled if you don't have it). Keep in mind you can still add deck/precon two+ times, which will double+ quantity.",
+      "Added twd search by exclusions of crypt/library cards (set quantity to 0 and it will only look for decks without this card)",
+      "Fixed promo dates for cards being promo for more than 1 time (previously only recent promo date was shown)",
+      "Fixed important bug with revisions which resulted in decks being broken for some users. It should be fixed now with everything restored, but if you lost something important let me know and I'll try to help.",
+      "Other small fixes"
+    ]
+  },
+  {
+    "version": "2021-06-12",
+    "changes": [
+      "Restyled deck preview in advanced deck select window (popup deck is downscaled, don't show buttons, triggered by hover on smaller icon)",
+      "Default deck revision is updated to last edited revision Improved add deck to inventory window (in the spirit of advanced deck select). In the future it will be even better, I know there are many things to improve",
+      "Fix add new card to inventory to show card quantity (was broken in one of recent updates)",
+      "Fix add card to deck which is in side-crypt/library to actually add it with quantity to 1 (instead of not doing anything)",
+      "Some other fixes"
+    ]
+  },
+  {
+    "version": "2021-06-06",
+    "changes": [
+      "Added library pool/blood cost. Thanks to Karl Schaefer",
+      "Added inventory-type icons (clickable to change inventroy type) for decks in advanced deck select window",
+      "Add 'non-titled' title checkbox to crypt search form (basically works same as 'votes: none' form, but should improve usability). Keep in mind that title checkboxes are cummulative (different from 'traits' checkboxes it will match if any title from checkbox matches)",
+      "Fix inventory mode for crypt/library search",
+      "Some other interface fixes"
+    ]
+  },
+  {
+    "version": "2021-05-29",
+    "changes": [
+      "Added advanced deck selection window (click binoculars icon near deck select form)",
+      "Added deck tags feature (for now available only in advanced deck selection window, will be add somewhere in main deck window later). To add new tag click on an empty area between decks & buttons (not really obvious, but will keep interface clean).",
+      "Added traits to search: Wake/Unlock, Burn Improved proxy pdf layout (smaller gap between cards, gap is filled with gray please let me know if it's too dark and not visible on paper)",
+      "Bug fixes"
+    ]
+  },
+  {
+    "version": "2021-05-16",
+    "changes": [
+      "References to other cards in card text and rulings (see Lost in Crowds, Mata Hari) now show card popup on mouse hover",
+      "Added pdf sets (Danse Macabre, etc) card images. For those who missed this feature: click on Set name in card window change image to card scan for this set, with old text/image.",
+      "Changed some trait search to show more cards (some cards will be not really what you are looking for but false positives are probably better than excluded good card). See Igor Beslin comment below.",
+      "In card window you can use left/right arrows (on keyboard) and left/right swipes (on mobile) to switch cards. And for those who missed: you can click on card image (both on desktop/mobile) to close card window (no need to click outside of popup window).",
+      "Slightly updated dark color scheme (main change: disciplines now have small border to improve visibility).",
+      "Other bug fixes"
+    ]
+  },
+  {
+    "version": "2021-05-12",
+    "changes": [
+      "Improved screen resolution responsiveness (should be much better on smaller resolutions like tablets)",
+      "Increased search result treshold to 300 cards to auto-show (without click on 'Found XXX' button)",
+      "Vampire title is shown on card line. Thanks to Beslin Igor for suggestion",
+      "Removed 'used in...' column in Inventory Mode from crypt/library results. Inventory quantity is still shown and you can hover on it to see details (also available in card window)",
+      "Slightly updated color theme",
+      "Slightly increased performance of switching between pages (Crypt/Library/etc) with active results",
+      "Text search (card name/text) now is not lost during page switching",
+      "'Played/Burned' cards in Deck Draw now clickable to open standard card window (click action on cards in hand is still replaced with 'play' action)"
+    ]
+  },
+  {
+    "version": "2021-04-23",
+    "changes": [
+      "Added card localization (you can switch prefered card language and it change card text/name if translation exists). Now it only contains Spanish and French official localization (i.e. cards published since 2019) and some images are missing. Search for card text/name is still looks for English name/text (it will be so until all cards are translated for a given localization).",
+      "Performance improvement for Inventory (it's still not perfect with hundreds of unique though)",
+      "Other tiny changes"
+    ]
+  },
+  {
+    "version": "2021-04-16",
+    "changes": [
+      "Dark theme, finally! (switch is in top-left corner)",
+      "Detailed Set/Precon information in Card window (hover mouse over set/precon info)",
+      "Improved Set/Precon search with 'First Print' and 'Only In' options (previously was inaccurate with KoT/HttB Reprints)",
+      "Fixed card quantity in several precons"
+    ]
+  },
+  {
+    "version": "2021-04-09",
+    "changes": [
+      "Added TWD search for decks matching your Inventory. Thanks to Vincent Ripoll for proposal! Please note you must first turn on inventory-mode then do the searches switch will not affect already shown decks yet. The 'scale to 60 cards' checkbox will add to result decks your inventory is enough for after trimming library proportionally to 60 cards",
+      "Added Inventory import",
+      "Improved Inventory/Deck export performance and quanlity (also some export bugs fixed) Added inventory-mode in TWD (highlight cards you don't have, etc same as in Decks/Crypt/Library)",
+      "Fixed inventory-mode in Decks on Mobile",
+      "Significantly improved TWD search for Monoclan and Star decks",
+      "Other minor fixes / improvements"
+    ]
+  },
+  {
+    "version": "2021-04-04",
+    "changes": [
+      "Added buttons to next/previous cards in card preview window (now it's only goes through crypt or library, will be improved later for transition after last crypt card to library)",
+      "Improved TWD discipline search to respect crypt disciplines (now it does not include multi-disciplined cards disciplines if no crypt vampire can play it; it may misbehave with decks purely relying on master:disciplines or other non-standard ways of playing discipline cards, but this is too corner case compared to multi-disciplined cards)",
+      "Added all cards draw chances for starting hand click on (i) button on top of crypt/library Added exact word search option to Crypt/Library search with double-quotes (e.g. search for 'controlled' will not match cards with uncontrolled in text)",
+      "Add-card-to-deck button in Crypt/Library search allows multiclicks now to increase quantity",
+      "Other small fixes/improvements"
+    ]
+  },
+  {
+    "version": "2021-03-28",
+    "changes": [
+      "URL now store search query for Crypt/Library/TWD searches and you can easily share it",
+      "Added /documentation section (link in About) with some description. Please, let me know if something is not clear or missing and I will update",
+      "Updated card text to latest 2021-03-24",
+      "Updated twds",
+      "Other small fixes / improvements"
+    ]
+  },
+  {
+    "version": "2021-03-20",
+    "changes": [
+      "Deck-ID now attaches to url in url bar (same url as you got after clicking 'Copy URL' button, so all old links must continue to work and existing url in url bar is shareable now)",
+      "Card scans from different sets done by vtes.pl team. Click on the Set name in card detailed popup window (yeah, I know it's barely discoverable, so consider it hidden feature for now, later I'll improve it)",
+      "Added clan icons for Precon deck selector",
+      "Deck select (for My and Precon decks) now support live text filter (same as for Clan in Crypt/Library search)",
+      "Revision name now attaches to Deck name for Export",
+      "Fixed Crypt/Library search not showing cards matching text after toggling off other filters",
+      "Fixed Deck Draw bug (incorrect message preventing from redraw)",
+      "Other minor fixes/improvements I forgot about? Who knows."
+    ]
+  },
+  {
+    "version": "2021-03-14",
+    "changes": [
+      "Deck draw now let 'play' cards by clicking on them (instead of card view)",
+      "Much faster TWD clan search",
+      "Forms in Add New Card (/decks) and Quick card search (/cards) now also search by initials i.e. new words can start from part of given string. Thanks to Vincent Ripoll. Examples: Following searches will match 'Govern the Unaligned': gtu gtuna theunal Following searches will not match 'Govern the Unaligned': gtd galigned thealigned",
+      "Add-Mode switch removed from Navbar, but instead Add-Mode follow show/hide deck in Crypt and Library search (eye-icon next to deck name)",
+      "Improvements in floating buttons on mobile",
+      "Fixed Lackey export bug for cards with '-' in name (AK-47, Hell-for-Leather, etc)",
+      "Fixed exports for Deck-In-Url",
+      "Other tiny fixes"
+    ]
+  },
+  {
+    "version": "2021-03-06",
+    "changes": [
+      "Added new feature deck revisions",
+      "Added rulings from krcg (many more rulings with links to origin). Many thanks to Lionel Panhaleux who is doing great job maintaining rulings archive",
+      "Card text updated to 2021-03-06",
+      "TWD decks updated",
+      "Many bug fixes"
+    ]
+  },
+  {
+    "version": "2021-02-28",
+    "changes": [
+      "Added quick card view page (vdb.im/cards) where you can quick check the card by it's name.",
+      "Show all search results in Crypt/Library in Inventory-mode, but added option to hide results not in inventory",
+      "Improved search by Precons (there is still some issues with First Print / Only In searches for reprinted bundles (HttB, KoT and Anthlogy))",
+      "Improved TWD Capacity search speed and it uses 4 brackets (like for Groups). Anarch Convert is excluded from Capacity calculation.",
+      "Fixed Inventory 'Show only problem cards' bug",
+      "Fixed Lackey export",
+      "Small other barely noticable fixes/improvements"
+    ]
+  },
+  {
+    "version": "2021-02-23",
+    "changes": [
+      "Added TWD search by library size",
+      "Updated TWD search by-card-type forms (added 'none', slightly changed ranges) Greatly increased TWD by-card-type search speed (finally, it is usable lol)",
+      "Fix library cards clan search for double-clan"
+    ]
+  },
+  {
+    "version": "2021-02-22",
+    "changes": [
+      "Updated Deck page layout (more vertical space for Crypt/Library)",
+      "Updated TWD search results to show capacity/clan for crypt and discipline/clan for library cards",
+      "Added Preconstructed decks to Deck page to choose from",
+      "Inventory mode for not-your-decks opened in Deck page (i.e. for TWD / shared by URL / Preconstructed): Highlights in red cards you don't have enough in Inventory; Highlights in yellow cards you have in total, but it will require to take it from one of 'fixed' decks; No highlight if you have it available",
+      "Button to show missing in inventory cards for the deck in Deck page. It respects deck/card inventory status (Flexible or Fixed) and for Virtual (@) decks and any not-yours (twd / precon / shared by url) it calculate as it's Flexible (i.e. allowing to re-use cards from other Flexible decks but NOT from Fixed)",
+      "Proxy button allow to print only missing cards (same with inventory status as above)",
+      "Card quantity manual enter (click on card quantity) in addition to [+] and [-] buttons",
+      "Inventory page option to choose what to show: All (cards you have + cards you need) Only owned cards Only cards you have problem with (first column is still quantity you have, not 'required')",
+      "Additional 'Copy Deck-In-URL' button which 'encode' the deck to url. Why? Because standard Copy URL works as a 'pointer' to the deck in the author's deck archive it follows the changes (and deletion!) and even though it's OK most of the time (and maybe even desired), you may want to 'freeze' it to be sure the one following the link will ALWAYS see the deck in the state it was during URL creation. Technical details: this link contain all VDB need to render the deck (in the format ...?name=NAME&author=AUTHOR&description=DESCRIPTION#ID=QUANTITY;ID2=... where ID is card ID from official VEKN card list). So this 'deck-in-urls' does not exist (and does not require to ever be created) on the VDB server and may be easily generated by anyone (e.g. by third-party software as quick way to show the deck using VDB rendering) as well as decoded even when VDB will stop to work it will be easy to restore the deck from the url",
+      "Crypt searches shows avg. capacity for each group in Total line",
+      "Card text updated to VEKN changes dated 21-01-2021",
+      "Added Maleficia, Striga and Flight to discipline filter in Library search Crypt/Library search page is more centered now for unlogged users; Fixed bug with non-ASCII letters for card search and export to Lackey",
+      "Fixed bug with Advanced vampire proxy generation",
+      "Fixed bug with Amaranth deck import by URL Fixed bug with card modal preview in Decks/Crypt/Library with inventory-mode"
+    ]
+  },
+  {
+    "version": "2021-02-13",
+    "changes": [
+      "Added Inventory Mode"
+    ]
+  },
+  {
+    "version": "2021-01-24",
+    "changes": [
+      "Added card preview on card click",
+      "Added probability calculations in Deck Draw"
+    ]
+  },
+  {
+    "version": "2020-12-25",
+    "changes": [
+      "Added TWD browser"
+    ]
+  },
+  {
+    "version": "2020-12-03",
+    "changes": [
+      "First release"
+    ]
+  }
+]

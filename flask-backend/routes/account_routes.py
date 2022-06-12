@@ -35,10 +35,9 @@ def register():
 
 @app.route("/api/version", methods=["GET"])
 def version():
-    with open("../last_changes.json", "r") as last_changes_file:
-        changes = json.load(last_changes_file)
-
-        return jsonify(changes)
+    with open("../CHANGES.json", "r") as changes_file:
+        changes = json.load(changes_file)
+        return jsonify(changes[0])
 
 
 @app.route("/api/login", methods=["GET", "POST"])

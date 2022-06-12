@@ -13,7 +13,6 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move export to frontend
 - Move import to frontend
-- Move changelog from html to json with generation
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints addresses
