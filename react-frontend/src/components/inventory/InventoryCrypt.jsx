@@ -28,38 +28,31 @@ const InventoryCrypt = ({
     'Capacity - Max to Min': 'C↓',
   };
 
-  const cryptByClan = {};
-  const cryptByClanTotal = {};
-  const cryptByClanUnique = {};
-  const missingCryptByClan = {};
-  const missingCryptByClanTotal = {};
+  const cardsByClan = {};
+  const cardsByClanTotal = {};
+  const cardsByClanUnique = {};
+  const missingByClan = {};
+  const missingByClanTotal = {};
 
   const clansSorted = ['All', ...vampireClansList, ...imbuedClansList];
 
   clansSorted.map((i) => {
-    cryptByClan[i] = {};
-    cryptByClanTotal[i] = 0;
-    cryptByClanUnique[i] = 0;
-    missingCryptByClan[i] = {};
-    missingCryptByClanTotal[i] = 0;
+    cardsByClan[i] = {};
+    cardsByClanTotal[i] = 0;
+    cardsByClanUnique[i] = 0;
+    missingByClan[i] = {};
+    missingByClanTotal[i] = 0;
   });
 
   if (compact) {
     Object.keys(cards).map((card) => {
-      cryptByClan['All'] = {
+      cardsByClan['All'] = {
         card: cards[card],
       };
     });
   } else {
     Object.keys(cards).map((card) => {
       const i = cards[card].c.Clan;
-
-      if (cards[card].q > 0) {
-        cryptByClanTotal[i] += cards[card].q;
-        cryptByClanTotal['All'] += cards[card].q;
-        cryptByClanUnique[i] += 1;
-        cryptByClanUnique['All'] += 1;
-      }
 
       let softUsedMax = 0;
       if (usedCryptCards.soft[card]) {
@@ -80,8 +73,8 @@ const InventoryCrypt = ({
       const miss = softUsedMax + hardUsedTotal - cards[card].q;
 
       if (miss > 0) {
-        missingCryptByClan[i][card] = { q: miss, c: cards[card].c };
-        missingCryptByClan['All'][card] = {
+        missingByClan[i][card] = { q: miss, c: cards[card].c };
+        missingByClan['All'][card] = {
           q: miss,
           c: cards[card].c,
         };
@@ -89,12 +82,12 @@ const InventoryCrypt = ({
 
       if (category === 'nok') {
         if (miss > 0) {
-          cryptByClan[i][card] = cards[card];
-          cryptByClan['All'][card] = cards[card];
+          cardsByClan[i][card] = cards[card];
+          cardsByClan['All'][card] = cards[card];
         }
       } else {
-        cryptByClan[i][card] = cards[card];
-        cryptByClan['All'][card] = cards[card];
+        cardsByClan[i][card] = cards[card];
+        cardsByClan['All'][card] = cards[card];
       }
     });
 
@@ -103,11 +96,11 @@ const InventoryCrypt = ({
         const i = cryptCardBase[card].Clan;
 
         if (category !== 'ok') {
-          cryptByClan[i][card] = {
+          cardsByClan[i][card] = {
             q: cards[card] ? cards[card].q : 0,
             c: cryptCardBase[card],
           };
-          cryptByClan['All'][card] = {
+          cardsByClan['All'][card] = {
             q: cards[card] ? cards[card].q : 0,
             c: cryptCardBase[card],
           };
@@ -120,11 +113,11 @@ const InventoryCrypt = ({
           }
         });
 
-        missingCryptByClan[i][card] = {
+        missingByClan[i][card] = {
           q: softUsedMax,
           c: cryptCardBase[card],
         };
-        missingCryptByClan['All'][card] = {
+        missingByClan['All'][card] = {
           q: softUsedMax,
           c: cryptCardBase[card],
         };
@@ -136,11 +129,11 @@ const InventoryCrypt = ({
         const i = cryptCardBase[card].Clan;
 
         if (category !== 'ok') {
-          cryptByClan[i][card] = {
+          cardsByClan[i][card] = {
             q: cards[card] ? cards[card].q : 0,
             c: cryptCardBase[card],
           };
-          cryptByClan['All'][card] = {
+          cardsByClan['All'][card] = {
             q: cards[card] ? cards[card].q : 0,
             c: cryptCardBase[card],
           };
@@ -153,15 +146,15 @@ const InventoryCrypt = ({
           });
         }
 
-        if (missingCryptByClan[i][card]) {
-          missingCryptByClan[i][card].q += hardUsedTotal;
-          missingCryptByClan['All'][card].q += hardUsedTotal;
+        if (missingByClan[i][card]) {
+          missingByClan[i][card].q += hardUsedTotal;
+          missingByClan['All'][card].q += hardUsedTotal;
         } else {
-          missingCryptByClan[i][card] = {
+          missingByClan[i][card] = {
             q: hardUsedTotal,
             c: cryptCardBase[card],
           };
-          missingCryptByClan['All'][card] = {
+          missingByClan['All'][card] = {
             q: hardUsedTotal,
             c: cryptCardBase[card],
           };
@@ -169,9 +162,25 @@ const InventoryCrypt = ({
       }
     });
 
-    Object.keys(missingCryptByClan).map((i) => {
-      Object.values(missingCryptByClan[i]).map((card) => {
-        missingCryptByClanTotal[i] += card.q;
+    Object.keys(missingByClan).map((i) => {
+      Object.values(missingByClan[i]).map((card) => {
+        missingByClanTotal[i] += card.q;
+      });
+    });
+  }
+
+  if (!compact) {
+    Object.keys(cardsByClan).map((d) => {
+      cardsByClanTotal[d] = 0;
+      cardsByClanUnique[d] = 0;
+    });
+
+    Object.keys(cardsByClan).map((c) => {
+      Object.keys(cardsByClan[c]).map((cardid) => {
+        cardsByClanTotal[c] += cardsByClan[c][cardid].q;
+        cardsByClanTotal['All'] += cardsByClan[c][cardid].q;
+        cardsByClanUnique[c] += 1;
+        cardsByClanUnique['All'] += 1;
       });
     });
   }
@@ -184,18 +193,18 @@ const InventoryCrypt = ({
             <InventoryFilterForm
               value={clan}
               setValue={setClan}
-              values={Object.keys(cryptByClan).filter((i) => {
-                return Object.keys(cryptByClan[i]).length;
+              values={Object.keys(cardsByClan).filter((i) => {
+                return Object.keys(cardsByClan[i]).length;
               })}
-              byTotal={cryptByClanTotal}
-              byUnique={cryptByClanUnique}
+              byTotal={cardsByClanTotal}
+              byUnique={cardsByClanUnique}
               target="crypt"
             />
             <div className="d-flex justify-content-end bold gray px-1">
-              {missingCryptByClanTotal[clan] ? (
+              {missingByClanTotal[clan] ? (
                 <>
-                  {missingCryptByClanTotal[clan]} (
-                  {Object.values(missingCryptByClan[clan]).length} uniq) miss
+                  {missingByClanTotal[clan]} (
+                  {Object.values(missingByClan[clan]).length} uniq) miss
                 </>
               ) : null}
             </div>
@@ -213,8 +222,8 @@ const InventoryCrypt = ({
         withCompact={withCompact}
         cards={
           compact
-            ? Object.values(cryptByClan['All'])
-            : Object.values(cryptByClan[clan])
+            ? Object.values(cardsByClan['All'])
+            : Object.values(cardsByClan[clan])
         }
         newFocus={newFocus}
       />

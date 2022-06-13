@@ -395,6 +395,8 @@ const InventoryLibrary = ({
       });
   }
 
+  console.log(cardsFilteredByDisciplineUnique);
+
   return (
     <>
       {!compact && (
