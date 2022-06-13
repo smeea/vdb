@@ -1,5 +1,14 @@
 [
   {
+    "version": "2022-06-13",
+    "changes": [
+      "Add Export all decks in csv/xslx",
+      "Fix sect/title search in crypt/library",
+      "Fix q-ty recalculation in inventory clan selector (to respect Show All, Only Owned, Only Problems filters)",
+      "Add notification on not-applied updates"
+    ]
+  },
+  {
     "version": "2022-06-11",
     "changes": [
       "Fix bugs in card search introduced after last update",
