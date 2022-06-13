@@ -48,17 +48,13 @@ const UpdateNotification = ({ appVersion }) => {
       animation={false}
       centered={true}
     >
-      <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-      >
-        <h5>
-          <div className="d-flex align-items-center">
-            <div className="d-flex pe-2">
-              <Activity />
-            </div>
-            Update available!
+      <Modal.Header className="py-2 px-3 py-md-3 px-md-4">
+        <div className="d-flex bold blue large align-items-center">
+          <div className="d-flex pe-2">
+            <Activity />
           </div>
-        </h5>
+          Update available!
+        </div>
         <Button variant="outline-secondary" onClick={() => setShow(false)}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
