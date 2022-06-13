@@ -243,11 +243,10 @@ const missingTitleCrypt = (filterTitles, card) => {
 
   if (card['Adv'] && card['Adv'][0]) {
     if (
-      RegExp(`(?<=\[MERGED\][\\s\\S]*)(${titles.join('|')})`, 'i').test(
-        card['Card Text']
-      )
-    )
+      RegExp(`\\[MERGED\\].*(${titles.join('|')})`, 'i').test(card['Card Text'])
+    ) {
       return false;
+    }
   }
 
   return true;
