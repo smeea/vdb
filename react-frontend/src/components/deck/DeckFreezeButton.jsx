@@ -4,7 +4,7 @@ import UnlockFill from 'assets/images/icons/unlock-fill.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckFreezeButton = ({ deck, inName }) => {
+const DeckFreezeButton = ({ deck }) => {
   const { deckUpdate } = useApp();
 
   const handleClick = () => {

@@ -511,7 +511,7 @@ const Decks = (props) => {
                         deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
                         isPublic={isPublic}
-                        folded={foldedDescription}
+                        folded={isMobile ? false : foldedDescription}
                         setFolded={setFoldedDescription}
                       />
                     </Col>

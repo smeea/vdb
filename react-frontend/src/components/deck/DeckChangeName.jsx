@@ -67,10 +67,14 @@ const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
             <Snow width="16" height="23" viewBox="0 0 16 16" />
           </InputGroup.Text>
         )}
-        {isAuthor && !isPublic && <DeckFreezeButton deck={deck} inName />}
+        {isAuthor && !isPublic && <DeckFreezeButton deck={deck} />}
 
         {isMobile && isAuthor && (
-          <Button variant={buttonState ? 'success' : 'primary'} type="submit">
+          <Button
+            variant={buttonState ? 'success' : 'primary'}
+            type="submit"
+            className="ms-1"
+          >
             <Check2 />
           </Button>
         )}
