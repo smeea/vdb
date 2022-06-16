@@ -5,6 +5,7 @@ import base64
 import os.path
 import json
 
+
 with open("cardbase_crypt.json", "r") as crypt_file:
     crypt_db = json.load(crypt_file)
 
@@ -36,6 +37,8 @@ cardtypes_sorted = [
 
 
 def deck_proxy(cards, lang):
+    CARD_IMAGES_PATH = "../react-frontend/dist/images/cards"
+
     crypt = {}
     library = {}
 
@@ -57,13 +60,15 @@ def deck_proxy(cards, lang):
             filename = unidecode(re.sub("[\\W]", "", card["Name"])).lower() + ".jpg"
 
         file = None
-        if "set" in v and os.path.exists(f"./cards/set/{v['set']}/{filename}"):
-            file = f"./cards/set/{v['set']}/{filename}"
+        if "set" in v and os.path.exists(
+            f"{CARD_IMAGES_PATH}/set/{v['set']}/{filename}"
+        ):
+            file = f"{CARD_IMAGES_PATH}/set/{v['set']}/{filename}"
         else:
-            if os.path.exists(f"./cards/{lang}/{filename}"):
-                file = f"./cards/{lang}/{filename}"
+            if os.path.exists(f"{CARD_IMAGES_PATH}/{lang}/{filename}"):
+                file = f"{CARD_IMAGES_PATH}/{lang}/{filename}"
             else:
-                file = f"./cards/en-EN/{filename}"
+                file = f"{CARD_IMAGES_PATH}/en-EN/{filename}"
 
         if k > 200000 and v["q"] > 0:
             crypt[card["Name"]] = {
