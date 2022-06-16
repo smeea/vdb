@@ -22,71 +22,8 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
   const [missingLibrary, setMissingLibrary] = useState(undefined);
 
   const calculateMissing = () => {
-    const missingCrypt = {};
-    const missingLibrary = {};
-
-    Object.keys(inventoryCrypt)
-      .filter((card) => {
-        if (clan === 'All' || cryptCardBase[card].Clan === clan) return true;
-      })
-      .map((card) => {
-        let softUsedMax = 0;
-        if (usedCryptCards.soft[card]) {
-          Object.keys(usedCryptCards.soft[card]).map((id) => {
-            if (softUsedMax < usedCryptCards.soft[card][id]) {
-              softUsedMax = usedCryptCards.soft[card][id];
-            }
-          });
-        }
-
-        let hardUsedTotal = 0;
-        if (usedCryptCards.hard[card]) {
-          Object.keys(usedCryptCards.hard[card]).map((id) => {
-            hardUsedTotal += usedCryptCards.hard[card][id];
-          });
-        }
-
-        const miss = softUsedMax + hardUsedTotal - inventoryCrypt[card].q;
-
-        if (miss > 0) {
-          missingCrypt[card] = { q: miss, c: inventoryCrypt[card].c };
-        }
-      });
-
-    Object.keys(inventoryLibrary)
-      .filter((card) => {
-        if (type !== 'All' && !libraryCardBase[card].Type.includes(type))
-          return false;
-        if (
-          discipline !== 'All' &&
-          !libraryCardBase[card].Discipline.includes(discipline)
-        )
-          return false;
-        return true;
-      })
-      .map((card) => {
-        let softUsedMax = 0;
-        if (usedLibraryCards.soft[card]) {
-          Object.keys(usedLibraryCards.soft[card]).map((id) => {
-            if (softUsedMax < usedLibraryCards.soft[card][id]) {
-              softUsedMax = usedLibraryCards.soft[card][id];
-            }
-          });
-        }
-
-        let hardUsedTotal = 0;
-        if (usedLibraryCards.hard[card]) {
-          Object.keys(usedLibraryCards.hard[card]).map((id) => {
-            hardUsedTotal += usedLibraryCards.hard[card][id];
-          });
-        }
-
-        const miss = softUsedMax + hardUsedTotal - inventoryLibrary[card].q;
-
-        if (miss > 0) {
-          missingLibrary[card] = { q: miss, c: inventoryLibrary[card].c };
-        }
-      });
+    const crypt = {};
+    const library = {};
 
     Object.keys(usedCryptCards.soft)
       .filter((card) => {
@@ -101,7 +38,7 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
             }
           });
 
-          missingCrypt[card] = { q: softUsedMax, c: cryptCardBase[card] };
+          crypt[card] = { q: softUsedMax, c: cryptCardBase[card] };
         }
       });
 
@@ -125,7 +62,7 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
             }
           });
 
-          missingLibrary[card] = { q: softUsedMax, c: libraryCardBase[card] };
+          library[card] = { q: softUsedMax, c: libraryCardBase[card] };
         }
       });
 
@@ -142,10 +79,10 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
             });
           }
 
-          if (missingCrypt[card]) {
-            missingCrypt[card].q += hardUsedTotal;
+          if (crypt[card]) {
+            crypt[card].q += hardUsedTotal;
           } else {
-            missingCrypt[card] = { q: hardUsedTotal, c: cryptCardBase[card] };
+            crypt[card] = { q: hardUsedTotal, c: cryptCardBase[card] };
           }
         }
       });
@@ -170,10 +107,10 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
             });
           }
 
-          if (missingLibrary[card]) {
-            missingLibrary[card].q += hardUsedTotal;
+          if (library[card]) {
+            library[card].q += hardUsedTotal;
           } else {
-            missingLibrary[card] = {
+            library[card] = {
               q: hardUsedTotal,
               c: libraryCardBase[card],
             };
@@ -181,8 +118,8 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
         }
       });
 
-    setMissingCrypt(missingCrypt);
-    setMissingLibrary(missingLibrary);
+    setMissingCrypt(crypt);
+    setMissingLibrary(library);
   };
 
   const handleClose = () => {
@@ -209,11 +146,12 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
       {showModal && (
         <DeckMissingModal
           deck={{
-            name: 'Missing card for Inventory',
+            name: 'Missing cards for Inventory',
             author: username,
             description: '',
             crypt: missingCrypt,
             library: missingLibrary,
+            deckid: 'missingInInventory',
           }}
           show={showModal}
           handleClose={handleClose}

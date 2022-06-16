@@ -44,9 +44,9 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
   const ButtonOptions = (
     <>
       <ExportDropdown action="save" format="text" />
-      <ExportDropdown action="save" format="twd" />
       {!inMissing && (
         <>
+          <ExportDropdown action="save" format="twd" />
           <ExportDropdown action="save" format="lackey" />
           <ExportDropdown action="save" format="jol" />
         </>
@@ -56,9 +56,9 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
       <Dropdown.Divider />
 
       <ExportDropdown action="copy" format="text" />
-      <ExportDropdown action="copy" format="twd" />
       {!inMissing && (
         <>
+          <ExportDropdown action="copy" format="twd" />
           <ExportDropdown action="copy" format="lackey" />
           <ExportDropdown action="copy" format="jol" />
         </>
@@ -87,7 +87,7 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
       src: src,
     };
 
-    if (input.deckid == 'deckInUrl') {
+    if (input.deckid === 'deckInUrl' || inMissing) {
       const cards = {};
       Object.keys(deck.crypt).map((key) => {
         cards[key] = deck.crypt[key].q;
@@ -139,7 +139,7 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
       src: src,
     };
 
-    if (input.deckid == 'deckInUrl') {
+    if (input.deckid === 'deckInUrl' || inMissing) {
       const cards = {};
       Object.keys(deck.crypt).map((key) => {
         cards[key] = deck.crypt[key].q;

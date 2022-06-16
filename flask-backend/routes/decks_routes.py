@@ -630,12 +630,16 @@ def importDeck():
 def deckExportRoute():
     try:
         result = None
+
         if request.json["deckid"] == "all" and current_user.is_authenticated:
             decks = Deck.query.filter_by(author=current_user).all()
             result = deck_export_all(decks, request.json["format"])
 
-        elif request.json["src"] == "twd":
+        elif "deck" in request.json:
+            deck = request.json["deck"]
+            result = deck_export(deck, request.json["format"])
 
+        elif request.json["src"] == "twd":
             deckid = request.json["deckid"]
             with open("twd_decks_by_id.json", "r") as twd_decks_file:
                 twd_decks = json.load(twd_decks_file)
@@ -661,10 +665,6 @@ def deckExportRoute():
                     "description": "Preconstructed deck",
                 }
                 result = deck_export(deck, request.json["format"])
-
-        elif request.json["deckid"] == "deckInUrl":
-            deck = request.json["deck"]
-            result = deck_export(deck, request.json["format"])
 
         elif request.json["src"] == "shared" or request.json["src"] == "my":
             d = Deck.query.get(request.json["deckid"])

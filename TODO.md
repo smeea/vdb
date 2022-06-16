@@ -1,5 +1,7 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
+- DeckMissing / InventoryMissing export missing
+- Use one images directory instead of separate frontend-backend
 
 # FEATURES
 

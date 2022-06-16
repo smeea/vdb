@@ -54,11 +54,7 @@ const DeckMissingModal = ({ deck, show, handleClose, inInventory }) => {
             }
           >
             <div className="ps-2">
-              <DeckExportButton
-                inMissing={true}
-                deck={deck}
-                activeDeck={{ src: 'shared', deckid: 'deckInUrl' }}
-              />
+              <DeckExportButton inMissing={true} deck={deck} />
             </div>
           </div>
         </Container>
