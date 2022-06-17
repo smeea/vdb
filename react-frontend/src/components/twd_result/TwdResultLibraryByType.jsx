@@ -72,7 +72,12 @@ function TwdResultLibraryByType(props) {
           <td className="name">
             <OverlayTrigger
               placement="right"
-              overlay={<TypePopover cards={libraryByType[cardtype]} />}
+              overlay={
+                <TypePopover
+                  className="light-border"
+                  cards={libraryByType[cardtype]}
+                />
+              }
             >
               <div>
                 {cardtype} [{libraryByTypeTotal[cardtype]}]
