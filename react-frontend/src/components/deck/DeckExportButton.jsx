@@ -8,6 +8,7 @@ import {
 } from 'react-bootstrap';
 import Download from 'assets/images/icons/download.svg';
 import { ErrorOverlay } from 'components';
+import { useDeckExport } from 'hooks';
 import { useApp } from 'context';
 
 const DeckExportButton = ({ deck, src, inMissing }) => {
@@ -78,99 +79,57 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
   );
 
   const copyDeck = (format) => {
-    setError(false);
-    setSpinnerState(true);
-
-    const input = {
-      deckid: deck.deckid,
-      format: format,
-      src: src,
-    };
-
-    if (input.deckid === 'deckInUrl' || inMissing) {
-      const cards = {};
-      Object.keys(deck.crypt).map((key) => {
-        cards[key] = deck.crypt[key].q;
-      });
-      Object.keys(deck.library).map((key) => {
-        cards[key] = deck.library[key].q;
-      });
-
-      input.deck = {
-        cards: cards,
-        name: deck.name,
-        description: deck.description,
-        author: deck.author,
-      };
-    }
-
-    const url = `${process.env.API_URL}decks/export`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(input),
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        setSpinnerState(false);
-        navigator.clipboard.writeText(data.deck);
-        setShowMenuButtons(false);
-        setShowFloatingButtons(true);
-      })
-      .catch((error) => {
-        setSpinnerState(false);
-        setError(true);
-      });
+    const exportText = useDeckExport(deck, format);
+    navigator.clipboard.writeText(exportText);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const saveDeck = (format) => {
     setError(false);
-    setSpinnerState(true);
 
-    const input = {
-      deckid: deck.deckid,
-      format: format,
-      src: src,
-    };
-
-    if (input.deckid === 'deckInUrl' || inMissing) {
-      const cards = {};
-      Object.keys(deck.crypt).map((key) => {
-        cards[key] = deck.crypt[key].q;
-      });
-      Object.keys(deck.library).map((key) => {
-        cards[key] = deck.library[key].q;
-      });
-
-      input.deck = {
-        cards: cards,
-        name: deck.name,
-        description: deck.description,
-        author: deck.author,
-      };
+    let deckName = deck.name;
+    if (deck.branchName) {
+      deckName += ` [${deck['branchName']}]`;
     }
 
-    const url = `${process.env.API_URL}decks/export`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(input),
-    };
-
-    const fetchPromise = fetch(url, options);
-
     if (format === 'xlsx' || format === 'csv') {
-      fetchPromise
+      setSpinnerState(true);
+
+      const input = {
+        deckid: deck.deckid,
+        format: format,
+        src: src,
+      };
+
+      if (input.deckid === 'deckInUrl' || inMissing) {
+        const cards = {};
+        Object.keys(deck.crypt).map((key) => {
+          cards[key] = deck.crypt[key].q;
+        });
+        Object.keys(deck.library).map((key) => {
+          cards[key] = deck.library[key].q;
+        });
+
+        input.deck = {
+          cards: cards,
+          description: deck.description,
+          author: deck.author,
+        };
+      }
+
+      const url = `${process.env.API_URL}decks/export`;
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(input),
+      };
+
+      fetch(url, options)
         .then((response) => response.text())
         .then((data) => {
           let mime = 'data:text/csv';
@@ -180,7 +139,7 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
           }
 
           const file = `${mime};base64,${data}`;
-          saveAs(file, `${deck['name']}.${format}`);
+          saveAs(file, `${deckName}.${format}`);
           setSpinnerState(false);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
@@ -190,43 +149,34 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
           setError(true);
         });
     } else {
-      fetchPromise
-        .then((response) => response.json())
-        .then((data) => {
-          const file = new File(
-            [data.deck],
-            `${data.name} [${data.format}].txt`,
-            { type: 'text/plain;charset=utf-8' }
-          );
-          saveAs(file);
-          setSpinnerState(false);
-          setShowMenuButtons(false);
-          setShowFloatingButtons(true);
-        })
-        .catch((error) => {
-          setSpinnerState(false);
-          setError(true);
-        });
+      const exportText = useDeckExport(deck, format);
+
+      const file = new File([exportText], `${deckName} [${format}].txt`, {
+        type: 'text/plain;charset=utf-8',
+      });
+      saveAs(file);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
     }
   };
 
   const exportAll = (format) => {
     setError(false);
-    setSpinnerState(true);
-    const url = `${process.env.API_URL}decks/export`;
+    import('jszip').then((Jszip) => {
+      if (format === 'xlsx' || format === 'csv') {
+        setSpinnerState(true);
 
-    if (format === 'xlsx' || format === 'csv') {
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: null,
-      };
+        const url = `${process.env.API_URL}decks/export`;
+        const options = {
+          method: 'POST',
+          mode: 'cors',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: null,
+        };
 
-      import('jszip').then((Jszip) => {
         const zip = new Jszip();
         const date = new Date().toISOString().substring(0, 10);
 
@@ -262,45 +212,21 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
             .then((blob) => saveAs(blob, `Decks ${date} [${format}].zip`));
           setSpinnerState(false);
         });
-      });
-    } else {
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          deckid: 'all',
-          format: format,
-        }),
-      };
+      } else {
+        const zip = new Jszip();
+        const date = new Date().toISOString().substring(0, 10);
 
-      fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-          import('jszip')
-            .then((Jszip) => {
-              const zip = new Jszip();
-              const date = new Date().toISOString().substring(0, 10);
-
-              data.map((d) => {
-                zip
-                  .folder(`Decks ${date} [${format}]`)
-                  .file(`${d.name}.txt`, d.deck);
-              });
-              zip
-                .generateAsync({ type: 'blob' })
-                .then((blob) => saveAs(blob, `Decks ${date} [${format}].zip`));
-              setSpinnerState(false);
-            })
-            .catch((error) => {
-              setError(true);
-              setSpinnerState(false);
-            });
+        Object.values(decks).map((deck) => {
+          zip
+            .folder(`Decks ${date} [${format}]`)
+            .file(`${deck.name}.txt`, useDeckExport(deck, format));
         });
-    }
+
+        zip
+          .generateAsync({ type: 'blob' })
+          .then((blob) => saveAs(blob, `Decks ${date} [${format}].zip`));
+      }
+    });
   };
 
   return (

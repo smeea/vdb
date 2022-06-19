@@ -5,7 +5,6 @@ import uuid
 import json
 
 from deck_export import deck_export
-from deck_export_all import deck_export_all
 from deck_import import deck_import
 from deck_proxy import deck_proxy
 from deck_recommendation import deck_recommendation
@@ -631,11 +630,7 @@ def deckExportRoute():
     try:
         result = None
 
-        if request.json["deckid"] == "all" and current_user.is_authenticated:
-            decks = Deck.query.filter_by(author=current_user).all()
-            result = deck_export_all(decks, request.json["format"])
-
-        elif "deck" in request.json:
+        if "deck" in request.json:
             deck = request.json["deck"]
             result = deck_export(deck, request.json["format"])
 
@@ -679,10 +674,7 @@ def deckExportRoute():
             }
             result = deck_export(deck, request.json["format"])
 
-        if request.json["format"] == "xlsx" or request.json["format"] == "csv":
-            return result
-        else:
-            return jsonify(result)
+        return result
 
     except Exception:
         print(request.json)

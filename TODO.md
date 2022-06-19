@@ -1,5 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
+- Clone decks with revision
 
 # FEATURES
 
@@ -8,7 +9,7 @@
 - Script to update images from static.krcg.org
 
 # IMPROVE TECHNOLOGY - FRONTEND
-- Move export to frontend
+- Move export to csv/excel to frontend
 - Move import to frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
