@@ -89,8 +89,7 @@ const About = (props) => {
                   <b>Amaranth</b>
                 </a>
                 <br />
-                Online card search and deck-building tool. I use *many* ideas
-                from Amaranth
+                Online card search and deck-building tool
               </p>
 
               <p>

@@ -27,6 +27,7 @@ import {
   DeckChangeBranchName,
   DeckChangeAuthor,
   DeckChangeDescription,
+  DeckNewDeck,
 } from 'components';
 import { useApp } from 'context';
 
@@ -633,6 +634,9 @@ const Decks = (props) => {
               <div className="text-align-center blue bold py-2">
                 Or browse official preconstructed decks or Tournament Winning
                 Decks (TWD)
+              </div>
+              <div className="d-flex justify-content-center pt-3">
+                <DeckNewDeck setShowInfo={setShowInfo} />
               </div>
             </Col>
           </Row>
