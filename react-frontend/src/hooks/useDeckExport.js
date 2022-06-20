@@ -1,20 +1,20 @@
 import { resultCryptSort } from 'utils';
 
 const getCryptTitle = (crypt) => {
-  cryptTotalCap = 0;
-  capacityList = [];
+  let cryptTotalCap = 0;
+  const capacityList = [];
 
   Object.values(crypt).map((card) => {
     cryptTotalCap += card.c['Capacity'] * card.q;
     for (let i = 0; i < card.q; i++) capacityList.push(card.c['Capacity']);
   });
   capacityList.sort();
-  cryptTotalCards = capacityList.length;
-  cryptAvg = cryptTotalCards
+  const cryptTotalCards = capacityList.length;
+  const cryptAvg = cryptTotalCards
     ? Math.round((cryptTotalCap / cryptTotalCards) * 100) / 100
     : 0;
-  cryptMin = 0;
-  cryptMax = 0;
+  let cryptMin = 0;
+  let cryptMax = 0;
 
   const counter = capacityList.length >= 4 ? 4 : capacityList.length;
   for (let i = 0; i < counter; i++) {
