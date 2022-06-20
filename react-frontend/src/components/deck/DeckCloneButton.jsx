@@ -60,6 +60,9 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
               crypt: { ...deck.crypt },
               library: { ...deck.library },
               timestamp: now.toUTCString(),
+              branchName: null,
+              branches: [],
+              master: null,
               is_yours: true,
             },
           }));

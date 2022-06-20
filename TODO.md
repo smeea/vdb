@@ -1,6 +1,5 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Clone decks with revision
 
 # FEATURES
 
