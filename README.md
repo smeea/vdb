@@ -61,13 +61,13 @@ Now go to http://localhost:1234 in the browser and you are ready to go.
 ### FOR PRODUCTION
 
 For production, in addition to the steps above, you should at least:
-* setup web-server (we use `nginx`) instead of `parcel` embedded server
-* setup wsgi-server (we use `gunicorn`) instead of `flask` embedded server
-* build frontend for production (see your prefered bundler documentation, for `parcel` use `parcel build index.html`)
+* setup web-server (we use `nginx`) instead of `parcel serve` embedded server
+* setup wsgi-server (we use `gunicorn`) instead of `flask run` embedded server
+* build frontend for production (see your prefered bundler documentation, for `parcel` use `parcel build --no-cache index.html`)
 * change `app.config['SECRET_KEY']` in `config.py`
 
 For reference:
-Public instance at https://vdb.im runs from master branch without any changes (except database, which is excluded from this repo) using `gunicorn` and `nginx`.
+Public instance at https://vdb.im runs from master branch without any changes using `gunicorn` (`gunicorn wsgi:app`) and `nginx` (sample configuration is in `/misc/nginx.conf`).
 
 ### UPDATE CARDS, TWD
 ```
