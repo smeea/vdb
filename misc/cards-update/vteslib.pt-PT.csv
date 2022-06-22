@@ -1052,13 +1052,11 @@ Um anarquista que você controla recebe +1 de percepção. Também é utilizáve
 [ani] Somente utilizável durante uma ação direcionada a você (ou a uma carta que você controle) +2 de percpeção.
 [for] Reduza um sangrar contra você em 2.
 [pro] Somente utilizável por um vampiro travado. Este vampiro queima 1 de sangue e destrava.
-
 "
 102222,Olhos da Selva,"Somente utilizável por um Gangrel travado.
 Este Gangrel destrava e tenta bloquear. Durante esta ação, este Gangrel pode queimar 1 de sangue para receber +1 de percepção. Trave este Gangrel após a resolução da ação se ele ou ela não bloqueou esta ação."
 102224,Forma de Cobra,"[pro] [COMBAT] Golpe: Roube 1 de sangue ou vida (se tornando sangue).
 [PRO] [ACTION MODIFIER] Somente utilizável quando a ação é anunciada. +1 de furtividade, mesmo se furtividade ainda não for necessária.
-
 "
 102231,Festa fora dos Limites,"Requer um Anarquista.
 [obf] Reduza um sangrar contra você em 2.

@@ -15,9 +15,25 @@
         "Name":"Abid bin Haji, Estudioso dos Espelhos",
         "Card Text":"Camarilla: Sangue Amaldi\u00e7oado."
     },
+    "201460":{
+        "Name":"Abutre",
+        "Card Text":"Anarquista: Uma vez por turno, um Anarquista que voc\u00ea controla pode destravar depois de equipar um ve\u00edculo com sucesso de sua m\u00e3o."
+    },
+    "200010":{
+        "Name":"Accorri Giovanni",
+        "Card Text":"Independente."
+    },
     "200011":{
         "Name":"Adana de Sforza",
         "Card Text":"Brujah do C\u00edrculo Interno da Camarilla: Cartas de combate custam 1 de sangue a menos para Adana. +2 de sangrar."
+    },
+    "200018":{
+        "Name":"Afifa, a Arauta",
+        "Card Text":"Camarilla: Quando voc\u00ea coloca uma carta Gehenna em jogo, sua presa queima 1 de recurso. Se voc\u00ea n\u00e3o colocar uma carta Gehenna em jogo durante sua fase de descarte, um vampiro pronto que voc\u00ea controla, exceto Afifa, queima 1 sangue ou voc\u00ea queima 1 recurso."
+    },
+    "200026":{
+        "Name":"Aimee Laroux",
+        "Card Text":"Independente: Voc\u00ea pode usar quatro transfer\u00eancias e queimar 1 de recurso para dar a Aimee um n\u00edvel adicional de Melpominee [mel]. Aimee n\u00e3o pode jogar cartas de rea\u00e7\u00e3o."
     },
     "200028":{
         "Name":"Aisata Swanou",
@@ -27,6 +43,10 @@
         "Name":"Aiyana, A Pega-Lobos",
         "Card Text":"Sab\u00e1: Aiyana recebe um pressionar opcional a cada combate quando em combate com um lobisomem, e ela pode queimar 1 sangue a cada round para previnir todo o dano que um lobisomem infligiria a ela naquele combate. Est\u00e9ril."
     },
+    "200034":{
+        "Name":"Aksinya Daclau",
+        "Card Text":"Sab\u00e1: Uma vez a cada turno durante uma a\u00e7\u00e3o de sangrar contra voc\u00ea, se Aksinya estiver pronta e destravada, voc\u00ea pode descartar uma carta mestre de sua m\u00e3o para redirecionar o sangramento para qualquer outro Matusal\u00e9m."
+    },
     "200035":{
         "Name":"Al-Ashrad, Amr de Alamut",
         "Card Text":"Independente: Al-Ashrad pode queimar um local que requeira um cl\u00e3 como uma a\u00e7\u00e3o (D) que custa 2 de sangue. Sangue Amaldi\u00e7oado. +1 de sangrar."
@@ -35,6 +55,10 @@
         "Name":"Al-Ashrad, Amr de Alamut",
         "Card Text":"Camarilla: Durante o primeiro round de combate, Al-Ashrad pode usar golpes que requeiram Feiti\u00e7aria de Sangue [tha] que n\u00e3o podem ser usados no primeiro round. Sangue Amaldi\u00e7oado.\n[MERGED] C\u00edrculo Interno Assamita: +1 de sangrar."
     },
+    "200039":{
+        "Name":"Alab\u00e1strom",
+        "Card Text":"Anarquista: Se Alab\u00e1strom estiver pronto durante o seu turno, voc\u00ea pode desbloquear outro G\u00e1rgula pronto que voc\u00ea controla. Voo [FLIGHT]."
+    },
     "200046":{
         "Name":"Alessandro Garcia",
         "Card Text":"Sab\u00e1: Alessandro recebe +1 de for\u00e7a em combate com um Lasombra."
@@ -42,6 +66,10 @@
     "200047":{
         "Name":"Alex Camille",
         "Card Text":"Sab\u00e1: Durante uma a\u00e7\u00e3o, Alex pode queimar 1 de sangue para ganhar +1 de percep\u00e7\u00e3o."
+    },
+    "200048":{
+        "Name":"Alex Wilkins",
+        "Card Text":"Camarilla: Se Alex sangrar com sucesso, o Matusal\u00e9m alvo pode queimar 1 de recurso adicional para roub\u00e1-lo ap\u00f3s a resolu\u00e7\u00e3o."
     },
     "200053":{
         "Name":"Ali Kar",
@@ -58,6 +86,10 @@
     "200057":{
         "Name":"Allonzo Montoya",
         "Card Text":"Independente: Allonzo recebe +1 de furtividade em a\u00e7\u00f5es que requerem Serpentis [ser]. Allonzo n\u00e3o pode bloquear a\u00e7\u00f5es indiretas. Escar\u00e7o. Est\u00e9ril."
+    },
+    "200059":{
+        "Name":"Almodo Giovanni",
+        "Card Text":"Independente."
     },
     "200597":{
         "Name":"Alto Sacerdote Angra Mainyu",
@@ -79,13 +111,49 @@
         "Name":"Amavi",
         "Card Text":"Laibon: +1 de sangrar."
     },
+    "200068":{
+        "Name":"Ambrogino Giovanni",
+        "Card Text":"Independente. 1 voto (titulado): +1 de sangrar"
+    },
+    "200069":{
+        "Name":"Ambrogino Giovanni",
+        "Card Text":"Independente: Durante sua fase de destravar, Ambrogino pode remover sete cartas em sua pilha de cinzas do jogo para ganhar 2 de sangue. Lista Vermelha. +1 de sangrar.\n[MERGED] +1 de furtividade.\""
+    },
     "200071":{
         "Name":"Amelia",
         "Card Text":"Bispo do Sab\u00e1: Amelia pode entrar em combate com qualquer vampiro de capacidade abaixo de 4 controlado por outro Matusal\u00e9m como uma a\u00e7\u00e3o (D) com +1 de furtividade."
     },
+    "200076":{
+        "Name":"Anarquista Convertido",
+        "Card Text":"Anarquista: Conforme o convertido entra em jogo, voc\u00ea pode remov\u00ea-lo do jogo para transformar um vampiro sem t\u00edtulo que voc\u00ea controla em Anarquista e ganhar 1 reserva ou comprar 1 carta de sua cripta."
+    },
+    "200077":{
+        "Name":"Anastasia Grey",
+        "Card Text":"Camarilla."
+    },
+    "200081":{
+        "Name":"Andr\u00e9 o Manipulator",
+        "Card Text":"Camarilla: Enquanto Andr\u00e9 estiver pronto, voc\u00ea ganha +2 de tamanho de m\u00e3o."
+    },
+    "200082":{
+        "Name":"Andrea Giovanni",
+        "Card Text":"Independente: Andrea recebe +1 de furtividade durante a\u00e7\u00f5es que requerem Necromancia [nec]."
+    },
+    "200087":{
+        "Name":"Andy",
+        "Card Text":"Camarilla: Um vampiro mais velho que se op\u00f5e a Andy recebe um pressionar opcional a cada combate."
+    },
     "200088":{
         "Name":"Angel",
         "Card Text":"Camarilla."
+    },
+    "200091":{
+        "Name":"Angela Preston",
+        "Card Text":"Camarilla: Angela deve queimar 1 sangue para tentar bloquear um vampiro mais velho. Voc\u00ea pode bloquear Angela durante sua fase de influ\u00eancia para desbloquear qualquer outro vampiro."
+    },
+    "200095":{
+        "Name":"Angus the Unruled",
+        "Card Text":"Gangrel Justicar da Camarilla: +1 de for\u00e7a."
     },
     "200104":{
         "Name":"Annazir",
@@ -94,6 +162,14 @@
     "200108":{
         "Name":"Antara",
         "Card Text":"Independente: Antara recebe +1 de intercepta\u00e7\u00e3o contra vampiros do Sab\u00e1. Ele queima 1 sangue ap\u00f3s qualquer Matusal\u00e9m jogar um evento da Gehenna. Sangue amaldi\u00e7oado."
+    },
+    "200111":{
+        "Name":"Antoinette Dubois",
+        "Card Text":"Independente: Toreador e Toreador antitribu n\u00e3o podem bloquear Antoinette. -1 de percep\u00e7\u00e3o."
+    },
+    "200112":{
+        "Name":"Antoinette DuChamp",
+        "Card Text":"Camarilla: Cartas de a\u00e7\u00e3o e cartas de ataque que requerem Rapidez [cel] custam a Antonieta um sangue adicional."
     },
     "200115":{
         "Name":"Antonino",
@@ -118,6 +194,18 @@
     "200126":{
         "Name":"Appolonius",
         "Card Text":"Anarquista: Appolonius recebe +1 de sangrar para cada vampiro titulado controlado pelo Matusal\u00e9m alvo.\n[MERGED] Bar\u00e3o de Londres: Appolonius pode entrar em combate co mum servo como uma a\u00e7\u00e3o (D)"
+    },
+    "201308":{
+        "Name":"Aranha",
+        "Card Text":"Sab\u00e1: Aranha pode roubar uma arma como um golpe. Se Aranha for bloqueado e o servo bloqueador ainda estiver pronto no final da a\u00e7\u00e3o, Aranha queima 1 de sangue."
+    },
+    "200130":{
+        "Name":"Aren, Padre de  Eshu",
+        "Card Text":"Laibon: Aren recebe +1 de furtividade em a\u00e7\u00f5es pol\u00edticas. Qualquer vampiro votando ou lan\u00e7ando balotes contra um referendo convocado por Aren queima 1 sangue quando os resultados s\u00e3o computados."
+    },
+    "200131":{
+        "Name":"Ariadne",
+        "Card Text":"Camarilla: Ca\u00e7adas de sangue n\u00e3o podem ser convocadas em Ariadne. +1 ca\u00e7a."
     },
     "200132":{
         "Name":"Ariane",
@@ -147,6 +235,10 @@
         "Name":"Atiena",
         "Card Text":"Bar\u00e3o Anarquista de Mombasa"
     },
+    "200149":{
+        "Name":"Augustus Giovanni",
+        "Card Text":"Independente. 2 votos (titulado): Se um vampiro que voc\u00ea controla foi queimado desde seu \u00faltimo turno, Augustus pode mover esse vampiro de sua pilha de cinzas para a regi\u00e3o pronta (sem sangue) como uma a\u00e7\u00e3o que custa 1 de recurso. +1 sangramento."
+    },
     "200151":{
         "Name":"Axel Von Anders",
         "Card Text":"Sab\u00e1."
@@ -158,6 +250,10 @@
     "200155":{
         "Name":"Aziz, Dammar de Istanbul",
         "Card Text":"Independente. 2 votos (titulado): Ponha um contador de Status em Azis depois que um vampiro se opondo a ele for queimado em combate. Ele recebe +1 voto para cada contador de status que possuir. Sangue Amaldi\u00e7oado. +1 de for\u00e7a."
+    },
+    "200159":{
+        "Name":"Badger",
+        "Card Text":"Camarilla."
     },
     "200161":{
         "Name":"Badr al-Budur",
@@ -171,17 +267,53 @@
         "Name":"Bakr",
         "Card Text":"Independente: Bakr pode entrar em combate com um servo como uma a\u00e7\u00e3o com +1 de furtividade que custa 1 sangue. Sangue amaldi\u00e7oado."
     },
+    "200164":{
+        "Name":"Baldesar Rossellini",
+        "Card Text":"Independente: Uma vez a cada turno, se Baldesar estiver pronto, ele pode reduzir o custo de um local ou de um equipamento que voc\u00ea joga em 1 ponto de sangue ou recurso. +1 for\u00e7a."
+    },
     "200166":{
         "Name":"Barbaro Lucchese",
         "Card Text":"Independente: B\u00e1rbaro pode colocar um marcador de m\u00e1cula em um servo como uma a\u00e7\u00e3o (D) com +1 de furtividade. Se um servo tiver 2 marcadores de m\u00e1cula, queime esses marcadores para torn\u00e1-lo infernal. B\u00e1rbaro pode mudar seu cl\u00e3 para Tremere antitribu como a\u00e7\u00e3o com +1 de furtividade. Infernal."
+    },
+    "200174":{
+        "Name":"Basilia",
+        "Card Text":"Primog\u00eanito da Camarilla: O dano dos golpes de m\u00e3o de Basilia \u00e9 agravado."
+    },
+    "200176":{
+        "Name":"Batsheva",
+        "Card Text":"Laibon: Batsheva recebe +1 de for\u00e7a em combate com um Tzimisce."
+    },
+    "200177":{
+        "Name":"Batsheva",
+        "Card Text":"Avan\u00e7ado, Laibon: Batsheva recebe +1 de for\u00e7a em combate com um Malkaviano.\n[MERGED] +1 de for\u00e7a (al\u00e9m de seu b\u00f4nus contra Malkavian e Tzimisce)."
+    },
+    "200178":{
+        "Name":"Bear Paw",
+        "Card Text":"Camarilla."
+    },
+    "200181":{
+        "Name":"B\u00e9atrice \"Oracle171\" Tremblay",
+        "Card Text":"Durante sua fase de destravar, outro imbu\u00eddo pronto que voc\u00ea controla sofre 1 dano imprevin\u00edvel. +1 de sangrar."
     },
     "200183":{
         "Name":"Beckett",
         "Card Text":"Independente: Beckett pode fazer com que voc\u00ea compre 3 cartas de sua biblioteca com uma a\u00e7\u00e3o com +1 de furtividade. Descarte para seu tamanho de m\u00e3o ap\u00f3s isso."
     },
+    "200184":{
+        "Name":"Beckett",
+        "Card Text":"Avan\u00e7ado, Independente: Enquanto Beckett est\u00e1 pronto, voc\u00ea tem +X tamanho de m\u00e3o, onde X \u00e9 o n\u00famero de cartas Gehenna em jogo. Se Beckett sair da regi\u00e3o pronta, descarte sua m\u00e3o."
+    },
     "200187":{
         "Name":"Bela Kardoza",
         "Card Text":"Sab\u00e1: Durante um referendo, Bela pode queimar X sangue para obter X votos adicionais."
+    },
+    "200189":{
+        "Name":"Benedito Giovanni, Agente",
+        "Card Text":"Independente: Durante sua fase de destravar, qualquer Giovanni mais velho que o Giovanni pronto mais antigo que voc\u00ea controla pode queimar 1 sangue para roubar Benedito. Ele n\u00e3o pode bloquear a\u00e7\u00f5es n\u00e3o direcionadas."
+    },
+    "200191":{
+        "Name":"Bernard, o Flagelo",
+        "Card Text":"Camarilla: Bernard pode convocar uma ca\u00e7ada de sangue em um vampiro com capacidade 4 ou menos como uma a\u00e7\u00e3o pol\u00edtica furtiva +1."
     },
     "200192":{
         "Name":"Bertrand d'Anjou",
@@ -191,6 +323,10 @@
         "Name":"Beth Malcolm",
         "Card Text":"Camarilla: +1 de sangrar."
     },
+    "200195":{
+        "Name":"Bez Dunsirn",
+        "Card Text":"Independente: Depois de Bez sair da regi\u00e3o pronta, descarte duas cartas aleat\u00f3riamente."
+    },
     "200196":{
         "Name":"Bianca",
         "Card Text":"Camarilla: +1 de For\u00e7a"
@@ -199,9 +335,17 @@
         "Name":"Bijou",
         "Card Text":"Camarilla."
     },
+    "200197":{
+        "Name":"Bill Butler",
+        "Card Text":"Sab\u00e1."
+    },
     "200198":{
         "Name":"Billy",
         "Card Text":"Sab\u00e1."
+    },
+    "200205":{
+        "Name":"Blaise",
+        "Card Text":"Sab\u00e1: +1 for\u00e7a."
     },
     "200211":{
         "Name":"Bobby Lemon",
@@ -227,10 +371,6 @@
         "Name":"Brooke",
         "Card Text":"Sab\u00e1."
     },
-    "200224":{
-        "Name":"Brunilda",
-        "Card Text":"Bar\u00e3o Anarquista de Estocolmo: A\u00e7\u00f5es para se tornar Anarquista custam aos vampiros que voc\u00ea controla 0 de sangue.\n[MERGED] Brunilda pode entrar em combate com um vampiro n\u00e3o Anarquista com uma a\u00e7\u00e3o (D)."
-    },
     "200223":{
         "Name":"Brunilda",
         "Card Text":"Bar\u00e3o Anarquista de Estocolmo: A\u00e7\u00f5es para se tornar Anarquista custam aos vampiros que voc\u00ea controla 0 de sangue.\n[MERGED] Brunilda pode entrar em combate com um vampiro n\u00e3o Anarquista com uma a\u00e7\u00e3o (D)."
@@ -239,13 +379,81 @@
         "Name":"Bryan Van Duesen",
         "Card Text":"Sab\u00e1: +1 de sangrar."
     },
+    "200230":{
+        "Name":"C.J.",
+        "Card Text":"Independente."
+    },
+    "200233":{
+        "Name":"Caitlin",
+        "Card Text":"Bispo Sab\u00e1."
+    },
+    "200264":{
+        "Name":"Calced\u00f4nia",
+        "Card Text":"Camarilla: Cartas que exigem uma G\u00e1rgula custam a Calced\u00f4nia 1 sangue ou reserva a menos. V\u00f4o [FLIGHT]. Escravo Tremere."
+    },
+    "200238":{
+        "Name":"Calvin Cleaver",
+        "Card Text":"Camarilla: Calvin pode adicionar 1 de sangue a um anarquista como uma a\u00e7\u00e3o com +1 de furtividade. Uma vez a cada turno, um anarquista pode adicionar 1 de sangue a Calvin como uma a\u00e7\u00e3o com +1 de furtividade."
+    },
+    "200240":{
+        "Name":"Camille Devereux, Corvo",
+        "Card Text":"Camarilla."
+    },
     "200244":{
         "Name":"Carlak",
         "Card Text":"Pr\u00edncipe Camarilla de Praga: Uma vez que os resultados de um referendo s\u00e3o computados, Carlak ganha 1 sangue para cada Matusal\u00e9m que n\u00e3o votar a favor e lan\u00e7ar 1 ou mais votos contra o referendo. Ele recebe 1 pressionar opcional a cada combate."
     },
+    "200245":{
+        "Name":"Carlotta Giovanni",
+        "Card Text":"Independente: Carlotta pode trocar uma carta de sua m\u00e3o por uma carta de biblioteca em sua pilha de cinzas como uma a\u00e7\u00e3o com +1  de furtividade que custa 1 sangue."
+    },
+    "200247":{
+        "Name":"Carmine Giovanni",
+        "Card Text":"Independente. 2 votos (titulado): Apari\u00e7\u00f5es entram em jogo com 1 vida adicional. Carmine pode travar para dar a qualquer aliado +1 de furtividade."
+    },
+    "201301":{
+        "Name":"Casc\u00e3o O Ignorado",
+        "Card Text":"Camarilla: Depois que Casc\u00e3o diableriza um vampiro mais velho pela primeira vez, ele recebe +1 de for\u00e7a."
+    },
+    "201521":{
+        "Name":"Casey Snyder",
+        "Card Text":"Bar\u00e3o Anarquista  de Colombo."
+    },
+    "200257":{
+        "Name":"Cedric",
+        "Card Text":"Camarilha. Escravo Tremere: Se Cedric bloquear com sucesso uma a\u00e7\u00e3o (D), ele pode queimar 1 sangue quando a a\u00e7\u00e3o terminar (ap\u00f3s o combate, se houver) para destravar. Voo [FLIGHT]."
+    },
+    "200259":{
+        "Name":"C\u00e9leste Lamontagne",
+        "Card Text":"Sab\u00e1: C\u00e9leste pode golpear: fim de combate em combate com um lobisomem. Ela recebe +1 de percep\u00e7\u00e3o contra vampiros da Camarilla cujo controlador controla quaisquer cartas da Gehenna."
+    },
+    "200258":{
+        "Name":"C\u00e9leste, a Voz de um Segredo",
+        "Card Text":"Independente: C\u00e9leste recebe -1 de percep\u00e7\u00e3o ao tentar bloquear uma a\u00e7\u00e3o de sangrar. C\u00e9leste recebe +1 de sangrar ao sangrar um Matusal\u00e9m que controla um Toreador pronto."
+    },
+    "200261":{
+        "Name":"C\u00e9sar Holfield",
+        "Card Text":"Camarilla: No final da sua fase de servo, se houver algum evento da Gehenna em jogo e C\u00e9sar n\u00e3o ca\u00e7ou, ele queima 1 sangue."
+    },
+    "200265":{
+        "Name":"Chandler Hungerford",
+        "Card Text":"Camarilla: Chandler recebe +1 de percep\u00e7\u00e3o ao tentar bloquear outros Gangrel."
+    },
     "200266":{
         "Name":"Charice Fontaigne",
         "Card Text":"Sab\u00e1."
+    },
+    "200267":{
+        "Name":"Charlie Tyne",
+        "Card Text":"Sab\u00e1."
+    },
+    "200268":{
+        "Name":"Chas Giovanni Tello",
+        "Card Text":"Independente: Conforme Chas anuncia uma a\u00e7\u00e3o, qualquer outro Matusal\u00e9m pode descartar uma carta mestra como mestra fora de turno para que a a\u00e7\u00e3o falhe. Ele recebe +1 de for\u00e7a em combate com um vampiro titulado."
+    },
+    "200269":{
+        "Name":"Chaundice",
+        "Card Text":"Sab\u00e1: Duas vezes a cada combate, Chaundice pode prevenir 2 de dano n\u00e3o agravado dos golpes do servo oponente naquela rodada. Voo [FLIGHT]. Escravo de Tremere antitribu."
     },
     "201541":{
         "Name":"Chelsea Blake",
@@ -279,9 +487,21 @@
         "Name":"Count Germaine",
         "Card Text":"Camarilla: Servos que se op\u00f5em a Germaine em combate n\u00e3o podem usar armas. Germaine pode entrar em combate com qualquer Toreador controlado por outro Matusal\u00e9m como uma a\u00e7\u00e3o (D)."
     },
+    "200297":{
+        "Name":"Count Zaroff",
+        "Card Text":"Camarilla: Voc\u00ea pode queimar 1 de recurso para cancelar uma ca\u00e7ada de sangue chamada Zaroff e mov\u00ea-lo para a regi\u00e3o n\u00e3o-controlada."
+    },
     "200298":{
         "Name":"Courtland Leighton",
         "Card Text":"Camarilla."
+    },
+    "200300":{
+        "Name":"Cristobal Ghiberti",
+        "Card Text":"Independente."
+    },
+    "200301":{
+        "Name":"Cristofero Giovanni",
+        "Card Text":"Independente."
     },
     "201582":{
         "Name":"Crystal Lynn",
@@ -295,6 +515,18 @@
         "Name":"Cynthia Ingold",
         "Card Text":"Sab\u00e1: Cynthia recebe +1 de for\u00e7a em combate com um vampiro da Camarilla. Est\u00e9ril."
     },
+    "200563":{
+        "Name":"Dan Bonito",
+        "Card Text":"Anarquista: V\u00f4o [FLIGHT]."
+    },
+    "200312":{
+        "Name":"Dan Murdock",
+        "Card Text":"Camarilla: Dan pode fazer uma a\u00e7\u00e3o para permitir que voc\u00ea procure em sua biblioteca por Sangue de Gigante e adicione-o a sua m\u00e3o (reembaralhe depois e descarte at\u00e9 o tamanho m\u00e1ximo da sua m\u00e3o)."
+    },
+    "200316":{
+        "Name":"Danielle Diron",
+        "Card Text":"Independente: Danielle tem 1 voto (intitulado). Durante sua fase de destravar, se Danielle estiver pronta e n\u00e3o tiver sangue, mova 2 de sangue do banco de sangue para ela."
+    },
     "200317":{
         "Name":"Danielle Diron",
         "Card Text":"Anarquista: Durante a fase de vota\u00e7\u00e3o de qualquer referendo, Danielle pode queimar 1 de sangue para receber +1 voto.\n[MERGED] Bar\u00e3o de Berlin."
@@ -307,6 +539,14 @@
         "Name":"Darlene Killian",
         "Card Text":"Sab\u00e1: Aliados e lacaios custam a Darlene 1 de sangue adicional. Est\u00e9ril."
     },
+    "200323":{
+        "Name":"Darrell Boyce, C\u00f4nsul",
+        "Card Text":"Sab\u00e1."
+    },
+    "200331":{
+        "Name":"Delilah Monroe",
+        "Card Text":"Independente: Delilah recebe -1 de percep\u00e7\u00e3o ao tentar bloquear um vampiro mais velho."
+    },
     "200336":{
         "Name":"Denette Stensen",
         "Card Text":"Sab\u00e1."
@@ -314,6 +554,14 @@
     "200337":{
         "Name":"DeSalle",
         "Card Text":"Sab\u00e1: Quando DeSalle est\u00e1 agindo, um vampiro Sab\u00e1 pode queimar 1 de sangue para obter +1 de percep\u00e7\u00e3o uma vez nessa a\u00e7\u00e3o. +1 de furtividade."
+    },
+    "200344":{
+        "Name":"Diego Giovanni",
+        "Card Text":"Independente: Diego pode queimar um local como uma a\u00e7\u00e3o (D) que custa 2 de sangue."
+    },
+    "200347":{
+        "Name":"Dirk",
+        "Card Text":"Camarilla: Vampiros titulados recebem +1 de percep\u00e7\u00e3oao tentar bloquear Dirk."
     },
     "200348":{
         "Name":"Djuhah, O Arco de Bronze",
@@ -339,6 +587,10 @@
         "Name":"Dolie",
         "Card Text":"Laibon."
     },
+    "200356":{
+        "Name":"Domenic Giovanni",
+        "Card Text":"Independente."
+    },
     "200360":{
         "Name":"Don Caravelli",
         "Card Text":"Camarilla: Uma vez a cada combate envolvendo outro vampiro que voc\u00ea controla, Don Caravelli pode queimar 1 sangue para dar 1 pressionar a esse vampiro."
@@ -351,9 +603,21 @@
         "Name":"Don Cruez, O idealista",
         "Card Text":"Brujah Justicar da Camarilla: Uma vez a cada combate, Don Cruez pode queimar 1 sangue para ganhar uma manobra."
     },
+    "200363":{
+        "Name":"Don Michael Antonio Giovanni",
+        "Card Text":"Independente. 2 votos (intitulado): Michael n\u00e3o pode golpear: fim de combate ou pressione para encerrar o combate. Ele recebe +1 de for\u00e7a em qualquer rodada de combate ap\u00f3s a primeira."
+    },
     "200364":{
         "Name":"D\u00f3nal O'Connor",
         "Card Text":"Pr\u00edncipe Camarilla de Dublin: Qualquer vampiro que bloqueie D\u00f3nal queima 1 sangue (antes do in\u00edcio do combate, se houver)."
+    },
+    "200365":{
+        "Name":"Donald Cargill",
+        "Card Text":"Camarilla: Donald queima 1 sangue depois que um referendo convocado pelo seu predador passa."
+    },
+    "200366":{
+        "Name":"Donatello Giovanni",
+        "Card Text":"Independente: Durante a fase de destravar de sua presa, voc\u00ea pode escolher um vampiro controlado por um Matusal\u00e9m que n\u00e3o seja seu predador. Se o vampiro escolhido tentar sangrar antes de sua pr\u00f3xima fase de desbloqueio, ele move 1 sangue para Donatello."
     },
     "201584":{
         "Name":"Doutor Morocco",
@@ -363,8 +627,24 @@
         "Name":"Dovey Ebfwe",
         "Card Text":"Sab\u00e1: Dovey recebe +1 de furtividade quando recruta lacaios. M\u00e3o Negra. Est\u00e9ril."
     },
+    "200372":{
+        "Name":"Doyle Fincher",
+        "Card Text":"Sab\u00e1: Durante sua fase de descarte, se algum dos vampiros prontos de sua presa n\u00e3o estiver em plena capacidade, mova 1 sangue do banco de sangue para um desses vampiros e 1 sangue do banco de sangue para Doyle. +1 sangramento."
+    },
     "200373":{
         "Name":"Dr. Allan Woodstock",
+        "Card Text":"Independente."
+    },
+    "200382":{
+        "Name":"Dr. Oliver Genet",
+        "Card Text":"Independente: Aliados e Lacaios que requeiram Necromancia [nec] ou Giovanni custam a Oliver 1 de sangue ou recurso a menos."
+    },
+    "200383":{
+        "Name":"Dr. Solomon Grey",
+        "Card Text":"Camarilla: Queime 1 recurso quando Solomon entrar em jogo."
+    },
+    "200384":{
+        "Name":"Dr. Sutton Gassaway",
         "Card Text":"Independente."
     },
     "200387":{
@@ -374,6 +654,10 @@
     "200394":{
         "Name":"Dylan",
         "Card Text":"Sab\u00e1: +1 de sangrar."
+    },
+    "200400":{
+        "Name":"Eddie Gaines",
+        "Card Text":"Camarilla: Se Eddie ca\u00e7ar com sucesso, ele n\u00e3o destrava normalmente durante sua pr\u00f3xima fase de destravar."
     },
     "200404":{
         "Name":"Effie Lowery",
@@ -391,9 +675,33 @@
         "Name":"Elisha Tucker",
         "Card Text":"Bar\u00e3o Anarquista de Pitsburgo"
     },
+    "200416":{
+        "Name":"Ellen Fence, a Rastreadora",
+        "Card Text":"Bispo do Sab\u00e1: Ellen pode entrar em combate com qualquer servo travado controlado por seu predador ou presa como uma a\u00e7\u00e3o (D)."
+    },
     "200422":{
         "Name":"Enam",
         "Card Text":"Pr\u00edncipe Camarilla de Cordoba: Sangue Amaldi\u00e7oado."
+    },
+    "200424":{
+        "Name":"Enkidu, O No\u00e9",
+        "Card Text":"Sab\u00e1. Lista Vermelha: Enkidu pode entrar em combate com qualquer servo como uma a\u00e7\u00e3o (D). Se Enkidu realizar com sucesso uma a\u00e7\u00e3o para empregar um lacaio, ele desbloqueia no final do turno. Ele n\u00e3o pode ter ou usar equipamentos. +2 for\u00e7a."
+    },
+    "200426":{
+        "Name":"Enzo Giovanni, Conselho de Administra\u00e7\u00e3o da Pentex",
+        "Card Text":"Independente: Durante a fase de vota\u00e7\u00e3o de qualquer a\u00e7\u00e3o pol\u00edtica, Enzo pode queimar 1 de sangue para receber +4 votos contra o referendo.\n[MERGED] Se um referendo falhar, sua presa queima 1 de recurso."
+    },
+    "200425":{
+        "Name":"Enzo Giovanni, Membro da C\u00fapula de Diretores da Pentex",
+        "Card Text":"Independente: Enzo ignora as restri\u00e7\u00f5es normais de presa ou predador para bloquear a\u00e7\u00f5es enquanto um vampiro controlado por outro Matusal\u00e9m est\u00e1 realizando uma a\u00e7\u00e3o pol\u00edtica. Ele recebe +1 de percep\u00e7\u00e3o durante a\u00e7\u00f5es pol\u00edticas n\u00e3o realizadas por um pr\u00edncipe, justicar ou membro do C\u00edrculo Interno."
+    },
+    "200430":{
+        "Name":"Eric Milliner",
+        "Card Text":"Independente."
+    },
+    "200433":{
+        "Name":"Erinyi",
+        "Card Text":"Sab\u00e1: Erinyi recebe -1 de for\u00e7a em combate com um Gangrel antitribu. Voo [FLIGHT]."
     },
     "200304":{
         "Name":"Esmagador",
@@ -407,13 +715,25 @@
         "Name":"Evangeline",
         "Card Text":"Sab\u00e1."
     },
+    "200448":{
+        "Name":"Eze, O Pr\u00edncipe Dem\u00f4nio",
+        "Card Text":"Laibon magaji: Eze recebe 1 voto adicional. Uma vez a cada turno, quando Eze realiza com sucesso uma a\u00e7\u00e3o que n\u00e3o seja ca\u00e7a, ele desbloqueia ap\u00f3s resolver essa a\u00e7\u00e3o."
+    },
     "200454":{
         "Name":"Fairuza",
         "Card Text":"Sab\u00e1: Fairuza pode queimar 1 sangue ou vida de um servo controlado por sua presa como uma a\u00e7\u00e3o (D). Ela recebe -1 de sangrar ao sangrar um Matusal\u00e9m que controla um servo pronto."
     },
+    "200455":{
+        "Name":"Fakir al Sidi",
+        "Card Text":"Independente: Fakir pode queimar 3 de sangue durante a etapa de vota\u00e7\u00e3o de uma a\u00e7\u00e3o pol\u00edtica antes que os votos e balotes sejam lan\u00e7ados para que o referendo falhe. Ele recebe 1 pressionar opcional a cada combate. +1 sangramento. +1 for\u00e7a."
+    },
     "201587":{
         "Name":"Farah Sarroub",
         "Card Text":"Pr\u00edncipe Camarilla de Detroit."
+    },
+    "200457":{
+        "Name":"Faruq",
+        "Card Text":"Camarilla: Faruq pode entrar em combate com qualquer Assamita controlado por outro Matusal\u00e9m como uma a\u00e7\u00e3o (D). Nesse combate, Faruq recebe +1 de for\u00e7a."
     },
     "201588":{
         "Name":"Faruq Abd al-Qadir",
@@ -425,27 +745,83 @@
     },
     "200459":{
         "Name":"Fatima al-Faqadi",
-        "Card Text":"Independent: Once each combat, before range is determined, Fatima can equip with a weapon from your hand (requirements and cost apply as normal). Blood cursed."
+        "Card Text":"Independente: Uma vez que cada combate, antes que o alcance seja determinado, F\u00e1tima pode equipar com uma arma de sua m\u00e3o (os requisitos e custo se aplicam normalmente). Sangue amaldi\u00e7oado."
+    },
+    "200463":{
+        "Name":"Fergus Alexander",
+        "Card Text":"Camarilla: Fergus pode entrar em combate com um vampiro do Sab\u00e1 travado como uma a\u00e7\u00e3o (D)."
+    },
+    "200464":{
+        "Name":"Ferox, O Senhor das Rochas",
+        "Card Text":"Independente: Ferox pode entrar em combate com um Nosferatu controlado por outro Matusal\u00e9m como uma a\u00e7\u00e3o (D). Vampiros mais jovens devem queimar 1 de sangue para tentar bloquear Ferox. Ferox n\u00e3o pode cometer diablerie. Voo [FLIGHT]."
+    },
+    "200465":{
+        "Name":"Ferox, O Senhor das Rochas",
+        "Card Text":"Avan\u00e7ado, Independente: Servos advers\u00e1rios de Ferox em combate n\u00e3o podem jogar cartas que exijam Necromancia [nec] ou Taumaturgia [tha]. Ele n\u00e3o pode cometer diablerie. V\u00f4o [FLIGHT].\n[MERGED] Ferox recebe +1 de percep\u00e7\u00e3o ao tentar bloquear a\u00e7\u00f5es (D) .\""
     },
     "200466":{
         "Name":"Fida'i",
         "Card Text":"Independente: Fida'i n\u00e3o destrava normalmente. Durante sua fase de destravar, qualquer Assamita pronto com capacidade 7 ou maior pode queimar 1 de sangue para destravar este Fida'i. Sangue Amaldi\u00e7oado. N\u00e3o-\u00fanico."
     },
+    "200467":{
+        "Name":"Fidus, A Besta Encolhida",
+        "Card Text":"Escravo de Tremere da Camarilla: Fidus recebe +1 de furtividade em a\u00e7\u00f5es n\u00e3o direcionadas. -1 for\u00e7a. Voo [FLIGHT]."
+    },
+    "200468":{
+        "Name":"Fish",
+        "Card Text":"Laibon."
+    },
     "200469":{
         "Name":"Flavia, Anjo Vingador",
         "Card Text":"Independente: Sangue Amaldi\u00e7oado."
+    },
+    "200472":{
+        "Name":"Fode Kourouma",
+        "Card Text":"Laibon."
+    },
+    "200474":{
+        "Name":"Francesca Giovanni",
+        "Card Text":"Independente."
+    },
+    "200475":{
+        "Name":"Francis Milliner",
+        "Card Text":"Independente: Francis recebe +1 de for\u00e7a em combate com um Toreador ou um Toreador antitribu."
+    },
+    "200477":{
+        "Name":"Franciscus",
+        "Card Text":"Camarilla: Franciscus \u00e9 queimado (sem entrar em torpor) se sofrer mais de 3 de dano durante um \u00fanico combate."
     },
     "200481":{
         "Name":"Frank Weisshadel",
         "Card Text":"Camarilla."
     },
+    "200482":{
+        "Name":"Freddy Gage",
+        "Card Text":"Camarilla: Vampiros titulados recebem +1 de sangrar contra voc\u00ea."
+    },
     "200483":{
         "Name":"Frederick the Weak",
         "Card Text":"Sab\u00e1."
     },
+    "200484":{
+        "Name":"Fr\u00e8re Marc",
+        "Card Text":"Sab\u00e1."
+    },
+    "200486":{
+        "Name":"Fustuk",
+        "Card Text":"Sab\u00e1: Voc\u00ea pode travar Fustuk para destravar um Tremere antitribu. V\u00f4o [FLIGHT]. Escravo de Tremere antitribu."
+    },
+    "200491":{
+        "Name":"Ga\u00ebl Pilet",
+        "Card Text":"Independente: Ga\u00ebl nunca pode ter mais de 1 de percep\u00e7\u00e3o. Qualquer  percep\u00e7\u00e3o adicional que ela ganhar \u00e9 perdida."
+    },
     "200494":{
         "Name":"Garret",
         "Card Text":"Camarilla."
+    },
+    "200495":{
+        "Name":"Gaspare Giovanni",
+        "Card Text":"Independente: Durante sua fase de mestra, Gaspare pode queimar 2 de sangue para mover um vampiro de sua pilha de cinzas para o topo de sua cripta. +1 for\u00e7a."
     },
     "200201":{
         "Name":"Gata Negra",
@@ -454,6 +830,10 @@
     "200496":{
         "Name":"Gatjil Munyarryun",
         "Card Text":"Sab\u00e1. M\u00e3o Negra."
+    },
+    "200501":{
+        "Name":"Genevieve",
+        "Card Text":"Priscus do Sab\u00e1: Genevieve recebe um voto adicional durante cada a\u00e7\u00e3o pol\u00edtica."
     },
     "200502":{
         "Name":"Gengis",
@@ -471,13 +851,37 @@
         "Name":"Gerard",
         "Card Text":"Sab\u00e1."
     },
+    "200515":{
+        "Name":"Gianmaria Giovanni",
+        "Card Text":"Independente."
+    },
     "200516":{
         "Name":"Gideon Fontaine",
         "Card Text":"Camarilla."
     },
+    "200518":{
+        "Name":"Gillespi Giovanni",
+        "Card Text":"Independente: Gillespi recebe +1 de sangrar contra um Matusal\u00e9m que controla um vampiro da Camarilla pronto."
+    },
     "200520":{
         "Name":"Giotto Verducci",
         "Card Text":"Independente: Durante a fase de descarte de qualquer outro Matusal\u00e9m, voc\u00ea pode descartar uma carta da sua m\u00e3o (e comprar uma nova). Vampiros devem queimar 1 de sangue para tentar bloquear Giotto. Infernal."
+    },
+    "200521":{
+        "Name":"Giovanni del Georgio",
+        "Card Text":"Independente: Del Georgio pode remover duas c\u00f3pias da mesma carta na pilha de cinzas de sua presa do jogo para ca\u00e7ar com +2 de ca\u00e7a como uma a\u00e7\u00e3o com +1 de furtividade."
+    },
+    "200523":{
+        "Name":"Gitane St. Claire",
+        "Card Text":"Primog\u00eanito Camarilla."
+    },
+    "200524":{
+        "Name":"Giuliano Vincenzi",
+        "Card Text":"Camarilla."
+    },
+    "200525":{
+        "Name":"Gloria Giovanni",
+        "Card Text":"Independente."
     },
     "200527":{
         "Name":"Gold Pan Dan",
@@ -491,13 +895,41 @@
         "Name":"Greg Mazouni",
         "Card Text":"Camarilla."
     },
+    "200541":{
+        "Name":"Grotesco",
+        "Card Text":"Camarilla: Conforme este Grotesco entra em jogo, escolha um local que voc\u00ea controla n\u00e3o escolhido para outro Grotesco. Remova este Grotesco do jogo se voc\u00ea n\u00e3o controlar mais o local. Voo [FLIGHT]. Escravo de Tremere. N\u00e3o-\u00fanico."
+    },
+    "200542":{
+        "Name":"Gualtiero Ghiberti",
+        "Card Text":"Independente: A cada turno, enquanto outro Giovanni anuncia uma a\u00e7\u00e3o ou golpe que requer Necromancia [nec], Gualtiero pode queimar 1 sangue para dar a essa a\u00e7\u00e3o +1 de furtividade, mesmo que a furtividade ainda n\u00e3o seja necess\u00e1ria, ou aumentar o dano infligido ou o sangue queimado por aquela a\u00e7\u00e3o. a\u00e7\u00e3o ou golpe em 1."
+    },
+    "200545":{
+        "Name":"Guillaume Giovanni",
+        "Card Text":"Independente: Enquanto Guillaume estiver pronto, voc\u00ea ganha +1 tamanho de m\u00e3o para cada local que voc\u00ea controla. Ele recebe +1 de furtividade durante as a\u00e7\u00f5es de recrutar e empregar."
+    },
+    "200547":{
+        "Name":"Gunnar",
+        "Card Text":"Independente."
+    },
+    "200548":{
+        "Name":"Gunther, Senhor das Bestas",
+        "Card Text":"Camarilla: Durante sua fase de descarte, Gunther pode queimar 1 sangue para desbloquear."
+    },
+    "200552":{
+        "Name":"Gustavo Morales",
+        "Card Text":"Independente."
+    },
     "200554":{
         "Name":"Gwendolyn",
         "Card Text":"Brujah do C\u00edrculo Interno da Camarilla: +2 de sangrar."
     },
+    "200556":{
+        "Name":"Gwyedd",
+        "Card Text":"Primog\u00eanito da Camarilla: Trave qualquer vampiro mais jovem que tentou e falhou em bloquear uma a\u00e7\u00e3o n\u00e3o direcionada (bem-sucedida ou n\u00e3o) realizada por Gwyedd, ap\u00f3s a resolu\u00e7\u00e3o."
+    },
     "200557":{
         "Name":"Haakon Mortensen",
-        "Card Text":"Sabbat: During your unlock phase, you can move 1 blood from Haakon to any Gangrel or Gangrel antitribu in your uncontrolled region. Haakon can take an action to move 1 blood from the blood bank to any unlocked vampire."
+        "Card Text":"Sab\u00e1: Durante sua fase de destravar, voc\u00ea pode mover 1 sangue de Haakon para qualquer Gangrel ou Gangrel antitribu em sua regi\u00e3o n\u00e3o controlada. Haakon pode realizar uma a\u00e7\u00e3o para mover 1 sangue do banco de sangue para qualquer vampiro desbloqueado."
     },
     "200559":{
         "Name":"Hafsa, O Observador",
@@ -507,9 +939,21 @@
         "Name":"Hanna Nokelainen",
         "Card Text":"Anarquista."
     },
+    "200564":{
+        "Name":"Hanna Redmonds",
+        "Card Text":"Camarilla: Um vampiro mais velho que se oponha a Hanna recebe uma manobra opcional ou pressiona na primeira rodada de combate."
+    },
     "200569":{
         "Name":"Harika Guljan",
         "Card Text":"Independente: Sangue Amaldi\u00e7oado."
+    },
+    "200570":{
+        "Name":"Harlan Graves",
+        "Card Text":"Independente: Se Harlan for diablerizado, nenhuma ca\u00e7ada de sangue pode ser chamada. Ele recebe -1 de percep\u00e7\u00e3ocontra a\u00e7\u00f5es sem sangramento."
+    },
+    "200574":{
+        "Name":"Harry Reese",
+        "Card Text":"Sab\u00e1: Os golpes que causam dano que Harry faz contra aliados n\u00e3o mortais t\u00eam +1 de dano."
     },
     "200575":{
         "Name":"Hartmut Stover",
@@ -518,6 +962,10 @@
     "200576":{
         "Name":"Hasani",
         "Card Text":"Laibon."
+    },
+    "200577":{
+        "Name":"Hasina Kesi",
+        "Card Text":"Camarilla: Queime 1 de recurso cada vez que Hasina entrar em torpor."
     },
     "200581":{
         "Name":"Hector Sosa",
@@ -547,9 +995,17 @@
         "Name":"Hezekiah Rutledge",
         "Card Text":"Camarilla."
     },
+    "200598":{
+        "Name":"Hillanvale",
+        "Card Text":"Independente: Durante uma a\u00e7\u00e3o, Hillanvale pode queimar 1 de sangue e descartar uma carta que requer Melpominee [mel] para obter +1 de sangrar. Ela recebe -1 de percep\u00e7\u00e3o contra vampiros n\u00e3o-independentes e n\u00e3o-anarquistas."
+    },
     "200601":{
         "Name":"Honest Abe",
         "Card Text":"Camarilla."
+    },
+    "200606":{
+        "Name":"Horrock",
+        "Card Text":"Independente: Cartas de Metamorfose [pro] custam a Horrock 1 sangue a menos."
     },
     "200610":{
         "Name":"Hugo",
@@ -559,9 +1015,25 @@
         "Name":"Huitzilopochtli",
         "Card Text":"Independente: Durante sua fase mestra, voc\u00ea pode pagar um reservo para ganhar uma a\u00e7\u00e3o de fase de mestre se Huitzilopochtli estiver pronto. +1 de sangrar. Infernal."
     },
+    "200612":{
+        "Name":"Hukros",
+        "Card Text":"Sab\u00e1: Durante sua fase de destravar, voc\u00ea pode mover uma carta da sua m\u00e3o para o Hukros virada para baixo. Voc\u00ea pode olhar para a carta a qualquer momento. Hukros pode jogar essa carta como se fosse da sua m\u00e3o."
+    },
     "200614":{
         "Name":"Husamettin",
         "Card Text":"Independente: Depois que Husamettin queimar um vampiro com um contrato, voc\u00ea pode procurar em sua biblioteca por uma carta mestra de Disciplina e coloc\u00e1-la nele (embaralhe ap\u00f3s isso). Sangue Amaldi\u00e7oado."
+    },
+    "200624":{
+        "Name":"Ignazio Giovanni",
+        "Card Text":"Independente: Ignazio pode entrar em combate com um vampiro com capacidade 6 ou menos controlado por seu predador ou presa como uma a\u00e7\u00e3o (D). +1 de for\u00e7a."
+    },
+    "200625":{
+        "Name":"Igo o Faminto",
+        "Card Text":"Camarilla: Igo n\u00e3o obt\u00e9m a furtividade usual de +1 ao ca\u00e7ar."
+    },
+    "200626":{
+        "Name":"Iliana",
+        "Card Text":"Camarilla: Contratos n\u00e3o podem ser colocados em Iliana."
     },
     "200630":{
         "Name":"Imanna",
@@ -571,17 +1043,41 @@
         "Name":"Indira",
         "Card Text":"Anarquista."
     },
+    "200632":{
+        "Name":"Inez \"Nurse216\" Villagrande",
+        "Card Text":"Quando Inez entra em jogo, voc\u00ea pode procurar em sua biblioteca (embaralhe depois) ou m\u00e3o por um poder que exija inoc\u00eancia e coloc\u00e1-lo nela."
+    },
+    "200634":{
+        "Name":"Ingrid Rossler",
+        "Card Text":"Pr\u00edncipe Camarilla de Genebra: Se Ingrid estiver pronta no in\u00edcio da sua fase de influ\u00eancia, voc\u00ea recebe +2 transfer\u00eancias."
+    },
     "200635":{
         "Name":"Ingrid Russo",
         "Card Text":"Sab\u00e1."
+    },
+    "200636":{
+        "Name":"Iniko, O Le\u00e3o Negro",
+        "Card Text":"Laibon: +1 furtividade."
     },
     "200638":{
         "Name":"Inyanga",
         "Card Text":"Primog\u00eanito Camarilla: Aliados que requerem um Gangrel custam a Inyanga 1 de sangue ou recurso a menos. +1 de percep\u00e7\u00e3o."
     },
+    "200641":{
+        "Name":"Iris Bennett",
+        "Card Text":"Camarilla: Se um vampiro mais velho bloquear Iris, o controlador dele pode olhar sua m\u00e3o antes da resolu\u00e7\u00e3o de bloqueio."
+    },
+    "200643":{
+        "Name":"Isabel Giovanni",
+        "Card Text":"Independente."
+    },
     "200650":{
         "Name":"Izhim abd Azrael",
         "Card Text":"Sab\u00e1: Cartas que requerem Quietus [qui] custam a Izhim 1 de sangue a menos. Armas lhe custam 1 sangue ou recurso a menos. M\u00e3o Negra. Serafim."
+    },
+    "200656":{
+        "Name":"Jack \"Hannibal137\" Harmon",
+        "Card Text":"Jack recebe uma manobra opcional na primeira rodada de combate."
     },
     "200655":{
         "Name":"Jack Drake",
@@ -603,6 +1099,10 @@
         "Name":"Jacob Bragg",
         "Card Text":"Sab\u00e1."
     },
+    "200663":{
+        "Name":"Jacob Fermor",
+        "Card Text":"Independente: Enquanto Jacob estiver pronto, os lobisomens que voc\u00ea controla recebem +1 de sangrar. Jacob recebe um pressionar opcional a cada combate."
+    },
     "200664":{
         "Name":"Jacques Molay",
         "Card Text":"Sab\u00e1: Jacques pode entrar em combate com um aliado ou vampiro mais jovem como uma a\u00e7\u00e3o (D). +1 de for\u00e7a."
@@ -611,9 +1111,21 @@
         "Name":"Jalal Sayad",
         "Card Text":"Independente: Uma vez por turno depois que um combate acabar, Jalal pode queimar 1 de sangue para iniciar um novo combate contra o servo opositor. Sangue Amaldi\u00e7oado."
     },
+    "200667":{
+        "Name":"Jalan-Aajav",
+        "Card Text":"Sab\u00e1. Serafim da M\u00e3o Negra: Uma vez a cada rodada, Jalan pode queimar 1 de sangue para tratar o dano agravado  como dano normal. Ele recebe 1 pressionar opcional a cada combate."
+    },
     "200668":{
         "Name":"Jamal",
         "Card Text":"Independente. 2 votos (titulado): Jamal recebe +1 de for\u00e7a em combate com um aliado ou um vampiro da Camarilla. Sangue amaldi\u00e7oado. Lista Vermelha. +1 sangrar."
+    },
+    "200672":{
+        "Name":"Janet Langer",
+        "Card Text":"Independente: Janet deve queimar 1 de sangue para tentar bloquear."
+    },
+    "200673":{
+        "Name":"Janey Pickman",
+        "Card Text":"Sab\u00e1: Uma vez a cada rodada, Janey pode queimar 1 sangue para fazer com que o dano de seus golpes de m\u00e3o seja agravado para a rodada atual."
     },
     "200675":{
         "Name":"Jann Berger",
@@ -639,6 +1151,10 @@
         "Name":"Jeffrey Mullins",
         "Card Text":"Sab\u00e1."
     },
+    "200688":{
+        "Name":"Jenna Cross",
+        "Card Text":"Anarquista: Cartas que custam sangue custam a Jenna 1 de sangue adicional para serem jogadas. Est\u00e9ril."
+    },
     "200690":{
         "Name":"Jennifer \"Flame61\" Vidisania",
         "Card Text":"Armas custam a Jennifer 1 a menos de recurso ou sangue. +1 de sangrar. -1 de furtividade."
@@ -646,6 +1162,10 @@
     "201593":{
         "Name":"Jenny Silver",
         "Card Text":"Anarquista."
+    },
+    "200447":{
+        "Name":"Jensen Maligna",
+        "Card Text":"Independente: Jensen Maligna pode procurar em sua cripta por um vampiro e mov\u00ea-los para sua regi\u00e3o n\u00e3o controlada como uma a\u00e7\u00e3o com +1  de furtividade que custa 2 de recurso (embaralhar depois). Ela deve queimar 1 de sangue para tentar bloquear vampiros mais velhos."
     },
     "200691":{
         "Name":"Jephta Hester",
@@ -663,6 +1183,14 @@
         "Name":"Jeremy MacNeil",
         "Card Text":"Avan\u00e7ado, Independente: Jeremy pode entrar em combate com um vampiro mais jovem controlado por seu predador ou presa como uma a\u00e7\u00e3o (D).\n[MERGED] Bar\u00e3o Anarquista de Los Angeles."
     },
+    "200701":{
+        "Name":"Jes\u00fas Alcal\u00e1",
+        "Card Text":"Sab\u00e1."
+    },
+    "200702":{
+        "Name":"Jezebelle",
+        "Card Text":"Camarilla: Se voc\u00ea n\u00e3o controlar um pr\u00edncipe pronto, Jezebelle ganha um voto adicional em qualquer referendo para declarar um pr\u00edncipe chamado por outro vampiro."
+    },
     "201595":{
         "Name":"Joaqu\u00edn de C\u00e1diz",
         "Card Text":"Anarquista."
@@ -671,9 +1199,17 @@
         "Name":"Joe \"Bota\" Hill",
         "Card Text":"Sab\u00e1: Joe pode entrar em combate com um lobisomem como uma a\u00e7\u00e3o (D) com +1 de furtividade e recebe 1 manobra opcional durante esse combate. M\u00e3o Negra. +1 for\u00e7a."
     },
+    "200711":{
+        "Name":"Johan Wrede",
+        "Card Text":"Camarilla: Enquanto Johan est\u00e1 sangrando, qualquer vampiro mais velho pode queimar 1 sangue para reduzir a quantidade de sangramento em 1."
+    },
     "200715":{
         "Name":"John \"Cop90\" O'Malley",
         "Card Text":"John pode entrar em combate com um monstro como uma a\u00e7\u00e3o (D) que custa 1 convic\u00e7\u00e3o [1CONVICTION]."
+    },
+    "200723":{
+        "Name":"Joseph Fischer",
+        "Card Text":"Anarquista"
     },
     "200726":{
         "Name":"Joshua Tarnopolski",
@@ -698,6 +1234,10 @@
     "200735":{
         "Name":"Julian Sanders",
         "Card Text":"Sab\u00e1: Julian recebe um pressionar opcional a cada combate."
+    },
+    "200737":{
+        "Name":"Julius",
+        "Card Text":"Camarilla: Se Julius entrar em torpor, queime-o."
     },
     "200741":{
         "Name":"Kabede Maru",
@@ -739,6 +1279,14 @@
         "Name":"Karif al Numair",
         "Card Text":"Sab\u00e1: Durante o seu turno, voc\u00ea pode travar ou destravar outro vampiro pronto da M\u00e3o Negra. M\u00e3o Negra. +1 de for\u00e7a. +1 de sangrar."
     },
+    "200757":{
+        "Name":"Karsh",
+        "Card Text":"Camarilla: Karsh pode entrar em combate com um vampiro n\u00e3o-Camarilla travado controlado por outro Matusal\u00e9m como uma a\u00e7\u00e3o (D). Uma vez a cada rodada, ele pode queimar 1 de sangue para tratar o dano agravado como dano normal para a rodada atual."
+    },
+    "200758":{
+        "Name":"Karsh",
+        "Card Text":"Camarilla: Karsh pode jogar cartas chamadas Blood Hunt de sua m\u00e3o ou pilha de cinzas como um pr\u00edncipe. Ele recebe +3 votos em referendos de ca\u00e7ada de sangue. Ele n\u00e3o pode bloquear vampiros infernais.\n[MERGED] Imperator (3 votos): +1 de percep\u00e7\u00e3o."
+    },
     "200759":{
         "Name":"Kashan",
         "Card Text":"Independente. 1 voto (titulado): Sangue amaldi\u00e7oado."
@@ -751,6 +1299,14 @@
         "Name":"Kassandra Tassaki",
         "Card Text":"Pr\u00edncipe Camarilla de Tessal\u00f4nica"
     },
+    "200761":{
+        "Name":"Katarina",
+        "Card Text":"Pr\u00edncipe da Camarilla de Glasgow: Katarina recebe +1 de sangrar ao sangrar um Matusal\u00e9m que controla um Ravnos pronto."
+    },
+    "200765":{
+        "Name":"Kay Polerno",
+        "Card Text":"Independente."
+    },
     "201599":{
         "Name":"Khadija Al-Kindi",
         "Card Text":"Primog\u00eanito da Camarilla: Durante seu turno, voc\u00ea pode queimar a vantagem para destravar Kalinda."
@@ -758,6 +1314,10 @@
     "200783":{
         "Name":"Kikiyaon, O",
         "Card Text":"Laibon: Uma vez por combate, o Kikiyaon pode queimar 1 de sangue para receber uma manobra. V\u00f4o [FLIGHT]."
+    },
+    "200804":{
+        "Name":"Lady Constancia",
+        "Card Text":"Independente. 2 votos (titulado): Voc\u00ea pode queimar a Vantagem e usar uma a\u00e7\u00e3o de fase de descarte para descartar 1 carta aleatoriamente e comprar sua substitui\u00e7\u00e3o das outras cartas da biblioteca em sua pilha de cinzas."
     },
     "200816":{
         "Name":"Laura Goldman",
@@ -771,13 +1331,45 @@
         "Name":"Layla bint-Nadr",
         "Card Text":"Independente: Sangue Amaldi\u00e7oado."
     },
+    "200831":{
+        "Name":"Leo Washington",
+        "Card Text":"Sab\u00e1: Um vampiro mais velho que se oponha a Leo recebe uma manobra opcional na primeira rodada de combate."
+    },
+    "200832":{
+        "Name":"Leon",
+        "Card Text":"Sab\u00e1: Gangrel antitribu recebe -1 de percep\u00e7\u00e3o ao tentar bloquear Leon."
+    },
     "201526":{
         "Name":"Leumeah",
         "Card Text":"Bar\u00e3o Anarquista de Canberra."
     },
+    "200834":{
+        "Name":"Lia Milliner",
+        "Card Text":"Independente."
+    },
+    "200836":{
+        "Name":"Lillian",
+        "Card Text":"Independente."
+    },
+    "200839":{
+        "Name":"Lisa Noble",
+        "Card Text":"Camarilla: Lisa recebe -1 de for\u00e7a na primeira rodada de combate."
+    },
+    "200840":{
+        "Name":"Lisandro Giovanni",
+        "Card Text":"Independente: Voc\u00ea e Lisandro podem jogar cartas que requeiram um Samedi ou Ventrue Antitribu como se ele pertencesse a aquele cl\u00e3. +1 de furtividade."
+    },
+    "200841":{
+        "Name":"Lis\u00e9",
+        "Card Text":"Independente."
+    },
     "200845":{
         "Name":"Little Willie",
         "Card Text":"Sab\u00e1."
+    },
+    "200846":{
+        "Name":"Liz \"Ticket312\" Thornton",
+        "Card Text":"Liz n\u00e3o ganha uma convic\u00e7\u00e3o [1CONVICTION] normalmente ao entrar em jogo."
     },
     "200852":{
         "Name":"Lord Aaron Wesley Wilkshire",
@@ -786,6 +1378,10 @@
     "200853":{
         "Name":"Lorde Ashton",
         "Card Text":"Independente: Qualquer outro Gangrel pode procurar na biblioteca de seu controlador por uma carta Mestra: Disciplina de Animalismo, Fortitude ou Metamorfose e mov\u00ea-la para si mesmo como uma a\u00e7\u00e3o com +1 de furtividade."
+    },
+    "200858":{
+        "Name":"Lorenzo Detuono",
+        "Card Text":"Independente: Se Lorenzo estiver pronto no final do combate e o lacaio oponente n\u00e3o estiver, em vez disso, Lorenzo pode queimar 5 de sangue para mover o lacaio oponente para sua regi\u00e3o pronta, com 1 ponto de vida para um aliado sem vida. Lista Vermelha."
     },
     "200859":{
         "Name":"Lorrie Dunsirn",
@@ -799,9 +1395,45 @@
         "Name":"Louis Fortier",
         "Card Text":"Camarilla."
     },
+    "200871":{
+        "Name":"Lucian, o Perfeito",
+        "Card Text":"Laibon: Golpes contra Lucian custam mais sangue ou vida. Um servo advers\u00e1rio de Lucian pode optar por n\u00e3o atacar. +3 de sangrar."
+    },
+    "200881":{
+        "Name":"Luke Fellows",
+        "Card Text":"Sab\u00e1: Se Luke sangrar com sucesso, ele desbloqueia no final da a\u00e7\u00e3o."
+    },
+    "200882":{
+        "Name":"Lula Burch",
+        "Card Text":"Sab\u00e1."
+    },
+    "200883":{
+        "Name":"Luma, Beleza P\u00e9trea",
+        "Card Text":"Escravo de Tremere da Camarilla: V\u00f4o [FLIGHT]."
+    },
+    "200884":{
+        "Name":"Lumumba",
+        "Card Text":"Laibon."
+    },
+    "200885":{
+        "Name":"Luna Giovanni",
+        "Card Text":"Independente. 1 voto (intitulado): Durante a etapa de vota\u00e7\u00e3o de qualquer referendo, Luna pode remover X cartas de a\u00e7\u00e3o pol\u00edtica em qualquer pilha de cinzas do jogo para obter +X votos."
+    },
+    "200886":{
+        "Name":"Lupe \"Cabbie22\" Droin",
+        "Card Text":"Se Lupe tiver um ve\u00edculo, uma vez a cada a\u00e7\u00e3o ela pode queimar uma condena\u00e7\u00e3o [1CONVICTION] para obter +1 de furtividade ou +1 de percep\u00e7\u00e3o."
+    },
     "200887":{
         "Name":"Lupo",
         "Card Text":"Camarilla."
+    },
+    "200888":{
+        "Name":"Lupo Giovanni",
+        "Card Text":"Independente: Se Lupo estiver pronto durante sua fase de destravar, outro Giovanni pronto que voc\u00ea controla pode ganhar 1 de sangue."
+    },
+    "200889":{
+        "Name":"Lutero",
+        "Card Text":"Sab\u00e1: Lutero recebe +1 de sangramento ao sangrar um Matusal\u00e9m que controla um Pander pronto."
     },
     "200892":{
         "Name":"Lydia Van Cuelen",
@@ -811,13 +1443,37 @@
         "Name":"Lynn Thompson",
         "Card Text":"Camarilla: Lynn n\u00e3o pode ter um ref\u00fagio (em vez disso qualquer ref\u00fagio que ela receberia \u00e9 queimado)."
     },
+    "200897":{
+        "Name":"Madeleine Giovanni",
+        "Card Text":"Independente: Depois de um servo em combate com Madeleine sair da regi\u00e3o pronta, seu controlador queima 1 de recurso."
+    },
     "201557":{
         "Name":"Madison",
         "Card Text":"Camarilla."
     },
+    "200898":{
+        "Name":"Magdelena Schaefer",
+        "Card Text":"Camarilla: Cartas de ataque que requerem Taumaturgia [tha] custam a Magdalena um sangue adicional."
+    },
     "200733":{
         "Name":"Malabarista",
         "Card Text":"Camarilla: Uma vez a cada combate, se a dist\u00e2ncia for longa, o Malabarista pode queimar 1 sangue para golpear:esquiva e ganhar um golpe adicional (limitado). Uma vez a cada combate, o Malabarista pode queimar 1 sangue para conseguir uma manobra."
+    },
+    "200901":{
+        "Name":"Malachai",
+        "Card Text":"Independente: V\u00f4o [FLIGHT]."
+    },
+    "200902":{
+        "Name":"Malcolm",
+        "Card Text":"Independente."
+    },
+    "200903":{
+        "Name":"Maldavis",
+        "Card Text":"Camarilla: Qualquer prim\u00f3geno pronto pode queimar 1 de sangue de Maldavis como uma a\u00e7\u00e3o (D) com +1 de furtividade. Maldavis recebe -1 de sangrar ao sangrar um Matusal\u00e9m que controla um prim\u00f3geno pronto."
+    },
+    "200904":{
+        "Name":"Maldavis",
+        "Card Text":"Anarquista: Prim\u00f3genos recebem +1 voto em referendos chamados por Maldavis.\n[MERGED] Bar\u00e3o de Chicago."
     },
     "201600":{
         "Name":"Marcel",
@@ -827,6 +1483,14 @@
         "Name":"Marcel de Breau",
         "Card Text":"Arcebispo do Sab\u00e1 de Paris: Se voc\u00ea tiver a Vantagem, voc\u00ea ganha uma recurso quando qualquer Matusal\u00e9m jogar uma carta da Gehenna. +1 de sangrar."
     },
+    "200913":{
+        "Name":"Marciana Giovanni, Investigadora",
+        "Card Text":"Independente: A\u00e7\u00f5es de sangrar custam a Marciana 1 sangue adicional. Durante uma a\u00e7\u00e3o, voc\u00ea pode trav\u00e1-la e escolher um vampiro que n\u00e3o seja do Sab\u00e1 para permitir que esse vampiro queime 1 sangue para obter +1 de percep\u00e7\u00e3o."
+    },
+    "200917":{
+        "Name":"Margaret Milliner",
+        "Card Text":"Independente: Enquanto /Francis Milliner/ est\u00e1 pronto, Margaret recebe +1 de sangrar. Cartas que exigem Fortitude [for] custam 1 sangue adicional para ela."
+    },
     "200920":{
         "Name":"Marguerite Foccart",
         "Card Text":"Camarilla: Marguerite recebe +1 de percep\u00e7\u00e3o contra a\u00e7\u00f5es pol\u00edticas."
@@ -835,9 +1499,17 @@
         "Name":"Marguerite Foccart",
         "Card Text":"Anarquista: Marguerite recebe +1 de for\u00e7a em combate com um vampiro titulado.\n[MERGED] +1 de for\u00e7a."
     },
+    "200922":{
+        "Name":"Maria Stone",
+        "Card Text":"Sab\u00e1."
+    },
     "200923":{
         "Name":"Maria Stone",
         "Card Text":"Avan\u00e7ada, Sab\u00e1: -1 de for\u00e7a. Est\u00e9ril.\n[MERGED] Maria n\u00e3o sofre o -1 de for\u00e7a de seu texto especial, e ela tem Spiritus superior [SPI]."
+    },
+    "200925":{
+        "Name":"Marianna",
+        "Card Text":"Independente: Enquanto Marianna estiver pronta, qualquer outro Matusal\u00e9m controlando um Giovanni pronto queima 1 de recurso durante sua fase de destravar. Ela recebe +1 de for\u00e7a em combate com um Giovanni."
     },
     "200926":{
         "Name":"Mariano Pomposo",
@@ -846,6 +1518,10 @@
     "200930":{
         "Name":"Mariel St. John",
         "Card Text":"Sab\u00e1."
+    },
+    "200932":{
+        "Name":"Mario Giovanni",
+        "Card Text":"Independente."
     },
     "200937":{
         "Name":"Mark Decker",
@@ -856,16 +1532,24 @@
         "Card Text":"Camarilla: Marlena n\u00e3o trava ao realizar uma a\u00e7\u00e3o de recrutar aliado. Ela pode realizar apenas 1 a\u00e7\u00e3o de recrutar aliado a cada turno."
     },
     "200940":{
-        "Name":"Marlene, The Infernalist",
+        "Name":"Marlene, A infernalista",
         "Card Text":"Sab\u00e1."
     },
     "201601":{
         "Name":"Martina Srnankova",
         "Card Text":"Anarquista: Martina recebe +1 de percep\u00e7\u00e3o durante a\u00e7\u00f5es de sangrar."
     },
+    "200944":{
+        "Name":"Martino della Passaglia",
+        "Card Text":"Independente: Equipamentos custam a Martino 1 a menos de sangue ou recurso para equipar."
+    },
     "200948":{
         "Name":"Mary a Negra",
         "Card Text":"Independente: Uma vez a cada rodada, Mary pode queimar um sangue para fazer com que o dano de seus golpes de m\u00e3o seja agravado para o round atual. Infernal."
+    },
+    "200953":{
+        "Name":"Maskini",
+        "Card Text":"Laibon: Se Maskini tentar uma a\u00e7\u00e3o malsucedida, ou tentar bloquear mas n\u00e3o obtiver sucesso, ele queima 1 sangue no final dessa a\u00e7\u00e3o."
     },
     "201602":{
         "Name":"Massimiliano",
@@ -923,6 +1607,10 @@
         "Name":"Michael diCarlo",
         "Card Text":"Sab\u00e1: Se Michael realizar uma a\u00e7\u00e3o bem sucedida para entrar em combate com um servo, ele pode definir a dist\u00e2ncia para a primeira rodada do combate resultante como longo."
     },
+    "200984":{
+        "Name":"Mictlantecuhtli",
+        "Card Text":"Independente: Mictlantecuhtli \u00e9 imune a dano de armas. Cada um de seus outros vampiros prontos ganha 1 sangue ap\u00f3s cometer diablerie (antes que a ca\u00e7ada de sangue seja chamada). +1 for\u00e7a."
+    },
     "200987":{
         "Name":"Miguel Santo Domingo",
         "Card Text":"Sab\u00e1: Durante uma a\u00e7\u00e3o de sangrar, Miguel pode queimar 1 sangue para dar +1 de sangrar a qualquer outro vampiro atuante do Sab\u00e1 que voc\u00ea controle."
@@ -939,13 +1627,57 @@
         "Name":"Miranda Sanova",
         "Card Text":"Primog\u00eanito da Camarilla: Outros Brujah recebem -1 de percep\u00e7\u00e3o ao tentar bloquear Miranda."
     },
+    "200994":{
+        "Name":"Mirembe Kabbada",
+        "Card Text":"Camarilla."
+    },
+    "201002":{
+        "Name":"Mitru o Ca\u00e7ador",
+        "Card Text":"Sab\u00e1: Cartas que requerem Rapidez [cel] custam a Mitru 1 de sangue a menos."
+    },
+    "201004":{
+        "Name":"Monique",
+        "Card Text":"Sab\u00e1."
+    },
     "201008":{
         "Name":"Monty Coven",
         "Card Text":"Sab\u00e1: Depois que Monty queimar um vampiro titulado, ele pode se tornar um bispo. Se o t\u00edtulo do vampiro queimado valer 3 ou mais votos, ele pode se tornar um priscus."
     },
+    "201012":{
+        "Name":"Morrow o S\u00e1bio",
+        "Card Text":"Sab\u00e1: Uma vez a cada a\u00e7\u00e3o, Morrow pode queimar 2 de sangue para obter +1 de furtividade."
+    },
+    "201015":{
+        "Name":"Mowgli",
+        "Card Text":"Sabbat: Mowgli n\u00e3o pode usar manobras para manobrar para longa dist\u00e2ncia e n\u00e3o pode usar pressionar para encerrar o combate."
+    },
+    "201018":{
+        "Name":"Mugur Sabau",
+        "Card Text":"Arcebispo do Sab\u00e1 de Pittsburgh: Cada vez que Mugur comete diablerie, ele recebe um +1 adicional de sangrar."
+    },
+    "201021":{
+        "Name":"Mukhtar Bey",
+        "Card Text":"Pr\u00edncipe da Camarilla do Cairo: Mukhtar n\u00e3o pode usar pressionar para continuar o combate. Se houver cinco cartas Gehenna em jogo durante sua fase de desbloqueio, queime Mukhtar."
+    },
     "201023":{
         "Name":"Muricia",
-        "Card Text":"Sab\u00e1: Durante sua fase de destravar, um Gangrle antitribu que voc\u00ea controla pode queimar 1 de sangue para se tornar um Ahrimane est\u00e9ril e ganhar 1 n\u00edvel de Spiritus [spi]. +1 de for\u00e7a. Est\u00e9ril."
+        "Card Text":"Sab\u00e1: Durante sua fase de destravar, um Gangrel antitribu que voc\u00ea controla pode queimar 1 de sangue para se tornar um Ahrimane est\u00e9ril e ganhar 1 n\u00edvel de Spiritus [spi]. +1 de for\u00e7a. Est\u00e9ril."
+    },
+    "201025":{
+        "Name":"Muse",
+        "Card Text":"Sab\u00e1: -1 de Percep\u00e7\u00e3o"
+    },
+    "201029":{
+        "Name":"Nadima",
+        "Card Text":"Independente: +1 de percep\u00e7\u00e3o."
+    },
+    "201035":{
+        "Name":"Nana Buruku",
+        "Card Text":"Laibon: Enquanto Nana est\u00e1 pronta, voc\u00ea recebe duas a\u00e7\u00f5es de fase mestre (em vez de uma) a cada fase mestre e +1 de tamanho de m\u00e3o."
+    },
+    "201036":{
+        "Name":"Nangila Were",
+        "Card Text":"Laibon: Nangila pode entrar em combate com um lacaio controlado por outro Matusal\u00e9m como uma a\u00e7\u00e3o (D). Enquanto Nangila est\u00e1 pronto, o tamanho da sua m\u00e3o \u00e9 uma carta maior."
     },
     "201562":{
         "Name":"Naomi Stewart",
@@ -955,9 +1687,17 @@
         "Name":"Nathan Turner",
         "Card Text":"Anarquista."
     },
+    "201039":{
+        "Name":"Navar McClaren",
+        "Card Text":"Camarilla: Navar n\u00e3o pode bloquear vampiros mais velhos."
+    },
     "201607":{
         "Name":"Nayarana",
         "Card Text":"Camarilla."
+    },
+    "201040":{
+        "Name":"Nedal, O Descuidado",
+        "Card Text":"Camarilla: As cartas de combate jogadas por Nedal n\u00e3o s\u00e3o substitu\u00eddas at\u00e9 sua pr\u00f3xima fase de destravar."
     },
     "201049":{
         "Name":"Nergal",
@@ -971,6 +1711,14 @@
         "Name":"Nettie Hale",
         "Card Text":"Sab\u00e1: Nettie tem +1 de furtividade quando emprega lacaios ou recruta aliados. Est\u00e9ril."
     },
+    "201053":{
+        "Name":"Ngozi Ekwensu",
+        "Card Text":"Laibon magaji: Uma vez a cada combate, Ngozi pode bloquear um Orun nela para fazer com que o dano de seus golpes de m\u00e3o seja agravado para a rodada atual."
+    },
+    "201059":{
+        "Name":"Nik",
+        "Card Text":"Camarilla: Brujah recebem +1 de intercepta\u00e7\u00e3o ao tentar bloquear Nik."
+    },
     "201062":{
         "Name":"Nizzam al-Latif",
         "Card Text":"Sab\u00e1: O dano dos golpes de m\u00e3o de Nizzam \u00e9 \u200b\u200bagravado. M\u00e3o Negra."
@@ -983,9 +1731,21 @@
         "Name":"Nonu Dis",
         "Card Text":"Anarquista: Se Nonu Dis estiver pronto durante sua fase mestra, voc\u00ea pode adicionar 1 de sangue a um Ministro que voc\u00ea controla depois de jogar uma carta mestra. +1 de Sangrar."
     },
+    "201066":{
+        "Name":"Nostoket",
+        "Card Text":"Sab\u00e1. M\u00e3o Negra: Nostoket pode causar 2 de dano em um servo pronto controlado por seu predador ou presa como uma a\u00e7\u00e3o (D)."
+    },
+    "201068":{
+        "Name":"Nunzio Giovanni",
+        "Card Text":"Independente."
+    },
     "201411":{
         "Name":"O Sem Nome",
         "Card Text":"Independente: O Sem Nome pode queimar 1 sangue para golpear: 2R de dano agravado. Voc\u00ea pode ganhar 2 de recurso depois dele sangrar com sucesso. Infernal."
+    },
+    "201071":{
+        "Name":"Obsidian",
+        "Card Text":"Independente: V\u00f4o [FLIGHT]."
     },
     "201609":{
         "Name":"Octane",
@@ -995,6 +1755,10 @@
         "Name":"Olugbenga",
         "Card Text":"Laibon magaji: Se voc\u00ea est\u00e1 contestando um vampiro, voc\u00ea pode usar o sangue daquele vampiro ou de Olugbenga como recurso para pagar por aquele contesto. Ele recebe +1 de percep\u00e7\u00e3o durante a\u00e7\u00f5es de sangrar."
     },
+    "201079":{
+        "Name":"Omaya",
+        "Card Text":"Sabbat: Omaya pode prevenir um de dano a cada combate."
+    },
     "201080":{
         "Name":"Omer",
         "Card Text":"Independente: Sangue Amaldi\u00e7oado."
@@ -1002,6 +1766,14 @@
     "201565":{
         "Name":"Oshri Dahan",
         "Card Text":"Camarilla."
+    },
+    "201090":{
+        "Name":"Panagos Levidis",
+        "Card Text":"Camarilla."
+    },
+    "201092":{
+        "Name":"Paolo Sardenzo",
+        "Card Text":"Independente: Quando uma apari\u00e7\u00e3o entra em jogo, Paolo pode ganhar 1 sangue. Giovanni recebe +1 de percep\u00e7\u00e3o contra ele."
     },
     "201094":{
         "Name":"Pariah",
@@ -1015,9 +1787,17 @@
         "Name":"Parnassus",
         "Card Text":"Independente: Sangue Amaldi\u00e7oado. +1 de for\u00e7a."
     },
+    "201098":{
+        "Name":"Patrizia Giovanni, Colecionadora de Segredos",
+        "Card Text":"Independente: Patrizia pode empregar um lacaio de sua pilha de cinzas como uma a\u00e7\u00e3o cujo custo \u00e9 aumentado em 1 sangue (os requisitos e o custo se aplicam normalmente)."
+    },
     "201099":{
         "Name":"Paul Calderone",
         "Card Text":"Camarilla."
+    },
+    "201101":{
+        "Name":"Paul DiCarlo, O Alfa",
+        "Card Text":"Independente."
     },
     "201108":{
         "Name":"Pedro Cortez",
@@ -1031,21 +1811,77 @@
         "Name":"Petaniqua",
         "Card Text":"Avan\u00e7ado, Independente. Lista Vermelha: Uma vez a cada combate, Petaniqua pode queimar um sangue para ganhar um pressionar. Petaniqua pode recrutar um aliado lobisomem como se ele atendesse aos requisitos de jogar essa carta. +1 for\u00e7a. Infernal."
     },
+    "201123":{
+        "Name":"Phillipe Rigaud",
+        "Card Text":"Sab\u00e1. M\u00e3o Negra: Phillipe n\u00e3o pode bloquear a\u00e7\u00f5es indiretas. Quando qualquer vampiro mais velho estiver em torpor que Phillipe possa diablerizar, ele deve tentar uma a\u00e7\u00e3o de diablerie (a menos que ele precise ca\u00e7ar)."
+    },
+    "201124":{
+        "Name":"Pieter",
+        "Card Text":"Sab\u00e1."
+    },
+    "201127":{
+        "Name":"Pochtli",
+        "Card Text":"Independente: Pochtli pode mover at\u00e9 dois cards de biblioteca de sua pilha de cinzas para sua biblioteca como uma a\u00e7\u00e3o com +1 de furtividade (embaralhe ap\u00f3s a a\u00e7\u00e3o)."
+    },
+    "201130":{
+        "Name":"Porphyry",
+        "Card Text":"Camarilla: Porf\u00edrio recebe +2 de sangrar contra um Matusal\u00e9m que controla um local. V\u00f4o [FLIGHT]. Escravo Tremere."
+    },
+    "201134":{
+        "Name":"Primo Giovanni",
+        "Card Text":"Independente."
+    },
     "201135":{
         "Name":"Pug Jackson",
         "Card Text":"Primog\u00eanito Camarilla."
+    },
+    "201136":{
+        "Name":"Pugfar",
+        "Card Text":"Escravo de Tremere antitribu do Sab\u00e1: Pugfar pode queimar um sangue para dar um pressionar a um Tremere antitribu que voc\u00ea controla. Voo [FLIGHT]."
     },
     "201137":{
         "Name":"Qadir ul-Ghani",
         "Card Text":"Independente: Qadir pode mudar seu cl\u00e3 para qualquer outro cl\u00e3 como uma a\u00e7\u00e3o com +1 de furtividade que custa 1 de sangue. Sangue Amaldi\u00e7oado. +1 de sangrar."
     },
+    "201145":{
+        "Name":"Quinton McDonnell",
+        "Card Text":"Primog\u00eanito da Camarilla: +1 de for\u00e7a."
+    },
+    "201152":{
+        "Name":"Rafaele Giovanni",
+        "Card Text":"Independente: Rafaele pode sangrar seu predador como uma a\u00e7\u00e3o (D). +1 de sangrar."
+    },
     "201155":{
         "Name":"Rake",
         "Card Text":"Pr\u00edncipe Camarilla de Atlanta: Rake ganha +1 de for\u00e7a em combate com Ventrue."
     },
+    "201158":{
+        "Name":"Ramona",
+        "Card Text":"Camarilla: Durante sua fase de destravr, voc\u00ea pode mover 1 sangue de qualquer Gangrel pronto que voc\u00ea controla para Ramona."
+    },
+    "201159":{
+        "Name":"Ramona",
+        "Card Text":"Avan\u00e7ado, Camarilla: Durante sua fase de destravar, voc\u00ea pode mover 1 de sangue de Ramona para qualquer Gangrel pronto que voc\u00ea controle.\n[MERGED] Durante sua fase de mestre, voc\u00ea pode mover 1 de sangue de Ramona para sua reserva."
+    },
+    "201160":{
+        "Name":"Randall",
+        "Card Text":"Independente. 1 voto (titulado): Uma vez em cada fase de servo, Randall pode queimar 1 de sangue para evitar 1 de dano n\u00e3o agravado infligido a qualquer outro servo  em combate."
+    },
     "201161":{
         "Name":"Randel, The Coward",
         "Card Text":"Sab\u00e1."
+    },
+    "201165":{
+        "Name":"Raphaela Giovanni",
+        "Card Text":"Independente."
+    },
+    "201166":{
+        "Name":"Rashid Stockton",
+        "Card Text":"Sab\u00e1. M\u00e3o Negra."
+    },
+    "201168":{
+        "Name":"Rathmere",
+        "Card Text":"Independente: Rathmere recebe +1 de for\u00e7a em combate com um vampiro do Sab\u00e1."
     },
     "201610":{
         "Name":"Rayne",
@@ -1055,9 +1891,17 @@
         "Name":"Rebekah",
         "Card Text":"Pr\u00edncipe Camarilla de Atenas: Durante a fase de vota\u00e7\u00e3o de qualquer referendo, Rebekah pode discartar uma carta que requeira Ausp\u00edcios [aus] para receber +2 votos. Sangue Amaldi\u00e7oado."
     },
+    "201175":{
+        "Name":"Regina Giovanni, A M\u00e3o Direita de Augustus",
+        "Card Text":"Independente. 2 votos (intitulado): Aliados e lacaios custam a Regina 1 sangue ou recurso a menos."
+    },
     "201176":{
         "Name":"Reginald Moore",
         "Card Text":"Primog\u00eanito da Camarilla: Reginald recebe +1 de for\u00e7a em combate com um Tremere ou Tremere antitribu. Ele n\u00e3o pode bloquear vampiros desses cl\u00e3s ou realizar a\u00e7\u00f5es para entrar em combate com eles."
+    },
+    "201180":{
+        "Name":"Reverendo Adams",
+        "Card Text":"Independente: Reverendo Adams recebe -1 furtividade em a\u00e7\u00f5es pol\u00edticas. Vampiros mais velhos n\u00e3o travam para bloquear com sucesso o Reverendo Adams."
     },
     "201185":{
         "Name":"Reza Fatir, O Anjo Negro",
@@ -1067,21 +1911,45 @@
         "Name":"Richter, The Templar of Du Mont",
         "Card Text":"Sab\u00e1: +1 de for\u00e7a."
     },
+    "201188":{
+        "Name":"Ricki Van Demsi",
+        "Card Text":"Camarilla."
+    },
     "201190":{
         "Name":"Rigby, Crusade Vanguard",
         "Card Text":"Sab\u00e1: Se Rigby tentar bloquear um vampiro do Sab\u00e1 e falhar, e qualquer um dos bispos de seu predador n\u00e3o estiver com capacidade cheia, mova 1 de sangue de Rigby para um desses bispos."
+    },
+    "201192":{
+        "Name":"Robert Price",
+        "Card Text":"Independente."
     },
     "201193":{
         "Name":"Robin Withers",
         "Card Text":"Camarilla."
     },
+    "201194":{
+        "Name":"Rocia",
+        "Card Text":"Camarilla: Rocia recebe +1 de percep\u00e7\u00e3o ao tentar bloquear Tremere ou Tremere antitribu. Ela recebe um pressionar opcional a cada combate. V\u00f4o [FLIGHT]."
+    },
     "201200":{
         "Name":"Roland Loussarian",
+        "Card Text":"Camarilla."
+    },
+    "201201":{
+        "Name":"Roman Alexander",
         "Card Text":"Camarilla."
     },
     "201203":{
         "Name":"Rosa Hern\u00e1ndez",
         "Card Text":"Independente: Rosa recebe +1 de furtividade quando emprega lacaios."
+    },
+    "201206":{
+        "Name":"Rosemarie",
+        "Card Text":"Camarilla: Cartas de combate que n\u00e3o requerem Fortitude [for] custam a Rosemarie um sangue adicional."
+    },
+    "201209":{
+        "Name":"Rudolfo Giovanni",
+        "Card Text":"Independente."
     },
     "201210":{
         "Name":"Rufina Soledad",
@@ -1090,6 +1958,22 @@
     "201611":{
         "Name":"Ruslan Fedorenko",
         "Card Text":"Anarquista."
+    },
+    "201211":{
+        "Name":"Rusticus",
+        "Card Text":"Camarilla: V\u00f4o [FLIGHT]. Escravo Tremere."
+    },
+    "201215":{
+        "Name":"Ryder",
+        "Card Text":"Independente: Quando Ryder est\u00e1 em combate, antes que o alcance seja escolhido na primeira rodada, voc\u00ea pode olhar para a m\u00e3o do controlador do servo oponente. Ryder recebe +1 de percep\u00e7\u00e3o ao bloquear a\u00e7\u00f5es (D)."
+    },
+    "201216":{
+        "Name":"Ryszard",
+        "Card Text":"Bispo do Sab\u00e1: Ryszard n\u00e3o pode bloquear vampiros titulados."
+    },
+    "201219":{
+        "Name":"Sadie",
+        "Card Text":"Sab\u00e1."
     },
     "201220":{
         "Name":"Sahana",
@@ -1107,9 +1991,21 @@
         "Name":"Salvador Garcia",
         "Card Text":"Anarquista: Enquanto Salvador estiver pronto, cartas que requeiram Anarquista custam a voc\u00ea e seus Anarquistas um de sangue ou recurso a menos."
     },
+    "201227":{
+        "Name":"Salvatore Giovanni",
+        "Card Text":"Independente."
+    },
+    "201228":{
+        "Name":"Samantha",
+        "Card Text":"Bispo do Sab\u00e1: O dano dos golpes de m\u00e3o de Samantha \u00e9 agravado. Ela recebe +1 de percep\u00e7\u00e3o contra Lasombra."
+    },
     "201231":{
         "Name":"Samson",
         "Card Text":"Sab\u00e1."
+    },
+    "201232":{
+        "Name":"Sandra White",
+        "Card Text":"Camarilla: Se Sandra diableriza um vampiro mais velho, o controlador desse vampiro queima 1 reserva."
     },
     "201234":{
         "Name":"Sanjo",
@@ -1123,13 +2019,37 @@
         "Name":"Sarah Brando",
         "Card Text":"Sab\u00e1: Sara recebe -1 furtividade em cada a\u00e7\u00e3o (D) que ela realiza contra um Matusal\u00e9m que controla um bispo ou arcebispo pronto."
     },
+    "201239":{
+        "Name":"Sarah Raines",
+        "Card Text":"Independente: Sarah recebe uma manobra opcional e um pressionar opcional quando em combate com um mago aliado."
+    },
     "201240":{
         "Name":"Sargon",
         "Card Text":"Independente: Sempre que Sargon realiza uma a\u00e7\u00e3o com sucesso, voc\u00ea obt\u00e9m a Vantagem. +1 for\u00e7a. Infernal."
     },
+    "201249":{
+        "Name":"Saxum, Mestre dos Escravos",
+        "Card Text":"Escravo de Tremere da Camarilla: V\u00f4o [FLIGHT]."
+    },
+    "201250":{
+        "Name":"Sayshila",
+        "Card Text":"Independente: Durante um referendo, se Sayshila estiver pronta, voc\u00ea pode trav\u00e1-la para dar a outro vampiro titulado que voc\u00ea controla 2 votos adicionais. Servos oponentes n\u00e3o podem usar pressionar para continuar contra ela."
+    },
     "201251":{
         "Name":"Scarlet Carson O'Toole",
         "Card Text":"Sab\u00e1."
+    },
+    "201253":{
+        "Name":"Scout Youngwood",
+        "Card Text":"Independente. 2 votos (intitulado): Durante sua fase de destravar, Scout pode queimar 2 de sangue para travar um aliado ou vampiro mais jovem controlado por sua presa. Cartas de rea\u00e7\u00e3o custam a ela 1 sangue adicional."
+    },
+    "201257":{
+        "Name":"S\u00e9bastien Goulet",
+        "Card Text":"Sab\u00e1: Aliados e lacaios custam a S\u00e9bastien 1 de sangue ou recurso a menos. Uma vez a cada a\u00e7\u00e3o, ele pode queimar 1 de sangue para obter +1 de sangrar."
+    },
+    "201258":{
+        "Name":"S\u00e9bastien Goulet",
+        "Card Text":"Sab\u00e1: S\u00e9bastien recebe +1 de furtividade nas a\u00e7\u00f5es de recrutar e empregar.\n[MERGED] Ele pode roubar umn aliado ou lacaio como uma a\u00e7\u00e3o (D) com +1 de furtividade."
     },
     "201260":{
         "Name":"Sela",
@@ -1139,13 +2059,33 @@
         "Name":"Selina Sombria",
         "Card Text":"Cardeal Sab\u00e1: Selina tem +1 de furtividade durante a\u00e7\u00f5es pol\u00edticas."
     },
+    "201271":{
+        "Name":"Shaggydog",
+        "Card Text":"Sab\u00e1. Black Hand: Shaggydog recebe um pressionar opcional na primeira rodada de combate."
+    },
+    "201275":{
+        "Name":"Shane Grimald",
+        "Card Text":"Sab\u00e1."
+    },
     "201278":{
         "Name":"Shawnda Dorrit",
         "Card Text":"Priscus do Sab\u00e1."
     },
+    "201279":{
+        "Name":"Sheela Na Gig",
+        "Card Text":"Sab\u00e1: Durante uma a\u00e7\u00e3o de sangrar, Sheela Na Gig pode travar para dar a um Tremere antitribu agente que voc\u00ea controla +1 de sangrar. V\u00f4o [FLIGHT]. Escravo Tremere antitribu."
+    },
+    "201284":{
+        "Name":"Shiloh Marie, Vingan\u00e7a",
+        "Card Text":"Independente: Shiloh pode entrar em combate com um vampiro mais jovem como uma a\u00e7\u00e3o (D). Se ela estiver pronta durante sua fase de destravar, outro vampiro pronto que voc\u00ea controla sofre 1 de dano n\u00e3o evit\u00e1vel."
+    },
     "201612":{
         "Name":"Siarhei Levchenko",
         "Card Text":"Anarquista."
+    },
+    "201288":{
+        "Name":"Silvia Giovanni",
+        "Card Text":"Independente: Silvia recebe 1 pressionar opcional a cada combate. +1 for\u00e7a."
     },
     "201291":{
         "Name":"Sir Ralph Hamilton",
@@ -1155,17 +2095,49 @@
         "Name":"Sister Evelyn",
         "Card Text":"Sab\u00e1."
     },
+    "201296":{
+        "Name":"Skryta Zyleta",
+        "Card Text":"Sab\u00e1. M\u00e3o Negra."
+    },
     "201300":{
         "Name":"Smash",
         "Card Text":"Sab\u00e1."
+    },
+    "201302":{
+        "Name":"Sobayifa",
+        "Card Text":"Laibon magaji."
     },
     "201303":{
         "Name":"Socrate Cidibe",
         "Card Text":"Laibon."
     },
+    "201304":{
+        "Name":"Soldat",
+        "Card Text":"Sab\u00e1. M\u00e3o Negra: Voc\u00ea pode queimar a Vantagem para dar a qualquer vampiro da M\u00e3o Negra uma manobra opcional."
+    },
+    "201307":{
+        "Name":"Sophia Watson",
+        "Card Text":"Independente."
+    },
+    "201312":{
+        "Name":"Stanislava",
+        "Card Text":"C\u00edrculo Interno Camarilla Gangrel: Lacaios empregados por servos oponentes a Stanislava perdem suas habilidades em combate. Aliados n\u00e3o podem bloque\u00e1-la. +2 de sangrar."
+    },
+    "201314":{
+        "Name":"Stefano Giovanni",
+        "Card Text":"Independente: Durante a etapa de vota\u00e7\u00e3o de uma a\u00e7\u00e3o pol\u00edtica, Stefano pode queimar 1 sangue para obter +1 voto."
+    },
+    "201316":{
+        "Name":"Stephen Milliner",
+        "Card Text":"Independente."
+    },
     "201317":{
         "Name":"Steve Booth",
         "Card Text":"Camarilla."
+    },
+    "201321":{
+        "Name":"Styles Margs",
+        "Card Text":"Sabbat: Referendos de ca\u00e7a de sangue chamados em Styles recebem +2 votos a favor do referendo."
     },
     "201323":{
         "Name":"Sukainah",
@@ -1179,6 +2151,14 @@
         "Name":"Synner-G",
         "Card Text":"Sab\u00e1: Synner-G pode destravar ap\u00f3s equipar com sucesso um equipamento eletr\u00f4nico de sua m\u00e3o."
     },
+    "201334":{
+        "Name":"T.J.",
+        "Card Text":"Independente: T. J. pode bloquear e queimar 2 de sangue para cancelar um referendo convocado por um vampiro titulado da Camarilla."
+    },
+    "201336":{
+        "Name":"Talbot",
+        "Card Text":"Independente: Voc\u00ea pode descartar uma carta mestre para que Talbot tente entrar em combate com um servo como uma a\u00e7\u00e3o (D) com +1 de furtividade."
+    },
     "201340":{
         "Name":"Tansu Bekir",
         "Card Text":"Independente: Sangue Amaldi\u00e7oado."
@@ -1189,7 +2169,7 @@
     },
     "201345":{
         "Name":"Tariq, O Silencioso",
-        "Card Text":"Sabbat: Enquanto Tariq \u00e9 controlado, ele recebe -4 de capacidade. Ele pode atacar, \u00e0 dist\u00e2ncia: roubar 1 sangue ou vida (tornando-se sangue). M\u00e3o Negra. Lista Vermelha.\n[MERGED] Independente: a capacidade de Tariq n\u00e3o \u00e9 reduzida pelo texto de seu cart\u00e3o."
+        "Card Text":"Sab\u00e1: Enquanto Tariq \u00e9 controlado, ele recebe -4 de capacidade. Ele pode atacar, \u00e0 dist\u00e2ncia: roubar 1 sangue ou vida (tornando-se sangue). M\u00e3o Negra. Lista Vermelha.\n[MERGED] Independente: a capacidade de Tariq n\u00e3o \u00e9 reduzida pelo texto de seu cart\u00e3o."
     },
     "201344":{
         "Name":"Tariq, O Sil\u00eancioso",
@@ -1231,6 +2211,10 @@
         "Name":"Thetmes, Califa def Alamute",
         "Card Text":"Independente. 2 votos (titulado): Dano dos golpes de m\u00e3o de Thetmes \u00e9 agravado. Sangue Amaldi\u00e7oado."
     },
+    "201369":{
+        "Name":"Thomasso Ghiberti",
+        "Card Text":"Independente: Durante sua fase de desbloqueio, voc\u00ea pode mover 1 sangue de um Laibon que voc\u00ea controla para Thomasso."
+    },
     "201370":{
         "Name":"Thucimia",
         "Card Text":"Independente. 1 voto (titulado): Durante uma a\u00e7\u00e3o de sangrar, Thucimia pode lhe dar -2 de tamanho de m\u00e3o at\u00e9 sua pr\u00f3xima fase de desbloqueio para obter +1 de sangrar. Sangue amaldi\u00e7oado. +1 de tamanho de m\u00e3o."
@@ -1238,6 +2222,18 @@
     "201379":{
         "Name":"Tomaine",
         "Card Text":"Primog\u00eanito da Camarilla: Enquanto Tomaine estiver pronto e sua presa controlar um vampiro do Sab\u00e1 pronto, sua presa recebe +1 de tamanho de m\u00e3o."
+    },
+    "201383":{
+        "Name":"Tori Longwood",
+        "Card Text":"Anarquista: Depois que sua fase de servo terminar, trave Tori se ela n\u00e3o fez nenhuma a\u00e7\u00e3o neste turno."
+    },
+    "201384":{
+        "Name":"Torvus Barba Sangrenta",
+        "Card Text":"Independente: Durante a fase de servo de qualquer Matusal\u00e9m, voc\u00ea pode queimar o Edge para destravar Torvus. +1 for\u00e7a."
+    },
+    "201393":{
+        "Name":"Tupdog",
+        "Card Text":"Sab\u00e1. Escravo de Tremere antitribu: Cartas de Visceratika [vis] custam 1 de sangue a menos para Tupdog. Tupdog pode entrar em combate com qualquer servo como uma a\u00e7\u00e3o (D). Tupdogs n\u00e3o s\u00e3o \u00fanicos. Ap\u00f3s o final de sua fase de servo, queime Tupdog e mova a carta do topo de sua cripta para sua regi\u00e3o n\u00e3o controlada. Voo [FLIGHT]."
     },
     "201394":{
         "Name":"Tura Vaughn",
@@ -1247,9 +2243,17 @@
         "Name":"Tyler",
         "Card Text":"Primog\u00eanito da Camarilla: Quando Tyler diableriza um vampiro, ela desbloqueia e ganha 1 de sangue do banco de sangue. Uma vez por turno, ela pode queimar 1 de sangue para obter +1 de sangrar ou um voto adicional."
     },
+    "201400":{
+        "Name":"Ublo-Satha",
+        "Card Text":"Escravo de Tremere da Camarilla: Ublo-Satha pode prevenir 1 dano a cada combate. Brujah recebe +1 de sangrar ao sangrar o controlador de Ublo-Satha. Voo [FLIGHT]."
+    },
     "201401":{
         "Name":"Uchenna",
         "Card Text":"Magaji Laibon: Durante sua fase mestra, Uchenna pode queimar 1 de sangue para queimar uma carta de sua m\u00e3o. Compre para seu tamanho de m\u00e3o."
+    },
+    "201402":{
+        "Name":"Ugadja",
+        "Card Text":"Laibon magaji: Ugadja pode mover at\u00e9 2 de sangue de si mesmo para um Laibon mais jovem em sua regi\u00e3o descontrolada como uma a\u00e7\u00e3o com +1 de furtividade"
     },
     "200607":{
         "Name":"Uivadora",
@@ -1295,41 +2299,77 @@
         "Name":"Vardar Vardarian",
         "Card Text":"Independente: Seguidores de Set recebem -1 de for\u00e7a em combate com Vardar. Sangue amaldi\u00e7oado."
     },
+    "201436":{
+        "Name":"Verbruch",
+        "Card Text":"Camarilla: Quando Verbruch entra em jogo, voc\u00ea pode procurar em sua cripta por um Tremere, revel\u00e1-lo e mov\u00ea-lo para sua regi\u00e3o n\u00e3o-controlada. Voo [FLIGHT]. Escravo Tremere."
+    },
     "201442":{
         "Name":"Victor Tolliver",
         "Card Text":"Sab\u00e1."
+    },
+    "201447":{
+        "Name":"Viktor, o General Noturno",
+        "Card Text":"Independente: +1 furtividade."
     },
     "201450":{
         "Name":"Violette Prentiss",
         "Card Text":"Camarilla."
     },
+    "201455":{
+        "Name":"Vittorio Giovanni",
+        "Card Text":"Independente."
+    },
     "201615":{
         "Name":"Vivian VI",
         "Card Text":"Bar\u00e3o Anarquista de Joanesburgo."
     },
-    "201458":{
-        "Name":"Volker, The Puppet Prince",
-        "Card Text":"Pr\u00edncipe Camarilla de Frankfurt: Volker n\u00e3o pode tentar bloquear prim\u00f3genitos."
+    "201457":{
+        "Name":"Vliam Andor",
+        "Card Text":"Camarilla."
     },
-    "201460":{
-        "Name":"Vulture",
-        "Card Text":"Anarquista: Uma vez por turno, um Anarquista que voc\u00ea controla pode destravar depois de equipar um ve\u00edculo com sucesso de sua m\u00e3o."
+    "201458":{
+        "Name":"Volker, o Pr\u00edncipe Fantoche",
+        "Card Text":"Pr\u00edncipe Camarilla de Frankfurt: Volker n\u00e3o pode tentar bloquear prim\u00f3genitos."
     },
     "201461":{
         "Name":"Wah Chun-Yuen",
         "Card Text":"Sab\u00e1. M\u00e3o Negra."
     },
+    "201462":{
+        "Name":"Walker Grimes",
+        "Card Text":"Camarilla: Cartas mestras direcionadas a Walker custam 1 de recurso adicional."
+    },
     "201594":{
         "Name":"Warmaksan",
         "Card Text":"Pr\u00edncipe Camarilla de Argel"
+    },
+    "201475":{
+        "Name":"Wren",
+        "Card Text":"Sab\u00e1."
+    },
+    "201476":{
+        "Name":"Wynn",
+        "Card Text":"Primog\u00eanito da Camarilla: Wynn pode entrar em combate com um vampiro controlado por seu predador ou presa como uma a\u00e7\u00e3o (D) com +1 de furtividade."
+    },
+    "201477":{
+        "Name":"Xaviar",
+        "Card Text":"Independente: Xaviar tem 2 votos (titulado). Ele pode prevenir 1 de dano a cada combate. Uma vez a cada combate, antes que o alcance seja determinado, ele pode queimar 2 de sangue para obter +2 de for\u00e7a pelo restante do combate."
     },
     "201478":{
         "Name":"Xaviar",
         "Card Text":"Justicar Camarilla Gangrel: Voc\u00ea pode destravar Xaviar ap\u00f3s um referendo que ele convocar for aprovado."
     },
+    "201479":{
+        "Name":"Xendil Charmer",
+        "Card Text":"Priscus do Sab\u00e1."
+    },
     "201480":{
         "Name":"Xeper, Sult\u00e3o dos Leprosos",
         "Card Text":"Independente: Xeper recebe +1 voto para cada vampiro infernal \u00fanico pronto que voc\u00ea controla. Ele pode roubar um aliado controlado por outro Matusal\u00e9m como uma a\u00e7\u00e3o (D). Infernal."
+    },
+    "201481":{
+        "Name":"Xian \"DziDzat155\" Quan",
+        "Card Text":"Se Xian bloquear com sucesso um monstro e ainda estiver pronto no final da a\u00e7\u00e3o, ele pode ganhar uma convic\u00e7\u00e3o [1CONVICTION] de sua m\u00e3o ou pilha de cinzas."
     },
     "201485":{
         "Name":"Yazid Tamari",
@@ -1339,13 +2379,25 @@
         "Name":"Yazid Tamari",
         "Card Text":"Sabbat: Yazid recebe +1 de furtividade durante a\u00e7\u00f5es diretas. M\u00e3o Negra.\n[MERGED] Anarquista."
     },
+    "201492":{
+        "Name":"Yseult",
+        "Card Text":"Sab\u00e1: Quando Yseult joga uma carta que requer Melpominee [mel], voc\u00ea pode comprar uma carta adicional. Descarte depois. Yseult n\u00e3o pode bloquear vampiros com capacidade acima de 4."
+    },
     "201493":{
-        "Name":"Yuri, The Talon",
+        "Name":"Yuri, a Garra",
         "Card Text":"Camarilla."
     },
     "201495":{
         "Name":"Yusuf, Escriba Alamut",
         "Card Text":"Independente: Se Yusuf realizar uma a\u00e7\u00e3o bem-sucedida para equipar um equipamento que exija um Assamita, ele poder\u00e1 desbloquear durante a fase de descarte. Sangue amaldi\u00e7oado."
+    },
+    "201497":{
+        "Name":"Zachary",
+        "Card Text":"Sab\u00e1."
+    },
+    "201498":{
+        "Name":"Zack North",
+        "Card Text":"Camarilla: +1 de for\u00e7a."
     },
     "201499":{
         "Name":"Zack North",
@@ -1354,6 +2406,10 @@
     "201500":{
         "Name":"Zahir, M\u00e3e de Silsila",
         "Card Text":"Independente: Zahir pode procurar em sua biblioteca por uma carta de contrato, revel\u00e1-lo e mov\u00ea-lo para sua m\u00e3o como uma a\u00e7\u00e3o com +1 de furtividade (embaralhe e descarte depois). Sangue amaldi\u00e7oado."
+    },
+    "201502":{
+        "Name":"Zayyat, A Tempestde de Areia",
+        "Card Text":"Independente: Zayyat tem 2 votos (titulado). Zayyat pode mover at\u00e9 3 sangues de si mesmo para um vampiro mais jovem em sua regi\u00e3o n\u00e3o controlada como uma a\u00e7\u00e3o com +1 de furtividade. Uma vez a cada turno, ele pode queimar 2 de sangue para obter +2 de furtividade para a a\u00e7\u00e3o atual."
     },
     "201510":{
         "Name":"Zubeida",
