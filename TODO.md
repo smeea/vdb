@@ -3,6 +3,8 @@
 - Brazil flag on mobile
 
 # FEATURES
+- Sort tags in adv-deck-select
+- Filter/sort by inventory-state
 
 # MAYBE LATER FEATURES
 - Comments for PDA

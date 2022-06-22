@@ -1,5 +1,14 @@
 [
   {
+    "version": "2022-06-22",
+    "changes": [
+      "Update card images with NB images",
+      "More Brazilian Portuguese translations",
+      "Text-like exports (everything except excel and csv) now happen without server calls (offline-ready)",
+      "Many small fixes"
+    ]
+  },
+  {
     "version": "2022-06-13",
     "changes": [
       "Add Export all decks in csv/xslx",
