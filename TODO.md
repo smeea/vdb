@@ -2,7 +2,6 @@
 - Iphone clipboard (export deck / copy url)
 
 # FEATURES
-- Sort tags in adv-deck-select
 - Filter/sort by inventory-state
 
 # MAYBE LATER FEATURES

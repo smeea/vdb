@@ -27,20 +27,22 @@ const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
     }
   });
 
-  const totalOutput = Object.keys(byTags).map((k) => {
-    return (
-      <span
-        key={k}
-        onClick={() => handleClick(k)}
-        className="d-inline-block nobr pe-3"
-      >
-        <span className="blue">
-          <b>{k}:</b>
+  const totalOutput = Object.keys(byTags)
+    .sort()
+    .map((k) => {
+      return (
+        <span
+          key={k}
+          onClick={() => handleClick(k)}
+          className="d-inline-block nobr pe-3"
+        >
+          <span className="blue">
+            <b>{k}:</b>
+          </span>
+          {byTags[k]}
         </span>
-        {byTags[k]}
-      </span>
-    );
-  });
+      );
+    });
 
   const value = (
     <>
