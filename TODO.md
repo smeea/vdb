@@ -1,6 +1,5 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Brazil flag on mobile
 
 # FEATURES
 - Sort tags in adv-deck-select

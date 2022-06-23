@@ -28,7 +28,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
           setShowMenu(false);
         }}
       >
-        <Flag width="22" height="22" viewBox="0 0 515 525" />
+        <Flag width="22" height="22" viewBox="0 0 500 500" />
       </div>
     );
   });
