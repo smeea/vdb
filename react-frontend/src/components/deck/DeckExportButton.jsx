@@ -89,7 +89,7 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
     setError(false);
 
     let deckName = deck.name;
-    if (deck.branchName) {
+    if (deck.branchName && (deck.master || deck.branches.length > 0)) {
       deckName += ` [${deck['branchName']}]`;
     }
 
