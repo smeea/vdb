@@ -1,7 +1,9 @@
+# Create "decks" with entire card collection (useful to check missing cards in inventory
+
 import json
 
-with open("cardbase_crypt.json", "r") as crypt_file, open(
-    "cardbase_lib.json", "r"
+with open("./cards-update/cardbase_crypt.json", "r") as crypt_file, open(
+    "./cards-update/cardbase_lib.json", "r"
 ) as library_file, open("crypt.txt", "w") as output_crypt, open(
     "library.txt", "w"
 ) as output_library:
