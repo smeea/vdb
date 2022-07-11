@@ -202,10 +202,7 @@ const getLibraryText = (library, format) => {
       }
 
       const sortedCards = Object.keys(byType[type]).sort();
-      sortedCards.map((card) => {
-        q = byType[type][card];
-        result += `${q}x ${card}\n`;
-      });
+      sortedCards.map((card) => (result += `${byType[type][card]}x ${card}\n`));
 
       result += '\n';
     }
