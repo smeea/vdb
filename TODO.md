@@ -1,8 +1,11 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
+- Stop count 0-qty (but required) cards in unique calculation in inventory
 
 # FEATURES
-- Filter/sort by inventory-state
+- Filter in adv-deck-select by inventory-state
+- Check TWD
+- Missing from entire collection category in inventory
 
 # MAYBE LATER FEATURES
 - Comments for PDA
