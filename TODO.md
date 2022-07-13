@@ -1,11 +1,14 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Stop count 0-qty (but required) cards in unique calculation in inventory
+- Remove last checkbox to clear url
 
 # FEATURES
 - Filter in adv-deck-select by inventory-state
 - Check TWD
 - Missing from entire collection category in inventory
+- Add email to create account form
+- Store quick card in context
 
 # MAYBE LATER FEATURES
 - Comments for PDA

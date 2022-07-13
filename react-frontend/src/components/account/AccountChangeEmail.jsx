@@ -95,14 +95,7 @@ function AccountChangeEmail(props) {
     }
   }, [email]);
 
-  const tooltipText = (
-    <>
-      Email is for password recovery only.
-      <br />
-      We will not share it with anyone and will not send you anything irrelevant
-      to password reset.
-    </>
-  );
+  const tooltipText = <>Email is for password recovery only.</>;
 
   return (
     <div>
