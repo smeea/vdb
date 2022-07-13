@@ -276,6 +276,7 @@ const PdaSearchForm = (props) => {
       if (Object.keys(input).length === 0) {
         if (query) {
           setPdaResults(undefined);
+          navigate('/pda');
         }
       } else launchRequest();
     }

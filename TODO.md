@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Stop count 0-qty (but required) cards in unique calculation in inventory
-- Remove last checkbox to clear url
 
 # FEATURES
 - Filter in adv-deck-select by inventory-state

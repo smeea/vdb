@@ -226,6 +226,7 @@ const LibrarySearchForm = (props) => {
         if (query) {
           setLibraryResults(undefined);
           setPreresults(undefined);
+          navigate('/library');
         }
       } else if (
         !libraryFormState.text[0].value ||

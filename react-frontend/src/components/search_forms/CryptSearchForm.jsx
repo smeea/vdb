@@ -231,6 +231,7 @@ const CryptSearchForm = (props) => {
         if (query) {
           setCryptResults(undefined);
           setPreresults(undefined);
+          navigate('/crypt');
         }
       } else if (
         !cryptFormState.text[0].value ||

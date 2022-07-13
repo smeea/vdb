@@ -282,8 +282,8 @@ const TwdSearchForm = (props) => {
       const input = sanitizeFormState('twd', twdFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
-          navigate('/twd');
           setTwdResults(undefined);
+          navigate('/twd');
         }
       } else if (!twdFormState.event || twdFormState.event.length > 2) {
         launchRequest();
