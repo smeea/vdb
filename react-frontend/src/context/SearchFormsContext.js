@@ -30,6 +30,8 @@ export const SearchFormsProvider = (props) => {
     JSON.parse(JSON.stringify(defaultsLibraryForm))
   );
 
+  const [quickCard, setQuickCard] = useState(undefined);
+
   return (
     <SearchFormsContext.Provider
       value={{
@@ -41,6 +43,9 @@ export const SearchFormsProvider = (props) => {
         setCryptFormState,
         libraryFormState,
         setLibraryFormState,
+
+        quickCard,
+        setQuickCard,
       }}
     >
       {props.children}

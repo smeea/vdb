@@ -7,7 +7,6 @@
 - Check TWD
 - Missing from entire collection category in inventory
 - Add email to create account form
-- Store quick card in context
 
 # MAYBE LATER FEATURES
 - Comments for PDA

@@ -18,8 +18,13 @@ const Navigation = (props) => {
   const { inventoryMode, toggleInventoryMode, isMobile, username, activeDeck } =
     useApp();
 
-  const { pdaFormState, twdFormState, cryptFormState, libraryFormState } =
-    useSearchForms();
+  const {
+    pdaFormState,
+    twdFormState,
+    cryptFormState,
+    libraryFormState,
+    quickCard,
+  } = useSearchForms();
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -30,6 +35,7 @@ const Navigation = (props) => {
   let cryptUrl = '/crypt';
   let libraryUrl = '/library';
   let decksUrl = '/decks';
+  let cardsUrl = '/cards';
 
   if (!isMobile) {
     if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
@@ -51,6 +57,9 @@ const Navigation = (props) => {
   }
   if (activeDeck.deckid) {
     decksUrl = `/decks?id=${activeDeck.deckid}`;
+  }
+  if (quickCard) {
+    cardsUrl = `/cards/${quickCard.Id}`;
   }
 
   return (
@@ -136,7 +145,7 @@ const Navigation = (props) => {
           <NavLink to={libraryUrl} className="nav-link pe-2 ps-1">
             {isMobile ? 'LIB' : 'Library'}
           </NavLink>
-          <NavLink to="/cards" className="nav-link pe-3 ps-2">
+          <NavLink to={cardsUrl} className="nav-link pe-3 ps-2">
             <LightningFill width="18" height="18" viewBox="0 0 16 16" />
           </NavLink>
         </div>

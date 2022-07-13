@@ -9,7 +9,7 @@ import {
   ButtonIconed,
   CardImage,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, useSearchForms } from 'context';
 
 const Cards = ({ lastDeckId }) => {
   const params = useParams();
@@ -21,7 +21,8 @@ const Cards = ({ lastDeckId }) => {
     isMobile,
   } = useApp();
 
-  const [card, setCard] = useState(undefined);
+  const { quickCard, setQuickCard } = useSearchForms();
+
   const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ const Cards = ({ lastDeckId }) => {
       Math.floor(
         Math.random() * Math.floor(Object.keys(cryptCardBase).length)
       ) + 200000;
-    setCard(cryptCardBase[cardid]);
+    setQuickCard(cryptCardBase[cardid]);
   };
 
   const randomLibrary = () => {
@@ -38,42 +39,42 @@ const Cards = ({ lastDeckId }) => {
       Math.floor(
         Math.random() * Math.floor(Object.keys(libraryCardBase).length)
       ) + 100000;
-    setCard(libraryCardBase[cardid]);
+    setQuickCard(libraryCardBase[cardid]);
   };
 
   useEffect(() => {
-    if (card) {
-      if (params.id !== card.Id) navigate(`/cards/${card.Id}`);
+    if (quickCard) {
+      if (params.id !== quickCard.Id) navigate(`/cards/${quickCard.Id}`);
     } else if (cryptCardBase && libraryCardBase) {
       if (params.id > 200000) {
-        setCard(cryptCardBase[params.id]);
+        setQuickCard(cryptCardBase[params.id]);
       } else if (params.id > 100000) {
-        setCard(libraryCardBase[params.id]);
+        setQuickCard(libraryCardBase[params.id]);
       }
     }
-  }, [card, cryptCardBase, libraryCardBase]);
+  }, [quickCard, cryptCardBase, libraryCardBase]);
 
   return (
     <Container className="cards-container px-0 pb-0 p-md-0">
       <>
         {isMobile ? (
           <>
-            {card && (
+            {quickCard && (
               <>
                 <Row className="m-0 mb-3 mb-md-0 p-0">
                   <Col className="m-0 p-0">
                     {showImage ? (
                       <CardImage
                         className="full-width"
-                        card={card}
+                        card={quickCard}
                         set={imageSet}
                       />
                     ) : (
                       <>
-                        <div className="px-3 pt-3 above-card-select-bottom">
+                        <div className="px-3 pt-3 above-quickCard-select-bottom">
                           <ResultLayoutText
-                            card={card}
-                            setCard={setCard}
+                            card={quickCard}
+                            setCard={setQuickCard}
                             setImageSet={setImageSet}
                             inCards={true}
                           />
@@ -93,8 +94,8 @@ const Cards = ({ lastDeckId }) => {
             <Row className="above-nav-bottom mx-0 px-1 py-1">
               <Col md={8} className="px-0">
                 <QuickSelect
-                  selectedCardid={card && card.Id}
-                  setCard={setCard}
+                  selectedCardid={quickCard && quickCard.Id}
+                  setCard={setQuickCard}
                 />
               </Col>
             </Row>
@@ -118,25 +119,25 @@ const Cards = ({ lastDeckId }) => {
                 <Row className="align-content-center justify-content-center py-3">
                   <Col className="px-0">
                     <QuickSelect
-                      selectedCardid={card && card.Id}
-                      setCard={setCard}
+                      selectedCardid={quickCard && quickCard.Id}
+                      setCard={setQuickCard}
                     />
                   </Col>
                 </Row>
               )}
-              {card && (
+              {quickCard && (
                 <Row className="align-content-center justify-content-center my-2 bordered">
                   <Col md={6} className="ps-0">
                     <CardImage
                       className="full-width"
-                      card={card}
+                      card={quickCard}
                       set={imageSet}
                     />
                   </Col>
                   <Col md={6} className="py-3">
                     <ResultLayoutText
-                      card={card}
-                      setCard={setCard}
+                      card={quickCard}
+                      setCard={setQuickCard}
                       setImageSet={setImageSet}
                       inCards={true}
                     />
