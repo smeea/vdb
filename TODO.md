@@ -5,8 +5,6 @@
 - Filter in adv-deck-select by inventory-state
 - Check TWD
 - Missing from entire collection category in inventory
-- Add email to create account form
-- Offcanvas for menu on mobile
 
 # MAYBE LATER FEATURES
 - Comments for PDA

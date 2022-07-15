@@ -93,7 +93,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
             viewBox="0 0 18 16"
           />
         }
-        text={noText ? '' : 'Delete Deck'}
+        text={noText ? null : 'Delete Deck'}
       />
       <ModalConfirmation
         withConfirmation={revisions.length > 1}

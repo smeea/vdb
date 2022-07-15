@@ -450,8 +450,8 @@ const DeckSelectAdvModal = (props) => {
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              {isDesktop && <th className="preview"></th>}
-              {!isMobile && <th className="date"></th>}
+              {isDesktop && <th />}
+              {!isMobile && <th />}
               <th className="tags">
                 <DeckSelectAdvModalTagsFilter
                   tagsFilter={tagsFilter}

@@ -69,11 +69,11 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
       <ButtonIconed
         variant={noText ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
-        title="Delete Revision of the Deck"
+        title="Delete Revision"
         icon={
           <NodeMinusFill
-            width={noText ? '16' : '21'}
-            height={noText ? '16' : '21'}
+            width={noText ? '18' : '21'}
+            height={noText ? '22' : '21'}
             viewBox="0 0 16 16"
           />
         }
