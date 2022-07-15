@@ -134,6 +134,27 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
     }
   }, [missingCrypt, missingLibrary]);
 
+  const missAllVtesCrypt = {};
+  const missAllVtesLibrary = {};
+
+  Object.keys(cryptCardBase)
+    .filter((cardid) => {
+      return !inventoryCrypt[cardid] || !inventoryCrypt[cardid].q;
+    })
+    .map(
+      (cardid) =>
+        (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] })
+    );
+
+  Object.keys(libraryCardBase)
+    .filter((cardid) => {
+      return !inventoryLibrary[cardid] || !inventoryLibrary[cardid].q;
+    })
+    .map(
+      (cardid) =>
+        (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] })
+    );
+
   return (
     <>
       <ButtonIconed
@@ -153,6 +174,7 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
             library: missingLibrary,
             deckid: 'missingInInventory',
           }}
+          missAllVtes={{ crypt: missAllVtesCrypt, library: missAllVtesLibrary }}
           show={showModal}
           handleClose={handleClose}
           inInventory={true}

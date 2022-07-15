@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Modal, Container, Row, Col, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { DeckCrypt, DeckLibrary, DeckExportButton } from 'components';
+import Gem from 'assets/images/icons/gem.svg';
+import {
+  DeckCrypt,
+  DeckLibrary,
+  DeckExportButton,
+  ButtonIconed,
+} from 'components';
 import { useApp } from 'context';
 
-const DeckMissingModal = ({ deck, show, handleClose, inInventory }) => {
+const DeckMissingModal = ({
+  deck,
+  missAllVtes,
+  show,
+  handleClose,
+  inInventory,
+}) => {
   const { isMobile } = useApp();
+
+  const [crypt, setCrypt] = useState(deck.crypt);
+  const [library, setLibrary] = useState(deck.library);
+
+  const handleMissAllVtes = () => {
+    setCrypt(missAllVtes.crypt);
+    setLibrary(missAllVtes.library);
+  };
 
   return (
     <Modal
@@ -31,19 +51,11 @@ const DeckMissingModal = ({ deck, show, handleClose, inInventory }) => {
           <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
             <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
               <div className={isMobile || inInventory ? null : 'sticky-modal'}>
-                <DeckCrypt
-                  cards={deck.crypt}
-                  isAuthor={false}
-                  inMissing={true}
-                />
+                <DeckCrypt cards={crypt} isAuthor={false} inMissing={true} />
               </div>
             </Col>
             <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
-              <DeckLibrary
-                cards={deck.library}
-                isAuthor={false}
-                inMissing={true}
-              />
+              <DeckLibrary cards={library} isAuthor={false} inMissing={true} />
             </Col>
           </Row>
           <div
@@ -53,6 +65,16 @@ const DeckMissingModal = ({ deck, show, handleClose, inInventory }) => {
                 : 'd-flex justify-content-end px-2 pb-4'
             }
           >
+            {inInventory && (
+              <div className="ps-2">
+                <ButtonIconed
+                  variant="primary"
+                  onClick={handleMissAllVtes}
+                  text="From All VTES Cards"
+                  icon={<Gem />}
+                />
+              </div>
+            )}
             <div className="ps-2">
               <DeckExportButton inMissing={true} deck={deck} />
             </div>

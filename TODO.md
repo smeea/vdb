@@ -1,9 +1,9 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
+- Sort in Missing (deck/inv)
 
 # FEATURES
 - Check TWD
-- Missing from entire collection category in inventory
 
 # MAYBE LATER FEATURES
 - Comments for PDA
