@@ -796,12 +796,13 @@ export const AppProvider = (props) => {
         changeLang,
         hideMissing,
         setHideMissing,
-        inventoryMode, // move to listing??
-        toggleInventoryMode, // move to listing??
-        setInventoryMode, // move to listing??
-        addMode, // move to listing??
-        toggleAddMode, // move to listing??
+        inventoryMode,
+        toggleInventoryMode,
+        setInventoryMode,
+        addMode,
+        toggleAddMode,
         showImage,
+        setShowImage,
         toggleShowImage,
         showFloatingButtons,
         setShowFloatingButtons,

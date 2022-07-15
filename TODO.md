@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Connection error on deck by url instead of no deck error
-- Card text layout on mobile if no response from server
 
 # FEATURES
 - Filter in adv-deck-select by inventory-state

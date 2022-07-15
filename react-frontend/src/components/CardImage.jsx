@@ -2,7 +2,7 @@ import React from 'react';
 import { useApp } from 'context';
 
 const CardImage = ({ card, set, className, onClick }) => {
-  const { lang } = useApp();
+  const { lang, setShowImage } = useApp();
 
   let imgEnSrc = null;
   let imgSrc = null;
@@ -40,6 +40,8 @@ ${card.Adv[0] ? 'adv' : ''}.jpg`;
   const resetImgSrc = (event) => {
     if (event.target.src != imgEnSrc) {
       event.target.src = imgEnSrc;
+    } else {
+      setShowImage(false);
     }
   };
 
