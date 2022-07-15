@@ -1,12 +1,15 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Stop count 0-qty (but required) cards in unique calculation in inventory
+- Connection error on deck by url instead of no deck error
+- Card text layout on mobile if no response from server
 
 # FEATURES
 - Filter in adv-deck-select by inventory-state
 - Check TWD
 - Missing from entire collection category in inventory
 - Add email to create account form
+- Offcanvas for menu on mobile
 
 # MAYBE LATER FEATURES
 - Comments for PDA
