@@ -66,7 +66,7 @@ const Decks = (props) => {
   const { hash } = useLocation();
   const navigate = useNavigate();
   const [selectFrom, setSelectFrom] = useState('precons');
-  const [deckError, setDeckError] = useState(false);
+  const [error, setError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
   const [allTagsOptions, setAllTagsOptions] = useState(undefined);
 
@@ -146,32 +146,39 @@ const Decks = (props) => {
     };
 
     fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          data.crypt = {};
-          data.library = {};
-
-          Object.keys(data.cards).map((i) => {
-            if (i > 200000) {
-              data.crypt[i] = {
-                q: data.cards[i],
-                c: cryptCardBase[i],
-              };
-            } else {
-              data.library[i] = {
-                q: data.cards[i],
-                c: libraryCardBase[i],
-              };
-            }
-          });
-
-          delete data.cards;
-          addRecentDeck(data);
-          setSharedDeck({ [data.deckid]: data });
-        }
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
       })
-      .catch((error) => setDeckError(true));
+      .then((data) => {
+        data.crypt = {};
+        data.library = {};
+
+        Object.keys(data.cards).map((i) => {
+          if (i > 200000) {
+            data.crypt[i] = {
+              q: data.cards[i],
+              c: cryptCardBase[i],
+            };
+          } else {
+            data.library[i] = {
+              q: data.cards[i],
+              c: libraryCardBase[i],
+            };
+          }
+        });
+
+        delete data.cards;
+        addRecentDeck(data);
+        setSharedDeck({ [data.deckid]: data });
+      })
+      .catch((error) => {
+        if (error.message == 400) {
+          setError('NO DECK WITH THIS ID');
+        } else {
+          setError('CONNECTION PROBLEM');
+        }
+      });
   };
 
   const toggleInventoryState = (deckid) => {
@@ -312,7 +319,7 @@ const Decks = (props) => {
     }
 
     if (deckRouter(activeDeck)) {
-      setDeckError(false);
+      setError(false);
     }
   }, [activeDeck, decks]);
 
@@ -546,11 +553,11 @@ const Decks = (props) => {
               )}
             </Col>
           </Row>
-          {deckError && (
+          {error && (
             <Row>
               <Col className="px-0 py-4 px-lg-2">
                 <div className="d-flex align-items-center justify-content-center error-message p-2">
-                  <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>
+                  <b>{error}</b>
                 </div>
               </Col>
             </Row>
