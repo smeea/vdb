@@ -2,10 +2,17 @@ import React from 'react';
 import { ResultDisciplineImage, ResultClanImage } from 'components';
 import Select from 'react-select';
 
-function InventoryFilterForm(props) {
+const InventoryFilterForm = ({
+  value,
+  setValue,
+  values,
+  target,
+  byTotal,
+  byUnique,
+}) => {
   const options = [];
 
-  props.values.map((i, index) => {
+  values.map((i, index) => {
     const imgSrc = `${process.env.ROOT_URL}images/types/${i
       .toLowerCase()
       .replace(/[\s,:!?'.\-]/g, '')}.svg`;
@@ -14,7 +21,7 @@ function InventoryFilterForm(props) {
       value: i,
       label: (
         <div className="d-flex justify-content-between">
-          {props.target === 'crypt' && (
+          {target === 'crypt' && (
             <div className="pe-1">
               {i === 'All' ? (
                 <div className="px-1">All Clans</div>
@@ -29,7 +36,7 @@ function InventoryFilterForm(props) {
             </div>
           )}
 
-          {props.target === 'type' && (
+          {target === 'type' && (
             <div className="pe-1">
               {i === 'All' ? (
                 <div className="px-1">All Types</div>
@@ -43,7 +50,7 @@ function InventoryFilterForm(props) {
               )}
             </div>
           )}
-          {props.target === 'discipline' && (
+          {target === 'discipline' && (
             <div className="pe-1">
               {i === 'All' ? (
                 <div className="px-1">All Disciplines</div>
@@ -63,7 +70,7 @@ function InventoryFilterForm(props) {
             </div>
           )}
           <div className="nobr">
-            {props.byTotal[i]} ({props.byUnique[i]} uniq)
+            {byTotal[i]} ({byUnique[i]} uniq)
           </div>
         </div>
       ),
@@ -75,10 +82,10 @@ function InventoryFilterForm(props) {
       classNamePrefix="react-select"
       options={options}
       placeholder="Select Filter"
-      value={options.find((obj) => obj.value === props.value)}
-      onChange={(e) => props.setValue(e.value)}
+      value={options.find((obj) => obj.value === value)}
+      onChange={(e) => setValue(e.value)}
     />
   );
-}
+};
 
 export default InventoryFilterForm;

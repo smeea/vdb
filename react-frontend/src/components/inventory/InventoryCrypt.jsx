@@ -178,7 +178,9 @@ const InventoryCrypt = ({
     Object.keys(cardsByClan).map((c) => {
       Object.keys(cardsByClan[c]).map((cardid) => {
         cardsByClanTotal[c] += cardsByClan[c][cardid].q;
-        cardsByClanUnique[c] += 1;
+        if (cardsByClan[c][cardid].q) {
+          cardsByClanUnique[c] += 1;
+        }
       });
     });
   }

@@ -366,7 +366,9 @@ const InventoryLibrary = ({
         if (cardsByDiscipline[d][cardid]) {
           cardsFilteredByType[d][cardid] = cardsByDiscipline[d][cardid];
           cardsFilteredByTypeTotal[d] += cardsByDiscipline[d][cardid].q;
-          cardsFilteredByTypeUnique[d] += 1;
+          if (cardsByDiscipline[d][cardid].q) {
+            cardsFilteredByTypeUnique[d] += 1;
+          }
         }
       });
     });
@@ -382,7 +384,9 @@ const InventoryLibrary = ({
         if (cardsByType[t][cardid]) {
           cardsFilteredByDiscipline[t][cardid] = cardsByType[t][cardid];
           cardsFilteredByDisciplineTotal[t] += cardsByType[t][cardid].q;
-          cardsFilteredByDisciplineUnique[t] += 1;
+          if (cardsByType[t][cardid].q) {
+            cardsFilteredByDisciplineUnique[t] += 1;
+          }
         }
       });
     });
@@ -394,8 +398,6 @@ const InventoryLibrary = ({
         missingFilteredTotal += missingByType[type][cardid].q;
       });
   }
-
-  console.log(cardsFilteredByDisciplineUnique);
 
   return (
     <>
