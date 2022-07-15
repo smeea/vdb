@@ -2,7 +2,6 @@
 - Iphone clipboard (export deck / copy url)
 
 # FEATURES
-- Filter in adv-deck-select by inventory-state
 - Check TWD
 - Missing from entire collection category in inventory
 

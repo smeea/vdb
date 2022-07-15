@@ -48,6 +48,7 @@ const DeckSelectAdvModal = (props) => {
   const [sortMethod, setSortMethod] = useState('byName');
   const [sortedDecks, setSortedDecks] = useState([]);
   const [showDeck, setShowDeck] = useState(undefined);
+  const [invFilter, setInvFilter] = useState('any');
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
   const [tagsFilter, setTagsFilter] = useState([]);
@@ -143,9 +144,38 @@ const DeckSelectAdvModal = (props) => {
     });
   });
 
+  const invOptions = [
+    {
+      value: 'any',
+      name: 'inventory',
+      label: 'ANY',
+    },
+    {
+      value: '',
+      name: 'inventory',
+      label: <At />,
+    },
+    {
+      value: 's',
+      name: 'inventory',
+      label: <Shuffle />,
+    },
+    {
+      value: 'h',
+      name: 'inventory',
+      label: <PinAngleFill />,
+    },
+  ];
+
   useEffect(() => {
     if (Object.values(decks).length > 0) {
       let filtered = Object.values(decks);
+
+      if (invFilter !== 'any') {
+        filtered = filtered.filter((deck) => {
+          return deck.inventory_type === invFilter;
+        });
+      }
 
       if (clanFilter !== 'any') {
         filtered = filtered.filter((deck) => {
@@ -214,7 +244,15 @@ const DeckSelectAdvModal = (props) => {
       const sorted = resultDecksSort(filtered, sortMethod);
       setSortedDecks(sorted);
     }
-  }, [decks, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);
+  }, [
+    decks,
+    invFilter,
+    clanFilter,
+    nameFilter,
+    tagsFilter,
+    revFilter,
+    sortMethod,
+  ]);
 
   const deckRows = sortedDecks.map((deck, idx) => {
     const clans = {};
@@ -425,7 +463,16 @@ const DeckSelectAdvModal = (props) => {
         <table className="decks-table">
           <thead>
             <tr>
-              {inventoryMode && !isMobile && <th className="inventory"></th>}
+              {inventoryMode && !isMobile && (
+                <th className="inventory">
+                  <Select
+                    classNamePrefix="react-select"
+                    options={invOptions}
+                    onChange={(e) => setInvFilter(e.value)}
+                    value={invOptions.find((obj) => obj.value === invFilter)}
+                  />
+                </th>
+              )}
               {!isMobile && (
                 <th className="clan">
                   <Select
