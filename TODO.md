@@ -1,6 +1,5 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Sort in Missing (deck/inv)
 
 # FEATURES
 - Check TWD

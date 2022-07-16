@@ -35,11 +35,13 @@ const DeckCryptHeader = ({
       </b>
       <div className="d-flex align-items-center justify-content-between ps-2 pe-md-0 info-message">
         <Stack direction="horizontal" gap={1}>
-          <SortButton
-            sortMethods={sortMethods}
-            sortMethod={sortMethod}
-            setSortMethod={setSortMethod}
-          />
+          {!inMissing && (
+            <SortButton
+              sortMethods={sortMethods}
+              sortMethod={sortMethod}
+              setSortMethod={setSortMethod}
+            />
+          )}
           <Button
             title="Additional Info"
             variant="primary"
