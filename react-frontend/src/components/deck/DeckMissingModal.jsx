@@ -76,7 +76,10 @@ const DeckMissingModal = ({
               </div>
             )}
             <div className="ps-2">
-              <DeckExportButton inMissing={true} deck={deck} />
+              <DeckExportButton
+                inMissing={true}
+                deck={{ ...deck, crypt: crypt, library: library }}
+              />
             </div>
           </div>
         </Container>

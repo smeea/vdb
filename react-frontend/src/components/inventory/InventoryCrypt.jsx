@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   InventoryCryptTable,
   InventoryFilterForm,
@@ -16,6 +16,7 @@ const InventoryCrypt = ({
   clan,
   setClan,
   newFocus,
+  setMissingByClan,
 }) => {
   const { usedCryptCards, cryptCardBase } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
@@ -184,6 +185,10 @@ const InventoryCrypt = ({
       });
     });
   }
+
+  useEffect(() => {
+    if (!compact) setMissingByClan(missingByClan);
+  }, [cards]);
 
   return (
     <>

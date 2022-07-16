@@ -44,6 +44,10 @@ const Inventory = (props) => {
   const [type, setType] = useState('All');
   const [discipline, setDiscipline] = useState('All');
 
+  const [missingByClan, setMissingByClan] = useState(undefined);
+  const [missingByType, setMissingByType] = useState(undefined);
+  const [missingByDiscipline, setMissingByDiscipline] = useState(undefined);
+
   const newCryptFocus = () => newCryptRef.current.focus();
   const newCryptRef = useRef(null);
   const newLibraryFocus = () => newLibraryRef.current.focus();
@@ -86,6 +90,7 @@ const Inventory = (props) => {
                           cards={inventoryCrypt}
                           clan={clan}
                           setClan={setClan}
+                          setMissingByClan={setMissingByClan}
                         />
                       </div>
                     )}
@@ -123,6 +128,8 @@ const Inventory = (props) => {
                           setType={setType}
                           discipline={discipline}
                           setDiscipline={setDiscipline}
+                          setMissingByType={setMissingByType}
+                          setMissingByDiscipline={setMissingByDiscipline}
                         />
                       </div>
                     )}
@@ -172,6 +179,7 @@ const Inventory = (props) => {
                         cards={inventoryCrypt}
                         clan={clan}
                         setClan={setClan}
+                        setMissingByClan={setMissingByClan}
                       />
                     </div>
                   )}
@@ -208,6 +216,8 @@ const Inventory = (props) => {
                         setType={setType}
                         discipline={discipline}
                         setDiscipline={setDiscipline}
+                        setMissingByType={setMissingByType}
+                        setMissingByDiscipline={setMissingByDiscipline}
                       />
                     </div>
                   )}
@@ -220,6 +230,9 @@ const Inventory = (props) => {
                     clan={clan}
                     discipline={discipline}
                     type={type}
+                    missingByClan={missingByClan}
+                    missingByType={missingByType}
+                    missingByDiscipline={missingByDiscipline}
                   />
                   <div className="px-4 py-2">
                     <InventoryShowSelect
@@ -286,7 +299,11 @@ const Inventory = (props) => {
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}
                 clan={clan}
+                type={type}
                 discipline={discipline}
+                missingByClan={missingByClan}
+                missingByType={missingByType}
+                missingByDiscipline={missingByDiscipline}
               />
               <div className="px-4 py-2">
                 <InventoryShowSelect

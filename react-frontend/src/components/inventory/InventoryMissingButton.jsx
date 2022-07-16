@@ -4,12 +4,17 @@ import { DeckMissingModal } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const InventoryMissingButton = ({ type, clan, discipline }) => {
+const InventoryMissingButton = ({
+  clan,
+  type,
+  discipline,
+  missingByClan,
+  missingByType,
+  missingByDiscipline,
+}) => {
   const {
     inventoryCrypt,
     inventoryLibrary,
-    usedCryptCards,
-    usedLibraryCards,
     cryptCardBase,
     libraryCardBase,
     username,
@@ -19,108 +24,7 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
 
   const [showModal, setShowModal] = useState(undefined);
   const [missingCrypt, setMissingCrypt] = useState(undefined);
-  const [missingLibrary, setMissingLibrary] = useState(undefined);
-
-  const calculateMissing = () => {
-    const crypt = {};
-    const library = {};
-
-    Object.keys(usedCryptCards.soft)
-      .filter((card) => {
-        if (clan === 'All' || cryptCardBase[card].Clan === clan) return true;
-      })
-      .map((card) => {
-        if (!inventoryCrypt[card]) {
-          let softUsedMax = 0;
-          Object.keys(usedCryptCards.soft[card]).map((id) => {
-            if (softUsedMax < usedCryptCards.soft[card][id]) {
-              softUsedMax = usedCryptCards.soft[card][id];
-            }
-          });
-
-          crypt[card] = { q: softUsedMax, c: cryptCardBase[card] };
-        }
-      });
-
-    Object.keys(usedLibraryCards.soft)
-      .filter((card) => {
-        if (type !== 'All' && !libraryCardBase[card].Type.includes(type))
-          return false;
-        if (
-          discipline !== 'All' &&
-          !libraryCardBase[card].Discipline.includes(discipline)
-        )
-          return false;
-        return true;
-      })
-      .map((card) => {
-        if (!inventoryLibrary[card]) {
-          let softUsedMax = 0;
-          Object.keys(usedLibraryCards.soft[card]).map((id) => {
-            if (softUsedMax < usedLibraryCards.soft[card][id]) {
-              softUsedMax = usedLibraryCards.soft[card][id];
-            }
-          });
-
-          library[card] = { q: softUsedMax, c: libraryCardBase[card] };
-        }
-      });
-
-    Object.keys(usedCryptCards.hard)
-      .filter((card) => {
-        if (clan === 'All' || cryptCardBase[card].Clan === clan) return true;
-      })
-      .map((card) => {
-        if (!inventoryCrypt[card]) {
-          let hardUsedTotal = 0;
-          if (usedCryptCards.hard[card]) {
-            Object.keys(usedCryptCards.hard[card]).map((id) => {
-              hardUsedTotal += usedCryptCards.hard[card][id];
-            });
-          }
-
-          if (crypt[card]) {
-            crypt[card].q += hardUsedTotal;
-          } else {
-            crypt[card] = { q: hardUsedTotal, c: cryptCardBase[card] };
-          }
-        }
-      });
-
-    Object.keys(usedLibraryCards.hard)
-      .filter((card) => {
-        if (type !== 'All' && !libraryCardBase[card].Type.includes(type))
-          return false;
-        if (
-          discipline !== 'All' &&
-          !libraryCardBase[card].Discipline.includes(discipline)
-        )
-          return false;
-        return true;
-      })
-      .map((card) => {
-        if (!inventoryLibrary[card]) {
-          let hardUsedTotal = 0;
-          if (usedLibraryCards.hard[card]) {
-            Object.keys(usedLibraryCards.hard[card]).map((id) => {
-              hardUsedTotal += usedLibraryCards.hard[card][id];
-            });
-          }
-
-          if (library[card]) {
-            library[card].q += hardUsedTotal;
-          } else {
-            library[card] = {
-              q: hardUsedTotal,
-              c: libraryCardBase[card],
-            };
-          }
-        }
-      });
-
-    setMissingCrypt(crypt);
-    setMissingLibrary(library);
-  };
+  const [missingLibrary, setMissingLibrary] = useState({});
 
   const handleClose = () => {
     setShowModal(false);
@@ -129,10 +33,20 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
   };
 
   useEffect(() => {
-    if (missingCrypt !== undefined && missingLibrary !== undefined) {
-      setShowModal(true);
+    if (missingByClan) setMissingCrypt(missingByClan[clan]);
+  }, [clan, missingByClan]);
+
+  useEffect(() => {
+    if (missingByDiscipline && missingByType) {
+      const missing = {};
+      Object.values(missingByType[type])
+        .filter((i) => {
+          return missingByDiscipline[discipline][i.c.Id];
+        })
+        .map((i) => (missing[i.c.Id] = i));
+      setMissingLibrary(missing);
     }
-  }, [missingCrypt, missingLibrary]);
+  }, [type, discipline, missingByType, missingByDiscipline]);
 
   const missAllVtesCrypt = {};
   const missAllVtesLibrary = {};
@@ -159,7 +73,7 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
     <>
       <ButtonIconed
         variant="secondary"
-        onClick={() => calculateMissing()}
+        onClick={() => setShowModal(true)}
         title="Get Missing in Inventory Cards"
         icon={<Cart4 />}
         text="Missing Cards"

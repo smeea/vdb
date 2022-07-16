@@ -16,6 +16,9 @@ const InventoryButtons = ({
   clan,
   type,
   discipline,
+  missingByClan,
+  missingByType,
+  missingByDiscipline,
 }) => {
   const { decks, preconDecks, setShowFloatingButtons, setShowMenuButtons } =
     useApp();
@@ -51,7 +54,14 @@ const InventoryButtons = ({
           text="Add from Precon"
         />
       )}
-      <InventoryMissingButton clan={clan} type={type} discipline={discipline} />
+      <InventoryMissingButton
+        missingByClan={missingByClan}
+        missingByType={missingByType}
+        missingByDiscipline={missingByDiscipline}
+        clan={clan}
+        type={type}
+        discipline={discipline}
+      />
     </Stack>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Stack } from 'react-bootstrap';
 import {
   InventoryLibraryTable,
@@ -20,6 +20,8 @@ const InventoryLibrary = ({
   discipline,
   setDiscipline,
   newFocus,
+  setMissingByType,
+  setMissingByDiscipline,
 }) => {
   const { usedLibraryCards, libraryCardBase } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
@@ -398,6 +400,13 @@ const InventoryLibrary = ({
         missingFilteredTotal += missingByType[type][cardid].q;
       });
   }
+
+  useEffect(() => {
+    if (!compact) {
+      setMissingByType(missingByType);
+      setMissingByDiscipline(missingByDiscipline);
+    }
+  }, [cards]);
 
   return (
     <>
