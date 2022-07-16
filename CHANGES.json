@@ -1,5 +1,15 @@
 [
   {
+    "version": "2022-07-16",
+    "changes": [
+      "Preserve card in quick search (/cards, lightning button) between pages",
+      "Add Missing from All VTES Cards option for Inventory (button in Missing window) to show what you need for full collection",
+      "Add inventory status (virtual, flexible, fixed) filter in Advanced deck selector",
+      "Switch to text layout when card image not available (usually network problems)",
+      "Many other fixes"
+    ]
+  },
+  {
     "version": "2022-06-22",
     "changes": [
       "Update card images with NB images",
