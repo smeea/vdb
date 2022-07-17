@@ -2,7 +2,7 @@ from flask import jsonify, request, Response
 from flask_login import current_user, login_required
 import json
 
-from inventory_export import inventory_export
+from deck_export import deck_export
 from inventory_import import inventory_import
 from api import app, db, login
 
@@ -33,16 +33,7 @@ def unauthorized_handler():
 @app.route("/api/inventory/export", methods=["POST"])
 def inventoryExportRoute():
     try:
-        inventory = {
-            "cards": current_user.inventory,
-            "author": current_user.public_name,
-        }
-        result = inventory_export(inventory, request.json["format"])
-
-        if request.json["format"] == "xlsx" or request.json["format"] == "csv":
-            return result
-        else:
-            return jsonify(result)
+        return deck_export(current_user.inventory, request.json["format"])
 
     except Exception:
         pass

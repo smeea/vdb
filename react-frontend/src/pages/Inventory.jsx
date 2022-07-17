@@ -225,6 +225,8 @@ const Inventory = (props) => {
               <Col lg={2} className="hide-on-lt1200px px-0 px-lg-2 px-xl-3">
                 <div className="sticky-buttons">
                   <InventoryButtons
+                    crypt={inventoryCrypt}
+                    library={inventoryLibrary}
                     setShowAddDeck={setShowAddDeck}
                     setShowAddPrecon={setShowAddPrecon}
                     clan={clan}
@@ -296,6 +298,8 @@ const Inventory = (props) => {
                 </Button>
               </div>
               <InventoryButtons
+                crypt={inventoryCrypt}
+                library={inventoryLibrary}
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}
                 clan={clan}

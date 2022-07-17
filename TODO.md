@@ -9,10 +9,8 @@
 - Script to update images from static.krcg.org
 
 # IMPROVE TECHNOLOGY - FRONTEND
-- Move deck export in csv/excel to frontend
-- Move deck import to frontend
-- Move inventory import to frontend
-- Move inventory export to frontend
+- Move deck/inventory export in csv/excel to frontend
+- Move deck/inventory import to frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory

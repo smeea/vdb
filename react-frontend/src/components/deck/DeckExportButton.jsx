@@ -11,7 +11,7 @@ import { ErrorOverlay } from 'components';
 import { useDeckExport } from 'hooks';
 import { useApp } from 'context';
 
-const DeckExportButton = ({ deck, src, inMissing }) => {
+const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
   const { username, decks, setShowFloatingButtons, setShowMenuButtons } =
     useApp();
 
@@ -42,7 +42,17 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
     );
   };
 
-  const ButtonOptions = (
+  const ButtonOptions = inInventory ? (
+    <>
+      <ExportDropdown action="save" format="text" />
+      <ExportDropdown action="save" format="lackey" />
+      <ExportDropdown action="save" format="xlsx" />
+      <ExportDropdown action="save" format="csv" />
+      <Dropdown.Divider />
+      <ExportDropdown action="copy" format="text" />
+      <ExportDropdown action="copy" format="lackey" />
+    </>
+  ) : (
     <>
       <ExportDropdown action="save" format="text" />
       {!inMissing && (
@@ -118,7 +128,9 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
         };
       }
 
-      const url = `${process.env.API_URL}decks/export`;
+      const url = `${process.env.API_URL}${
+        inInventory ? 'inventory' : 'decks'
+      }/export`;
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -166,7 +178,9 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
       if (format === 'xlsx' || format === 'csv') {
         setSpinnerState(true);
 
-        const url = `${process.env.API_URL}decks/export`;
+        const url = `${process.env.API_URL}${
+          inInventory ? 'inventory' : 'decks'
+        }/export`;
         const options = {
           method: 'POST',
           mode: 'cors',
@@ -236,7 +250,9 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
         variant={inMissing ? 'primary' : 'secondary'}
         title={
           <div
-            title="Export Deck"
+            title={`Export ${
+              inMissing ? 'Missing' : inInventory ? 'Inventory' : 'Deck'
+            }`}
             className="d-flex justify-content-center align-items-center"
           >
             <div className="d-flex pe-2">
@@ -246,7 +262,7 @@ const DeckExportButton = ({ deck, src, inMissing }) => {
                 <Download />
               )}
             </div>
-            Export {inMissing ? 'Missing' : 'Deck'}
+            Export {inMissing ? 'Missing' : inInventory ? 'Inventory' : 'Deck'}
           </div>
         }
       >

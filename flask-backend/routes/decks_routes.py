@@ -632,47 +632,25 @@ def deckExportRoute():
 
         if "deck" in request.json:
             deck = request.json["deck"]
-            result = deck_export(deck, request.json["format"])
+            result = deck_export(deck["cards"], request.json["format"])
 
         elif request.json["src"] == "twd":
             deckid = request.json["deckid"]
             with open("twd_decks_by_id.json", "r") as twd_decks_file:
                 twd_decks = json.load(twd_decks_file)
                 deck = twd_decks[deckid]
-                comments = deck["description"]
-                deck["description"] = "Date: " + deck["creation_date"] + "\n"
-                deck["description"] += "Players: " + str(deck["players"]) + "\n"
-                deck["description"] += "Event: " + deck["event"] + "\n"
-                deck["description"] += "Location: " + deck["location"] + "\n"
-                if comments:
-                    deck["description"] += "\n" + comments
-                result = deck_export(deck, request.json["format"])
+                result = deck_export(deck["cards"], request.json["format"])
 
         elif request.json["src"] == "precons":
             set, precon = request.json["deckid"].split(":")
             with open("preconDecks.json", "r") as precons_file:
                 precon_decks = json.load(precons_file)
-                d = precon_decks[set][precon]
-                deck = {
-                    "cards": d,
-                    "name": f"Preconstructed {set}:{precon}",
-                    "author": "VTES Publisher",
-                    "description": "Preconstructed deck",
-                }
-                result = deck_export(deck, request.json["format"])
+                cards = precon_decks[set][precon]
+                result = deck_export(cards, request.json["format"])
 
         elif request.json["src"] == "shared" or request.json["src"] == "my":
             d = Deck.query.get(request.json["deckid"])
-            has_branches = d.master or d.branches
-
-            deck = {
-                "cards": d.cards,
-                "name": d.name,
-                "author": d.author_public_name,
-                "branch_name": d.branch_name if has_branches else None,
-                "description": d.description,
-            }
-            result = deck_export(deck, request.json["format"])
+            result = deck_export(d.cards, request.json["format"])
 
         return result
 

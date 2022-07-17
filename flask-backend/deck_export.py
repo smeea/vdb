@@ -5,7 +5,7 @@ import base64
 import io
 
 
-def deck_export(d, format):
+def deck_export(cards, format):
     with open("cardbase_crypt.json", "r") as crypt_file, open(
         "cardbase_lib.json", "r"
     ) as library_file:
@@ -15,7 +15,7 @@ def deck_export(d, format):
     crypt = {}
     library = {}
 
-    for k, v in d["cards"].items():
+    for k, v in cards.items():
         if v > 0:
             k = int(k)
             if k > 200000:

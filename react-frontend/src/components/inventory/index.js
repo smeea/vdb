@@ -5,7 +5,6 @@ export { default as InventoryLibraryTable } from './InventoryLibraryTable.jsx';
 export { default as InventoryShowSelect } from './InventoryShowSelect.jsx';
 export { default as InventoryAddPreconModal } from './InventoryAddPreconModal.jsx';
 export { default as InventoryCryptTable } from './InventoryCryptTable.jsx';
-export { default as InventoryExportButton } from './InventoryExportButton.jsx';
 export { default as InventoryMissingButton } from './InventoryMissingButton.jsx';
 export { default as InventoryButtons } from './InventoryButtons.jsx';
 export { default as InventoryDeckAddButton } from './InventoryDeckAddButton.jsx';

@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from 'react-bootstrap';
 import {
   DeckImport,
-  InventoryExportButton,
+  DeckExportButton,
   InventoryDeleteButton,
   InventoryMissingButton,
 } from 'components';
@@ -19,14 +19,29 @@ const InventoryButtons = ({
   missingByClan,
   missingByType,
   missingByDiscipline,
+  crypt,
+  library,
 }) => {
-  const { decks, preconDecks, setShowFloatingButtons, setShowMenuButtons } =
-    useApp();
+  const {
+    decks,
+    preconDecks,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+    publicName,
+  } = useApp();
 
   return (
     <Stack gap={1}>
-      <InventoryExportButton />
-      <DeckImport inInventory={true} />
+      <DeckExportButton
+        deck={{
+          name: `Inventory ${new Date().toISOString().substring(0, 10)}`,
+          author: publicName,
+          crypt: crypt,
+          library: library,
+        }}
+        inInventory
+      />
+      <DeckImport inInventory />
       <InventoryDeleteButton />
       {decks && (
         <ButtonIconed
