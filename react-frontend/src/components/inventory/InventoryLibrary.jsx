@@ -412,8 +412,8 @@ const InventoryLibrary = ({
     <>
       {!compact && (
         <>
-          <div className="d-flex align-items-center justify-content-between px-1 inventory-info">
-            <div className="w-70 py-1">
+          <div className="d-flex align-items-center justify-content-between inventory-info">
+            <div className="w-75 p-1">
               <Stack gap={1}>
                 <InventoryFilterForm
                   value={type}
