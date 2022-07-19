@@ -1,6 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Search cards with : (powerbases) and 'the'
+- Search cards with 'the cardname'
 
 # FEATURES
 - Check TWD
