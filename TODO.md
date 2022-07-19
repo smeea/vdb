@@ -1,8 +1,14 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
+- Search cards with : (powerbases) and 'the'
+- Switching with tab from q-ty to q-ty of next card (skip buttons)
+- Fix generate_twd_cards (incl. url), add player name and chart
 
 # FEATURES
 - Check TWD
+- Limit scrolling of deck in crypt/library search (see vk.com)
+- Players Hall of Fame
+- Cards Hall of Fame
 
 # MAYBE LATER FEATURES
 - Comments for PDA
