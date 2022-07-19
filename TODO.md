@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Search cards with : (powerbases) and 'the'
-- Switching with tab from q-ty to q-ty of next card (skip buttons)
 
 # FEATURES
 - Check TWD

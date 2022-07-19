@@ -67,13 +67,15 @@ const InventoryCardQuantity = ({
           {!manual && (
             <Button
               className="quantity"
-              onClick={() => handleQuantityChange(-1)}
               variant="primary"
+              onClick={() => handleQuantityChange(-1)}
+              tabIndex={-1}
             >
               -
             </Button>
           )}
           <div
+            tabIndex={0}
             className={
               manual
                 ? 'px-0'
@@ -81,7 +83,7 @@ const InventoryCardQuantity = ({
                 ? 'px-1 mx-1 inv-miss-full'
                 : 'px-1'
             }
-            onClick={() => setManual(true)}
+            onFocus={() => setManual(true)}
           >
             {manual ? (
               <Form className="m-0" onSubmit={handleSubmitButton}>
@@ -105,6 +107,7 @@ const InventoryCardQuantity = ({
               className="quantity"
               variant="primary"
               onClick={() => handleQuantityChange(1)}
+              tabIndex={-1}
             >
               +
             </Button>

@@ -86,17 +86,19 @@ function DeckCardQuantity(props) {
           {!manual && (
             <Button
               className="quantity"
+              variant="primary"
               onClick={() =>
                 props.cardChange(props.deckid, props.cardid, props.q - 1)
               }
-              variant="primary"
+              tabIndex={-1}
             >
               -
             </Button>
           )}
           <div
+            tabIndex={0}
             className={manual ? 'px-0' : miss ? `px-1 mx-1 ${miss}` : 'px-1'}
-            onClick={() => setManual(true)}
+            onFocus={() => setManual(true)}
           >
             {manual ? (
               <Form className="m-0" onSubmit={handleSubmitButton}>
@@ -122,6 +124,7 @@ function DeckCardQuantity(props) {
               onClick={() =>
                 props.cardChange(props.deckid, props.cardid, props.q + 1)
               }
+              tabIndex={-1}
             >
               +
             </Button>
