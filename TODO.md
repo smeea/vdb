@@ -1,10 +1,8 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Search cards with 'the cardname'
 
 # FEATURES
 - Check TWD
-- Limit scrolling of deck in crypt/library search (see vk.com)
 - Players Hall of Fame
 - Cards Hall of Fame
 

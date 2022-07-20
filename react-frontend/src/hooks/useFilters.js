@@ -650,8 +650,12 @@ const missingNameOrInitials = (filterName, card) => {
     return true;
   }
 
-  const name = card['Name'].toLowerCase();
-  const nameASCII = card['ASCII Name'].toLowerCase();
+  let name = card['Name'].toLowerCase();
+  let nameASCII = card['ASCII Name'].toLowerCase();
+  if (/^the .*/.test(filterName) && /, the$/.test(name)) {
+    name = `the ${name.replace(/, the$/, '')}`;
+    nameASCII = `the ${nameASCII.replace(/, the$/, '')}`;
+  }
 
   return !(
     name.includes(filterName) ||
