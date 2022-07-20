@@ -13,10 +13,10 @@ if not user:
     user = User.query.filter_by(email=q).first()
 
 if len(argv) == 2:
-    print("name:  ", user.username)
-    print("email: ", user.email)
-    print("decks: ", [deck.name for deck in user.decks.all()])
-    print("inventory: ", len(user.inventory))
+    print(f"Username: '{user.username}'")
+    print(f"Email: '{user.email}'")
+    print(f"Decks: {sorted([deck.name for deck in user.decks.all()])}")
+    print(f"Inventory: '{len(user.inventory)}'")
 
 elif argv[2] == "x":
     password = "".join(
@@ -25,9 +25,11 @@ elif argv[2] == "x":
     )
     user.set_password(password)
     db.session.commit()
-    print("new password:", password)
+    print(f"Username: '{user.username}'")
+    print(f"New password: '{password}'")
 else:
     password = argv[2]
     user.set_password(password)
     db.session.commit()
-    print("new password:", password)
+    print(f"Username: '{user.username}'")
+    print(f"New password: '{password}'")
