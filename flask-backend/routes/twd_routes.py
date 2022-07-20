@@ -5,6 +5,7 @@ from random import random
 
 from search_decks import search_decks
 from search_decks_components import match_inventory
+from hall_of_fame import get_hof_players, get_hof_cards
 from api import app
 from models import Deck
 
@@ -51,6 +52,16 @@ def getLocations():
 @app.route("/api/twd/authors", methods=["GET"])
 def getTwdAuthors():
     return jsonify(twd_players)
+
+
+@app.route("/api/twd/hall_of_fame/players", methods=["GET"])
+def getTwdHoFPlayers():
+    return jsonify(get_hof_players(twd_decks))
+
+
+@app.route("/api/twd/hall_of_fame/cards", methods=["GET"])
+def getTwdHoFCards():
+    return jsonify(get_hof_cards(twd_decks))
 
 
 @app.route("/api/twd/similar", methods=["POST"])
