@@ -250,15 +250,12 @@ with open("vteslib.csv", "r", encoding="utf-8-sig") as main__csv, open(
                             card["Rulings"][i]["refs"][id] = c["rulings"]["links"][id]
 
         # Add twda info
-        card["Twd"] = False
+        card["Twd"] = 0
         for i in twda:
-            if card["Twd"]:
-                continue
-
             for cardtype in i["library"]["cards"]:
                 for c in cardtype["cards"]:
                     if c["id"] == card["Id"]:
-                        card["Twd"] = True
+                        card["Twd"] += 1
 
         # Rename legacy clans and disciplines
         card["Clan"] = (

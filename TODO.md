@@ -1,5 +1,7 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
+- Trim card list in PDA
+- Tick marks in add precon to inventory
 
 # FEATURES
 - Check TWD

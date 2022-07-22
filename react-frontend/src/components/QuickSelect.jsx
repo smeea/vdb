@@ -30,6 +30,19 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
     }
   };
 
+  const byTwd = (a, b) => {
+    const aInTwd =
+      a.value > 200000
+        ? cryptCardBase[a.value].Twd
+        : libraryCardBase[a.value].Twd;
+    const bInTwd =
+      b.value > 200000
+        ? cryptCardBase[b.value].Twd
+        : libraryCardBase[b.value].Twd;
+
+    return bInTwd - aInTwd;
+  };
+
   const loadOptions = async (inputValue) => {
     if (inputValue.length > 2) {
       const input = { name: inputValue };
@@ -37,11 +50,12 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
       const filteredCryptCards = filterCrypt(input).map((card) => ({
         value: card.Id,
       }));
+
       const filteredLibCards = filterLibrary(input).map((card) => ({
         value: card.Id,
       }));
 
-      return [...filteredCryptCards, ...filteredLibCards];
+      return [...filteredCryptCards, ...filteredLibCards].sort(byTwd);
     }
   };
 

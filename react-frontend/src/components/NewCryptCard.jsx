@@ -14,6 +14,10 @@ const NewCryptCard = ({
   const { cryptCardBase } = useApp();
   const { filterCrypt } = useFilters(cryptCardBase);
 
+  const byTwd = (a, b) => {
+    return cryptCardBase[b.value].Twd - cryptCardBase[a.value].Twd;
+  };
+
   const getOptionLabel = (option) => {
     return <SelectLabelCrypt cardid={option.value} inInventory={inInventory} />;
   };
@@ -26,7 +30,7 @@ const NewCryptCard = ({
         value: card.Id,
       }));
 
-      return filteredCards;
+      return filteredCards.sort(byTwd);
     }
   };
 

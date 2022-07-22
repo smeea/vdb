@@ -14,6 +14,10 @@ const NewLibraryCard = ({
   const { libraryCardBase } = useApp();
   const { filterLibrary } = useFilters(libraryCardBase);
 
+  const byTwd = (a, b) => {
+    return libraryCardBase[b.value].Twd - libraryCardBase[a.value].Twd;
+  };
+
   const getOptionLabel = (option) => {
     return (
       <SelectLabelLibrary cardid={option.value} inInventory={inInventory} />
@@ -28,7 +32,7 @@ const NewLibraryCard = ({
         value: card.Id,
       }));
 
-      return filteredCards;
+      return filteredCards.sort(byTwd);
     }
   };
 
