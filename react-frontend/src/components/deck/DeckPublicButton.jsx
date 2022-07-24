@@ -6,6 +6,7 @@ import {
   DropdownButton,
 } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
+import { countCards } from 'utils';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
@@ -124,6 +125,10 @@ const DeckPublicButton = ({ deck, noText }) => {
 
   const changes = null; // TODO: SHOW CHANGES FROM BASE
 
+  const isTooManyCards =
+    countCards(Object.values(deck.crypt)) > 35 ||
+    countCards(Object.values(deck.library)) > 90;
+
   return (
     <>
       <DropdownButton
@@ -167,11 +172,15 @@ const DeckPublicButton = ({ deck, noText }) => {
             : `Add "${deck.name}" to Public Deck Archive?`
         }
         mainText={
-          isPublished
+          isTooManyCards
+            ? 'Public Deck cannot have more than 35 crypt and 90 library cards'
+            : isPublished
             ? 'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
             : 'You can remove it from Public Deck Archive at any time'
         }
-        buttonText={`${isPublished ? 'Remove' : 'Make'} Public`}
+        buttonText={
+          isTooManyCards ? null : isPublished ? 'Remove Public' : 'Make Public'
+        }
       />
     </>
   );

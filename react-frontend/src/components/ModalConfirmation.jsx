@@ -86,9 +86,11 @@ const ModalConfirmation = ({
               </ErrorOverlay>
             </Form>
           )}
-          <Button variant="danger" onClick={confirm}>
-            {buttonText}
-          </Button>
+          {buttonText && (
+            <Button variant="danger" onClick={confirm}>
+              {buttonText}
+            </Button>
+          )}
           <Button variant="primary" onClick={cancel}>
             Cancel
           </Button>

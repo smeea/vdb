@@ -1,12 +1,13 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Trim card list in PDA
 - Tick marks in add precon to inventory
+- Go to main deck after deleting public deck
 
 # FEATURES
 - Check TWD
 - Players Hall of Fame
 - Cards Hall of Fame
+- Show changes from base deck in PDA
 
 # MAYBE LATER FEATURES
 - Comments for PDA
