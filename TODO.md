@@ -1,6 +1,5 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Tick marks in add precon to inventory
 - Go to main deck after deleting public deck
 
 # FEATURES
