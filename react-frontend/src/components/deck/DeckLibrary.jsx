@@ -28,6 +28,7 @@ const DeckLibrary = ({
   const {
     nativeLibrary,
     isMobile,
+    isNarrow,
     showFloatingButtons,
     setShowFloatingButtons,
   } = useApp();
@@ -97,6 +98,7 @@ const DeckLibrary = ({
         inSearch={inSearch}
         inMissing={inMissing}
         isModalOpen={shouldShowModal}
+        placement={isNarrow ? 'bottom' : 'right'}
       />
     </div>
   ));

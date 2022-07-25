@@ -23,7 +23,7 @@ const InventoryLibrary = ({
   setMissingByType,
   setMissingByDiscipline,
 }) => {
-  const { usedLibraryCards, libraryCardBase } = useApp();
+  const { usedLibraryCards, libraryCardBase, isDesktop } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
     Name: 'N',
@@ -465,6 +465,7 @@ const InventoryLibrary = ({
               })
         }
         newFocus={newFocus}
+        placement={isDesktop ? 'right' : 'bottom'}
       />
     </>
   );
