@@ -99,7 +99,7 @@ def get_hof_players(twd_decks):
             players_twd[deck["author"]].append(d)
 
     for name in [n for n in players_twd.keys()]:
-        if len(players_twd[name]) < 40:  # TODO CHANGE TO 5
+        if len(players_twd[name]) < 5:
             del players_twd[name]
 
     return players_twd

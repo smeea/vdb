@@ -1,10 +1,11 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
+- Hall of Fame - add star to deck/players
+- Remove HoF buttons from PDA
 
 # FEATURES
 - Check TWD
-- Players Hall of Fame - add star to deck name, icon to players
-- Cards Hall of Fame
+- Cards History in TWD
 - Show changes from base deck in PDA
 
 # MAYBE LATER FEATURES
