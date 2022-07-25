@@ -224,7 +224,8 @@ const LibraryTraitsRegexMap = {
   'bounce bleed': () => /change the target of the bleed|is now bleeding/i,
   unlock: () => /(?!not )unlock(?! phase|ed)|wakes/i,
   'votes-title': () => /\+. vote|additional vote|represent the .* title/i,
-  'reduce bleed': () => /reduce a bleed/i,
+  'reduce bleed': () =>
+    /reduce (a|the)(.*) bleed (amount)?|bleed amount is reduced/i,
   aggravated: () => /(?:[^non-])aggravated/i,
   prevent: () => /(?:[^un])prevent(?:[^able])/i,
 };

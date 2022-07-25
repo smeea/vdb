@@ -4,7 +4,7 @@
 
 # FEATURES
 - Check TWD
-- Players Hall of Fame
+- Players Hall of Fame - add star to deck name, icon to players
 - Cards Hall of Fame
 - Show changes from base deck in PDA
 
