@@ -29,6 +29,9 @@ const DeckPublicButton = ({ deck, noText }) => {
 
   const handleCreateOrDelete = () => {
     createOrDelete();
+    if (isPublished && isChild) {
+      setActiveDeck({ src: 'my', deckid: deck.public_parent });
+    }
     setShowCreateOrDeleteConfirmation(false);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);

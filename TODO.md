@@ -1,6 +1,5 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Go to main deck after deleting public deck
 
 # FEATURES
 - Check TWD
