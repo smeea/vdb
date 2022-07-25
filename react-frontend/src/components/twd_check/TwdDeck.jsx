@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Row, Col, FormControl, Stack, Button, Spinner } from 'react-bootstrap';
+import { Row, Col, FormControl, Stack, Button } from 'react-bootstrap';
 import { saveAs } from 'file-saver';
 import X from 'assets/images/icons/x.svg';
 import Download from 'assets/images/icons/download.svg';
@@ -16,7 +16,6 @@ const TwdDeck = ({ deck, eventId, setEventId }) => {
   const [importError, setImportError] = useState(false);
   const fileInput = React.createRef();
   const refText = useRef(null);
-  const [spinnerState, setSpinnerState] = useState(false);
 
   const handleLoad = () => {
     fileInput.current.click();
@@ -49,33 +48,6 @@ const TwdDeck = ({ deck, eventId, setEventId }) => {
 
     if (deckText) {
       setEmptyError(false);
-      setSpinnerState(true);
-
-      // const url = `${process.env.API_URL}decks/import`;
-      // const options = {
-      //   method: 'POST',
-      //   mode: 'cors',
-      //   credentials: 'include',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     deckText: deckText,
-      //   }),
-      // };
-
-      // const fetchPromise = fetch(url, options);
-
-      // fetchPromise
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     setBadCards(data.bad_cards);
-      //     setSpinnerState(false);
-      //   })
-      //   .catch((error) => {
-      //     setImportError(true);
-      //     setSpinnerState(false);
-      //   });
     } else {
       setEmptyError(true);
     }
@@ -121,10 +93,11 @@ const TwdDeck = ({ deck, eventId, setEventId }) => {
    Description:
 `;
 
-  const descriptionInfo = `(can multiline,
-trim length ≤90
-  letters or no
-   trim at all)
+  const descriptionInfo = `   can multiline,
+  trim length ≤90
+    letters or no
+      trim at all
+  (one long line)
 `;
 
   const lengthMarker = `${' '.repeat(79)}90 letters |`;
@@ -173,19 +146,9 @@ trim length ≤90
             icon={<Upload />}
             text="Load from File"
           />
-          {!spinnerState ? (
-            <Button variant="primary" onClick={checkDeck}>
-              Check Deck
-            </Button>
-          ) : (
-            <ButtonIconed
-              variant="primary"
-              onClick={checkDeck}
-              title="Check"
-              icon={<Spinner animation="border" size="sm" />}
-              text="Check"
-            />
-          )}
+          <Button variant="primary" onClick={checkDeck}>
+            Check Deck
+          </Button>
           <ButtonIconed
             variant="primary"
             onClick={handleClear}

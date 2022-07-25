@@ -293,12 +293,14 @@ const TwdSearchForm = (props) => {
 
   return (
     <Form onSubmit={handleSubmitButton}>
-      <TwdSearchFormButtons
-        handleClearButton={handleClearButton}
-        showLimit={showLimit}
-        getNew={getNewTwd}
-        getRandom={getRandomTwd}
-      />
+      <Row className="pb-2">
+        <TwdSearchFormButtons
+          handleClearButton={handleClearButton}
+          showLimit={showLimit}
+          getNew={getNewTwd}
+          getRandom={getRandomTwd}
+        />
+      </Row>
       {inventoryMode && (
         <>
           <Row className="py-1 ps-1 mx-0 align-items-center">

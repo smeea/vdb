@@ -23,6 +23,8 @@ import Library from 'pages/Library.jsx';
 import Navigation from 'pages/Navigation.jsx';
 import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
+import TwdHallOfFame from 'pages/TwdHallOfFame.jsx';
+import TwdCardsHistory from 'pages/TwdCardsHistory.jsx';
 import TwdCheck from 'pages/TwdCheck.jsx';
 import { UpdateNotification } from 'components';
 
@@ -62,7 +64,9 @@ const App = (props) => {
               <Route path="decks" element={<Decks />} />
               <Route path="pda" element={<Pda />} />
               <Route path="twd" element={<Twd />} />
-              <Route path="twd_check" element={<TwdCheck />} />
+              <Route path="twd/deck_check" element={<TwdCheck />} />
+              <Route path="twd/hall_of_fame" element={<TwdHallOfFame />} />
+              <Route path="twd/cards_history" element={<TwdCardsHistory />} />
               <Route path="crypt" element={<Crypt lastDeckId={lastDeckId} />} />
               <Route
                 path="library"

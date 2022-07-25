@@ -54,12 +54,12 @@ def getTwdAuthors():
     return jsonify(twd_players)
 
 
-@app.route("/api/twd/hall_of_fame/players", methods=["GET"])
+@app.route("/api/twd/hall_of_fame", methods=["GET"])
 def getTwdHoFPlayers():
     return jsonify(get_hof_players(twd_decks))
 
 
-@app.route("/api/twd/hall_of_fame/cards", methods=["GET"])
+@app.route("/api/twd/cards_history", methods=["GET"])
 def getTwdHoFCards():
     return jsonify(get_hof_cards(twd_decks))
 
