@@ -81,7 +81,7 @@ const TwdHallOfFame = (props) => {
 
   const DeckBody = ({ deck }) => {
     return (
-      <Row className="py-2 px-0 mx-0">
+      <Row className="py-0 px-0 mx-0">
         <Col xs={12} md={12} xl={3} className={isMobile ? 'px-0' : 'ps-0 pe-2'}>
           <TwdResultDescription deck={deck} />
         </Col>
@@ -114,7 +114,7 @@ const TwdHallOfFame = (props) => {
   const DeckHeader = ({ deck }) => {
     return (
       <>
-        <div className="border-thick p-2 mt-1 mb-3">
+        <div className="border-thick p-2 m-1 m-md-2">
           {cryptCardBase && libraryCardBase && (
             <div
               onClick={() => handleDeckClick(deck.deckid)}
@@ -127,7 +127,8 @@ const TwdHallOfFame = (props) => {
             </div>
           )}
           {showDecks[deck.deckid] && cards[deck.deckid] && (
-            <div className="p-1">
+            <div className="p-0">
+              <hr />
               <DeckBody
                 deck={{
                   ...deck,
@@ -153,7 +154,7 @@ const TwdHallOfFame = (props) => {
             {/* TODO star marks */}
           </div>
         </Accordion.Header>
-        <Accordion.Body>
+        <Accordion.Body className="p-0">
           {players[name].sort(byDate).map((deck) => {
             return (
               <DeckHeader key={deck.deckid} deck={{ ...deck, author: name }} />
@@ -165,7 +166,7 @@ const TwdHallOfFame = (props) => {
   };
 
   return (
-    <Container className="main-container p-md-3">
+    <Container className="cards-container p-0 p-md-3">
       {players && (
         <Accordion alwaysOpen>
           {Object.keys(players)
