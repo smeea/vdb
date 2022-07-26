@@ -14,3 +14,6 @@ export { default as TwdSearchFormMatchInventoryScaling } from './TwdSearchFormMa
 export { default as TwdSearchFormClan } from './TwdSearchFormClan.jsx';
 export { default as TwdSearchFormLibrary } from './TwdSearchFormLibrary.jsx';
 export { default as TwdSearchFormPlayer } from './TwdSearchFormPlayer.jsx';
+export { default as TwdRandomButton } from './TwdRandomButton.jsx';
+export { default as TwdNewDecksButton } from './TwdNewDecksButton.jsx';
+export { default as TwdMoreButton } from './TwdMoreButton.jsx';

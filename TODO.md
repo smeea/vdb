@@ -1,7 +1,7 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Hall of Fame - add star to deck/players
-- Remove HoF buttons from PDA
+- Improve HoF on mobile
 
 # FEATURES
 - Check TWD

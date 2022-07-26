@@ -38,7 +38,6 @@ const TwdSearchForm = (props) => {
   const { setTwdResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
-  const showLimit = 25;
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -296,7 +295,6 @@ const TwdSearchForm = (props) => {
       <Row className="pb-2">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
-          showLimit={showLimit}
           getNew={getNewTwd}
           getRandom={getRandomTwd}
         />

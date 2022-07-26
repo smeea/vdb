@@ -38,7 +38,6 @@ const PdaSearchForm = (props) => {
   const { setPdaResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
-  const showLimit = 25;
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -286,9 +285,9 @@ const PdaSearchForm = (props) => {
     <Form onSubmit={handleSubmitButton}>
       <TwdSearchFormButtons
         handleClearButton={handleClearButton}
-        showLimit={showLimit}
         getNew={getNewPda}
         getRandom={getRandomPda}
+        inPda
       />
       {username && (
         <div className="px-1 py-2">
