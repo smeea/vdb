@@ -1,5 +1,19 @@
 [
   {
+    "version": "2022-07-26",
+    "changes": [
+      "Add Hall of Fame (in Menu button next to X-button at TWD page)",
+      "When manually entering card q-ty (from keyboard) in Deck, tab will move to next card q-ty",
+      "Offline-ready Inventory text export",
+      "Limit Public Decks by 35 crypt and 90 library cards",
+      "Show card preview in the bottom in Deck-Library and Inventory-Library in narrow browser window (when no space on the right is available)",
+      "Fix card searches with symbols (i.e. ':') and The in name",
+      "Fix BSC (Blood Shadowed Court) precon add to inventory (was incorrectly showing tick mark)",
+      "Improved Create vampire and Reduce bleed traits",
+      "Other small fixes"
+    ]
+  },
+  {
     "version": "2022-07-16",
     "changes": [
       "Preserve card in quick search (/cards, lightning button) between pages",
