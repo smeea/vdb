@@ -64,3 +64,4 @@ export { default as DeckSelectRecent } from './DeckSelectRecent.jsx';
 export { default as DeckSelectSortForm } from './DeckSelectSortForm.jsx';
 export { default as DeckSelectorAndDisplay } from './DeckSelectorAndDisplay.jsx';
 export { default as DeckTags } from './DeckTags.jsx';
+export { default as DeckTogglePublicButton } from './DeckTogglePublicButton.jsx';

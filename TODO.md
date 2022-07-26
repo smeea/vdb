@@ -1,5 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
+- Refactor DeckTogglePublicButton and DeckPublicButton
 
 # FEATURES
 - Check TWD
