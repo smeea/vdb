@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Accordion } from 'react-bootstrap';
-import PersonFill from 'assets/images/icons/person-fill.svg';
+import PeopleFill from 'assets/images/icons/people-fill.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
+import StarFill from 'assets/images/icons/star-fill.svg';
 import {
   TwdResultDescription,
   TwdResultCrypt,
@@ -36,6 +37,10 @@ const TwdHallOfFame = (props) => {
     return Object.keys(players[b]).length - Object.keys(players[a]).length;
   };
 
+  const byName = (a, b) => {
+    return a.localeCompare(b);
+  };
+
   const byDate = (a, b) => {
     return b.date - a.date;
   };
@@ -45,6 +50,25 @@ const TwdHallOfFame = (props) => {
     setShowDecks((prevState) => {
       return { ...prevState, [deckid]: !prevState[deckid] };
     });
+  };
+
+  const getStars = (decks) => {
+    let stars = 0;
+    decks.map((deck) => {
+      if (
+        RegExp(
+          /(NAC|NC|EC|RESAC|SAC|Continental Championship) \d{4}$/i,
+          'i'
+        ).test(deck['event'])
+      ) {
+        stars += 1;
+      }
+      if (RegExp(/(NAC|NC|EC) \d{4} Day 2$/i, 'i').test(deck['event'])) {
+        stars += 1;
+      }
+    });
+
+    return stars;
   };
 
   const getCards = (deckid) => {
@@ -112,18 +136,31 @@ const TwdHallOfFame = (props) => {
   };
 
   const DeckHeader = ({ deck }) => {
+    const isStar =
+      RegExp(
+        /(NAC|NC|EC|RESAC|SAC|Continental Championship) \d{4}$/i,
+        'i'
+      ).test(deck['event']) ||
+      RegExp(/(NAC|NC|EC) \d{4} Day 2$/i, 'i').test(deck['event']);
+
     return (
       <>
         <div className="border-thick p-2 m-1 m-md-2">
           {cryptCardBase && libraryCardBase && (
             <div
               onClick={() => handleDeckClick(deck.deckid)}
-              className="link-like"
+              className={`d-flex justify-content-between link-like ${
+                isStar ? 'bold' : ''
+              }`}
             >
-              <span className="pe-1">{deck.players}</span>
-              <PersonFill viewBox="0 0 16 16" />
-              {` - ${deck.event}: ${deck.location} - [${deck.date}]`}
-              {/* TODO star mark */}
+              <div className="d-flex align-items-center">
+                {deck.players}
+                <div className="d-flex pt-1 px-1">
+                  <PeopleFill viewBox="0 0 18 18" />
+                </div>
+                {` - ${deck.event}: ${deck.location}`}
+              </div>
+              <div>{deck.date}</div>
             </div>
           )}
           {showDecks[deck.deckid] && cards[deck.deckid] && (
@@ -145,13 +182,29 @@ const TwdHallOfFame = (props) => {
   };
 
   const Player = ({ name }) => {
+    const starsQty = getStars(players[name]);
+    const stars = [];
+    for (let i = 0; i < starsQty; i++) {
+      stars.push(
+        <StarFill key={i} height="13" width="12" viewBox="0 0 18 18" />
+      );
+    }
+
     return (
       <Accordion.Item eventKey={name}>
         <Accordion.Header>
           <div className="d-flex align-items-center">
-            <span className="pe-1">{Object.keys(players[name]).length}</span>
-            <TrophyFill viewBox="0 0 20 20" />- {name}
-            {/* TODO star marks */}
+            {Object.keys(players[name]).length}
+            <div className="d-flex pt-1 px-1">
+              <TrophyFill height="13" width="13" viewBox="0 0 18 18" />
+            </div>
+            - {name}
+            <div
+              className="d-flex pt-1 px-1"
+              title="National or Continental Championships (in bold below)"
+            >
+              {stars}
+            </div>
           </div>
         </Accordion.Header>
         <Accordion.Body className="p-0">
@@ -170,6 +223,7 @@ const TwdHallOfFame = (props) => {
       {players && (
         <Accordion alwaysOpen>
           {Object.keys(players)
+            .sort(byName)
             .sort(byWins)
             .map((player) => (
               <Player key={player} name={player} />

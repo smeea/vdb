@@ -1,6 +1,5 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Hall of Fame - add star to deck/players
 
 # FEATURES
 - Check TWD
