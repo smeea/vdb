@@ -953,9 +953,6 @@ hr
 hr.thick
   border: 2px solid var(--border-primary)
 
-.nobr
-  white-space: nowrap
-
 textarea.deck-import
   font-family: monospace
   font-size: large
@@ -1160,9 +1157,6 @@ div.float-random svg
   bottom: 40px
   width: 100%
 
-.above-card-select-bottom
-  padding-bottom: 72px
-
 div.inventory-card-custom
   position: absolute
   left: -24px
@@ -1193,6 +1187,8 @@ tr:hover div.not-selected.inventory-card-custom
 .accordion-button
   background-color: var(--bg-third)
   color: var(--fg-secondary)
+  @media (max-width: 767px)
+    padding: 12px
 button.accordion-button:not(.collapsed)
   background-color: var(--bg-secondary)
   color: var(--fg-secondary)
@@ -1206,8 +1202,10 @@ button.accordion-button:not(.collapsed)
     display: none
   .modal-x-wide
     min-width: 100%
-  .cards-container
+  .hall-of-fame-container
     padding-bottom: 40px
+  .cards-container
+    padding-bottom: 72px
 
 @media (min-width: 768px) and (max-width: 991px)
   .main-container,
@@ -1215,7 +1213,8 @@ button.accordion-button:not(.collapsed)
   .deck-container
     min-width: 768px
     max-width: 100%
-  .cards-container
+  .cards-container,
+  .hall-of-fame-container
     max-width: 1024px
   .inventory-buttons,
   .hide-narrow
@@ -1236,7 +1235,8 @@ button.accordion-button:not(.collapsed)
   .deck-container
     min-width: 768px
     max-width: 100%
-  .cards-container
+  .cards-container,
+  .hall-of-fame-container
     max-width: 1024px
   .modal-wide
     min-width: 80%
@@ -1254,7 +1254,8 @@ button.accordion-button:not(.collapsed)
   .deck-container
     min-width: 1200px
     max-width: 1460px
-  .cards-container
+  .cards-container,
+  .hall-of-fame-container
     max-width: 1140px
   .modal-wide
     min-width: 70%
@@ -1273,7 +1274,8 @@ button.accordion-button:not(.collapsed)
   .deck-container
     min-width: 1460px
     max-width: 1460px
-  .cards-container
+  .cards-container,
+  .hall-of-fame-container
     max-width: 1140px
   .modal-wide
     min-width: 70%

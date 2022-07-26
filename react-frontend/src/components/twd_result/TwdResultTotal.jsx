@@ -17,7 +17,7 @@ const TwdResultTotal = ({ decks, sortMethods, sortMethod, setSortMethod }) => {
 
   const totalOutput = Object.keys(byYear).map((k) => {
     return (
-      <span key={k} className="d-inline-block nobr pe-3">
+      <span key={k} className="d-inline-block nowrap pe-3">
         <span className="blue">
           <b>{k}: </b>
         </span>
@@ -28,7 +28,7 @@ const TwdResultTotal = ({ decks, sortMethods, sortMethod, setSortMethod }) => {
 
   const value = (
     <>
-      <div className="px-2 nobr">
+      <div className="px-2 nowrap">
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>

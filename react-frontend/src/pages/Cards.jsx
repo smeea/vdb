@@ -55,7 +55,7 @@ const Cards = ({ lastDeckId }) => {
   }, [quickCard, cryptCardBase, libraryCardBase]);
 
   return (
-    <Container className="cards-container px-0 pb-0 p-md-0">
+    <Container className="cards-container px-0 p-md-0">
       <>
         {isMobile ? (
           <>
@@ -71,7 +71,7 @@ const Cards = ({ lastDeckId }) => {
                       />
                     ) : (
                       <>
-                        <div className="px-3 pt-3 above-quickCard-select-bottom">
+                        <div className="px-3 pt-3">
                           <ResultLayoutText
                             card={quickCard}
                             setCard={setQuickCard}

@@ -60,7 +60,7 @@ const ResultLayoutTextSets = (props) => {
 
       return (
         <div
-          className="d-inline-block nobr pe-2"
+          className="d-inline-block nowrap pe-2"
           onClick={() => {
             if (k !== 'POD') props.setImageSet(k.toLowerCase());
           }}

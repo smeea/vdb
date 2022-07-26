@@ -155,12 +155,14 @@ const TwdHallOfFame = (props) => {
             >
               <div className="d-flex align-items-center">
                 {deck.players}
-                <div className="d-flex pt-1 px-1">
+                <div className="d-flex pt-1 ps-1 pe-3">
                   <PeopleFill viewBox="0 0 18 18" />
                 </div>
-                {` - ${deck.event}: ${deck.location}`}
+                {`${deck.event}: ${deck.location}`}
               </div>
-              <div>{deck.date}</div>
+              <div className="nowrap ps-2">
+                {isMobile ? deck.date.slice(0, 4) : deck.date}
+              </div>
             </div>
           )}
           {showDecks[deck.deckid] && cards[deck.deckid] && (
@@ -195,15 +197,17 @@ const TwdHallOfFame = (props) => {
         <Accordion.Header>
           <div className="d-flex align-items-center">
             {Object.keys(players[name]).length}
-            <div className="d-flex pt-1 px-1">
+            <div className="d-flex pt-1 ps-1 pe-3">
               <TrophyFill height="13" width="13" viewBox="0 0 18 18" />
             </div>
-            - {name}
-            <div
-              className="d-flex pt-1 px-1"
-              title="National or Continental Championships (in bold below)"
-            >
-              {stars}
+            <div className="d-flex nowrap align-items-center">
+              {name}
+              <div
+                className="d-flex pt-1 px-1"
+                title="National or Continental Championships (in bold below)"
+              >
+                {stars}
+              </div>
             </div>
           </div>
         </Accordion.Header>
@@ -219,7 +223,7 @@ const TwdHallOfFame = (props) => {
   };
 
   return (
-    <Container className="cards-container p-0 p-md-3">
+    <Container className="hall-of-fame-container px-0 p-md-3">
       {players && (
         <Accordion alwaysOpen>
           {Object.keys(players)
