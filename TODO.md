@@ -1,6 +1,7 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
+- Click on card in Hall of Fame
 
 # FEATURES
 - Check TWD
@@ -14,6 +15,7 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in csv/excel to frontend
 - Move deck/inventory import to frontend
+- Hall of Fame performance
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory

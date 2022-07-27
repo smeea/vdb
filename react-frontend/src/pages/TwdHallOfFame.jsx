@@ -52,18 +52,20 @@ const TwdHallOfFame = (props) => {
     });
   };
 
+  const testStar = (eventName) => {
+    return (
+      RegExp(
+        /(NAC|NC|EC|RESAC|SAC|ACC|Continental Championship) \d{4}( -- |$)/i,
+        'i'
+      ).test(eventName) ||
+      RegExp(/(NAC|NC|EC) \d{4} Day 2$/i, 'i').test(eventName)
+    );
+  };
+
   const getStars = (decks) => {
     let stars = 0;
     decks.map((deck) => {
-      if (
-        RegExp(
-          /(NAC|NC|EC|RESAC|SAC|Continental Championship) \d{4}$/i,
-          'i'
-        ).test(deck['event'])
-      ) {
-        stars += 1;
-      }
-      if (RegExp(/(NAC|NC|EC) \d{4} Day 2$/i, 'i').test(deck['event'])) {
+      if (testStar(deck['event'])) {
         stars += 1;
       }
     });
@@ -136,12 +138,10 @@ const TwdHallOfFame = (props) => {
   };
 
   const DeckHeader = ({ deck }) => {
-    const isStar =
-      RegExp(
-        /(NAC|NC|EC|RESAC|SAC|Continental Championship) \d{4}$/i,
-        'i'
-      ).test(deck['event']) ||
-      RegExp(/(NAC|NC|EC) \d{4} Day 2$/i, 'i').test(deck['event']);
+    const isStar = testStar(deck['event']);
+    RegExp(/(NAC|NC|EC|RESAC|SAC|Continental Championship) \d{4}$/i, 'i').test(
+      deck['event']
+    ) || RegExp(/(NAC|NC|EC) \d{4} Day 2$/i, 'i').test(deck['event']);
 
     return (
       <>
