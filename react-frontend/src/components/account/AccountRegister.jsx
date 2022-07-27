@@ -57,7 +57,7 @@ const AccountRegister = (props) => {
     setEmptyUsername(!formUsername);
     setEmptyPassword(!formPassword);
 
-    if (formUsername && formPassword === formConfirmPassword) {
+    if (formUsername && formPassword && formPassword === formConfirmPassword) {
       setSpinnerState(true);
       userServices.register(
         formUsername,

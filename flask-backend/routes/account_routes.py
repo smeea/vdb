@@ -17,7 +17,8 @@ def unauthorized_handler():
 def register():
     if current_user.is_authenticated:
         return jsonify({"already logged as:": current_user.username})
-
+    if not request.json["password"] or not request.json["username"]:
+        abort(400)
     if User.query.filter_by(username=request.json["username"].lower()).first():
         abort(409)
     else:

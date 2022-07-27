@@ -2,6 +2,7 @@
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
 - Click on card in Hall of Fame
+- Bottom padding in Inventory on mobile
 
 # FEATURES
 - Check TWD

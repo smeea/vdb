@@ -183,12 +183,12 @@ const About = (props) => {
                 >
                   <code>{BTC_WALLET}</code>
                 </a>
-                <div
+                <span
                   className="d-inline ps-2 with-hover"
                   onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
                 >
                   <ClipboardFill viewBox="0 0 18 18" />
-                </div>
+                </span>
               </p>
             </div>
 
