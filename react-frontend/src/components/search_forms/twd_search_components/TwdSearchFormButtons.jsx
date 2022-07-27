@@ -13,7 +13,7 @@ const TwdSearchFormButtons = ({
   const { isMobile } = useApp();
 
   return (
-    <div className="d-flex justify-content-between">
+    <div className="d-flex px-0 justify-content-between">
       <Stack direction="horizontal" gap={1}>
         <TwdRandomButton getRandom={getRandom} />
         <TwdNewDecksButton getNew={getNew} />

@@ -292,7 +292,7 @@ const TwdSearchForm = (props) => {
 
   return (
     <Form onSubmit={handleSubmitButton}>
-      <Row className="pb-2">
+      <Row className="pb-2 mx-0">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
           getNew={getNewTwd}
