@@ -6,10 +6,13 @@ import Github from 'assets/images/icons/github.svg';
 import Discord from 'assets/images/icons/discord.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import Globe2 from 'assets/images/icons/globe2.svg';
+import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
 import { Banner } from 'components';
 import changes from '../../../CHANGES.json';
 
 const About = (props) => {
+  const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
+
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
@@ -33,16 +36,16 @@ const About = (props) => {
                   <Link to="/library">Search library cards</Link>
                 </li>
                 <li>
-                  <Link to="/twd">Search tournament-winning decks</Link>
-                </li>
-                <li>
                   <Link to="/decks">Create your decks</Link>
                 </li>
                 <li>
-                  <Link to="/pda">Search public deck archive</Link>
+                  <Link to="/inventory">Manage your inventory</Link>
                 </li>
                 <li>
-                  <Link to="/inventory">Manage inventory</Link>
+                  <Link to="/twd">Search Tournament-Winning Decks</Link>
+                </li>
+                <li>
+                  <Link to="/pda">Search Public Deck Archive</Link>
                 </li>
                 <li>
                   <Link to="/cards">Quick search card by name</Link>
@@ -155,10 +158,10 @@ const About = (props) => {
               <ul>
                 <li>Card images by Fernando &quot;Sydnelson&quot; Cesar</li>
                 <li>
-                  Rulings by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
+                  Rulings archive by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
                   <a href="https://static.krcg.org/">KRCG</a>
                 </li>
-                <li>TWD by Vincent &quot;Ankha&quot; Ripoll</li>
+                <li>TWD archive by Vincent &quot;Ankha&quot; Ripoll</li>
                 <li>
                   Cards scans from different sets by{' '}
                   <a href="http://vtes.pl/">VTES.PL</a> and{' '}
@@ -175,7 +178,17 @@ const About = (props) => {
               <h5>DONATIONS</h5>
               <p>
                 Bitcoin (BTC):{' '}
-                <code>bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap</code>
+                <a
+                  href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
+                >
+                  <code>{BTC_WALLET}</code>
+                </a>
+                <div
+                  className="d-inline ps-2 with-hover"
+                  onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
+                >
+                  <ClipboardFill viewBox="0 0 18 18" />
+                </div>
               </p>
             </div>
 
