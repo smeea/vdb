@@ -100,6 +100,8 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
       )}
       {(deck.deckid.length === 32 || deck.deckid === 'deckInUrl') && (
         <>
+          <Dropdown.Divider />
+          <Dropdown.Header>Non-modifiable</Dropdown.Header>
           <Dropdown.Item
             onClick={handleDeckInUrlButton}
             title="Copy long URL containing full deck info (will not follow deck changes)"
