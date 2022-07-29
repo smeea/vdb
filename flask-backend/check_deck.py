@@ -24,7 +24,7 @@ if len(argv) == 2:
 else:
     for i in argv[2:]:
         deck = decks[int(i) - 1]
-        print(f"{deck.name}")
+        print(f"{deck.name} - https://vdb.im/decks?id={deck.deckid}")
         for card, q in deck.cards.items():
             if card > 200000:
                 print(f"{q} - {cardbase[str(card)]['Name']}")
