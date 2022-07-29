@@ -1,9 +1,7 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
-- Bottom padding in Inventory on mobile
 - Export with accents in Lackey - check first
-- Padding end with crypt info on mobile
 
 # FEATURES
 - Check TWD

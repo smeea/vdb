@@ -538,7 +538,6 @@ export const AppProvider = (props) => {
   };
 
   const deckRouter = (pointer) => {
-    console.log('deckRouter');
     if (pointer) {
       switch (pointer['src']) {
         case 'my':
