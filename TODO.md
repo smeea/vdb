@@ -8,7 +8,6 @@
 - Cards History in TWD
 - Show changes from base deck in PDA
 - Less black color in day theme (switch to dark blue?)
-- Show login error no account with that name
 
 # MAYBE LATER FEATURES
 - Comments for PDA
@@ -17,7 +16,6 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in csv/excel to frontend
 - Move deck/inventory import to frontend
-- Hall of Fame performance
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory

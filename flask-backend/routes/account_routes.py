@@ -62,8 +62,11 @@ def login():
             user = User.query.filter_by(
                 username=request.json["username"].lower()
             ).first()
-            if user is None or not user.check_password(request.json["password"]):
-                return jsonify({"error": "invalid username or password"}), 401
+
+            if user is None:
+                abort(400)
+            elif not user.check_password(request.json["password"]):
+                abort(401)
 
             login_user(user, remember=request.json["remember"])
             return jsonify(

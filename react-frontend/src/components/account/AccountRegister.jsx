@@ -24,10 +24,9 @@ const AccountRegister = (props) => {
   const [formConfirmPassword, setFormConfirmPassword] = useState('');
   const [spinnerState, setSpinnerState] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
   const [confirmError, setConfirmError] = useState(false);
-  const [emptyUsername, setEmptyUsername] = useState(false);
-  const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
   const refUsername = useRef(null);
   const refPassword = useRef(null);
@@ -36,9 +35,9 @@ const AccountRegister = (props) => {
   const onError = (e) => {
     setSpinnerState(false);
     if (e.message == 409) {
-      setUsernameError(true);
+      setUsernameError('USER ALREADY EXIST');
     } else {
-      setConnectionError(true);
+      setConnectionError('CONNECTION ERROR');
     }
   };
 
@@ -51,11 +50,12 @@ const AccountRegister = (props) => {
   const registerUser = () => {
     if (spinnerState) return;
 
-    setUsernameError(false);
+    setUsernameError(formUsername ? false : 'ENTER USERNAME');
+    setPasswordError(formPassword ? false : 'ENTER PASSWORD');
+    setConfirmError(
+      formConfirmPassword === formPassword ? false : 'PASSWORDS DOES NOT MATCH'
+    );
     setConnectionError(false);
-    setConfirmError(formConfirmPassword !== formPassword);
-    setEmptyUsername(!formUsername);
-    setEmptyPassword(!formPassword);
 
     if (formUsername && formPassword && formPassword === formConfirmPassword) {
       setSpinnerState(true);
@@ -133,39 +133,32 @@ const AccountRegister = (props) => {
           </InputGroup>
         </Stack>
         <ErrorOverlay
-          show={emptyUsername}
-          target={refUsername.current}
-          placement="bottom"
-        >
-          ENTER USERNAME
-        </ErrorOverlay>
-        <ErrorOverlay
           show={usernameError}
           target={refUsername.current}
           placement="bottom"
         >
-          USER ALREADY EXIST
+          {usernameError}
         </ErrorOverlay>
         <ErrorOverlay
-          show={emptyPassword}
+          show={passwordError}
           target={refPassword.current}
           placement="bottom"
         >
-          ENTER PASSWORD
+          {passwordError}
         </ErrorOverlay>
         <ErrorOverlay
           show={confirmError}
           target={refConfirmPassword.current}
           placement="bottom"
         >
-          PASSWORDS DOES NOT MATCH
+          {confirmError}
         </ErrorOverlay>
         <ErrorOverlay
           show={connectionError}
           target={refPassword.current}
           placement="bottom"
         >
-          CONNECTION PROBLEM
+          {connectionError}
         </ErrorOverlay>
       </Form>
     </div>

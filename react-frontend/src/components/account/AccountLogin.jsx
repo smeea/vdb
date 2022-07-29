@@ -15,19 +15,18 @@ import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
-function AccountLogin(props) {
+const AccountLogin = (props) => {
   const { isMobile, initializeUserData } = useApp();
 
-  const [formUserName, setFormUserName] = useState('');
+  const [formUsername, setFormUsername] = useState('');
   const [formPassword, setFormPassword] = useState('');
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
-  const [emptyUserName, setEmptyUserName] = useState(false);
-  const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
   const refUsername = useRef(null);
   const refPassword = useRef(null);
@@ -35,8 +34,9 @@ function AccountLogin(props) {
   const onError = (e) => {
     setSpinnerState(false);
     if (e.message == 401) {
-      setPasswordError(true);
-      setFormPassword('');
+      setPasswordError('WRONG PASSWORD');
+    } else if (e.message == 400) {
+      setUsernameError('USER DOES NOT EXIST');
     } else {
       setConnectionError(true);
     }
@@ -50,14 +50,13 @@ function AccountLogin(props) {
   const loginUser = () => {
     if (spinnerState) return;
 
-    setPasswordError(false);
+    setUsernameError(formUsername ? false : 'ENTER USERNAME');
+    setPasswordError(formPassword ? false : 'ENTER PASSWORD');
     setConnectionError(false);
-    setEmptyUserName(!formUserName);
-    setEmptyPassword(!formPassword);
 
-    if (formUserName && formPassword) {
+    if (formUsername && formPassword) {
       setSpinnerState(true);
-      userServices.login(formUserName, formPassword, onSuccess, onError);
+      userServices.login(formUsername, formPassword, onSuccess, onError);
     }
   };
 
@@ -73,7 +72,7 @@ function AccountLogin(props) {
       Please{' '}
       <a
         href={`mailto:smeea@riseup.net?subject=VDB - Password reset&body=Account: ${
-          formUserName || '<PUT YOUR ACCOUNT NAME HERE>'
+          formUsername || '<PUT YOUR ACCOUNT NAME HERE>'
         }`}
       >
         send me an email
@@ -115,8 +114,8 @@ function AccountLogin(props) {
             placeholder="Username"
             type="text"
             name="username"
-            value={formUserName}
-            onChange={(e) => setFormUserName(e.target.value)}
+            value={formUsername}
+            onChange={(e) => setFormUsername(e.target.value)}
             autoFocus={true}
             ref={refUsername}
           />
@@ -146,18 +145,18 @@ function AccountLogin(props) {
           )}
         </InputGroup>
         <ErrorOverlay
-          show={emptyUserName}
+          show={usernameError}
           target={refUsername.current}
           placement="bottom"
         >
-          ENTER USERNAME
+          {usernameError}
         </ErrorOverlay>
         <ErrorOverlay
           show={passwordError}
           target={refPassword.current}
           placement="bottom"
         >
-          WRONG PASSWORD
+          {passwordError}
         </ErrorOverlay>
         <ErrorOverlay
           show={connectionError}
@@ -165,13 +164,6 @@ function AccountLogin(props) {
           placement="bottom"
         >
           CONNECTION PROBLEM
-        </ErrorOverlay>
-        <ErrorOverlay
-          show={emptyPassword}
-          target={refPassword.current}
-          placement="bottom"
-        >
-          ENTER PASSWORD
         </ErrorOverlay>
       </Form>
       {!isMobile ? (
@@ -205,6 +197,6 @@ function AccountLogin(props) {
       )}
     </div>
   );
-}
+};
 
 export default AccountLogin;
