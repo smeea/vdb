@@ -15,8 +15,7 @@ import { useApp, useSearchResults } from 'context';
 const TwdResult = ({ showSearch }) => {
   const {
     setShowTwdSearch,
-    cryptCardBase,
-    libraryCardBase,
+    parseDeckCards,
     isMobile,
     showFloatingButtons,
     twdSearchSort,
@@ -66,21 +65,9 @@ const TwdResult = ({ showSearch }) => {
           while (newCounter > 0) {
             newCounter -= 1;
 
-            deck['crypt'] = {};
-            deck['library'] = {};
-            Object.keys(deck['cards']).map((i) => {
-              if (i > 200000) {
-                deck['crypt'][i] = {
-                  q: deck['cards'][i],
-                  c: cryptCardBase[i],
-                };
-              } else {
-                deck['library'][i] = {
-                  q: deck['cards'][i],
-                  c: libraryCardBase[i],
-                };
-              }
-            });
+            const cardsData = parseDeckCards(deck.cards);
+            deck.crypt = cardsData.crypt;
+            deck.library = cardsData.library;
 
             return (
               <React.Fragment key={deck['deckid']}>

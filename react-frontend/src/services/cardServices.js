@@ -57,7 +57,7 @@ export const getLocalizedCardBase = async (lang) => {
   };
 };
 
-export const getPreconDecks = (cryptCardBase, libraryCardBase) => {
+export const getPreconDecks = (parseDeckCards) => {
   const precons = {};
 
   Object.keys(preconDecksData).map((set) => {
@@ -73,19 +73,9 @@ export const getPreconDecks = (cryptCardBase, libraryCardBase) => {
         crypt: {},
         library: {},
       };
-      Object.keys(preconDecksData[set][precon]).map((card) => {
-        if (card > 200000) {
-          precons[deckid]['crypt'][card] = {
-            c: cryptCardBase[card],
-            q: preconDecksData[set][precon][card],
-          };
-        } else {
-          precons[deckid]['library'][card] = {
-            c: libraryCardBase[card],
-            q: preconDecksData[set][precon][card],
-          };
-        }
-      });
+
+      const cardsData = parseDeckCards(preconDecksData[set][precon]);
+      precons[deckid] = { ...precons[deckid], ...cardsData };
     });
   });
   return precons;

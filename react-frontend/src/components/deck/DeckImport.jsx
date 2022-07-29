@@ -10,8 +10,7 @@ import { useApp } from 'context';
 
 const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
   const {
-    cryptCardBase,
-    libraryCardBase,
+    parseDeckCards,
     setDecks,
     activeDeck,
     setActiveDeck,
@@ -64,30 +63,9 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
   const handleOpenAnonymousTextModal = () => setShowAnonymousTextModal(true);
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 
-  const parseCards = (cards) => {
-    const crypt = {};
-    const library = {};
-
-    Object.keys(cards).map((cardid) => {
-      if (cardid > 200000) {
-        crypt[cardid] = {
-          q: cards[cardid],
-          c: cryptCardBase[cardid],
-        };
-      } else {
-        library[cardid] = {
-          q: cards[cardid],
-          c: libraryCardBase[cardid],
-        };
-      }
-    });
-
-    return { crypt: crypt, library: library };
-  };
-
   const addImportedDeckToState = ({ data, anonymous }) => {
     const now = new Date();
-    const { crypt, library } = parseCards(data.cards);
+    const { crypt, library } = parseDeckCards(data.cards);
     const deck = {
       deckid: data.deckid,
       name: data.name,
@@ -130,7 +108,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
     fetchPromise
       .then((response) => response.json())
       .then((data) => {
-        const { crypt, library } = parseCards(data.cards);
+        const { crypt, library } = parseDeckCards(data.cards);
 
         setDecks((prevState) => ({
           ...prevState,
@@ -311,7 +289,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
         setBadCards={setBadCards}
       />
       <DeckImportAmaranth
-        parseCards={parseCards}
+        parseCards={parseDeckCards}
         addImportedDeckToState={addImportedDeckToState}
         handleCloseModal={handleCloseImportModal}
         show={showAmaranthModal}
