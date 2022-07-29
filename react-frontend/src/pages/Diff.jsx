@@ -37,6 +37,7 @@ const Diff = (props) => {
     recentDecks,
     addRecentDeck,
     preconDecks,
+    parseDeckCards,
     cryptCardBase,
     libraryCardBase,
     username,
@@ -139,22 +140,10 @@ const Diff = (props) => {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        data.crypt = {};
-        data.library = {};
+        const cardsData = parseDeckCards(deck.cards);
+        data.crypt = cardsData.crypt;
+        data.library = cardsData.library;
 
-        Object.keys(data.cards).map((i) => {
-          if (i > 200000) {
-            data.crypt[i] = {
-              q: data.cards[i],
-              c: cryptCardBase[i],
-            };
-          } else {
-            data.library[i] = {
-              q: data.cards[i],
-              c: libraryCardBase[i],
-            };
-          }
-        });
         addRecentDeck(data);
         setDeck({ [data.deckid]: data });
       })

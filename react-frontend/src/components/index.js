@@ -10,6 +10,7 @@ export * from 'components/result_common';
 export * from 'components/twd_result';
 export * from 'components/pda_result';
 export * from 'components/twd_check';
+export * from 'components/twd_hall_fame';
 
 // Search Forms
 export { default as LibrarySearchForm } from 'components/search_forms/LibrarySearchForm.jsx';
