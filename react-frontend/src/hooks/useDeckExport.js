@@ -216,7 +216,7 @@ const getLibraryText = (library, format) => {
 const exportJol = (deck) => {
   let result = '';
   Object.values(deck.crypt).map((card) => {
-    let name = card.c['ASCII Name'].replace('"', "'");
+    let name = card.c['ASCII Name'].replace(/"/g, "'");
     if (card.c['Adv'] && card.c['Adv'][0]) {
       name += ' (ADV)';
     }
@@ -239,13 +239,13 @@ const exportLackey = (deck) => {
 
   Object.values(deck.library).map((card) => {
     result += `${card.q}${' '.repeat(8 - card.q.toString.length)}`;
-    result += `${card.c['ASCII Name'].replace('/', '')}\n`;
+    result += `${card.c['ASCII Name'].replace(/\//g, '')}\n`;
   });
 
   result += 'Crypt:\n';
 
   Object.values(deck.crypt).map((card) => {
-    let name = card.c['ASCII Name'].replace('"', "'");
+    let name = card.c['ASCII Name'].replace(/"/g, "'");
     if (card.c['Adv'] && card.c['Adv'][0]) {
       name += ' (ADV)';
     }

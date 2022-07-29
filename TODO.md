@@ -1,13 +1,16 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
-- Click on card in Hall of Fame
 - Bottom padding in Inventory on mobile
+- Export with accents in Lackey - check first
+- Padding end with crypt info on mobile
 
 # FEATURES
 - Check TWD
 - Cards History in TWD
 - Show changes from base deck in PDA
+- Less black color in day theme (switch to dark blue?)
+- Show login error no account with that name
 
 # MAYBE LATER FEATURES
 - Comments for PDA
