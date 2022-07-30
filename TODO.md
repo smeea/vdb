@@ -7,7 +7,6 @@
 - Check TWD
 - Cards History in TWD
 - Show changes from base deck in PDA
-- Less black color in day theme (switch to dark blue?)
 
 # MAYBE LATER FEATURES
 - Comments for PDA

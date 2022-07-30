@@ -74,7 +74,7 @@ export const ThemeProvider = (props) => {
 };
 
 const light = [
-  '--fg-primary: #202530',
+  '--fg-primary: #151575',
   '--fg-secondary: #6060c0',
   '--fg-third: #6060c0',
   '--fg-name: #3060c0',

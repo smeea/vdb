@@ -1,6 +1,6 @@
 :root
   @media (prefers-color-scheme: light)
-    --fg-primary: #202530
+    --fg-primary: #151575
     --fg-secondary: #6060c0
     --fg-third: #6060c0
     --fg-name: #3060c0
@@ -58,15 +58,16 @@ body
   color: var(--fg-primary)
   background: var(--bg-primary)
 
+a:hover, span.link-like:hover,
 a, .prob, .link-like, a.quantity:hover
   color: var(--fg-secondary)
+
+a:link, a:visited, a.nav-link:hover, a:hover.dropdown-item, .prob,
+.link-like, a.quantity:hover
   text-decoration: none
 
-.link-like:hover
+a:hover, span.link-like:hover, .link-like:hover
   text-decoration: underline
-
-a:hover, span.link-like:hover
-  color: var(--fg-secondary)
 
 .name
   color: var(--fg-name)
@@ -1046,14 +1047,6 @@ div.white-font-toggle svg
 
 div.col-hide
   display:none
-
-a:hover
-  text-decoration: underline
-
-a:link,
-a:visited,
-a.nav-link:hover, a:hover.dropdown-item
-  text-decoration: none
 
 .margin-full
   display: inline-block
