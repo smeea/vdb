@@ -1,5 +1,4 @@
 import React from 'react';
-// import { } from 'react-bootstrap';
 import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
 import {
   ResultLibraryBurn,
@@ -13,14 +12,8 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const TwdCardsHistoryCard = ({ card }) => {
+const TwdCardsHistoryCard = ({ card, handleClick }) => {
   const { nativeLibrary } = useApp();
-
-  const handleClick = () => {
-    console.log('click');
-    // handleModalCardOpen(idx);
-    // setShowFloatingButtons(false);
-  };
 
   return (
     <>

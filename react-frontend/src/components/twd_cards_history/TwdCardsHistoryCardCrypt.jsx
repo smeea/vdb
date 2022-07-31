@@ -1,5 +1,4 @@
 import React from 'react';
-// import { } from 'react-bootstrap';
 import {
   ResultCryptCapacity,
   ResultCryptDisciplines,
@@ -11,14 +10,8 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const TwdCardsHistoryCard = ({ card }) => {
-  const { isMobile, isWide } = useApp();
-
-  const handleClick = () => {
-    console.log('click');
-    // handleModalCardOpen(idx);
-    // setShowFloatingButtons(false);
-  };
+const TwdCardsHistoryCard = ({ card, handleClick }) => {
+  const { isWide } = useApp();
 
   return (
     <>

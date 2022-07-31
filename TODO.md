@@ -6,7 +6,6 @@
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
-- Card Modal for TWD Card History
 - Link to search TWD by Player to Card History
 
 # MAYBE LATER FEATURES
