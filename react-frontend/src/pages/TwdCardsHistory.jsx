@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from 'react-bootstrap';
-import { TwdCardsHistoryCard } from 'components';
+import { Container, Tabs, Tab } from 'react-bootstrap';
+import {
+  TwdCardsHistoryCardCrypt,
+  TwdCardsHistoryCardLibrary,
+} from 'components';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const TwdCardsHistory = (props) => {
-  const { cryptCardBase, libraryCardBase } = useApp();
+  const { cryptCardBase, libraryCardBase, isWide } = useApp();
 
-  const [cryptHistory, setCryptHistory] = useState(undefined);
-  const [libraryHistory, setLibraryHistory] = useState(undefined);
+  const [crypt, setCrypt] = useState(undefined);
+  const [library, setLibrary] = useState(undefined);
+  const [tab, setTab] = useState('crypt');
 
   const byName = (a, b) => {
     const cardBase = a > 200000 ? cryptCardBase : libraryCardBase;
@@ -34,13 +38,13 @@ const TwdCardsHistory = (props) => {
       fetch(url, options)
         .then((response) => response.json())
         .then((data) => {
-          const crypt = {};
-          const library = {};
+          const c = {};
+          const l = {};
 
           Object.keys(data).map((card) => {
-            const target = card > 200000 ? crypt : library;
+            const target = card > 200000 ? c : l;
             const cardBase = card > 200000 ? cryptCardBase : libraryCardBase;
-            target[card] = data[card];
+            target[card] = { ...data[card], ...cardBase[card] };
 
             Object.keys(cardBase[card].Set)
               .filter((set) => set !== 'POD')
@@ -61,40 +65,89 @@ const TwdCardsHistory = (props) => {
               });
           });
 
-          setCryptHistory(crypt);
-          setLibraryHistory(library);
+          setCrypt(c);
+          setLibrary(l);
         });
     }
   }, [cryptCardBase, libraryCardBase]);
 
   return (
     <Container className="hall-of-fame-container px-0 p-md-3">
-      {cryptHistory && (
-        <>
-          {Object.keys(cryptHistory)
-            .sort(byName)
-            .map((cardid) => (
-              <TwdCardsHistoryCard
-                key={cardid}
-                card={cryptCardBase[cardid]}
-                history={cryptHistory[cardid]}
-              />
-            ))}
-        </>
-      )}
-      {libraryHistory && (
-        <>
-          {Object.keys(libraryHistory)
-            .sort(byName)
-            .map((cardid) => (
-              <TwdCardsHistoryCard
-                key={cardid}
-                card={libraryCardBase[cardid]}
-                history={libraryHistory[cardid]}
-              />
-            ))}
-        </>
-      )}
+      <Tabs
+        activeKey={tab}
+        onSelect={(k) => setTab(k)}
+        justify
+        transition={false}
+      >
+        {crypt && (
+          <Tab eventKey="crypt" title="Crypt">
+            <table>
+              <thead className="info-message blue">
+                <th />
+                <th />
+                <th />
+                <th />
+                <th />
+                {isWide && <th />}
+                {isWide && <th />}
+                <th title="First Print Date">Print</th>
+                <th title="First TWD Appearance Date">Win</th>
+                <th title="Years to Win">YtW</th>
+                <th title="First Winner">Player</th>
+                <th />
+              </thead>
+              <tbody>
+                {Object.keys(crypt)
+                  .sort(byName)
+                  .map((cardid, idx) => (
+                    <tr
+                      key={cardid}
+                      className={`result-${idx % 2 ? 'even' : 'odd'}`}
+                    >
+                      <TwdCardsHistoryCardCrypt card={crypt[cardid]} />
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </Tab>
+        )}
+        {library && (
+          <Tab eventKey="library" title="Library">
+            <table>
+              <thead className="info-message blue">
+                <th />
+                <th />
+                <th />
+                <th />
+                <th />
+                <th />
+                <th title="First Print Date">Print</th>
+                <th title="First TWD Appearance Date">Win</th>
+                <th title="Years to Win">YtW</th>
+                <th title="First Winner">Player</th>
+                <th />
+              </thead>
+              <tbody>
+                {Object.keys(library)
+                  .sort(byName)
+                  .map((cardid, idx) => (
+                    <tr
+                      key={cardid}
+                      className={`result-${idx % 2 ? 'even' : 'odd'} ${
+                        library[cardid].deckid ? '' : 'bold blue'
+                      }`}
+                    >
+                      <TwdCardsHistoryCardLibrary
+                        key={cardid}
+                        card={library[cardid]}
+                      />
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </Tab>
+        )}
+      </Tabs>
     </Container>
   );
 };
