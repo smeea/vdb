@@ -27,14 +27,14 @@ const TwdMoreButton = (props) => {
           Hall Of Fame
         </div>
       </Dropdown.Item>
-      {/* <Dropdown.Item onClick={() => navigate('/twd/cards_history')}> */}
-      {/*   <div className="d-flex justify-content-center align-items-center py-1"> */}
-      {/*     <div className="d-flex pe-2"> */}
-      {/*       <ClockHistory /> */}
-      {/*     </div> */}
-      {/*     Cards History */}
-      {/*   </div> */}
-      {/* </Dropdown.Item> */}
+      <Dropdown.Item onClick={() => navigate('/twd/cards_history')}>
+        <div className="d-flex justify-content-center align-items-center py-1">
+          <div className="d-flex pe-2">
+            <ClockHistory />
+          </div>
+          Cards History
+        </div>
+      </Dropdown.Item>
     </DropdownButton>
   );
 };

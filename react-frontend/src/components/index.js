@@ -11,6 +11,7 @@ export * from 'components/twd_result';
 export * from 'components/pda_result';
 export * from 'components/twd_check';
 export * from 'components/twd_hall_fame';
+export * from 'components/twd_cards_history';
 
 // Search Forms
 export { default as LibrarySearchForm } from 'components/search_forms/LibrarySearchForm.jsx';

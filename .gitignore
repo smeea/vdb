@@ -13,4 +13,5 @@ react-frontend/dist/*
 !react-frontend/dist/images/
 !react-frontend/dist/favicon.ico
 !react-frontend/dist/amaranth_ids.json
+!react-frontend/dist/twd_cards_history.json
 !react-frontend/dist/cardbase_*
