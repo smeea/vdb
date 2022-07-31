@@ -74,12 +74,12 @@ const DeckLibraryTable = ({
     [isMobile, isDesktop, isModalOpen]
   );
 
-  const cardRows = cards.map((card, idx) => {
-    const handleClick = () => {
-      handleModalCardOpen(card.c);
-      setShowFloatingButtons(false);
-    };
+  const handleClick = (idx) => {
+    handleModalCardOpen(idx);
+    setShowFloatingButtons(false);
+  };
 
+  const cardRows = cards.map((card, idx) => {
     let cardInvType = null;
     let inInventory = 0;
     let softUsedMax = 0;
@@ -204,19 +204,22 @@ const DeckLibraryTable = ({
               overlay={<CardPopover card={card.c} />}
               disabled={disableOverlay}
             >
-              <td className="name ps-3 pe-2" onClick={() => handleClick()}>
+              <td
+                className="name ps-3 pe-2"
+                onClick={() => handleClick(card.c)}
+              >
                 <ResultLibraryName card={card.c} />
               </td>
             </ConditionalOverlayTrigger>
           ) : (
-            <td className="name ps-3 pe-2" onClick={() => handleClick()}>
+            <td className="name ps-3 pe-2" onClick={() => handleClick(card.c)}>
               <ResultLibraryName card={card.c} />
             </td>
           )}
           {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td
               className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
-              onClick={() => handleClick()}
+              onClick={() => handleClick(card.c)}
             >
               <ResultLibraryCost
                 valueBlood={card.c['Blood Cost']}
@@ -224,13 +227,13 @@ const DeckLibraryTable = ({
               />
             </td>
           )}
-          <td className="disciplines px-1" onClick={() => handleClick()}>
+          <td className="disciplines px-1" onClick={() => handleClick(card.c)}>
             <ResultLibraryClan value={card.c.Clan} />
             {card.c.Discipline && card.c.Clan && '+'}
             <ResultLibraryDisciplines value={card.c.Discipline} />
           </td>
           {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
-            <td className="burn" onClick={() => handleClick()}>
+            <td className="burn" onClick={() => handleClick(card.c)}>
               <ResultLibraryBurn value={card.c['Burn Option']} />
               <ResultLibraryTrifle
                 value={nativeLibrary[card.c.Id]['Card Text']}

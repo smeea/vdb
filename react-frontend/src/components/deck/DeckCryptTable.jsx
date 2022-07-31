@@ -74,12 +74,12 @@ const DeckCryptTable = ({
     }
   });
 
-  const cardRows = cards.map((card, idx) => {
-    const handleClick = () => {
-      handleModalCardOpen(card.c);
-      setShowFloatingButtons(false);
-    };
+  const handleClick = (idx) => {
+    handleModalCardOpen(idx);
+    setShowFloatingButtons(false);
+  };
 
+  const cardRows = cards.map((card, idx) => {
     let cardInvType = null;
     let inInventory = 0;
     let softUsedMax = 0;
@@ -191,12 +191,12 @@ const DeckCryptTable = ({
           )}
           <td
             className={isMobile ? 'capacity' : 'capacity px-1'}
-            onClick={() => handleClick()}
+            onClick={() => handleClick(card.c)}
           >
             <ResultCryptCapacity value={card.c.Capacity} />
           </td>
           {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
-            <td className="disciplines" onClick={() => handleClick()}>
+            <td className="disciplines" onClick={() => handleClick(card.c)}>
               {disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
                 <DeckCryptDisciplines
                   value={card.c.Disciplines}
@@ -218,26 +218,26 @@ const DeckCryptTable = ({
             overlay={<CardPopover card={card.c} />}
             disabled={disableOverlay}
           >
-            <td className="name px-2" onClick={() => handleClick()}>
+            <td className="name px-2" onClick={() => handleClick(card.c)}>
               <ResultCryptName card={card.c} />
             </td>
           </ConditionalOverlayTrigger>
 
           {isWide ? (
             <>
-              <td className="title pe-2" onClick={() => handleClick()}>
+              <td className="title pe-2" onClick={() => handleClick(card.c)}>
                 <ResultCryptTitle value={card.c.Title} />
               </td>
-              <td className="clan" onClick={() => handleClick()}>
+              <td className="clan" onClick={() => handleClick(card.c)}>
                 <ResultClanImage value={card.c.Clan} />
               </td>
-              <td className="group" onClick={() => handleClick()}>
+              <td className="group" onClick={() => handleClick(card.c)}>
                 <ResultCryptGroup value={card.c.Group} />
               </td>
             </>
           ) : (
             <>
-              <td className="clan-group" onClick={() => handleClick()}>
+              <td className="clan-group" onClick={() => handleClick(card.c)}>
                 <div>
                   <ResultClanImage value={card.c.Clan} />
                 </div>

@@ -40,17 +40,17 @@ const ResultLibraryTable = ({ resultCards, library, placement }) => {
     handleModalCardClose,
   } = useModalCardController(resultCards);
 
+  const handleClick = (idx) => {
+    handleModalCardOpen(idx);
+    setShowFloatingButtons(false);
+  };
+
   const handleCloseModal = () => {
     handleModalCardClose();
     setShowFloatingButtons(true);
   };
 
   const cardRows = resultCards.map((card, idx) => {
-    const handleClick = () => {
-      handleModalCardOpen(idx);
-      setShowFloatingButtons(false);
-    };
-
     const inDeck = (library && library[card.Id] && library[card.Id].q) || 0;
 
     let softUsedMax = 0;
@@ -113,17 +113,17 @@ const ResultLibraryTable = ({ resultCards, library, placement }) => {
           )}
           <td
             className={card[BLOOD_COST] ? 'cost blood px-1' : 'cost px-1'}
-            onClick={() => handleClick()}
+            onClick={() => handleClick(idx)}
           >
             <ResultLibraryCost
               valueBlood={card[BLOOD_COST]}
               valuePool={card[POOL_COST]}
             />
           </td>
-          <td className="type px-1" onClick={() => handleClick()}>
+          <td className="type px-1" onClick={() => handleClick(idx)}>
             <ResultLibraryTypeImage value={card.Type} />
           </td>
-          <td className="disciplines px-1" onClick={() => handleClick()}>
+          <td className="disciplines px-1" onClick={() => handleClick(idx)}>
             <ResultLibraryClan value={card.Clan} />
             {card.Discipline && card.Clan && '+'}
             <ResultLibraryDisciplines value={card.Discipline} />
@@ -133,11 +133,11 @@ const ResultLibraryTable = ({ resultCards, library, placement }) => {
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >
-            <td className="name px-1" onClick={() => handleClick()}>
+            <td className="name px-1" onClick={() => handleClick(idx)}>
               <ResultLibraryName card={card} />
             </td>
           </ConditionalOverlayTrigger>
-          <td className="burn px-1" onClick={() => handleClick()}>
+          <td className="burn px-1" onClick={() => handleClick(idx)}>
             <ResultLibraryBurn value={card[BURN_OPTION]} />
             <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} />
           </td>
