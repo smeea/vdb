@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 with open("twd_decks.json", "r") as twda_input, open(
     "cardbase_crypt.json", "r"
@@ -8,7 +9,7 @@ with open("twd_decks.json", "r") as twda_input, open(
     cardbase_crypt = json.load(crypt_file).values()
     cardbase_library = json.load(library_file).values()
 
-CURRENT_YEAR = 2021
+CURRENT_YEAR = datetime.today().year
 YEAR_MULTIPLIER = 0.1
 PLAYERS_MULTIPLIER = 0.1
 cards = {}

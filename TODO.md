@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
-- Export with accents in Lackey - check first
 
 # FEATURES
 - Check TWD
