@@ -7,7 +7,6 @@
 - Check TWD
 - Show changes from base deck in PDA
 - Link to search TWD by Player to Card History
-- TWD Cards History counter to Player name
 - TWD Cards History performance - react-virtualized
 
 # MAYBE LATER FEATURES

@@ -10,7 +10,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const TwdCardsHistoryCard = ({ card, handleClick }) => {
+const TwdCardsHistoryCard = ({ card, byPlayer, handleClick }) => {
   const { isWide } = useApp();
 
   return (
@@ -54,7 +54,7 @@ const TwdCardsHistoryCard = ({ card, handleClick }) => {
           </td>
         </>
       )}
-      <TwdCardsHistoryCardAppearance card={card} />
+      <TwdCardsHistoryCardAppearance card={card} byPlayer={byPlayer} />
     </>
   );
 };

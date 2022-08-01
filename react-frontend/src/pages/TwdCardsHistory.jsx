@@ -14,6 +14,7 @@ const TwdCardsHistory = (props) => {
 
   const [crypt, setCrypt] = useState(undefined);
   const [library, setLibrary] = useState(undefined);
+  const [players, setPlayers] = useState(undefined);
   const [tab, setTab] = useState('crypt');
 
   const byName = (a, b) => {
@@ -60,33 +61,45 @@ const TwdCardsHistory = (props) => {
         .then((data) => {
           const c = {};
           const l = {};
+          const p = {};
 
-          Object.keys(data).map((card) => {
-            const target = card > 200000 ? c : l;
-            const cardBase = card > 200000 ? cryptCardBase : libraryCardBase;
-            target[card] = { ...data[card], ...cardBase[card] };
+          Object.keys(data).map((cardid) => {
+            const target = cardid > 200000 ? c : l;
+            const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
+            target[cardid] = { ...data[cardid], ...cardBase[cardid] };
 
-            Object.keys(cardBase[card].Set)
+            Object.keys(cardBase[cardid].Set)
               .filter((set) => set !== 'POD')
               .map((set) => {
                 let d = null;
                 if (set === 'Promo') {
-                  d = Object.keys(cardBase[card].Set.Promo)[0].slice(0, 4);
+                  d = Object.keys(cardBase[cardid].Set.Promo)[0].slice(0, 4);
                 } else {
                   d = setsAndPrecons[set].date.slice(0, 4);
                 }
 
                 if (
-                  !target[card]['release_date'] ||
-                  !target[card]['release_date'] > d
+                  !target[cardid].release_date ||
+                  !target[cardid].release_date > d
                 ) {
-                  target[card]['release_date'] = parseInt(d);
+                  target[cardid].release_date = parseInt(d);
                 }
               });
+            if (data[cardid].deckid) {
+              if (!p[data[cardid].player]) {
+                p[data[cardid].player] = { crypt: 0, library: 0 };
+              }
+              if (cardid > 200000) {
+                p[data[cardid].player].crypt += 1;
+              } else {
+                p[data[cardid].player].library += 1;
+              }
+            }
           });
 
           setCrypt(Object.values(c).sort(byName));
           setLibrary(Object.values(l).sort(byName));
+          setPlayers(p);
         });
     }
   }, [cryptCardBase, libraryCardBase]);
@@ -129,6 +142,7 @@ const TwdCardsHistory = (props) => {
                     <TwdCardsHistoryCardCrypt
                       handleClick={() => handleClick(idx)}
                       card={card}
+                      byPlayer={players[card.player]}
                     />
                   </tr>
                 ))}
@@ -165,6 +179,7 @@ const TwdCardsHistory = (props) => {
                     <TwdCardsHistoryCardLibrary
                       handleClick={() => handleClick(idx)}
                       card={card}
+                      byPlayer={players[card.player]}
                     />
                   </tr>
                 ))}

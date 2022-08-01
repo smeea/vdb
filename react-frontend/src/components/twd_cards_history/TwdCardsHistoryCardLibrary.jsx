@@ -12,7 +12,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const TwdCardsHistoryCard = ({ card, handleClick }) => {
+const TwdCardsHistoryCard = ({ card, byPlayer, handleClick }) => {
   const { nativeLibrary } = useApp();
 
   return (
@@ -41,7 +41,7 @@ const TwdCardsHistoryCard = ({ card, handleClick }) => {
         <ResultLibraryBurn value={card[BURN_OPTION]} />
         <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} />
       </td>
-      <TwdCardsHistoryCardAppearance card={card} />
+      <TwdCardsHistoryCardAppearance card={card} byPlayer={byPlayer} />
     </>
   );
 };
