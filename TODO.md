@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
-- Release date calculation in TWD Cards History
 
 # FEATURES
 - Check TWD

@@ -71,20 +71,19 @@ const TwdCardsHistory = (props) => {
             Object.keys(cardBase[cardid].Set)
               .filter((set) => set !== 'POD')
               .map((set) => {
-                let d = null;
-                if (set === 'Promo') {
-                  d = Object.keys(cardBase[cardid].Set.Promo)[0].slice(0, 4);
-                } else {
-                  d = setsAndPrecons[set].date.slice(0, 4);
-                }
+                const d =
+                  set === 'Promo'
+                    ? Object.keys(cardBase[cardid].Set.Promo)[0].slice(0, 4)
+                    : setsAndPrecons[set].date.slice(0, 4);
 
                 if (
                   !target[cardid].release_date ||
-                  !target[cardid].release_date > d
+                  target[cardid].release_date > d
                 ) {
                   target[cardid].release_date = parseInt(d);
                 }
               });
+
             if (data[cardid].deckid) {
               if (!p[data[cardid].player]) {
                 p[data[cardid].player] = { crypt: 0, library: 0 };
