@@ -5,8 +5,8 @@
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
-- Link to search TWD by Player to Card History
-- TWD Cards History performance - react-virtualized
+- TWD Cards History performance - react-virtualized?
+- Optimize TWD Cards History for Mobile
 
 # MAYBE LATER FEATURES
 - Comments for PDA
