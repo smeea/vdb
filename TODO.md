@@ -1,12 +1,14 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
-- React-select day theme colors
+- Release date calculation in TWD Cards History
 
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
 - Link to search TWD by Player to Card History
+- TWD Cards History counter to Player name
+- TWD Cards History performance - react-virtualized
 
 # MAYBE LATER FEATURES
 - Comments for PDA

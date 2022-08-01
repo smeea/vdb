@@ -74,7 +74,7 @@ export const ThemeProvider = (props) => {
 };
 
 const light = [
-  '--fg-primary: #151575',
+  '--fg-primary: #252575',
   '--fg-secondary: #6060c0',
   '--fg-third: #6060c0',
   '--fg-name: #3060c0',
@@ -89,7 +89,6 @@ const light = [
   '--bg-warning: #ffb050',
   '--bg-button: #ffffff',
   '--bg-button-secondary: #ffffff',
-  '--bg-menu-selected: #c0c5ff',
   '--bg-checkbox: #ffffff',
   '--bg-checkbox-selected: #7070ff',
   '--border-primary: #80b0ff',
@@ -117,7 +116,6 @@ const dark = [
   '--bg-warning: #c06500',
   '--bg-button: #404050',
   '--bg-button-secondary: #303040',
-  '--bg-menu-selected: #353545',
   '--bg-checkbox: #e0e0e0',
   '--bg-checkbox-selected: #6060d0',
   '--border-primary: #505060',

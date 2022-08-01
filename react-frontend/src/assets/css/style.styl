@@ -15,7 +15,6 @@
     --bg-warning: #ffb050
     --bg-button: #ffffff
     --bg-button-secondary: #ffffff
-    --bg-menu-selected: #c0c5ff
     --bg-checkbox: #ffffff
     --bg-checkbox-selected: #7070ff
     --border-primary: #80b0ff
@@ -43,7 +42,6 @@
     --bg-warning: #c06500
     --bg-button: #404050
     --bg-button-secondary: #303040
-    --bg-menu-selected: #353545
     --bg-checkbox: #e0e0e0
     --bg-checkbox-selected: #6060d0
     --border-primary: #505060
@@ -371,9 +369,9 @@ button.nav-link:hover
   &__dropdown-indicator
     color: var(--border-secondary) !important
   &__option--is-focused
-    background: var(--border-primary) !important
+    background: var(--bg-checkbox-selected) !important
   &__option--is-selected
-    background: var(--bg-menu-selected) !important
+    background: var(--border-primary) !important
 
 .react-select-tags
   &__value-container
@@ -392,9 +390,9 @@ button.nav-link:hover
     background: var(--bg-primary)
     color: var(--fg-primary)
   &__option--is-focused
-    background: var(--border-primary) !important
+    background: var(--bg-checkbox-selected-primary) !important
   &__option--is-selected
-    background: var(--bg-menu-selected) !important
+    background: var(--border-primary) !important
   &__multi-value
     border-radius: 4px !important
     background: var(--bg-button) !important
