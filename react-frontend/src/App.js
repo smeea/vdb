@@ -17,15 +17,11 @@ import Cards from 'pages/Cards.jsx';
 import Crypt from 'pages/Crypt.jsx';
 import Decks from 'pages/Decks.jsx';
 import Diff from 'pages/Diff.jsx';
-import Documentation from 'pages/Documentation.jsx';
 import Inventory from 'pages/Inventory.jsx';
 import Library from 'pages/Library.jsx';
 import Navigation from 'pages/Navigation.jsx';
 import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
-import TwdHallOfFame from 'pages/TwdHallOfFame.jsx';
-import TwdCardsHistory from 'pages/TwdCardsHistory.jsx';
-import TwdCheck from 'pages/TwdCheck.jsx';
 import { UpdateNotification } from 'components';
 
 import '~/node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -33,6 +29,10 @@ import 'assets/css/style.styl';
 import changes from '../../CHANGES.json';
 
 const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
+const Documentation = React.lazy(() => import('pages/Documentation.jsx'));
+const TwdHallOfFame = React.lazy(() => import('pages/TwdHallOfFame.jsx'));
+const TwdCardsHistory = React.lazy(() => import('pages/TwdCardsHistory.jsx'));
+const TwdCheck = React.lazy(() => import('pages/TwdCheck.jsx'));
 
 const App = (props) => {
   const { lastDeckId } = useApp();
@@ -49,7 +49,14 @@ const App = (props) => {
             <Routes>
               <Route path="*" element={<Navigate to="/about" />} />
               <Route path="about" element={<About />} />
-              <Route path="documentation" element={<Documentation />} />
+              <Route
+                path="documentation"
+                element={
+                  <Suspense fallback={<div />}>
+                    <Documentation />
+                  </Suspense>
+                }
+              />
               <Route
                 path="changelog"
                 element={
@@ -64,9 +71,30 @@ const App = (props) => {
               <Route path="decks" element={<Decks />} />
               <Route path="pda" element={<Pda />} />
               <Route path="twd" element={<Twd />} />
-              <Route path="twd/deck_check" element={<TwdCheck />} />
-              <Route path="twd/hall_of_fame" element={<TwdHallOfFame />} />
-              <Route path="twd/cards_history" element={<TwdCardsHistory />} />
+              <Route
+                path="twd/deck_check"
+                element={
+                  <Suspense fallback={<div />}>
+                    <TwdCheck />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="twd/hall_of_fame"
+                element={
+                  <Suspense fallback={<div />}>
+                    <TwdHallOfFame />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="twd/cards_history"
+                element={
+                  <Suspense fallback={<div />}>
+                    <TwdCardsHistory />
+                  </Suspense>
+                }
+              />
               <Route path="crypt" element={<Crypt lastDeckId={lastDeckId} />} />
               <Route
                 path="library"

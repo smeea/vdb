@@ -16,9 +16,6 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in csv/excel to frontend
 - Move deck/inventory import to frontend
-- React-icons for bootstrap-icons
-  https://react-icons.github.io/react-icons/
-- Cards history and hall of fame lazy load
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory
