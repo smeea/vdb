@@ -1,5 +1,14 @@
 [
   {
+    "version": "2022-08-02",
+    "changes": [
+      "Add TWD Cards Appearance History (in Menu button next to X-button at TWD page). Performance is terrible, but it is non-essential feature with rare usage so I decided to release it is (with hope of future improvement)",
+      "Slight light-theme change",
+      "Fix card alphabet sorting in deck export (JOL and Lackey formats)",
+      "Small other improvements and fixes"
+    ]
+  },
+  {
     "version": "2022-07-26",
     "changes": [
       "Add Hall of Fame (in Menu button next to X-button at TWD page)",
