@@ -4,7 +4,7 @@ import PlayFill from 'assets/images/icons/play-fill.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const TwdOpenDeckButton = ({ deckid, inPda, inHistory }) => {
+const TwdOpenDeckButton = ({ deckid, inPda, inHistory, noText }) => {
   const { setActiveDeck } = useApp();
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const TwdOpenDeckButton = ({ deckid, inPda, inHistory }) => {
       variant={inHistory ? 'primary' : 'secondary'}
       onClick={handleClick}
       icon={<PlayFill height="18" viewBox="0 0 12 14" />}
-      text="Open"
+      text={noText ? null : 'Open'}
     />
   );
 };

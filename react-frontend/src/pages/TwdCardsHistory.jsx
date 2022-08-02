@@ -10,7 +10,7 @@ import { useModalCardController } from 'hooks';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const TwdCardsHistory = (props) => {
-  const { cryptCardBase, libraryCardBase, isWide } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile, isWide } = useApp();
 
   const [crypt, setCrypt] = useState(undefined);
   const [library, setLibrary] = useState(undefined);
@@ -117,16 +117,27 @@ const TwdCardsHistory = (props) => {
               <thead className="info-message blue">
                 <tr>
                   <th />
-                  <th />
-                  <th />
-                  <th />
-                  <th />
-                  {isWide && <th />}
-                  {isWide && <th />}
-                  <th title="First Print Date">Print</th>
-                  <th title="First TWD Appearance Date">Win</th>
-                  <th title="Years to Win">YtW</th>
-                  <th title="First Winner">Player</th>
+                  {!isMobile && <th />}
+                  {!isMobile && <th />}
+                  {!isMobile && <th />}
+                  {!isMobile && <th />}
+                  <th className="text-align-center" title="First Print Date">
+                    Print
+                  </th>
+                  {!isMobile && (
+                    <th
+                      className="text-align-center"
+                      title="First TWD Appearance Date"
+                    >
+                      Win
+                    </th>
+                  )}
+                  <th className="text-align-center" title="Years to Win">
+                    YtW
+                  </th>
+                  <th className="px-2" title="First Winner">
+                    Player
+                  </th>
                   <th />
                 </tr>
               </thead>
@@ -134,9 +145,7 @@ const TwdCardsHistory = (props) => {
                 {crypt.map((card, idx) => (
                   <tr
                     key={card.Id}
-                    className={`result-${idx % 2 ? 'even' : 'odd'} ${
-                      card.deckid ? '' : 'bold blue'
-                    }`}
+                    className={`result-${idx % 2 ? 'even' : 'odd'}`}
                   >
                     <TwdCardsHistoryCardCrypt
                       handleClick={() => handleClick(idx)}
@@ -155,15 +164,26 @@ const TwdCardsHistory = (props) => {
               <thead className="info-message blue">
                 <tr>
                   <th />
-                  <th />
-                  <th />
-                  <th />
-                  <th />
-                  <th />
-                  <th title="First Print Date">Print</th>
-                  <th title="First TWD Appearance Date">Win</th>
-                  <th title="Years to Win">YtW</th>
-                  <th title="First Winner">Player</th>
+                  {!isMobile && <th />}
+                  {!isMobile && <th />}
+                  {!isMobile && <th />}
+                  <th className="text-align-center" title="First Print Date">
+                    Print
+                  </th>
+                  {!isMobile && (
+                    <th
+                      className="text-align-center"
+                      title="First TWD Appearance Date"
+                    >
+                      Win
+                    </th>
+                  )}
+                  <th className="text-align-center" title="Years to Win">
+                    YtW
+                  </th>
+                  <th className="px-2" title="First Winner">
+                    Player
+                  </th>
                   <th />
                 </tr>
               </thead>
@@ -171,9 +191,7 @@ const TwdCardsHistory = (props) => {
                 {library.map((card, idx) => (
                   <tr
                     key={card.Id}
-                    className={`result-${idx % 2 ? 'even' : 'odd'} ${
-                      card.deckid ? '' : 'bold blue'
-                    }`}
+                    className={`result-${idx % 2 ? 'even' : 'odd'}`}
                   >
                     <TwdCardsHistoryCardLibrary
                       handleClick={() => handleClick(idx)}

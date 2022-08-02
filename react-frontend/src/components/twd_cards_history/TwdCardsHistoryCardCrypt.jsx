@@ -11,48 +11,41 @@ import {
 import { useApp } from 'context';
 
 const TwdCardsHistoryCard = ({ card, byPlayer, handleClick }) => {
-  const { isWide } = useApp();
+  const { isMobile, isWide } = useApp();
 
   return (
     <>
-      <td className="capacity px-2" onClick={() => handleClick()}>
-        <ResultCryptCapacity value={card.Capacity} />
-      </td>
-      <td className="disciplines" onClick={() => handleClick()}>
-        <ResultCryptDisciplines
-          maxDisciplines={null}
-          value={card.Disciplines}
-        />
-      </td>
-      <td className="name px-2" onClick={() => handleClick()}>
+      {!isMobile && (
+        <td className="capacity px-2" onClick={() => handleClick()}>
+          <ResultCryptCapacity value={card.Capacity} />
+        </td>
+      )}
+      {!isMobile && (
+        <td className="disciplines" onClick={() => handleClick()}>
+          <ResultCryptDisciplines
+            maxDisciplines={null}
+            value={card.Disciplines}
+          />
+        </td>
+      )}
+      <td
+        className={`name px-1 px-md-2 ${card.deckid ? '' : 'bold'}`}
+        onClick={() => handleClick()}
+      >
         <ResultCryptName card={card} />
       </td>
-      {isWide ? (
-        <>
-          <td className="title pe-2" onClick={() => handleClick()}>
-            <ResultCryptTitle value={card.Title} />
-          </td>
-          <td className="clan" onClick={() => handleClick()}>
+      {!isMobile && (
+        <td className="clan-group" onClick={() => handleClick()}>
+          <div>
             <ResultClanImage value={card.Clan} />
-          </td>
-          <td className="group" onClick={() => handleClick()}>
+          </div>
+          <div className="d-flex small justify-content-end">
+            <div className="bold blue">
+              <ResultCryptTitle value={card.Title} />
+            </div>
             <ResultCryptGroup value={card.Group} />
-          </td>
-        </>
-      ) : (
-        <>
-          <td className="clan-group" onClick={() => handleClick()}>
-            <div>
-              <ResultClanImage value={card.Clan} />
-            </div>
-            <div className="d-flex small justify-content-end">
-              <div className="bold blue">
-                <ResultCryptTitle value={card.Title} />
-              </div>
-              <ResultCryptGroup value={card.Group} />
-            </div>
-          </td>
-        </>
+          </div>
+        </td>
       )}
       <TwdCardsHistoryCardAppearance card={card} byPlayer={byPlayer} />
     </>

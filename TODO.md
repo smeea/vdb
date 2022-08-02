@@ -6,8 +6,6 @@
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
-- TWD Cards History performance - react-virtualized?
-- Optimize TWD Cards History for Mobile
 
 # MAYBE LATER FEATURES
 - Comments for PDA
@@ -16,6 +14,7 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in csv/excel to frontend
 - Move deck/inventory import to frontend
+- TWD Cards History performance - react-window
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory

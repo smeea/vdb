@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TwdOpenDeckButton } from 'components';
-import { useSearchForms } from 'context';
+import { useApp, useSearchForms } from 'context';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 
 const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
+  const { isMobile } = useApp();
   const { setTwdFormState } = useSearchForms();
 
   const navigate = useNavigate();
@@ -30,13 +31,15 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
 
   return (
     <>
-      <td className="px-4" />
-      <td className={`px-2 ${card.deckid ? '' : 'bold blue'}`}>
+      {!isMobile && card.Id > 200000 && <td className="px-2" />}
+      <td className={`px-1 px-md-2 ${card.deckid ? '' : 'bold blue'}`}>
         {card.release_date}
       </td>
-      <td className="px-2">{card.twd_date}</td>
-      <td className={`px-2 ${card.deckid ? '' : 'bold blue'}`}>{yearsToWin}</td>
-      <td className="name px-2">
+      {!isMobile && <td className="px-2">{card.twd_date}</td>}
+      <td className={`px-1 px-md-2 ${card.deckid ? '' : 'bold blue'}`}>
+        {yearsToWin}
+      </td>
+      <td className="player px-0 px-md-2">
         <div className="d-flex justify-content-between align-items-center">
           <div
             className="d-inline link-like"
@@ -44,7 +47,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
           >
             {card.player}
           </div>
-          {byPlayer && (
+          {!isMobile && byPlayer && (
             <div
               className="d-inline ps-2"
               title={`First appearance in TWDA:
@@ -56,8 +59,10 @@ Library: ${byPlayer.library}`}
           )}
         </div>
       </td>
-      <td className="px-0">
-        {card.deckid && <TwdOpenDeckButton deckid={card.deckid} inHistory />}
+      <td className={`${isMobile ? '' : 'px-1'}`}>
+        {card.deckid && (
+          <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} inHistory />
+        )}
       </td>
     </>
   );
