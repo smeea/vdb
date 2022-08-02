@@ -36,7 +36,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       </td>
       <td className="px-2">{card.twd_date}</td>
       <td className={`px-2 ${card.deckid ? '' : 'bold blue'}`}>{yearsToWin}</td>
-      <td className="px-2">
+      <td className="name px-2">
         <div className="d-flex justify-content-between align-items-center">
           <div
             className="d-inline link-like"

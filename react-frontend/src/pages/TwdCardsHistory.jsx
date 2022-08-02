@@ -113,7 +113,7 @@ const TwdCardsHistory = (props) => {
       >
         {crypt && (
           <Tab eventKey="crypt" title="Crypt">
-            <table>
+            <table className="crypt-history-table">
               <thead className="info-message blue">
                 <tr>
                   <th />
@@ -151,7 +151,7 @@ const TwdCardsHistory = (props) => {
         )}
         {library && (
           <Tab eventKey="library" title="Library">
-            <table>
+            <table className="library-history-table">
               <thead className="info-message blue">
                 <tr>
                   <th />

@@ -56,12 +56,11 @@ body
   color: var(--fg-primary)
   background: var(--bg-primary)
 
-a:hover, span.link-like:hover,
-a, .prob, .link-like, a.quantity:hover
+a:hover, span.link-like:hover, a, .prob, .link-like
   color: var(--fg-secondary)
 
 a:link, a:visited, a.nav-link:hover, a:hover.dropdown-item, .prob,
-.link-like, a.quantity:hover
+.link-like, a.quantity, a.quantity:hover
   text-decoration: none
 
 a:hover, span.link-like:hover, .link-like:hover
@@ -504,6 +503,46 @@ table.disciplines td
 td.prob
   text-align: right
   width: 36px
+
+.crypt-history-table,
+.library-history-table
+  width: 100%
+  border: 1px solid var(--bg-secondary)
+  @media (max-width: 767px)
+    border: none
+  td
+    border-top: 1px solid var(--bg-secondary)
+    border-bottom: 1px solid var(--bg-secondary)
+    border-collapse: collapse
+    text-align: center
+  td.name
+    text-align: left
+
+.crypt-history-table
+  td
+    height: 32px
+  td.capacity
+    width: 40px
+  td.disciplines td
+    min-width: 27px
+    @media (max-width: 767px)
+      min-width: 24px
+  td.clan-group
+    width: 50px
+
+.library-history-table
+  td
+    height: 38px
+  td.cost
+    width: 25px
+  td.blood
+    padding-top: 0px
+    padding-bottom: 4px
+  td.disciplines
+    width: 88px
+  td.burn
+    width: 30px
+
 
 .deck-crypt-table,
 .deck-library-table
