@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
-* Lackey export crypt alphabet sort
 - Inventory mode orange mark for flexible decks if one of them is above limit
 
 # FEATURES

@@ -1,4 +1,4 @@
-import { resultCryptSort } from 'utils';
+import { resultCryptSort, resultLibrarySort } from 'utils';
 
 const getCryptTitle = (crypt) => {
   let cryptTotalCap = 0;
@@ -215,7 +215,10 @@ const getLibraryText = (library, format) => {
 
 const exportJol = (deck) => {
   let result = '';
-  Object.values(deck.crypt).map((card) => {
+  const sortedCrypt = resultCryptSort(Object.values(deck.crypt), 'Name');
+  const sortedLibrary = resultLibrarySort(Object.values(deck.library), 'Name');
+
+  sortedCrypt.map((card) => {
     let name = card.c['ASCII Name'].replace(/"/g, "'");
     if (card.c['Adv'] && card.c['Adv'][0]) {
       name += ' (ADV)';
@@ -226,7 +229,7 @@ const exportJol = (deck) => {
     result += `${card.q}x${name}\n`;
   });
 
-  Object.values(deck.library).map((card) => {
+  sortedLibrary.map((card) => {
     const name = card.c['ASCII Name'].replace('"', "'");
     result += `${card.q}x${name}\n`;
   });
@@ -236,15 +239,19 @@ const exportJol = (deck) => {
 
 const exportLackey = (deck) => {
   let result = '';
+  const sortedCrypt = resultCryptSort(Object.values(deck.crypt), 'Name');
+  const sortedLibrary = resultLibrarySort(Object.values(deck.library), 'Name');
 
-  Object.values(deck.library).map((card) => {
-    result += `${card.q}${' '.repeat(8 - card.q.toString.length)}`;
+  sortedLibrary.map((card) => {
+    const spaces = 8 - card.q.toString().length;
+    result += `${card.q}${' '.repeat(spaces)}`;
     result += `${card.c['ASCII Name'].replace(/\//g, '')}\n`;
   });
 
   result += 'Crypt:\n';
 
-  Object.values(deck.crypt).map((card) => {
+  sortedCrypt.map((card) => {
+    const spaces = 8 - card.q.toString().length;
     let name = card.c['ASCII Name'].replace(/"/g, "'");
     if (card.c['Adv'] && card.c['Adv'][0]) {
       name += ' (ADV)';
@@ -252,7 +259,8 @@ const exportLackey = (deck) => {
     if (card.c['New']) {
       name += ` (G${card.c['Group']})`;
     }
-    result += `${card.q}${' '.repeat(8 - card.q.toString.length)}`;
+
+    result += `${card.q}${' '.repeat(spaces)}`;
     result += `${name}\n`;
   });
 

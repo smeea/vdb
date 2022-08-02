@@ -3,22 +3,20 @@ import { getCardProperty } from 'utils';
 
 const resultLibrarySort = (cards, sortMethod) => {
   const byName = (a, b) => {
-    if (a['ASCII Name'] < b['ASCII Name']) {
-      return -1;
-    }
-    if (a['ASCII Name'] > b['ASCII Name']) {
-      return 1;
-    }
+    const aName = a['ASCII Name'] || a.c['ASCII Name'];
+    const bName = b['ASCII Name'] || b.c['ASCII Name'];
+
+    if (aName < bName) return -1;
+    if (aName > bName) return 1;
     return 0;
   };
 
   const byType = (a, b) => {
-    if (a.Type < b.Type) {
-      return -1;
-    }
-    if (a.Type > b.Type) {
-      return 1;
-    }
+    const aType = a.Type || a.c.Type;
+    const bType = b.Type || b.c.Type;
+
+    if (aType < bType) return -1;
+    if (aType > bType) return 1;
     return 0;
   };
 
