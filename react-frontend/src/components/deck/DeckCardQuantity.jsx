@@ -2,11 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { useApp } from 'context';
 
-function DeckCardQuantity(props) {
+const DeckCardQuantity = ({
+  deckid,
+  cardid,
+  q,
+  inventoryType,
+  inInventory,
+  softUsedMax,
+  hardUsedTotal,
+  isSelected,
+  cardChange,
+  inProxy,
+}) => {
   const { isMobile } = useApp();
 
   const [manual, setManual] = useState(false);
-  const [state, setState] = useState(props.q);
+  const [state, setState] = useState(q);
   const [miss, setMiss] = useState(false);
 
   const handleManualChange = (event) => {
@@ -15,43 +26,37 @@ function DeckCardQuantity(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    props.cardChange(props.deckid, props.cardid, state ? parseInt(state) : 0);
+    cardChange(deckid, cardid, state ? parseInt(state) : 0);
     setManual(false);
   };
 
   useEffect(() => {
-    if (state != props.q) setState(props.q);
-  }, [props.q]);
+    if (state != q) setState(q);
+  }, [q]);
 
   useEffect(() => {
-    if (props.inventoryType) {
-      if (props.inProxy) {
+    if (inventoryType) {
+      if (inProxy) {
         setMiss(
-          props.inInventory + (props.isSelected ? props.q : 0) <
-            props.softUsedMax + props.hardUsedTotal
+          inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
             ? 'inv-miss-full'
             : null
         );
       } else {
         setMiss(
-          props.inInventory < props.softUsedMax + props.hardUsedTotal
-            ? props.inInventory < props.q
+          inInventory < softUsedMax + hardUsedTotal
+            ? inInventory < q
               ? 'inv-miss-full'
-              : 'inv-miss-part'
+              : inventoryType === 'h'
+              ? 'inv-miss-part'
+              : null
             : null
         );
       }
     } else {
       setMiss(null);
     }
-  }, [
-    props.q,
-    props.inventoryType,
-    props.inProxy,
-    props.softUsedMax,
-    props.hardUsedTotal,
-    props.isSelected,
-  ]);
+  }, [q, inventoryType, inProxy, softUsedMax, hardUsedTotal, isSelected]);
 
   return (
     <div className="d-flex align-items-center justify-content-between">
@@ -59,22 +64,18 @@ function DeckCardQuantity(props) {
         <>
           <a
             className="quantity"
-            onClick={() =>
-              props.cardChange(props.deckid, props.cardid, props.q - 1)
-            }
+            onClick={() => cardChange(deckid, cardid, q - 1)}
           >
             <Button className="quantity" variant="primary">
               -
             </Button>
           </a>
           <div className={miss ? `px-1 mx-1 ${miss}` : 'px-1'}>
-            {props.q == 0 ? '' : props.q}
+            {q == 0 ? '' : q}
           </div>
           <a
             className="quantity"
-            onClick={() =>
-              props.cardChange(props.deckid, props.cardid, props.q + 1)
-            }
+            onClick={() => cardChange(deckid, cardid, q + 1)}
           >
             <Button className="quantity" variant="primary">
               +
@@ -87,9 +88,7 @@ function DeckCardQuantity(props) {
             <Button
               className="quantity"
               variant="primary"
-              onClick={() =>
-                props.cardChange(props.deckid, props.cardid, props.q - 1)
-              }
+              onClick={() => cardChange(deckid, cardid, q - 1)}
               tabIndex={-1}
             >
               -
@@ -114,16 +113,14 @@ function DeckCardQuantity(props) {
                 />
               </Form>
             ) : (
-              <>{props.q == 0 ? <>&nbsp;&nbsp;</> : props.q}</>
+              <>{q == 0 ? <>&nbsp;&nbsp;</> : q}</>
             )}
           </div>
           {!manual && (
             <Button
               className="quantity"
               variant="primary"
-              onClick={() =>
-                props.cardChange(props.deckid, props.cardid, props.q + 1)
-              }
+              onClick={() => cardChange(deckid, cardid, q + 1)}
               tabIndex={-1}
             >
               +
@@ -133,6 +130,6 @@ function DeckCardQuantity(props) {
       )}
     </div>
   );
-}
+};
 
 export default DeckCardQuantity;
