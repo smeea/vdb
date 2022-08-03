@@ -17,6 +17,7 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
     addMode,
     toggleAddMode,
     isMobile,
+    isDesktop,
     cryptSearchSort,
     changeCryptSearchSort,
     showFloatingButtons,
@@ -82,6 +83,9 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
             crypt={crypt}
             activeDeck={activeDeck}
             resultCards={sortedCards}
+            placement={
+              isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'
+            }
           />
         </>
       )}

@@ -263,7 +263,7 @@ const DeckLibraryTable = ({
                 </div>
               ) : (
                 <OverlayTooltip
-                  placement="right"
+                  placement={placement}
                   text={
                     <DeckDrawProbabilityText
                       N={libraryTotal}

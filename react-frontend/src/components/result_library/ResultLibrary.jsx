@@ -13,6 +13,7 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
     addMode,
     toggleAddMode,
     isMobile,
+    isDesktop,
     librarySearchSort,
     changeLibrarySearchSort,
     showFloatingButtons,
@@ -66,6 +67,9 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
             library={library}
             activeDeck={activeDeck}
             resultCards={sortedCards}
+            placement={
+              isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'
+            }
           />
         </>
       )}

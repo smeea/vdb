@@ -37,7 +37,7 @@ const DeckDrawModal = ({
   initialTransfers,
   cryptTotal,
 }) => {
-  const { isMobile } = useApp();
+  const { isNarrow, isMobile } = useApp();
 
   // Modal Card Controller
   const {
@@ -193,6 +193,7 @@ const DeckDrawModal = ({
                 restCards={restLibrary}
                 resultCards={drawedLibrary}
                 className="search-library-table"
+                placement={isNarrow ? 'bottom' : 'right'}
               />
             </Col>
           </Row>
@@ -270,6 +271,7 @@ const DeckDrawModal = ({
                       handleClick={handleModalSideCardOpen}
                       resultCards={burnedLibrary}
                       className="search-library-table"
+                      placement={isNarrow ? 'bottom' : 'right'}
                       ashHeap={true}
                     />
                   </div>

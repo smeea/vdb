@@ -23,6 +23,7 @@ const DeckDrawLibraryTable = ({
   resultCards,
   className,
   ashHeap,
+  placement,
 }) => {
   const { nativeLibrary, isMobile } = useApp();
   const [modalDraw, setModalDraw] = useState(undefined);
@@ -71,6 +72,7 @@ const DeckDrawLibraryTable = ({
           <ConditionalOverlayTrigger
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
+            placement={placement}
           >
             <td className="name px-1" onClick={() => handleClick(idx)}>
               <ResultLibraryName card={card} />
@@ -97,7 +99,7 @@ const DeckDrawLibraryTable = ({
                   </div>
                 ) : (
                   <OverlayTooltip
-                    placement="right"
+                    placement={placement}
                     text={<DeckDrawProbabilityText N={N} n={n} k={k} />}
                   >
                     <div>{`${Math.floor(
