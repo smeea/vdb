@@ -5,6 +5,9 @@
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
+- Filter card history as in inventory
+- Sort cards history
+- Click on card type to freeze card list in twd deck view
 
 # MAYBE LATER FEATURES
 - Comments for PDA
@@ -14,6 +17,7 @@
 - Move deck/inventory export in csv/excel to frontend
 - Move deck/inventory import to frontend
 - TWD Cards History performance - react-window
+- Remove useless useEffects - https://beta.reactjs.org/learn/you-might-not-need-an-effect
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory

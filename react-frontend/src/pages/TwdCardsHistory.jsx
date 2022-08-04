@@ -135,7 +135,7 @@ const TwdCardsHistory = (props) => {
                   <th className="text-align-center" title="Years to Win">
                     YtW
                   </th>
-                  <th className="px-2" title="First Winner">
+                  <th className="px-0 px-md-2" title="First Winner">
                     Player
                   </th>
                   <th />
@@ -181,7 +181,7 @@ const TwdCardsHistory = (props) => {
                   <th className="text-align-center" title="Years to Win">
                     YtW
                   </th>
-                  <th className="px-2" title="First Winner">
+                  <th className="px-0 px-md-2" title="First Winner">
                     Player
                   </th>
                   <th />

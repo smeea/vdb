@@ -70,10 +70,8 @@ const About = (props) => {
               <h5>VERSION</h5>
               <p>
                 Card text based on{' '}
-                <a href="https://www.vekn.net/card-lists">
-                  vekn.net official list
-                </a>
-                : 2022-05-17
+                <a href="https://www.vekn.net/card-lists">VEKN official list</a>
+                : <span className="nowrap">2022-05-17</span>
               </p>
 
               <h6>Last update [{changes[0].version}]:</h6>
@@ -126,7 +124,7 @@ const About = (props) => {
                 <br />
                 Check{' '}
                 <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
-                  vekn forum
+                  VEKN forum
                 </a>{' '}
                 for more tools
                 <br />
@@ -201,7 +199,7 @@ const About = (props) => {
                       <Globe2 />
                     </div>
                     <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
-                      VEKN.net forum
+                      VEKN forum
                     </a>
                   </div>
                 </li>
