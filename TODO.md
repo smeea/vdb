@@ -7,7 +7,6 @@
 - Show changes from base deck in PDA
 - Filter card history as in inventory
 - Sort cards history
-- Click on card type to freeze card list in twd deck view
 
 # MAYBE LATER FEATURES
 - Comments for PDA

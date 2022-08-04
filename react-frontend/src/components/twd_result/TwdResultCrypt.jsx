@@ -11,7 +11,6 @@ import {
 import { ANY } from 'utils/constants';
 import { countCards, getHardTotal } from 'utils';
 import { useApp } from 'context';
-
 import { useModalCardController } from 'hooks';
 
 const TwdResultCrypt = ({ crypt }) => {

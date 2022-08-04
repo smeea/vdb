@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-import { DeckLibraryTable } from 'components';
+import { DeckLibraryTable, ResultModal } from 'components';
 import { useApp } from 'context';
 import { cardtypeSortedFull } from 'utils/constants';
+import { useModalCardController } from 'hooks';
 
-function TwdResultLibraryByType(props) {
-  const { nativeLibrary } = useApp();
+const TwdResultLibraryByType = ({ library }) => {
+  const { nativeLibrary, setShowFloatingButtons } = useApp();
+  const [show, setShow] = useState({});
+
+  const handleClick = (cardtype) => {
+    setShow((prevState) => {
+      if (prevState[cardtype]) {
+        return {};
+      } else {
+        return { [cardtype]: true };
+      }
+    });
+  };
+
+  const handleHover = (cardtype) => {
+    if (Object.keys(show).length && !show[cardtype]) {
+      setShow({});
+    }
+  };
 
   let hasBanned = false;
   let libraryTotal = 0;
@@ -13,25 +31,46 @@ function TwdResultLibraryByType(props) {
   const libraryByType = {};
   const libraryByTypeTotal = {};
 
-  Object.keys(props.library).map((card) => {
-    if (props.library[card].c['Banned']) {
+  Object.keys(library).map((card) => {
+    if (library[card].c['Banned']) {
       hasBanned = true;
     }
-    libraryTotal += props.library[card].q;
-    const cardtype = props.library[card].c.Type;
+    libraryTotal += library[card].q;
+    const cardtype = library[card].c.Type;
     if (libraryByType[cardtype] === undefined) {
       libraryByType[cardtype] = [];
       libraryByTypeTotal[cardtype] = 0;
     }
-    libraryByType[cardtype].push(props.library[card]);
-    libraryByTypeTotal[cardtype] += props.library[card].q;
+    libraryByType[cardtype].push(library[card]);
+    libraryByTypeTotal[cardtype] += library[card].q;
     if (
       cardtype == 'Master' &&
       nativeLibrary[card]['Card Text'].toLowerCase().includes('trifle')
     ) {
-      trifleTotal += props.library[card].q;
+      trifleTotal += library[card].q;
     }
   });
+
+  const cards = [];
+  cardtypeSortedFull
+    .filter((cardtype) => libraryByType[cardtype] !== undefined)
+    .map((cardtype) => {
+      cards.push(...libraryByType[cardtype]);
+    });
+
+  // Modal Card Controller
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(cards);
+
+  const handleCloseModal = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
+  };
 
   const LibraryTypes = [];
 
@@ -42,7 +81,11 @@ function TwdResultLibraryByType(props) {
         return (
           <Popover ref={ref} {...props}>
             <Popover.Body className="p-1">
-              <DeckLibraryTable deckid={true} cards={props.cards} />
+              <DeckLibraryTable
+                handleModalCardOpen={handleModalCardOpen}
+                deckid={true}
+                cards={props.cards}
+              />
             </Popover.Body>
           </Popover>
         );
@@ -69,9 +112,14 @@ function TwdResultLibraryByType(props) {
       LibraryTypes.push(
         <tr key={cardtype} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           <td className="type">{cardtypeImages}</td>
-          <td className="name">
+          <td
+            onMouseOver={() => handleHover(cardtype)}
+            onClick={() => handleClick(cardtype)}
+            className="name"
+          >
             <OverlayTrigger
               placement="right"
+              show={show[cardtype]}
               overlay={
                 <TypePopover
                   className="light-border"
@@ -101,8 +149,15 @@ function TwdResultLibraryByType(props) {
       <table className="twd-librarybytype-table">
         <tbody>{LibraryTypes}</tbody>
       </table>
+      {shouldShowModal && (
+        <ResultModal
+          card={currentModalCard}
+          handleModalCardChange={handleModalCardChange}
+          handleClose={handleCloseModal}
+        />
+      )}
     </>
   );
-}
+};
 
 export default TwdResultLibraryByType;
