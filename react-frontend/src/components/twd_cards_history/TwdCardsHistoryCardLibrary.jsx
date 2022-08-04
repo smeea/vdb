@@ -1,19 +1,17 @@
 import React from 'react';
-import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
+import { POOL_COST, BLOOD_COST } from 'utils/constants';
 import {
-  ResultLibraryBurn,
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
   ResultLibraryName,
-  ResultLibraryTrifle,
   ResultLibraryTypeImage,
   TwdCardsHistoryCardAppearance,
 } from 'components';
 import { useApp } from 'context';
 
-const TwdCardsHistoryCard = ({ card, byPlayer, handleClick }) => {
-  const { isMobile, nativeLibrary } = useApp();
+const TwdCardsHistoryCardLibrary = ({ card, byPlayer, handleClick }) => {
+  const { isMobile } = useApp();
 
   return (
     <>
@@ -44,15 +42,9 @@ const TwdCardsHistoryCard = ({ card, byPlayer, handleClick }) => {
       >
         <ResultLibraryName card={card} />
       </td>
-      {/* {!isMobile && ( */}
-      {/*   <td className="burn px-1" onClick={() => handleClick()}> */}
-      {/*     <ResultLibraryBurn value={card[BURN_OPTION]} /> */}
-      {/*     <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} /> */}
-      {/*   </td> */}
-      {/* )} */}
       <TwdCardsHistoryCardAppearance card={card} byPlayer={byPlayer} />
     </>
   );
 };
 
-export default TwdCardsHistoryCard;
+export default TwdCardsHistoryCardLibrary;

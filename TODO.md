@@ -7,6 +7,7 @@
 - Show changes from base deck in PDA
 - Filter card history as in inventory
 - Sort cards history
+- Floating buttons to switch crypt/library in cards history
 
 # MAYBE LATER FEATURES
 - Comments for PDA

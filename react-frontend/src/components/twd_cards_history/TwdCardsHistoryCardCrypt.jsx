@@ -10,8 +10,8 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const TwdCardsHistoryCard = ({ card, byPlayer, handleClick }) => {
-  const { isMobile, isWide } = useApp();
+const TwdCardsHistoryCardCrypt = ({ card, byPlayer, handleClick }) => {
+  const { isMobile } = useApp();
 
   return (
     <>
@@ -52,4 +52,4 @@ const TwdCardsHistoryCard = ({ card, byPlayer, handleClick }) => {
   );
 };
 
-export default TwdCardsHistoryCard;
+export default TwdCardsHistoryCardCrypt;
