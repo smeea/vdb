@@ -9,7 +9,7 @@ Public instance is available at https://vdb.im.
 VDB consist of two components communicating with each other.
 
 ### FRONTEND
-Serve the UI, accessible with any modern browser, using:
+Serve the UI for the modern browsers, using:
 ```
    Node.js (tested on v16)
    ReactJS
@@ -17,7 +17,7 @@ Serve the UI, accessible with any modern browser, using:
 ```
 
 ### BACKEND
-Store user data decks/inventory, using:
+Store user accounts (decks/inventory), generate proxy cards, using:
 
 ```
    Python (v3.10+)
@@ -29,8 +29,8 @@ Store user data decks/inventory, using:
 
 ### FOR DEVELOPMENT
 
-Below is local deployment for test/development (see below for production deployment) for Linux.
-On Windows and MacOS commands may be different.
+Below is local deployment for test/development for Linux.
+On Windows and MacOS commands may be different (I recommend using WSL on Windows, it works well with commands below).
 
 ```
     git clone https://github.com/smeea/vdb.git
@@ -61,10 +61,10 @@ Now go to http://localhost:1234 in the browser and you are ready to go.
 ### FOR PRODUCTION
 
 For production, in addition to the steps above, you should at least:
-* setup web-server (we use `nginx`) instead of `parcel serve` embedded server
-* setup wsgi-server (we use `gunicorn`) instead of `flask run` embedded server
+* setup web-server instead of `parcel serve` embedded server
+* setup wsgi-server instead of `flask run` embedded server
 * build frontend for production (see your prefered bundler documentation, for `parcel` use `parcel build --no-cache index.html`)
-* change `app.config['SECRET_KEY']` in `config.py`
+* change `app.config['SECRET_KEY']` in `flask-backend/config.py`
 
 For reference:
 Public instance at https://vdb.im runs from master branch without any changes using `gunicorn` (`gunicorn wsgi:app`) and `nginx` (sample configuration is in `/misc/nginx.conf`).
