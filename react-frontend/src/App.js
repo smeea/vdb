@@ -30,7 +30,12 @@ import changes from '../../CHANGES.json';
 
 const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
 const Documentation = React.lazy(() => import('pages/Documentation.jsx'));
-const TwdHallOfFame = React.lazy(() => import('pages/TwdHallOfFame.jsx'));
+const TwdHallOfFameCards = React.lazy(() =>
+  import('pages/TwdHallOfFameCards.jsx')
+);
+const TwdHallOfFameTournaments = React.lazy(() =>
+  import('pages/TwdHallOfFameTournaments.jsx')
+);
 const TwdCardsHistory = React.lazy(() => import('pages/TwdCardsHistory.jsx'));
 const TwdCheck = React.lazy(() => import('pages/TwdCheck.jsx'));
 
@@ -80,10 +85,18 @@ const App = (props) => {
                 }
               />
               <Route
-                path="twd/hall_of_fame"
+                path="twd/hall_of_fame/tournaments"
                 element={
                   <Suspense fallback={<div />}>
-                    <TwdHallOfFame />
+                    <TwdHallOfFameTournaments />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="twd/hall_of_fame/cards"
+                element={
+                  <Suspense fallback={<div />}>
+                    <TwdHallOfFameCards />
                   </Suspense>
                 }
               />

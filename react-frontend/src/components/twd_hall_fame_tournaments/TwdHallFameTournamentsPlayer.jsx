@@ -1,6 +1,5 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
-
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import StarFill from 'assets/images/icons/star-fill.svg';
 import { TwdHallFameDeckHeader } from 'components';
@@ -15,7 +14,7 @@ const testStar = (eventName) => {
   );
 };
 
-const TwdHallFamePlayer = ({ name, decks }) => {
+const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
   const getStars = (decks) => {
     let stars = 0;
     decks.map((deck) => {
@@ -71,4 +70,4 @@ const TwdHallFamePlayer = ({ name, decks }) => {
   );
 };
 
-export default TwdHallFamePlayer;
+export default TwdHallFameTournamentsPlayer;

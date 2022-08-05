@@ -73,14 +73,14 @@ const TwdCardsHistory = (props) => {
               .map((set) => {
                 const d =
                   set === 'Promo'
-                    ? Object.keys(cardBase[cardid].Set.Promo)[0].slice(0, 4)
-                    : setsAndPrecons[set].date.slice(0, 4);
+                    ? Object.keys(cardBase[cardid].Set.Promo)[0]
+                    : setsAndPrecons[set].date;
 
                 if (
                   !target[cardid].release_date ||
                   target[cardid].release_date > d
                 ) {
-                  target[cardid].release_date = parseInt(d);
+                  target[cardid].release_date = d;
                 }
               });
 

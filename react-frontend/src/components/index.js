@@ -10,7 +10,8 @@ export * from 'components/result_common';
 export * from 'components/twd_result';
 export * from 'components/pda_result';
 export * from 'components/twd_check';
-export * from 'components/twd_hall_fame';
+export * from 'components/twd_hall_fame_tournaments';
+export * from 'components/twd_hall_fame_cards';
 export * from 'components/twd_cards_history';
 
 // Search Forms

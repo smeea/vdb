@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Accordion } from 'react-bootstrap';
-import { TwdHallFamePlayer } from 'components';
+import { TwdHallFameTournamentsPlayer } from 'components';
 
-const TwdHallOfFame = (props) => {
+const TwdHallOfFameTournaments = (props) => {
   const [players, setPlayers] = useState(undefined);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const TwdHallOfFame = (props) => {
             .sort(byName)
             .sort(byWins)
             .map((player) => (
-              <TwdHallFamePlayer
+              <TwdHallFameTournamentsPlayer
                 key={player}
                 name={player}
                 decks={players[player]}
@@ -48,4 +48,4 @@ const TwdHallOfFame = (props) => {
   );
 };
 
-export default TwdHallOfFame;
+export default TwdHallOfFameTournaments;

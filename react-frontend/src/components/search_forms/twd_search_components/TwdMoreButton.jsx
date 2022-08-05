@@ -4,6 +4,7 @@ import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import ClockHistory from 'assets/images/icons/clock-history.svg';
+import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
 
 const TwdMoreButton = (props) => {
   const navigate = useNavigate();
@@ -19,20 +20,28 @@ const TwdMoreButton = (props) => {
         </div>
       }
     >
-      <Dropdown.Item onClick={() => navigate('/twd/hall_of_fame')}>
-        <div className="d-flex justify-content-center align-items-center py-1">
+      <Dropdown.Item onClick={() => navigate('/twd/hall_of_fame/tournaments')}>
+        <div className="d-flex justify-content-start align-items-center py-1">
           <div className="d-flex pe-2">
             <TrophyFill />
           </div>
-          Hall Of Fame
+          Hall Of Fame - Tournaments
+        </div>
+      </Dropdown.Item>
+      <Dropdown.Item onClick={() => navigate('/twd/hall_of_fame/cards')}>
+        <div className="d-flex justify-content-start align-items-center py-1">
+          <div className="d-flex pe-2">
+            <LightbulbFill />
+          </div>
+          Hall Of Fame - Cards Appearance
         </div>
       </Dropdown.Item>
       <Dropdown.Item onClick={() => navigate('/twd/cards_history')}>
-        <div className="d-flex justify-content-center align-items-center py-1">
+        <div className="d-flex justify-content-start align-items-center py-1">
           <div className="d-flex pe-2">
             <ClockHistory />
           </div>
-          Cards History
+          Cards Appearance History
         </div>
       </Dropdown.Item>
     </DropdownButton>

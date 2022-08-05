@@ -12,11 +12,11 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const def = JSON.parse(JSON.stringify(defaults));
 
   let yearsToWin = null;
-  if (card.deckid) {
-    yearsToWin = card.twd_date - card.release_date + 1;
+  if (card.twd_date) {
+    yearsToWin = card.twd_date.slice(0, 4) - card.release_date.slice(0, 4) + 1;
   } else {
     const date = new Date();
-    yearsToWin = `${date.getFullYear() - card.release_date}+`;
+    yearsToWin = `${date.getFullYear() - card.release_date.slice(0, 4)}+`;
   }
 
   const handleAuthorClick = (author) => {
@@ -33,9 +33,11 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
     <>
       {!isMobile && card.Id > 200000 && <td className="px-2" />}
       <td className={`px-1 px-md-2 ${card.deckid ? '' : 'bold blue'}`}>
-        {card.release_date}
+        {card.release_date.slice(0, 4)}
       </td>
-      {!isMobile && <td className="px-2">{card.twd_date}</td>}
+      {!isMobile && (
+        <td className="px-2">{card.twd_date && card.twd_date.slice(0, 4)}</td>
+      )}
       <td className={`px-1 px-md-2 ${card.deckid ? '' : 'bold blue'}`}>
         {yearsToWin}
       </td>
