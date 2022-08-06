@@ -76,7 +76,7 @@ const Cards = ({ lastDeckId }) => {
                             card={quickCard}
                             setCard={setQuickCard}
                             setImageSet={setImageSet}
-                            inCards={true}
+                            noClose={true}
                           />
                         </div>
                       </>
@@ -139,7 +139,7 @@ const Cards = ({ lastDeckId }) => {
                       card={quickCard}
                       setCard={setQuickCard}
                       setImageSet={setImageSet}
-                      inCards={true}
+                      noClose={true}
                     />
                   </Col>
                 </Row>

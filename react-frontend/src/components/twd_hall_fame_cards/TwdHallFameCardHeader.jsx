@@ -24,25 +24,24 @@ const TwdHallFameCardHeader = ({ card }) => {
         </div>
 
         {showCard && (
-          <div className="p-0">
+          <Row className="align-content-center justify-content-center my-2">
             <hr />
-            <Row className="align-content-center justify-content-center my-2 bordered">
-              <Col md={6} className="ps-0">
-                <CardImage
-                  className="full-width"
-                  card={card}
-                  imageSet={imageSet}
-                />
-              </Col>
-              <Col md={6} className="py-3">
-                <ResultLayoutText
-                  card={card}
-                  setImageSet={setImageSet}
-                  inCards={true}
-                />
-              </Col>
-            </Row>
-          </div>
+            {/* TODO isMobile condition */}
+            <Col md={6} className="p-1">
+              <CardImage
+                className="full-width"
+                card={card}
+                imageSet={imageSet}
+              />
+            </Col>
+            <Col md={6} className="px-4 py-1">
+              <ResultLayoutText
+                card={card}
+                setImageSet={setImageSet}
+                noClose={true}
+              />
+            </Col>
+          </Row>
         )}
       </div>
     </>

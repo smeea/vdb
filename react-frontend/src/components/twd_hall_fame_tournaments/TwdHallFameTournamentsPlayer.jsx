@@ -41,7 +41,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
       <Accordion.Header>
         <div className="d-flex align-items-center">
           {Object.keys(decks).length}
-          <div className="d-flex pt-1 ps-1 pe-3">
+          <div className="d-flex ps-1 pe-3">
             <TrophyFill height="13" width="13" viewBox="0 0 18 18" />
           </div>
           <div className="d-flex nowrap align-items-center">

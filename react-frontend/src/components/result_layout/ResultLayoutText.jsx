@@ -18,7 +18,7 @@ const ResultLayoutText = ({
   handleClose,
   setImageSet,
   forceInventoryMode,
-  inCards,
+  noClose,
 }) => {
   const { isMobile } = useApp();
   const { cryptCompare, setCryptCompare, libraryCompare, setLibraryCompare } =
@@ -46,7 +46,7 @@ const ResultLayoutText = ({
       }
     });
 
-    handleClose();
+    !noClose && handleClose();
   };
 
   return (
@@ -55,14 +55,12 @@ const ResultLayoutText = ({
         <ResultCryptLayoutText
           card={card}
           setCard={setCard}
-          handleClose={handleClose}
           setImageSet={setImageSet}
           forceInventoryMode={forceInventoryMode}
         />
       ) : (
         <ResultLibraryLayoutText
           card={card}
-          handleClose={handleClose}
           setImageSet={setImageSet}
           forceInventoryMode={forceInventoryMode}
         />
@@ -72,7 +70,7 @@ const ResultLayoutText = ({
           <ButtonCardCopyUrl cardid={card.Id} />
           <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
           <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
-          {!isMobile && <ButtonToggleShowImage />}
+          {!isMobile && !noClose && <ButtonToggleShowImage />}
           <ButtonIconed
             variant={cardInCompare ? 'third' : 'primary'}
             onClick={() => handleCompare()}
@@ -84,10 +82,10 @@ const ResultLayoutText = ({
             }
           />
         </Stack>
-        {!isMobile && !inCards && (
+        {!isMobile && !noClose && (
           <ButtonIconed
             variant="primary"
-            onClick={handleClose}
+            onClick={() => !noClose && handleClose}
             title="Close"
             icon={<X width="24" height="24" viewBox="0 0 16 16" />}
             text="Close"

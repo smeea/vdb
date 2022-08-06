@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Tabs, Tab, Accordion } from 'react-bootstrap';
+import { Container, Row, Col, Tabs, Tab, Accordion } from 'react-bootstrap';
 import { TwdHallFameCardsPlayer } from 'components';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
@@ -46,7 +46,7 @@ const TwdHallOfFameCards = (props) => {
 
             if (twdDate) {
               if (!p[player]) {
-                p[player] = { [cardid]: { ...card }, twdDate: twdDate };
+                p[player] = { [cardid]: { ...card, twdDate: twdDate } };
               } else {
                 p[player][cardid] = { ...card, twdDate: twdDate };
               }
@@ -72,46 +72,50 @@ const TwdHallOfFameCards = (props) => {
   };
 
   return (
-    <Container className="hall-of-fame-container px-0 p-md-3">
-      <Tabs
-        activeKey={tab}
-        onSelect={(k) => setTab(k)}
-        justify
-        transition={false}
-      >
-        <Tab eventKey="innovation" title="By Innovation">
-          {players && (
-            <Accordion alwaysOpen>
-              {Object.keys(players)
-                .sort(byName)
-                .sort(byInnovation)
-                .map((player) => (
-                  <TwdHallFameCardsPlayer
-                    key={player}
-                    name={player}
-                    cards={players[player]}
-                  />
-                ))}
-            </Accordion>
-          )}
-        </Tab>
-        <Tab eventKey="total" title="By Total">
-          {players && (
-            <Accordion alwaysOpen>
-              {Object.keys(players)
-                .sort(byName)
-                .sort(byTotal)
-                .map((player) => (
-                  <TwdHallFameCardsPlayer
-                    key={player}
-                    name={player}
-                    cards={players[player]}
-                  />
-                ))}
-            </Accordion>
-          )}
-        </Tab>
-      </Tabs>
+    <Container className="cards-container px-0 p-md-3">
+      <Row>
+        <Col md={{ span: 8, offset: 2 }}>
+          <Tabs
+            activeKey={tab}
+            onSelect={(k) => setTab(k)}
+            justify
+            transition={false}
+          >
+            <Tab eventKey="innovation" title="By Innovation">
+              {players && (
+                <Accordion alwaysOpen>
+                  {Object.keys(players)
+                    .sort(byName)
+                    .sort(byInnovation)
+                    .map((player) => (
+                      <TwdHallFameCardsPlayer
+                        key={player}
+                        name={player}
+                        cards={players[player]}
+                      />
+                    ))}
+                </Accordion>
+              )}
+            </Tab>
+            <Tab eventKey="total" title="By Total">
+              {players && (
+                <Accordion alwaysOpen>
+                  {Object.keys(players)
+                    .sort(byName)
+                    .sort(byTotal)
+                    .map((player) => (
+                      <TwdHallFameCardsPlayer
+                        key={player}
+                        name={player}
+                        cards={players[player]}
+                      />
+                    ))}
+                </Accordion>
+              )}
+            </Tab>
+          </Tabs>
+        </Col>
+      </Row>
     </Container>
   );
 };
