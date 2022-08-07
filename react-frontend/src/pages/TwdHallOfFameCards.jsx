@@ -10,6 +10,10 @@ const TwdHallOfFameCards = (props) => {
   const [players, setPlayers] = useState(undefined);
   const [tab, setTab] = useState('total');
 
+  const INNOVATION_PERIOD = 2 * 365;
+  const IGNORED_TOURNAMENTS_DATE = '1999-04-11'; // first was 1997-04-11
+  const MS_TO_DAYS = 1000 * 60 * 60 * 24;
+
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
       const url = `${process.env.ROOT_URL}twd_cards_history.json`;
@@ -77,19 +81,10 @@ const TwdHallOfFameCards = (props) => {
   };
 
   const isInnovation = (card) => {
-    const INNOVATION_PERIOD = 2 * 365;
-    const FIRST_TOURNAMENT_DATE = '1997-04-11';
-    const MS_TO_DAYS = 1000 * 60 * 60 * 24;
-
     const twdAppearanceDelay =
       (new Date(card.twdDate) - new Date(card.releaseDate)) / MS_TO_DAYS;
 
-    if (
-      (new Date(card.twdDate) - new Date(FIRST_TOURNAMENT_DATE)) / MS_TO_DAYS <
-      INNOVATION_PERIOD
-    ) {
-      return false;
-    }
+    if (card.twdDate < IGNORED_TOURNAMENTS_DATE) return false;
 
     return twdAppearanceDelay > INNOVATION_PERIOD;
   };
@@ -140,6 +135,11 @@ const TwdHallOfFameCards = (props) => {
           )}
         </Tab>
         <Tab eventKey="innovation" title="By Innovation">
+          <div className="p-2">
+            Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365}{' '}
+            years after card print, and excluding cards from first 2 years of
+            active tournaments (till {IGNORED_TOURNAMENTS_DATE})
+          </div>
           {players && (
             <Accordion alwaysOpen>
               {Object.keys(players)

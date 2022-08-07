@@ -33,12 +33,14 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
           >
             <ResultCryptCapacity value={card.Capacity} />
           </td>
-          <td className="disciplines" onClick={() => handleClick(idx)}>
-            <ResultCryptDisciplines
-              maxDisciplines={10}
-              value={card.Disciplines}
-            />
-          </td>
+          {!isMobile && (
+            <td className="disciplines" onClick={() => handleClick(idx)}>
+              <ResultCryptDisciplines
+                maxDisciplines={8}
+                value={card.Disciplines}
+              />
+            </td>
+          )}
           <ConditionalOverlayTrigger
             placement={isNarrow ? 'bottom' : 'right'}
             overlay={<CardPopover card={card} />}
@@ -48,14 +50,16 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
               <ResultCryptName card={card} />
             </td>
           </ConditionalOverlayTrigger>
-          <td className="title pe-2" onClick={() => handleClick(idx)}>
-            <ResultCryptTitle value={card.Title} />
-          </td>
-          <td className="clan" onClick={() => handleClick(idx)}>
-            <ResultClanImage value={card.Clan} />
-          </td>
-          <td className="group" onClick={() => handleClick(idx)}>
-            <ResultCryptGroup value={card.Group} />
+          <td className="clan-group" onClick={() => handleClick()}>
+            <div>
+              <ResultClanImage value={card.Clan} />
+            </div>
+            <div className="d-flex small justify-content-end">
+              <div className="bold blue">
+                <ResultCryptTitle value={card.Title} />
+              </div>
+              <ResultCryptGroup value={card.Group} />
+            </div>
           </td>
         </>
       ) : (
@@ -86,26 +90,29 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
               <ResultLibraryName card={card} />
             </td>
           </ConditionalOverlayTrigger>
-          <td className="burn px-1" onClick={() => handleClick(idx)}>
-            <ResultLibraryBurn value={card[BURN_OPTION]} />
-            <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} />
-          </td>
+          {!isMobile && (
+            <td className="burn px-1" onClick={() => handleClick(idx)}>
+              <ResultLibraryBurn value={card[BURN_OPTION]} />
+              <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} />
+            </td>
+          )}
         </>
       )}
-      <td className="px-1" onClick={() => handleClick(idx)}>
-        {card.releaseDate.slice(0, 4)}
-      </td>
-      <td className="px-1" onClick={() => handleClick(idx)}>
+      {!isMobile && (
+        <td className="text-align-center px-1" onClick={() => handleClick(idx)}>
+          {card.releaseDate.slice(0, 4)}
+        </td>
+      )}
+      <td className="text-align-center px-1" onClick={() => handleClick(idx)}>
         {card.twdDate.slice(0, 4)}
       </td>
-      <td>
+      <td className="text-align-center px-1">
         {Math.round(
           (new Date(card.twdDate) - new Date(card.releaseDate)) /
             (1000 * 60 * 60 * 24) /
             365
         ) || 1}
       </td>
-
       <td className={`${isMobile ? '' : 'px-1'}`}>
         {card.deckid && (
           <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} inHistory />

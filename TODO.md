@@ -2,12 +2,14 @@
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
+- White border for Accordion Buttons (Hall of Fame)
 
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
-- Filter card history as in inventory
-- Sort cards history
+- Filter for TWD Card history
+- Sort for TWD Cards history
+- Detailed player info in TWD Hall of Fame Cards (first/last dates)
 
 # MAYBE LATER FEATURES
 - Comments for PDA

@@ -1,24 +1,24 @@
 import React from 'react';
 import { ResultDisciplineImage } from 'components';
 
-function ResultCryptDisciplines(props) {
+const ResultCryptDisciplines = ({ value, maxDisciplines }) => {
   const emptyCols = [];
   let counter = 0;
-  const width = 100 / props.maxDisciplines + '%';
+  const width = 100 / maxDisciplines + '%';
 
-  const disciplineCols = Object.keys(props.value).map((d, index) => {
+  const disciplineCols = Object.keys(value).map((d, index) => {
     counter += 1;
 
     return (
       <td width={width} key={index}>
-        {props.value[d] && (
-          <ResultDisciplineImage value={d} superior={props.value[d] === 2} />
+        {value[d] && (
+          <ResultDisciplineImage value={d} superior={value[d] === 2} />
         )}
       </td>
     );
   });
 
-  while (counter < props.maxDisciplines) {
+  while (counter < maxDisciplines) {
     counter += 1;
     emptyCols.push(<td width={width} key={counter}></td>);
   }
@@ -33,6 +33,6 @@ function ResultCryptDisciplines(props) {
       </tbody>
     </table>
   );
-}
+};
 
 export default ResultCryptDisciplines;

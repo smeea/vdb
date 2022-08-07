@@ -78,20 +78,36 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     Type: 'T',
   };
 
+  let firstCardDate = null;
+  let lastCardDate = null;
+  Object.values(cards).map((card) => {
+    if (!firstCardDate || card.twdDate < firstCardDate)
+      firstCardDate = card.twdDate;
+    if (!lastCardDate || card.twdDate > lastCardDate)
+      lastCardDate = card.twdDate;
+  });
+
   return (
     <>
       <Accordion.Item eventKey={name}>
         <Accordion.Header onClick={() => handlePlayerClick()}>
-          <div className="d-flex align-items-center">
-            {Object.keys(cards).length}
-            <div className="d-flex ps-1 pe-3">
-              <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="d-flex">
+              {Object.keys(cards).length}
+              <div className="d-flex ps-1 pe-3">
+                <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
+              </div>
+              <div className="d-flex nowrap align-items-center">{name}</div>
             </div>
-            {/* TODO: detailed cards header with dates*/}
-            <div className="d-flex nowrap align-items-center">{name}</div>
+            <div className="d-flex">
+              First: {firstCardDate.slice(0, 4)}, Last:{' '}
+              {lastCardDate.slice(0, 4)}
+            </div>
+            <div className="d-flex">
+              Crypt: {cryptSorted.length}, Library: {librarySorted.length}
+            </div>
           </div>
         </Accordion.Header>
-
         <Accordion.Body className="p-0">
           {showPlayer && (
             <>
@@ -102,24 +118,27 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                 setSortMethod={changeCryptSearchSort}
                 inHoF={true}
               />
-              <table className="result-crypt-table full-width">
+              <table className="search-crypt-table">
                 <thead className="info-message blue">
                   <tr>
                     <th />
                     {!isMobile && <th />}
-                    {!isMobile && <th />}
-                    {!isMobile && <th />}
-                    <th className="text-align-center" title="First Print Date">
-                      Print
-                    </th>
+                    <th />
+                    <th />
                     {!isMobile && (
                       <th
                         className="text-align-center"
-                        title="First TWD Appearance Date"
+                        title="First Print Date"
                       >
-                        Win
+                        Print
                       </th>
                     )}
+                    <th
+                      className="text-align-center"
+                      title="First TWD Appearance Date"
+                    >
+                      Win
+                    </th>
                     <th className="text-align-center" title="Years to Win">
                       YtW
                     </th>
@@ -149,25 +168,28 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                 setSortMethod={changeLibrarySearchSort}
                 inHoF={true}
               />
-              <table className="result-library-table full-width">
+              <table className="search-library-table">
                 <thead className="info-message blue">
                   <tr>
                     <th />
+                    <th />
+                    <th />
+                    <th />
                     {!isMobile && <th />}
-                    {!isMobile && <th />}
-                    {!isMobile && <th />}
-                    {!isMobile && <th />}
-                    <th className="text-align-center" title="First Print Date">
-                      Print
-                    </th>
                     {!isMobile && (
                       <th
                         className="text-align-center"
-                        title="First TWD Appearance Date"
+                        title="First Print Date"
                       >
-                        Win
+                        Print
                       </th>
                     )}
+                    <th
+                      className="text-align-center"
+                      title="First TWD Appearance Date"
+                    >
+                      Win
+                    </th>
                     <th
                       className="text-align-center"
                       title="Years to Win - From release to first TWD appearance"
