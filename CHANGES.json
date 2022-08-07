@@ -1,5 +1,14 @@
 [
   {
+    "version": "2022-08-07",
+    "changes": [
+      "Add Hall of Fame by Cards First Appearance",
+      "Sort cards by TWD popularity in autocompletion form",
+      "Freeze cardtypes popover in TWD deck by click to preview cards in that category",
+      "Other small fixes/improvements"
+    ]
+  },
+  {
     "version": "2022-08-02",
     "changes": [
       "Add TWD Cards Appearance History (in Menu button next to X-button at TWD page). Performance is terrible, but it is non-essential feature with rare usage so I decided to release it is (with hope of future improvement)",
