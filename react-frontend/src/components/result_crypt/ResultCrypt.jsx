@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
@@ -23,7 +23,6 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
     showFloatingButtons,
   } = useApp();
 
-  const [sortedCards, setSortedCards] = useState([]);
   const className = 'search-crypt-table';
   const navigate = useNavigate();
 
@@ -39,22 +38,16 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
 
-  const setSortMethod = (method) => {
-    changeCryptSearchSort(method);
-    setSortedCards(() => resultCryptSort(cards, method));
-  };
-
   const handleClear = () => {
     navigate('/crypt');
     setCards(undefined);
     setShowCryptSearch(!showCryptSearch);
   };
 
-  useEffect(() => {
-    if (cards) {
-      setSortedCards(() => resultCryptSort(cards, cryptSearchSort));
-    }
-  }, [cards]);
+  sortedCards = useMemo(
+    () => resultCryptSort(cards, cryptSearchSort),
+    [cards, cryptSearchSort]
+  );
 
   return (
     <>
@@ -71,7 +64,7 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
             toggleShowInfo={toggleShowInfo}
             sortMethods={sortMethods}
             sortMethod={cryptSearchSort}
-            setSortMethod={setSortMethod}
+            setSortMethod={changeCryptSearchSort}
           />
           {showInfo && (
             <div className="info-message px-2">

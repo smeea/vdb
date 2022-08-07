@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
@@ -19,7 +19,6 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
     showFloatingButtons,
   } = useApp();
 
-  const [sortedCards, setSortedCards] = useState([]);
   const navigate = useNavigate();
 
   const sortMethods = {
@@ -30,22 +29,16 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
     Type: 'T',
   };
 
-  const setSortMethod = (method) => {
-    changeLibrarySearchSort(method);
-    setSortedCards(() => resultLibrarySort(cards, method));
-  };
-
   const handleClear = () => {
     navigate('/library');
     setCards(undefined);
     setShowLibrarySearch(!showLibrarySearch);
   };
 
-  useEffect(() => {
-    if (cards) {
-      setSortedCards(() => resultLibrarySort(cards, librarySearchSort));
-    }
-  }, [cards, librarySearchSort]);
+  sortedCards = useMemo(
+    () => resultLibrarySort(cards, librarySearchSort),
+    [cards, librarySearchSort]
+  );
 
   return (
     <>
@@ -61,7 +54,7 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
             cards={cards}
             sortMethods={sortMethods}
             sortMethod={librarySearchSort}
-            setSortMethod={setSortMethod}
+            setSortMethod={changeLibrarySearchSort}
           />
           <ResultLibraryTable
             library={library}

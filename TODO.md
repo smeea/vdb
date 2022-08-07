@@ -1,6 +1,7 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Refactor DeckTogglePublicButton and DeckPublicButton
+- Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 
 # FEATURES
 - Check TWD
@@ -19,6 +20,7 @@
 - TWD Cards History performance - react-window
 - Remove useless useEffects - https://beta.reactjs.org/learn/you-might-not-need-an-effect
 - Refactor sort functions (DRY for common like byName)
+- Refactor card sorting from useEffect to useMemo (see fix in ResultCrypt/Library)
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory
