@@ -20,7 +20,8 @@
 - TWD Cards History performance - react-window
 - Remove useless useEffects - https://beta.reactjs.org/learn/you-might-not-need-an-effect
 - Refactor sort functions used in other components (DRY for common like byName)
-- Refactor card sorting from useEffect to useMemo (see fix in ResultCrypt/Library)
+- Refactor useDeckCrypt from useEffect to useMemo
+- Refactor CSS
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory
