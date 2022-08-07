@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';

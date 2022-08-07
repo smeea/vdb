@@ -4,10 +4,8 @@ import { ButtonIconed } from 'components';
 import X from 'assets/images/icons/x.svg';
 import Activity from 'assets/images/icons/activity.svg';
 import ListUl from 'assets/images/icons/list-task.svg';
-import { useApp } from 'context';
 
 const UpdateNotification = ({ appVersion }) => {
-  const { isMobile } = useApp();
   const [show, setShow] = useState(false);
   const [version, setVersion] = useState();
   const [changes, setChanges] = useState();

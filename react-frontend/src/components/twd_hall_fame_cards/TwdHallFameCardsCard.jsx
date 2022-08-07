@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import React from 'react';
 import { useApp } from 'context';
 import {
   ResultCryptCapacity,
@@ -22,7 +21,7 @@ import {
 import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
 
 const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
-  const { nativeLibrary, isMobile, isNarrow, isWide } = useApp();
+  const { nativeLibrary, isMobile, isNarrow } = useApp();
 
   return (
     <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
@@ -49,33 +48,15 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
               <ResultCryptName card={card} />
             </td>
           </ConditionalOverlayTrigger>
-          {isWide ? (
-            <>
-              <td className="title pe-2" onClick={() => handleClick(idx)}>
-                <ResultCryptTitle value={card.Title} />
-              </td>
-              <td className="clan" onClick={() => handleClick(idx)}>
-                <ResultClanImage value={card.Clan} />
-              </td>
-              <td className="group" onClick={() => handleClick(idx)}>
-                <ResultCryptGroup value={card.Group} />
-              </td>
-            </>
-          ) : (
-            <>
-              <td className="clan-group" onClick={() => handleClick(idx)}>
-                <div>
-                  <ResultClanImage value={card.Clan} />
-                </div>
-                <div className="d-flex small justify-content-end">
-                  <div className="bold blue">
-                    <ResultCryptTitle value={card.Title} />
-                  </div>
-                  <ResultCryptGroup value={card.Group} />
-                </div>
-              </td>
-            </>
-          )}
+          <td className="title pe-2" onClick={() => handleClick(idx)}>
+            <ResultCryptTitle value={card.Title} />
+          </td>
+          <td className="clan" onClick={() => handleClick(idx)}>
+            <ResultClanImage value={card.Clan} />
+          </td>
+          <td className="group" onClick={() => handleClick(idx)}>
+            <ResultCryptGroup value={card.Group} />
+          </td>
         </>
       ) : (
         <>
