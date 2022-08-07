@@ -13,6 +13,7 @@ const ResultCryptTotal = ({
   setSortMethod,
   toggleShowInfo,
   inCompare,
+  inHoF,
 }) => {
   const { setCryptCompare } = useSearchResults();
 
@@ -41,12 +42,14 @@ const ResultCryptTotal = ({
           <b>G{k == ANY ? 'X' : k}:</b>
         </span>
         {byGroups[k]}
-        <div
-          className="d-flex small justify-content-center"
-          title="Average Capacity"
-        >
-          ~{Math.round((byGroupsCapacityTotal[k] / byGroups[k]) * 10) / 10}
-        </div>
+        {!inHoF && (
+          <div
+            className="d-flex small justify-content-center"
+            title="Average Capacity"
+          >
+            ~{Math.round((byGroupsCapacityTotal[k] / byGroups[k]) * 10) / 10}
+          </div>
+        )}
       </span>
     );
   });
@@ -55,22 +58,24 @@ const ResultCryptTotal = ({
     <>
       <div className="px-2 nowrap">
         <b>
-          {inCompare ? 'COMPARE' : 'TOTAL'}: {total}
+          {inHoF ? 'CRYPT' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
         </b>
       </div>
       <div>{totalOutput}</div>
       <div className={inCompare ? 'd-flex' : ''}>
         {!inCompare ? (
           <>
-            <div className="d-flex justify-content-end mb-1">
-              <Button
-                title="Additional Info"
-                variant="primary"
-                onClick={() => toggleShowInfo()}
-              >
-                <InfoCircle />
-              </Button>
-            </div>
+            {!inHoF && (
+              <div className="d-flex justify-content-end mb-1">
+                <Button
+                  title="Additional Info"
+                  variant="primary"
+                  onClick={() => toggleShowInfo()}
+                >
+                  <InfoCircle />
+                </Button>
+              </div>
+            )}
             <SortButton
               sortMethod={sortMethod}
               sortMethods={sortMethods}

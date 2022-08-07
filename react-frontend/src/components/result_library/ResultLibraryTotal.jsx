@@ -10,6 +10,7 @@ const ResultLibraryTotal = ({
   sortMethod,
   setSortMethod,
   inCompare,
+  inHoF,
 }) => {
   const { setLibraryCompare } = useSearchResults();
 
@@ -40,19 +41,18 @@ const ResultLibraryTotal = ({
     <>
       <div className="px-2 nowrap">
         <b>
-          {inCompare ? 'COMPARE' : 'TOTAL'}: {total}
+          {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
         </b>
       </div>
       <div className="pt-2">{totalOutput}</div>
       <div className="d-flex">
-        {!inCompare && (
+        {!inCompare ? (
           <SortButton
             sortMethods={sortMethods}
             sortMethod={sortMethod}
             setSortMethod={setSortMethod}
           />
-        )}
-        {inCompare && (
+        ) : (
           <div className="ms-1">
             <Button
               title="Clear Compare"

@@ -8,7 +8,6 @@
 - Show changes from base deck in PDA
 - Filter card history as in inventory
 - Sort cards history
-- Hall of Fame - cards history
 
 # MAYBE LATER FEATURES
 - Comments for PDA
@@ -19,7 +18,7 @@
 - Move deck/inventory import to frontend
 - TWD Cards History performance - react-window
 - Remove useless useEffects - https://beta.reactjs.org/learn/you-might-not-need-an-effect
-- Refactor sort functions (DRY for common like byName)
+- Refactor sort functions used in other components (DRY for common like byName)
 - Refactor card sorting from useEffect to useMemo (see fix in ResultCrypt/Library)
 
 # IMPROVE TECHNOLOGY - BACKEND

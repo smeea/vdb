@@ -29,7 +29,7 @@ const TwdHallOfFameTournaments = (props) => {
   };
 
   return (
-    <Container className="hall-of-fame-container px-0 p-md-3">
+    <Container className="hof-tournaments-container px-0 p-md-3">
       {players && (
         <Accordion alwaysOpen>
           {Object.keys(players)

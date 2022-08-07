@@ -13,7 +13,12 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
 
   let yearsToWin = null;
   if (card.twd_date) {
-    yearsToWin = card.twd_date.slice(0, 4) - card.release_date.slice(0, 4) + 1;
+    yearsToWin =
+      Math.round(
+        (new Date(card.twd_date) - new Date(card.release_date)) /
+          (1000 * 60 * 60 * 24) /
+          365
+      ) || 1;
   } else {
     const date = new Date();
     yearsToWin = `${date.getFullYear() - card.release_date.slice(0, 4)}+`;

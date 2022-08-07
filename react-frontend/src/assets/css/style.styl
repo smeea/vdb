@@ -149,7 +149,6 @@ div.no-border
   border: 1px solid var(--border-secondary)
   border-radius: 5px
   padding: 0.25em 0.5em
-  position: absolute // TODO remove after fix in react-bootstrap
   z-index: 1
 
 .info-message
@@ -1271,7 +1270,8 @@ button.accordion-button:not(.collapsed)
     display: none
   .modal-x-wide
     min-width: 100%
-  .hall-of-fame-container
+  .hof-cards-container,
+  .hof-tournaments-container
     padding-bottom: 40px
   .cards-container
     padding-bottom: 72px
@@ -1282,8 +1282,10 @@ button.accordion-button:not(.collapsed)
   .deck-container
     min-width: 768px
     max-width: 100%
+  .hof-cards-container
+    max-width: 768px
   .cards-container,
-  .hall-of-fame-container
+  .hof-tournaments-container
     max-width: 1024px
   .inventory-buttons,
   .hide-narrow
@@ -1304,8 +1306,10 @@ button.accordion-button:not(.collapsed)
   .deck-container
     min-width: 768px
     max-width: 100%
+  .hof-cards-container
+    max-width: 768px
   .cards-container,
-  .hall-of-fame-container
+  .hof-tournaments-container
     max-width: 1024px
   .modal-wide
     min-width: 80%
@@ -1323,8 +1327,10 @@ button.accordion-button:not(.collapsed)
   .deck-container
     min-width: 1200px
     max-width: 1460px
+  .hof-cards-container
+    max-width: 768px
   .cards-container,
-  .hall-of-fame-container
+  .hof-tournaments-container
     max-width: 1140px
   .modal-wide
     min-width: 70%
@@ -1343,8 +1349,10 @@ button.accordion-button:not(.collapsed)
   .deck-container
     min-width: 1460px
     max-width: 1460px
+  .hof-cards-container
+    max-width: 768px
   .cards-container,
-  .hall-of-fame-container
+  .hof-tournaments-container
     max-width: 1140px
   .modal-wide
     min-width: 70%

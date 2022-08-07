@@ -25,7 +25,7 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
     setCards(deckData);
   };
 
-  const handleDeckClick = async () => {
+  const handleClick = async () => {
     if (!cards) await getCards();
     setShowDeck(!showDeck);
   };
@@ -34,7 +34,7 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
     <>
       <div className="border-thick p-2 m-1 m-md-2">
         <div
-          onClick={() => handleDeckClick()}
+          onClick={() => handleClick()}
           className={`d-flex justify-content-between link-like ${
             isStar ? 'bold' : ''
           }`}
