@@ -91,20 +91,38 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     <>
       <Accordion.Item eventKey={name}>
         <Accordion.Header onClick={() => handlePlayerClick()}>
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="d-flex">
+          <div
+            className={`d-flex ${
+              isMobile ? 'full-width' : 'w-75'
+            } pe-1 justify-content-between align-items-center`}
+          >
+            <div className="d-flex w-55 align-items-center">
               {Object.keys(cards).length}
               <div className="d-flex ps-1 pe-3">
                 <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
               </div>
-              <div className="d-flex nowrap align-items-center">{name}</div>
+              <div className="d-flex align-items-center">{name}</div>
             </div>
-            <div className="d-flex">
-              First: {firstCardDate.slice(0, 4)}, Last:{' '}
-              {lastCardDate.slice(0, 4)}
-            </div>
-            <div className="d-flex">
-              Crypt: {cryptSorted.length}, Library: {librarySorted.length}
+            <div className="d-flex w-45 justify-content-between">
+              <div
+                className="d-flex nowrap px-1 px-md-3"
+                title="First Card add to Hall of Fame / Last Card add to Hall of Fame"
+              >
+                {isMobile
+                  ? `'${firstCardDate.slice(2, 4)}-'${lastCardDate.slice(2, 4)}`
+                  : `${firstCardDate.slice(0, 4)} - ${lastCardDate.slice(
+                      0,
+                      4
+                    )}`}
+              </div>
+              <div className="d-flex nowrap px-1 px-md-3">
+                {isMobile ? 'C:' : 'Crypt: '}
+                {cryptSorted.length}
+              </div>
+              <div className="d-flex nowrap px-1 px-md-3">
+                {isMobile ? 'L:' : 'Library: '}
+                {librarySorted.length}
+              </div>
             </div>
           </div>
         </Accordion.Header>

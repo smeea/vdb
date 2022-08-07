@@ -9,7 +9,6 @@
 - Show changes from base deck in PDA
 - Filter for TWD Card history
 - Sort for TWD Cards history
-- Detailed player info in TWD Hall of Fame Cards (first/last dates)
 
 # MAYBE LATER FEATURES
 - Comments for PDA
