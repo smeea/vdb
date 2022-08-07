@@ -44,7 +44,7 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
     setShowCryptSearch(!showCryptSearch);
   };
 
-  sortedCards = useMemo(
+  const sortedCards = useMemo(
     () => resultCryptSort(cards, cryptSearchSort),
     [cards, cryptSearchSort]
   );

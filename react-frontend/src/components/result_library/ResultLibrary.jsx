@@ -35,7 +35,7 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
     setShowLibrarySearch(!showLibrarySearch);
   };
 
-  sortedCards = useMemo(
+  const sortedCards = useMemo(
     () => resultLibrarySort(cards, librarySearchSort),
     [cards, librarySearchSort]
   );
