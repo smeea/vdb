@@ -79,7 +79,7 @@ const getCryptText = (crypt) => {
       }
     });
 
-    return [...baseDisciplines, ...supDisciplines].join(' ');
+    return [...supDisciplines, ...baseDisciplines].join(' ');
   };
 
   let maxQtyLength = 0;
@@ -146,11 +146,18 @@ const getLibraryText = (library, format) => {
   const byType = {};
   const byTypeTotal = {};
   let libraryTotal = 0;
+  let triflesTotal = 0;
 
   Object.values(library).map((card) => {
     libraryTotal += card.q;
     const cardType = card.c.Type;
     const cardName = card.c.Name;
+    if (
+      card.c.Type === 'Master' &&
+      card.c['Card Text'].toLowerCase().includes('trifle')
+    ) {
+      triflesTotal += card.q;
+    }
 
     if (!byType[cardType]) {
       byType[cardType] = {};
@@ -187,14 +194,19 @@ const getLibraryText = (library, format) => {
 
   const libraryTitle = `Library (${libraryTotal} cards)`;
   result += `${libraryTitle}\n`;
-  result += '-'.repeat(libraryTitle.length);
+  if (format === 'text') {
+    result += '-'.repeat(libraryTitle.length);
+  }
   result += '\n';
 
   byTypeOrder.map((type) => {
     if (byType[type]) {
-      const typeTitle = `${type} (${byTypeTotal[type]})`;
+      let typeTitle = `${type} (${byTypeTotal[type]}`;
+      if (type === 'Master' && triflesTotal) {
+        typeTitle += `; ${triflesTotal} trifle`;
+      }
+      typeTitle += ')\n';
       result += typeTitle;
-      result += '\n';
 
       if (format === 'text') {
         result += '-'.repeat(typeTitle.length);
