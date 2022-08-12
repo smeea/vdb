@@ -284,26 +284,36 @@ const exportTwd = (deck) => {
   const sortedCrypt = resultCryptSort(Object.values(deck.crypt), 'Quantity');
 
   result += `# REPLACE BELOW LINES WITH YOUR EVENT DATA
-# REMOVE EVERYTHING STARTING FROM "#" ON EACH LINE (FIRST LINE WILL BE "EVENT NAME")
+# REMOVE EVERYTHING STARTING FROM "#" ON EACH LINE (FIRST LINE WILL BE EVENT NAME)
 #
-Nosferatu Hosting Loughman's Birthday                  # Event Name
-Heath, Ohio                                            # Event Location
-December 5th 2021                                      # Event Date
-2R + F                                                 # Number of Rounds
-13 players                                             # Number of Players
-Karl Schaefer                                          # Winner
-https://www.vekn.net/event-calendar/event/9953         # Event Link
+Nosferatu Hosting Loughman's Birthday              # Event Name
+Heath, Ohio                                        # Event Location
+December 5th 2021                                  # Event Date
+2R + F                                             # Number of Rounds
+13 players                                         # Number of Players
+Karl Schaefer                                      # Winner
+https://www.vekn.net/event-calendar/event/9953     # Event Link
 
---2gw8 + 3vp in final                                  # Scores
+-- 2gw8 + 3vp in final                              # Scores
 
-${deck.name}${' '.repeat(50 - deck.name.length)}     # Deck Name
-
+Deck Name: ${deck.name}${' '.repeat(39 - deck.name.length)} # OPTIONAL
+Author: Not-Karl-Schaefer ${' '.repeat(
+    24
+  )} # OPTIONAL, only if different from Winner
+Description:                                       # OPTIONAL
 ${
   deck.description
     ? deck.description
-    : `I was hoping to play the new Ministry today, but       # Deck description
-with so many others planning to do the same, I         # Can be multiline (no
-played this instead.                                   # line length limit)`
+    : `I was hoping to play the new Ministry today, but   # Don't format text width with line breaks
+with so many others planning to do the same, I     # Example on the left is how NOT TO DO
+played this instead.                               # Break line only to start new paragraph/list item/etc
+
+This is how you do very long lines. Text formatting to readable width will be done by TWDA team.
+
+Empty lines in description are OK. One empty line between Description and Crypt
+
+# Comments on particular cards are possible in the end on the same line using ' -- ':
+# 4x Dummy Corporation -- will increase to 8x, saved me in every round and twice in finals'`
 }
 `;
   result += '\n';
