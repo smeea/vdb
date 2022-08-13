@@ -318,11 +318,15 @@ export const AppProvider = (props) => {
         if (decksData[deckid].used_in_inventory) {
           Object.keys(decksData[deckid].used_in_inventory).map((cardid) => {
             if (cardid > 200000) {
-              decksData[deckid].crypt[cardid].i =
-                decksData[deckid].used_in_inventory[cardid];
+              if (decksData[deckid].crypt[cardid]) {
+                decksData[deckid].crypt[cardid].i =
+                  decksData[deckid].used_in_inventory[cardid];
+              }
             } else {
-              decksData[deckid].library[cardid].i =
-                decksData[deckid].used_in_inventory[cardid];
+              if (decksData[deckid].library[cardid]) {
+                decksData[deckid].library[cardid].i =
+                  decksData[deckid].used_in_inventory[cardid];
+              }
             }
           });
         }
