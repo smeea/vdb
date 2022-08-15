@@ -279,11 +279,12 @@ const exportLackey = (deck) => {
   return result;
 };
 
-const exportTwd = (deck) => {
+const exportTwd = (deck, withHints) => {
   let result = '';
   const sortedCrypt = resultCryptSort(Object.values(deck.crypt), 'Quantity');
 
-  result += `# REPLACE BELOW LINES WITH YOUR EVENT DATA
+  if (withHints) {
+    result += `# REPLACE BELOW LINES WITH YOUR EVENT DATA
 # REMOVE EVERYTHING STARTING FROM "#" ON EACH LINE (FIRST LINE WILL BE EVENT NAME)
 #
 Nosferatu Hosting Loughman's Birthday              # Event Name
@@ -294,12 +295,12 @@ December 5th 2021                                  # Event Date
 Karl Schaefer                                      # Winner
 https://www.vekn.net/event-calendar/event/9953     # Event Link
 
--- 2gw8 + 3vp in final                              # Scores
+-- 2gw8 + 3vp in final                             # Scores
 
 Deck Name: ${deck.name}${' '.repeat(39 - deck.name.length)} # OPTIONAL
 Author: Not-Karl-Schaefer ${' '.repeat(
-    24
-  )} # OPTIONAL, only if different from Winner
+      24
+    )} # OPTIONAL, only if different from Winner
 Description:                                       # OPTIONAL
 ${
   deck.description
@@ -316,6 +317,23 @@ Empty lines in description are OK. One empty line between Description and Crypt
 # 4x Dummy Corporation -- will increase to 8x, saved me in every round and twice in finals'`
 }
 `;
+  } else {
+    result += `[Event Name]
+[Location]
+[Date]
+[Format]
+[Players]
+[Winner]
+[Event Link]
+
+-- [Scores]
+
+Deck Name: ${deck.name}
+Description:
+[Description]
+`;
+  }
+
   result += '\n';
   result += `${getCryptTitle(deck.crypt)}\n`;
   result += '-'.repeat(getCryptTitle(deck.crypt).length);
@@ -363,7 +381,9 @@ const useDeckExport = (deck, format) => {
     case 'lackey':
       return exportLackey(deck);
     case 'twd':
-      return exportTwd(deck);
+      return exportTwd(deck, false);
+    case 'twdHints':
+      return exportTwd(deck, true);
     case 'text':
       return exportText(deck);
   }

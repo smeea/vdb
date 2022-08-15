@@ -3,7 +3,6 @@
 - Refactor DeckTogglePublicButton and DeckPublicButton
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - White border for Accordion Buttons (Hall of Fame)
-- Deck export in TWD without hints
 - Delete used_in_inventory entry on deleting card from deck
 
 # FEATURES

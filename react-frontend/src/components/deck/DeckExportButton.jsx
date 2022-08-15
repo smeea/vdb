@@ -22,6 +22,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
   const ExportDropdown = ({ action, format }) => {
     const formats = {
       twd: 'TWD',
+      twdHints: 'TWD (with hints)',
       text: 'Text',
       lackey: 'Lackey',
       jol: 'JOL',
@@ -58,6 +59,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
       {!inMissing && (
         <>
           <ExportDropdown action="save" format="twd" />
+          <ExportDropdown action="save" format="twdHints" />
           <ExportDropdown action="save" format="lackey" />
           <ExportDropdown action="save" format="jol" />
         </>
@@ -70,6 +72,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
       {!inMissing && (
         <>
           <ExportDropdown action="copy" format="twd" />
+          <ExportDropdown action="copy" format="twdHints" />
           <ExportDropdown action="copy" format="lackey" />
           <ExportDropdown action="copy" format="jol" />
         </>
@@ -78,7 +81,6 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
         <>
           <Dropdown.Divider />
           <ExportDropdown action="exportAll" format="text" />
-          <ExportDropdown action="exportAll" format="twd" />
           <ExportDropdown action="exportAll" format="lackey" />
           <ExportDropdown action="exportAll" format="jol" />
           <ExportDropdown action="exportAll" format="xlsx" />
