@@ -5,6 +5,7 @@
 - White border for Accordion Buttons (Hall of Fame)
 - Deck export in TWD without hints
 - Delete used_in_inventory entry on deleting card from deck
+- In Inventory search checkbox between pages
 
 # FEATURES
 - Check TWD
@@ -29,7 +30,6 @@
 - Improve API endpoints - inventory
 - Improve API endpoints - decks
 - Improve API endpoints - account
-- Move Hall of Fame Players data to Frontend
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)

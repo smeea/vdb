@@ -231,7 +231,7 @@ const exportJol = (deck) => {
   const sortedLibrary = resultLibrarySort(Object.values(deck.library), 'Name');
 
   sortedCrypt.map((card) => {
-    let name = card.c['ASCII Name'].replace(/"/g, "'");
+    let name = card.c['ASCII Name'];
     if (card.c['Adv'] && card.c['Adv'][0]) {
       name += ' (ADV)';
     }
@@ -242,7 +242,7 @@ const exportJol = (deck) => {
   });
 
   sortedLibrary.map((card) => {
-    const name = card.c['ASCII Name'].replace('"', "'");
+    const name = card.c['ASCII Name'];
     result += `${card.q}x${name}\n`;
   });
 
