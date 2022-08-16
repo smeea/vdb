@@ -209,6 +209,10 @@ def updateDeck(deckid):
             k = int(k)
             if v < 0:
                 del merged_cards[k]
+                if k in d.used_in_inventory:
+                    used_cards = d.used_in_inventory.copy()
+                    del used_cards[k]
+                    d.used_in_inventory = used_cards.copy()
             else:
                 merged_cards[k] = v
 
