@@ -13,8 +13,66 @@ def unauthorized_handler():
     abort(401)
 
 
-@app.route("/api/register", methods=["POST"])
-def register():
+@app.route("/api/version", methods=["GET"])
+def version():
+    with open("../CHANGES.json", "r") as changes_file:
+        changes = json.load(changes_file)
+        return jsonify(changes[0])
+
+
+@app.route("/api/login", methods=["POST"])
+def login():
+    try:
+        user = User.query.filter_by(username=request.json["username"].lower()).first()
+
+        if user is None:
+            abort(400)
+        elif not user.check_password(request.json["password"]):
+            abort(401)
+
+        login_user(user, remember=request.json["remember"])
+        return jsonify(
+            {
+                "username": current_user.username,
+                "email": current_user.email,
+                "public_name": current_user.public_name,
+                "decks": parse_user_decks(current_user.decks.all()),
+                "inventory": parse_user_inventory(current_user.inventory),
+            }
+        )
+    except KeyError:
+        pass
+
+
+@app.route("/api/login", methods=["DELETE"])
+def logout():
+    try:
+        user = current_user.username
+        logout_user()
+        return jsonify({"logged out from": user})
+
+    except AttributeError:
+        return jsonify({"error": "not logged"})
+
+
+@app.route("/api/account", methods=["GET"])
+def who_am_i():
+    if current_user.is_authenticated:
+        return jsonify(
+            {
+                "username": current_user.username,
+                "email": current_user.email,
+                "public_name": current_user.public_name,
+                "decks": parse_user_decks(current_user.decks.all()),
+                "inventory": parse_user_inventory(current_user.inventory),
+            }
+        )
+    else:
+        return jsonify({"username": ""})
+
+
+@app.route("/api/account", methods=["POST"])
+def account_create():
     if current_user.is_authenticated:
         return jsonify({"already logged as:": current_user.username})
     if not request.json["password"] or not request.json["username"]:
@@ -34,57 +92,9 @@ def register():
         return jsonify({"username": user.username, "email": user.email})
 
 
-@app.route("/api/version", methods=["GET"])
-def version():
-    with open("../CHANGES.json", "r") as changes_file:
-        changes = json.load(changes_file)
-        return jsonify(changes[0])
-
-
-@app.route("/api/login", methods=["GET", "POST"])
-def login():
-    if request.method == "GET":
-        if current_user.is_authenticated:
-            return jsonify(
-                {
-                    "username": current_user.username,
-                    "email": current_user.email,
-                    "public_name": current_user.public_name,
-                    "decks": parse_user_decks(current_user.decks.all()),
-                    "inventory": parse_user_inventory(current_user.inventory),
-                }
-            )
-        else:
-            return jsonify({"username": ""})
-
-    elif request.method == "POST":
-        try:
-            user = User.query.filter_by(
-                username=request.json["username"].lower()
-            ).first()
-
-            if user is None:
-                abort(400)
-            elif not user.check_password(request.json["password"]):
-                abort(401)
-
-            login_user(user, remember=request.json["remember"])
-            return jsonify(
-                {
-                    "username": current_user.username,
-                    "email": current_user.email,
-                    "public_name": current_user.public_name,
-                    "decks": parse_user_decks(current_user.decks.all()),
-                    "inventory": parse_user_inventory(current_user.inventory),
-                }
-            )
-        except KeyError:
-            pass
-
-
-@app.route("/api/account", methods=["POST"])
+@app.route("/api/account", methods=["PUT"])
 @login_required
-def account():
+def account_update():
     if "publicName" in request.json:
         current_user.public_name = request.json["publicName"]
         db.session.commit()
@@ -107,26 +117,15 @@ def account():
         return jsonify("password changed")
 
 
-@app.route("/api/account/remove", methods=["POST"])
+@app.route("/api/account", methods=["DELETE"])
 @login_required
-def removeAccount():
+def delete_cccount():
     if current_user.check_password(request.json["password"]):
         try:
             db.session.delete(current_user)
             db.session.commit()
-            return jsonify({"account removed": current_user.username})
+            return jsonify({"account deleted": current_user.username})
         except Exception:
             pass
     else:
         abort(401)
-
-
-@app.route("/api/logout")
-def logout():
-    try:
-        user = current_user.username
-        logout_user()
-        return jsonify({"logged out from": user})
-
-    except AttributeError:
-        return jsonify({"error": "not logged"})

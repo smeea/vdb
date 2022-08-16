@@ -104,7 +104,7 @@ export const AppProvider = (props) => {
   // ---------------------------------------------------------------------------
 
   const whoAmI = () => {
-    const url = `${process.env.API_URL}login`;
+    const url = `${process.env.API_URL}account`;
     const options = {
       method: 'GET',
       mode: 'cors',

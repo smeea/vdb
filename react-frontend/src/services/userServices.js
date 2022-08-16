@@ -1,8 +1,5 @@
+const accountUrl = `${process.env.API_URL}account`;
 const loginUrl = `${process.env.API_URL}login`;
-const registerUrl = `${process.env.API_URL}register`;
-const changeAccountUrl = `${process.env.API_URL}account`;
-const logoutUrl = `${process.env.API_URL}logout`;
-const deleteUrl = `${process.env.API_URL}account/remove`;
 
 export const login = (
   username,
@@ -10,13 +7,23 @@ export const login = (
   onSuccess = () => {},
   onError = () => {}
 ) => {
+  const method = 'POST';
   const body = {
     username: username,
     password: password,
     remember: 'True',
   };
 
-  fetchWithCallbacks(loginUrl, defaultOption(body), onSuccess, onError);
+  fetchWithCallbacks(loginUrl, defaultOption(body, method), onSuccess, onError);
+};
+
+export const logout = () => {
+  const options = {
+    method: 'DELETE',
+    mode: 'cors',
+    credentials: 'include',
+  };
+  fetch(loginUrl, options);
 };
 
 export const register = (
@@ -26,13 +33,19 @@ export const register = (
   onSuccess = () => {},
   onError = () => {}
 ) => {
+  const method = 'POST';
   const body = {
     username: username,
     email: email,
     password: password,
   };
 
-  fetchWithCallbacks(registerUrl, defaultOption(body), onSuccess, onError);
+  fetchWithCallbacks(
+    accountUrl,
+    defaultOption(body, method),
+    onSuccess,
+    onError
+  );
 };
 
 export const changePassword = (
@@ -41,12 +54,18 @@ export const changePassword = (
   onSuccess = () => {},
   onError = () => {}
 ) => {
+  const method = 'PUT';
   const body = {
     password: password,
     newPassword: newPassword,
   };
 
-  fetchWithCallbacks(changeAccountUrl, defaultOption(body), onSuccess, onError);
+  fetchWithCallbacks(
+    accountUrl,
+    defaultOption(body, method),
+    onSuccess,
+    onError
+  );
 };
 
 export const changeEmail = (
@@ -55,12 +74,18 @@ export const changeEmail = (
   onSuccess = () => {},
   onError = () => {}
 ) => {
+  const method = 'PUT';
   const body = {
     password: password,
     email: email,
   };
 
-  fetchWithCallbacks(changeAccountUrl, defaultOption(body), onSuccess, onError);
+  fetchWithCallbacks(
+    accountUrl,
+    defaultOption(body, method),
+    onSuccess,
+    onError
+  );
 };
 
 export const changeName = (
@@ -68,11 +93,17 @@ export const changeName = (
   onSuccess = () => {},
   onError = () => {}
 ) => {
+  const method = 'PUT';
   const body = {
     publicName: publicName,
   };
 
-  fetchWithCallbacks(changeAccountUrl, defaultOption(body), onSuccess, onError);
+  fetchWithCallbacks(
+    accountUrl,
+    defaultOption(body, method),
+    onSuccess,
+    onError
+  );
 };
 
 export const deleteAccount = (
@@ -80,26 +111,23 @@ export const deleteAccount = (
   onSuccess = () => {},
   onError = () => {}
 ) => {
+  const method = 'DELETE';
   const body = {
     password: password,
   };
 
-  fetchWithCallbacks(deleteUrl, defaultOption(body), onSuccess, onError);
-};
-
-export const logout = () => {
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-  };
-  fetch(logoutUrl, options);
+  fetchWithCallbacks(
+    accountUrl,
+    defaultOption(body, method),
+    onSuccess,
+    onError
+  );
 };
 
 // prebuilded options
-const defaultOption = (body) => {
+const defaultOption = (body, method) => {
   return {
-    method: 'POST',
+    method: method,
     mode: 'cors',
     credentials: 'include',
     headers: {

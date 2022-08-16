@@ -25,7 +25,6 @@
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory
 - Improve API endpoints - decks
-- Improve API endpoints - account
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)
