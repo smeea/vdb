@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
@@ -7,7 +7,7 @@ import { useApp } from 'context';
 const DeckChangeAuthor = ({ deckid, author, isAuthor, isPublic }) => {
   const { deckUpdate, isMobile } = useApp();
 
-  const [state, setState] = useState('');
+  const [state, setState] = useState(author);
   const [buttonState, setButtonState] = useState(false);
 
   const handleChange = (event) => {
@@ -32,10 +32,6 @@ const DeckChangeAuthor = ({ deckid, author, isAuthor, isPublic }) => {
       deckChangeAuthor();
     }
   };
-
-  useEffect(() => {
-    setState(author);
-  }, [author]);
 
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>

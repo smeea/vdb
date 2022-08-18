@@ -396,7 +396,8 @@ const DeckSelectAdvModal = (props) => {
               <DeckTags
                 allTagsOptions={props.allTagsOptions}
                 isAuthor={true}
-                deck={deck}
+                deckid={deck.deckid}
+                tags={deck.tags}
               />
             </td>
             <td className="buttons">

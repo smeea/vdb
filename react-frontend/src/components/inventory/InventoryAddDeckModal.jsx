@@ -262,7 +262,11 @@ function InventoryAddDeckModal(props) {
           )}
           {!isMobile && (
             <td className="tags">
-              <DeckTags defaultTagsOptions={defaultTagsOptions} deck={deck} />
+              <DeckTags
+                defaultTagsOptions={defaultTagsOptions}
+                deckid={deck.deckid}
+                tags={deck.tags}
+              />
             </td>
           )}
           <td className="buttons">

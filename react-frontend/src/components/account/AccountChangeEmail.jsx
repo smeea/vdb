@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Form,
   FormControl,
@@ -12,12 +12,12 @@ import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
-function AccountChangeEmail(props) {
+const AccountChangeEmail = (props) => {
   const { email, setEmail, isMobile } = useApp();
 
   const [state, setState] = useState({
     password: '',
-    email: '',
+    email: email,
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -85,15 +85,6 @@ function AccountChangeEmail(props) {
     event.preventDefault();
     changeEmail();
   };
-
-  useEffect(() => {
-    if (email) {
-      setState((prevState) => ({
-        ...prevState,
-        email: email,
-      }));
-    }
-  }, [email]);
 
   const tooltipText = <>Email is for password recovery only.</>;
 
@@ -185,6 +176,6 @@ function AccountChangeEmail(props) {
       )}
     </div>
   );
-}
+};
 
 export default AccountChangeEmail;

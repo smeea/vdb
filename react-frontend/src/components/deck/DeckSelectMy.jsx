@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import Select from 'react-select';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
@@ -7,17 +7,15 @@ import { useApp } from 'context';
 
 const DeckSelectMy = (props) => {
   const { inventoryMode, setActiveDeck, decks, isMobile } = useApp();
-  const [options, setOptions] = useState([]);
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
   };
 
-  useEffect(() => {
-    const preOptions = Object.keys(decks)
-      .filter((i) => !decks[i].master)
-      .filter((i) => !decks[i].hidden)
-      .map((i, index) => {
+  const options = useMemo(() => {
+    return Object.keys(decks)
+      .filter((i) => !decks[i].master && !decks[i].hidden)
+      .map((i) => {
         const diffDays = Math.round(
           (new Date() - new Date(decks[i]['timestamp'])) / (1000 * 60 * 60 * 24)
         );
@@ -56,14 +54,10 @@ const DeckSelectMy = (props) => {
           },
           decks[i]['timestamp'],
         ];
-      });
-
-    setOptions(
-      preOptions.sort(byTimestamp).map((i, index) => {
-        return i[0];
       })
-    );
-  }, [inventoryMode, decks]);
+      .sort(byTimestamp)
+      .map((i) => i[0]);
+  }, [decks]);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children;

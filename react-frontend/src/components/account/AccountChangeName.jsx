@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Form,
   FormControl,
@@ -12,11 +12,11 @@ import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
-function AccountChangeName(props) {
+const AccountChangeName = (props) => {
   const { publicName, setPublicName, isMobile } = useApp();
 
   const [emptyName, setEmptyName] = useState(false);
-  const [state, setState] = useState('');
+  const [state, setState] = useState(publicName);
   const refName = useRef(null);
 
   const [showModal, setShowModal] = useState(false);
@@ -61,12 +61,6 @@ function AccountChangeName(props) {
     event.preventDefault();
     changeName();
   };
-
-  useEffect(() => {
-    if (publicName) {
-      setState(publicName);
-    }
-  }, [publicName]);
 
   const tooltipText = (
     <>
@@ -148,6 +142,6 @@ function AccountChangeName(props) {
       )}
     </div>
   );
-}
+};
 
 export default AccountChangeName;

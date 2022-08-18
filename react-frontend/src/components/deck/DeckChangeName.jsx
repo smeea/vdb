@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import Snow from 'assets/images/icons/snow.svg';
@@ -10,7 +10,7 @@ import { DeckFreezeButton } from 'components';
 
 const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
   const { deckUpdate, isMobile } = useApp();
-  const [state, setState] = useState('');
+  const [state, setState] = useState(deck.name);
   const [buttonState, setButtonState] = useState(false);
 
   const handleChange = (event) => {
@@ -35,10 +35,6 @@ const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
       deckChangeName();
     }
   };
-
-  useEffect(() => {
-    setState(deck.name);
-  }, [deck.name]);
 
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>

@@ -6,9 +6,11 @@ import Activity from 'assets/images/icons/activity.svg';
 import ListUl from 'assets/images/icons/list-task.svg';
 
 const UpdateNotification = ({ appVersion }) => {
-  const [show, setShow] = useState(false);
-  const [version, setVersion] = useState();
-  const [changes, setChanges] = useState();
+  const [version, setVersion] = useState(undefined);
+  const [changes, setChanges] = useState(undefined);
+  const [show, setShow] = useState(
+    version && appVersion && appVersion < version
+  );
 
   useEffect(() => {
     const url = `${process.env.API_URL}version`;
@@ -32,12 +34,6 @@ const UpdateNotification = ({ appVersion }) => {
         );
       });
   }, []);
-
-  useEffect(() => {
-    if (version && appVersion && appVersion < version) {
-      setShow(true);
-    }
-  }, [version, appVersion]);
 
   return (
     <Modal

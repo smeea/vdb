@@ -44,7 +44,7 @@ const Cards = ({ lastDeckId }) => {
 
   useEffect(() => {
     if (quickCard) {
-      if (params.id !== quickCard.Id) navigate(`/cards/${quickCard.Id}`);
+      if (params.id != quickCard.Id) navigate(`/cards/${quickCard.Id}`);
     } else if (cryptCardBase && libraryCardBase) {
       if (params.id > 200000) {
         setQuickCard(cryptCardBase[params.id]);

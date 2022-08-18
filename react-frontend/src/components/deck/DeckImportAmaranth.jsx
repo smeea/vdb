@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
@@ -19,12 +19,14 @@ const DeckImportAmaranth = ({
   const [spinnerState, setSpinnerState] = useState(false);
 
   const getIdReference = () => {
-    const VERSION = '2021-12-25';
+    const VERSION = '2022-07-22';
     const url = `${process.env.ROOT_URL}amaranth_ids.json?v=${VERSION}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => data.error === undefined && setIdReference(data));
   };
+
+  if (show && !idReference) getIdReference();
 
   const handleClose = () => {
     handleCloseModal();
@@ -191,10 +193,6 @@ const DeckImportAmaranth = ({
     const deck = await response.json();
     return deck.result;
   };
-
-  useEffect(() => {
-    if (show && !idReference) getIdReference();
-  }, [show]);
 
   return (
     <Modal

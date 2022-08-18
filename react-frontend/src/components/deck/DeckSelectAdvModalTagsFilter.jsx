@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import { useApp } from 'context';
 
@@ -9,20 +9,12 @@ const DeckSelectAdvModalTagsFilter = ({
 }) => {
   const { isMobile } = useApp();
 
-  const [tags, setTags] = useState(undefined);
-
-  useEffect(() => {
-    if (tagsFilter) {
-      setTags(
-        tagsFilter.map((tag) => ({
-          label: tag,
-          value: tag,
-        }))
-      );
-    } else {
-      setTags(undefined);
-    }
-  }, [tagsFilter]);
+  const tags = tagsFilter
+    ? tagsFilter.map((tag) => ({
+        label: tag,
+        value: tag,
+      }))
+    : undefined;
 
   return (
     <Select

@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NewLibraryCard } from 'components';
 
 const InventoryNewLibraryCard = ({ setNewId, setShowAdd, newRef }) => {
-  const [selectedValue, setSelectedValue] = useState(null);
-
-  const addNewCard = () => {
-    setNewId(selectedValue);
-    setSelectedValue('');
+  const addCard = (value) => {
+    setNewId(value);
     setShowAdd && setShowAdd(false);
   };
 
-  useEffect(() => {
-    if (selectedValue) addNewCard();
-  }, [selectedValue]);
-
   return (
     <NewLibraryCard
-      selectedValue={selectedValue}
-      onChange={(value) => setSelectedValue(value.value)}
+      selectedValue={null}
+      onChange={(value) => addCard(value.value)}
       inInventory={true}
       newRef={newRef}
     />
