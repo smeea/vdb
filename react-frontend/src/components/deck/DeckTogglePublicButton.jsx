@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Spinner } from 'react-bootstrap';
+import { Dropdown, Spinner } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ModalConfirmation } from 'components';
+import { countCards } from 'utils';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckTogglePublicButton = ({ deck }) => {
+const DeckTogglePublicButton = ({ deck, isDropdown }) => {
   const { setDecks } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
@@ -49,20 +50,30 @@ const DeckTogglePublicButton = ({ deck }) => {
     setSpinnerState(false);
   };
 
+  const isTooManyCards =
+    countCards(Object.values(deck.crypt)) > 35 ||
+    countCards(Object.values(deck.library)) > 90;
+
   return (
     <>
-      <ButtonIconed
-        variant={isPublished ? 'third' : 'primary'}
-        onClick={() => setShowConfirmation(true)}
-        title={`${isPublished ? 'In' : 'Not in'} Public Deck Archive`}
-        icon={
-          !spinnerState ? (
-            <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
-          ) : (
-            <Spinner animation="border" size="sm" />
-          )
-        }
-      />
+      {isDropdown ? (
+        <Dropdown.Item onClick={() => setShowConfirmation(true)}>
+          {isPublished ? 'Remove from Public' : 'Make Public'}
+        </Dropdown.Item>
+      ) : (
+        <ButtonIconed
+          variant={isPublished ? 'third' : 'primary'}
+          onClick={() => setShowConfirmation(true)}
+          title={`${isPublished ? 'In' : 'Not in'} Public Deck Archive`}
+          icon={
+            !spinnerState ? (
+              <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
+            ) : (
+              <Spinner animation="border" size="sm" />
+            )
+          }
+        />
+      )}
 
       <ModalConfirmation
         show={showConfirmation}
@@ -74,11 +85,15 @@ const DeckTogglePublicButton = ({ deck }) => {
             : `Add "${deck.name}" to Public Deck Archive?`
         }
         mainText={
-          isPublished
+          isTooManyCards
+            ? 'Public Deck cannot have more than 35 crypt and 90 library cards'
+            : isPublished
             ? 'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
             : 'You can remove it from Public Deck Archive at any time'
         }
-        buttonText={`${isPublished ? 'Remove' : 'Make'} Public`}
+        buttonText={
+          isTooManyCards ? null : isPublished ? 'Remove Public' : 'Make Public'
+        }
       />
     </>
   );
