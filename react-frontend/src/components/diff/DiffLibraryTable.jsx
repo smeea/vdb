@@ -96,16 +96,16 @@ const DiffLibraryTable = ({
             <Dash viewBox="0 0 12 12" />
           </div>
         );
-      } else if (qFrom > qTo) {
-        return (
-          <div className="red">
-            <ArrowDown /> {qFrom - qTo}
-          </div>
-        );
       } else if (qFrom < qTo) {
         return (
+          <div className="red">
+            <ArrowDown /> {qTo - qFrom}
+          </div>
+        );
+      } else if (qFrom > qTo) {
+        return (
           <div className="green">
-            <ArrowUp /> {qTo - qFrom}
+            <ArrowUp /> {qFrom - qTo}
           </div>
         );
       }

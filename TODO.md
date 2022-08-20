@@ -8,7 +8,6 @@
 - Filter for TWD Card history
 - Sort for TWD Cards history
 - Review deck (like Compare but without actually creating new deck on the server)
-- Compare mode to add description of what is happening and calculate diff opposite way
 
 # MAYBE LATER FEATURES
 - Comments for PDA

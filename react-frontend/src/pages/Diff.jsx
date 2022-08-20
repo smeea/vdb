@@ -311,7 +311,7 @@ const Diff = (props) => {
         <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
           <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0 pb-xl-4">
             <Col className="px-0 ps-lg-3">
-              <Row className="bold blue mx-0 pb-1">Source Deck:</Row>
+              <Row className="bold blue mx-0 pb-1">Deck You Edit:</Row>
               {selectFrom === 'from-url' ? (
                 <Form
                   name="from"
@@ -446,7 +446,7 @@ const Diff = (props) => {
               </Col>
             )}
             <Col className="pt-1 pt-md-0 px-0 pe-lg-3">
-              <Row className="bold blue mx-0 pb-1">Target Deck:</Row>
+              <Row className="bold blue mx-0 pb-1">Show Changes Against:</Row>
               {selectTo === 'to-url' ? (
                 <Form
                   name="to"
