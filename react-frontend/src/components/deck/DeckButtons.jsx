@@ -12,6 +12,7 @@ import {
   DeckRecommendationButton,
   DeckDrawButton,
   DeckDiffButton,
+  DeckReviewButton,
   DeckBranchCreateButton,
   DeckBranchDeleteButton,
   DeckPublicButton,
@@ -49,6 +50,7 @@ const DeckButtons = ({
           {isAuthor && <DeckPublicButton deck={deck} />}
 
           <DeckDiffButton deckid={deck.deckid} />
+          <DeckReviewButton deckid={deck.deckid} />
           <DeckCopyUrlButton setShowQr={setShowQr} deck={deck} />
           <DeckProxyButton
             deck={deck}

@@ -2,6 +2,7 @@
 export * from 'components/account';
 export * from 'components/deck';
 export * from 'components/diff';
+export * from 'components/review';
 export * from 'components/inventory';
 export * from 'components/result_crypt';
 export * from 'components/result_layout';

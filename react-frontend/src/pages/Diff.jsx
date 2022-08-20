@@ -612,10 +612,7 @@ const Diff = (props) => {
           <Col lg={2} className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
             <div className="sticky-buttons">
               <DiffButtons
-                isAuthor={isAuthor}
-                isPublic={isPublic}
                 deck={deckRouter(activeDeck)}
-                activeDeck={activeDeck}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
                 fromQuery={fromQuery}
@@ -662,7 +659,6 @@ const Diff = (props) => {
               </div>
               <DiffButtons
                 deck={deckRouter(activeDeck)}
-                activeDeck={activeDeck}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
                 fromQuery={fromQuery}

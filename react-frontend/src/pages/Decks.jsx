@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -69,7 +69,6 @@ const Decks = (props) => {
   const [selectFrom, setSelectFrom] = useState('precons');
   const [error, setError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
-  const [allTagsOptions, setAllTagsOptions] = useState(undefined);
 
   const getMissingCrypt = (deck) => {
     const crypt = {};
@@ -200,7 +199,7 @@ const Decks = (props) => {
     inventoryType = deckRouter(activeDeck).inventory_type;
   }
 
-  useEffect(() => {
+  const allTagsOptions = useMemo(() => {
     const allTags = new Set();
 
     if (decks) {
@@ -218,7 +217,7 @@ const Decks = (props) => {
       value: tag,
     }));
 
-    setAllTagsOptions(options);
+    return options;
   }, [decks]);
 
   useEffect(() => {

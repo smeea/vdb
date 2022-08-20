@@ -16,6 +16,7 @@ export { default as DeckCryptTable } from './DeckCryptTable.jsx';
 export { default as DeckCryptTotalInfo } from './DeckCryptTotalInfo.jsx';
 export { default as DeckDeleteButton } from './DeckDeleteButton.jsx';
 export { default as DeckDiffButton } from './DeckDiffButton.jsx';
+export { default as DeckReviewButton } from './DeckReviewButton.jsx';
 export { default as DeckDraw } from './DeckDraw.jsx';
 export { default as DeckDrawButton } from './DeckDrawButton.jsx';
 export { default as DeckDrawCryptTable } from './DeckDrawCryptTable.jsx';

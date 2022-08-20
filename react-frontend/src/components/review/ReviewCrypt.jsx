@@ -11,7 +11,7 @@ import {
 import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
-const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
+const ReviewCrypt = ({ cardsFrom, cardsTo, deckid }) => {
   const {
     cryptDeckSort,
     changeCryptDeckSort,
@@ -75,8 +75,6 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
         toggleShowInfo={toggleShowInfo}
         toggleShowAdd={toggleShowAdd}
         hasBanned={hasBanned}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
         sortMethods={sortMethods}
         sortMethod={cryptDeckSort}
         setSortMethod={changeCryptDeckSort}
@@ -130,8 +128,6 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
       />
@@ -147,14 +143,12 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
             cardsFrom={cardsFrom}
             cardsTo={cardsTo}
             disciplinesSet={disciplinesSet}
-            isAuthor={isAuthor}
-            isPublic={isPublic}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
           />
         </div>
       )}
-      {isMobile && !isPublic && isAuthor && showFloatingButtons && (
+      {isMobile && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"
@@ -178,4 +172,4 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
   );
 };
 
-export default DiffCrypt;
+export default ReviewCrypt;

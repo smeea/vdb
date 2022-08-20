@@ -20,6 +20,7 @@ import Diff from 'pages/Diff.jsx';
 import Inventory from 'pages/Inventory.jsx';
 import Library from 'pages/Library.jsx';
 import Navigation from 'pages/Navigation.jsx';
+import Review from 'pages/Review.jsx';
 import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
 import { UpdateNotification } from 'components';
@@ -75,6 +76,7 @@ const App = (props) => {
               <Route path="inventory" element={<Inventory />} />
               <Route path="decks" element={<Decks />} />
               <Route path="pda" element={<Pda />} />
+              <Route path="review" element={<Review />} />
               <Route path="twd" element={<Twd />} />
               <Route
                 path="twd/deck_check"

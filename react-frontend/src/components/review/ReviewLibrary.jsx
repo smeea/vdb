@@ -15,7 +15,7 @@ import { MASTER } from 'utils/constants';
 import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
+const ReviewLibrary = ({ cardsFrom, cardsTo, deckid }) => {
   const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
@@ -80,8 +80,6 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
         cards={libraryByType[cardtype]}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
       />
     </div>
   ));
@@ -99,8 +97,6 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
         cards={librarySideByType[cardtype]}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
       />
     </div>
   ));
@@ -116,8 +112,6 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
           toggleShowInfo={toggleShowInfo}
           toggleShowAdd={toggleShowAdd}
           hasBanned={hasBanned}
-          isAuthor={isAuthor}
-          isPublic={isPublic}
         />
         {showInfo && (
           <div className="info-message ps-2">
@@ -198,4 +192,4 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
   );
 };
 
-export default DiffLibrary;
+export default ReviewLibrary;

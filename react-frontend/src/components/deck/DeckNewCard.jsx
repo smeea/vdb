@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NewCryptCard, NewLibraryCard } from 'components';
 import { useApp } from 'context';
 
-const DeckNewCard = ({ cards, deckid, setShowAdd }) => {
+const DeckNewCard = ({ target, cards, deckid, setShowAdd }) => {
   const { deckCardChange } = useApp();
   const [selectedValue, setSelectedValue] = useState(null);
 
