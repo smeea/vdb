@@ -338,13 +338,13 @@ export const AppProvider = (props) => {
     return decksData;
   };
 
-  const parseDeckCards = (cards, addZero = true) => {
+  const parseDeckCards = (cards) => {
     const crypt = {};
     const library = {};
 
     if (cards && cryptCardBase && libraryCardBase) {
       Object.keys(cards).map((cardid) => {
-        if (addZero || cards[cardid] > 0) {
+        if (cards[cardid] > 0) {
           if (cardid > 200000) {
             crypt[cardid] = {
               q: cards[cardid],

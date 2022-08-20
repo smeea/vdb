@@ -67,7 +67,7 @@ const AccountLogin = (props) => {
 
   const passwordTooltipText = (
     <>
-      We do not have automatic password restoration yet.
+      There is no automatic password restoration yet.
       <br />
       Please{' '}
       <a
@@ -77,7 +77,9 @@ const AccountLogin = (props) => {
       >
         send me an email
       </a>{' '}
-      with your account username and I will generate temporary password for you.
+      with your username and I will generate temporary password.
+      <br />
+      Usually I do it within a day, but sometimes it takes a bit more.
     </>
   );
 

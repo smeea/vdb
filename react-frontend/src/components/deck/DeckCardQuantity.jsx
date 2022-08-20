@@ -18,43 +18,38 @@ const DeckCardQuantity = ({
 
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(q);
-  const [miss, setMiss] = useState(false);
-
-  const handleManualChange = (event) => {
-    setState(event.target.value ? event.target.value : '');
-  };
-
-  const handleSubmitButton = (event) => {
-    event.preventDefault();
-    cardChange(deckid, cardid, state ? parseInt(state) : 0);
-    setManual(false);
-  };
 
   useEffect(() => {
     if (state != q) setState(q);
   }, [q]);
 
-  useEffect(() => {
+  const handleManualChange = (event) => {
+    setState(event.target.value ? parseInt(event.target.value) : '');
+  };
+
+  const handleSubmitButton = (event) => {
+    event.preventDefault();
+    cardChange(deckid, cardid, state ? state : 0);
+    setManual(false);
+  };
+
+  const miss = useMemo(() => {
     if (inventoryType) {
       if (inProxy) {
-        setMiss(
-          inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
-            ? 'inv-miss-full'
-            : null
-        );
+        return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
+          ? 'inv-miss-full'
+          : null;
       } else {
-        setMiss(
-          inInventory < softUsedMax + hardUsedTotal
-            ? inInventory < q
-              ? 'inv-miss-full'
-              : inventoryType === 'h'
-              ? 'inv-miss-part'
-              : null
+        return inInventory < softUsedMax + hardUsedTotal
+          ? inInventory < q
+            ? 'inv-miss-full'
+            : inventoryType === 'h'
+            ? 'inv-miss-part'
             : null
-        );
+          : null;
       }
     } else {
-      setMiss(null);
+      return null;
     }
   }, [q, inventoryType, inProxy, softUsedMax, hardUsedTotal, isSelected]);
 

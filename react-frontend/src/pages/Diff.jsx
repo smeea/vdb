@@ -138,16 +138,26 @@ const Diff = (props) => {
       credentials: 'include',
     };
     fetch(url, options)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
       .then((data) => {
-        const cardsData = parseDeckCards(deck.cards);
+        const cardsData = parseDeckCards(data.cards);
         data.crypt = cardsData.crypt;
         data.library = cardsData.library;
 
+        delete data.cards;
         addRecentDeck(data);
         setDeck({ [data.deckid]: data });
       })
-      .catch((error) => setError(true));
+      .catch((error) => {
+        if (error.message == 400) {
+          setError('NO DECK WITH THIS ID');
+        } else {
+          setError('CONNECTION PROBLEM');
+        }
+      });
   };
 
   let isPublic;

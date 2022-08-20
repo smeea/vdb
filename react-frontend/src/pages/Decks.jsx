@@ -55,6 +55,7 @@ const Decks = (props) => {
     setShowFloatingButtons,
     showMenuButtons,
     setShowMenuButtons,
+    parseDeckCards,
   } = useApp();
 
   const query = new URLSearchParams(useLocation().search);
@@ -151,22 +152,9 @@ const Decks = (props) => {
         return response.json();
       })
       .then((data) => {
-        data.crypt = {};
-        data.library = {};
-
-        Object.keys(data.cards).map((i) => {
-          if (i > 200000) {
-            data.crypt[i] = {
-              q: data.cards[i],
-              c: cryptCardBase[i],
-            };
-          } else {
-            data.library[i] = {
-              q: data.cards[i],
-              c: libraryCardBase[i],
-            };
-          }
-        });
+        const cardsData = parseDeckCards(data.cards);
+        data.crypt = cardsData.crypt;
+        data.library = cardsData.library;
 
         delete data.cards;
         addRecentDeck(data);
