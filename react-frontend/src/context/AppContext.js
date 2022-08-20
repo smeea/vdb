@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { cardServices, inventoryServices, deckServices } from 'services';
 import { useWindowSize } from 'hooks';
+import { byTimestamp } from 'utils';
 import imbuedClansList from 'assets/data/imbuedClansList.json';
 
 const AppContext = React.createContext();
@@ -556,10 +557,6 @@ export const AppProvider = (props) => {
   };
 
   useEffect(() => {
-    const byTimestamp = (a, b) => {
-      return new Date(b.timestamp) - new Date(a.timestamp);
-    };
-
     if (decks && Object.keys(decks).length) {
       const lastDeckArray = Object.values(decks).sort(byTimestamp);
       setLastDeckId(lastDeckArray[0].deckid);

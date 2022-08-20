@@ -18,7 +18,6 @@
 - Move deck/inventory export in csv/excel to frontend
 - Move deck/inventory import to frontend
 - TWD Cards History performance - react-window
-- Refactor sort functions used in other components (DRY for common like byName)
 - Refactor CSS
 
 # IMPROVE TECHNOLOGY - BACKEND

@@ -1,6 +1,7 @@
+export * from 'utils/commons.js';
+export * from 'utils/sorting.js';
 export { default as drawProbability } from 'utils/drawProbability.js';
 export { default as drawUniqueProbability } from 'utils/drawUniqueProbability.js';
-export * from 'utils/commons.js';
 export { default as resultCryptSort } from 'utils/resultCryptSort.js';
 export { default as resultLibrarySort } from 'utils/resultLibrarySort.js';
 export { default as resultDecksSort } from 'utils/resultDecksSort.js';

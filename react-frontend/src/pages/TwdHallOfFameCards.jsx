@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Tabs, Tab, Accordion } from 'react-bootstrap';
 import { TwdHallFameCardsPlayer } from 'components';
+import { byName } from 'utils';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
@@ -104,10 +105,6 @@ const TwdHallOfFameCards = (props) => {
       Object.keys(getInnovationCards(players[b])).length -
       Object.keys(getInnovationCards(players[a])).length
     );
-  };
-
-  const byName = (a, b) => {
-    return a.localeCompare(b);
   };
 
   return (

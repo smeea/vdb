@@ -1,14 +1,6 @@
-const resultDecksSort = (decks, sortMethod) => {
-  const byName = (a, b) => {
-    if (a.name < b.name) {
-      return -1;
-    }
-    if (a.name > b.name) {
-      return 1;
-    }
-    return 0;
-  };
+import { byName, byTimestamp } from 'utils';
 
+const resultDecksSort = (decks, sortMethod) => {
   const byFavorites = (a, b) => {
     return b.favoritedBy - a.favoritedBy;
   };
@@ -19,10 +11,6 @@ const resultDecksSort = (decks, sortMethod) => {
 
   const byPlayers = (a, b) => {
     return b.players - a.players;
-  };
-
-  const byTimestamp = (a, b) => {
-    return new Date(b.timestamp) - new Date(a.timestamp);
   };
 
   if (decks) {

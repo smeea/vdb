@@ -1,47 +1,6 @@
+import { bySect, byName, byClan, byCapacity, byGroup, byQuantity } from 'utils';
+
 const resultCryptSort = (cards, sortMethod) => {
-  const byName = (a, b) => {
-    const aName = a['ASCII Name'] || a.c['ASCII Name'];
-    const bName = b['ASCII Name'] || b.c['ASCII Name'];
-
-    if (aName < bName) return -1;
-    if (aName > bName) return 1;
-    return 0;
-  };
-
-  const byClan = (a, b) => {
-    const aClan = a.Clan || a.c.Clan;
-    const bClan = b.Clan || b.c.Clan;
-
-    if (aClan < bClan) return -1;
-    if (aClan > bClan) return 1;
-    return 0;
-  };
-
-  const bySect = (a, b) => {
-    const aSect = a.Sect || a.c.Sect;
-    const bSect = b.Sect || b.c.Sect;
-
-    if (aSect < bSect) return -1;
-    if (aSect > bSect) return 1;
-    return 0;
-  };
-
-  const byQuantity = (a, b) => {
-    return b.q - a.q;
-  };
-
-  const byCapacity = (a, b) => {
-    const aCapacity = a.Capacity || a.c.Capacity;
-    const bCapacity = b.Capacity || b.c.Capacity;
-    return bCapacity - aCapacity;
-  };
-
-  const byGroup = (a, b) => {
-    const aGroup = a.Group || a.c.Group;
-    const bGroup = b.Group || b.c.Group;
-    return aGroup - bGroup;
-  };
-
   if (cards) {
     switch (sortMethod) {
       case 'Name':

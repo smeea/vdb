@@ -7,6 +7,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
+import { byName } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const TwdCardsHistory = (props) => {
@@ -16,16 +17,6 @@ const TwdCardsHistory = (props) => {
   const [library, setLibrary] = useState(undefined);
   const [players, setPlayers] = useState(undefined);
   const [tab, setTab] = useState('crypt');
-
-  const byName = (a, b) => {
-    if (a['ASCII Name'] < b['ASCII Name']) {
-      return -1;
-    }
-    if (a['ASCII Name'] > b['ASCII Name']) {
-      return 1;
-    }
-    return 0;
-  };
 
   const {
     currentModalCard,
