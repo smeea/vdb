@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import {
   DeckLibraryTable,
   DeckLibraryTotalInfo,
-  DeckNewLibraryCard,
+  DeckNewCard,
   ResultLibraryType,
   ResultModal,
   DeckDrawProbabilityModal,
@@ -151,10 +151,11 @@ const DeckLibrary = ({
         )}
         {showAdd &&
           (!isMobile ? (
-            <DeckNewLibraryCard
+            <DeckNewCard
               setShowAdd={setShowAdd}
               cards={cards}
               deckid={deckid}
+              target="library"
             />
           ) : (
             <Modal
@@ -174,10 +175,11 @@ const DeckLibrary = ({
                 </Button>
               </Modal.Header>
               <Modal.Body className="p-0">
-                <DeckNewLibraryCard
+                <DeckNewCard
                   setShowAdd={setShowAdd}
                   cards={cards}
                   deckid={deckid}
+                  target="library"
                 />
               </Modal.Body>
             </Modal>

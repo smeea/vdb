@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import {
   DeckCryptTotalInfo,
   DeckCryptTable,
-  DeckNewCryptCard,
+  DeckNewCard,
   DeckCryptHeader,
   ResultModal,
 } from 'components';
@@ -105,10 +105,11 @@ const DeckCrypt = ({
       )}
       {showAdd &&
         (!isMobile ? (
-          <DeckNewCryptCard
+          <DeckNewCard
             setShowAdd={setShowAdd}
             cards={cards}
             deckid={deckid}
+            target="crypt"
           />
         ) : (
           <Modal
@@ -128,10 +129,11 @@ const DeckCrypt = ({
               </Button>
             </Modal.Header>
             <Modal.Body className="p-0">
-              <DeckNewCryptCard
+              <DeckNewCard
                 setShowAdd={setShowAdd}
                 cards={cards}
                 deckid={deckid}
+                target="crypt"
               />
             </Modal.Body>
           </Modal>

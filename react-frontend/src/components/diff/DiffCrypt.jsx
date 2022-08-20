@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import {
   DiffCryptTable,
   DeckCryptTotalInfo,
-  DeckNewCryptCard,
+  DeckNewCard,
   ResultModal,
   DeckCryptHeader,
 } from 'components';
@@ -101,10 +101,11 @@ const DiffCrypt = ({
       )}
       {showAdd &&
         (!isMobile ? (
-          <DeckNewCryptCard
+          <DeckNewCard
             setShowAdd={setShowAdd}
             cards={cardsFrom}
             deckid={deckid}
+            target="crypt"
           />
         ) : (
           <Modal
@@ -121,10 +122,11 @@ const DiffCrypt = ({
               </Button>
             </Modal.Header>
             <Modal.Body className="p-0">
-              <DeckNewCryptCard
+              <DeckNewCard
                 setShowAdd={setShowAdd}
                 cards={cardsFrom}
                 deckid={deckid}
+                target="crypt"
               />
             </Modal.Body>
           </Modal>

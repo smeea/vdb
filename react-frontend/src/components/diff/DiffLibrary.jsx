@@ -6,7 +6,7 @@ import {
   ResultLibraryType,
   ResultModal,
   DeckLibraryTotalInfo,
-  DeckNewLibraryCard,
+  DeckNewCard,
   DeckDrawProbabilityModal,
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
@@ -140,10 +140,11 @@ const DiffLibrary = ({
         )}
         {showAdd &&
           (!isMobile ? (
-            <DeckNewLibraryCard
+            <DeckNewCard
               setShowAdd={setShowAdd}
               cards={cardsFrom}
               deckid={deckid}
+              target="library"
             />
           ) : (
             <Modal
@@ -160,10 +161,11 @@ const DiffLibrary = ({
                 </Button>
               </Modal.Header>
               <Modal.Body className="p-0">
-                <DeckNewLibraryCard
+                <DeckNewCard
                   setShowAdd={setShowAdd}
                   cards={cardsFrom}
                   deckid={deckid}
+                  target="library"
                 />
               </Modal.Body>
             </Modal>
