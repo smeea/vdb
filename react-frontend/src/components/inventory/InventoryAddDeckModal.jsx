@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Modal, Form, Row, Col, FormControl, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
@@ -31,7 +31,6 @@ function InventoryAddDeckModal(props) {
   } = useApp();
 
   const [sortMethod, setSortMethod] = useState('byName');
-  const [sortedDecks, setSortedDecks] = useState([]);
   const [showDeck, setShowDeck] = useState(undefined);
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
@@ -60,7 +59,7 @@ function InventoryAddDeckModal(props) {
     value: tag,
   }));
 
-  useEffect(() => {
+  const sortedDecks = useMemo(() => {
     if (Object.values(decks).length > 0) {
       let filtered = Object.values(decks);
 
@@ -87,8 +86,9 @@ function InventoryAddDeckModal(props) {
         });
       }
 
-      const sorted = resultDecksSort(filtered, sortMethod);
-      setSortedDecks(sorted);
+      return resultDecksSort(filtered, sortMethod);
+    } else {
+      return [];
     }
   }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
 

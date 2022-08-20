@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { useApp } from 'context';
 
@@ -17,10 +17,10 @@ const DeckCardQuantity = ({
   const { isMobile } = useApp();
 
   const [manual, setManual] = useState(false);
-  const [state, setState] = useState(q);
+  const [state, setState] = useState(q ? q : '');
 
   useEffect(() => {
-    if (state != q) setState(q);
+    if (state !== q) setState(q ? q : '');
   }, [q]);
 
   const handleManualChange = (event) => {

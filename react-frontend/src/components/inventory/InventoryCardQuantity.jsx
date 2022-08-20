@@ -11,11 +11,11 @@ const InventoryCardQuantity = ({
   newFocus,
 }) => {
   const { inventoryCardChange, isMobile } = useApp();
-  const [manual, setManual] = useState();
-  const [state, setState] = useState(q);
+  const [manual, setManual] = useState(false);
+  const [state, setState] = useState(q ? q : '');
 
   useEffect(() => {
-    setState(q ? q : '');
+    if (state !== q) setState(q ? q : '');
   }, [q]);
 
   useEffect(() => {

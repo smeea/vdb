@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Cart4 from 'assets/images/icons/cart4.svg';
 import { DeckMissingModal } from 'components';
 import { useApp } from 'context';
@@ -23,8 +23,6 @@ const InventoryMissingButton = ({
   } = useApp();
 
   const [showModal, setShowModal] = useState(undefined);
-  const [missingCrypt, setMissingCrypt] = useState(undefined);
-  const [missingLibrary, setMissingLibrary] = useState({});
 
   const handleClose = () => {
     setShowModal(false);
@@ -32,11 +30,12 @@ const InventoryMissingButton = ({
     setShowFloatingButtons(true);
   };
 
-  useEffect(() => {
-    if (missingByClan) setMissingCrypt(missingByClan[clan]);
+  const missingCrypt = useMemo(() => {
+    if (missingByClan) return missingByClan[clan];
+    else return {};
   }, [clan, missingByClan]);
 
-  useEffect(() => {
+  const missingLibrary = useMemo(() => {
     if (missingByDiscipline && missingByType) {
       const missing = {};
       Object.values(missingByType[type])
@@ -44,7 +43,9 @@ const InventoryMissingButton = ({
           return missingByDiscipline[discipline][i.c.Id];
         })
         .map((i) => (missing[i.c.Id] = i));
-      setMissingLibrary(missing);
+      return missing;
+    } else {
+      return {};
     }
   }, [type, discipline, missingByType, missingByDiscipline]);
 

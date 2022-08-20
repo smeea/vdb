@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Modal, Row, Col, FormControl, Button } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
@@ -26,7 +26,6 @@ const InventoryAddDeckModal = ({
     useApp();
 
   const [sortMethod, setSortMethod] = useState('byDate');
-  const [sortedDecks, setSortedDecks] = useState([]);
   const [showDeck, setShowDeck] = useState(undefined);
   const [nameFilter, setNameFilter] = useState('');
   const [setFilter, setSetFilter] = useState('');
@@ -39,7 +38,7 @@ const InventoryAddDeckModal = ({
     setSetFilter(event.target.value);
   };
 
-  useEffect(() => {
+  const sortedDecks = useMemo(() => {
     if (Object.values(preconDecks).length > 0) {
       let filtered = Object.values(preconDecks);
 
@@ -62,8 +61,9 @@ const InventoryAddDeckModal = ({
         });
       }
 
-      const sorted = resultDecksSort(filtered, sortMethod);
-      setSortedDecks(sorted);
+      return resultDecksSort(filtered, sortMethod);
+    } else {
+      return [];
     }
   }, [preconDecks, nameFilter, setFilter, sortMethod]);
 

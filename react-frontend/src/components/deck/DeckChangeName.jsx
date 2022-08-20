@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import Snow from 'assets/images/icons/snow.svg';
@@ -12,6 +12,10 @@ const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
   const { deckUpdate, isMobile } = useApp();
   const [state, setState] = useState(deck.name);
   const [buttonState, setButtonState] = useState(false);
+
+  useEffect(() => {
+    if (state !== deck.name) setState(deck.name);
+  }, [deck.name]);
 
   const handleChange = (event) => {
     setState(event.target.value);

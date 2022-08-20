@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
+  PdaResultDescription,
   TwdResultTotal,
-  TwdResultDescription,
   TwdResultCrypt,
   TwdResultLibraryByType,
   TwdResultLibraryKeyCards,
@@ -12,36 +12,36 @@ import {
 import { resultDecksSort } from 'utils';
 import { useApp, useSearchResults } from 'context';
 
-const TwdResult = ({ showSearch }) => {
+const PdaResult = ({ showSearch }) => {
   const {
-    setShowTwdSearch,
+    setShowPdaSearch,
     parseDeckCards,
     isMobile,
     showFloatingButtons,
-    twdSearchSort,
-    changeTwdSearchSort,
+    pdaSearchSort,
+    changePdaSearchSort,
   } = useApp();
-  const { twdResults, setTwdResults } = useSearchResults();
+  const { pdaResults, setPdaResults } = useSearchResults();
   const navigate = useNavigate();
   const showCounterStep = 20;
-  const deckCounter = Object.keys(twdResults).length || 0;
+  const deckCounter = Object.keys(pdaResults).length || 0;
   const [showCounter, setShowCounter] = useState(showCounterStep);
 
   const sortMethods = {
     'Date - New to Old': 'D↓',
     'Date - Old to New': 'D↑',
-    Players: 'P',
+    Favorites: 'F',
   };
 
   const handleClear = () => {
-    navigate('/twd');
-    setTwdResults(undefined);
-    setShowTwdSearch(!showSearch);
+    navigate('/pda');
+    setPdaResults(undefined);
+    setShowPdaSearch(!showSearch);
   };
 
   const sortedDecks = useMemo(() => {
-    return resultDecksSort(twdResults, twdSearchSort);
-  }, [twdResults, twdSearchSort]);
+    return resultDecksSort(pdaResults, pdaSearchSort);
+  }, [pdaResults, pdaSearchSort]);
 
   const results = useMemo(() => {
     if (sortedDecks) {
@@ -64,7 +64,7 @@ const TwdResult = ({ showSearch }) => {
                   xl={3}
                   className={isMobile ? 'px-0' : 'ps-0 pe-2'}
                 >
-                  <TwdResultDescription deck={deck} />
+                  <PdaResultDescription deck={deck} />
                 </Col>
                 {isMobile ? (
                   <>
@@ -95,22 +95,22 @@ const TwdResult = ({ showSearch }) => {
         }
       });
     } else return [];
-  }, [sortedDecks, showCounter, twdSearchSort]);
+  }, [sortedDecks, showCounter, pdaSearchSort]);
 
   return (
     <>
-      {!isMobile && (twdResults === null || twdResults.length === 0) && (
+      {!isMobile && (pdaResults === null || pdaResults.length === 0) && (
         <div className="d-flex align-items-center justify-content-center error-message">
-          <b>{twdResults === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
+          <b>{pdaResults === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
         </div>
       )}
-      {twdResults && twdResults.length > 0 && (
+      {pdaResults && pdaResults.length > 0 && (
         <>
           <TwdResultTotal
-            decks={twdResults}
+            decks={pdaResults}
             sortMethods={sortMethods}
-            sortMethod={twdSearchSort}
-            setSortMethod={changeTwdSearchSort}
+            sortMethod={pdaSearchSort}
+            setSortMethod={changePdaSearchSort}
           />
           {results}
           {deckCounter > showCounter && (
@@ -139,4 +139,4 @@ const TwdResult = ({ showSearch }) => {
   );
 };
 
-export default TwdResult;
+export default PdaResult;

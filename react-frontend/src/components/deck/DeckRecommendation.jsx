@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DeckRecommendationModal } from 'components';
 import { useApp } from 'context';
 
 const DeckRecommendation = ({ setShow, isAuthor, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
   const [crypt, setCrypt] = useState(undefined);
   const [library, setLibrary] = useState(undefined);
 
@@ -39,11 +39,8 @@ const DeckRecommendation = ({ setShow, isAuthor, deck }) => {
     setShowFloatingButtons(true);
   };
 
-  useEffect(() => {
-    setShowModal(true);
-    getRecommendation();
-    setShowFloatingButtons(false);
-  }, []);
+  if (!crypt && !library) getRecommendation();
+  setShowFloatingButtons(false);
 
   return (
     <>
