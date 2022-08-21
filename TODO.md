@@ -1,6 +1,7 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
+- OR logic if both Pool and Blood cost
 
 # FEATURES
 - Check TWD
@@ -10,7 +11,6 @@
 - Review deck (like Compare but without actually creating new deck on the server)
 
 # MAYBE LATER FEATURES
-- Comments for PDA
 - Script to update images from static.krcg.org
 
 # IMPROVE TECHNOLOGY - FRONTEND

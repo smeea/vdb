@@ -5,9 +5,14 @@ import { countCards, getCardsArray } from 'utils';
 import { useKeyDisciplines } from 'hooks';
 import { useApp } from 'context';
 
-function getRandomInt(max) {
+const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
-}
+};
+
+const getRandomTransfers = () => {
+  const t = [1, 2, 3, 4, 4];
+  return t[getRandomInt(5)];
+};
 
 const DeckDraw = ({ deck, setShow }) => {
   const { setShowFloatingButtons } = useApp();
@@ -29,16 +34,18 @@ const DeckDraw = ({ deck, setShow }) => {
     return [drawArray, restArray];
   };
 
-  const [showDrawModal, setShowDrawModal] = useState(false);
+  const [showDrawModal, setShowDrawModal] = useState(true);
   const [libraryHandSize, setLibraryHandSize] = useState(7);
   const [cryptHandSize, setCryptHandSize] = useState(4);
-  const [restCrypt, setRestCrypt] = useState(undefined);
-  const [restLibrary, setRestLibrary] = useState(undefined);
+  const [restCrypt, setRestCrypt] = useState(cryptArr);
+  const [restLibrary, setRestLibrary] = useState(libraryArr);
   const [drawedCrypt, setDrawedCrypt] = useState([]);
   const [drawedLibrary, setDrawedLibrary] = useState([]);
   const [burnedCrypt, setBurnedCrypt] = useState([]);
   const [burnedLibrary, setBurnedLibrary] = useState([]);
-  const [initialTransfers, setInitialTransfers] = useState(undefined);
+  const [initialTransfers, setInitialTransfers] = useState(
+    getRandomTransfers()
+  );
 
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
     useKeyDisciplines(deck.crypt, cryptTotal);
@@ -49,27 +56,12 @@ const DeckDraw = ({ deck, setShow }) => {
     setShowFloatingButtons(true);
   };
 
-  const randomTransfers = () => {
-    const t = [1, 2, 3, 4, 4];
-    return t[getRandomInt(5)];
-  };
-
-  useEffect(() => {
-    setInitialTransfers(randomTransfers());
-    setCryptHandSize(4);
-    setLibraryHandSize(7);
-    setBurnedCrypt([]);
-    setBurnedLibrary([]);
-    setDrawedCrypt([]);
-    setDrawedLibrary([]);
-    setRestCrypt(cryptArr);
-    setRestLibrary(libraryArr);
-    setShowDrawModal(true);
-    setShowFloatingButtons(false);
-  }, []);
+  // useEffect(() => {
+  //   setShowFloatingButtons(false);
+  // }, []);
 
   const handleReDrawCrypt = () => {
-    setInitialTransfers(randomTransfers());
+    setInitialTransfers(getRandomTransfers());
     setCryptHandSize(4);
     const [draw, rest] = drawCards(cryptArr, 4);
     setDrawedCrypt(draw);
