@@ -58,11 +58,11 @@ const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
     cryptGroups = 'ERROR IN GROUPS';
   }
 
-  sortedState = useMemo(() => {
+  const sortedState = useMemo(() => {
     return resultCryptSort(crypt, sortMethod).map((c) => c.c.Id);
   }, [timer, sortMethod, cardsToList]);
 
-  sortedSideState = useMemo(() => {
+  const sortedSideState = useMemo(() => {
     return resultCryptSort(cryptSide, sortMethod).map((c) => c.c.Id);
   }, [timer, sortMethod, cardsToList]);
 
