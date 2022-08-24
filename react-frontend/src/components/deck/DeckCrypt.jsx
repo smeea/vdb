@@ -51,7 +51,7 @@ const DeckCrypt = ({
     cryptGroups,
     sortedCards,
     sortedCardsSide,
-  } = useDeckCrypt(cards, cryptDeckSort, changeTimer, deckid);
+  } = useDeckCrypt(cards, cryptDeckSort, changeTimer);
 
   // Disciplines Sort and Key non-Key selection
   const {

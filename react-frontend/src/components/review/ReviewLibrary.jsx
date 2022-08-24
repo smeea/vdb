@@ -15,7 +15,7 @@ import { MASTER } from 'utils/constants';
 import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const ReviewLibrary = ({ cardsFrom, cardsTo, deckid }) => {
+const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
   const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
@@ -73,10 +73,11 @@ const ReviewLibrary = ({ cardsFrom, cardsTo, deckid }) => {
         )}
       </div>
       <DiffLibraryTable
+        isAuthor={true}
+        cardChange={cardChange}
         handleModalCardOpen={handleModalCardOpen}
         libraryTotal={libraryTotal}
         showInfo={showInfo}
-        deckid={deckid}
         cards={libraryByType[cardtype]}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
@@ -92,8 +93,9 @@ const ReviewLibrary = ({ cardsFrom, cardsTo, deckid }) => {
         trifleTotal={cardtype === MASTER && trifleTotal}
       />
       <DiffLibraryTable
+        isAuthor={true}
+        cardChange={cardChange}
         handleModalCardOpen={handleModalSideCardOpen}
-        deckid={deckid}
         cards={librarySideByType[cardtype]}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
@@ -127,7 +129,6 @@ const ReviewLibrary = ({ cardsFrom, cardsTo, deckid }) => {
             <DeckNewCard
               setShowAdd={setShowAdd}
               cards={cardsFrom}
-              deckid={deckid}
               target="library"
             />
           ) : (
@@ -148,7 +149,6 @@ const ReviewLibrary = ({ cardsFrom, cardsTo, deckid }) => {
                 <DeckNewCard
                   setShowAdd={setShowAdd}
                   cards={cardsFrom}
-                  deckid={deckid}
                   target="library"
                 />
               </Modal.Body>

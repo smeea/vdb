@@ -24,6 +24,7 @@ import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 import { useApp } from 'context';
 
 const DiffCryptTable = ({
+  cardChange,
   deckid,
   disciplinesSet,
   keyDisciplines,
@@ -123,8 +124,8 @@ const DiffCryptTable = ({
                     <DeckCardQuantity
                       cardid={card.c.Id}
                       q={qFrom}
-                      deckid={deckid}
-                      cardChange={deckCardChange}
+                      deckid={cardChange ? null : deckid}
+                      cardChange={cardChange ? cardChange : deckCardChange}
                       inInventory={inInventory}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
@@ -137,8 +138,8 @@ const DiffCryptTable = ({
                   <DeckCardQuantity
                     cardid={card.c.Id}
                     q={qFrom}
-                    deckid={deckid}
-                    cardChange={deckCardChange}
+                    deckid={cardChange ? null : deckid}
+                    cardChange={cardChange ? cardChange : deckCardChange}
                   />
                 </td>
               )}

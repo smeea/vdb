@@ -1,14 +1,14 @@
 import React from 'react';
 import { Stack } from 'react-bootstrap';
-import { DiffCopyUrlButton, DiffBackButton } from 'components';
+import { ReviewCopyUrlButton, DiffBackButton } from 'components';
 
-const ReviewButtons = ({ deck }) => {
+const ReviewButtons = ({ deck, urlDiff }) => {
   return (
     <Stack gap={1}>
       {deck && (
         <>
           <DiffBackButton deckid={deck.deckid} />
-          {/* <DiffCopyUrlButton fromQuery={fromQuery} toQuery={toQuery} /> */}
+          <ReviewCopyUrlButton deckid={deck.deckid} urlDiff={urlDiff} />
         </>
       )}
     </Stack>

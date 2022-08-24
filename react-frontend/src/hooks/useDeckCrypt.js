@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 import { countCards, containCard, resultCryptSort } from 'utils';
 import { ANY } from 'utils/constants';
 
-const useDeckCrypt = (cardsList, sortMethod, timer, deckid, cardsToList) => {
+const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
   const cardsFrom = Object.values(cardsList);
-  const cardsTo = cardsToList ? Object.values(cardsToList) : [];
+  const cardsTo = Object.values(cardsToList);
 
   const cryptFrom = Object.values(cardsFrom).filter((card) => card.q > 0);
   const cryptTo = Object.values(cardsTo).filter(

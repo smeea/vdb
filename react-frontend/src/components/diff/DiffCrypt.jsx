@@ -42,7 +42,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
     cryptGroups,
     sortedCards,
     sortedCardsSide,
-  } = useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, deckid, cardsTo);
+  } = useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
 
   // Disciplines Sort and Key non-Key selection
   const {

@@ -11,7 +11,7 @@ import {
 import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
-const ReviewCrypt = ({ cardsFrom, cardsTo, deckid }) => {
+const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   const {
     cryptDeckSort,
     changeCryptDeckSort,
@@ -42,7 +42,7 @@ const ReviewCrypt = ({ cardsFrom, cardsTo, deckid }) => {
     cryptGroups,
     sortedCards,
     sortedCardsSide,
-  } = useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, deckid, cardsTo);
+  } = useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
 
   // Disciplines Sort and Key non-Key selection
   const {
@@ -92,7 +92,6 @@ const ReviewCrypt = ({ cardsFrom, cardsTo, deckid }) => {
           <DeckNewCard
             setShowAdd={setShowAdd}
             cards={cardsFrom}
-            deckid={deckid}
             target="crypt"
           />
         ) : (
@@ -113,15 +112,15 @@ const ReviewCrypt = ({ cardsFrom, cardsTo, deckid }) => {
               <DeckNewCard
                 setShowAdd={setShowAdd}
                 cards={cardsFrom}
-                deckid={deckid}
                 target="crypt"
               />
             </Modal.Body>
           </Modal>
         ))}
       <DiffCryptTable
+        isAuthor={true}
+        cardChange={cardChange}
         handleModalCardOpen={handleModalCardOpen}
-        deckid={deckid}
         cards={sortedCards}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
@@ -137,8 +136,9 @@ const ReviewCrypt = ({ cardsFrom, cardsTo, deckid }) => {
             <b>Side Crypt</b>
           </div>
           <DiffCryptTable
+            isAuthor={true}
+            cardChange={cardChange}
             handleModalCardOpen={handleModalSideCardOpen}
-            deckid={deckid}
             cards={sortedCardsSide}
             cardsFrom={cardsFrom}
             cardsTo={cardsTo}

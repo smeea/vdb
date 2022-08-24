@@ -23,6 +23,7 @@ import { drawProbability } from 'utils';
 import { useApp } from 'context';
 
 const DiffLibraryTable = ({
+  cardChange,
   deckid,
   cards,
   cardsFrom,
@@ -125,8 +126,8 @@ const DiffLibraryTable = ({
                     <DeckCardQuantity
                       cardid={card.c.Id}
                       q={qFrom}
-                      deckid={deckid}
-                      cardChange={deckCardChange}
+                      deckid={cardChange ? null : deckid}
+                      cardChange={cardChange ? cardChange : deckCardChange}
                       inInventory={inInventory}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
@@ -139,8 +140,8 @@ const DiffLibraryTable = ({
                   <DeckCardQuantity
                     cardid={card.c.Id}
                     q={qFrom}
-                    deckid={deckid}
-                    cardChange={deckCardChange}
+                    deckid={cardChange ? null : deckid}
+                    cardChange={cardChange ? cardChange : deckCardChange}
                   />
                 </td>
               )}

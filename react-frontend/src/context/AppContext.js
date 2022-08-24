@@ -864,8 +864,11 @@ export const AppProvider = (props) => {
         deckRouter,
         deckUpdate,
         deckCardChange,
-        changeTimer,
         parseDeckCards,
+        timers,
+        changeTimer,
+        setChangeTimer,
+        setTimers,
 
         // 6 - LISTING Context
         showPdaSearch,
