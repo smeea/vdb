@@ -55,7 +55,9 @@ const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
           readOnly={!isAuthor || isPublic}
         />
         {(isPublic ||
-          (deck.deckid !== 'deckInUrl' && deck.deckid.length !== 32)) && (
+          (deck.deckid !== 'deckInUrl' &&
+            deck.deckid.length !== 32 &&
+            !deck.deckid.includes(':'))) && (
           <InputGroup.Text
             title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}
           >

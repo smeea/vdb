@@ -1,8 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
-- OR logic if both Pool and Blood cost
-- TWD logo for Precon decks
 
 # FEATURES
 - Check TWD
