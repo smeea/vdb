@@ -120,8 +120,6 @@ const Review = (props) => {
           c: cardBase[cardid],
           q: count,
         };
-      } else {
-        delete oldState[cardType][cardid];
       }
 
       return oldState;

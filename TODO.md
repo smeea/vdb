@@ -2,7 +2,6 @@
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - Add New cards to Deck Revision
-- Removing last card from Deck Revision
 
 # FEATURES
 - Check TWD
