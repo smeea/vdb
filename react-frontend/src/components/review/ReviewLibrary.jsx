@@ -16,7 +16,12 @@ import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
-  const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
+  const {
+    nativeLibrary,
+    isMobile,
+    showFloatingButtons,
+    setShowFloatingButtons,
+  } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -141,7 +146,10 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
                 className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
               >
                 <h5>Add Library Card</h5>
-                <Button variant="outline-secondary" onClick={handleClose}>
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => setShowAdd(false)}
+                >
                   <X width="32" height="32" viewBox="0 0 16 16" />
                 </Button>
               </Modal.Header>
@@ -162,7 +170,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           {LibrarySideDeck}
         </div>
       )}
-      {isMobile && isAuthor && !isPublic && showFloatingButtons && (
+      {isMobile && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"

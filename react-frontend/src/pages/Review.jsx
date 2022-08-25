@@ -340,7 +340,7 @@ const Review = (props) => {
                   <X width="32" height="32" viewBox="0 0 16 16" />
                 </Button>
               </div>
-              <ReviewButtons deckid={deckFrom.deckid} urlDiff={urlDiff} />
+              <ReviewButtons deck={deckFrom} urlDiff={urlDiff} />
             </Container>
           </Modal.Body>
         </Modal>
