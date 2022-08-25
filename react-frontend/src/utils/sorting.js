@@ -1,20 +1,20 @@
 export const byName = (a, b) => {
-  const nameA = a['ASCII Name'] || a.c['ASCII Name'];
-  const nameB = b['ASCII Name'] || b.c['ASCII Name'];
+  const nameA = a.c ? a.c['ASCII Name'] : a['ASCII Name'];
+  const nameB = b.c ? b.c['ASCII Name'] : b['ASCII Name'];
 
   return nameA.localeCompare(nameB);
 };
 
 export const byClan = (a, b) => {
-  const clanA = a.Clan || a.c.Clan;
-  const clanB = b.Clan || b.c.Clan;
+  const clanA = a.c ? a.c.Clan : a.Clan;
+  const clanB = b.c ? b.c.Clan : b.Clan;
 
   return clanA.localeCompare(clanB);
 };
 
 export const byClanOpt = (a, b) => {
-  const clanA = a.Clan || a.c.Clan;
-  const clanB = b.Clan || b.c.Clan;
+  const clanA = a.c ? a.c.Clan : a.Clan;
+  const clanB = b.c ? b.c.Clan : b.Clan;
 
   if (clanA && !clanB) return -1;
   if (!clanA && clanB) return 1;
@@ -24,15 +24,15 @@ export const byClanOpt = (a, b) => {
 };
 
 export const byGroup = (a, b) => {
-  const groupA = a.Group || a.c.Group;
-  const groupB = b.Group || b.c.Group;
+  const groupA = a.c ? a.c.Group : a.Group;
+  const groupB = b.c ? b.c.Group : b.Group;
 
   return groupA - groupB;
 };
 
 export const byCapacity = (a, b) => {
-  const capacityA = a.Capacity || a.c.Capacity;
-  const capacityB = b.Capacity || b.c.Capacity;
+  const capacityA = a.c ? a.c.Capacity : a.Capacity;
+  const capacityB = b.c ? b.c.Capacity : b.Capacity;
 
   return capacityB - capacityA;
 };
@@ -42,8 +42,8 @@ export const byQuantity = (a, b) => {
 };
 
 export const byType = (a, b) => {
-  const typeA = a.Type || a.c.Type;
-  const typeB = b.Type || b.c.Type;
+  const typeA = a.c ? a.c.Type : a.Type;
+  const typeB = b.c ? b.c.Type : b.Type;
 
   if (typeA < typeB) return -1;
   if (typeA > typeB) return 1;
@@ -51,10 +51,10 @@ export const byType = (a, b) => {
 };
 
 export const byDiscipline = (a, b) => {
-  const disciplineA = a.Discipline || a.c.Discipline;
-  const disciplineB = b.Discipline || b.c.Discipline;
+  const disciplineA = a.c ? a.c.Discipline : a.Discipline;
+  const disciplineB = b.c ? b.c.Discipline : b.Discipline;
 
-  if (discplineA && !discplineB) return -1;
+  if (disciplineA && !disciplineB) return -1;
   if (!disciplineA && disciplineB) return 1;
   if (disciplineA < disciplineB) return -1;
   if (disciplineA > disciplineB) return 1;
@@ -62,8 +62,8 @@ export const byDiscipline = (a, b) => {
 };
 
 export const byBloodCost = (a, b) => {
-  const costA = a['Blood Cost'] || a.c['Blood Cost'];
-  const costB = b['Blood Cost'] || b.c['Blood Cost'];
+  const costA = a.c ? a.c['Blood Cost'] : a['Blood Cost'];
+  const costB = b.c ? b.c['Blood Cost'] : b['Blood Cost'];
 
   if (!isNaN(costA) && isNaN(costB)) return -1;
   if (!isNaN(costB) && isNaN(costA)) return 1;
@@ -72,8 +72,8 @@ export const byBloodCost = (a, b) => {
 };
 
 export const byPoolCost = (a, b) => {
-  const costA = a['Pool Cost'] || a.c['Pool Cost'];
-  const costB = b['Pool Cost'] || b.c['Pool Cost'];
+  const costA = a.c ? a.c['Pool Cost'] : a['Pool Cost'];
+  const costB = b.c ? b.c['Pool Cost'] : b['Pool Cost'];
 
   if (!isNaN(costA) && isNaN(costB)) return -1;
   if (!isNaN(costB) && isNaN(costA)) return 1;
@@ -82,8 +82,8 @@ export const byPoolCost = (a, b) => {
 };
 
 export const bySect = (a, b) => {
-  const sectA = a.Sect || a.c.Sect;
-  const sectB = b.Sect || b.c.Sect;
+  const sectA = a.c ? a.c.Sect : a.Sect;
+  const sectB = b.c ? b.c.Sect : b.Sect;
 
   if (sectA < sectB) return -1;
   if (sectA > sectB) return 1;
