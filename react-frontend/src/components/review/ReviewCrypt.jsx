@@ -122,6 +122,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
           </Modal>
         ))}
       <DiffCryptTable
+        inReview
         isAuthor={true}
         cardChange={cardChange}
         handleModalCardOpen={handleModalCardOpen}
@@ -140,6 +141,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
             <b>Side Crypt</b>
           </div>
           <DiffCryptTable
+            inReview
             isAuthor={true}
             cardChange={cardChange}
             handleModalCardOpen={handleModalSideCardOpen}

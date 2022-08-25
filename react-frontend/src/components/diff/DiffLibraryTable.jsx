@@ -34,6 +34,7 @@ const DiffLibraryTable = ({
   showInfo,
   libraryTotal,
   handleModalCardOpen,
+  inReview,
 }) => {
   const {
     decks,
@@ -65,7 +66,7 @@ const DiffLibraryTable = ({
     let softUsedMax = 0;
     let hardUsedTotal = 0;
 
-    if (decks && inventoryMode) {
+    if (decks && inventoryMode && !inReview) {
       if (inventoryLibrary[card.c.Id]) {
         inInventory = inventoryLibrary[card.c.Id].q;
       }
@@ -117,7 +118,7 @@ const DiffLibraryTable = ({
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {isAuthor && !isPublic ? (
             <>
-              {inventoryMode && decks ? (
+              {inventoryMode && decks && !inReview ? (
                 <OverlayTrigger
                   placement="right"
                   overlay={<UsedPopover cardid={card.c.Id} />}

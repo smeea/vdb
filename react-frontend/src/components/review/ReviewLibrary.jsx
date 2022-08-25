@@ -78,6 +78,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
         )}
       </div>
       <DiffLibraryTable
+        inReview
         isAuthor={true}
         cardChange={cardChange}
         handleModalCardOpen={handleModalCardOpen}
@@ -98,6 +99,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
         trifleTotal={cardtype === MASTER && trifleTotal}
       />
       <DiffLibraryTable
+        inReview
         isAuthor={true}
         cardChange={cardChange}
         handleModalCardOpen={handleModalSideCardOpen}

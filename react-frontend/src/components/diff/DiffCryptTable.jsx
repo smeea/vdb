@@ -38,6 +38,7 @@ const DiffCryptTable = ({
   showInfo,
   cryptTotal,
   handleModalCardOpen,
+  inReview,
 }) => {
   const {
     decks,
@@ -72,7 +73,7 @@ const DiffCryptTable = ({
     let softUsedMax = 0;
     let hardUsedTotal = 0;
 
-    if (decks && inventoryMode) {
+    if (decks && inventoryMode && !inReview) {
       if (inventoryCrypt[card.c.Id]) {
         inInventory = inventoryCrypt[card.c.Id].q;
       }
@@ -115,7 +116,7 @@ const DiffCryptTable = ({
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {isAuthor && !isPublic ? (
             <>
-              {inventoryMode && decks ? (
+              {!inReview && inventoryMode && decks ? (
                 <OverlayTrigger
                   placement="right"
                   overlay={<UsedPopover cardid={card.c.Id} />}
