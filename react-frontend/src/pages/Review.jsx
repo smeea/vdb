@@ -24,6 +24,7 @@ const Review = (props) => {
     showMenuButtons,
     setShowMenuButtons,
     parseDeckCards,
+    preconDecks,
     timers,
     setTimers,
     changeTimer,
@@ -69,6 +70,11 @@ const Review = (props) => {
           setError('CONNECTION PROBLEM');
         }
       });
+  };
+
+  const getPreconDeck = (deckid) => {
+    setDeckFrom(preconDecks[deckid]);
+    setDeckTo(JSON.parse(JSON.stringify(preconDecks[deckid])));
   };
 
   const getDiff = (cardsFrom, cardsTo) => {
@@ -180,22 +186,22 @@ const Review = (props) => {
         });
       }
     }
-  }, [hash, deckTo]);
+  }, [deckTo]);
 
   useEffect(() => {
     if (
       (!deckFrom || query.get('id') !== deckFrom.deckid) &&
       cryptCardBase &&
-      libraryCardBase
+      libraryCardBase &&
+      Object.keys(preconDecks).length
     ) {
       if (query.get('id').includes(':')) {
-        // TODO PRECON
-        // getPreconDeck(query.get('id'));
+        getPreconDeck(query.get('id'));
       } else {
         getDeck(query.get('id'));
       }
     }
-  }, [query, cryptCardBase, libraryCardBase]);
+  }, [query, preconDecks, cryptCardBase, libraryCardBase]);
 
   return (
     <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">

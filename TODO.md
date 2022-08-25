@@ -2,13 +2,13 @@
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - OR logic if both Pool and Blood cost
+- TWD logo for Precon decks
 
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
 - Filter for TWD Card history
 - Sort for TWD Cards history
-- Review deck (like Compare but without actually creating new deck on the server)
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
