@@ -16,6 +16,7 @@
 - Move deck/inventory import to frontend
 - TWD Cards History performance - react-window
 - Refactor CSS
+- Dont bundle bootstrap-icons (use from npm)
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - inventory
