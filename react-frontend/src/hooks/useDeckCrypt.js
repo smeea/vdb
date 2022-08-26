@@ -60,15 +60,16 @@ const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
 
   const sortedState = useMemo(() => {
     return resultCryptSort(crypt, sortMethod).map((c) => c.c.Id);
-  }, [timer, sortMethod, cardsToList]);
+  }, [timer, sortMethod]);
 
   const sortedSideState = useMemo(() => {
     return resultCryptSort(cryptSide, sortMethod).map((c) => c.c.Id);
-  }, [timer, sortMethod, cardsToList]);
+  }, [timer, sortMethod]);
 
   const sortedCards = crypt.sort((a, b) => {
     return sortedState.indexOf(a.c.Id) - sortedState.indexOf(b.c.Id);
   });
+
   const sortedCardsSide = cryptSide.sort((a, b) => {
     return sortedSideState.indexOf(a.c.Id) - sortedSideState.indexOf(b.c.Id);
   });
