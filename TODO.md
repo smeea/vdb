@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
-- Decrementing cards in review
 
 # FEATURES
 - Check TWD

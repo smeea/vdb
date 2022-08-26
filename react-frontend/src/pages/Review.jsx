@@ -110,41 +110,42 @@ const Review = (props) => {
   }, [deckFrom]);
 
   const cardChange = (undefined, cardid, count) => {
-    const cardType = cardid > 200000 ? 'crypt' : 'library';
-    const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
+    if (count >= 0) {
+      const cardSrc = cardid > 200000 ? 'crypt' : 'library';
+      const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
 
-    setDeckFrom((prevState) => {
-      const oldState = { ...prevState };
-      if (count >= 0) {
-        oldState[cardType][cardid] = {
-          c: cardBase[cardid],
-          q: count,
-        };
-      }
+      setDeckFrom((prevState) => ({
+        ...prevState,
+        [cardSrc]: {
+          ...prevState[cardSrc],
+          [cardid]: {
+            c: cardBase[cardid],
+            q: count,
+          },
+        },
+      }));
 
-      return oldState;
-    });
-
-    const startTimer = () => {
-      let counter = 1;
-      timers.map((timerId) => {
-        clearInterval(timerId);
-      });
-      setTimers([]);
-
-      const timerId = setInterval(() => {
-        if (counter > 0) {
-          counter = counter - 1;
-        } else {
+      const startTimer = () => {
+        let counter = 1;
+        timers.map((timerId) => {
           clearInterval(timerId);
-          setChangeTimer(!changeTimer);
-        }
-      }, 500);
+        });
+        setTimers([]);
 
-      setTimers([...timers, timerId]);
-    };
+        const timerId = setInterval(() => {
+          if (counter > 0) {
+            counter = counter - 1;
+          } else {
+            clearInterval(timerId);
+            setChangeTimer(!changeTimer);
+          }
+        }, 500);
 
-    startTimer();
+        setTimers([...timers, timerId]);
+      };
+
+      startTimer();
+    }
   };
 
   useEffect(() => {

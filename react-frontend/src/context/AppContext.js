@@ -473,7 +473,7 @@ export const AppProvider = (props) => {
       body: JSON.stringify({ cardChange: { [cardid]: count } }),
     };
 
-    const cardType = cardid > 200000 ? 'crypt' : 'library';
+    const cardSrc = cardid > 200000 ? 'crypt' : 'library';
     const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
     let initialState = {};
 
@@ -483,12 +483,12 @@ export const AppProvider = (props) => {
       setDecks((prevState) => {
         const oldState = { ...prevState };
         if (count >= 0) {
-          oldState[deckid][cardType][cardid] = {
+          oldState[deckid][cardSrc][cardid] = {
             c: cardBase[cardid],
             q: count,
           };
         } else {
-          delete oldState[deckid][cardType][cardid];
+          delete oldState[deckid][cardSrc][cardid];
         }
 
         return oldState;
@@ -501,12 +501,12 @@ export const AppProvider = (props) => {
       setSharedDeck((prevState) => {
         const oldState = { ...prevState };
         if (count >= 0) {
-          oldState[deckid][cardType][cardid] = {
+          oldState[deckid][cardSrc][cardid] = {
             c: cardBase[cardid],
             q: count,
           };
         } else {
-          delete oldState[deckid][cardType][cardid];
+          delete oldState[deckid][cardSrc][cardid];
         }
         return oldState;
       });
