@@ -8,16 +8,26 @@ import {
   AccountChangeEmail,
   AccountChangeName,
   AccountDeleteButton,
+  Banner,
 } from 'components';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import { useApp } from 'context';
 
-function Account(props) {
-  const { username } = useApp();
+const Account = (props) => {
+  const { isMobile, username } = useApp();
 
   return (
     <Container className="main-container">
-      <Row className="align-items-center justify-content-center py-3 vh-80">
+      <Row className="align-items-center justify-content-center p-0">
+        <Col xs={12} md={7} lg={6} xl={5} className="px-0">
+          <Banner />
+        </Col>
+      </Row>
+      <Row
+        className={`align-items-center justify-content-center vh-${
+          isMobile ? 80 : 70
+        }`}
+      >
         <Col xs={12} md={7} lg={6} xl={5}>
           {username ? (
             <>
@@ -51,6 +61,6 @@ function Account(props) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Account;

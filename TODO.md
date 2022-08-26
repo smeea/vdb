@@ -1,13 +1,14 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
-- Login in Decks on mobile bad x-margin
+- Decrementing cards in review
 
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
 - Filter for TWD Card history
 - Sort for TWD Cards history
+- Standard tags to PDA
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org

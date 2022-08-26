@@ -593,9 +593,8 @@ const Decks = (props) => {
           </Col>
         )}
       </Row>
-
       {!username && !query.get('id') && !hash && (
-        <Row className="align-items-center justify-content-center p-3 vh-60">
+        <Row className="align-items-center justify-content-center mx-0 vh-70">
           <Col xs={12} md={9} lg={6} xl={5}>
             <div className="d-flex justify-content-center pt-4">
               <h6>Login required to create decks</h6>
