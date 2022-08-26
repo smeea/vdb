@@ -1,8 +1,12 @@
-import { byName, byTimestamp } from 'utils';
+import { byTimestamp } from 'utils';
 
 const resultDecksSort = (decks, sortMethod) => {
   const byFavorites = (a, b) => {
     return b.favoritedBy - a.favoritedBy;
+  };
+
+  const byName = (a, b) => {
+    return a.name.localeCompare(b.name);
   };
 
   const byDate = (a, b) => {
