@@ -597,10 +597,10 @@ const Decks = (props) => {
       {!username && !query.get('id') && !hash && (
         <Row className="align-items-center justify-content-center p-3 vh-60">
           <Col xs={12} md={9} lg={6} xl={5}>
-            <div className="d-flex justify-content-center pb-0">
+            <div className="d-flex justify-content-center pt-4">
               <h6>Login required to create decks</h6>
             </div>
-            <div className="d-flex justify-content-center pb-3">
+            <div className="d-flex justify-content-center">
               <h6 className="small">
                 (You can browse preconstructed decks without login)
               </h6>

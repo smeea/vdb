@@ -14,6 +14,7 @@ const DeckLibraryHeader = (props) => {
     hasBanned,
     isAuthor,
     isPublic,
+    inReview,
   } = props;
 
   return (
@@ -61,7 +62,7 @@ const DeckLibraryHeader = (props) => {
         >
           <InfoCircle />
         </Button>
-        {isAuthor && !isPublic && !isMobile && (
+        {(inReview || (isAuthor && !isPublic)) && !isMobile && (
           <div className="ps-1">
             <Button
               title="Add Card"

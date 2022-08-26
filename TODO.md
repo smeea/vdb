@@ -1,8 +1,7 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
-- Add New cards to Deck Revision
-- Mark removed cards in Deck Revision as '-'
+- Login in Decks on mobile bad x-margin
 
 # FEATURES
 - Check TWD

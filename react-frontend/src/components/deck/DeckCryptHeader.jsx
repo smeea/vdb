@@ -16,6 +16,7 @@ const DeckCryptHeader = ({
   sortMethods,
   sortMethod,
   setSortMethod,
+  inReview,
 }) => {
   const { isMobile } = useApp();
 
@@ -49,7 +50,7 @@ const DeckCryptHeader = ({
           >
             <InfoCircle />
           </Button>
-          {isAuthor && !isPublic && !isMobile && (
+          {(inReview || (isAuthor && !isPublic)) && !isMobile && (
             <Button
               title="Add Card"
               variant="primary"

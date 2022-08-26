@@ -121,6 +121,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           toggleShowInfo={toggleShowInfo}
           toggleShowAdd={toggleShowAdd}
           hasBanned={hasBanned}
+          inReview
         />
         {showInfo && (
           <div className="info-message ps-2">
@@ -137,6 +138,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
               setShowAdd={setShowAdd}
               cards={cardsFrom}
               target="library"
+              cardChange={cardChange}
             />
           ) : (
             <Modal
@@ -160,6 +162,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
                   setShowAdd={setShowAdd}
                   cards={cardsFrom}
                   target="library"
+                  cardChange={cardChange}
                 />
               </Modal.Body>
             </Modal>

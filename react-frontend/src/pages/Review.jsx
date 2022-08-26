@@ -82,7 +82,7 @@ const Review = (props) => {
 
     [...Object.keys(cardsFrom), ...Object.keys(cardsTo)].map((cardid) => {
       const fromQty = cardsFrom[cardid] ? cardsFrom[cardid].q : 0;
-      const toQty = cardsTo[cardid].q ? cardsTo[cardid].q : 0;
+      const toQty = cardsTo[cardid] ? cardsTo[cardid].q : 0;
       if (fromQty !== toQty) {
         diff[cardid] = fromQty - toQty;
       }
@@ -160,12 +160,12 @@ const Review = (props) => {
           const j = i.split('=');
           if (j[0] > 200000) {
             deckWithHash.crypt[j[0]] = {
-              q: deckWithHash.crypt[j[0]].q + parseInt(j[1]),
+              q: (deckWithHash.crypt[j[0]]?.q || 0) + parseInt(j[1]),
               c: cryptCardBase[j[0]],
             };
           } else {
             deckWithHash.library[j[0]] = {
-              q: deckWithHash.library[j[0]].q + parseInt(j[1]),
+              q: (deckWithHash.library[j[0]]?.q || 0) + parseInt(j[1]),
               c: libraryCardBase[j[0]],
             };
           }

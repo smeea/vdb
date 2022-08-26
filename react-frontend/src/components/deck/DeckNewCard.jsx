@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { NewCryptCard, NewLibraryCard } from 'components';
 import { useApp } from 'context';
 
-const DeckNewCard = ({ target, cards, deckid, setShowAdd }) => {
+const DeckNewCard = ({ target, cards, deckid, setShowAdd, cardChange }) => {
   const { deckCardChange } = useApp();
   const [selectedValue, setSelectedValue] = useState(null);
 
+  const changeAction = cardChange ? cardChange : deckCardChange;
+
   const addNewCard = () => {
     if (!(cards[selectedValue] && cards[selectedValue].q > 0)) {
-      deckCardChange(deckid, selectedValue, 1);
+      changeAction(deckid, selectedValue, 1);
     }
     setSelectedValue('');
     setShowAdd && setShowAdd(false);

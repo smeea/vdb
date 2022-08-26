@@ -79,6 +79,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         sortMethods={sortMethods}
         sortMethod={cryptDeckSort}
         setSortMethod={changeCryptDeckSort}
+        inReview
       />
       {showInfo && (
         <div className="info-message px-2">
@@ -94,6 +95,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
             setShowAdd={setShowAdd}
             cards={cardsFrom}
             target="crypt"
+            cardChange={cardChange}
           />
         ) : (
           <Modal
@@ -117,6 +119,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
                 setShowAdd={setShowAdd}
                 cards={cardsFrom}
                 target="crypt"
+                cardChange={cardChange}
               />
             </Modal.Body>
           </Modal>

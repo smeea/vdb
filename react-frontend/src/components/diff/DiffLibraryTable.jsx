@@ -92,10 +92,10 @@ const DiffLibraryTable = ({
     const DiffStatus = () => {
       if (qFrom == qTo) {
         return '';
-      } else if (qTo == 0) {
+      } else if (qFrom == 0) {
         return (
-          <div className="red">
-            <Dash viewBox="0 0 12 12" />
+          <div className="red pb-1">
+            <Dash viewBox="0 0 12 14" />
           </div>
         );
       } else if (qFrom < qTo) {
