@@ -1,7 +1,6 @@
 from flask import jsonify, request, Response
 from flask_login import current_user, login_required
 import json
-
 from deck_export import deck_export
 from inventory_import import inventory_import
 from api import app, db, login
@@ -31,17 +30,13 @@ def unauthorized_handler():
 
 
 @app.route("/api/inventory/export", methods=["POST"])
-def inventoryExportRoute():
-    try:
-        return deck_export(current_user.inventory, request.json["format"])
-
-    except Exception:
-        pass
+def inventory_export_route():
+    return deck_export(current_user.inventory, request.json["format"])
 
 
 @app.route("/api/inventory/import", methods=["POST"])
 @login_required
-def inventoryImportRoute():
+def inventory_import_route():
     i = current_user.inventory
     try:
         new_cards = inventory_import(request.json)
@@ -58,79 +53,50 @@ def inventoryImportRoute():
         return jsonify(new_cards)
 
     except Exception:
-        return jsonify("error")
+        return Abort(400)
 
 
-@app.route("/api/inventory/delete", methods=["GET"])
+@app.route("/api/inventory", methods=["DELETE"])
 @login_required
-def deleteInventory():
+def delete_inventory():
     current_user.inventory = {}
     db.session.commit()
     return jsonify({"delete inventory": "success"})
 
 
-@app.route("/api/inventory/add", methods=["POST"])
+@app.route("/api/inventory", methods=["PATCH"])
 @login_required
-def inventoryAddCard():
+def inventory_add_cards():
     i = current_user.inventory
-    try:
-        new_cards = request.json
-        merged_cards = i.copy() if i else {}
-        for k, v in new_cards.items():
-            k = int(k)
-            if k not in merged_cards:
-                merged_cards[k] = v
-            else:
-                merged_cards[k] = merged_cards[k] + v
-
-        current_user.inventory = merged_cards.copy()
-        db.session.commit()
-        return jsonify({"inventory card added": "success"})
-
-    except Exception:
-        pass
-
-
-@app.route("/api/inventory/del", methods=["POST"])
-@login_required
-def inventoryDelCard():
-    i = current_user.inventory
-    try:
-        new_cards = request.json
-        merged_cards = i.copy() if i else {}
-        for k, v in new_cards.items():
-            k = int(k)
-            if k in merged_cards:
-                if merged_cards[k] > v:
-                    merged_cards[k] = merged_cards[k] - v
-                else:
-                    del merged_cards[k]
-
-        current_user.inventory = merged_cards.copy()
-        db.session.commit()
-        return jsonify({"inventory card deleted": "success"})
-
-    except Exception:
-        pass
-
-
-@app.route("/api/inventory/change", methods=["POST"])
-@login_required
-def inventoryChangeCard():
-    i = current_user.inventory
-    try:
-        new_cards = request.json
-        merged_cards = i.copy() if i else {}
-        for k, v in new_cards.items():
-            k = int(k)
-            if v < 0:
+    new_cards = request.json
+    merged_cards = i.copy() if i else {}
+    for k, v in new_cards.items():
+        k = int(k)
+        if k in merged_cards:
+            if merged_cards[k] + v < 0:
                 del merged_cards[k]
             else:
-                merged_cards[k] = v
+                merged_cards[k] = merged_cards[k] + v
+        elif v >= 0:
+            merged_cards[k] = v
 
-        current_user.inventory = merged_cards.copy()
-        db.session.commit()
-        return jsonify({"inventory card change": "success"})
+    current_user.inventory = merged_cards.copy()
+    db.session.commit()
+    return jsonify({"inventory card added": "success"})
 
-    except Exception:
-        pass
+@app.route("/api/inventory", methods=["PUT"])
+@login_required
+def inventory_change_card():
+    i = current_user.inventory
+    new_cards = request.json
+    merged_cards = i.copy() if i else {}
+    for k, v in new_cards.items():
+        k = int(k)
+        if v < 0:
+            del merged_cards[k]
+        else:
+            merged_cards[k] = v
+
+    current_user.inventory = merged_cards.copy()
+    db.session.commit()
+    return jsonify({"inventory card change": "success"})

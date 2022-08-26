@@ -23,9 +23,9 @@ const InventoryDelete = (props) => {
   };
 
   const deleteInventory = () => {
-    const url = `${process.env.API_URL}inventory/delete`;
+    const url = `${process.env.API_URL}inventory`;
     const options = {
-      method: 'GET',
+      method: 'DELETE',
       mode: 'cors',
       credentials: 'include',
     };

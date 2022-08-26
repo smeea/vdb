@@ -7,7 +7,6 @@
 - Show changes from base deck in PDA
 - Filter for TWD Card history
 - Sort for TWD Cards history
-- Standard tags to PDA
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
@@ -17,10 +16,9 @@
 - Move deck/inventory import to frontend
 - TWD Cards History performance - react-window
 - Refactor CSS
-- Dont bundle bootstrap-icons (use from npm)
+- Refactor inventoryDeckAdd/Delete, inventoryAddTo/DeleteFromState for +-qty
 
 # IMPROVE TECHNOLOGY - BACKEND
-- Improve API endpoints - inventory
 - Improve API endpoints - decks
 
 # REFACTORING TODO - Andrey

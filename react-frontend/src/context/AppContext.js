@@ -74,9 +74,7 @@ export const AppProvider = (props) => {
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [showMenuButtons, setShowMenuButtons] = useState(false);
 
-  // ---------------------------------------------------------------------------
-  //                            CARD BASE
-  // ---------------------------------------------------------------------------
+  // CARD BASE
 
   useEffect(() => {
     cardServices.getCardBase().then((data) => {
@@ -100,9 +98,7 @@ export const AppProvider = (props) => {
     });
   }, []);
 
-  // ---------------------------------------------------------------------------
-  //                            USER FUNCTIONS
-  // ---------------------------------------------------------------------------
+  // USER FUNCTIONS
 
   const whoAmI = () => {
     const url = `${process.env.API_URL}account`;
@@ -152,9 +148,7 @@ export const AppProvider = (props) => {
     }
   }, [cryptCardBase, libraryCardBase]);
 
-  // ---------------------------------------------------------------------------
-  //                          LANGUAGE FUNCTIONS
-  // ---------------------------------------------------------------------------
+  // LANGUAGE FUNCTIONS
 
   const changeLang = (lang) => {
     setLang(lang);
@@ -224,9 +218,7 @@ export const AppProvider = (props) => {
     }
   }, [lang, nativeCrypt, nativeLibrary]);
 
-  // ---------------------------------------------------------------------------
-  //                          APP DATA FUNCTIONS
-  // ---------------------------------------------------------------------------
+  // APP DATA FUNCTIONS
 
   const toggleShowImage = () => {
     setShowImage(!showImage);
@@ -306,9 +298,7 @@ export const AppProvider = (props) => {
     initFromStorage('recentDecks', [], setRecentDecks);
   }, []);
 
-  // ---------------------------------------------------------------------------
-  //                          DECK FUNCTIONS
-  // ---------------------------------------------------------------------------
+  // DECK FUNCTIONS
 
   const parseDecksData = (decksData) => {
     if (cryptCardBase && libraryCardBase) {
@@ -578,9 +568,7 @@ export const AppProvider = (props) => {
     }
   }, [lastDeckId]);
 
-  // ---------------------------------------------------------------------------
-  //                          INVENTORY FUNCTIONS
-  // ---------------------------------------------------------------------------
+  // INVENTORY FUNCTIONS
 
   const parseInventoryData = (inventoryData) => {
     Object.keys(inventoryData.crypt).map((i) => {
@@ -653,9 +641,9 @@ export const AppProvider = (props) => {
       }
     });
 
-    const url = `${process.env.API_URL}inventory/add`;
+    const url = `${process.env.API_URL}inventory`;
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       mode: 'cors',
       credentials: 'include',
       headers: {
@@ -675,29 +663,32 @@ export const AppProvider = (props) => {
   };
 
   const inventoryDeckDelete = (deck) => {
-    const cards = {};
+    const cards = {}; // TODO use CardsRel instead
+    const cardsRel = {};
 
     Object.keys(deck.crypt).forEach((card) => {
       if (deck.crypt[card].q) {
         cards[card] = deck.crypt[card].q;
+        cardsRel[card] = -deck.crypt[card].q;
       }
     });
 
     Object.keys(deck.library).forEach((card) => {
       if (deck.library[card].q) {
         cards[card] = deck.library[card].q;
+        cardsRel[card] = -deck.library[card].q;
       }
     });
 
-    const url = `${process.env.API_URL}inventory/del`;
+    const url = `${process.env.API_URL}inventory`;
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       mode: 'cors',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(cards),
+      body: JSON.stringify(cardsRel),
     };
 
     const oldCryptState = { ...inventoryCrypt };
@@ -743,9 +734,9 @@ export const AppProvider = (props) => {
   };
 
   const inventoryCardChange = (cardid, count) => {
-    const url = `${process.env.API_URL}inventory/change`;
+    const url = `${process.env.API_URL}inventory`;
     const options = {
-      method: 'POST',
+      method: 'PUT',
       mode: 'cors',
       credentials: 'include',
       headers: {
@@ -795,7 +786,7 @@ export const AppProvider = (props) => {
   return (
     <AppContext.Provider
       value={{
-        // 1 - APP Context
+        // APP Context
         isMobile,
         isNarrow,
         isWide,
@@ -817,7 +808,7 @@ export const AppProvider = (props) => {
         showMenuButtons,
         setShowMenuButtons,
 
-        // 2 - USER Context
+        // USER Context
         whoAmI,
         username,
         setUsername,
@@ -828,7 +819,7 @@ export const AppProvider = (props) => {
         initializeUserData,
         initializeUnauthenticatedUser,
 
-        // 3 - CARDBASE Context
+        // CARDBASE Context
         cryptCardBase,
         libraryCardBase,
         localizedCrypt,
@@ -836,7 +827,7 @@ export const AppProvider = (props) => {
         nativeCrypt,
         nativeLibrary,
 
-        // 4 - INVENTORY Context
+        // INVENTORY Context
         inventoryCrypt,
         setInventoryCrypt,
         inventoryLibrary,
@@ -849,7 +840,7 @@ export const AppProvider = (props) => {
         usedLibraryCards,
         inventoryCardChange,
 
-        // 5 - DECK Context
+        // DECK Context
         preconDecks,
         decks,
         setDecks,
@@ -870,7 +861,7 @@ export const AppProvider = (props) => {
         setChangeTimer,
         setTimers,
 
-        // 6 - LISTING Context
+        // LISTING Context
         showPdaSearch,
         setShowPdaSearch,
         showTwdSearch,
@@ -880,7 +871,7 @@ export const AppProvider = (props) => {
         showLibrarySearch,
         setShowLibrarySearch,
 
-        // 7 - SORTING Context
+        // SORTING Context
         cryptSearchSort,
         changeCryptSearchSort,
         librarySearchSort,
