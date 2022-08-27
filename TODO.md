@@ -1,11 +1,11 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
+- Crypt sorting in review (works in Deck!)
 
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
-- Filter for TWD Card history
 - Sort for TWD Cards history
 - Language-sensitive export
 

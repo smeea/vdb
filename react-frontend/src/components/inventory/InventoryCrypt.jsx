@@ -46,118 +46,118 @@ const InventoryCrypt = ({
   });
 
   if (compact) {
-    Object.keys(cards).map((card) => {
+    Object.keys(cards).map((cardid) => {
       cardsByClan['All'] = {
-        card: cards[card],
+        card: cards[cardid],
       };
     });
   } else {
-    Object.keys(cards).map((card) => {
-      const i = cards[card].c.Clan;
+    Object.keys(cards).map((cardid) => {
+      const i = cards[cardid].c.Clan;
 
       let softUsedMax = 0;
-      if (usedCryptCards.soft[card]) {
-        Object.keys(usedCryptCards.soft[card]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[card][id]) {
-            softUsedMax = usedCryptCards.soft[card][id];
+      if (usedCryptCards.soft[cardid]) {
+        Object.keys(usedCryptCards.soft[cardid]).map((id) => {
+          if (softUsedMax < usedCryptCards.soft[cardid][id]) {
+            softUsedMax = usedCryptCards.soft[cardid][id];
           }
         });
       }
 
       let hardUsedTotal = 0;
-      if (usedCryptCards.hard[card]) {
-        Object.keys(usedCryptCards.hard[card]).map((id) => {
-          hardUsedTotal += usedCryptCards.hard[card][id];
+      if (usedCryptCards.hard[cardid]) {
+        Object.keys(usedCryptCards.hard[cardid]).map((id) => {
+          hardUsedTotal += usedCryptCards.hard[cardid][id];
         });
       }
 
-      const miss = softUsedMax + hardUsedTotal - cards[card].q;
+      const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
 
       if (miss > 0) {
-        missingByClan[i][card] = { q: miss, c: cards[card].c };
-        missingByClan['All'][card] = {
+        missingByClan[i][cardid] = { q: miss, c: cards[cardid].c };
+        missingByClan['All'][cardid] = {
           q: miss,
-          c: cards[card].c,
+          c: cards[cardid].c,
         };
       }
 
       if (category === 'nok') {
         if (miss > 0) {
-          cardsByClan[i][card] = cards[card];
-          cardsByClan['All'][card] = cards[card];
+          cardsByClan[i][cardid] = cards[cardid];
+          cardsByClan['All'][cardid] = cards[cardid];
         }
       } else {
-        cardsByClan[i][card] = cards[card];
-        cardsByClan['All'][card] = cards[card];
+        cardsByClan[i][cardid] = cards[cardid];
+        cardsByClan['All'][cardid] = cards[cardid];
       }
     });
 
-    Object.keys(usedCryptCards.soft).map((card) => {
-      if (!cards[card]) {
-        const i = cryptCardBase[card].Clan;
+    Object.keys(usedCryptCards.soft).map((cardid) => {
+      if (!cards[cardid]) {
+        const i = cryptCardBase[cardid].Clan;
 
         if (category !== 'ok') {
-          cardsByClan[i][card] = {
-            q: cards[card] ? cards[card].q : 0,
-            c: cryptCardBase[card],
+          cardsByClan[i][cardid] = {
+            q: cards[cardid] ? cards[cardid].q : 0,
+            c: cryptCardBase[cardid],
           };
-          cardsByClan['All'][card] = {
-            q: cards[card] ? cards[card].q : 0,
-            c: cryptCardBase[card],
+          cardsByClan['All'][cardid] = {
+            q: cards[cardid] ? cards[cardid].q : 0,
+            c: cryptCardBase[cardid],
           };
         }
 
         let softUsedMax = 0;
-        Object.keys(usedCryptCards.soft[card]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[card][id]) {
-            softUsedMax = usedCryptCards.soft[card][id];
+        Object.keys(usedCryptCards.soft[cardid]).map((id) => {
+          if (softUsedMax < usedCryptCards.soft[cardid][id]) {
+            softUsedMax = usedCryptCards.soft[cardid][id];
           }
         });
 
-        missingByClan[i][card] = {
+        missingByClan[i][cardid] = {
           q: softUsedMax,
-          c: cryptCardBase[card],
+          c: cryptCardBase[cardid],
         };
-        missingByClan['All'][card] = {
+        missingByClan['All'][cardid] = {
           q: softUsedMax,
-          c: cryptCardBase[card],
+          c: cryptCardBase[cardid],
         };
       }
     });
 
-    Object.keys(usedCryptCards.hard).map((card) => {
-      if (!cards[card]) {
-        const i = cryptCardBase[card].Clan;
+    Object.keys(usedCryptCards.hard).map((cardid) => {
+      if (!cards[cardid]) {
+        const i = cryptCardBase[cardid].Clan;
 
         if (category !== 'ok') {
-          cardsByClan[i][card] = {
-            q: cards[card] ? cards[card].q : 0,
-            c: cryptCardBase[card],
+          cardsByClan[i][cardid] = {
+            q: cards[cardid] ? cards[cardid].q : 0,
+            c: cryptCardBase[cardid],
           };
-          cardsByClan['All'][card] = {
-            q: cards[card] ? cards[card].q : 0,
-            c: cryptCardBase[card],
+          cardsByClan['All'][cardid] = {
+            q: cards[cardid] ? cards[cardid].q : 0,
+            c: cryptCardBase[cardid],
           };
         }
 
         let hardUsedTotal = 0;
-        if (usedCryptCards.hard[card]) {
-          Object.keys(usedCryptCards.hard[card]).map((id) => {
-            hardUsedTotal += usedCryptCards.hard[card][id];
+        if (usedCryptCards.hard[cardid]) {
+          Object.keys(usedCryptCards.hard[cardid]).map((id) => {
+            hardUsedTotal += usedCryptCards.hard[cardid][id];
           });
         }
 
-        if (missingByClan[i][card]) {
-          missingByClan[i][card].q += hardUsedTotal;
-          missingByClan['All'][card].q += hardUsedTotal;
+        if (missingByClan[i][cardid]) {
+          missingByClan[i][cardid].q += hardUsedTotal;
+          missingByClan['All'][cardid].q += hardUsedTotal;
         } else {
-          missingByClan[i][card] = {
+          missingByClan[i][cardid] = {
             q: hardUsedTotal,
-            c: cryptCardBase[card],
+            c: cryptCardBase[cardid],
           };
-          missingByClan['All'][card] = {
+          missingByClan['All'][cardid] = {
             q: hardUsedTotal,
-            c: cryptCardBase[card],
+            c: cryptCardBase[cardid],
           };
         }
       }
@@ -171,9 +171,9 @@ const InventoryCrypt = ({
   }
 
   if (!compact) {
-    Object.keys(cardsByClan).map((d) => {
-      cardsByClanTotal[d] = 0;
-      cardsByClanUnique[d] = 0;
+    Object.keys(cardsByClan).map((c) => {
+      cardsByClanTotal[c] = 0;
+      cardsByClanUnique[c] = 0;
     });
 
     Object.keys(cardsByClan).map((c) => {

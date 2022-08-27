@@ -70,7 +70,7 @@ const InventoryFilterForm = ({
             </div>
           )}
           <div className="nowrap">
-            {byTotal[i]} ({byUnique[i]} uniq)
+            {byTotal[i]} {byUnique ? `(${byUnique[i]} uniq)` : null}
           </div>
         </div>
       ),

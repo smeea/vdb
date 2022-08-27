@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Tabs, Tab } from 'react-bootstrap';
 import {
-  TwdCardsHistoryCardCrypt,
-  TwdCardsHistoryCardLibrary,
+  TwdCardsHistoryCrypt,
+  TwdCardsHistoryLibrary,
   ResultModal,
 } from 'components';
 import { useApp } from 'context';
@@ -11,7 +11,7 @@ import { byName } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const TwdCardsHistory = (props) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
+  const { cryptCardBase, libraryCardBase } = useApp();
 
   const [crypt, setCrypt] = useState(undefined);
   const [library, setLibrary] = useState(undefined);
@@ -104,95 +104,20 @@ const TwdCardsHistory = (props) => {
       >
         {crypt && (
           <Tab eventKey="crypt" title="Crypt">
-            <table className="crypt-history-table">
-              <thead className="info-message blue">
-                <tr>
-                  <th />
-                  {!isMobile && <th />}
-                  {!isMobile && <th />}
-                  {!isMobile && <th />}
-                  {!isMobile && <th />}
-                  <th className="text-align-center" title="First Print Date">
-                    Print
-                  </th>
-                  {!isMobile && (
-                    <th
-                      className="text-align-center"
-                      title="First TWD Appearance Date"
-                    >
-                      Win
-                    </th>
-                  )}
-                  <th className="text-align-center" title="Years to Win">
-                    YtW
-                  </th>
-                  <th className="px-0 px-md-2" title="First Winner">
-                    Player
-                  </th>
-                  <th />
-                </tr>
-              </thead>
-              <tbody>
-                {crypt.map((card, idx) => (
-                  <tr
-                    key={card.Id}
-                    className={`result-${idx % 2 ? 'even' : 'odd'}`}
-                  >
-                    <TwdCardsHistoryCardCrypt
-                      handleClick={() => handleClick(idx)}
-                      card={card}
-                      byPlayer={players[card.player]}
-                    />
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <TwdCardsHistoryCrypt
+              cards={crypt}
+              players={players}
+              handleClick={handleClick}
+            />
           </Tab>
         )}
         {library && (
           <Tab eventKey="library" title="Library">
-            <table className="library-history-table">
-              <thead className="info-message blue">
-                <tr>
-                  <th />
-                  {!isMobile && <th />}
-                  {!isMobile && <th />}
-                  {!isMobile && <th />}
-                  <th className="text-align-center" title="First Print Date">
-                    Print
-                  </th>
-                  {!isMobile && (
-                    <th
-                      className="text-align-center"
-                      title="First TWD Appearance Date"
-                    >
-                      Win
-                    </th>
-                  )}
-                  <th className="text-align-center" title="Years to Win">
-                    YtW
-                  </th>
-                  <th className="px-0 px-md-2" title="First Winner">
-                    Player
-                  </th>
-                  <th />
-                </tr>
-              </thead>
-              <tbody>
-                {library.map((card, idx) => (
-                  <tr
-                    key={card.Id}
-                    className={`result-${idx % 2 ? 'even' : 'odd'}`}
-                  >
-                    <TwdCardsHistoryCardLibrary
-                      handleClick={() => handleClick(idx)}
-                      card={card}
-                      byPlayer={players[card.player]}
-                    />
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <TwdCardsHistoryLibrary
+              cards={library}
+              players={players}
+              handleClick={handleClick}
+            />
           </Tab>
         )}
       </Tabs>
