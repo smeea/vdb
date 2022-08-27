@@ -1,12 +1,18 @@
 [
   {
-  "version": "2022-08-25",
-  "changes": [
-    "Add Deck Review feature to make changes to any deck (not only yours) and share them using url without actually modifying the deck (changes saved in URL, original deck is never modified)",
-    "Rework Deck Compare feature: it will now clearly indicate which deck you edit and which deck is starting point (to which comparing against) and show changes to editable decks (previously was opposite)",
-    "Other small fixes/improvements"
-  ]
-},
+    "version": "2022-08-27",
+    "changes": [
+      "Bug fixes for recently add/changed features"
+    ]
+  },
+  {
+    "version": "2022-08-25",
+    "changes": [
+      "Add Deck Review feature to make changes to any deck (not only yours) and share them using url without actually modifying the deck (changes saved in URL, original deck is never modified)",
+      "Rework Deck Compare feature: it will now clearly indicate which deck you edit and which deck is starting point (to which comparing against) and show changes to editable decks (previously was opposite)",
+      "Other small fixes/improvements"
+    ]
+  },
   {
     "version": "2022-08-07",
     "changes": [
