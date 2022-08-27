@@ -15,16 +15,18 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in csv/excel to frontend
 - Move deck/inventory import to frontend
-- Move proxy to frontend
+- Move pdf proxy to frontend
 - TWD Cards History performance - react-window
 - Refactor CSS
 - Refactor inventoryDeckAdd/Delete, inventoryAddTo/DeleteFromState for +-qty
-- PWA to open urls in app by default (handle_links)
-- Refactor (merge) deck create and clone and import
-- Refactor (merge) branch create and branch_import
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - decks
+- Refactor (merge?) deck create and clone and import
+- Refactor (merge?) branch create and branch_import
+
+# IMPROVE PWA
+- Open urls in app by default (handle_links)
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)

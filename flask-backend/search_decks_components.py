@@ -8,6 +8,12 @@ with open("cardbase_crypt.json", "r") as crypt_file:
 with open("cardbase_lib.json", "r") as library_file:
     library_db = json.load(library_file)
 
+with open("twd_decks.json", "r") as twd_decks_file:
+    twd_decks = json.load(twd_decks_file)
+
+with open("preconDecks.json", "r") as precons_file:
+    precon_decks = json.load(precons_file)
+
 
 def get_decks_by_crypt(crypt_request, decks):
     cards_counter = len(crypt_request)
@@ -317,15 +323,10 @@ def get_decks_by_similar(deckid, decks):
 
     elif ":" in deckid:
         set, precon = deckid.split(":")
-
-        with open("preconDecks.json", "r") as precons_file:
-            precon_decks = json.load(precons_file)
-            cards = precon_decks[set][precon]
+        cards = precon_decks[set][precon]
 
     else:
-        with open("twd_decks_by_id.json", "r") as twd_decks_file:
-            twd_decks = json.load(twd_decks_file)
-            cards = twd_decks[deckid]["cards"]
+        cards = twd_decks[deckid]["cards"]
 
     CRYPT_COEF = 4  # Increase points for Crypt cards
     AC_COEF = 0.5  # Reduce points for Anarch Convert

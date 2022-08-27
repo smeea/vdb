@@ -28,5 +28,5 @@ mv amaranth_ids.min.json ../../react-frontend/dist/amaranth_ids.json
 python generate_twd_decks.py
 python generate_twd_cards_compatibility.py
 python generate_twd_cards_history.py
-cp twd_decks.json twd_decks_by_id.json twd_locations.json twd_players.json cards_compatibility.json ../../flask-backend/
+cp twd_decks.json twd_locations.json twd_players.json cards_compatibility.json ../../flask-backend/
 mv twd_cards_history.min.json ../../react-frontend/dist/twd_cards_history.json

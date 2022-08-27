@@ -2,7 +2,6 @@ from flask import jsonify, request, abort
 from flask_login import current_user
 import json
 from random import random
-
 from search_decks import search_decks
 from search_decks_components import match_inventory
 from hall_of_fame import get_hof_players
@@ -16,9 +15,9 @@ with open("twd_locations.json", "r") as twd_locations_file:
 with open("twd_players.json", "r") as twd_players_file:
     twd_players = json.load(twd_players_file)
 
-with open("twd_decks.json", "r") as twd_file:
-    twd_decks = json.load(twd_file)
-    for deck in twd_decks:
+with open("twd_decks.json", "r") as twd_decks_file:
+    twd_decks = json.load(twd_decks_file)
+    for deck in twd_decks.values():
         deck["crypt"] = {}
         deck["library"] = {}
         for id, q in deck["cards"].items():
@@ -56,7 +55,7 @@ def getTwdAuthors():
 
 @app.route("/api/twd/hall_of_fame", methods=["GET"])
 def getTwdHoFPlayers():
-    return jsonify(get_hof_players(twd_decks))
+    return jsonify(get_hof_players(twd_decks.values()))
 
 
 @app.route("/api/twd/similar", methods=["POST"])
@@ -70,16 +69,14 @@ def searchSimilarTwd():
             cards = Deck.query.get(deckid).cards
 
         else:
-            with open("twd_decks_by_id.json", "r") as twd_decks_file:
-                twd_decks = json.load(twd_decks_file)
-                for cardid, q in twd_decks[deckid]["cards"].items():
-                    cards[int(cardid)] = q
+            for cardid, q in twd_decks[deckid]["cards"].items():
+                cards[int(cardid)] = q
 
     else:
         for cardid, q in request.json["cards"].items():
             cards[int(cardid)] = q
 
-    result = search_decks([{"option": "similar", "value": cards}], twd_decks)
+    result = search_decks([{"option": "similar", "value": cards}], twd_decks.values())
 
     if result != 400:
         return jsonify(result)
@@ -91,7 +88,7 @@ def searchSimilarTwd():
 def get_new_twd_route(quantity):
     decks = []
     for i in range(quantity):
-        deck = twd_decks[i]
+        deck = list(twd_decks.values())[i]
         decks.append(sanitize_twd(deck))
 
     return jsonify(decks)
@@ -99,12 +96,13 @@ def get_new_twd_route(quantity):
 
 @app.route("/api/twd/random/<int:quantity>", methods=["GET"])
 def get_random_twd_route(quantity):
+    all_decks = list(twd_decks.values())
     decks = []
-    max_id = len(twd_decks) - 1
+    max_id = len(all_decks) - 1
     counter = 0
     while counter < quantity:
         counter += 1
-        deck = twd_decks[round(random() * max_id)]
+        deck = all_decks[round(random() * max_id)]
         decks.append(sanitize_twd(deck))
 
     return jsonify(decks)
@@ -134,7 +132,7 @@ def search_twd_route():
         if q in request.json
     ]
 
-    result = search_decks(queries, twd_decks)
+    result = search_decks(queries, twd_decks.values())
 
     if "matchInventory" in request.json:
         if result != 400:
@@ -143,7 +141,9 @@ def search_twd_route():
             )
         else:
             result = match_inventory(
-                request.json["matchInventory"], current_user.inventory, twd_decks
+                request.json["matchInventory"],
+                current_user.inventory,
+                twd_decks.values(),
             )
 
     if result != 400:

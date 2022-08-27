@@ -155,7 +155,7 @@ def get_deck_route(deckid):
         return jsonify(deck)
 
     else:
-        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+        with open("twd_decks.json", "r") as twd_decks_file:
             twd_decks = json.load(twd_decks_file)
 
             try:
@@ -353,7 +353,7 @@ def get_recommendation_route(deckid):
             cards = precon_decks[set][precon]
 
     else:
-        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+        with open("twd_decks.json", "r") as twd_decks_file:
             twd_decks = json.load(twd_decks_file)
             cards = twd_decks[deckid]["cards"]
 
@@ -528,7 +528,7 @@ def clone_deck_route():
         return jsonify({"deck cloned": request.json["deckname"], "deckid": deckid})
 
     elif request.json["src"] == "twd":
-        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+        with open("twd_decks.json", "r") as twd_decks_file:
             twd_decks = json.load(twd_decks_file)
 
             deck = twd_decks[request.json["target"]]
@@ -657,7 +657,7 @@ def deck_export_route():
 
     elif request.json["src"] == "twd":
         deckid = request.json["deckid"]
-        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+        with open("twd_decks.json", "r") as twd_decks_file:
             twd_decks = json.load(twd_decks_file)
             deck = twd_decks[deckid]
             result = deck_export(deck["cards"], request.json["format"])

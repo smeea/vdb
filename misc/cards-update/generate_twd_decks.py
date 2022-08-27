@@ -104,7 +104,7 @@ def generate_twd(i):
 
 with open("twda.json", "r") as twd_input, open(
     "twd_decks.json", "w"
-) as twd_decks_file, open("twd_decks_by_id.json", "w") as twd_decks_by_id_file:
+) as twd_decks_file:
 
     decks = []
     decks_by_id = {}
@@ -118,8 +118,7 @@ with open("twda.json", "r") as twd_input, open(
     for deck in decks:
         decks_by_id[deck["deckid"]] = deck
 
-    json.dump(decks, twd_decks_file, indent=4, separators=(",", ":"))
-    json.dump(decks_by_id, twd_decks_by_id_file, indent=4, separators=(",", ":"))
+    json.dump(decks_by_id, twd_decks_file, indent=4, separators=(",", ":"))
 
 with open("twda.json", "r") as twd_input, open(
     "twd_locations.json", "w"
