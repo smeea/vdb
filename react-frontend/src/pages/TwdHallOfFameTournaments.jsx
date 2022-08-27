@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Accordion } from 'react-bootstrap';
 import { TwdHallFameTournamentsPlayer } from 'components';
-import { byName } from 'utils';
 
 const TwdHallOfFameTournaments = (props) => {
   const [players, setPlayers] = useState(undefined);
@@ -23,6 +22,10 @@ const TwdHallOfFameTournaments = (props) => {
 
   const byWins = (a, b) => {
     return Object.keys(players[b]).length - Object.keys(players[a]).length;
+  };
+
+  const byName = (a, b) => {
+    return a.localeCompare(b);
   };
 
   return (

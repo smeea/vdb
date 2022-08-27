@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Tabs, Tab, Accordion } from 'react-bootstrap';
 import { TwdHallFameCardsPlayer } from 'components';
-import { byName } from 'utils';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
@@ -14,6 +13,10 @@ const TwdHallOfFameCards = (props) => {
   const INNOVATION_PERIOD = 2 * 365;
   const IGNORED_TOURNAMENTS_DATE = '1999-04-11'; // first was 1997-04-11
   const MS_TO_DAYS = 1000 * 60 * 60 * 24;
+
+  const byName = (a, b) => {
+    return a.localeCompare(b);
+  };
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
