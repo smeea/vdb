@@ -1,6 +1,7 @@
 **/__pycache__/
 **/venv/
 **/migrations/
+flask-backend/.projectile
 flask-backend/app.db
 flask-backend/.flaskenv
 flask-backend/gunicorn.conf.py
@@ -9,6 +10,7 @@ flask-backend/gunicorn.conf.py
 **/.log/
 **/.cache/
 **/.nvmrc
+react-frontend/.dir-locals.el
 react-frontend/dist/*
 !react-frontend/dist/images/
 !react-frontend/dist/favicon.ico
