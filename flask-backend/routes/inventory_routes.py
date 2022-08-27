@@ -58,7 +58,7 @@ def inventory_import_route():
 
 @app.route("/api/inventory", methods=["DELETE"])
 @login_required
-def delete_inventory():
+def delete_inventory_route():
     current_user.inventory = {}
     db.session.commit()
     return jsonify({"delete inventory": "success"})
@@ -66,7 +66,7 @@ def delete_inventory():
 
 @app.route("/api/inventory", methods=["PATCH"])
 @login_required
-def inventory_add_cards():
+def inventory_add_cards_route():
     i = current_user.inventory
     new_cards = request.json
     merged_cards = i.copy() if i else {}
@@ -84,9 +84,10 @@ def inventory_add_cards():
     db.session.commit()
     return jsonify({"inventory card added": "success"})
 
+
 @app.route("/api/inventory", methods=["PUT"])
 @login_required
-def inventory_change_card():
+def inventory_change_card_route():
     i = current_user.inventory
     new_cards = request.json
     merged_cards = i.copy() if i else {}

@@ -1,7 +1,6 @@
 from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user, login_required
 import json
-
 from api import app, db, login
 from models import User
 from routes.decks_routes import parse_user_decks
@@ -14,14 +13,14 @@ def unauthorized_handler():
 
 
 @app.route("/api/version", methods=["GET"])
-def version():
+def version_route():
     with open("../CHANGES.json", "r") as changes_file:
         changes = json.load(changes_file)
         return jsonify(changes[0])
 
 
 @app.route("/api/login", methods=["POST"])
-def login():
+def login_route():
     try:
         user = User.query.filter_by(username=request.json["username"].lower()).first()
 
@@ -45,7 +44,7 @@ def login():
 
 
 @app.route("/api/login", methods=["DELETE"])
-def logout():
+def logout_route():
     try:
         user = current_user.username
         logout_user()
@@ -56,7 +55,7 @@ def logout():
 
 
 @app.route("/api/account", methods=["GET"])
-def who_am_i():
+def who_am_i_route():
     if current_user.is_authenticated:
         return jsonify(
             {
@@ -72,7 +71,7 @@ def who_am_i():
 
 
 @app.route("/api/account", methods=["POST"])
-def account_create():
+def account_create_route():
     if current_user.is_authenticated:
         return jsonify({"already logged as:": current_user.username})
     if not request.json["password"] or not request.json["username"]:
@@ -94,7 +93,7 @@ def account_create():
 
 @app.route("/api/account", methods=["PUT"])
 @login_required
-def account_update():
+def account_update_route():
     if "publicName" in request.json:
         current_user.public_name = request.json["publicName"]
         db.session.commit()
@@ -119,7 +118,7 @@ def account_update():
 
 @app.route("/api/account", methods=["DELETE"])
 @login_required
-def delete_cccount():
+def delete_account_route():
     if current_user.check_password(request.json["password"]):
         try:
             db.session.delete(current_user)

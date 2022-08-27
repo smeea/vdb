@@ -133,7 +133,7 @@ def sanitize_pda(d):
 
 
 @app.route("/api/pda/authors", methods=["GET"])
-def getPdaAuthors():
+def get_pda_authors_route():
     authors = []
     for d in Deck.query.filter(Deck.public_parent != None).all():
         if d.author_public_name not in authors:
@@ -143,7 +143,7 @@ def getPdaAuthors():
 
 
 @app.route("/api/search/pda", methods=["POST"])
-def searchPdaRoute():
+def search_pda_route():
     pda_decks = []
     for d in (
         Deck.query.filter(Deck.public_parent != None)
@@ -215,7 +215,7 @@ def searchPdaRoute():
 
 @app.route("/api/pda/<string:parent_id>", methods=["POST"])
 @login_required
-def newPublicDeck(parent_id):
+def new_public_deck_route(parent_id):
     parent = Deck.query.get(parent_id)
     if parent.author != current_user:
         abort(401)
@@ -261,7 +261,7 @@ def newPublicDeck(parent_id):
 
 @app.route("/api/pda/<string:child_id>", methods=["PUT"])
 @login_required
-def updatePublicDeck(child_id):
+def update_public_deck(child_id):
     child = Deck.query.get(child_id)
     if not child:
         print("bad deck request\n", child_id, current_user.username, request.json)
@@ -301,7 +301,7 @@ def updatePublicDeck(child_id):
 
 @app.route("/api/pda/<string:child_id>", methods=["DELETE"])
 @login_required
-def deletePublicDeck(child_id):
+def delete_public_deck_route(child_id):
     d = Deck.query.get(child_id)
     if d.author != current_user:
         abort(401)
@@ -322,7 +322,7 @@ def deletePublicDeck(child_id):
 
 
 @app.route("/api/pda/new/<int:quantity>", methods=["GET"])
-def getNewPda(quantity):
+def get_new_pda_route(quantity):
     decks = []
 
     counter = 0
@@ -341,7 +341,7 @@ def getNewPda(quantity):
 
 
 @app.route("/api/pda/random/<int:quantity>", methods=["GET"])
-def getRandomPda(quantity):
+def get_random_pda_route(quantity):
     all_decks = Deck.query.filter(Deck.public_parent != None).all()
     max_id = len(all_decks) - 1
     decks = []
@@ -360,7 +360,7 @@ def getRandomPda(quantity):
 
 @app.route("/api/pda/favorite/<string:deckid>", methods=["POST"])
 @login_required
-def addFavorite(deckid):
+def add_favorite_route(deckid):
     d = Deck.query.get(deckid)
     deck_favorited = d.favorited.copy()
     deck_favorited.append(current_user.id)
@@ -377,7 +377,7 @@ def addFavorite(deckid):
 
 @app.route("/api/pda/favorite/<string:deckid>", methods=["DELETE"])
 @login_required
-def deleteFavorite(deckid):
+def delete_favorite_route(deckid):
     d = Deck.query.get(deckid)
     deck_favorited = d.favorited.copy()
     deck_favorited.remove(current_user.id)

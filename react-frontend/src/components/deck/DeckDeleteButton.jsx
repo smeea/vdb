@@ -44,15 +44,14 @@ const DeckDeleteButton = ({ deck, noText }) => {
   };
 
   const deleteDeck = (deckid) => {
-    const url = `${process.env.API_URL}decks/remove`;
+    const url = `${process.env.API_URL}deck/${deckid}`;
     const options = {
-      method: 'POST',
+      method: 'DELETE',
       mode: 'cors',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ deckid: deckid }),
     };
 
     fetch(url, options).then(() => {

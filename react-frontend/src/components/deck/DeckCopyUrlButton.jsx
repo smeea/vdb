@@ -48,18 +48,12 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
   };
 
   const handleSnapshotButton = () => {
-    const url = `${process.env.API_URL}decks/urlclone`;
+    const url = `${process.env.API_URL}deck/${deck.deckid}/snapshot`;
 
     const options = {
-      method: 'POST',
+      method: 'GET',
       mode: 'cors',
       credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        target: deck.deckid,
-      }),
     };
 
     fetch(url, options)

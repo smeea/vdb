@@ -53,7 +53,6 @@ def parse_user_decks(user_decks):
                     db.session.commit()
 
         # Return decks
-
         decks[deck.deckid] = {
             "name": deck.name,
             "branchName": deck.branch_name,
@@ -80,8 +79,47 @@ def unauthorized_handler():
     return Response(json.dumps({"Not logged in": True}), 401)
 
 
+@app.route("/api/deck", methods=["POST"])
+@login_required
+def new_deck_route():
+    deckid = uuid.uuid4().hex
+    author = (
+        request.json["author"] if "author" in request.json else current_user.public_name
+    )
+    description = request.json["description"] if "description" in request.json else ""
+    input_cards = request.json["cards"] if "cards" in request.json else {}
+    cards = {}
+
+    for k, v in input_cards.items():
+        cards[int(k)] = v
+
+    d = Deck(
+        deckid=deckid,
+        name=request.json["deckname"],
+        author_public_name=author,
+        creation_date=date.today().strftime("%Y-%m-%d"),
+        description=description,
+        author=current_user,
+        cards=cards,
+    )
+
+    db.session.add(d)
+    db.session.commit()
+
+    return jsonify(
+        {
+            "timestamp": d.timestamp,
+            "deckid": d.deckid,
+            "name": d.name,
+            "author": d.author_public_name,
+            "description": d.description,
+            "cards": d.cards,
+        }
+    )
+
+
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
-def showDeck(deckid):
+def get_deck_route(deckid):
     if len(deckid) == 32:
         deck = Deck.query.get(deckid)
         if not deck:
@@ -152,34 +190,36 @@ def showDeck(deckid):
                 abort(400)
 
 
-@app.route("/api/deck/<string:deckid>/recommendation", methods=["GET"])
-def getRecommendation(deckid):
-    cards = {}
+@app.route("/api/deck/<string:deckid>", methods=["DELETE"])
+@login_required
+def remove_deck_route(deckid):
+    d = Deck.query.get(deckid)
+    if d.author != current_user:
+        abort(401)
 
-    if len(deckid) == 32:
-        deck = Deck.query.get(deckid)
-        cards = deck.cards
+    if d.master:
+        m = Deck.query.get(d.master)
+        for i in m.branches:
+            j = Deck.query.get(i)
+            db.session.delete(j)
 
-    elif ":" in deckid:
-        set, precon = deckid.split(":")
-
-        with open("preconDecks.json", "r") as precons_file:
-            precon_decks = json.load(precons_file)
-            cards = precon_decks[set][precon]
+        db.session.delete(m)
 
     else:
-        with open("twd_decks_by_id.json", "r") as twd_decks_file:
-            twd_decks = json.load(twd_decks_file)
-            cards = twd_decks[deckid]["cards"]
+        if d.branches:
+            for i in d.branches:
+                j = Deck.query.get(i)
+                db.session.delete(j)
 
-    recommends = deck_recommendation(cards)
+        db.session.delete(d)
 
-    return {"crypt": recommends["crypt"], "library": recommends["library"]}
+    db.session.commit()
+    return jsonify({"deck removed": deckid})
 
 
 @app.route("/api/deck/<string:deckid>", methods=["PUT"])
 @login_required
-def updateDeck(deckid):
+def update_deck_route(deckid):
     d = Deck.query.get(deckid)
     if not d:
         print("bad deck request\n", deckid, current_user.username, request.json)
@@ -297,66 +337,44 @@ def updateDeck(deckid):
     return jsonify({"updated deck": d.deckid})
 
 
-@app.route("/api/decks/create", methods=["POST"])
+@app.route("/api/deck/<string:deckid>/recommendation", methods=["GET"])
+def get_recommendation_route(deckid):
+    cards = {}
+
+    if len(deckid) == 32:
+        deck = Deck.query.get(deckid)
+        cards = deck.cards
+
+    elif ":" in deckid:
+        set, precon = deckid.split(":")
+
+        with open("preconDecks.json", "r") as precons_file:
+            precon_decks = json.load(precons_file)
+            cards = precon_decks[set][precon]
+
+    else:
+        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+            twd_decks = json.load(twd_decks_file)
+            cards = twd_decks[deckid]["cards"]
+
+    recommends = deck_recommendation(cards)
+
+    return {"crypt": recommends["crypt"], "library": recommends["library"]}
+
+
+@app.route("/api/deck/<string:deckid>/branch", methods=["POST"])
 @login_required
-def newDeck():
-    try:
-        deckid = uuid.uuid4().hex
-        author = (
-            request.json["author"]
-            if "author" in request.json
-            else current_user.public_name
-        )
-        description = (
-            request.json["description"] if "description" in request.json else ""
-        )
-        input_cards = request.json["cards"] if "cards" in request.json else {}
-        cards = {}
-
-        for k, v in input_cards.items():
-            cards[int(k)] = v
-
-        d = Deck(
-            deckid=deckid,
-            name=request.json["deckname"],
-            author_public_name=author,
-            creation_date=date.today().strftime("%Y-%m-%d"),
-            description=description,
-            author=current_user,
-            cards=cards,
-        )
-
-        db.session.add(d)
-        db.session.commit()
-
-        return jsonify(
-            {
-                "timestamp": d.timestamp,
-                "deckid": d.deckid,
-                "name": d.name,
-                "author": d.author_public_name,
-                "description": d.description,
-                "cards": d.cards,
-            }
-        )
-
-    except Exception:
-        print(request.json)
-
-
-@app.route("/api/branch/create", methods=["POST"])
-@login_required
-def createBranch():
+def create_branch_route(deckid):
     master = Deck.query.get(request.json["master"])
     if master.author != current_user:
         abort(401)
 
-    source = Deck.query.get(request.json["source"])
+    source = Deck.query.get(deckid)
     branch_name = f"#{len(master.branches) + 1}" if master.branches else "#1"
 
-    deckid = uuid.uuid4().hex
+    new_deckid = uuid.uuid4().hex
     branch = Deck(
-        deckid=deckid,
+        deckid=new_deckid,
         name=master.name,
         branch_name=branch_name,
         author_public_name=source.author_public_name,
@@ -368,7 +386,7 @@ def createBranch():
     )
 
     branches = master.branches.copy() if master.branches else []
-    branches.append(deckid)
+    branches.append(new_deckid)
     master.branches = branches
 
     db.session.add(branch)
@@ -377,16 +395,47 @@ def createBranch():
         {
             "master": master.deckid,
             "source": source.deckid,
-            "deckid": deckid,
+            "deckid": new_deckid,
             "branch_name": branch_name,
         }
     )
 
 
-@app.route("/api/branch/import", methods=["POST"])
+@app.route("/api/deck/<string:deckid>/branch", methods=["DELETE"])
 @login_required
-def importBranch():
-    master = Deck.query.get(request.json["master"])
+def remove_branch_route(deckid):
+    d = Deck.query.get(deckid)
+    if d.author != current_user:
+        abort(401)
+
+    if d.master:
+        master = Deck.query.get(d.master)
+
+        branches = master.branches.copy()
+        branches.remove(d.deckid)
+        master.branches = branches
+
+    else:
+        j = Deck.query.get(d.branches[-1])
+
+        branches = d.branches.copy()
+        branches.remove(j.deckid)
+        j.branches = branches
+        for i in branches:
+            k = Deck.query.get(i)
+            k.master = j.deckid
+
+        j.master = ""
+
+    db.session.delete(d)
+    db.session.commit()
+    return jsonify({"deckid": request.json["deckid"]})
+
+
+@app.route("/api/deck/<string:deckid>/branch_import", methods=["POST"])
+@login_required
+def import_branch_route(deckid):
+    master = Deck.query.get(deckid)
     if master.author != current_user:
         abort(401)
 
@@ -434,39 +483,28 @@ def importBranch():
     )
 
 
-@app.route("/api/branch/remove", methods=["POST"])
-@login_required
-def removeBranch():
-    d = Deck.query.get(request.json["deckid"])
-    if d.author != current_user:
-        abort(401)
-
-    if d.master:
-        master = Deck.query.get(d.master)
-
-        branches = master.branches.copy()
-        branches.remove(d.deckid)
-        master.branches = branches
-
-    else:
-        j = Deck.query.get(d.branches[-1])
-
-        branches = d.branches.copy()
-        branches.remove(j.deckid)
-        j.branches = branches
-        for i in branches:
-            k = Deck.query.get(i)
-            k.master = j.deckid
-
-        j.master = ""
-
-    db.session.delete(d)
+@app.route("/api/deck/<string:deckid>/snapshot", methods=["GET"])
+def url_snapshot_route(deckid):
+    targetDeck = Deck.query.get(deckid)
+    new_deckid = uuid.uuid4().hex
+    d = Deck(
+        deckid=new_deckid,
+        name=targetDeck.name,
+        author_public_name=targetDeck.author_public_name,
+        description=targetDeck.description,
+        cards=targetDeck.cards,
+    )
+    db.session.add(d)
     db.session.commit()
-    return jsonify({"deckid": request.json["deckid"]})
+    return jsonify(
+        {
+            "deckid": new_deckid,
+        }
+    )
 
 
 @app.route("/api/decks/clone", methods=["POST"])
-def cloneDeck():
+def clone_deck_route():
     if "deck" in request.json:
         deck = request.json["deck"]
         cards = {}
@@ -570,28 +608,8 @@ def cloneDeck():
         )
 
 
-@app.route("/api/decks/urlclone", methods=["POST"])
-def urlCloneDeck():
-    targetDeck = Deck.query.get(request.json["target"])
-    deckid = uuid.uuid4().hex
-    d = Deck(
-        deckid=deckid,
-        name=targetDeck.name,
-        author_public_name=targetDeck.author_public_name,
-        description=targetDeck.description,
-        cards=targetDeck.cards,
-    )
-    db.session.add(d)
-    db.session.commit()
-    return jsonify(
-        {
-            "deckid": deckid,
-        }
-    )
-
-
 @app.route("/api/decks/import", methods=["POST"])
-def importDeck():
+def import_deck_route():
     anonymous = request.json.get("anonymous")
     if not current_user.is_authenticated and not anonymous:
         return Response(json.dumps({"Not logged in": True}), 401)
@@ -630,76 +648,40 @@ def importDeck():
 
 
 @app.route("/api/decks/export", methods=["POST"])
-def deckExportRoute():
-    try:
-        result = None
+def deck_export_route():
+    result = None
 
-        if "deck" in request.json:
-            deck = request.json["deck"]
+    if "deck" in request.json:
+        deck = request.json["deck"]
+        result = deck_export(deck["cards"], request.json["format"])
+
+    elif request.json["src"] == "twd":
+        deckid = request.json["deckid"]
+        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+            twd_decks = json.load(twd_decks_file)
+            deck = twd_decks[deckid]
             result = deck_export(deck["cards"], request.json["format"])
 
-        elif request.json["src"] == "twd":
-            deckid = request.json["deckid"]
-            with open("twd_decks_by_id.json", "r") as twd_decks_file:
-                twd_decks = json.load(twd_decks_file)
-                deck = twd_decks[deckid]
-                result = deck_export(deck["cards"], request.json["format"])
+    elif request.json["src"] == "precons":
+        set, precon = request.json["deckid"].split(":")
+        with open("preconDecks.json", "r") as precons_file:
+            precon_decks = json.load(precons_file)
+            cards = precon_decks[set][precon]
+            result = deck_export(cards, request.json["format"])
 
-        elif request.json["src"] == "precons":
-            set, precon = request.json["deckid"].split(":")
-            with open("preconDecks.json", "r") as precons_file:
-                precon_decks = json.load(precons_file)
-                cards = precon_decks[set][precon]
-                result = deck_export(cards, request.json["format"])
+    elif request.json["src"] == "shared" or request.json["src"] == "my":
+        d = Deck.query.get(request.json["deckid"])
+        result = deck_export(d.cards, request.json["format"])
 
-        elif request.json["src"] == "shared" or request.json["src"] == "my":
-            d = Deck.query.get(request.json["deckid"])
-            result = deck_export(d.cards, request.json["format"])
-
-        return result
-
-    except Exception:
-        print(request.json)
+    return result
 
 
 @app.route("/api/decks/proxy", methods=["POST"])
-def deckProxyRoute():
+def deck_proxy_route():
     cards = request.json["cards"]
     lang = request.json["lang"] if "lang" in request.json else "en-EN"
     pdf = deck_proxy(cards, lang)
     if pdf:
         return pdf
     else:
-        print("bad proxy: ", request.json)
         abort(400)
-
-
-@app.route("/api/decks/remove", methods=["POST"])
-@login_required
-def removeDeck():
-    try:
-        d = Deck.query.get(request.json["deckid"])
-        if d.author != current_user:
-            abort(401)
-
-        if d.master:
-            m = Deck.query.get(d.master)
-            for i in m.branches:
-                j = Deck.query.get(i)
-                db.session.delete(j)
-
-            db.session.delete(m)
-
-        else:
-            if d.branches:
-                for i in d.branches:
-                    j = Deck.query.get(i)
-                    db.session.delete(j)
-
-            db.session.delete(d)
-
-        db.session.commit()
-
-        return jsonify({"deck removed": request.json["deckid"]})
-    except Exception:
-        return jsonify({"error": "idk"})

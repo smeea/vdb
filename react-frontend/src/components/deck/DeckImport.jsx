@@ -92,7 +92,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
   const createNewDeck = () => {
     setCreateError(false);
 
-    const url = `${process.env.API_URL}decks/create`;
+    const url = `${process.env.API_URL}deck`;
     const options = {
       method: 'POST',
       mode: 'cors',

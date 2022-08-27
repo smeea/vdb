@@ -12,7 +12,7 @@ const DeckBranchCreateButton = ({ deck }) => {
   } = useApp();
 
   const branchCreate = () => {
-    const url = `${process.env.API_URL}branch/create`;
+    const url = `${process.env.API_URL}deck/${deck.deckid}/branch`;
     const master = deck.master ? deck.master : deck.deckid;
 
     const options = {
@@ -24,7 +24,6 @@ const DeckBranchCreateButton = ({ deck }) => {
       },
       body: JSON.stringify({
         master: master,
-        source: deck.deckid,
       }),
     };
 

@@ -12,7 +12,7 @@ const DeckNewDeck = ({ setShowInfo }) => {
   } = useApp();
 
   const createNewDeck = () => {
-    const url = `${process.env.API_URL}decks/create`;
+    const url = `${process.env.API_URL}deck`;
     const options = {
       method: 'POST',
       mode: 'cors',

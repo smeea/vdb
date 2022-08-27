@@ -75,7 +75,7 @@ const DeckImportAmaranth = ({
       });
     });
 
-    const url = `${process.env.API_URL}branch/import`;
+    const url = `${process.env.API_URL}deck/${master}/branch_import`;
 
     const options = {
       method: 'POST',
@@ -85,7 +85,6 @@ const DeckImportAmaranth = ({
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        master: master,
         branches: branches,
       }),
     };
@@ -109,7 +108,7 @@ const DeckImportAmaranth = ({
       }
     });
 
-    const url = `${process.env.API_URL}decks/create`;
+    const url = `${process.env.API_URL}deck`;
     const options = {
       method: 'POST',
       mode: 'cors',

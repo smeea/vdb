@@ -27,15 +27,14 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
   };
 
   const deleteBranch = (deckid) => {
-    const url = `${process.env.API_URL}branch/remove`;
+    const url = `${process.env.API_URL}deck/${deckid}/branch`;
     const options = {
-      method: 'POST',
+      method: 'DELETE',
       mode: 'cors',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ deckid: deckid }),
     };
     fetch(url, options).then(() => {
       setDecks((prevState) => {

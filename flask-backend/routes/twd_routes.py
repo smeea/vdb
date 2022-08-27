@@ -88,7 +88,7 @@ def searchSimilarTwd():
 
 
 @app.route("/api/twd/new/<int:quantity>", methods=["GET"])
-def getNewTwd(quantity):
+def get_new_twd_route(quantity):
     decks = []
     for i in range(quantity):
         deck = twd_decks[i]
@@ -98,7 +98,7 @@ def getNewTwd(quantity):
 
 
 @app.route("/api/twd/random/<int:quantity>", methods=["GET"])
-def getRandomTwd(quantity):
+def get_random_twd_route(quantity):
     decks = []
     max_id = len(twd_decks) - 1
     counter = 0
@@ -111,7 +111,7 @@ def getRandomTwd(quantity):
 
 
 @app.route("/api/search/twd", methods=["POST"])
-def searchTwdRoute():
+def search_twd_route():
     query_priority = [
         "author",
         "location",
