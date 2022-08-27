@@ -95,7 +95,7 @@ const TwdCardsHistory = (props) => {
   }, [cryptCardBase, libraryCardBase]);
 
   return (
-    <Container className="hall-of-fame-container px-0 p-md-3">
+    <Container className="hof-history-container px-0 p-md-3">
       <Tabs
         activeKey={tab}
         onSelect={(k) => setTab(k)}
