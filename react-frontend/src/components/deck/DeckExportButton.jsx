@@ -12,8 +12,15 @@ import { useDeckExport } from 'hooks';
 import { useApp } from 'context';
 
 const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
-  const { username, decks, setShowFloatingButtons, setShowMenuButtons } =
-    useApp();
+  const {
+    username,
+    decks,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+    nativeCrypt,
+    nativeLibrary,
+    lang,
+  } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -27,7 +34,6 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
       lackey: 'Lackey',
       jol: 'JOL',
       xlsx: 'Excel',
-      csv: 'CSV',
     };
 
     const actions = {
@@ -48,7 +54,6 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
       <ExportDropdown action="save" format="text" />
       <ExportDropdown action="save" format="lackey" />
       <ExportDropdown action="save" format="xlsx" />
-      <ExportDropdown action="save" format="csv" />
       <Dropdown.Divider />
       <ExportDropdown action="copy" format="text" />
       <ExportDropdown action="copy" format="lackey" />
@@ -65,7 +70,6 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
         </>
       )}
       <ExportDropdown action="save" format="xlsx" />
-      {!inMissing && <ExportDropdown action="save" format="csv" />}
       <Dropdown.Divider />
 
       <ExportDropdown action="copy" format="text" />
@@ -84,7 +88,6 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
           <ExportDropdown action="exportAll" format="lackey" />
           <ExportDropdown action="exportAll" format="jol" />
           <ExportDropdown action="exportAll" format="xlsx" />
-          <ExportDropdown action="exportAll" format="csv" />
         </>
       )}
     </>
@@ -105,7 +108,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
       deckName += ` [${deck['branchName']}]`;
     }
 
-    if (format === 'xlsx' || format === 'csv') {
+    if (format === 'xlsx') {
       setSpinnerState(true);
 
       const input = {
@@ -146,11 +149,8 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
       fetch(url, options)
         .then((response) => response.text())
         .then((data) => {
-          let mime = 'data:text/csv';
-          if (format === 'xlsx') {
-            mime =
-              'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-          }
+          const mime =
+            'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
           const file = `${mime};base64,${data}`;
           saveAs(file, `${deckName}.${format}`);
@@ -163,7 +163,30 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
           setError(true);
         });
     } else {
-      const exportText = useDeckExport(deck, format);
+      let exportText = null;
+      if ((format === 'twd' || format === 'twdHints') && lang !== 'en-EN') {
+        const enCrypt = {};
+        const enLibrary = {};
+        Object.keys(deck.crypt).map((cardid) => {
+          enCrypt[cardid] = {
+            ...deck.crypt[cardid],
+            c: { ...deck.crypt[cardid].c, Name: nativeCrypt[cardid].Name },
+          };
+        });
+        Object.keys(deck.library).map((cardid) => {
+          enLibrary[cardid] = {
+            ...deck.library[cardid],
+            c: { ...deck.library[cardid].c, Name: nativeLibrary[cardid].Name },
+          };
+        });
+
+        exportText = useDeckExport(
+          { ...deck, crypt: enCrypt, library: enLibrary },
+          format
+        );
+      } else {
+        exportText = useDeckExport(deck, format);
+      }
 
       const file = new File([exportText], `${deckName} [${format}].txt`, {
         type: 'text/plain;charset=utf-8',
@@ -177,7 +200,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
   const exportAll = (format) => {
     setError(false);
     import('jszip').then((Jszip) => {
-      if (format === 'xlsx' || format === 'csv') {
+      if (format === 'xlsx') {
         setSpinnerState(true);
 
         const url = `${process.env.API_URL}${

@@ -7,13 +7,12 @@
 - Check TWD
 - Show changes from base deck in PDA
 - Sort for TWD Cards history
-- Language-sensitive export
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
 
 # IMPROVE TECHNOLOGY - FRONTEND
-- Move deck/inventory export in csv/excel to frontend
+- Move deck/inventory export in excel to frontend
 - Move deck/inventory import to frontend
 - Move pdf proxy to frontend
 - TWD Cards History performance - react-window

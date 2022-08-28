@@ -195,9 +195,9 @@ const getLibraryText = (library, format) => {
   const libraryTitle = `Library (${libraryTotal} cards)`;
   result += `${libraryTitle}\n`;
   if (format === 'text') {
-    result += '-'.repeat(libraryTitle.length);
+    result += '='.repeat(libraryTitle.length);
+    result += '\n';
   }
-  result += '\n';
 
   byTypeOrder.map((type) => {
     if (byType[type]) {

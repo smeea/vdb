@@ -1,5 +1,4 @@
 import json
-import csv
 from openpyxl import Workbook
 import base64
 import io
@@ -23,23 +22,7 @@ def deck_export(cards, format):
             elif k < 200000:
                 library[k] = {"c": library_base[str(k)], "q": v}
 
-    if format == "csv":
-        f = io.StringIO()
-        writer = csv.writer(f)
-
-        for i in crypt.values():
-            q = i["q"]
-            id = i["c"]["Id"]
-            writer.writerow([q, id])
-
-        for i in library.values():
-            q = i["q"]
-            id = i["c"]["Id"]
-            writer.writerow([q, id])
-
-        return base64.b64encode(f.getvalue().encode("latin-1"))
-
-    elif format == "xlsx":
+    if format == "xlsx":
         fb = io.BytesIO()
         wb = Workbook()
         ws_crypt = wb.active
