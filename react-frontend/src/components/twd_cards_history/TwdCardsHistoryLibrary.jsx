@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import { InventoryFilterForm, TwdCardsHistoryCardLibrary } from 'components';
-import { useApp } from 'context';
+import { Stack } from 'react-bootstrap';
+import {
+  InventoryFilterForm,
+  TwdCardsHistoryCardLibrary,
+  SortButton,
+} from 'components';
 import { cardtypeSorted } from 'utils/constants';
 import disciplinesList from 'assets/data/disciplinesList.json';
 import virtuesList from 'assets/data/virtuesList.json';
+import { inventoryLibrarySort } from 'utils';
+import { useApp } from 'context';
 
 const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
   const { isMobile } = useApp();
@@ -14,7 +20,9 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
     Name: 'N',
-    Quantity: 'Q',
+    Player: 'P',
+    'Date - Print': 'DP',
+    'Date - Win': 'DW',
     Type: 'T',
     'Clan / Discipline': 'C/D',
     'Cost - Min to Max': 'C↑',
@@ -117,27 +125,44 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
     });
   });
 
+  const sortedCards = inventoryLibrarySort(
+    Object.values(cardsByType[type]).filter((i) => {
+      return cardsByDiscipline[discipline][i.Id];
+    }),
+    sortMethod
+  );
+
   return (
     <>
-      <InventoryFilterForm
-        value={type}
-        setValue={setType}
-        values={Object.keys(cardsByType).filter((i) => {
-          return Object.keys(cardsFilteredByDiscipline[i]).length;
-        })}
-        byTotal={cardsFilteredByDisciplineTotal}
-        target="type"
-      />
-      <InventoryFilterForm
-        value={discipline}
-        setValue={setDiscipline}
-        values={Object.keys(cardsByDiscipline).filter((i) => {
-          return Object.keys(cardsFilteredByType[i]).length;
-        })}
-        byTotal={cardsFilteredByTypeTotal}
-        target="discipline"
-      />
-
+      <div className="d-flex align-items-center justify-content-between inventory-info">
+        <div className="w-75 p-1">
+          <Stack gap={1}>
+            <InventoryFilterForm
+              value={type}
+              setValue={setType}
+              values={Object.keys(cardsByType).filter((i) => {
+                return Object.keys(cardsFilteredByDiscipline[i]).length;
+              })}
+              byTotal={cardsFilteredByDisciplineTotal}
+              target="type"
+            />
+            <InventoryFilterForm
+              value={discipline}
+              setValue={setDiscipline}
+              values={Object.keys(cardsByDiscipline).filter((i) => {
+                return Object.keys(cardsFilteredByType[i]).length;
+              })}
+              byTotal={cardsFilteredByTypeTotal}
+              target="discipline"
+            />
+          </Stack>
+        </div>
+        <SortButton
+          sortMethods={sortMethods}
+          sortMethod={sortMethod}
+          setSortMethod={setSortMethod}
+        />
+      </div>
       <table className="library-history-table">
         <thead className="info-message blue">
           <tr>
@@ -166,22 +191,15 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           </tr>
         </thead>
         <tbody>
-          {Object.values(cardsByType[type])
-            .filter((i) => {
-              return cardsByDiscipline[discipline][i.Id];
-            })
-            .map((card, idx) => (
-              <tr
-                key={card.Id}
-                className={`result-${idx % 2 ? 'even' : 'odd'}`}
-              >
-                <TwdCardsHistoryCardLibrary
-                  handleClick={() => handleClick(idx)}
-                  card={card}
-                  byPlayer={players[card.player]}
-                />
-              </tr>
-            ))}
+          {sortedCards.map((card, idx) => (
+            <tr key={card.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+              <TwdCardsHistoryCardLibrary
+                handleClick={() => handleClick(idx)}
+                card={card}
+                byPlayer={players[card.player]}
+              />
+            </tr>
+          ))}
         </tbody>
       </table>
     </>

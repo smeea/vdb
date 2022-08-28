@@ -93,3 +93,21 @@ export const bySect = (a, b) => {
 export const byTimestamp = (a, b) => {
   return new Date(b.timestamp) - new Date(a.timestamp);
 };
+
+export const byPlayer = (a, b) => {
+  if (a.player && !b.player) return -1;
+  if (!a.player && b.player) return 1;
+  if (!a.player && !b.player) return 0;
+  return a.player.localeCompare(b.player);
+};
+
+export const byDateWin = (a, b) => {
+  if (a.twd_date && !b.twd_date) return -1;
+  if (!a.twd_date && b.twd_date) return 1;
+  if (!a.twd_date && !b.twd_date) return 0;
+  return a.twd_date < b.twd_date;
+};
+
+export const byDatePrint = (a, b) => {
+  return b.release_date > a.release_date;
+};

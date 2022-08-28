@@ -31,7 +31,7 @@ const DeckCrypt = ({
 
   const sortMethods = {
     Capacity: 'C',
-    Clan: 'Cl',
+    Clan: 'CL',
     Group: 'G',
     Name: 'N',
     Quantity: 'Q',

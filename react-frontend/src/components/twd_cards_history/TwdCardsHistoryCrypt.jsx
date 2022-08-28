@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { TwdCardsHistoryCardCrypt, InventoryFilterForm } from 'components';
+import {
+  TwdCardsHistoryCardCrypt,
+  InventoryFilterForm,
+  SortButton,
+} from 'components';
 import imbuedClansList from 'assets/data/imbuedClansList.json';
 import vampireClansList from 'assets/data/vampireClansList.json';
+import { inventoryCryptSort } from 'utils';
 import { useApp } from 'context';
 
 const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
@@ -9,15 +14,17 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
 
   const [clan, setClan] = useState('All');
 
-  // const [sortMethod, setSortMethod] = useState('Name');
-  // const sortMethods = {
-  //   Name: 'N',
-  //   Quantity: 'Q',
-  //   Clan: 'Cl',
-  //   Group: 'G',
-  //   'Capacity - Min to Max': 'C↑',
-  //   'Capacity - Max to Min': 'C↓',
-  // };
+  const [sortMethod, setSortMethod] = useState('Name');
+  const sortMethods = {
+    Name: 'N',
+    Player: 'P',
+    'Date - Print': 'DP',
+    'Date - Win': 'DW',
+    Clan: 'CL',
+    Group: 'G',
+    'Capacity - Min to Max': 'C↑',
+    'Capacity - Max to Min': 'C↓',
+  };
 
   const cardsByClan = {};
   const cardsByClanTotal = {};
@@ -43,17 +50,31 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
     });
   });
 
+  const sortedCards = inventoryCryptSort(
+    Object.values(cardsByClan[clan]),
+    sortMethod
+  );
+
   return (
     <>
-      <InventoryFilterForm
-        value={clan}
-        setValue={setClan}
-        values={Object.keys(cardsByClan).filter((i) => {
-          return Object.keys(cardsByClan[i]).length;
-        })}
-        byTotal={cardsByClanTotal}
-        target="crypt"
-      />
+      <div className="d-flex align-items-center justify-content-between inventory-info">
+        <div className="w-75 p-1">
+          <InventoryFilterForm
+            value={clan}
+            setValue={setClan}
+            values={Object.keys(cardsByClan).filter((i) => {
+              return Object.keys(cardsByClan[i]).length;
+            })}
+            byTotal={cardsByClanTotal}
+            target="crypt"
+          />
+        </div>
+        <SortButton
+          sortMethods={sortMethods}
+          sortMethod={sortMethod}
+          setSortMethod={setSortMethod}
+        />
+      </div>
       <table className="crypt-history-table">
         <thead className="info-message blue">
           <tr>
@@ -83,7 +104,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
           </tr>
         </thead>
         <tbody>
-          {Object.values(cardsByClan[clan]).map((card, idx) => (
+          {sortedCards.map((card, idx) => (
             <tr key={card.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
               <TwdCardsHistoryCardCrypt
                 handleClick={() => handleClick(idx)}

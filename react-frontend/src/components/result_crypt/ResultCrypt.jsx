@@ -29,7 +29,7 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
   const sortMethods = {
     'Capacity - Max to Min': 'C↓',
     'Capacity - Min to Max': 'C↑',
-    Clan: 'Cl',
+    Clan: 'CL',
     Group: 'G',
     Name: 'N',
     Sect: 'S',

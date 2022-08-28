@@ -64,7 +64,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const cryptSortMethods = {
     'Capacity - Max to Min': 'C↓',
     'Capacity - Min to Max': 'C↑',
-    Clan: 'Cl',
+    Clan: 'CL',
     Group: 'G',
     Name: 'N',
     Sect: 'S',

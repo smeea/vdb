@@ -1,4 +1,13 @@
-import { byName, byClan, byGroup, byQuantity, byCapacity } from 'utils';
+import {
+  byName,
+  byClan,
+  byGroup,
+  byQuantity,
+  byCapacity,
+  byPlayer,
+  byDateWin,
+  byDatePrint,
+} from 'utils';
 
 const inventoryCryptSort = (cards, sortMethod) => {
   if (cards) {
@@ -15,6 +24,12 @@ const inventoryCryptSort = (cards, sortMethod) => {
         return cards.sort(byName).sort(byGroup);
       case 'Clan':
         return cards.sort(byName).sort(byClan);
+      case 'Player':
+        return cards.sort(byName).sort(byPlayer);
+      case 'Date - Print':
+        return cards.sort(byName).sort(byDatePrint);
+      case 'Date - Win':
+        return cards.sort(byName).sort(byDateWin);
       default:
         return cards;
     }

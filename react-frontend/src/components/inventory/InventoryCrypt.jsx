@@ -23,7 +23,7 @@ const InventoryCrypt = ({
   const sortMethods = {
     Name: 'N',
     Quantity: 'Q',
-    Clan: 'Cl',
+    Clan: 'CL',
     Group: 'G',
     'Capacity - Min to Max': 'C↑',
     'Capacity - Max to Min': 'C↓',

@@ -6,7 +6,6 @@
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
-- Sort for TWD Cards history
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
@@ -18,6 +17,7 @@
 - TWD Cards History performance - react-window
 - Refactor CSS
 - Refactor inventoryDeckAdd/Delete, inventoryAddTo/DeleteFromState for +-qty
+- Refactor inventoryCryptSort and resultCryptSort (same for Library)
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - decks

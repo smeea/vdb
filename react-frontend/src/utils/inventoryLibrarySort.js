@@ -6,6 +6,9 @@ import {
   byName,
   byQuantity,
   byClanOpt,
+  byPlayer,
+  byDateWin,
+  byDatePrint,
 } from 'utils';
 
 const inventoryLibrarySort = (cards, sortMethod) => {
@@ -32,6 +35,12 @@ const inventoryLibrarySort = (cards, sortMethod) => {
           .sort(byClanOpt);
       case 'Type':
         return cards.sort(byName).sort(byType);
+      case 'Player':
+        return cards.sort(byName).sort(byPlayer);
+      case 'Date - Print':
+        return cards.sort(byName).sort(byDatePrint);
+      case 'Date - Win':
+        return cards.sort(byName).sort(byDateWin);
       default:
         return cards;
     }
