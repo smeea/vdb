@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
+import { ButtonIconed } from 'components';
 
 const DiffCopyUrlButton = ({ fromQuery, toQuery }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();

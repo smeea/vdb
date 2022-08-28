@@ -1,8 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import Cart4 from 'assets/images/icons/cart4.svg';
-import { DeckMissingModal } from 'components';
+import { ButtonIconed, DeckMissingModal } from 'components';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const InventoryMissingButton = ({
   clan,

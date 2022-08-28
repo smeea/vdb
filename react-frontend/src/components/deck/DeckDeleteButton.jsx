@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
-import { ModalConfirmation } from 'components';
+import { ButtonIconed, ModalConfirmation } from 'components';
 import { useApp } from 'context';
 import { byTimestamp } from 'utils';
-import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckDeleteButton = ({ deck, noText }) => {
   const {

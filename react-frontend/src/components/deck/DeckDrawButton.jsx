@@ -1,7 +1,7 @@
 import React from 'react';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
+import { ButtonIconed } from 'components';
 
 const DeckDrawButton = ({ setShowDraw }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();

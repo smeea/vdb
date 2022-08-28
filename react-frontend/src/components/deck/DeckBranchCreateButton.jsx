@@ -1,7 +1,7 @@
 import React from 'react';
 import NodePlusFill from 'assets/images/icons/node-plus-fill.svg';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
+import { ButtonIconed } from 'components';
 
 const DeckBranchCreateButton = ({ deck }) => {
   const {

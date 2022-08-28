@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Files from 'assets/images/icons/files.svg';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
+import { ButtonIconed } from 'components';
 
 const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
   const {

@@ -6,6 +6,7 @@ Public instance is available at https://vdb.im.
 
 ## COMPONENTS
 
+
 VDB consist of two components communicating with each other.
 
 ### FRONTEND

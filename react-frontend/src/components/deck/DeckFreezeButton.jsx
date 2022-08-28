@@ -2,7 +2,7 @@ import React from 'react';
 import LockFill from 'assets/images/icons/lock-fill.svg';
 import UnlockFill from 'assets/images/icons/unlock-fill.svg';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
+import { ButtonIconed } from 'components';
 
 const DeckFreezeButton = ({ deck }) => {
   const { deckUpdate } = useApp();

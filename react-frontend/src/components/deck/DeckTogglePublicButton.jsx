@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Dropdown, Spinner } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
-import { ModalConfirmation } from 'components';
+import { ButtonIconed, ModalConfirmation } from 'components';
 import { countCards } from 'utils';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckTogglePublicButton = ({ deck, isDropdown }) => {
   const { setDecks } = useApp();

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import NodeMinusFill from 'assets/images/icons/node-minus-fill.svg';
-import { ModalConfirmation } from 'components';
+import { ButtonIconed, ModalConfirmation } from 'components';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckBranchDeleteButton = ({ deck, noText }) => {
   const {

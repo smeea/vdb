@@ -2,7 +2,7 @@ import React from 'react';
 import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
 import LightbulbOffFill from 'assets/images/icons/lightbulb-off-fill.svg';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
+import { ButtonIconed } from 'components';
 
 const DeckHideButton = ({ deckid }) => {
   const { decks, deckUpdate } = useApp();

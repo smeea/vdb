@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisciplinesCryptSummary } from 'components/crypt';
+import { DisciplinesCryptSummary } from 'components';
 import { useKeyDisciplines } from 'hooks';
 
 const ResultCryptTotalInfo = ({ cards }) => {

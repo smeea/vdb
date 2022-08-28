@@ -30,5 +30,4 @@
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)
 - remove Item UI from table into respective Item component.
-- move subComponents to subfolders and remove from main export.
 - check InventoryLibrary to refactor

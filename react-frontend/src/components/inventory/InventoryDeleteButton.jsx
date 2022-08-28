@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
-import { ModalConfirmation } from 'components';
+import { ButtonIconed, ModalConfirmation } from 'components';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const InventoryDelete = (props) => {
   const {

@@ -5,10 +5,10 @@ import {
   DeckExportButton,
   InventoryDeleteButton,
   InventoryMissingButton,
+  ButtonIconed,
 } from 'components';
 import FolderPlus from 'assets/images/icons/folder-plus.svg';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const InventoryButtons = ({
   setShowAddDeck,
