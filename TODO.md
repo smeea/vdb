@@ -2,10 +2,12 @@
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - Crypt sorting in review (works in Deck!)
+- Inventory table width for library on desktop & mobile (and q-ty for crypt)
 
 # FEATURES
 - Check TWD
-- Show changes from base deck in PDA
+- Show changes from base deck in A
+- Review to create snapshots (tagged for easier removal)
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
@@ -28,6 +30,5 @@
 - Open urls in app by default (handle_links)
 
 # REFACTORING TODO - Andrey
-- split inventory.jsx into (destktop, mobile, login)
 - remove Item UI from table into respective Item component.
 - check InventoryLibrary to refactor

@@ -5,39 +5,32 @@ import X from 'assets/images/icons/x.svg';
 import {
   AccountLogin,
   AccountRegister,
-  InventoryNewCryptCard,
-  InventoryNewLibraryCard,
-  InventoryCrypt,
-  InventoryLibrary,
-  InventoryButtons,
-  InventoryShowSelect,
   InventoryAddDeckModal,
   InventoryAddPreconModal,
+  InventoryDesktop,
+  InventoryMobile,
+  InventoryButtons,
+  InventoryShowSelect,
 } from 'components';
 import { useApp } from 'context';
 
 const Inventory = (props) => {
   const {
-    cryptCardBase,
-    libraryCardBase,
-    inventoryCrypt,
-    inventoryLibrary,
-    usedCryptCards,
-    usedLibraryCards,
     username,
     isMobile,
     inventoryDeckAdd,
     inventoryDeckDelete,
-    showFloatingButtons,
-    setShowFloatingButtons,
     showMenuButtons,
     setShowMenuButtons,
+    showFloatingButtons,
+    setShowFloatingButtons,
+    inventoryCrypt,
+    inventoryLibrary,
   } = useApp();
 
   const [newCryptId, setNewCryptId] = useState(undefined);
   const [newLibraryId, setNewLibraryId] = useState(undefined);
   const [category, setCategory] = useState('all');
-  const [showCrypt, setShowCrypt] = useState(true);
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
   const [clan, setClan] = useState('All');
@@ -58,192 +51,60 @@ const Inventory = (props) => {
       {username ? (
         <>
           {isMobile ? (
-            <>
-              {showCrypt ? (
-                <>
-                  <div className="sticky-selector py-1 px-1">
-                    <InventoryNewCryptCard
-                      cards={inventoryCrypt}
-                      setNewId={setNewCryptId}
-                      newRef={newCryptRef}
-                    />
-                  </div>
-                  {newCryptId && (
-                    <div className="sticky-inv-result">
-                      <InventoryCrypt
-                        cards={{
-                          [newCryptId]: inventoryCrypt[newCryptId]
-                            ? inventoryCrypt[newCryptId]
-                            : { c: cryptCardBase[newCryptId], q: 0 },
-                        }}
-                        compact={true}
-                        newFocus={newCryptFocus}
-                      />
-                    </div>
-                  )}
-                  {inventoryCrypt &&
-                    (usedCryptCards.soft || usedCryptCards.hard) && (
-                      <div className="pt-1">
-                        <InventoryCrypt
-                          withCompact={newCryptId}
-                          category={category}
-                          cards={inventoryCrypt}
-                          clan={clan}
-                          setClan={setClan}
-                          setMissingByClan={setMissingByClan}
-                        />
-                      </div>
-                    )}
-                </>
-              ) : (
-                <>
-                  <div className="sticky-selector py-1 px-1">
-                    <InventoryNewLibraryCard
-                      cards={inventoryLibrary}
-                      setNewId={setNewLibraryId}
-                      newRef={newLibraryRef}
-                    />
-                  </div>
-                  {newLibraryId && (
-                    <div className="sticky-inv-result">
-                      <InventoryLibrary
-                        cards={{
-                          [newLibraryId]: inventoryLibrary[newLibraryId]
-                            ? inventoryLibrary[newLibraryId]
-                            : { c: libraryCardBase[newLibraryId], q: 0 },
-                        }}
-                        compact={true}
-                        newFocus={newLibraryFocus}
-                      />
-                    </div>
-                  )}
-                  {inventoryLibrary &&
-                    (usedLibraryCards.soft || usedLibraryCards.hard) && (
-                      <div className="pt-1">
-                        <InventoryLibrary
-                          withCompact={newLibraryId}
-                          category={category}
-                          cards={inventoryLibrary}
-                          type={type}
-                          setType={setType}
-                          discipline={discipline}
-                          setDiscipline={setDiscipline}
-                          setMissingByType={setMissingByType}
-                          setMissingByDiscipline={setMissingByDiscipline}
-                        />
-                      </div>
-                    )}
-                </>
-              )}
-              {showFloatingButtons && (
-                <div
-                  onClick={() => setShowCrypt(!showCrypt)}
-                  className="d-flex float-right-middle float-add-on align-items-center justify-content-center"
-                >
-                  <div className="d-inline" style={{ fontSize: '1.6em' }}>
-                    {showCrypt ? 'LIB' : 'CR'}
-                  </div>
-                </div>
-              )}
-            </>
+            <InventoryMobile
+              newCryptId={newCryptId}
+              newLibraryId={newLibraryId}
+              setNewCryptId={setNewCryptId}
+              setNewLibraryId={setNewLibraryId}
+              newCryptRef={newCryptRef}
+              newLibraryRef={newLibraryRef}
+              newCryptFocus={newCryptFocus}
+              newLibraryFocus={newLibraryFocus}
+              clan={clan}
+              type={type}
+              discipline={discipline}
+              setClan={setClan}
+              setType={setType}
+              setDiscipline={setDiscipline}
+              missingByClan={missingByClan}
+              missingByType={missingByType}
+              missingByDiscipline={missingByDiscipline}
+              setMissingByClan={setMissingByClan}
+              setMissingByType={setMissingByType}
+              setMissingByDiscipline={setMissingByDiscipline}
+              category={category}
+              setCategory={setCategory}
+              setShowAddDeck={setShowAddDeck}
+              setShowAddPrecon={setShowAddPrecon}
+            />
           ) : (
             <Row className="mx-0">
-              <Col xl={1} className="hide-narrow"></Col>
-              <Col md={6} lg={6} xl={5} className="px-0 px-md-2 pe-xl-3">
-                <div className="sticky-selector pt-3 pb-2">
-                  <InventoryNewCryptCard
-                    cards={inventoryCrypt}
-                    setNewId={setNewCryptId}
-                    newRef={newCryptRef}
-                  />
-                </div>
-                {newCryptId && (
-                  <div className="sticky-inv-result py-2">
-                    <InventoryCrypt
-                      cards={{
-                        [newCryptId]: inventoryCrypt[newCryptId]
-                          ? inventoryCrypt[newCryptId]
-                          : { c: cryptCardBase[newCryptId], q: 0 },
-                      }}
-                      compact={true}
-                      newFocus={newCryptFocus}
-                    />
-                  </div>
-                )}
-                {inventoryCrypt &&
-                  (usedCryptCards.soft || usedCryptCards.hard) && (
-                    <div className="pt-2">
-                      <InventoryCrypt
-                        withCompact={newCryptId}
-                        category={category}
-                        cards={inventoryCrypt}
-                        clan={clan}
-                        setClan={setClan}
-                        setMissingByClan={setMissingByClan}
-                      />
-                    </div>
-                  )}
-              </Col>
-              <Col md={6} lg={6} xl={4} className="px-0 px-md-2 px-xl-3">
-                <div className="sticky-selector pt-3 pb-2">
-                  <InventoryNewLibraryCard
-                    cards={inventoryLibrary}
-                    setNewId={setNewLibraryId}
-                    newRef={newLibraryRef}
-                  />
-                </div>
-                {newLibraryId && (
-                  <div className="sticky-inv-result py-2">
-                    <InventoryLibrary
-                      cards={{
-                        [newLibraryId]: inventoryLibrary[newLibraryId]
-                          ? inventoryLibrary[newLibraryId]
-                          : { c: libraryCardBase[newLibraryId], q: 0 },
-                      }}
-                      compact={true}
-                      newFocus={newLibraryFocus}
-                    />
-                  </div>
-                )}
-                {inventoryLibrary &&
-                  (usedLibraryCards.soft || usedLibraryCards.hard) && (
-                    <div className="pt-2">
-                      <InventoryLibrary
-                        withCompact={newLibraryId}
-                        category={category}
-                        cards={inventoryLibrary}
-                        type={type}
-                        setType={setType}
-                        discipline={discipline}
-                        setDiscipline={setDiscipline}
-                        setMissingByType={setMissingByType}
-                        setMissingByDiscipline={setMissingByDiscipline}
-                      />
-                    </div>
-                  )}
-              </Col>
-              <Col lg={2} className="hide-on-lt1200px px-0 px-lg-2 px-xl-3">
-                <div className="sticky-buttons">
-                  <InventoryButtons
-                    crypt={inventoryCrypt}
-                    library={inventoryLibrary}
-                    setShowAddDeck={setShowAddDeck}
-                    setShowAddPrecon={setShowAddPrecon}
-                    clan={clan}
-                    discipline={discipline}
-                    type={type}
-                    missingByClan={missingByClan}
-                    missingByType={missingByType}
-                    missingByDiscipline={missingByDiscipline}
-                  />
-                  <div className="px-4 py-2">
-                    <InventoryShowSelect
-                      category={category}
-                      setCategory={setCategory}
-                    />
-                  </div>
-                </div>
-              </Col>
+              <InventoryDesktop
+                newCryptId={newCryptId}
+                newLibraryId={newLibraryId}
+                setNewCryptId={setNewCryptId}
+                setNewLibraryId={setNewLibraryId}
+                newCryptRef={newCryptRef}
+                newLibraryRef={newLibraryRef}
+                newCryptFocus={newCryptFocus}
+                newLibraryFocus={newLibraryFocus}
+                clan={clan}
+                type={type}
+                discipline={discipline}
+                setClan={setClan}
+                setType={setType}
+                setDiscipline={setDiscipline}
+                missingByClan={missingByClan}
+                missingByType={missingByType}
+                missingByDiscipline={missingByDiscipline}
+                setMissingByClan={setMissingByClan}
+                setMissingByType={setMissingByType}
+                setMissingByDiscipline={setMissingByDiscipline}
+                category={category}
+                setCategory={setCategory}
+                setShowAddDeck={setShowAddDeck}
+                setShowAddPrecon={setShowAddPrecon}
+              />
             </Row>
           )}
         </>

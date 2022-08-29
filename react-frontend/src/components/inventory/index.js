@@ -14,3 +14,5 @@ export { default as InventoryCardQuantity } from './InventoryCardQuantity.jsx';
 export { default as InventoryDeckDeleteButton } from './InventoryDeckDeleteButton.jsx';
 export { default as InventoryLibrary } from './InventoryLibrary.jsx';
 export { default as InventoryNewLibraryCard } from './InventoryNewLibraryCard.jsx';
+export { default as InventoryDesktop } from './InventoryDesktop.jsx';
+export { default as InventoryMobile } from './InventoryMobile.jsx';
