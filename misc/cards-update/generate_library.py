@@ -92,6 +92,29 @@ with open("vteslib.csv", "r", encoding="utf-8-sig") as main__csv, open(
         else:
             card["ASCII Name"] = letters_to_ascii(card["Name"])
 
+        # Sect requirement for Title-requiring cards
+        title_sects = {
+            "primogen": "camarilla",
+            "prince": "camarilla",
+            "justicar": "camarilla",
+            "imperator": "camarilla",
+            "inner circle": "camarilla",
+            "bishop": "camarilla",
+            "archbishop": "sabbat",
+            "priscus": "sabbat",
+            "cardinal": "sabbat",
+            "regent": "sabbat",
+            "1 vote": "independent",
+            "2 votes": "independent",
+            "magaji": "laibon",
+            "kholo": "laibon",
+            "baron": "anarch",
+        }
+        for req in card["Requirement"].split(","):
+            if req in title_sects:
+                if title_sects[req] not in card["Requirement"]:
+                    card["Requirement"] += f",{title_sects[req]}"
+
         # Multi-disciplines to alphabetic order
         if card["Discipline"]:
             if "/" in card["Discipline"]:

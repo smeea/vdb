@@ -5,7 +5,7 @@ with open("twd_decks.json", "r") as twda_input, open(
     "cardbase_crypt.json", "r"
 ) as crypt_file, open("cardbase_lib.json", "r") as library_file:
 
-    twda = json.load(twda_input)
+    twda = json.load(twda_input).values()
     cardbase_crypt = json.load(crypt_file).values()
     cardbase_library = json.load(library_file).values()
 

@@ -516,7 +516,7 @@
         "Id":100012,
         "Name":"Absolution of the Diabolist",
         "Pool Cost":"1",
-        "Requirement":"justicar,inner circle",
+        "Requirement":"justicar,inner circle,camarilla",
         "Rulings":[],
         "Set":{
             "AH":{
@@ -1470,7 +1470,7 @@
         "Id":100038,
         "Name":"Alastor",
         "Pool Cost":"",
-        "Requirement":"justicar,inner circle",
+        "Requirement":"justicar,inner circle,camarilla",
         "Rulings":[
             {
                 "text":"If the given weapon costs blood, the target Alastor pays the cost. ",
@@ -2304,7 +2304,7 @@
         "Id":100060,
         "Name":"Anathema",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
                 "text":"Burns the target vampire when the target is reduced to zero blood in combat, regardless of the source of the loss. ",
@@ -3254,7 +3254,7 @@
         "Id":100084,
         "Name":"Archon",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
                 "text":"If a vampire blocks an Archon, he or she burns 1 blood regardless of which action the Archon was taking. ",
@@ -4558,7 +4558,7 @@
         "Id":100116,
         "Name":"Auto-da-f\u00e9",
         "Pool Cost":"",
-        "Requirement":"cardinal,regent,inquisitor",
+        "Requirement":"cardinal,regent,inquisitor,sabbat",
         "Rulings":[],
         "Set":{
             "Third":{
@@ -4947,7 +4947,7 @@
         "Id":102218,
         "Name":"Bait and Switch",
         "Pool Cost":"",
-        "Requirement":"baron",
+        "Requirement":"baron,anarch",
         "Rulings":[],
         "Set":{
             "V5A":{
@@ -5894,7 +5894,7 @@
         "Id":100150,
         "Name":"Belonging Grants Protection",
         "Pool Cost":"",
-        "Requirement":"magaji",
+        "Requirement":"magaji,laibon",
         "Rulings":[],
         "Set":{
             "LoB":{
@@ -6207,7 +6207,7 @@
         "Id":100158,
         "Name":"Beyond Reproach",
         "Pool Cost":"",
-        "Requirement":"prince",
+        "Requirement":"prince,camarilla",
         "Rulings":[],
         "Set":{
             "AH":{
@@ -7764,7 +7764,7 @@
         "Id":100200,
         "Name":"Blood Feast",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "Sabbat":{
@@ -7871,7 +7871,7 @@
         "Id":100202,
         "Name":"Blood Hunt",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[],
         "Set":{
             "Jyhad":{
@@ -8027,7 +8027,7 @@
         "Id":100206,
         "Name":"Blood of the Sabbat",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "SW":{
@@ -8183,7 +8183,7 @@
         "Id":100210,
         "Name":"Blood Siege",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "SW":{
@@ -8447,7 +8447,7 @@
         "Id":100218,
         "Name":"Bloodbath",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[
             {
                 "text":"The target does not get an extra vote if it already has or subsequently gains a title. If the target loses his title, then he again gets his extra vote. ",
@@ -11281,7 +11281,7 @@
         "Id":100295,
         "Name":"Cardinal Sin: Failure of Mission",
         "Pool Cost":"",
-        "Requirement":"archbishop,cardinal,regent",
+        "Requirement":"archbishop,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "Sabbat":{
@@ -11310,7 +11310,7 @@
         "Id":100296,
         "Name":"Cardinal Sin: Insubordination",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "Sabbat":{
@@ -12225,7 +12225,7 @@
         "Id":100319,
         "Name":"Chalice of Kinship",
         "Pool Cost":"1",
-        "Requirement":"priscus,cardinal,regent",
+        "Requirement":"priscus,cardinal,regent,sabbat",
         "Rulings":[
             {
                 "text":"The provided action ends with no effect, if the acting minion does not possess the equipment when the action resolves. It is still considered successful if not blocked. ",
@@ -12257,7 +12257,7 @@
         "Id":100320,
         "Name":"Chameleon",
         "Pool Cost":"",
-        "Requirement":"baron",
+        "Requirement":"baron,anarch",
         "Rulings":[
             {
                 "text":"Cannot be used on a vampire who merged last turn: merging is not entering play. ",
@@ -14077,7 +14077,7 @@
         "Id":100364,
         "Name":"Closed Session",
         "Pool Cost":"",
-        "Requirement":"prince,justicar,inner circle",
+        "Requirement":"prince,justicar,inner circle,camarilla",
         "Rulings":[
             {
                 "text":"Cannot be used during a referendum that is automatically passing. ",
@@ -15797,7 +15797,7 @@
         "Id":100413,
         "Name":"Consecration Rites",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "Sabbat":{
@@ -16420,7 +16420,7 @@
         "Id":100431,
         "Name":"Corruption's Purge",
         "Pool Cost":"",
-        "Requirement":"prince,justicar,inner circle",
+        "Requirement":"prince,justicar,inner circle,camarilla",
         "Rulings":[],
         "Set":{
             "AH":{
@@ -16778,7 +16778,7 @@
         "Id":100441,
         "Name":"Creation Rites",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent,non-sterile",
+        "Requirement":"archbishop,priscus,cardinal,regent,non-sterile,sabbat",
         "Rulings":[
             {
                 "text":"If moved to the uncontrolled region, it continues to be a vampire and can be influenced. ",
@@ -19896,7 +19896,7 @@
         "Id":100525,
         "Name":"Deploy the Hand",
         "Pool Cost":"",
-        "Requirement":"archbishop,cardinal,regent",
+        "Requirement":"archbishop,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "BH":{
@@ -24456,7 +24456,7 @@
         "Id":100638,
         "Name":"Emissary",
         "Pool Cost":"",
-        "Requirement":"baron",
+        "Requirement":"baron,anarch",
         "Rulings":[
             {
                 "text":"Cannot be used during a referendum that is automatically passing. ",
@@ -25579,7 +25579,7 @@
         "Id":100666,
         "Name":"Eternal Vigilance",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[
             {
                 "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). ",
@@ -27932,7 +27932,7 @@
         "Id":100727,
         "Name":"Fifth Tradition: Hospitality",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[],
         "Set":{
             "Jyhad":{
@@ -28122,7 +28122,7 @@
         "Id":100733,
         "Name":"Fire Dance",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[
             {
                 "text":"The target vampire is chosen when the action is announced. ",
@@ -28237,7 +28237,7 @@
         "Id":100737,
         "Name":"First Tradition: The Masquerade",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
                 "text":"One or the other condition must be met fully for it to be burned. It is not burned if the controller skips two turns and pay 4 pool to play two other. ",
@@ -30151,7 +30151,7 @@
         "Id":100782,
         "Name":"Fourth Tradition: The Accounting",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[],
         "Set":{
             "Jyhad":{
@@ -33548,7 +33548,7 @@
         "Id":100871,
         "Name":"Gurchon Hall",
         "Pool Cost":"3",
-        "Requirement":"cardinal,regent",
+        "Requirement":"cardinal,regent,sabbat",
         "Rulings":[
             {
                 "text":"You need two ready vampires to gain blood. ",
@@ -34207,7 +34207,7 @@
         "Id":100890,
         "Name":"Harzomatuili",
         "Pool Cost":"5",
-        "Requirement":"cardinal,regent",
+        "Requirement":"cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "KMW":{
@@ -36903,7 +36903,7 @@
         "Id":100961,
         "Name":"Imperial Decree",
         "Pool Cost":"",
-        "Requirement":"justicar,inner circle",
+        "Requirement":"justicar,inner circle,camarilla",
         "Rulings":[],
         "Set":{
             "AH":{
@@ -38430,7 +38430,7 @@
         "Id":101003,
         "Name":"Investiture",
         "Pool Cost":"",
-        "Requirement":"cardinal,regent",
+        "Requirement":"cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "Sabbat":{
@@ -39400,7 +39400,7 @@
         "Id":101028,
         "Name":"Judgment: Camarilla Segregation",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
                 "text":"If multiple copies of the card are in play, one must pay for each of them (they stack). ",
@@ -39444,7 +39444,7 @@
         "Id":101029,
         "Name":"Judgment: Death to the Brujah!",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[],
         "Set":{
             "DS":{
@@ -40242,7 +40242,7 @@
         "Id":101052,
         "Name":"Kindred Restructure",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[],
         "Set":{
             "Jyhad":{
@@ -41705,7 +41705,7 @@
         "Id":101088,
         "Name":"Legacy of Power",
         "Pool Cost":"",
-        "Requirement":"prince,justicar,inner circle",
+        "Requirement":"prince,justicar,inner circle,camarilla",
         "Rulings":[
             {
                 "text":"May be used if one of your vampires is in combat with an ally. In this case, your vampire goes into torpor and the ally is unaffected. ",
@@ -45424,7 +45424,7 @@
         "Id":101184,
         "Name":"Masquerade Enforcement",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
                 "text":"Does not affect merging (base with advanced vampire cards). ",
@@ -46264,7 +46264,7 @@
         "Id":101208,
         "Name":"Might of the Camarilla",
         "Pool Cost":"",
-        "Requirement":"justicar,inner circle",
+        "Requirement":"justicar,inner circle,camarilla",
         "Rulings":[],
         "Set":{
             "AH":{
@@ -49530,7 +49530,7 @@
         "Id":101291,
         "Name":"No Secrets From the Magaji",
         "Pool Cost":"",
-        "Requirement":"magaji",
+        "Requirement":"magaji,laibon",
         "Rulings":[
             {
                 "text":"It still burns if a block is attempted and then an effect prevents the block (eg. {Daring the Dawn}). ",
@@ -50412,7 +50412,7 @@
         "Id":101315,
         "Name":"Of Noble Blood",
         "Pool Cost":"",
-        "Requirement":"primogen",
+        "Requirement":"primogen,camarilla",
         "Rulings":[
             {
                 "text":"Is a \u24b9 action if a vampire controlled by another Methuselah is chosen. ",
@@ -50754,7 +50754,7 @@
         "Id":101324,
         "Name":"Open War",
         "Pool Cost":"",
-        "Requirement":"baron",
+        "Requirement":"baron,anarch",
         "Rulings":[],
         "Set":{
             "TR":{
@@ -50949,7 +50949,7 @@
         "Id":102230,
         "Name":"Organized Resistance",
         "Pool Cost":"",
-        "Requirement":"baron",
+        "Requirement":"baron,anarch",
         "Rulings":[],
         "Set":{
             "V5A":{
@@ -51817,7 +51817,7 @@
         "Id":101353,
         "Name":"Parity Shift",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
                 "text":"Can not be played if there is no legal target (no other Methuselah with more pool than you). ",
@@ -52588,7 +52588,7 @@
         "Id":101377,
         "Name":"Patsy",
         "Pool Cost":"",
-        "Requirement":"baron,edge",
+        "Requirement":"baron,edge,anarch",
         "Rulings":[],
         "Set":{
             "TR":{
@@ -56628,7 +56628,7 @@
         "Id":101490,
         "Name":"Private Audience",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[
             {
                 "text":"Cannot be used during a referendum that is automatically passing. ",
@@ -56926,7 +56926,7 @@
         "Id":101499,
         "Name":"Protect Thine Own",
         "Pool Cost":"",
-        "Requirement":"justicar,inner circle",
+        "Requirement":"justicar,inner circle,camarilla",
         "Rulings":[],
         "Set":{
             "AH":{
@@ -56954,7 +56954,7 @@
         "Id":102214,
         "Name":"Protected District",
         "Pool Cost":"",
-        "Requirement":"primogen",
+        "Requirement":"primogen,camarilla",
         "Rulings":[],
         "Set":{
             "V5":{
@@ -57769,7 +57769,7 @@
         "Id":101520,
         "Name":"Purchase Pact",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "SW":{
@@ -60790,7 +60790,7 @@
         "Id":101600,
         "Name":"Remnant of the Endless Storm",
         "Pool Cost":"6",
-        "Requirement":"magaji",
+        "Requirement":"magaji,laibon",
         "Rulings":[],
         "Set":{
             "EK":{
@@ -61919,7 +61919,7 @@
         "Id":101631,
         "Name":"Revolutionary Council",
         "Pool Cost":"",
-        "Requirement":"baron",
+        "Requirement":"baron,anarch",
         "Rulings":[
             {
                 "text":"Unlocked Anarchs are chosen when choosing terms. They still count if they get locked during the vote. ",
@@ -63366,7 +63366,7 @@
         "Id":101666,
         "Name":"Sabbat Inquisitor",
         "Pool Cost":"",
-        "Requirement":"archbishop,cardinal,regent",
+        "Requirement":"archbishop,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "Sabbat":{
@@ -63449,7 +63449,7 @@
         "Id":101668,
         "Name":"Sabbat Threat",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
                 "text":"You can gain pool from the Edge before burning it to remove the threat counters, and loose no pool to the threat counters. ",
@@ -64806,7 +64806,7 @@
         "Id":101706,
         "Name":"Second Tradition: Domain",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
                 "text":"Can be used by a locked a vampire who is already attempting to block (eg. if he played a wake effect before)\". ",
@@ -67360,7 +67360,7 @@
         "Id":101768,
         "Name":"Shock Troops",
         "Pool Cost":"X",
-        "Requirement":"archbishop,cardinal,regent",
+        "Requirement":"archbishop,cardinal,regent,sabbat",
         "Rulings":[
             {
                 "text":"X can be zero. ",
@@ -68119,7 +68119,7 @@
         "Id":101788,
         "Name":"Sixth Tradition: Destruction",
         "Pool Cost":"",
-        "Requirement":"prince,justicar",
+        "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
                 "text":"\"Since your last turn\" means between the end of your last turn and now. Your last turn does not qualify, your current turn does. ",
@@ -73123,7 +73123,7 @@
         "Id":101915,
         "Name":"Sweeper",
         "Pool Cost":"",
-        "Requirement":"baron",
+        "Requirement":"baron,anarch",
         "Rulings":[],
         "Set":{
             "Anarchs":{
@@ -74922,7 +74922,7 @@
         "Id":101955,
         "Name":"Temptation of Greater Power",
         "Pool Cost":"3",
-        "Requirement":"justicar",
+        "Requirement":"justicar,camarilla",
         "Rulings":[],
         "Set":{
             "Jyhad":{
@@ -75610,7 +75610,7 @@
         "Id":101973,
         "Name":"Third Tradition: Progeny",
         "Pool Cost":"",
-        "Requirement":"prince,justicar,non-sterile",
+        "Requirement":"prince,justicar,non-sterile,camarilla",
         "Rulings":[
             {
                 "text":"The decision to move blood on the Progeny or not is taken upon resolution. ",
@@ -76880,7 +76880,7 @@
         "Id":102004,
         "Name":"Tradition Upheld",
         "Pool Cost":"",
-        "Requirement":"prince,justicar,inner circle",
+        "Requirement":"prince,justicar,inner circle,camarilla",
         "Rulings":[],
         "Set":{
             "DS":{
@@ -77187,7 +77187,7 @@
         "Id":102013,
         "Name":"Travelers Obey the Tenets",
         "Pool Cost":"",
-        "Requirement":"magaji",
+        "Requirement":"magaji,laibon",
         "Rulings":[
             {
                 "text":"The acting player decides the order of (and can play other) \"after resolving the action\" effects. ",
@@ -80169,7 +80169,7 @@
         "Id":102094,
         "Name":"Vaulderie",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "Sabbat":{
@@ -82128,7 +82128,7 @@
         "Id":102145,
         "Name":"War Party",
         "Pool Cost":"",
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"archbishop,priscus,cardinal,regent,sabbat",
         "Rulings":[],
         "Set":{
             "Sabbat":{
@@ -83514,7 +83514,7 @@
         "Id":102182,
         "Name":"Will of the Council",
         "Pool Cost":"",
-        "Requirement":"primogen",
+        "Requirement":"primogen,camarilla",
         "Rulings":[],
         "Set":{
             "CE":{
@@ -84005,7 +84005,7 @@
         "Id":102195,
         "Name":"Wrath of the Inner Circle",
         "Pool Cost":"",
-        "Requirement":"inner circle",
+        "Requirement":"inner circle,camarilla",
         "Rulings":[],
         "Set":{
             "DS":{
