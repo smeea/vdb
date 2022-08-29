@@ -19,7 +19,7 @@ import {
 import { resultDecksSort } from 'utils';
 import { useApp } from 'context';
 
-function InventoryAddDeckModal(props) {
+const InventoryAddDeckModal = ({ show, handleClose }) => {
   const {
     cryptCardBase,
     inventoryCrypt,
@@ -271,15 +271,10 @@ function InventoryAddDeckModal(props) {
           )}
           <td className="buttons">
             <div className="d-inline pe-1">
-              <InventoryDeckAddButton
-                inventoryDeckAdd={props.inventoryDeckAdd}
-                deck={deck}
-                inInventory={inInventory}
-              />
+              <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
             </div>
             <div className="d-inline pe-1">
               <InventoryDeckDeleteButton
-                inventoryDeckDelete={props.inventoryDeckDelete}
                 deck={deck}
                 inInventory={inInventory}
               />
@@ -292,8 +287,8 @@ function InventoryAddDeckModal(props) {
 
   return (
     <Modal
-      show={props.show}
-      onHide={props.handleClose}
+      show={show}
+      onHide={handleClose}
       animation={false}
       size="xl"
       dialogClassName={isMobile ? 'm-0' : null}
@@ -306,7 +301,7 @@ function InventoryAddDeckModal(props) {
         }
       >
         <h5>Import Deck to Inventory</h5>
-        <Button variant="outline-secondary" onClick={props.handleClose}>
+        <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -361,6 +356,6 @@ function InventoryAddDeckModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default InventoryAddDeckModal;

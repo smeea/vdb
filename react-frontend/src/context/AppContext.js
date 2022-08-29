@@ -641,6 +641,28 @@ export const AppProvider = (props) => {
       }
     });
 
+    inventoryCardsChange(cards);
+  };
+
+  const inventoryDeckDelete = (deck) => {
+    const cards = {};
+
+    Object.keys(deck.crypt).forEach((card) => {
+      if (deck.crypt[card].q) {
+        cards[card] = -deck.crypt[card].q;
+      }
+    });
+
+    Object.keys(deck.library).forEach((card) => {
+      if (deck.library[card].q) {
+        cards[card] = -deck.library[card].q;
+      }
+    });
+
+    inventoryCardsChange(cards);
+  };
+
+  const inventoryCardsChange = (cards) => {
     const url = `${process.env.API_URL}inventory`;
     const options = {
       method: 'PATCH',
@@ -659,73 +681,18 @@ export const AppProvider = (props) => {
       setInventoryLibrary(oldLibraryState);
     });
 
-    inventoryAddToState(cards);
+    inventoryChangeState(cards);
   };
 
-  const inventoryDeckDelete = (deck) => {
-    const cards = {}; // TODO use CardsRel instead
-    const cardsRel = {};
-
-    Object.keys(deck.crypt).forEach((card) => {
-      if (deck.crypt[card].q) {
-        cards[card] = deck.crypt[card].q;
-        cardsRel[card] = -deck.crypt[card].q;
-      }
-    });
-
-    Object.keys(deck.library).forEach((card) => {
-      if (deck.library[card].q) {
-        cards[card] = deck.library[card].q;
-        cardsRel[card] = -deck.library[card].q;
-      }
-    });
-
-    const url = `${process.env.API_URL}inventory`;
-    const options = {
-      method: 'PATCH',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(cardsRel),
-    };
-
-    const oldCryptState = { ...inventoryCrypt };
-    const oldLibraryState = { ...inventoryLibrary };
-    fetch(url, options).catch((error) => {
-      setInventoryCrypt(oldCryptState);
-      setInventoryLibrary(oldLibraryState);
-    });
-
-    inventoryDeleteFromState(cards);
-  };
-
-  const inventoryAddToState = (cards) => {
-    inventoryServices.addToStateByType(
+  const inventoryChangeState = (cards) => {
+    inventoryServices.changeState(
       setInventoryCrypt,
       cryptCardBase,
       Object.keys(cards).filter((cardid) => cardid > 200000),
       cards
     );
 
-    inventoryServices.addToStateByType(
-      setInventoryLibrary,
-      libraryCardBase,
-      Object.keys(cards).filter((cardid) => cardid < 200000),
-      cards
-    );
-  };
-
-  const inventoryDeleteFromState = (cards) => {
-    inventoryServices.deleteFromStateByType(
-      setInventoryCrypt,
-      cryptCardBase,
-      Object.keys(cards).filter((cardid) => cardid > 200000),
-      cards
-    );
-
-    inventoryServices.deleteFromStateByType(
+    inventoryServices.changeState(
       setInventoryLibrary,
       libraryCardBase,
       Object.keys(cards).filter((cardid) => cardid < 200000),
@@ -834,8 +801,6 @@ export const AppProvider = (props) => {
         setInventoryLibrary,
         inventoryDeckAdd,
         inventoryDeckDelete,
-        inventoryAddToState,
-        inventoryDeleteFromState,
         usedCryptCards,
         usedLibraryCards,
         inventoryCardChange,

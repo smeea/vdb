@@ -3,6 +3,7 @@
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - Crypt sorting in review (works in Deck!)
 - Inventory table width for library on desktop & mobile (and q-ty for crypt)
+- Inventory icon in deck on inventory-mode change
 
 # FEATURES
 - Check TWD
@@ -18,7 +19,6 @@
 - Move pdf proxy to frontend
 - TWD Cards History performance - react-window
 - Refactor CSS
-- Refactor inventoryDeckAdd/Delete, inventoryAddTo/DeleteFromState for +-qty
 - Refactor inventoryCryptSort and resultCryptSort (same for Library)
 
 # IMPROVE TECHNOLOGY - BACKEND

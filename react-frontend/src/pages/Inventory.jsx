@@ -18,8 +18,6 @@ const Inventory = (props) => {
   const {
     username,
     isMobile,
-    inventoryDeckAdd,
-    inventoryDeckDelete,
     showMenuButtons,
     setShowMenuButtons,
     showFloatingButtons,
@@ -188,8 +186,6 @@ const Inventory = (props) => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          inventoryDeckAdd={inventoryDeckAdd}
-          inventoryDeckDelete={inventoryDeckDelete}
         />
       )}
       {showAddPrecon && (
@@ -200,8 +196,6 @@ const Inventory = (props) => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          inventoryDeckAdd={inventoryDeckAdd}
-          inventoryDeckDelete={inventoryDeckDelete}
         />
       )}
     </Container>

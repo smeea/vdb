@@ -16,12 +16,7 @@ import { resultDecksSort } from 'utils';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const InventoryAddDeckModal = ({
-  inventoryDeckAdd,
-  inventoryDeckDelete,
-  show,
-  handleClose,
-}) => {
+const InventoryAddDeckModal = ({ show, handleClose }) => {
   const { inventoryCrypt, inventoryLibrary, preconDecks, isDesktop, isMobile } =
     useApp();
 
@@ -216,15 +211,10 @@ const InventoryAddDeckModal = ({
           </td>
           <td className="buttons">
             <div className="d-inline pe-1">
-              <InventoryDeckAddButton
-                inventoryDeckAdd={inventoryDeckAdd}
-                deck={deck}
-                inInventory={inInventory}
-              />
+              <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
             </div>
             <div className="d-inline pe-1">
               <InventoryDeckDeleteButton
-                inventoryDeckDelete={inventoryDeckDelete}
                 deck={deck}
                 inInventory={inInventory}
               />

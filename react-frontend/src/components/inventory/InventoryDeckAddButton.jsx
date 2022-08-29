@@ -5,8 +5,9 @@ import Plus from 'assets/images/icons/plus.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
-const InventoryDeckAddButton = ({ deck, inInventory, inventoryDeckAdd }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+const InventoryDeckAddButton = ({ deck, inInventory }) => {
+  const { inventoryDeckAdd, setShowFloatingButtons, setShowMenuButtons } =
+    useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);

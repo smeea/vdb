@@ -1,4 +1,4 @@
-from flask import jsonify, request, Response
+from flask import jsonify, request, abort, Response
 from flask_login import current_user, login_required
 import json
 from deck_export import deck_export
@@ -53,7 +53,7 @@ def inventory_import_route():
         return jsonify(new_cards)
 
     except Exception:
-        return Abort(400)
+        return abort(400)
 
 
 @app.route("/api/inventory", methods=["DELETE"])
@@ -73,7 +73,7 @@ def inventory_add_cards_route():
     for k, v in new_cards.items():
         k = int(k)
         if k in merged_cards:
-            if merged_cards[k] + v < 0:
+            if merged_cards[k] + v <= 0:
                 del merged_cards[k]
             else:
                 merged_cards[k] = merged_cards[k] + v
