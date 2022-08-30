@@ -97,8 +97,8 @@ const getCryptText = (crypt) => {
     }
     const disciplines = getDisciplines(c.Disciplines);
 
-    if (q.toString.length > maxQtyLength) {
-      maxQtyLength = q.toString.length;
+    if (q.toString().length > maxQtyLength) {
+      maxQtyLength = q.toString().length;
     }
     if (name.length > maxNameLength) {
       maxNameLength = name.length;
@@ -106,8 +106,8 @@ const getCryptText = (crypt) => {
     if (c['Title'].length > maxTitleLength) {
       maxTitleLength = c['Title'].length;
     }
-    if (c['Capacity'].toString.length > maxCapacityLength) {
-      maxCapacityLength = c['Capacity'].toString.length;
+    if (c['Capacity'].toString().length > maxCapacityLength) {
+      maxCapacityLength = c['Capacity'].toString().length;
     }
     if (disciplines.length > maxDisciplinesLength) {
       maxDisciplinesLength = disciplines.length;
@@ -124,10 +124,10 @@ const getCryptText = (crypt) => {
     }
     const disciplines = getDisciplines(c.Disciplines);
 
-    const quantitySpaces = maxQtyLength - q.toString.length;
+    const quantitySpaces = maxQtyLength - q.toString().length;
     const nameSpaces = maxNameLength - name.length + 3;
     const disSpaces = maxDisciplinesLength - disciplines.length + 3;
-    const capacitySpaces = maxCapacityLength - c['Capacity'].toString.length;
+    const capacitySpaces = maxCapacityLength - c['Capacity'].toString().length;
     const titleSpaces = maxTitleLength - c['Title'].length + 3;
 
     result += `${q}x${' '.repeat(quantitySpaces)} `;
@@ -298,8 +298,8 @@ https://www.vekn.net/event-calendar/event/9953     # Event Link
 -- 2gw8 + 3vp in final                             # Scores
 
 Deck Name: ${deck.name}${' '.repeat(39 - deck.name.length)} # OPTIONAL
-Author: Not-Karl-Schaefer ${' '.repeat(
-      24
+Created by: Not-Karl-Schaefer ${' '.repeat(
+      20
     )} # OPTIONAL, only if different from Winner
 Description:                                       # OPTIONAL
 ${
