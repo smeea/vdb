@@ -2,32 +2,34 @@ import React from 'react';
 import { ResultDisciplineImage } from 'components';
 import { useApp } from 'context';
 
-function DeckCryptDisciplines(props) {
+const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines, nonKeyDisciplines }) => {
   const { isMobile } = useApp();
 
   const emptyCols = [];
   let counter = 0;
-  const n = props.keyDisciplines + props.nonKeyDisciplines;
+  const n = keyDisciplines + nonKeyDisciplines;
   const maxCols = n < 8 ? n : isMobile ? 7 : 8;
 
   const width = 100 / maxCols + '%';
 
-  const disciplineCols = props.disciplinesSet.map((d, index) => {
-    if (counter < props.keyDisciplines) {
-      counter += 1;
+  const keyDisciplinesCols = disciplinesSet.slice(0, keyDisciplines).map((d, index) => {
+    counter += 1
+    return (
+      <td width={width} key={index}>
+        {value[d] && (
+          <ResultDisciplineImage value={d} superior={value[d] === 2} />
+        )}
+      </td>
+    );
+  })
+
+  const restDisciplinesCols = disciplinesSet.slice(keyDisciplines).sort().map((d, index) => {
+    if (value[d]) {
+      counter += 1
       return (
         <td width={width} key={index}>
-          {props.value[d] && (
-            <ResultDisciplineImage value={d} superior={props.value[d] === 2} />
-          )}
-        </td>
-      );
-    } else if (props.value[d]) {
-      counter += 1;
-      return (
-        <td width={width} key={index}>
-          {props.value[d] && (
-            <ResultDisciplineImage value={d} superior={props.value[d] === 2} />
+          {value[d] && (
+            <ResultDisciplineImage value={d} superior={value[d] === 2} />
           )}
         </td>
       );
@@ -45,7 +47,8 @@ function DeckCryptDisciplines(props) {
     <table className="disciplines">
       <tbody>
         <tr>
-          {disciplineCols}
+          {keyDisciplinesCols}
+          {restDisciplinesCols}
           {emptyCols}
         </tr>
       </tbody>

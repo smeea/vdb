@@ -3,11 +3,10 @@
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - Crypt sorting in review (works in Deck!)
 - Inventory table width for library on desktop & mobile (and q-ty for crypt)
-- Disciplines sorting (and re-sorting on q-ty change) in deck crypt and results
 
 # FEATURES
 - Check TWD
-- Show changes from base deck in A
+- Show changes from base deck in PDA
 - Review to create snapshots (tagged for easier removal)
 
 # MAYBE LATER FEATURES

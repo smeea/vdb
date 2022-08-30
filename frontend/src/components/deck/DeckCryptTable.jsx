@@ -53,7 +53,7 @@ const DeckCryptTable = ({
     setShowFloatingButtons,
   } = useApp();
 
-  const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
+  const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
   let deckInvType = null;
   if (inventoryMode && decks && deckid && decks[deckid]) {
     deckInvType = decks[deckid].inventory_type;
@@ -197,7 +197,7 @@ const DeckCryptTable = ({
           </td>
           {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td className="disciplines" onClick={() => handleClick(card.c)}>
-              {disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
+              {keyDisciplines && disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
                 <DeckCryptDisciplines
                   value={card.c.Disciplines}
                   disciplinesSet={disciplinesSet}
