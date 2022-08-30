@@ -49,7 +49,6 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
 
   const handleSnapshotButton = () => {
     const url = `${process.env.API_URL}deck/${deck.deckid}/snapshot`;
-
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -57,12 +56,13 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
     };
 
     fetch(url, options)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
       .then((data) => {
-        if (data.error === undefined) {
-          const url = `${process.env.ROOT_URL}decks?id=${data.deckid}`;
-          navigator.clipboard.writeText(url);
-        }
+        const url = `${process.env.ROOT_URL}decks?id=${data.deckid}`;
+        navigator.clipboard.writeText(url);
       })
       .then(() => {
         setState(true);
@@ -71,6 +71,13 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
         }, 1000);
+      })
+      .catch((error) => {
+        if (error.message == 400) {
+          setError('NO DECK WITH THIS ID');
+        } else {
+          setError('CONNECTION PROBLEM');
+        }
       });
   };
 

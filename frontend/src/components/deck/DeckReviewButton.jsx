@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PencilSquare from 'assets/images/icons/pencil-square.svg';
 import { useApp } from 'context';
@@ -6,7 +6,27 @@ import { ButtonIconed } from 'components';
 
 const DeckReviewButton = ({ deckid }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const [snapshotId, setSnapshotId] = useState(undefined)
   const navigate = useNavigate();
+
+  const getSnapshot = (deckid) => {
+    const url = `${process.env.API_URL}deck/${deckid}/snapshot`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setSnapshotId(data.deckid)
+      })
+  }
+
+  useEffect(() => {
+    if (snapshotId) navigate(`/review?id=${snapshotId}`);
+  }, [snapshotId])
 
   return (
     <ButtonIconed
@@ -14,7 +34,7 @@ const DeckReviewButton = ({ deckid }) => {
       onClick={() => {
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
-        navigate(`/review?id=${deckid}`);
+        getSnapshot(deckid)
       }}
       title="Review Deck"
       icon={<PencilSquare />}

@@ -485,14 +485,14 @@ def import_branch_route(deckid):
 
 @app.route("/api/deck/<string:deckid>/snapshot", methods=["GET"])
 def url_snapshot_route(deckid):
-    targetDeck = Deck.query.get(deckid)
+    target_deck = Deck.query.get(deckid)
     new_deckid = uuid.uuid4().hex
     d = Deck(
         deckid=new_deckid,
-        name=targetDeck.name,
-        author_public_name=targetDeck.author_public_name,
-        description=targetDeck.description,
-        cards=targetDeck.cards,
+        name=target_deck.name,
+        author_public_name=target_deck.author_public_name,
+        description=target_deck.description,
+        cards=target_deck.cards,
     )
     db.session.add(d)
     db.session.commit()

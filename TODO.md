@@ -7,7 +7,6 @@
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
-- Review to create snapshots (tagged for easier removal)
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
