@@ -9,7 +9,6 @@
 - Check TWD
 - Show changes from base deck in A
 - Review to create snapshots (tagged for easier removal)
-- Spinner for card ideas
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
