@@ -6,14 +6,12 @@ Public instance is available at https://vdb.im.
 
 ## COMPONENTS
 
-
 VDB consist of two components communicating with each other.
 
 ### FRONTEND
-Serve the UI for the modern browsers, using:
+Serve the UI for the modern browsers using:
 ```
-   Node.js (tested on v16)
-   ReactJS
+   ReactJS (tested with Node.js v16)
    React-Bootstrap
 ```
 
@@ -40,7 +38,7 @@ On Windows and MacOS commands may be different (I recommend using WSL on Windows
 
 Start backend:
 ```
-    cd flask-backend
+    cd backend
     python -m venv venv
     source venv/bin/activate
     python -m pip install -r requirements.txt
@@ -52,7 +50,7 @@ Start backend:
 
 Start frontend:
 ```
-    cd react-backend
+    cd backend
     npm install
     npx parcel serve index.html
 ```
@@ -65,7 +63,7 @@ For production, in addition to the steps above, you should at least:
 * setup web-server instead of `parcel serve` embedded server
 * setup wsgi-server instead of `flask run` embedded server
 * build frontend for production (see your prefered bundler documentation, for `parcel` use `parcel build --no-cache index.html`)
-* change `app.config['SECRET_KEY']` in `flask-backend/config.py`
+* change `app.config['SECRET_KEY']` in `backend/config.py`
 
 For reference:
 Public instance at https://vdb.im runs from master branch without any changes using `gunicorn` (`gunicorn wsgi:app`) and `nginx` (sample configuration is in `/misc/nginx.conf`).
@@ -81,12 +79,11 @@ Public instance at https://vdb.im runs from master branch without any changes us
 If you need support/help don't hesitate to fill Issue or send me an email to smeea@riseup.net.
 
 ## CONTRIBUTION
-Contributions in both frontend and backend parts are welcome, but please create an issue first to discuss if the feature/fix (and it's particular implementation) can be merged at all before spending any resources.
+Contributions in both frontend and backend parts are welcome, but please create an issue first to discuss if the feature/fix (and its particular implementation) are confirmed before spending any resources.
 
-There are no coding style requirements established.
-(Unfortunately) tests coverage for the project is 0%, so no tests required.
+There are no coding style or test requirements established.
 
 ## LICENSE
 
 MIT for everything, except:
-- Card images and game-related icons at `react-frontend/assets/images/` and card texts which are copyrighted by Paradox Interactive AB and used under [Dark Pack](https://www.worldofdarkness.com/dark-pack) agreement.
+- Card texts, card images and game-related icons in `frontend/assets/images/`, which are copyrighted by Paradox Interactive AB and used under [Dark Pack](https://www.worldofdarkness.com/dark-pack) agreement.
