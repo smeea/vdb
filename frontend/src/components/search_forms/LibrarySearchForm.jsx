@@ -203,7 +203,13 @@ const LibrarySearchForm = (props) => {
         setPreresults(filteredCards);
       }
     } else {
-      setLibraryResults(filteredCards);
+      if (hideMissing && inventoryMode) {
+        setLibraryResults(
+          filteredCards.filter((card) => inventoryLibrary[card.Id])
+        );
+      } else {
+        setLibraryResults(filteredCards);
+      }
       if (filteredCards.length == 0) {
         navigate('/library');
         setError('NO CARDS FOUND');

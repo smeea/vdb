@@ -186,6 +186,7 @@ const CryptSearchForm = (props) => {
   const processSearch = () => {
     const sanitizeForm = sanitizeFormState('crypt', cryptFormState);
     setError(false);
+
     if (Object.entries(sanitizeForm).length === 0) {
       setError('EMPTY REQUEST');
       return;
@@ -208,7 +209,13 @@ const CryptSearchForm = (props) => {
         setPreresults(filteredCards);
       }
     } else {
-      setCryptResults(filteredCards);
+      if (hideMissing && inventoryMode) {
+        setCryptResults(
+          filteredCards.filter((card) => inventoryCrypt[card.Id])
+        );
+      } else {
+        setCryptResults(filteredCards);
+      }
       if (filteredCards.length == 0) {
         navigate('/crypt');
         setError('NO CARDS FOUND');

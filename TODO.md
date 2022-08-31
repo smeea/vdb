@@ -7,9 +7,11 @@
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
+- Close button on bottom in menu in mobile
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
+- Boilerplates modules for new decks
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in excel to frontend
