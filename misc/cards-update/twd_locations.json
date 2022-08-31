@@ -16,6 +16,10 @@
         "value":"Adelaide, South Australia"
     },
     {
+        "label":"Aix en Provence, France",
+        "value":"Aix en Provence, France"
+    },
+    {
         "label":"Alagoas, Brazil",
         "value":"Alagoas, Brazil"
     },
@@ -40,8 +44,8 @@
         "value":"Alcorc\u00f3n, Madrid, Spain"
     },
     {
-        "label":"Algeciras",
-        "value":"Algeciras"
+        "label":"Algeciras, Spain",
+        "value":"Algeciras, Spain"
     },
     {
         "label":"Alicante, Spain",
@@ -116,14 +120,6 @@
         "value":"Auckland, New Zealand"
     },
     {
-        "label":"Austin",
-        "value":"Austin"
-    },
-    {
-        "label":"Austin, TX",
-        "value":"Austin, TX"
-    },
-    {
         "label":"Austin, Texas",
         "value":"Austin, Texas"
     },
@@ -160,24 +156,8 @@
         "value":"Badalona, Spain"
     },
     {
-        "label":"Badia del Valles, Barcelona, Spain",
-        "value":"Badia del Valles, Barcelona, Spain"
-    },
-    {
-        "label":"Badia del Valles, Spain",
-        "value":"Badia del Valles, Spain"
-    },
-    {
-        "label":"Badia del Vall\u00e8s, Barcelona, Spain",
-        "value":"Badia del Vall\u00e8s, Barcelona, Spain"
-    },
-    {
         "label":"Badia del Vall\u00e8s, Spain",
         "value":"Badia del Vall\u00e8s, Spain"
-    },
-    {
-        "label":"Badia del valles, Barcelona, Spain",
-        "value":"Badia del valles, Barcelona, Spain"
     },
     {
         "label":"Bad\u00eda del Vall\u00e9s, Barcelona, Spain",
@@ -248,10 +228,6 @@
         "value":"Belgrade, Serbia"
     },
     {
-        "label":"Belo Horizonte, Brasil",
-        "value":"Belo Horizonte, Brasil"
-    },
-    {
         "label":"Belo Horizonte, Brazil",
         "value":"Belo Horizonte, Brazil"
     },
@@ -274,6 +250,10 @@
     {
         "label":"Berlin, Germany",
         "value":"Berlin, Germany"
+    },
+    {
+        "label":"Bielsko-Bia\u0142a, Poland",
+        "value":"Bielsko-Bia\u0142a, Poland"
     },
     {
         "label":"Bilbao, Spain",
@@ -320,10 +300,6 @@
         "value":"Bordeaux, France"
     },
     {
-        "label":"Boston",
-        "value":"Boston"
-    },
-    {
         "label":"Boston, Massachusetts",
         "value":"Boston, Massachusetts"
     },
@@ -334,10 +310,6 @@
     {
         "label":"Bourg la Reine, France",
         "value":"Bourg la Reine, France"
-    },
-    {
-        "label":"Brasil",
-        "value":"Brasil"
     },
     {
         "label":"Bratislava, Slovak Republic",
@@ -430,10 +402,6 @@
     {
         "label":"Cambridge, England",
         "value":"Cambridge, England"
-    },
-    {
-        "label":"Campina Grande, Brasil",
-        "value":"Campina Grande, Brasil"
     },
     {
         "label":"Campina Grande, Brazil",
@@ -588,10 +556,6 @@
         "value":"Columbus Convention Centre, Ohio"
     },
     {
-        "label":"Columbus Ohio",
-        "value":"Columbus Ohio"
-    },
-    {
         "label":"Columbus, Ohio",
         "value":"Columbus, Ohio"
     },
@@ -670,10 +634,6 @@
     {
         "label":"D.C.",
         "value":"D.C."
-    },
-    {
-        "label":"Dallas",
-        "value":"Dallas"
     },
     {
         "label":"Dallas, Texas",
@@ -888,6 +848,10 @@
         "value":"Fair Lawn, New Jersey"
     },
     {
+        "label":"Falkenberg, Sweden",
+        "value":"Falkenberg, Sweden"
+    },
+    {
         "label":"Fantasiapelit Helsinki, Kaivopiha, Finland",
         "value":"Fantasiapelit Helsinki, Kaivopiha, Finland"
     },
@@ -964,16 +928,20 @@
         "value":"Game Table Adventures, Newark, Ohio"
     },
     {
-        "label":"Games and Comics...and Stuff, Glen Burnie, Maryland",
-        "value":"Games and Comics...and Stuff, Glen Burnie, Maryland"
+        "label":"Game of Boards store, Rio de Janeiro, Brazil",
+        "value":"Game of Boards store, Rio de Janeiro, Brazil"
+    },
+    {
+        "label":"Games and Comics... and Stuff, Glen Burnie, Maryland",
+        "value":"Games and Comics... and Stuff, Glen Burnie, Maryland"
     },
     {
         "label":"Games to Die For, Indianapolis, Indiana",
         "value":"Games to Die For, Indianapolis, Indiana"
     },
     {
-        "label":"Gamex 2001, Los Angeles",
-        "value":"Gamex 2001, Los Angeles"
+        "label":"Gamex 2001, Los Angeles, California",
+        "value":"Gamex 2001, Los Angeles, California"
     },
     {
         "label":"Gamex 2012, Los Angeles, California",
@@ -1244,6 +1212,10 @@
         "value":"Hradec Kralove, Czech Republic"
     },
     {
+        "label":"Hradec Kr\u00e1lov\u00e9, Czech Republic",
+        "value":"Hradec Kr\u00e1lov\u00e9, Czech Republic"
+    },
+    {
         "label":"Hull City, Quebec",
         "value":"Hull City, Quebec"
     },
@@ -1420,6 +1392,10 @@
         "value":"Kecskem\u00e9t, Hungary"
     },
     {
+        "label":"Kerava, Finland",
+        "value":"Kerava, Finland"
+    },
+    {
         "label":"Kismaros, Hungary",
         "value":"Kismaros, Hungary"
     },
@@ -1438,6 +1414,10 @@
     {
         "label":"Kralupy, Czech Republic",
         "value":"Kralupy, Czech Republic"
+    },
+    {
+        "label":"L'Hospitalet de Llobregat, Barcelona, Spain",
+        "value":"L'Hospitalet de Llobregat, Barcelona, Spain"
     },
     {
         "label":"L'Hospitalet, Spain",
@@ -1504,8 +1484,16 @@
         "value":"Leiria, Portugal"
     },
     {
+        "label":"Les Lilas, France",
+        "value":"Les Lilas, France"
+    },
+    {
         "label":"Librairie le Donjon, Quebec City, Quebec",
         "value":"Librairie le Donjon, Quebec City, Quebec"
+    },
+    {
+        "label":"Lichnov, Czech Republic",
+        "value":"Lichnov, Czech Republic"
     },
     {
         "label":"Liding\u00f6, Sweden",
@@ -1564,10 +1552,6 @@
         "value":"Longmont, Colorado"
     },
     {
-        "label":"Los Angeles",
-        "value":"Los Angeles"
-    },
-    {
         "label":"Los Angeles, California",
         "value":"Los Angeles, California"
     },
@@ -1594,10 +1578,6 @@
     {
         "label":"Ludwigshafen, Germany",
         "value":"Ludwigshafen, Germany"
-    },
-    {
-        "label":"Lyon , France",
-        "value":"Lyon , France"
     },
     {
         "label":"Lyon, France",
@@ -1720,10 +1700,6 @@
         "value":"Massachusetts"
     },
     {
-        "label":"Massachusetts?",
-        "value":"Massachusetts?"
-    },
-    {
         "label":"Mataro, Spain",
         "value":"Mataro, Spain"
     },
@@ -1794,6 +1770,10 @@
     {
         "label":"Milano, Italy",
         "value":"Milano, Italy"
+    },
+    {
+        "label":"Milton Keynes, England",
+        "value":"Milton Keynes, England"
     },
     {
         "label":"Milwaukee, Wisconsin",
@@ -1868,6 +1848,10 @@
         "value":"Moss, Norway"
     },
     {
+        "label":"Moss, \u00d8stfold, Norway",
+        "value":"Moss, \u00d8stfold, Norway"
+    },
+    {
         "label":"Mox Boarding Board, Seattle, Washington",
         "value":"Mox Boarding Board, Seattle, Washington"
     },
@@ -1882,10 +1866,6 @@
     {
         "label":"Mustam\u00e4nnist\u00f6, Finland",
         "value":"Mustam\u00e4nnist\u00f6, Finland"
-    },
-    {
-        "label":"M\u00e9xico",
-        "value":"M\u00e9xico"
     },
     {
         "label":"M\u00f3stoles, Madrid, Spain",
@@ -1922,10 +1902,6 @@
     {
         "label":"New Jersey",
         "value":"New Jersey"
-    },
-    {
-        "label":"New Orleans",
-        "value":"New Orleans"
     },
     {
         "label":"New Orleans, Louisiana",
@@ -2092,6 +2068,10 @@
         "value":"Oye Plage, France"
     },
     {
+        "label":"Paderno Dugnano, Italy",
+        "value":"Paderno Dugnano, Italy"
+    },
+    {
         "label":"Palazzolo sull'Oglio, Italy",
         "value":"Palazzolo sull'Oglio, Italy"
     },
@@ -2220,6 +2200,10 @@
         "value":"Prague, Czech Republic"
     },
     {
+        "label":"Praha, Czech Republic",
+        "value":"Praha, Czech Republic"
+    },
+    {
         "label":"Praia Grande, Brazil",
         "value":"Praia Grande, Brazil"
     },
@@ -2266,6 +2250,10 @@
     {
         "label":"Reading, England",
         "value":"Reading, England"
+    },
+    {
+        "label":"Recife, Brazil",
+        "value":"Recife, Brazil"
     },
     {
         "label":"Rennes, France",
@@ -2362,6 +2350,10 @@
     {
         "label":"Ropecon, Espoo, Finland",
         "value":"Ropecon, Espoo, Finland"
+    },
+    {
+        "label":"Ropecon, Helsinki, Finland",
+        "value":"Ropecon, Helsinki, Finland"
     },
     {
         "label":"Russia",
@@ -2632,10 +2624,6 @@
         "value":"S\u00e3o Paulo, Brazil"
     },
     {
-        "label":"TX",
-        "value":"TX"
-    },
-    {
         "label":"Tacoma, Washington",
         "value":"Tacoma, Washington"
     },
@@ -2680,10 +2668,6 @@
         "value":"The Jugged Hare, Victoria, London, England"
     },
     {
-        "label":"The Netherlands",
-        "value":"The Netherlands"
-    },
-    {
         "label":"The Outlook, Reading, England",
         "value":"The Outlook, Reading, England"
     },
@@ -2708,6 +2692,10 @@
         "value":"Tilburg, Netherlands"
     },
     {
+        "label":"Tinton Falls, New Jersey",
+        "value":"Tinton Falls, New Jersey"
+    },
+    {
         "label":"Tokyo, Japan",
         "value":"Tokyo, Japan"
     },
@@ -2720,20 +2708,12 @@
         "value":"Toluca de Lerdo, Mexico"
     },
     {
-        "label":"Toluca de Lerdo, M\u00e9xico",
-        "value":"Toluca de Lerdo, M\u00e9xico"
-    },
-    {
         "label":"Toluca, Mexico",
         "value":"Toluca, Mexico"
     },
     {
         "label":"Torino, Italy",
         "value":"Torino, Italy"
-    },
-    {
-        "label":"Toronto",
-        "value":"Toronto"
     },
     {
         "label":"Toronto, Ontario",
@@ -2748,8 +2728,12 @@
         "value":"Torun, Poland"
     },
     {
-        "label":"Totalcon, Andover, Massachusetts?",
-        "value":"Totalcon, Andover, Massachusetts?"
+        "label":"Totalcon, Andover, Massachusetts",
+        "value":"Totalcon, Andover, Massachusetts"
+    },
+    {
+        "label":"Toulon, France",
+        "value":"Toulon, France"
     },
     {
         "label":"Toulouse, France",
@@ -2774,10 +2758,6 @@
     {
         "label":"Troll2Jeux, Paris, France",
         "value":"Troll2Jeux, Paris, France"
-    },
-    {
-        "label":"Troll2Jeux,, Paris, France",
-        "value":"Troll2Jeux,, Paris, France"
     },
     {
         "label":"Troll2jeux, Paris, France",
@@ -2816,10 +2796,6 @@
         "value":"United Kingdom"
     },
     {
-        "label":"Unknown",
-        "value":"Unknown"
-    },
-    {
         "label":"Unlimited Hobbies, Sydney, Australia",
         "value":"Unlimited Hobbies, Sydney, Australia"
     },
@@ -2830,10 +2806,6 @@
     {
         "label":"Utrecht, Netherlands",
         "value":"Utrecht, Netherlands"
-    },
-    {
-        "label":"Utrecht, The Netherlands",
-        "value":"Utrecht, The Netherlands"
     },
     {
         "label":"Valencia, Spain",
@@ -3022,6 +2994,10 @@
     {
         "label":"Zaragoza, Spain",
         "value":"Zaragoza, Spain"
+    },
+    {
+        "label":"Zielona G\u00f3ra, Poland",
+        "value":"Zielona G\u00f3ra, Poland"
     },
     {
         "label":"\u00d6rebro, Sweden",

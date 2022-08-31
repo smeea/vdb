@@ -90,7 +90,7 @@
             }
         },
         "Title":"",
-        "Twd":24,
+        "Twd":25,
         "Type":"Vampire"
     },
     "200004":{
@@ -159,7 +159,7 @@
             }
         },
         "Title":"",
-        "Twd":17,
+        "Twd":20,
         "Type":"Vampire"
     },
     "200006":{
@@ -387,7 +387,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":60,
+        "Twd":63,
         "Type":"Vampire"
     },
     "200012":{
@@ -739,7 +739,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200022":{
@@ -834,7 +834,7 @@
             }
         },
         "Title":"",
-        "Twd":21,
+        "Twd":23,
         "Type":"Vampire"
     },
     "200025":{
@@ -1029,7 +1029,14 @@
         "Id":200030,
         "Name":"Aisha az-Zahra",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "Anthology":{
                 "":"1"
@@ -1068,7 +1075,7 @@
             }
         },
         "Title":"",
-        "Twd":67,
+        "Twd":68,
         "Type":"Vampire"
     },
     "200032":{
@@ -1188,7 +1195,7 @@
             }
         },
         "Title":"",
-        "Twd":66,
+        "Twd":67,
         "Type":"Vampire"
     },
     "200035":{
@@ -1289,7 +1296,20 @@
         "Id":200037,
         "Name":"Al-Muntaquim, The Avenger",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "LoB":{
                 "U":true
@@ -1327,6 +1347,18 @@
                 "refs":{
                     "[LSJ 20070322]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Ww-4rYJxi4w/P3QchWVq2o4J",
                     "[ANK 20180807]":"http://www.vekn.net/forum/rules-questions/76905-going-anarch-as-black-hand#89735"
+                }
+            },
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -1373,7 +1405,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200040":{
@@ -1586,7 +1618,7 @@
             }
         },
         "Title":"",
-        "Twd":35,
+        "Twd":37,
         "Type":"Vampire"
     },
     "200046":{
@@ -1707,7 +1739,14 @@
         "Id":201529,
         "Name":"Alexa Draper",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "V5":{
                 "PV":"1"
@@ -1805,7 +1844,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":65,
+        "Twd":67,
         "Type":"Vampire"
     },
     "200050":{
@@ -1840,7 +1879,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200051":{
@@ -1940,7 +1979,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":10,
         "Type":"Vampire"
     },
     "201531":{
@@ -1973,7 +2012,7 @@
             }
         },
         "Title":"prince",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200054":{
@@ -2055,14 +2094,21 @@
         "Id":201576,
         "Name":"Aline G\u00e4deke",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can unlock after a vampire performs an action to become Anarch. ",
+                "refs":{
+                    "[ANK 20220814]":"https://www.vekn.net/forum/rules-questions/79950-aline-gaedeke?start=12#105964"
+                }
+            }
+        ],
         "Set":{
             "V5A":{
                 "PB":"2"
             }
         },
         "Title":"baron",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200055":{
@@ -2152,7 +2198,14 @@
         "Id":200057,
         "Name":"Allonzo Montoya",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "KMW":{
                 "U":true
@@ -2220,7 +2273,7 @@
             }
         },
         "Title":"",
-        "Twd":19,
+        "Twd":21,
         "Type":"Vampire"
     },
     "200060":{
@@ -2318,7 +2371,7 @@
             }
         },
         "Title":"",
-        "Twd":30,
+        "Twd":32,
         "Type":"Vampire"
     },
     "201577":{
@@ -2348,7 +2401,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200063":{
@@ -2457,7 +2510,19 @@
         "Id":200065,
         "Name":"Amaravati",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked or in torpor, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
+                    "[LSJ 20100705]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ",
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
+                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ",
+                    "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
+                }
+            }
+        ],
         "Set":{
             "KMW":{
                 "U":true
@@ -2467,7 +2532,7 @@
             }
         },
         "Title":"",
-        "Twd":21,
+        "Twd":22,
         "Type":"Vampire"
     },
     "200066":{
@@ -2636,7 +2701,14 @@
         "Id":200070,
         "Name":"Ambrosio Luis Mon\u00e7ada, Plenipotentiary",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Actions from minions of the same controller targeting him are undirected, so they are not affected by his ability. ",
+                "refs":{
+                    "[LSJ 20030214-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nU7PaMBymtY/m/ELcjZX2caJUJ"
+                }
+            }
+        ],
         "Set":{
             "SW":{
                 "U":true
@@ -2817,7 +2889,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":7,
         "Type":"Vampire"
     },
     "200074":{
@@ -2939,7 +3011,7 @@
             }
         },
         "Title":"",
-        "Twd":256,
+        "Twd":293,
         "Type":"Vampire"
     },
     "200077":{
@@ -3010,7 +3082,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":38,
+        "Twd":40,
         "Type":"Vampire"
     },
     "200079":{
@@ -3077,7 +3149,7 @@
             }
         },
         "Title":"prince",
-        "Twd":1,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200080":{
@@ -3138,7 +3210,7 @@
             }
         },
         "Title":"",
-        "Twd":44,
+        "Twd":48,
         "Type":"Vampire"
     },
     "200081":{
@@ -3166,7 +3238,7 @@
             }
         },
         "Title":"",
-        "Twd":3,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200082":{
@@ -3199,7 +3271,7 @@
             }
         },
         "Title":"",
-        "Twd":69,
+        "Twd":70,
         "Type":"Vampire"
     },
     "200083":{
@@ -3243,7 +3315,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200084":{
@@ -3279,7 +3351,7 @@
             }
         },
         "Title":"",
-        "Twd":8,
+        "Twd":9,
         "Type":"Vampire"
     },
     "200085":{
@@ -3315,7 +3387,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":37,
+        "Twd":38,
         "Type":"Vampire"
     },
     "200086":{
@@ -3338,7 +3410,15 @@
         "Id":200086,
         "Name":"Andrew Stuart",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability needs to be applied before anyone has an opportunity to play another cancelation effect (eg. {Direct Intervention}). ",
+                "refs":{
+                    "[LSJ 20100728]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mzzPS-cOprI/m/BRBR4OBUOaQJ",
+                    "[LSJ 20090213]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hkTPcLPgZk4/m/WPZLiL2A91sJ"
+                }
+            }
+        ],
         "Set":{
             "KoTR":{
                 "B":"2"
@@ -3408,7 +3488,7 @@
             }
         },
         "Title":"",
-        "Twd":22,
+        "Twd":23,
         "Type":"Vampire"
     },
     "200089":{
@@ -3438,7 +3518,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200090":{
@@ -3763,7 +3843,7 @@
             }
         },
         "Title":"",
-        "Twd":15,
+        "Twd":16,
         "Type":"Vampire"
     },
     "200099":{
@@ -3795,7 +3875,7 @@
             }
         },
         "Title":"",
-        "Twd":23,
+        "Twd":24,
         "Type":"Vampire"
     },
     "200100":{
@@ -3960,6 +4040,18 @@
                 "refs":{
                     "[LSJ 20010714]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/-xrhpMEiMrw/Vnr8QIyt41cJ"
                 }
+            },
+            {
+                "text":"He cannot perform the action provided by his ability twice in the same turn. ",
+                "refs":{
+                    "[ANK 20220615]":"https://www.vekn.net/forum/rules-questions/72394-re-kaymakli-fragment?start=6#105476"
+                }
+            },
+            {
+                "text":"The action provided by his ability is directed against the Methuselah controlling the equipment or location, not the minion it's on. ",
+                "refs":{
+                    "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
             }
         ],
         "Set":{
@@ -3971,7 +4063,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":33,
+        "Twd":36,
         "Type":"Vampire"
     },
     "200105":{
@@ -4000,7 +4092,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200106":{
@@ -4044,7 +4136,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":86,
+        "Twd":89,
         "Type":"Vampire"
     },
     "200107":{
@@ -4080,7 +4172,7 @@
             }
         },
         "Title":"prince",
-        "Twd":128,
+        "Twd":131,
         "Type":"Vampire"
     },
     "200108":{
@@ -4276,7 +4368,7 @@
             }
         },
         "Title":"",
-        "Twd":29,
+        "Twd":30,
         "Type":"Vampire"
     },
     "200114":{
@@ -4376,7 +4468,7 @@
             }
         },
         "Title":"",
-        "Twd":80,
+        "Twd":84,
         "Type":"Vampire"
     },
     "200117":{
@@ -4469,7 +4561,14 @@
         "Id":200119,
         "Name":"Anu Diptinatpa",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "A":"2"
@@ -4479,7 +4578,7 @@
             }
         },
         "Title":"",
-        "Twd":12,
+        "Twd":15,
         "Type":"Vampire"
     },
     "200120":{
@@ -4611,7 +4710,7 @@
             }
         },
         "Title":"",
-        "Twd":6,
+        "Twd":7,
         "Type":"Vampire"
     },
     "200124":{
@@ -4653,7 +4752,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200125":{
@@ -4770,7 +4869,7 @@
             }
         },
         "Title":"",
-        "Twd":27,
+        "Twd":28,
         "Type":"Vampire"
     },
     "200128":{
@@ -4915,7 +5014,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200132":{
@@ -4950,7 +5049,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200133":{
@@ -5060,7 +5159,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":113,
+        "Twd":116,
         "Type":"Vampire"
     },
     "200136":{
@@ -5100,6 +5199,17 @@
                 "refs":{
                     "[LSJ 20010714]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/-xrhpMEiMrw/Vnr8QIyt41cJ"
                 }
+            },
+            {
+                "text":"The ability can be used while locked or in torpor, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
+                    "[LSJ 20100705]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ",
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
+                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ",
+                    "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
+                }
             }
         ],
         "Set":{
@@ -5111,7 +5221,7 @@
             }
         },
         "Title":"1 vote",
-        "Twd":39,
+        "Twd":47,
         "Type":"Vampire"
     },
     "200137":{
@@ -5376,7 +5486,7 @@
             }
         },
         "Title":"",
-        "Twd":21,
+        "Twd":22,
         "Type":"Vampire"
     },
     "200145":{
@@ -5423,6 +5533,12 @@
                 "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}). ",
                 "refs":{
                     "[RTR 20001020]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GvxNYsYsWJ4/EY7NOjdsGCsJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -5529,7 +5645,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201578":{
@@ -5559,7 +5675,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200147":{
@@ -5674,7 +5790,7 @@
             }
         },
         "Title":"baron",
-        "Twd":1,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200149":{
@@ -5876,7 +5992,7 @@
             }
         },
         "Title":"prince",
-        "Twd":1,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200153":{
@@ -5981,7 +6097,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200156":{
@@ -6040,7 +6156,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Her ability applies when recruiting in a non-normal way (eg. {Pack Alpha}). ",
+                "text":"Her ability applies when she recruits or employs a retainer or ally in a non-normal way (eg. {Pack Alpha}). ",
                 "refs":{
                     "[PIB 20150105-2]":"http://www.vekn.net/forum/rules-questions/68482-topaz-successfully-equips-baby-yaga-successfully-employs#68483"
                 }
@@ -6058,7 +6174,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200158":{
@@ -6088,7 +6204,7 @@
             }
         },
         "Title":"",
-        "Twd":27,
+        "Twd":31,
         "Type":"Vampire"
     },
     "200159":{
@@ -6162,7 +6278,7 @@
             }
         },
         "Title":"",
-        "Twd":8,
+        "Twd":11,
         "Type":"Vampire"
     },
     "200161":{
@@ -6195,7 +6311,7 @@
             }
         },
         "Title":"",
-        "Twd":26,
+        "Twd":27,
         "Type":"Vampire"
     },
     "201536":{
@@ -6223,7 +6339,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200162":{
@@ -6291,7 +6407,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":10,
         "Type":"Vampire"
     },
     "200164":{
@@ -6395,7 +6511,14 @@
         "Id":200166,
         "Name":"Barbaro Lucchese",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion. ",
+                "refs":{
+                    "[LSJ 20100909]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+                }
+            }
+        ],
         "Set":{
             "Promo":{
                 "2004-10-15":true
@@ -6524,7 +6647,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":8,
         "Type":"Vampire"
     },
     "200170":{
@@ -6749,7 +6872,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "200177":{
@@ -7058,7 +7181,7 @@
             }
         },
         "Title":"",
-        "Twd":78,
+        "Twd":80,
         "Type":"Vampire"
     },
     "200186":{
@@ -7094,7 +7217,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "200187":{
@@ -7119,7 +7242,14 @@
         "Id":200187,
         "Name":"Bela Kardoza",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "Third":{
                 "V":true
@@ -7156,7 +7286,7 @@
             }
         },
         "Title":"prince",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200188":{
@@ -7186,7 +7316,7 @@
             }
         },
         "Title":"",
-        "Twd":15,
+        "Twd":16,
         "Type":"Vampire"
     },
     "200189":{
@@ -7251,7 +7381,7 @@
             }
         },
         "Title":"baron",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "200190":{
@@ -7287,7 +7417,7 @@
             }
         },
         "Title":"prince",
-        "Twd":8,
+        "Twd":10,
         "Type":"Vampire"
     },
     "200191":{
@@ -7515,7 +7645,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200197":{
@@ -7653,7 +7783,7 @@
             }
         },
         "Title":"baron",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200200":{
@@ -7683,7 +7813,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200201":{
@@ -7731,7 +7861,7 @@
             }
         },
         "Title":"",
-        "Twd":16,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200202":{
@@ -7764,7 +7894,7 @@
             }
         },
         "Title":"",
-        "Twd":20,
+        "Twd":22,
         "Type":"Vampire"
     },
     "200203":{
@@ -7843,7 +7973,7 @@
             }
         },
         "Title":"",
-        "Twd":89,
+        "Twd":91,
         "Type":"Vampire"
     },
     "200205":{
@@ -7898,7 +8028,14 @@
         "Id":200206,
         "Name":"Blanche Hill",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "R":true
@@ -7993,7 +8130,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":21,
+        "Twd":22,
         "Type":"Vampire"
     },
     "200210":{
@@ -8052,7 +8189,7 @@
             }
         },
         "Title":"",
-        "Twd":89,
+        "Twd":91,
         "Type":"Vampire"
     },
     "201528":{
@@ -8273,7 +8410,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200217":{
@@ -8306,7 +8443,7 @@
             }
         },
         "Title":"",
-        "Twd":25,
+        "Twd":26,
         "Type":"Vampire"
     },
     "201538":{
@@ -8491,7 +8628,7 @@
             }
         },
         "Title":"",
-        "Twd":57,
+        "Twd":59,
         "Type":"Vampire"
     },
     "200222":{
@@ -8603,7 +8740,7 @@
             }
         },
         "Title":"baron",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200225":{
@@ -8636,7 +8773,7 @@
             }
         },
         "Title":"",
-        "Twd":16,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200226":{
@@ -8863,7 +9000,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":10,
         "Type":"Vampire"
     },
     "200232":{
@@ -8908,7 +9045,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":21,
+        "Twd":23,
         "Type":"Vampire"
     },
     "200233":{
@@ -9139,7 +9276,7 @@
             }
         },
         "Title":"",
-        "Twd":43,
+        "Twd":44,
         "Type":"Vampire"
     },
     "200240":{
@@ -9211,7 +9348,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "200242":{
@@ -9258,7 +9395,7 @@
             }
         },
         "Title":"",
-        "Twd":14,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200243":{
@@ -9329,7 +9466,7 @@
             }
         },
         "Title":"prince",
-        "Twd":19,
+        "Twd":20,
         "Type":"Vampire"
     },
     "200245":{
@@ -9519,7 +9656,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":73,
+        "Twd":74,
         "Type":"Vampire"
     },
     "200249":{
@@ -9665,7 +9802,7 @@
             }
         },
         "Title":"baron",
-        "Twd":0,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200252":{
@@ -9828,7 +9965,7 @@
             }
         },
         "Title":"prince",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200256":{
@@ -9864,7 +10001,7 @@
             }
         },
         "Title":"",
-        "Twd":76,
+        "Twd":79,
         "Type":"Vampire"
     },
     "200257":{
@@ -9984,7 +10121,7 @@
             }
         },
         "Title":"",
-        "Twd":61,
+        "Twd":64,
         "Type":"Vampire"
     },
     "200260":{
@@ -10145,7 +10282,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200265":{
@@ -10371,7 +10508,7 @@
             }
         },
         "Title":"",
-        "Twd":3,
+        "Twd":4,
         "Type":"Vampire"
     },
     "201541":{
@@ -10564,7 +10701,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":2,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200275":{
@@ -10770,7 +10907,7 @@
             }
         },
         "Title":"",
-        "Twd":19,
+        "Twd":21,
         "Type":"Vampire"
     },
     "200281":{
@@ -10835,7 +10972,7 @@
             }
         },
         "Title":"",
-        "Twd":6,
+        "Twd":7,
         "Type":"Vampire"
     },
     "200283":{
@@ -10862,7 +10999,7 @@
             }
         },
         "Title":"",
-        "Twd":8,
+        "Twd":9,
         "Type":"Vampire"
     },
     "200284":{
@@ -10962,7 +11099,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200286":{
@@ -10996,7 +11133,7 @@
             }
         },
         "Title":"",
-        "Twd":16,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200287":{
@@ -11104,7 +11241,7 @@
             }
         },
         "Title":"",
-        "Twd":23,
+        "Twd":24,
         "Type":"Vampire"
     },
     "200289":{
@@ -11136,7 +11273,7 @@
             }
         },
         "Title":"prince",
-        "Twd":47,
+        "Twd":48,
         "Type":"Vampire"
     },
     "200290":{
@@ -11340,7 +11477,7 @@
             }
         },
         "Title":"",
-        "Twd":47,
+        "Twd":48,
         "Type":"Vampire"
     },
     "200296":{
@@ -11478,7 +11615,7 @@
             }
         },
         "Title":"",
-        "Twd":35,
+        "Twd":37,
         "Type":"Vampire"
     },
     "200300":{
@@ -11542,7 +11679,7 @@
             }
         },
         "Title":"",
-        "Twd":46,
+        "Twd":48,
         "Type":"Vampire"
     },
     "200302":{
@@ -11573,7 +11710,7 @@
             }
         },
         "Title":"",
-        "Twd":20,
+        "Twd":21,
         "Type":"Vampire"
     },
     "200303":{
@@ -11609,7 +11746,7 @@
             }
         },
         "Title":"",
-        "Twd":3,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200304":{
@@ -11674,7 +11811,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200305":{
@@ -11707,7 +11844,7 @@
             }
         },
         "Title":"",
-        "Twd":73,
+        "Twd":74,
         "Type":"Vampire"
     },
     "200306":{
@@ -11898,7 +12035,7 @@
             }
         },
         "Title":"",
-        "Twd":75,
+        "Twd":79,
         "Type":"Vampire"
     },
     "200312":{
@@ -12008,7 +12145,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200315":{
@@ -12106,7 +12243,14 @@
         "Id":200317,
         "Name":"Danielle Diron",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "AU":{
                 "C":true
@@ -12212,7 +12356,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200320":{
@@ -12383,7 +12527,7 @@
             }
         },
         "Title":"",
-        "Twd":19,
+        "Twd":20,
         "Type":"Vampire"
     },
     "200325":{
@@ -12677,9 +12821,10 @@
         "New":false,
         "Rulings":[
             {
-                "text":"The animal retainers turned into allies keep their current life counters and remember their original \"starting life\", for effects that notice \"starting life\". The retainers' special abilities are lost. ",
+                "text":"The animal retainers turned into allies keep their current life counters and remember their original \"starting life\", for effects that notice \"starting life\". The retainers' special abilities are lost, as well as any continuous effect affecting them (eg. bonus from {Tainted Spring}). ",
                 "refs":{
-                    "[LSJ 20051116-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/MfGC7sJ8vh8/9ylhc34zFesJ"
+                    "[LSJ 20051116-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/MfGC7sJ8vh8/9ylhc34zFesJ",
+                    "[LSJ 20081213-3]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/cbZ2jl8-yGQ/m/OJljr9wcC4sJ"
                 }
             }
         ],
@@ -12724,7 +12869,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "200335":{
@@ -12795,7 +12940,7 @@
             }
         },
         "Title":"",
-        "Twd":24,
+        "Twd":26,
         "Type":"Vampire"
     },
     "200337":{
@@ -12897,7 +13042,7 @@
             }
         },
         "Title":"",
-        "Twd":87,
+        "Twd":88,
         "Type":"Vampire"
     },
     "200340":{
@@ -12929,7 +13074,7 @@
             }
         },
         "Title":"",
-        "Twd":7,
+        "Twd":8,
         "Type":"Vampire"
     },
     "200341":{
@@ -12999,7 +13144,7 @@
             }
         },
         "Title":"",
-        "Twd":32,
+        "Twd":33,
         "Type":"Vampire"
     },
     "200343":{
@@ -13035,7 +13180,7 @@
             }
         },
         "Title":"",
-        "Twd":42,
+        "Twd":44,
         "Type":"Vampire"
     },
     "200344":{
@@ -13238,7 +13383,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":77,
+        "Twd":80,
         "Type":"Vampire"
     },
     "200350":{
@@ -13302,7 +13447,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200351":{
@@ -13366,7 +13511,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "200353":{
@@ -13394,7 +13539,7 @@
             }
         },
         "Title":"",
-        "Twd":35,
+        "Twd":36,
         "Type":"Vampire"
     },
     "200354":{
@@ -13428,7 +13573,7 @@
             }
         },
         "Title":"",
-        "Twd":38,
+        "Twd":40,
         "Type":"Vampire"
     },
     "200355":{
@@ -13614,7 +13759,7 @@
             }
         },
         "Title":"",
-        "Twd":13,
+        "Twd":14,
         "Type":"Vampire"
     },
     "200360":{
@@ -13813,7 +13958,7 @@
             }
         },
         "Title":"prince",
-        "Twd":49,
+        "Twd":50,
         "Type":"Vampire"
     },
     "200365":{
@@ -13889,7 +14034,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "200367":{
@@ -13925,7 +14070,7 @@
             }
         },
         "Title":"cardinal",
-        "Twd":8,
+        "Twd":10,
         "Type":"Vampire"
     },
     "201544":{
@@ -13958,7 +14103,7 @@
             }
         },
         "Title":"prince",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200368":{
@@ -13992,7 +14137,7 @@
             }
         },
         "Title":"",
-        "Twd":44,
+        "Twd":45,
         "Type":"Vampire"
     },
     "200369":{
@@ -14048,7 +14193,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200371":{
@@ -14122,7 +14267,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200372":{
@@ -14153,7 +14298,7 @@
             }
         },
         "Title":"",
-        "Twd":12,
+        "Twd":13,
         "Type":"Vampire"
     },
     "200373":{
@@ -14313,7 +14458,14 @@
         "Id":200377,
         "Name":"Dr. John Dee",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "KoTR":{
                 "B":"2"
@@ -14478,7 +14630,7 @@
             }
         },
         "Title":"",
-        "Twd":7,
+        "Twd":8,
         "Type":"Vampire"
     },
     "200382":{
@@ -14612,7 +14764,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200385":{
@@ -14645,7 +14797,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200386":{
@@ -14718,7 +14870,7 @@
             }
         },
         "Title":"",
-        "Twd":36,
+        "Twd":37,
         "Type":"Vampire"
     },
     "200388":{
@@ -14851,7 +15003,7 @@
             }
         },
         "Title":"",
-        "Twd":7,
+        "Twd":8,
         "Type":"Vampire"
     },
     "200392":{
@@ -15228,7 +15380,7 @@
             }
         },
         "Title":"",
-        "Twd":28,
+        "Twd":29,
         "Type":"Vampire"
     },
     "200403":{
@@ -15297,7 +15449,7 @@
             }
         },
         "Title":"",
-        "Twd":40,
+        "Twd":41,
         "Type":"Vampire"
     },
     "200405":{
@@ -15358,7 +15510,7 @@
             }
         },
         "Title":"",
-        "Twd":48,
+        "Twd":50,
         "Type":"Vampire"
     },
     "201585":{
@@ -15406,7 +15558,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "200407":{
@@ -15637,7 +15789,7 @@
             }
         },
         "Title":"baron",
-        "Twd":0,
+        "Twd":7,
         "Type":"Vampire"
     },
     "200413":{
@@ -15791,6 +15943,17 @@
                     "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
                     "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
                 }
+            },
+            {
+                "text":"The ability can be used while locked or in torpor, only once per referendum. ",
+                "refs":{
+                    "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates",
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
+                    "[LSJ 20100705]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ",
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
+                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                }
             }
         ],
         "Set":{
@@ -15803,7 +15966,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":13,
+        "Twd":14,
         "Type":"Vampire"
     },
     "200418":{
@@ -15834,7 +15997,7 @@
             }
         },
         "Title":"",
-        "Twd":73,
+        "Twd":78,
         "Type":"Vampire"
     },
     "200419":{
@@ -15935,7 +16098,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":49,
+        "Twd":50,
         "Type":"Vampire"
     },
     "200422":{
@@ -16048,7 +16211,7 @@
             }
         },
         "Title":"",
-        "Twd":40,
+        "Twd":44,
         "Type":"Vampire"
     },
     "200425":{
@@ -16116,7 +16279,14 @@
         "Id":200426,
         "Name":"Enzo Giovanni, Pentex Board of Directors",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "TU":{
                 "C":true
@@ -16206,7 +16376,7 @@
             }
         },
         "Title":"",
-        "Twd":21,
+        "Twd":25,
         "Type":"Vampire"
     },
     "200429":{
@@ -16237,7 +16407,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":7,
+        "Twd":8,
         "Type":"Vampire"
     },
     "200430":{
@@ -16267,7 +16437,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200431":{
@@ -16397,7 +16567,7 @@
             }
         },
         "Title":"",
-        "Twd":17,
+        "Twd":20,
         "Type":"Vampire"
     },
     "200435":{
@@ -16440,7 +16610,7 @@
             }
         },
         "Title":"",
-        "Twd":75,
+        "Twd":78,
         "Type":"Vampire"
     },
     "200436":{
@@ -16625,7 +16795,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":30,
+        "Twd":31,
         "Type":"Vampire"
     },
     "200441":{
@@ -16723,6 +16893,12 @@
                 "refs":{
                     "[PIB 20121210]":"http://www.vekn.net/forum/rules-questions/42498-does-eurayle-s-special-cost-her-blood-while-targeting-hazimel?start=18#42659"
                 }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
             }
         ],
         "Set":{
@@ -16787,7 +16963,14 @@
         "Id":201627,
         "Name":"Evan Klein",
         "New":true,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Actions from minions of the same controller targeting him are undirected, so they are not affected by his ability. ",
+                "refs":{
+                    "[LSJ 20030214-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nU7PaMBymtY/m/ELcjZX2caJUJ"
+                }
+            }
+        ],
         "Set":{
             "NB":{
                 "PM":"1"
@@ -16914,6 +17097,12 @@
         "Name":"Eze, The Demon Prince",
         "New":false,
         "Rulings":[
+            {
+                "text":"His unlock ability is mandatory, it is applied even if the action unlocks him already. ",
+                "refs":{
+                    "[LSJ 20051211]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TuwXiJ8A9mo/m/Ef_5xj46lA8J"
+                }
+            },
             {
                 "text":"\"Once each turn\" means once during each player's turn. ",
                 "refs":{
@@ -17075,7 +17264,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":15,
+        "Twd":16,
         "Type":"Vampire"
     },
     "200453":{
@@ -17157,7 +17346,19 @@
         "Id":200455,
         "Name":"Fakir al Sidi",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked or in torpor, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
+                    "[LSJ 20100705]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ",
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
+                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ",
+                    "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
+                }
+            }
+        ],
         "Set":{
             "KoTR":{
                 "A":"2"
@@ -17228,7 +17429,7 @@
             }
         },
         "Title":"prince",
-        "Twd":0,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200457":{
@@ -17293,7 +17494,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "200458":{
@@ -17432,7 +17633,7 @@
             }
         },
         "Title":"",
-        "Twd":32,
+        "Twd":33,
         "Type":"Vampire"
     },
     "200462":{
@@ -17675,7 +17876,7 @@
             }
         },
         "Title":"",
-        "Twd":44,
+        "Twd":49,
         "Type":"Vampire"
     },
     "200469":{
@@ -17746,7 +17947,7 @@
             }
         },
         "Title":"prince",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200470":{
@@ -17841,7 +18042,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "200473":{
@@ -17907,7 +18108,7 @@
             }
         },
         "Title":"",
-        "Twd":65,
+        "Twd":67,
         "Type":"Vampire"
     },
     "200475":{
@@ -18039,7 +18240,7 @@
             }
         },
         "Title":"prince",
-        "Twd":79,
+        "Twd":82,
         "Type":"Vampire"
     },
     "200479":{
@@ -18067,7 +18268,7 @@
             }
         },
         "Title":"",
-        "Twd":68,
+        "Twd":69,
         "Type":"Imbued"
     },
     "200480":{
@@ -18162,7 +18363,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":12,
         "Type":"Vampire"
     },
     "200483":{
@@ -18263,7 +18464,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":26,
+        "Twd":27,
         "Type":"Vampire"
     },
     "200486":{
@@ -18333,7 +18534,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200488":{
@@ -18372,7 +18573,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "200489":{
@@ -18407,7 +18608,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":31,
+        "Twd":32,
         "Type":"Vampire"
     },
     "200490":{
@@ -18698,7 +18899,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200498":{
@@ -18740,7 +18941,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":19,
+        "Twd":20,
         "Type":"Vampire"
     },
     "200499":{
@@ -18833,7 +19034,15 @@
         "Id":200501,
         "Name":"Genevieve",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Her votes and ballots must be cast on the same side (for or against). ",
+                "refs":{
+                    "[RBK 20200701-8]":"https://www.vekn.net/rulebook#gaining-votes",
+                    "[LSJ 20051113-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/O2cgcyCHBSI/m/7vfAvsEbiU8J"
+                }
+            }
+        ],
         "Set":{
             "Sabbat":{
                 "V":true
@@ -18843,7 +19052,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":41,
+        "Twd":42,
         "Type":"Vampire"
     },
     "200502":{
@@ -18951,7 +19160,14 @@
         "Id":200504,
         "Name":"Genina, The Red Poet",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"She cannot play {Lay Low}. ",
+                "refs":{
+                    "[ANK 20220810]":"https://www.vekn.net/forum/rules-questions/79955-lay-low-vs-genina-the-red-poet#105932"
+                }
+            }
+        ],
         "Set":{
             "Promo":{
                 "2005-09-14":true
@@ -19104,7 +19320,7 @@
             }
         },
         "Title":"",
-        "Twd":27,
+        "Twd":28,
         "Type":"Vampire"
     },
     "200509":{
@@ -19239,7 +19455,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200513":{
@@ -19272,7 +19488,7 @@
             }
         },
         "Title":"",
-        "Twd":14,
+        "Twd":15,
         "Type":"Vampire"
     },
     "200514":{
@@ -19406,7 +19622,7 @@
             }
         },
         "Title":"prince",
-        "Twd":69,
+        "Twd":73,
         "Type":"Vampire"
     },
     "201617":{
@@ -19468,7 +19684,7 @@
             }
         },
         "Title":"",
-        "Twd":48,
+        "Twd":49,
         "Type":"Vampire"
     },
     "200519":{
@@ -19530,7 +19746,7 @@
             }
         },
         "Title":"",
-        "Twd":13,
+        "Twd":15,
         "Type":"Vampire"
     },
     "200521":{
@@ -19695,7 +19911,7 @@
             }
         },
         "Title":"",
-        "Twd":124,
+        "Twd":128,
         "Type":"Vampire"
     },
     "200526":{
@@ -19815,7 +20031,7 @@
             }
         },
         "Title":"",
-        "Twd":24,
+        "Twd":26,
         "Type":"Vampire"
     },
     "200529":{
@@ -19890,7 +20106,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":10,
         "Type":"Vampire"
     },
     "200531":{
@@ -19994,7 +20210,7 @@
             }
         },
         "Title":"prince",
-        "Twd":68,
+        "Twd":70,
         "Type":"Vampire"
     },
     "200534":{
@@ -20023,6 +20239,13 @@
                 "refs":{
                     "[LSJ 20040519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fz-EAPmmqZY/bj4sR5CxnmQJ"
                 }
+            },
+            {
+                "text":"His votes (if any) and ballots must be cast on the same side (for or against). ",
+                "refs":{
+                    "[RBK 20200701-8]":"https://www.vekn.net/rulebook#gaining-votes",
+                    "[LSJ 20051113-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/O2cgcyCHBSI/m/7vfAvsEbiU8J"
+                }
             }
         ],
         "Set":{
@@ -20038,7 +20261,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":69,
+        "Twd":70,
         "Type":"Vampire"
     },
     "200535":{
@@ -20062,7 +20285,14 @@
         "Id":200535,
         "Name":"Gravitnir",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "Third":{
                 "V":true
@@ -20159,7 +20389,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200538":{
@@ -20192,7 +20422,7 @@
             }
         },
         "Title":"prince",
-        "Twd":67,
+        "Twd":72,
         "Type":"Vampire"
     },
     "200539":{
@@ -20260,7 +20490,7 @@
             }
         },
         "Title":"",
-        "Twd":48,
+        "Twd":49,
         "Type":"Vampire"
     },
     "201522":{
@@ -20364,7 +20594,7 @@
             }
         },
         "Title":"",
-        "Twd":14,
+        "Twd":15,
         "Type":"Vampire"
     },
     "200543":{
@@ -20422,7 +20652,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200544":{
@@ -20457,7 +20687,7 @@
             }
         },
         "Title":"",
-        "Twd":36,
+        "Twd":37,
         "Type":"Vampire"
     },
     "200545":{
@@ -20498,7 +20728,7 @@
             }
         },
         "Title":"",
-        "Twd":27,
+        "Twd":28,
         "Type":"Vampire"
     },
     "200546":{
@@ -20559,7 +20789,7 @@
             }
         },
         "Title":"",
-        "Twd":13,
+        "Twd":14,
         "Type":"Vampire"
     },
     "200548":{
@@ -20696,7 +20926,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":20,
+        "Twd":21,
         "Type":"Vampire"
     },
     "200552":{
@@ -20791,7 +21021,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200555":{
@@ -21031,7 +21261,7 @@
             }
         },
         "Title":"",
-        "Twd":19,
+        "Twd":21,
         "Type":"Vampire"
     },
     "200562":{
@@ -21091,7 +21321,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201590":{
@@ -21120,7 +21350,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200564":{
@@ -21287,7 +21517,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":16,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200569":{
@@ -21457,7 +21687,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "200574":{
@@ -21527,7 +21757,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":31,
+        "Twd":34,
         "Type":"Vampire"
     },
     "200576":{
@@ -21694,7 +21924,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":14,
         "Type":"Vampire"
     },
     "200581":{
@@ -22061,7 +22291,14 @@
         "Id":200590,
         "Name":"Henry Taylor",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A card with multiple types (eg. {Swallowed by the Night}) needs to have been played as a combat card to be eligible. ",
+                "refs":{
+                    "[LSJ 20031221]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/OJW-3jpaM04/m/LLYmjhAWO7kJ"
+                }
+            }
+        ],
         "Set":{
             "BH":{
                 "U":true
@@ -22129,7 +22366,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "200593":{
@@ -22157,7 +22394,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200594":{
@@ -22201,7 +22438,7 @@
             }
         },
         "Title":"",
-        "Twd":20,
+        "Twd":21,
         "Type":"Vampire"
     },
     "201591":{
@@ -22356,7 +22593,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200599":{
@@ -22413,7 +22650,7 @@
             }
         },
         "Title":"",
-        "Twd":23,
+        "Twd":24,
         "Type":"Vampire"
     },
     "200601":{
@@ -22505,7 +22742,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200603":{
@@ -22616,7 +22853,7 @@
             }
         },
         "Title":"",
-        "Twd":42,
+        "Twd":50,
         "Type":"Vampire"
     },
     "200606":{
@@ -22765,7 +23002,7 @@
             }
         },
         "Title":"",
-        "Twd":6,
+        "Twd":7,
         "Type":"Vampire"
     },
     "200609":{
@@ -22998,7 +23235,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200616":{
@@ -23069,7 +23306,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":25,
+        "Twd":27,
         "Type":"Vampire"
     },
     "200618":{
@@ -23092,7 +23329,20 @@
         "Id":200618,
         "Name":"Ibn Khaldun, Scholar",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "LoB":{
                 "U":true
@@ -23186,7 +23436,7 @@
             }
         },
         "Title":"",
-        "Twd":15,
+        "Twd":16,
         "Type":"Vampire"
     },
     "200622":{
@@ -23222,7 +23472,7 @@
             }
         },
         "Title":"",
-        "Twd":39,
+        "Twd":40,
         "Type":"Vampire"
     },
     "200623":{
@@ -23565,7 +23815,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":4,
         "Type":"Vampire"
     },
     "201551":{
@@ -23595,7 +23845,7 @@
             }
         },
         "Title":"prince",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200632":{
@@ -23710,7 +23960,7 @@
             }
         },
         "Title":"prince",
-        "Twd":73,
+        "Twd":76,
         "Type":"Vampire"
     },
     "200635":{
@@ -23742,7 +23992,7 @@
             }
         },
         "Title":"",
-        "Twd":85,
+        "Twd":86,
         "Type":"Vampire"
     },
     "200636":{
@@ -23773,7 +24023,7 @@
             }
         },
         "Title":"",
-        "Twd":8,
+        "Twd":9,
         "Type":"Vampire"
     },
     "200637":{
@@ -23848,7 +24098,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":5,
+        "Twd":8,
         "Type":"Vampire"
     },
     "200639":{
@@ -23918,7 +24168,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200641":{
@@ -23948,7 +24198,7 @@
             }
         },
         "Title":"",
-        "Twd":15,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200642":{
@@ -23978,7 +24228,7 @@
             }
         },
         "Title":"",
-        "Twd":121,
+        "Twd":123,
         "Type":"Vampire"
     },
     "200643":{
@@ -24010,7 +24260,7 @@
             }
         },
         "Title":"",
-        "Twd":103,
+        "Twd":105,
         "Type":"Vampire"
     },
     "200644":{
@@ -24043,7 +24293,7 @@
             }
         },
         "Title":"",
-        "Twd":53,
+        "Twd":56,
         "Type":"Vampire"
     },
     "200645":{
@@ -24449,7 +24699,7 @@
             }
         },
         "Title":"",
-        "Twd":72,
+        "Twd":73,
         "Type":"Imbued"
     },
     "200657":{
@@ -24719,7 +24969,7 @@
             }
         },
         "Title":"baron",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200665":{
@@ -24753,7 +25003,7 @@
             }
         },
         "Title":"",
-        "Twd":6,
+        "Twd":7,
         "Type":"Vampire"
     },
     "200666":{
@@ -24844,7 +25094,7 @@
             }
         },
         "Title":"",
-        "Twd":3,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200668":{
@@ -25062,7 +25312,7 @@
             }
         },
         "Title":"",
-        "Twd":37,
+        "Twd":39,
         "Type":"Vampire"
     },
     "200674":{
@@ -25094,7 +25344,7 @@
             }
         },
         "Title":"",
-        "Twd":32,
+        "Twd":34,
         "Type":"Vampire"
     },
     "200675":{
@@ -25238,7 +25488,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":29,
+        "Twd":30,
         "Type":"Vampire"
     },
     "200679":{
@@ -25338,7 +25588,7 @@
             }
         },
         "Title":"prince",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200681":{
@@ -25500,7 +25750,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200686":{
@@ -25533,7 +25783,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":69,
+        "Twd":71,
         "Type":"Vampire"
     },
     "200687":{
@@ -25561,7 +25811,7 @@
             }
         },
         "Title":"",
-        "Twd":14,
+        "Twd":16,
         "Type":"Vampire"
     },
     "200688":{
@@ -25629,7 +25879,7 @@
             }
         },
         "Title":"",
-        "Twd":84,
+        "Twd":85,
         "Type":"Imbued"
     },
     "200690":{
@@ -25686,7 +25936,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200691":{
@@ -25718,7 +25968,7 @@
             }
         },
         "Title":"",
-        "Twd":90,
+        "Twd":93,
         "Type":"Vampire"
     },
     "200692":{
@@ -25983,7 +26233,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":23,
+        "Twd":25,
         "Type":"Vampire"
     },
     "200700":{
@@ -26019,7 +26269,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":9,
+        "Twd":10,
         "Type":"Vampire"
     },
     "200701":{
@@ -26049,7 +26299,7 @@
             }
         },
         "Title":"",
-        "Twd":8,
+        "Twd":9,
         "Type":"Vampire"
     },
     "200702":{
@@ -26205,7 +26455,7 @@
             }
         },
         "Title":"",
-        "Twd":68,
+        "Twd":71,
         "Type":"Vampire"
     },
     "200706":{
@@ -26336,7 +26586,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200709":{
@@ -26540,7 +26790,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":3,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200715":{
@@ -26630,7 +26880,7 @@
             }
         },
         "Title":"",
-        "Twd":11,
+        "Twd":12,
         "Type":"Vampire"
     },
     "200718":{
@@ -26824,7 +27074,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":7,
         "Type":"Vampire"
     },
     "200724":{
@@ -26847,7 +27097,14 @@
         "Id":200724,
         "Name":"Joseph O'Grady",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "Anarchs":{
                 "U":true
@@ -26956,7 +27213,7 @@
             }
         },
         "Title":"",
-        "Twd":79,
+        "Twd":80,
         "Type":"Vampire"
     },
     "200728":{
@@ -26976,7 +27233,14 @@
         "Id":200728,
         "Name":"Jozz",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "A":"2"
@@ -27362,7 +27626,7 @@
             }
         },
         "Title":"",
-        "Twd":18,
+        "Twd":19,
         "Type":"Vampire"
     },
     "200741":{
@@ -27538,7 +27802,7 @@
             }
         },
         "Title":"",
-        "Twd":6,
+        "Twd":8,
         "Type":"Vampire"
     },
     "201596":{
@@ -27662,7 +27926,7 @@
             }
         },
         "Title":"",
-        "Twd":26,
+        "Twd":27,
         "Type":"Vampire"
     },
     "201597":{
@@ -27691,7 +27955,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200749":{
@@ -27784,7 +28048,14 @@
         "Id":200751,
         "Name":"Kanimana Belghazi",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "R":true
@@ -27864,7 +28135,7 @@
             }
         },
         "Title":"prince",
-        "Twd":34,
+        "Twd":37,
         "Type":"Vampire"
     },
     "200754":{
@@ -28050,7 +28321,7 @@
             }
         },
         "Title":"",
-        "Twd":13,
+        "Twd":14,
         "Type":"Vampire"
     },
     "200758":{
@@ -28164,7 +28435,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201604":{
@@ -28193,7 +28464,7 @@
             }
         },
         "Title":"prince",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200760":{
@@ -28322,6 +28593,17 @@
                 "text":"Her ability to force a vampire to abstain can cancel the votes and ballots of the vampire. ",
                 "refs":{
                     "[LSJ 20100311]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Ogc7-acbMFs/cJsbFPUiReIJ"
+                }
+            },
+            {
+                "text":"The ability can be used while locked or in torpor, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
+                    "[LSJ 20100705]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ",
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
+                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ",
+                    "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
                 }
             }
         ],
@@ -28503,7 +28785,7 @@
             }
         },
         "Title":"",
-        "Twd":139,
+        "Twd":146,
         "Type":"Vampire"
     },
     "200768":{
@@ -28534,7 +28816,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "200769":{
@@ -28615,6 +28897,12 @@
                 "refs":{
                     "[ANK 20190228]":"http://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
                     "[LSJ 20101013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J"
+                }
+            },
+            {
+                "text":"[MERGED] If she plays a political action requiring a Justicar, she is not seen as such by other cards or effects during the referendum (eg. if another vampire plays {Closed Session} and she's not Camarilla she will not be able to vote. If she plays it, she can vote). ",
+                "refs":{
+                    "[LSJ 20050128-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/jXmrJxMaJ9MJ"
                 }
             },
             {
@@ -28878,7 +29166,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200776":{
@@ -28980,7 +29268,7 @@
             }
         },
         "Title":"",
-        "Twd":28,
+        "Twd":29,
         "Type":"Vampire"
     },
     "200779":{
@@ -29082,7 +29370,7 @@
             }
         },
         "Title":"",
-        "Twd":8,
+        "Twd":12,
         "Type":"Vampire"
     },
     "200782":{
@@ -29144,7 +29432,7 @@
             }
         },
         "Title":"",
-        "Twd":12,
+        "Twd":13,
         "Type":"Vampire"
     },
     "200784":{
@@ -29309,7 +29597,7 @@
             }
         },
         "Title":"prince",
-        "Twd":14,
+        "Twd":15,
         "Type":"Vampire"
     },
     "200789":{
@@ -29409,7 +29697,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":70,
+        "Twd":71,
         "Type":"Vampire"
     },
     "200792":{
@@ -29475,6 +29763,18 @@
                 "text":"\"Once each turn\" means once during each player's turn. ",
                 "refs":{
                     "[ANK 20180719-4]":"http://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+                }
+            },
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -29583,7 +29883,7 @@
             }
         },
         "Title":"",
-        "Twd":30,
+        "Twd":31,
         "Type":"Vampire"
     },
     "201574":{
@@ -29604,14 +29904,22 @@
         "Id":201574,
         "Name":"Kuy\u00e9n",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability works on allies recruited in a non-standard way (eg. {Piper}). ",
+                "refs":{
+                    "[ANK 20210913]":"https://www.vekn.net/forum/rules-questions/79322-piper-and-sebastien-goulet#103113",
+                    "[LSJ 20090116]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/e-o1t79x1gUJ"
+                }
+            }
+        ],
         "Set":{
             "Promo":{
                 "2021-11-13":true
             }
         },
         "Title":"baron",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "200797":{
@@ -29770,7 +30078,7 @@
             }
         },
         "Title":"",
-        "Twd":11,
+        "Twd":12,
         "Type":"Vampire"
     },
     "200801":{
@@ -29803,7 +30111,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":12,
         "Type":"Vampire"
     },
     "200802":{
@@ -29836,7 +30144,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":14,
+        "Twd":15,
         "Type":"Vampire"
     },
     "200803":{
@@ -29869,7 +30177,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":33,
+        "Twd":35,
         "Type":"Vampire"
     },
     "200804":{
@@ -29941,7 +30249,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":2,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200805":{
@@ -30215,7 +30523,7 @@
             }
         },
         "Title":"",
-        "Twd":65,
+        "Twd":68,
         "Type":"Vampire"
     },
     "200813":{
@@ -30278,7 +30586,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200814":{
@@ -30397,7 +30705,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200817":{
@@ -30461,7 +30769,7 @@
             }
         },
         "Title":"",
-        "Twd":15,
+        "Twd":16,
         "Type":"Vampire"
     },
     "200819":{
@@ -30501,7 +30809,7 @@
             }
         },
         "Title":"",
-        "Twd":23,
+        "Twd":24,
         "Type":"Vampire"
     },
     "200820":{
@@ -30676,6 +30984,12 @@
                 "refs":{
                     "[PIB 20121031]":"http://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
                 }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
             }
         ],
         "Set":{
@@ -30684,7 +30998,7 @@
             }
         },
         "Title":"",
-        "Twd":75,
+        "Twd":76,
         "Type":"Vampire"
     },
     "200825":{
@@ -30761,7 +31075,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":56,
+        "Twd":59,
         "Type":"Vampire"
     },
     "200827":{
@@ -30792,7 +31106,7 @@
             }
         },
         "Title":"",
-        "Twd":12,
+        "Twd":14,
         "Type":"Vampire"
     },
     "200828":{
@@ -30857,7 +31171,7 @@
             }
         },
         "Title":"",
-        "Twd":39,
+        "Twd":40,
         "Type":"Vampire"
     },
     "201622":{
@@ -30953,7 +31267,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200831":{
@@ -30981,7 +31295,7 @@
             }
         },
         "Title":"",
-        "Twd":16,
+        "Twd":18,
         "Type":"Vampire"
     },
     "200832":{
@@ -31044,7 +31358,7 @@
             }
         },
         "Title":"cardinal",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "201526":{
@@ -31075,7 +31389,7 @@
             }
         },
         "Title":"baron",
-        "Twd":1,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200834":{
@@ -31106,7 +31420,7 @@
             }
         },
         "Title":"",
-        "Twd":104,
+        "Twd":109,
         "Type":"Vampire"
     },
     "200835":{
@@ -31261,7 +31575,7 @@
             }
         },
         "Title":"",
-        "Twd":43,
+        "Twd":44,
         "Type":"Vampire"
     },
     "200840":{
@@ -31575,7 +31889,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200848":{
@@ -31612,7 +31926,7 @@
             }
         },
         "Title":"prince",
-        "Twd":53,
+        "Twd":55,
         "Type":"Vampire"
     },
     "200849":{
@@ -31706,7 +32020,7 @@
             }
         },
         "Title":"",
-        "Twd":17,
+        "Twd":18,
         "Type":"Vampire"
     },
     "200852":{
@@ -31780,7 +32094,7 @@
             }
         },
         "Title":"",
-        "Twd":27,
+        "Twd":28,
         "Type":"Vampire"
     },
     "200854":{
@@ -31926,7 +32240,7 @@
             }
         },
         "Title":"",
-        "Twd":15,
+        "Twd":16,
         "Type":"Vampire"
     },
     "200857":{
@@ -31962,7 +32276,7 @@
             }
         },
         "Title":"",
-        "Twd":34,
+        "Twd":35,
         "Type":"Vampire"
     },
     "200858":{
@@ -32044,6 +32358,12 @@
                 "text":"She can equip with an equipment that is a location when in play. ",
                 "refs":{
                     "[LSJ 20050315]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/COcJX2hHP-E/YLUW8FaGP0kJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -32478,7 +32798,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":32,
+        "Twd":33,
         "Type":"Vampire"
     },
     "200871":{
@@ -32524,7 +32844,7 @@
             }
         },
         "Title":"",
-        "Twd":17,
+        "Twd":19,
         "Type":"Vampire"
     },
     "200872":{
@@ -32595,7 +32915,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":55,
+        "Twd":56,
         "Type":"Vampire"
     },
     "200874":{
@@ -32635,7 +32955,7 @@
             }
         },
         "Title":"",
-        "Twd":16,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200875":{
@@ -32748,7 +33068,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200878":{
@@ -32779,7 +33099,7 @@
             }
         },
         "Title":"",
-        "Twd":62,
+        "Twd":64,
         "Type":"Vampire"
     },
     "200879":{
@@ -32820,7 +33140,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":6,
+        "Twd":8,
         "Type":"Vampire"
     },
     "200880":{
@@ -32966,7 +33286,7 @@
             }
         },
         "Title":"",
-        "Twd":20,
+        "Twd":22,
         "Type":"Vampire"
     },
     "200885":{
@@ -33002,6 +33322,12 @@
                 "text":"Her ability does not apply to the political action card played for a current action (it is in limbo). ",
                 "refs":{
                     "[LSJ 20070927]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VaSQ7JL2N2Y/m/BenDHsAETG4J"
+                }
+            },
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
                 }
             }
         ],
@@ -33075,7 +33401,7 @@
             }
         },
         "Title":"",
-        "Twd":34,
+        "Twd":35,
         "Type":"Vampire"
     },
     "200888":{
@@ -33174,9 +33500,9 @@
                 }
             },
             {
-                "text":"His ability is still applied if his controller is ousted by the referendum effects. ",
+                "text":"His ability is not applied if his controller is ousted by the referendum effects (reversal of previous rulings). ",
                 "refs":{
-                    "[LSJ 20090115-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/rSaiVPMbpvY/ZYG3cYIdQZkJ"
+                    "[ANK 20220808]":"https://www.vekn.net/forum/rules-questions/79952-when-does-lutz-ability-trigger#105913"
                 }
             }
         ],
@@ -33189,7 +33515,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":103,
+        "Twd":105,
         "Type":"Vampire"
     },
     "200891":{
@@ -33219,6 +33545,18 @@
                 "text":"Keeps her title and votes if she changes sects. ",
                 "refs":{
                     "[LSJ 20010714]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/-xrhpMEiMrw/Vnr8QIyt41cJ"
+                }
+            },
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -33564,7 +33902,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":11,
+        "Twd":12,
         "Type":"Vampire"
     },
     "200901":{
@@ -33597,7 +33935,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "200902":{
@@ -33659,7 +33997,7 @@
             }
         },
         "Title":"",
-        "Twd":42,
+        "Twd":43,
         "Type":"Vampire"
     },
     "200904":{
@@ -33725,7 +34063,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":37,
+        "Twd":38,
         "Type":"Vampire"
     },
     "200906":{
@@ -33824,7 +34162,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":4,
         "Type":"Vampire"
     },
     "201600":{
@@ -33853,7 +34191,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200909":{
@@ -33919,7 +34257,7 @@
             }
         },
         "Title":"prince",
-        "Twd":45,
+        "Twd":46,
         "Type":"Vampire"
     },
     "200911":{
@@ -34040,7 +34378,7 @@
             }
         },
         "Title":"",
-        "Twd":59,
+        "Twd":61,
         "Type":"Vampire"
     },
     "200914":{
@@ -34114,7 +34452,7 @@
             }
         },
         "Title":"prince",
-        "Twd":79,
+        "Twd":80,
         "Type":"Vampire"
     },
     "200916":{
@@ -34545,7 +34883,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":17,
+        "Twd":18,
         "Type":"Vampire"
     },
     "200928":{
@@ -34595,7 +34933,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200929":{
@@ -34644,7 +34982,7 @@
             }
         },
         "Title":"",
-        "Twd":38,
+        "Twd":40,
         "Type":"Vampire"
     },
     "200930":{
@@ -34677,7 +35015,7 @@
             }
         },
         "Title":"",
-        "Twd":24,
+        "Twd":25,
         "Type":"Vampire"
     },
     "200931":{
@@ -34708,7 +35046,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200932":{
@@ -34742,7 +35080,7 @@
             }
         },
         "Title":"",
-        "Twd":48,
+        "Twd":49,
         "Type":"Vampire"
     },
     "200933":{
@@ -34801,7 +35139,7 @@
             }
         },
         "Title":"",
-        "Twd":32,
+        "Twd":33,
         "Type":"Imbued"
     },
     "200935":{
@@ -34832,6 +35170,12 @@
                     "[LSJ 20020926]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/C7vgb-0Mcbo/6UHJsQjBs9wJ",
                     "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598"
                 }
+            },
+            {
+                "text":"Can use her ability while locked. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
             }
         ],
         "Set":{
@@ -34843,7 +35187,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":52,
+        "Twd":54,
         "Type":"Vampire"
     },
     "200936":{
@@ -34911,7 +35255,7 @@
             }
         },
         "Title":"prince",
-        "Twd":14,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200938":{
@@ -34942,7 +35286,7 @@
             }
         },
         "Title":"",
-        "Twd":13,
+        "Twd":14,
         "Type":"Vampire"
     },
     "200939":{
@@ -35008,7 +35352,7 @@
             }
         },
         "Title":"",
-        "Twd":16,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200941":{
@@ -35075,6 +35419,12 @@
                 }
             },
             {
+                "text":"She can retrieve {Psyche!} (reversal of previous rulings). ",
+                "refs":{
+                    "[PIB 20111208]":"http://www.vekn.net/forum/rules-questions/16769-rules-team-rulings-02-dec-11?limit=10&start=40#17547"
+                }
+            },
+            {
                 "text":"Black Hand is not a title, it is a trait unrelated to any sect. The trait is not lost if the vampire changes sect. ",
                 "refs":{
                     "[LSJ 20070322]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Ww-4rYJxi4w/P3QchWVq2o4J",
@@ -35116,7 +35466,7 @@
             }
         },
         "Title":"",
-        "Twd":53,
+        "Twd":54,
         "Type":"Vampire"
     },
     "201601":{
@@ -35145,7 +35495,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "200944":{
@@ -35387,7 +35737,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":15,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200951":{
@@ -35486,7 +35836,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "201630":{
@@ -35547,7 +35897,7 @@
             }
         },
         "Title":"",
-        "Twd":21,
+        "Twd":22,
         "Type":"Vampire"
     },
     "201602":{
@@ -35576,7 +35926,7 @@
             }
         },
         "Title":"baron",
-        "Twd":0,
+        "Twd":4,
         "Type":"Vampire"
     },
     "201558":{
@@ -35723,7 +36073,7 @@
             }
         },
         "Title":"",
-        "Twd":13,
+        "Twd":19,
         "Type":"Vampire"
     },
     "200957":{
@@ -35850,7 +36200,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "200960":{
@@ -35890,7 +36240,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "200961":{
@@ -35913,7 +36263,14 @@
         "Id":200961,
         "Name":"Matthew",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "B":"2"
@@ -35984,7 +36341,14 @@
         "Id":200963,
         "Name":"Matthias",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "R":true
@@ -36109,7 +36473,7 @@
             }
         },
         "Title":"",
-        "Twd":3,
+        "Twd":4,
         "Type":"Vampire"
     },
     "200967":{
@@ -36386,7 +36750,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200973":{
@@ -36597,7 +36961,7 @@
             }
         },
         "Title":"",
-        "Twd":31,
+        "Twd":32,
         "Type":"Vampire"
     },
     "200979":{
@@ -36951,7 +37315,20 @@
         "Id":200988,
         "Name":"Mikael Birkholm",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "B":"2"
@@ -36994,7 +37371,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":16,
+        "Twd":17,
         "Type":"Vampire"
     },
     "200990":{
@@ -37025,7 +37402,7 @@
             }
         },
         "Title":"",
-        "Twd":6,
+        "Twd":7,
         "Type":"Vampire"
     },
     "201605":{
@@ -37053,7 +37430,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "200991":{
@@ -37150,7 +37527,7 @@
             }
         },
         "Title":"",
-        "Twd":16,
+        "Twd":19,
         "Type":"Vampire"
     },
     "200993":{
@@ -37247,6 +37624,12 @@
                 "refs":{
                     "[LSJ 20020304-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-8OGYP5xsE/h5WnSofVrfUJ"
                 }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
             }
         ],
         "Set":{
@@ -37282,7 +37665,7 @@
             }
         },
         "Title":"",
-        "Twd":11,
+        "Twd":12,
         "Type":"Vampire"
     },
     "200997":{
@@ -37345,7 +37728,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "200999":{
@@ -37380,7 +37763,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":67,
+        "Twd":69,
         "Type":"Vampire"
     },
     "201000":{
@@ -37509,7 +37892,7 @@
             }
         },
         "Title":"prince",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "201003":{
@@ -37546,7 +37929,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201004":{
@@ -37610,7 +37993,7 @@
             }
         },
         "Title":"",
-        "Twd":14,
+        "Twd":15,
         "Type":"Vampire"
     },
     "201006":{
@@ -37640,6 +38023,13 @@
                 "refs":{
                     "[LSJ 20010714]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/-xrhpMEiMrw/Vnr8QIyt41cJ"
                 }
+            },
+            {
+                "text":"His ability to provide stealth can be used while locked or in torpor. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
+                    "[LSJ 20100705]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ"
+                }
             }
         ],
         "Set":{
@@ -37653,7 +38043,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":15,
+        "Twd":16,
         "Type":"Vampire"
     },
     "201007":{
@@ -37755,7 +38145,7 @@
             }
         },
         "Title":"",
-        "Twd":16,
+        "Twd":22,
         "Type":"Vampire"
     },
     "201010":{
@@ -37790,7 +38180,7 @@
             }
         },
         "Title":"",
-        "Twd":39,
+        "Twd":40,
         "Type":"Vampire"
     },
     "201011":{
@@ -37901,7 +38291,7 @@
             }
         },
         "Title":"",
-        "Twd":34,
+        "Twd":36,
         "Type":"Vampire"
     },
     "201014":{
@@ -37931,7 +38321,7 @@
             }
         },
         "Title":"",
-        "Twd":47,
+        "Twd":48,
         "Type":"Vampire"
     },
     "201015":{
@@ -37961,7 +38351,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":10,
         "Type":"Vampire"
     },
     "201016":{
@@ -37982,7 +38372,14 @@
         "Id":201016,
         "Name":"Mr. Noir",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "LoB":{
                 "U":true
@@ -38154,7 +38551,14 @@
         "Id":201021,
         "Name":"Mukhtar Bey",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"He can play {Trap} and it provides presses. ",
+                "refs":{
+                    "[LSJ 20040521]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Giv8nDnYVGo/m/RODFe7KlT1UJ"
+                }
+            }
+        ],
         "Set":{
             "Gehenna":{
                 "U":true
@@ -38193,7 +38597,7 @@
             }
         },
         "Title":"prince",
-        "Twd":50,
+        "Twd":51,
         "Type":"Vampire"
     },
     "201023":{
@@ -38322,7 +38726,7 @@
             }
         },
         "Title":"prince",
-        "Twd":62,
+        "Twd":63,
         "Type":"Vampire"
     },
     "201027":{
@@ -38352,7 +38756,7 @@
             }
         },
         "Title":"",
-        "Twd":65,
+        "Twd":66,
         "Type":"Vampire"
     },
     "201028":{
@@ -38488,7 +38892,14 @@
         "Id":201031,
         "Name":"Nahum Enosh",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "B":"2"
@@ -38558,7 +38969,14 @@
         "Id":201033,
         "Name":"Nakhthorheb",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If the block succeeds and the blocking minion gets a corruption counter (eg. {Venenation}), Nakhthorheb is still blocked. ",
+                "refs":{
+                    "[LSJ 20071021]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E6FhLDRCIL4/m/VYR_7Kcf70oJ"
+                }
+            }
+        ],
         "Set":{
             "LotN":{
                 "PS":"2"
@@ -38568,7 +38986,7 @@
             }
         },
         "Title":"",
-        "Twd":33,
+        "Twd":34,
         "Type":"Vampire"
     },
     "201034":{
@@ -38628,7 +39046,7 @@
             }
         },
         "Title":"",
-        "Twd":95,
+        "Twd":101,
         "Type":"Vampire"
     },
     "201036":{
@@ -38659,7 +39077,7 @@
             }
         },
         "Title":"",
-        "Twd":24,
+        "Twd":26,
         "Type":"Vampire"
     },
     "201562":{
@@ -38719,7 +39137,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201037":{
@@ -38820,7 +39238,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201632":{
@@ -38911,7 +39329,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":3,
         "Type":"Vampire"
     },
     "201040":{
@@ -39083,6 +39501,17 @@
                 "refs":{
                     "[ANK 20190731]":"http://www.vekn.net/forum/rules-questions/77812-abstain-from-voting?start=6#96048"
                 }
+            },
+            {
+                "text":"The ability can be used while locked or in torpor, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
+                    "[LSJ 20100705]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ",
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
+                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ",
+                    "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
+                }
             }
         ],
         "Set":{
@@ -39123,6 +39552,18 @@
                 "text":"Keeps his title and votes if he changes sects. ",
                 "refs":{
                     "[LSJ 20010714]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/-xrhpMEiMrw/Vnr8QIyt41cJ"
+                }
+            },
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -39174,7 +39615,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":11,
+        "Twd":12,
         "Type":"Vampire"
     },
     "201046":{
@@ -39206,7 +39647,7 @@
             }
         },
         "Title":"",
-        "Twd":102,
+        "Twd":106,
         "Type":"Vampire"
     },
     "201047":{
@@ -39271,6 +39712,30 @@
         "New":false,
         "Rulings":[
             {
+                "text":"If he plays a action he can only pay for with his ability, he has to use his ability when the action resolves (even if a {Deflection} was played on a bleed). ",
+                "refs":{
+                    "[LSJ 20091021-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5oG5J7Egtg/m/yafJrZAoqjgJ"
+                }
+            },
+            {
+                "text":"If he lost a blood during the course of an action that he could have paid for when announced, he can choose wether or not to use his ability to be able to pay for it. ",
+                "refs":{
+                    "[LSJ 20091021-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5oG5J7Egtg/m/yafJrZAoqjgJ"
+                }
+            },
+            {
+                "text":"If he cannot pay for the action even with his ability, his ability is not considered used for the action (even if it was announced). ",
+                "refs":{
+                    "[LSJ 20091021-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5oG5J7Egtg/m/yafJrZAoqjgJ"
+                }
+            },
+            {
+                "text":"If a card he plays is cancelled as it played and no cost is paid, his ability is not considered used for the turn. ",
+                "refs":{
+                    "[LSJ 20091021-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5oG5J7Egtg/m/yafJrZAoqjgJ"
+                }
+            },
+            {
                 "text":"\"Once each turn\" means once during each player's turn. ",
                 "refs":{
                     "[ANK 20180719-4]":"http://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
@@ -39284,7 +39749,7 @@
             }
         },
         "Title":"",
-        "Twd":29,
+        "Twd":30,
         "Type":"Vampire"
     },
     "201049":{
@@ -39440,7 +39905,7 @@
             }
         },
         "Title":"",
-        "Twd":15,
+        "Twd":21,
         "Type":"Vampire"
     },
     "201053":{
@@ -39528,7 +39993,7 @@
             }
         },
         "Title":"",
-        "Twd":39,
+        "Twd":40,
         "Type":"Vampire"
     },
     "201056":{
@@ -39601,7 +40066,7 @@
             }
         },
         "Title":"",
-        "Twd":27,
+        "Twd":31,
         "Type":"Vampire"
     },
     "201058":{
@@ -39732,7 +40197,7 @@
             }
         },
         "Title":"prince",
-        "Twd":61,
+        "Twd":62,
         "Type":"Vampire"
     },
     "201061":{
@@ -39902,14 +40367,21 @@
         "Id":201608,
         "Name":"Nonu Dis",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability can be used only once per master phase. ",
+                "refs":{
+                    "[ANK 20220617]":"https://www.vekn.net/forum/rules-questions/79835-nonu-dis-and-during-x-do-y#105494"
+                }
+            }
+        ],
         "Set":{
             "V5A":{
                 "PMin":"1"
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":3,
         "Type":"Vampire"
     },
     "201065":{
@@ -39943,7 +40415,7 @@
             }
         },
         "Title":"",
-        "Twd":34,
+        "Twd":35,
         "Type":"Vampire"
     },
     "201066":{
@@ -39982,7 +40454,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "201067":{
@@ -40007,7 +40479,20 @@
         "Id":201067,
         "Name":"Nu, The Pillar",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "R":true
@@ -40099,7 +40584,14 @@
         "Id":201070,
         "Name":"Obaluaye",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "B":"2"
@@ -40230,7 +40722,7 @@
             }
         },
         "Title":"",
-        "Twd":53,
+        "Twd":55,
         "Type":"Vampire"
     },
     "201618":{
@@ -40451,7 +40943,7 @@
             }
         },
         "Title":"",
-        "Twd":36,
+        "Twd":38,
         "Type":"Vampire"
     },
     "201080":{
@@ -40489,7 +40981,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "201081":{
@@ -40522,7 +41014,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":31,
+        "Twd":32,
         "Type":"Vampire"
     },
     "201082":{
@@ -40555,7 +41047,7 @@
             }
         },
         "Title":"",
-        "Twd":55,
+        "Twd":58,
         "Type":"Vampire"
     },
     "201083":{
@@ -40624,7 +41116,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":42,
+        "Twd":43,
         "Type":"Vampire"
     },
     "201565":{
@@ -40763,7 +41255,7 @@
             }
         },
         "Title":"",
-        "Twd":92,
+        "Twd":94,
         "Type":"Vampire"
     },
     "201088":{
@@ -40827,7 +41319,7 @@
             }
         },
         "Title":"",
-        "Twd":36,
+        "Twd":39,
         "Type":"Vampire"
     },
     "201090":{
@@ -40988,6 +41480,12 @@
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -41227,7 +41725,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":20,
+        "Twd":21,
         "Type":"Vampire"
     },
     "201101":{
@@ -41257,7 +41755,7 @@
             }
         },
         "Title":"",
-        "Twd":46,
+        "Twd":48,
         "Type":"Vampire"
     },
     "201102":{
@@ -41279,7 +41777,15 @@
         "Id":201102,
         "Name":"Paul Forrest, False Prophet",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability can be used while locked or in torpor. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
+                    "[LSJ 20100705]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ"
+                }
+            }
+        ],
         "Set":{
             "KMW":{
                 "U":true
@@ -41289,7 +41795,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":10,
         "Type":"Vampire"
     },
     "201103":{
@@ -41424,7 +41930,7 @@
             }
         },
         "Title":"",
-        "Twd":13,
+        "Twd":16,
         "Type":"Vampire"
     },
     "201107":{
@@ -41521,7 +42027,7 @@
             }
         },
         "Title":"",
-        "Twd":17,
+        "Twd":18,
         "Type":"Vampire"
     },
     "201518":{
@@ -42003,7 +42509,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "201122":{
@@ -42089,7 +42595,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":11,
         "Type":"Vampire"
     },
     "201124":{
@@ -42334,7 +42840,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "201131":{
@@ -42400,6 +42906,12 @@
                 "refs":{
                     "[ANK 20180511-2]":"http://www.vekn.net/forum/rules-questions/76592-prejudice-special-ability#86767"
                 }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
             }
         ],
         "Set":{
@@ -42439,7 +42951,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "201134":{
@@ -42471,7 +42983,7 @@
             }
         },
         "Title":"",
-        "Twd":24,
+        "Twd":25,
         "Type":"Vampire"
     },
     "201135":{
@@ -42508,7 +43020,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":13,
+        "Twd":14,
         "Type":"Vampire"
     },
     "201136":{
@@ -42726,7 +43238,7 @@
             }
         },
         "Title":"prince",
-        "Twd":44,
+        "Twd":46,
         "Type":"Vampire"
     },
     "201142":{
@@ -42928,6 +43440,12 @@
                 "refs":{
                     "[LSJ 20050331]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/J0CgOqvbfEk/P1VelhBkcr8J"
                 }
+            },
+            {
+                "text":"If she strikes to send a vampire to torpor, that vampire is wounded (if they play {Undying Tenacity}, they go to torpor after combat). ",
+                "refs":{
+                    "[LSJ 20090622-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1zt1SZb2TIk/m/CYNhVovmlk8J"
+                }
             }
         ],
         "Set":{
@@ -42978,7 +43496,7 @@
             }
         },
         "Title":"prince",
-        "Twd":37,
+        "Twd":40,
         "Type":"Vampire"
     },
     "201149":{
@@ -43075,7 +43593,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":78,
+        "Twd":81,
         "Type":"Vampire"
     },
     "201152":{
@@ -43133,7 +43651,14 @@
         "Id":201153,
         "Name":"Raful al-Zarqa",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "R":true
@@ -43208,7 +43733,7 @@
             }
         },
         "Title":"prince",
-        "Twd":47,
+        "Twd":49,
         "Type":"Vampire"
     },
     "201156":{
@@ -43279,7 +43804,7 @@
             }
         },
         "Title":"",
-        "Twd":31,
+        "Twd":32,
         "Type":"Vampire"
     },
     "201158":{
@@ -43384,7 +43909,7 @@
             }
         },
         "Title":"1 vote",
-        "Twd":6,
+        "Twd":9,
         "Type":"Vampire"
     },
     "201161":{
@@ -43546,7 +44071,7 @@
             }
         },
         "Title":"",
-        "Twd":22,
+        "Twd":23,
         "Type":"Vampire"
     },
     "201166":{
@@ -43704,7 +44229,7 @@
             }
         },
         "Title":"",
-        "Twd":27,
+        "Twd":28,
         "Type":"Vampire"
     },
     "201170":{
@@ -43728,7 +44253,14 @@
         "Id":201170,
         "Name":"Rebekah",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "TU":{
                 "C":true
@@ -43738,7 +44270,7 @@
             }
         },
         "Title":"prince",
-        "Twd":3,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201171":{
@@ -43771,7 +44303,7 @@
             }
         },
         "Title":"",
-        "Twd":23,
+        "Twd":24,
         "Type":"Vampire"
     },
     "201172":{
@@ -44015,7 +44547,7 @@
             }
         },
         "Title":"",
-        "Twd":91,
+        "Twd":92,
         "Type":"Vampire"
     },
     "201179":{
@@ -44047,7 +44579,7 @@
             }
         },
         "Title":"",
-        "Twd":25,
+        "Twd":27,
         "Type":"Vampire"
     },
     "201180":{
@@ -44148,7 +44680,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":42,
+        "Twd":44,
         "Type":"Vampire"
     },
     "201183":{
@@ -44179,7 +44711,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201184":{
@@ -44324,7 +44856,7 @@
             }
         },
         "Title":"",
-        "Twd":15,
+        "Twd":16,
         "Type":"Vampire"
     },
     "201188":{
@@ -44466,7 +44998,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201192":{
@@ -44496,7 +45028,7 @@
             }
         },
         "Title":"",
-        "Twd":18,
+        "Twd":19,
         "Type":"Vampire"
     },
     "201193":{
@@ -44525,7 +45057,7 @@
             }
         },
         "Title":"",
-        "Twd":13,
+        "Twd":14,
         "Type":"Vampire"
     },
     "201194":{
@@ -44592,7 +45124,7 @@
             }
         },
         "Title":"",
-        "Twd":30,
+        "Twd":31,
         "Type":"Vampire"
     },
     "201196":{
@@ -44691,7 +45223,7 @@
             }
         },
         "Title":"",
-        "Twd":23,
+        "Twd":24,
         "Type":"Vampire"
     },
     "201199":{
@@ -44726,7 +45258,7 @@
             }
         },
         "Title":"",
-        "Twd":37,
+        "Twd":38,
         "Type":"Vampire"
     },
     "201200":{
@@ -44918,7 +45450,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201205":{
@@ -45078,7 +45610,7 @@
             }
         },
         "Title":"",
-        "Twd":80,
+        "Twd":83,
         "Type":"Vampire"
     },
     "201210":{
@@ -45140,7 +45672,7 @@
             }
         },
         "Title":"",
-        "Twd":3,
+        "Twd":4,
         "Type":"Vampire"
     },
     "201611":{
@@ -45167,7 +45699,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":3,
         "Type":"Vampire"
     },
     "201211":{
@@ -45466,7 +45998,7 @@
             }
         },
         "Title":"",
-        "Twd":24,
+        "Twd":25,
         "Type":"Vampire"
     },
     "201219":{
@@ -45529,7 +46061,7 @@
             }
         },
         "Title":"",
-        "Twd":23,
+        "Twd":24,
         "Type":"Vampire"
     },
     "201221":{
@@ -45561,7 +46093,7 @@
             }
         },
         "Title":"",
-        "Twd":7,
+        "Twd":8,
         "Type":"Vampire"
     },
     "201222":{
@@ -45592,7 +46124,7 @@
             }
         },
         "Title":"",
-        "Twd":79,
+        "Twd":83,
         "Type":"Vampire"
     },
     "201223":{
@@ -45657,7 +46189,7 @@
             }
         },
         "Title":"",
-        "Twd":32,
+        "Twd":33,
         "Type":"Vampire"
     },
     "201225":{
@@ -45900,7 +46432,7 @@
             }
         },
         "Title":"",
-        "Twd":56,
+        "Twd":57,
         "Type":"Vampire"
     },
     "201232":{
@@ -46099,7 +46631,7 @@
             }
         },
         "Title":"",
-        "Twd":35,
+        "Twd":36,
         "Type":"Vampire"
     },
     "201238":{
@@ -46331,7 +46863,7 @@
             }
         },
         "Title":"prince",
-        "Twd":11,
+        "Twd":12,
         "Type":"Vampire"
     },
     "201244":{
@@ -46442,7 +46974,7 @@
             }
         },
         "Title":"",
-        "Twd":24,
+        "Twd":25,
         "Type":"Vampire"
     },
     "201247":{
@@ -46483,7 +47015,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201248":{
@@ -46508,14 +47040,21 @@
         "Id":201248,
         "Name":"Saulot, The Wanderer",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "LoB":{
                 "U":true
             }
         },
         "Title":"",
-        "Twd":26,
+        "Twd":28,
         "Type":"Vampire"
     },
     "201249":{
@@ -46606,7 +47145,7 @@
             }
         },
         "Title":"",
-        "Twd":6,
+        "Twd":7,
         "Type":"Vampire"
     },
     "201252":{
@@ -46680,7 +47219,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":11,
+        "Twd":12,
         "Type":"Vampire"
     },
     "201254":{
@@ -46710,7 +47249,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "201255":{
@@ -46819,7 +47358,7 @@
             }
         },
         "Title":"",
-        "Twd":11,
+        "Twd":13,
         "Type":"Vampire"
     },
     "201258":{
@@ -46853,7 +47392,7 @@
             }
         },
         "Title":"",
-        "Twd":10,
+        "Twd":12,
         "Type":"Vampire"
     },
     "201259":{
@@ -46970,7 +47509,7 @@
             }
         },
         "Title":"",
-        "Twd":64,
+        "Twd":65,
         "Type":"Vampire"
     },
     "201262":{
@@ -47006,7 +47545,7 @@
             }
         },
         "Title":"prince",
-        "Twd":44,
+        "Twd":45,
         "Type":"Vampire"
     },
     "201263":{
@@ -47035,6 +47574,12 @@
                     "[LSJ 20070322]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Ww-4rYJxi4w/P3QchWVq2o4J",
                     "[ANK 20180807]":"http://www.vekn.net/forum/rules-questions/76905-going-anarch-as-black-hand#89735"
                 }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
             }
         ],
         "Set":{
@@ -47043,7 +47588,7 @@
             }
         },
         "Title":"",
-        "Twd":18,
+        "Twd":19,
         "Type":"Vampire"
     },
     "201264":{
@@ -47075,7 +47620,7 @@
             }
         },
         "Title":"",
-        "Twd":21,
+        "Twd":22,
         "Type":"Vampire"
     },
     "201265":{
@@ -47098,7 +47643,14 @@
         "Id":201265,
         "Name":"Seren Sukardi",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If he strikes to send a vampire to torpor, that vampire is wounded (if they play {Undying Tenacity}, they go to torpor after combat). ",
+                "refs":{
+                    "[LSJ 20090622-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1zt1SZb2TIk/m/CYNhVovmlk8J"
+                }
+            }
+        ],
         "Set":{
             "Gehenna":{
                 "U":true
@@ -47140,6 +47692,12 @@
                 "text":"\"Once each turn\" means once during each player's turn. ",
                 "refs":{
                     "[ANK 20180719-4]":"http://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -47339,7 +47897,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "201272":{
@@ -47377,7 +47935,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201273":{
@@ -47446,6 +48004,18 @@
                 "text":"\"Once each turn\" means once during each player's turn. ",
                 "refs":{
                     "[ANK 20180719-4]":"http://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+                }
+            },
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -47648,7 +48218,7 @@
             }
         },
         "Title":"",
-        "Twd":69,
+        "Twd":71,
         "Type":"Vampire"
     },
     "201281":{
@@ -47685,7 +48255,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":36,
+        "Twd":37,
         "Type":"Vampire"
     },
     "201282":{
@@ -48128,7 +48698,7 @@
             }
         },
         "Title":"",
-        "Twd":8,
+        "Twd":10,
         "Type":"Vampire"
     },
     "201294":{
@@ -48534,7 +49104,7 @@
             }
         },
         "Title":"",
-        "Twd":33,
+        "Twd":37,
         "Type":"Vampire"
     },
     "201306":{
@@ -48644,7 +49214,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "201309":{
@@ -48756,7 +49326,7 @@
             }
         },
         "Title":"",
-        "Twd":26,
+        "Twd":27,
         "Type":"Vampire"
     },
     "201312":{
@@ -48793,7 +49363,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":63,
+        "Twd":66,
         "Type":"Vampire"
     },
     "201313":{
@@ -48823,7 +49393,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":42,
+        "Twd":43,
         "Type":"Vampire"
     },
     "201314":{
@@ -48846,7 +49416,14 @@
         "Id":201314,
         "Name":"Stefano Giovanni",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "DS":{
                 "V":true
@@ -48986,7 +49563,7 @@
             }
         },
         "Title":"",
-        "Twd":93,
+        "Twd":96,
         "Type":"Vampire"
     },
     "201319":{
@@ -49019,7 +49596,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":24,
+        "Twd":25,
         "Type":"Vampire"
     },
     "201320":{
@@ -49146,7 +49723,7 @@
             }
         },
         "Title":"",
-        "Twd":8,
+        "Twd":9,
         "Type":"Vampire"
     },
     "201569":{
@@ -49175,7 +49752,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201324":{
@@ -49235,7 +49812,14 @@
         "Id":201325,
         "Name":"Sundown",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability can be used while locked, only once per referendum. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            }
+        ],
         "Set":{
             "Anarchs":{
                 "PAB":1
@@ -49285,6 +49869,12 @@
                 "text":"[MERGED] Is Anarch. If the base version was the one in play, it changes sect as it is merged. ",
                 "refs":{
                     "[ANK 20180524]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
+                }
+            },
+            {
+                "text":"[MERGED] Can use his ability while locked. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
                 }
             }
         ],
@@ -49339,7 +49929,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":7,
+        "Twd":8,
         "Type":"Vampire"
     },
     "201328":{
@@ -49514,6 +50104,18 @@
                 "refs":{
                     "[ANK 20191004]":"http://www.vekn.net/forum/rules-questions/77994-synesios#97241"
                 }
+            },
+            {
+                "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect. ",
+                "refs":{
+                    "[LSJ 20050322-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
             }
         ],
         "Set":{
@@ -49642,7 +50244,7 @@
             }
         },
         "Title":"",
-        "Twd":21,
+        "Twd":24,
         "Type":"Vampire"
     },
     "201335":{
@@ -49911,7 +50513,7 @@
             }
         },
         "Title":"prince",
-        "Twd":27,
+        "Twd":28,
         "Type":"Vampire"
     },
     "201342":{
@@ -50115,7 +50717,7 @@
             }
         },
         "Title":"",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201347":{
@@ -50150,7 +50752,7 @@
             }
         },
         "Title":"prince",
-        "Twd":36,
+        "Twd":37,
         "Type":"Vampire"
     },
     "201348":{
@@ -50197,7 +50799,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "201349":{
@@ -50704,7 +51306,7 @@
             }
         },
         "Title":"",
-        "Twd":37,
+        "Twd":38,
         "Type":"Vampire"
     },
     "201363":{
@@ -50769,7 +51371,14 @@
         "Id":201613,
         "Name":"Theo Bell",
         "New":true,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can be merged with {Theo Bell (G2 ADV)} if you get to control one (eg. {Graverobbing}). ",
+                "refs":{
+                    "[ANK 20220805-2]":"https://www.vekn.net/forum/rules-questions/79934-merging-group-2-theo-bell-and-group-6-theo-bell-and-similar-cases#105886"
+                }
+            }
+        ],
         "Set":{
             "V5A":{
                 "PB":"1"
@@ -51126,7 +51735,7 @@
             }
         },
         "Title":"",
-        "Twd":13,
+        "Twd":14,
         "Type":"Vampire"
     },
     "201374":{
@@ -51159,7 +51768,7 @@
             }
         },
         "Title":"",
-        "Twd":14,
+        "Twd":16,
         "Type":"Vampire"
     },
     "201375":{
@@ -51217,7 +51826,15 @@
         "Id":201376,
         "Name":"Toby",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability can be used while locked or in torpor. ",
+                "refs":{
+                    "[ANK 20220705]":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
+                    "[LSJ 20100705]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ"
+                }
+            }
+        ],
         "Set":{
             "TR":{
                 "U":true
@@ -51592,7 +52209,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201387":{
@@ -51840,7 +52457,7 @@
             }
         },
         "Title":"",
-        "Twd":82,
+        "Twd":86,
         "Type":"Vampire"
     },
     "201394":{
@@ -52015,7 +52632,7 @@
             }
         },
         "Title":"",
-        "Twd":23,
+        "Twd":24,
         "Type":"Vampire"
     },
     "201399":{
@@ -52165,7 +52782,7 @@
             }
         },
         "Title":"",
-        "Twd":80,
+        "Twd":83,
         "Type":"Vampire"
     },
     "201404":{
@@ -52237,7 +52854,7 @@
             }
         },
         "Title":"",
-        "Twd":31,
+        "Twd":32,
         "Type":"Vampire"
     },
     "201406":{
@@ -52305,7 +52922,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":10,
+        "Twd":11,
         "Type":"Vampire"
     },
     "201408":{
@@ -52372,7 +52989,7 @@
             }
         },
         "Title":"magaji",
-        "Twd":38,
+        "Twd":39,
         "Type":"Vampire"
     },
     "201410":{
@@ -52441,7 +53058,7 @@
             }
         },
         "Title":"",
-        "Twd":38,
+        "Twd":46,
         "Type":"Vampire"
     },
     "201412":{
@@ -52515,7 +53132,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":4,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201414":{
@@ -52544,7 +53161,7 @@
             }
         },
         "Title":"",
-        "Twd":8,
+        "Twd":9,
         "Type":"Vampire"
     },
     "201415":{
@@ -52856,7 +53473,7 @@
             }
         },
         "Title":"baron",
-        "Twd":1,
+        "Twd":3,
         "Type":"Vampire"
     },
     "201423":{
@@ -52895,7 +53512,7 @@
             }
         },
         "Title":"",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "201424":{
@@ -53058,7 +53675,7 @@
             }
         },
         "Title":"",
-        "Twd":35,
+        "Twd":36,
         "Type":"Vampire"
     },
     "201429":{
@@ -53127,7 +53744,7 @@
             }
         },
         "Title":"prince",
-        "Twd":2,
+        "Twd":3,
         "Type":"Vampire"
     },
     "201431":{
@@ -53162,7 +53779,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201432":{
@@ -53193,7 +53810,7 @@
             }
         },
         "Title":"",
-        "Twd":26,
+        "Twd":27,
         "Type":"Vampire"
     },
     "201433":{
@@ -53213,7 +53830,14 @@
         "Id":201433,
         "Name":"Veejay Vinod",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "A":"2"
@@ -53223,7 +53847,7 @@
             }
         },
         "Title":"",
-        "Twd":20,
+        "Twd":22,
         "Type":"Vampire"
     },
     "201434":{
@@ -53327,7 +53951,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":1,
         "Type":"Vampire"
     },
     "201437":{
@@ -53396,7 +54020,7 @@
             }
         },
         "Title":"prince",
-        "Twd":48,
+        "Twd":49,
         "Type":"Vampire"
     },
     "201439":{
@@ -53509,7 +54133,7 @@
             }
         },
         "Title":"",
-        "Twd":14,
+        "Twd":15,
         "Type":"Vampire"
     },
     "201442":{
@@ -53537,7 +54161,7 @@
             }
         },
         "Title":"",
-        "Twd":35,
+        "Twd":36,
         "Type":"Vampire"
     },
     "201443":{
@@ -53569,7 +54193,7 @@
             }
         },
         "Title":"",
-        "Twd":62,
+        "Twd":67,
         "Type":"Vampire"
     },
     "201444":{
@@ -53795,7 +54419,7 @@
             }
         },
         "Title":"",
-        "Twd":3,
+        "Twd":4,
         "Type":"Vampire"
     },
     "201448":{
@@ -53916,7 +54540,14 @@
         "Id":201451,
         "Name":"Virgil",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion. ",
+                "refs":{
+                    "[LSJ 20100909]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+                }
+            }
+        ],
         "Set":{
             "Sabbat":{
                 "V":true
@@ -53989,7 +54620,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201454":{
@@ -54013,7 +54644,14 @@
         "Id":201454,
         "Name":"Virstania, The Great Mother",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion. ",
+                "refs":{
+                    "[LSJ 20100909]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+                }
+            }
+        ],
         "Set":{
             "CE":{
                 "V":true
@@ -54089,7 +54727,7 @@
             }
         },
         "Title":"baron",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201456":{
@@ -54232,7 +54870,7 @@
             }
         },
         "Title":"prince",
-        "Twd":105,
+        "Twd":109,
         "Type":"Vampire"
     },
     "201459":{
@@ -54386,7 +55024,7 @@
             }
         },
         "Title":"",
-        "Twd":20,
+        "Twd":21,
         "Type":"Vampire"
     },
     "201463":{
@@ -54475,7 +55113,7 @@
             }
         },
         "Title":"prince",
-        "Twd":0,
+        "Twd":5,
         "Type":"Vampire"
     },
     "201464":{
@@ -54495,7 +55133,26 @@
         "Id":201464,
         "Name":"Watenda",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The cost he pays takes into account any cost modification that applies for the opposing minion. ",
+                "refs":{
+                    "[LSJ 20091124]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8vjraZYKabg/m/IzhUlEDx1f0J"
+                }
+            },
+            {
+                "text":"When canceling a card, he pays any pool cost in blood. ",
+                "refs":{
+                    "[LSJ 20071015-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/sZzwphkIbH4J"
+                }
+            },
+            {
+                "text":"He can use his ability even if he's going to torpor. ",
+                "refs":{
+                    "[LSJ 20021007]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wkyqKMka_F0/m/PY1IegrQszUJ"
+                }
+            }
+        ],
         "Set":{
             "AH":{
                 "V":true
@@ -54505,7 +55162,7 @@
             }
         },
         "Title":"",
-        "Twd":37,
+        "Twd":38,
         "Type":"Vampire"
     },
     "201573":{
@@ -54621,6 +55278,12 @@
         "Name":"White Lily",
         "New":false,
         "Rulings":[
+            {
+                "text":"Requirements need to be met. ",
+                "refs":{
+                    "[LSJ 20080702-3]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sCHpPQkjeAE/m/SLhxvwuWksMJ"
+                }
+            },
             {
                 "text":"Black Hand is not a title, it is a trait unrelated to any sect. The trait is not lost if the vampire changes sect. ",
                 "refs":{
@@ -55052,7 +55715,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":14,
+        "Twd":17,
         "Type":"Vampire"
     },
     "201479":{
@@ -55123,7 +55786,7 @@
             }
         },
         "Title":"",
-        "Twd":37,
+        "Twd":43,
         "Type":"Vampire"
     },
     "201481":{
@@ -55184,7 +55847,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":3,
+        "Twd":4,
         "Type":"Vampire"
     },
     "201483":{
@@ -55245,7 +55908,14 @@
         "Id":201484,
         "Name":"Yavu Matebo",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            }
+        ],
         "Set":{
             "LoB":{
                 "U":true
@@ -55297,7 +55967,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":10,
         "Type":"Vampire"
     },
     "201486":{
@@ -55350,7 +56020,7 @@
             }
         },
         "Title":"",
-        "Twd":0,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201487":{
@@ -55612,7 +56282,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":31,
+        "Twd":32,
         "Type":"Vampire"
     },
     "201495":{
@@ -55861,7 +56531,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":11,
+        "Twd":14,
         "Type":"Vampire"
     },
     "201502":{
@@ -55942,7 +56612,7 @@
             }
         },
         "Title":"",
-        "Twd":48,
+        "Twd":49,
         "Type":"Vampire"
     },
     "201504":{
@@ -55975,7 +56645,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201505":{
@@ -56004,7 +56674,7 @@
             }
         },
         "Title":"",
-        "Twd":5,
+        "Twd":6,
         "Type":"Vampire"
     },
     "201506":{
@@ -56026,7 +56696,20 @@
         "Id":201506,
         "Name":"Zhenga",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"She can choose the order in which the allies brought by her ability come into play (eg. bring a first ally, then {War Ghoul} second burning the first one). ",
+                "refs":{
+                    "[LSJ 20060530-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ezcZoziFWw/m/bkivGTQIO3wJ"
+                }
+            },
+            {
+                "text":"The allies brought into play by her ability are not \"played in the normal way\" (eg. {Direct Intervention} cannot be used to counter them). ",
+                "refs":{
+                    "[LSJ 20060530-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ezcZoziFWw/m/G07cu5_UZnQJ"
+                }
+            }
+        ],
         "Set":{
             "LoB":{
                 "U":true
@@ -56036,7 +56719,7 @@
             }
         },
         "Title":"",
-        "Twd":9,
+        "Twd":10,
         "Type":"Vampire"
     },
     "201507":{
@@ -56066,7 +56749,7 @@
             }
         },
         "Title":"",
-        "Twd":63,
+        "Twd":65,
         "Type":"Vampire"
     },
     "201508":{
@@ -56094,7 +56777,7 @@
             }
         },
         "Title":"",
-        "Twd":1,
+        "Twd":2,
         "Type":"Vampire"
     },
     "201509":{
@@ -56126,7 +56809,7 @@
             }
         },
         "Title":"",
-        "Twd":122,
+        "Twd":127,
         "Type":"Vampire"
     },
     "201510":{
@@ -56156,6 +56839,12 @@
                 "refs":{
                     "[LSJ 20070322]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Ww-4rYJxi4w/P3QchWVq2o4J",
                     "[ANK 20180807]":"http://www.vekn.net/forum/rules-questions/76905-going-anarch-as-black-hand#89735"
+                }
+            },
+            {
+                "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
+                "refs":{
+                    "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
                 }
             }
         ],
@@ -56194,7 +56883,7 @@
             }
         },
         "Title":"",
-        "Twd":18,
+        "Twd":19,
         "Type":"Vampire"
     }
 }
