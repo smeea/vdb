@@ -1,5 +1,5 @@
 {
-  "name": "react-frontend",
+  "name": "vdb",
   "version": "1.0.0",
   "scripts": {
     "start": "parcel serve index.html",

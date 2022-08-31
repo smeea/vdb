@@ -37,7 +37,7 @@ cardtypes_sorted = [
 
 
 def deck_proxy(cards, lang):
-    CARD_IMAGES_PATH = "../react-frontend/dist/images/cards"
+    CARD_IMAGES_PATH = "../frontend/dist/images/cards"
 
     crypt = {}
     library = {}

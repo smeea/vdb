@@ -338,7 +338,7 @@ function Documentation(props) {
                 <li>
                   Draw calculation code (requires a little programming literacy
                   to read) is{' '}
-                  <a href="https://github.com/smeea/vdb/blob/master/react-frontend/pages/components/drawProbability.js">
+                  <a href="https://github.com/smeea/vdb/blob/master/frontend/pages/components/drawProbability.js">
                     there
                   </a>
                 </li>
