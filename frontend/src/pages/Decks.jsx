@@ -145,6 +145,7 @@ const Decks = (props) => {
       credentials: 'include',
     };
 
+    setError(false);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);

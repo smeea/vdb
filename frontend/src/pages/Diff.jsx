@@ -137,6 +137,8 @@ const Diff = (props) => {
       mode: 'cors',
       credentials: 'include',
     };
+
+    setError(false);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
