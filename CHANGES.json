@@ -1,8 +1,14 @@
 [
   {
-    "version": "2022-08-27",
+    "version": "2022-08-31",
     "changes": [
-      "Bug fixes for recently add/changed features"
+      "Update TWD (81 new decks in 2022! Thanks Vincent \"Ankha\" Ripoll for fantastic job)",
+      "Update cards Rulings (as usual, thanks Lionel \"Phoenix\" Panhaleux)",
+      "Add sorting and filtering for TWD Cards Appearance History",
+      "Fix Deck Exports to TWD format to follow current conventions; always export English card text for TWD format (will still use selected language for Text format)",
+      "Review will now create snapshot of the deck, so your review will always be against that version, even if author later changes his orignal deck",
+      "Library Sect search will include Title-requiring cards (they implicitly require Sect they belong to)",
+      "Many other bug fixes"
     ]
   },
   {
