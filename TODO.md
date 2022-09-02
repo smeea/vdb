@@ -8,6 +8,7 @@
 - Check TWD
 - Show changes from base deck in PDA
 - Close button on bottom in menu in mobile
+- Rework TWD card types branches
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org

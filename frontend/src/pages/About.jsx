@@ -149,6 +149,13 @@ const About = (props) => {
                   Paradox Interactive AB
                 </a>
               </p>
+
+              <p>
+                There is amazing KRCG project with useful{' '}
+                <a href="https://static.krcg.org/">Static files</a> and{' '}
+                <a href="https://api.krcg.org/">Online API</a> to help in
+                software development for VTES
+              </p>
             </div>
 
             <div className="pt-3">
