@@ -79,6 +79,16 @@ virtues = {
     "viz": "Vision",
 }
 
+imbued_clans = [
+    "Avenger",
+    "Defender",
+    "Innocent",
+    "Judge",
+    "Martyr",
+    "Redeemer",
+    "Visionary",
+]
+
 artist_fixes = {
     "Alejandro Collucci": "Alejandro Colucci",
     "Chet Masterz": "Chet Masters",
@@ -230,6 +240,16 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
                             date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
                             card["Set"][set[0]][date] = True
 
+        # Add Sect
+        if card["Clan"] in imbued_clans:
+            card["Sect"] = "Imbued"
+        else:
+            text = re.split("\W+", card["Card Text"])
+            if text[0] == "Advanced":
+                card["Sect"] = text[1]
+            else:
+                card["Sect"] = text[0]
+
         # ASCII-fication of name
         if card["Id"] == 201528:
             card["ASCII Name"] = "Boleslaw Gutowski"
@@ -359,10 +379,10 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
             "Name": card["Name"],
             "New": card["New"],
             "Rulings": card["Rulings"],
+            "Sect": card["Sect"],
             "Set": card["Set"],
             "Title": card["Title"],
             "Twd": card["Twd"],
-            "Type": card["Type"],
         }
 
     artists = sorted(artists_set)

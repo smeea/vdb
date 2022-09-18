@@ -78,17 +78,6 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     cardServices.getCardBase().then((data) => {
-      Object.values(data.crypt).map((card) => {
-        let sect;
-        if (imbuedClansList.includes(card['Clan'])) {
-          sect = 'Imbued';
-        } else {
-          const cardText = card['Card Text'].split(/\W+/);
-          sect = cardText[0] === 'Advanced' ? cardText[1] : cardText[0];
-        }
-
-        data.crypt[card.Id].Sect = sect;
-      });
       setCryptCardBase(data.crypt);
       setLibraryCardBase(data.library);
       setNativeCrypt(data.nativeCrypt);
