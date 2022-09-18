@@ -335,18 +335,16 @@ export const AppProvider = (props) => {
 
     if (cards && cryptCardBase && libraryCardBase) {
       Object.keys(cards).map((cardid) => {
-        if (cards[cardid] > 0) {
-          if (cardid > 200000) {
-            crypt[cardid] = {
-              q: cards[cardid],
-              c: cryptCardBase[cardid],
-            };
-          } else {
-            library[cardid] = {
-              q: cards[cardid],
-              c: libraryCardBase[cardid],
-            };
-          }
+        if (cardid > 200000) {
+          crypt[cardid] = {
+            q: cards[cardid],
+            c: cryptCardBase[cardid],
+          };
+        } else {
+          library[cardid] = {
+            q: cards[cardid],
+            c: libraryCardBase[cardid],
+          };
         }
       });
     }
