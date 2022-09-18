@@ -90,7 +90,7 @@ const TwdResultDescription = ({ deck }) => {
         <>
           <div
             className={`d-flex justify-content-center align-items-center large mx-1 mt-1 mb-2 blue ${
-              deck['players'] >= 40
+              deck['players'] >= 30
                 ? 'bold border-dashed-thick'
                 : 'border-dashed'
             }`}
@@ -116,7 +116,7 @@ const TwdResultDescription = ({ deck }) => {
             <Stack gap={1}>
               <div
                 className={`d-flex justify-content-center align-items-center large mx-1 mb-1 blue ${
-                  deck['players'] >= 40
+                  deck['players'] >= 30
                     ? 'bold border-dashed-thick'
                     : 'border-dashed'
                 }`}
