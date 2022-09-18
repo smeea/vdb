@@ -85,7 +85,7 @@ const ResultLayoutText = ({
         {!isMobile && !noClose && (
           <ButtonIconed
             variant="primary"
-            onClick={() => !noClose && handleClose}
+            onClick={() => !noClose && handleClose()}
             title="Close"
             icon={<X width="24" height="24" viewBox="0 0 16 16" />}
             text="Close"

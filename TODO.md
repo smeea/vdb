@@ -4,7 +4,6 @@
 - Crypt sorting in review (works in Deck!)
 - Inventory table width for library on desktop & mobile (and q-ty for crypt)
 - Jason Newberry export to clipboard
-- Card close button dont do anything (check different resolutions/pages)
 - Mirrdes discord inventory add problem
 - KSchaefer twd search link with author
 
