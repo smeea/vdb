@@ -6,3 +6,4 @@ export { default as AccountChangeName } from './AccountChangeName';
 export { default as AccountDeleteButton } from './AccountDeleteButton';
 export { default as AccountLogin } from './AccountLogin';
 export { default as AccountRegister } from './AccountRegister';
+export { default as AccountPlaytest } from './AccountPlaytest';

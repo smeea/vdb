@@ -27,6 +27,8 @@ export const AppProvider = (props) => {
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
   const [lang, setLang] = useState('en-EN');
+  const [isPlaytester, setIsPlaytester] = useState(undefined);
+  const [playtest, setPlaytest] = useState(undefined);
   const [showImage, setShowImage] = useState(undefined);
   const [addMode, setAddMode] = useState(undefined);
   const [inventoryMode, setInventoryMode] = useState(undefined);
@@ -78,14 +80,26 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     cardServices.getCardBase().then((data) => {
-      setCryptCardBase(data.crypt);
-      setLibraryCardBase(data.library);
       setNativeCrypt(data.nativeCrypt);
       setNativeLibrary(data.nativeLibrary);
       setLocalizedCrypt({ 'en-EN': data.nativeCrypt });
       setLocalizedLibrary({ 'en-EN': data.nativeLibrary });
     });
   }, []);
+
+  useEffect(() => {
+    cardServices.getCardBase().then((data) => {
+      if (playtest) {
+        cardServices.getPlaytestCardBase().then((dataPlaytest) => {
+          setCryptCardBase({ ...data.crypt, ...dataPlaytest.crypt });
+          setLibraryCardBase({ ...data.library, ...dataPlaytest.library });
+        });
+      } else {
+        setCryptCardBase(data.crypt);
+        setLibraryCardBase(data.library);
+      }
+    });
+  }, [playtest]);
 
   // USER FUNCTIONS
 
@@ -113,6 +127,8 @@ export const AppProvider = (props) => {
     setUsername(data.username);
     setPublicName(data.public_name);
     setEmail(data.email);
+    setIsPlaytester(data.playtester);
+    if (!data.playtester) setPlaytest(false)
     setInventoryCrypt(inventory.crypt);
     setInventoryLibrary(inventory.library);
     setDecks(parseDecksData(data.decks));
@@ -121,6 +137,8 @@ export const AppProvider = (props) => {
   const initializeUnauthenticatedUser = () => {
     setAddMode(false);
     setInventoryMode(false);
+    setIsPlaytester(false);
+    setPlaytest(false);
     setInventoryCrypt({});
     setInventoryLibrary({});
     setUsername(undefined);
@@ -249,6 +267,11 @@ export const AppProvider = (props) => {
     setLocalStorage('addMode', !addMode);
   };
 
+  const togglePlaytest = () => {
+    setPlaytest(!playtest);
+    setLocalStorage('playtest', !playtest);
+  };
+
   const addRecentDeck = (deck) => {
     const src =
       deck.deckid.length != 32 ? 'twd' : deck.public_parent ? 'pda' : 'shared';
@@ -285,6 +308,7 @@ export const AppProvider = (props) => {
     initFromStorage('inventoryMode', false, setInventoryMode);
     initFromStorage('showImage', true, setShowImage);
     initFromStorage('recentDecks', [], setRecentDecks);
+    initFromStorage('playtest', false, setPlaytest);
   }, []);
 
   // DECK FUNCTIONS
@@ -747,6 +771,9 @@ export const AppProvider = (props) => {
         isDesktop,
         lang,
         changeLang,
+        isPlaytester,
+        playtest,
+        togglePlaytest,
         hideMissing,
         setHideMissing,
         inventoryMode,

@@ -4,6 +4,8 @@ import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 const VERSION = '2022-08-31';
 const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
 const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=${VERSION}`;
+const urlCryptPlaytest = `${process.env.ROOT_URL}cardbase_crypt_playtest.json?v=${VERSION}`;
+const urlLibraryPlaytest = `${process.env.ROOT_URL}cardbase_lib_playtest.json?v=${VERSION}`;
 const urlLocalizedCrypt = (lang) =>
   `${process.env.ROOT_URL}cardbase_crypt.${lang}.json?v=${VERSION}`;
 const urlLocalizedLibrary = (lang) =>
@@ -38,6 +40,24 @@ export const getCardBase = async () => {
     nativeLibrary: nativeLibrary,
   };
 };
+
+export const getPlaytestCardBase = async () => {
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+  };
+
+  const cryptResponse = await fetch(urlCryptPlaytest, options);
+  const libraryResponse = await fetch(urlLibraryPlaytest, options);
+  const crypt = await cryptResponse.json();
+  const library = await libraryResponse.json();
+
+  return {
+    crypt: crypt,
+    library: library,
+  };
+}
 
 export const getLocalizedCardBase = async (lang) => {
   const options = {

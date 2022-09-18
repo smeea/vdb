@@ -8,13 +8,14 @@ import {
   AccountChangeEmail,
   AccountChangeName,
   AccountDeleteButton,
+  AccountPlaytest,
   Banner,
 } from 'components';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import { useApp } from 'context';
 
 const Account = (props) => {
-  const { isMobile, username } = useApp();
+  const { isMobile, username, isPlaytester } = useApp();
 
   return (
     <Container className="main-container">
@@ -41,6 +42,7 @@ const Account = (props) => {
                 <AccountChangeName />
                 <AccountChangePassword />
                 <AccountChangeEmail />
+                {isPlaytester && <AccountPlaytest />}
                 <Stack gap={3}>
                   <AccountLogoutButton />
                   <AccountDeleteButton />

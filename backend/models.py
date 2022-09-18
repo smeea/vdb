@@ -17,6 +17,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(64))
     password_hash = db.Column(db.String(128))
     public_name = db.Column(db.String(64))
+    playtester = db.Column(db.Boolean, default=False)
     decks = db.relationship("Deck", backref="author", lazy="dynamic")
     favorites = db.Column(db.PickleType, default=[])
     inventory = db.Column(db.PickleType, default={})

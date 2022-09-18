@@ -620,17 +620,14 @@ const Decks = (props) => {
         decks &&
         Object.keys(decks).length == 0 &&
         !activeDeck.deckid && (
-          <Row className="align-items-center justify-content-center p-3 vh-60">
-            <Col xs={12} md={9} lg={8} xl={7}>
+          <Row className="align-items-center justify-content-center p-3 vh-70">
+            <Col xs={12} md={8} lg={7} xl={6}>
               <div className="text-align-center blue bold py-2">
                 You do not have any decks in your collection yet
               </div>
               <div className="text-align-center blue bold py-2">
-                Start by creating new one or import from Lackey/Amaranth
-              </div>
-              <div className="text-align-center blue bold py-2">
-                Or browse official preconstructed decks or Tournament Winning
-                Decks (TWD)
+                Start by creating new one, import from Lackey / Amaranth / Text or
+                browse official preconstructed decks
               </div>
               <div className="d-flex justify-content-center pt-3">
                 <DeckNewDeck setShowInfo={setShowInfo} />

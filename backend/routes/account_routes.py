@@ -21,26 +21,24 @@ def version_route():
 
 @app.route("/api/login", methods=["POST"])
 def login_route():
-    try:
-        user = User.query.filter_by(username=request.json["username"].lower()).first()
+    user = User.query.filter_by(username=request.json["username"].lower()).one()
 
-        if user is None:
-            abort(400)
-        elif not user.check_password(request.json["password"]):
-            abort(401)
+    if user is None:
+        abort(400)
+    elif not user.check_password(request.json["password"]):
+        abort(401)
 
-        login_user(user, remember=request.json["remember"])
-        return jsonify(
-            {
-                "username": current_user.username,
-                "email": current_user.email,
-                "public_name": current_user.public_name,
-                "decks": parse_user_decks(current_user.decks.all()),
-                "inventory": parse_user_inventory(current_user.inventory),
-            }
-        )
-    except KeyError:
-        pass
+    login_user(user, remember=request.json["remember"])
+    return jsonify(
+        {
+            "username": current_user.username,
+            "email": current_user.email,
+            "playtester": current_user.playtester,
+            "public_name": current_user.public_name,
+            "decks": parse_user_decks(current_user.decks.all()),
+            "inventory": parse_user_inventory(current_user.inventory),
+        }
+    )
 
 
 @app.route("/api/login", methods=["DELETE"])
@@ -61,6 +59,7 @@ def who_am_i_route():
             {
                 "username": current_user.username,
                 "email": current_user.email,
+                "playtester": current_user.playtester,
                 "public_name": current_user.public_name,
                 "decks": parse_user_decks(current_user.decks.all()),
                 "inventory": parse_user_inventory(current_user.inventory),
