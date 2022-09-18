@@ -42,7 +42,7 @@ const PdaSearchForm = (props) => {
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
-    if (cryptCardBase && libraryCardBase && query) {
+    if (query) {
       setPdaFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
@@ -57,7 +57,7 @@ const PdaSearchForm = (props) => {
         return state;
       });
     }
-  }, [cryptCardBase, libraryCardBase]);
+  }, []);
 
   useEffect(() => {
     if (isMobile && query && pdaFormState && cryptCardBase && libraryCardBase) {

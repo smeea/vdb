@@ -5,7 +5,6 @@
 - Inventory table width for library on desktop & mobile (and q-ty for crypt)
 - Jason Newberry export to clipboard
 - Mirrdes discord inventory add problem
-- KSchaefer twd search link with author
 
 # FEATURES
 - Check TWD

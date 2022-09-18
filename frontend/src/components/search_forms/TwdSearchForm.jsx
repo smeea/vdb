@@ -42,7 +42,7 @@ const TwdSearchForm = (props) => {
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
-    if (cryptCardBase && libraryCardBase && query) {
+    if (query) {
       setTwdFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
@@ -54,10 +54,11 @@ const TwdSearchForm = (props) => {
             state[i] = query[i];
           }
         });
+
         return state;
       });
     }
-  }, [cryptCardBase, libraryCardBase]);
+  }, []);
 
   useEffect(() => {
     if (isMobile && query && twdFormState && cryptCardBase && libraryCardBase) {
