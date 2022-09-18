@@ -77,47 +77,41 @@ const InventoryCryptTable = ({
           />
         </div>
         <div className="d-flex align-items-center justify-content-center used">
-          {isMobile ? (
-            <>
-              {softUsedMax > 0 && (
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-inline opacity-035 pe-1">
-                    <Shuffle width="14" height="14" viewBox="0 0 16 16" />
-                  </div>
-                  {softUsedMax}
-                </div>
-              )}
-              {hardUsedTotal > 0 && (
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-inline opacity-035 pe-1">
-                    <PinAngleFill width="14" height="14" viewBox="0 0 16 16" />
-                  </div>
-                  {hardUsedTotal}
-                </div>
-              )}
-            </>
-          ) : (
-            <OverlayTrigger
+          {isMobile ?
+            <div
+              className={`d-flex justify-content-center w-100 ps-1 ${qty == softUsedMax + hardUsedTotal
+                ? 'gray'
+                : qty >= softUsedMax + hardUsedTotal
+                  ? 'green'
+                  : 'red'
+                }`}
+            >
+              {qty === softUsedMax + hardUsedTotal
+                ? '='
+                : qty > softUsedMax + hardUsedTotal
+                  ? `+${qty - softUsedMax - hardUsedTotal}`
+                  : qty - softUsedMax - hardUsedTotal}
+            </div>
+            : <OverlayTrigger
               placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div
-                className={`d-flex justify-content-center w-100 ps-1 ${
-                  qty == softUsedMax + hardUsedTotal
-                    ? 'gray'
-                    : qty >= softUsedMax + hardUsedTotal
+                className={`d-flex justify-content-center w-100 ps-1 ${qty == softUsedMax + hardUsedTotal
+                  ? 'gray'
+                  : qty >= softUsedMax + hardUsedTotal
                     ? 'green'
                     : 'red'
-                }`}
+                  }`}
               >
                 {qty === softUsedMax + hardUsedTotal
                   ? '='
                   : qty > softUsedMax + hardUsedTotal
-                  ? `+${qty - softUsedMax - hardUsedTotal}`
-                  : qty - softUsedMax - hardUsedTotal}
+                    ? `+${qty - softUsedMax - hardUsedTotal}`
+                    : qty - softUsedMax - hardUsedTotal}
               </div>
             </OverlayTrigger>
-          )}
+          }
         </div>
         <div
           className="d-flex align-items-center justify-content-center capacity"
@@ -201,9 +195,8 @@ const InventoryCryptTable = ({
         </div>
       ) : (
         <div
-          className={`inventory-container-crypt${
-            withCompact ? '-with-compact' : ''
-          }`}
+          className={`inventory-container-crypt${withCompact ? '-with-compact' : ''
+            }`}
         >
           <AutoSizer>
             {({ width, height }) => (

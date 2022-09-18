@@ -43,11 +43,12 @@ const InventoryDesktop = ({
     inventoryLibrary,
     usedCryptCards,
     usedLibraryCards,
+    isWide,
   } = useApp();
 
   return (
     <>
-      <Col xl={1} className="hide-narrow"></Col>
+      {isWide && <Col xl={1} />}
       <Col md={6} lg={6} xl={5} className="px-0 px-md-2 pe-xl-3">
         <div className="sticky-selector pt-3 pb-2">
           <InventoryNewCryptCard
@@ -82,7 +83,7 @@ const InventoryDesktop = ({
           </div>
         )}
       </Col>
-      <Col md={6} lg={6} xl={4} className="px-0 px-md-2 px-xl-3">
+      <Col md={6} lg={6} xl={isWide ? 4 : 5} className="px-0 px-md-2 px-xl-3">
         <div className="sticky-selector pt-3 pb-2">
           <InventoryNewLibraryCard
             cards={inventoryLibrary}

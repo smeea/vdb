@@ -2,8 +2,7 @@
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - Crypt sorting in review (works in Deck!)
-- Inventory table width for library on desktop & mobile (and q-ty for crypt)
-- Jason Newberry export to clipboard
+- Lackey export with double/single quotes - Jason 'Son' Newberry
 - Mirrdes discord inventory add problem
 
 # FEATURES

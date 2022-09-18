@@ -35,7 +35,7 @@ const InventoryLibraryTable = ({
     usedLibraryCards,
     nativeLibrary,
     isMobile,
-    isWide,
+    isNarrow,
     setShowFloatingButtons,
   } = useApp();
 
@@ -89,47 +89,41 @@ const InventoryLibraryTable = ({
           />
         </div>
         <div className="d-flex align-items-center justify-content-center used">
-          {isMobile ? (
-            <>
-              {softUsedMax > 0 && (
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-inline opacity-035 pe-1">
-                    <Shuffle width="14" height="14" viewBox="0 0 16 16" />
-                  </div>
-                  {softUsedMax}
-                </div>
-              )}
-              {hardUsedTotal > 0 && (
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-inline opacity-035 pe-1">
-                    <PinAngleFill width="14" height="14" viewBox="0 0 16 16" />
-                  </div>
-                  {hardUsedTotal}
-                </div>
-              )}
-            </>
-          ) : (
-            <OverlayTrigger
+          {isMobile ?
+            <div
+              className={`d-flex justify-content-center w-100 ps-1 ${qty == softUsedMax + hardUsedTotal
+                ? 'gray'
+                : qty >= softUsedMax + hardUsedTotal
+                  ? 'green'
+                  : 'red'
+                }`}
+            >
+              {qty === softUsedMax + hardUsedTotal
+                ? '='
+                : qty > softUsedMax + hardUsedTotal
+                  ? `+${qty - softUsedMax - hardUsedTotal}`
+                  : qty - softUsedMax - hardUsedTotal}
+            </div>
+            : <OverlayTrigger
               placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div
-                className={`d-flex justify-content-center w-100 ps-1 ${
-                  qty == softUsedMax + hardUsedTotal
-                    ? 'gray'
-                    : qty >= softUsedMax + hardUsedTotal
+                className={`d-flex justify-content-center w-100 ps-1 ${qty == softUsedMax + hardUsedTotal
+                  ? 'gray'
+                  : qty >= softUsedMax + hardUsedTotal
                     ? 'green'
                     : 'red'
-                }`}
+                  }`}
               >
                 {qty === softUsedMax + hardUsedTotal
                   ? '='
                   : qty > softUsedMax + hardUsedTotal
-                  ? `+${qty - softUsedMax - hardUsedTotal}`
-                  : qty - softUsedMax - hardUsedTotal}
+                    ? `+${qty - softUsedMax - hardUsedTotal}`
+                    : qty - softUsedMax - hardUsedTotal}
               </div>
             </OverlayTrigger>
-          )}
+          }
         </div>
         <div
           className="d-flex align-items-center justify-content-center type"
@@ -151,15 +145,14 @@ const InventoryLibraryTable = ({
           </div>
         </ConditionalOverlayTrigger>
 
-        {isMobile || !isWide ? (
+        {isMobile ? (
           <div
-            className="d-flex align-items-center justify-content-between cost-disciplines"
+            className="d-flex align-items-center justify-content-between cost-clan-disciplines"
             onClick={() => handleClick()}
           >
             <div
-              className={`d-flex align-items-center justify-content-center ${
-                card[BLOOD_COST] && 'blood'
-              }`}
+              className={`d-flex align-items-center justify-content-center ${card[BLOOD_COST] && 'blood'
+                }`}
               onClick={() => handleClick()}
             >
               <ResultLibraryCost
@@ -177,9 +170,8 @@ const InventoryLibraryTable = ({
         ) : (
           <>
             <div
-              className={`d-flex align-items-center justify-content-center ${
-                card[BLOOD_COST] && 'blood'
-              } cost`}
+              className={`d-flex align-items-center justify-content-center ${card[BLOOD_COST] && 'blood'
+                } cost`}
               onClick={() => handleClick()}
             >
               <ResultLibraryCost
@@ -195,7 +187,7 @@ const InventoryLibraryTable = ({
             </div>
           </>
         )}
-        {isWide && !isMobile && (
+        {!isNarrow && (
           <div
             className="d-flex align-items-center justify-content-center burn"
             onClick={() => handleClick()}
@@ -225,9 +217,8 @@ const InventoryLibraryTable = ({
         </div>
       ) : (
         <div
-          className={`inventory-container-library${
-            withCompact ? '-with-compact' : ''
-          }`}
+          className={`inventory-container-library${withCompact ? '-with-compact' : ''
+            }`}
         >
           <AutoSizer>
             {({ width, height }) => (

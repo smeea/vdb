@@ -50,8 +50,8 @@ const InventoryCardQuantity = ({
           <div
             className={
               state < softUsedMax + hardUsedTotal
-                ? 'px-1 mx-1 inv-miss-full'
-                : 'px-1'
+                ? 'inv-miss-full'
+                : null
             }
           >
             {state == 0 ? <>&nbsp;&nbsp;</> : state}
