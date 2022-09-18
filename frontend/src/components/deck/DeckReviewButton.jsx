@@ -25,15 +25,17 @@ const DeckReviewButton = ({ deckid }) => {
   }
 
   useEffect(() => {
-    if (snapshotId) navigate(`/review?id=${snapshotId}`);
+    if (snapshotId) {
+      navigate(`/review?id=${snapshotId}`);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
+    }
   }, [snapshotId])
 
   return (
     <ButtonIconed
       variant="secondary"
       onClick={() => {
-        setShowMenuButtons(false);
-        setShowFloatingButtons(true);
         getSnapshot(deckid)
       }}
       title="Review Deck"

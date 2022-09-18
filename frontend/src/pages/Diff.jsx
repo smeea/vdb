@@ -15,6 +15,7 @@ import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import ArrowLeftRight from 'assets/images/icons/arrow-left-right.svg';
 import {
+  ButtonIconed,
   DeckSelectMy,
   DeckBranchSelect,
   DeckSelectPrecon,
@@ -648,17 +649,6 @@ const Diff = (props) => {
         >
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
-              <div className="d-flex justify-content-end">
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => {
-                    setShowMenuButtons(false);
-                    setShowFloatingButtons(true);
-                  }}
-                >
-                  <X width="32" height="32" viewBox="0 0 16 16" />
-                </Button>
-              </div>
               <DiffButtons
                 deck={deckRouter(activeDeck)}
                 missingCrypt={missingCrypt}
@@ -666,6 +656,17 @@ const Diff = (props) => {
                 fromQuery={fromQuery}
                 toQuery={toQuery}
               />
+              <div className="d-flex justify-content-end pt-1">
+                <ButtonIconed
+                  variant="secondary"
+                  onClick={() => {
+                    setShowMenuButtons(false);
+                    setShowFloatingButtons(true);
+                  }}
+                  title="Close"
+                  icon={<X width="24" height="24" viewBox="0 0 16 16" />}
+                />
+              </div>
             </Container>
           </Modal.Body>
         </Modal>
