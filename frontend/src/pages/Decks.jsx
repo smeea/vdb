@@ -11,6 +11,7 @@ import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
 import {
   AccountLogin,
   AccountRegister,
+  ButtonIconed,
   DeckSelectMy,
   DeckSelectRecent,
   DeckSelectPrecon,
@@ -662,17 +663,6 @@ const Decks = (props) => {
         >
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
-              <div className="d-flex justify-content-end">
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => {
-                    setShowMenuButtons(false);
-                    setShowFloatingButtons(true);
-                  }}
-                >
-                  <X width="32" height="32" viewBox="0 0 16 16" />
-                </Button>
-              </div>
               <DeckButtons
                 isAuthor={isAuthor}
                 isPublic={isPublic}
@@ -686,6 +676,17 @@ const Decks = (props) => {
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
               />
+              <div className="d-flex justify-content-end pt-1">
+                <ButtonIconed
+                  variant="secondary"
+                  onClick={() => {
+                    setShowMenuButtons(false);
+                    setShowFloatingButtons(true);
+                  }}
+                  title="Close"
+                  icon={<X width="24" height="24" viewBox="0 0 16 16" />}
+                />
+              </div>
             </Container>
           </Modal.Body>
         </Modal>

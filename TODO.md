@@ -9,7 +9,6 @@
 # FEATURES
 - Check TWD
 - Show changes from base deck in PDA
-- Close button on bottom in menu in mobile
 
 # MAYBE LATER FEATURES
 - Inventory sharing

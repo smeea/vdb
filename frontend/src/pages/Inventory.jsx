@@ -5,6 +5,7 @@ import X from 'assets/images/icons/x.svg';
 import {
   AccountLogin,
   AccountRegister,
+  ButtonIconed,
   InventoryAddDeckModal,
   InventoryAddPreconModal,
   InventoryDesktop,
@@ -145,17 +146,6 @@ const Inventory = (props) => {
         >
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
-              <div className="d-flex justify-content-end">
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => {
-                    setShowMenuButtons(false);
-                    setShowFloatingButtons(true);
-                  }}
-                >
-                  <X width="32" height="32" viewBox="0 0 16 16" />
-                </Button>
-              </div>
               <InventoryButtons
                 crypt={inventoryCrypt}
                 library={inventoryLibrary}
@@ -172,6 +162,17 @@ const Inventory = (props) => {
                 <InventoryShowSelect
                   category={category}
                   setCategory={setCategory}
+                />
+              </div>
+              <div className="d-flex justify-content-end pt-1">
+                <ButtonIconed
+                  variant="secondary"
+                  onClick={() => {
+                    setShowMenuButtons(false);
+                    setShowFloatingButtons(true);
+                  }}
+                  title="Close"
+                  icon={<X width="24" height="24" viewBox="0 0 16 16" />}
                 />
               </div>
             </Container>
