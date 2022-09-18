@@ -264,7 +264,7 @@ const exportLackey = (deck) => {
 
   sortedCrypt.map((card) => {
     const spaces = 8 - card.q.toString().length;
-    let name = card.c['ASCII Name'].replace(/"/g, "'");
+    let name = card.c['ASCII Name']
     if (card.c['Adv'] && card.c['Adv'][0]) {
       name += ' (ADV)';
     }
