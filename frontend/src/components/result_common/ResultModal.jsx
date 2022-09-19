@@ -15,7 +15,7 @@ const ResultModal = ({
   nested,
   forceInventoryMode,
 }) => {
-  const { showImage, toggleShowImage, isMobile } = useApp();
+  const { showImage, toggleShowImage, isMobile, isNarrow } = useApp();
 
   const [imageSet, setImageSet] = useState(null);
   const [activeCard, setActiveCard] = useState(card);
@@ -120,20 +120,20 @@ const ResultModal = ({
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>
         {isMobile && (
-          <>
-            <div
-              onClick={() => toggleShowImage()}
-              className="d-flex float-right-middle float-turn align-items-center justify-content-center"
-            >
-              <ArrowRepeat viewBox="0 0 16 16" />
-            </div>
-            <div
-              onClick={handleClose}
-              className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
-            >
-              <X viewBox="0 0 16 16" />
-            </div>
-          </>
+          <div
+            onClick={() => toggleShowImage()}
+            className="d-flex float-right-middle float-turn align-items-center justify-content-center"
+          >
+            <ArrowRepeat viewBox="0 0 16 16" />
+          </div>
+        )}
+        {isNarrow && (
+          <div
+            onClick={handleClose}
+            className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+          >
+            <X viewBox="0 0 16 16" />
+          </div>
         )}
       </Modal.Body>
     </Modal>

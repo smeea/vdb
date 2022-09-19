@@ -20,7 +20,7 @@ const ResultLayoutText = ({
   forceInventoryMode,
   noClose,
 }) => {
-  const { isMobile } = useApp();
+  const { isMobile, isNarrow } = useApp();
   const { cryptCompare, setCryptCompare, libraryCompare, setLibraryCompare } =
     useSearchResults();
 
@@ -82,7 +82,7 @@ const ResultLayoutText = ({
             }
           />
         </Stack>
-        {!isMobile && !noClose && (
+        {!isNarrow && !noClose && (
           <ButtonIconed
             variant="primary"
             onClick={() => !noClose && handleClose()}

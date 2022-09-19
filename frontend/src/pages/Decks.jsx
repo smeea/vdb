@@ -672,18 +672,11 @@ const Decks = (props) => {
                 setShowQr={setShowQr}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
+                handleClose={() => {
+                  setShowMenuButtons(false);
+                  setShowFloatingButtons(true);
+                }}
               />
-              <div className="d-flex justify-content-end pt-1">
-                <ButtonIconed
-                  variant="secondary"
-                  onClick={() => {
-                    setShowMenuButtons(false);
-                    setShowFloatingButtons(true);
-                  }}
-                  title="Close"
-                  icon={<X width="24" height="24" viewBox="0 0 16 16" />}
-                />
-              </div>
             </Container>
           </Modal.Body>
         </Modal>
