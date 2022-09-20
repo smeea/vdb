@@ -6,10 +6,14 @@ import io
 
 def deck_export(cards, format):
     with open("cardbase_crypt.json", "r") as crypt_file, open(
-        "cardbase_lib.json", "r"
-    ) as library_file:
-        crypt_base = json.load(crypt_file)
-        library_base = json.load(library_file)
+        "cardbase_crypt_playtest.json", "r"
+    ) as crypt_playtest_file:
+        crypt_db = {**json.load(crypt_file), **json.load(crypt_playtest_file)}
+
+    with open("cardbase_lib.json", "r") as library_file, open(
+        "cardbase_lib_playtest.json", "r"
+    ) as library_playtest_file:
+        library_db = {**json.load(library_file), **json.load(library_playtest_file)}
 
     crypt = {}
     library = {}
@@ -18,9 +22,9 @@ def deck_export(cards, format):
         if v > 0:
             k = int(k)
             if k > 200000:
-                crypt[k] = {"c": crypt_base[str(k)], "q": v}
+                crypt[k] = {"c": crypt_db[str(k)], "q": v}
             elif k < 200000:
-                library[k] = {"c": library_base[str(k)], "q": v}
+                library[k] = {"c": library_db[str(k)], "q": v}
 
     if format == "xlsx":
         fb = io.BytesIO()

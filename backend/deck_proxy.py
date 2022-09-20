@@ -6,11 +6,15 @@ import os.path
 import json
 
 
-with open("cardbase_crypt.json", "r") as crypt_file:
-    crypt_db = json.load(crypt_file)
+with open("cardbase_crypt.json", "r") as crypt_file, open(
+    "cardbase_crypt_playtest.json", "r"
+) as crypt_playtest_file:
+    crypt_db = {**json.load(crypt_file), **json.load(crypt_playtest_file)}
 
-with open("cardbase_lib.json", "r") as library_file:
-    library_db = json.load(library_file)
+with open("cardbase_lib.json", "r") as library_file, open(
+    "cardbase_lib_playtest.json", "r"
+) as library_playtest_file:
+    library_db = {**json.load(library_file), **json.load(library_playtest_file)}
 
 cardtypes_sorted = [
     "Master",
