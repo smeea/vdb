@@ -2,12 +2,6 @@ import json
 from flask_login import current_user
 from models import Deck
 
-with open("cardbase_crypt.json", "r") as crypt_file:
-    crypt_db = json.load(crypt_file)
-
-with open("cardbase_lib.json", "r") as library_file:
-    library_db = json.load(library_file)
-
 with open("twd_decks.json", "r") as twd_decks_file:
     twd_decks = json.load(twd_decks_file)
 

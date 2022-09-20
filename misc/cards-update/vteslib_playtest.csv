@@ -1,0 +1,48 @@
+﻿Id,Name,Aka,Type,Clan,Discipline,Pool Cost,Blood Cost,Conviction Cost,Burn Option,Card Text,Flavor Text,Set,Banned,Artist,Capacity
+110001,Night Terrors,,Reaction,,Obfuscate & Presence,,,,,"Only usable by a blocking vampire.
+[obf][pre] Reduce the acting minion's stealth to 0. (The minion can still increase their stealth.)
+[OBF][PRE] As above, and this vampire can strike: combat ends during the first round of the resulting combat if this action is blocked.
+",,,,ARTIST,
+110002,Visions of Zapathasura,,Reaction,,Obfuscate & Presence,,,,,"[obf][pre] Reduce a bleed against you by 3.
+[OBF][PRE] Reduce a bleed against you to 0. (The acting minion can still increase the bleed amount.)",,,,ARTIST,
+110003,Super Creeps,,Action,,Animalism/Obfuscate/Presence,,,,,"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.
+[ani] The bleed is with +1 bleed.
+[obf] If the bleed is successful, put an illusion counter on a minion controlled by the target Methuselah.
+[pre] If the bleed is successful, add 1 blood to a vampire in your uncontrolled region.",,,,ARTIST,
+110004,Terror Against Terror,,Combat,,Obfuscate & Presence,,,,,"[obf][pre] Only usable before range is determined. This round, the opposing minion cannot maneuver to close range or press to continue combat.
+[OBF][PRE] Burn an illusion counter on the opposing minion to cancel a combat card as it is played by them, and its cost is not paid.",,,,ARTIST,
+110005,Visions of Gehenna,,Action Modifier,Ravnos,Obfuscate,,,,,"[obf] +1 stealth.
+[OBF] Only usable as the action is announced. Minions with your illusion counters cannot block this vampire. Burn all your illusion counters if this action is successful.",,,,ARTIST,
+110021,Sculpt the Flesh,,Combat,Tzimisce,Protean ,,1,,,"[pro] Damage from this vampire's hand strikes is aggravated this round.
+[PRO] Strike: 2 damage, and put this card on the opposing minion. The attached minion gets -1 strength.  The attached minion can burn this card as a +1 stealth action that costs 1 blood.",,,,ARTIST,
+110022,Obedient Flesh,,Action Modifier/Combat,,Dominate & Protean,,,,,"[dom][pro] [ACTION MODIFIER] +1 stealth. Allies get -1 intercept.
+[DOM][PRO] [COMBAT] Only usable before range is determined. This round, this vampire gets +1 strength, 1 optional maneuver, and can prevent 1 damage. A vampire can play only one Obedient Flesh each round.",,,,ARTIST,
+110023,Monstrous Form,,Combat,,Dominate & Protean,,,,,"Only usable before range is determined. A vampire can play only one Monstrous Form each combat.
+[dom][pro] This vampire gets +1 strength this combat.  
+[DOM][PRO] As above, and this vampire gets 1 additional strike and 1 optional press this round.",,,,ARTIST,
+110024,One With the Land,,Reaction,Tzimisce,Protean ,,,,,"Only usable during an action directed at you (or a card you control).
+[pro] +2 intercept.
+[PRO] As above, and this vampire can burn 1 blood to strike: combat ends during the resulting combat if they block.",,,,ARTIST,
+110025,Vozhd of Sofia,,Ally,Tzimisce,,3,,,,"Unique ghoul with 5 life. 3 strength, 0 bleed.
+After this ally enters play, burn an ally or retainer you control. It can strike: 2R damage. It can enter combat with a vampire as a (D) action. During your unlock phase, a Tzimisce you control can burn 1 blood to give this ally 1 life.",,,,ARTIST,
+110041,Saulot's Healing Touch,,Master,Salubri,,2,,,,"Unique.
+Put this card on a Salubri you control. Rescuing a non-Tremere vampire from torpor costs this vampire -2 blood. This vampire can shuffle an ally card from your ash heap into your library or move a non-Tremere vampire card from your ash heap to your uncontrolled region as a +1 stealth action. Cannot be put on a vampire with a card named /Saulot's Avenging Fist/.",,,,ARTIST,
+110042,Saulot's Avenging Fist,,Master,Salubri,,2,,,,"Unique.
+Put this card on a Salubri you control. This vampire gets +1 strength and inflicts +1 damage with melee weapons. This vampire can enter combat with a younger non-Salubri vampire as a (D) action; if that vampire is Tremere, this is a +1 stealth action. Cannot be put on a vampire with a card named /Saulot's Healing Touch/.",,,,ARTIST,
+110043,Feast of the Soul's Secrets,,Action,Salubri,Auspex & Dominate,,1,,,"[aus][dom] (D) Bleed with +2 bleed.
+[AUS][DOM] As above, and add 3 blood to another vampire you control if the bleed is successful.",,,,ARTIST,
+110044,Forced Confessional,,Action Modifier,Salubri,Auspex & Dominate,,,,,"Only usable if a minion attempts to block.
+[aus][dom] The blocking minion gets -2 intercept.
+[AUS][DOM] That attempt fails and the blocking minion cannot attempt to block this action again.",,,,ARTIST,
+110045,Unleashing the Bestial Soul,,Action Modifier,Salubri,Auspex & Dominate,,,,,"Only usable as the action is announced.
+[aus][dom] Lock a minion controlled by your predator or prey.
+[AUS][DOM] As above, and that minion cannot play reaction cards this action.",,,,ARTIST,
+110046,Touch of Valeren,,Action/Combat,Salubri,Auspex & Fortitude,,1,,,"
+[aus][for] [ACTION] +1 stealth action. Add 3 blood or life to a minion (in play).
+[AUS][FOR] [COMBAT] Prevent all damage from the opposing minion's strike.
+[AUS][FOR] [COMBAT] Only usable by a ready vampire not involved in the combat involving another minion you control. Prevent all damage to that minion from the opposing minion's strike.",,,,ARTIST,
+110048,Sword Cane,,Combat,,,,,,,"Only usable before range is determined during the first round of combat.
+Put this card on this minion; it becomes a melee weapon equipment that can be locked to strike: strength+1 damage.",,,,ARTIST,
+110049,Sword of the Archangel,,Equipment,Salubri,,2,,,,"Unique melee weapon.
+Minions opposing the bearer cannot play grapple cards.
+Strike: strength+1 aggravated damage. If the opposing vampire is burned during this weapon's strike resolution and the bearer remains ready, the bearer can unlock at the end of combat.",,,,ARTIST,

@@ -1,7 +1,7 @@
 import preconDecksData from 'assets/data/preconDecks.json';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const VERSION = '2022-08-31';
+const VERSION = '2022-09-19';
 const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
 const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=${VERSION}`;
 const urlCryptPlaytest = `${process.env.ROOT_URL}cardbase_crypt_playtest.json?v=${VERSION}`;
@@ -23,9 +23,14 @@ export const getCardBase = async () => {
   const crypt = await cryptResponse.json();
   const library = await libraryResponse.json();
 
+  const cryptResponsePlaytest = await fetch(urlCryptPlaytest, options);
+  const libraryResponsePlaytest = await fetch(urlLibraryPlaytest, options);
+  const cryptPlaytest = await cryptResponsePlaytest.json();
+  const libraryPlaytest = await libraryResponsePlaytest.json();
+
   const nativeCrypt = {};
   const nativeLibrary = {};
-  Object.values({ ...crypt, ...library }).map((card) => {
+  Object.values({ ...crypt, ...cryptPlaytest, ...library, ...libraryPlaytest }).map((card) => {
     const target = card.Id > 200000 ? nativeCrypt : nativeLibrary;
     target[card.Id] = {
       Name: card['Name'],
@@ -34,30 +39,12 @@ export const getCardBase = async () => {
   });
 
   return {
-    crypt: crypt,
-    library: library,
+    crypt: { ...crypt, ...cryptPlaytest },
+    library: { ...library, ...libraryPlaytest },
     nativeCrypt: nativeCrypt,
     nativeLibrary: nativeLibrary,
   };
 };
-
-export const getPlaytestCardBase = async () => {
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-  };
-
-  const cryptResponse = await fetch(urlCryptPlaytest, options);
-  const libraryResponse = await fetch(urlLibraryPlaytest, options);
-  const crypt = await cryptResponse.json();
-  const library = await libraryResponse.json();
-
-  return {
-    crypt: crypt,
-    library: library,
-  };
-}
 
 export const getLocalizedCardBase = async (lang) => {
   const options = {

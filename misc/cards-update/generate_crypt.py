@@ -119,27 +119,34 @@ artist_fixes = {
 integer_fields = ["Id", "Capacity"]
 useless_fields = ["Aka"]
 
-with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
-    "cardbase_crypt.json", "w", encoding="utf8"
-) as cardbase_file, open(
-    "cardbase_crypt.min.json", "w", encoding="utf8"
-) as cardbase_file_min, open(
-    "vtes.json", "r", encoding="utf8"
-) as krcg_file, open(
-    "artistsCrypt.json", "w", encoding="utf8"
-) as artists_file, open(
-    "artistsCrypt.min.json", "w", encoding="utf8"
-) as artists_file_min, open(
-    "twda.json", "r"
-) as twda_input:
 
-    krcg_cards = json.load(krcg_file)
-    reader_main = csv.reader(main_csv)
+def generate_artists(cardbase_csv, artist_output, artist_output_min):
+    reader_main = csv.reader(cardbase_csv)
     fieldnames_main = next(reader_main)
-    csv_cards = csv.DictReader(main_csv, fieldnames_main)
+    csv_cards = csv.DictReader(cardbase_csv, fieldnames_main)
+
+    cards = []
+    for card in csv_cards:
+        cards.append(card)
+
+    artists = set()
+    for card in cards:
+        for artist in re.split("; | & ", card["Artist"]):
+            if artist in artist_fixes.keys():
+                artists.add(artist_fixes[artist])
+            else:
+                artists.add(artist)
+
+    json.dump(sorted(artists), artists_file_min, separators=(",", ":"))
+    json.dump(sorted(artists), artists_file, indent=4, separators=(",", ":"))
+
+
+def generate_cards(cardbase_csv, cardbase_output, cardbase_output_min):
+    reader_main = csv.reader(cardbase_csv)
+    fieldnames_main = next(reader_main)
+    csv_cards = csv.DictReader(cardbase_csv, fieldnames_main)
 
     cardbase = {}
-    artists_set = set()
     twda = json.load(twda_input)
 
     cards = []
@@ -147,7 +154,6 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
         cards.append(card)
 
     for card in cards:
-
         # Convert some fields values to integers
         for k in integer_fields:
             try:
@@ -156,89 +162,92 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
                 pass
 
         # Convert sets to dict
-        sets = card["Set"].split(", ")
-        card["Set"] = {}
+        if not card["Set"]:
+            card["Set"] = {"PLAYTEST": ""}
+        else:
+            sets = card["Set"].split(", ")
+            card["Set"] = {}
 
-        for set in sets:
-            if "-" in set:
-                set = set.split("-")
-            elif ":" in set:
-                set = set.split(":")
+            for set in sets:
+                if "-" in set:
+                    set = set.split("-")
+                elif ":" in set:
+                    set = set.split(":")
 
-            precons = set[1].split("/")
+                precons = set[1].split("/")
 
-            # Fix for KoT, HttB Reprints (marked in CSV as KoT, but have only
-            # bundles named "A" or "B" not existing in original KoT)
-            if set[0] in ["KoT", "HttB"]:
-                counter = 0
-                for precon in precons:
-                    if re.match(r"(A|B)[0-9]?", precon):
-                        counter += 1
+                # Fix for KoT, HttB Reprints (marked in CSV as KoT, but have only
+                # bundles named "A" or "B" not existing in original KoT)
+                if set[0] in ["KoT", "HttB"]:
+                    counter = 0
+                    for precon in precons:
+                        if re.match(r"(A|B)[0-9]?", precon):
+                            counter += 1
 
-                if counter > 0:
-                    card["Set"][f"{set[0]}R"] = {}
-                if counter < len(precons):
+                    if counter > 0:
+                        card["Set"][f"{set[0]}R"] = {}
+                    if counter < len(precons):
+                        card["Set"][set[0]] = {}
+
+                elif set[0] == "Anthology":
+                    for precon in precons:
+                        if "LARP" in precon:
+                            card["Set"]["Anthology"] = {}
+                        else:
+                            card["Set"]["Anthology"] = {}
+                            card["Set"]["Anthology I"] = {}
+
+                elif set[0] not in ["AU", "DM", "TU"] and set[0] not in card["Set"]:
                     card["Set"][set[0]] = {}
 
-            elif set[0] == "Anthology":
-                for precon in precons:
-                    if "LARP" in precon:
-                        card["Set"]["Anthology"] = {}
-                    else:
-                        card["Set"]["Anthology"] = {}
-                        card["Set"]["Anthology I"] = {}
-
-            elif set[0] not in ["AU", "DM", "TU"] and set[0] not in card["Set"]:
-                card["Set"][set[0]] = {}
-
-            # Fix for DM, TU, AU Kickstarter Unleashed
-            # (merge into Kickstarter Unleashed set)
-            if set[0] in ["DM", "TU", "AU"]:
-                for precon in precons:
-                    if precon == "C":
-                        card["Set"][set[0]] = {"C": True}
-                    else:
-                        if "KSU" not in card["Set"]:
-                            card["Set"]["KSU"] = {}
-
-                        if m := re.match(r"^(A|B)([0-9]+)?", precon):
-                            card["Set"]["KSU"][f"{set[0]}{m.group(1)}"] = m.group(2)
+                # Fix for DM, TU, AU Kickstarter Unleashed
+                # (merge into Kickstarter Unleashed set)
+                if set[0] in ["DM", "TU", "AU"]:
+                    for precon in precons:
+                        if precon == "C":
+                            card["Set"][set[0]] = {"C": True}
                         else:
-                            card["Set"]["KSU"][set[0]] = precon
+                            if "KSU" not in card["Set"]:
+                                card["Set"]["KSU"] = {}
 
-            elif set[0] == "Anthology":
-                for precon in precons:
-                    if "LARP" in precon:
-                        m = re.match(r"^LARP([0-9]+)", precon)
-                        card["Set"]["Anthology"][""] = m.group(1)
-                    else:
-                        card["Set"]["Anthology I"][""] = precon
-                        card["Set"]["Anthology"][""] = precon
-
-            else:
-                for precon in precons:
-                    if set[0] in ["KoT", "HttB"] and (
-                        m := re.match(r"^(A|B)([0-9]+)?", precon)
-                    ):
-                        s = f"{set[0]}R"
-                        if m.group(2):
-                            card["Set"][s][m.group(1)] = m.group(2)
-                        else:
-                            card["Set"][s][m.group(1)] = 1
-
-                    else:
-                        if m := re.match(r"^(\D+)([0-9]+)?", precon):
-                            if m.group(1) in ["C", "U", "R", "V", "DTC"]:
-                                card["Set"][set[0]][m.group(1)] = True
-                            elif m.group(2):
-                                card["Set"][set[0]][m.group(1)] = m.group(2)
+                            if m := re.match(r"^(A|B)([0-9]+)?", precon):
+                                card["Set"]["KSU"][f"{set[0]}{m.group(1)}"] = m.group(2)
                             else:
-                                card["Set"][set[0]][m.group(1)] = 1
-                        elif m := re.match(r"^[0-9]$", precon):
-                            card["Set"][set[0]][""] = precon
+                                card["Set"]["KSU"][set[0]] = precon
+
+                elif set[0] == "Anthology":
+                    for precon in precons:
+                        if "LARP" in precon:
+                            m = re.match(r"^LARP([0-9]+)", precon)
+                            card["Set"]["Anthology"][""] = m.group(1)
                         else:
-                            date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
-                            card["Set"][set[0]][date] = True
+                            card["Set"]["Anthology I"][""] = precon
+                            card["Set"]["Anthology"][""] = precon
+
+                else:
+                    for precon in precons:
+                        if set[0] in ["KoT", "HttB"] and (
+                            m := re.match(r"^(A|B)([0-9]+)?", precon)
+                        ):
+                            s = f"{set[0]}R"
+                            if m.group(2):
+                                card["Set"][s][m.group(1)] = m.group(2)
+                            else:
+                                card["Set"][s][m.group(1)] = 1
+
+                        else:
+                            if m := re.match(r"^(\D+)([0-9]+)?", precon):
+                                if m.group(1) in ["C", "U", "R", "V", "DTC"]:
+                                    card["Set"][set[0]][m.group(1)] = True
+                                elif m.group(2):
+                                    card["Set"][set[0]][m.group(1)] = m.group(2)
+                                else:
+                                    card["Set"][set[0]][m.group(1)] = 1
+                            elif m := re.match(r"^[0-9]$", precon):
+                                card["Set"][set[0]][""] = precon
+                            else:
+                                date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
+                                card["Set"][set[0]][date] = True
 
         # Add Sect
         if card["Clan"] in imbued_clans:
@@ -283,10 +292,8 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
         for artist in re.split("; | & ", card["Artist"]):
             if artist in artist_fixes.keys():
                 artists.append(artist_fixes[artist])
-                artists_set.add(artist_fixes[artist])
             else:
                 artists.append(artist)
-                artists_set.add(artist)
 
         card["Artist"] = artists
 
@@ -385,9 +392,37 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
             "Twd": card["Twd"],
         }
 
-    artists = sorted(artists_set)
-
     json.dump(cardbase, cardbase_file_min, separators=(",", ":"))
-    json.dump(artists, artists_file_min, separators=(",", ":"))
     json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))
-    json.dump(artists, artists_file, indent=4, separators=(",", ":"))
+
+
+with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
+    "cardbase_crypt.json", "w", encoding="utf8"
+) as cardbase_file, open(
+    "cardbase_crypt.min.json", "w", encoding="utf8"
+) as cardbase_file_min, open(
+    "vtes.json", "r", encoding="utf8"
+) as krcg_file, open(
+    "twda.json", "r"
+) as twda_input:
+    krcg_cards = json.load(krcg_file)
+    generate_cards(cardbase_csv, cardbase_file, cardbase_file_min)
+
+with open("vtescrypt_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
+    "cardbase_crypt_playtest.json", "w", encoding="utf8"
+) as cardbase_file, open(
+    "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
+) as cardbase_file_min, open(
+    "vtes.json", "r", encoding="utf8"
+) as krcg_file, open(
+    "twda.json", "r"
+) as twda_input:
+    krcg_cards = json.load(krcg_file)
+    generate_cards(cardbase_csv, cardbase_file, cardbase_file_min)
+
+with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
+    "artistsCrypt.json", "w", encoding="utf8"
+) as artists_file, open(
+    "artistsCrypt.min.json", "w", encoding="utf8"
+) as artists_file_min:
+    generate_artists(cardbase_csv, artists_file, artists_file_min)

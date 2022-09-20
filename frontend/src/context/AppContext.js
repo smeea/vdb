@@ -80,26 +80,14 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     cardServices.getCardBase().then((data) => {
-      setNativeCrypt(data.nativeCrypt);
-      setNativeLibrary(data.nativeLibrary);
+      setCryptCardBase(data.crypt)
+      setLibraryCardBase(data.library)
+      setNativeCrypt(data.nativeCrypt)
+      setNativeLibrary(data.nativeLibrary)
       setLocalizedCrypt({ 'en-EN': data.nativeCrypt });
       setLocalizedLibrary({ 'en-EN': data.nativeLibrary });
-    });
+    })
   }, []);
-
-  useEffect(() => {
-    cardServices.getCardBase().then((data) => {
-      if (playtest) {
-        cardServices.getPlaytestCardBase().then((dataPlaytest) => {
-          setCryptCardBase({ ...data.crypt, ...dataPlaytest.crypt });
-          setLibraryCardBase({ ...data.library, ...dataPlaytest.library });
-        });
-      } else {
-        setCryptCardBase(data.crypt);
-        setLibraryCardBase(data.library);
-      }
-    });
-  }, [playtest]);
 
   // USER FUNCTIONS
 

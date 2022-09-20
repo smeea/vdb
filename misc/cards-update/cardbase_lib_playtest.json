@@ -1,0 +1,416 @@
+{
+    "110001":{
+        "ASCII Name":"Night Terrors",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable by a blocking vampire.\n[obf][pre] Reduce the acting minion's stealth to 0. (The minion can still increase their stealth.)\n[OBF][PRE] As above, and this vampire can strike: combat ends during the first round of the resulting combat if this action is blocked.\n",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Obfuscate & Presence",
+        "Id":110001,
+        "Name":"Night Terrors",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Reaction"
+    },
+    "110002":{
+        "ASCII Name":"Visions of Zapathasura",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[obf][pre] Reduce a bleed against you by 3.\n[OBF][PRE] Reduce a bleed against you to 0. (The acting minion can still increase the bleed amount.)",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Obfuscate & Presence",
+        "Id":110002,
+        "Name":"Visions of Zapathasura",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Reaction"
+    },
+    "110003":{
+        "ASCII Name":"Super Creeps",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[ani] The bleed is with +1 bleed.\n[obf] If the bleed is successful, put an illusion counter on a minion controlled by the target Methuselah.\n[pre] If the bleed is successful, add 1 blood to a vampire in your uncontrolled region.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Animalism/Obfuscate/Presence",
+        "Id":110003,
+        "Name":"Super Creeps",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Action"
+    },
+    "110004":{
+        "ASCII Name":"Terror Against Terror",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[obf][pre] Only usable before range is determined. This round, the opposing minion cannot maneuver to close range or press to continue combat.\n[OBF][PRE] Burn an illusion counter on the opposing minion to cancel a combat card as it is played by them, and its cost is not paid.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Obfuscate & Presence",
+        "Id":110004,
+        "Name":"Terror Against Terror",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Combat"
+    },
+    "110005":{
+        "ASCII Name":"Visions of Gehenna",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[obf] +1 stealth.\n[OBF] Only usable as the action is announced. Minions with your illusion counters cannot block this vampire. Burn all your illusion counters if this action is successful.",
+        "Clan":"Ravnos",
+        "Conviction Cost":"",
+        "Discipline":"Obfuscate",
+        "Id":110005,
+        "Name":"Visions of Gehenna",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
+    "110021":{
+        "ASCII Name":"Sculpt the Flesh",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"[pro] Damage from this vampire's hand strikes is aggravated this round.\n[PRO] Strike: 2 damage, and put this card on the opposing minion. The attached minion gets -1 strength.  The attached minion can burn this card as a +1 stealth action that costs 1 blood.",
+        "Clan":"Tzimisce",
+        "Conviction Cost":"",
+        "Discipline":"Protean ",
+        "Id":110021,
+        "Name":"Sculpt the Flesh",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Combat"
+    },
+    "110022":{
+        "ASCII Name":"Obedient Flesh",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[dom][pro] [ACTIONMODIFIER] +1 stealth. Allies get -1 intercept.\n[DOM][PRO] [COMBAT] Only usable before range is determined. This round, this vampire gets +1 strength, 1 optional maneuver, and can prevent 1 damage. A vampire can play only one Obedient Flesh each round.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Dominate & Protean",
+        "Id":110022,
+        "Name":"Obedient Flesh",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Action Modifier/Combat"
+    },
+    "110023":{
+        "ASCII Name":"Monstrous Form",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable before range is determined. A vampire can play only one Monstrous Form each combat.\n[dom][pro] This vampire gets +1 strength this combat.  \n[DOM][PRO] As above, and this vampire gets 1 additional strike and 1 optional press this round.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Dominate & Protean",
+        "Id":110023,
+        "Name":"Monstrous Form",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Combat"
+    },
+    "110024":{
+        "ASCII Name":"One With the Land",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable during an action directed at you (or a card you control).\n[pro] +2 intercept.\n[PRO] As above, and this vampire can burn 1 blood to strike: combat ends during the resulting combat if they block.",
+        "Clan":"Tzimisce",
+        "Conviction Cost":"",
+        "Discipline":"Protean ",
+        "Id":110024,
+        "Name":"One With the Land",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Reaction"
+    },
+    "110025":{
+        "ASCII Name":"Vozhd of Sofia",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique ghoul with 5 life. 3 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. It can strike: 2R damage. It can enter combat with a vampire as a (D) action. During your unlock phase, a Tzimisce you control can burn 1 blood to give this ally 1 life.",
+        "Clan":"Tzimisce",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":110025,
+        "Name":"Vozhd of Sofia",
+        "Pool Cost":"3",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Ally"
+    },
+    "110041":{
+        "ASCII Name":"Saulot's Healing Touch",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique.\nPut this card on a Salubri you control. Rescuing a non-Tremere vampire from torpor costs this vampire -2 blood. This vampire can shuffle an ally card from your ash heap into your library or move a non-Tremere vampire card from your ash heap to your uncontrolled region as a +1 stealth action. Cannot be put on a vampire with a card named /Saulot's Avenging Fist/.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":110041,
+        "Name":"Saulot's Healing Touch",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
+    "110042":{
+        "ASCII Name":"Saulot's Avenging Fist",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique.\nPut this card on a Salubri you control. This vampire gets +1 strength and inflicts +1 damage with melee weapons. This vampire can enter combat with a younger non-Salubri vampire as a (D) action; if that vampire is Tremere, this is a +1 stealth action. Cannot be put on a vampire with a card named /Saulot's Healing Touch/.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":110042,
+        "Name":"Saulot's Avenging Fist",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
+    "110043":{
+        "ASCII Name":"Feast of the Soul's Secrets",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"[aus][dom] (D) Bleed with +2 bleed.\n[AUS][DOM] As above, and add 3 blood to another vampire you control if the bleed is successful.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"Auspex & Dominate",
+        "Id":110043,
+        "Name":"Feast of the Soul's Secrets",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Action"
+    },
+    "110044":{
+        "ASCII Name":"Forced Confessional",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable if a minion attempts to block.\n[aus][dom] The blocking minion gets -2 intercept.\n[AUS][DOM] That attempt fails and the blocking minion cannot attempt to block this action again.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"Auspex & Dominate",
+        "Id":110044,
+        "Name":"Forced Confessional",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
+    "110045":{
+        "ASCII Name":"Unleashing the Bestial Soul",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable as the action is announced.\n[aus][dom] Lock a minion controlled by your predator or prey.\n[AUS][DOM] As above, and that minion cannot play reaction cards this action.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"Auspex & Dominate",
+        "Id":110045,
+        "Name":"Unleashing the Bestial Soul",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
+    "110046":{
+        "ASCII Name":"Touch of Valeren",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"\n[aus][for] [ACTION] +1 stealth action. Add 3 blood or life to a minion (in play).\n[AUS][FOR] [COMBAT] Prevent all damage from the opposing minion's strike.\n[AUS][FOR] [COMBAT] Only usable by a ready vampire not involved in the combat involving another minion you control. Prevent all damage to that minion from the opposing minion's strike.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"Auspex & Fortitude",
+        "Id":110046,
+        "Name":"Touch of Valeren",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Action/Combat"
+    },
+    "110048":{
+        "ASCII Name":"Sword Cane",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable before range is determined during the first round of combat.\nPut this card on this minion; it becomes a melee weapon equipment that can be locked to strike: strength+1 damage.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":110048,
+        "Name":"Sword Cane",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Combat"
+    },
+    "110049":{
+        "ASCII Name":"Sword of the Archangel",
+        "Artist":[
+            "ARTIST"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique melee weapon.\nMinions opposing the bearer cannot play grapple cards.\nStrike: strength+1 aggravated damage. If the opposing vampire is burned during this weapon's strike resolution and the bearer remains ready, the bearer can unlock at the end of combat.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":110049,
+        "Name":"Sword of the Archangel",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "PLAYTEST":""
+        },
+        "Twd":0,
+        "Type":"Equipment"
+    }
+}

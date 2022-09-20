@@ -6,6 +6,8 @@ python fix_crossrefs.py
 python generate_precons.py
 mv cardbase_crypt.min.json ../../frontend/dist/cardbase_crypt.json
 mv cardbase_lib.min.json ../../frontend/dist/cardbase_lib.json
+mv cardbase_crypt_playtest.min.json ../../frontend/dist/cardbase_crypt_playtest.json
+mv cardbase_lib_playtest.min.json ../../frontend/dist/cardbase_lib_playtest.json
 mv preconDecks.min.json ../../frontend/src/assets/data/preconDecks.json
 mv artistsCrypt.min.json ../../frontend/src/assets/data/artistsCrypt.json
 mv artistsLib.min.json ../../frontend/src/assets/data/artistsLib.json
