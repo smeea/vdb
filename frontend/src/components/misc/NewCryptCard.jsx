@@ -11,7 +11,7 @@ const NewCryptCard = ({
   autoFocus,
   newRef,
 }) => {
-  const { cryptCardBase } = useApp();
+  const { cryptCardBase, playtest } = useApp();
   const { filterCrypt } = useFilters(cryptCardBase);
 
   const byTwd = (a, b) => {
@@ -26,7 +26,7 @@ const NewCryptCard = ({
     if (inputValue.length > 2) {
       const input = { name: inputValue };
 
-      const filteredCards = filterCrypt(input).map((card) => ({
+      const filteredCards = filterCrypt(input).filter(card => playtest || card.Id < 210000).map((card) => ({
         value: card.Id,
       }));
 

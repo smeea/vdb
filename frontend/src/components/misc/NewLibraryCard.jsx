@@ -11,7 +11,7 @@ const NewLibraryCard = ({
   autoFocus,
   newRef,
 }) => {
-  const { libraryCardBase } = useApp();
+  const { libraryCardBase, playtest } = useApp();
   const { filterLibrary } = useFilters(libraryCardBase);
 
   const byTwd = (a, b) => {
@@ -28,7 +28,7 @@ const NewLibraryCard = ({
     if (inputValue.length > 2) {
       const input = { name: inputValue };
 
-      const filteredCards = filterLibrary(input).map((card) => ({
+      const filteredCards = filterLibrary(input).filter(card => playtest || card.Id < 110000).map((card) => ({
         value: card.Id,
       }));
 

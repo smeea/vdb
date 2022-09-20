@@ -5,7 +5,7 @@ import { SelectLabelCrypt, SelectLabelLibrary } from 'components';
 import { useFilters } from 'hooks';
 
 const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
-  const { isMobile, cryptCardBase, libraryCardBase } = useApp();
+  const { isMobile, cryptCardBase, libraryCardBase, playtest } = useApp();
   const { filterCrypt } = useFilters(cryptCardBase);
   const { filterLibrary } = useFilters(libraryCardBase);
   const ref = useRef(null);
@@ -47,11 +47,11 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
     if (inputValue.length > 2) {
       const input = { name: inputValue };
 
-      const filteredCryptCards = filterCrypt(input).map((card) => ({
+      const filteredCryptCards = filterCrypt(input).filter(card => playtest || card.Id < 210000).map((card) => ({
         value: card.Id,
       }));
 
-      const filteredLibCards = filterLibrary(input).map((card) => ({
+      const filteredLibCards = filterLibrary(input).filter(card => playtest || card.Id < 110000).map((card) => ({
         value: card.Id,
       }));
 

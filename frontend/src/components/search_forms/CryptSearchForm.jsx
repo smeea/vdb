@@ -35,6 +35,7 @@ const CryptSearchForm = (props) => {
     inventoryCrypt,
     inventoryMode,
     isMobile,
+    playtest
   } = useApp();
 
   const { filterCrypt } = useFilters(cryptCardBase);
@@ -196,7 +197,7 @@ const CryptSearchForm = (props) => {
 
     setSpinnerState(true);
 
-    const filteredCards = filterCrypt(sanitizeForm);
+    const filteredCards = filterCrypt(sanitizeForm).filter(card => playtest || card.Id < 210000);
 
     setSpinnerState(false);
 

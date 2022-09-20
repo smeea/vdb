@@ -53,6 +53,10 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
     countCards(Object.values(deck.crypt)) > 35 ||
     countCards(Object.values(deck.library)) > 90;
 
+  const withPlaytestCards =
+    Object.keys(deck.crypt).some(cardid => cardid > 210000) ||
+    Object.keys(deck.library).some(cardid => cardid > 110000);
+
   return (
     <>
       {isDropdown ? (
@@ -86,12 +90,14 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
         mainText={
           isTooManyCards
             ? 'Public Deck cannot have more than 35 crypt and 90 library cards'
-            : isPublished
-            ? 'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
-            : 'You can remove it from Public Deck Archive at any time'
+            : withPlaytestCards
+              ? 'Public Deck cannot have playtest cards'
+              : isPublished
+                ? 'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
+                : 'You can remove it from Public Deck Archive at any time'
         }
         buttonText={
-          isTooManyCards ? null : isPublished ? 'Remove Public' : 'Make Public'
+          isTooManyCards || withPlaytestCards ? null : isPublished ? 'Remove Public' : 'Make Public'
         }
       />
     </>

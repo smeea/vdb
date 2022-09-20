@@ -19,6 +19,7 @@ const Cards = ({ lastDeckId }) => {
     showImage,
     toggleShowImage,
     isMobile,
+    playtest
   } = useApp();
 
   const { quickCard, setQuickCard } = useSearchForms();
@@ -29,7 +30,7 @@ const Cards = ({ lastDeckId }) => {
   const randomCrypt = () => {
     const cardid =
       Math.floor(
-        Math.random() * Math.floor(Object.keys(cryptCardBase).length)
+        Math.random() * Math.floor(Object.keys(cryptCardBase).filter(cardid => playtest || cardid < 210000).length)
       ) + 200000;
     setQuickCard(cryptCardBase[cardid]);
   };
@@ -37,7 +38,7 @@ const Cards = ({ lastDeckId }) => {
   const randomLibrary = () => {
     const cardid =
       Math.floor(
-        Math.random() * Math.floor(Object.keys(libraryCardBase).length)
+        Math.random() * Math.floor(Object.keys(libraryCardBase).filter(cardid => playtest || cardid < 110000).length)
       ) + 100000;
     setQuickCard(libraryCardBase[cardid]);
   };

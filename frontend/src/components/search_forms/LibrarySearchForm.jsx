@@ -35,6 +35,7 @@ const LibrarySearchForm = (props) => {
     inventoryLibrary,
     inventoryMode,
     isMobile,
+    playtest
   } = useApp();
 
   const { filterLibrary } = useFilters(libraryCardBase);
@@ -190,7 +191,7 @@ const LibrarySearchForm = (props) => {
 
     setSpinnerState(true);
 
-    const filteredCards = filterLibrary(sanitizeForm);
+    const filteredCards = filterLibrary(sanitizeForm).filter(card => playtest || card.Id < 110000);
 
     setSpinnerState(false);
 
