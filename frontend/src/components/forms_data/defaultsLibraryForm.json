@@ -74,7 +74,8 @@
     "banned": false,
     "burn": false,
     "non-twd": false,
-    "no-requirements": false
+    "no-requirements": false,
+    "playtest": false
   },
   "set": {
     "value": [

@@ -165,6 +165,8 @@ const missingTraits = (filterTraits, card, traitsRegexMap) => {
 
 const missingTrait = (trait, card, traitsRegexMap) => {
   switch (trait) {
+    case 'playtest':
+      return !Object.keys(card['Set']).includes('PLAYTEST');
     case 'advancement':
       return !card['Adv'];
     case 'banned':

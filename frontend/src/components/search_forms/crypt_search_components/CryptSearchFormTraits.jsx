@@ -1,7 +1,10 @@
 import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
+import { useApp } from 'context';
 
 const CryptSearchFormTraits = ({ value, onChange }) => {
+  const { playtest } = useApp();
+
   const traitsLeft = [
     ['1 intercept', '+1 intercept'],
     ['1 stealth', '+1 stealth'],
@@ -28,6 +31,8 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
     ['banned', 'Banned'],
     ['non-twd', 'Not in TWD'],
   ];
+
+  if (playtest) traitsRight.push(['playtest', 'Playtest']);
 
   const traitsLeftforms = traitsLeft.map((i, index) => {
     return (

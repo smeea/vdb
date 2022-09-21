@@ -111,7 +111,8 @@
     "flight": false,
     "advancement": false,
     "banned": false,
-    "non-twd": false
+    "non-twd": false,
+    "playtest": false
   },
   "set": {
     "value": [

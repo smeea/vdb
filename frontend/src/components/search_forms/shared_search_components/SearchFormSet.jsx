@@ -10,15 +10,17 @@ import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
-  const { playtest, isMobile } = useApp();
+  const { isMobile } = useApp();
 
-  const preOptions = Object.keys(setsAndPrecons).filter(i => i !== 'PLAYTEST' || playtest).map((i) => {
-    return {
-      set: i,
-      name: setsAndPrecons[i].name,
-      year: setsAndPrecons[i].date.slice(2, 4),
-    };
-  });
+  const preOptions = Object.keys(setsAndPrecons)
+    .filter((i) => i !== 'PLAYTEST')
+    .map((i) => {
+      return {
+        set: i,
+        name: setsAndPrecons[i].name,
+        year: setsAndPrecons[i].date.slice(2, 4),
+      };
+    });
 
   const options = [
     {

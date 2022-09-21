@@ -1,7 +1,10 @@
 import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
+import { useApp } from 'context';
 
-function LibrarySearchFormTraits(props) {
+const LibrarySearchFormTraits = ({ value, onChange }) => {
+  const { playtest } = useApp();
+
   const traitsLeft = [
     ['intercept', '+Intercept / -Stealth'],
     ['stealth', '+Stealth / -Intercept'],
@@ -32,6 +35,8 @@ function LibrarySearchFormTraits(props) {
     ['no-requirements', 'No Requirement'],
   ];
 
+  if (playtest) traitsRight.push(['playtest', 'Playtest']);
+
   const traitsLeftforms = traitsLeft.map((i, index) => {
     return (
       <Form.Check
@@ -41,8 +46,8 @@ function LibrarySearchFormTraits(props) {
         type="checkbox"
         id={`traits-${i[0]}`}
         label={i[1]}
-        checked={props.value[i[0]]}
-        onChange={(e) => props.onChange(e)}
+        checked={value[i[0]]}
+        onChange={(e) => onChange(e)}
       />
     );
   });
@@ -56,8 +61,8 @@ function LibrarySearchFormTraits(props) {
         type="checkbox"
         id={`traits-${i[0]}`}
         label={i[1]}
-        checked={props.value[i[0]]}
-        onChange={(e) => props.onChange(e)}
+        checked={value[i[0]]}
+        onChange={(e) => onChange(e)}
       />
     );
   });
@@ -79,6 +84,6 @@ function LibrarySearchFormTraits(props) {
       </Row>
     </>
   );
-}
+};
 
 export default LibrarySearchFormTraits;
