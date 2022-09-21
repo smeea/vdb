@@ -1,5 +1,13 @@
 [
   {
+    "version": "2022-09-21",
+    "changes": [
+      "Update TWD",
+      "Add support of playtesting new cards. If you are playtester - please contact your coordinator for details (and if *you* are coordinator - contact me for access) - thanks Norman Brown for cooperation",
+      "Many bug fixes and small improvements"
+    ]
+  },
+  {
     "version": "2022-08-31",
     "changes": [
       "Update TWD (81 new decks in 2022! Thanks Vincent \"Ankha\" Ripoll for fantastic job)",

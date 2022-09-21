@@ -1,7 +1,7 @@
 import preconDecksData from 'assets/data/preconDecks.json';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const VERSION = '2022-09-19';
+const VERSION = '2022-09-21';
 const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
 const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=${VERSION}`;
 const urlCryptPlaytest = `${process.env.ROOT_URL}cardbase_crypt_playtest.json?v=${VERSION}`;
@@ -30,7 +30,12 @@ export const getCardBase = async () => {
 
   const nativeCrypt = {};
   const nativeLibrary = {};
-  Object.values({ ...crypt, ...cryptPlaytest, ...library, ...libraryPlaytest }).map((card) => {
+  Object.values({
+    ...crypt,
+    ...cryptPlaytest,
+    ...library,
+    ...libraryPlaytest,
+  }).map((card) => {
     const target = card.Id > 200000 ? nativeCrypt : nativeLibrary;
     target[card.Id] = {
       Name: card['Name'],
