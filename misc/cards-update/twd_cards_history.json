@@ -1744,7 +1744,9 @@
         "player":"Stefan Ferenci"
     },
     "200327":{
-        "deckid":null
+        "deckid":"10274",
+        "twd_date":"2022-08-21",
+        "player":"Mark Loughman"
     },
     "200328":{
         "deckid":"mattgreen",
@@ -6130,7 +6132,9 @@
         "deckid":null
     },
     "201610":{
-        "deckid":null
+        "deckid":"10362",
+        "twd_date":"2022-09-17",
+        "player":"M\u00e1rcio Pinheiro"
     },
     "201169":{
         "deckid":"dontfeed",
@@ -12038,7 +12042,9 @@
         "deckid":null
     },
     "100876":{
-        "deckid":null
+        "deckid":"10362",
+        "twd_date":"2022-09-17",
+        "player":"M\u00e1rcio Pinheiro"
     },
     "100877":{
         "deckid":"2k6shadowtwinatl",

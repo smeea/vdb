@@ -1848,10 +1848,6 @@
         "value":"Moss, Norway"
     },
     {
-        "label":"Moss, \u00d8stfold, Norway",
-        "value":"Moss, \u00d8stfold, Norway"
-    },
-    {
         "label":"Mox Boarding Board, Seattle, Washington",
         "value":"Mox Boarding Board, Seattle, Washington"
     },
@@ -2542,6 +2538,10 @@
     {
         "label":"Spielbar, Hanau, Germany",
         "value":"Spielbar, Hanau, Germany"
+    },
+    {
+        "label":"Spielkunst e.V., Bochum, Germany",
+        "value":"Spielkunst e.V., Bochum, Germany"
     },
     {
         "label":"St. Albert, Alberta",
