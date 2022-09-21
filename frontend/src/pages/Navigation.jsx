@@ -93,15 +93,13 @@ const Navigation = (props) => {
               >
                 <div
                   className={
-                    inventoryMode
-                      ? 'd-flex white-font-toggle'
-                      : 'd-flex gray-font-toggle'
+                    inventoryMode ? 'd-flex white-font' : 'd-flex gray-font'
                   }
                 >
                   {inventoryMode ? (
-                    <ToggleOn viewBox="0 0 16 16" />
+                    <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
                   ) : (
-                    <ToggleOff viewBox="0 0 16 16" />
+                    <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
                   )}
                 </div>
                 <div

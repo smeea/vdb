@@ -13,30 +13,15 @@ const AccountPlaytest = (props) => {
         togglePlaytest();
       }}
     >
-      <div
-        className={
-          playtest
-            ? 'd-flex white-font-toggle'
-            : 'd-flex gray-font-toggle'
-        }
-      >
+      <div className={playtest ? 'd-flex' : 'd-flex gray-font'}>
         {playtest ? (
-          <ToggleOn viewBox="0 0 16 16" />
+          <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
         ) : (
-          <ToggleOff viewBox="0 0 16 16" />
+          <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
         )}
       </div>
-      <div
-        className={
-          playtest
-            ? 'd-inline ps-2 white-font'
-            : 'd-inline ps-2 gray-font'
-        }
-      >
-        Playtest Mode
-      </div>
+      <div className="d-inline ps-2">Playtest Mode</div>
     </div>
-
   );
 };
 
