@@ -161,6 +161,10 @@ def generate_cards(cardbase_csv, cardbase_output, cardbase_output_min):
             except (ValueError):
                 pass
 
+        # Remove {} and spaces in []
+        card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
+        card["Card Text"] = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"])
+
         # Convert sets to dict
         if not card["Set"]:
             card["Set"] = {"PLAYTEST": ""}
@@ -296,10 +300,6 @@ def generate_cards(cardbase_csv, cardbase_output, cardbase_output_min):
                 artists.append(artist)
 
         card["Artist"] = artists
-
-        # Remove {} and spaces in []
-        card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
-        card["Card Text"] = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"])
 
         # Add rules to card
         card["Rulings"] = []

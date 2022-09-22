@@ -1037,7 +1037,7 @@
                 }
             }
         ],
-        "Sect":"",
+        "Sect":"Anarch",
         "Set":{
             "Anthology":{
                 "":"1"
@@ -24665,7 +24665,7 @@
         "Name":"Jack Drake",
         "New":false,
         "Rulings":[],
-        "Sect":"",
+        "Sect":"Anarch",
         "Set":{
             "TR":{
                 "U":true
@@ -27068,7 +27068,7 @@
         "Name":"Joseph Fischer",
         "New":false,
         "Rulings":[],
-        "Sect":"",
+        "Sect":"Anarch",
         "Set":{
             "Anthology":{
                 "":"1"
@@ -30670,7 +30670,7 @@
         "Name":"Laura Goldman",
         "New":false,
         "Rulings":[],
-        "Sect":"",
+        "Sect":"Anarch",
         "Set":{
             "Anthology":{
                 "":"1"
