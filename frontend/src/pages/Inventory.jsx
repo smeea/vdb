@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import X from 'assets/images/icons/x.svg';
@@ -12,6 +13,7 @@ import {
   InventoryMobile,
   InventoryButtons,
   InventoryShowSelect,
+  InventoryShareModal,
 } from 'components';
 import { useApp } from 'context';
 
@@ -25,7 +27,67 @@ const Inventory = (props) => {
     setShowFloatingButtons,
     inventoryCrypt,
     inventoryLibrary,
+    cryptCardBase,
+    libraryCardBase,
   } = useApp();
+
+  const [inventoryError, setInventoryError] = useState(undefined); // TODO show warning on error
+  const [inventoryKey, setInventoryKey] = useState(undefined);
+  const query = new URLSearchParams(useLocation().search);
+  const [sharedInventoryCrypt, setSharedInventoryCrypt] = useState(undefined);
+  const [sharedInventoryLibrary, setSharedInventoryLibrary] =
+    useState(undefined);
+  const [showShareModal, setShowShareModal] = useState(false);
+
+  const getInventory = (key) => {
+    const url = `${process.env.API_URL}inventory/${key}`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    setInventoryError(false);
+    fetch(url, options)
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
+      .then((data) => {
+        const crypt = {};
+        const library = {};
+        Object.keys(data.crypt).map((k) => {
+          crypt[k] = { ...data.crypt[k], c: cryptCardBase[k] };
+        });
+        Object.keys(data.library).map((k) => {
+          library[k] = { ...data.library[k], c: libraryCardBase[k] };
+        });
+        setSharedInventoryCrypt(crypt);
+        setSharedInventoryLibrary(library);
+      })
+      .catch((error) => {
+        if (error.message == 401) {
+          setInventoryError('NO INVENTORY WITH THIS KEY');
+        } else {
+          setInventoryError('CONNECTION PROBLEM');
+        }
+      });
+  };
+
+  useEffect(() => {
+    if (query.get('key')) setInventoryKey(query.get('key'));
+  }, [query]);
+
+  useEffect(() => {
+    if (cryptCardBase && libraryCardBase) {
+      if (inventoryKey) {
+        getInventory(inventoryKey);
+      } else {
+        setSharedInventoryCrypt(undefined);
+        setSharedInventoryLibrary(undefined);
+      }
+    }
+  }, [inventoryKey, cryptCardBase, libraryCardBase]);
 
   const [newCryptId, setNewCryptId] = useState(undefined);
   const [newLibraryId, setNewLibraryId] = useState(undefined);
@@ -46,8 +108,8 @@ const Inventory = (props) => {
   const newLibraryRef = useRef(null);
 
   return (
-    <Container className="main-container p-0 px-md-1">
-      {username ? (
+    <Container className="main-container p-0">
+      {(!inventoryKey && username) || (inventoryKey && !inventoryError) ? (
         <>
           {isMobile ? (
             <InventoryMobile
@@ -75,6 +137,9 @@ const Inventory = (props) => {
               setCategory={setCategory}
               setShowAddDeck={setShowAddDeck}
               setShowAddPrecon={setShowAddPrecon}
+              sharedInventoryCrypt={sharedInventoryCrypt}
+              sharedInventoryLibrary={sharedInventoryLibrary}
+              inShared={inventoryKey ? true : false}
             />
           ) : (
             <Row className="mx-0">
@@ -103,24 +168,40 @@ const Inventory = (props) => {
                 setCategory={setCategory}
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}
+                setShowShareModal={setShowShareModal}
+                sharedInventoryCrypt={sharedInventoryCrypt}
+                sharedInventoryLibrary={sharedInventoryLibrary}
+                inShared={inventoryKey ? true : false}
               />
             </Row>
           )}
         </>
       ) : (
-        <Row className="align-items-center justify-content-center p-3 vh-80">
-          <Col xs={12} md={7} lg={6} xl={5}>
-            <div className="d-flex justify-content-center pb-3">
-              <h6>Login required to manage inventory</h6>
-            </div>
-            <div className="py-4">
-              <AccountLogin />
-            </div>
-            <div className="py-4">
-              <AccountRegister />
-            </div>
-          </Col>
-        </Row>
+        <>
+          {inventoryError ? (
+            <Row className="align-items-center justify-content-center p-0 p-md-3">
+              <Col xs={12} md={8} lg={7} xl={6}>
+                <div className="d-flex align-items-center justify-content-center error-message p-2">
+                  <b>{inventoryError}</b>
+                </div>
+              </Col>
+            </Row>
+          ) : (
+            <Row className="align-items-center justify-content-center p-3 vh-80">
+              <Col xs={12} md={7} lg={6} xl={5}>
+                <div className="d-flex justify-content-center pb-3">
+                  <h6>Login required to manage inventory</h6>
+                </div>
+                <div className="py-4">
+                  <AccountLogin />
+                </div>
+                <div className="py-4">
+                  <AccountRegister />
+                </div>
+              </Col>
+            </Row>
+          )}
+        </>
       )}
       {showFloatingButtons && (
         <div
@@ -147,20 +228,25 @@ const Inventory = (props) => {
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
               <InventoryButtons
-                crypt={inventoryCrypt}
-                library={inventoryLibrary}
+                crypt={
+                  sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
+                }
+                library={
+                  sharedInventoryCrypt
+                    ? sharedInventoryLibrary
+                    : inventoryLibrary
+                }
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}
+                setShowShareModal={setShowShareModal}
                 clan={clan}
-                type={type}
                 discipline={discipline}
+                type={type}
                 missingByClan={missingByClan}
                 missingByType={missingByType}
                 missingByDiscipline={missingByDiscipline}
-                handleClose={() => {
-                  setShowMenuButtons(false);
-                  setShowFloatingButtons(true);
-                }}
+                setInventoryKey={setInventoryKey}
+                inShared={inventoryKey ? true : false}
               />
               <div className="px-4 pt-2">
                 <InventoryShowSelect
@@ -190,6 +276,12 @@ const Inventory = (props) => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
+        />
+      )}
+      {showShareModal && (
+        <InventoryShareModal
+          show={showShareModal}
+          setShow={setShowShareModal}
         />
       )}
     </Container>

@@ -3,15 +3,19 @@
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - Crypt sorting in review (works in Deck!)
 - Mirrdes discord inventory add problem
+- Clan in card preview multi discipline+clan
+- Inventory Menu Button no floating close at >1000px
 
 # FEATURES
+- Testplay precons
 - Check TWD
 - Show changes from base deck in PDA
+- Playtesters guide/information
 
 # MAYBE LATER FEATURES
-- Inventory sharing
 - Script to update images from static.krcg.org
 - Boilerplates modules for new decks
+- Playtesters administrator interface
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in excel to frontend

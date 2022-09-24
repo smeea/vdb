@@ -26,6 +26,7 @@ export const AppProvider = (props) => {
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
+  const [inventoryKey, setInventoryKey] = useState(undefined);
   const [lang, setLang] = useState('en-EN');
   const [isPlaytester, setIsPlaytester] = useState(undefined);
   const [playtest, setPlaytest] = useState(undefined);
@@ -80,13 +81,13 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     cardServices.getCardBase().then((data) => {
-      setCryptCardBase(data.crypt)
-      setLibraryCardBase(data.library)
-      setNativeCrypt(data.nativeCrypt)
-      setNativeLibrary(data.nativeLibrary)
+      setCryptCardBase(data.crypt);
+      setLibraryCardBase(data.library);
+      setNativeCrypt(data.nativeCrypt);
+      setNativeLibrary(data.nativeLibrary);
       setLocalizedCrypt({ 'en-EN': data.nativeCrypt });
       setLocalizedLibrary({ 'en-EN': data.nativeLibrary });
-    })
+    });
   }, []);
 
   // USER FUNCTIONS
@@ -115,8 +116,9 @@ export const AppProvider = (props) => {
     setUsername(data.username);
     setPublicName(data.public_name);
     setEmail(data.email);
+    setInventoryKey(data.inventory_key);
     setIsPlaytester(data.playtester);
-    if (!data.playtester) setPlaytest(false)
+    if (!data.playtester) setPlaytest(false);
     setInventoryCrypt(inventory.crypt);
     setInventoryLibrary(inventory.library);
     setDecks(parseDecksData(data.decks));
@@ -785,6 +787,8 @@ export const AppProvider = (props) => {
         setPublicName,
         email,
         setEmail,
+        inventoryKey,
+        setInventoryKey,
         initializeUserData,
         initializeUnauthenticatedUser,
 

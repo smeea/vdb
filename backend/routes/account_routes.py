@@ -37,6 +37,7 @@ def login_route():
             "public_name": current_user.public_name,
             "decks": parse_user_decks(current_user.decks.all()),
             "inventory": parse_user_inventory(current_user.inventory),
+            "inventory_key": current_user.inventory_key,
         }
     )
 
@@ -63,6 +64,7 @@ def who_am_i_route():
                 "public_name": current_user.public_name,
                 "decks": parse_user_decks(current_user.decks.all()),
                 "inventory": parse_user_inventory(current_user.inventory),
+                "inventory_key": current_user.inventory_key,
             }
         )
     else:
@@ -105,6 +107,11 @@ def account_update_route():
         current_user.email = request.json["email"]
         db.session.commit()
         return jsonify("email changed")
+
+    elif "inventoryKey" in request.json:
+        current_user.inventory_key = request.json["inventoryKey"]
+        db.session.commit()
+        return jsonify("inventory key changed")
 
     elif "newPassword" in request.json:
         if not current_user.check_password(request.json["password"]):

@@ -22,6 +22,7 @@ const InventoryLibrary = ({
   newFocus,
   setMissingByType,
   setMissingByDiscipline,
+  inShared,
 }) => {
   const { usedLibraryCards, libraryCardBase, isDesktop } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
@@ -472,6 +473,7 @@ const InventoryLibrary = ({
         }
         newFocus={newFocus}
         placement={isDesktop ? 'right' : 'bottom'}
+        inShared={inShared}
       />
     </>
   );

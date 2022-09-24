@@ -626,8 +626,8 @@ const Decks = (props) => {
                 You do not have any decks in your collection yet
               </div>
               <div className="text-align-center blue bold py-2">
-                Start by creating new one, import from Lackey / Amaranth / Text or
-                browse official preconstructed decks
+                Start by creating new one, import from Lackey / Amaranth / Text
+                or browse official preconstructed decks
               </div>
               <div className="d-flex justify-content-center pt-3">
                 <DeckNewDeck setShowInfo={setShowInfo} />

@@ -28,6 +28,7 @@ const InventoryCryptTable = ({
   compact,
   withCompact,
   newFocus,
+  inShared,
 }) => {
   const { usedCryptCards, isMobile, isNarrow, isWide, setShowFloatingButtons } =
     useApp();
@@ -66,53 +67,66 @@ const InventoryCryptTable = ({
 
     return (
       <>
-        <div className="d-flex align-items-center justify-content-center quantity px-1">
-          <InventoryCardQuantity
-            cardid={card.Id}
-            q={qty}
-            softUsedMax={softUsedMax}
-            hardUsedTotal={hardUsedTotal}
-            compact={compact}
-            newFocus={newFocus}
-          />
+        <div
+          className={`d-flex align-items-center justify-content-center ${
+            inShared ? 'quantity-no-buttons me-2' : 'quantity px-1]'
+          }`}
+        >
+          {inShared ? (
+            <>{qty || null}</>
+          ) : (
+            <InventoryCardQuantity
+              cardid={card.Id}
+              q={qty}
+              softUsedMax={softUsedMax}
+              hardUsedTotal={hardUsedTotal}
+              compact={compact}
+              newFocus={newFocus}
+            />
+          )}
         </div>
-        <div className="d-flex align-items-center justify-content-center used">
-          {isMobile ?
-            <div
-              className={`d-flex justify-content-center w-100 ps-1 ${qty == softUsedMax + hardUsedTotal
-                ? 'gray'
-                : qty >= softUsedMax + hardUsedTotal
-                  ? 'green'
-                  : 'red'
-                }`}
-            >
-              {qty === softUsedMax + hardUsedTotal
-                ? '='
-                : qty > softUsedMax + hardUsedTotal
-                  ? `+${qty - softUsedMax - hardUsedTotal}`
-                  : qty - softUsedMax - hardUsedTotal}
-            </div>
-            : <OverlayTrigger
-              placement="bottom"
-              overlay={<UsedPopover cardid={card.Id} />}
-            >
+        {!inShared && (
+          <div className="d-flex align-items-center justify-content-center used">
+            {isMobile ? (
               <div
-                className={`d-flex justify-content-center w-100 ps-1 ${qty == softUsedMax + hardUsedTotal
-                  ? 'gray'
-                  : qty >= softUsedMax + hardUsedTotal
+                className={`d-flex justify-content-center w-100 ps-1 ${
+                  qty == softUsedMax + hardUsedTotal
+                    ? 'gray'
+                    : qty >= softUsedMax + hardUsedTotal
                     ? 'green'
                     : 'red'
-                  }`}
+                }`}
               >
                 {qty === softUsedMax + hardUsedTotal
                   ? '='
                   : qty > softUsedMax + hardUsedTotal
+                  ? `+${qty - softUsedMax - hardUsedTotal}`
+                  : qty - softUsedMax - hardUsedTotal}
+              </div>
+            ) : (
+              <OverlayTrigger
+                placement="bottom"
+                overlay={<UsedPopover cardid={card.Id} />}
+              >
+                <div
+                  className={`d-flex justify-content-center w-100 ps-1 ${
+                    qty == softUsedMax + hardUsedTotal
+                      ? 'gray'
+                      : qty >= softUsedMax + hardUsedTotal
+                      ? 'green'
+                      : 'red'
+                  }`}
+                >
+                  {qty === softUsedMax + hardUsedTotal
+                    ? '='
+                    : qty > softUsedMax + hardUsedTotal
                     ? `+${qty - softUsedMax - hardUsedTotal}`
                     : qty - softUsedMax - hardUsedTotal}
-              </div>
-            </OverlayTrigger>
-          }
-        </div>
+                </div>
+              </OverlayTrigger>
+            )}
+          </div>
+        )}
         <div
           className="d-flex align-items-center justify-content-center capacity"
           onClick={() => handleClick()}
@@ -139,7 +153,6 @@ const InventoryCryptTable = ({
             <ResultCryptName card={card} />
           </div>
         </ConditionalOverlayTrigger>
-
         {isWide ? (
           <>
             <div
@@ -195,8 +208,9 @@ const InventoryCryptTable = ({
         </div>
       ) : (
         <div
-          className={`inventory-container-crypt${withCompact ? '-with-compact' : ''
-            }`}
+          className={`inventory-container-crypt${
+            withCompact ? '-with-compact' : ''
+          }`}
         >
           <AutoSizer>
             {({ width, height }) => (

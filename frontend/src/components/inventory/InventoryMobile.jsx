@@ -32,6 +32,10 @@ const InventoryMobile = ({
   setCategory,
   setShowAddDeck,
   setShowAddPrecon,
+  setShowShareModal,
+  sharedInventoryCrypt,
+  sharedInventoryLibrary,
+  inShared,
 }) => {
   const {
     cryptCardBase,
@@ -73,11 +77,14 @@ const InventoryMobile = ({
             <div className="pt-1">
               <InventoryCrypt
                 withCompact={newCryptId}
-                category={category}
-                cards={inventoryCrypt}
+                category={sharedInventoryCrypt ? 'ok' : category}
+                cards={
+                  sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
+                }
                 clan={clan}
                 setClan={setClan}
                 setMissingByClan={setMissingByClan}
+                inShared={inShared}
               />
             </div>
           )}
@@ -109,14 +116,17 @@ const InventoryMobile = ({
               <div className="pt-1">
                 <InventoryLibrary
                   withCompact={newLibraryId}
-                  category={category}
-                  cards={inventoryLibrary}
+                  category={sharedInventoryCrypt ? 'ok' : category}
+                  cards={
+                    sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
+                  }
                   type={type}
                   setType={setType}
                   discipline={discipline}
                   setDiscipline={setDiscipline}
                   setMissingByType={setMissingByType}
                   setMissingByDiscipline={setMissingByDiscipline}
+                  inShared={inShared}
                 />
               </div>
             )}

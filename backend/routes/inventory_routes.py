@@ -1,6 +1,7 @@
 from flask import jsonify, request, abort, Response
 from flask_login import current_user, login_required
 import json
+from models import User
 from deck_export import deck_export
 from inventory_import import inventory_import
 from api import app, db, login
@@ -54,6 +55,16 @@ def inventory_import_route():
 
     except Exception:
         return abort(400)
+
+
+@app.route("/api/inventory/<string:key>", methods=["GET"])
+def get_shared_inventory(key):
+    try:
+        inventory = User.query.filter_by(inventory_key=key).one().inventory
+        return jsonify(parse_user_inventory(inventory))
+
+    except Exception:
+        return abort(401)
 
 
 @app.route("/api/inventory", methods=["DELETE"])
