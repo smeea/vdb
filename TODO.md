@@ -7,6 +7,7 @@
 - Inventory Menu Button no floating close at >1000px
 
 # FEATURES
+- Add FoL cards
 - Testplay precons
 - Check TWD
 - Show changes from base deck in PDA
@@ -23,6 +24,7 @@
 - Move pdf proxy to frontend
 - TWD Cards History performance - react-window
 - Refactor CSS
+- Fetching data with react-router
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - decks
