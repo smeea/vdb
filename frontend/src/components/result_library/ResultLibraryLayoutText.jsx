@@ -1,4 +1,5 @@
 import React from 'react';
+import { Stack } from 'react-bootstrap';
 import {
   ResultLibraryName,
   ResultLibraryTypeImage,
@@ -29,8 +30,9 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
             <ResultLibraryName card={card} />
           </div>
         </div>
-        <div className="ps-1">
+        <div className="d-flex align-items-center ps-1">
           <ResultLibraryDisciplines value={card.Discipline} />
+          {card.Discipline && card.Clan && '+'}
           <ResultLibraryClan value={card.Clan} />
         </div>
         {card['Burn Option'] && (

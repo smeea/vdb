@@ -3,8 +3,6 @@
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - Crypt sorting in review (works in Deck!)
 - Mirrdes discord inventory add problem
-- Clan in card preview multi discipline+clan
-- Inventory Menu Button no floating close at >1000px
 
 # FEATURES
 - Add FoL cards
