@@ -2,14 +2,12 @@
 - Iphone clipboard (export deck / copy url)
 - Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - Crypt sorting in review (works in Deck!)
-- Mirrdes discord inventory add problem
 
 # FEATURES
 - Add FoL cards
 - Testplay precons
 - Check TWD
 - Show changes from base deck in PDA
-- Playtesters guide/information
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org

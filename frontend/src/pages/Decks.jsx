@@ -57,6 +57,7 @@ const Decks = (props) => {
     showMenuButtons,
     setShowMenuButtons,
     parseDeckCards,
+    playtest,
   } = useApp();
 
   const query = new URLSearchParams(useLocation().search);
@@ -555,23 +556,47 @@ const Decks = (props) => {
           )}
           {deckRouter(activeDeck) && (
             <Row className="pt-md-2">
-              <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
-                <DeckCrypt
-                  deckid={activeDeck.deckid}
-                  cards={deckRouter(activeDeck).crypt}
-                  isAuthor={isAuthor && !isFrozen}
-                  isPublic={isPublic}
-                />
-              </Col>
-              <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
-                <DeckLibrary
-                  inDeckTab={true}
-                  deckid={activeDeck.deckid}
-                  cards={deckRouter(activeDeck).library}
-                  isAuthor={isAuthor && !isFrozen}
-                  isPublic={isPublic}
-                />
-              </Col>
+              {playtest ||
+              !(
+                Object.keys(deckRouter(activeDeck).crypt).some(
+                  (cardid) => cardid > 210000
+                ) ||
+                Object.keys(deckRouter(activeDeck).library).some(
+                  (cardid) => cardid > 110000
+                )
+              ) ? (
+                <>
+                  <Col
+                    md={7}
+                    className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0"
+                  >
+                    <DeckCrypt
+                      deckid={activeDeck.deckid}
+                      cards={deckRouter(activeDeck).crypt}
+                      isAuthor={isAuthor && !isFrozen}
+                      isPublic={isPublic}
+                    />
+                  </Col>
+                  <Col
+                    md={5}
+                    className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0"
+                  >
+                    <DeckLibrary
+                      inDeckTab={true}
+                      deckid={activeDeck.deckid}
+                      cards={deckRouter(activeDeck).library}
+                      isAuthor={isAuthor && !isFrozen}
+                      isPublic={isPublic}
+                    />
+                  </Col>
+                </>
+              ) : (
+                <Col className="px-0 py-4 px-lg-2">
+                  <div className="d-flex align-items-center justify-content-center error-message p-2">
+                    <b>CONTAIN PLAYTEST CARDS</b>
+                  </div>
+                </Col>
+              )}
             </Row>
           )}
         </Col>

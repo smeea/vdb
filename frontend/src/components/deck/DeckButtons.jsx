@@ -35,45 +35,50 @@ const DeckButtons = ({
   setShowRecommendation,
   handleClose,
 }) => {
-  const { inventoryMode, username, isNarrow } = useApp();
+  const { playtest, inventoryMode, username, isNarrow } = useApp();
 
   return (
     <>
       <Stack gap={1}>
         <DeckImport setShowInfo={setShowInfo} />
-        {deck && (
-          <>
-            {username && <DeckCloneButton deck={deck} src={src} />}
-            <DeckExportButton deck={deck} src={src} />
-            {isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}
-            {isAuthor && !isPublic && <DeckBranchCreateButton deck={deck} />}
-            {isAuthor && !isPublic && isBranches && (
-              <DeckBranchDeleteButton deck={deck} />
-            )}
-            {isAuthor && <DeckPublicButton deck={deck} />}
+        {deck &&
+          (playtest ||
+            !(
+              Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
+              Object.keys(deck.library).some((cardid) => cardid > 110000)
+            )) && (
+            <>
+              {username && <DeckCloneButton deck={deck} src={src} />}
+              <DeckExportButton deck={deck} src={src} />
+              {isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}
+              {isAuthor && !isPublic && <DeckBranchCreateButton deck={deck} />}
+              {isAuthor && !isPublic && isBranches && (
+                <DeckBranchDeleteButton deck={deck} />
+              )}
+              {isAuthor && <DeckPublicButton deck={deck} />}
 
-            <DeckDiffButton deckid={deck.deckid} />
-            <DeckReviewButton deckid={deck.deckid} />
-            <DeckCopyUrlButton setShowQr={setShowQr} deck={deck} />
-            <DeckProxyButton
-              deck={deck}
-              missingCrypt={missingCrypt}
-              missingLibrary={missingLibrary}
-            />
-            <DeckRecommendationButton
-              setShowRecommendation={setShowRecommendation}
-            />
-            <DeckSearchSimilarButton deck={deck} />
-            <DeckDrawButton setShowDraw={setShowDraw} />
-            {inventoryMode && (
-              <DeckMissingButton
+              <DeckDiffButton deckid={deck.deckid} />
+              <DeckReviewButton deckid={deck.deckid} />
+              <DeckCopyUrlButton setShowQr={setShowQr} deck={deck} />
+              <DeckProxyButton
                 deck={deck}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
               />
-            )}
-          </>
-        )}
+              <DeckRecommendationButton
+                setShowRecommendation={setShowRecommendation}
+              />
+              <DeckSearchSimilarButton deck={deck} />
+              <DeckDrawButton setShowDraw={setShowDraw} />
+              {inventoryMode && (
+                <DeckMissingButton
+                  deck={deck}
+                  missingCrypt={missingCrypt}
+                  missingLibrary={missingLibrary}
+                />
+              )}
+            </>
+          )}
       </Stack>
       {isNarrow && (
         <div
