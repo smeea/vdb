@@ -1,5 +1,13 @@
 [
   {
+    "version": "2022-09-26",
+    "changes": [
+      "Add Share Inventory",
+      "Add protection for decks with playtest cards to be available for non-playtesters (by shared URL)",
+      "Add Patreon donation page"
+    ]
+  },
+  {
     "version": "2022-09-21",
     "changes": [
       "Update TWD",

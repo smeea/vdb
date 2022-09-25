@@ -181,20 +181,30 @@ const About = (props) => {
 
             <div className="pt-3">
               <h5>DONATIONS</h5>
-              <p>
-                Bitcoin (BTC):{' '}
-                <a
-                  href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
-                >
-                  <code>{BTC_WALLET}</code>
-                </a>
-                <span
-                  className="d-inline ps-2 with-hover"
-                  onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
-                >
-                  <ClipboardFill viewBox="0 0 18 18" />
-                </span>
-              </p>
+              <ul className="no-bullets">
+                <li>
+                  Patreon:{' '}
+                  <a
+                    href='https://www.patreon.com/smeea'
+                  >
+                    https://www.patreon.com/smeea
+                  </a>
+                </li>
+                <li>
+                  Bitcoin (BTC):{' '}
+                  <a
+                    href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
+                  >
+                    <code>{BTC_WALLET}</code>
+                  </a>
+                  <span
+                    className="d-inline ps-2 with-hover"
+                    onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
+                  >
+                    <ClipboardFill viewBox="0 0 18 18" />
+                  </span>
+                </li>
+              </ul>
             </div>
 
             <div className="pt-3">
