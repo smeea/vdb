@@ -71,8 +71,9 @@ Public instance at https://vdb.im runs from master branch without any changes us
 ### UPDATE CARDS, TWD
 ```
     cd misc/cards-update
+    source venv/bin/activate
     ./download_resources.sh
-    ./update_resources.sh
+    ./create_resources.sh
 ```
 
 ## SUPPORT / HELP

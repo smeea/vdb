@@ -1,7 +1,21 @@
 {
   "PLAYTEST": {
     "name": "PLAYTEST",
-    "date": ""
+    "date": "2022-09-01",
+    "precons": {
+      "PR": {
+        "name": "Ravnos",
+        "clan": "Ravnos"
+      },
+      "PSal": {
+        "name": "Salubri",
+        "clan": "Salubri"
+      },
+      "PTz": {
+        "name": "Tzimisce",
+        "clan": "Tzimisce"
+      },
+    }
   },
   "Promo": {
     "name": "Promo",

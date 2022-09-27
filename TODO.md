@@ -26,6 +26,7 @@
 - Improve API endpoints - decks
 - Refactor (merge?) deck create and clone and import
 - Refactor (merge?) branch create and branch_import
+- Move amaranth-ids download to separate script
 
 # IMPROVE PWA
 - Open urls in app by default (handle_links)

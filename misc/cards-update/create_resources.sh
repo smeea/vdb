@@ -3,6 +3,7 @@
 python generate_crypt.py
 python generate_library.py
 python fix_crossrefs.py
+python generate_playtest_precons.py
 python generate_precons.py
 mv cardbase_crypt.min.json ../../frontend/dist/cardbase_crypt.json
 mv cardbase_lib.min.json ../../frontend/dist/cardbase_lib.json

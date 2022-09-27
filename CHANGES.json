@@ -1,8 +1,9 @@
 [
   {
-    "version": "2022-09-27",
+    "version": "2022-09-28",
     "changes": [
-      "Fix playtest",
+      "Add playtest precons",
+      "Fix playtest leaks"
     ]
   },
   {

@@ -45,12 +45,8 @@ def generate_artists(cardbase_csv, artist_output, artist_output_min):
     fieldnames_main = next(reader_main)
     csv_cards = csv.DictReader(cardbase_csv, fieldnames_main)
 
-    cards = []
-    for card in csv_cards:
-        cards.append(card)
-
     artists = set()
-    for card in cards:
+    for card in csv_cards:
         for artist in re.split("; | & ", card["Artist"]):
             if artist in artist_fixes.keys():
                 artists.add(artist_fixes[artist])
@@ -155,7 +151,7 @@ def generate_cards(cardbase_csv, cardbase_output, cardbase_output_min):
 
         # Convert sets to dict
         if not card["Set"]:
-            card["Set"] = {"PLAYTEST": ""}
+            card["Set"] = {"PLAYTEST": {}}
         else:
             sets = card["Set"].split(", ")
             card["Set"] = {}

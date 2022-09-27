@@ -17,7 +17,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":4
+            }
         },
         "Twd":0,
         "Type":"Reaction"
@@ -40,7 +42,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":4
+            }
         },
         "Twd":0,
         "Type":"Reaction"
@@ -63,7 +67,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":6
+            }
         },
         "Twd":0,
         "Type":"Action"
@@ -86,7 +92,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":3
+            }
         },
         "Twd":0,
         "Type":"Combat"
@@ -109,7 +117,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":3
+            }
         },
         "Twd":0,
         "Type":"Action Modifier"
@@ -132,7 +142,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":4
+            }
         },
         "Twd":0,
         "Type":"Combat"
@@ -155,7 +167,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":4
+            }
         },
         "Twd":0,
         "Type":"Action Modifier/Combat"
@@ -178,7 +192,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":4
+            }
         },
         "Twd":0,
         "Type":"Combat"
@@ -201,7 +217,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":4
+            }
         },
         "Twd":0,
         "Type":"Reaction"
@@ -224,7 +242,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":1
+            }
         },
         "Twd":0,
         "Type":"Ally"
@@ -247,7 +267,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":1
+            }
         },
         "Twd":0,
         "Type":"Master"
@@ -270,7 +292,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":1
+            }
         },
         "Twd":0,
         "Type":"Master"
@@ -293,7 +317,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":4
+            }
         },
         "Twd":0,
         "Type":"Action"
@@ -316,7 +342,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":4
+            }
         },
         "Twd":0,
         "Type":"Action Modifier"
@@ -339,7 +367,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":4
+            }
         },
         "Twd":0,
         "Type":"Action Modifier"
@@ -362,7 +392,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":4
+            }
         },
         "Twd":0,
         "Type":"Action/Combat"
@@ -385,7 +417,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":4
+            }
         },
         "Twd":0,
         "Type":"Combat"
@@ -408,7 +442,9 @@
         "Requirement":"",
         "Rulings":[],
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":1
+            }
         },
         "Twd":0,
         "Type":"Equipment"

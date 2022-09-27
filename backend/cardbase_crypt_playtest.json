@@ -19,7 +19,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -45,7 +47,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -71,7 +75,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -97,7 +103,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -124,7 +132,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -152,7 +162,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -179,7 +191,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -206,7 +220,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -235,7 +251,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -262,7 +280,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -290,7 +310,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PR":2
+            }
         },
         "Title":"",
         "Twd":0
@@ -318,7 +340,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":2
+            }
         },
         "Title":"baron",
         "Twd":0
@@ -345,7 +369,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":2
+            }
         },
         "Title":"baron",
         "Twd":0
@@ -373,7 +399,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":2
+            }
         },
         "Title":"baron",
         "Twd":0
@@ -402,7 +430,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -430,7 +460,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -458,7 +490,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -485,7 +519,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -512,7 +548,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -538,7 +576,9 @@
         "Rulings":[],
         "Sect":"Anarch",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PTz":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -564,7 +604,9 @@
         "Rulings":[],
         "Sect":"Independent",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -591,7 +633,9 @@
         "Rulings":[],
         "Sect":"Independent",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -618,7 +662,9 @@
         "Rulings":[],
         "Sect":"Independent",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -645,7 +691,9 @@
         "Rulings":[],
         "Sect":"Independent",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":1
+            }
         },
         "Title":"",
         "Twd":0
@@ -672,7 +720,9 @@
         "Rulings":[],
         "Sect":"Independent",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":2
+            }
         },
         "Title":"",
         "Twd":0
@@ -699,7 +749,9 @@
         "Rulings":[],
         "Sect":"Independent",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":2
+            }
         },
         "Title":"",
         "Twd":0
@@ -726,7 +778,9 @@
         "Rulings":[],
         "Sect":"Independent",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":2
+            }
         },
         "Title":"",
         "Twd":0
@@ -755,7 +809,9 @@
         "Rulings":[],
         "Sect":"Independent",
         "Set":{
-            "PLAYTEST":""
+            "PLAYTEST":{
+                "PSal":2
+            }
         },
         "Title":"",
         "Twd":0
