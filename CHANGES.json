@@ -1,5 +1,11 @@
 [
   {
+    "version": "2022-09-27",
+    "changes": [
+      "Fix playtest",
+    ]
+  },
+  {
     "version": "2022-09-26",
     "changes": [
       "Add Share Inventory",
