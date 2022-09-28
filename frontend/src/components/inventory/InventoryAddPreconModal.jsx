@@ -17,7 +17,7 @@ import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const InventoryAddDeckModal = ({ show, handleClose }) => {
-  const { inventoryCrypt, inventoryLibrary, preconDecks, isDesktop, isMobile } =
+  const { inventoryCrypt, inventoryLibrary, preconDecks, playtest, isDesktop, isMobile } =
     useApp();
 
   const [sortMethod, setSortMethod] = useState('byDate');
@@ -35,7 +35,10 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
 
   const sortedDecks = useMemo(() => {
     if (Object.values(preconDecks).length > 0) {
-      let filtered = Object.values(preconDecks);
+      let filtered = Object.values(preconDecks).filter(i => {
+        const set = i.deckid.split(':')[0];
+        return playtest || set !== 'PLAYTEST'
+      });
 
       if (nameFilter) {
         filtered = filtered.filter((deck) => {

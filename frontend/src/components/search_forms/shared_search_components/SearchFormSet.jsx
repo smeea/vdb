@@ -10,10 +10,10 @@ import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
-  const { isMobile } = useApp();
+  const { playtest, isMobile } = useApp();
 
   const preOptions = Object.keys(setsAndPrecons)
-    .filter((i) => i !== 'PLAYTEST')
+    .filter((i) => playtest || i !== 'PLAYTEST')
     .map((i) => {
       return {
         set: i,

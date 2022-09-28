@@ -1,4 +1,12 @@
 {
+  "Promo": {
+    "name": "Promo",
+    "date": ""
+  },
+  "POD": {
+    "name": "Print-on-Demand (DTC)",
+    "date": ""
+  },
   "PLAYTEST": {
     "name": "PLAYTEST",
     "date": "2022-09-01",
@@ -16,14 +24,6 @@
         "clan": "Tzimisce"
       },
     }
-  },
-  "Promo": {
-    "name": "Promo",
-    "date": ""
-  },
-  "POD": {
-    "name": "Print-on-Demand (DTC)",
-    "date": ""
   },
   "NB": {
     "name": "New Blood",

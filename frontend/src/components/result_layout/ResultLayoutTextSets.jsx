@@ -4,7 +4,7 @@ import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp } from 'context';
 
 const ResultLayoutTextSets = (props) => {
-  const { isMobile } = useApp();
+  const { playtest, isMobile } = useApp();
   const [modal, setModal] = useState(undefined);
 
   const byDate = (a, b) => {
@@ -12,6 +12,7 @@ const ResultLayoutTextSets = (props) => {
   };
 
   const Sets = Object.keys(props.sets)
+    .filter(set => playtest || set !== 'PLAYTEST')
     .sort(byDate)
     .map((k, index) => {
       const preconsShort = Object.keys(props.sets[k]).join('/');

@@ -17,26 +17,27 @@ const SearchFormPrecon = ({
   onChange,
   onChangeOptions,
 }) => {
-  const { isMobile } = useApp();
+  const { playtest, isMobile } = useApp();
 
   const preOptions = [];
 
-  Object.keys(setsAndPrecons).map((i) => {
-    if (setsAndPrecons[i].hasOwnProperty('precons')) {
-      const set = i;
-      const year = setsAndPrecons[i].date.slice(2, 4);
-      Object.keys(setsAndPrecons[i].precons).map((j) => {
-        const precon = j;
-        const name = setsAndPrecons[i].precons[j].name;
-        const clans = setsAndPrecons[i].precons[j].clan.split('/');
-        preOptions.push({
-          set: set,
-          precon: precon,
-          year: year,
-          name: name,
-          clans: clans,
+  Object.keys(setsAndPrecons)
+    .filter(i => playtest || i !== 'PLAYTEST')
+    .map((i) => {
+      if (setsAndPrecons[i].hasOwnProperty('precons')) {
+        const year = setsAndPrecons[i].date.slice(2, 4);
+        Object.keys(setsAndPrecons[i].precons).map((j) => {
+          const precon = j;
+          const name = setsAndPrecons[i].precons[j].name;
+          const clans = setsAndPrecons[i].precons[j].clan.split('/');
+          preOptions.push({
+            set: i,
+            precon: precon,
+            year: year,
+            name: name,
+            clans: clans,
+          });
         });
-      });
     }
   });
 
