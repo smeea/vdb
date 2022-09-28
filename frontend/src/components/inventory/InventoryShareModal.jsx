@@ -18,7 +18,6 @@ const InventoryShareModal = ({ show, setShow }) => {
     setInventoryKey,
   } = useApp();
 
-  // const { setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [state, setState] = useState(undefined);
   const [shareUrl, setShareUrl] = useState(
     `${process.env.ROOT_URL}inventory?key=${inventoryKey}`
