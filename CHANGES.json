@@ -3,7 +3,7 @@
     "version": "2022-09-28",
     "changes": [
       "Add playtest precons",
-      "Fix playtest leaks"
+      "Fix share inventory and playtest bugs"
     ]
   },
   {
