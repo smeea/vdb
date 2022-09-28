@@ -9,19 +9,20 @@ def letters_to_ascii(text):
     )
 
 
-with open("cardbase_crypt.json", "r") as crypt_file, open(
-    "cardbase_lib.json", "r"
-) as library_file, open("amaranth_ids.json", "w") as amaranth_ids, open(
+with open("amaranth_response.json", "r") as amaranth_response_file, open(
+    "cardbase_crypt.json", "r"
+) as crypt_file, open("cardbase_lib.json", "r") as library_file, open(
+    "amaranth_ids.json", "w"
+) as amaranth_ids, open(
     "amaranth_ids.min.json", "w"
 ) as amaranth_ids_min:
     crypt = json.load(crypt_file).values()
     library = json.load(library_file).values()
-
-    response = requests.get("https://amaranth.vtes.co.nz/api/cards")
+    amaranth_cards = json.load(amaranth_response_file)["result"]
 
     ids = {}
 
-    for i in response.json()["result"]:
+    for i in amaranth_cards:
         name = letters_to_ascii(i["name"].lower())
         if i["type"] == "Imbued" or i["type"] == "Vampire":
             for card in crypt:
