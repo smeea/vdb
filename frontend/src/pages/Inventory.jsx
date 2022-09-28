@@ -171,6 +171,7 @@ const Inventory = (props) => {
                 setShowShareModal={setShowShareModal}
                 sharedInventoryCrypt={sharedInventoryCrypt}
                 sharedInventoryLibrary={sharedInventoryLibrary}
+                setInventoryKey={setInventoryKey}
                 inShared={inventoryKey ? true : false}
               />
             </Row>

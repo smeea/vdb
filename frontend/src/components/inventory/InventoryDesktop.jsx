@@ -38,6 +38,7 @@ const InventoryDesktop = ({
   setShowShareModal,
   sharedInventoryCrypt,
   sharedInventoryLibrary,
+  setInventoryKey,
   inShared,
 }) => {
   const {
@@ -156,6 +157,7 @@ const InventoryDesktop = ({
             missingByClan={missingByClan}
             missingByType={missingByType}
             missingByDiscipline={missingByDiscipline}
+            setInventoryKey={setInventoryKey}
             inShared={inShared}
           />
           <div className="px-4 py-2">
