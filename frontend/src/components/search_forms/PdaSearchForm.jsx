@@ -356,11 +356,12 @@ const PdaSearchForm = (props) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
-          <TwdSearchFormCrypt
-            state={pdaFormState.crypt}
-            setState={setPdaFormState}
-            spinner={spinnerState}
-          />
+          {cryptCardBase &&
+            <TwdSearchFormCrypt
+              state={pdaFormState.crypt}
+              setState={setPdaFormState}
+            />
+          }
         </Col>
       </Row>
       <Row className="pb-1 pe-1 mx-0">
@@ -381,11 +382,12 @@ const PdaSearchForm = (props) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
-          <TwdSearchFormLibrary
-            state={pdaFormState.library}
-            setState={setPdaFormState}
-            spinner={spinnerState}
-          />
+          {libraryCardBase &&
+            <TwdSearchFormLibrary
+              state={pdaFormState.library}
+              setState={setPdaFormState}
+            />
+          }
         </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">

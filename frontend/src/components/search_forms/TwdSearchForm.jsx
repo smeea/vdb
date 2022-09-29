@@ -369,11 +369,12 @@ const TwdSearchForm = (props) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
-          <TwdSearchFormCrypt
-            state={twdFormState.crypt}
-            setState={setTwdFormState}
-            spinner={spinnerState}
-          />
+          {cryptCardBase &&
+            <TwdSearchFormCrypt
+              state={twdFormState.crypt}
+              setState={setTwdFormState}
+            />
+          }
         </Col>
       </Row>
       <Row className="pb-1 pe-1 mx-0">
@@ -394,11 +395,12 @@ const TwdSearchForm = (props) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
-          <TwdSearchFormLibrary
-            state={twdFormState.library}
-            setState={setTwdFormState}
-            spinner={spinnerState}
-          />
+          {libraryCardBase &&
+            <TwdSearchFormLibrary
+              state={twdFormState.library}
+              setState={setTwdFormState}
+            />
+          }
         </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
