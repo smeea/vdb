@@ -7,3 +7,5 @@ export { default as AccountDeleteButton } from './AccountDeleteButton';
 export { default as AccountLogin } from './AccountLogin';
 export { default as AccountRegister } from './AccountRegister';
 export { default as AccountPlaytest } from './AccountPlaytest';
+export { default as AccountPlaytestManage } from './AccountPlaytestManage';
+export { default as AccountPlaytestAdd } from './AccountPlaytestAdd';

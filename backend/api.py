@@ -17,4 +17,5 @@ from routes import (
     inventory_routes,
     twd_routes,
     pda_routes,
+    playtest_routes,
 )

@@ -15,7 +15,7 @@ import PersonFill from 'assets/images/icons/person-fill.svg';
 import { useApp } from 'context';
 
 const Account = (props) => {
-  const { isMobile, username, isPlaytester } = useApp();
+  const { isMobile, username, isPlaytester, isPlaytestAdmin } = useApp();
 
   return (
     <Container className="main-container">
@@ -42,7 +42,7 @@ const Account = (props) => {
                 <AccountChangeName />
                 <AccountChangePassword />
                 <AccountChangeEmail />
-                {isPlaytester && <AccountPlaytest />}
+                {(isPlaytester || isPlaytestAdmin) && <AccountPlaytest />}
                 <Stack gap={3}>
                   <AccountLogoutButton />
                   <AccountDeleteButton />

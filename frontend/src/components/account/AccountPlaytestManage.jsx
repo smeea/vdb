@@ -1,0 +1,130 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Form, FormControl, InputGroup, Container, Modal, Button, Spinner } from 'react-bootstrap';
+import X from 'assets/images/icons/x.svg';
+import Check2 from 'assets/images/icons/check2.svg';
+import ToggleOn from 'assets/images/icons/toggle-on.svg';
+import ToggleOff from 'assets/images/icons/toggle-off.svg';
+import { AccountPlaytestAdd, ButtonIconed, ErrorOverlay } from 'components';
+import { useApp } from 'context';
+
+const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
+  const [state, setState] = useState(true)
+
+  const handleClick = () => {
+    changePlaytester(username, !state)
+    setState(!state)
+  }
+
+  return (
+    <div className={`d-flex align-items-center ${state ? '' : 'gray-font'}`}
+      onClick={handleClick}
+    >
+      <div className="d-flex align-items-center pe-2"
+      >
+        <>
+          {state ? (
+            <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
+          ) : (
+            <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
+          )}
+        </>
+      </div>
+      {username}
+    </div >
+  )
+}
+
+const AccountPlaytestManage = ({ setShow }) => {
+  const {
+    isMobile,
+    isNarrow,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+    username,
+  } = useApp();
+
+  const [playtesters, setPlaytesters] = useState([])
+  const [newPlaytesters, setNewPlaytesters] = useState([])
+
+  const changePlaytester = (u, isAdd) => {
+    const url = `${process.env.API_URL}playtest`;
+    const options = {
+      method: isAdd ? 'PUT' : 'DELETE',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username: u }),
+    };
+
+    fetch(url, options)
+  }
+
+  const getPlaytesters = () => {
+    const url = `${process.env.API_URL}playtest`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
+      .then((data) => {
+        setPlaytesters(data)
+      });
+  }
+
+  useEffect(() => {
+    getPlaytesters()
+  }, [])
+
+  const handleClose = () => {
+    setShow(false)
+  }
+
+  return (
+    <>
+      <Modal
+        show={true}
+        onHide={handleClose}
+        animation={false}
+        size="sm"
+      >
+        <Modal.Header
+          className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
+        >
+          <h5>Manage Playtesters</h5>
+          <Button variant="outline-secondary" onClick={handleClose}>
+            <X width="32" height="32" viewBox="0 0 16 16" />
+          </Button>
+        </Modal.Header>
+        <Modal.Body>
+          <AccountPlaytestAdd playtesters={playtesters} newPlaytesters={newPlaytesters} setNewPlaytesters={setNewPlaytesters} />
+          <div className="px-2 pt-2">
+            {[...newPlaytesters.reverse(), ...playtesters.sort()].filter(u => u != username).map(u => <AccountPlaytestPlayer key={u} changePlaytester={changePlaytester} username={u} />)}
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      {isNarrow && (
+        <div
+          onClick={handleClose}
+          className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+        >
+          <X viewBox="0 0 16 16" />
+        </div>
+      )}
+    </>
+  );
+};
+
+export default AccountPlaytestManage;

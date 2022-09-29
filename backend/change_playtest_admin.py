@@ -8,7 +8,7 @@ if len(argv) <= 1:
 q = argv[1].lower()
 user = User.query.filter_by(username=q).one()
 
-user.playtester = not user.playtester
+user.playtest_admin = not user.playtest_admin
 db.session.commit()
 print(f"Username: '{user.username}'")
-print(f"Playtester: {user.playtester}")
+print(f"Admin: {user.playtest_admin}")

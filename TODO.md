@@ -1,18 +1,16 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
-- Fix ERR_INCOMPLETE_CHUNKED_ENCODING while Proxy
 - Crypt sorting in review (works in Deck!)
+- Inventory sort by q-ty
 
 # FEATURES
 - Add FoL cards
-- Testplay precons
 - Check TWD
 - Show changes from base deck in PDA
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
 - Boilerplates modules for new decks
-- Playtesters administrator interface
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in excel to frontend

@@ -28,6 +28,7 @@ export const AppProvider = (props) => {
   const [email, setEmail] = useState(undefined);
   const [inventoryKey, setInventoryKey] = useState(undefined);
   const [lang, setLang] = useState('en-EN');
+  const [isPlaytestAdmin, setIsPlaytestAdmin] = useState(undefined);
   const [isPlaytester, setIsPlaytester] = useState(undefined);
   const [playtest, setPlaytest] = useState(undefined);
   const [showImage, setShowImage] = useState(undefined);
@@ -118,7 +119,8 @@ export const AppProvider = (props) => {
     setEmail(data.email);
     setInventoryKey(data.inventory_key);
     setIsPlaytester(data.playtester);
-    if (!data.playtester) setPlaytest(false);
+    setIsPlaytestAdmin(data.playtest_admin);
+    if (!data.playtester && !data.playtest_admin) setPlaytest(false);
     setInventoryCrypt(inventory.crypt);
     setInventoryLibrary(inventory.library);
     setDecks(parseDecksData(data.decks));
@@ -128,6 +130,7 @@ export const AppProvider = (props) => {
     setAddMode(false);
     setInventoryMode(false);
     setIsPlaytester(false);
+    setIsPlaytestAdmin(false);
     setPlaytest(false);
     setInventoryCrypt({});
     setInventoryLibrary({});
@@ -762,6 +765,7 @@ export const AppProvider = (props) => {
         lang,
         changeLang,
         isPlaytester,
+        isPlaytestAdmin,
         playtest,
         togglePlaytest,
         hideMissing,
