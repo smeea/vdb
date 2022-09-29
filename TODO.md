@@ -6,6 +6,7 @@
 - Add FoL cards
 - Check TWD
 - Show changes from base deck in PDA
+- Add 3rd Edition Starters Kit
 
 # MAYBE LATER FEATURES
 - Script to update images from static.krcg.org
@@ -22,7 +23,6 @@
 # IMPROVE TECHNOLOGY - BACKEND
 - Improve API endpoints - decks
 - Refactor (merge?) deck create and clone and import
-- Refactor (merge?) branch create and branch_import
 
 # IMPROVE PWA
 - Open urls in app by default (handle_links)

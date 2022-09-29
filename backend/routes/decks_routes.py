@@ -365,40 +365,58 @@ def get_recommendation_route(deckid):
 @app.route("/api/deck/<string:deckid>/branch", methods=["POST"])
 @login_required
 def create_branch_route(deckid):
-    master = Deck.query.get(request.json["master"])
+    master = Deck.query.get(deckid)
     if master.author != current_user:
         abort(401)
 
-    source = Deck.query.get(deckid)
-    branch_name = f"#{len(master.branches) + 1}" if master.branches else "#1"
-
-    new_deckid = uuid.uuid4().hex
-    branch = Deck(
-        deckid=new_deckid,
-        name=master.name,
-        branch_name=branch_name,
-        author_public_name=source.author_public_name,
-        description=source.description,
-        author=current_user,
-        tags=source.tags,
-        master=master.deckid,
-        cards=source.cards,
-    )
-
-    branches = master.branches.copy() if master.branches else []
-    branches.append(new_deckid)
-    master.branches = branches
-
-    db.session.add(branch)
-    db.session.commit()
-    return jsonify(
-        {
-            "master": master.deckid,
-            "source": source.deckid,
-            "deckid": new_deckid,
-            "branch_name": branch_name,
+    new_branches = []
+    if "branches" in request.json:
+        new_branches = request.json["branches"]
+    elif "deckid" in request.json:
+        d = Deck.query.get(request.json["deckid"])
+        source = {
+            "author": d.author_public_name,
+            "description": d.description,
+            "tags": d.tags,
+            "cards": d.cards,
         }
-    )
+        new_branches = [source]
+
+    branches = []
+    branches_deckids = master.branches.copy() if master.branches else []
+
+    for i, b in enumerate(new_branches):
+        branch_name = (
+            f"y{len(master.branches) + 1}"
+            if master.branches
+            else f"#{len(new_branches) - i}"
+        )
+        new_deckid = uuid.uuid4().hex
+
+        cards = {}
+        for k, v in b["cards"].items():
+            cards[int(k)] = v
+
+        branch = Deck(
+            deckid=new_deckid,
+            name=master.name,
+            branch_name=branch_name,
+            author_public_name=b["author"],
+            description=b["description"],
+            author=current_user,
+            tags=b["tags"] if "tags" in b else [],
+            master=deckid,
+            cards=cards,
+        )
+        db.session.add(branch)
+
+        branches.append({"deckid": new_deckid, "branch_name": branch_name})
+        branches_deckids.append(new_deckid)
+
+    master.branches = branches_deckids
+    db.session.commit()
+
+    return jsonify(branches)
 
 
 @app.route("/api/deck/<string:deckid>/branch", methods=["DELETE"])
@@ -430,57 +448,6 @@ def remove_branch_route(deckid):
     db.session.delete(d)
     db.session.commit()
     return jsonify({"deckid": request.json["deckid"]})
-
-
-@app.route("/api/deck/<string:deckid>/branch_import", methods=["POST"])
-@login_required
-def import_branch_route(deckid):
-    master = Deck.query.get(deckid)
-    if master.author != current_user:
-        abort(401)
-
-    new_branches = request.json["branches"]
-    branches = []
-
-    for i, b in enumerate(new_branches):
-        deckid = uuid.uuid4().hex
-        description = master.description
-        if b["comments"]:
-            if description:
-                description += "\n\n"
-            description += f"{b['comments']}"
-
-        input_cards = b["cards"] if "cards" in b else {}
-        cards = {}
-
-        for k, v in input_cards.items():
-            cards[int(k)] = v
-
-        branch = Deck(
-            deckid=deckid,
-            name=master.name,
-            branch_name=f"#{len(new_branches) - 1 - i}",
-            author_public_name=master.author_public_name,
-            description=description,
-            author=current_user,
-            tags=master.tags,
-            master=master.deckid,
-            cards=cards,
-        )
-
-        branches.append(deckid)
-
-        db.session.add(branch)
-
-    master.branch_name = f"#{len(new_branches)}"
-    master.branches = branches
-    db.session.commit()
-
-    return jsonify(
-        {
-            "deckids": master.branches,
-        }
-    )
 
 
 @app.route("/api/deck/<string:deckid>/snapshot", methods=["GET"])

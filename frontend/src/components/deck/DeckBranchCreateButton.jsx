@@ -12,8 +12,8 @@ const DeckBranchCreateButton = ({ deck }) => {
   } = useApp();
 
   const branchCreate = () => {
-    const url = `${process.env.API_URL}deck/${deck.deckid}/branch`;
     const master = deck.master ? deck.master : deck.deckid;
+    const url = `${process.env.API_URL}deck/${master}/branch`;
 
     const options = {
       method: 'POST',
@@ -23,7 +23,7 @@ const DeckBranchCreateButton = ({ deck }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        master: master,
+        deckid: deck.deckid,
       }),
     };
 
@@ -36,21 +36,21 @@ const DeckBranchCreateButton = ({ deck }) => {
           [master]: {
             ...prevState[master],
             branches: prevState[master].branches
-              ? [...prevState[master].branches, data.deckid]
-              : [data.deckid],
+              ? [...prevState[master].branches, data[0].deckid]
+              : [data[0].deckid],
           },
-          [data.deckid]: {
+          [data[0].deckid]: {
             ...deck,
-            deckid: data.deckid,
+            deckid: data[0].deckid,
             crypt: { ...deck.crypt },
             library: { ...deck.library },
             inventory_type: '',
             master: master,
-            branchName: data.branch_name,
+            branchName: data[0].branch_name,
             timestamp: now.toUTCString(),
           },
         }));
-        setActiveDeck({ src: 'my', deckid: data.deckid });
+        setActiveDeck({ src: 'my', deckid: data[0].deckid });
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
       });

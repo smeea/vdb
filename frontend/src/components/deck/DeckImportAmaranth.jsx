@@ -69,13 +69,20 @@ const DeckImportAmaranth = ({
         }
       });
 
+      let description = master.description
+      if (revision["comments"]) {
+        if (description) description += "\n\n"
+        description += revision['comments']
+      }
+
       branches.push({
+        author: master.author,
         cards: cards,
-        comments: revision.comments,
+        description: description,
       });
     });
 
-    const url = `${process.env.API_URL}deck/${master}/branch_import`;
+    const url = `${process.env.API_URL}deck/${master.deckid}/branch`;
 
     const options = {
       method: 'POST',
@@ -92,19 +99,26 @@ const DeckImportAmaranth = ({
     return fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        data.deckids.map((deckid, idx) => {
-          branches[idx].deckid = deckid;
+        data.map((branch, idx) => {
+          branches[idx].deckid = branch.deckid;
+          branches[idx].branch_name = branch.branch_name;
         });
         return branches;
       })
       .catch((error) => setImportError(true));
   };
 
-  const importDeckFromAmaranth = async (deck) => {
-    const cards = {};
-    Object.keys(deck.cards).map((i) => {
+  const importDeckFromAmaranth = async (amaranth_deck) => {
+    const deck = {
+      deckname: amaranth_deck.title,
+      author: amaranth_deck.author,
+      description: amaranth_deck.description,
+      cards: {}
+    }
+
+    Object.keys(amaranth_deck.cards).map((i) => {
       if (idReference[i] !== undefined) {
-        cards[idReference[i]] = deck.cards[i];
+        deck.cards[idReference[i]] = amaranth_deck.cards[i];
       }
     });
 
@@ -116,12 +130,7 @@ const DeckImportAmaranth = ({
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        deckname: deck.title,
-        author: deck.author,
-        description: deck.description,
-        cards: cards,
-      }),
+      body: JSON.stringify(deck)
     };
 
     const fetchPromise = fetch(url, options);
@@ -129,18 +138,21 @@ const DeckImportAmaranth = ({
     fetchPromise
       .then((response) => response.json())
       .then((data) => {
-        if (deck.versions) {
-          branchesImport(data.deckid, deck.versions).then((branches) => {
+        deck.deckid = data.deckid
+
+        if (amaranth_deck.versions) {
+          branchesImport(deck, amaranth_deck.versions).then((branches) => {
             const now = new Date();
             const decks = {};
 
             branches.map((b, idx) => {
               const { crypt, library } = parseCards(b.cards);
+
               decks[b.deckid] = {
                 deckid: b.deckid,
-                master: data.deckid,
-                name: deck.title,
-                branchName: `#${idx + 1}`,
+                master: deck.deckid,
+                name: deck.deckname,
+                branchName: b.branch_name,
                 author: deck.author,
                 description: b.comments || '',
                 crypt: crypt,
@@ -150,10 +162,10 @@ const DeckImportAmaranth = ({
               };
             });
 
-            const { crypt, library } = parseCards(cards);
-            decks[data.deckid] = {
-              deckid: data.deckid,
-              name: deck.title,
+            const { crypt, library } = parseCards(deck.cards);
+            decks[deck.deckid] = {
+              deckid: deck.deckid,
+              name: deck.deckname,
               branches: Object.keys(decks),
               branchName: '#0',
               author: deck.author,
@@ -173,7 +185,7 @@ const DeckImportAmaranth = ({
           addImportedDeckToState({ data });
         }
 
-        setActiveDeck({ src: 'my', deckid: data.deckid });
+        setActiveDeck({ src: 'my', deckid: deck.deckid });
       })
       .catch((error) => setImportError(true));
   };
