@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
-import ArrowDown from 'assets/images/icons/arrow-down.svg';
-import ArrowUp from 'assets/images/icons/arrow-up.svg';
-import Dash from 'assets/images/icons/dash.svg';
 import {
   CardPopover,
   UsedPopover,
@@ -18,8 +15,8 @@ import {
   ResultCryptTitle,
   OverlayTooltip,
   ConditionalOverlayTrigger,
+  DiffQuantityDiff,
 } from 'components';
-
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 import { useApp } from 'context';
 
@@ -87,30 +84,6 @@ const DiffCryptTable = ({
     const qFrom = cardsFrom[card.c.Id] ? cardsFrom[card.c.Id].q : 0;
     const qTo = cardsTo[card.c.Id] ? cardsTo[card.c.Id].q : 0;
 
-    const DiffStatus = () => {
-      if (qFrom == qTo) {
-        return '';
-      } else if (qFrom == 0) {
-        return (
-          <div className="red pb-1">
-            <Dash viewBox="0 0 12 14" />
-          </div>
-        );
-      } else if (qFrom < qTo) {
-        return (
-          <div className="red">
-            <ArrowDown /> {qTo - qFrom}
-          </div>
-        );
-      } else if (qFrom > qTo) {
-        return (
-          <div className="green">
-            <ArrowUp /> {qFrom - qTo}
-          </div>
-        );
-      }
-    };
-
     return (
       <React.Fragment key={card.c.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
@@ -149,7 +122,7 @@ const DiffCryptTable = ({
             <td className="quantity-no-buttons px-1">{qFrom ? qFrom : null}</td>
           )}
           <td className={`diff-status ${!isMobile && 'ps-1'}`}>
-            <DiffStatus />
+            <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
           <td
             className={isMobile ? 'capacity' : 'capacity pe-1'}
