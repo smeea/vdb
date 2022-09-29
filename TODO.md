@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Crypt sorting in review (works in Deck!)
-- Inventory sort by q-ty
 
 # FEATURES
 - Add FoL cards

@@ -3,6 +3,7 @@ import {
   byBloodCost,
   byPoolCost,
   byDiscipline,
+  byQuantity,
   byType,
   byName,
   byClanOpt,
