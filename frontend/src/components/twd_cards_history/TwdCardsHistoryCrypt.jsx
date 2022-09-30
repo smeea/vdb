@@ -65,20 +65,20 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
     [cardsByClan, sortMethod]
   );
 
-  const cardRows = sortedCards.map((card, index) => {
+  const cardRows = sortedCards.map((card, idx) => {
     return (
       <>
         {!isMobile && (
           <>
         <div
           className="d-flex align-items-center justify-content-center capacity"
-          onClick={() => handleClick()}
+          onClick={() => handleClick(idx)}
         >
           <ResultCryptCapacity value={card.Capacity} />
         </div>
           <div
             className="d-flex align-items-center justify-content-left disciplines"
-            onClick={() => handleClick()}
+            onClick={() => handleClick(idx)}
           >
             <ResultCryptDisciplines value={card.Disciplines} />
           </div>
@@ -91,13 +91,13 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
         >
           <div
             className={`d-flex align-items-center justify-content-start name ${card.deckid ? '' : 'bold'} px-1`}
-            onClick={() => handleClick()}
+            onClick={() => handleClick(idx)}
           >
             <ResultCryptName card={card} />
           </div>
         </ConditionalOverlayTrigger>
         {!isMobile && (
-          <div className="clan-group" onClick={() => handleClick()}>
+          <div className="clan-group" onClick={() => handleClick(idx)}>
             <div className="d-flex justify-content-center">
               <ResultClanImage value={card.Clan} />
             </div>

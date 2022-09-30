@@ -143,7 +143,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
   );
 
 
-  const cardRows = sortedCards.map((card, index) => {
+  const cardRows = sortedCards.map((card, idx) => {
     return (
       <>
         {!isMobile && (
@@ -151,7 +151,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
             <div
               className={`d-flex align-items-center justify-content-center ${card[BLOOD_COST] && 'blood'
                 } cost`}
-              onClick={() => handleClick()}
+              onClick={() => handleClick(idx)}
             >
               <ResultLibraryCost
                 valueBlood={card[BLOOD_COST]}
@@ -161,13 +161,13 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
 
             <div
               className="d-flex align-items-center justify-content-center type"
-              onClick={() => handleClick()}
+              onClick={() => handleClick(idx)}
             >
               <ResultLibraryTypeImage value={card.Type} />
             </div>
             <div
               className="d-flex align-items-center justify-content-center clan-disciplines"
-              onClick={() => handleClick()}
+              onClick={() => handleClick(idx)}
             >
               <ResultLibraryClan value={card.Clan} />
               {card.Discipline && card.Clan && '+'}
@@ -182,7 +182,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         >
           <div
             className={`d-flex align-items-center justify-content-start name ${card.deckid ? '' : 'bold'} px-1`}
-            onClick={() => handleClick()}
+            onClick={() => handleClick(idx)}
           >
             <ResultLibraryName card={card} />
           </div>
@@ -190,7 +190,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         {!isMobile &&
           <div
             className="d-flex align-items-center justify-content-center burn"
-            onClick={() => handleClick()}
+            onClick={() => handleClick(idx)}
           >
             <ResultLibraryBurn value={card['Burn Option']} />
           </div>
