@@ -161,7 +161,7 @@ const InventoryLibraryTable = ({
 
         {isMobile ? (
           <div
-            className="d-flex align-items-center justify-content-between cost-clan-disciplines"
+            className="d-flex align-items-center justify-content-between disciplines"
             onClick={() => handleClick()}
           >
             <div

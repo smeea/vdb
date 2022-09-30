@@ -36,41 +36,38 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
 
   return (
     <>
-      {!isMobile && card.Id > 200000 && <td className="px-2" />}
-      <td className={`px-1 px-md-2 ${card.deckid ? '' : 'bold blue'}`}>
+      <div className={`d-flex align-items-center justify-content-center year ${card.deckid ? '' : 'bold blue'}`}>
         {card.release_date.slice(0, 4)}
-      </td>
+      </div>
       {!isMobile && (
-        <td className="px-2">{card.twd_date && card.twd_date.slice(0, 4)}</td>
+        <div className="d-flex align-items-center justify-content-center year">{card.twd_date && card.twd_date.slice(0, 4)}</div>
       )}
-      <td className={`px-1 px-md-2 ${card.deckid ? '' : 'bold blue'}`}>
+      <div className={`d-flex align-items-center justify-content-center ytw ${card.deckid ? '' : 'bold blue'}`}>
         {yearsToWin}
-      </td>
-      <td className="player px-0 px-md-2">
-        <div className="d-flex justify-content-between align-items-center">
+      </div>
+      <div className="d-flex align-items-center justify-content-between align-items-center player">
+        <div
+          className="d-inline link-like"
+          onClick={() => handleAuthorClick(card.player)}
+        >
+          {card.player}
+        </div>
+        {!isMobile && byPlayer && (
           <div
-            className="d-inline link-like"
-            onClick={() => handleAuthorClick(card.player)}
-          >
-            {card.player}
-          </div>
-          {!isMobile && byPlayer && (
-            <div
-              className="d-inline ps-2"
-              title={`First appearance in TWDA:
+            className="d-inline ps-2"
+            title={`First appearance in TWDA:
 Crypt: ${byPlayer.crypt}
 Library: ${byPlayer.library}`}
-            >
-              [{byPlayer.crypt + byPlayer.library}]
-            </div>
-          )}
-        </div>
-      </td>
-      <td className={`${isMobile ? '' : 'px-1'}`}>
+          >
+            [{byPlayer.crypt + byPlayer.library}]
+          </div>
+        )}
+      </div>
+      <div className="d-flex align-items-center justify-content-end button pe-1">
         {card.deckid && (
           <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} inHistory />
         )}
-      </td>
+      </div>
     </>
   );
 };

@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { FixedSizeList } from 'react-window';
+import AutoSizer from 'react-virtualized-auto-sizer';
 import { Stack } from 'react-bootstrap';
 import {
+  TwdCardsHistoryCardAppearance,
   InventoryFilterForm,
-  TwdCardsHistoryCardLibrary,
   SortButton,
+  CardPopover,
+  ConditionalOverlayTrigger,
+  ResultLibraryBurn,
+  ResultLibraryClan,
+  ResultLibraryCost,
+  ResultLibraryName,
+  ResultLibraryTypeImage,
+  ResultLibraryDisciplines,
 } from 'components';
-import { cardtypeSorted } from 'utils/constants';
+import { cardtypeSorted, POOL_COST, BLOOD_COST } from 'utils/constants';
 import disciplinesList from 'assets/data/disciplinesList.json';
 import virtuesList from 'assets/data/virtuesList.json';
 import { librarySort } from 'utils';
@@ -125,15 +135,82 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
     });
   });
 
-  const sortedCards = librarySort(
-    Object.values(cardsByType[type]).filter((i) => {
-      return cardsByDiscipline[discipline][i.Id];
-    }),
-    sortMethod
+  const sortedCards = useMemo(
+    () => librarySort(Object.values(cardsByType[type]).filter((i) => {
+        return cardsByDiscipline[discipline][i.Id];
+      }), sortMethod),
+    [cardsByType, cardsByDiscipline, sortMethod]
+  );
+
+
+  const cardRows = sortedCards.map((card, index) => {
+    return (
+      <>
+        {!isMobile && (
+          <>
+            <div
+              className={`d-flex align-items-center justify-content-center ${card[BLOOD_COST] && 'blood'
+                } cost`}
+              onClick={() => handleClick()}
+            >
+              <ResultLibraryCost
+                valueBlood={card[BLOOD_COST]}
+                valuePool={card[POOL_COST]}
+              />
+            </div>
+
+            <div
+              className="d-flex align-items-center justify-content-center type"
+              onClick={() => handleClick()}
+            >
+              <ResultLibraryTypeImage value={card.Type} />
+            </div>
+            <div
+              className="d-flex align-items-center justify-content-center clan-disciplines"
+              onClick={() => handleClick()}
+            >
+              <ResultLibraryClan value={card.Clan} />
+              {card.Discipline && card.Clan && '+'}
+              <ResultLibraryDisciplines value={card.Discipline} />
+            </div>
+          </>
+        )}
+        <ConditionalOverlayTrigger
+          placement={"right"}
+          overlay={<CardPopover card={card} />}
+          disabled={isMobile}
+        >
+          <div
+            className={`d-flex align-items-center justify-content-start name ${card.deckid ? '' : 'bold'} px-1`}
+            onClick={() => handleClick()}
+          >
+            <ResultLibraryName card={card} />
+          </div>
+        </ConditionalOverlayTrigger>
+        {!isMobile &&
+          <div
+            className="d-flex align-items-center justify-content-center burn"
+            onClick={() => handleClick()}
+          >
+            <ResultLibraryBurn value={card['Burn Option']} />
+          </div>
+        }
+        <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card.player]} />
+      </>
+    )
+  })
+
+  const Rows = ({ index, style }) => (
+    <div
+      style={style}
+      className={`d-flex bordered ${index % 2 ? 'result-even' : 'result-odd'}`}
+    >
+      {cardRows[index]}
+    </div>
   );
 
   return (
-    <>
+    <div className="inventory-container-library">
       <div className="d-flex align-items-center justify-content-between inventory-info">
         <div className="w-75 p-1">
           <Stack gap={1}>
@@ -163,46 +240,51 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           setSortMethod={setSortMethod}
         />
       </div>
-      <table className="library-history-table">
-        <thead className="info-message blue">
-          <tr>
-            <th />
-            {!isMobile && <th />}
-            {!isMobile && <th />}
-            {!isMobile && <th />}
-            <th className="text-align-center" title="First Print Date">
-              Print
-            </th>
-            {!isMobile && (
-              <th
-                className="text-align-center"
-                title="First TWD Appearance Date"
-              >
-                Win
-              </th>
-            )}
-            <th className="text-align-center" title="Years to Win">
-              YtW
-            </th>
-            <th className="px-0 px-md-2" title="First Winner">
-              Player
-            </th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {sortedCards.map((card, idx) => (
-            <tr key={card.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-              <TwdCardsHistoryCardLibrary
-                handleClick={() => handleClick(idx)}
-                card={card}
-                byPlayer={players[card.player]}
-              />
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </>
+
+      <div className="d-flex info-message blue bold history-library-table">
+        {!isMobile && <div className="d-flex cost" />}
+        {!isMobile && <div className="d-flex type" />}
+        <div className="d-flex name" />
+        {!isMobile && <div className="d-flex clan-disciplines" />}
+        <div className="d-flex align-items-center justify-content-center year"
+          title="First Print Date"
+        >
+          Print
+        </div>
+        {!isMobile && (
+          <div className="d-flex align-items-center justify-content-center year"
+            title="First TWD Appearance Date"
+          >
+            Win
+          </div>
+        )}
+        <div className="d-flex align-items-center justify-content-center ytw"
+          title="Years to Win"
+        >
+          YtW
+        </div>
+        <div className="d-flex align-items-center player"
+          title="First Winner"
+        >
+          Player
+        </div>
+        <div className="d-flex button pe-1" />
+        {!isMobile && <div className="d-flex scroll-bar" />}
+      </div>
+      <AutoSizer>
+        {({ width, height }) => (
+          <FixedSizeList
+            className="history-library-table"
+            height={height}
+            width={width}
+            itemCount={cardRows.length}
+            itemSize={45}
+          >
+            {Rows}
+          </FixedSizeList>
+        )}
+      </AutoSizer>
+    </div>
   );
 };
 

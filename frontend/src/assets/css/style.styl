@@ -518,52 +518,6 @@ td.prob
   text-align: right
   width: 36px
 
-.crypt-history-table,
-.library-history-table
-  width: 100%
-  border: 1px solid var(--bg-secondary)
-  @media (max-width: 767px)
-    border: none
-  td
-    border-top: 1px solid var(--bg-secondary)
-    border-bottom: 1px solid var(--bg-secondary)
-    border-collapse: collapse
-    text-align: center
-  td.player
-    @media (max-width: 767px)
-      max-width: 115px
-    text-align: left
-  td.name
-    text-align: left
-  div.link-like
-    text-align: left
-
-.crypt-history-table
-  td
-    height: 32px
-  td.capacity
-    width: 40px
-  td.disciplines td
-    min-width: 27px
-    @media (max-width: 767px)
-      min-width: 24px
-  td.clan-group
-    width: 50px
-
-.library-history-table
-  td
-    height: 38px
-  td.cost
-    width: 25px
-  td.blood
-    padding-top: 0px
-    padding-bottom: 4px
-  td.disciplines
-    width: 88px
-  td.burn
-    width: 30px
-
-
 .deck-crypt-table,
 .deck-library-table
   width: 100%
@@ -639,6 +593,8 @@ td.prob
   @media (max-width: 767px)
     height: calc(100vh - 219px)
 
+.history-crypt-table,
+.history-library-table,
 .inventory-crypt-table,
 .inventory-library-table
   width: 100%
@@ -666,10 +622,36 @@ td.prob
   &.compact
     height: 45px
 
+.history-crypt-table,
+.history-library-table,
+  div.year
+    min-width: 60px
+    @media (max-width: 767px)
+      min-width: 45px
+  div.ytw
+    min-width: 45px
+    @media (max-width: 767px)
+      min-width: 30px
+  div.player
+    min-width: 250px
+    @media (max-width: 767px)
+      min-width: 110px
+    text-align: left
+  div.name
+    text-align: left
+  div.button
+    min-width: 100px
+    @media (max-width: 767px)
+      min-width: 45px
+  div.scroll-bar
+    min-width: 18px
 
+.history-crypt-table,
 .inventory-crypt-table
   div.capacity
-    min-width: 32px
+    min-width: 40px
+    @media (max-width: 767px)
+      min-width: 32px
   div.disciplines
     min-width: 180px
     @media (max-width: 1399px)
@@ -685,19 +667,21 @@ td.prob
     .group
       min-width: 0px
 
+.history-library-table,
 .inventory-library-table
   div.cost
     min-width: 30px
   div.blood
     padding-top: 0px
     padding-bottom: 4px
-  div.cost-clan-disciplines,
   div.disciplines
     min-width: 82px
   div.burn
     min-width: 30px
   div.type
     min-width: 40px
+  div.clan-disciplines
+    min-width: 80px
 
 .search-crypt-table,
 .search-library-table

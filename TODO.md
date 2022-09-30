@@ -16,7 +16,6 @@
 - Move deck/inventory export in excel to frontend
 - Move deck/inventory import to frontend
 - Move pdf proxy to frontend
-- TWD Cards History performance - react-window
 - Refactor CSS
 - Fetching data with react-router
 
