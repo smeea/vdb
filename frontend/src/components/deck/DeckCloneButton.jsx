@@ -14,30 +14,47 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
   const [state, setState] = useState(false);
 
   const cloneDeck = () => {
-    const url = `${process.env.API_URL}decks/clone`;
-    const body = {
-      deckname: deck.name + ' [by ' + deck.author + ']',
-      author: deck.author,
-      src: src,
-    };
+    let url = null
+    let options = null
 
-    switch (deck.deckid) {
-      case 'deckInUrl':
-        body['deck'] = deck;
-        break;
-      default:
-        body['target'] = deck.deckid;
+    if (deck.deckid === 'deckInUrl') {
+      const cards = {}
+      Object.keys(deck.crypt).map(cardid => {
+        cards[cardid] = deck.crypt[cardid].q
+      })
+      Object.keys(deck.library).map(cardid => {
+        cards[cardid] = deck.library[cardid].q
+      })
+
+      url = `${process.env.API_URL}deck`;
+      options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          deckname: deck.name + ' [by ' + deck.author + ']',
+          author: deck.author,
+          cards: cards
+        })
+      };
+
+    } else {
+      url = `${process.env.API_URL}deck/${deck.deckid}/clone`;
+      options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          deckname: deck.name + ' [by ' + deck.author + ']',
+        })
+      };
     }
-
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    };
 
     fetch(url, options)
       .then((response) => response.json())

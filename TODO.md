@@ -21,8 +21,6 @@
 - Fetching data with react-router
 
 # IMPROVE TECHNOLOGY - BACKEND
-- Improve API endpoints - decks
-- Refactor (merge?) deck create and clone and import
 
 # IMPROVE PWA
 - Open urls in app by default (handle_links)

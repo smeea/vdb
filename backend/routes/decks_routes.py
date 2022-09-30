@@ -470,62 +470,26 @@ def url_snapshot_route(deckid):
     )
 
 
-@app.route("/api/decks/clone", methods=["POST"])
-def clone_deck_route():
-    if "deck" in request.json:
-        deck = request.json["deck"]
-        cards = {}
-
-        for i in deck["crypt"]:
-            cards[int(i)] = deck["crypt"][i]["q"]
-        for i in deck["library"]:
-            cards[int(i)] = deck["library"][i]["q"]
-
+@app.route("/api/deck/<string:deckid>/clone", methods=["POST"])
+def clone_deck_route(deckid):
+    if len(deckid) == 32:
+        target_deck = Deck.query.get(deckid)
         deckid = uuid.uuid4().hex
         d = Deck(
             deckid=deckid,
-            name=f"{deck['name']} [by {deck['author']}]",
-            author_public_name=deck["author"],
-            description=deck["description"],
+            name=f"{target_deck.author_public_name} [by {target_deck.author_public_name}]",
+            author_public_name=target_deck.author_public_name,
+            description="",
             author=current_user,
-            cards=cards,
+            tags=target_deck.tags,
+            cards=target_deck.cards,
         )
         db.session.add(d)
         db.session.commit()
-        return jsonify({"deck cloned": request.json["deckname"], "deckid": deckid})
+        return jsonify({"deckid": deckid})
 
-    elif request.json["src"] == "twd":
-        with open("twd_decks.json", "r") as twd_decks_file:
-            twd_decks = json.load(twd_decks_file)
-
-            deck = twd_decks[request.json["target"]]
-            cards = {}
-            for i, q in deck["cards"].items():
-                cards[int(i)] = q
-
-            description = "Date: " + deck["creation_date"] + "\n"
-            description += "Players: " + str(deck["players"]) + "\n"
-            description += "Event: " + deck["event"] + "\n"
-            description += "Location: " + deck["location"] + "\n"
-            if deck["description"]:
-                description += "\n" + deck["description"]
-
-            deckid = uuid.uuid4().hex
-            d = Deck(
-                deckid=deckid,
-                name=f"{deck['name']} [by {deck['author']}]",
-                author_public_name=deck["author"],
-                description=description,
-                author=current_user,
-                tags=["twd"],
-                cards=cards,
-            )
-            db.session.add(d)
-            db.session.commit()
-            return jsonify({"deck cloned": request.json["deckname"], "deckid": deckid})
-
-    elif request.json["src"] == "precons":
-        set, precon = request.json["target"].split(":")
+    elif ":" in deckid:
+        set, precon = deckid.split(":")
 
         with open("preconDecks.json", "r") as precons_cards_file, open(
             "setsAndPrecons.json", "r"
@@ -554,25 +518,34 @@ def clone_deck_route():
             return jsonify({"deck cloned": request.json["deckname"], "deckid": deckid})
 
     else:
-        targetDeck = Deck.query.get(request.json["target"])
-        deckid = uuid.uuid4().hex
-        d = Deck(
-            deckid=deckid,
-            name=request.json["deckname"],
-            author_public_name=request.json["author"],
-            description="",
-            author=current_user,
-            tags=targetDeck.tags,
-            cards=targetDeck.cards,
-        )
-        db.session.add(d)
-        db.session.commit()
-        return jsonify(
-            {
-                "deck cloned": request.json["deckname"],
-                "deckid": deckid,
-            }
-        )
+        with open("twd_decks.json", "r") as twd_decks_file:
+            twd_decks = json.load(twd_decks_file)
+
+            deck = twd_decks[deckid]
+            cards = {}
+            for i, q in deck["cards"].items():
+                cards[int(i)] = q
+
+            description = "Date: " + deck["creation_date"] + "\n"
+            description += "Players: " + str(deck["players"]) + "\n"
+            description += "Event: " + deck["event"] + "\n"
+            description += "Location: " + deck["location"] + "\n"
+            if deck["description"]:
+                description += "\n" + deck["description"]
+
+            deckid = uuid.uuid4().hex
+            d = Deck(
+                deckid=deckid,
+                name=f"{deck['name']} [by {deck['author']}]",
+                author_public_name=deck["author"],
+                description=description,
+                author=current_user,
+                tags=["twd"],
+                cards=cards,
+            )
+            db.session.add(d)
+            db.session.commit()
+            return jsonify({"deck cloned": request.json["deckname"], "deckid": deckid})
 
 
 @app.route("/api/decks/import", methods=["POST"])
