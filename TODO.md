@@ -4,12 +4,11 @@
 
 # FEATURES
 - Add FoL cards
+- Add 3rd Edition Starters Kit
 - Check TWD
 - Show changes from base deck in PDA
-- Add 3rd Edition Starters Kit
 
 # MAYBE LATER FEATURES
-- Script to update images from static.krcg.org
 - Boilerplates modules for new decks
 
 # IMPROVE TECHNOLOGY - FRONTEND

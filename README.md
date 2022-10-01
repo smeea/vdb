@@ -68,12 +68,13 @@ For production, in addition to the steps above, you should at least:
 For reference:
 Public instance at https://vdb.im runs from master branch without any changes using `gunicorn` (`gunicorn wsgi:app`) and `nginx` (sample configuration is in `/misc/nginx.conf`).
 
-### UPDATE CARDS, TWD
+### UPDATE CARDS, RULINGS, TWD, IMAGES
 ```
     cd misc/cards-update
     source venv/bin/activate
-    ./download_resources.sh
-    ./create_resources.sh
+    ./download_resources.sh          # DOWNLOAD OFFICIAL CARDBASE/RULINGS/TWD FILES
+    ./create_resources.sh            # GENERATE VDB FILES FROM DOWNLOADED RESOURCES
+    python download_card_images.py   # UPDATE IMAGES (ONLY ENGLISH)
 ```
 
 ## SUPPORT / HELP
