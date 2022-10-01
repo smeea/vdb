@@ -1,5 +1,13 @@
 [
   {
+    "version": "2022-10-01",
+    "changes": [
+      "Fix inventory library bug",
+      "Greatly increase TWD Cards History (https://vdb.im/twd/cards_history) performance (now actually usable!)",
+      "Add playtesters managing interface",
+    ]
+  },
+  {
     "version": "2022-09-28",
     "changes": [
       "Add playtest precons",
