@@ -1,6 +1,6 @@
 [
   {
-    "version": "2022-10-01",
+    "version": "2022-10-03",
     "changes": [
       "Fix inventory library bug",
       "Greatly increase TWD Cards History (https://vdb.im/twd/cards_history) performance (now actually usable!)",

@@ -32,7 +32,6 @@ const InventoryMobile = ({
   setCategory,
   setShowAddDeck,
   setShowAddPrecon,
-  setShowShareModal,
   sharedInventoryCrypt,
   sharedInventoryLibrary,
   inShared,
@@ -116,9 +115,9 @@ const InventoryMobile = ({
               <div className="pt-1">
                 <InventoryLibrary
                   withCompact={newLibraryId}
-                  category={sharedInventoryCrypt ? 'ok' : category}
+                  category={sharedInventoryLibrary ? 'ok' : category}
                   cards={
-                    sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
+                    sharedInventoryLibrary ? sharedInventoryLibrary : inventoryLibrary
                   }
                   type={type}
                   setType={setType}
