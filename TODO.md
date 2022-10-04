@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Crypt sorting in review (works in Deck!)
-- Login [?] popup same as forget password
 
 # FEATURES
 - Add FoL cards

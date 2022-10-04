@@ -22,7 +22,8 @@ const AccountLogin = (props) => {
   const [formPassword, setFormPassword] = useState('');
 
   const [spinnerState, setSpinnerState] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showModalTooltip, setShowModalTooltip] = useState(false);
+  const [showModalPassword, setShowModalPassword] = useState(false);
 
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
@@ -103,7 +104,7 @@ const AccountLogin = (props) => {
           </OverlayTooltip>
         ) : (
           <span
-            onClick={() => setShowModal(true)}
+            onClick={() => setShowModalTooltip(true)}
             className="question-tooltip ms-1"
           >
             [?]
@@ -182,7 +183,7 @@ const AccountLogin = (props) => {
         </div>
       ) : (
         <div
-          onClick={() => setShowModal(true)}
+          onClick={() => setShowModalPassword(true)}
           className="d-flex justify-content-center small ms-3 ps-4"
         >
           <a href="#">
@@ -190,11 +191,18 @@ const AccountLogin = (props) => {
           </a>
         </div>
       )}
-      {showModal && (
+      {showModalPassword && (
         <ModalTooltip
           text={passwordTooltipText}
-          show={showModal}
-          setShow={setShowModal}
+          show={showModalPassword}
+          setShow={setShowModalPassword}
+        />
+      )}
+      {showModalTooltip && (
+        <ModalTooltip
+          text={loginTooltipText}
+          show={showModalTooltip}
+          setShow={setShowModalTooltip}
         />
       )}
     </div>
