@@ -4,7 +4,7 @@
     "changes": [
       "Fix inventory library bug",
       "Greatly increase TWD Cards History (https://vdb.im/twd/cards_history) performance (now actually usable!)",
-      "Add playtesters managing interface",
+      "Add playtesters managing interface"
     ]
   },
   {
