@@ -68,7 +68,24 @@ For production, in addition to the steps above, you should at least:
 For reference:
 Public instance at https://vdb.im runs from master branch without any changes using `gunicorn` (`gunicorn wsgi:app`) and `nginx` (sample configuration is in `/misc/nginx.conf`).
 
+
+## MAINTENANCE
+
 ### UPDATE CARDS, RULINGS, TWD, IMAGES
+
+To update with new Set/Precons edit the following files:
+```
+    vim misc/cards-update/generate_precons.py            # ADD SET/PRECONS
+    vim frontent/src/assets/data/setsAndPrecons.json     # ADD SET/PRECONS
+```
+
+To update with new Playtest edit the following files:
+```
+    vim misc/cards-update/generate_precons.py            # EDIT PLAYTEST PRECONS
+    vim misc/cards-update/generate_playtest_precons.py   # EDIT PLAYTEST FILES
+```
+
+Download source files from upstream and create new resources (it will copy files where necessary):
 ```
     cd misc/cards-update
     source venv/bin/activate

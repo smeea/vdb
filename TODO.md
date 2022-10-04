@@ -8,11 +8,11 @@
 - Check TWD
 - Show changes from base deck in PDA
 - Detect offline and show warning
-- Adding new sets (playtest and released) to readme
 - Show error on deck change revert (network problem, etc)
 
 # MAYBE LATER FEATURES
 - Boilerplates modules for new decks
+- Tags for TWD/PDA
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in excel to frontend
