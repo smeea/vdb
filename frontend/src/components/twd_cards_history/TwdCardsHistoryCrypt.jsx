@@ -68,21 +68,19 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
   const cardRows = sortedCards.map((card, idx) => {
     return (
       <>
-        {!isMobile && (
-          <>
         <div
           className="d-flex align-items-center justify-content-center capacity"
           onClick={() => handleClick(idx)}
         >
           <ResultCryptCapacity value={card.Capacity} />
         </div>
+        {!isMobile && (
           <div
             className="d-flex align-items-center justify-content-left disciplines"
             onClick={() => handleClick(idx)}
           >
             <ResultCryptDisciplines value={card.Disciplines} />
           </div>
-          </>
         )}
         <ConditionalOverlayTrigger
           placement={"right"}
@@ -164,7 +162,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
         <div className="d-flex align-items-center justify-content-center ytw"
           title="Years to Win"
         >
-          YtW
+          {isMobile ? 'Y' : 'YtW'}
         </div>
         <div className="d-flex align-items-center player"
           title="First Winner"

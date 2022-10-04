@@ -158,23 +158,22 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
                 valuePool={card[POOL_COST]}
               />
             </div>
-
             <div
               className="d-flex align-items-center justify-content-center type"
               onClick={() => handleClick(idx)}
             >
               <ResultLibraryTypeImage value={card.Type} />
             </div>
-            <div
-              className="d-flex align-items-center justify-content-center clan-disciplines"
-              onClick={() => handleClick(idx)}
-            >
-              <ResultLibraryClan value={card.Clan} />
-              {card.Discipline && card.Clan && '+'}
-              <ResultLibraryDisciplines value={card.Discipline} />
-            </div>
           </>
         )}
+        <div
+          className="d-flex align-items-center justify-content-center clan-disciplines"
+          onClick={() => handleClick(idx)}
+        >
+          <ResultLibraryClan value={card.Clan} />
+          {card.Discipline && card.Clan && '+'}
+          <ResultLibraryDisciplines value={card.Discipline} />
+        </div>
         <ConditionalOverlayTrigger
           placement={"right"}
           overlay={<CardPopover card={card} />}
@@ -261,7 +260,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         <div className="d-flex align-items-center justify-content-center ytw"
           title="Years to Win"
         >
-          YtW
+          {isMobile ? 'Y' : 'YtW'}
         </div>
         <div className="d-flex align-items-center player"
           title="First Winner"
