@@ -77,6 +77,23 @@ Public instance at https://vdb.im runs from master branch without any changes us
     python download_card_images.py   # UPDATE IMAGES (ONLY ENGLISH)
 ```
 
+### PASSWORD CHANGE
+```
+    cd backend
+    source venv/bin/activate
+    python change_password $ACCOUNT_NAME x           # RANDOM PASWORD
+    python change_password $ACCOUNT_NAME $PASSWORD   # TO SET YOUR PASSWORD
+```
+
+### PLAYTESTING ACCESS
+Playtesting of new cards enabled by Playtest Admins from web.
+To toggle Admin status for account:
+```
+    cd backend
+    source venv/bin/activate
+    python change_playtest_admin.py $ACCOUNT_NAME
+```
+
 ## SUPPORT / HELP
 If you need support/help don't hesitate to fill Issue or send me an email to smeea@riseup.net.
 

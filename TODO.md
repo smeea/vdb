@@ -10,7 +10,7 @@
 - Responsive search dropdown selectors
 - Detect offline and show warning
 - Clan type icons to twd cards history
-- Playtest to readme, adding new sets to readme
+- Adding new sets (playtest and released) to readme
 - Show error on deck change revert (network problem, etc)
 
 # MAYBE LATER FEATURES
