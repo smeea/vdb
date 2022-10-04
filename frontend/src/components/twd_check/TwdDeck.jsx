@@ -120,7 +120,7 @@ const TwdDeck = ({ deck, eventId, setEventId }) => {
           <FormControl
             className="deck-import"
             as="textarea"
-            rows={window.innerHeight / 21 - 8}
+            rows={window.innerHeight / 21 - 14}
             value={deckText}
             placeholder={placeholder}
             onChange={handleChange}

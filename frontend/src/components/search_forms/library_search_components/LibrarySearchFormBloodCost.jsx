@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 
-function LibrarySearchFormBloodCost(props) {
+const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
   const blood = ['ANY', '0', '1', '2', '3', '4'];
   const options = [];
 
@@ -55,9 +55,9 @@ function LibrarySearchFormBloodCost(props) {
             isSearchable={false}
             name="blood-moreless"
             value={morelessOptions.find(
-              (obj) => obj.value === props.value.moreless
+              (obj) => obj.value === value.moreless
             )}
-            onChange={props.onMorelessChange}
+            onChange={onMorelessChange}
           />
         </Col>
         <Col xs={5} className="d-inline pe-0 ps-1">
@@ -66,8 +66,8 @@ function LibrarySearchFormBloodCost(props) {
             options={options}
             isSearchable={false}
             name="blood"
-            value={options.find((obj) => obj.value === props.value.blood)}
-            onChange={props.onChange}
+            value={options.find((obj) => obj.value === value.blood)}
+            onChange={onChange}
           />
         </Col>
       </Row>

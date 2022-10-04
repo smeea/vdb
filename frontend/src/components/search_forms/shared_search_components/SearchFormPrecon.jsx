@@ -187,7 +187,7 @@ const SearchFormPrecon = ({
             options={options}
             isSearchable={!isMobile}
             menuPlacement="top"
-            maxMenuHeight={isMobile ? window.innerHeight - 200 : 550}
+            maxMenuHeight={isMobile ? 350 : 450}
             filterOption={filterOption}
             name={0}
             value={options.find((obj) => obj.value === value.value[0])}

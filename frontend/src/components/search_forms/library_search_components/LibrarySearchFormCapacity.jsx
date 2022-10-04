@@ -3,8 +3,9 @@ import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
 
-function LibrarySearchFormCapacity(props) {
-  const { isMobile } = useApp();
+const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
+  const { isWide, isMobile } = useApp();
+  const topOffset = 525
 
   const capacity = [
     'ANY',
@@ -69,9 +70,9 @@ function LibrarySearchFormCapacity(props) {
           isSearchable={false}
           name="capacity-moreless"
           value={morelessOptions.find(
-            (obj) => obj.value === props.value.moreless
+            (obj) => obj.value === value.moreless
           )}
-          onChange={props.onMorelessChange}
+          onChange={onMorelessChange}
         />
       </Col>
       <Col xs={5} className="d-inline pe-0 ps-1">
@@ -80,9 +81,15 @@ function LibrarySearchFormCapacity(props) {
           options={options}
           isSearchable={false}
           name="capacity"
-          maxMenuHeight={isMobile ? 300 : 550}
-          value={options.find((obj) => obj.value === props.value.capacity)}
-          onChange={props.onChange}
+          maxMenuHeight={
+            isMobile
+              ? 350
+              : isWide
+                ? 800 - topOffset
+                : 700 - topOffset
+          }
+          value={options.find((obj) => obj.value === value.capacity)}
+          onChange={onChange}
         />
       </Col>
     </Row>

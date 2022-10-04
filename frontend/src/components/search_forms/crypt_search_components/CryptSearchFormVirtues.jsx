@@ -2,9 +2,9 @@ import React from 'react';
 import { ResultDisciplineImage } from 'components';
 import virtuesList from 'assets/data/virtuesList.json';
 
-function CryptSearchFormVirtues(props) {
+  const CryptSearchFormVirtues = ({ value, onChange }) => {
   const virtuesforms = virtuesList.map((i, index) => {
-    const virtueState = 'virtue-container state' + props.value[i];
+    const virtueState = 'virtue-container state' + value[i];
 
     return (
       <div key={index} className={virtueState}>
@@ -17,7 +17,7 @@ function CryptSearchFormVirtues(props) {
             type="button"
             name="virtues"
             id={i}
-            onClick={(e) => props.onChange(e)}
+            onClick={(e) => onChange(e)}
           />
           <ResultDisciplineImage className="virtue-image" value={i} />
         </label>

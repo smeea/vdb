@@ -8,7 +8,7 @@ import {
   SearchFormButtonDel,
 } from '../shared_search_components';
 
-function CryptSearchFormSect(props) {
+const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
   const sects = [
     'ANY',
     'Camarilla',
@@ -42,23 +42,23 @@ function CryptSearchFormSect(props) {
           className="d-flex justify-content-between align-items-center px-0"
         >
           <div className="bold blue">Sect:</div>
-          {props.value.value[0] !== 'any' && (
+          {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonGroupToggle
-                  value={props.value}
-                  setFormState={props.setFormState}
+                  value={value}
+                  setFormState={setFormState}
                 />
               </div>
-              {props.value.value.length == 1 ? (
+              {value.value.length == 1 ? (
                 <SearchFormButtonAdd
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                 />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                   i={0}
                 />
               )}
@@ -72,18 +72,17 @@ function CryptSearchFormSect(props) {
             isSearchable={false}
             name={0}
             value={options.find(
-              (obj) => obj.value === props.value.value[0].toLowerCase()
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </Col>
       </Row>
       <SearchAdditionalForms
-        value={props.value}
+        value={value}
         options={options}
-        onChange={props.onChange}
-        toggleForm={props.toggleForm}
-        setFormState={props.setFormState}
+        onChange={onChange}
+        setFormState={setFormState}
       />
     </>
   );

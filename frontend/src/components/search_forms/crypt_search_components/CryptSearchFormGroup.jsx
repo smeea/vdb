@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
 import { useApp } from 'context';
 
-function CryptSearchFormGroup(props) {
+const CryptSearchFormGroup = ({ value, onChange }) => {
   const { isWide } = useApp();
 
   const groups = [1, 2, 3, 4, 5, 6, 7];
@@ -14,8 +14,8 @@ function CryptSearchFormGroup(props) {
         key={index}
         value={i}
         name="group"
-        variant={props.value[i] ? 'third' : 'outline-primary'}
-        onClick={(e) => props.onChange(e)}
+        variant={value[i] ? 'third' : 'outline-primary'}
+        onClick={(e) => onChange(e)}
       >
         <div className={isWide ? '' : 'px-1'}>{i}</div>
       </Button>

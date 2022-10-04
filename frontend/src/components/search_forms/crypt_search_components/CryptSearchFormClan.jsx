@@ -13,7 +13,8 @@ import vampireClansList from 'assets/data/vampireClansList.json';
 import { useApp } from 'context';
 
 const CryptSearchFormClan = ({ value, setFormState, onChange }) => {
-  const { isMobile } = useApp();
+  const { isWide, isMobile } = useApp();
+  const topOffset = 455
 
   const clans = ['ANY', ...vampireClansList, ...imbuedClansList];
 
@@ -84,7 +85,13 @@ const CryptSearchFormClan = ({ value, setFormState, onChange }) => {
             options={options}
             isSearchable={!isMobile}
             name={0}
-            maxMenuHeight={isMobile ? 330 : 550}
+            maxMenuHeight={
+              isMobile
+                ? 350
+                : isWide
+                  ? 800 - topOffset
+                  : 700 - topOffset
+            }
             value={options.find(
               (obj) => obj.value === value.value[0].toLowerCase()
             )}

@@ -10,11 +10,11 @@ import {
 import { cardtypeSorted } from 'utils/constants';
 import { useApp } from 'context';
 
-function LibrarySearchFormType(props) {
-  const { isMobile } = useApp();
+const LibrarySearchFormType = ({value, onChange, setFormState}) => {
+  const { isWide, isMobile } = useApp();
+  const topOffset = 210
 
   const typesSorted = ['ANY', ...cardtypeSorted];
-
   const options = [];
 
   typesSorted.map((i, index) => {
@@ -56,24 +56,24 @@ function LibrarySearchFormType(props) {
           className="d-flex justify-content-between align-items-center px-0"
         >
           <div className="bold blue">Type:</div>
-          {props.value.value[0] !== 'any' && (
+          {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonGroupToggle
-                  value={props.value}
-                  setFormState={props.setFormState}
+                  value={value}
+                  setFormState={setFormState}
                   withAnd={true}
                 />
               </div>
-              {props.value.value.length == 1 ? (
+              {value.value.length == 1 ? (
                 <SearchFormButtonAdd
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                 />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                   i={0}
                 />
               )}
@@ -88,23 +88,23 @@ function LibrarySearchFormType(props) {
             name={0}
             maxMenuHeight={
               isMobile
-                ? window.innerHeight > 600
-                  ? window.innerHeight - 200
-                  : 300
-                : 550
+                ? 350
+                : isWide
+                  ? 800 - topOffset
+                  : 700 - topOffset
             }
             value={options.find(
-              (obj) => obj.value === props.value.value[0].toLowerCase()
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </Col>
       </Row>
       <SearchAdditionalForms
-        value={props.value}
+        value={value}
         options={options}
-        onChange={props.onChange}
-        setFormState={props.setFormState}
+        onChange={onChange}
+        setFormState={setFormState}
       />
     </>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 
-function CryptSearchFormVotes(props) {
+const CryptSearchFormVotes = ({value, onChange}) => {
   const votes = [
     ['any', 'ANY'],
     ['0', 'None'],
@@ -38,8 +38,8 @@ function CryptSearchFormVotes(props) {
           options={options}
           isSearchable={false}
           name="votes"
-          value={options.find((obj) => obj.value === props.value.toLowerCase())}
-          onChange={props.onChange}
+          value={options.find((obj) => obj.value === value.toLowerCase())}
+          onChange={onChange}
         />
       </Col>
     </Row>

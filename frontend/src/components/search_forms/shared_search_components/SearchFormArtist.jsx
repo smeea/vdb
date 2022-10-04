@@ -43,7 +43,7 @@ function SearchFormArtist(props) {
           options={options}
           onChange={props.onChange}
           menuPlacement="top"
-          maxMenuHeight={isMobile ? window.innerHeight - 200 : 550}
+          maxMenuHeight={isMobile ? 350 : 450}
           name="artist"
           placeholder="Artist"
           value={options.find((obj) => obj.value === props.value)}

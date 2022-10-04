@@ -7,7 +7,6 @@
 - Add 3rd Edition Starters Kit
 - Check TWD
 - Show changes from base deck in PDA
-- Responsive search dropdown selectors
 - Detect offline and show warning
 - Clan type icons to twd cards history
 - Adding new sets (playtest and released) to readme

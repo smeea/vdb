@@ -10,7 +10,8 @@ import {
 } from '../shared_search_components';
 
 const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
-  const { isMobile } = useApp();
+  const { isWide, isMobile } = useApp();
+  const topOffset = 410
 
   const capacity = [
     'any',
@@ -108,7 +109,13 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
             options={options}
             isSearchable={false}
             name={0}
-            maxMenuHeight={isMobile ? 330 : 550}
+            maxMenuHeight={
+              isMobile
+                ? 350
+                : isWide
+                  ? 800 - topOffset
+                  : 700 - topOffset
+            }
             value={options.find((obj) => obj.value === value.value[0].capacity)}
             onChange={onChange}
           />
