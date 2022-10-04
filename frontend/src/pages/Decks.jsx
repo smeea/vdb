@@ -424,9 +424,10 @@ const Decks = (props) => {
                           <Button
                             title="Advanced Deck Select"
                             variant="primary"
-                            onClick={() =>
-                              setShowDeckSelectAdv(!showDeckSelectAdv)
-                            }
+                            onClick={() => {
+                              setShowFloatingButtons(false)
+                              setShowDeckSelectAdv(true)
+                            }}
                           >
                             <div className="d-flex">
                               <BinocularsFill
@@ -708,7 +709,10 @@ const Decks = (props) => {
       )}
       {showDeckSelectAdv && (
         <DeckSelectAdvModal
-          handleClose={() => setShowDeckSelectAdv(false)}
+          handleClose={() => {
+            setShowDeckSelectAdv(false);
+            setShowFloatingButtons(true);
+          }}
           show={showDeckSelectAdv}
           allTagsOptions={allTagsOptions}
         />

@@ -34,13 +34,14 @@ import {
 import { decksSort } from 'utils';
 import { useApp } from 'context';
 
-const DeckSelectAdvModal = (props) => {
+const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
   const {
     cryptCardBase,
     decks,
     deckUpdate,
     setActiveDeck,
     inventoryMode,
+    isNarrow,
     isMobile,
     isDesktop,
   } = useApp();
@@ -65,7 +66,7 @@ const DeckSelectAdvModal = (props) => {
 
   const handleOpen = (deckid) => {
     setActiveDeck({ src: 'my', deckid: deckid });
-    props.handleClose();
+    handleClose();
   };
 
   const cardInDeck = (deck, query) => {
@@ -305,8 +306,8 @@ const DeckSelectAdvModal = (props) => {
                     deck.inventory_type === 's'
                       ? 'Flexible'
                       : deck.inventory_type === 'h'
-                      ? 'Fixed'
-                      : 'Virtual'
+                        ? 'Fixed'
+                        : 'Virtual'
                   }
                 >
                   {deck.inventory_type == 's' && <Shuffle />}
@@ -394,7 +395,7 @@ const DeckSelectAdvModal = (props) => {
             )}
             <td className="tags">
               <DeckTags
-                allTagsOptions={props.allTagsOptions}
+                allTagsOptions={allTagsOptions}
                 isAuthor={true}
                 deckid={deck.deckid}
                 tags={deck.tags}
@@ -421,8 +422,8 @@ const DeckSelectAdvModal = (props) => {
                       deck={deck}
                     />
                     {revFilter &&
-                    (deck.master ||
-                      (deck.branches && deck.branches.length > 0)) ? (
+                      (deck.master ||
+                        (deck.branches && deck.branches.length > 0)) ? (
                       <DeckBranchDeleteButton noText={true} deck={deck} />
                     ) : (
                       <DeckDeleteButton noText={true} deck={deck} />
@@ -438,102 +439,109 @@ const DeckSelectAdvModal = (props) => {
   });
 
   return (
-    <Modal
-      show={props.show}
-      onHide={props.handleClose}
-      animation={false}
-      dialogClassName={`modal-x-wide ${isMobile ? 'm-0' : ''}`}
-    >
-      <Modal.Header
-        className={
-          isMobile
-            ? 'no-border pt-2 pb-0 ps-2 pe-3'
-            : 'no-border pt-3 pb-1 ps-3 pe-4'
-        }
+    <>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        animation={false}
+        dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
       >
-        <h5>Select Deck</h5>
-        <Button variant="outline-secondary" onClick={props.handleClose}>
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
-      </Modal.Header>
-      <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
-        <DeckSelectAdvModalTotal
-          tagsFilter={tagsFilter}
-          setTagsFilter={setTagsFilter}
-        />
-        <table className="decks-table">
-          <thead>
-            <tr>
-              {inventoryMode && !isMobile && (
-                <th className="inventory">
-                  <Select
-                    classNamePrefix="react-select"
-                    options={invOptions}
-                    onChange={(e) => setInvFilter(e.value)}
-                    value={invOptions.find((obj) => obj.value === invFilter)}
+        <Modal.Header
+          className='no-border pt-2 pt-md-3 pb-0 pb-md-1 ps-2 pe-3 px-md-4'
+        >
+          <h5>Select Deck</h5>
+          {!isNarrow && (
+            <Button variant="outline-secondary" onClick={handleClose}>
+              <X width="32" height="32" viewBox="0 0 16 16" />
+            </Button>
+          )}
+        </Modal.Header>
+        <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
+          <DeckSelectAdvModalTotal
+            tagsFilter={tagsFilter}
+            setTagsFilter={setTagsFilter}
+          />
+          <table className="decks-table">
+            <thead>
+              <tr>
+                {inventoryMode && !isMobile && (
+                  <th className="inventory">
+                    <Select
+                      classNamePrefix="react-select"
+                      options={invOptions}
+                      onChange={(e) => setInvFilter(e.value)}
+                      value={invOptions.find((obj) => obj.value === invFilter)}
+                    />
+                  </th>
+                )}
+                {!isMobile && (
+                  <th className="clan">
+                    <Select
+                      classNamePrefix="react-select"
+                      options={clanOptions}
+                      onChange={(e) => setClanFilter(e.value)}
+                      value={clanOptions.find(
+                        (obj) => obj.value === clanFilter.toLowerCase()
+                      )}
+                      isSearchable={!isMobile}
+                    />
+                  </th>
+                )}
+                <th className="name trimmed mw-175">
+                  <FormControl
+                    placeholder="Filter by Deck or Card Name"
+                    type="text"
+                    name="text"
+                    autoComplete="off"
+                    spellCheck="false"
+                    value={nameFilter}
+                    onChange={handleChangeNameFilter}
                   />
                 </th>
-              )}
-              {!isMobile && (
-                <th className="clan">
-                  <Select
-                    classNamePrefix="react-select"
-                    options={clanOptions}
-                    onChange={(e) => setClanFilter(e.value)}
-                    value={clanOptions.find(
-                      (obj) => obj.value === clanFilter.toLowerCase()
-                    )}
-                    isSearchable={!isMobile}
+                {isDesktop && <th />}
+                {!isMobile && <th />}
+                <th className="tags">
+                  <DeckSelectAdvModalTagsFilter
+                    tagsFilter={tagsFilter}
+                    handleChangeTagsFilter={handleChangeTagsFilter}
+                    allTagsOptions={allTagsOptions}
                   />
                 </th>
-              )}
-              <th className="name trimmed mw-175">
-                <FormControl
-                  placeholder="Filter by Deck or Card Name"
-                  type="text"
-                  name="text"
-                  autoComplete="off"
-                  spellCheck="false"
-                  value={nameFilter}
-                  onChange={handleChangeNameFilter}
-                />
-              </th>
-              {isDesktop && <th />}
-              {!isMobile && <th />}
-              <th className="tags">
-                <DeckSelectAdvModalTagsFilter
-                  tagsFilter={tagsFilter}
-                  handleChangeTagsFilter={handleChangeTagsFilter}
-                  allTagsOptions={props.allTagsOptions}
-                />
-              </th>
-              <th className="buttons">
-                <div
-                  className={`${
-                    isMobile
-                      ? ''
-                      : 'd-flex justify-content-end align-items-center '
-                  } px-1`}
-                >
-                  <Form.Check
-                    className={isMobile ? '' : 'pt-05 pe-3'}
-                    type="checkbox"
-                    id="revFilter"
-                    label={isDesktop ? 'Show Revisions' : 'Rev'}
-                    checked={revFilter}
-                    onChange={() => setRevFilter(!revFilter)}
-                  />
-                  <div className="d-flex justify-content-end">
-                    <DeckSelectSortForm onChange={setSortMethod} />
+                <th className="buttons">
+                  <div
+                    className={`${isMobile
+                        ? ''
+                        : 'd-flex justify-content-end align-items-center '
+                      } px-1`}
+                  >
+                    <Form.Check
+                      className={isMobile ? '' : 'pt-05 pe-3'}
+                      type="checkbox"
+                      id="revFilter"
+                      label={isDesktop ? 'Show Revisions' : 'Rev'}
+                      checked={revFilter}
+                      onChange={() => setRevFilter(!revFilter)}
+                    />
+                    <div className="d-flex justify-content-end">
+                      <DeckSelectSortForm onChange={setSortMethod} />
+                    </div>
                   </div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody>{deckRows}</tbody>
-        </table>
-      </Modal.Body>
-    </Modal>
+                </th>
+              </tr>
+            </thead>
+            <tbody>{deckRows}</tbody>
+          </table>
+        </Modal.Body>
+      </Modal>
+      {isNarrow && (
+        <div
+          onClick={handleClose}
+          className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+        >
+          <X viewBox="0 0 16 16" />
+        </div>
+      )}
+    </>
   );
 };
 

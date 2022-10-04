@@ -1,8 +1,6 @@
 # FIX
 - Iphone clipboard (export deck / copy url)
 - Crypt sorting in review (works in Deck!)
-- Card ideas, Adv deck selector close buttons same as in draw
-- Inventory lib on mobile
 - Login [?] popup same as forget password
 
 # FEATURES
