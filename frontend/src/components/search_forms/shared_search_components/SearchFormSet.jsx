@@ -11,6 +11,7 @@ import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
   const { playtest, isMobile } = useApp();
+  const maxMenuHeight = isMobile? 350 : 450
 
   const preOptions = Object.keys(setsAndPrecons)
     .filter((i) => playtest || i !== 'PLAYTEST')
@@ -185,9 +186,9 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
             options={options}
             isSearchable={!isMobile}
             menuPlacement="top"
-            maxMenuHeight={isMobile ? 350 : 450}
             filterOption={filterOption}
             name={0}
+            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={onChange}
           />
@@ -199,6 +200,7 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
         options={options}
         onChange={onChange}
         setFormState={setFormState}
+        maxMenuHeight={maxMenuHeight}
       />
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">

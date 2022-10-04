@@ -12,6 +12,11 @@ import {
 const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
   const { isWide, isMobile } = useApp();
   const topOffset = 410
+  const maxMenuHeight = isMobile
+    ? 350
+    : isWide
+      ? 800 - topOffset
+      : 700 - topOffset
 
   const capacity = [
     'any',
@@ -109,13 +114,7 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
             options={options}
             isSearchable={false}
             name={0}
-            maxMenuHeight={
-              isMobile
-                ? 350
-                : isWide
-                  ? 800 - topOffset
-                  : 700 - topOffset
-            }
+            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0].capacity)}
             onChange={onChange}
           />
@@ -128,6 +127,7 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
         setFormState={setFormState}
         withMoreless={true}
         morelessOptions={morelessOptions}
+        maxMenuHeight={maxMenuHeight}
       />
     </>
   );

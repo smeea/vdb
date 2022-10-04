@@ -15,6 +15,11 @@ import { useApp } from 'context';
 const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
   const { isWide, isMobile } = useApp();
   const topOffset = 300
+  const maxMenuHeight = isMobile
+    ? 350
+    : isWide
+      ? 800 - topOffset
+      : 700 - topOffset
 
   const clans = [
     'ANY',
@@ -90,13 +95,7 @@ const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
             options={options}
             isSearchable={!isMobile}
             name={0}
-            maxMenuHeight={
-              isMobile
-                ? 350
-                : isWide
-                  ? 800 - topOffset
-                  : 700 - topOffset
-            }
+            maxMenuHeight={maxMenuHeight}
             value={options.find(
               (obj) => obj.value === value.value[0].toLowerCase()
             )}
@@ -109,6 +108,7 @@ const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
         options={options}
         onChange={onChange}
         setFormState={setFormState}
+        maxMenuHeight={maxMenuHeight}
       />
     </>
   );

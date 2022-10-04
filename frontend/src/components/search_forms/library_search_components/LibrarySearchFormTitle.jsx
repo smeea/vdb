@@ -12,6 +12,11 @@ import { useApp } from 'context';
 const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
   const { isWide, isMobile } = useApp();
   const topOffset = 390
+  const maxMenuHeight = isMobile
+    ? 350
+    : isWide
+      ? 800 - topOffset
+      : 700 - topOffset
 
   const titles = [
     'ANY',
@@ -83,13 +88,7 @@ const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
             options={options}
             isSearchable={false}
             name={0}
-            maxMenuHeight={
-              isMobile
-                ? 350
-                : isWide
-                  ? 800 - topOffset
-                  : 700 - topOffset
-            }
+            maxMenuHeight={maxMenuHeight}
             value={options.find(
               (obj) => obj.value === value.value[0].toLowerCase()
             )}
@@ -102,6 +101,7 @@ const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
         options={options}
         onChange={onChange}
         setFormState={setFormState}
+        maxMenuHeight={maxMenuHeight}
       />
     </>
   );

@@ -6,6 +6,11 @@ import { useApp } from 'context';
 const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
   const { isWide, isMobile } = useApp();
   const topOffset = 525
+  const maxMenuHeight = isMobile
+    ? 350
+    : isWide
+      ? 800 - topOffset
+      : 700 - topOffset
 
   const capacity = [
     'ANY',
@@ -81,13 +86,7 @@ const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
           options={options}
           isSearchable={false}
           name="capacity"
-          maxMenuHeight={
-            isMobile
-              ? 350
-              : isWide
-                ? 800 - topOffset
-                : 700 - topOffset
-          }
+          maxMenuHeight={maxMenuHeight}
           value={options.find((obj) => obj.value === value.capacity)}
           onChange={onChange}
         />

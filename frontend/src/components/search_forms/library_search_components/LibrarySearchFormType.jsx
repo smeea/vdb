@@ -13,6 +13,11 @@ import { useApp } from 'context';
 const LibrarySearchFormType = ({value, onChange, setFormState}) => {
   const { isWide, isMobile } = useApp();
   const topOffset = 210
+  const maxMenuHeight = isMobile
+    ? 350
+    : isWide
+      ? 800 - topOffset
+      : 700 - topOffset
 
   const typesSorted = ['ANY', ...cardtypeSorted];
   const options = [];
@@ -86,13 +91,7 @@ const LibrarySearchFormType = ({value, onChange, setFormState}) => {
             options={options}
             isSearchable={false}
             name={0}
-            maxMenuHeight={
-              isMobile
-                ? 350
-                : isWide
-                  ? 800 - topOffset
-                  : 700 - topOffset
-            }
+            maxMenuHeight={maxMenuHeight}
             value={options.find(
               (obj) => obj.value === value.value[0].toLowerCase()
             )}
@@ -105,6 +104,7 @@ const LibrarySearchFormType = ({value, onChange, setFormState}) => {
         options={options}
         onChange={onChange}
         setFormState={setFormState}
+        maxMenuHeight={maxMenuHeight}
       />
     </>
   );

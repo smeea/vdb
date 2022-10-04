@@ -1,12 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import { useApp } from 'context';
 
 const LibrarySearchFormPoolCost = ({ value, onChange, onMorelessChange }) => {
-  const { isWide, isMobile } = useApp();
-  const topOffset = 480
-
   const pool = ['ANY', '0', '1', '2', '3', '4', '5', '6'];
   const options = [];
 
@@ -70,13 +66,6 @@ const LibrarySearchFormPoolCost = ({ value, onChange, onMorelessChange }) => {
             options={options}
             isSearchable={false}
             name="pool"
-            maxMenuHeight={
-              isMobile
-                ? 350
-                : isWide
-                  ? 800 - topOffset
-                  : 700 - topOffset
-            }
             value={options.find((obj) => obj.value === value.pool)}
             onChange={onChange}
           />

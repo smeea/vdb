@@ -18,6 +18,7 @@ const SearchFormPrecon = ({
   onChangeOptions,
 }) => {
   const { playtest, isMobile } = useApp();
+  const maxMenuHeight = isMobile ? 350 : 450
 
   const preOptions = [];
 
@@ -187,9 +188,9 @@ const SearchFormPrecon = ({
             options={options}
             isSearchable={!isMobile}
             menuPlacement="top"
-            maxMenuHeight={isMobile ? 350 : 450}
             filterOption={filterOption}
             name={0}
+            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={onChange}
           />
@@ -201,6 +202,7 @@ const SearchFormPrecon = ({
         options={options}
         onChange={onChange}
         setFormState={setFormState}
+        maxMenuHeight={maxMenuHeight}
       />
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">
