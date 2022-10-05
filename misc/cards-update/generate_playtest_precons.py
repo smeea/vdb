@@ -6,9 +6,9 @@ from deck_import import deck_import
 
 
 playtest_files = {
-    "v5-precon-ravnos-round1.txt": "PR",
-    "v5-precon-tzimisce-round1.txt": "PTz",
-    "v5-precon-salubri-round1.txt": "PSal",
+    "playtest-precon-ravnos-round1.txt": "PR",
+    "playtest-precon-tzimisce-round1.txt": "PTz",
+    "playtest-precon-salubri-round1.txt": "PSal",
 }
 
 playtest_cards = {}
