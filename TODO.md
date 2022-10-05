@@ -7,7 +7,6 @@
 - Add 3rd Edition Starters Kit
 - Check TWD
 - Show changes from base deck in PDA
-- Show error on deck change revert (network problem, etc)
 
 # MAYBE LATER FEATURES
 - Boilerplates modules for new decks

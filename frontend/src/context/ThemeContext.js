@@ -84,7 +84,7 @@ const light = [
   '--bg-primary: #ffffff',
   '--bg-secondary: #e0e5ff',
   '--bg-third: #f0f5ff',
-  '--bg-error: #f06060',
+  '--bg-error: #f04040',
   '--bg-error-secondary: #ff8080',
   '--bg-warning: #ffb050',
   '--bg-button: #ffffff',
