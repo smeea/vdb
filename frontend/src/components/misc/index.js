@@ -1,3 +1,4 @@
+export { default as Offline } from './Offline.jsx';
 export { default as Banner } from './Banner.jsx';
 export { default as ErrorOverlay } from './ErrorOverlay.jsx';
 export { default as NewLibraryCard } from './NewLibraryCard.jsx';

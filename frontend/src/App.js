@@ -20,6 +20,7 @@ import Diff from 'pages/Diff.jsx';
 import Inventory from 'pages/Inventory.jsx';
 import Library from 'pages/Library.jsx';
 import Navigation from 'pages/Navigation.jsx';
+import Offline from 'components/misc/Offline.jsx';
 import Review from 'pages/Review.jsx';
 import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
@@ -41,7 +42,7 @@ const TwdCardsHistory = React.lazy(() => import('pages/TwdCardsHistory.jsx'));
 const TwdCheck = React.lazy(() => import('pages/TwdCheck.jsx'));
 
 const App = (props) => {
-  const { lastDeckId } = useApp();
+  const { isOnline, lastDeckId } = useApp();
 
   return (
     <div className="App">
@@ -49,6 +50,7 @@ const App = (props) => {
         <SearchFormsProvider>
           <ThemeProvider>
             <Navigation />
+            {!isOnline && <Offline />}
           </ThemeProvider>
 
           <SearchResultsProvider>

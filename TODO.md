@@ -7,12 +7,12 @@
 - Add 3rd Edition Starters Kit
 - Check TWD
 - Show changes from base deck in PDA
-- Detect offline and show warning
 - Show error on deck change revert (network problem, etc)
 
 # MAYBE LATER FEATURES
 - Boilerplates modules for new decks
 - Tags for TWD/PDA
+- Decks set loading and analyzing
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in excel to frontend

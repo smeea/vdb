@@ -28,6 +28,7 @@ export const AppProvider = (props) => {
   const [email, setEmail] = useState(undefined);
   const [inventoryKey, setInventoryKey] = useState(undefined);
   const [lang, setLang] = useState('en-EN');
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState(undefined);
   const [isPlaytester, setIsPlaytester] = useState(undefined);
   const [playtest, setPlaytest] = useState(undefined);
@@ -285,6 +286,16 @@ export const AppProvider = (props) => {
     setRecentDecks(decks);
     setLocalStorage('recentDecks', decks);
   };
+
+  useEffect(() => {
+    window.addEventListener('offline', () => setIsOnline(false));
+    window.addEventListener('online', () => setIsOnline(true));
+
+    return () => {
+      window.removeEventListener('offline', () => setIsOnline(false));
+      window.removeEventListener('online', () => setIsOnline(true));
+    }
+  }, []);
 
   useLayoutEffect(() => {
     initFromStorage(
@@ -782,6 +793,7 @@ export const AppProvider = (props) => {
         setShowFloatingButtons,
         showMenuButtons,
         setShowMenuButtons,
+        isOnline,
 
         // USER Context
         whoAmI,
