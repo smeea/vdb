@@ -6,7 +6,6 @@ import json
 
 from deck_export import deck_export
 from deck_import import deck_import
-from deck_proxy import deck_proxy
 from deck_recommendation import deck_recommendation
 from api import app, db, login
 from models import Deck
@@ -614,14 +613,3 @@ def deck_export_route():
         result = deck_export(d.cards, request.json["format"])
 
     return result
-
-
-@app.route("/api/decks/proxy", methods=["POST"])
-def deck_proxy_route():
-    cards = request.json["cards"]
-    lang = request.json["lang"] if "lang" in request.json else "en-EN"
-    pdf = deck_proxy(cards, lang)
-    if pdf:
-        return pdf
-    else:
-        abort(400)

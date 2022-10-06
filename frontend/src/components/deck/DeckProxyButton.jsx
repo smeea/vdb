@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { saveAs } from 'file-saver';
+import { jsPDF } from 'jspdf';
 import {
   Spinner,
   ButtonGroup,
@@ -7,7 +7,10 @@ import {
   DropdownButton,
 } from 'react-bootstrap';
 import Printer from 'assets/images/icons/printer.svg';
-import { ButtonIconed, DeckProxySelectModal } from 'components';
+import { CardImage, ButtonIconed, DeckProxySelectModal } from 'components';
+import { cryptSort } from 'utils';
+import { useDeckLibrary } from 'hooks';
+import { cardtypeSortedFull } from 'utils/constants';
 import { useApp } from 'context';
 
 const DeckProxyButton = ({
@@ -17,11 +20,9 @@ const DeckProxyButton = ({
   noText,
   inDiff,
 }) => {
-  const { lang, inventoryMode, setShowFloatingButtons, setShowMenuButtons } =
-    useApp();
+  const { inventoryMode, setShowFloatingButtons, setShowMenuButtons, cryptDeckSort, nativeLibrary, lang } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
-  const [deckError, setDeckError] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState(undefined);
 
   const ButtonOptions = (
@@ -47,80 +48,101 @@ const DeckProxyButton = ({
   );
 
   const proxyDeck = () => {
-    const cards = {};
-    Object.keys(deck.crypt).map((key) => {
-      if (deck.crypt[key].q > 0) {
-        cards[key] = {
-          q: deck.crypt[key].q,
-        };
-      }
-    });
-    Object.keys(deck.library).map((key) => {
-      if (deck.library[key].q > 0) {
-        cards[key] = {
-          q: deck.library[key].q,
-        };
-      }
-    });
-    proxyCards(cards);
+    proxyCards(deck.crypt, deck.library);
   };
 
   const proxyMissing = () => {
-    const cards = {};
-    Object.keys(missingCrypt).map((key) => {
-      if (missingCrypt[key].q > 0) {
-        cards[key] = {
-          q: missingCrypt[key].q,
-        };
-      }
-    });
-    Object.keys(missingLibrary).map((key) => {
-      if (missingLibrary[key].q > 0) {
-        cards[key] = {
-          q: missingLibrary[key].q,
-        };
-      }
-    });
-    proxyCards(cards);
+    proxyCards(missingCrypt, missingLibrary);
   };
 
-  const proxyCards = (cards) => {
-    setDeckError(false);
-    if (deck) {
-      setSpinnerState(true);
+  const proxyCards = (crypt, library) => {
+    setSpinnerState(true);
 
-      const url = `${process.env.API_URL}decks/proxy`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          cards: cards,
-          lang: lang,
-        }),
-      };
+    const cryptSorted = cryptSort(Object.values(crypt).filter(card => card.q > 0), cryptDeckSort)
+    const { libraryByType } = useDeckLibrary(library, nativeLibrary);
+    const cards = []
 
-      const fetchPromise = fetch(url, options);
+    cryptSorted.map(card => {
+      for (i = 0; i < card.q; i++) {
+        cards.push(getUrl(card.c))
+      }
+    })
 
-      fetchPromise
-        .then((response) => response.text())
-        .then((data) => {
-          const file = 'data:application/pdf;base64,' + data;
-          saveAs(file, `${deck['name']}.pdf`);
-          setSpinnerState(false);
-          setShowMenuButtons(false);
-          setShowFloatingButtons(true);
+    cardtypeSortedFull.map(type => {
+      if (libraryByType[type]) {
+        libraryByType[type].map(card => {
+          for (i = 0; i < card.q; i++) {
+            cards.push(getUrl(card.c))
+          }
         })
-        .catch((error) => {
-          setSpinnerState(false);
-        });
-    } else {
-      setDeckError(true);
-    }
-  };
+      }
+    })
+
+    const pdf = new jsPDF()
+    pdf.setFillColor(60, 60, 60)
+
+    const w = 63
+    const h = 88
+    const gap = 0.25
+    const left_margin = 10
+    const top_margin = 10
+
+    let x_counter = 0
+    let y_counter = 0
+    let page = 1
+
+    Object.values(cards).map(url => {
+      const img = document.createElement("img");
+      img.src = url
+
+      pdf.rect(
+        (left_margin + x_counter * (w + gap)),
+        (top_margin + y_counter * (h + gap)),
+        (w + gap),
+        (h + gap),
+        "F",
+      )
+
+      pdf.addImage(img,
+        'JPEG',
+        (w + gap) * x_counter + left_margin,
+        (h + gap) * y_counter + top_margin,
+        w,
+        h)
+
+      x_counter += 1
+
+      if (x_counter == 3) {
+        y_counter += 1
+        x_counter = 0
+      }
+
+      if (y_counter == 3 && page * 9 < cards.length) {
+        page += 1
+        pdf.addPage()
+        pdf.setFillColor(60, 60, 60)
+        y_counter = 0
+      }
+    })
+
+    pdf.save(`${deck['name']}.pdf`);
+    setSpinnerState(false)
+  }
+
+  const getUrl = (card) => {
+    let url = null
+      if (card.Id > 200000) {
+        url = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
+          .toLowerCase()
+          .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''
+          }.jpg`;
+      } else {
+        url = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
+          .toLowerCase()
+          .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
+      }
+    return url
+  }
 
   return (
     <>
@@ -158,11 +180,6 @@ const DeckProxyButton = ({
         >
           {ButtonOptions}
         </DropdownButton>
-      )}
-      {deckError && (
-        <div className="d-flex justify-content-start">
-          <span className="login-error">Select deck to proxy</span>
-        </div>
       )}
       {showSelectModal && (
         <DeckProxySelectModal

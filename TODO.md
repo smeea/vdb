@@ -2,12 +2,14 @@
 - Iphone clipboard (export deck / copy url)
 - Crypt sorting in review (works in Deck!)
 - Fix repo to work without playtest files
+- if I sort library cards "bcp only" then it lists some cards not in print and not in POD (Pack Alpha, Staredown..)
+- Proxy respect set + language
+- Proxy for cards selection
 
 # FEATURES
 - Add FoL cards
 - Add 3rd Edition Starters Kit
 - Check TWD
-- Show changes from base deck in PDA
 
 # MAYBE LATER FEATURES
 - Boilerplates modules for new decks
@@ -15,9 +17,9 @@
 - Decks set loading and analyzing
 
 # IMPROVE TECHNOLOGY - FRONTEND
+- Refactor DeckProxyButton + lazyload
 - Move deck/inventory export in excel to frontend
 - Move deck/inventory import to frontend
-- Move pdf proxy to frontend
 - Refactor CSS
 - Fetching data with react-router
 
