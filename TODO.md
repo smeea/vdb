@@ -3,7 +3,7 @@
 - Crypt sorting in review (works in Deck!)
 - Fix repo to work without playtest files
 - if I sort library cards "bcp only" then it lists some cards not in print and not in POD (Pack Alpha, Staredown..)
-- Proxy respect set + language
+- DeckRecommendation error
 
 # FEATURES
 - Add FoL cards

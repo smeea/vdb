@@ -51,6 +51,13 @@ const DeckProxyButton = ({
     proxyCards(deck.crypt, deck.library);
   };
 
+  const checkImage = (url) => {
+    const request = new XMLHttpRequest()
+    request.open("GET", url);
+    request.send()
+    return request.status == 200
+  }
+
   const proxyMissing = () => {
     proxyCards(missingCrypt, missingLibrary);
   };
@@ -61,19 +68,18 @@ const DeckProxyButton = ({
     const cryptSorted = cryptSort(Object.values(crypt).filter(card => card.q > 0), cryptDeckSort)
     const { libraryByType } = useDeckLibrary(library, nativeLibrary);
     const cards = []
+    let cardsTotal = 0
 
     cryptSorted.map(card => {
-      for (i = 0; i < card.q; i++) {
-        cards.push(getUrl(card.c))
-      }
+      cards.push({url: getUrl(card.c, card.set, lang), q: card.q})
+      cardsTotal += card.q
     })
 
     cardtypeSortedFull.map(type => {
       if (libraryByType[type]) {
         libraryByType[type].map(card => {
-          for (i = 0; i < card.q; i++) {
-            cards.push(getUrl(card.c))
-          }
+          cards.push({url: getUrl(card.c, card.set, lang), q: card.q})
+          cardsTotal += card.q
         })
       }
     })
@@ -91,46 +97,46 @@ const DeckProxyButton = ({
     let y_counter = 0
     let page = 1
 
-    Object.values(cards).map(url => {
-      const img = document.createElement("img");
-      img.src = url
-
-      pdf.rect(
-        (left_margin + x_counter * (w + gap)),
-        (top_margin + y_counter * (h + gap)),
-        (w + gap),
-        (h + gap),
-        "F",
-      )
-
-      pdf.addImage(img,
-        'JPEG',
-        (w + gap) * x_counter + left_margin,
-        (h + gap) * y_counter + top_margin,
-        w,
-        h)
-
-      x_counter += 1
-
-      if (x_counter == 3) {
-        y_counter += 1
-        x_counter = 0
+    Object.values(cards).map(card => {
+      const img = new Image()
+      if (checkImage(card.url.langset)) {
+        img.src = card.url.langset
+      } else {
+        img.src = card.url.base
       }
 
-      if (y_counter == 3 && page * 9 < cards.length) {
-        page += 1
-        pdf.addPage()
-        pdf.setFillColor(60, 60, 60)
-        y_counter = 0
+      for (i = 0; i < card.q; i++) {
+        pdf.addImage(img,
+          'JPEG',
+          (w + gap) * x_counter + left_margin,
+          (h + gap) * y_counter + top_margin,
+          w,
+          h)
+
+        x_counter += 1
+
+        if (x_counter == 3) {
+          y_counter += 1
+          x_counter = 0
+        }
+
+        if (y_counter == 3 && page * 9 < cardsTotal) {
+          page += 1
+          pdf.addPage()
+          pdf.setFillColor(60, 60, 60)
+          y_counter = 0
+        }
       }
+
     })
 
     pdf.save(`${deck['name']}.pdf`);
     setSpinnerState(false)
   }
 
-  const getUrl = (card) => {
+  const getUrl = (card, set, language) => {
     let url = null
+    let urlLangSet = null
       if (card.Id > 200000) {
         url = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
           .toLowerCase()
@@ -141,7 +147,16 @@ const DeckProxyButton = ({
           .toLowerCase()
           .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
       }
-    return url
+
+    if (lang !== 'en-EN' || set) {
+      if (card.Id > 200000) {
+        urlLangSet = `${process.env.ROOT_URL}images/cards/${set ? `set/${set}` : lang }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''}.jpg`;
+      } else {
+        urlLangSet = `${process.env.ROOT_URL}images/cards/${set ? `set/${set}` : lang}/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
+      }
+    }
+
+    return {base: url, langset: urlLangSet}
   }
 
   return (
