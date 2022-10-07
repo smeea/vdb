@@ -53,7 +53,7 @@ const DeckProxyButton = ({
 
   const checkImage = (url) => {
     const request = new XMLHttpRequest()
-    request.open("GET", url);
+    request.open("GET", url, false);
     request.send()
     return request.status == 200
   }
@@ -99,13 +99,13 @@ const DeckProxyButton = ({
 
     Object.values(cards).map(card => {
       const img = new Image()
-      if (checkImage(card.url.langset)) {
+      if (card.url.langset && checkImage(card.url.langset)) {
         img.src = card.url.langset
       } else {
         img.src = card.url.base
       }
 
-      for (i = 0; i < card.q; i++) {
+      for (let i = 0; i < card.q; i++) {
         pdf.addImage(img,
           'JPEG',
           (w + gap) * x_counter + left_margin,
