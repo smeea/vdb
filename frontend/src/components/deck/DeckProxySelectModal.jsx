@@ -19,16 +19,18 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
 
   useEffect(() => {
     const cards = {};
-    Object.keys(deck.crypt).map((key) => {
-      cards[key] = {
+    Object.keys(deck.crypt).map((cardid) => {
+      cards[cardid] = {
         print: false,
-        q: deck.crypt[key].q,
+        c: deck.crypt[cardid].c,
+        q: deck.crypt[cardid].q,
       };
     });
-    Object.keys(deck.library).map((key) => {
-      cards[key] = {
+    Object.keys(deck.library).map((cardid) => {
+      cards[cardid] = {
         print: false,
-        q: deck.library[key].q,
+        c: deck.library[cardid].c,
+        q: deck.library[cardid].q,
       };
     });
 
@@ -38,12 +40,12 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
   const handleToggleSelectButton = () => {
     const newState = proxySelected;
     if (toggleState) {
-      Object.keys(newState).map((key) => {
-        newState[key].print = false;
+      Object.keys(newState).map((cardid) => {
+        newState[cardid].print = false;
       });
     } else {
-      Object.keys(newState).map((key) => {
-        newState[key].print = true;
+      Object.keys(newState).map((cardid) => {
+        newState[cardid].print = true;
       });
     }
     setProxySelected(newState);
@@ -151,20 +153,29 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
   };
 
   const handleGenerateButton = () => {
-    const cards = {};
+    const crypt = {};
+    const library = {};
     Object.keys(proxySelected)
-      .filter((key) => {
-        return proxySelected[key].print;
+      .filter((cardid) => {
+        return proxySelected[cardid].print;
       })
-      .map((key) => {
-        if (proxySelected[key].q > 0) {
-          cards[key] = {
-            q: proxySelected[key].q,
-            set: proxySelected[key].set,
+      .map((cardid) => {
+        if (proxySelected[cardid].q > 0) {
+          const card = {
+            c: proxySelected[cardid].c,
+            q: proxySelected[cardid].q,
+            set: proxySelected[cardid].set,
           };
+
+          if (cardid > 200000) {
+            crypt[cardid] = card
+          } else {
+            library[cardid] = card
+          }
         }
       });
-    proxyCards(cards);
+
+    proxyCards(crypt, library);
     handleClose();
   };
 

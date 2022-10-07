@@ -4,7 +4,6 @@
 - Fix repo to work without playtest files
 - if I sort library cards "bcp only" then it lists some cards not in print and not in POD (Pack Alpha, Staredown..)
 - Proxy respect set + language
-- Proxy for cards selection
 
 # FEATURES
 - Add FoL cards
@@ -15,6 +14,7 @@
 - Boilerplates modules for new decks
 - Tags for TWD/PDA
 - Decks set loading and analyzing
+- Offline decks storage
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Refactor DeckProxyButton + lazyload
