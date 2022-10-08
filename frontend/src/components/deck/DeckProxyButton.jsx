@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { jsPDF } from 'jspdf';
 import {
   Spinner,
   ButtonGroup,
@@ -17,7 +16,6 @@ const DeckProxyButton = ({
   deck,
   missingCrypt,
   missingLibrary,
-  noText,
   inDiff,
 }) => {
   const { inventoryMode, setShowFloatingButtons, setShowMenuButtons, cryptDeckSort, nativeLibrary, lang } = useApp();
@@ -27,11 +25,11 @@ const DeckProxyButton = ({
 
   const ButtonOptions = (
     <>
-      <Dropdown.Item href="" onClick={() => proxyDeck()}>
+      <Dropdown.Item href="" onClick={() => proxyCards(deck.crypt, deck.library)}>
         Full Deck
       </Dropdown.Item>
       {inventoryMode && (
-        <Dropdown.Item href="" onClick={() => proxyMissing()}>
+        <Dropdown.Item href="" onClick={() => proxyCards(missingCrypt, missingLibrary)}>
           Missing in Inventory
         </Dropdown.Item>
       )}
@@ -47,10 +45,6 @@ const DeckProxyButton = ({
     </>
   );
 
-  const proxyDeck = () => {
-    proxyCards(deck.crypt, deck.library);
-  };
-
   const checkImage = (url) => {
     const request = new XMLHttpRequest()
     request.open("GET", url, false);
@@ -58,11 +52,32 @@ const DeckProxyButton = ({
     return request.status == 200
   }
 
-  const proxyMissing = () => {
-    proxyCards(missingCrypt, missingLibrary);
-  };
+  const getUrl = (card, set, language) => {
+    let url = null
+    let urlLangSet = null
+      if (card.Id > 200000) {
+        url = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
+          .toLowerCase()
+          .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''
+          }.jpg`;
+      } else {
+        url = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
+          .toLowerCase()
+          .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
+      }
 
-  const proxyCards = (crypt, library) => {
+    if (lang !== 'en-EN' || set) {
+      if (card.Id > 200000) {
+        urlLangSet = `${process.env.ROOT_URL}images/cards/${set ? `set/${set}` : lang }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''}.jpg`;
+      } else {
+        urlLangSet = `${process.env.ROOT_URL}images/cards/${set ? `set/${set}` : lang}/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
+      }
+    }
+
+    return {base: url, langset: urlLangSet}
+  }
+
+  const proxyCards = async (crypt, library) => {
     setSpinnerState(true);
 
     const cryptSorted = cryptSort(Object.values(crypt).filter(card => card.q > 0), cryptDeckSort)
@@ -84,6 +99,7 @@ const DeckProxyButton = ({
       }
     })
 
+    let { jsPDF } = await import('jspdf');
     const pdf = new jsPDF()
     pdf.setFillColor(60, 60, 60)
 
@@ -134,37 +150,12 @@ const DeckProxyButton = ({
     setSpinnerState(false)
   }
 
-  const getUrl = (card, set, language) => {
-    let url = null
-    let urlLangSet = null
-      if (card.Id > 200000) {
-        url = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
-          .toLowerCase()
-          .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''
-          }.jpg`;
-      } else {
-        url = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
-          .toLowerCase()
-          .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-      }
-
-    if (lang !== 'en-EN' || set) {
-      if (card.Id > 200000) {
-        urlLangSet = `${process.env.ROOT_URL}images/cards/${set ? `set/${set}` : lang }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''}.jpg`;
-      } else {
-        urlLangSet = `${process.env.ROOT_URL}images/cards/${set ? `set/${set}` : lang}/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-      }
-    }
-
-    return {base: url, langset: urlLangSet}
-  }
-
   return (
     <>
       {inDiff ? (
         <ButtonIconed
           variant="secondary"
-          onClick={() => proxyMissing()}
+          onClick={() => proxyCards(missingCrypt, missingLibrary)}
           title="Proxy Missing Cards to PDF ready for print"
           icon={<Printer />}
           text="Proxy Missing"
@@ -172,24 +163,24 @@ const DeckProxyButton = ({
       ) : (
         <DropdownButton
           as={ButtonGroup}
-          variant={noText ? 'primary' : 'secondary'}
+          variant='secondary'
           title={
             <div
-              title="Proxy PDF"
+              title="Create PDF with Cards"
               className="d-flex justify-content-center align-items-center"
             >
-              <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
+              <div className="d-flex pe-2">
                 {spinnerState ? (
                   <Spinner animation="border" size="sm" />
                 ) : (
                   <Printer
-                    width={noText ? '18' : '18'}
-                    height={noText ? '22' : '18'}
+                    width="18"
+                    height="18"
                     viewBox="0 0 18 16"
                   />
                 )}
               </div>
-              {!noText && 'PDF Proxy'}
+              PDF Proxy
             </div>
           }
         >

@@ -1,16 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { Row, Col, FormControl, Stack, Button } from 'react-bootstrap';
-import { saveAs } from 'file-saver';
 import X from 'assets/images/icons/x.svg';
 import Download from 'assets/images/icons/download.svg';
 import Upload from 'assets/images/icons/upload.svg';
 import { ButtonIconed, ErrorOverlay } from 'components';
-// import { useApp } from 'context';
 
 const TwdDeck = ({ deck, eventId, setEventId }) => {
-  // const {  } = useApp();
-
-  // const [badCards, setBadCards] = useState({});
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
@@ -53,14 +48,16 @@ const TwdDeck = ({ deck, eventId, setEventId }) => {
     }
   };
 
-  const saveDeck = () => {
+  const saveDeck = async (text, name) => {
     setImportError(false);
 
-    if (deckText) {
+    if (text) {
       setEmptyError(false);
-      const file = new File([deckText], `${eventId}.txt`, {
+      const file = new File([text], `${name}.txt`, {
         type: 'text/plain;charset=utf-8',
       });
+
+      let { saveAs } = await import('file-saver');
       saveAs(file);
     } else {
       setEmptyError(true);
@@ -134,7 +131,7 @@ const TwdDeck = ({ deck, eventId, setEventId }) => {
         <Stack direction="horizontal" gap={2}>
           <ButtonIconed
             variant="primary"
-            onClick={saveDeck}
+            onClick={() => saveDeck(deckText, eventId)}
             title="Save to File"
             icon={<Download />}
             text="Save to File"

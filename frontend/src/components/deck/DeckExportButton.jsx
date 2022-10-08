@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { saveAs } from 'file-saver';
 import {
   Spinner,
   Dropdown,
@@ -100,6 +99,11 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
     setShowFloatingButtons(true);
   };
 
+  const saveFile = async (file, name) => {
+    let { saveAs } = await import('file-saver');
+    saveAs(file, name)
+  }
+
   const saveDeck = (format) => {
     setError(false);
 
@@ -153,7 +157,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
             'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
           const file = `${mime};base64,${data}`;
-          saveAs(file, `${deckName}.${format}`);
+          saveFile(file, `${deckName}.${format}`);
           setSpinnerState(false);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
@@ -191,81 +195,77 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
       const file = new File([exportText], `${deckName} [${format}].txt`, {
         type: 'text/plain;charset=utf-8',
       });
-      saveAs(file);
+      saveFile(file);
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
     }
   };
 
-  const exportAll = (format) => {
+  const exportAll = async(format) => {
     setError(false);
-    import('jszip').then((Jszip) => {
-      if (format === 'xlsx') {
-        setSpinnerState(true);
+    const Jszip = await import('jszip')
+    const zip = new Jszip();
+    const date = new Date().toISOString().substring(0, 10);
 
-        const url = `${process.env.API_URL}${
+    if (format === 'xlsx') {
+      setSpinnerState(true);
+
+      const url = `${process.env.API_URL}${
           inInventory ? 'inventory' : 'decks'
         }/export`;
-        const options = {
-          method: 'POST',
-          mode: 'cors',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: null,
-        };
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: null,
+      };
 
-        const zip = new Jszip();
-        const date = new Date().toISOString().substring(0, 10);
+      const folder = zip.folder(`Decks ${date} [${format}]`);
 
-        const folder = zip.folder(`Decks ${date} [${format}]`);
+      const fetchPromises = Object.keys(decks).map((deckid) => {
+        options.body = JSON.stringify({
+          deckid: deckid,
+          format: format,
+          src: 'my',
+        });
 
-        const fetchPromises = Object.keys(decks).map((deckid) => {
-          options.body = JSON.stringify({
-            deckid: deckid,
-            format: format,
-            src: 'my',
-          });
-
-          return fetch(url, options)
-            .then((response) => response.text())
-            .then((data) => {
-              folder.file(`${decks[deckid].name}.${format}`, data, {
-                base64: true,
-              });
-
-              setSpinnerState(false);
-              setShowMenuButtons(false);
-              setShowFloatingButtons(true);
-            })
-            .catch((error) => {
-              setSpinnerState(false);
-              setError(true);
+        return fetch(url, options)
+          .then((response) => response.text())
+          .then((data) => {
+            folder.file(`${decks[deckid].name}.${format}`, data, {
+              base64: true,
             });
-        });
 
-        Promise.all(fetchPromises).then(() => {
-          zip
-            .generateAsync({ type: 'blob' })
-            .then((blob) => saveAs(blob, `Decks ${date} [${format}].zip`));
-          setSpinnerState(false);
-        });
-      } else {
-        const zip = new Jszip();
-        const date = new Date().toISOString().substring(0, 10);
+            setSpinnerState(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
+          })
+          .catch((error) => {
+            setSpinnerState(false);
+            setError(true);
+          });
+      });
 
-        Object.values(decks).map((deck) => {
-          zip
-            .folder(`Decks ${date} [${format}]`)
-            .file(`${deck.name}.txt`, useDeckExport(deck, format));
-        });
-
+      Promise.all(fetchPromises).then(() => {
         zip
           .generateAsync({ type: 'blob' })
-          .then((blob) => saveAs(blob, `Decks ${date} [${format}].zip`));
-      }
-    });
+          .then((blob) => saveFile(blob, `Decks ${date} [${format}].zip`));
+        setSpinnerState(false);
+      });
+    } else {
+      Object.values(decks).map((deck) => {
+        zip
+          .folder(`Decks ${date} [${format}]`)
+          .file(`${deck.name}.txt`, useDeckExport(deck, format));
+      });
+
+      zip
+        .generateAsync({ type: 'blob' })
+        .then((blob) => saveFile(blob, `Decks ${date} [${format}].zip`));
+    }
   };
 
   return (

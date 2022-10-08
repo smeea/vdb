@@ -17,7 +17,6 @@
 - Offline decks storage
 
 # IMPROVE TECHNOLOGY - FRONTEND
-- Refactor DeckProxyButton + lazyload
 - Move deck/inventory export in excel to frontend
 - Move deck/inventory import to frontend
 - Refactor CSS
