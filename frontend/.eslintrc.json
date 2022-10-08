@@ -1,26 +1,28 @@
 {
-	"env": {
-		"browser": true,
-		"es2021": true
-	},
 	"extends": [
-		"plugin:react/recommended",
-		"google",
-		"prettier"
+    "eslint:recommended",
+    "plugin:react/recommended"
 	],
-	"parserOptions": {
-		"ecmaFeatures": {
-			"jsx": true
-		},
-		"ecmaVersion": 12,
-		"sourceType": "module"
-	},
 	"plugins": [
-		"react"
-	],
+    "react",
+    "import"
+  ],
+	"parserOptions": {
+		"ecmaVersion": 2021,
+		"sourceType": "module",
+    "ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
 	"rules": {
 		"require-jsdoc": "off",
-		"react/prop-types": "off"
+		"react/prop-types": "off",
+		"import/no-unresolved": 0
 	},
 	"settings": {
 		"react": {

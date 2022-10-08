@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "parcel serve index.html",
-    "build": "parcel build index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build index.html --no-cache",
+    "lint": "eslint \"src/**/*.{js,jsx}\""
   },
   "author": "Vadim Matveev",
   "license": "MIT",
@@ -22,8 +22,6 @@
     "buffer": "^6.0.3",
     "dotenv": "^16.0.3",
     "eslint": "^8.24.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.8",
     "parcel": "^2.7.0",
     "prettier": "^2.7.1",
@@ -32,6 +30,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
+    "eslint-plugin-import": "^2.26.0",
     "file-saver": "^2.0.5",
     "jspdf": "^2.5.1",
     "jszip": "^3.10.1",
