@@ -19,11 +19,6 @@ frontend/dist/*
 !frontend/dist/twd_cards_history.json
 !frontend/dist/cardbase_crypt.*
 !frontend/dist/cardbase_lib.*
-misc/cards-update/vtescrypt_playtest.csv
-misc/cards-update/vteslib_playtest.csv
-misc/cards-update/cardbase_crypt_playtest.json
-misc/cards-update/cardbase_lib_playtest.json
-misc/cards-update/playtest-precon-*
 frontend/dist/images/cards/en-EN/abaddong7.jpg
 frontend/dist/images/cards/en-EN/adrinomanauarag7.jpg
 frontend/dist/images/cards/en-EN/angelguerrerog7.jpg
@@ -70,3 +65,8 @@ frontend/dist/images/cards/en-EN/vozhdofsofia.jpg
 frontend/dist/images/cards/en-EN/whisperg7.jpg
 frontend/dist/images/cards/en-EN/yaelg7.jpg
 frontend/dist/images/cards/en-EN/zafirag7.jpg
+misc/cards-update/vtescrypt_playtest.csv
+misc/cards-update/vteslib_playtest.csv
+misc/cards-update/cardbase_crypt_playtest.json
+misc/cards-update/cardbase_lib_playtest.json
+misc/cards-update/playtest-precon-*

@@ -710,7 +710,7 @@ const missingCostCheck = (logic, filterCost, cardCost) => {
 };
 
 const cardDates = (card, addPromo = false) => {
-  const cardSets = Object.keys(card.Set).filter((set) => set !== 'Promo');
+  const cardSets = Object.keys(card.Set).filter((set) => set !== 'Promo' && set !== 'PLAYTEST');
   const setsDates = cardSets
     .map((key) => setsAndPrecons[key].date)
     .filter((date) => date);

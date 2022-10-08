@@ -2,8 +2,6 @@
 - Iphone clipboard (export deck / copy url)
 - Crypt sorting in review (works in Deck!)
 - Fix repo to work without playtest files
-- if I sort library cards "bcp only" then it lists some cards not in print and not in POD (Pack Alpha, Staredown..)
-- DeckRecommendation error
 
 # FEATURES
 - Add FoL cards

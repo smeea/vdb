@@ -40,7 +40,6 @@ const DeckRecommendation = ({ setShow, isAuthor, deck }) => {
   };
 
   if (!crypt && !library) getRecommendation();
-  setShowFloatingButtons(false);
 
   return (
     <>
