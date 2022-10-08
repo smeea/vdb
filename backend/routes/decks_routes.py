@@ -491,7 +491,7 @@ def clone_deck_route(deckid):
         set, precon = deckid.split(":")
 
         with open("preconDecks.json", "r") as precons_cards_file, open(
-            "setsAndPrecons.json", "r"
+            "../frontend/src/assets/data/setsAndPrecons.json", "r"
         ) as precons_data_file:
             precon_cards = json.load(precons_cards_file)
             precon_data = json.load(precons_data_file)

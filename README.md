@@ -39,20 +39,20 @@ On Windows and MacOS commands may be different (I recommend using WSL on Windows
 Start backend:
 ```
     cd backend
-    python -m venv venv
+    python -m venv venv                                  # ONLY ON FIRST RUN
     source venv/bin/activate
-    python -m pip install -r requirements.txt
-    flask db init
-    flask db migrate
-    flask db upgrade
+    python -m pip install -r requirements.txt            # ONLY ON FIRST RUN
+    flask db init                                        # ONLY ON FIRST RUN
+    flask db migrate                                     # ONLY ON FIRST RUN
+    flask db upgrade                                     # ONLY ON FIRST RUN
     flask run
 ```
 
 Start frontend:
 ```
     cd backend
-    npm install
-    npx parcel serve index.html
+    npm install                                          # ONLY ON FIRST RUN
+    npm run start
 ```
 
 Now go to http://localhost:1234 in the browser and you are ready to go.
@@ -62,11 +62,11 @@ Now go to http://localhost:1234 in the browser and you are ready to go.
 For production, in addition to the steps above, you should at least:
 * setup web-server instead of `parcel serve` embedded server
 * setup wsgi-server instead of `flask run` embedded server
-* build frontend for production (see your prefered bundler documentation, for `parcel` use `parcel build --no-cache index.html`)
+* build frontend for production (see your prefered bundler documentation, for `parcel` use `npm run build`)
 * change `app.config['SECRET_KEY']` in `backend/config.py`
 
 For reference:
-Public instance at https://vdb.im runs from master branch without any changes using `gunicorn` (`gunicorn wsgi:app`) and `nginx` (sample configuration is in `/misc/nginx.conf`).
+Public instance at https://vdb.im runs from master branch without any changes using `gunicorn` (`gunicorn wsgi:app`) and `nginx` (sample configuration is in `misc/nginx.conf`).
 
 
 ## MAINTENANCE
@@ -88,22 +88,24 @@ To update with new Playtest edit the following files:
 Download source files from upstream and create new resources (it will copy files where necessary):
 ```
     cd misc/cards-update
+    python -m venv venv                                  # ONLY ON FIRST RUN
     source venv/bin/activate
-    ./download_resources.sh          # DOWNLOAD OFFICIAL CARDBASE/RULINGS/TWD FILES
-    ./create_resources.sh            # GENERATE VDB FILES FROM DOWNLOADED RESOURCES
-    python download_card_images.py   # UPDATE IMAGES (ONLY ENGLISH)
+    python -m pip install -r requirements.txt            # ONLY ON FIRST RUN
+    ./download_resources.sh                              # DOWNLOAD OFFICIAL CARDBASE/RULINGS/TWD FILES
+    ./create_resources.sh                                # GENERATE VDB FILES FROM DOWNLOADED RESOURCES
+    python download_card_images.py                       # UPDATE IMAGES (ONLY ENGLISH)
 ```
 
 ### PASSWORD CHANGE
 ```
     cd backend
     source venv/bin/activate
-    python change_password $ACCOUNT_NAME x           # RANDOM PASWORD
-    python change_password $ACCOUNT_NAME $PASSWORD   # TO SET YOUR PASSWORD
+    python change_password $ACCOUNT_NAME x               # RANDOM PASWORD
+    python change_password $ACCOUNT_NAME $PASSWORD       # PASSWORD OF YOUR CHOICE
 ```
 
 ### PLAYTESTING ACCESS
-Playtesting of new cards enabled by Playtest Admins from web.
+Playtesting of new cards enabled by Playtest Admins from web interface.
 To toggle Admin status for account:
 ```
     cd backend
