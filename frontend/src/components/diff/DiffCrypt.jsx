@@ -17,6 +17,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
     changeCryptDeckSort,
     changeTimer,
     isMobile,
+    showFloatingButtons,
     setShowFloatingButtons,
   } = useApp();
 
@@ -107,7 +108,10 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
               className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
             >
               <h5>Add Crypt Card</h5>
-              <Button variant="outline-secondary" onClick={handleClose}>
+              <Button
+                variant="outline-secondary"
+                onClick={() => setShowAdd(false)}
+              >
                 <X width="32" height="32" viewBox="0 0 16 16" />
               </Button>
             </Modal.Header>
@@ -157,13 +161,13 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
       {isMobile && !isPublic && isAuthor && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
-          className="d-flex float-right-middle float-add-on align-items-center justify-content-center"
+          className="d-flex float-right-top float-add-on align-items-center justify-content-center"
         >
           <div className="d-inline" style={{ fontSize: '1.4em' }}>
             +
           </div>
           <div className="d-inline" style={{ fontSize: '1.6em' }}>
-            L
+            C
           </div>
         </div>
       )}

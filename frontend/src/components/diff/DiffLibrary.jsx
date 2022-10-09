@@ -16,7 +16,12 @@ import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
-  const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
+  const {
+    nativeLibrary,
+    isMobile,
+    showFloatingButtons,
+    setShowFloatingButtons,
+  } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -146,7 +151,10 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
                 className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
               >
                 <h5>Add Library Card</h5>
-                <Button variant="outline-secondary" onClick={handleClose}>
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => setShowAdd(false)}
+                >
                   <X width="32" height="32" viewBox="0 0 16 16" />
                 </Button>
               </Modal.Header>
