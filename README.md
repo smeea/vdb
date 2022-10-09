@@ -76,7 +76,7 @@ Public instance at https://vdb.im runs from master branch without any changes us
 To update with new Set/Precons edit the following files:
 ```
     vim misc/cards-update/generate_precons.py            # ADD SET/PRECONS
-    vim frontent/src/assets/data/setsAndPrecons.json     # ADD SET/PRECONS
+    vim frontend/src/assets/data/setsAndPrecons.json     # ADD SET/PRECONS
 ```
 
 To update with new Playtest edit the following files:

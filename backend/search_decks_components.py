@@ -5,7 +5,7 @@ from models import Deck
 with open("twd_decks.json", "r") as twd_decks_file:
     twd_decks = json.load(twd_decks_file)
 
-with open("preconDecks.json", "r") as precons_file:
+with open("../frontend/src/assets/data/preconDecks.json", "r") as precons_file:
     precon_decks = json.load(precons_file)
 
 

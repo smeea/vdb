@@ -1,8 +1,8 @@
 import json
 
 with open("twda.json", "r") as twda_input, open(
-    "cardbase_crypt.json", "r"
-) as crypt_file, open("cardbase_lib.json", "r") as library_file:
+    "../frontend/dist/cardbase_crypt.json", "r"
+) as crypt_file, open("../frontend/dist/cardbase_lib.json", "r") as library_file:
 
     crypt_cardbase = json.load(crypt_file).values()
     library_cardbase = json.load(library_file).values()

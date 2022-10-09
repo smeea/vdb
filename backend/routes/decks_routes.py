@@ -347,7 +347,7 @@ def get_recommendation_route(deckid):
     elif ":" in deckid:
         set, precon = deckid.split(":")
 
-        with open("preconDecks.json", "r") as precons_file:
+        with open("../frontend/src/assets/data/preconDecks.json", "r") as precons_file:
             precon_decks = json.load(precons_file)
             cards = precon_decks[set][precon]
 
@@ -490,7 +490,9 @@ def clone_deck_route(deckid):
     elif ":" in deckid:
         set, precon = deckid.split(":")
 
-        with open("preconDecks.json", "r") as precons_cards_file, open(
+        with open(
+            "../frontend/src/assets/data/preconDecks.json", "r"
+        ) as precons_cards_file, open(
             "../frontend/src/assets/data/setsAndPrecons.json", "r"
         ) as precons_data_file:
             precon_cards = json.load(precons_cards_file)
@@ -603,7 +605,7 @@ def deck_export_route():
 
     elif request.json["src"] == "precons":
         set, precon = request.json["deckid"].split(":")
-        with open("preconDecks.json", "r") as precons_file:
+        with open("../frontend/src/assets/data/preconDecks.json", "r") as precons_file:
             precon_decks = json.load(precons_file)
             cards = precon_decks[set][precon]
             result = deck_export(cards, request.json["format"])

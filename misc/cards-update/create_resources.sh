@@ -12,7 +12,6 @@ mv cardbase_lib_playtest.min.json ../../frontend/dist/cardbase_lib_playtest.json
 mv preconDecks.min.json ../../frontend/src/assets/data/preconDecks.json
 mv artistsCrypt.min.json ../../frontend/src/assets/data/artistsCrypt.json
 mv artistsLib.min.json ../../frontend/src/assets/data/artistsLib.json
-cp cardbase_crypt.json cardbase_crypt_playtest.json cardbase_lib.json cardbase_lib_playtest.json preconDecks.json ../../backend/
 
 # Update Localizations
 python generate_localizations.py

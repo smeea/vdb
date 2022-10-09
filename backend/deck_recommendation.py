@@ -1,8 +1,8 @@
 import json
 
 with open("cards_compatibility.json", "r") as compatibility_file, open(
-    "cardbase_crypt.json", "r"
-) as crypt_file, open("cardbase_lib.json", "r") as library_file:
+    "../frontend/dist/cardbase_crypt.json", "r"
+) as crypt_file, open("../frontend/dist/cardbase_lib.json", "r") as library_file:
     cardbase_crypt = json.load(crypt_file)
     cardbase_lib = json.load(library_file)
     compatibility = json.load(compatibility_file)
