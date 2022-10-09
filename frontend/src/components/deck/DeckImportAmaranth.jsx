@@ -48,7 +48,7 @@ const DeckImportAmaranth = ({
             setSpinnerState(false);
             handleClose();
           })
-          .catch((error) => {
+          .catch(() => {
             setImportError(true);
             setSpinnerState(false);
           });
@@ -69,10 +69,10 @@ const DeckImportAmaranth = ({
         }
       });
 
-      let description = master.description
-      if (revision["comments"]) {
-        if (description) description += "\n\n"
-        description += revision['comments']
+      let description = master.description;
+      if (revision['comments']) {
+        if (description) description += '\n\n';
+        description += revision['comments'];
       }
 
       branches.push({
@@ -105,7 +105,7 @@ const DeckImportAmaranth = ({
         });
         return branches;
       })
-      .catch((error) => setImportError(true));
+      .catch(() => setImportError(true));
   };
 
   const importDeckFromAmaranth = async (amaranth_deck) => {
@@ -113,8 +113,8 @@ const DeckImportAmaranth = ({
       deckname: amaranth_deck.title,
       author: amaranth_deck.author,
       description: amaranth_deck.description,
-      cards: {}
-    }
+      cards: {},
+    };
 
     Object.keys(amaranth_deck.cards).map((i) => {
       if (idReference[i] !== undefined) {
@@ -130,7 +130,7 @@ const DeckImportAmaranth = ({
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(deck)
+      body: JSON.stringify(deck),
     };
 
     const fetchPromise = fetch(url, options);
@@ -138,14 +138,14 @@ const DeckImportAmaranth = ({
     fetchPromise
       .then((response) => response.json())
       .then((data) => {
-        deck.deckid = data.deckid
+        deck.deckid = data.deckid;
 
         if (amaranth_deck.versions) {
           branchesImport(deck, amaranth_deck.versions).then((branches) => {
             const now = new Date();
             const decks = {};
 
-            branches.map((b, idx) => {
+            branches.map((b) => {
               const { crypt, library } = parseCards(b.cards);
 
               decks[b.deckid] = {
@@ -187,7 +187,7 @@ const DeckImportAmaranth = ({
 
         setActiveDeck({ src: 'my', deckid: deck.deckid });
       })
-      .catch((error) => setImportError(true));
+      .catch(() => setImportError(true));
   };
 
   const getDeckFromUrl = async (deckUrl) => {
@@ -198,7 +198,7 @@ const DeckImportAmaranth = ({
       body: `id=${id}`,
     };
 
-    const response = await fetch(url, options).catch((error) =>
+    const response = await fetch(url, options).catch(() =>
       setImportError(true)
     );
     const deck = await response.json();

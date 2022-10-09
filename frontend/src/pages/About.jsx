@@ -10,7 +10,7 @@ import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
 import { Banner } from 'components';
 import changes from '../../../CHANGES.json';
 
-const About = (props) => {
+const About = () => {
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
 
   return (
@@ -184,9 +184,7 @@ const About = (props) => {
               <ul className="no-bullets">
                 <li>
                   Patreon:{' '}
-                  <a
-                    href='https://www.patreon.com/smeea'
-                  >
+                  <a href="https://www.patreon.com/smeea">
                     https://www.patreon.com/smeea
                   </a>
                 </li>

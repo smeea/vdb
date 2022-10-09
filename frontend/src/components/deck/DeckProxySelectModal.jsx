@@ -168,9 +168,9 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
           };
 
           if (cardid > 200000) {
-            crypt[cardid] = card
+            crypt[cardid] = card;
           } else {
-            library[cardid] = card
+            library[cardid] = card;
           }
         }
       });

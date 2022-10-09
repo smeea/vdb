@@ -1,8 +1,8 @@
 import React from 'react';
 
-function ResultLibraryTypeImage(props) {
+const ResultLibraryTypeImage = ({ value }) => {
   const imgClass = 'type-image-results';
-  const cardtypes = props.value.split('/');
+  const cardtypes = value.split('/');
   const cardtypeImages = cardtypes.map((cardtype, index) => {
     const imgSrc = `${process.env.ROOT_URL}images/types/${cardtype
       .toLowerCase()
@@ -14,6 +14,6 @@ function ResultLibraryTypeImage(props) {
   });
 
   return <>{cardtypeImages}</>;
-}
+};
 
 export default ResultLibraryTypeImage;

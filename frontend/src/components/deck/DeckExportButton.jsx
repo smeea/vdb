@@ -101,8 +101,8 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
 
   const saveFile = async (file, name) => {
     let { saveAs } = await import('file-saver');
-    saveAs(file, name)
-  }
+    saveAs(file, name);
+  };
 
   const saveDeck = (format) => {
     setError(false);
@@ -162,7 +162,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
         })
-        .catch((error) => {
+        .catch(() => {
           setSpinnerState(false);
           setError(true);
         });
@@ -201,9 +201,9 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
     }
   };
 
-  const exportAll = async(format) => {
+  const exportAll = async (format) => {
     setError(false);
-    const Jszip = await import('jszip')
+    const Jszip = await import('jszip');
     const zip = new Jszip();
     const date = new Date().toISOString().substring(0, 10);
 
@@ -211,8 +211,8 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
       setSpinnerState(true);
 
       const url = `${process.env.API_URL}${
-          inInventory ? 'inventory' : 'decks'
-        }/export`;
+        inInventory ? 'inventory' : 'decks'
+      }/export`;
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -243,7 +243,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           })
-          .catch((error) => {
+          .catch(() => {
             setSpinnerState(false);
             setError(true);
           });

@@ -14,20 +14,14 @@ const TwdResultDescription = ({ deck }) => {
   const def = JSON.parse(JSON.stringify(defaults));
 
   const handleAuthorClick = (author) => {
-    setTwdFormState((prevState) => ({
-      ...def,
-      author: author,
-    }));
+    setTwdFormState({ ...def, author: author });
     navigate(
       `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
     );
   };
 
   const handleLocationClick = (location) => {
-    setTwdFormState((prevState) => ({
-      ...def,
-      location: location,
-    }));
+    setTwdFormState({ ...def, location: location });
     navigate(
       `/twd?q=${encodeURIComponent(JSON.stringify({ location: location }))}`
     );

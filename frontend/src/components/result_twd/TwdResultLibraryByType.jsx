@@ -77,7 +77,7 @@ const TwdResultLibraryByType = ({ library }) => {
   cardtypeSortedFull
     .filter((cardtype) => libraryByType[cardtype] !== undefined)
     .map((cardtype, idx) => {
-      const TypePopover = React.forwardRef(({ children, ...props }, ref) => {
+      const TypePopover = React.forwardRef(({ ...props }, ref) => {
         return (
           <Popover ref={ref} {...props}>
             <Popover.Body className="p-1">

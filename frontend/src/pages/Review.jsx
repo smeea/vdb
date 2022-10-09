@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
+import { Modal, Container, Row, Col } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import X from 'assets/images/icons/x.svg';
 import {
@@ -15,7 +15,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const Review = (props) => {
+const Review = () => {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -38,9 +38,9 @@ const Review = (props) => {
   const [error, setError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
 
-  const [deckFrom, setDeckFrom] = useState(undefined);
-  const [deckTo, setDeckTo] = useState(undefined);
-  const [urlDiff, setUrlDiff] = useState(undefined);
+  const [deckFrom, setDeckFrom] = useState();
+  const [deckTo, setDeckTo] = useState();
+  const [urlDiff, setUrlDiff] = useState();
 
   const getDeck = (deckid) => {
     const url = `${process.env.API_URL}deck/${deckid}`;

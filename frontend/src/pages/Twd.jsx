@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { TwdResult, TwdSearchForm } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-const Twd = (props) => {
+const Twd = () => {
   const { showTwdSearch, isMobile } = useApp();
   const { twdResults } = useSearchResults();
 

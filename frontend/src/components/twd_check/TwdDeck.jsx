@@ -5,7 +5,7 @@ import Download from 'assets/images/icons/download.svg';
 import Upload from 'assets/images/icons/upload.svg';
 import { ButtonIconed, ErrorOverlay } from 'components';
 
-const TwdDeck = ({ deck, eventId, setEventId }) => {
+const TwdDeck = ({ eventId, setEventId }) => {
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);

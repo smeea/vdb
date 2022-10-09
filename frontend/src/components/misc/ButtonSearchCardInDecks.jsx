@@ -11,23 +11,21 @@ const ButtonSearchCardInDecks = ({ cardid, target }) => {
   const { setPdaFormState, setTwdFormState } = useSearchForms();
 
   const navigate = useNavigate();
-  const defaults = JSON.parse(
+  const def = JSON.parse(
     JSON.stringify(target === 'pda' ? defaultsPda : defaultsTwd)
   );
   const value = { [cardid]: { q: 1, m: 'gt' } };
   const setForm = target === 'pda' ? setPdaFormState : setTwdFormState;
 
   const handleButton = () => {
-    setForm(
-      (prevState) => ({
-        ...defaults,
-        [cardid > 200000 ? 'crypt' : 'library']: value,
-      }),
-      navigate(
-        `/${target}?q={"${
-          cardid > 200000 ? 'crypt' : 'library'
-        }"%3A{"${cardid}"%3A{"q"%3A1%2C"m"%3A"gt"}}}`
-      )
+    setForm({
+      ...def,
+      [cardid > 200000 ? 'crypt' : 'library']: value,
+    });
+    navigate(
+      `/${target}?q={"${
+        cardid > 200000 ? 'crypt' : 'library'
+      }"%3A{"${cardid}"%3A{"q"%3A1%2C"m"%3A"gt"}}}`
     );
   };
 

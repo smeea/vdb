@@ -25,7 +25,7 @@ import defaults from 'components/forms_data/defaultsTwdForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-const TwdSearchForm = (props) => {
+const TwdSearchForm = () => {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -369,12 +369,12 @@ const TwdSearchForm = (props) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
-          {cryptCardBase &&
+          {cryptCardBase && (
             <TwdSearchFormCrypt
               state={twdFormState.crypt}
               setState={setTwdFormState}
             />
-          }
+          )}
         </Col>
       </Row>
       <Row className="pb-1 pe-1 mx-0">
@@ -395,12 +395,12 @@ const TwdSearchForm = (props) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
-          {libraryCardBase &&
+          {libraryCardBase && (
             <TwdSearchFormLibrary
               state={twdFormState.library}
               setState={setTwdFormState}
             />
-          }
+          )}
         </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">

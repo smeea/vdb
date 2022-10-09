@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { TwdDeck, TwdEvent } from 'components';
 import { useApp } from 'context';
 
-const TwdCheck = (props) => {
+const TwdCheck = () => {
   const { isWide } = useApp();
 
   const [eventId, setEventId] = useState(10043);

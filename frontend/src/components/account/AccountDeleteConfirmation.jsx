@@ -14,7 +14,7 @@ import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
-function AccountDeleteConfirmation(props) {
+const AccountDeleteConfirmation = ({ show, setShow }) => {
   const { username, setUsername, isMobile } = useApp();
 
   const [password, setPassword] = useState('');
@@ -37,9 +37,9 @@ function AccountDeleteConfirmation(props) {
     }
   };
 
-  const onSuccess = (data) => {
+  const onSuccess = () => {
     setSpinnerState(false);
-    props.setShow(false);
+    setShow(false);
     setUsername(undefined);
   };
 
@@ -64,8 +64,8 @@ function AccountDeleteConfirmation(props) {
   return (
     <>
       <Modal
-        show={props.show}
-        onHide={() => props.setShow(false)}
+        show={show}
+        onHide={() => setShow(false)}
         animation={false}
         centered={isMobile}
       >
@@ -80,10 +80,7 @@ function AccountDeleteConfirmation(props) {
               {'"'}?
             </span>
           </h5>
-          <Button
-            variant="outline-secondary"
-            onClick={() => props.setShow(false)}
-          >
+          <Button variant="outline-secondary" onClick={() => setShow(false)}>
             <X width="32" height="32" viewBox="0 0 16 16" />
           </Button>
         </Modal.Header>
@@ -122,7 +119,7 @@ function AccountDeleteConfirmation(props) {
                   <Spinner animation="border" size="sm" />
                 </Button>
               )}
-              <Button variant="primary" onClick={() => props.setShow(false)}>
+              <Button variant="primary" onClick={() => setShow(false)}>
                 Cancel
               </Button>
             </InputGroup>
@@ -152,6 +149,6 @@ function AccountDeleteConfirmation(props) {
       </Modal>
     </>
   );
-}
+};
 
 export default AccountDeleteConfirmation;

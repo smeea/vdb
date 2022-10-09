@@ -6,12 +6,10 @@ import At from 'assets/images/icons/at.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
 import List from 'assets/images/icons/list.svg';
-import X from 'assets/images/icons/x.svg';
 import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
 import {
   AccountLogin,
   AccountRegister,
-  ButtonIconed,
   DeckSelectMy,
   DeckSelectRecent,
   DeckSelectPrecon,
@@ -32,7 +30,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const Decks = (props) => {
+const Decks = () => {
   const {
     deckUpdate,
     deckRouter,
@@ -425,8 +423,8 @@ const Decks = (props) => {
                             title="Advanced Deck Select"
                             variant="primary"
                             onClick={() => {
-                              setShowFloatingButtons(false)
-                              setShowDeckSelectAdv(true)
+                              setShowFloatingButtons(false);
+                              setShowDeckSelectAdv(true);
                             }}
                           >
                             <div className="d-flex">

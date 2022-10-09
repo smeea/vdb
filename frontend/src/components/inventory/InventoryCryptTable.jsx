@@ -2,8 +2,6 @@ import React from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import Shuffle from 'assets/images/icons/shuffle.svg';
-import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import {
   CardPopover,
   UsedPopover,

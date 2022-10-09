@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Modal, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
@@ -11,7 +11,6 @@ const InventoryShareModal = ({ show, setShow }) => {
   const {
     isMobile,
     isNarrow,
-    username,
     setShowFloatingButtons,
     setShowMenuButtons,
     inventoryKey,
@@ -42,7 +41,7 @@ const InventoryShareModal = ({ show, setShow }) => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
-      .then((data) => {
+      .then(() => {
         setInventoryKey(newKey);
         const u = `${process.env.ROOT_URL}inventory?key=${newKey}`;
         setShareUrl(u);

@@ -136,12 +136,15 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
   });
 
   const sortedCards = useMemo(
-    () => librarySort(Object.values(cardsByType[type]).filter((i) => {
-        return cardsByDiscipline[discipline][i.Id];
-      }), sortMethod),
+    () =>
+      librarySort(
+        Object.values(cardsByType[type]).filter((i) => {
+          return cardsByDiscipline[discipline][i.Id];
+        }),
+        sortMethod
+      ),
     [cardsByType, cardsByDiscipline, sortMethod]
   );
-
 
   const cardRows = sortedCards.map((card, idx) => {
     return (
@@ -149,8 +152,9 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         {!isMobile && (
           <>
             <div
-              className={`d-flex align-items-center justify-content-center ${card[BLOOD_COST] && 'blood'
-                } cost`}
+              className={`d-flex align-items-center justify-content-center ${
+                card[BLOOD_COST] && 'blood'
+              } cost`}
               onClick={() => handleClick(idx)}
             >
               <ResultLibraryCost
@@ -175,29 +179,34 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           <ResultLibraryDisciplines value={card.Discipline} />
         </div>
         <ConditionalOverlayTrigger
-          placement={"right"}
+          placement={'right'}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
         >
           <div
-            className={`d-flex align-items-center justify-content-start name ${card.deckid ? '' : 'bold'} px-1`}
+            className={`d-flex align-items-center justify-content-start name ${
+              card.deckid ? '' : 'bold'
+            } px-1`}
             onClick={() => handleClick(idx)}
           >
             <ResultLibraryName card={card} />
           </div>
         </ConditionalOverlayTrigger>
-        {!isMobile &&
+        {!isMobile && (
           <div
             className="d-flex align-items-center justify-content-center burn"
             onClick={() => handleClick(idx)}
           >
             <ResultLibraryBurn value={card['Burn Option']} />
           </div>
-        }
-        <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card.player]} />
+        )}
+        <TwdCardsHistoryCardAppearance
+          card={card}
+          byPlayer={players[card.player]}
+        />
       </>
-    )
-  })
+    );
+  });
 
   const Rows = ({ index, style }) => (
     <div
@@ -245,26 +254,27 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         {!isMobile && <div className="d-flex type" />}
         <div className="d-flex name" />
         {!isMobile && <div className="d-flex clan-disciplines" />}
-        <div className="d-flex align-items-center justify-content-center year"
+        <div
+          className="d-flex align-items-center justify-content-center year"
           title="First Print Date"
         >
           Print
         </div>
         {!isMobile && (
-          <div className="d-flex align-items-center justify-content-center year"
+          <div
+            className="d-flex align-items-center justify-content-center year"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
-        <div className="d-flex align-items-center justify-content-center ytw"
+        <div
+          className="d-flex align-items-center justify-content-center ytw"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
-        <div className="d-flex align-items-center player"
-          title="First Winner"
-        >
+        <div className="d-flex align-items-center player" title="First Winner">
           Player
         </div>
         <div className="d-flex button pe-1" />

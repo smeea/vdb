@@ -14,7 +14,7 @@ import {
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
   ConditionalOverlayTrigger,
-  DiffQuantityDiff
+  DiffQuantityDiff,
 } from 'components';
 import { drawProbability } from 'utils';
 import { useApp } from 'context';

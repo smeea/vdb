@@ -41,7 +41,7 @@ const TwdHallOfFameTournaments = React.lazy(() =>
 const TwdCardsHistory = React.lazy(() => import('pages/TwdCardsHistory.jsx'));
 const TwdCheck = React.lazy(() => import('pages/TwdCheck.jsx'));
 
-const App = (props) => {
+const App = () => {
   const { isOnline, lastDeckId } = useApp();
 
   return (

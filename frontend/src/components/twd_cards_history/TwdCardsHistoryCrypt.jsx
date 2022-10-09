@@ -51,13 +51,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
   });
 
   Object.keys(cardsByClan).map((c) => {
-    cardsByClanTotal[c] = 0;
-  });
-
-  Object.keys(cardsByClan).map((c) => {
-    Object.keys(cardsByClan[c]).map((cardid) => {
-      cardsByClanTotal[c] += 1;
-    });
+    cardsByClanTotal[c] = Object.keys(cardsByClan[c]).length;
   });
 
   const sortedCards = useMemo(
@@ -83,12 +77,14 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
           </div>
         )}
         <ConditionalOverlayTrigger
-          placement={"right"}
+          placement={'right'}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
         >
           <div
-            className={`d-flex align-items-center justify-content-start name ${card.deckid ? '' : 'bold'} px-1`}
+            className={`d-flex align-items-center justify-content-start name ${
+              card.deckid ? '' : 'bold'
+            } px-1`}
             onClick={() => handleClick(idx)}
           >
             <ResultCryptName card={card} />
@@ -107,10 +103,13 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
             </div>
           </div>
         )}
-        <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card.player]} />
+        <TwdCardsHistoryCardAppearance
+          card={card}
+          byPlayer={players[card.player]}
+        />
       </>
-    )
-  })
+    );
+  });
 
   const Rows = ({ index, style }) => (
     <div
@@ -147,26 +146,27 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
         {!isMobile && <div className="d-flex disciplines" />}
         <div className="d-flex name" />
         {!isMobile && <div className="d-flex clan-group" />}
-        <div className="d-flex align-items-center justify-content-center year"
+        <div
+          className="d-flex align-items-center justify-content-center year"
           title="First Print Date"
         >
           Print
         </div>
         {!isMobile && (
-          <div className="d-flex align-items-center justify-content-center year"
+          <div
+            className="d-flex align-items-center justify-content-center year"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
-        <div className="d-flex align-items-center justify-content-center ytw"
+        <div
+          className="d-flex align-items-center justify-content-center ytw"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
-        <div className="d-flex align-items-center player"
-          title="First Winner"
-        >
+        <div className="d-flex align-items-center player" title="First Winner">
           Player
         </div>
         <div className="d-flex button pe-1" />

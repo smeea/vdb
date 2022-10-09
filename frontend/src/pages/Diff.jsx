@@ -26,7 +26,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const Diff = (props) => {
+const Diff = () => {
   const {
     inventoryMode,
     deckRouter,

@@ -12,7 +12,7 @@ const InventoryFilterForm = ({
 }) => {
   const options = [];
 
-  values.map((i, index) => {
+  values.map((i) => {
     const imgSrc = `${process.env.ROOT_URL}images/types/${i
       .toLowerCase()
       .replace(/[\s,:!?'.\-]/g, '')}.svg`;

@@ -47,13 +47,17 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
     if (inputValue.length > 2) {
       const input = { name: inputValue };
 
-      const filteredCryptCards = filterCrypt(input).filter(card => playtest || card.Id < 210000).map((card) => ({
-        value: card.Id,
-      }));
+      const filteredCryptCards = filterCrypt(input)
+        .filter((card) => playtest || card.Id < 210000)
+        .map((card) => ({
+          value: card.Id,
+        }));
 
-      const filteredLibCards = filterLibrary(input).filter(card => playtest || card.Id < 110000).map((card) => ({
-        value: card.Id,
-      }));
+      const filteredLibCards = filterLibrary(input)
+        .filter((card) => playtest || card.Id < 110000)
+        .map((card) => ({
+          value: card.Id,
+        }));
 
       return [...filteredCryptCards, ...filteredLibCards].sort(byTwd);
     }

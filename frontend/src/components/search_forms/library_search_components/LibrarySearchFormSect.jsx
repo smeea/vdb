@@ -10,7 +10,7 @@ import {
 import { useApp } from 'context';
 
 const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
-  const { isXWide, isMobile } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const sects = [
@@ -26,7 +26,7 @@ const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
 
   const options = [];
 
-  sects.map((i, index) => {
+  sects.map((i) => {
     options.push({
       value: i.toLowerCase(),
       name: 'sect',

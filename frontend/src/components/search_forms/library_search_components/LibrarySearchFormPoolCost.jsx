@@ -4,12 +4,12 @@ import Select from 'react-select';
 import { useApp } from 'context';
 
 const LibrarySearchFormPoolCost = ({ value, onChange, onMorelessChange }) => {
-  const { isXWide, isMobile } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const pool = ['ANY', '0', '1', '2', '3', '4', '5', '6'];
   const options = [];
 
-  pool.map((i, index) => {
+  pool.map((i) => {
     let v;
     i == 'ANY' ? (v = i.toLowerCase()) : (v = i);
 
@@ -32,7 +32,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange, onMorelessChange }) => {
   ];
   const morelessOptions = [];
 
-  moreless.map((i, index) => {
+  moreless.map((i) => {
     morelessOptions.push({
       value: i[0],
       name: 'pool',

@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Banner } from 'components';
 import changes from '../../../CHANGES.json';
 
-const Changelog = (props) => {
+const Changelog = () => {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">

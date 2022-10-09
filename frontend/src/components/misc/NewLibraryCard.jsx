@@ -28,9 +28,11 @@ const NewLibraryCard = ({
     if (inputValue.length > 2) {
       const input = { name: inputValue };
 
-      const filteredCards = filterLibrary(input).filter(card => playtest || card.Id < 110000).map((card) => ({
-        value: card.Id,
-      }));
+      const filteredCards = filterLibrary(input)
+        .filter((card) => playtest || card.Id < 110000)
+        .map((card) => ({
+          value: card.Id,
+        }));
 
       return filteredCards.sort(byTwd);
     }

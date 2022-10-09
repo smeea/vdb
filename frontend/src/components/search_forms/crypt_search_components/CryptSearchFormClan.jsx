@@ -20,7 +20,7 @@ const CryptSearchFormClan = ({ value, setFormState, onChange }) => {
 
   const options = [];
 
-  clans.map((i, index) => {
+  clans.map((i) => {
     if (i == 'ANY') {
       options.push({
         value: i.toLowerCase(),

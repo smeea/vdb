@@ -6,13 +6,13 @@ import libraryArtists from '~/src/assets/data/artistsLib.json';
 import { useApp } from 'context';
 
 const SearchFormArtist = ({ target, value, onChange }) => {
-  const { isMobile, isXWide } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
   let artists;
   target == 'crypt' ? (artists = cryptArtists) : (artists = libraryArtists);
 
-  const options = artists.map((artist, index) => {
+  const options = artists.map((artist) => {
     return {
       name: 'artist',
       value: artist,

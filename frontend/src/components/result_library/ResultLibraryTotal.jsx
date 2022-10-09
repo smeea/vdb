@@ -17,7 +17,7 @@ const ResultLibraryTotal = ({
   const byTypes = {};
   let total = 0;
 
-  cards.map((card, index) => {
+  cards.map((card) => {
     if (byTypes[card.Type]) {
       byTypes[card.Type] += 1;
     } else {
@@ -26,7 +26,7 @@ const ResultLibraryTotal = ({
     total += 1;
   });
 
-  const totalOutput = Object.keys(byTypes).map((k, index) => {
+  const totalOutput = Object.keys(byTypes).map((k) => {
     return (
       <span key={k} className="d-inline-block nowrap pe-3">
         <div className="d-flex align-items-center">

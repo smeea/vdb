@@ -2,7 +2,7 @@ import React from 'react';
 import { ResultDisciplineImage } from 'components';
 import virtuesList from 'assets/data/virtuesList.json';
 
-  const CryptSearchFormVirtues = ({ value, onChange }) => {
+const CryptSearchFormVirtues = ({ value, onChange }) => {
   const virtuesforms = virtuesList.map((i, index) => {
     const virtueState = 'virtue-container state' + value[i];
 
@@ -26,6 +26,6 @@ import virtuesList from 'assets/data/virtuesList.json';
   });
 
   return <div className="input-group pb-2">{virtuesforms}</div>;
-}
+};
 
 export default CryptSearchFormVirtues;

@@ -21,7 +21,6 @@ const DeckDrawLibraryTable = ({
   handleClick,
   restCards,
   resultCards,
-  className,
   ashHeap,
   placement,
 }) => {

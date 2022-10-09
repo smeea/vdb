@@ -5,37 +5,37 @@ import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { ResultLibraryClan } from 'components';
 import { useApp } from 'context';
 
-function DeckSelectPrecon(props) {
+const DeckSelectPrecon = (props) => {
   const { setActiveDeck, isMobile, playtest } = useApp();
 
   const preOptions = [];
 
   Object.keys(setsAndPrecons)
-    .filter(i => playtest || i !== 'PLAYTEST')
+    .filter((i) => playtest || i !== 'PLAYTEST')
     .map((i) => {
-    if (setsAndPrecons[i].hasOwnProperty('precons')) {
-      const set = i;
-      const year = setsAndPrecons[i].date.slice(2, 4);
-      Object.keys(setsAndPrecons[i].precons).map((j) => {
-        const name = setsAndPrecons[i].precons[j].name;
-        const clans = setsAndPrecons[i].precons[j].clan.split('/');
-        preOptions.push({
-          set: set,
-          precon: j,
-          year: year,
-          name: name,
-          clans: clans,
+      if (setsAndPrecons[i].precons) {
+        const set = i;
+        const year = setsAndPrecons[i].date.slice(2, 4);
+        Object.keys(setsAndPrecons[i].precons).map((j) => {
+          const name = setsAndPrecons[i].precons[j].name;
+          const clans = setsAndPrecons[i].precons[j].clan.split('/');
+          preOptions.push({
+            set: set,
+            precon: j,
+            year: year,
+            name: name,
+            clans: clans,
+          });
         });
-      });
-    }
-  });
+      }
+    });
 
   const options = [];
 
-  preOptions.map((i, index) => {
-    const clanImages = i.clans.map((clan, index) => {
+  preOptions.map((i) => {
+    const clanImages = i.clans.map((clan) => {
       return (
-        <div className="d-inline px-1" key={index}>
+        <div className="d-inline px-1" key={clan}>
           {clan === 'Bundle' ? (
             <div className="d-inline clan-image-results">
               <GiftFill />
@@ -94,6 +94,6 @@ function DeckSelectPrecon(props) {
       />
     </>
   );
-}
+};
 
 export default DeckSelectPrecon;

@@ -26,7 +26,7 @@ import { sanitizeFormState } from 'utils';
 import { useFilters } from 'hooks';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-const LibrarySearchForm = (props) => {
+const LibrarySearchForm = () => {
   const {
     libraryCardBase,
     hideMissing,
@@ -35,7 +35,7 @@ const LibrarySearchForm = (props) => {
     inventoryLibrary,
     inventoryMode,
     isMobile,
-    playtest
+    playtest,
   } = useApp();
 
   const { filterLibrary } = useFilters(libraryCardBase);
@@ -191,7 +191,9 @@ const LibrarySearchForm = (props) => {
 
     setSpinnerState(true);
 
-    const filteredCards = filterLibrary(sanitizeForm).filter(card => playtest || card.Id < 110000);
+    const filteredCards = filterLibrary(sanitizeForm).filter(
+      (card) => playtest || card.Id < 110000
+    );
 
     setSpinnerState(false);
 

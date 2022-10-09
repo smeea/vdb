@@ -12,7 +12,7 @@ import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
-const AccountChangeName = (props) => {
+const AccountChangeName = () => {
   const { publicName, setPublicName, isMobile } = useApp();
 
   const [emptyName, setEmptyName] = useState(false);
@@ -35,7 +35,7 @@ const AccountChangeName = (props) => {
     setSpinnerState(false);
   };
 
-  const onSuccess = (data) => {
+  const onSuccess = () => {
     setSpinnerState(false);
     setButtonState(true);
     setPublicName(state);

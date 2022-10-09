@@ -13,15 +13,15 @@ const DeckSearchSimilarButton = ({ deck }) => {
 
   const handleClick = (src) => {
     if (src === 'twd') {
-      setTwdFormState((prevState) => ({
+      setTwdFormState({
         ...JSON.parse(JSON.stringify(defaultsTwdForm)),
         similar: deck.deckid,
-      }));
+      });
     } else if (src === 'pda') {
-      setPdaFormState((prevState) => ({
+      setPdaFormState({
         ...JSON.parse(JSON.stringify(defaultsPdaForm)),
         similar: deck.deckid,
-      }));
+      });
     }
 
     navigate(`/${src}?q={"similar"%3A"${deck.deckid}"}`);

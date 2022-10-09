@@ -15,7 +15,7 @@ import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
-const AccountLogin = (props) => {
+const AccountLogin = () => {
   const { isMobile, initializeUserData } = useApp();
 
   const [formUsername, setFormUsername] = useState('');

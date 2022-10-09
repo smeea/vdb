@@ -41,7 +41,7 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
     },
   ];
 
-  preOptions.map((i, index) => {
+  preOptions.map((i) => {
     options.push({
       value: i.set,
       name: 'set',
@@ -77,10 +77,10 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
     },
   ];
 
-  const ageForm = ageFormOptions.map((i, index) => {
+  const ageForm = ageFormOptions.map((i) => {
     return (
       <Form.Check
-        key={index}
+        key={i.value}
         name="set"
         value={i.value}
         type="checkbox"
@@ -118,10 +118,10 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
     },
   ];
 
-  const printForm = printFormOptions.map((i, index) => {
+  const printForm = printFormOptions.map((i) => {
     return (
       <Form.Check
-        key={index}
+        key={i.value}
         name="set"
         value={i.value}
         type="checkbox"

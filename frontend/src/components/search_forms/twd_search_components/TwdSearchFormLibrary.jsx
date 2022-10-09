@@ -9,7 +9,7 @@ import {
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from 'context';
 
-const TwdSearchFormLibrary = ({state, setState}) => {
+const TwdSearchFormLibrary = ({ state, setState }) => {
   const { libraryCardBase, isMobile } = useApp();
   const [modalCard, setModalCard] = useState(undefined);
 
@@ -66,6 +66,6 @@ const TwdSearchFormLibrary = ({state, setState}) => {
       )}
     </>
   );
-}
+};
 
 export default TwdSearchFormLibrary;

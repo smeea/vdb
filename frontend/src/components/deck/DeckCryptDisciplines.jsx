@@ -2,7 +2,12 @@ import React from 'react';
 import { ResultDisciplineImage } from 'components';
 import { useApp } from 'context';
 
-const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines, nonKeyDisciplines }) => {
+const DeckCryptDisciplines = ({
+  value,
+  disciplinesSet,
+  keyDisciplines,
+  nonKeyDisciplines,
+}) => {
   const { isMobile } = useApp();
 
   const emptyCols = [];
@@ -12,20 +17,10 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines, nonKeyDis
 
   const width = 100 / maxCols + '%';
 
-  const keyDisciplinesCols = disciplinesSet.slice(0, keyDisciplines).map((d, index) => {
-    counter += 1
-    return (
-      <td width={width} key={index}>
-        {value[d] && (
-          <ResultDisciplineImage value={d} superior={value[d] === 2} />
-        )}
-      </td>
-    );
-  })
-
-  const restDisciplinesCols = disciplinesSet.slice(keyDisciplines).sort().map((d, index) => {
-    if (value[d]) {
-      counter += 1
+  const keyDisciplinesCols = disciplinesSet
+    .slice(0, keyDisciplines)
+    .map((d, index) => {
+      counter += 1;
       return (
         <td width={width} key={index}>
           {value[d] && (
@@ -33,10 +28,25 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines, nonKeyDis
           )}
         </td>
       );
-    } else {
-      return null;
-    }
-  });
+    });
+
+  const restDisciplinesCols = disciplinesSet
+    .slice(keyDisciplines)
+    .sort()
+    .map((d, index) => {
+      if (value[d]) {
+        counter += 1;
+        return (
+          <td width={width} key={index}>
+            {value[d] && (
+              <ResultDisciplineImage value={d} superior={value[d] === 2} />
+            )}
+          </td>
+        );
+      } else {
+        return null;
+      }
+    });
 
   while (counter < maxCols) {
     counter += 1;
@@ -54,6 +64,6 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines, nonKeyDis
       </tbody>
     </table>
   );
-}
+};
 
 export default DeckCryptDisciplines;

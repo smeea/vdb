@@ -4,12 +4,12 @@ import Select from 'react-select';
 import { useApp } from 'context';
 
 const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
-  const { isMobile, isXWide } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const blood = ['ANY', '0', '1', '2', '3', '4'];
   const options = [];
 
-  blood.map((i, index) => {
+  blood.map((i) => {
     let v;
     i == 'ANY' ? (v = i.toLowerCase()) : (v = i);
 
@@ -32,7 +32,7 @@ const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
   ];
   const morelessOptions = [];
 
-  moreless.map((i, index) => {
+  moreless.map((i) => {
     morelessOptions.push({
       value: i[0],
       name: 'blood',

@@ -10,7 +10,7 @@ import {
 } from '../shared_search_components';
 
 const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
-  const { isXWide, isMobile } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const capacity = [
@@ -29,7 +29,7 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
   ];
   const options = [];
 
-  capacity.map((i, index) => {
+  capacity.map((i) => {
     options.push({
       value: i,
       name: 'capacity',
@@ -49,7 +49,7 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
   ];
   const morelessOptions = [];
 
-  moreless.map((i, index) => {
+  moreless.map((i) => {
     morelessOptions.push({
       value: i[0],
       name: 'capacity',

@@ -4,7 +4,7 @@ import { useApp } from 'context';
 import { userServices } from 'services';
 import { ButtonIconed } from 'components';
 
-const AccountLogoutButton = (props) => {
+const AccountLogoutButton = () => {
   const { initializeUnauthenticatedUser } = useApp();
 
   const logoutUser = () => {

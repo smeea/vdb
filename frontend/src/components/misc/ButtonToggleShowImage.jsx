@@ -4,7 +4,7 @@ import ImageAlt from 'assets/images/icons/image-alt.svg';
 import FileTextFill from 'assets/images/icons/chat-quote-fill.svg';
 import { useApp } from 'context';
 
-const ButtonToggleShowImage = (props) => {
+const ButtonToggleShowImage = () => {
   const {
     showImage,
     toggleShowImage,

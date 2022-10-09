@@ -306,8 +306,8 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                     deck.inventory_type === 's'
                       ? 'Flexible'
                       : deck.inventory_type === 'h'
-                        ? 'Fixed'
-                        : 'Virtual'
+                      ? 'Fixed'
+                      : 'Virtual'
                   }
                 >
                   {deck.inventory_type == 's' && <Shuffle />}
@@ -422,8 +422,8 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                       deck={deck}
                     />
                     {revFilter &&
-                      (deck.master ||
-                        (deck.branches && deck.branches.length > 0)) ? (
+                    (deck.master ||
+                      (deck.branches && deck.branches.length > 0)) ? (
                       <DeckBranchDeleteButton noText={true} deck={deck} />
                     ) : (
                       <DeckDeleteButton noText={true} deck={deck} />
@@ -446,9 +446,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
         animation={false}
         dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
       >
-        <Modal.Header
-          className='no-border pt-2 pt-md-3 pb-0 pb-md-1 ps-2 pe-3 px-md-4'
-        >
+        <Modal.Header className="no-border pt-2 pt-md-3 pb-0 pb-md-1 ps-2 pe-3 px-md-4">
           <h5>Select Deck</h5>
           {!isNarrow && (
             <Button variant="outline-secondary" onClick={handleClose}>
@@ -509,10 +507,11 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                 </th>
                 <th className="buttons">
                   <div
-                    className={`${isMobile
+                    className={`${
+                      isMobile
                         ? ''
                         : 'd-flex justify-content-end align-items-center '
-                      } px-1`}
+                    } px-1`}
                   >
                     <Form.Check
                       className={isMobile ? '' : 'pt-05 pe-3'}

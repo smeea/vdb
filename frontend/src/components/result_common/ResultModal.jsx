@@ -48,8 +48,8 @@ const ResultModal = ({
   }, [card]);
 
   const swipeHandlers = useSwipeable({
-    onSwipedRight: (eventData) => handleModalCardChange(-1),
-    onSwipedLeft: (eventData) => handleModalCardChange(1),
+    onSwipedRight: () => handleModalCardChange(-1),
+    onSwipedLeft: () => handleModalCardChange(1),
   });
 
   return (

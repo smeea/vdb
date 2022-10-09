@@ -13,7 +13,7 @@ const TwdSearchFormClan = ({ value, onChange }) => {
 
   const options = [];
 
-  clans.map((i, index) => {
+  clans.map((i) => {
     if (i == 'ANY' || i == 'NONE') {
       options.push({
         value: i.toLowerCase(),

@@ -6,7 +6,7 @@ import { ButtonIconed } from 'components';
 
 const DeckReviewButton = ({ deckid }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
-  const [snapshotId, setSnapshotId] = useState(undefined)
+  const [snapshotId, setSnapshotId] = useState(undefined);
   const navigate = useNavigate();
 
   const getSnapshot = (deckid) => {
@@ -20,9 +20,9 @@ const DeckReviewButton = ({ deckid }) => {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        setSnapshotId(data.deckid)
-      })
-  }
+        setSnapshotId(data.deckid);
+      });
+  };
 
   useEffect(() => {
     if (snapshotId) {
@@ -30,13 +30,13 @@ const DeckReviewButton = ({ deckid }) => {
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
     }
-  }, [snapshotId])
+  }, [snapshotId]);
 
   return (
     <ButtonIconed
       variant="secondary"
       onClick={() => {
-        getSnapshot(deckid)
+        getSnapshot(deckid);
       }}
       title="Review Deck"
       icon={<PencilSquare />}

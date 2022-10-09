@@ -9,7 +9,7 @@ const TwdSearchFormMatchInventory = ({ value, name, onChange }) => {
     ['0.9', '90%+'],
   ];
 
-  const options = matchOptions.map((i, index) => {
+  const options = matchOptions.map((i) => {
     return {
       value: i[0],
       name: name,

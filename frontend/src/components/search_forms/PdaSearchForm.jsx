@@ -24,7 +24,7 @@ import defaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-const PdaSearchForm = (props) => {
+const PdaSearchForm = () => {
   const {
     username,
     cryptCardBase,
@@ -356,12 +356,12 @@ const PdaSearchForm = (props) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
-          {cryptCardBase &&
+          {cryptCardBase && (
             <TwdSearchFormCrypt
               state={pdaFormState.crypt}
               setState={setPdaFormState}
             />
-          }
+          )}
         </Col>
       </Row>
       <Row className="pb-1 pe-1 mx-0">
@@ -382,12 +382,12 @@ const PdaSearchForm = (props) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
-          {libraryCardBase &&
+          {libraryCardBase && (
             <TwdSearchFormLibrary
               state={pdaFormState.library}
               setState={setPdaFormState}
             />
-          }
+          )}
         </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">

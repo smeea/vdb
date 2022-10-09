@@ -57,9 +57,7 @@ const DeckDrawModal = ({
         animation={false}
         dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
       >
-        <Modal.Header
-          className='no-border pt-2 pt-md-3 pb-0 pb-md-1 ps-2 pe-3 px-md-4'
-        >
+        <Modal.Header className="no-border pt-2 pt-md-3 pb-0 pb-md-1 ps-2 pe-3 px-md-4">
           <h5>Deck Draw</h5>
           {!isNarrow && (
             <Button variant="outline-secondary" onClick={handleClose}>
@@ -69,7 +67,7 @@ const DeckDrawModal = ({
         </Modal.Header>
         <Modal.Body className="p-0">
           <Container fluid>
-            <Row className='px-0 pb-md-4'>
+            <Row className="px-0 pb-md-4">
               <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
                 <div>
                   <div className="d-flex justify-content-between title-line">
@@ -197,7 +195,7 @@ const DeckDrawModal = ({
               </Col>
             </Row>
             {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-              <Row className='px-0 pb-md-4'>
+              <Row className="px-0 pb-md-4">
                 <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
                   {burnedCrypt.length > 0 && (
                     <div className="pt-4 pt-md-0">
@@ -260,7 +258,9 @@ const DeckDrawModal = ({
                           >
                             <img
                               className="cost-pool-image-results py-1 pe-1"
-                              src={process.env.ROOT_URL + 'images/misc/poolX.png'}
+                              src={
+                                process.env.ROOT_URL + 'images/misc/poolX.png'
+                              }
                             />
                             <b>{burnedPoolTotal}</b>
                           </div>
@@ -298,7 +298,6 @@ const DeckDrawModal = ({
         </div>
       )}
     </>
-
   );
 };
 

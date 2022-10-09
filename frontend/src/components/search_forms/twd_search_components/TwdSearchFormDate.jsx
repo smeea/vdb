@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const TwdSearchFormDate = ({ inPda, date, onChange }) => {
-  const { isMobile, isXWide } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const noPdaYears = [
@@ -40,7 +40,7 @@ const TwdSearchFormDate = ({ inPda, date, onChange }) => {
   const dateFromOptions = [];
   const dateToOptions = [];
 
-  years.map((i, index) => {
+  years.map((i) => {
     if (i === 'ANY' || date.to === 'any' || parseInt(i) <= date.to) {
       dateFromOptions.push({
         value: i.toLowerCase(),

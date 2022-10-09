@@ -22,16 +22,10 @@ const InventoryMobile = ({
   setClan,
   setType,
   setDiscipline,
-  missingByClan,
-  missingByType,
-  missingByDiscipline,
   setMissingByClan,
   setMissingByType,
   setMissingByDiscipline,
   category,
-  setCategory,
-  setShowAddDeck,
-  setShowAddPrecon,
   sharedInventoryCrypt,
   sharedInventoryLibrary,
   inShared,
@@ -117,7 +111,9 @@ const InventoryMobile = ({
                   withCompact={newLibraryId}
                   category={sharedInventoryLibrary ? 'ok' : category}
                   cards={
-                    sharedInventoryLibrary ? sharedInventoryLibrary : inventoryLibrary
+                    sharedInventoryLibrary
+                      ? sharedInventoryLibrary
+                      : inventoryLibrary
                   }
                   type={type}
                   setType={setType}

@@ -52,15 +52,17 @@ const PdaResult = ({ showSearch }) => {
           newCounter -= 1;
 
           const cardsData = parseDeckCards(deck.cards);
-          Object.values({ ...cardsData.crypt, ...cardsData.library }).filter(card => {
-            if (card.q === 0) {
-              if (card.c.Id > 200000) {
-                delete cardsData.crypt[card.c.Id]
-              } else {
-                delete cardsData.library[card.c.Id]
+          Object.values({ ...cardsData.crypt, ...cardsData.library }).filter(
+            (card) => {
+              if (card.q === 0) {
+                if (card.c.Id > 200000) {
+                  delete cardsData.crypt[card.c.Id];
+                } else {
+                  delete cardsData.library[card.c.Id];
+                }
               }
             }
-          })
+          );
           deck.crypt = cardsData.crypt;
           deck.library = cardsData.library;
 

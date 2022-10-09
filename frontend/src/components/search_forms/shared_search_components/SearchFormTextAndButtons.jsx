@@ -151,7 +151,7 @@ const SearchFormTextAndButtons = ({
           id="text-hideMissing"
           label="Search In Inventory"
           checked={hideMissing}
-          onChange={(e) => setHideMissing(!hideMissing)}
+          onChange={() => setHideMissing(!hideMissing)}
         />
       )}
     </Row>

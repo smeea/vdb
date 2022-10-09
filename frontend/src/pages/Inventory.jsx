@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
+import { Container, Row, Col, Modal } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
-import X from 'assets/images/icons/x.svg';
 import {
   AccountLogin,
   AccountRegister,
-  ButtonIconed,
   InventoryAddDeckModal,
   InventoryAddPreconModal,
   InventoryDesktop,
@@ -17,7 +15,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const Inventory = (props) => {
+const Inventory = () => {
   const {
     username,
     isMobile,
@@ -31,12 +29,11 @@ const Inventory = (props) => {
     libraryCardBase,
   } = useApp();
 
-  const [inventoryError, setInventoryError] = useState(undefined); // TODO show warning on error
-  const [inventoryKey, setInventoryKey] = useState(undefined);
+  const [inventoryError, setInventoryError] = useState(); // TODO show warning on error
+  const [inventoryKey, setInventoryKey] = useState();
   const query = new URLSearchParams(useLocation().search);
-  const [sharedInventoryCrypt, setSharedInventoryCrypt] = useState(undefined);
-  const [sharedInventoryLibrary, setSharedInventoryLibrary] =
-    useState(undefined);
+  const [sharedInventoryCrypt, setSharedInventoryCrypt] = useState();
+  const [sharedInventoryLibrary, setSharedInventoryLibrary] = useState();
   const [showShareModal, setShowShareModal] = useState(false);
 
   const getInventory = (key) => {

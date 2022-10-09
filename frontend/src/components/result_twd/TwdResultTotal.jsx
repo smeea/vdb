@@ -5,7 +5,7 @@ const TwdResultTotal = ({ decks, sortMethods, sortMethod, setSortMethod }) => {
   const byYear = {};
   let total = 0;
 
-  decks.map((deck, index) => {
+  decks.map((deck) => {
     const year = `'${deck['creation_date'].slice(2, 4)}`;
     if (byYear[year]) {
       byYear[year] += 1;

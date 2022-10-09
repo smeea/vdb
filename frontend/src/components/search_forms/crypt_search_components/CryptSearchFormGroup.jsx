@@ -32,6 +32,6 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
       </Col>
     </Row>
   );
-}
+};
 
 export default CryptSearchFormGroup;

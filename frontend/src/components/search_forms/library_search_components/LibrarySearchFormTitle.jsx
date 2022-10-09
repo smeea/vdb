@@ -10,7 +10,7 @@ import {
 import { useApp } from 'context';
 
 const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
-  const { isXWide, isMobile } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const titles = [
@@ -33,7 +33,7 @@ const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
 
   const options = [];
 
-  titles.map((i, index) => {
+  titles.map((i) => {
     options.push({
       value: i.toLowerCase(),
       name: 'title',

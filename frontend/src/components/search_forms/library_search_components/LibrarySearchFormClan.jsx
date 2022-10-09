@@ -25,7 +25,7 @@ const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
 
   const options = [];
 
-  clans.map((i, index) => {
+  clans.map((i) => {
     if (i == 'ANY' || i == 'Not Required') {
       options.push({
         value: i.toLowerCase(),

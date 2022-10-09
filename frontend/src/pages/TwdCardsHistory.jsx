@@ -10,7 +10,7 @@ import { useModalCardController } from 'hooks';
 import { byName } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const TwdCardsHistory = (props) => {
+const TwdCardsHistory = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
 
   const [crypt, setCrypt] = useState(undefined);

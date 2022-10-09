@@ -14,7 +14,7 @@ import {
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import { useApp } from 'context';
 
-const Account = (props) => {
+const Account = () => {
   const { isMobile, username, isPlaytester, isPlaytestAdmin } = useApp();
 
   return (

@@ -22,12 +22,7 @@ import { useApp } from 'context';
 
 const DeckLibraryTable = ({
   deckid,
-  disciplinesSet,
-  keyDisciplines,
-  nonKeyDisciplines,
   cards,
-  cardsFrom,
-  cardsTo,
   isPublic,
   isAuthor,
   placement,

@@ -15,7 +15,7 @@ const DeckQrModal = ({ show, setShow, deck }) => {
     setShowFloatingButtons(true);
   };
 
-  const DeckQR = (props) => {
+  const DeckQR = () => {
     return (
       <div style={{ background: 'white', padding: '4px' }}>
         <a href={url}>

@@ -1,26 +1,25 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Form, FormControl, InputGroup, Container, Modal, Button, Spinner } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import Check2 from 'assets/images/icons/check2.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import { AccountPlaytestAdd, ButtonIconed, ErrorOverlay } from 'components';
+import { AccountPlaytestAdd } from 'components';
 import { useApp } from 'context';
 
 const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
-  const [state, setState] = useState(true)
+  const [state, setState] = useState(true);
 
   const handleClick = () => {
-    changePlaytester(username, !state)
-    setState(!state)
-  }
+    changePlaytester(username, !state);
+    setState(!state);
+  };
 
   return (
-    <div className={`d-flex align-items-center ${state ? '' : 'gray-font'}`}
+    <div
+      className={`d-flex align-items-center ${state ? '' : 'gray-font'}`}
       onClick={handleClick}
     >
-      <div className="d-flex align-items-center pe-2"
-      >
+      <div className="d-flex align-items-center pe-2">
         <>
           {state ? (
             <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
@@ -30,21 +29,15 @@ const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
         </>
       </div>
       {username}
-    </div >
-  )
-}
+    </div>
+  );
+};
 
 const AccountPlaytestManage = ({ setShow }) => {
-  const {
-    isMobile,
-    isNarrow,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-    username,
-  } = useApp();
+  const { isMobile, isNarrow, username } = useApp();
 
-  const [playtesters, setPlaytesters] = useState([])
-  const [newPlaytesters, setNewPlaytesters] = useState([])
+  const [playtesters, setPlaytesters] = useState([]);
+  const [newPlaytesters, setNewPlaytesters] = useState([]);
 
   const changePlaytester = (u, isAdd) => {
     const url = `${process.env.API_URL}playtest`;
@@ -58,8 +51,8 @@ const AccountPlaytestManage = ({ setShow }) => {
       body: JSON.stringify({ username: u }),
     };
 
-    fetch(url, options)
-  }
+    fetch(url, options);
+  };
 
   const getPlaytesters = () => {
     const url = `${process.env.API_URL}playtest`;
@@ -75,26 +68,21 @@ const AccountPlaytestManage = ({ setShow }) => {
         return response.json();
       })
       .then((data) => {
-        setPlaytesters(data)
+        setPlaytesters(data);
       });
-  }
+  };
 
   useEffect(() => {
-    getPlaytesters()
-  }, [])
+    getPlaytesters();
+  }, []);
 
   const handleClose = () => {
-    setShow(false)
-  }
+    setShow(false);
+  };
 
   return (
     <>
-      <Modal
-        show={true}
-        onHide={handleClose}
-        animation={false}
-        size="sm"
-      >
+      <Modal show={true} onHide={handleClose} animation={false} size="sm">
         <Modal.Header
           className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
         >
@@ -104,9 +92,21 @@ const AccountPlaytestManage = ({ setShow }) => {
           </Button>
         </Modal.Header>
         <Modal.Body>
-          <AccountPlaytestAdd playtesters={playtesters} newPlaytesters={newPlaytesters} setNewPlaytesters={setNewPlaytesters} />
+          <AccountPlaytestAdd
+            playtesters={playtesters}
+            newPlaytesters={newPlaytesters}
+            setNewPlaytesters={setNewPlaytesters}
+          />
           <div className="px-2 pt-2">
-            {[...newPlaytesters.reverse(), ...playtesters.sort()].filter(u => u != username).map(u => <AccountPlaytestPlayer key={u} changePlaytester={changePlaytester} username={u} />)}
+            {[...newPlaytesters.reverse(), ...playtesters.sort()]
+              .filter((u) => u != username)
+              .map((u) => (
+                <AccountPlaytestPlayer
+                  key={u}
+                  changePlaytester={changePlaytester}
+                  username={u}
+                />
+              ))}
           </div>
         </Modal.Body>
         <Modal.Footer>

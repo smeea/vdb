@@ -17,10 +17,7 @@ const PdaResultDescription = ({ deck }) => {
   const def = JSON.parse(JSON.stringify(defaults));
 
   const handleAuthorClick = (author) => {
-    setPdaFormState((prevState) => ({
-      ...def,
-      author: author,
-    }));
+    setPdaFormState({ ...def, author: author });
     navigate(
       `/pda?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
     );

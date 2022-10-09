@@ -32,7 +32,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, setFormState }) => {
 
   const options = [];
 
-  disciplines.map((i, index) => {
+  disciplines.map((i) => {
     if (i == 'ANY' || i == 'Not Required') {
       options.push({
         value: i.toLowerCase(),

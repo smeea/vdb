@@ -18,7 +18,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
 
   const options = [];
 
-  votes.map((i, index) => {
+  votes.map((i) => {
     options.push({
       value: i[0],
       name: 'votes',

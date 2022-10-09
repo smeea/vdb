@@ -108,7 +108,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const formsRight = [];
   let counter = 0;
 
-  types.map((i, index) => {
+  types.map((i) => {
     const options = [
       {
         value: 'any',
@@ -117,7 +117,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       },
     ];
 
-    i[1].map((j, index) => {
+    i[1].map((j) => {
       options.push({
         value: j[0],
         name: i[0].toLowerCase(),
@@ -128,7 +128,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
     if (counter < 5) {
       counter += 1;
       formsLeft.push(
-        <Row className="py-1 mx-0 align-items-center" key={index}>
+        <Row className="py-1 mx-0 align-items-center" key={i[0]}>
           <Col xs={2} className="d-flex ps-2 justify-content-center">
             <label className="h7 mb-0">
               <ResultLibraryTypeImage value={i[0]} />
@@ -151,7 +151,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       );
     } else {
       formsRight.push(
-        <Row className="py-1 mx-0 align-items-center" key={index}>
+        <Row className="py-1 mx-0 align-items-center" key={i[0]}>
           <Col xs={2} className="d-flex ps-2 justify-content-center">
             <label className="h7 mb-0">
               <ResultLibraryTypeImage value={i[0]} />

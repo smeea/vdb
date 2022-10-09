@@ -11,13 +11,13 @@ import { cardtypeSorted } from 'utils/constants';
 import { useApp } from 'context';
 
 const LibrarySearchFormType = ({ value, onChange, setFormState }) => {
-  const { isXWide, isMobile } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const typesSorted = ['ANY', ...cardtypeSorted];
   const options = [];
 
-  typesSorted.map((i, index) => {
+  typesSorted.map((i) => {
     if (i == 'ANY') {
       options.push({
         value: i.toLowerCase(),

@@ -25,7 +25,7 @@ const SearchFormPrecon = ({
   Object.keys(setsAndPrecons)
     .filter((i) => playtest || i !== 'PLAYTEST')
     .map((i) => {
-      if (setsAndPrecons[i].hasOwnProperty('precons')) {
+      if (setsAndPrecons[i].precons) {
         const year = setsAndPrecons[i].date.slice(2, 4);
         Object.keys(setsAndPrecons[i].precons).map((j) => {
           const precon = j;
@@ -60,7 +60,7 @@ const SearchFormPrecon = ({
     },
   ];
 
-  preOptions.map((i, index) => {
+  preOptions.map((i) => {
     if (i.set === 'any') {
       options.push({
         value: i.set,
@@ -73,9 +73,9 @@ const SearchFormPrecon = ({
         ),
       });
     } else {
-      const clanImages = i.clans.map((clan, index) => {
+      const clanImages = i.clans.map((clan) => {
         return (
-          <div className="d-inline" key={index}>
+          <div className="d-inline" key={clan}>
             {clan === 'Bundle' ? (
               <div className="d-inline clan-image-results">
                 <GiftFill />
@@ -125,10 +125,10 @@ const SearchFormPrecon = ({
     },
   ];
 
-  const printForm = printFormOptions.map((i, index) => {
+  const printForm = printFormOptions.map((i) => {
     return (
       <Form.Check
-        key={index}
+        key={i.value}
         name="precon"
         value={i.value}
         type="checkbox"

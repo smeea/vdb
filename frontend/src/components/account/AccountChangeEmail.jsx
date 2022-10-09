@@ -12,7 +12,7 @@ import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
-const AccountChangeEmail = (props) => {
+const AccountChangeEmail = () => {
   const { email, setEmail, isMobile } = useApp();
 
   const [state, setState] = useState({
@@ -52,7 +52,7 @@ const AccountChangeEmail = (props) => {
     }
   };
 
-  const onSuccess = (data) => {
+  const onSuccess = () => {
     setSpinnerState(false);
     setEmail(state.email);
     setButtonState(true);

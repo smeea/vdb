@@ -53,7 +53,10 @@ const InventoryMissingButton = ({
 
   Object.keys(cryptCardBase)
     .filter((cardid) => {
-      return cardid < 210000 && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);
+      return (
+        cardid < 210000 &&
+        (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q)
+      );
     })
     .map(
       (cardid) =>
@@ -62,7 +65,10 @@ const InventoryMissingButton = ({
 
   Object.keys(libraryCardBase)
     .filter((cardid) => {
-      return cardid < 110000 && (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q);
+      return (
+        cardid < 110000 &&
+        (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q)
+      );
     })
     .map(
       (cardid) =>

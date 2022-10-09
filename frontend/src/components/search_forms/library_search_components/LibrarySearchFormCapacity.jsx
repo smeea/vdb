@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { useApp } from 'context';
 
 const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
-  const { isXWide, isMobile } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const capacity = [
@@ -23,7 +23,7 @@ const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
   ];
   const options = [];
 
-  capacity.map((i, index) => {
+  capacity.map((i) => {
     let v;
     i == 'ANY' ? (v = i.toLowerCase()) : (v = i);
 
@@ -45,7 +45,7 @@ const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
   ];
   const morelessOptions = [];
 
-  moreless.map((i, index) => {
+  moreless.map((i) => {
     morelessOptions.push({
       value: i[0],
       name: 'capacity',

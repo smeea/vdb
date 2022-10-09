@@ -125,7 +125,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
         setShowFloatingButtons(true);
         setActiveDeck({ src: 'my', deckid: data.deckid });
       })
-      .catch((error) => setCreateError(true));
+      .catch(() => setCreateError(true));
   };
 
   const importDeckFromFile = ({ format, file, anonymous }) => {
@@ -229,7 +229,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
           .then((cards) => {
             inventoryAddToState(cards);
           })
-          .catch((error) => setImportError(true));
+          .catch(() => setImportError(true));
       } else {
         fetchPromise
           .then((response) => response.json())
@@ -242,10 +242,9 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
             });
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
-            setDeckText('');
             handleClose();
           })
-          .catch((error) => {
+          .catch(() => {
             setImportError(true);
           });
       }

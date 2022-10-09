@@ -10,7 +10,7 @@ import {
 import { useApp } from 'context';
 
 const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
-  const { isMobile, isXWide } = useApp();
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const sects = [
@@ -25,7 +25,7 @@ const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
 
   const options = [];
 
-  sects.map((i, index) => {
+  sects.map((i) => {
     options.push({
       value: i.toLowerCase(),
       name: 'sect',
@@ -75,7 +75,7 @@ const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
             options={options}
             isSearchable={false}
             name={0}
-            maxMenuHeight={isMobile ? 350 : 450}
+            maxMenuHeight={maxMenuHeight}
             value={options.find(
               (obj) => obj.value === value.value[0].toLowerCase()
             )}

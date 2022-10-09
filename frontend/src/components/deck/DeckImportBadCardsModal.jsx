@@ -11,7 +11,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
 
   useEffect(() => {
     setCards(
-      badCards.map((i) => ({
+      badCards.map(() => ({
         cardid: null,
         q: null,
       }))

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Accordion } from 'react-bootstrap';
 import { TwdHallFameTournamentsPlayer } from 'components';
 
-const TwdHallOfFameTournaments = (props) => {
+const TwdHallOfFameTournaments = () => {
   const [players, setPlayers] = useState(undefined);
 
   useEffect(() => {

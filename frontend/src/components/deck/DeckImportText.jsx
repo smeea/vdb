@@ -72,7 +72,7 @@ const DeckImportText = ({
           setSpinnerState(false);
           handleClose();
         })
-        .catch((error) => {
+        .catch(() => {
           setImportError(true);
           setSpinnerState(false);
         });

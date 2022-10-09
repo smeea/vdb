@@ -71,13 +71,6 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
         }, 1000);
-      })
-      .catch((error) => {
-        if (error.message == 400) {
-          setError('NO DECK WITH THIS ID');
-        } else {
-          setError('CONNECTION PROBLEM');
-        }
       });
   };
 

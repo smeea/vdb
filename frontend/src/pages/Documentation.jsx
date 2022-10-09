@@ -8,7 +8,7 @@ import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import ImageAlt from 'assets/images/icons/image-alt.svg';
 import { Banner } from 'components';
 
-function Documentation(props) {
+const Documentation = () => {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
@@ -425,6 +425,6 @@ function Documentation(props) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Documentation;

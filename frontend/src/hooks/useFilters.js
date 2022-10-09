@@ -47,7 +47,7 @@ const useFilters = (cards = {}) => {
     });
   };
 
-  const filterTWD = (filter) => {};
+  const filterTWD = () => {};
 
   return {
     filterCrypt,
@@ -166,7 +166,10 @@ const missingTraits = (filterTraits, card, traitsRegexMap) => {
 const missingTrait = (trait, card, traitsRegexMap) => {
   switch (trait) {
     case 'playtest':
-    return (card['Id'] > 200000 && card['Id'] < 210000) || (card['Id'] > 100000 && card['Id'] < 110000)
+      return (
+        (card['Id'] > 200000 && card['Id'] < 210000) ||
+        (card['Id'] > 100000 && card['Id'] < 110000)
+      );
     case 'advancement':
       return !card['Adv'];
     case 'banned':
@@ -615,13 +618,10 @@ const missingPrecon = (filterPrecon, card) => {
               Object.keys(card.Set).length === 1 &&
               Object.keys(card.Set[set]).length === 1
             );
-            break;
           case 'first':
             return dates.min === setDate && dates.min < dates.minPromo;
-            break;
           case 'reprint':
             return dates.min < setDate || dates.minPromo < setDate;
-            break;
         }
       } else return true;
     }
@@ -710,7 +710,9 @@ const missingCostCheck = (logic, filterCost, cardCost) => {
 };
 
 const cardDates = (card, addPromo = false) => {
-  const cardSets = Object.keys(card.Set).filter((set) => set !== 'Promo' && set !== 'PLAYTEST');
+  const cardSets = Object.keys(card.Set).filter(
+    (set) => set !== 'Promo' && set !== 'PLAYTEST'
+  );
   const setsDates = cardSets
     .map((key) => setsAndPrecons[key].date)
     .filter((date) => date);

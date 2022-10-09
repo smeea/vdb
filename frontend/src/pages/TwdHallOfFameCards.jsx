@@ -4,7 +4,7 @@ import { TwdHallFameCardsPlayer } from 'components';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const TwdHallOfFameCards = (props) => {
+const TwdHallOfFameCards = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
 
   const [players, setPlayers] = useState(undefined);

@@ -9,7 +9,7 @@ import {
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from 'context';
 
-const TwdSearchFormCrypt = ({state, setState}) => {
+const TwdSearchFormCrypt = ({ state, setState }) => {
   const { cryptCardBase, isMobile } = useApp();
   const [modalCard, setModalCard] = useState(undefined);
 
@@ -75,6 +75,6 @@ const TwdSearchFormCrypt = ({state, setState}) => {
       )}
     </>
   );
-}
+};
 
 export default TwdSearchFormCrypt;

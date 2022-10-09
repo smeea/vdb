@@ -32,7 +32,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
 
   const getLastDeckExcept = (deckid) => {
     const lastDeckArray = Object.values(decks)
-      .filter((deck) => !revisions.includes(deck.deckid))
+      .filter(() => !revisions.includes(deckid))
       .sort(byTimestamp);
 
     if (lastDeckArray.length > 0) {

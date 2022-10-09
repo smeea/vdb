@@ -12,7 +12,7 @@ const ResultLayoutTextSets = (props) => {
   };
 
   const Sets = Object.keys(props.sets)
-    .filter(set => playtest || set !== 'PLAYTEST')
+    .filter((set) => playtest || set !== 'PLAYTEST')
     .sort(byDate)
     .map((k, index) => {
       const preconsShort = Object.keys(props.sets[k]).join('/');

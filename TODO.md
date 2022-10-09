@@ -19,7 +19,6 @@
 - Move deck/inventory import to frontend
 - Refactor CSS
 - Fetching data with react-router
-- Eslint everything
 
 # IMPROVE TECHNOLOGY - BACKEND
 

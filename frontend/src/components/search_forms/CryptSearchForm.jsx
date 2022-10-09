@@ -26,7 +26,7 @@ import { sanitizeFormState } from 'utils';
 import { useFilters } from 'hooks';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-const CryptSearchForm = (props) => {
+const CryptSearchForm = () => {
   const {
     cryptCardBase,
     hideMissing,
@@ -35,7 +35,7 @@ const CryptSearchForm = (props) => {
     inventoryCrypt,
     inventoryMode,
     isMobile,
-    playtest
+    playtest,
   } = useApp();
 
   const { filterCrypt } = useFilters(cryptCardBase);
@@ -197,7 +197,9 @@ const CryptSearchForm = (props) => {
 
     setSpinnerState(true);
 
-    const filteredCards = filterCrypt(sanitizeForm).filter(card => playtest || card.Id < 210000);
+    const filteredCards = filterCrypt(sanitizeForm).filter(
+      (card) => playtest || card.Id < 210000
+    );
 
     setSpinnerState(false);
 

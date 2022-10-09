@@ -32,8 +32,14 @@ const DeckProxyCryptTable = ({
   keyDisciplines,
   nonKeyDisciplines,
 }) => {
-  const { decks, inventoryMode, inventoryCrypt, usedCryptCards, isMobile } =
-    useApp();
+  const {
+    decks,
+    inventoryMode,
+    inventoryCrypt,
+    usedCryptCards,
+    isMobile,
+    setShowFloatingButtons,
+  } = useApp();
 
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
 

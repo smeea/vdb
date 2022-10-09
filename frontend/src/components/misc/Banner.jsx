@@ -1,15 +1,8 @@
 import React from 'react';
-import { useApp } from 'context';
 
-function Banner(props) {
-  const { isMobile } = useApp();
-
+const Banner = () => {
   return (
-    <div
-      className={`d-flex justify-content-between align-items-center logo-box ${
-        isMobile ? 'mb-3' : 'my-3'
-      }`}
-    >
+    <div className="d-flex justify-content-between align-items-center logo-box mb-3 my-md-3">
       <div className="d-flex align-items-center">
         <img
           className="logo-image"
@@ -30,6 +23,6 @@ function Banner(props) {
       </div>
     </div>
   );
-}
+};
 
 export default Banner;

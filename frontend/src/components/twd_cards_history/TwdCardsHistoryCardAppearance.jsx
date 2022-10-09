@@ -25,10 +25,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   }
 
   const handleAuthorClick = (author) => {
-    setTwdFormState((prevState) => ({
-      ...def,
-      author: author,
-    }));
+    setTwdFormState({ ...def, author: author });
     navigate(
       `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
     );
@@ -36,13 +33,23 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
 
   return (
     <>
-      <div className={`d-flex align-items-center justify-content-center year ${card.deckid ? '' : 'bold blue'}`}>
+      <div
+        className={`d-flex align-items-center justify-content-center year ${
+          card.deckid ? '' : 'bold blue'
+        }`}
+      >
         {card.release_date.slice(0, 4)}
       </div>
       {!isMobile && (
-        <div className="d-flex align-items-center justify-content-center year">{card.twd_date && card.twd_date.slice(0, 4)}</div>
+        <div className="d-flex align-items-center justify-content-center year">
+          {card.twd_date && card.twd_date.slice(0, 4)}
+        </div>
       )}
-      <div className={`d-flex align-items-center justify-content-center ytw ${card.deckid ? '' : 'bold blue'}`}>
+      <div
+        className={`d-flex align-items-center justify-content-center ytw ${
+          card.deckid ? '' : 'bold blue'
+        }`}
+      >
         {yearsToWin}
       </div>
       <div className="d-flex align-items-center justify-content-between align-items-center player">

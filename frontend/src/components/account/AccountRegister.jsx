@@ -15,7 +15,7 @@ import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
-const AccountRegister = (props) => {
+const AccountRegister = () => {
   const { setUsername, setEmail } = useApp();
 
   const [formUsername, setFormUsername] = useState('');

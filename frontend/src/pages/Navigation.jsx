@@ -14,7 +14,7 @@ import twdDefaults from 'components/forms_data/defaultsTwdForm.json';
 import pdaDefaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 
-const Navigation = (props) => {
+const Navigation = () => {
   const { inventoryMode, toggleInventoryMode, isMobile, username, activeDeck } =
     useApp();
 

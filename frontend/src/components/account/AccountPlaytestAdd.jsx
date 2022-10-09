@@ -1,15 +1,27 @@
 import React, { useState, useRef } from 'react';
-import { Form, FormControl, InputGroup, Button, Spinner } from 'react-bootstrap';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Button,
+  Spinner,
+} from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import { ErrorOverlay } from 'components';
 
-const AccountPlaytestAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) => {
+const AccountPlaytestAdd = ({
+  playtesters,
+  newPlaytesters,
+  setNewPlaytesters,
+}) => {
   const [username, setUsername] = useState('');
   const [spinnerState, setSpinnerState] = useState(false);
-  const [error, setError] = useState(false)
-  const ref = useRef(null)
+  const [error, setError] = useState(false);
+  const ref = useRef(null);
 
   const addPlaytester = () => {
+    setSpinnerState(true);
+
     const url = `${process.env.API_URL}playtest`;
     const options = {
       method: 'PUT',
@@ -21,34 +33,39 @@ const AccountPlaytestAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) 
       body: JSON.stringify({ username: username }),
     };
 
-    setError(false)
+    setError(false);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
       .then(() => {
-        if (!newPlaytesters.includes(username) && !playtesters.includes(username)) {
-          setNewPlaytesters([...newPlaytesters, username])
-          setUsername('')
+        if (
+          !newPlaytesters.includes(username) &&
+          !playtesters.includes(username)
+        ) {
+          setNewPlaytesters([...newPlaytesters, username]);
+          setUsername('');
         } else {
-          setError('ALREADY PLAYTESTER')
+          setError('ALREADY PLAYTESTER');
         }
       })
-      .catch((error) => {
-        setError('USER DOES NOT EXIST')
-      })
-  }
+      .catch(() => {
+        setError('USER DOES NOT EXIST');
+      });
+
+    setSpinnerState(false);
+  };
 
   const handleChange = (event) => {
-    setUsername(event.target.value)
-    setError(false)
-  }
+    setUsername(event.target.value);
+    setError(false);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (username) addPlaytester()
-  }
+    if (username) addPlaytester();
+  };
 
   return (
     <Form className="mb-0" onSubmit={handleSubmit}>
@@ -71,15 +88,11 @@ const AccountPlaytestAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) 
           </Button>
         )}
       </InputGroup>
-      <ErrorOverlay
-        show={error}
-        target={ref.current}
-        placement="bottom"
-      >
+      <ErrorOverlay show={error} target={ref.current} placement="bottom">
         {error}
       </ErrorOverlay>
-    </Form >
-  )
-}
+    </Form>
+  );
+};
 
 export default AccountPlaytestAdd;

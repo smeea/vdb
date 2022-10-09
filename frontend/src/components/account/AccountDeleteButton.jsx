@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { AccountDeleteConfirmation, ButtonIconed } from 'components';
 
-const AccountDeleteButton = (props) => {
+const AccountDeleteButton = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   return (

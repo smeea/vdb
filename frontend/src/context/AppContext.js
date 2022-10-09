@@ -3,7 +3,6 @@ import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { cardServices, inventoryServices, deckServices } from 'services';
 import { useWindowSize } from 'hooks';
 import { byTimestamp } from 'utils';
-import imbuedClansList from 'assets/data/imbuedClansList.json';
 
 const AppContext = React.createContext();
 
@@ -518,7 +517,7 @@ export const AppProvider = (props) => {
       });
     }
 
-    fetch(url, options).catch((error) => {
+    fetch(url, options).catch(() => {
       if (deckid in decks) {
         setDecks(initialState);
       } else if (deckid in sharedDeck) {
@@ -692,7 +691,7 @@ export const AppProvider = (props) => {
 
     const oldCryptState = { ...inventoryCrypt };
     const oldLibraryState = { ...inventoryLibrary };
-    fetch(url, options).catch((error) => {
+    fetch(url, options).catch(() => {
       setInventoryCrypt(oldCryptState);
       setInventoryLibrary(oldLibraryState);
     });
@@ -744,7 +743,7 @@ export const AppProvider = (props) => {
     if (count >= 0 || (count < 0 && inventory[cardid])) {
       const oldState = { ...inventory };
 
-      fetch(url, options).catch((error) => {
+      fetch(url, options).catch(() => {
         setInventory(oldState);
       });
 

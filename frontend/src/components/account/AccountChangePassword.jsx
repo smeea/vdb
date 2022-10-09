@@ -13,7 +13,7 @@ import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import { ErrorOverlay } from 'components';
 import { userServices } from 'services';
 
-function AccountChangePassword(props) {
+const AccountChangePassword = () => {
   const [state, setState] = useState({
     password: '',
     newPassword: '',
@@ -55,7 +55,7 @@ function AccountChangePassword(props) {
     }
   };
 
-  const onSuccess = (data) => {
+  const onSuccess = () => {
     setButtonState(true);
     setSpinnerState(false);
     setTimeout(() => {
@@ -187,6 +187,6 @@ function AccountChangePassword(props) {
       </Form>
     </div>
   );
-}
+};
 
 export default AccountChangePassword;

@@ -27,8 +27,6 @@ const DeckCryptTable = ({
   keyDisciplines,
   nonKeyDisciplines,
   cards,
-  cardsFrom,
-  cardsTo,
   isPublic,
   isAuthor,
   placement,
@@ -197,7 +195,8 @@ const DeckCryptTable = ({
           </td>
           {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td className="disciplines" onClick={() => handleClick(card.c)}>
-              {keyDisciplines && disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
+              {keyDisciplines &&
+              disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
                 <DeckCryptDisciplines
                   value={card.c.Disciplines}
                   disciplinesSet={disciplinesSet}

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import WifiOff from 'assets/images/icons/wifi-off.svg';
 import { useApp } from 'context';
 
-const Offline = (props) => {
+const Offline = () => {
   const { isMobile } = useApp();
 
   return (
@@ -20,6 +20,6 @@ const Offline = (props) => {
       </div>
     </Navbar>
   );
-}
+};
 
 export default Offline;

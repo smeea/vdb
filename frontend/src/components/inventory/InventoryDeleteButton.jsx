@@ -3,7 +3,7 @@ import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ButtonIconed, ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
-const InventoryDelete = (props) => {
+const InventoryDelete = () => {
   const {
     setInventoryCrypt,
     setInventoryLibrary,

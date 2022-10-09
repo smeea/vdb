@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { PdaResult, PdaSearchForm } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-const Pda = (props) => {
+const Pda = () => {
   const { showPdaSearch, isMobile } = useApp();
   const { pdaResults } = useSearchResults();
 
