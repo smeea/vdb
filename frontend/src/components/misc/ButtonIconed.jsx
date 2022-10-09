@@ -1,9 +1,18 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const ButtonIconed = ({ onClick, variant, title, text, icon, disabled }) => {
+const ButtonIconed = ({
+  onClick,
+  variant,
+  title,
+  text,
+  icon,
+  disabled,
+  className,
+}) => {
   return (
     <Button
+      className={className}
       variant={variant}
       onClick={onClick}
       title={title}

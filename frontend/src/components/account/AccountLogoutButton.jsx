@@ -14,6 +14,7 @@ const AccountLogoutButton = () => {
 
   return (
     <ButtonIconed
+      className="w-100"
       variant="primary"
       onClick={logoutUser}
       title="Logout"

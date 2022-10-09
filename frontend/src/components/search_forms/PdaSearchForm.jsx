@@ -301,7 +301,7 @@ const PdaSearchForm = () => {
         <>
           <Row className="py-1 ps-1 mx-0 align-items-center">
             <Col xs={6} className="d-flex px-0">
-              <label className="h6 mb-0">In Inventory by Crypt:</label>
+              <label className="bold blue mb-0">In Inventory by Crypt:</label>
             </Col>
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
@@ -313,7 +313,7 @@ const PdaSearchForm = () => {
           </Row>
           <Row className="py-1 ps-1 mx-0 align-items-center">
             <Col xs={6} className="d-flex px-0">
-              <label className="h6 mb-0">In Inventory by Library:</label>
+              <label className="bold blue mb-0">In Inventory by Library:</label>
             </Col>
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory

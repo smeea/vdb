@@ -88,6 +88,46 @@ const AccountChangeEmail = () => {
 
   const tooltipText = <>Email is for password recovery only.</>;
 
+  const EmailForm = (
+    <FormControl
+      className={isMobile ? 'mb-1' : ''}
+      placeholder="New email"
+      type="text"
+      name="email"
+      value={state.email}
+      onChange={handleChange}
+      ref={refEmail}
+    />
+  );
+
+  const PasswordFormButton = (
+    <>
+      <FormControl
+        placeholder="Password"
+        type="password"
+        name="password"
+        value={state.password}
+        onChange={handleChange}
+        ref={refPassword}
+      />
+      {!buttonState ? (
+        !spinnerState ? (
+          <Button variant="primary" type="submit">
+            <Check2 />
+          </Button>
+        ) : (
+          <Button variant="primary">
+            <Spinner animation="border" size="sm" />
+          </Button>
+        )
+      ) : (
+        <Button variant="success" type="submit">
+          <Check2 />
+        </Button>
+      )}
+    </>
+  );
+
   return (
     <div>
       <h6 className="d-flex align-items-center p-1">
@@ -107,39 +147,17 @@ const AccountChangeEmail = () => {
         )}
       </h6>
       <Form className="my-1" onSubmit={handleSubmitButton}>
-        <InputGroup>
-          <FormControl
-            placeholder="New email"
-            type="text"
-            name="email"
-            value={state.email}
-            onChange={handleChange}
-            ref={refEmail}
-          />
-          <FormControl
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={state.password}
-            onChange={handleChange}
-            ref={refPassword}
-          />
-          {!buttonState ? (
-            !spinnerState ? (
-              <Button variant="primary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="primary">
-                <Spinner animation="border" size="sm" />
-              </Button>
-            )
-          ) : (
-            <Button variant="success" type="submit">
-              <Check2 />
-            </Button>
-          )}
-        </InputGroup>
+        {isMobile ? (
+          <>
+            {EmailForm}
+            <InputGroup>{PasswordFormButton}</InputGroup>
+          </>
+        ) : (
+          <InputGroup>
+            {EmailForm}
+            {PasswordFormButton}
+          </InputGroup>
+        )}
         <ErrorOverlay
           show={emptyEmail}
           target={refEmail.current}

@@ -7,20 +7,20 @@ const Changelog = () => {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
-        <Col xs={12} md={7} lg={6} xl={5} className="px-0">
+        <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
-            <h5 className="pb-2">CHANGELOG</h5>
+            <h5 className="pb-1">CHANGELOG</h5>
 
             {changes.map((item) => (
-              <React.Fragment key={item.version}>
-                <h6>{item.version}:</h6>
+              <div className="py-1" key={item.version}>
+                <div className="bold blue">{item.version}:</div>
                 <ul>
                   {item.changes.map((change, idx) => (
                     <li key={idx}>{change}</li>
                   ))}
                 </ul>
-              </React.Fragment>
+              </div>
             ))}
           </div>
         </Col>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
-import List from 'assets/images/icons/list.svg';
+import Gem from 'assets/images/icons/gem.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import ClockHistory from 'assets/images/icons/clock-history.svg';
 import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
@@ -16,7 +16,10 @@ const TwdMoreButton = () => {
       variant="primary"
       title={
         <div className="d-flex justify-content-center align-items-center">
-          <List size={24} />
+          <div className="d-flex pe-2">
+            <Gem size={24} />
+          </div>
+          More
         </div>
       }
     >

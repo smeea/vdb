@@ -12,8 +12,11 @@ import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import { ErrorOverlay } from 'components';
 import { userServices } from 'services';
+import { useApp } from 'context';
 
 const AccountChangePassword = () => {
+  const { isMobile } = useApp();
+
   const [state, setState] = useState({
     password: '',
     newPassword: '',
@@ -96,6 +99,64 @@ const AccountChangePassword = () => {
     changePassword();
   };
 
+  const OldNewPasswordForm = (
+    <>
+      <FormControl
+        className={isMobile ? 'mb-1' : ''}
+        placeholder="Old password"
+        type={hidePassword ? 'password' : 'text'}
+        name="password"
+        value={state.password}
+        onChange={handleChange}
+        ref={refOldPassword}
+      />
+      <FormControl
+        className={isMobile ? 'mb-1' : ''}
+        placeholder="New password"
+        type={hidePassword ? 'password' : 'text'}
+        name="newPassword"
+        value={state.newPassword}
+        onChange={handleChange}
+        ref={refNewPassword}
+      />
+    </>
+  );
+
+  const ConfirmFormButton = (
+    <>
+      <FormControl
+        placeholder="Confirm password"
+        type={hidePassword ? 'password' : 'text'}
+        name="confirmPassword"
+        value={state.confirmPassword}
+        onChange={handleChange}
+        ref={refConfirmPassword}
+      />
+      <Button
+        tabIndex="-1"
+        variant="primary"
+        onClick={() => setHidePassword(!hidePassword)}
+      >
+        {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+      </Button>
+      {!buttonState ? (
+        !spinnerState ? (
+          <Button variant="primary" type="submit">
+            <Check2 />
+          </Button>
+        ) : (
+          <Button variant="primary">
+            <Spinner animation="border" size="sm" />
+          </Button>
+        )
+      ) : (
+        <Button variant="success" type="submit">
+          <Check2 />
+        </Button>
+      )}
+    </>
+  );
+
   return (
     <div>
       <h6 className="d-flex align-items-center p-1">
@@ -103,54 +164,17 @@ const AccountChangePassword = () => {
         <span className="ms-2">Change password</span>
       </h6>
       <Form className="my-1" onSubmit={handleSubmitButton}>
-        <InputGroup>
-          <FormControl
-            placeholder="Old password"
-            type={hidePassword ? 'password' : 'text'}
-            name="password"
-            value={state.password}
-            onChange={handleChange}
-            ref={refOldPassword}
-          />
-          <FormControl
-            placeholder="New password"
-            type={hidePassword ? 'password' : 'text'}
-            name="newPassword"
-            value={state.newPassword}
-            onChange={handleChange}
-            ref={refNewPassword}
-          />
-          <FormControl
-            placeholder="Confirm password"
-            type={hidePassword ? 'password' : 'text'}
-            name="confirmPassword"
-            value={state.confirmPassword}
-            onChange={handleChange}
-            ref={refConfirmPassword}
-          />
-          <Button
-            tabIndex="-1"
-            variant="primary"
-            onClick={() => setHidePassword(!hidePassword)}
-          >
-            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-          </Button>
-          {!buttonState ? (
-            !spinnerState ? (
-              <Button variant="primary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="primary">
-                <Spinner animation="border" size="sm" />
-              </Button>
-            )
-          ) : (
-            <Button variant="success" type="submit">
-              <Check2 />
-            </Button>
-          )}
-        </InputGroup>
+        {isMobile ? (
+          <>
+            {OldNewPasswordForm}
+            <InputGroup>{ConfirmFormButton}</InputGroup>
+          </>
+        ) : (
+          <InputGroup>
+            {OldNewPasswordForm}
+            {ConfirmFormButton}
+          </InputGroup>
+        )}
         <ErrorOverlay
           show={emptyPassword}
           target={refOldPassword.current}

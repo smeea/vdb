@@ -20,32 +20,30 @@ const Account = () => {
   return (
     <Container className="main-container">
       <Row className="align-items-center justify-content-center p-0">
-        <Col xs={12} md={7} lg={6} xl={5} className="px-0">
+        <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
         </Col>
       </Row>
       <Row
-        className={`align-items-center justify-content-center vh-${
-          isMobile ? 80 : 70
+        className={`d-flex align-items-center justify-content-center ${
+          isMobile ? '' : 'vh-70'
         }`}
       >
-        <Col xs={12} md={7} lg={6} xl={5}>
+        <Col xs={12} md={8} lg={7} xl={6} className="pb-3 ">
           {username ? (
             <>
               <Stack gap={4}>
-                <div className="d-flex align-items-center justify-content-between">
-                  <h6 className="d-flex align-items-center px-1">
-                    <PersonFill />
-                    <span className="ms-2">Logged as: {username}</span>
-                  </h6>
+                <div className="d-flex align-items-center bold blue logo-box px-2 py-1">
+                  <PersonFill />
+                  <span className="ms-2">Logged as: {username}</span>
                 </div>
                 <AccountChangeName />
                 <AccountChangePassword />
                 <AccountChangeEmail />
                 {(isPlaytester || isPlaytestAdmin) && <AccountPlaytest />}
-                <Stack gap={3}>
-                  <AccountLogoutButton />
+                <Stack gap={3} direction={isMobile ? 'vertical' : 'horizontal'}>
                   <AccountDeleteButton />
+                  <AccountLogoutButton />
                 </Stack>
               </Stack>
             </>
