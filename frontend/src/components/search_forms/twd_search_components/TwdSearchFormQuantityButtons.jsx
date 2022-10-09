@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
+const TwdSearchFormQuantityButtons = ({ state, setState, id, q, target }) => {
   const handleChangeQ = (id, q) => {
     const newState = state;
     if (q >= 0) {
@@ -86,6 +86,6 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
       </Button>
     </div>
   );
-}
+};
 
 export default TwdSearchFormQuantityButtons;

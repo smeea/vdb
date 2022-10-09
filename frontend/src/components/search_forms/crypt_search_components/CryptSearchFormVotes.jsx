@@ -1,8 +1,12 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
+import { useApp } from 'context';
 
-const CryptSearchFormVotes = ({value, onChange}) => {
+const CryptSearchFormVotes = ({ value, onChange }) => {
+  const { isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
+
   const votes = [
     ['any', 'ANY'],
     ['0', 'None'],
@@ -38,12 +42,13 @@ const CryptSearchFormVotes = ({value, onChange}) => {
           options={options}
           isSearchable={false}
           name="votes"
+          maxMenuHeight={maxMenuHeight}
           value={options.find((obj) => obj.value === value.toLowerCase())}
           onChange={onChange}
         />
       </Col>
     </Row>
   );
-}
+};
 
 export default CryptSearchFormVotes;

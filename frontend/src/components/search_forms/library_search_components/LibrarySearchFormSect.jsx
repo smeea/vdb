@@ -10,13 +10,8 @@ import {
 import { useApp } from 'context';
 
 const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
-  const { isWide, isMobile } = useApp();
-  const topOffset = 345
-  const maxMenuHeight = isMobile
-    ? 350
-    : isWide
-      ? 800 - topOffset
-      : 700 - topOffset
+  const { isXWide, isMobile } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const sects = [
     'ANY',
@@ -81,6 +76,7 @@ const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
             options={options}
             isSearchable={false}
             name={0}
+            maxMenuHeight={maxMenuHeight}
             value={options.find(
               (obj) => obj.value === value.value[0].toLowerCase()
             )}
@@ -97,6 +93,6 @@ const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
       />
     </>
   );
-}
+};
 
 export default LibrarySearchFormSect;

@@ -4,13 +4,8 @@ import Select from 'react-select';
 import { useApp } from 'context';
 
 const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
-  const { isWide, isMobile } = useApp();
-  const topOffset = 525
-  const maxMenuHeight = isMobile
-    ? 350
-    : isWide
-      ? 800 - topOffset
-      : 700 - topOffset
+  const { isXWide, isMobile } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const capacity = [
     'ANY',
@@ -74,9 +69,7 @@ const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
           options={morelessOptions}
           isSearchable={false}
           name="capacity-moreless"
-          value={morelessOptions.find(
-            (obj) => obj.value === value.moreless
-          )}
+          value={morelessOptions.find((obj) => obj.value === value.moreless)}
           onChange={onMorelessChange}
         />
       </Col>
@@ -93,6 +86,6 @@ const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
       </Col>
     </Row>
   );
-}
+};
 
 export default LibrarySearchFormCapacity;

@@ -10,8 +10,8 @@ import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
-  const { playtest, isMobile } = useApp();
-  const maxMenuHeight = isMobile? 350 : 450
+  const { playtest, isMobile, isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const preOptions = Object.keys(setsAndPrecons)
     .filter((i) => playtest || i !== 'PLAYTEST')

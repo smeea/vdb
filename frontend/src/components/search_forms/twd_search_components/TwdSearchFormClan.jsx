@@ -1,12 +1,13 @@
 import React from 'react';
 import Select from 'react-select';
-import { useApp } from 'context';
 import { ResultClanImage } from 'components';
 import imbuedClansList from 'assets/data/imbuedClansList.json';
 import vampireClansList from 'assets/data/vampireClansList.json';
+import { useApp } from 'context';
 
 const TwdSearchFormClan = ({ value, onChange }) => {
-  const { isMobile } = useApp();
+  const { isMobile, isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const clans = ['ANY', ...vampireClansList, ...imbuedClansList];
 
@@ -46,7 +47,7 @@ const TwdSearchFormClan = ({ value, onChange }) => {
       options={options}
       isSearchable={!isMobile}
       name="clan"
-      maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
+      maxMenuHeight={maxMenuHeight}
       value={options.find((obj) => obj.value === value.toLowerCase())}
       onChange={onChange}
     />

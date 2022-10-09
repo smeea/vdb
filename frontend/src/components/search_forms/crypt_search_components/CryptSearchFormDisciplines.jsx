@@ -2,9 +2,9 @@ import React from 'react';
 import { ResultDisciplineImage } from 'components';
 import disciplinesList from 'assets/data/disciplinesList.json';
 
-function CryptSearchFormDisciplines(props) {
+const CryptSearchFormDisciplines = ({ value, onChange }) => {
   const disciplinesforms = disciplinesList.map((d, index) => {
-    const disciplineState = `discipline-container state${props.value[d]}`;
+    const disciplineState = `discipline-container state${value[d]}`;
 
     return (
       <div key={index} className={disciplineState}>
@@ -17,7 +17,7 @@ function CryptSearchFormDisciplines(props) {
             type="button"
             name="disciplines"
             id={d}
-            onClick={(e) => props.onChange(e)}
+            onClick={(e) => onChange(e)}
           />
           <ResultDisciplineImage
             className="discipline-base-image-forms"
@@ -39,6 +39,6 @@ function CryptSearchFormDisciplines(props) {
       {disciplinesforms}
     </div>
   );
-}
+};
 
 export default CryptSearchFormDisciplines;

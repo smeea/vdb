@@ -2,8 +2,12 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { ResultLibraryTypeImage } from 'components';
+import { useApp } from 'context';
 
-function TwdSearchFormCardtypes(props) {
+const TwdSearchFormCardtypes = ({ value, onChange }) => {
+  const { isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
+
   const types = [
     [
       'Master',
@@ -136,10 +140,11 @@ function TwdSearchFormCardtypes(props) {
               options={options}
               isSearchable={false}
               name={i[0]}
+              maxMenuHeight={maxMenuHeight}
               value={options.find(
-                (obj) => obj.value === props.value[i[0].toLowerCase()]
+                (obj) => obj.value === value[i[0].toLowerCase()]
               )}
-              onChange={props.onChange}
+              onChange={onChange}
             />
           </Col>
         </Row>
@@ -158,10 +163,11 @@ function TwdSearchFormCardtypes(props) {
               options={options}
               isSearchable={false}
               name={i[0]}
+              maxMenuHeight={maxMenuHeight}
               value={options.find(
-                (obj) => obj.value === props.value[i[0].toLowerCase()]
+                (obj) => obj.value === value[i[0].toLowerCase()]
               )}
-              onChange={props.onChange}
+              onChange={onChange}
             />
           </Col>
         </Row>
@@ -181,6 +187,6 @@ function TwdSearchFormCardtypes(props) {
       </Row>
     </>
   );
-}
+};
 
 export default TwdSearchFormCardtypes;

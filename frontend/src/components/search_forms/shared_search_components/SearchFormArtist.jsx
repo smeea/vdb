@@ -5,13 +5,12 @@ import cryptArtists from '~/src/assets/data/artistsCrypt.json';
 import libraryArtists from '~/src/assets/data/artistsLib.json';
 import { useApp } from 'context';
 
-function SearchFormArtist(props) {
-  const { isMobile } = useApp();
+const SearchFormArtist = ({ target, value, onChange }) => {
+  const { isMobile, isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   let artists;
-  props.target == 'crypt'
-    ? (artists = cryptArtists)
-    : (artists = libraryArtists);
+  target == 'crypt' ? (artists = cryptArtists) : (artists = libraryArtists);
 
   const options = artists.map((artist, index) => {
     return {
@@ -41,16 +40,16 @@ function SearchFormArtist(props) {
         <Select
           classNamePrefix="react-select"
           options={options}
-          onChange={props.onChange}
+          onChange={onChange}
           menuPlacement="top"
-          maxMenuHeight={isMobile ? 350 : 450}
+          maxMenuHeight={maxMenuHeight}
           name="artist"
           placeholder="Artist"
-          value={options.find((obj) => obj.value === props.value)}
+          value={options.find((obj) => obj.value === value)}
         />
       </Col>
     </Row>
   );
-}
+};
 
 export default SearchFormArtist;

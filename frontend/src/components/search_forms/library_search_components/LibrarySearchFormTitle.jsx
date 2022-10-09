@@ -10,13 +10,8 @@ import {
 import { useApp } from 'context';
 
 const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
-  const { isWide, isMobile } = useApp();
-  const topOffset = 390
-  const maxMenuHeight = isMobile
-    ? 350
-    : isWide
-      ? 800 - topOffset
-      : 700 - topOffset
+  const { isXWide, isMobile } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const titles = [
     'ANY',
@@ -105,6 +100,6 @@ const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
       />
     </>
   );
-}
+};
 
 export default LibrarySearchFormTitle;

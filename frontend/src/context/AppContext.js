@@ -22,6 +22,7 @@ export const AppProvider = (props) => {
   const isNarrow = useMemo(() => screenSize <= 992, [screenSize]);
   const isDesktop = useMemo(() => screenSize >= 1200, [screenSize]);
   const isWide = useMemo(() => screenSize >= 1440, [screenSize]);
+  const isXWide = useMemo(() => screenSize >= 1920, [screenSize]);
 
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
@@ -294,7 +295,7 @@ export const AppProvider = (props) => {
     return () => {
       window.removeEventListener('offline', () => setIsOnline(false));
       window.removeEventListener('online', () => setIsOnline(true));
-    }
+    };
   }, []);
 
   useLayoutEffect(() => {
@@ -772,6 +773,7 @@ export const AppProvider = (props) => {
         isMobile,
         isNarrow,
         isWide,
+        isXWide,
         isDesktop,
         lang,
         changeLang,

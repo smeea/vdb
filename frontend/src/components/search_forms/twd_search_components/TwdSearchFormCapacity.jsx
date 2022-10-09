@@ -1,8 +1,8 @@
 import React from 'react';
 import { ButtonGroup, Button } from 'react-bootstrap';
 
-function TwdSearchFormCapacity(props) {
-  const capacityBrackets = ['1-4', '4-6', '6-8', '8-11'];
+const TwdSearchFormCapacity = ({ value, onChange }) => {
+  const capacityBrackets = ['1-4', '4-6', '6-8', '8- =>11'];
 
   const CryptCapacityButtons = capacityBrackets.map((i, index) => {
     return (
@@ -11,8 +11,8 @@ function TwdSearchFormCapacity(props) {
         key={index}
         value={i}
         name="capacity"
-        variant={props.value[i] ? 'third' : 'outline-primary'}
-        onClick={(e) => props.onChange(e)}
+        variant={value[i] ? 'third' : 'outline-primary'}
+        onClick={(e) => onChange(e)}
       >
         {i}
       </Button>
@@ -20,6 +20,6 @@ function TwdSearchFormCapacity(props) {
   });
 
   return <ButtonGroup>{CryptCapacityButtons}</ButtonGroup>;
-}
+};
 
 export default TwdSearchFormCapacity;

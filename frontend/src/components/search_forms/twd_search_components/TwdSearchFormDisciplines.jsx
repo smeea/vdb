@@ -3,10 +3,10 @@ import { ResultDisciplineImage } from 'components';
 import disciplinesList from 'assets/data/disciplinesList.json';
 import virtuesList from 'assets/data/virtuesList.json';
 
-function TwdSearchFormDisciplines(props) {
+const TwdSearchFormDisciplines = ({ disciplines, onChange }) => {
   const disciplinesForm = disciplinesList.map((i, index) => {
     const disciplineState = `discipline-container state${
-      props.disciplines[i] ? 1 : 0
+      disciplines[i] ? 1 : 0
     }`;
     return (
       <div key={index} className={disciplineState}>
@@ -19,7 +19,7 @@ function TwdSearchFormDisciplines(props) {
             type="button"
             name="disciplines"
             id={i}
-            onClick={(e) => props.onChange(e)}
+            onClick={(e) => onChange(e)}
           />
           <ResultDisciplineImage
             className="discipline-base-image-forms"
@@ -31,7 +31,7 @@ function TwdSearchFormDisciplines(props) {
   });
 
   const virtuesForm = virtuesList.map((i, index) => {
-    const virtueState = `virtue-container state${props.disciplines[i] ? 1 : 0}`;
+    const virtueState = `virtue-container state${disciplines[i] ? 1 : 0}`;
     return (
       <div key={index} className={virtueState}>
         <label
@@ -43,7 +43,7 @@ function TwdSearchFormDisciplines(props) {
             type="button"
             name="disciplines"
             id={i}
-            onClick={(e) => props.onChange(e)}
+            onClick={(e) => onChange(e)}
           />
           <ResultDisciplineImage className="virtue-image" value={i} />
         </label>
@@ -59,6 +59,6 @@ function TwdSearchFormDisciplines(props) {
       <div className="input-group pb-2">{virtuesForm}</div>
     </>
   );
-}
+};
 
 export default TwdSearchFormDisciplines;

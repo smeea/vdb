@@ -7,8 +7,12 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
+import { useApp } from 'context';
 
 const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
+  const { isMobile, isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
+
   const sects = [
     'ANY',
     'Camarilla',
@@ -71,6 +75,7 @@ const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
             options={options}
             isSearchable={false}
             name={0}
+            maxMenuHeight={isMobile ? 350 : 450}
             value={options.find(
               (obj) => obj.value === value.value[0].toLowerCase()
             )}
@@ -86,6 +91,6 @@ const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
       />
     </>
   );
-}
+};
 
 export default CryptSearchFormSect;

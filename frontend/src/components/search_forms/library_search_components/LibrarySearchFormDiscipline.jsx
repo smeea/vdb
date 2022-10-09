@@ -13,13 +13,8 @@ import virtuesList from 'assets/data/virtuesList.json';
 import { useApp } from 'context';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, setFormState }) => {
-  const { isWide, isMobile } = useApp();
-  const topOffset = 255
-  const maxMenuHeight = isMobile
-    ? 350
-    : isWide
-      ? 800 - topOffset
-      : 700 - topOffset
+  const { isXWide, isMobile } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const disciplinesExtendedList = [
     ...disciplinesList,
@@ -120,6 +115,6 @@ const LibrarySearchFormDiscipline = ({ value, onChange, setFormState }) => {
       />
     </>
   );
-}
+};
 
 export default LibrarySearchFormDiscipline;

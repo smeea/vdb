@@ -10,14 +10,9 @@ import {
 import { cardtypeSorted } from 'utils/constants';
 import { useApp } from 'context';
 
-const LibrarySearchFormType = ({value, onChange, setFormState}) => {
-  const { isWide, isMobile } = useApp();
-  const topOffset = 210
-  const maxMenuHeight = isMobile
-    ? 350
-    : isWide
-      ? 800 - topOffset
-      : 700 - topOffset
+const LibrarySearchFormType = ({ value, onChange, setFormState }) => {
+  const { isXWide, isMobile } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const typesSorted = ['ANY', ...cardtypeSorted];
   const options = [];
@@ -108,6 +103,6 @@ const LibrarySearchFormType = ({value, onChange, setFormState}) => {
       />
     </>
   );
-}
+};
 
 export default LibrarySearchFormType;

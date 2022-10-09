@@ -1,18 +1,18 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
-function TwdSearchFormMatchInventoryScaling(props) {
+const TwdSearchFormMatchInventoryScaling = ({ value, target, onChange }) => {
   return (
     <Form.Check
       type="checkbox"
-      id={props.target}
-      htmlFor={props.target}
-      name={props.target}
-      label={`Scale to ${props.target} cards`}
-      checked={props.value === props.target}
-      onChange={props.onChange}
+      id={target}
+      htmlFor={target}
+      name={target}
+      label={`Scale to ${target} cards`}
+      checked={value === target}
+      onChange={onChange}
     />
   );
-}
+};
 
 export default TwdSearchFormMatchInventoryScaling;

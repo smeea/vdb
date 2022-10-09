@@ -13,13 +13,8 @@ import vampireClansList from 'assets/data/vampireClansList.json';
 import { useApp } from 'context';
 
 const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
-  const { isWide, isMobile } = useApp();
-  const topOffset = 300
-  const maxMenuHeight = isMobile
-    ? 350
-    : isWide
-      ? 800 - topOffset
-      : 700 - topOffset
+  const { isXWide, isMobile } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const clans = [
     'ANY',

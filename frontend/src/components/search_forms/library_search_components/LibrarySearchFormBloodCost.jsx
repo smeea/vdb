@@ -1,8 +1,11 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
+import { useApp } from 'context';
 
 const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
+  const { isMobile, isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
   const blood = ['ANY', '0', '1', '2', '3', '4'];
   const options = [];
 
@@ -54,9 +57,7 @@ const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
             options={morelessOptions}
             isSearchable={false}
             name="blood-moreless"
-            value={morelessOptions.find(
-              (obj) => obj.value === value.moreless
-            )}
+            value={morelessOptions.find((obj) => obj.value === value.moreless)}
             onChange={onMorelessChange}
           />
         </Col>
@@ -66,6 +67,7 @@ const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
             options={options}
             isSearchable={false}
             name="blood"
+            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.blood)}
             onChange={onChange}
           />
@@ -73,6 +75,6 @@ const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
       </Row>
     </>
   );
-}
+};
 
 export default LibrarySearchFormBloodCost;

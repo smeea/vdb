@@ -17,13 +17,13 @@ const SearchFormPrecon = ({
   onChange,
   onChangeOptions,
 }) => {
-  const { playtest, isMobile } = useApp();
-  const maxMenuHeight = isMobile ? 350 : 450
+  const { playtest, isMobile, isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const preOptions = [];
 
   Object.keys(setsAndPrecons)
-    .filter(i => playtest || i !== 'PLAYTEST')
+    .filter((i) => playtest || i !== 'PLAYTEST')
     .map((i) => {
       if (setsAndPrecons[i].hasOwnProperty('precons')) {
         const year = setsAndPrecons[i].date.slice(2, 4);
@@ -39,8 +39,8 @@ const SearchFormPrecon = ({
             clans: clans,
           });
         });
-    }
-  });
+      }
+    });
 
   const options = [
     {

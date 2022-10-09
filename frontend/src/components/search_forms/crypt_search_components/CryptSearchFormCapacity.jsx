@@ -10,13 +10,8 @@ import {
 } from '../shared_search_components';
 
 const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
-  const { isWide, isMobile } = useApp();
-  const topOffset = 410
-  const maxMenuHeight = isMobile
-    ? 350
-    : isWide
-      ? 800 - topOffset
-      : 700 - topOffset
+  const { isXWide, isMobile } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const capacity = [
     'any',

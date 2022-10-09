@@ -2,11 +2,12 @@ import React from 'react';
 import AsyncSelect from 'react-select/async';
 import { useApp } from 'context';
 
-function TwdSearchFormLocation(props) {
-  const { isMobile } = useApp();
+const TwdSearchFormLocation = ({ value, setValue }) => {
+  const { isMobile, isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const handleChange = (v) => {
-    props.setValue((prevState) => ({
+    setValue((prevState) => ({
       ...prevState,
       location: v ? v.value : '',
     }));
@@ -38,22 +39,22 @@ function TwdSearchFormLocation(props) {
       classNamePrefix="react-select"
       cacheOptions
       menuPlacement="top"
-      maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
+      maxMenuHeight={maxMenuHeight}
       autoFocus={false}
       placeholder="Location"
       loadOptions={loadOptions}
       isClearable={true}
       value={
-        props.value
+        value
           ? {
-              label: props.value,
-              value: props.value,
+              label: value,
+              value: value,
             }
           : null
       }
       onChange={handleChange}
     />
   );
-}
+};
 
 export default TwdSearchFormLocation;

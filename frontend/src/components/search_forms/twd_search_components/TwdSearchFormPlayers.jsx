@@ -1,19 +1,19 @@
 import React from 'react';
 import Select from 'react-select';
 import { Row, Col } from 'react-bootstrap';
+import { useApp } from 'context';
 
-function TwdSearchFormPlayers(props) {
-  const players = ['ANY', '100', '50', '30', '20', '10'];
+const TwdSearchFormPlayers = ({ players, onChange }) => {
+  const { isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
+
+  const playersOptions = ['ANY', '100', '50', '30', '20', '10'];
 
   const playersFromOptions = [];
   const playersToOptions = [];
 
-  players.map((i, index) => {
-    if (
-      i === 'ANY' ||
-      props.players.to === 'any' ||
-      parseInt(i) < props.players.to
-    ) {
+  playersOptions.map((i, index) => {
+    if (i === 'ANY' || players.to === 'any' || parseInt(i) < players.to) {
       playersFromOptions.push({
         value: i.toLowerCase(),
         name: 'from',
@@ -26,11 +26,7 @@ function TwdSearchFormPlayers(props) {
       });
     }
 
-    if (
-      i === 'ANY' ||
-      props.players.from === 'any' ||
-      parseInt(i) > props.players.from
-    ) {
+    if (i === 'ANY' || players.from === 'any' || parseInt(i) > players.from) {
       playersToOptions.push({
         value: i.toLowerCase(),
         name: 'to',
@@ -56,10 +52,9 @@ function TwdSearchFormPlayers(props) {
             options={playersFromOptions}
             isSearchable={false}
             name="players-from"
-            value={playersFromOptions.find(
-              (obj) => obj.value === props.players.from
-            )}
-            onChange={props.onChange}
+            maxMenuHeight={maxMenuHeight}
+            value={playersFromOptions.find((obj) => obj.value === players.from)}
+            onChange={onChange}
           />
         </Col>
         <Col xs={2} className="d-flex px-1 justify-content-end">
@@ -71,15 +66,14 @@ function TwdSearchFormPlayers(props) {
             options={playersToOptions}
             isSearchable={false}
             name="players-to"
-            value={playersToOptions.find(
-              (obj) => obj.value === props.players.to
-            )}
-            onChange={props.onChange}
+            maxMenuHeight={maxMenuHeight}
+            value={playersToOptions.find((obj) => obj.value === players.to)}
+            onChange={onChange}
           />
         </Col>
       </Row>
     </>
   );
-}
+};
 
 export default TwdSearchFormPlayers;

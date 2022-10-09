@@ -3,8 +3,9 @@ import Select from 'react-select';
 import { Row, Col } from 'react-bootstrap';
 import { useApp } from 'context';
 
-function TwdSearchFormDate(props) {
-  const { isMobile } = useApp();
+const TwdSearchFormDate = ({ inPda, date, onChange }) => {
+  const { isMobile, isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
 
   const noPdaYears = [
     '2021',
@@ -34,17 +35,13 @@ function TwdSearchFormDate(props) {
     '1997',
   ];
   const years = ['ANY', '2022'];
-  if (!props.inPda) years.push(...noPdaYears);
+  if (!inPda) years.push(...noPdaYears);
 
   const dateFromOptions = [];
   const dateToOptions = [];
 
   years.map((i, index) => {
-    if (
-      i === 'ANY' ||
-      props.date.to === 'any' ||
-      parseInt(i) <= props.date.to
-    ) {
+    if (i === 'ANY' || date.to === 'any' || parseInt(i) <= date.to) {
       dateFromOptions.push({
         value: i.toLowerCase(),
         name: 'from',
@@ -57,11 +54,7 @@ function TwdSearchFormDate(props) {
       });
     }
 
-    if (
-      i === 'ANY' ||
-      props.date.from === 'any' ||
-      parseInt(i) >= props.date.from
-    ) {
+    if (i === 'ANY' || date.from === 'any' || parseInt(i) >= date.from) {
       dateToOptions.push({
         value: i.toLowerCase(),
         name: 'to',
@@ -87,9 +80,9 @@ function TwdSearchFormDate(props) {
             options={dateFromOptions}
             isSearchable={false}
             name="date-from"
-            maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
-            value={dateFromOptions.find((obj) => obj.value === props.date.from)}
-            onChange={props.onChange}
+            maxMenuHeight={maxMenuHeight}
+            value={dateFromOptions.find((obj) => obj.value === date.from)}
+            onChange={onChange}
           />
         </Col>
         <Col xs={2} className="d-flex px-1 justify-content-end">
@@ -101,14 +94,14 @@ function TwdSearchFormDate(props) {
             options={dateToOptions}
             isSearchable={false}
             name="date-to"
-            maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
-            value={dateToOptions.find((obj) => obj.value === props.date.to)}
-            onChange={props.onChange}
+            maxMenuHeight={maxMenuHeight}
+            value={dateToOptions.find((obj) => obj.value === date.to)}
+            onChange={onChange}
           />
         </Col>
       </Row>
     </>
   );
-}
+};
 
 export default TwdSearchFormDate;
