@@ -19,6 +19,10 @@
 - Move deck/inventory import to frontend
 - Refactor CSS
 - Fetching data with react-router
+- Use File System Access API for for import/export
+- Use Async Clipboard API for url copy
+- Use Cache API for requests
+- Service Worker
 
 # IMPROVE TECHNOLOGY - BACKEND
 

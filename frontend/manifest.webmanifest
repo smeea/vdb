@@ -5,17 +5,17 @@
   "lang": "en-US",
   "start_url": "/crypt",
   "display": "standalone",
-  "background_color": "#fff",
+  "background_color": "#ffffff",
+  "theme_color": "#404060",
   "icons": [
     {
-      "src": "./src/assets/images/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
+      "src": "./src/assets/images/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     },
     {
-      "src": "./src/assets/images/maskable-icon.png",
-      "sizes": "192x192",
+      "src": "./src/assets/images/icon512-maskable.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
