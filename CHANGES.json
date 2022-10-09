@@ -1,5 +1,13 @@
 [
   {
+    "version": "2022-10-09",
+    "changes": [
+      "Add show warning when offline",
+      "Move pdf proxy creation to the browser (should resolve some issues happening from time to time)",
+      "Many other fixes and small improvements"
+    ]
+  },
+  {
     "version": "2022-10-03",
     "changes": [
       "Fix inventory library bug",
