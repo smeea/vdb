@@ -15,9 +15,8 @@ import { userServices } from 'services';
 const AccountChangeName = () => {
   const { publicName, setPublicName, isMobile } = useApp();
 
-  const [emptyName, setEmptyName] = useState(false);
   const [state, setState] = useState(publicName);
-  const refName = useRef(null);
+  const refName = useRef();
 
   const [showModal, setShowModal] = useState(false);
   const [buttonState, setButtonState] = useState(false);
@@ -45,16 +44,10 @@ const AccountChangeName = () => {
   };
 
   const changeName = () => {
-    if (spinnerState) return;
-
-    setEmptyName(!state);
     setConnectionError(false);
 
-    if (state) {
-      setSpinnerState(true);
-
-      userServices.changeName(state, onSuccess, onError);
-    }
+    setSpinnerState(true);
+    userServices.changeName(state, onSuccess, onError);
   };
 
   const handleSubmitButton = (event) => {
@@ -120,13 +113,6 @@ const AccountChangeName = () => {
             </Button>
           )}
         </InputGroup>
-        <ErrorOverlay
-          show={emptyName}
-          target={refName.current}
-          placement="bottom"
-        >
-          ENTER PUBLIC NAME
-        </ErrorOverlay>
         <ErrorOverlay
           show={connectionError}
           target={refName.current}

@@ -1,6 +1,6 @@
 [
   {
-    "version": "2022-10-09",
+    "version": "2022-10-10",
     "changes": [
       "Add show warning when offline",
       "Move pdf proxy creation to the browser (should resolve some issues happening from time to time)",

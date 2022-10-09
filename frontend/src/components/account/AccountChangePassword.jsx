@@ -20,21 +20,14 @@ const AccountChangePassword = () => {
   const [state, setState] = useState({
     password: '',
     newPassword: '',
-    confirmPassword: '',
   });
 
-  const [emptyPassword, setEmptyPassword] = useState(false);
-  const [emptyNewPassword, setEmptyNewPassword] = useState(false);
-  const [passwordConfirmError, setPasswordConfirmError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [connectionError, setConnectionError] = useState(false);
-  const refOldPassword = useRef(null);
-  const refNewPassword = useRef(null);
-  const refConfirmPassword = useRef(null);
   const [spinnerState, setSpinnerState] = useState(false);
-
   const [hidePassword, setHidePassword] = useState(true);
   const [buttonState, setButtonState] = useState(false);
+
+  const refOldPassword = useRef();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -46,16 +39,12 @@ const AccountChangePassword = () => {
 
   const onError = (e) => {
     if (e.message == 401) {
-      setPasswordError(true);
-      setSpinnerState(false);
-      setState((prevState) => ({
-        ...prevState,
-        password: '',
-      }));
+      setPasswordError('WRONG OLD PASSWORD');
+      refOldPassword.current.focus();
     } else {
-      setSpinnerState(false);
-      setConnectionError(true);
+      setPasswordError('CONNECTION PROBLEM');
     }
+    setSpinnerState(false);
   };
 
   const onSuccess = () => {
@@ -67,31 +56,19 @@ const AccountChangePassword = () => {
     setState({
       password: '',
       newPassword: '',
-      confirmPassword: '',
     });
   };
 
   const changePassword = () => {
-    if (spinnerState) return;
-
     setPasswordError(false);
-    setConnectionError(false);
-    setEmptyPassword(!state.password);
-    setEmptyNewPassword(!state.newPassword);
-    setPasswordConfirmError(
-      state.confirmPassword != state.newPassword || !state.confirmPassword
+    setSpinnerState(true);
+
+    userServices.changePassword(
+      state.password,
+      state.newPassword,
+      onSuccess,
+      onError
     );
-
-    if (state.password && state.newPassword == state.confirmPassword) {
-      setSpinnerState(true);
-
-      userServices.changePassword(
-        state.password,
-        state.newPassword,
-        onSuccess,
-        onError
-      );
-    }
   };
 
   const handleSubmitButton = (event) => {
@@ -99,38 +76,32 @@ const AccountChangePassword = () => {
     changePassword();
   };
 
-  const OldNewPasswordForm = (
+  const OldPasswordForm = (
     <>
       <FormControl
         className={isMobile ? 'mb-1' : ''}
         placeholder="Old password"
         type={hidePassword ? 'password' : 'text'}
         name="password"
+        required={true}
         value={state.password}
         onChange={handleChange}
         ref={refOldPassword}
       />
-      <FormControl
-        className={isMobile ? 'mb-1' : ''}
-        placeholder="New password"
-        type={hidePassword ? 'password' : 'text'}
-        name="newPassword"
-        value={state.newPassword}
-        onChange={handleChange}
-        ref={refNewPassword}
-      />
     </>
   );
 
-  const ConfirmFormButton = (
+  const NewPasswordForm = (
     <>
       <FormControl
-        placeholder="Confirm password"
+        placeholder="New password"
         type={hidePassword ? 'password' : 'text'}
-        name="confirmPassword"
-        value={state.confirmPassword}
+        name="newPassword"
+        autoComplete="new-password"
+        id="new-password"
+        required={true}
+        value={state.newPassword}
         onChange={handleChange}
-        ref={refConfirmPassword}
       />
       <Button
         tabIndex="-1"
@@ -166,48 +137,22 @@ const AccountChangePassword = () => {
       <Form className="my-1" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
-            {OldNewPasswordForm}
-            <InputGroup>{ConfirmFormButton}</InputGroup>
+            {OldPasswordForm}
+            <InputGroup>{NewPasswordForm}</InputGroup>
           </>
         ) : (
           <InputGroup>
-            {OldNewPasswordForm}
-            {ConfirmFormButton}
+            {OldPasswordForm}
+            {NewPasswordForm}
           </InputGroup>
         )}
-        <ErrorOverlay
-          show={emptyPassword}
-          target={refOldPassword.current}
-          placement="bottom"
-        >
-          ENTER OLD PASSWORD
-        </ErrorOverlay>
         <ErrorOverlay
           show={passwordError}
           target={refOldPassword.current}
           placement="bottom"
         >
-          WRONG OLD PASSWORD
+          {passwordError}
         </ErrorOverlay>
-        <ErrorOverlay
-          show={emptyNewPassword}
-          target={refNewPassword.current}
-          placement="bottom"
-        >
-          ENTER NEW PASSWORD
-        </ErrorOverlay>
-        <ErrorOverlay
-          show={passwordConfirmError}
-          target={refConfirmPassword.current}
-          placement="bottom"
-        >
-          NEW PASSWORDS DOES NOT MATCH
-        </ErrorOverlay>
-        <ErrorOverlay
-          show={connectionError}
-          target={refOldPassword.current}
-          placement="bottom"
-        ></ErrorOverlay>
       </Form>
     </div>
   );

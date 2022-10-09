@@ -21,27 +21,31 @@ def version_route():
 
 @app.route("/api/login", methods=["POST"])
 def login_route():
-    user = User.query.filter_by(username=request.json["username"].lower()).one()
+    try:
+        user = User.query.filter_by(username=request.json["username"].lower()).one()
+        if not user.check_password(request.json["password"]):
+            abort(401)
 
-    if user is None:
-        abort(400)
-    elif not user.check_password(request.json["password"]):
-        abort(401)
+        login_user(user, remember=request.json["remember"])
 
-    login_user(user, remember=request.json["remember"])
+        return jsonify(
+            {
+                "username": current_user.username,
+                "email": current_user.email,
+                "playtester": current_user.playtester,
+                "playtest_admin": current_user.playtest_admin,
+                "public_name": current_user.public_name,
+                "decks": parse_user_decks(current_user.decks.all()),
+                "inventory": parse_user_inventory(current_user.inventory),
+                "inventory_key": current_user.inventory_key,
+            }
+        )
 
-    return jsonify(
-        {
-            "username": current_user.username,
-            "email": current_user.email,
-            "playtester": current_user.playtester,
-            "playtest_admin": current_user.playtest_admin,
-            "public_name": current_user.public_name,
-            "decks": parse_user_decks(current_user.decks.all()),
-            "inventory": parse_user_inventory(current_user.inventory),
-            "inventory_key": current_user.inventory_key,
-        }
-    )
+    except Exception as e:
+        if e.code:
+            abort(e.code)
+        else:
+            abort(400)
 
 
 @app.route("/api/login", methods=["DELETE"])

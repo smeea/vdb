@@ -8,6 +8,8 @@ import {
 } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
+import EyeFill from 'assets/images/icons/eye-fill.svg';
+import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
@@ -22,14 +24,11 @@ const AccountChangeEmail = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [buttonState, setButtonState] = useState(false);
-
-  const [emptyEmail, setEmptyEmail] = useState(false);
-  const [emptyPassword, setEmptyPassword] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [connectionError, setConnectionError] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
-  const refEmail = useRef(null);
-  const refPassword = useRef(null);
+  const [hidePassword, setHidePassword] = useState(true);
+  const refEmail = useRef();
+  const refPassword = useRef();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -42,13 +41,10 @@ const AccountChangeEmail = () => {
   const onError = (e) => {
     setSpinnerState(false);
     if (e.message == 401) {
-      setPasswordError(true);
-      setState((prevState) => ({
-        ...prevState,
-        password: '',
-      }));
+      setPasswordError('WRONG PASSWORD');
+      refPassword.current.focus();
     } else {
-      setConnectionError(true);
+      setPasswordError('CONNECTION PROBLEM');
     }
   };
 
@@ -66,19 +62,9 @@ const AccountChangeEmail = () => {
   };
 
   const changeEmail = () => {
-    if (spinnerState) return;
-
     setPasswordError(false);
-    setConnectionError(false);
-    setEmptyEmail(!state.email);
-    setEmptyPassword(!state.password);
-    setSpinnerState(false);
-
-    if (state.email && state.password) {
-      setSpinnerState(true);
-
-      userServices.changeEmail(state.password, state.email, onSuccess, onError);
-    }
+    setSpinnerState(true);
+    userServices.changeEmail(state.password, state.email, onSuccess, onError);
   };
 
   const handleSubmitButton = (event) => {
@@ -92,7 +78,7 @@ const AccountChangeEmail = () => {
     <FormControl
       className={isMobile ? 'mb-1' : ''}
       placeholder="New email"
-      type="text"
+      type="email"
       name="email"
       value={state.email}
       onChange={handleChange}
@@ -104,12 +90,20 @@ const AccountChangeEmail = () => {
     <>
       <FormControl
         placeholder="Password"
-        type="password"
+        type={hidePassword ? 'password' : 'text'}
         name="password"
         value={state.password}
+        required={true}
         onChange={handleChange}
         ref={refPassword}
       />
+      <Button
+        tabIndex="-1"
+        variant="primary"
+        onClick={() => setHidePassword(!hidePassword)}
+      >
+        {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+      </Button>
       {!buttonState ? (
         !spinnerState ? (
           <Button variant="primary" type="submit">
@@ -159,31 +153,12 @@ const AccountChangeEmail = () => {
           </InputGroup>
         )}
         <ErrorOverlay
-          show={emptyEmail}
-          target={refEmail.current}
-          placement="bottom"
-        >
-          ENTER EMAIL
-        </ErrorOverlay>
-        <ErrorOverlay
-          show={emptyPassword}
-          target={refPassword.current}
-          placement="bottom"
-        >
-          ENTER PASSWORD
-        </ErrorOverlay>
-        <ErrorOverlay
           show={passwordError}
           target={refPassword.current}
           placement="bottom"
         >
-          WRONG PASSWORD
+          {passwordError}
         </ErrorOverlay>
-        <ErrorOverlay
-          show={connectionError}
-          target={refPassword.current}
-          placement="bottom"
-        ></ErrorOverlay>
       </Form>
       {showModal && (
         <ModalTooltip

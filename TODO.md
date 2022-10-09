@@ -2,6 +2,7 @@
 - Iphone clipboard (export deck / copy url)
 - Crypt sorting in review (works in Deck!)
 - Fix repo to work without playtest files
+- Fix clone precon
 
 # FEATURES
 - Add FoL cards

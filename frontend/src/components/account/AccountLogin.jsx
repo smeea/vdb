@@ -27,19 +27,20 @@ const AccountLogin = () => {
 
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [connectionError, setConnectionError] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
-  const refUsername = useRef(null);
-  const refPassword = useRef(null);
+  const refUsername = useRef();
+  const refPassword = useRef();
 
   const onError = (e) => {
     setSpinnerState(false);
     if (e.message == 401) {
       setPasswordError('WRONG PASSWORD');
+      refPassword.current.focus();
     } else if (e.message == 400) {
       setUsernameError('USER DOES NOT EXIST');
+      refUsername.current.focus();
     } else {
-      setConnectionError(true);
+      setPasswordError('CONNECTION PROBLEM');
     }
   };
 
@@ -50,10 +51,8 @@ const AccountLogin = () => {
 
   const loginUser = () => {
     if (spinnerState) return;
-
-    setUsernameError(formUsername ? false : 'ENTER USERNAME');
-    setPasswordError(formPassword ? false : 'ENTER PASSWORD');
-    setConnectionError(false);
+    setUsernameError(false);
+    setPasswordError(false);
 
     if (formUsername && formPassword) {
       setSpinnerState(true);
@@ -93,6 +92,52 @@ const AccountLogin = () => {
     </>
   );
 
+  const UsernameForm = (
+    <FormControl
+      className={isMobile ? 'mb-1' : ''}
+      placeholder="New Username"
+      type="text"
+      name="username"
+      value={formUsername}
+      required={true}
+      onChange={(e) => setFormUsername(e.target.value)}
+      autoFocus={true}
+      ref={refUsername}
+    />
+  );
+
+  const PasswordForm = (
+    <>
+      <FormControl
+        placeholder="Password"
+        type={hidePassword ? 'password' : 'text'}
+        name="password"
+        autoComplete="current-password"
+        id="current-password"
+        value={formPassword}
+        required={true}
+        onChange={(e) => setFormPassword(e.target.value)}
+        ref={refPassword}
+      />
+      <Button
+        tabIndex="-1"
+        variant="primary"
+        onClick={() => setHidePassword(!hidePassword)}
+      >
+        {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+      </Button>
+      {!spinnerState ? (
+        <Button variant="primary" type="submit">
+          <Check2 />
+        </Button>
+      ) : (
+        <Button variant="primary">
+          <Spinner animation="border" size="sm" />
+        </Button>
+      )}
+    </>
+  );
+
   return (
     <div>
       <h6 className="d-flex align-items-center p-1">
@@ -112,41 +157,17 @@ const AccountLogin = () => {
         )}
       </h6>
       <Form className="mb-0" onSubmit={handleSubmitButton}>
-        <InputGroup>
-          <FormControl
-            placeholder="Username"
-            type="text"
-            name="username"
-            value={formUsername}
-            onChange={(e) => setFormUsername(e.target.value)}
-            autoFocus={true}
-            ref={refUsername}
-          />
-          <FormControl
-            placeholder="Password"
-            type={hidePassword ? 'password' : 'text'}
-            name="password"
-            value={formPassword}
-            onChange={(e) => setFormPassword(e.target.value)}
-            ref={refPassword}
-          />
-          <Button
-            tabIndex="-1"
-            variant="primary"
-            onClick={() => setHidePassword(!hidePassword)}
-          >
-            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-          </Button>
-          {!spinnerState ? (
-            <Button variant="primary" type="submit">
-              <Check2 />
-            </Button>
-          ) : (
-            <Button variant="primary">
-              <Spinner animation="border" size="sm" />
-            </Button>
-          )}
-        </InputGroup>
+        {isMobile ? (
+          <>
+            {UsernameForm}
+            <InputGroup>{PasswordForm}</InputGroup>
+          </>
+        ) : (
+          <InputGroup>
+            {UsernameForm}
+            {PasswordForm}
+          </InputGroup>
+        )}
         <ErrorOverlay
           show={usernameError}
           target={refUsername.current}
@@ -161,16 +182,9 @@ const AccountLogin = () => {
         >
           {passwordError}
         </ErrorOverlay>
-        <ErrorOverlay
-          show={connectionError}
-          target={refPassword.current}
-          placement="bottom"
-        >
-          CONNECTION PROBLEM
-        </ErrorOverlay>
       </Form>
       {!isMobile ? (
-        <div className="d-flex justify-content-center small ms-4 ps-4">
+        <div className="d-flex justify-content-start small ps-2 pt-1">
           <OverlayTooltip
             delay={{ show: 0, hide: 2000 }}
             placement="bottom"
@@ -184,7 +198,7 @@ const AccountLogin = () => {
       ) : (
         <div
           onClick={() => setShowModalPassword(true)}
-          className="d-flex justify-content-center small ms-3 ps-4"
+          className="d-flex justify-content-start small ps-2 pt-1"
         >
           <a href="#">
             <i>Forgot password?</i>

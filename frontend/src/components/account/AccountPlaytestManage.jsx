@@ -82,7 +82,7 @@ const AccountPlaytestManage = ({ setShow }) => {
 
   return (
     <>
-      <Modal show={true} onHide={handleClose} animation={false} size="sm">
+      <Modal show={true} onHide={handleClose} animation={false} size="md">
         <Modal.Header
           className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
         >
