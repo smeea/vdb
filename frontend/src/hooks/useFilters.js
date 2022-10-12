@@ -660,11 +660,13 @@ const missingNameOrInitials = (filterName, card) => {
     nameASCII = `the ${nameASCII.replace(/, the$/, '')}`;
   }
 
+  filterName = filterName.replace(/[^a-z]/gi, '');
+
   return !(
     name.includes(filterName) ||
-    name.replace(/[^a-z ]/gi, '').includes(filterName) ||
+    name.replace(/[^a-z]/gi, '').includes(filterName) ||
     nameASCII.includes(filterName) ||
-    nameASCII.replace(/[^a-z ]/gi, '').includes(filterName) ||
+    nameASCII.replace(/[^a-z]/gi, '').includes(filterName) ||
     checkInitials.test(name) ||
     checkInitials.test(nameASCII)
   );
