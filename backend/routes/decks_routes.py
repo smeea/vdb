@@ -473,9 +473,9 @@ def url_snapshot_route(deckid):
 def clone_deck_route(deckid):
     if len(deckid) == 32:
         target_deck = Deck.query.get(deckid)
-        deckid = uuid.uuid4().hex
+        new_deckid = uuid.uuid4().hex
         d = Deck(
-            deckid=deckid,
+            deckid=new_deckid,
             name=f"{target_deck.author_public_name} [by {target_deck.author_public_name}]",
             author_public_name=target_deck.author_public_name,
             description="",
@@ -504,9 +504,9 @@ def clone_deck_route(deckid):
             for i, q in precon_cards[set][precon].items():
                 cards[int(i)] = q
 
-            deckid = uuid.uuid4().hex
+            new_deckid = uuid.uuid4().hex
             d = Deck(
-                deckid=deckid,
+                deckid=new_deckid,
                 name=name,
                 author_public_name="VTES Team",
                 description=description,
@@ -516,7 +516,7 @@ def clone_deck_route(deckid):
             )
             db.session.add(d)
             db.session.commit()
-            return jsonify({"deck cloned": request.json["deckname"], "deckid": deckid})
+            return jsonify({"deck cloned": request.json["deckname"], "deckid": new_deckid})
 
     else:
         with open("twd_decks.json", "r") as twd_decks_file:
@@ -534,9 +534,9 @@ def clone_deck_route(deckid):
             if deck["description"]:
                 description += "\n" + deck["description"]
 
-            deckid = uuid.uuid4().hex
+            new_deckid = uuid.uuid4().hex
             d = Deck(
-                deckid=deckid,
+                deckid=new_deckid,
                 name=f"{deck['name']} [by {deck['author']}]",
                 author_public_name=deck["author"],
                 description=description,
@@ -546,7 +546,7 @@ def clone_deck_route(deckid):
             )
             db.session.add(d)
             db.session.commit()
-            return jsonify({"deck cloned": request.json["deckname"], "deckid": deckid})
+            return jsonify({"deck cloned": request.json["deckname"], "deckid": new_deckid})
 
 
 @app.route("/api/decks/import", methods=["POST"])
