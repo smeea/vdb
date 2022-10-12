@@ -1,8 +1,12 @@
 import React from 'react';
-import { Stack, Button } from 'react-bootstrap';
-import X from 'assets/images/icons/x.svg';
+import { Stack } from 'react-bootstrap';
 import { useApp } from 'context';
-import { TwdMoreButton, TwdNewDecksButton, TwdRandomButton } from '.';
+import {
+  TwdClearButton,
+  TwdMoreButton,
+  TwdNewDecksButton,
+  TwdRandomButton,
+} from 'components';
 
 const TwdSearchFormButtons = ({
   getRandom,
@@ -10,7 +14,7 @@ const TwdSearchFormButtons = ({
   handleClearButton,
   inPda,
 }) => {
-  const { isMobile } = useApp();
+  const { isMobile, isWide } = useApp();
 
   return (
     <div className="d-flex px-0 justify-content-between">
@@ -19,19 +23,8 @@ const TwdSearchFormButtons = ({
         <TwdNewDecksButton getNew={getNew} />
       </Stack>
       <Stack direction="horizontal" gap={1}>
-        {!inPda && <TwdMoreButton />}
-        {!isMobile && (
-          <Button
-            className="h-100"
-            title="Clear Forms & Results"
-            variant="primary"
-            onClick={handleClearButton}
-          >
-            <div className="d-flex align-items-center">
-              <X />
-            </div>
-          </Button>
-        )}
+        {!inPda && <TwdMoreButton noText={!isWide} />}
+        {!isMobile && <TwdClearButton handleClick={handleClearButton} />}
       </Stack>
     </div>
   );

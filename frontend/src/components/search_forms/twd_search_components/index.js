@@ -17,3 +17,4 @@ export { default as TwdSearchFormPlayer } from './TwdSearchFormPlayer.jsx';
 export { default as TwdRandomButton } from './TwdRandomButton.jsx';
 export { default as TwdNewDecksButton } from './TwdNewDecksButton.jsx';
 export { default as TwdMoreButton } from './TwdMoreButton.jsx';
+export { default as TwdClearButton } from './TwdClearButton.jsx';

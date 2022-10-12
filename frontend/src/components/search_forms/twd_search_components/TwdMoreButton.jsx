@@ -6,7 +6,7 @@ import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import ClockHistory from 'assets/images/icons/clock-history.svg';
 import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
 
-const TwdMoreButton = () => {
+const TwdMoreButton = ({ noText }) => {
   const navigate = useNavigate();
 
   return (
@@ -15,12 +15,16 @@ const TwdMoreButton = () => {
       as={ButtonGroup}
       variant="primary"
       title={
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="d-flex pe-2">
-            <Gem size={24} />
+        noText ? (
+          <Gem size={24} />
+        ) : (
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex pe-2">
+              <Gem size={24} />
+            </div>
+            More
           </div>
-          More
-        </div>
+        )
       }
     >
       <Dropdown.Item onClick={() => navigate('/twd/hall_of_fame/tournaments')}>
