@@ -1,7 +1,4 @@
 import json
-import sys
-
-sys.path.append("../../backend")
 from deck_import import deck_import
 
 
