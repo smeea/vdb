@@ -91,10 +91,11 @@ Download source files from upstream and create new resources (it will copy files
     python -m venv venv                                  # ONLY ON FIRST RUN
     source venv/bin/activate
     python -m pip install -r requirements.txt            # ONLY ON FIRST RUN
-    ./download_resources.sh                              # DOWNLOAD OFFICIAL CARDBASE/RULINGS/TWD FILES
-    ./create_resources.sh                                # GENERATE VDB FILES FROM DOWNLOADED RESOURCES
-    python download_card_images.py                       # UPDATE IMAGES (ONLY ENGLISH)
+    ./download_resources.sh
+    ./create_resources.sh
+    python download_card_images.py                       # ONLY ENGLISH
 ```
+Other than English languages and card scans from different sets only updated manually in `~/frontend/dist/images/cards/`.
 
 ### PASSWORD CHANGE
 ```

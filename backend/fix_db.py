@@ -1,6 +1,7 @@
 from api import db
 from models import Deck
 
+# NOT REQUIRED; USE ONLY AS TEMPLATE FOR FUTURE FIXES
 for deck in Deck.query.all():
     if deck.public_parent:
         crypt_total = 0
