@@ -7,10 +7,11 @@
 - Add FoL cards
 - Add 3rd Edition Starters Kit
 - Check TWD
+- Propose autofill tags
 
 # MAYBE LATER FEATURES
+- Search by tags in PDA/TWD
 - Boilerplates modules for new decks
-- Tags for TWD/PDA
 - Decks set loading and analyzing
 - Offline decks storage
 

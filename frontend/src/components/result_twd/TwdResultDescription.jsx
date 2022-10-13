@@ -2,14 +2,15 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
-import { TwdOpenDeckButton, DeckCloneButton } from 'components';
+import { TwdResultTags, TwdOpenDeckButton, DeckCloneButton } from 'components';
 import { useApp, useSearchForms } from 'context';
+import { useTags } from 'hooks';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 
 const TwdResultDescription = ({ deck }) => {
   const { username, isDesktop } = useApp();
   const { setTwdFormState } = useSearchForms();
-
+  const tags = useTags(deck.crypt, deck.library);
   const navigate = useNavigate();
   const def = JSON.parse(JSON.stringify(defaults));
 
@@ -28,54 +29,59 @@ const TwdResultDescription = ({ deck }) => {
   };
 
   const Description = (
-    <table>
-      <tbody>
-        <tr>
-          <td className="d-inline blue">
-            <b>Date:</b>
-          </td>
-          <td className="ps-2">{deck['creation_date']}</td>
-        </tr>
-        <tr>
-          <td className="d-inline blue">
-            <b>Event</b>:
-          </td>
-          <td className="ps-2">{deck['event']}</td>
-        </tr>
-        <tr>
-          <td className="d-inline blue">
-            <b>Location</b>:
-          </td>
-          <td className="ps-2">
-            <div
-              className="link-like"
-              onClick={() => handleLocationClick(deck['location'])}
-            >
-              {deck['location']}
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td className="d-inline blue">
-            <b>Player</b>:
-          </td>
-          <td className="ps-2">
-            <div
-              className="link-like"
-              onClick={() => handleAuthorClick(deck['author'])}
-            >
-              {deck['author']} <br />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td className="d-inline blue">
-            <b>Deck</b>:
-          </td>
-          <td className="ps-2">{deck['name']}</td>
-        </tr>
-      </tbody>
-    </table>
+    <>
+      <table>
+        <tbody>
+          <tr>
+            <td className="d-inline blue">
+              <b>Date:</b>
+            </td>
+            <td className="ps-2">{deck['creation_date']}</td>
+          </tr>
+          <tr>
+            <td className="d-inline blue">
+              <b>Event</b>:
+            </td>
+            <td className="ps-2">{deck['event']}</td>
+          </tr>
+          <tr>
+            <td className="d-inline blue">
+              <b>Location</b>:
+            </td>
+            <td className="ps-2">
+              <div
+                className="link-like"
+                onClick={() => handleLocationClick(deck['location'])}
+              >
+                {deck['location']}
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td className="d-inline blue">
+              <b>Player</b>:
+            </td>
+            <td className="ps-2">
+              <div
+                className="link-like"
+                onClick={() => handleAuthorClick(deck['author'])}
+              >
+                {deck['author']} <br />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td className="d-inline blue">
+              <b>Deck</b>:
+            </td>
+            <td className="ps-2">{deck['name']}</td>
+          </tr>
+        </tbody>
+      </table>
+      {(tags.superior.length || tags.base.length) && (
+        <TwdResultTags tags={tags} />
+      )}
+    </>
   );
 
   return (
