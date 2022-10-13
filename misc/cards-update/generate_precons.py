@@ -1,11 +1,6 @@
 import json
 
 bundles = {
-    "PLAYTEST": {
-        "PR": {},
-        "PSal": {},
-        "PTz": {},
-    },
     "NB": {
         "PM": {},
         "PN": {},
@@ -141,21 +136,36 @@ bundles = {
     },
 }
 
+playtest_bundles = {
+    "PLAYTEST": {
+        "PR": {},
+        "PSal": {},
+        "PTz": {},
+    },
+}
+
 with open("cardbase_crypt.json", "r") as crypt_file, open(
-    "cardbase_crypt_playtest.json", "r"
-) as crypt_playtest_file, open("cardbase_lib.json", "r") as library_file, open(
-    "cardbase_lib_playtest.json", "r"
-) as library_playtest_file, open(
-    "preconDecks.json", "w"
-) as precons_file, open(
+    "cardbase_lib.json", "r"
+) as library_file, open("preconDecks.json", "w") as precons_file, open(
     "preconDecks.min.json", "w"
 ) as precons_file_min:
-    crypt = list(json.load(crypt_file).values()) + list(
-        json.load(crypt_playtest_file).values()
-    )
-    library = list(json.load(library_file).values()) + list(
-        json.load(library_playtest_file).values()
-    )
+    crypt = list(json.load(crypt_file).values())
+    library = list(json.load(library_file).values())
+
+    try:
+        with open("cardbase_crypt_playtest.json", "r") as crypt_playtest_file, open(
+            "cardbase_lib_playtest.json", "r"
+        ) as library_playtest_file:
+            crypt = crypt + list(json.load(crypt_playtest_file).values())
+            library = library + list(json.load(library_playtest_file).values())
+
+            bundles = {
+                **playtest_bundles,
+                **bundles,
+            }
+
+    except Exception:
+        pass
 
     for card in crypt + library:
         for card_set, card_precons in card["Set"].items():

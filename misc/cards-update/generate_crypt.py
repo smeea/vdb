@@ -405,17 +405,24 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
     krcg_cards = json.load(krcg_file)
     generate_cards(cardbase_csv, cardbase_file, cardbase_file_min)
 
-with open("vtescrypt_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
-    "cardbase_crypt_playtest.json", "w", encoding="utf8"
-) as cardbase_file, open(
-    "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
-) as cardbase_file_min, open(
-    "vtes.json", "r", encoding="utf8"
-) as krcg_file, open(
-    "twda.json", "r"
-) as twda_input:
-    krcg_cards = json.load(krcg_file)
-    generate_cards(cardbase_csv, cardbase_file, cardbase_file_min)
+try:
+    with open(
+        "vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
+    ) as cardbase_csv, open(
+        "cardbase_crypt_playtest.json", "w", encoding="utf8"
+    ) as cardbase_file, open(
+        "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
+    ) as cardbase_file_min, open(
+        "vtes.json", "r", encoding="utf8"
+    ) as krcg_file, open(
+        "twda.json", "r"
+    ) as twda_input:
+        krcg_cards = json.load(krcg_file)
+        generate_cards(cardbase_csv, cardbase_file, cardbase_file_min)
+except Exception:
+    print(
+        "PLAYTEST DISABLED - NO CRYPT PLAYTEST FILES FOUND (CONTACT PLAYTEST COORDINATOR TO GET IT)"
+    )
 
 with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
     "artistsCrypt.json", "w", encoding="utf8"

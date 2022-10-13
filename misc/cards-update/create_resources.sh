@@ -1,5 +1,7 @@
 #!/bin/sh
 # Update Card List
+echo '{}' > cardbase_crypt_playtest.min.json
+echo '{}' > cardbase_lib_playtest.min.json
 python generate_crypt.py
 python generate_library.py
 python fix_crossrefs.py
