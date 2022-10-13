@@ -7,7 +7,6 @@
 - Add FoL cards
 - Add 3rd Edition Starters Kit
 - Check TWD
-- Propose autofill tags
 
 # MAYBE LATER FEATURES
 - Search by tags in PDA/TWD

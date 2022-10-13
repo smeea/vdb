@@ -43,10 +43,8 @@ const TwdSearchFormPlayers = ({ players, onChange }) => {
   return (
     <>
       <Row className="mx-0 align-items-center">
-        <Col xs={2} className="d-flex px-1 justify-content-end">
-          <div className="px-0">min</div>
-        </Col>
-        <Col xs={4} className="d-inline px-0">
+        <Col xs={1} />
+        <Col xs={5} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={playersFromOptions}
@@ -57,10 +55,10 @@ const TwdSearchFormPlayers = ({ players, onChange }) => {
             onChange={onChange}
           />
         </Col>
-        <Col xs={2} className="d-flex px-1 justify-content-end">
-          <div className="px-0">max</div>
+        <Col xs={1} className="d-flex justify-content-center">
+          <div className="small px-0">to</div>
         </Col>
-        <Col xs={4} className="d-inline px-0">
+        <Col xs={5} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={playersToOptions}
