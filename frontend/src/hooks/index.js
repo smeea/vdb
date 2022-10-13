@@ -5,3 +5,4 @@ export { default as useDeckLibrary } from './useDeckLibrary.js';
 export { default as useDeckCrypt } from './useDeckCrypt.js';
 export { default as useDeckExport } from './useDeckExport.js';
 export { default as useFilters } from './useFilters.js';
+export { default as useTags } from './useTags.js';
