@@ -219,6 +219,8 @@ const LibraryTraitsRegexMap = {
     /reduce (a|the)(.*) bleed (amount)?|bleed amount is reduced/i,
   aggravated: () => /(?:[^non-])aggravated/i,
   prevent: () => /(?:[^un])prevent(?:[^able])/i,
+  bloat: () =>
+    /add .* blood (from the blood bank )?to .* in your uncontrolled region/i,
 };
 
 const missingTitleCrypt = (filterTitles, card) => {

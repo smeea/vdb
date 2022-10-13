@@ -18,10 +18,11 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
     ['prevent', 'Prevent'],
     ['press', 'Press'],
     ['combat ends', 'Combat Ends'],
+    ['enter combat', 'Enter Combat'],
   ];
 
   const traitsRight = [
-    ['enter combat', 'Enter Combat'],
+    ['bloat', 'Bloat'],
     ['bounce bleed', 'Bounce Bleed'],
     ['reduce bleed', 'Reduce Bleed'],
     ['unlock', 'Wake / Unlock'],

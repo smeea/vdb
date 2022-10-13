@@ -53,6 +53,7 @@
     "intercept": false,
     "stealth": false,
     "bleed": false,
+    "bloat": false,
     "votes-title": false,
     "strength": false,
     "dodge": false,
