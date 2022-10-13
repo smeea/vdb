@@ -58,10 +58,6 @@ const useFilters = (cards = {}) => {
 
 export default useFilters;
 
-//  ------------------------------------------------------
-//  ---------------  MISSING DISCIPLINES  ----------------
-//  ------------------------------------------------------
-
 const missingDisciplinesCrypt = (filterDiscipline, card) => {
   if (!filterDiscipline) return false;
   return Object.keys(filterDiscipline).some(
@@ -98,10 +94,6 @@ const missingDisciplinesLibrary = (filterDiscipline, card) => {
       });
   }
 };
-
-//  ------------------------------------------------------
-//  ---------------  MISSING TEXT QUERY  -----------------
-//  ------------------------------------------------------
 
 const missingTextQueries = (filterTextQueries, card) => {
   if (!filterTextQueries) return false;
@@ -142,10 +134,6 @@ const missingTextQuery = (query, card) => {
   // matches the result with the logic
   return !((match && hasToMatch) || (!match && !hasToMatch));
 };
-
-//  ------------------------------------------------------
-//  -----------------  MISSING TRAITS  -------------------
-//  ------------------------------------------------------
 
 const missingTraitsCrypt = (filterTraits, card) => {
   return missingTraits(filterTraits, card, CryptTraitsRegexMap);
@@ -195,9 +183,8 @@ const missingTrait = (trait, card, traitsRegexMap) => {
 const CryptTraitsRegexMap = {
   'enter combat': (card) =>
     '(he|she|it|they|' +
-    card['Name'].match(/^\S+/i)[0] +
+    card['Name'].match(/^\S+/i)[0].replace(/,/, '') +
     ') (can|may)( .* to)? enter combat',
-
   'optional press': () => /gets (.*)?optional press/i,
   '1 bleed': () => /[:.] \+[1-9] bleed./i,
   '2 bleed': () => /[:.] \+[2-9] bleed./i,
@@ -206,7 +193,6 @@ const CryptTraitsRegexMap = {
   '1 intercept': () => /[:.] \+[1-9] intercept./i,
   '1 stealth': () =>
     /([:.] \+[1-9] stealth.|gets \+[1-9] stealth on each of (his|her|they) actions)/i,
-
   unlock: () => /(?!not )unlock(?! phase|ed)|wakes/i,
   'black hand': () => /black hand[ .:]/i,
   seraph: () => /seraph[.:]/i,
@@ -234,10 +220,6 @@ const LibraryTraitsRegexMap = {
   aggravated: () => /(?:[^non-])aggravated/i,
   prevent: () => /(?:[^un])prevent(?:[^able])/i,
 };
-
-//  ------------------------------------------------------
-//  -----------------  MISSING TITLE  --------------------
-//  ------------------------------------------------------
 
 const missingTitleCrypt = (filterTitles, card) => {
   if (!filterTitles) return false;
@@ -288,10 +270,6 @@ const requiredTitleList = [
   'magaji',
 ];
 
-//  ------------------------------------------------------
-//  ----------------  MISSING VOTES  ---------------------
-//  ------------------------------------------------------
-
 const missingVotes = (filterVotes, card) => {
   if (!filterVotes || filterVotes === 'any') return false;
 
@@ -319,10 +297,6 @@ const titleWorth = {
   baron: 2,
   none: 0,
 };
-
-//  ------------------------------------------------------
-//  ----------------  MISSING CAPACITY  ------------------
-//  ------------------------------------------------------
 
 const missingCapacityCrypt = (filterCapacity, card) => {
   if (!filterCapacity) return false;
@@ -388,9 +362,6 @@ const capacityRegex = {
   ge1: /requires .* (?:of|with) capacity (\d*) or more/i,
   ge2: /requires .* (?:of|with) capacity above (\d*)/i,
 };
-//  ------------------------------------------------------
-//  ------------------  MISSING CLAN  --------------------
-//  ------------------------------------------------------
 
 const missingClan = (filterClan, card) => {
   if (!filterClan || filterClan.value['0'] === 'any') return false;
@@ -412,9 +383,6 @@ const missingClan = (filterClan, card) => {
   }
 };
 
-//  ------------------------------------------------------
-//  ------------------  MISSING SECT  --------------------
-//  ------------------------------------------------------
 const missingSectCrypt = (filterSect, card) => {
   if (!filterSect || filterSect.value['0'] === 'any') return false;
 
@@ -453,10 +421,6 @@ const requiredSectList = [
   'imbued',
 ];
 
-//  ------------------------------------------------------
-//  ------------------  MISSING GROUP  -------------------
-//  ------------------------------------------------------
-
 const missingGroup = (filterGroup, card) => {
   if (!filterGroup || card['Group'].toLowerCase() === 'any') return false;
 
@@ -464,10 +428,6 @@ const missingGroup = (filterGroup, card) => {
 
   return !groups.includes(card['Group']);
 };
-
-//  ------------------------------------------------------
-//  ---------------  MISSING POOL COST  ------------------
-//  ------------------------------------------------------
 
 const missingPoolCost = (filterPoolCost, card) => {
   if (!filterPoolCost || filterPoolCost === 'any') return false;
@@ -480,10 +440,6 @@ const missingPoolCost = (filterPoolCost, card) => {
   return missingCostCheck(moreless, filterCost, cardCost);
 };
 
-//  ------------------------------------------------------
-//  ---------------  MISSING BLOOD COST  -----------------
-//  ------------------------------------------------------
-
 const missingBloodCost = (filterBloodCost, card) => {
   if (!filterBloodCost || filterBloodCost === 'any') return false;
 
@@ -495,10 +451,6 @@ const missingBloodCost = (filterBloodCost, card) => {
 
   return missingCostCheck(moreless, filterCost, cardCost);
 };
-
-//  ------------------------------------------------------
-//  ------------------  MISSING TYPE  --------------------
-//  ------------------------------------------------------
 
 const missingType = (filterType, card) => {
   if (!filterType || filterType === 'any') return false;
@@ -523,9 +475,6 @@ const missingType = (filterType, card) => {
   }
 };
 
-//  ------------------------------------------------------
-//  ------------------  MISSING SET  ---------------------
-//  ------------------------------------------------------
 const BCP_START = '2018-01-01';
 const FUTURE = '2077-01-01';
 const PAST = '1984-01-01';
@@ -580,10 +529,6 @@ const missingSet = (filterSet, card) => {
   });
 };
 
-//  ------------------------------------------------------
-//  -----------------  MISSING PRECON  -------------------
-//  ------------------------------------------------------
-
 const missingPrecon = (filterPrecon, card) => {
   if (!filterPrecon || filterPrecon === 'any') return false;
   if (!card.Set || card.Set.length === 0) return true;
@@ -628,19 +573,11 @@ const missingPrecon = (filterPrecon, card) => {
   });
 };
 
-//  ------------------------------------------------------
-//  -----------------  MISSING ARTIST  -------------------
-//  ------------------------------------------------------
-
 const missingArtist = (filterArtist, card) => {
   if (!filterArtist || filterArtist === 'any') return false;
 
   return !card['Artist'].includes(filterArtist);
 };
-
-//  ------------------------------------------------------
-//  ------------  MISSING NAME OR INITIALS  --------------
-//  ------------------------------------------------------
 
 const missingNameOrInitials = (filterName, card) => {
   if (!filterName) return false;
@@ -671,10 +608,6 @@ const missingNameOrInitials = (filterName, card) => {
     checkInitials.test(nameASCII)
   );
 };
-
-// ------------------------------------------------------
-// -------------------  UTILS  --------------------------
-// ------------------------------------------------------
 
 // checks and filter with multiple items and logic againts the a requirements list.
 const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
