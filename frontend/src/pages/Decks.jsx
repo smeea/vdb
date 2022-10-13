@@ -41,6 +41,7 @@ const Decks = () => {
     setSharedDeck,
     recentDecks,
     addRecentDeck,
+    preconDecks,
     inventoryCrypt,
     inventoryLibrary,
     usedCryptCards,
@@ -277,21 +278,31 @@ const Decks = () => {
     }
 
     if (
+      query.get('id').includes(':') &&
+      !deckRouter({ src: 'precons', deckid: query.get('id') }) &&
+      Object.keys(preconDecks).length > 0
+    ) {
+      setError('NO DECK WITH THIS ID');
+    }
+
+    if (
       activeDeck.deckid &&
       activeDeck.deckid != query.get('id') &&
       activeDeck.deckid != 'deckInUrl'
-    )
+    ) {
       navigate(`/decks?id=${activeDeck.deckid}`);
+    }
 
     if (
       cryptCardBase &&
       libraryCardBase &&
+      !error &&
       (activeDeck.src === 'twd' || activeDeck.src === 'shared') &&
       !(sharedDeck && sharedDeck[activeDeck.deckid])
     ) {
       getDeck(activeDeck.deckid);
     }
-  }, [query, activeDeck, cryptCardBase, libraryCardBase]);
+  }, [query, activeDeck, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (activeDeck.src == 'my' || activeDeck.src == 'precons') {
