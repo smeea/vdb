@@ -278,7 +278,7 @@ const Decks = () => {
     }
 
     if (
-      query.get('id').includes(':') &&
+      query.get('id')?.includes(':') &&
       !deckRouter({ src: 'precons', deckid: query.get('id') }) &&
       Object.keys(preconDecks).length > 0
     ) {
