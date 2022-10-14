@@ -1,16 +1,17 @@
 # FIX
-- Iphone clipboard (export deck / copy url)
+- Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
 
 # FEATURES
 - Add FoL cards
 - Add 3rd Edition Starters Kit
 - Check TWD
+- Manual change q-ty in card search PDA/TWD
 
 # MAYBE LATER FEATURES
 - Search by tags in PDA/TWD
 - Boilerplates modules for new decks
-- Decks set loading and analyzing
+- Decks bundles (i.e. event deck archive) analyzing
 - Offline decks storage
 
 # IMPROVE TECHNOLOGY - FRONTEND
@@ -19,9 +20,8 @@
 - Refactor CSS
 - Fetching data with react-router
 - Use File System Access API for for import/export
-- Use Async Clipboard API for url copy
-- Use Cache API for requests
-- Service Worker
+- Use Cache API for requests caching
+- Improve service worker
 
 # IMPROVE TECHNOLOGY - BACKEND
 

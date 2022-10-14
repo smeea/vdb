@@ -13,16 +13,16 @@ const useTags = (crypt, library) => {
   };
 
   const threshold = {
-    ally: 5,
-    bleed: 5,
-    bloat: 5,
-    block: 5,
-    breed: 5,
-    combat: 5,
-    mmpa: 5,
-    rush: 5,
-    stealth: 5,
-    vote: 5,
+    ally: 10,
+    bleed: 15,
+    bloat: 10,
+    block: 15,
+    breed: 10,
+    combat: 20,
+    mmpa: 10,
+    rush: 10,
+    stealth: 15,
+    vote: 20,
   };
 
   const result = {
@@ -34,28 +34,46 @@ const useTags = (crypt, library) => {
     deckTags[b] - deckTags[a];
   };
 
-  const cryptValueFactor = 2;
   if (crypt) {
+    let cryptTotal = 0;
+    Object.values(crypt).map((card) => {
+      cryptTotal += card.q;
+    });
+
+    const cryptSizeFactor = 12 / cryptTotal;
+    const cryptValueFactor = 2;
     Object.values(crypt).map((card) => {
       const { c, q } = card;
       const cardTags = getCryptTags(c);
       cardTags.map((tag) => {
-        deckTags[tag] += q * cryptValueFactor;
+        deckTags[tag] += q * cryptValueFactor * cryptSizeFactor;
       });
     });
   }
 
   if (library) {
+    let libraryTotal = 0;
+    let masterTotal = 0;
+    Object.values(library).map((card) => {
+      libraryTotal += card.q;
+      if (card.c['Type'] === 'Master') masterTotal += card.q;
+    });
+
+    const librarySizeFactor = 90 / libraryTotal;
     Object.values(library).map((card) => {
       const { c, q } = card;
       const cardTags = getLibraryTags(c);
       cardTags.map((tag) => {
-        deckTags[tag] += q;
+        deckTags[tag] += q * librarySizeFactor;
       });
     });
+
+    if (masterTotal * librarySizeFactor > 20) {
+      deckTags['mmpa'] += Math.abs(masterTotal * librarySizeFactor - 20) / 1.5;
+    }
   }
 
-  const superiorValueFactor = 2;
+  const superiorValueFactor = 1.5;
   Object.keys(deckTags)
     .sort(byScores)
     .map((tag) => {
@@ -107,7 +125,7 @@ const testCryptBleed = (card) => {
 };
 
 const testCryptBlock = (card) => {
-  if (haveTraits(['1 intercept', 'unlock'], card, CryptTraitsRegexMap)) {
+  if (haveTraits(['1 intercept'], card, CryptTraitsRegexMap)) {
     return true;
   }
 };
@@ -115,13 +133,7 @@ const testCryptBlock = (card) => {
 const testCryptCombat = (card) => {
   if (
     haveTraits(
-      [
-        '1 strength',
-        'optional press',
-        'additional strike',
-        'prevent',
-        'aggravated',
-      ],
+      ['1 strength', 'optional press', 'additional strike', 'prevent'],
       card,
       CryptTraitsRegexMap
     )
@@ -159,6 +171,8 @@ const testCryptVote = (card) => {
 
 const testLibraryAlly = (card) => {
   if (card['Type'].split('/').includes('Ally')) return true;
+  if (['FBI Special Affairs Division', 'Unmasking, The'].includes(card['Name']))
+    return true;
 };
 
 const testLibraryBleed = (card) => {
@@ -173,7 +187,13 @@ const testLibraryBloat = (card) => {
 };
 
 const testLibraryBlock = (card) => {
-  if (haveTraits(['intercept', 'unlock'], card, LibraryTraitsRegexMap)) {
+  if (haveTraits(['intercept'], card, LibraryTraitsRegexMap)) {
+    return true;
+  }
+  if (
+    haveTraits(['unlock'], card, LibraryTraitsRegexMap) &&
+    card['Type'].split('/').includes('Reaction')
+  ) {
     return true;
   }
 };

@@ -65,7 +65,7 @@ const PdaResultDescription = ({ deck }) => {
           )}
         </tbody>
       </table>
-      {(tags.superior.length || tags.base.length) && (
+      {(tags.superior.length > 0 || tags.base.length > 0) && (
         <TwdResultTags tags={tags} />
       )}
     </>
