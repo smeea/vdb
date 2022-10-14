@@ -1237,7 +1237,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":237,
+        "Twd":236,
         "Type":"Action Modifier"
     },
     "100032":{
@@ -1930,7 +1930,8 @@
                 "PB":1
             },
             "Third":{
-                "PB":1
+                "PB":1,
+                "SKB":"1"
             }
         },
         "Twd":23,
@@ -2253,7 +2254,7 @@
                 "PV":"1"
             }
         },
-        "Twd":415,
+        "Twd":413,
         "Type":"Master"
     },
     "100059":{
@@ -3484,7 +3485,14 @@
         "Name":"Armor of Terra",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[vic], [VIC] Can be used by a non-slave Gragoyle. ",
+                "refs":{
+                    "[LSJ 20011204-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0gKrr9ChclY/m/WYNIe2IgrCoJ"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "R":true
@@ -3703,7 +3711,7 @@
                 "PN":"1"
             }
         },
-        "Twd":233,
+        "Twd":232,
         "Type":"Action"
     },
     "100094":{
@@ -4242,7 +4250,7 @@
                 "":"3"
             }
         },
-        "Twd":346,
+        "Twd":345,
         "Type":"Master"
     },
     "100107":{
@@ -4512,7 +4520,8 @@
                 "PTr":"2"
             },
             "Third":{
-                "PTz":1
+                "PTz":1,
+                "SKTz":"1"
             },
             "KoT":{
                 "U":true
@@ -4558,7 +4567,8 @@
                 "C":true
             },
             "Third":{
-                "PTz":1
+                "PTz":1,
+                "SKTz":"1"
             },
             "KoT":{
                 "PM":1,
@@ -4803,6 +4813,12 @@
                 "text":"\"Before resolution\" means after strikes have been declared but before they resolve. ",
                 "refs":{
                     "[RTR 19990105]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
+                }
+            },
+            {
+                "text":"Cannot be played on an opponent's weapon. ",
+                "refs":{
+                    "[LSJ 20020425]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
                 }
             }
         ],
@@ -6278,7 +6294,8 @@
                 "PG":"4"
             },
             "Third":{
-                "PB":"5"
+                "PB":"5",
+                "SKB":"2"
             },
             "FB":{
                 "PTo":"2"
@@ -7462,6 +7479,12 @@
                 }
             },
             {
+                "text":"[VAL] Cannot be played against an ally. ",
+                "refs":{
+                    "[PIB 20111105]":"https://www.vekn.net/forum/rules-questions/13042-blissful-agony-vs-allies?start=6#13409"
+                }
+            },
+            {
                 "text":"[VAL] In the new combat, the opponent goes first. ",
                 "refs":{
                     "[LSJ 20011214-3]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9WJX_WF656A/2V1mYoHPB6IJ",
@@ -7478,6 +7501,13 @@
                 "text":"[VAL] Cannot be used to start a new combat with a vampire on his way to torpor. ",
                 "refs":{
                     "[LSJ 20100604-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Tr3X4DsZr-8/DMXtyDoNqLIJ"
+                }
+            },
+            {
+                "text":"[VAL] If both vampires play it, the acting Methuselah decides which resolves first. The other is lost. ",
+                "refs":{
+                    "[PIB 20120225]":"https://www.vekn.net/forum/rules-questions/24105-blissful-agony-vs-blissful-agony#24106",
+                    "[LSJ 20011215]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9WJX_WF656A/m/LpUwuigFmJkJ"
                 }
             },
             {
@@ -7823,7 +7853,10 @@
                 "PB":"2",
                 "PM":"2",
                 "PTr":"2",
-                "PTz":"2"
+                "PTz":"2",
+                "SKB":"2",
+                "SKTr":"2",
+                "SKTz":"2"
             },
             "FB":{
                 "PM":"3",
@@ -7853,7 +7886,7 @@
                 "PSal":2
             }
         },
-        "Twd":1216,
+        "Twd":1215,
         "Type":"Master"
     },
     "100200":{
@@ -8228,7 +8261,8 @@
                 "C":true
             },
             "Third":{
-                "PTr":"3"
+                "PTr":"3",
+                "SKTr":"2"
             },
             "V5A":{
                 "PBh":"2"
@@ -8492,6 +8526,12 @@
         "Rulings":[
             {
                 "text":"The transferred blood or life is converted to the fitting type (blood or life) depending on the opponent (vampire or ally). ",
+                "refs":{
+                    "[LSJ 20080704]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x1Y9FN8_Umc/m/UldJJICdotkJ"
+                }
+            },
+            {
+                "text":"When entering combat with an opposing Anarch, they get the blood and decide where Blood Turnip goes (the blood does not follow the Blood Turnip). ",
                 "refs":{
                     "[LSJ 20080704]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x1Y9FN8_Umc/m/UldJJICdotkJ"
                 }
@@ -8903,7 +8943,8 @@
                 "PT":"2"
             },
             "Third":{
-                "PTz":"4"
+                "PTz":"4",
+                "SKTz":"3"
             }
         },
         "Twd":5,
@@ -9254,7 +9295,8 @@
                 "PTr":"4"
             },
             "Third":{
-                "PTr":"4"
+                "PTr":"4",
+                "SKTr":"4"
             },
             "HttB":{
                 "PKia":"6"
@@ -9343,7 +9385,8 @@
                 "PT":1
             },
             "Third":{
-                "PTz":"3"
+                "PTz":"3",
+                "SKTz":"3"
             }
         },
         "Twd":1,
@@ -9834,7 +9877,8 @@
                 "PAl":1
             },
             "Third":{
-                "PB":"3"
+                "PB":"3",
+                "SKB":"2"
             }
         },
         "Twd":31,
@@ -11297,7 +11341,8 @@
                 "PA":1
             },
             "Third":{
-                "PTz":1
+                "PTz":1,
+                "SKTz":"1"
             }
         },
         "Twd":265,
@@ -11583,7 +11628,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":687,
+        "Twd":685,
         "Type":"Ally"
     },
     "100299":{
@@ -11797,6 +11842,12 @@
                 "text":"\"Before resolution\" means after strikes have been declared but before they resolve. ",
                 "refs":{
                     "[RTR 19990105]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
+                }
+            },
+            {
+                "text":"Cannot be played on an opponent's weapon. ",
+                "refs":{
+                    "[LSJ 20020425]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
                 }
             }
         ],
@@ -12164,9 +12215,9 @@
     "100312":{
         "ASCII Name":"Celerity",
         "Artist":[
-            "Greg Simanson",
             "Nicola Leonard",
-            "Peter Morbacher"
+            "Greg Simanson",
+            "Peter Mohrbacher"
         ],
         "Banned":"",
         "Blood Cost":"",
@@ -12211,7 +12262,8 @@
                 "PO":1
             },
             "Third":{
-                "PB":1
+                "PB":1,
+                "SKB":"1"
             },
             "KoT":{
                 "PB":1,
@@ -12732,7 +12784,8 @@
             },
             "Third":{
                 "C":true,
-                "PTz":"3"
+                "PTz":"3",
+                "SKTz":"3"
             },
             "SP":{
                 "DoF":"4"
@@ -13074,7 +13127,7 @@
                 "U":true
             }
         },
-        "Twd":30,
+        "Twd":29,
         "Type":"Combat"
     },
     "100334":{
@@ -13870,7 +13923,7 @@
                 "C":true
             }
         },
-        "Twd":13,
+        "Twd":12,
         "Type":"Action"
     },
     "100354":{
@@ -14207,7 +14260,8 @@
                 "PM":"4"
             },
             "Third":{
-                "PM":"6"
+                "PM":"6",
+                "SKM":"4"
             },
             "LotN":{
                 "PS":"2"
@@ -14232,7 +14286,7 @@
                 "PR":4
             }
         },
-        "Twd":585,
+        "Twd":584,
         "Type":"Action Modifier"
     },
     "100363":{
@@ -15762,7 +15816,8 @@
             },
             "Third":{
                 "C":true,
-                "PM":"4"
+                "PM":"4",
+                "SKM":"3"
             },
             "FB":{
                 "PM":"4"
@@ -15933,7 +15988,8 @@
             },
             "Third":{
                 "C":true,
-                "PB":1
+                "PB":1,
+                "SKB":"2"
             },
             "SP":{
                 "LB":"7"
@@ -16249,7 +16305,7 @@
                 "R":true
             }
         },
-        "Twd":55,
+        "Twd":54,
         "Type":"Action"
     },
     "100419":{
@@ -16856,7 +16912,7 @@
                 "":"1"
             }
         },
-        "Twd":402,
+        "Twd":401,
         "Type":"Master"
     },
     "100436":{
@@ -18496,7 +18552,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"[nec] Choose a minion controlled by another Methuselah who has been burned since your last turn. Move the chosen minion from their owner's ash heap to your ready region with 1 blood or life, and lock them.\n[NEC] As above, but do not lock the chosen minion.",
+        "Card Text":"[nec] Choose a minion that was controlled by another Methuselah who has been burned since your last turn. Move the chosen minion from their owner's ash heap to your ready region with 1 blood or life, and lock them.\n[NEC] As above, but do not lock the chosen minion.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Necromancy",
@@ -20047,7 +20103,7 @@
                 "PB":"2"
             }
         },
-        "Twd":825,
+        "Twd":823,
         "Type":"Reaction"
     },
     "100520":{
@@ -20108,7 +20164,8 @@
                 "PM":"2"
             },
             "Third":{
-                "PM":1
+                "PM":1,
+                "SKM":"1"
             },
             "KoT":{
                 "PM":1
@@ -21117,7 +21174,7 @@
                 "DTC":true
             }
         },
-        "Twd":1075,
+        "Twd":1074,
         "Type":"Master"
     },
     "100546":{
@@ -21557,8 +21614,8 @@
     "100557":{
         "ASCII Name":"Disputed Territory",
         "Artist":[
-            "Stuart Beel",
-            "L. A. Williams"
+            "L. A. Williams",
+            "Stuart Beel"
         ],
         "Banned":"",
         "Blood Cost":"",
@@ -21622,7 +21679,8 @@
                 "PG":1
             },
             "Third":{
-                "PB":1
+                "PB":1,
+                "SKB":"1"
             }
         },
         "Twd":182,
@@ -22196,7 +22254,8 @@
                 "C":true
             },
             "Third":{
-                "PTr":1
+                "PTr":1,
+                "SKTr":"1"
             },
             "KoT":{
                 "PV":1
@@ -22536,6 +22595,12 @@
                 "refs":{
                     "[RTR 19990105]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
                 }
+            },
+            {
+                "text":"Cannot be played on an opponent's weapon. ",
+                "refs":{
+                    "[LSJ 20020425]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                }
             }
         ],
         "Set":{
@@ -22769,7 +22834,8 @@
                 "PN":"3"
             },
             "Third":{
-                "PTz":"3"
+                "PTz":"3",
+                "SKTz":"2"
             }
         },
         "Twd":83,
@@ -22933,7 +22999,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":1630,
+        "Twd":1628,
         "Type":"Master"
     },
     "100589":{
@@ -23064,7 +23130,13 @@
                 }
             },
             {
-                "text":"[PRO] The reudction in capacity happens first: the copy also has a reduced capacity. ",
+                "text":"[PRO] Only the clan, sect, capacity and disciplines are copied. Titles and other traits like Infernal or Scarce are not. ",
+                "refs":{
+                    "[LSJ 20050116]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/yX5rqVaarvs/m/w6JXnFytdq4J"
+                }
+            },
+            {
+                "text":"[PRO] The reduction in capacity happens first: the copy also has a reduced capacity. ",
                 "refs":{
                     "[LSJ 20050116]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/yX5rqVaarvs/m/w6JXnFytdq4J"
                 }
@@ -23076,13 +23148,13 @@
                 }
             },
             {
-                "text":"[PRO] If they are more than two Dual Forms of the same vampires, all the other are burned when one leaves the ready region, whatever chain they form. ",
+                "text":"[PRO] If they are more than two Dual Forms of the same vampires, all the others are burned when one leaves the ready region, whatever chain they form. ",
                 "refs":{
                     "[LSJ 20050117]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/yX5rqVaarvs/Ih0zSqVPCpgJ"
                 }
             },
             {
-                "text":"[PRO] If more than one go to torpor at the same time (eg. from {Edged Illusion}), the controller chooses which one he keeps. ",
+                "text":"[PRO] If more than one go to torpor at the same time (eg. from {Edged Illusion}), the controller chooses which one they keep. ",
                 "refs":{
                     "[LSJ 20050805]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mJzy9HKytEc/gt6s2WzEqUMJ"
                 }
@@ -24040,7 +24112,8 @@
                 "PA":1
             },
             "Third":{
-                "PM":1
+                "PM":1,
+                "SKM":"1"
             },
             "KoT":{
                 "U":true,
@@ -24089,7 +24162,8 @@
             },
             "Third":{
                 "C":true,
-                "PM":"2"
+                "PM":"2",
+                "SKM":"1"
             },
             "FB":{
                 "PM":"3"
@@ -24098,7 +24172,7 @@
                 "PM":"2"
             }
         },
-        "Twd":619,
+        "Twd":618,
         "Type":"Action Modifier"
     },
     "100618":{
@@ -24744,7 +24818,7 @@
                 "":"4"
             }
         },
-        "Twd":49,
+        "Twd":48,
         "Type":"Ally"
     },
     "100635":{
@@ -24980,7 +25054,7 @@
                 "PR":5
             }
         },
-        "Twd":230,
+        "Twd":229,
         "Type":"Action"
     },
     "100641":{
@@ -25159,7 +25233,9 @@
             "Third":{
                 "C":true,
                 "PTr":"3",
-                "PTz":"5"
+                "PTz":"5",
+                "SKTr":"3",
+                "SKTz":"4"
             },
             "HttB":{
                 "PSal":"3"
@@ -25528,7 +25604,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":538,
+        "Twd":537,
         "Type":"Action"
     },
     "100653":{
@@ -25855,7 +25931,8 @@
             },
             "Third":{
                 "U":true,
-                "PM":1
+                "PM":1,
+                "SKM":"1"
             }
         },
         "Twd":5,
@@ -26552,7 +26629,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":546,
+        "Twd":545,
         "Type":"Reaction"
     },
     "100681":{
@@ -26621,7 +26698,8 @@
                 "PM":"4"
             },
             "Third":{
-                "PM":"5"
+                "PM":"5",
+                "SKM":"3"
             },
             "KoT":{
                 "C":true,
@@ -26850,7 +26928,7 @@
                 "PM":"2"
             }
         },
-        "Twd":646,
+        "Twd":645,
         "Type":"Action Modifier"
     },
     "100688":{
@@ -28280,7 +28358,8 @@
                 "PL":1
             },
             "Third":{
-                "PTz":1
+                "PTz":1,
+                "SKTz":"1"
             }
         },
         "Twd":19,
@@ -29019,7 +29098,8 @@
                 "PAG":"3"
             },
             "Third":{
-                "PB":"5"
+                "PB":"5",
+                "SKB":"4"
             },
             "V5A":{
                 "PBh":"5"
@@ -29594,7 +29674,7 @@
                 "C":true
             }
         },
-        "Twd":72,
+        "Twd":71,
         "Type":"Action Modifier/Combat"
     },
     "100759":{
@@ -29732,7 +29812,8 @@
                 "PO":"4"
             },
             "Third":{
-                "PTz":"3"
+                "PTz":"3",
+                "SKTz":"2"
             },
             "FB":{
                 "PN":"3",
@@ -30056,7 +30137,8 @@
             },
             "Third":{
                 "C":true,
-                "PTz":"2"
+                "PTz":"2",
+                "SKTz":"2"
             },
             "KoT":{
                 "C":true,
@@ -30110,7 +30192,7 @@
                 "PM":"2"
             }
         },
-        "Twd":390,
+        "Twd":389,
         "Type":"Action Modifier"
     },
     "100770":{
@@ -30949,7 +31031,7 @@
                 "PV":"5"
             }
         },
-        "Twd":589,
+        "Twd":588,
         "Type":"Action Modifier"
     },
     "100789":{
@@ -32292,7 +32374,7 @@
                 "":"1"
             }
         },
-        "Twd":1338,
+        "Twd":1336,
         "Type":"Master"
     },
     "100825":{
@@ -32628,7 +32710,8 @@
         "Set":{
             "Third":{
                 "C":true,
-                "PM":"3"
+                "PM":"3",
+                "SKM":"2"
             },
             "KoT":{
                 "C":true,
@@ -32700,6 +32783,12 @@
                 "text":"\"Before resolution\" means after strikes have been declared but before they resolve. ",
                 "refs":{
                     "[RTR 19990105]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
+                }
+            },
+            {
+                "text":"Cannot be played on an opponent's weapon. ",
+                "refs":{
+                    "[LSJ 20020425]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
                 }
             }
         ],
@@ -33053,7 +33142,8 @@
                 "PAl":"3"
             },
             "Third":{
-                "PTr":"5"
+                "PTr":"5",
+                "SKTr":"3"
             },
             "HttB":{
                 "PKia":"6",
@@ -33812,7 +33902,8 @@
             },
             "Third":{
                 "C":true,
-                "PTz":"3"
+                "PTz":"3",
+                "SKTz":"2"
             },
             "FB":{
                 "PN":"3"
@@ -34443,7 +34534,8 @@
                 "PM":1
             },
             "Third":{
-                "PTr":1
+                "PTr":1,
+                "SKTr":"1"
             }
         },
         "Twd":0,
@@ -34645,7 +34737,8 @@
             },
             "Third":{
                 "C":true,
-                "PTr":"4"
+                "PTr":"4",
+                "SKTr":"2"
             },
             "LotN":{
                 "PG":"4"
@@ -35279,7 +35372,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":653,
+        "Twd":652,
         "Type":"Equipment"
     },
     "100904":{
@@ -36435,7 +36528,8 @@
             },
             "Third":{
                 "U":true,
-                "PTz":"2"
+                "PTz":"2",
+                "SKTz":"2"
             },
             "SP":{
                 "DoF":"4"
@@ -37886,7 +37980,8 @@
                 "PO":"2"
             },
             "Third":{
-                "PB":"2"
+                "PB":"2",
+                "SKB":"2"
             }
         },
         "Twd":29,
@@ -38004,14 +38099,7 @@
         "Name":"Inevitability of the Void",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[
-            {
-                "text":"The cards to remove must be chosen when announcing the action. ",
-                "refs":{
-                    "[LSJ 20100527]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Tr3X4DsZr-8/O06iXN6LtzsJ"
-                }
-            }
-        ],
+        "Rulings":[],
         "Set":{
             "LK":{
                 "":"4"
@@ -38299,7 +38387,7 @@
                 "R":true
             }
         },
-        "Twd":29,
+        "Twd":28,
         "Type":"Ally"
     },
     "100982":{
@@ -38835,7 +38923,8 @@
                 "PM":1
             },
             "Third":{
-                "PM":1
+                "PM":1,
+                "SKM":"1"
             }
         },
         "Twd":44,
@@ -38942,7 +39031,7 @@
                 "PV":"4"
             }
         },
-        "Twd":91,
+        "Twd":90,
         "Type":"Action"
     },
     "101000":{
@@ -39296,7 +39385,8 @@
                 "PG":"4"
             },
             "Third":{
-                "PB":"3"
+                "PB":"3",
+                "SKB":"3"
             }
         },
         "Twd":66,
@@ -39733,7 +39823,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":474,
+        "Twd":473,
         "Type":"Master"
     },
     "101020":{
@@ -40325,7 +40415,7 @@
                 "2008-10-23":true
             }
         },
-        "Twd":29,
+        "Twd":28,
         "Type":"Equipment"
     },
     "101036":{
@@ -41085,7 +41175,8 @@
             },
             "Third":{
                 "C":true,
-                "PM":"5"
+                "PM":"5",
+                "SKM":"3"
             },
             "KoT":{
                 "C":true,
@@ -41156,7 +41247,8 @@
                 "PG":"3"
             },
             "Third":{
-                "PB":"6"
+                "PB":"6",
+                "SKB":"4"
             },
             "KoT":{
                 "C":true,
@@ -42144,7 +42236,9 @@
             "Third":{
                 "C":true,
                 "PB":"2",
-                "PM":"2"
+                "PM":"2",
+                "SKB":"1",
+                "SKM":"2"
             }
         },
         "Twd":153,
@@ -42490,7 +42584,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":163,
+        "Twd":162,
         "Type":"Action"
     },
     "101090":{
@@ -42918,7 +43012,8 @@
                 "PT":1
             },
             "Third":{
-                "PTz":1
+                "PTz":1,
+                "SKTz":"1"
             },
             "SP":{
                 "DoF":"1"
@@ -43328,7 +43423,7 @@
                 "":"1"
             }
         },
-        "Twd":213,
+        "Twd":212,
         "Type":"Master"
     },
     "101113":{
@@ -43802,7 +43897,8 @@
             },
             "Third":{
                 "C":true,
-                "PM":"4"
+                "PM":"4",
+                "SKM":"4"
             },
             "HttB":{
                 "PSam":"4"
@@ -43826,7 +43922,7 @@
                 "PR":4
             }
         },
-        "Twd":796,
+        "Twd":795,
         "Type":"Action Modifier"
     },
     "101126":{
@@ -44661,7 +44757,7 @@
                 "PV":"6"
             }
         },
-        "Twd":642,
+        "Twd":641,
         "Type":"Combat"
     },
     "101145":{
@@ -45259,6 +45355,12 @@
                 "text":"\"Before resolution\" means after strikes have been declared but before they resolve. ",
                 "refs":{
                     "[RTR 19990105]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
+                }
+            },
+            {
+                "text":"Cannot be played on an opponent's weapon. ",
+                "refs":{
+                    "[LSJ 20020425]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
                 }
             }
         ],
@@ -47178,7 +47280,7 @@
                 "PV":"2"
             }
         },
-        "Twd":110,
+        "Twd":109,
         "Type":"Action"
     },
     "101212":{
@@ -47360,7 +47462,8 @@
                 "C":true
             },
             "Third":{
-                "PM":"2"
+                "PM":"2",
+                "SKM":"2"
             },
             "FB":{
                 "PM":"3"
@@ -49119,7 +49222,7 @@
                 "PSal":3
             }
         },
-        "Twd":552,
+        "Twd":551,
         "Type":"Reaction"
     },
     "101260":{
@@ -50210,7 +50313,8 @@
                 "PO":"3"
             },
             "Third":{
-                "PB":"3"
+                "PB":"3",
+                "SKB":"2"
             }
         },
         "Twd":8,
@@ -51006,8 +51110,8 @@
     "101310":{
         "ASCII Name":"Obfuscate",
         "Artist":[
-            "John Bridges",
-            "Lawrence Snelly"
+            "Lawrence Snelly",
+            "John Bridges"
         ],
         "Banned":"",
         "Blood Cost":"",
@@ -51044,7 +51148,8 @@
                 "PB":1
             },
             "Third":{
-                "PM":1
+                "PM":1,
+                "SKM":"1"
             },
             "KoT":{
                 "PM":"2"
@@ -51416,7 +51521,10 @@
                 "C":true,
                 "PB":"2",
                 "PM":"2",
-                "PTr":"2"
+                "PTr":"2",
+                "SKB":"2",
+                "SKM":"2",
+                "SKTr":"2"
             },
             "KoT":{
                 "C":true,
@@ -51464,7 +51572,7 @@
                 "PSal":4
             }
         },
-        "Twd":1573,
+        "Twd":1572,
         "Type":"Reaction"
     },
     "101322":{
@@ -52115,13 +52223,13 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"No other effect can be used before the damage prevention window, it begins immediately. ",
+                "text":"The damage is inflicted by the minion (not environmental). ",
                 "refs":{
-                    "[ANK 20170930]":"http://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
+                    "[PIB 20120426]":"https://www.vekn.net/forum/rules-questions/27863-disarm-vs-combat-ends?start=6#28739"
                 }
             },
             {
-                "text":"Both minions can play prevention and non-prevention pre-range effects during the damage prevention window. ",
+                "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together. ",
                 "refs":{
                     "[ANK 20170930]":"http://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
                 }
@@ -52403,7 +52511,8 @@
                 "PR":1
             },
             "Third":{
-                "PM":1
+                "PM":1,
+                "SKM":"1"
             }
         },
         "Twd":132,
@@ -52779,7 +52888,7 @@
                 "U":true
             }
         },
-        "Twd":540,
+        "Twd":539,
         "Type":"Master"
     },
     "102231":{
@@ -53730,7 +53839,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":1565,
+        "Twd":1563,
         "Type":"Master"
     },
     "101385":{
@@ -54367,7 +54476,8 @@
                 "PT":"2"
             },
             "Third":{
-                "PTz":"2"
+                "PTz":"2",
+                "SKTz":"2"
             }
         },
         "Twd":65,
@@ -55221,7 +55331,8 @@
                 "PG":1
             },
             "Third":{
-                "PB":1
+                "PB":1,
+                "SKB":"1"
             },
             "KoT":{
                 "PB":1
@@ -56946,7 +57057,8 @@
             },
             "Third":{
                 "C":true,
-                "PM":"3"
+                "PM":"3",
+                "SKM":"2"
             },
             "HttB":{
                 "PSal":"3"
@@ -58454,7 +58566,7 @@
                 "PT":"6"
             }
         },
-        "Twd":79,
+        "Twd":78,
         "Type":"Action"
     },
     "101514":{
@@ -59879,7 +59991,8 @@
                 "PG":1
             },
             "Third":{
-                "PTz":"3"
+                "PTz":"3",
+                "SKTz":"2"
             },
             "LotN":{
                 "PR":"3"
@@ -60976,7 +61089,8 @@
             },
             "Third":{
                 "C":true,
-                "PTr":"4"
+                "PTr":"4",
+                "SKTr":"3"
             }
         },
         "Twd":255,
@@ -62798,7 +62912,8 @@
             },
             "Third":{
                 "U":true,
-                "PTz":1
+                "PTz":1,
+                "SKTz":"1"
             },
             "PLAYTEST":{
                 "PTz":3
@@ -63485,7 +63600,7 @@
                 "PGar":1
             }
         },
-        "Twd":25,
+        "Twd":24,
         "Type":"Ally"
     },
     "101646":{
@@ -64170,7 +64285,8 @@
         "Set":{
             "Third":{
                 "C":true,
-                "PTz":"3"
+                "PTz":"3",
+                "SKTz":"2"
             },
             "HttB":{
                 "PSal":"2"
@@ -64436,7 +64552,8 @@
             },
             "Third":{
                 "C":true,
-                "PB":1
+                "PB":1,
+                "SKB":"1"
             }
         },
         "Twd":1,
@@ -65087,7 +65204,8 @@
                 "PB":1
             },
             "Third":{
-                "PM":"2"
+                "PM":"2",
+                "SKM":"1"
             }
         },
         "Twd":11,
@@ -65223,6 +65341,12 @@
                 "text":"\"Before resolution\" means after strikes have been declared but before they resolve. ",
                 "refs":{
                     "[RTR 19990105]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
+                }
+            },
+            {
+                "text":"Cannot be played on an opponent's weapon. ",
+                "refs":{
+                    "[LSJ 20020425]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
                 }
             }
         ],
@@ -65400,7 +65524,8 @@
             },
             "Third":{
                 "C":true,
-                "PTz":"2"
+                "PTz":"2",
+                "SKTz":"2"
             }
         },
         "Twd":12,
@@ -65532,7 +65657,7 @@
                 "R":true
             }
         },
-        "Twd":235,
+        "Twd":234,
         "Type":"Event"
     },
     "101698":{
@@ -65953,7 +66078,8 @@
                 "PA":1
             },
             "Third":{
-                "PB":1
+                "PB":1,
+                "SKB":"1"
             }
         },
         "Twd":9,
@@ -72770,7 +72896,8 @@
                 "PG":1
             },
             "Third":{
-                "PTr":1
+                "PTr":1,
+                "SKTr":"1"
             }
         },
         "Twd":6,
@@ -72968,6 +73095,12 @@
                 "refs":{
                     "[RTR 19990105]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
                 }
+            },
+            {
+                "text":"Cannot be played on an opponent's weapon. ",
+                "refs":{
+                    "[LSJ 20020425]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                }
             }
         ],
         "Set":{
@@ -73085,7 +73218,8 @@
             },
             "Third":{
                 "C":true,
-                "PB":"3"
+                "PB":"3",
+                "SKB":"2"
             },
             "KoT":{
                 "C":true
@@ -74131,7 +74265,8 @@
             },
             "Third":{
                 "C":true,
-                "PM":"4"
+                "PM":"4",
+                "SKM":"2"
             },
             "LotN":{
                 "PA":"3"
@@ -74149,7 +74284,7 @@
                 "PR":4
             }
         },
-        "Twd":633,
+        "Twd":632,
         "Type":"Action Modifier/Combat"
     },
     "101914":{
@@ -75627,7 +75762,8 @@
                 "PTo":"4"
             },
             "Third":{
-                "PM":"4"
+                "PM":"4",
+                "SKM":"3"
             },
             "HttB":{
                 "PSal":"2"
@@ -75687,7 +75823,8 @@
             },
             "Third":{
                 "C":true,
-                "PM":"2"
+                "PM":"2",
+                "SKM":"1"
             },
             "KoT":{
                 "C":true,
@@ -75715,7 +75852,7 @@
                 "PSal":4
             }
         },
-        "Twd":994,
+        "Twd":993,
         "Type":"Reaction"
     },
     "101950":{
@@ -76428,7 +76565,8 @@
                 "C":true
             },
             "Third":{
-                "PTr":1
+                "PTr":1,
+                "SKTr":"1"
             },
             "HttB":{
                 "PGar":1
@@ -76492,7 +76630,8 @@
             },
             "Third":{
                 "C":true,
-                "PTr":"6"
+                "PTr":"6",
+                "SKTr":"4"
             },
             "KoT":{
                 "C":true
@@ -76987,7 +77126,8 @@
                 "C":true
             },
             "Third":{
-                "PTr":"4"
+                "PTr":"4",
+                "SKTr":"3"
             },
             "NB":{
                 "PM":"2",
@@ -77612,7 +77752,8 @@
                 "PAl":"2"
             },
             "Third":{
-                "PB":"2"
+                "PB":"2",
+                "SKB":"2"
             },
             "LotN":{
                 "PG":"2"
@@ -79942,8 +80083,8 @@
     "102061":{
         "ASCII Name":"Undead Strength",
         "Artist":[
-            "Will Simpson",
-            "Anson Maddocks"
+            "Anson Maddocks",
+            "Will Simpson"
         ],
         "Banned":"",
         "Blood Cost":"",
@@ -79993,7 +80134,8 @@
             },
             "Third":{
                 "C":true,
-                "PB":"5"
+                "PB":"5",
+                "SKB":"4"
             }
         },
         "Twd":78,
@@ -80540,7 +80682,8 @@
                 "PTr":1
             },
             "Third":{
-                "PTr":1
+                "PTr":1,
+                "SKTr":"1"
             },
             "SP":{
                 "PwN":"1"
@@ -80625,7 +80768,7 @@
                 "":"1"
             }
         },
-        "Twd":132,
+        "Twd":131,
         "Type":"Action"
     },
     "102077":{
@@ -80721,7 +80864,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":433,
+        "Twd":432,
         "Type":"Event"
     },
     "102080":{
@@ -81441,7 +81584,7 @@
                 "PM":"2"
             }
         },
-        "Twd":239,
+        "Twd":238,
         "Type":"Action Modifier"
     },
     "102098":{
@@ -82033,7 +82176,7 @@
                 "PSal":2
             }
         },
-        "Twd":1000,
+        "Twd":999,
         "Type":"Master"
     },
     "102114":{
@@ -82121,7 +82264,8 @@
                 "PT":1
             },
             "Third":{
-                "PTz":1
+                "PTz":1,
+                "SKTz":"1"
             }
         },
         "Twd":23,
@@ -82707,7 +82851,8 @@
             },
             "Third":{
                 "U":true,
-                "PB":"2"
+                "PB":"2",
+                "SKB":"2"
             },
             "V5":{
                 "PTo":"6",
@@ -83075,7 +83220,8 @@
             },
             "Third":{
                 "C":true,
-                "PTr":"4"
+                "PTr":"4",
+                "SKTr":"3"
             },
             "KoT":{
                 "C":true
@@ -83993,26 +84139,20 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Damage is environmental. ",
+                "text":"The damage is environmental. ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
             },
             {
-                "text":"The damage is inflicted even if combat is subsequently ended before range (eg. by {Mariel, Lady Thunder}, {Alpha Glint}). ",
+                "text":"The damage is applied even if the combat ends prematurely (eg. by {Mariel, Lady Thunder}, {Alpha Glint}). ",
                 "refs":{
                     "[LSJ 19971110]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/IlQdghRurtM/STZjah9cGbAJ",
                     "[ANK 20190725]":"https://www.vekn.net/forum/rules-questions/77813-card-questions#95969"
                 }
             },
             {
-                "text":"The minion can play other pre-range effects before applying the damage and opening the damage prevention window, but he has to apply damage before passing the opportunity to play effects to the next player. ",
-                "refs":{
-                    "[ANK 20170930]":"http://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
-                }
-            },
-            {
-                "text":"Both minions have the opportunity to play prevention and non-prevention pre-range effects during the damage prevention window. ",
+                "text":"Both minions have the opportunity to play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together. ",
                 "refs":{
                     "[ANK 20170930]":"http://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
                 }
@@ -84644,7 +84784,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":581,
+        "Twd":580,
         "Type":"Master"
     },
     "102181":{
@@ -84970,8 +85110,8 @@
     "102191":{
         "ASCII Name":"Wolf Companion",
         "Artist":[
-            "Zina Saunders",
-            "Melissa Benson"
+            "Melissa Benson",
+            "Zina Saunders"
         ],
         "Banned":"",
         "Blood Cost":"1",
@@ -85039,7 +85179,8 @@
                 "PG":1
             },
             "Third":{
-                "PTz":"2"
+                "PTz":"2",
+                "SKTz":"1"
             }
         },
         "Twd":3,

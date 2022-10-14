@@ -1644,7 +1644,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PB":1
+                "PB":1,
+                "SKB":"1"
             }
         },
         "Title":"",
@@ -4674,7 +4675,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PM":"2"
+                "PM":"2",
+                "SKM":"1"
             }
         },
         "Title":"",
@@ -5289,7 +5291,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PB":"2"
+                "PB":"2",
+                "SKB":"1"
             }
         },
         "Title":"archbishop",
@@ -5774,9 +5777,9 @@
         "Card Text":"Anarch Baron of Mombasa.",
         "Clan":"Brujah",
         "Disciplines":{
+            "Obfuscate":1,
             "Potence":1,
             "Presence":1,
-            "Obfuscate":1,
             "Celerity":2
         },
         "Group":"6",
@@ -7077,7 +7080,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PM":"2"
+                "PM":"2",
+                "SKM":"1"
             }
         },
         "Title":"",
@@ -8094,7 +8098,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PM":1
+                "PM":1,
+                "SKM":"1"
             }
         },
         "Title":"",
@@ -9786,8 +9791,8 @@
         "Clan":"Gangrel",
         "Disciplines":{
             "Animalism":1,
-            "Fortitude":1,
             "Celerity":1,
+            "Fortitude":1,
             "Protean":2
         },
         "Group":"6",
@@ -14084,9 +14089,9 @@
         "Card Text":"Camarilla Prince of Pittsburgh.",
         "Clan":"Malkavian",
         "Disciplines":{
-            "Obfuscate":1,
-            "Dominate":1,
             "Celerity":1,
+            "Dominate":1,
+            "Obfuscate":1,
             "Auspex":2
         },
         "Group":"6",
@@ -16671,7 +16676,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTr":"2"
+                "PTr":"2",
+                "SKTr":"1"
             }
         },
         "Title":"",
@@ -17522,7 +17528,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PB":"2"
+                "PB":"2",
+                "SKB":"1"
             }
         },
         "Title":"",
@@ -17634,7 +17641,7 @@
             }
         },
         "Title":"",
-        "Twd":33
+        "Twd":32
     },
     "200462":{
         "ASCII Name":"Feo Ramos",
@@ -18458,7 +18465,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTr":1
+                "PTr":1,
+                "SKTr":"1"
             },
             "SP":{
                 "PwN":"1"
@@ -19588,7 +19596,7 @@
             }
         },
         "Title":"",
-        "Twd":71
+        "Twd":70
     },
     "200517":{
         "ASCII Name":"Gilbert Duane",
@@ -19747,7 +19755,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":14
     },
     "200521":{
         "ASCII Name":"Giovanni del Georgio",
@@ -21649,7 +21657,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PM":1
+                "PM":1,
+                "SKM":"1"
             }
         },
         "Title":"",
@@ -22050,7 +22059,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PB":"2"
+                "PB":"2",
+                "SKB":"1"
             }
         },
         "Title":"priscus",
@@ -22904,8 +22914,8 @@
         "Clan":"Ventrue",
         "Disciplines":{
             "Auspex":1,
-            "Presence":1,
             "Dominate":1,
+            "Presence":1,
             "Fortitude":2
         },
         "Group":"6",
@@ -24229,7 +24239,7 @@
             }
         },
         "Title":"",
-        "Twd":123
+        "Twd":122
     },
     "200643":{
         "ASCII Name":"Isabel Giovanni",
@@ -25338,7 +25348,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTr":1
+                "PTr":1,
+                "SKTr":"1"
             },
             "SP":{
                 "PwN":"1"
@@ -27214,7 +27225,7 @@
             }
         },
         "Title":"",
-        "Twd":79
+        "Twd":78
     },
     "200728":{
         "ASCII Name":"Jozz",
@@ -30276,7 +30287,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTz":"2"
+                "PTz":"2",
+                "SKTz":"1"
             }
         },
         "Title":"bishop",
@@ -30336,7 +30348,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTz":"2"
+                "PTz":"2",
+                "SKTz":"1"
             }
         },
         "Title":"",
@@ -31872,8 +31885,8 @@
         "Disciplines":{
             "Auspex":1,
             "Potence":1,
-            "Blood Sorcery":2,
-            "Dominate":2
+            "Dominate":2,
+            "Blood Sorcery":2
         },
         "Group":"6",
         "Id":201556,
@@ -32216,8 +32229,8 @@
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
-            "Vicissitude":2,
-            "Blood Sorcery":2
+            "Blood Sorcery":2,
+            "Vicissitude":2
         },
         "Group":"5",
         "Id":200856,
@@ -33065,7 +33078,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTr":"2"
+                "PTr":"2",
+                "SKTr":"1"
             }
         },
         "Title":"archbishop",
@@ -33839,6 +33853,35 @@
         },
         "Title":"",
         "Twd":14
+    },
+    "201633":{
+        "ASCII Name":"Maila",
+        "Adv":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Camarilla primogen: If Maila is ready during your turn, you can discard a political action card to give a minion you control +1 stealth for the current action.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Celerity":1,
+            "Auspex":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201633,
+        "Name":"Maila",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "Promo":{
+                "2022-07-30":true
+            }
+        },
+        "Title":"primogen",
+        "Twd":0
     },
     "200899":{
         "ASCII Name":"Makarios, The Seducer",
@@ -34776,7 +34819,7 @@
             }
         },
         "Title":"",
-        "Twd":54
+        "Twd":53
     },
     "200925":{
         "ASCII Name":"Marianna",
@@ -35188,7 +35231,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":54
+        "Twd":53
     },
     "200936":{
         "ASCII Name":"Mark",
@@ -35851,8 +35894,8 @@
         "Clan":"Tremere",
         "Disciplines":{
             "Auspex":1,
-            "Dominate":1,
             "Celerity":1,
+            "Dominate":1,
             "Blood Sorcery":2
         },
         "Group":"6",
@@ -41722,7 +41765,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTr":"2"
+                "PTr":"2",
+                "SKTr":"1"
             }
         },
         "Title":"bishop",
@@ -42089,7 +42133,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PM":"2"
+                "PM":"2",
+                "SKM":"1"
             }
         },
         "Title":"",
@@ -43556,7 +43601,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTz":"2"
+                "PTz":"2",
+                "SKTz":"1"
             }
         },
         "Title":"cardinal",
@@ -43770,7 +43816,7 @@
             }
         },
         "Title":"",
-        "Twd":25
+        "Twd":24
     },
     "201157":{
         "ASCII Name":"Ramiro",
@@ -44304,7 +44350,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":22
     },
     "201172":{
         "ASCII Name":"Redbone McCray",
@@ -44548,7 +44594,7 @@
             }
         },
         "Title":"",
-        "Twd":91
+        "Twd":90
     },
     "201179":{
         "ASCII Name":"Renenet",
@@ -48219,7 +48265,7 @@
             }
         },
         "Title":"",
-        "Twd":70
+        "Twd":69
     },
     "201281":{
         "ASCII Name":"Sheldon, Lord of the Clog",
@@ -48941,7 +48987,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PB":1
+                "PB":1,
+                "SKB":"1"
             }
         },
         "Title":"",
@@ -52458,7 +52505,7 @@
             }
         },
         "Title":"",
-        "Twd":85
+        "Twd":84
     },
     "201394":{
         "ASCII Name":"Tura Vaughn",
@@ -53432,6 +53479,7 @@
             {
                 "text":"The prohibition to play certain cards applies from the moment he attempts to block until the end of the action, even if he fails to block. ",
                 "refs":{
+                    "[LSJ 20050607-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vet0HGRxtXQ/m/gRJalPv4lLoJ",
                     "[LSJ 20080818]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/O5HUPRkKY-k/IVBZIwrEtboJ"
                 }
             }
@@ -54518,7 +54566,7 @@
             }
         },
         "Title":"",
-        "Twd":64
+        "Twd":63
     },
     "201451":{
         "ASCII Name":"Virgil",
