@@ -17,43 +17,29 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
     let url = null;
     let options = null;
 
-    if (deck.deckid === 'deckInUrl') {
-      const cards = {};
-      Object.keys(deck.crypt).map((cardid) => {
-        cards[cardid] = deck.crypt[cardid].q;
-      });
-      Object.keys(deck.library).map((cardid) => {
-        cards[cardid] = deck.library[cardid].q;
-      });
+    const cards = {};
+    Object.keys(deck.crypt).map((cardid) => {
+      cards[cardid] = deck.crypt[cardid].q;
+    });
+    Object.keys(deck.library).map((cardid) => {
+      cards[cardid] = deck.library[cardid].q;
+    });
 
-      url = `${process.env.API_URL}deck`;
-      options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          deckname: deck.name + ' [by ' + deck.author + ']',
-          author: deck.author,
-          cards: cards,
-        }),
-      };
-    } else {
-      url = `${process.env.API_URL}deck/${deck.deckid}/clone`;
-      options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          deckname: deck.name + ' [by ' + deck.author + ']',
-        }),
-      };
-    }
+    url = `${process.env.API_URL}deck`;
+    options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        deckname: deck.name + ' [by ' + deck.author + ']',
+        description: deck.description,
+        author: deck.author,
+        cards: cards,
+      }),
+    };
 
     fetch(url, options)
       .then((response) => response.json())

@@ -82,8 +82,12 @@ def unauthorized_handler():
 @login_required
 def new_deck_route():
     deckid = uuid.uuid4().hex
+
+    name = (
+        request.json["name"] if "name" in request.json else "New deck"
+    )
     author = (
-        request.json["author"] if "author" in request.json else current_user.public_name
+        request.json["author"] if "author" in request.json else ""
     )
     description = request.json["description"] if "description" in request.json else ""
     input_cards = request.json["cards"] if "cards" in request.json else {}
@@ -94,7 +98,7 @@ def new_deck_route():
 
     d = Deck(
         deckid=deckid,
-        name=request.json["deckname"],
+        name=name,
         author_public_name=author,
         creation_date=date.today().strftime("%Y-%m-%d"),
         description=description,
@@ -467,86 +471,6 @@ def url_snapshot_route(deckid):
             "deckid": new_deckid,
         }
     )
-
-
-@app.route("/api/deck/<string:deckid>/clone", methods=["POST"])
-def clone_deck_route(deckid):
-    if len(deckid) == 32:
-        target_deck = Deck.query.get(deckid)
-        new_deckid = uuid.uuid4().hex
-        d = Deck(
-            deckid=new_deckid,
-            name=f"{target_deck.author_public_name} [by {target_deck.author_public_name}]",
-            author_public_name=target_deck.author_public_name,
-            description="",
-            author=current_user,
-            tags=target_deck.tags,
-            cards=target_deck.cards,
-        )
-        db.session.add(d)
-        db.session.commit()
-        return jsonify({"deckid": deckid})
-
-    elif ":" in deckid:
-        set, precon = deckid.split(":")
-
-        with open(
-            "../frontend/src/assets/data/preconDecks.json", "r"
-        ) as precons_cards_file, open(
-            "../frontend/src/assets/data/setsAndPrecons.json", "r"
-        ) as precons_data_file:
-            precon_cards = json.load(precons_cards_file)
-            precon_data = json.load(precons_data_file)
-
-            name = f"{precon_data[set]['precons'][precon]['name']} [PRECON]"
-            description = f"Preconstructed from \"{precon_data[set]['name']}\" [{precon_data[set]['date']}]"
-            cards = {}
-            for i, q in precon_cards[set][precon].items():
-                cards[int(i)] = q
-
-            new_deckid = uuid.uuid4().hex
-            d = Deck(
-                deckid=new_deckid,
-                name=name,
-                author_public_name="VTES Team",
-                description=description,
-                author=current_user,
-                tags=["precon"],
-                cards=cards,
-            )
-            db.session.add(d)
-            db.session.commit()
-            return jsonify({"deck cloned": request.json["deckname"], "deckid": new_deckid})
-
-    else:
-        with open("twd_decks.json", "r") as twd_decks_file:
-            twd_decks = json.load(twd_decks_file)
-
-            deck = twd_decks[deckid]
-            cards = {}
-            for i, q in deck["cards"].items():
-                cards[int(i)] = q
-
-            description = "Date: " + deck["creation_date"] + "\n"
-            description += "Players: " + str(deck["players"]) + "\n"
-            description += "Event: " + deck["event"] + "\n"
-            description += "Location: " + deck["location"] + "\n"
-            if deck["description"]:
-                description += "\n" + deck["description"]
-
-            new_deckid = uuid.uuid4().hex
-            d = Deck(
-                deckid=new_deckid,
-                name=f"{deck['name']} [by {deck['author']}]",
-                author_public_name=deck["author"],
-                description=description,
-                author=current_user,
-                tags=["twd"],
-                cards=cards,
-            )
-            db.session.add(d)
-            db.session.commit()
-            return jsonify({"deck cloned": request.json["deckname"], "deckid": new_deckid})
 
 
 @app.route("/api/decks/import", methods=["POST"])
