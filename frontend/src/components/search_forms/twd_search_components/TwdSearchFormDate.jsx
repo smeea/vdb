@@ -71,7 +71,7 @@ const TwdSearchFormDate = ({ inPda, date, onChange }) => {
   return (
     <>
       <Row className="mx-0 align-items-center">
-        <Col xs={1} />
+        <Col xs={1} className="d-inline px-0" />
         <Col xs={5} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
@@ -83,7 +83,7 @@ const TwdSearchFormDate = ({ inPda, date, onChange }) => {
             onChange={onChange}
           />
         </Col>
-        <Col xs={1} className="d-flex justify-content-center">
+        <Col xs={1} className="d-flex justify-content-center px-0">
           <div className="small px-0">to</div>
         </Col>
         <Col xs={5} className="d-inline px-0">
