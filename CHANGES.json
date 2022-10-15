@@ -1,5 +1,15 @@
 [
   {
+    "version": "2022-10-15",
+    "changes": [
+      "Add deck tags feature to TWD/PDA: will show automatically determined tags using set of simple rules (more tags and rules improvement will come later!)",
+      "Update TWDA",
+      "Add Bloat trait to library search (cards putting blood to uncontrolled)",
+      "Add Maila promo",
+      "Many other fixes and small improvements"
+    ]
+  },
+  {
     "version": "2022-10-10",
     "changes": [
       "Add show warning when offline",
