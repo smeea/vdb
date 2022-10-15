@@ -5,22 +5,36 @@ import { useApp } from 'context';
 const DeckTags = ({
   deckid,
   tags,
+  tagsSuperior,
   bordered,
   isAuthor,
   isPublic,
   allTagsOptions,
 }) => {
   const { deckUpdate } = useApp();
-  const tagList = useMemo(
-    () =>
-      tags
-        ? tags.map((tag) => ({
-            label: tag,
-            value: tag,
-          }))
-        : undefined,
-    [tags]
-  );
+
+  const tagList = useMemo(() => {
+    const t = [];
+    if (tagsSuperior) {
+      tagsSuperior.map((tag) => {
+        t.push({
+          label: <b>{tag}</b>,
+          value: tag,
+        });
+      });
+    }
+
+    if (tags) {
+      tags.map((tag) => {
+        t.push({
+          label: tag,
+          value: tag,
+        });
+      });
+    }
+
+    return t;
+  }, [tags, tagsSuperior]);
 
   const handleChange = (event) => {
     const v = event.map((t) => t.value);

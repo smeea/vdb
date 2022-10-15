@@ -29,6 +29,7 @@ import {
   DeckNewDeck,
 } from 'components';
 import { useApp } from 'context';
+import { useTags } from 'hooks';
 
 const Decks = () => {
   const {
@@ -322,6 +323,35 @@ const Decks = () => {
     }
   }, [activeDeck, decks]);
 
+  const tags = useMemo(() => {
+    if (deckRouter(activeDeck)) {
+      if (
+        activeDeck.src === 'twd' ||
+        activeDeck.src === 'precons' ||
+        isPublic
+      ) {
+        let t = [];
+        Object.values(
+          useTags(
+            deckRouter(activeDeck)?.crypt,
+            deckRouter(activeDeck)?.library
+          )
+        ).map((v) => {
+          t = t.concat(v);
+        });
+
+        return t;
+      } else if (
+        deckRouter(activeDeck).tags &&
+        deckRouter(activeDeck).tags.length > 0
+      ) {
+        return deckRouter(activeDeck).tags;
+      }
+    }
+
+    return null;
+  }, [deckRouter(activeDeck)]);
+
   return (
     <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
       <Row className="mx-0">
@@ -523,34 +553,31 @@ const Decks = () => {
                         setFolded={setFoldedDescription}
                       />
                     </Col>
-                    {foldedDescription &&
-                      !isMobile &&
-                      (deckRouter(activeDeck).tags || isAuthor) && (
-                        <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
-                          <DeckTags
-                            allTagsOptions={allTagsOptions}
-                            deckid={deckRouter(activeDeck).deckid}
-                            tags={deckRouter(activeDeck).tags}
-                            bordered={true}
-                            isAuthor={isAuthor}
-                            isPublic={isPublic}
-                          />
-                        </Col>
-                      )}
-                  </Row>
-                  {(!foldedDescription || isMobile) &&
-                    (deckRouter(activeDeck).tags || isAuthor) && (
-                      <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
+                    {foldedDescription && !isMobile && (tags || isAuthor) && (
+                      <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
                         <DeckTags
                           allTagsOptions={allTagsOptions}
                           deckid={deckRouter(activeDeck).deckid}
-                          tags={deckRouter(activeDeck).tags}
+                          tags={tags}
                           bordered={true}
                           isAuthor={isAuthor}
                           isPublic={isPublic}
                         />
-                      </div>
+                      </Col>
                     )}
+                  </Row>
+                  {(!foldedDescription || isMobile) && (tags || isAuthor) && (
+                    <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
+                      <DeckTags
+                        allTagsOptions={allTagsOptions}
+                        deckid={deckRouter(activeDeck).deckid}
+                        tags={tags}
+                        bordered={true}
+                        isAuthor={isAuthor}
+                        isPublic={isPublic}
+                      />
+                    </div>
+                  )}
                 </>
               )}
             </Col>

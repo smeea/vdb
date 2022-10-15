@@ -241,27 +241,31 @@ const Review = () => {
                             setFolded={setFoldedDescription}
                           />
                         </Col>
-                        {foldedDescription && deckFrom.tags && (
-                          <Col className="ps-2 pe-0">
+                        {foldedDescription &&
+                          deckFrom.tags &&
+                          deckFrom.tags.length > 0 && (
+                            <Col className="ps-2 pe-0">
+                              <DeckTags
+                                deckid={deckFrom.deckid}
+                                tags={deckFrom.tags}
+                                bordered={true}
+                                isAuthor={false}
+                              />
+                            </Col>
+                          )}
+                      </Row>
+                      {!foldedDescription &&
+                        deckFrom.tags &&
+                        deckFrom.tags.length > 0 && (
+                          <div className="d-block pt-2">
                             <DeckTags
                               deckid={deckFrom.deckid}
                               tags={deckFrom.tags}
                               bordered={true}
                               isAuthor={false}
                             />
-                          </Col>
+                          </div>
                         )}
-                      </Row>
-                      {!foldedDescription && deckFrom.tags && (
-                        <div className="d-block pt-2">
-                          <DeckTags
-                            deckid={deckFrom.deckid}
-                            tags={deckFrom.tags}
-                            bordered={true}
-                            isAuthor={false}
-                          />
-                        </div>
-                      )}
                     </>
                   )}
                 </>

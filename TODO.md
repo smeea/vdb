@@ -1,12 +1,16 @@
 # FIX
 - Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
+- Fix Third:SK https://whitewolf.fandom.com/wiki/Vampire:_The_Eternal_Struggle_Player%27s_Kit
+- Review precons/TWD
+- Clone deck with tags
 
 # FEATURES
 - Add FoL cards
 - Add 3rd Edition Starters Kit
 - Check TWD
 - Manual change q-ty in card search PDA/TWD
+- Store autotags in deck state
 
 # MAYBE LATER FEATURES
 - Search by tags in PDA/TWD
