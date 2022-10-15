@@ -356,6 +356,22 @@
       "PTz": {
         "name": "Tzimisce",
         "clan": "Tzimisce"
+      },
+      "SKB": {
+        "name": "Starter Kit: Brujah antitribu",
+        "clan": "Brujah antitribu"
+      },
+      "SKM": {
+        "name": "Starter Kit: Malkavian antitribu",
+        "clan": "Malkavian antitribu"
+      },
+      "SKTr": {
+        "name": "Starter Kit: Tremere antitribu",
+        "clan": "Tremere antitribu"
+      },
+      "SKTz": {
+        "name": "Starter Kit: Tzimisce",
+        "clan": "Tzimisce"
       }
     }
   },

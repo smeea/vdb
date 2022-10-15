@@ -86,6 +86,10 @@ bundles = {
         "PM": {},
         "PTr": {},
         "PTz": {},
+        "SKB": {},
+        "SKM": {},
+        "SKTr": {},
+        "SKTz": {},
     },
     "LoB": {
         "PA": {},
