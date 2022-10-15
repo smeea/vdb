@@ -209,7 +209,7 @@ const LibraryTraitsRegexMap = {
     /\-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
   stealth: () =>
     /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\-[0-9]+ intercept/i,
-  bleed: () => /\+[0-9]+ bleed/i,
+  bleed: () => /\+([0-9]+|X) bleed/i,
   strength: () => /\+[0-9]+ strength/i,
   embrace: () => /becomes a.*(\d[ -]|same.*)capacity/i,
   'bounce bleed': () => /change the target of the bleed|is now bleeding/i,
