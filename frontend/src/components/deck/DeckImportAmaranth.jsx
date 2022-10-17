@@ -110,7 +110,7 @@ const DeckImportAmaranth = ({
 
   const importDeckFromAmaranth = async (amaranth_deck) => {
     const deck = {
-      deckname: amaranth_deck.title,
+      name: amaranth_deck.title,
       author: amaranth_deck.author,
       description: amaranth_deck.description,
       cards: {},
@@ -151,7 +151,7 @@ const DeckImportAmaranth = ({
               decks[b.deckid] = {
                 deckid: b.deckid,
                 master: deck.deckid,
-                name: deck.deckname,
+                name: deck.name,
                 branchName: b.branch_name,
                 author: deck.author,
                 description: b.comments || '',
@@ -165,7 +165,7 @@ const DeckImportAmaranth = ({
             const { crypt, library } = parseCards(deck.cards);
             decks[deck.deckid] = {
               deckid: deck.deckid,
-              name: deck.deckname,
+              name: deck.name,
               branches: Object.keys(decks),
               branchName: '#0',
               author: deck.author,

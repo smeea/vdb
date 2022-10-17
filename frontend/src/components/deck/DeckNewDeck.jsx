@@ -9,9 +9,11 @@ const DeckNewDeck = ({ setShowInfo }) => {
     setActiveDeck,
     setShowMenuButtons,
     setShowFloatingButtons,
+    publicName,
   } = useApp();
 
   const createNewDeck = () => {
+    const name = 'New deck'
     const url = `${process.env.API_URL}deck`;
     const options = {
       method: 'POST',
@@ -20,7 +22,7 @@ const DeckNewDeck = ({ setShowInfo }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ deckname: 'New deck' }),
+      body: JSON.stringify({ name: name }),
     };
 
     fetch(url, options)
@@ -29,9 +31,13 @@ const DeckNewDeck = ({ setShowInfo }) => {
         setDecks((prevState) => ({
           ...prevState,
           [data.deckid]: {
-            ...data,
+            name: name,
+            deckid: data.deckid,
+            description: '',
+            author: publicName,
             crypt: {},
             library: {},
+            author: username,
             branchName: '#0',
             is_yours: true,
           },

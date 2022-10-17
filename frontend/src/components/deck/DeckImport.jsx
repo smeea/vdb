@@ -18,6 +18,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
     inventoryAddToState,
     setShowMenuButtons,
     setShowFloatingButtons,
+    publicName,
   } = useApp();
 
   const [importError, setImportError] = useState(false);
@@ -92,6 +93,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
   const createNewDeck = () => {
     setCreateError(false);
 
+    const name = 'New deck'
     const url = `${process.env.API_URL}deck`;
     const options = {
       method: 'POST',
@@ -100,7 +102,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ deckname: 'New deck' }),
+      body: JSON.stringify({ name: name }),
     };
 
     const fetchPromise = fetch(url, options);
@@ -108,14 +110,15 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
     fetchPromise
       .then((response) => response.json())
       .then((data) => {
-        const { crypt, library } = parseDeckCards(data.cards);
-
         setDecks((prevState) => ({
           ...prevState,
           [data.deckid]: {
-            ...data,
-            crypt: crypt,
-            library: library,
+            name: name,
+            deckid: data.deckid,
+            description: '',
+            author: publicName,
+            crypt: {},
+            library: {},
             branchName: '#0',
             is_yours: true,
           },
