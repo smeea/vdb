@@ -17,6 +17,7 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
     let url = null;
     let options = null;
 
+    const name = `${deck.name} [by ${deck.author}]`
     const cards = {};
     Object.keys(deck.crypt).map((cardid) => {
       cards[cardid] = deck.crypt[cardid].q;
@@ -34,10 +35,11 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        deckname: deck.name + ' [by ' + deck.author + ']',
+        name: name,
         description: deck.description,
         author: deck.author,
         cards: cards,
+        tags: deck.tags,
       }),
     };
 
@@ -46,12 +48,6 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
       .then((data) => {
         if (data.error === undefined) {
           const now = new Date();
-          let name = deck.name;
-          if (src !== 'precons') {
-            name += ` [by ${deck.author}]`;
-          } else {
-            name += ' [PRECON]';
-          }
 
           setDecks((prevState) => ({
             ...prevState,

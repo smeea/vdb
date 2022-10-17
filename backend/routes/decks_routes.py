@@ -111,12 +111,7 @@ def new_deck_route():
 
     return jsonify(
         {
-            "timestamp": d.timestamp,
             "deckid": d.deckid,
-            "name": d.name,
-            "author": d.author_public_name,
-            "description": d.description,
-            "cards": d.cards,
         }
     )
 
