@@ -90,10 +90,11 @@ def new_deck_route():
         request.json["author"] if "author" in request.json else ""
     )
     description = request.json["description"] if "description" in request.json else ""
+    tags = request.json["tags"] if "tags" in request.json else []
     input_cards = request.json["cards"] if "cards" in request.json else {}
+    anonymous = request.json.get("anonymous")
     cards = {}
 
-    tags = request.json["tags"] if "tags" in request.json else []
     for k, v in input_cards.items():
         cards[int(k)] = v
 
@@ -103,7 +104,7 @@ def new_deck_route():
         author_public_name=author,
         creation_date=date.today().strftime("%Y-%m-%d"),
         description=description,
-        author=current_user,
+        author=current_user if not anonymous else None,
         cards=cards,
         tags=tags,
     )
@@ -112,6 +113,7 @@ def new_deck_route():
     db.session.commit()
 
     return jsonify({ "deckid": d.deckid })
+
 
 
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
@@ -444,23 +446,6 @@ def remove_branch_route(deckid):
     db.session.delete(d)
     db.session.commit()
     return jsonify({"deckid": request.json["deckid"]})
-
-
-@app.route("/api/deck/<string:deckid>/snapshot", methods=["GET"])
-def url_snapshot_route(deckid):
-    target_deck = Deck.query.get(deckid)
-    new_deckid = uuid.uuid4().hex
-    d = Deck(
-        deckid=new_deckid,
-        name=target_deck.name,
-        author_public_name=target_deck.author_public_name,
-        description=target_deck.description,
-        cards=target_deck.cards,
-        tags=target_deck.tags,
-    )
-    db.session.add(d)
-    db.session.commit()
-    return jsonify({"deckid": new_deckid})
 
 
 @app.route("/api/decks/import", methods=["POST"])

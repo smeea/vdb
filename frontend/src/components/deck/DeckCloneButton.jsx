@@ -14,9 +14,6 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
   const [state, setState] = useState(false);
 
   const cloneDeck = () => {
-    let url = null;
-    let options = null;
-
     const name = `${deck.name} [by ${deck.author}]`
     const cards = {};
     Object.keys(deck.crypt).map((cardid) => {
@@ -26,8 +23,8 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
       cards[cardid] = deck.library[cardid].q;
     });
 
-    url = `${process.env.API_URL}deck`;
-    options = {
+    const url = `${process.env.API_URL}deck`;
+    const options = {
       method: 'POST',
       mode: 'cors',
       credentials: 'include',

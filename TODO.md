@@ -2,7 +2,6 @@
 - Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
 - Fix Third:SK https://whitewolf.fandom.com/wiki/Vampire:_The_Eternal_Struggle_Player%27s_Kit
-- Review precons/TWD
 
 # FEATURES
 - Add FoL cards

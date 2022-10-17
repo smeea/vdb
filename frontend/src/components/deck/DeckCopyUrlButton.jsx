@@ -48,11 +48,30 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
   };
 
   const handleSnapshotButton = () => {
-    const url = `${process.env.API_URL}deck/${deck.deckid}/snapshot`;
+    const cards = {};
+    Object.keys(deck.crypt).map((cardid) => {
+      cards[cardid] = deck.crypt[cardid].q;
+    });
+    Object.keys(deck.library).map((cardid) => {
+      cards[cardid] = deck.library[cardid].q;
+    });
+
+    const url = `${process.env.API_URL}deck`;
     const options = {
-      method: 'GET',
+      method: 'POST',
       mode: 'cors',
       credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: deck.name,
+        description: deck.description,
+        author: deck.author,
+        cards: cards,
+        tags: deck.tags,
+        anonymous: true,
+      }),
     };
 
     fetch(url, options)

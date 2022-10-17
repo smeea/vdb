@@ -58,7 +58,7 @@ const DeckButtons = ({
               {isAuthor && <DeckPublicButton deck={deck} />}
 
               <DeckDiffButton deckid={deck.deckid} />
-              <DeckReviewButton deckid={deck.deckid} />
+              <DeckReviewButton deck={deck} />
               <DeckCopyUrlButton setShowQr={setShowQr} deck={deck} />
               <DeckProxyButton
                 deck={deck}
