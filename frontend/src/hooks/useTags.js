@@ -1,28 +1,28 @@
 const useTags = (crypt, library) => {
   const deckTags = {
+    accel: 0,
     ally: 0,
     bleed: 0,
-    bloat: 0,
     block: 0,
-    breed: 0,
     combat: 0,
     mmpa: 0,
     rush: 0,
     stealth: 0,
+    swarm: 0,
     vote: 0,
   };
 
   const threshold = {
+    accel: 10,
     ally: 10,
-    bleed: 15,
-    bloat: 10,
+    bleed: 10,
     block: 15,
-    breed: 10,
     combat: 20,
     mmpa: 10,
     rush: 10,
     stealth: 15,
-    vote: 20,
+    swarm: 10,
+    vote: 10,
   };
 
   const result = {
@@ -41,7 +41,7 @@ const useTags = (crypt, library) => {
     });
 
     const cryptSizeFactor = 12 / cryptTotal;
-    const cryptValueFactor = 2;
+    const cryptValueFactor = 1.5;
     Object.values(crypt).map((card) => {
       const { c, q } = card;
       const cardTags = getCryptTags(c);
@@ -97,7 +97,6 @@ const getCryptTags = (card) => {
   testCryptMmpa(card) && cardTags.push('mmpa');
   testCryptRush(card) && cardTags.push('rush');
   testCryptStealth(card) && cardTags.push('stealth');
-  testCryptVote(card) && cardTags.push('vote');
 
   return cardTags;
 };
@@ -106,9 +105,9 @@ const getLibraryTags = (card) => {
   let cardTags = [];
   testLibraryAlly(card) && cardTags.push('ally');
   testLibraryBleed(card) && cardTags.push('bleed');
-  testLibraryBloat(card) && cardTags.push('bloat');
+  testLibraryAccel(card) && cardTags.push('accel');
   testLibraryBlock(card) && cardTags.push('block');
-  testLibraryBreed(card) && cardTags.push('breed');
+  testLibrarySwarm(card) && cardTags.push('swarm');
   testLibraryCombat(card) && cardTags.push('combat');
   testLibraryMmpa(card) && cardTags.push('mmpa');
   testLibraryRush(card) && cardTags.push('rush');
@@ -180,8 +179,8 @@ const testLibraryBleed = (card) => {
     return true;
   }
 };
-const testLibraryBloat = (card) => {
-  if (haveTraits(['bloat'], card, LibraryTraitsRegexMap)) {
+const testLibraryAccel = (card) => {
+  if (haveTraits(['put-blood'], card, LibraryTraitsRegexMap)) {
     return true;
   }
 };
@@ -198,7 +197,7 @@ const testLibraryBlock = (card) => {
   }
 };
 
-const testLibraryBreed = (card) => {
+const testLibrarySwarm = (card) => {
   if (haveTraits(['embrace'], card, LibraryTraitsRegexMap)) {
     return true;
   }
@@ -278,6 +277,6 @@ const LibraryTraitsRegexMap = {
   'votes-title': () => /\+. vote|additional vote|represent the .* title/i,
   aggravated: () => /(?:[^non-])aggravated/i,
   prevent: () => /(?:[^un])prevent(?:[^able])/i,
-  bloat: () =>
+  'put-blood': () =>
     /add .* blood (from the blood bank )?to .* in your uncontrolled region/i,
 };
