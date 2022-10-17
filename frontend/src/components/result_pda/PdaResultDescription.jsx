@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
+import CalendarEvent from 'assets/images/icons/calendar-event.svg';
+import PersonFill from 'assets/images/icons/person-fill.svg';
+import TagFill from 'assets/images/icons/tag-fill.svg';
 import {
   TwdResultTags,
   PdaFavoriteButton,
@@ -12,7 +15,7 @@ import { useTags } from 'hooks';
 import defaults from 'components/forms_data/defaultsPdaForm.json';
 
 const PdaResultDescription = ({ deck }) => {
-  const { username, isDesktop } = useApp();
+  const { username, isMobile, isDesktop } = useApp();
   const { setPdaFormState } = useSearchForms();
   const tags = useTags(deck.crypt, deck.library);
   const navigate = useNavigate();
@@ -31,14 +34,22 @@ const PdaResultDescription = ({ deck }) => {
       <table>
         <tbody>
           <tr>
-            <td className="d-inline blue">
-              <b>Deck</b>:
+            <td className="blue">
+              {isMobile ?
+               <div className="d-flex align-items-center"><TagFill /></div>
+               :
+               <b>Deck:</b>
+              }
             </td>
             <td className="ps-2">{deck['name']}</td>
           </tr>
           <tr>
-            <td className="d-inline blue">
-              <b>Player</b>:
+            <td className="blue">
+              {isMobile ?
+               <div className="d-flex align-items-center"><PersonFill /></div>
+               :
+               <b>Author:</b>
+              }
             </td>
             <td className="ps-2">
               <div
@@ -50,15 +61,23 @@ const PdaResultDescription = ({ deck }) => {
             </td>
           </tr>
           <tr>
-            <td className="d-inline blue">
-              <b>Created:</b>
+            <td className="blue">
+              {isMobile ?
+               <div className="d-flex align-items-center"><CalendarEvent /></div>
+               :
+               <b>Created:</b>
+              }
             </td>
             <td className="ps-2">{deck['creation_date']}</td>
           </tr>
           {lastUpdated !== deck['creation_date'] && (
             <tr>
-              <td className="d-inline blue">
-                <b>Updated:</b>
+              <td className="blue">
+                {isMobile ?
+                 <div className="d-flex align-items-center"><CalendarEvent /></div>
+                 :
+                 <b>Updated:</b>
+                }
               </td>
               <td className="ps-2">{lastUpdated}</td>
             </tr>

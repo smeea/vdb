@@ -1,14 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
+import CalendarEvent from 'assets/images/icons/calendar-event.svg';
+import GeoAltFill from 'assets/images/icons/geo-alt-fill.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
+import PersonFill from 'assets/images/icons/person-fill.svg';
+import TagFill from 'assets/images/icons/tag-fill.svg';
+import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { TwdResultTags, TwdOpenDeckButton, DeckCloneButton } from 'components';
 import { useApp, useSearchForms } from 'context';
 import { useTags } from 'hooks';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 
 const TwdResultDescription = ({ deck }) => {
-  const { username, isDesktop } = useApp();
+  const { username, isMobile, isDesktop } = useApp();
   const { setTwdFormState } = useSearchForms();
   const tags = useTags(deck.crypt, deck.library);
   const navigate = useNavigate();
@@ -33,20 +38,32 @@ const TwdResultDescription = ({ deck }) => {
       <table>
         <tbody>
           <tr>
-            <td className="d-inline blue">
-              <b>Date:</b>
+            <td className="blue">
+              {isMobile ?
+               <div className="d-flex align-items-center"><CalendarEvent /></div>
+               :
+               <b>Date:</b>
+              }
             </td>
             <td className="ps-2">{deck['creation_date']}</td>
           </tr>
           <tr>
-            <td className="d-inline blue">
-              <b>Event</b>:
+            <td className="blue">
+              {isMobile ?
+               <div className="d-flex align-items-center"><TrophyFill /></div>
+               :
+               <b>Event:</b>
+              }
             </td>
             <td className="ps-2">{deck['event']}</td>
           </tr>
           <tr>
-            <td className="d-inline blue">
-              <b>Location</b>:
+            <td className="blue">
+              {isMobile ?
+               <div className="d-flex align-items-center"><GeoAltFill /></div>
+               :
+               <b>Location:</b>
+              }
             </td>
             <td className="ps-2">
               <div
@@ -58,8 +75,12 @@ const TwdResultDescription = ({ deck }) => {
             </td>
           </tr>
           <tr>
-            <td className="d-inline blue">
-              <b>Player</b>:
+            <td className="blue">
+              {isMobile ?
+               <div className="d-flex align-items-center"><PersonFill /></div>
+               :
+               <b>Player:</b>
+              }
             </td>
             <td className="ps-2">
               <div
@@ -71,8 +92,12 @@ const TwdResultDescription = ({ deck }) => {
             </td>
           </tr>
           <tr>
-            <td className="d-inline blue">
-              <b>Deck</b>:
+            <td className="blue">
+              {isMobile ?
+               <div className="d-flex align-items-center"><TagFill /></div>
+               :
+               <b>Deck:</b>
+              }
             </td>
             <td className="ps-2">{deck['name']}</td>
           </tr>
