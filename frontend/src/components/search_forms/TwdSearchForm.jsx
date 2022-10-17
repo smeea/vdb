@@ -371,7 +371,7 @@ const TwdSearchForm = () => {
         <Col xs={12} className="d-inline px-0">
           {cryptCardBase && (
             <TwdSearchFormCrypt
-              state={twdFormState.crypt}
+              state={twdFormState}
               setState={setTwdFormState}
             />
           )}
@@ -397,7 +397,7 @@ const TwdSearchForm = () => {
         <Col xs={12} className="d-inline px-0">
           {libraryCardBase && (
             <TwdSearchFormLibrary
-              state={twdFormState.library}
+              state={twdFormState}
               setState={setTwdFormState}
             />
           )}

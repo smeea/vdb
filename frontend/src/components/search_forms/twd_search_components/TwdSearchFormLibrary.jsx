@@ -14,19 +14,20 @@ const TwdSearchFormLibrary = ({ state, setState }) => {
   const [modalCard, setModalCard] = useState(undefined);
 
   const handleAdd = (event) => {
-    const newState = state;
-    newState[event.value] = {
-      q: 1,
-      m: 'gt',
-    };
     setState((prevState) => ({
       ...prevState,
-      library: newState,
+      library: {
+        ...prevState.library,
+        [event.value]: {
+          q: 1,
+          m: 'gt'
+        }
+      },
     }));
   };
 
-  const libraryCardsList = Object.keys(state)
-    .filter((id) => state[id].q >= 0)
+  const libraryCardsList = Object.keys(state.library)
+    .filter((id) => state.library[id].q >= 0)
     .map((id) => {
       return (
         <div key={id} className="d-flex align-items-center pt-1">
@@ -34,7 +35,6 @@ const TwdSearchFormLibrary = ({ state, setState }) => {
             state={state}
             setState={setState}
             id={id}
-            q={state[id].q}
             target="library"
           />
           <ConditionalOverlayTrigger

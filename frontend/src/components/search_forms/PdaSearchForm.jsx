@@ -358,7 +358,7 @@ const PdaSearchForm = () => {
         <Col xs={12} className="d-inline px-0">
           {cryptCardBase && (
             <TwdSearchFormCrypt
-              state={pdaFormState.crypt}
+              state={pdaFormState}
               setState={setPdaFormState}
             />
           )}
@@ -384,7 +384,7 @@ const PdaSearchForm = () => {
         <Col xs={12} className="d-inline px-0">
           {libraryCardBase && (
             <TwdSearchFormLibrary
-              state={pdaFormState.library}
+              state={pdaFormState}
               setState={setPdaFormState}
             />
           )}

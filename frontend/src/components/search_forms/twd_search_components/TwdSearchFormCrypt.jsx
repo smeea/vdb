@@ -14,19 +14,20 @@ const TwdSearchFormCrypt = ({ state, setState }) => {
   const [modalCard, setModalCard] = useState(undefined);
 
   const handleAdd = (event) => {
-    const newState = state;
-    newState[event.value] = {
-      q: 1,
-      m: 'gt',
-    };
     setState((prevState) => ({
       ...prevState,
-      crypt: newState,
+      crypt: {
+        ...prevState.crypt,
+        [event.value]: {
+          q: 1,
+          m: 'gt'
+        }
+      },
     }));
   };
 
-  const cryptCardsList = Object.keys(state)
-    .filter((id) => state[id].q >= 0)
+  const cryptCardsList = Object.keys(state.crypt)
+    .filter((id) => state.crypt[id].q >= 0)
     .map((id) => {
       return (
         <div key={id} className="d-flex align-items-center pt-1">
@@ -34,7 +35,6 @@ const TwdSearchFormCrypt = ({ state, setState }) => {
             state={state}
             setState={setState}
             id={id}
-            q={state[id].q}
             target="crypt"
           />
           <ConditionalOverlayTrigger
@@ -63,7 +63,6 @@ const TwdSearchFormCrypt = ({ state, setState }) => {
       <NewCryptCard
         onChange={handleAdd}
         selectedValue={null}
-        autoFocus={false}
       />
       {cryptCardsList}
       {modalCard && (

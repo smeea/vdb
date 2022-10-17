@@ -1,46 +1,44 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const TwdSearchFormQuantityButtons = ({ state, setState, id, q, target }) => {
-  const handleChangeQ = (id, q) => {
-    const newState = state;
-    if (q >= 0) {
-      newState[id] = {
-        ...state[id],
-        q: q,
-      };
-    } else {
-      delete newState[id];
-    }
-
-    setState((prevState) => ({
-      ...prevState,
-      [target]: newState,
-    }));
+const TwdSearchFormQuantityButtons = ({ state, setState, id, target }) => {
+  const handleChangeQ = (q) => {
+    setState((prevState) => {
+      if (q >= 0) {
+        prevState[target][id] = {
+          ...prevState[target][id],
+          q: q
+        }
+      } else {
+        delete prevState[target][id];
+      }
+      return({...prevState})
+    });
   };
 
   const handleToggleMoreLess = () => {
     const toggle = () => {
-      switch (state[id].m) {
-        case 'gt':
-          return 'lt';
-        case 'lt':
-          return 'lt0';
-        case 'lt0':
-          return 'eq';
-        default:
-          return 'gt';
+      switch (state[target][id].m) {
+      case 'gt':
+        return 'lt';
+      case 'lt':
+        return 'lt0';
+      case 'lt0':
+        return 'eq';
+      default:
+        return 'gt';
       }
     };
 
-    const newState = state;
-    newState[id] = {
-      ...state[id],
-      m: toggle(),
-    };
     setState((prevState) => ({
       ...prevState,
-      [target]: newState,
+      [target]: {
+        ...prevState[target],
+        [id]: {
+          ...prevState[target][id],
+          m: toggle(),
+        }
+      },
     }));
   };
 
@@ -64,23 +62,23 @@ const TwdSearchFormQuantityButtons = ({ state, setState, id, q, target }) => {
           className="quantity-wide"
           variant="primary"
           onClick={handleToggleMoreLess}
-          title={getIconAndText(state[id].m)[1]}
+          title={getIconAndText(state[target][id].m)[1]}
         >
-          {getIconAndText(state[id].m)[0]}
+          {getIconAndText(state[target][id].m)[0]}
         </Button>
       </div>
       <Button
         className="quantity"
         variant="primary"
-        onClick={() => handleChangeQ(id, q - 1)}
+        onClick={() => handleChangeQ(state[target][id].q - 1)}
       >
         -
       </Button>
-      <div className="px-1">{q}</div>
+      <div className="px-1">{state[target][id].q}</div>
       <Button
         className="quantity"
         variant="primary"
-        onClick={() => handleChangeQ(id, q + 1)}
+        onClick={() => handleChangeQ(state[target][id].q + 1)}
       >
         +
       </Button>
