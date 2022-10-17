@@ -254,8 +254,7 @@ const Review = () => {
                           />
                         </Col>
                         {foldedDescription &&
-                          deckFrom.tags &&
-                          deckFrom.tags.length > 0 && (
+                          deckFrom?.tags.length > 0 && (
                             <Col className="ps-2 pe-0">
                               <DeckTags
                                 deckid={deckFrom.deckid}
@@ -267,8 +266,7 @@ const Review = () => {
                           )}
                       </Row>
                       {!foldedDescription &&
-                        deckFrom.tags &&
-                        deckFrom.tags.length > 0 && (
+                       deckFrom?.tags.length > 0 && (
                           <div className="d-block pt-2">
                             <DeckTags
                               deckid={deckFrom.deckid}

@@ -536,7 +536,7 @@ const Decks = () => {
                         setFolded={setFoldedDescription}
                       />
                     </Col>
-                    {foldedDescription && !isMobile && (deckRouter(activeDeck)?.tags || isAuthor) && (
+                    {foldedDescription && !isMobile && (deckRouter(activeDeck)?.tags.length > 0 || isAuthor) && (
                       <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
                         <DeckTags
                           allTagsOptions={allTagsOptions}
@@ -549,7 +549,7 @@ const Decks = () => {
                       </Col>
                     )}
                   </Row>
-                  {(!foldedDescription || isMobile) && (deckRouter(activeDeck)?.tags || isAuthor) && (
+                  {(!foldedDescription || isMobile) && (deckRouter(activeDeck)?.tags.length > 0 || isAuthor) && (
                     <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
                       <DeckTags
                         allTagsOptions={allTagsOptions}
