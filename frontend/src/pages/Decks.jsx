@@ -158,6 +158,18 @@ const Decks = () => {
         data.crypt = cardsData.crypt;
         data.library = cardsData.library;
 
+        if (deckid.length !== 32 || data.public_parent) {
+          data.tags = [];
+          Object.values(
+            useTags(
+              data.crypt,
+              data.library
+            )
+          ).map((v) => {
+            data.tags = data.tags.concat(v);
+          });
+        }
+
         delete data.cards;
         addRecentDeck(data);
         setSharedDeck({ [data.deckid]: data });
@@ -324,29 +336,12 @@ const Decks = () => {
   }, [activeDeck, decks]);
 
   const tags = useMemo(() => {
-    if (deckRouter(activeDeck)) {
-      if (
-        activeDeck.src === 'twd' ||
-        activeDeck.src === 'precons' ||
-        isPublic
-      ) {
-        let t = [];
-        Object.values(
-          useTags(
-            deckRouter(activeDeck)?.crypt,
-            deckRouter(activeDeck)?.library
-          )
-        ).map((v) => {
-          t = t.concat(v);
-        });
-
-        return t;
-      } else if (
+    if (deckRouter(activeDeck) &&
         deckRouter(activeDeck).tags &&
         deckRouter(activeDeck).tags.length > 0
-      ) {
-        return deckRouter(activeDeck).tags;
-      }
+       ) {
+
+      return deckRouter(activeDeck).tags;
     }
 
     return null;

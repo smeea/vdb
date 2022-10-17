@@ -93,6 +93,7 @@ def new_deck_route():
     input_cards = request.json["cards"] if "cards" in request.json else {}
     cards = {}
 
+    tags = request.json["tags"] if "tags" in request.json else []
     for k, v in input_cards.items():
         cards[int(k)] = v
 
@@ -104,16 +105,13 @@ def new_deck_route():
         description=description,
         author=current_user,
         cards=cards,
+        tags=tags,
     )
 
     db.session.add(d)
     db.session.commit()
 
-    return jsonify(
-        {
-            "deckid": d.deckid,
-        }
-    )
+    return jsonify({ "deckid": d.deckid })
 
 
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
