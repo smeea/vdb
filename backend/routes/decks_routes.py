@@ -456,14 +456,11 @@ def url_snapshot_route(deckid):
         author_public_name=target_deck.author_public_name,
         description=target_deck.description,
         cards=target_deck.cards,
+        tags=target_deck.tags,
     )
     db.session.add(d)
     db.session.commit()
-    return jsonify(
-        {
-            "deckid": new_deckid,
-        }
-    )
+    return jsonify({"deckid": new_deckid})
 
 
 @app.route("/api/decks/import", methods=["POST"])

@@ -1,5 +1,6 @@
 import preconDecksData from 'assets/data/preconDecks.json';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
+import { useTags } from 'hooks';
 
 const VERSION = '2022-09-28';
 const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
@@ -87,7 +88,17 @@ export const getPreconDecks = (parseDeckCards) => {
       };
 
       const cardsData = parseDeckCards(preconDecksData[set][precon]);
-      precons[deckid] = { ...precons[deckid], ...cardsData };
+      let tags = [];
+      Object.values(
+        useTags(
+          cardsData.crypt,
+          cardsData.library
+        )
+      ).map((v) => {
+        tags = tags.concat(v);
+      });
+
+      precons[deckid] = { ...precons[deckid], ...cardsData, tags: tags };
     });
   });
   return precons;

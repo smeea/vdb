@@ -335,18 +335,6 @@ const Decks = () => {
     }
   }, [activeDeck, decks]);
 
-  const tags = useMemo(() => {
-    if (deckRouter(activeDeck) &&
-        deckRouter(activeDeck).tags &&
-        deckRouter(activeDeck).tags.length > 0
-       ) {
-
-      return deckRouter(activeDeck).tags;
-    }
-
-    return null;
-  }, [deckRouter(activeDeck)]);
-
   return (
     <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
       <Row className="mx-0">
@@ -548,12 +536,12 @@ const Decks = () => {
                         setFolded={setFoldedDescription}
                       />
                     </Col>
-                    {foldedDescription && !isMobile && (tags || isAuthor) && (
+                    {foldedDescription && !isMobile && (deckRouter(activeDeck)?.tags || isAuthor) && (
                       <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
                         <DeckTags
                           allTagsOptions={allTagsOptions}
                           deckid={deckRouter(activeDeck).deckid}
-                          tags={tags}
+                          tags={deckRouter(activeDeck)?.tags}
                           bordered={true}
                           isAuthor={isAuthor}
                           isPublic={isPublic}
@@ -561,12 +549,12 @@ const Decks = () => {
                       </Col>
                     )}
                   </Row>
-                  {(!foldedDescription || isMobile) && (tags || isAuthor) && (
+                  {(!foldedDescription || isMobile) && (deckRouter(activeDeck)?.tags || isAuthor) && (
                     <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
                       <DeckTags
                         allTagsOptions={allTagsOptions}
                         deckid={deckRouter(activeDeck).deckid}
-                        tags={tags}
+                        tags={deckRouter(activeDeck)?.tags}
                         bordered={true}
                         isAuthor={isAuthor}
                         isPublic={isPublic}

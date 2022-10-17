@@ -60,6 +60,18 @@ const Review = () => {
         data.crypt = cardsData.crypt;
         data.library = cardsData.library;
 
+        if (deckid.length !== 32 || data.public_parent) {
+          data.tags = [];
+          Object.values(
+            useTags(
+              data.crypt,
+              data.library
+            )
+          ).map((v) => {
+            data.tags = data.tags.concat(v);
+          });
+        }
+
         delete data.cards;
         setDeckFrom(data);
         setDeckTo(JSON.parse(JSON.stringify(data)));
