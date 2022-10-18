@@ -15,7 +15,7 @@ const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
     <Dropdown title="Sort Crypt" className="d-inline">
       <Dropdown.Toggle as={Button} variant="primary">
         <div className="d-flex justify-content-center align-items-center">
-          <div className="pe-1">
+          <div className="d-flex pe-1">
             <SortDown />
           </div>
           {sortMethods[sortMethod]}

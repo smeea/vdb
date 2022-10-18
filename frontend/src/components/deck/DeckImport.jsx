@@ -139,7 +139,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
 
     const reader = new FileReader();
     reader.readAsText(file.current.files[0]);
-    reader.onload = () => {
+    reader.onload = async () => {
       let deckText;
       switch (format) {
         case 'txt':
@@ -203,7 +203,11 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
           break;
       }
 
-      const deck = useDeckImport(deckText, cryptCardBase, libraryCardBase);
+      const deck = await useDeckImport(
+        deckText,
+        cryptCardBase,
+        libraryCardBase
+      );
 
       let url = null;
       if (inInventory) {

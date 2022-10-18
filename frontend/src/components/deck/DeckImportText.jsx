@@ -37,14 +37,18 @@ const DeckImportText = ({
     setDeckText('');
   };
 
-  const importDeckFromText = () => {
+  const importDeckFromText = async () => {
     setImportError(false);
 
     if (deckText) {
       setEmptyError(false);
       setSpinnerState(true);
 
-      const deck = useDeckImport(deckText, cryptCardBase, libraryCardBase);
+      const deck = await useDeckImport(
+        deckText,
+        cryptCardBase,
+        libraryCardBase
+      );
 
       const url = `${process.env.API_URL}decks/import`;
       const options = {

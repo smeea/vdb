@@ -1,6 +1,6 @@
-import unidecode from 'unidecode';
+const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
+  const unidecode = await import('unidecode');
 
-const useDeckImport = (deckText, cardBaseCrypt, cardBaseLibrary) => {
   const cardbase = {};
   Object.values(cardBaseCrypt).map((card) => {
     const adv = card?.Adv[0] ? true : false;
