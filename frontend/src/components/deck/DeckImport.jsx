@@ -7,6 +7,7 @@ import {
   DeckImportBadCardsModal,
 } from 'components';
 import { useApp } from 'context';
+import { useDeckImport } from 'hooks';
 
 const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
   const {
@@ -19,6 +20,8 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
     setShowMenuButtons,
     setShowFloatingButtons,
     publicName,
+    cryptCardBase,
+    libraryCardBase,
   } = useApp();
 
   const [importError, setImportError] = useState(false);
@@ -64,25 +67,25 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
   const handleOpenAnonymousTextModal = () => setShowAnonymousTextModal(true);
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 
-  const addImportedDeckToState = ({ data, anonymous }) => {
+  const addImportedDeckToState = ({ deck, anonymous }) => {
     const now = new Date();
-    const { crypt, library } = parseDeckCards(data.cards);
-    const deck = {
-      deckid: data.deckid,
-      name: data.name,
-      author: data.author,
-      description: data.description,
+    const { crypt, library } = parseDeckCards(deck.cards);
+    deck = {
+      deckid: deck.deckid,
+      name: deck.name,
+      description: deck.description,
+      author: deck.author,
       crypt: crypt,
       library: library,
       timestamp: now.toUTCString(),
     };
 
     if (anonymous) {
-      setSharedDeck({ [data.deckid]: deck });
+      setSharedDeck({ [deck.deckid]: deck });
     } else {
       setDecks((prevState) => ({
         ...prevState,
-        [data.deckid]: {
+        [deck.deckid]: {
           ...deck,
           is_yours: true,
         },
@@ -93,7 +96,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
   const createNewDeck = () => {
     setCreateError(false);
 
-    const name = 'New deck'
+    const name = 'New deck';
     const url = `${process.env.API_URL}deck`;
     const options = {
       method: 'POST',
@@ -137,10 +140,10 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
     const reader = new FileReader();
     reader.readAsText(file.current.files[0]);
     reader.onload = () => {
-      let result;
+      let deckText;
       switch (format) {
         case 'txt':
-          result = reader.result;
+          deckText = reader.result;
           break;
         case 'dek':
           const parser = new DOMParser();
@@ -168,18 +171,18 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
             library[cardName] += 1;
           });
 
-          result = '';
+          deckText = '';
 
           Object.keys(crypt).map((card) => {
-            result += `${crypt[card]} ${card}\n`;
+            deckText += `${crypt[card]} ${card}\n`;
           });
 
           Object.keys(library).map((card) => {
-            result += `${library[card]} ${card}\n`;
+            deckText += `${library[card]} ${card}\n`;
           });
           break;
         case 'eld':
-          result = '';
+          deckText = '';
           const cards = reader.result.split('\n');
           cards.forEach((res) => {
             const card = res.split(',');
@@ -194,11 +197,13 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
               name = name.slice(0, -1);
               const q = card[n + 1];
 
-              if (q && name) result += `${q} ${name}\n`;
+              if (q && name) deckText += `${q} ${name}\n`;
             }
           });
           break;
       }
+
+      const deck = useDeckImport(deckText, cryptCardBase, libraryCardBase);
 
       let url = null;
       if (inInventory) {
@@ -208,9 +213,11 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
       }
 
       const body = inInventory
-        ? JSON.stringify(result)
+        ? JSON.stringify({
+            cards: deck.cards,
+          })
         : JSON.stringify({
-            deckText: result,
+            deck: deck,
             anonymous: anonymous,
           });
 
@@ -225,23 +232,23 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
       };
 
       const fetchPromise = fetch(url, options);
-
       if (inInventory) {
         fetchPromise
           .then((response) => response.json())
-          .then((cards) => {
-            inventoryAddToState(cards);
+          .then(() => {
+            inventoryAddToState(deck.cards);
           })
           .catch(() => setImportError(true));
       } else {
         fetchPromise
           .then((response) => response.json())
           .then((data) => {
-            addImportedDeckToState({ data, anonymous });
-            setBadCards(data.bad_cards);
+            deck.deckid = data.deckid;
+            addImportedDeckToState({ deck, anonymous });
+            setBadCards(deck.badCards);
             setActiveDeck({
               src: anonymous ? 'shared' : 'my',
-              deckid: data.deckid,
+              deckid: deck.deckid,
             });
             setShowMenuButtons(false);
             setShowFloatingButtons(true);

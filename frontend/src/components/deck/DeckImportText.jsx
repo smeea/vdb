@@ -3,6 +3,7 @@ import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
+import { useDeckImport } from 'hooks';
 
 const DeckImportText = ({
   anonymous,
@@ -16,6 +17,8 @@ const DeckImportText = ({
     isMobile,
     setShowFloatingButtons,
     setShowMenuButtons,
+    cryptCardBase,
+    libraryCardBase,
   } = useApp();
 
   const [deckText, setDeckText] = useState('');
@@ -41,6 +44,8 @@ const DeckImportText = ({
       setEmptyError(false);
       setSpinnerState(true);
 
+      const deck = useDeckImport(deckText, cryptCardBase, libraryCardBase);
+
       const url = `${process.env.API_URL}decks/import`;
       const options = {
         method: 'POST',
@@ -50,21 +55,21 @@ const DeckImportText = ({
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          deckText: deckText,
+          deck: deck,
           anonymous: anonymous,
         }),
       };
 
       const fetchPromise = fetch(url, options);
-
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          addImportedDeckToState({ data, anonymous });
-          setBadCards(data.bad_cards);
+          deck.deckid = data.deckid;
+          addImportedDeckToState({ deck, anonymous });
+          setBadCards(deck.badCards);
           setActiveDeck({
             src: anonymous ? 'shared' : 'my',
-            deckid: data.deckid,
+            deckid: deck.deckid,
           });
           setShowMenuButtons(false);
           setShowFloatingButtons(true);

@@ -5,7 +5,6 @@ import uuid
 import json
 
 from deck_export import deck_export
-from deck_import import deck_import
 from deck_recommendation import deck_recommendation
 from api import app, db, login
 from models import Deck
@@ -83,12 +82,8 @@ def unauthorized_handler():
 def new_deck_route():
     deckid = uuid.uuid4().hex
 
-    name = (
-        request.json["name"] if "name" in request.json else "New deck"
-    )
-    author = (
-        request.json["author"] if "author" in request.json else ""
-    )
+    name = request.json["name"] if "name" in request.json else "New deck"
+    author = request.json["author"] if "author" in request.json else ""
     description = request.json["description"] if "description" in request.json else ""
     tags = request.json["tags"] if "tags" in request.json else []
     input_cards = request.json["cards"] if "cards" in request.json else {}
@@ -112,8 +107,7 @@ def new_deck_route():
     db.session.add(d)
     db.session.commit()
 
-    return jsonify({ "deckid": d.deckid })
-
+    return jsonify({"deckid": d.deckid})
 
 
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
@@ -422,7 +416,7 @@ def create_branch_route(deckid):
 def remove_branch_route(deckid):
     d = Deck.query.get(deckid)
     if d.author != current_user:
-        abort(401)
+        return abort(401)
 
     if d.master:
         master = Deck.query.get(d.master)
@@ -452,14 +446,11 @@ def remove_branch_route(deckid):
 def import_deck_route():
     anonymous = request.json.get("anonymous")
     if not current_user.is_authenticated and not anonymous:
-        return Response(json.dumps({"Not logged in": True}), 401)
+        return abort(401)
 
-    deck = deck_import(request.json["deckText"])
-
+    deck = request.json["deck"]
     author = current_user if not anonymous else None
     author_public_name = deck["author"]
-    if not deck["author"] and not anonymous:
-        author_public_name = current_user.username
 
     deckid = uuid.uuid4().hex
     d = Deck(
@@ -474,17 +465,7 @@ def import_deck_route():
     db.session.add(d)
     db.session.commit()
 
-    return jsonify(
-        {
-            "deckid": deckid,
-            "bad_cards": deck["bad_cards"],
-            "cards": deck["cards"],
-            "name": deck["name"],
-            "author": author_public_name,
-            "is_yours": bool(author),
-            "description": deck["description"],
-        }
-    )
+    return jsonify({"deckid": deckid})
 
 
 @app.route("/api/decks/export", methods=["POST"])

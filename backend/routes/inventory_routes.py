@@ -3,7 +3,6 @@ from flask_login import current_user, login_required
 import json
 from models import User
 from deck_export import deck_export
-from inventory_import import inventory_import
 from api import app, db, login
 
 
@@ -38,11 +37,10 @@ def inventory_export_route():
 @app.route("/api/inventory/import", methods=["POST"])
 @login_required
 def inventory_import_route():
-    i = current_user.inventory
     try:
-        new_cards = inventory_import(request.json)
+        i = current_user.inventory
         merged_cards = i.copy() if i else {}
-        for k, v in new_cards.items():
+        for k, v in request.json["cards"].items():
             k = int(k)
             if k not in merged_cards:
                 merged_cards[k] = v
@@ -51,10 +49,10 @@ def inventory_import_route():
 
         current_user.inventory = merged_cards.copy()
         db.session.commit()
-        return jsonify(new_cards)
+        return jsonify(success=True)
 
     except Exception:
-        return abort(400)
+        abort(400)
 
 
 @app.route("/api/inventory/<string:key>", methods=["GET"])
@@ -64,7 +62,7 @@ def get_shared_inventory(key):
         return jsonify(parse_user_inventory(inventory))
 
     except Exception:
-        return abort(401)
+        abort(401)
 
 
 @app.route("/api/inventory", methods=["DELETE"])
@@ -72,7 +70,7 @@ def get_shared_inventory(key):
 def delete_inventory_route():
     current_user.inventory = {}
     db.session.commit()
-    return jsonify({"delete inventory": "success"})
+    return jsonify(success=True)
 
 
 @app.route("/api/inventory", methods=["PATCH"])
@@ -93,7 +91,7 @@ def inventory_add_cards_route():
 
     current_user.inventory = merged_cards.copy()
     db.session.commit()
-    return jsonify({"inventory card added": "success"})
+    return jsonify(success=True)
 
 
 @app.route("/api/inventory", methods=["PUT"])
@@ -111,4 +109,4 @@ def inventory_change_card_route():
 
     current_user.inventory = merged_cards.copy()
     db.session.commit()
-    return jsonify({"inventory card change": "success"})
+    return jsonify(success=True)

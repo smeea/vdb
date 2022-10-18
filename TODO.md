@@ -1,10 +1,13 @@
 # FIX
 - Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
+- Deleting newly created deck dont open last deck
+- Import inventory to show cards (inventoryAddToState)
 
 # FEATURES
 - Check TWD
 - Manual change q-ty in card search PDA/TWD
+- Optional gap color in Proxy
 
 # MAYBE LATER FEATURES
 - Boilerplates modules for new decks
