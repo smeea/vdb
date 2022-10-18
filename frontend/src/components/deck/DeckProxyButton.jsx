@@ -128,11 +128,11 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     const w = 63;
     const h = 88;
     const gap = 0.25;
-    const left_margin = 10;
-    const top_margin = 10;
+    const marginLeft = 10;
+    const marginTop = 10;
 
-    let x_counter = 0;
-    let y_counter = 0;
+    let counterX = 0;
+    let counterY = 0;
     let page = 1;
 
     Object.values(cards).map((card) => {
@@ -144,27 +144,36 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
       }
 
       for (let i = 0; i < card.q; i++) {
+
+        pdf.rect(
+          (marginLeft + counterX * (w + gap)),
+          (marginTop + counterY * (h + gap)),
+          (w + gap),
+          (h + gap),
+          "F",
+        )
+
         pdf.addImage(
           img,
           'JPEG',
-          (w + gap) * x_counter + left_margin,
-          (h + gap) * y_counter + top_margin,
+          (w + gap) * counterX + marginLeft,
+          (h + gap) * counterY + marginTop,
           w,
           h
         );
 
-        x_counter += 1;
+        counterX += 1;
 
-        if (x_counter == 3) {
-          y_counter += 1;
-          x_counter = 0;
+        if (counterX == 3) {
+          counterY += 1;
+          counterX = 0;
         }
 
-        if (y_counter == 3 && page * 9 < cardsTotal) {
+        if (counterY == 3 && page * 9 < cardsTotal) {
           page += 1;
           pdf.addPage();
           pdf.setFillColor(60, 60, 60);
-          y_counter = 0;
+          counterY = 0;
         }
       }
     });
