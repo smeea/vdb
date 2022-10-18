@@ -54,9 +54,10 @@ def logout_route():
         user = current_user.username
         logout_user()
         return jsonify({"logged out from": user})
+        return jsonify(success=True)
 
     except AttributeError:
-        return jsonify({"error": "not logged"})
+        abort(401)
 
 
 @app.route("/api/account", methods=["GET"])
@@ -75,7 +76,7 @@ def who_am_i_route():
             }
         )
     else:
-        return jsonify({"username": ""})
+        abort(401)
 
 
 @app.route("/api/account", methods=["POST"])
@@ -105,7 +106,7 @@ def account_update_route():
     if "publicName" in request.json:
         current_user.public_name = request.json["publicName"]
         db.session.commit()
-        return jsonify("public name changed")
+        return jsonify(success=True)
 
     elif "email" in request.json:
         if not current_user.check_password(request.json["password"]):

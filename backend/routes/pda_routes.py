@@ -220,7 +220,7 @@ def new_public_deck_route(parent_id):
     if parent.author != current_user:
         abort(401)
     if parent.public_child:
-        return jsonify({"PDA already exist for": parent_id})
+        abort(400)
 
     child_id = uuid.uuid4().hex
     m = get_missing_fields(parent)
@@ -265,7 +265,7 @@ def update_public_deck(child_id):
     child = Deck.query.get(child_id)
     if not child:
         print("bad deck request\n", child_id, current_user.username, request.json)
-        return jsonify({"error": "no deck"})
+        abort(400)
 
     elif child.author != current_user:
         abort(401)
@@ -371,8 +371,7 @@ def add_favorite_route(deckid):
     current_user.favorites = user_favorites
 
     db.session.commit()
-
-    return jsonify({"favorited": deckid})
+    return jsonify(success=True)
 
 
 @app.route("/api/pda/favorite/<string:deckid>", methods=["DELETE"])
@@ -388,5 +387,4 @@ def delete_favorite_route(deckid):
     current_user.favorites = user_favorites
 
     db.session.commit()
-
-    return jsonify({"unfavorited": deckid})
+    return jsonify(success=True)

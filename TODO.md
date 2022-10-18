@@ -16,7 +16,6 @@
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move deck/inventory export in excel to frontend
-- Move deck/inventory import to frontend
 - Refactor CSS - Tailwind?
 - Use File System Access API for for import/export
 - Fetching data with react-router
