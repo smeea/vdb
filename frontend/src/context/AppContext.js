@@ -562,7 +562,7 @@ export const AppProvider = (props) => {
   };
 
   useEffect(() => {
-    if (decks && Object.keys(decks).length) {
+    if (decks && Object.keys(decks).length > 0) {
       const lastDeckArray = Object.values(decks).sort(byTimestamp);
       setLastDeckId(lastDeckArray[0].deckid);
     }

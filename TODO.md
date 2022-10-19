@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
-- Deleting newly created deck dont open last deck
 
 # FEATURES
 - Check TWD
@@ -9,7 +8,6 @@
 - Optional gap color in Proxy
 
 # MAYBE LATER FEATURES
-- Boilerplates modules for new decks
 - Decks bundles (i.e. event deck archive) analyzing
 - Offline decks storage
 
