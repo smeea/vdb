@@ -4,7 +4,7 @@ import { Stack } from 'react-bootstrap';
 import Folder2Open from 'assets/images/icons/folder2-open.svg';
 import X from 'assets/images/icons/x.svg';
 import {
-  DeckImport,
+  InventoryImport,
   DeckExportButton,
   InventoryDeleteButton,
   InventoryMissingButton,
@@ -73,7 +73,7 @@ const InventoryButtons = ({
         />
         {!inShared && (
           <>
-            <DeckImport inInventory />
+            <InventoryImport />
             <InventoryDeleteButton />
             {decks && (
               <ButtonIconed

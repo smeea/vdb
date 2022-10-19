@@ -9,14 +9,13 @@ import {
 import { useApp } from 'context';
 import { useDeckImport } from 'hooks';
 
-const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
+const DeckImport = ({ handleClose, setShowInfo }) => {
   const {
     parseDeckCards,
     setDecks,
     activeDeck,
     setActiveDeck,
     setSharedDeck,
-    inventoryAddToState,
     setShowMenuButtons,
     setShowFloatingButtons,
     publicName,
@@ -209,21 +208,12 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
         libraryCardBase
       );
 
-      let url = null;
-      if (inInventory) {
-        url = `${process.env.API_URL}inventory/import`;
-      } else {
-        url = `${process.env.API_URL}decks/import`;
-      }
+      const url = `${process.env.API_URL}decks/import`;
 
-      const body = inInventory
-        ? JSON.stringify({
-            cards: deck.cards,
-          })
-        : JSON.stringify({
-            deck: deck,
-            anonymous: anonymous,
-          });
+      const body = JSON.stringify({
+        deck: deck,
+        anonymous: anonymous,
+      });
 
       const options = {
         method: 'POST',
@@ -236,32 +226,23 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
       };
 
       const fetchPromise = fetch(url, options);
-      if (inInventory) {
-        fetchPromise
-          .then((response) => response.json())
-          .then(() => {
-            inventoryAddToState(deck.cards);
-          })
-          .catch(() => setImportError(true));
-      } else {
-        fetchPromise
-          .then((response) => response.json())
-          .then((data) => {
-            deck.deckid = data.deckid;
-            addImportedDeckToState({ deck, anonymous });
-            setBadCards(deck.badCards);
-            setActiveDeck({
-              src: anonymous ? 'shared' : 'my',
-              deckid: deck.deckid,
-            });
-            setShowMenuButtons(false);
-            setShowFloatingButtons(true);
-            handleClose();
-          })
-          .catch(() => {
-            setImportError(true);
+      fetchPromise
+        .then((response) => response.json())
+        .then((data) => {
+          deck.deckid = data.deckid;
+          addImportedDeckToState({ deck, anonymous });
+          setBadCards(deck.badCards);
+          setActiveDeck({
+            src: anonymous ? 'shared' : 'my',
+            deckid: deck.deckid,
           });
-      }
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
+          handleClose();
+        })
+        .catch(() => {
+          setImportError(true);
+        });
     };
   };
 
@@ -274,7 +255,6 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
   return (
     <>
       <DeckImportButton
-        inInventory={inInventory}
         handleCreateButton={handleCreateButton}
         handleFileInputClick={handleFileInputClick}
         handleOpenTextModal={handleOpenTextModal}
