@@ -6,10 +6,10 @@ const InventoryImportButton = ({ handleClick }) => {
   const ButtonOptions = (
     <>
       <Dropdown.Item onClick={() => handleClick('txt')}>
-        Import from File - Amaranth, Lackey.TXT, TWD
+        Add from File - Amaranth, Lackey.TXT, TWD
       </Dropdown.Item>
       <Dropdown.Item onClick={() => handleClick('eld')}>
-        Import from File - FELDB.CSV
+        Add from File - FELDB.CSV
       </Dropdown.Item>
     </>
   );
@@ -23,7 +23,7 @@ const InventoryImportButton = ({ handleClick }) => {
           <div className="d-flex pe-2">
             <Upload />
           </div>
-          Import Inventory
+          Add from File
         </div>
       }
     >

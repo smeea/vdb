@@ -8,7 +8,7 @@ import { useApp } from 'context';
 import { useDeckImport } from 'hooks';
 
 const InventoryImport = () => {
-  const { activeDeck, inventoryAddToState, cryptCardBase, libraryCardBase } =
+  const { activeDeck, inventoryCardsAdd, cryptCardBase, libraryCardBase } =
     useApp();
 
   const [importError, setImportError] = useState(false);
@@ -68,25 +68,7 @@ const InventoryImport = () => {
         libraryCardBase
       );
 
-      const url = `${process.env.API_URL}inventory/import`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ cards: deck.cards }),
-      };
-
-      const fetchPromise = fetch(url, options);
-      fetchPromise
-        .then((response) => response.json())
-        .then(() => {
-          // TODO
-          inventoryAddToState(deck.cards);
-        })
-        .catch(() => setImportError(true));
+      inventoryCardsAdd(deck.cards);
     };
   };
 

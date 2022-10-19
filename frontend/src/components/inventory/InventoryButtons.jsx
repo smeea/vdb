@@ -74,7 +74,6 @@ const InventoryButtons = ({
         {!inShared && (
           <>
             <InventoryImport />
-            <InventoryDeleteButton />
             {decks && (
               <ButtonIconed
                 variant="secondary"
@@ -101,6 +100,7 @@ const InventoryButtons = ({
                 text="Add from Precon"
               />
             )}
+            <InventoryDeleteButton />
             <InventoryMissingButton
               missingByClan={missingByClan}
               missingByType={missingByType}

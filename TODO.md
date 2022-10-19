@@ -2,7 +2,6 @@
 - Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
 - Deleting newly created deck dont open last deck
-- Import inventory to show cards (inventoryAddToState)
 
 # FEATURES
 - Check TWD

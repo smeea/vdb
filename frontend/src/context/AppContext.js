@@ -656,7 +656,7 @@ export const AppProvider = (props) => {
       }
     });
 
-    inventoryCardsChange(cards);
+    inventoryCardsAdd(cards);
   };
 
   const inventoryDeckDelete = (deck) => {
@@ -674,10 +674,10 @@ export const AppProvider = (props) => {
       }
     });
 
-    inventoryCardsChange(cards);
+    inventoryCardsAdd(cards);
   };
 
-  const inventoryCardsChange = (cards) => {
+  const inventoryCardsAdd = (cards) => {
     const url = `${process.env.API_URL}inventory`;
     const options = {
       method: 'PATCH',
@@ -827,6 +827,7 @@ export const AppProvider = (props) => {
         usedCryptCards,
         usedLibraryCards,
         inventoryCardChange,
+        inventoryCardsAdd,
 
         // DECK Context
         preconDecks,

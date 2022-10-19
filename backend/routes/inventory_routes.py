@@ -34,27 +34,6 @@ def inventory_export_route():
     return deck_export(current_user.inventory, request.json["format"])
 
 
-@app.route("/api/inventory/import", methods=["POST"])
-@login_required
-def inventory_import_route():
-    try:
-        i = current_user.inventory
-        merged_cards = i.copy() if i else {}
-        for k, v in request.json["cards"].items():
-            k = int(k)
-            if k not in merged_cards:
-                merged_cards[k] = v
-            else:
-                merged_cards[k] = merged_cards[k] + v
-
-        current_user.inventory = merged_cards.copy()
-        db.session.commit()
-        return jsonify(success=True)
-
-    except Exception:
-        abort(400)
-
-
 @app.route("/api/inventory/<string:key>", methods=["GET"])
 def get_shared_inventory(key):
     try:
