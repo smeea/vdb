@@ -72,6 +72,7 @@ const DeckImport = ({ handleClose, setShowInfo }) => {
     deck = {
       deckid: deck.deckid,
       name: deck.name,
+      branchName: deck.branchName,
       description: deck.description,
       author: deck.author,
       crypt: crypt,
@@ -112,19 +113,17 @@ const DeckImport = ({ handleClose, setShowInfo }) => {
     fetchPromise
       .then((response) => response.json())
       .then((data) => {
-        setDecks((prevState) => ({
-          ...prevState,
-          [data.deckid]: {
-            name: name,
+        addImportedDeckToState({
+          deck: {
             deckid: data.deckid,
+            name: name,
+            branchName: '#0',
             description: '',
             author: publicName,
             crypt: {},
             library: {},
-            branchName: '#0',
-            is_yours: true,
           },
-        }));
+        });
         setShowInfo(true);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
