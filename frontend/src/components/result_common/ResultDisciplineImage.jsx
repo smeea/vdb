@@ -1,19 +1,19 @@
 import React from 'react';
 
-function ResultDisciplineImage(props) {
-  const imgClass = props.className
-    ? props.className
-    : props.superior
+const ResultDisciplineImage = ({ value, superior, className, title }) => {
+  const imgClass = className
+    ? className
+    : superior
     ? 'discipline-superior-image-results'
     : 'discipline-base-image-results';
 
-  const imgSrc = `${process.env.ROOT_URL}images/disciplines/${props.value
+  const imgSrc = `${process.env.ROOT_URL}images/disciplines/${value
     .toLowerCase()
-    .replace(/[\s,:!?'.\-]/g, '')}${props.superior ? 'sup' : ''}.svg`;
+    .replace(/[\s,:!?'.-]/g, '')}${superior ? 'sup' : ''}.svg`;
 
-  const imgTitle = props.title ? props.title : props.value;
+  const imgTitle = title ?? value;
 
   return <img className={imgClass} src={imgSrc} title={imgTitle} />;
-}
+};
 
 export default ResultDisciplineImage;

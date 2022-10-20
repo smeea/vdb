@@ -14,6 +14,7 @@ import {
   DeckChangeDescription,
 } from 'components';
 import { useApp } from 'context';
+import { useTags } from 'hooks';
 
 const Review = () => {
   const {
@@ -62,12 +63,7 @@ const Review = () => {
 
         if (deckid.length !== 32 || data.public_parent) {
           data.tags = [];
-          Object.values(
-            useTags(
-              data.crypt,
-              data.library
-            )
-          ).map((v) => {
+          Object.values(useTags(data.crypt, data.library)).map((v) => {
             data.tags = data.tags.concat(v);
           });
         }
@@ -122,7 +118,7 @@ const Review = () => {
     }
   }, [deckFrom]);
 
-  const cardChange = (undefined, cardid, count) => {
+  const cardChange = (_, cardid, count) => {
     if (count >= 0) {
       const cardSrc = cardid > 200000 ? 'crypt' : 'library';
       const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
@@ -253,29 +249,27 @@ const Review = () => {
                             setFolded={setFoldedDescription}
                           />
                         </Col>
-                        {foldedDescription &&
-                          deckFrom?.tags.length > 0 && (
-                            <Col className="ps-2 pe-0">
-                              <DeckTags
-                                deckid={deckFrom.deckid}
-                                tags={deckFrom.tags}
-                                bordered={true}
-                                isAuthor={false}
-                              />
-                            </Col>
-                          )}
-                      </Row>
-                      {!foldedDescription &&
-                       deckFrom?.tags.length > 0 && (
-                          <div className="d-block pt-2">
+                        {foldedDescription && deckFrom?.tags.length > 0 && (
+                          <Col className="ps-2 pe-0">
                             <DeckTags
                               deckid={deckFrom.deckid}
                               tags={deckFrom.tags}
                               bordered={true}
                               isAuthor={false}
                             />
-                          </div>
+                          </Col>
                         )}
+                      </Row>
+                      {!foldedDescription && deckFrom?.tags.length > 0 && (
+                        <div className="d-block pt-2">
+                          <DeckTags
+                            deckid={deckFrom.deckid}
+                            tags={deckFrom.tags}
+                            bordered={true}
+                            isAuthor={false}
+                          />
+                        </div>
+                      )}
                     </>
                   )}
                 </>

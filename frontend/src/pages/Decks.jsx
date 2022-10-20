@@ -26,7 +26,7 @@ import {
   DeckChangeBranchName,
   DeckChangeAuthor,
   DeckChangeDescription,
-  DeckNewDeck,
+  DeckImport,
 } from 'components';
 import { useApp } from 'context';
 import { useTags } from 'hooks';
@@ -160,12 +160,7 @@ const Decks = () => {
 
         if (deckid.length !== 32 || data.public_parent) {
           data.tags = [];
-          Object.values(
-            useTags(
-              data.crypt,
-              data.library
-            )
-          ).map((v) => {
+          Object.values(useTags(data.crypt, data.library)).map((v) => {
             data.tags = data.tags.concat(v);
           });
         }
@@ -536,8 +531,25 @@ const Decks = () => {
                         setFolded={setFoldedDescription}
                       />
                     </Col>
-                    {foldedDescription && !isMobile && (deckRouter(activeDeck)?.tags?.length > 0 || isAuthor) && (
-                      <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
+                    {foldedDescription &&
+                      !isMobile &&
+                      (deckRouter(activeDeck)?.tags?.length > 0 ||
+                        isAuthor) && (
+                        <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
+                          <DeckTags
+                            allTagsOptions={allTagsOptions}
+                            deckid={deckRouter(activeDeck).deckid}
+                            tags={deckRouter(activeDeck)?.tags}
+                            bordered={true}
+                            isAuthor={isAuthor}
+                            isPublic={isPublic}
+                          />
+                        </Col>
+                      )}
+                  </Row>
+                  {(!foldedDescription || isMobile) &&
+                    (deckRouter(activeDeck)?.tags?.length > 0 || isAuthor) && (
+                      <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
                         <DeckTags
                           allTagsOptions={allTagsOptions}
                           deckid={deckRouter(activeDeck).deckid}
@@ -546,21 +558,8 @@ const Decks = () => {
                           isAuthor={isAuthor}
                           isPublic={isPublic}
                         />
-                      </Col>
+                      </div>
                     )}
-                  </Row>
-                  {(!foldedDescription || isMobile) && (deckRouter(activeDeck)?.tags?.length > 0 || isAuthor) && (
-                    <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
-                      <DeckTags
-                        allTagsOptions={allTagsOptions}
-                        deckid={deckRouter(activeDeck).deckid}
-                        tags={deckRouter(activeDeck)?.tags}
-                        bordered={true}
-                        isAuthor={isAuthor}
-                        isPublic={isPublic}
-                      />
-                    </div>
-                  )}
                 </>
               )}
             </Col>
@@ -675,7 +674,7 @@ const Decks = () => {
                 or browse official preconstructed decks
               </div>
               <div className="d-flex justify-content-center pt-3">
-                <DeckNewDeck setShowInfo={setShowInfo} />
+                <DeckImport isOnlyNew={true} />
               </div>
             </Col>
           </Row>

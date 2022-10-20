@@ -162,12 +162,6 @@ const testCryptStealth = (card) => {
   }
 };
 
-const testCryptVote = (card) => {
-  if (card['Title']) {
-    return true;
-  }
-};
-
 const testLibraryAlly = (card) => {
   if (card['Type'].split('/').includes('Ally')) return true;
   if (['FBI Special Affairs Division', 'Unmasking, The'].includes(card['Name']))
@@ -267,9 +261,9 @@ const CryptTraitsRegexMap = {
 const LibraryTraitsRegexMap = {
   'enter combat': () => /enter combat/i,
   intercept: () =>
-    /\-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
+    /-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
   stealth: () =>
-    /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\-[0-9]+ intercept/i,
+    /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
   bleed: () => /\+[0-9]+ bleed/i,
   strength: () => /\+[0-9]+ strength/i,
   embrace: () => /becomes a.*(\d[ -]|same.*)capacity/i,

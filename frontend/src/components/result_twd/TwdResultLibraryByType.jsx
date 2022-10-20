@@ -97,7 +97,7 @@ const TwdResultLibraryByType = ({ library }) => {
       const cardtypeImages = cardtypes.map((cardtype, index) => {
         const imgSrc = `${process.env.ROOT_URL}images/types/${cardtype
           .toLowerCase()
-          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
+          .replace(/[\s,:!?'.-]/g, '')}.svg`;
         const imgTitle = cardtype;
         return (
           <img

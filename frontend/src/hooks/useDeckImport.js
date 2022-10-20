@@ -33,11 +33,10 @@ const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
     let q;
 
     if (i.includes('ADV')) {
-      let cardname;
       const regexp = /^([0-9]+)x?\s+(.*?)\s\(ADV\).*/;
       const match = i.match(regexp);
       q = parseInt(match[1]);
-      cardname = match[2];
+      let cardname = match[2];
       cardname = minifyCardName(cardname);
 
       if (Object.keys(cardbase).includes(cardname)) {
@@ -47,9 +46,8 @@ const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
       const regexp = /^\s*([0-9]+)x?\s+(.*)\s\(G(.*)\)/;
       const match = i.match(regexp);
       q = parseInt(match[1]);
-      cardname = match[2];
-      group = match[3];
-      cardname = minifyCardName(cardname);
+      const cardname = minifyCardName(match[2]);
+      const group = match[3];
       if (Object.keys(cardbase).includes(cardname)) {
         if (Object.keys(cardbase[cardname]).includes(group)) {
           id = cardbase[cardname][group];
@@ -60,9 +58,8 @@ const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
       let match = i.match(regexp);
       if (match) {
         q = parseInt(match[1]);
-        cardname = match[2];
-        group = match[4];
-        cardname = minifyCardName(cardname);
+        const cardname = minifyCardName(match[2]);
+        const group = match[4];
         if (Object.keys(cardbase).includes(cardname)) {
           if (Object.keys(cardbase[cardname]).includes(group)) {
             id = cardbase[cardname][group];
@@ -72,8 +69,7 @@ const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
         regexp = /^\s*([0-9]+)x?\s*(.*)/;
         match = i.match(regexp);
         q = parseInt(match[1]);
-        cardname = match[2];
-        cardname = minifyCardName(cardname);
+        const cardname = minifyCardName(match[2]);
         if (Object.keys(cardbase).includes(cardname)) {
           id = cardbase[cardname]['base'];
         }
@@ -83,7 +79,7 @@ const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
     return [id, q];
   };
 
-  deck = {
+  const deck = {
     name: 'New deck',
     author: '',
     description: '',

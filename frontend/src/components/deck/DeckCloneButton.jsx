@@ -3,7 +3,7 @@ import Files from 'assets/images/icons/files.svg';
 import { useApp } from 'context';
 import { ButtonIconed } from 'components';
 
-const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
+const DeckCloneButton = ({ deck, noText, inPda, inTwd }) => {
   const {
     setDecks,
     setActiveDeck,
@@ -14,7 +14,7 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
   const [state, setState] = useState(false);
 
   const cloneDeck = () => {
-    const name = `${deck.name} [by ${deck.author}]`
+    const name = `${deck.name} [by ${deck.author}]`;
     const cards = {};
     Object.keys(deck.crypt).map((cardid) => {
       cards[cardid] = deck.crypt[cardid].q;

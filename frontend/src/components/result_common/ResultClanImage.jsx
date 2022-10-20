@@ -1,13 +1,13 @@
 import React from 'react';
 
-function ResultClanImage(props) {
-  const imgClass = props.className ? props.className : 'clan-image-results';
+const ResultClanImage = ({ value, className }) => {
+  const imgClass = className ?? 'clan-image-results';
 
-  const imgSrc = `${process.env.ROOT_URL}images/clans/${props.value
+  const imgSrc = `${process.env.ROOT_URL}images/clans/${value
     .toLowerCase()
-    .replace(/[\s,:!?'.\-]/g, '')}.svg`;
+    .replace(/[\s,:!?'.-]/g, '')}.svg`;
 
-  return <img className={imgClass} src={imgSrc} title={props.value} />;
-}
+  return <img className={imgClass} src={imgSrc} title={value} />;
+};
 
 export default ResultClanImage;

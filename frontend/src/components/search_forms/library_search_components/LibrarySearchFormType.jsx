@@ -32,7 +32,7 @@ const LibrarySearchFormType = ({ value, onChange, setFormState }) => {
     } else {
       const imgSrc = `${process.env.ROOT_URL}images/types/${i
         .toLowerCase()
-        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
+        .replace(/[\s,:!?'.-]/g, '')}.svg`;
       options.push({
         value: i.toLowerCase(),
         name: 'type',

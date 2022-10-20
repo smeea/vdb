@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
+import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
 import {
+  ButtonIconed,
   ErrorOverlay,
   DeckImportButton,
   DeckImportText,
@@ -9,7 +11,7 @@ import {
 import { useApp } from 'context';
 import { useDeckImport } from 'hooks';
 
-const DeckImport = ({ handleClose, setShowInfo }) => {
+const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const {
     parseDeckCards,
     setDecks,
@@ -253,110 +255,121 @@ const DeckImport = ({ handleClose, setShowInfo }) => {
 
   return (
     <>
-      <DeckImportButton
-        handleCreateButton={handleCreateButton}
-        handleFileInputClick={handleFileInputClick}
-        handleOpenTextModal={handleOpenTextModal}
-        handleOpenAmaranthModal={handleOpenAmaranthModal}
-        handleOpenAnonymousTextModal={handleOpenAnonymousTextModal}
-      />
-      {badCards && (
-        <DeckImportBadCardsModal
-          deckid={activeDeck.deckid}
-          badCards={badCards}
-          setBadCards={setBadCards}
+      {isOnlyNew ? (
+        <ButtonIconed
+          variant="primary"
+          onClick={() => handleCreateButton()}
+          icon={<ClipboardPlus />}
+          text="Create New Deck"
         />
+      ) : (
+        <>
+          <DeckImportButton
+            handleCreateButton={handleCreateButton}
+            handleFileInputClick={handleFileInputClick}
+            handleOpenTextModal={handleOpenTextModal}
+            handleOpenAmaranthModal={handleOpenAmaranthModal}
+            handleOpenAnonymousTextModal={handleOpenAnonymousTextModal}
+          />
+          {badCards && (
+            <DeckImportBadCardsModal
+              deckid={activeDeck.deckid}
+              badCards={badCards}
+              setBadCards={setBadCards}
+            />
+          )}
+          <DeckImportText
+            addImportedDeckToState={addImportedDeckToState}
+            handleCloseModal={handleCloseImportModal}
+            show={showTextModal}
+            setBadCards={setBadCards}
+          />
+          <DeckImportText
+            anonymous={true}
+            addImportedDeckToState={addImportedDeckToState}
+            handleCloseModal={handleCloseImportModal}
+            show={showAnonymousTextModal}
+            setBadCards={setBadCards}
+          />
+          <DeckImportAmaranth
+            parseCards={parseDeckCards}
+            addImportedDeckToState={addImportedDeckToState}
+            handleCloseModal={handleCloseImportModal}
+            show={showAmaranthModal}
+          />
+          <input
+            ref={fileInputTxt}
+            accept="text/*"
+            type="file"
+            onChange={() =>
+              importDeckFromFile({
+                format: 'txt',
+                file: fileInputTxt,
+              })
+            }
+            style={{ display: 'none' }}
+          />
+          <input
+            ref={fileInputDek}
+            accept="text/*"
+            type="file"
+            onChange={() =>
+              importDeckFromFile({
+                format: 'dek',
+                file: fileInputDek,
+              })
+            }
+            style={{ display: 'none' }}
+          />
+          <input
+            ref={fileInputEld}
+            accept="text/*"
+            type="file"
+            onChange={() =>
+              importDeckFromFile({
+                format: 'eld',
+                file: fileInputEld,
+              })
+            }
+            style={{ display: 'none' }}
+          />
+          <input
+            ref={fileAnonymousInputTxt}
+            accept="text/*"
+            type="file"
+            onChange={() =>
+              importDeckFromFile({
+                format: 'txt',
+                file: fileAnonymousInputTxt,
+                anonymous: true,
+              })
+            }
+            style={{ display: 'none' }}
+          />
+          <input
+            ref={fileAnonymousInputDek}
+            accept="text/*"
+            type="file"
+            onChange={() =>
+              importDeckFromFile({
+                format: 'dek',
+                file: fileAnonymousInputDek,
+                anonymous: true,
+              })
+            }
+            style={{ display: 'none' }}
+          />
+          <ErrorOverlay
+            show={createError || importError}
+            target={ref.current}
+            placement="left"
+            modal={true}
+          >
+            {createError && <b>ERROR</b>}
+            {importError && <b>CANNOT IMPORT THIS DECK</b>}
+          </ErrorOverlay>
+        </>
       )}
-      <DeckImportText
-        addImportedDeckToState={addImportedDeckToState}
-        handleCloseModal={handleCloseImportModal}
-        show={showTextModal}
-        setBadCards={setBadCards}
-      />
-      <DeckImportText
-        anonymous={true}
-        addImportedDeckToState={addImportedDeckToState}
-        handleCloseModal={handleCloseImportModal}
-        show={showAnonymousTextModal}
-        setBadCards={setBadCards}
-      />
-      <DeckImportAmaranth
-        parseCards={parseDeckCards}
-        addImportedDeckToState={addImportedDeckToState}
-        handleCloseModal={handleCloseImportModal}
-        show={showAmaranthModal}
-      />
-      <input
-        ref={fileInputTxt}
-        accept="text/*"
-        type="file"
-        onChange={() =>
-          importDeckFromFile({
-            format: 'txt',
-            file: fileInputTxt,
-          })
-        }
-        style={{ display: 'none' }}
-      />
-      <input
-        ref={fileInputDek}
-        accept="text/*"
-        type="file"
-        onChange={() =>
-          importDeckFromFile({
-            format: 'dek',
-            file: fileInputDek,
-          })
-        }
-        style={{ display: 'none' }}
-      />
-      <input
-        ref={fileInputEld}
-        accept="text/*"
-        type="file"
-        onChange={() =>
-          importDeckFromFile({
-            format: 'eld',
-            file: fileInputEld,
-          })
-        }
-        style={{ display: 'none' }}
-      />
-      <input
-        ref={fileAnonymousInputTxt}
-        accept="text/*"
-        type="file"
-        onChange={() =>
-          importDeckFromFile({
-            format: 'txt',
-            file: fileAnonymousInputTxt,
-            anonymous: true,
-          })
-        }
-        style={{ display: 'none' }}
-      />
-      <input
-        ref={fileAnonymousInputDek}
-        accept="text/*"
-        type="file"
-        onChange={() =>
-          importDeckFromFile({
-            format: 'dek',
-            file: fileAnonymousInputDek,
-            anonymous: true,
-          })
-        }
-        style={{ display: 'none' }}
-      />
-      <ErrorOverlay
-        show={createError || importError}
-        target={ref.current}
-        placement="left"
-        modal={true}
-      >
-        {createError && <b>ERROR</b>}
-        {importError && <b>CANNOT IMPORT THIS DECK</b>}
-      </ErrorOverlay>
     </>
   );
 };
