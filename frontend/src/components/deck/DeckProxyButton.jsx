@@ -29,17 +29,31 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     <>
       <Dropdown.Item
         href=""
-        onClick={() => proxyCards(deck.crypt, deck.library)}
+        onClick={() => proxyCards(deck.crypt, deck.library, false)}
       >
-        Full Deck
+        Full Deck - Gray gaps
+      </Dropdown.Item>
+      <Dropdown.Item
+        href=""
+        onClick={() => proxyCards(deck.crypt, deck.library, true)}
+      >
+        Full Deck - White gaps
       </Dropdown.Item>
       {inventoryMode && (
-        <Dropdown.Item
-          href=""
-          onClick={() => proxyCards(missingCrypt, missingLibrary)}
-        >
-          Missing in Inventory
-        </Dropdown.Item>
+        <>
+          <Dropdown.Item
+            href=""
+            onClick={() => proxyCards(missingCrypt, missingLibrary, false)}
+          >
+            Missing in Inventory - Gray gaps
+          </Dropdown.Item>
+          <Dropdown.Item
+            href=""
+            onClick={() => proxyCards(missingCrypt, missingLibrary, true)}
+          >
+            Missing in Inventory - White gaps
+          </Dropdown.Item>
+        </>
       )}
       <Dropdown.Item
         href=""
@@ -96,7 +110,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     return { base: url, langset: urlLangSet };
   };
 
-  const proxyCards = async (crypt, library) => {
+  const proxyCards = async (crypt, library, isWhiteGaps) => {
     setSpinnerState(true);
 
     const cryptSorted = cryptSort(
@@ -123,7 +137,9 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
 
     let { jsPDF } = await import('jspdf');
     const pdf = new jsPDF();
-    pdf.setFillColor(60, 60, 60);
+    isWhiteGaps
+      ? pdf.setFillColor(255, 255, 255)
+      : pdf.setFillColor(60, 60, 60);
 
     const w = 63;
     const h = 88;
@@ -144,14 +160,13 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
       }
 
       for (let i = 0; i < card.q; i++) {
-
         pdf.rect(
-          (marginLeft + counterX * (w + gap)),
-          (marginTop + counterY * (h + gap)),
-          (w + gap),
-          (h + gap),
-          "F",
-        )
+          marginLeft + counterX * (w + gap),
+          marginTop + counterY * (h + gap),
+          w + gap,
+          h + gap,
+          'F'
+        );
 
         pdf.addImage(
           img,
@@ -172,7 +187,9 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
         if (counterY == 3 && page * 9 < cardsTotal) {
           page += 1;
           pdf.addPage();
-          pdf.setFillColor(60, 60, 60);
+          isWhiteGaps
+            ? pdf.setFillColor(255, 255, 255)
+            : pdf.setFillColor(60, 60, 60);
           counterY = 0;
         }
       }

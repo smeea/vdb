@@ -5,7 +5,6 @@
 # FEATURES
 - Check TWD
 - Manual change q-ty in card search PDA/TWD
-- Optional gap color in Proxy
 
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing

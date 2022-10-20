@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
+import { Modal, Button, Container, Row, Col, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { DeckProxyCrypt, DeckProxyLibrary } from 'components';
 import { useApp } from 'context';
@@ -152,7 +152,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
     }
   };
 
-  const handleGenerateButton = () => {
+  const handleGenerateButton = (isWhiteGaps) => {
     const crypt = {};
     const library = {};
     Object.keys(proxySelected)
@@ -175,7 +175,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
         }
       });
 
-    proxyCards(crypt, library);
+    proxyCards(crypt, library, isWhiteGaps);
     handleClose();
   };
 
@@ -201,68 +201,63 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
       <Modal.Body className="p-0">
         <Container fluid>
           <Row className="px-0 pe-lg-4">
-            <Col xs={12} md={7} className="px-0 px-lg-4 pb-4 pb-md-0">
+            <Col xs={12} md={7} className="px-0 px-lg-4 pb-md-0">
               {deck.crypt && (
-                <>
-                  <div className={isMobile ? null : 'sticky-modal'}>
-                    <DeckProxyCrypt
-                      cards={deck.crypt}
-                      handleProxySelector={handleProxySelector}
-                      handleSetSelector={handleSetSelector}
-                      handleProxyCounter={handleProxyCounter}
-                      proxySelected={proxySelected}
-                    />
-                  </div>
-                  {!isMobile && <br />}
-                </>
-              )}
-            </Col>
-            <Col xs={12} md={5} className="px-0">
-              {deck.library && (
-                <>
-                  <DeckProxyLibrary
-                    cards={deck.library}
+                <div className={isMobile ? null : 'sticky-modal'}>
+                  <DeckProxyCrypt
+                    cards={deck.crypt}
                     handleProxySelector={handleProxySelector}
                     handleSetSelector={handleSetSelector}
                     handleProxyCounter={handleProxyCounter}
                     proxySelected={proxySelected}
                   />
-                  {!isMobile && <br />}
-                </>
+                </div>
+              )}
+            </Col>
+            <Col xs={12} md={5} className="px-0">
+              {deck.library && (
+                <DeckProxyLibrary
+                  cards={deck.library}
+                  handleProxySelector={handleProxySelector}
+                  handleSetSelector={handleSetSelector}
+                  handleProxyCounter={handleProxyCounter}
+                  proxySelected={proxySelected}
+                />
               )}
             </Col>
           </Row>
-          <div
-            className={
-              isMobile
-                ? 'd-flex justify-content-end pt-2 py-2'
-                : 'd-flex justify-content-end px-2 pb-4'
-            }
-          >
-            <div className="ps-2">
-              <Button variant="primary" onClick={handleGenerateButton}>
-                Generate
-              </Button>
-            </div>
-            <div className="ps-2">
-              <Button
-                variant="primary"
-                onClick={() => handleToggleSelectButton()}
-              >
-                Select / Deselect All
-              </Button>
-            </div>
-            {inventoryMode && (
-              <div className="ps-2">
+          <Row className="px-0 pe-lg-4">
+            <div className="d-flex justify-content-end p-2 px-md-0 py-md-4">
+              <Stack direction={isMobile ? 'vertical' : 'horizontal'} gap={2}>
                 <Button
                   variant="primary"
-                  onClick={() => handleToggleResolveButton()}
+                  onClick={() => handleGenerateButton(false)}
                 >
-                  Add Missing in Inventory
+                  Generate - Gray gaps
                 </Button>
-              </div>
-            )}
-          </div>
+                <Button
+                  variant="primary"
+                  onClick={() => handleGenerateButton(true)}
+                >
+                  Generate - White gaps
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={() => handleToggleSelectButton()}
+                >
+                  Select / Deselect All
+                </Button>
+                {inventoryMode && (
+                  <Button
+                    variant="primary"
+                    onClick={() => handleToggleResolveButton()}
+                  >
+                    Add Missing in Inventory
+                  </Button>
+                )}
+              </Stack>
+            </div>
+          </Row>
         </Container>
       </Modal.Body>
     </Modal>
