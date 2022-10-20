@@ -4,7 +4,7 @@
   "scripts": {
     "start": "parcel serve index.html",
     "build": "parcel build index.html --no-cache",
-    "lint-css": "npx stylint \"src/assets/css/style.styl\"",
+    "lint-css": "npx stylint \"src/assets/css/style.sass\"",
     "lint-js": "npx eslint \"src/**/*.{js,jsx}\""
   },
   "author": "Vadim Matveev",
@@ -14,7 +14,7 @@
     "@parcel/babel-preset-env": "^2.7.0",
     "@parcel/packager-raw-url": "^2.7.0",
     "@parcel/transformer-image": "^2.7.0",
-    "@parcel/transformer-stylus": "^2.7.0",
+    "@parcel/transformer-sass": "^2.7.0",
     "@parcel/transformer-svg-react": "^2.7.0",
     "@parcel/transformer-webmanifest": "^2.7.0",
     "@svgr/parcel-plugin-svgr": "^5.5.0",
@@ -22,14 +22,12 @@
     "browserslist": "^4.21.4",
     "buffer": "^6.0.3",
     "dotenv": "^16.0.3",
-    "eslint": "^8.24.0",
-    "eslint-plugin-react": "^7.31.8",
+    "eslint": "^8.25.0",
+    "eslint-plugin-react": "^7.31.10",
     "parcel": "^2.7.0",
     "prettier": "^2.7.1",
     "process": "^0.11.10",
-    "stylelint": "^14.14.0",
-    "stylelint-stylus": "^0.17.0",
-    "stylus": "^0.59.0"
+    "stylelint": "^14.14.0"
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
@@ -42,7 +40,7 @@
     "react-dom": "^18.2.0",
     "react-qr-code": "^2.0.8",
     "react-router-dom": "^6.4.2",
-    "react-select": "^5.4.0",
+    "react-select": "^5.5.4",
     "react-string-replace": "^1.1.0",
     "react-swipeable": "^7.0.0",
     "react-virtualized-auto-sizer": "^1.0.7",

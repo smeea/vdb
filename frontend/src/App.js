@@ -27,7 +27,7 @@ import Twd from 'pages/Twd.jsx';
 import { UpdateNotification } from 'components';
 
 import '~/node_modules/bootstrap/dist/css/bootstrap.min.css';
-import 'assets/css/style.styl';
+import 'assets/css/style.sass';
 import changes from '../../CHANGES.json';
 
 const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
