@@ -57,6 +57,11 @@ body
   color: var(--fg-primary)
   background: var(--bg-primary)
 
+html
+  scroll-padding-top: 60px
+  @media (max-width: 767px)
+    scroll-padding-top: 12px
+
 a:hover, span.link-like:hover, a, .prob, .link-like
   color: var(--fg-secondary)
 
@@ -76,6 +81,10 @@ a:hover, span.link-like:hover, .link-like:hover
 h5, h6
   font-weight: bold
   color: var(--fg-secondary)
+
+.ul-2px
+  text-decoration-line: underline
+  text-decoration-thickness: 2px
 
 div.h6
   margin: 0

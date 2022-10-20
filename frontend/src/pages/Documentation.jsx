@@ -12,10 +12,10 @@ const Documentation = () => {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
-        <Col xs={12} md={7} lg={6} xl={5} className="px-0">
+        <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
-            <h5>HELP / DOCUMENTATION</h5>
+            <h5 className="ul-2px">HELP / DOCUMENTATION</h5>
             <p>
               Documentation below describe some logic of VDB components.
               <br />
@@ -25,7 +25,7 @@ const Documentation = () => {
             </p>
 
             <div className="pt-3">
-              <h5>TABLE OF CONTENT</h5>
+              <h5 className="ul-2px">TABLE OF CONTENT</h5>
               <ul>
                 <li>
                   <a href="#crypt">Crypt search</a>
@@ -52,7 +52,9 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 id="crypt">CRYPT SEARCH</h5>
+              <h5 className="ul-2px" id="crypt">
+                CRYPT SEARCH
+              </h5>
 
               <h6>Name or Text</h6>
               <ul>
@@ -100,7 +102,9 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 id="library">LIBRARY SEARCH</h5>
+              <h5 className="ul-2px" id="library">
+                LIBRARY SEARCH
+              </h5>
 
               <h6>Name or Text</h6>
               <ul>
@@ -134,7 +138,9 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 id="twd">TWD SEARCH</h5>
+              <h5 className="ul-2px" id="twd">
+                TWD SEARCH
+              </h5>
 
               <h6>Star Vampire</h6>
               <ul>
@@ -216,7 +222,9 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 id="pda">PDA SEARCH</h5>
+              <h5 className="ul-2px" id="pda">
+                PDA SEARCH
+              </h5>
               <p>
                 Public Deck Archive (PDA) let you share your decks with other
                 players and search other players shared decks
@@ -265,7 +273,9 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 id="cards">CARD VIEW</h5>
+              <h5 className="ul-2px" id="cards">
+                CARD VIEW
+              </h5>
               <ul>
                 <li>Clicking on the card will open detailed card view.</li>
                 <li>
@@ -283,7 +293,9 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 id="decks">DECK BUILDING / VIEWING</h5>
+              <h5 className="ul-2px" id="decks">
+                DECK BUILDING / VIEWING
+              </h5>
 
               <h6>Hints</h6>
               <ul>
@@ -346,7 +358,9 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 id="inventory">INVENTORY MANAGEMENT</h5>
+              <h5 className="ul-2px" id="inventory">
+                INVENTORY MANAGEMENT
+              </h5>
               Inventory management in VDB let you browse your card collection
               with existing crypt/library search and track how collection is
               used in your existing decks

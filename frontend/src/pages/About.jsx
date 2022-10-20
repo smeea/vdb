@@ -19,7 +19,7 @@ const About = () => {
         <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
-            <h5>WHAT IS IT</h5>
+            <h5 className="ul-2px">WHAT IS IT</h5>
             <p>
               VDB is online card search, TWD (tournament winning decks) browser,
               deck building and inventory (collection) management tool for
@@ -27,7 +27,7 @@ const About = () => {
             </p>
 
             <div className="pt-3">
-              <h5>QUICKSTART</h5>
+              <h5 className="ul-2px">QUICKSTART</h5>
               <ul>
                 <li>
                   <Link to="/crypt">Search crypt cards</Link>
@@ -57,7 +57,7 @@ const About = () => {
             </div>
 
             <div className="pt-3">
-              <h5>TROUBLESHOOTING</h5>
+              <h5 className="ul-2px">TROUBLESHOOTING</h5>
               <p>
                 If you experience problems like white screen or strange
                 behavior, reload page (Ctrl+F5 on Windows/Linux or
@@ -67,7 +67,7 @@ const About = () => {
             </div>
 
             <div className="py-3">
-              <h5>VERSION</h5>
+              <h5 className="ul-2px">VERSION</h5>
               <p>
                 Card text based on{' '}
                 <a href="https://www.vekn.net/card-lists">VEKN official list</a>
@@ -84,7 +84,7 @@ const About = () => {
             </div>
 
             <div className="pt-3">
-              <h5>RELATED PROJECTS</h5>
+              <h5 className="ul-2px">RELATED PROJECTS</h5>
               <p>
                 <a href="https://amaranth.vtes.co.nz/">
                   <b>Amaranth</b>
@@ -132,7 +132,7 @@ const About = () => {
             </div>
 
             <div className="pt-3">
-              <h5>FOR DEVELOPERS</h5>
+              <h5 className="ul-2px">FOR DEVELOPERS</h5>
               <p>
                 Development happens in{' '}
                 <a href="https://github.com/smeea/vdb">
@@ -159,7 +159,7 @@ const About = () => {
             </div>
 
             <div className="pt-3">
-              <h5>ACKNOWLEDGMENTS</h5>
+              <h5 className="ul-2px">ACKNOWLEDGMENTS</h5>
               <ul>
                 <li>Card images by Fernando &quot;Sydnelson&quot; Cesar</li>
                 <li>
@@ -180,7 +180,7 @@ const About = () => {
             </div>
 
             <div className="pt-3">
-              <h5>DONATIONS</h5>
+              <h5 className="ul-2px">DONATIONS</h5>
               <ul className="no-bullets">
                 <li>
                   Patreon:{' '}
@@ -206,7 +206,7 @@ const About = () => {
             </div>
 
             <div className="pt-3">
-              <h5>CONTACTS</h5>
+              <h5 className="ul-2px">CONTACTS</h5>
               <ul className="no-bullets">
                 <li>
                   <div className="d-flex align-items-center">

@@ -117,7 +117,10 @@ const Navigation = () => {
         <div className="d-flex align-items-center">
           {!isMobile && (
             <>
-              <NavLink to="/account" className="nav-link pt-1 pe-2 ps-1">
+              <NavLink
+                to="/account"
+                className={`nav-link ${username ? 'pt-1' : ''} pe-2 ps-1`}
+              >
                 {username ? <PersonFill /> : 'Login'}
               </NavLink>
               <NavLink to="/about" className="nav-link pe-2 ps-1">
