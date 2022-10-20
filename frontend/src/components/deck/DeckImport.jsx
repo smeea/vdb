@@ -28,47 +28,30 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');
   const [showTextModal, setShowTextModal] = useState(false);
-  const [showAnonymousTextModal, setShowAnonymousTextModal] = useState(false);
   const [showAmaranthModal, setShowAmaranthModal] = useState(false);
   const [badCards, setBadCards] = useState([]);
   const ref = useRef(null);
 
-  const fileInputTxt = React.createRef();
-  const fileInputDek = React.createRef();
-  const fileInputEld = React.createRef();
-  const fileAnonymousInputTxt = React.createRef();
-  const fileAnonymousInputDek = React.createRef();
+  const fileInput = React.createRef();
+  const fileInputAnonymous = React.createRef();
 
-  const handleFileInputClick = (format, anonymous) => {
-    switch (format) {
-      case 'txt':
-        anonymous
-          ? fileAnonymousInputTxt.current.click()
-          : fileInputTxt.current.click();
-        break;
-      case 'dek':
-        anonymous
-          ? fileAnonymousInputDek.current.click()
-          : fileInputDek.current.click();
-        break;
-      case 'eld':
-        fileInputEld.current.click();
-        break;
-    }
+  const handleFileInputClick = (isAnonymous) => {
+    isAnonymous
+      ? fileInputAnonymous.current.click()
+      : fileInput.current.click();
   };
 
   const handleCloseImportModal = () => {
     setShowTextModal(false);
-    setShowAnonymousTextModal(false);
     setShowAmaranthModal(false);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };
-  const handleOpenTextModal = () => setShowTextModal(true);
-  const handleOpenAnonymousTextModal = () => setShowAnonymousTextModal(true);
+  const handleOpenTextModal = (isAnonymous) =>
+    setShowTextModal({ isAnonymous: isAnonymous, show: true });
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 
-  const addImportedDeckToState = ({ deck, anonymous }) => {
+  const addImportedDeckToState = ({ deck, isAnonymous }) => {
     const now = new Date();
     const { crypt, library } = parseDeckCards(deck.cards);
     deck = {
@@ -82,7 +65,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
       timestamp: now.toUTCString(),
     };
 
-    if (anonymous) {
+    if (isAnonymous) {
       setSharedDeck({ [deck.deckid]: deck });
     } else {
       setDecks((prevState) => ({
@@ -134,73 +117,52 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
       .catch(() => setCreateError(true));
   };
 
-  const importDeckFromFile = ({ format, file, anonymous }) => {
+  const importDeckFromFile = (fileInput, isAnonymous) => {
     setImportError(false);
 
     const reader = new FileReader();
-    reader.readAsText(file.current.files[0]);
+    const file = fileInput.current.files[0];
+    reader.readAsText(file);
     reader.onload = async () => {
       let deckText;
-      switch (format) {
-        case 'txt':
-          deckText = reader.result;
-          break;
-        case 'dek':
-          const parser = new DOMParser();
-          const xmlDoc = parser.parseFromString(reader.result, 'text/xml');
-          const xmlCrypt =
-            xmlDoc.getElementsByTagName('deck')[0].childNodes[5].children;
-          const xmlLibrary =
-            xmlDoc.getElementsByTagName('deck')[0].childNodes[3].children;
 
-          const crypt = {};
-          Object.values(xmlCrypt).map((i) => {
-            const cardName = i.childNodes[0].childNodes[0].data;
-            if (!crypt[cardName]) {
-              crypt[cardName] = 0;
-            }
-            crypt[cardName] += 1;
-          });
+      if (file.type === 'text/plain') {
+        deckText = reader.result;
+      } else {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(reader.result, 'text/xml');
+        const xmlCrypt =
+          xmlDoc.getElementsByTagName('deck')[0].childNodes[5].children;
+        const xmlLibrary =
+          xmlDoc.getElementsByTagName('deck')[0].childNodes[3].children;
 
-          const library = {};
-          Object.values(xmlLibrary).map((i) => {
-            const cardName = i.childNodes[0].childNodes[0].data;
-            if (!library[cardName]) {
-              library[cardName] = 0;
-            }
-            library[cardName] += 1;
-          });
+        const crypt = {};
+        Object.values(xmlCrypt).map((i) => {
+          const cardName = i.childNodes[0].childNodes[0].data;
+          if (!crypt[cardName]) {
+            crypt[cardName] = 0;
+          }
+          crypt[cardName] += 1;
+        });
 
-          deckText = '';
+        const library = {};
+        Object.values(xmlLibrary).map((i) => {
+          const cardName = i.childNodes[0].childNodes[0].data;
+          if (!library[cardName]) {
+            library[cardName] = 0;
+          }
+          library[cardName] += 1;
+        });
 
-          Object.keys(crypt).map((card) => {
-            deckText += `${crypt[card]} ${card}\n`;
-          });
+        deckText = '';
 
-          Object.keys(library).map((card) => {
-            deckText += `${library[card]} ${card}\n`;
-          });
-          break;
-        case 'eld':
-          deckText = '';
-          const cards = reader.result.split('\n');
-          cards.forEach((res) => {
-            const card = res.split(',');
-            if (card.length >= 5) {
-              let name = card[0].slice(1);
-              const n = card.length - 5;
-              if (n) {
-                for (let i = 1; i <= n; i++) {
-                  name += `, ${card[i]}`;
-                }
-              }
-              name = name.slice(0, -1);
-              const q = card[n + 1];
+        Object.keys(crypt).map((card) => {
+          deckText += `${crypt[card]} ${card}\n`;
+        });
 
-              if (q && name) deckText += `${q} ${name}\n`;
-            }
-          });
-          break;
+        Object.keys(library).map((card) => {
+          deckText += `${library[card]} ${card}\n`;
+        });
       }
 
       const deck = await useDeckImport(
@@ -210,12 +172,6 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
       );
 
       const url = `${process.env.API_URL}decks/import`;
-
-      const body = JSON.stringify({
-        deck: deck,
-        anonymous: anonymous,
-      });
-
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -223,7 +179,10 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: body,
+        body: JSON.stringify({
+          deck: deck,
+          anonymous: isAnonymous,
+        }),
       };
 
       const fetchPromise = fetch(url, options);
@@ -231,10 +190,10 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
         .then((response) => response.json())
         .then((data) => {
           deck.deckid = data.deckid;
-          addImportedDeckToState({ deck, anonymous });
+          addImportedDeckToState({ deck, isAnonymous });
           setBadCards(deck.badCards);
           setActiveDeck({
-            src: anonymous ? 'shared' : 'my',
+            src: isAnonymous ? 'shared' : 'my',
             deckid: deck.deckid,
           });
           setShowMenuButtons(false);
@@ -269,7 +228,6 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             handleFileInputClick={handleFileInputClick}
             handleOpenTextModal={handleOpenTextModal}
             handleOpenAmaranthModal={handleOpenAmaranthModal}
-            handleOpenAnonymousTextModal={handleOpenAnonymousTextModal}
           />
           {badCards && (
             <DeckImportBadCardsModal
@@ -281,14 +239,8 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
           <DeckImportText
             addImportedDeckToState={addImportedDeckToState}
             handleCloseModal={handleCloseImportModal}
-            show={showTextModal}
-            setBadCards={setBadCards}
-          />
-          <DeckImportText
-            anonymous={true}
-            addImportedDeckToState={addImportedDeckToState}
-            handleCloseModal={handleCloseImportModal}
-            show={showAnonymousTextModal}
+            show={showTextModal.show}
+            isAnonymous={showTextModal.isAnonymous}
             setBadCards={setBadCards}
           />
           <DeckImportAmaranth
@@ -298,65 +250,17 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             show={showAmaranthModal}
           />
           <input
-            ref={fileInputTxt}
+            ref={fileInput}
             accept="text/*"
             type="file"
-            onChange={() =>
-              importDeckFromFile({
-                format: 'txt',
-                file: fileInputTxt,
-              })
-            }
+            onChange={() => importDeckFromFile(fileInput, false)}
             style={{ display: 'none' }}
           />
           <input
-            ref={fileInputDek}
+            ref={fileInputAnonymous}
             accept="text/*"
             type="file"
-            onChange={() =>
-              importDeckFromFile({
-                format: 'dek',
-                file: fileInputDek,
-              })
-            }
-            style={{ display: 'none' }}
-          />
-          <input
-            ref={fileInputEld}
-            accept="text/*"
-            type="file"
-            onChange={() =>
-              importDeckFromFile({
-                format: 'eld',
-                file: fileInputEld,
-              })
-            }
-            style={{ display: 'none' }}
-          />
-          <input
-            ref={fileAnonymousInputTxt}
-            accept="text/*"
-            type="file"
-            onChange={() =>
-              importDeckFromFile({
-                format: 'txt',
-                file: fileAnonymousInputTxt,
-                anonymous: true,
-              })
-            }
-            style={{ display: 'none' }}
-          />
-          <input
-            ref={fileAnonymousInputDek}
-            accept="text/*"
-            type="file"
-            onChange={() =>
-              importDeckFromFile({
-                format: 'dek',
-                file: fileAnonymousInputDek,
-                anonymous: true,
-              })
-            }
+            onChange={() => importDeckFromFile(fileInputAnonymous, true)}
             style={{ display: 'none' }}
           />
           <ErrorOverlay

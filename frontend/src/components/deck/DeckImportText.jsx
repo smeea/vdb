@@ -6,7 +6,7 @@ import { useApp } from 'context';
 import { useDeckImport } from 'hooks';
 
 const DeckImportText = ({
-  anonymous,
+  isAnonymous,
   setBadCards,
   handleCloseModal,
   show,
@@ -60,7 +60,7 @@ const DeckImportText = ({
         },
         body: JSON.stringify({
           deck: deck,
-          anonymous: anonymous,
+          anonymous: isAnonymous,
         }),
       };
 
@@ -69,10 +69,10 @@ const DeckImportText = ({
         .then((response) => response.json())
         .then((data) => {
           deck.deckid = data.deckid;
-          addImportedDeckToState({ deck, anonymous });
+          addImportedDeckToState({ deck, isAnonymous });
           setBadCards(deck.badCards);
           setActiveDeck({
-            src: anonymous ? 'shared' : 'my',
+            src: isAnonymous ? 'shared' : 'my',
             deckid: deck.deckid,
           });
           setShowMenuButtons(false);

@@ -8,7 +8,6 @@ const DeckImportButton = ({
   handleFileInputClick,
   handleOpenTextModal,
   handleOpenAmaranthModal,
-  handleOpenAnonymousTextModal,
 }) => {
   const { username } = useApp();
 
@@ -20,32 +19,24 @@ const DeckImportButton = ({
             Create New Deck
           </Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item onClick={() => handleFileInputClick('txt')}>
-            Import from File - Amaranth, Lackey.TXT, TWD
+          <Dropdown.Item onClick={() => handleFileInputClick(false)}>
+            Import from File
           </Dropdown.Item>
-          <Dropdown.Item onClick={() => handleFileInputClick('dek')}>
-            Import from File - Lackey.DEK
-          </Dropdown.Item>
-          <Dropdown.Item onClick={handleOpenTextModal}>
-            Import from Text - Amaranth, Lackey.TXT, TWD
+          <Dropdown.Item onClick={() => handleOpenTextModal(false)}>
+            Import from Text
           </Dropdown.Item>
           <Dropdown.Item onClick={handleOpenAmaranthModal}>
-            Import from Amaranth Deck URL
+            Import from Amaranth URL
           </Dropdown.Item>
           <Dropdown.Divider />
         </>
       )}
-      <Dropdown.Header>
-        Without Account (you will not be able to edit it, can only copy URL)
-      </Dropdown.Header>
-      <Dropdown.Item onClick={() => handleFileInputClick('txt', true)}>
-        Import w/o Account from File - Amaranth, Lackey.TXT, TWD
+      <Dropdown.Header>Without Account (non-editable, for URL)</Dropdown.Header>
+      <Dropdown.Item onClick={() => handleFileInputClick(true)}>
+        Import w/o Account from File
       </Dropdown.Item>
-      <Dropdown.Item onClick={() => handleFileInputClick('dek', true)}>
-        Import w/o Account from File - Lackey.DEK
-      </Dropdown.Item>
-      <Dropdown.Item onClick={handleOpenAnonymousTextModal}>
-        Import w/o Account from Text - Amaranth, Lackey.TXT, TWD
+      <Dropdown.Item onClick={() => handleOpenTextModal(true)}>
+        Import w/o Account from Text
       </Dropdown.Item>
     </>
   );
