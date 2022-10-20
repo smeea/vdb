@@ -1,61 +1,61 @@
 :root
   --bs-border-color: var(--border-primary)
   @media (prefers-color-scheme: light)
-    --fg-primary: #151575
-    --fg-secondary: #6060c0
-    --fg-third: #6060c0
-    --fg-name: #3060c0
-    --fg-red: #c00000
-    --fg-green: #00a000
-    --bg-nav: #404060
-    --bg-primary: #ffffff
-    --bg-secondary: #e0e5ff
-    --bg-third: #f0f5ff
-    --bg-error: #f04040
-    --bg-error-secondary: #ff8080
-    --bg-warning: #ffb050
     --bg-button: #ffffff
     --bg-button-secondary: #ffffff
     --bg-checkbox: #ffffff
     --bg-checkbox-selected: #7070ff
+    --bg-error: #f04040
+    --bg-error-secondary: #ff8080
+    --bg-nav: #404060
+    --bg-primary: #ffffff
+    --bg-secondary: #e0e5ff
+    --bg-third: #f0f5ff
+    --bg-warning: #ffb050
+    --border-nest-modal: #707085
     --border-primary: #80b0ff
     --border-secondary: #a0b0ff
     --border-third: #a0b0ff
-    --border-nest-modal: #707085
     --clan-icon-brightness: 100%
+    --fg-green: #00a000
+    --fg-name: #3060c0
+    --fg-primary: #151575
+    --fg-red: #c00000
+    --fg-secondary: #6060c0
+    --fg-third: #6060c0
     --icons-brightness: 100%
     --logo-brightness: 100%
 
   @media (prefers-color-scheme: dark)
-    --fg-primary: #e0e0e0
-    --fg-secondary: #80b0ff
-    --fg-third: #c0c0e0
-    --fg-name: #d59000
-    --fg-red: #f04030
-    --fg-green: #00d000
-    --bg-nav: #303040
-    --bg-primary: #252530
-    --bg-secondary: #353545
-    --bg-third: #303040
-    --bg-error: #901000
-    --bg-error-secondary: #b03525
-    --bg-warning: #c06500
     --bg-button: #404050
     --bg-button-secondary: #303040
     --bg-checkbox: #e0e0e0
     --bg-checkbox-selected: #6060d0
+    --bg-error: #901000
+    --bg-error-secondary: #b03525
+    --bg-nav: #303040
+    --bg-primary: #252530
+    --bg-secondary: #353545
+    --bg-third: #303040
+    --bg-warning: #c06500
+    --border-nest-modal: #404050
     --border-primary: #505060
     --border-secondary: #404050
     --border-third: #303040
-    --border-nest-modal: #404050
     --clan-icon-brightness: 65%
+    --fg-green: #00d000
+    --fg-name: #d59000
+    --fg-primary: #e0e0e0
+    --fg-red: #f04030
+    --fg-secondary: #80b0ff
+    --fg-third: #c0c0e0
     --icons-brightness: 85%
     --logo-brightness: 150%
 
 
 body
-  color: var(--fg-primary)
   background: var(--bg-primary)
+  color: var(--fg-primary)
 
 html
   scroll-padding-top: 60px
@@ -79,8 +79,8 @@ a:hover, span.link-like:hover, .link-like:hover
   color: var(--fg-secondary)
 
 h5, h6
-  font-weight: bold
   color: var(--fg-secondary)
+  font-weight: bold
 
 .ul-2px
   text-decoration-line: underline
@@ -108,7 +108,7 @@ div.h6
   white-space: nowrap
 
 .languages
-  font-size: 0.875rem
+  font-size: .875rem
 
 .vh-70
   height: 70vh
@@ -136,29 +136,29 @@ div.quick-cards
   .bordered
     border: 1px solid var(--bg-secondary)
 
-div.modal-content .modal-header
-  border-bottom: 1px solid var(--bg-secondary)
-
-div.modal-content .modal-footer
-  border-top: 1px solid var(--bg-secondary)
+div.modal-content
+  .modal-header
+    border-bottom: 1px solid var(--bg-secondary)
+  .modal-footer
+    border-top: 1px solid var(--bg-secondary)
 
 div.no-border
-  border: none !important
+  border: 0 !important
 
 .nested-modal div.modal-content
   border: 1px solid var(--border-nest-modal)
 
 .error-message
   background: var(--bg-error)
-  padding: 0.5em
   border: 1px solid var(--border-primary)
+  padding: .5em
 
 .error-tooltip
-  font-size: small
   background: var(--bg-error)
   border: 1px solid var(--border-secondary)
   border-radius: 5px
-  padding: 0.25em 0.5em
+  font-size: small
+  padding: .25em .5em
   z-index: 1100
 
 .info-message
@@ -199,105 +199,90 @@ button.total-info
   background: black
 
 .inv-miss-full
-  color: var(--bg-checkbox)
   background: var(--bg-error)
+  color: var(--bg-checkbox)
 
 .inv-miss-part
   background: var(--bg-warning)
 
-.popover-rulings
-  font-size: small
-  max-width: 325px
-
-div.popover-sets
-  font-size: x-small
-  text-align: right
-  max-width: 300px
-
-.popover-card-text
-  max-width: 325px
-
-.popover-discipline-image
-  height: 18px
-
 .form-control,
 .form-control:focus
   background: var(--bg-primary) !important
-  color: var(--fg-primary)
   border-color: var(--bg-secondary)
+  color: var(--fg-primary)
 
 .form-check-input
   background: var(--bg-checkbox)
 
 .form-check-input:checked
-  border-color: var(--bg-checkbox-selected)
   background: var(--bg-checkbox-selected)
+  border-color: var(--bg-checkbox-selected)
 
 .input-group-text
   background: var(--bg-secondary)
-  color: var(--fg-third)
   border-color: var(--bg-secondary)
+  color: var(--fg-third)
 
 button.btn-primary
-  color: var(--fg-third)
   background: var(--bg-button)
   border: 1px solid var(--border-secondary)
+  color: var(--fg-third)
 button.btn-primary:focus
-  color: var(--fg-third)
   background: var(--bg-button)
+  color: var(--fg-third)
 button.btn-primary:disabled
-  opacity: 0.4
-  color: var(--fg-primary)
   background: var(--bg-button)
   border: 1px solid var(--border-secondary)
+  color: var(--fg-primary)
+  opacity: .4
 button.btn-primary:hover
   background: var(--border-primary)
   border: 1px solid var(--border-primary)
 
 button.btn-secondary
-  color: var(--fg-third)
   background: var(--bg-button-secondary)
   border: 1px solid var(--border-third)
-button.btn-secondary:focus
   color: var(--fg-third)
+button.btn-secondary:focus
   background: var(--bg-button-secondary)
+  color: var(--fg-third)
 button.btn-secondary:hover
   background: var(--border-primary)
   border: 1px solid var(--border-primary)
 
 button.btn-third
+  background: var(--border-primary)
   border: 1px solid gray
   color: var(--fg-primary)
-  background: var(--border-primary)
 button.btn-third:focus
-  color: var(--fg-primary)
   background: var(--border-primary)
+  color: var(--fg-primary)
 button.btn-third:hover
-  color: var(--fg-primary)
   background: var(--border-primary)
+  color: var(--fg-primary)
 
 button.btn-outline-primary
-  border: 1px solid var(--border-secondary)
   background: none
+  border: 1px solid var(--border-secondary)
   color: gray
 button.btn-outline-primary:focus
-  color: gray
   background: none
+  color: gray
 button.btn-outline-primary:hover
   background: var(--border-primary)
   border: 1px solid var(--border-primary)
 
 button.btn-outline-secondary
+  background: none
+  border: 0
+  color: gray
   padding: 0
-  border: none
-  background: none
-  color: gray
 button.btn-outline-secondary:focus
-  color: gray
   background: var(--border-primary)
+  color: gray
 button.btn-outline-secondary:hover
-  border: none
   background: none
+  border: 0
   color: darkgray
 
 button.btn-danger
@@ -310,11 +295,11 @@ button.btn-danger:hover
 
 li.nav-item
   background: var(--bg-primary)
-  padding: 0px 0px
+  padding: 0
 
 button.nav-link:hover
-  border: 1px solid var(--border-secondary) !important
   background-color: var(--bg-third)
+  border: 1px solid var(--border-secondary) !important
 
 ul.nav
   border-bottom: 1px solid var(--border-secondary)
@@ -323,10 +308,10 @@ button.nav-link
   color: var(--fg-secondary)
   font-weight: bold
   &.active
-    color: var(--fg-secondary) !important
     background: var(--bg-button-secondary) !important
     border: 1px solid var(--border-secondary) !important
     border-bottom: none !important
+    color: var(--fg-secondary) !important
 
 button.nav-link:hover
   color: var(--fg-primary)
@@ -342,18 +327,20 @@ button.nav-link:hover
 
 .navbar
   background: var(--bg-nav)
+  padding: 0
 
 .offline-bar
-  color: var(--bg-checkbox)
   background: var(--bg-error)
+  color: var(--bg-checkbox)
 
 .modal-content
   background: var(--bg-primary)
-  border: none
+  border: 0
 
 .popover
-  border-color: var(--bg-secondary)
   background: var(--bg-primary)
+  border-color: var(--bg-secondary)
+  max-width: 920px
 
 .light-border.popover
   border-color: var(--border-primary)
@@ -361,9 +348,25 @@ button.nav-link:hover
 .popover-body
   color: var(--fg-primary)
 
+.popover-rulings
+  font-size: small
+  max-width: 325px
+
+div.popover-sets
+  font-size: x-small
+  max-width: 300px
+  text-align: right
+
+.popover-card-text
+  max-width: 325px
+
+.popover-discipline-image
+  height: 18px
+
+
 .trimmed
-  text-overflow: ellipsis
   overflow: hidden
+  text-overflow: ellipsis
   white-space: nowrap
 
 .mw-200
@@ -421,23 +424,23 @@ button.nav-link:hover
   &__option--is-selected
     background: var(--border-primary) !important
   &__multi-value
-    border-radius: 4px !important
     background: var(--bg-button) !important
+    border-radius: 4px !important
   &__multi-value__label
-    color: var(--fg-primary) !important
-    border-radius: 4px 0px 0px 4px !important
-    border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
     border-left: 1px solid var(--border-secondary)
+    border-radius: 4px 0 0 4px !important
+    border-top: 1px solid var(--border-secondary)
+    color: var(--fg-primary) !important
   &__multi-value__remove
     background: var(--bg-button) !important
-    border-radius: 0px 4px 4px 0px !important
-    border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
+    border-radius: 0 4px 4px 0 !important
     border-right: 1px solid var(--border-secondary)
+    border-top: 1px solid var(--border-secondary)
   &__multi-value__remove:hover
-    color: var(--fg-third) !important
     background: var(--border-primary) !important
+    color: var(--fg-third) !important
   &__multi-value-container
     background: var(--bg-primary)
 
@@ -451,15 +454,15 @@ button.nav-link:hover
   .react-select-tags__multi-value__remove
     display: none
   .react-select-tags__multi-value__label
-    padding-right: 8px !important
-    border-radius: 4px !important
     border: 1px solid var(--bg-secondary)
+    border-radius: 4px !important
+    padding-right: 8px !important
   .react-select-tags__input-container
     display: none
 
 .form-placeholder
-  padding-left: 6px
   font-size: small
+  padding-left: 6px
 
 .dropdown-menu
   background: var(--bg-button)
@@ -473,49 +476,46 @@ button.nav-link:hover
   display: none
 
 .flag-active
-  border: 3px solid #606080
   background-color: #606080
+  border: 3px solid #606080
   border-radius: 16px
 
 .logo-box
   background: var(--bg-secondary)
-  padding: 0.5em
   border: 1px solid var(--border-secondary)
+  padding: .5em
 
 .logo-image
   filter: brightness(var(--logo-brightness))
 
 .logo-text
-  font-weight: bold
-  font-size: xx-large
   color: var(--fg-secondary)
+  font-size: xx-large
+  font-weight: bold
 
 .logo-subtext
-  font-size: x-large
   color: var(--fg-secondary)
+  font-size: x-large
 
 img.card-popover
   height: 420px
 
-.popover
-  max-width: 920px
-
 .prev-card-mobile,
 .next-card-mobile
-  position: absolute
   bottom: 50%
   color: gray
   height: 50px
+  position: absolute
 .prev-card-mobile
-  left: 0px
+  left: 0
 .next-card-mobile
-  right: 0px
+  right: 0
 
 .prev-card,
 .next-card
-  position: absolute
   bottom: 50%
   color: white
+  position: absolute
 .prev-card
   left: -40px
 .next-card
@@ -523,44 +523,44 @@ img.card-popover
 
 .deck-sidecrypt,
 .deck-sidelibrary
-  opacity: 0.55
+  opacity: .55
 .deck-sidecrypt img,
 .deck-sidelibrary img
-  opacity: 0.6
+  opacity: .6
 
 table.disciplines td
-  border: none
+  border: 0
 td.prob
   text-align: right
   width: 36px
 
 .deck-crypt-table,
 .deck-library-table
-  width: 100%
   border: 1px solid var(--bg-secondary)
   @media (max-width: 767px)
-    border: none
+    border: 0
   td
-    border-top: 1px solid var(--bg-secondary)
     border-bottom: 1px solid var(--bg-secondary)
     border-collapse: collapse
+    border-top: 1px solid var(--bg-secondary)
     text-align: center
   td.proxy-selector
     width: 1%
   td.quantity
-    width: 65px
     font-size: 1.1em
+    width: 65px
   td.quantity-add
     width: 22px
   td.quantity-no-buttons
-    width: 28px
-    font-size: 1.1em
-    background: rgba(0, 0, 170, 0.05);
+    background: rgba(0, 0, 170, .05)
     border-right: 1px solid var(--bg-secondary)
+    font-size: 1.1em
+    width: 28px
   td.name
     text-align: left
   td.proxy-set
     width: 120px
+  width: 100%
 
 .deck-crypt-table
   td
@@ -582,8 +582,8 @@ td.prob
   td.cost
     width: 25px
   td.blood
-    padding-top: 0px
     padding-bottom: 4px
+    padding-top: 0
   td.disciplines
     width: 88px
   td.burn
@@ -613,22 +613,21 @@ td.prob
 .history-library-table,
 .inventory-crypt-table,
 .inventory-library-table
-  width: 100%
   border: 1px solid var(--bg-secondary)
   @media (max-width: 767px)
-    border: none
+    border: 0
   div.bordered
     border-bottom: 1px solid var(--bg-secondary)
   div.quantity
-    min-width: 75px
     font-size: 1.1em
+    min-width: 75px
     @media (max-width: 1399px)
       min-width: 70px
   div.quantity-no-buttons
-    min-width: 45px
-    font-size: 1.1em
-    background: rgba(0, 0, 170, 0.05);
+    background: rgba(0, 0, 170, .05)
     border-right: 1px solid var(--bg-secondary)
+    font-size: 1.1em
+    min-width: 45px
   div.used
     min-width: 40px
     @media (max-width: 1399px)
@@ -637,6 +636,7 @@ td.prob
     width: 100%
   &.compact
     height: 45px
+  width: 100%
 
 .history-crypt-table,
 .history-library-table,
@@ -681,15 +681,15 @@ td.prob
   div.clan-group
     min-width: 45px
     .group
-      min-width: 0px
+      min-width: 0
 
 .history-library-table,
 .inventory-library-table
   div.cost
     min-width: 30px
   div.blood
-    padding-top: 0px
     padding-bottom: 4px
+    padding-top: 0
   div.disciplines
     min-width: 82px
   div.burn
@@ -703,15 +703,14 @@ td.prob
 
 .search-crypt-table,
 .search-library-table
-  width: 100%
   border-left: 1px solid var(--bg-secondary)
   border-right: 1px solid var(--bg-secondary)
   @media (max-width: 767px)
-    border: none
+    border: 0
   td
-    border-top: 1px solid var(--bg-secondary)
     border-bottom: 1px solid var(--bg-secondary)
     border-collapse: collapse
+    border-top: 1px solid var(--bg-secondary)
     text-align: center
   td.quantity-add
     width: 22px
@@ -720,6 +719,7 @@ td.prob
     width: 40px
   td.name
     text-align: left
+  width: 100%
 div.name-container
   white-space: nowrap
 div.name
@@ -739,28 +739,28 @@ div.name
   td.cost
     width: 25px
   td.blood
-    padding-top: 0px
     padding-bottom: 4px
+    padding-top: 0
 
 .twd-crypt-table,
 .twd-library-table,
 .twd-librarybytype-table
-  width: 100%
-  border-right: 1px solid var(--bg-secondary)
   border-left: 1px solid var(--bg-secondary)
+  border-right: 1px solid var(--bg-secondary)
   td
-    height: 32px
-    text-align: center
-    border-top: 1px solid var(--bg-secondary)
     border-bottom: 1px solid var(--bg-secondary)
     border-collapse: collapse
-  td.quantity-no-buttons
-    width: 28px
-    font-size: 1.1em
-    background: rgba(0, 0, 170, 0.05);
-    border-right: 1px solid var(--bg-secondary)
+    border-top: 1px solid var(--bg-secondary)
+    height: 32px
+    text-align: center
   td.name
     text-align: left
+  td.quantity-no-buttons
+    background: rgba(0, 0, 170, .05)
+    border-right: 1px solid var(--bg-secondary)
+    font-size: 1.1em
+    width: 28px
+  width: 100%
 
 .twd-crypt-table
   td.clan
@@ -776,18 +776,18 @@ div.name
 .decks-table
   border: 1px solid var(--bg-secondary)
   @media (max-width: 767px)
-    border: none
+    border: 0
   td
-    border-top: 1px solid var(--bg-secondary)
     border-bottom: 1px solid var(--bg-secondary)
+    border-top: 1px solid var(--bg-secondary)
   .inventory
     cursor: pointer
-    text-align: center
     min-width: 77px
+    text-align: center
   .clan
     cursor: pointer
-    text-align: center
     min-width: 93px
+    text-align: center
   .name
     cursor: pointer
     min-width: 25vw
@@ -797,8 +797,8 @@ div.name
     color: var(--fg-third)
   .date
     cursor: pointer
-    text-align: center
     min-width: 100px
+    text-align: center
     white-space: nowrap
   .tags
     width: 100%
@@ -809,20 +809,20 @@ div.name
 .inv-import-precons-table
   border: 1px solid var(--bg-secondary)
   @media (max-width: 767px)
-    border: none
+    border: 0
   td
-    border-top: 1px solid var(--bg-secondary)
     border-bottom: 1px solid var(--bg-secondary)
+    border-top: 1px solid var(--bg-secondary)
   th
     font-weight: normal
   .clan
-    text-align: center
     min-width: 50px
+    text-align: center
   .preview
     min-width: 40px
   .name
-    min-width: 250px
     max-width: 250px
+    min-width: 250px
   .buttons
     min-width: 110px
     text-align: right
@@ -835,8 +835,8 @@ div.name
   .revision
     color: var(--fg-third)
   .date
-    text-align: center
     min-width: 100px
+    text-align: center
     white-space: nowrap
   .tags
     width: 100%
@@ -847,43 +847,38 @@ div.name
       max-width: 135px
       min-width: 135px
   .set
-    width: 100%
     color: var(--fg-third)
+    width: 100%
 
 ul
-  padding-left: 20px
   list-style-type: square
+  padding-left: 20px
+  .no-bullets
+    list-style-type: none
+    padding-left: 0
+    .icon
+      color: var(--fg-third)
+    li
+      padding-left: 0
+  .rulings
+    list-style-type: square
+    margin: 0
+    padding-left: 1.5em
+    padding-right: 1em
 
 li
   padding-left: 6px
-
-ul.no-bullets
-  padding-left: 0em
-  list-style-type: none
-
-ul.no-bullets .icon
-  color: var(--fg-third)
-
-ul.no-bullets li
-  padding-left: 0
-
-ul.rulings
-  margin: 0
-  padding-left: 1.5em
-  padding-right: 1em
-  list-style-type: square
-
-li.rulings
-  padding: 3px
+  .rulings
+    padding: 3px
 
 .question-tooltip
-  font-size: middle
   color: var(--fg-third)
+  font-size: middle
 
 .capacity-image-results
-  height: 23px
-  image-rendering: -webkit-optimize-contrast;
   filter: brightness(var(--icons-brightness))
+  height: 23px
+  image-rendering: -webkit-optimize-contrast
 .discipline-base-image-results
   height: 22px
 .discipline-superior-image-results
@@ -896,74 +891,77 @@ li.rulings
 .discipline-base-image-forms,
 .discipline-superior-image-results,
 .discipline-superior-image-forms
-  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0px 0.8px var(--bg-checkbox))
+  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
 
 .clan-image-results
-  height: 24px
   filter: brightness(var(--clan-icon-brightness))
+  height: 24px
 @media (max-width: 576px)
   .clan-image-results
     height: 21px
 .burn-image-results,
 .trifle-image-results
+  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
   height: 24px
-  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0px 0.8px var(--bg-checkbox))
 .advanced-image-results
   height: 20px
   vertical-align: text-bottom
 .type-image-results
+  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
   height: 25px
-  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0px 0.8px var(--bg-checkbox))
 .cost-blood-image-results
+  filter: brightness(var(--icons-brightness))
   height: 30px
-  image-rendering: -webkit-optimize-contrast;
-  filter: brightness(var(--icons-brightness))
+  image-rendering: -webkit-optimize-contrast
 .cost-pool-image-results
-  height: 35px
-  image-rendering: -webkit-optimize-contrast;
   filter: brightness(var(--icons-brightness))
+  height: 35px
+  image-rendering: -webkit-optimize-contrast
 .type-discipline-image-forms
   height: 25px
 .discipline-base-image-forms
-  width: 32px
   height: 32px
+  width: 32px
 .discipline-superior-image-forms
-  width: 37px
   height: 37px
+  width: 37px
 .virtue-image
+  height: 29px
   margin-left: 4px
   margin-right: 5px
-  height: 29px
 
 .scroll
   height: 80vh
   overflow-y: auto
 
 .discipline-container
-  width: 38px
   height: 38px
+  width: 38px
 .virtue-container
-  width: 38px
   height: 38px
+  width: 38px
 .discipline-container:hover,
 .virtue-container:hover
   cursor: pointer
-.discipline-container.state0 .discipline-base-image-forms
-  display: flex
-  opacity: 0.35
-.discipline-container.state0 .discipline-superior-image-forms
-  display: none
-.discipline-container.state1 .discipline-base-image-forms
-  display: flex
-.discipline-container.state1 .discipline-superior-image-forms
-  display: none
-.discipline-container.state2 .discipline-base-image-forms
-  display: none
-.discipline-container.state2 .discipline-superior-image-forms
-  display: flex
+.discipline-container.state0
+  .discipline-base-image-forms
+    display: flex
+    opacity: .35
+  .discipline-superior-image-forms
+    display: none
+.discipline-container.state1
+  .discipline-base-image-forms
+    display: flex
+  .discipline-superior-image-forms
+    display: none
+.discipline-container.state2
+  .discipline-base-image-forms
+    display: none
+  .discipline-superior-image-forms
+    display: flex
 .virtue-container.state0 .virtue-image
   display: flex
-  opacity: 0.35
+  opacity: .35
 .virtue-container.state1 .virtue-image
   display: flex
 
@@ -976,18 +974,18 @@ li.rulings
 a.quantity
   position:relative
 a.quantity:before
-    position: absolute
-    content: ''
-    top: -12px
     bottom: -12px
+    content: ''
     left: -12px
+    position: absolute
     right: -24px
+    top: -12px
 
 button.quantity,
 button.quantity-wide
   display: block
   height: 27px
-  padding: 0px
+  padding: 0
 
 button.quantity
   width: 18px
@@ -996,9 +994,9 @@ button.quantity-wide
   width: 35px
 
 .quantity-add button
-  width: 24px
   height: 33px
-  padding: 0px
+  padding: 0
+  width: 24px
 
 .quantity-add button.in,
 button.inventory-in
@@ -1007,33 +1005,30 @@ button.inventory-in
 
 button.multi-form
   display: block
-  width: 18px
-  height: 18px
-  padding: 0px
   font-size: x-small
+  height: 18px
+  padding: 0
+  width: 18px
 
 div.in-inventory
-  width: 28px
   font-size: 1.1em
   text-align: center
+  width: 28px
 
 div.border-black
   border: 1px solid darkgray
   border-radius: 3px
 
 input.quantity
-  height: 32px
-  width: 65px
-  font-size: 1.1em
   color: black
+  font-size: 1.1em
+  height: 32px
   text-align: center
-
-.navbar
-  padding: 0rem
+  width: 65px
 
 hr
   color: var(--border-primary)
-  margin: 0.5rem
+  margin: .5rem
 
 hr.thick
   border: 2px solid var(--border-primary)
@@ -1048,27 +1043,27 @@ pre
   font-family: monospace
   font-size: large
 pre.twd-length-marker
+  margin-bottom: 0
   margin-left: 13px
-  margin-bottom: 0px
 
 .add-new-card
   max-width: 100%
 
 div.sticky-buttons
-  position: sticky;
+  position: sticky
   top: 56
   z-index: 2
 
 div.sticky-deck-crypt
 div.sticky-deck-library
   background-color: var(--bg-primary)
-  position: sticky;
+  position: sticky
   top: 32
   z-index: 1
 
 div.sticky-selector
   background-color: var(--bg-primary)
-  position: sticky;
+  position: sticky
   top: 40
   @media (max-width: 767px)
     top: 0
@@ -1076,7 +1071,7 @@ div.sticky-selector
 
 div.sticky-inv-result
   background-color: var(--bg-primary)
-  position: sticky;
+  position: sticky
   top: 102
   @media (max-width: 767px)
     top: 46
@@ -1084,17 +1079,15 @@ div.sticky-inv-result
 
 div.sticky-modal
   background-color: var(--bg-primary)
-  position: sticky;
+  position: sticky
   top: 22
   z-index: 1
 
 div.sticky-modal-library
-  position: sticky;
+  background-color: var(--bg-primary)
+  position: sticky
   top: 0
   z-index: 1
-
-div.sticky-modal-library
-  background-color: var(--bg-primary)
 
 .dropdown-toggle::after
   content: none
@@ -1109,8 +1102,8 @@ label.group-form:hover
   width: 55%
 
 .full-width
-  width: 100%
   height: auto
+  width: 100%
 
 .card-buttons
   height: 38px
@@ -1131,12 +1124,12 @@ div.float-right-bottom,
 div.float-left-top,
 div.float-left-middle,
 div.float-left-bottom
-  position: fixed
-  width: 48px
-  height: 48px
   border-radius: 25px
   color: white
+  height: 48px
+  position: fixed
   text-align: center
+  width: 48px
   z-index: 1060
 
 div.float-right-top
@@ -1178,71 +1171,80 @@ div.float-left-bottom
 
 div.float-search
   background-color: #709070
-  opacity: 0.8
+  opacity: .8
+  svg
+    height: auto
+    width: 80%
 div.float-add-off
   background-color: #A0A0A0
-  opacity: 0.8
-div.float-add-on,
-div.float-menu,
+  opacity: .8
+  svg
+    height: auto
+    width: 90%
+div.float-add-on
+  background-color: #707070
+  opacity: .8
+  svg
+    height: auto
+    width: 90%
+div.float-menu
+  background-color: #707070
+  opacity: .8
+  svg
+    height: auto
+    width: 75%
 div.float-turn
   background-color: #707070
-  opacity: 0.8
+  opacity: .8
+  svg
+    height: auto
+    width: 90%
 div.float-clear
   background-color: #A06060
-  opacity: 0.8
+  opacity: .8
+  svg
+    height: auto
+    width: 90%
 div.float-random
   background-color: #404040
-  opacity: 0.3
   font-weight: bold
-
-div.float-add-on svg,
-div.float-add-off svg,
-div.float-turn svg,
-div.float-clear svg
-  width: 90%
-  height: auto
-div.float-search svg
-  width: 80%
-  height: auto
-div.float-menu svg
-  width: 75%
-  height: auto
-div.float-random svg
-  width: 50%
-  height: auto
+  opacity: .3
+  svg
+    height: auto
+    width: 50%
 
 .modal-tooltip
   z-index: 1100
 
 .opacity-035
-  opacity: 0.35
+  opacity: .35
 
 .above-nav-bottom
-  position: fixed
   background-color: var(--bg-primary)
   bottom: 40px
+  position: fixed
   width: 100%
 
 div.inventory-card-custom
-  position: absolute
   left: -24px
+  position: absolute
 
 .relative
   position: relative
 
-div.not-selected.inventory-card-custom
+div.not-selected&.inventory-card-custom
   opacity: 0
 
 tr:hover div.not-selected.inventory-card-custom
-  opacity: 0.35
+  opacity: .35
 
 .diff-select
   min-width: 270px
 
 .diff-status
-  width: 42px
-  min-width: 35px
   font-size: 1.1em
+  min-width: 35px
+  width: 42px
 
 .with-hover
   color: var(--fg-secondary)
@@ -1251,15 +1253,15 @@ tr:hover div.not-selected.inventory-card-custom
 
 .dropdown-divider
   color: var(--fg-primary)
-  margin-top: 0.5rem
   margin-bottom: 0
+  margin-top: .5rem
 
 .accordion-body
-  padding: 0.75em
+  padding: .75em
 .accordion-item
   background-color: var(--bg-primary)
-  color: var(--fg-primary)
   border-color: var(--border-primary)
+  color: var(--fg-primary)
 .accordion-button
   background-color: var(--bg-third)
   color: var(--fg-secondary)
@@ -1289,8 +1291,8 @@ button.accordion-button:not(.collapsed)
   .main-container,
   .navbar-nav,
   .deck-container
-    min-width: 768px
     max-width: 100%
+    min-width: 768px
   .hof-cards-container
     max-width: 768px
   .cards-container,
@@ -1311,8 +1313,8 @@ button.accordion-button:not(.collapsed)
   .main-container,
   .navbar-nav,
   .deck-container
-    min-width: 768px
     max-width: 100%
+    min-width: 768px
   .hof-cards-container
     max-width: 768px
   .cards-container,
@@ -1330,11 +1332,11 @@ button.accordion-button:not(.collapsed)
 @media (min-width: 1200px) and (max-width: 1599px)
   .main-container,
   .navbar-nav
-    min-width: 95%
     max-width: 100%
+    min-width: 95%
   .deck-container
-    min-width: 1200px
     max-width: 1500px
+    min-width: 1200px
   .hof-cards-container
     max-width: 768px
   .cards-container,
@@ -1353,11 +1355,11 @@ button.accordion-button:not(.collapsed)
 @media (min-width: 1600px)
   .main-container,
   .navbar-nav
-    min-width: 1550px
     max-width: 1550px
+    min-width: 1550px
   .deck-container
-    min-width: 1500px
     max-width: 1500px
+    min-width: 1500px
   .hof-cards-container
     max-width: 768px
   .cards-container,

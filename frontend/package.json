@@ -4,7 +4,8 @@
   "scripts": {
     "start": "parcel serve index.html",
     "build": "parcel build index.html --no-cache",
-    "lint": "eslint \"src/**/*.{js,jsx}\""
+    "lint-css": "npx stylint \"src/assets/css/style.styl\"",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx}\""
   },
   "author": "Vadim Matveev",
   "license": "MIT",
@@ -26,6 +27,8 @@
     "parcel": "^2.7.0",
     "prettier": "^2.7.1",
     "process": "^0.11.10",
+    "stylelint": "^14.14.0",
+    "stylelint-stylus": "^0.17.0",
     "stylus": "^0.59.0"
   },
   "dependencies": {
