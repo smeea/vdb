@@ -175,7 +175,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
       <AutoSizer>
         {({ width, height }) => (
           <FixedSizeList
-            className="inventory-crypt-table"
+            className="history-crypt-table"
             height={height}
             width={width}
             itemCount={cardRows.length}
