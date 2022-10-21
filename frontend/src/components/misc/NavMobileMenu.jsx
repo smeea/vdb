@@ -53,7 +53,8 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                   </div>
                 </NavLink>
                 <NavLink
-                  to="/about"
+                  to="/"
+                  end
                   onClick={() => setShowMenu(false)}
                   className="nav-link px-2 py-1"
                 >

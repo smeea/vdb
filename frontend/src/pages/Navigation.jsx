@@ -81,7 +81,7 @@ const Navigation = () => {
           {username &&
             !isMobile &&
             location.pathname !== '/account' &&
-            location.pathname !== '/about' &&
+            location.pathname !== '/' &&
             location.pathname !== '/changelog' &&
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
@@ -123,7 +123,7 @@ const Navigation = () => {
               >
                 {username ? <PersonFill /> : 'Login'}
               </NavLink>
-              <NavLink to="/about" className="nav-link pe-2 ps-1">
+              <NavLink to="/" end className="nav-link pe-2 ps-1">
                 {isMobile ? <InfoCircleFill /> : 'About'}
               </NavLink>
             </>

@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-const Crypt = ({ lastDeckId }) => {
+const Crypt = () => {
   const {
     deckRouter,
     showCryptSearch,
@@ -17,6 +17,7 @@ const Crypt = ({ lastDeckId }) => {
     isMobile,
     isDesktop,
     activeDeck,
+    lastDeckId,
   } = useApp();
 
   const { cryptResults, setCryptResults, cryptCompare, setCryptCompare } =

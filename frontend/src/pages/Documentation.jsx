@@ -21,7 +21,7 @@ const Documentation = () => {
               <br />
               If something is not clear or you need additional information,
               please reach me by the contacts in the bottom of{' '}
-              <Link to="/about">About page</Link>
+              <Link to="/">About page</Link>
             </p>
 
             <div className="pt-3">

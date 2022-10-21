@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-const Library = ({ lastDeckId }) => {
+const Library = () => {
   const {
     deckRouter,
     showLibrarySearch,
@@ -17,6 +17,7 @@ const Library = ({ lastDeckId }) => {
     isMobile,
     isDesktop,
     activeDeck,
+    lastDeckId,
   } = useApp();
 
   const {
