@@ -1,7 +1,7 @@
 # FIX
 - Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
-- Inventory import - bad cards
+- Inventory import bad cards
 
 # FEATURES
 - Check TWD
@@ -13,7 +13,7 @@
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Inventory/deck export in excel to frontend
-- Refactor CSS - Tailwind?
+- Refactor CSS - Tailwind
 - Fetching data with react-router
 
 # IMPROVE TECHNOLOGY - BACKEND

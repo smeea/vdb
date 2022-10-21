@@ -99,7 +99,7 @@ const DiffCryptTable = ({
                       cardid={card.c.Id}
                       q={qFrom}
                       deckid={cardChange ? null : deckid}
-                      cardChange={cardChange ? cardChange : deckCardChange}
+                      cardChange={cardChange ?? deckCardChange}
                       inInventory={inInventory}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
@@ -113,7 +113,7 @@ const DiffCryptTable = ({
                     cardid={card.c.Id}
                     q={qFrom}
                     deckid={cardChange ? null : deckid}
-                    cardChange={cardChange ? cardChange : deckCardChange}
+                    cardChange={cardChange ?? deckCardChange}
                   />
                 </td>
               )}

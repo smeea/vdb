@@ -14,11 +14,11 @@ const DeckDiffButton = ({ deckid }) => {
       onClick={() => {
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
-        navigate(`/diff?from=${deckid}&to=${deckid}`);
+        navigate(`/diff/${deckid}/${deckid}`);
       }}
       title="Compare Decks"
       icon={<PlusSlashMinus />}
-      text="Compare Decks"
+      text="Compare"
     />
   );
 };

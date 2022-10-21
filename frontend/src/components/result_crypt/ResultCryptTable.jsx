@@ -19,14 +19,12 @@ import { useModalCardController } from 'hooks';
 
 const ResultCryptTable = ({
   resultCards,
-  inRecommendation,
-  isAuthor,
   placement,
   className,
-  crypt,
+  inRecommendation,
 }) => {
   const {
-    activeDeck,
+    deck,
     inventoryCrypt,
     usedCryptCards,
     addMode,
@@ -65,7 +63,7 @@ const ResultCryptTable = ({
   };
 
   const cardRows = resultCards.map((card, idx) => {
-    const inDeck = (crypt && crypt[card.Id] && crypt[card.Id].q) || 0;
+    const inDeck = deck?.crypt[card.Id]?.q || 0;
 
     let softUsedMax = 0;
     let hardUsedTotal = 0;
@@ -83,13 +81,11 @@ const ResultCryptTable = ({
     return (
       <React.Fragment key={card.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {(inRecommendation
-            ? isAuthor
-            : activeDeck.src === 'my' && addMode) && (
+          {(inRecommendation ? deck?.is_yours : deck?.is_yours && addMode) && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}
-                deckid={activeDeck.deckid}
+                deckid={deck.deckid}
                 card={card}
                 inDeck={inDeck}
               />

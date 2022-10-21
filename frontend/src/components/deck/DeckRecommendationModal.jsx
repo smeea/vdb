@@ -4,14 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import { ResultCryptTable, DeckRecommendationLibrary } from 'components';
 import { useApp } from 'context';
 
-const DeckRecommendationModal = ({
-  show,
-  handleClose,
-  crypt,
-  library,
-  isAuthor,
-  activeDeck,
-}) => {
+const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
   const { isNarrow, isMobile } = useApp();
 
   return (
@@ -39,12 +32,9 @@ const DeckRecommendationModal = ({
                 </div>
                 {crypt ? (
                   <ResultCryptTable
-                    isAuthor={isAuthor}
-                    inRecommendation={true}
-                    activeDeck={activeDeck}
                     resultCards={crypt}
                     className="search-crypt-table"
-                    crypt={activeDeck.crypt}
+                    inRecommendation={true}
                   />
                 ) : (
                   <div className="d-flex justify-content-center py-4 pb-md-0">
@@ -58,11 +48,7 @@ const DeckRecommendationModal = ({
                   <b>LIBRARY</b>
                 </div>
                 {library ? (
-                  <DeckRecommendationLibrary
-                    isAuthor={isAuthor}
-                    activeDeck={activeDeck}
-                    cards={library}
-                  />
+                  <DeckRecommendationLibrary cards={library} />
                 ) : (
                   <div className="d-flex justify-content-center py-4 pb-md-0">
                     {' '}

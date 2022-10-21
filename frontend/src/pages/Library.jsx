@@ -10,14 +10,12 @@ import { useApp, useSearchResults } from 'context';
 
 const Library = () => {
   const {
-    deckRouter,
     showLibrarySearch,
     addMode,
     toggleAddMode,
     isMobile,
     isDesktop,
-    activeDeck,
-    lastDeckId,
+    deck,
   } = useApp();
 
   const {
@@ -26,19 +24,6 @@ const Library = () => {
     libraryCompare,
     setLibraryCompare,
   } = useSearchResults();
-
-  let myActiveDeck;
-  if (isMobile) {
-    myActiveDeck = activeDeck;
-  } else {
-    myActiveDeck = {
-      src: 'my',
-      deckid: activeDeck.src == 'my' ? activeDeck.deckid : lastDeckId,
-    };
-  }
-
-  const deckData = deckRouter(myActiveDeck);
-  const deckid = myActiveDeck.deckid;
 
   const showSearchForm = useMemo(() => {
     return (
@@ -49,8 +34,8 @@ const Library = () => {
   }, [isMobile, isDesktop, addMode, showLibrarySearch, libraryResults]);
 
   const showToggleAddMode = useMemo(() => {
-    return deckid && libraryResults && !isMobile && !isDesktop;
-  }, [deckid, isMobile, isDesktop, libraryResults]);
+    return deck && libraryResults && !isMobile && !isDesktop;
+  }, [deck, isMobile, isDesktop, libraryResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showLibrarySearch));
 
@@ -61,11 +46,11 @@ const Library = () => {
           <Col
             md={!showSearchForm ? 5 : 1}
             lg={!showSearchForm ? 6 : 1}
-            xl={deckid && addMode ? 4 : 2}
+            xl={deck && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
-            {deckData && (isDesktop || (!isDesktop && !showSearchForm)) && (
-              <DeckSelectorAndDisplay deckData={deckData} />
+            {deck && (isDesktop || (!isDesktop && !showSearchForm)) && (
+              <DeckSelectorAndDisplay />
             )}
           </Col>
         )}
@@ -73,7 +58,7 @@ const Library = () => {
           <Col
             md={7}
             lg={6}
-            xl={deckid && addMode ? 5 : 6}
+            xl={deck && addMode ? 5 : 6}
             xxl={5}
             className="px-0 px-md-2 py-md-3 px-xl-3"
           >
@@ -84,8 +69,7 @@ const Library = () => {
                   inCompare={true}
                   cards={libraryCompare}
                   setCards={setLibraryCompare}
-                  library={deckData && deckData.library}
-                  activeDeck={myActiveDeck}
+                  isAuthor={deck.is_yours}
                 />
               </div>
             )}
@@ -93,8 +77,6 @@ const Library = () => {
               <ResultLibrary
                 cards={libraryResults}
                 setCards={setLibraryResults}
-                library={deckData && deckData.library}
-                activeDeck={myActiveDeck}
               />
             )}
           </Col>
@@ -102,7 +84,7 @@ const Library = () => {
         {showSearchForm && (
           <Col
             md={4}
-            xl={deckid && addMode ? 3 : 4}
+            xl={deck && addMode ? 3 : 4}
             xxl={3}
             className="p-1 p-md-3 pe-xl-0"
           >

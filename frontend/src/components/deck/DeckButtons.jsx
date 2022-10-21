@@ -22,8 +22,6 @@ import {
 import { useApp } from 'context';
 
 const DeckButtons = ({
-  deck,
-  src,
   isPublic,
   isAuthor,
   isBranches,
@@ -35,7 +33,7 @@ const DeckButtons = ({
   setShowRecommendation,
   handleClose,
 }) => {
-  const { playtest, inventoryMode, username, isNarrow } = useApp();
+  const { deck, playtest, inventoryMode, username, isNarrow } = useApp();
 
   return (
     <>
@@ -48,15 +46,14 @@ const DeckButtons = ({
               Object.keys(deck.library).some((cardid) => cardid > 110000)
             )) && (
             <>
-              {username && <DeckCloneButton deck={deck} src={src} />}
-              <DeckExportButton deck={deck} src={src} />
+              {username && <DeckCloneButton deck={deck} />}
+              <DeckExportButton deck={deck} />
               {isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}
               {isAuthor && !isPublic && <DeckBranchCreateButton deck={deck} />}
               {isAuthor && !isPublic && isBranches && (
                 <DeckBranchDeleteButton deck={deck} />
               )}
               {isAuthor && <DeckPublicButton deck={deck} />}
-
               <DeckDiffButton deckid={deck.deckid} />
               <DeckReviewButton deck={deck} />
               <DeckCopyUrlButton setShowQr={setShowQr} deck={deck} />

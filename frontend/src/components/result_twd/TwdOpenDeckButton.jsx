@@ -1,19 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PlayFill from 'assets/images/icons/play-fill.svg';
-import { useApp } from 'context';
 import { ButtonIconed } from 'components';
 
-const TwdOpenDeckButton = ({ deckid, inPda, inHistory, noText }) => {
-  const { setActiveDeck } = useApp();
+const TwdOpenDeckButton = ({ deckid, inHistory, noText }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setActiveDeck({
-      src: inPda ? 'shared' : 'twd',
-      deckid: deckid,
-    });
-    navigate(`/decks?id=${deckid}`);
+    navigate(`/decks/${deckid}`);
   };
 
   return (

@@ -15,7 +15,7 @@ import pdaDefaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 
 const Navigation = () => {
-  const { inventoryMode, toggleInventoryMode, isMobile, username, activeDeck } =
+  const { inventoryMode, toggleInventoryMode, isMobile, username, deck } =
     useApp();
 
   const {
@@ -55,12 +55,8 @@ const Navigation = () => {
       pdaUrl = `/pda?q=${encodeURIComponent(JSON.stringify(input))}`;
     }
   }
-  if (activeDeck.deckid) {
-    decksUrl = `/decks?id=${activeDeck.deckid}`;
-  }
-  if (quickCard) {
-    cardsUrl = `/cards/${quickCard}`;
-  }
+  if (deck?.deckid) decksUrl = `/decks/${deck.deckid}`;
+  if (quickCard) cardsUrl = `/cards/${quickCard}`;
 
   return (
     <Navbar

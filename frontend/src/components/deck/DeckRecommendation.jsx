@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { DeckRecommendationModal } from 'components';
 import { useApp } from 'context';
 
-const DeckRecommendation = ({ setShow, isAuthor, deck }) => {
+const DeckRecommendation = ({ setShow, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();
   const [showModal, setShowModal] = useState(true);
   const [crypt, setCrypt] = useState(undefined);
@@ -45,8 +45,6 @@ const DeckRecommendation = ({ setShow, isAuthor, deck }) => {
     <>
       {showModal && (
         <DeckRecommendationModal
-          isAuthor={isAuthor}
-          activeDeck={deck}
           handleClose={handleCloseModal}
           show={showModal}
           crypt={crypt}

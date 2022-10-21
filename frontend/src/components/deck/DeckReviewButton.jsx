@@ -58,7 +58,7 @@ const DeckReviewButton = ({ deck }) => {
       }}
       title="Review Deck"
       icon={<PencilSquare />}
-      text="Review Deck"
+      text="Review"
     />
   );
 };

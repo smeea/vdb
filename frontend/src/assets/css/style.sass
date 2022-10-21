@@ -52,7 +52,6 @@
     --icons-brightness: 85%
     --logo-brightness: 150%
 
-
 body
   background: var(--bg-primary)
   color: var(--fg-primary)
@@ -1225,18 +1224,17 @@ div.float-random
   position: fixed
   width: 100%
 
+tr:hover div.not-selected.inventory-card-custom
+  opacity: .35
+
 div.inventory-card-custom
   left: -24px
   position: absolute
+  &.not-selected
+    opacity: 0
 
 .relative
   position: relative
-
-div.not-selected.inventory-card-custom
-  opacity: 0
-
-tr:hover div.not-selected.inventory-card-custom
-  opacity: .35
 
 .diff-select
   min-width: 270px

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import At from 'assets/images/icons/at.svg';
@@ -33,13 +33,10 @@ import { useTags } from 'hooks';
 
 const Decks = () => {
   const {
+    deck,
+    setDeck,
     deckUpdate,
-    deckRouter,
-    activeDeck,
-    setActiveDeck,
     decks,
-    sharedDeck,
-    setSharedDeck,
     recentDecks,
     addRecentDeck,
     preconDecks,
@@ -59,23 +56,34 @@ const Decks = () => {
     parseDeckCards,
     playtest,
   } = useApp();
-
+  const navigate = useNavigate();
+  const { deckid } = useParams();
+  const { hash } = useLocation();
   const query = new URLSearchParams(useLocation().search);
+
+  // Redirect from old links
+  if (query.get('id')) navigate(`/decks/${query.get('id')}`);
+  if (hash && deckid !== 'deck') {
+    const name = query.get('name') ?? '';
+    const author = query.get('author') ?? '';
+    const description = query.get('description') ?? '';
+    const url = `/decks/deck?name=${name}&author=${author}&description=${description}${hash}`;
+    navigate(url);
+  }
+
   const [showDraw, setShowDraw] = useState(false);
   const [showQr, setShowQr] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
-  const { hash } = useLocation();
-  const navigate = useNavigate();
   const [selectFrom, setSelectFrom] = useState('precons');
   const [error, setError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
 
-  const getMissingCrypt = (deck) => {
+  const getMissingCrypt = (d) => {
     const crypt = {};
 
-    Object.keys(deck.crypt).map((card) => {
+    Object.keys(d.crypt).map((card) => {
       let softUsedMax = 0;
       if (usedCryptCards.soft[card]) {
         Object.keys(usedCryptCards.soft[card]).map((id) => {
@@ -92,23 +100,23 @@ const Decks = () => {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (!deck.inventory_type && deck.crypt[card].q > softUsedMax)
+      if (!d.inventory_type && d.crypt[card].q > softUsedMax)
         miss += deck.crypt[card].q - softUsedMax;
       if (inventoryCrypt[card]) miss -= inventoryCrypt[card].q;
 
       if (miss > 0) {
-        crypt[card] = { ...deck.crypt[card] };
-        crypt[card].q = miss > deck.crypt[card].q ? deck.crypt[card].q : miss;
+        crypt[card] = { ...d.crypt[card] };
+        crypt[card].q = miss > d.crypt[card].q ? d.crypt[card].q : miss;
       }
     });
 
     return crypt;
   };
 
-  const getMissingLibrary = (deck) => {
+  const getMissingLibrary = (d) => {
     const library = {};
 
-    Object.keys(deck.library).map((card) => {
+    Object.keys(d.library).map((card) => {
       let softUsedMax = 0;
       if (usedLibraryCards.soft[card]) {
         Object.keys(usedLibraryCards.soft[card]).map((id) => {
@@ -125,22 +133,21 @@ const Decks = () => {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (!deck.inventory_type && deck.library[card].q > softUsedMax)
-        miss += deck.library[card].q - softUsedMax;
+      if (!d.inventory_type && d.library[card].q > softUsedMax)
+        miss += d.library[card].q - softUsedMax;
       if (inventoryLibrary[card]) miss -= inventoryLibrary[card].q;
 
       if (miss > 0) {
-        library[card] = { ...deck.library[card] };
-        library[card].q =
-          miss > deck.library[card].q ? deck.library[card].q : miss;
+        library[card] = { ...d.library[card] };
+        library[card].q = miss > d.library[card].q ? d.library[card].q : miss;
       }
     });
 
     return library;
   };
 
-  const getDeck = (deckid) => {
-    const url = `${process.env.API_URL}deck/${deckid}`;
+  const getDeck = (id) => {
+    const url = `${process.env.API_URL}deck/${id}`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -158,7 +165,7 @@ const Decks = () => {
         data.crypt = cardsData.crypt;
         data.library = cardsData.library;
 
-        if (deckid.length !== 32 || data.public_parent) {
+        if (id.length !== 32 || data.public_parent) {
           data.tags = [];
           Object.values(useTags(data.crypt, data.library)).map((v) => {
             data.tags = data.tags.concat(v);
@@ -167,7 +174,7 @@ const Decks = () => {
 
         delete data.cards;
         addRecentDeck(data);
-        setSharedDeck({ [data.deckid]: data });
+        setDeck(data);
       })
       .catch((error) => {
         if (error.message == 400) {
@@ -178,44 +185,36 @@ const Decks = () => {
       });
   };
 
-  const toggleInventoryState = (deckid) => {
+  const toggleInventoryState = (id) => {
     if (!inventoryType) {
-      deckUpdate(deckid, 'inventory_type', 's');
+      deckUpdate(id, 'inventory_type', 's');
     } else if (inventoryType === 's') {
-      deckUpdate(deckid, 'inventory_type', 'h');
+      deckUpdate(id, 'inventory_type', 'h');
     } else if (inventoryType === 'h') {
-      deckUpdate(deckid, 'inventory_type', '');
+      deckUpdate(id, 'inventory_type', '');
     }
   };
 
-  let isPublic;
-  let isAuthor;
-  let isBranches;
-  let isFrozen;
-  let inventoryType;
-  let missingCrypt;
-  let missingLibrary;
+  const handleSelect = (e) => {
+    navigate(`/decks/${e.value}`);
+  };
 
-  if (deckRouter(activeDeck)) {
-    missingCrypt = getMissingCrypt(deckRouter(activeDeck));
-    missingLibrary = getMissingLibrary(deckRouter(activeDeck));
-    isPublic = Boolean(deckRouter(activeDeck).public_parent);
-    isAuthor = deckRouter(activeDeck).is_yours;
-    isFrozen = deckRouter(activeDeck).frozen;
-    isBranches =
-      deckRouter(activeDeck).master ||
-      (deckRouter(activeDeck).branches &&
-        deckRouter(activeDeck).branches.length > 0);
-    inventoryType = deckRouter(activeDeck).inventory_type;
-  }
+  // TODO define when getting deck to be readable from everywhere
+  const missingCrypt = deck ? getMissingCrypt(deck) : null;
+  const missingLibrary = deck ? getMissingLibrary(deck) : null;
+  const isPublic = Boolean(deck?.public_parent);
+  const isAuthor = deck?.is_yours;
+  const isFrozen = deck?.frozen;
+  const isBranches = deck?.master || deck?.branches?.length > 0;
+  const inventoryType = deck?.inventory_type;
 
   const allTagsOptions = useMemo(() => {
     const allTags = new Set();
 
     if (decks) {
-      Object.keys(decks).map((deckid) => {
-        if (decks[deckid].tags) {
-          decks[deckid].tags.map((tag) => {
+      Object.keys(decks).map((id) => {
+        if (decks[id].tags) {
+          decks[id].tags.map((tag) => {
             allTags.add(tag);
           });
         }
@@ -253,82 +252,53 @@ const Decks = () => {
           }
         });
 
-      const deck = {
-        deckid: 'deckInUrl',
-        name: query.get('name') ? query.get('name') : '',
-        author: query.get('author') ? query.get('author') : '',
-        description: query.get('description') ? query.get('description') : '',
+      setDeck({
+        deckid: 'deck',
+        name: query.get('name') ?? '',
+        author: query.get('author') ?? '',
+        description: query.get('description') ?? '',
         crypt: crypt,
         library: library,
-      };
-
-      setSharedDeck({ deckInUrl: deck });
-      setActiveDeck({ src: 'shared', deckid: 'deckInUrl' });
+      });
     }
   }, [hash, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (
-      !activeDeck.deckid &&
-      query.get('id') &&
-      cryptCardBase &&
-      libraryCardBase
-    ) {
-      if (query.get('id').length === 32) {
-        setActiveDeck({ src: 'shared', deckid: query.get('id') });
-        getDeck(query.get('id'));
-      } else if (query.get('id').includes(':')) {
-        setActiveDeck({ src: 'precons', deckid: query.get('id') });
-      } else {
-        setActiveDeck({ src: 'twd', deckid: query.get('id') });
-        getDeck(query.get('id'));
-      }
-    }
-
-    if (
-      query.get('id')?.includes(':') &&
-      !deckRouter({ src: 'precons', deckid: query.get('id') }) &&
-      Object.keys(preconDecks).length > 0
-    ) {
-      setError('NO DECK WITH THIS ID');
-    }
-
-    if (
-      activeDeck.deckid &&
-      activeDeck.deckid != query.get('id') &&
-      activeDeck.deckid != 'deckInUrl'
-    ) {
-      navigate(`/decks?id=${activeDeck.deckid}`);
-    }
-
-    if (
+      decks &&
+      preconDecks &&
       cryptCardBase &&
       libraryCardBase &&
-      !error &&
-      (activeDeck.src === 'twd' || activeDeck.src === 'shared') &&
-      !(sharedDeck && sharedDeck[activeDeck.deckid])
+      deckid &&
+      (deck?.deckid !== deckid || !deck)
     ) {
-      getDeck(activeDeck.deckid);
+      if (decks[deckid]) {
+        setDeck(decks[deckid]);
+      } else if (deckid.includes(':')) {
+        if (preconDecks[deckid]) {
+          setDeck(preconDecks[deckid]);
+        } else {
+          setError('NO DECK WITH THIS ID');
+        }
+      } else {
+        getDeck(deckid);
+      }
     }
-  }, [query, activeDeck, preconDecks, cryptCardBase, libraryCardBase]);
+  }, [deckid, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (activeDeck.src == 'my' || activeDeck.src == 'precons') {
-      setSelectFrom(activeDeck.src);
-    } else if (recentDecks.length) {
-      setSelectFrom('recent');
-    } else {
+    if (deckid?.includes(':')) {
       setSelectFrom('precons');
+    } else if (decks && decks[deckid]) {
+      setSelectFrom('my');
+    } else {
+      setSelectFrom('recent');
     }
+  }, [deckid, decks]);
 
-    if (decks && decks[activeDeck.deckid] && activeDeck.src != 'my') {
-      setActiveDeck({ src: 'my', deckid: activeDeck.deckid });
-    }
-
-    if (deckRouter(activeDeck)) {
-      setError(false);
-    }
-  }, [activeDeck, decks]);
+  useEffect(() => {
+    if (deck) setError(false);
+  }, [deck]);
 
   return (
     <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
@@ -341,11 +311,9 @@ const Decks = () => {
                 <Col className="px-0">
                   <div
                     className={
-                      inventoryMode
+                      inventoryMode || !isMobile
                         ? 'd-flex'
-                        : isMobile
-                        ? 'd-flex justify-content-between'
-                        : 'd-flex'
+                        : 'd-flex justify-content-between'
                     }
                   >
                     <div
@@ -354,20 +322,32 @@ const Decks = () => {
                       }
                     >
                       {selectFrom == 'my' && decks ? (
-                        <DeckSelectMy deckid={activeDeck.deckid} />
+                        <DeckSelectMy
+                          handleSelect={handleSelect}
+                          deckid={deck?.deckid}
+                        />
                       ) : selectFrom == 'recent' ? (
-                        <DeckSelectRecent deckid={activeDeck.deckid} />
+                        <DeckSelectRecent
+                          handleSelect={handleSelect}
+                          deckid={deck?.deckid}
+                        />
                       ) : (
-                        <DeckSelectPrecon deckid={activeDeck.deckid} />
+                        <DeckSelectPrecon
+                          handleSelect={handleSelect}
+                          deckid={deck?.deckid}
+                        />
                       )}
                     </div>
                     {selectFrom == 'my' && decks && isBranches && (
                       <div className="ps-1 w-25">
-                        <DeckBranchSelect deckid={activeDeck.deckid} />
+                        <DeckBranchSelect
+                          /* TODO handler */
+                          deckid={deck.deckid}
+                        />
                       </div>
                     )}
                     <div className="d-flex">
-                      {inventoryMode && isAuthor && deckRouter(activeDeck) && (
+                      {inventoryMode && isAuthor && deck && (
                         <div className="d-flex ps-1">
                           <Button
                             title={`Inventory Type: ${
@@ -378,9 +358,7 @@ const Decks = () => {
                                 : 'FIXED\nUse unique copies of cards from Inventory'
                             }`}
                             variant="primary"
-                            onClick={() =>
-                              toggleInventoryState(activeDeck.deckid)
-                            }
+                            onClick={() => toggleInventoryState(deck.deckid)}
                           >
                             <div className="d-flex align-items-center">
                               {!inventoryType && <At />}
@@ -456,7 +434,7 @@ const Decks = () => {
                           </Button>
                         </div>
                       )}
-                      {isMobile && deckRouter(activeDeck) && (
+                      {isMobile && deck && (
                         <div className="ps-1 py-1">
                           <Button
                             variant="primary"
@@ -478,8 +456,7 @@ const Decks = () => {
               </Row>
             </Col>
             <Col md={7} className="px-0 px-md-2">
-              {((showInfo && deckRouter(activeDeck)) ||
-                (!isMobile && deckRouter(activeDeck))) && (
+              {((showInfo && deck) || (!isMobile && deck)) && (
                 <>
                   <Row className="mx-0 pb-sm-2">
                     <Col
@@ -487,18 +464,18 @@ const Decks = () => {
                       className="px-0 ps-md-0 pe-md-1"
                     >
                       <DeckChangeName
-                        deck={deckRouter(activeDeck)}
+                        deck={deck}
                         isAuthor={isAuthor}
                         isPublic={isPublic}
                         isFrozen={isFrozen}
-                        nonEditable={deckRouter(activeDeck).non_editable}
+                        nonEditable={deck.non_editable}
                       />
                     </Col>
                     {isBranches && (
                       <Col md={2} className={isMobile ? 'px-0 pt-05' : 'px-1'}>
                         <DeckChangeBranchName
-                          branchName={deckRouter(activeDeck).branchName}
-                          deckid={activeDeck.deckid}
+                          branchName={deck.branchName}
+                          deckid={deck.deckid}
                           isAuthor={isAuthor}
                           isPublic={isPublic}
                         />
@@ -513,8 +490,8 @@ const Decks = () => {
                       }
                     >
                       <DeckChangeAuthor
-                        author={deckRouter(activeDeck).author}
-                        deckid={activeDeck.deckid}
+                        author={deck.author}
+                        deckid={deck.deckid}
                         isAuthor={isAuthor}
                         isPublic={isPublic}
                       />
@@ -523,8 +500,8 @@ const Decks = () => {
                   <Row className="mx-0">
                     <Col className={isMobile ? 'px-0 pt-05' : 'px-0'}>
                       <DeckChangeDescription
-                        description={deckRouter(activeDeck).description}
-                        deckid={activeDeck.deckid}
+                        description={deck.description}
+                        deckid={deck.deckid}
                         isAuthor={isAuthor}
                         isPublic={isPublic}
                         folded={isMobile ? false : foldedDescription}
@@ -533,13 +510,12 @@ const Decks = () => {
                     </Col>
                     {foldedDescription &&
                       !isMobile &&
-                      (deckRouter(activeDeck)?.tags?.length > 0 ||
-                        isAuthor) && (
+                      (deck?.tags?.length > 0 || isAuthor) && (
                         <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
                           <DeckTags
                             allTagsOptions={allTagsOptions}
-                            deckid={deckRouter(activeDeck).deckid}
-                            tags={deckRouter(activeDeck)?.tags}
+                            deckid={deck.deckid}
+                            tags={deck?.tags}
                             bordered={true}
                             isAuthor={isAuthor}
                             isPublic={isPublic}
@@ -548,12 +524,12 @@ const Decks = () => {
                       )}
                   </Row>
                   {(!foldedDescription || isMobile) &&
-                    (deckRouter(activeDeck)?.tags?.length > 0 || isAuthor) && (
+                    (deck?.tags?.length > 0 || isAuthor) && (
                       <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
                         <DeckTags
                           allTagsOptions={allTagsOptions}
-                          deckid={deckRouter(activeDeck).deckid}
-                          tags={deckRouter(activeDeck)?.tags}
+                          deckid={deck.deckid}
+                          tags={deck?.tags}
                           bordered={true}
                           isAuthor={isAuthor}
                           isPublic={isPublic}
@@ -573,16 +549,12 @@ const Decks = () => {
               </Col>
             </Row>
           )}
-          {deckRouter(activeDeck) && (
+          {deck && (
             <Row className="pt-md-2">
               {playtest ||
               !(
-                Object.keys(deckRouter(activeDeck).crypt).some(
-                  (cardid) => cardid > 210000
-                ) ||
-                Object.keys(deckRouter(activeDeck).library).some(
-                  (cardid) => cardid > 110000
-                )
+                Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
+                Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
                   <Col
@@ -590,8 +562,8 @@ const Decks = () => {
                     className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0"
                   >
                     <DeckCrypt
-                      deckid={activeDeck.deckid}
-                      cards={deckRouter(activeDeck).crypt}
+                      deckid={deck.deckid}
+                      cards={deck.crypt}
                       isAuthor={isAuthor && !isFrozen}
                       isPublic={isPublic}
                     />
@@ -602,8 +574,8 @@ const Decks = () => {
                   >
                     <DeckLibrary
                       inDeckTab={true}
-                      deckid={activeDeck.deckid}
-                      cards={deckRouter(activeDeck).library}
+                      deckid={deck.deckid}
+                      cards={deck.library}
                       isAuthor={isAuthor && !isFrozen}
                       isPublic={isPublic}
                     />
@@ -626,8 +598,6 @@ const Decks = () => {
                 isAuthor={isAuthor}
                 isPublic={isPublic}
                 isBranches={isBranches}
-                deck={deckRouter(activeDeck)}
-                src={activeDeck.src}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
@@ -660,25 +630,22 @@ const Decks = () => {
         </Row>
       )}
 
-      {username &&
-        decks &&
-        Object.keys(decks).length == 0 &&
-        !activeDeck.deckid && (
-          <Row className="align-items-center justify-content-center p-3 vh-70">
-            <Col xs={12} md={8} lg={7} xl={6}>
-              <div className="text-align-center blue bold py-2">
-                You do not have any decks in your collection yet
-              </div>
-              <div className="text-align-center blue bold py-2">
-                Start by creating new one, import from Lackey / Amaranth / Text
-                or browse official preconstructed decks
-              </div>
-              <div className="d-flex justify-content-center pt-3">
-                <DeckImport isOnlyNew={true} />
-              </div>
-            </Col>
-          </Row>
-        )}
+      {username && decks && Object.keys(decks).length == 0 && !deck?.deckid && (
+        <Row className="align-items-center justify-content-center p-3 vh-70">
+          <Col xs={12} md={8} lg={7} xl={6}>
+            <div className="text-align-center blue bold py-2">
+              You do not have any decks in your collection yet
+            </div>
+            <div className="text-align-center blue bold py-2">
+              Start by creating new one, import from Lackey / Amaranth / Text or
+              browse official preconstructed decks
+            </div>
+            <div className="d-flex justify-content-center pt-3">
+              <DeckImport isOnlyNew={true} />
+            </div>
+          </Col>
+        </Row>
+      )}
 
       {showFloatingButtons && (
         <div
@@ -708,8 +675,6 @@ const Decks = () => {
                 isAuthor={isAuthor}
                 isPublic={isPublic}
                 isBranches={isBranches}
-                deck={deckRouter(activeDeck)}
-                src={activeDeck.src}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
@@ -735,23 +700,15 @@ const Decks = () => {
           allTagsOptions={allTagsOptions}
         />
       )}
-      {showDraw && (
-        <DeckDraw setShow={setShowDraw} deck={deckRouter(activeDeck)} />
-      )}
+      {showDraw && <DeckDraw setShow={setShowDraw} deck={deck} />}
       {showRecommendation && (
         <DeckRecommendation
           isAuthor={isAuthor}
-          deck={deckRouter(activeDeck)}
+          deck={deck}
           setShow={setShowRecommendation}
         />
       )}
-      {showQr && (
-        <DeckQrModal
-          show={showQr}
-          setShow={setShowQr}
-          deck={deckRouter(activeDeck)}
-        />
-      )}
+      {showQr && <DeckQrModal show={showQr} setShow={setShowQr} deck={deck} />}
     </Container>
   );
 };

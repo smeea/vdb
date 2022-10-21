@@ -7,19 +7,18 @@ import {
   DeckMissingButton,
 } from 'components';
 
-const DiffButtons = ({
-  deck,
-  toQuery,
-  fromQuery,
-  missingCrypt,
-  missingLibrary,
-}) => {
+const DiffButtons = ({ deck, deckTo, missingCrypt, missingLibrary }) => {
   return (
     <Stack gap={1}>
       {deck && (
         <>
           <DiffBackButton deckid={deck.deckid} />
-          <DiffCopyUrlButton fromQuery={fromQuery} toQuery={toQuery} />
+          {deckTo && (
+            <DiffCopyUrlButton
+              deckFromId={deck.deckid}
+              deckToId={deckTo.deckid}
+            />
+          )}
           <DeckProxyButton
             deck={deck}
             missingCrypt={missingCrypt}

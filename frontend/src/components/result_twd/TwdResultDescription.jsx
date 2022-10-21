@@ -39,31 +39,37 @@ const TwdResultDescription = ({ deck }) => {
         <tbody>
           <tr>
             <td className="blue">
-              {isMobile ?
-               <div className="d-flex align-items-center"><CalendarEvent /></div>
-               :
-               <b>Date:</b>
-              }
+              {isMobile ? (
+                <div className="d-flex align-items-center">
+                  <CalendarEvent />
+                </div>
+              ) : (
+                <b>Date:</b>
+              )}
             </td>
             <td className="ps-2">{deck['creation_date']}</td>
           </tr>
           <tr>
             <td className="blue">
-              {isMobile ?
-               <div className="d-flex align-items-center"><TrophyFill /></div>
-               :
-               <b>Event:</b>
-              }
+              {isMobile ? (
+                <div className="d-flex align-items-center">
+                  <TrophyFill />
+                </div>
+              ) : (
+                <b>Event:</b>
+              )}
             </td>
             <td className="ps-2">{deck['event']}</td>
           </tr>
           <tr>
             <td className="blue">
-              {isMobile ?
-               <div className="d-flex align-items-center"><GeoAltFill /></div>
-               :
-               <b>Location:</b>
-              }
+              {isMobile ? (
+                <div className="d-flex align-items-center">
+                  <GeoAltFill />
+                </div>
+              ) : (
+                <b>Location:</b>
+              )}
             </td>
             <td className="ps-2">
               <div
@@ -76,11 +82,13 @@ const TwdResultDescription = ({ deck }) => {
           </tr>
           <tr>
             <td className="blue">
-              {isMobile ?
-               <div className="d-flex align-items-center"><PersonFill /></div>
-               :
-               <b>Player:</b>
-              }
+              {isMobile ? (
+                <div className="d-flex align-items-center">
+                  <PersonFill />
+                </div>
+              ) : (
+                <b>Player:</b>
+              )}
             </td>
             <td className="ps-2">
               <div
@@ -93,11 +101,13 @@ const TwdResultDescription = ({ deck }) => {
           </tr>
           <tr>
             <td className="blue">
-              {isMobile ?
-               <div className="d-flex align-items-center"><TagFill /></div>
-               :
-               <b>Deck:</b>
-              }
+              {isMobile ? (
+                <div className="d-flex align-items-center">
+                  <TagFill />
+                </div>
+              ) : (
+                <b>Deck:</b>
+              )}
             </td>
             <td className="ps-2">{deck['name']}</td>
           </tr>
@@ -129,7 +139,7 @@ const TwdResultDescription = ({ deck }) => {
           {Description}
           <Stack gap={1} className="py-2">
             <TwdOpenDeckButton deckid={deck['deckid']} />
-            {username && <DeckCloneButton deck={deck} src="twd" inTwd />}
+            {username && <DeckCloneButton deck={deck} noRedirect />}
           </Stack>
         </>
       ) : (

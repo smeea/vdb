@@ -5,8 +5,8 @@ import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import At from 'assets/images/icons/at.svg';
 import { useApp } from 'context';
 
-const DeckSelectMy = (props) => {
-  const { inventoryMode, setActiveDeck, decks, isMobile } = useApp();
+const DeckSelectMy = ({ deckid, handleSelect }) => {
+  const { inventoryMode, decks, isMobile } = useApp();
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
@@ -69,12 +69,12 @@ const DeckSelectMy = (props) => {
   };
 
   const getValue = () => {
-    if (decks[props.deckid]) {
+    if (decks[deckid]) {
       const v = options.find((obj) => {
-        if (decks[props.deckid].master) {
-          return obj.value === decks[props.deckid].master;
+        if (decks[deckid].master) {
+          return obj.value === decks[deckid].master;
         } else {
-          return obj.value === props.deckid;
+          return obj.value === deckid;
         }
       });
 
@@ -82,23 +82,19 @@ const DeckSelectMy = (props) => {
         return v;
       } else {
         return {
-          value: props.deckid,
+          value: deckid,
           label: (
             <div className="d-flex justify-content-between align-items-center">
-              <div className="d-inline trimmed">
-                {decks[props.deckid]['name']}
-              </div>
+              <div className="d-inline trimmed">{decks[deckid]['name']}</div>
               <div className="d-flex align-items-center ps-2 small">
                 {inventoryMode && (
                   <div className="pe-2">
-                    {decks[props.deckid].inventory_type == 's' && <Shuffle />}
-                    {decks[props.deckid].inventory_type == 'h' && (
-                      <PinAngleFill />
-                    )}
-                    {!decks[props.deckid].inventory_type && <At />}
+                    {decks[deckid].inventory_type == 's' && <Shuffle />}
+                    {decks[deckid].inventory_type == 'h' && <PinAngleFill />}
+                    {!decks[deckid].inventory_type && <At />}
                   </div>
                 )}
-                {new Date(decks[props.deckid]['timestamp'])
+                {new Date(decks[deckid]['timestamp'])
                   .toISOString()
                   .slice(0, 10)}
               </div>
@@ -119,11 +115,7 @@ const DeckSelectMy = (props) => {
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
       value={getValue()}
-      onChange={(e) => {
-        props.setActiveDeck
-          ? props.setActiveDeck({ src: 'my', deckid: e.value })
-          : setActiveDeck({ src: 'my', deckid: e.value });
-      }}
+      onChange={handleSelect}
     />
   );
 };

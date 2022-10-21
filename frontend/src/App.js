@@ -56,9 +56,13 @@ const App = () => {
           }
         />
         <Route path="/account" element={<Account />} />
-        <Route path="/diff" element={<Diff />} />
+        <Route path="/diff" element={<Diff />}>
+          <Route path="/diff/:deckidFrom/:deckidTo" element={<Diff />} />
+        </Route>
         <Route path="/inventory" element={<Inventory />} />
-        <Route path="/decks" element={<Decks />} />
+        <Route path="/decks" element={<Decks />}>
+          <Route path=":deckid" element={<Decks />} />
+        </Route>
         <Route path="/pda" element={<Pda />} />
         <Route path="/review" element={<Review />} />
         <Route path="/twd" element={<Twd />} />

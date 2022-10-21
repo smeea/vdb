@@ -9,7 +9,7 @@ import { librarySort, getCardsGroupedBy } from 'utils';
 import { useModalCardController } from 'hooks';
 import { GROUPED_TYPE, TYPE } from 'utils/constants';
 
-const DeckRecommendationLibrary = ({ cards, activeDeck, isAuthor }) => {
+const DeckRecommendationLibrary = ({ cards }) => {
   const { setShowFloatingButtons } = useApp();
 
   const sortedLibrary = librarySort(cards, GROUPED_TYPE);
@@ -37,12 +37,8 @@ const DeckRecommendationLibrary = ({ cards, activeDeck, isAuthor }) => {
             <ResultLibraryType cardtype={cardtype} total={0} />
           </div>
           <DeckRecommendationLibraryTable
-            className="deck-library-table"
             handleModalCardOpen={handleModalCardOpen}
-            activeDeck={activeDeck}
-            library={activeDeck.library}
             cards={libraryByType[cardtype]}
-            isAuthor={isAuthor}
           />
         </div>
       ))}

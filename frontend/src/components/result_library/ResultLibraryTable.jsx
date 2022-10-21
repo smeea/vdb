@@ -19,9 +19,9 @@ import { getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const ResultLibraryTable = ({ resultCards, library, placement }) => {
+const ResultLibraryTable = ({ resultCards, placement }) => {
   const {
-    activeDeck,
+    deck,
     inventoryLibrary,
     usedLibraryCards,
     addMode,
@@ -51,7 +51,7 @@ const ResultLibraryTable = ({ resultCards, library, placement }) => {
   };
 
   const cardRows = resultCards.map((card, idx) => {
-    const inDeck = (library && library[card.Id] && library[card.Id].q) || 0;
+    const inDeck = deck?.library[card.Id]?.q || 0;
 
     let softUsedMax = 0;
     let hardUsedTotal = 0;
@@ -69,11 +69,11 @@ const ResultLibraryTable = ({ resultCards, library, placement }) => {
     return (
       <React.Fragment key={card.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {activeDeck.src === 'my' && addMode && (
+          {deck?.is_yours && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}
-                deckid={activeDeck.deckid}
+                deckid={deck.deckid}
                 card={card}
                 inDeck={inDeck}
               />

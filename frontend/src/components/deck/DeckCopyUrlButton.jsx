@@ -95,7 +95,7 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
 
   const ButtonOptions = (
     <>
-      {deck.deckid !== 'deckInUrl' && (
+      {deck.deckid !== 'deck' && (
         <>
           <Dropdown.Item
             onClick={handleStandardButton}
@@ -111,7 +111,7 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
           </Dropdown.Item>
         </>
       )}
-      {(deck.deckid.length === 32 || deck.deckid === 'deckInUrl') && (
+      {(deck.deckid.length === 32 || deck.deckid === 'deck') && (
         <>
           <Dropdown.Divider />
           <Dropdown.Header>Non-modifiable</Dropdown.Header>
@@ -161,7 +161,7 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
           .replace(/,/g, '%2C')
       );
 
-    const url = `${process.env.ROOT_URL}decks?${info
+    const url = `${process.env.ROOT_URL}decks/deck?${info
       .toString()
       .replace(/,/g, '&')}#${cards
       .toString()

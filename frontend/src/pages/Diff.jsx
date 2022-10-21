@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
   Modal,
   Button,
@@ -28,12 +28,8 @@ import { useApp } from 'context';
 
 const Diff = () => {
   const {
-    inventoryMode,
-    deckRouter,
-    activeDeck,
-    setActiveDeck,
-    sharedDeck,
-    setSharedDeck,
+    deck,
+    setDeck,
     decks,
     recentDecks,
     addRecentDeck,
@@ -41,6 +37,7 @@ const Diff = () => {
     parseDeckCards,
     cryptCardBase,
     libraryCardBase,
+    inventoryMode,
     username,
     isMobile,
     showFloatingButtons,
@@ -48,98 +45,52 @@ const Diff = () => {
     showMenuButtons,
     setShowMenuButtons,
   } = useApp();
-
-  const query = new URLSearchParams(useLocation().search);
-  const fromQuery = query.get('from');
-  const toQuery = query.get('to');
-
-  const [deckErrorFrom, setDeckErrorFrom] = useState(false);
-  const [deckErrorTo, setDeckErrorTo] = useState(false);
+  // const query = new URLSearchParams(useLocation().search);
   const navigate = useNavigate();
+  const { deckidFrom, deckidTo } = useParams();
 
+  const [errorFrom, setErrorFrom] = useState(false);
+  const [errorTo, setErrorTo] = useState(false);
   const [selectFrom, setSelectFrom] = useState('from-my');
   const [selectTo, setSelectTo] = useState('to-my');
+  const [urlFrom, setUrlFrom] = useState('');
+  const [urlTo, setUrlTo] = useState('');
+  const [deckTo, setDeckTo] = useState();
 
-  const [formFrom, setFormFrom] = useState('');
-  const [formTo, setFormTo] = useState('');
-  const [secondaryDeck, setSecondaryDeck] = useState({
-    src: null,
-    deckid: null,
-  });
-  const [sharedDeckTo, setSharedDeckTo] = useState(undefined);
-
-  const deckToRouter = (pointer) => {
-    if (pointer) {
-      switch (pointer['src']) {
-        case 'my':
-          return decks && decks[pointer['deckid']];
-        case 'precons':
-          return preconDecks && preconDecks[pointer['deckid']];
-        case 'shared':
-        case 'twd':
-          return sharedDeckTo && sharedDeckTo[pointer['deckid']];
-      }
+  const handleUrlChange = (e) => {
+    if (e.taret.name === 'from') {
+      setUrlFrom(e.target.value);
+    } else {
+      setUrlTo(e.target.value);
     }
   };
 
-  const handleFormChange = (e) => {
-    switch (e.target.name) {
-      case 'from':
-        setFormFrom(e.target.value);
-        break;
-      case 'to':
-        setFormTo(e.target.value);
-        break;
-    }
-  };
+  const handleUrlSubmit = (e) => {
+    e.preventDefault();
 
-  const handleSubmit = (e) => {
-    event.preventDefault();
-
-    switch (e.target.name) {
-      case 'from':
-        let deckFromId = formFrom;
-        if (formFrom.includes(`${process.env.ROOT_URL}decks?id=`)) {
-          deckFromId = formFrom.replace(`${process.env.ROOT_URL}decks?id=`, '');
-        }
-        setActiveDeck({ src: null, deckid: null });
-        navigate(`/diff?from=${deckFromId}&to=${toQuery}`);
-        break;
-
-      case 'to':
-        let deckToId = formTo;
-        if (formTo.includes(`${process.env.ROOT_URL}decks?id=`)) {
-          deckToId = formTo.replace(`${process.env.ROOT_URL}decks?id=`, '');
-        }
-        setSecondaryDeck({ src: null, deckid: null });
-        navigate(`/diff?from=${fromQuery}&to=${deckToId}`);
-        break;
+    let newId;
+    if (e.taret.name === 'from') {
+      newId = urlFrom.replace(`${process.env.ROOT_URL}decks/`, '');
+      navigate(`/diff/${newId}/${deckidTo}`);
+    } else {
+      newId = urlTo.replace(`${process.env.ROOT_URL}decks/`, '');
+      navigate(`/diff/${deckidFrom}/${newId}`);
     }
   };
 
   const handleSwap = () => {
-    let deckFromId = formFrom;
-    if (formFrom.includes(`${process.env.ROOT_URL}decks?id=`)) {
-      deckFromId = formFrom.replace(`${process.env.ROOT_URL}decks?id=`, '');
-    }
-    let deckToId = formTo;
-    if (formTo.includes(`${process.env.ROOT_URL}decks?id=`)) {
-      deckToId = formTo.replace(`${process.env.ROOT_URL}decks?id=`, '');
-    }
-    setActiveDeck({ src: null, deckid: null });
-    setSecondaryDeck({ src: null, deckid: null });
-    navigate(`/diff?from=${deckToId}&to=${deckFromId}`);
+    navigate(`/diff/${deckidTo}/${deckidFrom}`);
   };
 
-  const getDeck = (deckid, setDeck, setError) => {
-    const url = `${process.env.API_URL}deck/${deckid}`;
+  const getDeck = (id, setD, setE) => {
+    const url = `${process.env.API_URL}deck/${id}`;
     const options = {
       method: 'GET',
       mode: 'cors',
       credentials: 'include',
     };
 
-    setError(false);
+    setE(false);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
@@ -152,151 +103,132 @@ const Diff = () => {
 
         delete data.cards;
         addRecentDeck(data);
-        setDeck({ [data.deckid]: data });
+        setD(data);
       })
       .catch((error) => {
         if (error.message == 400) {
-          setError('NO DECK WITH THIS ID');
+          setE('NO DECK WITH THIS ID');
         } else {
-          setError('CONNECTION PROBLEM');
+          setE('CONNECTION PROBLEM');
         }
       });
   };
 
-  let isPublic;
-  let isAuthor;
-  let isBranchesFrom;
-  let isBranchesTo;
-  if (deckRouter(activeDeck)) {
-    isPublic = Boolean(deckRouter(activeDeck).public_parent);
-    isAuthor = deckRouter(activeDeck).is_yours;
-    isBranchesFrom =
-      deckRouter(activeDeck).master ||
-      (deckRouter(activeDeck).branches &&
-        deckRouter(activeDeck).branches.length > 0);
-  }
-  if (deckToRouter(secondaryDeck)) {
-    isBranchesTo =
-      deckToRouter(secondaryDeck).master ||
-      (deckToRouter(secondaryDeck).branches &&
-        deckToRouter(secondaryDeck).branches.length > 0);
-  }
+  const handleSelectFrom = (e) => {
+    navigate(`/diff/${e.value}/${deckidTo}`);
+  };
+
+  const handleSelectTo = (e) => {
+    navigate(`/diff/${deckidFrom}/${e.value}`);
+  };
+
+  const isPublic = Boolean(deck?.public_parent);
+  const isAuthor = deck?.is_yours;
+  const isBranchesFrom = deck?.master || deck?.branches?.length > 0;
+  const isBranchesTo = deckTo?.master || deckTo?.branches?.length > 0;
 
   useEffect(() => {
-    setFormFrom(fromQuery);
-
-    if (!activeDeck.deckid && fromQuery && cryptCardBase && libraryCardBase) {
-      if (fromQuery.length == 32) {
-        setActiveDeck({ src: 'shared', deckid: fromQuery });
-        getDeck(fromQuery, setSharedDeck, setDeckErrorFrom);
-      } else if (fromQuery.includes(':')) {
-        setActiveDeck({ src: 'precons', deckid: fromQuery });
-      } else {
-        setActiveDeck({ src: 'twd', deckid: fromQuery });
-        getDeck(fromQuery, setSharedDeck, setDeckErrorFrom);
-      }
-    }
-
-    if (activeDeck.deckid && activeDeck.deckid != fromQuery) {
-      navigate(`/diff?from=${activeDeck.deckid}&to=${toQuery}`);
-    }
-
     if (
+      decks &&
+      preconDecks &&
       cryptCardBase &&
       libraryCardBase &&
-      (activeDeck.src === 'twd' || activeDeck.src === 'shared') &&
-      !(sharedDeck && sharedDeck[activeDeck.deckid])
+      deckidFrom &&
+      (deck?.deckid !== deckidFrom || !deck)
     ) {
-      getDeck(activeDeck.deckid, setSharedDeck, setDeckErrorFrom);
+      if (decks[deckidFrom]) {
+        setDeck(decks[deckidFrom]);
+      } else if (deckidFrom.includes(':')) {
+        if (preconDecks[deckidFrom]) {
+          setDeck(preconDecks[deckidFrom]);
+        } else {
+          setErrorFrom('NO DECK WITH THIS ID');
+        }
+      } else {
+        getDeck(deckidFrom, setDeck, setErrorFrom);
+      }
     }
-  }, [fromQuery, activeDeck, cryptCardBase, libraryCardBase]);
+  }, [deckidFrom, decks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (activeDeck.src == 'my' || activeDeck.src == 'precons') {
-      setSelectFrom(`from-${activeDeck.src}`);
+    if (deckidFrom?.includes(':')) {
+      setSelectFrom('from-precons');
+    } else if (decks && decks[deckidFrom]) {
+      setSelectFrom('from-my');
     } else {
       setSelectFrom('from-recent');
     }
 
-    if (decks && decks[activeDeck.deckid] && activeDeck.src != 'my') {
-      setActiveDeck({ src: 'my', deckid: activeDeck.deckid });
-    }
-
-    if (deckRouter(activeDeck)) setDeckErrorFrom(false);
-  }, [activeDeck, decks]);
+    if (deck) setErrorFrom(false);
+  }, [deckidFrom, deck, decks]);
 
   useEffect(() => {
-    setFormTo(toQuery);
+    if (deck) setErrorFrom(false);
+  }, [deck]);
 
-    if (!secondaryDeck.deckid && toQuery && cryptCardBase && libraryCardBase) {
-      if (toQuery.length == 32) {
-        setSecondaryDeck({ src: 'shared', deckid: toQuery });
-        getDeck(toQuery, setSharedDeckTo, setDeckErrorTo);
-      } else if (toQuery.includes(':')) {
-        setSecondaryDeck({ src: 'precons', deckid: toQuery });
-      } else {
-        setSecondaryDeck({ src: 'twd', deckid: toQuery });
-        getDeck(toQuery, setSharedDeckTo, setDeckErrorTo);
-      }
-    }
-
-    if (secondaryDeck.deckid && secondaryDeck.deckid != toQuery)
-      navigate(`/diff?from=${fromQuery}&to=${secondaryDeck.deckid}`);
-
+  useEffect(() => {
     if (
+      decks &&
+      preconDecks &&
       cryptCardBase &&
       libraryCardBase &&
-      (secondaryDeck.src === 'twd' || secondaryDeck.src === 'shared') &&
-      !(sharedDeckTo && sharedDeckTo[secondaryDeck.deckid])
+      deckidTo &&
+      (deckTo?.deckid !== deckidTo || !deckTo)
     ) {
-      getDeck(secondaryDeck.deckid, setSharedDeckTo, setDeckErrorTo);
+      if (decks[deckidTo]) {
+        setDeckTo(decks[deckidTo]);
+      } else if (deckidTo.includes(':')) {
+        if (preconDecks[deckidTo]) {
+          setDeckTo(preconDecks[deckidTo]);
+        } else {
+          setErrorTo('NO DECK WITH THIS ID');
+        }
+      } else {
+        getDeck(deckidTo, setDeckTo, setErrorTo);
+      }
     }
-  }, [toQuery, secondaryDeck, cryptCardBase, libraryCardBase]);
+  }, [deckidTo, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (secondaryDeck.src == 'my' || secondaryDeck.src == 'precons') {
-      setSelectTo(`to-${secondaryDeck.src}`);
+    if (deckidTo?.includes(':')) {
+      setSelectTo('to-precons');
+    } else if (decks && decks[deckidTo]) {
+      setSelectTo('to-my');
     } else {
       setSelectTo('to-recent');
     }
 
-    if (decks && decks[secondaryDeck.deckid] && secondaryDeck.src != 'my') {
-      setSecondaryDeck({ src: 'my', deckid: secondaryDeck.deckid });
-    }
-
-    if (deckToRouter(secondaryDeck)) setDeckErrorTo(false);
-  }, [secondaryDeck, decks]);
+    if (deckTo) setErrorTo(false);
+  }, [deckidTo, deckTo, decks]);
 
   const [missingCrypt, setMissingCrypt] = useState({});
   const [missingLibrary, setMissingLibrary] = useState({});
 
   useEffect(() => {
-    if (deckRouter(activeDeck) && deckToRouter(secondaryDeck)) {
-      const fromCrypt = deckRouter(activeDeck).crypt;
-      const fromLibrary = deckRouter(activeDeck).library;
-      const toCrypt = deckToRouter(secondaryDeck).crypt;
-      const toLibrary = deckToRouter(secondaryDeck).library;
-
+    if (deck && deckTo) {
       const crypt = {};
       const library = {};
 
-      Object.keys(toCrypt).map((card) => {
-        if (!fromCrypt[card]) {
-          crypt[card] = { q: toCrypt[card].q, c: cryptCardBase[card] };
-        } else if (toCrypt[card].q > fromCrypt[card].q) {
+      Object.keys(deckTo.crypt).map((card) => {
+        if (!deck.crypt[card]) {
+          crypt[card] = { q: deckTo.crypt[card].q, c: cryptCardBase[card] };
+        } else if (deckTo.crypt[card].q > deck.crypt[card].q) {
           crypt[card] = {
-            q: toCrypt[card].q - fromCrypt[card].q,
+            q: deckTo.crypt[card].q - deck.crypt[card].q,
             c: cryptCardBase[card],
           };
         }
       });
 
-      Object.keys(toLibrary).map((card) => {
-        if (!fromLibrary[card]) {
-          library[card] = { q: toLibrary[card].q, c: libraryCardBase[card] };
-        } else if (toLibrary[card].q > fromLibrary[card].q) {
+      Object.keys(deckTo.library).map((card) => {
+        if (!deck.library[card]) {
           library[card] = {
-            q: toLibrary[card].q - fromLibrary[card].q,
+            q: deckTo.library[card].q,
+            c: libraryCardBase[card],
+          };
+        } else if (deckTo.library[card].q > deck.library[card].q) {
+          library[card] = {
+            q: deckTo.library[card].q - deck.library[card].q,
             c: libraryCardBase[card],
           };
         }
@@ -305,7 +237,7 @@ const Diff = () => {
       setMissingCrypt(crypt);
       setMissingLibrary(library);
     }
-  }, [decks, activeDeck, secondaryDeck]);
+  }, [deck, deckTo]);
 
   return (
     <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
@@ -318,7 +250,7 @@ const Diff = () => {
               {selectFrom === 'from-url' ? (
                 <Form
                   name="from"
-                  onSubmit={handleSubmit}
+                  onSubmit={handleUrlSubmit}
                   className="diff-select my-0"
                 >
                   <InputGroup>
@@ -326,8 +258,8 @@ const Diff = () => {
                       placeholder="First Deck (ID or URL)"
                       type="text"
                       name="from"
-                      value={formFrom}
-                      onChange={handleFormChange}
+                      value={urlFrom}
+                      onChange={handleUrlChange}
                     />
                     <Button variant="primary" type="submit">
                       <Check2 />
@@ -346,11 +278,9 @@ const Diff = () => {
               ) : (
                 <div
                   className={
-                    inventoryMode
+                    inventoryMode || !isMobile
                       ? 'd-flex'
-                      : isMobile
-                      ? 'd-flex justify-content-between diff-select'
-                      : 'd-flex'
+                      : 'd-flex justify-content-between'
                   }
                 >
                   <div
@@ -361,16 +291,27 @@ const Diff = () => {
                     }
                   >
                     {selectFrom == 'from-my' && decks ? (
-                      <DeckSelectMy deckid={activeDeck.deckid} />
+                      <>
+                        <DeckSelectMy
+                          handleSelect={handleSelectFrom}
+                          deckid={deck?.deckid}
+                        />
+                      </>
                     ) : selectFrom == 'from-recent' ? (
-                      <DeckSelectRecent deckid={activeDeck.deckid} />
+                      <DeckSelectRecent
+                        handleSelect={handleSelectFrom}
+                        deckid={deck?.deckid}
+                      />
                     ) : (
-                      <DeckSelectPrecon deckid={activeDeck.deckid} />
+                      <DeckSelectPrecon
+                        handleSelect={handleSelectFrom}
+                        deckid={deck?.deckid}
+                      />
                     )}
                   </div>
                   {selectFrom == 'from-my' && decks && isBranchesFrom && (
                     <div className="ps-1 w-25">
-                      <DeckBranchSelect deckid={activeDeck.deckid} />
+                      <DeckBranchSelect deckid={deck.deckid} />
                     </div>
                   )}
                   {isMobile && (
@@ -453,7 +394,7 @@ const Diff = () => {
               {selectTo === 'to-url' ? (
                 <Form
                   name="to"
-                  onSubmit={handleSubmit}
+                  onSubmit={handleUrlSubmit}
                   className="diff-select my-0"
                 >
                   <InputGroup>
@@ -461,8 +402,8 @@ const Diff = () => {
                       placeholder="First Deck (ID or URL)"
                       type="text"
                       name="to"
-                      value={formTo}
-                      onChange={handleFormChange}
+                      value={urlTo}
+                      onChange={handleUrlChange}
                     />
                     <Button variant="primary" type="submit">
                       <Check2 />
@@ -486,26 +427,26 @@ const Diff = () => {
                   >
                     {selectTo == 'to-my' && decks ? (
                       <DeckSelectMy
-                        deckid={secondaryDeck.deckid}
-                        setActiveDeck={setSecondaryDeck}
+                        handleSelect={handleSelectTo}
+                        deckid={deckTo?.deckid}
                       />
                     ) : selectTo == 'to-recent' ? (
                       <DeckSelectRecent
-                        deckid={secondaryDeck.deckid}
-                        setActiveDeck={setSecondaryDeck}
+                        handleSelect={handleSelectTo}
+                        deckid={deckTo?.deckid}
                       />
                     ) : (
                       <DeckSelectPrecon
-                        deckid={secondaryDeck.deckid}
-                        setActiveDeck={setSecondaryDeck}
+                        handleSelect={handleSelectTo}
+                        deckid={deckTo?.deckid}
                       />
                     )}
                   </div>
                   {selectTo == 'to-my' && decks && isBranchesTo && (
                     <div className="ps-1 w-25">
                       <DeckBranchSelect
-                        deckid={secondaryDeck.deckid}
-                        setActiveDeck={setSecondaryDeck}
+                        /* TODO handler */
+                        deckid={deckTo.deckid}
                       />
                     </div>
                   )}
@@ -569,10 +510,10 @@ const Diff = () => {
               </div>
             </Col>
           </Row>
-          {(deckErrorFrom || deckErrorTo) && (
+          {(errorFrom || errorTo) && (
             <Row className="py-1">
               <Col className="px-0 ps-lg-3">
-                {deckErrorFrom && (
+                {errorFrom && (
                   <div className="d-flex align-items-center justify-content-center error-message p-2">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
@@ -580,7 +521,7 @@ const Diff = () => {
               </Col>
               <Col xs={1} className="px-0"></Col>
               <Col className="px-0 pe-lg-3">
-                {deckErrorTo && (
+                {errorTo && (
                   <div className="d-flex align-items-center justify-content-center error-message p-2">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
@@ -588,24 +529,24 @@ const Diff = () => {
               </Col>
             </Row>
           )}
-          {deckRouter(activeDeck) && deckToRouter(secondaryDeck) && (
+          {deck && deckTo && (
             <Row className="pt-md-2">
               <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
                 <DiffCrypt
-                  deckid={activeDeck.deckid}
+                  deckid={deck.deckid}
                   isAuthor={isAuthor}
                   isPublic={isPublic}
-                  cardsFrom={deckRouter(activeDeck).crypt}
-                  cardsTo={deckToRouter(secondaryDeck).crypt}
+                  cardsFrom={deck.crypt}
+                  cardsTo={deckTo.crypt}
                 />
               </Col>
               <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
                 <DiffLibrary
-                  deckid={activeDeck.deckid}
+                  deckid={deck.deckid}
                   isAuthor={isAuthor}
                   isPublic={isPublic}
-                  cardsFrom={deckRouter(activeDeck).library}
-                  cardsTo={deckToRouter(secondaryDeck).library}
+                  cardsFrom={deck.library}
+                  cardsTo={deckTo.library}
                 />
               </Col>
             </Row>
@@ -615,11 +556,10 @@ const Diff = () => {
           <Col lg={2} className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
             <div className="sticky-buttons">
               <DiffButtons
-                deck={deckRouter(activeDeck)}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
-                fromQuery={fromQuery}
-                toQuery={toQuery}
+                deck={deck}
+                deckTo={deckTo}
               />
             </div>
           </Col>
@@ -650,11 +590,10 @@ const Diff = () => {
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
               <DiffButtons
-                deck={deckRouter(activeDeck)}
+                deck={deck}
+                deckTo={deckTo}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
-                fromQuery={fromQuery}
-                toQuery={toQuery}
               />
               <div className="d-flex justify-content-end pt-1">
                 <ButtonIconed

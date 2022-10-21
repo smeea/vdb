@@ -10,7 +10,7 @@ import { ErrorOverlay } from 'components';
 import { useDeckExport } from 'hooks';
 import { useApp } from 'context';
 
-const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
+const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   const {
     username,
     decks,
@@ -114,32 +114,15 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
 
     if (format === 'xlsx') {
       setSpinnerState(true);
+      let cards = {};
+      Object.keys(deck.crypt).map((key) => {
+        cards[key] = deck.crypt[key].q;
+      });
+      Object.keys(deck.library).map((key) => {
+        cards[key] = deck.library[key].q;
+      });
 
-      const input = {
-        deckid: deck.deckid,
-        format: format,
-        src: src,
-      };
-
-      if (input.deckid === 'deckInUrl' || inMissing) {
-        const cards = {};
-        Object.keys(deck.crypt).map((key) => {
-          cards[key] = deck.crypt[key].q;
-        });
-        Object.keys(deck.library).map((key) => {
-          cards[key] = deck.library[key].q;
-        });
-
-        input.deck = {
-          cards: cards,
-          description: deck.description,
-          author: deck.author,
-        };
-      }
-
-      const url = `${process.env.API_URL}${
-        inInventory ? 'inventory' : 'decks'
-      }/export`;
+      const url = `${process.env.API_URL}decks/export`;
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -147,15 +130,13 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(input),
+        body: JSON.stringify({ cards: cards }),
       };
-
       fetch(url, options)
         .then((response) => response.text())
         .then((data) => {
           const mime =
             'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-
           const file = `${mime};base64,${data}`;
           saveFile(file, `${deckName}.${format}`);
           setSpinnerState(false);
@@ -209,10 +190,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
 
     if (format === 'xlsx') {
       setSpinnerState(true);
-
-      const url = `${process.env.API_URL}${
-        inInventory ? 'inventory' : 'decks'
-      }/export`;
+      const url = `${process.env.API_URL}decks/export`;
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -220,25 +198,25 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: null,
       };
-
       const folder = zip.folder(`Decks ${date} [${format}]`);
-
       const fetchPromises = Object.keys(decks).map((deckid) => {
-        options.body = JSON.stringify({
-          deckid: deckid,
-          format: format,
-          src: 'my',
+        let cards = {};
+        Object.keys(decks[deckid].crypt).map((key) => {
+          cards[key] = decks[deckid].crypt[key].q;
         });
-
+        Object.keys(decks[deckid].library).map((key) => {
+          cards[key] = decks[deckid].library[key].q;
+        });
+        options.body = JSON.stringify({
+          cards: cards,
+        });
         return fetch(url, options)
           .then((response) => response.text())
           .then((data) => {
             folder.file(`${decks[deckid].name}.${format}`, data, {
               base64: true,
             });
-
             setSpinnerState(false);
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
@@ -248,7 +226,6 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
             setError(true);
           });
       });
-
       Promise.all(fetchPromises).then(() => {
         zip
           .generateAsync({ type: 'blob' })
@@ -275,9 +252,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
         variant={inMissing ? 'primary' : 'secondary'}
         title={
           <div
-            title={`Export ${
-              inMissing ? 'Missing' : inInventory ? 'Inventory' : 'Deck'
-            }`}
+            title={`Export ${inMissing ? 'Missing' : ''}`}
             className="d-flex justify-content-center align-items-center"
           >
             <div className="d-flex pe-2">
@@ -287,7 +262,7 @@ const DeckExportButton = ({ deck, src, inMissing, inInventory }) => {
                 <Download />
               )}
             </div>
-            Export {inMissing ? 'Missing' : inInventory ? 'Inventory' : 'Deck'}
+            Export {inMissing ? 'Missing' : ''}
           </div>
         }
       >

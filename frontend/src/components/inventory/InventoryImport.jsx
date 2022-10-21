@@ -2,17 +2,16 @@ import React, { useState, useRef } from 'react';
 import {
   ErrorOverlay,
   InventoryImportButton,
-  DeckImportBadCardsModal,
+  // DeckImportBadCardsModal,
 } from 'components';
 import { useApp } from 'context';
 import { useDeckImport } from 'hooks';
 
 const InventoryImport = () => {
-  const { activeDeck, inventoryCardsAdd, cryptCardBase, libraryCardBase } =
-    useApp();
+  const { inventoryCardsAdd, cryptCardBase, libraryCardBase } = useApp();
 
   const [importError, setImportError] = useState(false);
-  const [badCards, setBadCards] = useState([]);
+  // const [badCards, setBadCards] = useState([]);
   const ref = useRef(null);
   const fileInput = React.createRef();
 
@@ -65,14 +64,13 @@ const InventoryImport = () => {
   return (
     <>
       <InventoryImportButton handleClick={handleFileInputClick} />
-      {badCards && (
-        /* TODO FIX FOR INVENTORY */
-        <DeckImportBadCardsModal
-          deckid={activeDeck.deckid}
-          badCards={badCards}
-          setBadCards={setBadCards}
-        />
-      )}
+      {/* TODO FIX FOR INVENTORY */}
+      {/* {badCards && ( */}
+      {/*   <DeckImportBadCardsModal */}
+      {/*     badCards={badCards} */}
+      {/*     setBadCards={setBadCards} */}
+      {/*   /> */}
+      {/* )} */}
       <input
         ref={fileInput}
         accept="text/*"

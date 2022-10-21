@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Files from 'assets/images/icons/files.svg';
 import { useApp } from 'context';
 import { ButtonIconed } from 'components';
 
-const DeckCloneButton = ({ deck, noText, inPda, inTwd }) => {
-  const {
-    setDecks,
-    setActiveDeck,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-  } = useApp();
+const DeckCloneButton = ({ deck, noText, noRedirect }) => {
+  const { setDecks, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const navigate = useNavigate();
 
   const [state, setState] = useState(false);
 
@@ -61,7 +58,7 @@ const DeckCloneButton = ({ deck, noText, inPda, inTwd }) => {
               is_yours: true,
             },
           }));
-          setActiveDeck({ src: 'my', deckid: data.deckid });
+          if (!noRedirect) navigate(`/decks/${data.deckid}`);
           setState(true);
           setTimeout(() => {
             setState(false);
@@ -78,10 +75,7 @@ const DeckCloneButton = ({ deck, noText, inPda, inTwd }) => {
       onClick={cloneDeck}
       title="Clone Deck to your account for editing"
       icon={<Files />}
-      text={
-        !noText &&
-        (state ? 'Cloned' : `Clone${!(inPda || inTwd) ? ' Deck' : ''}`)
-      }
+      text={!noText && (state ? 'Cloned' : 'Clone')}
     />
   );
 };

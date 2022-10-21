@@ -6,7 +6,7 @@ import { ResultLibraryTable, ResultLibraryTotal } from 'components';
 import { librarySort } from 'utils';
 import { useApp } from 'context';
 
-const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
+const ResultLibrary = ({ cards, setCards, isAuthor, inCompare }) => {
   const {
     showLibrarySearch,
     setShowLibrarySearch,
@@ -57,8 +57,6 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
             setSortMethod={changeLibrarySearchSort}
           />
           <ResultLibraryTable
-            library={library}
-            activeDeck={activeDeck}
             resultCards={sortedCards}
             placement={
               isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'
@@ -74,7 +72,7 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && activeDeck.src === 'my' && (
+      {isMobile && showFloatingButtons && isAuthor && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${

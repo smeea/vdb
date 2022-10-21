@@ -6,19 +6,14 @@ import { useApp } from 'context';
 import { byTimestamp } from 'utils';
 
 const DeckDeleteButton = ({ deck, noText }) => {
-  const {
-    setActiveDeck,
-    setDecks,
-    decks,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-  } = useApp();
+  const { setDecks, decks, setShowFloatingButtons, setShowMenuButtons } =
+    useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
-    deleteDeck(deck.deckid);
+    deleteDeck();
   };
 
   let revisions = [];
@@ -30,20 +25,20 @@ const DeckDeleteButton = ({ deck, noText }) => {
     revisions = [deck.deckid];
   }
 
-  const getLastDeckExcept = (deckid) => {
+  const getLastDeckExcept = () => {
     const lastDeckArray = Object.values(decks)
-      .filter(() => !revisions.includes(deckid))
+      .filter((d) => !revisions.includes(d.deckid))
       .sort(byTimestamp);
 
     if (lastDeckArray.length > 0) {
-      return { src: 'my', deckid: lastDeckArray[0].deckid };
+      return lastDeckArray[0].deckid;
     } else {
       return null;
     }
   };
 
-  const deleteDeck = (deckid) => {
-    const url = `${process.env.API_URL}deck/${deckid}`;
+  const deleteDeck = () => {
+    const url = `${process.env.API_URL}deck/${deck.deckid}`;
     const options = {
       method: 'DELETE',
       mode: 'cors',
@@ -62,11 +57,10 @@ const DeckDeleteButton = ({ deck, noText }) => {
         return newState;
       });
 
-      const lastDeck = getLastDeckExcept(deckid);
-      if (lastDeck) {
-        setActiveDeck(lastDeck);
+      const lastDeckId = getLastDeckExcept();
+      if (lastDeckId) {
+        navigate(`/decks/${lastDeckId}`);
       } else {
-        setActiveDeck({ src: null, deckid: null });
         navigate('/decks');
       }
       setShowConfirmation(false);
@@ -88,7 +82,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
             viewBox="0 0 18 16"
           />
         }
-        text={noText ? null : 'Delete Deck'}
+        text={noText ? null : 'Delete'}
       />
       <ModalConfirmation
         withConfirmation={revisions.length > 1}

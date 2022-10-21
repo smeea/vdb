@@ -23,33 +23,33 @@ export const AppProvider = (props) => {
   const isWide = useMemo(() => screenSize >= 1440, [screenSize]);
   const isXWide = useMemo(() => screenSize >= 1920, [screenSize]);
 
-  const [username, setUsername] = useState(undefined);
-  const [publicName, setPublicName] = useState(undefined);
-  const [email, setEmail] = useState(undefined);
-  const [inventoryKey, setInventoryKey] = useState(undefined);
+  const [username, setUsername] = useState();
+  const [publicName, setPublicName] = useState();
+  const [email, setEmail] = useState();
+  const [inventoryKey, setInventoryKey] = useState();
   const [lang, setLang] = useState('en-EN');
   const [isOnline, setIsOnline] = useState(navigator.onLine);
-  const [isPlaytestAdmin, setIsPlaytestAdmin] = useState(undefined);
-  const [isPlaytester, setIsPlaytester] = useState(undefined);
-  const [playtest, setPlaytest] = useState(undefined);
-  const [showImage, setShowImage] = useState(undefined);
-  const [addMode, setAddMode] = useState(undefined);
-  const [inventoryMode, setInventoryMode] = useState(undefined);
-  const [hideMissing, setHideMissing] = useState(false);
-  const [cryptDeckSort, setCryptDeckSort] = useState(undefined);
-  const [cryptSearchSort, setCryptSearchSort] = useState(undefined);
-  const [librarySearchSort, setLibrarySearchSort] = useState(undefined);
-  const [twdSearchSort, setTwdSearchSort] = useState(undefined);
-  const [pdaSearchSort, setPdaSearchSort] = useState(undefined);
+  const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
+  const [isPlaytester, setIsPlaytester] = useState();
+  const [playtest, setPlaytest] = useState();
+  const [showImage, setShowImage] = useState();
+  const [addMode, setAddMode] = useState();
+  const [inventoryMode, setInventoryMode] = useState();
+  const [hideMissing, setHideMissing] = useState();
+  const [cryptDeckSort, setCryptDeckSort] = useState();
+  const [cryptSearchSort, setCryptSearchSort] = useState();
+  const [librarySearchSort, setLibrarySearchSort] = useState();
+  const [twdSearchSort, setTwdSearchSort] = useState();
+  const [pdaSearchSort, setPdaSearchSort] = useState();
 
-  const [cryptCardBase, setCryptCardBase] = useState(undefined);
-  const [libraryCardBase, setLibraryCardBase] = useState(undefined);
-  const [nativeCrypt, setNativeCrypt] = useState(undefined);
-  const [nativeLibrary, setNativeLibrary] = useState(undefined);
-  const [localizedCrypt, setLocalizedCrypt] = useState(undefined);
-  const [localizedLibrary, setLocalizedLibrary] = useState(undefined);
+  const [cryptCardBase, setCryptCardBase] = useState();
+  const [libraryCardBase, setLibraryCardBase] = useState();
+  const [nativeCrypt, setNativeCrypt] = useState();
+  const [nativeLibrary, setNativeLibrary] = useState();
+  const [localizedCrypt, setLocalizedCrypt] = useState();
+  const [localizedLibrary, setLocalizedLibrary] = useState();
 
-  const [preconDecks, setPreconDecks] = useState({});
+  const [preconDecks, setPreconDecks] = useState();
 
   const [showPdaSearch, setShowPdaSearch] = useState(true);
   const [showTwdSearch, setShowTwdSearch] = useState(true);
@@ -67,11 +67,9 @@ export const AppProvider = (props) => {
     hard: {},
   });
 
-  const [decks, setDecks] = useState(undefined);
-  const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
-  const [sharedDeck, setSharedDeck] = useState({});
+  const [decks, setDecks] = useState();
+  const [deck, setDeck] = useState();
   const [recentDecks, setRecentDecks] = useState([]);
-  const [lastDeckId, setLastDeckId] = useState(undefined);
 
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
@@ -136,10 +134,8 @@ export const AppProvider = (props) => {
     setInventoryCrypt({});
     setInventoryLibrary({});
     setUsername(undefined);
-    if (activeDeck.deckid !== 'deckInUrl' && activeDeck.deckid !== null) {
-      setActiveDeck({ src: null, deckid: null });
-    }
     setEmail(undefined);
+    setDeck(undefined);
   };
 
   useEffect(() => {
@@ -423,34 +419,32 @@ export const AppProvider = (props) => {
     deckServices.deckUpdate(deckid, field, value).then(() => {
       if (field === 'used_in_inventory') {
         setDecks((prevState) => {
-          const newState = { ...prevState };
           Object.keys(value).map((cardid) => {
             if (cardid > 200000) {
-              newState[deckid].crypt[cardid].i = value[cardid];
+              prevState[deckid].crypt[cardid].i = value[cardid];
             } else {
-              newState[deckid].library[cardid].i = value[cardid];
+              prevState[deckid].library[cardid].i = value[cardid];
             }
           });
-          return newState;
+          return prevState;
         });
       } else {
         setDecks((prevState) => {
-          const newState = { ...prevState };
-          newState[deckid] = {
-            ...newState[deckid],
+          prevState[deckid] = {
+            ...prevState[deckid],
             [field]: value,
           };
 
           if (field === 'inventory_type') {
-            Object.keys(newState[deckid].crypt).map((cardid) => {
-              newState[deckid].crypt[cardid].i = '';
+            Object.keys(prevState[deckid].crypt).map((cardid) => {
+              prevState[deckid].crypt[cardid].i = '';
             });
-            Object.keys(newState[deckid].library).map((cardid) => {
-              newState[deckid].library[cardid].i = '';
+            Object.keys(prevState[deckid].library).map((cardid) => {
+              prevState[deckid].library[cardid].i = '';
             });
           }
 
-          return newState;
+          return prevState;
         });
       }
 
@@ -482,47 +476,37 @@ export const AppProvider = (props) => {
     const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
     let initialState = {};
 
-    if (deckid in decks) {
-      initialState = JSON.parse(JSON.stringify(decks));
+    initialState = JSON.parse(JSON.stringify(decks));
+    setDecks((prevState) => {
+      if (count >= 0) {
+        prevState[deckid][cardSrc][cardid] = {
+          c: cardBase[cardid],
+          q: count,
+        };
+      } else {
+        delete prevState[deckid][cardSrc][cardid];
+      }
 
-      setDecks((prevState) => {
-        const oldState = { ...prevState };
-        if (count >= 0) {
-          oldState[deckid][cardSrc][cardid] = {
-            c: cardBase[cardid],
-            q: count,
-          };
-        } else {
-          delete oldState[deckid][cardSrc][cardid];
-        }
+      return prevState;
+    });
+    changeMaster(deckid);
 
-        return oldState;
-      });
-
-      changeMaster(deckid);
-    } else if (deckid in sharedDeck) {
-      initialState = JSON.parse(JSON.stringify(sharedDeck));
-
-      setSharedDeck((prevState) => {
-        const oldState = { ...prevState };
-        if (count >= 0) {
-          oldState[deckid][cardSrc][cardid] = {
-            c: cardBase[cardid],
-            q: count,
-          };
-        } else {
-          delete oldState[deckid][cardSrc][cardid];
-        }
-        return oldState;
-      });
-    }
+    initialState = JSON.parse(JSON.stringify(deck));
+    setDeck((prevState) => {
+      if (count >= 0) {
+        prevState[cardSrc][cardid] = {
+          c: cardBase[cardid],
+          q: count,
+        };
+      } else {
+        delete prevState[cardSrc][cardid];
+      }
+      return prevState;
+    });
 
     fetch(url, options).catch(() => {
-      if (deckid in decks) {
-        setDecks(initialState);
-      } else if (deckid in sharedDeck) {
-        setSharedDeck(initialState);
-      }
+      setDecks(initialState);
+      setDeck(initialState);
     });
 
     const startTimer = () => {
@@ -547,24 +531,11 @@ export const AppProvider = (props) => {
     startTimer();
   };
 
-  const deckRouter = (pointer) => {
-    if (pointer) {
-      switch (pointer['src']) {
-        case 'my':
-          return decks && decks[pointer['deckid']];
-        case 'precons':
-          return preconDecks && preconDecks[pointer['deckid']];
-        case 'twd':
-        case 'shared':
-          return sharedDeck && sharedDeck[pointer['deckid']];
-      }
-    }
-  };
-
   useEffect(() => {
-    if (decks && Object.keys(decks).length > 0) {
+    if (decks && Object.keys(decks).length > 0 && !deck) {
       const lastDeckArray = Object.values(decks).sort(byTimestamp);
-      setLastDeckId(lastDeckArray[0].deckid);
+      const lastDeckId = lastDeckArray[0].deckid;
+      setDeck(decks[lastDeckId]);
     }
   }, [decks]);
 
@@ -576,12 +547,6 @@ export const AppProvider = (props) => {
       }
     }
   }, [decks, recentDecks]);
-
-  useEffect(() => {
-    if (lastDeckId && !activeDeck.deckid) {
-      setActiveDeck({ src: 'my', deckid: lastDeckId });
-    }
-  }, [lastDeckId]);
 
   // INVENTORY FUNCTIONS
 
@@ -741,10 +706,10 @@ export const AppProvider = (props) => {
     }
 
     if (count >= 0 || (count < 0 && inventory[cardid])) {
-      const oldState = { ...inventory };
+      const newState = { ...inventory };
 
       fetch(url, options).catch(() => {
-        setInventory(oldState);
+        setInventory(newState);
       });
 
       if (count >= 0) {
@@ -831,17 +796,13 @@ export const AppProvider = (props) => {
 
         // DECK Context
         preconDecks,
+        deck,
+        setDeck,
         decks,
         setDecks,
-        activeDeck,
-        setActiveDeck,
-        sharedDeck,
-        setSharedDeck,
-        lastDeckId,
         recentDecks,
         addRecentDeck,
         updateRecentDecks,
-        deckRouter,
         deckUpdate,
         deckCardChange,
         parseDeckCards,

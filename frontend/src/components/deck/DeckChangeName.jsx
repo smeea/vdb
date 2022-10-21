@@ -55,7 +55,7 @@ const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
           readOnly={!isAuthor || isPublic}
         />
         {(isPublic ||
-          (deck.deckid !== 'deckInUrl' &&
+          (deck.deckid !== 'deck' &&
             deck.deckid.length !== 32 &&
             !deck.deckid.includes(':'))) && (
           <InputGroup.Text

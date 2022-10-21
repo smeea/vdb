@@ -29,11 +29,6 @@ def unauthorized_handler():
     return Response(json.dumps({"Not logged in": True}), 401)
 
 
-@app.route("/api/inventory/export", methods=["POST"])
-def inventory_export_route():
-    return deck_export(current_user.inventory, request.json["format"])
-
-
 @app.route("/api/inventory/<string:key>", methods=["GET"])
 def get_shared_inventory(key):
     try:

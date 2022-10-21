@@ -5,8 +5,8 @@ import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { ResultLibraryClan } from 'components';
 import { useApp } from 'context';
 
-const DeckSelectPrecon = (props) => {
-  const { setActiveDeck, isMobile, playtest } = useApp();
+const DeckSelectPrecon = ({ deckid, handleSelect }) => {
+  const { isMobile, playtest } = useApp();
 
   const preOptions = [];
 
@@ -85,12 +85,13 @@ const DeckSelectPrecon = (props) => {
         maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
         filterOption={filterOption}
         placeholder="Select Deck"
-        value={options.find((obj) => obj.value === props.deckid)}
-        onChange={(e) => {
-          props.setActiveDeck
-            ? props.setActiveDeck({ src: 'precons', deckid: e.value })
-            : setActiveDeck({ src: 'precons', deckid: e.value });
-        }}
+        value={options.find((obj) => obj.value === deckid)}
+        onChange={handleSelect}
+        /* onChange={(e) => { */
+        /*   props.setActiveDeck */
+        /*     ? props.setActiveDeck({ src: 'precons', deckid: e.value }) */
+        /*     : setActiveDeck({ src: 'precons', deckid: e.value }); */
+        /* }} */
       />
     </>
   );

@@ -470,28 +470,7 @@ def import_deck_route():
 
 @app.route("/api/decks/export", methods=["POST"])
 def deck_export_route():
-    result = None
-
-    if "deck" in request.json:
-        deck = request.json["deck"]
-        result = deck_export(deck["cards"], request.json["format"])
-
-    elif request.json["src"] == "twd":
-        deckid = request.json["deckid"]
-        with open("twd_decks.json", "r") as twd_decks_file:
-            twd_decks = json.load(twd_decks_file)
-            deck = twd_decks[deckid]
-            result = deck_export(deck["cards"], request.json["format"])
-
-    elif request.json["src"] == "precons":
-        set, precon = request.json["deckid"].split(":")
-        with open("../frontend/src/assets/data/preconDecks.json", "r") as precons_file:
-            precon_decks = json.load(precons_file)
-            cards = precon_decks[set][precon]
-            result = deck_export(cards, request.json["format"])
-
-    elif request.json["src"] == "shared" or request.json["src"] == "my":
-        d = Deck.query.get(request.json["deckid"])
-        result = deck_export(d.cards, request.json["format"])
+    cards = request.json["cards"]
+    result = deck_export(cards)
 
     return result

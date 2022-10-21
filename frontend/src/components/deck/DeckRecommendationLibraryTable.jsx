@@ -13,15 +13,9 @@ import {
 import { BURN_OPTION, POOL_COST, BLOOD_COST, CARD_TEXT } from 'utils/constants';
 import { useApp } from 'context';
 
-const DeckRecommendationLibraryTable = ({
-  handleModalCardOpen,
-  cards,
-  library,
-  activeDeck,
-  isAuthor,
-  placement,
-}) => {
-  const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
+const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
+  const { deck, nativeLibrary, isDesktop, isMobile, setShowFloatingButtons } =
+    useApp();
 
   const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
@@ -29,7 +23,7 @@ const DeckRecommendationLibraryTable = ({
       setShowFloatingButtons(false);
     };
 
-    const inDeck = (library && library[card.Id] && library[card.Id].q) || 0;
+    const inDeck = deck.library[card.Id]?.q || 0;
 
     const DisciplineOrClan = card.Clan ? (
       <ResultLibraryClan value={card.Clan} />
@@ -40,18 +34,18 @@ const DeckRecommendationLibraryTable = ({
     return (
       <React.Fragment key={card.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {isAuthor && activeDeck.deckid && (
+          {deck.is_yours && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}
-                deckid={activeDeck.deckid}
+                deckid={deck.deckid}
                 card={card}
                 inDeck={inDeck}
               />
             </td>
           )}
           <ConditionalOverlayTrigger
-            placement={placement}
+            placement={isDesktop ? 'left' : 'bottom'}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >

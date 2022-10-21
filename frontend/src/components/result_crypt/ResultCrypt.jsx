@@ -10,7 +10,7 @@ import {
 import { cryptSort } from 'utils';
 import { useApp } from 'context';
 
-const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
+const ResultCrypt = ({ cards, isAuthor, setCards, inCompare }) => {
   const {
     showCryptSearch,
     setShowCryptSearch,
@@ -73,8 +73,6 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
           )}
           <ResultCryptTable
             className={className}
-            crypt={crypt}
-            activeDeck={activeDeck}
             resultCards={sortedCards}
             placement={
               isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'
@@ -90,7 +88,7 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && activeDeck.src === 'my' && (
+      {isMobile && showFloatingButtons && isAuthor && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${

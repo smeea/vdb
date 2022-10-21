@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
 import {
   ButtonIconed,
@@ -14,16 +15,12 @@ import { useDeckImport } from 'hooks';
 const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const {
     parseDeckCards,
-    setDecks,
-    activeDeck,
-    setActiveDeck,
-    setSharedDeck,
     setShowMenuButtons,
     setShowFloatingButtons,
-    publicName,
     cryptCardBase,
     libraryCardBase,
   } = useApp();
+  const navigate = useNavigate();
 
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');
@@ -51,33 +48,6 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     setShowTextModal({ isAnonymous: isAnonymous, show: true });
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 
-  const addImportedDeckToState = ({ deck, isAnonymous }) => {
-    const now = new Date();
-    const { crypt, library } = parseDeckCards(deck.cards);
-    deck = {
-      deckid: deck.deckid,
-      name: deck.name,
-      branchName: deck.branchName,
-      description: deck.description,
-      author: deck.author,
-      crypt: crypt,
-      library: library,
-      timestamp: now.toUTCString(),
-    };
-
-    if (isAnonymous) {
-      setSharedDeck({ [deck.deckid]: deck });
-    } else {
-      setDecks((prevState) => ({
-        ...prevState,
-        [deck.deckid]: {
-          ...deck,
-          is_yours: true,
-        },
-      }));
-    }
-  };
-
   const createNewDeck = () => {
     setCreateError(false);
 
@@ -98,21 +68,10 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     fetchPromise
       .then((response) => response.json())
       .then((data) => {
-        addImportedDeckToState({
-          deck: {
-            deckid: data.deckid,
-            name: name,
-            branchName: '#0',
-            description: '',
-            author: publicName,
-            crypt: {},
-            library: {},
-          },
-        });
         setShowInfo(true);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
-        setActiveDeck({ src: 'my', deckid: data.deckid });
+        navigate(`/decks/${data.deckid}`);
       })
       .catch(() => setCreateError(true));
   };
@@ -189,13 +148,8 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          deck.deckid = data.deckid;
-          addImportedDeckToState({ deck, isAnonymous });
+          navigate(`/decks/${data.deckid}`);
           setBadCards(deck.badCards);
-          setActiveDeck({
-            src: isAnonymous ? 'shared' : 'my',
-            deckid: deck.deckid,
-          });
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
           handleClose();
@@ -231,13 +185,13 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
           />
           {badCards && (
             <DeckImportBadCardsModal
-              deckid={activeDeck.deckid}
+              /* deckid={deck.deckid} // TODO */
               badCards={badCards}
               setBadCards={setBadCards}
             />
           )}
           <DeckImportText
-            addImportedDeckToState={addImportedDeckToState}
+            /* addImportedDeckToState={addImportedDeckToState} */
             handleCloseModal={handleCloseImportModal}
             show={showTextModal.show}
             isAnonymous={showTextModal.isAnonymous}
@@ -245,7 +199,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
           />
           <DeckImportAmaranth
             parseCards={parseDeckCards}
-            addImportedDeckToState={addImportedDeckToState}
+            /* addImportedDeckToState={addImportedDeckToState} */
             handleCloseModal={handleCloseImportModal}
             show={showAmaranthModal}
           />

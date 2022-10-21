@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { FormControl, Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
@@ -10,23 +11,21 @@ const DeckImportText = ({
   setBadCards,
   handleCloseModal,
   show,
-  addImportedDeckToState,
 }) => {
   const {
-    setActiveDeck,
+    // setActiveDeck,
     isMobile,
     setShowFloatingButtons,
     setShowMenuButtons,
     cryptCardBase,
     libraryCardBase,
   } = useApp();
+  const navigate = useNavigate();
 
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
   const refText = useRef(null);
-
-  const [spinnerState, setSpinnerState] = useState(false);
 
   const handleChange = (event) => {
     setDeckText(event.target.value);
@@ -42,7 +41,6 @@ const DeckImportText = ({
 
     if (deckText) {
       setEmptyError(false);
-      setSpinnerState(true);
 
       const deck = await useDeckImport(
         deckText,
@@ -68,22 +66,15 @@ const DeckImportText = ({
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          deck.deckid = data.deckid;
-          addImportedDeckToState({ deck, isAnonymous });
+          navigate(`/decks/${data.deckid}`);
           setBadCards(deck.badCards);
-          setActiveDeck({
-            src: isAnonymous ? 'shared' : 'my',
-            deckid: deck.deckid,
-          });
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
           setDeckText('');
-          setSpinnerState(false);
           handleClose();
         })
         .catch(() => {
           setImportError(true);
-          setSpinnerState(false);
         });
     } else {
       setEmptyError(true);
@@ -143,16 +134,9 @@ It will skip other (useless) lines, you don't have to remove it yourself.
               : 'd-flex justify-content-end py-1'
           }
         >
-          {!spinnerState ? (
-            <Button variant="primary" onClick={importDeckFromText}>
-              Import
-            </Button>
-          ) : (
-            <Button variant="primary" onClick={importDeckFromText}>
-              <Spinner animation="border" size="sm" />
-              <span className="ps-2">Import</span>
-            </Button>
-          )}
+          <Button variant="primary" onClick={importDeckFromText}>
+            Import
+          </Button>
         </div>
         <ErrorOverlay
           show={emptyError}

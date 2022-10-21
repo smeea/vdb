@@ -3,12 +3,12 @@ import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 import { ButtonIconed } from 'components';
 
-const DiffCopyUrlButton = ({ fromQuery, toQuery }) => {
+const DiffCopyUrlButton = ({ deckFromId, deckToId }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
-    const deckUrl = `${process.env.ROOT_URL}diff?from=${fromQuery}&to=${toQuery}`;
+    const deckUrl = `${process.env.ROOT_URL}diff/${deckFromId}/${deckToId}`;
 
     navigator.clipboard.writeText(deckUrl);
     setState(true);

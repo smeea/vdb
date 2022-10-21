@@ -31,12 +31,18 @@ const DeckImportButton = ({
           <Dropdown.Divider />
         </>
       )}
-      <Dropdown.Header>Without Account (non-editable, for URL)</Dropdown.Header>
+      <Dropdown.Header className="pb-0">
+        <>
+          Anonymous (non-editable)
+          <br />
+          Useful only to copy URL
+        </>
+      </Dropdown.Header>
       <Dropdown.Item onClick={() => handleFileInputClick(true)}>
-        Import w/o Account from File
+        Import w/o Acc. from File
       </Dropdown.Item>
       <Dropdown.Item onClick={() => handleOpenTextModal(true)}>
-        Import w/o Account from Text
+        Import w/o Acc. from Text
       </Dropdown.Item>
     </>
   );

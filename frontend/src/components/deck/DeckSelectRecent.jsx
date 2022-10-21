@@ -5,10 +5,11 @@ import PeopleFill from 'assets/images/icons/people-fill.svg';
 
 import { useApp } from 'context';
 
-const DeckSelectRecent = (props) => {
+const DeckSelectRecent = ({ deckid, handleSelect }) => {
+  // TODO FIX
   // setActiveDeck is default and props.setActiveDeck is used in Diff
   // to select deckFrom or deckTo
-  const { setActiveDeck, recentDecks, isMobile } = useApp();
+  const { recentDecks, isMobile } = useApp();
 
   const getIcon = (src) => {
     switch (src) {
@@ -32,18 +33,6 @@ const DeckSelectRecent = (props) => {
     };
   });
 
-  const handleChange = (e) => {
-    if (e.value.length === 32) {
-      props.setActiveDeck
-        ? props.setActiveDeck({ src: 'shared', deckid: e.value })
-        : setActiveDeck({ src: 'shared', deckid: e.value });
-    } else {
-      props.setActiveDeck
-        ? props.setActiveDeck({ src: 'twd', deckid: e.value })
-        : setActiveDeck({ src: 'twd', deckid: e.value });
-    }
-  };
-
   return (
     <Select
       classNamePrefix="react-select"
@@ -52,8 +41,8 @@ const DeckSelectRecent = (props) => {
       name="decks"
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
-      value={options.find((obj) => obj.value === props.deckid)}
-      onChange={handleChange}
+      value={options.find((obj) => obj.value === deckid)}
+      onChange={handleSelect}
     />
   );
 };

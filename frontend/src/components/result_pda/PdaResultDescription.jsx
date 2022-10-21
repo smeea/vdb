@@ -35,21 +35,25 @@ const PdaResultDescription = ({ deck }) => {
         <tbody>
           <tr>
             <td className="blue">
-              {isMobile ?
-               <div className="d-flex align-items-center"><TagFill /></div>
-               :
-               <b>Deck:</b>
-              }
+              {isMobile ? (
+                <div className="d-flex align-items-center">
+                  <TagFill />
+                </div>
+              ) : (
+                <b>Deck:</b>
+              )}
             </td>
             <td className="ps-2">{deck['name']}</td>
           </tr>
           <tr>
             <td className="blue">
-              {isMobile ?
-               <div className="d-flex align-items-center"><PersonFill /></div>
-               :
-               <b>Author:</b>
-              }
+              {isMobile ? (
+                <div className="d-flex align-items-center">
+                  <PersonFill />
+                </div>
+              ) : (
+                <b>Author:</b>
+              )}
             </td>
             <td className="ps-2">
               <div
@@ -62,22 +66,26 @@ const PdaResultDescription = ({ deck }) => {
           </tr>
           <tr>
             <td className="blue">
-              {isMobile ?
-               <div className="d-flex align-items-center"><CalendarEvent /></div>
-               :
-               <b>Created:</b>
-              }
+              {isMobile ? (
+                <div className="d-flex align-items-center">
+                  <CalendarEvent />
+                </div>
+              ) : (
+                <b>Created:</b>
+              )}
             </td>
             <td className="ps-2">{deck['creation_date']}</td>
           </tr>
           {lastUpdated !== deck['creation_date'] && (
             <tr>
               <td className="blue">
-                {isMobile ?
-                 <div className="d-flex align-items-center"><CalendarEvent /></div>
-                 :
-                 <b>Updated:</b>
-                }
+                {isMobile ? (
+                  <div className="d-flex align-items-center">
+                    <CalendarEvent />
+                  </div>
+                ) : (
+                  <b>Updated:</b>
+                )}
               </td>
               <td className="ps-2">{lastUpdated}</td>
             </tr>
@@ -92,8 +100,8 @@ const PdaResultDescription = ({ deck }) => {
 
   const Buttons = (
     <Stack gap={1}>
-      <TwdOpenDeckButton deckid={deck['deckid']} inPda />
-      {username && <DeckCloneButton deck={deck} src="pda" inPda />}
+      <TwdOpenDeckButton deckid={deck['deckid']} />
+      {username && <DeckCloneButton deck={deck} noRedirect />}
       <div>
         <PdaFavoriteButton deck={deck} />
       </div>
