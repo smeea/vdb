@@ -59,7 +59,7 @@ const Navigation = () => {
     decksUrl = `/decks?id=${activeDeck.deckid}`;
   }
   if (quickCard) {
-    cardsUrl = `/cards/${quickCard.Id}`;
+    cardsUrl = `/cards/${quickCard}`;
   }
 
   return (

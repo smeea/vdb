@@ -22,10 +22,14 @@ const Cards = () => {
     playtest,
   } = useApp();
 
-  const { quickCard, setQuickCard } = useSearchForms();
-
+  const { setQuickCard } = useSearchForms();
+  const [card, setCard] = useState();
   const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
+
+  const handleSetCard = (card) => {
+    navigate(`/cards/${card.Id}`);
+  };
 
   const randomCrypt = () => {
     const cardid =
@@ -37,7 +41,7 @@ const Cards = () => {
             ).length
           )
       ) + 200000;
-    setQuickCard(cryptCardBase[cardid]);
+    navigate(`/cards/${cardid}`);
   };
 
   const randomLibrary = () => {
@@ -50,42 +54,40 @@ const Cards = () => {
             ).length
           )
       ) + 100000;
-    setQuickCard(libraryCardBase[cardid]);
+    navigate(`/cards/${cardid}`);
   };
 
   useEffect(() => {
-    if (quickCard) {
-      if (params.id != quickCard.Id) navigate(`/cards/${quickCard.Id}`);
-    } else if (cryptCardBase && libraryCardBase) {
-      if (params.id > 200000) {
-        setQuickCard(cryptCardBase[params.id]);
-      } else if (params.id > 100000) {
-        setQuickCard(libraryCardBase[params.id]);
-      }
+    if (cryptCardBase && libraryCardBase) {
+      setQuickCard(params.cardid);
+      setCard(
+        params.cardid > 200000
+          ? cryptCardBase[params.cardid]
+          : libraryCardBase[params.cardid]
+      );
     }
-  }, [quickCard, cryptCardBase, libraryCardBase]);
+  }, [params.cardid, cryptCardBase, libraryCardBase]);
 
   return (
     <Container className="cards-container px-0 p-md-0">
       <>
         {isMobile ? (
           <>
-            {quickCard && (
+            {card && (
               <>
                 <Row className="m-0 mb-3 mb-md-0 p-0">
                   <Col className="m-0 p-0">
                     {showImage ? (
                       <CardImage
                         className="full-width"
-                        card={quickCard}
+                        card={card}
                         set={imageSet}
                       />
                     ) : (
                       <>
                         <div className="px-3 pt-3">
                           <ResultLayoutText
-                            card={quickCard}
-                            setCard={setQuickCard}
+                            card={card}
                             setImageSet={setImageSet}
                             noClose={true}
                           />
@@ -105,8 +107,8 @@ const Cards = () => {
             <Row className="above-nav-bottom mx-0 px-1 py-1">
               <Col md={8} className="px-0">
                 <QuickSelect
-                  selectedCardid={quickCard && quickCard.Id}
-                  setCard={setQuickCard}
+                  selectedCardid={card && card.Id}
+                  setCard={handleSetCard}
                 />
               </Col>
             </Row>
@@ -130,25 +132,24 @@ const Cards = () => {
                 <Row className="align-content-center justify-content-center py-3">
                   <Col className="px-0">
                     <QuickSelect
-                      selectedCardid={quickCard && quickCard.Id}
-                      setCard={setQuickCard}
+                      selectedCardid={card && card.Id}
+                      setCard={handleSetCard}
                     />
                   </Col>
                 </Row>
               )}
-              {quickCard && (
+              {card && (
                 <Row className="align-content-center justify-content-center my-2 bordered">
                   <Col md={6} className="ps-0">
                     <CardImage
                       className="full-width"
-                      card={quickCard}
+                      card={card}
                       set={imageSet}
                     />
                   </Col>
                   <Col md={6} className="py-3">
                     <ResultLayoutText
-                      card={quickCard}
-                      setCard={setQuickCard}
+                      card={card}
                       setImageSet={setImageSet}
                       noClose={true}
                     />

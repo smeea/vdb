@@ -97,7 +97,7 @@ const App = () => {
         <Route path="/crypt" element={<Crypt />} />
         <Route path="/library" element={<Library />} />
         <Route path="/cards" element={<Cards />}>
-          <Route path="/cards/:id" element={<Cards />} />
+          <Route path=":cardid" element={<Cards />} />
         </Route>
       </Route>
     )
