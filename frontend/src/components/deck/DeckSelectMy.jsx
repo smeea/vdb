@@ -14,7 +14,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
   const options = useMemo(() => {
     return Object.keys(decks)
-      .filter((i) => !decks[i].master && !decks[i].hidden)
+      .filter((i) => !decks[i].master && !decks[i].isHidden)
       .map((i) => {
         const diffDays = Math.round(
           (new Date() - new Date(decks[i]['timestamp'])) / (1000 * 60 * 60 * 24)
@@ -42,9 +42,9 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                 <div className="d-flex align-items-center ps-2 small">
                   {inventoryMode && (
                     <div className="pe-2">
-                      {decks[i].inventory_type == 's' && <Shuffle />}
-                      {decks[i].inventory_type == 'h' && <PinAngleFill />}
-                      {!decks[i].inventory_type && <At />}
+                      {decks[i].inventoryType == 's' && <Shuffle />}
+                      {decks[i].inventoryType == 'h' && <PinAngleFill />}
+                      {!decks[i].inventoryType && <At />}
                     </div>
                   )}
                   {lastEdit}
@@ -89,9 +89,9 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
               <div className="d-flex align-items-center ps-2 small">
                 {inventoryMode && (
                   <div className="pe-2">
-                    {decks[deckid].inventory_type == 's' && <Shuffle />}
-                    {decks[deckid].inventory_type == 'h' && <PinAngleFill />}
-                    {!decks[deckid].inventory_type && <At />}
+                    {decks[deckid].inventoryType == 's' && <Shuffle />}
+                    {decks[deckid].inventoryType == 'h' && <PinAngleFill />}
+                    {!decks[deckid].inventoryType && <At />}
                   </div>
                 )}
                 {new Date(decks[deckid]['timestamp'])

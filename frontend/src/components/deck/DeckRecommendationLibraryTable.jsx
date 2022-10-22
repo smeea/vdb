@@ -34,7 +34,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
     return (
       <React.Fragment key={card.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {deck.is_yours && (
+          {deck.isAuthor && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}

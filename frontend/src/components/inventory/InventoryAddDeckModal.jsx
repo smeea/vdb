@@ -150,14 +150,14 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
       }
     });
 
-    const inventoryType = deck.inventory_type;
+    const inventoryType = deck.inventoryType;
     const toggleInventoryState = (deckid) => {
       if (!inventoryType) {
-        deckUpdate(deckid, 'inventory_type', 's');
+        deckUpdate(deckid, 'inventoryType', 's');
       } else if (inventoryType === 's') {
-        deckUpdate(deckid, 'inventory_type', 'h');
+        deckUpdate(deckid, 'inventoryType', 'h');
       } else if (inventoryType === 'h') {
-        deckUpdate(deckid, 'inventory_type', '');
+        deckUpdate(deckid, 'inventoryType', '');
       }
     };
 
@@ -172,16 +172,16 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
               <div
                 className="px-2"
                 title={
-                  deck.inventory_type === 's'
+                  deck.inventoryType === 's'
                     ? 'Flexible'
-                    : deck.inventory_type === 'h'
+                    : deck.inventoryType === 'h'
                     ? 'Fixed'
                     : 'Virtual'
                 }
               >
-                {deck.inventory_type == 's' && <Shuffle />}
-                {deck.inventory_type == 'h' && <PinAngleFill />}
-                {!deck.inventory_type && <At />}
+                {deck.inventoryType == 's' && <Shuffle />}
+                {deck.inventoryType == 'h' && <PinAngleFill />}
+                {!deck.inventoryType && <At />}
               </div>
             </td>
           )}

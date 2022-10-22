@@ -69,7 +69,7 @@ const ResultLibraryTable = ({ resultCards, placement }) => {
     return (
       <React.Fragment key={card.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {deck?.is_yours && addMode && (
+          {deck?.isAuthor && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}

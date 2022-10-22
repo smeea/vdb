@@ -20,8 +20,8 @@ const DeckPublicButton = ({ deck, noText }) => {
   const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
 
-  const isChild = deck.public_parent ? true : false;
-  const isPublished = deck.public_parent || deck.public_child ? true : false;
+  const isChild = Boolean(deck.publicParent);
+  const isPublished = Boolean(deck.publicParent || deck.publicChild);
 
   const handleSync = () => {
     syncPublic();
@@ -33,7 +33,7 @@ const DeckPublicButton = ({ deck, noText }) => {
   const handleSwitch = () => {
     setActiveDeck({
       src: isChild ? 'my' : 'shared',
-      deckid: isChild ? deck.public_parent : deck.public_child,
+      deckid: isChild ? deck.publicParent : deck.publicChild,
     });
   };
 

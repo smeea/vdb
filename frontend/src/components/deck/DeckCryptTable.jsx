@@ -54,7 +54,7 @@ const DeckCryptTable = ({
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
   let deckInvType = null;
   if (inventoryMode && decks && deckid && decks[deckid]) {
-    deckInvType = decks[deckid].inventory_type;
+    deckInvType = decks[deckid].inventoryType;
   }
 
   const disableOverlay = useMemo(
@@ -98,7 +98,7 @@ const DeckCryptTable = ({
 
     const toggleInventoryState = (deckid, cardid) => {
       const value = cardInvType ? '' : deckInvType === 's' ? 'h' : 's';
-      deckUpdate(deckid, 'used_in_inventory', {
+      deckUpdate(deckid, 'usedInInventory', {
         [cardid]: value,
       });
     };
@@ -142,7 +142,7 @@ const DeckCryptTable = ({
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
-                        inventoryType={decks[deckid].inventory_type}
+                        inventoryType={decks[deckid].inventoryType}
                       />
                     </td>
                   </ConditionalOverlayTrigger>

@@ -11,7 +11,7 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
   const [spinnerState, setSpinnerState] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const isPublished = deck.public_parent || deck.public_child ? true : false;
+  const isPublished = Boolean(deck.publicParent || deck.publicChild);
 
   const handleConfirmation = () => {
     createOrDelete();
@@ -20,7 +20,7 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
 
   const createOrDelete = () => {
     const url = `${process.env.API_URL}pda/${
-      isPublished ? deck.public_child : deck.deckid
+      isPublished ? deck.publicChild : deck.deckid
     }`;
     const options = {
       method: isPublished ? 'DELETE' : 'POST',
@@ -40,7 +40,7 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
             ...prevState,
             [data.parent]: {
               ...prevState[data.parent],
-              public_child: isPublished ? null : data.child,
+              publicChild: isPublished ? null : data.child,
             },
           };
         });

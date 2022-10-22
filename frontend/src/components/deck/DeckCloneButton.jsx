@@ -47,15 +47,15 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
             ...prevState,
             [data.deckid]: {
               ...deck,
-              name: name,
-              deckid: data.deckid,
-              crypt: { ...deck.crypt },
-              library: { ...deck.library },
-              timestamp: now.toUTCString(),
               branchName: null,
               branches: [],
+              crypt: { ...deck.crypt },
+              deckid: data.deckid,
+              isAuthor: true,
+              library: { ...deck.library },
               master: null,
-              is_yours: true,
+              name: name,
+              timestamp: now.toUTCString(),
             },
           }));
           if (!noRedirect) navigate(`/decks/${data.deckid}`);

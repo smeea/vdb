@@ -69,7 +69,7 @@ const Library = () => {
                   inCompare={true}
                   cards={libraryCompare}
                   setCards={setLibraryCompare}
-                  isAuthor={deck.is_yours}
+                  isAuthor={deck.isAuthor}
                 />
               </div>
             )}

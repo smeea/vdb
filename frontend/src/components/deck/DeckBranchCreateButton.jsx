@@ -44,7 +44,7 @@ const DeckBranchCreateButton = ({ deck }) => {
             deckid: data[0].deckid,
             crypt: { ...deck.crypt },
             library: { ...deck.library },
-            inventory_type: '',
+            inventoryType: '',
             master: master,
             branchName: data[0].branch_name,
             timestamp: now.toUTCString(),

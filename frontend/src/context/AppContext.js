@@ -71,11 +71,11 @@ export const AppProvider = (props) => {
   const [deck, setDeck] = useState();
   const [recentDecks, setRecentDecks] = useState([]);
 
-  const [changeTimer, setChangeTimer] = useState(false);
+  const [changeTimer, setChangeTimer] = useState();
   const [timers, setTimers] = useState([]);
 
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
-  const [showMenuButtons, setShowMenuButtons] = useState(false);
+  const [showMenuButtons, setShowMenuButtons] = useState();
 
   // CARD BASE
 
@@ -264,7 +264,7 @@ export const AppProvider = (props) => {
 
   const addRecentDeck = (deck) => {
     const src =
-      deck.deckid.length != 32 ? 'twd' : deck.public_parent ? 'pda' : 'shared';
+      deck.deckid.length != 32 ? 'twd' : deck.publicParent ? 'pda' : 'shared';
     let d = [...recentDecks];
     const idx = recentDecks.map((v) => v.deckid).indexOf(deck.deckid);
     if (idx !== -1) d.splice(idx, 1);
@@ -319,23 +319,23 @@ export const AppProvider = (props) => {
         const cardsData = parseDeckCards(decksData[deckid].cards);
         decksData[deckid] = { ...decksData[deckid], ...cardsData };
 
-        if (decksData[deckid].used_in_inventory) {
-          Object.keys(decksData[deckid].used_in_inventory).map((cardid) => {
+        if (decksData[deckid].usedInInventory) {
+          Object.keys(decksData[deckid].usedInInventory).map((cardid) => {
             if (cardid > 200000) {
               if (decksData[deckid].crypt[cardid]) {
                 decksData[deckid].crypt[cardid].i =
-                  decksData[deckid].used_in_inventory[cardid];
+                  decksData[deckid].usedInInventory[cardid];
               }
             } else {
               if (decksData[deckid].library[cardid]) {
                 decksData[deckid].library[cardid].i =
-                  decksData[deckid].used_in_inventory[cardid];
+                  decksData[deckid].usedInInventory[cardid];
               }
             }
           });
         }
 
-        decksData[deckid].is_yours = true;
+        decksData[deckid].isAuthor = true;
         delete decksData[deckid].cards;
       });
     }
@@ -417,7 +417,7 @@ export const AppProvider = (props) => {
 
   const deckUpdate = (deckid, field, value) => {
     deckServices.deckUpdate(deckid, field, value).then(() => {
-      if (field === 'used_in_inventory') {
+      if (field === 'usedInInventory') {
         setDecks((prevState) => {
           Object.keys(value).map((cardid) => {
             if (cardid > 200000) {
@@ -435,7 +435,7 @@ export const AppProvider = (props) => {
             [field]: value,
           };
 
-          if (field === 'inventory_type') {
+          if (field === 'inventoryType') {
             Object.keys(prevState[deckid].crypt).map((cardid) => {
               prevState[deckid].crypt[cardid].i = '';
             });
@@ -584,13 +584,13 @@ export const AppProvider = (props) => {
     };
 
     Object.keys(decks).forEach((deckid) => {
-      if (decks[deckid].inventory_type) {
+      if (decks[deckid].inventoryType) {
         for (const [id, card] of Object.entries(decks[deckid].crypt)) {
-          const target = crypts[card.i || decks[deckid].inventory_type];
+          const target = crypts[card.i || decks[deckid].inventoryType];
           addToTarget(target, deckid, id, card.q);
         }
         for (const [id, card] of Object.entries(decks[deckid].library)) {
-          const target = libraries[card.i || decks[deckid].inventory_type];
+          const target = libraries[card.i || decks[deckid].inventoryType];
           addToTarget(target, deckid, id, card.q);
         }
       }

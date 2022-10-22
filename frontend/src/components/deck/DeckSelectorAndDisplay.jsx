@@ -55,16 +55,16 @@ const DeckSelectorAndDisplay = () => {
             <DeckCrypt
               deckid={deck.deckid}
               cards={deck.crypt}
-              isAuthor={true}
-              inSearch={true}
+              isAuthor={deck.isAuthor && !deck.isFrozen}
+              inSearch
             />
           </div>
           <div className="pt-4">
             <DeckLibrary
               deckid={deck.deckid}
               cards={deck.library}
-              isAuthor={true}
-              inSearch={true}
+              isAuthor={deck.isAuthor && !deck.isFrozen}
+              inSearch
             />
           </div>
         </>

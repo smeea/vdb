@@ -81,7 +81,7 @@ const ResultCryptTable = ({
     return (
       <React.Fragment key={card.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {(inRecommendation ? deck?.is_yours : deck?.is_yours && addMode) && (
+          {(inRecommendation ? deck?.isAuthor : deck?.isAuthor && addMode) && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}

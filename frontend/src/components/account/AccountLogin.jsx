@@ -95,7 +95,7 @@ const AccountLogin = () => {
   const UsernameForm = (
     <FormControl
       className={isMobile ? 'mb-1' : ''}
-      placeholder="New Username"
+      placeholder="Username"
       type="text"
       name="username"
       value={formUsername}

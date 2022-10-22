@@ -59,7 +59,7 @@ const Crypt = () => {
                   inCompare={true}
                   cards={cryptCompare}
                   setCards={setCryptCompare}
-                  isAuthor={deck.is_yours}
+                  isAuthor={deck.isAuthor}
                 />
               </div>
             )}

@@ -52,21 +52,21 @@ def parse_user_decks(user_decks):
 
         # Return decks
         decks[deck.deckid] = {
-            "name": deck.name,
-            "branchName": deck.branch_name,
             "author": deck.author_public_name,
-            "description": deck.description,
-            "cards": deck.cards,
-            "used_in_inventory": deck.used_in_inventory,
-            "deckid": deck.deckid,
-            "hidden": deck.hidden,
-            "frozen": deck.frozen,
-            "inventory_type": deck.inventory_type,
-            "timestamp": deck.timestamp,
-            "master": deck.master,
+            "branchName": deck.branch_name,
             "branches": deck.branches,
+            "cards": deck.cards,
+            "deckid": deck.deckid,
+            "description": deck.description,
+            "inventoryType": deck.inventory_type,
+            "isFrozen": deck.frozen,
+            "isHidden": deck.hidden,
+            "master": deck.master,
+            "name": deck.name,
+            "publicChild": deck.public_child,
             "tags": deck.tags,
-            "public_child": deck.public_child,
+            "timestamp": deck.timestamp,
+            "usedInInventory": deck.used_in_inventory,
         }
 
     return decks
@@ -130,18 +130,19 @@ def get_deck_route(deckid):
         )
 
         deck = {
-            "name": deck.name,
             "author": deck.author_public_name,
-            "description": deck.description,
             "cards": deck.cards,
             "deckid": deck.deckid,
-            "timestamp": deck.timestamp,
-            "tags": deck.tags,
+            "description": deck.description,
             "favorited": deck.favorited,
-            "is_yours": current_user == deck.author,
-            "non_editable": bool(not deck.author),
-            "public_child": public_child,
-            "public_parent": public_parent,
+            "isEditable": bool(deck.author),
+            "isFrozen": deck.frozen,
+            "isAuthor": current_user == deck.author,
+            "name": deck.name,
+            "publicChild": public_child,
+            "publicParent": public_parent,
+            "tags": deck.tags,
+            "timestamp": deck.timestamp,
         }
 
         return jsonify(deck)
@@ -225,9 +226,9 @@ def update_deck_route(deckid):
         abort(401)
 
     if "hidden" in request.json:
-        d.hidden = request.json["hidden"]
+        d.hidden = request.json["hidden"]  # TODO check if isHidden in frontend
     elif "frozen" in request.json:
-        d.frozen = request.json["frozen"]
+        d.frozen = request.json["frozen"]  # TODO check if isFrozen in frontend
     elif d.frozen:
         return jsonify({"error": "deck is non-editable"})
     else:
@@ -300,11 +301,15 @@ def update_deck_route(deckid):
 
     if "inventory_type" in request.json:
         d.used_in_inventory = {}
-        d.inventory_type = request.json["inventory_type"]
+        d.inventory_type = request.json[
+            "inventory_type"
+        ]  # TODO check if called same from frontend
 
     if "used_in_inventory" in request.json:
         used = d.used_in_inventory.copy()
-        for k, v in request.json["used_in_inventory"].items():
+        for k, v in request.json[
+            "used_in_inventory"
+        ].items():  # TODO check if called same from frontend
             used[int(k)] = v
 
         d.used_in_inventory = used

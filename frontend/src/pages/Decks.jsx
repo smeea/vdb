@@ -100,7 +100,7 @@ const Decks = () => {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (!d.inventory_type && d.crypt[card].q > softUsedMax)
+      if (!d.inventoryType && d.crypt[card].q > softUsedMax)
         miss += deck.crypt[card].q - softUsedMax;
       if (inventoryCrypt[card]) miss -= inventoryCrypt[card].q;
 
@@ -133,7 +133,7 @@ const Decks = () => {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (!d.inventory_type && d.library[card].q > softUsedMax)
+      if (!d.inventoryType && d.library[card].q > softUsedMax)
         miss += d.library[card].q - softUsedMax;
       if (inventoryLibrary[card]) miss -= inventoryLibrary[card].q;
 
@@ -162,19 +162,27 @@ const Decks = () => {
       })
       .then((data) => {
         const cardsData = parseDeckCards(data.cards);
-        data.crypt = cardsData.crypt;
-        data.library = cardsData.library;
-
-        if (id.length !== 32 || data.public_parent) {
-          data.tags = [];
-          Object.values(useTags(data.crypt, data.library)).map((v) => {
-            data.tags = data.tags.concat(v);
-          });
+        let tags;
+        if (id.length !== 32 || data.publicParent) {
+          tags = [];
+          Object.values(useTags(cardsData.crypt, cardsData.library)).map(
+            (v) => {
+              data.tags = data.tags.concat(v);
+            }
+          );
         }
 
         delete data.cards;
         addRecentDeck(data);
-        setDeck(data);
+
+        setDeck({
+          ...data,
+          isPublic: Boolean(data.publicParent),
+          isBranches: data.master || data.branches?.length > 0,
+          tags: tags,
+          crypt: cardsData.crypt,
+          library: cardsData.library,
+        });
       })
       .catch((error) => {
         if (error.message == 400) {
@@ -186,12 +194,12 @@ const Decks = () => {
   };
 
   const toggleInventoryState = (id) => {
-    if (!inventoryType) {
-      deckUpdate(id, 'inventory_type', 's');
-    } else if (inventoryType === 's') {
-      deckUpdate(id, 'inventory_type', 'h');
-    } else if (inventoryType === 'h') {
-      deckUpdate(id, 'inventory_type', '');
+    if (!deck.inventoryType) {
+      deckUpdate(id, 'inventoryType', 's');
+    } else if (deck.inventoryType === 's') {
+      deckUpdate(id, 'inventoryType', 'h');
+    } else if (deck.inventoryType === 'h') {
+      deckUpdate(id, 'inventoryType', '');
     }
   };
 
@@ -199,14 +207,8 @@ const Decks = () => {
     navigate(`/decks/${e.value}`);
   };
 
-  // TODO define when getting deck to be readable from everywhere
   const missingCrypt = deck ? getMissingCrypt(deck) : null;
   const missingLibrary = deck ? getMissingLibrary(deck) : null;
-  const isPublic = Boolean(deck?.public_parent);
-  const isAuthor = deck?.is_yours;
-  const isFrozen = deck?.frozen;
-  const isBranches = deck?.master || deck?.branches?.length > 0;
-  const inventoryType = deck?.inventory_type;
 
   const allTagsOptions = useMemo(() => {
     const allTags = new Set();
@@ -318,7 +320,9 @@ const Decks = () => {
                   >
                     <div
                       className={
-                        isBranches && selectFrom == 'my' ? 'w-75' : 'w-100'
+                        deck?.isBranches && selectFrom == 'my'
+                          ? 'w-75'
+                          : 'w-100'
                       }
                     >
                       {selectFrom == 'my' && decks ? (
@@ -338,22 +342,22 @@ const Decks = () => {
                         />
                       )}
                     </div>
-                    {selectFrom == 'my' && decks && isBranches && (
+                    {selectFrom == 'my' && decks && deck.isBranches && (
                       <div className="ps-1 w-25">
                         <DeckBranchSelect
                           /* TODO handler */
-                          deckid={deck.deckid}
+                          deckid={deck?.deckid}
                         />
                       </div>
                     )}
                     <div className="d-flex">
-                      {inventoryMode && isAuthor && deck && (
+                      {inventoryMode && deck.isAuthor && deck && (
                         <div className="d-flex ps-1">
                           <Button
                             title={`Inventory Type: ${
-                              !inventoryType
+                              !deck.inventoryType
                                 ? 'VIRTUAL\nDo not use Inventory'
-                                : inventoryType === 's'
+                                : deck.inventoryType === 's'
                                 ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
                                 : 'FIXED\nUse unique copies of cards from Inventory'
                             }`}
@@ -361,9 +365,9 @@ const Decks = () => {
                             onClick={() => toggleInventoryState(deck.deckid)}
                           >
                             <div className="d-flex align-items-center">
-                              {!inventoryType && <At />}
-                              {inventoryType === 's' && <Shuffle />}
-                              {inventoryType === 'h' && <PinAngleFill />}
+                              {!deck.inventoryType && <At />}
+                              {deck.inventoryType === 's' && <Shuffle />}
+                              {deck.inventoryType === 'h' && <PinAngleFill />}
                             </div>
                           </Button>
                         </div>
@@ -460,24 +464,24 @@ const Decks = () => {
                 <>
                   <Row className="mx-0 pb-sm-2">
                     <Col
-                      md={isBranches ? 6 : 8}
+                      md={deck.isBranches ? 6 : 8}
                       className="px-0 ps-md-0 pe-md-1"
                     >
                       <DeckChangeName
                         deck={deck}
-                        isAuthor={isAuthor}
-                        isPublic={isPublic}
-                        isFrozen={isFrozen}
-                        nonEditable={deck.non_editable}
+                        isAuthor={deck.isAuthor} // use from deck
+                        isPublic={deck.isPublic} // use from deck
+                        isFrozen={deck.isFrozen} // use from deck
+                        isEditable={deck.isEditable} // TODO check where used
                       />
                     </Col>
-                    {isBranches && (
+                    {deck.isBranches && (
                       <Col md={2} className={isMobile ? 'px-0 pt-05' : 'px-1'}>
                         <DeckChangeBranchName
-                          branchName={deck.branchName}
-                          deckid={deck.deckid}
-                          isAuthor={isAuthor}
-                          isPublic={isPublic}
+                          branchName={deck.branchName} // use from deck
+                          deckid={deck.deckid} // use from deck
+                          isAuthor={deck.isAuthor} // use from deck
+                          isPublic={deck.isPublic} // use from deck
                         />
                       </Col>
                     )}
@@ -492,8 +496,8 @@ const Decks = () => {
                       <DeckChangeAuthor
                         author={deck.author}
                         deckid={deck.deckid}
-                        isAuthor={isAuthor}
-                        isPublic={isPublic}
+                        isAuthor={deck.isAuthor} // use from deck
+                        isPublic={deck.isPublic} // use from deck
                       />
                     </Col>
                   </Row>
@@ -502,37 +506,37 @@ const Decks = () => {
                       <DeckChangeDescription
                         description={deck.description}
                         deckid={deck.deckid}
-                        isAuthor={isAuthor}
-                        isPublic={isPublic}
+                        isAuthor={deck.isAuthor} // use from deck
+                        isPublic={deck.isPublic} // use from deck
                         folded={isMobile ? false : foldedDescription}
                         setFolded={setFoldedDescription}
                       />
                     </Col>
                     {foldedDescription &&
                       !isMobile &&
-                      (deck?.tags?.length > 0 || isAuthor) && (
+                      (deck?.tags?.length > 0 || deck.isAuthor) && (
                         <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
                           <DeckTags
                             allTagsOptions={allTagsOptions}
                             deckid={deck.deckid}
                             tags={deck?.tags}
                             bordered={true}
-                            isAuthor={isAuthor}
-                            isPublic={isPublic}
+                            isAuthor={deck.isAuthor} // use from deck
+                            isPublic={deck.isPublic} // use from deck
                           />
                         </Col>
                       )}
                   </Row>
                   {(!foldedDescription || isMobile) &&
-                    (deck?.tags?.length > 0 || isAuthor) && (
+                    (deck?.tags?.length > 0 || deck.isAuthor) && (
                       <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
                         <DeckTags
                           allTagsOptions={allTagsOptions}
                           deckid={deck.deckid}
                           tags={deck?.tags}
                           bordered={true}
-                          isAuthor={isAuthor}
-                          isPublic={isPublic}
+                          isAuthor={deck.isAuthor}
+                          isPublic={deck.isPublic}
                         />
                       </div>
                     )}
@@ -564,8 +568,8 @@ const Decks = () => {
                     <DeckCrypt
                       deckid={deck.deckid}
                       cards={deck.crypt}
-                      isAuthor={isAuthor && !isFrozen}
-                      isPublic={isPublic}
+                      isAuthor={deck.isAuthor && !deck.isFrozen}
+                      isPublic={deck.isPublic}
                     />
                   </Col>
                   <Col
@@ -576,8 +580,8 @@ const Decks = () => {
                       inDeckTab={true}
                       deckid={deck.deckid}
                       cards={deck.library}
-                      isAuthor={isAuthor && !isFrozen}
-                      isPublic={isPublic}
+                      isAuthor={deck.isAuthor && !deck.isFrozen}
+                      isPublic={deck.isPublic}
                     />
                   </Col>
                 </>
@@ -595,9 +599,9 @@ const Decks = () => {
           <Col lg={2} className="hide-on-lt992px px-lg-3">
             <div className="sticky-buttons">
               <DeckButtons
-                isAuthor={isAuthor}
-                isPublic={isPublic}
-                isBranches={isBranches}
+                isAuthor={deck?.isAuthor}
+                isPublic={deck?.isPublic}
+                isBranches={deck?.isBranches}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
@@ -672,9 +676,9 @@ const Decks = () => {
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
               <DeckButtons
-                isAuthor={isAuthor}
-                isPublic={isPublic}
-                isBranches={isBranches}
+                isAuthor={deck?.isAuthor}
+                isPublic={deck?.isPublic}
+                isBranches={deck?.isBranches}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}

@@ -50,7 +50,7 @@ const DeckLibraryTable = ({
 
   let deckInvType = null;
   if (inventoryMode && decks && deckid && decks[deckid]) {
-    deckInvType = decks[deckid].inventory_type;
+    deckInvType = decks[deckid].inventoryType;
   }
 
   const [modalDraw, setModalDraw] = useState(undefined);
@@ -104,7 +104,7 @@ const DeckLibraryTable = ({
 
     const toggleInventoryState = (deckid, cardid) => {
       const value = cardInvType ? '' : deckInvType === 's' ? 'h' : 's';
-      deckUpdate(deckid, 'used_in_inventory', {
+      deckUpdate(deckid, 'usedInInventory', {
         [cardid]: value,
       });
     };
@@ -148,7 +148,7 @@ const DeckLibraryTable = ({
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
-                        inventoryType={decks[deckid].inventory_type}
+                        inventoryType={decks[deckid].inventoryType}
                       />
                     </td>
                   </ConditionalOverlayTrigger>

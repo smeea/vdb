@@ -9,16 +9,16 @@ const DeckHideButton = ({ deckid }) => {
   const deck = decks[deckid];
 
   const handleClick = () => {
-    deckUpdate(deckid, 'hidden', !deck.hidden);
+    deckUpdate(deckid, 'isHidden', !deck.isHidden);
   };
 
   return (
     <ButtonIconed
       variant="primary"
       onClick={handleClick}
-      title={`${deck.hidden ? 'Hidden' : 'Shown'} in Deck Selector`}
+      title={`${deck.isHidden ? 'Hidden' : 'Shown'} in Deck Selector`}
       icon={
-        deck.hidden ? (
+        deck.isHidden ? (
           <LightbulbOffFill width="16" height="23" viewBox="0 0 16 16" />
         ) : (
           <LightbulbFill width="16" height="23" viewBox="0 0 16 16" />

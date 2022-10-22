@@ -8,7 +8,7 @@ import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { useApp } from 'context';
 import { DeckFreezeButton } from 'components';
 
-const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
+const DeckChangeName = ({ deck, isAuthor, isPublic, isEditable }) => {
   const { deckUpdate, isMobile } = useApp();
   const [state, setState] = useState(deck.name);
   const [buttonState, setButtonState] = useState(false);
@@ -64,7 +64,7 @@ const DeckChangeName = ({ deck, isAuthor, isPublic, nonEditable }) => {
             {isPublic ? <PeopleFill /> : <TrophyFill />}
           </InputGroup.Text>
         )}
-        {nonEditable && (
+        {!isEditable && (
           <InputGroup.Text title="Deck is non-editable and will never change">
             <Snow width="16" height="23" viewBox="0 0 16 16" />
           </InputGroup.Text>

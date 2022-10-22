@@ -3,6 +3,10 @@
 - Crypt sorting in review (works in Deck!)
 - Inventory import bad cards
 
+# REFACTOR
+- isEditable + isAuthor + isFrozen on back & front
+- Add tags to update state
+
 # FEATURES
 - Check TWD
 - Manual change q-ty in card search PDA/TWD

@@ -98,12 +98,17 @@ const Diff = () => {
       })
       .then((data) => {
         const cardsData = parseDeckCards(data.cards);
-        data.crypt = cardsData.crypt;
-        data.library = cardsData.library;
 
         delete data.cards;
         addRecentDeck(data);
-        setD(data);
+
+        setD({
+          ...data,
+          isPublic: Boolean(data.publicParent),
+          isBranches: data.master || data.branches?.length > 0,
+          crypt: cardsData.crypt,
+          library: cardsData.library,
+        });
       })
       .catch((error) => {
         if (error.message == 400) {
@@ -121,11 +126,6 @@ const Diff = () => {
   const handleSelectTo = (e) => {
     navigate(`/diff/${deckidFrom}/${e.value}`);
   };
-
-  const isPublic = Boolean(deck?.public_parent);
-  const isAuthor = deck?.is_yours;
-  const isBranchesFrom = deck?.master || deck?.branches?.length > 0;
-  const isBranchesTo = deckTo?.master || deckTo?.branches?.length > 0;
 
   useEffect(() => {
     if (
@@ -285,7 +285,7 @@ const Diff = () => {
                 >
                   <div
                     className={
-                      isBranchesFrom && selectFrom == 'from-my'
+                      deck.isBranches && selectFrom == 'from-my'
                         ? 'w-75'
                         : 'w-100'
                     }
@@ -309,7 +309,7 @@ const Diff = () => {
                       />
                     )}
                   </div>
-                  {selectFrom == 'from-my' && decks && isBranchesFrom && (
+                  {selectFrom == 'from-my' && decks && deck.isBranches && (
                     <div className="ps-1 w-25">
                       <DeckBranchSelect deckid={deck.deckid} />
                     </div>
@@ -422,7 +422,9 @@ const Diff = () => {
                 >
                   <div
                     className={
-                      isBranchesTo && selectTo == 'to-my' ? 'w-75' : 'w-100'
+                      deckTo.isBranches && selectTo == 'to-my'
+                        ? 'w-75'
+                        : 'w-100'
                     }
                   >
                     {selectTo == 'to-my' && decks ? (
@@ -442,7 +444,7 @@ const Diff = () => {
                       />
                     )}
                   </div>
-                  {selectTo == 'to-my' && decks && isBranchesTo && (
+                  {selectTo == 'to-my' && decks && deckTo.isBranches && (
                     <div className="ps-1 w-25">
                       <DeckBranchSelect
                         /* TODO handler */
@@ -534,8 +536,8 @@ const Diff = () => {
               <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
                 <DiffCrypt
                   deckid={deck.deckid}
-                  isAuthor={isAuthor}
-                  isPublic={isPublic}
+                  isAuthor={deck.isAuthor}
+                  isPublic={deck.isPublic}
                   cardsFrom={deck.crypt}
                   cardsTo={deckTo.crypt}
                 />
@@ -543,8 +545,8 @@ const Diff = () => {
               <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
                 <DiffLibrary
                   deckid={deck.deckid}
-                  isAuthor={isAuthor}
-                  isPublic={isPublic}
+                  isAuthor={deck.isAuthor}
+                  isPublic={deck.isPublic}
                   cardsFrom={deck.library}
                   cardsTo={deckTo.library}
                 />

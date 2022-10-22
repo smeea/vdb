@@ -73,7 +73,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (!deck.inventory_type && deck.crypt[card].q > softUsedMax)
+      if (!deck.inventoryType && deck.crypt[card].q > softUsedMax)
         miss += deck.crypt[card].q - softUsedMax;
       if (inventoryCrypt[card]) miss -= inventoryCrypt[card].q;
 
@@ -102,7 +102,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (!deck.inventory_type && deck.library[card].q > softUsedMax)
+      if (!deck.inventoryType && deck.library[card].q > softUsedMax)
         miss += deck.library[card].q - softUsedMax;
       if (inventoryLibrary[card]) miss -= inventoryLibrary[card].q;
 

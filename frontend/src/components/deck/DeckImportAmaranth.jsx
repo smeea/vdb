@@ -149,30 +149,30 @@ const DeckImportAmaranth = ({
               const { crypt, library } = parseCards(b.cards);
 
               decks[b.deckid] = {
+                author: deck.author,
+                branchName: b.branch_name,
+                crypt: crypt,
                 deckid: b.deckid,
+                description: b.comments || '',
+                isAuthor: true,
+                library: library,
                 master: deck.deckid,
                 name: deck.name,
-                branchName: b.branch_name,
-                author: deck.author,
-                description: b.comments || '',
-                crypt: crypt,
-                library: library,
-                is_yours: true,
                 timestamp: now.toUTCString(),
               };
             });
 
             const { crypt, library } = parseCards(deck.cards);
             decks[deck.deckid] = {
-              deckid: deck.deckid,
-              name: deck.name,
-              branches: Object.keys(decks),
-              branchName: '#0',
               author: deck.author,
-              description: deck.description || '',
+              branchName: '#0',
+              branches: Object.keys(decks),
               crypt: crypt,
+              deckid: deck.deckid,
+              description: deck.description || '',
+              isAuthor: true,
               library: library,
-              is_yours: true,
+              name: deck.name,
               timestamp: now.toUTCString(),
             };
 

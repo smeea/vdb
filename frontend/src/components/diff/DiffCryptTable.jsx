@@ -103,7 +103,7 @@ const DiffCryptTable = ({
                       inInventory={inInventory}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
-                      inventoryType={decks[deckid].inventory_type}
+                      inventoryType={decks[deckid].inventoryType}
                     />
                   </td>
                 </OverlayTrigger>

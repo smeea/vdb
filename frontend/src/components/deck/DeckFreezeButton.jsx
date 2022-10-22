@@ -8,17 +8,17 @@ const DeckFreezeButton = ({ deck }) => {
   const { deckUpdate } = useApp();
 
   const handleClick = () => {
-    deckUpdate(deck.deckid, 'frozen', !deck.frozen);
+    deckUpdate(deck.deckid, 'isFrozen', !deck.isFrozen);
   };
 
   return (
     <Button
       variant="primary"
       onClick={handleClick}
-      title={`${deck.frozen ? 'Disabled' : 'Enabled'} Crypt/Library Editing`}
+      title={`${deck.isFrozen ? 'Disabled' : 'Enabled'} Crypt/Library Editing`}
     >
       <>
-        {deck.frozen ? (
+        {deck.isFrozen ? (
           <LockFill width="16" height="23" viewBox="0 0 16 16" />
         ) : (
           <UnlockFill width="16" height="23" viewBox="0 0 16 16" />
