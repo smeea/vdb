@@ -55,7 +55,7 @@ const DeckMissingModal = ({
               </div>
             </Col>
             <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
-              <DeckLibrary cards={library} isAuthor={false} inMissing={true} />
+              <DeckLibrary cards={library} isAuthor={false} inMissing />
             </Col>
           </Row>
           <div

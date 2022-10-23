@@ -22,18 +22,17 @@ import {
 import { useApp } from 'context';
 
 const DeckButtons = ({
-  isPublic,
-  isAuthor,
-  isBranches,
+  deck,
   missingCrypt,
   missingLibrary,
   setShowInfo,
   setShowDraw,
-  setShowQr,
+  setQrUrl,
   setShowRecommendation,
   handleClose,
 }) => {
-  const { deck, playtest, inventoryMode, username, isNarrow } = useApp();
+  const { playtest, inventoryMode, username, isNarrow } = useApp();
+  const { isPublic, isAuthor, isBranches } = { ...deck };
 
   return (
     <>
@@ -56,7 +55,7 @@ const DeckButtons = ({
               {isAuthor && <DeckPublicButton deck={deck} />}
               <DeckDiffButton deckid={deck.deckid} />
               <DeckReviewButton deck={deck} />
-              <DeckCopyUrlButton setShowQr={setShowQr} deck={deck} />
+              <DeckCopyUrlButton setQrUrl={setQrUrl} deck={deck} />
               <DeckProxyButton
                 deck={deck}
                 missingCrypt={missingCrypt}

@@ -6,15 +6,9 @@ import ChevronBarContract from 'assets/images/icons/chevron-bar-contract.svg';
 import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
 import { useApp } from 'context';
 
-const DeckDescription = ({
-  deckid,
-  description,
-  folded,
-  setFolded,
-  isAuthor,
-  isPublic,
-}) => {
+const DeckDescription = ({ deck, folded, setFolded }) => {
   const { deckUpdate, isMobile } = useApp();
+  const { deckid, description, isAuthor, isPublic } = deck;
   const [state, setState] = useState(description);
   const [buttonState, setButtonState] = useState(false);
 

@@ -50,14 +50,8 @@ def login_route():
 
 @app.route("/api/login", methods=["DELETE"])
 def logout_route():
-    try:
-        user = current_user.username
-        logout_user()
-        return jsonify({"logged out from": user})
-        return jsonify(success=True)
-
-    except AttributeError:
-        abort(401)
+    logout_user()
+    return jsonify(success=True)
 
 
 @app.route("/api/account", methods=["GET"])

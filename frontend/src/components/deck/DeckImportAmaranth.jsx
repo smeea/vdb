@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
@@ -10,7 +11,8 @@ const DeckImportAmaranth = ({
   handleCloseModal,
   show,
 }) => {
-  const { setDecks, setActiveDeck, isMobile } = useApp();
+  const { setDecks, isMobile } = useApp();
+  const navigate = useNavigate();
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
@@ -185,7 +187,7 @@ const DeckImportAmaranth = ({
           addImportedDeckToState({ data });
         }
 
-        setActiveDeck({ src: 'my', deckid: deck.deckid });
+        navigate(`/decks/${deck.deckid}`);
       })
       .catch(() => setImportError(true));
   };

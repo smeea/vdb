@@ -3,12 +3,12 @@ import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 
-const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
+const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
-    const url = `${process.env.ROOT_URL}decks?id=${deck.deckid}`;
+    const url = `${process.env.ROOT_URL}decks/${deck.deckid}`;
 
     navigator.clipboard.writeText(url);
     setState(true);
@@ -20,11 +20,11 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
   };
 
   const handleStandardQrButton = () => {
-    const url = `${process.env.ROOT_URL}decks?id=${deck.deckid}`;
+    const url = `${process.env.ROOT_URL}decks/${deck.deckid}`;
 
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
-    setShowQr(url);
+    setQrUrl(url);
   };
 
   const handleDeckInUrlButton = () => {
@@ -44,7 +44,7 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
 
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
-    setShowQr(url);
+    setQrUrl(url);
   };
 
   const handleSnapshotButton = () => {
@@ -80,7 +80,7 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
         return response.json();
       })
       .then((data) => {
-        const url = `${process.env.ROOT_URL}decks?id=${data.deckid}`;
+        const url = `${process.env.ROOT_URL}decks/${data.deckid}`;
         navigator.clipboard.writeText(url);
       })
       .then(() => {

@@ -1,10 +1,7 @@
 from flask import jsonify, request, abort
-from flask_login import current_user, login_user, logout_user, login_required
-import json
+from flask_login import current_user, login_required
 from api import app, db, login
 from models import User
-from routes.decks_routes import parse_user_decks
-from routes.inventory_routes import parse_user_inventory
 
 
 @login.unauthorized_handler

@@ -1,4 +1,4 @@
-from flask import jsonify, request, abort, Response
+from flask import jsonify, request, abort
 from flask_login import current_user, login_required
 from datetime import date, datetime
 import json
@@ -19,7 +19,7 @@ with open("../frontend/dist/cardbase_lib.json", "r") as library_file:
 
 @login.unauthorized_handler
 def unauthorized_handler():
-    return Response(json.dumps({"Not logged in": True}), 401)
+    abort(401)
 
 
 def get_missing_fields(source):
@@ -222,13 +222,13 @@ def new_public_deck_route(parent_id):
     if parent.public_child:
         abort(400)
 
-    child_id = uuid.uuid4().hex
+    new_child_id = uuid.uuid4().hex
     m = get_missing_fields(parent)
     if m["crypt_total"] > 35 or m["library_total"] > 90:
         abort(400)
 
     child = Deck(
-        deckid=child_id,
+        deckid=new_child_id,
         public_parent=parent.deckid,
         name=parent.name,
         author=parent.author,
@@ -246,17 +246,12 @@ def new_public_deck_route(parent_id):
         traits=m["traits"],
     )
 
-    parent.public_child = child_id
+    parent.public_child = new_child_id
 
     db.session.add(child)
     db.session.commit()
 
-    return jsonify(
-        {
-            "parent": parent.deckid,
-            "child": child.deckid,
-        }
-    )
+    return jsonify({"deckid": new_child_id})
 
 
 @app.route("/api/pda/<string:child_id>", methods=["PUT"])
@@ -290,13 +285,7 @@ def update_public_deck(child_id):
     child.traits = m["traits"]
 
     db.session.commit()
-
-    return jsonify(
-        {
-            "parent": parent.deckid,
-            "child": child.deckid,
-        }
-    )
+    return jsonify(success=True)
 
 
 @app.route("/api/pda/<string:child_id>", methods=["DELETE"])
@@ -312,13 +301,7 @@ def delete_public_deck_route(child_id):
 
     db.session.delete(d)
     db.session.commit()
-
-    return jsonify(
-        {
-            "parent": parent.deckid,
-            "child": child_id,
-        }
-    )
+    return jsonify(success=True)
 
 
 @app.route("/api/pda/new/<int:quantity>", methods=["GET"])

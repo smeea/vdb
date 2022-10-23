@@ -6,9 +6,6 @@ import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { useApp } from 'context';
 
 const DeckSelectRecent = ({ deckid, handleSelect }) => {
-  // TODO FIX
-  // setActiveDeck is default and props.setActiveDeck is used in Diff
-  // to select deckFrom or deckTo
   const { recentDecks, isMobile } = useApp();
 
   const getIcon = (src) => {

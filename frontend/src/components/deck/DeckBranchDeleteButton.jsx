@@ -1,25 +1,22 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import NodeMinusFill from 'assets/images/icons/node-minus-fill.svg';
 import { ButtonIconed, ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
 const DeckBranchDeleteButton = ({ deck, noText }) => {
-  const {
-    setDecks,
-    setActiveDeck,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-  } = useApp();
+  const { setDecks, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const navigate = useNavigate();
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     deleteBranch(deck.deckid);
     setShowConfirmation(false);
     if (deck.master) {
-      setActiveDeck({ src: 'my', deckid: deck.master });
+      navigate(`/decks/${deck.master}`);
     } else {
-      setActiveDeck({ src: 'my', deckid: deck.branches[0] });
+      navigate(`/decks/${deck.branches[0]}`);
     }
     setShowMenuButtons(false);
     setShowFloatingButtons(true);

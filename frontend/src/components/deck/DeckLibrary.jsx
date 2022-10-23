@@ -16,15 +16,7 @@ import { useApp } from 'context';
 import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const DeckLibrary = ({
-  cards,
-  deckid,
-  isAuthor,
-  isPublic,
-  inDeckTab,
-  inMissing,
-  inSearch,
-}) => {
+const DeckLibrary = ({ deck, inMissing }) => {
   const {
     nativeLibrary,
     isMobile,
@@ -32,7 +24,7 @@ const DeckLibrary = ({
     showFloatingButtons,
     setShowFloatingButtons,
   } = useApp();
-
+  const { deckid, isPublic, isAuthor } = deck;
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
@@ -52,7 +44,7 @@ const DeckLibrary = ({
     libraryByTypeTotal,
     libraryByClansTotal,
     libraryByDisciplinesTotal,
-  } = useDeckLibrary(cards, nativeLibrary);
+  } = useDeckLibrary(deck.library, nativeLibrary);
 
   // Modal Card Controller
   const {
@@ -95,7 +87,6 @@ const DeckLibrary = ({
         cards={libraryByType[cardtype]}
         isAuthor={isAuthor}
         isPublic={isPublic}
-        inSearch={inSearch}
         inMissing={inMissing}
         isModalOpen={shouldShowModal}
         placement={isNarrow ? 'bottom' : 'right'}
@@ -116,7 +107,6 @@ const DeckLibrary = ({
         cards={librarySideByType[cardtype]}
         isAuthor={isAuthor}
         isPublic={isPublic}
-        inSearch={inSearch}
         inMissing={inMissing}
         isModalOpen={shouldShowModal}
       />
@@ -126,7 +116,7 @@ const DeckLibrary = ({
   return (
     <>
       <div
-        className={inDeckTab && !isMobile ? 'sticky-deck-library pt-4' : null}
+        className={!inMissing && !isMobile ? 'sticky-deck-library pt-4' : null}
       >
         <DeckLibraryHeader
           isMobile={isMobile}
@@ -153,7 +143,7 @@ const DeckLibrary = ({
           (!isMobile ? (
             <DeckNewCard
               setShowAdd={setShowAdd}
-              cards={cards}
+              cards={deck.library}
               deckid={deckid}
               target="library"
             />
@@ -177,7 +167,7 @@ const DeckLibrary = ({
               <Modal.Body className="p-0">
                 <DeckNewCard
                   setShowAdd={setShowAdd}
-                  cards={cards}
+                  cards={deck.library}
                   deckid={deckid}
                   target="library"
                 />

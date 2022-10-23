@@ -4,8 +4,9 @@ import Check2 from 'assets/images/icons/check2.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import { useApp } from 'context';
 
-const DeckChangeAuthor = ({ deckid, author, isAuthor, isPublic }) => {
+const DeckChangeAuthor = ({ deck }) => {
   const { deckUpdate, isMobile } = useApp();
+  const { deckid, author, isAuthor, isPublic } = deck;
   const [state, setState] = useState(author);
   const [buttonState, setButtonState] = useState(false);
 

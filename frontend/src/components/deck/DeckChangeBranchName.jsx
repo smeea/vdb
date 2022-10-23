@@ -4,8 +4,9 @@ import Check2 from 'assets/images/icons/check2.svg';
 import PaletteFill from 'assets/images/icons/palette-fill.svg';
 import { useApp } from 'context';
 
-const DeckChangeBranchName = ({ deckid, branchName, isAuthor }) => {
+const DeckChangeBranchName = ({ deck }) => {
   const { deckUpdate, isMobile } = useApp();
+  const { deckid, branchName, isAuthor } = deck;
   const [state, setState] = useState(branchName);
   const [buttonState, setButtonState] = useState(false);
 

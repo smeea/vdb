@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   ButtonGroup,
   Spinner,
@@ -10,13 +11,9 @@ import { ModalConfirmation, DeckTogglePublicButton } from 'components';
 import { useApp } from 'context';
 
 const DeckPublicButton = ({ deck, noText }) => {
-  const {
-    decks,
-    setActiveDeck,
-    setSharedDeck,
-    setShowMenuButtons,
-    setShowFloatingButtons,
-  } = useApp();
+  const { decks, setDeck, setShowMenuButtons, setShowFloatingButtons } =
+    useApp();
+  const navigate = useNavigate();
   const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
 
@@ -31,10 +28,7 @@ const DeckPublicButton = ({ deck, noText }) => {
   };
 
   const handleSwitch = () => {
-    setActiveDeck({
-      src: isChild ? 'my' : 'shared',
-      deckid: isChild ? deck.publicParent : deck.publicChild,
-    });
+    navigate(`/decks/${isChild ? deck.publicParent : deck.publicChild}`);
   };
 
   const syncPublic = () => {
@@ -50,14 +44,11 @@ const DeckPublicButton = ({ deck, noText }) => {
     setSpinnerState(true);
     fetch(url, options)
       .then((response) => response.json())
-      .then((data) => {
-        setSharedDeck((prevState) => ({
+      .then(() => {
+        setDeck((prevState) => ({
           ...prevState,
-          [data.child]: {
-            ...prevState[data.child],
-            crypt: { ...decks[data.parent].crypt },
-            library: { ...decks[data.parent].library },
-          },
+          crypt: { ...decks[deck.publicParent].crypt },
+          library: { ...decks[deck.publicParent].library },
         }));
       });
     setSpinnerState(false);

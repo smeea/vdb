@@ -102,13 +102,8 @@ export const AppProvider = (props) => {
 
     fetch(url, options)
       .then((response) => response.json())
-      .then((data) => {
-        if (!data.username) {
-          initializeUnauthenticatedUser();
-        } else {
-          initializeUserData(data);
-        }
-      });
+      .then((data) => initializeUserData(data))
+      .catch(() => initializeUnauthenticatedUser());
   };
 
   const initializeUserData = (data) => {
@@ -136,6 +131,7 @@ export const AppProvider = (props) => {
     setUsername(undefined);
     setEmail(undefined);
     setDeck(undefined);
+    setDecks({});
   };
 
   useEffect(() => {
@@ -336,6 +332,9 @@ export const AppProvider = (props) => {
         }
 
         decksData[deckid].isAuthor = true;
+        decksData[deckid].isBranches = Boolean(
+          decksData[deckid].master || decksData[deckid].branches?.length > 0
+        );
         delete decksData[deckid].cards;
       });
     }
@@ -428,6 +427,17 @@ export const AppProvider = (props) => {
           });
           return prevState;
         });
+
+        setDeck((prevState) => {
+          Object.keys(value).map((cardid) => {
+            if (cardid > 200000) {
+              prevState.crypt[cardid].i = value[cardid];
+            } else {
+              prevState.library[cardid].i = value[cardid];
+            }
+          });
+          return prevState;
+        });
       } else {
         setDecks((prevState) => {
           prevState[deckid] = {
@@ -441,6 +451,24 @@ export const AppProvider = (props) => {
             });
             Object.keys(prevState[deckid].library).map((cardid) => {
               prevState[deckid].library[cardid].i = '';
+            });
+          }
+
+          return prevState;
+        });
+
+        setDeck((prevState) => {
+          prevState = {
+            ...prevState,
+            [field]: value,
+          };
+
+          if (field === 'inventoryType') {
+            Object.keys(prevState.crypt).map((cardid) => {
+              prevState.crypt[cardid].i = '';
+            });
+            Object.keys(prevState.library).map((cardid) => {
+              prevState.library[cardid].i = '';
             });
           }
 

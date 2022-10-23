@@ -1,15 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import NodePlusFill from 'assets/images/icons/node-plus-fill.svg';
 import { useApp } from 'context';
 import { ButtonIconed } from 'components';
 
 const DeckBranchCreateButton = ({ deck }) => {
-  const {
-    setDecks,
-    setActiveDeck,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-  } = useApp();
+  const { setDecks, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const navigate = useNavigate();
 
   const branchCreate = () => {
     const master = deck.master ? deck.master : deck.deckid;
@@ -46,11 +43,11 @@ const DeckBranchCreateButton = ({ deck }) => {
             library: { ...deck.library },
             inventoryType: '',
             master: master,
-            branchName: data[0].branch_name,
+            branchName: data[0].branchName,
             timestamp: now.toUTCString(),
           },
         }));
-        setActiveDeck({ src: 'my', deckid: data[0].deckid });
+        navigate(`/decks/${data[0].deckid}`);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
       });

@@ -32,6 +32,7 @@ const DeckReviewButton = ({ deck }) => {
         author: deck.author,
         cards: cards,
         tags: deck.tags,
+        anonymous: true,
       }),
     };
 
@@ -44,7 +45,7 @@ const DeckReviewButton = ({ deck }) => {
 
   useEffect(() => {
     if (snapshotId) {
-      navigate(`/review?id=${snapshotId}`);
+      navigate(`/review/${snapshotId}`);
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
     }

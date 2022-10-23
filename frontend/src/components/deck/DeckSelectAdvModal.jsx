@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Modal,
   Form,
@@ -39,12 +40,12 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
     cryptCardBase,
     decks,
     deckUpdate,
-    setActiveDeck,
     inventoryMode,
     isNarrow,
     isMobile,
     isDesktop,
   } = useApp();
+  const navigate = useNavigate();
 
   const [sortMethod, setSortMethod] = useState('byName');
   const [sortedDecks, setSortedDecks] = useState([]);
@@ -65,7 +66,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
   };
 
   const handleOpen = (deckid) => {
-    setActiveDeck({ src: 'my', deckid: deckid });
+    navigate(`/decks/${deckid}`);
     handleClose();
   };
 

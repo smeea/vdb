@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Dropdown, Spinner } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ButtonIconed, ModalConfirmation } from 'components';
@@ -7,11 +8,11 @@ import { useApp } from 'context';
 
 const DeckTogglePublicButton = ({ deck, isDropdown }) => {
   const { setDecks } = useApp();
-
+  const navigate = useNavigate();
   const [spinnerState, setSpinnerState] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
-
   const isPublished = Boolean(deck.publicParent || deck.publicChild);
+  const parentId = deck.publicParent ?? deck.publicChild;
 
   const handleConfirmation = () => {
     createOrDelete();
@@ -19,9 +20,7 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
   };
 
   const createOrDelete = () => {
-    const url = `${process.env.API_URL}pda/${
-      isPublished ? deck.publicChild : deck.deckid
-    }`;
+    const url = `${process.env.API_URL}pda/${deck.deckid}`;
     const options = {
       method: isPublished ? 'DELETE' : 'POST',
       mode: 'cors',
@@ -38,12 +37,14 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
         setDecks((prevState) => {
           return {
             ...prevState,
-            [data.parent]: {
-              ...prevState[data.parent],
-              publicChild: isPublished ? null : data.child,
+            [parentId]: {
+              ...prevState[parentId],
+              publicChild: isPublished ? null : data.deckid,
             },
           };
         });
+
+        navigate(`/decks/${isPublished ? deck.publicParent : data.deckid}`);
       });
 
     setSpinnerState(false);

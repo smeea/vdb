@@ -2,17 +2,15 @@ import React, { useMemo, useState } from 'react';
 import Select from 'react-select';
 import { useApp } from 'context';
 
-const DeckBranchSelect = (props) => {
-  const { setActiveDeck, decks } = useApp();
+const DeckBranchSelect = ({ deck, handleSelect }) => {
+  const { decks } = useApp();
   const [branches, setBranches] = useState([]);
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
   };
 
-  const deck = decks[props.deckid];
-  const master = decks[deck.master];
-  const target = master ? master : deck;
+  const target = decks[deck.master] ?? deck;
 
   const b = {
     [target.deckid]: {
@@ -61,12 +59,8 @@ const DeckBranchSelect = (props) => {
       isSearchable={false}
       name="decks"
       placeholder=""
-      value={options.find((obj) => obj.value === props.deckid)}
-      onChange={(e) => {
-        props.setActiveDeck
-          ? props.setActiveDeck({ src: 'my', deckid: e.value })
-          : setActiveDeck({ src: 'my', deckid: e.value });
-      }}
+      value={options.find((obj) => obj.value === deck.deckid)}
+      onChange={handleSelect}
     />
   );
 };

@@ -45,7 +45,6 @@ const Diff = () => {
     showMenuButtons,
     setShowMenuButtons,
   } = useApp();
-  // const query = new URLSearchParams(useLocation().search);
   const navigate = useNavigate();
   const { deckidFrom, deckidTo } = useParams();
 
@@ -129,17 +128,16 @@ const Diff = () => {
 
   useEffect(() => {
     if (
-      decks &&
-      preconDecks &&
       cryptCardBase &&
       libraryCardBase &&
+      decks !== undefined &&
       deckidFrom &&
       (deck?.deckid !== deckidFrom || !deck)
     ) {
       if (decks[deckidFrom]) {
         setDeck(decks[deckidFrom]);
       } else if (deckidFrom.includes(':')) {
-        if (preconDecks[deckidFrom]) {
+        if (preconDecks && preconDecks[deckidFrom]) {
           setDeck(preconDecks[deckidFrom]);
         } else {
           setErrorFrom('NO DECK WITH THIS ID');
@@ -168,23 +166,22 @@ const Diff = () => {
 
   useEffect(() => {
     if (
-      decks &&
-      preconDecks &&
       cryptCardBase &&
       libraryCardBase &&
+      decks !== undefined &&
       deckidTo &&
       (deckTo?.deckid !== deckidTo || !deckTo)
     ) {
       if (decks[deckidTo]) {
-        setDeckTo(decks[deckidTo]);
+        setDeck(decks[deckidTo]);
       } else if (deckidTo.includes(':')) {
-        if (preconDecks[deckidTo]) {
-          setDeckTo(preconDecks[deckidTo]);
+        if (preconDecks && preconDecks[deckidTo]) {
+          setDeck(preconDecks[deckidTo]);
         } else {
           setErrorTo('NO DECK WITH THIS ID');
         }
       } else {
-        getDeck(deckidTo, setDeckTo, setErrorTo);
+        getDeck(deckidTo, setDeck, setErrorTo);
       }
     }
   }, [deckidTo, cryptCardBase, libraryCardBase]);
@@ -285,7 +282,7 @@ const Diff = () => {
                 >
                   <div
                     className={
-                      deck.isBranches && selectFrom == 'from-my'
+                      deck?.isBranches && selectFrom == 'from-my'
                         ? 'w-75'
                         : 'w-100'
                     }
@@ -311,7 +308,10 @@ const Diff = () => {
                   </div>
                   {selectFrom == 'from-my' && decks && deck.isBranches && (
                     <div className="ps-1 w-25">
-                      <DeckBranchSelect deckid={deck.deckid} />
+                      <DeckBranchSelect
+                        handleSelect={handleSelectFrom}
+                        deck={deck}
+                      />
                     </div>
                   )}
                   {isMobile && (
@@ -422,7 +422,7 @@ const Diff = () => {
                 >
                   <div
                     className={
-                      deckTo.isBranches && selectTo == 'to-my'
+                      deckTo?.isBranches && selectTo == 'to-my'
                         ? 'w-75'
                         : 'w-100'
                     }
@@ -444,11 +444,11 @@ const Diff = () => {
                       />
                     )}
                   </div>
-                  {selectTo == 'to-my' && decks && deckTo.isBranches && (
+                  {selectTo == 'to-my' && decks && deckTo?.isBranches && (
                     <div className="ps-1 w-25">
                       <DeckBranchSelect
-                        /* TODO handler */
-                        deckid={deckTo.deckid}
+                        handleSelect={handleSelectTo}
+                        deck={deckTo}
                       />
                     </div>
                   )}

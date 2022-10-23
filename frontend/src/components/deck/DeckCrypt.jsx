@@ -11,15 +11,7 @@ import {
 import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
-const DeckCrypt = ({
-  cards,
-  deckid,
-  isPublic,
-  isAuthor,
-  inSearch,
-  inAdvSelect,
-  inMissing,
-}) => {
+const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
   const {
     cryptDeckSort,
     changeCryptDeckSort,
@@ -28,6 +20,7 @@ const DeckCrypt = ({
     showFloatingButtons,
     setShowFloatingButtons,
   } = useApp();
+  const { deckid, isPublic, isAuthor } = deck;
 
   const sortMethods = {
     Capacity: 'C',
@@ -51,7 +44,7 @@ const DeckCrypt = ({
     cryptGroups,
     sortedCards,
     sortedCardsSide,
-  } = useDeckCrypt(cards, cryptDeckSort, changeTimer);
+  } = useDeckCrypt(deck.crypt, cryptDeckSort, changeTimer);
 
   // Disciplines Sort and Key non-Key selection
   const {
@@ -59,7 +52,7 @@ const DeckCrypt = ({
     keyDisciplines,
     nonKeyDisciplines,
     disciplinesDetailed,
-  } = useKeyDisciplines(cards, cryptTotal);
+  } = useKeyDisciplines(deck.crypt, cryptTotal);
 
   // Modal Card Controller
   const {
@@ -107,7 +100,7 @@ const DeckCrypt = ({
         (!isMobile ? (
           <DeckNewCard
             setShowAdd={setShowAdd}
-            cards={cards}
+            cards={deck.crypt}
             deckid={deckid}
             target="crypt"
           />
@@ -131,7 +124,7 @@ const DeckCrypt = ({
             <Modal.Body className="p-0">
               <DeckNewCard
                 setShowAdd={setShowAdd}
-                cards={cards}
+                cards={deck.crypt}
                 deckid={deckid}
                 target="crypt"
               />
@@ -139,16 +132,16 @@ const DeckCrypt = ({
           </Modal>
         ))}
       <DeckCryptTable
+        deck={deck}
         handleModalCardOpen={handleModalCardOpen}
-        deckid={deckid}
         cards={
-          inMissing ? useDeckCrypt(cards, 'Name')['sortedCards'] : sortedCards
+          inMissing
+            ? useDeckCrypt(deck.crypt, 'Name')['sortedCards']
+            : sortedCards
         }
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
         inSearch={inSearch}
@@ -161,12 +154,10 @@ const DeckCrypt = ({
             <b>Side Crypt</b>
           </div>
           <DeckCryptTable
+            deck={deck}
             handleModalCardOpen={handleModalSideCardOpen}
-            deckid={deckid}
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
-            isAuthor={isAuthor}
-            isPublic={isPublic}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
             inSearch={inSearch}

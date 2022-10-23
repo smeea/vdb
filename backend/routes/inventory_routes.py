@@ -2,7 +2,6 @@ from flask import jsonify, request, abort, Response
 from flask_login import current_user, login_required
 import json
 from models import User
-from deck_export import deck_export
 from api import app, db, login
 
 

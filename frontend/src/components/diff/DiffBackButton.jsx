@@ -15,7 +15,7 @@ const DiffBackButton = ({ deckid }) => {
       onClick={() => {
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
-        navigate(deckid ? `/decks?id=${deckid}` : '/decks');
+        navigate(deckid ? `/decks/${deckid}` : '/decks');
       }}
       title="Back to Decks"
       icon={<Folder2Open />}

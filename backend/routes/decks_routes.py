@@ -1,4 +1,4 @@
-from flask import jsonify, request, abort, Response
+from flask import jsonify, request, abort
 from flask_login import current_user, login_required
 from datetime import date, datetime, timedelta
 import uuid
@@ -74,13 +74,13 @@ def parse_user_decks(user_decks):
 
 @login.unauthorized_handler
 def unauthorized_handler():
-    return Response(json.dumps({"Not logged in": True}), 401)
+    abort(401)
 
 
 @app.route("/api/deck", methods=["POST"])
 @login_required
 def new_deck_route():
-    deckid = uuid.uuid4().hex
+    new_deckid = uuid.uuid4().hex
 
     name = request.json["name"] if "name" in request.json else "New deck"
     author = request.json["author"] if "author" in request.json else ""
@@ -94,7 +94,7 @@ def new_deck_route():
         cards[int(k)] = v
 
     d = Deck(
-        deckid=deckid,
+        deckid=new_deckid,
         name=name,
         author_public_name=author,
         creation_date=date.today().strftime("%Y-%m-%d"),
@@ -107,7 +107,7 @@ def new_deck_route():
     db.session.add(d)
     db.session.commit()
 
-    return jsonify({"deckid": d.deckid})
+    return jsonify({"deckid": new_deckid})
 
 
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
@@ -135,7 +135,7 @@ def get_deck_route(deckid):
             "deckid": deck.deckid,
             "description": deck.description,
             "favorited": deck.favorited,
-            "isEditable": bool(deck.author),
+            "isNonEditable": bool(not deck.author),
             "isFrozen": deck.frozen,
             "isAuthor": current_user == deck.author,
             "name": deck.name,
@@ -207,7 +207,7 @@ def remove_deck_route(deckid):
         db.session.delete(d)
 
     db.session.commit()
-    return jsonify({"deck removed": deckid})
+    return jsonify(success=True)
 
 
 @app.route("/api/deck/<string:deckid>", methods=["PUT"])
@@ -215,22 +215,21 @@ def remove_deck_route(deckid):
 def update_deck_route(deckid):
     d = Deck.query.get(deckid)
     if not d:
-        print("bad deck request\n", deckid, current_user.username, request.json)
-        return jsonify({"error": "no deck"})
+        abort(400)
     elif not d.author:
         # For newly anonymous imported decks to fix bad imports
-        accepted_past = datetime.utcnow() - timedelta(minutes=5)
+        accepted_past = datetime.utcnow() - timedelta(minutes=15)
         if d.timestamp < accepted_past:
             abort(401)
     elif d.author != current_user:
         abort(401)
 
     if "hidden" in request.json:
-        d.hidden = request.json["hidden"]  # TODO check if isHidden in frontend
+        d.hidden = request.json["isHidden"]
     elif "frozen" in request.json:
-        d.frozen = request.json["frozen"]  # TODO check if isFrozen in frontend
+        d.frozen = request.json["isFrozen"]
     elif d.frozen:
-        return jsonify({"error": "deck is non-editable"})
+        abort(409)
     else:
         d.timestamp = datetime.utcnow()
 
@@ -301,15 +300,11 @@ def update_deck_route(deckid):
 
     if "inventory_type" in request.json:
         d.used_in_inventory = {}
-        d.inventory_type = request.json[
-            "inventory_type"
-        ]  # TODO check if called same from frontend
+        d.inventory_type = request.json["inventoryType"]
 
     if "used_in_inventory" in request.json:
         used = d.used_in_inventory.copy()
-        for k, v in request.json[
-            "used_in_inventory"
-        ].items():  # TODO check if called same from frontend
+        for k, v in request.json["usedInInventory"].items():
             used[int(k)] = v
 
         d.used_in_inventory = used
@@ -331,7 +326,7 @@ def update_deck_route(deckid):
 
     db.session.commit()
 
-    return jsonify({"updated deck": d.deckid})
+    return jsonify(success=True)
 
 
 @app.route("/api/deck/<string:deckid>/recommendation", methods=["GET"])
@@ -407,7 +402,7 @@ def create_branch_route(deckid):
         )
         db.session.add(branch)
 
-        branches.append({"deckid": new_deckid, "branch_name": branch_name})
+        branches.append({"deckid": new_deckid, "branchName": branch_name})
         branches_deckids.append(new_deckid)
 
     master.branches = branches_deckids
@@ -444,7 +439,7 @@ def remove_branch_route(deckid):
 
     db.session.delete(d)
     db.session.commit()
-    return jsonify({"deckid": request.json["deckid"]})
+    return jsonify(success=True)
 
 
 @app.route("/api/decks/import", methods=["POST"])
@@ -457,9 +452,9 @@ def import_deck_route():
     author = current_user if not anonymous else None
     author_public_name = deck["author"]
 
-    deckid = uuid.uuid4().hex
+    new_deckid = uuid.uuid4().hex
     d = Deck(
-        deckid=deckid,
+        deckid=new_deckid,
         name=deck["name"],
         author_public_name=author_public_name,
         description=deck["description"],
@@ -470,7 +465,7 @@ def import_deck_route():
     db.session.add(d)
     db.session.commit()
 
-    return jsonify({"deckid": deckid})
+    return jsonify({"deckid": new_deckid})
 
 
 @app.route("/api/decks/export", methods=["POST"])

@@ -13,7 +13,6 @@ const DeckImportText = ({
   show,
 }) => {
   const {
-    // setActiveDeck,
     isMobile,
     setShowFloatingButtons,
     setShowMenuButtons,

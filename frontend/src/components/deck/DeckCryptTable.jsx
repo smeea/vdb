@@ -22,13 +22,11 @@ import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 import { useApp } from 'context';
 
 const DeckCryptTable = ({
-  deckid,
+  deck,
   disciplinesSet,
   keyDisciplines,
   nonKeyDisciplines,
   cards,
-  isPublic,
-  isAuthor,
   placement,
   showInfo,
   cryptTotal,
@@ -50,11 +48,12 @@ const DeckCryptTable = ({
     deckCardChange,
     setShowFloatingButtons,
   } = useApp();
+  const { deckid, isPublic, isAuthor } = deck;
 
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
-  let deckInvType = null;
-  if (inventoryMode && decks && deckid && decks[deckid]) {
-    deckInvType = decks[deckid].inventoryType;
+  let deckInvType = null; // TODO try refactor?
+  if (inventoryMode && deck) {
+    deckInvType = deck.inventoryType;
   }
 
   const disableOverlay = useMemo(

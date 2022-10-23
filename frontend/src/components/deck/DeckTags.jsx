@@ -2,16 +2,9 @@ import React, { useMemo } from 'react';
 import CreatableSelect from 'react-select/creatable';
 import { useApp } from 'context';
 
-const DeckTags = ({
-  deckid,
-  tags,
-  tagsSuperior,
-  bordered,
-  isAuthor,
-  isPublic,
-  allTagsOptions,
-}) => {
+const DeckTags = ({ deck, tagsSuperior, bordered, allTagsOptions }) => {
   const { deckUpdate } = useApp();
+  const { deckid, tags, isPublic, isAuthor } = deck;
 
   const tagList = useMemo(() => {
     const t = [];

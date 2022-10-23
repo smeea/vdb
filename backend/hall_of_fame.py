@@ -1,6 +1,3 @@
-import json
-
-
 def get_hof_players(twd_decks):
     players_twd = {}
     for deck in twd_decks:

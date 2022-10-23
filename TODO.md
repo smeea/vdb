@@ -4,8 +4,9 @@
 - Inventory import bad cards
 
 # REFACTOR
-- isEditable + isAuthor + isFrozen on back & front
-- Add tags to update state
+- Review
+- Diff
+- Go back from newly made Public
 
 # FEATURES
 - Check TWD

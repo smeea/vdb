@@ -72,7 +72,7 @@ const Decks = () => {
   }
 
   const [showDraw, setShowDraw] = useState(false);
-  const [showQr, setShowQr] = useState(false);
+  const [qrUrl, setQrUrl] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
@@ -101,7 +101,7 @@ const Decks = () => {
 
       let miss = softUsedMax + hardUsedTotal;
       if (!d.inventoryType && d.crypt[card].q > softUsedMax)
-        miss += deck.crypt[card].q - softUsedMax;
+        miss += d.crypt[card].q - softUsedMax;
       if (inventoryCrypt[card]) miss -= inventoryCrypt[card].q;
 
       if (miss > 0) {
@@ -178,7 +178,7 @@ const Decks = () => {
         setDeck({
           ...data,
           isPublic: Boolean(data.publicParent),
-          isBranches: data.master || data.branches?.length > 0,
+          isBranches: Boolean(data.master || data.branches?.length > 0),
           tags: tags,
           crypt: cardsData.crypt,
           library: cardsData.library,
@@ -267,17 +267,16 @@ const Decks = () => {
 
   useEffect(() => {
     if (
-      decks &&
-      preconDecks &&
       cryptCardBase &&
       libraryCardBase &&
+      decks !== undefined &&
       deckid &&
       (deck?.deckid !== deckid || !deck)
     ) {
       if (decks[deckid]) {
         setDeck(decks[deckid]);
       } else if (deckid.includes(':')) {
-        if (preconDecks[deckid]) {
+        if (preconDecks && preconDecks[deckid]) {
           setDeck(preconDecks[deckid]);
         } else {
           setError('NO DECK WITH THIS ID');
@@ -342,32 +341,32 @@ const Decks = () => {
                         />
                       )}
                     </div>
-                    {selectFrom == 'my' && decks && deck.isBranches && (
+                    {selectFrom == 'my' && decks && deck?.isBranches && (
                       <div className="ps-1 w-25">
                         <DeckBranchSelect
-                          /* TODO handler */
-                          deckid={deck?.deckid}
+                          handleSelect={handleSelect}
+                          deck={deck}
                         />
                       </div>
                     )}
                     <div className="d-flex">
-                      {inventoryMode && deck.isAuthor && deck && (
+                      {inventoryMode && deck?.isAuthor && (
                         <div className="d-flex ps-1">
                           <Button
                             title={`Inventory Type: ${
-                              !deck.inventoryType
+                              !deck?.inventoryType
                                 ? 'VIRTUAL\nDo not use Inventory'
-                                : deck.inventoryType === 's'
+                                : deck?.inventoryType === 's'
                                 ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
                                 : 'FIXED\nUse unique copies of cards from Inventory'
                             }`}
                             variant="primary"
-                            onClick={() => toggleInventoryState(deck.deckid)}
+                            onClick={() => toggleInventoryState(deck?.deckid)}
                           >
                             <div className="d-flex align-items-center">
-                              {!deck.inventoryType && <At />}
-                              {deck.inventoryType === 's' && <Shuffle />}
-                              {deck.inventoryType === 'h' && <PinAngleFill />}
+                              {!deck?.inventoryType && <At />}
+                              {deck?.inventoryType === 's' && <Shuffle />}
+                              {deck?.inventoryType === 'h' && <PinAngleFill />}
                             </div>
                           </Button>
                         </div>
@@ -460,29 +459,18 @@ const Decks = () => {
               </Row>
             </Col>
             <Col md={7} className="px-0 px-md-2">
-              {((showInfo && deck) || (!isMobile && deck)) && (
+              {deck && (showInfo || !isMobile) && (
                 <>
                   <Row className="mx-0 pb-sm-2">
                     <Col
                       md={deck.isBranches ? 6 : 8}
                       className="px-0 ps-md-0 pe-md-1"
                     >
-                      <DeckChangeName
-                        deck={deck}
-                        isAuthor={deck.isAuthor} // use from deck
-                        isPublic={deck.isPublic} // use from deck
-                        isFrozen={deck.isFrozen} // use from deck
-                        isEditable={deck.isEditable} // TODO check where used
-                      />
+                      <DeckChangeName deck={deck} />
                     </Col>
                     {deck.isBranches && (
                       <Col md={2} className={isMobile ? 'px-0 pt-05' : 'px-1'}>
-                        <DeckChangeBranchName
-                          branchName={deck.branchName} // use from deck
-                          deckid={deck.deckid} // use from deck
-                          isAuthor={deck.isAuthor} // use from deck
-                          isPublic={deck.isPublic} // use from deck
-                        />
+                        <DeckChangeBranchName deck={deck} />
                       </Col>
                     )}
                     <Col
@@ -493,50 +481,40 @@ const Decks = () => {
                           : 'px-0 ps-md-1 pe-md-0 pt-2 pt-md-0'
                       }
                     >
-                      <DeckChangeAuthor
-                        author={deck.author}
-                        deckid={deck.deckid}
-                        isAuthor={deck.isAuthor} // use from deck
-                        isPublic={deck.isPublic} // use from deck
-                      />
+                      <DeckChangeAuthor deck={deck} />
                     </Col>
                   </Row>
                   <Row className="mx-0">
                     <Col className={isMobile ? 'px-0 pt-05' : 'px-0'}>
                       <DeckChangeDescription
-                        description={deck.description}
-                        deckid={deck.deckid}
-                        isAuthor={deck.isAuthor} // use from deck
-                        isPublic={deck.isPublic} // use from deck
+                        deck={deck}
                         folded={isMobile ? false : foldedDescription}
                         setFolded={setFoldedDescription}
                       />
                     </Col>
                     {foldedDescription &&
                       !isMobile &&
-                      (deck?.tags?.length > 0 || deck.isAuthor) && (
+                      (deck.tags?.length > 0 ||
+                        deck.isAuthor ||
+                        !deck.isPublic) && (
                         <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
                           <DeckTags
+                            deck={deck}
                             allTagsOptions={allTagsOptions}
-                            deckid={deck.deckid}
-                            tags={deck?.tags}
                             bordered={true}
-                            isAuthor={deck.isAuthor} // use from deck
-                            isPublic={deck.isPublic} // use from deck
                           />
                         </Col>
                       )}
                   </Row>
                   {(!foldedDescription || isMobile) &&
-                    (deck?.tags?.length > 0 || deck.isAuthor) && (
+                    (deck.tags?.length > 0 ||
+                      deck.isAuthor ||
+                      !deck.isPublic) && (
                       <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
                         <DeckTags
+                          deck={deck}
                           allTagsOptions={allTagsOptions}
-                          deckid={deck.deckid}
-                          tags={deck?.tags}
                           bordered={true}
-                          isAuthor={deck.isAuthor}
-                          isPublic={deck.isPublic}
                         />
                       </div>
                     )}
@@ -565,24 +543,13 @@ const Decks = () => {
                     md={7}
                     className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0"
                   >
-                    <DeckCrypt
-                      deckid={deck.deckid}
-                      cards={deck.crypt}
-                      isAuthor={deck.isAuthor && !deck.isFrozen}
-                      isPublic={deck.isPublic}
-                    />
+                    <DeckCrypt deck={deck} />
                   </Col>
                   <Col
                     md={5}
                     className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0"
                   >
-                    <DeckLibrary
-                      inDeckTab={true}
-                      deckid={deck.deckid}
-                      cards={deck.library}
-                      isAuthor={deck.isAuthor && !deck.isFrozen}
-                      isPublic={deck.isPublic}
-                    />
+                    <DeckLibrary deck={deck} />
                   </Col>
                 </>
               ) : (
@@ -599,13 +566,11 @@ const Decks = () => {
           <Col lg={2} className="hide-on-lt992px px-lg-3">
             <div className="sticky-buttons">
               <DeckButtons
-                isAuthor={deck?.isAuthor}
-                isPublic={deck?.isPublic}
-                isBranches={deck?.isBranches}
+                deck={deck}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
-                setShowQr={setShowQr}
+                setQrUrl={setQrUrl}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
               />
@@ -613,7 +578,7 @@ const Decks = () => {
           </Col>
         )}
       </Row>
-      {!username && !query.get('id') && !hash && (
+      {!username && !deckid && !hash && (
         <Row className="align-items-center justify-content-center mx-0 vh-70">
           <Col xs={12} md={9} lg={6} xl={5}>
             <div className="d-flex justify-content-center pt-4">
@@ -634,7 +599,7 @@ const Decks = () => {
         </Row>
       )}
 
-      {username && decks && Object.keys(decks).length == 0 && !deck?.deckid && (
+      {username && decks && Object.keys(decks).length === 0 && !deck && (
         <Row className="align-items-center justify-content-center p-3 vh-70">
           <Col xs={12} md={8} lg={7} xl={6}>
             <div className="text-align-center blue bold py-2">
@@ -676,13 +641,11 @@ const Decks = () => {
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
               <DeckButtons
-                isAuthor={deck?.isAuthor}
-                isPublic={deck?.isPublic}
-                isBranches={deck?.isBranches}
+                deck={deck}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
-                setShowQr={setShowQr}
+                setQrUrl={setQrUrl}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
                 handleClose={() => {
@@ -706,13 +669,9 @@ const Decks = () => {
       )}
       {showDraw && <DeckDraw setShow={setShowDraw} deck={deck} />}
       {showRecommendation && (
-        <DeckRecommendation
-          isAuthor={isAuthor}
-          deck={deck}
-          setShow={setShowRecommendation}
-        />
+        <DeckRecommendation deck={deck} setShow={setShowRecommendation} />
       )}
-      {showQr && <DeckQrModal show={showQr} setShow={setShowQr} deck={deck} />}
+      {qrUrl && <DeckQrModal qrUrl={qrUrl} setQrUrl={setQrUrl} deck={deck} />}
     </Container>
   );
 };
