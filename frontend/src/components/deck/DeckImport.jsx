@@ -20,7 +20,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     cryptCardBase,
     libraryCardBase,
     addDeckToState,
-    username,
+    publicName,
   } = useApp();
   const navigate = useNavigate();
 
@@ -70,12 +70,12 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     fetchPromise
       .then((response) => response.json())
       .then((data) => {
-        setShowInfo(true);
+        setShowInfo && setShowInfo(true);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
         addDeckToState({
           name: name,
-          author: username,
+          author: publicName,
           deckid: data.deckid,
         });
         navigate(`/decks/${data.deckid}`);
@@ -171,25 +171,19 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     };
   };
 
-  const handleCreateButton = () => {
-    createNewDeck();
-    setShowMenuButtons(false);
-    setShowFloatingButtons(true);
-  };
-
   return (
     <>
       {isOnlyNew ? (
         <ButtonIconed
           variant="primary"
-          onClick={() => handleCreateButton()}
+          onClick={createNewDeck}
           icon={<ClipboardPlus />}
           text="Create New Deck"
         />
       ) : (
         <>
           <DeckImportButton
-            handleCreateButton={handleCreateButton}
+            handleCreateButton={createNewDeck}
             handleFileInputClick={handleFileInputClick}
             handleOpenTextModal={handleOpenTextModal}
             handleOpenAmaranthModal={handleOpenAmaranthModal}

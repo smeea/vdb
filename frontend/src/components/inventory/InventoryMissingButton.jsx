@@ -16,7 +16,7 @@ const InventoryMissingButton = ({
     inventoryLibrary,
     cryptCardBase,
     libraryCardBase,
-    username,
+    publicName,
     setShowFloatingButtons,
     setShowMenuButtons,
   } = useApp();
@@ -88,7 +88,7 @@ const InventoryMissingButton = ({
         <DeckMissingModal
           deck={{
             name: 'Missing cards for Inventory',
-            author: username,
+            author: publicName,
             description: '',
             crypt: missingCrypt,
             library: missingLibrary,

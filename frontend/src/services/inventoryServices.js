@@ -1,20 +1,20 @@
 export const changeState = (setInventory, cardBase, cardIds, cardQuantity) => {
   setInventory((prevState) => {
-    const oldState = { ...prevState };
+    const newState = { ...prevState };
 
     cardIds.forEach((cardid) => {
       const isPositive = (prevState[cardid]?.q || 0) + cardQuantity[cardid] > 0;
 
       if (isPositive) {
-        oldState[cardid] = {
+        newState[cardid] = {
           c: cardBase[cardid],
           q: (prevState[cardid]?.q || 0) + cardQuantity[cardid],
         };
       } else {
-        delete oldState[cardid];
+        delete newState[cardid];
       }
     });
 
-    return oldState;
+    return newState;
   });
 };

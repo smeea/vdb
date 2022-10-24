@@ -32,6 +32,8 @@ const DeckBranchCreateButton = ({ deck }) => {
           ...prevState,
           [master]: {
             ...prevState[master],
+            master: null,
+            isBranches: true,
             branches: prevState[master].branches
               ? [...prevState[master].branches, data[0].deckid]
               : [data[0].deckid],
@@ -44,6 +46,8 @@ const DeckBranchCreateButton = ({ deck }) => {
             inventoryType: '',
             master: master,
             branchName: data[0].branchName,
+            isPublic: false,
+            isBranches: true,
             timestamp: now.toUTCString(),
           },
         }));

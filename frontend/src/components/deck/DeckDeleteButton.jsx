@@ -6,8 +6,13 @@ import { useApp } from 'context';
 import { byTimestamp } from 'utils';
 
 const DeckDeleteButton = ({ deck, noText }) => {
-  const { setDecks, decks, setShowFloatingButtons, setShowMenuButtons } =
-    useApp();
+  const {
+    setDeck,
+    setDecks,
+    decks,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
@@ -18,6 +23,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
 
   let revisions = [];
   if (deck.master) {
+    console.log(deck.deckid, deck.master, decks[deck.master]);
     revisions = [deck.master, ...decks[deck.master].branches];
   } else if (deck.branches) {
     revisions = [deck.deckid, ...deck.branches];
@@ -56,6 +62,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
         });
         return newState;
       });
+      setDeck(undefined);
 
       const lastDeckId = getLastDeckExcept();
       if (lastDeckId) {

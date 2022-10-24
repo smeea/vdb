@@ -207,30 +207,34 @@ const Diff = () => {
       const crypt = {};
       const library = {};
 
-      Object.keys(deck.crypt).map((card) => {
-        if (!deckTo.crypt[card]) {
-          crypt[card] = { q: deck.crypt[card].q, c: cryptCardBase[card] };
-        } else if (deck.crypt[card].q > deckTo.crypt[card].q) {
-          crypt[card] = {
-            q: deck.crypt[card].q - deckTo.crypt[card].q,
-            c: cryptCardBase[card],
-          };
-        }
-      });
+      Object.keys(deck.crypt)
+        .filter((card) => deck.crypt[card].q > 0)
+        .map((card) => {
+          if (!deckTo.crypt[card]) {
+            crypt[card] = { q: deck.crypt[card].q, c: cryptCardBase[card] };
+          } else if (deck.crypt[card].q > deckTo.crypt[card].q) {
+            crypt[card] = {
+              q: deck.crypt[card].q - deckTo.crypt[card].q,
+              c: cryptCardBase[card],
+            };
+          }
+        });
 
-      Object.keys(deck.library).map((card) => {
-        if (!deckTo.library[card]) {
-          library[card] = {
-            q: deck.library[card].q,
-            c: libraryCardBase[card],
-          };
-        } else if (deck.library[card].q > deckTo.library[card].q) {
-          library[card] = {
-            q: deck.library[card].q - deckTo.library[card].q,
-            c: libraryCardBase[card],
-          };
-        }
-      });
+      Object.keys(deck.library)
+        .filter((card) => deck.library[card].q > 0)
+        .map((card) => {
+          if (!deckTo.library[card]) {
+            library[card] = {
+              q: deck.library[card].q,
+              c: libraryCardBase[card],
+            };
+          } else if (deck.library[card].q > deckTo.library[card].q) {
+            library[card] = {
+              q: deck.library[card].q - deckTo.library[card].q,
+              c: libraryCardBase[card],
+            };
+          }
+        });
 
       setMissingCrypt(crypt);
       setMissingLibrary(library);

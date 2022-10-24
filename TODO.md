@@ -5,8 +5,7 @@
 - TWD search single card 0 q-ty
 
 # REFACTOR
-- Opening empty /decks no redirect to opened deck
-- State update
+- State update on newly added deck
 
 # FEATURES
 - Check TWD
