@@ -11,7 +11,7 @@ import About from 'pages/About.jsx';
 import Account from 'pages/Account.jsx';
 import Cards from 'pages/Cards.jsx';
 import Crypt from 'pages/Crypt.jsx';
-import Decks from 'pages/Decks.jsx';
+import Decks, { fetchDeck } from 'pages/Decks.jsx';
 import Diff from 'pages/Diff.jsx';
 import Inventory from 'pages/Inventory.jsx';
 import Library from 'pages/Library.jsx';
@@ -60,7 +60,7 @@ const App = () => {
           <Route path="/diff/:deckidFrom/:deckidTo" element={<Diff />} />
         </Route>
         <Route path="/inventory" element={<Inventory />} />
-        <Route path="/decks" element={<Decks />}>
+        <Route path="/decks" element={<Decks />} loader={fetchDeck}>
           <Route path=":deckid" element={<Decks />} />
         </Route>
         <Route path="/pda" element={<Pda />} />
