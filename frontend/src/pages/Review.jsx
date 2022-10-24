@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { Modal, Container, Row, Col } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import X from 'assets/images/icons/x.svg';
@@ -18,29 +18,33 @@ import { useTags } from 'hooks';
 
 const Review = () => {
   const {
+    deck,
     cryptCardBase,
-    libraryCardBase,
+    decks,
     isMobile,
-    showFloatingButtons,
-    setShowFloatingButtons,
-    showMenuButtons,
-    setShowMenuButtons,
+    libraryCardBase,
     parseDeckCards,
     preconDecks,
-    timers,
-    setTimers,
-    changeTimer,
-    setChangeTimer,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+    showFloatingButtons,
+    showMenuButtons,
   } = useApp();
-
-  const query = new URLSearchParams(useLocation().search);
-  const { hash } = useLocation();
   const navigate = useNavigate();
-  const [error, setError] = useState(false);
-  const [foldedDescription, setFoldedDescription] = useState(!isMobile);
+  const { deckid } = useParams();
+  const { hash } = useLocation();
+  const query = new URLSearchParams(useLocation().search);
+
+  // Redirect from old links
+  if (query.get('id') && hash) {
+    const url = `/review/${deckid}${hash}`;
+    navigate(url);
+  }
 
   const [deckFrom, setDeckFrom] = useState();
   const [deckTo, setDeckTo] = useState();
+  const [error, setError] = useState(false);
+  const [foldedDescription, setFoldedDescription] = useState(!isMobile);
   const [urlDiff, setUrlDiff] = useState();
 
   const getDeck = (deckid) => {
@@ -81,11 +85,6 @@ const Review = () => {
       });
   };
 
-  const getPreconDeck = (deckid) => {
-    setDeckFrom(preconDecks[deckid]);
-    setDeckTo(JSON.parse(JSON.stringify(preconDecks[deckid])));
-  };
-
   const getDiff = (cardsFrom, cardsTo) => {
     const diff = {};
 
@@ -114,7 +113,7 @@ const Review = () => {
 
       const u = cards.toString().replace(/,/g, '').replace(/;$/, '');
       setUrlDiff(u);
-      navigate(`/review?id=${query.get('id')}#${u}`);
+      navigate(`/review/${deckid}#${u}`);
     }
   }, [deckFrom]);
 
@@ -133,27 +132,6 @@ const Review = () => {
           },
         },
       }));
-
-      const startTimer = () => {
-        let counter = 1;
-        timers.map((timerId) => {
-          clearInterval(timerId);
-        });
-        setTimers([]);
-
-        const timerId = setInterval(() => {
-          if (counter > 0) {
-            counter = counter - 1;
-          } else {
-            clearInterval(timerId);
-            setChangeTimer(!changeTimer);
-          }
-        }, 500);
-
-        setTimers([...timers, timerId]);
-      };
-
-      startTimer();
     }
   };
 
@@ -198,18 +176,29 @@ const Review = () => {
 
   useEffect(() => {
     if (
-      (!deckFrom || query.get('id') !== deckFrom.deckid) &&
       cryptCardBase &&
       libraryCardBase &&
-      Object.keys(preconDecks).length
+      decks !== undefined &&
+      deckid &&
+      (deckFrom?.deckid !== deckid || !deckFrom)
     ) {
-      if (query.get('id').includes(':')) {
-        getPreconDeck(query.get('id'));
+      if (decks[deckid]) {
+        setDeckFrom(decks[deckid]);
+      } else if (deckid.includes(':')) {
+        if (preconDecks && preconDecks[deckid]) {
+          setDeckFrom(preconDecks[deckid]);
+        } else {
+          setError('NO DECK WITH THIS ID');
+        }
       } else {
-        getDeck(query.get('id'));
+        getDeck(deckid);
       }
     }
-  }, [query, preconDecks, cryptCardBase, libraryCardBase]);
+  }, [deckid, decks, preconDecks, cryptCardBase, libraryCardBase]);
+
+  useEffect(() => {
+    if (deckFrom) setError(false);
+  }, [deckFrom]);
 
   return (
     <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
@@ -226,48 +215,32 @@ const Review = () => {
                     <>
                       <Row className="mx-0 pb-sm-2">
                         <Col md={8} className="px-0 ps-md-0 pe-md-1">
-                          <DeckChangeName deck={deckFrom} isAuthor={false} />
+                          <DeckChangeName deck={deckFrom} />
                         </Col>
                         <Col
                           md={4}
                           className="px-0 ps-md-1 pe-md-0 pt-2 pt-md-0"
                         >
-                          <DeckChangeAuthor
-                            author={deckFrom.author}
-                            deckid={deckFrom.deckid}
-                            isAuthor={false}
-                          />
+                          <DeckChangeAuthor deck={deckFrom} />
                         </Col>
                       </Row>
                       <Row className="mx-0">
                         <Col className="px-0">
                           <DeckChangeDescription
-                            description={deckFrom.description}
-                            deckid={deckFrom.deckid}
-                            isAuthor={false}
+                            deck={deckFrom}
                             folded={foldedDescription}
                             setFolded={setFoldedDescription}
                           />
                         </Col>
                         {foldedDescription && deckFrom?.tags.length > 0 && (
                           <Col className="ps-2 pe-0">
-                            <DeckTags
-                              deckid={deckFrom.deckid}
-                              tags={deckFrom.tags}
-                              bordered={true}
-                              isAuthor={false}
-                            />
+                            <DeckTags deck={deckFrom} bordered />
                           </Col>
                         )}
                       </Row>
                       {!foldedDescription && deckFrom?.tags.length > 0 && (
                         <div className="d-block pt-2">
-                          <DeckTags
-                            deckid={deckFrom.deckid}
-                            tags={deckFrom.tags}
-                            bordered={true}
-                            isAuthor={false}
-                          />
+                          <DeckTags deck={deckFrom} bordered />
                         </div>
                       )}
                     </>
@@ -307,7 +280,11 @@ const Review = () => {
         {!isMobile && (
           <Col lg={2} className="hide-on-lt992px px-lg-3">
             <div className="sticky-buttons">
-              <ReviewButtons deck={deckFrom} urlDiff={urlDiff} />
+              <ReviewButtons
+                mainDeck={deck}
+                deck={deckFrom}
+                urlDiff={urlDiff}
+              />
             </div>
           </Col>
         )}
@@ -337,7 +314,11 @@ const Review = () => {
         >
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
-              <ReviewButtons deck={deckFrom} urlDiff={urlDiff} />
+              <ReviewButtons
+                mainDeck={deck}
+                deck={deckFrom}
+                urlDiff={urlDiff}
+              />
               <div className="d-flex justify-content-end pt-1">
                 <ButtonIconed
                   variant="secondary"

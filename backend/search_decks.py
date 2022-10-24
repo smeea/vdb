@@ -16,7 +16,4 @@ def search_decks(queries, target):
         if not matches:
             break
 
-    if matches:
-        return matches
-    else:
-        return 400
+    return matches

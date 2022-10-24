@@ -366,10 +366,11 @@ export const AppProvider = (props) => {
   const changeMaster = (deckid) => {
     const masterid = decks[deckid].master;
     if (masterid) {
+      const branches = decks[masterid].branches;
+      branches.splice(branches.indexOf(deckid), 1);
+      branches.push(masterid);
+
       setDecks((prevState) => {
-        const branches = prevState[masterid].branches;
-        branches.splice(branches.indexOf(deckid), 1);
-        branches.push(masterid);
         branches.map((b) => {
           prevState[b].master = deckid;
         });
@@ -387,36 +388,42 @@ export const AppProvider = (props) => {
           },
         };
       });
+
+      setDeck((prevState) => ({
+        ...prevState,
+        branches: branches,
+        master: null,
+      }));
     }
   };
 
   const branchesUpdate = (deckid, field, value) => {
-    setDecks((prevState) => {
-      let revisions = [];
-      if (decks[deckid].master) {
-        revisions = [
-          decks[deckid].master,
-          ...decks[decks[deckid].master].branches,
-        ];
-      } else {
-        revisions = [deckid, ...decks[deckid].branches];
-      }
+    let revisions = [];
+    if (decks[deckid].master) {
+      revisions = [
+        decks[deckid].master,
+        ...decks[decks[deckid].master].branches,
+      ];
+    } else {
+      revisions = [deckid, ...decks[deckid].branches];
+    }
 
-      const newState = { ...prevState };
+    setDecks((prevState) => {
       revisions.map((d) => {
-        newState[d] = {
-          ...newState[d],
+        prevState[d] = {
+          ...prevState[d],
           [field]: value,
         };
       });
 
-      return newState;
+      return prevState;
     });
   };
 
   const deckUpdate = (deckid, field, value) => {
     deckServices.deckUpdate(deckid, field, value).then(() => {
       if (field === 'usedInInventory') {
+        // TODO CHECK IF REQUIRED
         setDecks((prevState) => {
           Object.keys(value).map((cardid) => {
             if (cardid > 200000) {
@@ -427,6 +434,7 @@ export const AppProvider = (props) => {
           });
           return prevState;
         });
+        // END CHECK
 
         setDeck((prevState) => {
           Object.keys(value).map((cardid) => {
@@ -439,11 +447,9 @@ export const AppProvider = (props) => {
           return prevState;
         });
       } else {
+        // TODO CHECK HOW TO AVOID WHEN EDITING FIRST LOADED DECK
         setDecks((prevState) => {
-          prevState[deckid] = {
-            ...prevState[deckid],
-            [field]: value,
-          };
+          prevState[deckid][field] = value;
 
           if (field === 'inventoryType') {
             Object.keys(prevState[deckid].crypt).map((cardid) => {
@@ -456,12 +462,10 @@ export const AppProvider = (props) => {
 
           return prevState;
         });
+        // END CHECK
 
         setDeck((prevState) => {
-          prevState = {
-            ...prevState,
-            [field]: value,
-          };
+          prevState[field] = value;
 
           if (field === 'inventoryType') {
             Object.keys(prevState.crypt).map((cardid) => {
@@ -502,9 +506,8 @@ export const AppProvider = (props) => {
 
     const cardSrc = cardid > 200000 ? 'crypt' : 'library';
     const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
-    let initialState = {};
 
-    initialState = JSON.parse(JSON.stringify(decks));
+    const initialDecksState = JSON.parse(JSON.stringify(decks));
     setDecks((prevState) => {
       if (count >= 0) {
         prevState[deckid][cardSrc][cardid] = {
@@ -517,9 +520,8 @@ export const AppProvider = (props) => {
 
       return prevState;
     });
-    changeMaster(deckid);
 
-    initialState = JSON.parse(JSON.stringify(deck));
+    const initialDeckState = JSON.parse(JSON.stringify(deck));
     setDeck((prevState) => {
       if (count >= 0) {
         prevState[cardSrc][cardid] = {
@@ -532,9 +534,11 @@ export const AppProvider = (props) => {
       return prevState;
     });
 
+    changeMaster(deckid);
+
     fetch(url, options).catch(() => {
-      setDecks(initialState);
-      setDeck(initialState);
+      setDecks(initialDecksState);
+      setDeck(initialDeckState);
     });
 
     const startTimer = () => {
@@ -557,6 +561,27 @@ export const AppProvider = (props) => {
     };
 
     startTimer();
+  };
+
+  const addDeckToState = (deck) => {
+    const now = new Date();
+    const { crypt, library } = parseDeckCards(deck.cards);
+    d = {
+      deckid: deck.deckid,
+      name: deck.name ?? '',
+      branchName: deck.branchName ?? '#0',
+      description: deck.description ?? '',
+      author: deck.author ?? '',
+      crypt: crypt,
+      library: library,
+      timestamp: now.toUTCString(),
+      isAuthor: true,
+    };
+
+    setDecks((prevState) => ({
+      ...prevState,
+      [deck.deckid]: d,
+    }));
   };
 
   useEffect(() => {
@@ -734,10 +759,10 @@ export const AppProvider = (props) => {
     }
 
     if (count >= 0 || (count < 0 && inventory[cardid])) {
-      const newState = { ...inventory };
+      const initialState = JSON.parse(JSON.stringify(deck));
 
       fetch(url, options).catch(() => {
-        setInventory(newState);
+        setInventory(initialState);
       });
 
       if (count >= 0) {
@@ -750,9 +775,8 @@ export const AppProvider = (props) => {
         }));
       } else {
         setInventory((prevState) => {
-          const state = { ...prevState };
-          delete state[cardid];
-          return state;
+          delete prevState[cardid];
+          return prevState;
         });
       }
     }
@@ -830,14 +854,11 @@ export const AppProvider = (props) => {
         setDecks,
         recentDecks,
         addRecentDeck,
-        updateRecentDecks,
+        addDeckToState,
         deckUpdate,
         deckCardChange,
         parseDeckCards,
-        timers,
         changeTimer,
-        setChangeTimer,
-        setTimers,
 
         // LISTING Context
         showPdaSearch,

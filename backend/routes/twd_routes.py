@@ -58,32 +58,6 @@ def getTwdHoFPlayers():
     return jsonify(get_hof_players(twd_decks.values()))
 
 
-@app.route("/api/twd/similar", methods=["POST"])
-def searchSimilarTwd():
-    cards = {}
-
-    if "deckid" in request.json:
-        deckid = request.json["deckid"]
-
-        if len(deckid) == 32:
-            cards = Deck.query.get(deckid).cards
-
-        else:
-            for cardid, q in twd_decks[deckid]["cards"].items():
-                cards[int(cardid)] = q
-
-    else:
-        for cardid, q in request.json["cards"].items():
-            cards[int(cardid)] = q
-
-    result = search_decks([{"option": "similar", "value": cards}], twd_decks.values())
-
-    if result != 400:
-        return jsonify(result)
-    else:
-        abort(400)
-
-
 @app.route("/api/twd/new/<int:quantity>", methods=["GET"])
 def get_new_twd_route(quantity):
     decks = []
@@ -135,7 +109,7 @@ def search_twd_route():
     result = search_decks(queries, twd_decks.values())
 
     if "matchInventory" in request.json:
-        if result != 400:
+        if result:
             result = match_inventory(
                 request.json["matchInventory"], current_user.inventory, result
             )
@@ -146,7 +120,4 @@ def search_twd_route():
                 twd_decks.values(),
             )
 
-    if result != 400:
-        return jsonify([sanitize_twd(d) for d in result])
-    else:
-        abort(400)
+    return jsonify([sanitize_twd(d) for d in result])

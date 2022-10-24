@@ -104,7 +104,7 @@ const Diff = () => {
         setD({
           ...data,
           isPublic: Boolean(data.publicParent),
-          isBranches: data.master || data.branches?.length > 0,
+          isBranches: Boolean(data.master || data.branches?.length > 0),
           crypt: cardsData.crypt,
           library: cardsData.library,
         });
@@ -143,26 +143,10 @@ const Diff = () => {
           setErrorFrom('NO DECK WITH THIS ID');
         }
       } else {
-        getDeck(deckidFrom, setDeck, setErrorFrom);
+        getDeck(deckidFrom);
       }
     }
-  }, [deckidFrom, decks, cryptCardBase, libraryCardBase]);
-
-  useEffect(() => {
-    if (deckidFrom?.includes(':')) {
-      setSelectFrom('from-precons');
-    } else if (decks && decks[deckidFrom]) {
-      setSelectFrom('from-my');
-    } else {
-      setSelectFrom('from-recent');
-    }
-
-    if (deck) setErrorFrom(false);
-  }, [deckidFrom, deck, decks]);
-
-  useEffect(() => {
-    if (deck) setErrorFrom(false);
-  }, [deck]);
+  }, [deckidFrom, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (
@@ -173,18 +157,28 @@ const Diff = () => {
       (deckTo?.deckid !== deckidTo || !deckTo)
     ) {
       if (decks[deckidTo]) {
-        setDeck(decks[deckidTo]);
+        setDeckTo(decks[deckidTo]);
       } else if (deckidTo.includes(':')) {
         if (preconDecks && preconDecks[deckidTo]) {
-          setDeck(preconDecks[deckidTo]);
+          setDeckTo(preconDecks[deckidTo]);
         } else {
           setErrorTo('NO DECK WITH THIS ID');
         }
       } else {
-        getDeck(deckidTo, setDeck, setErrorTo);
+        getDeck(deckidTo);
       }
     }
-  }, [deckidTo, cryptCardBase, libraryCardBase]);
+  }, [deckidTo, decks, preconDecks, cryptCardBase, libraryCardBase]);
+
+  useEffect(() => {
+    if (deckidFrom?.includes(':')) {
+      setSelectFrom('from-precons');
+    } else if (decks && decks[deckidFrom]) {
+      setSelectFrom('from-my');
+    } else {
+      setSelectFrom('from-recent');
+    }
+  }, [deckidFrom, decks]);
 
   useEffect(() => {
     if (deckidTo?.includes(':')) {
@@ -194,38 +188,45 @@ const Diff = () => {
     } else {
       setSelectTo('to-recent');
     }
+  }, [deckidTo, decks]);
 
+  useEffect(() => {
+    if (deck) setErrorFrom(false);
+  }, [deck]);
+
+  useEffect(() => {
     if (deckTo) setErrorTo(false);
-  }, [deckidTo, deckTo, decks]);
+  }, [deckTo]);
 
   const [missingCrypt, setMissingCrypt] = useState({});
   const [missingLibrary, setMissingLibrary] = useState({});
 
   useEffect(() => {
     if (deck && deckTo) {
+      // TODO change missg direction
       const crypt = {};
       const library = {};
 
-      Object.keys(deckTo.crypt).map((card) => {
-        if (!deck.crypt[card]) {
-          crypt[card] = { q: deckTo.crypt[card].q, c: cryptCardBase[card] };
-        } else if (deckTo.crypt[card].q > deck.crypt[card].q) {
+      Object.keys(deck.crypt).map((card) => {
+        if (!deckTo.crypt[card]) {
+          crypt[card] = { q: deck.crypt[card].q, c: cryptCardBase[card] };
+        } else if (deck.crypt[card].q > deckTo.crypt[card].q) {
           crypt[card] = {
-            q: deckTo.crypt[card].q - deck.crypt[card].q,
+            q: deck.crypt[card].q - deckTo.crypt[card].q,
             c: cryptCardBase[card],
           };
         }
       });
 
-      Object.keys(deckTo.library).map((card) => {
-        if (!deck.library[card]) {
+      Object.keys(deck.library).map((card) => {
+        if (!deckTo.library[card]) {
           library[card] = {
-            q: deckTo.library[card].q,
+            q: deck.library[card].q,
             c: libraryCardBase[card],
           };
-        } else if (deckTo.library[card].q > deck.library[card].q) {
+        } else if (deck.library[card].q > deckTo.library[card].q) {
           library[card] = {
-            q: deckTo.library[card].q - deck.library[card].q,
+            q: deck.library[card].q - deckTo.library[card].q,
             c: libraryCardBase[card],
           };
         }
@@ -560,7 +561,7 @@ const Diff = () => {
               <DiffButtons
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
-                deck={deck}
+                deckFrom={deck}
                 deckTo={deckTo}
               />
             </div>
@@ -592,10 +593,10 @@ const Diff = () => {
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
               <DiffButtons
-                deck={deck}
-                deckTo={deckTo}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
+                deckFrom={deck}
+                deckTo={deckTo}
               />
               <div className="d-flex justify-content-end pt-1">
                 <ButtonIconed

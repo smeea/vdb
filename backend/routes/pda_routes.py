@@ -198,7 +198,7 @@ def search_pda_route():
     result = search_decks(queries, pda_decks)
 
     if "matchInventory" in request.json:
-        if result != 400:
+        if result:
             result = match_inventory(
                 request.json["matchInventory"], current_user.inventory, result
             )
@@ -207,10 +207,7 @@ def search_pda_route():
                 request.json["matchInventory"], current_user.inventory, pda_decks
             )
 
-    if result != 400:
-        return jsonify([sanitize_pda(Deck.query.get(d["deckid"])) for d in result])
-    else:
-        abort(400)
+    return jsonify([sanitize_pda(Deck.query.get(d["deckid"])) for d in result])
 
 
 @app.route("/api/pda/<string:parent_id>", methods=["POST"])

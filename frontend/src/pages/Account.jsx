@@ -35,7 +35,7 @@ const Account = () => {
               <Stack gap={4}>
                 <div className="d-flex align-items-center bold blue logo-box px-2 py-1">
                   <PersonFill />
-                  <span className="ms-2">Logged as: {username}</span>
+                  <span className="ms-2">Logged as: &lt;{username}&gt;</span>
                 </div>
                 <AccountChangeName />
                 <AccountChangePassword />

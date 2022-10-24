@@ -64,7 +64,9 @@ const App = () => {
           <Route path=":deckid" element={<Decks />} />
         </Route>
         <Route path="/pda" element={<Pda />} />
-        <Route path="/review/:deckid" element={<Review />} />
+        <Route path="/review" element={<Review />}>
+          <Route path="/review/:deckid" element={<Review />} />
+        </Route>
         <Route path="/twd" element={<Twd />} />
         <Route
           path="/twd/deck_check"

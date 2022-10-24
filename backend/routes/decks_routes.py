@@ -113,37 +113,45 @@ def new_deck_route():
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
 def get_deck_route(deckid):
     if len(deckid) == 32:
-        deck = Deck.query.get(deckid)
-        if not deck:
+        d = Deck.query.get(deckid)
+        if not d:
             abort(400)
 
         public_child = (
-            deck.public_child
-            if deck.author == current_user
-            else bool(deck.public_child)
+            d.public_child if d.author == current_user else bool(d.public_child)
         )
 
         public_parent = (
-            deck.public_parent
-            if deck.author == current_user
-            else bool(deck.public_parent)
+            d.public_parent if d.author == current_user else bool(d.public_parent)
         )
 
+        is_author = current_user == d.author
+
         deck = {
-            "author": deck.author_public_name,
-            "cards": deck.cards,
-            "deckid": deck.deckid,
-            "description": deck.description,
-            "favorited": deck.favorited,
-            "isNonEditable": bool(not deck.author),
-            "isFrozen": deck.frozen,
-            "isAuthor": current_user == deck.author,
-            "name": deck.name,
+            "author": d.author_public_name,
+            "cards": d.cards,
+            "deckid": d.deckid,
+            "description": d.description,
+            "favorited": d.favorited,
+            "isAuthor": is_author,
+            "isNonEditable": bool(not d.author),
+            "name": d.name,
             "publicChild": public_child,
             "publicParent": public_parent,
-            "tags": deck.tags,
-            "timestamp": deck.timestamp,
+            "tags": d.tags,
+            "timestamp": d.timestamp,
         }
+
+        if is_author:
+            deck = {
+                **deck,
+                "branches": d.branches,
+                "master": d.master,
+                "branchName": d.branch_name,
+                "inventoryType": d.inventory_type,
+                "isFrozen": d.frozen,
+                "isHidden": d.hidden,
+            }
 
         return jsonify(deck)
 
@@ -224,9 +232,9 @@ def update_deck_route(deckid):
     elif d.author != current_user:
         abort(401)
 
-    if "hidden" in request.json:
+    if "isHidden" in request.json:
         d.hidden = request.json["isHidden"]
-    elif "frozen" in request.json:
+    elif "isFrozen" in request.json:
         d.frozen = request.json["isFrozen"]
     elif d.frozen:
         abort(409)
@@ -298,11 +306,11 @@ def update_deck_route(deckid):
     if "branchName" in request.json:
         d.branch_name = request.json["branchName"] or ""
 
-    if "inventory_type" in request.json:
+    if "inventoryType" in request.json:
         d.used_in_inventory = {}
         d.inventory_type = request.json["inventoryType"]
 
-    if "used_in_inventory" in request.json:
+    if "usedInInventory" in request.json:
         used = d.used_in_inventory.copy()
         for k, v in request.json["usedInInventory"].items():
             used[int(k)] = v
@@ -379,7 +387,7 @@ def create_branch_route(deckid):
 
     for i, b in enumerate(new_branches):
         branch_name = (
-            f"y{len(master.branches) + 1}"
+            f"#{len(master.branches) + 1}"
             if master.branches
             else f"#{len(new_branches) - i}"
         )

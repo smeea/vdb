@@ -8,7 +8,7 @@ const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
-    const deckUrl = `${process.env.ROOT_URL}review?id=${deckid}#${urlDiff}`;
+    const deckUrl = `${process.env.ROOT_URL}review/${deckid}#${urlDiff}`;
 
     navigator.clipboard.writeText(deckUrl);
     setState(true);

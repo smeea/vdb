@@ -19,6 +19,8 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     setShowFloatingButtons,
     cryptCardBase,
     libraryCardBase,
+    addDeckToState,
+    username,
   } = useApp();
   const navigate = useNavigate();
 
@@ -71,6 +73,11 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
         setShowInfo(true);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
+        addDeckToState({
+          name: name,
+          author: username,
+          deckid: data.deckid,
+        });
         navigate(`/decks/${data.deckid}`);
       })
       .catch(() => setCreateError(true));
@@ -148,6 +155,10 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
+          addDeckToState({
+            ...deck,
+            deckid: data.deckid,
+          });
           navigate(`/decks/${data.deckid}`);
           setBadCards(deck.badCards);
           setShowMenuButtons(false);
@@ -191,7 +202,6 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             />
           )}
           <DeckImportText
-            /* addImportedDeckToState={addImportedDeckToState} */
             handleCloseModal={handleCloseImportModal}
             show={showTextModal.show}
             isAnonymous={showTextModal.isAnonymous}
@@ -199,7 +209,6 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
           />
           <DeckImportAmaranth
             parseCards={parseDeckCards}
-            /* addImportedDeckToState={addImportedDeckToState} */
             handleCloseModal={handleCloseImportModal}
             show={showAmaranthModal}
           />

@@ -33,28 +33,28 @@ import { useTags } from 'hooks';
 
 const Decks = () => {
   const {
+    addRecentDeck,
+    cryptCardBase,
     deck,
-    setDeck,
     deckUpdate,
     decks,
-    recentDecks,
-    addRecentDeck,
-    preconDecks,
     inventoryCrypt,
     inventoryLibrary,
-    usedCryptCards,
-    usedLibraryCards,
-    cryptCardBase,
-    libraryCardBase,
     inventoryMode,
-    username,
     isMobile,
-    showFloatingButtons,
-    setShowFloatingButtons,
-    showMenuButtons,
-    setShowMenuButtons,
+    libraryCardBase,
     parseDeckCards,
     playtest,
+    preconDecks,
+    recentDecks,
+    setDeck,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+    showFloatingButtons,
+    showMenuButtons,
+    usedCryptCards,
+    usedLibraryCards,
+    username,
   } = useApp();
   const navigate = useNavigate();
   const { deckid } = useParams();
@@ -71,14 +71,14 @@ const Decks = () => {
     navigate(url);
   }
 
-  const [showDraw, setShowDraw] = useState(false);
-  const [qrUrl, setQrUrl] = useState(false);
-  const [showRecommendation, setShowRecommendation] = useState(false);
-  const [showInfo, setShowInfo] = useState(false);
-  const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
-  const [selectFrom, setSelectFrom] = useState('precons');
   const [error, setError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
+  const [qrUrl, setQrUrl] = useState(false);
+  const [selectFrom, setSelectFrom] = useState('precons');
+  const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
+  const [showDraw, setShowDraw] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
+  const [showRecommendation, setShowRecommendation] = useState(false);
 
   const getMissingCrypt = (d) => {
     const crypt = {};
@@ -179,9 +179,9 @@ const Decks = () => {
           ...data,
           isPublic: Boolean(data.publicParent),
           isBranches: Boolean(data.master || data.branches?.length > 0),
-          tags: tags,
           crypt: cardsData.crypt,
           library: cardsData.library,
+          tags: data.tags ?? tags,
         });
       })
       .catch((error) => {
@@ -501,7 +501,7 @@ const Decks = () => {
                           <DeckTags
                             deck={deck}
                             allTagsOptions={allTagsOptions}
-                            bordered={true}
+                            bordered
                           />
                         </Col>
                       )}
@@ -514,7 +514,7 @@ const Decks = () => {
                         <DeckTags
                           deck={deck}
                           allTagsOptions={allTagsOptions}
-                          bordered={true}
+                          bordered
                         />
                       </div>
                     )}

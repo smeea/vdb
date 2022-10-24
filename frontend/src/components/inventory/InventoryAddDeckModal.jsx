@@ -226,11 +226,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                         }}
                         className="scroll"
                       >
-                        <DeckCrypt
-                          inAdvSelect={true}
-                          deckid={deck.deckid}
-                          cards={deck.crypt}
-                        />
+                        <DeckCrypt deck={deck} inAdvSelect />
                       </Col>
                       <Col
                         md={5}
@@ -240,10 +236,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                         }}
                         className="scroll"
                       >
-                        <DeckLibrary
-                          deckid={deck.deckid}
-                          cards={deck.library}
-                        />
+                        <DeckLibrary deck={deck} />
                       </Col>
                     </Row>
                   }
@@ -262,11 +255,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
           )}
           {!isMobile && (
             <td className="tags">
-              <DeckTags
-                defaultTagsOptions={defaultTagsOptions}
-                deckid={deck.deckid}
-                tags={deck.tags}
-              />
+              <DeckTags deck={deck} defaultTagsOptions={defaultTagsOptions} />
             </td>
           )}
           <td className="buttons">

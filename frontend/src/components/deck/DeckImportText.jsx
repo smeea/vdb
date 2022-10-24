@@ -18,6 +18,7 @@ const DeckImportText = ({
     setShowMenuButtons,
     cryptCardBase,
     libraryCardBase,
+    addDeckToState,
   } = useApp();
   const navigate = useNavigate();
 
@@ -65,6 +66,10 @@ const DeckImportText = ({
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
+          addDeckToState({
+            ...deck,
+            deckid: data.deckid,
+          });
           navigate(`/decks/${data.deckid}`);
           setBadCards(deck.badCards);
           setShowMenuButtons(false);

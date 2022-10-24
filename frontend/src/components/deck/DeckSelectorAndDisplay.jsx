@@ -52,20 +52,10 @@ const DeckSelectorAndDisplay = () => {
       {deck && addMode && (
         <>
           <div className="pt-2">
-            <DeckCrypt
-              deckid={deck.deckid}
-              cards={deck.crypt}
-              isAuthor={deck.isAuthor && !deck.isFrozen}
-              inSearch
-            />
+            <DeckCrypt deck={deck} inSearch />
           </div>
           <div className="pt-4">
-            <DeckLibrary
-              deckid={deck.deckid}
-              cards={deck.library}
-              isAuthor={deck.isAuthor && !deck.isFrozen}
-              inSearch
-            />
+            <DeckLibrary deck={deck} inSearch />
           </div>
         </>
       )}

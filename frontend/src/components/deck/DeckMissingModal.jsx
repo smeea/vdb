@@ -51,11 +51,11 @@ const DeckMissingModal = ({
           <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
             <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
               <div className={isMobile || inInventory ? null : 'sticky-modal'}>
-                <DeckCrypt cards={crypt} isAuthor={false} inMissing={true} />
+                <DeckCrypt deck={deck} inMissing={true} />
               </div>
             </Col>
             <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
-              <DeckLibrary cards={library} isAuthor={false} inMissing />
+              <DeckLibrary deck={deck} inMissing />
             </Col>
           </Row>
           <div

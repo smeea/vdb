@@ -5,13 +5,8 @@ import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-const DeckImportAmaranth = ({
-  addImportedDeckToState,
-  parseCards,
-  handleCloseModal,
-  show,
-}) => {
-  const { setDecks, isMobile } = useApp();
+const DeckImportAmaranth = ({ parseCards, handleCloseModal, show }) => {
+  const { addDeckToState, setDecks, isMobile } = useApp();
   const navigate = useNavigate();
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyError, setEmptyError] = useState(false);
@@ -178,13 +173,15 @@ const DeckImportAmaranth = ({
               timestamp: now.toUTCString(),
             };
 
+            // TODO TEST
             setDecks((prevState) => ({
               ...prevState,
               ...decks,
             }));
           });
         } else {
-          addImportedDeckToState({ data });
+          // TODO TEST
+          addDeckToState(data);
         }
 
         navigate(`/decks/${deck.deckid}`);

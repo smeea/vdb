@@ -1,39 +1,54 @@
 import React from 'react';
 import { Stack } from 'react-bootstrap';
+import X from 'assets/images/icons/x.svg';
 import {
   DiffCopyUrlButton,
   DiffBackButton,
   DeckProxyButton,
   DeckMissingButton,
 } from 'components';
+import { useApp } from 'context';
 
-const DiffButtons = ({ deck, deckTo, missingCrypt, missingLibrary }) => {
+const DiffButtons = ({
+  deckFrom,
+  deckTo,
+  missingCrypt,
+  missingLibrary,
+  handleClose,
+}) => {
+  const { isNarrow } = useApp();
+
   return (
-    <Stack gap={1}>
-      {deck && (
-        <>
-          <DiffBackButton deckid={deck.deckid} />
-          {deckTo && (
-            <DiffCopyUrlButton
-              deckFromId={deck.deckid}
-              deckToId={deckTo.deckid}
-            />
-          )}
+    <>
+      {deckFrom && deckTo && (
+        <Stack gap={1}>
+          <DiffBackButton deckid={deckFrom.deckid} />
+          <DiffCopyUrlButton
+            deckFromId={deckFrom.deckid}
+            deckToId={deckTo.deckid}
+          />
           <DeckProxyButton
-            deck={deck}
+            deck={deckFrom}
             missingCrypt={missingCrypt}
             missingLibrary={missingLibrary}
-            inDiff={true}
+            inDiff
           />
           <DeckMissingButton
-            deck={deck}
+            deck={deckFrom}
             missingCrypt={missingCrypt}
             missingLibrary={missingLibrary}
-            inDiff={true}
           />
-        </>
+        </Stack>
       )}
-    </Stack>
+      {isNarrow && (
+        <div
+          onClick={handleClose}
+          className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+        >
+          <X viewBox="0 0 16 16" />
+        </div>
+      )}
+    </>
   );
 };
 

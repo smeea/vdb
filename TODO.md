@@ -2,11 +2,11 @@
 - Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
 - Inventory import bad cards
+- TWD search single card 0 q-ty
 
 # REFACTOR
-- Review
-- Diff
-- Go back from newly made Public
+- Opening empty /decks no redirect to opened deck
+- State update
 
 # FEATURES
 - Check TWD
