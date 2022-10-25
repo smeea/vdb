@@ -5,7 +5,7 @@
 - TWD search single card 0 q-ty
 
 # REFACTOR
-- State update on first opened deck (Decks & Diff)
+- Test Amaranth import (both w/ and w/o versions)
 
 # FEATURES
 - Check TWD
@@ -19,6 +19,8 @@
 - Inventory/deck export in excel to frontend
 - Refactor CSS - Tailwind
 - Fetching data with react-router
+- crypt/library/twd/pdaFormState to useImmer
+- inventory to useImmer
 
 # IMPROVE TECHNOLOGY - BACKEND
 

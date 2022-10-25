@@ -140,7 +140,7 @@ const DeckImportAmaranth = ({ parseCards, handleCloseModal, show }) => {
         if (amaranth_deck.versions) {
           branchesImport(deck, amaranth_deck.versions).then((branches) => {
             const now = new Date();
-            const decks = {};
+            const decks = { ...decks };
 
             branches.map((b) => {
               const { crypt, library } = parseCards(b.cards);
@@ -173,14 +173,13 @@ const DeckImportAmaranth = ({ parseCards, handleCloseModal, show }) => {
               timestamp: now.toUTCString(),
             };
 
-            // TODO TEST
-            setDecks((prevState) => ({
-              ...prevState,
-              ...decks,
-            }));
+            setDecks((draft) => {
+              Object.entries(decks).map((i) => {
+                draft[i[0]] = i[1];
+              });
+            });
           });
         } else {
-          // TODO TEST
           addDeckToState(data);
         }
 

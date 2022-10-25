@@ -41,8 +41,8 @@ const Review = () => {
     navigate(url);
   }
 
-  const [deckFrom, setDeckFrom] = useState();
-  const [deckTo, setDeckTo] = useState();
+  const [deckFrom, setDeckFrom] = useImmer();
+  const [deckTo, setDeckTo] = useImmer();
   const [error, setError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
   const [urlDiff, setUrlDiff] = useState();
@@ -122,16 +122,12 @@ const Review = () => {
       const cardSrc = cardid > 200000 ? 'crypt' : 'library';
       const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
 
-      setDeckFrom((prevState) => ({
-        ...prevState,
-        [cardSrc]: {
-          ...prevState[cardSrc],
-          [cardid]: {
-            c: cardBase[cardid],
-            q: count,
-          },
-        },
-      }));
+      setDeckFrom((draft) => {
+        draft[cardSrc][cardid] = {
+          c: cardBase[cardid],
+          q: count,
+        };
+      });
     }
   };
 
@@ -163,12 +159,9 @@ const Review = () => {
         JSON.stringify({ crypt: deckFrom.crypt, library: deckFrom.library }) !=
         JSON.stringify(deckWithHash)
       ) {
-        setDeckFrom((prevState) => {
-          return {
-            ...prevState,
-            crypt: deckWithHash.crypt,
-            library: deckWithHash.library,
-          };
+        setDeckFrom((draft) => {
+          draft.crypt = deckWithHash.crypt;
+          draft.library = deckWithHash.library;
         });
       }
     }

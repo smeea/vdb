@@ -34,14 +34,8 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        setDecks((prevState) => {
-          return {
-            ...prevState,
-            [parentId]: {
-              ...prevState[parentId],
-              publicChild: isPublished ? null : data.deckid,
-            },
-          };
+        setDecks((draft) => {
+          draft[parentId].publicChild = isPublished ? null : data.deckid;
         });
 
         navigate(`/decks/${isPublished ? deck.publicParent : data.deckid}`);

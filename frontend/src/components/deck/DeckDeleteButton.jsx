@@ -54,12 +54,10 @@ const DeckDeleteButton = ({ deck, noText }) => {
     };
 
     fetch(url, options).then(() => {
-      setDecks((prevState) => {
-        const newState = { ...prevState };
+      setDecks((draft) => {
         revisions.map((d) => {
-          delete newState[d];
+          delete draft[d];
         });
-        return newState;
       });
       setDeck(undefined);
 

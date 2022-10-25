@@ -45,11 +45,10 @@ const DeckPublicButton = ({ deck, noText }) => {
     fetch(url, options)
       .then((response) => response.json())
       .then(() => {
-        setDeck((prevState) => ({
-          ...prevState,
-          crypt: { ...decks[deck.publicParent].crypt },
-          library: { ...decks[deck.publicParent].library },
-        }));
+        setDeck((draft) => {
+          draft.crypt = { ...decks[deck.publicParent].crypt };
+          draft.library = { ...decks[deck.publicParent].library };
+        });
       });
     setSpinnerState(false);
   };

@@ -45,7 +45,8 @@
     "react-swipeable": "^7.0.0",
     "react-virtualized-auto-sizer": "^1.0.7",
     "react-window": "^1.8.7",
-    "unidecode": "^0.1.8"
+    "unidecode": "^0.1.8",
+    "use-immer": "^0.7.0"
   },
   "browserslist": [
     "defaults"

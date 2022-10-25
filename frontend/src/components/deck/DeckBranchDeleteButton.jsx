@@ -33,28 +33,27 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
       },
     };
     fetch(url, options).then(() => {
-      setDecks((prevState) => {
-        const newState = { ...prevState };
-        delete newState[deckid];
-
-        const masterId = prevState[deckid].master || null;
+      setDecks((draft) => {
+        const masterId = draft[deckid].master || null;
         const branches = masterId
-          ? prevState[masterId].branches
-          : prevState[deckid].branches;
+          ? [...draft[masterId].branches]
+          : [...draft[deckid].branches];
+
+        delete draft[deckid];
 
         if (masterId) {
           branches.splice(branches.indexOf(deckid), 1);
-          newState[masterId].branches = branches;
+          draft[masterId].branches = branches;
         } else {
           const newMasterId = branches.pop();
-          newState[newMasterId].branches = branches;
-          newState[newMasterId].master = null;
+          draft[newMasterId].branches = branches;
+          draft[newMasterId].master = null;
           branches.map((b) => {
-            newState[b].master = newMasterId;
+            draft[b].master = newMasterId;
           });
         }
 
-        return newState;
+        console.log(draft);
       });
     });
   };

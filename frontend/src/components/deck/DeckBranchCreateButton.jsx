@@ -28,17 +28,14 @@ const DeckBranchCreateButton = ({ deck }) => {
       .then((response) => response.json())
       .then((data) => {
         const now = new Date();
-        setDecks((prevState) => ({
-          ...prevState,
-          [master]: {
-            ...prevState[master],
-            master: null,
-            isBranches: true,
-            branches: prevState[master].branches
-              ? [...prevState[master].branches, data[0].deckid]
-              : [data[0].deckid],
-          },
-          [data[0].deckid]: {
+        setDecks((draft) => {
+          draft[master].master = null;
+          draft[master].isBranches = true;
+          draft[master].branches = draft[master].branches
+            ? [...draft[master].branches, data[0].deckid]
+            : [data[0].deckid];
+
+          draft[data[0].deckid] = {
             ...deck,
             deckid: data[0].deckid,
             crypt: { ...deck.crypt },
@@ -49,8 +46,8 @@ const DeckBranchCreateButton = ({ deck }) => {
             isPublic: false,
             isBranches: true,
             timestamp: now.toUTCString(),
-          },
-        }));
+          };
+        });
         navigate(`/decks/${data[0].deckid}`);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);

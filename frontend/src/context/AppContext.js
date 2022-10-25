@@ -1,4 +1,5 @@
 import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
+import { useImmer } from 'use-immer';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { cardServices, inventoryServices, deckServices } from 'services';
 import { useWindowSize } from 'hooks';
@@ -67,8 +68,8 @@ export const AppProvider = (props) => {
     hard: {},
   });
 
-  const [decks, setDecks] = useState();
-  const [deck, setDeck] = useState();
+  const [decks, setDecks] = useImmer();
+  const [deck, setDeck] = useImmer();
   const [recentDecks, setRecentDecks] = useState([]);
 
   const [changeTimer, setChangeTimer] = useState();
@@ -367,20 +368,22 @@ export const AppProvider = (props) => {
     const oldMasterDeckid = decks[deckid].master;
 
     if (oldMasterDeckid) {
-      const branches = decks[oldMasterDeckid].branches;
+      const branches = [...decks[oldMasterDeckid].branches];
       branches.splice(branches.indexOf(deckid), 1);
       branches.push(oldMasterDeckid);
 
-      setDecks((prevState) => {
-        const newState = { ...prevState };
+      setDecks((draft) => {
         branches.map((b) => {
-          newState[b].master = deckid;
-          newState[b].branches = [];
+          draft[b].master = deckid;
+          draft[b].branches = [];
         });
-        newState[deckid].branches = branches;
-        newState[deckid].master = null;
+        draft[deckid].branches = branches;
+        draft[deckid].master = null;
+      });
 
-        return newState;
+      setDeck((draft) => {
+        draft.branches = branches;
+        draft.master = null;
       });
     }
   };
@@ -396,70 +399,57 @@ export const AppProvider = (props) => {
       revisions = [deckid, ...decks[deckid].branches];
     }
 
-    setDecks((prevState) => {
-      const newState = { ...prevState };
+    setDecks((draft) => {
       revisions.map((d) => {
-        newState[d] = {
-          ...newState[d],
-          [field]: value,
-        };
+        draft[d][field] = value;
       });
-
-      return newState;
     });
   };
 
   const deckUpdate = (deckid, field, value) => {
     deckServices.deckUpdate(deckid, field, value).then(() => {
       if (field === 'usedInInventory') {
-        setDecks((prevState) => {
-          const newState = { ...prevState };
+        setDecks((draft) => {
           Object.keys(value).map((cardid) => {
             if (cardid > 200000) {
-              newState[deckid].crypt[cardid].i = value[cardid];
+              draft[deckid].crypt[cardid].i = value[cardid];
             } else {
-              newState[deckid].library[cardid].i = value[cardid];
+              draft[deckid].library[cardid].i = value[cardid];
             }
           });
-          return newState;
         });
-        // setDeck((prevState) => {
-        //   Object.keys(value).map((cardid) => {
-        //     if (cardid > 200000) {
-        //       prevState.crypt[cardid].i = value[cardid];
-        //     } else {
-        //       prevState.library[cardid].i = value[cardid];
-        //     }
-        //   });
-        //   return prevState;
-        // });
+        setDeck((draft) => {
+          Object.keys(value).map((cardid) => {
+            if (cardid > 200000) {
+              draft.crypt[cardid].i = value[cardid];
+            } else {
+              draft.library[cardid].i = value[cardid];
+            }
+          });
+        });
       } else {
-        setDecks((prevState) => {
-          const newState = { ...prevState };
-          newState[deckid][field] = value;
+        setDecks((draft) => {
+          draft[deckid][field] = value;
           if (field === 'inventoryType') {
-            Object.keys(prevState[deckid].crypt).map((cardid) => {
-              newState[deckid].crypt[cardid].i = '';
+            Object.keys(draft[deckid].crypt).map((cardid) => {
+              draft[deckid].crypt[cardid].i = '';
             });
-            Object.keys(prevState[deckid].library).map((cardid) => {
-              newState[deckid].library[cardid].i = '';
+            Object.keys(draft[deckid].library).map((cardid) => {
+              draft[deckid].library[cardid].i = '';
             });
           }
-          return newState;
         });
-        // setDeck((prevState) => {
-        //   const newState = { ...prevState };
-        //   newState[field] = value;
-        //   if (field === 'inventoryType') {
-        //     Object.keys(prevState.crypt).map((cardid) => {
-        //       newState.crypt[cardid].i = '';
-        //     });
-        //     Object.keys(prevState.library).map((cardid) => {
-        //       newState.library[cardid].i = '';
-        //     });
-        //   }
-        //   return newState;
-        // });
+        setDeck((draft) => {
+          draft[field] = value;
+          if (field === 'inventoryType') {
+            Object.keys(draft.crypt).map((cardid) => {
+              draft.crypt[cardid].i = '';
+            });
+            Object.keys(draft.library).map((cardid) => {
+              draft.library[cardid].i = '';
+            });
+          }
+        });
       }
 
       const branchesUpdateFields = ['name', 'author'];
@@ -491,18 +481,26 @@ export const AppProvider = (props) => {
 
     const initialDecksState = JSON.parse(JSON.stringify(decks));
 
-    setDecks((prevState) => {
-      const newState = { ...prevState };
+    setDecks((draft) => {
       if (count >= 0) {
-        newState[deckid][cardSrc][cardid] = {
+        draft[deckid][cardSrc][cardid] = {
           c: cardBase[cardid],
           q: count,
         };
       } else {
-        delete newState[deckid][cardSrc][cardid];
+        draft[deckid][cardSrc][cardid];
       }
+    });
 
-      return newState;
+    setDeck((draft) => {
+      if (count >= 0) {
+        draft[cardSrc][cardid] = {
+          c: cardBase[cardid],
+          q: count,
+        };
+      } else {
+        draft[cardSrc][cardid];
+      }
     });
 
     changeMaster(deckid);
@@ -549,10 +547,9 @@ export const AppProvider = (props) => {
       isBranches: Boolean(deck.master || deck.branches?.length > 0),
     };
 
-    setDecks((prevState) => ({
-      ...prevState,
-      [deck.deckid]: d,
-    }));
+    setDecks((draft) => {
+      draft[deck.deckid] = d;
+    });
   };
 
   useEffect(() => {
