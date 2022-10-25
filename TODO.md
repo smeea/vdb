@@ -5,7 +5,7 @@
 - TWD search single card 0 q-ty
 
 # REFACTOR
-- State update on newly added deck
+- State update on first opened deck (Decks & Diff)
 
 # FEATURES
 - Check TWD

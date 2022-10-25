@@ -395,12 +395,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
               </td>
             )}
             <td className="tags">
-              <DeckTags
-                allTagsOptions={allTagsOptions}
-                isAuthor={true}
-                deckid={deck.deckid}
-                tags={deck.tags}
-              />
+              <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
             </td>
             <td className="buttons">
               <Stack

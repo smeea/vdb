@@ -410,7 +410,6 @@ export const AppProvider = (props) => {
   };
 
   const deckUpdate = (deckid, field, value) => {
-    console.log(deckid, field, value);
     deckServices.deckUpdate(deckid, field, value).then(() => {
       if (field === 'usedInInventory') {
         setDecks((prevState) => {

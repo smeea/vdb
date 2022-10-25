@@ -80,13 +80,11 @@ const DeckLibrary = ({ deck, inMissing }) => {
         )}
       </div>
       <DeckLibraryTable
+        deck={deck}
         handleModalCardOpen={handleModalCardOpen}
         libraryTotal={libraryTotal}
         showInfo={showInfo}
-        deckid={deckid}
         cards={libraryByType[cardtype]}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
         inMissing={inMissing}
         isModalOpen={shouldShowModal}
         placement={isNarrow ? 'bottom' : 'right'}
@@ -102,13 +100,12 @@ const DeckLibrary = ({ deck, inMissing }) => {
         trifleTotal={cardtype === MASTER && trifleTotal}
       />
       <DeckLibraryTable
+        deck={deck}
         handleModalCardOpen={handleModalSideCardOpen}
-        deckid={deckid}
         cards={librarySideByType[cardtype]}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
         inMissing={inMissing}
         isModalOpen={shouldShowModal}
+        placement={isNarrow ? 'bottom' : 'right'}
       />
     </div>
   ));

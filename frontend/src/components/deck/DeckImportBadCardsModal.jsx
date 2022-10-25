@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import { useApp } from 'context';
 import { DeckCardQuantity, QuickSelect } from 'components';
 
-const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
+const DeckImportBadCardsModal = ({ deck, badCards, setBadCards }) => {
   const { isMobile, deckCardChange } = useApp();
 
   const [cards, setCards] = useState([]);
@@ -59,7 +59,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
               <Col md={5}>{c}</Col>
               <Col md={1}>
                 <DeckCardQuantity
-                  deckid={deckid}
+                  deckid={deck.deckid}
                   cardChange={handleCardChange}
                   cardid={idx}
                   q={cards[idx]?.q}

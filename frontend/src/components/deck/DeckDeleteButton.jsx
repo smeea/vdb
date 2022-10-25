@@ -23,7 +23,6 @@ const DeckDeleteButton = ({ deck, noText }) => {
 
   let revisions = [];
   if (deck.master) {
-    console.log(deck.deckid, deck.master, decks[deck.master]);
     revisions = [deck.master, ...decks[deck.master].branches];
   } else if (deck.branches) {
     revisions = [deck.deckid, ...deck.branches];

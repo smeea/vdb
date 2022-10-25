@@ -29,7 +29,7 @@ const Inventory = () => {
     libraryCardBase,
   } = useApp();
 
-  const [inventoryError, setInventoryError] = useState(); // TODO show warning on error
+  const [inventoryError, setInventoryError] = useState();
   const [inventoryKey, setInventoryKey] = useState();
   const query = new URLSearchParams(useLocation().search);
   const [sharedInventoryCrypt, setSharedInventoryCrypt] = useState();

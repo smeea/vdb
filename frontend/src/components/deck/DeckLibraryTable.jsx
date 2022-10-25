@@ -17,14 +17,12 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 
-import { drawProbability } from 'utils';
+import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 import { useApp } from 'context';
 
 const DeckLibraryTable = ({
-  deckid,
+  deck,
   cards,
-  isPublic,
-  isAuthor,
   placement,
   showInfo,
   libraryTotal,
@@ -47,11 +45,7 @@ const DeckLibraryTable = ({
     deckCardChange,
     setShowFloatingButtons,
   } = useApp();
-
-  let deckInvType = null;
-  if (inventoryMode && decks && deckid && decks[deckid]) {
-    deckInvType = decks[deckid].inventoryType;
-  }
+  const { deckid, isPublic, isAuthor } = deck;
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
@@ -75,35 +69,12 @@ const DeckLibraryTable = ({
   };
 
   const cardRows = cards.map((card, idx) => {
-    let cardInvType = null;
-    let inInventory = 0;
-    let softUsedMax = 0;
-    let hardUsedTotal = 0;
-
-    if (decks && inventoryMode) {
-      cardInvType = card.i;
-
-      if (inventoryLibrary[card.c.Id]) {
-        inInventory = inventoryLibrary[card.c.Id].q;
-      }
-
-      if (usedLibraryCards && usedLibraryCards.soft[card.c.Id]) {
-        Object.keys(usedLibraryCards.soft[card.c.Id]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card.c.Id][id]) {
-            softUsedMax = usedLibraryCards.soft[card.c.Id][id];
-          }
-        });
-      }
-
-      if (usedLibraryCards && usedLibraryCards.hard[card.c.Id]) {
-        Object.keys(usedLibraryCards.hard[card.c.Id]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card.c.Id][id];
-        });
-      }
-    }
+    let inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
+    let softUsedMax = getSoftMax(usedLibraryCards.soft[card.c.Id]) ?? 0;
+    let hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.c.Id]) ?? 0;
 
     const toggleInventoryState = (deckid, cardid) => {
-      const value = cardInvType ? '' : deckInvType === 's' ? 'h' : 's';
+      const value = card.i ? '' : deck.inventoryType === 's' ? 'h' : 's';
       deckUpdate(deckid, 'usedInInventory', {
         [cardid]: value,
       });
@@ -116,12 +87,12 @@ const DeckLibraryTable = ({
             <>
               {inventoryMode && decks ? (
                 <>
-                  {deckInvType && !inSearch && !isMobile && (
+                  {deck.inventoryType && !inSearch && !isMobile && (
                     <td>
                       <div className="d-flex relative align-items-center">
                         <div
                           className={
-                            cardInvType
+                            card.i
                               ? 'inventory-card-custom'
                               : 'inventory-card-custom not-selected'
                           }
@@ -129,7 +100,11 @@ const DeckLibraryTable = ({
                             toggleInventoryState(deckid, card.c.Id)
                           }
                         >
-                          {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
+                          {deck.inventoryType == 's' ? (
+                            <PinAngleFill />
+                          ) : (
+                            <Shuffle />
+                          )}
                         </div>
                       </div>
                     </td>

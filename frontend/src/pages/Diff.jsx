@@ -203,7 +203,6 @@ const Diff = () => {
 
   useEffect(() => {
     if (deck && deckTo) {
-      // TODO change missg direction
       const crypt = {};
       const library = {};
 

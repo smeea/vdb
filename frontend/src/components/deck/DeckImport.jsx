@@ -188,13 +188,14 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             handleOpenTextModal={handleOpenTextModal}
             handleOpenAmaranthModal={handleOpenAmaranthModal}
           />
-          {badCards && (
-            <DeckImportBadCardsModal
-              /* deckid={deck.deckid} // TODO */
-              badCards={badCards}
-              setBadCards={setBadCards}
-            />
-          )}
+          {/* TODO */}
+          {/* {badCards && ( */}
+          {/*   <DeckImportBadCardsModal */}
+          {/*     deck={deck} */}
+          {/*     badCards={badCards} */}
+          {/*     setBadCards={setBadCards} */}
+          {/*   /> */}
+          {/* )} */}
           <DeckImportText
             handleCloseModal={handleCloseImportModal}
             show={showTextModal.show}

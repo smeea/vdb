@@ -89,7 +89,6 @@ const Decks = () => {
   const deckData = useLoaderData();
 
   const getDeck = () => {
-    console.log(deckData);
     setError(false);
     const cardsData = parseDeckCards(deckData.cards);
 
@@ -100,10 +99,9 @@ const Decks = () => {
       });
     }
 
+    // TODO Change to avoid deleting deckData.cards
     // delete deckData.cards;
     addRecentDeck(deckData);
-
-    // TODO Change to avoid deleting deckData.cards
     setDeck({
       ...deckData,
       isPublic: Boolean(deckData.publicParent),

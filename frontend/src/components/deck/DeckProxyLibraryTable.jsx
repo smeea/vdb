@@ -17,6 +17,7 @@ import {
 } from 'components';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp } from 'context';
+import { getSoftMax, getHardTotal } from 'utils';
 
 const DeckProxyLibraryTable = ({
   handleModalCardOpen,
@@ -37,35 +38,15 @@ const DeckProxyLibraryTable = ({
     setShowFloatingButtons,
   } = useApp();
 
+  const handleClick = (idx) => {
+    handleModalCardOpen(idx);
+    setShowFloatingButtons(false);
+  };
+
   const cardRows = cards.map((card, idx) => {
-    const handleClick = () => {
-      handleModalCardOpen(card.c);
-      setShowFloatingButtons(false);
-    };
-
-    let inInventory = 0;
-    let softUsedMax = 0;
-    let hardUsedTotal = 0;
-
-    if (decks && inventoryMode) {
-      if (inventoryLibrary[card.c.Id]) {
-        inInventory = inventoryLibrary[card.c.Id].q;
-      }
-
-      if (usedLibraryCards && usedLibraryCards.soft[card.c.Id]) {
-        Object.keys(usedLibraryCards.soft[card.c.Id]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card.c.Id][id]) {
-            softUsedMax = usedLibraryCards.soft[card.c.Id][id];
-          }
-        });
-      }
-
-      if (usedLibraryCards && usedLibraryCards.hard[card.c.Id]) {
-        Object.keys(usedLibraryCards.hard[card.c.Id]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card.c.Id][id];
-        });
-      }
-    }
+    let inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
+    let softUsedMax = getSoftMax(usedLibraryCards.soft[card.c.Id]) ?? 0;
+    let hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.c.Id]) ?? 0;
 
     const setOptions = [
       {
@@ -144,23 +125,23 @@ const DeckProxyLibraryTable = ({
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
-            <td className="name ps-3 pe-2" onClick={() => handleClick()}>
+            <td className="name ps-3 pe-2" onClick={() => handleClick(card.c)}>
               <ResultLibraryName card={card.c} />
             </td>
           </ConditionalOverlayTrigger>
 
-          <td className="cost" onClick={() => handleClick()}>
+          <td className="cost" onClick={() => handleClick(card.c)}>
             <ResultLibraryCost
               valueBlood={card.c['Blood Cost']}
               valuePool={card.c['Pool Cost']}
             />
           </td>
-          <td className="disciplines px-1" onClick={() => handleClick()}>
+          <td className="disciplines px-1" onClick={() => handleClick(card.c)}>
             <ResultLibraryClan value={card.c.Clan} />
             {card.c.Discipline && card.c.Clan && '+'}
             <ResultLibraryDisciplines value={card.c.Discipline} />
           </td>
-          <td className="burn" onClick={() => handleClick()}>
+          <td className="burn" onClick={() => handleClick(card.c)}>
             <ResultLibraryBurn value={card.c['Burn Option']} />
             <ResultLibraryTrifle
               value={nativeLibrary[card.c.Id]['Card Text']}

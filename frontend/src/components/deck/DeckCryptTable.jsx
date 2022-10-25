@@ -51,10 +51,6 @@ const DeckCryptTable = ({
   const { deckid, isPublic, isAuthor } = deck;
 
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
-  let deckInvType = null; // TODO try refactor?
-  if (inventoryMode && deck) {
-    deckInvType = deck.inventoryType;
-  }
 
   const disableOverlay = useMemo(
     () => isMobile || (!isDesktop && isModalOpen),
@@ -77,26 +73,12 @@ const DeckCryptTable = ({
   };
 
   const cardRows = cards.map((card, idx) => {
-    let cardInvType = null;
-    let inInventory = 0;
-    let softUsedMax = 0;
-    let hardUsedTotal = 0;
-
-    if (decks && inventoryMode) {
-      cardInvType = card.i;
-
-      if (inventoryCrypt[card.c.Id]) {
-        inInventory = inventoryCrypt[card.c.Id].q;
-      }
-
-      if (usedCryptCards) {
-        softUsedMax = getSoftMax(usedCryptCards.soft[card.c.Id]);
-        hardUsedTotal = getHardTotal(usedCryptCards.hard[card.c.Id]);
-      }
-    }
+    let inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+    let softUsedMax = getSoftMax(usedCryptCards.soft[card.c.Id]) ?? 0;
+    let hardUsedTotal = getHardTotal(usedCryptCards.hard[card.c.Id]) ?? 0;
 
     const toggleInventoryState = (deckid, cardid) => {
-      const value = cardInvType ? '' : deckInvType === 's' ? 'h' : 's';
+      const value = card.i ? '' : deck.inventoryType === 's' ? 'h' : 's';
       deckUpdate(deckid, 'usedInInventory', {
         [cardid]: value,
       });
@@ -109,12 +91,12 @@ const DeckCryptTable = ({
             <>
               {inventoryMode && decks ? (
                 <>
-                  {deckInvType && !inSearch && !isMobile && (
+                  {deck.inventoryType && !inSearch && !isMobile && (
                     <td>
                       <div className="d-flex relative align-items-center">
                         <div
                           className={
-                            cardInvType
+                            card.i
                               ? 'inventory-card-custom'
                               : 'inventory-card-custom not-selected'
                           }
@@ -122,7 +104,11 @@ const DeckCryptTable = ({
                             toggleInventoryState(deckid, card.c.Id)
                           }
                         >
-                          {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
+                          {deck.inventoryType == 's' ? (
+                            <PinAngleFill />
+                          ) : (
+                            <Shuffle />
+                          )}
                         </div>
                       </div>
                     </td>

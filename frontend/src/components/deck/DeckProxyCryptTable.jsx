@@ -51,26 +51,15 @@ const DeckProxyCryptTable = ({
     }
   });
 
+  const handleClick = (idx) => {
+    handleModalCardOpen(idx);
+    setShowFloatingButtons(false);
+  };
+
   const cardRows = cards.map((card, idx) => {
-    const handleClick = () => {
-      handleModalCardOpen(card.c);
-      setShowFloatingButtons(false);
-    };
-
-    let inInventory = 0;
-    let softUsedMax = 0;
-    let hardUsedTotal = 0;
-
-    if (decks && inventoryMode) {
-      if (inventoryCrypt[card.c.Id]) {
-        inInventory = inventoryCrypt[card.c.Id].q;
-      }
-
-      if (usedCryptCards) {
-        softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
-        hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
-      }
-    }
+    let inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+    let softUsedMax = getSoftMax(usedCryptCards.soft[card.c.Id]) ?? 0;
+    let hardUsedTotal = getHardTotal(usedCryptCards.hard[card.c.Id]) ?? 0;
 
     const setOptions = [
       {
@@ -147,11 +136,11 @@ const DeckProxyCryptTable = ({
           )}
           <td
             className={isMobile ? 'capacity' : 'capacity px-1'}
-            onClick={() => handleClick()}
+            onClick={() => handleClick(card.c)}
           >
             <ResultCryptCapacity value={card.c.Capacity} />
           </td>
-          <td className="disciplines" onClick={() => handleClick()}>
+          <td className="disciplines" onClick={() => handleClick(card.c)}>
             {disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
               <DeckCryptDisciplines
                 value={card.c.Disciplines}
@@ -172,12 +161,12 @@ const DeckProxyCryptTable = ({
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
-            <td className="name px-2" onClick={() => handleClick()}>
+            <td className="name px-2" onClick={() => handleClick(card.c)}>
               <ResultCryptName card={card.c} />
             </td>
           </ConditionalOverlayTrigger>
 
-          <td className="clan-group" onClick={() => handleClick()}>
+          <td className="clan-group" onClick={() => handleClick(card.c)}>
             <div>
               <ResultClanImage value={card.c.Clan} />
             </div>
