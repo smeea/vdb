@@ -8,7 +8,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
-    const url = `${process.env.ROOT_URL}decks/${deck.deckid}`;
+    const url = `${process.env.ROOT_URL}decks/${deck.deckid.replace(' ', '_')}`;
 
     navigator.clipboard.writeText(url);
     setState(true);
@@ -20,7 +20,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   const handleStandardQrButton = () => {
-    const url = `${process.env.ROOT_URL}decks/${deck.deckid}`;
+    const url = `${process.env.ROOT_URL}decks/${deck.deckid.replace(' ', '_')}`;
 
     setShowMenuButtons(false);
     setShowFloatingButtons(false);

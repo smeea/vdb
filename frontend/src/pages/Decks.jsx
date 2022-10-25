@@ -129,7 +129,7 @@ const Decks = () => {
   };
 
   const handleSelect = (e) => {
-    navigate(`/decks/${e.value}`);
+    navigate(`/decks/${e.value.replace(' ', '_')}`);
   };
 
   const { missingCrypt, missingLibrary } = useDeckMissing(
@@ -206,8 +206,9 @@ const Decks = () => {
       if (decks[deckid]) {
         setDeck(decks[deckid]);
       } else if (deckid.includes(':')) {
-        if (preconDecks && preconDecks[deckid]) {
-          setDeck(preconDecks[deckid]);
+        const deckidFixed = deckid.replace('_', ' ');
+        if (preconDecks && preconDecks[deckidFixed]) {
+          setDeck(preconDecks[deckidFixed]);
         } else {
           setError('NO DECK WITH THIS ID');
         }
@@ -612,13 +613,17 @@ const Decks = () => {
 export default Decks;
 
 export async function fetchDeck({ params }) {
-  const url = `${process.env.API_URL}deck/${params.deckid}`;
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-  };
+  if (!params.deckid.includes(':')) {
+    const url = `${process.env.API_URL}deck/${params.deckid}`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
 
-  const response = await fetch(url, options);
-  return response.json();
+    const response = await fetch(url, options);
+    return response.json();
+  } else {
+    return null;
+  }
 }

@@ -44,14 +44,21 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
           const now = new Date();
 
           setDecks((draft) => {
-            draft[data.deckid].branchName = null;
-            draft[data.deckid].branches = [];
-            draft[data.deckid].crypt = { ...deck.crypt };
-            draft[data.deckid].library = { ...deck.library };
-            draft[data.deckid].deckid = data.deckid;
-            draft[data.deckid].master = null;
-            draft[data.deckid].name = name;
-            draft[data.deckid].timestamp = now.toUTCString();
+            draft[data.deckid] = {
+              branchName: null,
+              branches: [],
+              crypt: { ...deck.crypt },
+              library: { ...deck.library },
+              deckid: data.deckid,
+              master: null,
+              name: name,
+              timestamp: now.toUTCString(),
+              tags: deck.tags,
+              author: deck.author,
+              description: deck.description,
+              isAuthor: true,
+              isBranches: false,
+            };
           });
           if (!noRedirect) navigate(`/decks/${data.deckid}`);
           setState(true);

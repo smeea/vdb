@@ -6,6 +6,7 @@
 
 # REFACTOR
 - Test Amaranth import (both w/ and w/o versions)
+- Fix opening Recent decks
 
 # FEATURES
 - Check TWD
