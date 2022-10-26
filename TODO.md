@@ -3,10 +3,11 @@
 - Crypt sorting in review (works in Deck!)
 - Inventory import bad cards
 - TWD search single card 0 q-ty
+- Group form uncheck on mobile
 
 # REFACTOR
 - Test Amaranth import (both w/ and w/o versions)
-- Fix opening Recent decks
+- Add getDeck errors
 
 # FEATURES
 - Check TWD
@@ -19,7 +20,6 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Inventory/deck export in excel to frontend
 - Refactor CSS - Tailwind
-- Fetching data with react-router
 - crypt/library/twd/pdaFormState to useImmer
 - inventory to useImmer
 

@@ -38,9 +38,9 @@ const App = () => {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<About />} />
-        <Route path="/about" element={<Navigate to="/" />} />
+        <Route path="about" element={<Navigate to="/" />} />
         <Route
-          path="/documentation"
+          path="documentation"
           element={
             <Suspense fallback={<div />}>
               <Documentation />
@@ -48,28 +48,25 @@ const App = () => {
           }
         />
         <Route
-          path="/changelog"
+          path="changelog"
           element={
             <Suspense fallback={<div />}>
               <Changelog />
             </Suspense>
           }
         />
-        <Route path="/account" element={<Account />} />
-        <Route path="/diff" element={<Diff />}>
-          <Route path="/diff/:deckidFrom/:deckidTo" element={<Diff />} />
-        </Route>
-        <Route path="/inventory" element={<Inventory />} />
-        <Route path="/decks" element={<Decks />} loader={fetchDeck}>
-          <Route path=":deckid" element={<Decks />} />
-        </Route>
-        <Route path="/pda" element={<Pda />} />
-        <Route path="/review" element={<Review />}>
-          <Route path="/review/:deckid" element={<Review />} />
-        </Route>
-        <Route path="/twd" element={<Twd />} />
+        <Route path="account" element={<Account />} />
+        <Route path="diff" element={<Diff />} />
+        <Route path="diff/:deckidFrom/:deckidTo" element={<Diff />} />
+        <Route path="inventory" element={<Inventory />} />
+        <Route path="decks" element={<Decks />} />
+        <Route path="/decks/:deckid" element={<Decks />} loader={fetchDeck} />
+        <Route path="pda" element={<Pda />} />
+        <Route path="review" element={<Review />} />
+        <Route path="review/:deckid" element={<Review />} />
+        <Route path="twd" element={<Twd />} />
         <Route
-          path="/twd/deck_check"
+          path="twd/deck_check"
           element={
             <Suspense fallback={<div />}>
               <TwdCheck />
@@ -77,7 +74,7 @@ const App = () => {
           }
         />
         <Route
-          path="/twd/hall_of_fame/tournaments"
+          path="twd/hall_of_fame/tournaments"
           element={
             <Suspense fallback={<div />}>
               <TwdHallOfFameTournaments />
@@ -85,7 +82,7 @@ const App = () => {
           }
         />
         <Route
-          path="/twd/hall_of_fame/cards"
+          path="twd/hall_of_fame/cards"
           element={
             <Suspense fallback={<div />}>
               <TwdHallOfFameCards />
@@ -93,16 +90,16 @@ const App = () => {
           }
         />
         <Route
-          path="/twd/cards_history"
+          path="twd/cards_history"
           element={
             <Suspense fallback={<div />}>
               <TwdCardsHistory />
             </Suspense>
           }
         />
-        <Route path="/crypt" element={<Crypt />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/cards" element={<Cards />}>
+        <Route path="crypt" element={<Crypt />} />
+        <Route path="library" element={<Library />} />
+        <Route path="cards" element={<Cards />}>
           <Route path=":cardid" element={<Cards />} />
         </Route>
       </Route>

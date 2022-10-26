@@ -117,14 +117,6 @@ def get_deck_route(deckid):
         if not d:
             abort(400)
 
-        public_child = (
-            d.public_child if d.author == current_user else bool(d.public_child)
-        )
-
-        public_parent = (
-            d.public_parent if d.author == current_user else bool(d.public_parent)
-        )
-
         is_author = current_user == d.author
 
         deck = {
@@ -136,8 +128,8 @@ def get_deck_route(deckid):
             "isAuthor": is_author,
             "isNonEditable": bool(not d.author),
             "name": d.name,
-            "publicChild": public_child,
-            "publicParent": public_parent,
+            "publicChild": d.public_child if is_author else bool(d.public_child),
+            "publicParent": d.public_parent if is_author else bool(d.public_parent),
             "tags": d.tags,
             "timestamp": d.timestamp,
         }

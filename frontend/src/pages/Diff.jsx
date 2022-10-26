@@ -143,7 +143,7 @@ const Diff = () => {
           setErrorFrom('NO DECK WITH THIS ID');
         }
       } else {
-        getDeck(deckidFrom);
+        getDeck(deckidFrom, setDeck, setErrorFrom);
       }
     }
   }, [deckidFrom, decks, preconDecks, cryptCardBase, libraryCardBase]);
@@ -165,7 +165,7 @@ const Diff = () => {
           setErrorTo('NO DECK WITH THIS ID');
         }
       } else {
-        getDeck(deckidTo);
+        getDeck(deckidTo, setDeckTo, setErrorTo);
       }
     }
   }, [deckidTo, decks, preconDecks, cryptCardBase, libraryCardBase]);

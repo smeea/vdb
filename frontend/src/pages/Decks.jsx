@@ -99,23 +99,32 @@ const Decks = () => {
       });
     }
 
-    // TODO Change to avoid deleting deckData.cards
-    // delete deckData.cards;
-    addRecentDeck(deckData);
-    setDeck({
-      ...deckData,
-      isPublic: Boolean(deckData.publicParent),
-      isBranches: Boolean(deckData.master || deckData.branches?.length > 0),
+    const d = {
+      author: deckData.author,
       crypt: cardsData.crypt,
+      deckid: deckData.deckid,
+      description: deckData.description,
+      isAuthor: deckData.isAuthor,
+      isBranches: Boolean(deckData.master || deckData.branches?.length > 0),
+      isNonEditable: deckData.isNonEditable,
+      isPublic: Boolean(deckData.publicParent),
       library: cardsData.library,
+      name: deckData.name,
+      publicChild: deckData.publicChild,
+      publicParent: deckData.publicParent,
       tags: deckData.tags,
-    });
+      timestamp: deckData.timestamp,
+    };
 
-    if (error.message == 400) {
-      setError('NO DECK WITH THIS ID');
-    } else {
-      setError('CONNECTION PROBLEM');
-    }
+    addRecentDeck(d);
+    setDeck(d);
+
+    // TODO get errors from route
+    // if (error.message == 400) {
+    //   setError('NO DECK WITH THIS ID');
+    // } else {
+    //   setError('CONNECTION PROBLEM');
+    // }
   };
 
   const toggleInventoryState = (id) => {
@@ -129,7 +138,7 @@ const Decks = () => {
   };
 
   const handleSelect = (e) => {
-    navigate(`/decks/${e.value.replace(' ', '_')}`);
+    navigate(`/decks/${e.value.replace(' ', '_')}`, { replace: true });
   };
 
   const { missingCrypt, missingLibrary } = useDeckMissing(
