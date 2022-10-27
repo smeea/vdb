@@ -4,15 +4,15 @@ import Select from 'react-select';
 import { useApp } from 'context';
 import {
   SearchAdditionalForms,
-  SearchFormButtonGroupToggle,
+  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
 
-const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
+const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'capacity';
   const capacity = [
     'any',
     '1',
@@ -32,7 +32,7 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
   capacity.map((i) => {
     options.push({
       value: i,
-      name: 'capacity',
+      name: name,
       label: (
         <>
           <span className="me-3 me-sm-1 me-lg-3" />
@@ -52,7 +52,7 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
   moreless.map((i) => {
     morelessOptions.push({
       value: i[0],
-      name: 'capacity',
+      name: name,
       label: (
         <>
           <span className="me-3 me-sm-0 me-lg-3" />
@@ -67,25 +67,26 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="px-0">
           <div className="bold blue">Capacity:</div>
-          {value.value[0].capacity !== 'any' && (
+          {value.value[0][name] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
-                <SearchFormButtonGroupToggle
-                  value={value}
-                  setFormState={setFormState}
+                <SearchFormButtonLogicToggle
+                  name={name}
+                  value={value.logic}
+                  searchForm={searchForm}
                 />
               </div>
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                  withMoreless={true}
+                  searchForm={searchForm}
+                  name={name}
+                  withMoreless
                 />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -110,16 +111,17 @@ const CryptSearchFormCapacity = ({ value, setFormState, onChange }) => {
             isSearchable={false}
             name={0}
             maxMenuHeight={maxMenuHeight}
-            value={options.find((obj) => obj.value === value.value[0].capacity)}
+            value={options.find((obj) => obj.value === value.value[0][name])}
             onChange={onChange}
           />
         </Col>
       </Row>
       <SearchAdditionalForms
+        name={name}
         value={value}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
+        searchForm={searchForm}
         withMoreless={true}
         morelessOptions={morelessOptions}
         maxMenuHeight={maxMenuHeight}

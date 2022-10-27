@@ -35,3 +35,16 @@ export {
   SearchResultsProvider,
   useSearchResults,
 } from './SearchResultsContext.js';
+
+export {
+  searchResults,
+  setCryptResults,
+  setLibraryResults,
+  setTwdResults,
+  setPdaResults,
+  searchCryptForm,
+  searchLibraryForm,
+  searchTwdForm,
+  searchPdaForm,
+  clearSearchForm,
+} from './SearchStore.js';

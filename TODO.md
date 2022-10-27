@@ -3,11 +3,16 @@
 - Crypt sorting in review (works in Deck!)
 - Inventory import bad cards
 - TWD search single card 0 q-ty
-- Group form uncheck on mobile
+- Update rulings
 
 # REFACTOR
 - Test Amaranth import (both w/ and w/o versions)
 - Add getDeck errors
+- librarySearch to valtio storage
+- twdSearch to valtio storage
+- pdaSearch to valtio storage
+- decks to valtio storage
+- inventory to valtio storage
 
 # FEATURES
 - Check TWD
@@ -20,8 +25,6 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Inventory/deck export in excel to frontend
 - Refactor CSS - Tailwind
-- crypt/library/twd/pdaFormState to useImmer
-- inventory to useImmer
 
 # IMPROVE TECHNOLOGY - BACKEND
 

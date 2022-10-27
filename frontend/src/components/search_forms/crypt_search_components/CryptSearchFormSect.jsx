@@ -3,16 +3,16 @@ import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import {
   SearchAdditionalForms,
-  SearchFormButtonGroupToggle,
+  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
 import { useApp } from 'context';
 
-const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
+const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'sect';
   const sects = [
     'ANY',
     'Camarilla',
@@ -22,13 +22,12 @@ const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
     'Anarch',
     'Imbued',
   ];
-
   const options = [];
 
   sects.map((i) => {
     options.push({
       value: i.toLowerCase(),
-      name: 'sect',
+      name: name,
       label: (
         <>
           <span className="margin-full" />
@@ -41,29 +40,24 @@ const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
   return (
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col
-          xs={3}
-          className="d-flex justify-content-between align-items-center px-0"
-        >
+        <Col xs={3} className="px-0">
           <div className="bold blue">Sect:</div>
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
-                <SearchFormButtonGroupToggle
-                  value={value}
-                  setFormState={setFormState}
+                <SearchFormButtonLogicToggle
+                  name={name}
+                  value={value.logic}
+                  searchForm={searchForm}
                 />
               </div>
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -85,9 +79,11 @@ const CryptSearchFormSect = ({ value, setFormState, onChange }) => {
       </Row>
       <SearchAdditionalForms
         value={value}
+        name={name}
+        searchForm={searchForm}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
+        maxMenuHeight={maxMenuHeight}
       />
     </>
   );

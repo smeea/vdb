@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { ResultDisciplineImage } from 'components';
 import {
   SearchAdditionalForms,
-  SearchFormButtonGroupToggle,
+  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
@@ -71,10 +71,10 @@ const LibrarySearchFormDiscipline = ({ value, onChange, setFormState }) => {
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
-                <SearchFormButtonGroupToggle
+                <SearchFormButtonLogicToggle
                   value={value}
                   setFormState={setFormState}
-                  withAnd={true}
+                  withAnd
                 />
               </div>
               {value.value.length == 1 ? (

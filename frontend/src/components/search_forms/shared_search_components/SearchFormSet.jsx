@@ -9,10 +9,10 @@ import {
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
+const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtest, isMobile, isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'set';
   const preOptions = Object.keys(setsAndPrecons)
     .filter((i) => playtest || i !== 'PLAYTEST')
     .map((i) => {
@@ -26,7 +26,7 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
   const options = [
     {
       value: 'any',
-      name: 'set',
+      name: name,
       label: (
         <>
           <span className="margin-full" />
@@ -36,7 +36,7 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
     },
     {
       value: 'bcp',
-      name: 'set',
+      name: name,
       label: <>Any BCP (incl. Promo)</>,
     },
   ];
@@ -44,10 +44,10 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
   preOptions.map((i) => {
     options.push({
       value: i.set,
-      name: 'set',
+      name: name,
       label: (
         <div className="d-flex justify-content-between align-items-center">
-          <div className="pe-2">{i.name}</div>
+          <div className="pe-2">{i[name]}</div>
           {i.year && <div className="ps-2 small">{`'${i.year}`}</div>}
         </div>
       ),
@@ -122,7 +122,7 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
     return (
       <Form.Check
         key={i.value}
-        name="set"
+        name={name}
         value={i.value}
         type="checkbox"
         className="small"
@@ -166,15 +166,12 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -195,11 +192,12 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
         </Col>
       </Row>
       <SearchAdditionalForms
-        menuPlacement={isMobile ? 'top' : 'bottom'}
         value={value}
+        name={name}
+        searchForm={searchForm}
+        menuPlacement={isMobile ? 'top' : 'bottom'}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
         maxMenuHeight={maxMenuHeight}
       />
       <Row className="pb-1 ps-1 mx-0 align-items-center">

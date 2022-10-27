@@ -2,16 +2,13 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import Plus from 'assets/images/icons/plus.svg';
 
-const SearchFormButtonAddText = (props) => {
+const SearchFormButtonAddText = ({ searchForm }) => {
   const addForm = () => {
-    props.setFormState((prevState) => {
-      const v = prevState.text;
-      v.push({ value: '', regex: false, inText: false, logic: 'and' });
-
-      return {
-        ...prevState,
-        text: v,
-      };
+    searchForm.text.push({
+      value: '',
+      regex: false,
+      inText: false,
+      logic: 'and',
     });
   };
 

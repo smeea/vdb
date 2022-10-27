@@ -12,13 +12,14 @@ import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import {
   SearchAdditionalFormsText,
-  SearchFormButtonGroupToggle,
+  SearchFormButtonLogicToggle,
   SearchFormButtonAddText,
   SearchFormButtonDelText,
 } from '../shared_search_components';
 import { useApp } from 'context';
 
 const SearchFormTextAndButtons = ({
+  searchForm,
   value,
   preresults,
   showLimit,
@@ -26,7 +27,6 @@ const SearchFormTextAndButtons = ({
   onChangeOptions,
   handleShowResults,
   handleClearButton,
-  setFormState,
   hideMissing,
   setHideMissing,
 }) => {
@@ -107,40 +107,36 @@ const SearchFormTextAndButtons = ({
         </InputGroup>
       )}
       <Row className="mx-0 px-0 pt-1">
-        <Col xs={3} md={2} className="px-0">
+        <Col xs={2} md={3} className="px-0">
           <Stack direction="horizontal" gap={1}>
             {value[0].value !== '' && (
               <>
-                <SearchFormButtonGroupToggle
-                  value={{ name: 'text', ...value[0] }}
+                <SearchFormButtonLogicToggle
+                  name="text"
+                  value={value[0].logic}
                   i={0}
-                  setFormState={setFormState}
+                  searchForm={searchForm}
                 />
                 {value.length == 1 ? (
-                  <SearchFormButtonAddText setFormState={setFormState} />
+                  <SearchFormButtonAddText searchForm={searchForm} />
                 ) : (
-                  <SearchFormButtonDelText
-                    setFormState={setFormState}
-                    value={value}
-                    i={0}
-                  />
+                  <SearchFormButtonDelText searchForm={searchForm} i={0} />
                 )}
               </>
             )}
           </Stack>
         </Col>
         <Col className="d-flex justify-content-end px-0">
-          <Stack direction="horizontal" gap={3} className="align-items-start">
+          <Stack direction="horizontal" gap={2} className="align-items-start">
             {OptionsForm}
           </Stack>
         </Col>
       </Row>
       <SearchAdditionalFormsText
         value={value}
-        name="text"
         onChange={onChange}
         onChangeOptions={onChangeOptions}
-        setFormState={setFormState}
+        searchForm={searchForm}
       />
       {inventoryMode && (
         <Form.Check

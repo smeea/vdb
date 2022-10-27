@@ -9,12 +9,13 @@ import { useApp } from 'context';
 
 const SearchAdditionalForms = ({
   value,
+  name,
   onChange,
   options,
   withMoreless,
   morelessOptions,
   menuPlacement,
-  setFormState,
+  searchForm,
   maxMenuHeight,
 }) => {
   const { isMobile } = useApp();
@@ -28,16 +29,12 @@ const SearchAdditionalForms = ({
           <Stack direction="horizontal" gap={1}>
             {i == value.value.length - 1 && (
               <SearchFormButtonAdd
-                setFormState={setFormState}
-                value={value}
+                name={name}
+                searchForm={searchForm}
                 withMoreless={withMoreless}
               />
             )}
-            <SearchFormButtonDel
-              setFormState={setFormState}
-              value={value}
-              i={i}
-            />
+            <SearchFormButtonDel searchForm={searchForm} name={name} i={i} />
           </Stack>
         </Col>
         {withMoreless ? (

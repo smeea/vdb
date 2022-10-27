@@ -52,8 +52,6 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
             draft[b].master = newMasterId;
           });
         }
-
-        console.log(draft);
       });
     });
   };

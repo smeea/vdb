@@ -11,15 +11,10 @@ import {
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const SearchFormPrecon = ({
-  value,
-  setFormState,
-  onChange,
-  onChangeOptions,
-}) => {
+const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtest, isMobile, isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'precon';
   const preOptions = [];
 
   Object.keys(setsAndPrecons)
@@ -45,7 +40,7 @@ const SearchFormPrecon = ({
   const options = [
     {
       value: 'any',
-      name: 'precon',
+      name: name,
       label: (
         <>
           <span className="margin-full" />
@@ -55,7 +50,7 @@ const SearchFormPrecon = ({
     },
     {
       value: 'bcp',
-      name: 'precon',
+      name: name,
       label: <>Any BCP (excl. Promo)</>,
     },
   ];
@@ -64,7 +59,7 @@ const SearchFormPrecon = ({
     if (i.set === 'any') {
       options.push({
         value: i.set,
-        name: 'precon',
+        name: name,
         label: (
           <>
             <span className="margin-full" />
@@ -160,23 +155,17 @@ const SearchFormPrecon = ({
   return (
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col
-          xs={3}
-          className="d-flex justify-content-between align-items-center px-0"
-        >
+        <Col xs={3} className="px-0">
           <div className="bold blue">Precon:</div>
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -197,11 +186,12 @@ const SearchFormPrecon = ({
         </Col>
       </Row>
       <SearchAdditionalForms
-        menuPlacement={isMobile ? 'top' : 'bottom'}
         value={value}
+        name={name}
+        searchForm={searchForm}
+        menuPlacement={isMobile ? 'top' : 'bottom'}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
         maxMenuHeight={maxMenuHeight}
       />
       <Row className="pb-1 ps-1 mx-0 align-items-center">

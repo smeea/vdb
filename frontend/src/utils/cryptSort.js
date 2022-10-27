@@ -12,6 +12,7 @@ import {
 
 const cryptSort = (cards, sortMethod) => {
   if (cards) {
+    cards = [...cards];
     switch (sortMethod) {
       case 'Name':
         return cards.sort(byName);

@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import {
   SearchAdditionalForms,
-  SearchFormButtonGroupToggle,
+  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
@@ -50,7 +50,7 @@ const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
-                <SearchFormButtonGroupToggle
+                <SearchFormButtonLogicToggle
                   value={value}
                   setFormState={setFormState}
                 />

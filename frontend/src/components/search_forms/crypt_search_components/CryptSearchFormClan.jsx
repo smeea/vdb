@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { ResultLibraryClan } from 'components';
 import {
   SearchAdditionalForms,
-  SearchFormButtonGroupToggle,
+  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
@@ -12,19 +12,18 @@ import imbuedClansList from 'assets/data/imbuedClansList.json';
 import vampireClansList from 'assets/data/vampireClansList.json';
 import { useApp } from 'context';
 
-const CryptSearchFormClan = ({ value, setFormState, onChange }) => {
+const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'clan';
   const clans = ['ANY', ...vampireClansList, ...imbuedClansList];
-
   const options = [];
 
   clans.map((i) => {
     if (i == 'ANY') {
       options.push({
         value: i.toLowerCase(),
-        name: 'clan',
+        name: name,
         label: (
           <>
             <span className="margin-full" />
@@ -35,7 +34,7 @@ const CryptSearchFormClan = ({ value, setFormState, onChange }) => {
     } else {
       options.push({
         value: i.toLowerCase(),
-        name: 'clan',
+        name: name,
         label: (
           <>
             <span className="margin-full">
@@ -51,29 +50,24 @@ const CryptSearchFormClan = ({ value, setFormState, onChange }) => {
   return (
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col
-          xs={3}
-          className="d-flex justify-content-between align-items-center px-0"
-        >
+        <Col xs={3} className="px-0">
           <div className="bold blue">Clan:</div>
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
-                <SearchFormButtonGroupToggle
-                  value={value}
-                  setFormState={setFormState}
+                <SearchFormButtonLogicToggle
+                  name={name}
+                  value={value.logic}
+                  searchForm={searchForm}
                 />
               </div>
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -95,9 +89,10 @@ const CryptSearchFormClan = ({ value, setFormState, onChange }) => {
       </Row>
       <SearchAdditionalForms
         value={value}
+        name={name}
+        searchForm={searchForm}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
         maxMenuHeight={maxMenuHeight}
       />
     </>

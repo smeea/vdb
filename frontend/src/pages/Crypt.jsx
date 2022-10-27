@@ -1,19 +1,21 @@
 import React, { useMemo } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useSnapshot } from 'valtio';
 import {
   ResultCrypt,
   CryptSearchForm,
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
 } from 'components';
-import { useApp, useSearchResults } from 'context';
+import { useApp, useSearchResults, searchResults } from 'context';
 
 const Crypt = () => {
   const { showCryptSearch, addMode, toggleAddMode, isMobile, isDesktop, deck } =
     useApp();
 
-  const { cryptResults, setCryptResults, cryptCompare, setCryptCompare } =
-    useSearchResults();
+  const { cryptCompare, setCryptCompare } = useSearchResults();
+
+  const cryptResults = useSnapshot(searchResults).crypt;
 
   const showSearchForm = useMemo(() => {
     return (
@@ -63,9 +65,7 @@ const Crypt = () => {
                 />
               </div>
             )}
-            {cryptResults !== undefined && (
-              <ResultCrypt cards={cryptResults} setCards={setCryptResults} />
-            )}
+            {cryptResults !== undefined && <ResultCrypt cards={cryptResults} />}
           </Col>
         )}
         {showSearchForm && (

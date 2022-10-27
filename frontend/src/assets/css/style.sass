@@ -1091,8 +1091,18 @@ div.sticky-modal-library
 .dropdown-toggle::after
   content: none
 
-label.group-form:hover
-  background-color: darkgray
+.group-form
+  &.btn-third:hover
+    background: var(--border-primary)
+  &.btn-outline-primary:hover
+    background: var(--bg-secondary)
+  &.px-5px
+    padding-left: 14px
+    padding-right: 14px
+    @media (max-width: 768px)
+      padding-left: 11px
+      padding-right: 11px
+
 
 .w-45
   width: 45%

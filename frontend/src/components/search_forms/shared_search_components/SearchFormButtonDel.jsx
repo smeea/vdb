@@ -2,28 +2,13 @@ import React from 'react';
 import Dash from 'assets/images/icons/dash.svg';
 import { Button } from 'react-bootstrap';
 
-const SearchFormButtonDel = (props) => {
-  const delForm = (i) => {
-    props.setFormState((prevState) => {
-      const name = props.value.name;
-      const v = prevState[name].value;
-      v.splice(i, 1);
-      return {
-        ...prevState,
-        [name]: {
-          ...prevState[name],
-          value: v,
-        },
-      };
-    });
+const SearchFormButtonDel = ({ i, name, searchForm }) => {
+  const delForm = (n) => {
+    searchForm[name].value.splice(n, 1);
   };
 
   return (
-    <Button
-      className="multi-form"
-      variant="primary"
-      onClick={() => delForm(props.i)}
-    >
+    <Button className="multi-form" variant="primary" onClick={() => delForm(i)}>
       <Dash />
     </Button>
   );
