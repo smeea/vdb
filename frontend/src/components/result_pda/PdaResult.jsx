@@ -12,9 +12,8 @@ import {
 import { decksSort } from 'utils';
 import { useApp, useSearchResults } from 'context';
 
-const PdaResult = ({ showSearch }) => {
+const PdaResult = () => {
   const {
-    setShowPdaSearch,
     parseDeckCards,
     isMobile,
     showFloatingButtons,
@@ -36,7 +35,6 @@ const PdaResult = ({ showSearch }) => {
   const handleClear = () => {
     navigate('/pda');
     setPdaResults(undefined);
-    setShowPdaSearch(!showSearch);
   };
 
   const sortedDecks = useMemo(() => {

@@ -26,17 +26,9 @@ import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
 const TwdSearchForm = () => {
-  const {
-    cryptCardBase,
-    libraryCardBase,
-    setShowTwdSearch,
-    inventoryMode,
-    isMobile,
-  } = useApp();
-
+  const { cryptCardBase, libraryCardBase, inventoryMode, isMobile } = useApp();
   const { twdFormState, setTwdFormState } = useSearchForms();
   const { setTwdResults } = useSearchResults();
-
   const [spinnerState, setSpinnerState] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
@@ -153,7 +145,6 @@ const TwdSearchForm = () => {
     setTwdFormState(JSON.parse(JSON.stringify(defaults)));
     setTwdResults(undefined);
     setError(false);
-    navigate('/twd');
   };
 
   const handleSubmitButton = (event) => {
@@ -192,7 +183,6 @@ const TwdSearchForm = () => {
       })
       .then((data) => {
         setSpinnerState(false);
-        setShowTwdSearch(false);
         setTwdResults(data);
       })
       .catch((error) => {
@@ -212,7 +202,6 @@ const TwdSearchForm = () => {
     setSpinnerState(true);
     setError(false);
     setTwdFormState(JSON.parse(JSON.stringify(defaults)));
-    navigate('/twd');
 
     const url = `${process.env.API_URL}twd/new/${q}`;
     const options = {
@@ -228,7 +217,6 @@ const TwdSearchForm = () => {
       })
       .then((data) => {
         setSpinnerState(false);
-        setShowTwdSearch(false);
         setTwdResults(data);
       })
       .catch((error) => {
@@ -248,7 +236,6 @@ const TwdSearchForm = () => {
     setSpinnerState(true);
     setError(false);
     setTwdFormState(JSON.parse(JSON.stringify(defaults)));
-    navigate('/twd');
 
     const url = `${process.env.API_URL}twd/random/${q}`;
     const options = {
@@ -261,7 +248,6 @@ const TwdSearchForm = () => {
       .then((response) => response.json())
       .then((data) => {
         setSpinnerState(false);
-        setShowTwdSearch(false);
         setTwdResults(data);
       })
       .catch((error) => {

@@ -14,7 +14,6 @@ import { useApp, useSearchResults } from 'context';
 
 const TwdResult = ({ showSearch }) => {
   const {
-    setShowTwdSearch,
     parseDeckCards,
     isMobile,
     showFloatingButtons,
@@ -36,7 +35,6 @@ const TwdResult = ({ showSearch }) => {
   const handleClear = () => {
     navigate('/twd');
     setTwdResults(undefined);
-    setShowTwdSearch(!showSearch);
   };
 
   const sortedDecks = useMemo(() => {

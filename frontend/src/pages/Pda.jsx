@@ -4,7 +4,7 @@ import { PdaResult, PdaSearchForm } from 'components';
 import { useApp, useSearchResults } from 'context';
 
 const Pda = () => {
-  const { showPdaSearch, isMobile } = useApp();
+  const { isMobile } = useApp();
   const { pdaResults } = useSearchResults();
 
   return (
@@ -15,7 +15,7 @@ const Pda = () => {
           md={8}
           xl={9}
           className={
-            !(isMobile && showPdaSearch)
+            !isMobile || (isMobile && pdaResults !== undefined)
               ? 'px-0 pe-lg-4'
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
@@ -27,7 +27,7 @@ const Pda = () => {
           md={4}
           xl={3}
           className={
-            !isMobile || (isMobile && showPdaSearch)
+            !isMobile || (isMobile && pdaResults === undefined)
               ? 'p-1 py-md-0 px-md-2 px-xl-0'
               : 'col-hide'
           }

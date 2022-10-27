@@ -4,7 +4,7 @@ import { TwdResult, TwdSearchForm } from 'components';
 import { useApp, useSearchResults } from 'context';
 
 const Twd = () => {
-  const { showTwdSearch, isMobile } = useApp();
+  const { isMobile } = useApp();
   const { twdResults } = useSearchResults();
 
   return (
@@ -15,7 +15,7 @@ const Twd = () => {
           md={8}
           xl={9}
           className={
-            !(isMobile && showTwdSearch)
+            !isMobile || (isMobile && twdResults !== undefined)
               ? 'px-0 pe-lg-4'
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
@@ -27,7 +27,7 @@ const Twd = () => {
           md={4}
           xl={3}
           className={
-            !isMobile || (isMobile && showTwdSearch)
+            !isMobile || (isMobile && pdaResults === undefined)
               ? 'p-1 py-md-0 px-md-2 px-xl-0'
               : 'col-hide'
           }

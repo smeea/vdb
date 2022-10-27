@@ -52,8 +52,6 @@ export const AppProvider = (props) => {
 
   const [preconDecks, setPreconDecks] = useState();
 
-  const [showPdaSearch, setShowPdaSearch] = useState(true);
-  const [showTwdSearch, setShowTwdSearch] = useState(true);
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
 
@@ -829,10 +827,6 @@ export const AppProvider = (props) => {
         changeTimer,
 
         // LISTING Context
-        showPdaSearch,
-        setShowPdaSearch,
-        showTwdSearch,
-        setShowTwdSearch,
         showCryptSearch,
         setShowCryptSearch,
         showLibrarySearch,
@@ -843,12 +837,12 @@ export const AppProvider = (props) => {
         changeCryptSearchSort,
         librarySearchSort,
         changeLibrarySearchSort,
-        cryptDeckSort,
-        changeCryptDeckSort,
         twdSearchSort,
         changeTwdSearchSort,
         pdaSearchSort,
         changePdaSearchSort,
+        cryptDeckSort,
+        changeCryptDeckSort,
       }}
     >
       {props.children}

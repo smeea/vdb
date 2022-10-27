@@ -19,24 +19,15 @@ import {
   TwdSearchFormButtons,
 } from './twd_search_components';
 import { PdaSearchFormSrcSelector } from './pda_search_components';
-
 import defaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
 const PdaSearchForm = () => {
-  const {
-    username,
-    cryptCardBase,
-    libraryCardBase,
-    setShowPdaSearch,
-    inventoryMode,
-    isMobile,
-  } = useApp();
-
+  const { username, cryptCardBase, libraryCardBase, inventoryMode, isMobile } =
+    useApp();
   const { pdaFormState, setPdaFormState } = useSearchForms();
   const { setPdaResults } = useSearchResults();
-
   const [spinnerState, setSpinnerState] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
@@ -142,7 +133,6 @@ const PdaSearchForm = () => {
     setPdaFormState(JSON.parse(JSON.stringify(defaults)));
     setPdaResults(undefined);
     setError(false);
-    navigate('/pda');
   };
 
   const handleSubmitButton = (event) => {
@@ -181,7 +171,6 @@ const PdaSearchForm = () => {
       })
       .then((data) => {
         setSpinnerState(false);
-        setShowPdaSearch(false);
         setPdaResults(data);
       })
       .catch((error) => {
@@ -201,7 +190,6 @@ const PdaSearchForm = () => {
     setSpinnerState(true);
     setError(false);
     setPdaFormState(JSON.parse(JSON.stringify(defaults)));
-    navigate('/pda');
 
     const url = `${process.env.API_URL}pda/new/${q}`;
     const options = {
@@ -217,7 +205,6 @@ const PdaSearchForm = () => {
       })
       .then((data) => {
         setSpinnerState(false);
-        setShowPdaSearch(false);
         setPdaResults(data);
       })
       .catch((error) => {
@@ -237,7 +224,6 @@ const PdaSearchForm = () => {
     setSpinnerState(true);
     setError(false);
     setPdaFormState(JSON.parse(JSON.stringify(defaults)));
-    navigate('/pda');
 
     const url = `${process.env.API_URL}pda/random/${q}`;
     const options = {
@@ -253,7 +239,6 @@ const PdaSearchForm = () => {
       })
       .then((data) => {
         setSpinnerState(false);
-        setShowPdaSearch(false);
         setPdaResults(data);
       })
       .catch((error) => {

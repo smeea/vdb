@@ -4,6 +4,7 @@
 - Inventory import bad cards
 - TWD search single card 0 q-ty
 - Update rulings
+- TWD/Pda on mobile error no cards found
 
 # REFACTOR
 - Test Amaranth import (both w/ and w/o versions)
