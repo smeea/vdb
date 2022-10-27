@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import defaultsPdaForm from 'components/forms_data/defaultsPdaForm.json';
 import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
-import defaultsCryptForm from 'components/forms_data/defaultsCryptForm.json';
-import defaultsLibraryForm from 'components/forms_data/defaultsLibraryForm.json';
 
 const SearchFormsContext = React.createContext();
 
@@ -23,12 +21,6 @@ export const SearchFormsProvider = (props) => {
   const [twdFormState, setTwdFormState] = useState(
     JSON.parse(JSON.stringify(defaultsTwdForm))
   );
-  const [cryptFormState, setCryptFormState] = useState(
-    JSON.parse(JSON.stringify(defaultsCryptForm))
-  );
-  const [libraryFormState, setLibraryFormState] = useState(
-    JSON.parse(JSON.stringify(defaultsLibraryForm))
-  );
 
   const [quickCard, setQuickCard] = useState(undefined);
 
@@ -39,10 +31,6 @@ export const SearchFormsProvider = (props) => {
         setPdaFormState,
         twdFormState,
         setTwdFormState,
-        cryptFormState,
-        setCryptFormState,
-        libraryFormState,
-        setLibraryFormState,
 
         quickCard,
         setQuickCard,

@@ -9,10 +9,10 @@ import {
 } from '../shared_search_components';
 import { useApp } from 'context';
 
-const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
+const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'title';
   const titles = [
     'ANY',
     'Not Required',
@@ -36,7 +36,7 @@ const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
   titles.map((i) => {
     options.push({
       value: i.toLowerCase(),
-      name: 'title',
+      name: name,
       label: (
         <>
           <span className="margin-full" />
@@ -58,20 +58,18 @@ const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonLogicToggle
-                  value={value}
-                  setFormState={setFormState}
+                  name={name}
+                  value={value.logic}
+                  searchForm={searchForm}
                 />
               </div>
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -93,9 +91,10 @@ const LibrarySearchFormTitle = ({ value, onChange, setFormState }) => {
       </Row>
       <SearchAdditionalForms
         value={value}
+        name={name}
+        searchForm={searchForm}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
         maxMenuHeight={maxMenuHeight}
       />
     </>

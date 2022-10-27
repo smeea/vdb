@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useSnapshot } from 'valtio';
 import {
   ResultLibrary,
   LibrarySearchForm,
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
 } from 'components';
-import { useApp, useSearchResults } from 'context';
+import { useApp, useSearchResults, searchResults } from 'context';
 
 const Library = () => {
   const {
@@ -18,13 +19,8 @@ const Library = () => {
     deck,
   } = useApp();
 
-  const {
-    libraryResults,
-    setLibraryResults,
-    libraryCompare,
-    setLibraryCompare,
-  } = useSearchResults();
-
+  const { libraryCompare, setLibraryCompare } = useSearchResults();
+  const libraryResults = useSnapshot(searchResults).library;
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
@@ -66,18 +62,15 @@ const Library = () => {
               (!isMobile && libraryCompare)) && (
               <div className="pb-3">
                 <ResultLibrary
-                  inCompare={true}
                   cards={libraryCompare}
                   setCards={setLibraryCompare}
                   isAuthor={deck.isAuthor}
+                  inCompare
                 />
               </div>
             )}
             {libraryResults !== undefined && (
-              <ResultLibrary
-                cards={libraryResults}
-                setCards={setLibraryResults}
-              />
+              <ResultLibrary cards={libraryResults} />
             )}
           </Col>
         )}

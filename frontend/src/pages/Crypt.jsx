@@ -12,11 +12,8 @@ import { useApp, useSearchResults, searchResults } from 'context';
 const Crypt = () => {
   const { showCryptSearch, addMode, toggleAddMode, isMobile, isDesktop, deck } =
     useApp();
-
   const { cryptCompare, setCryptCompare } = useSearchResults();
-
   const cryptResults = useSnapshot(searchResults).crypt;
-
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
@@ -58,10 +55,10 @@ const Crypt = () => {
               (!isMobile && cryptCompare)) && (
               <div className="pb-3">
                 <ResultCrypt
-                  inCompare={true}
                   cards={cryptCompare}
                   setCards={setCryptCompare}
                   isAuthor={deck.isAuthor}
+                  inCompare
                 />
               </div>
             )}

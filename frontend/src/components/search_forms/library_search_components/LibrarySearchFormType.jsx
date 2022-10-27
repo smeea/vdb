@@ -10,10 +10,10 @@ import {
 import { cardtypeSorted } from 'utils/constants';
 import { useApp } from 'context';
 
-const LibrarySearchFormType = ({ value, onChange, setFormState }) => {
+const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'type';
   const typesSorted = ['ANY', ...cardtypeSorted];
   const options = [];
 
@@ -21,7 +21,7 @@ const LibrarySearchFormType = ({ value, onChange, setFormState }) => {
     if (i == 'ANY') {
       options.push({
         value: i.toLowerCase(),
-        name: 'type',
+        name: name,
         label: (
           <>
             <span className="margin-full" />
@@ -60,21 +60,19 @@ const LibrarySearchFormType = ({ value, onChange, setFormState }) => {
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonLogicToggle
-                  value={value}
-                  setFormState={setFormState}
+                  name={name}
+                  value={value.logic}
+                  searchForm={searchForm}
                   withAnd
                 />
               </div>
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -96,9 +94,10 @@ const LibrarySearchFormType = ({ value, onChange, setFormState }) => {
       </Row>
       <SearchAdditionalForms
         value={value}
+        name={name}
+        searchForm={searchForm}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
         maxMenuHeight={maxMenuHeight}
       />
     </>

@@ -9,10 +9,10 @@ import {
 } from '../shared_search_components';
 import { useApp } from 'context';
 
-const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
+const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'sect';
   const sects = [
     'ANY',
     'Not Required',
@@ -29,7 +29,7 @@ const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
   sects.map((i) => {
     options.push({
       value: i.toLowerCase(),
-      name: 'sect',
+      name: name,
       label: (
         <>
           <span className="margin-full" />
@@ -51,20 +51,18 @@ const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonLogicToggle
-                  value={value}
-                  setFormState={setFormState}
+                  name={name}
+                  value={value.logic}
+                  searchForm={searchForm}
                 />
               </div>
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -86,9 +84,10 @@ const LibrarySearchFormSect = ({ value, setFormState, onChange }) => {
       </Row>
       <SearchAdditionalForms
         value={value}
+        name={name}
+        searchForm={searchForm}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
         maxMenuHeight={maxMenuHeight}
       />
     </>

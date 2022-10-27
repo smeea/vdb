@@ -2,15 +2,21 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import Exclamation from 'assets/images/icons/exclamation.svg';
 
-const SearchFormButtonLogicToggle = ({ name, value, searchForm, withAnd }) => {
+const SearchFormButtonLogicToggle = ({
+  name,
+  i,
+  value,
+  searchForm,
+  withAnd,
+}) => {
   const handleToggleForm = () => {
     if (name === 'text') {
       switch (value) {
         case 'and':
-          searchForm[name].logic = 'not';
+          searchForm[name][i].logic = 'not';
           break;
         case 'not':
-          searchForm[name].logic = 'and';
+          searchForm[name][i].logic = 'and';
           break;
       }
     } else {

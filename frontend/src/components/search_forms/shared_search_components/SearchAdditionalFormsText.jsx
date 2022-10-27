@@ -5,7 +5,6 @@ import {
   SearchFormButtonDelText,
   SearchFormButtonLogicToggle,
 } from '../shared_search_components';
-import { useApp } from 'context';
 
 const SearchAdditionalFormsText = ({
   value,
@@ -13,7 +12,6 @@ const SearchAdditionalFormsText = ({
   onChangeOptions,
   searchForm,
 }) => {
-  const { isMobile, isWide } = useApp();
   const options = [
     {
       value: 'name',

@@ -3,19 +3,19 @@ import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
 
-const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
+const LibrarySearchFormBloodCost = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
+  const name = 'blood';
   const blood = ['ANY', '0', '1', '2', '3', '4'];
   const options = [];
-
   blood.map((i) => {
     let v;
     i == 'ANY' ? (v = i.toLowerCase()) : (v = i);
 
     options.push({
       value: v,
-      name: 'blood',
+      name: name,
       label: (
         <>
           <span className="me-3 me-sm-1 me-lg-3" />
@@ -35,7 +35,7 @@ const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
   moreless.map((i) => {
     morelessOptions.push({
       value: i[0],
-      name: 'blood',
+      name: name,
       label: (
         <>
           <span className="me-3 me-sm-0 me-lg-3" />
@@ -56,9 +56,9 @@ const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
             classNamePrefix="react-select"
             options={morelessOptions}
             isSearchable={false}
-            name="blood-moreless"
+            name={`${name}-moreless`}
             value={morelessOptions.find((obj) => obj.value === value.moreless)}
-            onChange={onMorelessChange}
+            onChange={onChange}
           />
         </Col>
         <Col xs={5} className="d-inline pe-0 ps-1">
@@ -66,9 +66,9 @@ const LibrarySearchFormBloodCost = ({ value, onChange, onMorelessChange }) => {
             classNamePrefix="react-select"
             options={options}
             isSearchable={false}
-            name="blood"
+            name={name}
             maxMenuHeight={maxMenuHeight}
-            value={options.find((obj) => obj.value === value.blood)}
+            value={options.find((obj) => obj.value === value[name])}
             onChange={onChange}
           />
         </Col>

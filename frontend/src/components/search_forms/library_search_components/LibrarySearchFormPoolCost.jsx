@@ -3,9 +3,10 @@ import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
 
-const LibrarySearchFormPoolCost = ({ value, onChange, onMorelessChange }) => {
+const LibrarySearchFormPoolCost = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
+  const name = 'pool';
   const pool = ['ANY', '0', '1', '2', '3', '4', '5', '6'];
   const options = [];
 
@@ -15,7 +16,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange, onMorelessChange }) => {
 
     options.push({
       value: v,
-      name: 'pool',
+      name: name,
       label: (
         <>
           <span className="me-3 me-sm-1 me-lg-3" />
@@ -35,7 +36,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange, onMorelessChange }) => {
   moreless.map((i) => {
     morelessOptions.push({
       value: i[0],
-      name: 'pool',
+      name: name,
       label: (
         <>
           <span className="me-3 me-sm-0 me-lg-3" />
@@ -56,9 +57,9 @@ const LibrarySearchFormPoolCost = ({ value, onChange, onMorelessChange }) => {
             classNamePrefix="react-select"
             options={morelessOptions}
             isSearchable={false}
-            name="pool-moreless"
+            name={`${name}-moreless`}
             value={morelessOptions.find((obj) => obj.value === value.moreless)}
-            onChange={onMorelessChange}
+            onChange={onChange}
           />
         </Col>
         <Col xs={5} className="d-inline pe-0 ps-1">
@@ -66,9 +67,9 @@ const LibrarySearchFormPoolCost = ({ value, onChange, onMorelessChange }) => {
             classNamePrefix="react-select"
             options={options}
             isSearchable={false}
-            name="pool"
+            name={name}
             maxMenuHeight={maxMenuHeight}
-            value={options.find((obj) => obj.value === value.pool)}
+            value={options.find((obj) => obj.value === value[name])}
             onChange={onChange}
           />
         </Col>

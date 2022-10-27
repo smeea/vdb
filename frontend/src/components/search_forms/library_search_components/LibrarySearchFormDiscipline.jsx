@@ -12,10 +12,10 @@ import disciplinesList from 'assets/data/disciplinesList.json';
 import virtuesList from 'assets/data/virtuesList.json';
 import { useApp } from 'context';
 
-const LibrarySearchFormDiscipline = ({ value, onChange, setFormState }) => {
+const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const { isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'discipline';
   const disciplinesExtendedList = [
     ...disciplinesList,
     'Flight',
@@ -36,7 +36,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, setFormState }) => {
     if (i == 'ANY' || i == 'Not Required') {
       options.push({
         value: i.toLowerCase(),
-        name: 'discipline',
+        name: name,
         label: (
           <>
             <span className="margin-full" />
@@ -47,7 +47,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, setFormState }) => {
     } else {
       options.push({
         value: i.toLowerCase(),
-        name: 'discipline',
+        name: name,
         label: (
           <>
             <span className="margin-full">
@@ -72,21 +72,19 @@ const LibrarySearchFormDiscipline = ({ value, onChange, setFormState }) => {
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonLogicToggle
-                  value={value}
-                  setFormState={setFormState}
+                  name={name}
+                  value={value.logic}
+                  searchForm={searchForm}
                   withAnd
                 />
               </div>
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -108,9 +106,10 @@ const LibrarySearchFormDiscipline = ({ value, onChange, setFormState }) => {
       </Row>
       <SearchAdditionalForms
         value={value}
+        name={name}
+        searchForm={searchForm}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
         maxMenuHeight={maxMenuHeight}
       />
     </>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useSnapshot } from 'valtio';
 import { Form, Spinner } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
@@ -21,10 +22,14 @@ import {
   LibrarySearchFormPoolCost,
   LibrarySearchFormCapacity,
 } from './library_search_components';
-import defaults from 'components/forms_data/defaultsLibraryForm.json';
 import { sanitizeFormState } from 'utils';
 import { useFilters } from 'hooks';
-import { useApp, useSearchForms, useSearchResults } from 'context';
+import {
+  useApp,
+  setLibraryResults,
+  searchLibraryForm,
+  clearSearchForm,
+} from 'context';
 
 const LibrarySearchForm = () => {
   const {
@@ -38,10 +43,8 @@ const LibrarySearchForm = () => {
     playtest,
   } = useApp();
 
+  const libraryFormState = useSnapshot(searchLibraryForm);
   const { filterLibrary } = useFilters(libraryCardBase);
-
-  const { libraryFormState, setLibraryFormState } = useSearchForms();
-  const { setLibraryResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
@@ -52,18 +55,14 @@ const LibrarySearchForm = () => {
 
   useEffect(() => {
     if (query) {
-      setLibraryFormState((prevState) => {
-        const state = { ...prevState };
-        Object.keys(query).map((i) => {
-          if (typeof query[i] === 'object') {
-            Object.keys(query[i]).map((j) => {
-              state[i][j] = query[i][j];
-            });
-          } else {
-            state[i] = query[i];
-          }
-        });
-        return state;
+      Object.keys(query).map((i) => {
+        if (typeof query[i] === 'object') {
+          Object.keys(query[i]).map((j) => {
+            searchLibraryForm[i][j] = query[i][j];
+          });
+        } else {
+          searchLibraryForm[i] = query[i];
+        }
       });
     }
   }, []);
@@ -73,97 +72,56 @@ const LibrarySearchForm = () => {
 
   const handleTextChange = (event) => {
     const { name, value } = event.target;
-
-    setLibraryFormState((prevState) => {
-      const v = prevState.text;
-      v[name].value = value;
-
-      return {
-        ...prevState,
-        text: v,
-      };
-    });
+    searchLibraryForm.text[name].value = value;
   };
 
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
-    const newState = libraryFormState.text;
     if (['name', 'text'].includes(value)) {
-      newState[name]['in'] = newState[name]['in'] === value ? false : value;
+      searchLibraryForm.text[name]['in'] =
+        searchLibraryForm.text[name]['in'] === value ? false : value;
     } else {
-      newState[name][value] = !newState[name][value];
+      searchLibraryForm.text[name][value] =
+        !searchLibraryForm.text[name][value];
     }
-
-    setLibraryFormState((prevState) => ({
-      ...prevState,
-      text: newState,
-    }));
   };
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
-    setLibraryFormState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    searchLibraryForm[name] = value;
   };
 
   const handleMultiSelectChange = (event, id) => {
     const i = id.name;
     const { name, value } = event;
 
-    setLibraryFormState((prevState) => {
-      const v = prevState[name].value;
-      v[i] = value;
-      return {
-        ...prevState,
-        [name]: {
-          ...prevState[name],
-          value: v,
-        },
-      };
-    });
+    if (['blood', 'pool', 'capacity'].includes(name)) {
+      if (['le', 'ge', 'eq'].includes(value)) {
+        searchLibraryForm[name].moreless = value;
+      } else {
+        searchLibraryForm[name][name] = value;
+      }
+    } else {
+      searchLibraryForm[name].value[i] = value;
+    }
   };
 
   const handleMultiChange = (event) => {
     const { name, value } = event.target;
-    const newState = libraryFormState[name];
+
     if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
-      newState['age'] = newState['age'] === value ? false : value;
+      searchLibraryForm[name]['age'] =
+        searchLibraryForm[name]['age'] === value ? false : value;
     } else if (['only', 'first', 'reprint'].includes(value)) {
-      newState['print'] = newState['print'] === value ? false : value;
+      searchLibraryForm[name]['print'] =
+        searchLibraryForm[name]['print'] === value ? false : value;
     } else {
-      newState[value] = !newState[value];
+      searchLibraryForm[name][value] = !searchLibraryForm[name][value];
     }
-    setLibraryFormState((prevState) => ({
-      ...prevState,
-      [name]: newState,
-    }));
-  };
-
-  const handleNestedChange = (event) => {
-    const { name, value } = event;
-    const newState = libraryFormState[name];
-    newState[name] = value;
-    setLibraryFormState((prevState) => ({
-      ...prevState,
-      [name]: newState,
-    }));
-  };
-
-  const handleMorelessChange = (event) => {
-    const { name, value } = event;
-    const newState = libraryFormState[name];
-    newState['moreless'] = value;
-    setLibraryFormState((prevState) => ({
-      ...prevState,
-      [name]: newState,
-    }));
   };
 
   const handleClearButton = () => {
-    if (!isMobile) navigate('/library');
-    setLibraryFormState(JSON.parse(JSON.stringify(defaults)));
+    clearSearchForm('library');
     setLibraryResults(undefined);
     setPreresults(undefined);
     setError(false);
@@ -262,7 +220,7 @@ const LibrarySearchForm = () => {
         value={libraryFormState.text}
         onChange={handleTextChange}
         onChangeOptions={handleTextCheckboxesChange}
-        setFormState={setLibraryFormState}
+        searchForm={searchLibraryForm}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
         preresults={preresults ? preresults.length : null}
@@ -271,61 +229,58 @@ const LibrarySearchForm = () => {
         setHideMissing={setHideMissing}
       />
       <LibrarySearchFormType
-        value={{ name: 'type', ...libraryFormState.type }}
+        value={libraryFormState.type}
         onChange={handleMultiSelectChange}
-        setFormState={setLibraryFormState}
+        searchForm={searchLibraryForm}
       />
 
       <LibrarySearchFormDiscipline
-        value={{ name: 'discipline', ...libraryFormState.discipline }}
+        value={libraryFormState.discipline}
         onChange={handleMultiSelectChange}
-        setFormState={setLibraryFormState}
+        searchForm={searchLibraryForm}
       />
       <LibrarySearchFormClan
-        value={{ name: 'clan', ...libraryFormState.clan }}
+        value={libraryFormState.clan}
         onChange={handleMultiSelectChange}
-        setFormState={setLibraryFormState}
+        searchForm={searchLibraryForm}
       />
       <LibrarySearchFormSect
-        value={{ name: 'sect', ...libraryFormState.sect }}
+        value={libraryFormState.sect}
         onChange={handleMultiSelectChange}
-        setFormState={setLibraryFormState}
+        searchForm={searchLibraryForm}
       />
       <LibrarySearchFormTitle
-        value={{ name: 'title', ...libraryFormState.title }}
+        value={libraryFormState.title}
         onChange={handleMultiSelectChange}
-        setFormState={setLibraryFormState}
+        searchForm={searchLibraryForm}
       />
       <LibrarySearchFormBloodCost
         value={libraryFormState.blood}
-        onChange={handleNestedChange}
-        onMorelessChange={handleMorelessChange}
+        onChange={handleMultiSelectChange}
       />
       <LibrarySearchFormPoolCost
         value={libraryFormState.pool}
-        onChange={handleNestedChange}
-        onMorelessChange={handleMorelessChange}
+        onChange={handleMultiSelectChange}
       />
       <LibrarySearchFormCapacity
         value={libraryFormState.capacity}
-        onChange={handleNestedChange}
-        onMorelessChange={handleMorelessChange}
+        onChange={handleMultiSelectChange}
       />
       <LibrarySearchFormTraits
         value={libraryFormState.traits}
         onChange={handleMultiChange}
       />
       <SearchFormSet
-        value={{ name: 'set', ...libraryFormState.set }}
+        value={libraryFormState.set}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
-        setFormState={setLibraryFormState}
+        searchForm={searchLibraryForm}
       />
       <SearchFormPrecon
-        value={{ name: 'precon', ...libraryFormState.precon }}
+        value={libraryFormState.precon}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
-        setFormState={setLibraryFormState}
+        searchForm={searchLibraryForm}
       />
       <SearchFormArtist
         value={libraryFormState.artist}

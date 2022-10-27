@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
+import { useSnapshot } from 'valtio';
 import LightningFill from 'assets/images/icons/lightning-fill.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import InfoCircleFill from 'assets/images/icons/info-circle-fill.svg';
@@ -13,22 +14,16 @@ import libraryDefaults from 'components/forms_data/defaultsLibraryForm.json';
 import twdDefaults from 'components/forms_data/defaultsTwdForm.json';
 import pdaDefaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
+import { searchCryptForm, searchLibraryForm } from 'context';
 
 const Navigation = () => {
   const { inventoryMode, toggleInventoryMode, isMobile, username, deck } =
     useApp();
-
-  const {
-    pdaFormState,
-    twdFormState,
-    cryptFormState,
-    libraryFormState,
-    quickCard,
-  } = useSearchForms();
-
+  const { pdaFormState, twdFormState, quickCard } = useSearchForms();
   const [showMenu, setShowMenu] = useState(false);
-
   const location = useLocation();
+  const cryptFormState = useSnapshot(searchCryptForm);
+  const libraryFormState = useSnapshot(searchLibraryForm);
 
   let pdaUrl = '/pda';
   let twdUrl = '/twd';

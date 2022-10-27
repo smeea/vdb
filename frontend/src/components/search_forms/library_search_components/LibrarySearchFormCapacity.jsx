@@ -3,10 +3,10 @@ import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
 
-const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
+const LibrarySearchFormCapacity = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'capacity';
   const capacity = [
     'ANY',
     '1',
@@ -29,7 +29,7 @@ const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
 
     options.push({
       value: v,
-      name: 'capacity',
+      name: name,
       label: (
         <>
           <span className="me-3 me-sm-1 me-lg-3" />
@@ -48,7 +48,7 @@ const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
   moreless.map((i) => {
     morelessOptions.push({
       value: i[0],
-      name: 'capacity',
+      name: name,
       label: (
         <>
           <span className="me-3 me-sm-0 me-lg-3" />
@@ -68,9 +68,9 @@ const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
           classNamePrefix="react-select"
           options={morelessOptions}
           isSearchable={false}
-          name="capacity-moreless"
+          name={0}
           value={morelessOptions.find((obj) => obj.value === value.moreless)}
-          onChange={onMorelessChange}
+          onChange={onChange}
         />
       </Col>
       <Col xs={5} className="d-inline pe-0 ps-1">
@@ -78,9 +78,9 @@ const LibrarySearchFormCapacity = ({ value, onChange, onMorelessChange }) => {
           classNamePrefix="react-select"
           options={options}
           isSearchable={false}
-          name="capacity"
+          name={0}
           maxMenuHeight={maxMenuHeight}
-          value={options.find((obj) => obj.value === value.capacity)}
+          value={options.find((obj) => obj.value === value[name])}
           onChange={onChange}
         />
       </Col>

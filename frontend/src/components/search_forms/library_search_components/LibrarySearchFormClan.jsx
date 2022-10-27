@@ -12,10 +12,10 @@ import imbuedClansList from 'assets/data/imbuedClansList.json';
 import vampireClansList from 'assets/data/vampireClansList.json';
 import { useApp } from 'context';
 
-const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
+const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
   const { isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'clan';
   const clans = [
     'ANY',
     'Not Required',
@@ -29,7 +29,7 @@ const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
     if (i == 'ANY' || i == 'Not Required') {
       options.push({
         value: i.toLowerCase(),
-        name: 'clan',
+        name: name,
         label: (
           <>
             <span className="margin-full" />
@@ -40,7 +40,7 @@ const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
     } else {
       options.push({
         value: i.toLowerCase(),
-        name: 'clan',
+        name: name,
         label: (
           <>
             <span className="margin-full">
@@ -65,20 +65,18 @@ const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonLogicToggle
-                  value={value}
-                  setFormState={setFormState}
+                  name={name}
+                  value={value.logic}
+                  searchForm={searchForm}
                 />
               </div>
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  setFormState={setFormState}
-                  value={value}
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={setFormState}
-                  value={value}
+                  searchForm={searchForm}
                   i={0}
+                  name={name}
                 />
               )}
             </div>
@@ -100,9 +98,10 @@ const LibrarySearchFormClan = ({ value, setFormState, onChange }) => {
       </Row>
       <SearchAdditionalForms
         value={value}
+        name={name}
+        searchForm={searchForm}
         options={options}
         onChange={onChange}
-        setFormState={setFormState}
         maxMenuHeight={maxMenuHeight}
       />
     </>
