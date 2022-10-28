@@ -30,9 +30,9 @@ const ResultLibrary = ({ cards, setCards, isAuthor, inCompare }) => {
   };
 
   const handleClear = () => {
-    navigate('/library');
+    clearSearchForm('library');
     setCards(undefined);
-    setShowLibrarySearch(!showLibrarySearch);
+    setShowLibrarySearch(true);
   };
 
   const sortedCards = useMemo(

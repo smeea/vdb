@@ -7,7 +7,12 @@ import {
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
 } from 'components';
-import { useApp, useSearchResults, searchResults } from 'context';
+import {
+  useApp,
+  useSearchResults,
+  searchResults,
+  setCryptResults,
+} from 'context';
 
 const Crypt = () => {
   const { showCryptSearch, addMode, toggleAddMode, isMobile, isDesktop, deck } =
@@ -62,7 +67,13 @@ const Crypt = () => {
                 />
               </div>
             )}
-            {cryptResults !== undefined && <ResultCrypt cards={cryptResults} />}
+            {cryptResults !== undefined && (
+              <ResultCrypt
+                cards={cryptResults}
+                setCards={setCryptResults}
+                isAuthor={deck.isAuthor}
+              />
+            )}
           </Col>
         )}
         {showSearchForm && (

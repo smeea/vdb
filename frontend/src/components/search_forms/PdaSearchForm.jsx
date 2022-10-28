@@ -1,51 +1,46 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useSnapshot } from 'valtio';
 import { Form, Row, Col, Spinner } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
-import { ErrorOverlay } from 'components';
 import {
-  TwdSearchFormDate,
-  TwdSearchFormClan,
-  TwdSearchFormCardtypes,
+  ErrorOverlay,
+  PdaSearchFormSrcSelector,
+  TwdSearchFormButtons,
   TwdSearchFormCapacity,
-  TwdSearchFormDisciplines,
+  TwdSearchFormCardtypes,
+  TwdSearchFormClan,
   TwdSearchFormCrypt,
+  TwdSearchFormDate,
+  TwdSearchFormDisciplines,
   TwdSearchFormLibrary,
   TwdSearchFormLibraryTotal,
   TwdSearchFormMatchInventory,
   TwdSearchFormMatchInventoryScaling,
   TwdSearchFormPlayer,
-  TwdSearchFormButtons,
-} from './twd_search_components';
-import { PdaSearchFormSrcSelector } from './pda_search_components';
-import defaults from 'components/forms_data/defaultsPdaForm.json';
+} from 'components';
 import { sanitizeFormState } from 'utils';
-import { useApp, useSearchForms, useSearchResults } from 'context';
+import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from 'context';
 
 const PdaSearchForm = () => {
   const { username, cryptCardBase, libraryCardBase, inventoryMode, isMobile } =
     useApp();
-  const { pdaFormState, setPdaFormState } = useSearchForms();
-  const { setPdaResults } = useSearchResults();
+  const pdaFormState = useSnapshot(searchPdaForm);
   const [spinnerState, setSpinnerState] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
     if (query) {
-      setPdaFormState((prevState) => {
-        const state = { ...prevState };
-        Object.keys(query).map((i) => {
-          if (typeof query[i] === 'object') {
-            Object.keys(query[i]).map((j) => {
-              state[i][j] = query[i][j];
-            });
-          } else {
-            state[i] = query[i];
-          }
-        });
-        return state;
+      Object.keys(query).map((i) => {
+        if (typeof query[i] === 'object') {
+          Object.keys(query[i]).map((j) => {
+            searchPdaForm[i][j] = query[i][j];
+          });
+        } else {
+          searchPdaForm[i] = query[i];
+        }
       });
     }
   }, []);
@@ -59,78 +54,34 @@ const PdaSearchForm = () => {
   const [error, setError] = useState(false);
   const refError = useRef(null);
 
-  const handleSelectChange = (event) => {
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    searchPdaForm[name] = value;
+  };
+
+  const handleChangeWithOpt = (event, id) => {
+    const i = id.name;
     const { name, value } = event;
-    setPdaFormState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleCheckboxChange = (event) => {
-    const { name, id } = event.target;
-    setPdaFormState((prevState) => ({
-      ...prevState,
-      [name]: id,
-    }));
-  };
-
-  const handleCardtypeChange = (event) => {
-    const { name, value } = event;
-    const newState = pdaFormState.cardtypes;
-    newState[name] = value;
-    setPdaFormState((prevState) => ({
-      ...prevState,
-      cardtypes: newState,
-    }));
-  };
-
-  const handleDateChange = (event) => {
-    const { name, value } = event;
-    const newState = pdaFormState.date;
-    newState[name] = value;
-    setPdaFormState((prevState) => ({
-      ...prevState,
-      date: newState,
-    }));
-  };
-
-  const handleMatchInventoryChange = (event) => {
-    const { name, value } = event;
-    const newState = pdaFormState.matchInventory;
-    newState[name] = value;
-    setPdaFormState((prevState) => ({
-      ...prevState,
-      matchInventory: newState,
-    }));
-  };
-
-  const handleMatchInventoryScalingChange = (e) => {
-    const newState = pdaFormState.matchInventory;
-    if (e.target.checked) {
-      newState.scaling = e.target.name;
-    } else {
-      newState.scaling = false;
-    }
-    setPdaFormState((prevState) => ({
-      ...prevState,
-      matchInventory: newState,
-    }));
+    searchPdaForm[i][name] = value;
   };
 
   const handleMultiChange = (event) => {
     const { name, id, value } = event.target;
-    const newState = pdaFormState[name];
-    const i = value ? value : id;
-    newState[i] = !newState[i];
-    setPdaFormState((prevState) => ({
-      ...prevState,
-      [name]: newState,
-    }));
+    const i = value ?? id;
+
+    searchPdaForm[name][i] = !pdaFormState[name][i];
+  };
+
+  const handleMatchInventoryScalingChange = (e) => {
+    if (e.target.checked) {
+      searchPdaForm.matchInventory.scaling = e.target.name;
+    } else {
+      searchPdaForm.matchInventory.scaling = false;
+    }
   };
 
   const handleClearButton = () => {
-    setPdaFormState(JSON.parse(JSON.stringify(defaults)));
+    clearSearchForm('pda');
     setPdaResults(undefined);
     setError(false);
   };
@@ -141,6 +92,7 @@ const PdaSearchForm = () => {
   };
 
   const launchRequest = () => {
+    // TODO compare with crypt
     const url = `${process.env.API_URL}search/pda`;
     const input = sanitizeFormState('pda', pdaFormState);
 
@@ -189,7 +141,7 @@ const PdaSearchForm = () => {
   const getNewPda = (q) => {
     setSpinnerState(true);
     setError(false);
-    setPdaFormState(JSON.parse(JSON.stringify(defaults)));
+    clearSearchForm('pda');
 
     const url = `${process.env.API_URL}pda/new/${q}`;
     const options = {
@@ -223,7 +175,7 @@ const PdaSearchForm = () => {
   const getRandomPda = (q) => {
     setSpinnerState(true);
     setError(false);
-    setPdaFormState(JSON.parse(JSON.stringify(defaults)));
+    clearSearchForm('pda');
 
     const url = `${process.env.API_URL}pda/random/${q}`;
     const options = {
@@ -278,7 +230,7 @@ const PdaSearchForm = () => {
         <div className="px-1 py-2">
           <PdaSearchFormSrcSelector
             value={pdaFormState.src}
-            onChange={handleCheckboxChange}
+            onChange={handleChange}
           />
         </div>
       )}
@@ -291,8 +243,8 @@ const PdaSearchForm = () => {
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
                 value={pdaFormState.matchInventory.crypt}
-                name={'crypt'}
-                onChange={handleMatchInventoryChange}
+                target={'crypt'}
+                onChange={handleChangeWithOpt}
               />
             </Col>
           </Row>
@@ -303,8 +255,8 @@ const PdaSearchForm = () => {
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
                 value={pdaFormState.matchInventory.library}
-                name={'library'}
-                onChange={handleMatchInventoryChange}
+                target={'library'}
+                onChange={handleChangeWithOpt}
               />
             </Col>
           </Row>
@@ -330,8 +282,8 @@ const PdaSearchForm = () => {
         </Col>
         <Col xs={10} className="d-inline px-0">
           <TwdSearchFormDate
-            date={pdaFormState.date}
-            onChange={handleDateChange}
+            value={pdaFormState.date}
+            onChange={handleChangeWithOpt}
             inPda
           />
         </Col>
@@ -343,8 +295,8 @@ const PdaSearchForm = () => {
         <Col xs={12} className="d-inline px-0">
           {cryptCardBase && (
             <TwdSearchFormCrypt
-              state={pdaFormState}
-              setState={setPdaFormState}
+              value={pdaFormState.crypt}
+              form={searchPdaForm.crypt}
             />
           )}
         </Col>
@@ -358,7 +310,7 @@ const PdaSearchForm = () => {
             id="traits-star"
             label="With Star"
             checked={pdaFormState.traits.star}
-            onChange={(e) => handleMultiChange(e)}
+            onChange={handleMultiChange}
           />
         </div>
       </Row>
@@ -369,8 +321,8 @@ const PdaSearchForm = () => {
         <Col xs={12} className="d-inline px-0">
           {libraryCardBase && (
             <TwdSearchFormLibrary
-              state={pdaFormState}
-              setState={setPdaFormState}
+              value={pdaFormState.library}
+              form={searchPdaForm.library}
             />
           )}
         </Col>
@@ -393,7 +345,7 @@ const PdaSearchForm = () => {
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormClan
             value={pdaFormState.clan}
-            onChange={handleSelectChange}
+            onChange={handleChange}
           />
         </Col>
       </Row>
@@ -406,7 +358,7 @@ const PdaSearchForm = () => {
             id="traits-monoclan"
             label="Mono Clan"
             checked={pdaFormState.traits.monoclan}
-            onChange={(e) => handleMultiChange(e)}
+            onChange={handleMultiChange}
           />
         </div>
       </Row>
@@ -432,7 +384,7 @@ const PdaSearchForm = () => {
         <Col xs={12} className="d-inline pe-0 ps-1">
           <TwdSearchFormCardtypes
             value={pdaFormState.cardtypes}
-            onChange={handleCardtypeChange}
+            onChange={handleChangeWithOpt}
           />
         </Col>
       </Row>
@@ -442,8 +394,8 @@ const PdaSearchForm = () => {
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormPlayer
-            value={pdaFormState.author}
-            setValue={setPdaFormState}
+            state={pdaFormState.author}
+            form={searchPdaForm}
             inPda
           />
         </Col>

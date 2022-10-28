@@ -1,7 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
 
-const TwdSearchFormMatchInventory = ({ value, name, onChange }) => {
+const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
+  const name = 'matchInventory';
   const matchOptions = [
     ['any', 'ANY'],
     ['0.7', '70%+'],
@@ -12,7 +13,7 @@ const TwdSearchFormMatchInventory = ({ value, name, onChange }) => {
   const options = matchOptions.map((i) => {
     return {
       value: i[0],
-      name: name,
+      name: target,
       label: (
         <>
           <span className="me-3" />

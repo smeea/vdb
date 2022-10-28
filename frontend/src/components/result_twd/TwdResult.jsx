@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Button, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
@@ -10,9 +9,9 @@ import {
   TwdResultLibraryKeyCards,
 } from 'components';
 import { decksSort } from 'utils';
-import { useApp, useSearchResults } from 'context';
+import { useApp } from 'context';
 
-const TwdResult = ({ showSearch }) => {
+const TwdResult = ({ decks, setDecks }) => {
   const {
     parseDeckCards,
     isMobile,
@@ -20,10 +19,8 @@ const TwdResult = ({ showSearch }) => {
     twdSearchSort,
     changeTwdSearchSort,
   } = useApp();
-  const { twdResults, setTwdResults } = useSearchResults();
-  const navigate = useNavigate();
   const showCounterStep = 20;
-  const deckCounter = Object.keys(twdResults).length || 0;
+  const deckCounter = decks.length || 0;
   const [showCounter, setShowCounter] = useState(showCounterStep);
 
   const sortMethods = {
@@ -33,19 +30,20 @@ const TwdResult = ({ showSearch }) => {
   };
 
   const handleClear = () => {
-    navigate('/twd');
-    setTwdResults(undefined);
+    clearSearchForm('twd');
+    setDecks(undefined);
   };
 
   const sortedDecks = useMemo(() => {
-    return decksSort(twdResults, twdSearchSort);
-  }, [twdResults, twdSearchSort]);
+    return decksSort(decks, twdSearchSort);
+  }, [decks, twdSearchSort]);
 
   const results = useMemo(() => {
     if (sortedDecks) {
       let newCounter = showCounter;
 
-      return sortedDecks.map((deck, index) => {
+      return sortedDecks.map((d, index) => {
+        const deck = { ...d };
         while (newCounter > 0) {
           newCounter -= 1;
 
@@ -97,15 +95,15 @@ const TwdResult = ({ showSearch }) => {
 
   return (
     <>
-      {!isMobile && (twdResults === null || twdResults.length === 0) && (
+      {!isMobile && (decks === null || decks.length === 0) && (
         <div className="d-flex align-items-center justify-content-center error-message">
-          <b>{twdResults === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
+          <b>{decks === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
         </div>
       )}
-      {twdResults && twdResults.length > 0 && (
+      {decks.length > 0 && (
         <>
           <TwdResultTotal
-            decks={twdResults}
+            decks={decks}
             sortMethods={sortMethods}
             sortMethod={twdSearchSort}
             setSortMethod={changeTwdSearchSort}

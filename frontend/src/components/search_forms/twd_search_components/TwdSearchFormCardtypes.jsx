@@ -7,7 +7,7 @@ import { useApp } from 'context';
 const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'cardtypes';
   const types = [
     [
       'Master',
@@ -139,7 +139,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
               classNamePrefix="react-select"
               options={options}
               isSearchable={false}
-              name={i[0]}
+              name={name}
               maxMenuHeight={maxMenuHeight}
               value={options.find(
                 (obj) => obj.value === value[i[0].toLowerCase()]
@@ -162,7 +162,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
               classNamePrefix="react-select"
               options={options}
               isSearchable={false}
-              name={i[0]}
+              name={name}
               maxMenuHeight={maxMenuHeight}
               value={options.find(
                 (obj) => obj.value === value[i[0].toLowerCase()]

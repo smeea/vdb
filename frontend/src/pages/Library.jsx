@@ -70,7 +70,11 @@ const Library = () => {
               </div>
             )}
             {libraryResults !== undefined && (
-              <ResultLibrary cards={libraryResults} />
+              <ResultLibrary
+                cards={libraryResults}
+                setCards={setLibraryResults}
+                isAuthor={deck.isAuthor}
+              />
             )}
           </Col>
         )}

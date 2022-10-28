@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useSnapshot } from 'valtio';
 import { TwdResult, TwdSearchForm } from 'components';
-import { useApp, useSearchResults } from 'context';
+import { useApp, searchResults, setTwdResults } from 'context';
 
 const Twd = () => {
   const { isMobile } = useApp();
-  const { twdResults } = useSearchResults();
+  const twdResults = useSnapshot(searchResults).twd;
 
   return (
     <Container className="main-container p-md-3">
@@ -20,14 +21,16 @@ const Twd = () => {
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
-          {twdResults !== undefined && <TwdResult />}
+          {twdResults !== undefined && (
+            <TwdResult decks={twdResults} setDecks={setTwdResults} />
+          )}
         </Col>
         <Col
           xs={12}
           md={4}
           xl={3}
           className={
-            !isMobile || (isMobile && pdaResults === undefined)
+            !isMobile || (isMobile && twdResults === undefined)
               ? 'p-1 py-md-0 px-md-2 px-xl-0'
               : 'col-hide'
           }

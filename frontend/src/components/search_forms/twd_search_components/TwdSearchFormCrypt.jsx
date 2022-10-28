@@ -9,34 +9,23 @@ import {
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from 'context';
 
-const TwdSearchFormCrypt = ({ state, setState }) => {
+const TwdSearchFormCrypt = ({ value, form }) => {
   const { cryptCardBase, isMobile } = useApp();
   const [modalCard, setModalCard] = useState(undefined);
 
   const handleAdd = (event) => {
-    setState((prevState) => ({
-      ...prevState,
-      crypt: {
-        ...prevState.crypt,
-        [event.value]: {
-          q: 1,
-          m: 'gt'
-        }
-      },
-    }));
+    form[event.value] = {
+      q: 1,
+      m: 'gt',
+    };
   };
 
-  const cryptCardsList = Object.keys(state.crypt)
-    .filter((id) => state.crypt[id].q >= 0)
+  const cryptCardsList = Object.keys(value)
+    .filter((id) => value[id].q >= 0)
     .map((id) => {
       return (
         <div key={id} className="d-flex align-items-center pt-1">
-          <TwdSearchFormQuantityButtons
-            state={state}
-            setState={setState}
-            id={id}
-            target="crypt"
-          />
+          <TwdSearchFormQuantityButtons value={value} form={form} id={id} />
           <ConditionalOverlayTrigger
             placement="left"
             overlay={<CardPopover card={cryptCardBase[id]} />}
@@ -60,10 +49,7 @@ const TwdSearchFormCrypt = ({ state, setState }) => {
 
   return (
     <>
-      <NewCryptCard
-        onChange={handleAdd}
-        selectedValue={null}
-      />
+      <NewCryptCard onChange={handleAdd} selectedValue={null} />
       {cryptCardsList}
       {modalCard && (
         <ResultModal

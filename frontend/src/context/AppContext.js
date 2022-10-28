@@ -554,7 +554,7 @@ export const AppProvider = (props) => {
     if (decks && Object.keys(decks).length > 0 && !deck) {
       const lastDeckArray = Object.values(decks).sort(byTimestamp);
       const lastDeckId = lastDeckArray[0].deckid;
-      // setDeck(decks[lastDeckId]);
+      setDeck(decks[lastDeckId]);
     }
   }, [decks]);
 

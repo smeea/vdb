@@ -9,11 +9,10 @@
 # REFACTOR
 - Test Amaranth import (both w/ and w/o versions)
 - Add getDeck errors
-- librarySearch to valtio storage
-- twdSearch to valtio storage
-- pdaSearch to valtio storage
 - decks to valtio storage
 - inventory to valtio storage
+- crypt/library compare to valtion storage
+- Fix back from search results on mobile
 
 # FEATURES
 - Check TWD

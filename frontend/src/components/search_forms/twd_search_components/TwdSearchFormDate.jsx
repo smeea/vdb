@@ -3,10 +3,10 @@ import Select from 'react-select';
 import { Row, Col } from 'react-bootstrap';
 import { useApp } from 'context';
 
-const TwdSearchFormDate = ({ inPda, date, onChange }) => {
+const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
+  const name = 'date';
   const noPdaYears = [
     '2021',
     '2020',
@@ -37,12 +37,12 @@ const TwdSearchFormDate = ({ inPda, date, onChange }) => {
   const years = ['ANY', '2022'];
   if (!inPda) years.push(...noPdaYears);
 
-  const dateFromOptions = [];
-  const dateToOptions = [];
+  const fromOptions = [];
+  const toOptions = [];
 
   years.map((i) => {
-    if (i === 'ANY' || date.to === 'any' || parseInt(i) <= date.to) {
-      dateFromOptions.push({
+    if (i === 'ANY' || value.to === 'any' || parseInt(i) <= value.to) {
+      fromOptions.push({
         value: i.toLowerCase(),
         name: 'from',
         label: (
@@ -54,8 +54,8 @@ const TwdSearchFormDate = ({ inPda, date, onChange }) => {
       });
     }
 
-    if (i === 'ANY' || date.from === 'any' || parseInt(i) >= date.from) {
-      dateToOptions.push({
+    if (i === 'ANY' || value.from === 'any' || parseInt(i) >= value.from) {
+      toOptions.push({
         value: i.toLowerCase(),
         name: 'to',
         label: (
@@ -75,11 +75,11 @@ const TwdSearchFormDate = ({ inPda, date, onChange }) => {
         <Col xs={5} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
-            options={dateFromOptions}
+            options={fromOptions}
             isSearchable={false}
-            name="date-from"
+            name={name}
             maxMenuHeight={maxMenuHeight}
-            value={dateFromOptions.find((obj) => obj.value === date.from)}
+            value={fromOptions.find((obj) => obj.value === value.from)}
             onChange={onChange}
           />
         </Col>
@@ -89,11 +89,11 @@ const TwdSearchFormDate = ({ inPda, date, onChange }) => {
         <Col xs={5} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
-            options={dateToOptions}
+            options={toOptions}
             isSearchable={false}
-            name="date-to"
+            name={name}
             maxMenuHeight={maxMenuHeight}
-            value={dateToOptions.find((obj) => obj.value === date.to)}
+            value={toOptions.find((obj) => obj.value === value.to)}
             onChange={onChange}
           />
         </Col>

@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Button, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
@@ -10,9 +9,9 @@ import {
   TwdResultLibraryKeyCards,
 } from 'components';
 import { decksSort } from 'utils';
-import { useApp, useSearchResults } from 'context';
+import { useApp, clearSearchForm } from 'context';
 
-const PdaResult = () => {
+const PdaResult = ({ decks, setDecks }) => {
   const {
     parseDeckCards,
     isMobile,
@@ -20,10 +19,8 @@ const PdaResult = () => {
     pdaSearchSort,
     changePdaSearchSort,
   } = useApp();
-  const { pdaResults, setPdaResults } = useSearchResults();
-  const navigate = useNavigate();
   const showCounterStep = 20;
-  const deckCounter = Object.keys(pdaResults).length || 0;
+  const deckCounter = decks.length || 0;
   const [showCounter, setShowCounter] = useState(showCounterStep);
 
   const sortMethods = {
@@ -33,24 +30,25 @@ const PdaResult = () => {
   };
 
   const handleClear = () => {
-    navigate('/pda');
-    setPdaResults(undefined);
+    clearSearchForm('pda');
+    setDecks(undefined);
   };
 
   const sortedDecks = useMemo(() => {
-    return decksSort(pdaResults, pdaSearchSort);
-  }, [pdaResults, pdaSearchSort]);
+    return decksSort(decks, pdaSearchSort);
+  }, [decks, pdaSearchSort]);
 
   const results = useMemo(() => {
     if (sortedDecks) {
       let newCounter = showCounter;
 
-      return sortedDecks.map((deck, index) => {
+      return sortedDecks.map((d, index) => {
+        const deck = { ...d };
         while (newCounter > 0) {
           newCounter -= 1;
 
           const cardsData = parseDeckCards(deck.cards);
-          Object.values({ ...cardsData.crypt, ...cardsData.library }).filter(
+          Object.values({ ...cardsData.crypt, ...cardsData.library }).map(
             (card) => {
               if (card.q === 0) {
                 if (card.c.Id > 200000) {
@@ -108,15 +106,15 @@ const PdaResult = () => {
 
   return (
     <>
-      {!isMobile && (pdaResults === null || pdaResults.length === 0) && (
+      {!isMobile && (decks === null || decks.length === 0) && (
         <div className="d-flex align-items-center justify-content-center error-message">
-          <b>{pdaResults === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
+          <b>{decks === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
         </div>
       )}
-      {pdaResults && pdaResults.length > 0 && (
+      {decks.length > 0 && (
         <>
           <TwdResultTotal
-            decks={pdaResults}
+            decks={decks}
             sortMethods={sortMethods}
             sortMethod={pdaSearchSort}
             setSortMethod={changePdaSearchSort}

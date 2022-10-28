@@ -9,34 +9,23 @@ import {
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from 'context';
 
-const TwdSearchFormLibrary = ({ state, setState }) => {
+const TwdSearchFormLibrary = ({ value, form }) => {
   const { libraryCardBase, isMobile } = useApp();
   const [modalCard, setModalCard] = useState(undefined);
 
   const handleAdd = (event) => {
-    setState((prevState) => ({
-      ...prevState,
-      library: {
-        ...prevState.library,
-        [event.value]: {
-          q: 1,
-          m: 'gt'
-        }
-      },
-    }));
+    form[event.value] = {
+      q: 1,
+      m: 'gt',
+    };
   };
 
-  const libraryCardsList = Object.keys(state.library)
-    .filter((id) => state.library[id].q >= 0)
+  const libraryCardsList = Object.keys(value)
+    .filter((id) => value[id].q >= 0)
     .map((id) => {
       return (
         <div key={id} className="d-flex align-items-center pt-1">
-          <TwdSearchFormQuantityButtons
-            state={state}
-            setState={setState}
-            id={id}
-            target="library"
-          />
+          <TwdSearchFormQuantityButtons value={value} form={form} id={id} />
           <ConditionalOverlayTrigger
             placement="left"
             overlay={<CardPopover card={libraryCardBase[id]} />}

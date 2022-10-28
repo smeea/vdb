@@ -2,15 +2,12 @@ import React from 'react';
 import AsyncSelect from 'react-select/async';
 import { useApp } from 'context';
 
-const TwdSearchFormLocation = ({ value, setValue }) => {
+const TwdSearchFormLocation = ({ value, form }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const handleChange = (v) => {
-    setValue((prevState) => ({
-      ...prevState,
-      location: v ? v.value : '',
-    }));
+    form.location = v.value ?? '';
   };
 
   const loadOptions = (inputValue) => {

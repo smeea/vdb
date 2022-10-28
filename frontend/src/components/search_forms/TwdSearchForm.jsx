@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useSnapshot } from 'valtio';
 import { Form, Row, Col, Spinner } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
@@ -23,31 +24,25 @@ import {
 } from './twd_search_components';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 import { sanitizeFormState } from 'utils';
-import { useApp, useSearchForms, useSearchResults } from 'context';
+import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from 'context';
 
 const TwdSearchForm = () => {
   const { cryptCardBase, libraryCardBase, inventoryMode, isMobile } = useApp();
-  const { twdFormState, setTwdFormState } = useSearchForms();
-  const { setTwdResults } = useSearchResults();
+  const twdFormState = useSnapshot(searchTwdForm);
   const [spinnerState, setSpinnerState] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
     if (query) {
-      setTwdFormState((prevState) => {
-        const state = { ...prevState };
-        Object.keys(query).map((i) => {
-          if (typeof query[i] === 'object') {
-            Object.keys(query[i]).map((j) => {
-              state[i][j] = query[i][j];
-            });
-          } else {
-            state[i] = query[i];
-          }
-        });
-
-        return state;
+      Object.keys(query).map((i) => {
+        if (typeof query[i] === 'object') {
+          Object.keys(query[i]).map((j) => {
+            searchTwdForm[i][j] = query[i][j];
+          });
+        } else {
+          searchTwdForm[i] = query[i];
+        }
       });
     }
   }, []);
@@ -61,88 +56,38 @@ const TwdSearchForm = () => {
   const [error, setError] = useState(false);
   const refError = useRef(null);
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    searchTwdForm[name] = value;
+  };
+
   const handleEventChange = (event) => {
-    const value = event.target.value;
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      event: value,
-    }));
+    searchTwdForm.event = event.target.value;
   };
 
-  const handleSelectChange = (event) => {
+  const handleChangeWithOpt = (event, id) => {
+    const i = id.name;
     const { name, value } = event;
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleCardtypeChange = (event) => {
-    const { name, value } = event;
-    const newState = twdFormState.cardtypes;
-    newState[name] = value;
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      cardtypes: newState,
-    }));
-  };
-
-  const handleDateChange = (event) => {
-    const { name, value } = event;
-    const newState = twdFormState.date;
-    newState[name] = value;
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      date: newState,
-    }));
-  };
-
-  const handlePlayersChange = (event) => {
-    const { name, value } = event;
-    const newState = twdFormState.players;
-    newState[name] = value;
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      players: newState,
-    }));
-  };
-
-  const handleMatchInventoryChange = (event) => {
-    const { name, value } = event;
-    const newState = twdFormState.matchInventory;
-    newState[name] = value;
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      matchInventory: newState,
-    }));
-  };
-
-  const handleMatchInventoryScalingChange = (e) => {
-    const newState = twdFormState.matchInventory;
-    if (e.target.checked) {
-      newState.scaling = e.target.name;
-    } else {
-      newState.scaling = false;
-    }
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      matchInventory: newState,
-    }));
+    searchTwdForm[i][name] = value;
   };
 
   const handleMultiChange = (event) => {
     const { name, id, value } = event.target;
-    const newState = twdFormState[name];
-    const i = value ? value : id;
-    newState[i] = !newState[i];
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      [name]: newState,
-    }));
+    const i = value ?? id;
+
+    searchTwdForm[name][i] = !twdFormState[name][i];
+  };
+
+  const handleMatchInventoryScalingChange = (e) => {
+    if (e.target.checked) {
+      searchTwdForm.matchInventory.scaling = e.target.name;
+    } else {
+      searchTwdForm.matchInventory.scaling = false;
+    }
   };
 
   const handleClearButton = () => {
-    setTwdFormState(JSON.parse(JSON.stringify(defaults)));
+    clearSearchForm('twd');
     setTwdResults(undefined);
     setError(false);
   };
@@ -153,6 +98,7 @@ const TwdSearchForm = () => {
   };
 
   const launchRequest = () => {
+    // TODO compare with crypt
     const url = `${process.env.API_URL}search/twd`;
     const input = sanitizeFormState('twd', twdFormState);
 
@@ -235,7 +181,7 @@ const TwdSearchForm = () => {
   const getRandomTwd = (q) => {
     setSpinnerState(true);
     setError(false);
-    setTwdFormState(JSON.parse(JSON.stringify(defaults)));
+    clearSearchForm('twd');
 
     const url = `${process.env.API_URL}twd/random/${q}`;
     const options = {
@@ -295,8 +241,8 @@ const TwdSearchForm = () => {
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
                 value={twdFormState.matchInventory.crypt}
-                name={'crypt'}
-                onChange={handleMatchInventoryChange}
+                target={'crypt'}
+                onChange={handleChangeWithOpt}
               />
             </Col>
           </Row>
@@ -307,8 +253,8 @@ const TwdSearchForm = () => {
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
                 value={twdFormState.matchInventory.library}
-                name={'library'}
-                onChange={handleMatchInventoryChange}
+                target={'library'}
+                onChange={handleChangeWithOpt}
               />
             </Col>
           </Row>
@@ -334,8 +280,8 @@ const TwdSearchForm = () => {
         </Col>
         <Col xs={10} className="d-inline px-0">
           <TwdSearchFormDate
-            date={twdFormState.date}
-            onChange={handleDateChange}
+            value={twdFormState.date}
+            onChange={handleChangeWithOpt}
           />
         </Col>
       </Row>
@@ -345,8 +291,8 @@ const TwdSearchForm = () => {
         </Col>
         <Col xs={10} className="d-inline px-0">
           <TwdSearchFormPlayers
-            players={twdFormState.players}
-            onChange={handlePlayersChange}
+            value={twdFormState.players}
+            onChange={handleChangeWithOpt}
           />
         </Col>
       </Row>
@@ -357,8 +303,8 @@ const TwdSearchForm = () => {
         <Col xs={12} className="d-inline px-0">
           {cryptCardBase && (
             <TwdSearchFormCrypt
-              state={twdFormState}
-              setState={setTwdFormState}
+              value={twdFormState.crypt}
+              form={searchTwdForm.crypt}
             />
           )}
         </Col>
@@ -372,7 +318,7 @@ const TwdSearchForm = () => {
             id="traits-star"
             label="With Star"
             checked={twdFormState.traits.star}
-            onChange={(e) => handleMultiChange(e)}
+            onChange={handleMultiChange}
           />
         </div>
       </Row>
@@ -383,8 +329,8 @@ const TwdSearchForm = () => {
         <Col xs={12} className="d-inline px-0">
           {libraryCardBase && (
             <TwdSearchFormLibrary
-              state={twdFormState}
-              setState={setTwdFormState}
+              value={twdFormState.crypt}
+              form={searchTwdForm.crypt}
             />
           )}
         </Col>
@@ -407,7 +353,7 @@ const TwdSearchForm = () => {
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormClan
             value={twdFormState.clan}
-            onChange={handleSelectChange}
+            onChange={handleChange}
           />
         </Col>
       </Row>
@@ -420,7 +366,7 @@ const TwdSearchForm = () => {
             id="traits-monoclan"
             label="Mono Clan"
             checked={twdFormState.traits.monoclan}
-            onChange={(e) => handleMultiChange(e)}
+            onChange={handleMultiChange}
           />
         </div>
       </Row>
@@ -446,7 +392,7 @@ const TwdSearchForm = () => {
         <Col xs={12} className="d-inline pe-0 ps-1">
           <TwdSearchFormCardtypes
             value={twdFormState.cardtypes}
-            onChange={handleCardtypeChange}
+            onChange={handleChangeWithOpt}
           />
         </Col>
       </Row>
@@ -468,7 +414,7 @@ const TwdSearchForm = () => {
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormLocation
             value={twdFormState.location}
-            setValue={setTwdFormState}
+            form={searchTwdForm}
           />
         </Col>
       </Row>
@@ -479,7 +425,7 @@ const TwdSearchForm = () => {
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormPlayer
             value={twdFormState.author}
-            setValue={setTwdFormState}
+            form={searchTwdForm}
           />
         </Col>
       </Row>

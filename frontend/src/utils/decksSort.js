@@ -18,6 +18,7 @@ const decksSort = (decks, sortMethod) => {
   };
 
   if (decks) {
+    decks = [...decks];
     switch (sortMethod) {
       case 'byName':
         return decks.sort(byName);

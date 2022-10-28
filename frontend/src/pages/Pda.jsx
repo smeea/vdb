@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useSnapshot } from 'valtio';
 import { PdaResult, PdaSearchForm } from 'components';
-import { useApp, useSearchResults } from 'context';
+import { useApp, searchResults, setPdaResults } from 'context';
 
 const Pda = () => {
   const { isMobile } = useApp();
-  const { pdaResults } = useSearchResults();
+  const pdaResults = useSnapshot(searchResults).pda;
 
   return (
     <Container className="main-container p-md-3">
@@ -20,7 +21,9 @@ const Pda = () => {
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
-          {pdaResults !== undefined && <PdaResult />}
+          {pdaResults !== undefined && (
+            <PdaResult decks={pdaResults} setDecks={setPdaResults} />
+          )}
         </Col>
         <Col
           xs={12}

@@ -3,18 +3,17 @@ import Select from 'react-select';
 import { Row, Col } from 'react-bootstrap';
 import { useApp } from 'context';
 
-const TwdSearchFormPlayers = ({ players, onChange }) => {
+const TwdSearchFormPlayers = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
+  const name = 'players';
+  const options = ['ANY', '100', '50', '30', '20', '10'];
+  const fromOptions = [];
+  const toOptions = [];
 
-  const playersOptions = ['ANY', '100', '50', '30', '20', '10'];
-
-  const playersFromOptions = [];
-  const playersToOptions = [];
-
-  playersOptions.map((i) => {
-    if (i === 'ANY' || players.to === 'any' || parseInt(i) < players.to) {
-      playersFromOptions.push({
+  options.map((i) => {
+    if (i === 'ANY' || value.to === 'any' || parseInt(i) < value.to) {
+      fromOptions.push({
         value: i.toLowerCase(),
         name: 'from',
         label: (
@@ -26,8 +25,8 @@ const TwdSearchFormPlayers = ({ players, onChange }) => {
       });
     }
 
-    if (i === 'ANY' || players.from === 'any' || parseInt(i) > players.from) {
-      playersToOptions.push({
+    if (i === 'ANY' || value.from === 'any' || parseInt(i) > value.from) {
+      toOptions.push({
         value: i.toLowerCase(),
         name: 'to',
         label: (
@@ -47,11 +46,11 @@ const TwdSearchFormPlayers = ({ players, onChange }) => {
         <Col xs={5} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
-            options={playersFromOptions}
+            options={fromOptions}
             isSearchable={false}
-            name="players-from"
+            name={name}
             maxMenuHeight={maxMenuHeight}
-            value={playersFromOptions.find((obj) => obj.value === players.from)}
+            value={fromOptions.find((obj) => obj.value === value.from)}
             onChange={onChange}
           />
         </Col>
@@ -61,11 +60,11 @@ const TwdSearchFormPlayers = ({ players, onChange }) => {
         <Col xs={5} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
-            options={playersToOptions}
+            options={toOptions}
             isSearchable={false}
-            name="players-to"
+            name={name}
             maxMenuHeight={maxMenuHeight}
-            value={playersToOptions.find((obj) => obj.value === players.to)}
+            value={toOptions.find((obj) => obj.value === value.to)}
             onChange={onChange}
           />
         </Col>
