@@ -10,19 +10,17 @@ import {
   TwdOpenDeckButton,
   DeckCloneButton,
 } from 'components';
-import { useApp, useSearchForms } from 'context';
+import { useApp, clearSearchForm, searchPdaForm } from 'context';
 import { useTags } from 'hooks';
-import defaults from 'components/forms_data/defaultsPdaForm.json';
 
 const PdaResultDescription = ({ deck }) => {
   const { username, isMobile, isDesktop } = useApp();
-  const { setPdaFormState } = useSearchForms();
   const tags = useTags(deck.crypt, deck.library);
   const navigate = useNavigate();
-  const def = JSON.parse(JSON.stringify(defaults));
 
-  const handleAuthorClick = (author) => {
-    setPdaFormState({ ...def, author: author });
+  const handleClick = (author) => {
+    clearSearchForm('pda');
+    searchPdaForm.author = author;
     navigate(
       `/pda?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
     );
@@ -58,7 +56,7 @@ const PdaResultDescription = ({ deck }) => {
             <td className="ps-2">
               <div
                 className="link-like"
-                onClick={() => handleAuthorClick(deck['author'])}
+                onClick={() => handleClick(deck['author'])}
               >
                 {deck['author']} <br />
               </div>

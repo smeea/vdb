@@ -7,7 +7,7 @@ import PersonFill from 'assets/images/icons/person-fill.svg';
 import InfoCircleFill from 'assets/images/icons/info-circle-fill.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import { useApp, useSearchForms } from 'context';
+import { useApp } from 'context';
 import { NavMobileMenu, LanguageSelect, ThemeSelect } from 'components';
 import cryptDefaults from 'components/forms_data/defaultsCryptForm.json';
 import libraryDefaults from 'components/forms_data/defaultsLibraryForm.json';
@@ -19,14 +19,15 @@ import {
   searchLibraryForm,
   searchTwdForm,
   searchPdaForm,
+  searchResults,
 } from 'context';
 
 const Navigation = () => {
   const { inventoryMode, toggleInventoryMode, isMobile, username, deck } =
     useApp();
-  const { quickCard } = useSearchForms();
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
+  const quickCard = useSnapshot(searchResults).quickCard;
   const cryptFormState = useSnapshot(searchCryptForm);
   const libraryFormState = useSnapshot(searchLibraryForm);
   const twdFormState = useSnapshot(searchTwdForm);

@@ -8,28 +8,19 @@ import PersonFill from 'assets/images/icons/person-fill.svg';
 import TagFill from 'assets/images/icons/tag-fill.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { TwdResultTags, TwdOpenDeckButton, DeckCloneButton } from 'components';
-import { useApp, useSearchForms } from 'context';
+import { useApp, searchTwdForm, clearSearchForm } from 'context';
 import { useTags } from 'hooks';
-import defaults from 'components/forms_data/defaultsTwdForm.json';
 
 const TwdResultDescription = ({ deck }) => {
   const { username, isMobile, isDesktop } = useApp();
-  const { setTwdFormState } = useSearchForms();
   const tags = useTags(deck.crypt, deck.library);
   const navigate = useNavigate();
-  const def = JSON.parse(JSON.stringify(defaults));
 
-  const handleAuthorClick = (author) => {
-    setTwdFormState({ ...def, author: author });
+  const handleClick = (target, value) => {
+    clearSearchForm('twd');
+    searchTwdForm[target] = value;
     navigate(
-      `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
-    );
-  };
-
-  const handleLocationClick = (location) => {
-    setTwdFormState({ ...def, location: location });
-    navigate(
-      `/twd?q=${encodeURIComponent(JSON.stringify({ location: location }))}`
+      `/twd?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`
     );
   };
 
@@ -74,7 +65,7 @@ const TwdResultDescription = ({ deck }) => {
             <td className="ps-2">
               <div
                 className="link-like"
-                onClick={() => handleLocationClick(deck['location'])}
+                onClick={() => handleClick('location', deck['location'])}
               >
                 {deck['location']}
               </div>
@@ -93,7 +84,7 @@ const TwdResultDescription = ({ deck }) => {
             <td className="ps-2">
               <div
                 className="link-like"
-                onClick={() => handleAuthorClick(deck['author'])}
+                onClick={() => handleClick('author', deck['author'])}
               >
                 {deck['author']} <br />
               </div>

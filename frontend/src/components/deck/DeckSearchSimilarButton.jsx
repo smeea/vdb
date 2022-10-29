@@ -2,28 +2,20 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import SymmetryVertical from 'assets/images/icons/symmetry-vertical.svg';
-import { useApp, useSearchForms } from 'context';
-import defaultsPdaForm from 'components/forms_data/defaultsPdaForm.json';
-import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
+import { useApp } from 'context';
+import { clearSearchForm, searchTwdForm, searchPdaForm } from 'context';
 
 const DeckSearchSimilarButton = ({ deck }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
-  const { setTwdFormState, setPdaFormState } = useSearchForms();
   const navigate = useNavigate();
 
-  const handleClick = (src) => {
-    if (src === 'twd') {
-      setTwdFormState({
-        ...JSON.parse(JSON.stringify(defaultsTwdForm)),
-        similar: deck.deckid,
-      });
-    } else if (src === 'pda') {
-      setPdaFormState({
-        ...JSON.parse(JSON.stringify(defaultsPdaForm)),
-        similar: deck.deckid,
-      });
+  const handleClick = (target) => {
+    clearSearchForm(target);
+    if (target === 'pda') {
+      searchPdaForm.similar = deck.deckid;
+    } else {
+      searchTwdForm.similar = deck.deckid;
     }
-
     navigate(`/${src}?q={"similar"%3A"${deck.deckid}"}`);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);

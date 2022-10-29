@@ -26,12 +26,6 @@ export {
   useDecks,
 } from './DecksContext.js';
 export {
-  default as SearchFormsContext,
-  SearchFormsProvider,
-  useSearchForms,
-} from './SearchFormsContext.js';
-
-export {
   clearSearchForm,
   searchCryptForm,
   searchLibraryForm,
@@ -44,4 +38,5 @@ export {
   setTwdResults,
   setCryptCompare,
   setLibraryCompare,
+  setQuickCard,
 } from './SearchStore.js';

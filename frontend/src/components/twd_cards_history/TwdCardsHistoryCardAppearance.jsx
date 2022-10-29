@@ -1,15 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TwdOpenDeckButton } from 'components';
-import { useApp, useSearchForms } from 'context';
-import defaults from 'components/forms_data/defaultsTwdForm.json';
+import { useApp, clearSearchForm, searchTwdForm } from 'context';
 
 const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const { isMobile } = useApp();
-  const { setTwdFormState } = useSearchForms();
-
   const navigate = useNavigate();
-  const def = JSON.parse(JSON.stringify(defaults));
 
   let yearsToWin = null;
   if (card.twd_date) {
@@ -24,8 +20,9 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
     yearsToWin = `${date.getFullYear() - card.release_date.slice(0, 4)}+`;
   }
 
-  const handleAuthorClick = (author) => {
-    setTwdFormState({ ...def, author: author });
+  const handleClick = (author) => {
+    clearSearchForm('twd');
+    searchTwdForm.author = value;
     navigate(
       `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
     );
@@ -55,7 +52,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       <div className="d-flex align-items-center justify-content-between align-items-center player">
         <div
           className="d-inline link-like"
-          onClick={() => handleAuthorClick(card.player)}
+          onClick={() => handleClick(card.player)}
         >
           {card.player}
         </div>

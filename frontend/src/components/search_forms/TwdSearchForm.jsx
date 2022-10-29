@@ -22,7 +22,6 @@ import {
   TwdSearchFormMatchInventory,
   TwdSearchFormMatchInventoryScaling,
 } from './twd_search_components';
-import defaults from 'components/forms_data/defaultsTwdForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from 'context';
 
@@ -147,7 +146,7 @@ const TwdSearchForm = () => {
   const getNewTwd = (q) => {
     setSpinnerState(true);
     setError(false);
-    setTwdFormState(JSON.parse(JSON.stringify(defaults)));
+    clearSearchForm('twd');
 
     const url = `${process.env.API_URL}twd/new/${q}`;
     const options = {

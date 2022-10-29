@@ -11,7 +11,6 @@
 - Add getDeck errors
 - decks to valtio storage
 - inventory to valtio storage
-- quickCard to valtion storage
 - Fix back from search results on mobile
 
 # FEATURES

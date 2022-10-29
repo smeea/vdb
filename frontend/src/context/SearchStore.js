@@ -4,14 +4,7 @@ import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from 'components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from 'components/forms_data/defaultsLibraryForm.json';
 
-export const searchResults = proxy({
-  crypt: undefined,
-  library: undefined,
-  twd: undefined,
-  pda: undefined,
-  cryptCompare: undefined,
-  // libraryCompare: undefined,
-});
+export const searchResults = proxy({});
 
 export const searchCryptForm = proxy({
   ...JSON.parse(JSON.stringify(defaultsCryptForm)),
@@ -51,6 +44,10 @@ export const setCryptCompare = (v) => {
 
 export const setLibraryCompare = (v) => {
   searchResults.libraryCompare = v;
+};
+
+export const setQuickCard = (v) => {
+  searchResults.quickCard = v;
 };
 
 export const clearSearchForm = (target) => {

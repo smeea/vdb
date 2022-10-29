@@ -3,25 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
-import { useSearchForms } from 'context';
-import defaultsPda from 'components/forms_data/defaultsPdaForm.json';
-import defaultsTwd from 'components/forms_data/defaultsTwdForm.json';
+import { clearSearchForm, searchTwdForm, searchPdaForm } from 'context';
 
 const ButtonSearchCardInDecks = ({ cardid, target }) => {
-  const { setPdaFormState, setTwdFormState } = useSearchForms();
-
   const navigate = useNavigate();
-  const def = JSON.parse(
-    JSON.stringify(target === 'pda' ? defaultsPda : defaultsTwd)
-  );
   const value = { [cardid]: { q: 1, m: 'gt' } };
-  const setForm = target === 'pda' ? setPdaFormState : setTwdFormState;
 
   const handleButton = () => {
-    setForm({
-      ...def,
-      [cardid > 200000 ? 'crypt' : 'library']: value,
-    });
+    clearSearchForm(target);
+    if (target === 'pda') {
+      searchPdaForm[cardid > 200000 ? 'crypt' : 'library'] = value;
+    } else {
+      searchTwdForm[cardid > 200000 ? 'crypt' : 'library'] = value;
+    }
     navigate(
       `/${target}?q={"${
         cardid > 200000 ? 'crypt' : 'library'

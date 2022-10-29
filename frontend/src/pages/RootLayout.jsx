@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { useApp, ThemeProvider, SearchFormsProvider } from 'context';
+import { useApp, ThemeProvider } from 'context';
 import Navigation from 'pages/Navigation.jsx';
 import Offline from 'components/misc/Offline.jsx';
 import { UpdateNotification } from 'components';
@@ -11,15 +11,13 @@ const RootLayout = () => {
 
   return (
     <>
-      <SearchFormsProvider>
-        <ThemeProvider>
-          <Navigation />
-          {!isOnline && <Offline />}
-        </ThemeProvider>
-        <main>
-          <Outlet />
-        </main>
-      </SearchFormsProvider>
+      <ThemeProvider>
+        <Navigation />
+        {!isOnline && <Offline />}
+      </ThemeProvider>
+      <main>
+        <Outlet />
+      </main>
       <UpdateNotification appVersion={changes[0].version} />
     </>
   );

@@ -9,7 +9,7 @@ import {
   ButtonIconed,
   CardImage,
 } from 'components';
-import { useApp, useSearchForms } from 'context';
+import { useApp, setQuickCard } from 'context';
 
 const Cards = () => {
   const params = useParams();
@@ -22,7 +22,6 @@ const Cards = () => {
     playtest,
   } = useApp();
 
-  const { setQuickCard } = useSearchForms();
   const [card, setCard] = useState();
   const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
