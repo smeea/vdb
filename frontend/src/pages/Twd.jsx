@@ -16,12 +16,12 @@ const Twd = () => {
           md={8}
           xl={9}
           className={
-            !isMobile || (isMobile && twdResults !== undefined)
+            !isMobile || (isMobile && twdResults?.length > 0)
               ? 'px-0 pe-lg-4'
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
-          {twdResults !== undefined && (
+          {twdResults?.length > 0 && (
             <TwdResult decks={twdResults} setDecks={setTwdResults} />
           )}
         </Col>
@@ -30,7 +30,7 @@ const Twd = () => {
           md={4}
           xl={3}
           className={
-            !isMobile || (isMobile && twdResults === undefined)
+            !isMobile || (isMobile && !twdResults?.length > 0)
               ? 'p-1 py-md-0 px-md-2 px-xl-0'
               : 'col-hide'
           }

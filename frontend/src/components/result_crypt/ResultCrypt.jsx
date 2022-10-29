@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import {
@@ -7,7 +8,7 @@ import {
   ResultCryptTotalInfo,
 } from 'components';
 import { cryptSort } from 'utils';
-import { useApp, clearSearchForm } from 'context';
+import { useApp } from 'context';
 
 const ResultCrypt = ({ cards, setCards, isAuthor, inCompare }) => {
   const {
@@ -20,6 +21,7 @@ const ResultCrypt = ({ cards, setCards, isAuthor, inCompare }) => {
     changeCryptSearchSort,
     showFloatingButtons,
   } = useApp();
+  const navigate = useNavigate();
   const className = 'search-crypt-table';
 
   const sortMethods = {
@@ -35,7 +37,7 @@ const ResultCrypt = ({ cards, setCards, isAuthor, inCompare }) => {
   const toggleShowInfo = () => setShowInfo(!showInfo);
 
   const handleClear = () => {
-    clearSearchForm('crypt');
+    navigate('/crypt');
     setCards(undefined);
     setShowCryptSearch(true);
   };

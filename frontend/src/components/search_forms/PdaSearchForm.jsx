@@ -67,8 +67,7 @@ const PdaSearchForm = () => {
 
   const handleMultiChange = (event) => {
     const { name, id, value } = event.target;
-    const i = value ?? id;
-
+    const i = value ? value : id;
     searchPdaForm[name][i] = !pdaFormState[name][i];
   };
 
@@ -89,6 +88,17 @@ const PdaSearchForm = () => {
   const handleSubmitButton = (event) => {
     event.preventDefault();
     cryptCardBase && libraryCardBase && launchRequest();
+  };
+
+  const handleError = (error) => {
+    setSpinnerState(false);
+    setPdaResults([]);
+    navigate('/pda');
+    if (error.message == 400) {
+      setError('NO DECKS FOUND');
+    } else {
+      setError('CONNECTION PROBLEM');
+    }
   };
 
   const launchRequest = () => {
@@ -126,15 +136,7 @@ const PdaSearchForm = () => {
         setPdaResults(data);
       })
       .catch((error) => {
-        setSpinnerState(false);
-
-        if (error.message == 400) {
-          setPdaResults([]);
-          setError('NO DECKS FOUND');
-        } else {
-          setPdaResults(null);
-          setError('CONNECTION PROBLEM');
-        }
+        handleError(error);
       });
   };
 
@@ -160,15 +162,7 @@ const PdaSearchForm = () => {
         setPdaResults(data);
       })
       .catch((error) => {
-        setSpinnerState(false);
-
-        if (error.message == 400) {
-          setPdaResults([]);
-          setError('NO DECKS FOUND');
-        } else {
-          setPdaResults(null);
-          setError('CONNECTION PROBLEM');
-        }
+        handleError(error);
       });
   };
 
@@ -194,15 +188,7 @@ const PdaSearchForm = () => {
         setPdaResults(data);
       })
       .catch((error) => {
-        setSpinnerState(false);
-
-        if (error.message == 400) {
-          setPdaResults([]);
-          setError('NO DECKS FOUND');
-        } else {
-          setPdaResults(null);
-          setError('CONNECTION PROBLEM');
-        }
+        handleError(error);
       });
   };
 
@@ -377,7 +363,7 @@ const PdaSearchForm = () => {
         <div className="bold blue px-0">Library Disciplines:</div>
       </Row>
       <TwdSearchFormDisciplines
-        disciplines={pdaFormState.disciplines}
+        value={pdaFormState.disciplines}
         onChange={handleMultiChange}
       />
       <Row className="py-1 ps-1 mx-0 align-items-center">

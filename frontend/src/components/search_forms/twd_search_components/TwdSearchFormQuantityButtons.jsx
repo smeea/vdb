@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const TwdSearchFormQuantityButtons = ({ state, form, id }) => {
+const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
   const handleChangeQ = (q) => {
     if (q >= 0) {
       form[id].q = q;
@@ -12,7 +12,7 @@ const TwdSearchFormQuantityButtons = ({ state, form, id }) => {
 
   const handleToggleMoreLess = () => {
     const toggle = () => {
-      switch (state[id].m) {
+      switch (value[id].m) {
         case 'gt':
           return 'lt';
         case 'lt':
@@ -47,23 +47,23 @@ const TwdSearchFormQuantityButtons = ({ state, form, id }) => {
           className="quantity-wide"
           variant="primary"
           onClick={handleToggleMoreLess}
-          title={getIconAndText(state[id].m)[1]}
+          title={getIconAndText(value[id].m)[1]}
         >
-          {getIconAndText(state[id].m)[0]}
+          {getIconAndText(value[id].m)[0]}
         </Button>
       </div>
       <Button
         className="quantity"
         variant="primary"
-        onClick={() => handleChangeQ(state[id].q - 1)}
+        onClick={() => handleChangeQ(value[id].q - 1)}
       >
         -
       </Button>
-      <div className="px-1">{state[id].q}</div>
+      <div className="px-1">{value[id].q}</div>
       <Button
         className="quantity"
         variant="primary"
-        onClick={() => handleChangeQ(state[id].q + 1)}
+        onClick={() => handleChangeQ(value[id].q + 1)}
       >
         +
       </Button>

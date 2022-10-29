@@ -120,4 +120,6 @@ def search_twd_route():
                 twd_decks.values(),
             )
 
+    if not result:
+        abort(400)
     return jsonify([sanitize_twd(d) for d in result])

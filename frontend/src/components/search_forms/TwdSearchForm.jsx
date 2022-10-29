@@ -72,7 +72,7 @@ const TwdSearchForm = () => {
 
   const handleMultiChange = (event) => {
     const { name, id, value } = event.target;
-    const i = value ?? id;
+    const i = value ? value : id;
 
     searchTwdForm[name][i] = !twdFormState[name][i];
   };
@@ -94,6 +94,17 @@ const TwdSearchForm = () => {
   const handleSubmitButton = (event) => {
     event.preventDefault();
     cryptCardBase && libraryCardBase && launchRequest();
+  };
+
+  const handleError = (error) => {
+    setSpinnerState(false);
+    setTwdResults(undefined);
+    navigate('/twd');
+    if (error.message == 400) {
+      setError('NO DECKS FOUND');
+    } else {
+      setError('CONNECTION PROBLEM');
+    }
   };
 
   const launchRequest = () => {
@@ -131,15 +142,7 @@ const TwdSearchForm = () => {
         setTwdResults(data);
       })
       .catch((error) => {
-        setSpinnerState(false);
-
-        if (error.message == 400) {
-          setTwdResults([]);
-          setError('NO DECKS FOUND');
-        } else {
-          setTwdResults(null);
-          setError('CONNECTION PROBLEM');
-        }
+        handleError(error);
       });
   };
 
@@ -165,15 +168,7 @@ const TwdSearchForm = () => {
         setTwdResults(data);
       })
       .catch((error) => {
-        setSpinnerState(false);
-
-        if (error.message == 400) {
-          setTwdResults([]);
-          setError('NO DECKS FOUND');
-        } else {
-          setTwdResults(null);
-          setError('CONNECTION PROBLEM');
-        }
+        handleError(error);
       });
   };
 
@@ -190,21 +185,16 @@ const TwdSearchForm = () => {
     };
 
     fetch(url, options)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
       .then((data) => {
         setSpinnerState(false);
         setTwdResults(data);
       })
       .catch((error) => {
-        setSpinnerState(false);
-
-        if (error.message == 400) {
-          setTwdResults([]);
-          setError('NO DECKS FOUND');
-        } else {
-          setTwdResults(null);
-          setError('CONNECTION PROBLEM');
-        }
+        handleError(error);
       });
   };
 
@@ -328,8 +318,8 @@ const TwdSearchForm = () => {
         <Col xs={12} className="d-inline px-0">
           {libraryCardBase && (
             <TwdSearchFormLibrary
-              value={twdFormState.crypt}
-              form={searchTwdForm.crypt}
+              value={twdFormState.library}
+              form={searchTwdForm.library}
             />
           )}
         </Col>
@@ -384,7 +374,7 @@ const TwdSearchForm = () => {
         <div className="bold blue px-0">Library Disciplines:</div>
       </Row>
       <TwdSearchFormDisciplines
-        disciplines={twdFormState.disciplines}
+        value={twdFormState.disciplines}
         onChange={handleMultiChange}
       />
       <Row className="py-1 ps-1 mx-0 align-items-center">

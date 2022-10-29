@@ -133,18 +133,19 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
         body: JSON.stringify({ cards: cards }),
       };
       fetch(url, options)
-        .then((response) => response.text())
+        .then((response) => {
+          setSpinnerState(false);
+          return response.text();
+        })
         .then((data) => {
           const mime =
             'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
           const file = `${mime};base64,${data}`;
           saveFile(file, `${deckName}.${format}`);
-          setSpinnerState(false);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
         })
         .catch(() => {
-          setSpinnerState(false);
           setError(true);
         });
     } else {
@@ -217,12 +218,10 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
             folder.file(`${decks[deckid].name}.${format}`, data, {
               base64: true,
             });
-            setSpinnerState(false);
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           })
           .catch(() => {
-            setSpinnerState(false);
             setError(true);
           });
       });

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import { Form, Spinner } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
@@ -46,7 +46,6 @@ const CryptSearchForm = () => {
   const cryptFormState = useSnapshot(searchCryptForm);
   const { filterCrypt } = useFilters(cryptCardBase);
 
-  const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
   const showLimit = 300;
 
@@ -155,15 +154,11 @@ const CryptSearchForm = () => {
       return;
     }
 
-    navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizeForm))}`);
-
-    setSpinnerState(true);
-
     const filteredCards = filterCrypt(sanitizeForm).filter(
       (card) => playtest || card.Id < 210000
     );
 
-    setSpinnerState(false);
+    navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizeForm))}`);
 
     if (!isMobile) {
       if (hideMissing && inventoryMode) {
@@ -307,11 +302,7 @@ const CryptSearchForm = () => {
             onClick={handleSubmitButton}
             className="d-flex float-right-bottom float-search align-items-center justify-content-center"
           >
-            {!spinnerState ? (
-              <Check2 viewBox="0 0 16 16" className="pt-1" />
-            ) : (
-              <Spinner animation="border" variant="light" />
-            )}
+            <Check2 viewBox="0 0 16 16" className="pt-1" />
             <ErrorOverlay
               show={error}
               target={refError.current}

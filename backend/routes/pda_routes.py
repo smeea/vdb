@@ -207,6 +207,8 @@ def search_pda_route():
                 request.json["matchInventory"], current_user.inventory, pda_decks
             )
 
+    if not result:
+        abort(400)
     return jsonify([sanitize_pda(Deck.query.get(d["deckid"])) for d in result])
 
 

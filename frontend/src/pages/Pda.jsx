@@ -16,12 +16,12 @@ const Pda = () => {
           md={8}
           xl={9}
           className={
-            !isMobile || (isMobile && pdaResults !== undefined)
+            !isMobile || (isMobile && pdaResults?.length > 0)
               ? 'px-0 pe-lg-4'
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
-          {pdaResults !== undefined && (
+          {pdaResults?.length > 0 && (
             <PdaResult decks={pdaResults} setDecks={setPdaResults} />
           )}
         </Col>
@@ -30,7 +30,7 @@ const Pda = () => {
           md={4}
           xl={3}
           className={
-            !isMobile || (isMobile && pdaResults === undefined)
+            !isMobile || (isMobile && !pdaResults?.length > 0)
               ? 'p-1 py-md-0 px-md-2 px-xl-0'
               : 'col-hide'
           }

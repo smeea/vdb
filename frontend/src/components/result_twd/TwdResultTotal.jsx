@@ -1,7 +1,9 @@
 import React from 'react';
 import { SortButton } from 'components';
+import { useApp } from 'context';
 
 const TwdResultTotal = ({ decks, sortMethods, sortMethod, setSortMethod }) => {
+  const { isMobile } = useApp();
   const byYear = {};
   let total = 0;
 
@@ -15,34 +17,34 @@ const TwdResultTotal = ({ decks, sortMethods, sortMethod, setSortMethod }) => {
     total += 1;
   });
 
-  const totalOutput = Object.keys(byYear).map((k) => {
-    return (
-      <span key={k} className="d-inline-block nowrap pe-3">
-        <span className="blue">
-          <b>{k}: </b>
-        </span>
-        {byYear[k]}
-      </span>
-    );
-  });
-
-  const value = (
-    <>
-      <div className="px-2 nowrap">
+  return (
+    <div
+      className={`d-${
+        isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'
+      } align-items-center justify-content-between info-message`}
+    >
+      <div className={`d-inline ps-2 pe-1 ${isMobile ? '' : 'nowrap'}`}>
         <b>TOTAL: {total}</b>
       </div>
-      <div>{totalOutput}</div>
-      <SortButton
-        sortMethod={sortMethod}
-        sortMethods={sortMethods}
-        setSortMethod={setSortMethod}
-      />
-    </>
-  );
-
-  return (
-    <div className="d-flex align-items-center justify-content-between info-message">
-      {value}
+      <div className="d-block">
+        {Object.keys(byYear).map((k) => {
+          return (
+            <span key={k} className="d-inline-block nowrap px-2">
+              <span className="blue">
+                <b>{k}: </b>
+              </span>
+              {byYear[k]}
+            </span>
+          );
+        })}
+      </div>
+      <div className="d-flex justify-content-end">
+        <SortButton
+          sortMethod={sortMethod}
+          sortMethods={sortMethods}
+          setSortMethod={setSortMethod}
+        />
+      </div>
     </div>
   );
 };

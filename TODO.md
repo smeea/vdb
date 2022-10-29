@@ -2,16 +2,13 @@
 - Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
 - Deck/Inventory import bad cards
-- TWD search single card 0 q-ty
 - Update rulings & twds
-- TWD/Pda on mobile error no cards found
 
 # REFACTOR
 - Test Amaranth import (both w/ and w/o versions)
 - Add getDeck errors
 - decks to valtio storage
 - inventory to valtio storage
-- Fix back from search results on mobile
 
 # FEATURES
 - Check TWD

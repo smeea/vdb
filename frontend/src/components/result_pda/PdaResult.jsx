@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
@@ -9,7 +10,7 @@ import {
   TwdResultLibraryKeyCards,
 } from 'components';
 import { decksSort } from 'utils';
-import { useApp, clearSearchForm } from 'context';
+import { useApp } from 'context';
 
 const PdaResult = ({ decks, setDecks }) => {
   const {
@@ -19,6 +20,7 @@ const PdaResult = ({ decks, setDecks }) => {
     pdaSearchSort,
     changePdaSearchSort,
   } = useApp();
+  const navigate = useNavigate();
   const showCounterStep = 20;
   const deckCounter = decks.length || 0;
   const [showCounter, setShowCounter] = useState(showCounterStep);
@@ -30,7 +32,7 @@ const PdaResult = ({ decks, setDecks }) => {
   };
 
   const handleClear = () => {
-    clearSearchForm('pda');
+    navigate('/pda');
     setDecks(undefined);
   };
 

@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultLibraryTable, ResultLibraryTotal } from 'components';
 import { librarySort } from 'utils';
-import { useApp, clearSearchForm } from 'context';
+import { useApp } from 'context';
 
 const ResultLibrary = ({ cards, setCards, isAuthor, inCompare }) => {
   const {
@@ -16,6 +17,7 @@ const ResultLibrary = ({ cards, setCards, isAuthor, inCompare }) => {
     changeLibrarySearchSort,
     showFloatingButtons,
   } = useApp();
+  const navigate = useNavigate();
 
   const sortMethods = {
     'Clan / Discipline': 'C/D',
@@ -26,7 +28,7 @@ const ResultLibrary = ({ cards, setCards, isAuthor, inCompare }) => {
   };
 
   const handleClear = () => {
-    clearSearchForm('library');
+    navigate('/library');
     setCards(undefined);
     setShowLibrarySearch(true);
   };

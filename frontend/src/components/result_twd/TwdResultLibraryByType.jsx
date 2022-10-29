@@ -82,8 +82,8 @@ const TwdResultLibraryByType = ({ library }) => {
           <Popover ref={ref} {...props}>
             <Popover.Body className="p-1">
               <DeckLibraryTable
+                deck={{}}
                 handleModalCardOpen={handleModalCardOpen}
-                deckid={true}
                 cards={props.cards}
               />
             </Popover.Body>
