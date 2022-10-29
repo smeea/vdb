@@ -1,7 +1,7 @@
 # FIX
 - Iphone clipboard (copy url)
 - Crypt sorting in review (works in Deck!)
-- Inventory import bad cards
+- Deck/Inventory import bad cards
 - TWD search single card 0 q-ty
 - Update rulings & twds
 - TWD/Pda on mobile error no cards found

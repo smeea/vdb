@@ -174,9 +174,10 @@ const missingTrait = (trait, card, traitsRegexMap) => {
         RegExp(/requires a/i, 'i').test(card['Card Text'])
       );
     default:
-      const regex = traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait;
-
-      return !RegExp(regex, 'i').test(card['Card Text']);
+      return !RegExp(
+        traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait,
+        'i'
+      ).test(card['Card Text']);
   }
 };
 

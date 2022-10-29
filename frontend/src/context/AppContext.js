@@ -529,7 +529,7 @@ export const AppProvider = (props) => {
   const addDeckToState = (deck) => {
     const now = new Date();
     const { crypt, library } = parseDeckCards(deck.cards);
-    d = {
+    const d = {
       deckid: deck.deckid,
       name: deck.name ?? '',
       branchName: deck.branchName ?? '#0',

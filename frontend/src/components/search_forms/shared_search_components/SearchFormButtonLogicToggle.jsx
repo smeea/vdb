@@ -23,11 +23,11 @@ const SearchFormButtonLogicToggle = ({
       switch (value) {
         case 'or':
           searchForm[name].logic = withAnd ? 'and' : 'not';
+          break;
         case 'and':
           searchForm[name].logic = 'not';
           break;
         case 'not':
-          logic = 'or';
           searchForm[name].logic = 'or';
           break;
       }

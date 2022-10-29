@@ -9,7 +9,7 @@ import {
   TwdResultLibraryKeyCards,
 } from 'components';
 import { decksSort } from 'utils';
-import { useApp } from 'context';
+import { useApp, clearSearchForm } from 'context';
 
 const TwdResult = ({ decks, setDecks }) => {
   const {

@@ -22,7 +22,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
 
   const handleClick = (author) => {
     clearSearchForm('twd');
-    searchTwdForm.author = value;
+    searchTwdForm.author = author;
     navigate(
       `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
     );

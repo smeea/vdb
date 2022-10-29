@@ -16,7 +16,7 @@ const DeckSearchSimilarButton = ({ deck }) => {
     } else {
       searchTwdForm.similar = deck.deckid;
     }
-    navigate(`/${src}?q={"similar"%3A"${deck.deckid}"}`);
+    navigate(`/${target}?q={"similar"%3A"${deck.deckid}"}`);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };

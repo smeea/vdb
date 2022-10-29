@@ -20,7 +20,6 @@ const ResultCrypt = ({ cards, setCards, isAuthor, inCompare }) => {
     changeCryptSearchSort,
     showFloatingButtons,
   } = useApp();
-
   const className = 'search-crypt-table';
 
   const sortMethods = {
