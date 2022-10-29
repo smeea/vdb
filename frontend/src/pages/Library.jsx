@@ -7,7 +7,12 @@ import {
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
 } from 'components';
-import { useApp, useSearchResults, searchResults } from 'context';
+import {
+  useApp,
+  searchResults,
+  setLibraryResults,
+  setLibraryCompare,
+} from 'context';
 
 const Library = () => {
   const {
@@ -19,8 +24,8 @@ const Library = () => {
     deck,
   } = useApp();
 
-  const { libraryCompare, setLibraryCompare } = useSearchResults();
   const libraryResults = useSnapshot(searchResults).library;
+  const libraryCompare = useSnapshot(searchResults).libraryCompare;
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
@@ -64,7 +69,7 @@ const Library = () => {
                 <ResultLibrary
                   cards={libraryCompare}
                   setCards={setLibraryCompare}
-                  isAuthor={deck.isAuthor}
+                  isAuthor={deck?.isAuthor}
                   inCompare
                 />
               </div>
@@ -73,7 +78,7 @@ const Library = () => {
               <ResultLibrary
                 cards={libraryResults}
                 setCards={setLibraryResults}
-                isAuthor={deck.isAuthor}
+                isAuthor={deck?.isAuthor}
               />
             )}
           </Col>

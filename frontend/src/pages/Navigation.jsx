@@ -14,16 +14,23 @@ import libraryDefaults from 'components/forms_data/defaultsLibraryForm.json';
 import twdDefaults from 'components/forms_data/defaultsTwdForm.json';
 import pdaDefaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
-import { searchCryptForm, searchLibraryForm } from 'context';
+import {
+  searchCryptForm,
+  searchLibraryForm,
+  searchTwdForm,
+  searchPdaForm,
+} from 'context';
 
 const Navigation = () => {
   const { inventoryMode, toggleInventoryMode, isMobile, username, deck } =
     useApp();
-  const { pdaFormState, twdFormState, quickCard } = useSearchForms();
+  const { quickCard } = useSearchForms();
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
   const cryptFormState = useSnapshot(searchCryptForm);
   const libraryFormState = useSnapshot(searchLibraryForm);
+  const twdFormState = useSnapshot(searchTwdForm);
+  const pdaFormState = useSnapshot(searchPdaForm);
 
   let pdaUrl = '/pda';
   let twdUrl = '/twd';

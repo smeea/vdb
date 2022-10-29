@@ -30,21 +30,18 @@ export {
   SearchFormsProvider,
   useSearchForms,
 } from './SearchFormsContext.js';
-export {
-  default as SearchResultsContext,
-  SearchResultsProvider,
-  useSearchResults,
-} from './SearchResultsContext.js';
 
 export {
+  clearSearchForm,
+  searchCryptForm,
+  searchLibraryForm,
+  searchPdaForm,
+  searchTwdForm,
   searchResults,
   setCryptResults,
   setLibraryResults,
-  setTwdResults,
   setPdaResults,
-  searchCryptForm,
-  searchLibraryForm,
-  searchTwdForm,
-  searchPdaForm,
-  clearSearchForm,
+  setTwdResults,
+  setCryptCompare,
+  setLibraryCompare,
 } from './SearchStore.js';

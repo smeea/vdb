@@ -9,16 +9,16 @@ import {
 } from 'components';
 import {
   useApp,
-  useSearchResults,
   searchResults,
   setCryptResults,
+  setCryptCompare,
 } from 'context';
 
 const Crypt = () => {
   const { showCryptSearch, addMode, toggleAddMode, isMobile, isDesktop, deck } =
     useApp();
-  const { cryptCompare, setCryptCompare } = useSearchResults();
   const cryptResults = useSnapshot(searchResults).crypt;
+  const cryptCompare = useSnapshot(searchResults).cryptCompare;
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
@@ -62,7 +62,7 @@ const Crypt = () => {
                 <ResultCrypt
                   cards={cryptCompare}
                   setCards={setCryptCompare}
-                  isAuthor={deck.isAuthor}
+                  isAuthor={deck?.isAuthor}
                   inCompare
                 />
               </div>
@@ -71,7 +71,7 @@ const Crypt = () => {
               <ResultCrypt
                 cards={cryptResults}
                 setCards={setCryptResults}
-                isAuthor={deck.isAuthor}
+                isAuthor={deck?.isAuthor}
               />
             )}
           </Col>

@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import { ANY } from 'utils/constants';
 import { SortButton } from 'components';
-import { useSearchResults } from 'context';
+import { setCryptCompare } from 'context';
 
 const ResultCryptTotal = ({
   cards,
@@ -15,8 +15,6 @@ const ResultCryptTotal = ({
   inCompare,
   inHoF,
 }) => {
-  const { setCryptCompare } = useSearchResults();
-
   const byGroups = {};
   const byGroupsCapacityTotal = {};
   let total = 0;

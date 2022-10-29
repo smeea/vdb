@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ResultLibraryTypeImage, SortButton } from 'components';
-import { useSearchResults } from 'context';
+import { setLibraryCompare } from 'context';
 
 const ResultLibraryTotal = ({
   cards,
@@ -12,8 +12,6 @@ const ResultLibraryTotal = ({
   inCompare,
   inHoF,
 }) => {
-  const { setLibraryCompare } = useSearchResults();
-
   const byTypes = {};
   let total = 0;
 

@@ -9,7 +9,7 @@ export const searchResults = proxy({
   library: undefined,
   twd: undefined,
   pda: undefined,
-  // cryptCompare: undefined,
+  cryptCompare: undefined,
   // libraryCompare: undefined,
 });
 
@@ -43,6 +43,14 @@ export const setPdaResults = (v) => {
 
 export const setTwdResults = (v) => {
   searchResults.twd = v;
+};
+
+export const setCryptCompare = (v) => {
+  searchResults.cryptCompare = v;
+};
+
+export const setLibraryCompare = (v) => {
+  searchResults.libraryCompare = v;
 };
 
 export const clearSearchForm = (target) => {

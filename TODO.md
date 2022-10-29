@@ -3,7 +3,7 @@
 - Crypt sorting in review (works in Deck!)
 - Inventory import bad cards
 - TWD search single card 0 q-ty
-- Update rulings
+- Update rulings & twds
 - TWD/Pda on mobile error no cards found
 
 # REFACTOR
@@ -11,7 +11,7 @@
 - Add getDeck errors
 - decks to valtio storage
 - inventory to valtio storage
-- crypt/library compare to valtion storage
+- quickCard to valtion storage
 - Fix back from search results on mobile
 
 # FEATURES

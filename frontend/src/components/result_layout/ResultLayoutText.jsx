@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack } from 'react-bootstrap';
+import { useSnapshot } from 'valtio';
 import X from 'assets/images/icons/x.svg';
 import SearchHeartFill from 'assets/images/icons/search-heart-fill.svg';
 import {
@@ -10,7 +11,12 @@ import {
   ButtonSearchCardInDecks,
   ButtonIconed,
 } from 'components';
-import { useApp, useSearchResults } from 'context';
+import {
+  useApp,
+  searchResults,
+  setCryptCompare,
+  setLibraryCompare,
+} from 'context';
 
 const ResultLayoutText = ({
   card,
@@ -21,30 +27,23 @@ const ResultLayoutText = ({
   noClose,
 }) => {
   const { isMobile, isNarrow } = useApp();
-  const { cryptCompare, setCryptCompare, libraryCompare, setLibraryCompare } =
-    useSearchResults();
-
-  let compare;
-  let setCompare;
-  if (card.Id > 200000) {
-    compare = cryptCompare;
-    setCompare = setCryptCompare;
-  } else {
-    compare = libraryCompare;
-    setCompare = setLibraryCompare;
-  }
-  const cardInCompare = compare && compare.includes(card);
+  const cryptCompare = useSnapshot(searchResults).cryptCompare;
+  const libraryCompare = useSnapshot(searchResults).libraryCompare;
+  const compare = card.Id > 200000 ? cryptCompare : libraryCompare;
+  const setCompare = card.Id > 200000 ? setCryptCompare : setLibraryCompare;
 
   const handleCompare = () => {
-    setCompare(() => {
-      if (!compare) {
-        return [card];
-      } else if (!compare.includes(card)) {
-        return [...compare, card];
-      } else {
-        return compare.filter((c) => c !== card);
-      }
-    });
+    // TODO fix duplicates (compare.includes not working?)
+    let result;
+    if (!compare) {
+      result = [card];
+    } else if (!compare.includes(card)) {
+      result = [...compare, card];
+    } else {
+      result = compare.filter((c) => c !== card);
+    }
+
+    setCompare(result);
 
     !noClose && handleClose();
   };
@@ -72,8 +71,8 @@ const ResultLayoutText = ({
           <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
           {!isMobile && !noClose && <ButtonToggleShowImage />}
           <ButtonIconed
-            variant={cardInCompare ? 'third' : 'primary'}
-            onClick={() => handleCompare()}
+            variant={compare?.includes(card) ? 'third' : 'primary'}
+            onClick={handleCompare}
             title={`Add Card to Compare: it will be displayed above search results in ${
               card.Id > 200000 ? 'Crypt' : 'Library'
             }`}
