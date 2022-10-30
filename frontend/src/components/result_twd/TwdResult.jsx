@@ -12,7 +12,7 @@ import {
 import { decksSort } from 'utils';
 import { useApp } from 'context';
 
-const TwdResult = ({ decks, setDecks }) => {
+const TwdResult = ({ results, setResults }) => {
   const {
     parseDeckCards,
     isMobile,
@@ -22,7 +22,7 @@ const TwdResult = ({ decks, setDecks }) => {
   } = useApp();
   const navigate = useNavigate();
   const showCounterStep = 20;
-  const deckCounter = decks.length || 0;
+  const deckCounter = results.length || 0;
   const [showCounter, setShowCounter] = useState(showCounterStep);
 
   const sortMethods = {
@@ -33,14 +33,14 @@ const TwdResult = ({ decks, setDecks }) => {
 
   const handleClear = () => {
     navigate('/twd');
-    setDecks(undefined);
+    setResults(undefined);
   };
 
   const sortedDecks = useMemo(() => {
-    return decksSort(decks, twdSearchSort);
-  }, [decks, twdSearchSort]);
+    return decksSort(results, twdSearchSort);
+  }, [results, twdSearchSort]);
 
-  const results = useMemo(() => {
+  const resultEntries = useMemo(() => {
     if (sortedDecks) {
       let newCounter = showCounter;
 
@@ -97,20 +97,20 @@ const TwdResult = ({ decks, setDecks }) => {
 
   return (
     <>
-      {!isMobile && (decks === null || decks.length === 0) && (
+      {!isMobile && (results === null || results.length === 0) && (
         <div className="d-flex align-items-center justify-content-center error-message">
-          <b>{decks === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
+          <b>{results === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
         </div>
       )}
-      {decks.length > 0 && (
+      {results.length > 0 && (
         <>
           <TwdResultTotal
-            decks={decks}
+            results={results}
             sortMethods={sortMethods}
             sortMethod={twdSearchSort}
             setSortMethod={changeTwdSearchSort}
           />
-          {results}
+          {resultEntries}
           {deckCounter > showCounter && (
             <div className="d-flex justify-content-center pb-4 pt-2">
               <Button

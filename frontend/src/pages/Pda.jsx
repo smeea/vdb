@@ -22,7 +22,7 @@ const Pda = () => {
           }
         >
           {pdaResults?.length > 0 && (
-            <PdaResult decks={pdaResults} setDecks={setPdaResults} />
+            <PdaResult results={pdaResults} setResults={setPdaResults} />
           )}
         </Col>
         <Col

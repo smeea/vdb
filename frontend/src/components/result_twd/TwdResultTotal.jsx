@@ -2,12 +2,17 @@ import React from 'react';
 import { SortButton } from 'components';
 import { useApp } from 'context';
 
-const TwdResultTotal = ({ decks, sortMethods, sortMethod, setSortMethod }) => {
+const TwdResultTotal = ({
+  results,
+  sortMethods,
+  sortMethod,
+  setSortMethod,
+}) => {
   const { isMobile } = useApp();
   const byYear = {};
   let total = 0;
 
-  decks.map((deck) => {
+  results.map((deck) => {
     const year = `'${deck['creation_date'].slice(2, 4)}`;
     if (byYear[year]) {
       byYear[year] += 1;

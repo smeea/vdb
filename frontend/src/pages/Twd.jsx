@@ -22,7 +22,7 @@ const Twd = () => {
           }
         >
           {twdResults?.length > 0 && (
-            <TwdResult decks={twdResults} setDecks={setTwdResults} />
+            <TwdResult results={twdResults} setResults={setTwdResults} />
           )}
         </Col>
         <Col
