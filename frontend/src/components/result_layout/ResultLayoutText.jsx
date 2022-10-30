@@ -31,19 +31,19 @@ const ResultLayoutText = ({
   const libraryCompare = useSnapshot(searchResults).libraryCompare;
   const compare = card.Id > 200000 ? cryptCompare : libraryCompare;
   const setCompare = card.Id > 200000 ? setCryptCompare : setLibraryCompare;
+  const inCompare = compare
+    ? compare.map((i) => i.Id).includes(card.Id)
+    : false;
 
   const handleCompare = () => {
-    // TODO fix duplicates (compare.includes not working?)
-    let result;
     if (!compare) {
-      result = [card];
-    } else if (!compare.includes(card)) {
-      result = [...compare, card];
+      setCompare([card]);
+    } else if (!inCompare) {
+      setCompare([...compare, card]);
     } else {
-      result = compare.filter((c) => c !== card);
+      const result = compare.filter((c) => c.Id !== card.Id);
+      setCompare(result.length > 0 ? result : undefined);
     }
-
-    setCompare(result);
 
     !noClose && handleClose();
   };
@@ -71,7 +71,7 @@ const ResultLayoutText = ({
           <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
           {!isMobile && !noClose && <ButtonToggleShowImage />}
           <ButtonIconed
-            variant={compare?.includes(card) ? 'third' : 'primary'}
+            variant={inCompare ? 'third' : 'primary'}
             onClick={handleCompare}
             title={`Add Card to Compare: it will be displayed above search results in ${
               card.Id > 200000 ? 'Crypt' : 'Library'
