@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useSnapshot } from 'valtio';
 import {
@@ -15,8 +15,24 @@ import {
 } from 'context';
 
 const Crypt = () => {
-  const { showCryptSearch, addMode, toggleAddMode, isMobile, isDesktop, deck } =
-    useApp();
+  const {
+    showCryptSearch,
+    addMode,
+    toggleAddMode,
+    isMobile,
+    isDesktop,
+    deck,
+    setDeck,
+    decks,
+    lastDeckId,
+  } = useApp();
+
+  useEffect(() => {
+    if (!deck && decks) {
+      setDeck(decks[lastDeckId]);
+    }
+  }, [deck, decks]);
+
   const cryptResults = useSnapshot(searchResults).crypt;
   const cryptCompare = useSnapshot(searchResults).cryptCompare;
   const showSearchForm = useMemo(() => {
@@ -43,9 +59,10 @@ const Crypt = () => {
             xl={deck && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
-            {deck && (isDesktop || (!isDesktop && !showSearchForm)) && (
-              <DeckSelectorAndDisplay />
-            )}
+            {decks !== undefined &&
+              (isDesktop || (!isDesktop && !showSearchForm)) && (
+                <DeckSelectorAndDisplay />
+              )}
           </Col>
         )}
         {showResultCol && (

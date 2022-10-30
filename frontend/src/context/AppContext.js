@@ -66,6 +66,7 @@ export const AppProvider = (props) => {
 
   const [decks, setDecks] = useImmer();
   const [deck, setDeck] = useImmer();
+  const [lastDeckId, setLastDeckId] = useState();
   const [recentDecks, setRecentDecks] = useState([]);
 
   const [changeTimer, setChangeTimer] = useState();
@@ -549,14 +550,14 @@ export const AppProvider = (props) => {
   };
 
   useEffect(() => {
-    if (decks && Object.keys(decks).length > 0 && !deck) {
+    if (decks && Object.keys(decks).length > 0) {
       const lastDeckArray = Object.values(decks).sort(byTimestamp);
-      const lastDeckId = lastDeckArray[0].deckid;
-      setDeck(decks[lastDeckId]);
+      setLastDeckId(lastDeckArray[0].deckid);
     }
   }, [decks]);
 
   useEffect(() => {
+    // TODO CHECK IF WORKS FOR UNLOGGED USER
     if (decks) {
       const d = recentDecks.filter((v) => !decks[v.deckid]);
       if (d.length < recentDecks.length) {
@@ -823,6 +824,7 @@ export const AppProvider = (props) => {
         deckCardChange,
         parseDeckCards,
         changeTimer,
+        lastDeckId,
 
         // LISTING Context
         showCryptSearch,

@@ -12,7 +12,9 @@ import { useApp } from 'context';
 
 const DeckSelectorAndDisplay = () => {
   const { deck, decks, setDeck, isDesktop, addMode, toggleAddMode } = useApp();
-  const isBranches = deck.master || (deck.branches && deck.branches.length > 0);
+  const isBranches = deck
+    ? deck.master || (deck.branches && deck.branches.length > 0)
+    : null;
 
   const handleSelect = (e) => {
     setDeck(decks[e.value]);
@@ -21,14 +23,17 @@ const DeckSelectorAndDisplay = () => {
   return (
     <>
       <div className="d-flex justify-content-end sticky-selector pt-3 pb-2">
-        {deck && addMode && (
+        {addMode && (
           <>
             <div className={isBranches ? 'w-75' : 'w-100'}>
-              <DeckSelectMy handleSelect={handleSelect} deckid={deck.deckid} />
+              <DeckSelectMy
+                handleSelect={handleSelect}
+                deckid={deck?.deckid ?? null}
+              />
             </div>
             {isBranches && (
               <div className="ps-1 w-25">
-                <DeckBranchSelect deckid={deck.deckid} />
+                <DeckBranchSelect deckid={deck?.deckid ?? null} />
               </div>
             )}
           </>

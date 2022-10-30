@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useSnapshot } from 'valtio';
 import {
@@ -22,7 +22,16 @@ const Library = () => {
     isMobile,
     isDesktop,
     deck,
+    setDeck,
+    decks,
+    lastDeckId,
   } = useApp();
+
+  useEffect(() => {
+    if (!deck && decks) {
+      setDeck(decks[lastDeckId]);
+    }
+  }, [deck, decks]);
 
   const libraryResults = useSnapshot(searchResults).library;
   const libraryCompare = useSnapshot(searchResults).libraryCompare;
@@ -50,9 +59,10 @@ const Library = () => {
             xl={deck && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
-            {deck && (isDesktop || (!isDesktop && !showSearchForm)) && (
-              <DeckSelectorAndDisplay />
-            )}
+            {decks !== undefined &&
+              (isDesktop || (!isDesktop && !showSearchForm)) && (
+                <DeckSelectorAndDisplay />
+              )}
           </Col>
         )}
         {showResultCol && (

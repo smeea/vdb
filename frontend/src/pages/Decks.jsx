@@ -61,6 +61,7 @@ const Decks = () => {
     usedCryptCards,
     usedLibraryCards,
     username,
+    lastDeckId,
   } = useApp();
 
   const navigate = useNavigate();
@@ -88,10 +89,10 @@ const Decks = () => {
   const [showRecommendation, setShowRecommendation] = useState(false);
 
   const deckError = useRouteError();
+  const deckData = useLoaderData();
 
   const getDeck = () => {
     setError(false);
-    const deckData = useLoaderData();
     const cardsData = parseDeckCards(deckData.cards);
 
     if (deckid.length !== 32 || deckData.publicParent) {
@@ -208,29 +209,27 @@ const Decks = () => {
       }
       setDeck(undefined);
     } else {
-      if (
-        cryptCardBase &&
-        libraryCardBase &&
-        decks !== undefined &&
-        deckid &&
-        (deck?.deckid !== deckid || !deck)
-      ) {
-        if (decks[deckid]) {
-          setDeck(decks[deckid]);
-        } else if (deckid.includes(':')) {
-          const deckidFixed = deckid.replace('_', ' ');
-          if (preconDecks && preconDecks[deckidFixed]) {
-            setDeck(preconDecks[deckidFixed]);
+      if (cryptCardBase && libraryCardBase && decks !== undefined) {
+        if (deckid && (deck?.deckid != deckid || !deck)) {
+          if (decks[deckid]) {
+            setDeck(decks[deckid]);
+          } else if (deckid.includes(':')) {
+            const deckidFixed = deckid.replace('_', ' ');
+            if (preconDecks && preconDecks[deckidFixed]) {
+              setDeck(preconDecks[deckidFixed]);
+            } else {
+              setDeck(undefined);
+              setError('NO DECK WITH THIS ID');
+            }
           } else {
-            setDeck(undefined);
-            setError('NO DECK WITH THIS ID');
+            getDeck();
           }
-        } else {
-          getDeck();
+        } else if (!deckid && lastDeckId) {
+          setDeck(decks[lastDeckId]);
         }
       }
     }
-  }, [deckid, decks, preconDecks, cryptCardBase, libraryCardBase]);
+  }, [deckid, lastDeckId, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (deckid?.includes(':')) {
