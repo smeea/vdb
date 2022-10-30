@@ -48,7 +48,7 @@ const TwdSearchForm = () => {
 
   useEffect(() => {
     if (isMobile && query && twdFormState && cryptCardBase && libraryCardBase) {
-      launchRequest();
+      processSearch();
     }
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
@@ -93,7 +93,7 @@ const TwdSearchForm = () => {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    cryptCardBase && libraryCardBase && launchRequest();
+    cryptCardBase && libraryCardBase && processSearch();
   };
 
   const handleError = (error) => {
@@ -107,18 +107,19 @@ const TwdSearchForm = () => {
     }
   };
 
-  const launchRequest = () => {
-    // TODO compare with crypt
-    const url = `${process.env.API_URL}search/twd`;
-    const input = sanitizeFormState('twd', twdFormState);
+  const processSearch = () => {
+    setError(false);
+    setSpinnerState(true);
+    const sanitizedForm = sanitizeFormState('twd', twdFormState);
 
-    if (Object.entries(input).length === 0) {
+    if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;
     }
 
-    navigate(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`);
+    navigate(`/twd?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
+    const url = `${process.env.API_URL}search/twd`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -126,11 +127,8 @@ const TwdSearchForm = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(input),
+      body: JSON.stringify(sanitizedForm),
     };
-
-    setError(false);
-    setSpinnerState(true);
 
     fetch(url, options)
       .then((response) => {
@@ -200,14 +198,14 @@ const TwdSearchForm = () => {
 
   useEffect(() => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
-      const input = sanitizeFormState('twd', twdFormState);
-      if (Object.keys(input).length === 0) {
+      const sanitizedForm = sanitizeFormState('twd', twdFormState);
+      if (Object.keys(sanitizedForm).length === 0) {
         if (query) {
           setTwdResults(undefined);
           navigate('/twd');
         }
       } else if (!twdFormState.event || twdFormState.event.length > 2) {
-        launchRequest();
+        processSearch();
       }
     }
   }, [twdFormState, cryptCardBase, libraryCardBase]);

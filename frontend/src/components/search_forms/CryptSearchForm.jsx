@@ -146,19 +146,18 @@ const CryptSearchForm = () => {
   };
 
   const processSearch = () => {
-    const sanitizeForm = sanitizeFormState('crypt', cryptFormState);
     setError(false);
+    const sanitizedForm = sanitizeFormState('crypt', cryptFormState);
 
-    if (Object.entries(sanitizeForm).length === 0) {
+    if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;
     }
+    navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
-    const filteredCards = filterCrypt(sanitizeForm).filter(
+    const filteredCards = filterCrypt(sanitizedForm).filter(
       (card) => playtest || card.Id < 210000
     );
-
-    navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizeForm))}`);
 
     if (!isMobile) {
       if (hideMissing && inventoryMode) {

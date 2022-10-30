@@ -47,7 +47,7 @@ const PdaSearchForm = () => {
 
   useEffect(() => {
     if (isMobile && query && pdaFormState && cryptCardBase && libraryCardBase) {
-      launchRequest();
+      processSearch();
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
@@ -87,7 +87,7 @@ const PdaSearchForm = () => {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    cryptCardBase && libraryCardBase && launchRequest();
+    cryptCardBase && libraryCardBase && processSearch();
   };
 
   const handleError = (error) => {
@@ -101,18 +101,19 @@ const PdaSearchForm = () => {
     }
   };
 
-  const launchRequest = () => {
-    // TODO compare with crypt
-    const url = `${process.env.API_URL}search/pda`;
-    const input = sanitizeFormState('pda', pdaFormState);
+  const processSearch = () => {
+    setError(false);
+    setSpinnerState(true);
+    const sanitizedForm = sanitizeFormState('pda', pdaFormState);
 
-    if (Object.entries(input).length === 0) {
+    if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;
     }
 
-    navigate(`/pda?q=${encodeURIComponent(JSON.stringify(input))}`);
+    navigate(`/pda?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
+    const url = `${process.env.API_URL}search/pda`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -120,11 +121,8 @@ const PdaSearchForm = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(input),
+      body: JSON.stringify(sanitizedForm),
     };
-
-    setError(false);
-    setSpinnerState(true);
 
     fetch(url, options)
       .then((response) => {
@@ -194,13 +192,13 @@ const PdaSearchForm = () => {
 
   useEffect(() => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
-      const input = sanitizeFormState('pda', pdaFormState);
-      if (Object.keys(input).length === 0) {
+      const sanitizedForm = sanitizeFormState('pda', pdaFormState);
+      if (Object.keys(sanitizedForm).length === 0) {
         if (query) {
           setPdaResults(undefined);
           navigate('/pda');
         }
-      } else launchRequest();
+      } else processSearch();
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 

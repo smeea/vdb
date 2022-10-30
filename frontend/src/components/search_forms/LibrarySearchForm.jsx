@@ -136,17 +136,16 @@ const LibrarySearchForm = () => {
   };
 
   const processSearch = () => {
-    const sanitizeForm = sanitizeFormState('library', libraryFormState);
     setError(false);
+    const sanitizedForm = sanitizeFormState('library', libraryFormState);
 
-    if (Object.entries(sanitizeForm).length === 0) {
+    if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;
     }
+    navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
-    navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizeForm))}`);
-
-    const filteredCards = filterLibrary(sanitizeForm).filter(
+    const filteredCards = filterLibrary(sanitizedForm).filter(
       (card) => playtest || card.Id < 110000
     );
 
