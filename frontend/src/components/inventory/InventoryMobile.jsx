@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useSnapshot } from 'valtio';
 import {
   InventoryNewCryptCard,
   InventoryNewLibraryCard,
   InventoryCrypt,
   InventoryLibrary,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, inventoryStore, usedStore } from 'context';
 
 const InventoryMobile = ({
   newCryptId,
@@ -30,15 +31,11 @@ const InventoryMobile = ({
   sharedInventoryLibrary,
   inShared,
 }) => {
-  const {
-    cryptCardBase,
-    libraryCardBase,
-    inventoryCrypt,
-    inventoryLibrary,
-    usedCryptCards,
-    usedLibraryCards,
-    showFloatingButtons,
-  } = useApp();
+  const { cryptCardBase, libraryCardBase, showFloatingButtons } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const usedLibrary = useSnapshot(usedStore).library;
 
   const [showCrypt, setShowCrypt] = useState(true);
 
@@ -66,7 +63,7 @@ const InventoryMobile = ({
               />
             </div>
           )}
-          {inventoryCrypt && (usedCryptCards.soft || usedCryptCards.hard) && (
+          {inventoryCrypt && (usedCrypt.soft || usedCrypt.hard) && (
             <div className="pt-1">
               <InventoryCrypt
                 withCompact={newCryptId}
@@ -104,27 +101,26 @@ const InventoryMobile = ({
               />
             </div>
           )}
-          {inventoryLibrary &&
-            (usedLibraryCards.soft || usedLibraryCards.hard) && (
-              <div className="pt-1">
-                <InventoryLibrary
-                  withCompact={newLibraryId}
-                  category={sharedInventoryLibrary ? 'ok' : category}
-                  cards={
-                    sharedInventoryLibrary
-                      ? sharedInventoryLibrary
-                      : inventoryLibrary
-                  }
-                  type={type}
-                  setType={setType}
-                  discipline={discipline}
-                  setDiscipline={setDiscipline}
-                  setMissingByType={setMissingByType}
-                  setMissingByDiscipline={setMissingByDiscipline}
-                  inShared={inShared}
-                />
-              </div>
-            )}
+          {inventoryLibrary && (usedLibrary.soft || usedLibrary.hard) && (
+            <div className="pt-1">
+              <InventoryLibrary
+                withCompact={newLibraryId}
+                category={sharedInventoryLibrary ? 'ok' : category}
+                cards={
+                  sharedInventoryLibrary
+                    ? sharedInventoryLibrary
+                    : inventoryLibrary
+                }
+                type={type}
+                setType={setType}
+                discipline={discipline}
+                setDiscipline={setDiscipline}
+                setMissingByType={setMissingByType}
+                setMissingByDiscipline={setMissingByDiscipline}
+                inShared={inShared}
+              />
+            </div>
+          )}
         </>
       )}
       {showFloatingButtons && (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import Select from 'react-select';
 import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
@@ -16,7 +17,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
-import { useApp } from 'context';
+import { useApp, usedStore, inventoryStore } from 'context';
 import { getSoftMax, getHardTotal } from 'utils';
 
 const DeckProxyLibraryTable = ({
@@ -31,12 +32,12 @@ const DeckProxyLibraryTable = ({
   const {
     decks,
     inventoryMode,
-    inventoryLibrary,
-    usedLibraryCards,
     nativeLibrary,
     isMobile,
     setShowFloatingButtons,
   } = useApp();
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const usedLibrary = useSnapshot(usedStore).library;
 
   const handleClick = (idx) => {
     handleModalCardOpen(idx);
@@ -45,8 +46,8 @@ const DeckProxyLibraryTable = ({
 
   const cardRows = cards.map((card, idx) => {
     let inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
-    let softUsedMax = getSoftMax(usedLibraryCards.soft[card.c.Id]) ?? 0;
-    let hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.c.Id]) ?? 0;
+    let softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
+    let hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
 
     const setOptions = [
       {

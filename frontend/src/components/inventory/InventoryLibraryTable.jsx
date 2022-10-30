@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { OverlayTrigger } from 'react-bootstrap';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -18,7 +19,7 @@ import {
 } from 'components';
 import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
 import { librarySort, getHardTotal, getSoftMax } from 'utils';
-import { useApp } from 'context';
+import { useApp, usedStore } from 'context';
 import { useModalCardController } from 'hooks';
 
 const InventoryLibraryTable = ({
@@ -30,13 +31,9 @@ const InventoryLibraryTable = ({
   newFocus,
   inShared,
 }) => {
-  const {
-    usedLibraryCards,
-    nativeLibrary,
-    isMobile,
-    isNarrow,
-    setShowFloatingButtons,
-  } = useApp();
+  const usedLibrary = useSnapshot(usedStore).library;
+  const { nativeLibrary, isMobile, isNarrow, setShowFloatingButtons } =
+    useApp();
 
   const sortedCards = librarySort(cards, sortMethod);
 
@@ -70,9 +67,9 @@ const InventoryLibraryTable = ({
     let softUsedMax = 0;
     let hardUsedTotal = 0;
 
-    if (usedLibraryCards) {
-      softUsedMax = getSoftMax(usedLibraryCards.soft[card.Id]);
-      hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.Id]);
+    if (usedLibrary) {
+      softUsedMax = getSoftMax(usedLibrary.soft[card.Id]);
+      hardUsedTotal = getHardTotal(usedLibrary.hard[card.Id]);
     }
 
     return (

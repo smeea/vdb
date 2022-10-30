@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -14,7 +15,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
-import { useApp } from 'context';
+import { useApp, inventoryStore, usedStore } from 'context';
 import { useModalCardController } from 'hooks';
 
 const ResultCryptTable = ({
@@ -25,8 +26,6 @@ const ResultCryptTable = ({
 }) => {
   const {
     deck,
-    inventoryCrypt,
-    usedCryptCards,
     addMode,
     inventoryMode,
     isMobile,
@@ -34,6 +33,8 @@ const ResultCryptTable = ({
     isWide,
     setShowFloatingButtons,
   } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const usedCrypt = useSnapshot(usedStore).crypt;
 
   let maxDisciplines = 0;
   resultCards.map((card) => {
@@ -74,8 +75,8 @@ const ResultCryptTable = ({
         inInventory = inventoryCrypt[card.Id].q;
       }
 
-      softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
-      hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
+      softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
+      hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
     }
 
     return (

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useSnapshot } from 'valtio';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import {
@@ -17,9 +18,8 @@ import {
   DeckDrawProbabilityModal,
   ConditionalOverlayTrigger,
 } from 'components';
-
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
-import { useApp } from 'context';
+import { useApp, usedStore, inventoryStore } from 'context';
 
 const DeckCryptTable = ({
   deck,
@@ -38,8 +38,6 @@ const DeckCryptTable = ({
   const {
     decks,
     inventoryMode,
-    inventoryCrypt,
-    usedCryptCards,
     isMobile,
     isDesktop,
     isNarrow,
@@ -48,8 +46,9 @@ const DeckCryptTable = ({
     deckCardChange,
     setShowFloatingButtons,
   } = useApp();
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const { deckid, isPublic, isAuthor } = deck;
-
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
   const disableOverlay = useMemo(
@@ -74,8 +73,8 @@ const DeckCryptTable = ({
 
   const cardRows = cards.map((card, idx) => {
     let inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
-    let softUsedMax = getSoftMax(usedCryptCards.soft[card.c.Id]) ?? 0;
-    let hardUsedTotal = getHardTotal(usedCryptCards.hard[card.c.Id]) ?? 0;
+    let softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
+    let hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
 
     const toggleInventoryState = (deckid, cardid) => {
       const value = card.i ? '' : deck.inventoryType === 's' ? 'h' : 's';

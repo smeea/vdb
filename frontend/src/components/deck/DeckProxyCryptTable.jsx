@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import Select from 'react-select';
 import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
@@ -18,7 +19,7 @@ import {
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
-import { useApp } from 'context';
+import { useApp, usedStore, inventoryStore } from 'context';
 
 const DeckProxyCryptTable = ({
   handleModalCardOpen,
@@ -32,15 +33,9 @@ const DeckProxyCryptTable = ({
   keyDisciplines,
   nonKeyDisciplines,
 }) => {
-  const {
-    decks,
-    inventoryMode,
-    inventoryCrypt,
-    usedCryptCards,
-    isMobile,
-    setShowFloatingButtons,
-  } = useApp();
-
+  const { decks, inventoryMode, isMobile, setShowFloatingButtons } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const usedCrypt = useSnapshot(usedStore).crypt;
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
 
   let maxDisciplines = 0;
@@ -58,8 +53,8 @@ const DeckProxyCryptTable = ({
 
   const cardRows = cards.map((card, idx) => {
     let inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
-    let softUsedMax = getSoftMax(usedCryptCards.soft[card.c.Id]) ?? 0;
-    let hardUsedTotal = getHardTotal(usedCryptCards.hard[card.c.Id]) ?? 0;
+    let softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
+    let hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
 
     const setOptions = [
       {

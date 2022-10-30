@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useSnapshot } from 'valtio';
 import {
   InventoryCryptTable,
   InventoryFilterForm,
   SortButton,
 } from 'components';
+import { useApp, usedStore } from 'context';
 import imbuedClansList from 'assets/data/imbuedClansList.json';
 import vampireClansList from 'assets/data/vampireClansList.json';
-import { useApp } from 'context';
 
 const InventoryCrypt = ({
   compact,
@@ -19,7 +20,8 @@ const InventoryCrypt = ({
   setMissingByClan,
   inShared,
 }) => {
-  const { usedCryptCards, cryptCardBase } = useApp();
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const { cryptCardBase } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
     Name: 'N',
@@ -57,18 +59,18 @@ const InventoryCrypt = ({
       const i = cards[cardid].c.Clan;
 
       let softUsedMax = 0;
-      if (usedCryptCards.soft[cardid]) {
-        Object.keys(usedCryptCards.soft[cardid]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[cardid][id]) {
-            softUsedMax = usedCryptCards.soft[cardid][id];
+      if (usedCrypt.soft[cardid]) {
+        Object.keys(usedCrypt.soft[cardid]).map((id) => {
+          if (softUsedMax < usedCrypt.soft[cardid][id]) {
+            softUsedMax = usedCrypt.soft[cardid][id];
           }
         });
       }
 
       let hardUsedTotal = 0;
-      if (usedCryptCards.hard[cardid]) {
-        Object.keys(usedCryptCards.hard[cardid]).map((id) => {
-          hardUsedTotal += usedCryptCards.hard[cardid][id];
+      if (usedCrypt.hard[cardid]) {
+        Object.keys(usedCrypt.hard[cardid]).map((id) => {
+          hardUsedTotal += usedCrypt.hard[cardid][id];
         });
       }
 
@@ -93,7 +95,7 @@ const InventoryCrypt = ({
       }
     });
 
-    Object.keys(usedCryptCards.soft).map((cardid) => {
+    Object.keys(usedCrypt.soft).map((cardid) => {
       if (!cards[cardid]) {
         const i = cryptCardBase[cardid].Clan;
 
@@ -109,9 +111,9 @@ const InventoryCrypt = ({
         }
 
         let softUsedMax = 0;
-        Object.keys(usedCryptCards.soft[cardid]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[cardid][id]) {
-            softUsedMax = usedCryptCards.soft[cardid][id];
+        Object.keys(usedCrypt.soft[cardid]).map((id) => {
+          if (softUsedMax < usedCrypt.soft[cardid][id]) {
+            softUsedMax = usedCrypt.soft[cardid][id];
           }
         });
 
@@ -126,7 +128,7 @@ const InventoryCrypt = ({
       }
     });
 
-    Object.keys(usedCryptCards.hard).map((cardid) => {
+    Object.keys(usedCrypt.hard).map((cardid) => {
       if (!cards[cardid]) {
         const i = cryptCardBase[cardid].Clan;
 
@@ -142,9 +144,9 @@ const InventoryCrypt = ({
         }
 
         let hardUsedTotal = 0;
-        if (usedCryptCards.hard[cardid]) {
-          Object.keys(usedCryptCards.hard[cardid]).map((id) => {
-            hardUsedTotal += usedCryptCards.hard[cardid][id];
+        if (usedCrypt.hard[cardid]) {
+          Object.keys(usedCrypt.hard[cardid]).map((id) => {
+            hardUsedTotal += usedCrypt.hard[cardid][id];
           });
         }
 

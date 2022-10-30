@@ -29,6 +29,7 @@ import {
   setLibraryResults,
   searchLibraryForm,
   clearSearchForm,
+  inventoryStore,
 } from 'context';
 
 const LibrarySearchForm = () => {
@@ -37,12 +38,11 @@ const LibrarySearchForm = () => {
     hideMissing,
     setHideMissing,
     setShowLibrarySearch,
-    inventoryLibrary,
     inventoryMode,
     isMobile,
     playtest,
   } = useApp();
-
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
   const libraryFormState = useSnapshot(searchLibraryForm);
   const { filterLibrary } = useFilters(libraryCardBase);
 

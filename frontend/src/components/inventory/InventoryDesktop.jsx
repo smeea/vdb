@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { Col } from 'react-bootstrap';
 import {
   InventoryNewCryptCard,
@@ -8,7 +9,7 @@ import {
   InventoryButtons,
   InventoryShowSelect,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, inventoryStore, usedStore } from 'context';
 
 const InventoryDesktop = ({
   newCryptId,
@@ -41,15 +42,11 @@ const InventoryDesktop = ({
   setInventoryKey,
   inShared,
 }) => {
-  const {
-    cryptCardBase,
-    libraryCardBase,
-    inventoryCrypt,
-    inventoryLibrary,
-    usedCryptCards,
-    usedLibraryCards,
-    isWide,
-  } = useApp();
+  const { cryptCardBase, libraryCardBase, isWide } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const usedLibrary = useSnapshot(usedStore).library;
 
   return (
     <>
@@ -79,7 +76,7 @@ const InventoryDesktop = ({
             )}
           </>
         )}
-        {inventoryCrypt && (usedCryptCards.soft || usedCryptCards.hard) && (
+        {inventoryCrypt && (usedCrypt.soft || usedCrypt.hard) && (
           <div className="pt-2">
             <InventoryCrypt
               withCompact={newCryptId}
@@ -120,7 +117,7 @@ const InventoryDesktop = ({
             )}
           </>
         )}
-        {inventoryLibrary && (usedLibraryCards.soft || usedLibraryCards.hard) && (
+        {inventoryLibrary && (usedLibrary.soft || usedLibrary.hard) && (
           <div className="pt-2">
             <InventoryLibrary
               withCompact={newLibraryId}

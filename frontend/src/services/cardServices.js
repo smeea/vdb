@@ -1,6 +1,6 @@
 import preconDecksData from 'assets/data/preconDecks.json';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
-import { useTags } from 'hooks';
+import { useDeck, useTags } from 'hooks';
 
 const VERSION = '2022-09-28';
 const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
@@ -70,15 +70,15 @@ export const getLocalizedCardBase = async (lang) => {
   };
 };
 
-export const getPreconDecks = (parseDeckCards) => {
-  const precons = {};
+export const getPreconDecks = () => {
+  const preconDecks = {};
 
   Object.keys(preconDecksData).map((set) => {
     Object.keys(preconDecksData[set]).map((precon) => {
       const deckid = `${set}:${precon}`;
       const name = setsAndPrecons[set]['precons'][precon]['name'];
 
-      precons[deckid] = {
+      preconDecks[deckid] = {
         name: `${name}`,
         deckid: deckid,
         author: 'VTES Team',
@@ -87,19 +87,17 @@ export const getPreconDecks = (parseDeckCards) => {
         library: {},
       };
 
-      const cardsData = parseDeckCards(preconDecksData[set][precon]);
+      const cardsData = useDeck(preconDecksData[set][precon]);
       let tags = [];
-      Object.values(
-        useTags(
-          cardsData.crypt,
-          cardsData.library
-        )
-      ).map((v) => {
+      Object.values(useTags(cardsData.crypt, cardsData.library)).map((v) => {
         tags = tags.concat(v);
       });
 
-      precons[deckid] = { ...precons[deckid], ...cardsData, tags: tags };
+      preconDecks[deckid].crypt = cardsData.crypt;
+      preconDecks[deckid].library = cardsData.library;
+      preconDecks[deckid].tags = cardsData.tags;
     });
   });
-  return precons;
+
+  return preconDecks;
 };

@@ -1,45 +1,45 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import {
   ResultCryptName,
   ResultCryptCapacity,
   ResultCryptDisciplines,
   ResultClanImage,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, inventoryStore } from 'context';
 
-const SelectLabelCrypt = (props) => {
-  const { inventoryCrypt, cryptCardBase } = useApp();
+const SelectLabelCrypt = ({ cardid, inInventory }) => {
+  const { cryptCardBase } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
 
   return (
     <>
       <div className="d-flex align-items-center justify-content-between">
         <div className="d-flex align-items-center">
-          {props.inInventory && (
+          {inInventory && (
             <div
               className={`d-inline in-inventory me-2 ${
-                inventoryCrypt[props.cardid] ? 'border-black' : null
+                inventoryCrypt[cardid] ? 'border-black' : null
               }`}
             >
-              {inventoryCrypt[props.cardid] && inventoryCrypt[props.cardid].q}
+              {inventoryCrypt[cardid] && inventoryCrypt[cardid].q}
             </div>
           )}
-          <ResultCryptCapacity value={cryptCardBase[props.cardid].Capacity} />
+          <ResultCryptCapacity value={cryptCardBase[cardid].Capacity} />
           <div className="px-2">
-            <ResultCryptName card={cryptCardBase[props.cardid]} />
-            {cryptCardBase[props.cardid]['New'] && (
+            <ResultCryptName card={cryptCardBase[cardid]} />
+            {cryptCardBase[cardid]['New'] && (
               <div className="d-inline gray ps-2">
-                [G{cryptCardBase[props.cardid].Group}]
+                [G{cryptCardBase[cardid].Group}]
               </div>
             )}
           </div>
           <div className="pe-3">
-            <ResultClanImage value={cryptCardBase[props.cardid].Clan} />
+            <ResultClanImage value={cryptCardBase[cardid].Clan} />
           </div>
         </div>
         <div className="d-flex flex-nowrap">
-          <ResultCryptDisciplines
-            value={cryptCardBase[props.cardid].Disciplines}
-          />
+          <ResultCryptDisciplines value={cryptCardBase[cardid].Disciplines} />
         </div>
       </div>
     </>

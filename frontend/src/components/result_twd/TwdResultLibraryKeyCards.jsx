@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import {
   CardPopover,
   UsedPopover,
@@ -10,18 +11,14 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { GROUPED_TYPE, ASCII_NAME } from 'utils/constants';
-import { useApp } from 'context';
+import { useApp, inventoryStore, usedStore } from 'context';
 import { countCards, librarySort, getHardTotal } from 'utils';
 import { useModalCardController } from 'hooks';
 
 const TwdResultLibraryKeyCards = ({ library }) => {
-  const {
-    inventoryLibrary,
-    usedLibraryCards,
-    inventoryMode,
-    isMobile,
-    setShowFloatingButtons,
-  } = useApp();
+  const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const usedLibrary = useSnapshot(usedStore).library;
 
   const sortedLibrary = librarySort(Object.values(library), GROUPED_TYPE);
   const libraryTotal = countCards(sortedLibrary);
@@ -57,8 +54,8 @@ const TwdResultLibraryKeyCards = ({ library }) => {
         inInventory = inventoryLibrary[card.c.Id].q;
       }
 
-      if (usedLibraryCards) {
-        hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.c.Id]);
+      if (usedLibrary) {
+        hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
       }
     }
 

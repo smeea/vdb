@@ -1,26 +1,28 @@
-const useDeckMissing = (
-  deck,
-  usedCryptCards,
-  usedLibraryCards,
-  inventoryCrypt,
-  inventoryLibrary
-) => {
+import { useSnapshot } from 'valtio';
+import { usedStore, inventoryStore } from 'context';
+
+const useDeckMissing = (deck) => {
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const usedLibrary = useSnapshot(usedStore).library;
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
+
   const getMissingCrypt = (d) => {
     const crypt = {};
 
     Object.keys(d.crypt).map((card) => {
       let softUsedMax = 0;
-      if (usedCryptCards.soft[card]) {
-        Object.keys(usedCryptCards.soft[card]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[card][id]) {
-            softUsedMax = usedCryptCards.soft[card][id];
+      if (usedCrypt.soft[card]) {
+        Object.keys(usedCrypt.soft[card]).map((id) => {
+          if (softUsedMax < usedCrypt.soft[card][id]) {
+            softUsedMax = usedCrypt.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (usedCryptCards.hard[card]) {
-        Object.keys(usedCryptCards.hard[card]).map((id) => {
-          hardUsedTotal += usedCryptCards.hard[card][id];
+      if (usedCrypt.hard[card]) {
+        Object.keys(usedCrypt.hard[card]).map((id) => {
+          hardUsedTotal += usedCrypt.hard[card][id];
         });
       }
 
@@ -43,17 +45,17 @@ const useDeckMissing = (
 
     Object.keys(d.library).map((card) => {
       let softUsedMax = 0;
-      if (usedLibraryCards.soft[card]) {
-        Object.keys(usedLibraryCards.soft[card]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card][id]) {
-            softUsedMax = usedLibraryCards.soft[card][id];
+      if (usedLibrary.soft[card]) {
+        Object.keys(usedLibrary.soft[card]).map((id) => {
+          if (softUsedMax < usedLibrary.soft[card][id]) {
+            softUsedMax = usedLibrary.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (usedLibraryCards.hard[card]) {
-        Object.keys(usedLibraryCards.hard[card]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card][id];
+      if (usedLibrary.hard[card]) {
+        Object.keys(usedLibrary.hard[card]).map((id) => {
+          hardUsedTotal += usedLibrary.hard[card][id];
         });
       }
 

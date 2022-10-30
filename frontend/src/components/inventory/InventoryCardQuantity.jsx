@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
-import { useApp } from 'context';
+import { useApp, inventoryCardChange } from 'context';
 
 const InventoryCardQuantity = ({
   q,
@@ -10,9 +10,12 @@ const InventoryCardQuantity = ({
   compact,
   newFocus,
 }) => {
-  const { inventoryCardChange, isMobile } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(q ? q : '');
+
+  const card =
+    cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
 
   useEffect(() => {
     if (state !== q) setState(q ? q : '');
@@ -29,13 +32,13 @@ const InventoryCardQuantity = ({
   const handleSubmitButton = (event) => {
     event.preventDefault();
     if (compact && q === 0) newFocus();
-    inventoryCardChange(cardid, state ? parseInt(state) : 0);
+    inventoryCardChange(card, state ? parseInt(state) : 0);
     setManual(false);
   };
 
   const handleQuantityChange = (diff) => {
     if (diff + state >= 0) setState(diff + state);
-    inventoryCardChange(cardid, parseInt(diff + state));
+    inventoryCardChange(card, parseInt(diff + state));
   };
 
   return (

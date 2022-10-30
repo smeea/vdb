@@ -1,6 +1,7 @@
-// FOLDERS
 export { AppProvider, useApp } from './AppContext.js';
+
 export { ThemeProvider, useTheme } from './ThemeContext.js';
+
 export {
   clearSearchForm,
   searchCryptForm,
@@ -16,3 +17,16 @@ export {
   setLibraryCompare,
   setQuickCard,
 } from './SearchStore.js';
+
+export {
+  inventoryCardChange,
+  inventoryCardsAdd,
+  inventoryStore,
+  setInventoryCrypt,
+  setInventoryLibrary,
+  setUsedCrypt,
+  setUsedLibrary,
+  usedStore,
+} from './InventoryStore.js';
+
+export { deck, decks, setDeck, setDecks } from './DeckStore.js';

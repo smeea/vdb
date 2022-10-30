@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import {
   CardPopover,
   UsedPopover,
@@ -10,17 +11,13 @@ import {
 } from 'components';
 import { ANY } from 'utils/constants';
 import { countCards, getHardTotal } from 'utils';
-import { useApp } from 'context';
+import { useApp, inventoryStore, usedStore } from 'context';
 import { useModalCardController } from 'hooks';
 
 const TwdResultCrypt = ({ crypt }) => {
-  const {
-    inventoryMode,
-    inventoryCrypt,
-    usedCryptCards,
-    isMobile,
-    setShowFloatingButtons,
-  } = useApp();
+  const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const usedCrypt = useSnapshot(usedStore).crypt;
 
   // Sort cards
   const SortByQuantity = (a, b) => b.q - a.q;
@@ -89,7 +86,7 @@ const TwdResultCrypt = ({ crypt }) => {
         inInventory = inventoryCrypt[card.c.Id].q;
       }
 
-      hardUsedTotal = getHardTotal(usedCryptCards.hard[card.c.Id]);
+      hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
     }
 
     return (

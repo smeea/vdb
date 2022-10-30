@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useSnapshot } from 'valtio';
 import { Modal, Row, Col, FormControl, Button } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
@@ -13,18 +14,13 @@ import {
   ResultLibraryClan,
 } from 'components';
 import { decksSort } from 'utils';
-import { useApp } from 'context';
+import { useApp, inventoryStore } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const InventoryAddDeckModal = ({ show, handleClose }) => {
-  const {
-    inventoryCrypt,
-    inventoryLibrary,
-    preconDecks,
-    playtest,
-    isDesktop,
-    isMobile,
-  } = useApp();
+  const { preconDecks, playtest, isDesktop, isMobile } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
 
   const [sortMethod, setSortMethod] = useState('byDate');
   const [showDeck, setShowDeck] = useState(undefined);

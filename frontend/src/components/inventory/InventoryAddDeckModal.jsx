@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useSnapshot } from 'valtio';
 import { Modal, Form, Row, Col, FormControl, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
@@ -17,18 +18,12 @@ import {
   OverlayTooltip,
 } from 'components';
 import { decksSort } from 'utils';
-import { useApp } from 'context';
+import { useApp, inventoryStore } from 'context';
 
 const InventoryAddDeckModal = ({ show, handleClose }) => {
-  const {
-    cryptCardBase,
-    inventoryCrypt,
-    inventoryLibrary,
-    decks,
-    deckUpdate,
-    isDesktop,
-    isMobile,
-  } = useApp();
+  const { cryptCardBase, decks, deckUpdate, isDesktop, isMobile } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
 
   const [sortMethod, setSortMethod] = useState('byName');
   const [showDeck, setShowDeck] = useState(undefined);

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useSnapshot } from 'valtio';
 import { Stack } from 'react-bootstrap';
 import {
   InventoryLibraryTable,
   InventoryFilterForm,
   SortButton,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, usedStore } from 'context';
 import { cardtypeSorted } from 'utils/constants';
 import disciplinesList from 'assets/data/disciplinesList.json';
 import virtuesList from 'assets/data/virtuesList.json';
@@ -24,7 +25,8 @@ const InventoryLibrary = ({
   setMissingByDiscipline,
   inShared,
 }) => {
-  const { usedLibraryCards, libraryCardBase, isDesktop } = useApp();
+  const usedLibrary = useSnapshot(usedStore).library;
+  const { libraryCardBase, isDesktop } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
     Name: 'N',
@@ -116,18 +118,18 @@ const InventoryLibrary = ({
       }
 
       let softUsedMax = 0;
-      if (usedLibraryCards.soft[cardid]) {
-        Object.keys(usedLibraryCards.soft[cardid]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[cardid][id]) {
-            softUsedMax = usedLibraryCards.soft[cardid][id];
+      if (usedLibrary.soft[cardid]) {
+        Object.keys(usedLibrary.soft[cardid]).map((id) => {
+          if (softUsedMax < usedLibrary.soft[cardid][id]) {
+            softUsedMax = usedLibrary.soft[cardid][id];
           }
         });
       }
 
       let hardUsedTotal = 0;
-      if (usedLibraryCards.hard[cardid]) {
-        Object.keys(usedLibraryCards.hard[cardid]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[cardid][id];
+      if (usedLibrary.hard[cardid]) {
+        Object.keys(usedLibrary.hard[cardid]).map((id) => {
+          hardUsedTotal += usedLibrary.hard[cardid][id];
         });
       }
 
@@ -191,7 +193,7 @@ const InventoryLibrary = ({
       }
     });
 
-    Object.keys(usedLibraryCards.soft).map((cardid) => {
+    Object.keys(usedLibrary.soft).map((cardid) => {
       if (!cards[cardid]) {
         const types = libraryCardBase[cardid].Type.split('/');
         const d = libraryCardBase[cardid].Discipline;
@@ -230,9 +232,9 @@ const InventoryLibrary = ({
         }
 
         let softUsedMax = 0;
-        Object.keys(usedLibraryCards.soft[cardid]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[cardid][id]) {
-            softUsedMax = usedLibraryCards.soft[cardid][id];
+        Object.keys(usedLibrary.soft[cardid]).map((id) => {
+          if (softUsedMax < usedLibrary.soft[cardid][id]) {
+            softUsedMax = usedLibrary.soft[cardid][id];
           }
         });
 
@@ -262,7 +264,7 @@ const InventoryLibrary = ({
       }
     });
 
-    Object.keys(usedLibraryCards.hard).map((cardid) => {
+    Object.keys(usedLibrary.hard).map((cardid) => {
       if (!cards[cardid]) {
         const types = libraryCardBase[cardid].Type.split('/');
         const d = libraryCardBase[cardid].Discipline;
@@ -301,9 +303,9 @@ const InventoryLibrary = ({
         }
 
         let hardUsedTotal = 0;
-        if (usedLibraryCards.hard[cardid]) {
-          Object.keys(usedLibraryCards.hard[cardid]).map((id) => {
-            hardUsedTotal += usedLibraryCards.hard[cardid][id];
+        if (usedLibrary.hard[cardid]) {
+          Object.keys(usedLibrary.hard[cardid]).map((id) => {
+            hardUsedTotal += usedLibrary.hard[cardid][id];
           });
         }
 

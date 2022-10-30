@@ -1,19 +1,17 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { Row, Col } from 'react-bootstrap';
 import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
-import { useApp } from 'context';
+import { useApp, inventoryStore, usedStore } from 'context';
 
 const ResultLayoutTextInventory = (props) => {
-  const {
-    isMobile,
-    decks,
-    usedCryptCards,
-    usedLibraryCards,
-    inventoryCrypt,
-    inventoryLibrary,
-  } = useApp();
+  const { isMobile, decks } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const usedLibrary = useSnapshot(usedStore).library;
 
   let softUsedMax = 0;
   let hardUsedTotal = 0;
@@ -26,12 +24,12 @@ const ResultLayoutTextInventory = (props) => {
     if (inventoryCrypt[props.cardid]) {
       inInventory = inventoryCrypt[props.cardid].q;
     }
-    usedCards = usedCryptCards;
+    usedCards = usedCrypt;
   } else {
     if (inventoryLibrary[props.cardid]) {
       inInventory = inventoryLibrary[props.cardid].q;
     }
-    usedCards = usedLibraryCards;
+    usedCards = usedLibrary;
   }
 
   if (usedCards && usedCards.soft[props.cardid]) {

@@ -8,3 +8,4 @@ export { default as useDeckImport } from './useDeckImport.js';
 export { default as useDeckMissing } from './useDeckMissing.js';
 export { default as useFilters } from './useFilters.js';
 export { default as useTags } from './useTags.js';
+export { default as useDeck } from './useDeck.js';

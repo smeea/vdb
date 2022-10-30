@@ -3,12 +3,15 @@ import { Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ModalConfirmation } from 'components';
-import { useApp } from 'context';
+import { useApp, inventoryCardsAdd } from 'context';
 
 const InventoryDeckAddButton = ({ deck, inInventory }) => {
-  const { inventoryDeckAdd, setShowFloatingButtons, setShowMenuButtons } =
-    useApp();
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const inventoryDeckAdd = (deck) => {
+    inventoryCardsAdd({ ...deck.crypt, ...deck.library });
+  };
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {

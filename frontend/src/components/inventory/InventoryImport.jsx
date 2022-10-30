@@ -64,7 +64,6 @@ const InventoryImport = () => {
   return (
     <>
       <InventoryImportButton handleClick={handleFileInputClick} />
-      {/* TODO */}
       {/* {badCards && ( */}
       {/*   <DeckImportBadCardsModal */}
       {/*     badCards={badCards} */}

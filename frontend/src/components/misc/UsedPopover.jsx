@@ -1,18 +1,18 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { Popover } from 'react-bootstrap';
 import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
-import { useApp } from 'context';
+import { useApp, usedStore, inventoryStore } from 'context';
 
 const UsedPopover = React.forwardRef((props, ref) => {
-  const {
-    decks,
-    usedCryptCards,
-    usedLibraryCards,
-    inventoryCrypt,
-    inventoryLibrary,
-  } = useApp();
+  const { decks } = useApp();
+
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const usedLibrary = useSnapshot(usedStore).library;
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
 
   const { cardid, ...rest } = props;
 
@@ -27,12 +27,12 @@ const UsedPopover = React.forwardRef((props, ref) => {
     if (inventoryCrypt[cardid]) {
       inInventory = inventoryCrypt[cardid].q;
     }
-    usedCards = usedCryptCards;
+    usedCards = usedCrypt;
   } else {
     if (inventoryLibrary[cardid]) {
       inInventory = inventoryLibrary[cardid].q;
     }
-    usedCards = usedLibraryCards;
+    usedCards = usedLibrary;
   }
 
   if (usedCards && usedCards.soft[cardid]) {

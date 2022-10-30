@@ -29,6 +29,7 @@ import {
   setCryptResults,
   searchCryptForm,
   clearSearchForm,
+  inventoryStore,
 } from 'context';
 
 const CryptSearchForm = () => {
@@ -37,13 +38,13 @@ const CryptSearchForm = () => {
     hideMissing,
     setHideMissing,
     setShowCryptSearch,
-    inventoryCrypt,
     inventoryMode,
     isMobile,
     playtest,
   } = useApp();
-
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const cryptFormState = useSnapshot(searchCryptForm);
+
   const { filterCrypt } = useFilters(cryptCardBase);
 
   const [preresults, setPreresults] = useState(undefined);

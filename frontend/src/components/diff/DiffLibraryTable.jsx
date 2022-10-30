@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSnapshot } from 'valtio';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   OverlayTooltip,
@@ -17,7 +18,7 @@ import {
   DiffQuantityDiff,
 } from 'components';
 import { drawProbability } from 'utils';
-import { useApp } from 'context';
+import { useApp, usedStore, inventoryStore } from 'context';
 
 const DiffLibraryTable = ({
   cardChange,
@@ -36,13 +37,13 @@ const DiffLibraryTable = ({
   const {
     decks,
     inventoryMode,
-    inventoryLibrary,
-    usedLibraryCards,
     nativeLibrary,
     isMobile,
     deckCardChange,
     setShowFloatingButtons,
   } = useApp();
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const usedLibrary = useSnapshot(usedStore).library;
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
@@ -68,17 +69,17 @@ const DiffLibraryTable = ({
         inInventory = inventoryLibrary[card.c.Id].q;
       }
 
-      if (usedLibraryCards && usedLibraryCards.soft[card.c.Id]) {
-        Object.keys(usedLibraryCards.soft[card.c.Id]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card.c.Id][id]) {
-            softUsedMax = usedLibraryCards.soft[card.c.Id][id];
+      if (usedLibrary && usedLibrary.soft[card.c.Id]) {
+        Object.keys(usedLibrary.soft[card.c.Id]).map((id) => {
+          if (softUsedMax < usedLibrary.soft[card.c.Id][id]) {
+            softUsedMax = usedLibrary.soft[card.c.Id][id];
           }
         });
       }
 
-      if (usedLibraryCards && usedLibraryCards.hard[card.c.Id]) {
-        Object.keys(usedLibraryCards.hard[card.c.Id]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card.c.Id][id];
+      if (usedLibrary && usedLibrary.hard[card.c.Id]) {
+        Object.keys(usedLibrary.hard[card.c.Id]).map((id) => {
+          hardUsedTotal += usedLibrary.hard[card.c.Id][id];
         });
       }
     }

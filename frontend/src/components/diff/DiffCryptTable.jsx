@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSnapshot } from 'valtio';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -18,7 +19,7 @@ import {
   DiffQuantityDiff,
 } from 'components';
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
-import { useApp } from 'context';
+import { useApp, usedStore, inventoryStore } from 'context';
 
 const DiffCryptTable = ({
   cardChange,
@@ -40,16 +41,14 @@ const DiffCryptTable = ({
   const {
     decks,
     inventoryMode,
-    inventoryCrypt,
-    usedCryptCards,
     isMobile,
     isWide,
     deckCardChange,
     setShowFloatingButtons,
   } = useApp();
-
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const usedCrypt = useSnapshot(usedStore).crypt;
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
-
   const [modalDraw, setModalDraw] = useState(undefined);
 
   let maxDisciplines = 0;
@@ -75,9 +74,9 @@ const DiffCryptTable = ({
         inInventory = inventoryCrypt[card.c.Id].q;
       }
 
-      if (usedCryptCards) {
-        softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
-        hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
+      if (usedCrypt) {
+        softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
+        hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
       }
     }
 

@@ -40,15 +40,11 @@ import { useDeckMissing, useTags } from 'hooks';
 const Decks = () => {
   const {
     addRecentDeck,
-    cryptCardBase,
     deck,
     deckUpdate,
     decks,
-    inventoryCrypt,
-    inventoryLibrary,
     inventoryMode,
     isMobile,
-    libraryCardBase,
     parseDeckCards,
     playtest,
     preconDecks,
@@ -58,10 +54,10 @@ const Decks = () => {
     setShowMenuButtons,
     showFloatingButtons,
     showMenuButtons,
-    usedCryptCards,
-    usedLibraryCards,
     username,
     lastDeckId,
+    cryptCardBase,
+    libraryCardBase,
   } = useApp();
 
   const navigate = useNavigate();
@@ -137,13 +133,7 @@ const Decks = () => {
     navigate(`/decks/${e.value.replace(' ', '_')}`, { replace: true });
   };
 
-  const { missingCrypt, missingLibrary } = useDeckMissing(
-    deck,
-    usedCryptCards,
-    usedLibraryCards,
-    inventoryCrypt,
-    inventoryLibrary
-  );
+  const { missingCrypt, missingLibrary } = useDeckMissing(deck);
 
   const allTagsOptions = useMemo(() => {
     const allTags = new Set();

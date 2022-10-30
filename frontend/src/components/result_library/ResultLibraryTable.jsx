@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -16,14 +17,12 @@ import {
 } from 'components';
 import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
 import { getHardTotal, getSoftMax } from 'utils';
-import { useApp } from 'context';
+import { useApp, inventoryStore, usedStore } from 'context';
 import { useModalCardController } from 'hooks';
 
 const ResultLibraryTable = ({ resultCards, placement }) => {
   const {
     deck,
-    inventoryLibrary,
-    usedLibraryCards,
     addMode,
     inventoryMode,
     nativeLibrary,
@@ -31,6 +30,8 @@ const ResultLibraryTable = ({ resultCards, placement }) => {
     isDesktop,
     setShowFloatingButtons,
   } = useApp();
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const usedLibrary = useSnapshot(usedStore).library;
 
   const {
     currentModalCard,
@@ -62,8 +63,8 @@ const ResultLibraryTable = ({ resultCards, placement }) => {
         inInventory = inventoryLibrary[card.Id].q;
       }
 
-      softUsedMax = getSoftMax(usedLibraryCards.soft[card.Id]);
-      hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.Id]);
+      softUsedMax = getSoftMax(usedLibrary.soft[card.Id]);
+      hardUsedTotal = getHardTotal(usedLibrary.hard[card.Id]);
     }
 
     return (

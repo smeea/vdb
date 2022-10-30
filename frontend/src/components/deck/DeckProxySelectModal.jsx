@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useSnapshot } from 'valtio';
 import { Modal, Button, Container, Row, Col, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { DeckProxyCrypt, DeckProxyLibrary } from 'components';
-import { useApp } from 'context';
+import { useApp, usedStore, inventoryStore } from 'context';
 
 const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
-  const {
-    usedCryptCards,
-    usedLibraryCards,
-    inventoryCrypt,
-    inventoryLibrary,
-    isMobile,
-    inventoryMode,
-  } = useApp();
+  const { isMobile, inventoryMode } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const usedLibrary = useSnapshot(usedStore).library;
 
   const [proxySelected, setProxySelected] = useState({});
   const [toggleState, setToggleState] = useState(false);
@@ -58,17 +56,17 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
 
     Object.keys(deck.crypt).map((card) => {
       let softUsedMax = 0;
-      if (usedCryptCards.soft[card]) {
-        Object.keys(usedCryptCards.soft[card]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[card][id]) {
-            softUsedMax = usedCryptCards.soft[card][id];
+      if (usedCrypt.soft[card]) {
+        Object.keys(usedCrypt.soft[card]).map((id) => {
+          if (softUsedMax < usedCrypt.soft[card][id]) {
+            softUsedMax = usedCrypt.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (usedCryptCards.hard[card]) {
-        Object.keys(usedCryptCards.hard[card]).map((id) => {
-          hardUsedTotal += usedCryptCards.hard[card][id];
+      if (usedCrypt.hard[card]) {
+        Object.keys(usedCrypt.hard[card]).map((id) => {
+          hardUsedTotal += usedCrypt.hard[card][id];
         });
       }
 
@@ -87,17 +85,17 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
 
     Object.keys(deck.library).map((card) => {
       let softUsedMax = 0;
-      if (usedLibraryCards.soft[card]) {
-        Object.keys(usedLibraryCards.soft[card]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card][id]) {
-            softUsedMax = usedLibraryCards.soft[card][id];
+      if (usedLibrary.soft[card]) {
+        Object.keys(usedLibrary.soft[card]).map((id) => {
+          if (softUsedMax < usedLibrary.soft[card][id]) {
+            softUsedMax = usedLibrary.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (usedLibraryCards.hard[card]) {
-        Object.keys(usedLibraryCards.hard[card]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card][id];
+      if (usedLibrary.hard[card]) {
+        Object.keys(usedLibrary.hard[card]).map((id) => {
+          hardUsedTotal += usedLibrary.hard[card][id];
         });
       }
 

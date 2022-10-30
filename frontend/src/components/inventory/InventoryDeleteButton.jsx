@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ButtonIconed, ModalConfirmation } from 'components';
-import { useApp } from 'context';
+import { useApp, setInventoryCrypt, setInventoryLibrary } from 'context';
 
 const InventoryDelete = () => {
-  const {
-    setInventoryCrypt,
-    setInventoryLibrary,
-    setShowMenuButtons,
-    setShowFloatingButtons,
-    isMobile,
-  } = useApp();
+  const { setShowMenuButtons, setShowFloatingButtons, isMobile } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);

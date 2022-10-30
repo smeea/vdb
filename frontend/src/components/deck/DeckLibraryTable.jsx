@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useSnapshot } from 'valtio';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import {
@@ -16,9 +17,8 @@ import {
   DeckDrawProbabilityModal,
   ConditionalOverlayTrigger,
 } from 'components';
-
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
-import { useApp } from 'context';
+import { useApp, usedStore, inventoryStore } from 'context';
 
 const DeckLibraryTable = ({
   deck,
@@ -34,8 +34,6 @@ const DeckLibraryTable = ({
   const {
     decks,
     inventoryMode,
-    inventoryLibrary,
-    usedLibraryCards,
     nativeLibrary,
     isMobile,
     isDesktop,
@@ -45,6 +43,8 @@ const DeckLibraryTable = ({
     deckCardChange,
     setShowFloatingButtons,
   } = useApp();
+  const usedLibrary = useSnapshot(usedStore).library;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
   const { deckid, isPublic, isAuthor } = deck;
 
   const [modalDraw, setModalDraw] = useState(undefined);
@@ -70,8 +70,8 @@ const DeckLibraryTable = ({
 
   const cardRows = cards.map((card, idx) => {
     let inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
-    let softUsedMax = getSoftMax(usedLibraryCards.soft[card.c.Id]) ?? 0;
-    let hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.c.Id]) ?? 0;
+    let softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
+    let hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
 
     const toggleInventoryState = (deckid, cardid) => {
       const value = card.i ? '' : deck.inventoryType === 's' ? 'h' : 's';

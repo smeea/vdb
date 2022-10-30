@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { OverlayTrigger } from 'react-bootstrap';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -16,7 +17,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { cryptSort, getHardTotal, getSoftMax } from 'utils';
-import { useApp } from 'context';
+import { useApp, usedStore } from 'context';
 import { useModalCardController } from 'hooks';
 
 const InventoryCryptTable = ({
@@ -28,8 +29,8 @@ const InventoryCryptTable = ({
   newFocus,
   inShared,
 }) => {
-  const { usedCryptCards, isMobile, isNarrow, isWide, setShowFloatingButtons } =
-    useApp();
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const { isMobile, isNarrow, isWide, setShowFloatingButtons } = useApp();
 
   const sortedCards = cryptSort(cards, sortMethod);
 
@@ -58,9 +59,9 @@ const InventoryCryptTable = ({
     let softUsedMax = 0;
     let hardUsedTotal = 0;
 
-    if (usedCryptCards) {
-      softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
-      hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
+    if (usedCrypt) {
+      softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
+      hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
     }
 
     return (

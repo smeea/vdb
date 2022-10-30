@@ -2,11 +2,24 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ModalConfirmation } from 'components';
-import { useApp } from 'context';
+import { inventoryCardsAdd } from 'context';
 
 const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
-  const { inventoryDeckDelete } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const inventoryDeckDelete = (deck) => {
+    const cards = {};
+    Object.values({ ...deck.crypt, ...deck.library }).map((card) => {
+      if (card.q) {
+        cards[card.c.Id] = {
+          c: card.c,
+          q: -card.q,
+        };
+      }
+    });
+
+    inventoryCardsAdd(cards);
+  };
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
@@ -30,7 +43,7 @@ const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
         handleCancel={handleCancel}
         buttonText="Remove"
         headerText={'Remove deck ' + deck.name + ' from Inventory?'}
-        nested={true}
+        nested
       />
     </>
   );
