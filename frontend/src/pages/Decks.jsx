@@ -4,6 +4,7 @@ import {
   useLocation,
   useParams,
   useLoaderData,
+  useRouteError,
 } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -86,10 +87,11 @@ const Decks = () => {
   const [showInfo, setShowInfo] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
 
-  const deckData = useLoaderData();
+  const deckError = useRouteError();
 
   const getDeck = () => {
     setError(false);
+    const deckData = useLoaderData();
     const cardsData = parseDeckCards(deckData.cards);
 
     if (deckid.length !== 32 || deckData.publicParent) {
@@ -118,13 +120,6 @@ const Decks = () => {
 
     addRecentDeck(d);
     setDeck(d);
-
-    // TODO get errors from route
-    // if (error.message == 400) {
-    //   setError('NO DECK WITH THIS ID');
-    // } else {
-    //   setError('CONNECTION PROBLEM');
-    // }
   };
 
   const toggleInventoryState = (id) => {
@@ -205,24 +200,34 @@ const Decks = () => {
   }, [hash, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (
-      cryptCardBase &&
-      libraryCardBase &&
-      decks !== undefined &&
-      deckid &&
-      (deck?.deckid !== deckid || !deck)
-    ) {
-      if (decks[deckid]) {
-        setDeck(decks[deckid]);
-      } else if (deckid.includes(':')) {
-        const deckidFixed = deckid.replace('_', ' ');
-        if (preconDecks && preconDecks[deckidFixed]) {
-          setDeck(preconDecks[deckidFixed]);
-        } else {
-          setError('NO DECK WITH THIS ID');
-        }
+    if (deckError) {
+      if (deckError.message == 400) {
+        setError('NO DECK WITH THIS ID');
       } else {
-        getDeck();
+        setError('CONNECTION PROBLEM');
+      }
+      setDeck(undefined);
+    } else {
+      if (
+        cryptCardBase &&
+        libraryCardBase &&
+        decks !== undefined &&
+        deckid &&
+        (deck?.deckid !== deckid || !deck)
+      ) {
+        if (decks[deckid]) {
+          setDeck(decks[deckid]);
+        } else if (deckid.includes(':')) {
+          const deckidFixed = deckid.replace('_', ' ');
+          if (preconDecks && preconDecks[deckidFixed]) {
+            setDeck(preconDecks[deckidFixed]);
+          } else {
+            setDeck(undefined);
+            setError('NO DECK WITH THIS ID');
+          }
+        } else {
+          getDeck();
+        }
       }
     }
   }, [deckid, decks, preconDecks, cryptCardBase, libraryCardBase]);
@@ -631,6 +636,7 @@ export async function fetchDeck({ params }) {
     };
 
     const response = await fetch(url, options);
+    if (!response.ok) throw Error(response.status);
     return response.json();
   } else {
     return null;

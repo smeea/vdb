@@ -60,7 +60,12 @@ const App = () => {
         <Route path="diff/:deckidFrom/:deckidTo" element={<Diff />} />
         <Route path="inventory" element={<Inventory />} />
         <Route path="decks" element={<Decks />} />
-        <Route path="/decks/:deckid" element={<Decks />} loader={fetchDeck} />
+        <Route
+          path="/decks/:deckid"
+          element={<Decks />}
+          errorElement={<Decks />}
+          loader={fetchDeck}
+        />
         <Route path="pda" element={<Pda />} />
         <Route path="review" element={<Review />} />
         <Route path="review/:deckid" element={<Review />} />

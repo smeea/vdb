@@ -6,7 +6,6 @@
 
 # REFACTOR
 - Test Amaranth import (both w/ and w/o versions)
-- Add getDeck errors
 - decks to valtio storage
 - inventory to valtio storage
 
