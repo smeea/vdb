@@ -7,13 +7,14 @@ import {
   DeckImportButton,
   DeckImportText,
   DeckImportAmaranth,
-  // DeckImportBadCardsModal,
+  DeckImportBadCardsModal,
 } from 'components';
 import { useApp } from 'context';
 import { useDeckImport } from 'hooks';
 
 const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const {
+    deck,
     parseDeckCards,
     setShowMenuButtons,
     setShowFloatingButtons,
@@ -23,12 +24,11 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     publicName,
   } = useApp();
   const navigate = useNavigate();
-
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');
   const [showTextModal, setShowTextModal] = useState(false);
   const [showAmaranthModal, setShowAmaranthModal] = useState(false);
-  // const [badCards, setBadCards] = useState([]);
+  const [badCards, setBadCards] = useState([]);
   const ref = useRef(null);
 
   const fileInput = React.createRef();
@@ -46,8 +46,10 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };
+
   const handleOpenTextModal = (isAnonymous) =>
     setShowTextModal({ isAnonymous: isAnonymous, show: true });
+
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 
   const createNewDeck = () => {
@@ -160,7 +162,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             deckid: data.deckid,
           });
           navigate(`/decks/${data.deckid}`);
-          // setBadCards(deck.badCards);
+          setBadCards(deck.badCards);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
           handleClose();
@@ -188,19 +190,18 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             handleOpenTextModal={handleOpenTextModal}
             handleOpenAmaranthModal={handleOpenAmaranthModal}
           />
-          {/* TODO */}
-          {/* {badCards && ( */}
-          {/*   <DeckImportBadCardsModal */}
-          {/*     deck={deck} */}
-          {/*     badCards={badCards} */}
-          {/*     setBadCards={setBadCards} */}
-          {/*   /> */}
-          {/* )} */}
+          {badCards && (
+            <DeckImportBadCardsModal
+              deckid={deck?.deckid}
+              badCards={badCards}
+              setBadCards={setBadCards}
+            />
+          )}
           <DeckImportText
             handleCloseModal={handleCloseImportModal}
             show={showTextModal.show}
             isAnonymous={showTextModal.isAnonymous}
-            /* setBadCards={setBadCards} */
+            setBadCards={setBadCards}
           />
           <DeckImportAmaranth
             parseCards={parseDeckCards}

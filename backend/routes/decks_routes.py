@@ -449,6 +449,11 @@ def import_deck_route():
         return abort(401)
 
     deck = request.json["deck"]
+    cards = {}
+    for k, v in deck["cards"].items():
+        k = int(k)
+        cards[k] = v
+
     author = current_user if not anonymous else None
     author_public_name = deck["author"]
 
@@ -459,7 +464,7 @@ def import_deck_route():
         author_public_name=author_public_name,
         description=deck["description"],
         author=author,
-        cards=deck["cards"],
+        cards=cards,
     )
 
     db.session.add(d)

@@ -73,7 +73,7 @@ const DeckPublicButton = ({ deck, noText }) => {
     </>
   );
 
-  const changes = null; // TODO: SHOW CHANGES FROM BASE
+  const changes = null;
 
   return (
     <>
