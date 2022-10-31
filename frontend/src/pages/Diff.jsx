@@ -25,6 +25,7 @@ import {
   DiffLibrary,
 } from 'components';
 import { useApp } from 'context';
+import { useDeck } from 'hooks';
 
 const Diff = () => {
   const {
@@ -34,7 +35,6 @@ const Diff = () => {
     recentDecks,
     addRecentDeck,
     preconDecks,
-    parseDeckCards,
     cryptCardBase,
     libraryCardBase,
     inventoryMode,
@@ -82,6 +82,7 @@ const Diff = () => {
   };
 
   const getDeck = (id, setD, setE) => {
+    setE(false);
     const url = `${process.env.API_URL}deck/${id}`;
     const options = {
       method: 'GET',
@@ -89,25 +90,37 @@ const Diff = () => {
       credentials: 'include',
     };
 
-    setE(false);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
-      .then((data) => {
-        const cardsData = parseDeckCards(data.cards);
+      .then((deckData) => {
+        const cardsData = useDeck(
+          deckData.cards,
+          cryptCardBase,
+          libraryCardBase
+        );
 
-        delete data.cards;
-        addRecentDeck(data);
-
-        setD({
-          ...data,
-          isPublic: Boolean(data.publicParent),
-          isBranches: Boolean(data.master || data.branches?.length > 0),
+        const d = {
+          author: deckData.author,
           crypt: cardsData.crypt,
+          deckid: deckData.deckid,
+          description: deckData.description,
+          isAuthor: deckData.isAuthor,
+          isBranches: Boolean(deckData.master || deckData.branches?.length > 0),
+          isNonEditable: deckData.isNonEditable,
+          isPublic: Boolean(deckData.publicParent),
           library: cardsData.library,
-        });
+          name: deckData.name,
+          publicChild: deckData.publicChild,
+          publicParent: deckData.publicParent,
+          tags: deckData.tags,
+          timestamp: deckData.timestamp,
+        };
+
+        addRecentDeck(d);
+        setD(d);
       })
       .catch((error) => {
         if (error.message == 400) {
@@ -115,6 +128,7 @@ const Diff = () => {
         } else {
           setE('CONNECTION PROBLEM');
         }
+        setDeck(undefined);
       });
   };
 
@@ -127,45 +141,39 @@ const Diff = () => {
   };
 
   useEffect(() => {
-    if (
-      cryptCardBase &&
-      libraryCardBase &&
-      decks !== undefined &&
-      deckidFrom &&
-      (deck?.deckid !== deckidFrom || !deck)
-    ) {
-      if (decks[deckidFrom]) {
-        setDeck(decks[deckidFrom]);
-      } else if (deckidFrom.includes(':')) {
-        if (preconDecks && preconDecks[deckidFrom]) {
-          setDeck(preconDecks[deckidFrom]);
+    if (cryptCardBase && libraryCardBase && decks !== undefined) {
+      if (deckidFrom && (deck?.deckid != deckidFrom || !deck)) {
+        if (decks[deckidFrom]) {
+          setDeck(decks[deckidFrom]);
+        } else if (deckidFrom.includes(':')) {
+          if (preconDecks && preconDecks[deckidFrom]) {
+            setDeck(preconDecks[deckidFrom]);
+          } else {
+            setDeck(undefined);
+            setErrorFrom('NO DECK WITH THIS ID');
+          }
         } else {
-          setErrorFrom('NO DECK WITH THIS ID');
+          getDeck(deckidFrom, setDeck, setErrorFrom);
         }
-      } else {
-        getDeck(deckidFrom, setDeck, setErrorFrom);
       }
     }
   }, [deckidFrom, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (
-      cryptCardBase &&
-      libraryCardBase &&
-      decks !== undefined &&
-      deckidTo &&
-      (deckTo?.deckid !== deckidTo || !deckTo)
-    ) {
-      if (decks[deckidTo]) {
-        setDeckTo(decks[deckidTo]);
-      } else if (deckidTo.includes(':')) {
-        if (preconDecks && preconDecks[deckidTo]) {
-          setDeckTo(preconDecks[deckidTo]);
+    if (cryptCardBase && libraryCardBase && decks !== undefined) {
+      if (deckidTo && (deck?.deckid != deckidTo || !deckTo)) {
+        if (decks[deckidTo]) {
+          setDeckTo(decks[deckidTo]);
+        } else if (deckidTo.includes(':')) {
+          if (preconDecks && preconDecks[deckidTo]) {
+            setDeckTo(preconDecks[deckidTo]);
+          } else {
+            setDeckTo(undefined);
+            setErrorTo('NO DECK WITH THIS ID');
+          }
         } else {
-          setErrorTo('NO DECK WITH THIS ID');
+          getDeck(deckidTo, setDeckTo, setErrorTo);
         }
-      } else {
-        getDeck(deckidTo, setDeckTo, setErrorTo);
       }
     }
   }, [deckidTo, decks, preconDecks, cryptCardBase, libraryCardBase]);
@@ -245,7 +253,7 @@ const Diff = () => {
       <Row className="mx-0">
         <Col xl={1}></Col>
         <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
-          <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0 pb-xl-4">
+          <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0">
             <Col className="px-0 ps-lg-3">
               <Row className="bold blue mx-0 pb-1">Deck You Edit:</Row>
               {selectFrom === 'from-url' ? (

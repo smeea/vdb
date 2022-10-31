@@ -70,7 +70,7 @@ export const getLocalizedCardBase = async (lang) => {
   };
 };
 
-export const getPreconDecks = () => {
+export const getPreconDecks = (cryptCardBase, libraryCardBase) => {
   const preconDecks = {};
 
   Object.keys(preconDecksData).map((set) => {
@@ -87,7 +87,11 @@ export const getPreconDecks = () => {
         library: {},
       };
 
-      const cardsData = useDeck(preconDecksData[set][precon]);
+      const cardsData = useDeck(
+        preconDecksData[set][precon],
+        cryptCardBase,
+        libraryCardBase
+      );
       let tags = [];
       Object.values(useTags(cardsData.crypt, cardsData.library)).map((v) => {
         tags = tags.concat(v);

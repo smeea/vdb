@@ -128,7 +128,9 @@ export const AppProvider = (props) => {
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
       whoAmI();
-      setPreconDecks(cardServices.getPreconDecks());
+      setPreconDecks(
+        cardServices.getPreconDecks(cryptCardBase, libraryCardBase)
+      );
     }
   }, [cryptCardBase, libraryCardBase]);
 
@@ -191,8 +193,7 @@ export const AppProvider = (props) => {
       }
     }
     if (cryptCardBase && libraryCardBase) {
-      // TODO FIX
-      // triggerLangChange();
+      triggerLangChange();
     }
   }, [lang, nativeCrypt, nativeLibrary]);
 

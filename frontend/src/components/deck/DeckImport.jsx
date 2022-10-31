@@ -15,7 +15,6 @@ import { useDeckImport } from 'hooks';
 const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const {
     deck,
-    parseDeckCards,
     setShowMenuButtons,
     setShowFloatingButtons,
     cryptCardBase,
@@ -204,7 +203,6 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             setBadCards={setBadCards}
           />
           <DeckImportAmaranth
-            parseCards={parseDeckCards}
             handleCloseModal={handleCloseImportModal}
             show={showAmaranthModal}
           />

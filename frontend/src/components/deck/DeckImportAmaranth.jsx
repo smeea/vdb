@@ -4,9 +4,11 @@ import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
+import { useDeck } from 'hooks';
 
-const DeckImportAmaranth = ({ parseCards, handleCloseModal, show }) => {
-  const { addDeckToState, setDecks, isMobile } = useApp();
+const DeckImportAmaranth = ({ handleCloseModal, show }) => {
+  const { addDeckToState, setDecks, isMobile, cryptCardBase, libraryCardBase } =
+    useApp();
   const navigate = useNavigate();
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyError, setEmptyError] = useState(false);
@@ -143,7 +145,11 @@ const DeckImportAmaranth = ({ parseCards, handleCloseModal, show }) => {
             const decks = { ...decks };
 
             branches.map((b) => {
-              const { crypt, library } = parseCards(b.cards);
+              const { crypt, library } = useDeck(
+                b.cards,
+                cryptCardBase,
+                libraryCardBase
+              );
 
               decks[b.deckid] = {
                 author: deck.author,

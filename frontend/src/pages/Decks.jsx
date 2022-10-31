@@ -29,7 +29,7 @@ import {
   DeckImport,
 } from 'components';
 import { useApp } from 'context';
-import { useDeckMissing, useTags } from 'hooks';
+import { useDeck, useDeckMissing, useTags } from 'hooks';
 
 const Decks = () => {
   const {
@@ -39,7 +39,6 @@ const Decks = () => {
     decks,
     inventoryMode,
     isMobile,
-    parseDeckCards,
     playtest,
     preconDecks,
     recentDecks,
@@ -81,7 +80,7 @@ const Decks = () => {
   const getDeck = () => {
     setError(false);
 
-    const url = `${process.env.API_URL}deck/${params.deckid}`;
+    const url = `${process.env.API_URL}deck/${deckid}`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -94,7 +93,11 @@ const Decks = () => {
         return response.json();
       })
       .then((deckData) => {
-        const cardsData = parseDeckCards(deckData.cards);
+        const cardsData = useDeck(
+          deckData.cards,
+          cryptCardBase,
+          libraryCardBase
+        );
 
         if (deckid.length !== 32 || deckData.publicParent) {
           deckData.tags = [];

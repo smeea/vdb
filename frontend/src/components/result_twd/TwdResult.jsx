@@ -11,14 +11,16 @@ import {
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp } from 'context';
+import { useDeck } from 'hooks';
 
 const TwdResult = ({ results, setResults }) => {
   const {
-    parseDeckCards,
     isMobile,
     showFloatingButtons,
     twdSearchSort,
     changeTwdSearchSort,
+    cryptCardBase,
+    libraryCardBase,
   } = useApp();
   const navigate = useNavigate();
   const showCounterStep = 20;
@@ -49,7 +51,7 @@ const TwdResult = ({ results, setResults }) => {
         while (newCounter > 0) {
           newCounter -= 1;
 
-          const cardsData = parseDeckCards(deck.cards);
+          const cardsData = useDeck(deck.cards, cryptCardBase, libraryCardBase);
           deck.crypt = cardsData.crypt;
           deck.library = cardsData.library;
 

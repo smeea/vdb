@@ -115,7 +115,13 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
       </td>
       <td className={`${isMobile ? '' : 'px-1'}`}>
         {card.deckid && (
-          <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} inHistory />
+          <div>
+            <TwdOpenDeckButton
+              deckid={card.deckid}
+              noText={isMobile}
+              inHistory
+            />
+          </div>
         )}
       </td>
     </tr>

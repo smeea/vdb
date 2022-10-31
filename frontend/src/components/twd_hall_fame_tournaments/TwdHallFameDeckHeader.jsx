@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { useApp } from 'context';
 import { TwdHallFameDeckBody } from 'components';
+import { useDeck } from 'hooks';
 
 const TwdHallFameDeckHeader = ({ deck, isStar }) => {
-  const { isMobile, parseDeckCards } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const [showDeck, setShowDeck] = useState(false);
   const [cards, setCards] = useState(null);
@@ -21,8 +22,8 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
       response.json()
     );
 
-    const deckData = parseDeckCards(result.cards);
-    setCards(deckData);
+    const cardsData = useDeck(result.cards, cryptCardBase, libraryCardBase);
+    setCards(cardsData);
   };
 
   const handleClick = async () => {

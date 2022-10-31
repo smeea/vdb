@@ -15,7 +15,7 @@ import {
   DeckChangeDescription,
 } from 'components';
 import { useApp } from 'context';
-import { useTags } from 'hooks';
+import { useDeck, useTags } from 'hooks';
 
 const Review = () => {
   const {
@@ -24,7 +24,6 @@ const Review = () => {
     decks,
     isMobile,
     libraryCardBase,
-    parseDeckCards,
     preconDecks,
     setShowFloatingButtons,
     setShowMenuButtons,
@@ -49,6 +48,7 @@ const Review = () => {
   const [urlDiff, setUrlDiff] = useState();
 
   const getDeck = (deckid) => {
+    setError(false);
     const url = `${process.env.API_URL}deck/${deckid}`;
     const options = {
       method: 'GET',
@@ -61,21 +61,39 @@ const Review = () => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
-      .then((data) => {
-        const cardsData = parseDeckCards(data.cards);
-        data.crypt = cardsData.crypt;
-        data.library = cardsData.library;
+      .then((deckData) => {
+        const cardsData = useDeck(
+          deckData.cards,
+          cryptCardBase,
+          libraryCardBase
+        );
 
-        if (deckid.length !== 32 || data.publicParent) {
-          data.tags = [];
-          Object.values(useTags(data.crypt, data.library)).map((v) => {
-            data.tags = data.tags.concat(v);
+        if (deckid.length !== 32 || deckData.publicParent) {
+          deckData.tags = [];
+          Object.values(useTags(deckData.crypt, deckData.library)).map((v) => {
+            deckData.tags = deckData.tags.concat(v);
           });
         }
 
-        delete data.cards;
-        setDeckFrom(data);
-        setDeckTo(JSON.parse(JSON.stringify(data)));
+        const d = {
+          author: deckData.author,
+          crypt: cardsData.crypt,
+          deckid: deckData.deckid,
+          description: deckData.description,
+          isAuthor: deckData.isAuthor,
+          isBranches: Boolean(deckData.master || deckData.branches?.length > 0),
+          isNonEditable: deckData.isNonEditable,
+          isPublic: Boolean(deckData.publicParent),
+          library: cardsData.library,
+          name: deckData.name,
+          publicChild: deckData.publicChild,
+          publicParent: deckData.publicParent,
+          tags: deckData.tags,
+          timestamp: deckData.timestamp,
+        };
+
+        setDeckTo(d);
+        setDeckFrom(d);
       })
       .catch((error) => {
         if (error.message == 400) {
@@ -83,6 +101,8 @@ const Review = () => {
         } else {
           setError('CONNECTION PROBLEM');
         }
+        setDeckTo(undefined);
+        setDeckFrom(undefined);
       });
   };
 

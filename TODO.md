@@ -1,6 +1,5 @@
 # FIX
 - Iphone clipboard (copy url)
-- Crypt sorting in review (works in Deck!)
 - Update rulings & twds
 - Test Amaranth import (both w/ and w/o versions)
 
