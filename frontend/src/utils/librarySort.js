@@ -22,7 +22,6 @@ const librarySort = (cards, sortMethod) => {
   };
 
   if (cards) {
-    cards = [...cards];
     switch (sortMethod) {
       case 'Name':
         return cards.sort(byName);
