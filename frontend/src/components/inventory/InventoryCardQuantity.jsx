@@ -44,9 +44,8 @@ const InventoryCardQuantity = ({
     if (handleCardChange) {
       handleCardChange(card, parseInt(diff + state));
     }
-    console.log(cardid);
-    // inventoryServices.inventoryCardChange(card, parseInt(diff + state));
-    // inventoryCardChangeState(card, parseInt(diff + state));
+    inventoryServices.inventoryCardChange(card, parseInt(diff + state));
+    inventoryCardChangeState(card, parseInt(diff + state));
   };
 
   return (

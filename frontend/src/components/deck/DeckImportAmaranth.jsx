@@ -4,11 +4,10 @@ import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
-import { useDeck } from 'hooks';
+import { deckServices } from 'services';
 
 const DeckImportAmaranth = ({ handleCloseModal, show }) => {
-  const { addDeckToState, setDecks, isMobile, cryptCardBase, libraryCardBase } =
-    useApp();
+  const { addDeckToState, isMobile } = useApp();
   const navigate = useNavigate();
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyError, setEmptyError] = useState(false);
@@ -40,7 +39,8 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
       setSpinnerState(true);
 
       if (idReference) {
-        getDeckFromUrl(deckUrl)
+        deckServices
+          .getDeckFromAmaranth(deckUrl)
           .then((deck) => importDeckFromAmaranth(deck))
           .then(() => {
             setDeckUrl('');
@@ -81,132 +81,76 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
       });
     });
 
-    const url = `${process.env.API_URL}deck/${master.deckid}/branch`;
-
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        branches: branches,
-      }),
-    };
-
-    return fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        data.map((branch, idx) => {
-          branches[idx].deckid = branch.deckid;
-          branches[idx].branch_name = branch.branch_name;
-        });
-        return branches;
-      })
-      .catch(() => setImportError(true));
+    return deckServices.branchesImport(master.deckid, branches);
   };
 
   const importDeckFromAmaranth = async (amaranth_deck) => {
-    const deck = {
+    const deckBody = {
       name: amaranth_deck.title,
-      author: amaranth_deck.author,
-      description: amaranth_deck.description,
+      author: amaranth_deck.author || '',
+      description: amaranth_deck.description || '',
       cards: {},
     };
 
     Object.keys(amaranth_deck.cards).map((i) => {
       if (idReference[i] !== undefined) {
-        deck.cards[idReference[i]] = amaranth_deck.cards[i];
+        deckBody.cards[idReference[i]] = amaranth_deck.cards[i];
       }
     });
 
-    const url = `${process.env.API_URL}deck`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(deck),
-    };
-
-    const fetchPromise = fetch(url, options);
-
-    fetchPromise
+    deckServices
+      .deckImport(deckBody)
       .then((response) => response.json())
       .then((data) => {
-        deck.deckid = data.deckid;
+        deckBody.deckid = data.deckid;
+
+        const now = new Date();
+        const deck = {
+          author: deckBody.author,
+          branchName: '#0',
+          deckid: deckBody.deckid,
+          description: deckBody.description,
+          isAuthor: true,
+          cards: deckBody.cards,
+          name: deckBody.name,
+          timestamp: now.toUTCString(),
+        };
 
         if (amaranth_deck.versions) {
-          branchesImport(deck, amaranth_deck.versions).then((branches) => {
-            const now = new Date();
-            const decks = { ...decks };
+          const branches = {};
 
-            branches.map((b) => {
-              const { crypt, library } = useDeck(
-                b.cards,
-                cryptCardBase,
-                libraryCardBase
-              );
-
-              decks[b.deckid] = {
-                author: deck.author,
-                branchName: b.branch_name,
-                crypt: crypt,
+          branchesImport(deckBody, amaranth_deck.versions).then((brs) => {
+            brs.map((b) => {
+              const n = new Date();
+              const d = {
+                author: deckBody.author,
+                branchName: b.branchName,
+                cards: b.cards,
                 deckid: b.deckid,
-                description: b.comments || '',
+                description: b.description,
                 isAuthor: true,
-                library: library,
-                master: deck.deckid,
-                name: deck.name,
-                timestamp: now.toUTCString(),
+                master: deckBody.deckid,
+                name: deckBody.name,
+                timestamp: n.toUTCString(),
               };
+
+              branches[d.deckid] = d;
             });
 
-            const { crypt, library } = parseCards(deck.cards);
-            decks[deck.deckid] = {
-              author: deck.author,
-              branchName: '#0',
-              branches: Object.keys(decks),
-              crypt: crypt,
-              deckid: deck.deckid,
-              description: deck.description || '',
-              isAuthor: true,
-              library: library,
-              name: deck.name,
-              timestamp: now.toUTCString(),
-            };
-
-            setDecks((draft) => {
-              Object.entries(decks).map((i) => {
-                draft[i[0]] = i[1];
-              });
+            deck.branches = Object.keys(branches);
+            Object.values(branches).map((b) => {
+              addDeckToState(b);
             });
+            addDeckToState(deck);
+            // TODO fix navigation to happen only after branches in state
+            // navigate(`/decks/${deck.deckid}`);
           });
         } else {
-          addDeckToState(data);
+          addDeckToState(deck);
+          navigate(`/decks/${deck.deckid}`);
         }
-
-        navigate(`/decks/${deck.deckid}`);
       })
       .catch(() => setImportError(true));
-  };
-
-  const getDeckFromUrl = async (deckUrl) => {
-    const url = `${process.env.AMARANTH_API_URL}deck`;
-    const id = deckUrl.replace(/.*#deck\//i, '');
-    const options = {
-      method: 'POST',
-      body: `id=${id}`,
-    };
-
-    const response = await fetch(url, options).catch(() =>
-      setImportError(true)
-    );
-    const deck = await response.json();
-    return deck.result;
   };
 
   return (

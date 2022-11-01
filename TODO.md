@@ -2,7 +2,7 @@
 - Iphone clipboard (copy url)
 - Update rulings & twds
 - Inventory revert changes on network errors
-- Test Amaranth import (both w/ and w/o versions)
+- Amaranth import with branches to navigate after state update
 
 # FEATURES
 - Check TWD
@@ -18,7 +18,6 @@
 - Refactor CSS - Tailwind
 - Decks to valtio storage
 - Cardbase to valtio storage
-- Move deck import fetches to deckServices (refactor as for inventory)
 
 # IMPROVE TECHNOLOGY - BACKEND
 

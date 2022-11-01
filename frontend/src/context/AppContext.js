@@ -503,6 +503,8 @@ export const AppProvider = (props) => {
     const d = {
       deckid: deck.deckid,
       name: deck.name ?? '',
+      master: deck.master ?? null,
+      branches: deck.branches ?? [],
       branchName: deck.branchName ?? '#0',
       description: deck.description ?? '',
       author: deck.author ?? '',
