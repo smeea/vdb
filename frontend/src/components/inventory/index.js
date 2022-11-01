@@ -17,6 +17,7 @@ export { default as InventoryNewLibraryCard } from './InventoryNewLibraryCard.js
 export { default as InventoryDesktop } from './InventoryDesktop.jsx';
 export { default as InventoryMobile } from './InventoryMobile.jsx';
 export { default as InventoryImport } from './InventoryImport.jsx';
+export { default as InventoryImportBadCardsModal } from './InventoryImportBadCardsModal.jsx';
 export { default as InventoryImportButton } from './InventoryImportButton.jsx';
 export { default as InventoryShareButton } from './InventoryShareButton.jsx';
 export { default as InventoryShareModal } from './InventoryShareModal.jsx';

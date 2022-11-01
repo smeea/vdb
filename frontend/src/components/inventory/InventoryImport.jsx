@@ -2,16 +2,17 @@ import React, { useState, useRef } from 'react';
 import {
   ErrorOverlay,
   InventoryImportButton,
-  // DeckImportBadCardsModal,
+  InventoryImportBadCardsModal,
 } from 'components';
-import { useApp } from 'context';
-import { useDeckImport } from 'hooks';
+import { useApp, inventoryCardsAddState } from 'context';
+import { useDeck, useDeckImport } from 'hooks';
+import { inventoryServices } from 'services';
 
 const InventoryImport = () => {
-  const { inventoryCardsAdd, cryptCardBase, libraryCardBase } = useApp();
+  const { cryptCardBase, libraryCardBase } = useApp();
 
   const [importError, setImportError] = useState(false);
-  // const [badCards, setBadCards] = useState([]);
+  const [badCards, setBadCards] = useState([]);
   const ref = useRef(null);
   const fileInput = React.createRef();
 
@@ -57,19 +58,30 @@ const InventoryImport = () => {
         libraryCardBase
       );
 
-      inventoryCardsAdd(deck.cards);
+      const { crypt, library } = useDeck(
+        deck.cards,
+        cryptCardBase,
+        libraryCardBase
+      );
+
+      setBadCards(deck.badCards);
+      inventoryServices
+        .inventoryImportCards({ ...crypt, ...library })
+        .then(() => {
+          inventoryCardsAddState({ ...crypt, ...library });
+        });
     };
   };
 
   return (
     <>
       <InventoryImportButton handleClick={handleFileInputClick} />
-      {/* {badCards && ( */}
-      {/*   <DeckImportBadCardsModal */}
-      {/*     badCards={badCards} */}
-      {/*     setBadCards={setBadCards} */}
-      {/*   /> */}
-      {/* )} */}
+      {badCards && (
+        <InventoryImportBadCardsModal
+          badCards={badCards}
+          setBadCards={setBadCards}
+        />
+      )}
       <input
         ref={fileInput}
         accept="text/*"

@@ -222,7 +222,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
       <Modal.Header
         className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
       >
-        <h5>Import from Amaranth URL</h5>
+        <h5>Import from Amaranth</h5>
         <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>

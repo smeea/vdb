@@ -26,7 +26,7 @@ const DeckImportButton = ({
             Import from Text
           </Dropdown.Item>
           <Dropdown.Item onClick={handleOpenAmaranthModal}>
-            Import from Amaranth URL
+            Import from Amaranth
           </Dropdown.Item>
           <Dropdown.Divider />
         </>

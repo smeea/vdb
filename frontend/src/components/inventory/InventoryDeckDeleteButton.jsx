@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ModalConfirmation } from 'components';
-import { inventoryCardsAdd } from 'context';
+import { inventoryCardsAddState } from 'context';
+import { inventoryServices } from 'services';
 
 const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -18,7 +19,9 @@ const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
       }
     });
 
-    inventoryCardsAdd(cards);
+    inventoryServices.inventoryImportCards(cards).then(() => {
+      inventoryCardsAddState(cards);
+    });
   };
 
   const handleCancel = () => setShowConfirmation(false);
