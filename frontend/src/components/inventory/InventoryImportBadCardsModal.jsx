@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { useApp } from 'context';
+import { useApp, inventoryCardChangeState } from 'context';
 import { DeckCardQuantity, QuickSelect } from 'components';
+import { inventoryServices } from 'services';
 
 const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
-  const { isMobile, deckCardChange } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const [cards, setCards] = useState([]);
 
@@ -18,12 +19,18 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
     );
   }, [badCards]);
 
-  const handleCardChange = (deckid, idx, q) => {
-    if (cards[idx]?.cardid && q >= 0) {
-      deckCardChange(deckid, cards[idx].cardid, q);
+  const handleCardChange = (_, idx, q) => {
+    if (cards[idx] && q >= 0) {
+      const cardid = cards[idx]?.cardid;
+      const card =
+        cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+      inventoryServices.inventoryCardChange(card, q);
+      inventoryCardChangeState(card, q);
+
       setCards((prevState) => {
-        prevState[idx].q = q;
-        return prevState;
+        const newState = { ...prevState };
+        newState[idx].q = q;
+        return newState;
       });
     }
   };
@@ -59,7 +66,6 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
               <Col md={5}>{c}</Col>
               <Col md={1}>
                 <DeckCardQuantity
-                  deckid={deckid}
                   cardChange={handleCardChange}
                   cardid={idx}
                   q={cards[idx]?.q}
@@ -69,7 +75,7 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
                 <QuickSelect
                   setCard={(card) => handleSetCard(card, idx)}
                   selectedCardid={cards[idx]?.cardid}
-                  inBadImport={true}
+                  inBadImport
                 />
               </Col>
             </Row>

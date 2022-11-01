@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (copy url)
 - Update rulings & twds
-- Inventory import bad cards
 - Inventory revert changes on network errors
 - Test Amaranth import (both w/ and w/o versions)
 
