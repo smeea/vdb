@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
-import { useApp } from 'context';
+import { useApp, deckUpdate } from 'context';
 
 const DeckChangeAuthor = ({ deck }) => {
-  const { deckUpdate, isMobile } = useApp();
+  const { isMobile } = useApp();
   const { deckid, author, isAuthor, isPublic } = deck;
   const [state, setState] = useState(author);
   const [buttonState, setButtonState] = useState(false);

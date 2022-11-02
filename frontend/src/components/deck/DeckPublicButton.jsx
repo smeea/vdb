@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import {
   ButtonGroup,
@@ -8,11 +9,11 @@ import {
 } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ModalConfirmation, DeckTogglePublicButton } from 'components';
-import { useApp } from 'context';
+import { useApp, deckStore } from 'context';
 
 const DeckPublicButton = ({ deck, noText }) => {
-  const { decks, setDeck, setShowMenuButtons, setShowFloatingButtons } =
-    useApp();
+  const { setShowMenuButtons, setShowFloatingButtons } = useApp();
+  const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
   const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
@@ -45,10 +46,8 @@ const DeckPublicButton = ({ deck, noText }) => {
     fetch(url, options)
       .then((response) => response.json())
       .then(() => {
-        setDeck((draft) => {
-          draft.crypt = { ...decks[deck.publicParent].crypt };
-          draft.library = { ...decks[deck.publicParent].library };
-        });
+        deckStore.deck.crypt = { ...decks[deck.publicParent].crypt };
+        deckStore.deck.library = { ...decks[deck.publicParent].library };
       });
     setSpinnerState(false);
   };

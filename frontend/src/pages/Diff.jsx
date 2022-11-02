@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
   Modal,
@@ -24,14 +25,11 @@ import {
   DiffCrypt,
   DiffLibrary,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, deckStore, setDeck } from 'context';
 import { useDeck } from 'hooks';
 
 const Diff = () => {
   const {
-    deck,
-    setDeck,
-    decks,
     recentDecks,
     addRecentDeck,
     preconDecks,
@@ -46,6 +44,8 @@ const Diff = () => {
     setShowMenuButtons,
   } = useApp();
   const navigate = useNavigate();
+  const deck = useSnapshot(deckStore).deck;
+  const decks = useSnapshot(deckStore).decks;
   const { deckidFrom, deckidTo } = useParams();
 
   const [errorFrom, setErrorFrom] = useState(false);
@@ -128,7 +128,7 @@ const Diff = () => {
         } else {
           setE('CONNECTION PROBLEM');
         }
-        setDeck(undefined);
+        setD(undefined);
       });
   };
 

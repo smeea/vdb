@@ -19,7 +19,7 @@ const AccountChangeEmail = () => {
 
   const [state, setState] = useState({
     password: '',
-    email: email,
+    email: email || '',
   });
 
   const [showModal, setShowModal] = useState(false);

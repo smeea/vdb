@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useSnapshot } from 'valtio';
 import {
   Spinner,
   Dropdown,
@@ -8,18 +9,18 @@ import {
 import Download from 'assets/images/icons/download.svg';
 import { ErrorOverlay } from 'components';
 import { useDeckExport } from 'hooks';
-import { useApp } from 'context';
+import { useApp, deckStore } from 'context';
 
 const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   const {
     username,
-    decks,
     setShowFloatingButtons,
     setShowMenuButtons,
     nativeCrypt,
     nativeLibrary,
     lang,
   } = useApp();
+  const decks = useSnapshot(deckStore).decks;
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);

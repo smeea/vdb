@@ -12,6 +12,8 @@ import {
   searchResults,
   setCryptResults,
   setCryptCompare,
+  setDeck,
+  deckStore,
 } from 'context';
 
 const Crypt = () => {
@@ -21,18 +23,10 @@ const Crypt = () => {
     toggleAddMode,
     isMobile,
     isDesktop,
-    deck,
-    setDeck,
-    decks,
     lastDeckId,
   } = useApp();
-
-  useEffect(() => {
-    if (!deck && decks) {
-      setDeck(decks[lastDeckId]);
-    }
-  }, [deck, decks]);
-
+  const deck = useSnapshot(deckStore).deck;
+  const decks = useSnapshot(deckStore).decks;
   const cryptResults = useSnapshot(searchResults).crypt;
   const cryptCompare = useSnapshot(searchResults).cryptCompare;
   const showSearchForm = useMemo(() => {
@@ -48,6 +42,12 @@ const Crypt = () => {
   }, [deck, isMobile, isDesktop, cryptResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showCryptSearch));
+
+  useEffect(() => {
+    if (!deck && decks !== undefined && lastDeckId) {
+      setDeck(decks[lastDeckId]);
+    }
+  }, [deck, decks]);
 
   return (
     <Container className="main-container px-md-2 px-xl-4">

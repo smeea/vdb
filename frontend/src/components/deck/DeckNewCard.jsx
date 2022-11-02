@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NewCryptCard, NewLibraryCard } from 'components';
-import { useApp } from 'context';
+import { deckCardChange } from 'context';
 
 const DeckNewCard = ({ target, cards, deckid, setShowAdd, cardChange }) => {
-  const { deckCardChange } = useApp();
   const [selectedValue, setSelectedValue] = useState(null);
 
   const changeAction = cardChange ? cardChange : deckCardChange;

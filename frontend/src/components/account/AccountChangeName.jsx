@@ -15,7 +15,7 @@ import { userServices } from 'services';
 const AccountChangeName = () => {
   const { publicName, setPublicName, isMobile } = useApp();
 
-  const [state, setState] = useState(publicName);
+  const [state, setState] = useState(publicName || '');
   const refName = useRef();
 
   const [showModal, setShowModal] = useState(false);

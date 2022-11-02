@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import { Stack } from 'react-bootstrap';
 import Folder2Open from 'assets/images/icons/folder2-open.svg';
@@ -12,7 +13,7 @@ import {
   ButtonIconed,
 } from 'components';
 import FolderPlus from 'assets/images/icons/folder-plus.svg';
-import { useApp } from 'context';
+import { useApp, deckStore } from 'context';
 
 const InventoryButtons = ({
   setShowAddDeck,
@@ -30,14 +31,13 @@ const InventoryButtons = ({
   setInventoryKey,
 }) => {
   const {
-    decks,
     preconDecks,
     setShowFloatingButtons,
     setShowMenuButtons,
     publicName,
     isNarrow,
   } = useApp();
-
+  const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
 
   const handleClose = () => {

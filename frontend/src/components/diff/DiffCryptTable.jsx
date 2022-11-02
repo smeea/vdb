@@ -19,7 +19,13 @@ import {
   DiffQuantityDiff,
 } from 'components';
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
-import { useApp, usedStore, inventoryStore } from 'context';
+import {
+  useApp,
+  usedStore,
+  inventoryStore,
+  deckStore,
+  deckCardChange,
+} from 'context';
 
 const DiffCryptTable = ({
   cardChange,
@@ -38,14 +44,8 @@ const DiffCryptTable = ({
   handleModalCardOpen,
   inReview,
 }) => {
-  const {
-    decks,
-    inventoryMode,
-    isMobile,
-    isWide,
-    deckCardChange,
-    setShowFloatingButtons,
-  } = useApp();
+  const { inventoryMode, isMobile, isWide, setShowFloatingButtons } = useApp();
+  const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;

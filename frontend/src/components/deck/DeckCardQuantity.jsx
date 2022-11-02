@@ -14,7 +14,7 @@ const DeckCardQuantity = ({
   cardChange,
   inProxy,
 }) => {
-  const { isMobile } = useApp();
+  const { isMobile, cryptCardBase, libraryCardBase } = useApp();
 
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(q ? q : '');
@@ -29,7 +29,13 @@ const DeckCardQuantity = ({
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    cardChange(deckid, cardid, state ? state : 0);
+    cardChange(
+      deckid,
+      cardid,
+      state ? state : 0,
+      cryptCardBase,
+      libraryCardBase
+    );
     setManual(false);
   };
 
@@ -59,7 +65,9 @@ const DeckCardQuantity = ({
         <>
           <a
             className="quantity"
-            onClick={() => cardChange(deckid, cardid, q - 1)}
+            onClick={() =>
+              cardChange(deckid, cardid, q - 1, cryptCardBase, libraryCardBase)
+            }
           >
             <Button className="quantity" variant="primary">
               -
@@ -70,7 +78,9 @@ const DeckCardQuantity = ({
           </div>
           <a
             className="quantity"
-            onClick={() => cardChange(deckid, cardid, q + 1)}
+            onClick={() =>
+              cardChange(deckid, cardid, q + 1, cryptCardBase, libraryCardBase)
+            }
           >
             <Button className="quantity" variant="primary">
               +
@@ -83,7 +93,15 @@ const DeckCardQuantity = ({
             <Button
               className="quantity"
               variant="primary"
-              onClick={() => cardChange(deckid, cardid, q - 1)}
+              onClick={() =>
+                cardChange(
+                  deckid,
+                  cardid,
+                  q - 1,
+                  cryptCardBase,
+                  libraryCardBase
+                )
+              }
               tabIndex={-1}
             >
               -
@@ -115,7 +133,15 @@ const DeckCardQuantity = ({
             <Button
               className="quantity"
               variant="primary"
-              onClick={() => cardChange(deckid, cardid, q + 1)}
+              onClick={() =>
+                cardChange(
+                  deckid,
+                  cardid,
+                  q + 1,
+                  cryptCardBase,
+                  libraryCardBase
+                )
+              }
               tabIndex={-1}
             >
               +

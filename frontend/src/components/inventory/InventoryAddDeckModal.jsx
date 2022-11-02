@@ -18,10 +18,11 @@ import {
   OverlayTooltip,
 } from 'components';
 import { decksSort } from 'utils';
-import { useApp, inventoryStore } from 'context';
+import { useApp, deckStore, inventoryStore, deckUpdate } from 'context';
 
 const InventoryAddDeckModal = ({ show, handleClose }) => {
-  const { cryptCardBase, decks, deckUpdate, isDesktop, isMobile } = useApp();
+  const { cryptCardBase, isDesktop, isMobile } = useApp();
+  const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
 

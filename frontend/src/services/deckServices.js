@@ -1,4 +1,4 @@
-export const deckUpdate = (deckid, field, value) => {
+export const update = (deckid, field, value) => {
   const url = `${process.env.API_URL}deck/${deckid}`;
   const options = {
     method: 'PUT',
@@ -8,6 +8,21 @@ export const deckUpdate = (deckid, field, value) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ [field]: value }),
+  };
+
+  return fetch(url, options);
+};
+
+export const cardChange = (deckid, cardid, q) => {
+  const url = `${process.env.API_URL}deck/${deckid}`;
+  const options = {
+    method: 'PUT',
+    mode: 'cors',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ cardChange: { [cardid]: q } }),
   };
 
   return fetch(url, options);

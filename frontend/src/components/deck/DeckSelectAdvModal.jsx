@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import {
   Modal,
@@ -31,20 +32,13 @@ import {
   ResultClanImage,
   OverlayTooltip,
 } from 'components';
-
 import { decksSort } from 'utils';
-import { useApp } from 'context';
+import { useApp, deckStore, deckUpdate } from 'context';
 
 const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
-  const {
-    cryptCardBase,
-    decks,
-    deckUpdate,
-    inventoryMode,
-    isNarrow,
-    isMobile,
-    isDesktop,
-  } = useApp();
+  const { cryptCardBase, inventoryMode, isNarrow, isMobile, isDesktop } =
+    useApp();
+  const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
 
   const [sortMethod, setSortMethod] = useState('byName');
@@ -403,7 +397,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                 direction="horizontal"
                 gap={1}
               >
-                <DeckHideButton deckid={deck.deckid} />
+                <DeckHideButton deck={deck} />
                 {!isMobile && (
                   <>
                     <DeckFreezeButton deck={deck} />

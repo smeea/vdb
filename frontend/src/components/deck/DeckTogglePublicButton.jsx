@@ -4,15 +4,14 @@ import { Dropdown, Spinner } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ButtonIconed, ModalConfirmation } from 'components';
 import { countCards } from 'utils';
-import { useApp } from 'context';
+import { deckStore } from 'context';
 
 const DeckTogglePublicButton = ({ deck, isDropdown }) => {
-  const { setDecks } = useApp();
   const navigate = useNavigate();
   const [spinnerState, setSpinnerState] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const isPublished = Boolean(deck.publicParent || deck.publicChild);
-  const parentId = deck.publicParent ?? deck.publicChild;
+  const parentId = deck.publicParent ?? deck.deckid;
 
   const handleConfirmation = () => {
     createOrDelete();
@@ -34,9 +33,9 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        setDecks((draft) => {
-          draft[parentId].publicChild = isPublished ? null : data.deckid;
-        });
+        deckStore.decks[parentId].publicChild = isPublished
+          ? null
+          : data.deckid;
 
         navigate(`/decks/${isPublished ? deck.publicParent : data.deckid}`);
       });

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -28,21 +29,17 @@ import {
   DeckChangeDescription,
   DeckImport,
 } from 'components';
-import { useApp } from 'context';
+import { deckStore, useApp, setDeck, deckUpdate } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
 
 const Decks = () => {
   const {
     addRecentDeck,
-    deck,
-    deckUpdate,
-    decks,
     inventoryMode,
     isMobile,
     playtest,
     preconDecks,
     recentDecks,
-    setDeck,
     setShowFloatingButtons,
     setShowMenuButtons,
     showFloatingButtons,
@@ -52,7 +49,8 @@ const Decks = () => {
     cryptCardBase,
     libraryCardBase,
   } = useApp();
-
+  const deck = useSnapshot(deckStore).deck;
+  const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
   const { deckid } = useParams();
   const { hash } = useLocation();
@@ -211,21 +209,23 @@ const Decks = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && decks !== undefined) {
-      if (deckid && (deck?.deckid != deckid || !deck)) {
-        if (decks[deckid]) {
-          setDeck(decks[deckid]);
-        } else if (deckid.includes(':')) {
-          const deckidFixed = deckid.replace('_', ' ');
-          if (preconDecks && preconDecks[deckidFixed]) {
-            setDeck(preconDecks[deckidFixed]);
+      if (deckid) {
+        if (!deck || deck.deckid != deckid) {
+          if (decks[deckid]) {
+            setDeck(decks[deckid]);
+          } else if (deckid.includes(':')) {
+            const deckidFixed = deckid.replace('_', ' ');
+            if (preconDecks && preconDecks[deckidFixed]) {
+              setDeck(preconDecks[deckidFixed]);
+            } else {
+              setDeck(undefined);
+              setError('NO DECK WITH THIS ID');
+            }
           } else {
-            setDeck(undefined);
-            setError('NO DECK WITH THIS ID');
+            getDeck();
           }
-        } else {
-          getDeck();
         }
-      } else if (!deckid && lastDeckId) {
+      } else if (lastDeckId) {
         setDeck(decks[lastDeckId]);
       }
     }

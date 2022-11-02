@@ -18,7 +18,14 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
-import { useApp, usedStore, inventoryStore } from 'context';
+import {
+  useApp,
+  usedStore,
+  inventoryStore,
+  deckStore,
+  deckCardChange,
+  deckUpdate,
+} from 'context';
 
 const DeckLibraryTable = ({
   deck,
@@ -32,17 +39,15 @@ const DeckLibraryTable = ({
   isModalOpen,
 }) => {
   const {
-    decks,
     inventoryMode,
     nativeLibrary,
     isMobile,
     isDesktop,
     isNarrow,
     isWide,
-    deckUpdate,
-    deckCardChange,
     setShowFloatingButtons,
   } = useApp();
+  const decks = useSnapshot(deckStore).decks;
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const { deckid, isPublic, isAuthor } = deck;

@@ -4,9 +4,8 @@ import {
   InventoryImportButton,
   InventoryImportBadCardsModal,
 } from 'components';
-import { useApp, inventoryCardsAddState } from 'context';
+import { useApp, inventoryCardsAdd } from 'context';
 import { useDeck, useDeckImport } from 'hooks';
-import { inventoryServices } from 'services';
 
 const InventoryImport = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -65,11 +64,7 @@ const InventoryImport = () => {
       );
 
       setBadCards(deck.badCards);
-      inventoryServices
-        .inventoryImportCards({ ...crypt, ...library })
-        .then(() => {
-          inventoryCardsAddState({ ...crypt, ...library });
-        });
+      inventoryCardsAdd({ ...crypt, ...library });
     };
   };
 

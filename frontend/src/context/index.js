@@ -20,7 +20,7 @@ export {
 
 export {
   inventoryCardChangeState,
-  inventoryCardsAddState,
+  cardsAdd,
   inventoryStore,
   setInventoryCrypt,
   setInventoryLibrary,
@@ -29,4 +29,10 @@ export {
   usedStore,
 } from './InventoryStore.js';
 
-export { deck, decks, setDeck, setDecks } from './DeckStore.js';
+export {
+  deckStore,
+  setDeck,
+  deckCardChange,
+  deckUpdate,
+  deckAdd,
+} from './DeckStore.js';

@@ -1,31 +1,32 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { Button } from 'react-bootstrap';
-import { useApp } from 'context';
+import { deckStore, deckCardChange } from 'context';
 
-function ButtonAddCard(props) {
-  const { decks, deckCardChange } = useApp();
+const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
+  const decks = useSnapshot(deckStore).decks;
 
   const handleButton = () => {
-    deckCardChange(props.deckid, props.card.Id, props.inDeck + 1);
+    deckCardChange(deckid, card.Id, inDeck + 1);
   };
 
   let title = 'Add to Deck';
-  if (props.inQuick && decks && decks[props.deckid]) {
-    title = props.inDeck
-      ? `In deck "${decks[props.deckid].name}"`
-      : `Add to Deck "${decks[props.deckid].name}"`;
+  if (inQuick && decks && decks[deckid]) {
+    title = inDeck
+      ? `In deck "${decks[deckid].name}"`
+      : `Add to Deck "${decks[deckid].name}"`;
   }
 
   return (
     <Button
-      className={props.inDeck > 0 ? 'in' : 'add'}
+      className={inDeck > 0 ? 'in' : 'add'}
       variant="primary"
       onClick={handleButton}
       title={title}
     >
-      {props.inDeck ? props.inDeck : '+'}
+      {inDeck ? inDeck : '+'}
     </Button>
   );
-}
+};
 
 export default ButtonAddCard;

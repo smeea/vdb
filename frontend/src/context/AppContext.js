@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
-import { useImmer } from 'use-immer';
+import { useSnapshot } from 'valtio';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
-import { cardServices, deckServices } from 'services';
+import { cardServices } from 'services';
 import { useDeck, useWindowSize } from 'hooks';
 import {
   setInventoryCrypt,
@@ -10,6 +10,7 @@ import {
   setUsedLibrary,
 } from 'context';
 import { byTimestamp } from 'utils';
+import { deckStore } from 'context';
 
 const AppContext = React.createContext();
 
@@ -59,13 +60,9 @@ export const AppProvider = (props) => {
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
 
-  const [decks, setDecks] = useImmer();
-  const [deck, setDeck] = useImmer();
+  const decks = useSnapshot(deckStore).decks;
   const [lastDeckId, setLastDeckId] = useState();
   const [recentDecks, setRecentDecks] = useState([]);
-
-  const [changeTimer, setChangeTimer] = useState();
-  const [timers, setTimers] = useState([]);
 
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [showMenuButtons, setShowMenuButtons] = useState();
@@ -108,7 +105,7 @@ export const AppProvider = (props) => {
     if (!data.playtester && !data.playtest_admin) setPlaytest(false);
     setInventoryCrypt(inventory.crypt);
     setInventoryLibrary(inventory.library);
-    setDecks(parseDecksData(data.decks));
+    deckStore.decks = parseDecksData(data.decks);
   };
 
   const initializeUnauthenticatedUser = () => {
@@ -121,8 +118,8 @@ export const AppProvider = (props) => {
     setInventoryLibrary({});
     setUsername(null);
     setEmail(undefined);
-    setDeck(undefined);
-    setDecks({});
+    deckStore.deck = undefined;
+    deckStore.decks = {};
   };
 
   useEffect(() => {
@@ -327,200 +324,6 @@ export const AppProvider = (props) => {
     return decksData;
   };
 
-  const changeMaster = (deckid) => {
-    const oldMasterDeckid = decks[deckid].master;
-
-    if (oldMasterDeckid) {
-      const branches = [...decks[oldMasterDeckid].branches];
-      branches.splice(branches.indexOf(deckid), 1);
-      branches.push(oldMasterDeckid);
-
-      setDecks((draft) => {
-        branches.map((b) => {
-          draft[b].master = deckid;
-          draft[b].branches = [];
-        });
-        draft[deckid].branches = branches;
-        draft[deckid].master = null;
-      });
-
-      setDeck((draft) => {
-        draft.branches = branches;
-        draft.master = null;
-      });
-    }
-  };
-
-  const branchesUpdate = (deckid, field, value) => {
-    let revisions = [];
-    if (decks[deckid].master) {
-      revisions = [
-        decks[deckid].master,
-        ...decks[decks[deckid].master].branches,
-      ];
-    } else {
-      revisions = [deckid, ...decks[deckid].branches];
-    }
-
-    setDecks((draft) => {
-      revisions.map((d) => {
-        draft[d][field] = value;
-      });
-    });
-  };
-
-  const deckUpdate = (deckid, field, value) => {
-    deckServices.deckUpdate(deckid, field, value).then(() => {
-      if (field === 'usedInInventory') {
-        setDecks((draft) => {
-          Object.keys(value).map((cardid) => {
-            if (cardid > 200000) {
-              draft[deckid].crypt[cardid].i = value[cardid];
-            } else {
-              draft[deckid].library[cardid].i = value[cardid];
-            }
-          });
-        });
-        setDeck((draft) => {
-          Object.keys(value).map((cardid) => {
-            if (cardid > 200000) {
-              draft.crypt[cardid].i = value[cardid];
-            } else {
-              draft.library[cardid].i = value[cardid];
-            }
-          });
-        });
-      } else {
-        setDecks((draft) => {
-          draft[deckid][field] = value;
-          if (field === 'inventoryType') {
-            Object.keys(draft[deckid].crypt).map((cardid) => {
-              draft[deckid].crypt[cardid].i = '';
-            });
-            Object.keys(draft[deckid].library).map((cardid) => {
-              draft[deckid].library[cardid].i = '';
-            });
-          }
-        });
-        setDeck((draft) => {
-          draft[field] = value;
-          if (field === 'inventoryType') {
-            Object.keys(draft.crypt).map((cardid) => {
-              draft.crypt[cardid].i = '';
-            });
-            Object.keys(draft.library).map((cardid) => {
-              draft.library[cardid].i = '';
-            });
-          }
-        });
-      }
-
-      const branchesUpdateFields = ['name', 'author'];
-      if (
-        branchesUpdateFields.includes(field) &&
-        (decks[deckid].branches || decks[deckid].master)
-      ) {
-        branchesUpdate(deckid, field, value);
-      }
-
-      changeMaster(deckid);
-    });
-  };
-
-  const deckCardChange = (deckid, cardid, count) => {
-    const url = `${process.env.API_URL}deck/${deckid}`;
-    const options = {
-      method: 'PUT',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ cardChange: { [cardid]: count } }),
-    };
-
-    const cardSrc = cardid > 200000 ? 'crypt' : 'library';
-    const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
-
-    const initialDecksState = JSON.parse(JSON.stringify(decks));
-
-    setDecks((draft) => {
-      if (count >= 0) {
-        draft[deckid][cardSrc][cardid] = {
-          c: cardBase[cardid],
-          q: count,
-        };
-      } else {
-        draft[deckid][cardSrc][cardid];
-      }
-    });
-
-    setDeck((draft) => {
-      if (count >= 0) {
-        draft[cardSrc][cardid] = {
-          c: cardBase[cardid],
-          q: count,
-        };
-      } else {
-        draft[cardSrc][cardid];
-      }
-    });
-
-    changeMaster(deckid);
-
-    fetch(url, options).catch(() => {
-      setDecks(initialDecksState);
-    });
-
-    const startTimer = () => {
-      let counter = 1;
-      timers.map((timerId) => {
-        clearInterval(timerId);
-      });
-      setTimers([]);
-
-      const timerId = setInterval(() => {
-        if (counter > 0) {
-          counter = counter - 1;
-        } else {
-          clearInterval(timerId);
-          setChangeTimer(!changeTimer);
-        }
-      }, 500);
-
-      setTimers([...timers, timerId]);
-    };
-    startTimer();
-  };
-
-  const addDeckToState = (deck) => {
-    const now = new Date();
-    const { crypt, library } = useDeck(
-      deck.cards,
-      cryptCardBase,
-      libraryCardBase
-    );
-    const d = {
-      deckid: deck.deckid,
-      name: deck.name ?? '',
-      master: deck.master ?? null,
-      branches: deck.branches ?? [],
-      branchName: deck.branchName ?? '#0',
-      description: deck.description ?? '',
-      author: deck.author ?? '',
-      crypt: crypt,
-      library: library,
-      timestamp: now.toUTCString(),
-      isAuthor: true,
-      isPublic: Boolean(deck.publicParent),
-      isBranches: Boolean(deck.master || deck.branches?.length > 0),
-    };
-
-    setDecks((draft) => {
-      draft[deck.deckid] = d;
-    });
-  };
-
   useEffect(() => {
     if (decks && Object.keys(decks).length > 0) {
       const lastDeckArray = Object.values(decks).sort(byTimestamp);
@@ -650,16 +453,8 @@ export const AppProvider = (props) => {
 
         // DECK Context
         preconDecks,
-        deck,
-        setDeck,
-        decks,
-        setDecks,
         recentDecks,
         addRecentDeck,
-        addDeckToState,
-        deckUpdate,
-        deckCardChange,
-        changeTimer,
         lastDeckId,
 
         // LISTING Context

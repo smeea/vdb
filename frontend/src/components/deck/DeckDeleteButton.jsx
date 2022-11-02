@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ButtonIconed, ModalConfirmation } from 'components';
-import { useApp } from 'context';
+import { deckStore, setDeck, useApp } from 'context';
 import { byTimestamp } from 'utils';
 
 const DeckDeleteButton = ({ deck, noText }) => {
-  const {
-    setDeck,
-    setDecks,
-    decks,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-  } = useApp();
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const decks = useSnapshot(deckStore).decks;
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
@@ -54,10 +50,8 @@ const DeckDeleteButton = ({ deck, noText }) => {
     };
 
     fetch(url, options).then(() => {
-      setDecks((draft) => {
-        revisions.map((d) => {
-          delete draft[d];
-        });
+      revisions.map((d) => {
+        delete deckStore.decks[d];
       });
       setDeck(undefined);
 

@@ -1,4 +1,5 @@
 import { proxy } from 'valtio';
+import { inventoryServices } from 'services';
 
 export const inventoryStore = proxy({
   crypt: {},
@@ -32,7 +33,17 @@ export const setUsedLibrary = (v) => {
   usedStore.library = v;
 };
 
-export const inventoryCardsAddState = (cards) => {
+export const inventoryCardsAdd = (cards) => {
+  const initialCryptState = JSON.parse(JSON.stringify(inventoryStore.crypt));
+  const initialLibraryState = JSON.parse(
+    JSON.stringify(inventoryStore.library)
+  );
+
+  inventoryServices.addCards(cards).catch(() => {
+    inventoryStore.crypt = initialCryptState;
+    inventoryStore.library = initialLibraryState;
+  });
+
   Object.values(cards).map((card) => {
     const { q, c } = card;
 
@@ -49,14 +60,24 @@ export const inventoryCardsAddState = (cards) => {
   });
 };
 
-export const inventoryCardChangeState = (card, count) => {
+export const inventoryCardChangeState = (card, q) => {
+  const initialCryptState = JSON.parse(JSON.stringify(inventoryStore.crypt));
+  const initialLibraryState = JSON.parse(
+    JSON.stringify(inventoryStore.library)
+  );
+
+  inventoryServices.setCard(card, q).catch(() => {
+    inventoryStore.crypt = initialCryptState;
+    inventoryStore.library = initialLibraryState;
+  });
+
   const store =
     card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
 
-  if (count >= 0) {
+  if (q >= 0) {
     store[card.Id] = {
       c: card,
-      q: count,
+      q: q,
     };
   } else {
     delete store[card.Id];

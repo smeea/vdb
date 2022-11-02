@@ -5,11 +5,11 @@ import Snow from 'assets/images/icons/snow.svg';
 import TagFill from 'assets/images/icons/tag-fill.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
-import { useApp } from 'context';
+import { useApp, deckUpdate } from 'context';
 import { DeckFreezeButton } from 'components';
 
 const DeckChangeName = ({ deck }) => {
-  const { deckUpdate, isMobile } = useApp();
+  const { isMobile } = useApp();
   const { isPublic, isAuthor, isNonEditable } = deck;
   const [state, setState] = useState(deck.name);
   const [buttonState, setButtonState] = useState(false);

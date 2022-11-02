@@ -12,6 +12,8 @@ import {
   searchResults,
   setLibraryResults,
   setLibraryCompare,
+  setDeck,
+  deckStore,
 } from 'context';
 
 const Library = () => {
@@ -21,18 +23,10 @@ const Library = () => {
     toggleAddMode,
     isMobile,
     isDesktop,
-    deck,
-    setDeck,
-    decks,
     lastDeckId,
   } = useApp();
-
-  useEffect(() => {
-    if (!deck && decks) {
-      setDeck(decks[lastDeckId]);
-    }
-  }, [deck, decks]);
-
+  const deck = useSnapshot(deckStore).deck;
+  const decks = useSnapshot(deckStore).decks;
   const libraryResults = useSnapshot(searchResults).library;
   const libraryCompare = useSnapshot(searchResults).libraryCompare;
   const showSearchForm = useMemo(() => {
@@ -48,6 +42,12 @@ const Library = () => {
   }, [deck, isMobile, isDesktop, libraryResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showLibrarySearch));
+
+  useEffect(() => {
+    if (!deck && decks !== undefined && lastDeckId) {
+      setDeck(decks[lastDeckId]);
+    }
+  }, [deck, decks]);
 
   return (
     <Container className="main-container px-md-2 px-xl-4">

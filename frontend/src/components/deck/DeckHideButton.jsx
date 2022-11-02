@@ -1,15 +1,12 @@
 import React from 'react';
 import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
 import LightbulbOffFill from 'assets/images/icons/lightbulb-off-fill.svg';
-import { useApp } from 'context';
+import { deckUpdate } from 'context';
 import { ButtonIconed } from 'components';
 
-const DeckHideButton = ({ deckid }) => {
-  const { decks, deckUpdate } = useApp();
-  const deck = decks[deckid];
-
+const DeckHideButton = ({ deck }) => {
   const handleClick = () => {
-    deckUpdate(deckid, 'isHidden', !deck.isHidden);
+    deckUpdate(deck.deckid, 'isHidden', !deck.isHidden);
   };
 
   return (

@@ -1,12 +1,14 @@
 import React, { useMemo } from 'react';
+import { useSnapshot } from 'valtio';
 import Select from 'react-select';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import At from 'assets/images/icons/at.svg';
-import { useApp } from 'context';
+import { deckStore, useApp } from 'context';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
-  const { inventoryMode, decks, isMobile } = useApp();
+  const { inventoryMode, isMobile } = useApp();
+  const decks = useSnapshot(deckStore).decks;
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);

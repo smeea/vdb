@@ -17,7 +17,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
-import { useApp, usedStore, inventoryStore } from 'context';
+import { useApp, deckStore, usedStore, inventoryStore } from 'context';
 import { getSoftMax, getHardTotal } from 'utils';
 
 const DeckProxyLibraryTable = ({
@@ -29,13 +29,9 @@ const DeckProxyLibraryTable = ({
   handleSetSelector,
   placement,
 }) => {
-  const {
-    decks,
-    inventoryMode,
-    nativeLibrary,
-    isMobile,
-    setShowFloatingButtons,
-  } = useApp();
+  const { inventoryMode, nativeLibrary, isMobile, setShowFloatingButtons } =
+    useApp();
+  const decks = useSnapshot(deckStore).decks;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
 

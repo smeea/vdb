@@ -1,8 +1,6 @@
 # FIX
 - Iphone clipboard (copy url)
 - Update rulings & twds
-- Inventory revert changes on network errors
-- Amaranth import with branches to navigate after state update
 
 # FEATURES
 - Check TWD
@@ -16,8 +14,8 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Inventory/deck export in excel to frontend
 - Refactor CSS - Tailwind
-- Decks to valtio storage
 - Cardbase to valtio storage
+- Move Import/Clone/Delete/Branches fetches to services and create relevant deck store functions
 
 # IMPROVE TECHNOLOGY - BACKEND
 

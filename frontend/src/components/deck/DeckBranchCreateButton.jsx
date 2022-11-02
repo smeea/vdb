@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import NodePlusFill from 'assets/images/icons/node-plus-fill.svg';
-import { useApp } from 'context';
+import { deckStore, useApp } from 'context';
 import { ButtonIconed } from 'components';
 
 const DeckBranchCreateButton = ({ deck }) => {
-  const { setDecks, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
 
   const branchCreate = () => {
@@ -28,26 +28,24 @@ const DeckBranchCreateButton = ({ deck }) => {
       .then((response) => response.json())
       .then((data) => {
         const now = new Date();
-        setDecks((draft) => {
-          draft[master].master = null;
-          draft[master].isBranches = true;
-          draft[master].branches = draft[master].branches
-            ? [...draft[master].branches, data[0].deckid]
-            : [data[0].deckid];
+        deckStore.decks[master].master = null;
+        deckStore.decks[master].isBranches = true;
+        deckStore.decks[master].branches = deckStore.decks[master].branches
+          ? [...deckStore.decks[master].branches, data[0].deckid]
+          : [data[0].deckid];
 
-          draft[data[0].deckid] = {
-            ...deck,
-            deckid: data[0].deckid,
-            crypt: { ...deck.crypt },
-            library: { ...deck.library },
-            inventoryType: '',
-            master: master,
-            branchName: data[0].branchName,
-            isPublic: false,
-            isBranches: true,
-            timestamp: now.toUTCString(),
-          };
-        });
+        deckStore.decks[data[0].deckid] = {
+          ...deck,
+          deckid: data[0].deckid,
+          crypt: { ...deck.crypt },
+          library: { ...deck.library },
+          inventoryType: '',
+          master: master,
+          branchName: data[0].branchName,
+          isPublic: false,
+          isBranches: true,
+          timestamp: now.toUTCString(),
+        };
         navigate(`/decks/${data[0].deckid}`);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);

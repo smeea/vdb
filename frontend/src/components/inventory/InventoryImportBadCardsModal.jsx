@@ -3,7 +3,6 @@ import { Row, Col, Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { useApp, inventoryCardChangeState } from 'context';
 import { DeckCardQuantity, QuickSelect } from 'components';
-import { inventoryServices } from 'services';
 
 const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
@@ -24,7 +23,6 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
       const cardid = cards[idx]?.cardid;
       const card =
         cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-      inventoryServices.inventoryCardChange(card, q);
       inventoryCardChangeState(card, q);
 
       setCards((prevState) => {

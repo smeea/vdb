@@ -15,7 +15,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
-import { useApp, inventoryStore, usedStore } from 'context';
+import { useApp, deckStore, inventoryStore, usedStore } from 'context';
 import { useModalCardController } from 'hooks';
 
 const ResultCryptTable = ({
@@ -25,7 +25,6 @@ const ResultCryptTable = ({
   inRecommendation,
 }) => {
   const {
-    deck,
     addMode,
     inventoryMode,
     isMobile,
@@ -33,6 +32,7 @@ const ResultCryptTable = ({
     isWide,
     setShowFloatingButtons,
   } = useApp();
+  const deck = useSnapshot(deckStore).deck;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
 

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Files from 'assets/images/icons/files.svg';
-import { useApp } from 'context';
+import { deckStore, useApp } from 'context';
 import { ButtonIconed } from 'components';
 
 const DeckCloneButton = ({ deck, noText, noRedirect }) => {
-  const { setDecks, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
 
   const [state, setState] = useState(false);
@@ -43,23 +43,22 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
         if (data.error === undefined) {
           const now = new Date();
 
-          setDecks((draft) => {
-            draft[data.deckid] = {
-              branchName: null,
-              branches: [],
-              crypt: { ...deck.crypt },
-              library: { ...deck.library },
-              deckid: data.deckid,
-              master: null,
-              name: name,
-              timestamp: now.toUTCString(),
-              tags: deck.tags,
-              author: deck.author,
-              description: deck.description,
-              isAuthor: true,
-              isBranches: false,
-            };
-          });
+          deckStore.decks[data.deckid] = {
+            branchName: null,
+            branches: [],
+            crypt: { ...deck.crypt },
+            library: { ...deck.library },
+            deckid: data.deckid,
+            master: null,
+            name: name,
+            timestamp: now.toUTCString(),
+            tags: deck.tags,
+            author: deck.author,
+            description: deck.description,
+            isAuthor: true,
+            isBranches: false,
+          };
+
           if (!noRedirect) navigate(`/decks/${data.deckid}`);
           setState(true);
           setTimeout(() => {

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FormControl, Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
-import { useApp } from 'context';
+import { useApp, deckAdd } from 'context';
 import { useDeckImport } from 'hooks';
 
 const DeckImportText = ({
@@ -18,7 +18,6 @@ const DeckImportText = ({
     setShowMenuButtons,
     cryptCardBase,
     libraryCardBase,
-    addDeckToState,
   } = useApp();
   const navigate = useNavigate();
 
@@ -66,10 +65,14 @@ const DeckImportText = ({
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          addDeckToState({
-            ...deck,
-            deckid: data.deckid,
-          });
+          deckAdd(
+            {
+              ...deck,
+              deckid: data.deckid,
+            },
+            cryptCardBase,
+            libraryCardBase
+          );
           navigate(`/decks/${data.deckid}`);
           setBadCards(deck.badCards);
           setShowMenuButtons(false);

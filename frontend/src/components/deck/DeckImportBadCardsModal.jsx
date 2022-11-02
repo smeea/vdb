@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { useApp } from 'context';
+import { useApp, deckCardChange } from 'context';
 import { DeckCardQuantity, QuickSelect } from 'components';
 
 const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
-  const { isMobile, deckCardChange } = useApp();
+  const { isMobile } = useApp();
 
   const [cards, setCards] = useState([]);
 

@@ -4,10 +4,11 @@ import { Row, Col } from 'react-bootstrap';
 import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
-import { useApp, inventoryStore, usedStore } from 'context';
+import { useApp, inventoryStore, usedStore, deckStore } from 'context';
 
 const ResultLayoutTextInventory = (props) => {
-  const { isMobile, decks } = useApp();
+  const { isMobile } = useApp();
+  const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedCrypt = useSnapshot(usedStore).crypt;

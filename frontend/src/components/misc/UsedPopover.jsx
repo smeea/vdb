@@ -4,11 +4,10 @@ import { Popover } from 'react-bootstrap';
 import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
-import { useApp, usedStore, inventoryStore } from 'context';
+import { deckStore, usedStore, inventoryStore } from 'context';
 
 const UsedPopover = React.forwardRef((props, ref) => {
-  const { decks } = useApp();
-
+  const decks = useSnapshot(deckStore).decks;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;

@@ -1,4 +1,4 @@
-export const inventoryImportCards = (cards) => {
+export const addCards = (cards) => {
   const c = {};
   Object.values(cards).map((card) => {
     if (card.q > 0) {
@@ -19,7 +19,7 @@ export const inventoryImportCards = (cards) => {
   return fetch(url, options);
 };
 
-export const inventoryCardChange = (card, count) => {
+export const setCard = (card, count) => {
   const url = `${process.env.API_URL}inventory`;
   const options = {
     method: 'PUT',

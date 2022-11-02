@@ -18,7 +18,13 @@ import {
   DiffQuantityDiff,
 } from 'components';
 import { drawProbability } from 'utils';
-import { useApp, usedStore, inventoryStore } from 'context';
+import {
+  useApp,
+  deckStore,
+  usedStore,
+  inventoryStore,
+  deckCardChange,
+} from 'context';
 
 const DiffLibraryTable = ({
   cardChange,
@@ -34,14 +40,9 @@ const DiffLibraryTable = ({
   handleModalCardOpen,
   inReview,
 }) => {
-  const {
-    decks,
-    inventoryMode,
-    nativeLibrary,
-    isMobile,
-    deckCardChange,
-    setShowFloatingButtons,
-  } = useApp();
+  const { inventoryMode, nativeLibrary, isMobile, setShowFloatingButtons } =
+    useApp();
+  const decks = useSnapshot(deckStore).decks;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
 

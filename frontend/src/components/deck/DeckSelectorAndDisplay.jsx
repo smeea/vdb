@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { Button } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
@@ -8,10 +9,13 @@ import {
   DeckCrypt,
   DeckLibrary,
 } from 'components';
-import { useApp } from 'context';
+import { setDeck, deckStore, useApp } from 'context';
 
 const DeckSelectorAndDisplay = () => {
-  const { deck, decks, setDeck, isDesktop, addMode, toggleAddMode } = useApp();
+  const { isDesktop, addMode, toggleAddMode } = useApp();
+  const deck = useSnapshot(deckStore).deck;
+  const decks = useSnapshot(deckStore).decks;
+
   const isBranches = deck
     ? deck.master || (deck.branches && deck.branches.length > 0)
     : null;
@@ -33,7 +37,7 @@ const DeckSelectorAndDisplay = () => {
             </div>
             {isBranches && (
               <div className="ps-1 w-25">
-                <DeckBranchSelect deckid={deck?.deckid ?? null} />
+                <DeckBranchSelect deck={deck ?? null} />
               </div>
             )}
           </>

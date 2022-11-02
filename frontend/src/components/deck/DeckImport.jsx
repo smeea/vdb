@@ -9,7 +9,7 @@ import {
   DeckImportAmaranth,
   DeckImportBadCardsModal,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, deckAdd } from 'context';
 import { useDeckImport } from 'hooks';
 
 const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
@@ -19,7 +19,6 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     setShowFloatingButtons,
     cryptCardBase,
     libraryCardBase,
-    addDeckToState,
     publicName,
   } = useApp();
   const navigate = useNavigate();
@@ -74,11 +73,16 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
         setShowInfo && setShowInfo(true);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
-        addDeckToState({
-          name: name,
-          author: publicName,
-          deckid: data.deckid,
-        });
+        deckAdd(
+          {
+            name: name,
+            author: publicName,
+            deckid: data.deckid,
+            cards: {},
+          },
+          cryptCardBase,
+          libraryCardBase
+        );
         navigate(`/decks/${data.deckid}`);
       })
       .catch(() => setCreateError(true));
@@ -156,10 +160,14 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          addDeckToState({
-            ...deck,
-            deckid: data.deckid,
-          });
+          deckAdd(
+            {
+              ...deck,
+              deckid: data.deckid,
+            },
+            cryptCardBase,
+            libraryCardBase
+          );
           navigate(`/decks/${data.deckid}`);
           setBadCards(deck.badCards);
           setShowMenuButtons(false);

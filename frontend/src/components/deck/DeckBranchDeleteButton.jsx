@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import NodeMinusFill from 'assets/images/icons/node-minus-fill.svg';
 import { ButtonIconed, ModalConfirmation } from 'components';
-import { useApp } from 'context';
+import { deckStore, useApp } from 'context';
 
 const DeckBranchDeleteButton = ({ deck, noText }) => {
-  const { setDecks, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const decks = useSnapshot(deckStore).decks;
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
@@ -13,11 +15,6 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
   const handleConfirm = () => {
     deleteBranch(deck.deckid);
     setShowConfirmation(false);
-    if (deck.master) {
-      navigate(`/decks/${deck.master}`);
-    } else {
-      navigate(`/decks/${deck.branches[0]}`);
-    }
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };
@@ -33,26 +30,26 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
       },
     };
     fetch(url, options).then(() => {
-      setDecks((draft) => {
-        const masterId = draft[deckid].master || null;
-        const branches = masterId
-          ? [...draft[masterId].branches]
-          : [...draft[deckid].branches];
+      const masterId = decks[deckid].master || null;
+      const branches = masterId
+        ? [...decks[masterId].branches]
+        : [...decks[deckid].branches];
 
-        delete draft[deckid];
+      delete deckStore.decks[deckid];
 
-        if (masterId) {
-          branches.splice(branches.indexOf(deckid), 1);
-          draft[masterId].branches = branches;
-        } else {
-          const newMasterId = branches.pop();
-          draft[newMasterId].branches = branches;
-          draft[newMasterId].master = null;
-          branches.map((b) => {
-            draft[b].master = newMasterId;
-          });
-        }
-      });
+      if (masterId) {
+        branches.splice(branches.indexOf(deckid), 1);
+        deckStore.decks[masterId].branches = branches;
+        navigate(`/decks/${masterId}`);
+      } else {
+        const newMasterId = branches.pop();
+        deckStore.decks[newMasterId].branches = branches;
+        deckStore.decks[newMasterId].master = null;
+        branches.map((b) => {
+          deckStore.decks[b].master = newMasterId;
+        });
+        navigate(`/decks/${newMasterId}`);
+      }
     });
   };
 

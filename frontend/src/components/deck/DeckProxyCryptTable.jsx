@@ -19,7 +19,7 @@ import {
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
-import { useApp, usedStore, inventoryStore } from 'context';
+import { useApp, usedStore, inventoryStore, deckStore } from 'context';
 
 const DeckProxyCryptTable = ({
   handleModalCardOpen,
@@ -33,7 +33,8 @@ const DeckProxyCryptTable = ({
   keyDisciplines,
   nonKeyDisciplines,
 }) => {
-  const { decks, inventoryMode, isMobile, setShowFloatingButtons } = useApp();
+  const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();
+  const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;

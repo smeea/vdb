@@ -4,10 +4,10 @@ import Check2 from 'assets/images/icons/check2.svg';
 import ChevronBarExpand from 'assets/images/icons/chevron-bar-expand.svg';
 import ChevronBarContract from 'assets/images/icons/chevron-bar-contract.svg';
 import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
-import { useApp } from 'context';
+import { useApp, deckUpdate } from 'context';
 
 const DeckDescription = ({ deck, folded, setFolded }) => {
-  const { deckUpdate, isMobile } = useApp();
+  const { isMobile } = useApp();
   const { deckid, description, isAuthor, isPublic } = deck;
   const [state, setState] = useState(description);
   const [buttonState, setButtonState] = useState(false);

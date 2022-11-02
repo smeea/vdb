@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
-import { useApp } from 'context';
+import { useApp, deckAdd } from 'context';
 import { deckServices } from 'services';
 
 const DeckImportAmaranth = ({ handleCloseModal, show }) => {
-  const { addDeckToState, isMobile } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const navigate = useNavigate();
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyError, setEmptyError] = useState(false);
@@ -139,14 +139,13 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
 
             deck.branches = Object.keys(branches);
             Object.values(branches).map((b) => {
-              addDeckToState(b);
+              deckAdd(b, cryptCardBase, libraryCardBase);
             });
-            addDeckToState(deck);
-            // TODO fix navigation to happen only after branches in state
-            // navigate(`/decks/${deck.deckid}`);
+            deckAdd(deck, cryptCardBase, libraryCardBase);
+            navigate(`/decks/${deck.deckid}`);
           });
         } else {
-          addDeckToState(deck);
+          deckAdd(deck, cryptCardBase, libraryCardBase);
           navigate(`/decks/${deck.deckid}`);
         }
       })

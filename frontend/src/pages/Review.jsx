@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
 import { Modal, Container, Row, Col } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
@@ -14,15 +15,13 @@ import {
   DeckChangeAuthor,
   DeckChangeDescription,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, deckStore } from 'context';
 import { useDeck, useTags } from 'hooks';
 
 const Review = () => {
   const {
-    deck,
-    cryptCardBase,
-    decks,
     isMobile,
+    cryptCardBase,
     libraryCardBase,
     preconDecks,
     setShowFloatingButtons,
@@ -30,6 +29,8 @@ const Review = () => {
     showFloatingButtons,
     showMenuButtons,
   } = useApp();
+  const deck = useSnapshot(deckStore).deck;
+  const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
   const { deckid } = useParams();
   const { hash } = useLocation();
@@ -295,8 +296,8 @@ const Review = () => {
           <Col lg={2} className="hide-on-lt992px px-lg-3">
             <div className="sticky-buttons">
               <ReviewButtons
-                mainDeck={deck}
-                deck={deckFrom}
+                backDeckid={deck?.deckid}
+                deckid={deckFrom?.deckid}
                 urlDiff={urlDiff}
               />
             </div>
@@ -329,8 +330,8 @@ const Review = () => {
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
               <ReviewButtons
-                mainDeck={deck}
-                deck={deckFrom}
+                backDeckid={deck?.deckid}
+                deckid={deckFrom?.deckid}
                 urlDiff={urlDiff}
               />
               <div className="d-flex justify-content-end pt-1">

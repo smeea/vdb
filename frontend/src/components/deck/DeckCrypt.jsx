@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSnapshot } from 'valtio';
 import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
@@ -8,18 +9,18 @@ import {
   DeckCryptHeader,
   ResultModal,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, deckStore } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
 const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
   const {
     cryptDeckSort,
     changeCryptDeckSort,
-    changeTimer,
     isMobile,
     showFloatingButtons,
     setShowFloatingButtons,
   } = useApp();
+  const changeTimer = useSnapshot(deckStore).cryptTimer;
   const { deckid, isPublic, isAuthor } = deck;
 
   const sortMethods = {
