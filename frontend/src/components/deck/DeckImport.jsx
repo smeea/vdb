@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
 import {
@@ -9,18 +10,18 @@ import {
   DeckImportAmaranth,
   DeckImportBadCardsModal,
 } from 'components';
-import { useApp, deckAdd } from 'context';
+import { useApp, deckStore, deckAdd } from 'context';
 import { useDeckImport } from 'hooks';
 
 const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const {
-    deck,
     setShowMenuButtons,
     setShowFloatingButtons,
     cryptCardBase,
     libraryCardBase,
     publicName,
   } = useApp();
+  const deck = useSnapshot(deckStore).deck;
   const navigate = useNavigate();
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');

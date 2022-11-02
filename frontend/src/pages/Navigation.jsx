@@ -145,7 +145,11 @@ const Navigation = () => {
           <NavLink to={libraryUrl} className="nav-link pe-2 ps-1">
             {isMobile ? 'LIB' : 'Library'}
           </NavLink>
-          <NavLink to={cardsUrl} className="nav-link pe-3 ps-2">
+          <NavLink
+            to={cardsUrl}
+            aria-label="Quick card search"
+            className="nav-link pe-3 ps-2"
+          >
             <LightningFill width="18" height="18" viewBox="0 0 16 16" />
           </NavLink>
         </div>

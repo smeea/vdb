@@ -70,7 +70,7 @@ def who_am_i_route():
             }
         )
     else:
-        abort(401)
+        return jsonify(success=False)
 
 
 @app.route("/api/account", methods=["POST"])

@@ -5,8 +5,7 @@ import { useApp, deckCardChange } from 'context';
 import { DeckCardQuantity, QuickSelect } from 'components';
 
 const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
-  const { isMobile } = useApp();
-
+  const { isMobile, cryptCardBase, libraryCardBase } = useApp();
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -20,7 +19,13 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
 
   const handleCardChange = (deckid, idx, q) => {
     if (cards[idx]?.cardid && q >= 0) {
-      deckCardChange(deckid, cards[idx].cardid, q);
+      deckCardChange(
+        deckid,
+        cards[idx].cardid,
+        q,
+        cryptCardBase,
+        libraryCardBase
+      );
       setCards((prevState) => {
         prevState[idx].q = q;
         return prevState;

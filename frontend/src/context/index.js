@@ -35,4 +35,5 @@ export {
   deckCardChange,
   deckUpdate,
   deckAdd,
+  deckLocalize,
 } from './DeckStore.js';

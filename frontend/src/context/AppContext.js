@@ -1,4 +1,5 @@
 import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
+import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { cardServices } from 'services';
@@ -10,7 +11,7 @@ import {
   setUsedLibrary,
 } from 'context';
 import { byTimestamp } from 'utils';
-import { deckStore } from 'context';
+import { deckStore, deckLocalize } from 'context';
 
 const AppContext = React.createContext();
 
@@ -48,8 +49,8 @@ export const AppProvider = (props) => {
   const [twdSearchSort, setTwdSearchSort] = useState();
   const [pdaSearchSort, setPdaSearchSort] = useState();
 
-  const [cryptCardBase, setCryptCardBase] = useState();
-  const [libraryCardBase, setLibraryCardBase] = useState();
+  const [cryptCardBase, setCryptCardBase] = useImmer();
+  const [libraryCardBase, setLibraryCardBase] = useImmer();
   const [nativeCrypt, setNativeCrypt] = useState();
   const [nativeLibrary, setNativeLibrary] = useState();
   const [localizedCrypt, setLocalizedCrypt] = useState();
@@ -60,6 +61,7 @@ export const AppProvider = (props) => {
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
 
+  const deck = useSnapshot(deckStore).deck;
   const decks = useSnapshot(deckStore).decks;
   const [lastDeckId, setLastDeckId] = useState();
   const [recentDecks, setRecentDecks] = useState([]);
@@ -90,8 +92,13 @@ export const AppProvider = (props) => {
 
     fetch(url, options)
       .then((response) => response.json())
-      .then((data) => initializeUserData(data))
-      .catch(() => initializeUnauthenticatedUser());
+      .then((data) => {
+        if (data.success === false) {
+          initializeUnauthenticatedUser();
+        } else {
+          initializeUserData(data);
+        }
+      });
   };
 
   const initializeUserData = (data) => {
@@ -142,14 +149,12 @@ export const AppProvider = (props) => {
     localizedInfo,
     nativeInfo
   ) => {
-    setCardBase((prevState) => {
-      const newState = { ...prevState };
-      Object.keys(prevState).map((k) => {
+    setCardBase((draft) => {
+      Object.keys(draft).map((k) => {
         const newInfo = localizedInfo[k] ? localizedInfo[k] : nativeInfo[k];
-        newState[k]['Name'] = newInfo['Name'];
-        newState[k]['Card Text'] = newInfo['Card Text'];
+        draft[k]['Name'] = newInfo['Name'];
+        draft[k]['Card Text'] = newInfo['Card Text'];
       });
-      return newState;
     });
   };
 
@@ -193,6 +198,22 @@ export const AppProvider = (props) => {
       triggerLangChange();
     }
   }, [lang, nativeCrypt, nativeLibrary]);
+
+  useEffect(() => {
+    if (
+      deck &&
+      localizedCrypt[lang] &&
+      localizedLibrary[lang] &&
+      Object.keys(localizedCrypt).length > 1
+    ) {
+      deckLocalize(
+        localizedCrypt[lang],
+        nativeCrypt,
+        localizedLibrary[lang],
+        nativeLibrary
+      );
+    }
+  }, [deck, lang, localizedCrypt, localizedLibrary]);
 
   // APP DATA
   const toggleShowImage = () => {

@@ -17,12 +17,11 @@ import {
 } from 'components';
 import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
 import { getHardTotal, getSoftMax } from 'utils';
-import { useApp, inventoryStore, usedStore } from 'context';
+import { useApp, deckStore, inventoryStore, usedStore } from 'context';
 import { useModalCardController } from 'hooks';
 
 const ResultLibraryTable = ({ resultCards, placement }) => {
   const {
-    deck,
     addMode,
     inventoryMode,
     nativeLibrary,
@@ -30,6 +29,7 @@ const ResultLibraryTable = ({ resultCards, placement }) => {
     isDesktop,
     setShowFloatingButtons,
   } = useApp();
+  const deck = useSnapshot(deckStore).deck;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
 

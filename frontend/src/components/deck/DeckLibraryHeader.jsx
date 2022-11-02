@@ -2,21 +2,19 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 
-const DeckLibraryHeader = (props) => {
-  const {
-    isMobile,
-    libraryTotal,
-    inMissing,
-    bloodTotal,
-    poolTotal,
-    toggleShowInfo,
-    toggleShowAdd,
-    hasBanned,
-    isAuthor,
-    isPublic,
-    inReview,
-  } = props;
-
+const DeckLibraryHeader = ({
+  isMobile,
+  libraryTotal,
+  inMissing,
+  bloodTotal,
+  poolTotal,
+  toggleShowInfo,
+  toggleShowAdd,
+  hasBanned,
+  isAuthor,
+  isPublic,
+  inReview,
+}) => {
   return (
     <div
       className={
@@ -58,17 +56,13 @@ const DeckLibraryHeader = (props) => {
         <Button
           title="Additional Info"
           variant="primary"
-          onClick={() => toggleShowInfo()}
+          onClick={toggleShowInfo}
         >
           <InfoCircle />
         </Button>
         {(inReview || (isAuthor && !isPublic)) && !isMobile && (
           <div className="ps-1">
-            <Button
-              title="Add Card"
-              variant="primary"
-              onClick={() => toggleShowAdd()}
-            >
+            <Button title="Add Card" variant="primary" onClick={toggleShowAdd}>
               +
             </Button>
           </div>

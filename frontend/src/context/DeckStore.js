@@ -37,7 +37,7 @@ export const deckCardChange = (
       q: q,
     };
   } else {
-    deckStore.decks[deckid][cardSrc][cardid];
+    delete deckStore.decks[deckid][cardSrc][cardid];
   }
 
   if (q >= 0) {
@@ -46,7 +46,7 @@ export const deckCardChange = (
       q: q,
     };
   } else {
-    deckStore[cardSrc][cardid];
+    delete deckStore.deck[cardSrc][cardid];
   }
 
   changeMaster(deckid);
@@ -155,6 +155,28 @@ export const deckAdd = (deck, cryptCardBase, libraryCardBase) => {
   };
 
   deckStore.decks[deck.deckid] = d;
+};
+
+export const deckLocalize = (
+  localizedCrypt,
+  nativeCrypt,
+  localizedLibrary,
+  nativeLibrary
+) => {
+  Object.values(deckStore.deck.crypt).map((card) => {
+    const id = card.c.Id;
+    const newInfo = localizedCrypt[id] ? localizedCrypt[id] : nativeCrypt[id];
+    deckStore.deck.crypt[id].c['Name'] = newInfo['Name'];
+    deckStore.deck.crypt[id].c['Card Text'] = newInfo['Card Text'];
+  });
+  Object.values(deckStore.deck.library).map((card) => {
+    const id = card.c.Id;
+    const newInfo = localizedLibrary[id]
+      ? localizedLibrary[id]
+      : nativeLibrary[id];
+    deckStore.deck.library[id].c['Name'] = newInfo['Name'];
+    deckStore.deck.library[id].c['Card Text'] = newInfo['Card Text'];
+  });
 };
 
 // INTERNAL STORE FUNCTIONS

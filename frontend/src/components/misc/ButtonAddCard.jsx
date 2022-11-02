@@ -1,13 +1,14 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { Button } from 'react-bootstrap';
-import { deckStore, deckCardChange } from 'context';
+import { useApp, deckStore, deckCardChange } from 'context';
 
 const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
+  const { cryptCardBase, libraryCardBase } = useApp();
   const decks = useSnapshot(deckStore).decks;
 
   const handleButton = () => {
-    deckCardChange(deckid, card.Id, inDeck + 1);
+    deckCardChange(deckid, card.Id, inDeck + 1, cryptCardBase, libraryCardBase);
   };
 
   let title = 'Add to Deck';

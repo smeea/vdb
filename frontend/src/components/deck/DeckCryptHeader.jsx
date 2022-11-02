@@ -46,16 +46,12 @@ const DeckCryptHeader = ({
           <Button
             title="Additional Info"
             variant="primary"
-            onClick={() => toggleShowInfo()}
+            onClick={toggleShowInfo}
           >
             <InfoCircle />
           </Button>
           {(inReview || (isAuthor && !isPublic)) && !isMobile && (
-            <Button
-              title="Add Card"
-              variant="primary"
-              onClick={() => toggleShowAdd()}
-            >
+            <Button title="Add Card" variant="primary" onClick={toggleShowAdd}>
               +
             </Button>
           )}
