@@ -118,37 +118,37 @@ const Navigation = () => {
             <>
               <NavLink
                 to="/account"
-                className={`nav-link ${username ? 'pt-1' : ''} pe-2 ps-1`}
+                className={`nav-link ${username ? 'pt-1' : ''} px-8px`}
               >
                 {username ? <PersonFill /> : 'Login'}
               </NavLink>
-              <NavLink to="/" end className="nav-link pe-2 ps-1">
+              <NavLink to="/" end className="nav-link px-8px">
                 {isMobile ? <InfoCircleFill /> : 'About'}
               </NavLink>
             </>
           )}
-          <NavLink to={pdaUrl} className="nav-link pe-2 ps-1">
+          <NavLink to={pdaUrl} className="nav-link px-8px">
             PDA
           </NavLink>
-          <NavLink to={twdUrl} className="nav-link pe-2 ps-1">
+          <NavLink to={twdUrl} className="nav-link px-8px">
             TWD
           </NavLink>
-          <NavLink to="/inventory" className="nav-link pe-2 ps-1">
+          <NavLink to="/inventory" className="nav-link px-8px">
             {isMobile ? 'INV' : 'Inventory'}
           </NavLink>
-          <NavLink to={decksUrl} className="nav-link pe-2 ps-1">
+          <NavLink to={decksUrl} className="nav-link px-8px">
             {isMobile ? 'DKS' : 'Decks'}
           </NavLink>
-          <NavLink to={cryptUrl} className="nav-link pe-2 ps-1">
+          <NavLink to={cryptUrl} className="nav-link px-8px">
             {isMobile ? 'CRY' : 'Crypt'}
           </NavLink>
-          <NavLink to={libraryUrl} className="nav-link pe-2 ps-1">
+          <NavLink to={libraryUrl} className="nav-link px-8px">
             {isMobile ? 'LIB' : 'Library'}
           </NavLink>
           <NavLink
             to={cardsUrl}
             aria-label="Quick card search"
-            className="nav-link pe-3 ps-2"
+            className="nav-link px-8px me-2"
           >
             <LightningFill width="18" height="18" viewBox="0 0 16 16" />
           </NavLink>

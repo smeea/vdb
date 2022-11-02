@@ -92,7 +92,7 @@ const light = [
   '--border-primary: #80b0ff',
   '--border-secondary: #a0b0ff',
   '--border-third: #a0b0ff',
-  '--border-nest-modal: #707085',
+  '--border-nest-modal: #555570',
   '--clan-icon-brightness: 100%',
   '--icons-brightness: 100%',
   '--logo-brightness: 100%',
