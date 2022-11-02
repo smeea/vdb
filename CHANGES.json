@@ -1,5 +1,15 @@
 [
   {
+    "version": "2022-11-02",
+    "changes": [
+      "Update Rulings",
+      "Update TWDA",
+      "Options to PDF Proxy with white or gray gaps",
+      "Many other fixes and small improvements",
+      "WARNING! There are A LOT of changes to under the hood technology which will help future development and maintenance of VDB, however it probably also brought some new bugs. Please report anything unusual, I rely a lot on community feedback to fix bugs. Fall of London update will come on November 14, and the target is to fix everything related to this 'refactoring' update so that you will have smooth experience with the new cards we are waiting for."
+    ]
+  },
+  {
     "version": "2022-10-15",
     "changes": [
       "Add deck tags feature to TWD/PDA: will show automatically determined tags using set of simple rules (more tags and rules improvement will come later!)",

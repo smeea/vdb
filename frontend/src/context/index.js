@@ -20,7 +20,7 @@ export {
 
 export {
   inventoryCardChangeState,
-  cardsAdd,
+  inventoryCardsAdd,
   inventoryStore,
   setInventoryCrypt,
   setInventoryLibrary,
