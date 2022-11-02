@@ -1166,7 +1166,9 @@
         "player":"Steve Holmer"
     },
     "201538":{
-        "deckid":null
+        "deckid":"10347",
+        "twd_date":"2022-09-24",
+        "player":"Karim Baloul"
     },
     "200218":{
         "deckid":null
@@ -2928,7 +2930,9 @@
         "player":"Barney Baker"
     },
     "200555":{
-        "deckid":null
+        "deckid":"10347",
+        "twd_date":"2022-09-24",
+        "player":"Karim Baloul"
     },
     "200556":{
         "deckid":null
@@ -4013,7 +4017,9 @@
         "player":"Aldo Bosmn"
     },
     "201552":{
-        "deckid":null
+        "deckid":"10347",
+        "twd_date":"2022-09-24",
+        "player":"Karim Baloul"
     },
     "200765":{
         "deckid":"2k9mgesjdfb",
@@ -4722,7 +4728,9 @@
         "player":"Martin Weinmayer"
     },
     "201633":{
-        "deckid":null
+        "deckid":"10347",
+        "twd_date":"2022-09-24",
+        "player":"Karim Baloul"
     },
     "200899":{
         "deckid":null
@@ -5033,7 +5041,9 @@
         "player":"Kari M\u00e4kinen"
     },
     "201631":{
-        "deckid":null
+        "deckid":"10347",
+        "twd_date":"2022-09-24",
+        "player":"Karim Baloul"
     },
     "200958":{
         "deckid":"2k4dcqualifier",
@@ -7007,7 +7017,9 @@
         "player":"Dan Keller"
     },
     "201571":{
-        "deckid":null
+        "deckid":"10347",
+        "twd_date":"2022-09-24",
+        "player":"Karim Baloul"
     },
     "201339":{
         "deckid":"2011serq",
@@ -12045,9 +12057,9 @@
         "deckid":null
     },
     "100876":{
-        "deckid":"10362",
-        "twd_date":"2022-09-17",
-        "player":"M\u00e1rcio Pinheiro"
+        "deckid":"10295",
+        "twd_date":"2022-07-23",
+        "player":"Selim Ammouche"
     },
     "100877":{
         "deckid":"2k6shadowtwinatl",

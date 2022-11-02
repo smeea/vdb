@@ -1196,7 +1196,7 @@
             }
         },
         "Title":"",
-        "Twd":69
+        "Twd":70
     },
     "200035":{
         "ASCII Name":"Al-Ashrad, Amr of Alamut",
@@ -2110,7 +2110,7 @@
             }
         },
         "Title":"baron",
-        "Twd":4
+        "Twd":5
     },
     "200055":{
         "ASCII Name":"Allanyan Serata",
@@ -2310,7 +2310,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":23
+        "Twd":24
     },
     "200061":{
         "ASCII Name":"Alonzo Guillen",
@@ -2597,7 +2597,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "200068":{
         "ASCII Name":"Ambrogino Giovanni",
@@ -3013,7 +3013,7 @@
             }
         },
         "Title":"",
-        "Twd":293
+        "Twd":295
     },
     "200077":{
         "ASCII Name":"Anastasia Grey",
@@ -3212,7 +3212,7 @@
             }
         },
         "Title":"",
-        "Twd":49
+        "Twd":50
     },
     "200081":{
         "ASCII Name":"Andre the Manipulator",
@@ -4459,7 +4459,15 @@
         "Id":200116,
         "Name":"Antonio d'Erlette",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cost reductions apply (eg. {Powerbase: Tshwane}), except if they require an action (eg. {Charisma}). ",
+                "refs":{
+                    "[LSJ 20090920-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nbgHtblc8jc/m/vdxPu5hPxGIJ",
+                    "[RTR 20070707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/vSOt2c1uRzQ/MsRAv47Cd4YJ"
+                }
+            }
+        ],
         "Sect":"Sabbat",
         "Set":{
             "Third":{
@@ -5052,7 +5060,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200133":{
         "ASCII Name":"Arianne, The Conqueror",
@@ -5162,7 +5170,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":114
+        "Twd":115
     },
     "200136":{
         "ASCII Name":"Arishat",
@@ -5224,7 +5232,7 @@
             }
         },
         "Title":"1 vote",
-        "Twd":44
+        "Twd":45
     },
     "200137":{
         "ASCII Name":"Aristotle de Laurent",
@@ -5794,7 +5802,7 @@
             }
         },
         "Title":"baron",
-        "Twd":5
+        "Twd":7
     },
     "200149":{
         "ASCII Name":"Augustus Giovanni",
@@ -6208,7 +6216,7 @@
             }
         },
         "Title":"",
-        "Twd":30
+        "Twd":31
     },
     "200159":{
         "ASCII Name":"Badger",
@@ -6452,7 +6460,7 @@
             }
         },
         "Title":"",
-        "Twd":9
+        "Twd":10
     },
     "200165":{
         "ASCII Name":"Banjoko",
@@ -7422,7 +7430,7 @@
             }
         },
         "Title":"prince",
-        "Twd":10
+        "Twd":11
     },
     "200191":{
         "ASCII Name":"Bernard, the Scourge",
@@ -7557,7 +7565,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "200195":{
         "ASCII Name":"Bez Dunsirn",
@@ -7978,7 +7986,7 @@
             }
         },
         "Title":"",
-        "Twd":91
+        "Twd":92
     },
     "200205":{
         "ASCII Name":"Blaise",
@@ -8103,7 +8111,7 @@
             }
         },
         "Title":"",
-        "Twd":22
+        "Twd":23
     },
     "200209":{
         "ASCII Name":"Bloody Mary",
@@ -8416,7 +8424,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200217":{
         "ASCII Name":"Brazil",
@@ -8477,7 +8485,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "200218":{
         "ASCII Name":"Brian Thompson",
@@ -10007,7 +10015,7 @@
             }
         },
         "Title":"",
-        "Twd":78
+        "Twd":80
     },
     "200257":{
         "ASCII Name":"Cedric",
@@ -11483,7 +11491,7 @@
             }
         },
         "Title":"",
-        "Twd":49
+        "Twd":50
     },
     "200296":{
         "ASCII Name":"Count Vladimir Rustovitch",
@@ -11752,7 +11760,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "200304":{
         "ASCII Name":"Crusher",
@@ -12628,7 +12636,14 @@
         "Id":200327,
         "Name":"De Sade",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability applies only to the first time a vampire casts hist votes, not if they change afterwards (eg. {Kindred Manipulation}). ",
+                "refs":{
+                    "[ANK 20221019]":"https://www.vekn.net/forum/rules-questions/80100-de-sades-special-and-kindred-manipulation#106609"
+                }
+            }
+        ],
         "Sect":"Sabbat",
         "Set":{
             "DM":{
@@ -12946,7 +12961,7 @@
             }
         },
         "Title":"",
-        "Twd":26
+        "Twd":27
     },
     "200337":{
         "ASCII Name":"DeSalle",
@@ -13389,7 +13404,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":81
+        "Twd":82
     },
     "200350":{
         "ASCII Name":"Dmitri Borodin",
@@ -15564,7 +15579,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200407":{
         "ASCII Name":"Elena Gutierrez",
@@ -15795,7 +15810,7 @@
             }
         },
         "Title":"baron",
-        "Twd":7
+        "Twd":8
     },
     "200413":{
         "ASCII Name":"Elizabeth Conde",
@@ -16217,7 +16232,7 @@
             }
         },
         "Title":"",
-        "Twd":44
+        "Twd":45
     },
     "200425":{
         "ASCII Name":"Enzo Giovanni, Pentex Board of Directors",
@@ -16382,7 +16397,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "200429":{
         "ASCII Name":"Eric Kressida",
@@ -16573,7 +16588,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":21
     },
     "200435":{
         "ASCII Name":"Ermenegildo, The Rake",
@@ -17375,7 +17390,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":14
     },
     "200456":{
         "ASCII Name":"Falhu Shibaba",
@@ -17436,7 +17451,7 @@
             }
         },
         "Title":"prince",
-        "Twd":5
+        "Twd":7
     },
     "200457":{
         "ASCII Name":"Faruq",
@@ -17556,7 +17571,14 @@
         "Id":200459,
         "Name":"Fatima al-Faqadi",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can only use her ability when she is in combat herself. ",
+                "refs":{
+                    "[ANK 20221021]":"https://www.vekn.net/forum/rules-questions/80108-patagia#106628"
+                }
+            }
+        ],
         "Sect":"Independent",
         "Set":{
             "Promo":{
@@ -19755,7 +19777,7 @@
             }
         },
         "Title":"",
-        "Twd":14
+        "Twd":15
     },
     "200521":{
         "ASCII Name":"Giovanni del Georgio",
@@ -20603,7 +20625,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":16
     },
     "200543":{
         "ASCII Name":"Guedado",
@@ -20737,7 +20759,7 @@
             }
         },
         "Title":"",
-        "Twd":28
+        "Twd":29
     },
     "200546":{
         "ASCII Name":"Guillermo Arsuaga",
@@ -20870,7 +20892,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":25
+        "Twd":26
     },
     "200550":{
         "ASCII Name":"Gustav Breidenstein",
@@ -21063,7 +21085,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "200556":{
         "ASCII Name":"Gwyedd",
@@ -24980,7 +25002,7 @@
             }
         },
         "Title":"baron",
-        "Twd":3
+        "Twd":4
     },
     "200665":{
         "ASCII Name":"Jaggedy Andy",
@@ -25500,7 +25522,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":30
+        "Twd":31
     },
     "200679":{
         "ASCII Name":"Jason, The World's Voice",
@@ -26996,7 +27018,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":15
+        "Twd":16
     },
     "200721":{
         "ASCII Name":"Joseph Cambridge",
@@ -27721,7 +27743,7 @@
             }
         },
         "Title":"1 vote",
-        "Twd":13
+        "Twd":14
     },
     "200743":{
         "ASCII Name":"Kai Simmons",
@@ -28447,7 +28469,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":3
+        "Twd":4
     },
     "201604":{
         "ASCII Name":"Kassandra Tassaki",
@@ -28476,7 +28498,7 @@
             }
         },
         "Title":"prince",
-        "Twd":6
+        "Twd":8
     },
     "200760":{
         "ASCII Name":"Kassiym Malikhair",
@@ -28697,7 +28719,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "200765":{
         "ASCII Name":"Kay Polerno",
@@ -28913,7 +28935,9 @@
             {
                 "text":"[MERGED] If she plays a political action requiring a Justicar, she is not seen as such by other cards or effects during the referendum (eg. if another vampire plays {Closed Session} and she's not Camarilla she will not be able to vote. If she plays it, she can vote). ",
                 "refs":{
-                    "[LSJ 20050128-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/jXmrJxMaJ9MJ"
+                    "[LSJ 20050128-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/jXmrJxMaJ9MJ",
+                    "[ANK 20221011-4]":"https://www.vekn.net/forum/rules-questions/79988-keminitiri-closed-session#106540",
+                    "[RTR 20070707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/vSOt2c1uRzQ/MsRAv47Cd4YJ"
                 }
             },
             {
@@ -29044,7 +29068,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":20
+        "Twd":21
     },
     "200774":{
         "ASCII Name":"Kervos, The Lieutenant",
@@ -29178,7 +29202,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":6
+        "Twd":8
     },
     "200776":{
         "ASCII Name":"Khalid",
@@ -29352,7 +29376,7 @@
             }
         },
         "Title":"",
-        "Twd":22
+        "Twd":23
     },
     "200781":{
         "ASCII Name":"Khurshid",
@@ -29770,6 +29794,12 @@
         "Name":"Krassimir",
         "New":false,
         "Rulings":[
+            {
+                "text":"When he cancels an action, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[LSJ 20011202-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qnVBhys6loo/m/5IuE9b3iTyoJ"
+                }
+            },
             {
                 "text":"\"Once each turn\" means once during each player's turn. ",
                 "refs":{
@@ -31089,7 +31119,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":57
+        "Twd":58
     },
     "200827":{
         "ASCII Name":"Lectora",
@@ -31403,7 +31433,7 @@
             }
         },
         "Title":"baron",
-        "Twd":6
+        "Twd":7
     },
     "200834":{
         "ASCII Name":"Lia Milliner",
@@ -32611,7 +32641,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":16
     },
     "200866":{
         "ASCII Name":"Luc",
@@ -33530,7 +33560,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":109
+        "Twd":111
     },
     "200891":{
         "ASCII Name":"Lydia, Grand Praetor",
@@ -33881,7 +33911,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":0
+        "Twd":1
     },
     "200899":{
         "ASCII Name":"Makarios, The Seducer",
@@ -34076,7 +34106,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "200905":{
         "ASCII Name":"Malgorzata",
@@ -36117,7 +36147,7 @@
             }
         },
         "Title":"",
-        "Twd":19
+        "Twd":20
     },
     "200957":{
         "ASCII Name":"Matata",
@@ -36176,7 +36206,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "200958":{
         "ASCII Name":"Mateusz Gryzbowsky",
@@ -37191,7 +37221,14 @@
         "Id":200983,
         "Name":"Michaela",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can only use her ability when she is in combat herself. ",
+                "refs":{
+                    "[ANK 20221021]":"https://www.vekn.net/forum/rules-questions/80108-patagia#106628"
+                }
+            }
+        ],
         "Sect":"Sabbat",
         "Set":{
             "LK":{
@@ -37936,7 +37973,7 @@
             }
         },
         "Title":"prince",
-        "Twd":3
+        "Twd":4
     },
     "201003":{
         "ASCII Name":"Monica Chang",
@@ -39090,7 +39127,7 @@
             }
         },
         "Title":"",
-        "Twd":103
+        "Twd":104
     },
     "201036":{
         "ASCII Name":"Nangila Were",
@@ -39121,7 +39158,7 @@
             }
         },
         "Title":"",
-        "Twd":26
+        "Twd":27
     },
     "201562":{
         "ASCII Name":"Naomi Stewart",
@@ -39373,7 +39410,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "201040":{
         "ASCII Name":"Nedal, The Careless",
@@ -39470,7 +39507,7 @@
             }
         },
         "Title":"",
-        "Twd":22
+        "Twd":23
     },
     "201520":{
         "ASCII Name":"Nefertiti",
@@ -39508,7 +39545,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "201043":{
         "ASCII Name":"Neferu",
@@ -39691,7 +39728,7 @@
             }
         },
         "Title":"",
-        "Twd":106
+        "Twd":107
     },
     "201047":{
         "ASCII Name":"Nepata",
@@ -39949,7 +39986,7 @@
             }
         },
         "Title":"",
-        "Twd":21
+        "Twd":22
     },
     "201053":{
         "ASCII Name":"Ngozi Ekwensu",
@@ -40110,7 +40147,7 @@
             }
         },
         "Title":"",
-        "Twd":31
+        "Twd":32
     },
     "201058":{
         "ASCII Name":"Nigel the Shunned",
@@ -40822,7 +40859,7 @@
             }
         },
         "Title":"",
-        "Twd":18
+        "Twd":19
     },
     "201075":{
         "ASCII Name":"Olga Triminov",
@@ -41559,7 +41596,26 @@
         "Id":201095,
         "Name":"Parmenides",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"He comes back as the unlock phase begins and unlocks as normal. ",
+                "refs":{
+                    "[LSJ 20010622]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/65IHHAii7ms/m/kyS0uVtsbNMJ"
+                }
+            },
+            {
+                "text":"If two are influenced in the same turn, the second is burned (self-contestinging on the predator's end). ",
+                "refs":{
+                    "[LSJ 20010623-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/65IHHAii7ms/m/uoIs8B1vdToJ"
+                }
+            },
+            {
+                "text":"If the owner is ousted before Parmenides comes back, the predator keeps control of him indefinitely. ",
+                "refs":{
+                    "[LSJ 20021111]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Y6_dPn4ONCA/m/xkVBf0DCQM0J"
+                }
+            }
+        ],
         "Sect":"Independent",
         "Set":{
             "FN":{
@@ -42966,7 +43022,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "201133":{
         "ASCII Name":"Preston Varrick",
@@ -43029,7 +43085,7 @@
             }
         },
         "Title":"",
-        "Twd":25
+        "Twd":26
     },
     "201135":{
         "ASCII Name":"Pug Jackson",
@@ -43640,7 +43696,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":85
+        "Twd":86
     },
     "201152":{
         "ASCII Name":"Rafaele Giovanni",
@@ -44118,7 +44174,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":24
     },
     "201166":{
         "ASCII Name":"Rashid Stockton",
@@ -47101,7 +47157,7 @@
             }
         },
         "Title":"",
-        "Twd":27
+        "Twd":28
     },
     "201249":{
         "ASCII Name":"Saxum, Master of Slaves",
@@ -48478,7 +48534,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "201286":{
         "ASCII Name":"Sigrid Bekker",
@@ -48884,7 +48940,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "201298":{
         "ASCII Name":"Slag",
@@ -49152,7 +49208,7 @@
             }
         },
         "Title":"",
-        "Twd":36
+        "Twd":38
     },
     "201306":{
         "ASCII Name":"Sonja Blue",
@@ -49441,7 +49497,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":43
+        "Twd":44
     },
     "201314":{
         "ASCII Name":"Stefano Giovanni",
@@ -50461,7 +50517,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "201339":{
         "ASCII Name":"Tangine",
@@ -51420,7 +51476,7 @@
         "New":true,
         "Rulings":[
             {
-                "text":"Can be merged with {Theo Bell (G2 ADV)} if you get to control one (eg. {Graverobbing}). ",
+                "text":"Can be merged with {Theo Bell (ADV)} if you get to control one (eg. {Graverobbing}). ",
                 "refs":{
                     "[ANK 20220805-2]":"https://www.vekn.net/forum/rules-questions/79934-merging-group-2-theo-bell-and-group-6-theo-bell-and-similar-cases#105886"
                 }
@@ -52072,6 +52128,12 @@
                 "refs":{
                     "[PIB 20150105-2]":"http://www.vekn.net/forum/rules-questions/68482-topaz-successfully-equips-baby-yaga-successfully-employs#68483"
                 }
+            },
+            {
+                "text":"When using her abilty, pay only for the original equipment. Neither costs nor requirements apply for the one taken from the prey's hand. ",
+                "refs":{
+                    "[LSJ 20080702-4]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sCHpPQkjeAE/m/9GGAf6TbiP0J"
+                }
             }
         ],
         "Sect":"Camarilla",
@@ -52680,7 +52742,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "201399":{
         "ASCII Name":"Ubende",
@@ -53072,7 +53134,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":29
+        "Twd":30
     },
     "201411":{
         "ASCII Name":"unnamed, The",
@@ -54776,7 +54838,7 @@
             }
         },
         "Title":"baron",
-        "Twd":5
+        "Twd":6
     },
     "201456":{
         "ASCII Name":"Vlad Tepes",
@@ -55162,7 +55224,7 @@
             }
         },
         "Title":"prince",
-        "Twd":6
+        "Twd":7
     },
     "201464":{
         "ASCII Name":"Watenda",
@@ -55198,6 +55260,12 @@
                 "text":"He can use his ability even if he's going to torpor. ",
                 "refs":{
                     "[LSJ 20021007]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wkyqKMka_F0/m/PY1IegrQszUJ"
+                }
+            },
+            {
+                "text":"Can only use his ability when he is in combat himself. ",
+                "refs":{
+                    "[ANK 20221021]":"https://www.vekn.net/forum/rules-questions/80108-patagia#106628"
                 }
             }
         ],
@@ -55330,6 +55398,12 @@
                 "text":"Requirements need to be met. ",
                 "refs":{
                     "[LSJ 20080702-3]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sCHpPQkjeAE/m/SLhxvwuWksMJ"
+                }
+            },
+            {
+                "text":"Can only use her ability when she is in combat herself. ",
+                "refs":{
+                    "[ANK 20221021]":"https://www.vekn.net/forum/rules-questions/80108-patagia#106628"
                 }
             },
             {
@@ -55835,7 +55909,7 @@
             }
         },
         "Title":"",
-        "Twd":41
+        "Twd":42
     },
     "201481":{
         "ASCII Name":"Xian \"DziDzat155\" Quan",

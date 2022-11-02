@@ -108,6 +108,10 @@
         "value":"Arnhem, Netherlands"
     },
     {
+        "label":"Asa Norte, Brazil",
+        "value":"Asa Norte, Brazil"
+    },
+    {
         "label":"Asheville, North Carolina",
         "value":"Asheville, North Carolina"
     },
@@ -1880,6 +1884,10 @@
         "value":"Nancy, France"
     },
     {
+        "label":"Nantes, France",
+        "value":"Nantes, France"
+    },
+    {
         "label":"Naperville, Illinois",
         "value":"Naperville, Illinois"
     },
@@ -2254,6 +2262,10 @@
     {
         "label":"Recife, Brazil",
         "value":"Recife, Brazil"
+    },
+    {
+        "label":"Reims, France",
+        "value":"Reims, France"
     },
     {
         "label":"Rennes, France",
@@ -2866,6 +2878,10 @@
     {
         "label":"Villeneuve d'Ascq, France",
         "value":"Villeneuve d'Ascq, France"
+    },
+    {
+        "label":"Villeurbanne, France",
+        "value":"Villeurbanne, France"
     },
     {
         "label":"Villevaud\u00e9, France",

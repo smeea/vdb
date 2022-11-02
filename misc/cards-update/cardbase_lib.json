@@ -56,7 +56,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":319,
+        "Twd":320,
         "Type":"Equipment"
     },
     "100002":{
@@ -75,7 +75,14 @@
         "Name":"419 Operation",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"You can burn the edge to burn the card if it has no counter. ",
+                "refs":{
+                    "[ANK 20221011-3]":"https://www.vekn.net/forum/rules-questions/74643-419-operation-with-no-counters#106539"
+                }
+            }
+        ],
         "Set":{
             "EK":{
                 "C":true
@@ -1071,7 +1078,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[OBT] The opponent does not go to torpor, {Undead Persistance} cannot be played. ",
+                "text":"[OBT] The opponent does not go to torpor, {Undead Persistence} cannot be played. ",
                 "refs":{
                     "[LSJ 20040608]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/p1uCHeAO7ak/m/n7qfDGYXuu4J"
                 }
@@ -1237,7 +1244,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":236,
+        "Twd":237,
         "Type":"Action Modifier"
     },
     "100032":{
@@ -1387,7 +1394,7 @@
                 "R":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Master"
     },
     "100036":{
@@ -1458,7 +1465,7 @@
                 "DTC":true
             }
         },
-        "Twd":38,
+        "Twd":39,
         "Type":"Master"
     },
     "100038":{
@@ -1503,7 +1510,7 @@
                 "R":true
             }
         },
-        "Twd":62,
+        "Twd":63,
         "Type":"Political Action"
     },
     "100039":{
@@ -2051,7 +2058,7 @@
                 "PTz":1
             }
         },
-        "Twd":66,
+        "Twd":68,
         "Type":"Master"
     },
     "100053":{
@@ -2104,7 +2111,7 @@
                 "PG":"1"
             }
         },
-        "Twd":62,
+        "Twd":64,
         "Type":"Master"
     },
     "100055":{
@@ -2155,7 +2162,7 @@
                 "PTz":2
             }
         },
-        "Twd":153,
+        "Twd":154,
         "Type":"Master"
     },
     "100056":{
@@ -2254,7 +2261,7 @@
                 "PV":"1"
             }
         },
-        "Twd":413,
+        "Twd":414,
         "Type":"Master"
     },
     "100059":{
@@ -2305,7 +2312,7 @@
                 "PM":"1"
             }
         },
-        "Twd":298,
+        "Twd":302,
         "Type":"Political Action"
     },
     "100060":{
@@ -2381,7 +2388,7 @@
                 "PAl":"2"
             }
         },
-        "Twd":41,
+        "Twd":42,
         "Type":"Political Action"
     },
     "100061":{
@@ -2540,7 +2547,7 @@
                 "":"1"
             }
         },
-        "Twd":375,
+        "Twd":376,
         "Type":"Political Action"
     },
     "100065":{
@@ -2591,7 +2598,7 @@
                 "PV":"1"
             }
         },
-        "Twd":304,
+        "Twd":308,
         "Type":"Political Action"
     },
     "100066":{
@@ -3143,7 +3150,7 @@
                 "PB":1
             }
         },
-        "Twd":443,
+        "Twd":444,
         "Type":"Action"
     },
     "100080":{
@@ -3403,7 +3410,7 @@
                 "U":true
             }
         },
-        "Twd":600,
+        "Twd":602,
         "Type":"Master"
     },
     "100086":{
@@ -3811,7 +3818,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":92,
+        "Twd":93,
         "Type":"Master"
     },
     "100096":{
@@ -4094,7 +4101,7 @@
                 }
             },
             {
-                "text":"If another effect also sets the range, the first to resolve has priority (eg. {Squirrel's Balance} resolves before, {Neutral Guard} resolves after). ",
+                "text":"If another effect also sets the range, the first to resolve has priority (eg. {Squirrel Balance} resolves before, {Neutral Guard} resolves after). ",
                 "refs":{
                     "[PIB 20120214]":"http://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
                 }
@@ -4250,7 +4257,7 @@
                 "":"3"
             }
         },
-        "Twd":346,
+        "Twd":349,
         "Type":"Master"
     },
     "100107":{
@@ -4295,7 +4302,7 @@
                 "U":true
             }
         },
-        "Twd":54,
+        "Twd":55,
         "Type":"Equipment"
     },
     "100108":{
@@ -4748,7 +4755,7 @@
                 "R":true
             }
         },
-        "Twd":196,
+        "Twd":197,
         "Type":"Action Modifier"
     },
     "100120":{
@@ -5043,7 +5050,7 @@
                 "PTz":3
             }
         },
-        "Twd":13,
+        "Twd":15,
         "Type":"Reaction"
     },
     "100127":{
@@ -5235,6 +5242,12 @@
         "Requirement":"",
         "Rulings":[
             {
+                "text":"Is not directed (eg. {Secure Haven} offers no protection). ",
+                "refs":{
+                    "[ANK 20221019-3]":"https://www.vekn.net/forum/rules-questions/21158-re-secure-haven-banishment?start=6#106615"
+                }
+            },
+            {
                 "text":"A banished vampire can return to play when it again has blood >= capacity on it at the end of its Methuselah's influence phase. ",
                 "refs":{
                     "[TOM 19951209]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/qP2j6CpBUDI/2qsG4E23bl4J"
@@ -5253,13 +5266,13 @@
                 }
             },
             {
-                "text":"All cards on the vamipre come back unlocked. ",
+                "text":"All cards on the vampire come back unlocked. ",
                 "refs":{
                     "[LSJ 20060908]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CTy2GjM6-Dc/m/9OPulYVGaFcJ"
                 }
             },
             {
-                "text":"Continuous effects targeting the Banished vampire (eg. {Rack, The}) resume if and when the vampire comes back into play. ",
+                "text":"Continuous effects targeting the banished vampire (eg. {Rack, The}) resume if and when the vampire comes back into play. ",
                 "refs":{
                     "[TOM 19960210]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/PiOmH08RyVw/CqzTRcOLDNIJ",
                     "[LSJ 20010809-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9ggmJcK2De0/2xW0xE2SzisJ",
@@ -5303,7 +5316,7 @@
                 "":"2"
             }
         },
-        "Twd":481,
+        "Twd":484,
         "Type":"Political Action"
     },
     "100132":{
@@ -5479,7 +5492,7 @@
                 "PTz":1
             }
         },
-        "Twd":400,
+        "Twd":402,
         "Type":"Master"
     },
     "100136":{
@@ -5696,7 +5709,7 @@
                 "text":"Still cannot be burned if the target equipment was burned and somehow returned to play. ",
                 "refs":{
                     "[LSJ 20040726]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/LlqCB6LN64g/k98Xj1pwjPcJ",
-                    "[ANK 20191031]":"http://www.vekn.net/forum/rules-questions/11417-eternal-mask-khobar-towers?start=6#97642"
+                    "[ANK 20191031-2]":"http://www.vekn.net/forum/rules-questions/11417-eternal-mask-khobar-towers?start=6#97642"
                 }
             }
         ],
@@ -5821,7 +5834,7 @@
                 "PG":"2"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Combat"
     },
     "100146":{
@@ -6308,7 +6321,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":231,
+        "Twd":232,
         "Type":"Action Modifier"
     },
     "100158":{
@@ -6498,7 +6511,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":26,
+        "Twd":27,
         "Type":"Action"
     },
     "100163":{
@@ -6583,7 +6596,7 @@
                 "R":true
             }
         },
-        "Twd":57,
+        "Twd":58,
         "Type":"Master"
     },
     "100166":{
@@ -7683,6 +7696,13 @@
                 "refs":{
                     "[LSJ 20010806-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/5QuGIF5ERUI/3iHzZVBOjG4J"
                 }
+            },
+            {
+                "text":"The vampire playing it is not considered having burned a minion (eg. for {Taking the Skin: Minion}), but the opponent is. ",
+                "refs":{
+                    "[LSJ 20090922]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/UdvGbJqOeo4/qFeNdWilXzUJ",
+                    "[ANK 20220916]":"https://www.vekn.net/forum/rules-questions/80030-blood-brother-ambush-taking-the-skin-minion#106354"
+                }
             }
         ],
         "Set":{
@@ -7970,6 +7990,12 @@
                 "refs":{
                     "[ANK 20170519]":"http://www.vekn.net/forum/rules-questions/75805-blood-fury-vs-ivory-bow-roetschreck#81933"
                 }
+            },
+            {
+                "text":"The opponent cannot play [for] prevention cards (eg. for cycling). ",
+                "refs":{
+                    "[LSJ 20050628]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
+                }
             }
         ],
         "Set":{
@@ -8247,6 +8273,12 @@
                 "text":"Does not protect the target from self-inflicted damage from a weapon. ",
                 "refs":{
                     "[LSJ 19980216]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kyuR_x6pRmo/dXNCT3ORc7QJ"
+                }
+            },
+            {
+                "text":"The opponent cannot play [for] prevention cards (eg. for cycling). ",
+                "refs":{
+                    "[LSJ 20050628]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
                 }
             }
         ],
@@ -8908,7 +8940,7 @@
                 "C":true
             }
         },
-        "Twd":188,
+        "Twd":191,
         "Type":"Combat"
     },
     "100228":{
@@ -9082,6 +9114,12 @@
                 "text":"[tha] Additional damage inherits all of the properties of the base damage. ",
                 "refs":{
                     "[TOM 19960225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0LLTOfvyVbM/ih72_C-LriwJ"
+                }
+            },
+            {
+                "text":"[tha] The opponent cannot play [for] prevention cards (eg. for cycling). ",
+                "refs":{
+                    "[LSJ 20050628]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
                 }
             }
         ],
@@ -9313,7 +9351,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":377,
+        "Twd":378,
         "Type":"Action Modifier"
     },
     "100237":{
@@ -9574,7 +9612,7 @@
                 "PSal":1
             }
         },
-        "Twd":439,
+        "Twd":441,
         "Type":"Equipment"
     },
     "100244":{
@@ -9781,7 +9819,7 @@
                 "DTC":true
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Action Modifier/Combat"
     },
     "100250":{
@@ -10900,7 +10938,7 @@
                 "DTC":true
             }
         },
-        "Twd":187,
+        "Twd":189,
         "Type":"Action Modifier"
     },
     "100280":{
@@ -11345,7 +11383,7 @@
                 "SKTz":"1"
             }
         },
-        "Twd":265,
+        "Twd":266,
         "Type":"Combat"
     },
     "100291":{
@@ -11578,7 +11616,7 @@
                 "PB":"1"
             }
         },
-        "Twd":24,
+        "Twd":25,
         "Type":"Master"
     },
     "100298":{
@@ -11628,7 +11666,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":685,
+        "Twd":687,
         "Type":"Ally"
     },
     "100299":{
@@ -11754,7 +11792,7 @@
                 "PN":"2"
             }
         },
-        "Twd":375,
+        "Twd":377,
         "Type":"Combat"
     },
     "100302":{
@@ -12091,7 +12129,7 @@
                 "PTz":4
             }
         },
-        "Twd":352,
+        "Twd":354,
         "Type":"Reaction"
     },
     "100309":{
@@ -12895,7 +12933,7 @@
                 "DoF":"1"
             }
         },
-        "Twd":139,
+        "Twd":141,
         "Type":"Master"
     },
     "100328":{
@@ -13080,7 +13118,7 @@
                 "2019-11-23":true
             }
         },
-        "Twd":120,
+        "Twd":121,
         "Type":"Master"
     },
     "100333":{
@@ -13127,7 +13165,7 @@
                 "U":true
             }
         },
-        "Twd":29,
+        "Twd":30,
         "Type":"Combat"
     },
     "100334":{
@@ -13977,7 +14015,14 @@
         "Name":"Clandestine Contract",
         "Pool Cost":"1",
         "Requirement":"capacity 5 or more",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The action to put the card in play and the one once the card is in play are different (a vampire can take both in the same turn if they unlock in between). ",
+                "refs":{
+                    "[ANK 20220910]":"https://www.vekn.net/forum/rules-questions/80021-clandestine-contrac-x-forced-march-freak#106314"
+                }
+            }
+        ],
         "Set":{
             "FN":{
                 "C":true
@@ -14286,7 +14331,7 @@
                 "PR":4
             }
         },
-        "Twd":586,
+        "Twd":588,
         "Type":"Action Modifier"
     },
     "100363":{
@@ -14416,7 +14461,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Master"
     },
     "100367":{
@@ -14755,6 +14800,13 @@
                 "text":"[tha] The press can only be used during the current round. ",
                 "refs":{
                     "[TOM 19960521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/poYD3n0TKGo/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"[vis], [VIS] Does not prevent the opponent from dodging, the dodge just has no effect. ",
+                "refs":{
+                    "[LSJ 20030902-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mgZt4f2LyOg/FCeKmePPkxwJ",
+                    "[LSJ 20060808-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
                 }
             }
         ],
@@ -15380,7 +15432,7 @@
                 "PT":"2"
             }
         },
-        "Twd":191,
+        "Twd":192,
         "Type":"Combat"
     },
     "100393":{
@@ -15626,7 +15678,7 @@
                 "DTC":true
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Action"
     },
     "100401":{
@@ -15692,7 +15744,7 @@
                 "PSal":4
             }
         },
-        "Twd":922,
+        "Twd":924,
         "Type":"Action Modifier"
     },
     "100402":{
@@ -15905,7 +15957,7 @@
                 "R":true
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Combat"
     },
     "100409":{
@@ -16063,6 +16115,13 @@
                     "[PIB 20140324]":"https://www.vekn.net/forum/rules-questions/60259-carrion-crows-first-strike-strikes-not-anaesthetic-touch?start=0#60260",
                     "[ANK 20200422]":"http://www.vekn.net/forum/rules-questions/78582-thoughts-betrayed-interaction-with-different-striking-situation#99680"
                 }
+            },
+            {
+                "text":"[VIS] The vampire playing it is not considered having burned a minion (eg. for {Taking the Skin: Minion}, but the opponent is. ",
+                "refs":{
+                    "[LSJ 20090922]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/UdvGbJqOeo4/qFeNdWilXzUJ",
+                    "[ANK 20220916]":"https://www.vekn.net/forum/rules-questions/80030-blood-brother-ambush-taking-the-skin-minion#106354"
+                }
             }
         ],
         "Set":{
@@ -16172,7 +16231,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":187,
+        "Twd":188,
         "Type":"Political Action"
     },
     "100415":{
@@ -16247,7 +16306,7 @@
                 "PTz":2
             }
         },
-        "Twd":44,
+        "Twd":45,
         "Type":"Action"
     },
     "100417":{
@@ -16912,7 +16971,7 @@
                 "":"1"
             }
         },
-        "Twd":403,
+        "Twd":405,
         "Type":"Master"
     },
     "100436":{
@@ -17241,7 +17300,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":213,
+        "Twd":216,
         "Type":"Master"
     },
     "100445":{
@@ -17663,7 +17722,7 @@
                 "PB":1
             }
         },
-        "Twd":17,
+        "Twd":18,
         "Type":"Political Action"
     },
     "100459":{
@@ -17688,7 +17747,7 @@
                 "R":true
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Political Action"
     },
     "100460":{
@@ -17738,7 +17797,7 @@
                 "R":true
             }
         },
-        "Twd":9,
+        "Twd":10,
         "Type":"Political Action"
     },
     "100462":{
@@ -17766,7 +17825,7 @@
                 "R":true
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Political Action"
     },
     "100463":{
@@ -17816,7 +17875,7 @@
                 "R":true
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Political Action"
     },
     "100465":{
@@ -17844,7 +17903,7 @@
                 "PV":1
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Political Action"
     },
     "100466":{
@@ -18810,12 +18869,13 @@
                 }
             },
             {
-                "text":"The damage is applied if the action reaches resolution, even if it ends before combat (eg. {Mirror Walk}, {Change of Target}) or has no effect (eg. because cost cannot be paid). ",
+                "text":"The damage is applied if the action reaches resolution, even if it ends before combat (eg. {Mirror Walk}, {Change of Target}, {Red Herring}) or has no effect (eg. because cost cannot be paid). ",
                 "refs":{
                     "[ANK 20220331]":"https://www.vekn.net/forum/rules-questions/79720-daring-the-dawn-and-mirror-walk#104919",
                     "[ANK 20210124]":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
                     "[LSJ 20020927]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wg3PH7vOs1s/gYFNbAwk84gJ",
-                    "[LSJ 20021115]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/35vszszGZOA/m/GXrurZ9Rw-oJ"
+                    "[LSJ 20021115]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/35vszszGZOA/m/GXrurZ9Rw-oJ",
+                    "[ANK 20221011-2]":"https://www.vekn.net/forum/rules-questions/79984-force-of-wil-and-daring-the-dawn-vs-red-herring#106538"
                 }
             },
             {
@@ -18927,7 +18987,7 @@
                 "U":true
             }
         },
-        "Twd":121,
+        "Twd":122,
         "Type":"Master"
     },
     "100494":{
@@ -19348,6 +19408,12 @@
                 "text":"Additional damage inherits all of the properties of the base damage. ",
                 "refs":{
                     "[TOM 19960225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0LLTOfvyVbM/ih72_C-LriwJ"
+                }
+            },
+            {
+                "text":"[NEC] The opponent cannot play [for] prevention cards (eg. for cycling). ",
+                "refs":{
+                    "[LSJ 20050628]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
                 }
             }
         ],
@@ -19851,7 +19917,7 @@
                 "PTz":3
             }
         },
-        "Twd":227,
+        "Twd":229,
         "Type":"Action"
     },
     "100516":{
@@ -20024,7 +20090,7 @@
                 "PSal":4
             }
         },
-        "Twd":1298,
+        "Twd":1301,
         "Type":"Reaction"
     },
     "100519":{
@@ -20103,7 +20169,7 @@
                 "PB":"2"
             }
         },
-        "Twd":824,
+        "Twd":828,
         "Type":"Reaction"
     },
     "100520":{
@@ -20348,7 +20414,7 @@
                 "PGar":1
             }
         },
-        "Twd":61,
+        "Twd":62,
         "Type":"Master"
     },
     "100527":{
@@ -20979,7 +21045,7 @@
                 "LB":"1"
             }
         },
-        "Twd":34,
+        "Twd":35,
         "Type":"Master"
     },
     "100542":{
@@ -20998,7 +21064,15 @@
         "Name":"Diabolic Lure",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[DAI] The opponent burns pool wether or not the pact counters reach capacity. ",
+                "refs":{
+                    "[LSJ 20100205-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKb2e3940BI/m/2Uwzk6TJtJ8J",
+                    "[ANK 20221007]":"https://www.vekn.net/forum/rules-questions/80064-diabolic-lure-superior-burn-pool#106494"
+                }
+            }
+        ],
         "Set":{
             "HttB":{
                 "C":true
@@ -21174,7 +21248,7 @@
                 "DTC":true
             }
         },
-        "Twd":1076,
+        "Twd":1080,
         "Type":"Master"
     },
     "100546":{
@@ -21275,7 +21349,7 @@
                 "DTC":true
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Master"
     },
     "100549":{
@@ -21915,7 +21989,7 @@
                 "C":true
             }
         },
-        "Twd":12,
+        "Twd":13,
         "Type":"Political Action"
     },
     "100565":{
@@ -22080,7 +22154,7 @@
                 "PG":1
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Retainer"
     },
     "100569":{
@@ -22322,7 +22396,7 @@
                 "PV":"2"
             }
         },
-        "Twd":164,
+        "Twd":165,
         "Type":"Action"
     },
     "100574":{
@@ -22655,7 +22729,7 @@
                 "DoF":"1"
             }
         },
-        "Twd":272,
+        "Twd":274,
         "Type":"Event"
     },
     "100582":{
@@ -22999,7 +23073,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":1636,
+        "Twd":1645,
         "Type":"Master"
     },
     "100589":{
@@ -23376,6 +23450,13 @@
                 "refs":{
                     "[ANK 20220204]":"https://www.vekn.net/forum/rules-questions/79634-multi-dust-up-question#104626"
                 }
+            },
+            {
+                "text":"[ani] Does not prevent the opponent from dodging, the dodge just has no effect. ",
+                "refs":{
+                    "[LSJ 20030902-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mgZt4f2LyOg/FCeKmePPkxwJ",
+                    "[LSJ 20060808-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+                }
             }
         ],
         "Set":{
@@ -23454,7 +23535,7 @@
                 "PSal":3
             }
         },
-        "Twd":468,
+        "Twd":469,
         "Type":"Reaction"
     },
     "100599":{
@@ -23653,6 +23734,13 @@
                 "refs":{
                     "[LSJ 20060509]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KBFnBRrOGB4/m/7ZYNQnvZ5tEJ"
                 }
+            },
+            {
+                "text":"Does not prevent the opponent from dodging, the dodge just has no effect. ",
+                "refs":{
+                    "[LSJ 20030902-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mgZt4f2LyOg/FCeKmePPkxwJ",
+                    "[LSJ 20060808-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+                }
             }
         ],
         "Set":{
@@ -23692,7 +23780,7 @@
                 "AU":"2"
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Political Action"
     },
     "100606":{
@@ -23877,7 +23965,7 @@
                 "PG":"1"
             }
         },
-        "Twd":113,
+        "Twd":114,
         "Type":"Master"
     },
     "100610":{
@@ -24172,7 +24260,7 @@
                 "PM":"2"
             }
         },
-        "Twd":621,
+        "Twd":625,
         "Type":"Action Modifier"
     },
     "100618":{
@@ -24304,7 +24392,7 @@
                 "PM":"1"
             }
         },
-        "Twd":103,
+        "Twd":104,
         "Type":"Master"
     },
     "100621":{
@@ -24579,6 +24667,12 @@
                 "refs":{
                     "[ANK 20181122-2]":"http://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
                 }
+            },
+            {
+                "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). ",
+                "refs":{
+                    "[LSJ 20010714-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9U-jt3p3R_Q/WxDJwkgc25kJ"
+                }
             }
         ],
         "Set":{
@@ -24818,7 +24912,7 @@
                 "":"4"
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Ally"
     },
     "100635":{
@@ -25054,7 +25148,7 @@
                 "PR":5
             }
         },
-        "Twd":230,
+        "Twd":231,
         "Type":"Action"
     },
     "100641":{
@@ -25254,7 +25348,7 @@
                 "PSal":3
             }
         },
-        "Twd":441,
+        "Twd":442,
         "Type":"Reaction"
     },
     "100645":{
@@ -25305,7 +25399,7 @@
                 "":"1"
             }
         },
-        "Twd":350,
+        "Twd":352,
         "Type":"Action Modifier"
     },
     "100646":{
@@ -25349,7 +25443,7 @@
                 "":"1"
             }
         },
-        "Twd":34,
+        "Twd":35,
         "Type":"Master"
     },
     "100647":{
@@ -25504,7 +25598,7 @@
                 "DTC":true
             }
         },
-        "Twd":56,
+        "Twd":57,
         "Type":"Action"
     },
     "100651":{
@@ -25604,7 +25698,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":542,
+        "Twd":547,
         "Type":"Action"
     },
     "100653":{
@@ -26047,7 +26141,7 @@
                 "text":"You still cannot burn it if the vampire that was brought back was burned and later returned to play. ",
                 "refs":{
                     "[LSJ 20040726]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/LlqCB6LN64g/k98Xj1pwjPcJ",
-                    "[ANK 20191031]":"http://www.vekn.net/forum/rules-questions/11417-eternal-mask-khobar-towers?start=6#97642"
+                    "[ANK 20191031-2]":"http://www.vekn.net/forum/rules-questions/11417-eternal-mask-khobar-towers?start=6#97642"
                 }
             },
             {
@@ -26167,7 +26261,7 @@
                 "DTC":true
             }
         },
-        "Twd":40,
+        "Twd":41,
         "Type":"Master"
     },
     "100668":{
@@ -26243,6 +26337,12 @@
                 "text":"During the master phase, the controller chooses between paying the blood or burning the vampire. Reversal of previous rulings. ",
                 "refs":{
                     "[ANK 20220503]":"https://www.vekn.net/forum/rules-questions/39040-re-ex-nihilo-can-i-choose-to-burn-my-minion#105161"
+                }
+            },
+            {
+                "text":"Any effect that would give more blood to the vampire is a gain of blood, so does not apply (eg. {Heidelberg Castle, Germany}). ",
+                "refs":{
+                    "[ANK 20221019-2]":"https://www.vekn.net/forum/rules-questions/80101-blood-moved-by-heidelberg-castle-is-considered-a-gain-for-ex-nihilo-purposes#106607"
                 }
             },
             {
@@ -26629,7 +26729,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":548,
+        "Twd":552,
         "Type":"Reaction"
     },
     "100681":{
@@ -26857,7 +26957,7 @@
                 "PG":"6"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Reaction"
     },
     "100687":{
@@ -26928,7 +27028,7 @@
                 "PM":"2"
             }
         },
-        "Twd":649,
+        "Twd":654,
         "Type":"Action Modifier"
     },
     "100688":{
@@ -27409,7 +27509,7 @@
                 "PN":"1"
             }
         },
-        "Twd":633,
+        "Twd":637,
         "Type":"Master"
     },
     "100699":{
@@ -27645,7 +27745,7 @@
                 "U":true
             }
         },
-        "Twd":51,
+        "Twd":52,
         "Type":"Combat"
     },
     "100705":{
@@ -27721,6 +27821,20 @@
                 "refs":{
                     "[LSJ 19981028]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/JZHY1bTCAa0/XqDVERty0roJ",
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"The target can burn it at unlock even if they're already unlocked, but cannot burn it if they do not unlock as normal (eg. {Sensory Deprivation}). ",
+                "refs":{
+                    "[LSJ 20010814-3]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4U6VYR9kBTA/m/1OjgFwTysAYJ",
+                    "[LSJ 20020109]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/3aWGnESUYi0/m/8CQ3HDk-SrMJ"
+                }
+            },
+            {
+                "text":"Does not prevent the opponent from dodging, the dodge just has no effect. ",
+                "refs":{
+                    "[LSJ 20030902-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mgZt4f2LyOg/FCeKmePPkxwJ",
+                    "[LSJ 20060808-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
                 }
             }
         ],
@@ -29105,7 +29219,7 @@
                 "PBh":"5"
             }
         },
-        "Twd":123,
+        "Twd":124,
         "Type":"Combat"
     },
     "100745":{
@@ -29231,7 +29345,7 @@
                 "PBh":"2"
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Action"
     },
     "100748":{
@@ -29309,7 +29423,7 @@
                 "U":true
             }
         },
-        "Twd":85,
+        "Twd":86,
         "Type":"Combat"
     },
     "100750":{
@@ -29674,7 +29788,7 @@
                 "C":true
             }
         },
-        "Twd":72,
+        "Twd":74,
         "Type":"Action Modifier/Combat"
     },
     "100759":{
@@ -29695,12 +29809,13 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The damage is applied if the action reaches resolution, even if it ends before combat (eg. {Mirror Walk}, {Change of Target}) or has no effect (eg. because cost cannot be paid). ",
+                "text":"The damage is applied if the action reaches resolution, even if it ends before combat (eg. {Mirror Walk}, {Change of Target}, {Red Herring}) or has no effect (eg. because cost cannot be paid). ",
                 "refs":{
                     "[ANK 20220331]":"https://www.vekn.net/forum/rules-questions/79720-daring-the-dawn-and-mirror-walk#104919",
                     "[ANK 20210124]":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
                     "[LSJ 20020927]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wg3PH7vOs1s/gYFNbAwk84gJ",
-                    "[LSJ 20021115]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/35vszszGZOA/m/GXrurZ9Rw-oJ"
+                    "[LSJ 20021115]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/35vszszGZOA/m/GXrurZ9Rw-oJ",
+                    "[ANK 20221011-2]":"https://www.vekn.net/forum/rules-questions/79984-force-of-wil-and-daring-the-dawn-vs-red-herring#106538"
                 }
             },
             {
@@ -29824,7 +29939,7 @@
                 "PTr":"3"
             }
         },
-        "Twd":604,
+        "Twd":605,
         "Type":"Reaction"
     },
     "100761":{
@@ -30011,12 +30126,14 @@
             {
                 "text":"[DOM] Can be played against a target with 10 or more pool and does not count against the limit in this case: it will only have a lingering effect (+3 bleed if the target happens to have 9 or less). ",
                 "refs":{
-                    "[PIB 20110817]":"http://www.vekn.net/forum/rules-questions/8405-foreshadowing-destruction-is-usable-at-dom-vs-10-pool#8414"
+                    "[PIB 20110817]":"http://www.vekn.net/forum/rules-questions/8405-foreshadowing-destruction-is-usable-at-dom-vs-10-pool#8414",
+                    "[ANK 20191031]":"https://www.vekn.net/2-uncategorised/465-vampire-elder-kindred-network-newsletter-october-2019"
                 }
             },
             {
                 "text":"[DOM] If the bleed bonus is lost during the action (eg. {Deflection} to another target), it does not count against the limit anymore and an additional bleed modifier can be used. ",
                 "refs":{
+                    "[ANK 20191031]":"https://www.vekn.net/2-uncategorised/465-vampire-elder-kindred-network-newsletter-october-2019",
                     "[ANK 20211019-2]":"https://www.vekn.net/forum/rules-questions/79390-sup-foreshadoing-destruction-when-the-target-has-10-or-more-pool?start=6#103593"
                 }
             }
@@ -30041,7 +30158,7 @@
                 "PTz":3
             }
         },
-        "Twd":351,
+        "Twd":353,
         "Type":"Action Modifier"
     },
     "100766":{
@@ -30192,7 +30309,7 @@
                 "PM":"2"
             }
         },
-        "Twd":390,
+        "Twd":393,
         "Type":"Action Modifier"
     },
     "100770":{
@@ -30232,7 +30349,7 @@
                 "DTC":true
             }
         },
-        "Twd":69,
+        "Twd":70,
         "Type":"Action"
     },
     "100771":{
@@ -31031,7 +31148,7 @@
                 "PV":"5"
             }
         },
-        "Twd":589,
+        "Twd":590,
         "Type":"Action Modifier"
     },
     "100789":{
@@ -31761,7 +31878,7 @@
                 "PR":1
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Master"
     },
     "100810":{
@@ -32293,7 +32410,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"She can use her ability to burn an equipment an opponent has commited to use as a strike (eg. by using the maneuver of a {.44 MAgnum}). In this case the opponent strike has no effect. ",
+                "text":"She can use her ability to burn an equipment an opponent has commited to use as a strike (eg. by using the maneuver of a {.44 Magnum}). In this case the opponent strike has no effect. ",
                 "refs":{
                     "[PIB 20141026]":"http://www.vekn.net/forum/rules-questions/66960-gianna-di-canneto#66971"
                 }
@@ -32319,7 +32436,7 @@
                 "TUB":"1"
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Ally"
     },
     "100824":{
@@ -32374,7 +32491,7 @@
                 "":"1"
             }
         },
-        "Twd":1342,
+        "Twd":1351,
         "Type":"Master"
     },
     "100825":{
@@ -32721,7 +32838,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":80,
+        "Twd":81,
         "Type":"Combat"
     },
     "100835":{
@@ -33168,7 +33285,7 @@
                 "PSal":4
             }
         },
-        "Twd":947,
+        "Twd":949,
         "Type":"Action"
     },
     "100846":{
@@ -33680,7 +33797,7 @@
                 "R":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Ally"
     },
     "100859":{
@@ -33912,7 +34029,7 @@
                 "PN":"4"
             }
         },
-        "Twd":124,
+        "Twd":125,
         "Type":"Reaction"
     },
     "100864":{
@@ -34126,7 +34243,7 @@
                 "AU":"3"
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Reaction"
     },
     "100869":{
@@ -34371,7 +34488,7 @@
                 "AU":"2"
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Master"
     },
     "100877":{
@@ -34693,7 +34810,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":7,
+        "Twd":9,
         "Type":"Master"
     },
     "100886":{
@@ -35155,7 +35272,7 @@
                 "PTz":1
             }
         },
-        "Twd":259,
+        "Twd":260,
         "Type":"Master"
     },
     "100898":{
@@ -35372,7 +35489,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":654,
+        "Twd":658,
         "Type":"Equipment"
     },
     "100904":{
@@ -35403,7 +35520,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":92,
+        "Twd":93,
         "Type":"Action"
     },
     "100905":{
@@ -35538,7 +35655,7 @@
                 }
             },
             {
-                "text":"Cannot be used before damage is inflicted after action resolution (eg. {Force of will}, {Daring the Dawn}): this is still during the action. ",
+                "text":"Cannot be used before damage is inflicted after action resolution (eg. {Force of Will}, {Daring the Dawn}): this is still during the action. ",
                 "refs":{
                     "[ANK 20171124]":"http://www.vekn.net/forum/rules-questions/76304-question-about-timing-of-force-of-will-damage-and-heidelberg?start=0#84354"
                 }
@@ -35975,7 +36092,7 @@
                 "PSal":4
             }
         },
-        "Twd":198,
+        "Twd":201,
         "Type":"Combat"
     },
     "100919":{
@@ -36911,7 +37028,7 @@
                 "PBh":"10"
             }
         },
-        "Twd":5,
+        "Twd":7,
         "Type":"Combat"
     },
     "100945":{
@@ -37003,7 +37120,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":5,
+        "Twd":7,
         "Type":"Action"
     },
     "100947":{
@@ -37235,7 +37352,7 @@
                 "AU":"3"
             }
         },
-        "Twd":9,
+        "Twd":10,
         "Type":"Action"
     },
     "100953":{
@@ -37575,7 +37692,7 @@
                 "PN":"2"
             }
         },
-        "Twd":261,
+        "Twd":262,
         "Type":"Combat"
     },
     "100960":{
@@ -38080,7 +38197,7 @@
                 "PSal":4
             }
         },
-        "Twd":145,
+        "Twd":146,
         "Type":"Combat"
     },
     "100974":{
@@ -38495,7 +38612,7 @@
                 "PV":"1"
             }
         },
-        "Twd":849,
+        "Twd":855,
         "Type":"Master"
     },
     "100985":{
@@ -39031,7 +39148,7 @@
                 "PV":"4"
             }
         },
-        "Twd":90,
+        "Twd":91,
         "Type":"Action"
     },
     "101000":{
@@ -39108,7 +39225,7 @@
                 "PM":"6"
             }
         },
-        "Twd":164,
+        "Twd":165,
         "Type":"Action Modifier"
     },
     "101002":{
@@ -39613,7 +39730,7 @@
                 "PSal":1
             }
         },
-        "Twd":606,
+        "Twd":607,
         "Type":"Equipment"
     },
     "101015":{
@@ -39823,7 +39940,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":473,
+        "Twd":475,
         "Type":"Master"
     },
     "101020":{
@@ -40178,7 +40295,7 @@
                 "2021-10-15":true
             }
         },
-        "Twd":65,
+        "Twd":66,
         "Type":"Action"
     },
     "101029":{
@@ -40305,7 +40422,7 @@
                 "DTC":true
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Equipment"
     },
     "101033":{
@@ -40371,7 +40488,7 @@
                 "R":true
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Action"
     },
     "101035":{
@@ -40415,7 +40532,7 @@
                 "2008-10-23":true
             }
         },
-        "Twd":28,
+        "Twd":29,
         "Type":"Equipment"
     },
     "101036":{
@@ -40570,7 +40687,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":100,
+        "Twd":101,
         "Type":"Equipment"
     },
     "101041":{
@@ -40648,7 +40765,7 @@
                 "DTC":true
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Master"
     },
     "101043":{
@@ -40912,9 +41029,16 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Cannot 'change' the votes of vampires who haven't voted yet, but can cancel the votes of vampires who haven't voted yet and change the votes of vampires who have voted. ",
+                "text":"[dom] Can force a vampire who has not voted yet to keep abstaining. ",
                 "refs":{
                     "[RTR 19991001]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/RAvWWmYoX3U/lb2bLOvJDhoJ"
+                }
+            },
+            {
+                "text":"[DOM] Playable on an abstaining vampire: it does not force them to vote, but restricts their choice if they do. ",
+                "refs":{
+                    "[RTR 19991001]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/RAvWWmYoX3U/lb2bLOvJDhoJ",
+                    "[LSJ 20030828]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/enVCjRhydLo/m/tj5HN0_n98gJ"
                 }
             },
             {
@@ -40991,6 +41115,13 @@
         "Pool Cost":"",
         "Requirement":"",
         "Rulings":[
+            {
+                "text":"Playable on an abstaining vampire: it does not force them to vote, but restricts their choice if they do. ",
+                "refs":{
+                    "[RTR 19991001]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/RAvWWmYoX3U/lb2bLOvJDhoJ",
+                    "[LSJ 20030828]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/enVCjRhydLo/m/tj5HN0_n98gJ"
+                }
+            },
             {
                 "text":"Cannot be used during a referendum that is automatically passing. ",
                 "refs":{
@@ -41275,7 +41406,7 @@
                 "PTo":"3"
             }
         },
-        "Twd":679,
+        "Twd":683,
         "Type":"Political Action"
     },
     "101057":{
@@ -41467,7 +41598,7 @@
                 }
             },
             {
-                "text":"The action was still taken (eg. counts against {Enkil Cog} of [OBF] {Veil the Legion}). ",
+                "text":"The action was still taken (eg. counts against {Enkil Cog} of [OBF] {Veil the Legions}). ",
                 "refs":{
                     "[ANK 20210124]":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
                 }
@@ -41683,7 +41814,7 @@
                 "PSal":1
             }
         },
-        "Twd":377,
+        "Twd":378,
         "Type":"Master"
     },
     "101068":{
@@ -42114,6 +42245,12 @@
                     "[ANK 20211009]":"https://www.vekn.net/forum/rules-questions/79388-political-struggle-and-victim-priscus#103481",
                     "[LSJ 20041025]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sbfkGmojYao/m/obMvk67O5PYJ"
                 }
+            },
+            {
+                "text":"Changing the numbers on counters on the card does not change the X value (eg. {Goth Band}). ",
+                "refs":{
+                    "[ANK 20221024]":"https://www.vekn.net/forum/rules-questions/80110-goth-band-and-leadership-vacuum#106640"
+                }
             }
         ],
         "Set":{
@@ -42389,7 +42526,7 @@
                 "":"4"
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action"
     },
     "101086":{
@@ -42657,7 +42794,7 @@
                 "":"1"
             }
         },
-        "Twd":118,
+        "Twd":119,
         "Type":"Master"
     },
     "101092":{
@@ -42948,7 +43085,7 @@
                 "C":true
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Master"
     },
     "101101":{
@@ -43084,7 +43221,7 @@
                 "":"1"
             }
         },
-        "Twd":64,
+        "Twd":65,
         "Type":"Master"
     },
     "101104":{
@@ -43222,7 +43359,7 @@
                 "R":true
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Combat"
     },
     "101108":{
@@ -43357,7 +43494,7 @@
                 "PB":"6"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Action"
     },
     "101111":{
@@ -43423,7 +43560,7 @@
                 "":"1"
             }
         },
-        "Twd":212,
+        "Twd":213,
         "Type":"Master"
     },
     "101113":{
@@ -43922,7 +44059,7 @@
                 "PR":4
             }
         },
-        "Twd":799,
+        "Twd":804,
         "Type":"Action Modifier"
     },
     "101126":{
@@ -44664,6 +44801,12 @@
                 "refs":{
                     "[PIB 20150315]":"http://www.vekn.net/forum/rules-questions/69865-action-declaration-on-magic-of-the-smith#69869"
                 }
+            },
+            {
+                "text":"Can fetch an equipment that is a location when in play. ",
+                "refs":{
+                    "[LSJ 19971001-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RY_nhdykKP0/m/9boDeD_qAXAJ"
+                }
             }
         ],
         "Set":{
@@ -44689,7 +44832,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":184,
+        "Twd":185,
         "Type":"Action"
     },
     "101144":{
@@ -44757,7 +44900,7 @@
                 "PV":"6"
             }
         },
-        "Twd":644,
+        "Twd":648,
         "Type":"Combat"
     },
     "101145":{
@@ -45754,7 +45897,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":26,
+        "Twd":27,
         "Type":"Master"
     },
     "101172":{
@@ -46588,7 +46731,7 @@
                 "2002-02-01":true
             }
         },
-        "Twd":30,
+        "Twd":31,
         "Type":"Political Action"
     },
     "101193":{
@@ -47104,7 +47247,7 @@
                 "U":true
             }
         },
-        "Twd":165,
+        "Twd":166,
         "Type":"Master"
     },
     "101208":{
@@ -47211,7 +47354,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"If an action is blocked, no other effect can be used (eg. {Crypt's Son}) before resolving Millicent's delayed effect. However, effects that trigger at the same moment (eg. {Unleash Hell's Fury}) are still applied and ordered by the acting Methuselah. ",
+                "text":"If an action is blocked, no other effect can be used (eg. {Crypt's Sons}) before resolving Millicent's delayed effect. However, effects that trigger at the same moment (eg. {Unleash Hell's Fury}) are still applied and ordered by the acting Methuselah. ",
                 "refs":{
                     "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
                     "[ANK 20211207]":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
@@ -47280,7 +47423,7 @@
                 "PV":"2"
             }
         },
-        "Twd":110,
+        "Twd":111,
         "Type":"Action"
     },
     "101212":{
@@ -47770,7 +47913,7 @@
                 }
             },
             {
-                "text":"[THA] If the action is blocked, no other effect can be used (eg. {Crypt's Son}, {Promise of 1528}) before resolving Mirror Walk delayed effect. However, effects that trigger at the same moment (eg. {Banshee Ironwall}) are still applied and ordered by the acting Methuselah. ",
+                "text":"[THA] If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Promise of 1528}) before resolving Mirror Walk delayed effect. However, effects that trigger at the same moment (eg. {Banshee Ironwail}) are still applied and ordered by the acting Methuselah. ",
                 "refs":{
                     "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
                     "[ANK 20211207]":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
@@ -47882,7 +48025,7 @@
                 "PSal":1
             }
         },
-        "Twd":231,
+        "Twd":232,
         "Type":"Master"
     },
     "101226":{
@@ -48369,7 +48512,7 @@
                 "":"1"
             }
         },
-        "Twd":397,
+        "Twd":400,
         "Type":"Master"
     },
     "101239":{
@@ -48397,7 +48540,7 @@
                 "PB":"2"
             }
         },
-        "Twd":29,
+        "Twd":32,
         "Type":"Action Modifier"
     },
     "101240":{
@@ -48534,7 +48677,7 @@
                 "DTC":true
             }
         },
-        "Twd":71,
+        "Twd":72,
         "Type":"Master"
     },
     "101244":{
@@ -48789,7 +48932,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":358,
+        "Twd":359,
         "Type":"Retainer"
     },
     "101250":{
@@ -49222,7 +49365,7 @@
                 "PSal":3
             }
         },
-        "Twd":551,
+        "Twd":554,
         "Type":"Reaction"
     },
     "101260":{
@@ -49288,7 +49431,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":355,
+        "Twd":356,
         "Type":"Ally"
     },
     "101262":{
@@ -49420,7 +49563,7 @@
                 "R":true
             }
         },
-        "Twd":142,
+        "Twd":144,
         "Type":"Event"
     },
     "101266":{
@@ -49629,7 +49772,7 @@
                 "":"1"
             }
         },
-        "Twd":152,
+        "Twd":153,
         "Type":"Political Action"
     },
     "101272":{
@@ -49842,7 +49985,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"If another effect also sets the range, the first to resolve has priority (eg. {Squirrel's Balance} and {Asanbonsam Ghoul} resolve before). ",
+                "text":"If another effect also sets the range, the first to resolve has priority (eg. {Squirrel Balance} and {Asanbonsam Ghoul} resolve before). ",
                 "refs":{
                     "[PIB 20120214]":"http://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
                 }
@@ -50460,7 +50603,7 @@
                 "PM":"2"
             }
         },
-        "Twd":77,
+        "Twd":79,
         "Type":"Combat"
     },
     "101293":{
@@ -50950,7 +51093,14 @@
         "Name":"NSA Trio",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Only applies once each turn for the first eligible combat. ",
+                "refs":{
+                    "[LSJ 20050215]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nxlYFsU10Uo/m/Teu243qv5JgJ"
+                }
+            }
+        ],
         "Set":{
             "KMW":{
                 "R":true
@@ -51104,7 +51254,7 @@
                 "PoS":"2"
             }
         },
-        "Twd":235,
+        "Twd":236,
         "Type":"Reaction"
     },
     "101310":{
@@ -51572,7 +51722,7 @@
                 "PSal":4
             }
         },
-        "Twd":1576,
+        "Twd":1586,
         "Type":"Reaction"
     },
     "101322":{
@@ -51681,7 +51831,7 @@
                 "R":true
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Action"
     },
     "101325":{
@@ -51762,7 +51912,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":92,
+        "Twd":93,
         "Type":"Master"
     },
     "101327":{
@@ -51887,7 +52037,7 @@
                 "PTz":3
             }
         },
-        "Twd":9,
+        "Twd":11,
         "Type":"Reaction"
     },
     "101330":{
@@ -52515,7 +52665,7 @@
                 "SKM":"1"
             }
         },
-        "Twd":132,
+        "Twd":133,
         "Type":"Equipment"
     },
     "101346":{
@@ -52689,7 +52839,7 @@
                 "PTz":1
             }
         },
-        "Twd":119,
+        "Twd":120,
         "Type":"Master"
     },
     "101351":{
@@ -52816,7 +52966,7 @@
                 "PTo":"3"
             }
         },
-        "Twd":495,
+        "Twd":497,
         "Type":"Political Action"
     },
     "101354":{
@@ -52888,7 +53038,7 @@
                 "U":true
             }
         },
-        "Twd":540,
+        "Twd":542,
         "Type":"Master"
     },
     "102231":{
@@ -52958,7 +53108,14 @@
         "Name":"Patagia: Flaps Allowing Limited Flight",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can only be used when the vampire its on is in combat himself. ",
+                "refs":{
+                    "[ANK 20221021]":"https://www.vekn.net/forum/rules-questions/80108-patagia#106628"
+                }
+            }
+        ],
         "Set":{
             "Jyhad":{
                 "R":true
@@ -53039,7 +53196,7 @@
                 "DTC":true
             }
         },
-        "Twd":55,
+        "Twd":56,
         "Type":"Master"
     },
     "101360":{
@@ -53839,7 +53996,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":1567,
+        "Twd":1573,
         "Type":"Master"
     },
     "101385":{
@@ -53952,7 +54109,7 @@
                 "PTo":"4"
             }
         },
-        "Twd":169,
+        "Twd":170,
         "Type":"Action Modifier"
     },
     "101388":{
@@ -54014,7 +54171,7 @@
                 "LB":"2"
             }
         },
-        "Twd":454,
+        "Twd":455,
         "Type":"Master"
     },
     "101389":{
@@ -55044,7 +55201,7 @@
                 "":"1"
             }
         },
-        "Twd":337,
+        "Twd":338,
         "Type":"Political Action"
     },
     "101418":{
@@ -55577,7 +55734,7 @@
                 "DTC":true
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Action Modifier"
     },
     "101430":{
@@ -55725,7 +55882,7 @@
                 "DTC":true
             }
         },
-        "Twd":74,
+        "Twd":75,
         "Type":"Master"
     },
     "101434":{
@@ -55760,7 +55917,7 @@
                 "U":true
             }
         },
-        "Twd":49,
+        "Twd":50,
         "Type":"Master"
     },
     "101435":{
@@ -55794,7 +55951,7 @@
                 "B":1
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Master"
     },
     "101436":{
@@ -55819,7 +55976,7 @@
                 "R":true
             }
         },
-        "Twd":59,
+        "Twd":60,
         "Type":"Master"
     },
     "101437":{
@@ -55850,7 +56007,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":67,
+        "Twd":68,
         "Type":"Master"
     },
     "101438":{
@@ -55920,7 +56077,7 @@
                 "PSal":1
             }
         },
-        "Twd":715,
+        "Twd":720,
         "Type":"Master"
     },
     "101440":{
@@ -56015,7 +56172,7 @@
                 "R":true
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Master"
     },
     "101443":{
@@ -57305,7 +57462,7 @@
                 "PV":1
             }
         },
-        "Twd":82,
+        "Twd":83,
         "Type":"Master"
     },
     "101481":{
@@ -57590,7 +57747,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Master"
     },
     "101488":{
@@ -57760,6 +57917,13 @@
                 "text":"Cannot be used to strike with a weapon whose strike isn't ranged. ",
                 "refs":{
                     "[LSJ 20050224-3]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/tzl6213crbI/HlnYVX9L3fAJ"
+                }
+            },
+            {
+                "text":"Does not prevent the opponent from dodging, the dodge just has no effect. ",
+                "refs":{
+                    "[LSJ 20030902-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mgZt4f2LyOg/FCeKmePPkxwJ",
+                    "[LSJ 20060808-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
                 }
             }
         ],
@@ -58365,7 +58529,7 @@
                 "PT":"3"
             }
         },
-        "Twd":163,
+        "Twd":166,
         "Type":"Combat"
     },
     "101508":{
@@ -58946,7 +59110,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":232,
+        "Twd":235,
         "Type":"Combat"
     },
     "101524":{
@@ -59282,7 +59446,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Combat"
     },
     "101533":{
@@ -59463,7 +59627,7 @@
                 "PG":"1"
             }
         },
-        "Twd":512,
+        "Twd":513,
         "Type":"Master"
     },
     "101537":{
@@ -59880,7 +60044,7 @@
                 "PR":4
             }
         },
-        "Twd":55,
+        "Twd":56,
         "Type":"Reaction"
     },
     "101548":{
@@ -60680,7 +60844,7 @@
                 "PG":"3"
             }
         },
-        "Twd":67,
+        "Twd":68,
         "Type":"Political Action"
     },
     "101568":{
@@ -60875,7 +61039,8 @@
             {
                 "text":"The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
                 "refs":{
-                    "[LSJ 20070709]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/qKrJPLXBFFw/hE5z511E_PgJ"
+                    "[LSJ 20070709]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/qKrJPLXBFFw/hE5z511E_PgJ",
+                    "[ANK 20221011-2]":"https://www.vekn.net/forum/rules-questions/79984-force-of-wil-and-daring-the-dawn-vs-red-herring#106538"
                 }
             },
             {
@@ -61455,7 +61620,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":60,
+        "Twd":62,
         "Type":"Combat"
     },
     "101589":{
@@ -61575,7 +61740,7 @@
                 "":"1"
             }
         },
-        "Twd":352,
+        "Twd":355,
         "Type":"Political Action"
     },
     "101592":{
@@ -63392,7 +63557,7 @@
                 }
             },
             {
-                "text":"Methuselahs do not gain the pool granted by a bleed action (eg. {Kindred Spirit}) if they do not have the edge or a VP beforehand. ",
+                "text":"Methuselahs do not gain the pool granted by a bleed action (eg. {Kindred Spirits}) if they do not have the edge or a VP beforehand. ",
                 "refs":{
                     "[LSJ 20100206-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/reXyybyIYX8/m/jeCyjdiZ5T4J"
                 }
@@ -63745,7 +63910,7 @@
                 "PSal":2
             }
         },
-        "Twd":300,
+        "Twd":302,
         "Type":"Combat"
     },
     "101650":{
@@ -64418,7 +64583,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":103,
+        "Twd":104,
         "Type":"Action"
     },
     "101665":{
@@ -64465,7 +64630,7 @@
                 "TUB":"1"
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Ally"
     },
     "101666":{
@@ -65507,6 +65672,13 @@
                 "refs":{
                     "[TOM 19960225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0LLTOfvyVbM/ih72_C-LriwJ"
                 }
+            },
+            {
+                "text":"[ANI] Does not prevent the opponent from dodging, the dodge just has no effect. ",
+                "refs":{
+                    "[LSJ 20030902-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mgZt4f2LyOg/FCeKmePPkxwJ",
+                    "[LSJ 20060808-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+                }
             }
         ],
         "Set":{
@@ -65657,7 +65829,7 @@
                 "R":true
             }
         },
-        "Twd":234,
+        "Twd":235,
         "Type":"Event"
     },
     "101698":{
@@ -66027,7 +66199,7 @@
                 "PV":"2"
             }
         },
-        "Twd":457,
+        "Twd":458,
         "Type":"Reaction"
     },
     "101707":{
@@ -66248,7 +66420,7 @@
                 "PM":"1"
             }
         },
-        "Twd":450,
+        "Twd":454,
         "Type":"Master"
     },
     "101712":{
@@ -66313,7 +66485,7 @@
                 "PV":"1"
             }
         },
-        "Twd":382,
+        "Twd":383,
         "Type":"Action Modifier"
     },
     "101713":{
@@ -66507,7 +66679,7 @@
                 "C":true
             }
         },
-        "Twd":193,
+        "Twd":195,
         "Type":"Reaction"
     },
     "101718":{
@@ -67081,7 +67253,7 @@
                 "R":true
             }
         },
-        "Twd":11,
+        "Twd":12,
         "Type":"Equipment"
     },
     "101733":{
@@ -67394,9 +67566,10 @@
                 }
             },
             {
-                "text":"The card on him cannot be canceled as it is played when he plays it as if from your hand. ",
+                "text":"The card on him cannot be canceled as it is played when he plays it as if from your hand (eg. {Direct Intervention}), except if it is part of the card effect (eg. {Target Vitals}). ",
                 "refs":{
-                    "[LSJ 20010716]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/x2EdFtlPs8Q/IPCbfV2Qct0J"
+                    "[LSJ 20010716]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/x2EdFtlPs8Q/IPCbfV2Qct0J",
+                    "[ANK 20221011]":"https://www.vekn.net/forum/rules-questions/80070-thoughts-betrayed-vs-shadow-court-satyr?start=6#106537"
                 }
             },
             {
@@ -67469,9 +67642,10 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Will not prohibit the opposing minion from choosing dodge as his strike, and, if chosen, the dodge will still resolve. The dodge simply has no effect on the Shadow Feinted strike. ",
+                "text":"[CEL][OBF] Does not prevent the opponent from dodging, the dodge just has no effect. ",
                 "refs":{
-                    "[LSJ 20030902-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mgZt4f2LyOg/FCeKmePPkxwJ"
+                    "[LSJ 20030902-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mgZt4f2LyOg/FCeKmePPkxwJ",
+                    "[LSJ 20060808-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
                 }
             }
         ],
@@ -67930,7 +68104,7 @@
                 "DTC":true
             }
         },
-        "Twd":77,
+        "Twd":78,
         "Type":"Ally"
     },
     "101752":{
@@ -68242,7 +68416,15 @@
         "Name":"Shattering Crescendo",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[mel], [MEL] Requires to have the second in hand to play it. ",
+                "refs":{
+                    "[LSJ 20100208-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KX8dFqkrgjA/m/84tj0DROcmAJ",
+                    "[LSJ 20100823]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/cHdOwueG71I/m/BTBYvTZhrAUJ"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "B":"4"
@@ -69685,7 +69867,7 @@
                 "PB":"4"
             }
         },
-        "Twd":49,
+        "Twd":50,
         "Type":"Combat"
     },
     "101799":{
@@ -70182,7 +70364,7 @@
                 "PG":"1"
             }
         },
-        "Twd":388,
+        "Twd":390,
         "Type":"Master"
     },
     "101812":{
@@ -70388,7 +70570,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":219,
+        "Twd":220,
         "Type":"Equipment"
     },
     "101817":{
@@ -70460,7 +70642,7 @@
                 "PV":"2"
             }
         },
-        "Twd":111,
+        "Twd":112,
         "Type":"Combat"
     },
     "101818":{
@@ -70613,7 +70795,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":50,
+        "Twd":51,
         "Type":"Master"
     },
     "101822":{
@@ -70900,6 +71082,12 @@
                 "refs":{
                     "[ANK 20170519]":"http://www.vekn.net/forum/rules-questions/75805-blood-fury-vs-ivory-bow-roetschreck#81933"
                 }
+            },
+            {
+                "text":"The opponent cannot play [for] prevention cards (eg. for cycling). ",
+                "refs":{
+                    "[LSJ 20050628]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
+                }
             }
         ],
         "Set":{
@@ -70916,7 +71104,7 @@
                 "PBh":"2"
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Combat"
     },
     "101830":{
@@ -71004,7 +71192,7 @@
                 }
             },
             {
-                "text":"Functions even if the bearer (now burned) was prohibited from using equipments (eg. because of {Drawing out the Beast}). ",
+                "text":"Functions even if the bearer (now burned) was prohibited from using equipments (eg. because of {Drawing Out the Beast}). ",
                 "refs":{
                     "[LSJ 20010729]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/RkvrP5tplXA/Wr-EQ_G0g_IJ"
                 }
@@ -71423,7 +71611,7 @@
                 "DTC":true
             }
         },
-        "Twd":152,
+        "Twd":154,
         "Type":"Action Modifier/Reaction"
     },
     "101844":{
@@ -71475,7 +71663,13 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The mummies put into play are unique by card name. The name is \"in play\" for anything that cares. They will contest unique minions of the same name, vampire or allies. If one is {Nefertiti}, then {Aabbt Kindred} will be able to take directed actions. ",
+                "text":"The copies you burn need not be ones you control. ",
+                "refs":{
+                    "[LSJ 20090428]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/BmA4xsXoEXc/m/rAIXsI8ycG4J"
+                }
+            },
+            {
+                "text":"The mummies put into play are unique by card name. The name is \"in play\" for anything that cares. They contest unique minions of the same name, vampire or allies. If one is {Nefertiti}, then {Aabbt Kindred} will be able to take directed actions. ",
                 "refs":{
                     "[LSJ 20070928-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/duRrP46XygI/FrFYvbUYFf0J",
                     "[LSJ 20071001-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/XoMeEYJw1ZA/zVM8X9aZlgQJ"
@@ -71491,6 +71685,12 @@
                 "text":"If one of the mummy is burned, the card goes to the ash heap where it counts as a vampire (eg. {Possession} can be used, but not {Compel the Spirit}). ",
                 "refs":{
                     "[LSJ 20071014]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Bom6ae7qjbI/OznLIo66qgsJ"
+                }
+            },
+            {
+                "text":"The mummies are not affected by {Wormwood}. ",
+                "refs":{
+                    "[LSJ 20100716]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HpOnoF-LrLU/m/MPw6hA_njd8J"
                 }
             }
         ],
@@ -71793,7 +71993,7 @@
                 "":"4"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Combat"
     },
     "101852":{
@@ -71825,7 +72025,7 @@
                 "DTC":true
             }
         },
-        "Twd":90,
+        "Twd":91,
         "Type":"Combat"
     },
     "101853":{
@@ -71988,7 +72188,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":170,
+        "Twd":171,
         "Type":"Equipment"
     },
     "101857":{
@@ -72095,7 +72295,7 @@
                 "PN":"1"
             }
         },
-        "Twd":421,
+        "Twd":423,
         "Type":"Action Modifier"
     },
     "101858":{
@@ -72819,7 +73019,7 @@
                 "PG":1
             }
         },
-        "Twd":80,
+        "Twd":81,
         "Type":"Master"
     },
     "101878":{
@@ -73225,7 +73425,7 @@
                 "C":true
             }
         },
-        "Twd":21,
+        "Twd":22,
         "Type":"Combat"
     },
     "101889":{
@@ -73522,7 +73722,7 @@
                 "DTC":true
             }
         },
-        "Twd":102,
+        "Twd":103,
         "Type":"Action"
     },
     "101896":{
@@ -74284,7 +74484,7 @@
                 "PR":4
             }
         },
-        "Twd":634,
+        "Twd":638,
         "Type":"Action Modifier/Combat"
     },
     "101914":{
@@ -74825,11 +75025,12 @@
                 }
             },
             {
-                "text":"[abo] [ACTIONMODIFIER] If the minion is burned because of a referendum or as a side-effect of the action, this does not count as the acting minion burning him. (eg. {War Ghoul} when recruited, {Brigitte Gebauer} using her last life, {Kamiri wa Itherero}'s ability). ",
+                "text":"[abo] [ACTIONMODIFIER] If the minion is burned because of a referendum or as a side-effect of the action, this does not count as the acting minion burning him. (eg. {War Ghoul} when recruited, {Brigitte Gebauer} using her last life, {Kamiri wa Itherero}'s ability, {Blood Brother Ambush}). ",
                 "refs":{
                     "[LSJ 20090922]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/UdvGbJqOeo4/qFeNdWilXzUJ",
                     "[RTR 19960124]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wF82VdVPlm0/cSshmBFQs-EJ",
-                    "[ANK 20181022]":"http://www.vekn.net/forum/rules-questions/77103-kamiri-wa-itherero-blocked-by-a-minion-use-of-taking-the-skin-minion?start=6#91389"
+                    "[ANK 20181022]":"http://www.vekn.net/forum/rules-questions/77103-kamiri-wa-itherero-blocked-by-a-minion-use-of-taking-the-skin-minion?start=6#91389",
+                    "[ANK 20220916]":"https://www.vekn.net/forum/rules-questions/80030-blood-brother-ambush-taking-the-skin-minion#106354"
                 }
             },
             {
@@ -75166,7 +75367,7 @@
                 }
             },
             {
-                "text":"The action was still taken (eg. counts against {Enkil Cog} or [OBF] {Veil the Legion}). ",
+                "text":"The action was still taken (eg. counts against {Enkil Cog} or [OBF] {Veil the Legions}). ",
                 "refs":{
                     "[ANK 20210124]":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
                 }
@@ -75471,7 +75672,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":317,
+        "Twd":319,
         "Type":"Combat"
     },
     "101943":{
@@ -75633,7 +75834,7 @@
                 "PN":"2"
             }
         },
-        "Twd":678,
+        "Twd":682,
         "Type":"Combat"
     },
     "101946":{
@@ -75852,7 +76053,7 @@
                 "PSal":4
             }
         },
-        "Twd":995,
+        "Twd":1000,
         "Type":"Reaction"
     },
     "101950":{
@@ -76060,7 +76261,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Master"
     },
     "101954":{
@@ -76706,7 +76907,7 @@
                 "R":true
             }
         },
-        "Twd":21,
+        "Twd":22,
         "Type":"Master"
     },
     "101969":{
@@ -77276,7 +77477,7 @@
                 "PO":"4"
             }
         },
-        "Twd":63,
+        "Twd":64,
         "Type":"Combat"
     },
     "101983":{
@@ -77327,7 +77528,7 @@
                 "PO":"5"
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Combat"
     },
     "101984":{
@@ -77606,7 +77807,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":12,
+        "Twd":13,
         "Type":"Political Action"
     },
     "101991":{
@@ -77769,7 +77970,7 @@
                 "PB":"5"
             }
         },
-        "Twd":181,
+        "Twd":182,
         "Type":"Combat"
     },
     "101994":{
@@ -78439,7 +78640,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":145,
+        "Twd":146,
         "Type":"Combat"
     },
     "102013":{
@@ -78943,15 +79144,15 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The cards are removed immediately. ",
+                "text":"The cards to remove are chosen by the player playing it. There is no order to the ash heap. ",
                 "refs":{
-                    "[PIB 20120525]":"http://www.vekn.net/forum/rules-questions/31158-trochomancy-bounce#31163"
+                    "[LSJ 20090710]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBi3na64nkw/m/KOY1R8yWBsIJ"
                 }
             },
             {
-                "text":"The cards to remove must be chosen when announcing the action. ",
+                "text":"The cards are removed immediately. ",
                 "refs":{
-                    "[LSJ 20100527]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Tr3X4DsZr-8/O06iXN6LtzsJ"
+                    "[PIB 20120525]":"http://www.vekn.net/forum/rules-questions/31158-trochomancy-bounce#31163"
                 }
             }
         ],
@@ -78963,7 +79164,7 @@
                 "DTC":true
             }
         },
-        "Twd":53,
+        "Twd":54,
         "Type":"Action Modifier"
     },
     "102027":{
@@ -79494,7 +79695,7 @@
                 "DTC":true
             }
         },
-        "Twd":38,
+        "Twd":39,
         "Type":"Action Modifier"
     },
     "102045":{
@@ -79804,7 +80005,7 @@
                 "DTC":true
             }
         },
-        "Twd":72,
+        "Twd":73,
         "Type":"Ally"
     },
     "102054":{
@@ -79913,7 +80114,7 @@
                 "R":true
             }
         },
-        "Twd":122,
+        "Twd":123,
         "Type":"Event"
     },
     "102058":{
@@ -80361,7 +80562,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":32,
+        "Twd":33,
         "Type":"Master"
     },
     "102067":{
@@ -80556,7 +80757,7 @@
                 "PV":"2"
             }
         },
-        "Twd":111,
+        "Twd":112,
         "Type":"Combat"
     },
     "102072":{
@@ -80712,7 +80913,7 @@
         "Requirement":"infernal",
         "Rulings":[
             {
-                "text":"If the action is blocked, no other effect can be used (eg. {Crypt's Son}, {Change of Target}) before burning Unleash Hell's Fury and inflicting aggravated damage. However, effects that trigger at the same moment (eg. {Banshee Ironwall}) are still applied and ordered by the acting Methuselah. ",
+                "text":"If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Change of Target}) before burning Unleash Hell's Fury and inflicting aggravated damage. However, effects that trigger at the same moment (eg. {Banshee Ironwail}) are still applied and ordered by the acting Methuselah. ",
                 "refs":{
                     "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
                     "[ANK 20211207]":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
@@ -80768,7 +80969,7 @@
                 "":"1"
             }
         },
-        "Twd":132,
+        "Twd":134,
         "Type":"Action"
     },
     "102077":{
@@ -80864,7 +81065,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":433,
+        "Twd":435,
         "Type":"Event"
     },
     "102080":{
@@ -81071,7 +81272,7 @@
                 "PV":"1"
             }
         },
-        "Twd":52,
+        "Twd":53,
         "Type":"Master"
     },
     "102085":{
@@ -81584,7 +81785,7 @@
                 "PM":"2"
             }
         },
-        "Twd":239,
+        "Twd":240,
         "Type":"Action Modifier"
     },
     "102098":{
@@ -81886,6 +82087,13 @@
                 "refs":{
                     "[TOM 19960225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0LLTOfvyVbM/ih72_C-LriwJ"
                 }
+            },
+            {
+                "text":"[val], [VAL] Does not prevent the opponent from dodging, the dodge just has no effect. ",
+                "refs":{
+                    "[LSJ 20030902-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mgZt4f2LyOg/FCeKmePPkxwJ",
+                    "[LSJ 20060808-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+                }
             }
         ],
         "Set":{
@@ -82176,7 +82384,7 @@
                 "PSal":2
             }
         },
-        "Twd":1001,
+        "Twd":1005,
         "Type":"Master"
     },
     "102114":{
@@ -82464,7 +82672,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":927,
+        "Twd":939,
         "Type":"Master"
     },
     "102122":{
@@ -82862,7 +83070,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":435,
+        "Twd":439,
         "Type":"Action Modifier"
     },
     "102132":{
@@ -83133,7 +83341,7 @@
                 "PSal":3
             }
         },
-        "Twd":853,
+        "Twd":854,
         "Type":"Reaction"
     },
     "102138":{
@@ -83233,7 +83441,7 @@
                 "PBh":"2"
             }
         },
-        "Twd":50,
+        "Twd":51,
         "Type":"Combat"
     },
     "102140":{
@@ -83747,7 +83955,7 @@
                 "LB":"1"
             }
         },
-        "Twd":465,
+        "Twd":466,
         "Type":"Master"
     },
     "102152":{
@@ -84390,7 +84598,7 @@
                 "PV":"3"
             }
         },
-        "Twd":183,
+        "Twd":184,
         "Type":"Combat"
     },
     "102170":{
@@ -84490,7 +84698,7 @@
                 "R":true
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Action"
     },
     "102173":{
@@ -84784,7 +84992,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":582,
+        "Twd":589,
         "Type":"Master"
     },
     "102181":{
@@ -85062,7 +85270,7 @@
                 "PN":"1"
             }
         },
-        "Twd":203,
+        "Twd":204,
         "Type":"Master"
     },
     "102190":{
@@ -85841,7 +86049,7 @@
                 "":"4"
             }
         },
-        "Twd":320,
+        "Twd":321,
         "Type":"Master"
     },
     "102208":{
@@ -85888,7 +86096,7 @@
                 "U":true
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Combat"
     },
     "102209":{
