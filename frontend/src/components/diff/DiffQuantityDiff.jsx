@@ -1,27 +1,29 @@
 import React from 'react';
 import ArrowDown from 'assets/images/icons/arrow-down.svg';
 import ArrowUp from 'assets/images/icons/arrow-up.svg';
-import Dash from 'assets/images/icons/dash.svg';
+import XLg from 'assets/images/icons/x-lg.svg';
 
 const DiffQuantityDiff = ({ qFrom, qTo }) => {
   if (qFrom == qTo) {
     return '';
   } else if (qFrom == 0) {
     return (
-      <div className="red pb-1">
-        <Dash viewBox="0 0 12 14" />
+      <div className="red">
+        <XLg viewBox="-3 0 17 17" />
       </div>
     );
   } else if (qFrom < qTo) {
     return (
       <div className="red">
-        <ArrowDown /> {qTo - qFrom}
+        <ArrowDown viewBox="0 2 16 16" />
+        {qTo - qFrom}
       </div>
     );
   } else if (qFrom > qTo) {
     return (
       <div className="green">
-        <ArrowUp /> {qFrom - qTo}
+        <ArrowUp viewBox="0 2 16 16" />
+        {qFrom - qTo}
       </div>
     );
   }

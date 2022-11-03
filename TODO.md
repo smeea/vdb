@@ -13,6 +13,7 @@
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing
 - Offline decks storage
+- Library filter 'playable by crypt'
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Inventory/deck export in excel to frontend
