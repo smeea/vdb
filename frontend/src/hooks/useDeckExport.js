@@ -1,3 +1,4 @@
+import { snapshot } from 'valtio';
 import { cryptSort, librarySort } from 'utils';
 
 const getCryptTitle = (crypt) => {
@@ -363,29 +364,35 @@ const exportText = (deck) => {
 };
 
 const useDeckExport = (deck, format) => {
-  Object.keys(deck.crypt).map((card) => {
-    if (deck.crypt[card].q === 0) {
-      delete deck.crypt[card];
-    }
-  });
+  const crypt = Object.values(deck.crypt)
+    .filter((card) => card.q > 0)
+    .reduce((obj, card) => {
+      return Object.assign(obj, {
+        [card.c.Id]: deck.crypt[card.c.Id],
+      });
+    }, {});
 
-  Object.keys(deck.library).map((card) => {
-    if (deck.library[card].q === 0) {
-      delete deck.library[card];
-    }
-  });
+  const library = Object.values(deck.library)
+    .filter((card) => card.q > 0)
+    .reduce((obj, card) => {
+      return Object.assign(obj, {
+        [card.c.Id]: deck.library[card.c.Id],
+      });
+    }, {});
+
+  const d = { ...deck, crypt: crypt, library: library };
 
   switch (format) {
     case 'jol':
-      return exportJol(deck);
+      return exportJol(d);
     case 'lackey':
-      return exportLackey(deck);
+      return exportLackey(d);
     case 'twd':
-      return exportTwd(deck, false);
+      return exportTwd(d, false);
     case 'twdHints':
-      return exportTwd(deck, true);
+      return exportTwd(d, true);
     case 'text':
-      return exportText(deck);
+      return exportText(d);
   }
 };
 
