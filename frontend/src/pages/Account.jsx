@@ -19,7 +19,7 @@ const Account = () => {
 
   return (
     <Container className="main-container">
-      <Row className="align-items-center justify-content-center p-0">
+      <Row className="justify-content-center">
         <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
         </Col>
@@ -29,7 +29,7 @@ const Account = () => {
           isMobile ? (username ? '' : 'vh-80') : 'vh-70'
         }`}
       >
-        <Col xs={12} md={7} lg={6} xl={5} className="pb-3 px-0">
+        <Col xs={12} md={8} lg={7} xl={6} className="px-3 pb-3">
           {username ? (
             <>
               <Stack gap={4}>

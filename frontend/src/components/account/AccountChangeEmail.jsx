@@ -76,7 +76,7 @@ const AccountChangeEmail = () => {
 
   const EmailForm = (
     <FormControl
-      className={isMobile ? 'mb-1' : ''}
+      className={isMobile ? 'mb-2' : ''}
       placeholder="New email"
       type="email"
       name="email"

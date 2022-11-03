@@ -79,7 +79,7 @@ const AccountChangePassword = () => {
   const OldPasswordForm = (
     <>
       <FormControl
-        className={isMobile ? 'mb-1' : ''}
+        className={isMobile ? 'mb-2' : ''}
         placeholder="Old password"
         type={hidePassword ? 'password' : 'text'}
         name="password"

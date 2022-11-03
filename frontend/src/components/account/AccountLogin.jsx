@@ -94,8 +94,7 @@ const AccountLogin = () => {
 
   const UsernameForm = (
     <FormControl
-      className={isMobile ? 'mb-1' : ''}
-      placeholder="Username"
+      placeholder="New Username"
       type="text"
       name="username"
       value={formUsername}
@@ -140,27 +139,29 @@ const AccountLogin = () => {
 
   return (
     <div>
-      <h6 className="d-flex align-items-center p-1">
-        <DoorOpenFill />
-        <span className="ms-2">Login</span>
+      <h5 className="d-flex align-items-center p-1">
+        <div className="d-flex pe-2">
+          <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
+        </div>
+        Login
         {!isMobile ? (
           <OverlayTooltip text={loginTooltipText}>
-            <span className="question-tooltip ms-1">[?]</span>
+            <span className="question-tooltip ms-2">[?]</span>
           </OverlayTooltip>
         ) : (
           <span
             onClick={() => setShowModalTooltip(true)}
-            className="question-tooltip ms-1"
+            className="question-tooltip ms-2"
           >
             [?]
           </span>
         )}
-      </h6>
+      </h5>
       <Form className="mb-0" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {UsernameForm}
-            <InputGroup>{PasswordForm}</InputGroup>
+            <InputGroup className="mt-2">{PasswordForm}</InputGroup>
           </>
         ) : (
           <InputGroup>

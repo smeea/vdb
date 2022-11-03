@@ -29,7 +29,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   const ExportDropdown = ({ action, format }) => {
     const formats = {
       twd: 'TWD',
-      twdHints: 'TWD (with hints)',
+      twdHints: 'TWD (w/ hints)',
       text: 'Text',
       lackey: 'Lackey',
       jol: 'JOL',
@@ -38,7 +38,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
 
     const actions = {
       save: [saveDeck, 'Save as File'],
-      copy: [copyDeck, 'Copy to Clipboard'],
+      copy: [copyDeck, 'Clipboard'],
       exportAll: [exportAll, 'Export all Decks'],
     };
 

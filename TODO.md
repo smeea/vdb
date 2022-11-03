@@ -1,11 +1,13 @@
 # FIX
 - Iphone clipboard (copy url)
 - Update rulings & twds
+- Check >. or &. for newline classnames
 
 # FEATURES
 - Check TWD
 - Manual change q-ty in card search PDA/TWD
 - Show changes from base deck when syncing Public
+- Seating emulator (vs random decks and pre-determined nicknames)
 
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing

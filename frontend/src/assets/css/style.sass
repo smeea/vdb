@@ -480,6 +480,12 @@ div.popover-sets
   background: var(--border-primary)
   color: var(--fg-primary)
 
+.nav-menu
+  border: 1px solid var(--border-nest-modal)
+  .nav-link
+    &.active
+      background: var(--border-secondary)
+
 .nav-menu div.popover-arrow
   display: none
 
@@ -823,52 +829,52 @@ div.name
     border-top: 1px solid var(--bg-secondary)
   th
     font-weight: normal
-  .clan
+  &.clan
     min-width: 50px
     text-align: center
-  .preview
+  &.preview
     min-width: 40px
-  .name
+  &.name
     max-width: 250px
     min-width: 250px
-  .buttons
+  &.buttons
     min-width: 110px
     text-align: right
 
 .inv-import-decks-table
-  .name
+  &.name
     @media (max-width: 576px)
       max-width: 230px
       min-width: 230px
-  .revision
+  &.revision
     color: var(--fg-third)
-  .date
+  &.date
     min-width: 100px
     text-align: center
     white-space: nowrap
-  .tags
+  &.tags
     width: 100%
 
 .inv-import-precons-table
-  .name
+  &.name
     @media (max-width: 576px)
       max-width: 135px
       min-width: 135px
-  .set
+  &.set
     color: var(--fg-third)
     width: 100%
 
 ul
   list-style-type: square
   padding-left: 20px
-  .no-bullets
+  &.no-bullets
     list-style-type: none
     padding-left: 0
     .icon
       color: var(--fg-third)
     li
       padding-left: 0
-  .rulings
+  &.rulings
     list-style-type: square
     margin: 0
     padding-left: 1.5em
@@ -876,7 +882,7 @@ ul
 
 li
   padding-left: 6px
-  .rulings
+  &.rulings
     padding: 3px
 
 .question-tooltip

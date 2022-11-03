@@ -62,7 +62,6 @@ const AccountRegister = () => {
 
   const UsernameForm = (
     <FormControl
-      className={isMobile ? 'mb-1' : ''}
       placeholder="New Username"
       type="text"
       name="username"
@@ -75,8 +74,10 @@ const AccountRegister = () => {
 
   const EmailForm = (
     <FormControl
-      className={isMobile ? 'mb-1' : 'mt-1'}
-      placeholder="Email (Optional, only for password reset)"
+      className="mt-2"
+      placeholder={`Email (Optional${
+        isMobile ? '' : ', only for password reset'
+      })`}
       type="email"
       name="email"
       value={formEmail}
@@ -118,16 +119,18 @@ const AccountRegister = () => {
 
   return (
     <div>
-      <h6 className="d-flex align-items-center p-1">
-        <PersonPlusFill />
-        <span className="ms-2">Create account</span>
-      </h6>
+      <h5 className="d-flex align-items-center p-1">
+        <div className="d-flex pb-1 pe-2">
+          <PersonPlusFill width="22" height="22" viewBox="0 0 16 16" />
+        </div>
+        Create account
+      </h5>
       <Form className="mb-2" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {UsernameForm}
             {EmailForm}
-            <InputGroup>{PasswordForm}</InputGroup>
+            <InputGroup className="mt-2">{PasswordForm}</InputGroup>
           </>
         ) : (
           <>

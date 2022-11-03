@@ -29,29 +29,45 @@ const About = () => {
             <div className="pt-3">
               <h5 className="ul-2px">QUICKSTART</h5>
               <ul>
-                <li>
-                  <Link to="/crypt">Search crypt cards</Link>
+                <li className="pb-1">
+                  <Link to="/crypt" className="py-1">
+                    Search crypt cards
+                  </Link>
                 </li>
-                <li>
-                  <Link to="/library">Search library cards</Link>
+                <li className="pb-1">
+                  <Link to="/library" className="py-1">
+                    Search library cards
+                  </Link>
                 </li>
-                <li>
-                  <Link to="/decks">Create your decks</Link>
+                <li className="pb-1">
+                  <Link to="/decks" className="py-1">
+                    Create your decks
+                  </Link>
                 </li>
-                <li>
-                  <Link to="/inventory">Manage your inventory</Link>
+                <li className="pb-1">
+                  <Link to="/inventory" className="py-1">
+                    Manage your inventory
+                  </Link>
                 </li>
-                <li>
-                  <Link to="/twd">Search Tournament-Winning Decks</Link>
+                <li className="pb-1">
+                  <Link to="/twd" className="py-1">
+                    Search Tournament-Winning Decks
+                  </Link>
                 </li>
-                <li>
-                  <Link to="/pda">Search Public Deck Archive</Link>
+                <li className="pb-1">
+                  <Link to="/pda" className="py-1">
+                    Search Public Deck Archive
+                  </Link>
                 </li>
-                <li>
-                  <Link to="/cards">Quick search card by name</Link>
+                <li className="pb-1">
+                  <Link to="/cards" className="py-1">
+                    Quick search card by name
+                  </Link>
                 </li>
-                <li>
-                  <Link to="/documentation">Documentation / Help</Link>
+                <li className="pb-1">
+                  <Link to="/documentation" className="py-1">
+                    Documentation / Help
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -77,10 +93,12 @@ const About = () => {
               <h6>Last update [{changes[0].version}]:</h6>
               <ul>
                 {changes[0].changes.map((change, idx) => (
-                  <li key={idx}>{change}</li>
+                  <li key={idx} className="pb-1">
+                    {change}
+                  </li>
                 ))}
               </ul>
-              <Link to="/changelog">Full changes history</Link>
+              <Link to="/changelog">&gt;&gt; Full changes history</Link>
             </div>
 
             <div className="pt-3">
@@ -161,18 +179,22 @@ const About = () => {
             <div className="pt-3">
               <h5 className="ul-2px">ACKNOWLEDGMENTS</h5>
               <ul>
-                <li>Card images by Fernando &quot;Sydnelson&quot; Cesar</li>
-                <li>
+                <li className="pb-1">
+                  Card images by Fernando &quot;Sydnelson&quot; Cesar
+                </li>
+                <li className="pb-1">
                   Rulings archive by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
                   <a href="https://static.krcg.org/">KRCG</a>
                 </li>
-                <li>TWD archive by Vincent &quot;Ankha&quot; Ripoll</li>
-                <li>
+                <li className="pb-1">
+                  TWD archive by Vincent &quot;Ankha&quot; Ripoll
+                </li>
+                <li className="pb-1">
                   Cards scans from different sets by{' '}
                   <a href="http://vtes.pl/">VTES.PL</a> and{' '}
                   <a href="https://ccggamez.com">CCGAMEZ.COM</a>
                 </li>
-                <li>
+                <li className="pb-1">
                   Andrey &quot;Vaughnad&quot; Davino for multiple development
                   contributions
                 </li>
@@ -182,13 +204,13 @@ const About = () => {
             <div className="pt-3">
               <h5 className="ul-2px">DONATIONS</h5>
               <ul className="no-bullets">
-                <li>
+                <li className="pb-1">
                   Patreon:{' '}
                   <a href="https://www.patreon.com/smeea">
-                    https://www.patreon.com/smeea
+                    www.patreon.com/smeea
                   </a>
                 </li>
-                <li>
+                <li className="pb-1">
                   Bitcoin (BTC):{' '}
                   <a
                     href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
@@ -208,7 +230,7 @@ const About = () => {
             <div className="pt-3">
               <h5 className="ul-2px">CONTACTS</h5>
               <ul className="no-bullets">
-                <li>
+                <li className="pb-1">
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <Globe2 />
@@ -218,17 +240,17 @@ const About = () => {
                     </a>
                   </div>
                 </li>
-                <li>
+                <li className="pb-1">
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <Github />
                     </div>
                     <a href="https://github.com/smeea/vdb">
-                      https://github.com/smeea/vdb
+                      github.com/smeea/vdb
                     </a>
                   </div>
                 </li>
-                <li>
+                <li className="pb-1">
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <EnvelopeFill />
@@ -236,7 +258,7 @@ const About = () => {
                     <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
                   </div>
                 </li>
-                <li>
+                <li className="pb-1">
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <Telegram />
@@ -244,7 +266,7 @@ const About = () => {
                     <a href="https://t.me/smeea">@smeea</a>
                   </div>
                 </li>
-                <li>
+                <li className="pb-1">
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <Discord />
