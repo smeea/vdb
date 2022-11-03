@@ -37,6 +37,9 @@ const DeckBranchCreateButton = ({ deck }) => {
         deckStore.decks[data[0].deckid] = {
           ...deck,
           deckid: data[0].deckid,
+          description: `[${now.toISOString().slice(0, 10)}] \n${
+            deck.description
+          }`,
           crypt: { ...deck.crypt },
           library: { ...deck.library },
           inventoryType: '',

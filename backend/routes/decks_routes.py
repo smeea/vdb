@@ -368,7 +368,7 @@ def create_branch_route(deckid):
         d = Deck.query.get(request.json["deckid"])
         source = {
             "author": d.author_public_name,
-            "description": d.description,
+            "description": f"[{datetime.utcnow().strftime('%Y-%m-%d')}] \n{d.description}",
             "tags": d.tags,
             "cards": d.cards,
         }
