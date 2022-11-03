@@ -14,10 +14,12 @@ const Changelog = () => {
 
             {changes.map((item) => (
               <div className="py-1" key={item.version}>
-                <div className="bold blue">{item.version}:</div>
+                <div className="bold blue pb-1">{item.version}:</div>
                 <ul>
                   {item.changes.map((change, idx) => (
-                    <li key={idx}>{change}</li>
+                    <li key={idx} className="pb-1">
+                      {change}
+                    </li>
                   ))}
                 </ul>
               </div>

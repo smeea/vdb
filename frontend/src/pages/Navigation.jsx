@@ -148,7 +148,7 @@ const Navigation = () => {
           <NavLink
             to={cardsUrl}
             aria-label="Quick card search"
-            className="nav-link px-2"
+            className="nav-link px-14px"
           >
             <LightningFill width="18" height="18" viewBox="0 0 16 16" />
           </NavLink>

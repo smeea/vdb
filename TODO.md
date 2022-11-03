@@ -7,6 +7,7 @@
 - Check TWD
 - Manual change q-ty in card search PDA/TWD
 - Show changes from base deck when syncing Public
+- Swipe to change card q-ty
 - Seating emulator (vs random decks and pre-determined nicknames)
 
 # MAYBE LATER FEATURES
@@ -19,6 +20,8 @@
 - Cardbase to valtio storage
 - Stop embed card content in inventoryStore, decksStore and resultStore
 - Move Import/Clone/Delete/Branches fetches to services and create relevant deck store functions
+- Try redirect instead of navigate
+- Fetch not-your deck with router (without stalling)
 
 # IMPROVE TECHNOLOGY - BACKEND
 

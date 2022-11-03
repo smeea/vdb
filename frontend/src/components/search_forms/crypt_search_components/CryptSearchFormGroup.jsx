@@ -17,7 +17,7 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
           {groups.map((i, index) => {
             return (
               <Button
-                className="group-form px-5px"
+                className="group-form px-14px"
                 key={index}
                 value={i}
                 name="group"
