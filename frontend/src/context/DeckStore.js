@@ -27,7 +27,9 @@ export const deckCardChange = (
   const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks));
 
   deckServices.cardChange(deckid, cardid, q).catch(() => {
-    deckStore.deck = initialDeckState;
+    if (deckid === deckStore.deck.deckid) {
+      deckStore.deck = initialDeckState;
+    }
     deckStore.decks = initialDecksState;
   });
 
@@ -36,17 +38,19 @@ export const deckCardChange = (
       c: cardBase[cardid],
       q: q,
     };
+
+    if (deckid === deckStore.deck.deckid) {
+      deckStore.deck[cardSrc][cardid] = {
+        c: cardBase[cardid],
+        q: q,
+      };
+    }
   } else {
     delete deckStore.decks[deckid][cardSrc][cardid];
-  }
 
-  if (q >= 0) {
-    deckStore.deck[cardSrc][cardid] = {
-      c: cardBase[cardid],
-      q: q,
-    };
-  } else {
-    delete deckStore.deck[cardSrc][cardid];
+    if (deckid === deckStore.deck.deckid) {
+      delete deckStore.deck[cardSrc][cardid];
+    }
   }
 
   changeMaster(deckid);
@@ -77,7 +81,9 @@ export const deckUpdate = (deckid, field, value) => {
   const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks));
 
   deckServices.update(deckid, field, value).catch(() => {
-    deckStore.deck = initialDeckState;
+    if (deckid === deckStore.deck.deckid) {
+      deckStore.deck = initialDeckState;
+    }
     deckStore.decks = initialDecksState;
   });
 
@@ -90,13 +96,15 @@ export const deckUpdate = (deckid, field, value) => {
       }
     });
 
-    Object.keys(value).map((cardid) => {
-      if (cardid > 200000) {
-        deckStore.deck.crypt[cardid].i = value[cardid];
-      } else {
-        deckStore.deck.library[cardid].i = value[cardid];
-      }
-    });
+    if (deckid === deckStore.deck.deckid) {
+      Object.keys(value).map((cardid) => {
+        if (cardid > 200000) {
+          deckStore.deck.crypt[cardid].i = value[cardid];
+        } else {
+          deckStore.deck.library[cardid].i = value[cardid];
+        }
+      });
+    }
   } else {
     deckStore.decks[deckid][field] = value;
     if (field === 'inventoryType') {
@@ -108,14 +116,16 @@ export const deckUpdate = (deckid, field, value) => {
       });
     }
 
-    deckStore.deck[field] = value;
-    if (field === 'inventoryType') {
-      Object.keys(deckStore.deck.crypt).map((cardid) => {
-        deckStore.deck.crypt[cardid].i = '';
-      });
-      Object.keys(deckStore.deck.library).map((cardid) => {
-        deckStore.deck.library[cardid].i = '';
-      });
+    if (deckid === deckStore.deck.deckid) {
+      deckStore.deck[field] = value;
+      if (field === 'inventoryType') {
+        Object.keys(deckStore.deck.crypt).map((cardid) => {
+          deckStore.deck.crypt[cardid].i = '';
+        });
+        Object.keys(deckStore.deck.library).map((cardid) => {
+          deckStore.deck.library[cardid].i = '';
+        });
+      }
     }
   }
 
