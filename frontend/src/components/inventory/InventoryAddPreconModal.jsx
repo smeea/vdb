@@ -169,11 +169,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                         }}
                         className="scroll"
                       >
-                        <DeckCrypt
-                          inAdvSelect={true}
-                          deckid={deck.deckid}
-                          cards={deck.crypt}
-                        />
+                        <DeckCrypt inAdvSelect={true} deck={deck} />
                       </Col>
                       <Col
                         md={5}
@@ -183,10 +179,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                         }}
                         className="scroll"
                       >
-                        <DeckLibrary
-                          deckid={deck.deckid}
-                          cards={deck.library}
-                        />
+                        <DeckLibrary deck={deck} />
                       </Col>
                     </Row>
                   }

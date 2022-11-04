@@ -354,11 +354,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                           }}
                           className="scroll"
                         >
-                          <DeckCrypt
-                            inAdvSelect={true}
-                            deckid={deck.deckid}
-                            cards={deck.crypt}
-                          />
+                          <DeckCrypt inAdvSelect={true} deck={deck} />
                         </Col>
                         <Col
                           md={6}
@@ -368,10 +364,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                           }}
                           className="scroll"
                         >
-                          <DeckLibrary
-                            deckid={deck.deckid}
-                            cards={deck.library}
-                          />
+                          <DeckLibrary deck={deck} />
                         </Col>
                       </Row>
                     }

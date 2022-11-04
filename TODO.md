@@ -2,6 +2,9 @@
 - Iphone clipboard (copy url)
 - Update rulings & twds
 - Check >. or &. for newline classnames
+- Add tag in binocular not to add to active deck
+- Inventory-state button in binocular as button
+- Lock icon size in binocular
 
 # FEATURES
 - Check TWD
