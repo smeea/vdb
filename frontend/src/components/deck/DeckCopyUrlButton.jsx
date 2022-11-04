@@ -177,19 +177,29 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
         as={ButtonGroup}
         variant={state ? 'success' : noText ? 'primary' : 'secondary'}
         title={
-          <div
-            title="Copy URL"
-            className="d-flex justify-content-center align-items-center"
-          >
-            <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
-              <Link45Deg
-                width={noText ? '18' : '21'}
-                height={noText ? '23' : '21'}
-                viewBox="0 0 15 15"
-              />
-            </div>
-            {!noText && (state ? 'Copied' : 'Copy URL')}
-          </div>
+          noText ? (
+            <Link45Deg
+              width={noText ? '18' : '21'}
+              height={noText ? '23' : '21'}
+              viewBox="0 0 15 15"
+            />
+          ) : (
+            <>
+              <div
+                title="Copy URL"
+                className="d-flex justify-content-center align-items-center"
+              >
+                <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
+                  <Link45Deg
+                    width={noText ? '18' : '21'}
+                    height={noText ? '23' : '21'}
+                    viewBox="0 0 15 15"
+                  />
+                </div>
+                {state ? 'Copied' : 'Copy URL'}
+              </div>
+            </>
+          )
         }
       >
         {ButtonOptions}

@@ -1,9 +1,7 @@
 # FIX
 - Iphone clipboard (copy url)
 - Check >. or &. or . for newline classnames
-- Inventory-state button in binocular as button
-- Lock icon size in binocular
-- Branch selector height
+- Card ideas
 
 # FEATURES
 - Check TWD
@@ -11,6 +9,7 @@
 - Show changes from base deck when syncing Public
 - Swipe to change card q-ty
 - Seating emulator (vs random decks and pre-determined nicknames)
+- Apply revision
 
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing

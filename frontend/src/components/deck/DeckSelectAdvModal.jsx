@@ -291,24 +291,22 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
         {decks[deck.deckid] && (
           <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
             {inventoryMode && !isMobile && (
-              <td
-                className="inventory"
-                onClick={() => toggleInventoryState(deck.deckid)}
-              >
-                <div
-                  className="px-2"
-                  title={
-                    deck.inventoryType === 's'
-                      ? 'Flexible'
-                      : deck.inventoryType === 'h'
-                      ? 'Fixed'
-                      : 'Virtual'
-                  }
-                >
-                  {deck.inventoryType == 's' && <Shuffle />}
-                  {deck.inventoryType == 'h' && <PinAngleFill />}
-                  {!deck.inventoryType && <At />}
-                </div>
+              <td className="inventory">
+                <Button onClick={() => toggleInventoryState(deck.deckid)}>
+                  <div
+                    title={
+                      deck.inventoryType === 's'
+                        ? 'Flexible'
+                        : deck.inventoryType === 'h'
+                        ? 'Fixed'
+                        : 'Virtual'
+                    }
+                  >
+                    {deck.inventoryType == 's' && <Shuffle />}
+                    {deck.inventoryType == 'h' && <PinAngleFill />}
+                    {!deck.inventoryType && <At />}
+                  </div>
+                </Button>
               </td>
             )}
             {!isMobile && (
@@ -448,17 +446,18 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                 {inventoryMode && !isMobile && (
                   <th className="inventory">
                     <Select
-                      classNamePrefix="react-select"
+                      classNamePrefix="no-dropdown react-select"
                       options={invOptions}
                       onChange={(e) => setInvFilter(e.value)}
                       value={invOptions.find((obj) => obj.value === invFilter)}
+                      isSearchable={false}
                     />
                   </th>
                 )}
                 {!isMobile && (
                   <th className="clan">
                     <Select
-                      classNamePrefix="react-select"
+                      classNamePrefix="no-dropdown react-select"
                       options={clanOptions}
                       onChange={(e) => setClanFilter(e.value)}
                       value={clanOptions.find(

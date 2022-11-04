@@ -417,6 +417,10 @@ div.popover-sets
     background: var(--bg-checkbox-selected) !important
   &__option--is-selected
     background: var(--border-primary) !important
+.no-dropdown.react-select__dropdown-indicator
+    display: none
+.no-dropdown.react-select__indicators
+  display: none
 
 .react-select-tags
   &__value-container
@@ -801,13 +805,8 @@ div.name
   td
     border-bottom: 1px solid var(--bg-secondary)
     border-top: 1px solid var(--bg-secondary)
-  .inventory
-    cursor: pointer
-    min-width: 77px
+  .inventory, .clan
     text-align: center
-  .clan
-    cursor: pointer
-    min-width: 93px
     text-align: center
   .name
     cursor: pointer

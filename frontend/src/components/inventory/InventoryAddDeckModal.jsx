@@ -161,24 +161,22 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
       <React.Fragment key={deck.deckid}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {!isMobile && (
-            <td
-              className="inventory"
-              onClick={() => toggleInventoryState(deck.deckid)}
-            >
-              <div
-                className="px-2"
-                title={
-                  deck.inventoryType === 's'
-                    ? 'Flexible'
-                    : deck.inventoryType === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
-                }
-              >
-                {deck.inventoryType == 's' && <Shuffle />}
-                {deck.inventoryType == 'h' && <PinAngleFill />}
-                {!deck.inventoryType && <At />}
-              </div>
+            <td className="inventory">
+              <Button onClick={() => toggleInventoryState(deck.deckid)}>
+                <div
+                  title={
+                    deck.inventoryType === 's'
+                      ? 'Flexible'
+                      : deck.inventoryType === 'h'
+                      ? 'Fixed'
+                      : 'Virtual'
+                  }
+                >
+                  {deck.inventoryType == 's' && <Shuffle />}
+                  {deck.inventoryType == 'h' && <PinAngleFill />}
+                  {!deck.inventoryType && <At />}
+                </div>
+              </Button>
             </td>
           )}
           {!isMobile && (
