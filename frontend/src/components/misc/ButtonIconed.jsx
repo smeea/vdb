@@ -18,16 +18,14 @@ const ButtonIconed = ({
       title={title}
       disabled={disabled}
     >
-      <div className="d-flex justify-content-center align-items-center">
-        <div
-          className={`d-flex ${
-            text === undefined || text === null ? '' : 'pe-2'
-          }`}
-        >
-          {icon}
+      {text === undefined || text === null ? (
+        <>{icon}</>
+      ) : (
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="d-flex pe-2">{icon}</div>
+          {text}
         </div>
-        {text}
-      </div>
+      )}
     </Button>
   );
 };

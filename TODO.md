@@ -1,9 +1,9 @@
 # FIX
 - Iphone clipboard (copy url)
-- Check >. or &. for newline classnames
+- Check >. or &. or . for newline classnames
 - Inventory-state button in binocular as button
 - Lock icon size in binocular
-- Add Deck/Precon to Inventory modal window width
+- Branch selector height
 
 # FEATURES
 - Check TWD
