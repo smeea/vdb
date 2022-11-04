@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (copy url)
 - Check >. or &. or . for newline classnames
-- Card ideas
 
 # FEATURES
 - Check TWD
@@ -24,6 +23,7 @@
 - Move Import/Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Try redirect instead of navigate
 - Fetch not-your deck with router (without stalling)
+- Change useSnapshot(object).property to uS(object.property)
 
 # IMPROVE TECHNOLOGY - BACKEND
 

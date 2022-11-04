@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import {
   CardPopover,
   ButtonAddCard,
@@ -11,11 +12,12 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { BURN_OPTION, POOL_COST, BLOOD_COST, CARD_TEXT } from 'utils/constants';
-import { useApp } from 'context';
+import { deckStore, useApp } from 'context';
 
 const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
-  const { deck, nativeLibrary, isDesktop, isMobile, setShowFloatingButtons } =
+  const { nativeLibrary, isDesktop, isMobile, setShowFloatingButtons } =
     useApp();
+  const deck = useSnapshot(deckStore).deck;
 
   const cardRows = cards.map((card, idx) => {
     const handleClick = () => {

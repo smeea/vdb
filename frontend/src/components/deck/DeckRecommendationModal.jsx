@@ -34,7 +34,7 @@ const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
                   <ResultCryptTable
                     resultCards={crypt}
                     className="search-crypt-table"
-                    inRecommendation={true}
+                    inRecommendation
                   />
                 ) : (
                   <div className="d-flex justify-content-center py-4 pb-md-0">
