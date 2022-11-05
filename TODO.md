@@ -1,6 +1,5 @@
 # FIX
 - Iphone clipboard (copy url)
-- Check >. or &. or . for newline classnames
 
 # FEATURES
 - Check TWD
@@ -17,13 +16,13 @@
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Inventory/deck export in excel to frontend
+- Inventory/deck import in excel
 - Refactor CSS - Tailwind
-- Cardbase to valtio storage
 - Stop embed card content in inventoryStore, decksStore and resultStore
+- Cardbase to valtio storage
 - Move Import/Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Try redirect instead of navigate
 - Fetch not-your deck with router (without stalling)
-- Change useSnapshot(object).property to uS(object.property)
 
 # IMPROVE TECHNOLOGY - BACKEND
 

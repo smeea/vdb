@@ -13,6 +13,7 @@ export { default as DeckCrypt } from './DeckCrypt.jsx';
 export { default as DeckCryptDisciplines } from './DeckCryptDisciplines.jsx';
 export { default as DeckCryptHeader } from './DeckCryptHeader.jsx';
 export { default as DeckCryptTable } from './DeckCryptTable.jsx';
+export { default as DeckCryptTableRow } from './DeckCryptTableRow.jsx';
 export { default as DeckCryptTotalInfo } from './DeckCryptTotalInfo.jsx';
 export { default as DeckDeleteButton } from './DeckDeleteButton.jsx';
 export { default as DeckDiffButton } from './DeckDiffButton.jsx';
@@ -35,6 +36,7 @@ export { default as DeckImportBadCardsModal } from './DeckImportBadCardsModal.js
 export { default as DeckLibrary } from './DeckLibrary.jsx';
 export { default as DeckLibraryHeader } from './DeckLibraryHeader.jsx';
 export { default as DeckLibraryTable } from './DeckLibraryTable.jsx';
+export { default as DeckLibraryTableRow } from './DeckLibraryTableRow.jsx';
 export { default as DeckLibraryTotalInfo } from './DeckLibraryTotalInfo.jsx';
 export { default as DeckLibraryTypeDrawInfo } from './DeckLibraryTypeDrawInfo.jsx';
 export { default as DeckMissingButton } from './DeckMissingButton.jsx';
