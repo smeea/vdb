@@ -1,5 +1,13 @@
 [
   {
+    "version": "2022-11-05",
+    "changes": [
+      "Fix several bugs from recent update",
+      "Add Apply Changes button to Deck Review to change your deck to proposed in Review",
+      "Add swipes to change Deck card q-ty on mobile (after tests will arrive to Inventory/Search)"
+    ]
+  },
+  {
     "version": "2022-11-02",
     "changes": [
       "Update Rulings",
