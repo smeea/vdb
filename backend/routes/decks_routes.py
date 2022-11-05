@@ -80,8 +80,8 @@ def unauthorized_handler():
 @app.route("/api/deck", methods=["POST"])
 def new_deck_route():
     anonymous = request.json.get("anonymous")
-    if not current_user or not anonymous:
-        abort(401)
+    if not current_user.is_authenticated and not anonymous:
+        return abort(401)
 
     new_deckid = uuid.uuid4().hex
     name = request.json["name"] if "name" in request.json else "New deck"
