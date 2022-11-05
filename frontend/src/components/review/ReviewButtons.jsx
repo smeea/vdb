@@ -1,12 +1,17 @@
 import React from 'react';
 import { Stack } from 'react-bootstrap';
-import { ReviewCopyUrlButton, DiffBackButton } from 'components';
+import {
+  ReviewApplyButton,
+  ReviewCopyUrlButton,
+  DiffBackButton,
+} from 'components';
 
-const ReviewButtons = ({ backDeckid, deckid, urlDiff }) => {
+const ReviewButtons = ({ parentId, deck, urlDiff }) => {
   return (
     <Stack gap={1}>
-      {backDeckid && <DiffBackButton deckid={backDeckid} />}
-      <ReviewCopyUrlButton deckid={deckid} urlDiff={urlDiff} />
+      <DiffBackButton parentId={parentId} />
+      <ReviewCopyUrlButton deckid={deck?.deckid} urlDiff={urlDiff} />
+      {parentId && <ReviewApplyButton deck={deck} parentId={parentId} />}
     </Stack>
   );
 };

@@ -215,6 +215,12 @@ const Review = () => {
     if (deckFrom) setError(false);
   }, [deckFrom]);
 
+  const parentId = deckFrom?.description.replace(
+    `Review of ${process.env.ROOT_URL}decks/`,
+    ''
+  );
+  const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
+
   return (
     <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
       <Row className="mx-0">
@@ -296,9 +302,9 @@ const Review = () => {
           <Col lg={2} className="hide-on-lt992px px-lg-3">
             <div className="sticky-buttons">
               <ReviewButtons
-                backDeckid={deck?.deckid}
-                deckid={deckFrom?.deckid}
+                deck={deckFrom}
                 urlDiff={urlDiff}
+                parentId={inDecks ? parentId : null}
               />
             </div>
           </Col>

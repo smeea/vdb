@@ -77,15 +77,11 @@ export const deckCardChange = (
 };
 
 export const deckUpdate = (deckid, field, value) => {
-  const initialDeckState = JSON.parse(JSON.stringify(deckStore.deck));
+  const initialDeckState =
+    deckid === deckStore.deck?.deckid
+      ? JSON.parse(JSON.stringify(deckStore.deck))
+      : null;
   const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks));
-
-  deckServices.update(deckid, field, value).catch(() => {
-    if (deckid === deckStore.deck.deckid) {
-      deckStore.deck = initialDeckState;
-    }
-    deckStore.decks = initialDecksState;
-  });
 
   if (field === 'usedInInventory') {
     Object.keys(value).map((cardid) => {
@@ -96,7 +92,7 @@ export const deckUpdate = (deckid, field, value) => {
       }
     });
 
-    if (deckid === deckStore.deck.deckid) {
+    if (deckid === deckStore.deck?.deckid) {
       Object.keys(value).map((cardid) => {
         if (cardid > 200000) {
           deckStore.deck.crypt[cardid].i = value[cardid];
@@ -104,6 +100,14 @@ export const deckUpdate = (deckid, field, value) => {
           deckStore.deck.library[cardid].i = value[cardid];
         }
       });
+    }
+  } else if (field === 'cards') {
+    deckStore.decks[deckid].crypt = value.crypt;
+    deckStore.decks[deckid].library = value.library;
+
+    if (deckid === deckStore.deck?.deckid) {
+      deckStore.deck.crypt = value.crypt;
+      deckStore.deck.library = value.library;
     }
   } else {
     deckStore.decks[deckid][field] = value;
@@ -116,7 +120,7 @@ export const deckUpdate = (deckid, field, value) => {
       });
     }
 
-    if (deckid === deckStore.deck.deckid) {
+    if (deckid === deckStore.deck?.deckid) {
       deckStore.deck[field] = value;
       if (field === 'inventoryType') {
         Object.keys(deckStore.deck.crypt).map((cardid) => {
@@ -138,6 +142,20 @@ export const deckUpdate = (deckid, field, value) => {
   }
 
   changeMaster(deckid);
+
+  if (field === 'cards') {
+    const cards = {};
+    Object.values({ ...value.crypt, ...value.library }).map((card) => {
+      cards[card.c.Id] = card.q;
+    });
+    value = cards;
+  }
+  deckServices.update(deckid, field, value).catch(() => {
+    if (deckid === deckStore.deck?.deckid) {
+      deckStore.deck = initialDeckState;
+    }
+    deckStore.decks = initialDecksState;
+  });
 };
 
 export const deckAdd = (deck, cryptCardBase, libraryCardBase) => {

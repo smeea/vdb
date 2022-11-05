@@ -5,7 +5,7 @@ import { useApp } from 'context';
 import { ButtonIconed } from 'components';
 
 const DeckReviewButton = ({ deck }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { setShowFloatingButtons, setShowMenuButtons, publicName } = useApp();
   const [snapshotId, setSnapshotId] = useState(undefined);
   const navigate = useNavigate();
 
@@ -28,8 +28,8 @@ const DeckReviewButton = ({ deck }) => {
       },
       body: JSON.stringify({
         name: deck.name,
-        description: deck.description,
-        author: deck.author,
+        description: `Review of ${process.env.ROOT_URL}decks/${deck.deckid}`,
+        author: publicName ? `review by ${publicName}` : '',
         cards: cards,
         tags: deck.tags,
         anonymous: true,

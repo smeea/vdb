@@ -78,16 +78,17 @@ def unauthorized_handler():
 
 
 @app.route("/api/deck", methods=["POST"])
-@login_required
 def new_deck_route():
-    new_deckid = uuid.uuid4().hex
+    anonymous = request.json.get("anonymous")
+    if not current_user or not anonymous:
+        abort(401)
 
+    new_deckid = uuid.uuid4().hex
     name = request.json["name"] if "name" in request.json else "New deck"
     author = request.json["author"] if "author" in request.json else ""
     description = request.json["description"] if "description" in request.json else ""
     tags = request.json["tags"] if "tags" in request.json else []
     input_cards = request.json["cards"] if "cards" in request.json else {}
-    anonymous = request.json.get("anonymous")
     cards = {}
 
     for k, v in input_cards.items():
@@ -311,6 +312,24 @@ def update_deck_route(deckid):
 
     if "tags" in request.json:
         d.tags = request.json["tags"]
+
+    if "cards" in request.json:
+        cards = {}
+        for k, v in request.json["cards"].items():
+            cards[int(k)] = v
+
+        d.cards = cards
+
+    if "library" in request.json:
+        cards = {}
+        for k, v in d.cards.items():
+            if k > 200000:
+                cards[k] = v
+
+        for k, v in request.json["library"].items():
+            cards[int(k)] = v
+
+        d.cards = cards
 
     if d.master:
         old_master = Deck.query.get(d.master)

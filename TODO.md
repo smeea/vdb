@@ -5,9 +5,8 @@
 - Check TWD
 - Manual change q-ty in card search PDA/TWD
 - Show changes from base deck when syncing Public
-- Swipe to change card q-ty
+- Swipe to change card q-ty in inventory
 - Seating emulator (vs random decks and pre-determined nicknames)
-- Apply revision
 
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing
