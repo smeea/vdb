@@ -9,6 +9,9 @@ with open("cards_compatibility.json", "r") as compatibility_file, open(
 
 CRYPT_MULTIPLIER_FOR_LIBRARY = 20
 CRYPT_MULTIPLIER_FOR_CRYPT = 20
+MASTER_MULTIPLIER = 0.5
+CRYPT_RESULTS = 30
+LIBRARY_RESULTS = 40
 
 
 def deck_recommendation(cards):
@@ -108,6 +111,10 @@ def deck_recommendation(cards):
 
                     score = score * max_multiplier
 
+                t = cardbase_lib[str(r)]["Type"]
+                if t == "Master":
+                    score = score * MASTER_MULTIPLIER
+
                 if r not in recommended_library:
                     recommended_library[r] = score
                 else:
@@ -121,4 +128,7 @@ def deck_recommendation(cards):
         recommended_library, key=lambda i: recommended_library[i], reverse=True
     )
 
-    return {"crypt": top_pick_crypt[0:20], "library": top_pick_library[0:30]}
+    return {
+        "crypt": top_pick_crypt[0:CRYPT_RESULTS],
+        "library": top_pick_library[0:LIBRARY_RESULTS],
+    }

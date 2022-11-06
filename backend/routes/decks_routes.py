@@ -361,12 +361,16 @@ def get_recommendation_route(deckid):
 
         with open("../frontend/src/assets/data/preconDecks.json", "r") as precons_file:
             precon_decks = json.load(precons_file)
-            cards = precon_decks[set][precon]
+            cards = {}
+            for k, v in precon_decks[set][precon].items():
+                cards[int(k)] = v
 
     else:
         with open("twd_decks.json", "r") as twd_decks_file:
             twd_decks = json.load(twd_decks_file)
-            cards = twd_decks[deckid]["cards"]
+            cards = {}
+            for k, v in twd_decks[deckid]["cards"].items():
+                cards[int(k)] = v
 
     recommends = deck_recommendation(cards)
 
