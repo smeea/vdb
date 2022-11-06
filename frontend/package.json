@@ -22,12 +22,12 @@
     "browserslist": "^4.21.4",
     "buffer": "^6.0.3",
     "dotenv": "^16.0.3",
-    "eslint": "^8.25.0",
+    "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.10",
     "parcel": "^2.7.0",
     "prettier": "^2.7.1",
     "process": "^0.11.10",
-    "stylelint": "^14.14.0"
+    "stylelint": "^14.14.1"
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
@@ -36,18 +36,18 @@
     "jspdf": "^2.5.1",
     "jszip": "^3.10.1",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.5.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-qr-code": "^2.0.8",
-    "react-router-dom": "^6.4.2",
-    "react-select": "^5.5.4",
+    "react-router-dom": "^6.4.3",
+    "react-select": "^5.6.0",
     "react-string-replace": "^1.1.0",
     "react-swipeable": "^7.0.0",
     "react-virtualized-auto-sizer": "^1.0.7",
-    "react-window": "^1.8.7",
+    "react-window": "^1.8.8",
     "unidecode": "^0.1.8",
     "use-immer": "^0.7.0",
-    "valtio": "^1.7.4"
+    "valtio": "^1.7.5"
   },
   "browserslist": [
     "defaults"
