@@ -9,7 +9,6 @@ const InventoryCardQuantity = ({
   hardUsedTotal,
   compact,
   newFocus,
-  handleCardChange,
 }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const [manual, setManual] = useState(false);
@@ -39,9 +38,6 @@ const InventoryCardQuantity = ({
 
   const handleQuantityChange = (diff) => {
     if (diff + state >= 0) setState(diff + state);
-    if (handleCardChange) {
-      handleCardChange(card, parseInt(diff + state));
-    }
     inventoryCardChangeState(card, parseInt(diff + state));
   };
 

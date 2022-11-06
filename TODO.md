@@ -5,7 +5,7 @@
 - Check TWD
 - Manual change q-ty in card search PDA/TWD
 - Show changes from base deck when syncing Public
-- Swipe to change card q-ty in inventory/search
+- Swipe to change card q-ty in search
 - Seating emulator (vs random decks and pre-determined nicknames)
 
 # MAYBE LATER FEATURES
@@ -19,8 +19,8 @@
 - Refactor CSS - Tailwind
 - Stop embed card content in inventoryStore, decksStore and resultStore
 - Cardbase to valtio storage
+- deckCardChange to accept card and not cardid (omit cardbase props)
 - Move Import/Clone/Delete/Branches fetches to services and create relevant deck store functions
-- Try redirect instead of navigate
 - Fetch not-your deck with router (without stalling)
 
 # IMPROVE TECHNOLOGY - BACKEND
