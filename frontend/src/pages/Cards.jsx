@@ -150,7 +150,8 @@ const Cards = () => {
                     <ResultLayoutText
                       card={card}
                       setImageSet={setImageSet}
-                      noClose={true}
+                      setCard={handleSetCard}
+                      noClose
                     />
                   </Col>
                 </Row>
