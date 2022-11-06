@@ -157,26 +157,24 @@ const Cards = () => {
                 </Row>
               )}
             </Col>
-            {!isMobile && (
-              <Col>
-                <Stack gap={1} className="py-3 px-2">
-                  <ButtonIconed
-                    variant="secondary"
-                    onClick={() => randomCrypt()}
-                    title="Random Crypt Card"
-                    icon={<Dice3 />}
-                    text="Crypt"
-                  />
-                  <ButtonIconed
-                    variant="secondary"
-                    onClick={() => randomLibrary()}
-                    title="Random Library Card"
-                    icon={<Dice3 />}
-                    text="Library"
-                  />
-                </Stack>
-              </Col>
-            )}
+            <Col>
+              <Stack gap={1} className="py-3 px-2">
+                <ButtonIconed
+                  variant="secondary"
+                  onClick={() => randomCrypt()}
+                  title="Random Crypt Card"
+                  icon={<Dice3 />}
+                  text="Crypt"
+                />
+                <ButtonIconed
+                  variant="secondary"
+                  onClick={() => randomLibrary()}
+                  title="Random Library Card"
+                  icon={<Dice3 />}
+                  text="Library"
+                />
+              </Stack>
+            </Col>
           </Row>
         )}
       </>

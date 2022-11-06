@@ -2,57 +2,72 @@ import React from 'react';
 import { useApp } from 'context';
 
 const CardImage = ({ card, set, className, onClick }) => {
-  const { lang, setShowImage } = useApp();
+  const { lang } = useApp();
 
   let imgEnSrc = null;
-  let imgSrc = null;
-
   if (card.Id > 200000) {
     imgEnSrc = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
       card.Adv[0] ? 'adv' : ''
-    }.jpg`;
-    imgSrc = imgEnSrc;
+    }`;
   } else {
     imgEnSrc = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
       .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-    imgSrc = imgEnSrc;
+      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}`;
   }
 
+  let imgSrc = null;
   if (lang !== 'en-EN' || set) {
     if (card.Id > 200000) {
       imgSrc = `${process.env.ROOT_URL}images/cards/${
         set ? `set/${set}` : lang
-      }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}
-g${card.Group.toLowerCase()}
-${card.Adv[0] ? 'adv' : ''}.jpg`;
+      }/${card['ASCII Name']
+        .toLowerCase()
+        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
+        card.Adv[0] ? 'adv' : ''
+      }`;
     } else {
       imgSrc = `${process.env.ROOT_URL}images/cards/${
         set ? `set/${set}` : lang
       }/${card['ASCII Name']
         .toLowerCase()
-        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
+        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}`;
     }
   }
 
   const resetImgSrc = (event) => {
-    if (event.target.src != imgEnSrc) {
-      event.target.src = imgEnSrc;
-    } else {
-      setShowImage(false);
+    if (event.target.src != `${imgEnSrc}.jpg`) {
+      event.target.src = `${imgEnSrc}.jpg`;
     }
   };
 
   return (
-    <img
-      className={className ? className : 'card-popover'}
-      src={imgSrc}
-      alt={card['Name']}
-      onClick={onClick}
-      onError={resetImgSrc}
-    />
+    <>
+      {lang !== 'en-EN' || set ? (
+        <img
+          className={className ? className : 'card-popover'}
+          src={`${imgSrc}.jpg`}
+          alt={card['Name']}
+          onClick={onClick}
+          onError={resetImgSrc}
+        />
+      ) : (
+        <picture>
+          <source
+            media="(max-width: 576px)"
+            srcSet={`${imgEnSrc}.webp`}
+            type="image/webp"
+          />
+          <img
+            className={className ? className : 'card-popover'}
+            src={`${imgEnSrc}.jpg`}
+            alt={card['Name']}
+            onClick={onClick}
+          />
+        </picture>
+      )}
+    </>
   );
 };
 
