@@ -17,7 +17,7 @@ import {
 } from 'components';
 import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
 import { getHardTotal, getSoftMax } from 'utils';
-import { useApp, usedStore, inventoryCardChangeState } from 'context';
+import { useApp, usedStore, inventoryCardChange } from 'context';
 
 const InventoryLibraryTableRow = ({
   card,
@@ -32,10 +32,10 @@ const InventoryLibraryTableRow = ({
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
-      inventoryCardChangeState(card.c, card.q - 1);
+      inventoryCardChange(card.c, card.q - 1);
     },
     onSwipedLeft: () => {
-      inventoryCardChangeState(card.c, card.q + 1);
+      inventoryCardChange(card.c, card.q + 1);
     },
   });
 

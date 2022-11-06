@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { useApp, inventoryCardChangeState } from 'context';
+import { useApp, inventoryCardChange } from 'context';
 import { DeckCardQuantity, QuickSelect } from 'components';
 
 const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
-
+  const { isMobile } = useApp();
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
     setCards(
       badCards.map(() => ({
-        cardid: null,
+        c: null,
         q: null,
       }))
     );
@@ -20,26 +19,25 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
 
   const handleCardChange = (_, idx, q) => {
     if (cards[idx] && q >= 0) {
-      console.log(cards[idx]);
-      // const cardid = cards[idx]?.cardid;
-      // const card =
-      //   cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-      // inventoryCardChangeState(card, q);
-
-      // setCards((prevState) => {
-      //   const newState = { ...prevState };
-      //   newState[idx].q = q;
-      //   return newState;
-      // });
+      inventoryCardChange(cards[idx].c, q);
+      setCards((prevState) => ({
+        ...prevState,
+        [idx]: {
+          ...prevState[idx],
+          q: q,
+        },
+      }));
     }
   };
 
   const handleSetCard = (card, idx) => {
-    setCards((prevState) => {
-      const newState = { ...prevState };
-      newState[idx].cardid = card.Id;
-      return newState;
-    });
+    setCards((prevState) => ({
+      ...prevState,
+      [idx]: {
+        ...prevState[idx],
+        c: card,
+      },
+    }));
   };
 
   return (
@@ -73,7 +71,7 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
               <Col md={6}>
                 <QuickSelect
                   setCard={(card) => handleSetCard(card, idx)}
-                  selectedCardid={cards[idx]?.cardid}
+                  selectedCardid={cards[idx]?.c?.Id}
                   inBadImport
                 />
               </Col>

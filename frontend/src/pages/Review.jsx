@@ -139,14 +139,13 @@ const Review = () => {
     }
   }, [deckFrom]);
 
-  const cardChange = (_, cardid, count) => {
+  const cardChange = (_, card, count) => {
     if (count >= 0) {
-      const cardSrc = cardid > 200000 ? 'crypt' : 'library';
-      const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
+      const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
 
       setDeckFrom((draft) => {
-        draft[cardSrc][cardid] = {
-          c: cardBase[cardid],
+        draft[cardSrc][card.Id] = {
+          c: card,
           q: count,
         };
       });

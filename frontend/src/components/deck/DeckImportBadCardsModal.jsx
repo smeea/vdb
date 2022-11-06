@@ -11,7 +11,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
   useEffect(() => {
     setCards(
       badCards.map(() => ({
-        cardid: null,
+        c: null,
         q: null,
       }))
     );
@@ -19,20 +19,25 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
 
   const handleCardChange = (deckid, idx, q) => {
     if (cards[idx] && q >= 0) {
-      deckCardChange(deckid, cards[idx], q);
-      setCards((prevState) => {
-        prevState[idx].q = q;
-        return prevState;
-      });
+      deckCardChange(deckid, cards[idx].c, q);
+      setCards((prevState) => ({
+        ...prevState,
+        [idx]: {
+          ...prevState[idx],
+          q: q,
+        },
+      }));
     }
   };
 
   const handleSetCard = (card, idx) => {
-    setCards((prevState) => {
-      const newState = { ...prevState };
-      newState[idx].cardid = card.Id;
-      return newState;
-    });
+    setCards((prevState) => ({
+      ...prevState,
+      [idx]: {
+        ...prevState[idx],
+        c: card,
+      },
+    }));
   };
 
   return (
@@ -67,7 +72,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
               <Col md={6}>
                 <QuickSelect
                   setCard={(card) => handleSetCard(card, idx)}
-                  selectedCardid={cards[idx]?.cardid}
+                  selectedCardid={cards[idx]?.c?.Id}
                   inBadImport
                 />
               </Col>

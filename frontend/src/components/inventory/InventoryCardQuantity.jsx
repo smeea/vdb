@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
-import { useApp, inventoryCardChangeState } from 'context';
+import { useApp, inventoryCardChange } from 'context';
 
 const InventoryCardQuantity = ({
   q,
@@ -32,13 +32,13 @@ const InventoryCardQuantity = ({
   const handleSubmitButton = (event) => {
     event.preventDefault();
     if (compact && q === 0) newFocus();
-    inventoryCardChangeState(card, state ? parseInt(state) : 0);
+    inventoryCardChange(card, state ? parseInt(state) : 0);
     setManual(false);
   };
 
   const handleQuantityChange = (diff) => {
     if (diff + state >= 0) setState(diff + state);
-    inventoryCardChangeState(card, parseInt(diff + state));
+    inventoryCardChange(card, parseInt(diff + state));
   };
 
   return (

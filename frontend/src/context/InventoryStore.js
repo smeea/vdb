@@ -60,7 +60,7 @@ export const inventoryCardsAdd = (cards) => {
   });
 };
 
-export const inventoryCardChangeState = (card, q) => {
+export const inventoryCardChange = (card, q) => {
   const initialCryptState = JSON.parse(JSON.stringify(inventoryStore.crypt));
   const initialLibraryState = JSON.parse(
     JSON.stringify(inventoryStore.library)

@@ -15,7 +15,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { getHardTotal, getSoftMax } from 'utils';
-import { useApp, usedStore, inventoryCardChangeState } from 'context';
+import { useApp, usedStore, inventoryCardChange } from 'context';
 
 const InventoryCryptTableRow = ({
   card,
@@ -30,10 +30,10 @@ const InventoryCryptTableRow = ({
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
-      inventoryCardChangeState(card.c, card.q - 1);
+      inventoryCardChange(card.c, card.q - 1);
     },
     onSwipedLeft: () => {
-      inventoryCardChangeState(card.c, card.q + 1);
+      inventoryCardChange(card.c, card.q + 1);
     },
   });
 

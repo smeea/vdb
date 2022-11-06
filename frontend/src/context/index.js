@@ -19,7 +19,7 @@ export {
 } from './SearchStore.js';
 
 export {
-  inventoryCardChangeState,
+  inventoryCardChange,
   inventoryCardsAdd,
   inventoryStore,
   setInventoryCrypt,
