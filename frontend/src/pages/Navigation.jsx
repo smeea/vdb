@@ -116,11 +116,12 @@ const Navigation = () => {
         <div className="d-flex align-items-center">
           {!isMobile && (
             <>
-              <NavLink
-                to="/account"
-                className={`nav-link ${username ? 'pt-1' : ''} px-8px`}
-              >
-                {username ? <PersonFill /> : 'Login'}
+              <NavLink to="/account" className={`nav-link px-8px`}>
+                {username ? (
+                  <PersonFill width="18" height="18" viewBox="0 2 16 16" />
+                ) : (
+                  'Login'
+                )}
               </NavLink>
               <NavLink to="/" end className="nav-link px-8px">
                 {isMobile ? <InfoCircleFill /> : 'About'}
