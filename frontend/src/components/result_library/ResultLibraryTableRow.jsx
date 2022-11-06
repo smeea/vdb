@@ -26,15 +26,8 @@ import {
 } from 'context';
 
 const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
-  const {
-    addMode,
-    inventoryMode,
-    nativeLibrary,
-    isMobile,
-    isDesktop,
-    cryptCardBase,
-    libraryCardBase,
-  } = useApp();
+  const { addMode, inventoryMode, nativeLibrary, isMobile, isDesktop } =
+    useApp();
   const deck = useSnapshot(deckStore).deck;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
@@ -43,24 +36,12 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
       if (addMode && inDeck > 0) {
-        deckCardChange(
-          deck.deckid,
-          card.Id,
-          inDeck - 1,
-          cryptCardBase,
-          libraryCardBase
-        );
+        deckCardChange(deck.deckid, card, inDeck - 1);
       }
     },
     onSwipedLeft: () => {
       if (addMode) {
-        deckCardChange(
-          deck.deckid,
-          card.Id,
-          inDeck + 1,
-          cryptCardBase,
-          libraryCardBase
-        );
+        deckCardChange(deck.deckid, card, inDeck + 1);
       }
     },
   });

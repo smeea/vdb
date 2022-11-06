@@ -5,7 +5,7 @@ import { useApp, deckCardChange } from 'context';
 import { DeckCardQuantity, QuickSelect } from 'components';
 
 const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
-  const { isMobile, cryptCardBase, libraryCardBase } = useApp();
+  const { isMobile } = useApp();
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -18,14 +18,8 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
   }, [badCards]);
 
   const handleCardChange = (deckid, idx, q) => {
-    if (cards[idx]?.cardid && q >= 0) {
-      deckCardChange(
-        deckid,
-        cards[idx].cardid,
-        q,
-        cryptCardBase,
-        libraryCardBase
-      );
+    if (cards[idx] && q >= 0) {
+      deckCardChange(deckid, cards[idx], q);
       setCards((prevState) => {
         prevState[idx].q = q;
         return prevState;
@@ -66,7 +60,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
                 <DeckCardQuantity
                   deckid={deckid}
                   cardChange={handleCardChange}
-                  cardid={idx}
+                  card={idx}
                   q={cards[idx]?.q}
                 />
               </Col>
@@ -74,7 +68,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
                 <QuickSelect
                   setCard={(card) => handleSetCard(card, idx)}
                   selectedCardid={cards[idx]?.cardid}
-                  inBadImport={true}
+                  inBadImport
                 />
               </Col>
             </Row>

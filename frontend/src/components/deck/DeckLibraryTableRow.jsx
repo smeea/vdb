@@ -46,8 +46,6 @@ const DeckLibraryTableRow = ({
     isDesktop,
     isNarrow,
     isWide,
-    cryptCardBase,
-    libraryCardBase,
     nativeLibrary,
   } = useApp();
 
@@ -58,22 +56,10 @@ const DeckLibraryTableRow = ({
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
-      deckCardChange(
-        deckid,
-        card.c.Id,
-        card.q - 1,
-        cryptCardBase,
-        libraryCardBase
-      );
+      deckCardChange(deckid, card.c, card.q - 1);
     },
     onSwipedLeft: () => {
-      deckCardChange(
-        deckid,
-        card.c.Id,
-        card.q + 1,
-        cryptCardBase,
-        libraryCardBase
-      );
+      deckCardChange(deckid, card.c, card.q + 1);
     },
   });
 
@@ -121,7 +107,7 @@ const DeckLibraryTableRow = ({
               >
                 <td className="quantity">
                   <DeckCardQuantity
-                    cardid={card.c.Id}
+                    card={card.c}
                     q={card.q}
                     deckid={deckid}
                     cardChange={deckCardChange}
@@ -136,7 +122,7 @@ const DeckLibraryTableRow = ({
           ) : (
             <td className="quantity">
               <DeckCardQuantity
-                cardid={card.c.Id}
+                card={card.c}
                 q={card.q}
                 deckid={deckid}
                 cardChange={deckCardChange}

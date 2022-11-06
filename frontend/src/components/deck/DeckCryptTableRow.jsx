@@ -45,15 +45,7 @@ const DeckCryptTableRow = ({
   inMissing,
   setModalDraw,
 }) => {
-  const {
-    inventoryMode,
-    isMobile,
-    isDesktop,
-    isNarrow,
-    isWide,
-    cryptCardBase,
-    libraryCardBase,
-  } = useApp();
+  const { inventoryMode, isMobile, isDesktop, isNarrow, isWide } = useApp();
 
   const decks = useSnapshot(deckStore).decks;
   const usedCrypt = useSnapshot(usedStore).crypt;
@@ -63,22 +55,10 @@ const DeckCryptTableRow = ({
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
-      deckCardChange(
-        deckid,
-        card.c.Id,
-        card.q - 1,
-        cryptCardBase,
-        libraryCardBase
-      );
+      deckCardChange(deckid, card.c, card.q - 1);
     },
     onSwipedLeft: () => {
-      deckCardChange(
-        deckid,
-        card.c.Id,
-        card.q + 1,
-        cryptCardBase,
-        libraryCardBase
-      );
+      deckCardChange(deckid, card.c, card.q + 1);
     },
   });
 
@@ -126,7 +106,7 @@ const DeckCryptTableRow = ({
               >
                 <td className="quantity">
                   <DeckCardQuantity
-                    cardid={card.c.Id}
+                    card={card.c}
                     q={card.q}
                     deckid={deckid}
                     cardChange={deckCardChange}
@@ -141,7 +121,7 @@ const DeckCryptTableRow = ({
           ) : (
             <td className="quantity">
               <DeckCardQuantity
-                cardid={card.c.Id}
+                card={card.c}
                 q={card.q}
                 deckid={deckid}
                 cardChange={deckCardChange}

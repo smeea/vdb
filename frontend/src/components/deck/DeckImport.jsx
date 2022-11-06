@@ -143,6 +143,8 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
         libraryCardBase
       );
 
+      // TODO generate deck.cards from deck.crypt & deck.library
+
       const url = `${process.env.API_URL}decks/import`;
       const options = {
         method: 'POST',

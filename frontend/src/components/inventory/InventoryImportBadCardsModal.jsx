@@ -20,16 +20,17 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
 
   const handleCardChange = (_, idx, q) => {
     if (cards[idx] && q >= 0) {
-      const cardid = cards[idx]?.cardid;
-      const card =
-        cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-      inventoryCardChangeState(card, q);
+      console.log(cards[idx]);
+      // const cardid = cards[idx]?.cardid;
+      // const card =
+      //   cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+      // inventoryCardChangeState(card, q);
 
-      setCards((prevState) => {
-        const newState = { ...prevState };
-        newState[idx].q = q;
-        return newState;
-      });
+      // setCards((prevState) => {
+      //   const newState = { ...prevState };
+      //   newState[idx].q = q;
+      //   return newState;
+      // });
     }
   };
 
@@ -65,7 +66,7 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
               <Col md={1}>
                 <DeckCardQuantity
                   cardChange={handleCardChange}
-                  cardid={idx}
+                  card={idx}
                   q={cards[idx]?.q}
                 />
               </Col>

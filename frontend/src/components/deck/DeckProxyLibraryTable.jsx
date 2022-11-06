@@ -93,10 +93,9 @@ const DeckProxyLibraryTable = ({
             >
               <td className="quantity">
                 <DeckCardQuantity
-                  cardid={card.c.Id}
+                  card={card.c}
                   deckid={null}
                   q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
-                  inProxy={true}
                   inInventory={inInventory}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
@@ -104,13 +103,14 @@ const DeckProxyLibraryTable = ({
                   isSelected={
                     proxySelected[card.c.Id] && proxySelected[card.c.Id].print
                   }
+                  inProxy
                 />
               </td>
             </OverlayTrigger>
           ) : (
             <td className="quantity">
               <DeckCardQuantity
-                cardid={card.c.Id}
+                card={card.c}
                 deckid={null}
                 q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
                 cardChange={handleProxyCounter}

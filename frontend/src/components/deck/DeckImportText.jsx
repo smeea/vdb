@@ -47,6 +47,8 @@ const DeckImportText = ({
         libraryCardBase
       );
 
+      // TODO generate deck.cards from deck.crypt & deck.library or switch
+
       const url = `${process.env.API_URL}decks/import`;
       const options = {
         method: 'POST',

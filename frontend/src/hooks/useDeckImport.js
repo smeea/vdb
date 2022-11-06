@@ -108,7 +108,10 @@ const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
 
     const [id, q] = parseCard(i);
     if (id && q) {
-      deck.cards[id] = q;
+      deck.cards[id] = {
+        c: id > 200000 ? cryptCardBase[id] : libraryCardBase[id],
+        q: q,
+      };
     } else {
       deck.badCards.push(i);
     }

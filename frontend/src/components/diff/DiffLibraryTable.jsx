@@ -100,7 +100,7 @@ const DiffLibraryTable = ({
                 >
                   <td className="quantity">
                     <DeckCardQuantity
-                      cardid={card.c.Id}
+                      card={card.c}
                       q={qFrom}
                       deckid={cardChange ? null : deckid}
                       cardChange={cardChange ? cardChange : deckCardChange}
@@ -114,7 +114,7 @@ const DiffLibraryTable = ({
               ) : (
                 <td className="quantity">
                   <DeckCardQuantity
-                    cardid={card.c.Id}
+                    card={card.c}
                     q={qFrom}
                     deckid={cardChange ? null : deckid}
                     cardChange={cardChange ? cardChange : deckCardChange}

@@ -9,7 +9,12 @@ const DeckNewCard = ({ target, cards, deckid, setShowAdd, cardChange }) => {
 
   const addNewCard = () => {
     if (!(cards[selectedValue] && cards[selectedValue].q > 0)) {
-      changeAction(deckid, selectedValue, 1, cryptCardBase, libraryCardBase);
+      const card =
+        target === 'crypt'
+          ? cryptCardBase[selectedValue]
+          : libraryCardBase[selectedValue];
+
+      changeAction(deckid, card, 1);
     }
     setSelectedValue('');
     setShowAdd && setShowAdd(false);
@@ -21,14 +26,13 @@ const DeckNewCard = ({ target, cards, deckid, setShowAdd, cardChange }) => {
 
   return (
     <>
-      {target === 'crypt' && (
+      {target === 'crypt' ? (
         <NewCryptCard
           selectedValue={selectedValue}
           onChange={(value) => setSelectedValue(value.value)}
           autoFocus={true}
         />
-      )}
-      {target === 'library' && (
+      ) : (
         <NewLibraryCard
           selectedValue={selectedValue}
           onChange={(value) => setSelectedValue(value.value)}

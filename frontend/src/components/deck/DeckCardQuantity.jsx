@@ -4,7 +4,7 @@ import { useApp } from 'context';
 
 const DeckCardQuantity = ({
   deckid,
-  cardid,
+  card,
   q,
   inventoryType,
   inInventory,
@@ -14,7 +14,7 @@ const DeckCardQuantity = ({
   cardChange,
   inProxy,
 }) => {
-  const { isMobile, cryptCardBase, libraryCardBase } = useApp();
+  const { isMobile } = useApp();
 
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(q ? q : '');
@@ -29,13 +29,7 @@ const DeckCardQuantity = ({
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    cardChange(
-      deckid,
-      cardid,
-      state ? state : 0,
-      cryptCardBase,
-      libraryCardBase
-    );
+    cardChange(deckid, card, state ? state : 0);
     setManual(false);
   };
 
@@ -65,9 +59,7 @@ const DeckCardQuantity = ({
         <>
           <a
             className="quantity"
-            onClick={() =>
-              cardChange(deckid, cardid, q - 1, cryptCardBase, libraryCardBase)
-            }
+            onClick={() => cardChange(deckid, card, q - 1)}
           >
             <Button className="quantity" variant="primary">
               -
@@ -78,9 +70,7 @@ const DeckCardQuantity = ({
           </div>
           <a
             className="quantity"
-            onClick={() =>
-              cardChange(deckid, cardid, q + 1, cryptCardBase, libraryCardBase)
-            }
+            onClick={() => cardChange(deckid, card, q + 1)}
           >
             <Button className="quantity" variant="primary">
               +
@@ -93,15 +83,7 @@ const DeckCardQuantity = ({
             <Button
               className="quantity"
               variant="primary"
-              onClick={() =>
-                cardChange(
-                  deckid,
-                  cardid,
-                  q - 1,
-                  cryptCardBase,
-                  libraryCardBase
-                )
-              }
+              onClick={() => cardChange(deckid, card, q - 1)}
               tabIndex={-1}
             >
               -
@@ -133,15 +115,7 @@ const DeckCardQuantity = ({
             <Button
               className="quantity"
               variant="primary"
-              onClick={() =>
-                cardChange(
-                  deckid,
-                  cardid,
-                  q + 1,
-                  cryptCardBase,
-                  libraryCardBase
-                )
-              }
+              onClick={() => cardChange(deckid, card, q + 1)}
               tabIndex={-1}
             >
               +

@@ -18,7 +18,6 @@
 - Refactor CSS - Tailwind
 - Stop embed card content in inventoryStore, decksStore and resultStore
 - Cardbase to valtio storage
-- deckCardChange to accept card and not cardid (omit cardbase props)
 - Move Import/Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Fetch not-your deck with router (without stalling)
 

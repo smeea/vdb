@@ -13,20 +13,12 @@ export const setDeck = (v) => {
   deckStore.deck = v;
 };
 
-export const deckCardChange = (
-  deckid,
-  cardid,
-  q,
-  cryptCardBase,
-  libraryCardBase
-) => {
-  const cardSrc = cardid > 200000 ? 'crypt' : 'library';
-  const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
-
+export const deckCardChange = (deckid, card, q) => {
+  const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
   const initialDeckState = JSON.parse(JSON.stringify(deckStore.deck));
   const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks));
 
-  deckServices.cardChange(deckid, cardid, q).catch(() => {
+  deckServices.cardChange(deckid, card.Id, q).catch(() => {
     if (deckid === deckStore.deck.deckid) {
       deckStore.deck = initialDeckState;
     }
@@ -34,22 +26,22 @@ export const deckCardChange = (
   });
 
   if (q >= 0) {
-    deckStore.decks[deckid][cardSrc][cardid] = {
-      c: cardBase[cardid],
+    deckStore.decks[deckid][cardSrc][card.Id] = {
+      c: card,
       q: q,
     };
 
     if (deckid === deckStore.deck.deckid) {
-      deckStore.deck[cardSrc][cardid] = {
-        c: cardBase[cardid],
+      deckStore.deck[cardSrc][card.Id] = {
+        c: card,
         q: q,
       };
     }
   } else {
-    delete deckStore.decks[deckid][cardSrc][cardid];
+    delete deckStore.decks[deckid][cardSrc][card.Id];
 
     if (deckid === deckStore.deck.deckid) {
-      delete deckStore.deck[cardSrc][cardid];
+      delete deckStore.deck[cardSrc][card.Id];
     }
   }
 
