@@ -7,7 +7,6 @@
 - Show changes from base deck when syncing Public
 - Swipe to change card q-ty in inventory/search
 - Seating emulator (vs random decks and pre-determined nicknames)
-- Filter files by extension (txt / dek / xlsx) for import
 
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing

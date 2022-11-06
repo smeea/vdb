@@ -217,14 +217,14 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
           />
           <input
             ref={fileInput}
-            accept="text/*"
+            accept=".txt, .dek"
             type="file"
             onChange={() => importDeckFromFile(fileInput, false)}
             style={{ display: 'none' }}
           />
           <input
             ref={fileInputAnonymous}
-            accept="text/*"
+            accept=".txt, .dek"
             type="file"
             onChange={() => importDeckFromFile(fileInputAnonymous, true)}
             style={{ display: 'none' }}

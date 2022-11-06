@@ -353,7 +353,6 @@ export const AppProvider = (props) => {
   }, [decks]);
 
   useEffect(() => {
-    // TODO CHECK IF WORKS FOR UNLOGGED USER
     if (decks || username === null) {
       const d = recentDecks.filter((v) => !decks[v.deckid]);
       if (d.length < recentDecks.length) {

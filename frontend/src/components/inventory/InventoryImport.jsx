@@ -31,24 +31,7 @@ const InventoryImport = () => {
       if (file.type === 'text/plain') {
         deckText = reader.result;
       } else {
-        deckText = '';
-        const cards = reader.result.split('\n');
-        cards.forEach((res) => {
-          const card = res.split(',');
-          if (card.length >= 5) {
-            let name = card[0].slice(1);
-            const n = card.length - 5;
-            if (n) {
-              for (let i = 1; i <= n; i++) {
-                name += `, ${card[i]}`;
-              }
-            }
-            name = name.slice(0, -1);
-            const q = card[n + 1];
-
-            if (q && name) deckText += `${q} ${name}\n`;
-          }
-        });
+        // TODO import from xlsx
       }
 
       const deck = await useDeckImport(
@@ -79,7 +62,7 @@ const InventoryImport = () => {
       )}
       <input
         ref={fileInput}
-        accept="text/*"
+        accept=".txt"
         type="file"
         onChange={() => importDeckFromFile(fileInput)}
         style={{ display: 'none' }}

@@ -171,7 +171,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
       </ErrorOverlay>
       <input
         ref={fileInput}
-        accept="text/*"
+        accept=".txt, .dek"
         type="file"
         onChange={() => loadDeck(fileInput)}
         style={{ display: 'none' }}
