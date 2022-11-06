@@ -28,7 +28,12 @@ export const cardChange = (deckid, cardid, q) => {
   return fetch(url, options);
 };
 
-export const deckImport = (deckBody) => {
+export const deckImport = (deck) => {
+  const cards = {};
+  Object.values({ ...deck.crypt, ...deck.library }).map((card) => {
+    cards[card.c.Id] = card.q;
+  });
+
   const url = `${process.env.API_URL}deck`;
   const options = {
     method: 'POST',
@@ -37,7 +42,13 @@ export const deckImport = (deckBody) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(deckBody),
+    body: JSON.stringify({
+      name: deck.name,
+      description: deck.description,
+      author: deck.author,
+      cards: cards,
+      anonymous: deck.anonymous,
+    }),
   };
 
   return fetch(url, options);

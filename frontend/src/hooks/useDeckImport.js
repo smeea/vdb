@@ -1,8 +1,8 @@
-const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
+const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
   const unidecode = await import('unidecode');
 
   const cardbase = {};
-  Object.values(cardBaseCrypt).map((card) => {
+  Object.values(cryptCardBase).map((card) => {
     const adv = card?.Adv[0] ? true : false;
     const name = card['ASCII Name'].toLowerCase().replace(/\W/g, '');
 
@@ -15,7 +15,7 @@ const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
     }
   });
 
-  Object.values(cardBaseLibrary).map((card) => {
+  Object.values(libraryCardBase).map((card) => {
     const name = card['ASCII Name'].toLowerCase().replace(/\W/g, '');
     cardbase[name] = { base: card.Id };
   });
@@ -83,7 +83,8 @@ const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
     name: 'New deck',
     author: '',
     description: '',
-    cards: {},
+    crypt: {},
+    library: {},
     badCards: [],
   };
 
@@ -108,10 +109,17 @@ const useDeckImport = async (deckText, cardBaseCrypt, cardBaseLibrary) => {
 
     const [id, q] = parseCard(i);
     if (id && q) {
-      deck.cards[id] = {
-        c: id > 200000 ? cryptCardBase[id] : libraryCardBase[id],
-        q: q,
-      };
+      if (id > 200000) {
+        deck.crypt[id] = {
+          c: cryptCardBase[id],
+          q: q,
+        };
+      } else {
+        deck.library[id] = {
+          c: libraryCardBase[id],
+          q: q,
+        };
+      }
     } else {
       deck.badCards.push(i);
     }

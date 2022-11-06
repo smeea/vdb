@@ -103,6 +103,21 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
       .then((response) => response.json())
       .then((data) => {
         deckBody.deckid = data.deckid;
+        const crypt = {};
+        const library = {};
+        Object.keys(deckBody.cards).map((cardid) => {
+          if (cardid > 200000) {
+            crypt[cardid] = {
+              c: cryptCardBase[cardid],
+              q: deckBody.cards[cardid],
+            };
+          } else {
+            library[cardid] = {
+              c: libraryCardBase[cardid],
+              q: deckBody.cards[cardid],
+            };
+          }
+        });
 
         const now = new Date();
         const deck = {
@@ -111,7 +126,8 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
           deckid: deckBody.deckid,
           description: deckBody.description,
           isAuthor: true,
-          cards: deckBody.cards,
+          crypt: crypt,
+          library: library,
           name: deckBody.name,
           timestamp: now.toUTCString(),
         };
@@ -121,11 +137,28 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
 
           branchesImport(deckBody, amaranth_deck.versions).then((brs) => {
             brs.map((b) => {
+              const bCrypt = {};
+              const bLibrary = {};
+              Object.keys(b.cards).map((cardid) => {
+                if (cardid > 200000) {
+                  bCrypt[cardid] = {
+                    c: cryptCardBase[cardid],
+                    q: deckBody.cards[cardid],
+                  };
+                } else {
+                  bLibrary[cardid] = {
+                    c: libraryCardBase[cardid],
+                    q: deckBody.cards[cardid],
+                  };
+                }
+              });
+
               const n = new Date();
               const d = {
                 author: deckBody.author,
                 branchName: b.branchName,
-                cards: b.cards,
+                crypt: bCrypt,
+                library: bLibrary,
                 deckid: b.deckid,
                 description: b.description,
                 isAuthor: true,
@@ -139,13 +172,13 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
 
             deck.branches = Object.keys(branches);
             Object.values(branches).map((b) => {
-              deckAdd(b, cryptCardBase, libraryCardBase);
+              deckAdd(b);
             });
-            deckAdd(deck, cryptCardBase, libraryCardBase);
+            deckAdd(deck);
             navigate(`/decks/${deck.deckid}`);
           });
         } else {
-          deckAdd(deck, cryptCardBase, libraryCardBase);
+          deckAdd(deck);
           navigate(`/decks/${deck.deckid}`);
         }
       })

@@ -12,6 +12,7 @@ import {
 } from 'components';
 import { useApp, deckStore, deckAdd } from 'context';
 import { useDeckImport } from 'hooks';
+import { deckServices } from 'services';
 
 const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const {
@@ -53,37 +54,24 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
 
   const createNewDeck = () => {
     setCreateError(false);
-
-    const name = 'New deck';
-    const url = `${process.env.API_URL}deck`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name: name }),
+    const d = {
+      name: 'New deck',
+      author: publicName,
     };
 
-    const fetchPromise = fetch(url, options);
-
-    fetchPromise
+    deckServices
+      .deckImport({ ...d })
       .then((response) => response.json())
       .then((data) => {
         setShowInfo && setShowInfo(true);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
-        deckAdd(
-          {
-            name: name,
-            author: publicName,
-            deckid: data.deckid,
-            cards: {},
-          },
-          cryptCardBase,
-          libraryCardBase
-        );
+        deckAdd({
+          ...d,
+          deckid: data.deckid,
+          crypt: {},
+          library: {},
+        });
         navigate(`/decks/${data.deckid}`);
       })
       .catch(() => setCreateError(true));
@@ -137,42 +125,18 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
         });
       }
 
-      const deck = await useDeckImport(
-        deckText,
-        cryptCardBase,
-        libraryCardBase
-      );
+      const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase);
 
-      // TODO generate deck.cards from deck.crypt & deck.library
-
-      const url = `${process.env.API_URL}decks/import`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          deck: deck,
-          anonymous: isAnonymous,
-        }),
-      };
-
-      const fetchPromise = fetch(url, options);
-      fetchPromise
+      deckServices
+        .deckImport({ ...d, anonymous: isAnonymous })
         .then((response) => response.json())
         .then((data) => {
-          deckAdd(
-            {
-              ...deck,
-              deckid: data.deckid,
-            },
-            cryptCardBase,
-            libraryCardBase
-          );
+          deckAdd({
+            ...d,
+            deckid: data.deckid,
+          });
           navigate(`/decks/${data.deckid}`);
-          setBadCards(deck.badCards);
+          setBadCards(d.badCards);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
           handleClose();

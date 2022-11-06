@@ -85,19 +85,19 @@ def new_deck_route():
 
     new_deckid = uuid.uuid4().hex
     name = request.json["name"] if "name" in request.json else "New deck"
-    author = request.json["author"] if "author" in request.json else ""
+    author_public_name = request.json["author"] if "author" in request.json else ""
     description = request.json["description"] if "description" in request.json else ""
     tags = request.json["tags"] if "tags" in request.json else []
     input_cards = request.json["cards"] if "cards" in request.json else {}
-    cards = {}
 
+    cards = {}
     for k, v in input_cards.items():
         cards[int(k)] = v
 
     d = Deck(
         deckid=new_deckid,
         name=name,
-        author_public_name=author,
+        author_public_name=author_public_name,
         creation_date=date.today().strftime("%Y-%m-%d"),
         description=description,
         author=current_user if not anonymous else None,
@@ -463,37 +463,6 @@ def remove_branch_route(deckid):
     db.session.delete(d)
     db.session.commit()
     return jsonify(success=True)
-
-
-@app.route("/api/decks/import", methods=["POST"])
-def import_deck_route():
-    anonymous = request.json.get("anonymous")
-    if not current_user.is_authenticated and not anonymous:
-        return abort(401)
-
-    deck = request.json["deck"]
-    cards = {}
-    for k, v in deck["cards"].items():
-        k = int(k)
-        cards[k] = v
-
-    author = current_user if not anonymous else None
-    author_public_name = deck["author"]
-
-    new_deckid = uuid.uuid4().hex
-    d = Deck(
-        deckid=new_deckid,
-        name=deck["name"],
-        author_public_name=author_public_name,
-        description=deck["description"],
-        author=author,
-        cards=cards,
-    )
-
-    db.session.add(d)
-    db.session.commit()
-
-    return jsonify({"deckid": new_deckid})
 
 
 @app.route("/api/decks/export", methods=["POST"])

@@ -1,6 +1,5 @@
 import { proxy } from 'valtio';
 import { deckServices } from 'services';
-import { useDeck } from 'hooks';
 
 export const deckStore = proxy({
   deck: undefined,
@@ -150,14 +149,8 @@ export const deckUpdate = (deckid, field, value) => {
   });
 };
 
-export const deckAdd = (deck, cryptCardBase, libraryCardBase) => {
+export const deckAdd = (deck) => {
   const now = new Date();
-  const { crypt, library } = useDeck(
-    deck.cards,
-    cryptCardBase,
-    libraryCardBase
-  );
-
   const d = {
     deckid: deck.deckid,
     name: deck.name ?? '',
@@ -166,8 +159,8 @@ export const deckAdd = (deck, cryptCardBase, libraryCardBase) => {
     branchName: deck.branchName ?? '#0',
     description: deck.description ?? '',
     author: deck.author ?? '',
-    crypt: crypt,
-    library: library,
+    crypt: deck.crypt,
+    library: deck.library,
     timestamp: now.toUTCString(),
     isAuthor: true,
     isPublic: Boolean(deck.publicParent),

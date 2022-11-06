@@ -5,6 +5,7 @@ import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp, deckAdd } from 'context';
 import { useDeckImport } from 'hooks';
+import { deckServices } from 'services';
 
 const DeckImportText = ({
   isAnonymous,
@@ -41,42 +42,18 @@ const DeckImportText = ({
     if (deckText) {
       setEmptyError(false);
 
-      const deck = await useDeckImport(
-        deckText,
-        cryptCardBase,
-        libraryCardBase
-      );
+      const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase);
 
-      // TODO generate deck.cards from deck.crypt & deck.library or switch
-
-      const url = `${process.env.API_URL}decks/import`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          deck: deck,
-          anonymous: isAnonymous,
-        }),
-      };
-
-      const fetchPromise = fetch(url, options);
-      fetchPromise
+      deckServices
+        .deckImport({ ...d, anonymous: isAnonymous })
         .then((response) => response.json())
         .then((data) => {
-          deckAdd(
-            {
-              ...deck,
-              deckid: data.deckid,
-            },
-            cryptCardBase,
-            libraryCardBase
-          );
+          deckAdd({
+            ...d,
+            deckid: data.deckid,
+          });
           navigate(`/decks/${data.deckid}`);
-          setBadCards(deck.badCards);
+          setBadCards(d.badCards);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
           setDeckText('');
