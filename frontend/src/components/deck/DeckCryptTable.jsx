@@ -50,6 +50,7 @@ const DeckCryptTable = ({
         disciplinesSet={disciplinesSet}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
+        maxDisciplines={maxDisciplines}
         showInfo={showInfo}
         cryptTotal={cryptTotal}
         inSearch={inSearch}

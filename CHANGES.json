@@ -1,6 +1,6 @@
 [
   {
-    "version": "2022-11-05",
+    "version": "2022-11-06",
     "changes": [
       "Fix several bugs from recent update",
       "Add Apply Changes button to Deck Review to change your deck to proposed in Review",

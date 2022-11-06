@@ -38,6 +38,7 @@ const DeckCryptTableRow = ({
   disciplinesSet,
   keyDisciplines,
   nonKeyDisciplines,
+  maxDisciplines,
   showInfo,
   cryptTotal,
   inSearch,
