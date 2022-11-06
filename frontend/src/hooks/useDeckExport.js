@@ -1,4 +1,3 @@
-import { snapshot } from 'valtio';
 import { cryptSort, librarySort } from 'utils';
 
 const getCryptTitle = (crypt) => {

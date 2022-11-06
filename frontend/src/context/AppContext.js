@@ -298,7 +298,7 @@ export const AppProvider = (props) => {
       'Capacity - Min to Max',
       setCryptSearchSort
     );
-    initFromStorage('cryptDeckSort', 'Quantity', setCryptDeckSort);
+    initFromStorage('cryptDeckSort', 'Quantity ', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
     initFromStorage('twdSearchSort', 'Date - New to Old', setTwdSearchSort);
     initFromStorage('pdaSearchSort', 'Date - New to Old', setPdaSearchSort);
