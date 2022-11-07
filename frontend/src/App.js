@@ -18,6 +18,7 @@ import Library from 'pages/Library.jsx';
 import Review from 'pages/Review.jsx';
 import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
+import { loader as deckLoader } from 'pages/Decks.jsx';
 
 import '~/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'assets/css/style.sass';
@@ -60,7 +61,7 @@ const App = () => {
         <Route path="diff/:deckidFrom/:deckidTo" element={<Diff />} />
         <Route path="inventory" element={<Inventory />} />
         <Route path="decks" element={<Decks />} />
-        <Route path="/decks/:deckid" element={<Decks />} />
+        <Route path="/decks/:deckid" element={<Decks />} loader={deckLoader} />
         <Route path="pda" element={<Pda />} />
         <Route path="review" element={<Review />} />
         <Route path="review/:deckid" element={<Review />} />

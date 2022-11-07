@@ -19,7 +19,6 @@
 - Stop embed card content in inventoryStore, decksStore and resultStore
 - Cardbase to valtio storage
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
-- Fetch not-your deck with router (without stalling)
 
 # IMPROVE TECHNOLOGY - BACKEND
 

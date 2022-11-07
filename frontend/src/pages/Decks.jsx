@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import {
+  useNavigate,
+  useLocation,
+  useParams,
+  useLoaderData,
+  defer,
+} from 'react-router-dom';
 import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import At from 'assets/images/icons/at.svg';
@@ -55,6 +61,7 @@ const Decks = () => {
   const { deckid } = useParams();
   const { hash } = useLocation();
   const query = new URLSearchParams(useLocation().search);
+  const loaderData = useLoaderData();
 
   // Redirect from old links
   if (query.get('id')) navigate(`/decks/${query.get('id')}`);
@@ -75,65 +82,45 @@ const Decks = () => {
   const [showInfo, setShowInfo] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
 
-  const getDeck = () => {
+  const getDeck = async () => {
+    const deckData = await loaderData.deck;
+
+    if (deckData.error) {
+      if (deckData.error == 400) {
+        setError('NO DECK WITH THIS ID');
+      } else {
+        setError('CONNECTION PROBLEM');
+      }
+      setDeck(undefined);
+      return;
+    }
+
     setError(false);
-
-    const url = `${process.env.API_URL}deck/${deckid}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((deckData) => {
-        const cardsData = useDeck(
-          deckData.cards,
-          cryptCardBase,
-          libraryCardBase
-        );
-
-        if (deckid.length !== 32 || deckData.publicParent) {
-          deckData.tags = [];
-          Object.values(useTags(cardsData.crypt, cardsData.library)).map(
-            (v) => {
-              deckData.tags = deckData.tags.concat(v);
-            }
-          );
-        }
-
-        const d = {
-          author: deckData.author,
-          crypt: cardsData.crypt,
-          deckid: deckData.deckid,
-          description: deckData.description,
-          isAuthor: deckData.isAuthor,
-          isBranches: Boolean(deckData.master || deckData.branches?.length > 0),
-          isNonEditable: deckData.isNonEditable,
-          isPublic: Boolean(deckData.publicParent),
-          library: cardsData.library,
-          name: deckData.name,
-          publicChild: deckData.publicChild,
-          publicParent: deckData.publicParent,
-          tags: deckData.tags,
-          timestamp: deckData.timestamp,
-        };
-
-        addRecentDeck(d);
-        setDeck(d);
-      })
-      .catch((error) => {
-        if (error.message == 400) {
-          setError('NO DECK WITH THIS ID');
-        } else {
-          setError('CONNECTION PROBLEM');
-        }
-        setDeck(undefined);
+    const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
+    if (deckid.length !== 32 || deckData.publicParent) {
+      deckData.tags = [];
+      Object.values(useTags(cardsData.crypt, cardsData.library)).map((v) => {
+        deckData.tags = deckData.tags.concat(v);
       });
+    }
+    const d = {
+      author: deckData.author,
+      crypt: cardsData.crypt,
+      deckid: deckData.deckid,
+      description: deckData.description,
+      isAuthor: deckData.isAuthor,
+      isBranches: Boolean(deckData.master || deckData.branches?.length > 0),
+      isNonEditable: deckData.isNonEditable,
+      isPublic: Boolean(deckData.publicParent),
+      library: cardsData.library,
+      name: deckData.name,
+      publicChild: deckData.publicChild,
+      publicParent: deckData.publicParent,
+      tags: deckData.tags,
+      timestamp: deckData.timestamp,
+    };
+    addRecentDeck(d);
+    setDeck(d);
   };
 
   const toggleInventoryState = (id) => {
@@ -221,7 +208,7 @@ const Decks = () => {
               setDeck(undefined);
               setError('NO DECK WITH THIS ID');
             }
-          } else {
+          } else if (loaderData) {
             getDeck();
           }
         }
@@ -229,7 +216,15 @@ const Decks = () => {
         setDeck(decks[lastDeckId]);
       }
     }
-  }, [deckid, lastDeckId, decks, preconDecks, cryptCardBase, libraryCardBase]);
+  }, [
+    deckid,
+    loaderData, // TEST w/o
+    lastDeckId,
+    decks,
+    preconDecks,
+    cryptCardBase,
+    libraryCardBase,
+  ]);
 
   useEffect(() => {
     if (deckid?.includes(':')) {
@@ -624,3 +619,21 @@ const Decks = () => {
 };
 
 export default Decks;
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export const loader = async ({ params }) => {
+  const url = `${process.env.API_URL}deck/${params.deckid}`;
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+  };
+
+  const response = fetch(url, options).then((response) => {
+    if (!response.ok) return { error: response.status };
+    return response.json();
+  });
+
+  return defer({ deck: response });
+};
