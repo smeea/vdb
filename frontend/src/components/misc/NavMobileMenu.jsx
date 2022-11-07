@@ -48,7 +48,9 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                   className="nav-link px-2 py-1"
                 >
                   <div className="d-flex align-items-center main-font">
-                    <PersonFill height="20" width="20" viewBox="0 0 16 16" />
+                    <div className="d-flex justify-content-center min-w-30px">
+                      <PersonFill height="20" width="20" viewBox="0 0 16 16" />
+                    </div>
                     <div className="ps-2">{username ? 'Account' : 'Login'}</div>
                   </div>
                 </NavLink>
@@ -59,14 +61,17 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                   className="nav-link px-2 py-1"
                 >
                   <div className="d-flex align-items-center main-font">
-                    <InfoCircleFill
-                      height="20"
-                      width="20"
-                      viewBox="0 0 16 16"
-                    />
+                    <div className="d-flex justify-content-center min-w-30px">
+                      <InfoCircleFill
+                        height="20"
+                        width="20"
+                        viewBox="0 0 16 16"
+                      />
+                    </div>
                     <div className="ps-2">About</div>
                   </div>
                 </NavLink>
+
                 <ThemeSelect setShowMenu={setShowMenu} />
                 <div
                   className="d-flex align-items-center px-2 py-1"
@@ -75,12 +80,14 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                     setShowMenu(false);
                   }}
                 >
-                  {inventoryMode ? (
-                    <ToggleOn height="20" width="20" viewBox="0 0 16 16" />
-                  ) : (
-                    <ToggleOff height="20" width="20" viewBox="0 0 16 16" />
-                  )}
-                  <div className={inventoryMode ? 'ps-2' : 'gray ps-2'}>
+                  <div className="d-flex justify-content-center min-w-30px">
+                    {inventoryMode ? (
+                      <ToggleOn height="26" width="26" viewBox="0 0 16 16" />
+                    ) : (
+                      <ToggleOff height="26" width="26" viewBox="0 0 16 16" />
+                    )}
+                  </div>
+                  <div className={`${inventoryMode ? '' : 'gray'} ps-2 nowrap`}>
                     Inventory Mode
                   </div>
                 </div>

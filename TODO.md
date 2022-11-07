@@ -1,5 +1,6 @@
 # FIX
 - Iphone clipboard (copy url)
+- Export all in XSLX
 
 # FEATURES
 - Check TWD

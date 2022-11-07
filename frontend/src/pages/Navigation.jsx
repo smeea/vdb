@@ -96,9 +96,9 @@ const Navigation = () => {
                   }
                 >
                   {inventoryMode ? (
-                    <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
+                    <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
                   ) : (
-                    <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
+                    <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
                   )}
                 </div>
                 <div

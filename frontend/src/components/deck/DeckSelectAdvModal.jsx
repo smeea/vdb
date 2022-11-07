@@ -467,7 +467,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                     />
                   </th>
                 )}
-                <th className="name trimmed mw-175">
+                <th className="name trimmed">
                   <FormControl
                     placeholder="Filter by Deck or Card Name"
                     type="text"
