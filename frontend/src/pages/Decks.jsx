@@ -620,9 +620,8 @@ const Decks = () => {
 
 export default Decks;
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export const loader = async ({ params }) => {
+  if (params.deckid === 'deck') return null;
   const url = `${process.env.API_URL}deck/${params.deckid}`;
   const options = {
     method: 'GET',
