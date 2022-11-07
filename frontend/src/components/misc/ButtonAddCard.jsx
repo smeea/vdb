@@ -4,11 +4,10 @@ import { Button } from 'react-bootstrap';
 import { useApp, deckStore, deckCardChange } from 'context';
 
 const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
-  const { cryptCardBase, libraryCardBase } = useApp();
   const decks = useSnapshot(deckStore).decks;
 
   const handleButton = () => {
-    deckCardChange(deckid, card.Id, inDeck + 1, cryptCardBase, libraryCardBase);
+    deckCardChange(deckid, card, inDeck + 1);
   };
 
   let title = 'Add to Deck';

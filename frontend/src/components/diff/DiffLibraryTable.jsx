@@ -103,7 +103,7 @@ const DiffLibraryTable = ({
                       card={card.c}
                       q={qFrom}
                       deckid={cardChange ? null : deckid}
-                      cardChange={cardChange ? cardChange : deckCardChange}
+                      cardChange={cardChange ?? deckCardChange}
                       inInventory={inInventory}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
@@ -117,7 +117,7 @@ const DiffLibraryTable = ({
                     card={card.c}
                     q={qFrom}
                     deckid={cardChange ? null : deckid}
-                    cardChange={cardChange ? cardChange : deckCardChange}
+                    cardChange={cardChange ?? deckCardChange}
                   />
                 </td>
               )}

@@ -31,15 +31,7 @@ const ResultCryptTableRow = ({
   placement,
   maxDisciplines,
 }) => {
-  const {
-    addMode,
-    inventoryMode,
-    isMobile,
-    isDesktop,
-    isWide,
-    cryptCardBase,
-    libraryCardBase,
-  } = useApp();
+  const { addMode, inventoryMode, isMobile, isDesktop, isWide } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
@@ -48,24 +40,12 @@ const ResultCryptTableRow = ({
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
       if (addMode && inDeck > 0) {
-        deckCardChange(
-          deck.deckid,
-          card.Id,
-          inDeck - 1,
-          cryptCardBase,
-          libraryCardBase
-        );
+        deckCardChange(deck.deckid, card.Id, inDeck - 1);
       }
     },
     onSwipedLeft: () => {
       if (addMode) {
-        deckCardChange(
-          deck.deckid,
-          card.Id,
-          inDeck + 1,
-          cryptCardBase,
-          libraryCardBase
-        );
+        deckCardChange(deck.deckid, card.Id, inDeck + 1);
       }
     },
   });
