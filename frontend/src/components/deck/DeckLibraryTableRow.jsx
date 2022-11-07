@@ -52,7 +52,7 @@ const DeckLibraryTableRow = ({
   const decks = useSnapshot(deckStore).decks;
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const { deckid, isPublic, isAuthor } = deck;
+  const { deckid, isPublic, isAuthor, isFrozen } = deck;
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
@@ -76,7 +76,7 @@ const DeckLibraryTableRow = ({
 
   return (
     <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-      {isAuthor && !isPublic ? (
+      {isAuthor && !isPublic && !isFrozen ? (
         <>
           {inventoryMode && decks ? (
             <>

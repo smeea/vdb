@@ -50,7 +50,7 @@ const DeckCryptTableRow = ({
   const decks = useSnapshot(deckStore).decks;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const { deckid, isPublic, isAuthor } = deck;
+  const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
   const swipeHandlers = useSwipeable({
@@ -75,7 +75,7 @@ const DeckCryptTableRow = ({
 
   return (
     <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-      {isAuthor && !isPublic ? (
+      {isAuthor && !isPublic && !isFrozen ? (
         <>
           {inventoryMode && decks ? (
             <>
