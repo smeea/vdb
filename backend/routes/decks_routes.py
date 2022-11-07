@@ -4,7 +4,6 @@ from datetime import date, datetime, timedelta
 import uuid
 import json
 
-from deck_export import deck_export
 from deck_recommendation import deck_recommendation
 from api import app, db, login
 from models import Deck
@@ -463,11 +462,3 @@ def remove_branch_route(deckid):
     db.session.delete(d)
     db.session.commit()
     return jsonify(success=True)
-
-
-@app.route("/api/decks/export", methods=["POST"])
-def deck_export_route():
-    cards = request.json["cards"]
-    result = deck_export(cards)
-
-    return result

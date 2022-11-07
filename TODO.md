@@ -13,11 +13,8 @@
 - Library filter 'playable by crypt'
 
 # IMPROVE TECHNOLOGY - FRONTEND
-- Inventory/deck export in excel to frontend
 - Inventory/deck import in excel
 - Refactor CSS - Tailwind
-- Stop embed card content in inventoryStore, decksStore and resultStore
-- Cardbase to valtio storage
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 
 # IMPROVE TECHNOLOGY - BACKEND

@@ -47,7 +47,8 @@
     "react-window": "^1.8.8",
     "unidecode": "^0.1.8",
     "use-immer": "^0.7.0",
-    "valtio": "^1.7.5"
+    "valtio": "^1.7.5",
+    "xlsx": "^0.18.5"
   },
   "browserslist": [
     "defaults"

@@ -105,6 +105,29 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     saveAs(file, name);
   };
 
+  const exportXlsx = async (deck, deckName) => {
+    let XLSX = await import('xlsx');
+    const crypt = Object.values(deck.crypt).map((card) => {
+      let name = card.c.Name;
+      if (card.c.Adv && card.c.Adv[0]) name += ' (ADV)';
+      if (card.c.New) name += ` (G${card.c.Group})`;
+
+      return { Quantity: card.q, Card: name };
+    });
+
+    const library = Object.values(deck.library).map((card) => {
+      return { Quantity: card.q, Card: card.c.Name };
+    });
+
+    const cryptSheet = XLSX.utils.json_to_sheet(crypt);
+    const librarySheet = XLSX.utils.json_to_sheet(library);
+
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, cryptSheet, 'Crypt');
+    XLSX.utils.book_append_sheet(workbook, librarySheet, 'Library');
+    XLSX.writeFile(workbook, `${deckName}.xlsx`, { compression: true });
+  };
+
   const saveDeck = (format) => {
     setError(false);
 
@@ -114,41 +137,9 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     }
 
     if (format === 'xlsx') {
-      setSpinnerState(true);
-      let cards = {};
-      Object.keys(deck.crypt).map((key) => {
-        cards[key] = deck.crypt[key].q;
-      });
-      Object.keys(deck.library).map((key) => {
-        cards[key] = deck.library[key].q;
-      });
-
-      const url = `${process.env.API_URL}decks/export`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ cards: cards }),
-      };
-      fetch(url, options)
-        .then((response) => {
-          setSpinnerState(false);
-          return response.text();
-        })
-        .then((data) => {
-          const mime =
-            'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-          const file = `${mime};base64,${data}`;
-          saveFile(file, `${deckName}.${format}`);
-          setShowMenuButtons(false);
-          setShowFloatingButtons(true);
-        })
-        .catch(() => {
-          setError(true);
-        });
+      exportXlsx(deck, deckName);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
     } else {
       let exportText = null;
       if ((format === 'twd' || format === 'twdHints') && lang !== 'en-EN') {
