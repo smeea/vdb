@@ -1,6 +1,16 @@
 [
   {
-    "version": "2022-11-06",
+    "version": "2022-11-08",
+    "changes": [
+      "Use webp image format for card images on mobile (reduces image size by 60% with almost unnoticable quality reduction)",
+      "Add swipes to change card q-ty on mobile in Inventory and Search (to add to active deck)",
+      "Improved performance of opening deck by url",
+      "Filter file-pickers by extension for deck/inventory to exclude non-accepted formats",
+      "Fix more bugs from recent update"
+    ]
+  },
+  {
+    "version": "2022-11-05",
     "changes": [
       "Fix several bugs from recent update",
       "Add Apply Changes button to Deck Review to change your deck to proposed in Review",
