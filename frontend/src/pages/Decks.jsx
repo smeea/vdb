@@ -619,7 +619,8 @@ const Decks = () => {
 export default Decks;
 
 export const loader = async ({ params }) => {
-  if (params.deckid === 'deck') return null;
+  if (params.deckid === 'deck' || params.deckid.includes(':')) return null;
+
   const url = `${process.env.API_URL}deck/${params.deckid}`;
   const options = {
     method: 'GET',
