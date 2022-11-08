@@ -20,13 +20,14 @@ import {
   searchTwdForm,
   searchPdaForm,
   searchResults,
+  deckStore,
 } from 'context';
 
 const Navigation = () => {
-  const { inventoryMode, toggleInventoryMode, isMobile, username, deck } =
-    useApp();
+  const { inventoryMode, toggleInventoryMode, isMobile, username } = useApp();
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
+  const deck = useSnapshot(deckStore).deck;
   const quickCard = useSnapshot(searchResults).quickCard;
   const cryptFormState = useSnapshot(searchCryptForm);
   const libraryFormState = useSnapshot(searchLibraryForm);
