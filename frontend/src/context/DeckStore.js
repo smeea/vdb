@@ -10,6 +10,7 @@ export const deckStore = proxy({
 
 export const setDeck = (v) => {
   deckStore.deck = v;
+  deckStore.cryptTimer = !deckStore.cryptTimer;
 };
 
 export const deckCardChange = (deckid, card, q) => {

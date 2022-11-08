@@ -1,6 +1,7 @@
 # FIX
 - Iphone clipboard (copy url)
 - Export all in XSLX
+- Link to Decks to active deck
 
 # FEATURES
 - Check TWD
