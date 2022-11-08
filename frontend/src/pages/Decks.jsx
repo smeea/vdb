@@ -63,8 +63,6 @@ const Decks = () => {
   const query = new URLSearchParams(useLocation().search);
   const loaderData = useLoaderData();
 
-  // Redirect from old links
-  if (query.get('id')) navigate(`/decks/${query.get('id')}`);
   if (hash && deckid !== 'deck') {
     const name = query.get('name') ?? '';
     const author = query.get('author') ?? '';
