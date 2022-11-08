@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Row,
   Col,
@@ -31,6 +31,15 @@ const SearchFormTextAndButtons = ({
   setHideMissing,
 }) => {
   const { inventoryMode, isMobile } = useApp();
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    if (!text && value[0].value) {
+      setText(value[0].value);
+    } else if (!value[0].value) {
+      setText('');
+    }
+  }, [value]);
 
   const options = [
     {
@@ -46,6 +55,11 @@ const SearchFormTextAndButtons = ({
       label: 'Regex',
     },
   ];
+
+  const onTextChange = (e) => {
+    onChange(e);
+    setText(e.target.value);
+  };
 
   const OptionsForm = options.map((opt, index) => {
     return (
@@ -87,8 +101,8 @@ const SearchFormTextAndButtons = ({
             name={0}
             autoComplete="off"
             spellCheck="false"
-            value={value[0].value}
-            onChange={onChange}
+            value={text}
+            onChange={onTextChange}
           />
           {preresults > showLimit && (
             <Button variant="primary" onClick={handleShowResults}>

@@ -1,7 +1,6 @@
 # FIX
 - Iphone clipboard (copy url)
 - Export all in XSLX
-- Edit in the middle of the line
 
 # FEATURES
 - Check TWD
