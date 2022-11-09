@@ -109,7 +109,6 @@ const TwdSearchForm = () => {
 
   const processSearch = () => {
     setError(false);
-    setSpinnerState(true);
     const sanitizedForm = sanitizeFormState('twd', twdFormState);
 
     if (Object.entries(sanitizedForm).length === 0) {
@@ -130,6 +129,7 @@ const TwdSearchForm = () => {
       body: JSON.stringify(sanitizedForm),
     };
 
+    setSpinnerState(true);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);

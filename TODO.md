@@ -2,7 +2,6 @@
 - Iphone clipboard (copy url)
 - Export all in XSLX
 - Typing in the middle of additional search forms
-- Empty requests pushable search in twd/pda on mobile
 
 # FEATURES
 - Check TWD

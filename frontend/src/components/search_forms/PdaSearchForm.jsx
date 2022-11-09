@@ -103,7 +103,6 @@ const PdaSearchForm = () => {
 
   const processSearch = () => {
     setError(false);
-    setSpinnerState(true);
     const sanitizedForm = sanitizeFormState('pda', pdaFormState);
 
     if (Object.entries(sanitizedForm).length === 0) {
@@ -124,6 +123,7 @@ const PdaSearchForm = () => {
       body: JSON.stringify(sanitizedForm),
     };
 
+    setSpinnerState(true);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
