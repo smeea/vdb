@@ -9,7 +9,7 @@ const Pda = () => {
   const pdaResults = useSnapshot(searchResults).pda;
 
   return (
-    <Container className="main-container p-md-3">
+    <Container className="twd-container p-md-3">
       <Row className="justify-content-center">
         <Col
           xs={12}

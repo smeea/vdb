@@ -193,7 +193,7 @@ const DeckCryptTableRow = ({
         </td>
       </ConditionalOverlayTrigger>
 
-      {isWide ? (
+      {isWide && !(keyDisciplines + nonKeyDisciplines > 6 && inSearch) ? (
         <>
           <td className="title pe-2" onClick={() => handleClick(card.c)}>
             <ResultCryptTitle value={card.c.Title} />

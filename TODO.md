@@ -2,10 +2,7 @@
 - Iphone clipboard (copy url)
 - Export all in XSLX
 - Typing in the middle of additional search forms
-- Layout in search - deck and search and form tab to have equal gaps
-- Short clan-group in search
-- Wider main-container on 1920px+ (rename to search-conteiner)
-- Inventory to use deck-container or it's own
+- Empty requests pushable search in twd/pda on mobile
 
 # FEATURES
 - Check TWD

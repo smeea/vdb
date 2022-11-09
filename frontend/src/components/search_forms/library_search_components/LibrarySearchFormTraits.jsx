@@ -22,7 +22,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
   ];
 
   const traitsRight = [
-    ['bloat', 'Bloat'],
+    ['bloat', 'Blood to Uncontrolled'],
     ['bounce bleed', 'Bounce Bleed'],
     ['reduce bleed', 'Reduce Bleed'],
     ['unlock', 'Wake / Unlock'],

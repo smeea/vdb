@@ -9,7 +9,7 @@ const TwdCheck = () => {
   const [eventId, setEventId] = useState(10043);
 
   return (
-    <Container className="main-container">
+    <Container className="search-container">
       <Row className="justify-content-center py-2">
         <Col xl={isWide ? 8 : 9} className="py-2 xborder">
           <TwdDeck eventId={eventId} setEventId={setEventId} />

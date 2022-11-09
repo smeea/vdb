@@ -9,7 +9,7 @@ const Twd = () => {
   const twdResults = useSnapshot(searchResults).twd;
 
   return (
-    <Container className="main-container p-md-3">
+    <Container className="twd-container p-md-3">
       <Row className="justify-content-center">
         <Col
           xs={12}

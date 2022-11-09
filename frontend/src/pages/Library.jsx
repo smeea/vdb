@@ -50,7 +50,7 @@ const Library = () => {
   }, [deck, decks]);
 
   return (
-    <Container className="main-container px-md-2 px-xl-4">
+    <Container className="search-container px-md-2 px-xl-4">
       <Row>
         {!isMobile && (
           <Col
@@ -98,7 +98,7 @@ const Library = () => {
             md={4}
             xl={deck && addMode ? 3 : 4}
             xxl={3}
-            className="p-1 p-md-3 pe-xl-0"
+            className="p-1 px-md-2 py-md-3 pe-xl-0"
           >
             <LibrarySearchForm />
           </Col>

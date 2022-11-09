@@ -63,7 +63,7 @@ const DeckSelectorAndDisplay = () => {
           <div className="pt-2">
             <DeckCrypt deck={deck} inSearch />
           </div>
-          <div className="pt-4">
+          <div className="pt-2">
             <DeckLibrary deck={deck} inSearch />
           </div>
         </>

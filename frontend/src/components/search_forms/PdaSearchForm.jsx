@@ -348,7 +348,7 @@ const PdaSearchForm = () => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={5} className="d-flex px-0">
-          <div className="bold blue px-0">Capacity Average:</div>
+          <div className="bold blue px-0">Capacity Avg:</div>
         </Col>
         <Col xs={7} className="d-flex justify-content-end px-0">
           <TwdSearchFormCapacity

@@ -18,7 +18,7 @@ const Account = () => {
   const { isMobile, username, isPlaytester, isPlaytestAdmin } = useApp();
 
   return (
-    <Container className="main-container">
+    <Container className="search-container">
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />

@@ -109,7 +109,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
   return (
     <>
       <div className="px-1">
-        <b>{isMobile && `Library [${libraryTotal}],`} Key Cards</b>
+        <b>{isMobile ? `Library [${libraryTotal}]` : 'Key cards:'}</b>
       </div>
       <div className="library">
         <table className="twd-library-table">

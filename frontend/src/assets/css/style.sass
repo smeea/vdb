@@ -1295,7 +1295,8 @@ button.accordion-button:not(.collapsed)
   color: var(--fg-secondary)
 
 @media (max-width: 767px)
-  .main-container,
+  .twd-container,
+  .search-container,
   .deck-container
     max-width: 100%
     padding-bottom: 40px
@@ -1311,7 +1312,8 @@ button.accordion-button:not(.collapsed)
     padding-bottom: 72px
 
 @media (min-width: 768px) and (max-width: 991px)
-  .main-container,
+  .twd-container,
+  .search-container,
   .navbar-nav,
   .deck-container
     max-width: 100%
@@ -1333,7 +1335,8 @@ button.accordion-button:not(.collapsed)
     display: none !important
 
 @media (min-width: 992px) and (max-width: 1199px)
-  .main-container,
+  .twd-container,
+  .search-container,
   .navbar-nav,
   .deck-container
     max-width: 100%
@@ -1353,10 +1356,11 @@ button.accordion-button:not(.collapsed)
     display: none !important
 
 @media (min-width: 1200px) and (max-width: 1599px)
-  .main-container,
+  .twd-container,
+  .search-container,
   .navbar-nav
     max-width: 100%
-    min-width: 95%
+    min-width: 100%
   .deck-container
     max-width: 1500px
     min-width: 1200px
@@ -1376,10 +1380,13 @@ button.accordion-button:not(.collapsed)
     display: none !important
 
 @media (min-width: 1600px)
-  .main-container,
+  .search-container,
   .navbar-nav
     max-width: 1550px
     min-width: 1550px
+  .twd-container
+    max-width: 100%
+    min-width: 100%
   .deck-container
     max-width: 1500px
     min-width: 1500px
@@ -1399,6 +1406,13 @@ button.accordion-button:not(.collapsed)
     display: none !important
 
 @media (min-width: 1920px)
+  .search-container,
+  .navbar-nav
+    max-width: 1650px
+    min-width: 1650px
+  .twd-container
+    max-width: 1800px
+    min-width: 1800px
   .modal-wide
     min-width: 55%
   .modal-x-wide

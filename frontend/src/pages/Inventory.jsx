@@ -106,7 +106,7 @@ const Inventory = () => {
   const newLibraryRef = useRef(null);
 
   return (
-    <Container className="main-container p-0">
+    <Container className="search-container p-0">
       {(!inventoryKey && username) || (inventoryKey && !inventoryError) ? (
         <>
           {isMobile ? (

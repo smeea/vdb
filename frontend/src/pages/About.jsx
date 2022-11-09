@@ -14,7 +14,7 @@ const About = () => {
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
 
   return (
-    <Container className="main-container">
+    <Container className="search-container">
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
