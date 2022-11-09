@@ -23,15 +23,8 @@ const ButtonCardCopyUrl = ({ cardid }) => {
   return (
     <>
       {!state ? (
-        <Button
-          className="card-buttons"
-          variant="primary"
-          onClick={handleButton}
-          title="Copy URL"
-        >
-          <div className="d-flex align-items-center">
-            <Link45Deg width="19" height="19" viewBox="0 0 14 14" />
-          </div>
+        <Button variant="primary" onClick={handleButton} title="Copy URL">
+          <Link45Deg width="20" height="20" viewBox="0 2 14 14" />
         </Button>
       ) : (
         <Button variant="success" onClick={handleButton}>

@@ -102,7 +102,6 @@ const InventoryShareModal = ({ show, setShow }) => {
         </Modal.Body>
         <Modal.Footer>
           <ButtonIconed
-            className="card-buttons"
             variant="primary"
             onClick={createUrl}
             title="Create URL"

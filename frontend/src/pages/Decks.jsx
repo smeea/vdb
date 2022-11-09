@@ -7,7 +7,15 @@ import {
   useLoaderData,
   defer,
 } from 'react-router-dom';
-import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
+import {
+  Modal,
+  Button,
+  Container,
+  Row,
+  Col,
+  Form,
+  Stack,
+} from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import At from 'assets/images/icons/at.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
@@ -356,44 +364,40 @@ const Decks = () => {
                         />
                       )}
                     </Form>
-                    <div className="d-flex">
+                    <Stack direction="horizontal" gap={1}>
                       {decks && (
-                        <div className="py-1">
-                          <Button
-                            title="Advanced Deck Select"
-                            variant="primary"
-                            onClick={() => {
-                              setShowFloatingButtons(false);
-                              setShowDeckSelectAdv(true);
-                            }}
-                          >
-                            <div className="d-flex">
-                              <BinocularsFill
-                                width="16"
-                                height="22"
-                                viewBox="0 0 16 18"
-                              />
-                            </div>
-                          </Button>
-                        </div>
+                        <Button
+                          title="Advanced Deck Select"
+                          variant="primary"
+                          onClick={() => {
+                            setShowFloatingButtons(false);
+                            setShowDeckSelectAdv(true);
+                          }}
+                        >
+                          <div className="d-flex">
+                            <BinocularsFill
+                              width="16"
+                              height="22"
+                              viewBox="0 0 16 18"
+                            />
+                          </div>
+                        </Button>
                       )}
                       {isMobile && deck && (
-                        <div className="ps-1 py-1">
-                          <Button
-                            variant="primary"
-                            onClick={() => setShowInfo(!showInfo)}
-                          >
-                            <div className="d-flex pt-1">
-                              <ChatLeftQuoteFill
-                                width="16"
-                                height="18"
-                                viewBox="0 0 16 18"
-                              />
-                            </div>
-                          </Button>
-                        </div>
+                        <Button
+                          variant="primary"
+                          onClick={() => setShowInfo(!showInfo)}
+                        >
+                          <div className="d-flex pt-1">
+                            <ChatLeftQuoteFill
+                              width="16"
+                              height="18"
+                              viewBox="0 0 16 18"
+                            />
+                          </div>
+                        </Button>
                       )}
-                    </div>
+                    </Stack>
                   </div>
                 </Col>
               </Row>
