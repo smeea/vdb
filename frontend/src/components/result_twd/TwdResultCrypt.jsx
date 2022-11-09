@@ -9,54 +9,21 @@ import {
   ResultModal,
   ConditionalOverlayTrigger,
 } from 'components';
-import { ANY } from 'utils/constants';
-import { countCards, getHardTotal } from 'utils';
+import { getHardTotal } from 'utils';
 import { useApp, inventoryStore, usedStore } from 'context';
-import { useModalCardController } from 'hooks';
+import { useDeckCrypt, useModalCardController } from 'hooks';
 
 const TwdResultCrypt = ({ crypt }) => {
-  const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();
+  const { cryptDeckSort, inventoryMode, isMobile, setShowFloatingButtons } =
+    useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
 
-  // Sort cards
-  const SortByQuantity = (a, b) => b.q - a.q;
-  const SortByCapacity = (a, b) => b.c.Capacity - a.c.Capacity;
-
-  const sortedCards = Object.values(crypt)
-    .sort(SortByQuantity)
-    .sort(SortByCapacity);
-
-  const cryptTotal = countCards(sortedCards);
-
-  const hasBanned = sortedCards.filter((card) => card.c.Banned).length > 0;
-
-  let cryptGroupMin = undefined;
-  let cryptGroupMax = undefined;
-  if (sortedCards.length) {
-    cryptGroupMin = sortedCards
-      .filter((card) => card.c.Group !== ANY)
-      .reduce(
-        (acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc),
-        10
-      );
-
-    cryptGroupMax = sortedCards
-      .filter((card) => card.c.Group !== ANY)
-      .reduce(
-        (acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc),
-        0
-      );
-  }
-
-  let cryptGroups;
-  if (cryptGroupMax - cryptGroupMin == 1) {
-    cryptGroups = 'G' + cryptGroupMin + '-' + cryptGroupMax;
-  } else if (cryptGroupMax - cryptGroupMin == 0) {
-    cryptGroups = 'G' + cryptGroupMax;
-  } else {
-    cryptGroups = 'ERROR IN GROUPS';
-  }
+  const { cryptGroups, hasBanned, cryptTotal, sortedCards } = useDeckCrypt(
+    crypt,
+    cryptDeckSort,
+    true
+  );
 
   // Modal Card Controller
   const {
@@ -72,12 +39,12 @@ const TwdResultCrypt = ({ crypt }) => {
     setShowFloatingButtons(true);
   };
 
-  const cardLines = sortedCards.map((card, idx) => {
-    const handleClick = () => {
-      handleModalCardOpen(idx);
-      setShowFloatingButtons(false);
-    };
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
 
+  const cardLines = sortedCards.map((card, idx) => {
     let inInventory = 0;
     let hardUsedTotal = 0;
 
@@ -113,7 +80,7 @@ const TwdResultCrypt = ({ crypt }) => {
         ) : (
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
-        <td className="capacity px-1" onClick={() => handleClick()}>
+        <td className="capacity px-1" onClick={() => handleClick(card.c)}>
           <ResultCryptCapacity value={card.c.Capacity} />
         </td>
 
@@ -121,12 +88,12 @@ const TwdResultCrypt = ({ crypt }) => {
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
         >
-          <td className="name px-1" onClick={() => handleClick()}>
+          <td className="name px-1" onClick={() => handleClick(card.c)}>
             <ResultCryptName card={card.c} />
           </td>
         </ConditionalOverlayTrigger>
 
-        <td className="clan px-1" onClick={() => handleClick()}>
+        <td className="clan px-1" onClick={() => handleClick(card.c)}>
           <ResultClanImage value={card.c.Clan} />
         </td>
       </tr>

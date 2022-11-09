@@ -40,12 +40,12 @@ const TwdResultLibraryKeyCards = ({ library }) => {
     setShowFloatingButtons(true);
   };
 
-  const cardRows = keyCards.map((card, idx) => {
-    const handleClick = () => {
-      handleModalCardOpen(idx);
-      setShowFloatingButtons(false);
-    };
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
 
+  const cardRows = keyCards.map((card, idx) => {
     let inInventory = 0;
     let hardUsedTotal = 0;
 
@@ -83,7 +83,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
         ) : (
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
-        <td className="type" onClick={() => handleClick()}>
+        <td className="type" onClick={() => handleClick(card.c)}>
           <ResultLibraryTypeImage value={card.c.Type} />
         </td>
 
@@ -91,13 +91,13 @@ const TwdResultLibraryKeyCards = ({ library }) => {
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
         >
-          <td className="name px-1" onClick={() => handleClick()}>
+          <td className="name px-1" onClick={() => handleClick(card.c)}>
             <ResultLibraryName card={card.c} />
           </td>
         </ConditionalOverlayTrigger>
 
         {!isMobile && (
-          <td className="disciplines" onClick={() => handleClick()}>
+          <td className="disciplines" onClick={() => handleClick(card.c)}>
             <ResultLibraryDisciplines value={card.c.Discipline} />
             <ResultLibraryClan value={card.c.Clan} />
           </td>
