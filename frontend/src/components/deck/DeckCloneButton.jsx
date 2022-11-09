@@ -72,6 +72,7 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
 
   return (
     <ButtonIconed
+      className="w-100"
       variant={state ? 'success' : noText ? 'primary' : 'secondary'}
       onClick={cloneDeck}
       title="Clone Deck to your account for editing"

@@ -128,10 +128,14 @@ const TwdResultDescription = ({ deck }) => {
             {deck['players']}
           </div>
           {Description}
-          <Stack gap={1} className="py-2">
-            <TwdOpenDeckButton deckid={deck['deckid']} />
-            {username && <DeckCloneButton deck={deck} noRedirect />}
-          </Stack>
+          <Row className="p-2">
+            <Col md={6} className="ps-2 pe-1">
+              <TwdOpenDeckButton deckid={deck['deckid']} />
+            </Col>
+            <Col md={6} className="ps-1 pe-2">
+              {username && <DeckCloneButton deck={deck} noRedirect />}
+            </Col>
+          </Row>
         </>
       ) : (
         <Row className="pb-1 mx-0">

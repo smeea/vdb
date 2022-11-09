@@ -96,22 +96,22 @@ const PdaResultDescription = ({ deck }) => {
     </>
   );
 
-  const Buttons = (
-    <Stack gap={1}>
-      <TwdOpenDeckButton deckid={deck['deckid']} />
-      {username && <DeckCloneButton deck={deck} noRedirect />}
-      <div>
-        <PdaFavoriteButton deck={deck} />
-      </div>
-    </Stack>
-  );
-
   return (
     <>
       {isDesktop ? (
         <>
-          <div className="pb-2">{Description}</div>
-          {Buttons}
+          {Description}
+          <Row className="p-2">
+            <Col md={6} className="ps-2 pe-1">
+              <TwdOpenDeckButton deckid={deck['deckid']} />
+            </Col>
+            <Col md={6} className="ps-1 pe-2">
+              {username && <DeckCloneButton deck={deck} noRedirect />}
+            </Col>
+            <div className="p-2">
+              <PdaFavoriteButton deck={deck} />
+            </div>
+          </Row>
         </>
       ) : (
         <Row className="pb-1 mx-0">
@@ -119,7 +119,13 @@ const PdaResultDescription = ({ deck }) => {
             {Description}
           </Col>
           <Col xs={3} className="px-1">
-            {Buttons}
+            <Stack gap={1}>
+              <TwdOpenDeckButton deckid={deck['deckid']} />
+              {username && <DeckCloneButton deck={deck} noRedirect />}
+              <div>
+                <PdaFavoriteButton deck={deck} />
+              </div>
+            </Stack>
           </Col>
         </Row>
       )}

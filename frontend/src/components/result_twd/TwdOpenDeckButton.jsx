@@ -7,8 +7,8 @@ const TwdOpenDeckButton = ({ deckid, inHistory, noText }) => {
   return (
     <Link to={`/decks/${deckid}`}>
       <ButtonIconed
-        variant={inHistory ? 'primary' : 'secondary'}
         className="w-100"
+        variant={inHistory ? 'primary' : 'secondary'}
         icon={<PlayFill height="18" viewBox="0 0 12 14" />}
         text={noText ? null : 'Open'}
       />
