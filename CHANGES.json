@@ -1,5 +1,12 @@
 [
   {
+    "version": "2022-11-11",
+    "changes": [
+      "Improve search, page layouts on wide screens (be sure it is not a simple to find optimal max width, not to spread everything to where width is not useful anymore but everything is just too sparse)",
+      "Fix more bugs from recent update"
+    ]
+  },
+  {
     "version": "2022-11-08",
     "changes": [
       "Use webp image format for card images on mobile (reduces image size by 60% with almost unnoticable quality reduction)",
