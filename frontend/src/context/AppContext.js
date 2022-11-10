@@ -336,6 +336,8 @@ export const AppProvider = (props) => {
           });
         }
         decksData[deckid].isAuthor = true;
+        decksData[deckid].master =
+          decksData[deckid].master !== '' ? decksData[deckid].master : null;
         decksData[deckid].isBranches = Boolean(
           decksData[deckid].master || decksData[deckid].branches?.length > 0
         );

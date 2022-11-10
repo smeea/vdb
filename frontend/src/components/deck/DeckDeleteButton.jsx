@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ButtonIconed, ModalConfirmation } from 'components';
-import { deckStore, setDeck, useApp } from 'context';
+import { deckStore, useApp } from 'context';
 import { byTimestamp } from 'utils';
 
 const DeckDeleteButton = ({ deck, noText }) => {
@@ -17,25 +17,19 @@ const DeckDeleteButton = ({ deck, noText }) => {
     deleteDeck();
   };
 
-  let revisions = [];
-  if (deck.master) {
-    revisions = [deck.master, ...decks[deck.master].branches];
-  } else if (deck.branches) {
-    revisions = [deck.deckid, ...deck.branches];
-  } else {
-    revisions = [deck.deckid];
-  }
-
   const getLastDeckExcept = () => {
-    const lastDeckArray = Object.values(decks)
-      .filter((d) => !revisions.includes(d.deckid))
-      .sort(byTimestamp);
+    const lastDecks = Object.values(decks)
+      .filter((d) => {
+        return (
+          !d?.branches.includes(deck.deckid) &&
+          !d.master &&
+          d.deckid !== deck.deckid
+        );
+      })
+      .sort(byTimestamp)
+      .map((d) => d.deckid);
 
-    if (lastDeckArray.length > 0) {
-      return lastDeckArray[0].deckid;
-    } else {
-      return null;
-    }
+    return lastDecks[0] || null;
   };
 
   const deleteDeck = () => {
@@ -50,20 +44,14 @@ const DeckDeleteButton = ({ deck, noText }) => {
     };
 
     fetch(url, options).then(() => {
-      revisions.map((d) => {
-        delete deckStore.decks[d];
-      });
-      setDeck(undefined);
+      delete deckStore.decks[deck.master ?? deck.deckid];
 
-      const lastDeckId = getLastDeckExcept();
-      if (lastDeckId) {
-        navigate(`/decks/${lastDeckId}`);
-      } else {
-        navigate('/decks');
-      }
       setShowConfirmation(false);
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
+
+      const lastDeckId = getLastDeckExcept();
+      navigate(lastDeckId ? `/decks/${lastDeckId}` : '/decks');
     });
   };
 
@@ -83,7 +71,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
         text={noText ? null : 'Delete'}
       />
       <ModalConfirmation
-        withConfirmation={revisions.length > 1}
+        withConfirmation={deck.isBranches}
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
