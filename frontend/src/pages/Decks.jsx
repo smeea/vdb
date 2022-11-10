@@ -256,151 +256,142 @@ const Decks = () => {
         <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
           <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0">
             <Col md={5} className="px-0 px-md-2">
-              <Row className="align-items-center justify-content-end mx-0">
-                <Col className="px-0">
-                  <div
-                    className={
-                      inventoryMode || !isMobile
-                        ? 'd-flex'
-                        : 'd-flex justify-content-between'
-                    }
-                  >
-                    <div
-                      className={
-                        deck?.isBranches && selectFrom == 'my'
-                          ? 'w-75'
-                          : 'w-100'
-                      }
-                    >
-                      {selectFrom == 'my' && decks ? (
-                        <DeckSelectMy
-                          handleSelect={handleSelect}
-                          deckid={deck?.deckid}
-                        />
-                      ) : selectFrom == 'recent' ? (
-                        <DeckSelectRecent
-                          handleSelect={handleSelect}
-                          deckid={deck?.deckid}
-                        />
-                      ) : (
-                        <DeckSelectPrecon
-                          handleSelect={handleSelect}
-                          deckid={deck?.deckid}
-                        />
-                      )}
+              <div
+                className={
+                  inventoryMode || !isMobile
+                    ? 'd-flex'
+                    : 'd-flex justify-content-between'
+                }
+              >
+                <div
+                  className={
+                    deck?.isBranches && selectFrom == 'my' ? 'w-75' : 'w-100'
+                  }
+                >
+                  {selectFrom == 'my' && decks ? (
+                    <DeckSelectMy
+                      handleSelect={handleSelect}
+                      deckid={deck?.deckid}
+                    />
+                  ) : selectFrom == 'recent' ? (
+                    <DeckSelectRecent
+                      handleSelect={handleSelect}
+                      deckid={deck?.deckid}
+                    />
+                  ) : (
+                    <DeckSelectPrecon
+                      handleSelect={handleSelect}
+                      deckid={deck?.deckid}
+                    />
+                  )}
+                </div>
+                {selectFrom == 'my' && decks && deck?.isBranches && (
+                  <div className="ps-1 w-25">
+                    <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
+                  </div>
+                )}
+                <div className="d-flex">
+                  {inventoryMode && deck?.isAuthor && (
+                    <div className="d-flex ps-1">
+                      <Button
+                        title={`Inventory Type: ${
+                          !deck?.inventoryType
+                            ? 'VIRTUAL\nDo not use Inventory'
+                            : deck?.inventoryType === 's'
+                            ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
+                            : 'FIXED\nUse unique copies of cards from Inventory'
+                        }`}
+                        variant="primary"
+                        onClick={() => toggleInventoryState(deck?.deckid)}
+                      >
+                        <div className="d-flex align-items-center">
+                          {!deck?.inventoryType && <At />}
+                          {deck?.inventoryType === 's' && <Shuffle />}
+                          {deck?.inventoryType === 'h' && <PinAngleFill />}
+                        </div>
+                      </Button>
                     </div>
-                    {selectFrom == 'my' && decks && deck?.isBranches && (
-                      <div className="ps-1 w-25">
-                        <DeckBranchSelect
-                          handleSelect={handleSelect}
-                          deck={deck}
+                  )}
+                </div>
+              </div>
+              <div className="d-flex justify-content-between align-items-center pt-2">
+                <Form className="my-0 ps-1">
+                  {username && decks && Object.keys(decks).length > 0 && (
+                    <Form.Check
+                      checked={selectFrom == 'my'}
+                      onChange={(e) => setSelectFrom(e.target.id)}
+                      type="radio"
+                      id="my"
+                      label={
+                        <div className="blue">
+                          <b>{isMobile ? 'My' : 'My Decks'}</b>
+                        </div>
+                      }
+                      inline
+                    />
+                  )}
+                  <Form.Check
+                    checked={selectFrom == 'precons'}
+                    onChange={(e) => setSelectFrom(e.target.id)}
+                    type="radio"
+                    id="precons"
+                    label={
+                      <div className="blue">
+                        <b>Precons</b>
+                      </div>
+                    }
+                    inline
+                  />
+                  {recentDecks.length > 0 && (
+                    <Form.Check
+                      checked={selectFrom == 'recent'}
+                      onChange={(e) => setSelectFrom(e.target.id)}
+                      type="radio"
+                      id="recent"
+                      label={
+                        <div className="blue">
+                          <b>Recent</b>
+                        </div>
+                      }
+                      inline
+                    />
+                  )}
+                </Form>
+                <Stack direction="horizontal" gap={1}>
+                  {decks && (
+                    <Button
+                      title="Advanced Deck Select"
+                      variant="primary"
+                      onClick={() => {
+                        setShowFloatingButtons(false);
+                        setShowDeckSelectAdv(true);
+                      }}
+                    >
+                      <div className="d-flex">
+                        <BinocularsFill
+                          width="16"
+                          height="22"
+                          viewBox="0 0 16 18"
                         />
                       </div>
-                    )}
-                    <div className="d-flex">
-                      {inventoryMode && deck?.isAuthor && (
-                        <div className="d-flex ps-1">
-                          <Button
-                            title={`Inventory Type: ${
-                              !deck?.inventoryType
-                                ? 'VIRTUAL\nDo not use Inventory'
-                                : deck?.inventoryType === 's'
-                                ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
-                                : 'FIXED\nUse unique copies of cards from Inventory'
-                            }`}
-                            variant="primary"
-                            onClick={() => toggleInventoryState(deck?.deckid)}
-                          >
-                            <div className="d-flex align-items-center">
-                              {!deck?.inventoryType && <At />}
-                              {deck?.inventoryType === 's' && <Shuffle />}
-                              {deck?.inventoryType === 'h' && <PinAngleFill />}
-                            </div>
-                          </Button>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-top pt-1">
-                    <Form className="pt-1 my-0 ps-1">
-                      {username && decks && Object.keys(decks).length > 0 && (
-                        <Form.Check
-                          checked={selectFrom == 'my'}
-                          onChange={(e) => setSelectFrom(e.target.id)}
-                          type="radio"
-                          id="my"
-                          label={
-                            <div className="blue">
-                              <b>{isMobile ? 'My' : 'My Decks'}</b>
-                            </div>
-                          }
-                          inline
+                    </Button>
+                  )}
+                  {isMobile && deck && (
+                    <Button
+                      variant="primary"
+                      onClick={() => setShowInfo(!showInfo)}
+                    >
+                      <div className="d-flex pt-1">
+                        <ChatLeftQuoteFill
+                          width="16"
+                          height="18"
+                          viewBox="0 0 16 18"
                         />
-                      )}
-                      <Form.Check
-                        checked={selectFrom == 'precons'}
-                        onChange={(e) => setSelectFrom(e.target.id)}
-                        type="radio"
-                        id="precons"
-                        label={
-                          <div className="blue">
-                            <b>Precons</b>
-                          </div>
-                        }
-                        inline
-                      />
-                      {recentDecks.length > 0 && (
-                        <Form.Check
-                          checked={selectFrom == 'recent'}
-                          onChange={(e) => setSelectFrom(e.target.id)}
-                          type="radio"
-                          id="recent"
-                          label={
-                            <div className="blue">
-                              <b>Recent</b>
-                            </div>
-                          }
-                          inline
-                        />
-                      )}
-                    </Form>
-                    <Stack direction="horizontal" gap={1}>
-                      {decks && (
-                        <Button
-                          title="Advanced Deck Select"
-                          variant="primary"
-                          onClick={() => {
-                            setShowFloatingButtons(false);
-                            setShowDeckSelectAdv(true);
-                          }}
-                        >
-                          <div className="d-flex">
-                            <BinocularsFill
-                              width="16"
-                              height="22"
-                              viewBox="0 0 16 18"
-                            />
-                          </div>
-                        </Button>
-                      )}
-                      {isMobile && deck && (
-                        <Button
-                          variant="primary"
-                          onClick={() => setShowInfo(!showInfo)}
-                        >
-                          <div className="d-flex pt-1">
-                            <ChatLeftQuoteFill
-                              width="16"
-                              height="18"
-                              viewBox="0 0 16 18"
-                            />
-                          </div>
-                        </Button>
-                      )}
-                    </Stack>
-                  </div>
-                </Col>
-              </Row>
+                      </div>
+                    </Button>
+                  )}
+                </Stack>
+              </div>
             </Col>
             <Col md={7} className="px-0 px-md-2">
               {deck && (showInfo || !isMobile) && (

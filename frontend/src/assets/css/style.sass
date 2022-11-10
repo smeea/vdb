@@ -1072,7 +1072,7 @@ pre.twd-length-marker
 
 div.sticky-buttons
   position: sticky
-  top: 56
+  top: 62
   z-index: 2
 
 div.sticky-deck-crypt,
@@ -1377,6 +1377,9 @@ button.accordion-button:not(.collapsed)
     display: none !important
 
 @media (min-width: 1600px)
+  .deck-container
+    max-width: 1500px
+    min: 1500px
   .search-container,
   .navbar-nav
     max-width: 1550px
@@ -1384,9 +1387,6 @@ button.accordion-button:not(.collapsed)
   .twd-container
     max-width: 100%
     min-width: 100%
-  .deck-container
-    max-width: 1500px
-    min-width: 1500px
   .hof-cards-container
     max-width: 767px
   .cards-container,
