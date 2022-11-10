@@ -2,12 +2,14 @@
 - Iphone clipboard (copy url)
 - Export all in XSLX
 - Typing in the middle of additional search forms
+- Delete last revision
 
 # FEATURES
 - Check TWD
 - Manual change q-ty in card search PDA/TWD
 - Show changes from base deck when syncing Public
 - Seating emulator (vs random decks and pre-determined nicknames)
+- Export Selected from AdvDeckSelector
 
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing

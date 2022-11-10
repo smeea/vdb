@@ -351,6 +351,9 @@ const exportText = (deck) => {
 
   result += `Deck Name: ${deck.name}\n`;
   result += `Author: ${deck.author}\n`;
+  if (deck.description) {
+    result += `Description: ${deck.description}\n`;
+  }
   result += '\n';
   result += `${getCryptTitle(deck.crypt)}\n`;
   result += '='.repeat(getCryptTitle(deck.crypt).length);
