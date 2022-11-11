@@ -287,6 +287,37 @@
         "Title":"",
         "Twd":0
     },
+    "201634":{
+        "ASCII Name":"Abraham Mellon",
+        "Adv":"",
+        "Artist":[
+            "Mitch Mueller"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Camarilla: Abraham can play cards requiring a Tremere as if he were a Tremere. While he is ready, you get +1 hand size.",
+        "Clan":"Malkavian",
+        "Disciplines":{
+            "Fortitude":1,
+            "Blood Sorcery":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Obfuscate":2
+        },
+        "Group":"6",
+        "Id":201634,
+        "Name":"Abraham Mellon",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200009":{
         "ASCII Name":"Abu Nuwasi",
         "Adv":"",
@@ -422,6 +453,36 @@
         "Title":"",
         "Twd":30
     },
+    "201635":{
+        "ASCII Name":"Adelino Da Silva",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Camarilla: Rescuing an older vampire from torpor costs Adelino -2 blood.",
+        "Clan":"Brujah",
+        "Disciplines":{
+            "Celerity":1,
+            "Potence":1,
+            "Presence":1,
+            "Blood Sorcery":1
+        },
+        "Group":"6",
+        "Id":201635,
+        "Name":"Adelino Da Silva",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200013":{
         "ASCII Name":"Adhiambo",
         "Adv":"",
@@ -450,6 +511,34 @@
         },
         "Title":"",
         "Twd":1
+    },
+    "201636":{
+        "ASCII Name":"Adisa",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Camarilla: Adisa can enter combat with an ally or younger vampire as a (D) action. If she successfully hunts, she does not unlock as normal during her next unlock phase.",
+        "Clan":"Banu Haqim",
+        "Disciplines":{
+            "Celerity":1,
+            "Obfuscate":1
+        },
+        "Group":"6",
+        "Id":201636,
+        "Name":"Adisa",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200014":{
         "ASCII Name":"Adonai",
@@ -6038,6 +6127,35 @@
         "Title":"",
         "Twd":24
     },
+    "201637":{
+        "ASCII Name":"Ayse Dhanial",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Camarilla: If Ayse is ready, you can use a discard phase action to add 1 blood to her.",
+        "Clan":"Tremere",
+        "Disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Blood Sorcery":1
+        },
+        "Group":"6",
+        "Id":201637,
+        "Name":"Ayse Dhanial",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200154":{
         "ASCII Name":"Azaneal",
         "Adv":"",
@@ -10717,6 +10835,35 @@
         "Title":"primogen",
         "Twd":4
     },
+    "201638":{
+        "ASCII Name":"Chun Hei",
+        "Adv":"",
+        "Artist":[
+            "Othon Nikolaidis"
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Camarilla: Once each combat, Chun Hei can burn 1 blood to get 1 additional strike that does not count against the limit. +1 strength.",
+        "Clan":"Brujah",
+        "Disciplines":{
+            "Celerity":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201638,
+        "Name":"Chun Hei",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200275":{
         "ASCII Name":"Cicatriz",
         "Adv":"",
@@ -12342,6 +12489,35 @@
         "Title":"",
         "Twd":1
     },
+    "201639":{
+        "ASCII Name":"Daria",
+        "Adv":"",
+        "Artist":[
+            "Mitch Mueller"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Camarilla: Daria can lock to give another Nosferatu +1 stealth. Directed actions cost her +1 blood.",
+        "Clan":"Nosferatu",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":2,
+            "Obfuscate":2
+        },
+        "Group":"6",
+        "Id":201639,
+        "Name":"Daria",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201583":{
         "ASCII Name":"Dario Ziggler",
         "Adv":"",
@@ -12371,6 +12547,35 @@
         },
         "Title":"",
         "Twd":2
+    },
+    "201640":{
+        "ASCII Name":"Darius Shirazi",
+        "Adv":"",
+        "Artist":[
+            "Grzegorz Bobrowski"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Camarilla: Darius can steal a non-electronic, non-vehicle, non-weapon equipment as a (D) action.",
+        "Clan":"Malkavian",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Auspex":2,
+            "Dominate":2
+        },
+        "Group":"5",
+        "Id":201640,
+        "Name":"Darius Shirazi",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200320":{
         "ASCII Name":"Darius Styx",
@@ -20627,6 +20832,35 @@
         "Title":"",
         "Twd":16
     },
+    "201641":{
+        "ASCII Name":"Guardian, The",
+        "Adv":"",
+        "Artist":[
+            "Riccardo Fabiani"
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Camarilla: The Guardian cannot perform directed actions unless you control a ready unique older Nosferatu. The Guardian can lock after resolution of a successful bleed against you to enter combat with the acting minion.",
+        "Clan":"Nosferatu",
+        "Disciplines":{
+            "Animalism":1,
+            "Celerity":1,
+            "Potence":1
+        },
+        "Group":"6",
+        "Id":201641,
+        "Name":"Guardian, The",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200543":{
         "ASCII Name":"Guedado",
         "Adv":"",
@@ -21086,6 +21320,38 @@
         },
         "Title":"",
         "Twd":1
+    },
+    "201642":{
+        "ASCII Name":"Gwenllian Arwyn",
+        "Adv":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Capacity":9,
+        "Card Text":"Camarilla: During an action she performs, Gwenllian can burn 1 blood to give a blocking vampire -1 intercept. +1 strength.",
+        "Clan":"Brujah",
+        "Disciplines":{
+            "Animalism":1,
+            "Dominate":1,
+            "Fortitude":1,
+            "Celerity":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201642,
+        "Name":"Gwenllian Arwyn",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200556":{
         "ASCII Name":"Gwyedd",
@@ -30262,6 +30528,35 @@
         "Title":"2 votes",
         "Twd":5
     },
+    "201643":{
+        "ASCII Name":"Lady Scarlett Churchill",
+        "Adv":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Camarilla: You and Lady Scarlett can play cards requiring a Toreador as if she were a Toreador.",
+        "Clan":"Ventrue",
+        "Disciplines":{
+            "Dominate":1,
+            "Fortitude":1,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201643,
+        "Name":"Lady Scarlett Churchill",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201516":{
         "ASCII Name":"Lady Vadislava",
         "Adv":"",
@@ -37238,6 +37533,36 @@
         "Title":"",
         "Twd":2
     },
+    "201644":{
+        "ASCII Name":"Mickey Wheeler",
+        "Adv":"",
+        "Artist":[
+            "Carmen Cornet"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Anarch: Mickey gets +1 strength in combat with an older vampire.",
+        "Clan":"Gangrel",
+        "Disciplines":{
+            "Animalism":1,
+            "Celerity":1,
+            "Fortitude":1,
+            "Protean":1
+        },
+        "Group":"6",
+        "Id":201644,
+        "Name":"Mickey Wheeler",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200984":{
         "ASCII Name":"Mictlantecuhtli",
         "Adv":"",
@@ -37909,6 +38234,37 @@
         },
         "Title":"",
         "Twd":1
+    },
+    "201645":{
+        "ASCII Name":"Mithras",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":11,
+        "Card Text":"Independent: Younger vampires must burn 1 blood to attempt to block Mithras or to cast votes or ballots against a referendum called by him. +2 bleed. +1 strength. +2 votes.",
+        "Clan":"Ventrue",
+        "Disciplines":{
+            "Dominate":2,
+            "Fortitude":2,
+            "Potence":2,
+            "Presence":2,
+            "Blood Sorcery":2
+        },
+        "Group":"6",
+        "Id":201645,
+        "Name":"Mithras",
+        "New":true,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201002":{
         "ASCII Name":"Mitru the Hunter",
@@ -41228,6 +41584,36 @@
         "Title":"",
         "Twd":0
     },
+    "201646":{
+        "ASCII Name":"Oskar Anasov",
+        "Adv":"",
+        "Artist":[
+            "Carmen Cornet"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Camarilla: During an action, Oskar can burn 1 blood to give a vampire you control +1 intercept. +1 stealth.",
+        "Clan":"Nosferatu",
+        "Disciplines":{
+            "Celerity":1,
+            "Potence":1,
+            "Animalism":2,
+            "Obfuscate":2
+        },
+        "Group":"6",
+        "Id":201646,
+        "Name":"Oskar Anasov",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201085":{
         "ASCII Name":"Osric Vladislav",
         "Adv":"",
@@ -43271,6 +43657,37 @@
         "Title":"prince",
         "Twd":75
     },
+    "201647":{
+        "ASCII Name":"Queen Anne",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":10,
+        "Card Text":"Camarilla Prince of London: During the polling step of a referendum called by Anne, she can burn 1 blood to force a younger Camarilla vampire to abstain. After she diablerizes a vampire, she can unlock. +1 bleed.",
+        "Clan":"Ventrue",
+        "Disciplines":{
+            "Auspex":1,
+            "Obfuscate":1,
+            "Dominate":2,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201647,
+        "Name":"Queen Anne",
+        "New":true,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"prince",
+        "Twd":0
+    },
     "201140":{
         "ASCII Name":"Quentin",
         "Adv":"",
@@ -44514,6 +44931,34 @@
         "Title":"",
         "Twd":25
     },
+    "201648":{
+        "ASCII Name":"Regina Blake",
+        "Adv":"",
+        "Artist":[
+            "Andrey Kiselev"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Camarilla: Each time you play a location card, you can use up to 1 of Regina's blood to pay some or all of its blood or pool cost.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Auspex":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201648,
+        "Name":"Regina Blake",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201175":{
         "ASCII Name":"Regina Giovanni, The Right Hand of Augustus",
         "Adv":"",
@@ -44895,6 +45340,36 @@
         },
         "Title":"",
         "Twd":12
+    },
+    "201649":{
+        "ASCII Name":"Richard de Worde",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Camarilla: After Richard successfully bleeds, he can look at the target Methuselah's hand, then he can burn 1 blood to discard 1 card from it.",
+        "Clan":"Nosferatu",
+        "Disciplines":{
+            "Blood Sorcery":1,
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":2
+        },
+        "Group":"6",
+        "Id":201649,
+        "Name":"Richard de Worde",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201186":{
         "ASCII Name":"Richard Tauber, Ayelea's Puppet",
@@ -45587,6 +46062,35 @@
         "Title":"",
         "Twd":36
     },
+    "201650":{
+        "ASCII Name":"Rose Abawi",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Camarilla: Rose gets +1 bleed while you control /Mithras/.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Auspex":1,
+            "Obfuscate":1,
+            "Presence":1
+        },
+        "Group":"6",
+        "Id":201650,
+        "Name":"Rose Abawi",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201206":{
         "ASCII Name":"Rosemarie",
         "Adv":"",
@@ -45614,6 +46118,36 @@
         },
         "Title":"",
         "Twd":9
+    },
+    "201651":{
+        "ASCII Name":"Rowena",
+        "Adv":"",
+        "Artist":[
+            "Christian Byrne"
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Camarilla: Rowena can prevent 1 non-aggravated damage each round. She can strike: combat ends in combat with a werewolf.",
+        "Clan":"Gangrel",
+        "Disciplines":{
+            "Animalism":1,
+            "Potence":1,
+            "Fortitude":2,
+            "Protean":2
+        },
+        "Group":"6",
+        "Id":201651,
+        "Name":"Rowena",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201207":{
         "ASCII Name":"Roxanne, Rectrix of the 13th Floor",
@@ -49431,6 +49965,35 @@
         },
         "Title":"",
         "Twd":27
+    },
+    "201652":{
+        "ASCII Name":"Sri Sansa",
+        "Adv":"",
+        "Artist":[
+            "Paolo Puggioni"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Camarilla: During your unlock phase, you can move 1 blood or life between Sri and a mortal or mage ally you control, not to exceed their starting life.",
+        "Clan":"Tremere",
+        "Disciplines":{
+            "Auspex":1,
+            "Blood Sorcery":1,
+            "Dominate":2
+        },
+        "Group":"6",
+        "Id":201652,
+        "Name":"Sri Sansa",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201312":{
         "ASCII Name":"Stanislava",
@@ -53475,6 +54038,38 @@
         },
         "Title":"",
         "Twd":23
+    },
+    "201653":{
+        "ASCII Name":"Valerius",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":9,
+        "Card Text":"Camarilla: If Valerius is Camarilla and not a prince, he can steal the title held by a prince as a (D) action. +1 bleed.",
+        "Clan":"Ventrue",
+        "Disciplines":{
+            "Auspex":1,
+            "Celerity":1,
+            "Potence":1,
+            "Dominate":2,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201653,
+        "Name":"Valerius",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201421":{
         "ASCII Name":"Valerius Maior, Hell's Fool",

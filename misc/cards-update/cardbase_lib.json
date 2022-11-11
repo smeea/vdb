@@ -10049,6 +10049,31 @@
         "Twd":2,
         "Type":"Political Action"
     },
+    "102236":{
+        "ASCII Name":"British Museum, London, The",
+        "Artist":[
+            "Felipe Headley"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique location.\n+1 hand size. Minions you control can unlock after resolution of a successful action to equip with a non-electronic, non-vehicle, non-weapon equipment card from your hand; a minion can unlock only once this way each turn. Those equipment cards cost minions you control -1 blood or pool to equip.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102236,
+        "Name":"British Museum, London, The",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
     "100256":{
         "ASCII Name":"Brother in Arms",
         "Artist":[
@@ -24038,6 +24063,31 @@
         "Twd":0,
         "Type":"Action"
     },
+    "102237":{
+        "ASCII Name":"ECTU Operative",
+        "Artist":[
+            "Mitch Mueller"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Mortal with 3 life. 1 strength, 0 bleed. Operation Antigen.\nECTU Operative can strike: 1R damage. He gets 1 optional maneuver each combat. He can burn a vampire in torpor as a (D) action.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102237,
+        "Name":"ECTU Operative",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Twd":0,
+        "Type":"Ally"
+    },
     "100612":{
         "ASCII Name":"Edge Explosion",
         "Artist":[
@@ -25274,6 +25324,31 @@
         },
         "Twd":39,
         "Type":"Action"
+    },
+    "102238":{
+        "ASCII Name":"Enhanced Coagulant",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Weapon.\nStrike: 3 unpreventable damage and put this card on the opposing vampire; it becomes a card with \"Cards requiring a Discipline cost this vampire +1 blood. After this vampire successfully hunts, burn this card\".",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102238,
+        "Name":"Enhanced Coagulant",
+        "Pool Cost":"1",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"2"
+            }
+        },
+        "Twd":0,
+        "Type":"Equipment"
     },
     "100644":{
         "ASCII Name":"Enhanced Senses",
@@ -47250,6 +47325,31 @@
         "Twd":166,
         "Type":"Master"
     },
+    "102239":{
+        "ASCII Name":"Michael Harris, the Incinerator",
+        "Artist":[
+            "Felipe Headley"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique mortal with 3 life. 1 strength, 1 bleed. Operation Antigen.\nMichael can search your library for an equipment card and equip with it as a +1 stealth action (requirements and cost apply as normal; shuffle afterward). If he is in combat with a vampire, you can burn 1 pool once each round before range is determined to set the range for the round.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102239,
+        "Name":"Michael Harris, the Incinerator",
+        "Pool Cost":"3",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Ally"
+    },
     "101208":{
         "ASCII Name":"Might of the Camarilla",
         "Artist":[
@@ -48117,6 +48217,56 @@
         "Twd":0,
         "Type":"Master"
     },
+    "102240":{
+        "ASCII Name":"Mithraeum, London, The",
+        "Artist":[
+            "Edouard Noisette"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique location. Mithraic Mysteries.\nIf you do not control /Mithras/ during your influence phase, you can search your crypt for 1 copy of him, reveal it, and move it to your uncontrolled region (shuffle afterward). During your unlock phase, you can add 1 blood to /Mithras/ or a Mithraic Mysteries member (the target must be controlled).",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102240,
+        "Name":"Mithraeum, London, The",
+        "Pool Cost":"1",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
+    "102241":{
+        "ASCII Name":"Mithraic Cultist",
+        "Artist":[
+            "Cos Koniotis"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Trifle.\nPut this card on a vampire you control who is not /Mithras/. This vampire is a Mithraic Mysteries member. This vampire gets +1 vote while you control /Mithras/. This vampire gets +1 intercept during actions directed at /Mithras/ or a Mithraic Mysteries card or member. A vampire can have only one Mithraic Cultist.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102241,
+        "Name":"Mithraic Cultist",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"3"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
     "101229":{
         "ASCII Name":"Mob Connections",
         "Artist":[
@@ -48203,6 +48353,31 @@
         },
         "Twd":0,
         "Type":"Action Modifier/Reaction"
+    },
+    "102242":{
+        "ASCII Name":"Mobile HQ, Operation Antigen",
+        "Artist":[
+            "Rodrigo Gonz\u00e1lez Toledo"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique location. Operation Antigen.\nAn Operation Antigen ally you control can lock this location to attempt to enter combat with a vampire as a +1 stealth (D) action. You can lock this location to add enough life to an Operation Antigen ally you control to reach their starting life. You can lock this location and burn 2 pool to cancel an action card that targets an Operation Antigen card you control as it is played; its cost is not paid.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102242,
+        "Name":"Mobile HQ, Operation Antigen",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
     },
     "101231":{
         "ASCII Name":"Moise Kasavubu",
@@ -63629,6 +63804,31 @@
         "Twd":6,
         "Type":"Action"
     },
+    "102243":{
+        "ASCII Name":"Ritual Goblet",
+        "Artist":[
+            "Damien Mammoliti"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique.\nThis vampire gets +1 level of Blood Sorcery [tha]. Rescuing a vampire from torpor costs this vampire -1 blood. Once each turn, this vampire can unlock after rescuing a vampire from torpor.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102243,
+        "Name":"Ritual Goblet",
+        "Pool Cost":"1",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Equipment"
+    },
     "101642":{
         "ASCII Name":"Ritual of the Bitter Rose",
         "Artist":[
@@ -68214,6 +68414,31 @@
         },
         "Twd":2,
         "Type":"Combat/Reaction"
+    },
+    "102244":{
+        "ASCII Name":"Shard, London, The",
+        "Artist":[
+            "Felipe Headley"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique location.\nIf you have the Edge, you can lock this card to reduce the cost of a card you play by 2 pool or blood. Vampires can steal this location as a (D) action; Ventrue get +1 stealth during that action.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102244,
+        "Name":"Shard, London, The",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
     },
     "101755":{
         "ASCII Name":"Shared Nightmare",
@@ -81370,6 +81595,31 @@
             }
         },
         "Twd":192,
+        "Type":"Ally"
+    },
+    "102245":{
+        "ASCII Name":"Valerie Diaz, Antigen Commander",
+        "Artist":[
+            "Mitch Mueller"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique mortal with 3 life. 1 strength, 1 bleed. Operation Antigen.\nIf Valerie is in combat with a vampire, you can burn 1 pool once each round to make her immune to all non-aggravated damage from a strike or damaging effect. Once each turn after combat involving Valerie ends, she can unlock if the opposing vampire is not ready.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102245,
+        "Name":"Valerie Diaz, Antigen Commander",
+        "Pool Cost":"3",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "FoL":{
+                "":"1"
+            }
+        },
+        "Twd":0,
         "Type":"Ally"
     },
     "102088":{

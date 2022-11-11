@@ -658,6 +658,8 @@ Edith Wharton, ""The Age of Innocence""","BH:C/PN, LoB:PO2, KoT:C","","Fred Harp
 "100254","Brigitte Gebauer","Brigitte Gebauer (Wraith)","Ally","Giovanni","","3","","","","Unique wraith with 3 life. 1 strength, 2 bleed.
 Lock Brigitte as a minion you control announces a bleed action to give them +1 bleed for that action. If that action is blocked and combat occurs, Brigitte burns 1 life.","","FN:R2, POD:DTC","","Mike Danza",""
 "100255","Brinksmanship","","Political Action","","","1","","","","If this referendum is successful, put this card in play. Any Methuselah who has exhausted his or her library and begins his or her unlock phase with less than a full hand must attempt to withdraw. On that Methuselah's next unlock phase, if the withdrawal fails, that Methuselah is ousted. If any Methuselah successfully withdraws, you are ousted.","","Anarchs:R","","Peter Bergting",""
+"102236","British Museum, London, The","","Master","","","2","","","","Unique location.
++1 hand size. Minions you control can unlock after resolution of a successful action to equip with a non-electronic, non-vehicle, non-weapon equipment card from your hand; a minion can unlock only once this way each turn. Those equipment cards cost minions you control -1 blood or pool to equip.","","FoL:1","","Felipe Headley",""
 "100256","Brother in Arms","","Action","Salubri antitribu","","1","","","","+1 stealth action. Requires a ready, non-sterile Salubri antitribu with capacity above 2.
 Put this card in play; it becomes a 2-capacity, non-unique Salubri antitribu {of the same sect as the acting Salubri antitribu} with basic Valeren [val]. Move 1 blood from the acting vampire to this vampire. This vampire cannot act this turn. During your unlock phase, if you control more ready Brothers in Arms than ready unique Salubri antitribu, burn the excess ready Brothers in Arms.","","LoB:C, HttB:PSal2","","Andrew Trabbold","2"
 "100257","Brother's Blood","","Combat","","Sanguinus","","","","","Requires a ready Blood Brother of the same circle as another one in combat.
@@ -1584,6 +1586,8 @@ Paul Brooks, ""The Pursuit of Wilderness""","Jyhad:R, VTES:R, Anarchs:R, KoT:R, 
 "100611","Ecstatic Agony","","Action","","Auspex","","","","","+1 stealth action.
 [aus] Put this card on this acting vampire. Each round of combat, this vampire gets +X strength, where X is the amount of damage successfully inflicted on this vampire in the previous round of this combat.
 [AUS] As above, and once per combat, this vampire may press to continue combat if any damage has been successfully inflicted on him or her in the current round.","","FN:R2, Anarchs:PAG","","Drew Tucker",""
+"102237","ECTU Operative","","Ally","","","2","","","","Mortal with 3 life. 1 strength, 0 bleed. Operation Antigen.
+ECTU Operative can strike: 1R damage. He gets 1 optional maneuver each combat. He can burn a vampire in torpor as a (D) action.","","FoL:2","","Mitch Mueller",""
 "100612","Edge Explosion","","Event","","","","","","","Gehenna.
 Requires at least one other Gehenna card in play. Each imbued can have (and use) one power card for which he or she doesn't meet the requirements. An imbued who performs a successful action may gain 1 conviction [1 CONVICTION] from his or her ash heap. An imbued can only gain 1 conviction [1 CONVICTION] this way each turn.","","NoR:R","2008","John Bridges",""
 "100613","Edge of the World","","Action Modifier","Guruhi","","","","","","Usable by a ready Guruhi you control, acting or not. Only usable if you have gained a victory point during this action. You gain 4 pool. If this Guruhi is acting, he or she unlocks and gains enough blood from the bank to reach full capacity. Only one Edge of the World can be played each action.","","EK:R","","Leif Jones",""
@@ -1677,6 +1681,8 @@ Nkundo-Mongo proverb","LoB:C/PO3","","Roel Wielinga",""
 [for] The acting vampire gains 2 blood.
 [spi] As [for] above, and this vampire unlocks at the end of the turn.
 [SPI] The acting vampire gains 2 blood and unlocks.","","BL:R1, LoB:R","","Steve Prescott",""
+"102238","Enhanced Coagulant","","Equipment","","","1","","","","Weapon.
+Strike: 3 unpreventable damage and put this card on the opposing vampire; it becomes a card with ""Cards requiring a Discipline cost this vampire +1 blood. After this vampire successfully hunts, burn this card"".","","FoL:2","","Ginés Quiñonero",""
 "100644","Enhanced Senses","","Reaction","","Auspex","","","","","[aus] +1 intercept.
 [AUS] +2 intercept.","Perhaps to our senses things offer only their rejections. Perfume is what the flowers throw away.
 Paul Valéry","Jyhad:C, VTES:C, Sabbat:C, SW:PT2/PV3, CE:C/PM/PTo/PTr3, Anarchs:PAG, BH:PM4/PTr4, KMW:PAl3, Third:C/PTr3/PTz5/SKTr3/SKTz4, HttB:PSal3, SP:DoF4/PwN2, FB:PTr2, NB:PTr2","","Amy Weber; Phillip Tan; Bob Stevlic",""
@@ -3129,6 +3135,8 @@ Samuel Taylor Coleridge, ""The Rime of the Ancient Mariner""","BH:R","","David D
 Reveal the top card of your crypt. If it is a Follower of Set, draw it and add 2 blood to it if it is younger. Otherwise, shuffle it back into your crypt.","","LotN:C/PS, POD:DTC","","Alexander Dunnigan",""
 "101207","Metro Underground","","Master","","","","","","","Master: unique location.
 During your discard phase, you may lock this card and burn 1 pool to unlock a vampire you control.","","Jyhad:U, VTES:U, CE:U, KoT:U","","Randy Gallegos; Becky Cloonan",""
+"102239","Michael Harris, the Incinerator","","Ally","","","3","","","","Unique mortal with 3 life. 1 strength, 1 bleed. Operation Antigen.
+Michael can search your library for an equipment card and equip with it as a +1 stealth action (requirements and cost apply as normal; shuffle afterward). If he is in combat with a vampire, you can burn 1 pool once each round before range is determined to set the range for the round.","","FoL:1","","Felipe Headley",""
 "101208","Might of the Camarilla","","Political Action","","","","","","","Requires a justicar or Inner Circle member.
 If this referendum is successful, each Methuselah burns a vampire (of his or her choosing) in his or her uncontrolled region.","","AH:R2, Tenth:A","","L. A. Williams",""
 "101209","Mighty Grapple","","Combat","","Potence","","","","","Grapple.
@@ -3177,11 +3185,17 @@ Lewis Carroll, ""Through the Looking Glass""","Third:C, KoT:C, SP:PwN6, V5:PTr6"
 "101227","Mistaken Identity","","Reaction","","","","1","","","Play when a Ventrue antitribu attempts to hunt. This action is ended (unsuccessfully), and the acting vampire goes into torpor.","","Sabbat:U, SW:R/PB","","Brian Horton",""
 "101228","Mistrust","","Master","","","1","","","","Master.
 Burn a scarce vampire in torpor or move a ready scarce vampire to his or her controller's uncontrolled region, with all cards and counters on him or her (which are out of play as long as the vampire remains out of play).","","BH:R","","Rik Martin",""
+"102240","Mithraeum, London, The","","Master","","","1","","","","Unique location. Mithraic Mysteries.
+If you do not control /Mithras/ during your influence phase, you can search your crypt for 1 copy of him, reveal it, and move it to your uncontrolled region (shuffle afterward). During your unlock phase, you can add 1 blood to /Mithras/ or a Mithraic Mysteries member (the target must be controlled).","","FoL:1","","Edouard Noisette",""
+"102241","Mithraic Cultist","","Master","","","","","","","Trifle.
+Put this card on a vampire you control who is not /Mithras/. This vampire is a Mithraic Mysteries member. This vampire gets +1 vote while you control /Mithras/. This vampire gets +1 intercept during actions directed at /Mithras/ or a Mithraic Mysteries card or member. A vampire can have only one Mithraic Cultist.","","FoL:3","","Cos Koniotis",""
 "101229","Mob Connections","","Master","","","","","","","Unique master.
 Put this card in play. Lock to give a press, only usable to continue combat, to a minion you control. Any minion may burn this card as a (D) action.","Collective crimes incriminate no one.
 Napoleon I, ""Maxims""","Jyhad:U, VTES:U, Sabbat:U, SW:PB, CE:PB/PTr, LoB:PO, Third:U","","William O'Connor; Greg Simanson",""
 "101230","Mob Rule","","Action Modifier/Reaction","","","","","","","Only usable during a referendum.
 Each vampire with a capacity above 4 can burn blood to gain votes. A vampire gains 1 vote for each blood he or she burns. A vampire with a capacity above 7 gains an additional vote for each blood he or she burns.","","Anarchs:C, KMW:PAn3","","Brian LeBlanc",""
+"102242","Mobile HQ, Operation Antigen","","Master","","","2","","","","Unique location. Operation Antigen.
+An Operation Antigen ally you control can lock this location to attempt to enter combat with a vampire as a +1 stealth (D) action. You can lock this location to add enough life to an Operation Antigen ally you control to reach their starting life. You can lock this location and burn 2 pool to cancel an action card that targets an Operation Antigen card you control as it is played; its cost is not paid.","","FoL:1","","Rodrigo González Toledo",""
 "101231","Moise Kasavubu","","Ally","","","2","","","","Unique mortal with 1 life. 0 strength, 0 bleed. Requires a ready imbued.
 Moise may strike for 2R damage. He may take a +1 stealth action to search your library (shuffle afterward) or hand for an equipment and move it to any ready imbued you control (that imbued must meet the requirements and pay the cost as normal).","","NoR:R","","Veronica Jones",""
 "101232","Mokolé Blood","","Equipment","Follower of Set","","1","","","","Unique.
@@ -4201,6 +4215,8 @@ A Methuselah cannot gain pool during their own turn unless they have the Edge or
 "101641","Ritual Challenge","","Action","Gangrel","","","1","","","+1 stealth action.
 If this action succeeds, put this card on the acting Gangrel. This vampire gets +1 strength. A vampire may have only one Ritual Challenge card.","The teeth that bite to bitterness are sheathed in truth.
 William Everson, ""The Poet is Dead""","Jyhad:R, VTES:R, Tenth:B","","L. A. Williams",""
+"102243","Ritual Goblet","","Equipment","","","1","","","","Unique.
+This vampire gets +1 level of Blood Sorcery [tha]. Rescuing a vampire from torpor costs this vampire -1 blood. Once each turn, this vampire can unlock after rescuing a vampire from torpor.","","FoL:1","","Damien Mammoliti",""
 "101642","Ritual of the Bitter Rose","","Action Modifier/Combat","","","","","","","Each ready vampire you control gains an amount of blood from the blood bank equal to the amount of blood on a vampire being burned either by diablerie or while in combat with this vampire.","","Jyhad:R2, VTES:R, CE:R","","Drew Tucker",""
 "101643","Ritual Scalpel","","Equipment","Nagaraja","","","","","Y","Unique.
 This Nagaraja gets +1 hunt. This Nagaraja can inflict 1 unpreventable damage on a mortal (ally or retainer) to gain 2 blood as a (D) action.","","HttB:R/A1","","Peter Bergting",""
@@ -4486,6 +4502,8 @@ During your unlock phase, you may move 1 blood from the blood bank to a ready va
 Nigel the Shunned, Nosferatu antitribu","Sabbat:U, SW:U, BH:PN","","Mike Weaver",""
 "101754","Shape Mastery","","Combat/Reaction","","Protean","","","","","[pro] [COMBAT] Cancel a combat card requiring Obtenebration [obt], Protean [pro] or Vicissitude [vic] as it is played, and its cost is not paid. The opposing minion cannot play that card again this action.
 [PRO] [REACTION] As above, but cancel an action modifier card requiring any of those Disciplines.","","BH:R, KoT:R, POD:DTC","","Chet Masters; Mike Chaney",""
+"102244","Shard, London, The","","Master","","","2","","","","Unique location.
+If you have the Edge, you can lock this card to reduce the cost of a card you play by 2 pool or blood. Vampires can steal this location as a (D) action; Ventrue get +1 stealth during that action.","","FoL:1","","Felipe Headley",""
 "101755","Shared Nightmare","","Action","","Chimerstry","","3","","","[chi] Choose one or two allies or younger vampires controlled by your predator and/or prey. The chosen minions cannot block or cast votes or ballots this turn.
 [CHI] As above, but choose three allies or younger vampires.","","KMW:R, POD:DTC","","Avery Butterworth",""
 "101756","Shared Strength","","Combat","","Fortitude","","1","","","Only usable by a ready vampire not involved in combat.
@@ -5352,6 +5370,8 @@ Put this card into play. During your unlock phase, if you control the Edge, you 
 Terence, ""Heautontimoroumenos"", act I, scene 2","Sabbat:R, SW:R, Third:R","","Matt Wilson",""
 "102087","Vagabond Mystic","","Ally","","","","","","","Unique mortal with 2 life. 0 strength, 0 bleed.
 Lock Vagabond Mystic to move 1 life counter from the blood bank to an ally you control who has fewer life than his or her starting amount. The Vagabond Mystic cannot block vampires.","","SW:U, Third:U","","Brian LeBlanc",""
+"102245","Valerie Diaz, Antigen Commander","","Ally","","","3","","","","Unique mortal with 3 life. 1 strength, 1 bleed. Operation Antigen.
+If Valerie is in combat with a vampire, you can burn 1 pool once each round to make her immune to all non-aggravated damage from a strike or damaging effect. Once each turn after combat involving Valerie ends, she can unlock if the opposing vampire is not ready.","","FoL:1","","Mitch Mueller",""
 "102088","Vampiric Disease","","Master","","","","","","","Master.
 Put a disease counter on any vampire. Each time a vampire with a disease counter is in combat at close range with another vampire, the second vampire gets a counter as well. An afflicted vampire cannot gain blood by hunting. When an afflicted vampire unlocks, he or she burns a blood or, if unable, burns the disease counter. A vampire can have only one disease counter.","","Jyhad:R, VTES:R, Tenth:A","","Mark Tedin",""
 "102089","Vampiric Speed","","Combat","","Celerity","","","","","[cel] Strike: dodge.

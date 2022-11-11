@@ -25,6 +25,16 @@
       }
     }
   },
+  "FoL": {
+    "name": "Fall of London",
+    "date": "2022-10-14",
+    "precons": {
+      "": {
+        "name": "Fall of London",
+        "clan": "Bundle"
+      }
+    }
+  },
   "NB": {
     "name": "New Blood",
     "date": "2022-04-17",
@@ -184,7 +194,7 @@
     "date": "2019-02-16",
     "precons": {
       "": {
-        "name": "Anthology I (Bundle)",
+        "name": "Anthology I",
         "clan": "Bundle"
       }
     }
@@ -194,11 +204,11 @@
     "date": "2018-07-14",
     "precons": {
       "A": {
-        "name": "HttB Reprint 1 (Bundle)",
+        "name": "HttB Reprint 1",
         "clan": "Bundle"
       },
       "B": {
-        "name": "HttB Reprint 2 (Bundle)",
+        "name": "HttB Reprint 2",
         "clan": "Bundle"
       }
     }
@@ -208,11 +218,11 @@
     "date": "2018-05-05",
     "precons": {
       "A": {
-        "name": "KoT Reprint 1 (Bundle)",
+        "name": "KoT Reprint 1",
         "clan": "Bundle"
       },
       "B": {
-        "name": "KoT Reprint 2 (Bundle)",
+        "name": "KoT Reprint 2",
         "clan": "Bundle"
       }
     }
@@ -222,7 +232,7 @@
     "date": "2018-06-09",
     "precons": {
       "": {
-        "name": "Lost Kindred (Bundle)",
+        "name": "Lost Kindred",
         "clan": "Bundle"
       }
     }
@@ -232,7 +242,7 @@
     "date": "2017-05-11",
     "precons": {
       "": {
-        "name": "Anthology (Bundle)",
+        "name": "Anthology",
         "clan": "Bundle"
       }
     }
@@ -306,7 +316,7 @@
     "date": "2008-04-14",
     "precons": {
       "X": {
-        "name": "Blood Shadowed Court (Bundle)",
+        "name": "Blood Shadowed Court",
         "clan": "Bundle"
       }
     }

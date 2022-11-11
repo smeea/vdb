@@ -1,5 +1,11 @@
 [
   {
+    "version": "2022-11-14",
+    "changes": [
+      "Add Fall of London cards"
+    ]
+  },
+  {
     "version": "2022-11-11",
     "changes": [
       "Improve search, page layouts on wide screens (be sure it is not a simple to find optimal max width, not to spread everything to where width is not useful anymore but everything is just too sparse)",
