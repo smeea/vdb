@@ -224,7 +224,7 @@ const Decks = () => {
     }
   }, [
     deckid,
-    loaderData, // TEST w/o
+    loaderData,
     lastDeckId,
     decks,
     preconDecks,

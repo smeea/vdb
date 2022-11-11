@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { Button } from 'react-bootstrap';
-import { useApp, deckStore, deckCardChange } from 'context';
+import { deckStore, deckCardChange } from 'context';
 
 const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
   const decks = useSnapshot(deckStore).decks;

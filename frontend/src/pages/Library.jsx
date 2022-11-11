@@ -47,7 +47,7 @@ const Library = () => {
     if (!deck && decks !== undefined && lastDeckId) {
       setDeck(decks[lastDeckId]);
     }
-  }, [deck, decks]);
+  }, [deck, decks, lastDeckId]);
 
   return (
     <Container className="search-container px-md-2 px-xl-4">
