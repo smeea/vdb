@@ -13,10 +13,11 @@ import {
   ResultLayoutTextArtist,
   ResultLayoutTextText,
 } from 'components';
+import { isTrifle } from 'utils';
 import { useApp } from 'context';
 
 const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
-  const { inventoryMode, nativeLibrary } = useApp();
+  const { inventoryMode } = useApp();
 
   return (
     <>
@@ -39,14 +40,11 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
             <ResultLibraryBurn value={card['Burn Option']} />
           </div>
         )}
-        {nativeLibrary &&
-          nativeLibrary[card.Id]['Card Text'].includes('Trifle.') && (
-            <div className="ps-1">
-              <ResultLibraryTrifle
-                value={nativeLibrary[card.Id]['Card Text']}
-              />
-            </div>
-          )}
+        {isTrifle(card) && (
+          <div className="ps-1">
+            <ResultLibraryTrifle card={card} />
+          </div>
+        )}
       </div>
       <hr className="mx-0" />
       <div className="py-2">

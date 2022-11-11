@@ -1,11 +1,12 @@
 import React from 'react';
+import { isTrifle } from 'utils';
 
-function ResultLibraryTrifle(props) {
+const ResultLibraryTrifle = ({ card }) => {
   const imgClass = 'trifle-image-results';
   const imgSrc = `${process.env.ROOT_URL}images/misc/trifle.svg`;
   const imgTitle = 'Trifle';
 
-  if (props.value.toLowerCase().includes('trifle')) {
+  if (isTrifle(card)) {
     return (
       <span className="trifle">
         <img className={imgClass} src={imgSrc} title={imgTitle} />
@@ -14,6 +15,6 @@ function ResultLibraryTrifle(props) {
   } else {
     return null;
   }
-}
+};
 
 export default ResultLibraryTrifle;

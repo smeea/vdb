@@ -40,14 +40,7 @@ const DeckLibraryTableRow = ({
   inMissing,
   setModalDraw,
 }) => {
-  const {
-    inventoryMode,
-    isMobile,
-    isDesktop,
-    isNarrow,
-    isWide,
-    nativeLibrary,
-  } = useApp();
+  const { inventoryMode, isMobile, isDesktop, isNarrow, isWide } = useApp();
 
   const decks = useSnapshot(deckStore).decks;
   const usedLibrary = useSnapshot(usedStore).library;
@@ -193,7 +186,7 @@ const DeckLibraryTableRow = ({
       {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
         <td className="burn" onClick={() => handleClick(card.c)}>
           <ResultLibraryBurn value={card.c['Burn Option']} />
-          <ResultLibraryTrifle value={nativeLibrary[card.c.Id]['Card Text']} />
+          <ResultLibraryTrifle card={card.c} />
         </td>
       )}
       {showInfo && (

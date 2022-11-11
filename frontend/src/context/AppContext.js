@@ -202,8 +202,8 @@ export const AppProvider = (props) => {
   useEffect(() => {
     if (
       deck &&
-      localizedCrypt[lang] &&
-      localizedLibrary[lang] &&
+      localizedCrypt?.[lang] &&
+      localizedLibrary?.[lang] &&
       Object.keys(localizedCrypt).length > 1
     ) {
       deckLocalize(

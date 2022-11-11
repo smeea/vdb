@@ -16,7 +16,7 @@ const DeckProxyLibrary = ({
   handleProxyCounter,
   handleProxySelector,
 }) => {
-  const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
+  const { isMobile, setShowFloatingButtons } = useApp();
 
   const {
     library,
@@ -25,7 +25,7 @@ const DeckProxyLibrary = ({
     librarySideByType,
     trifleTotal,
     libraryByTypeTotal,
-  } = useDeckLibrary(cards, nativeLibrary);
+  } = useDeckLibrary(cards);
 
   const proxiesToPrint = Object.keys(proxySelected)
     .filter(

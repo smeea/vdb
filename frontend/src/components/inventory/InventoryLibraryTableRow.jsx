@@ -15,7 +15,7 @@ import {
   ResultLibraryTrifle,
   ConditionalOverlayTrigger,
 } from 'components';
-import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
+import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
 import { getHardTotal, getSoftMax } from 'utils';
 import { useApp, usedStore, inventoryCardChange } from 'context';
 
@@ -28,7 +28,7 @@ const InventoryLibraryTableRow = ({
   handleClick,
 }) => {
   const usedLibrary = useSnapshot(usedStore).library;
-  const { nativeLibrary, isMobile, isNarrow } = useApp();
+  const { isMobile, isNarrow } = useApp();
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
@@ -187,7 +187,7 @@ const InventoryLibraryTableRow = ({
           onClick={() => handleClick(card.c)}
         >
           <ResultLibraryBurn value={card.c[BURN_OPTION]} />
-          <ResultLibraryTrifle value={nativeLibrary[card.c.Id][CARD_TEXT]} />
+          <ResultLibraryTrifle card={card.c} />
         </div>
       )}
     </div>

@@ -12,10 +12,11 @@ import {
   ResultLayoutTextRulings,
   CardImage,
 } from 'components';
+import { isTrifle } from 'utils';
 import { useApp } from 'context';
 
-function ResultLibraryPopover(props) {
-  const { showImage, nativeLibrary } = useApp();
+const ResultLibraryPopover = ({ card, setImageSet }) => {
+  const { showImage } = useApp();
 
   return (
     <>
@@ -24,66 +25,64 @@ function ResultLibraryPopover(props) {
           <div className="d-flex flex-nowrap justify-content-between align-items-center">
             <div className="d-flex flex-nowrap align-items-center">
               <div>
-                <ResultLibraryTypeImage value={props.card.Type} />
+                <ResultLibraryTypeImage value={card.Type} />
               </div>
               <div className="name bold ps-2">
-                <ResultLibraryName card={props.card} />
+                <ResultLibraryName card={card} />
               </div>
             </div>
             <div className="ps-1">
-              <ResultLibraryDisciplines value={props.card.Discipline} />
-              <ResultLibraryClan value={props.card.Clan} />
+              <ResultLibraryDisciplines value={card.Discipline} />
+              <ResultLibraryClan value={card.Clan} />
             </div>
-            {props.card['Burn Option'] && (
+            {card['Burn Option'] && (
               <div className="ps-1">
-                <ResultLibraryBurn value={props.card['Burn Option']} />
+                <ResultLibraryBurn value={card['Burn Option']} />
               </div>
             )}
-            {nativeLibrary[props.card.Id]['Card Text'].includes('Trifle.') && (
+            {isTrifle(card) && (
               <div className="ps-1">
-                <ResultLibraryTrifle
-                  value={nativeLibrary[props.card.Id]['Card Text']}
-                />
+                <ResultLibraryTrifle card={card} />
               </div>
             )}
           </div>
           <hr />
           <div className="popover-card-text">
-            <ResultLayoutTextText text={props.card['Card Text']} />
+            <ResultLayoutTextText text={card['Card Text']} />
           </div>
           <hr />
           <div className="d-flex align-items-center justify-content-between">
             <div>
               <ResultLibraryCost
-                valuePool={props.card['Pool Cost']}
-                valueBlood={props.card['Blood Cost']}
+                valuePool={card['Pool Cost']}
+                valueBlood={card['Blood Cost']}
               />
             </div>
             <div className="popover-sets">
               <ResultLayoutTextSets
-                setImageSet={props.setImageSet}
-                sets={props.card['Set']}
+                setImageSet={setImageSet}
+                sets={card['Set']}
               />
             </div>
           </div>
-          {Object.keys(props.card['Rulings']).length > 0 && (
+          {Object.keys(card['Rulings']).length > 0 && (
             <>
               <div className="py-1">
                 <b>Rulings: </b>
               </div>
               <div className="popover-rulings small pb-1">
-                <ResultLayoutTextRulings rulings={props.card['Rulings']} />
+                <ResultLayoutTextRulings rulings={card['Rulings']} />
               </div>
             </>
           )}
         </div>
       ) : (
         <>
-          <CardImage card={props.card} />
+          <CardImage card={card} />
         </>
       )}
     </>
   );
-}
+};
 
 export default ResultLibraryPopover;

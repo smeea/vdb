@@ -15,7 +15,7 @@ import {
   ResultLibraryTypeImage,
   ConditionalOverlayTrigger,
 } from 'components';
-import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
+import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
 import { getHardTotal, getSoftMax } from 'utils';
 import {
   useApp,
@@ -26,8 +26,7 @@ import {
 } from 'context';
 
 const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
-  const { addMode, inventoryMode, nativeLibrary, isMobile, isDesktop } =
-    useApp();
+  const { addMode, inventoryMode, isMobile, isDesktop } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
@@ -124,7 +123,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
       </ConditionalOverlayTrigger>
       <td className="burn px-1" onClick={() => handleClick(idx)}>
         <ResultLibraryBurn value={card[BURN_OPTION]} />
-        <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} />
+        <ResultLibraryTrifle card={card} />
       </td>
     </tr>
   );

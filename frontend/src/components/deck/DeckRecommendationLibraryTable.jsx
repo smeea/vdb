@@ -11,12 +11,11 @@ import {
   ResultLibraryTrifle,
   ConditionalOverlayTrigger,
 } from 'components';
-import { BURN_OPTION, POOL_COST, BLOOD_COST, CARD_TEXT } from 'utils/constants';
+import { BURN_OPTION, POOL_COST, BLOOD_COST } from 'utils/constants';
 import { deckStore, useApp } from 'context';
 
 const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
-  const { nativeLibrary, isDesktop, isMobile, setShowFloatingButtons } =
-    useApp();
+  const { isDesktop, isMobile, setShowFloatingButtons } = useApp();
   const deck = useSnapshot(deckStore).deck;
 
   const cardRows = cards.map((card, idx) => {
@@ -70,7 +69,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
           </td>
           <td className="burn" onClick={() => handleClick()}>
             <ResultLibraryBurn value={card[BURN_OPTION]} />
-            <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} />
+            <ResultLibraryTrifle card={card} />
           </td>
         </tr>
       </React.Fragment>

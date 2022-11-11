@@ -16,12 +16,7 @@ import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
-  const {
-    nativeLibrary,
-    isMobile,
-    showFloatingButtons,
-    setShowFloatingButtons,
-  } = useApp();
+  const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -42,7 +37,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
     libraryByTypeTotal,
     libraryByClansTotal,
     libraryByDisciplinesTotal,
-  } = useDeckLibrary(cardsFrom, nativeLibrary, cardsTo);
+  } = useDeckLibrary(cardsFrom, cardsTo);
 
   // Modal Card Controller
   const {

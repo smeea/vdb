@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import { DeckLibraryTable, ResultModal } from 'components';
 import { useApp } from 'context';
+import { isTrifle } from 'utils';
 import { cardtypeSortedFull } from 'utils/constants';
 import { useModalCardController } from 'hooks';
 
 const TwdResultLibraryByType = ({ library }) => {
-  const { nativeLibrary, setShowFloatingButtons } = useApp();
+  const { setShowFloatingButtons } = useApp();
   const [show, setShow] = useState({});
 
   const handleClick = (cardtype) => {
@@ -43,10 +44,7 @@ const TwdResultLibraryByType = ({ library }) => {
     }
     libraryByType[cardtype].push(library[card]);
     libraryByTypeTotal[cardtype] += library[card].q;
-    if (
-      cardtype == 'Master' &&
-      nativeLibrary[card]['Card Text'].toLowerCase().includes('trifle')
-    ) {
+    if (isTrifle(card)) {
       trifleTotal += library[card].q;
     }
   });

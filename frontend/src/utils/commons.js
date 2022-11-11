@@ -22,10 +22,13 @@ export const countTotalCost = (cardsList, type) => {
     .reduce((acc, card) => acc + card.q * card.c[type], 0);
 };
 
-export const isTriffle = (card, nativeLibrary) => {
+export const isTrifle = (card) => {
+  const text = card[CARD_TEXT].toLowerCase();
   return (
     card.Type === MASTER &&
-    nativeLibrary[card.Id][CARD_TEXT].toLowerCase().includes('trifle')
+    (text.includes('trifle') ||
+      text.includes('nimiedad') ||
+      text.includes('triviale'))
   );
 };
 

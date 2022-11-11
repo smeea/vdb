@@ -18,7 +18,6 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     setShowFloatingButtons,
     setShowMenuButtons,
     cryptDeckSort,
-    nativeLibrary,
     lang,
   } = useApp();
 
@@ -117,7 +116,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
       Object.values(crypt).filter((card) => card.q > 0),
       cryptDeckSort
     );
-    const { libraryByType } = useDeckLibrary(library, nativeLibrary);
+    const { libraryByType } = useDeckLibrary(library);
     const cards = [];
     let cardsTotal = 0;
 

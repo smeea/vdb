@@ -24,7 +24,7 @@ const DeckDrawLibraryTable = ({
   ashHeap,
   placement,
 }) => {
-  const { nativeLibrary, isMobile } = useApp();
+  const { isMobile } = useApp();
   const [modalDraw, setModalDraw] = useState(undefined);
 
   let N = 0;
@@ -80,7 +80,7 @@ const DeckDrawLibraryTable = ({
 
           <td className="burn px-1" onClick={() => handleClick(idx)}>
             <ResultLibraryBurn value={card['Burn Option']} />
-            <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />
+            <ResultLibraryTrifle card={card} />
           </td>
           <td className="prob px-1">
             {!ashHeap && (

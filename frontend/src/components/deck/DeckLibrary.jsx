@@ -17,13 +17,8 @@ import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DeckLibrary = ({ deck, inMissing }) => {
-  const {
-    nativeLibrary,
-    isMobile,
-    isNarrow,
-    showFloatingButtons,
-    setShowFloatingButtons,
-  } = useApp();
+  const { isMobile, isNarrow, showFloatingButtons, setShowFloatingButtons } =
+    useApp();
   const { deckid, isPublic, isAuthor } = deck;
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -44,7 +39,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
     libraryByTypeTotal,
     libraryByClansTotal,
     libraryByDisciplinesTotal,
-  } = useDeckLibrary(deck.library, nativeLibrary);
+  } = useDeckLibrary(deck.library);
 
   // Modal Card Controller
   const {

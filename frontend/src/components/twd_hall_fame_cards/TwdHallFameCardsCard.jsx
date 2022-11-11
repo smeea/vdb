@@ -18,10 +18,10 @@ import {
   CardPopover,
   TwdOpenDeckButton,
 } from 'components';
-import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
+import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
 
 const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
-  const { nativeLibrary, isMobile, isNarrow } = useApp();
+  const { isMobile, isNarrow } = useApp();
 
   return (
     <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
@@ -93,7 +93,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
           {!isMobile && (
             <td className="burn px-1" onClick={() => handleClick(idx)}>
               <ResultLibraryBurn value={card[BURN_OPTION]} />
-              <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} />
+              <ResultLibraryTrifle card={card} />
             </td>
           )}
         </>

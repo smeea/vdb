@@ -1,7 +1,7 @@
 import {
   countCards,
   countTotalCost,
-  isTriffle,
+  isTrifle,
   librarySort,
   getTotalCardsGroupedBy,
   getCardsGroupedBy,
@@ -19,7 +19,7 @@ import {
   CLAN,
 } from 'utils/constants';
 
-const useDeckLibrary = (cardsList, nativeLibrary, cardsToList = {}) => {
+const useDeckLibrary = (cardsList, cardsToList = {}) => {
   const cardsFrom = Object.values(cardsList);
   const cardsTo = Object.values(cardsToList);
 
@@ -52,9 +52,7 @@ const useDeckLibrary = (cardsList, nativeLibrary, cardsToList = {}) => {
 
   const hasBanned = library.filter((card) => card.c.Banned).length > 0;
 
-  const trifleTotal = countCards(
-    library.filter((card) => isTriffle(card.c, nativeLibrary))
-  );
+  const trifleTotal = countCards(library.filter((card) => isTrifle(card.c)));
 
   const libraryTotal = countCards(library);
 

@@ -29,8 +29,7 @@ const DeckProxyLibraryTable = ({
   handleSetSelector,
   placement,
 }) => {
-  const { inventoryMode, nativeLibrary, isMobile, setShowFloatingButtons } =
-    useApp();
+  const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
@@ -140,9 +139,7 @@ const DeckProxyLibraryTable = ({
           </td>
           <td className="burn" onClick={() => handleClick(card.c)}>
             <ResultLibraryBurn value={card.c['Burn Option']} />
-            <ResultLibraryTrifle
-              value={nativeLibrary[card.c.Id]['Card Text']}
-            />
+            <ResultLibraryTrifle card={card.c} />
           </td>
           {!isMobile && (
             <>

@@ -16,12 +16,7 @@ import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
-  const {
-    nativeLibrary,
-    isMobile,
-    showFloatingButtons,
-    setShowFloatingButtons,
-  } = useApp();
+  const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -42,7 +37,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
     libraryByTypeTotal,
     libraryByClansTotal,
     libraryByDisciplinesTotal,
-  } = useDeckLibrary(cardsFrom, nativeLibrary, cardsTo);
+  } = useDeckLibrary(cardsFrom, cardsTo);
 
   // Modal Card Controller
   const {
