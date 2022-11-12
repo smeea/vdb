@@ -96,6 +96,7 @@ const SearchFormTextAndButtons = ({
       ) : (
         <InputGroup className="px-0">
           <FormControl
+            className="text-search"
             placeholder="Card Name / Text / RegEx"
             type="text"
             name={0}

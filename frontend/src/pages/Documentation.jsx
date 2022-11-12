@@ -15,7 +15,7 @@ const Documentation = () => {
         <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
-            <h5 className="ul-2px">HELP / DOCUMENTATION</h5>
+            <h5 className="underline">HELP / DOCUMENTATION</h5>
             <p>
               Documentation below describe some logic of VDB components.
               <br />
@@ -25,7 +25,7 @@ const Documentation = () => {
             </p>
 
             <div className="pt-3">
-              <h5 className="ul-2px">TABLE OF CONTENT</h5>
+              <h5 className="underline">TABLE OF CONTENT</h5>
               <ul>
                 <li>
                   <a href="#crypt">Crypt search</a>
@@ -52,7 +52,7 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 className="ul-2px" id="crypt">
+              <h5 className="underline" id="crypt">
                 CRYPT SEARCH
               </h5>
 
@@ -102,7 +102,7 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 className="ul-2px" id="library">
+              <h5 className="underline" id="library">
                 LIBRARY SEARCH
               </h5>
 
@@ -138,7 +138,7 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 className="ul-2px" id="twd">
+              <h5 className="underline" id="twd">
                 TWD SEARCH
               </h5>
 
@@ -222,7 +222,7 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 className="ul-2px" id="pda">
+              <h5 className="underline" id="pda">
                 PDA SEARCH
               </h5>
               <p>
@@ -273,7 +273,7 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 className="ul-2px" id="cards">
+              <h5 className="underline" id="cards">
                 CARD VIEW
               </h5>
               <ul>
@@ -293,7 +293,7 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 className="ul-2px" id="decks">
+              <h5 className="underline" id="decks">
                 DECK BUILDING / VIEWING
               </h5>
 
@@ -358,7 +358,7 @@ const Documentation = () => {
             </div>
 
             <div className="pt-3">
-              <h5 className="ul-2px" id="inventory">
+              <h5 className="underline" id="inventory">
                 INVENTORY MANAGEMENT
               </h5>
               Inventory management in VDB let you browse your card collection

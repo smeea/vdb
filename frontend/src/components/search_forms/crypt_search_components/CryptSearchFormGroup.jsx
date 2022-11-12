@@ -3,7 +3,7 @@ import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const CryptSearchFormGroup = ({ value, onChange }) => {
-  const { isWide } = useApp();
+  const { isMobile, isNarrow } = useApp();
 
   const groups = [1, 2, 3, 4, 5, 6, 7];
 
@@ -17,14 +17,16 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
           {groups.map((i, index) => {
             return (
               <Button
-                className="group-form px-14px"
+                className={`group-form ${
+                  !isMobile && isNarrow ? 'px-2' : 'px-14px'
+                }`}
                 key={index}
                 value={i}
                 name="group"
                 variant={value[i] ? 'third' : 'outline-primary'}
                 onClick={(e) => onChange(e)}
               >
-                <div className={isWide ? '' : 'px-1'}>{i}</div>
+                <div className="px-1 px-md-0">{i}</div>
               </Button>
             );
           })}

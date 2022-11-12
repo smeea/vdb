@@ -14,12 +14,12 @@
     --bg-warning: #ffb050
     --border-nest-modal: #707085
     --border-primary: #80b0ff
-    --border-secondary: #a0b0ff
+    --border-secondary: #c0d0ff
     --border-third: #a0b0ff
     --clan-icon-brightness: 100%
     --fg-green: #00a000
     --fg-name: #3060c0
-    --fg-primary: #151575
+    --fg-primary: #4040a0
     --fg-red: #c00000
     --fg-secondary: #6060c0
     --fg-third: #6060c0
@@ -97,8 +97,8 @@ h5, h6
   color: var(--fg-secondary)
   font-weight: bold
 
-.ul-2px
-  text-decoration: underline 2px
+.underline
+  text-decoration: underline
 
 div.h6
   margin: 0
@@ -224,6 +224,11 @@ button.total-info
   background: var(--bg-primary) !important
   border-color: var(--bg-secondary)
   color: var(--fg-primary)
+  &::placeholder
+    color: var(--fg-primary)
+    opacity: .45
+  &.text-search
+    border-color: var(--border-secondary)
 
 .form-check-input
   background: var(--bg-checkbox)
@@ -1114,6 +1119,7 @@ div.sticky-modal-library
   content: none
 
 .group-form
+  color: var(--fg-primary) !important
   &.btn-third:hover
     background: var(--border-primary)
   &.btn-outline-primary:hover

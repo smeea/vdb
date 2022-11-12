@@ -72,7 +72,7 @@ export const ThemeProvider = (props) => {
 };
 
 const light = [
-  '--fg-primary: #252575',
+  '--fg-primary: #353595',
   '--fg-secondary: #6060c0',
   '--fg-third: #6060c0',
   '--fg-name: #3060c0',
@@ -90,8 +90,8 @@ const light = [
   '--bg-checkbox: #ffffff',
   '--bg-checkbox-selected: #7070ff',
   '--border-primary: #80b0ff',
-  '--border-secondary: #a0b0ff',
-  '--border-third: #a0b0ff',
+  '--border-secondary: #b5c5ff',
+  '--border-third: #b5c5ff',
   '--border-nest-modal: #555570',
   '--clan-icon-brightness: 100%',
   '--icons-brightness: 100%',
