@@ -71,9 +71,8 @@ export const AppProvider = (props) => {
   const [showMenuButtons, setShowMenuButtons] = useState();
 
   // CARD BASE
-  const CARD_VERSION = '2022-11-02';
+  const CARD_VERSION = '2022-11-13';
   const fetchAndSetCardBase = () => {
-    console.log('fetch cb');
     cardServices.getCardBase().then((data) => {
       setMany([
         ['cardVersion', CARD_VERSION],
@@ -107,7 +106,6 @@ export const AppProvider = (props) => {
       if (!v || CARD_VERSION > v) {
         fetchAndSetCardBase();
       } else {
-        console.log('set cb');
         setCryptCardBase(cb);
         setLibraryCardBase(lb);
         setNativeCrypt(nc);
