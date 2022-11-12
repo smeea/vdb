@@ -114,9 +114,12 @@ export const AppProvider = (props) => {
         setLocalizedLibrary(ll);
       }
     });
+
+    whoAmI();
   }, []);
 
   // USER
+  const [userData, setUserData] = useState();
   const whoAmI = () => {
     const url = `${process.env.API_URL}account`;
     const options = {
@@ -128,9 +131,9 @@ export const AppProvider = (props) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.success === false) {
-          initializeUnauthenticatedUser();
+          setUserData(null);
         } else {
-          initializeUserData(data);
+          setUserData(data);
         }
       });
   };
@@ -165,12 +168,16 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
-      whoAmI();
       setPreconDecks(
         cardServices.getPreconDecks(cryptCardBase, libraryCardBase)
       );
+      if (userData === null) {
+        initializeUnauthenticatedUser();
+      } else if (userData) {
+        initializeUserData(userData);
+      }
     }
-  }, [cryptCardBase, libraryCardBase]);
+  }, [userData, cryptCardBase, libraryCardBase]);
 
   // LANGUAGE
   const changeLang = (lang) => {
