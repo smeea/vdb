@@ -514,14 +514,14 @@ const Decks = () => {
         )}
       </Row>
       {!username && !deckid && !hash && (
-        <Row className="align-items-center justify-content-center mx-0 vh-70">
-          <Col xs={12} md={9} lg={6} xl={5}>
-            <div className="d-flex justify-content-center pt-4">
+        <Row className="align-items-center justify-content-center pt-4 mx-0 vh-70">
+          <Col xs={12} md={8} lg={7} xl={6} className="px-3">
+            <div className="d-flex justify-content-center">
               <h6>Login required to create decks</h6>
             </div>
             <div className="d-flex justify-content-center">
               <h6 className="small">
-                (You can browse preconstructed decks without login)
+                (Browse preconstructed decks without login)
               </h6>
             </div>
             <div className="py-4">

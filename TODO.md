@@ -18,6 +18,7 @@
 - Refactor CSS - Tailwind
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Store other langs in indexdb
+- Nginx brotli compression
 
 # IMPROVE TECHNOLOGY - BACKEND
 

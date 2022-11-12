@@ -2,7 +2,8 @@
   {
     "version": "2022-11-14",
     "changes": [
-      "Add Fall of London cards"
+      "Add Fall of London cards",
+      "Improve page opening performance"
     ]
   },
   {
