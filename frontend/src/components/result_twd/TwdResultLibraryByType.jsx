@@ -32,20 +32,20 @@ const TwdResultLibraryByType = ({ library }) => {
   const libraryByType = {};
   const libraryByTypeTotal = {};
 
-  Object.keys(library).map((card) => {
-    if (library[card].c['Banned']) {
+  Object.keys(library).map((cardid) => {
+    if (library[cardid].c['Banned']) {
       hasBanned = true;
     }
-    libraryTotal += library[card].q;
-    const cardtype = library[card].c.Type;
+    libraryTotal += library[cardid].q;
+    const cardtype = library[cardid].c.Type;
     if (libraryByType[cardtype] === undefined) {
       libraryByType[cardtype] = [];
       libraryByTypeTotal[cardtype] = 0;
     }
-    libraryByType[cardtype].push(library[card]);
-    libraryByTypeTotal[cardtype] += library[card].q;
-    if (isTrifle(card)) {
-      trifleTotal += library[card].q;
+    libraryByType[cardtype].push(library[cardid]);
+    libraryByTypeTotal[cardtype] += library[cardid].q;
+    if (isTrifle(library[cardid].c)) {
+      trifleTotal += library[cardid].q;
     }
   });
 
