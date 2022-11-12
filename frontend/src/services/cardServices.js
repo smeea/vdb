@@ -2,15 +2,15 @@ import preconDecksData from 'assets/data/preconDecks.json';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useDeck, useTags } from 'hooks';
 
-const VERSION = '2022-11-02';
-const urlCrypt = `${process.env.ROOT_URL}data/cardbase_crypt.json?v=${VERSION}`;
-const urlLibrary = `${process.env.ROOT_URL}data/cardbase_lib.json?v=${VERSION}`;
-const urlCryptPlaytest = `${process.env.ROOT_URL}data/cardbase_crypt_playtest.json?v=${VERSION}`;
-const urlLibraryPlaytest = `${process.env.ROOT_URL}data/cardbase_lib_playtest.json?v=${VERSION}`;
+const CARD_VERSION = '2022-11-02';
+const urlCrypt = `${process.env.ROOT_URL}data/cardbase_crypt.json?v=${CARD_VERSION}`;
+const urlLibrary = `${process.env.ROOT_URL}data/cardbase_lib.json?v=${CARD_VERSION}`;
+const urlCryptPlaytest = `${process.env.ROOT_URL}data/cardbase_crypt_playtest.json?v=${CARD_VERSION}`;
+const urlLibraryPlaytest = `${process.env.ROOT_URL}data/cardbase_lib_playtest.json?v=${CARD_VERSION}`;
 const urlLocalizedCrypt = (lang) =>
-  `${process.env.ROOT_URL}data/cardbase_crypt.${lang}.json?v=${VERSION}`;
+  `${process.env.ROOT_URL}data/cardbase_crypt.${lang}.json?v=${CARD_VERSION}`;
 const urlLocalizedLibrary = (lang) =>
-  `${process.env.ROOT_URL}data/cardbase_lib.${lang}.json?v=${VERSION}`;
+  `${process.env.ROOT_URL}data/cardbase_lib.${lang}.json?v=${CARD_VERSION}`;
 
 export const getCardBase = async () => {
   const options = {

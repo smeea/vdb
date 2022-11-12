@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
+import { setMany, getMany } from 'idb-keyval';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { cardServices } from 'services';
 import { useDeck, useWindowSize } from 'hooks';
@@ -70,14 +71,50 @@ export const AppProvider = (props) => {
   const [showMenuButtons, setShowMenuButtons] = useState();
 
   // CARD BASE
-  useEffect(() => {
+  const CARD_VERSION = '2022-11-02';
+  const fetchAndSetCardBase = () => {
+    console.log('fetch cb');
     cardServices.getCardBase().then((data) => {
+      setMany([
+        ['cardVersion', CARD_VERSION],
+        ['cryptCardBase', data.crypt],
+        ['libraryCardBase', data.library],
+        ['nativeCrypt', data.nativeCrypt],
+        ['nativeLibrary', data.nativeLibrary],
+        ['localizedCrypt', { 'en-EN': data.nativeCrypt }],
+        ['localizedLibrary', { 'en-EN': data.nativeLibrary }],
+      ]);
+
       setCryptCardBase(data.crypt);
       setLibraryCardBase(data.library);
       setNativeCrypt(data.nativeCrypt);
       setNativeLibrary(data.nativeLibrary);
       setLocalizedCrypt({ 'en-EN': data.nativeCrypt });
       setLocalizedLibrary({ 'en-EN': data.nativeLibrary });
+    });
+  };
+
+  useEffect(() => {
+    getMany([
+      'cardVersion',
+      'cryptCardBase',
+      'libraryCardBase',
+      'nativeCrypt',
+      'nativeLibrary',
+      'localizedCrypt',
+      'localizedLibrary',
+    ]).then(([v, cb, lb, nc, nl, lc, ll]) => {
+      if (!v || CARD_VERSION > v) {
+        fetchAndSetCardBase();
+      } else {
+        console.log('set cb');
+        setCryptCardBase(cb);
+        setLibraryCardBase(lb);
+        setNativeCrypt(nc);
+        setNativeLibrary(nl);
+        setLocalizedCrypt(lc);
+        setLocalizedLibrary(ll);
+      }
     });
   }, []);
 
@@ -89,7 +126,6 @@ export const AppProvider = (props) => {
       mode: 'cors',
       credentials: 'include',
     };
-
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
