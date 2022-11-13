@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import {
   RouterProvider,
   createBrowserRouter,
@@ -18,21 +18,17 @@ import Library from 'pages/Library.jsx';
 import Review from 'pages/Review.jsx';
 import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
+import Changelog from 'pages/Changelog.jsx';
+import Documentation from 'pages/Documentation.jsx';
+import TwdHallOfFameCards from 'pages/TwdHallOfFameCards.jsx';
+import TwdHallOfFameTournaments from 'pages/TwdHallOfFameTournaments.jsx';
+import TwdCardsHistory from 'pages/TwdHallOfFameTournaments.jsx';
+import TwdCheck from 'pages/TwdCheck.jsx';
+
 import { loader as deckLoader } from 'pages/Decks.jsx';
 
 import '~/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'assets/css/style.sass';
-
-const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
-const Documentation = React.lazy(() => import('pages/Documentation.jsx'));
-const TwdHallOfFameCards = React.lazy(() =>
-  import('pages/TwdHallOfFameCards.jsx')
-);
-const TwdHallOfFameTournaments = React.lazy(() =>
-  import('pages/TwdHallOfFameTournaments.jsx')
-);
-const TwdCardsHistory = React.lazy(() => import('pages/TwdCardsHistory.jsx'));
-const TwdCheck = React.lazy(() => import('pages/TwdCheck.jsx'));
 
 const App = () => {
   const router = createBrowserRouter(
@@ -40,22 +36,8 @@ const App = () => {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<About />} />
         <Route path="about" element={<Navigate to="/" />} />
-        <Route
-          path="documentation"
-          element={
-            <Suspense fallback={<div />}>
-              <Documentation />
-            </Suspense>
-          }
-        />
-        <Route
-          path="changelog"
-          element={
-            <Suspense fallback={<div />}>
-              <Changelog />
-            </Suspense>
-          }
-        />
+        <Route path="documentation" element={<Documentation />} />
+        <Route path="changelog" element={<Changelog />} />
         <Route path="account" element={<Account />} />
         <Route path="diff" element={<Diff />} />
         <Route path="diff/:deckidFrom/:deckidTo" element={<Diff />} />
@@ -66,38 +48,13 @@ const App = () => {
         <Route path="review" element={<Review />} />
         <Route path="review/:deckid" element={<Review />} />
         <Route path="twd" element={<Twd />} />
-        <Route
-          path="twd/deck_check"
-          element={
-            <Suspense fallback={<div />}>
-              <TwdCheck />
-            </Suspense>
-          }
-        />
+        <Route path="twd/deck_check" element={<TwdCheck />} />
         <Route
           path="twd/hall_of_fame/tournaments"
-          element={
-            <Suspense fallback={<div />}>
-              <TwdHallOfFameTournaments />
-            </Suspense>
-          }
+          element={<TwdHallOfFameTournaments />}
         />
-        <Route
-          path="twd/hall_of_fame/cards"
-          element={
-            <Suspense fallback={<div />}>
-              <TwdHallOfFameCards />
-            </Suspense>
-          }
-        />
-        <Route
-          path="twd/cards_history"
-          element={
-            <Suspense fallback={<div />}>
-              <TwdCardsHistory />
-            </Suspense>
-          }
-        />
+        <Route path="twd/hall_of_fame/cards" element={<TwdHallOfFameCards />} />
+        <Route path="twd/cards_history" element={<TwdCardsHistory />} />
         <Route path="crypt" element={<Crypt />} />
         <Route path="library" element={<Library />} />
         <Route path="cards" element={<Cards />}>
