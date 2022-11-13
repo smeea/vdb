@@ -79,17 +79,12 @@ const Crypt = () => {
                 <ResultCrypt
                   cards={cryptCompare}
                   setCards={setCryptCompare}
-                  isAuthor={deck?.isAuthor}
                   inCompare
                 />
               </div>
             )}
             {cryptResults !== undefined && (
-              <ResultCrypt
-                cards={cryptResults}
-                setCards={setCryptResults}
-                isAuthor={deck?.isAuthor}
-              />
+              <ResultCrypt cards={cryptResults} setCards={setCryptResults} />
             )}
           </Col>
         )}

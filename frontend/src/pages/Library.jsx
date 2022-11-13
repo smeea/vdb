@@ -79,7 +79,6 @@ const Library = () => {
                 <ResultLibrary
                   cards={libraryCompare}
                   setCards={setLibraryCompare}
-                  isAuthor={deck?.isAuthor}
                   inCompare
                 />
               </div>
@@ -88,7 +87,6 @@ const Library = () => {
               <ResultLibrary
                 cards={libraryResults}
                 setCards={setLibraryResults}
-                isAuthor={deck?.isAuthor}
               />
             )}
           </Col>

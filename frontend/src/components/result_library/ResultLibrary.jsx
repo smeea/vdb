@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultLibraryTable, ResultLibraryTotal } from 'components';
 import { librarySort } from 'utils';
-import { useApp } from 'context';
+import { useApp, deckStore } from 'context';
 
-const ResultLibrary = ({ cards, setCards, isAuthor, inCompare }) => {
+const ResultLibrary = ({ cards, setCards, inCompare }) => {
   const {
     setShowLibrarySearch,
     addMode,
@@ -18,6 +19,8 @@ const ResultLibrary = ({ cards, setCards, isAuthor, inCompare }) => {
     showFloatingButtons,
   } = useApp();
   const navigate = useNavigate();
+  const deck = useSnapshot(deckStore).deck;
+  const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
   const sortMethods = {
     'Clan / Discipline': 'C/D',
@@ -70,7 +73,7 @@ const ResultLibrary = ({ cards, setCards, isAuthor, inCompare }) => {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && isAuthor && (
+      {isMobile && showFloatingButtons && isEditable && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${

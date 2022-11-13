@@ -17,6 +17,7 @@ import { deckStore, useApp } from 'context';
 const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
   const { isDesktop, isMobile, setShowFloatingButtons } = useApp();
   const deck = useSnapshot(deckStore).deck;
+  const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
   const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
@@ -35,7 +36,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
     return (
       <React.Fragment key={card.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {deck.isAuthor && (
+          {isEditable && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}

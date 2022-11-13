@@ -36,6 +36,7 @@ const ResultCryptTableRow = ({
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const inDeck = deck?.crypt[card.Id]?.q || 0;
+  const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
@@ -63,7 +64,7 @@ const ResultCryptTableRow = ({
 
   return (
     <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-      {(inRecommendation ? deck?.isAuthor : deck?.isAuthor && addMode) && (
+      {(inRecommendation ? isEditable : isEditable && addMode) && (
         <td className="quantity-add pe-1">
           <ButtonAddCard
             cardid={card.Id}

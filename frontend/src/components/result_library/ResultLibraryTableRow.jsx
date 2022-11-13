@@ -31,6 +31,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
   const inDeck = deck?.library[card.Id]?.q || 0;
+  const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
@@ -58,7 +59,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
 
   return (
     <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-      {deck?.isAuthor && addMode && (
+      {isEditable && addMode && (
         <td className="quantity-add pe-1">
           <ButtonAddCard deckid={deck.deckid} card={card} inDeck={inDeck} />
         </td>

@@ -19,7 +19,7 @@ import { useModalCardController, useDeckLibrary } from 'hooks';
 const DeckLibrary = ({ deck, inMissing }) => {
   const { isMobile, isNarrow, showFloatingButtons, setShowFloatingButtons } =
     useApp();
-  const { deckid, isPublic, isAuthor } = deck;
+  const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
@@ -176,7 +176,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
           {LibrarySideDeck}
         </div>
       )}
-      {isMobile && isAuthor && !isPublic && showFloatingButtons && (
+      {isMobile && isAuthor && !isPublic && !isFrozen && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"

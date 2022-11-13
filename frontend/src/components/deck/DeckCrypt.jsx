@@ -21,7 +21,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
     setShowFloatingButtons,
   } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
-  const { deckid, isPublic, isAuthor } = deck;
+  const { deckid, isPublic, isAuthor, isFrozen } = deck;
 
   const sortMethods = {
     Capacity: 'C',
@@ -167,7 +167,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
           />
         </div>
       )}
-      {isMobile && isAuthor && !isPublic && showFloatingButtons && (
+      {isMobile && isAuthor && !isFrozen && !isPublic && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-top float-add-on align-items-center justify-content-center"
