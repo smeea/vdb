@@ -3,12 +3,14 @@
 - Export all in XSLX
 - Typing in the middle of additional search forms
 - Clan search in TWD
+- Delete revision with inventoryType (discord -> Ratadin)
 
 # FEATURES
 - Check TWD
 - Show changes from base deck when syncing Public
 - Seating emulator (vs random decks and pre-determined nicknames)
 - Export Selected from AdvDeckSelector
+- Bonus votes filter
 
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing

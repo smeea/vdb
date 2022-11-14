@@ -278,7 +278,7 @@
         "Requirement":"sabbat",
         "Rulings":[
             {
-                "text":"The +1 intercept applies to \u24b9 actions against cards controlled by the controller. It does not apply to \u24b9 actions against another Methuselah. ",
+                "text":"The +1 intercept applies to actions directed at cards controlled by the controller. It does not apply to actions directed at other Methuselahs. ",
                 "refs":{
                     "[LSJ 20061222]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUKedBpp_h0/m/LpJkrGZWvg0J"
                 }
@@ -482,12 +482,6 @@
                 }
             },
             {
-                "text":"The Ghouls are not mortal, they are monsters. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872"
-                }
-            },
-            {
                 "text":"Is not replaced until the condition is met, even if it is burned. ",
                 "refs":{
                     "[LSJ 20080805]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/SIbzFAwWDKs/BDkEg19txtoJ"
@@ -497,6 +491,13 @@
                 "text":"The \"other Gehenna cards in play\" requirement is only checked when playing the card. ",
                 "refs":{
                     "[PIB 20121031]":"http://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -592,13 +593,13 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"If ranged aggravated damage is inflicted at close range against him, he burns. ",
+                "text":"Burns if ranged aggravated damage is inflicted on it at close range. ",
                 "refs":{
                     "[PIB 20110818]":"http://www.vekn.net/forum/rules-questions/8475-q-question-about-abbysal-hunter#8477"
                 }
             },
             {
-                "text":"If he burns an ally with his action, this counts as a \u24b9 action burning an ally (eg. for Trophies). ",
+                "text":"If he burns an ally with his action, this counts as a directed action burning an ally (eg. for Trophies). ",
                 "refs":{
                     "[ANK 20220507]":"https://www.vekn.net/forum/rules-questions/79763-damage-lifeloss-d-actions-and-trophies-predators-tranformation#105200"
                 }
@@ -746,7 +747,7 @@
                 }
             },
             {
-                "text":"The cost is cumulative if a vampire has multiple copies of the card on him. ",
+                "text":"Burn pool effects are cumulative. ",
                 "refs":{
                     "[LSJ 19980225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/62y-5miA8MQ/EhtcS-ia9b8J"
                 }
@@ -967,7 +968,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Can be equipped by a vampire with capacity less than 4, although he cannot lock it to get a vote. ",
+                "text":"Can be equipped by a vampire with capacity less than 4, although they cannot lock it to get a vote. ",
                 "refs":{
                     "[LSJ 20030607]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/DG7s60pwv1U/FPqlZYJ3upcJ"
                 }
@@ -1465,7 +1466,7 @@
                 "DTC":true
             }
         },
-        "Twd":39,
+        "Twd":40,
         "Type":"Master"
     },
     "100038":{
@@ -1486,7 +1487,7 @@
         "Requirement":"justicar,inner circle,camarilla",
         "Rulings":[
             {
-                "text":"If the given weapon costs blood, the target Alastor pays the cost. ",
+                "text":"If the weapon retrieved costs blood, that cost is paid by the vampire chosen by the vote. ",
                 "refs":{
                     "[LSJ 20040518]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/4emymfUPwAM/B2SCC7L6kuMJ"
                 }
@@ -1661,7 +1662,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"If both minions want to play a card \"when a vampire should go into torpor\", acting minion goes first. If played first, {Undead Persistence} would prevent the opponent to play {Amaranth} and vice-versa. ",
+                "text":"If both minions want to play a card \"when a vampire should go into torpor\", the acting minion goes first. If played first, {Undead Persistence} would prevent the opponent to play {Amaranth} and vice-versa. ",
                 "refs":{
                     "[RTR 20010710]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GsI1UyH54jU/x9LfDZX1vR4J"
                 }
@@ -2137,6 +2138,12 @@
                 "refs":{
                     "[LSJ 19980225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/62y-5miA8MQ/EhtcS-ia9b8J"
                 }
+            },
+            {
+                "text":"If a Methuselah controls no ready Anarch by the end of the unlock phase, they must burn 1 pool, even if they had a ready Anarch at some point during the unlock phase. ",
+                "refs":{
+                    "[LSJ 20080106]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/q4s1P6ozsW8/m/N9wEQl5sgTgJ"
+                }
             }
         ],
         "Set":{
@@ -2261,7 +2268,7 @@
                 "PV":"1"
             }
         },
-        "Twd":414,
+        "Twd":416,
         "Type":"Master"
     },
     "100059":{
@@ -2312,7 +2319,7 @@
                 "PM":"1"
             }
         },
-        "Twd":302,
+        "Twd":301,
         "Type":"Political Action"
     },
     "100060":{
@@ -2388,7 +2395,7 @@
                 "PAl":"2"
             }
         },
-        "Twd":42,
+        "Twd":43,
         "Type":"Political Action"
     },
     "100061":{
@@ -2413,7 +2420,7 @@
                 "R":true
             }
         },
-        "Twd":50,
+        "Twd":51,
         "Type":"Master"
     },
     "100062":{
@@ -2547,7 +2554,7 @@
                 "":"1"
             }
         },
-        "Twd":376,
+        "Twd":375,
         "Type":"Political Action"
     },
     "100065":{
@@ -2840,7 +2847,7 @@
                 "2020-05-11":true
             }
         },
-        "Twd":43,
+        "Twd":44,
         "Type":"Equipment"
     },
     "100072":{
@@ -3070,7 +3077,7 @@
         "Requirement":"capacity 7 or more",
         "Rulings":[
             {
-                "text":"[pre] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[pre] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -3150,7 +3157,7 @@
                 "PB":1
             }
         },
-        "Twd":444,
+        "Twd":445,
         "Type":"Action"
     },
     "100080":{
@@ -3171,7 +3178,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
+                "text":"Ghouls are monsters, not mortal. ",
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
@@ -3314,21 +3321,27 @@
         "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
-                "text":"If a vampire blocks an Archon, he or she burns 1 blood regardless of which action the Archon was taking. ",
+                "text":"If a vampire blocks an Archon, they burn 1 blood regardless of which action the Archon was taking. ",
                 "refs":{
                     "[RTR 19960221]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/UdU535eVm0Y/AQGxbaznHL0J"
                 }
             },
             {
-                "text":"Multiple Archon cards provide different actions: if the vampire manage to unlock during the minion phase, he can perform the two actions. ",
+                "text":"Each copy of this card provides its own action: if the vampire manage to unlock during the minion phase, he can perform the action more than once (once per copy). ",
                 "refs":{
                     "[RTR 20030519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NOBWXWrd-vA/iEOpQp1uhvAJ"
                 }
             },
             {
-                "text":"The cost is cumulative if a vampire has multiple copies of the card on him. ",
+                "text":"Burn blood effects are cumulative. ",
                 "refs":{
                     "[LSJ 19980225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/62y-5miA8MQ/EhtcS-ia9b8J"
+                }
+            },
+            {
+                "text":"A vampire with no blood can still block, they burn what they can. ",
+                "refs":{
+                    "[LSJ 19970707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KWekwiRSa2I/9pS17rzBBDYJ"
                 }
             },
             {
@@ -3410,7 +3423,7 @@
                 "U":true
             }
         },
-        "Twd":602,
+        "Twd":601,
         "Type":"Master"
     },
     "100086":{
@@ -4094,16 +4107,16 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
-                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
-                }
-            },
-            {
                 "text":"If another effect also sets the range, the first to resolve has priority (eg. {Squirrel Balance} resolves before, {Neutral Guard} resolves after). ",
                 "refs":{
                     "[PIB 20120214]":"http://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -4344,7 +4357,7 @@
                 "PM":"1"
             }
         },
-        "Twd":70,
+        "Twd":71,
         "Type":"Master"
     },
     "100109":{
@@ -5113,7 +5126,7 @@
                 }
             },
             {
-                "text":"The effect during the unlock phase is not an action, you can choose a vampire with a {Secure Haven} on him. ",
+                "text":"The effect during the unlock phase is not an action, you can choose a vampire with a {Secure Haven} on them. ",
                 "refs":{
                     "[PIB 20121028]":"http://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
                 }
@@ -5254,7 +5267,7 @@
                 }
             },
             {
-                "text":"A banished vampire will remember all effects that had been applied to him, just as contested vampires do. This includes gained or lost titles. ",
+                "text":"A banished vampire will remember all effects that had been applied to them, just as contested vampires do. This includes gained or lost titles. ",
                 "refs":{
                     "[RTR 20000501]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/MKrA0hBXuaU/1M5LOLftKWAJ"
                 }
@@ -5286,7 +5299,7 @@
                 }
             },
             {
-                "text":"If the vampire is permanently controlled by a Methuselah other than his owner, it goes to that Methuselah uncontrolled region and is still controlled by him. It is removed from the game if that Methuselah is ousted and kept in game if his owner is ousted. ",
+                "text":"If the vampire is permanently controlled by a Methuselah other than his owner, it goes to that Methuselah uncontrolled region and is still controlled by them. It is removed from the game if that Methuselah is ousted and kept in game if his owner is ousted. ",
                 "refs":{
                     "[ANK 20200408-2]":"http://www.vekn.net/forum/rules-questions/78562-banishment?start=6#99533"
                 }
@@ -5316,7 +5329,7 @@
                 "":"2"
             }
         },
-        "Twd":484,
+        "Twd":485,
         "Type":"Political Action"
     },
     "100132":{
@@ -5492,7 +5505,7 @@
                 "PTz":1
             }
         },
-        "Twd":402,
+        "Twd":403,
         "Type":"Master"
     },
     "100136":{
@@ -5868,7 +5881,7 @@
                 }
             },
             {
-                "text":"[ANI][PRO] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[ANI][PRO] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -6229,7 +6242,7 @@
                 }
             },
             {
-                "text":"Is cumulative. A player can be damaged by multiple Betrayers each turn. A Methuselah targeted by more than one Betrayer would have to pay 1 pool for each Betrayer in order to burn them, even if the same vampire is the betrayer in each case. ",
+                "text":"Is cumulative: a player can be damaged by multiple Betrayers each turn. A Methuselah targeted by more than one Betrayer would have to pay 1 pool for each Betrayer in order to burn them, even if the same vampire is the betrayer in each case. ",
                 "refs":{
                     "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ"
                 }
@@ -6321,7 +6334,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":232,
+        "Twd":231,
         "Type":"Action Modifier"
     },
     "100158":{
@@ -6418,13 +6431,6 @@
                 }
             },
             {
-                "text":"Is not mortal, is a monster. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
-                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
-                }
-            },
-            {
                 "text":"If it uses its last life to pay for an action, the action still resolves fully. If that leads to an oust, the oust is resolved before resolving effects triggered by the fact that the Bima burns. ",
                 "refs":{
                     "[LSJ 20080512]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/z2DGSFph6sM/IjJB89nbtlsJ"
@@ -6434,6 +6440,13 @@
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution. ",
                 "refs":{
                     "[ANK 20180928-1]":"http://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -6536,7 +6549,7 @@
                 "R":true
             }
         },
-        "Twd":50,
+        "Twd":52,
         "Type":"Event"
     },
     "100164":{
@@ -7400,7 +7413,7 @@
                 "PKia":"2"
             }
         },
-        "Twd":51,
+        "Twd":52,
         "Type":"Master"
     },
     "100189":{
@@ -8321,7 +8334,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The blood is burned by the opponent when the owner prevents damage, immediately, before loosing blood to heal strike damage. Depending on the sequencing order, it can be before or after he has the opportunity to play damage prevention himself. ",
+                "text":"The blood is burned by the opponent when the owner prevents damage, immediately, before loosing blood to heal strike damage. Depending on the sequencing order, it can be before or after he has the opportunity to play damage prevention themselves. ",
                 "refs":{
                     "[LSJ 20090528-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/63JZWOiuAIQ/qx6_7pyDQEsJ"
                 }
@@ -8940,7 +8953,7 @@
                 "C":true
             }
         },
-        "Twd":191,
+        "Twd":192,
         "Type":"Combat"
     },
     "100228":{
@@ -9351,7 +9364,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":378,
+        "Twd":379,
         "Type":"Action Modifier"
     },
     "100237":{
@@ -9612,7 +9625,7 @@
                 "PSal":1
             }
         },
-        "Twd":441,
+        "Twd":442,
         "Type":"Equipment"
     },
     "100244":{
@@ -10057,7 +10070,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\n+1 hand size. Minions you control can unlock after resolution of a successful action to equip with a non-electronic, non-vehicle, non-weapon equipment card from your hand; a minion can unlock only once this way each turn. Those equipment cards cost minions you control -1 blood or pool to equip.",
+        "Card Text":"Unique location.\n+1 hand size. Minions you control can unlock after resolution of a successful action to equip with a non-electronic, non-vehicle, non-weapon equipment card from your hand; a minion can unlock only once this way each turn. Non-electronic, non-vehicle, non-weapon equipment cards cost minions you control -1 blood or pool to equip.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -10065,7 +10078,20 @@
         "Name":"British Museum, London, The",
         "Pool Cost":"2",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Checks the card type in hand, reduction and unlock apply to equipments that are locations when in play. ",
+                "refs":{
+                    "[ANK 20220824]":"https://www.vekn.net/forum/rules-questions/79986-the-british-museum-london-and-pier-13-port-of-baltimore?start=6#106118"
+                }
+            },
+            {
+                "text":"The reduction applies to all valid equipments, even without using the unlock or not equipping from hand. ",
+                "refs":{
+                    "[ANK 20221026]":"https://www.vekn.net/forum/rules-questions/80117-the-british-museum-london#106651"
+                }
+            }
+        ],
         "Set":{
             "FoL":{
                 "":"1"
@@ -10963,7 +10989,7 @@
                 "DTC":true
             }
         },
-        "Twd":189,
+        "Twd":190,
         "Type":"Action Modifier"
     },
     "100280":{
@@ -11152,7 +11178,7 @@
                 }
             },
             {
-                "text":"A vampire with no blood can still block, he burns what he can. ",
+                "text":"A vampire with no blood can still block, they burn what they can. ",
                 "refs":{
                     "[LSJ 19970707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KWekwiRSa2I/9pS17rzBBDYJ"
                 }
@@ -11471,7 +11497,7 @@
                 "PKia":"2"
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Master"
     },
     "100293":{
@@ -11691,7 +11717,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":687,
+        "Twd":688,
         "Type":"Ally"
     },
     "100299":{
@@ -13190,7 +13216,7 @@
                 "U":true
             }
         },
-        "Twd":30,
+        "Twd":31,
         "Type":"Combat"
     },
     "100334":{
@@ -13653,7 +13679,7 @@
                 }
             },
             {
-                "text":"[VIC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Metamorphosis}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[VIC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Metamorphosis}, {Dragos}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -14356,7 +14382,7 @@
                 "PR":4
             }
         },
-        "Twd":588,
+        "Twd":591,
         "Type":"Action Modifier"
     },
     "100363":{
@@ -15769,7 +15795,7 @@
                 "PSal":4
             }
         },
-        "Twd":924,
+        "Twd":926,
         "Type":"Action Modifier"
     },
     "100402":{
@@ -15900,7 +15926,7 @@
                 "PM":"4"
             }
         },
-        "Twd":133,
+        "Twd":135,
         "Type":"Action Modifier"
     },
     "100406":{
@@ -16673,17 +16699,17 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
-                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
-                }
-            },
-            {
                 "text":"The discipline level used to recruit it decides which version it is (inferior or superior). This does not change once it is in play. ",
                 "refs":{
                     "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
                     "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -16754,7 +16780,7 @@
                 }
             },
             {
-                "text":"Is not mortal, is a monster. ",
+                "text":"Ghouls are monsters, not mortal. ",
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
@@ -17532,7 +17558,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":60,
+        "Twd":61,
         "Type":"Action Modifier"
     },
     "100451":{
@@ -18563,7 +18589,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
+                "text":"Ghouls are monsters, not mortal. ",
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
@@ -19040,7 +19066,7 @@
                 "U":true
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Action"
     },
     "100495":{
@@ -20115,7 +20141,7 @@
                 "PSal":4
             }
         },
-        "Twd":1301,
+        "Twd":1303,
         "Type":"Reaction"
     },
     "100519":{
@@ -20194,7 +20220,7 @@
                 "PB":"2"
             }
         },
-        "Twd":828,
+        "Twd":829,
         "Type":"Reaction"
     },
     "100520":{
@@ -20262,7 +20288,7 @@
                 "PM":1
             }
         },
-        "Twd":49,
+        "Twd":51,
         "Type":"Master"
     },
     "100522":{
@@ -20365,7 +20391,7 @@
                 "PM":"2"
             }
         },
-        "Twd":86,
+        "Twd":88,
         "Type":"Action Modifier/Combat"
     },
     "100525":{
@@ -20830,7 +20856,7 @@
                 }
             },
             {
-                "text":"Is not mortal, is a monster. ",
+                "text":"Ghouls are monsters, not mortal. ",
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
@@ -21273,7 +21299,7 @@
                 "DTC":true
             }
         },
-        "Twd":1080,
+        "Twd":1082,
         "Type":"Master"
     },
     "100546":{
@@ -23098,7 +23124,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":1645,
+        "Twd":1646,
         "Type":"Master"
     },
     "100589":{
@@ -24142,7 +24168,7 @@
                 "R":true
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Action Modifier"
     },
     "100614":{
@@ -24261,7 +24287,7 @@
                 "PGar":"2"
             }
         },
-        "Twd":213,
+        "Twd":214,
         "Type":"Master"
     },
     "100617":{
@@ -24310,7 +24336,7 @@
                 "PM":"2"
             }
         },
-        "Twd":625,
+        "Twd":628,
         "Type":"Action Modifier"
     },
     "100618":{
@@ -24415,7 +24441,14 @@
         "Name":"Elder Library",
         "Pool Cost":"1",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If there is another copy in play, it enters contest without modifying the hand size. ",
+                "refs":{
+                    "[ANK 20221028]":"https://www.vekn.net/forum/rules-questions/80119-contesting-mokole-blood#106671"
+                }
+            }
+        ],
         "Set":{
             "Jyhad":{
                 "C":true
@@ -24442,7 +24475,7 @@
                 "PM":"1"
             }
         },
-        "Twd":104,
+        "Twd":105,
         "Type":"Master"
     },
     "100621":{
@@ -25243,7 +25276,7 @@
                 "PM":1
             }
         },
-        "Twd":24,
+        "Twd":25,
         "Type":"Equipment"
     },
     "102221":{
@@ -25341,7 +25374,20 @@
         "Name":"Enhanced Coagulant",
         "Pool Cost":"1",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The card stays there if the strike is dodged ",
+                "refs":{
+                    "[ANK 20220923]":"https://www.vekn.net/forum/rules-questions/80044-enhanced-coagulant-vs-dodge#106405"
+                }
+            },
+            {
+                "text":"Cannot be used against an ally. ",
+                "refs":{
+                    "[ANK 20221102]":"https://www.vekn.net/forum/rules-questions/80129-fall-of-london-card-rules-questions#106688"
+                }
+            }
+        ],
         "Set":{
             "FoL":{
                 "":"2"
@@ -25474,7 +25520,7 @@
                 "":"1"
             }
         },
-        "Twd":352,
+        "Twd":354,
         "Type":"Action Modifier"
     },
     "100646":{
@@ -25857,7 +25903,7 @@
                 "R":true
             }
         },
-        "Twd":12,
+        "Twd":13,
         "Type":"Action"
     },
     "100656":{
@@ -25948,7 +25994,7 @@
                 "R":true
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Equipment"
     },
     "100658":{
@@ -26804,7 +26850,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":552,
+        "Twd":553,
         "Type":"Reaction"
     },
     "100681":{
@@ -26884,7 +26930,7 @@
                 "PM":"4"
             }
         },
-        "Twd":131,
+        "Twd":133,
         "Type":"Action Modifier"
     },
     "100683":{
@@ -27103,7 +27149,7 @@
                 "PM":"2"
             }
         },
-        "Twd":654,
+        "Twd":656,
         "Type":"Action Modifier"
     },
     "100688":{
@@ -27760,7 +27806,7 @@
                 "R":true
             }
         },
-        "Twd":187,
+        "Twd":188,
         "Type":"Action"
     },
     "100704":{
@@ -29230,6 +29276,12 @@
                 "refs":{
                     "[LSJ 20060209]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZuOfZorIhhU/m/X5G1JfqDPhcJ"
                 }
+            },
+            {
+                "text":"Once in play, it can be moved (eg. {Heidelberg Castle, Germany}), or equipped by another minion from the minion who has it. ",
+                "refs":{
+                    "[ANK 20221103]":"https://www.vekn.net/forum/rules-questions/80131-can-a-flaming-candle-be-moved-by-a-heidelberg-castle-germany#106697"
+                }
             }
         ],
         "Set":{
@@ -29637,7 +29689,7 @@
                 "C":true
             }
         },
-        "Twd":57,
+        "Twd":56,
         "Type":"Action"
     },
     "100753":{
@@ -29843,7 +29895,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[PRE] [ACTIONMODIFIER] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[PRE] [ACTIONMODIFIER] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -30233,7 +30285,7 @@
                 "PTz":3
             }
         },
-        "Twd":353,
+        "Twd":356,
         "Type":"Action Modifier"
     },
     "100766":{
@@ -31223,7 +31275,7 @@
                 "PV":"5"
             }
         },
-        "Twd":590,
+        "Twd":591,
         "Type":"Action Modifier"
     },
     "100789":{
@@ -31412,7 +31464,7 @@
                 "R":true
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Master"
     },
     "100794":{
@@ -32225,16 +32277,16 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
-                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
-                }
-            },
-            {
                 "text":"Cannot be used if blocked when leaving torpor, as no combat would happen. ",
                 "refs":{
                     "[ANK 20181122-1]":"http://www.vekn.net/forum/rules-questions/77171-acting-in-torpor-with-ghoul-escort?start=12#91966"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -32270,7 +32322,7 @@
         "Requirement":"laibon",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
+                "text":"Ghouls are monsters, not mortal. ",
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
@@ -32310,15 +32362,16 @@
                 }
             },
             {
-                "text":"Is not mortal, is a monster. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872"
-                }
-            },
-            {
                 "text":"Damage is not inflicted at long range. ",
                 "refs":{
                     "[ANK 20210929]":"https://www.vekn.net/forum/generic-v-tes-discussion/75623-ghoul-retainer?start=12#103386"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -32370,6 +32423,13 @@
                 }
             },
             {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
+                }
+            },
+            {
                 "text":"Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}). ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
@@ -32408,16 +32468,16 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
-                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
-                }
-            },
-            {
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution. ",
                 "refs":{
                     "[ANK 20180928-1]":"http://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -32450,9 +32510,10 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Are not mortal, are a monster. ",
+                "text":"Ghouls are monsters, not mortal. ",
                 "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872"
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -33210,7 +33271,7 @@
                 "PV":1
             }
         },
-        "Twd":374,
+        "Twd":373,
         "Type":"Master"
     },
     "100843":{
@@ -33360,7 +33421,7 @@
                 "PSal":4
             }
         },
-        "Twd":949,
+        "Twd":951,
         "Type":"Action"
     },
     "100846":{
@@ -33663,6 +33724,12 @@
                 "refs":{
                     "[ANK 20210304]":"https://www.vekn.net/forum/rules-questions/79058-great-symposium#101761"
                 }
+            },
+            {
+                "text":"The search can fail, you still get to distribute 3 blood. ",
+                "refs":{
+                    "[LSJ 20100306]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Utho_j61pPQ/m/gcnXxAaIl6wJ"
+                }
             }
         ],
         "Set":{
@@ -33725,15 +33792,16 @@
                 }
             },
             {
-                "text":"Is not mortal, is a monster. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872"
-                }
-            },
-            {
                 "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion. ",
                 "refs":{
                     "[LSJ 20100909]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -33854,16 +33922,16 @@
         "Requirement":"anarch",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
-                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
-                }
-            },
-            {
                 "text":"Can play cards requiring [cel] or [pot] but not both. ",
                 "refs":{
                     "[ANK 20180731-1]":"http://www.vekn.net/forum/rules-questions/76877-vivienne-geroux-and-anarh-cards#89482"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -34248,7 +34316,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
+                "text":"Ghouls are monsters, not mortal. ",
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
@@ -34879,13 +34947,20 @@
         "Name":"Haqim's Law: Retribution",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If used by a Banu Haqim and another takes the action over with {Mask of a Thousand Faces}, they cannot use it again. ",
+                "refs":{
+                    "[ANK 20221102-2]":"https://www.vekn.net/forum/rules-questions/80130-motf-hl-retribution#106694"
+                }
+            }
+        ],
         "Set":{
             "V5A":{
                 "PBh":"4"
             }
         },
-        "Twd":9,
+        "Twd":10,
         "Type":"Master"
     },
     "100886":{
@@ -35564,7 +35639,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":658,
+        "Twd":659,
         "Type":"Equipment"
     },
     "100904":{
@@ -35595,7 +35670,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":93,
+        "Twd":94,
         "Type":"Action"
     },
     "100905":{
@@ -35858,7 +35933,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
+                "text":"Ghouls are monsters, not mortal. ",
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
@@ -36201,7 +36276,7 @@
                 }
             },
             {
-                "text":"[ACTIONMODIFIER] [1CONVICTION] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[ACTIONMODIFIER] [1CONVICTION] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -36307,7 +36382,7 @@
                 "R":true
             }
         },
-        "Twd":57,
+        "Twd":58,
         "Type":"Action Modifier/Combat"
     },
     "100922":{
@@ -37103,7 +37178,7 @@
                 "PBh":"10"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Combat"
     },
     "100945":{
@@ -37195,7 +37270,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Action"
     },
     "100947":{
@@ -39119,7 +39194,7 @@
                 "SKM":"1"
             }
         },
-        "Twd":44,
+        "Twd":45,
         "Type":"Master"
     },
     "100997":{
@@ -39300,7 +39375,7 @@
                 "PM":"6"
             }
         },
-        "Twd":165,
+        "Twd":164,
         "Type":"Action Modifier"
     },
     "101002":{
@@ -39581,7 +39656,7 @@
                 "SKB":"3"
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Action Modifier"
     },
     "101009":{
@@ -39805,7 +39880,7 @@
                 "PSal":1
             }
         },
-        "Twd":607,
+        "Twd":608,
         "Type":"Equipment"
     },
     "101015":{
@@ -40657,7 +40732,7 @@
                 "R":true
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Equipment"
     },
     "101038":{
@@ -41392,7 +41467,7 @@
                 "PM":"8"
             }
         },
-        "Twd":155,
+        "Twd":157,
         "Type":"Action"
     },
     "101056":{
@@ -41481,7 +41556,7 @@
                 "PTo":"3"
             }
         },
-        "Twd":683,
+        "Twd":682,
         "Type":"Political Action"
     },
     "101057":{
@@ -41547,7 +41622,7 @@
                 "PG":1
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Reaction"
     },
     "101059":{
@@ -42869,7 +42944,7 @@
                 "":"1"
             }
         },
-        "Twd":119,
+        "Twd":120,
         "Type":"Master"
     },
     "101092":{
@@ -43084,7 +43159,7 @@
                 "C":true
             }
         },
-        "Twd":49,
+        "Twd":50,
         "Type":"Action Modifier"
     },
     "101099":{
@@ -43296,7 +43371,7 @@
                 "":"1"
             }
         },
-        "Twd":65,
+        "Twd":64,
         "Type":"Master"
     },
     "101104":{
@@ -43338,7 +43413,7 @@
                 "PV":"2"
             }
         },
-        "Twd":152,
+        "Twd":153,
         "Type":"Master"
     },
     "101105":{
@@ -44134,7 +44209,7 @@
                 "PR":4
             }
         },
-        "Twd":804,
+        "Twd":806,
         "Type":"Action Modifier"
     },
     "101126":{
@@ -44907,7 +44982,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":185,
+        "Twd":186,
         "Type":"Action"
     },
     "101144":{
@@ -44975,7 +45050,7 @@
                 "PV":"6"
             }
         },
-        "Twd":648,
+        "Twd":649,
         "Type":"Combat"
     },
     "101145":{
@@ -45715,7 +45790,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
+                "text":"Ghouls are monsters, not mortal. ",
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
@@ -45761,16 +45836,16 @@
         "Requirement":"black hand",
         "Rulings":[
             {
-                "text":"Is not mortal, is a monster. ",
-                "refs":{
-                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
-                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
-                }
-            },
-            {
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution. ",
                 "refs":{
                     "[ANK 20180928-1]":"http://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal. ",
+                "refs":{
+                    "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -46332,7 +46407,7 @@
                 "PSam":"2"
             }
         },
-        "Twd":46,
+        "Twd":47,
         "Type":"Action Modifier"
     },
     "101180":{
@@ -47135,7 +47210,7 @@
                 "DTC":true
             }
         },
-        "Twd":52,
+        "Twd":53,
         "Type":"Reaction"
     },
     "101202":{
@@ -47322,7 +47397,7 @@
                 "U":true
             }
         },
-        "Twd":166,
+        "Twd":167,
         "Type":"Master"
     },
     "102239":{
@@ -47677,7 +47752,7 @@
                 "R":true
             }
         },
-        "Twd":85,
+        "Twd":86,
         "Type":"Action"
     },
     "101216":{
@@ -47712,7 +47787,7 @@
                 "PM":"3"
             }
         },
-        "Twd":42,
+        "Twd":44,
         "Type":"Action Modifier"
     },
     "101217":{
@@ -48035,7 +48110,7 @@
                 "PTr":"6"
             }
         },
-        "Twd":178,
+        "Twd":179,
         "Type":"Action Modifier"
     },
     "101224":{
@@ -48125,7 +48200,7 @@
                 "PSal":1
             }
         },
-        "Twd":232,
+        "Twd":234,
         "Type":"Master"
     },
     "101226":{
@@ -48370,7 +48445,14 @@
         "Name":"Mobile HQ, Operation Antigen",
         "Pool Cost":"2",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The card is locked if used to enter combat, even if that action fails. ",
+                "refs":{
+                    "[ANK 20221102]":"https://www.vekn.net/forum/rules-questions/80129-fall-of-london-card-rules-questions#106688"
+                }
+            }
+        ],
         "Set":{
             "FoL":{
                 "":"1"
@@ -48421,6 +48503,13 @@
         "Pool Cost":"1",
         "Requirement":"",
         "Rulings":[
+            {
+                "text":"If there is another copy in play, the cards are put on it before it enters contest. ",
+                "refs":{
+                    "[ANK 20221028]":"https://www.vekn.net/forum/rules-questions/80119-contesting-mokole-blood#106671",
+                    "[LSJ 20090428-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/887DQTpntKI/m/hYSLzUDm5iUJ"
+                }
+            },
             {
                 "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements. ",
                 "refs":{
@@ -48687,7 +48776,7 @@
                 "":"1"
             }
         },
-        "Twd":400,
+        "Twd":399,
         "Type":"Master"
     },
     "101239":{
@@ -49424,7 +49513,7 @@
                 "2020-05-11":true
             }
         },
-        "Twd":139,
+        "Twd":140,
         "Type":"Action Modifier/Reaction"
     },
     "101257":{
@@ -49606,7 +49695,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":356,
+        "Twd":357,
         "Type":"Ally"
     },
     "101262":{
@@ -50778,7 +50867,7 @@
                 "PM":"2"
             }
         },
-        "Twd":79,
+        "Twd":81,
         "Type":"Combat"
     },
     "101293":{
@@ -51249,7 +51338,7 @@
                 "R":true
             }
         },
-        "Twd":41,
+        "Twd":42,
         "Type":"Event"
     },
     "101306":{
@@ -51429,7 +51518,7 @@
                 "PoS":"2"
             }
         },
-        "Twd":236,
+        "Twd":237,
         "Type":"Reaction"
     },
     "101310":{
@@ -51480,7 +51569,7 @@
                 "PM":"2"
             }
         },
-        "Twd":157,
+        "Twd":158,
         "Type":"Master"
     },
     "101311":{
@@ -51631,7 +51720,7 @@
         "Requirement":"primogen,camarilla",
         "Rulings":[
             {
-                "text":"Is a \u24b9 action if a vampire controlled by another Methuselah is chosen. ",
+                "text":"Is a directed action if a vampire controlled by another Methuselah is chosen. ",
                 "refs":{
                     "[ANK 20190606]":"http://www.vekn.net/forum/rules-questions/77692-of-noble-blood#95258"
                 }
@@ -51897,7 +51986,7 @@
                 "PSal":4
             }
         },
-        "Twd":1586,
+        "Twd":1588,
         "Type":"Reaction"
     },
     "101322":{
@@ -53141,7 +53230,7 @@
                 "PTo":"3"
             }
         },
-        "Twd":497,
+        "Twd":498,
         "Type":"Political Action"
     },
     "101354":{
@@ -54171,7 +54260,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":1573,
+        "Twd":1576,
         "Type":"Master"
     },
     "101385":{
@@ -54346,7 +54435,7 @@
                 "LB":"2"
             }
         },
-        "Twd":455,
+        "Twd":456,
         "Type":"Master"
     },
     "101389":{
@@ -55376,7 +55465,7 @@
                 "":"1"
             }
         },
-        "Twd":338,
+        "Twd":337,
         "Type":"Political Action"
     },
     "101418":{
@@ -55475,7 +55564,7 @@
                 "R":true
             }
         },
-        "Twd":81,
+        "Twd":82,
         "Type":"Ally"
     },
     "101420":{
@@ -57437,7 +57526,7 @@
                 "PM":"2"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Action"
     },
     "101477":{
@@ -57547,13 +57636,13 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[abo] [ACTIONMODIFIER] Any \u24b9 action that ends up burning an ally counts as a \u24b9 action burning an ally (eg. {Horseshoes}). ",
+                "text":"[abo] [ACTIONMODIFIER] Any directed action that ends up burning an ally counts as a directed action burning an ally (eg. {Horseshoes}). ",
                 "refs":{
                     "[ANK 20220507]":"https://www.vekn.net/forum/rules-questions/79763-damage-lifeloss-d-actions-and-trophies-predators-tranformation#105200"
                 }
             },
             {
-                "text":"[abo] [ACTIONMODIFIER] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[abo] [ACTIONMODIFIER] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -57922,7 +58011,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Master"
     },
     "101488":{
@@ -58183,7 +58272,7 @@
                 "U":true
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Action"
     },
     "101496":{
@@ -58704,7 +58793,7 @@
                 "PT":"3"
             }
         },
-        "Twd":166,
+        "Twd":167,
         "Type":"Combat"
     },
     "101508":{
@@ -59085,7 +59174,7 @@
                 "U":true
             }
         },
-        "Twd":94,
+        "Twd":95,
         "Type":"Action"
     },
     "101518":{
@@ -59285,7 +59374,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":235,
+        "Twd":236,
         "Type":"Combat"
     },
     "101524":{
@@ -59621,7 +59710,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":11,
+        "Twd":12,
         "Type":"Combat"
     },
     "101533":{
@@ -61795,7 +61884,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":62,
+        "Twd":63,
         "Type":"Combat"
     },
     "101589":{
@@ -62288,7 +62377,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[obe], [OBE]: Is undirected if you control the target, directed to the controller of the target otherwise. ",
+                "text":"[obe], [OBE]: Is undirected if you control the target, directed at the controller of the target otherwise. ",
                 "refs":{
                     "[PIB 20121210]":"http://www.vekn.net/forum/rules-questions/42498-does-eurayle-s-special-cost-her-blood-while-targeting-hazimel?start=18#42659"
                 }
@@ -62387,7 +62476,7 @@
                 }
             },
             {
-                "text":"[pre] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[pre] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -62580,7 +62669,7 @@
                 "PTo":"4"
             }
         },
-        "Twd":120,
+        "Twd":121,
         "Type":"Action Modifier/Combat"
     },
     "101611":{
@@ -63223,7 +63312,7 @@
                 "PM":"4"
             }
         },
-        "Twd":101,
+        "Twd":102,
         "Type":"Action"
     },
     "101628":{
@@ -64411,9 +64500,16 @@
                 }
             },
             {
-                "text":"Only usable at close range. Damage prevention cannot be used against it, but dodge and \"strike: combat ends\" will avoid the effect. ",
+                "text":"Only usable at close range. Damage prevention cannot be used against it. ",
                 "refs":{
                     "[LSJ 19980219]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/FoVObdCLJPM/Wb6cYwW6-jMJ"
+                }
+            },
+            {
+                "text":"If the opponent dodges or ends combat, they avoid the effect and the ring stays. ",
+                "refs":{
+                    "[LSJ 19980219]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/FoVObdCLJPM/Wb6cYwW6-jMJ",
+                    "[ANK 20220923]":"https://www.vekn.net/forum/rules-questions/80044-enhanced-coagulant-vs-dodge#106405"
                 }
             },
             {
@@ -65057,7 +65153,14 @@
         "Name":"Sacrifice",
         "Pool Cost":"",
         "Requirement":"sabbat,capacity 8 or more",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Does not require a specific clan: vampires that can play cards as if they were of a required clan (eg. {Mata Hari}) cannot use their ability to match a target's clan. ",
+                "refs":{
+                    "[LSJ 20100526]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ch0oKrlxX30/m/MiuMxqszAUgJ"
+                }
+            }
+        ],
         "Set":{
             "Sabbat":{
                 "U":true
@@ -66029,7 +66132,7 @@
                 "R":true
             }
         },
-        "Twd":235,
+        "Twd":236,
         "Type":"Event"
     },
     "101698":{
@@ -66071,7 +66174,7 @@
                 "PTr":"6"
             }
         },
-        "Twd":153,
+        "Twd":154,
         "Type":"Action"
     },
     "101699":{
@@ -66399,7 +66502,7 @@
                 "PV":"2"
             }
         },
-        "Twd":458,
+        "Twd":459,
         "Type":"Reaction"
     },
     "101707":{
@@ -66685,7 +66788,7 @@
                 "PV":"1"
             }
         },
-        "Twd":383,
+        "Twd":386,
         "Type":"Action Modifier"
     },
     "101713":{
@@ -68431,7 +68534,14 @@
         "Name":"Shard, London, The",
         "Pool Cost":"2",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The cost reduction applies to minion cards, they are also played by the Methuselah. ",
+                "refs":{
+                    "[ANK 20221102]":"https://www.vekn.net/forum/rules-questions/80129-fall-of-london-card-rules-questions#106688"
+                }
+            }
+        ],
         "Set":{
             "FoL":{
                 "":"1"
@@ -68869,6 +68979,13 @@
                 }
             },
             {
+                "text":"If there is another copy in play, the cards are put on it before it enters contest. ",
+                "refs":{
+                    "[ANK 20221028]":"https://www.vekn.net/forum/rules-questions/80119-contesting-mokole-blood#106671",
+                    "[LSJ 20090428-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/887DQTpntKI/m/hYSLzUDm5iUJ"
+                }
+            },
+            {
                 "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements. ",
                 "refs":{
                     "[ANK 20180719-3]":"http://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
@@ -69089,7 +69206,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[NEC] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[NEC] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -69345,7 +69462,7 @@
                 "PI":"2"
             }
         },
-        "Twd":139,
+        "Twd":140,
         "Type":"Combat"
     },
     "101780":{
@@ -69915,7 +70032,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[tha] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[tha] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -70795,7 +70912,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":220,
+        "Twd":221,
         "Type":"Equipment"
     },
     "101817":{
@@ -71654,7 +71771,7 @@
         "Requirement":"anarch",
         "Rulings":[
             {
-                "text":"Is a \u24b9 action against all other Methuselahs ",
+                "text":"Is an action directed at all other Methuselahs ",
                 "refs":{
                     "[PIB 20150821]":"http://www.vekn.net/forum/rules-questions/72609-sowing-dissension?start=6#72632",
                     "[RTR 20080808]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/1jW6GXrIRSU/8QTYL98kB0gJ"
@@ -71801,7 +71918,7 @@
                 "R":true
             }
         },
-        "Twd":42,
+        "Twd":43,
         "Type":"Master"
     },
     "101843":{
@@ -72520,7 +72637,7 @@
                 "PN":"1"
             }
         },
-        "Twd":423,
+        "Twd":427,
         "Type":"Action Modifier"
     },
     "101858":{
@@ -72541,7 +72658,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[cel] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[cel] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -72604,7 +72721,7 @@
                 "PR":4
             }
         },
-        "Twd":123,
+        "Twd":122,
         "Type":"Combat"
     },
     "101860":{
@@ -74035,7 +74152,7 @@
                 "PM":"1"
             }
         },
-        "Twd":624,
+        "Twd":626,
         "Type":"Master"
     },
     "101897":{
@@ -74709,7 +74826,7 @@
                 "PR":4
             }
         },
-        "Twd":638,
+        "Twd":642,
         "Type":"Action Modifier/Combat"
     },
     "101914":{
@@ -75434,7 +75551,7 @@
                 "":"1"
             }
         },
-        "Twd":24,
+        "Twd":25,
         "Type":"Equipment"
     },
     "101932":{
@@ -76278,7 +76395,7 @@
                 "PSal":4
             }
         },
-        "Twd":1000,
+        "Twd":1001,
         "Type":"Reaction"
     },
     "101950":{
@@ -76427,7 +76544,7 @@
         "Requirement":"sabbat,titled",
         "Rulings":[
             {
-                "text":"Multiple Templar cards provide different actions: if the vampire manage to unlock during the minion phase, he can perform the two actions. ",
+                "text":"Each copy of this card provides its own action: if the vampire manage to unlock during the minion phase, he can perform the action more than once (once per copy). ",
                 "refs":{
                     "[RTR 20030519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NOBWXWrd-vA/iEOpQp1uhvAJ"
                 }
@@ -78400,7 +78517,7 @@
                 "R":true
             }
         },
-        "Twd":42,
+        "Twd":43,
         "Type":"Action Modifier/Reaction"
     },
     "101999":{
@@ -78656,7 +78773,7 @@
                 "R":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Action"
     },
     "102008":{
@@ -79831,7 +79948,7 @@
                 "PMin":"2"
             }
         },
-        "Twd":46,
+        "Twd":47,
         "Type":"Action Modifier"
     },
     "102042":{
@@ -80787,7 +80904,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Master"
     },
     "102067":{
@@ -82035,7 +82152,7 @@
                 "PM":"2"
             }
         },
-        "Twd":240,
+        "Twd":242,
         "Type":"Action Modifier"
     },
     "102098":{
@@ -82634,7 +82751,7 @@
                 "PSal":2
             }
         },
-        "Twd":1005,
+        "Twd":1007,
         "Type":"Master"
     },
     "102114":{
@@ -82922,7 +83039,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":939,
+        "Twd":941,
         "Type":"Master"
     },
     "102122":{
@@ -82996,7 +83113,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[MEL] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[MEL] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -83320,7 +83437,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":439,
+        "Twd":438,
         "Type":"Action Modifier"
     },
     "102132":{
@@ -83591,7 +83708,7 @@
                 "PSal":3
             }
         },
-        "Twd":854,
+        "Twd":855,
         "Type":"Reaction"
     },
     "102138":{
@@ -84205,7 +84322,7 @@
                 "LB":"1"
             }
         },
-        "Twd":466,
+        "Twd":469,
         "Type":"Master"
     },
     "102152":{
@@ -84771,7 +84888,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[AUS][SER] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[AUS][SER] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -85242,7 +85359,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":589,
+        "Twd":593,
         "Type":"Master"
     },
     "102181":{
@@ -85319,7 +85436,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[CHI] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g. {Conditioning}). ",
+                "text":"[CHI] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }

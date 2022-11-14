@@ -160,7 +160,7 @@
             }
         },
         "Title":"",
-        "Twd":21
+        "Twd":22
     },
     "200006":{
         "ASCII Name":"Abebe",
@@ -419,7 +419,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":66
+        "Twd":65
     },
     "200012":{
         "ASCII Name":"Adelaide Davis",
@@ -451,7 +451,7 @@
             }
         },
         "Title":"",
-        "Twd":30
+        "Twd":31
     },
     "201635":{
         "ASCII Name":"Adelino Da Silva",
@@ -4777,7 +4777,7 @@
             }
         },
         "Title":"",
-        "Twd":45
+        "Twd":46
     },
     "200123":{
         "ASCII Name":"Apolonia Czarnecki",
@@ -5552,7 +5552,7 @@
             }
         },
         "Title":"",
-        "Twd":38
+        "Twd":39
     },
     "200144":{
         "ASCII Name":"Arthur Denholm",
@@ -5587,7 +5587,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":24
     },
     "200145":{
         "ASCII Name":"Asguresh",
@@ -5776,7 +5776,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200147":{
         "ASCII Name":"Assad Salhoum",
@@ -8025,7 +8025,7 @@
             }
         },
         "Title":"",
-        "Twd":21
+        "Twd":22
     },
     "200203":{
         "ASCII Name":"Black Wallace",
@@ -9527,7 +9527,7 @@
             }
         },
         "Title":"",
-        "Twd":17
+        "Twd":18
     },
     "200243":{
         "ASCII Name":"Cardano",
@@ -10035,7 +10035,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":21
     },
     "200255":{
         "ASCII Name":"Castiel",
@@ -10133,7 +10133,7 @@
             }
         },
         "Title":"",
-        "Twd":80
+        "Twd":81
     },
     "200257":{
         "ASCII Name":"Cedric",
@@ -11068,7 +11068,7 @@
             }
         },
         "Title":"",
-        "Twd":22
+        "Twd":23
     },
     "200281":{
         "ASCII Name":"Claven",
@@ -11100,7 +11100,7 @@
             }
         },
         "Title":"",
-        "Twd":32
+        "Twd":33
     },
     "200282":{
         "ASCII Name":"Clea Auguste d'Holford",
@@ -13831,7 +13831,7 @@
             }
         },
         "Title":"",
-        "Twd":62
+        "Twd":63
     },
     "200356":{
         "ASCII Name":"Domenic Giovanni",
@@ -15050,6 +15050,13 @@
                 "refs":{
                     "[LSJ 20090107]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qPDLvbgqfCg/m/DlRVFoE_C64J"
                 }
+            },
+            {
+                "text":"A \"burn blood\" effect on a combat card is not a cost (eg. {Chiropteran Marauder}), it is unaffected by his ability. ",
+                "refs":{
+                    "[LSJ 20090107]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qPDLvbgqfCg/m/DlRVFoE_C64J",
+                    "[LSJ 20070829-3]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/J018OOhbEoQJ"
+                }
             }
         ],
         "Sect":"Sabbat",
@@ -15194,7 +15201,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "200391":{
         "ASCII Name":"Duality",
@@ -15533,7 +15540,7 @@
             }
         },
         "Title":"",
-        "Twd":27
+        "Twd":28
     },
     "200401":{
         "ASCII Name":"Edith Blount",
@@ -16926,7 +16933,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Ethan's \u24b9 action is directed at the controller of the skill card, not the controller of the vampire. ",
+                "text":"Ethan's action is directed at the controller of the skill card, not the controller of the vampire. ",
                 "refs":{
                     "[LSJ 19970224]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/80KRDjVFkyg/TBJso9Ra_9QJ"
                 }
@@ -16972,7 +16979,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Allies have no blood, they cannot take \u24b9 actions against him, except if they are acting as a vampire. ",
+                "text":"Allies have no blood, they cannot take directed actions against him, except if they are acting as a vampire. ",
                 "refs":{
                     "[LSJ 20030815]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sf1U7vnVE-o/m/VjhroQN1NP4J"
                 }
@@ -17167,7 +17174,7 @@
             }
         },
         "Title":"",
-        "Twd":9
+        "Twd":10
     },
     "201627":{
         "ASCII Name":"Evan Klein",
@@ -17656,7 +17663,7 @@
             }
         },
         "Title":"prince",
-        "Twd":7
+        "Twd":8
     },
     "200457":{
         "ASCII Name":"Faruq",
@@ -18247,7 +18254,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200472":{
         "ASCII Name":"Fode Kourouma",
@@ -19556,7 +19563,7 @@
             }
         },
         "Title":"",
-        "Twd":29
+        "Twd":30
     },
     "200509":{
         "ASCII Name":"Gerard",
@@ -20851,7 +20858,14 @@
         "Id":201641,
         "Name":"Guardian, The",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"When using his ability, the opponent is the acting minion and play their combat effects first. ",
+                "refs":{
+                    "[ANK 20221102]":"https://www.vekn.net/forum/rules-questions/80129-fall-of-london-card-rules-questions#106688"
+                }
+            }
+        ],
         "Sect":"Camarilla",
         "Set":{
             "FoL":{
@@ -21558,7 +21572,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":21
     },
     "200562":{
         "ASCII Name":"Hamid Mansour",
@@ -22657,7 +22671,14 @@
         "Id":200592,
         "Name":"Hermana Hambrienta Mayor",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If influenced with more blood than her capacity, the blood drain off before her ability forces her to burn 2. ",
+                "refs":{
+                    "[LSJ 20051126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/dDgHGEG18D0/m/OMk_F9bKqW4J"
+                }
+            }
+        ],
         "Sect":"Sabbat",
         "Set":{
             "LoB":{
@@ -22685,7 +22706,14 @@
         "Id":200593,
         "Name":"Hermana Hambrienta Menor",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If influenced with more blood than her capacity, the blood drain off before her ability forces her to burn 2. ",
+                "refs":{
+                    "[LSJ 20051126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/dDgHGEG18D0/m/OMk_F9bKqW4J"
+                }
+            }
+        ],
         "Sect":"Sabbat",
         "Set":{
             "LoB":{
@@ -25055,7 +25083,7 @@
             }
         },
         "Title":"",
-        "Twd":39
+        "Twd":40
     },
     "200659":{
         "ASCII Name":"Jacko",
@@ -25119,7 +25147,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":24
     },
     "200661":{
         "ASCII Name":"Jacob, The Glitch",
@@ -26083,7 +26111,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":72
+        "Twd":73
     },
     "200687":{
         "ASCII Name":"Jeffrey Mullins",
@@ -26401,7 +26429,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "200696":{
         "ASCII Name":"Jeremy \"Wix\" Wyzchovsky",
@@ -28067,7 +28095,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "200745":{
         "ASCII Name":"Kalinda",
@@ -28102,7 +28130,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "201596":{
         "ASCII Name":"Kalinda",
@@ -28735,7 +28763,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":4
+        "Twd":5
     },
     "201604":{
         "ASCII Name":"Kassandra Tassaki",
@@ -28764,7 +28792,7 @@
             }
         },
         "Title":"prince",
-        "Twd":8
+        "Twd":9
     },
     "200760":{
         "ASCII Name":"Kassiym Malikhair",
@@ -29085,7 +29113,7 @@
             }
         },
         "Title":"",
-        "Twd":143
+        "Twd":144
     },
     "200768":{
         "ASCII Name":"Keller Thiel",
@@ -29386,7 +29414,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Gets +1 stealth on \u24b9 actions against multiple Methuselahs if one or more of the targets control no ready Sabbat vampire. ",
+                "text":"Gets +1 stealth on actions directed at multiple Methuselahs if one or more of the targets control no ready Sabbat vampire. ",
                 "refs":{
                     "[PIB 20150526]":"http://www.vekn.net/forum/rules-questions/71325-kestrelle-hayes-and-multiple-targets?start=6#71337",
                     "[RTR 20080808]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/1jW6GXrIRSU/8QTYL98kB0gJ"
@@ -29468,7 +29496,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":8
+        "Twd":9
     },
     "200776":{
         "ASCII Name":"Khalid",
@@ -29999,7 +30027,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":70
+        "Twd":71
     },
     "200792":{
         "ASCII Name":"Kostantin, Baro of the Caravan",
@@ -32815,7 +32843,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "200863":{
         "ASCII Name":"Louis Fortier",
@@ -32865,7 +32893,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "200864":{
         "ASCII Name":"Luanda Magere",
@@ -33183,7 +33211,7 @@
             }
         },
         "Title":"",
-        "Twd":21
+        "Twd":22
     },
     "200872":{
         "ASCII Name":"Lucina",
@@ -33855,7 +33883,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":111
+        "Twd":110
     },
     "200891":{
         "ASCII Name":"Lydia, Grand Praetor",
@@ -35749,7 +35777,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":16
     },
     "200942":{
         "ASCII Name":"Marthe Dizier",
@@ -37634,7 +37662,7 @@
             }
         },
         "Title":"",
-        "Twd":51
+        "Twd":53
     },
     "200986":{
         "ASCII Name":"Miguel Cordovera",
@@ -38169,7 +38197,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":73
+        "Twd":72
     },
     "201000":{
         "ASCII Name":"Mitchell, The Headhunter",
@@ -39766,7 +39794,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "201040":{
         "ASCII Name":"Nedal, The Careless",
@@ -42417,7 +42445,7 @@
             }
         },
         "Title":"",
-        "Twd":17
+        "Twd":18
     },
     "201107":{
         "ASCII Name":"Pedrag Hasek",
@@ -42612,7 +42640,7 @@
             }
         },
         "Title":"",
-        "Twd":65
+        "Twd":67
     },
     "201112":{
         "ASCII Name":"Petaniqua",
@@ -42997,7 +43025,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "201122":{
         "ASCII Name":"Philippe de Marseilles",
@@ -43439,7 +43467,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "201134":{
         "ASCII Name":"Primo Giovanni",
@@ -44113,7 +44141,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":86
+        "Twd":85
     },
     "201152":{
         "ASCII Name":"Rafaele Giovanni",
@@ -45635,7 +45663,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":14
     },
     "201194":{
         "ASCII Name":"Rocia",
@@ -47353,9 +47381,10 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His controller gets the Edge after the effects of the successful action are applied. If it is a referendum, he gets the Edge after the referendum is concluded. ",
+                "text":"His controller gets the Edge after the action resolves. If it is a referendum, he gets the Edge after the referendum is concluded. ",
                 "refs":{
-                    "[LSJ 20011222]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/DlCBJmB2fzY/HVLdn4Hr9uIJ"
+                    "[LSJ 20011222]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/DlCBJmB2fzY/HVLdn4Hr9uIJ",
+                    "[ANK 20221028-2]":"https://www.vekn.net/forum/rules-questions/80122-the-shard-london-and-sargon#106673"
                 }
             }
         ],
@@ -47995,7 +48024,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":14
     },
     "201258":{
         "ASCII Name":"Sebastien Goulet",
@@ -48029,7 +48058,7 @@
             }
         },
         "Title":"",
-        "Twd":12
+        "Twd":13
     },
     "201259":{
         "ASCII Name":"Sela",
@@ -53631,7 +53660,7 @@
             }
         },
         "Title":"",
-        "Twd":67
+        "Twd":69
     },
     "201409":{
         "ASCII Name":"Undele",
@@ -55819,7 +55848,7 @@
             }
         },
         "Title":"prince",
-        "Twd":7
+        "Twd":8
     },
     "201464":{
         "ASCII Name":"Watenda",
@@ -56871,7 +56900,7 @@
             }
         },
         "Title":"",
-        "Twd":40
+        "Twd":41
     },
     "201491":{
         "ASCII Name":"Ysador the Foul",
