@@ -55,7 +55,7 @@ const PdaSearchForm = () => {
   const refError = useRef(null);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target ?? event;
     searchPdaForm[name] = value;
   };
 

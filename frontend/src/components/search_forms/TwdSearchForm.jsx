@@ -55,13 +55,13 @@ const TwdSearchForm = () => {
   const [error, setError] = useState(false);
   const refError = useRef(null);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    searchTwdForm[name] = value;
-  };
-
   const handleEventChange = (event) => {
     searchTwdForm.event = event.target.value;
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event;
+    searchTwdForm[name] = value;
   };
 
   const handleChangeWithOpt = (event, id) => {

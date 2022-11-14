@@ -16,6 +16,7 @@ const PdaSearchFormSrcSelector = ({ value, onChange }) => {
             onChange={onChange}
             type="radio"
             id={i[0]}
+            value={i[0]}
             name="src"
             label={
               <div className="blue">

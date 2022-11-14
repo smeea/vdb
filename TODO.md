@@ -2,8 +2,8 @@
 - Iphone clipboard (copy url)
 - Export all in XSLX
 - Typing in the middle of additional search forms
-- Clan search in TWD
-- Delete revision with inventoryType (discord -> Ratadin)
+- Delete revision with inventoryType
+- Delete last revision to stop show revision selector
 
 # FEATURES
 - Check TWD
