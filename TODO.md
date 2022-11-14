@@ -2,6 +2,7 @@
 - Iphone clipboard (copy url)
 - Export all in XSLX
 - Typing in the middle of additional search forms
+- Clan search in TWD
 
 # FEATURES
 - Check TWD
