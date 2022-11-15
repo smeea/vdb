@@ -7,7 +7,7 @@ import At from 'assets/images/icons/at.svg';
 import { deckStore, useApp } from 'context';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const { inventoryMode, isMobile, isWide } = useApp();
   const decks = useSnapshot(deckStore).decks;
 
   const byTimestamp = (a, b) => {
@@ -39,7 +39,10 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
             label: (
               <div className="d-flex justify-content-between align-items-center">
                 <div className="d-inline trimmed">
-                  {decks[i]['name'].slice(0, 32)}
+                  {decks[i]['name'].slice(
+                    0,
+                    inventoryMode ? (isWide ? 28 : 23) : 32
+                  )}
                 </div>
                 <div className="d-flex align-items-center ps-2 small">
                   {inventoryMode && (
