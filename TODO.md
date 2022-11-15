@@ -2,8 +2,6 @@
 - Iphone clipboard (copy url)
 - Export all in XSLX
 - Typing in the middle of additional search forms
-- Delete revision with inventoryType
-- Delete last revision to stop show revision selector
 
 # FEATURES
 - Check TWD
