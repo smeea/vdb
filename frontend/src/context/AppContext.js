@@ -71,7 +71,7 @@ export const AppProvider = (props) => {
   const [showMenuButtons, setShowMenuButtons] = useState();
 
   // CARD BASE
-  const CARD_VERSION = '2022-11-13';
+  const CARD_VERSION = '2022-11-15';
   const fetchAndSetCardBase = () => {
     cardServices.getCardBase().then((data) => {
       setMany([

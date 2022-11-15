@@ -2,7 +2,7 @@ import preconDecksData from 'assets/data/preconDecks.json';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useDeck, useTags } from 'hooks';
 
-const CARD_VERSION = '2022-11-13';
+const CARD_VERSION = '2022-11-15';
 const urlCrypt = `${process.env.ROOT_URL}data/cardbase_crypt.json?v=${CARD_VERSION}`;
 const urlLibrary = `${process.env.ROOT_URL}data/cardbase_lib.json?v=${CARD_VERSION}`;
 const urlCryptPlaytest = `${process.env.ROOT_URL}data/cardbase_crypt_playtest.json?v=${CARD_VERSION}`;

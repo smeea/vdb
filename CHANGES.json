@@ -1,5 +1,13 @@
 [
   {
+    "version": "2022-11-15",
+    "changes": [
+      "Update Rulings (incl. FoL cards)",
+      "Update TWDA",
+      "Fix delete revision with Inventory Mode"
+    ]
+  },
+  {
     "version": "2022-11-14",
     "changes": [
       "Add Fall of London cards",
