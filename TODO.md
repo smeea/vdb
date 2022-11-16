@@ -8,6 +8,7 @@
 - Show changes from base deck when syncing Public
 - Seating emulator (vs random decks and pre-determined nicknames)
 - Export Selected from AdvDeckSelector
+- Sect search to TWD
 
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing

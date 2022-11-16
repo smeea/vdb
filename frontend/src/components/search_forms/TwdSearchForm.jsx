@@ -25,12 +25,13 @@ import {
 import { sanitizeFormState } from 'utils';
 import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from 'context';
 
-const TwdSearchForm = () => {
+const TwdSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, inventoryMode, isMobile } = useApp();
   const twdFormState = useSnapshot(searchTwdForm);
   const [spinnerState, setSpinnerState] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+  const refError = useRef(null);
 
   useEffect(() => {
     if (query) {
@@ -51,9 +52,6 @@ const TwdSearchForm = () => {
       processSearch();
     }
   }, [twdFormState, cryptCardBase, libraryCardBase]);
-
-  const [error, setError] = useState(false);
-  const refError = useRef(null);
 
   const handleEventChange = (event) => {
     searchTwdForm.event = event.target.value;
@@ -97,13 +95,17 @@ const TwdSearchForm = () => {
   };
 
   const handleError = (error) => {
-    setSpinnerState(false);
-    setTwdResults(undefined);
-    navigate('/twd');
+    setTwdResults(null);
+
     if (error.message == 400) {
       setError('NO DECKS FOUND');
     } else {
       setError('CONNECTION PROBLEM');
+    }
+
+    if (isMobile) {
+      setSpinnerState(false);
+      navigate('/twd');
     }
   };
 

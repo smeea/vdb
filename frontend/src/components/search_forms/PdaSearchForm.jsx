@@ -23,13 +23,14 @@ import {
 import { sanitizeFormState } from 'utils';
 import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from 'context';
 
-const PdaSearchForm = () => {
+const PdaSearchForm = ({ error, setError }) => {
   const { username, cryptCardBase, libraryCardBase, inventoryMode, isMobile } =
     useApp();
   const pdaFormState = useSnapshot(searchPdaForm);
   const [spinnerState, setSpinnerState] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+  const refError = useRef(null);
 
   useEffect(() => {
     if (query) {
@@ -50,9 +51,6 @@ const PdaSearchForm = () => {
       processSearch();
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
-
-  const [error, setError] = useState(false);
-  const refError = useRef(null);
 
   const handleChange = (event) => {
     const { name, value } = event.target ?? event;
@@ -91,13 +89,17 @@ const PdaSearchForm = () => {
   };
 
   const handleError = (error) => {
-    setSpinnerState(false);
-    setPdaResults([]);
-    navigate('/pda');
+    setPdaResults(null);
+
     if (error.message == 400) {
       setError('NO DECKS FOUND');
     } else {
       setError('CONNECTION PROBLEM');
+    }
+
+    if (isMobile) {
+      setSpinnerState(false);
+      navigate('/pda');
     }
   };
 
