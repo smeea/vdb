@@ -16,18 +16,15 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
   const { isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'clan';
-  const clans = [
+
+  const options = [
     'ANY',
     'Not Required',
     ...vampireClansList,
     ...imbuedClansList,
-  ];
-
-  const options = [];
-
-  clans.map((i) => {
+  ].map((i) => {
     if (i == 'ANY' || i == 'Not Required') {
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: name,
         label: (
@@ -36,9 +33,9 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
             {i}
           </>
         ),
-      });
+      };
     } else {
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: name,
         label: (
@@ -49,7 +46,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
             {i}
           </>
         ),
-      });
+      };
     }
   });
 

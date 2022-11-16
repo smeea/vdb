@@ -7,7 +7,7 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'capacity';
-  const capacity = [
+  const options = [
     'ANY',
     '1',
     '2',
@@ -20,43 +20,30 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
     '9',
     '10',
     '11',
-  ];
-  const options = [];
+  ].map((i) => ({
+    value: i === 'ANY' ? i.toLowerCase() : i,
+    name: name,
+    label: (
+      <>
+        <span className="me-3 me-sm-1 me-lg-3" />
+        {i}
+      </>
+    ),
+  }));
 
-  capacity.map((i) => {
-    let v;
-    i == 'ANY' ? (v = i.toLowerCase()) : (v = i);
-
-    options.push({
-      value: v,
-      name: name,
-      label: (
-        <>
-          <span className="me-3 me-sm-1 me-lg-3" />
-          {i}
-        </>
-      ),
-    });
-  });
-
-  const moreless = [
+  const morelessOptions = [
     ['le', '<='],
     ['ge', '>='],
-  ];
-  const morelessOptions = [];
-
-  moreless.map((i) => {
-    morelessOptions.push({
-      value: i[0],
-      name: name,
-      label: (
-        <>
-          <span className="me-3 me-sm-0 me-lg-3" />
-          {i[1]}
-        </>
-      ),
-    });
-  });
+  ].map((i) => ({
+    value: i[0],
+    name: name,
+    label: (
+      <>
+        <span className="me-3 me-sm-0 me-lg-3" />
+        {i[1]}
+      </>
+    ),
+  }));
 
   return (
     <Row className="py-1 ps-1 mx-0 align-items-center">

@@ -16,12 +16,9 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'clan';
-  const clans = ['ANY', ...vampireClansList, ...imbuedClansList];
-  const options = [];
-
-  clans.map((i) => {
+  const options = ['ANY', ...vampireClansList, ...imbuedClansList].map((i) => {
     if (i == 'ANY') {
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: name,
         label: (
@@ -30,9 +27,9 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
             {i}
           </>
         ),
-      });
+      };
     } else {
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: name,
         label: (
@@ -43,7 +40,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
             {i}
           </>
         ),
-      });
+      };
     }
   });
 

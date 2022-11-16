@@ -13,7 +13,8 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'title';
-  const titles = [
+
+  const options = [
     'ANY',
     'Not Required',
     'Non-titled',
@@ -29,22 +30,16 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
     'Cardinal',
     'Regent',
     'Magaji',
-  ];
-
-  const options = [];
-
-  titles.map((i) => {
-    options.push({
-      value: i.toLowerCase(),
-      name: name,
-      label: (
-        <>
-          <span className="margin-full" />
-          {i}
-        </>
-      ),
-    });
-  });
+  ].map((i) => ({
+    value: i.toLowerCase(),
+    name: name,
+    label: (
+      <>
+        <span className="margin-full" />
+        {i}
+      </>
+    ),
+  }));
 
   return (
     <>

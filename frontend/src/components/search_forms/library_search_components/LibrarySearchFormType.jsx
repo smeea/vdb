@@ -14,12 +14,9 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'type';
-  const typesSorted = ['ANY', ...cardtypeSorted];
-  const options = [];
-
-  typesSorted.map((i) => {
+  const options = ['ANY', ...cardtypeSorted].map((i) => {
     if (i == 'ANY') {
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: name,
         label: (
@@ -28,12 +25,12 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
             {i}
           </>
         ),
-      });
+      };
     } else {
       const imgSrc = `${process.env.ROOT_URL}images/types/${i
         .toLowerCase()
         .replace(/[\s,:!?'.-]/g, '')}.svg`;
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: 'type',
         label: (
@@ -44,7 +41,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
             {i}
           </>
         ),
-      });
+      };
     }
   });
 

@@ -7,11 +7,10 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'players';
-  const options = ['ANY', '100', '50', '30', '20', '10'];
   const fromOptions = [];
   const toOptions = [];
 
-  options.map((i) => {
+  ['ANY', '100', '50', '30', '20', '10'].map((i) => {
     if (i === 'ANY' || value.to === 'any' || parseInt(i) < value.to) {
       fromOptions.push({
         value: i.toLowerCase(),

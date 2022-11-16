@@ -23,18 +23,14 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     'Striga',
   ].sort();
 
-  const disciplines = [
+  const options = [
     'ANY',
     'Not Required',
     ...disciplinesExtendedList,
     ...virtuesList,
-  ];
-
-  const options = [];
-
-  disciplines.map((i) => {
+  ].map((i) => {
     if (i == 'ANY' || i == 'Not Required') {
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: name,
         label: (
@@ -43,9 +39,9 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
             {i}
           </>
         ),
-      });
+      };
     } else {
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: name,
         label: (
@@ -59,7 +55,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
             {i}
           </>
         ),
-      });
+      };
     }
   });
 

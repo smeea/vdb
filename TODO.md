@@ -5,12 +5,12 @@
 
 # FEATURES
 - Check TWD
+- Events decks archive analyzing
 - Show changes from base deck when syncing Public
 - Seating emulator (vs random decks and pre-determined nicknames)
 - Export Selected from AdvDeckSelector
 
 # MAYBE LATER FEATURES
-- Decks bundles (i.e. event deck archive) analyzing
 - Offline decks storage
 
 # IMPROVE TECHNOLOGY - FRONTEND
