@@ -13,6 +13,7 @@ import {
   TwdSearchFormEvent,
   TwdSearchFormDate,
   TwdSearchFormClan,
+  TwdSearchFormSect,
   TwdSearchFormCardtypes,
   TwdSearchFormCapacity,
   TwdSearchFormDisciplines,
@@ -358,6 +359,17 @@ const TwdSearchForm = ({ error, setError }) => {
             onChange={handleMultiChange}
           />
         </div>
+      </Row>
+      <Row className="py-1 ps-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <div className="bold blue px-0">Sect:</div>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <TwdSearchFormSect
+            value={twdFormState.sect}
+            onChange={handleChange}
+          />
+        </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={5} className="d-flex px-0">

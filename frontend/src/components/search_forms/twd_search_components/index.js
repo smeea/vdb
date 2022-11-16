@@ -12,6 +12,7 @@ export { default as TwdSearchFormCardtypes } from './TwdSearchFormCardtypes.jsx'
 export { default as TwdSearchFormEvent } from './TwdSearchFormEvent.jsx';
 export { default as TwdSearchFormMatchInventoryScaling } from './TwdSearchFormMatchInventoryScaling.jsx';
 export { default as TwdSearchFormClan } from './TwdSearchFormClan.jsx';
+export { default as TwdSearchFormSect } from './TwdSearchFormSect.jsx';
 export { default as TwdSearchFormLibrary } from './TwdSearchFormLibrary.jsx';
 export { default as TwdSearchFormPlayer } from './TwdSearchFormPlayer.jsx';
 export { default as TwdRandomButton } from './TwdRandomButton.jsx';

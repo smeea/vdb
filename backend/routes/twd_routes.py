@@ -94,6 +94,7 @@ def search_twd_route():
         "crypt",
         "library",
         "clan",
+        "sect",
         "traits",
         "capacity",
         "disciplines",

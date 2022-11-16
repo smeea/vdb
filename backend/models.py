@@ -57,6 +57,7 @@ class Deck(db.Model):
     capacity = db.Column(db.Integer)
     cardtypes_ratio = db.Column(db.PickleType, default={})
     clan = db.Column(db.String(32))
+    sect = db.Column(db.String(16))
     creation_date = db.Column(db.String(10))
     disciplines = db.Column(db.PickleType, default={})
     crypt_total = db.Column(db.Integer)

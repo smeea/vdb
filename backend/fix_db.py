@@ -1,21 +1,27 @@
 from api import app, db
 from models import Deck
+import json
+
+with open("../frontend/dist/data/cardbase_crypt.json", "r") as crypt_file:
+    crypt_db = json.load(crypt_file)
 
 # NOT REQUIRED; USE ONLY AS TEMPLATE FOR FUTURE FIXES
 with app.app_context():
-    for deck in Deck.query.all():
-        if deck.public_parent:
-            crypt_total = 0
-            library_total = 0
-            for id, q in deck.cards.items():
-                if id > 200000:
-                    crypt_total += 1
-                else:
-                    library_total += 1
+    for deck in Deck.query.filter(Deck.public_parent != None).all():
+        deck.sect = None
+        sects = {}
+        for id, q in deck.cards.items():
+            if id < 200000:
+                continue
 
-            if crypt_total > 35 or library_total > 90:
-                parent = Deck.query.get(deck.public_parent)
-                parent.public_child = None
+            if (sect := crypt_db[str(id)]["Sect"]) in sects:
+                sects[sect] += q
+            else:
+                sects[sect] = q
 
-                db.session.delete(deck)
-                db.session.commit()
+        for sect, q in sects.items():
+            if q / deck.crypt_total > 0.65:
+                deck.sect = sect
+                continue
+
+    db.session.commit()

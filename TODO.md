@@ -8,7 +8,6 @@
 - Show changes from base deck when syncing Public
 - Seating emulator (vs random decks and pre-determined nicknames)
 - Export Selected from AdvDeckSelector
-- Sect search to TWD
 
 # MAYBE LATER FEATURES
 - Decks bundles (i.e. event deck archive) analyzing
@@ -20,6 +19,3 @@
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 
 # IMPROVE TECHNOLOGY - BACKEND
-
-# IMPROVE TECHNOLOGY - PWA
-- Improve service worker
