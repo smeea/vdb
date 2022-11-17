@@ -1,5 +1,4 @@
 # FIX
-- Iphone clipboard (copy url)
 - Typing in the middle of additional search forms
 
 # FEATURES

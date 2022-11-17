@@ -21,11 +21,9 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
 
   return (
     <>
-      <div className="d-flex flex-nowrap justify-content-between align-items-center">
-        <div className="d-flex flex-nowrap align-items-center pb-1">
-          <div>
-            <ResultLibraryTypeImage value={card.Type} />
-          </div>
+      <div className="d-flex flex-nowrap justify-content-between align-items-center pb-1">
+        <div className="d-flex flex-nowrap align-items-center">
+          <ResultLibraryTypeImage value={card.Type} />
           <div className="name bold ps-2">
             <ResultLibraryName card={card} />
           </div>
