@@ -50,6 +50,7 @@ export { default as DeckProxyLibraryTable } from './DeckProxyLibraryTable.jsx';
 export { default as DeckProxySelectModal } from './DeckProxySelectModal.jsx';
 export { default as DeckQrModal } from './DeckQrModal.jsx';
 export { default as DeckPublicButton } from './DeckPublicButton.jsx';
+export { default as DeckPublicDiff } from './DeckPublicDiff.jsx';
 export { default as DeckRecommendation } from './DeckRecommendation.jsx';
 export { default as DeckRecommendationButton } from './DeckRecommendationButton.jsx';
 export { default as DeckRecommendationLibrary } from './DeckRecommendationLibrary.jsx';

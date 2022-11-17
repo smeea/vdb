@@ -13,6 +13,7 @@ const ModalConfirmation = ({
   handleConfirm,
   handleCancel,
   nested,
+  size,
 }) => {
   const { isMobile } = useApp();
   const [confirmation, setConfirmation] = useState('');
@@ -46,6 +47,7 @@ const ModalConfirmation = ({
         onHide={cancel}
         animation={false}
         centered={isMobile}
+        size={size ?? null}
         dialogClassName={nested ? 'nested-modal' : 'no-border'}
       >
         <Modal.Header
@@ -58,9 +60,7 @@ const ModalConfirmation = ({
         </Modal.Header>
         {mainText && (
           <Modal.Body>
-            <div className="pt-2">
-              <h6>{mainText}</h6>
-            </div>
+            <div className="bold blue">{mainText}</div>
           </Modal.Body>
         )}
         <Modal.Footer>

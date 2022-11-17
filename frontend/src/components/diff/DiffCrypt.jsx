@@ -70,7 +70,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
   };
 
   return (
-    <div className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}>
+    <>
       <DeckCryptHeader
         cryptTotal={cryptTotal}
         cryptGroups={cryptGroups}
@@ -179,7 +179,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
           handleClose={handleCloseModal}
         />
       )}
-    </div>
+    </>
   );
 };
 

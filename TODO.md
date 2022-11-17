@@ -6,7 +6,6 @@
 # FEATURES
 - Check TWD
 - Events decks archive analyzing
-- Show changes from base deck when syncing Public
 - Seating emulator (vs random decks and pre-determined nicknames)
 - Export Selected from AdvDeckSelector
 
