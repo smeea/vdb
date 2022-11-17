@@ -1,13 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { useSnapshot } from 'valtio';
-import {
-  Spinner,
-  Dropdown,
-  DropdownButton,
-  ButtonGroup,
-} from 'react-bootstrap';
+import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
 import Download from 'assets/images/icons/download.svg';
-import { ErrorOverlay } from 'components';
 import { useDeckExport } from 'hooks';
 import { useApp, deckStore } from 'context';
 
@@ -21,10 +15,6 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     lang,
   } = useApp();
   const decks = useSnapshot(deckStore).decks;
-
-  const [spinnerState, setSpinnerState] = useState(false);
-  const [error, setError] = useState(false);
-  const ref = useRef(null);
 
   const ExportDropdown = ({ action, format }) => {
     const formats = {
@@ -105,7 +95,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     saveAs(file, name);
   };
 
-  const exportXlsx = async (deck, deckName) => {
+  const exportXlsx = async (deck) => {
     let XLSX = await import('xlsx');
     const crypt = Object.values(deck.crypt).map((card) => {
       let name = card.c.Name;
@@ -125,21 +115,21 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, cryptSheet, 'Crypt');
     XLSX.utils.book_append_sheet(workbook, librarySheet, 'Library');
-    XLSX.writeFile(workbook, `${deckName}.xlsx`, { compression: true });
+    return XLSX.write(workbook, { type: 'array', bookType: 'xlsx' });
   };
 
-  const saveDeck = (format) => {
-    setError(false);
-
+  const saveDeck = async (format) => {
     let deckName = deck.name;
     if (deck.branchName && (deck.master || deck.branches.length > 0)) {
       deckName += ` [${deck['branchName']}]`;
     }
+    let file;
 
     if (format === 'xlsx') {
-      exportXlsx(deck, deckName);
-      setShowMenuButtons(false);
-      setShowFloatingButtons(true);
+      const data = await exportXlsx(deck);
+      file = new File([data], `${deckName}.xlsx`, {
+        type: 'application/octet-stream',
+      });
     } else {
       let exportText = null;
       if ((format === 'twd' || format === 'twdHints') && lang !== 'en-EN') {
@@ -166,62 +156,42 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
         exportText = useDeckExport(deck, format);
       }
 
-      const file = new File([exportText], `${deckName} [${format}].txt`, {
+      file = new File([exportText], `${deckName} [${format}].txt`, {
         type: 'text/plain;charset=utf-8',
       });
-      saveFile(file);
-      setShowMenuButtons(false);
-      setShowFloatingButtons(true);
     }
+
+    saveFile(file);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const exportAll = async (format) => {
-    setError(false);
     const Jszip = await import('jszip');
     const zip = new Jszip();
     const date = new Date().toISOString().substring(0, 10);
 
     if (format === 'xlsx') {
-      setSpinnerState(true);
-      const url = `${process.env.API_URL}decks/export`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      };
-      const folder = zip.folder(`Decks ${date} [${format}]`);
-      const fetchPromises = Object.keys(decks).map((deckid) => {
-        let cards = {};
-        Object.keys(decks[deckid].crypt).map((key) => {
-          cards[key] = decks[deckid].crypt[key].q;
-        });
-        Object.keys(decks[deckid].library).map((key) => {
-          cards[key] = decks[deckid].library[key].q;
-        });
-        options.body = JSON.stringify({
-          cards: cards,
-        });
-        return fetch(url, options)
-          .then((response) => response.text())
-          .then((data) => {
-            folder.file(`${decks[deckid].name}.${format}`, data, {
-              base64: true,
-            });
-            setShowMenuButtons(false);
-            setShowFloatingButtons(true);
-          })
-          .catch(() => {
-            setError(true);
-          });
+      const fetchPromises = Object.values(decks).map((deck) => {
+        let deckName = deck.name;
+        if (deck.branchName && (deck.master || deck.branches.length > 0)) {
+          deckName += ` [${deck['branchName']}]`;
+        }
+
+        return { deckName: deckName, file: exportXlsx(deck) };
       });
-      Promise.all(fetchPromises).then(() => {
+
+      const folder = zip.folder(`Decks ${date} [${format}]`);
+      Promise.all(fetchPromises).then((deckExports) => {
+        deckExports.map((d) => {
+          folder.file(`${d.deckName}.xlsx`, d.file, {
+            base64: true,
+          });
+        });
+
         zip
           .generateAsync({ type: 'blob' })
           .then((blob) => saveFile(blob, `Decks ${date} [${format}].zip`));
-        setSpinnerState(false);
       });
     } else {
       Object.values(decks).map((deck) => {
@@ -247,11 +217,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
             className="d-flex justify-content-center align-items-center"
           >
             <div className="d-flex pe-2">
-              {spinnerState ? (
-                <Spinner animation="border" size="sm" />
-              ) : (
-                <Download />
-              )}
+              <Download />
             </div>
             Export {inMissing ? 'Missing' : ''}
           </div>
@@ -259,9 +225,6 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       >
         {ButtonOptions}
       </DropdownButton>
-      <ErrorOverlay show={error} target={ref.current} placement="left">
-        ERROR
-      </ErrorOverlay>
     </>
   );
 };
