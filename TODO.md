@@ -4,8 +4,9 @@
 # FEATURES
 - Check TWD
 - Events decks archive analyzing
-- Seating emulator (vs random decks and pre-determined nicknames)
 - Export Selected from AdvDeckSelector
+- Seating store custom random decks & player names
+- Seating buttons to quick-toggle
 
 # MAYBE LATER FEATURES
 - Offline decks storage

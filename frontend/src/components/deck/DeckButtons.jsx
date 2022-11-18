@@ -12,6 +12,7 @@ import {
   DeckMissingButton,
   DeckRecommendationButton,
   DeckDrawButton,
+  DeckSeatingButton,
   DeckDiffButton,
   DeckReviewButton,
   DeckBranchCreateButton,
@@ -26,6 +27,7 @@ const DeckButtons = ({
   missingLibrary,
   setShowInfo,
   setShowDraw,
+  setShowSeating,
   setQrUrl,
   setShowRecommendation,
   handleClose,
@@ -64,7 +66,7 @@ const DeckButtons = ({
                 setShowRecommendation={setShowRecommendation}
               />
               <DeckSearchSimilarButton deck={deck} />
-              <DeckDrawButton setShowDraw={setShowDraw} />
+              <DeckDrawButton setShow={setShowDraw} />
               {inventoryMode && (
                 <DeckMissingButton
                   deck={deck}
@@ -74,6 +76,7 @@ const DeckButtons = ({
               )}
             </>
           )}
+        <DeckSeatingButton setShow={setShowSeating} />
       </Stack>
       {isNarrow && (
         <div

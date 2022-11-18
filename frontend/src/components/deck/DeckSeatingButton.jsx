@@ -1,9 +1,9 @@
 import React from 'react';
-import Dice3 from 'assets/images/icons/dice-3-fill.svg';
+import Recycle from 'assets/images/icons/recycle.svg';
 import { useApp } from 'context';
 import { ButtonIconed } from 'components';
 
-const DeckDrawButton = ({ setShow }) => {
+const DeckSeatingButton = ({ setShow }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
 
   return (
@@ -14,11 +14,11 @@ const DeckDrawButton = ({ setShow }) => {
         setShowMenuButtons(false);
         setShowFloatingButtons(false);
       }}
-      title="Deck Draw Simulator"
-      icon={<Dice3 />}
-      text="Draw Cards"
+      title="Table Seating"
+      icon={<Recycle width="18" height="18" viewBox="0 0 16 16" />}
+      text="Table Seating"
     />
   );
 };
 
-export default DeckDrawButton;
+export default DeckSeatingButton;

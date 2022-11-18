@@ -32,6 +32,7 @@ import {
   DeckQrModal,
   DeckTags,
   DeckDraw,
+  DeckSeating,
   DeckButtons,
   DeckBranchSelect,
   DeckCrypt,
@@ -85,6 +86,7 @@ const Decks = () => {
   const [selectFrom, setSelectFrom] = useState('precons');
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
   const [showDraw, setShowDraw] = useState(false);
+  const [showSeating, setShowSeating] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
 
@@ -504,6 +506,7 @@ const Decks = () => {
                 deck={deck}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
+                setShowSeating={setShowSeating}
                 setShowRecommendation={setShowRecommendation}
                 setQrUrl={setQrUrl}
                 missingCrypt={missingCrypt}
@@ -579,6 +582,7 @@ const Decks = () => {
                 deck={deck}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
+                setShowSeating={setShowSeating}
                 setShowRecommendation={setShowRecommendation}
                 setQrUrl={setQrUrl}
                 missingCrypt={missingCrypt}
@@ -603,6 +607,7 @@ const Decks = () => {
         />
       )}
       {showDraw && <DeckDraw setShow={setShowDraw} deck={deck} />}
+      {showSeating && <DeckSeating setShow={setShowSeating} />}
       {showRecommendation && (
         <DeckRecommendation deck={deck} setShow={setShowRecommendation} />
       )}
