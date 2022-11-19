@@ -3,28 +3,51 @@ import { Modal, Button, Container, Row, Col, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import PencilSquare from 'assets/images/icons/pencil-square.svg';
 import Recycle from 'assets/images/icons/recycle.svg';
+import ToggleOn from 'assets/images/icons/toggle-on.svg';
+import ToggleOff from 'assets/images/icons/toggle-off.svg';
 import {
   ButtonIconed,
   SeatingPlayerSelector,
   SeatingRandomDeck,
-  SeatingRandomDeckAddForm,
+  SeatingCustomDeckAdd,
   SeatingTableLayout,
+  ErrorOverlay,
 } from 'components';
 import { useApp } from 'context';
 
 const SeatingModal = ({
-  randomDecks,
-  toggleRandom,
-  addRandomDeck,
-  show,
-  handleClose,
+  addCustomDeck,
+  customDecks,
   decks,
-  setDeck,
+  handleClose,
   reshuffle,
   seating,
+  setDeck,
+  setWithCustom,
+  setWithStandard,
+  show,
+  standardDecks,
+  toggleCustom,
+  toggleStandard,
+  withCustom,
+  withStandard,
 }) => {
   const { isNarrow, isMobile } = useApp();
   const [editRandom, setEditRandom] = useState();
+
+  const withRandom = Object.values(decks).some((d) => {
+    return d.random;
+  });
+
+  const haveRandomSelected =
+    (withStandard &&
+      Object.values(standardDecks).some((d) => {
+        return d.state;
+      })) ||
+    (withCustom &&
+      Object.values(customDecks).some((d) => {
+        return d.state;
+      }));
 
   return (
     <>
@@ -43,7 +66,7 @@ const SeatingModal = ({
           )}
         </Modal.Header>
         <Modal.Body className="py-0 px-2 px-md-4">
-          <Container className="mb-3 px-0 px-md-0" fluid>
+          <Container className="mb-0 mb-md-3 px-0 px-md-0" fluid>
             <Row className="align-items-center">
               <Col className="py-2" md={5} xl={4}>
                 <Stack gap={1}>
@@ -79,68 +102,184 @@ const SeatingModal = ({
                         viewBox="0 0 16 16"
                       />
                     }
-                    text="Edit Random"
+                    text="Select Random"
                   />
+                  {withRandom && !haveRandomSelected && (
+                    <div className="pt-2 red">
+                      No random decks source selected
+                    </div>
+                  )}
                 </Stack>
               </Col>
               <Col md={7} xl={8} className="px-0">
-                <Row className="pt-2 pt-md-0">
-                  {seating && <SeatingTableLayout decks={seating} />}
-                </Row>
+                {seating && (
+                  <Row className="py-2 py-md-0">
+                    <SeatingTableLayout decks={seating} />
+                  </Row>
+                )}
               </Col>
             </Row>
             {editRandom && (
-              <Row className="pt-3">
-                <hr />
-                <Row>
-                  <Col sm={12} md={7} lg={6} xl={5}>
-                    <div className="py-3">
-                      <SeatingRandomDeckAddForm addDeck={addRandomDeck} />
+              <Row className="pt-0 pt-md-3">
+                <hr className="mx-0" />
+                <Row className="pb-3">
+                  <Row>
+                    <div
+                      className="d-flex align-items-center"
+                      onClick={() => setWithCustom(!withCustom)}
+                    >
+                      <div className="d-flex align-items-center pe-2">
+                        <>
+                          {withCustom ? (
+                            <ToggleOn
+                              width="30"
+                              height="30"
+                              viewBox="0 0 16 16"
+                            />
+                          ) : (
+                            <ToggleOff
+                              width="30"
+                              height="30"
+                              viewBox="0 0 16 16"
+                            />
+                          )}
+                        </>
+                      </div>
+                      <div className="d-flex bold blue py-2">Custom Decks</div>
                     </div>
+                    <Col sm={12} md={7} lg={6} xl={5} className="py-2">
+                      <SeatingCustomDeckAdd addDeck={addCustomDeck} />
+                    </Col>
+                  </Row>
+                  <Col sm={12} md={6} lg={4}>
+                    {customDecks
+                      .slice(0, Math.ceil(customDecks.length / 3))
+                      .map((d, idx) => {
+                        return (
+                          <SeatingRandomDeck
+                            key={idx}
+                            i={idx}
+                            deck={d}
+                            toggle={toggleCustom}
+                            disabled={!withCustom}
+                          />
+                        );
+                      })}
                   </Col>
-                  <Col>{/* TODO TOGGLE ALL BUTTONS */}</Col>
+                  <Col sm={12} md={6} lg={4}>
+                    {customDecks
+                      .slice(
+                        Math.ceil(customDecks.length / 3),
+                        Math.ceil((customDecks.length * 2) / 3)
+                      )
+                      .map((d, idx) => {
+                        return (
+                          <SeatingRandomDeck
+                            key={idx}
+                            i={Math.ceil(customDecks.length / 3) + idx}
+                            deck={d}
+                            toggle={toggleCustom}
+                            disabled={!withCustom}
+                          />
+                        );
+                      })}
+                  </Col>
+                  <Col sm={12} md={6} lg={4}>
+                    {customDecks
+                      .slice(Math.ceil((customDecks.length * 2) / 3))
+                      .map((d, idx) => {
+                        return (
+                          <SeatingRandomDeck
+                            key={idx}
+                            i={Math.ceil((customDecks.length * 2) / 3) + idx}
+                            deck={d}
+                            toggle={toggleCustom}
+                            disabled={!withCustom}
+                          />
+                        );
+                      })}
+                  </Col>
+                </Row>
+                <hr className="mx-0" />
+                <Row>
+                  <div
+                    className="d-flex align-items-center"
+                    onClick={() => setWithStandard(!withStandard)}
+                  >
+                    <div className="d-flex align-items-center pe-2">
+                      <>
+                        {withStandard ? (
+                          <ToggleOn
+                            width="30"
+                            height="30"
+                            viewBox="0 0 16 16"
+                          />
+                        ) : (
+                          <ToggleOff
+                            width="30"
+                            height="30"
+                            viewBox="0 0 16 16"
+                          />
+                        )}
+                      </>
+                    </div>
+                    <div className="bold blue py-2">
+                      Standard Decks (from{' '}
+                      <a
+                        className="name"
+                        target="_blank"
+                        href="https://codex-of-the-damned.org/en/archetypes/index.html"
+                      >
+                        Codex
+                      </a>
+                      )
+                    </div>
+                  </div>
                 </Row>
                 <Col sm={12} md={6} lg={4}>
-                  {randomDecks
-                    .slice(0, Math.floor(randomDecks.length / 3))
+                  {standardDecks
+                    .slice(0, Math.ceil(standardDecks.length / 3))
                     .map((d, idx) => {
                       return (
                         <SeatingRandomDeck
                           key={idx}
                           i={idx}
                           deck={d}
-                          toggle={toggleRandom}
+                          toggle={toggleStandard}
+                          disabled={!withStandard}
                         />
                       );
                     })}
                 </Col>
                 <Col sm={12} md={6} lg={4}>
-                  {randomDecks
+                  {standardDecks
                     .slice(
-                      Math.floor(randomDecks.length / 3),
-                      Math.floor((randomDecks.length * 2) / 3)
+                      Math.ceil(standardDecks.length / 3),
+                      Math.ceil((standardDecks.length * 2) / 3)
                     )
                     .map((d, idx) => {
                       return (
                         <SeatingRandomDeck
                           key={idx}
-                          i={Math.floor(randomDecks.length / 3) + idx}
+                          i={Math.ceil(standardDecks.length / 3) + idx}
                           deck={d}
-                          toggle={toggleRandom}
+                          toggle={toggleStandard}
+                          disabled={!withStandard}
                         />
                       );
                     })}
                 </Col>
                 <Col sm={12} md={6} lg={4}>
-                  {randomDecks
-                    .slice(Math.floor((randomDecks.length * 2) / 3))
+                  {standardDecks
+                    .slice(Math.ceil((standardDecks.length * 2) / 3))
                     .map((d, idx) => {
                       return (
                         <SeatingRandomDeck
                           key={idx}
-                          i={Math.floor((randomDecks.length * 2) / 3) + idx}
+                          i={Math.ceil((standardDecks.length * 2) / 3) + idx}
                           deck={d}
-                          toggle={toggleRandom}
+                          toggle={toggleStandard}
+                          disabled={!withStandard}
                         />
                       );
                     })}

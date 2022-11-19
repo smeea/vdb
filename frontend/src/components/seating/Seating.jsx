@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useImmer } from 'use-immer';
 import { SeatingModal } from 'components';
 import { useApp } from 'context';
-import standardDecks from 'assets/data/standardDecks.json';
+import standardDecksData from 'assets/data/standardDecks.json';
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
@@ -19,15 +19,25 @@ const getRandomTable = (decks) => {
 const Seating = ({ setShow }) => {
   const { setShowFloatingButtons } = useApp();
 
-  const [randomDecks, setRandomDecks] = useImmer(
-    Object.keys(standardDecks)
-      .sort((a, b) => standardDecks[a].localeCompare(standardDecks[b]))
+  const [standardDecks, setStandardDecks] = useImmer(
+    Object.keys(standardDecksData)
+      .sort((a, b) => standardDecksData[a].localeCompare(standardDecksData[b]))
       .map((deckid) => ({
         deckid: deckid,
-        name: standardDecks[deckid],
+        name: standardDecksData[deckid],
         state: true,
       }))
   );
+
+  const [customDecks, setCustomDecks] = useImmer([]);
+  // Object.keys(standardDecks)
+  //   .sort((a, b) => standardDecks[a].localeCompare(standardDecks[b]))
+  //   .map((deckid) => ({
+  //     deckid: deckid,
+  //     name: standardDecks[deckid],
+  //     state: true,
+  //   }))
+  // );
 
   const [decks, setDecks] = useImmer([
     { name: 'Player 1', random: false, state: true },
@@ -57,7 +67,11 @@ const Seating = ({ setShow }) => {
       .filter((d) => d.state)
       .map((d) => {
         if (d.random) {
-          const randomDeck = getRandomDeck(randomDecks);
+          const src = [];
+          if (withCustom) src.push(...customDecks);
+          if (withStandard) src.push(...standardDecks);
+          if (!src.length > 0) return { name: 'ERROR', deckid: null };
+          const randomDeck = getRandomDeck(src);
           return { name: randomDeck.name, deckid: randomDeck.deckid };
         } else {
           return { name: d.name };
@@ -69,15 +83,25 @@ const Seating = ({ setShow }) => {
     setSeating(results);
   };
 
-  const toggleRandom = (i) => {
-    setRandomDecks((draft) => {
+  const [withCustom, setWithCustom] = useState(true);
+  const [withStandard, setWithStandard] = useState(true);
+
+  const toggleCustom = (i) => {
+    setCustomDecks((draft) => {
       draft[i].state = !draft[i].state;
       return draft;
     });
   };
 
-  const addRandomDeck = (name) => {
-    setRandomDecks((draft) => {
+  const toggleStandard = (i) => {
+    setStandardDecks((draft) => {
+      draft[i].state = !draft[i].state;
+      return draft;
+    });
+  };
+
+  const addCustomDeck = (name) => {
+    setCustomDecks((draft) => {
       draft.unshift({ deckid: null, name: name, state: true });
       return draft;
     });
@@ -87,15 +111,21 @@ const Seating = ({ setShow }) => {
     <>
       {showModal && (
         <SeatingModal
-          addRandomDeck={addRandomDeck}
+          addCustomDeck={addCustomDeck}
           decks={decks}
           handleClose={handleCloseModal}
-          randomDecks={randomDecks}
+          customDecks={customDecks}
+          standardDecks={standardDecks}
           reshuffle={reshuffle}
           seating={seating}
           setDeck={setDeck}
           show={showModal}
-          toggleRandom={toggleRandom}
+          toggleCustom={toggleCustom}
+          toggleStandard={toggleStandard}
+          withCustom={withCustom}
+          withStandard={withStandard}
+          setWithCustom={setWithCustom}
+          setWithStandard={setWithStandard}
         />
       )}
     </>

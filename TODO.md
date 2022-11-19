@@ -6,7 +6,6 @@
 - Events decks archive analyzing
 - Export Selected from AdvDeckSelector
 - Seating store custom random decks & player names
-- Seating buttons to quick-toggle
 
 # MAYBE LATER FEATURES
 - Offline decks storage
