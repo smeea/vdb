@@ -108,7 +108,7 @@ const DeckPublicButton = ({ deck, noText }) => {
         <Modal.Header
           className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
         >
-          <h5>Sync "{deck.name}" with Public Deck Archive?</h5>
+          <h5>Sync &quot;{deck.name}&quot; with Public Deck Archive?</h5>
           <Button
             variant="outline-secondary"
             onClick={() => setShowSyncConfirmation(false)}

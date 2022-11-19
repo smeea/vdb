@@ -5,7 +5,6 @@
 - Check TWD
 - Events decks archive analyzing
 - Export Selected from AdvDeckSelector
-- Seating store custom random decks & player names
 
 # MAYBE LATER FEATURES
 - Offline decks storage

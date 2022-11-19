@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { DiffCrypt, DiffLibrary } from 'components';
-import { useApp, deckStore } from 'context';
 
 const DeckPublicDiff = ({ deckFrom, deckTo }) => {
   return (

@@ -11,18 +11,17 @@ import {
   SeatingRandomDeck,
   SeatingCustomDeckAdd,
   SeatingTableLayout,
-  ErrorOverlay,
 } from 'components';
 import { useApp } from 'context';
 
 const SeatingModal = ({
   addCustomDeck,
   customDecks,
-  decks,
   handleClose,
+  players,
   reshuffle,
   seating,
-  setDeck,
+  setPlayer,
   setWithCustom,
   setWithStandard,
   show,
@@ -35,7 +34,7 @@ const SeatingModal = ({
   const { isNarrow, isMobile } = useApp();
   const [editRandom, setEditRandom] = useState();
 
-  const withRandom = Object.values(decks).some((d) => {
+  const withRandom = Object.values(players).some((d) => {
     return d.random;
   });
 
@@ -70,13 +69,13 @@ const SeatingModal = ({
             <Row className="align-items-center">
               <Col className="py-2" md={5} xl={4}>
                 <Stack gap={1}>
-                  {decks.map((d, idx) => {
+                  {players.map((p, idx) => {
                     return (
                       <SeatingPlayerSelector
                         key={idx}
                         i={idx}
-                        deck={d}
-                        setDeck={setDeck}
+                        player={p}
+                        setPlayer={setPlayer}
                       />
                     );
                   })}
@@ -106,7 +105,7 @@ const SeatingModal = ({
                   />
                   {withRandom && !haveRandomSelected && (
                     <div className="pt-2 red">
-                      No random decks source selected
+                      No random players source selected
                     </div>
                   )}
                 </Stack>
@@ -114,7 +113,7 @@ const SeatingModal = ({
               <Col md={7} xl={8} className="px-0">
                 {seating && (
                   <Row className="py-2 py-md-0">
-                    <SeatingTableLayout decks={seating} />
+                    <SeatingTableLayout players={seating} />
                   </Row>
                 )}
               </Col>
@@ -228,6 +227,7 @@ const SeatingModal = ({
                       <a
                         className="name"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://codex-of-the-damned.org/en/archetypes/index.html"
                       >
                         Codex

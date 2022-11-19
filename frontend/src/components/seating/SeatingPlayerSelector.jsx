@@ -4,15 +4,15 @@ import Dice3 from 'assets/images/icons/dice-3-fill.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
 
-const SeatingPlayerSelector = ({ setDeck, i, deck }) => {
+const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
   const handleChange = (event) => {
     if (event.target.value) {
-      setDeck(i, {
+      setPlayer(i, {
         name: event.target.value,
         state: true,
       });
     } else {
-      setDeck(i, {
+      setPlayer(i, {
         name: '',
         state: false,
       });
@@ -20,26 +20,26 @@ const SeatingPlayerSelector = ({ setDeck, i, deck }) => {
   };
 
   const toggle = () => {
-    if (deck.name) {
-      setDeck(i, {
-        name: deck.name,
-        random: deck.random,
-        state: !deck.state,
+    if (player.name) {
+      setPlayer(i, {
+        name: player.name,
+        random: player.random,
+        state: !player.state,
       });
     } else {
-      setDeck(i, {
+      setPlayer(i, {
         name: `Player ${i + 1}`,
-        random: deck.random,
+        random: player.random,
         state: true,
       });
     }
   };
 
   const handleClick = () => {
-    setDeck(i, {
-      name: deck.name,
-      random: !deck.random,
-      state: !deck.state && !deck.random ? true : deck.state,
+    setPlayer(i, {
+      name: player.name,
+      random: !player.random,
+      state: !player.state && !player.random ? true : player.state,
     });
   };
 
@@ -48,17 +48,17 @@ const SeatingPlayerSelector = ({ setDeck, i, deck }) => {
       <FormControl
         placeholder="Disabled"
         type="text"
-        value={deck.state ? (deck.random ? 'RANDOM' : deck.name) : ''}
+        value={player.state ? (player.random ? 'RANDOM' : player.name) : ''}
         onChange={handleChange}
       />
       <Button
-        variant={deck.random && deck.state ? 'primary' : 'secondary'}
+        variant={player.random && player.state ? 'primary' : 'secondary'}
         onClick={handleClick}
       >
         <Dice3 />
       </Button>
       <div className="d-flex align-items-center ps-3" onClick={toggle}>
-        {deck.state ? (
+        {player.state ? (
           <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
         ) : (
           <ToggleOff width="30" height="30" viewBox="0 0 16 16" />

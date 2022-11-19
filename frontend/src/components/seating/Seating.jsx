@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
 import { SeatingModal } from 'components';
+import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { useApp } from 'context';
 import standardDecksData from 'assets/data/standardDecks.json';
 
@@ -8,17 +9,22 @@ const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
-const getRandomDeck = (decks) => {
-  return decks[getRandomInt(decks.length)];
+const getRandomDeck = (players) => {
+  return players[getRandomInt(players.length)];
 };
 
-const getRandomTable = (decks) => {
-  return decks.sort(() => Math.random() - 0.5);
+const getRandomTable = (players) => {
+  return players.sort(() => Math.random() - 0.5);
 };
 
 const Seating = ({ setShow }) => {
   const { setShowFloatingButtons } = useApp();
 
+  const [showModal, setShowModal] = useState(true);
+  const [seating, setSeating] = useState();
+  const [withCustom, setWithCustom] = useState();
+  const [withStandard, setWithStandard] = useState();
+  const [customDecks, setCustomDecks] = useImmer([]);
   const [standardDecks, setStandardDecks] = useImmer(
     Object.keys(standardDecksData)
       .sort((a, b) => standardDecksData[a].localeCompare(standardDecksData[b]))
@@ -29,28 +35,34 @@ const Seating = ({ setShow }) => {
       }))
   );
 
-  const [customDecks, setCustomDecks] = useImmer([]);
-  // Object.keys(standardDecks)
-  //   .sort((a, b) => standardDecks[a].localeCompare(standardDecks[b]))
-  //   .map((deckid) => ({
-  //     deckid: deckid,
-  //     name: standardDecks[deckid],
-  //     state: true,
-  //   }))
-  // );
-
-  const [decks, setDecks] = useImmer([
+  const [players, setPlayers] = useImmer([
     { name: 'Player 1', random: false, state: true },
     { name: 'Player 2', random: false, state: true },
     { name: 'Player 3', random: false, state: true },
     { name: 'Player 4', random: false, state: true },
     { name: 'Player 5', random: false, state: true },
   ]);
-  const [showModal, setShowModal] = useState(true);
-  const [seating, setSeating] = useState();
 
-  const setDeck = (i, value) => {
-    setDecks((draft) => {
+  const initPlayers = (players) => {
+    setPlayers((draft) => {
+      players.map((p, idx) => {
+        draft[idx] = p;
+      });
+      return draft;
+    });
+  };
+
+  const initCustomDecks = (decks) => {
+    setCustomDecks((draft) => {
+      decks.map((d, idx) => {
+        draft[idx] = d;
+      });
+      return draft;
+    });
+  };
+
+  const setPlayer = (i, value) => {
+    setPlayers((draft) => {
       draft[i] = value;
       return draft;
     });
@@ -63,7 +75,7 @@ const Seating = ({ setShow }) => {
   };
 
   const reshuffle = () => {
-    const options = decks
+    const options = players
       .filter((d) => d.state)
       .map((d) => {
         if (d.random) {
@@ -82,9 +94,6 @@ const Seating = ({ setShow }) => {
     results[getRandomInt(results.length)].first = true;
     setSeating(results);
   };
-
-  const [withCustom, setWithCustom] = useState(true);
-  const [withStandard, setWithStandard] = useState(true);
 
   const toggleCustom = (i) => {
     setCustomDecks((draft) => {
@@ -107,25 +116,45 @@ const Seating = ({ setShow }) => {
     });
   };
 
+  useLayoutEffect(() => {
+    initFromStorage('seatingCustomDecks', [], initCustomDecks);
+    initFromStorage('seatingPlayers', undefined, (val) => {
+      if (val) initPlayers(val);
+    });
+    initFromStorage('seatingStandardDecks', undefined, (val) => {
+      if (val) setStandardDecks(val);
+    });
+    initFromStorage('seatingWithCustom', true, setWithCustom);
+    initFromStorage('seatingWithStandard', true, setWithStandard);
+  }, []);
+
+  useEffect(() => {
+    setLocalStorage('seatingCustomDecks', customDecks);
+    setLocalStorage('seatingPlayers', players);
+    setLocalStorage('seatingStandardDecks', standardDecks);
+    setLocalStorage('seatingWithCustom', withCustom);
+    setLocalStorage('seatingWithStandard', withStandard);
+  }, [customDecks, standardDecks, withCustom, withStandard, players]);
+
   return (
     <>
       {showModal && (
         <SeatingModal
           addCustomDeck={addCustomDeck}
-          decks={decks}
-          handleClose={handleCloseModal}
           customDecks={customDecks}
-          standardDecks={standardDecks}
+          handleClose={handleCloseModal}
+          players={players}
           reshuffle={reshuffle}
           seating={seating}
-          setDeck={setDeck}
+          setPlayer={setPlayer}
+          setWithCustom={setWithCustom}
+          setWithStandard={setWithStandard}
           show={showModal}
+          standardDecks={standardDecks}
           toggleCustom={toggleCustom}
           toggleStandard={toggleStandard}
           withCustom={withCustom}
           withStandard={withStandard}
-          setWithCustom={setWithCustom}
-          setWithStandard={setWithStandard}
         />
       )}
     </>
