@@ -58,10 +58,10 @@ def generate_twd(i):
             else:
                 clans[clan] = c["q"]
 
-            if (sect := c["Sect"]) in sects:
-                sects[sect] += c["q"]
-            else:
-                sects[sect] = c["q"]
+        if (sect := c["Sect"]) in sects:
+            sects[sect] += c["q"]
+        else:
+            sects[sect] = c["q"]
 
         if "star" not in deck["traits"] and id != 200076:
             adv = c["Adv"]
@@ -76,7 +76,7 @@ def generate_twd(i):
             crypt_disciplines.add(d)
 
     for clan, q in clans.items():
-        if q / deck["crypt_total"] > 0.55:
+        if q / total_crypt_ex_ac > 0.65:
             deck["clan"] = clan
 
     if len(clans) <= 1 and "monoclan" not in deck["traits"]:
