@@ -18,6 +18,7 @@ const SeatingModal = ({
   addCustomDeck,
   customDecks,
   handleClose,
+  removeCustomDeck,
   players,
   reshuffle,
   seating,
@@ -161,6 +162,7 @@ const SeatingModal = ({
                             deck={d}
                             toggle={toggleCustom}
                             disabled={!withCustom}
+                            remove={removeCustomDeck}
                           />
                         );
                       })}
@@ -179,6 +181,7 @@ const SeatingModal = ({
                             deck={d}
                             toggle={toggleCustom}
                             disabled={!withCustom}
+                            remove={removeCustomDeck}
                           />
                         );
                       })}
@@ -194,6 +197,7 @@ const SeatingModal = ({
                             deck={d}
                             toggle={toggleCustom}
                             disabled={!withCustom}
+                            remove={removeCustomDeck}
                           />
                         );
                       })}

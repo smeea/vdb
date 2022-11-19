@@ -116,6 +116,13 @@ const Seating = ({ setShow }) => {
     });
   };
 
+  const removeCustomDeck = (i) => {
+    setCustomDecks((draft) => {
+      draft.splice(i, 1);
+      return draft;
+    });
+  };
+
   useLayoutEffect(() => {
     initFromStorage('seatingCustomDecks', [], initCustomDecks);
     initFromStorage('seatingPlayers', undefined, (val) => {
@@ -141,6 +148,7 @@ const Seating = ({ setShow }) => {
       {showModal && (
         <SeatingModal
           addCustomDeck={addCustomDeck}
+          removeCustomDeck={removeCustomDeck}
           customDecks={customDecks}
           handleClose={handleCloseModal}
           players={players}
