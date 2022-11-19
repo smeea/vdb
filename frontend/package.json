@@ -22,8 +22,8 @@
     "browserslist": "^4.21.4",
     "buffer": "^6.0.3",
     "dotenv": "^16.0.3",
-    "eslint": "^8.27.0",
-    "eslint-plugin-react": "^7.31.10",
+    "eslint": "^8.28.0",
+    "eslint-plugin-react": "^7.31.11",
     "parcel": "^2.8.0",
     "prettier": "^2.7.1",
     "process": "^0.11.10",
@@ -47,8 +47,8 @@
     "react-virtualized-auto-sizer": "^1.0.7",
     "react-window": "^1.8.8",
     "unidecode": "^0.1.8",
-    "use-immer": "^0.8.0",
-    "valtio": "^1.7.5",
+    "use-immer": "^0.8.1",
+    "valtio": "^1.7.6",
     "xlsx": "^0.18.5"
   },
   "browserslist": [
