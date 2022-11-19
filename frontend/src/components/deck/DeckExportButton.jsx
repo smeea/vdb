@@ -195,9 +195,14 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       });
     } else {
       Object.values(decks).map((deck) => {
+        let deckName = deck.name;
+        if (deck.branchName && (deck.master || deck.branches.length > 0)) {
+          deckName += ` [${deck['branchName']}]`;
+        }
+
         zip
           .folder(`Decks ${date} [${format}]`)
-          .file(`${deck.name}.txt`, useDeckExport(deck, format));
+          .file(`${deckName}.txt`, useDeckExport(deck, format));
       });
 
       zip
