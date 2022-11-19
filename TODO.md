@@ -1,5 +1,4 @@
 # FIX
-- Typing in the middle of additional search forms
 
 # FEATURES
 - Check TWD

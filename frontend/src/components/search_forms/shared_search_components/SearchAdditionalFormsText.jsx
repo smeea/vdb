@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useImmer } from 'use-immer';
 import { Row, Col, Stack, Form, FormControl } from 'react-bootstrap';
 import {
   SearchFormButtonAddText,
@@ -12,6 +13,27 @@ const SearchAdditionalFormsText = ({
   onChangeOptions,
   searchForm,
 }) => {
+  const [text, setText] = useImmer([]);
+
+  useEffect(() => {
+    setText((draft) => {
+      value.map((v, idx) => {
+        draft[idx] = v.value.toString();
+      });
+      return draft;
+    });
+  }, [value]);
+
+  const onTextChange = (e) => {
+    const { name, value } = e.target;
+    setText((draft) => {
+      draft[name] = value;
+      return draft;
+    });
+
+    onChange(e);
+  };
+
   const options = [
     {
       value: 'name',
@@ -37,8 +59,8 @@ const SearchAdditionalFormsText = ({
           name={i}
           autoComplete="off"
           spellCheck="false"
-          value={value[i].value}
-          onChange={onChange}
+          value={text[i] || ''}
+          onChange={onTextChange}
           autoFocus={true}
         />
         <Row className="mx-0 px-0 pt-1">
