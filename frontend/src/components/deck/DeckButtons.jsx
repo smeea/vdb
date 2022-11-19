@@ -12,12 +12,12 @@ import {
   DeckMissingButton,
   DeckRecommendationButton,
   DeckDrawButton,
-  DeckSeatingButton,
   DeckDiffButton,
   DeckReviewButton,
   DeckBranchCreateButton,
   DeckBranchDeleteButton,
   DeckPublicButton,
+  SeatingButton,
 } from 'components';
 import { useApp } from 'context';
 
@@ -76,7 +76,7 @@ const DeckButtons = ({
               )}
             </>
           )}
-        <DeckSeatingButton setShow={setShowSeating} />
+        <SeatingButton setShow={setShowSeating} />
       </Stack>
       {isNarrow && (
         <div

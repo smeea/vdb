@@ -32,7 +32,6 @@ import {
   DeckQrModal,
   DeckTags,
   DeckDraw,
-  DeckSeating,
   DeckButtons,
   DeckBranchSelect,
   DeckCrypt,
@@ -43,6 +42,7 @@ import {
   DeckChangeAuthor,
   DeckChangeDescription,
   DeckImport,
+  Seating,
 } from 'components';
 import { deckStore, useApp, setDeck, deckUpdate } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
@@ -607,7 +607,7 @@ const Decks = () => {
         />
       )}
       {showDraw && <DeckDraw setShow={setShowDraw} deck={deck} />}
-      {showSeating && <DeckSeating setShow={setShowSeating} />}
+      {showSeating && <Seating setShow={setShowSeating} />}
       {showRecommendation && (
         <DeckRecommendation deck={deck} setShow={setShowRecommendation} />
       )}

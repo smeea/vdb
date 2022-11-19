@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useImmer } from 'use-immer';
-import { DeckSeatingModal } from 'components';
+import { SeatingModal } from 'components';
 import { useApp } from 'context';
 import standardDecks from 'assets/data/standardDecks.json';
 
@@ -16,7 +16,7 @@ const getRandomTable = (decks) => {
   return decks.sort(() => Math.random() - 0.5);
 };
 
-const DeckSeating = ({ setShow }) => {
+const Seating = ({ setShow }) => {
   const { setShowFloatingButtons } = useApp();
 
   const [randomDecks, setRandomDecks] = useImmer(
@@ -69,22 +69,37 @@ const DeckSeating = ({ setShow }) => {
     setSeating(results);
   };
 
+  const toggleRandom = (i) => {
+    setRandomDecks((draft) => {
+      draft[i].state = !draft[i].state;
+      return draft;
+    });
+  };
+
+  const addRandomDeck = (name) => {
+    setRandomDecks((draft) => {
+      draft.unshift({ deckid: null, name: name, state: true });
+      return draft;
+    });
+  };
+
   return (
     <>
       {showModal && (
-        <DeckSeatingModal
+        <SeatingModal
+          addRandomDeck={addRandomDeck}
           decks={decks}
-          setDeck={setDeck}
-          randomDecks={randomDecks}
-          setRandomDecks={setRandomDecks}
-          show={showModal}
           handleClose={handleCloseModal}
+          randomDecks={randomDecks}
           reshuffle={reshuffle}
           seating={seating}
+          setDeck={setDeck}
+          show={showModal}
+          toggleRandom={toggleRandom}
         />
       )}
     </>
   );
 };
 
-export default DeckSeating;
+export default Seating;

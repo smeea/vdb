@@ -3,7 +3,7 @@ import Recycle from 'assets/images/icons/recycle.svg';
 import { useApp } from 'context';
 import { ButtonIconed } from 'components';
 
-const DeckSeatingButton = ({ setShow }) => {
+const SeatingButton = ({ setShow }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
 
   return (
@@ -21,4 +21,4 @@ const DeckSeatingButton = ({ setShow }) => {
   );
 };
 
-export default DeckSeatingButton;
+export default SeatingButton;
