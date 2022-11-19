@@ -1,5 +1,14 @@
 [
   {
+    "version": "2022-11-19",
+    "changes": [
+      "Add seating emulator (button in Decks, I know it is not directly related but there are no other 'useful tools' to make separate section *yet*)",
+      "Show changes when syncing public deck with its parent from your library",
+      "Add Sect search to TWD/PDA (it search for >65% of)",
+      "Fix export all decks to Excel (xlsx)"
+    ]
+  },
+  {
     "version": "2022-11-15",
     "changes": [
       "Update Rulings (incl. FoL cards)",
