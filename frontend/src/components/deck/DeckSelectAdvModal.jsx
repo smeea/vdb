@@ -9,13 +9,18 @@ import {
   FormControl,
   Button,
   Stack,
+  Dropdown,
+  DropdownButton,
+  ButtonGroup,
 } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
+import Download from 'assets/images/icons/download.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import At from 'assets/images/icons/at.svg';
 import X from 'assets/images/icons/x.svg';
+import TrashFill from 'assets/images/icons/trash-fill.svg';
 import {
   DeckCrypt,
   DeckLibrary,
@@ -29,11 +34,13 @@ import {
   DeckTogglePublicButton,
   DeckSelectSortForm,
   DeckSelectAdvModalTagsFilter,
+  ButtonIconed,
   ResultClanImage,
   OverlayTooltip,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, deckUpdate } from 'context';
+import { deckServices } from 'services';
 
 const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
   const { cryptCardBase, inventoryMode, isNarrow, isMobile, isDesktop } =
@@ -43,6 +50,8 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
 
   const [sortMethod, setSortMethod] = useState('byName');
   const [sortedDecks, setSortedDecks] = useState([]);
+  const [isSelectedAll, setIsSelectedAll] = useState(false);
+  const [selectedDecks, setSelectedDecks] = useState({});
   const [showDeck, setShowDeck] = useState(undefined);
   const [invFilter, setInvFilter] = useState('any');
   const [revFilter, setRevFilter] = useState(false);
@@ -239,6 +248,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
 
       const sorted = decksSort(filtered, sortMethod);
       setSortedDecks(sorted);
+      setSelectedDecks({});
     }
   }, [
     decks,
@@ -249,6 +259,44 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
     revFilter,
     sortMethod,
   ]);
+
+  const toggleSelect = (deckid) => {
+    setSelectedDecks((prevState) => ({
+      ...prevState,
+      [deckid]: !prevState[deckid],
+    }));
+  };
+
+  const toggleSelectAll = () => {
+    if (isSelectedAll) {
+      setSelectedDecks({});
+      setIsSelectedAll(!isSelectedAll);
+    } else {
+      setSelectedDecks(() => {
+        const selected = {};
+        sortedDecks.map((d) => {
+          selected[d.deckid] = true;
+        });
+
+        return selected;
+      });
+      setIsSelectedAll(!isSelectedAll);
+    }
+  };
+
+  // const deleteSelected = () => {
+  // };
+
+  const exportSelected = (format) => {
+    const target = {};
+    Object.keys(selectedDecks)
+      .filter((deckid) => selectedDecks[deckid])
+      .map((deckid) => {
+        target[deckid] = decks[deckid];
+      });
+
+    deckServices.exportDecks(target, format);
+  };
 
   const deckRows = sortedDecks.map((deck, idx) => {
     const clans = {};
@@ -290,6 +338,13 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
       <React.Fragment key={deck.deckid}>
         {decks[deck.deckid] && (
           <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+            <td className="select px-1">
+              <Form.Check
+                type="checkbox"
+                checked={selectedDecks[deck.deckid] ?? false}
+                onChange={() => toggleSelect(deck.deckid)}
+              />
+            </td>
             {inventoryMode && !isMobile && (
               <td className="inventory">
                 <Button onClick={() => toggleInventoryState(deck.deckid)}>
@@ -443,6 +498,13 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
           <table className="decks-table">
             <thead>
               <tr>
+                <th className="select px-1">
+                  <Form.Check
+                    type="checkbox"
+                    checked={isSelectedAll}
+                    onChange={() => toggleSelectAll()}
+                  />
+                </th>
                 {inventoryMode && !isMobile && (
                   <th className="inventory">
                     <Select
@@ -512,6 +574,45 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
             </thead>
             <tbody>{deckRows}</tbody>
           </table>
+          <div className="d-flex justify-content-end pt-3">
+            <Stack direction="horizontal" gap={2}>
+              {/* <ButtonIconed */}
+              {/*   variant="primary" */}
+              {/*   onClick={() => deleteSelected()} */}
+              {/*   title="Delete Selected" */}
+              {/*   icon={<TrashFill />} */}
+              {/*   text="Delete Selected" */}
+              {/* /> */}
+              <DropdownButton
+                as={ButtonGroup}
+                variant="primary"
+                title={
+                  <div
+                    title="Export Selected"
+                    className="d-flex justify-content-center align-items-center"
+                  >
+                    <div className="d-flex pe-2">
+                      <Download />
+                    </div>
+                    Export Selected
+                  </div>
+                }
+              >
+                <Dropdown.Item href="" onClick={() => exportSelected('text')}>
+                  Text
+                </Dropdown.Item>
+                <Dropdown.Item href="" onClick={() => exportSelected('lackey')}>
+                  Lackey
+                </Dropdown.Item>
+                <Dropdown.Item href="" onClick={() => exportSelected('jol')}>
+                  JOL
+                </Dropdown.Item>
+                <Dropdown.Item href="" onClick={() => exportSelected('xlsx')}>
+                  Excel
+                </Dropdown.Item>
+              </DropdownButton>
+            </Stack>
+          </div>
         </Modal.Body>
       </Modal>
       {isNarrow && (

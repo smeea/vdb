@@ -1,9 +1,10 @@
 # FIX
+- Revision bug -> discord Ratadin
 
 # FEATURES
 - Check TWD
 - Events decks archive analyzing
-- Export Selected from AdvDeckSelector
+- Delete Selected from AdvDeckSelector
 
 # MAYBE LATER FEATURES
 - Offline decks storage
