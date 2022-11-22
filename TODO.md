@@ -1,5 +1,6 @@
 # FIX
 - Revision bug -> discord Ratadin
+- Fix swipe for browsers with back-as-swipe
 
 # FEATURES
 - Check TWD

@@ -42,7 +42,7 @@ const DeckMissingModal = ({
         }
       >
         <h5>{deck.name}</h5>
-        <Button variant="outline-secondary" onClick={() => handleClose()}>
+        <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -51,11 +51,17 @@ const DeckMissingModal = ({
           <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
             <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
               <div className={isMobile || inInventory ? null : 'sticky-modal'}>
-                <DeckCrypt deck={deck} inMissing={true} />
+                <DeckCrypt
+                  deck={{ ...deck, crypt: crypt, library: library }}
+                  inMissing
+                />
               </div>
             </Col>
             <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
-              <DeckLibrary deck={deck} inMissing />
+              <DeckLibrary
+                deck={{ ...deck, crypt: crypt, library: library }}
+                inMissing
+              />
             </Col>
           </Row>
           <div
@@ -70,15 +76,15 @@ const DeckMissingModal = ({
                 <ButtonIconed
                   variant="primary"
                   onClick={handleMissAllVtes}
-                  text="From All VTES Cards"
+                  text="Missing for Complete VTES Collection (SLOW!)"
                   icon={<Gem />}
                 />
               </div>
             )}
             <div className="ps-2">
               <DeckExportButton
-                inMissing={true}
                 deck={{ ...deck, crypt: crypt, library: library }}
+                inMissing
               />
             </div>
           </div>
