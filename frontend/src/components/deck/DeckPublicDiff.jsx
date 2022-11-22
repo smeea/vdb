@@ -7,14 +7,14 @@ const DeckPublicDiff = ({ deckFrom, deckTo }) => {
     <Row>
       <Col md={7} className="">
         <DiffCrypt
-          isAuthor={false}
+          isEditable={false}
           cardsFrom={deckFrom.crypt}
           cardsTo={deckTo.crypt}
         />
       </Col>
       <Col md={5} className="">
         <DiffLibrary
-          isAuthor={false}
+          isEditable={false}
           cardsFrom={deckFrom.library}
           cardsTo={deckTo.library}
         />

@@ -551,8 +551,9 @@ const Diff = () => {
                 >
                   <DiffCrypt
                     deckid={deck.deckid}
-                    isAuthor={deck.isAuthor}
-                    isPublic={deck.isPublic}
+                    isEditable={
+                      deck.isAuthor && !deck.isPublic && !deck.isFrozen
+                    }
                     cardsFrom={deck.crypt}
                     cardsTo={deckTo.crypt}
                   />
@@ -566,8 +567,9 @@ const Diff = () => {
                 >
                   <DiffLibrary
                     deckid={deck.deckid}
-                    isAuthor={deck.isAuthor}
-                    isPublic={deck.isPublic}
+                    isEditable={
+                      deck.isAuthor && !deck.isPublic && !deck.isFrozen
+                    }
                     cardsFrom={deck.library}
                     cardsTo={deckTo.library}
                   />

@@ -15,7 +15,7 @@ import { MASTER } from 'utils/constants';
 import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
+const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
@@ -115,8 +115,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
         toggleShowInfo={toggleShowInfo}
         toggleShowAdd={toggleShowAdd}
         hasBanned={hasBanned}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
+        isEditable={isEditable}
       />
       {showInfo && (
         <div className="info-message ps-2">

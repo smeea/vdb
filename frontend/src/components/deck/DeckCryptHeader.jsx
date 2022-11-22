@@ -11,8 +11,7 @@ const DeckCryptHeader = ({
   toggleShowInfo,
   toggleShowAdd,
   hasBanned,
-  isAuthor,
-  isPublic,
+  isEditable,
   sortMethods,
   sortMethod,
   setSortMethod,
@@ -50,7 +49,7 @@ const DeckCryptHeader = ({
           >
             <InfoCircle />
           </Button>
-          {(inReview || (isAuthor && !isPublic)) && !isMobile && (
+          {(inReview || isEditable) && !isMobile && (
             <Button title="Add Card" variant="primary" onClick={toggleShowAdd}>
               +
             </Button>

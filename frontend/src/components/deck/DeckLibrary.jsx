@@ -20,6 +20,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
   const { isMobile, isNarrow, showFloatingButtons, setShowFloatingButtons } =
     useApp();
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
+  const isEditable = isAuthor && !isPublic && !isFrozen;
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
@@ -119,8 +120,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
           toggleShowInfo={toggleShowInfo}
           toggleShowAdd={toggleShowAdd}
           hasBanned={hasBanned}
-          isAuthor={isAuthor}
-          isPublic={isPublic}
+          isEditable={isEditable}
         />
         {showInfo && (
           <div className="info-message px-2">
@@ -176,7 +176,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
           {LibrarySideDeck}
         </div>
       )}
-      {isMobile && isAuthor && !isPublic && !isFrozen && showFloatingButtons && (
+      {isMobile && isEditable && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"

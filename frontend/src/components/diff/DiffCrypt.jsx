@@ -12,7 +12,7 @@ import {
 import { useApp, deckStore } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
-const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
+const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const {
     cryptDeckSort,
     changeCryptDeckSort,
@@ -77,8 +77,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
         toggleShowInfo={toggleShowInfo}
         toggleShowAdd={toggleShowAdd}
         hasBanned={hasBanned}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
+        isEditable={isEditable}
         sortMethods={sortMethods}
         sortMethod={cryptDeckSort}
         setSortMethod={changeCryptDeckSort}
