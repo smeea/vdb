@@ -35,12 +35,12 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
-      if (addMode && inDeck > 0) {
+      if (isEditable && addMode && inDeck > 0) {
         deckCardChange(deck.deckid, card, inDeck - 1);
       }
     },
     onSwipedLeft: () => {
-      if (addMode) {
+      if (isEditable && addMode) {
         deckCardChange(deck.deckid, card, inDeck + 1);
       }
     },

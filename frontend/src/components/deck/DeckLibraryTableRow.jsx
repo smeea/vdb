@@ -46,13 +46,14 @@ const DeckLibraryTableRow = ({
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
-      deckCardChange(deckid, card.c, card.q - 1);
+      if (isEditable) deckCardChange(deckid, card.c, card.q - 1);
     },
     onSwipedLeft: () => {
-      deckCardChange(deckid, card.c, card.q + 1);
+      if (isEditable) deckCardChange(deckid, card.c, card.q + 1);
     },
   });
 
@@ -69,7 +70,7 @@ const DeckLibraryTableRow = ({
 
   return (
     <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-      {isAuthor && !isPublic && !isFrozen ? (
+      {isEditable ? (
         <>
           {inventoryMode && decks ? (
             <>
