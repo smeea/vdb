@@ -41,12 +41,12 @@ const ResultCryptTableRow = ({
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
       if (isEditable && addMode && inDeck > 0) {
-        deckCardChange(deck.deckid, card.Id, inDeck - 1);
+        deckCardChange(deck.deckid, card, inDeck - 1);
       }
     },
     onSwipedLeft: () => {
       if (isEditable && addMode) {
-        deckCardChange(deck.deckid, card.Id, inDeck + 1);
+        deckCardChange(deck.deckid, card, inDeck + 1);
       }
     },
   });
