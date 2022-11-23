@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import { OverlayTrigger } from 'react-bootstrap';
@@ -28,12 +28,24 @@ const InventoryCryptTableRow = ({
   const usedCrypt = useSnapshot(usedStore).crypt;
   const { isMobile, isNarrow, isWide } = useApp();
 
+  const [isSwiped, setIsSwiped] = useState();
+  const SWIPE_THRESHOLD = 50;
   const swipeHandlers = useSwipeable({
-    onSwipedRight: () => {
-      inventoryCardChange(card.c, card.q - 1);
+    onSwipedRight: (e) => {
+      if (e.absX > SWIPE_THRESHOLD) inventoryCardChange(card.c, card.q - 1);
     },
-    onSwipedLeft: () => {
-      inventoryCardChange(card.c, card.q + 1);
+    onSwipedLeft: (e) => {
+      if (e.absX > SWIPE_THRESHOLD) inventoryCardChange(card.c, card.q + 1);
+    },
+    onSwiped: () => {
+      setIsSwiped(false);
+    },
+    onSwiping: (e) => {
+      if (e.deltaX < -SWIPE_THRESHOLD) {
+        setIsSwiped('left');
+      } else if (e.deltaX > SWIPE_THRESHOLD) {
+        setIsSwiped('right');
+      }
     },
   });
 
@@ -46,7 +58,12 @@ const InventoryCryptTableRow = ({
   }
 
   return (
-    <div className="d-flex no-border inventory-crypt-table" {...swipeHandlers}>
+    <div
+      className={`d-flex no-border inventory-crypt-table ${
+        isSwiped ? `swiped-${isSwiped}` : ''
+      }`}
+      {...swipeHandlers}
+    >
       <div
         className={`d-flex align-items-center justify-content-center ${
           inShared ? 'quantity-no-buttons me-2' : 'quantity px-1]'

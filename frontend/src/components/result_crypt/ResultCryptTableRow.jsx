@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import { OverlayTrigger } from 'react-bootstrap';
@@ -38,15 +38,27 @@ const ResultCryptTableRow = ({
   const inDeck = deck?.crypt[card.Id]?.q || 0;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
+  const [isSwiped, setIsSwiped] = useState();
+  const SWIPE_THRESHOLD = 50;
   const swipeHandlers = useSwipeable({
-    onSwipedRight: () => {
-      if (isEditable && addMode && inDeck > 0) {
+    onSwipedRight: (e) => {
+      if (e.absX > SWIPE_THRESHOLD && isEditable && addMode && inDeck > 0) {
         deckCardChange(deck.deckid, card, inDeck - 1);
       }
     },
-    onSwipedLeft: () => {
-      if (isEditable && addMode) {
+    onSwipedLeft: (e) => {
+      if (e.absX > SWIPE_THRESHOLD && isEditable && addMode) {
         deckCardChange(deck.deckid, card, inDeck + 1);
+      }
+    },
+    onSwiped: () => {
+      setIsSwiped(false);
+    },
+    onSwiping: (e) => {
+      if (e.deltaX < -SWIPE_THRESHOLD) {
+        setIsSwiped('left');
+      } else if (e.deltaX > SWIPE_THRESHOLD) {
+        setIsSwiped('right');
       }
     },
   });
@@ -63,7 +75,13 @@ const ResultCryptTableRow = ({
   }
 
   return (
-    <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+    <tr
+      {...swipeHandlers}
+      className={`result-${idx % 2 ? 'even' : 'odd'} ${
+        isSwiped ? `swiped-${isSwiped}` : ''
+      }
+`}
+    >
       {(inRecommendation ? isEditable : isEditable && addMode) && (
         <td className="quantity-add pe-1">
           <ButtonAddCard

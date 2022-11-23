@@ -1,5 +1,4 @@
 # FIX
-- Fix swipe for browsers with back-as-swipe
 
 # FEATURES
 - Check TWD

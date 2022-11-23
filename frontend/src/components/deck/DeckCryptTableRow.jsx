@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { useSnapshot } from 'valtio';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -54,12 +54,26 @@ const DeckCryptTableRow = ({
   const isEditable = isAuthor && !isPublic && !isFrozen;
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
+  const [isSwiped, setIsSwiped] = useState();
+  const SWIPE_THRESHOLD = 50;
   const swipeHandlers = useSwipeable({
-    onSwipedRight: () => {
-      if (isEditable) deckCardChange(deckid, card.c, card.q - 1);
+    onSwipedRight: (e) => {
+      if (e.absX > SWIPE_THRESHOLD && isEditable)
+        deckCardChange(deckid, card.c, card.q - 1);
     },
-    onSwipedLeft: () => {
-      if (isEditable) deckCardChange(deckid, card.c, card.q + 1);
+    onSwipedLeft: (e) => {
+      if (e.absX > SWIPE_THRESHOLD && isEditable)
+        deckCardChange(deckid, card.c, card.q + 1);
+    },
+    onSwiped: () => {
+      setIsSwiped(false);
+    },
+    onSwiping: (e) => {
+      if (e.deltaX < -SWIPE_THRESHOLD) {
+        setIsSwiped('left');
+      } else if (e.deltaX > SWIPE_THRESHOLD) {
+        setIsSwiped('right');
+      }
     },
   });
 
@@ -75,7 +89,13 @@ const DeckCryptTableRow = ({
   };
 
   return (
-    <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+    <tr
+      {...swipeHandlers}
+      className={`result-${idx % 2 ? 'even' : 'odd'} ${
+        isSwiped ? `swiped-${isSwiped}` : ''
+      }
+`}
+    >
       {isEditable ? (
         <>
           {inventoryMode && decks ? (
