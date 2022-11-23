@@ -56,9 +56,14 @@ const DeckCryptTableRow = ({
 
   const [isSwiped, setIsSwiped] = useState();
   const SWIPE_THRESHOLD = 50;
+  const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
     onSwipedRight: (e) => {
-      if (e.absX > SWIPE_THRESHOLD && isEditable)
+      if (
+        e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
+        e.absX > SWIPE_THRESHOLD &&
+        isEditable
+      )
         deckCardChange(deckid, card.c, card.q - 1);
     },
     onSwipedLeft: (e) => {
@@ -69,10 +74,12 @@ const DeckCryptTableRow = ({
       setIsSwiped(false);
     },
     onSwiping: (e) => {
-      if (e.deltaX < -SWIPE_THRESHOLD) {
-        setIsSwiped('left');
-      } else if (e.deltaX > SWIPE_THRESHOLD) {
-        setIsSwiped('right');
+      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE) {
+        if (e.deltaX < -SWIPE_THRESHOLD) {
+          setIsSwiped('left');
+        } else if (e.deltaX > SWIPE_THRESHOLD) {
+          setIsSwiped('right');
+        }
       }
     },
   });
