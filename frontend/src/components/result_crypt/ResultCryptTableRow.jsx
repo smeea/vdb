@@ -67,6 +67,8 @@ const ResultCryptTableRow = ({
           setIsSwiped('left');
         } else if (e.deltaX > SWIPE_THRESHOLD) {
           setIsSwiped('right');
+        } else {
+          setIsSwiped(false);
         }
       }
     },
