@@ -500,7 +500,7 @@ const Decks = () => {
           )}
         </Col>
         {!isMobile && (
-          <Col lg={2} className="hide-on-lt992px px-lg-3">
+          <Col lg={2} className="hide-on-lt992px ps-md-1 pe-md-0 px-xl-3">
             <div className="sticky-buttons">
               <DeckButtons
                 deck={deck}

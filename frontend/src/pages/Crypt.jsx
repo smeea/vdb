@@ -54,10 +54,10 @@ const Crypt = () => {
       <Row>
         {!isMobile && (
           <Col
-            md={!showSearchForm ? 5 : 1}
+            md={!showSearchForm ? 5 : 0}
             lg={!showSearchForm ? 6 : 1}
             xl={deck && addMode ? 4 : 2}
-            className="px-md-2 ps-xl-0 pb-md-3"
+            className="px-md-2 ps-xl-0"
           >
             {decks !== undefined &&
               (isDesktop || (!isDesktop && !showSearchForm)) && (
@@ -90,7 +90,7 @@ const Crypt = () => {
         )}
         {showSearchForm && (
           <Col
-            md={4}
+            md={5}
             xl={deck && addMode ? 3 : 4}
             xxl={3}
             className="p-1 px-md-2 py-md-3 pe-xl-0"
