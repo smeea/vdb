@@ -7,7 +7,6 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'pool';
-
   const options = ['ANY', '0', '1', '2', '3', '4', '5', '6'].map((i) => ({
     value: i === 'ANY' ? i.toLowerCase() : i,
     name: name,

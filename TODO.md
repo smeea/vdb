@@ -1,4 +1,5 @@
 # FIX
+- Disable scroll on swipe
 
 # FEATURES
 - Check TWD

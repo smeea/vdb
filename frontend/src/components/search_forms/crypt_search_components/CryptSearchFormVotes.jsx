@@ -18,10 +18,10 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
     value: i[0],
     name: 'votes',
     label: (
-      <>
-        <span className="margin-full" />
+      <div className="d-flex align-items-center">
+        <div className="d-flex w-40px" />
         {i[1]}
-      </>
+      </div>
     ),
   }));
 

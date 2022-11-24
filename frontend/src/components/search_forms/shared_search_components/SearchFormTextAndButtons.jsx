@@ -16,6 +16,7 @@ import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
 } from '../shared_search_components';
+import { ButtonIconed } from 'components';
 import { useApp } from 'context';
 
 const SearchFormTextAndButtons = ({
@@ -106,9 +107,12 @@ const SearchFormTextAndButtons = ({
             onChange={onTextChange}
           />
           {preresults > showLimit && (
-            <Button variant="primary" onClick={handleShowResults}>
-              <Check2 /> FOUND {preresults}
-            </Button>
+            <ButtonIconed
+              variant="primary"
+              onClick={handleShowResults}
+              text={`FOUND ${preresults}`}
+              icon=<Check2 />
+            />
           )}
           <Button
             title="Clear Forms & Results"

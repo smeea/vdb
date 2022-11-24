@@ -34,10 +34,10 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
         value: i.toLowerCase(),
         name: name,
         label: (
-          <>
-            <span className="margin-full" />
+          <div className="d-flex align-items-center">
+            <div className="d-flex w-40px" />
             {i}
-          </>
+          </div>
         ),
       };
     } else {
@@ -45,15 +45,15 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
         value: i.toLowerCase(),
         name: name,
         label: (
-          <>
-            <span className="margin-full">
+          <div className="d-flex align-items-center">
+            <div className="d-flex justify-content-center w-40px">
               <ResultDisciplineImage
                 className="type-discipline-image-forms"
                 value={i}
               />
-            </span>
+            </div>
             {i}
-          </>
+          </div>
         ),
       };
     }

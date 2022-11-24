@@ -42,10 +42,10 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       value: 'any',
       name: name,
       label: (
-        <>
-          <span className="margin-full" />
+        <div className="d-flex align-items-center">
+          <div className="d-flex w-40px" />
           ANY
-        </>
+        </div>
       ),
     },
     {
@@ -61,24 +61,24 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         value: i.set,
         name: name,
         label: (
-          <>
-            <span className="margin-full" />
+          <div className="d-flex align-items-center">
+            <div className="d-flex w-40px" />
             {i.name}
-          </>
+          </div>
         ),
       });
     } else {
       const clanImages = i.clans.map((clan) => {
         return (
-          <div className="d-inline" key={clan}>
+          <React.Fragment key={clan}>
             {clan === 'Bundle' ? (
-              <div className="d-inline clan-image-results">
+              <div className="d-flex align-items-center clan-image-results">
                 <GiftFill />
               </div>
             ) : clan === 'Mix' ? null : (
               <ResultLibraryClan value={clan} />
             )}
-          </div>
+          </React.Fragment>
         );
       });
 
@@ -87,9 +87,13 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         name: 'precon',
         label: (
           <div className="d-flex justify-content-between align-items-center">
-            <div className="pe-2">
+            <div className="d-flex align-items-center pe-2">
               <div
-                className={clanImages.length == 1 ? 'margin-full' : 'd-inline'}
+                className={
+                  clanImages.length == 1
+                    ? 'd-flex justify-content-center align-items-center w-40px'
+                    : 'd-inline pe-2'
+                }
               >
                 {clanImages}
               </div>

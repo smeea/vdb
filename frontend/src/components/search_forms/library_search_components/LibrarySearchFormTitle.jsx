@@ -34,10 +34,10 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
     value: i.toLowerCase(),
     name: name,
     label: (
-      <>
-        <span className="margin-full" />
+      <div className="d-flex align-items-center">
+        <div className="d-flex w-40px" />
         {i}
-      </>
+      </div>
     ),
   }));
 
