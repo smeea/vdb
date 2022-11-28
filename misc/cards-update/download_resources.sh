@@ -13,4 +13,4 @@ rm vtescsv_utf8.fr-FR.zip vtescsv_utf8.es-ES.zip vtessets.fr-FR.csv vtessets.es-
 wget https://static.krcg.org/data/vtes.json -O vtes.json
 wget https://static.krcg.org/data/twda.json -O twda.json
 
-curl https://amaranth.vtes.co.nz/api/cards --output amaranth_response.json
+curl https://amaranth.vtes.co.nz/js/pt.cards.pack --output amaranth_response.json

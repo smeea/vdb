@@ -1,5 +1,9 @@
 # FIX
 - Disable scroll on swipe
+- No plus in quick card selection (Hunger)
+- Helena Casimir image
+- branchName on "get" for Recent deck after deletion
+- Switching to Recent decks after deleting
 
 # FEATURES
 - Check TWD

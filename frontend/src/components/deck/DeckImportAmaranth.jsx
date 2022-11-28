@@ -143,12 +143,12 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
                 if (cardid > 200000) {
                   bCrypt[cardid] = {
                     c: cryptCardBase[cardid],
-                    q: deckBody.cards[cardid],
+                    q: b.cards[cardid],
                   };
                 } else {
                   bLibrary[cardid] = {
                     c: libraryCardBase[cardid],
-                    q: deckBody.cards[cardid],
+                    q: b.cards[cardid],
                   };
                 }
               });
