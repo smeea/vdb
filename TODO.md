@@ -1,6 +1,5 @@
 # FIX
 - Disable scroll on swipe
-- Helena Casimir image
 - branchName on "get" for Recent deck after deletion
 - Switching to Recent decks after deleting
 
