@@ -1,12 +1,9 @@
 # FIX
-- Disable scroll on swipe
-- branchName on "get" for Recent deck after deletion
-- Switching to Recent decks after deleting
+- Fix scroll + swipes
 
 # FEATURES
 - Check TWD
 - Events decks archive analyzing
-- Delete Selected from AdvDeckSelector
 
 # MAYBE LATER FEATURES
 - Offline decks storage

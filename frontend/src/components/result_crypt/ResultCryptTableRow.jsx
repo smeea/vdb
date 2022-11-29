@@ -62,7 +62,7 @@ const ResultCryptTableRow = ({
       setIsSwiped(false);
     },
     onSwiping: (e) => {
-      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE) {
+      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && addMode) {
         if (e.deltaX < -SWIPE_THRESHOLD) {
           setIsSwiped('left');
         } else if (e.deltaX > SWIPE_THRESHOLD) {
