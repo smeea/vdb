@@ -1,5 +1,15 @@
 [
   {
+    "version": "2022-11-29",
+    "changes": [
+      "Add visual indicator to card change via swipes and several fixes (it is not yet perfect but should be better and I try to graudally improve it)",
+      "Add option to check multiple decks in Binocular deck menu and Export them at once",
+      "Fix Amaranth import decks with versions and with vampires with multiple groups editions",
+      "Fix 'Missing complete collection' in Inventory",
+      "Few other small fixes"
+    ]
+  },
+  {
     "version": "2022-11-20",
     "changes": [
       "Add seating emulator (button in Decks, I know it is not directly related but there are no other 'useful tools' to make separate section *yet*)",
