@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
-  const titlesLeft = [
+  const titlesLeftforms = [
     ['primogen', 'Primogen'],
     ['prince', 'Prince'],
     ['justicar', 'Justicar'],
@@ -10,9 +10,20 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
     ['baron', 'Baron'],
     ['1 vote', '1 vote (titled)'],
     ['2 votes', '2 votes (titled)'],
-  ];
+  ].map((i, index) => (
+    <Form.Check
+      key={index}
+      name="titles"
+      value={i[0]}
+      type="checkbox"
+      id={`title-${i[0]}`}
+      label={i[1]}
+      checked={value[i[0]]}
+      onChange={onChange}
+    />
+  ));
 
-  const titlesRight = [
+  const titlesRightforms = [
     ['bishop', 'Bishop'],
     ['archbishop', 'Archbishop'],
     ['priscus', 'Priscus'],
@@ -20,37 +31,18 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
     ['regent', 'Regent'],
     ['magaji', 'Magaji'],
     ['none', 'Non-titled'],
-  ];
-
-  const titlesLeftforms = titlesLeft.map((i, index) => {
-    return (
-      <Form.Check
-        key={index}
-        name="titles"
-        value={i[0]}
-        type="checkbox"
-        id={`title-${i[0]}`}
-        label={i[1]}
-        checked={value[i[0]]}
-        onChange={(e) => onChange(e)}
-      />
-    );
-  });
-
-  const titlesRightforms = titlesRight.map((i, index) => {
-    return (
-      <Form.Check
-        key={index}
-        name="titles"
-        value={i[0]}
-        type="checkbox"
-        id={`title-${i[0]}`}
-        label={i[1]}
-        checked={value[i[0]]}
-        onChange={(e) => onChange(e)}
-      />
-    );
-  });
+  ].map((i, index) => (
+    <Form.Check
+      key={index}
+      name="titles"
+      value={i[0]}
+      type="checkbox"
+      id={`title-${i[0]}`}
+      label={i[1]}
+      checked={value[i[0]]}
+      onChange={onChange}
+    />
+  ));
 
   return (
     <>

@@ -11,8 +11,7 @@ const DeckLibraryHeader = ({
   toggleShowInfo,
   toggleShowAdd,
   hasBanned,
-  isAuthor,
-  isPublic,
+  isEditable,
   inReview,
 }) => {
   return (
@@ -60,7 +59,7 @@ const DeckLibraryHeader = ({
         >
           <InfoCircle />
         </Button>
-        {(inReview || (isAuthor && !isPublic)) && !isMobile && (
+        {(inReview || isEditable) && !isMobile && (
           <div className="ps-1">
             <Button title="Add Card" variant="primary" onClick={toggleShowAdd}>
               +

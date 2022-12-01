@@ -9,35 +9,31 @@ const TwdSearchFormClan = ({ value, onChange }) => {
   const { isMobile, isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
-  const clans = ['ANY', ...vampireClansList, ...imbuedClansList];
-
-  const options = [];
-
-  clans.map((i) => {
+  const options = ['ANY', ...vampireClansList, ...imbuedClansList].map((i) => {
     if (i == 'ANY' || i == 'NONE') {
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: 'clan',
         label: (
-          <>
-            <span className="margin-full" />
+          <div className="d-flex align-items-center">
+            <div className="d-flex w-40px" />
             {i}
-          </>
+          </div>
         ),
-      });
+      };
     } else {
-      options.push({
+      return {
         value: i.toLowerCase(),
         name: 'clan',
         label: (
-          <>
-            <span className="margin-full">
+          <div className="d-flex align-items-center">
+            <div className="d-flex w-40px">
               <ResultClanImage value={i} />
-            </span>
+            </div>
             {i}
-          </>
+          </div>
         ),
-      });
+      };
     }
   });
 

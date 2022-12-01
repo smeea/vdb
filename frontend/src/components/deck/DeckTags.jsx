@@ -3,7 +3,8 @@ import CreatableSelect from 'react-select/creatable';
 import { deckUpdate } from 'context';
 
 const DeckTags = ({ deck, tagsSuperior, bordered, allTagsOptions }) => {
-  const { deckid, tags, isPublic, isAuthor } = deck;
+  const { deckid, tags, isPublic, isAuthor, isFrozen } = deck;
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const tagList = useMemo(() => {
     const t = [];
@@ -42,7 +43,7 @@ const DeckTags = ({ deck, tagsSuperior, bordered, allTagsOptions }) => {
   if (bordered) {
     classNamePrefix = 'bordered ' + classNamePrefix;
   }
-  if (!isAuthor) {
+  if (!isEditable) {
     classNamePrefix = 'tags-no-remove ' + classNamePrefix;
   }
 
@@ -50,7 +51,7 @@ const DeckTags = ({ deck, tagsSuperior, bordered, allTagsOptions }) => {
     <CreatableSelect
       classNamePrefix={classNamePrefix}
       isMulti
-      isDisabled={!isAuthor || isPublic}
+      isDisabled={!isEditable}
       isClearable={false}
       options={allTagsOptions}
       onChange={handleChange}

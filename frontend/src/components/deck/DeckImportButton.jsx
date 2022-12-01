@@ -31,7 +31,7 @@ const DeckImportButton = ({
           <Dropdown.Divider />
         </>
       )}
-      <Dropdown.Header className="pb-0">
+      <Dropdown.Header className="pb-1">
         <>
           Anonymous (non-editable)
           <br />

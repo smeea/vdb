@@ -15,7 +15,7 @@ import { MASTER } from 'utils/constants';
 import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
+const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
@@ -80,8 +80,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
         cards={libraryByType[cardtype]}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
+        isEditable={isEditable}
       />
     </div>
   ));
@@ -99,71 +98,67 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
         cards={librarySideByType[cardtype]}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
+        isEditable={isEditable}
       />
     </div>
   ));
 
   return (
     <>
-      <div className={!isMobile ? 'sticky-deck-library pt-4 pt-md-4' : null}>
-        <DeckLibraryHeader
-          isMobile={isMobile}
-          libraryTotal={libraryTotal}
-          bloodTotal={bloodTotal}
-          poolTotal={poolTotal}
-          toggleShowInfo={toggleShowInfo}
-          toggleShowAdd={toggleShowAdd}
-          hasBanned={hasBanned}
-          isAuthor={isAuthor}
-          isPublic={isPublic}
-        />
-        {showInfo && (
-          <div className="info-message ps-2">
-            <DeckLibraryTotalInfo
-              byDisciplines={libraryByDisciplinesTotal}
-              byTypes={libraryByTypeTotal}
-              byClans={libraryByClansTotal}
-            />
-          </div>
-        )}
-        {showAdd &&
-          (!isMobile ? (
-            <DeckNewCard
-              setShowAdd={setShowAdd}
-              cards={cardsFrom}
-              deckid={deckid}
-              target="library"
-            />
-          ) : (
-            <Modal
-              show={showAdd}
-              onHide={() => setShowAdd(false)}
-              animation={false}
+      <DeckLibraryHeader
+        isMobile={isMobile}
+        libraryTotal={libraryTotal}
+        bloodTotal={bloodTotal}
+        poolTotal={poolTotal}
+        toggleShowInfo={toggleShowInfo}
+        toggleShowAdd={toggleShowAdd}
+        hasBanned={hasBanned}
+        isEditable={isEditable}
+      />
+      {showInfo && (
+        <div className="info-message ps-2">
+          <DeckLibraryTotalInfo
+            byDisciplines={libraryByDisciplinesTotal}
+            byTypes={libraryByTypeTotal}
+            byClans={libraryByClansTotal}
+          />
+        </div>
+      )}
+      {showAdd &&
+        (!isMobile ? (
+          <DeckNewCard
+            setShowAdd={setShowAdd}
+            cards={cardsFrom}
+            deckid={deckid}
+            target="library"
+          />
+        ) : (
+          <Modal
+            show={showAdd}
+            onHide={() => setShowAdd(false)}
+            animation={false}
+          >
+            <Modal.Header
+              className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
             >
-              <Modal.Header
-                className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
+              <h5>Add Library Card</h5>
+              <Button
+                variant="outline-secondary"
+                onClick={() => setShowAdd(false)}
               >
-                <h5>Add Library Card</h5>
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => setShowAdd(false)}
-                >
-                  <X width="32" height="32" viewBox="0 0 16 16" />
-                </Button>
-              </Modal.Header>
-              <Modal.Body className="p-0">
-                <DeckNewCard
-                  setShowAdd={setShowAdd}
-                  cards={cardsFrom}
-                  deckid={deckid}
-                  target="library"
-                />
-              </Modal.Body>
-            </Modal>
-          ))}
-      </div>
+                <X width="32" height="32" viewBox="0 0 16 16" />
+              </Button>
+            </Modal.Header>
+            <Modal.Body className="p-0">
+              <DeckNewCard
+                setShowAdd={setShowAdd}
+                cards={cardsFrom}
+                deckid={deckid}
+                target="library"
+              />
+            </Modal.Body>
+          </Modal>
+        ))}
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
         <div className="deck-sidelibrary pt-2">
@@ -171,7 +166,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isAuthor, isPublic }) => {
           {LibrarySideDeck}
         </div>
       )}
-      {isMobile && isAuthor && !isPublic && showFloatingButtons && (
+      {isMobile && isEditable && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"

@@ -5,7 +5,7 @@ import { useApp } from 'context';
 const CryptSearchFormTraits = ({ value, onChange }) => {
   const { playtest } = useApp();
 
-  const traitsLeft = [
+  const traitsLeftforms = [
     ['1 intercept', '+1 intercept'],
     ['1 stealth', '+1 stealth'],
     ['1 bleed', '+1 bleed'],
@@ -17,9 +17,20 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
     ['aggravated', 'Aggravated'],
     ['prevent', 'Prevent'],
     ['press', 'Press'],
-  ];
+  ].map((i, index) => (
+    <Form.Check
+      key={index}
+      name="traits"
+      value={i[0]}
+      type="checkbox"
+      id={`traits-${i[0]}`}
+      label={i[1]}
+      checked={value[i[0]]}
+      onChange={onChange}
+    />
+  ));
 
-  const traitsRight = [
+  const traitsRightforms = [
     ['enter combat', 'Enter combat'],
     ['unlock', 'Unlock'],
     ['black hand', 'Black Hand'],
@@ -30,39 +41,23 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
     ['advancement', 'Advancement'],
     ['banned', 'Banned'],
     ['non-twd', 'Not in TWD'],
-  ];
-
-  if (playtest) traitsRight.push(['playtest', 'Playtest']);
-
-  const traitsLeftforms = traitsLeft.map((i, index) => {
-    return (
-      <Form.Check
-        key={index}
-        name="traits"
-        value={i[0]}
-        type="checkbox"
-        id={`traits-${i[0]}`}
-        label={i[1]}
-        checked={value[i[0]]}
-        onChange={(e) => onChange(e)}
-      />
-    );
-  });
-
-  const traitsRightforms = traitsRight.map((i, index) => {
-    return (
-      <Form.Check
-        key={index}
-        name="traits"
-        value={i[0]}
-        type="checkbox"
-        id={`traits-${i[0]}`}
-        label={i[1]}
-        checked={value[i[0]]}
-        onChange={(e) => onChange(e)}
-      />
-    );
-  });
+    ['playtest', 'Playtest'],
+  ]
+    .filter((i) => i[0] !== 'playtest' || playtest)
+    .map((i, index) => {
+      return (
+        <Form.Check
+          key={index}
+          name="traits"
+          value={i[0]}
+          type="checkbox"
+          id={`traits-${i[0]}`}
+          label={i[1]}
+          checked={value[i[0]]}
+          onChange={onChange}
+        />
+      );
+    });
 
   return (
     <>

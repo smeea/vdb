@@ -28,10 +28,10 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       value: 'any',
       name: name,
       label: (
-        <>
-          <span className="margin-full" />
+        <div className="d-flex align-items-center">
+          <div className="d-flex w-40px" />
           ANY
-        </>
+        </div>
       ),
     },
     {
@@ -47,7 +47,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       name: name,
       label: (
         <div className="d-flex justify-content-between align-items-center">
-          <div className="pe-2">{i[name]}</div>
+          <div className="pe-2">{i.name}</div>
           {i.year && <div className="ps-2 small">{`'${i.year}`}</div>}
         </div>
       ),

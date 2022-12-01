@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import { OverlayTrigger } from 'react-bootstrap';
@@ -31,16 +31,40 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
   const inDeck = deck?.library[card.Id]?.q || 0;
+  const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
+  const [isSwiped, setIsSwiped] = useState();
+  const SWIPE_THRESHOLD = 50;
+  const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
-    onSwipedRight: () => {
-      if (addMode && inDeck > 0) {
+    onSwipedRight: (e) => {
+      if (
+        e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
+        e.absX > SWIPE_THRESHOLD &&
+        isEditable &&
+        addMode &&
+        inDeck > 0
+      ) {
         deckCardChange(deck.deckid, card, inDeck - 1);
       }
     },
-    onSwipedLeft: () => {
-      if (addMode) {
+    onSwipedLeft: (e) => {
+      if (e.absX > SWIPE_THRESHOLD && isEditable && addMode) {
         deckCardChange(deck.deckid, card, inDeck + 1);
+      }
+    },
+    onSwiped: () => {
+      setIsSwiped(false);
+    },
+    onSwiping: (e) => {
+      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && addMode) {
+        if (e.deltaX < -SWIPE_THRESHOLD) {
+          setIsSwiped('left');
+        } else if (e.deltaX > SWIPE_THRESHOLD) {
+          setIsSwiped('right');
+        } else {
+          setIsSwiped(false);
+        }
       }
     },
   });
@@ -57,8 +81,14 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
   }
 
   return (
-    <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-      {deck?.isAuthor && addMode && (
+    <tr
+      {...swipeHandlers}
+      className={`result-${idx % 2 ? 'even' : 'odd'} ${
+        isSwiped ? `swiped-${isSwiped}` : ''
+      }
+`}
+    >
+      {isEditable && addMode && (
         <td className="quantity-add pe-1">
           <ButtonAddCard deckid={deck.deckid} card={card} inDeck={inDeck} />
         </td>

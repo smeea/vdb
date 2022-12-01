@@ -6,7 +6,7 @@ export const initFromStorage = (storageId, defaultValue, setFunction) => {
     storage = window.localStorage.getItem(storageId);
   }
 
-  if (storage) {
+  if (storage !== null) {
     setFunction(storage);
   } else {
     setFunction(defaultValue);

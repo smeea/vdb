@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
-import { setMany, getMany } from 'idb-keyval';
+import { setMany, getMany, update } from 'idb-keyval';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { cardServices } from 'services';
 import { useDeck, useWindowSize } from 'hooks';
@@ -71,7 +71,7 @@ export const AppProvider = (props) => {
   const [showMenuButtons, setShowMenuButtons] = useState();
 
   // CARD BASE
-  const CARD_VERSION = '2022-11-13';
+  const CARD_VERSION = '2022-11-15';
   const fetchAndSetCardBase = () => {
     cardServices.getCardBase().then((data) => {
       setMany([
@@ -201,6 +201,14 @@ export const AppProvider = (props) => {
 
   const initializeLocalizedInfo = async (lang) => {
     cardServices.getLocalizedCardBase(lang).then((data) => {
+      update('localizedCrypt', (val) => ({
+        ...val,
+        [lang]: data.crypt,
+      }));
+      update('localizedLibrary', (val) => ({
+        ...val,
+        [lang]: data.library,
+      }));
       setLocalizedCrypt((prevState) => ({
         ...prevState,
         [lang]: data.crypt,

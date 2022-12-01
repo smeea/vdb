@@ -135,7 +135,7 @@ const TwdHallOfFameCards = () => {
           )}
         </Tab>
         <Tab eventKey="innovation" title="By Innovation">
-          <div className="p-2">
+          <div className="border p-2">
             Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365}{' '}
             years after card print, and excluding cards from first 2 years of
             active tournaments (till {IGNORED_TOURNAMENTS_DATE})

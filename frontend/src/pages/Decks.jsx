@@ -42,6 +42,7 @@ import {
   DeckChangeAuthor,
   DeckChangeDescription,
   DeckImport,
+  Seating,
 } from 'components';
 import { deckStore, useApp, setDeck, deckUpdate } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
@@ -85,6 +86,7 @@ const Decks = () => {
   const [selectFrom, setSelectFrom] = useState('precons');
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
   const [showDraw, setShowDraw] = useState(false);
+  const [showSeating, setShowSeating] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
 
@@ -498,12 +500,13 @@ const Decks = () => {
           )}
         </Col>
         {!isMobile && (
-          <Col lg={2} className="hide-on-lt992px px-lg-3">
+          <Col lg={2} className="hide-on-lt992px ps-md-1 pe-md-0 px-xl-3">
             <div className="sticky-buttons">
               <DeckButtons
                 deck={deck}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
+                setShowSeating={setShowSeating}
                 setShowRecommendation={setShowRecommendation}
                 setQrUrl={setQrUrl}
                 missingCrypt={missingCrypt}
@@ -514,14 +517,14 @@ const Decks = () => {
         )}
       </Row>
       {!username && !deckid && !hash && (
-        <Row className="align-items-center justify-content-center mx-0 vh-70">
-          <Col xs={12} md={9} lg={6} xl={5}>
-            <div className="d-flex justify-content-center pt-4">
+        <Row className="align-items-center justify-content-center pt-4 mx-0 vh-70">
+          <Col xs={12} md={8} lg={7} xl={6} className="px-3">
+            <div className="d-flex justify-content-center">
               <h6>Login required to create decks</h6>
             </div>
             <div className="d-flex justify-content-center">
               <h6 className="small">
-                (You can browse preconstructed decks without login)
+                (Browse preconstructed decks without login)
               </h6>
             </div>
             <div className="py-4">
@@ -579,6 +582,7 @@ const Decks = () => {
                 deck={deck}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
+                setShowSeating={setShowSeating}
                 setShowRecommendation={setShowRecommendation}
                 setQrUrl={setQrUrl}
                 missingCrypt={missingCrypt}
@@ -603,6 +607,7 @@ const Decks = () => {
         />
       )}
       {showDraw && <DeckDraw setShow={setShowDraw} deck={deck} />}
+      {showSeating && <Seating setShow={setShowSeating} />}
       {showRecommendation && (
         <DeckRecommendation deck={deck} setShow={setShowRecommendation} />
       )}

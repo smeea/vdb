@@ -11,6 +11,7 @@ import {
   TwdSearchFormCapacity,
   TwdSearchFormCardtypes,
   TwdSearchFormClan,
+  TwdSearchFormSect,
   TwdSearchFormCrypt,
   TwdSearchFormDate,
   TwdSearchFormDisciplines,
@@ -23,13 +24,14 @@ import {
 import { sanitizeFormState } from 'utils';
 import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from 'context';
 
-const PdaSearchForm = () => {
+const PdaSearchForm = ({ error, setError }) => {
   const { username, cryptCardBase, libraryCardBase, inventoryMode, isMobile } =
     useApp();
   const pdaFormState = useSnapshot(searchPdaForm);
   const [spinnerState, setSpinnerState] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+  const refError = useRef(null);
 
   useEffect(() => {
     if (query) {
@@ -51,11 +53,8 @@ const PdaSearchForm = () => {
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
-  const [error, setError] = useState(false);
-  const refError = useRef(null);
-
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target ?? event;
     searchPdaForm[name] = value;
   };
 
@@ -91,13 +90,17 @@ const PdaSearchForm = () => {
   };
 
   const handleError = (error) => {
-    setSpinnerState(false);
-    setPdaResults([]);
-    navigate('/pda');
+    setPdaResults(null);
+
     if (error.message == 400) {
       setError('NO DECKS FOUND');
     } else {
       setError('CONNECTION PROBLEM');
+    }
+
+    if (isMobile) {
+      setSpinnerState(false);
+      navigate('/pda');
     }
   };
 
@@ -345,6 +348,17 @@ const PdaSearchForm = () => {
             onChange={handleMultiChange}
           />
         </div>
+      </Row>
+      <Row className="py-1 ps-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <div className="bold blue px-0">Sect:</div>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <TwdSearchFormSect
+            value={pdaFormState.sect}
+            onChange={handleChange}
+          />
+        </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={5} className="d-flex px-0">

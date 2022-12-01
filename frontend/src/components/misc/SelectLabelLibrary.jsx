@@ -32,18 +32,15 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
           </div>
         </div>
         <div>
-          {libraryCardBase[cardid].Discipline && (
-            <div className="d-inline px-2">
-              <ResultLibraryDisciplines
-                value={libraryCardBase[cardid].Discipline}
-              />
-            </div>
-          )}
-          {libraryCardBase[cardid].Clan && (
-            <div className="d-inline px-2">
-              <ResultLibraryClan value={libraryCardBase[cardid].Clan} />
-            </div>
-          )}
+          <div className="d-inline px-2">
+            <ResultLibraryDisciplines
+              value={libraryCardBase[cardid].Discipline}
+            />
+            {libraryCardBase[cardid].Discipline &&
+              libraryCardBase[cardid].Clan &&
+              '+'}
+            <ResultLibraryClan value={libraryCardBase[cardid].Clan} />
+          </div>
           {(libraryCardBase[cardid]['Blood Cost'] ||
             libraryCardBase[cardid]['Pool Cost']) && (
             <div className="d-inline px-2">

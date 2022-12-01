@@ -13,7 +13,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'sect';
-  const sects = [
+  const options = [
     'ANY',
     'Camarilla',
     'Sabbat',
@@ -21,21 +21,16 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
     'Independent',
     'Anarch',
     'Imbued',
-  ];
-  const options = [];
-
-  sects.map((i) => {
-    options.push({
-      value: i.toLowerCase(),
-      name: name,
-      label: (
-        <>
-          <span className="margin-full" />
-          {i}
-        </>
-      ),
-    });
-  });
+  ].map((i) => ({
+    value: i.toLowerCase(),
+    name: name,
+    label: (
+      <div className="d-flex align-items-center">
+        <div className="d-flex w-40px" />
+        {i}
+      </div>
+    ),
+  }));
 
   return (
     <>

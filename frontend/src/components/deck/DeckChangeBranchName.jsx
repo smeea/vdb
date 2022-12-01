@@ -6,9 +6,10 @@ import { useApp, deckUpdate } from 'context';
 
 const DeckChangeBranchName = ({ deck }) => {
   const { isMobile } = useApp();
-  const { deckid, branchName, isAuthor } = deck;
+  const { deckid, branchName, isAuthor, isPublic, isFrozen } = deck;
   const [state, setState] = useState(branchName);
   const [buttonState, setButtonState] = useState(false);
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
     if (state !== branchName) setState(branchName);
@@ -51,7 +52,7 @@ const DeckChangeBranchName = ({ deck }) => {
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}
-          readOnly={!isAuthor}
+          readOnly={!isEditable}
         />
         {isMobile && isAuthor && (
           <Button variant={buttonState ? 'success' : 'primary'} type="submit">

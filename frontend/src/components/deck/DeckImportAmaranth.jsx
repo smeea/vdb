@@ -85,57 +85,44 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
   };
 
   const importDeckFromAmaranth = async (amaranth_deck) => {
-    const deckBody = {
+    const now = new Date();
+    const deck = {
+      branchName: '#0',
       name: amaranth_deck.title,
       author: amaranth_deck.author || '',
       description: amaranth_deck.description || '',
-      cards: {},
+      crypt: {},
+      library: {},
+      isAuthor: true,
+      timestamp: now.toUTCString(),
     };
 
     Object.keys(amaranth_deck.cards).map((i) => {
       if (idReference[i] !== undefined) {
-        deckBody.cards[idReference[i]] = amaranth_deck.cards[i];
+        if (idReference[i] > 200000) {
+          deck.crypt[idReference[i]] = {
+            c: cryptCardBase[idReference[i]],
+            q: amaranth_deck.cards[i],
+          };
+        } else {
+          deck.library[idReference[i]] = {
+            c: libraryCardBase[idReference[i]],
+            q: amaranth_deck.cards[i],
+          };
+        }
       }
     });
 
     deckServices
-      .deckImport(deckBody)
+      .deckImport(deck)
       .then((response) => response.json())
       .then((data) => {
-        deckBody.deckid = data.deckid;
-        const crypt = {};
-        const library = {};
-        Object.keys(deckBody.cards).map((cardid) => {
-          if (cardid > 200000) {
-            crypt[cardid] = {
-              c: cryptCardBase[cardid],
-              q: deckBody.cards[cardid],
-            };
-          } else {
-            library[cardid] = {
-              c: libraryCardBase[cardid],
-              q: deckBody.cards[cardid],
-            };
-          }
-        });
-
-        const now = new Date();
-        const deck = {
-          author: deckBody.author,
-          branchName: '#0',
-          deckid: deckBody.deckid,
-          description: deckBody.description,
-          isAuthor: true,
-          crypt: crypt,
-          library: library,
-          name: deckBody.name,
-          timestamp: now.toUTCString(),
-        };
+        deck.deckid = data.deckid;
 
         if (amaranth_deck.versions) {
           const branches = {};
 
-          branchesImport(deckBody, amaranth_deck.versions).then((brs) => {
+          branchesImport(deck, amaranth_deck.versions).then((brs) => {
             brs.map((b) => {
               const bCrypt = {};
               const bLibrary = {};
@@ -143,27 +130,27 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
                 if (cardid > 200000) {
                   bCrypt[cardid] = {
                     c: cryptCardBase[cardid],
-                    q: deckBody.cards[cardid],
+                    q: b.cards[cardid],
                   };
                 } else {
                   bLibrary[cardid] = {
                     c: libraryCardBase[cardid],
-                    q: deckBody.cards[cardid],
+                    q: b.cards[cardid],
                   };
                 }
               });
 
               const n = new Date();
               const d = {
-                author: deckBody.author,
+                author: deck.author,
                 branchName: b.branchName,
                 crypt: bCrypt,
                 library: bLibrary,
                 deckid: b.deckid,
                 description: b.description,
                 isAuthor: true,
-                master: deckBody.deckid,
-                name: deckBody.name,
+                master: deck.deckid,
+                name: deck.name,
                 timestamp: n.toUTCString(),
               };
 

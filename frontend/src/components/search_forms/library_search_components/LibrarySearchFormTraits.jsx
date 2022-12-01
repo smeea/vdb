@@ -5,7 +5,7 @@ import { useApp } from 'context';
 const LibrarySearchFormTraits = ({ value, onChange }) => {
   const { playtest } = useApp();
 
-  const traitsLeft = [
+  const traitsLeftforms = [
     ['intercept', '+Intercept / -Stealth'],
     ['stealth', '+Stealth / -Intercept'],
     ['bleed', '+Bleed'],
@@ -19,9 +19,20 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
     ['press', 'Press'],
     ['combat ends', 'Combat Ends'],
     ['enter combat', 'Enter Combat'],
-  ];
+  ].map((i, index) => (
+    <Form.Check
+      key={index}
+      name="traits"
+      value={i[0]}
+      type="checkbox"
+      id={`traits-${i[0]}`}
+      label={i[1]}
+      checked={value[i[0]]}
+      onChange={onChange}
+    />
+  ));
 
-  const traitsRight = [
+  const traitsRightforms = [
     ['bloat', 'Blood to Uncontrolled'],
     ['bounce bleed', 'Bounce Bleed'],
     ['reduce bleed', 'Reduce Bleed'],
@@ -34,12 +45,10 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
     ['banned', 'Banned'],
     ['non-twd', 'Not in TWD'],
     ['no-requirements', 'No Requirement'],
-  ];
-
-  if (playtest) traitsRight.push(['playtest', 'Playtest']);
-
-  const traitsLeftforms = traitsLeft.map((i, index) => {
-    return (
+    ['playtest', 'Playtest'],
+  ]
+    .filter((i) => i[0] !== 'playtest' || playtest)
+    .map((i, index) => (
       <Form.Check
         key={index}
         name="traits"
@@ -48,25 +57,9 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
         id={`traits-${i[0]}`}
         label={i[1]}
         checked={value[i[0]]}
-        onChange={(e) => onChange(e)}
+        onChange={onChange}
       />
-    );
-  });
-
-  const traitsRightforms = traitsRight.map((i, index) => {
-    return (
-      <Form.Check
-        key={index}
-        name="traits"
-        value={i[0]}
-        type="checkbox"
-        id={`traits-${i[0]}`}
-        label={i[1]}
-        checked={value[i[0]]}
-        onChange={(e) => onChange(e)}
-      />
-    );
-  });
+    ));
 
   return (
     <>

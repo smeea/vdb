@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
@@ -8,9 +9,9 @@ import {
   ResultCryptTotalInfo,
 } from 'components';
 import { cryptSort } from 'utils';
-import { useApp } from 'context';
+import { useApp, deckStore } from 'context';
 
-const ResultCrypt = ({ cards, setCards, isAuthor, inCompare }) => {
+const ResultCrypt = ({ cards, setCards, inCompare }) => {
   const {
     setShowCryptSearch,
     addMode,
@@ -22,6 +23,8 @@ const ResultCrypt = ({ cards, setCards, isAuthor, inCompare }) => {
     showFloatingButtons,
   } = useApp();
   const navigate = useNavigate();
+  const deck = useSnapshot(deckStore).deck;
+  const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
   const className = 'search-crypt-table';
 
   const sortMethods = {
@@ -86,7 +89,7 @@ const ResultCrypt = ({ cards, setCards, isAuthor, inCompare }) => {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && isAuthor && (
+      {isMobile && showFloatingButtons && isEditable && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${

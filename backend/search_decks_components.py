@@ -155,6 +155,15 @@ def get_decks_by_clan(clan, decks):
     return match_decks
 
 
+def get_decks_by_sect(sect, decks):
+    match_decks = []
+    for deck in decks:
+        if deck["sect"] and deck["sect"].lower() == sect:
+            match_decks.append(deck)
+
+    return match_decks
+
+
 def get_decks_by_disciplines(disciplines, decks):
     disciplines_counter = len(disciplines)
     match_decks = []

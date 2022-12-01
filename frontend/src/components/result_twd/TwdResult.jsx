@@ -99,31 +99,22 @@ const TwdResult = ({ results, setResults }) => {
 
   return (
     <>
-      {!isMobile && (results === null || results.length === 0) && (
-        <div className="d-flex align-items-center justify-content-center error-message">
-          <b>{results === null ? 'CONNECTION PROBLEM' : 'NO DECKS FOUND'}</b>
+      <TwdResultTotal
+        results={results}
+        sortMethods={sortMethods}
+        sortMethod={twdSearchSort}
+        setSortMethod={changeTwdSearchSort}
+      />
+      {resultEntries}
+      {deckCounter > showCounter && (
+        <div className="d-flex justify-content-center pb-4 pt-2">
+          <Button
+            variant="primary"
+            onClick={() => setShowCounter(showCounter + showCounterStep)}
+          >
+            Show More ({deckCounter - showCounter} left)
+          </Button>
         </div>
-      )}
-      {results.length > 0 && (
-        <>
-          <TwdResultTotal
-            results={results}
-            sortMethods={sortMethods}
-            sortMethod={twdSearchSort}
-            setSortMethod={changeTwdSearchSort}
-          />
-          {resultEntries}
-          {deckCounter > showCounter && (
-            <div className="d-flex justify-content-center pb-4 pt-2">
-              <Button
-                variant="primary"
-                onClick={() => setShowCounter(showCounter + showCounterStep)}
-              >
-                Show More ({deckCounter - showCounter} left)
-              </Button>
-            </div>
-          )}
-        </>
       )}
       {isMobile && showFloatingButtons && (
         <>

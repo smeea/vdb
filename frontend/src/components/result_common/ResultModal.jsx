@@ -47,9 +47,19 @@ const ResultModal = ({
     }
   }, [card]);
 
+  const SWIPE_THRESHOLD = 50;
+  const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
-    onSwipedRight: () => handleModalCardChange(-1),
-    onSwipedLeft: () => handleModalCardChange(1),
+    onSwipedRight: (e) => {
+      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD) {
+        handleModalCardChange(-1);
+      }
+    },
+    onSwipedLeft: (e) => {
+      if (e.absX > SWIPE_THRESHOLD) {
+        handleModalCardChange(1);
+      }
+    },
   });
 
   return (

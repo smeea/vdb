@@ -546,22 +546,34 @@ const Diff = () => {
           {deck && deckTo && (
             <Row className="pt-md-2">
               <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
-                <DiffCrypt
-                  deckid={deck.deckid}
-                  isAuthor={deck.isAuthor}
-                  isPublic={deck.isPublic}
-                  cardsFrom={deck.crypt}
-                  cardsTo={deckTo.crypt}
-                />
+                <div
+                  className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}
+                >
+                  <DiffCrypt
+                    deckid={deck.deckid}
+                    isEditable={
+                      deck.isAuthor && !deck.isPublic && !deck.isFrozen
+                    }
+                    cardsFrom={deck.crypt}
+                    cardsTo={deckTo.crypt}
+                  />
+                </div>
               </Col>
               <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
-                <DiffLibrary
-                  deckid={deck.deckid}
-                  isAuthor={deck.isAuthor}
-                  isPublic={deck.isPublic}
-                  cardsFrom={deck.library}
-                  cardsTo={deckTo.library}
-                />
+                <div
+                  className={
+                    !isMobile ? 'sticky-deck-library pt-4 pt-md-4' : null
+                  }
+                >
+                  <DiffLibrary
+                    deckid={deck.deckid}
+                    isEditable={
+                      deck.isAuthor && !deck.isPublic && !deck.isFrozen
+                    }
+                    cardsFrom={deck.library}
+                    cardsTo={deckTo.library}
+                  />
+                </div>
               </Col>
             </Row>
           )}

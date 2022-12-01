@@ -24,7 +24,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
                   type="button"
                   name={name}
                   id={i}
-                  onClick={(e) => onChange(e)}
+                  onClick={onChange}
                 />
                 <ResultDisciplineImage
                   className="discipline-base-image-forms"
@@ -49,7 +49,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
                   type="button"
                   name={name}
                   id={i}
-                  onClick={(e) => onChange(e)}
+                  onClick={onChange}
                 />
                 <ResultDisciplineImage className="virtue-image" value={i} />
               </label>

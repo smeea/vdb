@@ -4,7 +4,6 @@ import { useApp } from 'context';
 
 const CryptSearchFormGroup = ({ value, onChange }) => {
   const { isMobile, isNarrow } = useApp();
-
   const groups = [1, 2, 3, 4, 5, 6, 7];
 
   return (
@@ -24,7 +23,7 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
                 value={i}
                 name="group"
                 variant={value[i] ? 'third' : 'outline-primary'}
-                onClick={(e) => onChange(e)}
+                onClick={onChange}
               >
                 <div className="px-1 px-md-0">{i}</div>
               </Button>

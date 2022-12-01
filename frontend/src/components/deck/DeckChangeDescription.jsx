@@ -8,9 +8,10 @@ import { useApp, deckUpdate } from 'context';
 
 const DeckDescription = ({ deck, folded, setFolded }) => {
   const { isMobile } = useApp();
-  const { deckid, description, isAuthor, isPublic } = deck;
+  const { deckid, description, isAuthor, isPublic, isFrozen } = deck;
   const [state, setState] = useState(description);
   const [buttonState, setButtonState] = useState(false);
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
     if (state !== description) setState(description);
@@ -53,7 +54,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}
-          readOnly={!isAuthor || isPublic}
+          readOnly={!isEditable}
         />
         {!isMobile && (
           <Button

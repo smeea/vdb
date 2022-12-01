@@ -7,29 +7,23 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
 
-  const votes = [
+  const options = [
     ['any', 'ANY'],
     ['0', 'None'],
     ['1', '1+'],
     ['2', '2+'],
     ['3', '3+'],
     ['4', '4+'],
-  ];
-
-  const options = [];
-
-  votes.map((i) => {
-    options.push({
-      value: i[0],
-      name: 'votes',
-      label: (
-        <>
-          <span className="margin-full" />
-          {i[1]}
-        </>
-      ),
-    });
-  });
+  ].map((i) => ({
+    value: i[0],
+    name: 'votes',
+    label: (
+      <div className="d-flex align-items-center">
+        <div className="d-flex w-40px" />
+        {i[1]}
+      </div>
+    ),
+  }));
 
   return (
     <Row className="py-1 ps-1 mx-0 align-items-center">

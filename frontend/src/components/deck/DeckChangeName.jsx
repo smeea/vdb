@@ -10,9 +10,10 @@ import { DeckFreezeButton } from 'components';
 
 const DeckChangeName = ({ deck }) => {
   const { isMobile } = useApp();
-  const { isPublic, isAuthor, isNonEditable } = deck;
+  const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
   const [state, setState] = useState(deck.name);
   const [buttonState, setButtonState] = useState(false);
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
     if (state !== deck.name) setState(deck.name);
@@ -53,7 +54,7 @@ const DeckChangeName = ({ deck }) => {
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}
-          readOnly={!isAuthor || isPublic}
+          readOnly={!isEditable}
         />
         {(isPublic ||
           (deck.deckid !== 'deck' &&
@@ -72,7 +73,7 @@ const DeckChangeName = ({ deck }) => {
         )}
         {isAuthor && !isPublic && <DeckFreezeButton deck={deck} />}
 
-        {isMobile && isAuthor && (
+        {isMobile && isEditable && (
           <Button
             variant={buttonState ? 'success' : 'primary'}
             type="submit"

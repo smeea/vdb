@@ -139,7 +139,7 @@ const AccountLogin = () => {
 
   return (
     <div>
-      <h5 className="d-flex align-items-center p-1">
+      <div className="d-flex text-blue font-bold text-xl align-items-center px-1 py-2">
         <div className="d-flex pe-2">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
@@ -156,7 +156,7 @@ const AccountLogin = () => {
             [?]
           </span>
         )}
-      </h5>
+      </div>
       <Form className="mb-0" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>

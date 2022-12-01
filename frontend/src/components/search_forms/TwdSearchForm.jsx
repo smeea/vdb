@@ -13,6 +13,7 @@ import {
   TwdSearchFormEvent,
   TwdSearchFormDate,
   TwdSearchFormClan,
+  TwdSearchFormSect,
   TwdSearchFormCardtypes,
   TwdSearchFormCapacity,
   TwdSearchFormDisciplines,
@@ -25,12 +26,13 @@ import {
 import { sanitizeFormState } from 'utils';
 import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from 'context';
 
-const TwdSearchForm = () => {
+const TwdSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, inventoryMode, isMobile } = useApp();
   const twdFormState = useSnapshot(searchTwdForm);
   const [spinnerState, setSpinnerState] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+  const refError = useRef(null);
 
   useEffect(() => {
     if (query) {
@@ -52,16 +54,13 @@ const TwdSearchForm = () => {
     }
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
-  const [error, setError] = useState(false);
-  const refError = useRef(null);
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    searchTwdForm[name] = value;
-  };
-
   const handleEventChange = (event) => {
     searchTwdForm.event = event.target.value;
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event;
+    searchTwdForm[name] = value;
   };
 
   const handleChangeWithOpt = (event, id) => {
@@ -97,13 +96,17 @@ const TwdSearchForm = () => {
   };
 
   const handleError = (error) => {
-    setSpinnerState(false);
-    setTwdResults(undefined);
-    navigate('/twd');
+    setTwdResults(null);
+
     if (error.message == 400) {
       setError('NO DECKS FOUND');
     } else {
       setError('CONNECTION PROBLEM');
+    }
+
+    if (isMobile) {
+      setSpinnerState(false);
+      navigate('/twd');
     }
   };
 
@@ -356,6 +359,17 @@ const TwdSearchForm = () => {
             onChange={handleMultiChange}
           />
         </div>
+      </Row>
+      <Row className="py-1 ps-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <div className="bold blue px-0">Sect:</div>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <TwdSearchFormSect
+            value={twdFormState.sect}
+            onChange={handleChange}
+          />
+        </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={5} className="d-flex px-0">

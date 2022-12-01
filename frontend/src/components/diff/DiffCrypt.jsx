@@ -12,7 +12,7 @@ import {
 import { useApp, deckStore } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
-const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
+const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const {
     cryptDeckSort,
     changeCryptDeckSort,
@@ -70,15 +70,14 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
   };
 
   return (
-    <div className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}>
+    <>
       <DeckCryptHeader
         cryptTotal={cryptTotal}
         cryptGroups={cryptGroups}
         toggleShowInfo={toggleShowInfo}
         toggleShowAdd={toggleShowAdd}
         hasBanned={hasBanned}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
+        isEditable={isEditable}
         sortMethods={sortMethods}
         sortMethod={cryptDeckSort}
         setSortMethod={changeCryptDeckSort}
@@ -135,8 +134,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
+        isEditable={isEditable}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
       />
@@ -152,14 +150,13 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
             cardsFrom={cardsFrom}
             cardsTo={cardsTo}
             disciplinesSet={disciplinesSet}
-            isAuthor={isAuthor}
-            isPublic={isPublic}
+            isEditable={isEditable}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
           />
         </div>
       )}
-      {isMobile && !isPublic && isAuthor && showFloatingButtons && (
+      {isMobile && isEditable && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-top float-add-on align-items-center justify-content-center"
@@ -179,7 +176,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isPublic, isAuthor }) => {
           handleClose={handleCloseModal}
         />
       )}
-    </div>
+    </>
   );
 };
 

@@ -40,10 +40,12 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
       if (masterId) {
         branches.splice(branches.indexOf(deckid), 1);
         deckStore.decks[masterId].branches = branches;
+        deckStore.decks[masterId].isBranches = branches.length > 0;
         navigate(`/decks/${masterId}`);
       } else {
         const newMasterId = branches.pop();
         deckStore.decks[newMasterId].branches = branches;
+        deckStore.decks[newMasterId].isBranches = branches.length > 0;
         deckStore.decks[newMasterId].master = null;
         branches.map((b) => {
           deckStore.decks[b].master = newMasterId;

@@ -14,6 +14,7 @@
     --bg-nav: #404060
     --bg-primary: #ffffff
     --bg-secondary: #e0e5ff
+    --bg-success: #40d080
     --bg-third: #f0f5ff
     --bg-warning: #ffb050
     --border-nest-modal: #707085
@@ -40,6 +41,7 @@
     --bg-nav: #303040
     --bg-primary: #252530
     --bg-secondary: #353545
+    --bg-success: #007035
     --bg-third: #303040
     --bg-warning: #c06500
     --border-nest-modal: #404050
@@ -80,6 +82,17 @@ a.nav-link
   &.active
     background: var(--border-nest-modal)
 
+.nav-tabs
+  .nav-link
+    background: var(--bg-third)
+    border: 1px solid var(--border-third)
+    color: var(--fg-third)
+    &.active
+      background: var(--border-secondary)
+      border: 1px solid var(--border-primary)
+      border-bottom: 0
+      color: var(--fg-primary)
+
 .px-8px
   padding-left: 8px !important
   padding-right: 8px !important
@@ -107,6 +120,9 @@ h5, h6
 div.h6
   margin: 0
 
+.pointer
+  cursor: pointer
+
 .small
   font-size: small
 
@@ -133,9 +149,6 @@ div.h6
 
 .vh-80
   height: 80vh
-
-code
-  color: var(--fg-primary)
 
 .border-dashed
     border: 2px dashed var(--border-primary)
@@ -192,7 +205,7 @@ button.total-info
 .inventory-info
   background: var(--bg-secondary)
 
-.blue
+.text-blue
   color: var(--fg-secondary)
 
 .gray
@@ -316,28 +329,8 @@ button.btn-danger:focus
 button.btn-danger:hover
   background: var(--bg-error-secondary)
 
-li.nav-item
-  background: var(--bg-primary)
-  padding: 0
-
-button.nav-link:hover
-  background-color: var(--bg-third)
-  border: 1px solid var(--border-secondary) !important
-
 ul.nav
   border-bottom: 1px solid var(--border-secondary)
-
-button.nav-link
-  color: var(--fg-secondary)
-  font-weight: bold
-  &.active
-    background: var(--bg-button-secondary) !important
-    border: 1px solid var(--border-secondary) !important
-    border-bottom: none !important
-    color: var(--fg-secondary) !important
-
-button.nav-link:hover
-  color: var(--fg-primary)
 
 .pt-05
   padding-top: 2px
@@ -1001,6 +994,12 @@ li
 .result-even
   background-color: var(--bg-third)
 
+.swiped-left
+  background-color: var(--bg-success)
+
+.swiped-right
+  background-color: var(--bg-error-secondary)
+
 a.quantity
   position: relative
 a.quantity:before
@@ -1135,6 +1134,9 @@ div.sticky-modal-library
 .w-55
   width: 55%
 
+.w-40px
+  width: 40px
+
 .full-width
   height: auto
   width: 100%
@@ -1144,10 +1146,6 @@ div.toggle-search
 
 div.col-hide
   display: none
-
-.margin-full
-  display: inline-block
-  width: 35px
 
 div.float-right-top,
 div.float-right-middle,
@@ -1389,7 +1387,7 @@ button.accordion-button:not(.collapsed)
 @media (min-width: 1600px)
   .deck-container
     max-width: 1500px
-    min: 1500px
+    min-width: 1500px
   .search-container,
   .navbar-nav
     max-width: 1550px

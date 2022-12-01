@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import { OverlayTrigger } from 'react-bootstrap';
@@ -36,16 +36,40 @@ const ResultCryptTableRow = ({
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const inDeck = deck?.crypt[card.Id]?.q || 0;
+  const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
+  const [isSwiped, setIsSwiped] = useState();
+  const SWIPE_THRESHOLD = 50;
+  const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
-    onSwipedRight: () => {
-      if (addMode && inDeck > 0) {
-        deckCardChange(deck.deckid, card.Id, inDeck - 1);
+    onSwipedRight: (e) => {
+      if (
+        e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
+        e.absX > SWIPE_THRESHOLD &&
+        isEditable &&
+        addMode &&
+        inDeck > 0
+      ) {
+        deckCardChange(deck.deckid, card, inDeck - 1);
       }
     },
-    onSwipedLeft: () => {
-      if (addMode) {
-        deckCardChange(deck.deckid, card.Id, inDeck + 1);
+    onSwipedLeft: (e) => {
+      if (e.absX > SWIPE_THRESHOLD && isEditable && addMode) {
+        deckCardChange(deck.deckid, card, inDeck + 1);
+      }
+    },
+    onSwiped: () => {
+      setIsSwiped(false);
+    },
+    onSwiping: (e) => {
+      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && addMode) {
+        if (e.deltaX < -SWIPE_THRESHOLD) {
+          setIsSwiped('left');
+        } else if (e.deltaX > SWIPE_THRESHOLD) {
+          setIsSwiped('right');
+        } else {
+          setIsSwiped(false);
+        }
       }
     },
   });
@@ -62,8 +86,14 @@ const ResultCryptTableRow = ({
   }
 
   return (
-    <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-      {(inRecommendation ? deck?.isAuthor : deck?.isAuthor && addMode) && (
+    <tr
+      {...swipeHandlers}
+      className={`result-${idx % 2 ? 'even' : 'odd'} ${
+        isSwiped ? `swiped-${isSwiped}` : ''
+      }
+`}
+    >
+      {(inRecommendation ? isEditable : isEditable && addMode) && (
         <td className="quantity-add pe-1">
           <ButtonAddCard
             cardid={card.Id}

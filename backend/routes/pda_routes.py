@@ -24,18 +24,20 @@ def unauthorized_handler():
 
 def get_missing_fields(source):
     deck = {
-        "crypt_total": 0,
-        "library_total": 0,
         "capacity": None,
-        "disciplines": [],
         "cardtypes_ratio": {},
         "clan": None,
+        "crypt_total": 0,
+        "disciplines": [],
+        "library_total": 0,
+        "sect": None,
         "traits": [],
     }
 
     crypt = {}
     library = {}
     clans = {}
+    sects = {}
     disciplines = set()
     crypt_disciplines = set()
     total_capacity = 0
@@ -64,24 +66,33 @@ def get_missing_fields(source):
             else:
                 clans[clan] = c["q"]
 
+        if (sect := c["Sect"]) in sects:
+            sects[sect] += c["q"]
+        else:
+            sects[sect] = c["q"]
+
         if "star" not in deck["traits"] and id != 200076:
             adv = c["Adv"]
             if adv and adv[1] in crypt:
-                if (c["q"] + crypt[adv[1]]["q"]) / total_crypt_ex_ac > 0.38:
+                if (c["q"] + crypt[adv[1]]["q"]) / total_crypt_ex_ac > 0.33:
                     deck["traits"].append("star")
             else:
-                if c["q"] / total_crypt_ex_ac > 0.38:
+                if c["q"] / total_crypt_ex_ac > 0.33:
                     deck["traits"].append("star")
 
         for d in c["Disciplines"].keys():
             crypt_disciplines.add(d)
 
     for clan, q in clans.items():
-        if q / deck["crypt_total"] > 0.5:
+        if q / total_crypt_ex_ac > 0.65:
             deck["clan"] = clan
 
     if len(clans) <= 1 and "monoclan" not in deck["traits"]:
         deck["traits"].append("monoclan")
+
+    for sect, q in sects.items():
+        if q / deck["crypt_total"] > 0.65:
+            deck["sect"] = sect
 
     deck["capacity"] = total_capacity / total_crypt_ex_ac
 
@@ -155,6 +166,7 @@ def search_pda_route():
             "capacity": d.capacity,
             "cardtypes_ratio": d.cardtypes_ratio,
             "clan": d.clan,
+            "sect": d.sect,
             "crypt": {},
             "crypt_total": d.crypt_total,
             "creation_date": d.creation_date,
@@ -183,6 +195,7 @@ def search_pda_route():
         "crypt",
         "library",
         "clan",
+        "sect",
         "traits",
         "capacity",
         "disciplines",
@@ -241,6 +254,7 @@ def new_public_deck_route(parent_id):
         capacity=m["capacity"],
         cardtypes_ratio=m["cardtypes_ratio"],
         clan=m["clan"],
+        sect=m["sect"],
         disciplines=m["disciplines"],
         traits=m["traits"],
     )
@@ -280,6 +294,7 @@ def update_public_deck(child_id):
     child.capacity = m["capacity"]
     child.cardtypes_ratio = m["cardtypes_ratio"]
     child.clan = m["clan"]
+    child.sect = m["sect"]
     child.disciplines = m["disciplines"]
     child.traits = m["traits"]
 

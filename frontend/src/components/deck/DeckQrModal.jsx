@@ -1,27 +1,17 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import QRCode from 'react-qr-code';
 import X from 'assets/images/icons/x.svg';
 import Snow from 'assets/images/icons/snow.svg';
 import { useApp } from 'context';
 
 const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
+  const QRCode = React.lazy(() => import('react-qr-code'));
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
 
   const handleClose = () => {
     setQrUrl(false);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
-  };
-
-  const DeckQR = () => {
-    return (
-      <div style={{ background: 'white', padding: '4px' }}>
-        <a href={qrUrl}>
-          <QRCode size={320} level="L" title={qrUrl} value={qrUrl} />
-        </a>
-      </div>
-    );
   };
 
   return (
@@ -40,7 +30,13 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
         </div>
       </Modal.Header>
       <Modal.Body className="d-flex justify-content-center p-2 p-md-4">
-        <DeckQR />
+        <div style={{ background: 'white', padding: '4px' }}>
+          <a href={qrUrl}>
+            <Suspense fallback={<div />}>
+              <QRCode size={320} level="L" title={qrUrl} value={qrUrl} />
+            </Suspense>
+          </a>
+        </div>
       </Modal.Body>
     </Modal>
   );

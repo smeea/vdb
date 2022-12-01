@@ -13,7 +13,8 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'capacity';
-  const capacity = [
+
+  const options = [
     'any',
     '1',
     '2',
@@ -26,41 +27,31 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
     '9',
     '10',
     '11',
-  ];
-  const options = [];
+  ].map((i) => ({
+    value: i,
+    name: name,
+    label: (
+      <>
+        <span className="me-3 me-sm-1 me-lg-3" />
+        {i.toUpperCase()}
+      </>
+    ),
+  }));
 
-  capacity.map((i) => {
-    options.push({
-      value: i,
-      name: name,
-      label: (
-        <>
-          <span className="me-3 me-sm-1 me-lg-3" />
-          {i.toUpperCase()}
-        </>
-      ),
-    });
-  });
-
-  const moreless = [
+  const morelessOptions = [
     ['le', '<='],
     ['eq', '=='],
     ['ge', '>='],
-  ];
-  const morelessOptions = [];
-
-  moreless.map((i) => {
-    morelessOptions.push({
-      value: i[0],
-      name: name,
-      label: (
-        <>
-          <span className="me-3 me-sm-0 me-lg-3" />
-          {i[1]}
-        </>
-      ),
-    });
-  });
+  ].map((i) => ({
+    value: i[0],
+    name: name,
+    label: (
+      <>
+        <span className="me-3 me-sm-0 me-lg-3" />
+        {i[1]}
+      </>
+    ),
+  }));
 
   return (
     <>

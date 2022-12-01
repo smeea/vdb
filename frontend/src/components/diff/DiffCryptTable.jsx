@@ -36,8 +36,7 @@ const DiffCryptTable = ({
   cards,
   cardsFrom,
   cardsTo,
-  isPublic,
-  isAuthor,
+  isEditable,
   placement,
   showInfo,
   cryptTotal,
@@ -86,7 +85,7 @@ const DiffCryptTable = ({
     return (
       <React.Fragment key={card.c.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {isAuthor && !isPublic ? (
+          {isEditable ? (
             <>
               {!inReview && inventoryMode && decks ? (
                 <OverlayTrigger

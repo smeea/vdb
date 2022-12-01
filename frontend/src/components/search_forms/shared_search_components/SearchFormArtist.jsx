@@ -24,10 +24,10 @@ const SearchFormArtist = ({ target, value, onChange }) => {
     name: 'artist',
     value: 'any',
     label: (
-      <>
-        <span className="margin-full" />
+      <div className="d-flex align-items-center">
+        <div className="d-flex w-40px" />
         ANY
-      </>
+      </div>
     ),
   });
 

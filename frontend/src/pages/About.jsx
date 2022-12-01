@@ -10,6 +10,16 @@ import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
 import { Banner } from 'components';
 import changes from '../../../CHANGES.json';
 
+const Title = ({ children }) => {
+  return (
+    <div className="font-bold text-xl text-blue underline py-1">{children}</div>
+  );
+};
+
+const LiItem = ({ children }) => {
+  return <li className="pb-1">{children}</li>;
+};
+
 const About = () => {
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
 
@@ -19,123 +29,130 @@ const About = () => {
         <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
-            <h5 className="underline">WHAT IS IT</h5>
-            <p>
-              VDB is online card search, TWD (tournament winning decks) browser,
-              deck building and inventory (collection) management tool for
-              Vampire the Eternal Struggle (VTES)
-            </p>
-
-            <div className="pt-3">
-              <h5 className="underline">QUICKSTART</h5>
-              <ul>
-                <li className="pb-1">
-                  <Link to="/crypt" className="py-1">
-                    Search crypt cards
-                  </Link>
-                </li>
-                <li className="pb-1">
-                  <Link to="/library" className="py-1">
-                    Search library cards
-                  </Link>
-                </li>
-                <li className="pb-1">
-                  <Link to="/decks" className="py-1">
-                    Create your decks
-                  </Link>
-                </li>
-                <li className="pb-1">
-                  <Link to="/inventory" className="py-1">
-                    Manage your inventory
-                  </Link>
-                </li>
-                <li className="pb-1">
-                  <Link to="/twd" className="py-1">
-                    Search Tournament-Winning Decks
-                  </Link>
-                </li>
-                <li className="pb-1">
-                  <Link to="/pda" className="py-1">
-                    Search Public Deck Archive
-                  </Link>
-                </li>
-                <li className="pb-1">
-                  <Link to="/cards" className="py-1">
-                    Quick search card by name
-                  </Link>
-                </li>
-                <li className="pb-1">
-                  <Link to="/documentation" className="py-1">
-                    Documentation / Help
-                  </Link>
-                </li>
-              </ul>
+            <div className="pb-4">
+              <Title>WHAT IS IT</Title>
+              <div className="py-1">
+                VDB is online card search, TWD (tournament winning decks)
+                browser, deck building and inventory (collection) management
+                tool for Vampire the Eternal Struggle (VTES)
+              </div>
             </div>
 
-            <div className="pt-3">
-              <h5 className="underline">TROUBLESHOOTING</h5>
-              <p>
+            <div className="pb-4">
+              <Title>QUICKSTART</Title>
+              <div className="py-1">
+                <ul>
+                  <LiItem>
+                    <Link to="/crypt" className="py-1">
+                      Search crypt cards
+                    </Link>
+                  </LiItem>
+                  <LiItem>
+                    <Link to="/library" className="py-1">
+                      Search library cards
+                    </Link>
+                  </LiItem>
+                  <LiItem>
+                    <Link to="/decks" className="py-1">
+                      Create your decks
+                    </Link>
+                  </LiItem>
+                  <LiItem>
+                    <Link to="/inventory" className="py-1">
+                      Manage your inventory
+                    </Link>
+                  </LiItem>
+                  <LiItem>
+                    <Link to="/twd" className="py-1">
+                      Search Tournament-Winning Decks
+                    </Link>
+                  </LiItem>
+                  <LiItem>
+                    <Link to="/pda" className="py-1">
+                      Search Public Deck Archive
+                    </Link>
+                  </LiItem>
+                  <LiItem>
+                    <Link to="/cards" className="py-1">
+                      Quick search card by name
+                    </Link>
+                  </LiItem>
+                  <LiItem>
+                    <Link to="/documentation" className="py-1">
+                      Documentation / Help
+                    </Link>
+                  </LiItem>
+                </ul>
+              </div>
+            </div>
+
+            <div className="pb-4">
+              <Title>TROUBLESHOOTING</Title>
+              <div className="py-1">
                 If you experience problems like white screen or strange
                 behavior, reload page (Ctrl+F5 on Windows/Linux or
                 Command+Shift+R on MacOS)
-              </p>
-              <p>If this does not help, please contact me (see below)</p>
+              </div>
+              <div className="py-1">
+                If this does not help, please contact me (see below)
+              </div>
             </div>
 
-            <div className="py-3">
-              <h5 className="underline">VERSION</h5>
-              <p>
+            <div className="pb-4">
+              <Title>VERSION</Title>
+              <div className="py-1">
                 Card text based on{' '}
                 <a href="https://www.vekn.net/card-lists">VEKN official list</a>
-                : <span className="nowrap">2022-05-17</span>
-              </p>
-
-              <h6>Last update [{changes[0].version}]:</h6>
+                : <span className="nowrap">2022-11-14</span>
+              </div>
+              <div className="font-bold text-blue py-1">
+                Last update [{changes[0].version}]:
+              </div>
               <ul>
                 {changes[0].changes.map((change, idx) => (
-                  <li key={idx} className="pb-1">
-                    {change}
-                  </li>
+                  <LiItem key={idx}>{change}</LiItem>
                 ))}
               </ul>
-              <Link to="/changelog">&gt;&gt; Full changes history</Link>
+              <div className="pt-3">
+                <Link to="/changelog">&gt;&gt; Full changes history</Link>
+              </div>
             </div>
 
-            <div className="pt-3">
-              <h5 className="underline">RELATED PROJECTS</h5>
-              <p>
+            <div className="pb-4">
+              <Title>RELATED PROJECTS</Title>
+              <div className="py-2">
                 <a href="https://amaranth.vtes.co.nz/">
                   <b>Amaranth</b>
                 </a>
                 <br />
                 Online card search and deck-building tool
-              </p>
+              </div>
 
-              <p>
+              <div className="py-2">
                 <a href="https://vtesdecks.com/">
                   <b>VTES Decks</b>
                 </a>
                 <br />
                 Online deck builder and TWD browser
-              </p>
+              </div>
 
-              <p>
+              <div className="py-2">
                 <a href="https://codex-of-the-damned.org/">
                   <b>Codex of the Damned</b>
                 </a>
                 <br />
                 Strategy portal
-              </p>
+              </div>
 
-              <p>
+              <div className="py-2">
                 <a href="https://vtes-hook.com/">
                   <b>VTES Hook</b>
                 </a>
                 <br />
                 Events portal
-              </p>
+              </div>
 
-              <p>
+              <div className="py-2">
                 <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
                   <b>There are more!</b>
                 </a>
@@ -146,12 +163,12 @@ const About = () => {
                 </a>{' '}
                 for more tools
                 <br />
-              </p>
+              </div>
             </div>
 
-            <div className="pt-3">
-              <h5 className="underline">FOR DEVELOPERS</h5>
-              <p>
+            <div className="pb-4">
+              <Title>FOR DEVELOPERS</Title>
+              <div className="py-1">
                 Development happens in{' '}
                 <a href="https://github.com/smeea/vdb">
                   this Github repository
@@ -166,71 +183,71 @@ const About = () => {
                 <a href="https://www.paradoxinteractive.com/">
                   Paradox Interactive AB
                 </a>
-              </p>
+              </div>
 
-              <p>
+              <div className="py-1">
                 There is amazing KRCG project with useful{' '}
                 <a href="https://static.krcg.org/">Static files</a> and{' '}
                 <a href="https://api.krcg.org/">Online API</a> to help in
                 software development for VTES
-              </p>
+              </div>
             </div>
 
-            <div className="pt-3">
-              <h5 className="underline">ACKNOWLEDGMENTS</h5>
+            <div className="pb-4">
+              <Title>ACKNOWLEDGMENTS</Title>
               <ul>
-                <li className="pb-1">
+                <LiItem>
                   Card images by Fernando &quot;Sydnelson&quot; Cesar
-                </li>
-                <li className="pb-1">
+                </LiItem>
+                <LiItem>
                   Rulings archive by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
                   <a href="https://static.krcg.org/">KRCG</a>
-                </li>
-                <li className="pb-1">
-                  TWD archive by Vincent &quot;Ankha&quot; Ripoll
-                </li>
-                <li className="pb-1">
+                </LiItem>
+                <LiItem>TWD archive by Vincent &quot;Ankha&quot; Ripoll</LiItem>
+                <LiItem>
                   Cards scans from different sets by{' '}
                   <a href="http://vtes.pl/">VTES.PL</a> and{' '}
                   <a href="https://ccggamez.com">CCGAMEZ.COM</a>
-                </li>
-                <li className="pb-1">
+                </LiItem>
+                <LiItem>
                   Andrey &quot;Vaughnad&quot; Davino for multiple development
                   contributions
-                </li>
+                </LiItem>
               </ul>
             </div>
 
-            <div className="pt-3">
-              <h5 className="underline">DONATIONS</h5>
+            <div className="pb-4">
+              <Title>DONATIONS</Title>
               <ul className="no-bullets">
-                <li className="pb-1">
+                <LiItem>
                   Patreon:{' '}
                   <a href="https://www.patreon.com/smeea">
                     www.patreon.com/smeea
                   </a>
-                </li>
-                <li className="pb-1">
+                </LiItem>
+                <LiItem>
                   Bitcoin (BTC):{' '}
                   <a
                     href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
                   >
-                    <code>{BTC_WALLET}</code>
+                    <div className="d-inline font-mono text-sm">
+                      {BTC_WALLET}
+                    </div>
                   </a>
-                  <span
+                  <div
                     className="d-inline ps-2 with-hover"
                     onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
                   >
-                    <ClipboardFill viewBox="0 0 18 18" />
-                  </span>
-                </li>
+                    <ClipboardFill className="inline" viewBox="0 0 18 18" />
+                  </div>
+                </LiItem>
               </ul>
             </div>
 
-            <div className="pt-3">
-              <h5 className="underline">CONTACTS</h5>
+            <div className="pb-4">
+              <Title>CONTACTS</Title>
               <ul className="no-bullets">
-                <li className="pb-1">
+                <LiItem>
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <Globe2 />
@@ -239,8 +256,8 @@ const About = () => {
                       VEKN forum
                     </a>
                   </div>
-                </li>
-                <li className="pb-1">
+                </LiItem>
+                <LiItem>
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <Github />
@@ -249,24 +266,24 @@ const About = () => {
                       github.com/smeea/vdb
                     </a>
                   </div>
-                </li>
-                <li className="pb-1">
+                </LiItem>
+                <LiItem>
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <EnvelopeFill />
                     </div>
                     <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
                   </div>
-                </li>
-                <li className="pb-1">
+                </LiItem>
+                <LiItem>
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <Telegram />
                     </div>
                     <a href="https://t.me/smeea">@smeea</a>
                   </div>
-                </li>
-                <li className="pb-1">
+                </LiItem>
+                <LiItem>
                   <div className="d-flex align-items-center">
                     <div className="icon pe-2">
                       <Discord />
@@ -275,7 +292,7 @@ const About = () => {
                       Smeea#3259
                     </a>
                   </div>
-                </li>
+                </LiItem>
               </ul>
             </div>
           </div>

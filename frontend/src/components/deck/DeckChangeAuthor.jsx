@@ -6,9 +6,10 @@ import { useApp, deckUpdate } from 'context';
 
 const DeckChangeAuthor = ({ deck }) => {
   const { isMobile } = useApp();
-  const { deckid, author, isAuthor, isPublic } = deck;
+  const { deckid, author, isAuthor, isPublic, isFrozen } = deck;
   const [state, setState] = useState(author);
   const [buttonState, setButtonState] = useState(false);
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
     if (state !== author) setState(author);
@@ -49,7 +50,7 @@ const DeckChangeAuthor = ({ deck }) => {
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}
-          readOnly={!isAuthor || isPublic}
+          readOnly={!isEditable}
         />
         {isMobile && isAuthor && (
           <Button variant={buttonState ? 'success' : 'primary'} type="submit">

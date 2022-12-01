@@ -7,44 +7,31 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'pool';
-  const pool = ['ANY', '0', '1', '2', '3', '4', '5', '6'];
-  const options = [];
+  const options = ['ANY', '0', '1', '2', '3', '4', '5', '6'].map((i) => ({
+    value: i === 'ANY' ? i.toLowerCase() : i,
+    name: name,
+    label: (
+      <>
+        <span className="me-3 me-sm-1 me-lg-3" />
+        {i}
+      </>
+    ),
+  }));
 
-  pool.map((i) => {
-    let v;
-    i == 'ANY' ? (v = i.toLowerCase()) : (v = i);
-
-    options.push({
-      value: v,
-      name: name,
-      label: (
-        <>
-          <span className="me-3 me-sm-1 me-lg-3" />
-          {i}
-        </>
-      ),
-    });
-  });
-
-  const moreless = [
+  const morelessOptions = [
     ['le', '<='],
     ['eq', '=='],
     ['ge', '>='],
-  ];
-  const morelessOptions = [];
-
-  moreless.map((i) => {
-    morelessOptions.push({
-      value: i[0],
-      name: name,
-      label: (
-        <>
-          <span className="me-3 me-sm-0 me-lg-3" />
-          {i[1]}
-        </>
-      ),
-    });
-  });
+  ].map((i) => ({
+    value: i[0],
+    name: name,
+    label: (
+      <>
+        <span className="me-3 me-sm-0 me-lg-3" />
+        {i[1]}
+      </>
+    ),
+  }));
 
   return (
     <>

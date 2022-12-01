@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { useSnapshot } from 'valtio';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -51,14 +51,38 @@ const DeckCryptTableRow = ({
   const usedCrypt = useSnapshot(usedStore).crypt;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
+  const isEditable = isAuthor && !isPublic && !isFrozen;
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
+  const [isSwiped, setIsSwiped] = useState();
+  const SWIPE_THRESHOLD = 50;
+  const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
-    onSwipedRight: () => {
-      deckCardChange(deckid, card.c, card.q - 1);
+    onSwipedRight: (e) => {
+      if (
+        e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
+        e.absX > SWIPE_THRESHOLD &&
+        isEditable
+      )
+        deckCardChange(deckid, card.c, card.q - 1);
     },
-    onSwipedLeft: () => {
-      deckCardChange(deckid, card.c, card.q + 1);
+    onSwipedLeft: (e) => {
+      if (e.absX > SWIPE_THRESHOLD && isEditable)
+        deckCardChange(deckid, card.c, card.q + 1);
+    },
+    onSwiped: () => {
+      setIsSwiped(false);
+    },
+    onSwiping: (e) => {
+      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE) {
+        if (e.deltaX < -SWIPE_THRESHOLD) {
+          setIsSwiped('left');
+        } else if (e.deltaX > SWIPE_THRESHOLD) {
+          setIsSwiped('right');
+        } else {
+          setIsSwiped(false);
+        }
+      }
     },
   });
 
@@ -74,8 +98,14 @@ const DeckCryptTableRow = ({
   };
 
   return (
-    <tr {...swipeHandlers} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-      {isAuthor && !isPublic && !isFrozen ? (
+    <tr
+      {...swipeHandlers}
+      className={`result-${idx % 2 ? 'even' : 'odd'} ${
+        isSwiped ? `swiped-${isSwiped}` : ''
+      }
+`}
+    >
+      {isEditable ? (
         <>
           {inventoryMode && decks ? (
             <>
@@ -113,7 +143,7 @@ const DeckCryptTableRow = ({
                     inInventory={inInventory}
                     softUsedMax={softUsedMax}
                     hardUsedTotal={hardUsedTotal}
-                    inventoryType={decks[deckid].inventoryType}
+                    inventoryType={decks[deckid]?.inventoryType}
                   />
                 </td>
               </ConditionalOverlayTrigger>

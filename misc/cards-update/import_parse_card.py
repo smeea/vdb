@@ -28,7 +28,7 @@ def import_parse_card(i, cardbase):
 
         cardname = get_card_name(cardname)
 
-        if cardname in cardbase:
+        if cardname in cardbase and "adv" in cardbase[cardname]:
             id = cardbase[cardname]["adv"]
 
     elif " (G" in i:

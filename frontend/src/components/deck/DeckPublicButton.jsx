@@ -6,13 +6,16 @@ import {
   Spinner,
   Dropdown,
   DropdownButton,
+  Modal,
+  Button,
 } from 'react-bootstrap';
+import X from 'assets/images/icons/x.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
-import { ModalConfirmation, DeckTogglePublicButton } from 'components';
+import { DeckPublicDiff, DeckTogglePublicButton } from 'components';
 import { useApp, deckStore } from 'context';
 
 const DeckPublicButton = ({ deck, noText }) => {
-  const { setShowMenuButtons, setShowFloatingButtons } = useApp();
+  const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
   const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
@@ -72,8 +75,6 @@ const DeckPublicButton = ({ deck, noText }) => {
     </>
   );
 
-  const changes = null;
-
   return (
     <>
       <DropdownButton
@@ -91,21 +92,48 @@ const DeckPublicButton = ({ deck, noText }) => {
                 <Spinner animation="border" size="sm" />
               )}
             </div>
-            Public Archive
+            Public
           </div>
         }
       >
         {ButtonOptions}
       </DropdownButton>
 
-      <ModalConfirmation
+      <Modal
         show={showSyncConfirmation}
-        handleConfirm={handleSync}
-        handleCancel={() => setShowSyncConfirmation(false)}
-        headerText={`Sync "${deck.name}" with Public Deck Archive?`}
-        mainText={changes}
-        buttonText="Sync"
-      />
+        onHide={() => setShowSyncConfirmation(false)}
+        animation={false}
+        dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
+      >
+        <Modal.Header
+          className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
+        >
+          <h5>Sync &quot;{deck.name}&quot; with Public Deck Archive?</h5>
+          <Button
+            variant="outline-secondary"
+            onClick={() => setShowSyncConfirmation(false)}
+          >
+            <X width="32" height="32" viewBox="0 0 16 16" />
+          </Button>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="bold blue pb-2">
+            Changes from currently published version:
+          </div>
+          <DeckPublicDiff deckTo={deck} deckFrom={decks[deck.publicParent]} />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={handleSync}>
+            Sync
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => setShowSyncConfirmation(false)}
+          >
+            Cancel
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

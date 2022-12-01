@@ -1,12 +1,7 @@
-import requests
 import json
-import unicodedata
-
-
-def letters_to_ascii(text):
-    return "".join(
-        c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn"
-    )
+import re
+from unidecode import unidecode
+from import_parse_card import import_parse_card
 
 
 with open("amaranth_response.json", "r") as amaranth_response_file, open(
@@ -18,34 +13,38 @@ with open("amaranth_response.json", "r") as amaranth_response_file, open(
 ) as amaranth_ids_min:
     crypt = json.load(crypt_file).values()
     library = json.load(library_file).values()
-    amaranth_cards = json.load(amaranth_response_file)["result"]
+    amaranth_cards = json.loads(
+        amaranth_response_file.readline().replace("app.rows            = ", "")
+    )
+    cardbase = {}
+    for card in crypt:
+        adv = True if card["Adv"] and card["Adv"][0] else False
+        name = re.sub(r"\W", "", unidecode(card["Name"])).lower()
+
+        if name not in cardbase:
+            cardbase[name] = {"base": card["Id"], card["Group"]: card["Id"]}
+        elif adv:
+            cardbase[name]["adv"] = card["Id"]
+        else:
+            cardbase[name][card["Group"]] = card["Id"]
+
+    for card in library:
+        name = re.sub(r"\W", "", unidecode(card["Name"])).lower()
+        cardbase[name] = {"base": card["Id"]}
 
     ids = {}
+    for c in amaranth_cards:
+        if c[0] == "id":
+            continue
+        amaranth_id = c[0]
+        name = c[1] if c[1] != "Ana Rita Montaia" else "Ana Rita Montana"
+        entry = f"1x {name}"
+        if c[2] == 10:  # 10 is Vampires
+            entry += f" (G{c[4]})"
 
-    for i in amaranth_cards:
-        name = letters_to_ascii(i["name"].lower())
-        if i["type"] == "Imbued" or i["type"] == "Vampire":
-            for card in crypt:
-                if " (ADV)" in i["name"]:
-                    if name[:-6] in card["ASCII Name"].lower():
-                        if card["Adv"] and card["Adv"][0]:
-                            ids[str(i["id"])] = card["Id"]
-                            break
-
-                else:
-                    if name == card["ASCII Name"].lower():
-                        if not card["Adv"] or (card["Adv"] and not card["Adv"][0]):
-                            ids[str(i["id"])] = card["Id"]
-                            break
-
-        else:
-            for card in library:
-                if (
-                    name == card["ASCII Name"].lower()
-                    or i["name"].lower() == card["Name"].lower()
-                ):
-                    ids[str(i["id"])] = card["Id"]
-                    break
+        vekn_id, _ = import_parse_card(entry, cardbase)
+        if vekn_id:
+            ids[str(amaranth_id)] = vekn_id
 
     json.dump(ids, amaranth_ids_min, separators=(",", ":"))
     json.dump(ids, amaranth_ids, indent=4, separators=(",", ":"))

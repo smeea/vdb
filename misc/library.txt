@@ -255,6 +255,7 @@
 1 Brick Laying
 1 Brigitte Gebauer
 1 Brinksmanship
+1 British Museum, London, The
 1 Brother in Arms
 1 Brother's Blood
 1 Brothers Grimm
@@ -616,6 +617,7 @@
 1 Ecoterrorists
 1 Ecstasy
 1 Ecstatic Agony
+1 ECTU Operative
 1 Edge Explosion
 1 Edge of the World
 1 Edge Vitiation
@@ -649,6 +651,7 @@
 1 Enchanting Gaze
 1 Enforcer
 1 Engling Fury
+1 Enhanced Coagulant
 1 Enhanced Senses
 1 Enkil Cog
 1 Ennoia's Theater
@@ -1221,6 +1224,7 @@
 1 Mesmerize
 1 Mesu Bedshet
 1 Metro Underground
+1 Michael Harris, the Incinerator
 1 Might of the Camarilla
 1 Mighty Grapple
 1 Millicent Smith, Puritan Vampire Hunter
@@ -1242,8 +1246,11 @@
 1 Missing Voice, The
 1 Mistaken Identity
 1 Mistrust
+1 Mithraeum, London, The
+1 Mithraic Cultist
 1 Mob Connections
 1 Mob Rule
+1 Mobile HQ, Operation Antigen
 1 Moise Kasavubu
 1 Mokolé Blood
 1 Mole, The
@@ -1660,6 +1667,7 @@
 1 Rise of the Nephtali
 1 Rising, The
 1 Ritual Challenge
+1 Ritual Goblet
 1 Ritual of the Bitter Rose
 1 Ritual Scalpel
 1 Robert Carter
@@ -1774,6 +1782,7 @@
 1 Shame
 1 Shanty Town Hunting Ground
 1 Shape Mastery
+1 Shard, London, The
 1 Shared Nightmare
 1 Shared Strength
 1 Shatter the Gate
@@ -2107,6 +2116,7 @@
 1 Urban Jungle
 1 Using the Advantage
 1 Vagabond Mystic
+1 Valerie Diaz, Antigen Commander
 1 Vampiric Disease
 1 Vampiric Speed
 1 Vanish from the Mind's Eye
