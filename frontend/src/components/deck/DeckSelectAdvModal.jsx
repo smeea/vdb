@@ -20,7 +20,6 @@ import Download from 'assets/images/icons/download.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import At from 'assets/images/icons/at.svg';
 import X from 'assets/images/icons/x.svg';
-import TrashFill from 'assets/images/icons/trash-fill.svg';
 import {
   DeckCrypt,
   DeckLibrary,
@@ -34,7 +33,6 @@ import {
   DeckTogglePublicButton,
   DeckSelectSortForm,
   DeckSelectAdvModalTagsFilter,
-  ButtonIconed,
   ResultClanImage,
   OverlayTooltip,
 } from 'components';
