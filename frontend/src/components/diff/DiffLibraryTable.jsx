@@ -32,8 +32,7 @@ const DiffLibraryTable = ({
   cards,
   cardsFrom,
   cardsTo,
-  isPublic,
-  isAuthor,
+  isEditable,
   placement,
   showInfo,
   libraryTotal,
@@ -90,7 +89,7 @@ const DiffLibraryTable = ({
     return (
       <React.Fragment key={card.c.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {isAuthor && !isPublic ? (
+          {isEditable ? (
             <>
               {inventoryMode && decks && !inReview ? (
                 <OverlayTrigger

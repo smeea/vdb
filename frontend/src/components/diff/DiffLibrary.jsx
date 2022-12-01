@@ -80,8 +80,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         cards={libraryByType[cardtype]}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
+        isEditable={isEditable}
       />
     </div>
   ));
@@ -99,8 +98,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         cards={librarySideByType[cardtype]}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
+        isEditable={isEditable}
       />
     </div>
   ));
@@ -168,7 +166,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
           {LibrarySideDeck}
         </div>
       )}
-      {isMobile && isAuthor && !isPublic && showFloatingButtons && (
+      {isMobile && isEditable && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"

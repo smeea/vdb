@@ -134,8 +134,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}
-        isAuthor={isAuthor}
-        isPublic={isPublic}
+        isEditable={isEditable}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
       />
@@ -151,14 +150,13 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
             cardsFrom={cardsFrom}
             cardsTo={cardsTo}
             disciplinesSet={disciplinesSet}
-            isAuthor={isAuthor}
-            isPublic={isPublic}
+            isEditable={isEditable}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
           />
         </div>
       )}
-      {isMobile && !isPublic && isAuthor && showFloatingButtons && (
+      {isMobile && isEditable && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-top float-add-on align-items-center justify-content-center"
