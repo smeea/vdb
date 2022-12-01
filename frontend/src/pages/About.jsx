@@ -87,7 +87,7 @@ const About = () => {
               <p>
                 Card text based on{' '}
                 <a href="https://www.vekn.net/card-lists">VEKN official list</a>
-                : <span className="nowrap">2022-05-17</span>
+                : <span className="nowrap">2022-11-14</span>
               </p>
 
               <h6>Last update [{changes[0].version}]:</h6>
