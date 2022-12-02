@@ -21,7 +21,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
         name: name,
         label: (
           <div className="d-flex align-items-center">
-            <div className="d-flex w-40px" />
+            <div className="d-flex w-[40px]" />
             {i}
           </div>
         ),
@@ -35,7 +35,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
         name: 'type',
         label: (
           <div className="d-flex align-items-center">
-            <div className="d-flex justify-content-center w-40px">
+            <div className="d-flex justify-content-center w-[40px]">
               <img src={imgSrc} className="type-discipline-image-forms" />
             </div>
             {i}
@@ -52,7 +52,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
           xs={3}
           className="d-flex justify-content-between align-items-center px-0"
         >
-          <div className="bold blue">Type:</div>
+          <div className="font-bold text-blue">Type:</div>
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">

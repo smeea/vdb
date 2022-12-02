@@ -43,7 +43,7 @@ const UpdateNotification = ({ appVersion }) => {
       centered={true}
     >
       <Modal.Header className="py-2 px-3 py-md-3 px-md-4">
-        <div className="d-flex bold blue large align-items-center">
+        <div className="d-flex font-bold text-blue text-lg align-items-center">
           <div className="d-flex pe-2">
             <Activity />
           </div>
@@ -54,7 +54,7 @@ const UpdateNotification = ({ appVersion }) => {
         </Button>
       </Modal.Header>
       <Modal.Body>
-        <div className="d-flex align-items-center bold blue p-2">
+        <div className="d-flex align-items-center font-bold text-blue p-2">
           <div className="d-flex pe-2">
             <ListUl />
           </div>

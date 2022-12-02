@@ -167,7 +167,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
-                        className="scroll"
+                        className="overflow-y-auto h-[80vh]"
                       >
                         <DeckCrypt inAdvSelect={true} deck={deck} />
                       </Col>
@@ -177,7 +177,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
-                        className="scroll"
+                        className="overflow-y-auto h-[80vh]"
                       >
                         <DeckLibrary deck={deck} />
                       </Col>
@@ -195,7 +195,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
             {isMobile ? (
               <>
                 <div>{setsAndPrecons[set].name}</div>
-                <div className="d-flex justify-content-end small">
+                <div className="d-flex justify-content-end text-xs">
                   {setsAndPrecons[set].date.slice(0, 4)}
                 </div>
               </>

@@ -185,7 +185,7 @@ const AccountLogin = () => {
         </ErrorOverlay>
       </Form>
       {!isMobile ? (
-        <div className="d-flex justify-content-start small ps-2 pt-1">
+        <div className="d-flex justify-content-start text-xs ps-2 pt-1">
           <OverlayTooltip
             delay={{ show: 0, hide: 2000 }}
             placement="bottom"
@@ -199,7 +199,7 @@ const AccountLogin = () => {
       ) : (
         <div
           onClick={() => setShowModalPassword(true)}
-          className="d-flex justify-content-start small ps-2 pt-1"
+          className="d-flex justify-content-start text-xs ps-2 pt-1"
         >
           <a href="#">
             <i>Forgot password?</i>

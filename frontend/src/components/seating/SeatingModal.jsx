@@ -145,7 +145,9 @@ const SeatingModal = ({
                           )}
                         </>
                       </div>
-                      <div className="d-flex bold blue py-2">Custom Decks</div>
+                      <div className="d-flex font-bold text-blue py-2">
+                        Custom Decks
+                      </div>
                     </div>
                     <Col sm={12} md={7} lg={6} xl={5} className="py-2">
                       <SeatingCustomDeckAdd addDeck={addCustomDeck} />
@@ -226,7 +228,7 @@ const SeatingModal = ({
                         )}
                       </>
                     </div>
-                    <div className="bold blue py-2">
+                    <div className="font-bold text-blue py-2">
                       Standard Decks (from{' '}
                       <a
                         className="name"

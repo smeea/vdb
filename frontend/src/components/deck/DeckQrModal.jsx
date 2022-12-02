@@ -20,7 +20,7 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
         <h5>QR for {deck.name}</h5>
         <div className="d-flex align-items-center">
           {(deck.isNonEditable || qrUrl.includes('decks/deck?')) && (
-            <div title="Non-editable" className="d-flex blue px-2">
+            <div title="Non-editable" className="d-flextext-blue px-2">
               <Snow width="26" height="26" viewBox="0 0 16 16" />
             </div>
           )}

@@ -19,12 +19,12 @@ function ResultCryptPopover(props) {
     <>
       {!showImage ? (
         <div className="py-1">
-          <div className="d-flex flex-nowrap justify-content-between align-items-center">
-            <div className="d-flex flex-nowrap align-items-center">
+          <div className="d-flex whitespace-nowrap justify-content-between align-items-center">
+            <div className="d-flex whitespace-nowrap align-items-center">
               <div>
                 <ResultClanImage value={props.card.Clan} />
               </div>
-              <div className="name bold ps-2">
+              <div className="name font-bold ps-2">
                 <ResultCryptName card={props.card} />
               </div>
             </div>
@@ -33,13 +33,13 @@ function ResultCryptPopover(props) {
             </div>
           </div>
           <hr />
-          <div className="popover-card-text">
+          <div className="max-w-[325px]">
             <ResultLayoutTextText text={props.card['Card Text']} />
           </div>
           <hr />
           <div className="d-flex align-items-center justify-content-between">
             <ResultCryptDisciplines value={props.card.Disciplines} />
-            <div className="popover-sets px-1">
+            <div className="text-xs text-right max-w-[300px] px-1">
               <ResultLayoutTextSets
                 setImageSet={props.setImageSet}
                 sets={props.card['Set']}
@@ -52,7 +52,7 @@ function ResultCryptPopover(props) {
               <div className="py-1">
                 <b>Rulings: </b>
               </div>
-              <div className="popover-rulings small pb-1">
+              <div className="max-w-[275px] text-xs pb-1">
                 <ResultLayoutTextRulings rulings={props.card['Rulings']} />
               </div>
             </>

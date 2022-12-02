@@ -29,7 +29,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       name: name,
       label: (
         <div className="d-flex align-items-center">
-          <div className="d-flex w-40px" />
+          <div className="d-flex w-[40px]" />
           ANY
         </div>
       ),
@@ -48,7 +48,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       label: (
         <div className="d-flex justify-content-between align-items-center">
           <div className="pe-2">{i.name}</div>
-          {i.year && <div className="ps-2 small">{`'${i.year}`}</div>}
+          {i.year && <div className="ps-2 text-xs">{`'${i.year}`}</div>}
         </div>
       ),
     });
@@ -84,7 +84,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         name="set"
         value={i.value}
         type="checkbox"
-        className="small pe-1"
+        className="text-xs pe-1"
         id={`set-${i.value}`}
         label={i.label}
         title={i.title}
@@ -125,7 +125,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         name={name}
         value={i.value}
         type="checkbox"
-        className="small"
+        className="text-xs"
         id={`set-${i.value}`}
         label={i.label}
         title={i.title}
@@ -162,7 +162,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
           xs={3}
           className="d-flex justify-content-between align-items-center px-0"
         >
-          <div className="bold blue">Set:</div>
+          <div className="font-bold text-blue">Set:</div>
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               {value.value.length == 1 ? (

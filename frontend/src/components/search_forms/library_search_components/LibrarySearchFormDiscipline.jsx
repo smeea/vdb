@@ -35,7 +35,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
         name: name,
         label: (
           <div className="d-flex align-items-center">
-            <div className="d-flex w-40px" />
+            <div className="d-flex w-[40px]" />
             {i}
           </div>
         ),
@@ -46,7 +46,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
         name: name,
         label: (
           <div className="d-flex align-items-center">
-            <div className="d-flex justify-content-center w-40px">
+            <div className="d-flex justify-content-center w-[40px]">
               <ResultDisciplineImage
                 className="type-discipline-image-forms"
                 value={i}
@@ -63,7 +63,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="px-0">
-          <div className="bold blue">Discipline:</div>
+          <div className="font-bold text-blue">Discipline:</div>
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">

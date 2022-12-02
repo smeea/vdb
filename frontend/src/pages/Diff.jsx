@@ -255,12 +255,14 @@ const Diff = () => {
         <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
           <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0">
             <Col className="px-0 ps-lg-3">
-              <Row className="bold blue mx-0 pb-1">Deck You Edit:</Row>
+              <Row className="font-bold text-blue mx-0 pb-1">
+                Deck You Edit:
+              </Row>
               {selectFrom === 'from-url' ? (
                 <Form
                   name="from"
                   onSubmit={handleUrlSubmit}
-                  className="diff-select my-0"
+                  className="min-w-[270px] my-0"
                 >
                   <InputGroup>
                     <FormControl
@@ -402,12 +404,14 @@ const Diff = () => {
               </Col>
             )}
             <Col className="pt-1 pt-md-0 px-0 pe-lg-3">
-              <Row className="bold blue mx-0 pb-1">Show Changes Against:</Row>
+              <Row className="font-bold text-blue mx-0 pb-1">
+                Show Changes Against:
+              </Row>
               {selectTo === 'to-url' ? (
                 <Form
                   name="to"
                   onSubmit={handleUrlSubmit}
-                  className="diff-select my-0"
+                  className="min-w-[270px] my-0"
                 >
                   <InputGroup>
                     <FormControl
@@ -428,7 +432,7 @@ const Diff = () => {
                     inventoryMode
                       ? 'd-flex'
                       : isMobile
-                      ? 'd-flex justify-content-between diff-select'
+                      ? 'd-flex justify-content-between min-w-[270px]'
                       : 'd-flex'
                   }
                 >

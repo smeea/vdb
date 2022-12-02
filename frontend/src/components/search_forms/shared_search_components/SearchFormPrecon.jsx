@@ -43,7 +43,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       name: name,
       label: (
         <div className="d-flex align-items-center">
-          <div className="d-flex w-40px" />
+          <div className="d-flex w-[40px]" />
           ANY
         </div>
       ),
@@ -62,7 +62,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         name: name,
         label: (
           <div className="d-flex align-items-center">
-            <div className="d-flex w-40px" />
+            <div className="d-flex w-[40px]" />
             {i.name}
           </div>
         ),
@@ -91,7 +91,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
               <div
                 className={
                   clanImages.length == 1
-                    ? 'd-flex justify-content-center align-items-center w-40px'
+                    ? 'd-flex justify-content-center align-items-center w-[40px]'
                     : 'd-inline pe-2'
                 }
               >
@@ -99,7 +99,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
               </div>
               {i.name}
             </div>
-            <div className="small">{`${i.set} '${i.year}`}</div>
+            <div className="text-xs">{`${i.set} '${i.year}`}</div>
           </div>
         ),
       });
@@ -131,7 +131,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         name="precon"
         value={i.value}
         type="checkbox"
-        className="small"
+        className="text-xs"
         id={`precon-${i.value}`}
         label={i.label}
         title={i.title}
@@ -160,7 +160,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="px-0">
-          <div className="bold blue">Precon:</div>
+          <div className="font-bold text-blue">Precon:</div>
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               {value.value.length == 1 ? (

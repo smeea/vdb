@@ -1,9 +1,8 @@
 import React from 'react';
 import { Overlay } from 'react-bootstrap';
 
-const ErrorOverlay = ({ children, show, modal, target, placement }) => {
+const ErrorOverlay = ({ children, show, target, placement }) => {
   const text = children;
-  const className = modal ? 'modal-tooltip error-tooltip' : 'error-tooltip';
 
   return (
     <Overlay
@@ -14,7 +13,10 @@ const ErrorOverlay = ({ children, show, modal, target, placement }) => {
     >
       {({ placement, arrowProps, show: _show, popper, ...props }) => {
         return (
-          <div {...props} className={className}>
+          <div
+            {...props}
+            className="error-tooltip text-xs rounded-md px-2 py-1 z-index[1100]"
+          >
             <b>{text}</b>
           </div>
         );

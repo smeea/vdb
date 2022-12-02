@@ -60,7 +60,7 @@ const ModalConfirmation = ({
         </Modal.Header>
         {mainText && (
           <Modal.Body>
-            <div className="bold blue">{mainText}</div>
+            <div className="font-bold text-blue">{mainText}</div>
           </Modal.Body>
         )}
         <Modal.Footer>

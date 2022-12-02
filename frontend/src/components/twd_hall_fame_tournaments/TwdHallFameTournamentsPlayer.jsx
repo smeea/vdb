@@ -44,11 +44,11 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
           <div className="d-flex ps-1 pe-3">
             <TrophyFill height="13" width="13" viewBox="0 0 18 18" />
           </div>
-          <div className="d-flex nowrap align-items-center">
+          <div className="d-flex whitespace-nowrap align-items-center">
             {name}
             <div
               className="d-flex pt-1 px-1"
-              title="National or Continental Championships (in bold below)"
+              title="National or Continental Championships (infont-bold below)"
             >
               {stars}
             </div>

@@ -16,7 +16,7 @@ const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
 
   return (
     <div
-      className={`d-flex align-items-center ${state ? '' : 'gray-font'}`}
+      className={`d-flex align-items-center ${state ? '' : 'text-neutral-500'}`}
       onClick={handleClick}
     >
       <div className="d-flex align-items-center pe-2">

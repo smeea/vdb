@@ -93,7 +93,7 @@ const Navigation = () => {
               >
                 <div
                   className={
-                    inventoryMode ? 'd-flex white-font' : 'd-flex gray-font'
+                    inventoryMode ? 'd-flex text-white' : 'd-flextext-neutral-500-font'
                   }
                 >
                   {inventoryMode ? (
@@ -105,8 +105,8 @@ const Navigation = () => {
                 <div
                   className={
                     inventoryMode
-                      ? 'd-inline ps-2 white-font'
-                      : 'd-inline ps-2 gray-font'
+                      ? 'd-inline ps-2 text-white'
+                      : 'd-inline ps-2text-neutral-500-font'
                   }
                 >
                   Inventory Mode
@@ -117,40 +117,48 @@ const Navigation = () => {
         <div className="d-flex align-items-center">
           {!isMobile && (
             <>
-              <NavLink to="/account" className={`nav-link px-8px`}>
+              <NavLink
+                to="/account"
+                className={`nav-link ${username ? 'icon-only' : ''}`}
+              >
                 {username ? (
-                  <PersonFill width="18" height="18" viewBox="0 2 16 16" />
+                  <PersonFill
+                    className="inline"
+                    width="18"
+                    height="18"
+                    viewBox="0 2 16 16"
+                  />
                 ) : (
                   'Login'
                 )}
               </NavLink>
-              <NavLink to="/" end className="nav-link px-8px">
-                {isMobile ? <InfoCircleFill /> : 'About'}
+              <NavLink to="/" end className="nav-link">
+                About
               </NavLink>
             </>
           )}
-          <NavLink to={pdaUrl} className="nav-link px-8px">
+          <NavLink to={pdaUrl} className="nav-link">
             PDA
           </NavLink>
-          <NavLink to={twdUrl} className="nav-link px-8px">
+          <NavLink to={twdUrl} className="nav-link">
             TWD
           </NavLink>
-          <NavLink to="/inventory" className="nav-link px-8px">
+          <NavLink to="/inventory" className="nav-link">
             {isMobile ? 'INV' : 'Inventory'}
           </NavLink>
-          <NavLink to={decksUrl} className="nav-link px-8px">
+          <NavLink to={decksUrl} className="nav-link">
             {isMobile ? 'DKS' : 'Decks'}
           </NavLink>
-          <NavLink to={cryptUrl} className="nav-link px-8px">
+          <NavLink to={cryptUrl} className="nav-link">
             {isMobile ? 'CRY' : 'Crypt'}
           </NavLink>
-          <NavLink to={libraryUrl} className="nav-link px-8px">
+          <NavLink to={libraryUrl} className="nav-link">
             {isMobile ? 'LIB' : 'Library'}
           </NavLink>
           <NavLink
             to={cardsUrl}
             aria-label="Quick card search"
-            className="nav-link px-14px"
+            className="nav-link icon-only"
           >
             <LightningFill
               className="inline"

@@ -92,15 +92,15 @@ const DeckDrawCryptTable = ({
               <div>
                 <ResultClanImage value={card.Clan} />
               </div>
-              <div className="d-flex small justify-content-end">
-                <div className="bold blue">
+              <div className="d-flex text-xs justify-content-end">
+                <div className="font-bold text-blue">
                   <ResultCryptTitle value={card.Title} />
                 </div>
                 <ResultCryptGroup value={card.Group} />
               </div>
             </td>
           )}
-          <td className="prob px-1">
+          <td className="text-right w-9 px-1">
             {!ashHeap && (
               <>
                 {isMobile ? (

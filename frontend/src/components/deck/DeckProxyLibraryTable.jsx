@@ -48,7 +48,7 @@ const DeckProxyLibraryTable = ({
       {
         value: '',
         id: card.c.Id,
-        label: <div className="small">Newest (default)</div>,
+        label: <div className="text-xs">Newest (default)</div>,
       },
     ];
 
@@ -58,7 +58,7 @@ const DeckProxyLibraryTable = ({
           value: i.toLowerCase(),
           id: card.c.Id,
           label: (
-            <div className="small">
+            <div className="text-xs">
               {setsAndPrecons[i].name}
               {" '"}
               {setsAndPrecons[i].date.slice(2, 4)}

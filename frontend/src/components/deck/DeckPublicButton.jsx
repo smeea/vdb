@@ -117,7 +117,7 @@ const DeckPublicButton = ({ deck, noText }) => {
           </Button>
         </Modal.Header>
         <Modal.Body>
-          <div className="bold blue pb-2">
+          <div className="font-bold text-blue pb-2">
             Changes from currently published version:
           </div>
           <DeckPublicDiff deckTo={deck} deckFrom={decks[deck.publicParent]} />

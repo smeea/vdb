@@ -10,7 +10,7 @@ const UsedDescription = ({ deck, t, q }) => {
 
   return (
     <div className="d-flex align-items-center">
-      <div className="opacity-035">
+      <div className="opacity-40">
         {t == 's' ? (
           <Shuffle width="14" height="14" viewBox="0 0 16 16" />
         ) : (
@@ -23,8 +23,8 @@ const UsedDescription = ({ deck, t, q }) => {
       <div
         className={
           isMobile
-            ? 'd-inline trimmed max-w-275px'
-            : 'd-inline trimmed max-w-200px'
+            ? 'd-inline truncate max-w-[175px]'
+            : 'd-inline truncate max-w-[200px]'
         }
       >
         {` - ${deck.name}${isBranches ? ` [${deck.branchName}]` : ''} `}

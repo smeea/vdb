@@ -406,7 +406,7 @@ const Decks = () => {
                       <DeckChangeName deck={deck} />
                     </Col>
                     {deck.isBranches && (
-                      <Col md={2} className={isMobile ? 'px-0 pt-05' : 'px-1'}>
+                      <Col md={2} className={isMobile ? 'px-0 pt-0.5' : 'px-1'}>
                         <DeckChangeBranchName deck={deck} />
                       </Col>
                     )}
@@ -414,7 +414,7 @@ const Decks = () => {
                       md={4}
                       className={
                         isMobile
-                          ? 'px-0 pt-05'
+                          ? 'px-0 pt-0.5'
                           : 'px-0 ps-md-1 pe-md-0 pt-2 pt-md-0'
                       }
                     >
@@ -422,7 +422,7 @@ const Decks = () => {
                     </Col>
                   </Row>
                   <Row className="mx-0">
-                    <Col className={isMobile ? 'px-0 pt-05' : 'px-0'}>
+                    <Col className={isMobile ? 'px-0 pt-0.5' : 'px-0'}>
                       <DeckChangeDescription
                         deck={deck}
                         folded={isMobile ? false : foldedDescription}
@@ -434,7 +434,9 @@ const Decks = () => {
                       (deck.tags?.length > 0 ||
                         deck.isAuthor ||
                         !deck.isPublic) && (
-                        <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
+                        <Col
+                          className={`ps-2 pe-0 ${isMobile ? 'pt-0.5' : ''}`}
+                        >
                           <DeckTags
                             deck={deck}
                             allTagsOptions={allTagsOptions}
@@ -517,13 +519,13 @@ const Decks = () => {
         )}
       </Row>
       {!username && !deckid && !hash && (
-        <Row className="align-items-center justify-content-center pt-4 mx-0 vh-70">
+        <Row className="align-items-center justify-content-center pt-4 mx-0 h-[70vh]">
           <Col xs={12} md={8} lg={7} xl={6} className="px-3">
             <div className="d-flex justify-content-center">
               <h6>Login required to create decks</h6>
             </div>
             <div className="d-flex justify-content-center">
-              <h6 className="small">
+              <h6 className="text-xs">
                 (Browse preconstructed decks without login)
               </h6>
             </div>
@@ -540,10 +542,10 @@ const Decks = () => {
       {username && decks && Object.keys(decks).length === 0 && !deck && (
         <Row className="align-items-center justify-content-center p-3 vh-70">
           <Col xs={12} md={8} lg={7} xl={6}>
-            <div className="text-align-center blue bold py-2">
+            <div className="text-centertext-blue font-bold py-2">
               You do not have any decks in your collection yet
             </div>
-            <div className="text-align-center blue bold py-2">
+            <div className="text-centertext-blue font-bold py-2">
               Start by creating new one, import from Lackey / Amaranth / Text or
               browse official preconstructed decks
             </div>

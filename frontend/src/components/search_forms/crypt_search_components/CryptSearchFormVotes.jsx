@@ -19,7 +19,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
     name: 'votes',
     label: (
       <div className="d-flex align-items-center">
-        <div className="d-flex w-40px" />
+        <div className="d-flex w-[40px]" />
         {i[1]}
       </div>
     ),
@@ -28,7 +28,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
   return (
     <Row className="py-1 ps-1 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
-        <div className="bold blue">Votes:</div>
+        <div className="font-bold text-blue">Votes:</div>
       </Col>
       <Col xs={9} className="d-inline px-0">
         <Select

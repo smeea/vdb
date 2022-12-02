@@ -226,7 +226,9 @@ const TwdSearchForm = ({ error, setError }) => {
         <>
           <Row className="py-1 ps-1 mx-0 align-items-center">
             <Col xs={6} className="d-flex px-0">
-              <label className="bold blue mb-0">In Inventory by Crypt:</label>
+              <label className="font-bold text-blue mb-0">
+                In Inventory by Crypt:
+              </label>
             </Col>
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
@@ -238,7 +240,9 @@ const TwdSearchForm = ({ error, setError }) => {
           </Row>
           <Row className="py-1 ps-1 mx-0 align-items-center">
             <Col xs={6} className="d-flex px-0">
-              <label className="bold blue mb-0">In Inventory by Library:</label>
+              <label className="font-bold text-blue mb-0">
+                In Inventory by Library:
+              </label>
             </Col>
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
@@ -266,7 +270,7 @@ const TwdSearchForm = ({ error, setError }) => {
       )}
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={2} className="d-flex px-0">
-          <div className="bold blue px-0">Year:</div>
+          <div className="font-bold text-blue px-0">Year:</div>
         </Col>
         <Col xs={10} className="d-inline px-0">
           <TwdSearchFormDate
@@ -277,7 +281,7 @@ const TwdSearchForm = ({ error, setError }) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={2} className="d-flex px-0">
-          <div className="bold blue px-0">Players:</div>
+          <div className="font-bold text-blue px-0">Players:</div>
         </Col>
         <Col xs={10} className="d-inline px-0">
           <TwdSearchFormPlayers
@@ -287,7 +291,7 @@ const TwdSearchForm = ({ error, setError }) => {
         </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <div className="bold blue px-0">Crypt Cards:</div>
+        <div className="font-bold text-blue px-0">Crypt Cards:</div>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
@@ -313,7 +317,7 @@ const TwdSearchForm = ({ error, setError }) => {
         </div>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <div className="bold blue px-0">Library Cards:</div>
+        <div className="font-bold text-blue px-0">Library Cards:</div>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
@@ -327,7 +331,7 @@ const TwdSearchForm = ({ error, setError }) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <div className="bold blue px-0">Library Size:</div>
+          <div className="font-bold text-blue px-0">Library Size:</div>
         </Col>
         <Col xs={9} className="d-flex justify-content-end px-0">
           <TwdSearchFormLibraryTotal
@@ -338,7 +342,7 @@ const TwdSearchForm = ({ error, setError }) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <div className="bold blue px-0">Clan:</div>
+          <div className="font-bold text-blue px-0">Clan:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormClan
@@ -362,7 +366,7 @@ const TwdSearchForm = ({ error, setError }) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <div className="bold blue px-0">Sect:</div>
+          <div className="font-bold text-blue px-0">Sect:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormSect
@@ -373,7 +377,7 @@ const TwdSearchForm = ({ error, setError }) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={5} className="d-flex px-0">
-          <div className="bold blue px-0">Capacity Avg:</div>
+          <div className="font-bold text-blue px-0">Capacity Avg:</div>
         </Col>
         <Col xs={7} className="d-flex justify-content-end px-0">
           <TwdSearchFormCapacity
@@ -383,7 +387,7 @@ const TwdSearchForm = ({ error, setError }) => {
         </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <div className="bold blue px-0">Library Disciplines:</div>
+        <div className="font-bold text-blue px-0">Library Disciplines:</div>
       </Row>
       <TwdSearchFormDisciplines
         value={twdFormState.disciplines}
@@ -399,7 +403,7 @@ const TwdSearchForm = ({ error, setError }) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <div className="bold blue px-0">Event:</div>
+          <div className="font-bold text-blue px-0">Event:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormEvent
@@ -410,7 +414,7 @@ const TwdSearchForm = ({ error, setError }) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <div className="bold blue px-0">Location:</div>
+          <div className="font-bold text-blue px-0">Location:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormLocation
@@ -421,7 +425,7 @@ const TwdSearchForm = ({ error, setError }) => {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <div className="bold blue px-0">Winner:</div>
+          <div className="font-bold text-blue px-0">Winner:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormPlayer

@@ -110,7 +110,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
               >
                 {inInventory}
                 <div
-                  className={`small ${
+                  className={`text-xs ${
                     inInventory >= softUsedMax + hardUsedTotal
                       ? 'gray'
                       : 'white'

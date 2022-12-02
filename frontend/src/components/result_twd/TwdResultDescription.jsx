@@ -115,7 +115,7 @@ const TwdResultDescription = ({ deck }) => {
       {isDesktop ? (
         <>
           <div
-            className={`d-flex justify-content-center align-items-center large mx-1 mt-1 mb-2 blue ${
+            className={`d-flex justify-content-center align-items-center text-lg mx-1 mt-1 mb-2text-blue ${
               deck['players'] >= 30
                 ? 'bold border-dashed-thick'
                 : 'border-dashed'
@@ -145,7 +145,7 @@ const TwdResultDescription = ({ deck }) => {
           <Col xs={3} className="px-1">
             <Stack gap={1}>
               <div
-                className={`d-flex justify-content-center align-items-center large mx-1 mb-1 blue ${
+                className={`d-flex justify-content-center align-items-center text-lg mx-1 mb-1text-blue ${
                   deck['players'] >= 30
                     ? 'bold border-dashed-thick'
                     : 'border-dashed'

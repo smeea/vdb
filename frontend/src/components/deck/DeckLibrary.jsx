@@ -169,7 +169,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
       </div>
       {LibraryDeck}
       {librarySide.length > 0 && (
-        <div className="deck-sidelibrary pt-3">
+        <div className="opacity-60 pt-3">
           <div className="info-message px-2 py-1">
             <b>Side Library</b>
           </div>

@@ -182,8 +182,8 @@ const InventoryCryptTableRow = ({
           <div className="d-flex justify-content-center">
             <ResultClanImage value={card.c.Clan} />
           </div>
-          <div className="d-flex small justify-content-end">
-            <div className="bold blue">
+          <div className="d-flex text-xs justify-content-end">
+            <div className="font-bold text-blue">
               <ResultCryptTitle value={card.c.Title} />
             </div>
             <ResultCryptGroup value={card.c.Group} />

@@ -19,7 +19,7 @@ const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
 
   return (
     <Button
-      className={inDeck > 0 ? 'in' : 'add'}
+      className={`w-[24px] h-[33px] p-0 ${inDeck > 0 ? 'in' : ''}`}
       variant="primary"
       onClick={handleButton}
       title={title}

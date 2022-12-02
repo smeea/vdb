@@ -78,7 +78,7 @@ const Cards = () => {
                   <Col className="m-0 p-0">
                     {showImage ? (
                       <CardImage
-                        className="full-width"
+                        className="w-full h-auto"
                         card={card}
                         set={imageSet}
                       />
@@ -103,7 +103,7 @@ const Cards = () => {
                 </div>
               </>
             )}
-            <Row className="above-nav-bottom mx-0 px-1 py-1">
+            <Row className="fixed w-full bottom-[40px] mx-0 px-1 py-1">
               <Col md={8} className="px-0">
                 <QuickSelect
                   selectedCardid={card && card.Id}
@@ -141,7 +141,7 @@ const Cards = () => {
                 <Row className="align-content-center justify-content-center my-2 bordered">
                   <Col md={6} className="ps-0">
                     <CardImage
-                      className="full-width"
+                      className="w-full h-auto"
                       card={card}
                       set={imageSet}
                     />

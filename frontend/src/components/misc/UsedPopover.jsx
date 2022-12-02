@@ -78,7 +78,7 @@ const UsedPopover = React.forwardRef((props, ref) => {
           )}
           <hr />
           <div className="d-flex align-items-center">
-            <div className="opacity-035">
+            <div className="opacity-40">
               <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
             </div>
             <div className="px-1">
@@ -87,7 +87,7 @@ const UsedPopover = React.forwardRef((props, ref) => {
             - Total Used
           </div>
           <div className="d-flex align-items-center">
-            <div className="opacity-035">
+            <div className="opacity-40">
               <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
             </div>
             <div className="px-1">

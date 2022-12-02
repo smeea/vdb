@@ -54,8 +54,8 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
             <div>
               <ResultClanImage value={card.Clan} />
             </div>
-            <div className="d-flex small justify-content-end">
-              <div className="bold blue">
+            <div className="d-flex text-xs justify-content-end">
+              <div className="font-bold text-blue">
                 <ResultCryptTitle value={card.Title} />
               </div>
               <ResultCryptGroup value={card.Group} />
@@ -99,14 +99,14 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
         </>
       )}
       {!isMobile && (
-        <td className="text-align-center px-1" onClick={() => handleClick(idx)}>
+        <td className="text-center px-1" onClick={() => handleClick(idx)}>
           {card.releaseDate.slice(0, 4)}
         </td>
       )}
-      <td className="text-align-center px-1" onClick={() => handleClick(idx)}>
+      <td className="text-center px-1" onClick={() => handleClick(idx)}>
         {card.twdDate.slice(0, 4)}
       </td>
-      <td className="text-align-center px-1">
+      <td className="text-center px-1">
         {Math.round(
           (new Date(card.twdDate) - new Date(card.releaseDate)) /
             (1000 * 60 * 60 * 24) /

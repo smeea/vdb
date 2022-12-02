@@ -14,7 +14,7 @@ const DeckDrawProbabilityModal = (props) => {
       centered={true}
     >
       <Modal.Header className="px-3 pt-2 pb-1">
-        <div className="prob">
+        <div className="text-blue">
           <b>{props.modalDraw.name}</b>
         </div>
         <Button

@@ -38,13 +38,13 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
             value: i,
             label: (
               <div className="d-flex justify-content-between align-items-center">
-                <div className="d-inline trimmed">
+                <div className="d-inline truncate">
                   {decks[i]['name'].slice(
                     0,
                     inventoryMode ? (isWide ? 28 : 23) : 32
                   )}
                 </div>
-                <div className="d-flex align-items-center ps-2 small">
+                <div className="d-flex align-items-center ps-2 text-xs">
                   {inventoryMode && (
                     <div className="pe-2">
                       {decks[i].inventoryType == 's' && <Shuffle />}
@@ -90,8 +90,8 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           value: deckid,
           label: (
             <div className="d-flex justify-content-between align-items-center">
-              <div className="d-inline trimmed">{decks[deckid]['name']}</div>
-              <div className="d-flex align-items-center ps-2 small">
+              <div className="d-inline truncate">{decks[deckid]['name']}</div>
+              <div className="d-flex align-items-center ps-2 text-xs">
                 {inventoryMode && (
                   <div className="pe-2">
                     {decks[deckid].inventoryType == 's' && <Shuffle />}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Stack, Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 
 const DeckLibraryHeader = ({
@@ -27,32 +27,30 @@ const DeckLibraryHeader = ({
         {!inMissing && (libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
         {!inMissing && hasBanned && ' - WITH BANNED'}
       </b>
-      <div className="d-flex">
-        {!inMissing && (
-          <>
-            <div
-              className="d-flex align-items-center pe-3"
-              title="Total Blood Cost"
-            >
-              <img
-                className="cost-blood-image-results pb-1 pe-1"
-                src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
-              />
-              <b>{bloodTotal}</b>
-            </div>
-            <div
-              className="d-flex align-items-center pe-3"
-              title="Total Pool Cost"
-            >
-              <img
-                className="cost-pool-image-results py-1 pe-1"
-                src={process.env.ROOT_URL + 'images/misc/poolX.png'}
-              />
-              <b>{poolTotal}</b>
-            </div>
-          </>
-        )}
+      {!inMissing && (
+        <div className="d-flex">
+          <div
+            className="d-flex align-items-center pe-3"
+            title="Total Blood Cost"
+          >
+            <img
+              className="cost-blood-image-results pb-1 pe-1"
+              src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
+            />
+            <b>{bloodTotal}</b>
+          </div>
+          <div className="d-flex align-items-center" title="Total Pool Cost">
+            <img
+              className="cost-pool-image-results py-1 pe-1"
+              src={process.env.ROOT_URL + 'images/misc/poolX.png'}
+            />
+            <b>{poolTotal}</b>
+          </div>
+        </div>
+      )}
+      <Stack direction="horizontal" gap={1}>
         <Button
+          className="h-full"
           title="Additional Info"
           variant="primary"
           onClick={toggleShowInfo}
@@ -60,13 +58,11 @@ const DeckLibraryHeader = ({
           <InfoCircle />
         </Button>
         {(inReview || isEditable) && !isMobile && (
-          <div className="ps-1">
-            <Button title="Add Card" variant="primary" onClick={toggleShowAdd}>
-              +
-            </Button>
-          </div>
+          <Button title="Add Card" variant="primary" onClick={toggleShowAdd}>
+            +
+          </Button>
         )}
-      </div>
+      </Stack>
     </div>
   );
 };

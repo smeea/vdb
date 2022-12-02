@@ -11,11 +11,11 @@ function DeckLibraryTotalInfo(props) {
 
   const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
     return (
-      <div key={idx} className="d-inline-block nowrap ps-0 pe-3">
+      <div key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
         <div className="d-flex align-items-center">
           <ResultLibraryTypeImage value={t} />
           <div className="d-flex px-1">{props.byTypes[t]}</div>
-          <span className="gray">
+          <span className="text-neutral-500">
             ({Math.round((props.byTypes[t] / total) * 100)}%)
           </span>
         </div>
@@ -33,7 +33,7 @@ function DeckLibraryTotalInfo(props) {
 
   const DisciplinesInfo = byDisciplinesSorted.map((d, idx) => {
     return (
-      <div key={idx} className="d-inline-block nowrap ps-0 pe-3">
+      <div key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
         <div className="d-flex align-items-center">
           <ResultLibraryDisciplines value={d} />
           <div className="d-flex px-1">{props.byDisciplines[d]}</div>
@@ -47,7 +47,7 @@ function DeckLibraryTotalInfo(props) {
 
   const ClansInfo = byClansSorted.map((d, idx) => {
     return (
-      <div key={idx} className="d-inline-block nowrap ps-0 pe-3">
+      <div key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
         <div className="d-flex align-items-center">
           <ResultLibraryClan value={d} />
           <div className="d-flex px-1">{props.byClans[d]}</div>

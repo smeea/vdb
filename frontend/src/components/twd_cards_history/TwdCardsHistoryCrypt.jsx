@@ -95,8 +95,8 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
             <div className="d-flex justify-content-center">
               <ResultClanImage value={card.Clan} />
             </div>
-            <div className="d-flex small justify-content-end">
-              <div className="bold blue">
+            <div className="d-flex text-xs justify-content-end">
+              <div className="font-bold text-blue">
                 <ResultCryptTitle value={card.Title} />
               </div>
               <ResultCryptGroup value={card.Group} />
@@ -122,7 +122,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
 
   return (
     <div className="inventory-container-crypt">
-      <div className="d-flex align-items-center justify-content-between inventory-info">
+      <div className="d-flex align-items-center justify-content-between info-message">
         <div className="w-75 p-1">
           <InventoryFilterForm
             value={clan}
@@ -141,7 +141,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
         />
       </div>
 
-      <div className="d-flex info-message blue bold history-crypt-table">
+      <div className="d-flex info-messagetext-blue font-bold history-crypt-table">
         {!isMobile && <div className="d-flex capacity" />}
         {!isMobile && <div className="d-flex disciplines" />}
         <div className="d-flex name" />

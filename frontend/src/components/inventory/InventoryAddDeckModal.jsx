@@ -184,7 +184,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
           )}
           <td className="name px-1">
             <div
-              className="d-flex trimmed name justify-content-between"
+              className="d-flex truncate name justify-content-between"
               title={deck.name}
             >
               {deck.name}
@@ -218,7 +218,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
-                        className="scroll"
+                        className="overflow-y-auto h-[80vh]"
                       >
                         <DeckCrypt deck={deck} inAdvSelect />
                       </Col>
@@ -228,7 +228,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
-                        className="scroll"
+                        className="overflow-y-auto h-[80vh]"
                       >
                         <DeckLibrary deck={deck} />
                       </Col>

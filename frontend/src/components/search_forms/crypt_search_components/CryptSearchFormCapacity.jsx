@@ -57,7 +57,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="px-0">
-          <div className="bold blue">Capacity:</div>
+          <div className="font-bold text-blue">Capacity:</div>
           {value.value[0][name] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">

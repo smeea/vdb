@@ -71,7 +71,7 @@ const ResultLayoutTextInventory = (props) => {
     <Row>
       <Col xs={6} lg={5} className="pe-2">
         <div className="d-flex align-items-center">
-          <div className="opacity-035">
+          <div className="opacity-40">
             <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
           </div>
           <div className="px-1">
@@ -80,7 +80,7 @@ const ResultLayoutTextInventory = (props) => {
           - Total Used
         </div>
         <div className="d-flex align-items-center">
-          <div className="opacity-035">
+          <div className="opacity-40">
             <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
           </div>
           <div className="px-1">

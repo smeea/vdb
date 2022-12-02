@@ -19,14 +19,14 @@ const Twd = () => {
           className={
             !isMobile || (isMobile && !error)
               ? 'px-0 pe-lg-4'
-              : 'col-hide px-0 px-md-2 px-lg-4'
+              : 'hidden px-0 px-md-2 px-lg-4'
           }
         >
           {twdResults && (
             <TwdResult results={twdResults} setResults={setTwdResults} />
           )}
           {error && (
-            <div className="d-flex align-items-center justify-content-center bold error-message">
+            <div className="d-flex align-items-center justify-content-center font-bold error-message">
               {error}
             </div>
           )}
@@ -38,7 +38,7 @@ const Twd = () => {
           className={
             !isMobile || (isMobile && !twdResults)
               ? 'p-1 py-md-0 px-md-2 px-xl-0'
-              : 'col-hide'
+              : 'hidden'
           }
         >
           <TwdSearchForm error={error} setError={setError} />

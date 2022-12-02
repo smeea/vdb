@@ -9,7 +9,7 @@ const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
       {['60-67', '68-75', '76-83', '84-90'].map((i, index) => {
         return (
           <Button
-            className="group-form nowrap"
+            className="group-form whitespace-nowrap"
             key={index}
             value={i}
             name={name}

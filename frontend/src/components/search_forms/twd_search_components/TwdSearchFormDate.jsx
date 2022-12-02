@@ -84,7 +84,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
           />
         </Col>
         <Col xs={1} className="d-flex justify-content-center px-0">
-          <div className="small px-0">to</div>
+          <div className="text-xs px-0">to</div>
         </Col>
         <Col xs={5} className="d-inline px-0">
           <Select

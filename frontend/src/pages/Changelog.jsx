@@ -14,7 +14,7 @@ const Changelog = () => {
 
             {changes.map((item) => (
               <div className="py-1" key={item.version}>
-                <div className="bold blue pb-1">{item.version}:</div>
+                <div className="font-bold text-blue pb-1">{item.version}:</div>
                 <ul>
                   {item.changes.map((change, idx) => (
                     <li key={idx} className="pb-1">

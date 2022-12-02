@@ -46,7 +46,7 @@ const CardImage = ({ card, set, className, onClick }) => {
     <>
       {lang !== 'en-EN' || set ? (
         <img
-          className={className ? className : 'card-popover'}
+          className={className ?? 'h-[420px]'}
           src={`${imgSrc}.jpg`}
           alt={card['Name']}
           onClick={onClick}
@@ -60,7 +60,7 @@ const CardImage = ({ card, set, className, onClick }) => {
             type="image/webp"
           />
           <img
-            className={className ? className : 'card-popover'}
+            className={className ?? 'h-[420px]'}
             src={`${imgEnSrc}.jpg`}
             alt={card['Name']}
             onClick={onClick}

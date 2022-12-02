@@ -14,7 +14,7 @@ const ResultLayoutTextSetsModal = ({ modal, setModal }) => {
       centered={true}
     >
       <Modal.Header className="px-3 pt-2 pb-1">
-        <div className="prob">
+        <div className="text-blue">
           <b>Sets</b>
         </div>
         <Button variant="outline-secondary" onClick={() => setModal(null)}>

@@ -37,7 +37,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <div className="bold blue">Pool Cost:</div>
+          <div className="font-bold text-blue">Pool Cost:</div>
         </Col>
         <Col xs={4} className="d-inline px-0">
           <Select

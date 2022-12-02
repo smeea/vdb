@@ -60,7 +60,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
             </div>
             {i.name}
           </div>
-          <div className="small">{`${i.set} '${i.year}`}</div>
+          <div className="text-xs">{`${i.set} '${i.year}`}</div>
         </div>
       ),
     });

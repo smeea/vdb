@@ -77,7 +77,7 @@ const ResultModal = ({
             {showImage ? (
               <>
                 <CardImage
-                  className="full-width"
+                  className="w-full h-auto"
                   card={activeCard}
                   set={imageSet}
                   onClick={handleClose}
@@ -99,7 +99,7 @@ const ResultModal = ({
           <Row className="mx-0">
             <Col md={5} className="bg-black px-0">
               <CardImage
-                className="full-width"
+                className="w-full h-auto"
                 card={activeCard}
                 set={imageSet}
                 onClick={handleClose}
@@ -118,14 +118,22 @@ const ResultModal = ({
         )}
         <div
           onClick={() => handleModalCardChange(-1)}
-          className={`prev-card${isMobile ? '-mobile' : ''}`}
+          className={`bottom-1/2 absolute ${
+            isMobile
+              ? 'text-neutral-500 h-[50px] left-0'
+              : 'text-white left-[40px]'
+          }`}
         >
           <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
         </div>
 
         <div
           onClick={() => handleModalCardChange(1)}
-          className={`next-card${isMobile ? '-mobile' : ''}`}
+          className={`bottom-1/2 absolute ${
+            isMobile
+              ? 'text-neutral-500 h-[50px] right-0'
+              : 'text-white right-[-40px]'
+          }`}
         >
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>

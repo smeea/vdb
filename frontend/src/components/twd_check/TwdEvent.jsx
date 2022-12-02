@@ -35,7 +35,7 @@ const TwdEvent = ({ eventId, setEventId }) => {
       <div className="d-flex ps-4">
         <h5>EVENT IN VEKN.NET</h5>
       </div>
-      <div className="mt-6px">
+      <div className="mt-1.5">
         <pre className="mb-0">{event.Name}</pre>
         <pre className="mb-0">{event.Location}</pre>
         <pre className="mb-0">{event.Date}</pre>

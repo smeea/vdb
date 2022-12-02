@@ -3,13 +3,13 @@ import Hammer from 'assets/images/icons/hammer.svg';
 
 function ResultCryptName(props) {
   return (
-    <div className="d-inline nowrap">
+    <div className="d-inline whitespace-nowrap">
       {props.card['Banned'] ? (
-        <div className="d-inline white-space-normal">
+        <div className="d-inline whitespace-normal">
           <strike>{props.card['Name']}</strike>
         </div>
       ) : (
-        <div className="d-inline white-space-normal">{props.card['Name']}</div>
+        <div className="d-inline whitespace-normal">{props.card['Name']}</div>
       )}
       {props.card.Adv[0] && (
         <span className="ps-1">

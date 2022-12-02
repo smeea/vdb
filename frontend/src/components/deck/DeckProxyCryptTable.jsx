@@ -61,7 +61,7 @@ const DeckProxyCryptTable = ({
       {
         value: '',
         id: card.c.Id,
-        label: <div className="small">Newest (default)</div>,
+        label: <div className="text-xs">Newest (default)</div>,
       },
     ];
 
@@ -71,7 +71,7 @@ const DeckProxyCryptTable = ({
           value: i.toLowerCase(),
           id: card.c.Id,
           label: (
-            <div className="small">
+            <div className="text-xs">
               {setsAndPrecons[i].name}
               {setsAndPrecons[i].date
                 ? ` '${setsAndPrecons[i].date.slice(2, 4)}`
@@ -166,7 +166,7 @@ const DeckProxyCryptTable = ({
             <div>
               <ResultClanImage value={card.c.Clan} />
             </div>
-            <div className="d-flex small justify-content-end">
+            <div className="d-flex text-xs justify-content-end">
               <b>
                 <ResultCryptTitle value={card.c.Title} />
               </b>

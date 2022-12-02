@@ -3,7 +3,7 @@ import { drawProbability } from 'utils';
 
 const DeckDrawProbabilityText = ({ N, n, k }) => {
   return (
-    <div className="prob">
+    <div className="text-blue">
       <div className="d-flex justify-content-between">
         <div className="pe-2">1+</div>
         <div>{`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}</div>

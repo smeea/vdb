@@ -44,7 +44,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
     <div className="d-flex align-items-center justify-content-between pe-2">
       <div className="pe-1">
         <Button
-          className="quantity-wide"
+          className="w-9"
           variant="primary"
           onClick={handleToggleMoreLess}
           title={getIconAndText(value[id].m)[1]}

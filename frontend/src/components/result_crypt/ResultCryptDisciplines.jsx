@@ -20,11 +20,11 @@ const ResultCryptDisciplines = ({ value, maxDisciplines }) => {
 
   while (counter < maxDisciplines) {
     counter += 1;
-    emptyCols.push(<td width={width} key={counter}></td>);
+    emptyCols.push(<td width={width} key={counter} />);
   }
 
   return (
-    <table className="disciplines">
+    <table>
       <tbody>
         <tr>
           {disciplineCols}

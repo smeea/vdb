@@ -220,7 +220,7 @@ const DeckLibraryTableRow = ({
         </td>
       )}
       {showInfo && (
-        <td className="prob px-1">
+        <td className="text-right w-9 px-1">
           {isMobile ? (
             <div
               onClick={() =>

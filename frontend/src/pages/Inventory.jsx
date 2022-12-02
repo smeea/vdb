@@ -186,7 +186,7 @@ const Inventory = () => {
               </Col>
             </Row>
           ) : (
-            <Row className="align-items-center justify-content-center pt-3 mx-0 vh-80">
+            <Row className="align-items-center justify-content-center pt-3 mx-0 h-[80vh]">
               <Col xs={12} md={8} lg={7} xl={6} className="px-3">
                 <div className="d-flex justify-content-center">
                   <h6>Login required to manage inventory</h6>

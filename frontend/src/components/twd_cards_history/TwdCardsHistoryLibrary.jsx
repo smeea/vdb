@@ -219,7 +219,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
 
   return (
     <div className="inventory-container-library">
-      <div className="d-flex align-items-center justify-content-between inventory-info">
+      <div className="d-flex align-items-center justify-content-between info-message">
         <div className="w-75 p-1">
           <Stack gap={1}>
             <InventoryFilterForm
@@ -249,7 +249,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         />
       </div>
 
-      <div className="d-flex info-message blue bold history-library-table">
+      <div className="d-flex info-messagetext-blue font-bold history-library-table">
         {!isMobile && <div className="d-flex cost" />}
         {!isMobile && <div className="d-flex type" />}
         <div className="d-flex name" />

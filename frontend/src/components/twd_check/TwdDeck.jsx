@@ -105,7 +105,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
         <h5>TWD</h5>
       </div>
       <Row>
-        <Col xl={2} className="mt-6px px-2">
+        <Col xl={2} className="mt-1.5 px-2">
           <div className="d-flex justify-content-end">
             <pre className="mb-0">{fieldNames}</pre>
           </div>
@@ -124,7 +124,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
             ref={refText}
             autoFocus
           />
-          <pre className="pt-1 gray twd-length-marker">{lengthMarker}</pre>
+          <pre className="pt-1text-neutral-500 twd-length-marker">{lengthMarker}</pre>
         </Col>
       </Row>
       <div className="d-flex justify-content-end pt-2">

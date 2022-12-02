@@ -27,7 +27,7 @@ const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
           <Container fluid>
             <Row className="px-0 pb-md-4">
               <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
-                <div className="d-flex justify-content-between align-items-center title-line px-2">
+                <div className="d-flex justify-content-between align-items-center info-message h-10 px-2">
                   <b>CRYPT</b>
                 </div>
                 {crypt ? (
@@ -44,7 +44,7 @@ const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
                 )}
               </Col>
               <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
-                <div className="d-flex justify-content-between align-items-center title-line px-2">
+                <div className="d-flex justify-content-between align-items-center info-message h-10 px-2">
                   <b>LIBRARY</b>
                 </div>
                 {library ? (

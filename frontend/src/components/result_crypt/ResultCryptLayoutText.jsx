@@ -26,10 +26,10 @@ const ResultCryptLayoutText = ({
 
   return (
     <>
-      <div className="d-flex flex-nowrap justify-content-between align-items-center pb-1">
-        <div className="d-flex flex-nowrap align-items-center">
+      <div className="d-flex whitespace-nowrap justify-content-between align-items-center pb-1">
+        <div className="d-flex whitespace-nowrap align-items-center">
           <ResultClanImage value={card.Clan} />
-          <div className="name bold ps-2">
+          <div className="namefont-bold ps-2">
             <ResultCryptName card={card} />
             {card.Adv[1] && (
               <ConditionalOverlayTrigger
@@ -76,7 +76,7 @@ const ResultCryptLayoutText = ({
           <div className="py-1">
             <b>Rulings:</b>
           </div>
-          <div className="small pb-1">
+          <div className="text-xs pb-1">
             <ResultLayoutTextRulings rulings={card['Rulings']} />
           </div>
         </>

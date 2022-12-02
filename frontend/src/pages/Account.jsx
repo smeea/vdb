@@ -26,14 +26,14 @@ const Account = () => {
       </Row>
       <Row
         className={`d-flex align-items-center justify-content-center ${
-          isMobile ? (username ? '' : 'vh-80') : 'vh-70'
+          isMobile ? (username ? '' : 'h-[80vh]') : 'h-[70vh]'
         }`}
       >
         <Col xs={12} md={8} lg={7} xl={6} className="px-3 pb-3">
           {username ? (
             <>
               <Stack gap={4}>
-                <div className="d-flex align-items-center bold blue logo-box px-2 py-1">
+                <div className="d-flex align-items-center font-bold text-blue logo-box px-2 py-1">
                   <PersonFill />
                   <span className="ms-2">Logged as: &lt;{username}&gt;</span>
                 </div>

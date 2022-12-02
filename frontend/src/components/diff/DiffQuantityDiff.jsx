@@ -9,20 +9,20 @@ const DiffQuantityDiff = ({ qFrom, qTo }) => {
   } else if (qFrom == 0) {
     return (
       <div className="red">
-        <XLg viewBox="-3 0 17 17" />
+        <XLg className="inline" viewBox="-3 0 17 17" />
       </div>
     );
   } else if (qFrom < qTo) {
     return (
       <div className="red">
-        <ArrowDown viewBox="0 2 16 16" />
+        <ArrowDown className="inline" viewBox="0 2 16 16" />
         {qTo - qFrom}
       </div>
     );
   } else if (qFrom > qTo) {
     return (
       <div className="green">
-        <ArrowUp viewBox="0 2 16 16" />
+        <ArrowUp className="inline" viewBox="0 2 16 16" />
         {qFrom - qTo}
       </div>
     );

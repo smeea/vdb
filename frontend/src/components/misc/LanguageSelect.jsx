@@ -22,7 +22,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
     return (
       <div
         key={l}
-        className={lang == l ? 'flag-active mx-2' : 'mx-2'}
+        className={`${lang == l ? 'flag-active mx-2' : 'mx-2'}`}
         onClick={() => {
           changeLang(l);
           setShowMenu(false);
@@ -36,7 +36,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
   const Menu = () => (
     <div className="py-1">
       <div className="px-2 pb-2">Card Language:</div>
-      <div className="d-flex align-items-center justify-content-between languages">
+      <div className="d-flex align-items-center justify-content-between">
         {options}
       </div>
     </div>

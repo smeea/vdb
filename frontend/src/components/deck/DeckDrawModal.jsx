@@ -70,7 +70,7 @@ const DeckDrawModal = ({
             <Row className="px-0 pb-md-4">
               <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
                 <div>
-                  <div className="d-flex justify-content-between title-line">
+                  <div className="d-flex justify-content-between info-message h-10">
                     <div className="d-flex align-items-center px-2">
                       <b>Uncontrolled</b>
                     </div>
@@ -136,7 +136,7 @@ const DeckDrawModal = ({
                 </div>
               </Col>
               <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
-                <div className="d-flex justify-content-between title-line">
+                <div className="d-flex justify-content-between info-message h-10">
                   <div className="d-flex align-items-center px-2">
                     <b>Hand</b>
                   </div>
@@ -199,7 +199,7 @@ const DeckDrawModal = ({
                 <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
                   {burnedCrypt.length > 0 && (
                     <div className="pt-4 pt-md-0">
-                      <div className="d-flex justify-content-between title-line">
+                      <div className="d-flex justify-content-between info-message h-10">
                         <div className="d-flex align-items-center px-2">
                           <b>Controlled</b>
                         </div>
@@ -232,7 +232,7 @@ const DeckDrawModal = ({
                 <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
                   {burnedLibrary.length > 0 && (
                     <div className="pt-4 pt-md-0">
-                      <div className="d-flex justify-content-between title-line">
+                      <div className="d-flex justify-content-between info-message h-10">
                         <div className="d-flex align-items-center px-2">
                           <b>Ash Heap</b>
                         </div>

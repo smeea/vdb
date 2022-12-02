@@ -85,7 +85,7 @@ const SearchAdditionalFormsText = ({
                     name={i}
                     value={opt.value}
                     type="checkbox"
-                    className="small"
+                    className="text-xs"
                     id={`text-${i}-${opt.value}`}
                     label={opt.label}
                     onChange={(e) => onChangeOptions(e)}

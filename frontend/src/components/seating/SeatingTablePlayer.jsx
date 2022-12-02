@@ -8,8 +8,8 @@ const SeatingTablePlayer = ({ deck }) => {
   return (
     <div
       className={`d-flex justify-content-center ${
-        isMobile ? '' : 'nowrap'
-      } p-2 p-md-3 ${deck.first ? 'border-dashed bold' : ''}`}
+        isMobile ? '' : 'whitespace-nowrap'
+      } p-2 p-md-3 ${deck.first ? 'border-dashed font-bold' : ''}`}
     >
       {deck.deckid ? (
         <Link target="_blank" rel="noreferrer" to={`/decks/${deck.deckid}`}>

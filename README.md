@@ -12,6 +12,7 @@ VDB consist of two components communicating with each other.
 Serve the UI for the modern browsers using:
 ```
    ReactJS (tested with Node.js v16)
+   Tailwind CSS
    React-Bootstrap
 ```
 

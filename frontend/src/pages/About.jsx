@@ -103,7 +103,7 @@ const About = () => {
               <div className="py-1">
                 Card text based on{' '}
                 <a href="https://www.vekn.net/card-lists">VEKN official list</a>
-                : <span className="nowrap">2022-11-14</span>
+                : <span className="whitespace-nowrap">2022-11-14</span>
               </div>
               <div className="font-bold text-blue py-1">
                 Last update [{changes[0].version}]:

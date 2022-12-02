@@ -140,7 +140,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         nonKeyDisciplines={nonKeyDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
-        <div className="deck-sidecrypt pt-2">
+        <div className="opacity-60 pt-2">
           <div className="d-flex align-items-center justify-content-between ps-2">
             <b>Side Crypt</b>
           </div>

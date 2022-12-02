@@ -48,7 +48,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
     <>
       <Row className="mx-0 py-1 ps-1">
         <Col className="d-flex px-0">
-          <div className="bold blue">Title:</div>
+          <div className="font-bold text-blue">Title:</div>
         </Col>
       </Row>
       <Row className="mx-0">

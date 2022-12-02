@@ -120,7 +120,7 @@ const ResultCryptTableRow = ({
               >
                 {inInventory}
                 <div
-                  className={`small ${
+                  className={`text-xs ${
                     inInventory >= softUsedMax + hardUsedTotal
                       ? 'gray'
                       : 'white'
@@ -174,8 +174,8 @@ const ResultCryptTableRow = ({
             <div>
               <ResultClanImage value={card.Clan} />
             </div>
-            <div className="d-flex small justify-content-end">
-              <div className="bold blue">
+            <div className="d-flex text-xs justify-content-end">
+              <div className="font-bold text-blue">
                 <ResultCryptTitle value={card.Title} />
               </div>
               <ResultCryptGroup value={card.Group} />

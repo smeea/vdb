@@ -26,7 +26,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
     name: name,
     label: (
       <div className="d-flex align-items-center">
-        <div className="d-flex w-40px" />
+        <div className="d-flex w-[40px]" />
         {i}
       </div>
     ),
@@ -36,7 +36,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="px-0">
-          <div className="bold blue">Sect:</div>
+          <div className="font-bold text-blue">Sect:</div>
           {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               <div className="pe-1">

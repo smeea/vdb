@@ -17,7 +17,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
     <>
       <div
         ref={menuRef}
-        className="white-font ps-2"
+        className="text-white ps-2"
         onClick={() => setShowMenu(!showMenu)}
       >
         <List width="30" height="30" viewBox="0 0 16 16" />
@@ -40,7 +40,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
           show={showMenu}
         >
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <Popover {...props} className="nav-menu large">
+            <Popover {...props} className="nav-menu text-lg">
               <Popover.Body className="p-2">
                 <NavLink
                   to="/account"
@@ -48,7 +48,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                   className="nav-link px-2 py-1"
                 >
                   <div className="d-flex align-items-center main-font">
-                    <div className="d-flex justify-content-center min-w-30px">
+                    <div className="d-flex justify-content-center min-w-[30px]">
                       <PersonFill height="20" width="20" viewBox="0 0 16 16" />
                     </div>
                     <div className="ps-2">{username ? 'Account' : 'Login'}</div>
@@ -61,7 +61,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                   className="nav-link px-2 py-1"
                 >
                   <div className="d-flex align-items-center main-font">
-                    <div className="d-flex justify-content-center min-w-30px">
+                    <div className="d-flex justify-content-center min-w-[30px]">
                       <InfoCircleFill
                         height="20"
                         width="20"
@@ -80,14 +80,14 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                     setShowMenu(false);
                   }}
                 >
-                  <div className="d-flex justify-content-center min-w-30px">
+                  <div className="d-flex justify-content-center min-w-[30px]">
                     {inventoryMode ? (
                       <ToggleOn height="26" width="26" viewBox="0 0 16 16" />
                     ) : (
                       <ToggleOff height="26" width="26" viewBox="0 0 16 16" />
                     )}
                   </div>
-                  <div className={`${inventoryMode ? '' : 'gray'} ps-2 nowrap`}>
+                  <div className={`${inventoryMode ? '' : 'gray'} ps-2 whitespace-nowrap`}>
                     Inventory Mode
                   </div>
                 </div>

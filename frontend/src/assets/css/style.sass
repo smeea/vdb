@@ -67,10 +67,10 @@ html
   @media (max-width: 767px)
     scroll-padding-top: 12px
 
-a:hover, span.link-like:hover, a, .prob, .link-like
+a:hover, span.link-like:hover, a, .link-like
   color: var(--fg-secondary)
 
-a:link, a:visited, a.nav-link:hover, a:hover.dropdown-item, .prob,
+a:link, a:visited, a.nav-link:hover, a:hover.dropdown-item,
 .link-like, a.quantity, a.quantity:hover
   text-decoration: none
 
@@ -79,8 +79,16 @@ a:hover, span.link-like:hover, .link-like:hover
 
 a.nav-link
   color: #afafaf
+  padding-left: 8px !important
+  padding-right: 8px !important
   &.active
     background: var(--border-nest-modal)
+  &.icon-only
+    padding-left: 14px !important
+    padding-right: 14px !important
+    @media (max-width: 767px)
+      padding-left: 11px !important
+      padding-right: 11px !important
 
 .nav-tabs
   .nav-link
@@ -93,16 +101,11 @@ a.nav-link
       border-bottom: 0
       color: var(--fg-primary)
 
-.px-8px
-  padding-left: 8px !important
-  padding-right: 8px !important
-
-.px-14px
-  padding-left: 14px !important
-  padding-right: 14px !important
-  @media (max-width: 767px)
-    padding-left: 11px !important
-    padding-right: 11px !important
+hr
+  color: var(--border-primary)
+  margin: .5rem
+  &.thick
+    border: 2px solid var(--border-primary)
 
 .name
   color: var(--fg-name)
@@ -110,74 +113,65 @@ a.nav-link
 .title, .adv
   color: var(--fg-secondary)
 
-h5, h6
+.text-blue
   color: var(--fg-secondary)
-  font-weight: bold
 
-.underline
-  text-decoration: underline
+.red
+  color: var(--fg-red)
 
-div.h6
-  margin: 0
+.green
+  color: var(--fg-green)
 
-.pointer
-  cursor: pointer
+.main-font
+  color: var(--fg-primary)
 
-.small
-  font-size: small
+.with-hover
+  color: var(--fg-secondary)
 
-.large
-  font-size: large
+.with-hover:hover
+  color: var(--fg-primary)
 
-.bold
-  font-weight: bold
+.close
+  color: var(--fg-primary)
 
-.text-align-center
-  text-align: center
+.popover-body
+  color: var(--fg-primary)
 
-.white-space-normal
-  white-space: normal
+.inv-miss-full
+  background: var(--bg-error)
+  color: var(--bg-checkbox)
 
-.nowrap
-  white-space: nowrap
+.offline-bar
+  background: var(--bg-error)
+  color: var(--bg-checkbox)
 
-.languages
-  font-size: .875rem
+.inv-miss-part
+  background-color: var(--bg-warning)
 
-.vh-70
-  height: 70vh
+.info-message
+  background-color: var(--bg-secondary)
 
-.vh-80
-  height: 80vh
+.above-nav-bottom
+  background-color: var(--bg-primary)
 
-.border-dashed
-    border: 2px dashed var(--border-primary)
-    border-radius: 5px
+.result-odd
+  background-color: var(--bg-primary)
 
-.border-dashed-thick
-    border: 3px dashed var(--fg-secondary)
-    border-radius: 5px
+.result-even
+  background-color: var(--bg-third)
 
+.swiped-left
+  background-color: var(--bg-success)
 
-.border-thick
-    border: 2px solid var(--border-primary)
-    border-radius: 5px
+.swiped-right
+  background-color: var(--bg-error-secondary)
 
-div.quick-cards
-  .bordered
-    border: 1px solid var(--bg-secondary)
+.light-border
+  border-color: var(--border-primary)
 
-div.modal-content
-  .modal-header
-    border-bottom: 1px solid var(--bg-secondary)
-  .modal-footer
-    border-top: 1px solid var(--bg-secondary)
+.tags-filter
+  border-color: var(--bg-secondary) !important
 
-div.no-border
-  border: 0 !important
-
-.nested-modal div.modal-content
-  border: 1px solid var(--border-nest-modal)
 
 .error-message
   background: var(--bg-error)
@@ -187,54 +181,41 @@ div.no-border
 .error-tooltip
   background: var(--bg-error)
   border: 1px solid var(--border-secondary)
+
+.border-dashed
+  border: 2px dashed var(--border-primary)
   border-radius: 5px
-  font-size: small
-  padding: .25em .5em
-  z-index: 1100
 
-.info-message
-  background: var(--bg-secondary)
+.border-dashed-thick
+  border: 3px dashed var(--fg-secondary)
+  border-radius: 5px
 
-.title-line
-  background: var(--bg-secondary)
-  height: 38px
+.border-thick
+  border: 2px solid var(--border-primary)
+  border-radius: 5px
 
-button.total-info
-  max-width: 42px
+div.quick-cards
+  .bordered
+    border: 1px solid var(--bg-secondary)
 
-.inventory-info
-  background: var(--bg-secondary)
+div.no-border
+  border: 0 !important
 
-.text-blue
-  color: var(--fg-secondary)
+.nested-modal div.modal-content
+  border: 1px solid var(--border-nest-modal)
 
-.gray
-  color: gray
+div.border-bl
+  border: 1px solid darkgray
 
-.red
-  color: var(--fg-red)
-
-.green
-  color: var(--fg-green)
-
-.gray-font
-  color: darkgray
-
-.white-font
-  color: white
-
-.main-font
-  color: var(--fg-primary)
-
-.bg-black
-  background: black
-
-.inv-miss-full
-  background: var(--bg-error)
-  color: var(--bg-checkbox)
-
-.inv-miss-part
-  background: var(--bg-warning)
+.tags-no-remove
+  .react-select-tags__multi-value__remove
+    display: none
+  .react-select-tags__multi-value__label
+    border: 1px solid var(--bg-secondary)
+    border-radius: 4px !important
+    padding-right: 8px !important
+  .react-select-tags__input-container
+    display: none
 
 .form-control,
 .form-control:focus
@@ -329,71 +310,6 @@ button.btn-danger:focus
 button.btn-danger:hover
   background: var(--bg-error-secondary)
 
-ul.nav
-  border-bottom: 1px solid var(--border-secondary)
-
-.pt-05
-  padding-top: 2px
-
-.mt-6px
-  margin-top: 6px
-
-.close
-  color: var(--fg-primary)
-
-.navbar
-  background: var(--bg-nav)
-  padding: 0
-
-.offline-bar
-  background: var(--bg-error)
-  color: var(--bg-checkbox)
-
-.modal-content
-  background: var(--bg-primary)
-  border: 0
-
-.popover
-  background: var(--bg-primary)
-  border-color: var(--bg-secondary)
-  max-width: 920px
-
-.light-border.popover
-  border-color: var(--border-primary)
-
-.popover-body
-  color: var(--fg-primary)
-
-.popover-rulings
-  font-size: small
-  max-width: 325px
-
-div.popover-sets
-  font-size: x-small
-  max-width: 300px
-  text-align: right
-
-.popover-card-text
-  max-width: 325px
-
-.popover-discipline-image
-  height: 18px
-
-
-.trimmed
-  overflow: hidden
-  text-overflow: ellipsis
-  white-space: nowrap
-
-.max-w-200px
-  max-width: 200px
-
-.max-w-275px
-  max-width: 175px
-
-.min-w-30px
-  min-width: 30px
-
 .react-select
   &__single-value
     color: var(--fg-primary) !important
@@ -470,23 +386,6 @@ div.popover-sets
 .bordered.react-select-tags__control
   border: 1px solid var(--bg-secondary) !important
 
-.tags-filter
-  border-color: var(--bg-secondary) !important
-
-.tags-no-remove
-  .react-select-tags__multi-value__remove
-    display: none
-  .react-select-tags__multi-value__label
-    border: 1px solid var(--bg-secondary)
-    border-radius: 4px !important
-    padding-right: 8px !important
-  .react-select-tags__input-container
-    display: none
-
-.form-placeholder
-  font-size: small
-  padding-left: 6px
-
 .dropdown-menu
   background: var(--bg-button)
 .dropdown-item
@@ -511,66 +410,20 @@ div.popover-sets
 .logo-box
   background: var(--bg-secondary)
   border: 1px solid var(--border-secondary)
-  padding: .5em
 
 .logo-image
   filter: brightness(var(--logo-brightness))
-
-.logo-text
-  color: var(--fg-secondary)
-  font-size: xx-large
-  font-weight: bold
-
-.logo-subtext
-  color: var(--fg-secondary)
-  font-size: x-large
-
-img.card-popover
-  height: 420px
-
-.prev-card-mobile,
-.next-card-mobile
-  bottom: 50%
-  color: gray
-  height: 50px
-  position: absolute
-.prev-card-mobile
-  left: 0
-.next-card-mobile
-  right: 0
-
-.prev-card,
-.next-card
-  bottom: 50%
-  color: white
-  position: absolute
-.prev-card
-  left: -40px
-.next-card
-  right: -40px
-
-.deck-sidecrypt,
-.deck-sidelibrary
-  opacity: .55
-.deck-sidecrypt img,
-.deck-sidelibrary img
-  opacity: .6
-
-table.disciplines td
-  border: 0
-td.prob
-  text-align: right
-  width: 36px
 
 .deck-crypt-table,
 .deck-library-table
   border: 1px solid var(--bg-secondary)
   @media (max-width: 767px)
     border: 0
-  td
+  tr.result-odd, td.result-even
     border-bottom: 1px solid var(--bg-secondary)
     border-collapse: collapse
     border-top: 1px solid var(--bg-secondary)
+  td
     text-align: center
   td.proxy-selector
     width: 1%
@@ -735,11 +588,13 @@ td.prob
   border-right: 1px solid var(--bg-secondary)
   @media (max-width: 767px)
     border: 0
-  td
+  tr.result-odd, td.result-even
     border-bottom: 1px solid var(--bg-secondary)
     border-collapse: collapse
     border-top: 1px solid var(--bg-secondary)
+  td
     text-align: center
+
   td.quantity-add
     width: 22px
   td.used
@@ -775,11 +630,12 @@ div.name
 .twd-librarybytype-table
   border-left: 1px solid var(--bg-secondary)
   border-right: 1px solid var(--bg-secondary)
-  td
+  tr
     border-bottom: 1px solid var(--bg-secondary)
     border-collapse: collapse
     border-top: 1px solid var(--bg-secondary)
     height: 32px
+  td
     text-align: center
   td.name
     text-align: left
@@ -901,6 +757,7 @@ li
 .capacity-image-results
   filter: brightness(var(--icons-brightness))
   height: 23px
+  min-width: 23px
   image-rendering: -webkit-optimize-contrast
 .discipline-base-image-results
   height: 22px
@@ -919,9 +776,11 @@ li
 .clan-image-results
   filter: brightness(var(--clan-icon-brightness))
   height: 24px
+  min-width: 24px
 @media (max-width: 576px)
   .clan-image-results
     height: 21px
+    min-width: 21px
 .burn-image-results,
 .trifle-image-results
   filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
@@ -952,10 +811,6 @@ li
   height: 29px
   margin-left: 4px
   margin-right: 5px
-
-.scroll
-  height: 80vh
-  overflow-y: auto
 
 .discipline-container
   height: 38px
@@ -988,18 +843,6 @@ li
 .virtue-container.state1 .virtue-image
   display: flex
 
-.result-odd
-  background-color: var(--bg-primary)
-
-.result-even
-  background-color: var(--bg-third)
-
-.swiped-left
-  background-color: var(--bg-success)
-
-.swiped-right
-  background-color: var(--bg-error-secondary)
-
 a.quantity
   position: relative
 a.quantity:before
@@ -1019,16 +862,7 @@ button.quantity-wide
 button.quantity
   width: 18px
 
-button.quantity-wide
-  width: 35px
-
-.quantity-add button
-  height: 33px
-  padding: 0
-  width: 24px
-
-.quantity-add button.in,
-button.inventory-in
+.quantity-add button.in
   background: var(--border-primary)
   color: var(--bg-checkbox)
 
@@ -1039,28 +873,12 @@ button.multi-form
   padding: 0
   width: 18px
 
-div.in-inventory
-  font-size: 1.1em
-  text-align: center
-  width: 28px
-
-div.border-black
-  border: 1px solid darkgray
-  border-radius: 3px
-
 input.quantity
   color: black
   font-size: 1.1em
   height: 32px
   text-align: center
   width: 65px
-
-hr
-  color: var(--border-primary)
-  margin: .5rem
-
-hr.thick
-  border: 2px solid var(--border-primary)
 
 textarea.deck-import
   font-family: monospace
@@ -1074,9 +892,6 @@ pre
 pre.twd-length-marker
   margin-bottom: 0
   margin-left: 13px
-
-.add-new-card
-  max-width: 100%
 
 div.sticky-buttons
   position: sticky
@@ -1127,25 +942,6 @@ div.sticky-modal-library
     background: var(--border-primary)
   &.btn-outline-primary:hover
     background: var(--bg-secondary)
-
-.w-45
-  width: 45%
-
-.w-55
-  width: 55%
-
-.w-40px
-  width: 40px
-
-.full-width
-  height: auto
-  width: 100%
-
-div.toggle-search
-  width: 47px
-
-div.col-hide
-  display: none
 
 div.float-right-top,
 div.float-right-middle,
@@ -1242,18 +1038,6 @@ div.float-random
     height: auto
     width: 50%
 
-.modal-tooltip
-  z-index: 1100
-
-.opacity-035
-  opacity: .35
-
-.above-nav-bottom
-  background-color: var(--bg-primary)
-  bottom: 40px
-  position: fixed
-  width: 100%
-
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
 
@@ -1262,22 +1046,6 @@ div.inventory-card-custom
   position: absolute
   &.not-selected
     opacity: 0
-
-.relative
-  position: relative
-
-.diff-select
-  min-width: 270px
-
-.diff-status
-  font-size: 1.1em
-  min-width: 35px
-  width: 42px
-
-.with-hover
-  color: var(--fg-secondary)
-.with-hover:hover
-  color: var(--fg-primary)
 
 .dropdown-divider
   color: var(--fg-primary)
@@ -1298,6 +1066,23 @@ div.inventory-card-custom
 button.accordion-button:not(.collapsed)
   background-color: var(--bg-secondary)
   color: var(--fg-secondary)
+
+div.modal-content
+  background: var(--bg-primary)
+  border: 0
+  .modal-header
+    border-bottom: 1px solid var(--bg-secondary)
+  .modal-footer
+    border-top: 1px solid var(--bg-secondary)
+
+.navbar
+  background: var(--bg-nav)
+  padding: 0
+
+.popover
+  background: var(--bg-primary)
+  border-color: var(--bg-secondary)
+  max-width: 920px
 
 @media (max-width: 767px)
   .twd-container,

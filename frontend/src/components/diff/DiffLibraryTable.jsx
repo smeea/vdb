@@ -123,7 +123,9 @@ const DiffLibraryTable = ({
           ) : (
             <td className="quantity-no-buttons px-1">{qFrom ? qFrom : null}</td>
           )}
-          <td className={`diff-status ${!isMobile && 'ps-1'}`}>
+          <td
+            className={`min-w-[35px] w-[42px] text-lg ${!isMobile && 'ps-1'}`}
+          >
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
 
@@ -154,7 +156,7 @@ const DiffLibraryTable = ({
             <ResultLibraryTrifle card={card.c} />
           </td>
           {showInfo && (
-            <td className="prob px-1">
+            <td className="text-right w-9 px-1">
               {isMobile ? (
                 <div
                   onClick={() =>

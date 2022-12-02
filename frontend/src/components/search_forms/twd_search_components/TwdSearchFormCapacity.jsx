@@ -7,7 +7,7 @@ const TwdSearchFormCapacity = ({ value, onChange }) => {
       {['1-4', '4-6', '6-8', '8-11'].map((i, index) => {
         return (
           <Button
-            className="group-form nowrap px-3"
+            className="group-form whitespace-nowrap px-3"
             key={index}
             value={i}
             name="capacity"

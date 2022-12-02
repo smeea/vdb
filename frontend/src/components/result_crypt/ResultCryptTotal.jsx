@@ -35,14 +35,14 @@ const ResultCryptTotal = ({
 
   const totalOutput = Object.keys(byGroups).map((k) => {
     return (
-      <span key={k} className="d-inline-block nowrap pe-3">
+      <span key={k} className="d-inline-block whitespace-nowrap pe-3">
         <span className="blue">
           <b>G{k == ANY ? 'X' : k}:</b>
         </span>
         {byGroups[k]}
         {!inHoF && (
           <div
-            className="d-flex small justify-content-center"
+            className="d-flex text-xs justify-content-center"
             title="Average Capacity"
           >
             ~{Math.round((byGroupsCapacityTotal[k] / byGroups[k]) * 10) / 10}
@@ -54,7 +54,7 @@ const ResultCryptTotal = ({
 
   const value = (
     <>
-      <div className="px-2 nowrap">
+      <div className="px-2 whitespace-nowrap">
         <b>
           {inHoF ? 'CRYPT' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
         </b>

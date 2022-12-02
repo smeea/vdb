@@ -48,7 +48,7 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
   return (
     <Row className="py-1 ps-1 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
-        <div className="bold blue">Capacity:</div>
+        <div className="font-bold text-blue">Capacity:</div>
       </Col>
       <Col xs={4} className="d-inline px-0">
         <Select

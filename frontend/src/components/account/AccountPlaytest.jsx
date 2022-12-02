@@ -18,7 +18,7 @@ const AccountPlaytest = () => {
             togglePlaytest();
           }}
         >
-          <div className={playtest ? 'pe-2' : 'pe-2 gray-font'}>
+          <div className={playtest ? 'pe-2' : 'pe-2text-neutral-500-font'}>
             {playtest ? (
               <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
             ) : (

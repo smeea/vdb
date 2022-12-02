@@ -93,19 +93,19 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
         <Accordion.Header onClick={() => handlePlayerClick()}>
           <div
             className={`d-flex ${
-              isMobile ? 'full-width' : 'w-75'
+              isMobile ? 'w-full h-auto' : 'w-75'
             } pe-1 justify-content-between align-items-center`}
           >
-            <div className="d-flex w-55 align-items-center">
+            <div className="d-flex w-[55%] align-items-center">
               {Object.keys(cards).length}
               <div className="d-flex ps-1 pe-3">
                 <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
               </div>
               <div className="d-flex align-items-center">{name}</div>
             </div>
-            <div className="d-flex w-45 justify-content-between">
+            <div className="d-flex w-[45%] justify-content-between">
               <div
-                className="d-flex nowrap px-1 px-md-3"
+                className="d-flex whitespace-nowrap px-1 px-md-3"
                 title="First Card add to Hall of Fame / Last Card add to Hall of Fame"
               >
                 {isMobile
@@ -115,11 +115,11 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                       4
                     )}`}
               </div>
-              <div className="d-flex nowrap px-1 px-md-3">
+              <div className="d-flex whitespace-nowrap px-1 px-md-3">
                 {isMobile ? 'C:' : 'Crypt: '}
                 {cryptSorted.length}
               </div>
-              <div className="d-flex nowrap px-1 px-md-3">
+              <div className="d-flex whitespace-nowrap px-1 px-md-3">
                 {isMobile ? 'L:' : 'Library: '}
                 {librarySorted.length}
               </div>
@@ -137,27 +137,24 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                 inHoF={true}
               />
               <table className="search-crypt-table">
-                <thead className="info-message blue">
+                <thead className="info-messagetext-blue">
                   <tr>
                     <th />
                     {!isMobile && <th />}
                     <th />
                     <th />
                     {!isMobile && (
-                      <th
-                        className="text-align-center"
-                        title="First Print Date"
-                      >
+                      <th className="text-center" title="First Print Date">
                         Print
                       </th>
                     )}
                     <th
-                      className="text-align-center"
+                      className="text-center"
                       title="First TWD Appearance Date"
                     >
                       Win
                     </th>
-                    <th className="text-align-center" title="Years to Win">
+                    <th className="text-center" title="Years to Win">
                       YtW
                     </th>
                     <th />
@@ -187,7 +184,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                 inHoF={true}
               />
               <table className="search-library-table">
-                <thead className="info-message blue">
+                <thead className="info-messagetext-blue">
                   <tr>
                     <th />
                     <th />
@@ -195,21 +192,18 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                     <th />
                     {!isMobile && <th />}
                     {!isMobile && (
-                      <th
-                        className="text-align-center"
-                        title="First Print Date"
-                      >
+                      <th className="text-center" title="First Print Date">
                         Print
                       </th>
                     )}
                     <th
-                      className="text-align-center"
+                      className="text-center"
                       title="First TWD Appearance Date"
                     >
                       Win
                     </th>
                     <th
-                      className="text-align-center"
+                      className="text-center"
                       title="Years to Win - From release to first TWD appearance"
                     >
                       YtW

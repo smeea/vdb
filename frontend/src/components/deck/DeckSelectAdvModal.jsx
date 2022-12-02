@@ -369,7 +369,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
             )}
             <td className="name px-1" onClick={() => handleOpen(deck.deckid)}>
               <div
-                className="d-flex trimmed name justify-content-between"
+                className="d-flex truncate name justify-content-between"
                 title={deck.name}
               >
                 {deck.name}
@@ -403,7 +403,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                             if (event.target === event.currentTarget)
                               setShowDeck(false);
                           }}
-                          className="scroll"
+                          className="overflow-y-auto h-[80vh]"
                         >
                           <DeckCrypt inAdvSelect={true} deck={deck} />
                         </Col>
@@ -413,7 +413,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                             if (event.target === event.currentTarget)
                               setShowDeck(false);
                           }}
-                          className="scroll"
+                          className="overflow-y-auto h-[80vh]"
                         >
                           <DeckLibrary deck={deck} />
                         </Col>
@@ -527,7 +527,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                     />
                   </th>
                 )}
-                <th className="name trimmed">
+                <th className="name truncate">
                   <FormControl
                     placeholder="Filter by Deck or Card Name"
                     type="text"
@@ -556,7 +556,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                     } px-1`}
                   >
                     <Form.Check
-                      className={isMobile ? '' : 'pt-05 pe-3'}
+                      className={isMobile ? '' : 'pt-0.5 pe-3'}
                       type="checkbox"
                       id="revFilter"
                       label={isDesktop ? 'Show Revisions' : 'Rev'}
