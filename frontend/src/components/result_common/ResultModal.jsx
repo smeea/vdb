@@ -97,15 +97,15 @@ const ResultModal = ({
           </div>
         ) : (
           <div className="flex flex-row mx-0">
-            <Col md={5} className="bg-black px-0">
+            <div className="md:basis-5/12 bg-black px-0">
               <CardImage
                 className="w-full h-auto"
                 card={activeCard}
                 set={imageSet}
                 onClick={handleClose}
               />
-            </Col>
-            <Col className="p-4">
+            </div>
+            <div className="p-4">
               <ResultLayoutText
                 card={activeCard}
                 setCard={setActiveCard}
@@ -113,7 +113,7 @@ const ResultModal = ({
                 setImageSet={setImageSet}
                 forceInventoryMode={forceInventoryMode}
               />
-            </Col>
+            </div>
           </div>
         )}
         <div

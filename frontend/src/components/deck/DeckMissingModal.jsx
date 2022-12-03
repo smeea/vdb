@@ -49,20 +49,20 @@ const DeckMissingModal = ({
       <Modal.Body className="p-0">
         <div>
           <div className='flex flex-row pb-4 pb-md-2 px-0'>
-            <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
+            <div className="basis-full md:basis-7/12 px-0 ps-lg-4 pe-lg-3">
               <div className={isMobile || inInventory ? null : 'sticky-modal'}>
                 <DeckCrypt
                   deck={{ ...deck, crypt: crypt, library: library }}
                   inMissing
                 />
               </div>
-            </Col>
-            <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
+            </div>
+            <div className="basis-full md:basis-5/12 px-0 ps-lg-3 pe-lg-4">
               <DeckLibrary
                 deck={{ ...deck, crypt: crypt, library: library }}
                 inMissing
               />
-            </Col>
+            </div>
           </div>
           <div
             className={

@@ -105,15 +105,15 @@ const TwdDeck = ({ eventId, setEventId }) => {
         <h5>TWD</h5>
       </div>
       <div className="flex flex-row">
-        <Col xl={2} className="mt-1.5 px-2">
+        <div className="xl:basis-1/6 mt-1.5 px-2">
           <div className="flex justify-end">
             <pre className="mb-0">{fieldNames}</pre>
           </div>
           <div className="flex justify-end">
             <pre className="gray">{descriptionInfo}</pre>
           </div>
-        </Col>
-        <Col xl={10} className="px-0">
+        </div>
+        <div className="xl:basis-10/12 px-0">
           <FormControl
             className="deck-import"
             as="textarea"
@@ -125,7 +125,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
             autoFocus
           />
           <pre className="pt-1 text-neutral-500 twd-length-marker">{lengthMarker}</pre>
-        </Col>
+        </div>
       </div>
       <div className="flex justify-end pt-2">
         <Stack direction="horizontal" gap={2}>

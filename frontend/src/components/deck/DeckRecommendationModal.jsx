@@ -26,7 +26,7 @@ const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
         <Modal.Body className="p-0">
           <div>
             <div className="flex flex-row px-0 pb-md-4">
-              <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
+              <div className="basis-full md:basis-7/12 px-0 ps-lg-4 pe-lg-3">
                 <div className="flex justify-between items-center info-message h-10 px-2">
                   <b>CRYPT</b>
                 </div>
@@ -42,8 +42,8 @@ const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
                     <Spinner animation="border" />
                   </div>
                 )}
-              </Col>
-              <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
+              </div>
+              <div className="basis-full md:basis-5/12 px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
                 <div className="flex justify-between items-center info-message h-10 px-2">
                   <b>LIBRARY</b>
                 </div>
@@ -55,7 +55,7 @@ const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
                     <Spinner animation="border" />
                   </div>
                 )}
-              </Col>
+              </div>
             </div>
           </div>
         </Modal.Body>

@@ -1,24 +1,23 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import { DiffCrypt, DiffLibrary } from 'components';
 
 const DeckPublicDiff = ({ deckFrom, deckTo }) => {
   return (
     <div className="flex flex-row">
-      <Col md={7} className="">
+      <div className="md:basis-7/12 ">
         <DiffCrypt
           isEditable={false}
           cardsFrom={deckFrom.crypt}
           cardsTo={deckTo.crypt}
         />
-      </Col>
-      <Col md={5} className="">
+      </div>
+      <div className="md:basis-5/12 ">
         <DiffLibrary
           isEditable={false}
           cardsFrom={deckFrom.library}
           cardsTo={deckTo.library}
         />
-      </Col>
+      </div>
     </div>
   );
 };

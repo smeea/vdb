@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Col } from 'react-bootstrap';
 import { TwdDeck, TwdEvent } from 'components';
 import { useApp } from 'context';
 
@@ -11,12 +10,12 @@ const TwdCheck = () => {
   return (
     <div className="search-container mx-auto">
       <div className="flex flex-row justify-center py-2">
-        <Col xl={isWide ? 8 : 9} className="py-2 xborder">
+        <div className={`xl:${isWide ? '8/12' : '9/12'} py-2 border`}>
           <TwdDeck eventId={eventId} setEventId={setEventId} />
-        </Col>
-        <Col xl={isWide ? 4 : 3} className="py-2 xborder">
+        </div>
+        <div className={`xl:${isWide ? '4/12' : '3/12'} py-2 border`}>
           <TwdEvent eventId={eventId} setEventId={setEventId} />
-        </Col>
+        </div>
       </div>
     </div>
   );

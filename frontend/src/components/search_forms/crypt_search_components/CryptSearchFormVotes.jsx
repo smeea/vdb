@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
 
@@ -27,10 +26,10 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
 
   return (
     <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-      <Col xs={3} className="flex px-0">
+      <div className="basis-1/4 flex px-0">
         <div className="font-bold text-blue">Votes:</div>
-      </Col>
-      <Col xs={9} className="d-inline px-0">
+      </div>
+      <div className="xs={9} d-inline px-0">
         <Select
           classNamePrefix="react-select"
           options={options}
@@ -40,7 +39,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
           value={options.find((obj) => obj.value === value.toLowerCase())}
           onChange={onChange}
         />
-      </Col>
+      </div>
     </div>
   );
 };

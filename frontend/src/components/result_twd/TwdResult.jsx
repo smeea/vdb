@@ -58,34 +58,33 @@ const TwdResult = ({ results, setResults }) => {
           return (
             <React.Fragment key={deck['deckid']}>
               <div className="flex flex-row py-2 px-0 mx-0">
-                <Col
-                  xs={12}
-                  md={12}
-                  xl={3}
-                  className={isMobile ? 'px-0' : 'ps-0 pe-2'}
+                <div
+                  className={`basis-full md:basis-full xl:basis-1/4 ${
+                    isMobile ? 'px-0' : 'ps-0 pe-2'
+                  }`}
                 >
                   <TwdResultDescription deck={deck} />
-                </Col>
+                </div>
                 {isMobile ? (
                   <>
-                    <Col xs={6} className="ps-0 pe-1">
+                    <div className="basis-1/2 ps-0 pe-1">
                       <TwdResultCrypt crypt={deck['crypt']} />
-                    </Col>
-                    <Col xs={6} className="ps-1 pe-0">
+                    </div>
+                    <div className="basis-1/2 ps-1 pe-0">
                       <TwdResultLibraryKeyCards library={deck['library']} />
-                    </Col>
+                    </div>
                   </>
                 ) : (
                   <>
-                    <Col xs={12} md={4} xl={3} className="px-2">
+                    <div className="basis-full md:basis-1/3 xl:basis-1/4 px-2">
                       <TwdResultCrypt crypt={deck['crypt']} />
-                    </Col>
-                    <Col xs={12} md={4} xl={3} className="px-2">
+                    </div>
+                    <div className="basis-full md:basis-1/3 xl:basis-1/4 px-2">
                       <TwdResultLibraryByType library={deck['library']} />
-                    </Col>
-                    <Col xs={12} md={4} xl={3} className="pe-0 ps-2">
+                    </div>
+                    <div className="basis-full md:basis-1/3 xl:basis-1/4 pe-0 ps-2">
                       <TwdResultLibraryKeyCards library={deck['library']} />
-                    </Col>
+                    </div>
                   </>
                 )}
               </div>

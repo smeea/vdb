@@ -25,7 +25,7 @@ const SearchAdditionalForms = ({
   for (let i = 1; i < value.value.length; i++) {
     forms.push(
       <div key={i} className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={3} className="flex justify-end px-0 pe-1">
+        <div className="basis-1/4 flex justify-end px-0 pe-1">
           <Stack direction="horizontal" gap={1}>
             {i == value.value.length - 1 && (
               <SearchFormButtonAdd
@@ -36,10 +36,10 @@ const SearchAdditionalForms = ({
             )}
             <SearchFormButtonDel searchForm={searchForm} name={name} i={i} />
           </Stack>
-        </Col>
+        </div>
         {withMoreless ? (
           <>
-            <Col xs={4} className="d-inline px-0">
+            <div className="basis-1/3 d-inline px-0">
               <Select
                 classNamePrefix="react-select"
                 options={morelessOptions}
@@ -51,8 +51,8 @@ const SearchAdditionalForms = ({
                 )}
                 onChange={onChange}
               />
-            </Col>
-            <Col xs={5} className="d-inline pe-0 ps-1">
+            </div>
+            <div className="xs={5} d-inline pe-0 ps-1">
               <Select
                 classNamePrefix="react-select"
                 options={options}
@@ -74,10 +74,10 @@ const SearchAdditionalForms = ({
                 )}
                 onChange={onChange}
               />
-            </Col>
+            </div>
           </>
         ) : (
-          <Col xs={9} className="d-inline px-0">
+          <div className="xs={9} d-inline px-0">
             <Select
               classNamePrefix="react-select"
               options={options}
@@ -91,7 +91,7 @@ const SearchAdditionalForms = ({
               value={options.find((obj) => obj.value === value.value[i])}
               onChange={onChange}
             />
-          </Col>
+          </div>
         )}
       </div>
     );

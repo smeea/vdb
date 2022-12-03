@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import {
   SearchAdditionalForms,
@@ -35,7 +34,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
   return (
     <>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={3} className="px-0">
+        <div className="basis-1/4 px-0">
           <div className="font-bold text-blue">Sect:</div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end pe-1">
@@ -57,8 +56,8 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
               )}
             </div>
           )}
-        </Col>
-        <Col xs={9} className="d-inline px-0">
+        </div>
+        <div className="xs={9} d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={options}
@@ -70,7 +69,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
             )}
             onChange={onChange}
           />
-        </Col>
+        </div>
       </div>
       <SearchAdditionalForms
         value={value}

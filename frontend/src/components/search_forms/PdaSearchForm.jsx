@@ -226,35 +226,35 @@ const PdaSearchForm = ({ error, setError }) => {
       {inventoryMode && (
         <>
           <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-            <Col xs={6} className="flex px-0">
+            <div className="basis-1/2 flex px-0">
               <label className="font-bold text-blue mb-0">
                 In Inventory by Crypt:
               </label>
-            </Col>
-            <Col xs={6} className="d-inline px-0">
+            </div>
+            <div className="basis-1/2 d-inline px-0">
               <TwdSearchFormMatchInventory
                 value={pdaFormState.matchInventory.crypt}
                 target={'crypt'}
                 onChange={handleChangeWithOpt}
               />
-            </Col>
+            </div>
           </div>
           <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-            <Col xs={6} className="flex px-0">
+            <div className="basis-1/2 flex px-0">
               <label className="font-bold text-blue mb-0">
                 In Inventory by Library:
               </label>
-            </Col>
-            <Col xs={6} className="d-inline px-0">
+            </div>
+            <div className="basis-1/2 d-inline px-0">
               <TwdSearchFormMatchInventory
                 value={pdaFormState.matchInventory.library}
                 target={'library'}
                 onChange={handleChangeWithOpt}
               />
-            </Col>
+            </div>
           </div>
           <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-            <Col xs={{ span: 6, offset: 6 }} className="d-inline px-0">
+            <div className="xs={{ span: 6, offset: 6 }} d-inline px-0">
               <TwdSearchFormMatchInventoryScaling
                 target="60"
                 value={pdaFormState.matchInventory.scaling}
@@ -265,34 +265,34 @@ const PdaSearchForm = ({ error, setError }) => {
                 value={pdaFormState.matchInventory.scaling}
                 onChange={handleMatchInventoryScalingChange}
               />
-            </Col>
+            </div>
           </div>
         </>
       )}
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={2} className="flex px-0">
+        <div className="xs={2} flex px-0">
           <div className="font-bold text-blue px-0">Year:</div>
-        </Col>
-        <Col xs={10} className="d-inline px-0">
+        </div>
+        <div className="xs={10} d-inline px-0">
           <TwdSearchFormDate
             value={pdaFormState.date}
             onChange={handleChangeWithOpt}
             inPda
           />
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <div className="font-bold text-blue px-0">Crypt Cards:</div>
       </div>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={12} className="d-inline px-0">
+        <div className="basis-full d-inline px-0">
           {cryptCardBase && (
             <TwdSearchFormCrypt
               value={pdaFormState.crypt}
               form={searchPdaForm.crypt}
             />
           )}
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row justify-end pb-1 pe-1 mx-0">
         <Form.Check
@@ -309,36 +309,36 @@ const PdaSearchForm = ({ error, setError }) => {
         <div className="font-bold text-blue px-0">Library Cards:</div>
       </div>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={12} className="d-inline px-0">
+        <div className="basis-full d-inline px-0">
           {libraryCardBase && (
             <TwdSearchFormLibrary
               value={pdaFormState.library}
               form={searchPdaForm.library}
             />
           )}
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={3} className="flex px-0">
+        <div className="basis-1/4 flex px-0">
           <div className="font-bold text-blue px-0">Library Size:</div>
-        </Col>
-        <Col xs={9} className="flex justify-end px-0">
+        </div>
+        <div className="xs={9} flex justify-end px-0">
           <TwdSearchFormLibraryTotal
             value={pdaFormState.libraryTotal}
             onChange={handleMultiChange}
           />
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={3} className="flex px-0">
+        <div className="basis-1/4 flex px-0">
           <div className="font-bold text-blue px-0">Clan:</div>
-        </Col>
-        <Col xs={9} className="d-inline px-0">
+        </div>
+        <div className="xs={9} d-inline px-0">
           <TwdSearchFormClan
             value={pdaFormState.clan}
             onChange={handleChange}
           />
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row justify-end pb-1 pe-1 mx-0">
         <Form.Check
@@ -352,26 +352,26 @@ const PdaSearchForm = ({ error, setError }) => {
         />
       </div>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={3} className="flex px-0">
+        <div className="basis-1/4 flex px-0">
           <div className="font-bold text-blue px-0">Sect:</div>
-        </Col>
-        <Col xs={9} className="d-inline px-0">
+        </div>
+        <div className="xs={9} d-inline px-0">
           <TwdSearchFormSect
             value={pdaFormState.sect}
             onChange={handleChange}
           />
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={5} className="flex px-0">
+        <div className="xs={5} flex px-0">
           <div className="font-bold text-blue px-0">Capacity Avg:</div>
-        </Col>
-        <Col xs={7} className="flex justify-end px-0">
+        </div>
+        <div className="xs={7} flex justify-end px-0">
           <TwdSearchFormCapacity
             value={pdaFormState.capacity}
             onChange={handleMultiChange}
           />
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <div className="font-bold text-blue px-0">Library Disciplines:</div>
@@ -381,24 +381,24 @@ const PdaSearchForm = ({ error, setError }) => {
         onChange={handleMultiChange}
       />
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={12} className="d-inline pe-0 ps-1">
+        <div className="basis-full d-inline pe-0 ps-1">
           <TwdSearchFormCardtypes
             value={pdaFormState.cardtypes}
             onChange={handleChangeWithOpt}
           />
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={3} className="flex px-0">
+        <div className="basis-1/4 flex px-0">
           <div className="font-bold text-blue px-0">Author:</div>
-        </Col>
-        <Col xs={9} className="d-inline px-0">
+        </div>
+        <div className="xs={9} d-inline px-0">
           <TwdSearchFormPlayer
             state={pdaFormState.author}
             form={searchPdaForm}
             inPda
           />
-        </Col>
+        </div>
       </div>
       {isMobile && (
         <>

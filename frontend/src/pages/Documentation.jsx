@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import At from 'assets/images/icons/at.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -22,7 +21,7 @@ const Documentation = () => {
   return (
     <div className="search-container mx-auto">
       <div className="flex flex-row justify-center">
-        <Col xs={12} md={8} lg={7} xl={6} className="px-0">
+        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
             <div className="pb-4">
@@ -452,7 +451,7 @@ const Documentation = () => {
               </div>
             </div>
           </div>
-        </Col>
+        </div>
       </div>
     </div>
   );

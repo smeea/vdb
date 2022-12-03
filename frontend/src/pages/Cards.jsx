@@ -75,7 +75,7 @@ const Cards = () => {
             {card && (
               <>
                 <div className="flex flex-row m-0 mb-3 mb-md-0 p-0">
-                  <Col className="m-0 p-0">
+                  <div className="m-0 p-0">
                     {showImage ? (
                       <CardImage
                         className="w-full h-auto"
@@ -93,7 +93,7 @@ const Cards = () => {
                         </div>
                       </>
                     )}
-                  </Col>
+                  </div>
                 </div>
                 <div
                   onClick={() => toggleShowImage()}
@@ -104,12 +104,12 @@ const Cards = () => {
               </>
             )}
             <div className="flex flex-row fixed w-full bottom-[40px] mx-0 px-1 py-1">
-              <Col md={8} className="px-0">
+              <div className="md:basis-8/12 px-0">
                 <QuickSelect
                   selectedCardid={card && card.Id}
                   setCard={handleSetCard}
                 />
-              </Col>
+              </div>
             </div>
             <div
               onClick={() => randomCrypt()}
@@ -126,38 +126,38 @@ const Cards = () => {
           </>
         ) : (
           <div className="flex flex-row">
-            <Col md={{ span: 8, offset: 2 }} className="quick-cards">
+            <div className="md={{ span: 8, offset: 2 }} quick-cards">
               {cryptCardBase && libraryCardBase && (
                 <div className="flex flex-row align-justify-center justify-center py-3">
-                  <Col className="px-0">
+                  <div className="px-0">
                     <QuickSelect
                       selectedCardid={card && card.Id}
                       setCard={handleSetCard}
                     />
-                  </Col>
+                  </div>
                 </div>
               )}
               {card && (
                 <div className="flex flex-row align-justify-center justify-center my-2 bordered">
-                  <Col md={6} className="ps-0">
+                  <div className="md:basis-1/2 ps-0">
                     <CardImage
                       className="w-full h-auto"
                       card={card}
                       set={imageSet}
                     />
-                  </Col>
-                  <Col md={6} className="py-3">
+                  </div>
+                  <div className="md:basis-1/2 py-3">
                     <ResultLayoutText
                       card={card}
                       setImageSet={setImageSet}
                       setCard={handleSetCard}
                       noClose
                     />
-                  </Col>
+                  </div>
                 </div>
               )}
-            </Col>
-            <Col>
+            </div>
+            <div>
               <Stack gap={1} className="py-3 px-2">
                 <ButtonIconed
                   variant="secondary"
@@ -174,7 +174,7 @@ const Cards = () => {
                   text="Library"
                 />
               </Stack>
-            </Col>
+            </div>
           </div>
         )}
       </>

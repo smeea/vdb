@@ -64,17 +64,17 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
   return (
     <>
       <div className="flex flex-row mx-0 py-1 ps-1">
-        <Col className="flex px-0">
+        <div className="flex px-0">
           <div className="font-bold text-blue">Traits:</div>
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row mx-0">
-        <Col xs={7} className="d-inline pe-0">
+        <div className="xs={7} d-inline pe-0">
           {traitsLeftforms}
-        </Col>
-        <Col xs={5} className="d-inline px-0">
+        </div>
+        <div className="xs={5} d-inline px-0">
           {traitsRightforms}
-        </Col>
+        </div>
       </div>
     </>
   );

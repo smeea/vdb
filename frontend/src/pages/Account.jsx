@@ -20,16 +20,16 @@ const Account = () => {
   return (
     <div className="search-container mx-auto">
       <div className="flex flex-row justify-center">
-        <Col xs={12} md={8} lg={7} xl={6} className="px-0">
+        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-0">
           <Banner />
-        </Col>
+        </div>
       </div>
       <div
         className={`flex flex-row items-center justify-center ${
           isMobile ? (username ? '' : 'h-[80vh]') : 'h-[70vh]'
         }`}
       >
-        <Col xs={12} md={8} lg={7} xl={6} className="px-3 pb-3">
+        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-3 pb-3">
           {username ? (
             <>
               <Stack gap={4}>
@@ -57,7 +57,7 @@ const Account = () => {
               </div>
             </>
           )}
-        </Col>
+        </div>
       </div>
     </div>
   );

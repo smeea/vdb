@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { ResultLibraryTypeImage } from 'components';
 import { useApp } from 'context';
@@ -128,10 +127,10 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
     if (idx < 5) {
       formsLeft.push(
         <div className="flex flex-row py-1 mx-0 items-center" key={i[0]}>
-          <Col xs={2} className="flex ps-2 justify-center">
+          <div className="xs={2} flex ps-2 justify-center">
             <ResultLibraryTypeImage value={i[0]} />
-          </Col>
-          <Col xs={10} className="d-inline px-0">
+          </div>
+          <div className="xs={10} d-inline px-0">
             <Select
               classNamePrefix="react-select"
               options={options}
@@ -143,16 +142,16 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
               )}
               onChange={onChange}
             />
-          </Col>
+          </div>
         </div>
       );
     } else {
       formsRight.push(
         <div className="flex flex-row py-1 mx-0 items-center" key={i[0]}>
-          <Col xs={2} className="flex ps-2 justify-center">
+          <div className="xs={2} flex ps-2 justify-center">
             <ResultLibraryTypeImage value={i[0]} />
-          </Col>
-          <Col xs={10} className="d-inline px-0">
+          </div>
+          <div className="xs={10} d-inline px-0">
             <Select
               classNamePrefix="react-select"
               options={options}
@@ -164,7 +163,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
               )}
               onChange={onChange}
             />
-          </Col>
+          </div>
         </div>
       );
     }
@@ -173,12 +172,12 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   return (
     <>
       <div className="flex flex-row mx-0">
-        <Col xs={6} className="d-inline ps-0 pe-2">
+        <div className="basis-1/2 d-inline ps-0 pe-2">
           {formsLeft}
-        </Col>
-        <Col xs={6} className="d-inline ps-2 pe-0">
+        </div>
+        <div className="basis-1/2 d-inline ps-2 pe-0">
           {formsRight}
-        </Col>
+        </div>
       </div>
     </>
   );

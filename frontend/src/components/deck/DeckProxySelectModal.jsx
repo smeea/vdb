@@ -199,7 +199,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
       <Modal.Body className="p-0">
         <div>
           <div className="flex flex-row px-0 pe-lg-4">
-            <Col xs={12} md={7} className="px-0 px-lg-4 pb-md-0">
+            <div className="basis-full md:basis-7/12 px-0 px-lg-4 pb-md-0">
               {deck.crypt && (
                 <div className={isMobile ? null : 'sticky-modal'}>
                   <DeckProxyCrypt
@@ -211,8 +211,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
                   />
                 </div>
               )}
-            </Col>
-            <Col xs={12} md={5} className="px-0">
+            </div>
+            <div className="basis-full md:basis-5/12 px-0">
               {deck.library && (
                 <DeckProxyLibrary
                   cards={deck.library}
@@ -222,7 +222,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
                   proxySelected={proxySelected}
                 />
               )}
-            </Col>
+            </div>
           </div>
           <div className="flex flex-row px-0 pe-lg-4">
             <div className="flex justify-end p-2 px-md-0 py-md-4">

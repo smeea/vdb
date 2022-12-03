@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Col } from 'react-bootstrap';
 import { useSnapshot } from 'valtio';
 import { PdaResult, PdaSearchForm } from 'components';
 import { useApp, searchResults, setPdaResults } from 'context';
@@ -12,15 +11,14 @@ const Pda = () => {
   return (
     <div className="twd-container mx-auto px-md-1 pt-md-3">
       <div className="flex flex-row justify-center">
-        <Col
-          xs={12}
-          md={8}
-          xl={9}
-          className={
-            !isMobile || (isMobile && !error)
-              ? 'px-0 pe-lg-4'
-              : 'hidden px-0 px-md-2 px-lg-4'
-          }
+        <div
+          className={`basis-full md:basis-8/12 xl:basis-9/12
+            ${
+              !isMobile || (isMobile && !error)
+                ? 'px-0 pe-lg-4'
+                : 'hidden px-0 px-md-2 px-lg-4'
+            }
+          `}
         >
           {pdaResults && (
             <PdaResult results={pdaResults} setResults={setPdaResults} />
@@ -30,19 +28,21 @@ const Pda = () => {
               {error}
             </div>
           )}
-        </Col>
-        <Col
-          xs={12}
-          md={4}
-          xl={3}
-          className={
-            !isMobile || (isMobile && !pdaResults)
-              ? 'p-1 py-md-0 px-md-2 px-xl-0'
-              : 'hidden'
-          }
+        </div>
+        <div
+          className={`
+            basis-full
+            md:basis-1/3
+            xl:basis-1/4
+            ${
+              !isMobile || (isMobile && !pdaResults)
+                ? 'p-1 py-md-0 px-md-2 px-xl-0'
+                : 'hidden'
+            }
+          `}
         >
           <PdaSearchForm error={error} setError={setError} />
-        </Col>
+        </div>
       </div>
     </div>
   );

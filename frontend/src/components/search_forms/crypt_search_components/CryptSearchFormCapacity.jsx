@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
 import {
@@ -56,7 +55,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   return (
     <>
       <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <Col xs={3} className="px-0">
+        <div className="basis-1/4 px-0">
           <div className="font-bold text-blue">Capacity:</div>
           {value.value[0][name] !== 'any' && (
             <div className="flex justify-end pe-1">
@@ -82,8 +81,8 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
               )}
             </div>
           )}
-        </Col>
-        <Col xs={4} className="d-inline px-0">
+        </div>
+        <div className="basis-1/3 d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={morelessOptions}
@@ -94,8 +93,8 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
             )}
             onChange={onChange}
           />
-        </Col>
-        <Col xs={5} className="d-inline pe-0 ps-1">
+        </div>
+        <div className="xs={5} d-inline pe-0 ps-1">
           <Select
             classNamePrefix="react-select"
             options={options}
@@ -105,7 +104,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
             value={options.find((obj) => obj.value === value.value[0][name])}
             onChange={onChange}
           />
-        </Col>
+        </div>
       </div>
       <SearchAdditionalForms
         name={name}

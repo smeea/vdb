@@ -68,7 +68,7 @@ const DeckDrawModal = ({
         <Modal.Body className="p-0">
           <div>
             <div className="flex flex-row px-0 pb-md-4">
-              <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
+              <div className="basis-full md:basis-7/12 px-0 ps-lg-4 pe-lg-3">
                 <div>
                   <div className="flex justify-between info-message h-10">
                     <div className="flex items-center px-2">
@@ -134,8 +134,8 @@ const DeckDrawModal = ({
                     nonKeyDisciplines={nonKeyDisciplines}
                   />
                 </div>
-              </Col>
-              <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
+              </div>
+              <div className="basis-full md:basis-5/12 px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
                 <div className="flex justify-between info-message h-10">
                   <div className="flex items-center px-2">
                     <b>Hand</b>
@@ -192,11 +192,11 @@ const DeckDrawModal = ({
                   className="search-library-table"
                   placement={isNarrow ? 'bottom' : 'right'}
                 />
-              </Col>
+              </div>
             </div>
             {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
               <div className="flex flex-row px-0 pb-md-4">
-                <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
+                <div className="basis-full md:basis-7/12 px-0 ps-lg-4 pe-lg-3">
                   {burnedCrypt.length > 0 && (
                     <div className="pt-4 pt-md-0">
                       <div className="flex justify-between info-message h-10">
@@ -228,8 +228,8 @@ const DeckDrawModal = ({
                       />
                     </div>
                   )}
-                </Col>
-                <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
+                </div>
+                <div className="basis-full md:basis-5/12 px-0 ps-lg-3 pe-lg-4">
                   {burnedLibrary.length > 0 && (
                     <div className="pt-4 pt-md-0">
                       <div className="flex justify-between info-message h-10">
@@ -275,7 +275,7 @@ const DeckDrawModal = ({
                       />
                     </div>
                   )}
-                </Col>
+                </div>
               </div>
             )}
             {shouldShowModal && (

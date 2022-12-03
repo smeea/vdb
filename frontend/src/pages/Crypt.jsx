@@ -1,5 +1,4 @@
 import React, { useMemo, useEffect } from 'react';
-import { Col } from 'react-bootstrap';
 import { useSnapshot } from 'valtio';
 import {
   ResultCrypt,
@@ -53,7 +52,7 @@ const Crypt = () => {
     <div className="search-container mx-auto px-md-2 px-xl-4">
       <div className="flex flex-row">
         {!isMobile && (
-          <Col
+          <div
             md={!showSearchForm ? 5 : 0}
             lg={!showSearchForm ? 6 : 1}
             xl={deck && addMode ? 4 : 2}
@@ -63,15 +62,13 @@ const Crypt = () => {
               (isDesktop || (!isDesktop && !showSearchForm)) && (
                 <DeckSelectorAndDisplay />
               )}
-          </Col>
+          </div>
         )}
         {showResultCol && (
-          <Col
-            md={7}
-            lg={6}
-            xl={deck && addMode ? 5 : 6}
-            xxl={5}
-            className="px-0 px-md-2 py-md-3 px-xl-3"
+          <div
+            className={`md:basis-7/12 lg:basis-1/2 xl:${
+              deck && addMode ? '5/12' : '6/12'
+            } 2xl:basis-5/12 px-0 px-md-2 py-md-3 px-xl-3`}
           >
             {((isMobile && cryptCompare && cryptResults) ||
               (!isMobile && cryptCompare)) && (
@@ -86,17 +83,16 @@ const Crypt = () => {
             {cryptResults !== undefined && (
               <ResultCrypt cards={cryptResults} setCards={setCryptResults} />
             )}
-          </Col>
+          </div>
         )}
         {showSearchForm && (
-          <Col
-            md={5}
-            xl={deck && addMode ? 3 : 4}
-            xxl={3}
-            className="p-1 px-md-2 py-md-3 pe-xl-0"
+          <div
+            className={`md:basis-5/12 xl=${
+              deck && addMode ? '3/12' : '4/12'
+            } 2xl:basis-1/4 p-1 px-md-2 py-md-3 pe-xl-0`}
           >
             <CryptSearchForm />
-          </Col>
+          </div>
         )}
       </div>
       {showToggleAddMode && (

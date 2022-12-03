@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { Col } from 'react-bootstrap';
 import {
   InventoryNewCryptCard,
   InventoryNewLibraryCard,
@@ -50,8 +49,8 @@ const InventoryDesktop = ({
 
   return (
     <>
-      {isWide && <Col xl={1} />}
-      <Col md={6} lg={6} xl={5} className="px-0 px-md-2 pe-xl-3">
+      {isWide && <div className="xl:basis-1/12" />}
+      <div className="md:basis-1/2 lg:basis-1/2 xl:basis-5/12 px-0 px-md-2 pe-xl-3">
         {!inShared && (
           <>
             <div className="sticky-selector pt-3 pb-2">
@@ -91,8 +90,8 @@ const InventoryDesktop = ({
             />
           </div>
         )}
-      </Col>
-      <Col md={6} lg={6} xl={isWide ? 4 : 5} className="px-0 px-md-2 px-xl-3">
+      </div>
+      <div className="md:basis-1/2 lg:basis-1/2 xl={isWide ? 4 : 5} px-0 px-md-2 px-xl-3">
         {!inShared && (
           <>
             <div className="sticky-selector pt-3 pb-2">
@@ -137,8 +136,8 @@ const InventoryDesktop = ({
             />
           </div>
         )}
-      </Col>
-      <Col lg={2} className="hide-on-lt1200px px-0 px-lg-2 px-xl-3">
+      </div>
+      <div className="lg:basis-1/6 hide-on-lt1200px px-0 px-lg-2 px-xl-3">
         <div className="sticky-buttons">
           <InventoryButtons
             crypt={sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt}
@@ -164,7 +163,7 @@ const InventoryDesktop = ({
             />
           </div>
         </div>
-      </Col>
+      </div>
     </>
   );
 };

@@ -254,15 +254,13 @@ const Decks = () => {
   return (
     <div className="deck-container mx-auto px-0 px-md-2 px-xl-4 py-md-3">
       <div className="flex flex-row mx-0">
-        <Col xl={1}></Col>
-        <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
+        <div className="xl:basis-1/12"></div>
+        <div className="basis-full lg:basis-5/6 xl:basis-9/12 px-md-2 px-xl-3">
           <div className="flex flex-row px-1 px-md-0 py-1 pb-0 pt-md-0">
-            <Col md={5} className="px-0 px-md-2">
+            <div className="md:basis-5/12 px-0 px-md-2">
               <div
                 className={
-                  inventoryMode || !isMobile
-                    ? 'flex'
-                    : 'flex justify-between'
+                  inventoryMode || !isMobile ? 'flex' : 'flex justify-between'
                 }
               >
                 <div
@@ -394,47 +392,48 @@ const Decks = () => {
                   )}
                 </Stack>
               </div>
-            </Col>
-            <Col md={7} className="px-0 px-md-2">
+            </div>
+            <div className="md:basis-7/12 px-0 px-md-2">
               {deck && (showInfo || !isMobile) && (
                 <>
                   <div className="flex flex-row mx-0 pb-sm-2">
-                    <Col
+                    <div
                       md={deck.isBranches ? 6 : 8}
                       className="px-0 ps-md-0 pe-md-1"
                     >
                       <DeckChangeName deck={deck} />
-                    </Col>
+                    </div>
                     {deck.isBranches && (
-                      <Col md={2} className={isMobile ? 'px-0 pt-0.5' : 'px-1'}>
+                      <div
+                        className={`md:basis-2/12 ${
+                          isMobile ? 'px-0 pt-0.5' : 'px-1'
+                        }`}
+                      >
                         <DeckChangeBranchName deck={deck} />
-                      </Col>
+                      </div>
                     )}
-                    <Col
-                      md={4}
-                      className={
-                        isMobile
-                          ? 'px-0 pt-0.5'
-                          : 'px-0 ps-md-1 pe-md-0 pt-2 pt-md-0'
-                      }
+                    <div
+                      className={`md:basis-1/3 px-0 ${
+                        isMobile ? 'pt-0.5' : 'ps-md-1 pe-md-0 pt-2 pt-md-0'
+                      }`}
                     >
                       <DeckChangeAuthor deck={deck} />
-                    </Col>
+                    </div>
                   </div>
                   <div className="flex flex-row mx-0">
-                    <Col className={isMobile ? 'px-0 pt-0.5' : 'px-0'}>
+                    <div className={isMobile ? 'px-0 pt-0.5' : 'px-0'}>
                       <DeckChangeDescription
                         deck={deck}
                         folded={isMobile ? false : foldedDescription}
                         setFolded={setFoldedDescription}
                       />
-                    </Col>
+                    </div>
                     {foldedDescription &&
                       !isMobile &&
                       (deck.tags?.length > 0 ||
                         deck.isAuthor ||
                         !deck.isPublic) && (
-                        <Col
+                        <div
                           className={`ps-2 pe-0 ${isMobile ? 'pt-0.5' : ''}`}
                         >
                           <DeckTags
@@ -442,7 +441,7 @@ const Decks = () => {
                             allTagsOptions={allTagsOptions}
                             bordered
                           />
-                        </Col>
+                        </div>
                       )}
                   </div>
                   {(!foldedDescription || isMobile) &&
@@ -459,15 +458,15 @@ const Decks = () => {
                     )}
                 </>
               )}
-            </Col>
+            </div>
           </div>
           {error && (
             <div className="flex flex-row">
-              <Col className="px-0 py-4 px-lg-2">
+              <div className="px-0 py-4 px-lg-2">
                 <div className="flex items-center justify-center error-message p-2">
                   <b>{error}</b>
                 </div>
-              </Col>
+              </div>
             </div>
           )}
           {deck && (
@@ -478,31 +477,25 @@ const Decks = () => {
                 Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
-                  <Col
-                    md={7}
-                    className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0"
-                  >
+                  <div className="md:basis-7/12 px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
                     <DeckCrypt deck={deck} />
-                  </Col>
-                  <Col
-                    md={5}
-                    className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0"
-                  >
+                  </div>
+                  <div className="md:basis-5/12 px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
                     <DeckLibrary deck={deck} />
-                  </Col>
+                  </div>
                 </>
               ) : (
-                <Col className="px-0 py-4 px-lg-2">
+                <div className="px-0 py-4 px-lg-2">
                   <div className="flex items-center justify-center error-message p-2">
                     <b>CONTAIN PLAYTEST CARDS</b>
                   </div>
-                </Col>
+                </div>
               )}
             </div>
           )}
-        </Col>
+        </div>
         {!isMobile && (
-          <Col lg={2} className="hide-on-lt992px ps-md-1 pe-md-0 px-xl-3">
+          <div className="lg:basis-1/6 hide-on-lt992px ps-md-1 pe-md-0 px-xl-3">
             <div className="sticky-buttons">
               <DeckButtons
                 deck={deck}
@@ -515,12 +508,12 @@ const Decks = () => {
                 missingLibrary={missingLibrary}
               />
             </div>
-          </Col>
+          </div>
         )}
       </div>
       {!username && !deckid && !hash && (
         <div className="flex flex-row items-center justify-center pt-4 mx-0 h-[70vh]">
-          <Col xs={12} md={8} lg={7} xl={6} className="px-3">
+          <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-3">
             <div className="flex justify-center">
               <h6>Login required to create decks</h6>
             </div>
@@ -535,13 +528,13 @@ const Decks = () => {
             <div className="py-4">
               <AccountRegister />
             </div>
-          </Col>
+          </div>
         </div>
       )}
 
       {username && decks && Object.keys(decks).length === 0 && !deck && (
         <div className="flex flex-row items-center justify-center p-3 vh-70">
-          <Col xs={12} md={8} lg={7} xl={6}>
+          <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
             <div className="text-center text-blue font-bold py-2">
               You do not have any decks in your collection yet
             </div>
@@ -552,7 +545,7 @@ const Decks = () => {
             <div className="flex justify-center pt-3">
               <DeckImport isOnlyNew={true} />
             </div>
-          </Col>
+          </div>
         </div>
       )}
 

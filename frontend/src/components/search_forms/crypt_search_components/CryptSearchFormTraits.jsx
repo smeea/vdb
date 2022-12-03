@@ -62,17 +62,17 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
   return (
     <>
       <div className="flex flex-row mx-0 py-1 ps-1">
-        <Col className="flex px-0">
+        <div className="flex px-0">
           <div className="font-bold text-blue">Traits:</div>
-        </Col>
+        </div>
       </div>
       <div className="flex flex-row mx-0">
-        <Col xs={6} className="d-inline pe-0">
+        <div className="basis-1/2 d-inline pe-0">
           {traitsLeftforms}
-        </Col>
-        <Col xs={6} className="d-inline pe-0">
+        </div>
+        <div className="basis-1/2 d-inline pe-0">
           {traitsRightforms}
-        </Col>
+        </div>
       </div>
     </>
   );

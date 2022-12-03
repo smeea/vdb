@@ -223,10 +223,10 @@ const Review = () => {
   return (
     <div className="deck-container mx-auto px-0 px-md-2 px-xl-4 py-md-3">
       <div className="flex flex-row mx-0">
-        <Col xl={1}></Col>
-        <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
+        <div className="xl:basis-1/12" />
+        <div className="basis-full lg:basis-5/6 xl:basis-9/12 px-md-2 px-xl-3">
           <div className="flex flex-row px-1 px-md-0 py-1 pb-0 pt-md-0">
-            <Col className="px-0 px-md-2">
+            <div className="px-0 px-md-2">
               {deckFrom && (
                 <>
                   {isMobile ? (
@@ -234,28 +234,25 @@ const Review = () => {
                   ) : (
                     <>
                       <div className="flex flex-row mx-0 pb-sm-2">
-                        <Col md={8} className="px-0 ps-md-0 pe-md-1">
+                        <div className="md:basis-8/12 px-0 ps-md-0 pe-md-1">
                           <DeckChangeName deck={deckFrom} />
-                        </Col>
-                        <Col
-                          md={4}
-                          className="px-0 ps-md-1 pe-md-0 pt-2 pt-md-0"
-                        >
+                        </div>
+                        <div className="md:basis-1/3 px-0 ps-md-1 pe-md-0 pt-2 pt-md-0">
                           <DeckChangeAuthor deck={deckFrom} />
-                        </Col>
+                        </div>
                       </div>
                       <div className="flex flex-row mx-0">
-                        <Col className="px-0">
+                        <div className="px-0">
                           <DeckChangeDescription
                             deck={deckFrom}
                             folded={foldedDescription}
                             setFolded={setFoldedDescription}
                           />
-                        </Col>
+                        </div>
                         {foldedDescription && deckFrom?.tags.length > 0 && (
-                          <Col className="ps-2 pe-0">
+                          <div className="ps-2 pe-0">
                             <DeckTags deck={deckFrom} bordered />
-                          </Col>
+                          </div>
                         )}
                       </div>
                       {!foldedDescription && deckFrom?.tags.length > 0 && (
@@ -267,38 +264,38 @@ const Review = () => {
                   )}
                 </>
               )}
-            </Col>
+            </div>
           </div>
           {error && (
             <div className="flex flex-row">
-              <Col className="px-0 py-4 px-lg-2">
+              <div className="px-0 py-4 px-lg-2">
                 <div className="flex items-center justify-center error-message p-2">
                   <b>{error}</b>
                 </div>
-              </Col>
+              </div>
             </div>
           )}
           {deckFrom && (
             <div className="flex flex-row pt-md-2">
-              <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
+              <div className="md:basis-7/12 px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
                 <ReviewCrypt
                   cardsFrom={deckFrom.crypt}
                   cardsTo={deckTo.crypt}
                   cardChange={cardChange}
                 />
-              </Col>
-              <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
+              </div>
+              <div className="md:basis-5/12 px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
                 <ReviewLibrary
                   cardsFrom={deckFrom.library}
                   cardsTo={deckTo.library}
                   cardChange={cardChange}
                 />
-              </Col>
+              </div>
             </div>
           )}
-        </Col>
+        </div>
         {!isMobile && (
-          <Col lg={2} className="hide-on-lt992px px-lg-3">
+          <div className="lg:basis-1/6 hide-on-lt992px px-lg-3">
             <div className="sticky-buttons">
               <ReviewButtons
                 deck={deckFrom}
@@ -306,7 +303,7 @@ const Review = () => {
                 parentId={inDecks ? parentId : null}
               />
             </div>
-          </Col>
+          </div>
         )}
       </div>
 

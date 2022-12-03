@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { Col } from 'react-bootstrap';
 import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
@@ -69,7 +68,7 @@ const ResultLayoutTextInventory = (props) => {
 
   return (
     <div className="flex flex-row">
-      <Col xs={6} lg={5} className="pe-2">
+      <div className="basis-1/2 lg:basis-5/12 pe-2">
         <div className="flex items-center">
           <div className="opacity-40">
             <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
@@ -88,11 +87,11 @@ const ResultLayoutTextInventory = (props) => {
           </div>
           - In Inventory
         </div>
-      </Col>
-      <Col xs={12} lg={7} className={isMobile ? 'pt-2' : 'ps-0'}>
+      </div>
+      <div className={`basis-full lg:basis-7/12 ${isMobile ? 'pt-2' : 'ps-0'}`}>
         {SoftUsedDescription && <>{SoftUsedDescription}</>}
         {HardUsedDescription && <>{HardUsedDescription}</>}
-      </Col>
+      </div>
     </div>
   );
 };

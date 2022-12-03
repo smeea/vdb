@@ -251,10 +251,10 @@ const Diff = () => {
   return (
     <div className="deck-container mx-auto px-0 px-md-2 px-xl-4 py-md-3">
       <div className="flex flex-row mx-0">
-        <Col xl={1}></Col>
-        <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
+        <div className="xl:basis-1/12"></div>
+        <div className="basis-full lg:basis-5/6 xl:basis-9/12 px-md-2 px-xl-3">
           <div className="flex flex-row px-1 px-md-0 py-1 pb-0 pt-md-0">
-            <Col className="px-0 ps-lg-3">
+            <div className="px-0 ps-lg-3">
               <div className="flex flex-row font-bold text-blue mx-0 pb-1">
                 Deck You Edit:
               </div>
@@ -289,9 +289,7 @@ const Diff = () => {
               ) : (
                 <div
                   className={
-                    inventoryMode || !isMobile
-                      ? 'flex'
-                      : 'flex justify-between'
+                    inventoryMode || !isMobile ? 'flex' : 'flex justify-between'
                   }
                 >
                   <div
@@ -395,15 +393,15 @@ const Diff = () => {
                   />
                 </Form>
               </div>
-            </Col>
+            </div>
             {!isMobile && (
-              <Col xs={1} className="flex justify-center px-0">
+              <div className="xs={1} flex justify-center px-0">
                 <Button variant="primary" onClick={handleSwap}>
                   <ArrowLeftRight />
                 </Button>
-              </Col>
+              </div>
             )}
-            <Col className="pt-1 pt-md-0 px-0 pe-lg-3">
+            <div className="pt-1 pt-md-0 px-0 pe-lg-3">
               <div className="flex flex-row font-bold text-blue mx-0 pb-1">
                 Show Changes Against:
               </div>
@@ -526,30 +524,30 @@ const Diff = () => {
                   />
                 </Form>
               </div>
-            </Col>
+            </div>
           </div>
           {(errorFrom || errorTo) && (
             <div className="flex flex-row py-1">
-              <Col className="px-0 ps-lg-3">
+              <div className="px-0 ps-lg-3">
                 {errorFrom && (
                   <div className="flex items-center justify-center error-message p-2">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
                 )}
-              </Col>
-              <Col xs={1} className="px-0"></Col>
-              <Col className="px-0 pe-lg-3">
+              </div>
+              <div className="xs={1} px-0"></div>
+              <div className="px-0 pe-lg-3">
                 {errorTo && (
                   <div className="flex items-center justify-center error-message p-2">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
                 )}
-              </Col>
+              </div>
             </div>
           )}
           {deck && deckTo && (
             <div className="flex flex-row pt-md-2">
-              <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
+              <div className="md:basis-7/12 px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
                 <div
                   className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}
                 >
@@ -562,8 +560,8 @@ const Diff = () => {
                     cardsTo={deckTo.crypt}
                   />
                 </div>
-              </Col>
-              <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
+              </div>
+              <div className="md:basis-5/12 px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
                 <div
                   className={
                     !isMobile ? 'sticky-deck-library pt-4 pt-md-4' : null
@@ -578,12 +576,12 @@ const Diff = () => {
                     cardsTo={deckTo.library}
                   />
                 </div>
-              </Col>
+              </div>
             </div>
           )}
-        </Col>
+        </div>
         {!isMobile && (
-          <Col lg={2} className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
+          <div className="lg:basis-1/6 hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
             <div className="sticky-buttons">
               <DiffButtons
                 missingCrypt={missingCrypt}
@@ -592,7 +590,7 @@ const Diff = () => {
                 deckTo={deckTo}
               />
             </div>
-          </Col>
+          </div>
         )}
       </div>
       {showFloatingButtons && (

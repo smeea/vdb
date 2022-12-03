@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Telegram from 'assets/images/icons/telegram.svg';
 import Github from 'assets/images/icons/github.svg';
@@ -23,7 +22,7 @@ const About = () => {
     <div className="search-container mx-auto">
       <div className="flex flex-row justify-center">
         <div className="basis-1/2 px-0">
-          {/* TODO xs={12} md={8} lg={7} xl={6} */}
+          {/* TODO basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 */}
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
             <div className="pb-4">

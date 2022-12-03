@@ -161,26 +161,24 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                   show={showDeck === deck.deckid}
                   text={
                     <div className="flex flex-row">
-                      <Col
-                        md={7}
+                      <div
                         onClick={(event) => {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
-                        className="overflow-y-auto h-[80vh]"
+                        className="md:basis-7/12 overflow-y-auto h-[80vh]"
                       >
                         <DeckCrypt inAdvSelect={true} deck={deck} />
-                      </Col>
-                      <Col
-                        md={5}
+                      </div>
+                      <div
                         onClick={(event) => {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
-                        className="overflow-y-auto h-[80vh]"
+                        className="md:basis-5/12 overflow-y-auto h-[80vh]"
                       >
                         <DeckLibrary deck={deck} />
-                      </Col>
+                      </div>
                     </div>
                   }
                 >

@@ -68,7 +68,7 @@ const SeatingModal = ({
         <Modal.Body className="py-0 px-2 px-md-4">
           <div className="mb-0 mb-md-3 px-0 px-md-0">
             <div className="flex flex-row items-center">
-              <Col className="py-2" md={5} xl={4}>
+              <div className="py-2 md:basis-5/12 xl:basis-1/3">
                 <Stack gap={1}>
                   {players.map((p, idx) => {
                     return (
@@ -110,14 +110,14 @@ const SeatingModal = ({
                     </div>
                   )}
                 </Stack>
-              </Col>
-              <Col md={7} xl={8} className="px-0">
+              </div>
+              <div className="md:basis-7/12 xl:basis-8/12 px-0">
                 {seating && (
                   <div className="flex flex-row py-2 py-md-0">
                     <SeatingTableLayout players={seating} />
                   </div>
                 )}
-              </Col>
+              </div>
             </div>
             {editRandom && (
               <div className="flex flex-row pt-0 pt-md-3">
@@ -149,11 +149,11 @@ const SeatingModal = ({
                         Custom Decks
                       </div>
                     </div>
-                    <Col sm={12} md={7} lg={6} xl={5} className="py-2">
+                    <div className="basis-full md:basis-7/12 lg:basis-1/2 xl:basis-5/12 py-2">
                       <SeatingCustomDeckAdd addDeck={addCustomDeck} />
-                    </Col>
+                    </div>
                   </div>
-                  <Col sm={12} md={6} lg={4}>
+                  <div className="basis-full md:basis-1/2 lg:basis-1/3">
                     {customDecks
                       .slice(0, Math.ceil(customDecks.length / 3))
                       .map((d, idx) => {
@@ -168,8 +168,8 @@ const SeatingModal = ({
                           />
                         );
                       })}
-                  </Col>
-                  <Col sm={12} md={6} lg={4}>
+                  </div>
+                  <div className="basis-full md:basis-1/2 lg:basis-1/3">
                     {customDecks
                       .slice(
                         Math.ceil(customDecks.length / 3),
@@ -187,8 +187,8 @@ const SeatingModal = ({
                           />
                         );
                       })}
-                  </Col>
-                  <Col sm={12} md={6} lg={4}>
+                  </div>
+                  <div className="basis-full md:basis-1/2 lg:basis-1/3">
                     {customDecks
                       .slice(Math.ceil((customDecks.length * 2) / 3))
                       .map((d, idx) => {
@@ -203,7 +203,7 @@ const SeatingModal = ({
                           />
                         );
                       })}
-                  </Col>
+                  </div>
                 </div>
                 <hr className="mx-0" />
                 <div className="flex flex-row">
@@ -242,7 +242,7 @@ const SeatingModal = ({
                     </div>
                   </div>
                 </div>
-                <Col sm={12} md={6} lg={4}>
+                <div className="basis-full md:basis-1/2 lg:basis-1/3">
                   {standardDecks
                     .slice(0, Math.ceil(standardDecks.length / 3))
                     .map((d, idx) => {
@@ -256,8 +256,8 @@ const SeatingModal = ({
                         />
                       );
                     })}
-                </Col>
-                <Col sm={12} md={6} lg={4}>
+                </div>
+                <div className="basis-full md:basis-1/2 lg:basis-1/3">
                   {standardDecks
                     .slice(
                       Math.ceil(standardDecks.length / 3),
@@ -274,8 +274,8 @@ const SeatingModal = ({
                         />
                       );
                     })}
-                </Col>
-                <Col sm={12} md={6} lg={4}>
+                </div>
+                <div className="basis-full md:basis-1/2 lg:basis-1/3">
                   {standardDecks
                     .slice(Math.ceil((standardDecks.length * 2) / 3))
                     .map((d, idx) => {
@@ -289,7 +289,7 @@ const SeatingModal = ({
                         />
                       );
                     })}
-                </Col>
+                </div>
               </div>
             )}
           </div>

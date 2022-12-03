@@ -126,7 +126,7 @@ const SearchFormTextAndButtons = ({
         </InputGroup>
       )}
       <div className="flex flex-row mx-0 px-0 pt-1">
-        <Col xs={2} md={3} className="px-0">
+        <div className="xs={2} md:basis-1/4 px-0">
           <Stack direction="horizontal" gap={1}>
             {value[0].value !== '' && (
               <>
@@ -144,12 +144,12 @@ const SearchFormTextAndButtons = ({
               </>
             )}
           </Stack>
-        </Col>
-        <Col className="flex justify-end px-0">
+        </div>
+        <div className="flex justify-end px-0">
           <Stack direction="horizontal" gap={2} className="items-start">
             {OptionsForm}
           </Stack>
-        </Col>
+        </div>
       </div>
       <SearchAdditionalFormsText
         value={value}

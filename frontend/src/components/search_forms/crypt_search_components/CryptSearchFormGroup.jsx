@@ -8,10 +8,10 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
 
   return (
     <div className="flex flex-row pt-2 ps-1 mx-0 items-center">
-      <Col xs={3} className="flex px-0">
+      <div className="basis-1/4 flex px-0">
         <div className="font-bold text-blue">Group:</div>
-      </Col>
-      <Col xs={9} className="flex justify-end px-0">
+      </div>
+      <div className="xs={9} flex justify-end px-0">
         <ButtonGroup>
           {groups.map((i, index) => {
             return (
@@ -30,7 +30,7 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
             );
           })}
         </ButtonGroup>
-      </Col>
+      </div>
     </div>
   );
 };

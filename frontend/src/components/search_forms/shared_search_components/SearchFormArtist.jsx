@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import cryptArtists from '~/src/assets/data/artistsCrypt.json';
 import libraryArtists from '~/src/assets/data/artistsLib.json';
@@ -33,10 +32,10 @@ const SearchFormArtist = ({ target, value, onChange }) => {
 
   return (
     <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-      <Col xs={3} className="flex px-0">
+      <div className="basis-1/4 flex px-0">
         <div className="font-bold text-blue">Artist:</div>
-      </Col>
-      <Col xs={9} className="d-inline px-0">
+      </div>
+      <div className="xs={9} d-inline px-0">
         <Select
           classNamePrefix="react-select"
           options={options}
@@ -47,7 +46,7 @@ const SearchFormArtist = ({ target, value, onChange }) => {
           placeholder="Artist"
           value={options.find((obj) => obj.value === value)}
         />
-      </Col>
+      </div>
     </div>
   );
 };

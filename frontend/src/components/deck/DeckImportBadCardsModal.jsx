@@ -60,22 +60,22 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
         {badCards.map((c, idx) => {
           return (
             <div key={idx} className="flex flex-row items-center pt-2">
-              <Col md={5}>{c}</Col>
-              <Col md={1}>
+              <div className="md:basis-5/12">{c}</div>
+              <div className="md:basis-1/12">
                 <DeckCardQuantity
                   deckid={deckid}
                   cardChange={handleCardChange}
                   card={idx}
                   q={cards[idx]?.q}
                 />
-              </Col>
-              <Col md={6}>
+              </div>
+              <div className="md:basis-1/2">
                 <QuickSelect
                   setCard={(card) => handleSetCard(card, idx)}
                   selectedCardid={cards[idx]?.c?.Id}
                   inBadImport
                 />
-              </Col>
+              </div>
             </div>
           );
         })}

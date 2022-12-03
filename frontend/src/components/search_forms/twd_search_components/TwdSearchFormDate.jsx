@@ -1,6 +1,5 @@
 import React from 'react';
 import Select from 'react-select';
-import { Col } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const TwdSearchFormDate = ({ inPda, value, onChange }) => {
@@ -71,8 +70,8 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   return (
     <>
       <div className="flex flex-row mx-0 items-center">
-        <Col xs={1} className="d-inline px-0" />
-        <Col xs={5} className="d-inline px-0">
+        <div xs={1} className="d-inline px-0" />
+        <div className="xs={5} d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={fromOptions}
@@ -82,11 +81,11 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
             value={fromOptions.find((obj) => obj.value === value.from)}
             onChange={onChange}
           />
-        </Col>
-        <Col xs={1} className="flex justify-center px-0">
+        </div>
+        <div className="xs={1} flex justify-center px-0">
           <div className="text-xs px-0">to</div>
-        </Col>
-        <Col xs={5} className="d-inline px-0">
+        </div>
+        <div className="xs={5} d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={toOptions}
@@ -96,7 +95,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
             value={toOptions.find((obj) => obj.value === value.to)}
             onChange={onChange}
           />
-        </Col>
+        </div>
       </div>
     </>
   );

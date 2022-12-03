@@ -102,12 +102,12 @@ const PdaResultDescription = ({ deck }) => {
         <>
           {Description}
           <div className="flex flex-row p-2">
-            <Col md={6} className="ps-2 pe-1">
+            <div className="md:basis-1/2 ps-2 pe-1">
               <TwdOpenDeckButton deckid={deck['deckid']} />
-            </Col>
-            <Col md={6} className="ps-1 pe-2">
+            </div>
+            <div className="md:basis-1/2 ps-1 pe-2">
               {username && <DeckCloneButton deck={deck} noRedirect />}
-            </Col>
+            </div>
             <div className="p-2">
               <PdaFavoriteButton deck={deck} />
             </div>
@@ -115,10 +115,10 @@ const PdaResultDescription = ({ deck }) => {
         </>
       ) : (
         <div className="flex flex-row pb-1 mx-0">
-          <Col xs={9} className="px-1 mx-0">
+          <div className="xs={9} px-1 mx-0">
             {Description}
-          </Col>
-          <Col xs={3} className="px-1">
+          </div>
+          <div className="basis-1/4 px-1">
             <Stack gap={1}>
               <TwdOpenDeckButton deckid={deck['deckid']} />
               {username && <DeckCloneButton deck={deck} noRedirect />}
@@ -126,7 +126,7 @@ const PdaResultDescription = ({ deck }) => {
                 <PdaFavoriteButton deck={deck} />
               </div>
             </Stack>
-          </Col>
+          </div>
         </div>
       )}
     </>
