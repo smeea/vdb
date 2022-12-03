@@ -183,9 +183,9 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
             <>
               <div
                 title="Copy URL"
-                className="d-flex justify-content-center align-items-center"
+                className="flex justify-center items-center"
               >
-                <div className="d-flex pe-2">
+                <div className="flex pe-2">
                   <Link45Deg width="21" height="21" viewBox="0 0 15 15" />
                 </div>
                 {state ? 'Copied' : 'Copy URL'}

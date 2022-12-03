@@ -68,8 +68,8 @@ const Navigation = () => {
       sticky={isMobile ? null : 'top'}
       variant="dark"
     >
-      <Nav className="container justify-content-between px-0">
-        <div className="d-flex align-items-center">
+      <Nav className="container justify-between px-0">
+        <div className="flex items-center">
           {isMobile ? (
             <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
           ) : (
@@ -86,14 +86,14 @@ const Navigation = () => {
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
               <div
-                className="d-flex align-items-center px-3"
+                className="flex items-center px-3"
                 onClick={() => {
                   toggleInventoryMode();
                 }}
               >
                 <div
                   className={
-                    inventoryMode ? 'd-flex text-white' : 'd-flextext-neutral-500-font'
+                    inventoryMode ? 'flex text-white' : 'flex text-neutral-500-font'
                   }
                 >
                   {inventoryMode ? (
@@ -106,7 +106,7 @@ const Navigation = () => {
                   className={
                     inventoryMode
                       ? 'd-inline ps-2 text-white'
-                      : 'd-inline ps-2text-neutral-500-font'
+                      : 'd-inline ps-2 text-neutral-500-font'
                   }
                 >
                   Inventory Mode
@@ -114,7 +114,7 @@ const Navigation = () => {
               </div>
             )}
         </div>
-        <div className="d-flex align-items-center">
+        <div className="flex items-center">
           {!isMobile && (
             <>
               <NavLink

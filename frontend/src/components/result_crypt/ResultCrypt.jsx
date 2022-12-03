@@ -53,7 +53,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
-        <div className="d-flex align-items-center justify-content-center error-message">
+        <div className="flex items-center justify-center error-message">
           <b>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</b>
         </div>
       )}
@@ -84,7 +84,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
       {isMobile && showFloatingButtons && (
         <div
           onClick={handleClear}
-          className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+          className="flex float-right-bottom float-clear items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>
@@ -92,9 +92,9 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
       {isMobile && showFloatingButtons && isEditable && (
         <div
           onClick={() => toggleAddMode()}
-          className={`d-flex float-right-middle float-add-${
+          className={`flex float-right-middle float-add-${
             addMode ? 'on' : 'off'
-          } align-items-center justify-content-center`}
+          } items-center justify-center`}
         >
           <Plus viewBox="0 0 16 16" />
         </div>

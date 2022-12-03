@@ -11,14 +11,14 @@ const AccountPlaytest = () => {
 
   return (
     <>
-      <div className="d-flex align-items-center justify-content-between">
+      <div className="flex items-center justify-between">
         <div
-          className="d-flex align-items-center"
+          className="flex items-center"
           onClick={() => {
             togglePlaytest();
           }}
         >
-          <div className={playtest ? 'pe-2' : 'pe-2text-neutral-500-font'}>
+          <div className={playtest ? 'pe-2' : 'pe-2 text-neutral-500-font'}>
             {playtest ? (
               <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
             ) : (

@@ -36,13 +36,13 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
       <div className="border-thick p-2 m-1 m-md-2">
         <div
           onClick={() => handleClick()}
-          className={`d-flex justify-content-between link-like ${
+          className={`flex justify-between link-like ${
             isStar ? 'bold' : ''
           }`}
         >
-          <div className="d-flex align-items-center">
+          <div className="flex items-center">
             {deck.players}
-            <div className="d-flex pt-1 ps-1 pe-3">
+            <div className="flex pt-1 ps-1 pe-3">
               <PeopleFill viewBox="0 0 18 18" />
             </div>
             {`${deck.event}: ${deck.location}`}

@@ -252,17 +252,17 @@ const Decks = () => {
   }, [deck]);
 
   return (
-    <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
-      <Row className="mx-0">
+    <div className="deck-container mx-auto px-0 px-md-2 px-xl-4 py-md-3">
+      <div className="flex flex-row mx-0">
         <Col xl={1}></Col>
         <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
-          <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0">
+          <div className="flex flex-row px-1 px-md-0 py-1 pb-0 pt-md-0">
             <Col md={5} className="px-0 px-md-2">
               <div
                 className={
                   inventoryMode || !isMobile
-                    ? 'd-flex'
-                    : 'd-flex justify-content-between'
+                    ? 'flex'
+                    : 'flex justify-between'
                 }
               >
                 <div
@@ -292,9 +292,9 @@ const Decks = () => {
                     <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
                   </div>
                 )}
-                <div className="d-flex">
+                <div className="flex">
                   {inventoryMode && deck?.isAuthor && (
-                    <div className="d-flex ps-1">
+                    <div className="flex ps-1">
                       <Button
                         title={`Inventory Type: ${
                           !deck?.inventoryType
@@ -306,7 +306,7 @@ const Decks = () => {
                         variant="primary"
                         onClick={() => toggleInventoryState(deck?.deckid)}
                       >
-                        <div className="d-flex align-items-center">
+                        <div className="flex items-center">
                           {!deck?.inventoryType && <At />}
                           {deck?.inventoryType === 's' && <Shuffle />}
                           {deck?.inventoryType === 'h' && <PinAngleFill />}
@@ -316,7 +316,7 @@ const Decks = () => {
                   )}
                 </div>
               </div>
-              <div className="d-flex justify-content-between align-items-center pt-2">
+              <div className="flex justify-between items-center pt-2">
                 <Form className="my-0 ps-1">
                   {username && decks && Object.keys(decks).length > 0 && (
                     <Form.Check
@@ -369,7 +369,7 @@ const Decks = () => {
                         setShowDeckSelectAdv(true);
                       }}
                     >
-                      <div className="d-flex">
+                      <div className="flex">
                         <BinocularsFill
                           width="16"
                           height="22"
@@ -383,7 +383,7 @@ const Decks = () => {
                       variant="primary"
                       onClick={() => setShowInfo(!showInfo)}
                     >
-                      <div className="d-flex pt-1">
+                      <div className="flex pt-1">
                         <ChatLeftQuoteFill
                           width="16"
                           height="18"
@@ -398,7 +398,7 @@ const Decks = () => {
             <Col md={7} className="px-0 px-md-2">
               {deck && (showInfo || !isMobile) && (
                 <>
-                  <Row className="mx-0 pb-sm-2">
+                  <div className="flex flex-row mx-0 pb-sm-2">
                     <Col
                       md={deck.isBranches ? 6 : 8}
                       className="px-0 ps-md-0 pe-md-1"
@@ -420,8 +420,8 @@ const Decks = () => {
                     >
                       <DeckChangeAuthor deck={deck} />
                     </Col>
-                  </Row>
-                  <Row className="mx-0">
+                  </div>
+                  <div className="flex flex-row mx-0">
                     <Col className={isMobile ? 'px-0 pt-0.5' : 'px-0'}>
                       <DeckChangeDescription
                         deck={deck}
@@ -444,7 +444,7 @@ const Decks = () => {
                           />
                         </Col>
                       )}
-                  </Row>
+                  </div>
                   {(!foldedDescription || isMobile) &&
                     (deck.tags?.length > 0 ||
                       deck.isAuthor ||
@@ -460,18 +460,18 @@ const Decks = () => {
                 </>
               )}
             </Col>
-          </Row>
+          </div>
           {error && (
-            <Row>
+            <div className="flex flex-row">
               <Col className="px-0 py-4 px-lg-2">
-                <div className="d-flex align-items-center justify-content-center error-message p-2">
+                <div className="flex items-center justify-center error-message p-2">
                   <b>{error}</b>
                 </div>
               </Col>
-            </Row>
+            </div>
           )}
           {deck && (
-            <Row className="pt-md-2">
+            <div className="flex flex-row pt-md-2">
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
@@ -493,12 +493,12 @@ const Decks = () => {
                 </>
               ) : (
                 <Col className="px-0 py-4 px-lg-2">
-                  <div className="d-flex align-items-center justify-content-center error-message p-2">
+                  <div className="flex items-center justify-center error-message p-2">
                     <b>CONTAIN PLAYTEST CARDS</b>
                   </div>
                 </Col>
               )}
-            </Row>
+            </div>
           )}
         </Col>
         {!isMobile && (
@@ -517,14 +517,14 @@ const Decks = () => {
             </div>
           </Col>
         )}
-      </Row>
+      </div>
       {!username && !deckid && !hash && (
-        <Row className="align-items-center justify-content-center pt-4 mx-0 h-[70vh]">
+        <div className="flex flex-row items-center justify-center pt-4 mx-0 h-[70vh]">
           <Col xs={12} md={8} lg={7} xl={6} className="px-3">
-            <div className="d-flex justify-content-center">
+            <div className="flex justify-center">
               <h6>Login required to create decks</h6>
             </div>
-            <div className="d-flex justify-content-center">
+            <div className="flex justify-center">
               <h6 className="text-xs">
                 (Browse preconstructed decks without login)
               </h6>
@@ -536,24 +536,24 @@ const Decks = () => {
               <AccountRegister />
             </div>
           </Col>
-        </Row>
+        </div>
       )}
 
       {username && decks && Object.keys(decks).length === 0 && !deck && (
-        <Row className="align-items-center justify-content-center p-3 vh-70">
+        <div className="flex flex-row items-center justify-center p-3 vh-70">
           <Col xs={12} md={8} lg={7} xl={6}>
-            <div className="text-centertext-blue font-bold py-2">
+            <div className="text-center text-blue font-bold py-2">
               You do not have any decks in your collection yet
             </div>
-            <div className="text-centertext-blue font-bold py-2">
+            <div className="text-center text-blue font-bold py-2">
               Start by creating new one, import from Lackey / Amaranth / Text or
               browse official preconstructed decks
             </div>
-            <div className="d-flex justify-content-center pt-3">
+            <div className="flex justify-center pt-3">
               <DeckImport isOnlyNew={true} />
             </div>
           </Col>
-        </Row>
+        </div>
       )}
 
       {showFloatingButtons && (
@@ -562,7 +562,7 @@ const Decks = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          className="hide-on-gt992px d-flex float-right-bottom float-menu align-items-center justify-content-center"
+          className="hide-on-gt992px flex float-right-bottom float-menu items-center justify-center"
         >
           <List viewBox="0 0 16 16" />
         </div>
@@ -579,7 +579,7 @@ const Decks = () => {
           size="sm"
         >
           <Modal.Body className="p-1">
-            <Container className="px-0" fluid>
+            <div className="px-0">
               <DeckButtons
                 deck={deck}
                 setShowInfo={setShowInfo}
@@ -594,7 +594,7 @@ const Decks = () => {
                   setShowFloatingButtons(true);
                 }}
               />
-            </Container>
+            </div>
           </Modal.Body>
         </Modal>
       )}
@@ -614,7 +614,7 @@ const Decks = () => {
         <DeckRecommendation deck={deck} setShow={setShowRecommendation} />
       )}
       {qrUrl && <DeckQrModal qrUrl={qrUrl} setQrUrl={setQrUrl} deck={deck} />}
-    </Container>
+    </div>
   );
 };
 

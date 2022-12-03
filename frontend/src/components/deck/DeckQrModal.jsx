@@ -18,9 +18,9 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
     <Modal show={true} onHide={handleClose} animation={false} centered={true}>
       <Modal.Header className="no-border pt-3 pb-0">
         <h5>QR for {deck.name}</h5>
-        <div className="d-flex align-items-center">
+        <div className="flex items-center">
           {(deck.isNonEditable || qrUrl.includes('decks/deck?')) && (
-            <div title="Non-editable" className="d-flextext-blue px-2">
+            <div title="Non-editable" className="flex text-blue px-2">
               <Snow width="26" height="26" viewBox="0 0 16 16" />
             </div>
           )}
@@ -29,7 +29,7 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
           </Button>
         </div>
       </Modal.Header>
-      <Modal.Body className="d-flex justify-content-center p-2 p-md-4">
+      <Modal.Body className="flex justify-center p-2 p-md-4">
         <div style={{ background: 'white', padding: '4px' }}>
           <a href={qrUrl}>
             <Suspense fallback={<div />}>

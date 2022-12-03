@@ -126,7 +126,7 @@ const InventoryMobile = ({
       {showFloatingButtons && (
         <div
           onClick={() => setShowCrypt(!showCrypt)}
-          className="d-flex float-right-middle float-add-on align-items-center justify-content-center"
+          className="flex float-right-middle float-add-on items-center justify-center"
         >
           <div className="d-inline" style={{ fontSize: '1.6em' }}>
             {showCrypt ? 'LIB' : 'CR'}

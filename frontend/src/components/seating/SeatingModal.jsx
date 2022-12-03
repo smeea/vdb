@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Container, Row, Col, Stack } from 'react-bootstrap';
+import { Modal, Button, Col, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import PencilSquare from 'assets/images/icons/pencil-square.svg';
 import Recycle from 'assets/images/icons/recycle.svg';
@@ -66,8 +66,8 @@ const SeatingModal = ({
           )}
         </Modal.Header>
         <Modal.Body className="py-0 px-2 px-md-4">
-          <Container className="mb-0 mb-md-3 px-0 px-md-0" fluid>
-            <Row className="align-items-center">
+          <div className="mb-0 mb-md-3 px-0 px-md-0">
+            <div className="flex flex-row items-center">
               <Col className="py-2" md={5} xl={4}>
                 <Stack gap={1}>
                   {players.map((p, idx) => {
@@ -113,22 +113,22 @@ const SeatingModal = ({
               </Col>
               <Col md={7} xl={8} className="px-0">
                 {seating && (
-                  <Row className="py-2 py-md-0">
+                  <div className="flex flex-row py-2 py-md-0">
                     <SeatingTableLayout players={seating} />
-                  </Row>
+                  </div>
                 )}
               </Col>
-            </Row>
+            </div>
             {editRandom && (
-              <Row className="pt-0 pt-md-3">
+              <div className="flex flex-row pt-0 pt-md-3">
                 <hr className="mx-0" />
-                <Row className="pb-3">
-                  <Row>
+                <div className="flex flex-row pb-3">
+                  <div className="flex flex-row">
                     <div
-                      className="d-flex align-items-center"
+                      className="flex items-center"
                       onClick={() => setWithCustom(!withCustom)}
                     >
-                      <div className="d-flex align-items-center pe-2">
+                      <div className="flex items-center pe-2">
                         <>
                           {withCustom ? (
                             <ToggleOn
@@ -145,14 +145,14 @@ const SeatingModal = ({
                           )}
                         </>
                       </div>
-                      <div className="d-flex font-bold text-blue py-2">
+                      <div className="flex font-bold text-blue py-2">
                         Custom Decks
                       </div>
                     </div>
                     <Col sm={12} md={7} lg={6} xl={5} className="py-2">
                       <SeatingCustomDeckAdd addDeck={addCustomDeck} />
                     </Col>
-                  </Row>
+                  </div>
                   <Col sm={12} md={6} lg={4}>
                     {customDecks
                       .slice(0, Math.ceil(customDecks.length / 3))
@@ -204,14 +204,14 @@ const SeatingModal = ({
                         );
                       })}
                   </Col>
-                </Row>
+                </div>
                 <hr className="mx-0" />
-                <Row>
+                <div className="flex flex-row">
                   <div
-                    className="d-flex align-items-center"
+                    className="flex items-center"
                     onClick={() => setWithStandard(!withStandard)}
                   >
-                    <div className="d-flex align-items-center pe-2">
+                    <div className="flex items-center pe-2">
                       <>
                         {withStandard ? (
                           <ToggleOn
@@ -241,7 +241,7 @@ const SeatingModal = ({
                       )
                     </div>
                   </div>
-                </Row>
+                </div>
                 <Col sm={12} md={6} lg={4}>
                   {standardDecks
                     .slice(0, Math.ceil(standardDecks.length / 3))
@@ -290,15 +290,15 @@ const SeatingModal = ({
                       );
                     })}
                 </Col>
-              </Row>
+              </div>
             )}
-          </Container>
+          </div>
         </Modal.Body>
       </Modal>
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+          className="flex float-right-bottom float-clear items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

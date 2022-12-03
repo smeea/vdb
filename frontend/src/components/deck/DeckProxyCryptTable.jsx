@@ -166,7 +166,7 @@ const DeckProxyCryptTable = ({
             <div>
               <ResultClanImage value={card.c.Clan} />
             </div>
-            <div className="d-flex text-xs justify-content-end">
+            <div className="flex text-xs justify-end">
               <b>
                 <ResultCryptTitle value={card.c.Title} />
               </b>

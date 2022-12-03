@@ -5,8 +5,8 @@ const Banner = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="d-flex justify-content-between align-items-center logo-box p-2 mb-3 my-md-3">
-      <div onClick={() => navigate('/')} className="d-flex align-items-center">
+    <div className="flex justify-between items-center logo-box p-2 mb-3 my-md-3">
+      <div onClick={() => navigate('/')} className="flex items-center">
         <img
           className="logo-image"
           src={`${process.env.ROOT_URL}images/misc/logo.svg`}
@@ -17,10 +17,10 @@ const Banner = () => {
         <div className="d-inline text-3xl text-blue font-bold ps-2">VDB</div>
       </div>
       <div className="d-inline px-2">
-        <div className="d-flex justify-content-end text-xs pb-1">
+        <div className="flex justify-end text-xs pb-1">
           <i>If only I had a laptop...</i>
         </div>
-        <div className="d-flex justify-content-end text-xs">
+        <div className="flex justify-end text-xs">
           <i>- Enkidu, The Noah</i>
         </div>
       </div>

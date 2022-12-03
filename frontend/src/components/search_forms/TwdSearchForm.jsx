@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import { Form, Row, Col, Spinner } from 'react-bootstrap';
+import { Form, Col, Spinner } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
@@ -215,17 +215,17 @@ const TwdSearchForm = ({ error, setError }) => {
 
   return (
     <Form onSubmit={handleSubmitButton}>
-      <Row className="pb-2 mx-0">
+      <div className="flex flex-row justify-between pb-2 mx-0">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
           getNew={getNewTwd}
           getRandom={getRandomTwd}
         />
-      </Row>
+      </div>
       {inventoryMode && (
         <>
-          <Row className="py-1 ps-1 mx-0 align-items-center">
-            <Col xs={6} className="d-flex px-0">
+          <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+            <Col xs={6} className="flex px-0">
               <label className="font-bold text-blue mb-0">
                 In Inventory by Crypt:
               </label>
@@ -237,9 +237,9 @@ const TwdSearchForm = ({ error, setError }) => {
                 onChange={handleChangeWithOpt}
               />
             </Col>
-          </Row>
-          <Row className="py-1 ps-1 mx-0 align-items-center">
-            <Col xs={6} className="d-flex px-0">
+          </div>
+          <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+            <Col xs={6} className="flex px-0">
               <label className="font-bold text-blue mb-0">
                 In Inventory by Library:
               </label>
@@ -251,8 +251,8 @@ const TwdSearchForm = ({ error, setError }) => {
                 onChange={handleChangeWithOpt}
               />
             </Col>
-          </Row>
-          <Row className="py-1 ps-1 mx-0 align-items-center">
+          </div>
+          <div className="flex flex-row py-1 ps-1 mx-0 items-center">
             <Col xs={{ span: 6, offset: 6 }} className="d-inline px-0">
               <TwdSearchFormMatchInventoryScaling
                 target="60"
@@ -265,11 +265,11 @@ const TwdSearchForm = ({ error, setError }) => {
                 onChange={handleMatchInventoryScalingChange}
               />
             </Col>
-          </Row>
+          </div>
         </>
       )}
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={2} className="d-flex px-0">
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={2} className="flex px-0">
           <div className="font-bold text-blue px-0">Year:</div>
         </Col>
         <Col xs={10} className="d-inline px-0">
@@ -278,9 +278,9 @@ const TwdSearchForm = ({ error, setError }) => {
             onChange={handleChangeWithOpt}
           />
         </Col>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={2} className="d-flex px-0">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={2} className="flex px-0">
           <div className="font-bold text-blue px-0">Players:</div>
         </Col>
         <Col xs={10} className="d-inline px-0">
@@ -289,11 +289,11 @@ const TwdSearchForm = ({ error, setError }) => {
             onChange={handleChangeWithOpt}
           />
         </Col>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <div className="font-bold text-blue px-0">Crypt Cards:</div>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <Col xs={12} className="d-inline px-0">
           {cryptCardBase && (
             <TwdSearchFormCrypt
@@ -302,24 +302,22 @@ const TwdSearchForm = ({ error, setError }) => {
             />
           )}
         </Col>
-      </Row>
-      <Row className="pb-1 pe-1 mx-0">
-        <div className="d-flex justify-content-end">
-          <Form.Check
-            name="traits"
-            value="star"
-            type="checkbox"
-            id="traits-star"
-            label="With Star"
-            checked={twdFormState.traits.star}
-            onChange={handleMultiChange}
-          />
-        </div>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      </div>
+      <div className="flex flex-row justify-end pb-1 pe-1 mx-0">
+        <Form.Check
+          name="traits"
+          value="star"
+          type="checkbox"
+          id="traits-star"
+          label="With Star"
+          checked={twdFormState.traits.star}
+          onChange={handleMultiChange}
+        />
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <div className="font-bold text-blue px-0">Library Cards:</div>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <Col xs={12} className="d-inline px-0">
           {libraryCardBase && (
             <TwdSearchFormLibrary
@@ -328,20 +326,20 @@ const TwdSearchForm = ({ error, setError }) => {
             />
           )}
         </Col>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={3} className="flex px-0">
           <div className="font-bold text-blue px-0">Library Size:</div>
         </Col>
-        <Col xs={9} className="d-flex justify-content-end px-0">
+        <Col xs={9} className="flex justify-end px-0">
           <TwdSearchFormLibraryTotal
             value={twdFormState.libraryTotal}
             onChange={handleMultiChange}
           />
         </Col>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={3} className="flex px-0">
           <div className="font-bold text-blue px-0">Clan:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
@@ -350,22 +348,20 @@ const TwdSearchForm = ({ error, setError }) => {
             onChange={handleChange}
           />
         </Col>
-      </Row>
-      <Row className="pb-1 pe-1 mx-0">
-        <div className="d-flex justify-content-end">
-          <Form.Check
-            name="traits"
-            value="monoclan"
-            type="checkbox"
-            id="traits-monoclan"
-            label="Mono Clan"
-            checked={twdFormState.traits.monoclan}
-            onChange={handleMultiChange}
-          />
-        </div>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
+      </div>
+      <div className="flex flex-row justify-end pb-1 pe-1 mx-0">
+        <Form.Check
+          name="traits"
+          value="monoclan"
+          type="checkbox"
+          id="traits-monoclan"
+          label="Mono Clan"
+          checked={twdFormState.traits.monoclan}
+          onChange={handleMultiChange}
+        />
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={3} className="flex px-0">
           <div className="font-bold text-blue px-0">Sect:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
@@ -374,35 +370,35 @@ const TwdSearchForm = ({ error, setError }) => {
             onChange={handleChange}
           />
         </Col>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={5} className="d-flex px-0">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={5} className="flex px-0">
           <div className="font-bold text-blue px-0">Capacity Avg:</div>
         </Col>
-        <Col xs={7} className="d-flex justify-content-end px-0">
+        <Col xs={7} className="flex justify-end px-0">
           <TwdSearchFormCapacity
             value={twdFormState.capacity}
             onChange={handleMultiChange}
           />
         </Col>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <div className="font-bold text-blue px-0">Library Disciplines:</div>
-      </Row>
+      </div>
       <TwdSearchFormDisciplines
         value={twdFormState.disciplines}
         onChange={handleMultiChange}
       />
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <Col xs={12} className="d-inline pe-0 ps-1">
           <TwdSearchFormCardtypes
             value={twdFormState.cardtypes}
             onChange={handleChangeWithOpt}
           />
         </Col>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={3} className="flex px-0">
           <div className="font-bold text-blue px-0">Event:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
@@ -411,9 +407,9 @@ const TwdSearchForm = ({ error, setError }) => {
             onChange={handleEventChange}
           />
         </Col>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={3} className="flex px-0">
           <div className="font-bold text-blue px-0">Location:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
@@ -422,9 +418,9 @@ const TwdSearchForm = ({ error, setError }) => {
             form={searchTwdForm}
           />
         </Col>
-      </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
+      </div>
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={3} className="flex px-0">
           <div className="font-bold text-blue px-0">Winner:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
@@ -433,19 +429,19 @@ const TwdSearchForm = ({ error, setError }) => {
             form={searchTwdForm}
           />
         </Col>
-      </Row>
+      </div>
       {isMobile && (
         <>
           <div
             onClick={handleClearButton}
-            className="d-flex float-right-middle float-clear align-items-center justify-content-center"
+            className="flex float-right-middle float-clear items-center justify-center"
           >
             <X viewBox="0 0 16 16" />
           </div>
           <div
             ref={refError}
             onClick={handleSubmitButton}
-            className="d-flex float-right-bottom float-search align-items-center justify-content-center"
+            className="flex float-right-bottom float-search items-center justify-center"
           >
             {!spinnerState ? (
               <Check2 viewBox="0 0 16 16" className="pt-1" />

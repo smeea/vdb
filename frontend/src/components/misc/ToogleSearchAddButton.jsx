@@ -6,9 +6,9 @@ const ToogleSearchAddButton = ({ addMode, toggleAddMode }) => {
   return (
     <div
       onClick={() => toggleAddMode()}
-      className={`d-flex float-right-bottom float-add-${
+      className={`flex float-right-bottom float-add-${
         addMode ? 'on' : 'off'
-      } align-items-center justify-content-center`}
+      } items-center justify-center`}
     >
       {addMode ? (
         <BinocularsFill viewBox="0 -2 16 22" />

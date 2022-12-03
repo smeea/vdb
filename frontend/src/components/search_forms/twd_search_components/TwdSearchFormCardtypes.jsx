@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { ResultLibraryTypeImage } from 'components';
 import { useApp } from 'context';
@@ -108,7 +108,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const formsRight = [];
   let counter = 0;
 
-  types.map((i) => {
+  types.map((i, idx) => {
     const options = [
       {
         value: 'any',
@@ -125,14 +125,11 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       });
     });
 
-    if (counter < 5) {
-      counter += 1;
+    if (idx < 5) {
       formsLeft.push(
-        <Row className="py-1 mx-0 align-items-center" key={i[0]}>
-          <Col xs={2} className="d-flex ps-2 justify-content-center">
-            <label className="h7 mb-0">
-              <ResultLibraryTypeImage value={i[0]} />
-            </label>
+        <div className="flex flex-row py-1 mx-0 items-center" key={i[0]}>
+          <Col xs={2} className="flex ps-2 justify-center">
+            <ResultLibraryTypeImage value={i[0]} />
           </Col>
           <Col xs={10} className="d-inline px-0">
             <Select
@@ -147,15 +144,13 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
               onChange={onChange}
             />
           </Col>
-        </Row>
+        </div>
       );
     } else {
       formsRight.push(
-        <Row className="py-1 mx-0 align-items-center" key={i[0]}>
-          <Col xs={2} className="d-flex ps-2 justify-content-center">
-            <label className="h7 mb-0">
-              <ResultLibraryTypeImage value={i[0]} />
-            </label>
+        <div className="flex flex-row py-1 mx-0 items-center" key={i[0]}>
+          <Col xs={2} className="flex ps-2 justify-center">
+            <ResultLibraryTypeImage value={i[0]} />
           </Col>
           <Col xs={10} className="d-inline px-0">
             <Select
@@ -170,21 +165,21 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
               onChange={onChange}
             />
           </Col>
-        </Row>
+        </div>
       );
     }
   });
 
   return (
     <>
-      <Row className="mx-0">
+      <div className="flex flex-row mx-0">
         <Col xs={6} className="d-inline ps-0 pe-2">
           {formsLeft}
         </Col>
         <Col xs={6} className="d-inline ps-2 pe-0">
           {formsRight}
         </Col>
-      </Row>
+      </div>
     </>
   );
 };

@@ -27,7 +27,7 @@ const ResultLibraryTotal = ({
   const totalOutput = Object.keys(byTypes).map((k) => {
     return (
       <span key={k} className="d-inline-block whitespace-nowrap pe-3">
-        <div className="d-flex align-items-center">
+        <div className="flex items-center">
           <ResultLibraryTypeImage value={k} />
           {byTypes[k]}
         </div>
@@ -43,7 +43,7 @@ const ResultLibraryTotal = ({
         </b>
       </div>
       <div className="pt-2">{totalOutput}</div>
-      <div className="d-flex">
+      <div className="flex">
         {!inCompare ? (
           <SortButton
             sortMethods={sortMethods}
@@ -66,7 +66,7 @@ const ResultLibraryTotal = ({
   );
 
   return (
-    <div className="d-flex align-items-center justify-content-between info-message pe-1 pe-md-0">
+    <div className="flex items-center justify-between info-message pe-1 pe-md-0">
       {value}
     </div>
   );

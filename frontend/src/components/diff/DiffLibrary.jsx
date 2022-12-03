@@ -56,7 +56,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype} className="pt-2">
-      <div className="d-flex justify-content-between pe-2">
+      <div className="flex justify-between pe-2">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
@@ -169,7 +169,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
       {isMobile && isEditable && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
-          className="d-flex float-right-middle float-add-on align-items-center justify-content-center"
+          className="flex float-right-middle float-add-on items-center justify-center"
         >
           <div className="d-inline" style={{ fontSize: '1.4em' }}>
             +

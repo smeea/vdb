@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Tabs, Tab, Accordion } from 'react-bootstrap';
+import { Tabs, Tab, Accordion } from 'react-bootstrap';
 import { TwdHallFameCardsPlayer } from 'components';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
@@ -111,7 +111,7 @@ const TwdHallOfFameCards = () => {
   };
 
   return (
-    <Container className="hof-cards-container px-0 p-md-3">
+    <div className="hof-cards-container mx-auto px-0 p-md-3">
       <Tabs
         activeKey={tab}
         onSelect={(k) => setTab(k)}
@@ -160,7 +160,7 @@ const TwdHallOfFameCards = () => {
           )}
         </Tab>
       </Tabs>
-    </Container>
+    </div>
   );
 };
 

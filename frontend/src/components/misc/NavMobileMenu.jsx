@@ -47,8 +47,8 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                   onClick={() => setShowMenu(false)}
                   className="nav-link px-2 py-1"
                 >
-                  <div className="d-flex align-items-center main-font">
-                    <div className="d-flex justify-content-center min-w-[30px]">
+                  <div className="flex items-center main-font">
+                    <div className="flex justify-center min-w-[30px]">
                       <PersonFill height="20" width="20" viewBox="0 0 16 16" />
                     </div>
                     <div className="ps-2">{username ? 'Account' : 'Login'}</div>
@@ -60,8 +60,8 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                   onClick={() => setShowMenu(false)}
                   className="nav-link px-2 py-1"
                 >
-                  <div className="d-flex align-items-center main-font">
-                    <div className="d-flex justify-content-center min-w-[30px]">
+                  <div className="flex items-center main-font">
+                    <div className="flex justify-center min-w-[30px]">
                       <InfoCircleFill
                         height="20"
                         width="20"
@@ -74,13 +74,13 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
 
                 <ThemeSelect setShowMenu={setShowMenu} />
                 <div
-                  className="d-flex align-items-center px-2 py-1"
+                  className="flex items-center px-2 py-1"
                   onClick={() => {
                     toggleInventoryMode();
                     setShowMenu(false);
                   }}
                 >
-                  <div className="d-flex justify-content-center min-w-[30px]">
+                  <div className="flex justify-center min-w-[30px]">
                     {inventoryMode ? (
                       <ToggleOn height="26" width="26" viewBox="0 0 16 16" />
                     ) : (
@@ -91,7 +91,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                     Inventory Mode
                   </div>
                 </div>
-                <div className="d-flex align-items-center justify-content-between py-2">
+                <div className="flex items-center justify-between py-2">
                   <LanguageSelect setShowMenu={setShowMenu} />
                 </div>
               </Popover.Body>

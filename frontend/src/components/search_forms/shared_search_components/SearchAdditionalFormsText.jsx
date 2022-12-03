@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useImmer } from 'use-immer';
-import { Row, Col, Stack, Form, FormControl } from 'react-bootstrap';
+import { Col, Stack, Form, FormControl } from 'react-bootstrap';
 import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
@@ -52,7 +52,7 @@ const SearchAdditionalFormsText = ({
   const forms = [];
   for (let i = 1; i < value.length; i++) {
     forms.push(
-      <Row key={i} className="px-0 mx-0 pt-2 align-items-center">
+      <div key={i} className="flex flex-row px-0 mx-0 pt-2 items-center">
         <FormControl
           placeholder="Card Name / Text / RegEx"
           type="text"
@@ -63,7 +63,7 @@ const SearchAdditionalFormsText = ({
           onChange={onTextChange}
           autoFocus={true}
         />
-        <Row className="mx-0 px-0 pt-1">
+        <div className="flex flex-row mx-0 px-0 pt-1">
           <Col xs={2} md={3} className="px-0">
             <Stack direction="horizontal" gap={1}>
               <SearchFormButtonLogicToggle
@@ -76,8 +76,8 @@ const SearchAdditionalFormsText = ({
               <SearchFormButtonDelText searchForm={searchForm} i={i} />
             </Stack>
           </Col>
-          <Col className="d-flex justify-content-end px-0">
-            <Stack direction="horizontal" gap={2} className="align-items-start">
+          <Col className="flex justify-end px-0">
+            <Stack direction="horizontal" gap={2} className="items-start">
               {options.map((opt, index) => {
                 return (
                   <Form.Check
@@ -94,8 +94,8 @@ const SearchAdditionalFormsText = ({
               })}
             </Stack>
           </Col>
-        </Row>
-      </Row>
+        </div>
+      </div>
     );
   }
 

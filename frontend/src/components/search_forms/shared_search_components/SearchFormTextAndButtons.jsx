@@ -83,7 +83,7 @@ const SearchFormTextAndButtons = ({
   });
 
   return (
-    <Row className="ps-0 ps-md-1 mx-0 align-items-center">
+    <div className="flex flex-row ps-0 ps-md-1 mx-0 items-center">
       {isMobile ? (
         <FormControl
           placeholder="Card Name / Text / RegEx"
@@ -119,13 +119,13 @@ const SearchFormTextAndButtons = ({
             variant="primary"
             onClick={handleClearButton}
           >
-            <div className="d-flex align-items-center">
+            <div className="flex items-center">
               <X />
             </div>
           </Button>
         </InputGroup>
       )}
-      <Row className="mx-0 px-0 pt-1">
+      <div className="flex flex-row mx-0 px-0 pt-1">
         <Col xs={2} md={3} className="px-0">
           <Stack direction="horizontal" gap={1}>
             {value[0].value !== '' && (
@@ -145,12 +145,12 @@ const SearchFormTextAndButtons = ({
             )}
           </Stack>
         </Col>
-        <Col className="d-flex justify-content-end px-0">
-          <Stack direction="horizontal" gap={2} className="align-items-start">
+        <Col className="flex justify-end px-0">
+          <Stack direction="horizontal" gap={2} className="items-start">
             {OptionsForm}
           </Stack>
         </Col>
-      </Row>
+      </div>
       <SearchAdditionalFormsText
         value={value}
         onChange={onChange}
@@ -169,7 +169,7 @@ const SearchFormTextAndButtons = ({
           onChange={() => setHideMissing(!hideMissing)}
         />
       )}
-    </Row>
+    </div>
   );
 };
 

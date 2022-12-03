@@ -15,8 +15,8 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
 
   return (
     <>
-      <div className="d-flex align-items-center justify-content-between">
-        <div className="d-flex align-items-center">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center">
           {inInventory && (
             <div
               className={`d-inline text-center w-7 text-lg me-2 ${

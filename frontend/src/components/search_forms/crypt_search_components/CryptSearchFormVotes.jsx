@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
 
@@ -18,16 +18,16 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
     value: i[0],
     name: 'votes',
     label: (
-      <div className="d-flex align-items-center">
-        <div className="d-flex w-[40px]" />
+      <div className="flex items-center">
+        <div className="flex w-[40px]" />
         {i[1]}
       </div>
     ),
   }));
 
   return (
-    <Row className="py-1 ps-1 mx-0 align-items-center">
-      <Col xs={3} className="d-flex px-0">
+    <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+      <Col xs={3} className="flex px-0">
         <div className="font-bold text-blue">Votes:</div>
       </Col>
       <Col xs={9} className="d-inline px-0">
@@ -41,7 +41,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
           onChange={onChange}
         />
       </Col>
-    </Row>
+    </div>
   );
 };
 

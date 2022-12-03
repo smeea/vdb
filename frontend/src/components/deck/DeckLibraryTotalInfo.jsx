@@ -12,9 +12,9 @@ function DeckLibraryTotalInfo(props) {
   const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
     return (
       <div key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
-        <div className="d-flex align-items-center">
+        <div className="flex items-center">
           <ResultLibraryTypeImage value={t} />
-          <div className="d-flex px-1">{props.byTypes[t]}</div>
+          <div className="flex px-1">{props.byTypes[t]}</div>
           <span className="text-neutral-500">
             ({Math.round((props.byTypes[t] / total) * 100)}%)
           </span>
@@ -34,9 +34,9 @@ function DeckLibraryTotalInfo(props) {
   const DisciplinesInfo = byDisciplinesSorted.map((d, idx) => {
     return (
       <div key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
-        <div className="d-flex align-items-center">
+        <div className="flex items-center">
           <ResultLibraryDisciplines value={d} />
-          <div className="d-flex px-1">{props.byDisciplines[d]}</div>
+          <div className="flex px-1">{props.byDisciplines[d]}</div>
           <span className="gray">
             ({Math.round((props.byDisciplines[d] / totalExMasters) * 100)}%)
           </span>
@@ -48,9 +48,9 @@ function DeckLibraryTotalInfo(props) {
   const ClansInfo = byClansSorted.map((d, idx) => {
     return (
       <div key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
-        <div className="d-flex align-items-center">
+        <div className="flex items-center">
           <ResultLibraryClan value={d} />
-          <div className="d-flex px-1">{props.byClans[d]}</div>
+          <div className="flex px-1">{props.byClans[d]}</div>
           <span className="gray">
             ({Math.round((props.byClans[d] / total) * 100)}%)
           </span>

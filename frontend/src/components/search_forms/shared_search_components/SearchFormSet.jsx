@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Stack, Row, Col } from 'react-bootstrap';
+import { Form, Stack, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import {
   SearchAdditionalForms,
@@ -28,8 +28,8 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       value: 'any',
       name: name,
       label: (
-        <div className="d-flex align-items-center">
-          <div className="d-flex w-[40px]" />
+        <div className="flex items-center">
+          <div className="flex w-[40px]" />
           ANY
         </div>
       ),
@@ -37,7 +37,12 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
     {
       value: 'bcp',
       name: name,
-      label: <>Any BCP (incl. Promo)</>,
+      label: (
+        <div className="flex items-center">
+          <div className="flex w-[40px]" />
+          ANY BCP (incl. Promo)
+        </div>
+      ),
     },
   ];
 
@@ -46,7 +51,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       value: i.set,
       name: name,
       label: (
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="flex justify-between items-center">
           <div className="pe-2">{i.name}</div>
           {i.year && <div className="ps-2 text-xs">{`'${i.year}`}</div>}
         </div>
@@ -157,14 +162,14 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   return (
     <>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <Col
           xs={3}
-          className="d-flex justify-content-between align-items-center px-0"
+          className="flex justify-between items-center px-0"
         >
           <div className="font-bold text-blue">Set:</div>
           {value.value[0] !== 'any' && (
-            <div className="d-flex justify-content-end pe-1">
+            <div className="flex justify-end pe-1">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -190,7 +195,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             onChange={onChange}
           />
         </Col>
-      </Row>
+      </div>
       <SearchAdditionalForms
         value={value}
         name={name}
@@ -200,20 +205,20 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <Row className="pb-1 ps-1 mx-0 align-items-center">
-        <Col className="d-flex justify-content-end px-0">
+      <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
+        <Col className="flex justify-end px-0">
           <Stack direction="horizontal" gap={2}>
             {ageForm}
           </Stack>
         </Col>
-      </Row>
-      <Row className="pb-1 ps-1 mx-0 align-items-center">
-        <Col className="d-flex justify-content-end px-0">
+      </div>
+      <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
+        <Col className="flex justify-end px-0">
           <Stack direction="horizontal" gap={3}>
             {printForm}
           </Stack>
         </Col>
-      </Row>
+      </div>
     </>
   );
 };

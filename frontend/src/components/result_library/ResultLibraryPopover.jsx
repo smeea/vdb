@@ -22,12 +22,12 @@ const ResultLibraryPopover = ({ card, setImageSet }) => {
     <>
       {!showImage ? (
         <div className="py-1">
-          <div className="d-flex whitespace-nowrap justify-content-between align-items-center">
-            <div className="d-flex whitespace-nowrap align-items-center">
+          <div className="flex whitespace-nowrap justify-between items-center">
+            <div className="flex whitespace-nowrap items-center">
               <div>
                 <ResultLibraryTypeImage value={card.Type} />
               </div>
-              <div className="namefont-bold ps-2">
+              <div className="name font-bold ps-2">
                 <ResultLibraryName card={card} />
               </div>
             </div>
@@ -51,7 +51,7 @@ const ResultLibraryPopover = ({ card, setImageSet }) => {
             <ResultLayoutTextText text={card['Card Text']} />
           </div>
           <hr />
-          <div className="d-flex align-items-center justify-content-between">
+          <div className="flex items-center justify-between">
             <div>
               <ResultLibraryCost
                 valuePool={card['Pool Cost']}

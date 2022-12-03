@@ -54,7 +54,7 @@ const InventoryCryptTable = ({
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`d-flex bordered ${index % 2 ? 'result-even' : 'result-odd'}`}
+      className={`flex bordered ${index % 2 ? 'result-even' : 'result-odd'}`}
     >
       {cardRows[index]}
     </div>
@@ -63,7 +63,7 @@ const InventoryCryptTable = ({
   return (
     <>
       {compact ? (
-        <div className="d-flex inventory-crypt-table bordered result-odd compact">
+        <div className="flex inventory-crypt-table bordered result-odd compact">
           {cardRows[0]}
         </div>
       ) : (

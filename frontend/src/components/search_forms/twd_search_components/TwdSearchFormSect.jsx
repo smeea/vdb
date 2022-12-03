@@ -19,8 +19,8 @@ const TwdSearchFormSect = ({ value, onChange }) => {
     value: i.toLowerCase(),
     name: name,
     label: (
-      <div className="d-flex align-items-center">
-        <div className="d-flex w-[40px]" />
+      <div className="flex items-center">
+        <div className="flex w-[40px]" />
         {i}
       </div>
     ),

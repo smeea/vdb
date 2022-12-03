@@ -116,8 +116,8 @@ It will skip other (useless) lines, you don't have to remove it yourself.
         <div
           className={
             isMobile
-              ? 'd-flex justify-content-end py-0 px-3'
-              : 'd-flex justify-content-end py-1'
+              ? 'flex justify-end py-0 px-3'
+              : 'flex justify-end py-1'
           }
         >
           <Button variant="primary" onClick={importDeckFromText}>

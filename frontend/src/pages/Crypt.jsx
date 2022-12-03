@@ -1,5 +1,5 @@
 import React, { useMemo, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { useSnapshot } from 'valtio';
 import {
   ResultCrypt,
@@ -50,8 +50,8 @@ const Crypt = () => {
   }, [deck, decks, lastDeckId]);
 
   return (
-    <Container className="search-container px-md-2 px-xl-4">
-      <Row>
+    <div className="search-container mx-auto px-md-2 px-xl-4">
+      <div className="flex flex-row">
         {!isMobile && (
           <Col
             md={!showSearchForm ? 5 : 0}
@@ -98,14 +98,14 @@ const Crypt = () => {
             <CryptSearchForm />
           </Col>
         )}
-      </Row>
+      </div>
       {showToggleAddMode && (
         <ToogleSearchAddButton
           addMode={addMode}
           toggleAddMode={toggleAddMode}
         />
       )}
-    </Container>
+    </div>
   );
 };
 

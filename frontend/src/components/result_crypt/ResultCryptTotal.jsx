@@ -42,7 +42,7 @@ const ResultCryptTotal = ({
         {byGroups[k]}
         {!inHoF && (
           <div
-            className="d-flex text-xs justify-content-center"
+            className="flex text-xs justify-center"
             title="Average Capacity"
           >
             ~{Math.round((byGroupsCapacityTotal[k] / byGroups[k]) * 10) / 10}
@@ -60,11 +60,11 @@ const ResultCryptTotal = ({
         </b>
       </div>
       <div>{totalOutput}</div>
-      <div className={inCompare ? 'd-flex' : ''}>
+      <div className={inCompare ? 'flex' : ''}>
         {!inCompare ? (
           <>
             {!inHoF && (
-              <div className="d-flex justify-content-end mb-1">
+              <div className="flex justify-end mb-1">
                 <Button
                   title="Additional Info"
                   variant="primary"
@@ -96,7 +96,7 @@ const ResultCryptTotal = ({
   );
 
   return (
-    <div className="d-flex align-items-center justify-content-between info-message pe-1 pe-md-0">
+    <div className="flex items-center justify-between info-message pe-1 pe-md-0">
       {value}
     </div>
   );

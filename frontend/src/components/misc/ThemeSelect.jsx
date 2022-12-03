@@ -10,8 +10,8 @@ const ThemeSelect = ({ setShowMenu }) => {
 
   return (
     <div
-      className={`d-flex ${
-        isMobile ? 'align-items-center' : 'text-white'
+      className={`flex ${
+        isMobile ? 'items-center' : 'text-white'
       } px-2 py-1 px-md-3`}
       onClick={() => {
         toggleTheme();
@@ -20,7 +20,7 @@ const ThemeSelect = ({ setShowMenu }) => {
     >
       {isMobile ? (
         <>
-          <div className="d-flex justify-content-center min-w-[30px]">
+          <div className="flex justify-center min-w-[30px]">
             {theme === 'dark' && (
               <MoonFill height="20" width="20" viewBox="0 0 16 16" />
             )}

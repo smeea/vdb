@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import {
   SearchAdditionalForms,
@@ -20,8 +20,8 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
         value: i.toLowerCase(),
         name: name,
         label: (
-          <div className="d-flex align-items-center">
-            <div className="d-flex w-[40px]" />
+          <div className="flex items-center">
+            <div className="flex w-[40px]" />
             {i}
           </div>
         ),
@@ -34,8 +34,8 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
         value: i.toLowerCase(),
         name: 'type',
         label: (
-          <div className="d-flex align-items-center">
-            <div className="d-flex justify-content-center w-[40px]">
+          <div className="flex items-center">
+            <div className="flex justify-center w-[40px]">
               <img src={imgSrc} className="type-discipline-image-forms" />
             </div>
             {i}
@@ -47,14 +47,14 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
 
   return (
     <>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <Col
           xs={3}
-          className="d-flex justify-content-between align-items-center px-0"
+          className="flex justify-between items-center px-0"
         >
           <div className="font-bold text-blue">Type:</div>
           {value.value[0] !== 'any' && (
-            <div className="d-flex justify-content-end pe-1">
+            <div className="flex justify-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonLogicToggle
                   name={name}
@@ -88,7 +88,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
             onChange={onChange}
           />
         </Col>
-      </Row>
+      </div>
       <SearchAdditionalForms
         value={value}
         name={name}

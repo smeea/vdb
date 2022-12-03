@@ -20,7 +20,7 @@ const InventoryFilterForm = ({
     options.push({
       value: i,
       label: (
-        <div className="d-flex justify-content-between">
+        <div className="flex justify-between">
           {target === 'crypt' && (
             <div className="pe-1">
               {i === 'All' ? (

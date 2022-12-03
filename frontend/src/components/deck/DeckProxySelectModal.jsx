@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Button, Container, Row, Col, Stack } from 'react-bootstrap';
+import { Modal, Button, Col, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { DeckProxyCrypt, DeckProxyLibrary } from 'components';
 import { useApp, usedStore, inventoryStore } from 'context';
@@ -197,8 +197,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
         </Button>
       </Modal.Header>
       <Modal.Body className="p-0">
-        <Container fluid>
-          <Row className="px-0 pe-lg-4">
+        <div>
+          <div className="flex flex-row px-0 pe-lg-4">
             <Col xs={12} md={7} className="px-0 px-lg-4 pb-md-0">
               {deck.crypt && (
                 <div className={isMobile ? null : 'sticky-modal'}>
@@ -223,9 +223,9 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
                 />
               )}
             </Col>
-          </Row>
-          <Row className="px-0 pe-lg-4">
-            <div className="d-flex justify-content-end p-2 px-md-0 py-md-4">
+          </div>
+          <div className="flex flex-row px-0 pe-lg-4">
+            <div className="flex justify-end p-2 px-md-0 py-md-4">
               <Stack direction={isMobile ? 'vertical' : 'horizontal'} gap={2}>
                 <Button
                   variant="primary"
@@ -255,8 +255,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
                 )}
               </Stack>
             </div>
-          </Row>
-        </Container>
+          </div>
+        </div>
       </Modal.Body>
     </Modal>
   );

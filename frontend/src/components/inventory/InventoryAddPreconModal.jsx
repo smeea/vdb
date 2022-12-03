@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Row, Col, FormControl, Button } from 'react-bootstrap';
+import { Modal, Col, FormControl, Button } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
 import X from 'assets/images/icons/x.svg';
@@ -133,7 +133,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
           )}
           <td className="name px-1">
             <div
-              className="d-flex text-overflow name justify-content-between"
+              className="flex text-overflow name justify-between"
               title={deck.name}
             >
               {deck.name}
@@ -160,7 +160,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                   placement="right"
                   show={showDeck === deck.deckid}
                   text={
-                    <Row>
+                    <div className="flex flex-row">
                       <Col
                         md={7}
                         onClick={(event) => {
@@ -181,7 +181,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                       >
                         <DeckLibrary deck={deck} />
                       </Col>
-                    </Row>
+                    </div>
                   }
                 >
                   <div>
@@ -195,7 +195,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
             {isMobile ? (
               <>
                 <div>{setsAndPrecons[set].name}</div>
-                <div className="d-flex justify-content-end text-xs">
+                <div className="flex justify-end text-xs">
                   {setsAndPrecons[set].date.slice(0, 4)}
                 </div>
               </>
@@ -272,7 +272,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                 />
               </th>
               <th className="buttons">
-                <div className="d-flex justify-content-end align-items-center px-1">
+                <div className="flex justify-end items-center px-1">
                   <DeckSelectSortForm onChange={setSortMethod} />
                 </div>
               </th>

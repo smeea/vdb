@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Stack } from 'react-bootstrap';
+import { Col, Stack } from 'react-bootstrap';
 import {
   AccountLogin,
   AccountLogoutButton,
@@ -18,14 +18,14 @@ const Account = () => {
   const { isMobile, username, isPlaytester, isPlaytestAdmin } = useApp();
 
   return (
-    <Container className="search-container">
-      <Row className="justify-content-center">
+    <div className="search-container mx-auto">
+      <div className="flex flex-row justify-center">
         <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
         </Col>
-      </Row>
-      <Row
-        className={`d-flex align-items-center justify-content-center ${
+      </div>
+      <div
+        className={`flex flex-row items-center justify-center ${
           isMobile ? (username ? '' : 'h-[80vh]') : 'h-[70vh]'
         }`}
       >
@@ -33,7 +33,7 @@ const Account = () => {
           {username ? (
             <>
               <Stack gap={4}>
-                <div className="d-flex align-items-center font-bold text-blue logo-box px-2 py-1">
+                <div className="flex items-center font-bold text-blue logo-box px-2 py-1">
                   <PersonFill />
                   <span className="ms-2">Logged as: &lt;{username}&gt;</span>
                 </div>
@@ -58,8 +58,8 @@ const Account = () => {
             </>
           )}
         </Col>
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ const SeatingTablePlayer = ({ deck }) => {
 
   return (
     <div
-      className={`d-flex justify-content-center ${
+      className={`flex justify-center ${
         isMobile ? '' : 'whitespace-nowrap'
       } p-2 p-md-3 ${deck.first ? 'border-dashed font-bold' : ''}`}
     >

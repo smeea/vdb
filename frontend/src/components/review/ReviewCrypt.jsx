@@ -141,7 +141,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="opacity-60 pt-2">
-          <div className="d-flex align-items-center justify-content-between ps-2">
+          <div className="flex items-center justify-between ps-2">
             <b>Side Crypt</b>
           </div>
           <DiffCryptTable
@@ -161,7 +161,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
       {isMobile && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
-          className="d-flex float-right-top float-add-on align-items-center justify-content-center"
+          className="flex float-right-top float-add-on items-center justify-center"
         >
           <div className="d-inline" style={{ fontSize: '1.4em' }}>
             +

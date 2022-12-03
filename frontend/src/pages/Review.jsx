@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
-import { Modal, Container, Row, Col } from 'react-bootstrap';
+import { Modal, Col } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import X from 'assets/images/icons/x.svg';
 import {
@@ -221,11 +221,11 @@ const Review = () => {
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
 
   return (
-    <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
-      <Row className="mx-0">
+    <div className="deck-container mx-auto px-0 px-md-2 px-xl-4 py-md-3">
+      <div className="flex flex-row mx-0">
         <Col xl={1}></Col>
         <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
-          <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0">
+          <div className="flex flex-row px-1 px-md-0 py-1 pb-0 pt-md-0">
             <Col className="px-0 px-md-2">
               {deckFrom && (
                 <>
@@ -233,7 +233,7 @@ const Review = () => {
                     <DeckChangeName deck={deckFrom} isAuthor={false} />
                   ) : (
                     <>
-                      <Row className="mx-0 pb-sm-2">
+                      <div className="flex flex-row mx-0 pb-sm-2">
                         <Col md={8} className="px-0 ps-md-0 pe-md-1">
                           <DeckChangeName deck={deckFrom} />
                         </Col>
@@ -243,8 +243,8 @@ const Review = () => {
                         >
                           <DeckChangeAuthor deck={deckFrom} />
                         </Col>
-                      </Row>
-                      <Row className="mx-0">
+                      </div>
+                      <div className="flex flex-row mx-0">
                         <Col className="px-0">
                           <DeckChangeDescription
                             deck={deckFrom}
@@ -257,7 +257,7 @@ const Review = () => {
                             <DeckTags deck={deckFrom} bordered />
                           </Col>
                         )}
-                      </Row>
+                      </div>
                       {!foldedDescription && deckFrom?.tags.length > 0 && (
                         <div className="d-block pt-2">
                           <DeckTags deck={deckFrom} bordered />
@@ -268,18 +268,18 @@ const Review = () => {
                 </>
               )}
             </Col>
-          </Row>
+          </div>
           {error && (
-            <Row>
+            <div className="flex flex-row">
               <Col className="px-0 py-4 px-lg-2">
-                <div className="d-flex align-items-center justify-content-center error-message p-2">
+                <div className="flex items-center justify-center error-message p-2">
                   <b>{error}</b>
                 </div>
               </Col>
-            </Row>
+            </div>
           )}
           {deckFrom && (
-            <Row className="pt-md-2">
+            <div className="flex flex-row pt-md-2">
               <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
                 <ReviewCrypt
                   cardsFrom={deckFrom.crypt}
@@ -294,7 +294,7 @@ const Review = () => {
                   cardChange={cardChange}
                 />
               </Col>
-            </Row>
+            </div>
           )}
         </Col>
         {!isMobile && (
@@ -308,7 +308,7 @@ const Review = () => {
             </div>
           </Col>
         )}
-      </Row>
+      </div>
 
       {showFloatingButtons && (
         <div
@@ -316,7 +316,7 @@ const Review = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          className="hide-on-gt992px d-flex float-right-bottom float-menu align-items-center justify-content-center"
+          className="hide-on-gt992px flex float-right-bottom float-menu items-center justify-center"
         >
           <List viewBox="0 0 16 16" />
         </div>
@@ -333,13 +333,13 @@ const Review = () => {
           size="sm"
         >
           <Modal.Body className="p-1">
-            <Container className="px-0" fluid>
+            <div className="px-0">
               <ReviewButtons
                 backDeckid={deck?.deckid}
                 deckid={deckFrom?.deckid}
                 urlDiff={urlDiff}
               />
-              <div className="d-flex justify-content-end pt-1">
+              <div className="flex justify-end pt-1">
                 <ButtonIconed
                   variant="secondary"
                   onClick={() => {
@@ -350,11 +350,11 @@ const Review = () => {
                   icon={<X width="24" height="24" viewBox="0 0 16 16" />}
                 />
               </div>
-            </Container>
+            </div>
           </Modal.Body>
         </Modal>
       )}
-    </Container>
+    </div>
   );
 };
 

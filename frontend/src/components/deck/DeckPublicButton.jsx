@@ -83,9 +83,9 @@ const DeckPublicButton = ({ deck, noText }) => {
         title={
           <div
             title="Public Deck Archive Actions"
-            className="d-flex justify-content-center align-items-center"
+            className="flex justify-center items-center"
           >
-            <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
+            <div className={`flex ${noText ? '' : 'pe-2'}`}>
               {!spinnerState ? (
                 <PeopleFill />
               ) : (

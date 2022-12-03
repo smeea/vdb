@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Telegram from 'assets/images/icons/telegram.svg';
 import Github from 'assets/images/icons/github.svg';
@@ -16,17 +16,14 @@ const Title = ({ children }) => {
   );
 };
 
-const LiItem = ({ children }) => {
-  return <li className="pb-1">{children}</li>;
-};
-
 const About = () => {
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
 
   return (
-    <Container className="search-container">
-      <Row className="justify-content-center">
-        <Col xs={12} md={8} lg={7} xl={6} className="px-0">
+    <div className="search-container mx-auto">
+      <div className="flex flex-row justify-center">
+        <div className="basis-1/2 px-0">
+          {/* TODO xs={12} md={8} lg={7} xl={6} */}
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
             <div className="pb-4">
@@ -42,46 +39,46 @@ const About = () => {
               <Title>QUICKSTART</Title>
               <div className="py-1">
                 <ul>
-                  <LiItem>
+                  <li className="pb-1">
                     <Link to="/crypt" className="py-1">
                       Search crypt cards
                     </Link>
-                  </LiItem>
-                  <LiItem>
+                  </li>
+                  <li className="pb-1">
                     <Link to="/library" className="py-1">
                       Search library cards
                     </Link>
-                  </LiItem>
-                  <LiItem>
+                  </li>
+                  <li className="pb-1">
                     <Link to="/decks" className="py-1">
                       Create your decks
                     </Link>
-                  </LiItem>
-                  <LiItem>
+                  </li>
+                  <li className="pb-1">
                     <Link to="/inventory" className="py-1">
                       Manage your inventory
                     </Link>
-                  </LiItem>
-                  <LiItem>
+                  </li>
+                  <li className="pb-1">
                     <Link to="/twd" className="py-1">
                       Search Tournament-Winning Decks
                     </Link>
-                  </LiItem>
-                  <LiItem>
+                  </li>
+                  <li className="pb-1">
                     <Link to="/pda" className="py-1">
                       Search Public Deck Archive
                     </Link>
-                  </LiItem>
-                  <LiItem>
+                  </li>
+                  <li className="pb-1">
                     <Link to="/cards" className="py-1">
                       Quick search card by name
                     </Link>
-                  </LiItem>
-                  <LiItem>
+                  </li>
+                  <li className="pb-1">
                     <Link to="/documentation" className="py-1">
                       Documentation / Help
                     </Link>
-                  </LiItem>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -110,7 +107,9 @@ const About = () => {
               </div>
               <ul>
                 {changes[0].changes.map((change, idx) => (
-                  <LiItem key={idx}>{change}</LiItem>
+                  <li className="pb-1" key={idx}>
+                    {change}
+                  </li>
                 ))}
               </ul>
               <div className="pt-3">
@@ -196,36 +195,38 @@ const About = () => {
             <div className="pb-4">
               <Title>ACKNOWLEDGMENTS</Title>
               <ul>
-                <LiItem>
+                <li className="pb-1">
                   Card images by Fernando &quot;Sydnelson&quot; Cesar
-                </LiItem>
-                <LiItem>
+                </li>
+                <li className="pb-1">
                   Rulings archive by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
                   <a href="https://static.krcg.org/">KRCG</a>
-                </LiItem>
-                <LiItem>TWD archive by Vincent &quot;Ankha&quot; Ripoll</LiItem>
-                <LiItem>
+                </li>
+                <li className="pb-1">
+                  TWD archive by Vincent &quot;Ankha&quot; Ripoll
+                </li>
+                <li className="pb-1">
                   Cards scans from different sets by{' '}
                   <a href="http://vtes.pl/">VTES.PL</a> and{' '}
                   <a href="https://ccggamez.com">CCGAMEZ.COM</a>
-                </LiItem>
-                <LiItem>
+                </li>
+                <li className="pb-1">
                   Andrey &quot;Vaughnad&quot; Davino for multiple development
                   contributions
-                </LiItem>
+                </li>
               </ul>
             </div>
 
             <div className="pb-4">
               <Title>DONATIONS</Title>
               <ul className="no-bullets">
-                <LiItem>
+                <li className="pb-1">
                   Patreon:{' '}
                   <a href="https://www.patreon.com/smeea">
                     www.patreon.com/smeea
                   </a>
-                </LiItem>
-                <LiItem>
+                </li>
+                <li className="pb-1">
                   Bitcoin (BTC):{' '}
                   <a
                     href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
@@ -240,15 +241,15 @@ const About = () => {
                   >
                     <ClipboardFill className="inline" viewBox="0 0 18 18" />
                   </div>
-                </LiItem>
+                </li>
               </ul>
             </div>
 
             <div className="pb-4">
               <Title>CONTACTS</Title>
               <ul className="no-bullets">
-                <LiItem>
-                  <div className="d-flex align-items-center">
+                <li className="pb-1">
+                  <div className="flex items-center">
                     <div className="icon pe-2">
                       <Globe2 />
                     </div>
@@ -256,9 +257,9 @@ const About = () => {
                       VEKN forum
                     </a>
                   </div>
-                </LiItem>
-                <LiItem>
-                  <div className="d-flex align-items-center">
+                </li>
+                <li className="pb-1">
+                  <div className="flex items-center">
                     <div className="icon pe-2">
                       <Github />
                     </div>
@@ -266,25 +267,25 @@ const About = () => {
                       github.com/smeea/vdb
                     </a>
                   </div>
-                </LiItem>
-                <LiItem>
-                  <div className="d-flex align-items-center">
+                </li>
+                <li className="pb-1">
+                  <div className="flex items-center">
                     <div className="icon pe-2">
                       <EnvelopeFill />
                     </div>
                     <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
                   </div>
-                </LiItem>
-                <LiItem>
-                  <div className="d-flex align-items-center">
+                </li>
+                <li className="pb-1">
+                  <div className="flex items-center">
                     <div className="icon pe-2">
                       <Telegram />
                     </div>
                     <a href="https://t.me/smeea">@smeea</a>
                   </div>
-                </LiItem>
-                <LiItem>
-                  <div className="d-flex align-items-center">
+                </li>
+                <li className="pb-1">
+                  <div className="flex items-center">
                     <div className="icon pe-2">
                       <Discord />
                     </div>
@@ -292,13 +293,13 @@ const About = () => {
                       Smeea#3259
                     </a>
                   </div>
-                </LiItem>
+                </li>
               </ul>
             </div>
           </div>
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 

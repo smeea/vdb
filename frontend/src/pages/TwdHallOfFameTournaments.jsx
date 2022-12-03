@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Accordion } from 'react-bootstrap';
+import { Accordion } from 'react-bootstrap';
 import { TwdHallFameTournamentsPlayer } from 'components';
 
 const TwdHallOfFameTournaments = () => {
@@ -29,7 +29,7 @@ const TwdHallOfFameTournaments = () => {
   };
 
   return (
-    <Container className="hof-tournaments-container px-0 p-md-3">
+    <div className="hof-tournaments-container mx-auto px-0 p-md-3">
       {players && (
         <Accordion alwaysOpen>
           {Object.keys(players)
@@ -44,7 +44,7 @@ const TwdHallOfFameTournaments = () => {
             ))}
         </Accordion>
       )}
-    </Container>
+    </div>
   );
 };
 

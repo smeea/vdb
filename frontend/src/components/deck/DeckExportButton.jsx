@@ -156,9 +156,9 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
         title={
           <div
             title={`Export ${inMissing ? 'Missing' : ''}`}
-            className="d-flex justify-content-center align-items-center"
+            className="flex justify-center items-center"
           >
-            <div className="d-flex pe-2">
+            <div className="flex pe-2">
               <Download />
             </div>
             Export {inMissing ? 'Missing' : ''}

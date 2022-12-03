@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
 
@@ -35,8 +35,8 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
 
   return (
     <>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={3} className="flex px-0">
           <div className="font-bold text-blue">Pool Cost:</div>
         </Col>
         <Col xs={4} className="d-inline px-0">
@@ -60,7 +60,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
             onChange={onChange}
           />
         </Col>
-      </Row>
+      </div>
     </>
   );
 };

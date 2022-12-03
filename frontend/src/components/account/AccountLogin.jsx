@@ -139,8 +139,8 @@ const AccountLogin = () => {
 
   return (
     <div>
-      <div className="d-flex text-blue font-bold text-xl align-items-center px-1 py-2">
-        <div className="d-flex pe-2">
+      <div className="flex text-blue font-bold text-xl items-center px-1 py-2">
+        <div className="flex pe-2">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
         Login
@@ -185,7 +185,7 @@ const AccountLogin = () => {
         </ErrorOverlay>
       </Form>
       {!isMobile ? (
-        <div className="d-flex justify-content-start text-xs ps-2 pt-1">
+        <div className="flex justify-start text-xs ps-2 pt-1">
           <OverlayTooltip
             delay={{ show: 0, hide: 2000 }}
             placement="bottom"
@@ -199,7 +199,7 @@ const AccountLogin = () => {
       ) : (
         <div
           onClick={() => setShowModalPassword(true)}
-          className="d-flex justify-content-start text-xs ps-2 pt-1"
+          className="flex justify-start text-xs ps-2 pt-1"
         >
           <a href="#">
             <i>Forgot password?</i>

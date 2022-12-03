@@ -63,14 +63,14 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
     return (
       <>
         <div
-          className="d-flex align-items-center justify-content-center capacity"
+          className="flex items-center justify-center capacity"
           onClick={() => handleClick(idx)}
         >
           <ResultCryptCapacity value={card.Capacity} />
         </div>
         {!isMobile && (
           <div
-            className="d-flex align-items-center justify-content-left disciplines"
+            className="flex items-center content-left disciplines"
             onClick={() => handleClick(idx)}
           >
             <ResultCryptDisciplines value={card.Disciplines} />
@@ -82,7 +82,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
           disabled={isMobile}
         >
           <div
-            className={`d-flex align-items-center justify-content-start name ${
+            className={`flex items-center justify-start name ${
               card.deckid ? '' : 'bold'
             } px-1`}
             onClick={() => handleClick(idx)}
@@ -92,10 +92,10 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
         </ConditionalOverlayTrigger>
         {!isMobile && (
           <div className="clan-group" onClick={() => handleClick(idx)}>
-            <div className="d-flex justify-content-center">
+            <div className="flex justify-center">
               <ResultClanImage value={card.Clan} />
             </div>
-            <div className="d-flex text-xs justify-content-end">
+            <div className="flex text-xs justify-end">
               <div className="font-bold text-blue">
                 <ResultCryptTitle value={card.Title} />
               </div>
@@ -114,7 +114,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`d-flex bordered ${index % 2 ? 'result-even' : 'result-odd'}`}
+      className={`flex bordered ${index % 2 ? 'result-even' : 'result-odd'}`}
     >
       {cardRows[index]}
     </div>
@@ -122,7 +122,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
 
   return (
     <div className="inventory-container-crypt">
-      <div className="d-flex align-items-center justify-content-between info-message">
+      <div className="flex items-center justify-between info-message">
         <div className="w-75 p-1">
           <InventoryFilterForm
             value={clan}
@@ -141,36 +141,36 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
         />
       </div>
 
-      <div className="d-flex info-messagetext-blue font-bold history-crypt-table">
-        {!isMobile && <div className="d-flex capacity" />}
-        {!isMobile && <div className="d-flex disciplines" />}
-        <div className="d-flex name" />
-        {!isMobile && <div className="d-flex clan-group" />}
+      <div className="flex info-message text-blue font-bold history-crypt-table">
+        {!isMobile && <div className="flex capacity" />}
+        {!isMobile && <div className="flex disciplines" />}
+        <div className="flex name" />
+        {!isMobile && <div className="flex clan-group" />}
         <div
-          className="d-flex align-items-center justify-content-center year"
+          className="flex items-center justify-center year"
           title="First Print Date"
         >
           Print
         </div>
         {!isMobile && (
           <div
-            className="d-flex align-items-center justify-content-center year"
+            className="flex items-center justify-center year"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
         <div
-          className="d-flex align-items-center justify-content-center ytw"
+          className="flex items-center justify-center ytw"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
-        <div className="d-flex align-items-center player" title="First Winner">
+        <div className="flex items-center player" title="First Winner">
           Player
         </div>
-        <div className="d-flex button pe-1" />
-        {!isMobile && <div className="d-flex scroll-bar" />}
+        <div className="flex button pe-1" />
+        {!isMobile && <div className="flex scroll-bar" />}
       </div>
       <AutoSizer>
         {({ width, height }) => (

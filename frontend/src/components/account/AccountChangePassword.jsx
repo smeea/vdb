@@ -130,7 +130,7 @@ const AccountChangePassword = () => {
 
   return (
     <div>
-      <h6 className="d-flex align-items-center p-1">
+      <h6 className="flex items-center p-1">
         <LockFill />
         <span className="ms-2">Change password</span>
       </h6>

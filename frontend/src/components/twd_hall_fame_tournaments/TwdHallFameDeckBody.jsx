@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import {
   TwdResultDescription,
   TwdResultCrypt,
@@ -9,7 +9,7 @@ import {
 
 const TwdHallFameDeckBody = ({ deck, isMobile }) => {
   return (
-    <Row className="py-0 px-0 mx-0">
+    <div className="flex flex-row py-0 px-0 mx-0">
       <Col xs={12} md={12} xl={3} className={isMobile ? 'px-0' : 'ps-0 pe-2'}>
         <TwdResultDescription deck={deck} />
       </Col>
@@ -35,7 +35,7 @@ const TwdHallFameDeckBody = ({ deck, isMobile }) => {
           </Col>
         </>
       )}
-    </Row>
+    </div>
   );
 };
 

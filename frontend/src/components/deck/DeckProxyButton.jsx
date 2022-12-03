@@ -215,9 +215,9 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           title={
             <div
               title="Create PDF with Cards"
-              className="d-flex justify-content-center align-items-center"
+              className="flex justify-center items-center"
             >
-              <div className="d-flex pe-2">
+              <div className="flex pe-2">
                 {spinnerState ? (
                   <Spinner animation="border" size="sm" />
                 ) : (

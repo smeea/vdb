@@ -90,26 +90,26 @@ const TwdResultLibraryByType = ({ library }) => {
       });
       TypePopover.displayName = 'TypePopover';
 
-      const imgClass = 'type-image-results';
       const cardtypes = cardtype.split('/');
       const cardtypeImages = cardtypes.map((cardtype, index) => {
         const imgSrc = `${process.env.ROOT_URL}images/types/${cardtype
           .toLowerCase()
           .replace(/[\s,:!?'.-]/g, '')}.svg`;
-        const imgTitle = cardtype;
         return (
           <img
             key={`${idx}-${index}`}
-            className={imgClass}
+            className="type-image-results max-w-none h-[25px]"
             src={imgSrc}
-            title={imgTitle}
+            title={cardtype}
           />
         );
       });
 
       LibraryTypes.push(
         <tr key={cardtype} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          <td className="type">{cardtypeImages}</td>
+          <td className="flex type items-center justify-center">
+            {cardtypeImages}
+          </td>
           <td
             onMouseOver={() => handleHover(cardtype)}
             onClick={() => handleClick(cardtype)}

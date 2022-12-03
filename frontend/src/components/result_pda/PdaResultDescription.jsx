@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Row, Col, Stack } from 'react-bootstrap';
+import { Col, Stack } from 'react-bootstrap';
 import CalendarEvent from 'assets/images/icons/calendar-event.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import TagFill from 'assets/images/icons/tag-fill.svg';
@@ -34,7 +34,7 @@ const PdaResultDescription = ({ deck }) => {
           <tr>
             <td className="blue">
               {isMobile ? (
-                <div className="d-flex align-items-center">
+                <div className="flex items-center">
                   <TagFill />
                 </div>
               ) : (
@@ -46,7 +46,7 @@ const PdaResultDescription = ({ deck }) => {
           <tr>
             <td className="blue">
               {isMobile ? (
-                <div className="d-flex align-items-center">
+                <div className="flex items-center">
                   <PersonFill />
                 </div>
               ) : (
@@ -65,7 +65,7 @@ const PdaResultDescription = ({ deck }) => {
           <tr>
             <td className="blue">
               {isMobile ? (
-                <div className="d-flex align-items-center">
+                <div className="flex items-center">
                   <CalendarEvent />
                 </div>
               ) : (
@@ -78,7 +78,7 @@ const PdaResultDescription = ({ deck }) => {
             <tr>
               <td className="blue">
                 {isMobile ? (
-                  <div className="d-flex align-items-center">
+                  <div className="flex items-center">
                     <CalendarEvent />
                   </div>
                 ) : (
@@ -101,7 +101,7 @@ const PdaResultDescription = ({ deck }) => {
       {isDesktop ? (
         <>
           {Description}
-          <Row className="p-2">
+          <div className="flex flex-row p-2">
             <Col md={6} className="ps-2 pe-1">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </Col>
@@ -111,10 +111,10 @@ const PdaResultDescription = ({ deck }) => {
             <div className="p-2">
               <PdaFavoriteButton deck={deck} />
             </div>
-          </Row>
+          </div>
         </>
       ) : (
-        <Row className="pb-1 mx-0">
+        <div className="flex flex-row pb-1 mx-0">
           <Col xs={9} className="px-1 mx-0">
             {Description}
           </Col>
@@ -127,7 +127,7 @@ const PdaResultDescription = ({ deck }) => {
               </div>
             </Stack>
           </Col>
-        </Row>
+        </div>
       )}
     </>
   );

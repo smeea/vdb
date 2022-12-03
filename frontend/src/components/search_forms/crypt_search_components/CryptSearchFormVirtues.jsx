@@ -8,7 +8,7 @@ const CryptSearchFormVirtues = ({ value, onChange }) => {
       {virtuesList.map((i, index) => (
         <div key={index} className={`virtue-container state${value[i]}`}>
           <label
-            className="virtue-container d-flex justify-content-center align-items-center"
+            className="virtue-container flex justify-center items-center"
             htmlFor={i}
           >
             <input

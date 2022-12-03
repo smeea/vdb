@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import cryptArtists from '~/src/assets/data/artistsCrypt.json';
 import libraryArtists from '~/src/assets/data/artistsLib.json';
@@ -24,16 +24,16 @@ const SearchFormArtist = ({ target, value, onChange }) => {
     name: 'artist',
     value: 'any',
     label: (
-      <div className="d-flex align-items-center">
-        <div className="d-flex w-[40px]" />
+      <div className="flex items-center">
+        <div className="flex w-[40px]" />
         ANY
       </div>
     ),
   });
 
   return (
-    <Row className="py-1 ps-1 mx-0 align-items-center">
-      <Col xs={3} className="d-flex px-0">
+    <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+      <Col xs={3} className="flex px-0">
         <div className="font-bold text-blue">Artist:</div>
       </Col>
       <Col xs={9} className="d-inline px-0">
@@ -48,7 +48,7 @@ const SearchFormArtist = ({ target, value, onChange }) => {
           value={options.find((obj) => obj.value === value)}
         />
       </Col>
-    </Row>
+    </div>
   );
 };
 

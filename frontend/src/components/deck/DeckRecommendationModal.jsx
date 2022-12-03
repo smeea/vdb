@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Modal, Button, Col, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ResultCryptTable, DeckRecommendationLibrary } from 'components';
 import { useApp } from 'context';
@@ -24,10 +24,10 @@ const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
           )}
         </Modal.Header>
         <Modal.Body className="p-0">
-          <Container fluid>
-            <Row className="px-0 pb-md-4">
+          <div>
+            <div className="flex flex-row px-0 pb-md-4">
               <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
-                <div className="d-flex justify-content-between align-items-center info-message h-10 px-2">
+                <div className="flex justify-between items-center info-message h-10 px-2">
                   <b>CRYPT</b>
                 </div>
                 {crypt ? (
@@ -37,33 +37,33 @@ const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
                     inRecommendation
                   />
                 ) : (
-                  <div className="d-flex justify-content-center py-4 pb-md-0">
+                  <div className="flex justify-center py-4 pb-md-0">
                     {' '}
                     <Spinner animation="border" />
                   </div>
                 )}
               </Col>
               <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
-                <div className="d-flex justify-content-between align-items-center info-message h-10 px-2">
+                <div className="flex justify-between items-center info-message h-10 px-2">
                   <b>LIBRARY</b>
                 </div>
                 {library ? (
                   <DeckRecommendationLibrary cards={library} />
                 ) : (
-                  <div className="d-flex justify-content-center py-4 pb-md-0">
+                  <div className="flex justify-center py-4 pb-md-0">
                     {' '}
                     <Spinner animation="border" />
                   </div>
                 )}
               </Col>
-            </Row>
-          </Container>
+            </div>
+          </div>
         </Modal.Body>
       </Modal>
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+          className="flex float-right-bottom float-clear items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

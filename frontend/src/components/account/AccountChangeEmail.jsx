@@ -124,7 +124,7 @@ const AccountChangeEmail = () => {
 
   return (
     <div>
-      <h6 className="d-flex align-items-center p-1">
+      <h6 className="flex items-center p-1">
         <EnvelopeFill />
         <span className="ms-2">Change email (optional)</span>
         {!isMobile ? (

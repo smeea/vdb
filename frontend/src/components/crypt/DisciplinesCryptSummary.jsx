@@ -16,13 +16,13 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
       withDisciplines = true;
       return (
         <span key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
-          <div className="d-flex align-items-center pe-1">
+          <div className="flex items-center pe-1">
             <ResultDisciplineImage
               title={`${d} Superior | Inferior`}
               superior={true}
               value={d}
             />
-            <div className="d-flex ps-1">
+            <div className="flex ps-1">
               {disciplinesDetailed[d][2]} <div className="gray px-1">|</div>{' '}
               {disciplinesDetailed[d][1]}
             </div>
@@ -37,9 +37,9 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
       withVirtues = true;
       return (
         <span key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
-          <div className="d-flex align-items-center pe-1">
+          <div className="flex items-center pe-1">
             <ResultDisciplineImage value={d} />
-            <div className="d-flex ps-1">{disciplinesDetailed[d][1]}</div>
+            <div className="flex ps-1">{disciplinesDetailed[d][1]}</div>
           </div>
         </span>
       );

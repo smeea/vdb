@@ -111,7 +111,7 @@ const ResultCryptTableRow = ({
           <td className="used">
             {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
               <div
-                className={`d-flex align-items-center justify-content-between used px-1 ms-1 ${
+                className={`flex items-center justify-between used px-1 ms-1 ${
                   inInventory < softUsedMax + hardUsedTotal
                     ? 'inv-miss-full'
                     : ''
@@ -174,7 +174,7 @@ const ResultCryptTableRow = ({
             <div>
               <ResultClanImage value={card.Clan} />
             </div>
-            <div className="d-flex text-xs justify-content-end">
+            <div className="flex text-xs justify-end">
               <div className="font-bold text-blue">
                 <ResultCryptTitle value={card.Title} />
               </div>

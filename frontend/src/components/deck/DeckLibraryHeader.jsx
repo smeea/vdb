@@ -18,8 +18,8 @@ const DeckLibraryHeader = ({
     <div
       className={
         isMobile
-          ? 'd-flex align-items-center justify-content-between ps-2 pe-1 info-message'
-          : 'd-flex align-items-center justify-content-between ps-2 info-message'
+          ? 'flex items-center justify-between ps-2 pe-1 info-message'
+          : 'flex items-center justify-between ps-2 info-message'
       }
     >
       <b>
@@ -28,9 +28,9 @@ const DeckLibraryHeader = ({
         {!inMissing && hasBanned && ' - WITH BANNED'}
       </b>
       {!inMissing && (
-        <div className="d-flex">
+        <div className="flex">
           <div
-            className="d-flex align-items-center pe-3"
+            className="flex items-center pe-3"
             title="Total Blood Cost"
           >
             <img
@@ -39,7 +39,7 @@ const DeckLibraryHeader = ({
             />
             <b>{bloodTotal}</b>
           </div>
-          <div className="d-flex align-items-center" title="Total Pool Cost">
+          <div className="flex items-center" title="Total Pool Cost">
             <img
               className="cost-pool-image-results py-1 pe-1"
               src={process.env.ROOT_URL + 'images/misc/poolX.png'}

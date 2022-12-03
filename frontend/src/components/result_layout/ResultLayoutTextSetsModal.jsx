@@ -7,7 +7,7 @@ const ResultLayoutTextSetsModal = ({ modal, setModal }) => {
     <Modal
       size="xs"
       show={modal}
-      className="d-flex justify-content-center nested-modal"
+      className="flex justify-center nested-modal"
       dialogClassName="w-75"
       onHide={() => setModal(null)}
       animation={false}

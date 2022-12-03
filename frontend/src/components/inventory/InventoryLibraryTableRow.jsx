@@ -72,13 +72,13 @@ const InventoryLibraryTableRow = ({
 
   return (
     <div
-      className={`d-flex no-border inventory-library-table ${
+      className={`flex no-border inventory-library-table ${
         isSwiped ? `swiped-${isSwiped}` : ''
       }`}
       {...swipeHandlers}
     >
       <div
-        className={`d-flex align-items-center justify-content-center ${
+        className={`flex items-center justify-center ${
           inShared ? 'quantity-no-buttons me-2' : 'quantity px-1]'
         }`}
       >
@@ -96,10 +96,10 @@ const InventoryLibraryTableRow = ({
         )}
       </div>
       {!inShared && (
-        <div className="d-flex align-items-center justify-content-center used">
+        <div className="flex items-center justify-center used">
           {isMobile ? (
             <div
-              className={`d-flex justify-content-center w-100 ps-1 ${
+              className={`flex justify-center w-100 ps-1 ${
                 card.q == softUsedMax + hardUsedTotal
                   ? 'gray'
                   : card.q >= softUsedMax + hardUsedTotal
@@ -119,7 +119,7 @@ const InventoryLibraryTableRow = ({
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
               <div
-                className={`d-flex justify-content-center w-100 ps-1 ${
+                className={`flex justify-center w-100 ps-1 ${
                   card.q == softUsedMax + hardUsedTotal
                     ? 'gray'
                     : card.q >= softUsedMax + hardUsedTotal
@@ -138,7 +138,7 @@ const InventoryLibraryTableRow = ({
         </div>
       )}
       <div
-        className="d-flex align-items-center justify-content-center type"
+        className="flex items-center justify-center type"
         onClick={() => handleClick(card.c)}
       >
         <ResultLibraryTypeImage value={card.c.Type} />
@@ -150,7 +150,7 @@ const InventoryLibraryTableRow = ({
         disabled={isMobile}
       >
         <div
-          className="d-flex align-items-center justify-content-start name"
+          className="flex items-center justify-start name"
           onClick={() => handleClick(card.c)}
         >
           <ResultLibraryName card={card.c} />
@@ -159,11 +159,11 @@ const InventoryLibraryTableRow = ({
 
       {isMobile ? (
         <div
-          className="d-flex align-items-center justify-content-between disciplines"
+          className="flex items-center justify-between disciplines"
           onClick={() => handleClick(card.c)}
         >
           <div
-            className={`d-flex align-items-center justify-content-center ${
+            className={`flex items-center justify-center ${
               card.c[BLOOD_COST] && 'blood'
             }`}
             onClick={() => handleClick(card.c)}
@@ -174,7 +174,7 @@ const InventoryLibraryTableRow = ({
             />
           </div>
           <div
-            className="d-flex align-items-center justify-content-center px-1"
+            className="flex items-center justify-center px-1"
             onClick={() => handleClick(card.c)}
           >
             {DisciplineOrClan}
@@ -183,7 +183,7 @@ const InventoryLibraryTableRow = ({
       ) : (
         <>
           <div
-            className={`d-flex align-items-center justify-content-center ${
+            className={`flex items-center justify-center ${
               card.c[BLOOD_COST] && 'blood'
             } cost`}
             onClick={() => handleClick(card.c)}
@@ -194,7 +194,7 @@ const InventoryLibraryTableRow = ({
             />
           </div>
           <div
-            className="d-flex align-items-center justify-content-center disciplines"
+            className="flex items-center justify-center disciplines"
             onClick={() => handleClick(card.c)}
           >
             {DisciplineOrClan}
@@ -203,7 +203,7 @@ const InventoryLibraryTableRow = ({
       )}
       {!isNarrow && (
         <div
-          className="d-flex align-items-center justify-content-center burn"
+          className="flex items-center justify-center burn"
           onClick={() => handleClick(card.c)}
         >
           <ResultLibraryBurn value={card.c[BURN_OPTION]} />

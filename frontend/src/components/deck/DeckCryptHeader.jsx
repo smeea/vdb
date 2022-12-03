@@ -23,8 +23,8 @@ const DeckCryptHeader = ({
     <div
       className={
         isMobile
-          ? 'd-flex align-items-center justify-content-between ps-2 pe-1 info-message'
-          : 'd-flex align-items-center justify-content-between ps-2 info-message'
+          ? 'flex items-center justify-between ps-2 pe-1 info-message'
+          : 'flex items-center justify-between ps-2 info-message'
       }
     >
       <b>
@@ -33,7 +33,7 @@ const DeckCryptHeader = ({
         {!inMissing && ` - ${cryptGroups}`}
         {!inMissing && hasBanned && ' - WITH BANNED'}
       </b>
-      <div className="d-flex align-items-center justify-content-between ps-2 pe-md-0 info-message">
+      <div className="flex items-center justify-between ps-2 pe-md-0 info-message">
         <Stack direction="horizontal" gap={1}>
           {!inMissing && (
             <SortButton

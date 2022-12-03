@@ -22,7 +22,7 @@ const DeckSelectRecent = ({ deckid, handleSelect }) => {
       value: i.deckid,
       name: 'deck',
       label: (
-        <div className="d-flex justify-content-between">
+        <div className="flex justify-between">
           {i.name}
           <span className="gray">{getIcon(i.src)}</span>
         </div>

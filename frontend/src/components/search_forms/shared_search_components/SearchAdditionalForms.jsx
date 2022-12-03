@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Stack } from 'react-bootstrap';
+import { Col, Stack } from 'react-bootstrap';
 import Select from 'react-select';
 import {
   SearchFormButtonAdd,
@@ -24,8 +24,8 @@ const SearchAdditionalForms = ({
 
   for (let i = 1; i < value.value.length; i++) {
     forms.push(
-      <Row key={i} className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex justify-content-end px-0 pe-1">
+      <div key={i} className="flex flex-row py-1 ps-1 mx-0 items-center">
+        <Col xs={3} className="flex justify-end px-0 pe-1">
           <Stack direction="horizontal" gap={1}>
             {i == value.value.length - 1 && (
               <SearchFormButtonAdd
@@ -93,7 +93,7 @@ const SearchAdditionalForms = ({
             />
           </Col>
         )}
-      </Row>
+      </div>
     );
   }
 

@@ -54,7 +54,7 @@ const DeckCardQuantity = ({
   }, [q, inventoryType, inProxy, softUsedMax, hardUsedTotal, isSelected]);
 
   return (
-    <div className="d-flex align-items-center justify-content-between">
+    <div className="flex items-center justify-between">
       {isMobile ? (
         <>
           <a

@@ -21,14 +21,14 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
 
   return (
     <>
-      <div className="d-flex whitespace-nowrap justify-content-between align-items-center pb-1">
-        <div className="d-flex whitespace-nowrap align-items-center">
+      <div className="flex whitespace-nowrap justify-between items-center pb-1">
+        <div className="flex whitespace-nowrap items-center">
           <ResultLibraryTypeImage value={card.Type} />
-          <div className="namefont-bold ps-2">
+          <div className="name font-bold ps-2">
             <ResultLibraryName card={card} />
           </div>
         </div>
-        <div className="d-flex align-items-center ps-1">
+        <div className="flex items-center ps-1">
           <ResultLibraryDisciplines value={card.Discipline} />
           {card.Discipline && card.Clan && '+'}
           <ResultLibraryClan value={card.Clan} />
@@ -51,7 +51,7 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
       <hr className="mx-0" />
       {(card['Blood Cost'] || card['Pool Cost']) && (
         <>
-          <div className="d-flex align-items-center justify-content-between">
+          <div className="flex items-center justify-between">
             <ResultLibraryCost
               valuePool={card['Pool Cost']}
               valueBlood={card['Blood Cost']}

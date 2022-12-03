@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
+import { Col, ButtonGroup, Button } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const CryptSearchFormGroup = ({ value, onChange }) => {
@@ -7,11 +7,11 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
   const groups = [1, 2, 3, 4, 5, 6, 7];
 
   return (
-    <Row className="pt-2 ps-1 mx-0 align-items-center">
-      <Col xs={3} className="d-flex px-0">
+    <div className="flex flex-row pt-2 ps-1 mx-0 items-center">
+      <Col xs={3} className="flex px-0">
         <div className="font-bold text-blue">Group:</div>
       </Col>
-      <Col xs={9} className="d-flex justify-content-end px-0">
+      <Col xs={9} className="flex justify-end px-0">
         <ButtonGroup>
           {groups.map((i, index) => {
             return (
@@ -31,7 +31,7 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
           })}
         </ButtonGroup>
       </Col>
-    </Row>
+    </div>
   );
 };
 

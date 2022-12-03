@@ -18,8 +18,8 @@ const TwdMoreButton = ({ noText }) => {
         noText ? (
           <Gem size={24} />
         ) : (
-          <div className="d-flex justify-content-center align-items-center">
-            <div className="d-flex pe-2">
+          <div className="flex justify-center items-center">
+            <div className="flex pe-2">
               <Gem size={24} />
             </div>
             More
@@ -28,24 +28,24 @@ const TwdMoreButton = ({ noText }) => {
       }
     >
       <Dropdown.Item onClick={() => navigate('/twd/hall_of_fame/tournaments')}>
-        <div className="d-flex justify-content-start align-items-center py-1">
-          <div className="d-flex pe-2">
+        <div className="flex justify-start items-center py-1">
+          <div className="flex pe-2">
             <TrophyFill />
           </div>
           Hall Of Fame - Tournaments
         </div>
       </Dropdown.Item>
       <Dropdown.Item onClick={() => navigate('/twd/hall_of_fame/cards')}>
-        <div className="d-flex justify-content-start align-items-center py-1">
-          <div className="d-flex pe-2">
+        <div className="flex justify-start items-center py-1">
+          <div className="flex pe-2">
             <LightbulbFill />
           </div>
           Hall Of Fame - Cards Appearance
         </div>
       </Dropdown.Item>
       <Dropdown.Item onClick={() => navigate('/twd/cards_history')}>
-        <div className="d-flex justify-content-start align-items-center py-1">
-          <div className="d-flex pe-2">
+        <div className="flex justify-start items-center py-1">
+          <div className="flex pe-2">
             <ClockHistory />
           </div>
           Cards Appearance History

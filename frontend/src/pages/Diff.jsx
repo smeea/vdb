@@ -249,15 +249,15 @@ const Diff = () => {
   }, [deck, deckTo]);
 
   return (
-    <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
-      <Row className="mx-0">
+    <div className="deck-container mx-auto px-0 px-md-2 px-xl-4 py-md-3">
+      <div className="flex flex-row mx-0">
         <Col xl={1}></Col>
         <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
-          <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0">
+          <div className="flex flex-row px-1 px-md-0 py-1 pb-0 pt-md-0">
             <Col className="px-0 ps-lg-3">
-              <Row className="font-bold text-blue mx-0 pb-1">
+              <div className="flex flex-row font-bold text-blue mx-0 pb-1">
                 Deck You Edit:
-              </Row>
+              </div>
               {selectFrom === 'from-url' ? (
                 <Form
                   name="from"
@@ -290,8 +290,8 @@ const Diff = () => {
                 <div
                   className={
                     inventoryMode || !isMobile
-                      ? 'd-flex'
-                      : 'd-flex justify-content-between'
+                      ? 'flex'
+                      : 'flex justify-between'
                   }
                 >
                   <div
@@ -339,7 +339,7 @@ const Diff = () => {
                   )}
                 </div>
               )}
-              <div className="d-flex justify-content-between align-items-center pt-1">
+              <div className="flex justify-between items-center pt-1">
                 <Form className="py-1 my-0 px-2">
                   {username && decks && Object.keys(decks).length > 0 && (
                     <Form.Check
@@ -397,16 +397,16 @@ const Diff = () => {
               </div>
             </Col>
             {!isMobile && (
-              <Col xs={1} className="d-flex justify-content-center px-0">
+              <Col xs={1} className="flex justify-center px-0">
                 <Button variant="primary" onClick={handleSwap}>
                   <ArrowLeftRight />
                 </Button>
               </Col>
             )}
             <Col className="pt-1 pt-md-0 px-0 pe-lg-3">
-              <Row className="font-bold text-blue mx-0 pb-1">
+              <div className="flex flex-row font-bold text-blue mx-0 pb-1">
                 Show Changes Against:
-              </Row>
+              </div>
               {selectTo === 'to-url' ? (
                 <Form
                   name="to"
@@ -430,10 +430,10 @@ const Diff = () => {
                 <div
                   className={
                     inventoryMode
-                      ? 'd-flex'
+                      ? 'flex'
                       : isMobile
-                      ? 'd-flex justify-content-between min-w-[270px]'
-                      : 'd-flex'
+                      ? 'flex justify-between min-w-[270px]'
+                      : 'flex'
                   }
                 >
                   <div
@@ -470,7 +470,7 @@ const Diff = () => {
                   )}
                 </div>
               )}
-              <div className="d-flex justify-content-between align-items-center pt-1">
+              <div className="flex justify-between items-center pt-1">
                 <Form className="py-1 my-0 px-2">
                   {username && decks && Object.keys(decks).length > 0 && (
                     <Form.Check
@@ -527,12 +527,12 @@ const Diff = () => {
                 </Form>
               </div>
             </Col>
-          </Row>
+          </div>
           {(errorFrom || errorTo) && (
-            <Row className="py-1">
+            <div className="flex flex-row py-1">
               <Col className="px-0 ps-lg-3">
                 {errorFrom && (
-                  <div className="d-flex align-items-center justify-content-center error-message p-2">
+                  <div className="flex items-center justify-center error-message p-2">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
                 )}
@@ -540,15 +540,15 @@ const Diff = () => {
               <Col xs={1} className="px-0"></Col>
               <Col className="px-0 pe-lg-3">
                 {errorTo && (
-                  <div className="d-flex align-items-center justify-content-center error-message p-2">
+                  <div className="flex items-center justify-center error-message p-2">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
                 )}
               </Col>
-            </Row>
+            </div>
           )}
           {deck && deckTo && (
-            <Row className="pt-md-2">
+            <div className="flex flex-row pt-md-2">
               <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
                 <div
                   className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}
@@ -579,7 +579,7 @@ const Diff = () => {
                   />
                 </div>
               </Col>
-            </Row>
+            </div>
           )}
         </Col>
         {!isMobile && (
@@ -594,14 +594,14 @@ const Diff = () => {
             </div>
           </Col>
         )}
-      </Row>
+      </div>
       {showFloatingButtons && (
         <div
           onClick={() => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          className="hide-on-gt992px d-flex float-right-bottom float-menu align-items-center justify-content-center"
+          className="hide-on-gt992px flex float-right-bottom float-menu items-center justify-center"
         >
           <List viewBox="0 0 16 16" />
         </div>
@@ -618,14 +618,14 @@ const Diff = () => {
           size="sm"
         >
           <Modal.Body className="p-1">
-            <Container className="px-0" fluid>
+            <div className="px-0">
               <DiffButtons
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
                 deckFrom={deck}
                 deckTo={deckTo}
               />
-              <div className="d-flex justify-content-end pt-1">
+              <div className="flex justify-end pt-1">
                 <ButtonIconed
                   variant="secondary"
                   onClick={() => {
@@ -636,11 +636,11 @@ const Diff = () => {
                   icon={<X width="24" height="24" viewBox="0 0 16 16" />}
                 />
               </div>
-            </Container>
+            </div>
           </Modal.Body>
         </Modal>
       )}
-    </Container>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Row, Col } from 'react-bootstrap';
+import { Form, Col } from 'react-bootstrap';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
   const titlesLeftforms = [
@@ -46,15 +46,15 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
 
   return (
     <>
-      <Row className="mx-0 py-1 ps-1">
-        <Col className="d-flex px-0">
+      <div className="flex flex-row mx-0 py-1 ps-1">
+        <Col className="flex px-0">
           <div className="font-bold text-blue">Title:</div>
         </Col>
-      </Row>
-      <Row className="mx-0">
+      </div>
+      <div className="flex flex-row mx-0">
         <Col className="d-inline pe-0">{titlesLeftforms}</Col>
         <Col className="d-inline pe-0">{titlesRightforms}</Col>
-      </Row>
+      </div>
     </>
   );
 };

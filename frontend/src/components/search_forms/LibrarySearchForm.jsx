@@ -287,14 +287,14 @@ const LibrarySearchForm = () => {
         <>
           <div
             onClick={handleClearButton}
-            className="d-flex float-right-middle float-clear align-items-center justify-content-center"
+            className="flex float-right-middle float-clear items-center justify-center"
           >
             <X viewBox="0 0 16 16" />
           </div>
           <div
             ref={refError}
             onClick={handleSubmitButton}
-            className="d-flex float-right-bottom float-search align-items-center justify-content-center"
+            className="flex float-right-bottom float-search items-center justify-center"
           >
             <Check2 viewBox="0 0 16 16" className="pt-1" />
             <ErrorOverlay

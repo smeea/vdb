@@ -26,7 +26,7 @@ const TwdResultTotal = ({
     <div
       className={`d-${
         isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'
-      } align-items-center justify-content-between info-message`}
+      } items-center justify-between info-message`}
     >
       <div className={`d-inline ps-2 pe-1 ${isMobile ? '' : 'whitespace-nowrap'}`}>
         <b>TOTAL: {total}</b>
@@ -43,7 +43,7 @@ const TwdResultTotal = ({
           );
         })}
       </div>
-      <div className="d-flex justify-content-end">
+      <div className="flex justify-end">
         <SortButton
           sortMethod={sortMethod}
           sortMethods={sortMethods}

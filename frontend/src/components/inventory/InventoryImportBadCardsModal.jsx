@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Modal, Button } from 'react-bootstrap';
+import { Col, Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { useApp, inventoryCardChange } from 'context';
 import { DeckCardQuantity, QuickSelect } from 'components';
@@ -59,7 +59,7 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
       <Modal.Body className={isMobile ? 'px-0 pt-0' : 'px-4 pt-0'}>
         {badCards.map((c, idx) => {
           return (
-            <Row key={idx} className="align-items-center pt-2">
+            <div key={idx} className="flex flex-row items-center pt-2">
               <Col md={5}>{c}</Col>
               <Col md={1}>
                 <DeckCardQuantity
@@ -75,7 +75,7 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
                   inBadImport
                 />
               </Col>
-            </Row>
+            </div>
           );
         })}
       </Modal.Body>

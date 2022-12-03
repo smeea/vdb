@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import At from 'assets/images/icons/at.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -20,8 +20,8 @@ const SubTitle = ({ children }) => {
 
 const Documentation = () => {
   return (
-    <Container className="search-container">
-      <Row className="justify-content-center">
+    <div className="search-container mx-auto">
+      <div className="flex flex-row justify-center">
         <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
@@ -453,8 +453,8 @@ const Documentation = () => {
             </div>
           </div>
         </Col>
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
 

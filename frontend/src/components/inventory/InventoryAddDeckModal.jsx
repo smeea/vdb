@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Form, Row, Col, FormControl, Button } from 'react-bootstrap';
+import { Modal, Form, Col, FormControl, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -184,7 +184,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
           )}
           <td className="name px-1">
             <div
-              className="d-flex truncate name justify-content-between"
+              className="flex truncate name justify-between"
               title={deck.name}
             >
               {deck.name}
@@ -211,7 +211,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                   placement="right"
                   show={showDeck === deck.deckid}
                   text={
-                    <Row>
+                    <div className="flex flex-row">
                       <Col
                         md={7}
                         onClick={(event) => {
@@ -232,7 +232,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                       >
                         <DeckLibrary deck={deck} />
                       </Col>
-                    </Row>
+                    </div>
                   }
                 >
                   <div>
@@ -320,7 +320,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                 </th>
               )}
               <th className="buttons">
-                <div className="d-flex justify-content-end align-items-center px-1">
+                <div className="flex justify-end items-center px-1">
                   <Form.Check
                     className="pe-2"
                     type="checkbox"

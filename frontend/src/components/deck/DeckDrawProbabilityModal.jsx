@@ -7,7 +7,7 @@ const DeckDrawProbabilityModal = (props) => {
     <Modal
       size="xs"
       show={props.modalDraw}
-      className="d-flex justify-content-center nested-modal"
+      className="flex justify-center nested-modal"
       dialogClassName="w-50"
       onHide={() => props.setModalDraw(null)}
       animation={false}

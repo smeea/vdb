@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Tabs, Tab } from 'react-bootstrap';
+import { Tabs, Tab } from 'react-bootstrap';
 import {
   TwdCardsHistoryCrypt,
   TwdCardsHistoryLibrary,
@@ -95,7 +95,7 @@ const TwdCardsHistory = () => {
   }, [cryptCardBase, libraryCardBase]);
 
   return (
-    <Container className="hof-history-container px-0 p-md-3">
+    <div className="hof-history-container mx-auto px-0 p-md-3">
       <Tabs
         activeKey={tab}
         onSelect={(k) => setTab(k)}
@@ -128,7 +128,7 @@ const TwdCardsHistory = () => {
           handleClose={handleCloseModal}
         />
       )}
-    </Container>
+    </div>
   );
 };
 

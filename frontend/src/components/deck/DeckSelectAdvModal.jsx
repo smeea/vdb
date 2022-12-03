@@ -369,7 +369,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
             )}
             <td className="name px-1" onClick={() => handleOpen(deck.deckid)}>
               <div
-                className="d-flex truncate name justify-content-between"
+                className="flex truncate name justify-between"
                 title={deck.name}
               >
                 {deck.name}
@@ -396,7 +396,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                     placement="right"
                     show={showDeck === deck.deckid}
                     text={
-                      <Row className="align-items-start">
+                      <div className="flex flex-row items-start">
                         <Col
                           md={6}
                           onClick={(event) => {
@@ -417,7 +417,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                         >
                           <DeckLibrary deck={deck} />
                         </Col>
-                      </Row>
+                      </div>
                     }
                   >
                     <div>
@@ -437,7 +437,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
             </td>
             <td className="buttons">
               <Stack
-                className="justify-content-end pe-1"
+                className="justify-end pe-1"
                 direction="horizontal"
                 gap={1}
               >
@@ -552,7 +552,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                     className={`${
                       isMobile
                         ? ''
-                        : 'd-flex justify-content-end align-items-center '
+                        : 'flex justify-end items-center '
                     } px-1`}
                   >
                     <Form.Check
@@ -563,7 +563,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                       checked={revFilter}
                       onChange={() => setRevFilter(!revFilter)}
                     />
-                    <div className="d-flex justify-content-end">
+                    <div className="flex justify-end">
                       <DeckSelectSortForm onChange={setSortMethod} />
                     </div>
                   </div>
@@ -572,7 +572,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
             </thead>
             <tbody>{deckRows}</tbody>
           </table>
-          <div className="d-flex justify-content-end pt-3">
+          <div className="flex justify-end pt-3">
             <Stack direction="horizontal" gap={2}>
               {/* <ButtonIconed */}
               {/*   variant="primary" */}
@@ -587,9 +587,9 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                 title={
                   <div
                     title="Export Selected"
-                    className="d-flex justify-content-center align-items-center"
+                    className="flex justify-center items-center"
                   >
-                    <div className="d-flex pe-2">
+                    <div className="flex pe-2">
                       <Download />
                     </div>
                     Export Selected
@@ -616,7 +616,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+          className="flex float-right-bottom float-clear items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

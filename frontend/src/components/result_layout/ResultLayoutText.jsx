@@ -64,7 +64,7 @@ const ResultLayoutText = ({
           forceInventoryMode={forceInventoryMode}
         />
       )}
-      <div className="d-flex justify-content-between pt-3">
+      <div className="flex justify-between pt-3">
         <Stack direction="horizontal" gap={1}>
           <ButtonCardCopyUrl cardid={card.Id} />
           <ButtonSearchCardInDecks cardid={card.Id} target="twd" />

@@ -51,7 +51,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
       value: `${i.set}:${i.precon}`,
       name: 'precon',
       label: (
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="flex justify-between items-center">
           <div className="pe-2">
             <div
               className={clanImages.length == 1 ? 'margin-full' : 'd-inline'}

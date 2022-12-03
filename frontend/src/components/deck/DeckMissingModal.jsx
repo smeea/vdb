@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Container, Row, Col, Button } from 'react-bootstrap';
+import { Modal, Col, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import Gem from 'assets/images/icons/gem.svg';
 import {
@@ -47,8 +47,8 @@ const DeckMissingModal = ({
         </Button>
       </Modal.Header>
       <Modal.Body className="p-0">
-        <Container fluid>
-          <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
+        <div>
+          <div className='flex flex-row pb-4 pb-md-2 px-0'>
             <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
               <div className={isMobile || inInventory ? null : 'sticky-modal'}>
                 <DeckCrypt
@@ -63,12 +63,12 @@ const DeckMissingModal = ({
                 inMissing
               />
             </Col>
-          </Row>
+          </div>
           <div
             className={
               isMobile
-                ? 'd-flex justify-content-end pt-2 py-2'
-                : 'd-flex justify-content-end px-2 pb-4'
+                ? 'flex justify-end pt-2 py-2'
+                : 'flex justify-end px-2 pb-4'
             }
           >
             {inInventory && (
@@ -88,7 +88,7 @@ const DeckMissingModal = ({
               />
             </div>
           </div>
-        </Container>
+        </div>
       </Modal.Body>
     </Modal>
   );

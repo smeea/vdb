@@ -32,7 +32,7 @@ const TwdEvent = ({ eventId, setEventId }) => {
 
   return (
     <>
-      <div className="d-flex ps-4">
+      <div className="flex ps-4">
         <h5>EVENT IN VEKN.NET</h5>
       </div>
       <div className="mt-1.5">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { useSnapshot } from 'valtio';
 import { PdaResult, PdaSearchForm } from 'components';
 import { useApp, searchResults, setPdaResults } from 'context';
@@ -10,8 +10,8 @@ const Pda = () => {
   const [error, setError] = useState();
 
   return (
-    <Container className="twd-container p-md-3">
-      <Row className="justify-content-center">
+    <div className="twd-container mx-auto px-md-1 pt-md-3">
+      <div className="flex flex-row justify-center">
         <Col
           xs={12}
           md={8}
@@ -26,7 +26,7 @@ const Pda = () => {
             <PdaResult results={pdaResults} setResults={setPdaResults} />
           )}
           {error && (
-            <div className="d-flex align-items-center justify-content-center font-bold error-message">
+            <div className="flex items-center justify-center font-bold error-message">
               {error}
             </div>
           )}
@@ -43,8 +43,8 @@ const Pda = () => {
         >
           <PdaSearchForm error={error} setError={setError} />
         </Col>
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Container, Row, Col, Stack } from 'react-bootstrap';
+import { Col, Stack } from 'react-bootstrap';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
 import {
@@ -68,13 +68,13 @@ const Cards = () => {
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
   return (
-    <Container className="cards-container px-0 p-md-0">
+    <div className="cards-container mx-auto px-0 p-md-0">
       <>
         {isMobile ? (
           <>
             {card && (
               <>
-                <Row className="m-0 mb-3 mb-md-0 p-0">
+                <div className="flex flex-row m-0 mb-3 mb-md-0 p-0">
                   <Col className="m-0 p-0">
                     {showImage ? (
                       <CardImage
@@ -94,51 +94,51 @@ const Cards = () => {
                       </>
                     )}
                   </Col>
-                </Row>
+                </div>
                 <div
                   onClick={() => toggleShowImage()}
-                  className="d-flex float-right-bottom float-turn align-items-center justify-content-center"
+                  className="flex float-right-bottom float-turn items-center justify-center"
                 >
                   <ArrowRepeat viewBox="0 0 16 16" />
                 </div>
               </>
             )}
-            <Row className="fixed w-full bottom-[40px] mx-0 px-1 py-1">
+            <div className="flex flex-row fixed w-full bottom-[40px] mx-0 px-1 py-1">
               <Col md={8} className="px-0">
                 <QuickSelect
                   selectedCardid={card && card.Id}
                   setCard={handleSetCard}
                 />
               </Col>
-            </Row>
+            </div>
             <div
               onClick={() => randomCrypt()}
-              className="d-flex float-right-top float-random align-items-center justify-content-center"
+              className="flex float-right-top float-random items-center justify-center"
             >
               <Dice3 viewBox="0 0 16 16" className="pe-1" /> C
             </div>
             <div
               onClick={() => randomLibrary()}
-              className="d-flex float-right-middle float-random align-items-center justify-content-center"
+              className="flex float-right-middle float-random items-center justify-center"
             >
               <Dice3 viewBox="0 0 16 16" className="pe-1" /> L
             </div>
           </>
         ) : (
-          <Row>
+          <div className="flex flex-row">
             <Col md={{ span: 8, offset: 2 }} className="quick-cards">
               {cryptCardBase && libraryCardBase && (
-                <Row className="align-content-center justify-content-center py-3">
+                <div className="flex flex-row align-justify-center justify-center py-3">
                   <Col className="px-0">
                     <QuickSelect
                       selectedCardid={card && card.Id}
                       setCard={handleSetCard}
                     />
                   </Col>
-                </Row>
+                </div>
               )}
               {card && (
-                <Row className="align-content-center justify-content-center my-2 bordered">
+                <div className="flex flex-row align-justify-center justify-center my-2 bordered">
                   <Col md={6} className="ps-0">
                     <CardImage
                       className="w-full h-auto"
@@ -154,7 +154,7 @@ const Cards = () => {
                       noClose
                     />
                   </Col>
-                </Row>
+                </div>
               )}
             </Col>
             <Col>
@@ -175,10 +175,10 @@ const Cards = () => {
                 />
               </Stack>
             </Col>
-          </Row>
+          </div>
         )}
       </>
-    </Container>
+    </div>
   );
 };
 

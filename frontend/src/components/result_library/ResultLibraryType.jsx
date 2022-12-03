@@ -1,26 +1,26 @@
 import React from 'react';
 import { ResultLibraryTypeImage } from 'components';
 
-function ResultLibraryType(props) {
-  if (props.total > 0) {
+const ResultLibraryType = ({ cardtype, total, trifleTotal }) => {
+  if (total > 0) {
     return (
-      <div className="d-flex">
-        <ResultLibraryTypeImage value={props.cardtype} />
+      <div className="flex">
+        <ResultLibraryTypeImage value={cardtype} />
         <div className="d-inline px-1">
-          {props.cardtype} [{props.total}]
-          {props.trifleTotal ? <> - {props.trifleTotal} trifle</> : null}
+          {cardtype} [{total}]
+          {trifleTotal ? <> - {trifleTotal} trifle</> : null}
         </div>
       </div>
     );
-  } else if (props.total == 0) {
+  } else if (total == 0) {
     return (
-      <div className="d-inline align-items-center">
-        <ResultLibraryTypeImage value={props.cardtype} />
-        <div className="d-inline px-1">{props.cardtype}</div>
+      <div className="d-inline items-center">
+        <ResultLibraryTypeImage value={cardtype} />
+        <div className="d-inline px-1">{cardtype}</div>
       </div>
     );
   }
-  return <ResultLibraryTypeImage value={props.cardtype} />;
-}
+  return <ResultLibraryTypeImage value={cardtype} />;
+};
 
 export default ResultLibraryType;

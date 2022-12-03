@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Row, Col, FormControl, Stack, Button } from 'react-bootstrap';
+import { Col, FormControl, Stack, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import Download from 'assets/images/icons/download.svg';
 import Upload from 'assets/images/icons/upload.svg';
@@ -101,15 +101,15 @@ const TwdDeck = ({ eventId, setEventId }) => {
 
   return (
     <>
-      <div className="d-flex justify-content-center">
+      <div className="flex justify-center">
         <h5>TWD</h5>
       </div>
-      <Row>
+      <div className="flex flex-row">
         <Col xl={2} className="mt-1.5 px-2">
-          <div className="d-flex justify-content-end">
+          <div className="flex justify-end">
             <pre className="mb-0">{fieldNames}</pre>
           </div>
-          <div className="d-flex justify-content-end">
+          <div className="flex justify-end">
             <pre className="gray">{descriptionInfo}</pre>
           </div>
         </Col>
@@ -124,10 +124,10 @@ const TwdDeck = ({ eventId, setEventId }) => {
             ref={refText}
             autoFocus
           />
-          <pre className="pt-1text-neutral-500 twd-length-marker">{lengthMarker}</pre>
+          <pre className="pt-1 text-neutral-500 twd-length-marker">{lengthMarker}</pre>
         </Col>
-      </Row>
-      <div className="d-flex justify-content-end pt-2">
+      </div>
+      <div className="flex justify-end pt-2">
         <Stack direction="horizontal" gap={2}>
           <ButtonIconed
             variant="primary"

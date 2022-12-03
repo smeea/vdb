@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Row, Col, Stack } from 'react-bootstrap';
+import { Col, Stack } from 'react-bootstrap';
 import CalendarEvent from 'assets/images/icons/calendar-event.svg';
 import GeoAltFill from 'assets/images/icons/geo-alt-fill.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
@@ -31,7 +31,7 @@ const TwdResultDescription = ({ deck }) => {
           <tr>
             <td className="blue">
               {isMobile ? (
-                <div className="d-flex align-items-center">
+                <div className="flex items-center">
                   <CalendarEvent />
                 </div>
               ) : (
@@ -43,7 +43,7 @@ const TwdResultDescription = ({ deck }) => {
           <tr>
             <td className="blue">
               {isMobile ? (
-                <div className="d-flex align-items-center">
+                <div className="flex items-center">
                   <TrophyFill />
                 </div>
               ) : (
@@ -55,7 +55,7 @@ const TwdResultDescription = ({ deck }) => {
           <tr>
             <td className="blue">
               {isMobile ? (
-                <div className="d-flex align-items-center">
+                <div className="flex items-center">
                   <GeoAltFill />
                 </div>
               ) : (
@@ -74,7 +74,7 @@ const TwdResultDescription = ({ deck }) => {
           <tr>
             <td className="blue">
               {isMobile ? (
-                <div className="d-flex align-items-center">
+                <div className="flex items-center">
                   <PersonFill />
                 </div>
               ) : (
@@ -93,7 +93,7 @@ const TwdResultDescription = ({ deck }) => {
           <tr>
             <td className="blue">
               {isMobile ? (
-                <div className="d-flex align-items-center">
+                <div className="flex items-center">
                   <TagFill />
                 </div>
               ) : (
@@ -115,43 +115,43 @@ const TwdResultDescription = ({ deck }) => {
       {isDesktop ? (
         <>
           <div
-            className={`d-flex justify-content-center align-items-center text-lg mx-1 mt-1 mb-2text-blue ${
+            className={`flex justify-center items-center text-lg mx-1 mt-1 mb-2 text-blue ${
               deck['players'] >= 30
                 ? 'bold border-dashed-thick'
                 : 'border-dashed'
             }`}
             title="Players"
           >
-            <div className="d-flex align-items-center pe-1">
+            <div className="flex items-center pe-1">
               <PeopleFill />
             </div>{' '}
             {deck['players']}
           </div>
           {Description}
-          <Row className="p-2">
+          <div className="flex flex-row p-2">
             <Col md={6} className="ps-2 pe-1">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </Col>
             <Col md={6} className="ps-1 pe-2">
               {username && <DeckCloneButton deck={deck} noRedirect />}
             </Col>
-          </Row>
+          </div>
         </>
       ) : (
-        <Row className="pb-1 mx-0">
+        <div className="flex flex-row pb-1 mx-0">
           <Col xs={9} className="px-1 mx-0">
             {Description}
           </Col>
           <Col xs={3} className="px-1">
             <Stack gap={1}>
               <div
-                className={`d-flex justify-content-center align-items-center text-lg mx-1 mb-1text-blue ${
+                className={`flex justify-center items-center text-lg mx-1 mb-1 text-blue ${
                   deck['players'] >= 30
                     ? 'bold border-dashed-thick'
                     : 'border-dashed'
                 }`}
               >
-                <div className="d-flex align-items-center pe-1">
+                <div className="flex items-center pe-1">
                   <PeopleFill />
                 </div>{' '}
                 {deck['players']}
@@ -160,7 +160,7 @@ const TwdResultDescription = ({ deck }) => {
               {username && <DeckCloneButton deck={deck} src="twd" inTwd />}
             </Stack>
           </Col>
-        </Row>
+        </div>
       )}
     </>
   );

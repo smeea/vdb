@@ -31,25 +31,25 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   return (
     <>
       <div
-        className={`d-flex align-items-center justify-content-center year ${
+        className={`flex items-center justify-center year ${
           card.deckid ? '' : 'font-bold text-blue'
         }`}
       >
         {card.release_date.slice(0, 4)}
       </div>
       {!isMobile && (
-        <div className="d-flex align-items-center justify-content-center year">
+        <div className="flex items-center justify-center year">
           {card.twd_date && card.twd_date.slice(0, 4)}
         </div>
       )}
       <div
-        className={`d-flex align-items-center justify-content-center ytw ${
+        className={`flex items-center justify-center ytw ${
           card.deckid ? '' : 'font-bold text-blue'
         }`}
       >
         {yearsToWin}
       </div>
-      <div className="d-flex align-items-center justify-content-between align-items-center player">
+      <div className="flex items-center justify-between items-center player">
         <div
           className="d-inline link-like"
           onClick={() => handleClick(card.player)}
@@ -67,7 +67,7 @@ Library: ${byPlayer.library}`}
           </div>
         )}
       </div>
-      <div className="d-flex align-items-center justify-content-end button pe-1">
+      <div className="flex items-center justify-end button pe-1">
         {card.deckid && (
           <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} inHistory />
         )}

@@ -52,7 +52,7 @@ const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
   );
 
   return (
-    <div className="d-flex align-items-center justify-content-between info-message">
+    <div className="flex items-center justify-between info-message">
       {value}
     </div>
   );

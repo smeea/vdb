@@ -3,9 +3,11 @@ import React from 'react';
 const ResultDisciplineImage = ({ value, superior, className, title }) => {
   const imgClass = className
     ? className
-    : superior
-    ? 'discipline-superior-image-results'
-    : 'discipline-base-image-results';
+    : `inline ${
+        superior
+          ? 'discipline-superior-image-results'
+          : 'discipline-base-image-results'
+      }`;
 
   const imgSrc = `${process.env.ROOT_URL}images/disciplines/${value
     .toLowerCase()

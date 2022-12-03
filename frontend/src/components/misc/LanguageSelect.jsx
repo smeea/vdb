@@ -36,7 +36,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
   const Menu = () => (
     <div className="py-1">
       <div className="px-2 pb-2">Card Language:</div>
-      <div className="d-flex align-items-center justify-content-between">
+      <div className="flex items-center justify-between">
         {options}
       </div>
     </div>
@@ -54,7 +54,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
         <>
           <div
             ref={menuRef}
-            className="d-flex align-items-center px-3"
+            className="flex items-center px-3"
             onClick={() => setShowMenu(!showMenu)}
           >
             <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />

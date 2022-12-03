@@ -52,8 +52,8 @@ const DeckImportButton = ({
       as={ButtonGroup}
       variant="secondary"
       title={
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="d-flex pe-2">
+        <div className="flex justify-center items-center">
+          <div className="flex pe-2">
             <ClipboardPlus size={24} />
           </div>
           New / Import

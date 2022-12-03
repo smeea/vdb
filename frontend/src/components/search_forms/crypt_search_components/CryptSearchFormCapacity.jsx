@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Select from 'react-select';
 import { useApp } from 'context';
 import {
@@ -55,11 +55,11 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
 
   return (
     <>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <Col xs={3} className="px-0">
           <div className="font-bold text-blue">Capacity:</div>
           {value.value[0][name] !== 'any' && (
-            <div className="d-flex justify-content-end pe-1">
+            <div className="flex justify-end pe-1">
               <div className="pe-1">
                 <SearchFormButtonLogicToggle
                   name={name}
@@ -106,7 +106,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
             onChange={onChange}
           />
         </Col>
-      </Row>
+      </div>
       <SearchAdditionalForms
         name={name}
         value={value}

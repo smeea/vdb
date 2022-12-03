@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Banner } from 'components';
 import changes from '../../../CHANGES.json';
 
 const Changelog = () => {
   return (
-    <Container className="search-container">
-      <Row className="justify-content-center">
+    <div className="search-container mx-auto">
+      <div className="flex flex-row justify-center">
         <Col xs={12} md={8} lg={7} xl={6} className="px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
@@ -26,8 +26,8 @@ const Changelog = () => {
             ))}
           </div>
         </Col>
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
 

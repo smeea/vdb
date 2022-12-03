@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const TwdSearchFormPlayers = ({ value, onChange }) => {
@@ -40,7 +40,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
 
   return (
     <>
-      <Row className="mx-0 align-items-center">
+      <div className="flex flex-row mx-0 items-center">
         <Col xs={1} className="d-inline px-0" />
         <Col xs={5} className="d-inline px-0">
           <Select
@@ -53,7 +53,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
             onChange={onChange}
           />
         </Col>
-        <Col xs={1} className="d-flex justify-content-center px-0">
+        <Col xs={1} className="flex justify-center px-0">
           <div className="text-xs px-0">to</div>
         </Col>
         <Col xs={5} className="d-inline px-0">
@@ -67,7 +67,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
             onChange={onChange}
           />
         </Col>
-      </Row>
+      </div>
     </>
   );
 };

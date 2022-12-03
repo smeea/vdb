@@ -20,7 +20,7 @@ function DeckSelectSortForm(props) {
       title={
         <div
           title="Sort Decks"
-          className="d-flex justify-content-center align-items-center"
+          className="flex justify-center items-center"
         >
           <SortDown />
         </div>

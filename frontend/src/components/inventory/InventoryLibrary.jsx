@@ -421,7 +421,7 @@ const InventoryLibrary = ({
     <>
       {!compact && (
         <>
-          <div className="d-flex align-items-center justify-content-between info-message">
+          <div className="flex items-center justify-between info-message">
             <div className="w-75 p-1">
               <Stack gap={1}>
                 <InventoryFilterForm
@@ -445,7 +445,7 @@ const InventoryLibrary = ({
                   target="discipline"
                 />
               </Stack>
-              <div className="d-flex justify-content-end text-neutral-500 font-bold px-1">
+              <div className="flex justify-end text-neutral-500 font-bold px-1">
                 {missingFilteredTotal ? (
                   <>
                     {missingFilteredTotal} (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Stack, Row, Col } from 'react-bootstrap';
+import { Form, Stack, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
 import { ResultLibraryClan } from 'components';
@@ -42,8 +42,8 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       value: 'any',
       name: name,
       label: (
-        <div className="d-flex align-items-center">
-          <div className="d-flex w-[40px]" />
+        <div className="flex items-center">
+          <div className="flex w-[40px]" />
           ANY
         </div>
       ),
@@ -51,7 +51,12 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     {
       value: 'bcp',
       name: name,
-      label: <>Any BCP (excl. Promo)</>,
+      label: (
+        <div className="flex items-center">
+          <div className="flex w-[40px]" />
+          ANY BCP (excl. Promo)
+        </div>
+      ),
     },
   ];
 
@@ -61,8 +66,8 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         value: i.set,
         name: name,
         label: (
-          <div className="d-flex align-items-center">
-            <div className="d-flex w-[40px]" />
+          <div className="flex items-center">
+            <div className="flex w-[40px]" />
             {i.name}
           </div>
         ),
@@ -72,7 +77,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         return (
           <React.Fragment key={clan}>
             {clan === 'Bundle' ? (
-              <div className="d-flex align-items-center clan-image-results">
+              <div className="flex justify-center items-center inline clan-image-results">
                 <GiftFill />
               </div>
             ) : clan === 'Mix' ? null : (
@@ -86,12 +91,12 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         value: `${i.set}:${i.precon}`,
         name: 'precon',
         label: (
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="d-flex align-items-center pe-2">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center pe-2">
               <div
                 className={
                   clanImages.length == 1
-                    ? 'd-flex justify-content-center align-items-center w-[40px]'
+                    ? 'flex justify-center items-center w-[40px]'
                     : 'd-inline pe-2'
                 }
               >
@@ -158,11 +163,11 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   return (
     <>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
+      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
         <Col xs={3} className="px-0">
           <div className="font-bold text-blue">Precon:</div>
           {value.value[0] !== 'any' && (
-            <div className="d-flex justify-content-end pe-1">
+            <div className="flex justify-end pe-1">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -188,7 +193,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
             onChange={onChange}
           />
         </Col>
-      </Row>
+      </div>
       <SearchAdditionalForms
         value={value}
         name={name}
@@ -198,13 +203,13 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <Row className="pb-1 ps-1 mx-0 align-items-center">
-        <Col className="d-flex justify-content-end px-0">
+      <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
+        <Col className="flex justify-end px-0">
           <Stack direction="horizontal" gap={3}>
             {printForm}
           </Stack>
         </Col>
-      </Row>
+      </div>
     </>
   );
 };

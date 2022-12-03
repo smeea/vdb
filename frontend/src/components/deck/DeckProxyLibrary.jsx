@@ -55,7 +55,7 @@ const DeckProxyLibrary = ({
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype}>
-      <div className="d-flex justify-content-between pe-2">
+      <div className="flex justify-between pe-2">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
@@ -94,7 +94,7 @@ const DeckProxyLibrary = ({
   return (
     <>
       <div
-        className={`d-flex align-items-center justify-content-between info-message pb-2 ps-2 ${
+        className={`flex items-center justify-between info-message pb-2 ps-2 ${
           isMobile ? 'pe-1' : 'py-2'
         }`}
       >

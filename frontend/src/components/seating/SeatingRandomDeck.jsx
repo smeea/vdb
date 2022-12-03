@@ -9,15 +9,15 @@ const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (
     <>
       <div
-        className={`d-flex align-items-center ps-2 py-1 ${
+        className={`flex items-center ps-2 py-1 ${
           !disabled && deck.state ? '' : 'gray'
         }`}
       >
         <div
-          className="d-flex align-items-center"
+          className="flex items-center"
           onClick={() => !disabled && toggle(i)}
         >
-          <div className="d-flex align-items-center pe-2">
+          <div className="flex items-center pe-2">
             <>
               {deck.state ? (
                 <ToggleOn width="22" height="22" viewBox="0 0 16 16" />

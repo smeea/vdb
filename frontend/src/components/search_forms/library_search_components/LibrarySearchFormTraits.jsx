@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Row, Col } from 'react-bootstrap';
+import { Form, Col } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const LibrarySearchFormTraits = ({ value, onChange }) => {
@@ -63,19 +63,19 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
 
   return (
     <>
-      <Row className="mx-0 py-1 ps-1">
-        <Col className="d-flex px-0">
+      <div className="flex flex-row mx-0 py-1 ps-1">
+        <Col className="flex px-0">
           <div className="font-bold text-blue">Traits:</div>
         </Col>
-      </Row>
-      <Row className="mx-0">
+      </div>
+      <div className="flex flex-row mx-0">
         <Col xs={7} className="d-inline pe-0">
           {traitsLeftforms}
         </Col>
         <Col xs={5} className="d-inline px-0">
           {traitsRightforms}
         </Col>
-      </Row>
+      </div>
     </>
   );
 };

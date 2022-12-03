@@ -1,32 +1,32 @@
 import React from 'react';
 import Hammer from 'assets/images/icons/hammer.svg';
 
-function ResultCryptName(props) {
+const ResultCryptName = ({ card }) => {
   return (
     <div className="d-inline whitespace-nowrap">
-      {props.card['Banned'] ? (
+      {card['Banned'] ? (
         <div className="d-inline whitespace-normal">
-          <strike>{props.card['Name']}</strike>
+          <strike>{card['Name']}</strike>
         </div>
       ) : (
-        <div className="d-inline whitespace-normal">{props.card['Name']}</div>
+        <div className="d-inline whitespace-normal">{card['Name']}</div>
       )}
-      {props.card.Adv[0] && (
+      {card.Adv[0] && (
         <span className="ps-1">
           <img
-            className="advanced-image-results"
+            className="advanced-image-results align-text-bottom inline h-[22px]"
             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
             title="Advanced"
           />
         </span>
       )}
-      {props.card['Banned'] && (
+      {card['Banned'] && (
         <span className="ps-1">
-          [{props.card['Banned']} <Hammer />]
+          [{card['Banned']} <Hammer className="inline h-[20px]" />]
         </span>
       )}
     </div>
   );
-}
+};
 
 export default ResultCryptName;

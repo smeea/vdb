@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Container, Row, Col, Stack } from 'react-bootstrap';
+import { Modal, Button, Col, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import StackIcon from 'assets/images/icons/stack.svg';
@@ -66,21 +66,21 @@ const DeckDrawModal = ({
           )}
         </Modal.Header>
         <Modal.Body className="p-0">
-          <Container fluid>
-            <Row className="px-0 pb-md-4">
+          <div>
+            <div className="flex flex-row px-0 pb-md-4">
               <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
                 <div>
-                  <div className="d-flex justify-content-between info-message h-10">
-                    <div className="d-flex align-items-center px-2">
+                  <div className="flex justify-between info-message h-10">
+                    <div className="flex items-center px-2">
                       <b>Uncontrolled</b>
                     </div>
-                    <div className="d-flex align-items-center">
+                    <div className="flex items-center">
                       <b>
                         {drawedCrypt.length} + {restCrypt.length}
                       </b>
                     </div>
-                    <div className="d-flex">
-                      <div className="d-flex align-items-center pe-2">
+                    <div className="flex">
+                      <div className="flex items-center pe-2">
                         <b>{initialTransfers}t</b>
                       </div>
                       <Stack direction="horizontal" gap={1}>
@@ -120,7 +120,7 @@ const DeckDrawModal = ({
                     </div>
                   </div>
                   {cryptTotal < 4 && (
-                    <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
+                    <div className="flex items-center justify-center error-message p-2 my-2">
                       <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
                     </div>
                   )}
@@ -136,11 +136,11 @@ const DeckDrawModal = ({
                 </div>
               </Col>
               <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
-                <div className="d-flex justify-content-between info-message h-10">
-                  <div className="d-flex align-items-center px-2">
+                <div className="flex justify-between info-message h-10">
+                  <div className="flex items-center px-2">
                     <b>Hand</b>
                   </div>
-                  <div className="d-flex align-items-center">
+                  <div className="flex items-center">
                     <b>
                       {drawedLibrary.length} + {restLibrary.length}
                     </b>
@@ -181,7 +181,7 @@ const DeckDrawModal = ({
                   </Stack>
                 </div>
                 {libraryTotal < 7 && (
-                  <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
+                  <div className="flex items-center justify-center error-message p-2 my-2">
                     <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
                   </div>
                 )}
@@ -193,21 +193,21 @@ const DeckDrawModal = ({
                   placement={isNarrow ? 'bottom' : 'right'}
                 />
               </Col>
-            </Row>
+            </div>
             {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-              <Row className="px-0 pb-md-4">
+              <div className="flex flex-row px-0 pb-md-4">
                 <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
                   {burnedCrypt.length > 0 && (
                     <div className="pt-4 pt-md-0">
-                      <div className="d-flex justify-content-between info-message h-10">
-                        <div className="d-flex align-items-center px-2">
+                      <div className="flex justify-between info-message h-10">
+                        <div className="flex items-center px-2">
                           <b>Controlled</b>
                         </div>
-                        <div className="d-flex align-items-center">
+                        <div className="flex items-center">
                           <b>{burnedCrypt.length}</b>
                         </div>
                         <div
-                          className="d-flex align-items-center pe-3"
+                          className="flex items-center pe-3"
                           title="Total Capacity"
                         >
                           <img
@@ -232,16 +232,16 @@ const DeckDrawModal = ({
                 <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
                   {burnedLibrary.length > 0 && (
                     <div className="pt-4 pt-md-0">
-                      <div className="d-flex justify-content-between info-message h-10">
-                        <div className="d-flex align-items-center px-2">
+                      <div className="flex justify-between info-message h-10">
+                        <div className="flex items-center px-2">
                           <b>Ash Heap</b>
                         </div>
-                        <div className="d-flex align-items-center">
+                        <div className="flex items-center">
                           <b>{burnedLibrary.length}</b>
                         </div>
-                        <div className="d-flex">
+                        <div className="flex">
                           <div
-                            className="d-flex align-items-center pe-3"
+                            className="flex items-center pe-3"
                             title="Total Blood Cost"
                           >
                             <img
@@ -253,7 +253,7 @@ const DeckDrawModal = ({
                             <b>{burnedBloodTotal}</b>
                           </div>
                           <div
-                            className="d-flex align-items-center pe-3"
+                            className="flex items-center pe-3"
                             title="Total Pool Cost"
                           >
                             <img
@@ -276,7 +276,7 @@ const DeckDrawModal = ({
                     </div>
                   )}
                 </Col>
-              </Row>
+              </div>
             )}
             {shouldShowModal && (
               <ResultModal
@@ -286,13 +286,13 @@ const DeckDrawModal = ({
                 nested={true}
               />
             )}
-          </Container>
+          </div>
         </Modal.Body>
       </Modal>
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+          className="flex float-right-bottom float-clear items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

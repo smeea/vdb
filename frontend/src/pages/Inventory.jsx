@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { useLocation } from 'react-router-dom';
-import { Container, Row, Col, Modal } from 'react-bootstrap';
+import { Col, Modal } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import {
   AccountLogin,
@@ -106,7 +106,7 @@ const Inventory = () => {
   const newLibraryRef = useRef(null);
 
   return (
-    <Container className="search-container p-0">
+    <div className="search-container mx-auto p-0">
       {(!inventoryKey && username) || (inventoryKey && !inventoryError) ? (
         <>
           {isMobile ? (
@@ -140,7 +140,7 @@ const Inventory = () => {
               inShared={inventoryKey ? true : false}
             />
           ) : (
-            <Row className="mx-0">
+            <div className="flex flex-row mx-0">
               <InventoryDesktop
                 newCryptId={newCryptId}
                 newLibraryId={newLibraryId}
@@ -172,23 +172,23 @@ const Inventory = () => {
                 setInventoryKey={setInventoryKey}
                 inShared={inventoryKey ? true : false}
               />
-            </Row>
+            </div>
           )}
         </>
       ) : (
         <>
           {inventoryError ? (
-            <Row className="align-items-center justify-content-center p-0 p-md-3">
+            <div className="flex flex-row items-center justify-center p-0 p-md-3">
               <Col xs={12} md={8} lg={7} xl={6}>
-                <div className="d-flex align-items-center justify-content-center error-message p-2">
+                <div className="flex items-center justify-center error-message p-2">
                   <b>{inventoryError}</b>
                 </div>
               </Col>
-            </Row>
+            </div>
           ) : (
-            <Row className="align-items-center justify-content-center pt-3 mx-0 h-[80vh]">
+            <div className="flex flex-row items-center justify-center pt-3 mx-0 h-[80vh]">
               <Col xs={12} md={8} lg={7} xl={6} className="px-3">
-                <div className="d-flex justify-content-center">
+                <div className="flex justify-center">
                   <h6>Login required to manage inventory</h6>
                 </div>
                 <div className="py-4">
@@ -198,7 +198,7 @@ const Inventory = () => {
                   <AccountRegister />
                 </div>
               </Col>
-            </Row>
+            </div>
           )}
         </>
       )}
@@ -208,7 +208,7 @@ const Inventory = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          className="hide-on-gt1200px d-flex float-right-bottom float-menu align-items-center justify-content-center"
+          className="hide-on-gt1200px flex float-right-bottom float-menu items-center justify-center"
         >
           <List viewBox="0 0 16 16" />
         </div>
@@ -225,7 +225,7 @@ const Inventory = () => {
           size="sm"
         >
           <Modal.Body className="p-1">
-            <Container className="px-0" fluid>
+            <div className="px-0">
               <InventoryButtons
                 crypt={
                   sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
@@ -253,7 +253,7 @@ const Inventory = () => {
                   setCategory={setCategory}
                 />
               </div>
-            </Container>
+            </div>
           </Modal.Body>
         </Modal>
       )}
@@ -283,7 +283,7 @@ const Inventory = () => {
           setShow={setShowShareModal}
         />
       )}
-    </Container>
+    </div>
   );
 };
 

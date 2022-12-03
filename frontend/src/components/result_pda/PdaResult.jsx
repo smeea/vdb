@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Row, Col } from 'react-bootstrap';
+import { Button, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
   PdaResultDescription,
@@ -68,7 +68,7 @@ const PdaResult = ({ results, setResults }) => {
 
           return (
             <React.Fragment key={deck['deckid']}>
-              <Row className="py-2 px-0 mx-0">
+              <div className="flex flex-row py-2 px-0 mx-0">
                 <Col
                   xs={12}
                   md={12}
@@ -99,7 +99,7 @@ const PdaResult = ({ results, setResults }) => {
                     </Col>
                   </>
                 )}
-              </Row>
+              </div>
               {index + 1 < showCounter && <hr className="mx-0 thick" />}
             </React.Fragment>
           );
@@ -118,7 +118,7 @@ const PdaResult = ({ results, setResults }) => {
       />
       {resultEntries}
       {deckCounter > showCounter && (
-        <div className="d-flex justify-content-center pb-4 pt-2">
+        <div className="flex justify-center pb-4 pt-2">
           <Button
             variant="primary"
             onClick={() => setShowCounter(showCounter + showCounterStep)}
@@ -131,7 +131,7 @@ const PdaResult = ({ results, setResults }) => {
         <>
           <div
             onClick={handleClear}
-            className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+            className="flex float-right-bottom float-clear items-center justify-center"
           >
             <X viewBox="0 0 16 16" />
           </div>

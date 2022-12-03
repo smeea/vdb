@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { Modal, Row, Col } from 'react-bootstrap';
+import { Modal, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
@@ -96,7 +96,7 @@ const ResultModal = ({
             )}
           </div>
         ) : (
-          <Row className="mx-0">
+          <div className="flex flex-row mx-0">
             <Col md={5} className="bg-black px-0">
               <CardImage
                 className="w-full h-auto"
@@ -114,19 +114,18 @@ const ResultModal = ({
                 forceInventoryMode={forceInventoryMode}
               />
             </Col>
-          </Row>
+          </div>
         )}
         <div
           onClick={() => handleModalCardChange(-1)}
           className={`bottom-1/2 absolute ${
             isMobile
               ? 'text-neutral-500 h-[50px] left-0'
-              : 'text-white left-[40px]'
+              : 'text-white left-[-40px]'
           }`}
         >
           <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
         </div>
-
         <div
           onClick={() => handleModalCardChange(1)}
           className={`bottom-1/2 absolute ${
@@ -140,7 +139,7 @@ const ResultModal = ({
         {isMobile && (
           <div
             onClick={() => toggleShowImage()}
-            className="d-flex float-right-middle float-turn align-items-center justify-content-center"
+            className="flex float-right-middle float-turn items-center justify-center"
           >
             <ArrowRepeat viewBox="0 0 16 16" />
           </div>
@@ -148,7 +147,7 @@ const ResultModal = ({
         {isNarrow && (
           <div
             onClick={handleClose}
-            className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+            className="flex float-right-bottom float-clear items-center justify-center"
           >
             <X viewBox="0 0 16 16" />
           </div>

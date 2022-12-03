@@ -105,7 +105,7 @@ const DeckLibraryTableRow = ({
             <>
               {deck.inventoryType && !inSearch && !isMobile && (
                 <td>
-                  <div className="d-flex relative align-items-center">
+                  <div className="flex relative items-center">
                     <div
                       className={
                         card.i

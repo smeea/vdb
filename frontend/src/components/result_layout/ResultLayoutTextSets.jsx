@@ -70,7 +70,7 @@ const ResultLayoutTextSets = (props) => {
           {isMobile ? (
             <div className="d-inline" onClick={() => setModal(popoverText)}>
               {k}
-              <div className="d-inlinetext-neutral-500">
+              <div className="d-inline text-neutral-500">
                 {preconsShort ? `:${preconsShort}` : null}
               </div>
             </div>
@@ -78,7 +78,7 @@ const ResultLayoutTextSets = (props) => {
             <OverlayTooltip text={popoverText} placement="bottom">
               <div className="d-inline">
                 {k}
-                <div className="d-inlinetext-neutral-500">
+                <div className="d-inline text-neutral-500">
                   {preconsShort ? `:${preconsShort}` : null}
                 </div>
               </div>

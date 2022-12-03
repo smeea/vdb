@@ -8,7 +8,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="input-group justify-content-start py-1">
+      <div className="input-group justify-start py-1">
         {disciplinesList.map((i, index) => {
           const disciplineState = `discipline-container state${
             value[i] ? 1 : 0
@@ -16,7 +16,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           return (
             <div key={index} className={disciplineState}>
               <label
-                className="discipline-container d-flex justify-content-center align-items-center"
+                className="discipline-container flex justify-center items-center"
                 htmlFor={i}
               >
                 <input
@@ -41,7 +41,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           return (
             <div key={index} className={virtueState}>
               <label
-                className="virtue-container d-flex justify-content-center align-items-center"
+                className="virtue-container flex justify-center items-center"
                 htmlFor={i}
               >
                 <input
