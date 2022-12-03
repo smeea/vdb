@@ -1,13 +1,13 @@
 import React from 'react';
-import { Dropdown, DropdownButtonGroup } from 'react-bootstrap';
+import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
 import SortDown from 'assets/images/icons/sort-down.svg';
 
-function DeckSelectSortForm(props) {
+const DeckSelectSortForm = ({ onChange }) => {
   const sortMethods = { Name: 'byName', Date: 'byDate' };
 
   const Options = Object.keys(sortMethods).map((k) => {
     return (
-      <Dropdown.Item key={k} onClick={() => props.onChange(sortMethods[k])}>
+      <Dropdown.Item key={k} onClick={() => onChange(sortMethods[k])}>
         Sort by {k}
       </Dropdown.Item>
     );
@@ -18,10 +18,7 @@ function DeckSelectSortForm(props) {
       as={ButtonGroup}
       variant="primary"
       title={
-        <div
-          title="Sort Decks"
-          className="flex justify-center items-center"
-        >
+        <div title="Sort Decks" className="flex justify-center items-center">
           <SortDown />
         </div>
       }
@@ -29,6 +26,6 @@ function DeckSelectSortForm(props) {
       {Options}
     </DropdownButton>
   );
-}
+};
 
 export default DeckSelectSortForm;

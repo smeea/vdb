@@ -434,11 +434,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
               <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
             </td>
             <td className="buttons">
-              <Stack
-                className="justify-end pe-1"
-                direction="horizontal"
-                gap={1}
-              >
+              <div className="flex flex-col space-x-1 justify-end pe-1">
                 <DeckHideButton deck={deck} />
                 {!isMobile && (
                   <>
@@ -462,7 +458,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                     )}
                   </>
                 )}
-              </Stack>
+              </div>
             </td>
           </tr>
         )}
@@ -569,43 +565,34 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
             <tbody>{deckRows}</tbody>
           </table>
           <div className="flex justify-end pt-3">
-            <Stack direction="horizontal" gap={2}>
-              {/* <ButtonIconed */}
-              {/*   variant="primary" */}
-              {/*   onClick={() => deleteSelected()} */}
-              {/*   title="Delete Selected" */}
-              {/*   icon={<TrashFill />} */}
-              {/*   text="Delete Selected" */}
-              {/* /> */}
-              <DropdownButton
-                as={ButtonGroup}
-                variant="primary"
-                title={
-                  <div
-                    title="Export Selected"
-                    className="flex justify-center items-center"
-                  >
-                    <div className="flex pe-2">
-                      <Download />
-                    </div>
-                    Export Selected
+            <DropdownButton
+              as={ButtonGroup}
+              variant="primary"
+              title={
+                <div
+                  title="Export Selected"
+                  className="flex justify-center items-center"
+                >
+                  <div className="flex pe-2">
+                    <Download />
                   </div>
-                }
-              >
-                <Dropdown.Item href="" onClick={() => exportSelected('text')}>
-                  Text
-                </Dropdown.Item>
-                <Dropdown.Item href="" onClick={() => exportSelected('lackey')}>
-                  Lackey
-                </Dropdown.Item>
-                <Dropdown.Item href="" onClick={() => exportSelected('jol')}>
-                  JOL
-                </Dropdown.Item>
-                <Dropdown.Item href="" onClick={() => exportSelected('xlsx')}>
-                  Excel
-                </Dropdown.Item>
-              </DropdownButton>
-            </Stack>
+                  Export Selected
+                </div>
+              }
+            >
+              <Dropdown.Item href="" onClick={() => exportSelected('text')}>
+                Text
+              </Dropdown.Item>
+              <Dropdown.Item href="" onClick={() => exportSelected('lackey')}>
+                Lackey
+              </Dropdown.Item>
+              <Dropdown.Item href="" onClick={() => exportSelected('jol')}>
+                JOL
+              </Dropdown.Item>
+              <Dropdown.Item href="" onClick={() => exportSelected('xlsx')}>
+                Excel
+              </Dropdown.Item>
+            </DropdownButton>
           </div>
         </Modal.Body>
       </Modal>

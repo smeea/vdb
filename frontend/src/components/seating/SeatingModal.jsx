@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Stack } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import PencilSquare from 'assets/images/icons/pencil-square.svg';
 import Recycle from 'assets/images/icons/recycle.svg';
@@ -70,7 +70,7 @@ const SeatingModal = ({
           <div className="mb-0 mb-md-3 px-0 px-md-0">
             <div className="flex flex-row items-center">
               <div className="py-2 md:basis-5/12 xl:basis-1/3">
-                <Stack gap={1}>
+                <div className="flex flex-col space-y-1">
                   {players.map((p, idx) => {
                     return (
                       <SeatingPlayerSelector
@@ -81,8 +81,8 @@ const SeatingModal = ({
                       />
                     );
                   })}
-                </Stack>
-                <Stack className="pt-4" gap={2}>
+                </div>
+                <div className="flex flex-row space-y-2 pt-4">
                   <ButtonIconed
                     variant="primary"
                     onClick={reshuffle}
@@ -110,7 +110,7 @@ const SeatingModal = ({
                       No random players source selected
                     </div>
                   )}
-                </Stack>
+                </div>
               </div>
               <div className="md:basis-7/12 xl:basis-8/12 px-0">
                 {seating && (

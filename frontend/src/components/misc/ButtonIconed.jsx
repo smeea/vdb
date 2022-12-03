@@ -11,7 +11,7 @@ const ButtonIconed = ({
 }) => {
   return (
     <button
-      className={`btn btn-${variant} ${className ?? ''} h-100`}
+      className={`btn btn-${variant} ${className ?? ''}`}
       variant={variant}
       onClick={onClick}
       title={title}

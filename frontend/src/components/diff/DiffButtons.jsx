@@ -1,5 +1,4 @@
 import React from 'react';
-import { Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
   DiffCopyUrlButton,
@@ -21,7 +20,7 @@ const DiffButtons = ({
   return (
     <>
       {deckFrom && deckTo && (
-        <Stack gap={1}>
+        <div className="flex flex-col space-y-1">
           <DiffBackButton deckid={deckFrom.deckid} />
           <DiffCopyUrlButton
             deckFromId={deckFrom.deckid}
@@ -38,7 +37,7 @@ const DiffButtons = ({
             missingCrypt={missingCrypt}
             missingLibrary={missingLibrary}
           />
-        </Stack>
+        </div>
       )}
       {isNarrow && (
         <div

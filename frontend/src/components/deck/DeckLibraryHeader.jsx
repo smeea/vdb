@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Button } from 'react-bootstrap';
+import { Button } from 'components';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 
 const DeckLibraryHeader = ({
@@ -29,10 +29,7 @@ const DeckLibraryHeader = ({
       </b>
       {!inMissing && (
         <div className="flex">
-          <div
-            className="flex items-center pe-3"
-            title="Total Blood Cost"
-          >
+          <div className="flex items-center pe-3" title="Total Blood Cost">
             <img
               className="cost-blood-image-results pb-1 pe-1"
               src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
@@ -48,7 +45,7 @@ const DeckLibraryHeader = ({
           </div>
         </div>
       )}
-      <Stack direction="horizontal" gap={1}>
+      <div className="flex flex-row space-x-1">
         <Button
           className="h-full"
           title="Additional Info"
@@ -62,7 +59,7 @@ const DeckLibraryHeader = ({
             +
           </Button>
         )}
-      </Stack>
+      </div>
     </div>
   );
 };

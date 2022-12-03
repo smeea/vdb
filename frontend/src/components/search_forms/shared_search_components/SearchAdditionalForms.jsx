@@ -1,5 +1,4 @@
 import React from 'react';
-import { Stack } from 'react-bootstrap';
 import Select from 'react-select';
 import {
   SearchFormButtonAdd,
@@ -26,7 +25,7 @@ const SearchAdditionalForms = ({
     forms.push(
       <div key={i} className="flex flex-row py-1 ps-1 mx-0 items-center">
         <div className="basis-1/4 flex justify-end px-0 pe-1">
-          <Stack direction="horizontal" gap={1}>
+          <div className="flex flex-row space-x-1">
             {i == value.value.length - 1 && (
               <SearchFormButtonAdd
                 name={name}
@@ -35,7 +34,7 @@ const SearchAdditionalForms = ({
               />
             )}
             <SearchFormButtonDel searchForm={searchForm} name={name} i={i} />
-          </Stack>
+          </div>
         </div>
         {withMoreless ? (
           <>

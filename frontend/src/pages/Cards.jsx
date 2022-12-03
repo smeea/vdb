@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Stack } from 'react-bootstrap';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
 import {
@@ -158,7 +157,7 @@ const Cards = () => {
               )}
             </div>
             <div>
-              <Stack gap={1} className="py-3 px-2">
+              <div className="flex flex-col space-y-1">
                 <ButtonIconed
                   variant="secondary"
                   onClick={() => randomCrypt()}
@@ -173,7 +172,7 @@ const Cards = () => {
                   icon={<Dice3 />}
                   text="Library"
                 />
-              </Stack>
+              </div>
             </div>
           </div>
         )}

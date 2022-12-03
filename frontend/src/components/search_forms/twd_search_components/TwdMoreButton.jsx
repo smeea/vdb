@@ -11,7 +11,6 @@ const TwdMoreButton = ({ noText }) => {
 
   return (
     <DropdownButton
-      className="h-100"
       as={ButtonGroup}
       variant="primary"
       title={

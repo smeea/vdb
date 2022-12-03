@@ -128,7 +128,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
         </div>
       </div>
       <div className="flex justify-end pt-2">
-        <Stack direction="horizontal" gap={2}>
+        <div className="flex flex-row space-x-2">
           <ButtonIconed
             variant="primary"
             onClick={() => saveDeck(deckText, eventId)}
@@ -153,7 +153,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
             icon={<X width="20" height="20" viewBox="0 0 16 16" />}
             text="Clear"
           />
-        </Stack>
+        </div>
       </div>
       <ErrorOverlay
         show={emptyError}

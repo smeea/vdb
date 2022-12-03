@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Stack, Col } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import Select from 'react-select';
 import {
   SearchAdditionalForms,
@@ -204,16 +204,12 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       />
       <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
         <div className="flex justify-end px-0">
-          <Stack direction="horizontal" gap={2}>
-            {ageForm}
-          </Stack>
+          <div className="flex flex-row space-x-2">{ageForm}</div>
         </div>
       </div>
       <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
         <div className="flex justify-end px-0">
-          <Stack direction="horizontal" gap={3}>
-            {printForm}
-          </Stack>
+          <div className="flex flex-row space-x-3">{printForm}</div>
         </div>
       </div>
     </>

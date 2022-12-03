@@ -70,7 +70,7 @@ const AccountChangeName = () => {
   );
 
   return (
-    <div>
+    <>
       <div className="font-bold text-lg text-blue flex items-center p-1">
         <PenFill />
         <span className="ms-2">Change public name</span>
@@ -126,7 +126,7 @@ const AccountChangeName = () => {
           setShow={setShowModal}
         />
       )}
-    </div>
+    </>
   );
 };
 

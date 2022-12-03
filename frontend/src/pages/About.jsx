@@ -20,11 +20,10 @@ const About = () => {
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex flex-row justify-center">
-        <div className="basis-1/2 px-0">
-          {/* TODO basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 */}
+      <div className="flex justify-center">
+        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-0">
           <Banner />
-          <div className="px-3 pt-0 pt-lg-3">
+          <div className="pt-lg-3">
             <div className="pb-4">
               <Title>WHAT IS IT</Title>
               <div className="py-1">
@@ -230,9 +229,7 @@ const About = () => {
                   <a
                     href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
                   >
-                    <div className="inline font-mono text-sm">
-                      {BTC_WALLET}
-                    </div>
+                    <div className="inline font-mono text-sm">{BTC_WALLET}</div>
                   </a>
                   <div
                     className="inline ps-2 with-hover"

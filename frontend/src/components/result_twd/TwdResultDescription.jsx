@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Stack } from 'react-bootstrap';
 import CalendarEvent from 'assets/images/icons/calendar-event.svg';
 import GeoAltFill from 'assets/images/icons/geo-alt-fill.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
@@ -139,11 +138,9 @@ const TwdResultDescription = ({ deck }) => {
         </>
       ) : (
         <div className="flex flex-row pb-1 mx-0">
-          <div className="basis-9/12 px-1 mx-0">
-            {Description}
-          </div>
+          <div className="basis-9/12 px-1 mx-0">{Description}</div>
           <div className="basis-1/4 px-1">
-            <Stack gap={1}>
+            <div className="flex flex-col space-y-1">
               <div
                 className={`flex justify-center items-center text-lg mx-1 mb-1 text-blue ${
                   deck['players'] >= 30
@@ -158,7 +155,7 @@ const TwdResultDescription = ({ deck }) => {
               </div>
               <TwdOpenDeckButton deckid={deck['deckid']} />
               {username && <DeckCloneButton deck={deck} src="twd" inTwd />}
-            </Stack>
+            </div>
           </div>
         </div>
       )}

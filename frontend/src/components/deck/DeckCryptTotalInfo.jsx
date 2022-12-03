@@ -1,5 +1,4 @@
 import React from 'react';
-import { Stack } from 'react-bootstrap';
 import { DisciplinesCryptSummary } from 'components/crypt';
 import { useApp } from 'context';
 import { drawUniqueProbability, countCards, countTotalCost } from 'utils';
@@ -40,12 +39,12 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
         </div>
         <div title="Chance to draw X unique vampires" className="flex">
           <span className="blue pe-2 pe-md-3">Uniq:</span>
-          <Stack
-            direction="horizontal"
-            gap={isMobile && uniqueDraw.length > 2 ? 2 : 3}
+          <div
+            className="flex flex-row space-x-2"
+            //  gap={isMobile && uniqueDraw.length > 2 ? 2 : 3}
           >
             {uniqueDraw}
-          </Stack>
+          </div>
         </div>
       </div>
       <DisciplinesCryptSummary disciplinesDetailed={disciplinesDetailed} />

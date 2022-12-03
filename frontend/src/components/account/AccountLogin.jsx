@@ -138,7 +138,7 @@ const AccountLogin = () => {
   );
 
   return (
-    <div>
+    <>
       <div className="flex text-blue font-bold text-xl items-center px-1 py-2">
         <div className="flex pe-2">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
@@ -220,7 +220,7 @@ const AccountLogin = () => {
           setShow={setShowModalTooltip}
         />
       )}
-    </div>
+    </>
   );
 };
 

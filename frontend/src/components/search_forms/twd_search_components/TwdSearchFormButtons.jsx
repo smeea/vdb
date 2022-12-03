@@ -1,5 +1,4 @@
 import React from 'react';
-import { Stack } from 'react-bootstrap';
 import { useApp } from 'context';
 import {
   TwdClearButton,
@@ -18,14 +17,14 @@ const TwdSearchFormButtons = ({
 
   return (
     <>
-      <Stack direction="horizontal" gap={1}>
+      <div className="flex flex-row space-x-1">
         <TwdRandomButton getRandom={getRandom} />
         <TwdNewDecksButton getNew={getNew} />
-      </Stack>
-      <Stack direction="horizontal" gap={1}>
+      </div>
+      <div className="flex flex-row space-x-1">
         {!inPda && <TwdMoreButton noText={!isWide} />}
         {!isMobile && <TwdClearButton handleClick={handleClearButton} />}
-      </Stack>
+      </div>
     </>
   );
 };

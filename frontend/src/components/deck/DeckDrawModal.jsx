@@ -1,9 +1,10 @@
 import React from 'react';
-import { Modal, Button, Col, Stack } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import StackIcon from 'assets/images/icons/stack.svg';
 import {
+  Button,
   ResultModal,
   DeckDrawCryptTable,
   DeckDrawLibraryTable,
@@ -83,7 +84,7 @@ const DeckDrawModal = ({
                       <div className="flex items-center pe-2">
                         <b>{initialTransfers}t</b>
                       </div>
-                      <Stack direction="horizontal" gap={1}>
+                      <div className="flex flex-row space-x-1">
                         <Button
                           title="Draw All"
                           variant="primary"
@@ -116,7 +117,7 @@ const DeckDrawModal = ({
                         >
                           +1
                         </Button>
-                      </Stack>
+                      </div>
                     </div>
                   </div>
                   {cryptTotal < 4 && (
@@ -145,7 +146,7 @@ const DeckDrawModal = ({
                       {drawedLibrary.length} + {restLibrary.length}
                     </b>
                   </div>
-                  <Stack direction="horizontal" gap={1}>
+                  <div className="flex flex-row space-x-1">
                     <Button
                       title="Draw All"
                       variant="primary"
@@ -178,7 +179,7 @@ const DeckDrawModal = ({
                     >
                       +1
                     </Button>
-                  </Stack>
+                  </div>
                 </div>
                 {libraryTotal < 7 && (
                   <div className="flex items-center justify-center error-message p-2 my-2">

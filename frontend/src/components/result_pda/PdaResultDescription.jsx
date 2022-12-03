@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Stack } from 'react-bootstrap';
 import CalendarEvent from 'assets/images/icons/calendar-event.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import TagFill from 'assets/images/icons/tag-fill.svg';
@@ -101,31 +100,29 @@ const PdaResultDescription = ({ deck }) => {
       {isDesktop ? (
         <>
           {Description}
-          <div className="flex flex-row p-2">
-            <div className="md:basis-1/2 ps-2 pe-1">
+          <div className="flex space-x-1 px-1">
+            <div className="md:basis-1/2">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </div>
-            <div className="md:basis-1/2 ps-1 pe-2">
+            <div className="md:basis-1/2">
               {username && <DeckCloneButton deck={deck} noRedirect />}
             </div>
-            <div className="p-2">
-              <PdaFavoriteButton deck={deck} />
-            </div>
+          </div>
+          <div className="p-1">
+            <PdaFavoriteButton deck={deck} />
           </div>
         </>
       ) : (
         <div className="flex flex-row pb-1 mx-0">
-          <div className="basis-9/12 px-1 mx-0">
-            {Description}
-          </div>
+          <div className="basis-9/12 px-1 mx-0">{Description}</div>
           <div className="basis-1/4 px-1">
-            <Stack gap={1}>
+            <div className="flex flex-col space-y-1">
               <TwdOpenDeckButton deckid={deck['deckid']} />
               {username && <DeckCloneButton deck={deck} noRedirect />}
               <div>
                 <PdaFavoriteButton deck={deck} />
               </div>
-            </Stack>
+            </div>
           </div>
         </div>
       )}

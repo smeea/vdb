@@ -7,15 +7,7 @@ import {
   useLoaderData,
   defer,
 } from 'react-router-dom';
-import {
-  Modal,
-  Button,
-  Container,
-  Row,
-  Col,
-  Form,
-  Stack,
-} from 'react-bootstrap';
+import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import At from 'assets/images/icons/at.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
@@ -357,7 +349,7 @@ const Decks = () => {
                     />
                   )}
                 </Form>
-                <Stack direction="horizontal" gap={1}>
+                <div className="flex flex-row space-x-1">
                   {decks && (
                     <Button
                       title="Advanced Deck Select"
@@ -390,7 +382,7 @@ const Decks = () => {
                       </div>
                     </Button>
                   )}
-                </Stack>
+                </div>
               </div>
             </div>
             <div className="md:basis-7/12 px-0 px-md-2">
@@ -515,7 +507,9 @@ const Decks = () => {
         <div className="flex flex-row items-center justify-center pt-4 mx-0 h-[70vh]">
           <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-3">
             <div className="flex justify-center">
-              <div className="font-bold text-blue">Login required to create decks</div>
+              <div className="font-bold text-blue">
+                Login required to create decks
+              </div>
             </div>
             <div className="flex justify-center">
               <div className="font-bold text-lg text-blue text-xs">

@@ -205,9 +205,9 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       />
       <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
         <div className="flex justify-end px-0">
-          <Stack direction="horizontal" gap={3}>
+          <div className="flex flex-row space-x-3">
             {printForm}
-          </Stack>
+          </div>
         </div>
       </div>
     </>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Stack } from 'react-bootstrap';
 import {
   AccountLogin,
   AccountLogoutButton,
@@ -19,43 +18,47 @@ const Account = () => {
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex flex-row justify-center">
-        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-0">
+      <div className="flex justify-center">
+        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
           <Banner />
         </div>
       </div>
       <div
-        className={`flex flex-row items-center justify-center ${
+        className={`flex flex-row items-center justify-center px-1 pb-2 md:px-0 ${
           isMobile ? (username ? '' : 'h-[80vh]') : 'h-[70vh]'
         }`}
       >
-        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-3 pb-3">
+        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
           {username ? (
-            <>
-              <Stack gap={4}>
-                <div className="flex items-center font-bold text-blue logo-box px-2 py-1">
-                  <PersonFill />
-                  <span className="ms-2">Logged as: &lt;{username}&gt;</span>
-                </div>
+            <div className="flex flex-col space-y-6">
+              <div className="flex items-center font-bold text-blue logo-box px-2 py-1 w-full">
+                <PersonFill />
+                <span className="ms-2">Logged as: &lt;{username}&gt;</span>
+              </div>
+              <div>
                 <AccountChangeName />
+              </div>
+              <div>
                 <AccountChangePassword />
+              </div>
+              <div>
                 <AccountChangeEmail />
-                {(isPlaytester || isPlaytestAdmin) && <AccountPlaytest />}
-                <Stack gap={3} direction={isMobile ? 'vertical' : 'horizontal'}>
-                  <AccountDeleteButton />
-                  <AccountLogoutButton />
-                </Stack>
-              </Stack>
-            </>
+              </div>
+              {(isPlaytester || isPlaytestAdmin) && <AccountPlaytest />}
+              <div className="flex flex-row space-x-2">
+                <AccountDeleteButton />
+                <AccountLogoutButton />
+              </div>
+            </div>
           ) : (
-            <>
-              <div className="py-4">
+            <div className="flex flex-col space-y-16">
+              <div>
                 <AccountLogin />
               </div>
-              <div className="py-4">
+              <div>
                 <AccountRegister />
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>

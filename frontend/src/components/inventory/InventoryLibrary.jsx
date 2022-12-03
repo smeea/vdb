@@ -423,7 +423,7 @@ const InventoryLibrary = ({
         <>
           <div className="flex items-center justify-between info-message">
             <div className="w-75 p-1">
-              <Stack gap={1}>
+              <div className="flex flex-col space-y-1">
                 <InventoryFilterForm
                   value={type}
                   setValue={setType}
@@ -444,7 +444,7 @@ const InventoryLibrary = ({
                   byUnique={cardsFilteredByTypeUnique}
                   target="discipline"
                 />
-              </Stack>
+              </div>
               <div className="flex justify-end text-neutral-500 font-bold px-1">
                 {missingFilteredTotal ? (
                   <>

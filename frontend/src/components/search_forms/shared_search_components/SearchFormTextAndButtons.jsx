@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Row,
-  Col,
-  Stack,
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-} from 'react-bootstrap';
+import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import {
@@ -16,7 +8,7 @@ import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
 } from '../shared_search_components';
-import { ButtonIconed } from 'components';
+import { Button, ButtonIconed } from 'components';
 import { useApp } from 'context';
 
 const SearchFormTextAndButtons = ({
@@ -129,7 +121,7 @@ const SearchFormTextAndButtons = ({
       </div>
       <div className="flex flex-row mx-0 px-1 pt-1">
         <div className="basis-2/12 md:basis-1/4">
-          <Stack direction="horizontal" gap={1}>
+          <div className="flex flex-row space-x-1">
             {value[0].value !== '' && (
               <>
                 <SearchFormButtonLogicToggle
@@ -145,12 +137,12 @@ const SearchFormTextAndButtons = ({
                 )}
               </>
             )}
-          </Stack>
+          </div>
         </div>
         <div className="flex justify-end">
-          <Stack direction="horizontal" gap={3} className="items-start">
+          <div className="flex flex-col space-x-3 items-start">
             {OptionsForm}
-          </Stack>
+          </div>
         </div>
       </div>
       <SearchAdditionalFormsText

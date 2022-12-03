@@ -1,5 +1,4 @@
 import React from 'react';
-import { Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
   DeckSearchSimilarButton,
@@ -37,7 +36,7 @@ const DeckButtons = ({
 
   return (
     <>
-      <Stack gap={1}>
+      <div className="flex flex-col space-y-1">
         <DeckImport setShowInfo={setShowInfo} />
         {deck &&
           (playtest ||
@@ -77,7 +76,7 @@ const DeckButtons = ({
             </>
           )}
         <SeatingButton setShow={setShowSeating} />
-      </Stack>
+      </div>
       {isNarrow && (
         <div
           onClick={handleClose}

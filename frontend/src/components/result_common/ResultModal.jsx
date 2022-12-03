@@ -105,7 +105,7 @@ const ResultModal = ({
                 onClick={handleClose}
               />
             </div>
-            <div className="p-4">
+            <div className="md:basis-7/12 p-4">
               <ResultLayoutText
                 card={activeCard}
                 setCard={setActiveCard}

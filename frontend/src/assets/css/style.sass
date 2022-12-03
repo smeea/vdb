@@ -942,6 +942,12 @@ div.sticky-modal-library
   &.btn-outline-primary:hover
     background: var(--bg-secondary)
 
+div.inventory-card-custom
+  left: -24px
+  position: absolute
+  &.not-selected
+    opacity: 0
+
 div.float-right-top,
 div.float-right-middle,
 div.float-right-bottom,
@@ -1039,12 +1045,6 @@ div.float-random
 
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
-
-div.inventory-card-custom
-  left: -24px
-  position: absolute
-  &.not-selected
-    opacity: 0
 
 .dropdown-divider
   color: var(--fg-primary)

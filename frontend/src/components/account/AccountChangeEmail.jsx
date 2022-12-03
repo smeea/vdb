@@ -1,16 +1,10 @@
 import React, { useState, useRef } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Spinner,
-} from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Spinner } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
+import { Button, OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -123,7 +117,7 @@ const AccountChangeEmail = () => {
   );
 
   return (
-    <div>
+    <>
       <div className="flex items-center font-bold text-blue text-lg p-1">
         <EnvelopeFill />
         <span className="ms-2">Change email (optional)</span>
@@ -167,7 +161,7 @@ const AccountChangeEmail = () => {
           setShow={setShowModal}
         />
       )}
-    </div>
+    </>
   );
 };
 

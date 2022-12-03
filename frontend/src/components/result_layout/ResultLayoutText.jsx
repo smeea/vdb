@@ -1,5 +1,4 @@
 import React from 'react';
-import { Stack } from 'react-bootstrap';
 import { useSnapshot } from 'valtio';
 import X from 'assets/images/icons/x.svg';
 import SearchHeartFill from 'assets/images/icons/search-heart-fill.svg';
@@ -65,7 +64,7 @@ const ResultLayoutText = ({
         />
       )}
       <div className="flex justify-between pt-3">
-        <Stack direction="horizontal" gap={1}>
+        <div className="flex flex-row space-x-1">
           <ButtonCardCopyUrl cardid={card.Id} />
           <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
           <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
@@ -80,7 +79,7 @@ const ResultLayoutText = ({
               <SearchHeartFill width="16" height="24" viewBox="0 0 16 16" />
             }
           />
-        </Stack>
+        </div>
         {!isNarrow && !noClose && (
           <ButtonIconed
             variant="primary"

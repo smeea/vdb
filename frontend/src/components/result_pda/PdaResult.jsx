@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
+  Button,
   PdaResultDescription,
   TwdResultTotal,
   TwdResultCrypt,
@@ -68,10 +69,10 @@ const PdaResult = ({ results, setResults }) => {
 
           return (
             <React.Fragment key={deck['deckid']}>
-              <div className="flex flex-row py-2 px-0 mx-0">
+              <div className="flex flex-wrap py-2 px-0 mx-0">
                 <div
-                  className={`basis-full md:basis-full xl:basis-1/4 ${
-                    isMobile ? 'px-0' : 'ps-0 pe-2'
+                  className={`basis-full xl:basis-1/4 ${
+                    isMobile ? 'px-0' : 'px-0'
                   }`}
                 >
                   <PdaResultDescription deck={deck} />
@@ -87,13 +88,13 @@ const PdaResult = ({ results, setResults }) => {
                   </>
                 ) : (
                   <>
-                    <div className="basis-full md:basis-1/3 xl:basis-1/4 px-2">
+                    <div className="basis-full md:basis-1/3 xl:basis-1/4">
                       <TwdResultCrypt crypt={deck['crypt']} />
                     </div>
-                    <div className="basis-full md:basis-1/3 xl:basis-1/4 px-2">
+                    <div className="basis-full md:basis-1/3 xl:basis-1/4">
                       <TwdResultLibraryByType library={deck['library']} />
                     </div>
-                    <div className="basis-full md:basis-1/3 xl:basis-1/4 pe-0 ps-2">
+                    <div className="basis-full md:basis-1/3 xl:basis-1/4">
                       <TwdResultLibraryKeyCards library={deck['library']} />
                     </div>
                   </>

@@ -47,7 +47,7 @@ const InventoryButtons = ({
 
   return (
     <>
-      <Stack gap={1}>
+      <div className="flex flex-col space-y-1">
         {inShared && (
           <ButtonIconed
             variant="secondary"
@@ -112,7 +112,7 @@ const InventoryButtons = ({
             <InventoryShareButton setShow={setShowShareModal} />
           </>
         )}
-      </Stack>
+      </div>
       {isNarrow && (
         <div
           onClick={handleClose}

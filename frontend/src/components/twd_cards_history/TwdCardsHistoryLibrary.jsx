@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { Stack } from 'react-bootstrap';
 import {
   TwdCardsHistoryCardAppearance,
   InventoryFilterForm,
@@ -221,7 +220,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
     <div className="inventory-container-library">
       <div className="flex items-center justify-between info-message">
         <div className="w-75 p-1">
-          <Stack gap={1}>
+          <div className="flex flex-col space-y-1">
             <InventoryFilterForm
               value={type}
               setValue={setType}
@@ -240,7 +239,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
               byTotal={cardsFilteredByTypeTotal}
               target="discipline"
             />
-          </Stack>
+          </div>
         </div>
         <SortButton
           sortMethods={sortMethods}

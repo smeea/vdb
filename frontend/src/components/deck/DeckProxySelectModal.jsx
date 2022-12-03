@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Col, Stack } from 'react-bootstrap';
+import { Modal, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { Button, DeckProxyCrypt, DeckProxyLibrary } from 'components';
 import { useApp, usedStore, inventoryStore } from 'context';
@@ -226,7 +226,9 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
           </div>
           <div className="flex flex-row px-0 pe-lg-4">
             <div className="flex justify-end p-2 px-md-0 py-md-4">
-              <Stack direction={isMobile ? 'vertical' : 'horizontal'} gap={2}>
+              <div className="flex flex-row space-y-2"
+              //direction={isMobile ? 'vertical' : 'horizontal'} gap={2}
+              >
                 <Button
                   variant="primary"
                   onClick={() => handleGenerateButton(false)}
@@ -253,7 +255,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
                     Add Missing in Inventory
                   </Button>
                 )}
-              </Stack>
+              </div>
             </div>
           </div>
         </div>
