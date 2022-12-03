@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Modal, Button, Col, Stack } from 'react-bootstrap';
+import { Modal, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import PencilSquare from 'assets/images/icons/pencil-square.svg';
 import Recycle from 'assets/images/icons/recycle.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
 import {
+  Button,
   ButtonIconed,
   SeatingPlayerSelector,
   SeatingRandomDeck,

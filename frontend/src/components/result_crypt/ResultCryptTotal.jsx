@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import X from 'assets/images/icons/x.svg';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import { ANY } from 'utils/constants';

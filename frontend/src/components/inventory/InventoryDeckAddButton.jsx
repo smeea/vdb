@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import Check2 from 'assets/images/icons/check2.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ModalConfirmation } from 'components';

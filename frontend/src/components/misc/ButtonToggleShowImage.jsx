@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import ImageAlt from 'assets/images/icons/image-alt.svg';
 import FileTextFill from 'assets/images/icons/chat-quote-fill.svg';
 import { useApp } from 'context';

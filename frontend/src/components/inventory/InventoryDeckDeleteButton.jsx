@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ModalConfirmation } from 'components';
 import { inventoryCardsAdd } from 'context';

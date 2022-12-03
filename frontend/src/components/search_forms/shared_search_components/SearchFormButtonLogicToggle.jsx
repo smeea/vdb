@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import Exclamation from 'assets/images/icons/exclamation.svg';
 
 const SearchFormButtonLogicToggle = ({

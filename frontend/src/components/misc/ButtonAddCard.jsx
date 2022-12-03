@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import { deckStore, deckCardChange } from 'context';
 
 const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {

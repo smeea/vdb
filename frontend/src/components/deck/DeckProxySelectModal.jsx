@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Button, Col, Stack } from 'react-bootstrap';
+import { Modal, Col, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { DeckProxyCrypt, DeckProxyLibrary } from 'components';
+import { Button, DeckProxyCrypt, DeckProxyLibrary } from 'components';
 import { useApp, usedStore, inventoryStore } from 'context';
 
 const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {

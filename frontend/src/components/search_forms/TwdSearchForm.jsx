@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import { Form, Col, Spinner } from 'react-bootstrap';
+import { Form, Spinner } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Dash from 'assets/images/icons/dash.svg';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 
 const SearchFormButtonDelText = ({ i, searchForm }) => {
   const delForm = (n) => {

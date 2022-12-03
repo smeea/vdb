@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import X from 'assets/images/icons/x.svg';
 import { ResultLibraryTypeImage, SortButton } from 'components';
 import { setLibraryCompare } from 'context';

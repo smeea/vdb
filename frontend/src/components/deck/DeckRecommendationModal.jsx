@@ -1,7 +1,7 @@
 import React from 'react';
-import { Modal, Button, Col, Spinner } from 'react-bootstrap';
+import { Modal, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { ResultCryptTable, DeckRecommendationLibrary } from 'components';
+import { Button, ResultCryptTable, DeckRecommendationLibrary } from 'components';
 import { useApp } from 'context';
 
 const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {

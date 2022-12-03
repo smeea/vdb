@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { clearSearchForm, searchTwdForm, searchPdaForm } from 'context';

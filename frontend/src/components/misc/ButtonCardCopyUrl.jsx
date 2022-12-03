@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 

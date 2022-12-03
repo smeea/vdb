@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'components';
 import Plus from 'assets/images/icons/plus.svg';
 
 const SearchFormButtonAdd = ({ name, searchForm, withMoreless }) => {
