@@ -38,7 +38,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
             value: i,
             label: (
               <div className="flex justify-between items-center">
-                <div className="d-inline truncate">
+                <div className="inline truncate">
                   {decks[i]['name'].slice(
                     0,
                     inventoryMode ? (isWide ? 28 : 23) : 32
@@ -90,7 +90,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           value: deckid,
           label: (
             <div className="flex justify-between items-center">
-              <div className="d-inline truncate">{decks[deckid]['name']}</div>
+              <div className="inline truncate">{decks[deckid]['name']}</div>
               <div className="flex items-center ps-2 text-xs">
                 {inventoryMode && (
                   <div className="pe-2">

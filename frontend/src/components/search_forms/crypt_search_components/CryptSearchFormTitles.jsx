@@ -52,8 +52,8 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
         </div>
       </div>
       <div className="flex flex-row mx-0">
-        <div className="d-inline pe-0">{titlesLeftforms}</div>
-        <div className="d-inline pe-0">{titlesRightforms}</div>
+        <div className="basis-7/12 inline pe-0">{titlesLeftforms}</div>
+        <div className="basis-5/12 inline pe-0">{titlesRightforms}</div>
       </div>
     </>
   );

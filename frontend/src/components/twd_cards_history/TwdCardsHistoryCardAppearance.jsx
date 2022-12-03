@@ -51,14 +51,14 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       </div>
       <div className="flex items-center justify-between items-center player">
         <div
-          className="d-inline link-like"
+          className="inline link-like"
           onClick={() => handleClick(card.player)}
         >
           {card.player}
         </div>
         {!isMobile && byPlayer && (
           <div
-            className="d-inline ps-2"
+            className="inline ps-2"
             title={`First appearance in TWDA:
 Crypt: ${byPlayer.crypt}
 Library: ${byPlayer.library}`}

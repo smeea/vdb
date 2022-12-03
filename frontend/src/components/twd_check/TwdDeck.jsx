@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Col, FormControl, Stack, Button } from 'react-bootstrap';
+import { FormControl, Stack, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import Download from 'assets/images/icons/download.svg';
 import Upload from 'assets/images/icons/upload.svg';

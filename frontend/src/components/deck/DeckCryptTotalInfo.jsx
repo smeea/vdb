@@ -19,7 +19,7 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
 
       if (i > 0) {
         return (
-          <div className="d-inline" key={idx}>
+          <div className="inline" key={idx}>
             <span className="blue">
               <b>{idx}:</b>
             </span>{' '}

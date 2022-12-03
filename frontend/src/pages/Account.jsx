@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Stack } from 'react-bootstrap';
+import { Stack } from 'react-bootstrap';
 import {
   AccountLogin,
   AccountLogoutButton,

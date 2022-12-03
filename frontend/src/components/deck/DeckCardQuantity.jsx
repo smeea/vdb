@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { Button, Form, FormControl } from 'react-bootstrap';
+import { Form, FormControl } from 'react-bootstrap';
+import { Button } from 'components';
 import { useApp } from 'context';
 
 const DeckCardQuantity = ({
@@ -61,7 +62,7 @@ const DeckCardQuantity = ({
             className="quantity"
             onClick={() => cardChange(deckid, card, q - 1)}
           >
-            <Button className="quantity" variant="primary">
+            <Button variant="primary" className="quantity">
               -
             </Button>
           </a>
@@ -72,7 +73,7 @@ const DeckCardQuantity = ({
             className="quantity"
             onClick={() => cardChange(deckid, card, q + 1)}
           >
-            <Button className="quantity" variant="primary">
+            <Button variant="primary" className="quantity">
               +
             </Button>
           </a>

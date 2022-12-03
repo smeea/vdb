@@ -256,7 +256,7 @@ const Review = () => {
                         )}
                       </div>
                       {!foldedDescription && deckFrom?.tags.length > 0 && (
-                        <div className="d-block pt-2">
+                        <div className="block pt-2">
                           <DeckTags deck={deckFrom} bordered />
                         </div>
                       )}

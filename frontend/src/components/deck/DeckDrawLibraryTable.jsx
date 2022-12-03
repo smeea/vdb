@@ -82,7 +82,7 @@ const DeckDrawLibraryTable = ({
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle card={card} />
           </td>
-          <td className="text-right w-9 px-1">
+          <td className="text-blue text-right w-9 px-1">
             {!ashHeap && (
               <>
                 {isMobile ? (

@@ -12,7 +12,7 @@ const CryptSearchFormVirtues = ({ value, onChange }) => {
             htmlFor={i}
           >
             <input
-              className="d-none"
+              className="hidden"
               type="button"
               name="virtues"
               id={i}

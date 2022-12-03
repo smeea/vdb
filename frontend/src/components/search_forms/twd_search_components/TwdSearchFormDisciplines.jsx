@@ -20,7 +20,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
                 htmlFor={i}
               >
                 <input
-                  className="d-none"
+                  className="hidden"
                   type="button"
                   name={name}
                   id={i}
@@ -45,7 +45,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
                 htmlFor={i}
               >
                 <input
-                  className="d-none"
+                  className="hidden"
                   type="button"
                   name={name}
                   id={i}

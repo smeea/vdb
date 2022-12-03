@@ -251,7 +251,7 @@ const DeckCryptTableRow = ({
         </>
       )}
       {showInfo && (
-        <td className="text-right w-9 px-1">
+        <td className="text-blue text-right w-9 px-1">
           {isMobile ? (
             <div
               onClick={() =>

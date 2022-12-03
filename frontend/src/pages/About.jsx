@@ -230,12 +230,12 @@ const About = () => {
                   <a
                     href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
                   >
-                    <div className="d-inline font-mono text-sm">
+                    <div className="inline font-mono text-sm">
                       {BTC_WALLET}
                     </div>
                   </a>
                   <div
-                    className="d-inline ps-2 with-hover"
+                    className="inline ps-2 with-hover"
                     onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
                   >
                     <ClipboardFill className="inline" viewBox="0 0 18 18" />

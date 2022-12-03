@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Modal, Button } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { useApp, deckCardChange } from 'context';
 import { DeckCardQuantity, QuickSelect } from 'components';

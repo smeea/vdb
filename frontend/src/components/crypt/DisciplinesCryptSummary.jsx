@@ -15,7 +15,7 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
     .map((d, idx) => {
       withDisciplines = true;
       return (
-        <span key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
+        <span key={idx} className="inline-block whitespace-nowrap ps-0 pe-3">
           <div className="flex items-center pe-1">
             <ResultDisciplineImage
               title={`${d} Superior | Inferior`}
@@ -36,7 +36,7 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
     .map((d, idx) => {
       withVirtues = true;
       return (
-        <span key={idx} className="d-inline-block whitespace-nowrap ps-0 pe-3">
+        <span key={idx} className="inline-block whitespace-nowrap ps-0 pe-3">
           <div className="flex items-center pe-1">
             <ResultDisciplineImage value={d} />
             <div className="flex ps-1">{disciplinesDetailed[d][1]}</div>

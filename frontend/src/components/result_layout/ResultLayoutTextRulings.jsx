@@ -23,7 +23,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
       return (
         <div
           key={`${idxRuling}-rulingRef-${j}`}
-          className="d-inline text-xs ps-1"
+          className="inline text-xs ps-1"
         >
           <a target="_blank" rel="noreferrer" href={k['refs'][j]}>
             {j}
@@ -71,7 +71,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
                   }
                   disabled={isMobile}
                 >
-                  <div className="d-inline">
+                  <div className="inline">
                     {cardid > 200000 ? (
                       <ResultCryptName card={cryptCardBase[cardid]} />
                     ) : (
@@ -100,7 +100,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
 
     return (
       <li className="rulings" key={idxRuling}>
-        <div className="d-inline">{RulingText}</div>
+        <div className="inline">{RulingText}</div>
         {Refs}
       </li>
     );

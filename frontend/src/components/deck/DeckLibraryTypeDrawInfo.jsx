@@ -39,7 +39,7 @@ const DeckLibraryTypeDrawInfo = (props) => {
             />
           }
         >
-          <div className="d-inline">{`${Math.floor(
+          <div className="inline">{`${Math.floor(
             drawProbability(1, libraryTotal, 7, libraryByTypeTotal[cardtype]) *
               100
           )}%`}</div>

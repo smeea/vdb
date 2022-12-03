@@ -92,9 +92,9 @@ const Navigation = () => {
                 }}
               >
                 <div
-                  className={
-                    inventoryMode ? 'flex text-white' : 'flex text-neutral-500-font'
-                  }
+                  className={`flex ${
+                    inventoryMode ? 'text-white' : 'text-neutral-500-font'
+                  }`}
                 >
                   {inventoryMode ? (
                     <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
@@ -103,11 +103,9 @@ const Navigation = () => {
                   )}
                 </div>
                 <div
-                  className={
-                    inventoryMode
-                      ? 'd-inline ps-2 text-white'
-                      : 'd-inline ps-2 text-neutral-500-font'
-                  }
+                  className={`inline ps-2 ${
+                    inventoryMode ? 'text-white' : 'text-neutral-500-font'
+                  }`}
                 >
                   Inventory Mode
                 </div>

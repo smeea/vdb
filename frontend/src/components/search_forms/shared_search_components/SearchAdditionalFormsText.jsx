@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useImmer } from 'use-immer';
-import { Col, Stack, Form, FormControl } from 'react-bootstrap';
+import { Stack, Form, FormControl } from 'react-bootstrap';
 import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
@@ -64,7 +64,7 @@ const SearchAdditionalFormsText = ({
           autoFocus={true}
         />
         <div className="flex flex-row mx-0 px-0 pt-1">
-          <div className="xs={2} md:basis-1/4 px-0">
+          <div className="basis-2/12 md:basis-1/4 px-0">
             <Stack direction="horizontal" gap={1}>
               <SearchFormButtonLogicToggle
                 name="text"

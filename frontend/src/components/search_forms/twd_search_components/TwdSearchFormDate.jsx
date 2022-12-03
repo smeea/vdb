@@ -70,8 +70,8 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   return (
     <>
       <div className="flex flex-row mx-0 items-center">
-        <div xs={1} className="d-inline px-0" />
-        <div className="xs={5} d-inline px-0">
+        <div xs={1} className="inline px-0" />
+        <div className="basis-5/12 inline px-0">
           <Select
             classNamePrefix="react-select"
             options={fromOptions}
@@ -82,10 +82,10 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
             onChange={onChange}
           />
         </div>
-        <div className="xs={1} flex justify-center px-0">
+        <div className="basis-1/12 flex justify-center px-0">
           <div className="text-xs px-0">to</div>
         </div>
-        <div className="xs={5} d-inline px-0">
+        <div className="basis-5/12 inline px-0">
           <Select
             classNamePrefix="react-select"
             options={toOptions}

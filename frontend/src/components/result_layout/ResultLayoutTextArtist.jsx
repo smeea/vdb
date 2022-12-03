@@ -6,7 +6,7 @@ const ResultLayoutTextArtist = (props) => {
       {props.artists.length > 1
         ? props.artists.map((artist, index) => {
             return (
-              <div className="d-inline-block whitespace-nowrap px-1" key={index}>
+              <div className="inline-block whitespace-nowrap px-1" key={index}>
                 {artist}
               </div>
             );

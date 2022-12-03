@@ -35,7 +35,7 @@ const SearchFormArtist = ({ target, value, onChange }) => {
       <div className="basis-1/4 flex px-0">
         <div className="font-bold text-blue">Artist:</div>
       </div>
-      <div className="xs={9} d-inline px-0">
+      <div className="basis-9/12 inline px-0">
         <Select
           classNamePrefix="react-select"
           options={options}

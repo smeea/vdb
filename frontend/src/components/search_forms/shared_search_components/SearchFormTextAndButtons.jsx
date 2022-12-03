@@ -83,50 +83,52 @@ const SearchFormTextAndButtons = ({
   });
 
   return (
-    <div className="flex flex-row ps-0 ps-md-1 mx-0 items-center">
-      {isMobile ? (
-        <FormControl
-          placeholder="Card Name / Text / RegEx"
-          type="text"
-          name={0}
-          autoComplete="off"
-          spellCheck="false"
-          value={value[0].value}
-          onChange={onChange}
-        />
-      ) : (
-        <InputGroup className="px-0">
+    <>
+      <div className="flex flex-row ps-0 ps-md-1 mx-0 items-center">
+        {isMobile ? (
           <FormControl
-            className="text-search"
             placeholder="Card Name / Text / RegEx"
             type="text"
             name={0}
             autoComplete="off"
             spellCheck="false"
-            value={text}
-            onChange={onTextChange}
+            value={value[0].value}
+            onChange={onChange}
           />
-          {preresults > showLimit && (
-            <ButtonIconed
-              variant="primary"
-              onClick={handleShowResults}
-              text={`FOUND ${preresults}`}
-              icon=<Check2 />
+        ) : (
+          <InputGroup className="px-0">
+            <FormControl
+              className="text-search"
+              placeholder="Card Name / Text / RegEx"
+              type="text"
+              name={0}
+              autoComplete="off"
+              spellCheck="false"
+              value={text}
+              onChange={onTextChange}
             />
-          )}
-          <Button
-            title="Clear Forms & Results"
-            variant="primary"
-            onClick={handleClearButton}
-          >
-            <div className="flex items-center">
-              <X />
-            </div>
-          </Button>
-        </InputGroup>
-      )}
-      <div className="flex flex-row mx-0 px-0 pt-1">
-        <div className="xs={2} md:basis-1/4 px-0">
+            {preresults > showLimit && (
+              <ButtonIconed
+                variant="primary"
+                onClick={handleShowResults}
+                text={`FOUND ${preresults}`}
+                icon=<Check2 />
+              />
+            )}
+            <Button
+              title="Clear Forms & Results"
+              variant="primary"
+              onClick={handleClearButton}
+            >
+              <div className="flex items-center">
+                <X />
+              </div>
+            </Button>
+          </InputGroup>
+        )}
+      </div>
+      <div className="flex flex-row mx-0 px-1 pt-1">
+        <div className="basis-2/12 md:basis-1/4">
           <Stack direction="horizontal" gap={1}>
             {value[0].value !== '' && (
               <>
@@ -145,8 +147,8 @@ const SearchFormTextAndButtons = ({
             )}
           </Stack>
         </div>
-        <div className="flex justify-end px-0">
-          <Stack direction="horizontal" gap={2} className="items-start">
+        <div className="flex justify-end">
+          <Stack direction="horizontal" gap={3} className="items-start">
             {OptionsForm}
           </Stack>
         </div>
@@ -169,7 +171,7 @@ const SearchFormTextAndButtons = ({
           onChange={() => setHideMissing(!hideMissing)}
         />
       )}
-    </div>
+    </>
   );
 };
 

@@ -97,7 +97,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                 className={
                   clanImages.length == 1
                     ? 'flex justify-center items-center w-[40px]'
-                    : 'd-inline pe-2'
+                    : 'inline pe-2'
                 }
               >
                 {clanImages}
@@ -180,7 +180,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
             </div>
           )}
         </div>
-        <div className="xs={9} d-inline px-0">
+        <div className="basis-9/12 inline px-0">
           <Select
             classNamePrefix="react-select"
             options={options}

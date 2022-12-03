@@ -175,10 +175,10 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           onClick={() => setShowAdd(true)}
           className="flex float-right-middle float-add-on items-center justify-center"
         >
-          <div className="d-inline" style={{ fontSize: '1.4em' }}>
+          <div className="inline" style={{ fontSize: '1.4em' }}>
             +
           </div>
-          <div className="d-inline" style={{ fontSize: '1.6em' }}>
+          <div className="inline" style={{ fontSize: '1.6em' }}>
             L
           </div>
         </div>

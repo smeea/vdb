@@ -49,7 +49,7 @@ const Library = () => {
   }, [deck, decks, lastDeckId]);
 
   return (
-    <div className="search-container mx-auto px-md-2 px-xl-4">
+    <div className="search-container mx-auto px-md-2">
       <div className="flex flex-row">
         {!isMobile && (
           <div
@@ -68,7 +68,7 @@ const Library = () => {
           <div
             className={`md:basis-7/12 lg:basis-1/2 xl:${
               deck && addMode ? '5/12' : '6/12'
-            } 2xl:basis-5/12 px-0 px-md-2 py-md-3 px-xl-3`}
+            } 2xl:basis-5/12 px-0 px-md-2 py-md-3`}
           >
             {((isMobile && libraryCompare && libraryResults) ||
               (!isMobile && libraryCompare)) && (

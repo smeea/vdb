@@ -163,10 +163,10 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
           onClick={() => setShowAdd(true)}
           className="flex float-right-top float-add-on items-center justify-center"
         >
-          <div className="d-inline" style={{ fontSize: '1.4em' }}>
+          <div className="inline" style={{ fontSize: '1.4em' }}>
             +
           </div>
-          <div className="d-inline" style={{ fontSize: '1.6em' }}>
+          <div className="inline" style={{ fontSize: '1.6em' }}>
             C
           </div>
         </div>

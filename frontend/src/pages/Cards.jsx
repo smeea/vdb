@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Col, Stack } from 'react-bootstrap';
+import { Stack } from 'react-bootstrap';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
 import {

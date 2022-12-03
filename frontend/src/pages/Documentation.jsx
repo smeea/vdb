@@ -414,7 +414,7 @@ const Documentation = () => {
                 </SubTitle>
                 <ul>
                   <li>
-                    <div className="d-inline px-2">
+                    <div className="inline px-2">
                       <At className="inline" />
                     </div>
                     Virtual (default). These decks are excluded from inventory
@@ -422,7 +422,7 @@ const Documentation = () => {
                     or your in-progress projects
                   </li>
                   <li>
-                    <div className="d-inline px-2">
+                    <div className="inline px-2">
                       <Shuffle className="inline" />
                     </div>
                     Flexible. These decks can share cards between them, like you
@@ -430,7 +430,7 @@ const Documentation = () => {
                     not big (yet)
                   </li>
                   <li>
-                    <div className="d-inline px-2">
+                    <div className="inline px-2">
                       <PinAngleFill className="inline" />
                     </div>
                     Fixed. These decks each use unique cards like for your

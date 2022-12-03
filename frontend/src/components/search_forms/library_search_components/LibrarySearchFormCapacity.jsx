@@ -49,7 +49,7 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
       <div className="basis-1/4 flex px-0">
         <div className="font-bold text-blue">Capacity:</div>
       </div>
-      <div className="basis-1/3 d-inline px-0">
+      <div className="basis-1/3 inline px-0">
         <Select
           classNamePrefix="react-select"
           options={morelessOptions}
@@ -59,7 +59,7 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
           onChange={onChange}
         />
       </div>
-      <div className="xs={5} d-inline pe-0 ps-1">
+      <div className="basis-5/12 inline pe-0 ps-1">
         <Select
           classNamePrefix="react-select"
           options={options}

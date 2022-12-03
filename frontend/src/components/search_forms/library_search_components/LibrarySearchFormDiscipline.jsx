@@ -85,7 +85,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
             </div>
           )}
         </div>
-        <div className="xs={9} d-inline px-0">
+        <div className="basis-9/12 inline px-0">
           <Select
             classNamePrefix="react-select"
             options={options}

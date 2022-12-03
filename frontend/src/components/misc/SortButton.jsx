@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Dropdown } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
+import { Button } from 'components';
 import SortDown from 'assets/images/icons/sort-down.svg';
 
 const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
@@ -12,7 +13,7 @@ const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
   });
 
   return (
-    <Dropdown title="Sort Crypt" className="d-inline">
+    <Dropdown title="Sort Crypt" className="inline">
       <Dropdown.Toggle as={Button} variant="primary">
         <div className="flex justify-center items-center">
           <div className="flex pe-1">

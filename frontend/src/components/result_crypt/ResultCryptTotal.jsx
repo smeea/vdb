@@ -35,7 +35,7 @@ const ResultCryptTotal = ({
 
   const totalOutput = Object.keys(byGroups).map((k) => {
     return (
-      <span key={k} className="d-inline-block whitespace-nowrap pe-3">
+      <span key={k} className="inline-block whitespace-nowrap pe-3">
         <span className="blue">
           <b>G{k == ANY ? 'X' : k}:</b>
         </span>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { useLocation } from 'react-router-dom';
-import { Col, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import {
   AccountLogin,

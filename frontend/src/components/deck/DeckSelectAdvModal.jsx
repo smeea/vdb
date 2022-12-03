@@ -377,7 +377,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                   (deck.master ||
                     (deck.branches && deck.branches.length > 0)) && (
                     <div
-                      className="d-inline ps-2 revision"
+                      className="inline ps-2 revision"
                       title={deck.branchName}
                     >
                       {deck.branchName}

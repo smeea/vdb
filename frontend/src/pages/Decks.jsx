@@ -448,7 +448,7 @@ const Decks = () => {
                     (deck.tags?.length > 0 ||
                       deck.isAuthor ||
                       !deck.isPublic) && (
-                      <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
+                      <div className={isMobile ? 'px-0 py-1' : 'block pt-2'}>
                         <DeckTags
                           deck={deck}
                           allTagsOptions={allTagsOptions}

@@ -35,9 +35,9 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   preOptions.map((i) => {
     const clanImages = i.clans.map((clan) => {
       return (
-        <div className="d-inline px-1" key={clan}>
+        <div className="inline px-1" key={clan}>
           {clan === 'Bundle' ? (
-            <div className="d-inline clan-image-results">
+            <div className="inline clan-image-results">
               <GiftFill />
             </div>
           ) : clan === 'Mix' ? null : (
@@ -54,7 +54,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
         <div className="flex justify-between items-center">
           <div className="pe-2">
             <div
-              className={clanImages.length == 1 ? 'margin-full' : 'd-inline'}
+              className={clanImages.length == 1 ? 'margin-full' : 'inline'}
             >
               {clanImages}
             </div>

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
   PdaResultDescription,

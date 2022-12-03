@@ -61,24 +61,24 @@ const ResultLayoutTextSets = (props) => {
 
       return (
         <div
-          className="d-inline-block whitespace-nowrap pe-2"
+          className="inline-block whitespace-nowrap pe-2"
           onClick={() => {
             if (k !== 'POD') props.setImageSet(k.toLowerCase());
           }}
           key={index}
         >
           {isMobile ? (
-            <div className="d-inline" onClick={() => setModal(popoverText)}>
+            <div className="inline" onClick={() => setModal(popoverText)}>
               {k}
-              <div className="d-inline text-neutral-500">
+              <div className="inline text-neutral-500">
                 {preconsShort ? `:${preconsShort}` : null}
               </div>
             </div>
           ) : (
             <OverlayTooltip text={popoverText} placement="bottom">
-              <div className="d-inline">
+              <div className="inline">
                 {k}
-                <div className="d-inline text-neutral-500">
+                <div className="inline text-neutral-500">
                   {preconsShort ? `:${preconsShort}` : null}
                 </div>
               </div>
@@ -90,7 +90,7 @@ const ResultLayoutTextSets = (props) => {
 
   return (
     <>
-      <div className="d-inline ps-2">{Sets}</div>
+      <div className="inline ps-2">{Sets}</div>
       {modal && <ResultLayoutTextSetsModal modal={modal} setModal={setModal} />}
     </>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Col, Stack } from 'react-bootstrap';
+import { Stack } from 'react-bootstrap';
 import CalendarEvent from 'assets/images/icons/calendar-event.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import TagFill from 'assets/images/icons/tag-fill.svg';
@@ -115,7 +115,7 @@ const PdaResultDescription = ({ deck }) => {
         </>
       ) : (
         <div className="flex flex-row pb-1 mx-0">
-          <div className="xs={9} px-1 mx-0">
+          <div className="basis-9/12 px-1 mx-0">
             {Description}
           </div>
           <div className="basis-1/4 px-1">

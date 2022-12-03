@@ -66,7 +66,7 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
       </div>
       <div className="py-1">
         <b>Artist: </b>
-        <div className="d-inline px-1">
+        <div className="inline px-1">
           <ResultLayoutTextArtist artists={card['Artist']} />
         </div>
       </div>

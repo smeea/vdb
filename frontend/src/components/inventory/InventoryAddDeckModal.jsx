@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Form, Col, FormControl, Button } from 'react-bootstrap';
+import { Modal, Form, FormControl, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -192,7 +192,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
                   <div
-                    className="d-inline ps-2 revision"
+                    className="inline ps-2 revision"
                     title={deck.branchName}
                   >
                     {deck.branchName}
@@ -251,10 +251,10 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
             </td>
           )}
           <td className="buttons">
-            <div className="d-inline pe-1">
+            <div className="inline pe-1">
               <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
             </div>
-            <div className="d-inline pe-1">
+            <div className="inline pe-1">
               <InventoryDeckDeleteButton
                 deck={deck}
                 inInventory={inInventory}

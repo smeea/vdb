@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Col, FormControl, Button } from 'react-bootstrap';
+import { Modal, FormControl, Button } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
 import X from 'assets/images/icons/x.svg';
@@ -113,9 +113,9 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
 
     const clanImages = clans.map((clan, idx) => {
       return (
-        <div className="d-inline px-1" key={idx}>
+        <div className="inline px-1" key={idx}>
           {clan === 'Bundle' ? (
-            <div className="d-inline clan-image-results">
+            <div className="inline clan-image-results">
               <GiftFill />
             </div>
           ) : clan === 'Mix' ? null : (
@@ -141,7 +141,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
                   <div
-                    className="d-inline ps-2 revision"
+                    className="inline ps-2 revision"
                     title={deck.branchName}
                   >
                     {deck.branchName}
@@ -206,10 +206,10 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
             )}
           </td>
           <td className="buttons">
-            <div className="d-inline pe-1">
+            <div className="inline pe-1">
               <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
             </div>
-            <div className="d-inline pe-1">
+            <div className="inline pe-1">
               <InventoryDeckDeleteButton
                 deck={deck}
                 inInventory={inInventory}

@@ -395,7 +395,7 @@ const Diff = () => {
               </div>
             </div>
             {!isMobile && (
-              <div className="xs={1} flex justify-center px-0">
+              <div className="basis-1/12 flex justify-center px-0">
                 <Button variant="primary" onClick={handleSwap}>
                   <ArrowLeftRight />
                 </Button>
@@ -535,7 +535,7 @@ const Diff = () => {
                   </div>
                 )}
               </div>
-              <div className="xs={1} px-0"></div>
+              <div className="basis-1/12 px-0"></div>
               <div className="px-0 pe-lg-3">
                 {errorTo && (
                   <div className="flex items-center justify-center error-message p-2">

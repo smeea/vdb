@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Stack } from 'react-bootstrap';
+import { Stack } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
-import { SortButton } from 'components';
+import { Button, SortButton } from 'components';
 import { useApp } from 'context';
 
 const DeckCryptHeader = ({

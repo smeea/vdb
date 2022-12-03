@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormControl } from 'react-bootstrap';
+import { Form, FormControl } from 'react-bootstrap';
 import { useApp, inventoryCardChange } from 'context';
 
 const InventoryCardQuantity = ({

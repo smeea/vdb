@@ -69,10 +69,10 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
         </div>
       </div>
       <div className="flex flex-row mx-0">
-        <div className="xs={7} d-inline pe-0">
+        <div className="basis-7/12 inline pe-0">
           {traitsLeftforms}
         </div>
-        <div className="xs={5} d-inline px-0">
+        <div className="basis-5/12 inline px-0">
           {traitsRightforms}
         </div>
       </div>

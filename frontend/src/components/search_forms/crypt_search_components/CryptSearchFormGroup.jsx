@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, ButtonGroup, Button } from 'react-bootstrap';
+import { ButtonGroup, Button } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const CryptSearchFormGroup = ({ value, onChange }) => {
@@ -11,7 +11,7 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
       <div className="basis-1/4 flex px-0">
         <div className="font-bold text-blue">Group:</div>
       </div>
-      <div className="xs={9} flex justify-end px-0">
+      <div className="basis-9/12 flex justify-end px-0">
         <ButtonGroup>
           {groups.map((i, index) => {
             return (
