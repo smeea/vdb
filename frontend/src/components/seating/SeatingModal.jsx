@@ -58,7 +58,7 @@ const SeatingModal = ({
         dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
       >
         <Modal.Header className="no-border p-2 pb-0 pb-md-1 p-md-4">
-          <h5>Table Seating</h5>
+          <div className="text-lg text-blue font-bold">Table Seating</div>
           {!isNarrow && (
             <Button variant="outline-secondary" onClick={handleClose}>
               <X width="32" height="32" viewBox="0 0 16 16" />

@@ -97,7 +97,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       dialogClassName={isMobile ? 'm-0' : null}
     >
       <Modal.Header className="no-border pt-2 pt-md-3 pb-0 px-2 px-md-4">
-        <h5>Import from Text</h5>
+        <div className="text-lg text-blue font-bold">Import from Text</div>
         <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>

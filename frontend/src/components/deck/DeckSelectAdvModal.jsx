@@ -479,7 +479,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
         dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
       >
         <Modal.Header className="no-border pt-2 pt-md-3 pb-0 pb-md-1 ps-2 pe-3 px-md-4">
-          <h5>Select Deck</h5>
+          <div className="text-lg text-blue font-bold">Select Deck</div>
           {!isNarrow && (
             <Button variant="outline-secondary" onClick={handleClose}>
               <X width="32" height="32" viewBox="0 0 16 16" />

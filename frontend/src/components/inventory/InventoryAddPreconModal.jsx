@@ -236,7 +236,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
             : 'no-border pt-3 pb-1 ps-3 pe-4'
         }
       >
-        <h5>Import Precon to Inventory</h5>
+        <div className="text-lg text-blue font-bold">Import Precon to Inventory</div>
         <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>

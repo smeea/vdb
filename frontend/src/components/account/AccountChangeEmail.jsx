@@ -124,7 +124,7 @@ const AccountChangeEmail = () => {
 
   return (
     <div>
-      <h6 className="flex items-center p-1">
+      <div className="flex items-center font-bold text-blue text-lg p-1">
         <EnvelopeFill />
         <span className="ms-2">Change email (optional)</span>
         {!isMobile ? (
@@ -139,7 +139,7 @@ const AccountChangeEmail = () => {
             [?]
           </span>
         )}
-      </h6>
+      </div>
       <Form className="my-1" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>

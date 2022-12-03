@@ -16,7 +16,7 @@ const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
         dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
       >
         <Modal.Header className="no-border pt-2 pt-md-3 pb-0 pb-md-1 ps-2 pe-3 px-md-4">
-          <h5>Card Ideas</h5>
+          <div className="text-lg text-blue font-bold">Card Ideas</div>
           {!isNarrow && (
             <Button variant="outline-secondary" onClick={handleClose}>
               <X width="32" height="32" viewBox="0 0 16 16" />

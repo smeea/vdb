@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 
 const ButtonIconed = ({
   onClick,
@@ -11,8 +10,8 @@ const ButtonIconed = ({
   className,
 }) => {
   return (
-    <Button
-      className={`${className ?? ''} h-100`}
+    <button
+      className={`btn btn-${variant} ${className ?? ''} h-100`}
       variant={variant}
       onClick={onClick}
       title={title}
@@ -26,7 +25,7 @@ const ButtonIconed = ({
           {text}
         </div>
       )}
-    </Button>
+    </button>
   );
 };
 

@@ -72,21 +72,21 @@ const AccountDeleteConfirmation = ({ show, setShow }) => {
         <Modal.Header
           className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
         >
-          <h5>
+          <div className="text-lg text-blue font-bold">
             DELETE ACCOUNT
             <span className="px-1 ps-2">
               {'"'}
               {username}
               {'"'}?
             </span>
-          </h5>
+          </div>
           <Button variant="outline-secondary" onClick={() => setShow(false)}>
             <X width="32" height="32" viewBox="0 0 16 16" />
           </Button>
         </Modal.Header>
         <Modal.Body>
           <div className="pt-2">
-            <h6>THIS CANNOT BE UNDONE!</h6>
+            <div className="font-bold text-blue">THIS CANNOT BE UNDONE!</div>
           </div>
           This will also delete all your decks and they will not be available
           via URL anymore.

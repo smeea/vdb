@@ -9,7 +9,7 @@ const Changelog = () => {
         <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
-            <h5 className="underline">CHANGELOG</h5>
+            <div className="text-lg text-blue font-bold underline">CHANGELOG</div>
 
             {changes.map((item) => (
               <div className="py-1" key={item.version}>

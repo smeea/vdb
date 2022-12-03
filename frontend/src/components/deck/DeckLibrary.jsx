@@ -148,7 +148,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
               <Modal.Header
                 className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
               >
-                <h5>Add Library Card</h5>
+                <div className="text-lg text-blue font-bold">Add Library Card</div>
                 <Button
                   variant="outline-secondary"
                   onClick={() => setShowAdd(false)}

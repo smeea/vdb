@@ -74,7 +74,7 @@ const InventoryShareModal = ({ show, setShow }) => {
         <Modal.Header
           className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
         >
-          <h5>Inventory Share</h5>
+          <div className="text-lg text-blue font-bold">Inventory Share</div>
           <Button variant="outline-secondary" onClick={handleClose}>
             <X width="32" height="32" viewBox="0 0 16 16" />
           </Button>

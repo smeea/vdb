@@ -102,7 +102,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
   return (
     <>
       <div className="flex justify-center">
-        <h5>TWD</h5>
+        <div className="text-lg text-blue font-bold">TWD</div>
       </div>
       <div className="flex flex-row">
         <div className="xl:basis-1/6 mt-1.5 px-2">

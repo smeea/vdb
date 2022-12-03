@@ -515,12 +515,12 @@ const Decks = () => {
         <div className="flex flex-row items-center justify-center pt-4 mx-0 h-[70vh]">
           <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-3">
             <div className="flex justify-center">
-              <h6>Login required to create decks</h6>
+              <div className="font-bold text-blue">Login required to create decks</div>
             </div>
             <div className="flex justify-center">
-              <h6 className="text-xs">
+              <div className="font-bold text-lg text-blue text-xs">
                 (Browse preconstructed decks without login)
-              </h6>
+              </div>
             </div>
             <div className="py-4">
               <AccountLogin />

@@ -191,7 +191,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
             : 'no-border pt-3 pb-1 px-4'
         }
       >
-        <h5>Create PDF with Card Proxies</h5>
+        <div className="text-lg text-blue font-bold">Create PDF with Card Proxies</div>
         <Button variant="outline-secondary" onClick={() => handleClose()}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>

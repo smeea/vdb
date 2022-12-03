@@ -107,7 +107,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
             <Modal.Header
               className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
             >
-              <h5>Add Crypt Card</h5>
+              <div className="text-lg text-blue font-bold">Add Crypt Card</div>
               <Button
                 variant="outline-secondary"
                 onClick={() => setShowAdd(false)}

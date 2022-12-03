@@ -71,7 +71,7 @@ const AccountChangeName = () => {
 
   return (
     <div>
-      <h6 className="flex items-center p-1">
+      <div className="font-bold text-lg text-blue flex items-center p-1">
         <PenFill />
         <span className="ms-2">Change public name</span>
         {!isMobile ? (
@@ -86,7 +86,7 @@ const AccountChangeName = () => {
             [?]
           </span>
         )}
-      </h6>
+      </div>
       <Form className="my-1" onSubmit={handleSubmitButton}>
         <InputGroup>
           <FormControl

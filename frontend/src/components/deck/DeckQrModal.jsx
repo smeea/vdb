@@ -17,7 +17,7 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
   return (
     <Modal show={true} onHide={handleClose} animation={false} centered={true}>
       <Modal.Header className="no-border pt-3 pb-0">
-        <h5>QR for {deck.name}</h5>
+        <div className="text-lg text-blue font-bold">QR for {deck.name}</div>
         <div className="flex items-center">
           {(deck.isNonEditable || qrUrl.includes('decks/deck?')) && (
             <div title="Non-editable" className="flex text-blue px-2">
