@@ -70,7 +70,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   return (
     <>
       <div className="flex flex-row mx-0 items-center">
-        <div xs={1} className="inline px-0" />
+        <div className="sm:basis-1/12 inline px-0" />
         <div className="basis-5/12 inline px-0">
           <Select
             classNamePrefix="react-select"

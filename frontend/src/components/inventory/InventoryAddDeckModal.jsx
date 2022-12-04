@@ -6,7 +6,6 @@ import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import At from 'assets/images/icons/at.svg';
-import X from 'assets/images/icons/x.svg';
 import {
   DeckCrypt,
   DeckLibrary,
@@ -17,12 +16,12 @@ import {
   ResultClanImage,
   Tooltip,
   Modal,
-  Button
+  Button,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, inventoryStore, deckUpdate } from 'context';
 
-const InventoryAddDeckModal = ({ show, handleClose }) => {
+const InventoryAddDeckModal = ({ handleClose }) => {
   const { cryptCardBase, isDesktop, isMobile } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;

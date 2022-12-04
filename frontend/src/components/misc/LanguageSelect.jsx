@@ -36,9 +36,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
   const Menu = () => (
     <div className="py-1">
       <div className="px-2 pb-2">Card Language:</div>
-      <div className="flex items-center justify-between">
-        {options}
-      </div>
+      <div className="flex items-center justify-between">{options}</div>
     </div>
   );
 

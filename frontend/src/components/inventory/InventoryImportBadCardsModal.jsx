@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import X from 'assets/images/icons/x.svg';
 import { useApp, inventoryCardChange } from 'context';
-import { Modal, Button, DeckCardQuantity, QuickSelect } from 'components';
+import { Modal, DeckCardQuantity, QuickSelect } from 'components';
 
 const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
   const { isMobile } = useApp();

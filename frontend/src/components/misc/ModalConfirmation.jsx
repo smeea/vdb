@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { Form, FormControl, InputGroup } from 'react-bootstrap';
-import X from 'assets/images/icons/x.svg';
 import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp } from 'context';
 

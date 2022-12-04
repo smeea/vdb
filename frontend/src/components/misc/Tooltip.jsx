@@ -40,6 +40,9 @@ const Tooltip = ({ children, overlay, placement }) => {
     role,
   ]);
 
+  // TODO see if getFloatingProps required
+  // console.log(getFloatingProps());
+
   return (
     <>
       <div ref={reference} {...getReferenceProps()}>

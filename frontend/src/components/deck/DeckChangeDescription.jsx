@@ -4,7 +4,7 @@ import Check2 from 'assets/images/icons/check2.svg';
 import ChevronBarExpand from 'assets/images/icons/chevron-bar-expand.svg';
 import ChevronBarContract from 'assets/images/icons/chevron-bar-contract.svg';
 import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
-import { Button } from 'components'
+import { Button } from 'components';
 import { useApp, deckUpdate } from 'context';
 
 const DeckDescription = ({ deck, folded, setFolded }) => {

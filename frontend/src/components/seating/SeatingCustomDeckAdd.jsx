@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, InputGroup, FormControl } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
-import { Button } from 'components'
+import { Button } from 'components';
 
 const SeatingRandomDeckAddForm = ({ addDeck }) => {
   const [name, setName] = useState('');

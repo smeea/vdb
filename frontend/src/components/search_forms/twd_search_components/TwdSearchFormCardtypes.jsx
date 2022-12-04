@@ -105,7 +105,6 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
   const formsLeft = [];
   const formsRight = [];
-  let counter = 0;
 
   types.map((i, idx) => {
     const options = [
@@ -172,12 +171,8 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   return (
     <>
       <div className="flex flex-row mx-0">
-        <div className="basis-1/2 inline ps-0 pe-2">
-          {formsLeft}
-        </div>
-        <div className="basis-1/2 inline ps-2 pe-0">
-          {formsRight}
-        </div>
+        <div className="basis-1/2 inline ps-0 pe-2">{formsLeft}</div>
+        <div className="basis-1/2 inline ps-2 pe-0">{formsRight}</div>
       </div>
     </>
   );

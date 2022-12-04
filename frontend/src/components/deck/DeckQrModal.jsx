@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
-import X from 'assets/images/icons/x.svg';
 import Snow from 'assets/images/icons/snow.svg';
-import { Modal, Button } from 'components';
+import { Modal } from 'components';
 import { useApp } from 'context';
 
 const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {

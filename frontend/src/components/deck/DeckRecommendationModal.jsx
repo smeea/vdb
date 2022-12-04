@@ -1,15 +1,10 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import {
-  Button,
-  ResultCryptTable,
-  DeckRecommendationLibrary,
-  Modal,
-} from 'components';
+import { ResultCryptTable, DeckRecommendationLibrary, Modal } from 'components';
 import { useApp } from 'context';
 
-const DeckRecommendationModal = ({ show, handleClose, crypt, library }) => {
+const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
   const { isNarrow, isMobile } = useApp();
 
   return (

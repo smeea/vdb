@@ -4,7 +4,6 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { useSnapshot } from 'valtio';
 import LightningFill from 'assets/images/icons/lightning-fill.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
-import InfoCircleFill from 'assets/images/icons/info-circle-fill.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
 import { useApp } from 'context';

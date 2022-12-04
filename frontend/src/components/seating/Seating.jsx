@@ -157,7 +157,6 @@ const Seating = ({ setShow }) => {
           setPlayer={setPlayer}
           setWithCustom={setWithCustom}
           setWithStandard={setWithStandard}
-          show={showModal}
           standardDecks={standardDecks}
           toggleCustom={toggleCustom}
           toggleStandard={toggleStandard}

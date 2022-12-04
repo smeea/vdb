@@ -1,7 +1,6 @@
 import React from 'react';
 import { ResultCryptPopover, ResultLibraryPopover } from 'components';
 import { useApp } from 'context';
-import CaretLeftFill from 'assets/images/icons/caret-left-fill.svg';
 
 const CardPopover = ({ card }) => {
   const { showImage } = useApp();

@@ -7,7 +7,6 @@ import {
   Dropdown,
   DropdownButton,
 } from 'react-bootstrap';
-import X from 'assets/images/icons/x.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import {
   Modal,

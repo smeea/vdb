@@ -33,7 +33,7 @@ const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
 };
 
 const AccountPlaytestManage = ({ setShow }) => {
-  const { isMobile, isNarrow, username } = useApp();
+  const { isNarrow, username } = useApp();
 
   const [playtesters, setPlaytesters] = useState([]);
   const [newPlaytesters, setNewPlaytesters] = useState([]);
@@ -82,23 +82,23 @@ const AccountPlaytestManage = ({ setShow }) => {
   return (
     <>
       <Modal handleClose={handleClose} title="Manage Playtesters">
-                  <AccountPlaytestAdd
-            playtesters={playtesters}
-            newPlaytesters={newPlaytesters}
-            setNewPlaytesters={setNewPlaytesters}
-          />
-          <div className="px-2 pt-2">
-            {[...newPlaytesters.reverse(), ...playtesters.sort()]
-              .filter((u) => u != username)
-              .map((u) => (
-                <AccountPlaytestPlayer
-                  key={u}
-                  changePlaytester={changePlaytester}
-                  username={u}
-                />
-              ))}
-          </div>
-        
+        <AccountPlaytestAdd
+          playtesters={playtesters}
+          newPlaytesters={newPlaytesters}
+          setNewPlaytesters={setNewPlaytesters}
+        />
+        <div className="px-2 pt-2">
+          {[...newPlaytesters.reverse(), ...playtesters.sort()]
+            .filter((u) => u != username)
+            .map((u) => (
+              <AccountPlaytestPlayer
+                key={u}
+                changePlaytester={changePlaytester}
+                username={u}
+              />
+            ))}
+        </div>
+
         <div>
           <Button variant="primary" onClick={handleClose}>
             Close

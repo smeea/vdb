@@ -3,6 +3,7 @@ import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import StackIcon from 'assets/images/icons/stack.svg';
 import {
+  Button,
   Modal,
   ResultModal,
   DeckDrawCryptTable,
@@ -21,7 +22,6 @@ const DeckDrawModal = ({
   libraryTotal,
   burnLibrary,
   burnCrypt,
-  show,
   keyDisciplines,
   disciplinesSet,
   nonKeyDisciplines,
@@ -74,38 +74,38 @@ const DeckDrawModal = ({
                       <b>{initialTransfers}t</b>
                     </div>
                     <div className="flex flex-row space-x-1">
-                      <div
-                        className="btn btn-primary"
+                      <Button
+                        variant="primary"
                         title="Draw All"
                         onClick={() => handleCryptHandSize(restCrypt.length)}
                         disabled={restCrypt.length < 1}
                       >
                         <StackIcon />
-                      </div>
-                      <div
-                        className="btn btn-primary"
+                      </Button>
+                      <Button
+                        variant="primary"
                         title="Hand Size -1"
                         onClick={() => handleCryptHandSize(-1)}
                         disabled={drawedCrypt.length < 1}
                       >
                         -1
-                      </div>
-                      <div
-                        className="btn btn-primary"
+                      </Button>
+                      <Button
+                        variant="primary"
                         title="Re-Draw"
                         onClick={handleReDrawCrypt}
                         disabled={cryptTotal < 4}
                       >
                         <ArrowRepeat />
-                      </div>
-                      <div
-                        className="btn btn-primary"
+                      </Button>
+                      <Button
+                        variant="primary"
                         title="Hand Size +1"
                         onClick={() => handleCryptHandSize(1)}
                         disabled={restCrypt.length < 1}
                       >
                         +1
-                      </div>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -136,42 +136,38 @@ const DeckDrawModal = ({
                   </b>
                 </div>
                 <div className="flex flex-row space-x-1">
-                  <div
-                    className="btn btn-primary"
+                  <Button
                     title="Draw All"
                     variant="primary"
                     onClick={() => handleLibraryHandSize(restLibrary.length)}
                     disabled={restLibrary.length < 1}
                   >
                     <StackIcon />
-                  </div>
-                  <div
-                    className="btn btn-"
+                  </Button>
+                  <Button
                     title="Hand Size -1"
                     variant="primary"
                     onClick={() => handleLibraryHandSize(-1)}
                     disabled={drawedLibrary.length < 1}
                   >
                     -1
-                  </div>
-                  <div
-                    className="btn btn-"
+                  </Button>
+                  <Button
                     title="Re-Draw"
                     variant="primary"
                     onClick={handleReDrawLibrary}
                     disabled={libraryTotal < 7}
                   >
                     <ArrowRepeat />
-                  </div>
-                  <div
-                    className="btn btn-"
+                  </Button>
+                  <Button
                     title="Hand Size +1"
                     variant="primary"
                     onClick={() => handleLibraryHandSize(1)}
                     disabled={restLibrary.length < 1}
                   >
                     +1
-                  </div>
+                  </Button>
                 </div>
               </div>
               {libraryTotal < 7 && (

@@ -1,6 +1,5 @@
 import React from 'react';
-import X from 'assets/images/icons/x.svg';
-import { Modal, Button } from 'components';
+import { Modal } from 'components';
 
 const DeckDrawProbabilityModal = ({ setModalDraw, modalDraw }) => {
   return (
@@ -11,7 +10,7 @@ const DeckDrawProbabilityModal = ({ setModalDraw, modalDraw }) => {
       centered
       title={modalDraw.name}
     >
-      <div>>{modalDraw.prob}</div>
+      <div>{modalDraw.prob}</div>
     </Modal>
   );
 };

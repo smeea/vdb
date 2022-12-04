@@ -1,14 +1,13 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
-import X from 'assets/images/icons/x.svg';
-import { Button } from 'components';
-import { useApp } from 'context';
+// import X from 'assets/images/icons/x.svg';
+// import { useApp } from 'context';
 
 const Modal = ({ handleClose, title, children }) => {
   // TODO respect dialogClassName and className (maybe merge), centered, size properties
 
   // TODO use or discard isMobile/isNarrow properties
-  const { isNarrow, isMobile } = useApp();
+  // const { isNarrow, isMobile } = useApp();
 
   return (
     <Dialog open={true} onClose={handleClose} className="relative z-50">

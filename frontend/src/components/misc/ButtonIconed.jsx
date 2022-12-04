@@ -9,10 +9,11 @@ const ButtonIconed = ({
   disabled,
   className,
 }) => {
+  const btnVariant = `btn-${variant}`;
+
   return (
     <button
-      className={`btn btn-${variant} ${className ?? ''}`}
-      variant={variant}
+      className={`btn ${btnVariant} ${className ?? ''}`}
       onClick={onClick}
       title={title}
       disabled={disabled}

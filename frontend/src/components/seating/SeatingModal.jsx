@@ -5,7 +5,6 @@ import Recycle from 'assets/images/icons/recycle.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
 import {
-  Button,
   ButtonIconed,
   SeatingPlayerSelector,
   SeatingRandomDeck,
@@ -26,7 +25,6 @@ const SeatingModal = ({
   setPlayer,
   setWithCustom,
   setWithStandard,
-  show,
   standardDecks,
   toggleCustom,
   toggleStandard,

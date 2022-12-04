@@ -28,7 +28,9 @@ const TwdResultTotal = ({
         isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'
       } items-center justify-between info-message`}
     >
-      <div className={`inline ps-2 pe-1 ${isMobile ? '' : 'whitespace-nowrap'}`}>
+      <div
+        className={`inline ps-2 pe-1 ${isMobile ? '' : 'whitespace-nowrap'}`}
+      >
         <b>TOTAL: {total}</b>
       </div>
       <div className="block">

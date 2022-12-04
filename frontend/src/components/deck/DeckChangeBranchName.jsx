@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PaletteFill from 'assets/images/icons/palette-fill.svg';
-import { Button } from 'components'
+import { Button } from 'components';
 import { useApp, deckUpdate } from 'context';
 
 const DeckChangeBranchName = ({ deck }) => {

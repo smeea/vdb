@@ -6,7 +6,7 @@ import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
 import { Modal, Button, ButtonIconed } from 'components';
 import { useApp } from 'context';
 
-const InventoryShareModal = ({ show, setShow }) => {
+const InventoryShareModal = ({ setShow }) => {
   const {
     isMobile,
     isNarrow,

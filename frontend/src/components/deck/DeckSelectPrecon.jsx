@@ -53,9 +53,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
       label: (
         <div className="flex justify-between items-center">
           <div className="pe-2">
-            <div
-              className={clanImages.length == 1 ? 'margin-full' : 'inline'}
-            >
+            <div className={clanImages.length == 1 ? 'margin-full' : 'inline'}>
               {clanImages}
             </div>
             {i.name}

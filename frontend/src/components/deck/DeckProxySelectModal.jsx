@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
-import X from 'assets/images/icons/x.svg';
 import { Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from 'components';
 import { useApp, usedStore, inventoryStore } from 'context';
 
-const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
+const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const { isMobile, inventoryMode } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;

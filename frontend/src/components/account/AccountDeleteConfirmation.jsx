@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { Form, FormControl, InputGroup, Spinner } from 'react-bootstrap';
-import X from 'assets/images/icons/x.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import { Modal, Button, ErrorOverlay } from 'components';
@@ -8,7 +7,7 @@ import { useApp } from 'context';
 import { userServices } from 'services';
 
 const AccountDeleteConfirmation = ({ setShow }) => {
-  const { username, setUsername, isMobile } = useApp();
+  const { setUsername, isMobile } = useApp();
 
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);

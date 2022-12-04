@@ -87,7 +87,11 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                       <ToggleOff height="26" width="26" viewBox="0 0 16 16" />
                     )}
                   </div>
-                  <div className={`${inventoryMode ? '' : 'gray'} ps-2 whitespace-nowrap`}>
+                  <div
+                    className={`${
+                      inventoryMode ? '' : 'gray'
+                    } ps-2 whitespace-nowrap`}
+                  >
                     Inventory Mode
                   </div>
                 </div>

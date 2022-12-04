@@ -3,7 +3,6 @@ import { useSnapshot } from 'valtio';
 import { FormControl } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
-import X from 'assets/images/icons/x.svg';
 import {
   DeckCrypt,
   DeckLibrary,
@@ -13,13 +12,12 @@ import {
   ResultLibraryClan,
   Tooltip,
   Modal,
-  Button,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, inventoryStore } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-const InventoryAddDeckModal = ({ show, handleClose }) => {
+const InventoryAddDeckModal = ({ handleClose }) => {
   const { preconDecks, playtest, isDesktop, isMobile } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;

@@ -36,9 +36,7 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
       <div className="border-thick p-2 m-1 m-md-2">
         <div
           onClick={() => handleClick()}
-          className={`flex justify-between link-like ${
-            isStar ? 'bold' : ''
-          }`}
+          className={`flex justify-between link-like ${isStar ? 'bold' : ''}`}
         >
           <div className="flex items-center">
             {deck.players}

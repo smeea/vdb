@@ -392,8 +392,9 @@ const Decks = () => {
                 <>
                   <div className="flex flex-row mx-0 pb-sm-2">
                     <div
-                      md={deck.isBranches ? 6 : 8}
-                      className="px-0 ps-md-0 pe-md-1"
+                      className={`${
+                        deck.isBranches ? 'md:basis-6/12' : 'md:basis-8/12'
+                      } px-0 ps-md-0 pe-md-1`}
                     >
                       <DeckChangeName deck={deck} />
                     </div>

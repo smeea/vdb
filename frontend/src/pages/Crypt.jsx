@@ -53,10 +53,13 @@ const Crypt = () => {
       <div className="flex flex-row">
         {!isMobile && (
           <div
-            md={!showSearchForm ? 5 : 0}
-            lg={!showSearchForm ? 6 : 1}
-            xl={deck && addMode ? 4 : 2}
-            className="px-md-2 ps-xl-0"
+            className={`${
+              showSearchForm
+                ? 'md:basis-0/12 lg:basis-1/12'
+                : 'md:basis-5/12 lg:basis-6/12'
+            } ${
+              deck && addMode ? 'xl:basis:4/12' : 'xl:basis2/12'
+            } px-md-2 ps-xl-0`}
           >
             {decks !== undefined &&
               (isDesktop || (!isDesktop && !showSearchForm)) && (

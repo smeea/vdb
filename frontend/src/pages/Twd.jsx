@@ -12,8 +12,7 @@ const Twd = () => {
     <div className="twd-container mx-auto px-md-1 pt-md-3">
       <div className="flex flex-row justify-center">
         <div
-          basis-full
-          className={`md:basis-8/12 xl:basis-9/12 ${
+          className={`basis-full md:basis-8/12 xl:basis-9/12 ${
             !isMobile || (isMobile && !error)
               ? 'px-0 pe-lg-4'
               : 'hidden px-0 px-md-2 px-lg-4'

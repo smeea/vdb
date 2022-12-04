@@ -41,10 +41,7 @@ const ResultCryptTotal = ({
         </span>
         {byGroups[k]}
         {!inHoF && (
-          <div
-            className="flex text-xs justify-center"
-            title="Average Capacity"
-          >
+          <div className="flex text-xs justify-center" title="Average Capacity">
             ~{Math.round((byGroupsCapacityTotal[k] / byGroups[k]) * 10) / 10}
           </div>
         )}

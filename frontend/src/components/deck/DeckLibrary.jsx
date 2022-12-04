@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import X from 'assets/images/icons/x.svg';
 import {
   DeckLibraryTable,
   DeckLibraryTotalInfo,
@@ -10,9 +9,7 @@ import {
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
   Modal,
-  Button,
 } from 'components';
-
 import { useApp } from 'context';
 import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';

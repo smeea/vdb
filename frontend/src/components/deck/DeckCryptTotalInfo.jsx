@@ -40,8 +40,9 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
         <div title="Chance to draw X unique vampires" className="flex">
           <span className="blue pe-2 pe-md-3">Uniq:</span>
           <div
-            className="flex flex-row space-x-2"
-            //  gap={isMobile && uniqueDraw.length > 2 ? 2 : 3}
+            className={`flex flex-row ${
+              isMobile && uniqueDraw.length > 2 ? 'space-x-2' : 'space-x-3'
+            }`}
           >
             {uniqueDraw}
           </div>

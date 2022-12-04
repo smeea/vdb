@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Button, ButtonIconed } from 'components';
-import X from 'assets/images/icons/x.svg';
+import { Modal, ButtonIconed } from 'components';
 import Activity from 'assets/images/icons/activity.svg';
 import ListUl from 'assets/images/icons/list-task.svg';
 

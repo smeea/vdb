@@ -37,7 +37,7 @@ import { decksSort } from 'utils';
 import { useApp, deckStore, deckUpdate } from 'context';
 import { deckServices } from 'services';
 
-const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
+const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
   const { cryptCardBase, inventoryMode, isNarrow, isMobile, isDesktop } =
     useApp();
   const decks = useSnapshot(deckStore).decks;
