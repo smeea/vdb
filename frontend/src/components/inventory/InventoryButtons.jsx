@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import { Stack } from 'react-bootstrap';
 import Folder2Open from 'assets/images/icons/folder2-open.svg';
 import X from 'assets/images/icons/x.svg';
 import {

@@ -40,14 +40,15 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
           <Plus />
         )}
       </Button>
-      <ModalConfirmation
-        show={showConfirmation}
-        handleConfirm={handleConfirm}
-        handleCancel={handleCancel}
-        buttonText="Add"
-        headerText={'Add deck ' + deck.name + ' to Inventory?'}
-        nested={true}
-      />
+      {showConfirmation && (
+        <ModalConfirmation
+          handleConfirm={handleConfirm}
+          handleCancel={handleCancel}
+          buttonText="Add"
+          headerText={'Add deck ' + deck.name + ' to Inventory?'}
+          nested
+        />
+      )}
     </>
   );
 };

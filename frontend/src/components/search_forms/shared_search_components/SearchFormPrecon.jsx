@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Stack, Col } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import Select from 'react-select';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
 import { ResultLibraryClan } from 'components';
@@ -205,9 +205,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       />
       <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
         <div className="flex justify-end px-0">
-          <div className="flex flex-row space-x-3">
-            {printForm}
-          </div>
+          <div className="flex flex-row space-x-3">{printForm}</div>
         </div>
       </div>
     </>

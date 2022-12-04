@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FormControl, Modal, Spinner } from 'react-bootstrap';
+import { FormControl, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { Button, ErrorOverlay } from 'components';
+import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp, deckAdd } from 'context';
 import { deckServices } from 'services';
 

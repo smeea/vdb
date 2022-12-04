@@ -72,32 +72,33 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
         />
       )}
 
-      <ModalConfirmation
-        show={showConfirmation}
-        handleConfirm={handleConfirmation}
-        handleCancel={() => setShowConfirmation(false)}
-        headerText={
-          isPublished
-            ? `Remove "${deck.name}" from Public Deck Archive?`
-            : `Add "${deck.name}" to Public Deck Archive?`
-        }
-        mainText={
-          isTooManyCards
-            ? 'Public Deck cannot have more than 35 crypt and 90 library cards'
-            : withPlaytestCards
-            ? 'Public Deck cannot have playtest cards'
-            : isPublished
-            ? 'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
-            : 'You can remove it from Public Deck Archive at any time'
-        }
-        buttonText={
-          isTooManyCards || withPlaytestCards
-            ? null
-            : isPublished
-            ? 'Remove Public'
-            : 'Make Public'
-        }
-      />
+      {showConfirmation && (
+        <ModalConfirmation
+          handleConfirm={handleConfirmation}
+          handleCancel={() => setShowConfirmation(false)}
+          headerText={
+            isPublished
+              ? `Remove "${deck.name}" from Public Deck Archive?`
+              : `Add "${deck.name}" to Public Deck Archive?`
+          }
+          mainText={
+            isTooManyCards
+              ? 'Public Deck cannot have more than 35 crypt and 90 library cards'
+              : withPlaytestCards
+              ? 'Public Deck cannot have playtest cards'
+              : isPublished
+              ? 'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
+              : 'You can remove it from Public Deck Archive at any time'
+          }
+          buttonText={
+            isTooManyCards || withPlaytestCards
+              ? null
+              : isPublished
+              ? 'Remove Public'
+              : 'Make Public'
+          }
+        />
+      )}
     </>
   );
 };

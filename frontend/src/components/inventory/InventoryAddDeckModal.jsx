@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Form, FormControl, Button } from 'react-bootstrap';
+import { Form, FormControl } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -16,6 +16,8 @@ import {
   InventoryDeckDeleteButton,
   ResultClanImage,
   Tooltip,
+  Modal,
+  Button
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, inventoryStore, deckUpdate } from 'context';

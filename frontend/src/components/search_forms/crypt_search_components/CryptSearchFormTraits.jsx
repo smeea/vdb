@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Col } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const CryptSearchFormTraits = ({ value, onChange }) => {

@@ -48,7 +48,7 @@ const InventoryImport = () => {
   return (
     <>
       <InventoryImportButton handleClick={handleFileInputClick} />
-      {badCards && (
+      {badCards.length > 0 && (
         <InventoryImportBadCardsModal
           badCards={badCards}
           setBadCards={setBadCards}

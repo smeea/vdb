@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
   DiffCryptTable,
@@ -8,6 +7,8 @@ import {
   DeckNewCard,
   ResultModal,
   DeckCryptHeader,
+  Modal,
+  Button,
 } from 'components';
 import { useApp, deckStore } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';

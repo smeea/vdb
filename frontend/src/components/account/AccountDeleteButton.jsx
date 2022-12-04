@@ -15,10 +15,9 @@ const AccountDeleteButton = () => {
         icon={<TrashFill />}
         text="Delete account"
       />
-      <AccountDeleteConfirmation
-        show={showConfirmation}
-        setShow={setShowConfirmation}
-      />
+      {showConfirmation && (
+        <AccountDeleteConfirmation setShow={setShowConfirmation} />
+      )}
     </>
   );
 };

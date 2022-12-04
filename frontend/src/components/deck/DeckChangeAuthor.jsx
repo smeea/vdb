@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
+import { Button } from 'components'
 import { useApp, deckUpdate } from 'context';
 
 const DeckChangeAuthor = ({ deck }) => {

@@ -5,7 +5,6 @@ import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
 const ModalConfirmation = ({
-  show,
   headerText,
   mainText,
   buttonText,

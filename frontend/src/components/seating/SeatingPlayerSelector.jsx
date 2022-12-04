@@ -1,8 +1,9 @@
 import React from 'react';
-import { InputGroup, FormControl, Button } from 'react-bootstrap';
+import { InputGroup, FormControl } from 'react-bootstrap';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
+import { Button } from 'components';
 
 const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
   const handleChange = (event) => {

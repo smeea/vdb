@@ -178,10 +178,12 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
               setBadCards={setBadCards}
             />
           )}
-          <DeckImportAmaranth
-            handleCloseModal={handleCloseImportModal}
-            show={showAmaranthModal}
-          />
+          {showAmaranthModal && (
+            <DeckImportAmaranth
+              handleCloseModal={handleCloseImportModal}
+              show={showAmaranthModal}
+            />
+          )}
           <input
             ref={fileInput}
             accept=".txt, .dek"

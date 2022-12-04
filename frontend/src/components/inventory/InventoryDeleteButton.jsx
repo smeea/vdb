@@ -38,16 +38,17 @@ const InventoryDelete = () => {
         icon={<TrashFill />}
         text="Delete Inventory"
       />
-      <ModalConfirmation
-        withConfirmation={true}
-        show={showConfirmation}
-        handleConfirm={handleConfirm}
-        handleCancel={handleCancel}
-        headerText={`Delete Inventory`}
-        mainText="THIS CANNOT BE UNDONE!"
-        buttonText="Delete"
-        nested={isMobile}
-      />
+      {showConfirmation && (
+        <ModalConfirmation
+          withConfirmation={true}
+          handleConfirm={handleConfirm}
+          handleCancel={handleCancel}
+          headerText={`Delete Inventory`}
+          mainText="THIS CANNOT BE UNDONE!"
+          buttonText="Delete"
+          nested={isMobile}
+        />
+      )}
     </>
   );
 };

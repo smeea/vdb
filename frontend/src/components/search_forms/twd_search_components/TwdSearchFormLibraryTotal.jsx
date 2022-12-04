@@ -1,5 +1,6 @@
 import React from 'react';
-import { ButtonGroup, Button } from 'react-bootstrap';
+import { ButtonGroup } from 'react-bootstrap';
+import { Button } from 'components'
 
 const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
   const name = 'libraryTotal';

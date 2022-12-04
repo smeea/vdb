@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { Stack } from 'react-bootstrap';
 import {
   InventoryLibraryTable,
   InventoryFilterForm,

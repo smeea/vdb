@@ -32,9 +32,6 @@ const About = () => {
                 tool for Vampire the Eternal Struggle (VTES)
               </div>
             </div>
-
-            <MyDialog />
-
             <div className="pb-4">
               <Title>QUICKSTART</Title>
               <div className="py-1">

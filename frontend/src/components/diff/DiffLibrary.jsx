@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
   DiffLibraryTable,
@@ -10,6 +9,8 @@ import {
   DeckDrawProbabilityModal,
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
+  Modal,
+  Button,
 } from 'components';
 import { MASTER } from 'utils/constants';
 import { useApp } from 'context';

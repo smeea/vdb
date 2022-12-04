@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { Popover } from 'react-bootstrap';
 import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';

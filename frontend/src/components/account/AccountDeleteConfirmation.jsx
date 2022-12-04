@@ -7,7 +7,7 @@ import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
-const AccountDeleteConfirmation = ({ show, setShow }) => {
+const AccountDeleteConfirmation = ({ setShow }) => {
   const { username, setUsername, isMobile } = useApp();
 
   const [password, setPassword] = useState('');

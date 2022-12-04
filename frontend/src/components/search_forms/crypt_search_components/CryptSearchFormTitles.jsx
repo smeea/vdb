@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Col } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
   const titlesLeftforms = [

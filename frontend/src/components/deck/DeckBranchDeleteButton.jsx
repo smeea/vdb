@@ -70,14 +70,15 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
         }
         text={noText ? null : 'Delete Revision'}
       />
-      <ModalConfirmation
-        show={showConfirmation}
-        handleConfirm={handleConfirm}
-        handleCancel={handleCancel}
-        headerText={`Delete revision "${deck.branchName} of deck "${deck.name}"`}
-        mainText="THIS CANNOT BE UNDONE!"
-        buttonText="Delete"
-      />
+      {showConfirmation && (
+        <ModalConfirmation
+          handleConfirm={handleConfirm}
+          handleCancel={handleCancel}
+          headerText={`Delete revision "${deck.branchName} of deck "${deck.name}"`}
+          mainText="THIS CANNOT BE UNDONE!"
+          buttonText="Delete"
+        />
+      )}
     </>
   );
 };
