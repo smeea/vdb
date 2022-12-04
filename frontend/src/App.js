@@ -22,7 +22,7 @@ import Changelog from 'pages/Changelog.jsx';
 import Documentation from 'pages/Documentation.jsx';
 import TwdHallOfFameCards from 'pages/TwdHallOfFameCards.jsx';
 import TwdHallOfFameTournaments from 'pages/TwdHallOfFameTournaments.jsx';
-import TwdCardsHistory from 'pages/TwdHallOfFameTournaments.jsx';
+import TwdCardsHistory from 'pages/TwdCardsHistory.jsx';
 import TwdCheck from 'pages/TwdCheck.jsx';
 
 import { loader as deckLoader } from 'pages/Decks.jsx';

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Tabs, Tab, Accordion } from 'react-bootstrap';
+import { Accordion } from 'react-bootstrap';
+import { Tab } from '@headlessui/react';
 import { TwdHallFameCardsPlayer } from 'components';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
@@ -8,7 +9,7 @@ const TwdHallOfFameCards = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
 
   const [players, setPlayers] = useState(undefined);
-  const [tab, setTab] = useState('total');
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const INNOVATION_PERIOD = 2 * 365;
   const IGNORED_TOURNAMENTS_DATE = '1999-04-11'; // first was 1997-04-11
@@ -112,54 +113,56 @@ const TwdHallOfFameCards = () => {
 
   return (
     <div className="hof-cards-container mx-auto px-0 p-md-3">
-      <Tabs
-        activeKey={tab}
-        onSelect={(k) => setTab(k)}
-        justify
-        transition={false}
-      >
-        <Tab eventKey="total" title="By Total">
-          {players && (
-            <Accordion alwaysOpen>
-              {Object.keys(players)
-                .sort(byName)
-                .sort(byTotal)
-                .map((player) => (
-                  <TwdHallFameCardsPlayer
-                    key={player}
-                    name={player}
-                    cards={players[player]}
-                  />
-                ))}
-            </Accordion>
-          )}
-        </Tab>
-        <Tab eventKey="innovation" title="By Innovation">
-          <div className="border p-2">
-            Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365}{' '}
-            years after card print, and excluding cards from first 2 years of
-            active tournaments (till {IGNORED_TOURNAMENTS_DATE})
-          </div>
-          {players && (
-            <Accordion alwaysOpen>
-              {Object.keys(players)
-                .sort(byName)
-                .sort(byInnovation)
-                .filter(
-                  (player) =>
-                    Object.keys(getInnovationCards(players[player])).length
-                )
-                .map((player) => (
-                  <TwdHallFameCardsPlayer
-                    key={player}
-                    name={player}
-                    cards={getInnovationCards(players[player])}
-                  />
-                ))}
-            </Accordion>
-          )}
-        </Tab>
-      </Tabs>
+      {/* TODO add styling to Tabs */}
+      <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
+        <Tab.List>
+          <Tab>By Total</Tab>
+          <Tab>By Innovation</Tab>
+        </Tab.List>
+        <Tab.Panels>
+          <Tab.Panel>
+            {players && (
+              <Accordion alwaysOpen>
+                {Object.keys(players)
+                  .sort(byName)
+                  .sort(byTotal)
+                  .map((player) => (
+                    <TwdHallFameCardsPlayer
+                      key={player}
+                      name={player}
+                      cards={players[player]}
+                    />
+                  ))}
+              </Accordion>
+            )}
+          </Tab.Panel>
+          <Tab.Panel>
+            <div className="border p-2">
+              Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365}{' '}
+              years after card print, and excluding cards from first 2 years of
+              active tournaments (till {IGNORED_TOURNAMENTS_DATE})
+            </div>
+            {players && (
+              <Accordion alwaysOpen>
+                {Object.keys(players)
+                  .sort(byName)
+                  .sort(byInnovation)
+                  .filter(
+                    (player) =>
+                      Object.keys(getInnovationCards(players[player])).length
+                  )
+                  .map((player) => (
+                    <TwdHallFameCardsPlayer
+                      key={player}
+                      name={player}
+                      cards={getInnovationCards(players[player])}
+                    />
+                  ))}
+              </Accordion>
+            )}
+          </Tab.Panel>
+        </Tab.Panels>
+      </Tab.Group>
     </div>
   );
 };

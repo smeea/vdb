@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Tabs, Tab } from 'react-bootstrap';
+import { Tab } from '@headlessui/react';
 import {
   TwdCardsHistoryCrypt,
   TwdCardsHistoryLibrary,
@@ -16,7 +16,7 @@ const TwdCardsHistory = () => {
   const [crypt, setCrypt] = useState(undefined);
   const [library, setLibrary] = useState(undefined);
   const [players, setPlayers] = useState(undefined);
-  const [tab, setTab] = useState('crypt');
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const {
     currentModalCard,
@@ -25,7 +25,7 @@ const TwdCardsHistory = () => {
     handleModalCardChange,
     handleModalCardClose,
   } = useModalCardController(
-    tab === 'crypt'
+    selectedIndex === 0
       ? crypt && Object.values(crypt)
       : library && Object.values(library)
   );
@@ -96,31 +96,37 @@ const TwdCardsHistory = () => {
 
   return (
     <div className="hof-history-container mx-auto px-0 p-md-3">
-      <Tabs
-        activeKey={tab}
-        onSelect={(k) => setTab(k)}
-        justify
-        transition={false}
-      >
-        {crypt && (
-          <Tab eventKey="crypt" title="Crypt">
-            <TwdCardsHistoryCrypt
-              cards={crypt}
-              players={players}
-              handleClick={handleClick}
-            />
-          </Tab>
-        )}
-        {library && (
-          <Tab eventKey="library" title="Library">
-            <TwdCardsHistoryLibrary
-              cards={library}
-              players={players}
-              handleClick={handleClick}
-            />
-          </Tab>
-        )}
-      </Tabs>
+      {/* TODO add styling to Tabs */}
+      <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
+        <Tab.List>
+          <Tab>Crypt</Tab>
+          <Tab>Library</Tab>
+        </Tab.List>
+        <Tab.Panels>
+          <Tab.Panel>
+            {crypt && (
+              <Tab eventKey="crypt" title="Crypt">
+                <TwdCardsHistoryCrypt
+                  cards={crypt}
+                  players={players}
+                  handleClick={handleClick}
+                />
+              </Tab>
+            )}
+          </Tab.Panel>
+          <Tab.Panel>
+            {library && (
+              <Tab eventKey="library" title="Library">
+                <TwdCardsHistoryLibrary
+                  cards={library}
+                  players={players}
+                  handleClick={handleClick}
+                />
+              </Tab>
+            )}
+          </Tab.Panel>
+        </Tab.Panels>
+      </Tab.Group>
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}

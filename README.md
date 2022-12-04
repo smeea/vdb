@@ -11,9 +11,8 @@ VDB consist of two components communicating with each other.
 ### FRONTEND
 Serve the UI for the modern browsers using:
 ```
-   ReactJS (tested with Node.js v16)
+   ReactJS
    Tailwind CSS
-   React-Bootstrap
 ```
 
 ### BACKEND
@@ -22,7 +21,6 @@ Store user accounts (decks/inventory), generate proxy cards, using:
 ```
    Python (v3.10+)
    Flask
-   SQLite
 ```
 
 ## INSTALLATION
