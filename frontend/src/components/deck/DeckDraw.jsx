@@ -183,7 +183,6 @@ const DeckDraw = ({ deck, setShow }) => {
           burnedLibrary={burnedLibrary}
           restCrypt={restCrypt}
           restLibrary={restLibrary}
-          show={showDrawModal}
           handleClose={handleCloseDrawModal}
           burnedCapacityTotal={burnedCapacityTotal}
           burnedPoolTotal={burnedPoolTotal}

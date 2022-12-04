@@ -128,11 +128,11 @@ const DeckCryptTableRow = ({
                   </div>
                 </td>
               )}
-              <Tooltip
-                placement="bottom"
-                overlay={<UsedPopover cardid={card.c.Id} />}
-              >
-                <td className="quantity">
+              <td className="quantity">
+                <Tooltip
+                  placement="bottom"
+                  overlay={<UsedPopover cardid={card.c.Id} />}
+                >
                   <DeckCardQuantity
                     card={card.c}
                     q={card.q}
@@ -143,8 +143,8 @@ const DeckCryptTableRow = ({
                     hardUsedTotal={hardUsedTotal}
                     inventoryType={decks[deckid]?.inventoryType}
                   />
-                </td>
-              </Tooltip>
+                </Tooltip>
+              </td>
             </>
           ) : (
             <td className="quantity">
@@ -160,12 +160,12 @@ const DeckCryptTableRow = ({
       ) : (
         <>
           {inventoryMode && decks ? (
-            <Tooltip
-              placement="bottom"
-              overlay={<UsedPopover cardid={card.c.Id} />}
-              disabled={disableOverlay}
-            >
-              <td className="quantity-no-buttons px-1">
+            <td className="quantity-no-buttons px-1">
+              <Tooltip
+                placement="bottom"
+                overlay={<UsedPopover cardid={card.c.Id} />}
+                disabled={disableOverlay}
+              >
                 <div
                   className={
                     inMissing
@@ -179,8 +179,8 @@ const DeckCryptTableRow = ({
                 >
                   {card.q || null}
                 </div>
-              </td>
-            </Tooltip>
+              </Tooltip>
+            </td>
           ) : (
             <td className="quantity-no-buttons px-1">{card.q || null}</td>
           )}
@@ -211,11 +211,11 @@ const DeckCryptTableRow = ({
         </td>
       )}
 
-      <Tooltip placement={placement} overlay={<CardPopover card={card.c} />}>
-        <td className="name px-2" onClick={() => handleClick(card.c)}>
+      <td className="name px-2" onClick={() => handleClick(card.c)}>
+        <Tooltip placement={placement} overlay={<CardPopover card={card.c} />}>
           <ResultCryptName card={card.c} />
-        </td>
-      </Tooltip>
+        </Tooltip>
+      </td>
 
       {isWide && !(keyDisciplines + nonKeyDisciplines > 6 && inSearch) ? (
         <>

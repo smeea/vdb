@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import { AccountPlaytestAdd } from 'components';
+import { AccountPlaytestAdd, Button, Modal } from 'components';
 import { useApp } from 'context';
 
 const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
@@ -82,17 +81,8 @@ const AccountPlaytestManage = ({ setShow }) => {
 
   return (
     <>
-      <Modal show={true} onHide={handleClose} animation={false} size="md">
-        <Modal.Header
-          className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-        >
-          <div className="text-lg text-blue font-bold"> className="text-lg text-blue font-bold">Manage Playtesters</div>
-          <Button variant="outline-secondary" onClick={handleClose}>
-            <X width="32" height="32" viewBox="0 0 16 16" />
-          </Button>
-        </Modal.Header>
-        <Modal.Body>
-          <AccountPlaytestAdd
+      <Modal handleClose={handleClose} title="Manage Playtesters">
+                  <AccountPlaytestAdd
             playtesters={playtesters}
             newPlaytesters={newPlaytesters}
             setNewPlaytesters={setNewPlaytesters}
@@ -108,12 +98,12 @@ const AccountPlaytestManage = ({ setShow }) => {
                 />
               ))}
           </div>
-        </Modal.Body>
-        <Modal.Footer>
+        
+        <div>
           <Button variant="primary" onClick={handleClose}>
             Close
           </Button>
-        </Modal.Footer>
+        </div>
       </Modal>
       {isNarrow && (
         <div
