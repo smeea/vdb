@@ -67,17 +67,15 @@ const DeckDrawLibraryTable = ({
             {card.Discipline && card.Clan && '+'}
             <ResultLibraryDisciplines value={card.Discipline} />
           </td>
-
-          <ConditionalTooltip
-            overlay={<CardPopover card={card} />}
-            disabled={isMobile}
-            placement={placement}
-          >
-            <td className="name px-1" onClick={() => handleClick(idx)}>
+          <td className="name px-1" onClick={() => handleClick(idx)}>
+            <ConditionalTooltip
+              overlay={<CardPopover card={card} />}
+              disabled={isMobile}
+              placement={placement}
+            >
               <ResultLibraryName card={card} />
-            </td>
-          </ConditionalTooltip>
-
+            </ConditionalTooltip>
+          </td>
           <td className="burn px-1" onClick={() => handleClick(idx)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle card={card} />

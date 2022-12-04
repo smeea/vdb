@@ -99,30 +99,13 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
             target="crypt"
           />
         ) : (
-          <Modal
-            show={showAdd}
-            onHide={() => setShowAdd(false)}
-            animation={false}
-          >
-            <Modal.Header
-              className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
-            >
-              <div className="text-lg text-blue font-bold">Add Crypt Card</div>
-              <Button
-                variant="outline-secondary"
-                onClick={() => setShowAdd(false)}
-              >
-                <X width="32" height="32" viewBox="0 0 16 16" />
-              </Button>
-            </Modal.Header>
-            <Modal.Body className="p-0">
-              <DeckNewCard
-                setShowAdd={setShowAdd}
-                cards={cardsFrom}
-                deckid={deckid}
-                target="crypt"
-              />
-            </Modal.Body>
+          <Modal handleClose={() => setShowAdd(false)} title="Add Crypt Card">
+            <DeckNewCard
+              setShowAdd={setShowAdd}
+              cards={cardsFrom}
+              deckid={deckid}
+              target="crypt"
+            />
           </Modal>
         ))}
       <DiffCryptTable

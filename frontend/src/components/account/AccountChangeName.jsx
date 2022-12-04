@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PenFill from 'assets/images/icons/pen-fill.svg';
-import { Tooltip, ErrorOverlay, ModalTooltip } from 'components';
+import { Tooltip, ErrorOverlay, Modal } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -120,11 +120,9 @@ const AccountChangeName = () => {
         ></ErrorOverlay>
       </Form>
       {showModal && (
-        <ModalTooltip
-          text={tooltipText}
-          show={showModal}
-          setShow={setShowModal}
-        />
+        <Modal handleClose={() => setShowModal(false)}>
+          <div>{tooltipText}</div>
+        </Modal>
       )}
     </>
   );

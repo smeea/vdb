@@ -1,10 +1,16 @@
 import React, { useState, useRef } from 'react';
-import { Form, FormControl, InputGroup, Spinner } from 'react-bootstrap';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Button,
+  Spinner,
+} from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import LockFill from 'assets/images/icons/lock-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { Button, ErrorOverlay } from 'components';
+import { ErrorOverlay } from 'components';
 import { userServices } from 'services';
 import { useApp } from 'context';
 
@@ -123,7 +129,7 @@ const AccountChangePassword = () => {
   );
 
   return (
-    <>
+    <div>
       <div className="font-bold text-lg text-blue flex items-center p-1">
         <LockFill />
         <span className="ms-2">Change password</span>
@@ -148,7 +154,7 @@ const AccountChangePassword = () => {
           {passwordError}
         </ErrorOverlay>
       </Form>
-    </>
+    </div>
   );
 };
 

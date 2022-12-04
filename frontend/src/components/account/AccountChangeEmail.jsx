@@ -4,7 +4,7 @@ import Check2 from 'assets/images/icons/check2.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { Button, Tooltip, ErrorOverlay, ModalTooltip } from 'components';
+import { Button, Tooltip, ErrorOverlay, Modal } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -155,11 +155,9 @@ const AccountChangeEmail = () => {
         </ErrorOverlay>
       </Form>
       {showModal && (
-        <ModalTooltip
-          text={tooltipText}
-          show={showModal}
-          setShow={setShowModal}
-        />
+        <Modal handleClose={() => setShowModal(false)}>
+          <div>{tooltipText}</div>
+        </Modal>
       )}
     </>
   );

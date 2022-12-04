@@ -11,7 +11,6 @@ export { default as ConditionalTooltip } from './ConditionalTooltip.jsx';
 export { default as ErrorOverlay } from './ErrorOverlay.jsx';
 export { default as LanguageSelect } from './LanguageSelect.jsx';
 export { default as ModalConfirmation } from './ModalConfirmation.jsx';
-export { default as ModalTooltip } from './ModalTooltip.jsx';
 export { default as Modal } from './Modal.jsx';
 export { default as NavMobileMenu } from './NavMobileMenu.jsx';
 export { default as NewCryptCard } from './NewCryptCard.jsx';

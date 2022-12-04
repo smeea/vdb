@@ -11,7 +11,7 @@ import DoorOpenFill from 'assets/images/icons/door-open-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import { Tooltip, ErrorOverlay, ModalTooltip } from 'components';
+import { Tooltip, ErrorOverlay, Modal } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -22,8 +22,8 @@ const AccountLogin = () => {
   const [formPassword, setFormPassword] = useState('');
 
   const [spinnerState, setSpinnerState] = useState(false);
-  const [showModalTooltip, setShowModalTooltip] = useState(false);
-  const [showModalPassword, setShowModalPassword] = useState(false);
+  const [showLoginTooltip, setShowLoginTooltip] = useState(false);
+  const [showPasswordTooltip, setShowPasswordTooltip] = useState(false);
 
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
@@ -150,7 +150,7 @@ const AccountLogin = () => {
           </Tooltip>
         ) : (
           <span
-            onClick={() => setShowModalTooltip(true)}
+            onClick={() => setShowLoginTooltip(true)}
             className="question-tooltip ms-2"
           >
             [?]
@@ -198,7 +198,7 @@ const AccountLogin = () => {
         </div>
       ) : (
         <div
-          onClick={() => setShowModalPassword(true)}
+          onClick={() => setShowPasswordTooltip(true)}
           className="flex justify-start text-xs ps-2 pt-1"
         >
           <a href="#">
@@ -206,19 +206,15 @@ const AccountLogin = () => {
           </a>
         </div>
       )}
-      {showModalPassword && (
-        <ModalTooltip
-          text={passwordTooltipText}
-          show={showModalPassword}
-          setShow={setShowModalPassword}
-        />
+      {showPasswordTooltip && (
+        <Modal handleClose={() => setShowPasswordTooltip(false)}>
+          <div>{passwordTooltipText}</div>
+        </Modal>
       )}
-      {showModalTooltip && (
-        <ModalTooltip
-          text={loginTooltipText}
-          show={showModalTooltip}
-          setShow={setShowModalTooltip}
-        />
+      {showLoginTooltip && (
+        <Modal handleClose={() => setShowLoginTooltip(false)}>
+          <div>{loginTooltipText}</div>
+        </Modal>
       )}
     </>
   );
