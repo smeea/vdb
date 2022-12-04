@@ -2,13 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import {
-  Modal,
   Form,
-  Row,
-  Col,
   FormControl,
-  Button,
-  Stack,
   Dropdown,
   DropdownButton,
   ButtonGroup,
@@ -35,6 +30,8 @@ import {
   DeckSelectAdvModalTagsFilter,
   ResultClanImage,
   Tooltip,
+  Modal,
+  Button,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, deckUpdate } from 'context';
@@ -469,20 +466,11 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
   return (
     <>
       <Modal
-        show={show}
-        onHide={handleClose}
-        animation={false}
+        handleClose={handleClose}
         dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
+        title="Select Deck"
       >
-        <Modal.Header className="no-border pt-2 pt-md-3 pb-0 pb-md-1 ps-2 pe-3 px-md-4">
-          <div className="text-lg text-blue font-bold">Select Deck</div>
-          {!isNarrow && (
-            <Button variant="outline-secondary" onClick={handleClose}>
-              <X width="32" height="32" viewBox="0 0 16 16" />
-            </Button>
-          )}
-        </Modal.Header>
-        <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
+        <div>
           <DeckSelectAdvModalTotal
             tagsFilter={tagsFilter}
             setTagsFilter={setTagsFilter}
@@ -594,7 +582,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
               </Dropdown.Item>
             </DropdownButton>
           </div>
-        </Modal.Body>
+        </div>
       </Modal>
       {isNarrow && (
         <div

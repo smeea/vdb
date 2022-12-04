@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FormControl, Modal, Button } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { ErrorOverlay } from 'components';
+import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp, deckAdd } from 'context';
 import { useDeckImport } from 'hooks';
 import { deckServices } from 'services';
@@ -89,20 +89,14 @@ It will skip other (useless) lines, you don't have to remove it yourself.
 
   return (
     <Modal
-      show={show}
-      onHide={handleClose}
+      handleClose={handleClose}
+      /* TODO add onShow */
       onShow={() => refText.current.focus()}
-      animation={false}
       size="lg"
       dialogClassName={isMobile ? 'm-0' : null}
+      title="Import from Text"
     >
-      <Modal.Header className="no-border pt-2 pt-md-3 pb-0 px-2 px-md-4">
-        <div className="text-lg text-blue font-bold">Import from Text</div>
-        <Button variant="outline-secondary" onClick={handleClose}>
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
-      </Modal.Header>
-      <Modal.Body className={isMobile ? 'px-0 pt-0' : 'px-4 pt-2'}>
+      <div>
         <FormControl
           as="textarea"
           className="deck-import mb-3"
@@ -115,9 +109,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
         />
         <div
           className={
-            isMobile
-              ? 'flex justify-end py-0 px-3'
-              : 'flex justify-end py-1'
+            isMobile ? 'flex justify-end py-0 px-3' : 'flex justify-end py-1'
           }
         >
           <Button variant="primary" onClick={importDeckFromText}>
@@ -140,7 +132,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
         >
           ERROR DURING IMPORT
         </ErrorOverlay>
-      </Modal.Body>
+      </div>
     </Modal>
   );
 };

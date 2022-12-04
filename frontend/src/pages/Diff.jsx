@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate, useParams } from 'react-router-dom';
-import {
-  Modal,
-  Button,
-  Container,
-  Row,
-  Col,
-  Form,
-  FormControl,
-  InputGroup,
-} from 'react-bootstrap';
+import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
@@ -24,6 +15,8 @@ import {
   DiffButtons,
   DiffCrypt,
   DiffLibrary,
+  Button,
+  Modal,
 } from 'components';
 import { useApp, deckStore, setDeck } from 'context';
 import { useDeck } from 'hooks';
@@ -607,35 +600,32 @@ const Diff = () => {
       {showMenuButtons && (
         <Modal
           show={showMenuButtons}
-          onHide={() => {
+          handleClose={() => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          animation={false}
           centered={true}
           size="sm"
         >
-          <Modal.Body className="p-1">
-            <div className="px-0">
-              <DiffButtons
-                missingCrypt={missingCrypt}
-                missingLibrary={missingLibrary}
-                deckFrom={deck}
-                deckTo={deckTo}
+          <div>
+            <DiffButtons
+              missingCrypt={missingCrypt}
+              missingLibrary={missingLibrary}
+              deckFrom={deck}
+              deckTo={deckTo}
+            />
+            <div className="flex justify-end pt-1">
+              <ButtonIconed
+                variant="secondary"
+                onClick={() => {
+                  setShowMenuButtons(false);
+                  setShowFloatingButtons(true);
+                }}
+                title="Close"
+                icon={<X width="24" height="24" viewBox="0 0 16 16" />}
               />
-              <div className="flex justify-end pt-1">
-                <ButtonIconed
-                  variant="secondary"
-                  onClick={() => {
-                    setShowMenuButtons(false);
-                    setShowFloatingButtons(true);
-                  }}
-                  title="Close"
-                  icon={<X width="24" height="24" viewBox="0 0 16 16" />}
-                />
-              </div>
             </div>
-          </Modal.Body>
+          </div>
         </Modal>
       )}
     </div>

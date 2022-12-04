@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Modal, Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { ErrorOverlay } from 'components';
+import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
 const ModalConfirmation = ({
@@ -43,58 +43,43 @@ const ModalConfirmation = ({
   return (
     <>
       <Modal
-        show={show}
-        onHide={cancel}
-        animation={false}
+        handleClose={cancel}
         centered={isMobile}
         size={size ?? null}
         dialogClassName={nested ? 'nested-modal' : 'no-border'}
+        title={headerText}
       >
-        <Modal.Header
-          className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-        >
-          <div className="text-lg text-blue font-bold">{headerText}</div>
-          <Button variant="outline-secondary" onClick={cancel}>
-            <X width="32" height="32" viewBox="0 0 16 16" />
-          </Button>
-        </Modal.Header>
-        {mainText && (
-          <Modal.Body>
-            <div className="font-bold text-blue">{mainText}</div>
-          </Modal.Body>
+        {mainText && <div className="font-bold text-blue">{mainText}</div>}
+        {withConfirmation && (
+          <Form onSubmit={confirm}>
+            <InputGroup>
+              <FormControl
+                placeholder="Type 'YES' to confirm"
+                name="text"
+                value={confirmation}
+                onChange={(e) => setConfirmation(e.target.value)}
+                autoFocus={true}
+                ref={refConfirmation}
+              />
+            </InputGroup>
+            <ErrorOverlay
+              show={errorConfirmation}
+              target={refConfirmation.current}
+              placement="bottom"
+              modal={true}
+            >
+              Type &apos;YES&apos; to confirm
+            </ErrorOverlay>
+          </Form>
         )}
-        <Modal.Footer>
-          {withConfirmation && (
-            <Form onSubmit={confirm}>
-              <InputGroup>
-                <FormControl
-                  placeholder="Type 'YES' to confirm"
-                  name="text"
-                  value={confirmation}
-                  onChange={(e) => setConfirmation(e.target.value)}
-                  autoFocus={true}
-                  ref={refConfirmation}
-                />
-              </InputGroup>
-              <ErrorOverlay
-                show={errorConfirmation}
-                target={refConfirmation.current}
-                placement="bottom"
-                modal={true}
-              >
-                Type &apos;YES&apos; to confirm
-              </ErrorOverlay>
-            </Form>
-          )}
-          {buttonText && (
-            <Button variant="danger" onClick={confirm}>
-              {buttonText}
-            </Button>
-          )}
-          <Button variant="primary" onClick={cancel}>
-            Cancel
+        {buttonText && (
+          <Button variant="danger" onClick={confirm}>
+            {buttonText}
           </Button>
-        </Modal.Footer>
+        )}
+        <Button variant="primary" onClick={cancel}>
+          Cancel
+        </Button>
       </Modal>
     </>
   );

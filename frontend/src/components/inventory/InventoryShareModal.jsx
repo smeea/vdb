@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
-import { ButtonIconed } from 'components';
+import { Modal, Button, ButtonIconed } from 'components';
 import { useApp } from 'context';
 
 const InventoryShareModal = ({ show, setShow }) => {
@@ -66,20 +65,11 @@ const InventoryShareModal = ({ show, setShow }) => {
   return (
     <>
       <Modal
-        show={show}
-        onHide={handleClose}
-        animation={false}
+        handleClose={handleClose}
         centered={isMobile}
+        title="Inventory Share"
       >
-        <Modal.Header
-          className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-        >
-          <div className="text-lg text-blue font-bold">Inventory Share</div>
-          <Button variant="outline-secondary" onClick={handleClose}>
-            <X width="32" height="32" viewBox="0 0 16 16" />
-          </Button>
-        </Modal.Header>
-        <Modal.Body>
+        <div>
           {inventoryKey ? (
             <>
               <a href={shareUrl}>{shareUrl}</a>
@@ -99,8 +89,8 @@ const InventoryShareModal = ({ show, setShow }) => {
               inventory by opening the link
             </div>
           )}
-        </Modal.Body>
-        <Modal.Footer>
+        </div>
+        <div>
           <ButtonIconed
             variant="primary"
             onClick={createUrl}
@@ -117,7 +107,7 @@ const InventoryShareModal = ({ show, setShow }) => {
           <Button variant="primary" onClick={handleClose}>
             Close
           </Button>
-        </Modal.Footer>
+        </div>
       </Modal>
       {isNarrow && (
         <div

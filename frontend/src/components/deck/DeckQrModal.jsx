@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
-import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import Snow from 'assets/images/icons/snow.svg';
+import { Modal, Button } from 'components';
 import { useApp } from 'context';
 
 const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
@@ -15,21 +15,21 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
   };
 
   return (
-    <Modal show={true} onHide={handleClose} animation={false} centered={true}>
-      <Modal.Header className="no-border pt-3 pb-0">
-        <div className="text-lg text-blue font-bold">QR for {deck.name}</div>
-        <div className="flex items-center">
+    <Modal
+      handleClose={handleClose}
+      centered
+      title={
+        <div className="flex justify-between">
+          QR for ${deck.name}
           {(deck.isNonEditable || qrUrl.includes('decks/deck?')) && (
-            <div title="Non-editable" className="flex text-blue px-2">
+            <div className="flex text-blue px-2" title="Non-editable">
               <Snow width="26" height="26" viewBox="0 0 16 16" />
             </div>
           )}
-          <Button variant="outline-secondary" onClick={handleClose}>
-            <X width="32" height="32" viewBox="0 0 16 16" />
-          </Button>
         </div>
-      </Modal.Header>
-      <Modal.Body className="flex justify-center p-2 p-md-4">
+      }
+    >
+      <div className="flex justify-center">
         <div style={{ background: 'white', padding: '4px' }}>
           <a href={qrUrl}>
             <Suspense fallback={<div />}>
@@ -37,7 +37,7 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
             </Suspense>
           </a>
         </div>
-      </Modal.Body>
+      </div>
     </Modal>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
-import { Modal, Col } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import X from 'assets/images/icons/x.svg';
 import {
@@ -14,6 +13,7 @@ import {
   DeckChangeName,
   DeckChangeAuthor,
   DeckChangeDescription,
+  Modal,
 } from 'components';
 import { useApp, deckStore } from 'context';
 import { useDeck, useTags } from 'hooks';
@@ -320,35 +320,31 @@ const Review = () => {
       )}
       {showMenuButtons && (
         <Modal
-          show={showMenuButtons}
-          onHide={() => {
+          handleClose={() => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          animation={false}
-          centered={true}
           size="sm"
+          centered
         >
-          <Modal.Body className="p-1">
-            <div className="px-0">
-              <ReviewButtons
-                backDeckid={deck?.deckid}
-                deckid={deckFrom?.deckid}
-                urlDiff={urlDiff}
+          <div>
+            <ReviewButtons
+              backDeckid={deck?.deckid}
+              deckid={deckFrom?.deckid}
+              urlDiff={urlDiff}
+            />
+            <div className="flex justify-end pt-1">
+              <ButtonIconed
+                variant="secondary"
+                onClick={() => {
+                  setShowMenuButtons(false);
+                  setShowFloatingButtons(true);
+                }}
+                title="Close"
+                icon={<X width="24" height="24" viewBox="0 0 16 16" />}
               />
-              <div className="flex justify-end pt-1">
-                <ButtonIconed
-                  variant="secondary"
-                  onClick={() => {
-                    setShowMenuButtons(false);
-                    setShowFloatingButtons(true);
-                  }}
-                  title="Close"
-                  icon={<X width="24" height="24" viewBox="0 0 16 16" />}
-                />
-              </div>
             </div>
-          </Modal.Body>
+          </div>
         </Modal>
       )}
     </div>

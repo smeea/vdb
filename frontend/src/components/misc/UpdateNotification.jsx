@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import { ButtonIconed } from 'components';
+import { Modal, Button, ButtonIconed } from 'components';
 import X from 'assets/images/icons/x.svg';
 import Activity from 'assets/images/icons/activity.svg';
 import ListUl from 'assets/images/icons/list-task.svg';
@@ -36,43 +35,34 @@ const UpdateNotification = ({ appVersion }) => {
   }, []);
 
   return (
-    <Modal
-      show={show}
-      onHide={() => setShow(false)}
-      animation={false}
-      centered={true}
-    >
-      <Modal.Header className="py-2 px-3 py-md-3 px-md-4">
-        <div className="flex font-bold text-blue text-lg items-center">
-          <div className="flex pe-2">
-            <Activity />
+    <>
+      {show && (
+        <Modal
+          handleClose={() => setShow(false)}
+          title="Update available!"
+          centered
+        >
+          <div>
+            <div className="flex items-center font-bold text-blue p-2">
+              <div className="flex pe-2">
+                <ListUl />
+              </div>
+              Changes [{version}]:
+            </div>
+            <div className="px-2">{changes}</div>
+            {/* TODO fix button placement */}
+            <ButtonIconed
+              variant="primary"
+              onClick={() => {
+                window.location.reload(true);
+              }}
+              icon={<Activity />}
+              text="Apply Update"
+            />
           </div>
-          Update available!
-        </div>
-        <Button variant="outline-secondary" onClick={() => setShow(false)}>
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
-      </Modal.Header>
-      <Modal.Body>
-        <div className="flex items-center font-bold text-blue p-2">
-          <div className="flex pe-2">
-            <ListUl />
-          </div>
-          Changes [{version}]:
-        </div>
-        <div className="px-2">{changes}</div>
-      </Modal.Body>
-      <Modal.Footer>
-        <ButtonIconed
-          variant="primary"
-          onClick={() => {
-            window.location.reload(true);
-          }}
-          icon={<Activity />}
-          text="Apply Update"
-        />
-      </Modal.Footer>
-    </Modal>
+        </Modal>
+      )}
+    </>
   );
 };
 

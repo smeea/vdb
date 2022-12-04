@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { useApp, inventoryCardChange } from 'context';
-import { DeckCardQuantity, QuickSelect } from 'components';
+import { Modal, Button, DeckCardQuantity, QuickSelect } from 'components';
 
 const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
   const { isMobile } = useApp();
@@ -42,21 +41,12 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
 
   return (
     <Modal
-      show={badCards.length > 0}
-      onHide={() => setBadCards([])}
-      animation={false}
+      handleClose={() => setBadCards([])}
       size="xl"
       dialogClassName={isMobile ? 'm-0' : null}
+      title="Fix Bad Import"
     >
-      <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-      >
-        <div className="text-lg text-blue font-bold">Fix Bad Import</div>
-        <Button variant="outline-secondary" onClick={() => setBadCards([])}>
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
-      </Modal.Header>
-      <Modal.Body className={isMobile ? 'px-0 pt-0' : 'px-4 pt-0'}>
+      <div>
         {badCards.map((c, idx) => {
           return (
             <div key={idx} className="flex flex-row items-center pt-2">
@@ -78,7 +68,7 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
             </div>
           );
         })}
-      </Modal.Body>
+      </div>
     </Modal>
   );
 };

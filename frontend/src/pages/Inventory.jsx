@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { useLocation } from 'react-router-dom';
-import { Modal } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import {
   AccountLogin,
@@ -13,6 +12,7 @@ import {
   InventoryButtons,
   InventoryShowSelect,
   InventoryShareModal,
+  Modal,
 } from 'components';
 import { useApp, inventoryStore } from 'context';
 
@@ -189,7 +189,9 @@ const Inventory = () => {
             <div className="flex flex-row items-center justify-center pt-3 mx-0 h-[80vh]">
               <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-3">
                 <div className="flex justify-center">
-                  <div className="font-bold text-blue">Login required to manage inventory</div>
+                  <div className="font-bold text-blue">
+                    Login required to manage inventory
+                  </div>
                 </div>
                 <div className="py-4">
                   <AccountLogin />
@@ -215,46 +217,40 @@ const Inventory = () => {
       )}
       {showMenuButtons && (
         <Modal
-          show={showMenuButtons}
-          onHide={() => {
+          handleClose={() => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          animation={false}
-          centered={true}
+          centered
           size="sm"
         >
-          <Modal.Body className="p-1">
-            <div className="px-0">
-              <InventoryButtons
-                crypt={
-                  sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
-                }
-                library={
-                  sharedInventoryCrypt
-                    ? sharedInventoryLibrary
-                    : inventoryLibrary
-                }
-                setShowAddDeck={setShowAddDeck}
-                setShowAddPrecon={setShowAddPrecon}
-                setShowShareModal={setShowShareModal}
-                clan={clan}
-                discipline={discipline}
-                type={type}
-                missingByClan={missingByClan}
-                missingByType={missingByType}
-                missingByDiscipline={missingByDiscipline}
-                setInventoryKey={setInventoryKey}
-                inShared={inventoryKey ? true : false}
+          <div>
+            <InventoryButtons
+              crypt={
+                sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
+              }
+              library={
+                sharedInventoryCrypt ? sharedInventoryLibrary : inventoryLibrary
+              }
+              setShowAddDeck={setShowAddDeck}
+              setShowAddPrecon={setShowAddPrecon}
+              setShowShareModal={setShowShareModal}
+              clan={clan}
+              discipline={discipline}
+              type={type}
+              missingByClan={missingByClan}
+              missingByType={missingByType}
+              missingByDiscipline={missingByDiscipline}
+              setInventoryKey={setInventoryKey}
+              inShared={inventoryKey ? true : false}
+            />
+            <div className="px-4 pt-2">
+              <InventoryShowSelect
+                category={category}
+                setCategory={setCategory}
               />
-              <div className="px-4 pt-2">
-                <InventoryShowSelect
-                  category={category}
-                  setCategory={setCategory}
-                />
-              </div>
             </div>
-          </Modal.Body>
+          </div>
         </Modal>
       )}
       {showAddDeck && (

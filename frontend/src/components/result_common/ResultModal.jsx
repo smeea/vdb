@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { Modal, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
 import ChevronCompactRight from 'assets/images/icons/chevron-compact-right.svg';
-import { CardImage, ResultLayoutText } from 'components';
+import { Modal, CardImage, ResultLayoutText } from 'components';
 import { useApp } from 'context';
 
 const ResultModal = ({
@@ -65,13 +64,11 @@ const ResultModal = ({
   return (
     <Modal
       size="lg"
-      show={true}
-      onHide={handleClose}
-      animation={false}
-      centered={true}
+      handleClose={handleClose}
       dialogClassName={nested ? 'nested-modal' : 'no-border'}
+      centered
     >
-      <Modal.Body className="p-0">
+      <div>
         {isMobile ? (
           <div {...swipeHandlers}>
             {showImage ? (
@@ -152,7 +149,7 @@ const ResultModal = ({
             <X viewBox="0 0 16 16" />
           </div>
         )}
-      </Modal.Body>
+      </div>
     </Modal>
   );
 };

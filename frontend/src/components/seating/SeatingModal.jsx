@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Modal } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import PencilSquare from 'assets/images/icons/pencil-square.svg';
 import Recycle from 'assets/images/icons/recycle.svg';
@@ -12,6 +11,7 @@ import {
   SeatingRandomDeck,
   SeatingCustomDeckAdd,
   SeatingTableLayout,
+  Modal,
 } from 'components';
 import { useApp } from 'context';
 
@@ -53,20 +53,11 @@ const SeatingModal = ({
   return (
     <>
       <Modal
-        show={show}
-        onHide={handleClose}
-        animation={false}
+        handleClose={handleClose}
         dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
+        title="Table Seating"
       >
-        <Modal.Header className="no-border p-2 pb-0 pb-md-1 p-md-4">
-          <div className="text-lg text-blue font-bold">Table Seating</div>
-          {!isNarrow && (
-            <Button variant="outline-secondary" onClick={handleClose}>
-              <X width="32" height="32" viewBox="0 0 16 16" />
-            </Button>
-          )}
-        </Modal.Header>
-        <Modal.Body className="py-0 px-2 px-md-4">
+        <div>
           <div className="mb-0 mb-md-3 px-0 px-md-0">
             <div className="flex flex-row items-center">
               <div className="py-2 md:basis-5/12 xl:basis-1/3">
@@ -294,7 +285,7 @@ const SeatingModal = ({
               </div>
             )}
           </div>
-        </Modal.Body>
+        </div>
       </Modal>
       {isNarrow && (
         <div

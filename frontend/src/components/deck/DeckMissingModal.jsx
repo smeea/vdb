@@ -29,67 +29,52 @@ const DeckMissingModal = ({
 
   return (
     <Modal
-      show={show}
-      onHide={handleClose}
-      animation={false}
+      handleClose={handleClose}
       dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
+      title={deck.name}
     >
-      <Modal.Header
-        className={
-          isMobile
-            ? 'no-border pt-2 pb-0 ps-2 pe-3'
-            : 'no-border pt-3 pb-1 px-4'
-        }
-      >
-        <div className="text-lg text-blue font-bold">{deck.name}</div>
-        <Button variant="outline-secondary" onClick={handleClose}>
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
-      </Modal.Header>
-      <Modal.Body className="p-0">
-        <div>
-          <div className='flex flex-row pb-4 pb-md-2 px-0'>
-            <div className="basis-full md:basis-7/12 px-0 ps-lg-4 pe-lg-3">
-              <div className={isMobile || inInventory ? null : 'sticky-modal'}>
-                <DeckCrypt
-                  deck={{ ...deck, crypt: crypt, library: library }}
-                  inMissing
-                />
-              </div>
-            </div>
-            <div className="basis-full md:basis-5/12 px-0 ps-lg-3 pe-lg-4">
-              <DeckLibrary
+      <div>
+        <div className="flex flex-row pb-4 pb-md-2 px-0">
+          <div className="basis-full md:basis-7/12 px-0 ps-lg-4 pe-lg-3">
+            <div className={isMobile || inInventory ? null : 'sticky-modal'}>
+              <DeckCrypt
                 deck={{ ...deck, crypt: crypt, library: library }}
                 inMissing
               />
             </div>
           </div>
-          <div
-            className={
-              isMobile
-                ? 'flex justify-end pt-2 py-2'
-                : 'flex justify-end px-2 pb-4'
-            }
-          >
-            {inInventory && (
-              <div className="ps-2">
-                <ButtonIconed
-                  variant="primary"
-                  onClick={handleMissAllVtes}
-                  text="Missing for Complete VTES Collection (SLOW!)"
-                  icon={<Gem />}
-                />
-              </div>
-            )}
-            <div className="ps-2">
-              <DeckExportButton
-                deck={{ ...deck, crypt: crypt, library: library }}
-                inMissing
-              />
-            </div>
+          <div className="basis-full md:basis-5/12 px-0 ps-lg-3 pe-lg-4">
+            <DeckLibrary
+              deck={{ ...deck, crypt: crypt, library: library }}
+              inMissing
+            />
           </div>
         </div>
-      </Modal.Body>
+        <div
+          className={
+            isMobile
+              ? 'flex justify-end pt-2 py-2'
+              : 'flex justify-end px-2 pb-4'
+          }
+        >
+          {inInventory && (
+            <div className="ps-2">
+              <ButtonIconed
+                variant="primary"
+                onClick={handleMissAllVtes}
+                text="Missing for Complete VTES Collection (SLOW!)"
+                icon={<Gem />}
+              />
+            </div>
+          )}
+          <div className="ps-2">
+            <DeckExportButton
+              deck={{ ...deck, crypt: crypt, library: library }}
+              inMissing
+            />
+          </div>
+        </div>
+      </div>
     </Modal>
   );
 };

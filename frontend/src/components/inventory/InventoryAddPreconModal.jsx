@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, FormControl, Button } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
 import X from 'assets/images/icons/x.svg';
@@ -10,8 +10,10 @@ import {
   DeckSelectSortForm,
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
-  Tooltip,
   ResultLibraryClan,
+  Tooltip,
+  Modal,
+  Button,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, inventoryStore } from 'context';
@@ -140,10 +142,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
               {deck.branchName &&
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
-                  <div
-                    className="inline ps-2 revision"
-                    title={deck.branchName}
-                  >
+                  <div className="inline ps-2 revision" title={deck.branchName}>
                     {deck.branchName}
                   </div>
                 )}
@@ -223,25 +222,12 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
 
   return (
     <Modal
-      show={show}
-      onHide={handleClose}
-      animation={false}
+      handleClose={handleClose}
       size="xl"
       dialogClassName={isMobile ? 'm-0' : null}
+      title="Import Precon to Inventory"
     >
-      <Modal.Header
-        className={
-          isMobile
-            ? 'no-border pt-2 pb-0 ps-2 pe-3'
-            : 'no-border pt-3 pb-1 ps-3 pe-4'
-        }
-      >
-        <div className="text-lg text-blue font-bold">Import Precon to Inventory</div>
-        <Button variant="outline-secondary" onClick={handleClose}>
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
-      </Modal.Header>
-      <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
+      <div>
         <table className="inv-import-precons-table">
           <thead>
             <tr>
@@ -278,7 +264,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
           </thead>
           <tbody>{deckRows}</tbody>
         </table>
-      </Modal.Body>
+      </div>
     </Modal>
   );
 };

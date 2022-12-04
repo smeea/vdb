@@ -164,19 +164,20 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             handleOpenTextModal={handleOpenTextModal}
             handleOpenAmaranthModal={handleOpenAmaranthModal}
           />
-          {badCards && (
+          {badCards.length > 0 && (
             <DeckImportBadCardsModal
               deckid={deck?.deckid}
               badCards={badCards}
               setBadCards={setBadCards}
             />
           )}
-          <DeckImportText
-            handleCloseModal={handleCloseImportModal}
-            show={showTextModal.show}
-            isAnonymous={showTextModal.isAnonymous}
-            setBadCards={setBadCards}
-          />
+          {showTextModal.show && (
+            <DeckImportText
+              handleCloseModal={handleCloseImportModal}
+              isAnonymous={showTextModal.isAnonymous}
+              setBadCards={setBadCards}
+            />
+          )}
           <DeckImportAmaranth
             handleCloseModal={handleCloseImportModal}
             show={showAmaranthModal}

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
   DeckLibraryTable,
@@ -10,6 +9,8 @@ import {
   DeckDrawProbabilityModal,
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
+  Modal,
+  Button,
 } from 'components';
 
 import { useApp } from 'context';
@@ -141,29 +142,17 @@ const DeckLibrary = ({ deck, inMissing }) => {
             />
           ) : (
             <Modal
-              show={showAdd}
-              onHide={() => setShowAdd(false)}
-              animation={false}
+              handleClose={() => setShowAdd(false)}
+              title="Add Library Card"
             >
-              <Modal.Header
-                className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
-              >
-                <div className="text-lg text-blue font-bold">Add Library Card</div>
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => setShowAdd(false)}
-                >
-                  <X width="32" height="32" viewBox="0 0 16 16" />
-                </Button>
-              </Modal.Header>
-              <Modal.Body className="p-0">
+              <div>
                 <DeckNewCard
                   setShowAdd={setShowAdd}
                   cards={deck.library}
                   deckid={deckid}
                   target="library"
                 />
-              </Modal.Body>
+              </div>
             </Modal>
           ))}
       </div>

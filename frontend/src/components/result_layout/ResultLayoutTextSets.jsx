@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ResultLayoutTextSetsModal, Tooltip } from 'components';
+import { Modal, Tooltip } from 'components';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp } from 'context';
 
@@ -91,7 +91,18 @@ const ResultLayoutTextSets = (props) => {
   return (
     <>
       <div className="inline ps-2">{Sets}</div>
-      {modal && <ResultLayoutTextSetsModal modal={modal} setModal={setModal} />}
+      {modal && (
+        <Modal
+          size="xs"
+          className="flex justify-center nested-modal"
+          dialogClassName="w-75"
+          handleClose={() => setModal(null)}
+          centered={true}
+          title="Sets"
+        >
+          <div>{modal}</div>
+        </Modal>
+      )}
     </>
   );
 };

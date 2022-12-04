@@ -5,6 +5,9 @@ import { Button } from 'components';
 import { useApp } from 'context';
 
 const Modal = ({ handleClose, title, children }) => {
+  // TODO respect dialogClassName and className (maybe merge), centered, size properties
+
+  // TODO use or discard isMobile/isNarrow properties
   const { isNarrow, isMobile } = useApp();
 
   return (

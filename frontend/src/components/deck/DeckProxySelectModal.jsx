@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { Button, DeckProxyCrypt, DeckProxyLibrary } from 'components';
+import { Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from 'components';
 import { useApp, usedStore, inventoryStore } from 'context';
 
 const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
@@ -179,87 +178,74 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
 
   return (
     <Modal
-      show={show}
-      onHide={() => handleClose()}
-      animation={false}
+      handleClose={() => handleClose()}
       dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
+      title="Create PDF with Card Proxies"
     >
-      <Modal.Header
-        className={
-          isMobile
-            ? 'no-border pt-2 pb-0 ps-2 pe-3'
-            : 'no-border pt-3 pb-1 px-4'
-        }
-      >
-        <div className="text-lg text-blue font-bold">Create PDF with Card Proxies</div>
-        <Button variant="outline-secondary" onClick={() => handleClose()}>
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
-      </Modal.Header>
-      <Modal.Body className="p-0">
-        <div>
-          <div className="flex flex-row px-0 pe-lg-4">
-            <div className="basis-full md:basis-7/12 px-0 px-lg-4 pb-md-0">
-              {deck.crypt && (
-                <div className={isMobile ? null : 'sticky-modal'}>
-                  <DeckProxyCrypt
-                    cards={deck.crypt}
-                    handleProxySelector={handleProxySelector}
-                    handleSetSelector={handleSetSelector}
-                    handleProxyCounter={handleProxyCounter}
-                    proxySelected={proxySelected}
-                  />
-                </div>
-              )}
-            </div>
-            <div className="basis-full md:basis-5/12 px-0">
-              {deck.library && (
-                <DeckProxyLibrary
-                  cards={deck.library}
+      <div>
+        <div className="flex flex-row px-0 pe-lg-4">
+          <div className="basis-full md:basis-7/12 px-0 px-lg-4 pb-md-0">
+            {deck.crypt && (
+              <div className={isMobile ? null : 'sticky-modal'}>
+                <DeckProxyCrypt
+                  cards={deck.crypt}
                   handleProxySelector={handleProxySelector}
                   handleSetSelector={handleSetSelector}
                   handleProxyCounter={handleProxyCounter}
                   proxySelected={proxySelected}
                 />
+              </div>
+            )}
+          </div>
+          <div className="basis-full md:basis-5/12 px-0">
+            {deck.library && (
+              <DeckProxyLibrary
+                cards={deck.library}
+                handleProxySelector={handleProxySelector}
+                handleSetSelector={handleSetSelector}
+                handleProxyCounter={handleProxyCounter}
+                proxySelected={proxySelected}
+              />
+            )}
+          </div>
+        </div>
+        <div className="flex flex-row px-0 pe-lg-4">
+          <div className="flex justify-end p-2 px-md-0 py-md-4">
+            <div
+              className={`flex ${
+                isMobile ? 'flex-row space-y-2' : 'flex-col space-x-2'
+              }`}
+            >
+              <Button
+                variant="primary"
+                onClick={() => handleGenerateButton(false)}
+              >
+                Generate - Gray gaps
+              </Button>
+              <Button
+                variant="primary"
+                onClick={() => handleGenerateButton(true)}
+              >
+                Generate - White gaps
+              </Button>
+              <Button
+                variant="primary"
+                onClick={() => handleToggleSelectButton()}
+              >
+                Select / Deselect All
+              </Button>
+              {inventoryMode && (
+                <Button
+                  variant="primary"
+                  onClick={() => handleToggleResolveButton()}
+                >
+                  Add Missing in Inventory
+                </Button>
               )}
             </div>
           </div>
-          <div className="flex flex-row px-0 pe-lg-4">
-            <div className="flex justify-end p-2 px-md-0 py-md-4">
-              <div className="flex flex-row space-y-2"
-              //direction={isMobile ? 'vertical' : 'horizontal'} gap={2}
-              >
-                <Button
-                  variant="primary"
-                  onClick={() => handleGenerateButton(false)}
-                >
-                  Generate - Gray gaps
-                </Button>
-                <Button
-                  variant="primary"
-                  onClick={() => handleGenerateButton(true)}
-                >
-                  Generate - White gaps
-                </Button>
-                <Button
-                  variant="primary"
-                  onClick={() => handleToggleSelectButton()}
-                >
-                  Select / Deselect All
-                </Button>
-                {inventoryMode && (
-                  <Button
-                    variant="primary"
-                    onClick={() => handleToggleResolveButton()}
-                  >
-                    Add Missing in Inventory
-                  </Button>
-                )}
-              </div>
-            </div>
-          </div>
         </div>
-      </Modal.Body>
+      </div>
     </Modal>
   );
 };

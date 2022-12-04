@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
   DiffCryptTable,
@@ -8,6 +7,8 @@ import {
   DeckNewCard,
   ResultModal,
   DeckCryptHeader,
+  Modal,
+  Button,
 } from 'components';
 import { deckStore, useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
@@ -99,30 +100,15 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
             cardChange={cardChange}
           />
         ) : (
-          <Modal
-            show={showAdd}
-            onHide={() => setShowAdd(false)}
-            animation={false}
-          >
-            <Modal.Header
-              className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
-            >
-              <div className="text-lg text-blue font-bold">Add Crypt Card</div>
-              <Button
-                variant="outline-secondary"
-                onClick={() => setShowAdd(false)}
-              >
-                <X width="32" height="32" viewBox="0 0 16 16" />
-              </Button>
-            </Modal.Header>
-            <Modal.Body className="p-0">
+          <Modal title="Add Crypt Card" handleClose={() => setShowAdd(false)}>
+            <div>
               <DeckNewCard
                 setShowAdd={setShowAdd}
                 cards={cardsFrom}
                 target="crypt"
                 cardChange={cardChange}
               />
-            </Modal.Body>
+            </div>
           </Modal>
         ))}
       <DiffCryptTable

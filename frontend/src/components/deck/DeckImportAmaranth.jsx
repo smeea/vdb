@@ -174,23 +174,14 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
 
   return (
     <Modal
-      show={show}
-      onHide={handleClose}
+      handleClose={handleClose}
       onShow={() => refUrl.current.focus()}
-      animation={false}
       size="lg"
       centered={isMobile}
       dialogClassName={isMobile ? 'm-0' : null}
+      title="Import from Amaranth"
     >
-      <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-      >
-        <div className="text-lg text-blue font-bold">Import from Amaranth</div>
-        <Button variant="outline-secondary" onClick={handleClose}>
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
-      </Modal.Header>
-      <Modal.Body className={isMobile ? 'px-0 pt-0' : 'px-4 pt-2'}>
+      <div>
         <FormControl
           placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
           className="deck-import mb-3"
@@ -202,9 +193,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
         />
         <div
           className={
-            isMobile
-              ? 'flex justify-end py-0 px-3'
-              : 'flex justify-end py-1'
+            isMobile ? 'flex justify-end py-0 px-3' : 'flex justify-end py-1'
           }
         >
           {!spinnerState ? (
@@ -234,7 +223,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
         >
           ERROR DURING IMPORT
         </ErrorOverlay>
-      </Modal.Body>
+      </div>
     </Modal>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import {
   DeckCryptTotalInfo,
@@ -8,6 +7,8 @@ import {
   DeckNewCard,
   DeckCryptHeader,
   ResultModal,
+  Modal,
+  Button,
 } from 'components';
 import { useApp, deckStore } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
@@ -106,30 +107,15 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
             target="crypt"
           />
         ) : (
-          <Modal
-            show={showAdd}
-            onHide={() => setShowAdd(false)}
-            animation={false}
-          >
-            <Modal.Header
-              className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
-            >
-              <div className="text-lg text-blue font-bold">Add Crypt Card</div>
-              <Button
-                variant="outline-secondary"
-                onClick={() => setShowAdd(false)}
-              >
-                <X width="32" height="32" viewBox="0 0 16 16" />
-              </Button>
-            </Modal.Header>
-            <Modal.Body className="p-0">
+          <Modal handleClose={() => setShowAdd(false)} title="Add Crypt Card">
+            <div>
               <DeckNewCard
                 setShowAdd={setShowAdd}
                 cards={deck.crypt}
                 deckid={deckid}
                 target="crypt"
               />
-            </Modal.Body>
+            </div>
           </Modal>
         ))}
       <DeckCryptTable

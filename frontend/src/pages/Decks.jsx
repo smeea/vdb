@@ -7,7 +7,7 @@ import {
   useLoaderData,
   defer,
 } from 'react-router-dom';
-import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import At from 'assets/images/icons/at.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
@@ -35,6 +35,8 @@ import {
   DeckChangeDescription,
   DeckImport,
   Seating,
+  Modal,
+  Button,
 } from 'components';
 import { deckStore, useApp, setDeck, deckUpdate } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
@@ -556,33 +558,29 @@ const Decks = () => {
       )}
       {showMenuButtons && (
         <Modal
-          show={showMenuButtons}
-          onHide={() => {
+          handleClose={() => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          animation={false}
           centered={true}
           size="sm"
         >
-          <Modal.Body className="p-1">
-            <div className="px-0">
-              <DeckButtons
-                deck={deck}
-                setShowInfo={setShowInfo}
-                setShowDraw={setShowDraw}
-                setShowSeating={setShowSeating}
-                setShowRecommendation={setShowRecommendation}
-                setQrUrl={setQrUrl}
-                missingCrypt={missingCrypt}
-                missingLibrary={missingLibrary}
-                handleClose={() => {
-                  setShowMenuButtons(false);
-                  setShowFloatingButtons(true);
-                }}
-              />
-            </div>
-          </Modal.Body>
+          <div>
+            <DeckButtons
+              deck={deck}
+              setShowInfo={setShowInfo}
+              setShowDraw={setShowDraw}
+              setShowSeating={setShowSeating}
+              setShowRecommendation={setShowRecommendation}
+              setQrUrl={setQrUrl}
+              missingCrypt={missingCrypt}
+              missingLibrary={missingLibrary}
+              handleClose={() => {
+                setShowMenuButtons(false);
+                setShowFloatingButtons(true);
+              }}
+            />
+          </div>
         </Modal>
       )}
       {showDeckSelectAdv && (

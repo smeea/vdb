@@ -1,30 +1,17 @@
 import React from 'react';
 import X from 'assets/images/icons/x.svg';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button } from 'components';
 
-const DeckDrawProbabilityModal = (props) => {
+const DeckDrawProbabilityModal = ({ setModalDraw, modalDraw }) => {
   return (
     <Modal
       size="xs"
-      show={props.modalDraw}
-      className="flex justify-center nested-modal"
-      dialogClassName="w-50"
-      onHide={() => props.setModalDraw(null)}
-      animation={false}
-      centered={true}
+      dialogClassName="w-50 flex justify-center nested-modal"
+      handleClose={() => setModalDraw(null)}
+      centered
+      title={modalDraw.name}
     >
-      <Modal.Header className="px-3 pt-2 pb-1">
-        <div className="text-blue">
-          <b>{props.modalDraw.name}</b>
-        </div>
-        <Button
-          variant="outline-secondary"
-          onClick={() => props.setModalDraw(null)}
-        >
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
-      </Modal.Header>
-      <Modal.Body className="px-3 py-2">{props.modalDraw.prob}</Modal.Body>
+      <div>>{modalDraw.prob}</div>
     </Modal>
   );
 };

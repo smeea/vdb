@@ -1,16 +1,9 @@
 import React, { useState, useRef } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Modal,
-  Button,
-  Spinner,
-} from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Spinner } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { ErrorOverlay } from 'components';
+import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -64,34 +57,18 @@ const AccountDeleteConfirmation = ({ show, setShow }) => {
   return (
     <>
       <Modal
-        show={show}
-        onHide={() => setShow(false)}
-        animation={false}
+        handleClose={() => setShow(false)}
         centered={isMobile}
+        title="Delete Account"
       >
-        <Modal.Header
-          className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-        >
-          <div className="text-lg text-blue font-bold">
-            DELETE ACCOUNT
-            <span className="px-1 ps-2">
-              {'"'}
-              {username}
-              {'"'}?
-            </span>
-          </div>
-          <Button variant="outline-secondary" onClick={() => setShow(false)}>
-            <X width="32" height="32" viewBox="0 0 16 16" />
-          </Button>
-        </Modal.Header>
-        <Modal.Body>
+        <div>
           <div className="pt-2">
             <div className="font-bold text-blue">THIS CANNOT BE UNDONE!</div>
           </div>
           This will also delete all your decks and they will not be available
           via URL anymore.
-        </Modal.Body>
-        <Modal.Footer>
+        </div>
+        <div>
           <Form className="my-2" onSubmit={handleSubmitButton}>
             <InputGroup>
               <FormControl
@@ -145,7 +122,7 @@ const AccountDeleteConfirmation = ({ show, setShow }) => {
               placement="bottom"
             ></ErrorOverlay>
           </Form>
-        </Modal.Footer>
+        </div>
       </Modal>
     </>
   );
