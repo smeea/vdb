@@ -6,7 +6,7 @@ import {
   InventoryFilterForm,
   SortButton,
   CardPopover,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
   ResultCryptCapacity,
   ResultCryptDisciplines,
   ResultCryptName,
@@ -76,7 +76,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
             <ResultCryptDisciplines value={card.Disciplines} />
           </div>
         )}
-        <ConditionalOverlayTrigger
+        <ConditionalTooltip
           placement={'right'}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
@@ -89,7 +89,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
           >
             <ResultCryptName card={card} />
           </div>
-        </ConditionalOverlayTrigger>
+        </ConditionalTooltip>
         {!isMobile && (
           <div className="clan-group" onClick={() => handleClick(idx)}>
             <div className="flex justify-center">

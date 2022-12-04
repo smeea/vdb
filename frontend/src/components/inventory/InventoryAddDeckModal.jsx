@@ -15,7 +15,7 @@ import {
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
   ResultClanImage,
-  OverlayTooltip,
+  Tooltip,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, inventoryStore, deckUpdate } from 'context';
@@ -207,7 +207,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                 onMouseEnter={() => setShowDeck(deck.deckid)}
                 onMouseLeave={() => setShowDeck(false)}
               >
-                <OverlayTooltip
+                <Tooltip
                   placement="right"
                   show={showDeck === deck.deckid}
                   text={
@@ -236,7 +236,7 @@ const InventoryAddDeckModal = ({ show, handleClose }) => {
                   <div>
                     <EyeFill />
                   </div>
-                </OverlayTooltip>
+                </Tooltip>
               </div>
             </td>
           )}

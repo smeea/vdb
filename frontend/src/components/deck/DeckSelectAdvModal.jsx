@@ -34,7 +34,7 @@ import {
   DeckSelectSortForm,
   DeckSelectAdvModalTagsFilter,
   ResultClanImage,
-  OverlayTooltip,
+  Tooltip,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, deckUpdate } from 'context';
@@ -392,7 +392,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                   onMouseEnter={() => setShowDeck(deck.deckid)}
                   onMouseLeave={() => setShowDeck(false)}
                 >
-                  <OverlayTooltip
+                  <Tooltip
                     placement="right"
                     show={showDeck === deck.deckid}
                     text={
@@ -421,7 +421,7 @@ const DeckSelectAdvModal = ({ show, allTagsOptions, handleClose }) => {
                     <div>
                       <EyeFill />
                     </div>
-                  </OverlayTooltip>
+                  </Tooltip>
                 </div>
               </td>
             )}

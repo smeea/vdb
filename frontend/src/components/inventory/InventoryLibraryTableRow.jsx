@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   UsedPopover,
@@ -13,7 +12,8 @@ import {
   ResultLibraryDisciplines,
   ResultLibraryName,
   ResultLibraryTrifle,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
+  Tooltip,
 } from 'components';
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
 import { getHardTotal, getSoftMax } from 'utils';
@@ -114,7 +114,7 @@ const InventoryLibraryTableRow = ({
                 : card.q - softUsedMax - hardUsedTotal}
             </div>
           ) : (
-            <OverlayTrigger
+            <Tooltip
               placement="bottom"
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
@@ -133,7 +133,7 @@ const InventoryLibraryTableRow = ({
                   ? `+${card.q - softUsedMax - hardUsedTotal}`
                   : card.q - softUsedMax - hardUsedTotal}
               </div>
-            </OverlayTrigger>
+            </Tooltip>
           )}
         </div>
       )}
@@ -144,7 +144,7 @@ const InventoryLibraryTableRow = ({
         <ResultLibraryTypeImage value={card.c.Type} />
       </div>
 
-      <ConditionalOverlayTrigger
+      <ConditionalTooltip
         placement={placement}
         overlay={<CardPopover card={card.c} />}
         disabled={isMobile}
@@ -155,7 +155,7 @@ const InventoryLibraryTableRow = ({
         >
           <ResultLibraryName card={card.c} />
         </div>
-      </ConditionalOverlayTrigger>
+      </ConditionalTooltip>
 
       {isMobile ? (
         <div

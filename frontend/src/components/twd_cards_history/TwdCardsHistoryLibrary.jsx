@@ -6,7 +6,7 @@ import {
   InventoryFilterForm,
   SortButton,
   CardPopover,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
   ResultLibraryBurn,
   ResultLibraryClan,
   ResultLibraryCost,
@@ -177,7 +177,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           {card.Discipline && card.Clan && '+'}
           <ResultLibraryDisciplines value={card.Discipline} />
         </div>
-        <ConditionalOverlayTrigger
+        <ConditionalTooltip
           placement={'right'}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
@@ -190,7 +190,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           >
             <ResultLibraryName card={card} />
           </div>
-        </ConditionalOverlayTrigger>
+        </ConditionalTooltip>
         {!isMobile && (
           <div
             className="flex items-center justify-center burn"

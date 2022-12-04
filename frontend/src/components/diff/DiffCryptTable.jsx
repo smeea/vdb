@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   UsedPopover,
@@ -14,8 +13,8 @@ import {
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
-  OverlayTooltip,
-  ConditionalOverlayTrigger,
+  Tooltip,
+  ConditionalTooltip,
   DiffQuantityDiff,
 } from 'components';
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
@@ -88,7 +87,7 @@ const DiffCryptTable = ({
           {isEditable ? (
             <>
               {!inReview && inventoryMode && decks ? (
-                <OverlayTrigger
+                <Tooltip
                   placement="right"
                   overlay={<UsedPopover cardid={card.c.Id} />}
                 >
@@ -104,7 +103,7 @@ const DiffCryptTable = ({
                       inventoryType={decks[deckid].inventoryType}
                     />
                   </td>
-                </OverlayTrigger>
+                </Tooltip>
               ) : (
                 <td className="quantity">
                   <DeckCardQuantity
@@ -146,7 +145,7 @@ const DiffCryptTable = ({
             )}
           </td>
 
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             placement={placement}
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
@@ -154,7 +153,7 @@ const DiffCryptTable = ({
             <td className="name px-2" onClick={() => handleClick()}>
               <ResultCryptName card={card.c} />
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
           {isWide ? (
             <>
               <td className="title pe-2" onClick={() => handleClick()}>
@@ -204,7 +203,7 @@ const DiffCryptTable = ({
                   )}%`}
                 </div>
               ) : (
-                <OverlayTooltip
+                <Tooltip
                   placement="right"
                   text={
                     <DeckDrawProbabilityText N={cryptTotal} n={4} k={card.q} />
@@ -213,7 +212,7 @@ const DiffCryptTable = ({
                   <div>{`${Math.floor(
                     drawProbability(1, cryptTotal, 4, card.q) * 100
                   )}%`}</div>
-                </OverlayTooltip>
+                </Tooltip>
               )}
             </td>
           )}

@@ -9,7 +9,7 @@ import {
   ResultLibraryDisciplines,
   ResultLibraryName,
   ResultLibraryTrifle,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 import { BURN_OPTION, POOL_COST, BLOOD_COST } from 'utils/constants';
 import { deckStore, useApp } from 'context';
@@ -46,7 +46,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
               />
             </td>
           )}
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             placement={isDesktop ? 'left' : 'bottom'}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
@@ -54,7 +54,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
             <td className="name px-2" onClick={() => handleClick()}>
               <ResultLibraryName card={card} />
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
 
           <td
             className={card[BLOOD_COST] ? 'cost blood' : 'cost'}

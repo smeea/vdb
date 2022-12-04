@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   CardPopover,
-  OverlayTooltip,
+  Tooltip,
   ResultLibraryBurn,
   ResultLibraryClan,
   ResultLibraryCost,
@@ -11,7 +11,7 @@ import {
   ResultLibraryTypeImage,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 
 import { drawProbability } from 'utils';
@@ -68,7 +68,7 @@ const DeckDrawLibraryTable = ({
             <ResultLibraryDisciplines value={card.Discipline} />
           </td>
 
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
             placement={placement}
@@ -76,7 +76,7 @@ const DeckDrawLibraryTable = ({
             <td className="name px-1" onClick={() => handleClick(idx)}>
               <ResultLibraryName card={card} />
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
 
           <td className="burn px-1" onClick={() => handleClick(idx)}>
             <ResultLibraryBurn value={card['Burn Option']} />
@@ -97,14 +97,14 @@ const DeckDrawLibraryTable = ({
                     {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
                   </div>
                 ) : (
-                  <OverlayTooltip
+                  <Tooltip
                     placement={placement}
                     text={<DeckDrawProbabilityText N={N} n={n} k={k} />}
                   >
                     <div>{`${Math.floor(
                       drawProbability(1, N, n, k) * 100
                     )}%`}</div>
-                  </OverlayTooltip>
+                  </Tooltip>
                 )}
               </>
             )}

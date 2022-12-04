@@ -12,7 +12,7 @@ import {
   deckStore,
 } from 'context';
 import {
-  OverlayTooltip,
+  Tooltip,
   CardPopover,
   UsedPopover,
   DeckCardQuantity,
@@ -23,7 +23,7 @@ import {
   ResultLibraryName,
   ResultLibraryTrifle,
   DeckDrawProbabilityText,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 
@@ -123,7 +123,7 @@ const DeckLibraryTableRow = ({
                   </div>
                 </td>
               )}
-              <ConditionalOverlayTrigger
+              <ConditionalTooltip
                 placement="bottom"
                 overlay={<UsedPopover cardid={card.c.Id} />}
                 disabled={disableOverlay}
@@ -140,7 +140,7 @@ const DeckLibraryTableRow = ({
                     inventoryType={decks[deckid]?.inventoryType}
                   />
                 </td>
-              </ConditionalOverlayTrigger>
+              </ConditionalTooltip>
             </>
           ) : (
             <td className="quantity">
@@ -156,7 +156,7 @@ const DeckLibraryTableRow = ({
       ) : (
         <>
           {inventoryMode && decks ? (
-            <ConditionalOverlayTrigger
+            <ConditionalTooltip
               placement="bottom"
               overlay={<UsedPopover cardid={card.c.Id} />}
               disabled={disableOverlay}
@@ -176,27 +176,21 @@ const DeckLibraryTableRow = ({
                   {card.q || null}
                 </div>
               </td>
-            </ConditionalOverlayTrigger>
+            </ConditionalTooltip>
           ) : (
             <td className="quantity-no-buttons px-1">{card.q || null}</td>
           )}
         </>
       )}
-      {!isMobile ? (
-        <ConditionalOverlayTrigger
+      <td className="name ps-3 pe-2" onClick={() => handleClick(card.c)}>
+        <ConditionalTooltip
           placement={placement}
           overlay={<CardPopover card={card.c} />}
           disabled={disableOverlay}
         >
-          <td className="name ps-3 pe-2" onClick={() => handleClick(card.c)}>
-            <ResultLibraryName card={card.c} />
-          </td>
-        </ConditionalOverlayTrigger>
-      ) : (
-        <td className="name ps-3 pe-2" onClick={() => handleClick(card.c)}>
           <ResultLibraryName card={card.c} />
-        </td>
-      )}
+        </ConditionalTooltip>
+      </td>
       {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
         <td
           className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
@@ -241,7 +235,7 @@ const DeckLibraryTableRow = ({
               )}%`}
             </div>
           ) : (
-            <OverlayTooltip
+            <Tooltip
               placement={placement}
               text={
                 <DeckDrawProbabilityText N={libraryTotal} n={7} k={card.q} />
@@ -250,7 +244,7 @@ const DeckLibraryTableRow = ({
               <div>{`${Math.floor(
                 drawProbability(1, libraryTotal, 7, card.q) * 100
               )}%`}</div>
-            </OverlayTooltip>
+            </Tooltip>
           )}
         </td>
       )}

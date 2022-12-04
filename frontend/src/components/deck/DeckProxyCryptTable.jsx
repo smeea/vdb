@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import Select from 'react-select';
-import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import {
   CardPopover,
@@ -15,7 +15,8 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
   CardImage,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
+  Tooltip,
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
@@ -100,16 +101,15 @@ const DeckProxyCryptTable = ({
             />
           </td>
           {inventoryMode && decks ? (
-            <OverlayTrigger
+            <Tooltip
               placement="right"
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
               <td className="quantity">
                 <DeckCardQuantity
-                  cardid={card.c.Id}
+                  card={card.c}
                   deckid={null}
                   q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
-                  inProxy={true}
                   inInventory={inInventory}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
@@ -117,13 +117,14 @@ const DeckProxyCryptTable = ({
                   isSelected={
                     proxySelected[card.c.Id] && proxySelected[card.c.Id].print
                   }
+                  inProxy
                 />
               </td>
-            </OverlayTrigger>
+            </Tooltip>
           ) : (
             <td className="quantity">
               <DeckCardQuantity
-                cardid={card.c.Id}
+                card={card.c}
                 deckid={null}
                 q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
                 cardChange={handleProxyCounter}
@@ -152,7 +153,7 @@ const DeckProxyCryptTable = ({
             )}
           </td>
 
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             placement={placement}
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
@@ -160,7 +161,7 @@ const DeckProxyCryptTable = ({
             <td className="name px-2" onClick={() => handleClick(card.c)}>
               <ResultCryptName card={card.c} />
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
 
           <td className="clan-group" onClick={() => handleClick(card.c)}>
             <div>
@@ -193,21 +194,19 @@ const DeckProxyCryptTable = ({
                   onChange={handleSetSelector}
                 />
               </td>
-              <OverlayTrigger
+              <Tooltip
                 placement="right"
                 overlay={
-                  <Popover>
-                    <Popover.Body>
-                      <CardImage
-                        card={card.c}
-                        set={
-                          proxySelected[card.c.Id]
-                            ? proxySelected[card.c.Id].set
-                            : null
-                        }
-                      />
-                    </Popover.Body>
-                  </Popover>
+                  <div className="p-1">
+                    <CardImage
+                      card={card.c}
+                      set={
+                        proxySelected[card.c.Id]
+                          ? proxySelected[card.c.Id].set
+                          : null
+                      }
+                    />
+                  </div>
                 }
               >
                 <td className="proxy-set-image">
@@ -215,7 +214,7 @@ const DeckProxyCryptTable = ({
                     <EyeFill />
                   </div>
                 </td>
-              </OverlayTrigger>
+              </Tooltip>
             </>
           )}
         </tr>

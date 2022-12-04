@@ -12,7 +12,7 @@ import {
   ResultLayoutTextRulings,
   ResultLayoutTextArtist,
   ResultLayoutTextText,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 
 const ResultCryptLayoutText = ({
@@ -32,7 +32,7 @@ const ResultCryptLayoutText = ({
           <div className="name font-bold ps-2">
             <ResultCryptName card={card} />
             {card.Adv[1] && (
-              <ConditionalOverlayTrigger
+              <ConditionalTooltip
                 placement={placement}
                 overlay={<CardPopover card={cryptCardBase[card.Adv[1]]} />}
                 disabled={isMobile}
@@ -43,7 +43,7 @@ const ResultCryptLayoutText = ({
                 >
                   [see {`${card.Adv[0] ? 'Base' : 'Adv'}`}]
                 </span>
-              </ConditionalOverlayTrigger>
+              </ConditionalTooltip>
             )}
           </div>
         </div>

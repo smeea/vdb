@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ResultLayoutTextSetsModal, OverlayTooltip } from 'components';
+import { ResultLayoutTextSetsModal, Tooltip } from 'components';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp } from 'context';
 
@@ -75,14 +75,14 @@ const ResultLayoutTextSets = (props) => {
               </div>
             </div>
           ) : (
-            <OverlayTooltip text={popoverText} placement="bottom">
+            <Tooltip text={popoverText} placement="bottom">
               <div className="inline">
                 {k}
                 <div className="inline text-neutral-500">
                   {preconsShort ? `:${preconsShort}` : null}
                 </div>
               </div>
-            </OverlayTooltip>
+            </Tooltip>
           )}
         </div>
       );

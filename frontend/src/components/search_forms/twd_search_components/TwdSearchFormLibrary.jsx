@@ -4,7 +4,7 @@ import {
   ResultLibraryName,
   ResultModal,
   NewLibraryCard,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from 'context';
@@ -34,7 +34,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
                   form={form}
                   id={id}
                 />
-                <ConditionalOverlayTrigger
+                <ConditionalTooltip
                   placement="left"
                   overlay={<CardPopover card={libraryCardBase[id]} />}
                   disabled={isMobile}
@@ -45,7 +45,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
                   >
                     <ResultLibraryName card={libraryCardBase[id]} />
                   </div>
-                </ConditionalOverlayTrigger>
+                </ConditionalTooltip>
               </div>
             );
           })}

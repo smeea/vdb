@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import Select from 'react-select';
-import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import {
   CardPopover,
@@ -14,7 +14,8 @@ import {
   ResultLibraryName,
   ResultLibraryTrifle,
   CardImage,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
+  Tooltip,
 } from 'components';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp, deckStore, usedStore, inventoryStore } from 'context';
@@ -86,7 +87,7 @@ const DeckProxyLibraryTable = ({
             />
           </td>
           {inventoryMode && decks ? (
-            <OverlayTrigger
+            <Tooltip
               placement="right"
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
@@ -105,7 +106,7 @@ const DeckProxyLibraryTable = ({
                   inProxy
                 />
               </td>
-            </OverlayTrigger>
+            </Tooltip>
           ) : (
             <td className="quantity">
               <DeckCardQuantity
@@ -116,7 +117,7 @@ const DeckProxyLibraryTable = ({
               />
             </td>
           )}
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             placement={placement}
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
@@ -124,7 +125,7 @@ const DeckProxyLibraryTable = ({
             <td className="name ps-3 pe-2" onClick={() => handleClick(card.c)}>
               <ResultLibraryName card={card.c} />
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
 
           <td className="cost" onClick={() => handleClick(card.c)}>
             <ResultLibraryCost
@@ -161,20 +162,17 @@ const DeckProxyLibraryTable = ({
                   onChange={handleSetSelector}
                 />
               </td>
-              <OverlayTrigger
+              <Tooltip
                 placement="left"
                 overlay={
-                  <Popover>
-                    <Popover.Body>
-                      <CardImage
-                        card={card.c}
-                        set={
-                          proxySelected[card.c.Id] &&
-                          proxySelected[card.c.Id].set
-                        }
-                      />
-                    </Popover.Body>
-                  </Popover>
+                  <div className="p-1">
+                    <CardImage
+                      card={card.c}
+                      set={
+                        proxySelected[card.c.Id] && proxySelected[card.c.Id].set
+                      }
+                    />
+                  </div>
                 }
               >
                 <td className="proxy-set-image">
@@ -182,7 +180,7 @@ const DeckProxyLibraryTable = ({
                     <EyeFill />
                   </div>
                 </td>
-              </OverlayTrigger>
+              </Tooltip>
             </>
           )}
         </tr>

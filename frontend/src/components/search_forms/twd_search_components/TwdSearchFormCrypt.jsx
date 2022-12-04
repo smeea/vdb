@@ -4,7 +4,7 @@ import {
   ResultCryptName,
   ResultModal,
   NewCryptCard,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from 'context';
@@ -34,7 +34,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                   form={form}
                   id={id}
                 />
-                <ConditionalOverlayTrigger
+                <ConditionalTooltip
                   placement="left"
                   overlay={<CardPopover card={cryptCardBase[id]} />}
                   disabled={isMobile}
@@ -50,7 +50,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                       </div>
                     )}
                   </div>
-                </ConditionalOverlayTrigger>
+                </ConditionalTooltip>
               </div>
             );
           })}

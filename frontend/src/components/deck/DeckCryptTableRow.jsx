@@ -12,7 +12,6 @@ import {
   deckStore,
 } from 'context';
 import {
-  OverlayTooltip,
   CardPopover,
   UsedPopover,
   DeckCardQuantity,
@@ -24,7 +23,7 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
   DeckDrawProbabilityText,
-  ConditionalOverlayTrigger,
+  Tooltip,
 } from 'components';
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 
@@ -129,10 +128,9 @@ const DeckCryptTableRow = ({
                   </div>
                 </td>
               )}
-              <ConditionalOverlayTrigger
+              <Tooltip
                 placement="bottom"
                 overlay={<UsedPopover cardid={card.c.Id} />}
-                disabled={disableOverlay}
               >
                 <td className="quantity">
                   <DeckCardQuantity
@@ -146,7 +144,7 @@ const DeckCryptTableRow = ({
                     inventoryType={decks[deckid]?.inventoryType}
                   />
                 </td>
-              </ConditionalOverlayTrigger>
+              </Tooltip>
             </>
           ) : (
             <td className="quantity">
@@ -162,7 +160,7 @@ const DeckCryptTableRow = ({
       ) : (
         <>
           {inventoryMode && decks ? (
-            <ConditionalOverlayTrigger
+            <Tooltip
               placement="bottom"
               overlay={<UsedPopover cardid={card.c.Id} />}
               disabled={disableOverlay}
@@ -182,7 +180,7 @@ const DeckCryptTableRow = ({
                   {card.q || null}
                 </div>
               </td>
-            </ConditionalOverlayTrigger>
+            </Tooltip>
           ) : (
             <td className="quantity-no-buttons px-1">{card.q || null}</td>
           )}
@@ -213,15 +211,11 @@ const DeckCryptTableRow = ({
         </td>
       )}
 
-      <ConditionalOverlayTrigger
-        placement={placement}
-        overlay={<CardPopover card={card.c} />}
-        disabled={disableOverlay}
-      >
+      <Tooltip placement={placement} overlay={<CardPopover card={card.c} />}>
         <td className="name px-2" onClick={() => handleClick(card.c)}>
           <ResultCryptName card={card.c} />
         </td>
-      </ConditionalOverlayTrigger>
+      </Tooltip>
 
       {isWide && !(keyDisciplines + nonKeyDisciplines > 6 && inSearch) ? (
         <>
@@ -268,14 +262,14 @@ const DeckCryptTableRow = ({
               )}%`}
             </div>
           ) : (
-            <OverlayTooltip
+            <Tooltip
               placement="right"
               text={<DeckDrawProbabilityText N={cryptTotal} n={4} k={card.q} />}
             >
               <div>{`${Math.floor(
                 drawProbability(1, cryptTotal, 4, card.q) * 100
               )}%`}</div>
-            </OverlayTooltip>
+            </Tooltip>
           )}
         </td>
       )}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   UsedPopover,
@@ -13,7 +12,8 @@ import {
   ResultLibraryName,
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
+  Tooltip,
 } from 'components';
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
 import { getHardTotal, getSoftMax } from 'utils';
@@ -94,7 +94,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         </td>
       )}
       {inventoryMode && (
-        <OverlayTrigger
+        <Tooltip
           placement={isDesktop ? 'left' : 'bottom'}
           overlay={<UsedPopover cardid={card.Id} />}
         >
@@ -123,7 +123,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
               </div>
             )}
           </td>
-        </OverlayTrigger>
+        </Tooltip>
       )}
       <td
         className={card[BLOOD_COST] ? 'cost blood px-1' : 'cost px-1'}
@@ -145,7 +145,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         {card.Discipline && card.Clan && '+'}
         <ResultLibraryDisciplines value={card.Discipline} />
       </td>
-      <ConditionalOverlayTrigger
+      <ConditionalTooltip
         placement={placement}
         overlay={<CardPopover card={card} />}
         disabled={isMobile}
@@ -153,7 +153,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         <td className="name px-1" onClick={() => handleClick(idx)}>
           <ResultLibraryName card={card} />
         </td>
-      </ConditionalOverlayTrigger>
+      </ConditionalTooltip>
       <td className="burn px-1" onClick={() => handleClick(idx)}>
         <ResultLibraryBurn value={card[BURN_OPTION]} />
         <ResultLibraryTrifle card={card} />

@@ -4,7 +4,7 @@ import Check2 from 'assets/images/icons/check2.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { Button, OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
+import { Button, Tooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -122,9 +122,9 @@ const AccountChangeEmail = () => {
         <EnvelopeFill />
         <span className="ms-2">Change email (optional)</span>
         {!isMobile ? (
-          <OverlayTooltip text={tooltipText}>
+          <Tooltip text={tooltipText}>
             <span className="question-tooltip ms-1">[?]</span>
-          </OverlayTooltip>
+          </Tooltip>
         ) : (
           <span
             onClick={() => setShowModal(true)}

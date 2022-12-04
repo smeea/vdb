@@ -8,7 +8,7 @@ import {
   ResultLibraryDisciplines,
   ResultLibraryClan,
   ResultModal,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 import { GROUPED_TYPE, ASCII_NAME } from 'utils/constants';
 import { useApp, inventoryStore, usedStore } from 'context';
@@ -62,7 +62,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
     return (
       <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             overlay={<UsedPopover cardid={card.c.Id} />}
             disabled={isMobile}
           >
@@ -79,7 +79,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
                 {card.q}
               </div>
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
         ) : (
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
@@ -87,14 +87,14 @@ const TwdResultLibraryKeyCards = ({ library }) => {
           <ResultLibraryTypeImage value={card.c.Type} />
         </td>
 
-        <ConditionalOverlayTrigger
+        <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
         >
           <td className="name px-1" onClick={() => handleClick(card.c)}>
             <ResultLibraryName card={card.c} />
           </td>
-        </ConditionalOverlayTrigger>
+        </ConditionalTooltip>
 
         {!isMobile && (
           <td className="disciplines" onClick={() => handleClick(card.c)}>

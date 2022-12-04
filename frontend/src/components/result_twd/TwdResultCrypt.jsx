@@ -7,7 +7,7 @@ import {
   ResultCryptCapacity,
   ResultClanImage,
   ResultModal,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 import { getHardTotal } from 'utils';
 import { useApp, inventoryStore, usedStore } from 'context';
@@ -59,7 +59,7 @@ const TwdResultCrypt = ({ crypt }) => {
     return (
       <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             overlay={<UsedPopover cardid={card.c.Id} />}
             disabled={isMobile}
           >
@@ -76,7 +76,7 @@ const TwdResultCrypt = ({ crypt }) => {
                 {card.q}
               </div>
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
         ) : (
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
@@ -84,14 +84,14 @@ const TwdResultCrypt = ({ crypt }) => {
           <ResultCryptCapacity value={card.c.Capacity} />
         </td>
 
-        <ConditionalOverlayTrigger
+        <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
         >
           <td className="name px-1" onClick={() => handleClick(card.c)}>
             <ResultCryptName card={card.c} />
           </td>
-        </ConditionalOverlayTrigger>
+        </ConditionalTooltip>
 
         <td className="clan px-1" onClick={() => handleClick(card.c)}>
           <ResultClanImage value={card.c.Clan} />

@@ -6,14 +6,12 @@ import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
 import { deckStore, usedStore, inventoryStore } from 'context';
 
-const UsedPopover = React.forwardRef((props, ref) => {
+const UsedPopover = ({ cardid }) => {
   const decks = useSnapshot(deckStore).decks;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
-
-  const { cardid, ...rest } = props;
 
   let softUsedMax = 0;
   let hardUsedTotal = 0;
@@ -65,41 +63,36 @@ const UsedPopover = React.forwardRef((props, ref) => {
   }
 
   return (
-    <Popover ref={ref} {...rest}>
-      <Popover.Body>
+    <div className="p-3">
+      {softUsedMax == 0 && hardUsedTotal == 0 ? (
+        <div className="py-1">Not used in inventory decks</div>
+      ) : (
         <>
-          {softUsedMax == 0 && hardUsedTotal == 0 ? (
-            <div className="py-1">Not used in inventory decks</div>
-          ) : (
-            <>
-              {softUsedMax > 0 && <>{SoftUsedDescription}</>}
-              {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
-            </>
-          )}
-          <hr />
-          <div className="flex items-center">
-            <div className="opacity-40">
-              <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
-            </div>
-            <div className="px-1">
-              <b>{softUsedMax + hardUsedTotal}</b>
-            </div>
-            - Total Used
-          </div>
-          <div className="flex items-center">
-            <div className="opacity-40">
-              <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
-            </div>
-            <div className="px-1">
-              <b>{inInventory}</b>
-            </div>
-            - In Inventory
-          </div>
+          {softUsedMax > 0 && <>{SoftUsedDescription}</>}
+          {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
         </>
-      </Popover.Body>
-    </Popover>
+      )}
+      <hr />
+      <div className="flex items-center">
+        <div className="opacity-40">
+          <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
+        </div>
+        <div className="px-1">
+          <b>{softUsedMax + hardUsedTotal}</b>
+        </div>
+        - Total Used
+      </div>
+      <div className="flex items-center">
+        <div className="opacity-40">
+          <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
+        </div>
+        <div className="px-1">
+          <b>{inInventory}</b>
+        </div>
+        - In Inventory
+      </div>
+    </div>
   );
-});
-UsedPopover.displayName = 'UsedPopover';
+};
 
 export default UsedPopover;

@@ -14,7 +14,7 @@ import {
   ResultLibraryDisciplines,
   ResultLibraryName,
   ResultLibraryTrifle,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
   CardPopover,
   TwdOpenDeckButton,
 } from 'components';
@@ -41,7 +41,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
               />
             </td>
           )}
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             placement={isNarrow ? 'bottom' : 'right'}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
@@ -49,7 +49,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
             <td className="name px-2" onClick={() => handleClick(idx)}>
               <ResultCryptName card={card} />
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
           <td className="clan-group" onClick={() => handleClick()}>
             <div>
               <ResultClanImage value={card.Clan} />
@@ -81,7 +81,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
             {card.Discipline && card.Clan && '+'}
             <ResultLibraryDisciplines value={card.Discipline} />
           </td>
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             placement={isNarrow ? 'bottom' : 'right'}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
@@ -89,7 +89,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
             <td className="name px-1" onClick={() => handleClick(idx)}>
               <ResultLibraryName card={card} />
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
           {!isMobile && (
             <td className="burn px-1" onClick={() => handleClick(idx)}>
               <ResultLibraryBurn value={card[BURN_OPTION]} />

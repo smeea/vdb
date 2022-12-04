@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   CardPopover,
-  OverlayTooltip,
+  Tooltip,
   ResultCryptCapacity,
   DeckCryptDisciplines,
   ResultCryptName,
@@ -10,7 +10,7 @@ import {
   ResultCryptTitle,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 
 import { drawProbability } from 'utils';
@@ -66,15 +66,14 @@ const DeckDrawCryptTable = ({
               nonKeyDisciplines={nonKeyDisciplines}
             />
           </td>
-
-          <ConditionalOverlayTrigger
-            overlay={<CardPopover card={card} />}
-            disabled={isMobile}
-          >
-            <td className="name px-1" onClick={() => handleClick(idx)}>
+          <td className="name px-1" onClick={() => handleClick(idx)}>
+            <ConditionalTooltip
+              overlay={<CardPopover card={card} />}
+              disabled={isMobile}
+            >
               <ResultCryptName card={card} />
-            </td>
-          </ConditionalOverlayTrigger>
+            </ConditionalTooltip>
+          </td>
           {isWide ? (
             <>
               <td className="title pe-2" onClick={() => handleClick(idx)}>
@@ -115,14 +114,14 @@ const DeckDrawCryptTable = ({
                     {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
                   </div>
                 ) : (
-                  <OverlayTooltip
+                  <Tooltip
                     placement="right"
                     text={<DeckDrawProbabilityText N={N} n={n} k={k} />}
                   >
                     <div>{`${Math.floor(
                       drawProbability(1, N, n, k) * 100
                     )}%`}</div>
-                  </OverlayTooltip>
+                  </Tooltip>
                 )}
               </>
             )}

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
-  OverlayTooltip,
   CardPopover,
   UsedPopover,
   DeckCardQuantity,
@@ -14,8 +12,9 @@ import {
   ResultLibraryTrifle,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
   DiffQuantityDiff,
+  Tooltip,
 } from 'components';
 import { drawProbability } from 'utils';
 import {
@@ -92,7 +91,7 @@ const DiffLibraryTable = ({
           {isEditable ? (
             <>
               {inventoryMode && decks && !inReview ? (
-                <OverlayTrigger
+                <Tooltip
                   placement="right"
                   overlay={<UsedPopover cardid={card.c.Id} />}
                 >
@@ -108,7 +107,7 @@ const DiffLibraryTable = ({
                       inventoryType={decks[deckid].inventoryType}
                     />
                   </td>
-                </OverlayTrigger>
+                </Tooltip>
               ) : (
                 <td className="quantity">
                   <DeckCardQuantity
@@ -129,7 +128,7 @@ const DiffLibraryTable = ({
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
 
-          <ConditionalOverlayTrigger
+          <ConditionalTooltip
             placement={placement}
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
@@ -137,7 +136,7 @@ const DiffLibraryTable = ({
             <td className="name px-2" onClick={() => handleClick()}>
               <ResultLibraryName card={card.c} />
             </td>
-          </ConditionalOverlayTrigger>
+          </ConditionalTooltip>
 
           <td
             className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
@@ -177,7 +176,7 @@ const DiffLibraryTable = ({
                   )}%`}
                 </div>
               ) : (
-                <OverlayTooltip
+                <Tooltip
                   placement="right"
                   text={
                     <DeckDrawProbabilityText
@@ -190,7 +189,7 @@ const DiffLibraryTable = ({
                   <div>{`${Math.floor(
                     drawProbability(1, libraryTotal, 7, card.q) * 100
                   )}%`}</div>
-                </OverlayTooltip>
+                </Tooltip>
               )}
             </td>
           )}

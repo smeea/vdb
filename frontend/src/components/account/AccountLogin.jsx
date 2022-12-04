@@ -11,7 +11,7 @@ import DoorOpenFill from 'assets/images/icons/door-open-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
+import { Tooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -145,9 +145,9 @@ const AccountLogin = () => {
         </div>
         Login
         {!isMobile ? (
-          <OverlayTooltip text={loginTooltipText}>
+          <Tooltip text={loginTooltipText}>
             <span className="question-tooltip ms-2">[?]</span>
-          </OverlayTooltip>
+          </Tooltip>
         ) : (
           <span
             onClick={() => setShowModalTooltip(true)}
@@ -186,7 +186,7 @@ const AccountLogin = () => {
       </Form>
       {!isMobile ? (
         <div className="flex justify-start text-xs ps-2 pt-1">
-          <OverlayTooltip
+          <Tooltip
             delay={{ show: 0, hide: 2000 }}
             placement="bottom"
             text={passwordTooltipText}
@@ -194,7 +194,7 @@ const AccountLogin = () => {
             <a href="#">
               <i>Forgot password?</i>
             </a>
-          </OverlayTooltip>
+          </Tooltip>
         </div>
       ) : (
         <div

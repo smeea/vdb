@@ -6,7 +6,7 @@ import {
   CardPopover,
   ResultCryptName,
   ResultLibraryName,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 
 const ResultLayoutTextRulings = ({ rulings, placement }) => {
@@ -58,7 +58,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
           if (cardid) {
             return (
               <span key={`${idxRuling}-${idxText}-cardRef-${idx}`}>
-                <ConditionalOverlayTrigger
+                <ConditionalTooltip
                   placement={placement}
                   overlay={
                     <CardPopover
@@ -78,7 +78,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
                       <ResultLibraryName card={libraryCardBase[cardid]} />
                     )}
                   </div>
-                </ConditionalOverlayTrigger>
+                </ConditionalTooltip>
               </span>
             );
           } else {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
-import { DeckLibraryTable, ResultModal } from 'components';
+import { DeckLibraryTable, ResultModal, Tooltip } from 'components';
 import { useApp } from 'context';
 import { isTrifle } from 'utils';
 import { cardtypeSortedFull } from 'utils/constants';
@@ -75,21 +74,6 @@ const TwdResultLibraryByType = ({ library }) => {
   cardtypeSortedFull
     .filter((cardtype) => libraryByType[cardtype] !== undefined)
     .map((cardtype, idx) => {
-      const TypePopover = React.forwardRef(({ ...props }, ref) => {
-        return (
-          <Popover ref={ref} {...props}>
-            <Popover.Body className="p-1">
-              <DeckLibraryTable
-                deck={{}}
-                handleModalCardOpen={handleModalCardOpen}
-                cards={props.cards}
-              />
-            </Popover.Body>
-          </Popover>
-        );
-      });
-      TypePopover.displayName = 'TypePopover';
-
       const cardtypes = cardtype.split('/');
       const cardtypeImages = cardtypes.map((cardtype, index) => {
         const imgSrc = `${process.env.ROOT_URL}images/types/${cardtype
@@ -115,14 +99,17 @@ const TwdResultLibraryByType = ({ library }) => {
             onClick={() => handleClick(cardtype)}
             className="name"
           >
-            <OverlayTrigger
+            <Tooltip
               placement="right"
               show={show[cardtype]}
               overlay={
-                <TypePopover
-                  className="light-border"
-                  cards={libraryByType[cardtype]}
-                />
+                <div className="p-1">
+                  <DeckLibraryTable
+                    deck={{}}
+                    handleModalCardOpen={handleModalCardOpen}
+                    cards={libraryByType[cardtype]}
+                  />
+                </div>
               }
             >
               <div>
@@ -131,7 +118,7 @@ const TwdResultLibraryByType = ({ library }) => {
                   <> - {trifleTotal} trifle</>
                 )}
               </div>
-            </OverlayTrigger>
+            </Tooltip>
           </td>
         </tr>
       );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { OverlayTooltip, DeckDrawProbabilityText } from 'components';
+import { Tooltip, DeckDrawProbabilityText } from 'components';
 import { drawProbability } from 'utils';
 
 const DeckLibraryTypeDrawInfo = (props) => {
@@ -29,7 +29,7 @@ const DeckLibraryTypeDrawInfo = (props) => {
           )}%`}
         </div>
       ) : (
-        <OverlayTooltip
+        <Tooltip
           placement="right"
           text={
             <DeckDrawProbabilityText
@@ -43,7 +43,7 @@ const DeckLibraryTypeDrawInfo = (props) => {
             drawProbability(1, libraryTotal, 7, libraryByTypeTotal[cardtype]) *
               100
           )}%`}</div>
-        </OverlayTooltip>
+        </Tooltip>
       )}
     </>
   );

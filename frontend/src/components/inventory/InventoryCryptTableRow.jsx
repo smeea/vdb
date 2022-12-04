@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   UsedPopover,
@@ -12,7 +11,8 @@ import {
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
+  Tooltip,
 } from 'components';
 import { getHardTotal, getSoftMax } from 'utils';
 import { useApp, usedStore, inventoryCardChange } from 'context';
@@ -107,7 +107,7 @@ const InventoryCryptTableRow = ({
                 : card.q - softUsedMax - hardUsedTotal}
             </div>
           ) : (
-            <OverlayTrigger
+            <Tooltip
               placement="bottom"
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
@@ -126,7 +126,7 @@ const InventoryCryptTableRow = ({
                   ? `+${card.q - softUsedMax - hardUsedTotal}`
                   : card.q - softUsedMax - hardUsedTotal}
               </div>
-            </OverlayTrigger>
+            </Tooltip>
           )}
         </div>
       )}
@@ -144,7 +144,7 @@ const InventoryCryptTableRow = ({
           <ResultCryptDisciplines value={card.c.Disciplines} />
         </div>
       )}
-      <ConditionalOverlayTrigger
+      <ConditionalTooltip
         placement={placement}
         overlay={<CardPopover card={card.c} />}
         disabled={isMobile}
@@ -155,7 +155,7 @@ const InventoryCryptTableRow = ({
         >
           <ResultCryptName card={card.c} />
         </div>
-      </ConditionalOverlayTrigger>
+      </ConditionalTooltip>
       {isWide ? (
         <>
           <div

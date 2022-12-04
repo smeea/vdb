@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PenFill from 'assets/images/icons/pen-fill.svg';
-import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
+import { Tooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -75,9 +75,9 @@ const AccountChangeName = () => {
         <PenFill />
         <span className="ms-2">Change public name</span>
         {!isMobile ? (
-          <OverlayTooltip text={tooltipText}>
+          <Tooltip text={tooltipText}>
             <span className="question-tooltip ms-1">[?]</span>
-          </OverlayTooltip>
+          </Tooltip>
         ) : (
           <span
             onClick={() => setShowModal(true)}

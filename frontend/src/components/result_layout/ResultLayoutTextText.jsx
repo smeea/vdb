@@ -6,7 +6,7 @@ import {
   CardPopover,
   ResultCryptName,
   ResultLibraryName,
-  ConditionalOverlayTrigger,
+  ConditionalTooltip,
 } from 'components';
 
 const ResultLayoutTextText = (props) => {
@@ -42,7 +42,7 @@ const ResultLayoutTextText = (props) => {
         if (cardid) {
           return (
             <span key={`${cardid}-${idx}`}>
-              <ConditionalOverlayTrigger
+              <ConditionalTooltip
                 placement={props.placement}
                 overlay={
                   <CardPopover
@@ -62,7 +62,7 @@ const ResultLayoutTextText = (props) => {
                     <ResultLibraryName card={libraryCardBase[cardid]} />
                   )}
                 </div>
-              </ConditionalOverlayTrigger>
+              </ConditionalTooltip>
             </span>
           );
         } else {
