@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { countCards, containCard, cryptSort } from 'utils';
 import { ANY } from 'utils/constants';
+import Exclamation from 'assets/images/icons/exclamation-triangle.svg';
 
 const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
   const cardsFrom = Object.values(cardsList);
@@ -51,11 +52,21 @@ const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
 
   let cryptGroups;
   if (cryptGroupMax - cryptGroupMin == 1) {
-    cryptGroups = 'G' + cryptGroupMin + '-' + cryptGroupMax;
+    cryptGroups = ` - G${cryptGroupMin}-${cryptGroupMax}`;
   } else if (cryptGroupMax - cryptGroupMin == 0) {
-    cryptGroups = 'G' + cryptGroupMax;
+    cryptGroups = ` - G${cryptGroupMax}`;
   } else {
-    cryptGroups = 'ERROR IN GROUPS';
+    cryptGroups = (
+      <div className="inline items-center text-red-600 px-3">
+        <Exclamation
+          width="16"
+          heigth="16"
+          viewBox="0 2 16 16"
+          className="inline pe-1"
+        />
+        GROUPS
+      </div>
+    );
   }
 
   const sortedState = useMemo(() => {
