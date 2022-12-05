@@ -2,6 +2,7 @@
 - Fix scroll + swipes
 - Show Deck in search only for logged
 - Crypt min/max for Deck
+- Empty request warning in PDA/TWD on clear form
 
 # FEATURES
 - Check TWD

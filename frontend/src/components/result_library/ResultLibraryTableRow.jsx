@@ -94,11 +94,11 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         </td>
       )}
       {inventoryMode && (
-        <Tooltip
-          placement={isDesktop ? 'left' : 'bottom'}
-          overlay={<UsedPopover cardid={card.Id} />}
-        >
-          <td className="used">
+        <td className="used">
+          <Tooltip
+            placement={isDesktop ? 'left' : 'bottom'}
+            overlay={<UsedPopover cardid={card.Id} />}
+          >
             {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
               <div
                 className={`flex items-center justify-between used px-1 ms-1 ${
@@ -122,8 +122,8 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
                 </div>
               </div>
             )}
-          </td>
-        </Tooltip>
+          </Tooltip>
+        </td>
       )}
       <td
         className={card[BLOOD_COST] ? 'cost blood px-1' : 'cost px-1'}
@@ -145,15 +145,15 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         {card.Discipline && card.Clan && '+'}
         <ResultLibraryDisciplines value={card.Discipline} />
       </td>
-      <ConditionalTooltip
-        placement={placement}
-        overlay={<CardPopover card={card} />}
-        disabled={isMobile}
-      >
-        <td className="name px-1" onClick={() => handleClick(idx)}>
+      <td className="name px-1" onClick={() => handleClick(idx)}>
+        <ConditionalTooltip
+          placement={placement}
+          overlay={<CardPopover card={card} />}
+          disabled={isMobile}
+        >
           <ResultLibraryName card={card} />
-        </td>
-      </ConditionalTooltip>
+        </ConditionalTooltip>
+      </td>
       <td className="burn px-1" onClick={() => handleClick(idx)}>
         <ResultLibraryBurn value={card[BURN_OPTION]} />
         <ResultLibraryTrifle card={card} />

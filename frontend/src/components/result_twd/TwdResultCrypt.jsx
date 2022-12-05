@@ -59,11 +59,11 @@ const TwdResultCrypt = ({ crypt }) => {
     return (
       <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
-          <ConditionalTooltip
-            overlay={<UsedPopover cardid={card.c.Id} />}
-            disabled={isMobile}
-          >
-            <td className="quantity-no-buttons px-1">
+          <td className="quantity-no-buttons px-1">
+            <ConditionalTooltip
+              overlay={<UsedPopover cardid={card.c.Id} />}
+              disabled={isMobile}
+            >
               <div
                 className={
                   inInventory < card.q
@@ -75,8 +75,8 @@ const TwdResultCrypt = ({ crypt }) => {
               >
                 {card.q}
               </div>
-            </td>
-          </ConditionalTooltip>
+            </ConditionalTooltip>
+          </td>
         ) : (
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
@@ -84,14 +84,14 @@ const TwdResultCrypt = ({ crypt }) => {
           <ResultCryptCapacity value={card.c.Capacity} />
         </td>
 
-        <ConditionalTooltip
-          overlay={<CardPopover card={card.c} />}
-          disabled={isMobile}
-        >
-          <td className="name px-1" onClick={() => handleClick(card.c)}>
+        <td className="name px-1" onClick={() => handleClick(card.c)}>
+          <ConditionalTooltip
+            overlay={<CardPopover card={card.c} />}
+            disabled={isMobile}
+          >
             <ResultCryptName card={card.c} />
-          </td>
-        </ConditionalTooltip>
+          </ConditionalTooltip>
+        </td>
 
         <td className="clan px-1" onClick={() => handleClick(card.c)}>
           <ResultClanImage value={card.c.Clan} />

@@ -86,16 +86,14 @@ const TwdResultLibraryKeyCards = ({ library }) => {
         <td className="type" onClick={() => handleClick(card.c)}>
           <ResultLibraryTypeImage value={card.c.Type} />
         </td>
-
-        <ConditionalTooltip
-          overlay={<CardPopover card={card.c} />}
-          disabled={isMobile}
-        >
-          <td className="name px-1" onClick={() => handleClick(card.c)}>
+        <td className="name px-1" onClick={() => handleClick(card.c)}>
+          <ConditionalTooltip
+            overlay={<CardPopover card={card.c} />}
+            disabled={isMobile}
+          >
             <ResultLibraryName card={card.c} />
-          </td>
-        </ConditionalTooltip>
-
+          </ConditionalTooltip>
+        </td>
         {!isMobile && (
           <td className="disciplines" onClick={() => handleClick(card.c)}>
             <ResultLibraryDisciplines value={card.c.Discipline} />

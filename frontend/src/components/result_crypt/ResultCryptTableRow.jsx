@@ -104,11 +104,11 @@ const ResultCryptTableRow = ({
         </td>
       )}
       {inventoryMode && (
-        <Tooltip
-          placement={isDesktop ? 'left' : 'bottom'}
-          overlay={<UsedPopover cardid={card.Id} />}
-        >
-          <td className="used">
+        <td className="used">
+          <Tooltip
+            placement={isDesktop ? 'left' : 'bottom'}
+            overlay={<UsedPopover cardid={card.Id} />}
+          >
             {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
               <div
                 className={`flex items-center justify-between used px-1 ms-1 ${
@@ -132,8 +132,8 @@ const ResultCryptTableRow = ({
                 </div>
               </div>
             )}
-          </td>
-        </Tooltip>
+          </Tooltip>
+        </td>
       )}
       <td
         className={isMobile ? 'capacity px-1' : 'capacity px-2'}
@@ -147,15 +147,15 @@ const ResultCryptTableRow = ({
           value={card.Disciplines}
         />
       </td>
-      <ConditionalTooltip
-        placement={placement}
-        overlay={<CardPopover card={card} />}
-        disabled={isMobile}
-      >
-        <td className="name px-2" onClick={() => handleClick(card)}>
+      <td className="name px-2" onClick={() => handleClick(card)}>
+        <ConditionalTooltip
+          placement={placement}
+          overlay={<CardPopover card={card} />}
+          disabled={isMobile}
+        >
           <ResultCryptName card={card} />
-        </td>
-      </ConditionalTooltip>
+        </ConditionalTooltip>
+      </td>
       {isWide ? (
         <>
           <td className="title pe-2" onClick={() => handleClick(card)}>
