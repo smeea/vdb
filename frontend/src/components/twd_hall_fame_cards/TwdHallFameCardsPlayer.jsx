@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Accordion } from 'react-bootstrap';
+import { Disclosure } from '@headlessui/react';
 import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
 import {
   ResultCryptTotal,
@@ -89,145 +89,134 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
 
   return (
     <>
-      <Accordion.Item eventKey={name}>
-        <Accordion.Header onClick={() => handlePlayerClick()}>
-          <div
-            className={`flex ${
-              isMobile ? 'w-full h-auto' : 'w-75'
-            } pe-1 justify-between items-center`}
-          >
-            <div className="flex w-[55%] items-center">
-              {Object.keys(cards).length}
-              <div className="flex ps-1 pe-3">
-                <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
-              </div>
-              <div className="flex items-center">{name}</div>
+      <Disclosure.Button onClick={() => handlePlayerClick()}>
+        <div
+          className={`flex ${
+            isMobile ? 'w-full h-auto' : 'w-75'
+          } pe-1 justify-between items-center`}
+        >
+          <div className="flex w-[55%] items-center">
+            {Object.keys(cards).length}
+            <div className="flex ps-1 pe-3">
+              <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
             </div>
-            <div className="flex w-[45%] justify-between">
-              <div
-                className="flex whitespace-nowrap px-1 px-md-3"
-                title="First Card add to Hall of Fame / Last Card add to Hall of Fame"
-              >
-                {isMobile
-                  ? `'${firstCardDate.slice(2, 4)}-'${lastCardDate.slice(2, 4)}`
-                  : `${firstCardDate.slice(0, 4)} - ${lastCardDate.slice(
-                      0,
-                      4
-                    )}`}
-              </div>
-              <div className="flex whitespace-nowrap px-1 px-md-3">
-                {isMobile ? 'C:' : 'Crypt: '}
-                {cryptSorted.length}
-              </div>
-              <div className="flex whitespace-nowrap px-1 px-md-3">
-                {isMobile ? 'L:' : 'Library: '}
-                {librarySorted.length}
-              </div>
+            <div className="flex items-center">{name}</div>
+          </div>
+          <div className="flex w-[45%] justify-between">
+            <div
+              className="flex whitespace-nowrap px-1 px-md-3"
+              title="First Card add to Hall of Fame / Last Card add to Hall of Fame"
+            >
+              {isMobile
+                ? `'${firstCardDate.slice(2, 4)}-'${lastCardDate.slice(2, 4)}`
+                : `${firstCardDate.slice(0, 4)} - ${lastCardDate.slice(0, 4)}`}
+            </div>
+            <div className="flex whitespace-nowrap px-1 px-md-3">
+              {isMobile ? 'C:' : 'Crypt: '}
+              {cryptSorted.length}
+            </div>
+            <div className="flex whitespace-nowrap px-1 px-md-3">
+              {isMobile ? 'L:' : 'Library: '}
+              {librarySorted.length}
             </div>
           </div>
-        </Accordion.Header>
-        <Accordion.Body className="p-0">
-          {showPlayer && (
-            <>
-              <ResultCryptTotal
-                cards={cryptSorted}
-                sortMethods={cryptSortMethods}
-                sortMethod={cryptSearchSort}
-                setSortMethod={changeCryptSearchSort}
-                inHoF={true}
-              />
-              <table className="search-crypt-table">
-                <thead className="info-message text-blue">
-                  <tr>
-                    <th />
-                    {!isMobile && <th />}
-                    <th />
-                    <th />
-                    {!isMobile && (
-                      <th className="text-center" title="First Print Date">
-                        Print
-                      </th>
-                    )}
-                    <th
-                      className="text-center"
-                      title="First TWD Appearance Date"
-                    >
-                      Win
+        </div>
+      </Disclosure.Button>
+      <Disclosure.Panel className="p-0">
+        {showPlayer && (
+          <>
+            <ResultCryptTotal
+              cards={cryptSorted}
+              sortMethods={cryptSortMethods}
+              sortMethod={cryptSearchSort}
+              setSortMethod={changeCryptSearchSort}
+              inHoF={true}
+            />
+            <table className="search-crypt-table">
+              <thead className="info-message text-blue">
+                <tr>
+                  <th />
+                  {!isMobile && <th />}
+                  <th />
+                  <th />
+                  {!isMobile && (
+                    <th className="text-center" title="First Print Date">
+                      Print
                     </th>
-                    <th className="text-center" title="Years to Win">
-                      YtW
-                    </th>
-                    <th />
-                  </tr>
-                </thead>
-                <tbody>
-                  {cryptSorted.map((card, idx) => {
-                    return (
-                      <TwdHallFameCardsCard
-                        key={card.Id}
-                        idx={idx}
-                        card={card}
-                        handleClick={handleCardClick}
-                      />
-                    );
-                  })}
-                </tbody>
-              </table>
+                  )}
+                  <th className="text-center" title="First TWD Appearance Date">
+                    Win
+                  </th>
+                  <th className="text-center" title="Years to Win">
+                    YtW
+                  </th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody>
+                {cryptSorted.map((card, idx) => {
+                  return (
+                    <TwdHallFameCardsCard
+                      key={card.Id}
+                      idx={idx}
+                      card={card}
+                      handleClick={handleCardClick}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
 
-              <br />
+            <br />
 
-              <ResultLibraryTotal
-                cards={librarySorted}
-                sortMethods={librarySortMethods}
-                sortMethod={librarySearchSort}
-                setSortMethod={changeLibrarySearchSort}
-                inHoF={true}
-              />
-              <table className="search-library-table">
-                <thead className="info-message text-blue">
-                  <tr>
-                    <th />
-                    <th />
-                    <th />
-                    <th />
-                    {!isMobile && <th />}
-                    {!isMobile && (
-                      <th className="text-center" title="First Print Date">
-                        Print
-                      </th>
-                    )}
-                    <th
-                      className="text-center"
-                      title="First TWD Appearance Date"
-                    >
-                      Win
+            <ResultLibraryTotal
+              cards={librarySorted}
+              sortMethods={librarySortMethods}
+              sortMethod={librarySearchSort}
+              setSortMethod={changeLibrarySearchSort}
+              inHoF={true}
+            />
+            <table className="search-library-table">
+              <thead className="info-message text-blue">
+                <tr>
+                  <th />
+                  <th />
+                  <th />
+                  <th />
+                  {!isMobile && <th />}
+                  {!isMobile && (
+                    <th className="text-center" title="First Print Date">
+                      Print
                     </th>
-                    <th
-                      className="text-center"
-                      title="Years to Win - From release to first TWD appearance"
-                    >
-                      YtW
-                    </th>
-                    <th />
-                  </tr>
-                </thead>
-                <tbody>
-                  {librarySorted.map((card, idx) => {
-                    return (
-                      <TwdHallFameCardsCard
-                        key={card.Id}
-                        idx={idx + cryptSorted.length}
-                        card={card}
-                        handleClick={handleCardClick}
-                      />
-                    );
-                  })}
-                </tbody>
-              </table>
-            </>
-          )}
-        </Accordion.Body>
-      </Accordion.Item>
+                  )}
+                  <th className="text-center" title="First TWD Appearance Date">
+                    Win
+                  </th>
+                  <th
+                    className="text-center"
+                    title="Years to Win - From release to first TWD appearance"
+                  >
+                    YtW
+                  </th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody>
+                {librarySorted.map((card, idx) => {
+                  return (
+                    <TwdHallFameCardsCard
+                      key={card.Id}
+                      idx={idx + cryptSorted.length}
+                      card={card}
+                      handleClick={handleCardClick}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </>
+        )}
+      </Disclosure.Panel>
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}

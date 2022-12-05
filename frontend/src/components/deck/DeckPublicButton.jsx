@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import {
-  ButtonGroup,
-  Spinner,
-  Dropdown,
-  DropdownButton,
-} from 'react-bootstrap';
+import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import {
   Modal,
   Button,

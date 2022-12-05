@@ -41,15 +41,15 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
               />
             </td>
           )}
-          <ConditionalTooltip
-            placement={isNarrow ? 'bottom' : 'right'}
-            overlay={<CardPopover card={card} />}
-            disabled={isMobile}
-          >
-            <td className="name px-2" onClick={() => handleClick(idx)}>
+          <td className="name px-2" onClick={() => handleClick(idx)}>
+            <ConditionalTooltip
+              placement={isNarrow ? 'bottom' : 'right'}
+              overlay={<CardPopover card={card} />}
+              disabled={isMobile}
+            >
               <ResultCryptName card={card} />
-            </td>
-          </ConditionalTooltip>
+            </ConditionalTooltip>
+          </td>
           <td className="clan-group" onClick={() => handleClick()}>
             <div>
               <ResultClanImage value={card.Clan} />
@@ -81,15 +81,15 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
             {card.Discipline && card.Clan && '+'}
             <ResultLibraryDisciplines value={card.Discipline} />
           </td>
-          <ConditionalTooltip
-            placement={isNarrow ? 'bottom' : 'right'}
-            overlay={<CardPopover card={card} />}
-            disabled={isMobile}
-          >
-            <td className="name px-1" onClick={() => handleClick(idx)}>
+          <td className="name px-1" onClick={() => handleClick(idx)}>
+            <ConditionalTooltip
+              placement={isNarrow ? 'bottom' : 'right'}
+              overlay={<CardPopover card={card} />}
+              disabled={isMobile}
+            >
               <ResultLibraryName card={card} />
-            </td>
-          </ConditionalTooltip>
+            </ConditionalTooltip>
+          </td>
           {!isMobile && (
             <td className="burn px-1" onClick={() => handleClick(idx)}>
               <ResultLibraryBurn value={card[BURN_OPTION]} />

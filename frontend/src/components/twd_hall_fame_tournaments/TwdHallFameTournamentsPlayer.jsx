@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion } from 'react-bootstrap';
+import { Disclosure } from '@headlessui/react';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import StarFill from 'assets/images/icons/star-fill.svg';
 import { TwdHallFameDeckHeader } from 'components';
@@ -37,8 +37,8 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
   }
 
   return (
-    <Accordion.Item eventKey={name}>
-      <Accordion.Header>
+    <>
+      <Disclosure.Button>
         <div className="flex items-center">
           {Object.keys(decks).length}
           <div className="flex ps-1 pe-3">
@@ -54,8 +54,8 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
             </div>
           </div>
         </div>
-      </Accordion.Header>
-      <Accordion.Body className="p-0">
+      </Disclosure.Button>
+      <Disclosure.Panel className="p-0">
         {decks.sort(byDate).map((deck) => {
           return (
             <TwdHallFameDeckHeader
@@ -65,8 +65,8 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
             />
           );
         })}
-      </Accordion.Body>
-    </Accordion.Item>
+      </Disclosure.Panel>
+    </>
   );
 };
 

@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-import {
-  Spinner,
-  ButtonGroup,
-  Dropdown,
-  DropdownButton,
-} from 'react-bootstrap';
+import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import Printer from 'assets/images/icons/printer.svg';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import { ButtonIconed, DeckProxySelectModal } from 'components';
 import { cryptSort } from 'utils';
 import { useDeckLibrary } from 'hooks';

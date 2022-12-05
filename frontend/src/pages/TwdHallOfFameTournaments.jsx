@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Accordion } from 'react-bootstrap';
+import { Disclosure } from '@headlessui/react';
 import { TwdHallFameTournamentsPlayer } from 'components';
 
 const TwdHallOfFameTournaments = () => {
@@ -31,7 +31,7 @@ const TwdHallOfFameTournaments = () => {
   return (
     <div className="hof-tournaments-container mx-auto px-0 p-md-3">
       {players && (
-        <Accordion alwaysOpen>
+        <Disclosure>
           {Object.keys(players)
             .sort(byName)
             .sort(byWins)
@@ -42,7 +42,7 @@ const TwdHallOfFameTournaments = () => {
                 decks={players[player]}
               />
             ))}
-        </Accordion>
+        </Disclosure>
       )}
     </div>
   );

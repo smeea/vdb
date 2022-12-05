@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Accordion } from 'react-bootstrap';
-import { Tab } from '@headlessui/react';
+import { Disclosure, Tab } from '@headlessui/react';
 import { TwdHallFameCardsPlayer } from 'components';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
@@ -122,7 +121,7 @@ const TwdHallOfFameCards = () => {
         <Tab.Panels>
           <Tab.Panel>
             {players && (
-              <Accordion alwaysOpen>
+              <Disclosure>
                 {Object.keys(players)
                   .sort(byName)
                   .sort(byTotal)
@@ -133,7 +132,7 @@ const TwdHallOfFameCards = () => {
                       cards={players[player]}
                     />
                   ))}
-              </Accordion>
+              </Disclosure>
             )}
           </Tab.Panel>
           <Tab.Panel>
@@ -143,7 +142,7 @@ const TwdHallOfFameCards = () => {
               active tournaments (till {IGNORED_TOURNAMENTS_DATE})
             </div>
             {players && (
-              <Accordion alwaysOpen>
+              <Disclosure>
                 {Object.keys(players)
                   .sort(byName)
                   .sort(byInnovation)
@@ -158,7 +157,7 @@ const TwdHallOfFameCards = () => {
                       cards={getInnovationCards(players[player])}
                     />
                   ))}
-              </Accordion>
+              </Disclosure>
             )}
           </Tab.Panel>
         </Tab.Panels>
