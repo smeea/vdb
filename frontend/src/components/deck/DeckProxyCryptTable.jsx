@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import Select from 'react-select';
-import { Form } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import {
   CardPopover,
@@ -87,7 +86,7 @@ const DeckProxyCryptTable = ({
       <React.Fragment key={card.c.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           <td className="proxy-selector">
-            <Form.Check
+            <input
               className="px-1"
               type="checkbox"
               id={card.c.Id}

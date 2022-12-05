@@ -1,9 +1,8 @@
 import React from 'react';
-import { FormControl } from 'react-bootstrap';
 
 const TwdSearchFormEventAndButtons = ({ value, onChange }) => {
   return (
-    <FormControl
+    <input
       placeholder="Event Name"
       type="text"
       name="event"

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import {
@@ -56,7 +55,8 @@ const SearchFormTextAndButtons = ({
 
   const OptionsForm = options.map((opt, index) => {
     return (
-      <Form.Check
+      // TODO add labels
+      <input
         key={index}
         name={0}
         value={opt.value}
@@ -78,7 +78,7 @@ const SearchFormTextAndButtons = ({
     <>
       <div className="flex flex-row ps-0 ps-md-1 mx-0 items-center">
         {isMobile ? (
-          <FormControl
+          <input
             placeholder="Card Name / Text / RegEx"
             type="text"
             name={0}
@@ -88,8 +88,9 @@ const SearchFormTextAndButtons = ({
             onChange={onChange}
           />
         ) : (
-          <InputGroup className="px-0">
-            <FormControl
+          <div className="TODO-input-group px-0">
+            <input
+              /* TODO ignore enter */
               className="text-search"
               placeholder="Card Name / Text / RegEx"
               type="text"
@@ -116,7 +117,7 @@ const SearchFormTextAndButtons = ({
                 <X />
               </div>
             </Button>
-          </InputGroup>
+          </div>
         )}
       </div>
       <div className="flex flex-row mx-0 px-1 pt-1">
@@ -152,7 +153,7 @@ const SearchFormTextAndButtons = ({
         searchForm={searchForm}
       />
       {inventoryMode && (
-        <Form.Check
+        <input
           name={0}
           value="hideMissing"
           type="checkbox"

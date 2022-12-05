@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { Form, FormControl } from 'react-bootstrap';
 import { Button } from 'components';
 import { useApp } from 'context';
 
@@ -96,8 +95,8 @@ const DeckCardQuantity = ({
             onFocus={() => setManual(true)}
           >
             {manual ? (
-              <Form className="m-0" onSubmit={handleSubmitButton}>
-                <FormControl
+              <form className="m-0" onSubmit={handleSubmitButton}>
+                <input
                   className="quantity px-1"
                   placeholder=""
                   type="number"
@@ -107,7 +106,7 @@ const DeckCardQuantity = ({
                   onBlur={handleSubmitButton}
                   onChange={handleManualChange}
                 />
-              </Form>
+              </form>
             ) : (
               <>{q == 0 ? <>&nbsp;&nbsp;</> : q}</>
             )}

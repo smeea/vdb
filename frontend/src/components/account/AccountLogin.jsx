@@ -1,17 +1,10 @@
 import React, { useState, useRef } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Spinner,
-} from 'react-bootstrap';
-
+import Spinner from 'assets/images/icons/three-dots.svg';
 import DoorOpenFill from 'assets/images/icons/door-open-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import { Tooltip, ErrorOverlay, Modal } from 'components';
+import { Tooltip, ErrorOverlay, Modal, Button } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -93,7 +86,7 @@ const AccountLogin = () => {
   );
 
   const UsernameForm = (
-    <FormControl
+    <input
       placeholder="New Username"
       type="text"
       name="username"
@@ -107,7 +100,7 @@ const AccountLogin = () => {
 
   const PasswordForm = (
     <>
-      <FormControl
+      <input
         placeholder="Password"
         type={hidePassword ? 'password' : 'text'}
         name="password"
@@ -157,17 +150,17 @@ const AccountLogin = () => {
           </span>
         )}
       </div>
-      <Form className="mb-0" onSubmit={handleSubmitButton}>
+      <form className="mb-0" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {UsernameForm}
-            <InputGroup className="mt-2">{PasswordForm}</InputGroup>
+            <form className="mt-2">{PasswordForm}</form>
           </>
         ) : (
-          <InputGroup>
+          <div className="input-group">
             {UsernameForm}
             {PasswordForm}
-          </InputGroup>
+          </div>
         )}
         <ErrorOverlay
           show={usernameError}
@@ -183,7 +176,7 @@ const AccountLogin = () => {
         >
           {passwordError}
         </ErrorOverlay>
-      </Form>
+      </form>
       {!isMobile ? (
         <div className="flex justify-start text-xs ps-2 pt-1">
           <Tooltip

@@ -7,7 +7,6 @@ import {
   useLoaderData,
   defer,
 } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import At from 'assets/images/icons/at.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
@@ -309,9 +308,9 @@ const Decks = () => {
                 </div>
               </div>
               <div className="flex justify-between items-center pt-2">
-                <Form className="my-0 ps-1">
+                <form className="my-0 ps-1">
                   {username && decks && Object.keys(decks).length > 0 && (
-                    <Form.Check
+                    <input
                       checked={selectFrom == 'my'}
                       onChange={(e) => setSelectFrom(e.target.id)}
                       type="radio"
@@ -321,10 +320,9 @@ const Decks = () => {
                           <b>{isMobile ? 'My' : 'My Decks'}</b>
                         </div>
                       }
-                      inline
                     />
                   )}
-                  <Form.Check
+                  <input
                     checked={selectFrom == 'precons'}
                     onChange={(e) => setSelectFrom(e.target.id)}
                     type="radio"
@@ -334,10 +332,9 @@ const Decks = () => {
                         <b>Precons</b>
                       </div>
                     }
-                    inline
                   />
                   {recentDecks.length > 0 && (
-                    <Form.Check
+                    <input
                       checked={selectFrom == 'recent'}
                       onChange={(e) => setSelectFrom(e.target.id)}
                       type="radio"
@@ -347,10 +344,9 @@ const Decks = () => {
                           <b>Recent</b>
                         </div>
                       }
-                      inline
                     />
                   )}
-                </Form>
+                </form>
                 <div className="flex flex-row space-x-1">
                   {decks && (
                     <Button

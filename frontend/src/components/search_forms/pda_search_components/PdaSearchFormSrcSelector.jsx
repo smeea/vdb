@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 
 const PdaSearchFormSrcSelector = ({ value, onChange }) => {
   return (
@@ -10,7 +9,7 @@ const PdaSearchFormSrcSelector = ({ value, onChange }) => {
         ['my', 'My'],
       ].map((i, idx) => {
         return (
-          <Form.Check
+          <input
             key={idx}
             checked={value == i[0]}
             onChange={onChange}

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import {
-  Form,
-  FormControl,
   Dropdown,
   DropdownButton,
   ButtonGroup,
@@ -334,7 +332,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
         {decks[deck.deckid] && (
           <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
             <td className="select px-1">
-              <Form.Check
+              <input
                 type="checkbox"
                 checked={selectedDecks[deck.deckid] ?? false}
                 onChange={() => toggleSelect(deck.deckid)}
@@ -479,7 +477,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
             <thead>
               <tr>
                 <th className="select px-1">
-                  <Form.Check
+                  <input
                     type="checkbox"
                     checked={isSelectedAll}
                     onChange={() => toggleSelectAll()}
@@ -510,7 +508,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                   </th>
                 )}
                 <th className="name truncate">
-                  <FormControl
+                  <input
                     placeholder="Filter by Deck or Card Name"
                     type="text"
                     name="text"
@@ -535,7 +533,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                       isMobile ? '' : 'flex justify-end items-center '
                     } px-1`}
                   >
-                    <Form.Check
+                    <input
                       className={isMobile ? '' : 'pt-0.5 pe-3'}
                       type="checkbox"
                       id="revFilter"

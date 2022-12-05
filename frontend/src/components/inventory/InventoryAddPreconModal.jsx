@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { FormControl } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
 import {
@@ -231,7 +230,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             <tr>
               {!isMobile && <th className="clan"></th>}
               <th className="name">
-                <FormControl
+                <input
                   placeholder="Filter by Name"
                   type="text"
                   name="text"
@@ -243,7 +242,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               </th>
               {isDesktop && <th className="preview"></th>}
               <th className="set">
-                <FormControl
+                <input
                   placeholder="Filter by Set"
                   type="text"
                   name="text"

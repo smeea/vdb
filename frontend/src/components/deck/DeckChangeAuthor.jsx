@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import { Button } from 'components';
@@ -40,12 +39,10 @@ const DeckChangeAuthor = ({ deck }) => {
   };
 
   return (
-    <Form className="my-0" onSubmit={handleSubmitButton}>
-      <InputGroup>
-        <InputGroup.Text title="Author">
-          <PersonFill />
-        </InputGroup.Text>
-        <FormControl
+    <form className="my-0" onSubmit={handleSubmitButton}>
+      <div className="input-group">
+        <PersonFill />
+        <input
           type="text"
           className="form-control"
           value={state}
@@ -58,8 +55,8 @@ const DeckChangeAuthor = ({ deck }) => {
             <Check2 />
           </Button>
         )}
-      </InputGroup>
-    </Form>
+      </div>
+    </form>
   );
 };
 

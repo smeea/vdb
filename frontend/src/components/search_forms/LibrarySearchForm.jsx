@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import { Form } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
@@ -211,7 +210,7 @@ const LibrarySearchForm = () => {
   }, [preresults]);
 
   return (
-    <Form onSubmit={handleSubmitButton}>
+    <form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
         value={libraryFormState.text}
         onChange={handleTextChange}
@@ -307,7 +306,7 @@ const LibrarySearchForm = () => {
           </div>
         </>
       )}
-    </Form>
+    </form>
   );
 };
 

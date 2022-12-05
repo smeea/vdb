@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Form, InputGroup, FormControl } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import { Button } from 'components';
 
@@ -19,9 +18,9 @@ const SeatingRandomDeckAddForm = ({ addDeck }) => {
   };
 
   return (
-    <Form className="mb-0" onSubmit={handleSubmit}>
-      <InputGroup>
-        <FormControl
+    <form className="mb-0" onSubmit={handleSubmit}>
+      <div className="input-group">
+        <input
           placeholder="Add Random Deck"
           type="text"
           value={name}
@@ -30,8 +29,8 @@ const SeatingRandomDeckAddForm = ({ addDeck }) => {
         <Button variant="primary" type="submit">
           <Check2 />
         </Button>
-      </InputGroup>
-    </Form>
+      </div>
+    </form>
   );
 };
 

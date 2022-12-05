@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
   const titlesLeftforms = [
@@ -11,7 +10,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
     ['1 vote', '1 vote (titled)'],
     ['2 votes', '2 votes (titled)'],
   ].map((i, index) => (
-    <Form.Check
+    <input
       key={index}
       name="titles"
       value={i[0]}
@@ -32,7 +31,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
     ['magaji', 'Magaji'],
     ['none', 'Non-titled'],
   ].map((i, index) => (
-    <Form.Check
+    <input
       key={index}
       name="titles"
       value={i[0]}

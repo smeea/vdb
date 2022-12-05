@@ -1,14 +1,8 @@
 import React, { useState, useRef } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Spinner,
-} from 'react-bootstrap';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import PenFill from 'assets/images/icons/pen-fill.svg';
-import { Tooltip, ErrorOverlay, Modal } from 'components';
+import { Tooltip, ErrorOverlay, Modal, Button } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -87,9 +81,9 @@ const AccountChangeName = () => {
           </span>
         )}
       </div>
-      <Form className="my-1" onSubmit={handleSubmitButton}>
-        <InputGroup>
-          <FormControl
+      <form className="my-1" onSubmit={handleSubmitButton}>
+        <div className="input-group">
+          <input
             placeholder="Public name"
             type="text"
             name="publicName"
@@ -112,13 +106,13 @@ const AccountChangeName = () => {
               <Check2 />
             </Button>
           )}
-        </InputGroup>
+        </div>
         <ErrorOverlay
           show={connectionError}
           target={refName.current}
           placement="bottom"
         ></ErrorOverlay>
-      </Form>
+      </form>
       {showModal && (
         <Modal handleClose={() => setShowModal(false)}>
           <div>{tooltipText}</div>

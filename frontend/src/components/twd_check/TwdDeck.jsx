@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { FormControl } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import Download from 'assets/images/icons/download.svg';
 import Upload from 'assets/images/icons/upload.svg';
@@ -114,7 +113,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
           </div>
         </div>
         <div className="xl:basis-10/12 px-0">
-          <FormControl
+          <input
             className="deck-import"
             as="textarea"
             rows={window.innerHeight / 21 - 14}

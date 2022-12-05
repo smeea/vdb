@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const CryptSearchFormTraits = ({ value, onChange }) => {
@@ -18,7 +17,7 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
     ['prevent', 'Prevent'],
     ['press', 'Press'],
   ].map((i, index) => (
-    <Form.Check
+    <input
       key={index}
       name="traits"
       value={i[0]}
@@ -46,7 +45,7 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
     .filter((i) => i[0] !== 'playtest' || playtest)
     .map((i, index) => {
       return (
-        <Form.Check
+        <input
           key={index}
           name="traits"
           value={i[0]}

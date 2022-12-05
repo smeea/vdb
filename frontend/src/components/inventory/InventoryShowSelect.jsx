@@ -1,10 +1,9 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 
-function InventoryShowSelect(props) {
+const InventoryShowSelect = ({category, setCategory}) => {
   return (
-    <Form className="my-0">
-      <Form.Check
+    <form className="my-0">
+      <input
         className="px-2"
         type="radio"
         id="all"
@@ -13,10 +12,10 @@ function InventoryShowSelect(props) {
             <b>Show All</b>
           </div>
         }
-        checked={props.category == 'all'}
-        onChange={(e) => props.setCategory(e.target.id)}
+        checked={category == 'all'}
+        onChange={(e) => setCategory(e.target.id)}
       />
-      <Form.Check
+      <input
         className="px-2"
         type="radio"
         id="ok"
@@ -25,10 +24,10 @@ function InventoryShowSelect(props) {
             <b>Only Owned</b>
           </div>
         }
-        checked={props.category == 'ok'}
-        onChange={(e) => props.setCategory(e.target.id)}
+        checked={category == 'ok'}
+        onChange={(e) => setCategory(e.target.id)}
       />
-      <Form.Check
+      <input
         className="px-2"
         type="radio"
         id="nok"
@@ -37,10 +36,10 @@ function InventoryShowSelect(props) {
             <b>Only Problems</b>
           </div>
         }
-        checked={props.category == 'nok'}
-        onChange={(e) => props.setCategory(e.target.id)}
+        checked={category == 'nok'}
+        onChange={(e) => setCategory(e.target.id)}
       />
-    </Form>
+    </form>
   );
 }
 

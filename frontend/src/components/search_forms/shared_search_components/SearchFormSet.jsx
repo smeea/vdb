@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 import Select from 'react-select';
 import {
   SearchAdditionalForms,
@@ -84,7 +83,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   const ageForm = ageFormOptions.map((i) => {
     return (
-      <Form.Check
+      <input
         key={i.value}
         name="set"
         value={i.value}
@@ -125,7 +124,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   const printForm = printFormOptions.map((i) => {
     return (
-      <Form.Check
+      <input
         key={i.value}
         name={name}
         value={i.value}

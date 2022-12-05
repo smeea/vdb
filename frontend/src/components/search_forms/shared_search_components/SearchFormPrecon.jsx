@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 import Select from 'react-select';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
 import { ResultLibraryClan } from 'components';
@@ -131,7 +130,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   const printForm = printFormOptions.map((i) => {
     return (
-      <Form.Check
+      <input
         key={i.value}
         name="precon"
         value={i.value}

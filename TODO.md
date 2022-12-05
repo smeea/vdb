@@ -15,3 +15,4 @@
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 
 # TAILWIND MIGRATION
+- Style for className="input-group"

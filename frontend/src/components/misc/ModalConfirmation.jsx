@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
@@ -49,9 +48,9 @@ const ModalConfirmation = ({
       >
         {mainText && <div className="font-bold text-blue">{mainText}</div>}
         {withConfirmation && (
-          <Form onSubmit={confirm}>
-            <InputGroup>
-              <FormControl
+          <form onSubmit={confirm}>
+            <div className="form-control">
+              <input
                 placeholder="Type 'YES' to confirm"
                 name="text"
                 value={confirmation}
@@ -59,7 +58,7 @@ const ModalConfirmation = ({
                 autoFocus={true}
                 ref={refConfirmation}
               />
-            </InputGroup>
+            </div>
             <ErrorOverlay
               show={errorConfirmation}
               target={refConfirmation.current}
@@ -68,7 +67,7 @@ const ModalConfirmation = ({
             >
               Type &apos;YES&apos; to confirm
             </ErrorOverlay>
-          </Form>
+          </form>
         )}
         {buttonText && (
           <Button variant="danger" onClick={confirm}>

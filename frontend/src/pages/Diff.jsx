@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
@@ -252,13 +251,13 @@ const Diff = () => {
                 Deck You Edit:
               </div>
               {selectFrom === 'from-url' ? (
-                <Form
+                <form
                   name="from"
                   onSubmit={handleUrlSubmit}
                   className="min-w-[270px] my-0"
                 >
-                  <InputGroup>
-                    <FormControl
+                  <div className="input-group">
+                    <input
                       placeholder="First Deck (ID or URL)"
                       type="text"
                       name="from"
@@ -277,8 +276,8 @@ const Diff = () => {
                         <ArrowLeftRight />
                       </Button>
                     )}
-                  </InputGroup>
-                </Form>
+                  </div>
+                </form>
               ) : (
                 <div
                   className={
@@ -331,9 +330,9 @@ const Diff = () => {
                 </div>
               )}
               <div className="flex justify-between items-center pt-1">
-                <Form className="py-1 my-0 px-2">
+                <form className="py-1 my-0 px-2">
                   {username && decks && Object.keys(decks).length > 0 && (
-                    <Form.Check
+                    <input
                       checked={selectFrom == 'from-my'}
                       onChange={(e) => setSelectFrom(e.target.id)}
                       type="radio"
@@ -346,7 +345,7 @@ const Diff = () => {
                       inline
                     />
                   )}
-                  <Form.Check
+                  <input
                     checked={selectFrom == 'from-precons'}
                     onChange={(e) => setSelectFrom(e.target.id)}
                     type="radio"
@@ -359,7 +358,7 @@ const Diff = () => {
                     inline
                   />
                   {recentDecks.length > 0 && (
-                    <Form.Check
+                    <input
                       checked={selectFrom == 'from-recent'}
                       onChange={(e) => setSelectFrom(e.target.id)}
                       type="radio"
@@ -372,7 +371,7 @@ const Diff = () => {
                       inline
                     />
                   )}
-                  <Form.Check
+                  <input
                     checked={selectFrom == 'from-url'}
                     onChange={(e) => setSelectFrom(e.target.id)}
                     type="radio"
@@ -384,7 +383,7 @@ const Diff = () => {
                     }
                     inline
                   />
-                </Form>
+                </form>
               </div>
             </div>
             {!isMobile && (
@@ -399,13 +398,13 @@ const Diff = () => {
                 Show Changes Against:
               </div>
               {selectTo === 'to-url' ? (
-                <Form
+                <form
                   name="to"
                   onSubmit={handleUrlSubmit}
                   className="min-w-[270px] my-0"
                 >
-                  <InputGroup>
-                    <FormControl
+                  <div className="input-group">
+                    <input
                       placeholder="First Deck (ID or URL)"
                       type="text"
                       name="to"
@@ -415,8 +414,8 @@ const Diff = () => {
                     <Button variant="primary" type="submit">
                       <Check2 />
                     </Button>
-                  </InputGroup>
-                </Form>
+                  </div>
+                </form>
               ) : (
                 <div
                   className={
@@ -462,9 +461,9 @@ const Diff = () => {
                 </div>
               )}
               <div className="flex justify-between items-center pt-1">
-                <Form className="py-1 my-0 px-2">
+                <form className="py-1 my-0 px-2">
                   {username && decks && Object.keys(decks).length > 0 && (
-                    <Form.Check
+                    <input
                       checked={selectTo == 'to-my'}
                       onChange={(e) => setSelectTo(e.target.id)}
                       type="radio"
@@ -477,7 +476,7 @@ const Diff = () => {
                       inline
                     />
                   )}
-                  <Form.Check
+                  <input
                     checked={selectTo == 'to-precons'}
                     onChange={(e) => setSelectTo(e.target.id)}
                     type="radio"
@@ -490,7 +489,7 @@ const Diff = () => {
                     inline
                   />
                   {recentDecks.length > 0 && (
-                    <Form.Check
+                    <input
                       checked={selectTo == 'to-recent'}
                       onChange={(e) => setSelectTo(e.target.id)}
                       type="radio"
@@ -503,7 +502,7 @@ const Diff = () => {
                       inline
                     />
                   )}
-                  <Form.Check
+                  <input
                     checked={selectTo == 'to-url'}
                     onChange={(e) => setSelectTo(e.target.id)}
                     type="radio"
@@ -515,7 +514,7 @@ const Diff = () => {
                     }
                     inline
                   />
-                </Form>
+                </form>
               </div>
             </div>
           </div>

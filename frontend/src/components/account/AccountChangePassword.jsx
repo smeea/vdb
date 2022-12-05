@@ -1,16 +1,10 @@
 import React, { useState, useRef } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Spinner,
-} from 'react-bootstrap';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import LockFill from 'assets/images/icons/lock-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { ErrorOverlay } from 'components';
+import { Button, ErrorOverlay } from 'components';
 import { userServices } from 'services';
 import { useApp } from 'context';
 
@@ -78,7 +72,7 @@ const AccountChangePassword = () => {
 
   const OldPasswordForm = (
     <>
-      <FormControl
+      <input
         className={isMobile ? 'mb-2' : ''}
         placeholder="Old password"
         type={hidePassword ? 'password' : 'text'}
@@ -93,7 +87,7 @@ const AccountChangePassword = () => {
 
   const NewPasswordForm = (
     <>
-      <FormControl
+      <input
         placeholder="New password"
         type={hidePassword ? 'password' : 'text'}
         name="newPassword"
@@ -134,17 +128,17 @@ const AccountChangePassword = () => {
         <LockFill />
         <span className="ms-2">Change password</span>
       </div>
-      <Form className="my-1" onSubmit={handleSubmitButton}>
+      <form className="my-1" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {OldPasswordForm}
-            <InputGroup>{NewPasswordForm}</InputGroup>
+            <div className="input-group">{NewPasswordForm}</div>
           </>
         ) : (
-          <InputGroup>
+          <div className="input-group">
             {OldPasswordForm}
             {NewPasswordForm}
-          </InputGroup>
+          </div>
         )}
         <ErrorOverlay
           show={passwordError}
@@ -153,7 +147,7 @@ const AccountChangePassword = () => {
         >
           {passwordError}
         </ErrorOverlay>
-      </Form>
+      </form>
     </div>
   );
 };

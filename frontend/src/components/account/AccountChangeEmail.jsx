@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Form, FormControl, InputGroup, Spinner } from 'react-bootstrap';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
@@ -69,7 +69,7 @@ const AccountChangeEmail = () => {
   const tooltipText = <>Email is for password recovery only.</>;
 
   const EmailForm = (
-    <FormControl
+    <input
       className={isMobile ? 'mb-2' : ''}
       placeholder="New email"
       type="email"
@@ -82,7 +82,7 @@ const AccountChangeEmail = () => {
 
   const PasswordFormButton = (
     <>
-      <FormControl
+      <input
         placeholder="Password"
         type={hidePassword ? 'password' : 'text'}
         name="password"
@@ -134,17 +134,17 @@ const AccountChangeEmail = () => {
           </span>
         )}
       </div>
-      <Form className="my-1" onSubmit={handleSubmitButton}>
+      <form className="my-1" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {EmailForm}
-            <InputGroup>{PasswordFormButton}</InputGroup>
+            <div className="input-group">{PasswordFormButton}</div>
           </>
         ) : (
-          <InputGroup>
+          <div className="input-group">
             {EmailForm}
             {PasswordFormButton}
-          </InputGroup>
+          </div>
         )}
         <ErrorOverlay
           show={passwordError}
@@ -153,7 +153,7 @@ const AccountChangeEmail = () => {
         >
           {passwordError}
         </ErrorOverlay>
-      </Form>
+      </form>
       {showModal && (
         <Modal handleClose={() => setShowModal(false)}>
           <div>{tooltipText}</div>

@@ -1,16 +1,10 @@
 import React, { useState, useRef } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Spinner,
-} from 'react-bootstrap';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import PersonPlusFill from 'assets/images/icons/person-plus-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import { ErrorOverlay } from 'components';
+import { Button, ErrorOverlay } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -61,7 +55,7 @@ const AccountRegister = () => {
   };
 
   const UsernameForm = (
-    <FormControl
+    <input
       placeholder="New Username"
       type="text"
       name="username"
@@ -73,7 +67,7 @@ const AccountRegister = () => {
   );
 
   const EmailForm = (
-    <FormControl
+    <input
       className="mt-2"
       placeholder={`Email (Optional${
         isMobile ? '' : ', only for password reset'
@@ -87,7 +81,7 @@ const AccountRegister = () => {
 
   const PasswordForm = (
     <>
-      <FormControl
+      <input
         placeholder="Password"
         type={hidePassword ? 'password' : 'text'}
         name="password"
@@ -125,19 +119,19 @@ const AccountRegister = () => {
         </div>
         Create account
       </div>
-      <Form className="mb-2" onSubmit={handleSubmitButton}>
+      <form className="mb-2" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {UsernameForm}
             {EmailForm}
-            <InputGroup className="mt-2">{PasswordForm}</InputGroup>
+            <form className="mt-2">{PasswordForm}</form>
           </>
         ) : (
           <>
-            <InputGroup>
+            <div className="input-group">
               {UsernameForm}
               {PasswordForm}
-            </InputGroup>
+            </div>
             {EmailForm}
           </>
         )}
@@ -155,7 +149,7 @@ const AccountRegister = () => {
         >
           {connectionError}
         </ErrorOverlay>
-      </Form>
+      </form>
     </>
   );
 };

@@ -220,9 +220,8 @@ div.border-bl
   .react-select-tags__input-container
     display: none
 
-.form-control,
-.form-control:focus
-  background: var(--bg-primary) !important
+input.quantity, input.quantity:focus
+  background: var(--bg-primary)
   border-color: var(--bg-secondary)
   color: var(--fg-primary)
   &::placeholder
@@ -230,6 +229,11 @@ div.border-bl
     opacity: .45
   &.text-search
     border-color: var(--border-secondary)
+
+input.text-search,
+input.text-search:focus
+  background: var(--bg-primary)
+  border-color: var(--border-secondary)
 
 .form-check-input
   background: var(--bg-checkbox)

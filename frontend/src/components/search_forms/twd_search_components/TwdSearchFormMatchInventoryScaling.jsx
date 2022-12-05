@@ -1,9 +1,8 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 
 const TwdSearchFormMatchInventoryScaling = ({ value, target, onChange }) => {
   return (
-    <Form.Check
+    <input
       type="checkbox"
       id={target}
       htmlFor={target}

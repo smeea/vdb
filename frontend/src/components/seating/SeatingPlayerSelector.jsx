@@ -1,5 +1,4 @@
 import React from 'react';
-import { InputGroup, FormControl } from 'react-bootstrap';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
@@ -45,8 +44,8 @@ const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
   };
 
   return (
-    <InputGroup>
-      <FormControl
+    <div className="input-group">
+      <input
         placeholder="Disabled"
         type="text"
         value={player.state ? (player.random ? 'RANDOM' : player.name) : ''}
@@ -65,7 +64,7 @@ const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
           <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
         )}
       </div>
-    </InputGroup>
+    </div>
   );
 };
 

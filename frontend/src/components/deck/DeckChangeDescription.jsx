@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import ChevronBarExpand from 'assets/images/icons/chevron-bar-expand.svg';
 import ChevronBarContract from 'assets/images/icons/chevron-bar-contract.svg';
@@ -42,12 +41,12 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   };
 
   return (
-    <Form className="my-0" onSubmit={handleSubmitButton}>
-      <InputGroup>
-        <InputGroup.Text title="Description">
+    <form className="my-0" onSubmit={handleSubmitButton}>
+      <div className="input-group">
+        <div title="Description">
           <ChatLeftQuoteFill />
-        </InputGroup.Text>
-        <FormControl
+        </div>
+        <input
           as={folded ? 'input' : 'textarea'}
           rows={12}
           type="text"
@@ -71,8 +70,8 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
             <Check2 />
           </Button>
         )}
-      </InputGroup>
-    </Form>
+      </div>
+    </form>
   );
 };
 

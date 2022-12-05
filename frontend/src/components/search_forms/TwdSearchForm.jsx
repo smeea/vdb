@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import { Form, Spinner } from 'react-bootstrap';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
@@ -214,7 +214,7 @@ const TwdSearchForm = ({ error, setError }) => {
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   return (
-    <Form onSubmit={handleSubmitButton}>
+    <form onSubmit={handleSubmitButton}>
       <div className="flex flex-row justify-between pb-2 mx-0">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
@@ -304,7 +304,7 @@ const TwdSearchForm = ({ error, setError }) => {
         </div>
       </div>
       <div className="flex flex-row justify-end pb-1 pe-1 mx-0">
-        <Form.Check
+        <input
           name="traits"
           value="star"
           type="checkbox"
@@ -350,7 +350,7 @@ const TwdSearchForm = ({ error, setError }) => {
         </div>
       </div>
       <div className="flex flex-row justify-end pb-1 pe-1 mx-0">
-        <Form.Check
+        <input
           name="traits"
           value="monoclan"
           type="checkbox"
@@ -458,7 +458,7 @@ const TwdSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-    </Form>
+    </form>
   );
 };
 

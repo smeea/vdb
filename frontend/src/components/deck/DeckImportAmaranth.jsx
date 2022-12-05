@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FormControl, Spinner } from 'react-bootstrap';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp, deckAdd } from 'context';
 import { deckServices } from 'services';
@@ -181,7 +181,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
       title="Import from Amaranth"
     >
       <div>
-        <FormControl
+        <input
           placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
           className="deck-import mb-3"
           type="text"

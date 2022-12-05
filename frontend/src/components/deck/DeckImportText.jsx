@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FormControl } from 'react-bootstrap';
 import { Modal, Button, ErrorOverlay } from 'components';
 import { useApp, deckAdd } from 'context';
 import { useDeckImport } from 'hooks';
@@ -91,7 +90,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       title="Import from Text"
     >
       <div>
-        <FormControl
+        <input
           as="textarea"
           className="deck-import mb-3"
           rows={isMobile ? '20' : '25'}

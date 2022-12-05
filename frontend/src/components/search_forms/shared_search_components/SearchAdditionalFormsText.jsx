@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useImmer } from 'use-immer';
-import { Form, FormControl } from 'react-bootstrap';
 import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
@@ -53,7 +52,7 @@ const SearchAdditionalFormsText = ({
   for (let i = 1; i < value.length; i++) {
     forms.push(
       <div key={i} className="flex flex-row px-0 mx-0 pt-2 items-center">
-        <FormControl
+        <input
           placeholder="Card Name / Text / RegEx"
           type="text"
           name={i}
@@ -80,7 +79,7 @@ const SearchAdditionalFormsText = ({
             <div className="flex flex-col space-x-2 items-start">
               {options.map((opt, index) => {
                 return (
-                  <Form.Check
+                  <input
                     key={index}
                     name={i}
                     value={opt.value}

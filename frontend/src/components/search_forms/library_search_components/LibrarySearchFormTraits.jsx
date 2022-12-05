@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 import { useApp } from 'context';
 
 const LibrarySearchFormTraits = ({ value, onChange }) => {
@@ -20,7 +19,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
     ['combat ends', 'Combat Ends'],
     ['enter combat', 'Enter Combat'],
   ].map((i, index) => (
-    <Form.Check
+    <input
       key={index}
       name="traits"
       value={i[0]}
@@ -49,7 +48,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
   ]
     .filter((i) => i[0] !== 'playtest' || playtest)
     .map((i, index) => (
-      <Form.Check
+      <input
         key={index}
         name="traits"
         value={i[0]}

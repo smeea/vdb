@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Form, FormControl } from 'react-bootstrap';
 import { Button } from 'components';
 import { useApp, inventoryCardChange } from 'context';
 
@@ -88,8 +87,8 @@ const InventoryCardQuantity = ({
             onFocus={() => setManual(true)}
           >
             {manual ? (
-              <Form className="m-0" onSubmit={handleSubmitButton}>
-                <FormControl
+              <form className="m-0" onSubmit={handleSubmitButton}>
+                <input
                   className="quantity px-1"
                   placeholder=""
                   type="number"
@@ -99,7 +98,7 @@ const InventoryCardQuantity = ({
                   onBlur={handleSubmitButton}
                   onChange={handleManualChange}
                 />
-              </Form>
+              </form>
             ) : (
               <>{state == 0 ? <>&nbsp;</> : state}</>
             )}

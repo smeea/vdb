@@ -1,13 +1,7 @@
 import React, { useState, useRef } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Spinner,
-} from 'react-bootstrap';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import { ErrorOverlay } from 'components';
+import { Button, ErrorOverlay } from 'components';
 
 const AccountPlaytestAdd = ({
   playtesters,
@@ -68,9 +62,9 @@ const AccountPlaytestAdd = ({
   };
 
   return (
-    <Form className="mb-0" onSubmit={handleSubmit}>
-      <InputGroup>
-        <FormControl
+    <form className="mb-0" onSubmit={handleSubmit}>
+      <div className="input-group">
+        <input
           placeholder="Add Playtester (login)"
           type="text"
           name="username"
@@ -87,11 +81,11 @@ const AccountPlaytestAdd = ({
             <Spinner animation="border" size="sm" />
           </Button>
         )}
-      </InputGroup>
+      </div>
       <ErrorOverlay show={error} target={ref.current} placement="bottom">
         {error}
       </ErrorOverlay>
-    </Form>
+    </form>
   );
 };
 

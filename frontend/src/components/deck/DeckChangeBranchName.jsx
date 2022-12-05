@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PaletteFill from 'assets/images/icons/palette-fill.svg';
 import { Button } from 'components';
@@ -40,14 +39,10 @@ const DeckChangeBranchName = ({ deck }) => {
   };
 
   return (
-    <Form className="my-0" onSubmit={handleSubmitButton}>
-      <InputGroup>
-        {isMobile && (
-          <InputGroup.Text>
-            <PaletteFill />
-          </InputGroup.Text>
-        )}
-        <FormControl
+    <form className="my-0" onSubmit={handleSubmitButton}>
+      <div className="input-group">
+        {isMobile && <PaletteFill />}
+        <input
           type="text"
           className="form-control"
           value={state}
@@ -60,8 +55,8 @@ const DeckChangeBranchName = ({ deck }) => {
             <Check2 />
           </Button>
         )}
-      </InputGroup>
-    </Form>
+      </div>
+    </form>
   );
 };
 

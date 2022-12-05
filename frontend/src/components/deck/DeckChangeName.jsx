@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Form, FormControl, InputGroup } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import Snow from 'assets/images/icons/snow.svg';
 import TagFill from 'assets/images/icons/tag-fill.svg';
@@ -43,12 +42,12 @@ const DeckChangeName = ({ deck }) => {
   };
 
   return (
-    <Form className="my-0" onSubmit={handleSubmitButton}>
-      <InputGroup>
-        <InputGroup.Text title="Deck Name">
+    <form className="my-0" onSubmit={handleSubmitButton}>
+      <div className="input-group">
+        <div title="Deck Name">
           <TagFill />
-        </InputGroup.Text>
-        <FormControl
+        </div>
+        <input
           type="text"
           className="form-control"
           value={state}
@@ -60,16 +59,14 @@ const DeckChangeName = ({ deck }) => {
           (deck.deckid !== 'deck' &&
             deck.deckid.length !== 32 &&
             !deck.deckid.includes(':'))) && (
-          <InputGroup.Text
-            title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}
-          >
+          <div title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}>
             {isPublic ? <PeopleFill /> : <TrophyFill />}
-          </InputGroup.Text>
+          </div>
         )}
         {isNonEditable && (
-          <InputGroup.Text title="Deck is non-editable and will never change">
+          <div title="Deck is non-editable and will never change">
             <Snow width="16" height="23" viewBox="0 0 16 16" />
-          </InputGroup.Text>
+          </div>
         )}
         {isAuthor && !isPublic && <DeckFreezeButton deck={deck} />}
 
@@ -82,8 +79,8 @@ const DeckChangeName = ({ deck }) => {
             <Check2 />
           </Button>
         )}
-      </InputGroup>
-    </Form>
+      </div>
+    </form>
   );
 };
 

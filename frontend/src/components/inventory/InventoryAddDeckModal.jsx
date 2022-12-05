@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { Form, FormControl } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -278,7 +277,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               {!isMobile && <th className="inventory"></th>}
               {!isMobile && <th className="clan"></th>}
               <th className="name">
-                <FormControl
+                <input
                   placeholder="Filter by Name"
                   type="text"
                   name="text"
@@ -304,7 +303,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               )}
               <th className="buttons">
                 <div className="flex justify-end items-center px-1">
-                  <Form.Check
+                  <input
                     className="pe-2"
                     type="checkbox"
                     id="revFilter"

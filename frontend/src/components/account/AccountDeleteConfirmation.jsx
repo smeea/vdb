@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Form, FormControl, InputGroup, Spinner } from 'react-bootstrap';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import { Modal, Button, ErrorOverlay } from 'components';
@@ -68,9 +68,9 @@ const AccountDeleteConfirmation = ({ setShow }) => {
           via URL anymore.
         </div>
         <div>
-          <Form className="my-2" onSubmit={handleSubmitButton}>
-            <InputGroup>
-              <FormControl
+          <form className="my-2" onSubmit={handleSubmitButton}>
+            <div className="input-group">
+              <input
                 placeholder="Enter password"
                 type={hidePassword ? 'password' : 'text'}
                 name="password"
@@ -98,7 +98,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
               <Button variant="primary" onClick={() => setShow(false)}>
                 Cancel
               </Button>
-            </InputGroup>
+            </div>
             <ErrorOverlay
               show={emptyPassword}
               target={refPassword.current}
@@ -120,7 +120,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
               target={refPassword.current}
               placement="bottom"
             ></ErrorOverlay>
-          </Form>
+          </form>
         </div>
       </Modal>
     </>
