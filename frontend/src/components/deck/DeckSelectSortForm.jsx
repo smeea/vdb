@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'components';
+import { Menu } from '@headlessui/react';
 import SortDown from 'assets/images/icons/sort-down.svg';
 
 const DeckSelectSortForm = ({ onChange }) => {

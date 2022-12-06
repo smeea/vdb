@@ -24,10 +24,7 @@ import TwdHallOfFameCards from 'pages/TwdHallOfFameCards.jsx';
 import TwdHallOfFameTournaments from 'pages/TwdHallOfFameTournaments.jsx';
 import TwdCardsHistory from 'pages/TwdCardsHistory.jsx';
 import TwdCheck from 'pages/TwdCheck.jsx';
-
 import { loader as deckLoader } from 'pages/Decks.jsx';
-
-import '~/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'assets/css/style.sass';
 
 const App = () => {
