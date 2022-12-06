@@ -1,28 +1,28 @@
 import React from 'react';
-import { Dropdown } from 'react-bootstrap';
+import { Menu } from '@headlessui/react';
 import SortDown from 'assets/images/icons/sort-down.svg';
 
 const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
   return (
-    <Dropdown title="Sort Crypt" className="inline">
-      <Dropdown.Toggle variant="primary">
+    <Menu title="Sort Crypt" className="inline">
+      <Menu.Button variant="primary">
         <div className="flex justify-center items-center">
           <div className="flex pe-1">
             <SortDown />
           </div>
           {sortMethods[sortMethod]}
         </div>
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
+      </Menu.Button>
+      <Menu.Items>
         {Object.keys(sortMethods).map((i, index) => {
           return (
-            <Dropdown.Item key={index} href="" onClick={() => setSortMethod(i)}>
-              Sort by {i}
-            </Dropdown.Item>
+            <Menu.Item key={index}>
+              <div onClick={() => setSortMethod(i)}>Sort by {i}</div>
+            </Menu.Item>
           );
         })}
-      </Dropdown.Menu>
-    </Dropdown>
+      </Menu.Items>
+    </Menu>
   );
 };
 

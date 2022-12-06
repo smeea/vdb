@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Dropdown, Spinner } from 'react-bootstrap';
+import { Menu } from '@headlessui/react';
+import Spinner from 'assets/images/icons/three-dots.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ButtonIconed, ModalConfirmation } from 'components';
 import { countCards } from 'utils';
@@ -54,9 +55,11 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
   return (
     <>
       {isDropdown ? (
-        <Dropdown.Item onClick={() => setShowConfirmation(true)}>
-          {isPublished ? 'Remove from Public' : 'Make Public'}
-        </Dropdown.Item>
+        <Menu.Item>
+          <div onClick={() => setShowConfirmation(true)}>
+            {isPublished ? 'Remove from Public' : 'Make Public'}
+          </div>
+        </Menu.Item>
       ) : (
         <ButtonIconed
           variant={isPublished ? 'third' : 'primary'}

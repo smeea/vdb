@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Menu } from '@headlessui/react';
 import SymmetryVertical from 'assets/images/icons/symmetry-vertical.svg';
 import { useApp } from 'context';
 import { clearSearchForm, searchTwdForm, searchPdaForm } from 'context';
@@ -21,28 +21,10 @@ const DeckSearchSimilarButton = ({ deck }) => {
     setShowFloatingButtons(true);
   };
 
-  const ButtonOptions = (
-    <>
-      <Dropdown.Item
-        onClick={() => handleClick('twd')}
-        title="Search similar Decks in Tournament Winning Decks Archive"
-      >
-        Search in TWD
-      </Dropdown.Item>
-      <Dropdown.Item
-        onClick={() => handleClick('pda')}
-        title="Search similar Decks in Public Decks Archive"
-      >
-        Search in PDA
-      </Dropdown.Item>
-    </>
-  );
-
   return (
-    <DropdownButton
-      as={ButtonGroup}
-      variant="secondary"
-      title={
+    <Menu>
+      <Menu.Button>
+        {/* variant="secondary" */}
         <div
           title="Search similar Decks in TWD/PDA"
           className="flex justify-center items-center"
@@ -52,10 +34,16 @@ const DeckSearchSimilarButton = ({ deck }) => {
           </div>
           Similar Decks
         </div>
-      }
-    >
-      {ButtonOptions}
-    </DropdownButton>
+      </Menu.Button>
+      <Menu.Items>
+        <Menu.Item title="Search similar Decks in Tournament Winning Decks Archive">
+          <div onClick={() => handleClick('twd')}>Search in TWD</div>
+        </Menu.Item>
+        <Menu.Item title="Search similar Decks in Public Decks Archive">
+          <div onClick={() => handleClick('pda')}>Search in PDA</div>
+        </Menu.Item>
+      </Menu.Items>
+    </Menu>
   );
 };
 

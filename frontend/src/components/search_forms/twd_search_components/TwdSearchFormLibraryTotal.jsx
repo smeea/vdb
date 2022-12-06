@@ -1,12 +1,11 @@
 import React from 'react';
-import { ButtonGroup } from 'react-bootstrap';
 import { Button } from 'components';
 
 const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
   const name = 'libraryTotal';
 
   return (
-    <ButtonGroup>
+    <>
       {['60-67', '68-75', '76-83', '84-90'].map((i, index) => {
         return (
           <Button
@@ -21,7 +20,7 @@ const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
           </Button>
         );
       })}
-    </ButtonGroup>
+    </>
   );
 };
 

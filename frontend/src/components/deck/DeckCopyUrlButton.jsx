@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Menu } from '@headlessui/react';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 
@@ -93,53 +93,6 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
       });
   };
 
-  const ButtonOptions = (
-    <>
-      {deck.deckid !== 'deck' && (
-        <>
-          <Dropdown.Item
-            onClick={handleStandardButton}
-            title="Copy URL (will follow deck changes, if any)"
-          >
-            Standard URL
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={handleStandardQrButton}
-            title="Create QR with Standard URL (will follow deck changes, if any)"
-          >
-            Standard URL - QR
-          </Dropdown.Item>
-        </>
-      )}
-      {(deck.deckid.length === 32 || deck.deckid === 'deck') && (
-        <>
-          <Dropdown.Divider />
-          <Dropdown.Header className="pb-1">Non-modifiable</Dropdown.Header>
-          <Dropdown.Item
-            onClick={handleDeckInUrlButton}
-            title="Copy long URL containing full deck info (will not follow deck changes)"
-          >
-            Deck-in-URL
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={handleDeckInQrButton}
-            title="Create QR with long URL containing full deck info (will not follow deck changes)"
-          >
-            Deck-in-QR
-          </Dropdown.Item>
-        </>
-      )}
-      {deck.deckid.length === 32 && (
-        <Dropdown.Item
-          onClick={handleSnapshotButton}
-          title="Copy URL to snapshot of the deck (will not follow deck changes)"
-        >
-          Snapshot URL
-        </Dropdown.Item>
-      )}
-    </>
-  );
-
   const getDeckInUrl = () => {
     const cards = [];
 
@@ -172,12 +125,11 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   return (
-    <>
-      <DropdownButton
-        as={ButtonGroup}
-        variant={state ? 'success' : noText ? 'primary' : 'secondary'}
-        title={
-          noText ? (
+    <Menu>
+      {/* variant={state ? 'success' : noText ? 'primary' : 'secondary'} */}
+      <Menu.Button>
+        <>
+          {noText ? (
             <Link45Deg width="19" height="19" viewBox="0 0 15 15" />
           ) : (
             <>
@@ -191,12 +143,41 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
                 {state ? 'Copied' : 'Copy URL'}
               </div>
             </>
-          )
-        }
-      >
-        {ButtonOptions}
-      </DropdownButton>
-    </>
+          )}
+        </>
+      </Menu.Button>
+      <Menu.Items>
+        <>
+          {deck.deckid !== 'deck' && (
+            <>
+              <Menu.Item title="Copy URL (will follow deck changes, if any)">
+                <div onClick={handleStandardButton}>Standard URL</div>
+              </Menu.Item>
+              <Menu.Item title="Create QR with Standard URL (will follow deck changes, if any)">
+                <div onClick={handleStandardQrButton}>Standard URL - QR</div>
+              </Menu.Item>
+            </>
+          )}
+          {(deck.deckid.length === 32 || deck.deckid === 'deck') && (
+            <>
+              {/* <Dropdown.Divider /> */}
+              {/* <Dropdown.Header className="pb-1">Non-modifiable</Dropdown.Header> */}
+              <Menu.Item title="Copy long URL containing full deck info (will not follow deck changes)">
+                <div onClick={handleDeckInUrlButton}>Deck-in-URL</div>
+              </Menu.Item>
+              <Menu.Item title="Create QR with long URL containing full deck info (will not follow deck changes)">
+                <div onClick={handleDeckInQrButton}>Deck-in-QR</div>
+              </Menu.Item>
+            </>
+          )}
+          {deck.deckid.length === 32 && (
+            <Menu.Item title="Copy URL to snapshot of the deck (will not follow deck changes)">
+              <div onClick={handleSnapshotButton}>Snapshot URL</div>
+            </Menu.Item>
+          )}
+        </>
+      </Menu.Items>
+    </Menu>
   );
 };
 

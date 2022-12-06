@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import {
-  Dropdown,
-  DropdownButton,
-  ButtonGroup,
-} from 'react-bootstrap';
+import SortDown from 'assets/images/icons/sort-down.svg';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -551,10 +547,9 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
             <tbody>{deckRows}</tbody>
           </table>
           <div className="flex justify-end pt-3">
-            <DropdownButton
-              as={ButtonGroup}
-              variant="primary"
-              title={
+            <Menu>
+              <Menu.Button>
+                {/* variant="primary" */}
                 <div
                   title="Export Selected"
                   className="flex justify-center items-center"
@@ -564,21 +559,22 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                   </div>
                   Export Selected
                 </div>
-              }
-            >
-              <Dropdown.Item href="" onClick={() => exportSelected('text')}>
-                Text
-              </Dropdown.Item>
-              <Dropdown.Item href="" onClick={() => exportSelected('lackey')}>
-                Lackey
-              </Dropdown.Item>
-              <Dropdown.Item href="" onClick={() => exportSelected('jol')}>
-                JOL
-              </Dropdown.Item>
-              <Dropdown.Item href="" onClick={() => exportSelected('xlsx')}>
-                Excel
-              </Dropdown.Item>
-            </DropdownButton>
+              </Menu.Button>
+              <Menu.Items>
+                <Menu.Item>
+                  <div onClick={() => exportSelected('text')}>Text</div>
+                </Menu.Item>
+                <Menu.Item>
+                  <div onClick={() => exportSelected('lackey')}>Lackey</div>
+                </Menu.Item>
+                <Menu.Item>
+                  <div onClick={() => exportSelected('jol')}>JOL</div>
+                </Menu.Item>
+                <Menu.Item>
+                  <div onClick={() => exportSelected('xlsx')}>Excel</div>
+                </Menu.Item>
+              </Menu.Items>
+            </Menu>
           </div>
         </div>
       </Modal>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Menu } from '@headlessui/react';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import {
@@ -53,32 +53,11 @@ const DeckPublicButton = ({ deck, noText }) => {
     setSpinnerState(false);
   };
 
-  const ButtonOptions = (
-    <>
-      {isPublished && (
-        <Dropdown.Item onClick={() => handleSwitch(deck.deckid)}>
-          {isChild ? 'Go to Main Deck' : 'Go to Public Deck'}
-        </Dropdown.Item>
-      )}
-
-      {isChild && (
-        <Dropdown.Item onClick={() => setShowSyncConfirmation(true)}>
-          Sync Public Deck
-        </Dropdown.Item>
-      )}
-
-      {(isChild || !isPublished) && (
-        <DeckTogglePublicButton deck={deck} isDropdown />
-      )}
-    </>
-  );
-
   return (
     <>
-      <DropdownButton
-        as={ButtonGroup}
-        variant="secondary"
-        title={
+      <Menu>
+        <Menu.Button>
+          {/* variant="secondary" */}
           <div
             title="Public Deck Archive Actions"
             className="flex justify-center items-center"
@@ -92,10 +71,27 @@ const DeckPublicButton = ({ deck, noText }) => {
             </div>
             Public
           </div>
-        }
-      >
-        {ButtonOptions}
-      </DropdownButton>
+        </Menu.Button>
+        <Menu.Items>
+          {isPublished && (
+            <Menu.Item>
+              <div onClick={() => handleSwitch(deck.deckid)}>
+                {isChild ? 'Go to Main Deck' : 'Go to Public Deck'}
+              </div>
+            </Menu.Item>
+          )}
+          {isChild && (
+            <Menu.Item>
+              <div onClick={() => setShowSyncConfirmation(true)}>
+                Sync Public Deck
+              </div>
+            </Menu.Item>
+          )}
+          {(isChild || !isPublished) && (
+            <DeckTogglePublicButton deck={deck} isDropdown />
+          )}
+        </Menu.Items>
+      </Menu>
       {showSyncConfirmation && (
         <Modal
           handleClose={() => setShowSyncConfirmation(false)}

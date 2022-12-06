@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Menu } from '@headlessui/react';
 import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
 import { useApp } from 'context';
 
@@ -11,57 +11,59 @@ const DeckImportButton = ({
 }) => {
   const { username } = useApp();
 
-  const ButtonOptions = (
-    <>
-      {username && (
-        <>
-          <Dropdown.Item onClick={handleCreateButton}>
-            Create New Deck
-          </Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item onClick={() => handleFileInputClick(false)}>
-            Import from File
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => handleOpenTextModal(false)}>
-            Import from Text
-          </Dropdown.Item>
-          <Dropdown.Item onClick={handleOpenAmaranthModal}>
-            Import from Amaranth
-          </Dropdown.Item>
-          <Dropdown.Divider />
-        </>
-      )}
-      <Dropdown.Header className="pb-1">
-        <>
-          Anonymous (non-editable)
-          <br />
-          Useful only to copy URL
-        </>
-      </Dropdown.Header>
-      <Dropdown.Item onClick={() => handleFileInputClick(true)}>
-        Import w/o Acc. from File
-      </Dropdown.Item>
-      <Dropdown.Item onClick={() => handleOpenTextModal(true)}>
-        Import w/o Acc. from Text
-      </Dropdown.Item>
-    </>
-  );
-
   return (
-    <DropdownButton
-      as={ButtonGroup}
-      variant="secondary"
-      title={
+    <Menu>
+      <Menu.Button>
+        {/* /\* variant="secondary" *\/ */}
         <div className="flex justify-center items-center">
           <div className="flex pe-2">
             <ClipboardPlus size={24} />
           </div>
           New / Import
         </div>
-      }
-    >
-      {ButtonOptions}
-    </DropdownButton>
+      </Menu.Button>
+      <Menu.Items>
+        {username && (
+          <>
+            <Menu.Item>
+              <div onClick={handleCreateButton}>Create New Deck</div>
+            </Menu.Item>
+            {/* <Dropdown.Divider /> */}
+            <Menu.Item>
+              <div onClick={() => handleFileInputClick(false)}>
+                Import from File
+              </div>
+            </Menu.Item>
+            <Menu.Item>
+              <div onClick={() => handleOpenTextModal(false)}>
+                Import from Text
+              </div>
+            </Menu.Item>
+            <Menu.Item>
+              <div onClick={handleOpenAmaranthModal}>Import from Amaranth</div>
+            </Menu.Item>
+            {/* <Dropdown.Divider /> */}
+          </>
+        )}
+        {/* <Dropdown.Header className="pb-1"> */}
+        {/*   <> */}
+        {/*     Anonymous (non-editable) */}
+        {/*     <br /> */}
+        {/*     Useful only to copy URL */}
+        {/*   </> */}
+        {/* </Dropdown.Header> */}
+        <Menu.Item>
+          <div onClick={() => handleFileInputClick(true)}>
+            Import w/o Acc. from File
+          </div>
+        </Menu.Item>
+        <Menu.Item>
+          <div onClick={() => handleOpenTextModal(true)}>
+            Import w/o Acc. from Text
+          </div>
+        </Menu.Item>
+      </Menu.Items>
+    </Menu>
   );
 };
 

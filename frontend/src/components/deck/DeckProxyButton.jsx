@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Menu } from '@headlessui/react';
 import Printer from 'assets/images/icons/printer.svg';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import { ButtonIconed, DeckProxySelectModal } from 'components';
@@ -19,48 +19,6 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState(undefined);
-
-  const ButtonOptions = (
-    <>
-      <Dropdown.Item
-        href=""
-        onClick={() => proxyCards(deck.crypt, deck.library, false)}
-      >
-        Full Deck - Gray gaps
-      </Dropdown.Item>
-      <Dropdown.Item
-        href=""
-        onClick={() => proxyCards(deck.crypt, deck.library, true)}
-      >
-        Full Deck - White gaps
-      </Dropdown.Item>
-      {inventoryMode && (
-        <>
-          <Dropdown.Item
-            href=""
-            onClick={() => proxyCards(missingCrypt, missingLibrary, false)}
-          >
-            Missing in Inventory - Gray gaps
-          </Dropdown.Item>
-          <Dropdown.Item
-            href=""
-            onClick={() => proxyCards(missingCrypt, missingLibrary, true)}
-          >
-            Missing in Inventory - White gaps
-          </Dropdown.Item>
-        </>
-      )}
-      <Dropdown.Item
-        href=""
-        onClick={() => {
-          setShowSelectModal(true);
-          setShowFloatingButtons(false);
-        }}
-      >
-        Select Cards
-      </Dropdown.Item>
-    </>
-  );
 
   const checkImage = (url) => {
     const request = new XMLHttpRequest();
@@ -205,10 +163,9 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           text="Proxy Missing"
         />
       ) : (
-        <DropdownButton
-          as={ButtonGroup}
-          variant="secondary"
-          title={
+        <Menu>
+          {/* variant="secondary" */}
+          <Menu.Button>
             <div
               title="Create PDF with Cards"
               className="flex justify-center items-center"
@@ -222,10 +179,52 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
               </div>
               PDF Proxy
             </div>
-          }
-        >
-          {ButtonOptions}
-        </DropdownButton>
+          </Menu.Button>
+          <Menu.Items>
+            <Menu.Item>
+              <div onClick={() => proxyCards(deck.crypt, deck.library, false)}>
+                Full Deck - Gray gaps
+              </div>
+            </Menu.Item>
+            <Menu.Item>
+              <div onClick={() => proxyCards(deck.crypt, deck.library, true)}>
+                Full Deck - White gaps
+              </div>
+            </Menu.Item>
+            {inventoryMode && (
+              <>
+                <Menu.Item>
+                  <div
+                    onClick={() =>
+                      proxyCards(missingCrypt, missingLibrary, false)
+                    }
+                  >
+                    Missing in Inventory - Gray gaps
+                  </div>
+                </Menu.Item>
+                <Menu.Item>
+                  <div
+                    onClick={() =>
+                      proxyCards(missingCrypt, missingLibrary, true)
+                    }
+                  >
+                    Missing in Inventory - White gaps
+                  </div>
+                </Menu.Item>
+              </>
+            )}
+            <Menu.Item>
+              <div
+                onClick={() => {
+                  setShowSelectModal(true);
+                  setShowFloatingButtons(false);
+                }}
+              >
+                Select Cards
+              </div>
+            </Menu.Item>
+          </Menu.Items>
+        </Menu>
       )}
       {showSelectModal && (
         <DeckProxySelectModal

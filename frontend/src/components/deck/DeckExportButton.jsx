@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
 import Download from 'assets/images/icons/download.svg';
+import { Menu } from '@headlessui/react';
 import { useDeckExport } from 'hooks';
 import { useApp, deckStore } from 'context';
 import { deckServices } from 'services';
@@ -34,55 +34,13 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     };
 
     return (
-      <Dropdown.Item href="" onClick={() => actions[action][0](format)}>
-        {actions[action][1]} - {formats[format]}
-      </Dropdown.Item>
+      <Menu.Item>
+        <div onClick={() => actions[action][0](format)}>
+          {actions[action][1]} - {formats[format]}
+        </div>
+      </Menu.Item>
     );
   };
-
-  const ButtonOptions = inInventory ? (
-    <>
-      <ExportDropdown action="save" format="text" />
-      <ExportDropdown action="save" format="lackey" />
-      <ExportDropdown action="save" format="xlsx" />
-      <Dropdown.Divider />
-      <ExportDropdown action="copy" format="text" />
-      <ExportDropdown action="copy" format="lackey" />
-    </>
-  ) : (
-    <>
-      <ExportDropdown action="save" format="text" />
-      {!inMissing && (
-        <>
-          <ExportDropdown action="save" format="twd" />
-          <ExportDropdown action="save" format="twdHints" />
-          <ExportDropdown action="save" format="lackey" />
-          <ExportDropdown action="save" format="jol" />
-        </>
-      )}
-      <ExportDropdown action="save" format="xlsx" />
-      <Dropdown.Divider />
-
-      <ExportDropdown action="copy" format="text" />
-      {!inMissing && (
-        <>
-          <ExportDropdown action="copy" format="twd" />
-          <ExportDropdown action="copy" format="twdHints" />
-          <ExportDropdown action="copy" format="lackey" />
-          <ExportDropdown action="copy" format="jol" />
-        </>
-      )}
-      {!inMissing && username && decks && Object.keys(decks).length > 1 && (
-        <>
-          <Dropdown.Divider />
-          <ExportDropdown action="exportAll" format="text" />
-          <ExportDropdown action="exportAll" format="lackey" />
-          <ExportDropdown action="exportAll" format="jol" />
-          <ExportDropdown action="exportAll" format="xlsx" />
-        </>
-      )}
-    </>
-  );
 
   const copyDeck = (format) => {
     const exportText = useDeckExport(deck, format);
@@ -149,25 +107,66 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   };
 
   return (
-    <>
-      <DropdownButton
-        as={ButtonGroup}
-        variant={inMissing ? 'primary' : 'secondary'}
-        title={
-          <div
-            title={`Export ${inMissing ? 'Missing' : ''}`}
-            className="flex justify-center items-center"
-          >
-            <div className="flex pe-2">
-              <Download />
-            </div>
-            Export {inMissing ? 'Missing' : ''}
+    <Menu>
+      <Menu.Button>
+        {/* variant={inMissing ? 'primary' : 'secondary'} */}
+        <div
+          title={`Export ${inMissing ? 'Missing' : ''}`}
+          className="flex justify-center items-center"
+        >
+          <div className="flex pe-2">
+            <Download />
           </div>
+          Export {inMissing ? 'Missing' : ''}
+        </div>
         }
-      >
-        {ButtonOptions}
-      </DropdownButton>
-    </>
+      </Menu.Button>
+      <Menu.Items>
+        {inInventory ? (
+          <>
+            <ExportDropdown action="save" format="text" />
+            <ExportDropdown action="save" format="lackey" />
+            <ExportDropdown action="save" format="xlsx" />
+            {/* <Dropdown.Divider /> */}
+            <ExportDropdown action="copy" format="text" />
+            <ExportDropdown action="copy" format="lackey" />
+          </>
+        ) : (
+          <>
+            <ExportDropdown action="save" format="text" />
+            {!inMissing && (
+              <>
+                <ExportDropdown action="save" format="twd" />
+                <ExportDropdown action="save" format="twdHints" />
+                <ExportDropdown action="save" format="lackey" />
+                <ExportDropdown action="save" format="jol" />
+              </>
+            )}
+            <ExportDropdown action="save" format="xlsx" />
+            {/* <Dropdown.Divider /> */}
+
+            <ExportDropdown action="copy" format="text" />
+            {!inMissing && (
+              <>
+                <ExportDropdown action="copy" format="twd" />
+                <ExportDropdown action="copy" format="twdHints" />
+                <ExportDropdown action="copy" format="lackey" />
+                <ExportDropdown action="copy" format="jol" />
+              </>
+            )}
+            {!inMissing && username && decks && Object.keys(decks).length > 1 && (
+              <>
+                {/* <Dropdown.Divider /> */}
+                <ExportDropdown action="exportAll" format="text" />
+                <ExportDropdown action="exportAll" format="lackey" />
+                <ExportDropdown action="exportAll" format="jol" />
+                <ExportDropdown action="exportAll" format="xlsx" />
+              </>
+            )}
+          </>
+        )}
+      </Menu.Items>
+    </Menu>
   );
 };
 

@@ -1,30 +1,28 @@
 import React from 'react';
-import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
+import { Menu } from 'components';
 import SortDown from 'assets/images/icons/sort-down.svg';
 
 const DeckSelectSortForm = ({ onChange }) => {
   const sortMethods = { Name: 'byName', Date: 'byDate' };
 
-  const Options = Object.keys(sortMethods).map((k) => {
-    return (
-      <Dropdown.Item key={k} onClick={() => onChange(sortMethods[k])}>
-        Sort by {k}
-      </Dropdown.Item>
-    );
-  });
-
   return (
-    <DropdownButton
-      as={ButtonGroup}
-      variant="primary"
-      title={
+    <Menu>
+      <Menu.Button>
+        {/* variant="primary" */}
         <div title="Sort Decks" className="flex justify-center items-center">
           <SortDown />
         </div>
-      }
-    >
-      {Options}
-    </DropdownButton>
+      </Menu.Button>
+      <Menu.Items>
+        {Object.keys(sortMethods).map((k) => {
+          return (
+            <Menu.Item key={k}>
+              <div onClick={() => onChange(sortMethods[k])}>Sort by {k}</div>
+            </Menu.Item>
+          );
+        })}
+      </Menu.Items>
+    </Menu>
   );
 };
 
