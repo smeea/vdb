@@ -150,7 +150,7 @@ const AccountLogin = () => {
           </span>
         )}
       </div>
-      <form className="mb-0" onSubmit={handleSubmitButton}>
+      <form className="relative mb-0" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {UsernameForm}
@@ -162,20 +162,12 @@ const AccountLogin = () => {
             {PasswordForm}
           </div>
         )}
-        <ErrorOverlay
-          show={usernameError}
-          target={refUsername.current}
-          placement="bottom"
-        >
-          {usernameError}
-        </ErrorOverlay>
-        <ErrorOverlay
-          show={passwordError}
-          target={refPassword.current}
-          placement="bottom"
-        >
-          {passwordError}
-        </ErrorOverlay>
+        {usernameError && (
+          <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>
+        )}
+        {passwordError && (
+          <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
+        )}
       </form>
       {!isMobile ? (
         <div className="flex justify-start text-xs ps-2 pt-1">

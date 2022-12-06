@@ -55,9 +55,9 @@ const Account = () => {
               <div>
                 <AccountLogin />
               </div>
-              <div>
-                <AccountRegister />
-              </div>
+              {/* <div> */}
+              {/*   <AccountRegister /> */}
+              {/* </div> */}
             </div>
           )}
         </div>

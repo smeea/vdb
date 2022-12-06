@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
 import WifiOff from 'assets/images/icons/wifi-off.svg';
 import { useApp } from 'context';
 
@@ -9,10 +8,11 @@ const OfflineNotification = () => {
   return (
     <>
       {isOffline ? (
-        <Navbar
-          fixed={isMobile ? null : 'bottom'}
-          sticky={isMobile ? 'top' : null}
-          className="offline-bar"
+        <nav
+          className="sticky offline-bar top-0"
+          /* fixed={isMobile ? null : 'bottom'} */
+          /* sticky={isMobile ? 'top' : null} */
+          /* className="offline-bar" */
         >
           <div className="flex justify-center items-center w-100 m-1">
             <div className="flex pe-2">
@@ -20,7 +20,7 @@ const OfflineNotification = () => {
             </div>
             OFFLINE
           </div>
-        </Navbar>
+        </nav>
       ) : (
         <React.Fragment />
       )}

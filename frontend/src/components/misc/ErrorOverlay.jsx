@@ -1,27 +1,22 @@
 import React from 'react';
-import { Overlay } from 'react-bootstrap';
 
-const ErrorOverlay = ({ children, show, target, placement }) => {
-  const text = children;
-
+const ErrorOverlay = ({ placement, children }) => {
   return (
-    <Overlay
-      show={show}
-      target={target}
-      placement={placement ? placement : 'left'}
-      transition={false}
+    <div
+      className={`absolute ${
+        placement === 'bottom'
+          ? 'max-w-auto top-8'
+          : placement === 'top'
+          ? 'bottom-8'
+          : placement === 'left'
+          ? 'right-8'
+          : placement === 'right'
+          ? 'left-8'
+          : ''
+      } bg-red-800 text-xs font-bold py-1 px-1.5 rounded`}
     >
-      {({ placement, arrowProps, show: _show, popper, ...props }) => {
-        return (
-          <div
-            {...props}
-            className="error-tooltip text-xs rounded-md px-2 py-1 z-index[1100]"
-          >
-            <b>{text}</b>
-          </div>
-        );
-      }}
-    </Overlay>
+      {children}
+    </div>
   );
 };
 

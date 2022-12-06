@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
 import { useSnapshot } from 'valtio';
 import LightningFill from 'assets/images/icons/lightning-fill.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
@@ -62,12 +61,13 @@ const Navigation = () => {
   if (quickCard) cardsUrl = `/cards/${quickCard}`;
 
   return (
-    <Navbar
-      fixed={isMobile ? 'bottom' : null}
-      sticky={isMobile ? null : 'top'}
-      variant="dark"
+    <nav
+      className="sticky top-0"
+      /* fixed={isMobile ? 'bottom' : null} */
+      /* sticky={isMobile ? null : 'top'} */
+      /* variant="dark" */
     >
-      <Nav className="container justify-between px-0">
+      <div className="container justify-between px-0">
         <div className="flex items-center">
           {isMobile ? (
             <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
@@ -165,8 +165,8 @@ const Navigation = () => {
             />{' '}
           </NavLink>
         </div>
-      </Nav>
-    </Navbar>
+      </div>
+    </nav>
   );
 };
 
