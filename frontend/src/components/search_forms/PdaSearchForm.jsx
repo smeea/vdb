@@ -207,7 +207,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
   return (
     <form onSubmit={handleSubmitButton}>
-      <div className="flex flex-row justify-between pb-2 mx-0">
+      <div className="mx-0 flex flex-row justify-between pb-2">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
           getNew={getNewPda}
@@ -225,13 +225,13 @@ const PdaSearchForm = ({ error, setError }) => {
       )}
       {inventoryMode && (
         <>
-          <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-            <div className="basis-1/2 flex px-0">
-              <label className="font-bold text-blue mb-0">
+          <div className="ps-1 mx-0 flex flex-row items-center py-1">
+            <div className="flex basis-1/2 px-0">
+              <label className="text-blue mb-0 font-bold">
                 In Inventory by Crypt:
               </label>
             </div>
-            <div className="basis-1/2 inline px-0">
+            <div className="inline basis-1/2 px-0">
               <TwdSearchFormMatchInventory
                 value={pdaFormState.matchInventory.crypt}
                 target={'crypt'}
@@ -239,13 +239,13 @@ const PdaSearchForm = ({ error, setError }) => {
               />
             </div>
           </div>
-          <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-            <div className="basis-1/2 flex px-0">
-              <label className="font-bold text-blue mb-0">
+          <div className="ps-1 mx-0 flex flex-row items-center py-1">
+            <div className="flex basis-1/2 px-0">
+              <label className="text-blue mb-0 font-bold">
                 In Inventory by Library:
               </label>
             </div>
-            <div className="basis-1/2 inline px-0">
+            <div className="inline basis-1/2 px-0">
               <TwdSearchFormMatchInventory
                 value={pdaFormState.matchInventory.library}
                 target={'library'}
@@ -253,7 +253,7 @@ const PdaSearchForm = ({ error, setError }) => {
               />
             </div>
           </div>
-          <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+          <div className="ps-1 mx-0 flex flex-row items-center py-1">
             <div className="xs={{ span: 6, offset: 6 }} inline px-0">
               <TwdSearchFormMatchInventoryScaling
                 target="60"
@@ -269,11 +269,11 @@ const PdaSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="basis-2/12 flex px-0">
-          <div className="font-bold text-blue px-0">Year:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="flex basis-2/12 px-0">
+          <div className="text-blue px-0 font-bold">Year:</div>
         </div>
-        <div className="basis-10/12 inline px-0">
+        <div className="inline basis-10/12 px-0">
           <TwdSearchFormDate
             value={pdaFormState.date}
             onChange={handleChangeWithOpt}
@@ -281,11 +281,11 @@ const PdaSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="font-bold text-blue px-0">Crypt Cards:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="text-blue px-0 font-bold">Crypt Cards:</div>
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="basis-full inline px-0">
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="inline basis-full px-0">
           {cryptCardBase && (
             <TwdSearchFormCrypt
               value={pdaFormState.crypt}
@@ -294,7 +294,7 @@ const PdaSearchForm = ({ error, setError }) => {
           )}
         </div>
       </div>
-      <div className="flex flex-row justify-end pb-1 pe-1 mx-0">
+      <div className="pe-1 mx-0 flex flex-row justify-end pb-1">
         <input
           name="traits"
           value="star"
@@ -305,11 +305,11 @@ const PdaSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="font-bold text-blue px-0">Library Cards:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="text-blue px-0 font-bold">Library Cards:</div>
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="basis-full inline px-0">
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="inline basis-full px-0">
           {libraryCardBase && (
             <TwdSearchFormLibrary
               value={pdaFormState.library}
@@ -318,29 +318,29 @@ const PdaSearchForm = ({ error, setError }) => {
           )}
         </div>
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="basis-1/4 flex px-0">
-          <div className="font-bold text-blue px-0">Library Size:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="flex basis-1/4 px-0">
+          <div className="text-blue px-0 font-bold">Library Size:</div>
         </div>
-        <div className="basis-9/12 flex justify-end px-0">
+        <div className="flex basis-9/12 justify-end px-0">
           <TwdSearchFormLibraryTotal
             value={pdaFormState.libraryTotal}
             onChange={handleMultiChange}
           />
         </div>
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="basis-1/4 flex px-0">
-          <div className="font-bold text-blue px-0">Clan:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="flex basis-1/4 px-0">
+          <div className="text-blue px-0 font-bold">Clan:</div>
         </div>
-        <div className="basis-9/12 inline px-0">
+        <div className="inline basis-9/12 px-0">
           <TwdSearchFormClan
             value={pdaFormState.clan}
             onChange={handleChange}
           />
         </div>
       </div>
-      <div className="flex flex-row justify-end pb-1 pe-1 mx-0">
+      <div className="pe-1 mx-0 flex flex-row justify-end pb-1">
         <input
           name="traits"
           value="monoclan"
@@ -351,48 +351,48 @@ const PdaSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="basis-1/4 flex px-0">
-          <div className="font-bold text-blue px-0">Sect:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="flex basis-1/4 px-0">
+          <div className="text-blue px-0 font-bold">Sect:</div>
         </div>
-        <div className="basis-9/12 inline px-0">
+        <div className="inline basis-9/12 px-0">
           <TwdSearchFormSect
             value={pdaFormState.sect}
             onChange={handleChange}
           />
         </div>
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="basis-5/12 flex px-0">
-          <div className="font-bold text-blue px-0">Capacity Avg:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="flex basis-5/12 px-0">
+          <div className="text-blue px-0 font-bold">Capacity Avg:</div>
         </div>
-        <div className="basis-7/12 flex justify-end px-0">
+        <div className="flex basis-7/12 justify-end px-0">
           <TwdSearchFormCapacity
             value={pdaFormState.capacity}
             onChange={handleMultiChange}
           />
         </div>
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="font-bold text-blue px-0">Library Disciplines:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="text-blue px-0 font-bold">Library Disciplines:</div>
       </div>
       <TwdSearchFormDisciplines
         value={pdaFormState.disciplines}
         onChange={handleMultiChange}
       />
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="basis-full inline pe-0 ps-1">
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="pe-0 ps-1 inline basis-full">
           <TwdSearchFormCardtypes
             value={pdaFormState.cardtypes}
             onChange={handleChangeWithOpt}
           />
         </div>
       </div>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="basis-1/4 flex px-0">
-          <div className="font-bold text-blue px-0">Author:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="flex basis-1/4 px-0">
+          <div className="text-blue px-0 font-bold">Author:</div>
         </div>
-        <div className="basis-9/12 inline px-0">
+        <div className="inline basis-9/12 px-0">
           <TwdSearchFormPlayer
             state={pdaFormState.author}
             form={searchPdaForm}
@@ -404,14 +404,14 @@ const PdaSearchForm = ({ error, setError }) => {
         <>
           <div
             onClick={handleClearButton}
-            className="flex float-right-middle float-clear items-center justify-center"
+            className="float-right-middle float-clear flex items-center justify-center"
           >
             <X viewBox="0 0 16 16" />
           </div>
           <div
             ref={refError}
             onClick={handleSubmitButton}
-            className="flex float-right-bottom float-search items-center justify-center"
+            className="float-right-bottom float-search flex items-center justify-center"
           >
             {!spinnerState ? (
               <Check2 viewBox="0 0 16 16" className="pt-1" />

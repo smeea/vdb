@@ -76,7 +76,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         return (
           <React.Fragment key={clan}>
             {clan === 'Bundle' ? (
-              <div className="flex justify-center items-center inline clan-image-results">
+              <div className="clan-image-results inline flex items-center justify-center">
                 <GiftFill />
               </div>
             ) : clan === 'Mix' ? null : (
@@ -90,13 +90,13 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         value: `${i.set}:${i.precon}`,
         name: 'precon',
         label: (
-          <div className="flex justify-between items-center">
-            <div className="flex items-center pe-2">
+          <div className="flex items-center justify-between">
+            <div className="pe-2 flex items-center">
               <div
                 className={
                   clanImages.length == 1
-                    ? 'flex justify-center items-center w-[40px]'
-                    : 'inline pe-2'
+                    ? 'flex w-[40px] items-center justify-center'
+                    : 'pe-2 inline'
                 }
               >
                 {clanImages}
@@ -162,11 +162,11 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   return (
     <>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
         <div className="basis-1/4 px-0">
-          <div className="font-bold text-blue">Precon:</div>
+          <div className="text-blue font-bold">Precon:</div>
           {value.value[0] !== 'any' && (
-            <div className="flex justify-end pe-1">
+            <div className="pe-1 flex justify-end">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -179,7 +179,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
             </div>
           )}
         </div>
-        <div className="basis-9/12 inline px-0">
+        <div className="inline basis-9/12 px-0">
           <Select
             classNamePrefix="react-select"
             options={options}
@@ -202,7 +202,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
+      <div className="ps-1 mx-0 flex flex-row items-center pb-1">
         <div className="flex justify-end px-0">
           <div className="flex flex-row space-x-3">{printForm}</div>
         </div>

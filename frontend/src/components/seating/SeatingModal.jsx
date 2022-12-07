@@ -56,7 +56,7 @@ const SeatingModal = ({
         title="Table Seating"
       >
         <div>
-          <div className="mb-0 mb-md-3 px-0 px-md-0">
+          <div className="mb-md-3 px-md-0 mb-0 px-0">
             <div className="flex flex-row items-center">
               <div className="py-2 md:basis-5/12 xl:basis-1/3">
                 <div className="flex flex-col space-y-1">
@@ -95,22 +95,22 @@ const SeatingModal = ({
                     text="Select Random"
                   />
                   {withRandom && !haveRandomSelected && (
-                    <div className="pt-2 red">
+                    <div className="red pt-2">
                       No random players source selected
                     </div>
                   )}
                 </div>
               </div>
-              <div className="md:basis-7/12 xl:basis-8/12 px-0">
+              <div className="px-0 md:basis-7/12 xl:basis-8/12">
                 {seating && (
-                  <div className="flex flex-row py-2 py-md-0">
+                  <div className="py-md-0 flex flex-row py-2">
                     <SeatingTableLayout players={seating} />
                   </div>
                 )}
               </div>
             </div>
             {editRandom && (
-              <div className="flex flex-row pt-0 pt-md-3">
+              <div className="pt-md-3 flex flex-row pt-0">
                 <hr className="mx-0" />
                 <div className="flex flex-row pb-3">
                   <div className="flex flex-row">
@@ -118,7 +118,7 @@ const SeatingModal = ({
                       className="flex items-center"
                       onClick={() => setWithCustom(!withCustom)}
                     >
-                      <div className="flex items-center pe-2">
+                      <div className="pe-2 flex items-center">
                         <>
                           {withCustom ? (
                             <ToggleOn
@@ -135,11 +135,11 @@ const SeatingModal = ({
                           )}
                         </>
                       </div>
-                      <div className="flex font-bold text-blue py-2">
+                      <div className="text-blue flex py-2 font-bold">
                         Custom Decks
                       </div>
                     </div>
-                    <div className="basis-full md:basis-7/12 lg:basis-1/2 xl:basis-5/12 py-2">
+                    <div className="basis-full py-2 md:basis-7/12 lg:basis-1/2 xl:basis-5/12">
                       <SeatingCustomDeckAdd addDeck={addCustomDeck} />
                     </div>
                   </div>
@@ -201,7 +201,7 @@ const SeatingModal = ({
                     className="flex items-center"
                     onClick={() => setWithStandard(!withStandard)}
                   >
-                    <div className="flex items-center pe-2">
+                    <div className="pe-2 flex items-center">
                       <>
                         {withStandard ? (
                           <ToggleOn
@@ -218,7 +218,7 @@ const SeatingModal = ({
                         )}
                       </>
                     </div>
-                    <div className="font-bold text-blue py-2">
+                    <div className="text-blue py-2 font-bold">
                       Standard Decks (from{' '}
                       <a
                         className="name"
@@ -288,7 +288,7 @@ const SeatingModal = ({
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="flex float-right-bottom float-clear items-center justify-center"
+          className="float-right-bottom float-clear flex items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

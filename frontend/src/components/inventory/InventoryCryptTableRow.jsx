@@ -65,7 +65,7 @@ const InventoryCryptTableRow = ({
 
   return (
     <div
-      className={`flex no-border inventory-crypt-table ${
+      className={`no-border inventory-crypt-table flex ${
         isSwiped ? `swiped-${isSwiped}` : ''
       }`}
       {...swipeHandlers}
@@ -89,10 +89,10 @@ const InventoryCryptTableRow = ({
         )}
       </div>
       {!inShared && (
-        <div className="flex items-center justify-center used">
+        <div className="used flex items-center justify-center">
           {isMobile ? (
             <div
-              className={`flex justify-center w-100 ps-1 ${
+              className={`w-100 ps-1 flex justify-center ${
                 card.q == softUsedMax + hardUsedTotal
                   ? 'gray'
                   : card.q >= softUsedMax + hardUsedTotal
@@ -112,7 +112,7 @@ const InventoryCryptTableRow = ({
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
               <div
-                className={`flex justify-center w-100 ps-1 ${
+                className={`w-100 ps-1 flex justify-center ${
                   card.q == softUsedMax + hardUsedTotal
                     ? 'gray'
                     : card.q >= softUsedMax + hardUsedTotal
@@ -131,14 +131,14 @@ const InventoryCryptTableRow = ({
         </div>
       )}
       <div
-        className="flex items-center justify-center capacity"
+        className="capacity flex items-center justify-center"
         onClick={() => handleClick(card.c)}
       >
         <ResultCryptCapacity value={card.c.Capacity} />
       </div>
       {!isMobile && !isNarrow && (
         <div
-          className="flex items-center content-left disciplines"
+          className="content-left disciplines flex items-center"
           onClick={() => handleClick(card.c)}
         >
           <ResultCryptDisciplines value={card.c.Disciplines} />
@@ -150,7 +150,7 @@ const InventoryCryptTableRow = ({
         disabled={isMobile}
       >
         <div
-          className="flex items-center justify-start name"
+          className="name flex items-center justify-start"
           onClick={() => handleClick(card.c)}
         >
           <ResultCryptName card={card.c} />
@@ -159,19 +159,19 @@ const InventoryCryptTableRow = ({
       {isWide ? (
         <>
           <div
-            className="flex items-center justify-center title"
+            className="title flex items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultCryptTitle value={card.c.Title} />
           </div>
           <div
-            className="flex items-center justify-center clan"
+            className="clan flex items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultClanImage value={card.c.Clan} />
           </div>
           <div
-            className="flex items-center justify-center group pe-1"
+            className="pe-1 group flex items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultCryptGroup value={card.c.Group} />
@@ -182,8 +182,8 @@ const InventoryCryptTableRow = ({
           <div className="flex justify-center">
             <ResultClanImage value={card.c.Clan} />
           </div>
-          <div className="flex text-xs justify-end">
-            <div className="font-bold text-blue">
+          <div className="flex justify-end text-xs">
+            <div className="text-blue font-bold">
               <ResultCryptTitle value={card.c.Title} />
             </div>
             <ResultCryptGroup value={card.c.Group} />

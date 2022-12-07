@@ -50,7 +50,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       value: i.set,
       name: name,
       label: (
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <div className="pe-2">{i.name}</div>
           {i.year && <div className="ps-2 text-xs">{`'${i.year}`}</div>}
         </div>
@@ -88,7 +88,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         name="set"
         value={i.value}
         type="checkbox"
-        className="text-xs pe-1"
+        className="pe-1 text-xs"
         id={`set-${i.value}`}
         label={i.label}
         title={i.title}
@@ -161,11 +161,11 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   return (
     <>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="flex basis-1/4 justify-between items-center px-0">
-          <div className="font-bold text-blue">Set:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="flex basis-1/4 items-center justify-between px-0">
+          <div className="text-blue font-bold">Set:</div>
           {value.value[0] !== 'any' && (
-            <div className="flex justify-end pe-1">
+            <div className="pe-1 flex justify-end">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -178,7 +178,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             </div>
           )}
         </div>
-        <div className="basis-9/12 inline px-0">
+        <div className="inline basis-9/12 px-0">
           <Select
             classNamePrefix="react-select"
             options={options}
@@ -201,12 +201,12 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
+      <div className="ps-1 mx-0 flex flex-row items-center pb-1">
         <div className="flex justify-end px-0">
           <div className="flex flex-row space-x-2">{ageForm}</div>
         </div>
       </div>
-      <div className="flex flex-row pb-1 ps-1 mx-0 items-center">
+      <div className="ps-1 mx-0 flex flex-row items-center pb-1">
         <div className="flex justify-end px-0">
           <div className="flex flex-row space-x-3">{printForm}</div>
         </div>

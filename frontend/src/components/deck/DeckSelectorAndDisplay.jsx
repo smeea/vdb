@@ -26,7 +26,7 @@ const DeckSelectorAndDisplay = () => {
 
   return (
     <>
-      <div className="flex justify-end sticky-selector pt-3 pb-2">
+      <div className="sticky-selector flex justify-end pt-3 pb-2">
         {addMode && (
           <>
             <div className={isBranches ? 'w-75' : 'w-100'}>
@@ -49,7 +49,7 @@ const DeckSelectorAndDisplay = () => {
             variant="primary"
             onClick={() => toggleAddMode()}
           >
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
               <div className={`flex ${addMode ? '' : 'pe-2'}`}>
                 {addMode ? <EyeSlashFill /> : <EyeFill />}
               </div>

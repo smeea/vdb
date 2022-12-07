@@ -101,7 +101,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
           >
             {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
               <div
-                className={`flex items-center justify-between used px-1 ms-1 ${
+                className={`used ms-1 flex items-center justify-between px-1 ${
                   inInventory < softUsedMax + hardUsedTotal
                     ? 'inv-miss-full'
                     : ''
@@ -138,7 +138,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         <ResultLibraryTypeImage value={card.Type} />
       </td>
       <td
-        className="flex justify-center items-center px-1 disciplines"
+        className="disciplines flex items-center justify-center px-1"
         onClick={() => handleClick(idx)}
       >
         <ResultLibraryClan value={card.Clan} />

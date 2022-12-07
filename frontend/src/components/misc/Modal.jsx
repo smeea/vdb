@@ -17,8 +17,8 @@ const Modal = ({ handleClose, title, children }) => {
         <div className="flex min-h-full items-center justify-center p-4">
           <Dialog.Panel className="w-full rounded bg-neutral-700">
             {title && (
-              <Dialog.Title className="no-border pt-2 pt-md-3 pb-0 pb-md-1 px-2 px-md-4">
-                <div className="text-lg text-blue font-bold">{title}</div>
+              <Dialog.Title className="no-border pt-md-3 pb-md-1 px-md-4 px-2 pt-2 pb-0">
+                <div className="text-blue text-lg font-bold">{title}</div>
               </Dialog.Title>
             )}
             {children}

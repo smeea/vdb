@@ -54,11 +54,11 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
 
   return (
     <>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
         <div className="basis-1/4 px-0">
-          <div className="font-bold text-blue">Capacity:</div>
+          <div className="text-blue font-bold">Capacity:</div>
           {value.value[0][name] !== 'any' && (
-            <div className="flex justify-end pe-1">
+            <div className="pe-1 flex justify-end">
               <div className="pe-1">
                 <SearchFormButtonLogicToggle
                   name={name}
@@ -82,7 +82,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
             </div>
           )}
         </div>
-        <div className="basis-1/3 inline px-0">
+        <div className="inline basis-1/3 px-0">
           <Select
             classNamePrefix="react-select"
             options={morelessOptions}
@@ -94,7 +94,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
             onChange={onChange}
           />
         </div>
-        <div className="basis-5/12 inline pe-0 ps-1">
+        <div className="pe-0 ps-1 inline basis-5/12">
           <Select
             classNamePrefix="react-select"
             options={options}

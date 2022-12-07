@@ -65,7 +65,7 @@ const DeckCardQuantity = ({
               -
             </Button>
           </a>
-          <div className={miss ? `px-1 mx-1 ${miss}` : 'px-1'}>
+          <div className={miss ? `mx-1 px-1 ${miss}` : 'px-1'}>
             {q == 0 ? '' : q}
           </div>
           <a
@@ -91,7 +91,7 @@ const DeckCardQuantity = ({
           )}
           <div
             tabIndex={0}
-            className={manual ? 'px-0' : miss ? `px-1 mx-1 ${miss}` : 'px-1'}
+            className={manual ? 'px-0' : miss ? `mx-1 px-1 ${miss}` : 'px-1'}
             onFocus={() => setManual(true)}
           >
             {manual ? (

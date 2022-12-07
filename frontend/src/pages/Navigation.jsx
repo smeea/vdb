@@ -102,7 +102,7 @@ const Navigation = () => {
                   )}
                 </div>
                 <div
-                  className={`inline ps-2 ${
+                  className={`ps-2 inline ${
                     inventoryMode ? 'text-white' : 'text-neutral-500-font'
                   }`}
                 >

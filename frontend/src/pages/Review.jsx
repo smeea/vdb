@@ -221,27 +221,27 @@ const Review = () => {
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
 
   return (
-    <div className="deck-container mx-auto px-0 px-md-2 px-xl-4 py-md-3">
-      <div className="flex flex-row mx-0">
+    <div className="deck-container px-md-2 px-xl-4 py-md-3 mx-auto px-0">
+      <div className="mx-0 flex flex-row">
         <div className="xl:basis-1/12" />
-        <div className="basis-full lg:basis-5/6 xl:basis-9/12 px-md-2 px-xl-3">
-          <div className="flex flex-row px-1 px-md-0 py-1 pb-0 pt-md-0">
-            <div className="px-0 px-md-2">
+        <div className="px-md-2 px-xl-3 basis-full lg:basis-5/6 xl:basis-9/12">
+          <div className="px-md-0 pt-md-0 flex flex-row px-1 py-1 pb-0">
+            <div className="px-md-2 px-0">
               {deckFrom && (
                 <>
                   {isMobile ? (
                     <DeckChangeName deck={deckFrom} isAuthor={false} />
                   ) : (
                     <>
-                      <div className="flex flex-row mx-0 pb-sm-2">
-                        <div className="md:basis-8/12 px-0 ps-md-0 pe-md-1">
+                      <div className="pb-sm-2 mx-0 flex flex-row">
+                        <div className="ps-md-0 pe-md-1 px-0 md:basis-8/12">
                           <DeckChangeName deck={deckFrom} />
                         </div>
-                        <div className="md:basis-1/3 px-0 ps-md-1 pe-md-0 pt-2 pt-md-0">
+                        <div className="ps-md-1 pe-md-0 pt-md-0 px-0 pt-2 md:basis-1/3">
                           <DeckChangeAuthor deck={deckFrom} />
                         </div>
                       </div>
-                      <div className="flex flex-row mx-0">
+                      <div className="mx-0 flex flex-row">
                         <div className="px-0">
                           <DeckChangeDescription
                             deck={deckFrom}
@@ -268,23 +268,23 @@ const Review = () => {
           </div>
           {error && (
             <div className="flex flex-row">
-              <div className="px-0 py-4 px-lg-2">
-                <div className="flex items-center justify-center error-message p-2">
+              <div className="px-lg-2 px-0 py-4">
+                <div className="error-message flex items-center justify-center p-2">
                   <b>{error}</b>
                 </div>
               </div>
             </div>
           )}
           {deckFrom && (
-            <div className="flex flex-row pt-md-2">
-              <div className="md:basis-7/12 px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
+            <div className="pt-md-2 flex flex-row">
+              <div className="px-md-2 ps-xl-2 pe-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
                 <ReviewCrypt
                   cardsFrom={deckFrom.crypt}
                   cardsTo={deckTo.crypt}
                   cardChange={cardChange}
                 />
               </div>
-              <div className="md:basis-5/12 px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
+              <div className="px-md-2 ps-xl-3 pe-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
                 <ReviewLibrary
                   cardsFrom={deckFrom.library}
                   cardsTo={deckTo.library}
@@ -295,7 +295,7 @@ const Review = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="lg:basis-1/6 hide-on-lt992px px-lg-3">
+          <div className="hide-on-lt992px px-lg-3 lg:basis-1/6">
             <div className="sticky-buttons">
               <ReviewButtons
                 deck={deckFrom}
@@ -313,7 +313,7 @@ const Review = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          className="hide-on-gt992px flex float-right-bottom float-menu items-center justify-center"
+          className="hide-on-gt992px float-right-bottom float-menu flex items-center justify-center"
         >
           <List viewBox="0 0 16 16" />
         </div>

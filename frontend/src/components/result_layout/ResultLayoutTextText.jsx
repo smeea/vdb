@@ -55,7 +55,7 @@ const ResultLayoutTextText = (props) => {
                 }
                 disabled={isMobile}
               >
-                <div className="inline name">
+                <div className="name inline">
                   {cardid > 200000 ? (
                     <ResultCryptName card={cryptCardBase[cardid]} />
                   ) : (

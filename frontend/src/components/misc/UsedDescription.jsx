@@ -23,8 +23,8 @@ const UsedDescription = ({ deck, t, q }) => {
       <div
         className={
           isMobile
-            ? 'inline truncate max-w-[175px]'
-            : 'inline truncate max-w-[200px]'
+            ? 'inline max-w-[175px] truncate'
+            : 'inline max-w-[200px] truncate'
         }
       >
         {` - ${deck.name}${isBranches ? ` [${deck.branchName}]` : ''} `}

@@ -110,7 +110,7 @@ const DeckCryptTableRow = ({
             <>
               {deck.inventoryType && !inSearch && !isMobile && (
                 <td>
-                  <div className="flex relative items-center">
+                  <div className="relative flex items-center">
                     <div
                       className={
                         card.i
@@ -235,8 +235,8 @@ const DeckCryptTableRow = ({
             <div>
               <ResultClanImage value={card.c.Clan} />
             </div>
-            <div className="flex text-xs justify-end">
-              <div className="font-bold text-blue">
+            <div className="flex justify-end text-xs">
+              <div className="text-blue font-bold">
                 <ResultCryptTitle value={card.c.Title} />
               </div>
               <ResultCryptGroup value={card.c.Group} />
@@ -245,7 +245,7 @@ const DeckCryptTableRow = ({
         </>
       )}
       {showInfo && (
-        <td className="text-blue text-right w-9 px-1">
+        <td className="text-blue w-9 px-1 text-right">
           {isMobile ? (
             <div
               onClick={() =>

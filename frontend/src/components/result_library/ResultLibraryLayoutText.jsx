@@ -21,14 +21,14 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
 
   return (
     <>
-      <div className="flex whitespace-nowrap justify-between items-center pb-1">
-        <div className="flex whitespace-nowrap items-center">
+      <div className="flex items-center justify-between whitespace-nowrap pb-1">
+        <div className="flex items-center whitespace-nowrap">
           <ResultLibraryTypeImage value={card.Type} />
-          <div className="name font-bold ps-2">
+          <div className="name ps-2 font-bold">
             <ResultLibraryName card={card} />
           </div>
         </div>
-        <div className="flex items-center ps-1">
+        <div className="ps-1 flex items-center">
           <ResultLibraryDisciplines value={card.Discipline} />
           {card.Discipline && card.Clan && '+'}
           <ResultLibraryClan value={card.Clan} />
@@ -75,7 +75,7 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
           <div className="py-1">
             <b>Rulings:</b>
           </div>
-          <div className="text-xs pb-1">
+          <div className="pb-1 text-xs">
             <ResultLayoutTextRulings rulings={card['Rulings']} />
           </div>
         </>

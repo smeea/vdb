@@ -50,7 +50,7 @@ const InventoryDesktop = ({
   return (
     <>
       {isWide && <div className="xl:basis-1/12" />}
-      <div className="md:basis-1/2 lg:basis-1/2 xl:basis-5/12 px-0 px-md-2 pe-xl-3">
+      <div className="px-md-2 pe-xl-3 px-0 md:basis-1/2 lg:basis-1/2 xl:basis-5/12">
         {!inShared && (
           <>
             <div className="sticky-selector pt-3 pb-2">
@@ -91,7 +91,7 @@ const InventoryDesktop = ({
           </div>
         )}
       </div>
-      <div className="md:basis-1/2 lg:basis-1/2 xl={isWide ? 4 : 5} px-0 px-md-2 px-xl-3">
+      <div className="xl={isWide ? 4 : 5} px-md-2 px-xl-3 px-0 md:basis-1/2 lg:basis-1/2">
         {!inShared && (
           <>
             <div className="sticky-selector pt-3 pb-2">
@@ -137,7 +137,7 @@ const InventoryDesktop = ({
           </div>
         )}
       </div>
-      <div className="lg:basis-1/6 hide-on-lt1200px px-0 px-lg-2 px-xl-3">
+      <div className="hide-on-lt1200px px-lg-2 px-xl-3 px-0 lg:basis-1/6">
         <div className="sticky-buttons">
           <InventoryButtons
             crypt={sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt}

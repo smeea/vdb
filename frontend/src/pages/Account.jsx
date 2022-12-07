@@ -31,7 +31,7 @@ const Account = () => {
         <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
           {username ? (
             <div className="flex flex-col space-y-6">
-              <div className="flex items-center font-bold text-blue logo-box px-2 py-1 w-full">
+              <div className="text-blue logo-box flex w-full items-center px-2 py-1 font-bold">
                 <PersonFill />
                 <span className="ms-2">Logged as: &lt;{username}&gt;</span>
               </div>

@@ -125,11 +125,11 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
     if (idx < 5) {
       formsLeft.push(
-        <div className="flex flex-row py-1 mx-0 items-center" key={i[0]}>
-          <div className="basis-2/12 flex ps-2 justify-center">
+        <div className="mx-0 flex flex-row items-center py-1" key={i[0]}>
+          <div className="ps-2 flex basis-2/12 justify-center">
             <ResultLibraryTypeImage value={i[0]} />
           </div>
-          <div className="basis-10/12 inline px-0">
+          <div className="inline basis-10/12 px-0">
             <Select
               classNamePrefix="react-select"
               options={options}
@@ -146,11 +146,11 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       );
     } else {
       formsRight.push(
-        <div className="flex flex-row py-1 mx-0 items-center" key={i[0]}>
-          <div className="basis-2/12 flex ps-2 justify-center">
+        <div className="mx-0 flex flex-row items-center py-1" key={i[0]}>
+          <div className="ps-2 flex basis-2/12 justify-center">
             <ResultLibraryTypeImage value={i[0]} />
           </div>
-          <div className="basis-10/12 inline px-0">
+          <div className="inline basis-10/12 px-0">
             <Select
               classNamePrefix="react-select"
               options={options}
@@ -170,9 +170,9 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="flex flex-row mx-0">
-        <div className="basis-1/2 inline ps-0 pe-2">{formsLeft}</div>
-        <div className="basis-1/2 inline ps-2 pe-0">{formsRight}</div>
+      <div className="mx-0 flex flex-row">
+        <div className="ps-0 pe-2 inline basis-1/2">{formsLeft}</div>
+        <div className="ps-2 pe-0 inline basis-1/2">{formsRight}</div>
       </div>
     </>
   );

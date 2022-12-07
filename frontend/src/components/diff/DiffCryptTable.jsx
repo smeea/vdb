@@ -119,7 +119,7 @@ const DiffCryptTable = ({
             <td className="quantity-no-buttons px-1">{qFrom ? qFrom : null}</td>
           )}
           <td
-            className={`min-w-[35px] w-[42px] text-lg ${!isMobile && 'ps-1'}`}
+            className={`w-[42px] min-w-[35px] text-lg ${!isMobile && 'ps-1'}`}
           >
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
@@ -172,8 +172,8 @@ const DiffCryptTable = ({
                 <div>
                   <ResultClanImage value={card.c.Clan} />
                 </div>
-                <div className="flex text-xs justify-end">
-                  <div className="font-bold text-blue">
+                <div className="flex justify-end text-xs">
+                  <div className="text-blue font-bold">
                     <ResultCryptTitle value={card.c.Title} />
                   </div>
                   <ResultCryptGroup value={card.c.Group} />
@@ -182,7 +182,7 @@ const DiffCryptTable = ({
             </>
           )}
           {showInfo && (
-            <td className="text-blue text-right w-9 px-1">
+            <td className="text-blue w-9 px-1 text-right">
               {isMobile ? (
                 <div
                   onClick={() =>

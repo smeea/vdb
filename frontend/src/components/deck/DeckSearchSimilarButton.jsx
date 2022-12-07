@@ -27,9 +27,9 @@ const DeckSearchSimilarButton = ({ deck }) => {
         {/* variant="secondary" */}
         <div
           title="Search similar Decks in TWD/PDA"
-          className="flex justify-center items-center"
+          className="flex items-center justify-center"
         >
-          <div className="flex pe-2">
+          <div className="pe-2 flex">
             <SymmetryVertical />
           </div>
           Similar Decks

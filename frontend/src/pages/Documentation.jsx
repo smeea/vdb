@@ -9,21 +9,21 @@ import { Banner } from 'components';
 
 const Title = ({ children }) => {
   return (
-    <div className="font-bold text-xl text-blue underline py-1">{children}</div>
+    <div className="text-blue py-1 text-xl font-bold underline">{children}</div>
   );
 };
 
 const SubTitle = ({ children }) => {
-  return <div className="font-bold text-blue py-1">{children}</div>;
+  return <div className="text-blue py-1 font-bold">{children}</div>;
 };
 
 const Documentation = () => {
   return (
     <div className="search-container mx-auto">
       <div className="flex flex-row justify-center">
-        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-0">
+        <div className="basis-full px-0 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
           <Banner />
-          <div className="px-3 pt-0 pt-lg-3">
+          <div className="pt-lg-3 px-3 pt-0">
             <div className="pb-4">
               <Title>HELP / DOCUMENTATION</Title>
               <div className="py-1">

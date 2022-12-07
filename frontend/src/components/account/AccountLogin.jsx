@@ -132,8 +132,8 @@ const AccountLogin = () => {
 
   return (
     <>
-      <div className="flex text-blue font-bold text-xl items-center px-1 py-2">
-        <div className="flex pe-2">
+      <div className="text-blue flex items-center px-1 py-2 text-xl font-bold">
+        <div className="pe-2 flex">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
         Login
@@ -170,7 +170,7 @@ const AccountLogin = () => {
         )}
       </form>
       {!isMobile ? (
-        <div className="flex justify-start text-xs ps-2 pt-1">
+        <div className="ps-2 flex justify-start pt-1 text-xs">
           <Tooltip
             delay={{ show: 0, hide: 2000 }}
             placement="bottom"
@@ -184,7 +184,7 @@ const AccountLogin = () => {
       ) : (
         <div
           onClick={() => setShowPasswordTooltip(true)}
-          className="flex justify-start text-xs ps-2 pt-1"
+          className="ps-2 flex justify-start pt-1 text-xs"
         >
           <a href="#">
             <i>Forgot password?</i>

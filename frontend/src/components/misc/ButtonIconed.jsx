@@ -21,8 +21,8 @@ const ButtonIconed = ({
       {text === undefined || text === null ? (
         <>{icon}</>
       ) : (
-        <div className="flex justify-center items-center">
-          <div className="flex pe-2">{icon}</div>
+        <div className="flex items-center justify-center">
+          <div className="pe-2 flex">{icon}</div>
           {text}
         </div>
       )}

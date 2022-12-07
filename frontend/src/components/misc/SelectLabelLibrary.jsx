@@ -19,7 +19,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
         <div className="flex items-center">
           {inInventory && (
             <div
-              className={`inline text-center w-7 text-lg me-2 ${
+              className={`me-2 inline w-7 text-center text-lg ${
                 inventoryLibrary[cardid] ? 'border-bl rounded' : ''
               }`}
             >

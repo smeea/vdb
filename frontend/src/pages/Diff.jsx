@@ -241,20 +241,20 @@ const Diff = () => {
   }, [deck, deckTo]);
 
   return (
-    <div className="deck-container mx-auto px-0 px-md-2 px-xl-4 py-md-3">
-      <div className="flex flex-row mx-0">
+    <div className="deck-container px-md-2 px-xl-4 py-md-3 mx-auto px-0">
+      <div className="mx-0 flex flex-row">
         <div className="xl:basis-1/12"></div>
-        <div className="basis-full lg:basis-5/6 xl:basis-9/12 px-md-2 px-xl-3">
-          <div className="flex flex-row px-1 px-md-0 py-1 pb-0 pt-md-0">
-            <div className="px-0 ps-lg-3">
-              <div className="flex flex-row font-bold text-blue mx-0 pb-1">
+        <div className="px-md-2 px-xl-3 basis-full lg:basis-5/6 xl:basis-9/12">
+          <div className="px-md-0 pt-md-0 flex flex-row px-1 py-1 pb-0">
+            <div className="ps-lg-3 px-0">
+              <div className="text-blue mx-0 flex flex-row pb-1 font-bold">
                 Deck You Edit:
               </div>
               {selectFrom === 'from-url' ? (
                 <form
                   name="from"
                   onSubmit={handleUrlSubmit}
-                  className="min-w-[270px] my-0"
+                  className="my-0 min-w-[270px]"
                 >
                   <div className="input-group">
                     <input
@@ -329,8 +329,8 @@ const Diff = () => {
                   )}
                 </div>
               )}
-              <div className="flex justify-between items-center pt-1">
-                <form className="py-1 my-0 px-2">
+              <div className="flex items-center justify-between pt-1">
+                <form className="my-0 py-1 px-2">
                   {username && decks && Object.keys(decks).length > 0 && (
                     <input
                       checked={selectFrom == 'from-my'}
@@ -387,21 +387,21 @@ const Diff = () => {
               </div>
             </div>
             {!isMobile && (
-              <div className="basis-1/12 flex justify-center px-0">
+              <div className="flex basis-1/12 justify-center px-0">
                 <Button variant="primary" onClick={handleSwap}>
                   <ArrowLeftRight />
                 </Button>
               </div>
             )}
-            <div className="pt-1 pt-md-0 px-0 pe-lg-3">
-              <div className="flex flex-row font-bold text-blue mx-0 pb-1">
+            <div className="pt-md-0 pe-lg-3 px-0 pt-1">
+              <div className="text-blue mx-0 flex flex-row pb-1 font-bold">
                 Show Changes Against:
               </div>
               {selectTo === 'to-url' ? (
                 <form
                   name="to"
                   onSubmit={handleUrlSubmit}
-                  className="min-w-[270px] my-0"
+                  className="my-0 min-w-[270px]"
                 >
                   <div className="input-group">
                     <input
@@ -422,7 +422,7 @@ const Diff = () => {
                     inventoryMode
                       ? 'flex'
                       : isMobile
-                      ? 'flex justify-between min-w-[270px]'
+                      ? 'flex min-w-[270px] justify-between'
                       : 'flex'
                   }
                 >
@@ -460,8 +460,8 @@ const Diff = () => {
                   )}
                 </div>
               )}
-              <div className="flex justify-between items-center pt-1">
-                <form className="py-1 my-0 px-2">
+              <div className="flex items-center justify-between pt-1">
+                <form className="my-0 py-1 px-2">
                   {username && decks && Object.keys(decks).length > 0 && (
                     <input
                       checked={selectTo == 'to-my'}
@@ -520,17 +520,17 @@ const Diff = () => {
           </div>
           {(errorFrom || errorTo) && (
             <div className="flex flex-row py-1">
-              <div className="px-0 ps-lg-3">
+              <div className="ps-lg-3 px-0">
                 {errorFrom && (
-                  <div className="flex items-center justify-center error-message p-2">
+                  <div className="error-message flex items-center justify-center p-2">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
                 )}
               </div>
               <div className="basis-1/12 px-0"></div>
-              <div className="px-0 pe-lg-3">
+              <div className="pe-lg-3 px-0">
                 {errorTo && (
-                  <div className="flex items-center justify-center error-message p-2">
+                  <div className="error-message flex items-center justify-center p-2">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
                 )}
@@ -538,8 +538,8 @@ const Diff = () => {
             </div>
           )}
           {deck && deckTo && (
-            <div className="flex flex-row pt-md-2">
-              <div className="md:basis-7/12 px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
+            <div className="pt-md-2 flex flex-row">
+              <div className="px-md-2 ps-xl-2 pe-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
                 <div
                   className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}
                 >
@@ -553,10 +553,10 @@ const Diff = () => {
                   />
                 </div>
               </div>
-              <div className="md:basis-5/12 px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
+              <div className="px-md-2 ps-xl-3 pe-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
                 <div
                   className={
-                    !isMobile ? 'sticky-deck-library pt-4 pt-md-4' : null
+                    !isMobile ? 'sticky-deck-library pt-md-4 pt-4' : null
                   }
                 >
                   <DiffLibrary
@@ -573,7 +573,7 @@ const Diff = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="lg:basis-1/6 hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
+          <div className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3 lg:basis-1/6">
             <div className="sticky-buttons">
               <DiffButtons
                 missingCrypt={missingCrypt}
@@ -591,7 +591,7 @@ const Diff = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          className="hide-on-gt992px flex float-right-bottom float-menu items-center justify-center"
+          className="hide-on-gt992px float-right-bottom float-menu flex items-center justify-center"
         >
           <List viewBox="0 0 16 16" />
         </div>

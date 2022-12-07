@@ -26,7 +26,7 @@ const ResultLibraryTotal = ({
 
   const totalOutput = Object.keys(byTypes).map((k) => {
     return (
-      <span key={k} className="inline-block whitespace-nowrap pe-3">
+      <span key={k} className="pe-3 inline-block whitespace-nowrap">
         <div className="flex items-center">
           <ResultLibraryTypeImage value={k} />
           {byTypes[k]}
@@ -37,7 +37,7 @@ const ResultLibraryTotal = ({
 
   const value = (
     <>
-      <div className="px-2 whitespace-nowrap">
+      <div className="whitespace-nowrap px-2">
         <b>
           {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
         </b>
@@ -66,7 +66,7 @@ const ResultLibraryTotal = ({
   );
 
   return (
-    <div className="flex items-center justify-between info-message pe-1 pe-md-0">
+    <div className="info-message pe-1 pe-md-0 flex items-center justify-between">
       {value}
     </div>
   );

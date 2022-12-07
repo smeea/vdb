@@ -8,7 +8,7 @@ const CryptSearchFormDisciplines = ({ value, onChange }) => {
       {disciplinesList.map((d, index) => (
         <div key={index} className={`discipline-container state${value[d]}`}>
           <label
-            className="discipline-container flex justify-center items-center"
+            className="discipline-container flex items-center justify-center"
             htmlFor={d}
           >
             <input

@@ -64,7 +64,7 @@ const AccountChangeName = () => {
 
   return (
     <>
-      <div className="font-bold text-lg text-blue flex items-center p-1">
+      <div className="text-blue flex items-center p-1 text-lg font-bold">
         <PenFill />
         <span className="ms-2">Change public name</span>
         {!isMobile ? (

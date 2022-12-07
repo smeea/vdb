@@ -16,7 +16,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           return (
             <div key={index} className={disciplineState}>
               <label
-                className="discipline-container flex justify-center items-center"
+                className="discipline-container flex items-center justify-center"
                 htmlFor={i}
               >
                 <input
@@ -41,7 +41,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           return (
             <div key={index} className={virtueState}>
               <label
-                className="virtue-container flex justify-center items-center"
+                className="virtue-container flex items-center justify-center"
                 htmlFor={i}
               >
                 <input

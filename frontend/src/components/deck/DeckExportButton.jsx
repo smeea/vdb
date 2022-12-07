@@ -112,9 +112,9 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
         {/* variant={inMissing ? 'primary' : 'secondary'} */}
         <div
           title={`Export ${inMissing ? 'Missing' : ''}`}
-          className="flex justify-center items-center"
+          className="flex items-center justify-center"
         >
-          <div className="flex pe-2">
+          <div className="pe-2 flex">
             <Download />
           </div>
           Export {inMissing ? 'Missing' : ''}
@@ -154,15 +154,18 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
                 <ExportDropdown action="copy" format="jol" />
               </>
             )}
-            {!inMissing && username && decks && Object.keys(decks).length > 1 && (
-              <>
-                {/* <Dropdown.Divider /> */}
-                <ExportDropdown action="exportAll" format="text" />
-                <ExportDropdown action="exportAll" format="lackey" />
-                <ExportDropdown action="exportAll" format="jol" />
-                <ExportDropdown action="exportAll" format="xlsx" />
-              </>
-            )}
+            {!inMissing &&
+              username &&
+              decks &&
+              Object.keys(decks).length > 1 && (
+                <>
+                  {/* <Dropdown.Divider /> */}
+                  <ExportDropdown action="exportAll" format="text" />
+                  <ExportDropdown action="exportAll" format="lackey" />
+                  <ExportDropdown action="exportAll" format="jol" />
+                  <ExportDropdown action="exportAll" format="xlsx" />
+                </>
+              )}
           </>
         )}
       </Menu.Items>

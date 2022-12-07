@@ -82,7 +82,7 @@ const TwdResultLibraryByType = ({ library }) => {
         return (
           <img
             key={`${idx}-${index}`}
-            className="type-image-results max-w-none h-[25px]"
+            className="type-image-results h-[25px] max-w-none"
             src={imgSrc}
             title={cardtype}
           />
@@ -91,7 +91,7 @@ const TwdResultLibraryByType = ({ library }) => {
 
       LibraryTypes.push(
         <tr key={cardtype} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          <td className="flex type items-center justify-center">
+          <td className="type flex items-center justify-center">
             {cardtypeImages}
           </td>
           <td

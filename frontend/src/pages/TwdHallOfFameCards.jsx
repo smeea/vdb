@@ -111,7 +111,7 @@ const TwdHallOfFameCards = () => {
   };
 
   return (
-    <div className="hof-cards-container mx-auto px-0 p-md-3">
+    <div className="hof-cards-container p-md-3 mx-auto px-0">
       {/* TODO add styling to Tabs */}
       <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
         <Tab.List>

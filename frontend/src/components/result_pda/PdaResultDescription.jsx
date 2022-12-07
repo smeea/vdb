@@ -113,8 +113,8 @@ const PdaResultDescription = ({ deck }) => {
           </div>
         </>
       ) : (
-        <div className="flex flex-row pb-1 mx-0">
-          <div className="basis-9/12 px-1 mx-0">{Description}</div>
+        <div className="mx-0 flex flex-row pb-1">
+          <div className="mx-0 basis-9/12 px-1">{Description}</div>
           <div className="basis-1/4 px-1">
             <div className="flex flex-col space-y-1">
               <TwdOpenDeckButton deckid={deck['deckid']} />

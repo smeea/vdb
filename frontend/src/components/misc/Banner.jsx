@@ -5,7 +5,7 @@ const Banner = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-between items-center logo-box p-2">
+    <div className="logo-box flex items-center justify-between p-2">
       <div onClick={() => navigate('/')} className="flex items-center">
         <img
           className="logo-image"
@@ -14,10 +14,10 @@ const Banner = () => {
           width="48"
           height="48"
         />
-        <div className="inline text-3xl text-blue font-bold ps-2">VDB</div>
+        <div className="text-blue ps-2 inline text-3xl font-bold">VDB</div>
       </div>
       <div className="inline px-2">
-        <div className="flex justify-end text-xs pb-1">
+        <div className="flex justify-end pb-1 text-xs">
           <i>If only I had a laptop...</i>
         </div>
         <div className="flex justify-end text-xs">

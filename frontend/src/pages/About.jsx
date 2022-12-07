@@ -11,7 +11,7 @@ import changes from '../../../CHANGES.json';
 
 const Title = ({ children }) => {
   return (
-    <div className="font-bold text-xl text-blue underline py-1">{children}</div>
+    <div className="text-blue py-1 text-xl font-bold underline">{children}</div>
   );
 };
 
@@ -21,7 +21,7 @@ const About = () => {
   return (
     <div className="search-container mx-auto">
       <div className="flex justify-center">
-        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-0">
+        <div className="basis-full px-0 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
           <Banner />
           <div className="pt-lg-3">
             <div className="pb-4">
@@ -99,7 +99,7 @@ const About = () => {
                 <a href="https://www.vekn.net/card-lists">VEKN official list</a>
                 : <span className="whitespace-nowrap">2022-11-14</span>
               </div>
-              <div className="font-bold text-blue py-1">
+              <div className="text-blue py-1 font-bold">
                 Last update [{changes[0].version}]:
               </div>
               <ul>
@@ -231,7 +231,7 @@ const About = () => {
                     <div className="inline font-mono text-sm">{BTC_WALLET}</div>
                   </a>
                   <div
-                    className="inline ps-2 with-hover"
+                    className="ps-2 with-hover inline"
                     onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
                   >
                     <ClipboardFill className="inline" viewBox="0 0 18 18" />

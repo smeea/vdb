@@ -105,7 +105,7 @@ const DeckLibraryTableRow = ({
             <>
               {deck.inventoryType && !inSearch && !isMobile && (
                 <td>
-                  <div className="flex relative items-center">
+                  <div className="relative flex items-center">
                     <div
                       className={
                         card.i
@@ -214,7 +214,7 @@ const DeckLibraryTableRow = ({
         </td>
       )}
       {showInfo && (
-        <td className="text-blue text-right w-9 px-1">
+        <td className="text-blue w-9 px-1 text-right">
           {isMobile ? (
             <div
               onClick={() =>

@@ -360,7 +360,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
             )}
             <td className="name px-1" onClick={() => handleOpen(deck.deckid)}>
               <div
-                className="flex truncate name justify-between"
+                className="name flex justify-between truncate"
                 title={deck.name}
               >
                 {deck.name}
@@ -368,7 +368,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                   (deck.master ||
                     (deck.branches && deck.branches.length > 0)) && (
                     <div
-                      className="inline ps-2 revision"
+                      className="ps-2 revision inline"
                       title={deck.branchName}
                     >
                       {deck.branchName}
@@ -393,7 +393,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                             if (event.target === event.currentTarget)
                               setShowDeck(false);
                           }}
-                          className="md:basis-1/2 overflow-y-auto h-[80vh]"
+                          className="h-[80vh] overflow-y-auto md:basis-1/2"
                         >
                           <DeckCrypt inAdvSelect={true} deck={deck} />
                         </div>
@@ -402,7 +402,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                             if (event.target === event.currentTarget)
                               setShowDeck(false);
                           }}
-                          className="md:basis-1/2 overflow-y-auto h-[80vh]"
+                          className="h-[80vh] overflow-y-auto md:basis-1/2"
                         >
                           <DeckLibrary deck={deck} />
                         </div>
@@ -425,7 +425,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
               <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
             </td>
             <td className="buttons">
-              <div className="flex flex-col space-x-1 justify-end pe-1">
+              <div className="pe-1 flex flex-col justify-end space-x-1">
                 <DeckHideButton deck={deck} />
                 {!isMobile && (
                   <>
@@ -526,11 +526,11 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                 <th className="buttons">
                   <div
                     className={`${
-                      isMobile ? '' : 'flex justify-end items-center '
+                      isMobile ? '' : 'flex items-center justify-end '
                     } px-1`}
                   >
                     <input
-                      className={isMobile ? '' : 'pt-0.5 pe-3'}
+                      className={isMobile ? '' : 'pe-3 pt-0.5'}
                       type="checkbox"
                       id="revFilter"
                       label={isDesktop ? 'Show Revisions' : 'Rev'}
@@ -552,9 +552,9 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                 {/* variant="primary" */}
                 <div
                   title="Export Selected"
-                  className="flex justify-center items-center"
+                  className="flex items-center justify-center"
                 >
-                  <div className="flex pe-2">
+                  <div className="pe-2 flex">
                     <Download />
                   </div>
                   Export Selected
@@ -581,7 +581,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="flex float-right-bottom float-clear items-center justify-center"
+          className="float-right-bottom float-clear flex items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

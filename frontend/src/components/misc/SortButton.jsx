@@ -6,8 +6,8 @@ const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
   return (
     <Menu>
       <Menu.Button title="Sort Crypt" variant="primary">
-        <div className="flex justify-center items-center">
-          <div className="flex pe-1">
+        <div className="flex items-center justify-center">
+          <div className="pe-1 flex">
             <SortDown />
           </div>
           {sortMethods[sortMethod]}

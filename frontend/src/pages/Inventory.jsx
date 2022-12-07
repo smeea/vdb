@@ -140,7 +140,7 @@ const Inventory = () => {
               inShared={inventoryKey ? true : false}
             />
           ) : (
-            <div className="flex flex-row mx-0">
+            <div className="mx-0 flex flex-row">
               <InventoryDesktop
                 newCryptId={newCryptId}
                 newLibraryId={newLibraryId}
@@ -178,18 +178,18 @@ const Inventory = () => {
       ) : (
         <>
           {inventoryError ? (
-            <div className="flex flex-row items-center justify-center p-0 p-md-3">
+            <div className="p-md-3 flex flex-row items-center justify-center p-0">
               <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-                <div className="flex items-center justify-center error-message p-2">
+                <div className="error-message flex items-center justify-center p-2">
                   <b>{inventoryError}</b>
                 </div>
               </div>
             </div>
           ) : (
-            <div className="flex flex-row items-center justify-center pt-3 mx-0 h-[80vh]">
-              <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-3">
+            <div className="mx-0 flex h-[80vh] flex-row items-center justify-center pt-3">
+              <div className="basis-full px-3 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
                 <div className="flex justify-center">
-                  <div className="font-bold text-blue">
+                  <div className="text-blue font-bold">
                     Login required to manage inventory
                   </div>
                 </div>
@@ -210,7 +210,7 @@ const Inventory = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          className="hide-on-gt1200px flex float-right-bottom float-menu items-center justify-center"
+          className="hide-on-gt1200px float-right-bottom float-menu flex items-center justify-center"
         >
           <List viewBox="0 0 16 16" />
         </div>

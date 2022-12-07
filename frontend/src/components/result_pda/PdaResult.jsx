@@ -68,7 +68,7 @@ const PdaResult = ({ results, setResults }) => {
 
           return (
             <React.Fragment key={deck['deckid']}>
-              <div className="flex flex-wrap py-2 px-0 mx-0">
+              <div className="mx-0 flex flex-wrap py-2 px-0">
                 <div
                   className={`basis-full xl:basis-1/4 ${
                     isMobile ? 'px-0' : 'px-0'
@@ -78,10 +78,10 @@ const PdaResult = ({ results, setResults }) => {
                 </div>
                 {isMobile ? (
                   <>
-                    <div className="basis-1/2 ps-0 pe-1">
+                    <div className="ps-0 pe-1 basis-1/2">
                       <TwdResultCrypt crypt={deck['crypt']} />
                     </div>
-                    <div className="basis-1/2 ps-1 pe-0">
+                    <div className="ps-1 pe-0 basis-1/2">
                       <TwdResultLibraryKeyCards library={deck['library']} />
                     </div>
                   </>
@@ -99,7 +99,7 @@ const PdaResult = ({ results, setResults }) => {
                   </>
                 )}
               </div>
-              {index + 1 < showCounter && <hr className="mx-0 thick" />}
+              {index + 1 < showCounter && <hr className="thick mx-0" />}
             </React.Fragment>
           );
         }
@@ -130,7 +130,7 @@ const PdaResult = ({ results, setResults }) => {
         <>
           <div
             onClick={handleClear}
-            className="flex float-right-bottom float-clear items-center justify-center"
+            className="float-right-bottom float-clear flex items-center justify-center"
           >
             <X viewBox="0 0 16 16" />
           </div>

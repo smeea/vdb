@@ -31,34 +31,34 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   return (
     <>
       <div
-        className={`flex items-center justify-center year ${
-          card.deckid ? '' : 'font-bold text-blue'
+        className={`year flex items-center justify-center ${
+          card.deckid ? '' : 'text-blue font-bold'
         }`}
       >
         {card.release_date.slice(0, 4)}
       </div>
       {!isMobile && (
-        <div className="flex items-center justify-center year">
+        <div className="year flex items-center justify-center">
           {card.twd_date && card.twd_date.slice(0, 4)}
         </div>
       )}
       <div
-        className={`flex items-center justify-center ytw ${
-          card.deckid ? '' : 'font-bold text-blue'
+        className={`ytw flex items-center justify-center ${
+          card.deckid ? '' : 'text-blue font-bold'
         }`}
       >
         {yearsToWin}
       </div>
-      <div className="flex items-center justify-between items-center player">
+      <div className="player flex items-center items-center justify-between">
         <div
-          className="inline link-like"
+          className="link-like inline"
           onClick={() => handleClick(card.player)}
         >
           {card.player}
         </div>
         {!isMobile && byPlayer && (
           <div
-            className="inline ps-2"
+            className="ps-2 inline"
             title={`First appearance in TWDA:
 Crypt: ${byPlayer.crypt}
 Library: ${byPlayer.library}`}
@@ -67,7 +67,7 @@ Library: ${byPlayer.library}`}
           </div>
         )}
       </div>
-      <div className="flex items-center justify-end button pe-1">
+      <div className="button pe-1 flex items-center justify-end">
         {card.deckid && (
           <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} inHistory />
         )}

@@ -61,7 +61,7 @@ const ResultLayoutTextSets = (props) => {
 
       return (
         <div
-          className="inline-block whitespace-nowrap pe-2"
+          className="pe-2 inline-block whitespace-nowrap"
           onClick={() => {
             if (k !== 'POD') props.setImageSet(k.toLowerCase());
           }}
@@ -90,11 +90,11 @@ const ResultLayoutTextSets = (props) => {
 
   return (
     <>
-      <div className="inline ps-2">{Sets}</div>
+      <div className="ps-2 inline">{Sets}</div>
       {modal && (
         <Modal
           size="xs"
-          className="flex justify-center nested-modal"
+          className="nested-modal flex justify-center"
           dialogClassName="w-75"
           handleClose={() => setModal(null)}
           centered={true}

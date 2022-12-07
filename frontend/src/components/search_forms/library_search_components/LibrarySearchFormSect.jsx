@@ -35,11 +35,11 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
 
   return (
     <>
-      <div className="flex flex-row py-1 ps-1 mx-0 items-center">
-        <div className="flex basis-1/4 justify-between items-center px-0">
-          <div className="font-bold text-blue">Sect:</div>
+      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+        <div className="flex basis-1/4 items-center justify-between px-0">
+          <div className="text-blue font-bold">Sect:</div>
           {value.value[0] !== 'any' && (
-            <div className="flex justify-end pe-1">
+            <div className="pe-1 flex justify-end">
               <div className="pe-1">
                 <SearchFormButtonLogicToggle
                   name={name}
@@ -59,7 +59,7 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
             </div>
           )}
         </div>
-        <div className="basis-9/12 inline px-0">
+        <div className="inline basis-9/12 px-0">
           <Select
             classNamePrefix="react-select"
             options={options}

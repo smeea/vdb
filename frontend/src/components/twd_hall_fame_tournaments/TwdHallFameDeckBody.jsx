@@ -8,7 +8,7 @@ import {
 
 const TwdHallFameDeckBody = ({ deck, isMobile }) => {
   return (
-    <div className="flex flex-row py-0 px-0 mx-0">
+    <div className="mx-0 flex flex-row py-0 px-0">
       <div
         className={`
            basis-full md:basis-full xl:basis-1/4
@@ -18,22 +18,22 @@ const TwdHallFameDeckBody = ({ deck, isMobile }) => {
       </div>
       {isMobile ? (
         <>
-          <div className="basis-1/2 ps-0 pe-1">
+          <div className="ps-0 pe-1 basis-1/2">
             <TwdResultCrypt crypt={deck.crypt} />
           </div>
-          <div className="basis-1/2 ps-1 pe-0">
+          <div className="ps-1 pe-0 basis-1/2">
             <TwdResultLibraryKeyCards library={deck.library} />
           </div>
         </>
       ) : (
         <>
-          <div className="basis-full md:basis-1/3 xl:basis-1/4 px-2">
+          <div className="basis-full px-2 md:basis-1/3 xl:basis-1/4">
             <TwdResultCrypt crypt={deck.crypt} />
           </div>
-          <div className="basis-full md:basis-1/3 xl:basis-1/4 px-2">
+          <div className="basis-full px-2 md:basis-1/3 xl:basis-1/4">
             <TwdResultLibraryByType library={deck.library} />
           </div>
-          <div className="basis-full md:basis-1/3 xl:basis-1/4 pe-0 ps-2">
+          <div className="pe-0 ps-2 basis-full md:basis-1/3 xl:basis-1/4">
             <TwdResultLibraryKeyCards library={deck.library} />
           </div>
         </>

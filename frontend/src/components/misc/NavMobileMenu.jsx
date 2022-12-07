@@ -15,19 +15,19 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   return (
     <div
       ref={menuRef}
-      className="text-white ps-2 relative"
+      className="ps-2 relative text-white"
       onClick={() => setShowMenu(!showMenu)}
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
       {showMenu && (
-        <div className="absolute nav-menu text-lg">
+        <div className="nav-menu absolute text-lg">
           <NavLink
             to="/account"
             onClick={() => setShowMenu(false)}
             className="nav-link px-2 py-1"
           >
-            <div className="flex items-center main-font">
-              <div className="flex justify-center min-w-[30px]">
+            <div className="main-font flex items-center">
+              <div className="flex min-w-[30px] justify-center">
                 <PersonFill height="20" width="20" viewBox="0 0 16 16" />
               </div>
               <div className="ps-2">{username ? 'Account' : 'Login'}</div>
@@ -39,8 +39,8 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             onClick={() => setShowMenu(false)}
             className="nav-link px-2 py-1"
           >
-            <div className="flex items-center main-font">
-              <div className="flex justify-center min-w-[30px]">
+            <div className="main-font flex items-center">
+              <div className="flex min-w-[30px] justify-center">
                 <InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />
               </div>
               <div className="ps-2">About</div>
@@ -55,7 +55,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               setShowMenu(false);
             }}
           >
-            <div className="flex justify-center min-w-[30px]">
+            <div className="flex min-w-[30px] justify-center">
               {inventoryMode ? (
                 <ToggleOn height="26" width="26" viewBox="0 0 16 16" />
               ) : (

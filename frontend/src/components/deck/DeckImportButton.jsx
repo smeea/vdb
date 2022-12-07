@@ -15,8 +15,8 @@ const DeckImportButton = ({
     <Menu>
       <Menu.Button>
         {/* /\* variant="secondary" *\/ */}
-        <div className="flex justify-center items-center">
-          <div className="flex pe-2">
+        <div className="flex items-center justify-center">
+          <div className="pe-2 flex">
             <ClipboardPlus size={24} />
           </div>
           New / Import

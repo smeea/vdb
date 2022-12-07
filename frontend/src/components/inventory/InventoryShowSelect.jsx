@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InventoryShowSelect = ({category, setCategory}) => {
+const InventoryShowSelect = ({ category, setCategory }) => {
   return (
     <form className="my-0">
       <input
@@ -41,6 +41,6 @@ const InventoryShowSelect = ({category, setCategory}) => {
       />
     </form>
   );
-}
+};
 
 export default InventoryShowSelect;

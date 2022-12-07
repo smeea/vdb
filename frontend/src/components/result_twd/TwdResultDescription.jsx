@@ -114,41 +114,41 @@ const TwdResultDescription = ({ deck }) => {
       {isDesktop ? (
         <>
           <div
-            className={`flex justify-center items-center text-lg mx-1 mt-1 mb-2 text-blue ${
+            className={`text-blue mx-1 mt-1 mb-2 flex items-center justify-center text-lg ${
               deck['players'] >= 30
                 ? 'bold border-dashed-thick'
                 : 'border-dashed'
             }`}
             title="Players"
           >
-            <div className="flex items-center pe-1">
+            <div className="pe-1 flex items-center">
               <PeopleFill />
             </div>{' '}
             {deck['players']}
           </div>
           {Description}
           <div className="flex flex-row p-2">
-            <div className="md:basis-1/2 ps-2 pe-1">
+            <div className="ps-2 pe-1 md:basis-1/2">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </div>
-            <div className="md:basis-1/2 ps-1 pe-2">
+            <div className="ps-1 pe-2 md:basis-1/2">
               {username && <DeckCloneButton deck={deck} noRedirect />}
             </div>
           </div>
         </>
       ) : (
-        <div className="flex flex-row pb-1 mx-0">
-          <div className="basis-9/12 px-1 mx-0">{Description}</div>
+        <div className="mx-0 flex flex-row pb-1">
+          <div className="mx-0 basis-9/12 px-1">{Description}</div>
           <div className="basis-1/4 px-1">
             <div className="flex flex-col space-y-1">
               <div
-                className={`flex justify-center items-center text-lg mx-1 mb-1 text-blue ${
+                className={`text-blue mx-1 mb-1 flex items-center justify-center text-lg ${
                   deck['players'] >= 30
                     ? 'bold border-dashed-thick'
                     : 'border-dashed'
                 }`}
               >
-                <div className="flex items-center pe-1">
+                <div className="pe-1 flex items-center">
                   <PeopleFill />
                 </div>{' '}
                 {deck['players']}

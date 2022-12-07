@@ -67,17 +67,17 @@ const Cards = () => {
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
   return (
-    <div className="cards-container mx-auto px-0 p-md-0">
+    <div className="cards-container p-md-0 mx-auto px-0">
       <>
         {isMobile ? (
           <>
             {card && (
               <>
-                <div className="flex flex-row m-0 mb-3 mb-md-0 p-0">
+                <div className="mb-md-0 m-0 mb-3 flex flex-row p-0">
                   <div className="m-0 p-0">
                     {showImage ? (
                       <CardImage
-                        className="w-full h-auto"
+                        className="h-auto w-full"
                         card={card}
                         set={imageSet}
                       />
@@ -96,14 +96,14 @@ const Cards = () => {
                 </div>
                 <div
                   onClick={() => toggleShowImage()}
-                  className="flex float-right-bottom float-turn items-center justify-center"
+                  className="float-right-bottom float-turn flex items-center justify-center"
                 >
                   <ArrowRepeat viewBox="0 0 16 16" />
                 </div>
               </>
             )}
-            <div className="flex flex-row fixed w-full bottom-[40px] mx-0 px-1 py-1">
-              <div className="md:basis-8/12 px-0">
+            <div className="fixed bottom-[40px] mx-0 flex w-full flex-row px-1 py-1">
+              <div className="px-0 md:basis-8/12">
                 <QuickSelect
                   selectedCardid={card && card.Id}
                   setCard={handleSetCard}
@@ -112,13 +112,13 @@ const Cards = () => {
             </div>
             <div
               onClick={() => randomCrypt()}
-              className="flex float-right-top float-random items-center justify-center"
+              className="float-right-top float-random flex items-center justify-center"
             >
               <Dice3 viewBox="0 0 16 16" className="pe-1" /> C
             </div>
             <div
               onClick={() => randomLibrary()}
-              className="flex float-right-middle float-random items-center justify-center"
+              className="float-right-middle float-random flex items-center justify-center"
             >
               <Dice3 viewBox="0 0 16 16" className="pe-1" /> L
             </div>
@@ -127,7 +127,7 @@ const Cards = () => {
           <div className="flex flex-row">
             <div className="md={{ span: 8, offset: 2 }} quick-cards">
               {cryptCardBase && libraryCardBase && (
-                <div className="flex flex-row align-justify-center justify-center py-3">
+                <div className="align-justify-center flex flex-row justify-center py-3">
                   <div className="px-0">
                     <QuickSelect
                       selectedCardid={card && card.Id}
@@ -137,15 +137,15 @@ const Cards = () => {
                 </div>
               )}
               {card && (
-                <div className="flex flex-row align-justify-center justify-center my-2 bordered">
-                  <div className="md:basis-1/2 ps-0">
+                <div className="align-justify-center bordered my-2 flex flex-row justify-center">
+                  <div className="ps-0 md:basis-1/2">
                     <CardImage
-                      className="w-full h-auto"
+                      className="h-auto w-full"
                       card={card}
                       set={imageSet}
                     />
                   </div>
-                  <div className="md:basis-1/2 py-3">
+                  <div className="py-3 md:basis-1/2">
                     <ResultLayoutText
                       card={card}
                       setImageSet={setImageSet}

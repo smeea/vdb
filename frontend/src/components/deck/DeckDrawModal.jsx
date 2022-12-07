@@ -57,10 +57,10 @@ const DeckDrawModal = ({
         title="Deck Draw"
       >
         <div>
-          <div className="flex flex-row px-0 pb-md-4">
-            <div className="basis-full md:basis-7/12 px-0 ps-lg-4 pe-lg-3">
+          <div className="pb-md-4 flex flex-row px-0">
+            <div className="ps-lg-4 pe-lg-3 basis-full px-0 md:basis-7/12">
               <div>
-                <div className="flex justify-between info-message h-10">
+                <div className="info-message flex h-10 justify-between">
                   <div className="flex items-center px-2">
                     <b>Uncontrolled</b>
                   </div>
@@ -70,7 +70,7 @@ const DeckDrawModal = ({
                     </b>
                   </div>
                   <div className="flex">
-                    <div className="flex items-center pe-2">
+                    <div className="pe-2 flex items-center">
                       <b>{initialTransfers}t</b>
                     </div>
                     <div className="flex flex-row space-x-1">
@@ -110,7 +110,7 @@ const DeckDrawModal = ({
                   </div>
                 </div>
                 {cryptTotal < 4 && (
-                  <div className="flex items-center justify-center error-message p-2 my-2">
+                  <div className="error-message my-2 flex items-center justify-center p-2">
                     <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
                   </div>
                 )}
@@ -125,8 +125,8 @@ const DeckDrawModal = ({
                 />
               </div>
             </div>
-            <div className="basis-full md:basis-5/12 px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
-              <div className="flex justify-between info-message h-10">
+            <div className="ps-lg-3 pe-lg-4 pt-md-0 basis-full px-0 pt-4 md:basis-5/12">
+              <div className="info-message flex h-10 justify-between">
                 <div className="flex items-center px-2">
                   <b>Hand</b>
                 </div>
@@ -171,7 +171,7 @@ const DeckDrawModal = ({
                 </div>
               </div>
               {libraryTotal < 7 && (
-                <div className="flex items-center justify-center error-message p-2 my-2">
+                <div className="error-message my-2 flex items-center justify-center p-2">
                   <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
                 </div>
               )}
@@ -185,11 +185,11 @@ const DeckDrawModal = ({
             </div>
           </div>
           {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-            <div className="flex flex-row px-0 pb-md-4">
-              <div className="basis-full md:basis-7/12 px-0 ps-lg-4 pe-lg-3">
+            <div className="pb-md-4 flex flex-row px-0">
+              <div className="ps-lg-4 pe-lg-3 basis-full px-0 md:basis-7/12">
                 {burnedCrypt.length > 0 && (
-                  <div className="pt-4 pt-md-0">
-                    <div className="flex justify-between info-message h-10">
+                  <div className="pt-md-0 pt-4">
+                    <div className="info-message flex h-10 justify-between">
                       <div className="flex items-center px-2">
                         <b>Controlled</b>
                       </div>
@@ -197,7 +197,7 @@ const DeckDrawModal = ({
                         <b>{burnedCrypt.length}</b>
                       </div>
                       <div
-                        className="flex items-center pe-3"
+                        className="pe-3 flex items-center"
                         title="Total Capacity"
                       >
                         <img
@@ -219,10 +219,10 @@ const DeckDrawModal = ({
                   </div>
                 )}
               </div>
-              <div className="basis-full md:basis-5/12 px-0 ps-lg-3 pe-lg-4">
+              <div className="ps-lg-3 pe-lg-4 basis-full px-0 md:basis-5/12">
                 {burnedLibrary.length > 0 && (
-                  <div className="pt-4 pt-md-0">
-                    <div className="flex justify-between info-message h-10">
+                  <div className="pt-md-0 pt-4">
+                    <div className="info-message flex h-10 justify-between">
                       <div className="flex items-center px-2">
                         <b>Ash Heap</b>
                       </div>
@@ -231,11 +231,11 @@ const DeckDrawModal = ({
                       </div>
                       <div className="flex">
                         <div
-                          className="flex items-center pe-3"
+                          className="pe-3 flex items-center"
                           title="Total Blood Cost"
                         >
                           <img
-                            className="cost-blood-image-results pb-1 pe-1"
+                            className="cost-blood-image-results pe-1 pb-1"
                             src={
                               process.env.ROOT_URL + 'images/misc/bloodX.png'
                             }
@@ -243,11 +243,11 @@ const DeckDrawModal = ({
                           <b>{burnedBloodTotal}</b>
                         </div>
                         <div
-                          className="flex items-center pe-3"
+                          className="pe-3 flex items-center"
                           title="Total Pool Cost"
                         >
                           <img
-                            className="cost-pool-image-results py-1 pe-1"
+                            className="cost-pool-image-results pe-1 py-1"
                             src={process.env.ROOT_URL + 'images/misc/poolX.png'}
                           />
                           <b>{burnedPoolTotal}</b>
@@ -279,7 +279,7 @@ const DeckDrawModal = ({
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="flex float-right-bottom float-clear items-center justify-center"
+          className="float-right-bottom float-clear flex items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

@@ -245,12 +245,12 @@ const Decks = () => {
   }, [deck]);
 
   return (
-    <div className="deck-container mx-auto px-0 px-md-2 px-xl-4 py-md-3">
-      <div className="flex flex-row mx-0">
+    <div className="deck-container px-md-2 px-xl-4 py-md-3 mx-auto px-0">
+      <div className="mx-0 flex flex-row">
         <div className="xl:basis-1/12"></div>
-        <div className="basis-full lg:basis-5/6 xl:basis-9/12 px-md-2 px-xl-3">
-          <div className="flex flex-row px-1 px-md-0 py-1 pb-0 pt-md-0">
-            <div className="md:basis-5/12 px-0 px-md-2">
+        <div className="px-md-2 px-xl-3 basis-full lg:basis-5/6 xl:basis-9/12">
+          <div className="px-md-0 pt-md-0 flex flex-row px-1 py-1 pb-0">
+            <div className="px-md-2 px-0 md:basis-5/12">
               <div
                 className={
                   inventoryMode || !isMobile ? 'flex' : 'flex justify-between'
@@ -285,7 +285,7 @@ const Decks = () => {
                 )}
                 <div className="flex">
                   {inventoryMode && deck?.isAuthor && (
-                    <div className="flex ps-1">
+                    <div className="ps-1 flex">
                       <Button
                         title={`Inventory Type: ${
                           !deck?.inventoryType
@@ -307,8 +307,8 @@ const Decks = () => {
                   )}
                 </div>
               </div>
-              <div className="flex justify-between items-center pt-2">
-                <form className="my-0 ps-1">
+              <div className="flex items-center justify-between pt-2">
+                <form className="ps-1 my-0">
                   {username && decks && Object.keys(decks).length > 0 && (
                     <input
                       checked={selectFrom == 'my'}
@@ -383,14 +383,14 @@ const Decks = () => {
                 </div>
               </div>
             </div>
-            <div className="md:basis-7/12 px-0 px-md-2">
+            <div className="px-md-2 px-0 md:basis-7/12">
               {deck && (showInfo || !isMobile) && (
                 <>
-                  <div className="flex flex-row mx-0 pb-sm-2">
+                  <div className="pb-sm-2 mx-0 flex flex-row">
                     <div
                       className={`${
                         deck.isBranches ? 'md:basis-6/12' : 'md:basis-8/12'
-                      } px-0 ps-md-0 pe-md-1`}
+                      } ps-md-0 pe-md-1 px-0`}
                     >
                       <DeckChangeName deck={deck} />
                     </div>
@@ -404,14 +404,14 @@ const Decks = () => {
                       </div>
                     )}
                     <div
-                      className={`md:basis-1/3 px-0 ${
-                        isMobile ? 'pt-0.5' : 'ps-md-1 pe-md-0 pt-2 pt-md-0'
+                      className={`px-0 md:basis-1/3 ${
+                        isMobile ? 'pt-0.5' : 'ps-md-1 pe-md-0 pt-md-0 pt-2'
                       }`}
                     >
                       <DeckChangeAuthor deck={deck} />
                     </div>
                   </div>
-                  <div className="flex flex-row mx-0">
+                  <div className="mx-0 flex flex-row">
                     <div className={isMobile ? 'px-0 pt-0.5' : 'px-0'}>
                       <DeckChangeDescription
                         deck={deck}
@@ -452,30 +452,30 @@ const Decks = () => {
             </div>
           </div>
           {error && (
-            <div className="flex flex-row px-0 py-4 px-lg-2">
-              <div className="flex items-center justify-center error-message font-bold p-2">
+            <div className="px-lg-2 flex flex-row px-0 py-4">
+              <div className="error-message flex items-center justify-center p-2 font-bold">
                 {error}
               </div>
             </div>
           )}
           {deck && (
-            <div className="flex flex-row pt-md-2">
+            <div className="pt-md-2 flex flex-row">
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
                 Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
-                  <div className="md:basis-7/12 px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
+                  <div className="px-md-2 ps-xl-2 pe-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
                     <DeckCrypt deck={deck} />
                   </div>
-                  <div className="md:basis-5/12 px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
+                  <div className="px-md-2 ps-xl-3 pe-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
                     <DeckLibrary deck={deck} />
                   </div>
                 </>
               ) : (
-                <div className="px-0 py-4 px-lg-2">
-                  <div className="flex items-center justify-center error-message p-2">
+                <div className="px-lg-2 px-0 py-4">
+                  <div className="error-message flex items-center justify-center p-2">
                     <b>CONTAIN PLAYTEST CARDS</b>
                   </div>
                 </div>
@@ -484,7 +484,7 @@ const Decks = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="lg:basis-1/6 hide-on-lt992px ps-md-1 pe-md-0 px-xl-3">
+          <div className="hide-on-lt992px ps-md-1 pe-md-0 px-xl-3 lg:basis-1/6">
             <div className="sticky-buttons">
               <DeckButtons
                 deck={deck}
@@ -501,15 +501,15 @@ const Decks = () => {
         )}
       </div>
       {!username && !deckid && !hash && (
-        <div className="flex flex-row items-center justify-center pt-4 mx-0 h-[70vh]">
-          <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 px-3">
+        <div className="mx-0 flex h-[70vh] flex-row items-center justify-center pt-4">
+          <div className="basis-full px-3 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
             <div className="flex justify-center">
-              <div className="font-bold text-blue">
+              <div className="text-blue font-bold">
                 Login required to create decks
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="font-bold text-lg text-blue text-xs">
+              <div className="text-blue text-lg text-xs font-bold">
                 (Browse preconstructed decks without login)
               </div>
             </div>
@@ -524,12 +524,12 @@ const Decks = () => {
       )}
 
       {username && decks && Object.keys(decks).length === 0 && !deck && (
-        <div className="flex flex-row items-center justify-center p-3 vh-70">
+        <div className="vh-70 flex flex-row items-center justify-center p-3">
           <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-            <div className="text-center text-blue font-bold py-2">
+            <div className="text-blue py-2 text-center font-bold">
               You do not have any decks in your collection yet
             </div>
-            <div className="text-center text-blue font-bold py-2">
+            <div className="text-blue py-2 text-center font-bold">
               Start by creating new one, import from Lackey / Amaranth / Text or
               browse official preconstructed decks
             </div>
@@ -546,7 +546,7 @@ const Decks = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          className="hide-on-gt992px flex float-right-bottom float-menu items-center justify-center"
+          className="hide-on-gt992px float-right-bottom float-menu flex items-center justify-center"
         >
           <List viewBox="0 0 16 16" />
         </div>

@@ -9,20 +9,20 @@ const Twd = () => {
   const [error, setError] = useState();
 
   return (
-    <div className="twd-container mx-auto px-md-1 pt-md-3">
+    <div className="twd-container px-md-1 pt-md-3 mx-auto">
       <div className="flex flex-row justify-center">
         <div
           className={`basis-full md:basis-8/12 xl:basis-9/12 ${
             !isMobile || (isMobile && !error)
-              ? 'px-0 pe-lg-4'
-              : 'hidden px-0 px-md-2 px-lg-4'
+              ? 'pe-lg-4 px-0'
+              : 'px-md-2 px-lg-4 hidden px-0'
           }`}
         >
           {twdResults && (
             <TwdResult results={twdResults} setResults={setTwdResults} />
           )}
           {error && (
-            <div className="flex items-center justify-center font-bold error-message">
+            <div className="error-message flex items-center justify-center font-bold">
               {error}
             </div>
           )}
@@ -31,7 +31,7 @@ const Twd = () => {
           className={`basis-full md:basis-1/3 xl:basis-1/4
             ${
               !isMobile || (isMobile && !twdResults)
-                ? 'p-1 py-md-0 px-md-2 px-xl-0'
+                ? 'py-md-0 px-md-2 px-xl-0 p-1'
                 : 'hidden'
             }`}
         >

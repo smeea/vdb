@@ -55,7 +55,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype} className="pt-2">
-      <div className="flex justify-between pe-2">
+      <div className="pe-2 flex justify-between">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
@@ -106,7 +106,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
 
   return (
     <>
-      <div className={!isMobile ? 'sticky-deck-library pt-4 pt-md-4' : null}>
+      <div className={!isMobile ? 'sticky-deck-library pt-md-4 pt-4' : null}>
         <DeckLibraryHeader
           isMobile={isMobile}
           libraryTotal={libraryTotal}
@@ -152,7 +152,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
       </div>
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
-        <div className="opacity-60 pt-2">
+        <div className="pt-2 opacity-60">
           <b>Side Library</b>
           {LibrarySideDeck}
         </div>
@@ -160,7 +160,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
       {isMobile && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
-          className="flex float-right-middle float-add-on items-center justify-center"
+          className="float-right-middle float-add-on flex items-center justify-center"
         >
           <div className="inline" style={{ fontSize: '1.4em' }}>
             +

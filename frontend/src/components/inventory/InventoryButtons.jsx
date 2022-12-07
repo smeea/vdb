@@ -115,7 +115,7 @@ const InventoryButtons = ({
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="flex float-right-bottom float-clear items-center justify-center"
+          className="float-right-bottom float-clear flex items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

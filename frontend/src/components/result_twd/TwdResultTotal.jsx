@@ -26,10 +26,10 @@ const TwdResultTotal = ({
     <div
       className={`d-${
         isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'
-      } items-center justify-between info-message`}
+      } info-message items-center justify-between`}
     >
       <div
-        className={`inline ps-2 pe-1 ${isMobile ? '' : 'whitespace-nowrap'}`}
+        className={`ps-2 pe-1 inline ${isMobile ? '' : 'whitespace-nowrap'}`}
       >
         <b>TOTAL: {total}</b>
       </div>

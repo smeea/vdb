@@ -60,7 +60,7 @@ const DeckPublicButton = ({ deck, noText }) => {
           {/* variant="secondary" */}
           <div
             title="Public Deck Archive Actions"
-            className="flex justify-center items-center"
+            className="flex items-center justify-center"
           >
             <div className={`flex ${noText ? '' : 'pe-2'}`}>
               {!spinnerState ? (
@@ -99,7 +99,7 @@ const DeckPublicButton = ({ deck, noText }) => {
           title={`Sync &quot;${deck.name}&quot; with Public Deck Archive?`}
         >
           <div>
-            <div className="font-bold text-blue pb-2">
+            <div className="text-blue pb-2 font-bold">
               Changes from currently published version:
             </div>
             <DeckPublicDiff deckTo={deck} deckFrom={decks[deck.publicParent]} />

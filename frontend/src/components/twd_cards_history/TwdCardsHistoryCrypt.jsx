@@ -63,14 +63,14 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
     return (
       <>
         <div
-          className="flex items-center justify-center capacity"
+          className="capacity flex items-center justify-center"
           onClick={() => handleClick(idx)}
         >
           <ResultCryptCapacity value={card.Capacity} />
         </div>
         {!isMobile && (
           <div
-            className="flex items-center content-left disciplines"
+            className="content-left disciplines flex items-center"
             onClick={() => handleClick(idx)}
           >
             <ResultCryptDisciplines value={card.Disciplines} />
@@ -82,7 +82,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
           disabled={isMobile}
         >
           <div
-            className={`flex items-center justify-start name ${
+            className={`name flex items-center justify-start ${
               card.deckid ? '' : 'bold'
             } px-1`}
             onClick={() => handleClick(idx)}
@@ -95,8 +95,8 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
             <div className="flex justify-center">
               <ResultClanImage value={card.Clan} />
             </div>
-            <div className="flex text-xs justify-end">
-              <div className="font-bold text-blue">
+            <div className="flex justify-end text-xs">
+              <div className="text-blue font-bold">
                 <ResultCryptTitle value={card.Title} />
               </div>
               <ResultCryptGroup value={card.Group} />
@@ -114,7 +114,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`flex bordered ${index % 2 ? 'result-even' : 'result-odd'}`}
+      className={`bordered flex ${index % 2 ? 'result-even' : 'result-odd'}`}
     >
       {cardRows[index]}
     </div>
@@ -122,7 +122,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
 
   return (
     <div className="inventory-container-crypt">
-      <div className="flex items-center justify-between info-message">
+      <div className="info-message flex items-center justify-between">
         <div className="w-75 p-1">
           <InventoryFilterForm
             value={clan}
@@ -141,36 +141,36 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
         />
       </div>
 
-      <div className="flex info-message text-blue font-bold history-crypt-table">
-        {!isMobile && <div className="flex capacity" />}
-        {!isMobile && <div className="flex disciplines" />}
-        <div className="flex name" />
-        {!isMobile && <div className="flex clan-group" />}
+      <div className="info-message text-blue history-crypt-table flex font-bold">
+        {!isMobile && <div className="capacity flex" />}
+        {!isMobile && <div className="disciplines flex" />}
+        <div className="name flex" />
+        {!isMobile && <div className="clan-group flex" />}
         <div
-          className="flex items-center justify-center year"
+          className="year flex items-center justify-center"
           title="First Print Date"
         >
           Print
         </div>
         {!isMobile && (
           <div
-            className="flex items-center justify-center year"
+            className="year flex items-center justify-center"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
         <div
-          className="flex items-center justify-center ytw"
+          className="ytw flex items-center justify-center"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
-        <div className="flex items-center player" title="First Winner">
+        <div className="player flex items-center" title="First Winner">
           Player
         </div>
-        <div className="flex button pe-1" />
-        {!isMobile && <div className="flex scroll-bar" />}
+        <div className="button pe-1 flex" />
+        {!isMobile && <div className="scroll-bar flex" />}
       </div>
       <AutoSizer>
         {({ width, height }) => (

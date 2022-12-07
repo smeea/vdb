@@ -74,7 +74,7 @@ const InventoryShareModal = ({ setShow }) => {
             <>
               <a href={shareUrl}>{shareUrl}</a>
               <span
-                className="inline ps-2 pe-3 with-hover"
+                className="ps-2 pe-3 with-hover inline"
                 onClick={() => navigator.clipboard.writeText(shareUrl)}
               >
                 <ClipboardFill viewBox="0 0 18 18" />
@@ -112,7 +112,7 @@ const InventoryShareModal = ({ setShow }) => {
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="flex float-right-bottom float-clear items-center justify-center"
+          className="float-right-bottom float-clear flex items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

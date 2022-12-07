@@ -162,7 +162,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
               />
             </div>
             <div
-              className="flex items-center justify-center type"
+              className="type flex items-center justify-center"
               onClick={() => handleClick(idx)}
             >
               <ResultLibraryTypeImage value={card.Type} />
@@ -170,7 +170,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           </>
         )}
         <div
-          className="flex items-center justify-center clan-disciplines"
+          className="clan-disciplines flex items-center justify-center"
           onClick={() => handleClick(idx)}
         >
           <ResultLibraryClan value={card.Clan} />
@@ -183,7 +183,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           disabled={isMobile}
         >
           <div
-            className={`flex items-center justify-start name ${
+            className={`name flex items-center justify-start ${
               card.deckid ? '' : 'bold'
             } px-1`}
             onClick={() => handleClick(idx)}
@@ -193,7 +193,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         </ConditionalTooltip>
         {!isMobile && (
           <div
-            className="flex items-center justify-center burn"
+            className="burn flex items-center justify-center"
             onClick={() => handleClick(idx)}
           >
             <ResultLibraryBurn value={card['Burn Option']} />
@@ -210,7 +210,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`flex bordered ${index % 2 ? 'result-even' : 'result-odd'}`}
+      className={`bordered flex ${index % 2 ? 'result-even' : 'result-odd'}`}
     >
       {cardRows[index]}
     </div>
@@ -218,7 +218,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
 
   return (
     <div className="inventory-container-library">
-      <div className="flex items-center justify-between info-message">
+      <div className="info-message flex items-center justify-between">
         <div className="w-75 p-1">
           <div className="flex flex-col space-y-1">
             <InventoryFilterForm
@@ -248,36 +248,36 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         />
       </div>
 
-      <div className="flex info-message text-blue font-bold history-library-table">
-        {!isMobile && <div className="flex cost" />}
-        {!isMobile && <div className="flex type" />}
-        <div className="flex name" />
-        {!isMobile && <div className="flex clan-disciplines" />}
+      <div className="info-message text-blue history-library-table flex font-bold">
+        {!isMobile && <div className="cost flex" />}
+        {!isMobile && <div className="type flex" />}
+        <div className="name flex" />
+        {!isMobile && <div className="clan-disciplines flex" />}
         <div
-          className="flex items-center justify-center year"
+          className="year flex items-center justify-center"
           title="First Print Date"
         >
           Print
         </div>
         {!isMobile && (
           <div
-            className="flex items-center justify-center year"
+            className="year flex items-center justify-center"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
         <div
-          className="flex items-center justify-center ytw"
+          className="ytw flex items-center justify-center"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
-        <div className="flex items-center player" title="First Winner">
+        <div className="player flex items-center" title="First Winner">
           Player
         </div>
-        <div className="flex button pe-1" />
-        {!isMobile && <div className="flex scroll-bar" />}
+        <div className="button pe-1 flex" />
+        {!isMobile && <div className="scroll-bar flex" />}
       </div>
       <AutoSizer>
         {({ width, height }) => (

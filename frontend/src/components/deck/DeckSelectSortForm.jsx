@@ -9,7 +9,7 @@ const DeckSelectSortForm = ({ onChange }) => {
     <Menu>
       <Menu.Button>
         {/* variant="primary" */}
-        <div title="Sort Decks" className="flex justify-center items-center">
+        <div title="Sort Decks" className="flex items-center justify-center">
           <SortDown />
         </div>
       </Menu.Button>

@@ -76,7 +76,7 @@ const SearchFormTextAndButtons = ({
 
   return (
     <>
-      <div className="flex flex-row ps-0 ps-md-1 mx-0 items-center">
+      <div className="ps-0 ps-md-1 mx-0 flex flex-row items-center">
         {isMobile ? (
           <input
             placeholder="Card Name / Text / RegEx"
@@ -120,7 +120,7 @@ const SearchFormTextAndButtons = ({
           </div>
         )}
       </div>
-      <div className="flex flex-row mx-0 px-1 pt-1">
+      <div className="mx-0 flex flex-row px-1 pt-1">
         <div className="basis-2/12 md:basis-1/4">
           <div className="flex flex-row space-x-1">
             {value[0].value !== '' && (
@@ -141,7 +141,7 @@ const SearchFormTextAndButtons = ({
           </div>
         </div>
         <div className="flex justify-end">
-          <div className="flex flex-col space-x-3 items-start">
+          <div className="flex flex-col items-start space-x-3">
             {OptionsForm}
           </div>
         </div>
@@ -157,7 +157,7 @@ const SearchFormTextAndButtons = ({
           name={0}
           value="hideMissing"
           type="checkbox"
-          className="text-xs pt-1"
+          className="pt-1 text-xs"
           id="text-hideMissing"
           label="Search In Inventory"
           checked={hideMissing}

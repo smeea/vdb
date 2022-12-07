@@ -18,8 +18,8 @@ const DeckLibraryHeader = ({
     <div
       className={
         isMobile
-          ? 'flex items-center justify-between ps-2 pe-1 info-message'
-          : 'flex items-center justify-between ps-2 info-message'
+          ? 'ps-2 pe-1 info-message flex items-center justify-between'
+          : 'ps-2 info-message flex items-center justify-between'
       }
     >
       <b>
@@ -29,16 +29,16 @@ const DeckLibraryHeader = ({
       </b>
       {!inMissing && (
         <div className="flex">
-          <div className="flex items-center pe-3" title="Total Blood Cost">
+          <div className="pe-3 flex items-center" title="Total Blood Cost">
             <img
-              className="cost-blood-image-results pb-1 pe-1"
+              className="cost-blood-image-results pe-1 pb-1"
               src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
             />
             <b>{bloodTotal}</b>
           </div>
           <div className="flex items-center" title="Total Pool Cost">
             <img
-              className="cost-pool-image-results py-1 pe-1"
+              className="cost-pool-image-results pe-1 py-1"
               src={process.env.ROOT_URL + 'images/misc/poolX.png'}
             />
             <b>{poolTotal}</b>

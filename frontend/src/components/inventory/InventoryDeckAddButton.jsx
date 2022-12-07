@@ -30,8 +30,8 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
         title={inInventory ? 'Already in Inventory' : 'Add Deck to Inventory'}
       >
         {inInventory ? (
-          <div className="flex justify-center items-center">
-            <div className="flex pe-1">
+          <div className="flex items-center justify-center">
+            <div className="pe-1 flex">
               <Check2 />
             </div>
             {inInventory}

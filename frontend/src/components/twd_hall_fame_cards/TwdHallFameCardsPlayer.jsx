@@ -92,30 +92,30 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
       <Disclosure.Button onClick={() => handlePlayerClick()}>
         <div
           className={`flex ${
-            isMobile ? 'w-full h-auto' : 'w-75'
-          } pe-1 justify-between items-center`}
+            isMobile ? 'h-auto w-full' : 'w-75'
+          } pe-1 items-center justify-between`}
         >
           <div className="flex w-[55%] items-center">
             {Object.keys(cards).length}
-            <div className="flex ps-1 pe-3">
+            <div className="ps-1 pe-3 flex">
               <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
             </div>
             <div className="flex items-center">{name}</div>
           </div>
           <div className="flex w-[45%] justify-between">
             <div
-              className="flex whitespace-nowrap px-1 px-md-3"
+              className="px-md-3 flex whitespace-nowrap px-1"
               title="First Card add to Hall of Fame / Last Card add to Hall of Fame"
             >
               {isMobile
                 ? `'${firstCardDate.slice(2, 4)}-'${lastCardDate.slice(2, 4)}`
                 : `${firstCardDate.slice(0, 4)} - ${lastCardDate.slice(0, 4)}`}
             </div>
-            <div className="flex whitespace-nowrap px-1 px-md-3">
+            <div className="px-md-3 flex whitespace-nowrap px-1">
               {isMobile ? 'C:' : 'Crypt: '}
               {cryptSorted.length}
             </div>
-            <div className="flex whitespace-nowrap px-1 px-md-3">
+            <div className="px-md-3 flex whitespace-nowrap px-1">
               {isMobile ? 'L:' : 'Library: '}
               {librarySorted.length}
             </div>

@@ -53,7 +53,7 @@ const DeckProxyCrypt = ({
   return (
     <>
       <div
-        className={`flex items-center justify-between pb-2 ps-2 info-message ${
+        className={`ps-2 info-message flex items-center justify-between pb-2 ${
           isMobile ? 'pe-1' : 'py-2'
         }`}
       >
@@ -71,8 +71,8 @@ const DeckProxyCrypt = ({
         proxySelected={proxySelected}
       />
       {Object.keys(cryptSide).length > 0 && (
-        <div className="opacity-60 pt-2">
-          <div className="flex items-center justify-between ps-2">
+        <div className="pt-2 opacity-60">
+          <div className="ps-2 flex items-center justify-between">
             <b>Side Crypt</b>
           </div>
           <DeckProxyCryptTable

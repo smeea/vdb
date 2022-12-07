@@ -34,7 +34,7 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
   return (
     <>
       <div className="flex justify-between py-1">
-        <div className="flex pe-2" title="Average capacity">
+        <div className="pe-2 flex" title="Average capacity">
           <span className="blue pe-2">Avg. cap:</span> {cryptAvg}
         </div>
         <div title="Chance to draw X unique vampires" className="flex">

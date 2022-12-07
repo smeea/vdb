@@ -26,10 +26,10 @@ const ResultCryptLayoutText = ({
 
   return (
     <>
-      <div className="flex whitespace-nowrap justify-between items-center pb-1">
-        <div className="flex whitespace-nowrap items-center">
+      <div className="flex items-center justify-between whitespace-nowrap pb-1">
+        <div className="flex items-center whitespace-nowrap">
           <ResultClanImage value={card.Clan} />
-          <div className="name font-bold ps-2">
+          <div className="name ps-2 font-bold">
             <ResultCryptName card={card} />
             {card.Adv[1] && (
               <ConditionalTooltip
@@ -76,7 +76,7 @@ const ResultCryptLayoutText = ({
           <div className="py-1">
             <b>Rulings:</b>
           </div>
-          <div className="text-xs pb-1">
+          <div className="pb-1 text-xs">
             <ResultLayoutTextRulings rulings={card['Rulings']} />
           </div>
         </>

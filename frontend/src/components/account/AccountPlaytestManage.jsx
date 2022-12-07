@@ -18,7 +18,7 @@ const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
       className={`flex items-center ${state ? '' : 'text-neutral-500'}`}
       onClick={handleClick}
     >
-      <div className="flex items-center pe-2">
+      <div className="pe-2 flex items-center">
         <>
           {state ? (
             <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
@@ -108,7 +108,7 @@ const AccountPlaytestManage = ({ setShow }) => {
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="flex float-right-bottom float-clear items-center justify-center"
+          className="float-right-bottom float-clear flex items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

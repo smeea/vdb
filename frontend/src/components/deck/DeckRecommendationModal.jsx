@@ -15,9 +15,9 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
         title="Card Ideas"
       >
         <div>
-          <div className="flex flex-row px-0 pb-md-4">
-            <div className="basis-full md:basis-7/12 px-0 ps-lg-4 pe-lg-3">
-              <div className="flex justify-between items-center info-message h-10 px-2">
+          <div className="pb-md-4 flex flex-row px-0">
+            <div className="ps-lg-4 pe-lg-3 basis-full px-0 md:basis-7/12">
+              <div className="info-message flex h-10 items-center justify-between px-2">
                 <b>CRYPT</b>
               </div>
               {crypt ? (
@@ -27,20 +27,20 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
                   inRecommendation
                 />
               ) : (
-                <div className="flex justify-center py-4 pb-md-0">
+                <div className="pb-md-0 flex justify-center py-4">
                   {' '}
                   <Spinner animation="border" />
                 </div>
               )}
             </div>
-            <div className="basis-full md:basis-5/12 px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
-              <div className="flex justify-between items-center info-message h-10 px-2">
+            <div className="ps-lg-3 pe-lg-4 pt-md-0 basis-full px-0 pt-4 md:basis-5/12">
+              <div className="info-message flex h-10 items-center justify-between px-2">
                 <b>LIBRARY</b>
               </div>
               {library ? (
                 <DeckRecommendationLibrary cards={library} />
               ) : (
-                <div className="flex justify-center py-4 pb-md-0">
+                <div className="pb-md-0 flex justify-center py-4">
                   {' '}
                   <Spinner animation="border" />
                 </div>
@@ -52,7 +52,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
       {isNarrow && (
         <div
           onClick={handleClose}
-          className="flex float-right-bottom float-clear items-center justify-center"
+          className="float-right-bottom float-clear flex items-center justify-center"
         >
           <X viewBox="0 0 16 16" />
         </div>

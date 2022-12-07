@@ -14,7 +14,7 @@ const ResultCryptName = ({ card }) => {
       {card.Adv[0] && (
         <span className="ps-1">
           <img
-            className="advanced-image-results align-text-bottom inline h-[22px]"
+            className="advanced-image-results inline h-[22px] align-text-bottom"
             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
             title="Advanced"
           />

@@ -74,7 +74,7 @@ const ResultModal = ({
             {showImage ? (
               <>
                 <CardImage
-                  className="w-full h-auto"
+                  className="h-auto w-full"
                   card={activeCard}
                   set={imageSet}
                   onClick={handleClose}
@@ -93,16 +93,16 @@ const ResultModal = ({
             )}
           </div>
         ) : (
-          <div className="flex flex-row mx-0">
-            <div className="md:basis-5/12 bg-black px-0">
+          <div className="mx-0 flex flex-row">
+            <div className="bg-black px-0 md:basis-5/12">
               <CardImage
-                className="w-full h-auto"
+                className="h-auto w-full"
                 card={activeCard}
                 set={imageSet}
                 onClick={handleClose}
               />
             </div>
-            <div className="md:basis-7/12 p-4">
+            <div className="p-4 md:basis-7/12">
               <ResultLayoutText
                 card={activeCard}
                 setCard={setActiveCard}
@@ -115,20 +115,20 @@ const ResultModal = ({
         )}
         <div
           onClick={() => handleModalCardChange(-1)}
-          className={`bottom-1/2 absolute ${
+          className={`absolute bottom-1/2 ${
             isMobile
-              ? 'text-neutral-500 h-[50px] left-0'
-              : 'text-white left-[-40px]'
+              ? 'left-0 h-[50px] text-neutral-500'
+              : 'left-[-40px] text-white'
           }`}
         >
           <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
         </div>
         <div
           onClick={() => handleModalCardChange(1)}
-          className={`bottom-1/2 absolute ${
+          className={`absolute bottom-1/2 ${
             isMobile
-              ? 'text-neutral-500 h-[50px] right-0'
-              : 'text-white right-[-40px]'
+              ? 'right-0 h-[50px] text-neutral-500'
+              : 'right-[-40px] text-white'
           }`}
         >
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
@@ -136,7 +136,7 @@ const ResultModal = ({
         {isMobile && (
           <div
             onClick={() => toggleShowImage()}
-            className="flex float-right-middle float-turn items-center justify-center"
+            className="float-right-middle float-turn flex items-center justify-center"
           >
             <ArrowRepeat viewBox="0 0 16 16" />
           </div>
@@ -144,7 +144,7 @@ const ResultModal = ({
         {isNarrow && (
           <div
             onClick={handleClose}
-            className="flex float-right-bottom float-clear items-center justify-center"
+            className="float-right-bottom float-clear flex items-center justify-center"
           >
             <X viewBox="0 0 16 16" />
           </div>

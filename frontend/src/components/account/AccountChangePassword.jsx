@@ -124,7 +124,7 @@ const AccountChangePassword = () => {
 
   return (
     <div>
-      <div className="font-bold text-lg text-blue flex items-center p-1">
+      <div className="text-blue flex items-center p-1 text-lg font-bold">
         <LockFill />
         <span className="ms-2">Change password</span>
       </div>

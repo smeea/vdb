@@ -12,7 +12,7 @@ const ThemeSelect = ({ setShowMenu }) => {
     <div
       className={`flex ${
         isMobile ? 'items-center' : 'text-white'
-      } px-2 py-1 px-md-3`}
+      } px-md-3 px-2 py-1`}
       onClick={() => {
         toggleTheme();
         isMobile && setShowMenu(false);
@@ -20,7 +20,7 @@ const ThemeSelect = ({ setShowMenu }) => {
     >
       {isMobile ? (
         <>
-          <div className="flex justify-center min-w-[30px]">
+          <div className="flex min-w-[30px] justify-center">
             {theme === 'dark' && (
               <MoonFill height="20" width="20" viewBox="0 0 16 16" />
             )}
@@ -31,7 +31,7 @@ const ThemeSelect = ({ setShowMenu }) => {
               <PcDisplay height="20" width="20" viewBox="0 0 16 16" />
             )}
           </div>
-          <div className="whitespace-nowrap ps-2">
+          <div className="ps-2 whitespace-nowrap">
             {theme === 'dark' && 'Dark Theme'}
             {theme === 'light' && 'Light Theme'}
             {theme === 'auto' && 'System Theme'}

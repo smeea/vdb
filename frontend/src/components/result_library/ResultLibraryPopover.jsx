@@ -22,12 +22,12 @@ const ResultLibraryPopover = ({ card, setImageSet }) => {
     <>
       {!showImage ? (
         <div className="py-1">
-          <div className="flex whitespace-nowrap justify-between items-center">
-            <div className="flex whitespace-nowrap items-center">
+          <div className="flex items-center justify-between whitespace-nowrap">
+            <div className="flex items-center whitespace-nowrap">
               <div>
                 <ResultLibraryTypeImage value={card.Type} />
               </div>
-              <div className="name font-bold ps-2">
+              <div className="name ps-2 font-bold">
                 <ResultLibraryName card={card} />
               </div>
             </div>
@@ -58,7 +58,7 @@ const ResultLibraryPopover = ({ card, setImageSet }) => {
                 valueBlood={card['Blood Cost']}
               />
             </div>
-            <div className="text-xs text-right max-w-[300px]">
+            <div className="max-w-[300px] text-right text-xs">
               <ResultLayoutTextSets
                 setImageSet={setImageSet}
                 sets={card['Set']}
@@ -70,7 +70,7 @@ const ResultLibraryPopover = ({ card, setImageSet }) => {
               <div className="py-1">
                 <b>Rulings: </b>
               </div>
-              <div className="max-w-[275px] text-xs pb-1">
+              <div className="max-w-[275px] pb-1 text-xs">
                 <ResultLayoutTextRulings rulings={card['Rulings']} />
               </div>
             </>

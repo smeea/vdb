@@ -6,7 +6,7 @@ const ToogleSearchAddButton = ({ addMode, toggleAddMode }) => {
   return (
     <div
       onClick={() => toggleAddMode()}
-      className={`flex float-right-bottom float-add-${
+      className={`float-right-bottom flex float-add-${
         addMode ? 'on' : 'off'
       } items-center justify-center`}
     >

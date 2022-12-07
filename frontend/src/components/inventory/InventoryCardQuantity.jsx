@@ -42,7 +42,7 @@ const InventoryCardQuantity = ({
   };
 
   return (
-    <div className="flex items-center justify-between w-100">
+    <div className="w-100 flex items-center justify-between">
       {isMobile ? (
         <>
           <a className="quantity" onClick={() => handleQuantityChange(-1)}>
@@ -81,7 +81,7 @@ const InventoryCardQuantity = ({
               manual
                 ? 'px-0'
                 : state < softUsedMax + hardUsedTotal
-                ? 'px-1 mx-1 inv-miss-full'
+                ? 'inv-miss-full mx-1 px-1'
                 : 'px-1'
             }
             onFocus={() => setManual(true)}

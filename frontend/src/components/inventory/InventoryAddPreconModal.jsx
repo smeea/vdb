@@ -114,7 +114,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       return (
         <div className="inline px-1" key={idx}>
           {clan === 'Bundle' ? (
-            <div className="inline clan-image-results">
+            <div className="clan-image-results inline">
               <GiftFill />
             </div>
           ) : clan === 'Mix' ? null : (
@@ -132,14 +132,14 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           )}
           <td className="name px-1">
             <div
-              className="flex text-overflow name justify-between"
+              className="text-overflow name flex justify-between"
               title={deck.name}
             >
               {deck.name}
               {deck.branchName &&
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
-                  <div className="inline ps-2 revision" title={deck.branchName}>
+                  <div className="ps-2 revision inline" title={deck.branchName}>
                     {deck.branchName}
                   </div>
                 )}
@@ -162,7 +162,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
-                        className="md:basis-7/12 overflow-y-auto h-[80vh]"
+                        className="h-[80vh] overflow-y-auto md:basis-7/12"
                       >
                         <DeckCrypt inAdvSelect={true} deck={deck} />
                       </div>
@@ -171,7 +171,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
-                        className="md:basis-5/12 overflow-y-auto h-[80vh]"
+                        className="h-[80vh] overflow-y-auto md:basis-5/12"
                       >
                         <DeckLibrary deck={deck} />
                       </div>
@@ -202,10 +202,10 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             )}
           </td>
           <td className="buttons">
-            <div className="inline pe-1">
+            <div className="pe-1 inline">
               <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
             </div>
-            <div className="inline pe-1">
+            <div className="pe-1 inline">
               <InventoryDeckDeleteButton
                 deck={deck}
                 inInventory={inInventory}
@@ -253,7 +253,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                 />
               </th>
               <th className="buttons">
-                <div className="flex justify-end items-center px-1">
+                <div className="flex items-center justify-end px-1">
                   <DeckSelectSortForm onChange={setSortMethod} />
                 </div>
               </th>

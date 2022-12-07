@@ -72,7 +72,7 @@ const InventoryLibraryTableRow = ({
 
   return (
     <div
-      className={`flex no-border inventory-library-table ${
+      className={`no-border inventory-library-table flex ${
         isSwiped ? `swiped-${isSwiped}` : ''
       }`}
       {...swipeHandlers}
@@ -96,10 +96,10 @@ const InventoryLibraryTableRow = ({
         )}
       </div>
       {!inShared && (
-        <div className="flex items-center justify-center used">
+        <div className="used flex items-center justify-center">
           {isMobile ? (
             <div
-              className={`flex justify-center w-100 ps-1 ${
+              className={`w-100 ps-1 flex justify-center ${
                 card.q == softUsedMax + hardUsedTotal
                   ? 'gray'
                   : card.q >= softUsedMax + hardUsedTotal
@@ -119,7 +119,7 @@ const InventoryLibraryTableRow = ({
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
               <div
-                className={`flex justify-center w-100 ps-1 ${
+                className={`w-100 ps-1 flex justify-center ${
                   card.q == softUsedMax + hardUsedTotal
                     ? 'gray'
                     : card.q >= softUsedMax + hardUsedTotal
@@ -138,7 +138,7 @@ const InventoryLibraryTableRow = ({
         </div>
       )}
       <div
-        className="flex items-center justify-center type"
+        className="type flex items-center justify-center"
         onClick={() => handleClick(card.c)}
       >
         <ResultLibraryTypeImage value={card.c.Type} />
@@ -150,7 +150,7 @@ const InventoryLibraryTableRow = ({
         disabled={isMobile}
       >
         <div
-          className="flex items-center justify-start name"
+          className="name flex items-center justify-start"
           onClick={() => handleClick(card.c)}
         >
           <ResultLibraryName card={card.c} />
@@ -159,7 +159,7 @@ const InventoryLibraryTableRow = ({
 
       {isMobile ? (
         <div
-          className="flex items-center justify-between disciplines"
+          className="disciplines flex items-center justify-between"
           onClick={() => handleClick(card.c)}
         >
           <div
@@ -194,7 +194,7 @@ const InventoryLibraryTableRow = ({
             />
           </div>
           <div
-            className="flex items-center justify-center disciplines"
+            className="disciplines flex items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             {DisciplineOrClan}
@@ -203,7 +203,7 @@ const InventoryLibraryTableRow = ({
       )}
       {!isNarrow && (
         <div
-          className="flex items-center justify-center burn"
+          className="burn flex items-center justify-center"
           onClick={() => handleClick(card.c)}
         >
           <ResultLibraryBurn value={card.c[BURN_OPTION]} />

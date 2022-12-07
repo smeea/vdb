@@ -121,8 +121,8 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         nonKeyDisciplines={nonKeyDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
-        <div className="opacity-60 pt-2">
-          <div className="flex items-center justify-between ps-2">
+        <div className="pt-2 opacity-60">
+          <div className="ps-2 flex items-center justify-between">
             <b>Side Crypt</b>
           </div>
           <DiffCryptTable
@@ -141,7 +141,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
       {isMobile && isEditable && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
-          className="flex float-right-top float-add-on items-center justify-center"
+          className="float-right-top float-add-on flex items-center justify-center"
         >
           <div className="inline" style={{ fontSize: '1.4em' }}>
             +
