@@ -4,8 +4,8 @@ import SortDown from 'assets/images/icons/sort-down.svg';
 
 const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
   return (
-    <Menu title="Sort Crypt" className="inline">
-      <Menu.Button variant="primary">
+    <Menu>
+      <Menu.Button title="Sort Crypt" variant="primary">
         <div className="flex justify-center items-center">
           <div className="flex pe-1">
             <SortDown />

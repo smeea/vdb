@@ -5,7 +5,7 @@ import FlagFr from 'assets/images/flags/fr.svg';
 import FlagBr from 'assets/images/flags/br.svg';
 import { useApp } from 'context';
 
-const Menu = ({ languages, lang, onClick }) => (
+const LanguagesMenu = ({ languages, lang, onClick }) => (
   <div className="py-1">
     <div className="px-2 pb-2">Card Language:</div>
     <div className="flex items-center justify-between">
@@ -46,7 +46,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
     <>
       {isMobile ? (
         <div>
-          <Menu languages={languages} lang={lang} onClick={onClick} />
+          <LanguagesMenu languages={languages} lang={lang} onClick={onClick} />
         </div>
       ) : (
         <>
@@ -57,7 +57,11 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
             <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
             {showMenu && (
               <div className="absolute top-2 bg-black">
-                <Menu languages={languages} lang={lang} onClick={onClick} />
+                <LanguagesMenu
+                  languages={languages}
+                  lang={lang}
+                  onClick={onClick}
+                />
               </div>
             )}
           </div>

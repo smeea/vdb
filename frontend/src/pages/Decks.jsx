@@ -452,11 +452,9 @@ const Decks = () => {
             </div>
           </div>
           {error && (
-            <div className="flex flex-row">
-              <div className="px-0 py-4 px-lg-2">
-                <div className="flex items-center justify-center error-message p-2">
-                  <b>{error}</b>
-                </div>
+            <div className="flex flex-row px-0 py-4 px-lg-2">
+              <div className="flex items-center justify-center error-message font-bold p-2">
+                {error}
               </div>
             </div>
           )}
