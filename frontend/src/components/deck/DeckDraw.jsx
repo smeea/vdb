@@ -56,10 +56,6 @@ const DeckDraw = ({ deck, setShow }) => {
     setShowFloatingButtons(true);
   };
 
-  // useEffect(() => {
-  //   setShowFloatingButtons(false);
-  // }, []);
-
   const handleReDrawCrypt = () => {
     setInitialTransfers(getRandomTransfers());
     setCryptHandSize(4);

@@ -64,14 +64,18 @@ const DeckDrawModal = ({
                   <div className="flex items-center px-2">
                     <b>Uncontrolled</b>
                   </div>
-                  <div className="flex items-center">
-                    <b>
-                      {drawedCrypt.length} + {restCrypt.length}
-                    </b>
+                  <div
+                    className="flex items-center font-bold"
+                    title="In Uncontrolled + Remaining in Crypt"
+                  >
+                    {drawedCrypt.length} + {restCrypt.length}
                   </div>
                   <div className="flex">
-                    <div className="pe-2 flex items-center">
-                      <b>{initialTransfers}t</b>
+                    <div
+                      className="pe-2 flex font-bold items-center"
+                      title="Initial Transfers"
+                    >
+                      {initialTransfers}t
                     </div>
                     <div className="flex flex-row space-x-1">
                       <Button
@@ -130,10 +134,11 @@ const DeckDrawModal = ({
                 <div className="flex items-center px-2">
                   <b>Hand</b>
                 </div>
-                <div className="flex items-center">
-                  <b>
-                    {drawedLibrary.length} + {restLibrary.length}
-                  </b>
+                <div
+                  className="flex items-center font-bold"
+                  title="In Hand + Remaining in Library"
+                >
+                  {drawedLibrary.length} + {restLibrary.length}
                 </div>
                 <div className="flex flex-row space-x-1">
                   <Button
