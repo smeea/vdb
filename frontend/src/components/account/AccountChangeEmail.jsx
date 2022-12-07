@@ -146,13 +146,9 @@ const AccountChangeEmail = () => {
             {PasswordFormButton}
           </div>
         )}
-        <ErrorOverlay
-          show={passwordError}
-          target={refPassword.current}
-          placement="bottom"
-        >
-          {passwordError}
-        </ErrorOverlay>
+        {passwordError && (
+          <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
+        )}
       </form>
       {showModal && (
         <Modal handleClose={() => setShowModal(false)}>

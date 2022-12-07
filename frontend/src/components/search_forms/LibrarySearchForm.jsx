@@ -296,13 +296,7 @@ const LibrarySearchForm = () => {
             className="flex float-right-bottom float-search items-center justify-center"
           >
             <Check2 viewBox="0 0 16 16" className="pt-1" />
-            <ErrorOverlay
-              show={error}
-              target={refError.current}
-              placement="left"
-            >
-              {error}
-            </ErrorOverlay>
+            {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
           </div>
         </>
       )}

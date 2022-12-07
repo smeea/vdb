@@ -59,14 +59,11 @@ const ModalConfirmation = ({
                 ref={refConfirmation}
               />
             </div>
-            <ErrorOverlay
-              show={errorConfirmation}
-              target={refConfirmation.current}
-              placement="bottom"
-              modal={true}
-            >
-              Type &apos;YES&apos; to confirm
-            </ErrorOverlay>
+            {errorConfirmation && (
+              <ErrorOverlay placement="bottom">
+                Type &apos;YES&apos; to confirm
+              </ErrorOverlay>
+            )}
           </form>
         )}
         {buttonText && (

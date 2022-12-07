@@ -140,13 +140,9 @@ const AccountChangePassword = () => {
             {NewPasswordForm}
           </div>
         )}
-        <ErrorOverlay
-          show={passwordError}
-          target={refOldPassword.current}
-          placement="bottom"
-        >
-          {passwordError}
-        </ErrorOverlay>
+        {passwordError && (
+          <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
+        )}
       </form>
     </div>
   );

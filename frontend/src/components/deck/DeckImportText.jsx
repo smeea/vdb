@@ -109,22 +109,12 @@ It will skip other (useless) lines, you don't have to remove it yourself.
             Import
           </Button>
         </div>
-        <ErrorOverlay
-          show={emptyError}
-          target={refText.current}
-          placement="bottom"
-          modal={true}
-        >
-          ENTER DECK LIST
-        </ErrorOverlay>
-        <ErrorOverlay
-          show={importError}
-          target={refText.current}
-          placement="bottom"
-          modal={true}
-        >
-          ERROR DURING IMPORT
-        </ErrorOverlay>
+        {emptyError && (
+          <ErrorOverlay placement="bottom">ENTER DECK LIST</ErrorOverlay>
+        )}
+        {importError && (
+          <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
+        )}
       </div>
     </Modal>
   );

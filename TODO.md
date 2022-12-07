@@ -18,4 +18,3 @@
 
 # TAILWIND MIGRATION
 - Style for className="input-group"
-- ErrorOverlay calls to have only position prop (as in AccountLogin)

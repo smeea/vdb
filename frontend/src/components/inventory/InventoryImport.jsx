@@ -61,14 +61,11 @@ const InventoryImport = () => {
         onChange={() => importDeckFromFile(fileInput)}
         style={{ display: 'none' }}
       />
-      <ErrorOverlay
-        show={importError}
-        target={ref.current}
-        placement="left"
-        modal={true}
-      >
-        {importError && <b>CANNOT IMPORT THIS INVENTORY</b>}
-      </ErrorOverlay>
+      {importError && (
+        <ErrorOverlay placement="left">
+          {importError && <b>CANNOT IMPORT THIS INVENTORY</b>}
+        </ErrorOverlay>
+      )}
     </>
   );
 };

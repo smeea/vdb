@@ -82,9 +82,7 @@ const AccountPlaytestAdd = ({
           </Button>
         )}
       </div>
-      <ErrorOverlay show={error} target={ref.current} placement="bottom">
-        {error}
-      </ErrorOverlay>
+      {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
     </form>
   );
 };

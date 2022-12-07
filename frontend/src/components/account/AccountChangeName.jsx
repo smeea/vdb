@@ -14,7 +14,7 @@ const AccountChangeName = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [buttonState, setButtonState] = useState(false);
-  const [connectionError, setConnectionError] = useState(false);
+  const [error, setError] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
 
   const handleChange = (event) => {
@@ -23,7 +23,7 @@ const AccountChangeName = () => {
 
   const onError = (e) => {
     if (e.message != 401) {
-      setConnectionError(true);
+      setError('CONNECTION PROBLEM');
     }
     setSpinnerState(false);
   };
@@ -38,8 +38,7 @@ const AccountChangeName = () => {
   };
 
   const changeName = () => {
-    setConnectionError(false);
-
+    setError(false);
     setSpinnerState(true);
     userServices.changeName(state, onSuccess, onError);
   };
@@ -107,11 +106,7 @@ const AccountChangeName = () => {
             </Button>
           )}
         </div>
-        <ErrorOverlay
-          show={connectionError}
-          target={refName.current}
-          placement="bottom"
-        ></ErrorOverlay>
+        {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
       </form>
       {showModal && (
         <Modal handleClose={() => setShowModal(false)}>

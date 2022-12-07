@@ -156,20 +156,10 @@ const TwdDeck = ({ eventId, setEventId }) => {
           />
         </div>
       </div>
-      <ErrorOverlay
-        show={emptyError}
-        target={refText.current}
-        placement="bottom"
-      >
-        NO DECK
-      </ErrorOverlay>
-      <ErrorOverlay
-        show={importError}
-        target={refText.current}
-        placement="bottom"
-      >
-        ERROR DURING IMPORT
-      </ErrorOverlay>
+      {emptyError && <ErrorOverlay placement="bottom">NO DECK</ErrorOverlay>}
+      {importError && (
+        <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
+      )}
       <input
         ref={fileInput}
         accept=".txt, .dek"

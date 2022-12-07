@@ -206,22 +206,12 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
             </Button>
           )}
         </div>
-        <ErrorOverlay
-          show={emptyError}
-          target={refUrl.current}
-          placement="bottom"
-          modal={true}
-        >
-          ERROR IN URL
-        </ErrorOverlay>
-        <ErrorOverlay
-          show={importError}
-          target={refUrl.current}
-          placement="bottom"
-          modal={true}
-        >
-          ERROR DURING IMPORT
-        </ErrorOverlay>
+        {emptyError && (
+          <ErrorOverlay placement="bottom">ERROR IN URL</ErrorOverlay>
+        )}
+        {importError && (
+          <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
+        )}
       </div>
     </Modal>
   );

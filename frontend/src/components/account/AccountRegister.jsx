@@ -135,20 +135,12 @@ const AccountRegister = () => {
             {EmailForm}
           </>
         )}
-        <ErrorOverlay
-          show={usernameError}
-          target={refUsername.current}
-          placement="bottom"
-        >
-          {usernameError}
-        </ErrorOverlay>
-        <ErrorOverlay
-          show={connectionError}
-          target={refPassword.current}
-          placement="bottom"
-        >
-          {connectionError}
-        </ErrorOverlay>
+        {usernameError && (
+          <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>
+        )}
+        {connectionError && (
+          <ErrorOverlay placement="bottom">{connectionError}</ErrorOverlay>
+        )}
       </form>
     </>
   );

@@ -198,15 +198,12 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             onChange={() => importDeckFromFile(fileInputAnonymous, true)}
             style={{ display: 'none' }}
           />
-          <ErrorOverlay
-            show={createError || importError}
-            target={ref.current}
-            placement="left"
-            modal={true}
-          >
-            {createError && <b>ERROR</b>}
-            {importError && <b>CANNOT IMPORT THIS DECK</b>}
-          </ErrorOverlay>
+          {(createError || importError) && (
+            <ErrorOverlay placement="left">
+              {createError && <b>ERROR</b>}
+              {importError && <b>CANNOT IMPORT THIS DECK</b>}
+            </ErrorOverlay>
+          )}
         </>
       )}
     </>

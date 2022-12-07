@@ -418,13 +418,7 @@ const PdaSearchForm = ({ error, setError }) => {
             ) : (
               <Spinner animation="border" variant="light" />
             )}
-            <ErrorOverlay
-              show={error}
-              target={refError.current}
-              placement="left"
-            >
-              {error}
-            </ErrorOverlay>
+            {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
           </div>
         </>
       )}

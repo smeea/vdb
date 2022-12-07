@@ -99,27 +99,15 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                 Cancel
               </Button>
             </div>
-            <ErrorOverlay
-              show={emptyPassword}
-              target={refPassword.current}
-              placement="bottom"
-              modal={true}
-            >
-              ENTER PASSWORD
-            </ErrorOverlay>
-            <ErrorOverlay
-              show={passwordError}
-              target={refPassword.current}
-              placement="bottom"
-              modal={true}
-            >
-              WRONG PASSWORD
-            </ErrorOverlay>
-            <ErrorOverlay
-              show={connectionError}
-              target={refPassword.current}
-              placement="bottom"
-            ></ErrorOverlay>
+            {emptyPassword && (
+              <ErrorOverlay placement="bottom">ENTER PASSWORD</ErrorOverlay>
+            )}
+            {passwordError && (
+              <ErrorOverlay placement="bottom">WRONG PASSWORD</ErrorOverlay>
+            )}
+            {connectionError && (
+              <ErrorOverlay placement="bottom">CONNECTION PROBME</ErrorOverlay>
+            )}
           </form>
         </div>
       </Modal>
