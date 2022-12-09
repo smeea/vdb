@@ -4,7 +4,7 @@ import disciplinesList from 'assets/data/disciplinesList.json';
 
 const CryptSearchFormDisciplines = ({ value, onChange }) => {
   return (
-    <div className="input-group justify-start py-1">
+    <div className="flex flex-wrap input-group justify-start py-1">
       {disciplinesList.map((d, index) => (
         <div key={index} className={`discipline-container state${value[d]}`}>
           <label

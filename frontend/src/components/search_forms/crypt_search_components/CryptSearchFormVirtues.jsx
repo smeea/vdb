@@ -4,7 +4,7 @@ import virtuesList from 'assets/data/virtuesList.json';
 
 const CryptSearchFormVirtues = ({ value, onChange }) => {
   return (
-    <div className="input-group pb-2">
+    <div className="flex flex-wrap input-group pb-2">
       {virtuesList.map((i, index) => (
         <div key={index} className={`virtue-container state${value[i]}`}>
           <label
