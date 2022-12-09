@@ -4,6 +4,7 @@
 - Crypt min/max for Deck
 - Empty request warning in PDA/TWD on clear form
 - Notification on Incognito mode
+- Pdf image sharpness
 
 # FEATURES
 - Check TWD

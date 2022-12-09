@@ -2,6 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import Download from 'assets/images/icons/download.svg';
 import { Menu } from '@headlessui/react';
+import { MenuButton } from 'components';
 import { useDeckExport } from 'hooks';
 import { useApp, deckStore } from 'context';
 import { deckServices } from 'services';
@@ -108,19 +109,12 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
 
   return (
     <Menu>
-      <Menu.Button>
-        {/* variant={inMissing ? 'primary' : 'secondary'} */}
-        <div
-          title={`Export ${inMissing ? 'Missing' : ''}`}
-          className="flex items-center justify-center"
-        >
-          <div className="pe-2 flex">
-            <Download />
-          </div>
-          Export {inMissing ? 'Missing' : ''}
-        </div>
-        }
-      </Menu.Button>
+      <MenuButton
+        title={`Export ${inMissing ? 'Missing' : ''}`}
+        icon={<Download />}
+        variant={inMissing ? 'primary' : 'secondary'}
+        text={`Export ${inMissing ? 'Missing' : ''}`}
+      />
       <Menu.Items>
         {inInventory ? (
           <>
@@ -144,7 +138,6 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
             )}
             <ExportDropdown action="save" format="xlsx" />
             {/* <Dropdown.Divider /> */}
-
             <ExportDropdown action="copy" format="text" />
             {!inMissing && (
               <>
@@ -154,18 +147,15 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
                 <ExportDropdown action="copy" format="jol" />
               </>
             )}
-            {!inMissing &&
-              username &&
-              decks &&
-              Object.keys(decks).length > 1 && (
-                <>
-                  {/* <Dropdown.Divider /> */}
-                  <ExportDropdown action="exportAll" format="text" />
-                  <ExportDropdown action="exportAll" format="lackey" />
-                  <ExportDropdown action="exportAll" format="jol" />
-                  <ExportDropdown action="exportAll" format="xlsx" />
-                </>
-              )}
+            {!inMissing && username && decks && Object.keys(decks).length > 1 && (
+              <>
+                {/* <Dropdown.Divider /> */}
+                <ExportDropdown action="exportAll" format="text" />
+                <ExportDropdown action="exportAll" format="lackey" />
+                <ExportDropdown action="exportAll" format="jol" />
+                <ExportDropdown action="exportAll" format="xlsx" />
+              </>
+            )}
           </>
         )}
       </Menu.Items>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
+import { MenuButton } from 'components';
 import { useApp } from 'context';
 
 const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
@@ -126,26 +127,18 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
 
   return (
     <Menu>
-      {/* variant={state ? 'success' : noText ? 'primary' : 'secondary'} */}
-      <Menu.Button>
-        <>
-          {noText ? (
-            <Link45Deg width="19" height="19" viewBox="0 0 15 15" />
-          ) : (
-            <>
-              <div
-                title="Copy URL"
-                className="flex items-center justify-center"
-              >
-                <div className="pe-2 flex">
-                  <Link45Deg width="21" height="21" viewBox="0 0 15 15" />
-                </div>
-                {state ? 'Copied' : 'Copy URL'}
-              </div>
-            </>
-          )}
-        </>
-      </Menu.Button>
+      <MenuButton
+        title="Copy URL"
+        icon={
+          <Link45Deg
+            width={noText ? 19 : 21}
+            height={noText ? 19 : 21}
+            viewBox="0 0 15 15"
+          />
+        }
+        variant={state ? 'success' : noText ? 'primary' : 'secondary'}
+        text={state ? 'Copied' : 'Copy URL'}
+      />
       <Menu.Items>
         <>
           {deck.deckid !== 'deck' && (

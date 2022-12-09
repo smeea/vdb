@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
 import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
+import { MenuButton } from 'components';
 import { useApp } from 'context';
 
 const DeckImportButton = ({
@@ -13,15 +14,12 @@ const DeckImportButton = ({
 
   return (
     <Menu>
-      <Menu.Button>
-        {/* /\* variant="secondary" *\/ */}
-        <div className="flex items-center justify-center">
-          <div className="pe-2 flex">
-            <ClipboardPlus size={24} />
-          </div>
-          New / Import
-        </div>
-      </Menu.Button>
+      <MenuButton
+        title="Create or Import Deck"
+        icon={<ClipboardPlus size={24} />}
+        variant="secondary"
+        text="New / Import"
+      />
       <Menu.Items>
         {username && (
           <>

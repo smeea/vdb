@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
 import Printer from 'assets/images/icons/printer.svg';
 import Spinner from 'assets/images/icons/three-dots.svg';
-import { ButtonIconed, DeckProxySelectModal } from 'components';
+import { MenuButton, ButtonIconed, DeckProxySelectModal } from 'components';
 import { cryptSort } from 'utils';
 import { useDeckLibrary } from 'hooks';
 import { cardtypeSortedFull } from 'utils/constants';
@@ -164,22 +164,18 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
         />
       ) : (
         <Menu>
-          {/* variant="secondary" */}
-          <Menu.Button>
-            <div
-              title="Create PDF with Cards"
-              className="flex items-center justify-center"
-            >
-              <div className="pe-2 flex">
-                {spinnerState ? (
-                  <Spinner animation="border" size="sm" />
-                ) : (
-                  <Printer width="18" height="18" viewBox="0 0 18 16" />
-                )}
-              </div>
-              PDF Proxy
-            </div>
-          </Menu.Button>
+          <MenuButton
+            title="Create PDF with Cards"
+            icon={
+              spinnerState ? (
+                <Spinner animation="border" size="sm" />
+              ) : (
+                <Printer width="18" height="18" viewBox="0 0 18 16" />
+              )
+            }
+            variant="secondary"
+            text="PDF Proxy"
+          />
           <Menu.Items>
             <Menu.Item>
               <div onClick={() => proxyCards(deck.crypt, deck.library, false)}>

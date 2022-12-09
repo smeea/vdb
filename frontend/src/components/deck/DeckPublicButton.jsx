@@ -5,6 +5,7 @@ import { Menu } from '@headlessui/react';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import {
+  MenuButton,
   Modal,
   Button,
   DeckPublicDiff,
@@ -56,22 +57,18 @@ const DeckPublicButton = ({ deck, noText }) => {
   return (
     <>
       <Menu>
-        <Menu.Button>
-          {/* variant="secondary" */}
-          <div
-            title="Public Deck Archive Actions"
-            className="flex items-center justify-center"
-          >
-            <div className={`flex ${noText ? '' : 'pe-2'}`}>
-              {!spinnerState ? (
-                <PeopleFill />
-              ) : (
-                <Spinner animation="border" size="sm" />
-              )}
-            </div>
-            Public
-          </div>
-        </Menu.Button>
+        <MenuButton
+          variant="secondary"
+          title="Public Deck Archive Actions"
+          icon={
+            !spinnerState ? (
+              <PeopleFill />
+            ) : (
+              <Spinner animation="border" size="sm" />
+            )
+          }
+          text="Public"
+        />
         <Menu.Items>
           {isPublished && (
             <Menu.Item>

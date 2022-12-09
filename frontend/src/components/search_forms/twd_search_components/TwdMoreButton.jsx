@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
-import { Button } from 'components';
+import { MenuButton, Button } from 'components';
 import Gem from 'assets/images/icons/gem.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import ClockHistory from 'assets/images/icons/clock-history.svg';
@@ -12,20 +12,12 @@ const TwdMoreButton = ({ noText }) => {
 
   return (
     <Menu>
-      <Menu.Button>
-        <>
-          {noText ? (
-            <Gem size={24} />
-          ) : (
-            <div className="flex items-center justify-center">
-              <div className="pe-2 flex">
-                <Gem size={24} />
-              </div>
-              More
-            </div>
-          )}
-        </>
-      </Menu.Button>
+      <MenuButton
+        title={`Export ${inMissing ? 'Missing' : ''}`}
+        icon={<Gem size={24} />}
+        variant={inMissing ? 'primary' : 'secondary'}
+        text={noText ? null : 'More'}
+      />
       <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <Menu.Item>
           <div onClick={() => navigate('/twd/hall_of_fame/tournaments')}>

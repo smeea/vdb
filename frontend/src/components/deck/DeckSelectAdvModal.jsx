@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Menu } from '@headlessui/react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import SortDown from 'assets/images/icons/sort-down.svg';
@@ -25,6 +26,7 @@ import {
   ResultClanImage,
   Tooltip,
   Modal,
+  MenuButton,
   Button,
 } from 'components';
 import { decksSort } from 'utils';
@@ -548,18 +550,11 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
           </table>
           <div className="flex justify-end pt-3">
             <Menu>
-              <Menu.Button>
-                {/* variant="primary" */}
-                <div
-                  title="Export Selected"
-                  className="flex items-center justify-center"
-                >
-                  <div className="pe-2 flex">
-                    <Download />
-                  </div>
-                  Export Selected
-                </div>
-              </Menu.Button>
+              <MenuButton
+                title="Export Selected"
+                icon={<Download />}
+                text="Export Selected"
+              />
               <Menu.Items>
                 <Menu.Item>
                   <div onClick={() => exportSelected('text')}>Text</div>

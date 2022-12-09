@@ -1,18 +1,16 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
 import SortDown from 'assets/images/icons/sort-down.svg';
+import { MenuButton } from 'components';
 
 const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
   return (
     <Menu>
-      <Menu.Button title="Sort Crypt" variant="primary">
-        <div className="flex items-center justify-center">
-          <div className="pe-1 flex">
-            <SortDown />
-          </div>
-          {sortMethods[sortMethod]}
-        </div>
-      </Menu.Button>
+      <MenuButton
+        title="Sort Crypt"
+        icon={<SortDown />}
+        text={sortMethods[sortMethod]}
+      />
       <Menu.Items>
         {Object.keys(sortMethods).map((i, index) => {
           return (
