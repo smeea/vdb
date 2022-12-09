@@ -9,21 +9,21 @@ const PdaSearchFormSrcSelector = ({ value, onChange }) => {
         ['my', 'My'],
       ].map((i, idx) => {
         return (
-          <input
-            key={idx}
-            checked={value == i[0]}
-            onChange={onChange}
-            type="radio"
-            id={i[0]}
-            value={i[0]}
-            name="src"
-            label={
+          <React.Fragment key={idx}>
+            <input
+              checked={value == i[0]}
+              onChange={onChange}
+              type="radio"
+              id={i[0]}
+              value={i[0]}
+              name="src"
+            />
+            <label htmlFor={i[0]}>
               <div className="blue">
                 <b>{i[1]}</b>
               </div>
-            }
-            inline
-          />
+            </label>
+          </React.Fragment>
         );
       })}
     </>

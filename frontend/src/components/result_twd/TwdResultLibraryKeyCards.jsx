@@ -62,11 +62,11 @@ const TwdResultLibraryKeyCards = ({ library }) => {
     return (
       <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
-          <ConditionalTooltip
-            overlay={<UsedPopover cardid={card.c.Id} />}
-            disabled={isMobile}
-          >
-            <td className="quantity-no-buttons px-1">
+          <td className="quantity-no-buttons px-1">
+            <ConditionalTooltip
+              overlay={<UsedPopover cardid={card.c.Id} />}
+              disabled={isMobile}
+            >
               <div
                 className={
                   inInventory < card.q
@@ -78,8 +78,8 @@ const TwdResultLibraryKeyCards = ({ library }) => {
               >
                 {card.q}
               </div>
-            </td>
-          </ConditionalTooltip>
+            </ConditionalTooltip>
+          </td>
         ) : (
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}

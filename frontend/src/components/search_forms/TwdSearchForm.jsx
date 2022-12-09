@@ -70,8 +70,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   const handleMultiChange = (event) => {
     const { name, id, value } = event.target;
-    const i = value ? value : id;
-
+    const i = value ?? id;
     searchTwdForm[name][i] = !twdFormState[name][i];
   };
 
@@ -224,10 +223,8 @@ const TwdSearchForm = ({ error, setError }) => {
       {inventoryMode && (
         <>
           <div className="ps-1 mx-0 flex flex-row items-center py-1">
-            <div className="flex basis-1/2 px-0">
-              <label className="text-blue mb-0 font-bold">
-                In Inventory by Crypt:
-              </label>
+            <div className="flex basis-1/2 text-blue mb-0 font-bold px-0">
+              In Inventory by Crypt:
             </div>
             <div className="inline basis-1/2 px-0">
               <TwdSearchFormMatchInventory
@@ -238,10 +235,8 @@ const TwdSearchForm = ({ error, setError }) => {
             </div>
           </div>
           <div className="ps-1 mx-0 flex flex-row items-center py-1">
-            <div className="flex basis-1/2 px-0">
-              <label className="text-blue mb-0 font-bold">
-                In Inventory by Library:
-              </label>
+            <div className="flex basis-1/2 text-blue mb-0 font-bold px-0">
+              In Inventory by Library:
             </div>
             <div className="inline basis-1/2 px-0">
               <TwdSearchFormMatchInventory

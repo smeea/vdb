@@ -310,41 +310,45 @@ const Decks = () => {
               <div className="flex items-center justify-between pt-2">
                 <form className="ps-1 my-0">
                   {username && decks && Object.keys(decks).length > 0 && (
-                    <input
-                      checked={selectFrom == 'my'}
-                      onChange={(e) => setSelectFrom(e.target.id)}
-                      type="radio"
-                      id="my"
-                      label={
+                    <>
+                      <input
+                        checked={selectFrom == 'my'}
+                        onChange={(e) => setSelectFrom(e.target.id)}
+                        type="radio"
+                        id="my"
+                      />
+                      <label htmlFor="my">
                         <div className="blue">
                           <b>{isMobile ? 'My' : 'My Decks'}</b>
                         </div>
-                      }
-                    />
+                      </label>
+                    </>
                   )}
                   <input
                     checked={selectFrom == 'precons'}
                     onChange={(e) => setSelectFrom(e.target.id)}
                     type="radio"
                     id="precons"
-                    label={
-                      <div className="blue">
-                        <b>Precons</b>
-                      </div>
-                    }
                   />
+                  <label htmlFor="precons">
+                    <div className="blue">
+                      <b>Precons</b>
+                    </div>
+                  </label>
                   {recentDecks.length > 0 && (
-                    <input
-                      checked={selectFrom == 'recent'}
-                      onChange={(e) => setSelectFrom(e.target.id)}
-                      type="radio"
-                      id="recent"
-                      label={
+                    <>
+                      <input
+                        checked={selectFrom == 'recent'}
+                        onChange={(e) => setSelectFrom(e.target.id)}
+                        type="radio"
+                        id="recent"
+                      />
+                      <label htmlFor="recent">
                         <div className="blue">
                           <b>Recent</b>
                         </div>
-                      }
-                    />
+                      </label>
+                    </>
                   )}
                 </form>
                 <div className="flex flex-row space-x-1">

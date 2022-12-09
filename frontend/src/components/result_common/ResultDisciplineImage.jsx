@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ResultDisciplineImage = ({ value, superior, className, title }) => {
+const ResultDisciplineImage = ({ value, superior, name, className, title }) => {
   const imgClass = className
     ? className
     : `inline ${
@@ -15,7 +15,15 @@ const ResultDisciplineImage = ({ value, superior, className, title }) => {
 
   const imgTitle = title ?? value;
 
-  return <img className={imgClass} src={imgSrc} title={imgTitle} />;
+  return (
+    <img
+      className={imgClass}
+      src={imgSrc}
+      name={name}
+      id={imgTitle}
+      title={imgTitle}
+    />
+  );
 };
 
 export default ResultDisciplineImage;

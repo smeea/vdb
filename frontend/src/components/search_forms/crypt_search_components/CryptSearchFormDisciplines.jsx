@@ -5,30 +5,24 @@ import disciplinesList from 'assets/data/disciplinesList.json';
 const CryptSearchFormDisciplines = ({ value, onChange }) => {
   return (
     <div className="flex flex-wrap input-group justify-start py-1">
-      {disciplinesList.map((d, index) => (
-        <div key={index} className={`discipline-container state${value[d]}`}>
-          <label
-            className="discipline-container flex items-center justify-center"
-            htmlFor={d}
-          >
-            <input
-              className="hidden"
-              type="button"
-              name="disciplines"
-              id={d}
-              onClick={onChange}
-            />
-            <ResultDisciplineImage
-              className="discipline-base-image-forms"
-              value={d}
-              superior={false}
-            />
-            <ResultDisciplineImage
-              className="discipline-superior-image-forms"
-              value={d}
-              superior={true}
-            />
-          </label>
+      {disciplinesList.map((i, index) => (
+        <div
+          key={index}
+          className={`flex items-center justify-center discipline-container ${
+            value[i] === 0 ? 'opacity-40' : ''
+          }`}
+          onClick={onChange}
+        >
+          <ResultDisciplineImage
+            className={
+              value[i] === 2
+                ? 'discipline-superior-image-forms'
+                : 'discipline-base-image-forms'
+            }
+            name="disciplines"
+            value={i}
+            superior={value[i] === 2}
+          />
         </div>
       ))}
     </div>

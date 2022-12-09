@@ -1,8 +1,6 @@
 import React from 'react';
 
 const ErrorOverlay = ({ placement, children }) => {
-  console.log(children);
-
   return (
     <div
       className={`absolute ${

@@ -122,7 +122,7 @@ const CryptSearchForm = () => {
 
   const handleDisciplinesChange = (event) => {
     const { id, name } = event.target;
-    const max = name == 'disciplines' ? 2 : 1;
+    const max = name === 'disciplines' ? 2 : 1;
 
     if (cryptFormState.disciplines[id] < max) {
       searchCryptForm.disciplines[id] += 1;
