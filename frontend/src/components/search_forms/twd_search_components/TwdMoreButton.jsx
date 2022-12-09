@@ -13,9 +13,8 @@ const TwdMoreButton = ({ noText }) => {
   return (
     <Menu>
       <MenuButton
-        title={`Export ${inMissing ? 'Missing' : ''}`}
+        title="More interesting stuff"
         icon={<Gem size={24} />}
-        variant={inMissing ? 'primary' : 'secondary'}
         text={noText ? null : 'More'}
       />
       <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">

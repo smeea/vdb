@@ -16,6 +16,7 @@ import {
   CardImage,
   ConditionalTooltip,
   Tooltip,
+  Checkbox,
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
@@ -86,9 +87,7 @@ const DeckProxyCryptTable = ({
       <React.Fragment key={card.c.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           <td className="proxy-selector">
-            <input
-              className="px-1"
-              type="checkbox"
+            <Checkbox
               id={card.c.Id}
               name="print"
               checked={
@@ -96,7 +95,7 @@ const DeckProxyCryptTable = ({
                   ? proxySelected[card.c.Id].print
                   : false
               }
-              onChange={(e) => handleProxySelector(e)}
+              onChange={handleProxySelector}
             />
           </td>
           {inventoryMode && decks ? (

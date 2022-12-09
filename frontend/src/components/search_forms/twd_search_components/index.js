@@ -10,7 +10,6 @@ export { default as TwdSearchFormDisciplines } from './TwdSearchFormDisciplines.
 export { default as TwdSearchFormMatchInventory } from './TwdSearchFormMatchInventory.jsx';
 export { default as TwdSearchFormCardtypes } from './TwdSearchFormCardtypes.jsx';
 export { default as TwdSearchFormEvent } from './TwdSearchFormEvent.jsx';
-export { default as TwdSearchFormMatchInventoryScaling } from './TwdSearchFormMatchInventoryScaling.jsx';
 export { default as TwdSearchFormClan } from './TwdSearchFormClan.jsx';
 export { default as TwdSearchFormSect } from './TwdSearchFormSect.jsx';
 export { default as TwdSearchFormLibrary } from './TwdSearchFormLibrary.jsx';

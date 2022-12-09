@@ -16,6 +16,7 @@ import {
   Tooltip,
   Modal,
   Button,
+  Checkbox,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, inventoryStore, deckUpdate } from 'context';
@@ -303,9 +304,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               )}
               <th className="buttons">
                 <div className="flex items-center justify-end px-1">
-                  <input
-                    className="pe-2"
-                    type="checkbox"
+                  <Checkbox
                     id="revFilter"
                     label={isMobile ? 'Rev' : 'Revisions'}
                     checked={revFilter}

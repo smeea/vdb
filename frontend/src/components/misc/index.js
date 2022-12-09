@@ -27,3 +27,4 @@ export { default as Tooltip } from './Tooltip.jsx';
 export { default as UpdateNotification } from './UpdateNotification.jsx';
 export { default as UsedDescription } from './UsedDescription.jsx';
 export { default as UsedPopover } from './UsedPopover.jsx';
+export { default as Checkbox } from './Checkbox.jsx';

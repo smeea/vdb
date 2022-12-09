@@ -123,12 +123,12 @@ const DeckLibraryTableRow = ({
                   </div>
                 </td>
               )}
-              <ConditionalTooltip
-                placement="bottom"
-                overlay={<UsedPopover cardid={card.c.Id} />}
-                disabled={disableOverlay}
-              >
-                <td className="quantity">
+              <td className="quantity">
+                <ConditionalTooltip
+                  placement="bottom"
+                  overlay={<UsedPopover cardid={card.c.Id} />}
+                  disabled={disableOverlay}
+                >
                   <DeckCardQuantity
                     card={card.c}
                     q={card.q}
@@ -139,8 +139,8 @@ const DeckLibraryTableRow = ({
                     hardUsedTotal={hardUsedTotal}
                     inventoryType={decks[deckid]?.inventoryType}
                   />
-                </td>
-              </ConditionalTooltip>
+                </ConditionalTooltip>
+              </td>
             </>
           ) : (
             <td className="quantity">
@@ -156,12 +156,12 @@ const DeckLibraryTableRow = ({
       ) : (
         <>
           {inventoryMode && decks ? (
-            <ConditionalTooltip
-              placement="bottom"
-              overlay={<UsedPopover cardid={card.c.Id} />}
-              disabled={disableOverlay}
-            >
-              <td className="quantity-no-buttons px-1">
+            <td className="quantity-no-buttons px-1">
+              <ConditionalTooltip
+                placement="bottom"
+                overlay={<UsedPopover cardid={card.c.Id} />}
+                disabled={disableOverlay}
+              >
                 <div
                   className={
                     inMissing
@@ -175,8 +175,8 @@ const DeckLibraryTableRow = ({
                 >
                   {card.q || null}
                 </div>
-              </td>
-            </ConditionalTooltip>
+              </ConditionalTooltip>
+            </td>
           ) : (
             <td className="quantity-no-buttons px-1">{card.q || null}</td>
           )}

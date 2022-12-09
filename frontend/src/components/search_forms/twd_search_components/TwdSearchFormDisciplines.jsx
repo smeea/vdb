@@ -8,7 +8,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="input-group justify-start py-1">
+      <div className="flex flex-wrap input-group justify-start py-1">
         {disciplinesList.map((i, index) => {
           const disciplineState = `discipline-container state${
             value[i] ? 1 : 0
@@ -35,7 +35,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           );
         })}
       </div>
-      <div className="input-group pb-2">
+      <div className="flex flex-wrap input-group pb-2">
         {virtuesList.map((i, index) => {
           const virtueState = `virtue-container state${value[i] ? 1 : 0}`;
           return (

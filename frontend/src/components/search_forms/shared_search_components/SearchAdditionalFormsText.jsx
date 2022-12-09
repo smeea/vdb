@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useImmer } from 'use-immer';
+import { Checkbox } from 'components';
 import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
@@ -77,17 +78,15 @@ const SearchAdditionalFormsText = ({
           </div>
           <div className="flex justify-end px-0">
             <div className="flex flex-col items-start space-x-2">
-              {options.map((opt, index) => {
+              {options.map((opt, idx) => {
                 return (
-                  <input
-                    key={index}
+                  <Checkbox
+                    key={idx}
+                    prefix="text"
                     name={i}
                     value={opt.value}
-                    type="checkbox"
-                    className="text-xs"
-                    id={`text-${i}-${opt.value}`}
+                    onChange={onChangeOptions}
                     label={opt.label}
-                    onChange={(e) => onChangeOptions(e)}
                   />
                 );
               })}

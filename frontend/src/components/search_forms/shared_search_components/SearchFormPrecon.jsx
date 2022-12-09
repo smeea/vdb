@@ -6,7 +6,8 @@ import {
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-} from './';
+  Checkbox,
+} from 'components';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
@@ -76,7 +77,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         return (
           <React.Fragment key={clan}>
             {clan === 'Bundle' ? (
-              <div className="clan-image-results inline flex items-center justify-center">
+              <div className="clan-image-results inline items-center justify-center">
                 <GiftFill />
               </div>
             ) : clan === 'Mix' ? null : (
@@ -127,24 +128,6 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       title: 'Reprinted in selected Set',
     },
   ];
-
-  const printForm = printFormOptions.map((i) => {
-    return (
-      <input
-        key={i.value}
-        name="precon"
-        value={i.value}
-        type="checkbox"
-        className="text-xs"
-        id={`precon-${i.value}`}
-        label={i.label}
-        title={i.title}
-        disabled={value.value[0] === 'bcp' && i.value === 'reprint'}
-        checked={value['print'] === i.value}
-        onChange={(e) => onChangeOptions(e)}
-      />
-    );
-  });
 
   const filterOption = ({ label, value }, string) => {
     let name = undefined;
@@ -204,7 +187,22 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       />
       <div className="ps-1 mx-0 flex flex-row items-center pb-1">
         <div className="flex justify-end px-0">
-          <div className="flex flex-row space-x-3">{printForm}</div>
+          <div className="flex flex-row space-x-3">
+            {printFormOptions.map((i) => {
+              return (
+                <Checkbox
+                  key={i.value}
+                  name="precon"
+                  value={i.value}
+                  label={i.label}
+                  title={i.title}
+                  disabled={value.value[0] === 'bcp' && i.value === 'reprint'}
+                  checked={value['print'] === i.value}
+                  onChange={onChangeOptions}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

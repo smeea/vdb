@@ -4,7 +4,8 @@ import {
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-} from './';
+  Checkbox,
+} from 'components';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
@@ -81,29 +82,6 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
     },
   ];
 
-  const ageForm = ageFormOptions.map((i) => {
-    return (
-      <input
-        key={i.value}
-        name="set"
-        value={i.value}
-        type="checkbox"
-        className="pe-1 text-xs"
-        id={`set-${i.value}`}
-        label={i.label}
-        title={i.title}
-        disabled={
-          value.value.length > 1 ||
-          value.value[0] === 'bcp' ||
-          value.value[0] === 'Promo' ||
-          value.value[0] === 'POD'
-        }
-        checked={value['age'] === i.value}
-        onChange={(e) => onChangeOptions(e)}
-      />
-    );
-  });
-
   const printFormOptions = [
     {
       value: 'only',
@@ -121,29 +99,6 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       title: 'Reprinted in selected Set',
     },
   ];
-
-  const printForm = printFormOptions.map((i) => {
-    return (
-      <input
-        key={i.value}
-        name={name}
-        value={i.value}
-        type="checkbox"
-        className="text-xs"
-        id={`set-${i.value}`}
-        label={i.label}
-        title={i.title}
-        disabled={
-          (value.value[0] === 'bcp' ||
-            value.value[0] === 'Promo' ||
-            value.value[0] === 'POD') &&
-          i.value === 'reprint'
-        }
-        checked={value['print'] === i.value}
-        onChange={(e) => onChangeOptions(e)}
-      />
-    );
-  });
 
   const filterOption = ({ label, value }, string) => {
     let name = undefined;
@@ -203,12 +158,52 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       />
       <div className="ps-1 mx-0 flex flex-row items-center pb-1">
         <div className="flex justify-end px-0">
-          <div className="flex flex-row space-x-2">{ageForm}</div>
+          <div className="flex flex-row space-x-2">
+            {ageFormOptions.map((i) => {
+              return (
+                <Checkbox
+                  key={i.value}
+                  name="set"
+                  value={i.value}
+                  label={i.label}
+                  title={i.title}
+                  disabled={
+                    value.value.length > 1 ||
+                    value.value[0] === 'bcp' ||
+                    value.value[0] === 'Promo' ||
+                    value.value[0] === 'POD'
+                  }
+                  checked={value['age'] === i.value}
+                  onChange={onChangeOptions}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
       <div className="ps-1 mx-0 flex flex-row items-center pb-1">
         <div className="flex justify-end px-0">
-          <div className="flex flex-row space-x-3">{printForm}</div>
+          <div className="flex flex-row space-x-3">
+            {printFormOptions.map((i) => {
+              return (
+                <Checkbox
+                  key={i.value}
+                  name={name}
+                  value={i.value}
+                  label={i.label}
+                  title={i.title}
+                  disabled={
+                    (value.value[0] === 'bcp' ||
+                      value.value[0] === 'Promo' ||
+                      value.value[0] === 'POD') &&
+                    i.value === 'reprint'
+                  }
+                  checked={value['print'] === i.value}
+                  onChange={onChangeOptions}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

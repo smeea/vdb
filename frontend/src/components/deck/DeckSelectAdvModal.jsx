@@ -28,6 +28,7 @@ import {
   Modal,
   MenuButton,
   Button,
+  Checkbox,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, deckUpdate } from 'context';
@@ -330,8 +331,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
         {decks[deck.deckid] && (
           <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
             <td className="select px-1">
-              <input
-                type="checkbox"
+              <Checkbox
                 checked={selectedDecks[deck.deckid] ?? false}
                 onChange={() => toggleSelect(deck.deckid)}
               />
@@ -475,8 +475,8 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
             <thead>
               <tr>
                 <th className="select px-1">
-                  <input
-                    type="checkbox"
+                  <Checkbox
+                    name="selectAll"
                     checked={isSelectedAll}
                     onChange={() => toggleSelectAll()}
                   />
@@ -531,10 +531,8 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                       isMobile ? '' : 'flex items-center justify-end '
                     } px-1`}
                   >
-                    <input
-                      className={isMobile ? '' : 'pe-3 pt-0.5'}
-                      type="checkbox"
-                      id="revFilter"
+                    <Checkbox
+                      name="revFilter"
                       label={isDesktop ? 'Show Revisions' : 'Rev'}
                       checked={revFilter}
                       onChange={() => setRevFilter(!revFilter)}

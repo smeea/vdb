@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
-import { ErrorOverlay } from 'components';
+import { Checkbox, ErrorOverlay } from 'components';
 import {
   TwdSearchFormButtons,
   TwdSearchFormPlayer,
@@ -21,7 +21,6 @@ import {
   TwdSearchFormLibrary,
   TwdSearchFormLibraryTotal,
   TwdSearchFormMatchInventory,
-  TwdSearchFormMatchInventoryScaling,
 } from './twd_search_components';
 import { sanitizeFormState } from 'utils';
 import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from 'context';
@@ -254,13 +253,15 @@ const TwdSearchForm = ({ error, setError }) => {
           </div>
           <div className="ps-1 mx-0 flex flex-row items-center py-1">
             <div className="xs={{ span: 6, offset: 6 }} inline px-0">
-              <TwdSearchFormMatchInventoryScaling
-                target="60"
+              <Checkbox
+                name="60"
+                label="Scale to 60 cards"
                 value={twdFormState.matchInventory.scaling}
                 onChange={handleMatchInventoryScalingChange}
               />
-              <TwdSearchFormMatchInventoryScaling
-                target="75"
+              <Checkbox
+                name="75"
+                label="Scale to 75 cards"
                 value={twdFormState.matchInventory.scaling}
                 onChange={handleMatchInventoryScalingChange}
               />
@@ -304,11 +305,9 @@ const TwdSearchForm = ({ error, setError }) => {
         </div>
       </div>
       <div className="pe-1 mx-0 flex flex-row justify-end pb-1">
-        <input
+        <Checkbox
           name="traits"
           value="star"
-          type="checkbox"
-          id="traits-star"
           label="With Star"
           checked={twdFormState.traits.star}
           onChange={handleMultiChange}
@@ -350,11 +349,9 @@ const TwdSearchForm = ({ error, setError }) => {
         </div>
       </div>
       <div className="pe-1 mx-0 flex flex-row justify-end pb-1">
-        <input
+        <Checkbox
           name="traits"
           value="monoclan"
-          type="checkbox"
-          id="traits-monoclan"
           label="Mono Clan"
           checked={twdFormState.traits.monoclan}
           onChange={handleMultiChange}

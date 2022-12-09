@@ -7,7 +7,7 @@ import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
 } from '../shared_search_components';
-import { Button, ButtonIconed } from 'components';
+import { Checkbox, Button, ButtonIconed } from 'components';
 import { useApp } from 'context';
 
 const SearchFormTextAndButtons = ({
@@ -53,16 +53,14 @@ const SearchFormTextAndButtons = ({
     setText(e.target.value);
   };
 
-  const OptionsForm = options.map((opt, index) => {
+  const OptionsForm = options.map((opt, idx) => {
     return (
-      // TODO add labels
-      <input
-        key={index}
+      <Checkbox
+        key={idx}
+        prefix="text"
         name={0}
         value={opt.value}
-        type="checkbox"
-        className="text-xs"
-        id={`text-${opt.value}`}
+        onChange={onChangeOptions}
         label={opt.label}
         checked={
           opt.value === 'regex'
@@ -153,12 +151,9 @@ const SearchFormTextAndButtons = ({
         searchForm={searchForm}
       />
       {inventoryMode && (
-        <input
+        <Checkbox
           name={0}
           value="hideMissing"
-          type="checkbox"
-          className="pt-1 text-xs"
-          id="text-hideMissing"
           label="Search In Inventory"
           checked={hideMissing}
           onChange={() => setHideMissing(!hideMissing)}

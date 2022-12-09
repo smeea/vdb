@@ -20,6 +20,7 @@ import {
   TwdSearchFormMatchInventory,
   TwdSearchFormMatchInventoryScaling,
   TwdSearchFormPlayer,
+  Checkbox,
 } from 'components';
 import { sanitizeFormState } from 'utils';
 import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from 'context';
@@ -255,13 +256,15 @@ const PdaSearchForm = ({ error, setError }) => {
           </div>
           <div className="ps-1 mx-0 flex flex-row items-center py-1">
             <div className="xs={{ span: 6, offset: 6 }} inline px-0">
-              <TwdSearchFormMatchInventoryScaling
-                target="60"
+              <Checkbox
+                name="60"
+                label="Scale to 60 cards"
                 value={pdaFormState.matchInventory.scaling}
                 onChange={handleMatchInventoryScalingChange}
               />
-              <TwdSearchFormMatchInventoryScaling
-                target="75"
+              <Checkbox
+                name="75"
+                label="Scale to 75 cards"
                 value={pdaFormState.matchInventory.scaling}
                 onChange={handleMatchInventoryScalingChange}
               />
@@ -295,11 +298,9 @@ const PdaSearchForm = ({ error, setError }) => {
         </div>
       </div>
       <div className="pe-1 mx-0 flex flex-row justify-end pb-1">
-        <input
+        <Checkbox
           name="traits"
           value="star"
-          type="checkbox"
-          id="traits-star"
           label="With Star"
           checked={pdaFormState.traits.star}
           onChange={handleMultiChange}
@@ -341,11 +342,9 @@ const PdaSearchForm = ({ error, setError }) => {
         </div>
       </div>
       <div className="pe-1 mx-0 flex flex-row justify-end pb-1">
-        <input
+        <Checkbox
           name="traits"
           value="monoclan"
-          type="checkbox"
-          id="traits-monoclan"
           label="Mono Clan"
           checked={pdaFormState.traits.monoclan}
           onChange={handleMultiChange}
