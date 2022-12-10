@@ -1,32 +1,26 @@
 import React from 'react';
+import { Radio } from 'components';
 
 const PdaSearchFormSrcSelector = ({ value, onChange }) => {
   return (
-    <>
+    <div className="flex space-x-8">
       {[
         ['any', 'All'],
         ['favorites', 'Favorites'],
         ['my', 'My'],
-      ].map((i, idx) => {
+      ].map((i) => {
         return (
-          <React.Fragment key={idx}>
-            <input
-              checked={value == i[0]}
-              onChange={onChange}
-              type="radio"
-              id={i[0]}
-              value={i[0]}
-              name="src"
-            />
-            <label htmlFor={i[0]}>
-              <div className="blue">
-                <b>{i[1]}</b>
-              </div>
-            </label>
-          </React.Fragment>
+          <Radio
+            key={i[0]}
+            checked={value == i[0]}
+            onChange={onChange}
+            value={i[1]}
+            name="src"
+            id={i[0]}
+          />
         );
       })}
-    </>
+    </div>
   );
 };
 

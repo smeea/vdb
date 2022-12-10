@@ -36,6 +36,7 @@ import {
   Seating,
   Modal,
   Button,
+  Radio,
 } from 'components';
 import { deckStore, useApp, setDeck, deckUpdate } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
@@ -308,49 +309,32 @@ const Decks = () => {
                 </div>
               </div>
               <div className="flex items-center justify-between pt-2">
-                <form className="ps-1 my-0">
+                <div className="flex space-x-8">
                   {username && decks && Object.keys(decks).length > 0 && (
                     <>
-                      <input
+                      <Radio
                         checked={selectFrom == 'my'}
                         onChange={(e) => setSelectFrom(e.target.id)}
-                        type="radio"
+                        value={isMobile ? 'My' : 'My Decks'}
                         id="my"
                       />
-                      <label htmlFor="my">
-                        <div className="blue">
-                          <b>{isMobile ? 'My' : 'My Decks'}</b>
-                        </div>
-                      </label>
                     </>
                   )}
-                  <input
+                  <Radio
                     checked={selectFrom == 'precons'}
                     onChange={(e) => setSelectFrom(e.target.id)}
-                    type="radio"
+                    value="Precons"
                     id="precons"
                   />
-                  <label htmlFor="precons">
-                    <div className="blue">
-                      <b>Precons</b>
-                    </div>
-                  </label>
                   {recentDecks.length > 0 && (
-                    <>
-                      <input
-                        checked={selectFrom == 'recent'}
-                        onChange={(e) => setSelectFrom(e.target.id)}
-                        type="radio"
-                        id="recent"
-                      />
-                      <label htmlFor="recent">
-                        <div className="blue">
-                          <b>Recent</b>
-                        </div>
-                      </label>
-                    </>
+                    <Radio
+                      checked={selectFrom == 'recent'}
+                      onChange={(e) => setSelectFrom(e.target.id)}
+                      value="Recent"
+                      id="recent"
+                    />
                   )}
-                </form>
+                </div>
                 <div className="flex flex-row space-x-1">
                   {decks && (
                     <Button

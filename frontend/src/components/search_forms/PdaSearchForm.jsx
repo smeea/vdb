@@ -55,8 +55,10 @@ const PdaSearchForm = ({ error, setError }) => {
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
   const handleChange = (event) => {
-    const { name, value } = event.target ?? event;
-    searchPdaForm[name] = value;
+    const { name, value, id } = event.target ?? event;
+    const i = id ?? value;
+
+    searchPdaForm[name] = i;
   };
 
   const handleChangeWithOpt = (event, id) => {
@@ -217,7 +219,7 @@ const PdaSearchForm = ({ error, setError }) => {
         />
       </div>
       {username && (
-        <div className="px-1 py-2">
+        <div className="py-2">
           <PdaSearchFormSrcSelector
             value={pdaFormState.src}
             onChange={handleChange}
