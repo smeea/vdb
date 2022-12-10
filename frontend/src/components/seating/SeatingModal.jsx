@@ -118,7 +118,7 @@ const SeatingModal = ({
                       className="flex items-center"
                       onClick={() => setWithCustom(!withCustom)}
                     >
-                      <div className="pe-2 flex items-center">
+                      <div className="pr-2 flex items-center">
                         <>
                           {withCustom ? (
                             <ToggleOn
@@ -201,7 +201,7 @@ const SeatingModal = ({
                     className="flex items-center"
                     onClick={() => setWithStandard(!withStandard)}
                   >
-                    <div className="pe-2 flex items-center">
+                    <div className="pr-2 flex items-center">
                       <>
                         {withStandard ? (
                           <ToggleOn

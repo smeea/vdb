@@ -192,7 +192,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               {deck.branchName &&
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
-                  <div className="ps-2 revision inline" title={deck.branchName}>
+                  <div className="pl-2 revision inline" title={deck.branchName}>
                     {deck.branchName}
                   </div>
                 )}
@@ -249,10 +249,10 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             </td>
           )}
           <td className="buttons">
-            <div className="pe-1 inline">
+            <div className="pr-1 inline">
               <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
             </div>
-            <div className="pe-1 inline">
+            <div className="pr-1 inline">
               <InventoryDeckDeleteButton
                 deck={deck}
                 inInventory={inInventory}

@@ -120,7 +120,7 @@ const DeckProxyLibraryTable = ({
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
-            <td className="name ps-3 pe-2" onClick={() => handleClick(card.c)}>
+            <td className="name pl-3 pr-2" onClick={() => handleClick(card.c)}>
               <ResultLibraryName card={card.c} />
             </td>
           </ConditionalTooltip>

@@ -55,7 +55,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype} className="pt-2">
-      <div className="pe-2 flex justify-between">
+      <div className="pr-2 flex justify-between">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
@@ -115,7 +115,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         isEditable={isEditable}
       />
       {showInfo && (
-        <div className="info-message ps-2">
+        <div className="info-message pl-2">
           <DeckLibraryTotalInfo
             byDisciplines={libraryByDisciplinesTotal}
             byTypes={libraryByTypeTotal}

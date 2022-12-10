@@ -114,7 +114,7 @@ const AccountRegister = () => {
   return (
     <>
       <div className="text-blue flex items-center px-1 py-2 text-xl font-bold">
-        <div className="pe-2 flex">
+        <div className="pr-2 flex">
           <PersonPlusFill width="22" height="22" viewBox="0 1 16 16" />
         </div>
         Create account

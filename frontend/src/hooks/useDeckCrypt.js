@@ -62,7 +62,7 @@ const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
           width="16"
           heigth="16"
           viewBox="0 2 16 16"
-          className="pe-1 inline"
+          className="pr-1 inline"
         />
         GROUPS
       </div>

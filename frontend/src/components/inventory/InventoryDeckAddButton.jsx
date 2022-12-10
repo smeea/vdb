@@ -31,7 +31,7 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
       >
         {inInventory ? (
           <div className="flex items-center justify-center">
-            <div className="pe-1 flex">
+            <div className="pr-1 flex">
               <Check2 />
             </div>
             {inInventory}

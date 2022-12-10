@@ -92,12 +92,12 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         name: 'precon',
         label: (
           <div className="flex items-center justify-between">
-            <div className="pe-2 flex items-center">
+            <div className="pr-2 flex items-center">
               <div
                 className={
                   clanImages.length == 1
                     ? 'flex w-[40px] items-center justify-center'
-                    : 'pe-2 inline'
+                    : 'pr-2 inline'
                 }
               >
                 {clanImages}
@@ -145,11 +145,11 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   return (
     <>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="basis-1/4 px-0">
           <div className="text-blue font-bold">Precon:</div>
           {value.value[0] !== 'any' && (
-            <div className="pe-1 flex justify-end">
+            <div className="pr-1 flex justify-end">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -185,7 +185,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="ps-1 mx-0 flex flex-row items-center pb-1">
+      <div className="pl-1 mx-0 flex flex-row items-center pb-1">
         <div className="flex justify-end px-0">
           <div className="flex flex-row space-x-3">
             {printFormOptions.map((i) => {

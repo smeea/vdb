@@ -12,7 +12,7 @@ const ResultCryptName = ({ card }) => {
         <div className="inline whitespace-normal">{card['Name']}</div>
       )}
       {card.Adv[0] && (
-        <span className="ps-1">
+        <span className="pl-1">
           <img
             className="advanced-image-results inline h-[22px] align-text-bottom"
             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
@@ -21,7 +21,7 @@ const ResultCryptName = ({ card }) => {
         </span>
       )}
       {card['Banned'] && (
-        <span className="ps-1">
+        <span className="pl-1">
           [{card['Banned']} <Hammer className="inline h-[20px]" />]
         </span>
       )}

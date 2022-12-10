@@ -119,12 +119,12 @@ const DiffCryptTable = ({
             <td className="quantity-no-buttons px-1">{qFrom ? qFrom : null}</td>
           )}
           <td
-            className={`w-[42px] min-w-[35px] text-lg ${!isMobile && 'ps-1'}`}
+            className={`w-[42px] min-w-[35px] text-lg ${!isMobile && 'pl-1'}`}
           >
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
           <td
-            className={isMobile ? 'capacity' : 'capacity pe-1'}
+            className={isMobile ? 'capacity' : 'capacity pr-1'}
             onClick={() => handleClick()}
           >
             <ResultCryptCapacity value={card.c.Capacity} />
@@ -156,7 +156,7 @@ const DiffCryptTable = ({
           </ConditionalTooltip>
           {isWide ? (
             <>
-              <td className="title pe-2" onClick={() => handleClick()}>
+              <td className="title pr-2" onClick={() => handleClick()}>
                 <ResultCryptTitle value={card.c.Title} />
               </td>
               <td className="clan" onClick={() => handleClick()}>

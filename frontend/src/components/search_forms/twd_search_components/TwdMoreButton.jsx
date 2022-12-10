@@ -21,7 +21,7 @@ const TwdMoreButton = ({ noText }) => {
         <Menu.Item>
           <div onClick={() => navigate('/twd/hall_of_fame/tournaments')}>
             <div className="flex items-center justify-start py-1">
-              <div className="pe-2 flex">
+              <div className="pr-2 flex">
                 <TrophyFill />
               </div>
               Hall Of Fame - Tournaments
@@ -31,7 +31,7 @@ const TwdMoreButton = ({ noText }) => {
         <Menu.Item>
           <div onClick={() => navigate('/twd/hall_of_fame/cards')}>
             <div className="flex items-center justify-start py-1">
-              <div className="pe-2 flex">
+              <div className="pr-2 flex">
                 <LightbulbFill />
               </div>
               Hall Of Fame - Cards Appearance
@@ -41,7 +41,7 @@ const TwdMoreButton = ({ noText }) => {
         <Menu.Item>
           <div onClick={() => navigate('/twd/cards_history')}>
             <div className="flex items-center justify-start py-1">
-              <div className="pe-2 flex">
+              <div className="pr-2 flex">
                 <ClockHistory />
               </div>
               Cards Appearance History

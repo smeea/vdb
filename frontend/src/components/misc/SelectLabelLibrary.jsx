@@ -27,7 +27,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
             </div>
           )}
           <ResultLibraryTypeImage value={libraryCardBase[cardid].Type} />
-          <div className="ps-1">
+          <div className="pl-1">
             <ResultLibraryName card={libraryCardBase[cardid]} />
           </div>
         </div>

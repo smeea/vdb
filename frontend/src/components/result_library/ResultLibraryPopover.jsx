@@ -27,21 +27,21 @@ const ResultLibraryPopover = ({ card, setImageSet }) => {
               <div>
                 <ResultLibraryTypeImage value={card.Type} />
               </div>
-              <div className="name ps-2 font-bold">
+              <div className="name pl-2 font-bold">
                 <ResultLibraryName card={card} />
               </div>
             </div>
-            <div className="ps-1">
+            <div className="pl-1">
               <ResultLibraryDisciplines value={card.Discipline} />
               <ResultLibraryClan value={card.Clan} />
             </div>
             {card['Burn Option'] && (
-              <div className="ps-1">
+              <div className="pl-1">
                 <ResultLibraryBurn value={card['Burn Option']} />
               </div>
             )}
             {isTrifle(card) && (
-              <div className="ps-1">
+              <div className="pl-1">
                 <ResultLibraryTrifle card={card} />
               </div>
             )}

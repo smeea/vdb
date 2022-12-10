@@ -29,12 +29,12 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
           <div className="px-2">
             <ResultCryptName card={cryptCardBase[cardid]} />
             {cryptCardBase[cardid]['New'] && (
-              <div className="ps-2 inline text-neutral-500">
+              <div className="pl-2 inline text-neutral-500">
                 [G{cryptCardBase[cardid].Group}]
               </div>
             )}
           </div>
-          <div className="pe-3">
+          <div className="pr-3">
             <ResultClanImage value={cryptCardBase[cardid].Clan} />
           </div>
         </div>

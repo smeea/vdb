@@ -202,7 +202,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
           ) : (
             <Button variant="primary" onClick={handleImportButton}>
               <Spinner animation="border" size="sm" />
-              <span className="ps-2">Import</span>
+              <span className="pl-2">Import</span>
             </Button>
           )}
         </div>

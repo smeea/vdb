@@ -29,7 +29,7 @@ const TwdResultTotal = ({
       } info-message items-center justify-between`}
     >
       <div
-        className={`ps-2 pe-1 inline ${isMobile ? '' : 'whitespace-nowrap'}`}
+        className={`ps-2 pr-1 inline ${isMobile ? '' : 'whitespace-nowrap'}`}
       >
         <b>TOTAL: {total}</b>
       </div>

@@ -93,11 +93,11 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
         <div
           className={`flex ${
             isMobile ? 'h-auto w-full' : 'w-75'
-          } pe-1 items-center justify-between`}
+          } pr-1 items-center justify-between`}
         >
           <div className="flex w-[55%] items-center">
             {Object.keys(cards).length}
-            <div className="ps-1 pe-3 flex">
+            <div className="pl-1 pr-3 flex">
               <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
             </div>
             <div className="flex items-center">{name}</div>

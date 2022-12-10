@@ -94,7 +94,7 @@ const ResultCryptTableRow = ({
 `}
     >
       {(inRecommendation ? isEditable : isEditable && addMode) && (
-        <td className="quantity-add pe-1">
+        <td className="quantity-add pr-1">
           <ButtonAddCard
             cardid={card.Id}
             deckid={deck.deckid}
@@ -124,7 +124,7 @@ const ResultCryptTableRow = ({
                     inInventory >= softUsedMax + hardUsedTotal
                       ? 'gray'
                       : 'white'
-                  } ps-1`}
+                  } pl-1`}
                 >
                   {inInventory >= softUsedMax + hardUsedTotal
                     ? `+${inInventory - softUsedMax - hardUsedTotal}`
@@ -158,7 +158,7 @@ const ResultCryptTableRow = ({
       </td>
       {isWide ? (
         <>
-          <td className="title pe-2" onClick={() => handleClick(card)}>
+          <td className="title pr-2" onClick={() => handleClick(card)}>
             <ResultCryptTitle value={card.Title} />
           </td>
           <td className="clan" onClick={() => handleClick(card)}>

@@ -55,7 +55,7 @@ const DeckProxyLibrary = ({
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype}>
-      <div className="pe-2 flex justify-between">
+      <div className="pr-2 flex justify-between">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
@@ -94,8 +94,8 @@ const DeckProxyLibrary = ({
   return (
     <>
       <div
-        className={`info-message ps-2 flex items-center justify-between pb-2 ${
-          isMobile ? 'pe-1' : 'py-2'
+        className={`info-message pl-2 flex items-center justify-between pb-2 ${
+          isMobile ? 'pr-1' : 'py-2'
         }`}
       >
         <b>Library [{libraryTotalSelected}]</b>

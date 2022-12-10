@@ -7,13 +7,13 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="ps-1 mx-0 flex flex-row py-1">
+      <div className="pl-1 mx-0 flex flex-row py-1">
         <div className="flex px-0">
           <div className="text-blue font-bold">Traits:</div>
         </div>
       </div>
       <div className="mx-0 flex flex-row">
-        <div className="pe-0 inline basis-7/12">
+        <div className="pr-0 inline basis-7/12">
           {[
             ['intercept', '+Intercept / -Stealth'],
             ['stealth', '+Stealth / -Intercept'],

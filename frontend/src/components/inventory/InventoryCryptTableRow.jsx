@@ -92,7 +92,7 @@ const InventoryCryptTableRow = ({
         <div className="used flex items-center justify-center">
           {isMobile ? (
             <div
-              className={`w-100 ps-1 flex justify-center ${
+              className={`w-100 pl-1 flex justify-center ${
                 card.q == softUsedMax + hardUsedTotal
                   ? 'gray'
                   : card.q >= softUsedMax + hardUsedTotal
@@ -112,7 +112,7 @@ const InventoryCryptTableRow = ({
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
               <div
-                className={`w-100 ps-1 flex justify-center ${
+                className={`w-100 pl-1 flex justify-center ${
                   card.q == softUsedMax + hardUsedTotal
                     ? 'gray'
                     : card.q >= softUsedMax + hardUsedTotal
@@ -171,7 +171,7 @@ const InventoryCryptTableRow = ({
             <ResultClanImage value={card.c.Clan} />
           </div>
           <div
-            className="pe-1 group flex items-center justify-center"
+            className="pr-1 group flex items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultCryptGroup value={card.c.Group} />

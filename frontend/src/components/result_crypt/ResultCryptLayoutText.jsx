@@ -29,7 +29,7 @@ const ResultCryptLayoutText = ({
       <div className="flex items-center justify-between whitespace-nowrap pb-1">
         <div className="flex items-center whitespace-nowrap">
           <ResultClanImage value={card.Clan} />
-          <div className="name ps-2 font-bold">
+          <div className="name pl-2 font-bold">
             <ResultCryptName card={card} />
             {card.Adv[1] && (
               <ConditionalTooltip
@@ -38,7 +38,7 @@ const ResultCryptLayoutText = ({
                 disabled={isMobile}
               >
                 <span
-                  className="adv ps-2"
+                  className="adv pl-2"
                   onClick={() => setCard(cryptCardBase[card.Adv[1]])}
                 >
                   [see {`${card.Adv[0] ? 'Base' : 'Adv'}`}]
@@ -47,7 +47,7 @@ const ResultCryptLayoutText = ({
             )}
           </div>
         </div>
-        <div className="ps-1">
+        <div className="pl-1">
           <ResultCryptGroup value={card.Group} />
         </div>
       </div>

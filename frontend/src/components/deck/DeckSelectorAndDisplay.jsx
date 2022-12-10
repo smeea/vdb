@@ -36,7 +36,7 @@ const DeckSelectorAndDisplay = () => {
               />
             </div>
             {isBranches && (
-              <div className="ps-1 w-25">
+              <div className="pl-1 w-25">
                 <DeckBranchSelect deck={deck ?? null} />
               </div>
             )}
@@ -50,7 +50,7 @@ const DeckSelectorAndDisplay = () => {
             onClick={() => toggleAddMode()}
           >
             <div className="flex items-center justify-center">
-              <div className={`flex ${addMode ? '' : 'pe-2'}`}>
+              <div className={`flex ${addMode ? '' : 'pr-2'}`}>
                 {addMode ? <EyeSlashFill /> : <EyeFill />}
               </div>
               {addMode ? '' : 'Show Deck'}

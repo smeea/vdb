@@ -34,7 +34,7 @@ const LibrarySearchFormBloodCost = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-1/4 px-0">
           <div className="text-blue font-bold">Blood Cost:</div>
         </div>
@@ -48,7 +48,7 @@ const LibrarySearchFormBloodCost = ({ value, onChange }) => {
             onChange={onChange}
           />
         </div>
-        <div className="pe-0 ps-1 inline basis-5/12">
+        <div className="pr-0 pl-1 inline basis-5/12">
           <Select
             classNamePrefix="react-select"
             options={options}

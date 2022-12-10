@@ -58,7 +58,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
         </div>
         {!isMobile && byPlayer && (
           <div
-            className="ps-2 inline"
+            className="pl-2 inline"
             title={`First appearance in TWDA:
 Crypt: ${byPlayer.crypt}
 Library: ${byPlayer.library}`}
@@ -67,7 +67,7 @@ Library: ${byPlayer.library}`}
           </div>
         )}
       </div>
-      <div className="button pe-1 flex items-center justify-end">
+      <div className="button pr-1 flex items-center justify-end">
         {card.deckid && (
           <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} inHistory />
         )}

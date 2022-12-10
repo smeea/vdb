@@ -125,7 +125,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="pt-2 opacity-60">
-          <div className="ps-2 flex items-center justify-between">
+          <div className="pl-2 flex items-center justify-between">
             <b>Side Crypt</b>
           </div>
           <DiffCryptTable

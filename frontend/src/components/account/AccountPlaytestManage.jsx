@@ -18,7 +18,7 @@ const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
       className={`flex items-center ${state ? '' : 'text-neutral-500'}`}
       onClick={handleClick}
     >
-      <div className="pe-2 flex items-center">
+      <div className="pr-2 flex items-center">
         <>
           {state ? (
             <ToggleOn width="30" height="30" viewBox="0 0 16 16" />

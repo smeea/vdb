@@ -15,7 +15,7 @@ const Pda = () => {
           className={`basis-full md:basis-8/12 xl:basis-9/12
             ${
               !isMobile || (isMobile && !error)
-                ? 'pe-lg-4 px-0'
+                ? 'pr-lg-4 px-0'
                 : 'px-md-2 px-lg-4 hidden px-0'
             }
           `}

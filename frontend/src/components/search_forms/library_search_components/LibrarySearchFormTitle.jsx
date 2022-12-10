@@ -42,12 +42,12 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
 
   return (
     <>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-1/4 items-center justify-between px-0">
           <div className="text-blue font-bold">Title:</div>
           {value.value[0] !== 'any' && (
-            <div className="pe-1 flex justify-end">
-              <div className="pe-1">
+            <div className="pr-1 flex justify-end">
+              <div className="pr-1">
                 <SearchFormButtonLogicToggle
                   name={name}
                   value={value.logic}

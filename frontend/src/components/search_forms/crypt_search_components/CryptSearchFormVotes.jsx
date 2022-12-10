@@ -25,7 +25,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
   }));
 
   return (
-    <div className="ps-1 mx-0 flex flex-row items-center py-1">
+    <div className="pl-1 mx-0 flex flex-row items-center py-1">
       <div className="flex basis-1/4 px-0">
         <div className="text-blue font-bold">Votes:</div>
       </div>

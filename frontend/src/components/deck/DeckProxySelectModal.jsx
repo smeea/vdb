@@ -182,7 +182,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       title="Create PDF with Card Proxies"
     >
       <div>
-        <div className="pe-lg-4 flex flex-row px-0">
+        <div className="pr-lg-4 flex flex-row px-0">
           <div className="px-lg-4 pb-md-0 basis-full px-0 md:basis-7/12">
             {deck.crypt && (
               <div className={isMobile ? null : 'sticky-modal'}>
@@ -208,7 +208,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
         </div>
-        <div className="pe-lg-4 flex flex-row px-0">
+        <div className="pr-lg-4 flex flex-row px-0">
           <div className="px-md-0 py-md-4 flex justify-end p-2">
             <div
               className={`flex ${

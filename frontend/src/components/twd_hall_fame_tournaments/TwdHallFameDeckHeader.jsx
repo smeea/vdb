@@ -40,12 +40,12 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
         >
           <div className="flex items-center">
             {deck.players}
-            <div className="ps-1 pe-3 flex pt-1">
+            <div className="pl-1 pr-3 flex pt-1">
               <PeopleFill viewBox="0 0 18 18" />
             </div>
             {`${deck.event}: ${deck.location}`}
           </div>
-          <div className="ps-2 whitespace-nowrap">
+          <div className="pl-2 whitespace-nowrap">
             {isMobile ? deck.date.slice(0, 4) : deck.date}
           </div>
         </div>

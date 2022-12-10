@@ -52,8 +52,8 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       name: name,
       label: (
         <div className="flex items-center justify-between">
-          <div className="pe-2">{i.name}</div>
-          {i.year && <div className="ps-2 text-xs">{`'${i.year}`}</div>}
+          <div className="pr-2">{i.name}</div>
+          {i.year && <div className="pl-2 text-xs">{`'${i.year}`}</div>}
         </div>
       ),
     });
@@ -116,11 +116,11 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   return (
     <>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-1/4 items-center justify-between px-0">
           <div className="text-blue font-bold">Set:</div>
           {value.value[0] !== 'any' && (
-            <div className="pe-1 flex justify-end">
+            <div className="pr-1 flex justify-end">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -156,7 +156,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="ps-1 mx-0 flex flex-row items-center pb-1">
+      <div className="pl-1 mx-0 flex flex-row items-center pb-1">
         <div className="flex justify-end px-0">
           <div className="flex flex-row space-x-2">
             {ageFormOptions.map((i) => {
@@ -181,7 +181,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
           </div>
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center pb-1">
+      <div className="pl-1 mx-0 flex flex-row items-center pb-1">
         <div className="flex justify-end px-0">
           <div className="flex flex-row space-x-3">
             {printFormOptions.map((i) => {

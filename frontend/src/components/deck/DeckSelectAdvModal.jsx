@@ -370,7 +370,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                   (deck.master ||
                     (deck.branches && deck.branches.length > 0)) && (
                     <div
-                      className="ps-2 revision inline"
+                      className="pl-2 revision inline"
                       title={deck.branchName}
                     >
                       {deck.branchName}
@@ -427,7 +427,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
               <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
             </td>
             <td className="buttons">
-              <div className="pe-1 flex flex-col justify-end space-x-1">
+              <div className="pr-1 flex flex-col justify-end space-x-1">
                 <DeckHideButton deck={deck} />
                 {!isMobile && (
                   <>

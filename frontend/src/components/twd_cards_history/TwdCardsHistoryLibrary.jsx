@@ -276,7 +276,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         <div className="player flex items-center" title="First Winner">
           Player
         </div>
-        <div className="button pe-1 flex" />
+        <div className="button pr-1 flex" />
         {!isMobile && <div className="scroll-bar flex" />}
       </div>
       <AutoSizer>

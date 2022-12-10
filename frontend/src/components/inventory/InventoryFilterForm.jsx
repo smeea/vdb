@@ -22,7 +22,7 @@ const InventoryFilterForm = ({
       label: (
         <div className="flex justify-between">
           {target === 'crypt' && (
-            <div className="pe-1">
+            <div className="pr-1">
               {i === 'All' ? (
                 <div className="px-1">All Clans</div>
               ) : (
@@ -37,7 +37,7 @@ const InventoryFilterForm = ({
           )}
 
           {target === 'type' && (
-            <div className="pe-1">
+            <div className="pr-1">
               {i === 'All' ? (
                 <div className="px-1">All Types</div>
               ) : (
@@ -51,7 +51,7 @@ const InventoryFilterForm = ({
             </div>
           )}
           {target === 'discipline' && (
-            <div className="pe-1">
+            <div className="pr-1">
               {i === 'All' ? (
                 <div className="px-1">All Disciplines</div>
               ) : (

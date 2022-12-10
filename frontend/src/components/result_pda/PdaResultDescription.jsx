@@ -40,7 +40,7 @@ const PdaResultDescription = ({ deck }) => {
                 <b>Deck:</b>
               )}
             </td>
-            <td className="ps-2">{deck['name']}</td>
+            <td className="pl-2">{deck['name']}</td>
           </tr>
           <tr>
             <td className="blue">
@@ -52,7 +52,7 @@ const PdaResultDescription = ({ deck }) => {
                 <b>Author:</b>
               )}
             </td>
-            <td className="ps-2">
+            <td className="pl-2">
               <div
                 className="link-like"
                 onClick={() => handleClick(deck['author'])}
@@ -71,7 +71,7 @@ const PdaResultDescription = ({ deck }) => {
                 <b>Created:</b>
               )}
             </td>
-            <td className="ps-2">{deck['creation_date']}</td>
+            <td className="pl-2">{deck['creation_date']}</td>
           </tr>
           {lastUpdated !== deck['creation_date'] && (
             <tr>
@@ -84,7 +84,7 @@ const PdaResultDescription = ({ deck }) => {
                   <b>Updated:</b>
                 )}
               </td>
-              <td className="ps-2">{lastUpdated}</td>
+              <td className="pl-2">{lastUpdated}</td>
             </tr>
           )}
         </tbody>

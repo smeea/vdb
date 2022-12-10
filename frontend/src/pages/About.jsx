@@ -231,7 +231,7 @@ const About = () => {
                     <div className="inline font-mono text-sm">{BTC_WALLET}</div>
                   </a>
                   <div
-                    className="ps-2 with-hover inline"
+                    className="pl-2 with-hover inline"
                     onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
                   >
                     <ClipboardFill className="inline" viewBox="0 0 18 18" />
@@ -245,7 +245,7 @@ const About = () => {
               <ul className="no-bullets">
                 <li className="pb-1">
                   <div className="flex items-center">
-                    <div className="icon pe-2">
+                    <div className="icon pr-2">
                       <Globe2 />
                     </div>
                     <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
@@ -255,7 +255,7 @@ const About = () => {
                 </li>
                 <li className="pb-1">
                   <div className="flex items-center">
-                    <div className="icon pe-2">
+                    <div className="icon pr-2">
                       <Github />
                     </div>
                     <a href="https://github.com/smeea/vdb">
@@ -265,7 +265,7 @@ const About = () => {
                 </li>
                 <li className="pb-1">
                   <div className="flex items-center">
-                    <div className="icon pe-2">
+                    <div className="icon pr-2">
                       <EnvelopeFill />
                     </div>
                     <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
@@ -273,7 +273,7 @@ const About = () => {
                 </li>
                 <li className="pb-1">
                   <div className="flex items-center">
-                    <div className="icon pe-2">
+                    <div className="icon pr-2">
                       <Telegram />
                     </div>
                     <a href="https://t.me/smeea">@smeea</a>
@@ -281,7 +281,7 @@ const About = () => {
                 </li>
                 <li className="pb-1">
                   <div className="flex items-center">
-                    <div className="icon pe-2">
+                    <div className="icon pr-2">
                       <Discord />
                     </div>
                     <a href="https://discord.com/users/264725500226830336">

@@ -31,7 +31,7 @@ const ThemeSelect = ({ setShowMenu }) => {
               <PcDisplay height="20" width="20" viewBox="0 0 16 16" />
             )}
           </div>
-          <div className="ps-2 whitespace-nowrap">
+          <div className="pl-2 whitespace-nowrap">
             {theme === 'dark' && 'Dark Theme'}
             {theme === 'light' && 'Light Theme'}
             {theme === 'auto' && 'System Theme'}

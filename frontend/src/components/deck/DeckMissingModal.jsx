@@ -28,7 +28,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
     >
       <div>
         <div className="pb-md-2 flex flex-row px-0 pb-4">
-          <div className="ps-lg-4 pe-lg-3 basis-full px-0 md:basis-7/12">
+          <div className="pl-lg-4 pr-lg-3 basis-full px-0 md:basis-7/12">
             <div className={isMobile || inInventory ? null : 'sticky-modal'}>
               <DeckCrypt
                 deck={{ ...deck, crypt: crypt, library: library }}
@@ -36,7 +36,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
               />
             </div>
           </div>
-          <div className="ps-lg-3 pe-lg-4 basis-full px-0 md:basis-5/12">
+          <div className="pl-lg-3 pr-lg-4 basis-full px-0 md:basis-5/12">
             <DeckLibrary
               deck={{ ...deck, crypt: crypt, library: library }}
               inMissing
@@ -51,7 +51,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
           }
         >
           {inInventory && (
-            <div className="ps-2">
+            <div className="pl-2">
               <ButtonIconed
                 variant="primary"
                 onClick={handleMissAllVtes}
@@ -60,7 +60,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
               />
             </div>
           )}
-          <div className="ps-2">
+          <div className="pl-2">
             <DeckExportButton
               deck={{ ...deck, crypt: crypt, library: library }}
               inMissing

@@ -219,7 +219,7 @@ const DeckCryptTableRow = ({
 
       {isWide && !(keyDisciplines + nonKeyDisciplines > 6 && inSearch) ? (
         <>
-          <td className="title pe-2" onClick={() => handleClick(card.c)}>
+          <td className="title pr-2" onClick={() => handleClick(card.c)}>
             <ResultCryptTitle value={card.c.Title} />
           </td>
           <td className="clan" onClick={() => handleClick(card.c)}>

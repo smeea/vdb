@@ -23,7 +23,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
       return (
         <div
           key={`${idxRuling}-rulingRef-${j}`}
-          className="ps-1 inline text-xs"
+          className="pl-1 inline text-xs"
         >
           <a target="_blank" rel="noreferrer" href={k['refs'][j]}>
             {j}

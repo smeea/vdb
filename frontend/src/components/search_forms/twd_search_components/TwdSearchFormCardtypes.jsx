@@ -111,7 +111,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       {
         value: 'any',
         name: i[0].toLowerCase(),
-        label: <div className="ps-4">ANY</div>,
+        label: <div className="pl-4">ANY</div>,
       },
     ];
 
@@ -126,7 +126,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
     if (idx < 5) {
       formsLeft.push(
         <div className="mx-0 flex flex-row items-center py-1" key={i[0]}>
-          <div className="ps-2 flex basis-2/12 justify-center">
+          <div className="pl-2 flex basis-2/12 justify-center">
             <ResultLibraryTypeImage value={i[0]} />
           </div>
           <div className="inline basis-10/12 px-0">
@@ -147,7 +147,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
     } else {
       formsRight.push(
         <div className="mx-0 flex flex-row items-center py-1" key={i[0]}>
-          <div className="ps-2 flex basis-2/12 justify-center">
+          <div className="pl-2 flex basis-2/12 justify-center">
             <ResultLibraryTypeImage value={i[0]} />
           </div>
           <div className="inline basis-10/12 px-0">
@@ -171,8 +171,8 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   return (
     <>
       <div className="mx-0 flex flex-row">
-        <div className="ps-0 pe-2 inline basis-1/2">{formsLeft}</div>
-        <div className="ps-2 pe-0 inline basis-1/2">{formsRight}</div>
+        <div className="pl-0 pr-2 inline basis-1/2">{formsLeft}</div>
+        <div className="pl-2 pr-0 inline basis-1/2">{formsRight}</div>
       </div>
     </>
   );

@@ -16,7 +16,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
       >
         <div>
           <div className="pb-md-4 flex flex-row px-0">
-            <div className="ps-lg-4 pe-lg-3 basis-full px-0 md:basis-7/12">
+            <div className="pl-lg-4 pr-lg-3 basis-full px-0 md:basis-7/12">
               <div className="info-message flex h-10 items-center justify-between px-2">
                 <b>CRYPT</b>
               </div>
@@ -33,7 +33,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
                 </div>
               )}
             </div>
-            <div className="ps-lg-3 pe-lg-4 pt-md-0 basis-full px-0 pt-4 md:basis-5/12">
+            <div className="pl-lg-3 pr-lg-4 pt-md-0 basis-full px-0 pt-4 md:basis-5/12">
               <div className="info-message flex h-10 items-center justify-between px-2">
                 <b>LIBRARY</b>
               </div>

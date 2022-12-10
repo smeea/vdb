@@ -246,7 +246,7 @@ const Diff = () => {
         <div className="xl:basis-1/12"></div>
         <div className="px-md-2 px-xl-3 basis-full lg:basis-5/6 xl:basis-9/12">
           <div className="px-md-0 pt-md-0 flex flex-row px-1 py-1 pb-0">
-            <div className="ps-lg-3 px-0">
+            <div className="pl-lg-3 px-0">
               <div className="text-blue mx-0 flex flex-row pb-1 font-bold">
                 Deck You Edit:
               </div>
@@ -311,7 +311,7 @@ const Diff = () => {
                     )}
                   </div>
                   {selectFrom == 'from-my' && decks && deck.isBranches && (
-                    <div className="ps-1 w-25">
+                    <div className="pl-1 w-25">
                       <DeckBranchSelect
                         handleSelect={handleSelectFrom}
                         deck={deck}
@@ -393,7 +393,7 @@ const Diff = () => {
                 </Button>
               </div>
             )}
-            <div className="pt-md-0 pe-lg-3 px-0 pt-1">
+            <div className="pt-md-0 pr-lg-3 px-0 pt-1">
               <div className="text-blue mx-0 flex flex-row pb-1 font-bold">
                 Show Changes Against:
               </div>
@@ -451,7 +451,7 @@ const Diff = () => {
                     )}
                   </div>
                   {selectTo == 'to-my' && decks && deckTo?.isBranches && (
-                    <div className="ps-1 w-25">
+                    <div className="pl-1 w-25">
                       <DeckBranchSelect
                         handleSelect={handleSelectTo}
                         deck={deckTo}
@@ -520,7 +520,7 @@ const Diff = () => {
           </div>
           {(errorFrom || errorTo) && (
             <div className="flex flex-row py-1">
-              <div className="ps-lg-3 px-0">
+              <div className="pl-lg-3 px-0">
                 {errorFrom && (
                   <div className="error-message flex items-center justify-center p-2">
                     <b>NO DECK WITH THIS ID</b>
@@ -528,7 +528,7 @@ const Diff = () => {
                 )}
               </div>
               <div className="basis-1/12 px-0"></div>
-              <div className="pe-lg-3 px-0">
+              <div className="pr-lg-3 px-0">
                 {errorTo && (
                   <div className="error-message flex items-center justify-center p-2">
                     <b>NO DECK WITH THIS ID</b>
@@ -539,7 +539,7 @@ const Diff = () => {
           )}
           {deck && deckTo && (
             <div className="pt-md-2 flex flex-row">
-              <div className="px-md-2 ps-xl-2 pe-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
+              <div className="px-md-2 pl-xl-2 pr-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
                 <div
                   className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}
                 >
@@ -553,7 +553,7 @@ const Diff = () => {
                   />
                 </div>
               </div>
-              <div className="px-md-2 ps-xl-3 pe-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
+              <div className="px-md-2 pl-xl-3 pr-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
                 <div
                   className={
                     !isMobile ? 'sticky-deck-library pt-md-4 pt-4' : null
@@ -573,7 +573,7 @@ const Diff = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3 lg:basis-1/6">
+          <div className="hide-on-lt992px pl-lg-2 pr-lg-1 px-xl-3 lg:basis-1/6">
             <div className="sticky-buttons">
               <DiffButtons
                 missingCrypt={missingCrypt}

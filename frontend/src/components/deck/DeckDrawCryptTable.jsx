@@ -76,7 +76,7 @@ const DeckDrawCryptTable = ({
           </td>
           {isWide ? (
             <>
-              <td className="title pe-2" onClick={() => handleClick(idx)}>
+              <td className="title pr-2" onClick={() => handleClick(idx)}>
                 <ResultCryptTitle value={card.Title} />
               </td>
               <td className="clan" onClick={() => handleClick(idx)}>

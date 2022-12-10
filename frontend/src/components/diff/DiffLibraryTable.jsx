@@ -123,7 +123,7 @@ const DiffLibraryTable = ({
             <td className="quantity-no-buttons px-1">{qFrom ? qFrom : null}</td>
           )}
           <td
-            className={`w-[42px] min-w-[35px] text-lg ${!isMobile && 'ps-1'}`}
+            className={`w-[42px] min-w-[35px] text-lg ${!isMobile && 'pl-1'}`}
           >
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>

@@ -114,13 +114,13 @@ const Cards = () => {
               onClick={() => randomCrypt()}
               className="float-right-top float-random flex items-center justify-center"
             >
-              <Dice3 viewBox="0 0 16 16" className="pe-1" /> C
+              <Dice3 viewBox="0 0 16 16" className="pr-1" /> C
             </div>
             <div
               onClick={() => randomLibrary()}
               className="float-right-middle float-random flex items-center justify-center"
             >
-              <Dice3 viewBox="0 0 16 16" className="pe-1" /> L
+              <Dice3 viewBox="0 0 16 16" className="pr-1" /> L
             </div>
           </>
         ) : (
@@ -138,7 +138,7 @@ const Cards = () => {
               )}
               {card && (
                 <div className="align-justify-center bordered my-2 flex flex-row justify-center">
-                  <div className="ps-0 md:basis-1/2">
+                  <div className="pl-0 md:basis-1/2">
                     <CardImage
                       className="h-auto w-full"
                       card={card}

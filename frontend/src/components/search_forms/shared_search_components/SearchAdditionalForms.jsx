@@ -23,8 +23,8 @@ const SearchAdditionalForms = ({
 
   for (let i = 1; i < value.value.length; i++) {
     forms.push(
-      <div key={i} className="ps-1 mx-0 flex flex-row items-center py-1">
-        <div className="pe-1 flex basis-1/4 justify-end px-0">
+      <div key={i} className="pl-1 mx-0 flex flex-row items-center py-1">
+        <div className="pr-1 flex basis-1/4 justify-end px-0">
           <div className="flex flex-row space-x-1">
             {i == value.value.length - 1 && (
               <SearchFormButtonAdd
@@ -51,7 +51,7 @@ const SearchAdditionalForms = ({
                 onChange={onChange}
               />
             </div>
-            <div className="pe-0 ps-1 inline basis-5/12">
+            <div className="pr-0 pl-1 inline basis-5/12">
               <Select
                 classNamePrefix="react-select"
                 options={options}

@@ -50,7 +50,7 @@ const InventoryDesktop = ({
   return (
     <>
       {isWide && <div className="xl:basis-1/12" />}
-      <div className="px-md-2 pe-xl-3 px-0 md:basis-1/2 lg:basis-1/2 xl:basis-5/12">
+      <div className="px-md-2 pr-xl-3 px-0 md:basis-1/2 lg:basis-1/2 xl:basis-5/12">
         {!inShared && (
           <>
             <div className="sticky-selector pt-3 pb-2">

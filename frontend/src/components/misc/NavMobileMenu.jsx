@@ -15,7 +15,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   return (
     <div
       ref={menuRef}
-      className="ps-2 relative text-white"
+      className="pl-2 relative text-white"
       onClick={() => setShowMenu(!showMenu)}
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
@@ -30,7 +30,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               <div className="flex min-w-[30px] justify-center">
                 <PersonFill height="20" width="20" viewBox="0 0 16 16" />
               </div>
-              <div className="ps-2">{username ? 'Account' : 'Login'}</div>
+              <div className="pl-2">{username ? 'Account' : 'Login'}</div>
             </div>
           </NavLink>
           <NavLink
@@ -43,7 +43,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               <div className="flex min-w-[30px] justify-center">
                 <InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />
               </div>
-              <div className="ps-2">About</div>
+              <div className="pl-2">About</div>
             </div>
           </NavLink>
 
@@ -65,7 +65,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             <div
               className={`${
                 inventoryMode ? '' : 'gray'
-              } ps-2 whitespace-nowrap`}
+              } pl-2 whitespace-nowrap`}
             >
               Inventory Mode
             </div>

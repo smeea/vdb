@@ -89,7 +89,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
 `}
     >
       {isEditable && addMode && (
-        <td className="quantity-add pe-1">
+        <td className="quantity-add pr-1">
           <ButtonAddCard deckid={deck.deckid} card={card} inDeck={inDeck} />
         </td>
       )}
@@ -114,7 +114,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
                     inInventory >= softUsedMax + hardUsedTotal
                       ? 'gray'
                       : 'white'
-                  } ps-1`}
+                  } pl-1`}
                 >
                   {inInventory >= softUsedMax + hardUsedTotal
                     ? `+${inInventory - softUsedMax - hardUsedTotal}`

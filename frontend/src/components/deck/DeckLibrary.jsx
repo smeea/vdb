@@ -57,7 +57,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype} className="pt-2">
-      <div className="pe-2 flex justify-between">
+      <div className="pr-2 flex justify-between">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}

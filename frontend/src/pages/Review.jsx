@@ -234,10 +234,10 @@ const Review = () => {
                   ) : (
                     <>
                       <div className="pb-sm-2 mx-0 flex flex-row">
-                        <div className="ps-md-0 pe-md-1 px-0 md:basis-8/12">
+                        <div className="pl-md-0 pr-md-1 px-0 md:basis-8/12">
                           <DeckChangeName deck={deckFrom} />
                         </div>
-                        <div className="ps-md-1 pe-md-0 pt-md-0 px-0 pt-2 md:basis-1/3">
+                        <div className="pl-md-1 pr-md-0 pt-md-0 px-0 pt-2 md:basis-1/3">
                           <DeckChangeAuthor deck={deckFrom} />
                         </div>
                       </div>
@@ -250,7 +250,7 @@ const Review = () => {
                           />
                         </div>
                         {foldedDescription && deckFrom?.tags.length > 0 && (
-                          <div className="ps-2 pe-0">
+                          <div className="pl-2 pr-0">
                             <DeckTags deck={deckFrom} bordered />
                           </div>
                         )}
@@ -277,14 +277,14 @@ const Review = () => {
           )}
           {deckFrom && (
             <div className="pt-md-2 flex flex-row">
-              <div className="px-md-2 ps-xl-2 pe-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
+              <div className="px-md-2 pl-xl-2 pr-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
                 <ReviewCrypt
                   cardsFrom={deckFrom.crypt}
                   cardsTo={deckTo.crypt}
                   cardChange={cardChange}
                 />
               </div>
-              <div className="px-md-2 ps-xl-3 pe-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
+              <div className="px-md-2 pl-xl-3 pr-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
                 <ReviewLibrary
                   cardsFrom={deckFrom.library}
                   cardsTo={deckTo.library}

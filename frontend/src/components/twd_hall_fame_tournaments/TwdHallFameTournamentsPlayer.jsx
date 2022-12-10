@@ -41,7 +41,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
       <Disclosure.Button>
         <div className="flex items-center">
           {Object.keys(decks).length}
-          <div className="ps-1 pe-3 flex">
+          <div className="pl-1 pr-3 flex">
             <TrophyFill height="13" width="13" viewBox="0 0 18 18" />
           </div>
           <div className="flex items-center whitespace-nowrap">

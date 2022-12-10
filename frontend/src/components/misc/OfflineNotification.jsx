@@ -15,7 +15,7 @@ const OfflineNotification = () => {
           /* className="offline-bar" */
         >
           <div className="w-100 m-1 flex items-center justify-center">
-            <div className="pe-2 flex">
+            <div className="pr-2 flex">
               <WifiOff width="20" height="20" viewBox="0 0 16 16" />
             </div>
             OFFLINE

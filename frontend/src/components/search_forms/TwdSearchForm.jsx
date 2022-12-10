@@ -222,7 +222,7 @@ const TwdSearchForm = ({ error, setError }) => {
       </div>
       {inventoryMode && (
         <>
-          <div className="ps-1 mx-0 flex flex-row items-center py-1">
+          <div className="pl-1 mx-0 flex flex-row items-center py-1">
             <div className="flex basis-1/2 text-blue mb-0 font-bold px-0">
               In Inventory by Crypt:
             </div>
@@ -234,7 +234,7 @@ const TwdSearchForm = ({ error, setError }) => {
               />
             </div>
           </div>
-          <div className="ps-1 mx-0 flex flex-row items-center py-1">
+          <div className="pl-1 mx-0 flex flex-row items-center py-1">
             <div className="flex basis-1/2 text-blue mb-0 font-bold px-0">
               In Inventory by Library:
             </div>
@@ -246,7 +246,7 @@ const TwdSearchForm = ({ error, setError }) => {
               />
             </div>
           </div>
-          <div className="ps-1 mx-0 flex flex-row items-center py-1">
+          <div className="pl-1 mx-0 flex flex-row items-center py-1">
             <div className="xs={{ span: 6, offset: 6 }} inline px-0">
               <Checkbox
                 name="60"
@@ -264,7 +264,7 @@ const TwdSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-2/12 px-0">
           <div className="text-blue px-0 font-bold">Year:</div>
         </div>
@@ -275,7 +275,7 @@ const TwdSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-2/12 px-0">
           <div className="text-blue px-0 font-bold">Players:</div>
         </div>
@@ -286,10 +286,10 @@ const TwdSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="text-blue px-0 font-bold">Crypt Cards:</div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="inline basis-full px-0">
           {cryptCardBase && (
             <TwdSearchFormCrypt
@@ -299,7 +299,7 @@ const TwdSearchForm = ({ error, setError }) => {
           )}
         </div>
       </div>
-      <div className="pe-1 mx-0 flex flex-row justify-end pb-1">
+      <div className="pr-1 mx-0 flex flex-row justify-end pb-1">
         <Checkbox
           name="traits"
           value="star"
@@ -308,10 +308,10 @@ const TwdSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="text-blue px-0 font-bold">Library Cards:</div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="inline basis-full px-0">
           {libraryCardBase && (
             <TwdSearchFormLibrary
@@ -321,7 +321,7 @@ const TwdSearchForm = ({ error, setError }) => {
           )}
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-1/4 px-0">
           <div className="text-blue px-0 font-bold">Library Size:</div>
         </div>
@@ -332,7 +332,7 @@ const TwdSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-1/4 px-0">
           <div className="text-blue px-0 font-bold">Clan:</div>
         </div>
@@ -343,7 +343,7 @@ const TwdSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="pe-1 mx-0 flex flex-row justify-end pb-1">
+      <div className="pr-1 mx-0 flex flex-row justify-end pb-1">
         <Checkbox
           name="traits"
           value="monoclan"
@@ -352,7 +352,7 @@ const TwdSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-1/4 px-0">
           <div className="text-blue px-0 font-bold">Sect:</div>
         </div>
@@ -363,7 +363,7 @@ const TwdSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-5/12 px-0">
           <div className="text-blue px-0 font-bold">Capacity Avg:</div>
         </div>
@@ -374,22 +374,22 @@ const TwdSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="text-blue px-0 font-bold">Library Disciplines:</div>
       </div>
       <TwdSearchFormDisciplines
         value={twdFormState.disciplines}
         onChange={handleMultiChange}
       />
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
-        <div className="pe-0 ps-1 inline basis-full">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
+        <div className="pr-0 pl-1 inline basis-full">
           <TwdSearchFormCardtypes
             value={twdFormState.cardtypes}
             onChange={handleChangeWithOpt}
           />
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-1/4 px-0">
           <div className="text-blue px-0 font-bold">Event:</div>
         </div>
@@ -400,7 +400,7 @@ const TwdSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-1/4 px-0">
           <div className="text-blue px-0 font-bold">Location:</div>
         </div>
@@ -411,7 +411,7 @@ const TwdSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="ps-1 mx-0 flex flex-row items-center py-1">
+      <div className="pl-1 mx-0 flex flex-row items-center py-1">
         <div className="flex basis-1/4 px-0">
           <div className="text-blue px-0 font-bold">Winner:</div>
         </div>

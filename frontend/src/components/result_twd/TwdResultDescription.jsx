@@ -37,7 +37,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Date:</b>
               )}
             </td>
-            <td className="ps-2">{deck['creation_date']}</td>
+            <td className="pl-2">{deck['creation_date']}</td>
           </tr>
           <tr>
             <td className="blue">
@@ -49,7 +49,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Event:</b>
               )}
             </td>
-            <td className="ps-2">{deck['event']}</td>
+            <td className="pl-2">{deck['event']}</td>
           </tr>
           <tr>
             <td className="blue">
@@ -61,7 +61,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Location:</b>
               )}
             </td>
-            <td className="ps-2">
+            <td className="pl-2">
               <div
                 className="link-like"
                 onClick={() => handleClick('location', deck['location'])}
@@ -80,7 +80,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Player:</b>
               )}
             </td>
-            <td className="ps-2">
+            <td className="pl-2">
               <div
                 className="link-like"
                 onClick={() => handleClick('author', deck['author'])}
@@ -99,7 +99,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Deck:</b>
               )}
             </td>
-            <td className="ps-2">{deck['name']}</td>
+            <td className="pl-2">{deck['name']}</td>
           </tr>
         </tbody>
       </table>
@@ -121,17 +121,17 @@ const TwdResultDescription = ({ deck }) => {
             }`}
             title="Players"
           >
-            <div className="pe-1 flex items-center">
+            <div className="pr-1 flex items-center">
               <PeopleFill />
             </div>{' '}
             {deck['players']}
           </div>
           {Description}
           <div className="flex flex-row p-2">
-            <div className="ps-2 pe-1 md:basis-1/2">
+            <div className="pl-2 pr-1 md:basis-1/2">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </div>
-            <div className="ps-1 pe-2 md:basis-1/2">
+            <div className="pl-1 pr-2 md:basis-1/2">
               {username && <DeckCloneButton deck={deck} noRedirect />}
             </div>
           </div>
@@ -148,7 +148,7 @@ const TwdResultDescription = ({ deck }) => {
                     : 'border-dashed'
                 }`}
               >
-                <div className="pe-1 flex items-center">
+                <div className="pr-1 flex items-center">
                   <PeopleFill />
                 </div>{' '}
                 {deck['players']}

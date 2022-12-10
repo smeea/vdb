@@ -59,7 +59,7 @@ const Library = () => {
                 : 'md:basis-5/12 lg:basis-6/12'
             } ${
               deck && addMode ? 'xl:basis:4/12' : 'xl:basis2/12'
-            } px-md-2 ps-xl-0`}
+            } px-md-2 pl-xl-0`}
           >
             {decks !== undefined &&
               (isDesktop || (!isDesktop && !showSearchForm)) && (
@@ -95,7 +95,7 @@ const Library = () => {
           <div
             className={`md:basis-5/12 xl:${
               deck && addMode ? '3/12' : '4/12'
-            } px-md-2 py-md-3 pe-xl-0 p-1 2xl:basis-1/4`}
+            } px-md-2 py-md-3 pr-xl-0 p-1 2xl:basis-1/4`}
           >
             <LibrarySearchForm />
           </div>

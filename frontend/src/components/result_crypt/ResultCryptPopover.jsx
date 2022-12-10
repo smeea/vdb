@@ -24,11 +24,11 @@ function ResultCryptPopover(props) {
               <div>
                 <ResultClanImage value={props.card.Clan} />
               </div>
-              <div className="name ps-2 font-bold">
+              <div className="name pl-2 font-bold">
                 <ResultCryptName card={props.card} />
               </div>
             </div>
-            <div className="ps-2">
+            <div className="pl-2">
               <ResultCryptGroup value={props.card.Group} />
             </div>
           </div>

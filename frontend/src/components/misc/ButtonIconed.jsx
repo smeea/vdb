@@ -22,7 +22,7 @@ const ButtonIconed = ({
         <>{icon}</>
       ) : (
         <div className="flex items-center justify-center">
-          <div className="pe-2 flex">{icon}</div>
+          <div className="pr-2 flex">{icon}</div>
           {text}
         </div>
       )}

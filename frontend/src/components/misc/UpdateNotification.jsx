@@ -43,7 +43,7 @@ const UpdateNotification = ({ appVersion }) => {
         >
           <div>
             <div className="text-blue flex items-center p-2 font-bold">
-              <div className="pe-2 flex">
+              <div className="pr-2 flex">
                 <ListUl />
               </div>
               Changes [{version}]:

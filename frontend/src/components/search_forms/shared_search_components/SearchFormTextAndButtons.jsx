@@ -74,7 +74,7 @@ const SearchFormTextAndButtons = ({
 
   return (
     <>
-      <div className="ps-0 ps-md-1 mx-0 flex flex-row items-center">
+      <div className="pl-0 pl-md-1 mx-0 flex flex-row items-center">
         {isMobile ? (
           <input
             placeholder="Card Name / Text / RegEx"

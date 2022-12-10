@@ -74,7 +74,7 @@ const InventoryShareModal = ({ setShow }) => {
             <>
               <a href={shareUrl}>{shareUrl}</a>
               <span
-                className="ps-2 pe-3 with-hover inline"
+                className="pl-2 pr-3 with-hover inline"
                 onClick={() => navigator.clipboard.writeText(shareUrl)}
               >
                 <ClipboardFill viewBox="0 0 18 18" />

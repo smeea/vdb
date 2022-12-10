@@ -182,7 +182,7 @@ const DeckLibraryTableRow = ({
           )}
         </>
       )}
-      <td className="name ps-3 pe-2" onClick={() => handleClick(card.c)}>
+      <td className="name pl-3 pr-2" onClick={() => handleClick(card.c)}>
         <ConditionalTooltip
           placement={placement}
           overlay={<CardPopover card={card.c} />}

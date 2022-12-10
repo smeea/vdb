@@ -78,10 +78,10 @@ const PdaResult = ({ results, setResults }) => {
                 </div>
                 {isMobile ? (
                   <>
-                    <div className="ps-0 pe-1 basis-1/2">
+                    <div className="pl-0 pr-1 basis-1/2">
                       <TwdResultCrypt crypt={deck['crypt']} />
                     </div>
-                    <div className="ps-1 pe-0 basis-1/2">
+                    <div className="pl-1 pr-0 basis-1/2">
                       <TwdResultLibraryKeyCards library={deck['library']} />
                     </div>
                   </>

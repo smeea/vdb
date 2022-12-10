@@ -44,9 +44,9 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                     inventoryMode ? (isWide ? 28 : 23) : 32
                   )}
                 </div>
-                <div className="ps-2 flex items-center text-xs">
+                <div className="pl-2 flex items-center text-xs">
                   {inventoryMode && (
-                    <div className="pe-2">
+                    <div className="pr-2">
                       {decks[i].inventoryType == 's' && <Shuffle />}
                       {decks[i].inventoryType == 'h' && <PinAngleFill />}
                       {!decks[i].inventoryType && <At />}
@@ -91,9 +91,9 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           label: (
             <div className="flex items-center justify-between">
               <div className="inline truncate">{decks[deckid]['name']}</div>
-              <div className="ps-2 flex items-center text-xs">
+              <div className="pl-2 flex items-center text-xs">
                 {inventoryMode && (
-                  <div className="pe-2">
+                  <div className="pr-2">
                     {decks[deckid].inventoryType == 's' && <Shuffle />}
                     {decks[deckid].inventoryType == 'h' && <PinAngleFill />}
                     {!decks[deckid].inventoryType && <At />}

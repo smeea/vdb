@@ -55,7 +55,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype} className="pt-2">
-      <div className="pe-2 flex justify-between">
+      <div className="pr-2 flex justify-between">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
@@ -118,7 +118,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           inReview
         />
         {showInfo && (
-          <div className="info-message ps-2">
+          <div className="info-message pl-2">
             <DeckLibraryTotalInfo
               byDisciplines={libraryByDisciplinesTotal}
               byTypes={libraryByTypeTotal}

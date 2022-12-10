@@ -280,13 +280,13 @@ const Decks = () => {
                   )}
                 </div>
                 {selectFrom == 'my' && decks && deck?.isBranches && (
-                  <div className="ps-1 w-25">
+                  <div className="pl-1 w-25">
                     <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
                   </div>
                 )}
                 <div className="flex">
                   {inventoryMode && deck?.isAuthor && (
-                    <div className="ps-1 flex">
+                    <div className="pl-1 flex">
                       <Button
                         title={`Inventory Type: ${
                           !deck?.inventoryType
@@ -378,7 +378,7 @@ const Decks = () => {
                     <div
                       className={`${
                         deck.isBranches ? 'md:basis-6/12' : 'md:basis-8/12'
-                      } ps-md-0 pe-md-1 px-0`}
+                      } pl-md-0 pr-md-1 px-0`}
                     >
                       <DeckChangeName deck={deck} />
                     </div>
@@ -393,7 +393,7 @@ const Decks = () => {
                     )}
                     <div
                       className={`px-0 md:basis-1/3 ${
-                        isMobile ? 'pt-0.5' : 'ps-md-1 pe-md-0 pt-md-0 pt-2'
+                        isMobile ? 'pt-0.5' : 'pl-md-1 pr-md-0 pt-md-0 pt-2'
                       }`}
                     >
                       <DeckChangeAuthor deck={deck} />
@@ -413,7 +413,7 @@ const Decks = () => {
                         deck.isAuthor ||
                         !deck.isPublic) && (
                         <div
-                          className={`ps-2 pe-0 ${isMobile ? 'pt-0.5' : ''}`}
+                          className={`ps-2 pr-0 ${isMobile ? 'pt-0.5' : ''}`}
                         >
                           <DeckTags
                             deck={deck}
@@ -454,10 +454,10 @@ const Decks = () => {
                 Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
-                  <div className="px-md-2 ps-xl-2 pe-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
+                  <div className="px-md-2 pl-xl-2 pr-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
                     <DeckCrypt deck={deck} />
                   </div>
-                  <div className="px-md-2 ps-xl-3 pe-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
+                  <div className="px-md-2 pl-xl-3 pr-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
                     <DeckLibrary deck={deck} />
                   </div>
                 </>
@@ -472,7 +472,7 @@ const Decks = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="hide-on-lt992px ps-md-1 pe-md-0 px-xl-3 lg:basis-1/6">
+          <div className="hide-on-lt992px pl-md-1 pr-md-0 px-xl-3 lg:basis-1/6">
             <div className="sticky-buttons">
               <DeckButtons
                 deck={deck}
