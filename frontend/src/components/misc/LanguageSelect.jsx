@@ -51,7 +51,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
       ) : (
         <>
           <div
-            className="relative flex items-center px-3"
+            className="relative flex items-center"
             onClick={() => setShowMenu(!showMenu)}
           >
             <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
