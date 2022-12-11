@@ -49,6 +49,7 @@ const DeckTags = ({ deck, tagsSuperior, bordered, allTagsOptions }) => {
 
   return (
     <CreatableSelect
+      className="w-full"
       classNamePrefix={classNamePrefix}
       isMulti
       isDisabled={!isEditable}

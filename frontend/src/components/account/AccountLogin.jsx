@@ -123,7 +123,7 @@ const AccountLogin = () => {
         </Button>
       ) : (
         <Button variant="primary">
-          <Spinner animation="border" size="sm" />
+          <Spinner />
         </Button>
       )}
     </>

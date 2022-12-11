@@ -227,12 +227,12 @@ const Decks = () => {
   }, [deck]);
 
   return (
-    <div className="deck-container px-md-2 px-xl-4 py-md-3 mx-auto px-0">
+    <div className="deck-container mx-auto">
       <div className="mx-0 flex flex-row">
         <div className="xl:basis-1/12"></div>
-        <div className="px-md-2 px-xl-3 basis-full lg:basis-10/12 xl:basis-9/12">
-          <div className="px-md-0 pt-md-0 flex flex-row px-1 py-1 pb-0">
-            <div className="px-md-2 px-0 md:basis-5/12">
+        <div className="basis-full lg:basis-10/12 xl:basis-9/12">
+          <div className="flex flex-row">
+            <div className="md:basis-5/12">
               <DeckSelect
                 deckid={deckid}
                 deck={deck}
@@ -240,41 +240,43 @@ const Decks = () => {
                 handleSelect={handleSelect}
               />
             </div>
-            <div className="md:basis-7/12 px-0 px-md-2">
+            <div className="md:basis-7/12">
               {deck && (showInfo || !isMobile) && (
-                <DeckDetails
-                  deck={deck}
-                  folded={foldedDescription}
-                  setFolded={setFoldedDescription}
-                  allTagsOptions={allTagsOptions}
-                />
+                <>
+                  <DeckDetails
+                    deck={deck}
+                    folded={foldedDescription}
+                    setFolded={setFoldedDescription}
+                    allTagsOptions={allTagsOptions}
+                  />
+                </>
               )}
             </div>
           </div>
           {error && (
-            <div className="px-lg-2 flex flex-row px-0 py-4">
+            <div className="flex flex-row">
               <div className="error-message flex items-center justify-center p-2 font-bold">
                 {error}
               </div>
             </div>
           )}
           {deck && (
-            <div className="pt-md-2 flex flex-row">
+            <div className="flex flex-row">
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
                 Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
-                  <div className="px-md-2 pl-xl-2 pr-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
+                  <div className="md:basis-7/12">
                     <DeckCrypt deck={deck} />
                   </div>
-                  <div className="px-md-2 pl-xl-3 pr-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
+                  <div className="md:basis-5/12">
                     <DeckLibrary deck={deck} />
                   </div>
                 </>
               ) : (
-                <div className="px-lg-2 px-0 py-4">
+                <div className="">
                   <div className="error-message flex items-center justify-center p-2">
                     <b>CONTAIN PLAYTEST CARDS</b>
                   </div>
@@ -284,7 +286,7 @@ const Decks = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="hide-on-lt992px pl-md-1 pr-md-0 px-xl-3 lg:basis-2/12">
+          <div className="hide-on-lt992px lg:basis-2/12">
             <div className="sticky-buttons">
               <DeckButtons
                 deck={deck}
@@ -301,41 +303,37 @@ const Decks = () => {
         )}
       </div>
       {!username && !deckid && !hash && (
-        <div className="mx-0 flex h-[70vh] flex-row items-center justify-center pt-4">
-          <div className="basis-full px-3 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-            <div className="flex justify-center">
-              <div className="text-blue font-bold">
-                Login required to create decks
-              </div>
+        <div className="flex flex-col space-y-8 h-[70vh] items-center justify-center">
+          <div className="justify-center text-blue font-bold">
+            <div className="flex justify-center text-lg">
+              Login required to create decks
             </div>
             <div className="flex justify-center">
-              <div className="text-blue text-lg font-bold">
-                (Browse preconstructed decks without login)
-              </div>
+              (Browse preconstructed decks without login)
             </div>
-            <div className="py-4">
-              <AccountLogin />
-            </div>
-            <div className="py-4">
-              <AccountRegister />
-            </div>
+          </div>
+          <div>
+            <AccountLogin />
+          </div>
+          <div>
+            <AccountRegister />
           </div>
         </div>
       )}
 
       {username && decks && Object.keys(decks).length === 0 && !deck && (
-        <div className="vh-70 flex flex-row items-center justify-center p-3">
-          <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-            <div className="text-blue py-2 text-center font-bold">
+        <div className="flex flex-col space-y-8 h-[70vh] items-center justify-center">
+          <div className="justify-center text-blue font-bold">
+            <div className="flex justify-center text-lg">
               You do not have any decks in your collection yet
             </div>
-            <div className="text-blue py-2 text-center font-bold">
+            <div className="flex justify-center text-lg">
               Start by creating new one, import from Lackey / Amaranth / Text or
               browse official preconstructed decks
             </div>
-            <div className="flex justify-center pt-3">
-              <DeckImport isOnlyNew={true} />
-            </div>
+          </div>
+          <div className="flex justify-center">
+            <DeckImport isOnlyNew={true} />
           </div>
         </div>
       )}

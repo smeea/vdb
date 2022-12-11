@@ -41,36 +41,52 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   };
 
   return (
-    <form className="my-0" onSubmit={handleSubmitButton}>
-      <div className="input-group">
-        <div title="Description">
-          <ChatLeftQuoteFill />
-        </div>
+    <form className="flex" onSubmit={handleSubmitButton}>
+      <div
+        className="flex items-center rounded-l bg-red-900 px-2 py-1"
+        title="Description"
+      >
+        <ChatLeftQuoteFill width="18" height="18" viewBox="0 0 16 16" />
+      </div>
+      {folded ? (
         <input
-          as={folded ? 'input' : 'textarea'}
-          rows={12}
+          className={`${
+            folded ? '' : 'w-full'
+          } bg-blue-900 border-2 border-red-400 px-1.5 py-1`}
           type="text"
-          className="form-control"
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!isEditable}
         />
-        {!isMobile && (
-          <Button
-            title="Collapse/Uncollapse Description"
-            variant="primary"
-            onClick={() => setFolded(!folded)}
-          >
-            {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
-          </Button>
-        )}
-        {isMobile && isAuthor && (
-          <Button variant={buttonState ? 'success' : 'primary'} type="submit">
-            <Check2 />
-          </Button>
-        )}
-      </div>
+      ) : (
+        <textarea
+          className={`${
+            folded ? '' : 'w-full'
+          } bg-blue-900 border-2 border-red-400 px-1.5 py-1`}
+          rows={12}
+          type="text"
+          value={state}
+          onChange={handleChange}
+          onBlur={handleOnBlur}
+          readOnly={!isEditable}
+        />
+      )}
+      {!isMobile && (
+        <Button
+          className="rounded-l-none"
+          title="Collapse/Uncollapse Description"
+          variant="primary"
+          onClick={() => setFolded(!folded)}
+        >
+          {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
+        </Button>
+      )}
+      {isMobile && isAuthor && (
+        <Button variant={buttonState ? 'success' : 'primary'} type="submit">
+          <Check2 />
+        </Button>
+      )}
     </form>
   );
 };

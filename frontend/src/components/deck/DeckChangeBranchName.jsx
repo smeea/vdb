@@ -39,21 +39,24 @@ const DeckChangeBranchName = ({ deck }) => {
   };
 
   return (
-    <form className="my-0" onSubmit={handleSubmitButton}>
-      <div className="input-group">
-        {isMobile && <PaletteFill />}
-        <Input
-          value={state}
-          onChange={handleChange}
-          onBlur={handleOnBlur}
-          readOnly={!isEditable}
-        />
-        {isMobile && isAuthor && (
-          <Button variant={buttonState ? 'success' : 'primary'} type="submit">
-            <Check2 />
-          </Button>
-        )}
-      </div>
+    <form className="flex" onSubmit={handleSubmitButton}>
+      {isMobile && <PaletteFill />}
+      <Input
+        value={state}
+        onChange={handleChange}
+        onBlur={handleOnBlur}
+        readOnly={!isEditable}
+        className={`w-full ${isMobile ? 'rounded-r-none' : ''}`}
+      />
+      {isMobile && isAuthor && (
+        <Button
+          className="rounded-l-none"
+          variant={buttonState ? 'success' : 'primary'}
+          type="submit"
+        >
+          <Check2 />
+        </Button>
+      )}
     </form>
   );
 };

@@ -84,12 +84,8 @@ const DeckSelect = ({ deck, deckid, decks, handleSelect }) => {
 
   return (
     <>
-      <div
-        className={inventoryMode || !isMobile ? 'flex' : 'flex justify-between'}
-      >
-        <div
-          className={deck?.isBranches && selectFrom == 'my' ? 'w-75' : 'w-100'}
-        >
+      <div className="flex space-x-1">
+        <div className="w-full">
           {selectFrom == 'my' && decks ? (
             <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />
           ) : selectFrom == 'recent' ? (
@@ -105,33 +101,31 @@ const DeckSelect = ({ deck, deckid, decks, handleSelect }) => {
           )}
         </div>
         {selectFrom == 'my' && decks && deck?.isBranches && (
-          <div className="pl-1 w-25">
+          <div className="min-w-[90px]">
             <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
           </div>
         )}
-        <div className="flex">
-          {inventoryMode && deck?.isAuthor && (
-            <div className="pl-1 flex">
-              <Button
-                title={`Inventory Type: ${
-                  !deck?.inventoryType
-                    ? 'VIRTUAL\nDo not use Inventory'
-                    : deck?.inventoryType === 's'
-                    ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
-                    : 'FIXED\nUse unique copies of cards from Inventory'
-                }`}
-                variant="primary"
-                onClick={() => toggleInventoryState(deck?.deckid)}
-              >
-                <div className="flex items-center">
-                  {!deck?.inventoryType && <At />}
-                  {deck?.inventoryType === 's' && <Shuffle />}
-                  {deck?.inventoryType === 'h' && <PinAngleFill />}
-                </div>
-              </Button>
-            </div>
-          )}
-        </div>
+        {inventoryMode && deck?.isAuthor && (
+          <div className="flex">
+            <Button
+              title={`Inventory Type: ${
+                !deck?.inventoryType
+                  ? 'VIRTUAL\nDo not use Inventory'
+                  : deck?.inventoryType === 's'
+                  ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
+                  : 'FIXED\nUse unique copies of cards from Inventory'
+              }`}
+              variant="primary"
+              onClick={() => toggleInventoryState(deck?.deckid)}
+            >
+              <div className="flex items-center">
+                {!deck?.inventoryType && <At />}
+                {deck?.inventoryType === 's' && <Shuffle />}
+                {deck?.inventoryType === 'h' && <PinAngleFill />}
+              </div>
+            </Button>
+          </div>
+        )}
       </div>
       <div className="flex items-center justify-between pt-2">
         <div className="flex space-x-8">

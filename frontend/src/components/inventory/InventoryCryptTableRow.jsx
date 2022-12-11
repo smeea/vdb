@@ -65,7 +65,7 @@ const InventoryCryptTableRow = ({
 
   return (
     <div
-      className={`no-border inventory-crypt-table flex ${
+      className={`border-none inventory-crypt-table flex ${
         isSwiped ? `swiped-${isSwiped}` : ''
       }`}
       {...swipeHandlers}

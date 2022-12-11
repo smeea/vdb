@@ -69,7 +69,7 @@ const AccountChangeEmail = () => {
 
   const EmailForm = (
     <Input
-      /* className={isMobile ? 'mb-2' : ''} */
+      className={`w-full ${isMobile ? 'mb-2' : 'rounded-none'}`}
       placeholder="New email"
       type="email"
       name="email"
@@ -81,6 +81,7 @@ const AccountChangeEmail = () => {
   const PasswordFormButton = (
     <>
       <Input
+        className={`w-full ${isMobile ? '' : 'rounded-none'}`}
         placeholder="Password"
         type={hidePassword ? 'password' : 'text'}
         name="password"
@@ -90,27 +91,20 @@ const AccountChangeEmail = () => {
         /* ref={refPassword} */
       />
       <Button
+        className="rounded-none"
         tabIndex="-1"
         variant="primary"
         onClick={() => setHidePassword(!hidePassword)}
       >
         {hidePassword ? <EyeFill /> : <EyeSlashFill />}
       </Button>
-      {!buttonState ? (
-        !spinnerState ? (
-          <Button variant="primary" type="submit">
-            <Check2 />
-          </Button>
-        ) : (
-          <Button variant="primary">
-            <Spinner animation="border" size="sm" />
-          </Button>
-        )
-      ) : (
-        <Button variant="success" type="submit">
-          <Check2 />
-        </Button>
-      )}
+      <Button
+        className="rounded-l-none"
+        variant={buttonState ? 'success' : 'primary'}
+        type="submit"
+      >
+        {!spinnerState ? <Check2 /> : <Spinner />}
+      </Button>
     </>
   );
 
@@ -118,31 +112,31 @@ const AccountChangeEmail = () => {
     <>
       <div className="text-blue flex items-center p-1 text-lg font-bold">
         <EnvelopeFill />
-        <span className="ms-2">Change email (optional)</span>
+        <span className="ml-2">Change email (optional)</span>
         {!isMobile ? (
           <Tooltip text={tooltipText}>
-            <span className="question-tooltip ms-1">[?]</span>
+            <span className="question-tooltip ml-1">[?]</span>
           </Tooltip>
         ) : (
           <span
             onClick={() => setShowModal(true)}
-            className="question-tooltip ms-1"
+            className="question-tooltip ml-1"
           >
             [?]
           </span>
         )}
       </div>
-      <form className="my-1" onSubmit={handleSubmitButton}>
+      <form className="flex" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {EmailForm}
             <div className="input-group">{PasswordFormButton}</div>
           </>
         ) : (
-          <div className="input-group">
+          <>
             {EmailForm}
             {PasswordFormButton}
-          </div>
+          </>
         )}
         {passwordError && (
           <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>

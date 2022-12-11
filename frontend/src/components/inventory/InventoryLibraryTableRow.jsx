@@ -72,7 +72,7 @@ const InventoryLibraryTableRow = ({
 
   return (
     <div
-      className={`no-border inventory-library-table flex ${
+      className={`border-none inventory-library-table flex ${
         isSwiped ? `swiped-${isSwiped}` : ''
       }`}
       {...swipeHandlers}

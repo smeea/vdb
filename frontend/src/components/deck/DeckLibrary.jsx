@@ -106,9 +106,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
 
   return (
     <>
-      <div
-        className={!inMissing && !isMobile ? 'sticky-deck-library pt-4' : null}
-      >
+      <div className={!inMissing && !isMobile ? 'sticky-deck-library' : null}>
         <DeckLibraryHeader
           isMobile={isMobile}
           libraryTotal={libraryTotal}

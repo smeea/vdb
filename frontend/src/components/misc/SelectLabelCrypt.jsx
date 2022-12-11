@@ -19,7 +19,9 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
           {inInventory && (
             <div
               className={`me-2 inline w-7 text-center text-lg ${
-                inventoryCrypt[cardid] ? 'border-bl rounded' : ''
+                inventoryCrypt[cardid]
+                  ? 'border-gray-500 border-2 rounded-md'
+                  : ''
               }`}
             >
               {inventoryCrypt[cardid] && inventoryCrypt[cardid].q}

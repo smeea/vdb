@@ -55,7 +55,7 @@ const SearchFormTextAndButtons = ({
 
   return (
     <>
-      <div className="pl-0 pl-md-1 mx-0 flex flex-row items-center">
+      <div className="flex items-stretch justify-between">
         {isMobile ? (
           <Input
             placeholder="Card Name / Text / RegEx"
@@ -64,19 +64,21 @@ const SearchFormTextAndButtons = ({
             onChange={onTextChange}
           />
         ) : (
-          <div className="input-group px-0">
+          <>
             <Input
               /* TODO ignore enter */
               placeholder="Card Name / Text / RegEx"
               name={0}
               value={text}
               onChange={onTextChange}
+              className="rounded-r-none w-full"
             />
             {preresults > showLimit && (
               <ButtonIconed
+                className="flex flex-nowrap rounded-l-none rounded-r-none"
                 variant="primary"
                 onClick={handleShowResults}
-                text={`FOUND ${preresults}`}
+                text={`SHOW ${preresults}`}
                 icon=<Check2 />
               />
             )}
@@ -84,12 +86,13 @@ const SearchFormTextAndButtons = ({
               title="Clear Forms & Results"
               variant="primary"
               onClick={handleClearButton}
+              className="rounded-l-none"
             >
               <div className="flex items-center">
                 <X />
               </div>
             </Button>
-          </div>
+          </>
         )}
       </div>
       <div className="mx-0 flex flex-row px-1 pt-1">

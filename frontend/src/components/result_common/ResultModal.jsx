@@ -65,7 +65,7 @@ const ResultModal = ({
     <Modal
       size="lg"
       handleClose={handleClose}
-      dialogClassName={nested ? 'nested-modal' : 'no-border'}
+      dialogClassName={nested ? 'nested-modal' : 'border-none'}
       centered
     >
       <div>

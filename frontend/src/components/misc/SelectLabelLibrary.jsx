@@ -20,7 +20,9 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
           {inInventory && (
             <div
               className={`me-2 inline w-7 text-center text-lg ${
-                inventoryLibrary[cardid] ? 'border-bl rounded' : ''
+                inventoryLibrary[cardid]
+                  ? 'border-gray-500 border-2 rounded-md'
+                  : ''
               }`}
             >
               {inventoryLibrary[cardid] && inventoryLibrary[cardid].q}

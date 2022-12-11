@@ -7,6 +7,7 @@ const Input = ({
   onChange,
   onBlur,
   id,
+  className,
   required = false,
   type = 'text',
   autoComplete = 'off',
@@ -15,8 +16,9 @@ const Input = ({
 }) => {
   return (
     <input
-      /* className="text-form" */
-      className="bg-blue-900 rounded border-2 border-red-400 px-1.5 py-1"
+      className={`bg-blue-900 rounded border-2 border-red-400 px-1.5 py-1 ${
+        className ?? ''
+      }`}
       placeholder={placeholder}
       type={type}
       name={name}

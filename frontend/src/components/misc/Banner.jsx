@@ -5,7 +5,7 @@ const Banner = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="logo-box flex items-center justify-between p-2">
+    <div className="logo-box flex items-center w-full justify-between p-2">
       <div onClick={() => navigate('/')} className="flex items-center">
         <img
           className="logo-image"

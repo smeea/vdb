@@ -66,44 +66,35 @@ const AccountChangeName = () => {
     <>
       <div className="text-blue flex items-center p-1 text-lg font-bold">
         <PenFill />
-        <span className="ms-2">Change public name</span>
+        <span className="ml-2">Change public name</span>
         {!isMobile ? (
           <Tooltip text={tooltipText}>
-            <span className="question-tooltip ms-1">[?]</span>
+            <span className="question-tooltip ml-1">[?]</span>
           </Tooltip>
         ) : (
           <span
             onClick={() => setShowModal(true)}
-            className="question-tooltip ms-1"
+            className="question-tooltip ml-1"
           >
             [?]
           </span>
         )}
       </div>
-      <form className="my-1" onSubmit={handleSubmitButton}>
-        <div className="input-group">
-          <Input
-            placeholder="Public name"
-            value={state}
-            onChange={handleChange}
-            /* ref={refName} */
-          />
-          {!buttonState ? (
-            !spinnerState ? (
-              <Button variant="primary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="primary">
-                <Spinner animation="border" size="sm" />
-              </Button>
-            )
-          ) : (
-            <Button variant="success" type="submit">
-              <Check2 />
-            </Button>
-          )}
-        </div>
+      <form className="flex" onSubmit={handleSubmitButton}>
+        <Input
+          placeholder="Public name"
+          value={state}
+          onChange={handleChange}
+          className="w-full rounded-r-none"
+          /* ref={refName} */
+        />
+        <Button
+          className="rounded-l-none"
+          variant={buttonState ? 'success' : 'primary'}
+          type="submit"
+        >
+          {!spinnerState ? <Check2 /> : <Spinner />}
+        </Button>
         {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
       </form>
       {showModal && (

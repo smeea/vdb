@@ -16,6 +16,7 @@ export { default as DeckCryptTable } from './DeckCryptTable.jsx';
 export { default as DeckCryptTableRow } from './DeckCryptTableRow.jsx';
 export { default as DeckCryptTotalInfo } from './DeckCryptTotalInfo.jsx';
 export { default as DeckDeleteButton } from './DeckDeleteButton.jsx';
+export { default as DeckDetails } from './DeckDetails.jsx';
 export { default as DeckDiffButton } from './DeckDiffButton.jsx';
 export { default as DeckDraw } from './DeckDraw.jsx';
 export { default as DeckDrawButton } from './DeckDrawButton.jsx';
@@ -57,6 +58,7 @@ export { default as DeckRecommendationLibraryTable } from './DeckRecommendationL
 export { default as DeckRecommendationModal } from './DeckRecommendationModal.jsx';
 export { default as DeckReviewButton } from './DeckReviewButton.jsx';
 export { default as DeckSearchSimilarButton } from './DeckSearchSimilarButton.jsx';
+export { default as DeckSelect } from './DeckSelect.jsx';
 export { default as DeckSelectAdvModal } from './DeckSelectAdvModal.jsx';
 export { default as DeckSelectAdvModalTagsFilter } from './DeckSelectAdvModalTagsFilter.jsx';
 export { default as DeckSelectAdvModalTotal } from './DeckSelectAdvModalTotal.jsx';

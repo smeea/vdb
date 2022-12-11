@@ -92,7 +92,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                 </Button>
               ) : (
                 <Button variant="primary">
-                  <Spinner animation="border" size="sm" />
+                  <Spinner />
                 </Button>
               )}
               <Button variant="primary" onClick={() => setShow(false)}>

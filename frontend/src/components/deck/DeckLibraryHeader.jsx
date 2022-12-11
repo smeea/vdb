@@ -47,7 +47,6 @@ const DeckLibraryHeader = ({
       )}
       <div className="flex flex-row space-x-1">
         <Button
-          className="h-full"
           title="Additional Info"
           variant="primary"
           onClick={toggleShowInfo}

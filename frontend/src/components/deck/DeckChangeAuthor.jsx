@@ -39,21 +39,25 @@ const DeckChangeAuthor = ({ deck }) => {
   };
 
   return (
-    <form className="my-0" onSubmit={handleSubmitButton}>
-      <div className="input-group">
-        <PersonFill />
-        <Input
-          value={state}
-          onChange={handleChange}
-          onBlur={handleOnBlur}
-          readOnly={!isEditable}
-        />
-        {isMobile && isAuthor && (
-          <Button variant={buttonState ? 'success' : 'primary'} type="submit">
-            <Check2 />
-          </Button>
-        )}
+    <form className="flex" onSubmit={handleSubmitButton}>
+      <div
+        className="flex items-center rounded-l bg-red-900 px-2 py-1"
+        title="Author"
+      >
+        <PersonFill width="22" height="22" viewBox="0 0 16 16" />
       </div>
+      <Input
+        value={state}
+        onChange={handleChange}
+        onBlur={handleOnBlur}
+        readOnly={!isEditable}
+        className="w-full rounded-l-none"
+      />
+      {isMobile && isAuthor && (
+        <Button variant={buttonState ? 'success' : 'primary'} type="submit">
+          <Check2 />
+        </Button>
+      )}
     </form>
   );
 };

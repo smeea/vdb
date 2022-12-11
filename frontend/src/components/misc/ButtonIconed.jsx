@@ -1,19 +1,21 @@
 import React from 'react';
 
 const ButtonIconed = ({
-  onClick,
-  variant,
-  title,
-  text,
-  icon,
-  disabled,
   className,
+  disabled,
+  icon,
+  onClick,
+  text,
+  title,
+  variant,
 }) => {
   const btnVariant = `btn-${variant}`;
 
   return (
     <button
-      className={`btn ${btnVariant} ${className ?? ''}`}
+      className={`${btnVariant} items-center justify-center rounded-md px-3 py-1.5 ${
+        className ?? ''
+      }`}
       onClick={onClick}
       title={title}
       disabled={disabled}
@@ -22,7 +24,7 @@ const ButtonIconed = ({
         <>{icon}</>
       ) : (
         <div className="flex items-center justify-center">
-          <div className="pr-2 flex">{icon}</div>
+          <div className="pr-2">{icon}</div>
           {text}
         </div>
       )}

@@ -43,7 +43,7 @@ const ModalConfirmation = ({
         handleClose={cancel}
         centered={isMobile}
         size={size ?? null}
-        dialogClassName={nested ? 'nested-modal' : 'no-border'}
+        dialogClassName={nested ? 'nested-modal' : 'border-none'}
         title={headerText}
       >
         {mainText && <div className="text-blue font-bold">{mainText}</div>}

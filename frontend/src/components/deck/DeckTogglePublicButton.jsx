@@ -69,7 +69,7 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
             !spinnerState ? (
               <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
             ) : (
-              <Spinner animation="border" size="sm" />
+              <Spinner />
             )
           }
         />

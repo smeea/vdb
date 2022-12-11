@@ -42,42 +42,45 @@ const DeckChangeName = ({ deck }) => {
   };
 
   return (
-    <form className="my-0" onSubmit={handleSubmitButton}>
-      <div className="input-group">
-        <div title="Deck Name">
-          <TagFill />
-        </div>
-        <Input
-          value={state}
-          onChange={handleChange}
-          onBlur={handleOnBlur}
-          readOnly={!isEditable}
-        />
-        {(isPublic ||
-          (deck.deckid !== 'deck' &&
-            deck.deckid.length !== 32 &&
-            !deck.deckid.includes(':'))) && (
-          <div title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}>
-            {isPublic ? <PeopleFill /> : <TrophyFill />}
-          </div>
-        )}
-        {isNonEditable && (
-          <div title="Deck is non-editable and will never change">
-            <Snow width="16" height="23" viewBox="0 0 16 16" />
-          </div>
-        )}
-        {isAuthor && !isPublic && <DeckFreezeButton deck={deck} />}
-
-        {isMobile && isEditable && (
-          <Button
-            variant={buttonState ? 'success' : 'primary'}
-            type="submit"
-            className="ms-1"
-          >
-            <Check2 />
-          </Button>
-        )}
+    <form className="flex" onSubmit={handleSubmitButton}>
+      <div
+        className="flex items-center rounded-l bg-red-900 px-2 py-1"
+        title="Deck Name"
+      >
+        <TagFill width="20" height="20" viewBox="0 0 16 16" />
       </div>
+      <Input
+        value={state}
+        onChange={handleChange}
+        onBlur={handleOnBlur}
+        readOnly={!isEditable}
+        className="w-full rounded-none"
+      />
+      {(isPublic ||
+        (deck.deckid !== 'deck' &&
+          deck.deckid.length !== 32 &&
+          !deck.deckid.includes(':'))) && (
+        <div title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}>
+          {isPublic ? <PeopleFill /> : <TrophyFill />}
+        </div>
+      )}
+      {isNonEditable && (
+        <div title="Deck is non-editable and will never change">
+          <Snow width="16" height="23" viewBox="0 0 16 16" />
+        </div>
+      )}
+      {isAuthor && !isPublic && (
+        <DeckFreezeButton className="rounded-l-none" deck={deck} />
+      )}
+      {isMobile && isEditable && (
+        <Button
+          variant={buttonState ? 'success' : 'primary'}
+          type="submit"
+          className="ms-1"
+        >
+          <Check2 />
+        </Button>
+      )}
     </form>
   );
 };

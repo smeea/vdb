@@ -168,7 +168,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
             title="Create PDF with Cards"
             icon={
               spinnerState ? (
-                <Spinner animation="border" size="sm" />
+                <Spinner />
               ) : (
                 <Printer width="18" height="18" viewBox="0 0 18 16" />
               )

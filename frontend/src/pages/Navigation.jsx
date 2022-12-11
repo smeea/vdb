@@ -112,12 +112,7 @@ const Navigation = () => {
                 }`}
               >
                 {username ? (
-                  <PersonFill
-                    className="inline"
-                    width="18"
-                    height="18"
-                    viewBox="0 2 16 16"
-                  />
+                  <PersonFill width="20" height="20" viewBox="0 1 16 16" />
                 ) : (
                   'Login'
                 )}
@@ -172,12 +167,7 @@ const Navigation = () => {
             aria-label="Quick card search"
             className="nav-link flex h-full items-center px-3"
           >
-            <LightningFill
-              className="inline"
-              width="18"
-              height="18"
-              viewBox="0 0 16 16"
-            />{' '}
+            <LightningFill width="18" height="18" viewBox="0 0 16 16" />
           </NavLink>
         </div>
       </div>

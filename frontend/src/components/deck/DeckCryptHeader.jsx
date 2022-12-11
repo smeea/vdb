@@ -46,7 +46,6 @@ const DeckCryptHeader = ({
             />
           )}
           <Button
-            className="h-full"
             title="Additional Info"
             variant="primary"
             onClick={toggleShowInfo}

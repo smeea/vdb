@@ -58,8 +58,6 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
       classNamePrefix="react-select"
       options={options}
       isSearchable={false}
-      name="decks"
-      placeholder=""
       value={options.find((obj) => obj.value === deck.deckid)}
       onChange={handleSelect}
     />

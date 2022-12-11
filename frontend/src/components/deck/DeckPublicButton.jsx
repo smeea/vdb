@@ -64,7 +64,7 @@ const DeckPublicButton = ({ deck, noText }) => {
             !spinnerState ? (
               <PeopleFill />
             ) : (
-              <Spinner animation="border" size="sm" />
+              <Spinner />
             )
           }
           text="Public"

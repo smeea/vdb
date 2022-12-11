@@ -46,18 +46,14 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
 
   return (
     <>
-      <div className="flex flex-row space-x-1">
+      <div className="flex space-x-2">
         <div
-        /* className={`${ */
-        /*   deck.isBranches ? 'md:basis-6/12' : 'md:basis-8/12' */
-        /* }`} */
+          className={`${deck.isBranches ? 'md:basis-6/12' : 'md:basis-8/12'}`}
         >
           <DeckChangeName deck={deck} />
         </div>
         {deck.isBranches && (
-          <div
-          /* className="md:basis-2/12" */
-          >
+          <div className="md:basis-2/12">
             <DeckChangeBranchName deck={deck} />
           </div>
         )}
@@ -65,27 +61,36 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
           <DeckChangeAuthor deck={deck} />
         </div>
       </div>
-      <div className="flex flex-row space-x-1">
-        <div className="flex w-1/2">
-          <DeckChangeDescription
-            deck={deck}
-            folded={isMobile ? false : folded}
-            setFolded={setFolded}
-          />
-        </div>
-        {folded &&
-          !isMobile &&
-          (deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
-            <div className="flex w-1/2">
+      {folded && !isMobile && (
+        <div className="flex space-x-2 pt-2">
+          <div className="md:basis-6/12">
+            <DeckChangeDescription
+              deck={deck}
+              folded={isMobile ? false : folded}
+              setFolded={setFolded}
+            />
+          </div>
+          {(deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
+            <div className="md:basis-6/12">
               <DeckTags deck={deck} allTagsOptions={allTagsOptions} bordered />
             </div>
           )}
-      </div>
+        </div>
+      )}
       {(!folded || isMobile) &&
         (deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
-          <div className={isMobile ? 'py-1' : 'pt-2'}>
-            <DeckTags deck={deck} allTagsOptions={allTagsOptions} bordered />
-          </div>
+          <>
+            <div className={isMobile ? 'py-1' : 'pt-2'}>
+              <DeckChangeDescription
+                deck={deck}
+                folded={isMobile ? false : folded}
+                setFolded={setFolded}
+              />
+            </div>
+            <div className={isMobile ? 'py-1' : 'pt-2'}>
+              <DeckTags deck={deck} allTagsOptions={allTagsOptions} bordered />
+            </div>
+          </>
         )}
     </>
   );
