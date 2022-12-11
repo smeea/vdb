@@ -15,27 +15,6 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtest, isMobile, isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'precon';
-  const preOptions = [];
-
-  Object.keys(setsAndPrecons)
-    .filter((i) => playtest || i !== 'PLAYTEST')
-    .map((i) => {
-      if (setsAndPrecons[i].precons) {
-        const year = setsAndPrecons[i].date.slice(2, 4);
-        Object.keys(setsAndPrecons[i].precons).map((j) => {
-          const precon = j;
-          const name = setsAndPrecons[i].precons[j].name;
-          const clans = setsAndPrecons[i].precons[j].clan.split('/');
-          preOptions.push({
-            set: i,
-            precon: precon,
-            year: year,
-            name: name,
-            clans: clans,
-          });
-        });
-      }
-    });
 
   const options = [
     {
@@ -60,74 +39,66 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     },
   ];
 
-  preOptions.map((i) => {
-    if (i.set === 'any') {
-      options.push({
-        value: i.set,
-        name: name,
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px]" />
-            {i.name}
-          </div>
-        ),
-      });
-    } else {
-      const clanImages = i.clans.map((clan) => {
-        return (
-          <React.Fragment key={clan}>
-            {clan === 'Bundle' ? (
-              <div className="clan-image-results inline items-center justify-center">
-                <GiftFill />
-              </div>
-            ) : clan === 'Mix' ? null : (
-              <ResultLibraryClan value={clan} />
-            )}
-          </React.Fragment>
-        );
-      });
+  Object.keys(setsAndPrecons)
+    .filter((i) => playtest || i !== 'PLAYTEST')
+    .map((set) => {
+      if (setsAndPrecons[set].precons) {
+        const year = setsAndPrecons[set].date.slice(2, 4);
+        Object.keys(setsAndPrecons[set].precons).map((precon) => {
+          const name = setsAndPrecons[set].precons[precon].name;
+          const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
-      options.push({
-        value: `${i.set}:${i.precon}`,
-        name: 'precon',
-        label: (
-          <div className="flex items-center justify-between">
-            <div className="pr-2 flex items-center">
-              <div
-                className={
-                  clanImages.length == 1
-                    ? 'flex w-[40px] items-center justify-center'
-                    : 'pr-2 inline'
-                }
-              >
-                {clanImages}
-              </div>
-              {i.name}
-            </div>
-            <div className="text-xs">{`${i.set} '${i.year}`}</div>
-          </div>
-        ),
-      });
-    }
-  });
+          if (set === 'any') {
+            options.push({
+              value: set,
+              name: name,
+              label: (
+                <div className="flex items-center">
+                  <div className="flex w-[40px]" />
+                  {name}
+                </div>
+              ),
+            });
+          } else {
+            const clanImages = clans.map((clan) => {
+              return (
+                <React.Fragment key={clan}>
+                  {clan === 'Bundle' ? (
+                    <div className="clan-image-results inline items-center justify-center">
+                      <GiftFill />
+                    </div>
+                  ) : clan === 'Mix' ? null : (
+                    <ResultLibraryClan value={clan} />
+                  )}
+                </React.Fragment>
+              );
+            });
 
-  const printFormOptions = [
-    {
-      value: 'only',
-      label: 'Only In',
-      title: 'Printed only in selected Set',
-    },
-    {
-      value: 'first',
-      label: 'First Print',
-      title: 'Printed first in selected Set',
-    },
-    {
-      value: 'reprint',
-      label: 'Reprint',
-      title: 'Reprinted in selected Set',
-    },
-  ];
+            options.push({
+              value: `${set}:${precon}`,
+              name: 'precon',
+              label: (
+                <div className="flex items-center justify-between">
+                  <div className="pr-2 flex items-center">
+                    <div
+                      className={
+                        clanImages.length == 1
+                          ? 'flex w-[40px] items-center justify-center'
+                          : 'pr-2 inline'
+                      }
+                    >
+                      {clanImages}
+                    </div>
+                    {name}
+                  </div>
+                  <div className="text-xs">{`${set} '${year}`}</div>
+                </div>
+              ),
+            });
+          }
+        });
+      }
+    });
 
   const filterOption = ({ label, value }, string) => {
     let name = undefined;
@@ -185,25 +156,37 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="pl-1 mx-0 flex flex-row items-center pb-1">
-        <div className="flex justify-end px-0">
-          <div className="flex flex-row space-x-3">
-            {printFormOptions.map((i) => {
-              return (
-                <Checkbox
-                  key={i.value}
-                  name="precon"
-                  value={i.value}
-                  label={i.label}
-                  title={i.title}
-                  disabled={value.value[0] === 'bcp' && i.value === 'reprint'}
-                  checked={value['print'] === i.value}
-                  onChange={onChangeOptions}
-                />
-              );
-            })}
-          </div>
-        </div>
+      <div className="flex flex-row items-center justify-end py-0.5 space-x-4">
+        {[
+          {
+            value: 'only',
+            label: 'Only In',
+            title: 'Printed only in selected Set',
+          },
+          {
+            value: 'first',
+            label: 'First Print',
+            title: 'Printed first in selected Set',
+          },
+          {
+            value: 'reprint',
+            label: 'Reprint',
+            title: 'Reprinted in selected Set',
+          },
+        ].map((i) => {
+          return (
+            <Checkbox
+              key={i.value}
+              name="precon"
+              value={i.value}
+              label={i.label}
+              title={i.title}
+              disabled={value.value[0] === 'bcp' && i.value === 'reprint'}
+              checked={value['print'] === i.value}
+              onChange={onChangeOptions}
+            />
+          );
+        })}
       </div>
     </>
   );

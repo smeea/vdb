@@ -13,15 +13,6 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtest, isMobile, isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'set';
-  const preOptions = Object.keys(setsAndPrecons)
-    .filter((i) => playtest || i !== 'PLAYTEST')
-    .map((i) => {
-      return {
-        set: i,
-        name: setsAndPrecons[i].name,
-        year: setsAndPrecons[i].date.slice(2, 4),
-      };
-    });
 
   const options = [
     {
@@ -46,59 +37,23 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
     },
   ];
 
-  preOptions.map((i) => {
-    options.push({
-      value: i.set,
-      name: name,
-      label: (
-        <div className="flex items-center justify-between">
-          <div className="pr-2">{i.name}</div>
-          {i.year && <div className="pl-2 text-xs">{`'${i.year}`}</div>}
-        </div>
-      ),
+  Object.keys(setsAndPrecons)
+    .filter((i) => playtest || i !== 'PLAYTEST')
+    .map((i) => {
+      const year = setsAndPrecons[i].date.slice(2, 4);
+      const name = setsAndPrecons[i].name;
+
+      options.push({
+        value: i,
+        name: name,
+        label: (
+          <div className="flex items-center justify-between">
+            <div className="pr-2">{name}</div>
+            {year && <div className="pl-2 text-xs">{`'${year}`}</div>}
+          </div>
+        ),
+      });
     });
-  });
-
-  const ageFormOptions = [
-    {
-      value: 'or-newer',
-      label: 'Or Newer',
-      title: 'Printed in selected set or any newer (can be in older sets too)',
-    },
-    {
-      value: 'or-older',
-      label: 'Or Older',
-      title: 'Printed in selected set or any older (can be in newer sets too)',
-    },
-    {
-      value: 'not-newer',
-      label: 'Not Newer',
-      title: 'Not printed in newer set',
-    },
-    {
-      value: 'not-older',
-      label: 'Not Older',
-      title: 'Not printed in older set',
-    },
-  ];
-
-  const printFormOptions = [
-    {
-      value: 'only',
-      label: 'Only In',
-      title: 'Printed only in selected Set',
-    },
-    {
-      value: 'first',
-      label: 'First Print',
-      title: 'Printed first in selected Set',
-    },
-    {
-      value: 'reprint',
-      label: 'Reprint',
-      title: 'Reprinted in selected Set',
-    },
-  ];
 
   const filterOption = ({ label, value }, string) => {
     let name = undefined;
@@ -156,55 +111,86 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="pl-1 mx-0 flex flex-row items-center pb-1">
-        <div className="flex justify-end px-0">
-          <div className="flex flex-row space-x-2">
-            {ageFormOptions.map((i) => {
-              return (
-                <Checkbox
-                  key={i.value}
-                  name="set"
-                  value={i.value}
-                  label={i.label}
-                  title={i.title}
-                  disabled={
-                    value.value.length > 1 ||
-                    value.value[0] === 'bcp' ||
-                    value.value[0] === 'Promo' ||
-                    value.value[0] === 'POD'
-                  }
-                  checked={value['age'] === i.value}
-                  onChange={onChangeOptions}
-                />
-              );
-            })}
-          </div>
-        </div>
+      <div className="flex flex-row items-center justify-end py-0.5 space-x-4">
+        {[
+          {
+            value: 'or-newer',
+            label: 'Or Newer',
+            title:
+              'Printed in selected set or any newer (can be in older sets too)',
+          },
+          {
+            value: 'or-older',
+            label: 'Or Older',
+            title:
+              'Printed in selected set or any older (can be in newer sets too)',
+          },
+          {
+            value: 'not-newer',
+            label: 'Not Newer',
+            title: 'Not printed in newer set',
+          },
+          {
+            value: 'not-older',
+            label: 'Not Older',
+            title: 'Not printed in older set',
+          },
+        ].map((i) => {
+          return (
+            <Checkbox
+              key={i.value}
+              name="set"
+              value={i.value}
+              label={i.label}
+              title={i.title}
+              disabled={
+                value.value.length > 1 ||
+                value.value[0] === 'bcp' ||
+                value.value[0] === 'Promo' ||
+                value.value[0] === 'POD'
+              }
+              checked={value['age'] === i.value}
+              onChange={onChangeOptions}
+            />
+          );
+        })}
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center pb-1">
-        <div className="flex justify-end px-0">
-          <div className="flex flex-row space-x-3">
-            {printFormOptions.map((i) => {
-              return (
-                <Checkbox
-                  key={i.value}
-                  name={name}
-                  value={i.value}
-                  label={i.label}
-                  title={i.title}
-                  disabled={
-                    (value.value[0] === 'bcp' ||
-                      value.value[0] === 'Promo' ||
-                      value.value[0] === 'POD') &&
-                    i.value === 'reprint'
-                  }
-                  checked={value['print'] === i.value}
-                  onChange={onChangeOptions}
-                />
-              );
-            })}
-          </div>
-        </div>
+      <div className="flex flex-row items-center justify-end py-0.5 space-x-4">
+        {[
+          {
+            value: 'only',
+            label: 'Only In',
+            title: 'Printed only in selected Set',
+          },
+          {
+            value: 'first',
+            label: 'First Print',
+            title: 'Printed first in selected Set',
+          },
+          {
+            value: 'reprint',
+            label: 'Reprint',
+            title: 'Reprinted in selected Set',
+          },
+        ].map((i) => {
+          return (
+            <Checkbox
+              key={i.value}
+              name={name}
+              value={i.value}
+              label={i.label}
+              title={i.title}
+              disabled={
+                (value.value[0] === 'bcp' ||
+                  value.value[0] === 'Promo' ||
+                  value.value[0] === 'POD') &&
+                i.value === 'reprint'
+              }
+              checked={value['print'] === i.value}
+              onChange={onChangeOptions}
+            />
+          );
+        })}
       </div>
     </>
   );
