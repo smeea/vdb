@@ -156,7 +156,7 @@ const DeckLibraryTableRow = ({
       ) : (
         <>
           {inventoryMode && decks ? (
-            <td className="quantity-no-buttons px-1">
+            <td className="quantity-no-buttons ">
               <ConditionalTooltip
                 placement="bottom"
                 overlay={<UsedPopover cardid={card.c.Id} />}
@@ -178,11 +178,11 @@ const DeckLibraryTableRow = ({
               </ConditionalTooltip>
             </td>
           ) : (
-            <td className="quantity-no-buttons px-1">{card.q || null}</td>
+            <td className="quantity-no-buttons ">{card.q || null}</td>
           )}
         </>
       )}
-      <td className="name pl-3 pr-2" onClick={() => handleClick(card.c)}>
+      <td className="name  " onClick={() => handleClick(card.c)}>
         <ConditionalTooltip
           placement={placement}
           overlay={<CardPopover card={card.c} />}
@@ -202,7 +202,7 @@ const DeckLibraryTableRow = ({
           />
         </td>
       )}
-      <td className="disciplines px-1" onClick={() => handleClick(card.c)}>
+      <td className="disciplines " onClick={() => handleClick(card.c)}>
         <ResultLibraryClan value={card.c.Clan} />
         {card.c.Discipline && card.c.Clan && '+'}
         <ResultLibraryDisciplines value={card.c.Discipline} />
@@ -214,7 +214,7 @@ const DeckLibraryTableRow = ({
         </td>
       )}
       {showInfo && (
-        <td className="text-blue w-9 px-1 text-right">
+        <td className="text-blue w-9  text-right">
           {isMobile ? (
             <div
               onClick={() =>

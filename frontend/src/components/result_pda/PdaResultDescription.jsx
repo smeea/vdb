@@ -40,7 +40,7 @@ const PdaResultDescription = ({ deck }) => {
                 <b>Deck:</b>
               )}
             </td>
-            <td className="pl-2">{deck['name']}</td>
+            <td>{deck['name']}</td>
           </tr>
           <tr>
             <td className="blue">
@@ -52,7 +52,7 @@ const PdaResultDescription = ({ deck }) => {
                 <b>Author:</b>
               )}
             </td>
-            <td className="pl-2">
+            <td>
               <div
                 className="link-like"
                 onClick={() => handleClick(deck['author'])}
@@ -71,7 +71,7 @@ const PdaResultDescription = ({ deck }) => {
                 <b>Created:</b>
               )}
             </td>
-            <td className="pl-2">{deck['creation_date']}</td>
+            <td>{deck['creation_date']}</td>
           </tr>
           {lastUpdated !== deck['creation_date'] && (
             <tr>
@@ -84,7 +84,7 @@ const PdaResultDescription = ({ deck }) => {
                   <b>Updated:</b>
                 )}
               </td>
-              <td className="pl-2">{lastUpdated}</td>
+              <td>{lastUpdated}</td>
             </tr>
           )}
         </tbody>
@@ -100,7 +100,7 @@ const PdaResultDescription = ({ deck }) => {
       {isDesktop ? (
         <>
           {Description}
-          <div className="flex space-x-1 px-1">
+          <div className="flex space-x-1">
             <div className="md:basis-1/2">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </div>
@@ -108,14 +108,14 @@ const PdaResultDescription = ({ deck }) => {
               {username && <DeckCloneButton deck={deck} noRedirect />}
             </div>
           </div>
-          <div className="p-1">
+          <div>
             <PdaFavoriteButton deck={deck} />
           </div>
         </>
       ) : (
-        <div className="mx-0 flex flex-row pb-1">
-          <div className="mx-0 basis-9/12 px-1">{Description}</div>
-          <div className="basis-1/4 px-1">
+        <div className="flex flex-row ">
+          <div className="basis-9/12">{Description}</div>
+          <div className="basis-1/4">
             <div className="flex flex-col space-y-1">
               <TwdOpenDeckButton deckid={deck['deckid']} />
               {username && <DeckCloneButton deck={deck} noRedirect />}

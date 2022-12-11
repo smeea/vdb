@@ -61,14 +61,14 @@ const AccountDeleteConfirmation = ({ setShow }) => {
         title="Delete Account"
       >
         <div>
-          <div className="pt-2">
+          <div>
             <div className="text-blue font-bold">THIS CANNOT BE UNDONE!</div>
           </div>
           This will also delete all your decks and they will not be available
           via URL anymore.
         </div>
         <div>
-          <form className="my-2" onSubmit={handleSubmitButton}>
+          <form onSubmit={handleSubmitButton}>
             <div className="input-group">
               <input
                 placeholder="Enter password"

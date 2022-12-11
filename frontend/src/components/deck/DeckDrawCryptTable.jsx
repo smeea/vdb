@@ -53,7 +53,7 @@ const DeckDrawCryptTable = ({
       <React.Fragment key={`${idx}-${card.Id}`}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           <td
-            className={isMobile ? 'capacity px-1' : 'capacity px-2'}
+            className={isMobile ? 'capacity ' : 'capacity '}
             onClick={() => handleClick(idx)}
           >
             <ResultCryptCapacity value={card.Capacity} />
@@ -66,7 +66,7 @@ const DeckDrawCryptTable = ({
               nonKeyDisciplines={nonKeyDisciplines}
             />
           </td>
-          <td className="name px-1" onClick={() => handleClick(idx)}>
+          <td className="name " onClick={() => handleClick(idx)}>
             <ConditionalTooltip
               overlay={<CardPopover card={card} />}
               disabled={isMobile}
@@ -76,7 +76,7 @@ const DeckDrawCryptTable = ({
           </td>
           {isWide ? (
             <>
-              <td className="title pr-2" onClick={() => handleClick(idx)}>
+              <td className="title " onClick={() => handleClick(idx)}>
                 <ResultCryptTitle value={card.Title} />
               </td>
               <td className="clan" onClick={() => handleClick(idx)}>
@@ -99,7 +99,7 @@ const DeckDrawCryptTable = ({
               </div>
             </td>
           )}
-          <td className="text-blue w-9 px-1 text-right">
+          <td className="text-blue w-9  text-right">
             {!ashHeap && (
               <>
                 {isMobile ? (

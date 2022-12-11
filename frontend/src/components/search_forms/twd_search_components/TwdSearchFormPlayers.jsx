@@ -16,7 +16,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
         name: 'from',
         label: (
           <>
-            <span className="me-1" />
+            <span />
             {i}
           </>
         ),
@@ -29,7 +29,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
         name: 'to',
         label: (
           <>
-            <span className="me-1" />
+            <span />
             {i}
           </>
         ),
@@ -39,9 +39,9 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="mx-0 flex flex-row items-center">
-        <div className="inline px-0 sm:basis-1/12" />
-        <div className="inline basis-5/12 px-0">
+      <div className=" flex flex-row items-center">
+        <div className="inline  sm:basis-1/12" />
+        <div className="inline basis-5/12 ">
           <Select
             classNamePrefix="react-select"
             options={fromOptions}
@@ -52,10 +52,10 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
             onChange={onChange}
           />
         </div>
-        <div className="flex basis-1/12 justify-center px-0">
-          <div className="px-0 text-xs">to</div>
+        <div className="flex basis-1/12 justify-center ">
+          <div className=" text-xs">to</div>
         </div>
-        <div className="inline basis-5/12 px-0">
+        <div className="inline basis-5/12 ">
           <Select
             classNamePrefix="react-select"
             options={toOptions}

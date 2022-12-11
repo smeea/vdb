@@ -18,7 +18,7 @@ const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
       className={`flex items-center ${state ? '' : 'text-neutral-500'}`}
       onClick={handleClick}
     >
-      <div className="pr-2 flex items-center">
+      <div className="flex items-center">
         <>
           {state ? (
             <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
@@ -87,7 +87,7 @@ const AccountPlaytestManage = ({ setShow }) => {
           newPlaytesters={newPlaytesters}
           setNewPlaytesters={setNewPlaytesters}
         />
-        <div className="px-2 pt-2">
+        <div>
           {[...newPlaytesters.reverse(), ...playtesters.sort()]
             .filter((u) => u != username)
             .map((u) => (

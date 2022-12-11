@@ -11,13 +11,13 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
     <>
       <Modal
         handleClose={handleClose}
-        dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
+        dialogClassName={isMobile ? '' : 'modal-wide'}
         title="Card Ideas"
       >
         <div>
-          <div className="pb-md-4 flex flex-row px-0">
-            <div className="pl-lg-4 pr-lg-3 basis-full px-0 md:basis-7/12">
-              <div className="info-message flex h-10 items-center justify-between px-2">
+          <div className="flex flex-row">
+            <div className="basis-full md:basis-7/12">
+              <div className="info-message flex h-10 items-center justify-between">
                 <b>CRYPT</b>
               </div>
               {crypt ? (
@@ -27,20 +27,20 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
                   inRecommendation
                 />
               ) : (
-                <div className="pb-md-0 flex justify-center py-4">
+                <div className="flex justify-center">
                   {' '}
                   <Spinner animation="border" />
                 </div>
               )}
             </div>
-            <div className="pl-lg-3 pr-lg-4 pt-md-0 basis-full px-0 pt-4 md:basis-5/12">
-              <div className="info-message flex h-10 items-center justify-between px-2">
+            <div className="basis-full md:basis-5/12">
+              <div className="info-message flex h-10 items-center justify-between">
                 <b>LIBRARY</b>
               </div>
               {library ? (
                 <DeckRecommendationLibrary cards={library} />
               ) : (
-                <div className="pb-md-0 flex justify-center py-4">
+                <div className="flex justify-center">
                   {' '}
                   <Spinner animation="border" />
                 </div>

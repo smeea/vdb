@@ -43,7 +43,7 @@ const InventoryMobile = ({
     <>
       {showCrypt ? (
         <>
-          <div className="sticky-selector py-1 px-1">
+          <div className="sticky-selector  ">
             <InventoryNewCryptCard
               cards={inventoryCrypt}
               setNewId={setNewCryptId}
@@ -64,7 +64,7 @@ const InventoryMobile = ({
             </div>
           )}
           {inventoryCrypt && (usedCrypt.soft || usedCrypt.hard) && (
-            <div className="pt-1">
+            <div>
               <InventoryCrypt
                 withCompact={newCryptId}
                 category={sharedInventoryCrypt ? 'ok' : category}
@@ -81,7 +81,7 @@ const InventoryMobile = ({
         </>
       ) : (
         <>
-          <div className="sticky-selector py-1 px-1">
+          <div className="sticky-selector  ">
             <InventoryNewLibraryCard
               cards={inventoryLibrary}
               setNewId={setNewLibraryId}
@@ -102,7 +102,7 @@ const InventoryMobile = ({
             </div>
           )}
           {inventoryLibrary && (usedLibrary.soft || usedLibrary.hard) && (
-            <div className="pt-1">
+            <div>
               <InventoryLibrary
                 withCompact={newLibraryId}
                 category={sharedInventoryLibrary ? 'ok' : category}

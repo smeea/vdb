@@ -46,12 +46,12 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
 
   return (
     <>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-1/4 items-center justify-between px-0">
+      <div className="flex flex-row items-center">
+        <div className="flex basis-1/4 items-center justify-between">
           <div className="text-blue font-bold">Type:</div>
           {value.value[0] !== 'any' && (
-            <div className="pr-1 flex justify-end">
-              <div className="pr-1">
+            <div className="flex justify-end">
+              <div>
                 <SearchFormButtonLogicToggle
                   name={name}
                   value={value.logic}
@@ -71,7 +71,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
             </div>
           )}
         </div>
-        <div className="inline basis-9/12 px-0">
+        <div className="inline basis-9/12">
           <Select
             classNamePrefix="react-select"
             options={options}

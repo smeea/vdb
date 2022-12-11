@@ -33,12 +33,12 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
 
   return (
     <>
-      <div className="flex justify-between py-1">
-        <div className="pr-2 flex" title="Average capacity">
-          <span className="blue pr-2">Avg. cap:</span> {cryptAvg}
+      <div className="flex justify-between">
+        <div className="flex" title="Average capacity">
+          <span className="blue ">Avg. cap:</span> {cryptAvg}
         </div>
         <div title="Chance to draw X unique vampires" className="flex">
-          <span className="blue pr-2 pr-md-3">Uniq:</span>
+          <span className="blue ">Uniq:</span>
           <div
             className={`flex flex-row ${
               isMobile && uniqueDraw.length > 2 ? 'space-x-2' : 'space-x-3'

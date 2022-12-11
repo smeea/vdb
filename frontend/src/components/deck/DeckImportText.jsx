@@ -86,13 +86,13 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       /* TODO add onShow */
       onShow={() => refText.current.focus()}
       size="lg"
-      dialogClassName={isMobile ? 'm-0' : null}
+      dialogClassName={isMobile ? '' : null}
       title="Import from Text"
     >
       <div>
         <input
           as="textarea"
-          className="deck-import mb-3"
+          className="deck-import "
           rows={isMobile ? '20' : '25'}
           value={deckText}
           placeholder={placeholder}
@@ -100,11 +100,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
           ref={refText}
           autoFocus
         />
-        <div
-          className={
-            isMobile ? 'flex justify-end py-0 px-3' : 'flex justify-end py-1'
-          }
-        >
+        <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
           <Button variant="primary" onClick={importDeckFromText}>
             Import
           </Button>

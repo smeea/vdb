@@ -7,24 +7,22 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
   const groups = [1, 2, 3, 4, 5, 6, 7];
 
   return (
-    <div className="pl-1 mx-0 flex flex-row items-center pt-2">
-      <div className="flex basis-1/4 px-0">
+    <div className="flex flex-row items-center ">
+      <div className="flex basis-1/4">
         <div className="text-blue font-bold">Group:</div>
       </div>
-      <div className="flex basis-9/12 justify-end px-0">
+      <div className="flex basis-9/12 justify-end">
         {groups.map((i, index) => {
           return (
             <Button
-              className={`group-form ${
-                !isMobile && isNarrow ? 'px-2' : 'px-14px'
-              }`}
+              className={`group-form ${!isMobile && isNarrow ? '' : '4px'}`}
               key={index}
               value={i}
               name="group"
               variant={value[i] ? 'third' : 'outline-primary'}
               onClick={onChange}
             >
-              <div className="px-md-0 px-1">{i}</div>
+              <div>{i}</div>
             </Button>
           );
         })}

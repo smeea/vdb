@@ -42,13 +42,13 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
     <Modal
       handleClose={() => setBadCards([])}
       size="xl"
-      dialogClassName={isMobile ? 'm-0' : null}
+      dialogClassName={isMobile ? '' : null}
       title="Fix Bad Import"
     >
       <div>
         {badCards.map((c, idx) => {
           return (
-            <div key={idx} className="flex flex-row items-center pt-2">
+            <div key={idx} className="flex flex-row items-center ">
               <div className="md:basis-5/12">{c}</div>
               <div className="md:basis-1/12">
                 <DeckCardQuantity

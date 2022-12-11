@@ -14,7 +14,7 @@ const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
     name: target,
     label: (
       <>
-        <span className="me-3" />
+        <span />
         {i[1]}
       </>
     ),

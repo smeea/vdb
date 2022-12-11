@@ -61,7 +61,7 @@ const ResultLayoutTextSets = (props) => {
 
       return (
         <div
-          className="pr-2 inline-block whitespace-nowrap"
+          className="inline-block whitespace-nowrap "
           onClick={() => {
             if (k !== 'POD') props.setImageSet(k.toLowerCase());
           }}
@@ -90,7 +90,7 @@ const ResultLayoutTextSets = (props) => {
 
   return (
     <>
-      <div className="pl-2 inline">{Sets}</div>
+      <div className="inline ">{Sets}</div>
       {modal && (
         <Modal
           size="xs"

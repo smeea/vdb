@@ -18,7 +18,7 @@ const SeatingRandomDeckAddForm = ({ addDeck }) => {
   };
 
   return (
-    <form className="mb-0" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className="input-group">
         <input
           placeholder="Add Random Deck"

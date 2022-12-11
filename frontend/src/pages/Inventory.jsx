@@ -106,7 +106,7 @@ const Inventory = () => {
   const newLibraryRef = useRef(null);
 
   return (
-    <div className="search-container mx-auto p-0">
+    <div className="search-container mx-auto">
       {(!inventoryKey && username) || (inventoryKey && !inventoryError) ? (
         <>
           {isMobile ? (
@@ -140,7 +140,7 @@ const Inventory = () => {
               inShared={inventoryKey ? true : false}
             />
           ) : (
-            <div className="mx-0 flex flex-row">
+            <div className=" flex flex-row">
               <InventoryDesktop
                 newCryptId={newCryptId}
                 newLibraryId={newLibraryId}
@@ -178,25 +178,25 @@ const Inventory = () => {
       ) : (
         <>
           {inventoryError ? (
-            <div className="p-md-3 flex flex-row items-center justify-center p-0">
+            <div className=" flex flex-row items-center justify-center">
               <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-                <div className="error-message flex items-center justify-center p-2">
+                <div className="error-message flex items-center justify-center">
                   <b>{inventoryError}</b>
                 </div>
               </div>
             </div>
           ) : (
-            <div className="mx-0 flex h-[80vh] flex-row items-center justify-center pt-3">
-              <div className="basis-full px-3 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
+            <div className=" flex h-[80vh] flex-row items-center justify-center ">
+              <div className="basis-full  md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
                 <div className="flex justify-center">
                   <div className="text-blue font-bold">
                     Login required to manage inventory
                   </div>
                 </div>
-                <div className="py-4">
+                <div>
                   <AccountLogin />
                 </div>
-                <div className="py-4">
+                <div>
                   <AccountRegister />
                 </div>
               </div>
@@ -244,7 +244,7 @@ const Inventory = () => {
               setInventoryKey={setInventoryKey}
               inShared={inventoryKey ? true : false}
             />
-            <div className="px-4 pt-2">
+            <div className=" ">
               <InventoryShowSelect
                 category={category}
                 setCategory={setCategory}

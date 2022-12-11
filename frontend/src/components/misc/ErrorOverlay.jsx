@@ -13,7 +13,7 @@ const ErrorOverlay = ({ placement, children }) => {
           : placement === 'right'
           ? 'left-8'
           : ''
-      } rounded bg-red-800 py-1 px-1.5 text-xs font-bold`}
+      } rounded  bg-red-800 text-xs font-bold`}
     >
       {children}
     </div>

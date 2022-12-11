@@ -185,7 +185,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           <div
             className={`name flex items-center justify-start ${
               card.deckid ? '' : 'bold'
-            } px-1`}
+            } `}
             onClick={() => handleClick(idx)}
           >
             <ResultLibraryName card={card} />
@@ -219,7 +219,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
   return (
     <div className="inventory-container-library">
       <div className="info-message flex items-center justify-between">
-        <div className="w-75 p-1">
+        <div className="w-75">
           <div className="flex flex-col space-y-1">
             <InventoryFilterForm
               value={type}
@@ -276,7 +276,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         <div className="player flex items-center" title="First Winner">
           Player
         </div>
-        <div className="button pr-1 flex" />
+        <div className="button flex " />
         {!isMobile && <div className="scroll-bar flex" />}
       </div>
       <AutoSizer>

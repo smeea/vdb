@@ -26,10 +26,10 @@ const ResultCryptLayoutText = ({
 
   return (
     <>
-      <div className="flex items-center justify-between whitespace-nowrap pb-1">
+      <div className="flex items-center justify-between whitespace-nowrap ">
         <div className="flex items-center whitespace-nowrap">
           <ResultClanImage value={card.Clan} />
-          <div className="name pl-2 font-bold">
+          <div className="name  font-bold">
             <ResultCryptName card={card} />
             {card.Adv[1] && (
               <ConditionalTooltip
@@ -38,7 +38,7 @@ const ResultCryptLayoutText = ({
                 disabled={isMobile}
               >
                 <span
-                  className="adv pl-2"
+                  className="adv "
                   onClick={() => setCard(cryptCardBase[card.Adv[1]])}
                 >
                   [see {`${card.Adv[0] ? 'Base' : 'Adv'}`}]
@@ -47,44 +47,44 @@ const ResultCryptLayoutText = ({
             )}
           </div>
         </div>
-        <div className="pl-1">
+        <div>
           <ResultCryptGroup value={card.Group} />
         </div>
       </div>
-      <hr className="mx-0" />
-      <div className="py-2">
+      <hr />
+      <div>
         <ResultLayoutTextText text={card['Card Text']} />
       </div>
-      <hr className="mx-0" />
+      <hr />
       <div className="flex items-center justify-between">
         <ResultCryptDisciplines value={card.Disciplines} />
         <ResultCryptCapacity value={card.Capacity} />
       </div>
-      <hr className="mx-0" />
-      <div className="py-1">
+      <hr />
+      <div>
         <b>Sets: </b>
         <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
       </div>
-      <div className="py-1">
+      <div>
         <b>Artist: </b>
-        <div className="inline px-1">
+        <div className="inline ">
           <ResultLayoutTextArtist artists={card['Artist']} />
         </div>
       </div>
       {Object.keys(card['Rulings']).length > 0 && (
         <>
-          <div className="py-1">
+          <div>
             <b>Rulings:</b>
           </div>
-          <div className="pb-1 text-xs">
+          <div className=" text-xs">
             <ResultLayoutTextRulings rulings={card['Rulings']} />
           </div>
         </>
       )}
       {(forceInventoryMode || inventoryMode) && (
         <>
-          <hr className="mx-0" />
-          <div className="py-1">
+          <hr />
+          <div>
             <b>Inventory:</b>
           </div>
           <ResultLayoutTextInventory cardid={card.Id} />

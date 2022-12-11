@@ -57,7 +57,7 @@ const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
       >
         <Dice3 />
       </Button>
-      <div className="pl-3 flex items-center" onClick={toggle}>
+      <div className="flex items-center" onClick={toggle}>
         {player.state ? (
           <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
         ) : (

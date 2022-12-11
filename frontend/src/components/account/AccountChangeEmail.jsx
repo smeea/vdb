@@ -69,7 +69,7 @@ const AccountChangeEmail = () => {
 
   const EmailForm = (
     <Input
-      className={`w-full ${isMobile ? 'mb-2' : 'rounded-none'}`}
+      className={`w-full ${isMobile ? '' : 'rounded-none'}`}
       placeholder="New email"
       type="email"
       name="email"
@@ -110,17 +110,17 @@ const AccountChangeEmail = () => {
 
   return (
     <>
-      <div className="text-blue flex items-center p-1 text-lg font-bold">
+      <div className="text-blue flex items-center text-lg font-bold">
         <EnvelopeFill />
-        <span className="ml-2">Change email (optional)</span>
+        <span>Change email (optional)</span>
         {!isMobile ? (
           <Tooltip text={tooltipText}>
-            <span className="question-tooltip ml-1">[?]</span>
+            <span className="question-tooltip ">[?]</span>
           </Tooltip>
         ) : (
           <span
             onClick={() => setShowModal(true)}
-            className="question-tooltip ml-1"
+            className="question-tooltip "
           >
             [?]
           </span>

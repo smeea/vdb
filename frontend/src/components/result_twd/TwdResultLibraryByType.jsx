@@ -103,7 +103,7 @@ const TwdResultLibraryByType = ({ library }) => {
               placement="right"
               show={show[cardtype]}
               overlay={
-                <div className="p-1">
+                <div>
                   <DeckLibraryTable
                     deck={{}}
                     handleModalCardOpen={handleModalCardOpen}
@@ -126,7 +126,7 @@ const TwdResultLibraryByType = ({ library }) => {
 
   return (
     <>
-      <div className="px-1">
+      <div>
         <b>
           Library [{libraryTotal}]{hasBanned && ' - WITH BANNED'}
         </b>

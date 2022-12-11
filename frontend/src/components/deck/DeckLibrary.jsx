@@ -56,8 +56,8 @@ const DeckLibrary = ({ deck, inMissing }) => {
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
-    <div key={cardtype} className="pt-2">
-      <div className="pr-2 flex justify-between">
+    <div key={cardtype}>
+      <div className="flex justify-between ">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
@@ -87,7 +87,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
   ));
 
   const LibrarySideDeck = Object.keys(librarySideByType).map((cardtype) => (
-    <div key={cardtype} className="pt-2">
+    <div key={cardtype}>
       <ResultLibraryType
         cardtype={cardtype}
         total={0}
@@ -119,7 +119,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
           isEditable={isEditable}
         />
         {showInfo && (
-          <div className="info-message px-2">
+          <div className="info-message ">
             <DeckLibraryTotalInfo
               byDisciplines={libraryByDisciplinesTotal}
               byTypes={libraryByTypeTotal}
@@ -153,8 +153,8 @@ const DeckLibrary = ({ deck, inMissing }) => {
       </div>
       {LibraryDeck}
       {librarySide.length > 0 && (
-        <div className="pt-3 opacity-60">
-          <div className="info-message px-2 py-1">
+        <div className=" opacity-60">
+          <div className="info-message  ">
             <b>Side Library</b>
           </div>
           {LibrarySideDeck}

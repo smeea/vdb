@@ -7,7 +7,6 @@ import {
   TwdResultCrypt,
   TwdResultLibraryByType,
   TwdResultLibraryKeyCards,
-  Button,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp } from 'context';
@@ -57,38 +56,38 @@ const TwdResult = ({ results, setResults }) => {
 
           return (
             <React.Fragment key={deck['deckid']}>
-              <div className="mx-0 flex flex-row py-2 px-0">
+              <div className="flex flex-row ">
                 <div
                   className={`basis-full md:basis-full xl:basis-1/4 ${
-                    isMobile ? 'px-0' : 'pl-0 pr-2'
+                    isMobile ? '' : ''
                   }`}
                 >
                   <TwdResultDescription deck={deck} />
                 </div>
                 {isMobile ? (
                   <>
-                    <div className="pl-0 pr-1 basis-1/2">
+                    <div className="basis-1/2 ">
                       <TwdResultCrypt crypt={deck['crypt']} />
                     </div>
-                    <div className="pl-1 pr-0 basis-1/2">
+                    <div className="basis-1/2 ">
                       <TwdResultLibraryKeyCards library={deck['library']} />
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className="basis-full px-2 md:basis-1/3 xl:basis-1/4">
+                    <div className="basis-full md:basis-1/3 xl:basis-1/4">
                       <TwdResultCrypt crypt={deck['crypt']} />
                     </div>
-                    <div className="basis-full px-2 md:basis-1/3 xl:basis-1/4">
+                    <div className="basis-full md:basis-1/3 xl:basis-1/4">
                       <TwdResultLibraryByType library={deck['library']} />
                     </div>
-                    <div className="pl-2 pr-0 basis-full md:basis-1/3 xl:basis-1/4">
+                    <div className="basis-full md:basis-1/3 xl:basis-1/4 ">
                       <TwdResultLibraryKeyCards library={deck['library']} />
                     </div>
                   </>
                 )}
               </div>
-              {index + 1 < showCounter && <hr className="thick mx-0" />}
+              {index + 1 < showCounter && <hr className="thick" />}
             </React.Fragment>
           );
         }
@@ -106,7 +105,7 @@ const TwdResult = ({ results, setResults }) => {
       />
       {resultEntries}
       {deckCounter > showCounter && (
-        <div className="flex justify-center pb-4 pt-2">
+        <div className="flex justify-center ">
           <Button
             variant="primary"
             onClick={() => setShowCounter(showCounter + showCounterStep)}

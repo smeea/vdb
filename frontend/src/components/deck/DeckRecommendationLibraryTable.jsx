@@ -37,7 +37,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
       <React.Fragment key={card.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {isEditable && (
-            <td className="quantity-add pr-1">
+            <td className="quantity-add ">
               <ButtonAddCard
                 cardid={card.Id}
                 deckid={deck.deckid}
@@ -51,7 +51,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >
-            <td className="name px-2" onClick={() => handleClick()}>
+            <td className="name " onClick={() => handleClick()}>
               <ResultLibraryName card={card} />
             </td>
           </ConditionalTooltip>
@@ -65,7 +65,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
               valuePool={card[POOL_COST]}
             />
           </td>
-          <td className="disciplines px-1" onClick={() => handleClick()}>
+          <td className="disciplines " onClick={() => handleClick()}>
             {DisciplineOrClan}
           </td>
           <td className="burn" onClick={() => handleClick()}>

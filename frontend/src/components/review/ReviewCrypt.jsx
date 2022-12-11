@@ -69,7 +69,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   };
 
   return (
-    <div className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}>
+    <div className={` ${isMobile ? null : 'sticky-deck-crypt'}`}>
       <DeckCryptHeader
         cryptTotal={cryptTotal}
         cryptGroups={cryptGroups}
@@ -82,7 +82,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         inReview
       />
       {showInfo && (
-        <div className="info-message px-2">
+        <div className="info-message ">
           <DeckCryptTotalInfo
             disciplinesDetailed={disciplinesDetailed}
             cards={crypt}
@@ -124,8 +124,8 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         nonKeyDisciplines={nonKeyDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
-        <div className="pt-2 opacity-60">
-          <div className="pl-2 flex items-center justify-between">
+        <div className=" opacity-60">
+          <div className="flex items-center justify-between ">
             <b>Side Crypt</b>
           </div>
           <DiffCryptTable

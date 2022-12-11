@@ -241,20 +241,20 @@ const Diff = () => {
   }, [deck, deckTo]);
 
   return (
-    <div className="deck-container px-md-2 px-xl-4 py-md-3 mx-auto px-0">
-      <div className="mx-0 flex flex-row">
+    <div className="deck-container    mx-auto ">
+      <div className=" flex flex-row">
         <div className="xl:basis-1/12"></div>
-        <div className="px-md-2 px-xl-3 basis-full lg:basis-5/6 xl:basis-9/12">
-          <div className="px-md-0 pt-md-0 flex flex-row px-1 py-1 pb-0">
-            <div className="pl-lg-3 px-0">
-              <div className="text-blue mx-0 flex flex-row pb-1 font-bold">
+        <div className="  basis-full lg:basis-5/6 xl:basis-9/12">
+          <div className="  flex flex-row   ">
+            <div className=" ">
+              <div className="text-blue  flex flex-row  font-bold">
                 Deck You Edit:
               </div>
               {selectFrom === 'from-url' ? (
                 <form
                   name="from"
                   onSubmit={handleUrlSubmit}
-                  className="my-0 min-w-[270px]"
+                  className=" min-w-[270px]"
                 >
                   <div className="input-group">
                     <input
@@ -268,11 +268,7 @@ const Diff = () => {
                       <Check2 />
                     </Button>
                     {isMobile && (
-                      <Button
-                        className="ms-1"
-                        variant="primary"
-                        onClick={handleSwap}
-                      >
+                      <Button variant="primary" onClick={handleSwap}>
                         <ArrowLeftRight />
                       </Button>
                     )}
@@ -288,7 +284,7 @@ const Diff = () => {
                     className={
                       deck?.isBranches && selectFrom == 'from-my'
                         ? 'w-75'
-                        : 'w-100'
+                        : 'w-full'
                     }
                   >
                     {selectFrom == 'from-my' && decks ? (
@@ -311,7 +307,7 @@ const Diff = () => {
                     )}
                   </div>
                   {selectFrom == 'from-my' && decks && deck.isBranches && (
-                    <div className="pl-1 w-25">
+                    <div className="w-25 ">
                       <DeckBranchSelect
                         handleSelect={handleSelectFrom}
                         deck={deck}
@@ -319,18 +315,14 @@ const Diff = () => {
                     </div>
                   )}
                   {isMobile && (
-                    <Button
-                      className="ms-1"
-                      variant="primary"
-                      onClick={handleSwap}
-                    >
+                    <Button variant="primary" onClick={handleSwap}>
                       <ArrowLeftRight />
                     </Button>
                   )}
                 </div>
               )}
-              <div className="flex items-center justify-between pt-1">
-                <form className="my-0 py-1 px-2">
+              <div className="flex items-center justify-between ">
+                <form className="  ">
                   {username && decks && Object.keys(decks).length > 0 && (
                     <input
                       checked={selectFrom == 'from-my'}
@@ -387,21 +379,21 @@ const Diff = () => {
               </div>
             </div>
             {!isMobile && (
-              <div className="flex basis-1/12 justify-center px-0">
+              <div className="flex basis-1/12 justify-center ">
                 <Button variant="primary" onClick={handleSwap}>
                   <ArrowLeftRight />
                 </Button>
               </div>
             )}
-            <div className="pt-md-0 pr-lg-3 px-0 pt-1">
-              <div className="text-blue mx-0 flex flex-row pb-1 font-bold">
+            <div className="   ">
+              <div className="text-blue  flex flex-row  font-bold">
                 Show Changes Against:
               </div>
               {selectTo === 'to-url' ? (
                 <form
                   name="to"
                   onSubmit={handleUrlSubmit}
-                  className="my-0 min-w-[270px]"
+                  className=" min-w-[270px]"
                 >
                   <div className="input-group">
                     <input
@@ -430,7 +422,7 @@ const Diff = () => {
                     className={
                       deckTo?.isBranches && selectTo == 'to-my'
                         ? 'w-75'
-                        : 'w-100'
+                        : 'w-full'
                     }
                   >
                     {selectTo == 'to-my' && decks ? (
@@ -451,7 +443,7 @@ const Diff = () => {
                     )}
                   </div>
                   {selectTo == 'to-my' && decks && deckTo?.isBranches && (
-                    <div className="pl-1 w-25">
+                    <div className="w-25 ">
                       <DeckBranchSelect
                         handleSelect={handleSelectTo}
                         deck={deckTo}
@@ -460,8 +452,8 @@ const Diff = () => {
                   )}
                 </div>
               )}
-              <div className="flex items-center justify-between pt-1">
-                <form className="my-0 py-1 px-2">
+              <div className="flex items-center justify-between ">
+                <form className="  ">
                   {username && decks && Object.keys(decks).length > 0 && (
                     <input
                       checked={selectTo == 'to-my'}
@@ -519,18 +511,18 @@ const Diff = () => {
             </div>
           </div>
           {(errorFrom || errorTo) && (
-            <div className="flex flex-row py-1">
-              <div className="pl-lg-3 px-0">
+            <div className="flex flex-row ">
+              <div className=" ">
                 {errorFrom && (
-                  <div className="error-message flex items-center justify-center p-2">
+                  <div className="error-message flex items-center justify-center">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
                 )}
               </div>
-              <div className="basis-1/12 px-0"></div>
-              <div className="pr-lg-3 px-0">
+              <div className="basis-1/12 "></div>
+              <div className=" ">
                 {errorTo && (
-                  <div className="error-message flex items-center justify-center p-2">
+                  <div className="error-message flex items-center justify-center">
                     <b>NO DECK WITH THIS ID</b>
                   </div>
                 )}
@@ -538,11 +530,9 @@ const Diff = () => {
             </div>
           )}
           {deck && deckTo && (
-            <div className="pt-md-2 flex flex-row">
-              <div className="px-md-2 pl-xl-2 pr-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
-                <div
-                  className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}
-                >
+            <div className=" flex flex-row">
+              <div className="      md:basis-7/12">
+                <div className={` ${isMobile ? null : 'sticky-deck-crypt'}`}>
                   <DiffCrypt
                     deckid={deck.deckid}
                     isEditable={
@@ -553,12 +543,8 @@ const Diff = () => {
                   />
                 </div>
               </div>
-              <div className="px-md-2 pl-xl-3 pr-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
-                <div
-                  className={
-                    !isMobile ? 'sticky-deck-library pt-md-4 pt-4' : null
-                  }
-                >
+              <div className="      md:basis-5/12">
+                <div className={!isMobile ? 'sticky-deck-library  ' : null}>
                   <DiffLibrary
                     deckid={deck.deckid}
                     isEditable={
@@ -573,7 +559,7 @@ const Diff = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="hide-on-lt992px pl-lg-2 pr-lg-1 px-xl-3 lg:basis-1/6">
+          <div className="hide-on-lt992px    lg:basis-1/6">
             <div className="sticky-buttons">
               <DiffButtons
                 missingCrypt={missingCrypt}
@@ -613,7 +599,7 @@ const Diff = () => {
               deckFrom={deck}
               deckTo={deckTo}
             />
-            <div className="flex justify-end pt-1">
+            <div className="flex justify-end ">
               <ButtonIconed
                 variant="secondary"
                 onClick={() => {

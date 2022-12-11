@@ -72,14 +72,14 @@ const InventoryLibraryTableRow = ({
 
   return (
     <div
-      className={`border-none inventory-library-table flex ${
+      className={`inventory-library-table flex border-none ${
         isSwiped ? `swiped-${isSwiped}` : ''
       }`}
       {...swipeHandlers}
     >
       <div
         className={`flex items-center justify-center ${
-          inShared ? 'quantity-no-buttons me-2' : 'quantity px-1]'
+          inShared ? 'quantity-no-buttons ' : 'quantity]'
         }`}
       >
         {inShared ? (
@@ -99,7 +99,7 @@ const InventoryLibraryTableRow = ({
         <div className="used flex items-center justify-center">
           {isMobile ? (
             <div
-              className={`w-100 pl-1 flex justify-center ${
+              className={`flex w-full justify-center ${
                 card.q == softUsedMax + hardUsedTotal
                   ? 'gray'
                   : card.q >= softUsedMax + hardUsedTotal
@@ -119,7 +119,7 @@ const InventoryLibraryTableRow = ({
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
               <div
-                className={`w-100 pl-1 flex justify-center ${
+                className={`flex w-full justify-center ${
                   card.q == softUsedMax + hardUsedTotal
                     ? 'gray'
                     : card.q >= softUsedMax + hardUsedTotal
@@ -174,7 +174,7 @@ const InventoryLibraryTableRow = ({
             />
           </div>
           <div
-            className="flex items-center justify-center px-1"
+            className="flex items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             {DisciplineOrClan}

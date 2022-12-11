@@ -127,7 +127,7 @@ const DeckSelect = ({ deck, deckid, decks, handleSelect }) => {
           </div>
         )}
       </div>
-      <div className="flex items-center justify-between pt-2">
+      <div className="flex items-center justify-between ">
         <div className="flex space-x-8">
           {username && decks && Object.keys(decks).length > 0 && (
             <>
@@ -171,7 +171,7 @@ const DeckSelect = ({ deck, deckid, decks, handleSelect }) => {
           )}
           {isMobile && deck && (
             <Button variant="primary" onClick={() => setShowInfo(!showInfo)}>
-              <div className="flex pt-1">
+              <div className="flex ">
                 <ChatLeftQuoteFill width="16" height="18" viewBox="0 0 16 18" />
               </div>
             </Button>

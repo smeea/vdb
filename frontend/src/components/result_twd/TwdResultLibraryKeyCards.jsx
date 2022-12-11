@@ -62,7 +62,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
     return (
       <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
-          <td className="quantity-no-buttons px-1">
+          <td className="quantity-no-buttons ">
             <ConditionalTooltip
               overlay={<UsedPopover cardid={card.c.Id} />}
               disabled={isMobile}
@@ -81,12 +81,12 @@ const TwdResultLibraryKeyCards = ({ library }) => {
             </ConditionalTooltip>
           </td>
         ) : (
-          <td className="quantity-no-buttons px-1">{card.q}</td>
+          <td className="quantity-no-buttons ">{card.q}</td>
         )}
         <td className="type" onClick={() => handleClick(card.c)}>
           <ResultLibraryTypeImage value={card.c.Type} />
         </td>
-        <td className="name px-1" onClick={() => handleClick(card.c)}>
+        <td className="name " onClick={() => handleClick(card.c)}>
           <ConditionalTooltip
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
@@ -106,7 +106,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
 
   return (
     <>
-      <div className="px-1">
+      <div>
         <b>{isMobile ? `Library [${libraryTotal}]` : 'Key cards:'}</b>
       </div>
       <div className="library">

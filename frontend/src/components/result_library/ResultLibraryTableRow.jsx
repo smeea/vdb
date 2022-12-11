@@ -89,7 +89,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
 `}
     >
       {isEditable && addMode && (
-        <td className="quantity-add pr-1">
+        <td className="quantity-add ">
           <ButtonAddCard deckid={deck.deckid} card={card} inDeck={inDeck} />
         </td>
       )}
@@ -101,7 +101,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
           >
             {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
               <div
-                className={`used ms-1 flex items-center justify-between px-1 ${
+                className={`used  flex items-center justify-between ${
                   inInventory < softUsedMax + hardUsedTotal
                     ? 'inv-miss-full'
                     : ''
@@ -114,7 +114,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
                     inInventory >= softUsedMax + hardUsedTotal
                       ? 'gray'
                       : 'white'
-                  } pl-1`}
+                  } `}
                 >
                   {inInventory >= softUsedMax + hardUsedTotal
                     ? `+${inInventory - softUsedMax - hardUsedTotal}`
@@ -126,7 +126,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         </td>
       )}
       <td
-        className={card[BLOOD_COST] ? 'cost blood px-1' : 'cost px-1'}
+        className={card[BLOOD_COST] ? 'cost blood' : 'cost'}
         onClick={() => handleClick(idx)}
       >
         <ResultLibraryCost
@@ -134,18 +134,18 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
           valuePool={card[POOL_COST]}
         />
       </td>
-      <td className="type px-1" onClick={() => handleClick(idx)}>
+      <td className="type" onClick={() => handleClick(idx)}>
         <ResultLibraryTypeImage value={card.Type} />
       </td>
       <td
-        className="disciplines flex items-center justify-center px-1"
+        className="disciplines flex items-center justify-center"
         onClick={() => handleClick(idx)}
       >
         <ResultLibraryClan value={card.Clan} />
         {card.Discipline && card.Clan && '+'}
         <ResultLibraryDisciplines value={card.Discipline} />
       </td>
-      <td className="name px-1" onClick={() => handleClick(idx)}>
+      <td className="name" onClick={() => handleClick(idx)}>
         <ConditionalTooltip
           placement={placement}
           overlay={<CardPopover card={card} />}
@@ -154,7 +154,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
           <ResultLibraryName card={card} />
         </ConditionalTooltip>
       </td>
-      <td className="burn px-1" onClick={() => handleClick(idx)}>
+      <td className="burn" onClick={() => handleClick(idx)}>
         <ResultLibraryBurn value={card[BURN_OPTION]} />
         <ResultLibraryTrifle card={card} />
       </td>

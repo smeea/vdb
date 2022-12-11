@@ -21,27 +21,27 @@ const ResultLibraryPopover = ({ card, setImageSet }) => {
   return (
     <>
       {!showImage ? (
-        <div className="py-1">
+        <div>
           <div className="flex items-center justify-between whitespace-nowrap">
             <div className="flex items-center whitespace-nowrap">
               <div>
                 <ResultLibraryTypeImage value={card.Type} />
               </div>
-              <div className="name pl-2 font-bold">
+              <div className="name  font-bold">
                 <ResultLibraryName card={card} />
               </div>
             </div>
-            <div className="pl-1">
+            <div>
               <ResultLibraryDisciplines value={card.Discipline} />
               <ResultLibraryClan value={card.Clan} />
             </div>
             {card['Burn Option'] && (
-              <div className="pl-1">
+              <div>
                 <ResultLibraryBurn value={card['Burn Option']} />
               </div>
             )}
             {isTrifle(card) && (
-              <div className="pl-1">
+              <div>
                 <ResultLibraryTrifle card={card} />
               </div>
             )}
@@ -67,10 +67,10 @@ const ResultLibraryPopover = ({ card, setImageSet }) => {
           </div>
           {Object.keys(card['Rulings']).length > 0 && (
             <>
-              <div className="py-1">
+              <div>
                 <b>Rulings: </b>
               </div>
-              <div className="max-w-[275px] pb-1 text-xs">
+              <div className="max-w-[275px]  text-xs">
                 <ResultLayoutTextRulings rulings={card['Rulings']} />
               </div>
             </>

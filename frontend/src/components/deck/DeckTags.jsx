@@ -35,7 +35,7 @@ const DeckTags = ({ deck, tagsSuperior, bordered, allTagsOptions }) => {
   };
 
   const placeholder = (
-    <div className="pl-1.5 text-sm text-neutral-500">Click to add tags</div>
+    <div className="text-sm text-neutral-500">Click to add tags</div>
   );
   const noOptionsMessage = () => 'Enter new tag';
 

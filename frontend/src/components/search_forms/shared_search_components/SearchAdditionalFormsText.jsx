@@ -52,7 +52,7 @@ const SearchAdditionalFormsText = ({
   const forms = [];
   for (let i = 1; i < value.length; i++) {
     forms.push(
-      <div key={i} className="mx-0 flex flex-row items-center px-0 pt-2">
+      <div key={i} className="flex flex-row items-center ">
         <input
           placeholder="Card Name / Text / RegEx"
           type="text"
@@ -63,8 +63,8 @@ const SearchAdditionalFormsText = ({
           onChange={onTextChange}
           autoFocus={true}
         />
-        <div className="mx-0 flex flex-row px-0 pt-1">
-          <div className="basis-2/12 px-0 md:basis-1/4">
+        <div className="flex flex-row ">
+          <div className="basis-2/12 md:basis-1/4">
             <div className="flex flex-row space-x-1">
               <SearchFormButtonLogicToggle
                 name="text"
@@ -76,7 +76,7 @@ const SearchAdditionalFormsText = ({
               <SearchFormButtonDelText searchForm={searchForm} i={i} />
             </div>
           </div>
-          <div className="flex justify-end px-0">
+          <div className="flex justify-end">
             <div className="flex flex-col items-start space-x-2">
               {options.map((opt, idx) => {
                 return (

@@ -71,7 +71,7 @@ const SearchFormTextAndButtons = ({
               name={0}
               value={text}
               onChange={onTextChange}
-              className="rounded-r-none w-full"
+              className="w-full rounded-r-none"
             />
             {preresults > showLimit && (
               <ButtonIconed
@@ -95,7 +95,7 @@ const SearchFormTextAndButtons = ({
           </>
         )}
       </div>
-      <div className="mx-0 flex flex-row px-1 pt-1">
+      <div className="flex flex-row ">
         <div className="basis-2/12 md:basis-1/4">
           <div className="flex flex-row space-x-1">
             {value[0].value !== '' && (
@@ -115,7 +115,7 @@ const SearchFormTextAndButtons = ({
             )}
           </div>
         </div>
-        <div className="flex justify-end items-start space-x-3">
+        <div className="flex items-start justify-end space-x-3">
           {options.map((opt, idx) => {
             return (
               <Checkbox

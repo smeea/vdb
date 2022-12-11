@@ -43,10 +43,7 @@ const DeckChangeName = ({ deck }) => {
 
   return (
     <form className="flex" onSubmit={handleSubmitButton}>
-      <div
-        className="flex items-center rounded-l bg-red-900 px-2 py-1"
-        title="Deck Name"
-      >
+      <div className="flex items-center rounded-l bg-red-900" title="Deck Name">
         <TagFill width="20" height="20" viewBox="0 0 16 16" />
       </div>
       <Input
@@ -73,11 +70,7 @@ const DeckChangeName = ({ deck }) => {
         <DeckFreezeButton className="rounded-l-none" deck={deck} />
       )}
       {isMobile && isEditable && (
-        <Button
-          variant={buttonState ? 'success' : 'primary'}
-          type="submit"
-          className="ms-1"
-        >
+        <Button variant={buttonState ? 'success' : 'primary'} type="submit">
           <Check2 />
         </Button>
       )}

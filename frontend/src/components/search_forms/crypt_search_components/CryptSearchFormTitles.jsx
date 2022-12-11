@@ -4,13 +4,13 @@ import { Checkbox } from 'components';
 const CryptSearchFormTitles = ({ value, onChange }) => {
   return (
     <>
-      <div className="pl-1 mx-0 flex flex-row py-1">
-        <div className="flex px-0">
+      <div className="flex flex-row">
+        <div className="flex">
           <div className="text-blue font-bold">Title:</div>
         </div>
       </div>
-      <div className="mx-0 flex flex-row">
-        <div className="pr-0 inline basis-7/12">
+      <div className="flex flex-row">
+        <div className="inline basis-7/12">
           {[
             ['primogen', 'Primogen'],
             ['prince', 'Prince'],
@@ -30,7 +30,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
             />
           ))}
         </div>
-        <div className="pr-0 inline basis-5/12">
+        <div className="inline basis-5/12">
           {[
             ['bishop', 'Bishop'],
             ['archbishop', 'Archbishop'],

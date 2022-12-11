@@ -10,9 +10,7 @@ const ThemeSelect = ({ setShowMenu }) => {
 
   return (
     <div
-      className={`flex ${
-        isMobile ? 'items-center' : 'text-white'
-      } px-md-3 px-2 py-1`}
+      className={`flex ${isMobile ? 'items-center' : 'text-white'}   `}
       onClick={() => {
         toggleTheme();
         isMobile && setShowMenu(false);
@@ -31,7 +29,7 @@ const ThemeSelect = ({ setShowMenu }) => {
               <PcDisplay height="20" width="20" viewBox="0 0 16 16" />
             )}
           </div>
-          <div className="pl-2 whitespace-nowrap">
+          <div className="whitespace-nowrap ">
             {theme === 'dark' && 'Dark Theme'}
             {theme === 'light' && 'Light Theme'}
             {theme === 'auto' && 'System Theme'}

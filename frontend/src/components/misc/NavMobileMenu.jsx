@@ -15,7 +15,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   return (
     <div
       ref={menuRef}
-      className="pl-2 relative text-white"
+      className="relative  text-white"
       onClick={() => setShowMenu(!showMenu)}
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
@@ -24,32 +24,32 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
           <NavLink
             to="/account"
             onClick={() => setShowMenu(false)}
-            className="nav-link px-2 py-1"
+            className="nav-link  "
           >
             <div className="main-font flex items-center">
               <div className="flex min-w-[30px] justify-center">
                 <PersonFill height="20" width="20" viewBox="0 0 16 16" />
               </div>
-              <div className="pl-2">{username ? 'Account' : 'Login'}</div>
+              <div>{username ? 'Account' : 'Login'}</div>
             </div>
           </NavLink>
           <NavLink
             to="/"
             end
             onClick={() => setShowMenu(false)}
-            className="nav-link px-2 py-1"
+            className="nav-link  "
           >
             <div className="main-font flex items-center">
               <div className="flex min-w-[30px] justify-center">
                 <InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />
               </div>
-              <div className="pl-2">About</div>
+              <div>About</div>
             </div>
           </NavLink>
 
           <ThemeSelect setShowMenu={setShowMenu} />
           <div
-            className="flex items-center px-2 py-1"
+            className="flex items-center  "
             onClick={() => {
               toggleInventoryMode();
               setShowMenu(false);
@@ -63,14 +63,12 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               )}
             </div>
             <div
-              className={`${
-                inventoryMode ? '' : 'gray'
-              } pl-2 whitespace-nowrap`}
+              className={`${inventoryMode ? '' : 'gray'} whitespace-nowrap `}
             >
               Inventory Mode
             </div>
           </div>
-          <div className="flex items-center justify-between py-2">
+          <div className="flex items-center justify-between ">
             <LanguageSelect setShowMenu={setShowMenu} />
           </div>
         </div>

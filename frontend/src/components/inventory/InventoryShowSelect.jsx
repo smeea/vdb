@@ -2,9 +2,8 @@ import React from 'react';
 
 const InventoryShowSelect = ({ category, setCategory }) => {
   return (
-    <form className="my-0">
+    <form>
       <input
-        className="px-2"
         type="radio"
         id="all"
         label={
@@ -16,7 +15,6 @@ const InventoryShowSelect = ({ category, setCategory }) => {
         onChange={(e) => setCategory(e.target.id)}
       />
       <input
-        className="px-2"
         type="radio"
         id="ok"
         label={
@@ -28,7 +26,6 @@ const InventoryShowSelect = ({ category, setCategory }) => {
         onChange={(e) => setCategory(e.target.id)}
       />
       <input
-        className="px-2"
         type="radio"
         id="nok"
         label={

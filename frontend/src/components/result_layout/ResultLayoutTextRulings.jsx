@@ -21,10 +21,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
   const Rulings = Object(rulings).map((k, idxRuling) => {
     const Refs = Object.keys(k['refs']).map((j) => {
       return (
-        <div
-          key={`${idxRuling}-rulingRef-${j}`}
-          className="pl-1 inline text-xs"
-        >
+        <div key={`${idxRuling}-rulingRef-${j}`} className="inline  text-xs">
           <a target="_blank" rel="noreferrer" href={k['refs'][j]}>
             {j}
           </a>

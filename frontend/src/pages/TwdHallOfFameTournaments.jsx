@@ -29,7 +29,7 @@ const TwdHallOfFameTournaments = () => {
   };
 
   return (
-    <div className="hof-tournaments-container p-md-3 mx-auto px-0">
+    <div className="hof-tournaments-container mx-auto">
       {players && (
         <Disclosure>
           {Object.keys(players)

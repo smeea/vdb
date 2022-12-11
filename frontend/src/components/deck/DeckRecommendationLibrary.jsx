@@ -32,8 +32,8 @@ const DeckRecommendationLibrary = ({ cards }) => {
   return (
     <>
       {Object.keys(libraryByType).map((cardtype) => (
-        <div key={cardtype} className="pt-2">
-          <div className="pr-2 flex justify-between">
+        <div key={cardtype}>
+          <div className="flex justify-between ">
             <ResultLibraryType cardtype={cardtype} total={0} />
           </div>
           <DeckRecommendationLibraryTable

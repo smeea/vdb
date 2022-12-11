@@ -298,7 +298,7 @@ const CryptSearchForm = () => {
             onClick={processSearch}
             className="float-right-bottom float-search flex items-center justify-center"
           >
-            <Check2 viewBox="0 0 16 16" className="pt-1" />
+            <Check2 viewBox="0 0 16 16" />
             {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
           </div>
         </>

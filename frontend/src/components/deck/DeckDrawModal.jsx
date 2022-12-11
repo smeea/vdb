@@ -53,15 +53,15 @@ const DeckDrawModal = ({
     <>
       <Modal
         handleClose={handleClose}
-        dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
+        dialogClassName={isMobile ? '' : 'modal-wide'}
         title="Deck Draw"
       >
         <div>
-          <div className="pb-md-4 flex flex-row px-0">
-            <div className="pl-lg-4 pr-lg-3 basis-full px-0 md:basis-7/12">
+          <div className="flex flex-row">
+            <div className="basis-full md:basis-7/12">
               <div>
                 <div className="info-message flex h-10 justify-between">
-                  <div className="flex items-center px-2">
+                  <div className="flex items-center">
                     <b>Uncontrolled</b>
                   </div>
                   <div
@@ -72,7 +72,7 @@ const DeckDrawModal = ({
                   </div>
                   <div className="flex">
                     <div
-                      className="pr-2 flex font-bold items-center"
+                      className="flex items-center font-bold"
                       title="Initial Transfers"
                     >
                       {initialTransfers}t
@@ -114,7 +114,7 @@ const DeckDrawModal = ({
                   </div>
                 </div>
                 {cryptTotal < 4 && (
-                  <div className="error-message my-2 flex items-center justify-center p-2">
+                  <div className="error-message flex items-center justify-center">
                     <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
                   </div>
                 )}
@@ -129,9 +129,9 @@ const DeckDrawModal = ({
                 />
               </div>
             </div>
-            <div className="pl-lg-3 pr-lg-4 pt-md-0 basis-full px-0 pt-4 md:basis-5/12">
+            <div className="basis-full md:basis-5/12">
               <div className="info-message flex h-10 justify-between">
-                <div className="flex items-center px-2">
+                <div className="flex items-center">
                   <b>Hand</b>
                 </div>
                 <div
@@ -176,7 +176,7 @@ const DeckDrawModal = ({
                 </div>
               </div>
               {libraryTotal < 7 && (
-                <div className="error-message my-2 flex items-center justify-center p-2">
+                <div className="error-message flex items-center justify-center">
                   <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
                 </div>
               )}
@@ -190,23 +190,20 @@ const DeckDrawModal = ({
             </div>
           </div>
           {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-            <div className="pb-md-4 flex flex-row px-0">
-              <div className="pl-lg-4 pr-lg-3 basis-full px-0 md:basis-7/12">
+            <div className="flex flex-row">
+              <div className="basis-full md:basis-7/12">
                 {burnedCrypt.length > 0 && (
-                  <div className="pt-md-0 pt-4">
+                  <div>
                     <div className="info-message flex h-10 justify-between">
-                      <div className="flex items-center px-2">
+                      <div className="flex items-center">
                         <b>Controlled</b>
                       </div>
                       <div className="flex items-center">
                         <b>{burnedCrypt.length}</b>
                       </div>
-                      <div
-                        className="pr-3 flex items-center"
-                        title="Total Capacity"
-                      >
+                      <div className="flex items-center" title="Total Capacity">
                         <img
-                          className="capacity-image-results pr-1"
+                          className="capacity-image-results "
                           src={process.env.ROOT_URL + 'images/misc/capX.png'}
                         />
                         <b>{burnedCapacityTotal}</b>
@@ -224,11 +221,11 @@ const DeckDrawModal = ({
                   </div>
                 )}
               </div>
-              <div className="pl-lg-3 pr-lg-4 basis-full px-0 md:basis-5/12">
+              <div className="basis-full md:basis-5/12">
                 {burnedLibrary.length > 0 && (
-                  <div className="pt-md-0 pt-4">
+                  <div>
                     <div className="info-message flex h-10 justify-between">
-                      <div className="flex items-center px-2">
+                      <div className="flex items-center">
                         <b>Ash Heap</b>
                       </div>
                       <div className="flex items-center">
@@ -236,11 +233,11 @@ const DeckDrawModal = ({
                       </div>
                       <div className="flex">
                         <div
-                          className="pr-3 flex items-center"
+                          className="flex items-center"
                           title="Total Blood Cost"
                         >
                           <img
-                            className="cost-blood-image-results pr-1 pb-1"
+                            className="cost-blood-image-results "
                             src={
                               process.env.ROOT_URL + 'images/misc/bloodX.png'
                             }
@@ -248,11 +245,11 @@ const DeckDrawModal = ({
                           <b>{burnedBloodTotal}</b>
                         </div>
                         <div
-                          className="pr-3 flex items-center"
+                          className="flex items-center"
                           title="Total Pool Cost"
                         >
                           <img
-                            className="cost-pool-image-results pr-1 py-1"
+                            className="cost-pool-image-results "
                             src={process.env.ROOT_URL + 'images/misc/poolX.png'}
                           />
                           <b>{burnedPoolTotal}</b>

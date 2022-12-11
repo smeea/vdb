@@ -32,23 +32,23 @@ const TwdEvent = ({ eventId, setEventId }) => {
 
   return (
     <>
-      <div className="pl-4 flex">
+      <div className="flex ">
         <div className="text-blue text-lg font-bold">EVENT IN VEKN.NET</div>
       </div>
-      <div className="mt-1.5">
-        <pre className="mb-0">{event.Name}</pre>
-        <pre className="mb-0">{event.Location}</pre>
-        <pre className="mb-0">{event.Date}</pre>
-        <pre className="mb-0">{event.Format}</pre>
-        <pre className="mb-0">{event.Players}</pre>
-        <pre className="mb-0">{event.Winner}</pre>
+      <div>
+        <pre>{event.Name}</pre>
+        <pre>{event.Location}</pre>
+        <pre>{event.Date}</pre>
+        <pre>{event.Format}</pre>
+        <pre>{event.Players}</pre>
+        <pre>{event.Winner}</pre>
         <pre>
           <a href={event.Link} rel="noreferrer" target="_blank">
             {event.Link}
           </a>
         </pre>
-        <pre className="mb-0"> </pre>
-        <pre className="mb-0">-- {event.Scores}</pre>
+        <pre> </pre>
+        <pre>-- {event.Scores}</pre>
       </div>
     </>
   );

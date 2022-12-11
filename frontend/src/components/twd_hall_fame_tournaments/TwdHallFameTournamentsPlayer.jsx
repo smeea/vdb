@@ -41,13 +41,13 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
       <Disclosure.Button>
         <div className="flex items-center">
           {Object.keys(decks).length}
-          <div className="pl-1 pr-3 flex">
+          <div className="flex">
             <TrophyFill height="13" width="13" viewBox="0 0 18 18" />
           </div>
           <div className="flex items-center whitespace-nowrap">
             {name}
             <div
-              className="flex px-1 pt-1"
+              className="flex "
               title="National or Continental Championships (in bold below)"
             >
               {stars}
@@ -55,7 +55,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
           </div>
         </div>
       </Disclosure.Button>
-      <Disclosure.Panel className="p-0">
+      <Disclosure.Panel>
         {decks.sort(byDate).map((deck) => {
           return (
             <TwdHallFameDeckHeader

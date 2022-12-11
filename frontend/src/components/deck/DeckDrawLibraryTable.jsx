@@ -51,7 +51,7 @@ const DeckDrawLibraryTable = ({
       <React.Fragment key={`${idx}-${card.Id}`}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           <td
-            className={card['Blood Cost'] ? 'cost blood px-1' : 'cost px-1'}
+            className={card['Blood Cost'] ? 'cost blood ' : 'cost '}
             onClick={() => handleClick(idx)}
           >
             <ResultLibraryCost
@@ -59,15 +59,15 @@ const DeckDrawLibraryTable = ({
               valuePool={card['Pool Cost']}
             />
           </td>
-          <td className="type px-1" onClick={() => handleClick(idx)}>
+          <td className="type " onClick={() => handleClick(idx)}>
             <ResultLibraryTypeImage value={card.Type} />
           </td>
-          <td className="disciplines px-1" onClick={() => handleClick(idx)}>
+          <td className="disciplines " onClick={() => handleClick(idx)}>
             <ResultLibraryClan value={card.Clan} />
             {card.Discipline && card.Clan && '+'}
             <ResultLibraryDisciplines value={card.Discipline} />
           </td>
-          <td className="name px-1" onClick={() => handleClick(idx)}>
+          <td className="name " onClick={() => handleClick(idx)}>
             <ConditionalTooltip
               overlay={<CardPopover card={card} />}
               disabled={isMobile}
@@ -76,11 +76,11 @@ const DeckDrawLibraryTable = ({
               <ResultLibraryName card={card} />
             </ConditionalTooltip>
           </td>
-          <td className="burn px-1" onClick={() => handleClick(idx)}>
+          <td className="burn " onClick={() => handleClick(idx)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle card={card} />
           </td>
-          <td className="text-blue w-9 px-1 text-right">
+          <td className="text-blue w-9  text-right">
             {!ashHeap && (
               <>
                 {isMobile ? (

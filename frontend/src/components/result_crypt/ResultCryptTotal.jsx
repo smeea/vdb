@@ -35,7 +35,7 @@ const ResultCryptTotal = ({
 
   const totalOutput = Object.keys(byGroups).map((k) => {
     return (
-      <span key={k} className="pr-3 inline-block whitespace-nowrap">
+      <span key={k} className="inline-block whitespace-nowrap ">
         <span className="blue">
           <b>G{k == ANY ? 'X' : k}:</b>
         </span>
@@ -51,7 +51,7 @@ const ResultCryptTotal = ({
 
   const value = (
     <>
-      <div className="whitespace-nowrap px-2">
+      <div className="whitespace-nowrap ">
         <b>
           {inHoF ? 'CRYPT' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
         </b>
@@ -61,7 +61,7 @@ const ResultCryptTotal = ({
         {!inCompare ? (
           <>
             {!inHoF && (
-              <div className="mb-1 flex justify-end">
+              <div className=" flex justify-end">
                 <Button
                   title="Additional Info"
                   variant="primary"
@@ -78,7 +78,7 @@ const ResultCryptTotal = ({
             />
           </>
         ) : (
-          <div className="ms-1">
+          <div>
             <Button
               title="Clear Compare"
               variant="primary"
@@ -93,7 +93,7 @@ const ResultCryptTotal = ({
   );
 
   return (
-    <div className="info-message pr-1 pr-md-0 flex items-center justify-between">
+    <div className="info-message  flex items-center justify-between ">
       {value}
     </div>
   );

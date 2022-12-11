@@ -9,13 +9,11 @@ const Twd = () => {
   const [error, setError] = useState();
 
   return (
-    <div className="twd-container px-md-1 pt-md-3 mx-auto">
+    <div className="twd-container mx-auto">
       <div className="flex flex-row justify-center">
         <div
           className={`basis-full md:basis-8/12 xl:basis-9/12 ${
-            !isMobile || (isMobile && !error)
-              ? 'pr-lg-4 px-0'
-              : 'px-md-2 px-lg-4 hidden px-0'
+            !isMobile || (isMobile && !error) ? '' : 'hidden'
           }`}
         >
           {twdResults && (
@@ -29,11 +27,7 @@ const Twd = () => {
         </div>
         <div
           className={`basis-full md:basis-1/3 xl:basis-1/4
-            ${
-              !isMobile || (isMobile && !twdResults)
-                ? 'py-md-0 px-md-2 px-xl-0 p-1'
-                : 'hidden'
-            }`}
+            ${!isMobile || (isMobile && !twdResults) ? '' : 'hidden'}`}
         >
           <TwdSearchForm error={error} setError={setError} />
         </div>

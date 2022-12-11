@@ -197,7 +197,7 @@ const InventoryCrypt = ({
     <>
       {!compact && (
         <div className="info-message flex items-center justify-between">
-          <div className="w-75 p-1">
+          <div className="w-75">
             <InventoryFilterForm
               value={clan}
               setValue={setClan}
@@ -208,7 +208,7 @@ const InventoryCrypt = ({
               byUnique={cardsByClanUnique}
               target="crypt"
             />
-            <div className="flex justify-end px-1 font-bold text-neutral-500">
+            <div className="flex justify-end  font-bold text-neutral-500">
               {missingByClanTotal[clan] ? (
                 <>
                   {missingByClanTotal[clan]} (

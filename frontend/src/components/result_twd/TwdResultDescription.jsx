@@ -37,7 +37,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Date:</b>
               )}
             </td>
-            <td className="pl-2">{deck['creation_date']}</td>
+            <td>{deck['creation_date']}</td>
           </tr>
           <tr>
             <td className="blue">
@@ -49,7 +49,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Event:</b>
               )}
             </td>
-            <td className="pl-2">{deck['event']}</td>
+            <td>{deck['event']}</td>
           </tr>
           <tr>
             <td className="blue">
@@ -61,7 +61,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Location:</b>
               )}
             </td>
-            <td className="pl-2">
+            <td>
               <div
                 className="link-like"
                 onClick={() => handleClick('location', deck['location'])}
@@ -80,7 +80,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Player:</b>
               )}
             </td>
-            <td className="pl-2">
+            <td>
               <div
                 className="link-like"
                 onClick={() => handleClick('author', deck['author'])}
@@ -99,7 +99,7 @@ const TwdResultDescription = ({ deck }) => {
                 <b>Deck:</b>
               )}
             </td>
-            <td className="pl-2">{deck['name']}</td>
+            <td>{deck['name']}</td>
           </tr>
         </tbody>
       </table>
@@ -114,41 +114,41 @@ const TwdResultDescription = ({ deck }) => {
       {isDesktop ? (
         <>
           <div
-            className={`text-blue mx-1 mt-1 mb-2 flex items-center justify-center text-lg ${
+            className={`text-blue   flex items-center justify-center text-lg ${
               deck['players'] >= 30
                 ? 'bold border-dashed-thick'
                 : 'border-dashed'
             }`}
             title="Players"
           >
-            <div className="pr-1 flex items-center">
+            <div className="flex items-center">
               <PeopleFill />
             </div>{' '}
             {deck['players']}
           </div>
           {Description}
-          <div className="flex flex-row p-2">
-            <div className="pl-2 pr-1 md:basis-1/2">
+          <div className="flex flex-row">
+            <div className="md:basis-1/2">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </div>
-            <div className="pl-1 pr-2 md:basis-1/2">
+            <div className="md:basis-1/2">
               {username && <DeckCloneButton deck={deck} noRedirect />}
             </div>
           </div>
         </>
       ) : (
-        <div className="mx-0 flex flex-row pb-1">
-          <div className="mx-0 basis-9/12 px-1">{Description}</div>
-          <div className="basis-1/4 px-1">
+        <div className="flex flex-row ">
+          <div className="basis-9/12">{Description}</div>
+          <div className="basis-1/4">
             <div className="flex flex-col space-y-1">
               <div
-                className={`text-blue mx-1 mb-1 flex items-center justify-center text-lg ${
+                className={`text-blue  flex items-center justify-center text-lg ${
                   deck['players'] >= 30
                     ? 'bold border-dashed-thick'
                     : 'border-dashed'
                 }`}
               >
-                <div className="pr-1 flex items-center">
+                <div className="flex items-center">
                   <PeopleFill />
                 </div>{' '}
                 {deck['players']}

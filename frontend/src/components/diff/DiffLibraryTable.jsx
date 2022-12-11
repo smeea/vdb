@@ -120,11 +120,9 @@ const DiffLibraryTable = ({
               )}
             </>
           ) : (
-            <td className="quantity-no-buttons px-1">{qFrom ? qFrom : null}</td>
+            <td className="quantity-no-buttons">{qFrom ? qFrom : null}</td>
           )}
-          <td
-            className={`w-[42px] min-w-[35px] text-lg ${!isMobile && 'pl-1'}`}
-          >
+          <td className={`w-[42px] min-w-[35px] text-lg ${!isMobile && ''}`}>
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
 
@@ -133,7 +131,7 @@ const DiffLibraryTable = ({
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
-            <td className="name px-2" onClick={() => handleClick()}>
+            <td className="name" onClick={() => handleClick()}>
               <ResultLibraryName card={card.c} />
             </td>
           </ConditionalTooltip>
@@ -147,7 +145,7 @@ const DiffLibraryTable = ({
               valuePool={card.c['Pool Cost']}
             />
           </td>
-          <td className="disciplines px-1" onClick={() => handleClick()}>
+          <td className="disciplines" onClick={() => handleClick()}>
             {DisciplineOrClan}
           </td>
           <td className="burn" onClick={() => handleClick()}>
@@ -155,7 +153,7 @@ const DiffLibraryTable = ({
             <ResultLibraryTrifle card={card.c} />
           </td>
           {showInfo && (
-            <td className="text-blue w-9 px-1 text-right">
+            <td className="text-blue w-9 text-right">
               {isMobile ? (
                 <div
                   onClick={() =>

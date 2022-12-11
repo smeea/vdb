@@ -94,7 +94,7 @@ const ResultCryptTableRow = ({
 `}
     >
       {(inRecommendation ? isEditable : isEditable && addMode) && (
-        <td className="quantity-add pr-1">
+        <td className="quantity-add ">
           <ButtonAddCard
             cardid={card.Id}
             deckid={deck.deckid}
@@ -111,7 +111,7 @@ const ResultCryptTableRow = ({
           >
             {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
               <div
-                className={`used ms-1 flex items-center justify-between px-1 ${
+                className={`used  flex items-center justify-between ${
                   inInventory < softUsedMax + hardUsedTotal
                     ? 'inv-miss-full'
                     : ''
@@ -124,7 +124,7 @@ const ResultCryptTableRow = ({
                     inInventory >= softUsedMax + hardUsedTotal
                       ? 'gray'
                       : 'white'
-                  } pl-1`}
+                  } `}
                 >
                   {inInventory >= softUsedMax + hardUsedTotal
                     ? `+${inInventory - softUsedMax - hardUsedTotal}`
@@ -136,7 +136,7 @@ const ResultCryptTableRow = ({
         </td>
       )}
       <td
-        className={isMobile ? 'capacity px-1' : 'capacity px-2'}
+        className={isMobile ? 'capacity' : 'capacity'}
         onClick={() => handleClick(card)}
       >
         <ResultCryptCapacity value={card.Capacity} />
@@ -147,7 +147,7 @@ const ResultCryptTableRow = ({
           value={card.Disciplines}
         />
       </td>
-      <td className="name px-2" onClick={() => handleClick(card)}>
+      <td className="name" onClick={() => handleClick(card)}>
         <ConditionalTooltip
           placement={placement}
           overlay={<CardPopover card={card} />}
@@ -158,7 +158,7 @@ const ResultCryptTableRow = ({
       </td>
       {isWide ? (
         <>
-          <td className="title pr-2" onClick={() => handleClick(card)}>
+          <td className="title " onClick={() => handleClick(card)}>
             <ResultCryptTitle value={card.Title} />
           </td>
           <td className="clan" onClick={() => handleClick(card)}>

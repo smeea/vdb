@@ -28,7 +28,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
           .filter((id) => value[id].q >= 0)
           .map((id) => {
             return (
-              <div key={id} className="flex items-center pt-1">
+              <div key={id} className="flex items-center ">
                 <TwdSearchFormQuantityButtons
                   value={value}
                   form={form}
@@ -45,7 +45,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                   >
                     <ResultCryptName card={cryptCardBase[id]} />
                     {cryptCardBase[id]['New'] && (
-                      <div className="pl-1 inline text-neutral-500">
+                      <div className="inline  text-neutral-500">
                         [G{cryptCardBase[id].Group}]
                       </div>
                     )}

@@ -62,7 +62,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
         </div>
       </div>
       {folded && !isMobile && (
-        <div className="flex space-x-2 pt-2">
+        <div className="flex space-x-2 ">
           <div className="md:basis-6/12">
             <DeckChangeDescription
               deck={deck}
@@ -80,14 +80,14 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
       {(!folded || isMobile) &&
         (deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
           <>
-            <div className={isMobile ? 'py-1' : 'pt-2'}>
+            <div className={isMobile ? '' : ''}>
               <DeckChangeDescription
                 deck={deck}
                 folded={isMobile ? false : folded}
                 setFolded={setFolded}
               />
             </div>
-            <div className={isMobile ? 'py-1' : 'pt-2'}>
+            <div className={isMobile ? '' : ''}>
               <DeckTags deck={deck} allTagsOptions={allTagsOptions} bordered />
             </div>
           </>

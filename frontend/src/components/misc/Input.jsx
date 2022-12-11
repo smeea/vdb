@@ -16,7 +16,7 @@ const Input = ({
 }) => {
   return (
     <input
-      className={`bg-blue-900 rounded border-2 border-red-400 px-1.5 py-1 ${
+      className={`rounded border-2 border-red-400 bg-blue-900  ${
         className ?? ''
       }`}
       placeholder={placeholder}

@@ -177,24 +177,20 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
       onShow={() => refUrl.current.focus()}
       size="lg"
       centered={isMobile}
-      dialogClassName={isMobile ? 'm-0' : null}
+      dialogClassName={isMobile ? '' : null}
       title="Import from Amaranth"
     >
       <div>
         <input
           placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
-          className="deck-import mb-3"
+          className="deck-import "
           type="text"
           name="url"
           value={deckUrl}
           onChange={(event) => setDeckUrl(event.target.value)}
           ref={refUrl}
         />
-        <div
-          className={
-            isMobile ? 'flex justify-end py-0 px-3' : 'flex justify-end py-1'
-          }
-        >
+        <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
           {!spinnerState ? (
             <Button variant="primary" onClick={handleImportButton}>
               Import
@@ -202,7 +198,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
           ) : (
             <Button variant="primary" onClick={handleImportButton}>
               <Spinner />
-              <span className="pl-2">Import</span>
+              <span>Import</span>
             </Button>
           )}
         </div>

@@ -95,7 +95,7 @@ const TwdCardsHistory = () => {
   }, [cryptCardBase, libraryCardBase]);
 
   return (
-    <div className="hof-history-container p-md-3 mx-auto px-0">
+    <div className="hof-history-container  mx-auto ">
       {/* TODO add styling to Tabs */}
       <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
         <Tab.List>

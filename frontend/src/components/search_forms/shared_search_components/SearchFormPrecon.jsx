@@ -79,12 +79,12 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
               name: 'precon',
               label: (
                 <div className="flex items-center justify-between">
-                  <div className="pr-2 flex items-center">
+                  <div className="flex items-center">
                     <div
                       className={
                         clanImages.length == 1
                           ? 'flex w-[40px] items-center justify-center'
-                          : 'pr-2 inline'
+                          : 'inline'
                       }
                     >
                       {clanImages}
@@ -116,11 +116,11 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   return (
     <>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="basis-1/4 px-0">
+      <div className="flex flex-row items-center">
+        <div className="basis-1/4">
           <div className="text-blue font-bold">Precon:</div>
           {value.value[0] !== 'any' && (
-            <div className="pr-1 flex justify-end">
+            <div className="flex justify-end">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -133,7 +133,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
             </div>
           )}
         </div>
-        <div className="inline basis-9/12 px-0">
+        <div className="inline basis-9/12">
           <Select
             classNamePrefix="react-select"
             options={options}
@@ -156,7 +156,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="flex flex-row items-center justify-end py-0.5 space-x-4">
+      <div className="flex flex-row items-center justify-end space-x-4">
         {[
           {
             value: 'only',

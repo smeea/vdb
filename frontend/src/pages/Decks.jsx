@@ -228,7 +228,7 @@ const Decks = () => {
 
   return (
     <div className="deck-container mx-auto">
-      <div className="mx-0 flex flex-row">
+      <div className=" flex flex-row">
         <div className="xl:basis-1/12"></div>
         <div className="basis-full lg:basis-10/12 xl:basis-9/12">
           <div className="flex flex-row">
@@ -255,7 +255,7 @@ const Decks = () => {
           </div>
           {error && (
             <div className="flex flex-row">
-              <div className="error-message flex items-center justify-center p-2 font-bold">
+              <div className="error-message flex items-center justify-center font-bold">
                 {error}
               </div>
             </div>
@@ -276,8 +276,8 @@ const Decks = () => {
                   </div>
                 </>
               ) : (
-                <div className="">
-                  <div className="error-message flex items-center justify-center p-2">
+                <div>
+                  <div className="error-message flex items-center justify-center">
                     <b>CONTAIN PLAYTEST CARDS</b>
                   </div>
                 </div>
@@ -303,8 +303,8 @@ const Decks = () => {
         )}
       </div>
       {!username && !deckid && !hash && (
-        <div className="flex flex-col space-y-8 h-[70vh] items-center justify-center">
-          <div className="justify-center text-blue font-bold">
+        <div className="flex h-[70vh] flex-col items-center justify-center space-y-8">
+          <div className="text-blue justify-center font-bold">
             <div className="flex justify-center text-lg">
               Login required to create decks
             </div>
@@ -322,8 +322,8 @@ const Decks = () => {
       )}
 
       {username && decks && Object.keys(decks).length === 0 && !deck && (
-        <div className="flex flex-col space-y-8 h-[70vh] items-center justify-center">
-          <div className="justify-center text-blue font-bold">
+        <div className="flex h-[70vh] flex-col items-center justify-center space-y-8">
+          <div className="text-blue justify-center font-bold">
             <div className="flex justify-center text-lg">
               You do not have any decks in your collection yet
             </div>

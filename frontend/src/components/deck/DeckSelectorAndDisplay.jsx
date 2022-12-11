@@ -26,17 +26,17 @@ const DeckSelectorAndDisplay = () => {
 
   return (
     <>
-      <div className="sticky-selector flex justify-end pt-3 pb-2">
+      <div className="sticky-selector flex justify-end  ">
         {addMode && (
           <>
-            <div className={isBranches ? 'w-75' : 'w-100'}>
+            <div className={isBranches ? 'w-75' : 'w-full'}>
               <DeckSelectMy
                 handleSelect={handleSelect}
                 deckid={deck?.deckid ?? null}
               />
             </div>
             {isBranches && (
-              <div className="pl-1 w-25">
+              <div className="w-25 ">
                 <DeckBranchSelect deck={deck ?? null} />
               </div>
             )}
@@ -44,13 +44,12 @@ const DeckSelectorAndDisplay = () => {
         )}
         {isDesktop && (
           <Button
-            className="ms-1"
             title="Hide Deck Panel"
             variant="primary"
             onClick={() => toggleAddMode()}
           >
             <div className="flex items-center justify-center">
-              <div className={`flex ${addMode ? '' : 'pr-2'}`}>
+              <div className={`flex ${addMode ? '' : ''}`}>
                 {addMode ? <EyeSlashFill /> : <EyeFill />}
               </div>
               {addMode ? '' : 'Show Deck'}
@@ -60,10 +59,10 @@ const DeckSelectorAndDisplay = () => {
       </div>
       {deck && addMode && (
         <>
-          <div className="pt-2">
+          <div>
             <DeckCrypt deck={deck} inSearch />
           </div>
-          <div className="pt-2">
+          <div>
             <DeckLibrary deck={deck} inSearch />
           </div>
         </>

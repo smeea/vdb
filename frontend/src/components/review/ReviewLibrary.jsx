@@ -54,8 +54,8 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
-    <div key={cardtype} className="pt-2">
-      <div className="pr-2 flex justify-between">
+    <div key={cardtype}>
+      <div className="flex justify-between ">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
@@ -106,7 +106,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
 
   return (
     <>
-      <div className={!isMobile ? 'sticky-deck-library pt-md-4 pt-4' : null}>
+      <div className={!isMobile ? 'sticky-deck-library  ' : null}>
         <DeckLibraryHeader
           isMobile={isMobile}
           libraryTotal={libraryTotal}
@@ -118,7 +118,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           inReview
         />
         {showInfo && (
-          <div className="info-message pl-2">
+          <div className="info-message ">
             <DeckLibraryTotalInfo
               byDisciplines={libraryByDisciplinesTotal}
               byTypes={libraryByTypeTotal}
@@ -152,7 +152,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
       </div>
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
-        <div className="pt-2 opacity-60">
+        <div className=" opacity-60">
           <b>Side Library</b>
           {LibrarySideDeck}
         </div>

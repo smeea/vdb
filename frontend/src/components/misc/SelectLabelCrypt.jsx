@@ -18,9 +18,9 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
         <div className="flex items-center">
           {inInventory && (
             <div
-              className={`me-2 inline w-7 text-center text-lg ${
+              className={` inline w-7 text-center text-lg ${
                 inventoryCrypt[cardid]
-                  ? 'border-gray-500 border-2 rounded-md'
+                  ? 'rounded-md border-2 border-gray-500'
                   : ''
               }`}
             >
@@ -28,15 +28,15 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
             </div>
           )}
           <ResultCryptCapacity value={cryptCardBase[cardid].Capacity} />
-          <div className="px-2">
+          <div>
             <ResultCryptName card={cryptCardBase[cardid]} />
             {cryptCardBase[cardid]['New'] && (
-              <div className="pl-2 inline text-neutral-500">
+              <div className="inline  text-neutral-500">
                 [G{cryptCardBase[cardid].Group}]
               </div>
             )}
           </div>
-          <div className="pr-3">
+          <div>
             <ResultClanImage value={cryptCardBase[cardid].Clan} />
           </div>
         </div>

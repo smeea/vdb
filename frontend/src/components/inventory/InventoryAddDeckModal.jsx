@@ -183,7 +183,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           {!isMobile && (
             <td className="clan">{clan && <ResultClanImage value={clan} />}</td>
           )}
-          <td className="name px-1">
+          <td className="name">
             <div
               className="name flex justify-between truncate"
               title={deck.name}
@@ -192,7 +192,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               {deck.branchName &&
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
-                  <div className="pl-2 revision inline" title={deck.branchName}>
+                  <div className="revision inline" title={deck.branchName}>
                     {deck.branchName}
                   </div>
                 )}
@@ -201,7 +201,6 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           {isDesktop && (
             <td className="preview">
               <div
-                className="m-2"
                 onMouseEnter={() => setShowDeck(deck.deckid)}
                 onMouseLeave={() => setShowDeck(false)}
               >
@@ -249,10 +248,10 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             </td>
           )}
           <td className="buttons">
-            <div className="pr-1 inline">
+            <div className="inline">
               <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
             </div>
-            <div className="pr-1 inline">
+            <div className="inline">
               <InventoryDeckDeleteButton
                 deck={deck}
                 inInventory={inInventory}
@@ -268,7 +267,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
     <Modal
       handleClose={handleClose}
       size="xl"
-      dialogClassName={isMobile ? 'm-0' : null}
+      dialogClassName={isMobile ? '' : null}
       title="Import Deck to Inventory"
     >
       <div>
@@ -303,7 +302,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                 </th>
               )}
               <th className="buttons">
-                <div className="flex items-center justify-end px-1">
+                <div className="flex items-center justify-end">
                   <Checkbox
                     id="revFilter"
                     label={isMobile ? 'Rev' : 'Revisions'}

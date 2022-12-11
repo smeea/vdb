@@ -17,7 +17,7 @@ const UsedDescription = ({ deck, t, q }) => {
           <PinAngleFill width="14" height="14" viewBox="0 0 16 16" />
         )}
       </div>
-      <div className="px-1">
+      <div>
         <b>{q}</b>
       </div>
       <div

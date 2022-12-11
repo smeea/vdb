@@ -6,7 +6,7 @@ const CardPopover = ({ card }) => {
   const { showImage } = useApp();
 
   return (
-    <div className={showImage ? 'p-1' : 'p-3'}>
+    <div className={showImage ? '' : ''}>
       {card.Id > 200000 ? (
         <ResultCryptPopover card={card} />
       ) : (

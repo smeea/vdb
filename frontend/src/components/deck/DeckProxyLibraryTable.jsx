@@ -120,7 +120,7 @@ const DeckProxyLibraryTable = ({
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
-            <td className="name pl-3 pr-2" onClick={() => handleClick(card.c)}>
+            <td className="name " onClick={() => handleClick(card.c)}>
               <ResultLibraryName card={card.c} />
             </td>
           </ConditionalTooltip>
@@ -131,7 +131,7 @@ const DeckProxyLibraryTable = ({
               valuePool={card.c['Pool Cost']}
             />
           </td>
-          <td className="disciplines px-1" onClick={() => handleClick(card.c)}>
+          <td className="disciplines" onClick={() => handleClick(card.c)}>
             <ResultLibraryClan value={card.c.Clan} />
             {card.c.Discipline && card.c.Clan && '+'}
             <ResultLibraryDisciplines value={card.c.Discipline} />
@@ -163,7 +163,7 @@ const DeckProxyLibraryTable = ({
               <Tooltip
                 placement="left"
                 overlay={
-                  <div className="p-1">
+                  <div>
                     <CardImage
                       card={card.c}
                       set={

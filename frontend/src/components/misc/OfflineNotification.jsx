@@ -14,8 +14,8 @@ const OfflineNotification = () => {
           /* sticky={isMobile ? 'top' : null} */
           /* className="offline-bar" */
         >
-          <div className="w-100 m-1 flex items-center justify-center">
-            <div className="pr-2 flex">
+          <div className="flex w-full items-center justify-center">
+            <div className="flex ">
               <WifiOff width="20" height="20" viewBox="0 0 16 16" />
             </div>
             OFFLINE

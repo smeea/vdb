@@ -7,12 +7,12 @@ const MenuButton = ({ title, icon, variant = 'primary', text }) => {
 
   return (
     <Menu.Button>
-      <div className={`p-1.5 rounded bg-red-800 ${btnVariant}`} title={title}>
+      <div className={`rounded bg-red-800 ${btnVariant}`} title={title}>
         {text === undefined || text === null ? (
           <>{icon}</>
         ) : (
           <div className="flex items-center justify-center">
-            <div className="pr-2 flex">{icon}</div>
+            <div className="flex ">{icon}</div>
             {text}
           </div>
         )}

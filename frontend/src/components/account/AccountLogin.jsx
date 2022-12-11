@@ -131,29 +131,29 @@ const AccountLogin = () => {
 
   return (
     <>
-      <div className="text-blue flex items-center px-1 py-2 text-xl font-bold">
-        <div className="pr-2 flex">
+      <div className="text-blue flex items-center text-xl font-bold">
+        <div className="flex">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
         Login
         {!isMobile ? (
           <Tooltip text={loginTooltipText}>
-            <span className="question-tooltip ms-2">[?]</span>
+            <span className="question-tooltip ">[?]</span>
           </Tooltip>
         ) : (
           <span
             onClick={() => setShowLoginTooltip(true)}
-            className="question-tooltip ms-2"
+            className="question-tooltip "
           >
             [?]
           </span>
         )}
       </div>
-      <form className="relative mb-0" onSubmit={handleSubmitButton}>
+      <form className="relative " onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {UsernameForm}
-            <form className="mt-2">{PasswordForm}</form>
+            <form>{PasswordForm}</form>
           </>
         ) : (
           <div className="input-group">
@@ -169,7 +169,7 @@ const AccountLogin = () => {
         )}
       </form>
       {!isMobile ? (
-        <div className="pl-2 flex justify-start pt-1 text-xs">
+        <div className="flex justify-start text-xs">
           <Tooltip
             delay={{ show: 0, hide: 2000 }}
             placement="bottom"
@@ -183,7 +183,7 @@ const AccountLogin = () => {
       ) : (
         <div
           onClick={() => setShowPasswordTooltip(true)}
-          className="pl-2 flex justify-start pt-1 text-xs"
+          className="flex justify-start text-xs"
         >
           <a href="#">
             <i>Forgot password?</i>

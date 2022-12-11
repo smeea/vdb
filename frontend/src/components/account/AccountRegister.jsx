@@ -68,7 +68,7 @@ const AccountRegister = () => {
 
   const EmailForm = (
     <Input
-      /* className="mt-2" */
+      /* */
       placeholder={`Email (Optional${
         isMobile ? '' : ', only for password reset'
       })`}
@@ -111,18 +111,18 @@ const AccountRegister = () => {
 
   return (
     <>
-      <div className="text-blue flex items-center px-1 py-2 text-xl font-bold">
-        <div className="pr-2 flex">
+      <div className="text-blue flex items-center text-xl font-bold">
+        <div className="flex">
           <PersonPlusFill width="22" height="22" viewBox="0 1 16 16" />
         </div>
         Create account
       </div>
-      <form className="mb-2" onSubmit={handleSubmitButton}>
+      <form onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
             {UsernameForm}
             {EmailForm}
-            <form className="mt-2">{PasswordForm}</form>
+            <form>{PasswordForm}</form>
           </>
         ) : (
           <>

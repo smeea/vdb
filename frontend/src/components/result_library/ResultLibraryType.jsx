@@ -6,7 +6,7 @@ const ResultLibraryType = ({ cardtype, total, trifleTotal }) => {
     return (
       <div className="flex">
         <ResultLibraryTypeImage value={cardtype} />
-        <div className="inline px-1">
+        <div className="inline ">
           {cardtype} [{total}]
           {trifleTotal ? <> - {trifleTotal} trifle</> : null}
         </div>
@@ -16,7 +16,7 @@ const ResultLibraryType = ({ cardtype, total, trifleTotal }) => {
     return (
       <div className="inline items-center">
         <ResultLibraryTypeImage value={cardtype} />
-        <div className="inline px-1">{cardtype}</div>
+        <div className="inline ">{cardtype}</div>
       </div>
     );
   }

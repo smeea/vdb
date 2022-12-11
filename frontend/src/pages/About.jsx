@@ -11,7 +11,7 @@ import changes from '../../../CHANGES.json';
 
 const Title = ({ children }) => {
   return (
-    <div className="text-blue py-1 text-xl font-bold underline">{children}</div>
+    <div className="text-blue  text-xl font-bold underline">{children}</div>
   );
 };
 
@@ -19,15 +19,15 @@ const About = () => {
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
 
   return (
-    <div className="search-container flex justify-center mx-auto">
+    <div className="search-container mx-auto flex justify-center">
       <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-        <div className="py-4">
+        <div>
           <Banner />
         </div>
         <div className="space-y-4">
           <div>
             <Title>WHAT IS IT</Title>
-            <div className="py-1">
+            <div>
               VDB is online card search, TWD (tournament winning decks) browser,
               deck building and inventory (collection) management tool for
               Vampire the Eternal Struggle (VTES)
@@ -35,7 +35,7 @@ const About = () => {
           </div>
           <div>
             <Title>QUICKSTART</Title>
-            <div className="py-1">
+            <div>
               <ul className="space-y-2">
                 <li>
                   <Link to="/crypt">Search crypt cards</Link>
@@ -89,7 +89,7 @@ const About = () => {
                 <li key={idx}>{change}</li>
               ))}
             </ul>
-            <div className="pt-2">
+            <div>
               <Link to="/changelog">&gt;&gt; Full changes history</Link>
             </div>
           </div>
@@ -190,7 +190,7 @@ const About = () => {
 
           <div className="space-y-1">
             <Title>DONATIONS</Title>
-            <ul className="space-y-2 no-bullets">
+            <ul className="no-bullets space-y-2">
               <li>
                 Patreon:{' '}
                 <a href="https://www.patreon.com/smeea">
@@ -205,7 +205,7 @@ const About = () => {
                   <div className="inline font-mono text-sm">{BTC_WALLET}</div>
                 </a>
                 <div
-                  className="pl-2 with-hover inline"
+                  className="with-hover inline "
                   onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
                 >
                   <ClipboardFill className="inline" viewBox="0 0 18 18" />
@@ -219,7 +219,7 @@ const About = () => {
             <ul className="no-bullets space-y-1">
               <li>
                 <div className="flex items-center">
-                  <div className="icon pr-2">
+                  <div className="icon ">
                     <Globe2 />
                   </div>
                   <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
@@ -229,7 +229,7 @@ const About = () => {
               </li>
               <li>
                 <div className="flex items-center">
-                  <div className="icon pr-2">
+                  <div className="icon ">
                     <Github />
                   </div>
                   <a href="https://github.com/smeea/vdb">
@@ -239,7 +239,7 @@ const About = () => {
               </li>
               <li>
                 <div className="flex items-center">
-                  <div className="icon pr-2">
+                  <div className="icon ">
                     <EnvelopeFill />
                   </div>
                   <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
@@ -247,7 +247,7 @@ const About = () => {
               </li>
               <li>
                 <div className="flex items-center">
-                  <div className="icon pr-2">
+                  <div className="icon ">
                     <Telegram />
                   </div>
                   <a href="https://t.me/smeea">@smeea</a>
@@ -255,7 +255,7 @@ const About = () => {
               </li>
               <li>
                 <div className="flex items-center">
-                  <div className="icon pr-2">
+                  <div className="icon ">
                     <Discord />
                   </div>
                   <a href="https://discord.com/users/264725500226830336">

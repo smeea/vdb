@@ -26,7 +26,7 @@ const ResultLibraryTotal = ({
 
   const totalOutput = Object.keys(byTypes).map((k) => {
     return (
-      <span key={k} className="pr-3 inline-block whitespace-nowrap">
+      <span key={k} className="inline-block whitespace-nowrap ">
         <div className="flex items-center">
           <ResultLibraryTypeImage value={k} />
           {byTypes[k]}
@@ -37,12 +37,12 @@ const ResultLibraryTotal = ({
 
   const value = (
     <>
-      <div className="whitespace-nowrap px-2">
+      <div className="whitespace-nowrap ">
         <b>
           {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
         </b>
       </div>
-      <div className="pt-2">{totalOutput}</div>
+      <div>{totalOutput}</div>
       <div className="flex">
         {!inCompare ? (
           <SortButton
@@ -51,7 +51,7 @@ const ResultLibraryTotal = ({
             setSortMethod={setSortMethod}
           />
         ) : (
-          <div className="ms-1">
+          <div>
             <Button
               title="Clear Compare"
               variant="primary"
@@ -66,7 +66,7 @@ const ResultLibraryTotal = ({
   );
 
   return (
-    <div className="info-message pr-1 pr-md-0 flex items-center justify-between">
+    <div className="info-message  flex items-center justify-between ">
       {value}
     </div>
   );

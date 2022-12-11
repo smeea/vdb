@@ -64,17 +64,17 @@ const AccountChangeName = () => {
 
   return (
     <>
-      <div className="text-blue flex items-center p-1 text-lg font-bold">
+      <div className="text-blue flex items-center text-lg font-bold">
         <PenFill />
-        <span className="ml-2">Change public name</span>
+        <span>Change public name</span>
         {!isMobile ? (
           <Tooltip text={tooltipText}>
-            <span className="question-tooltip ml-1">[?]</span>
+            <span className="question-tooltip ">[?]</span>
           </Tooltip>
         ) : (
           <span
             onClick={() => setShowModal(true)}
-            className="question-tooltip ml-1"
+            className="question-tooltip "
           >
             [?]
           </span>

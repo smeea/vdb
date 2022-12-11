@@ -28,7 +28,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
       {card.Id > 200000 ? (
         <>
           <td
-            className={isMobile ? 'capacity px-1' : 'capacity px-2'}
+            className={isMobile ? 'capacity ' : 'capacity '}
             onClick={() => handleClick(idx)}
           >
             <ResultCryptCapacity value={card.Capacity} />
@@ -41,7 +41,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
               />
             </td>
           )}
-          <td className="name px-2" onClick={() => handleClick(idx)}>
+          <td className="name " onClick={() => handleClick(idx)}>
             <ConditionalTooltip
               placement={isNarrow ? 'bottom' : 'right'}
               overlay={<CardPopover card={card} />}
@@ -65,7 +65,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
       ) : (
         <>
           <td
-            className={card[BLOOD_COST] ? 'cost blood px-1' : 'cost px-1'}
+            className={card[BLOOD_COST] ? 'cost blood ' : 'cost '}
             onClick={() => handleClick(idx)}
           >
             <ResultLibraryCost
@@ -73,15 +73,15 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
               valuePool={card[POOL_COST]}
             />
           </td>
-          <td className="type px-1" onClick={() => handleClick(idx)}>
+          <td className="type " onClick={() => handleClick(idx)}>
             <ResultLibraryTypeImage value={card.Type} />
           </td>
-          <td className="disciplines px-1" onClick={() => handleClick(idx)}>
+          <td className="disciplines " onClick={() => handleClick(idx)}>
             <ResultLibraryClan value={card.Clan} />
             {card.Discipline && card.Clan && '+'}
             <ResultLibraryDisciplines value={card.Discipline} />
           </td>
-          <td className="name px-1" onClick={() => handleClick(idx)}>
+          <td className="name " onClick={() => handleClick(idx)}>
             <ConditionalTooltip
               placement={isNarrow ? 'bottom' : 'right'}
               overlay={<CardPopover card={card} />}
@@ -91,7 +91,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
             </ConditionalTooltip>
           </td>
           {!isMobile && (
-            <td className="burn px-1" onClick={() => handleClick(idx)}>
+            <td className="burn " onClick={() => handleClick(idx)}>
               <ResultLibraryBurn value={card[BURN_OPTION]} />
               <ResultLibraryTrifle card={card} />
             </td>
@@ -99,21 +99,21 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
         </>
       )}
       {!isMobile && (
-        <td className="px-1 text-center" onClick={() => handleClick(idx)}>
+        <td className=" text-center" onClick={() => handleClick(idx)}>
           {card.releaseDate.slice(0, 4)}
         </td>
       )}
-      <td className="px-1 text-center" onClick={() => handleClick(idx)}>
+      <td className=" text-center" onClick={() => handleClick(idx)}>
         {card.twdDate.slice(0, 4)}
       </td>
-      <td className="px-1 text-center">
+      <td className=" text-center">
         {Math.round(
           (new Date(card.twdDate) - new Date(card.releaseDate)) /
             (1000 * 60 * 60 * 24) /
             365
         ) || 1}
       </td>
-      <td className={`${isMobile ? '' : 'px-1'}`}>
+      <td className={`${isMobile ? '' : ''}`}>
         {card.deckid && (
           <div>
             <TwdOpenDeckButton

@@ -160,7 +160,7 @@ const DeckCryptTableRow = ({
       ) : (
         <>
           {inventoryMode && decks ? (
-            <td className="quantity-no-buttons px-1">
+            <td className="quantity-no-buttons">
               <Tooltip
                 placement="bottom"
                 overlay={<UsedPopover cardid={card.c.Id} />}
@@ -182,12 +182,12 @@ const DeckCryptTableRow = ({
               </Tooltip>
             </td>
           ) : (
-            <td className="quantity-no-buttons px-1">{card.q || null}</td>
+            <td className="quantity-no-buttons">{card.q || null}</td>
           )}
         </>
       )}
       <td
-        className={isMobile ? 'capacity' : 'capacity px-1'}
+        className={isMobile ? 'capacity' : 'capacity'}
         onClick={() => handleClick(card.c)}
       >
         <ResultCryptCapacity value={card.c.Capacity} />
@@ -211,7 +211,7 @@ const DeckCryptTableRow = ({
         </td>
       )}
 
-      <td className="name px-2" onClick={() => handleClick(card.c)}>
+      <td className="name" onClick={() => handleClick(card.c)}>
         <Tooltip placement={placement} overlay={<CardPopover card={card.c} />}>
           <ResultCryptName card={card.c} />
         </Tooltip>
@@ -219,7 +219,7 @@ const DeckCryptTableRow = ({
 
       {isWide && !(keyDisciplines + nonKeyDisciplines > 6 && inSearch) ? (
         <>
-          <td className="title pr-2" onClick={() => handleClick(card.c)}>
+          <td className="title " onClick={() => handleClick(card.c)}>
             <ResultCryptTitle value={card.c.Title} />
           </td>
           <td className="clan" onClick={() => handleClick(card.c)}>
@@ -245,7 +245,7 @@ const DeckCryptTableRow = ({
         </>
       )}
       {showInfo && (
-        <td className="text-blue w-9 px-1 text-right">
+        <td className="text-blue w-9 text-right">
           {isMobile ? (
             <div
               onClick={() =>

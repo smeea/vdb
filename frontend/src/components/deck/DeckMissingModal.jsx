@@ -23,12 +23,12 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
   return (
     <Modal
       handleClose={handleClose}
-      dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
+      dialogClassName={isMobile ? '' : 'modal-wide'}
       title={deck.name}
     >
       <div>
-        <div className="pb-md-2 flex flex-row px-0 pb-4">
-          <div className="pl-lg-4 pr-lg-3 basis-full px-0 md:basis-7/12">
+        <div className="flex flex-row ">
+          <div className="basis-full md:basis-7/12">
             <div className={isMobile || inInventory ? null : 'sticky-modal'}>
               <DeckCrypt
                 deck={{ ...deck, crypt: crypt, library: library }}
@@ -36,22 +36,16 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
               />
             </div>
           </div>
-          <div className="pl-lg-3 pr-lg-4 basis-full px-0 md:basis-5/12">
+          <div className="basis-full md:basis-5/12">
             <DeckLibrary
               deck={{ ...deck, crypt: crypt, library: library }}
               inMissing
             />
           </div>
         </div>
-        <div
-          className={
-            isMobile
-              ? 'flex justify-end py-2 pt-2'
-              : 'flex justify-end px-2 pb-4'
-          }
-        >
+        <div className={isMobile ? 'flex justify-end ' : 'flex justify-end '}>
           {inInventory && (
-            <div className="pl-2">
+            <div>
               <ButtonIconed
                 variant="primary"
                 onClick={handleMissAllVtes}
@@ -60,7 +54,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
               />
             </div>
           )}
-          <div className="pl-2">
+          <div>
             <DeckExportButton
               deck={{ ...deck, crypt: crypt, library: library }}
               inMissing

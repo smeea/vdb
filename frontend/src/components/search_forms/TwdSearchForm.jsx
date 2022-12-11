@@ -208,7 +208,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   return (
     <>
-      <div className="mx-0 flex flex-row justify-between pb-2">
+      <div className="flex flex-row justify-between ">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
           getNew={getNewTwd}
@@ -217,11 +217,11 @@ const TwdSearchForm = ({ error, setError }) => {
       </div>
       {inventoryMode && (
         <>
-          <div className="pl-1 mx-0 flex flex-row items-center py-1">
-            <div className="flex basis-1/2 text-blue mb-0 font-bold px-0">
+          <div className="flex flex-row items-center">
+            <div className="text-blue flex basis-1/2  font-bold">
               In Inventory by Crypt:
             </div>
-            <div className="inline basis-1/2 px-0">
+            <div className="inline basis-1/2">
               <TwdSearchFormMatchInventory
                 value={twdFormState.matchInventory.crypt}
                 target={'crypt'}
@@ -229,11 +229,11 @@ const TwdSearchForm = ({ error, setError }) => {
               />
             </div>
           </div>
-          <div className="pl-1 mx-0 flex flex-row items-center py-1">
-            <div className="flex basis-1/2 text-blue mb-0 font-bold px-0">
+          <div className="flex flex-row items-center">
+            <div className="text-blue flex basis-1/2  font-bold">
               In Inventory by Library:
             </div>
-            <div className="inline basis-1/2 px-0">
+            <div className="inline basis-1/2">
               <TwdSearchFormMatchInventory
                 value={twdFormState.matchInventory.library}
                 target={'library'}
@@ -241,8 +241,8 @@ const TwdSearchForm = ({ error, setError }) => {
               />
             </div>
           </div>
-          <div className="pl-1 mx-0 flex flex-row items-center py-1">
-            <div className="xs={{ span: 6, offset: 6 }} inline px-0">
+          <div className="flex flex-row items-center">
+            <div className="xs={{ span: 6, offset: 6 }} inline">
               <Checkbox
                 name="60"
                 label="Scale to 60 cards"
@@ -259,33 +259,33 @@ const TwdSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-2/12 px-0">
-          <div className="text-blue px-0 font-bold">Year:</div>
+      <div className="flex flex-row items-center">
+        <div className="flex basis-2/12">
+          <div className="text-blue font-bold">Year:</div>
         </div>
-        <div className="inline basis-10/12 px-0">
+        <div className="inline basis-10/12">
           <TwdSearchFormDate
             value={twdFormState.date}
             onChange={handleChangeWithOpt}
           />
         </div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-2/12 px-0">
-          <div className="text-blue px-0 font-bold">Players:</div>
+      <div className="flex flex-row items-center">
+        <div className="flex basis-2/12">
+          <div className="text-blue font-bold">Players:</div>
         </div>
-        <div className="inline basis-10/12 px-0">
+        <div className="inline basis-10/12">
           <TwdSearchFormPlayers
             value={twdFormState.players}
             onChange={handleChangeWithOpt}
           />
         </div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="text-blue px-0 font-bold">Crypt Cards:</div>
+      <div className="flex flex-row items-center">
+        <div className="text-blue font-bold">Crypt Cards:</div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="inline basis-full px-0">
+      <div className="flex flex-row items-center">
+        <div className="inline basis-full">
           {cryptCardBase && (
             <TwdSearchFormCrypt
               value={twdFormState.crypt}
@@ -294,7 +294,7 @@ const TwdSearchForm = ({ error, setError }) => {
           )}
         </div>
       </div>
-      <div className="pr-1 mx-0 flex flex-row justify-end pb-1">
+      <div className="flex flex-row justify-end ">
         <Checkbox
           name="traits"
           value="star"
@@ -303,11 +303,11 @@ const TwdSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="text-blue px-0 font-bold">Library Cards:</div>
+      <div className="flex flex-row items-center">
+        <div className="text-blue font-bold">Library Cards:</div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="inline basis-full px-0">
+      <div className="flex flex-row items-center">
+        <div className="inline basis-full">
           {libraryCardBase && (
             <TwdSearchFormLibrary
               value={twdFormState.library}
@@ -316,29 +316,29 @@ const TwdSearchForm = ({ error, setError }) => {
           )}
         </div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-1/4 px-0">
-          <div className="text-blue px-0 font-bold">Library Size:</div>
+      <div className="flex flex-row items-center">
+        <div className="flex basis-1/4">
+          <div className="text-blue font-bold">Library Size:</div>
         </div>
-        <div className="flex basis-9/12 justify-end px-0">
+        <div className="flex basis-9/12 justify-end">
           <TwdSearchFormLibraryTotal
             value={twdFormState.libraryTotal}
             onChange={handleMultiChange}
           />
         </div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-1/4 px-0">
-          <div className="text-blue px-0 font-bold">Clan:</div>
+      <div className="flex flex-row items-center">
+        <div className="flex basis-1/4">
+          <div className="text-blue font-bold">Clan:</div>
         </div>
-        <div className="inline basis-9/12 px-0">
+        <div className="inline basis-9/12">
           <TwdSearchFormClan
             value={twdFormState.clan}
             onChange={handleChange}
           />
         </div>
       </div>
-      <div className="pr-1 mx-0 flex flex-row justify-end pb-1">
+      <div className="flex flex-row justify-end ">
         <Checkbox
           name="traits"
           value="monoclan"
@@ -347,48 +347,48 @@ const TwdSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-1/4 px-0">
-          <div className="text-blue px-0 font-bold">Sect:</div>
+      <div className="flex flex-row items-center">
+        <div className="flex basis-1/4">
+          <div className="text-blue font-bold">Sect:</div>
         </div>
-        <div className="inline basis-9/12 px-0">
+        <div className="inline basis-9/12">
           <TwdSearchFormSect
             value={twdFormState.sect}
             onChange={handleChange}
           />
         </div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-5/12 px-0">
-          <div className="text-blue px-0 font-bold">Capacity Avg:</div>
+      <div className="flex flex-row items-center">
+        <div className="flex basis-5/12">
+          <div className="text-blue font-bold">Capacity Avg:</div>
         </div>
-        <div className="flex basis-7/12 justify-end px-0">
+        <div className="flex basis-7/12 justify-end">
           <TwdSearchFormCapacity
             value={twdFormState.capacity}
             onChange={handleMultiChange}
           />
         </div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="text-blue px-0 font-bold">Library Disciplines:</div>
+      <div className="flex flex-row items-center">
+        <div className="text-blue font-bold">Library Disciplines:</div>
       </div>
       <TwdSearchFormDisciplines
         value={twdFormState.disciplines}
         onChange={handleMultiChange}
       />
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="pr-0 pl-1 inline basis-full">
+      <div className="flex flex-row items-center">
+        <div className="inline basis-full">
           <TwdSearchFormCardtypes
             value={twdFormState.cardtypes}
             onChange={handleChangeWithOpt}
           />
         </div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-1/4 px-0">
-          <div className="text-blue px-0 font-bold">Event:</div>
+      <div className="flex flex-row items-center">
+        <div className="flex basis-1/4">
+          <div className="text-blue font-bold">Event:</div>
         </div>
-        <div className="inline basis-9/12 px-0">
+        <div className="inline basis-9/12">
           <Input
             placeholder="Event Name"
             value={twdFormState.event}
@@ -396,22 +396,22 @@ const TwdSearchForm = ({ error, setError }) => {
           />
         </div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-1/4 px-0">
-          <div className="text-blue px-0 font-bold">Location:</div>
+      <div className="flex flex-row items-center">
+        <div className="flex basis-1/4">
+          <div className="text-blue font-bold">Location:</div>
         </div>
-        <div className="inline basis-9/12 px-0">
+        <div className="inline basis-9/12">
           <TwdSearchFormLocation
             value={twdFormState.location}
             form={searchTwdForm}
           />
         </div>
       </div>
-      <div className="pl-1 mx-0 flex flex-row items-center py-1">
-        <div className="flex basis-1/4 px-0">
-          <div className="text-blue px-0 font-bold">Winner:</div>
+      <div className="flex flex-row items-center">
+        <div className="flex basis-1/4">
+          <div className="text-blue font-bold">Winner:</div>
         </div>
-        <div className="inline basis-9/12 px-0">
+        <div className="inline basis-9/12">
           <TwdSearchFormPlayer
             value={twdFormState.author}
             form={searchTwdForm}
@@ -432,7 +432,7 @@ const TwdSearchForm = ({ error, setError }) => {
             className="float-right-bottom float-search flex items-center justify-center"
           >
             {!spinnerState ? (
-              <Check2 viewBox="0 0 16 16" className="pt-1" />
+              <Check2 viewBox="0 0 16 16" />
             ) : (
               <Spinner animation="border" variant="light" />
             )}

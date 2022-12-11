@@ -14,10 +14,10 @@ const Modal = ({ handleClose, title, children }) => {
       <div className="fixed inset-0 bg-black bg-opacity-50" />
 
       <div className="fixed inset-0 overflow-y-auto">
-        <div className="flex min-h-full items-center justify-center p-4">
+        <div className="flex min-h-full items-center justify-center">
           <Dialog.Panel className="w-full rounded bg-neutral-700">
             {title && (
-              <Dialog.Title className="border-none pt-md-3 pb-md-1 px-md-4 px-2 pt-2 pb-0">
+              <Dialog.Title className="   border-none   ">
                 <div className="text-blue text-lg font-bold">{title}</div>
               </Dialog.Title>
             )}

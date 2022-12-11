@@ -9,24 +9,24 @@ import { Banner } from 'components';
 
 const Title = ({ children }) => {
   return (
-    <div className="text-blue py-1 text-xl font-bold underline">{children}</div>
+    <div className="text-blue  text-xl font-bold underline">{children}</div>
   );
 };
 
 const SubTitle = ({ children }) => {
-  return <div className="text-blue py-1 font-bold">{children}</div>;
+  return <div className="text-blue  font-bold">{children}</div>;
 };
 
 const Documentation = () => {
   return (
     <div className="search-container mx-auto">
       <div className="flex flex-row justify-center">
-        <div className="basis-full px-0 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
+        <div className="basis-full  md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
           <Banner />
-          <div className="pt-lg-3 px-3 pt-0">
-            <div className="pb-4">
+          <div className="  ">
+            <div>
               <Title>HELP / DOCUMENTATION</Title>
-              <div className="py-1">
+              <div>
                 Documentation below describe some logic of VDB components.
                 <br />
                 If something is not clear or you need additional information,
@@ -35,9 +35,9 @@ const Documentation = () => {
               </div>
             </div>
 
-            <div className="pb-4">
+            <div>
               <Title>TABLE OF CONTENT</Title>
-              <div className="py-1">
+              <div>
                 <ul>
                   <li>
                     <a href="#crypt">Crypt search</a>
@@ -64,9 +64,9 @@ const Documentation = () => {
               </div>
             </div>
 
-            <div className="pb-4">
+            <div>
               <Title id="crypt">CRYPT SEARCH</Title>
-              <div className="py-1">
+              <div>
                 <SubTitle>Name or Text</SubTitle>
                 <ul>
                   <li>
@@ -113,9 +113,9 @@ const Documentation = () => {
               </ul>
             </div>
 
-            <div className="pb-4">
+            <div>
               <Title id="library">LIBRARY SEARCH</Title>
-              <div className="py-1">
+              <div>
                 <SubTitle>Name or Text</SubTitle>
                 <ul>
                   <li>
@@ -148,9 +148,9 @@ const Documentation = () => {
               </div>
             </div>
 
-            <div className="pb-4">
+            <div>
               <Title id="twd">TWD SEARCH</Title>
-              <div className="py-1">
+              <div>
                 <SubTitle>Star Vampire</SubTitle>
                 <ul>
                   <li>
@@ -234,14 +234,14 @@ const Documentation = () => {
               </div>
             </div>
 
-            <div className="pb-4">
+            <div>
               <Title id="pda">PDA SEARCH</Title>
-              <div className="py-1">
+              <div>
                 Public Deck Archive (PDA) let you share your decks with other
                 players and search other players shared decks
               </div>
 
-              <div className="py-1">
+              <div>
                 <SubTitle>Following concepts are behind PDA:</SubTitle>
                 <ul>
                   <li>
@@ -286,9 +286,9 @@ const Documentation = () => {
               </div>
             </div>
 
-            <div className="pb-4">
+            <div>
               <Title id="cards">CARD VIEW</Title>
-              <div className="py-1">
+              <div>
                 <ul>
                   <li>Clicking on the card will open detailed card view.</li>
                   <li>
@@ -306,9 +306,9 @@ const Documentation = () => {
               </div>
             </div>
 
-            <div className="pb-4">
+            <div>
               <Title id="decks">DECK BUILDING</Title>
-              <div className="py-1">
+              <div>
                 <SubTitle>Hints</SubTitle>
                 <ul>
                   <li>
@@ -371,14 +371,14 @@ const Documentation = () => {
               </div>
             </div>
 
-            <div className="pb-4">
+            <div>
               <Title id="inventory">INVENTORY MANAGEMENT</Title>
-              <div className="py-1">
+              <div>
                 Inventory management in VDB let you browse your card collection
                 with existing crypt/library search and track how collection is
                 used in your existing decks
               </div>
-              <div className="py-1">
+              <div>
                 <SubTitle>Add cards from you collection:</SubTitle>
                 <ul>
                   <li>
@@ -414,7 +414,7 @@ const Documentation = () => {
                 </SubTitle>
                 <ul>
                   <li>
-                    <div className="inline px-2">
+                    <div className="inline ">
                       <At className="inline" />
                     </div>
                     Virtual (default). These decks are excluded from inventory
@@ -422,7 +422,7 @@ const Documentation = () => {
                     or your in-progress projects
                   </li>
                   <li>
-                    <div className="inline px-2">
+                    <div className="inline ">
                       <Shuffle className="inline" />
                     </div>
                     Flexible. These decks can share cards between them, like you
@@ -430,7 +430,7 @@ const Documentation = () => {
                     not big (yet)
                   </li>
                   <li>
-                    <div className="inline px-2">
+                    <div className="inline ">
                       <PinAngleFill className="inline" />
                     </div>
                     Fixed. These decks each use unique cards like for your

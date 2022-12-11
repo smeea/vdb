@@ -111,7 +111,7 @@ const TwdHallOfFameCards = () => {
   };
 
   return (
-    <div className="hof-cards-container p-md-3 mx-auto px-0">
+    <div className="hof-cards-container  mx-auto ">
       {/* TODO add styling to Tabs */}
       <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
         <Tab.List>
@@ -136,7 +136,7 @@ const TwdHallOfFameCards = () => {
             )}
           </Tab.Panel>
           <Tab.Panel>
-            <div className="border p-2">
+            <div className="border">
               Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365}{' '}
               years after card print, and excluding cards from first 2 years of
               active tournaments (till {IGNORED_TOURNAMENTS_DATE})

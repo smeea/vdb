@@ -111,7 +111,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       {
         value: 'any',
         name: i[0].toLowerCase(),
-        label: <div className="pl-4">ANY</div>,
+        label: <div>ANY</div>,
       },
     ];
 
@@ -119,17 +119,17 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       options.push({
         value: j[0],
         name: i[0].toLowerCase(),
-        label: <div className="px-4">{j[1]}</div>,
+        label: <div>{j[1]}</div>,
       });
     });
 
     if (idx < 5) {
       formsLeft.push(
-        <div className="mx-0 flex flex-row items-center py-1" key={i[0]}>
-          <div className="pl-2 flex basis-2/12 justify-center">
+        <div className=" flex flex-row items-center " key={i[0]}>
+          <div className="flex basis-2/12 justify-center ">
             <ResultLibraryTypeImage value={i[0]} />
           </div>
-          <div className="inline basis-10/12 px-0">
+          <div className="inline basis-10/12 ">
             <Select
               classNamePrefix="react-select"
               options={options}
@@ -146,11 +146,11 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       );
     } else {
       formsRight.push(
-        <div className="mx-0 flex flex-row items-center py-1" key={i[0]}>
-          <div className="pl-2 flex basis-2/12 justify-center">
+        <div className=" flex flex-row items-center " key={i[0]}>
+          <div className="flex basis-2/12 justify-center ">
             <ResultLibraryTypeImage value={i[0]} />
           </div>
-          <div className="inline basis-10/12 px-0">
+          <div className="inline basis-10/12 ">
             <Select
               classNamePrefix="react-select"
               options={options}
@@ -170,9 +170,9 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="mx-0 flex flex-row">
-        <div className="pl-0 pr-2 inline basis-1/2">{formsLeft}</div>
-        <div className="pl-2 pr-0 inline basis-1/2">{formsRight}</div>
+      <div className=" flex flex-row">
+        <div className="inline basis-1/2  ">{formsLeft}</div>
+        <div className="inline basis-1/2  ">{formsRight}</div>
       </div>
     </>
   );

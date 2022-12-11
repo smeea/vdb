@@ -50,10 +50,10 @@ const InventoryDesktop = ({
   return (
     <>
       {isWide && <div className="xl:basis-1/12" />}
-      <div className="px-md-2 pr-xl-3 px-0 md:basis-1/2 lg:basis-1/2 xl:basis-5/12">
+      <div className="   md:basis-1/2 lg:basis-1/2 xl:basis-5/12">
         {!inShared && (
           <>
-            <div className="sticky-selector pt-3 pb-2">
+            <div className="sticky-selector  ">
               <InventoryNewCryptCard
                 cards={inventoryCrypt}
                 setNewId={setNewCryptId}
@@ -61,7 +61,7 @@ const InventoryDesktop = ({
               />
             </div>
             {newCryptId && (
-              <div className="sticky-inv-result py-2">
+              <div className="sticky-inv-result ">
                 <InventoryCrypt
                   cards={{
                     [newCryptId]: inventoryCrypt[newCryptId]
@@ -76,7 +76,7 @@ const InventoryDesktop = ({
           </>
         )}
         {inventoryCrypt && (usedCrypt.soft || usedCrypt.hard) && (
-          <div className="pt-2">
+          <div>
             <InventoryCrypt
               withCompact={newCryptId}
               category={sharedInventoryCrypt ? 'ok' : category}
@@ -91,10 +91,10 @@ const InventoryDesktop = ({
           </div>
         )}
       </div>
-      <div className="xl={isWide ? 4 : 5} px-md-2 px-xl-3 px-0 md:basis-1/2 lg:basis-1/2">
+      <div className="xl={isWide ? 4 : 5}    md:basis-1/2 lg:basis-1/2">
         {!inShared && (
           <>
-            <div className="sticky-selector pt-3 pb-2">
+            <div className="sticky-selector  ">
               <InventoryNewLibraryCard
                 cards={inventoryLibrary}
                 setNewId={setNewLibraryId}
@@ -102,7 +102,7 @@ const InventoryDesktop = ({
               />
             </div>
             {newLibraryId && (
-              <div className="sticky-inv-result py-2">
+              <div className="sticky-inv-result ">
                 <InventoryLibrary
                   cards={{
                     [newLibraryId]: inventoryLibrary[newLibraryId]
@@ -117,7 +117,7 @@ const InventoryDesktop = ({
           </>
         )}
         {inventoryLibrary && (usedLibrary.soft || usedLibrary.hard) && (
-          <div className="pt-2">
+          <div>
             <InventoryLibrary
               withCompact={newLibraryId}
               category={sharedInventoryLibrary ? 'ok' : category}
@@ -137,7 +137,7 @@ const InventoryDesktop = ({
           </div>
         )}
       </div>
-      <div className="hide-on-lt1200px px-lg-2 px-xl-3 px-0 lg:basis-1/6">
+      <div className="hide-on-lt1200px    lg:basis-1/6">
         <div className="sticky-buttons">
           <InventoryButtons
             crypt={sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt}
@@ -156,7 +156,7 @@ const InventoryDesktop = ({
             setInventoryKey={setInventoryKey}
             inShared={inShared}
           />
-          <div className="px-4 py-2">
+          <div className=" ">
             <InventoryShowSelect
               category={category}
               setCategory={setCategory}

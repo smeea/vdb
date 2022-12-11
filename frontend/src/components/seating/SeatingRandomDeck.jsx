@@ -9,7 +9,7 @@ const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (
     <>
       <div
-        className={`ps-2 flex items-center py-1 ${
+        className={`ps-2 flex items-center  ${
           !disabled && deck.state ? '' : 'gray'
         }`}
       >
@@ -17,7 +17,7 @@ const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
           className="flex items-center"
           onClick={() => !disabled && toggle(i)}
         >
-          <div className="pr-2 flex items-center">
+          <div className="flex items-center ">
             <>
               {deck.state ? (
                 <ToggleOn width="22" height="22" viewBox="0 0 16 16" />
@@ -29,11 +29,11 @@ const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
           {deck.name}
         </div>
         {deck.deckid ? (
-          <Link className="px-1" target="_blank" to={`/decks/${deck.deckid}`}>
+          <Link target="_blank" to={`/decks/${deck.deckid}`}>
             <PlayFill width="18" height="18" viewBox="0 2 12 14" />
           </Link>
         ) : (
-          <div className="cursor-pointer px-1" onClick={() => remove(i)}>
+          <div className="cursor-pointer " onClick={() => remove(i)}>
             <X width="22" height="22" viewBox="0 0 16 16" />
           </div>
         )}

@@ -9,11 +9,11 @@ const TwdCheck = () => {
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex flex-row justify-center py-2">
-        <div className={`xl:${isWide ? '8/12' : '9/12'} border py-2`}>
+      <div className="flex flex-row justify-center ">
+        <div className={`xl:${isWide ? '8/12' : '9/12'} border `}>
           <TwdDeck eventId={eventId} setEventId={setEventId} />
         </div>
-        <div className={`xl:${isWide ? '4/12' : '3/12'} border py-2`}>
+        <div className={`xl:${isWide ? '4/12' : '3/12'} border `}>
           <TwdEvent eventId={eventId} setEventId={setEventId} />
         </div>
       </div>

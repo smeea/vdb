@@ -221,28 +221,28 @@ const Review = () => {
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
 
   return (
-    <div className="deck-container px-md-2 px-xl-4 py-md-3 mx-auto px-0">
-      <div className="mx-0 flex flex-row">
+    <div className="deck-container mx-auto">
+      <div className="flex flex-row">
         <div className="xl:basis-1/12" />
-        <div className="px-md-2 px-xl-3 basis-full lg:basis-5/6 xl:basis-9/12">
-          <div className="px-md-0 pt-md-0 flex flex-row px-1 py-1 pb-0">
-            <div className="px-md-2 px-0">
+        <div className="basis-full lg:basis-5/6 xl:basis-9/12">
+          <div className="flex flex-row ">
+            <div>
               {deckFrom && (
                 <>
                   {isMobile ? (
                     <DeckChangeName deck={deckFrom} isAuthor={false} />
                   ) : (
                     <>
-                      <div className="pb-sm-2 mx-0 flex flex-row">
-                        <div className="pl-md-0 pr-md-1 px-0 md:basis-8/12">
+                      <div className="flex flex-row">
+                        <div className="md:basis-8/12">
                           <DeckChangeName deck={deckFrom} />
                         </div>
-                        <div className="pl-md-1 pr-md-0 pt-md-0 px-0 pt-2 md:basis-1/3">
+                        <div className="md:basis-1/3">
                           <DeckChangeAuthor deck={deckFrom} />
                         </div>
                       </div>
-                      <div className="mx-0 flex flex-row">
-                        <div className="px-0">
+                      <div className="flex flex-row">
+                        <div>
                           <DeckChangeDescription
                             deck={deckFrom}
                             folded={foldedDescription}
@@ -250,13 +250,13 @@ const Review = () => {
                           />
                         </div>
                         {foldedDescription && deckFrom?.tags.length > 0 && (
-                          <div className="pl-2 pr-0">
+                          <div>
                             <DeckTags deck={deckFrom} bordered />
                           </div>
                         )}
                       </div>
                       {!foldedDescription && deckFrom?.tags.length > 0 && (
-                        <div className="block pt-2">
+                        <div className="block ">
                           <DeckTags deck={deckFrom} bordered />
                         </div>
                       )}
@@ -268,23 +268,23 @@ const Review = () => {
           </div>
           {error && (
             <div className="flex flex-row">
-              <div className="px-lg-2 px-0 py-4">
-                <div className="error-message flex items-center justify-center p-2">
+              <div>
+                <div className="error-message flex items-center justify-center">
                   <b>{error}</b>
                 </div>
               </div>
             </div>
           )}
           {deckFrom && (
-            <div className="pt-md-2 flex flex-row">
-              <div className="px-md-2 pl-xl-2 pr-xl-3 pt-md-0 px-0 pt-3 md:basis-7/12">
+            <div className="flex flex-row">
+              <div className="md:basis-7/12">
                 <ReviewCrypt
                   cardsFrom={deckFrom.crypt}
                   cardsTo={deckTo.crypt}
                   cardChange={cardChange}
                 />
               </div>
-              <div className="px-md-2 pl-xl-3 pr-xl-2 pt-md-0 px-0 pt-3 md:basis-5/12">
+              <div className="md:basis-5/12">
                 <ReviewLibrary
                   cardsFrom={deckFrom.library}
                   cardsTo={deckTo.library}
@@ -295,7 +295,7 @@ const Review = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="hide-on-lt992px px-lg-3 lg:basis-1/6">
+          <div className="hide-on-lt992px lg:basis-1/6">
             <div className="sticky-buttons">
               <ReviewButtons
                 deck={deckFrom}
@@ -333,7 +333,7 @@ const Review = () => {
               deckid={deckFrom?.deckid}
               urlDiff={urlDiff}
             />
-            <div className="flex justify-end pt-1">
+            <div className="flex justify-end ">
               <ButtonIconed
                 variant="secondary"
                 onClick={() => {

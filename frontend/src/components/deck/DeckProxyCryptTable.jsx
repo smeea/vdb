@@ -130,7 +130,7 @@ const DeckProxyCryptTable = ({
             </td>
           )}
           <td
-            className={isMobile ? 'capacity' : 'capacity px-1'}
+            className={isMobile ? 'capacity' : 'capacity'}
             onClick={() => handleClick(card.c)}
           >
             <ResultCryptCapacity value={card.c.Capacity} />
@@ -156,7 +156,7 @@ const DeckProxyCryptTable = ({
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
-            <td className="name px-2" onClick={() => handleClick(card.c)}>
+            <td className="name" onClick={() => handleClick(card.c)}>
               <ResultCryptName card={card.c} />
             </td>
           </ConditionalTooltip>
@@ -195,7 +195,7 @@ const DeckProxyCryptTable = ({
               <Tooltip
                 placement="right"
                 overlay={
-                  <div className="p-1">
+                  <div>
                     <CardImage
                       card={card.c}
                       set={

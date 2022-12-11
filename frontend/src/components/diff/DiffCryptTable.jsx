@@ -116,15 +116,13 @@ const DiffCryptTable = ({
               )}
             </>
           ) : (
-            <td className="quantity-no-buttons px-1">{qFrom ? qFrom : null}</td>
+            <td className="quantity-no-buttons">{qFrom ? qFrom : null}</td>
           )}
-          <td
-            className={`w-[42px] min-w-[35px] text-lg ${!isMobile && 'pl-1'}`}
-          >
+          <td className={`w-[42px] min-w-[35px] text-lg ${!isMobile && ''}`}>
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
           <td
-            className={isMobile ? 'capacity' : 'capacity pr-1'}
+            className={isMobile ? 'capacity' : 'capacity '}
             onClick={() => handleClick()}
           >
             <ResultCryptCapacity value={card.c.Capacity} />
@@ -150,13 +148,13 @@ const DiffCryptTable = ({
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
-            <td className="name px-2" onClick={() => handleClick()}>
+            <td className="name" onClick={() => handleClick()}>
               <ResultCryptName card={card.c} />
             </td>
           </ConditionalTooltip>
           {isWide ? (
             <>
-              <td className="title pr-2" onClick={() => handleClick()}>
+              <td className="title " onClick={() => handleClick()}>
                 <ResultCryptTitle value={card.c.Title} />
               </td>
               <td className="clan" onClick={() => handleClick()}>
@@ -182,7 +180,7 @@ const DiffCryptTable = ({
             </>
           )}
           {showInfo && (
-            <td className="text-blue w-9 px-1 text-right">
+            <td className="text-blue w-9 text-right">
               {isMobile ? (
                 <div
                   onClick={() =>

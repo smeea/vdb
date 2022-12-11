@@ -118,9 +118,9 @@ const AccountChangePassword = () => {
 
   return (
     <div>
-      <div className="text-blue flex items-center p-1 text-lg font-bold">
+      <div className="text-blue flex items-center text-lg font-bold">
         <LockFill />
-        <span className="ml-2">Change password</span>
+        <span>Change password</span>
       </div>
       <form className="flex" onSubmit={handleSubmitButton}>
         {isMobile ? (

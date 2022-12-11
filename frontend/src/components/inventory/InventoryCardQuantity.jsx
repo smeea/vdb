@@ -42,7 +42,7 @@ const InventoryCardQuantity = ({
   };
 
   return (
-    <div className="w-100 flex items-center justify-between">
+    <div className="flex w-full items-center justify-between">
       {isMobile ? (
         <>
           <a className="quantity" onClick={() => handleQuantityChange(-1)}>
@@ -79,17 +79,17 @@ const InventoryCardQuantity = ({
             tabIndex={0}
             className={
               manual
-                ? 'px-0'
+                ? ''
                 : state < softUsedMax + hardUsedTotal
-                ? 'inv-miss-full mx-1 px-1'
-                : 'px-1'
+                ? 'inv-miss-full '
+                : ''
             }
             onFocus={() => setManual(true)}
           >
             {manual ? (
-              <form className="m-0" onSubmit={handleSubmitButton}>
+              <form onSubmit={handleSubmitButton}>
                 <input
-                  className="quantity px-1"
+                  className="quantity"
                   placeholder=""
                   type="number"
                   name="Quantity"

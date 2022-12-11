@@ -74,17 +74,17 @@ const InventoryShareModal = ({ setShow }) => {
             <>
               <a href={shareUrl}>{shareUrl}</a>
               <span
-                className="pl-2 pr-3 with-hover inline"
+                className="with-hover inline  "
                 onClick={() => navigator.clipboard.writeText(shareUrl)}
               >
                 <ClipboardFill viewBox="0 0 18 18" />
               </span>
-              <div className="pt-2">
+              <div>
                 Only this URL will work (old become obsolete after creating new)
               </div>
             </>
           ) : (
-            <div className="pt-2">
+            <div>
               After creating Share URL people can view (not edit!) your
               inventory by opening the link
             </div>

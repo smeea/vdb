@@ -60,13 +60,7 @@ const DeckPublicButton = ({ deck, noText }) => {
         <MenuButton
           variant="secondary"
           title="Public Deck Archive Actions"
-          icon={
-            !spinnerState ? (
-              <PeopleFill />
-            ) : (
-              <Spinner />
-            )
-          }
+          icon={!spinnerState ? <PeopleFill /> : <Spinner />}
           text="Public"
         />
         <Menu.Items>
@@ -96,7 +90,7 @@ const DeckPublicButton = ({ deck, noText }) => {
           title={`Sync &quot;${deck.name}&quot; with Public Deck Archive?`}
         >
           <div>
-            <div className="text-blue pb-2 font-bold">
+            <div className="text-blue  font-bold">
               Changes from currently published version:
             </div>
             <DeckPublicDiff deckTo={deck} deckFrom={decks[deck.publicParent]} />

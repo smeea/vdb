@@ -6,15 +6,15 @@ import FlagBr from 'assets/images/flags/br.svg';
 import { useApp } from 'context';
 
 const LanguagesMenu = ({ languages, lang, onClick }) => (
-  <div className="py-1">
-    <div className="px-2 pb-2">Card Language:</div>
+  <div>
+    <div className=" ">Card Language:</div>
     <div className="flex items-center justify-between">
       {Object.keys(languages).map((l) => {
         const Flag = languages[l];
         return (
           <div
             key={l}
-            className={`${lang == l ? 'flag-active mx-2' : 'mx-2'}`}
+            className={`${lang == l ? 'flag-active ' : ''}`}
             onClick={onClick}
           >
             <Flag width="22" height="22" viewBox="0 0 500 500" />

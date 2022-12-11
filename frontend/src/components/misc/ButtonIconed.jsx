@@ -13,7 +13,7 @@ const ButtonIconed = ({
 
   return (
     <button
-      className={`${btnVariant} items-center justify-center rounded-md px-3 py-1.5 ${
+      className={`${btnVariant} items-center justify-center  rounded-md ${
         className ?? ''
       }`}
       onClick={onClick}
@@ -24,7 +24,7 @@ const ButtonIconed = ({
         <>{icon}</>
       ) : (
         <div className="flex items-center justify-center">
-          <div className="pr-2">{icon}</div>
+          <div>{icon}</div>
           {text}
         </div>
       )}

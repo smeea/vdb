@@ -72,7 +72,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
 
   return (
     <div
-      className={`${!inSearch && !inMissing && !inAdvSelect ? 'pt-md-4' : ''} ${
+      className={`${!inSearch && !inMissing && !inAdvSelect ? '' : ''} ${
         !isMobile && !inAdvSelect ? 'sticky-deck-crypt' : ''
       }`}
     >
@@ -89,7 +89,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
         setSortMethod={changeCryptDeckSort}
       />
       {showInfo && (
-        <div className="info-message px-2">
+        <div className="info-message ">
           <DeckCryptTotalInfo
             disciplinesDetailed={disciplinesDetailed}
             cards={crypt}
@@ -134,8 +134,8 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
         isModalOpen={shouldShowModal}
       />
       {Object.keys(cryptSide).length > 0 && (
-        <div className="pt-2 opacity-60">
-          <div className="pl-2 flex items-center justify-between">
+        <div className=" opacity-60">
+          <div className="flex items-center justify-between ">
             <b>Side Crypt</b>
           </div>
           <DeckCryptTable

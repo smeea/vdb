@@ -65,14 +65,14 @@ const InventoryCryptTableRow = ({
 
   return (
     <div
-      className={`border-none inventory-crypt-table flex ${
+      className={`inventory-crypt-table flex border-none ${
         isSwiped ? `swiped-${isSwiped}` : ''
       }`}
       {...swipeHandlers}
     >
       <div
         className={`flex items-center justify-center ${
-          inShared ? 'quantity-no-buttons me-2' : 'quantity px-1]'
+          inShared ? 'quantity-no-buttons ' : 'quantity]'
         }`}
       >
         {inShared ? (
@@ -92,7 +92,7 @@ const InventoryCryptTableRow = ({
         <div className="used flex items-center justify-center">
           {isMobile ? (
             <div
-              className={`w-100 pl-1 flex justify-center ${
+              className={`flex w-full justify-center ${
                 card.q == softUsedMax + hardUsedTotal
                   ? 'gray'
                   : card.q >= softUsedMax + hardUsedTotal
@@ -112,7 +112,7 @@ const InventoryCryptTableRow = ({
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
               <div
-                className={`w-100 pl-1 flex justify-center ${
+                className={`flex w-full justify-center ${
                   card.q == softUsedMax + hardUsedTotal
                     ? 'gray'
                     : card.q >= softUsedMax + hardUsedTotal
@@ -171,7 +171,7 @@ const InventoryCryptTableRow = ({
             <ResultClanImage value={card.c.Clan} />
           </div>
           <div
-            className="pr-1 group flex items-center justify-center"
+            className="group flex items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultCryptGroup value={card.c.Group} />

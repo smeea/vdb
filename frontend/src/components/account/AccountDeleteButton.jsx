@@ -8,7 +8,7 @@ const AccountDeleteButton = () => {
   return (
     <>
       <ButtonIconed
-        className="w-100"
+        className="w-full"
         variant="danger"
         onClick={() => setShowConfirmation(true)}
         title="Delete account"

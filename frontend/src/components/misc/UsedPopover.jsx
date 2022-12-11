@@ -62,9 +62,9 @@ const UsedPopover = ({ cardid }) => {
   }
 
   return (
-    <div className="p-3">
+    <div>
       {softUsedMax == 0 && hardUsedTotal == 0 ? (
-        <div className="py-1">Not used in inventory decks</div>
+        <div>Not used in inventory decks</div>
       ) : (
         <>
           {softUsedMax > 0 && <>{SoftUsedDescription}</>}
@@ -76,7 +76,7 @@ const UsedPopover = ({ cardid }) => {
         <div className="opacity-40">
           <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
         </div>
-        <div className="px-1">
+        <div>
           <b>{softUsedMax + hardUsedTotal}</b>
         </div>
         - Total Used
@@ -85,7 +85,7 @@ const UsedPopover = ({ cardid }) => {
         <div className="opacity-40">
           <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
         </div>
-        <div className="px-1">
+        <div>
           <b>{inInventory}</b>
         </div>
         - In Inventory

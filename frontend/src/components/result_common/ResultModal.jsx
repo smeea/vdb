@@ -81,7 +81,7 @@ const ResultModal = ({
                 />
               </>
             ) : (
-              <div className="p-3">
+              <div>
                 <ResultLayoutText
                   card={activeCard}
                   setCard={setActiveCard}
@@ -93,8 +93,8 @@ const ResultModal = ({
             )}
           </div>
         ) : (
-          <div className="mx-0 flex flex-row">
-            <div className="bg-black px-0 md:basis-5/12">
+          <div className="flex flex-row">
+            <div className="bg-black md:basis-5/12">
               <CardImage
                 className="h-auto w-full"
                 card={activeCard}
@@ -102,7 +102,7 @@ const ResultModal = ({
                 onClick={handleClose}
               />
             </div>
-            <div className="p-4 md:basis-7/12">
+            <div className="md:basis-7/12">
               <ResultLayoutText
                 card={activeCard}
                 setCard={setActiveCard}

@@ -93,36 +93,36 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
         <div
           className={`flex ${
             isMobile ? 'h-auto w-full' : 'w-75'
-          } pr-1 items-center justify-between`}
+          } items-center justify-between `}
         >
           <div className="flex w-[55%] items-center">
             {Object.keys(cards).length}
-            <div className="pl-1 pr-3 flex">
+            <div className="flex  ">
               <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
             </div>
             <div className="flex items-center">{name}</div>
           </div>
           <div className="flex w-[45%] justify-between">
             <div
-              className="px-md-3 flex whitespace-nowrap px-1"
+              className=" flex whitespace-nowrap "
               title="First Card add to Hall of Fame / Last Card add to Hall of Fame"
             >
               {isMobile
                 ? `'${firstCardDate.slice(2, 4)}-'${lastCardDate.slice(2, 4)}`
                 : `${firstCardDate.slice(0, 4)} - ${lastCardDate.slice(0, 4)}`}
             </div>
-            <div className="px-md-3 flex whitespace-nowrap px-1">
+            <div className=" flex whitespace-nowrap ">
               {isMobile ? 'C:' : 'Crypt: '}
               {cryptSorted.length}
             </div>
-            <div className="px-md-3 flex whitespace-nowrap px-1">
+            <div className=" flex whitespace-nowrap ">
               {isMobile ? 'L:' : 'Library: '}
               {librarySorted.length}
             </div>
           </div>
         </div>
       </Disclosure.Button>
-      <Disclosure.Panel className="p-0">
+      <Disclosure.Panel>
         {showPlayer && (
           <>
             <ResultCryptTotal

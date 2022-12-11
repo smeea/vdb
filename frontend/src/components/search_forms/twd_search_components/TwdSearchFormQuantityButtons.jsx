@@ -41,8 +41,8 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
   };
 
   return (
-    <div className="pr-2 flex items-center justify-between">
-      <div className="pr-1">
+    <div className="flex items-center justify-between ">
+      <div>
         <Button
           className="w-9"
           variant="primary"
@@ -59,7 +59,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
       >
         -
       </Button>
-      <div className="px-1">{value[id].q}</div>
+      <div>{value[id].q}</div>
       <Button
         className="quantity"
         variant="primary"

@@ -28,7 +28,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
           .filter((id) => value[id].q >= 0)
           .map((id) => {
             return (
-              <div key={id} className="flex items-center pt-1">
+              <div key={id} className="flex items-center ">
                 <TwdSearchFormQuantityButtons
                   value={value}
                   form={form}

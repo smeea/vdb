@@ -65,9 +65,7 @@ const DeckCardQuantity = ({
               -
             </Button>
           </a>
-          <div className={miss ? `mx-1 px-1 ${miss}` : 'px-1'}>
-            {q == 0 ? '' : q}
-          </div>
+          <div className={miss ? `${miss}` : ''}>{q == 0 ? '' : q}</div>
           <a
             className="quantity"
             onClick={() => cardChange(deckid, card, q + 1)}
@@ -91,13 +89,13 @@ const DeckCardQuantity = ({
           )}
           <div
             tabIndex={0}
-            className={manual ? 'px-0' : miss ? `mx-1 px-1 ${miss}` : 'px-1'}
+            className={manual ? '' : miss ? `${miss}` : ''}
             onFocus={() => setManual(true)}
           >
             {manual ? (
-              <form className="m-0" onSubmit={handleSubmitButton}>
+              <form onSubmit={handleSubmitButton}>
                 <input
-                  className="quantity px-1"
+                  className="quantity"
                   placeholder=""
                   type="number"
                   name="Quantity"

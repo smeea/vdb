@@ -10,7 +10,7 @@ function ResultLibraryName(props) {
         <>{props.card['Name']}</>
       )}
       {props.card['Banned'] && (
-        <span className="pl-1">
+        <span>
           [{props.card['Banned']} <Hammer />]
         </span>
       )}

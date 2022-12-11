@@ -42,13 +42,13 @@ const UpdateNotification = ({ appVersion }) => {
           centered
         >
           <div>
-            <div className="text-blue flex items-center p-2 font-bold">
-              <div className="pr-2 flex">
+            <div className="text-blue flex items-center font-bold">
+              <div className="flex ">
                 <ListUl />
               </div>
               Changes [{version}]:
             </div>
-            <div className="px-2">{changes}</div>
+            <div>{changes}</div>
             {/* TODO fix button placement */}
             <ButtonIconed
               variant="primary"

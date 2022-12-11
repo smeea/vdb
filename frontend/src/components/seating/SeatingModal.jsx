@@ -52,13 +52,13 @@ const SeatingModal = ({
     <>
       <Modal
         handleClose={handleClose}
-        dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
+        dialogClassName={isMobile ? '' : 'modal-wide'}
         title="Table Seating"
       >
         <div>
-          <div className="mb-md-3 px-md-0 mb-0 px-0">
+          <div className=" ">
             <div className="flex flex-row items-center">
-              <div className="py-2 md:basis-5/12 xl:basis-1/3">
+              <div className="md:basis-5/12 xl:basis-1/3">
                 <div className="flex flex-col space-y-1">
                   {players.map((p, idx) => {
                     return (
@@ -71,7 +71,7 @@ const SeatingModal = ({
                     );
                   })}
                 </div>
-                <div className="flex flex-row space-y-2 pt-4">
+                <div className="flex flex-row space-y-2 ">
                   <ButtonIconed
                     variant="primary"
                     onClick={reshuffle}
@@ -95,30 +95,30 @@ const SeatingModal = ({
                     text="Select Random"
                   />
                   {withRandom && !haveRandomSelected && (
-                    <div className="red pt-2">
+                    <div className="red ">
                       No random players source selected
                     </div>
                   )}
                 </div>
               </div>
-              <div className="px-0 md:basis-7/12 xl:basis-8/12">
+              <div className="md:basis-7/12 xl:basis-8/12">
                 {seating && (
-                  <div className="py-md-0 flex flex-row py-2">
+                  <div className="flex flex-row">
                     <SeatingTableLayout players={seating} />
                   </div>
                 )}
               </div>
             </div>
             {editRandom && (
-              <div className="pt-md-3 flex flex-row pt-0">
-                <hr className="mx-0" />
-                <div className="flex flex-row pb-3">
+              <div className="flex flex-row ">
+                <hr />
+                <div className="flex flex-row ">
                   <div className="flex flex-row">
                     <div
                       className="flex items-center"
                       onClick={() => setWithCustom(!withCustom)}
                     >
-                      <div className="pr-2 flex items-center">
+                      <div className="flex items-center">
                         <>
                           {withCustom ? (
                             <ToggleOn
@@ -135,11 +135,11 @@ const SeatingModal = ({
                           )}
                         </>
                       </div>
-                      <div className="text-blue flex py-2 font-bold">
+                      <div className="text-blue flex font-bold">
                         Custom Decks
                       </div>
                     </div>
-                    <div className="basis-full py-2 md:basis-7/12 lg:basis-1/2 xl:basis-5/12">
+                    <div className="basis-full md:basis-7/12 lg:basis-1/2 xl:basis-5/12">
                       <SeatingCustomDeckAdd addDeck={addCustomDeck} />
                     </div>
                   </div>
@@ -195,13 +195,13 @@ const SeatingModal = ({
                       })}
                   </div>
                 </div>
-                <hr className="mx-0" />
+                <hr />
                 <div className="flex flex-row">
                   <div
                     className="flex items-center"
                     onClick={() => setWithStandard(!withStandard)}
                   >
-                    <div className="pr-2 flex items-center">
+                    <div className="flex items-center">
                       <>
                         {withStandard ? (
                           <ToggleOn
@@ -218,7 +218,7 @@ const SeatingModal = ({
                         )}
                       </>
                     </div>
-                    <div className="text-blue py-2 font-bold">
+                    <div className="text-blue font-bold">
                       Standard Decks (from{' '}
                       <a
                         className="name"

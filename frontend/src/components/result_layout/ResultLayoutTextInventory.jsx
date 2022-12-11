@@ -68,12 +68,12 @@ const ResultLayoutTextInventory = (props) => {
 
   return (
     <div className="flex flex-row">
-      <div className="pr-2 basis-1/2 lg:basis-5/12">
+      <div className="basis-1/2 lg:basis-5/12">
         <div className="flex items-center">
           <div className="opacity-40">
             <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
           </div>
-          <div className="px-1">
+          <div>
             <b>{softUsedMax + hardUsedTotal}</b>
           </div>
           - Total Used
@@ -82,13 +82,13 @@ const ResultLayoutTextInventory = (props) => {
           <div className="opacity-40">
             <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
           </div>
-          <div className="px-1">
+          <div>
             <b>{inInventory}</b>
           </div>
           - In Inventory
         </div>
       </div>
-      <div className={`basis-full lg:basis-7/12 ${isMobile ? 'pt-2' : 'pl-0'}`}>
+      <div className={`basis-full lg:basis-7/12 ${isMobile ? '' : ''}`}>
         {SoftUsedDescription && <>{SoftUsedDescription}</>}
         {HardUsedDescription && <>{HardUsedDescription}</>}
       </div>

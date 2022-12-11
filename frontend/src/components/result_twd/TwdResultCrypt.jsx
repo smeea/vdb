@@ -59,7 +59,7 @@ const TwdResultCrypt = ({ crypt }) => {
     return (
       <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
-          <td className="quantity-no-buttons px-1">
+          <td className="quantity-no-buttons ">
             <ConditionalTooltip
               overlay={<UsedPopover cardid={card.c.Id} />}
               disabled={isMobile}
@@ -78,13 +78,13 @@ const TwdResultCrypt = ({ crypt }) => {
             </ConditionalTooltip>
           </td>
         ) : (
-          <td className="quantity-no-buttons px-1">{card.q}</td>
+          <td className="quantity-no-buttons ">{card.q}</td>
         )}
-        <td className="capacity px-1" onClick={() => handleClick(card.c)}>
+        <td className="capacity " onClick={() => handleClick(card.c)}>
           <ResultCryptCapacity value={card.c.Capacity} />
         </td>
 
-        <td className="name px-1" onClick={() => handleClick(card.c)}>
+        <td className="name " onClick={() => handleClick(card.c)}>
           <ConditionalTooltip
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
@@ -93,7 +93,7 @@ const TwdResultCrypt = ({ crypt }) => {
           </ConditionalTooltip>
         </td>
 
-        <td className="clan px-1" onClick={() => handleClick(card.c)}>
+        <td className="clan " onClick={() => handleClick(card.c)}>
           <ResultClanImage value={card.c.Clan} />
         </td>
       </tr>
@@ -102,7 +102,7 @@ const TwdResultCrypt = ({ crypt }) => {
 
   return (
     <>
-      <div className="px-1">
+      <div>
         <b>
           Crypt [{cryptTotal}] - {cryptGroups}
           {hasBanned && ' - WITH BANNED'}

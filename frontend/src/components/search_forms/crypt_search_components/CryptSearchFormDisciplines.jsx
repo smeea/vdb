@@ -4,11 +4,11 @@ import disciplinesList from 'assets/data/disciplinesList.json';
 
 const CryptSearchFormDisciplines = ({ value, onChange }) => {
   return (
-    <div className="flex flex-wrap input-group justify-start py-1">
+    <div className="input-group flex flex-wrap justify-start ">
       {disciplinesList.map((i, index) => (
         <div
           key={index}
-          className={`flex items-center justify-center discipline-container ${
+          className={`discipline-container flex items-center justify-center ${
             value[i] === 0 ? 'opacity-40' : ''
           }`}
           onClick={onChange}

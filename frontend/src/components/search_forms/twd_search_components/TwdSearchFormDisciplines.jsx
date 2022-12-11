@@ -6,12 +6,12 @@ import virtuesList from 'assets/data/virtuesList.json';
 const TwdSearchFormDisciplines = ({ value, onChange }) => {
   return (
     <>
-      <div className="flex flex-wrap input-group justify-start py-1">
+      <div className="input-group flex flex-wrap justify-start ">
         {disciplinesList.map((i, index) => {
           return (
             <div
               key={index}
-              className={`flex items-center justify-center discipline-container ${
+              className={`discipline-container flex items-center justify-center ${
                 value[i] ? '' : 'opacity-40'
               }`}
               onClick={onChange}
@@ -25,12 +25,12 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           );
         })}
       </div>
-      <div className="flex flex-wrap input-group pb-2">
+      <div className="input-group flex flex-wrap ">
         {virtuesList.map((i, index) => {
           return (
             <div
               key={index}
-              className={`flex items-center justify-center discipline-container ${
+              className={`discipline-container flex items-center justify-center ${
                 value[i] ? '' : 'opacity-40'
               }`}
               onClick={onChange}

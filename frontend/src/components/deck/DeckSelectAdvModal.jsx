@@ -330,7 +330,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
       <React.Fragment key={deck.deckid}>
         {decks[deck.deckid] && (
           <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-            <td className="select px-1">
+            <td className="select">
               <Checkbox
                 checked={selectedDecks[deck.deckid] ?? false}
                 onChange={() => toggleSelect(deck.deckid)}
@@ -360,7 +360,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                 {clan && <ResultClanImage value={clan} />}
               </td>
             )}
-            <td className="name px-1" onClick={() => handleOpen(deck.deckid)}>
+            <td className="name" onClick={() => handleOpen(deck.deckid)}>
               <div
                 className="name flex justify-between truncate"
                 title={deck.name}
@@ -369,10 +369,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                 {deck.branchName &&
                   (deck.master ||
                     (deck.branches && deck.branches.length > 0)) && (
-                    <div
-                      className="pl-2 revision inline"
-                      title={deck.branchName}
-                    >
+                    <div className="revision inline" title={deck.branchName}>
                       {deck.branchName}
                     </div>
                   )}
@@ -381,7 +378,6 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
             {isDesktop && (
               <td className="preview">
                 <div
-                  className="m-2"
                   onMouseEnter={() => setShowDeck(deck.deckid)}
                   onMouseLeave={() => setShowDeck(false)}
                 >
@@ -427,7 +423,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
               <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
             </td>
             <td className="buttons">
-              <div className="pr-1 flex flex-col justify-end space-x-1">
+              <div className="flex flex-col justify-end space-x-1">
                 <DeckHideButton deck={deck} />
                 {!isMobile && (
                   <>
@@ -463,7 +459,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
     <>
       <Modal
         handleClose={handleClose}
-        dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
+        dialogClassName={isMobile ? '' : 'modal-x-wide'}
         title="Select Deck"
       >
         <div>
@@ -474,7 +470,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
           <table className="decks-table">
             <thead>
               <tr>
-                <th className="select px-1">
+                <th className="select">
                   <Checkbox
                     name="selectAll"
                     checked={isSelectedAll}
@@ -529,7 +525,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                   <div
                     className={`${
                       isMobile ? '' : 'flex items-center justify-end '
-                    } px-1`}
+                    }`}
                   >
                     <Checkbox
                       name="revFilter"
@@ -546,7 +542,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
             </thead>
             <tbody>{deckRows}</tbody>
           </table>
-          <div className="flex justify-end pt-3">
+          <div className="flex justify-end ">
             <Menu>
               <MenuButton
                 title="Export Selected"

@@ -11,10 +11,10 @@ function DeckLibraryTotalInfo(props) {
 
   const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
     return (
-      <div key={idx} className="pl-0 pr-3 inline-block whitespace-nowrap">
+      <div key={idx} className="inline-block whitespace-nowrap  ">
         <div className="flex items-center">
           <ResultLibraryTypeImage value={t} />
-          <div className="flex px-1">{props.byTypes[t]}</div>
+          <div className="flex ">{props.byTypes[t]}</div>
           <span className="text-neutral-500">
             ({Math.round((props.byTypes[t] / total) * 100)}%)
           </span>
@@ -33,10 +33,10 @@ function DeckLibraryTotalInfo(props) {
 
   const DisciplinesInfo = byDisciplinesSorted.map((d, idx) => {
     return (
-      <div key={idx} className="pl-0 pr-3 inline-block whitespace-nowrap">
+      <div key={idx} className="inline-block whitespace-nowrap  ">
         <div className="flex items-center">
           <ResultLibraryDisciplines value={d} />
-          <div className="flex px-1">{props.byDisciplines[d]}</div>
+          <div className="flex ">{props.byDisciplines[d]}</div>
           <span className="gray">
             ({Math.round((props.byDisciplines[d] / totalExMasters) * 100)}%)
           </span>
@@ -47,10 +47,10 @@ function DeckLibraryTotalInfo(props) {
 
   const ClansInfo = byClansSorted.map((d, idx) => {
     return (
-      <div key={idx} className="pl-0 pr-3 inline-block whitespace-nowrap">
+      <div key={idx} className="inline-block whitespace-nowrap  ">
         <div className="flex items-center">
           <ResultLibraryClan value={d} />
-          <div className="flex px-1">{props.byClans[d]}</div>
+          <div className="flex ">{props.byClans[d]}</div>
           <span className="gray">
             ({Math.round((props.byClans[d] / total) * 100)}%)
           </span>
@@ -61,10 +61,10 @@ function DeckLibraryTotalInfo(props) {
 
   return (
     <>
-      <div className="py-1">{TypesInfo}</div>
-      <div className="pt-1">Excluding Master / Event:</div>
-      <div className="py-1">{DisciplinesInfo}</div>
-      <div className="py-1">{ClansInfo}</div>
+      <div>{TypesInfo}</div>
+      <div>Excluding Master / Event:</div>
+      <div>{DisciplinesInfo}</div>
+      <div>{ClansInfo}</div>
     </>
   );
 }
