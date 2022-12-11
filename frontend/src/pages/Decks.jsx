@@ -16,27 +16,29 @@ import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
 import {
   AccountLogin,
   AccountRegister,
-  DeckSelectMy,
-  DeckSelectRecent,
-  DeckSelectPrecon,
-  DeckSelectAdvModal,
-  DeckQrModal,
-  DeckTags,
-  DeckDraw,
-  DeckButtons,
-  DeckBranchSelect,
-  DeckCrypt,
-  DeckLibrary,
-  DeckRecommendation,
-  DeckChangeName,
-  DeckChangeBranchName,
-  DeckChangeAuthor,
-  DeckChangeDescription,
-  DeckImport,
-  Seating,
-  Modal,
   Button,
+  DeckBranchSelect,
+  DeckButtons,
+  DeckChangeAuthor,
+  DeckChangeBranchName,
+  DeckChangeDescription,
+  DeckChangeName,
+  DeckCrypt,
+  DeckDetails,
+  DeckDraw,
+  DeckImport,
+  DeckLibrary,
+  DeckQrModal,
+  DeckRecommendation,
+  DeckSelect,
+  DeckSelectAdvModal,
+  DeckSelectMy,
+  DeckSelectPrecon,
+  DeckSelectRecent,
+  DeckTags,
+  Modal,
   Radio,
+  Seating,
 } from 'components';
 import { deckStore, useApp, setDeck, deckUpdate } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
@@ -77,7 +79,6 @@ const Decks = () => {
   const [error, setError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
   const [qrUrl, setQrUrl] = useState(false);
-  const [selectFrom, setSelectFrom] = useState('precons');
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
   const [showDraw, setShowDraw] = useState(false);
   const [showSeating, setShowSeating] = useState(false);
@@ -123,16 +124,6 @@ const Decks = () => {
     };
     addRecentDeck(d);
     setDeck(d);
-  };
-
-  const toggleInventoryState = (id) => {
-    if (!deck.inventoryType) {
-      deckUpdate(id, 'inventoryType', 's');
-    } else if (deck.inventoryType === 's') {
-      deckUpdate(id, 'inventoryType', 'h');
-    } else if (deck.inventoryType === 'h') {
-      deckUpdate(id, 'inventoryType', '');
-    }
   };
 
   const handleSelect = (e) => {
@@ -229,16 +220,6 @@ const Decks = () => {
   ]);
 
   useEffect(() => {
-    if (deckid?.includes(':')) {
-      setSelectFrom('precons');
-    } else if (decks && decks[deckid]) {
-      setSelectFrom('my');
-    } else {
-      setSelectFrom('recent');
-    }
-  }, [deckid, decks]);
-
-  useEffect(() => {
     if (deck) {
       setError(false);
       if (!deckid) navigate(`/decks/${deck.deckid}`);
@@ -249,193 +230,24 @@ const Decks = () => {
     <div className="deck-container px-md-2 px-xl-4 py-md-3 mx-auto px-0">
       <div className="mx-0 flex flex-row">
         <div className="xl:basis-1/12"></div>
-        <div className="px-md-2 px-xl-3 basis-full lg:basis-5/6 xl:basis-9/12">
+        <div className="px-md-2 px-xl-3 basis-full lg:basis-10/12 xl:basis-9/12">
           <div className="px-md-0 pt-md-0 flex flex-row px-1 py-1 pb-0">
             <div className="px-md-2 px-0 md:basis-5/12">
-              <div
-                className={
-                  inventoryMode || !isMobile ? 'flex' : 'flex justify-between'
-                }
-              >
-                <div
-                  className={
-                    deck?.isBranches && selectFrom == 'my' ? 'w-75' : 'w-100'
-                  }
-                >
-                  {selectFrom == 'my' && decks ? (
-                    <DeckSelectMy
-                      handleSelect={handleSelect}
-                      deckid={deck?.deckid}
-                    />
-                  ) : selectFrom == 'recent' ? (
-                    <DeckSelectRecent
-                      handleSelect={handleSelect}
-                      deckid={deck?.deckid}
-                    />
-                  ) : (
-                    <DeckSelectPrecon
-                      handleSelect={handleSelect}
-                      deckid={deck?.deckid}
-                    />
-                  )}
-                </div>
-                {selectFrom == 'my' && decks && deck?.isBranches && (
-                  <div className="pl-1 w-25">
-                    <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
-                  </div>
-                )}
-                <div className="flex">
-                  {inventoryMode && deck?.isAuthor && (
-                    <div className="pl-1 flex">
-                      <Button
-                        title={`Inventory Type: ${
-                          !deck?.inventoryType
-                            ? 'VIRTUAL\nDo not use Inventory'
-                            : deck?.inventoryType === 's'
-                            ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
-                            : 'FIXED\nUse unique copies of cards from Inventory'
-                        }`}
-                        variant="primary"
-                        onClick={() => toggleInventoryState(deck?.deckid)}
-                      >
-                        <div className="flex items-center">
-                          {!deck?.inventoryType && <At />}
-                          {deck?.inventoryType === 's' && <Shuffle />}
-                          {deck?.inventoryType === 'h' && <PinAngleFill />}
-                        </div>
-                      </Button>
-                    </div>
-                  )}
-                </div>
-              </div>
-              <div className="flex items-center justify-between pt-2">
-                <div className="flex space-x-8">
-                  {username && decks && Object.keys(decks).length > 0 && (
-                    <>
-                      <Radio
-                        checked={selectFrom == 'my'}
-                        onChange={(e) => setSelectFrom(e.target.id)}
-                        value={isMobile ? 'My' : 'My Decks'}
-                        id="my"
-                      />
-                    </>
-                  )}
-                  <Radio
-                    checked={selectFrom == 'precons'}
-                    onChange={(e) => setSelectFrom(e.target.id)}
-                    value="Precons"
-                    id="precons"
-                  />
-                  {recentDecks.length > 0 && (
-                    <Radio
-                      checked={selectFrom == 'recent'}
-                      onChange={(e) => setSelectFrom(e.target.id)}
-                      value="Recent"
-                      id="recent"
-                    />
-                  )}
-                </div>
-                <div className="flex flex-row space-x-1">
-                  {decks && (
-                    <Button
-                      title="Advanced Deck Select"
-                      variant="primary"
-                      onClick={() => {
-                        setShowFloatingButtons(false);
-                        setShowDeckSelectAdv(true);
-                      }}
-                    >
-                      <div className="flex">
-                        <BinocularsFill
-                          width="16"
-                          height="22"
-                          viewBox="0 0 16 18"
-                        />
-                      </div>
-                    </Button>
-                  )}
-                  {isMobile && deck && (
-                    <Button
-                      variant="primary"
-                      onClick={() => setShowInfo(!showInfo)}
-                    >
-                      <div className="flex pt-1">
-                        <ChatLeftQuoteFill
-                          width="16"
-                          height="18"
-                          viewBox="0 0 16 18"
-                        />
-                      </div>
-                    </Button>
-                  )}
-                </div>
-              </div>
+              <DeckSelect
+                deckid={deckid}
+                deck={deck}
+                decks={decks}
+                handleSelect={handleSelect}
+              />
             </div>
-            <div className="px-md-2 px-0 md:basis-7/12">
+            <div className="md:basis-7/12 px-0 px-md-2">
               {deck && (showInfo || !isMobile) && (
-                <>
-                  <div className="pb-sm-2 mx-0 flex flex-row">
-                    <div
-                      className={`${
-                        deck.isBranches ? 'md:basis-6/12' : 'md:basis-8/12'
-                      } pl-md-0 pr-md-1 px-0`}
-                    >
-                      <DeckChangeName deck={deck} />
-                    </div>
-                    {deck.isBranches && (
-                      <div
-                        className={`md:basis-2/12 ${
-                          isMobile ? 'px-0 pt-0.5' : 'px-1'
-                        }`}
-                      >
-                        <DeckChangeBranchName deck={deck} />
-                      </div>
-                    )}
-                    <div
-                      className={`px-0 md:basis-1/3 ${
-                        isMobile ? 'pt-0.5' : 'pl-md-1 pr-md-0 pt-md-0 pt-2'
-                      }`}
-                    >
-                      <DeckChangeAuthor deck={deck} />
-                    </div>
-                  </div>
-                  <div className="mx-0 flex flex-row">
-                    <div className={isMobile ? 'px-0 pt-0.5' : 'px-0'}>
-                      <DeckChangeDescription
-                        deck={deck}
-                        folded={isMobile ? false : foldedDescription}
-                        setFolded={setFoldedDescription}
-                      />
-                    </div>
-                    {foldedDescription &&
-                      !isMobile &&
-                      (deck.tags?.length > 0 ||
-                        deck.isAuthor ||
-                        !deck.isPublic) && (
-                        <div
-                          className={`ps-2 pr-0 ${isMobile ? 'pt-0.5' : ''}`}
-                        >
-                          <DeckTags
-                            deck={deck}
-                            allTagsOptions={allTagsOptions}
-                            bordered
-                          />
-                        </div>
-                      )}
-                  </div>
-                  {(!foldedDescription || isMobile) &&
-                    (deck.tags?.length > 0 ||
-                      deck.isAuthor ||
-                      !deck.isPublic) && (
-                      <div className={isMobile ? 'px-0 py-1' : 'block pt-2'}>
-                        <DeckTags
-                          deck={deck}
-                          allTagsOptions={allTagsOptions}
-                          bordered
-                        />
-                      </div>
-                    )}
-                </>
+                <DeckDetails
+                  deck={deck}
+                  folded={foldedDescription}
+                  setFolded={setFoldedDescription}
+                  allTagsOptions={allTagsOptions}
+                />
               )}
             </div>
           </div>
@@ -472,7 +284,7 @@ const Decks = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="hide-on-lt992px pl-md-1 pr-md-0 px-xl-3 lg:basis-1/6">
+          <div className="hide-on-lt992px pl-md-1 pr-md-0 px-xl-3 lg:basis-2/12">
             <div className="sticky-buttons">
               <DeckButtons
                 deck={deck}
@@ -497,7 +309,7 @@ const Decks = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="text-blue text-lg text-xs font-bold">
+              <div className="text-blue text-lg font-bold">
                 (Browse preconstructed decks without login)
               </div>
             </div>
