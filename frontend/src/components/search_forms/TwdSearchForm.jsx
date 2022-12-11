@@ -88,11 +88,6 @@ const TwdSearchForm = ({ error, setError }) => {
     setError(false);
   };
 
-  const handleSubmitButton = (event) => {
-    event.preventDefault();
-    cryptCardBase && libraryCardBase && processSearch();
-  };
-
   const handleError = (error) => {
     setTwdResults(null);
 
@@ -212,7 +207,7 @@ const TwdSearchForm = ({ error, setError }) => {
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   return (
-    <form onSubmit={handleSubmitButton}>
+    <>
       <div className="mx-0 flex flex-row justify-between pb-2">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
@@ -433,7 +428,7 @@ const TwdSearchForm = ({ error, setError }) => {
           </div>
           <div
             ref={refError}
-            onClick={handleSubmitButton}
+            onClick={processSearch}
             className="float-right-bottom float-search flex items-center justify-center"
           >
             {!spinnerState ? (
@@ -445,7 +440,7 @@ const TwdSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-    </form>
+    </>
   );
 };
 

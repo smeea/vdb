@@ -87,11 +87,6 @@ const PdaSearchForm = ({ error, setError }) => {
     setError(false);
   };
 
-  const handleSubmitButton = (event) => {
-    event.preventDefault();
-    cryptCardBase && libraryCardBase && processSearch();
-  };
-
   const handleError = (error) => {
     setPdaResults(null);
 
@@ -209,7 +204,7 @@ const PdaSearchForm = ({ error, setError }) => {
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
   return (
-    <form onSubmit={handleSubmitButton}>
+    <>
       <div className="mx-0 flex flex-row justify-between pb-2">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
@@ -407,7 +402,7 @@ const PdaSearchForm = ({ error, setError }) => {
           </div>
           <div
             ref={refError}
-            onClick={handleSubmitButton}
+            onClick={processSearch}
             className="float-right-bottom float-search flex items-center justify-center"
           >
             {!spinnerState ? (
@@ -419,7 +414,7 @@ const PdaSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-    </form>
+    </>
   );
 };
 

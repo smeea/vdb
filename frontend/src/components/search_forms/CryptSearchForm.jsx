@@ -46,7 +46,7 @@ const CryptSearchForm = () => {
 
   const { filterCrypt } = useFilters(cryptCardBase);
 
-  const [preresults, setPreresults] = useState(undefined);
+  const [preresults, setPreresults] = useState([]);
   const showLimit = 300;
 
   const navigate = useNavigate();
@@ -138,11 +138,6 @@ const CryptSearchForm = () => {
     setError(false);
   };
 
-  const handleSubmitButton = (event) => {
-    event.preventDefault();
-    processSearch();
-  };
-
   const handleShowResults = () => {
     setCryptResults(preresults);
   };
@@ -198,7 +193,7 @@ const CryptSearchForm = () => {
       if (Object.keys(input).length === 0) {
         if (query) {
           setCryptResults(undefined);
-          setPreresults(undefined);
+          // setPreresults(undefined);
           navigate('/crypt');
         }
       } else if (
@@ -221,7 +216,7 @@ const CryptSearchForm = () => {
   }, [preresults]);
 
   return (
-    <form onSubmit={handleSubmitButton}>
+    <>
       <SearchFormTextAndButtons
         value={cryptFormState.text}
         onChange={handleTextChange}
@@ -300,7 +295,7 @@ const CryptSearchForm = () => {
           </div>
           <div
             ref={refError}
-            onClick={handleSubmitButton}
+            onClick={processSearch}
             className="float-right-bottom float-search flex items-center justify-center"
           >
             <Check2 viewBox="0 0 16 16" className="pt-1" />
@@ -308,7 +303,7 @@ const CryptSearchForm = () => {
           </div>
         </>
       )}
-    </form>
+    </>
   );
 };
 

@@ -127,11 +127,6 @@ const LibrarySearchForm = () => {
     setError(false);
   };
 
-  const handleSubmitButton = (event) => {
-    event.preventDefault();
-    processSearch();
-  };
-
   const handleShowResults = () => {
     setLibraryResults(preresults);
   };
@@ -210,7 +205,7 @@ const LibrarySearchForm = () => {
   }, [preresults]);
 
   return (
-    <form onSubmit={handleSubmitButton}>
+    <>
       <SearchFormTextAndButtons
         value={libraryFormState.text}
         onChange={handleTextChange}
@@ -292,7 +287,7 @@ const LibrarySearchForm = () => {
           </div>
           <div
             ref={refError}
-            onClick={handleSubmitButton}
+            onClick={processSearch}
             className="float-right-bottom float-search flex items-center justify-center"
           >
             <Check2 viewBox="0 0 16 16" className="pt-1" />
@@ -300,7 +295,7 @@ const LibrarySearchForm = () => {
           </div>
         </>
       )}
-    </form>
+    </>
   );
 };
 
