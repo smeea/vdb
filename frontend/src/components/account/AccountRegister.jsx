@@ -4,7 +4,7 @@ import PersonPlusFill from 'assets/images/icons/person-plus-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import { Button, ErrorOverlay } from 'components';
+import { Input, Button, ErrorOverlay } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -18,14 +18,14 @@ const AccountRegister = () => {
   const [usernameError, setUsernameError] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
-  const refUsername = useRef(null);
-  const refPassword = useRef(null);
+  // const refUsername = useRef(null);
+  // const refPassword = useRef(null);
 
   const onError = (e) => {
     setSpinnerState(false);
     if (e.message == 409) {
       setUsernameError('USER ALREADY EXIST');
-      refUsername.current.focus();
+      // refUsername.current.focus();
     } else {
       setConnectionError('CONNECTION ERROR');
     }
@@ -55,25 +55,24 @@ const AccountRegister = () => {
   };
 
   const UsernameForm = (
-    <input
+    <Input
       placeholder="New Username"
       type="text"
       name="username"
       value={formUsername}
       required={true}
       onChange={(e) => setFormUsername(e.target.value)}
-      ref={refUsername}
+      /* ref={refUsername} */
     />
   );
 
   const EmailForm = (
-    <input
-      className="mt-2"
+    <Input
+      /* className="mt-2" */
       placeholder={`Email (Optional${
         isMobile ? '' : ', only for password reset'
       })`}
       type="email"
-      name="email"
       value={formEmail}
       onChange={(e) => setFormEmail(e.target.value)}
     />
@@ -81,16 +80,15 @@ const AccountRegister = () => {
 
   const PasswordForm = (
     <>
-      <input
+      <Input
         placeholder="Password"
         type={hidePassword ? 'password' : 'text'}
-        name="password"
         autoComplete="new-password"
         id="new-password"
         value={formPassword}
         required={true}
         onChange={(e) => setFormPassword(e.target.value)}
-        ref={refPassword}
+        /* ref={refPassword} */
       />
       <Button
         tabIndex="-1"

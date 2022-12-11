@@ -7,7 +7,7 @@ import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
 } from '../shared_search_components';
-import { Checkbox, Button, ButtonIconed } from 'components';
+import { Input, Checkbox, Button, ButtonIconed } from 'components';
 import { useApp } from 'context';
 
 const SearchFormTextAndButtons = ({
@@ -53,48 +53,22 @@ const SearchFormTextAndButtons = ({
     setText(e.target.value);
   };
 
-  const OptionsForm = options.map((opt, idx) => {
-    return (
-      <Checkbox
-        key={idx}
-        prefix="text"
-        name={0}
-        value={opt.value}
-        onChange={onChangeOptions}
-        label={opt.label}
-        checked={
-          opt.value === 'regex'
-            ? value[0].regex || false
-            : value[0].in === opt.value
-        }
-        onChange={onChangeOptions}
-      />
-    );
-  });
-
   return (
     <>
       <div className="pl-0 pl-md-1 mx-0 flex flex-row items-center">
         {isMobile ? (
-          <input
+          <Input
             placeholder="Card Name / Text / RegEx"
-            type="text"
             name={0}
-            autoComplete="off"
-            spellCheck="false"
-            value={value[0].value}
-            onChange={onChange}
+            value={text}
+            onChange={onTextChange}
           />
         ) : (
-          <div className="TODO-input-group px-0">
-            <input
+          <div className="input-group px-0">
+            <Input
               /* TODO ignore enter */
-              className="text-search"
               placeholder="Card Name / Text / RegEx"
-              type="text"
               name={0}
-              autoComplete="off"
-              spellCheck="false"
               value={text}
               onChange={onTextChange}
             />
@@ -138,10 +112,25 @@ const SearchFormTextAndButtons = ({
             )}
           </div>
         </div>
-        <div className="flex justify-end">
-          <div className="flex flex-col items-start space-x-3">
-            {OptionsForm}
-          </div>
+        <div className="flex justify-end items-start space-x-3">
+          {options.map((opt, idx) => {
+            return (
+              <Checkbox
+                key={idx}
+                prefix="text"
+                name={0}
+                value={opt.value}
+                onChange={onChangeOptions}
+                label={opt.label}
+                checked={
+                  opt.value === 'regex'
+                    ? value[0].regex || false
+                    : value[0].in === opt.value
+                }
+                onChange={onChangeOptions}
+              />
+            );
+          })}
         </div>
       </div>
       <SearchAdditionalFormsText

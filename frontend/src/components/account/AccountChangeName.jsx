@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import PenFill from 'assets/images/icons/pen-fill.svg';
-import { Tooltip, ErrorOverlay, Modal, Button } from 'components';
+import { Input, Tooltip, ErrorOverlay, Modal, Button } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -10,7 +10,7 @@ const AccountChangeName = () => {
   const { publicName, setPublicName, isMobile } = useApp();
 
   const [state, setState] = useState(publicName || '');
-  const refName = useRef();
+  // const refName = useRef();
 
   const [showModal, setShowModal] = useState(false);
   const [buttonState, setButtonState] = useState(false);
@@ -82,13 +82,11 @@ const AccountChangeName = () => {
       </div>
       <form className="my-1" onSubmit={handleSubmitButton}>
         <div className="input-group">
-          <input
+          <Input
             placeholder="Public name"
-            type="text"
-            name="publicName"
             value={state}
             onChange={handleChange}
-            ref={refName}
+            /* ref={refName} */
           />
           {!buttonState ? (
             !spinnerState ? (

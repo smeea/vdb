@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Check2 from 'assets/images/icons/check2.svg';
 import PaletteFill from 'assets/images/icons/palette-fill.svg';
-import { Button } from 'components';
+import { Input, Button } from 'components';
 import { useApp, deckUpdate } from 'context';
 
 const DeckChangeBranchName = ({ deck }) => {
@@ -42,9 +42,7 @@ const DeckChangeBranchName = ({ deck }) => {
     <form className="my-0" onSubmit={handleSubmitButton}>
       <div className="input-group">
         {isMobile && <PaletteFill />}
-        <input
-          type="text"
-          className="form-control"
+        <Input
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}

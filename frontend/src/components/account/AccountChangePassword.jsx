@@ -4,7 +4,7 @@ import Check2 from 'assets/images/icons/check2.svg';
 import LockFill from 'assets/images/icons/lock-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { Button, ErrorOverlay } from 'components';
+import { Input, Button, ErrorOverlay } from 'components';
 import { userServices } from 'services';
 import { useApp } from 'context';
 
@@ -21,7 +21,7 @@ const AccountChangePassword = () => {
   const [hidePassword, setHidePassword] = useState(true);
   const [buttonState, setButtonState] = useState(false);
 
-  const refOldPassword = useRef();
+  // const refOldPassword = useRef();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -34,7 +34,7 @@ const AccountChangePassword = () => {
   const onError = (e) => {
     if (e.message == 401) {
       setPasswordError('WRONG OLD PASSWORD');
-      refOldPassword.current.focus();
+      // refOldPassword.current.focus();
     } else {
       setPasswordError('CONNECTION PROBLEM');
     }
@@ -72,22 +72,22 @@ const AccountChangePassword = () => {
 
   const OldPasswordForm = (
     <>
-      <input
-        className={isMobile ? 'mb-2' : ''}
+      <Input
+        /* className={isMobile ? 'mb-2' : ''} */
         placeholder="Old password"
         type={hidePassword ? 'password' : 'text'}
         name="password"
         required={true}
         value={state.password}
         onChange={handleChange}
-        ref={refOldPassword}
+        /* ref={refOldPassword} */
       />
     </>
   );
 
   const NewPasswordForm = (
     <>
-      <input
+      <Input
         placeholder="New password"
         type={hidePassword ? 'password' : 'text'}
         name="newPassword"

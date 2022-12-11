@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
-import { Checkbox, ErrorOverlay } from 'components';
+import { Input, Checkbox, ErrorOverlay } from 'components';
 import {
   TwdSearchFormButtons,
   TwdSearchFormPlayer,
@@ -394,7 +394,8 @@ const TwdSearchForm = ({ error, setError }) => {
           <div className="text-blue px-0 font-bold">Event:</div>
         </div>
         <div className="inline basis-9/12 px-0">
-          <TwdSearchFormEvent
+          <Input
+            placeholder="Event Name"
             value={twdFormState.event}
             onChange={handleEventChange}
           />

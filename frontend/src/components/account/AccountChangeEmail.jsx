@@ -4,7 +4,7 @@ import Check2 from 'assets/images/icons/check2.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { Button, Tooltip, ErrorOverlay, Modal } from 'components';
+import { Input, Button, Tooltip, ErrorOverlay, Modal } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -21,8 +21,7 @@ const AccountChangeEmail = () => {
   const [passwordError, setPasswordError] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
-  const refEmail = useRef();
-  const refPassword = useRef();
+  // const refPassword = useRef();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -36,7 +35,7 @@ const AccountChangeEmail = () => {
     setSpinnerState(false);
     if (e.message == 401) {
       setPasswordError('WRONG PASSWORD');
-      refPassword.current.focus();
+      // refPassword.current.focus();
     } else {
       setPasswordError('CONNECTION PROBLEM');
     }
@@ -69,27 +68,26 @@ const AccountChangeEmail = () => {
   const tooltipText = <>Email is for password recovery only.</>;
 
   const EmailForm = (
-    <input
-      className={isMobile ? 'mb-2' : ''}
+    <Input
+      /* className={isMobile ? 'mb-2' : ''} */
       placeholder="New email"
       type="email"
       name="email"
       value={state.email}
       onChange={handleChange}
-      ref={refEmail}
     />
   );
 
   const PasswordFormButton = (
     <>
-      <input
+      <Input
         placeholder="Password"
         type={hidePassword ? 'password' : 'text'}
         name="password"
         value={state.password}
         required={true}
         onChange={handleChange}
-        ref={refPassword}
+        /* ref={refPassword} */
       />
       <Button
         tabIndex="-1"

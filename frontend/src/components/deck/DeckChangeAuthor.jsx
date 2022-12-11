@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Check2 from 'assets/images/icons/check2.svg';
 import PersonFill from 'assets/images/icons/person-fill.svg';
-import { Button } from 'components';
+import { Input, Button } from 'components';
 import { useApp, deckUpdate } from 'context';
 
 const DeckChangeAuthor = ({ deck }) => {
@@ -42,9 +42,7 @@ const DeckChangeAuthor = ({ deck }) => {
     <form className="my-0" onSubmit={handleSubmitButton}>
       <div className="input-group">
         <PersonFill />
-        <input
-          type="text"
-          className="form-control"
+        <Input
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}

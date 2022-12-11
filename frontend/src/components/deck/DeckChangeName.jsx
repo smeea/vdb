@@ -5,7 +5,7 @@ import TagFill from 'assets/images/icons/tag-fill.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { useApp, deckUpdate } from 'context';
-import { Button, DeckFreezeButton } from 'components';
+import { Input, Button, DeckFreezeButton } from 'components';
 
 const DeckChangeName = ({ deck }) => {
   const { isMobile } = useApp();
@@ -47,9 +47,7 @@ const DeckChangeName = ({ deck }) => {
         <div title="Deck Name">
           <TagFill />
         </div>
-        <input
-          type="text"
-          className="form-control"
+        <Input
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}

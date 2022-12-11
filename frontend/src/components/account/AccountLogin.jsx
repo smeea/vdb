@@ -4,7 +4,7 @@ import DoorOpenFill from 'assets/images/icons/door-open-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import { Tooltip, ErrorOverlay, Modal, Button } from 'components';
+import { Input, Tooltip, ErrorOverlay, Modal, Button } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -21,17 +21,17 @@ const AccountLogin = () => {
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
-  const refUsername = useRef();
-  const refPassword = useRef();
+  // const refUsername = useRef();
+  // const refPassword = useRef();
 
   const onError = (e) => {
     setSpinnerState(false);
     if (e.message == 401) {
       setPasswordError('WRONG PASSWORD');
-      refPassword.current.focus();
+      // refPassword.current.focus();
     } else if (e.message == 400) {
       setUsernameError('USER DOES NOT EXIST');
-      refUsername.current.focus();
+      // refUsername.current.focus();
     } else {
       setPasswordError('CONNECTION PROBLEM');
     }
@@ -86,21 +86,20 @@ const AccountLogin = () => {
   );
 
   const UsernameForm = (
-    <input
+    <Input
       placeholder="New Username"
-      type="text"
       name="username"
       value={formUsername}
       required={true}
       onChange={(e) => setFormUsername(e.target.value)}
       autoFocus={true}
-      ref={refUsername}
+      /* ref={refUsername} */
     />
   );
 
   const PasswordForm = (
     <>
-      <input
+      <Input
         placeholder="Password"
         type={hidePassword ? 'password' : 'text'}
         name="password"
@@ -109,7 +108,7 @@ const AccountLogin = () => {
         value={formPassword}
         required={true}
         onChange={(e) => setFormPassword(e.target.value)}
-        ref={refPassword}
+        /* ref={refPassword} */
       />
       <Button
         tabIndex="-1"

@@ -19,3 +19,4 @@
 
 # TAILWIND MIGRATION
 - Style for className="input-group"
+- Ref to input (for autofocus)
