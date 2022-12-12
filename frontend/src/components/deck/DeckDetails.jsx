@@ -45,7 +45,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
   const { isMobile } = useApp();
 
   return (
-    <>
+    <div className="space-y-2">
       <div className="flex space-x-2">
         <div
           className={`${deck.isBranches ? 'md:basis-6/12' : 'md:basis-8/12'}`}
@@ -62,7 +62,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
         </div>
       </div>
       {folded && !isMobile && (
-        <div className="flex space-x-2 ">
+        <div className="flex space-x-2">
           <div className="md:basis-6/12">
             <DeckChangeDescription
               deck={deck}
@@ -92,7 +92,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
             </div>
           </>
         )}
-    </>
+    </div>
   );
 };
 

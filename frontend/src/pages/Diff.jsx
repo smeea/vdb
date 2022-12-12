@@ -330,7 +330,7 @@ const Diff = () => {
                       type="radio"
                       id="from-my"
                       label={
-                        <div className="blue">
+                        <div className="text-blue">
                           <b>{isMobile ? 'My' : 'My Decks'}</b>
                         </div>
                       }
@@ -343,7 +343,7 @@ const Diff = () => {
                     type="radio"
                     id="from-precons"
                     label={
-                      <div className="blue">
+                      <div className="text-blue">
                         <b>Precons</b>
                       </div>
                     }
@@ -356,7 +356,7 @@ const Diff = () => {
                       type="radio"
                       id="from-recent"
                       label={
-                        <div className="blue">
+                        <div className="text-blue">
                           <b>Recent</b>
                         </div>
                       }
@@ -369,7 +369,7 @@ const Diff = () => {
                     type="radio"
                     id="from-url"
                     label={
-                      <div className="blue">
+                      <div className="text-blue">
                         <b>URL</b>
                       </div>
                     }
@@ -461,7 +461,7 @@ const Diff = () => {
                       type="radio"
                       id="to-my"
                       label={
-                        <div className="blue">
+                        <div className="text-blue">
                           <b>{isMobile ? 'My' : 'My Decks'}</b>
                         </div>
                       }
@@ -474,7 +474,7 @@ const Diff = () => {
                     type="radio"
                     id="to-precons"
                     label={
-                      <div className="blue">
+                      <div className="text-blue">
                         <b>Precons</b>
                       </div>
                     }
@@ -487,7 +487,7 @@ const Diff = () => {
                       type="radio"
                       id="to-recent"
                       label={
-                        <div className="blue">
+                        <div className="text-blue">
                           <b>Recent</b>
                         </div>
                       }
@@ -500,7 +500,7 @@ const Diff = () => {
                     type="radio"
                     id="to-url"
                     label={
-                      <div className="blue">
+                      <div className="text-blue">
                         <b>URL</b>
                       </div>
                     }

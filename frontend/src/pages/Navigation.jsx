@@ -67,13 +67,17 @@ const Navigation = () => {
       } z-50 bg-green-900`}
     >
       <div className="flex h-[42px] justify-between">
-        <div className="flex items-center space-x-6 ">
+        <div className="flex items-center pl-3 space-x-8 ">
           {isMobile ? (
             <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
           ) : (
             <>
-              <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
-              <ThemeSelect />
+              <div className="flex h-full">
+                <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
+              </div>
+              <div>
+                <ThemeSelect />
+              </div>
             </>
           )}
           {username &&
@@ -84,14 +88,14 @@ const Navigation = () => {
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
               <div
-                className={`flex items-center space-x-4 ${
+                className={`flex items-center h-full ${
                   inventoryMode ? 'text-white' : 'text-neutral-500-font'
                 }`}
                 onClick={() => {
                   toggleInventoryMode();
                 }}
               >
-                <div>
+                <div className="pr-2">
                   {inventoryMode ? (
                     <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
                   ) : (
@@ -107,7 +111,7 @@ const Navigation = () => {
             <>
               <NavLink
                 to="/account"
-                className={`nav-link flex h-full items-center ${
+                className={`nav-link px-3 flex h-full items-center ${
                   username ? '' : ''
                 }`}
               >
@@ -120,40 +124,52 @@ const Navigation = () => {
               <NavLink
                 to="/"
                 end
-                className="nav-link flex h-full items-center "
+                className="nav-link px-2 flex h-full items-center "
               >
                 About
               </NavLink>
             </>
           )}
-          <NavLink to={pdaUrl} className="nav-link flex h-full items-center ">
+          <NavLink
+            to={pdaUrl}
+            className="nav-link px-2 flex h-full items-center "
+          >
             PDA
           </NavLink>
-          <NavLink to={twdUrl} className="nav-link flex h-full items-center ">
+          <NavLink
+            to={twdUrl}
+            className="nav-link px-2 flex h-full items-center "
+          >
             TWD
           </NavLink>
           <NavLink
             to="/inventory"
-            className="nav-link flex h-full items-center "
+            className="nav-link px-2 flex h-full items-center "
           >
             {isMobile ? 'INV' : 'Inventory'}
           </NavLink>
-          <NavLink to={decksUrl} className="nav-link flex h-full items-center ">
+          <NavLink
+            to={decksUrl}
+            className="nav-link px-2 flex h-full items-center "
+          >
             {isMobile ? 'DKS' : 'Decks'}
           </NavLink>
-          <NavLink to={cryptUrl} className="nav-link flex h-full items-center ">
+          <NavLink
+            to={cryptUrl}
+            className="nav-link px-2 flex h-full items-center "
+          >
             {isMobile ? 'CRY' : 'Crypt'}
           </NavLink>
           <NavLink
             to={libraryUrl}
-            className="nav-link flex h-full items-center "
+            className="nav-link px-2 flex h-full items-center "
           >
             {isMobile ? 'LIB' : 'Library'}
           </NavLink>
           <NavLink
             to={cardsUrl}
             aria-label="Quick card search"
-            className="nav-link flex h-full items-center "
+            className="nav-link px-3 flex h-full items-center "
           >
             <LightningFill width="18" height="18" viewBox="0 0 16 16" />
           </NavLink>

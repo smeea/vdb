@@ -57,7 +57,7 @@ const Library = () => {
               showSearchForm
                 ? 'md:basis-0/12 lg:basis-1/12'
                 : 'md:basis-5/12 lg:basis-6/12'
-            } ${deck && addMode ? 'xl:basis:4/12' : 'xl:basis2/12'}  `}
+            } ${deck && addMode ? 'xl:basis:4/12' : 'xl:basis2/12'}`}
           >
             {decks !== undefined &&
               (isDesktop || (!isDesktop && !showSearchForm)) && (

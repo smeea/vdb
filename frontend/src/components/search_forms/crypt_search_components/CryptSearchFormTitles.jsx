@@ -10,7 +10,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
         </div>
       </div>
       <div className="flex flex-row">
-        <div className="inline basis-7/12">
+        <div className="inline basis-7/12 space-y-0.5">
           {[
             ['primogen', 'Primogen'],
             ['prince', 'Prince'],
@@ -30,7 +30,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
             />
           ))}
         </div>
-        <div className="inline basis-5/12">
+        <div className="inline basis-5/12 space-y-0.5">
           {[
             ['bishop', 'Bishop'],
             ['archbishop', 'Archbishop'],

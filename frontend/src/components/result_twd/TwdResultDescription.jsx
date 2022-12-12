@@ -28,7 +28,7 @@ const TwdResultDescription = ({ deck }) => {
       <table>
         <tbody>
           <tr>
-            <td className="blue">
+            <td className="text-blue">
               {isMobile ? (
                 <div className="flex items-center">
                   <CalendarEvent />
@@ -40,7 +40,7 @@ const TwdResultDescription = ({ deck }) => {
             <td>{deck['creation_date']}</td>
           </tr>
           <tr>
-            <td className="blue">
+            <td className="text-blue">
               {isMobile ? (
                 <div className="flex items-center">
                   <TrophyFill />
@@ -52,7 +52,7 @@ const TwdResultDescription = ({ deck }) => {
             <td>{deck['event']}</td>
           </tr>
           <tr>
-            <td className="blue">
+            <td className="text-blue">
               {isMobile ? (
                 <div className="flex items-center">
                   <GeoAltFill />
@@ -71,7 +71,7 @@ const TwdResultDescription = ({ deck }) => {
             </td>
           </tr>
           <tr>
-            <td className="blue">
+            <td className="text-blue">
               {isMobile ? (
                 <div className="flex items-center">
                   <PersonFill />
@@ -90,7 +90,7 @@ const TwdResultDescription = ({ deck }) => {
             </td>
           </tr>
           <tr>
-            <td className="blue">
+            <td className="text-blue">
               {isMobile ? (
                 <div className="flex items-center">
                   <TagFill />
@@ -131,7 +131,7 @@ const TwdResultDescription = ({ deck }) => {
             <div className="md:basis-1/2">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </div>
-            <div className="md:basis-1/2">
+            <div className="md:basis-1/2 justify-end">
               {username && <DeckCloneButton deck={deck} noRedirect />}
             </div>
           </div>

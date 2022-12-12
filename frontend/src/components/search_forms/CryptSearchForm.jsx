@@ -216,7 +216,7 @@ const CryptSearchForm = () => {
   }, [preresults]);
 
   return (
-    <>
+    <div className="space-y-1">
       <SearchFormTextAndButtons
         value={cryptFormState.text}
         onChange={handleTextChange}
@@ -303,7 +303,7 @@ const CryptSearchForm = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

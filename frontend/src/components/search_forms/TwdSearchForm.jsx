@@ -207,7 +207,7 @@ const TwdSearchForm = ({ error, setError }) => {
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   return (
-    <>
+    <div className="space-y-1">
       <div className="flex flex-row justify-between ">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
@@ -390,6 +390,7 @@ const TwdSearchForm = ({ error, setError }) => {
         </div>
         <div className="inline basis-9/12">
           <Input
+            className="w-full"
             placeholder="Event Name"
             value={twdFormState.event}
             onChange={handleEventChange}
@@ -440,7 +441,7 @@ const TwdSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

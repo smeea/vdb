@@ -238,6 +238,7 @@ const Decks = () => {
                 deck={deck}
                 decks={decks}
                 handleSelect={handleSelect}
+                setShowDeckSelectAdv={setShowDeckSelectAdv}
               />
             </div>
             <div className="md:basis-7/12">

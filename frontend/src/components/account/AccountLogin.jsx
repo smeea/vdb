@@ -1,10 +1,18 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import DoorOpenFill from 'assets/images/icons/door-open-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import { Input, Tooltip, ErrorOverlay, Modal, Button } from 'components';
+import {
+  AccountPasswordForm,
+  AccountUsernameForm,
+  Button,
+  ErrorOverlay,
+  Input,
+  Modal,
+  Tooltip,
+} from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
 
@@ -21,17 +29,13 @@ const AccountLogin = () => {
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
-  // const refUsername = useRef();
-  // const refPassword = useRef();
 
   const onError = (e) => {
     setSpinnerState(false);
     if (e.message == 401) {
       setPasswordError('WRONG PASSWORD');
-      // refPassword.current.focus();
     } else if (e.message == 400) {
       setUsernameError('USER DOES NOT EXIST');
-      // refUsername.current.focus();
     } else {
       setPasswordError('CONNECTION PROBLEM');
     }
@@ -85,50 +89,6 @@ const AccountLogin = () => {
     </>
   );
 
-  const UsernameForm = (
-    <Input
-      placeholder="New Username"
-      name="username"
-      value={formUsername}
-      required={true}
-      onChange={(e) => setFormUsername(e.target.value)}
-      autoFocus={true}
-      /* ref={refUsername} */
-    />
-  );
-
-  const PasswordForm = (
-    <>
-      <Input
-        placeholder="Password"
-        type={hidePassword ? 'password' : 'text'}
-        name="password"
-        autoComplete="current-password"
-        id="current-password"
-        value={formPassword}
-        required={true}
-        onChange={(e) => setFormPassword(e.target.value)}
-        /* ref={refPassword} */
-      />
-      <Button
-        tabIndex="-1"
-        variant="primary"
-        onClick={() => setHidePassword(!hidePassword)}
-      >
-        {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-      </Button>
-      {!spinnerState ? (
-        <Button variant="primary" type="submit">
-          <Check2 />
-        </Button>
-      ) : (
-        <Button variant="primary">
-          <Spinner />
-        </Button>
-      )}
-    </>
-  );
-
   return (
     <>
       <div className="text-blue flex items-center text-xl font-bold">
@@ -149,16 +109,30 @@ const AccountLogin = () => {
           </span>
         )}
       </div>
-      <form className="relative " onSubmit={handleSubmitButton}>
+      <form className="relative" onSubmit={handleSubmitButton}>
         {isMobile ? (
           <>
-            {UsernameForm}
-            <form>{PasswordForm}</form>
+            <AccountUsernameForm
+              value={formUsername}
+              setValue={setFormUsername}
+            />
+            <AccountPasswordForm
+              value={formPassword}
+              setValue={setFormPassword}
+              spinnerState={spinnerState}
+            />
           </>
         ) : (
-          <div className="input-group">
-            {UsernameForm}
-            {PasswordForm}
+          <div className="flex">
+            <AccountUsernameForm
+              value={formUsername}
+              setValue={setFormUsername}
+            />
+            <AccountPasswordForm
+              value={formPassword}
+              setValue={setFormPassword}
+              spinnerState={spinnerState}
+            />
           </div>
         )}
         {usernameError && (

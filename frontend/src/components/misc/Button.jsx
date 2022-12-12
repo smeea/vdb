@@ -15,7 +15,7 @@ const Button = ({
 
   return (
     <button
-      className={`${btnVariant} items-center justify-center  rounded-md ${
+      className={`${btnVariant} items-center justify-center px-3 py-1.5 rounded-md ${
         className ?? ''
       }`}
       onClick={onClick}

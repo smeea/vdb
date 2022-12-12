@@ -125,7 +125,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
     if (idx < 5) {
       formsLeft.push(
-        <div className=" flex flex-row items-center " key={i[0]}>
+        <div className=" flex flex-row items-center" key={i[0]}>
           <div className="flex basis-2/12 justify-center ">
             <ResultLibraryTypeImage value={i[0]} />
           </div>
@@ -170,9 +170,9 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
   return (
     <>
-      <div className=" flex flex-row">
-        <div className="inline basis-1/2  ">{formsLeft}</div>
-        <div className="inline basis-1/2  ">{formsRight}</div>
+      <div className="flex flex-row space-x-3">
+        <div className="basis-1/2 space-y-1">{formsLeft}</div>
+        <div className="basis-1/2 space-y-1">{formsRight}</div>
       </div>
     </>
   );

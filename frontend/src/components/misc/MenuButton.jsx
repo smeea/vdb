@@ -7,14 +7,17 @@ const MenuButton = ({ title, icon, variant = 'primary', text }) => {
 
   return (
     <Menu.Button>
-      <div className={`rounded bg-red-800 ${btnVariant}`} title={title}>
+      <div
+        className={`flex h-full rounded bg-red-800 items-center justify-center px-3 py-1.5 ${btnVariant}`}
+        title={title}
+      >
         {text === undefined || text === null ? (
           <>{icon}</>
         ) : (
-          <div className="flex items-center justify-center">
-            <div className="flex ">{icon}</div>
+          <>
+            <div className="flex pr-2">{icon}</div>
             {text}
-          </div>
+          </>
         )}
       </div>
     </Menu.Button>

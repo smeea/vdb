@@ -21,21 +21,26 @@ const DeckCryptHeader = ({
 
   return (
     <div className="info-message flex items-center justify-between">
-      <b>
-        Crypt [{cryptTotal}
-        {!inMissing && cryptTotal < 12 && ' of 12+'}]{!inMissing && cryptGroups}
+      <div className="font-bold space-x-2">
+        <div className="inline">
+          Crypt [{cryptTotal}
+          {!inMissing && cryptTotal < 12 && ' of 12+'}]
+        </div>
+        {!inMissing && cryptGroups && (
+          <div className="inline">{cryptGroups}</div>
+        )}
         {!inMissing && hasBanned && (
           <div className="inline items-center text-red-600">
             <Exclamation
-              width="16"
-              heigth="16"
+              width="17"
+              heigth="17"
               viewBox="0 2 16 16"
-              className="inline"
+              className="inline pr-1"
             />
             BANNED
           </div>
         )}
-      </b>
+      </div>
       <div className="flex items-center justify-between">
         <div className="flex flex-row space-x-1">
           {!inMissing && (

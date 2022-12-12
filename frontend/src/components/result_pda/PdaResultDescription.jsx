@@ -31,7 +31,7 @@ const PdaResultDescription = ({ deck }) => {
       <table>
         <tbody>
           <tr>
-            <td className="blue">
+            <td className="text-blue">
               {isMobile ? (
                 <div className="flex items-center">
                   <TagFill />
@@ -43,7 +43,7 @@ const PdaResultDescription = ({ deck }) => {
             <td>{deck['name']}</td>
           </tr>
           <tr>
-            <td className="blue">
+            <td className="text-blue">
               {isMobile ? (
                 <div className="flex items-center">
                   <PersonFill />
@@ -62,7 +62,7 @@ const PdaResultDescription = ({ deck }) => {
             </td>
           </tr>
           <tr>
-            <td className="blue">
+            <td className="text-blue">
               {isMobile ? (
                 <div className="flex items-center">
                   <CalendarEvent />
@@ -75,7 +75,7 @@ const PdaResultDescription = ({ deck }) => {
           </tr>
           {lastUpdated !== deck['creation_date'] && (
             <tr>
-              <td className="blue">
+              <td className="text-blue">
                 {isMobile ? (
                   <div className="flex items-center">
                     <CalendarEvent />

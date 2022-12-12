@@ -204,7 +204,7 @@ const PdaSearchForm = ({ error, setError }) => {
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
   return (
-    <>
+    <div className="space-y-1">
       <div className="flex flex-row justify-between ">
         <TwdSearchFormButtons
           handleClearButton={handleClearButton}
@@ -414,7 +414,7 @@ const PdaSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

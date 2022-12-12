@@ -59,8 +59,8 @@ const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
     cryptGroups = (
       <div className="inline items-center  text-red-600">
         <Exclamation
-          width="16"
-          heigth="16"
+          width="17"
+          heigth="17"
           viewBox="0 2 16 16"
           className="inline pr-1"
         />

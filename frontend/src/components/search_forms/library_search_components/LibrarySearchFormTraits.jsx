@@ -13,7 +13,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
         </div>
       </div>
       <div className="flex flex-row">
-        <div className="inline basis-7/12">
+        <div className="inline basis-7/12 space-y-0.5">
           {[
             ['intercept', '+Intercept / -Stealth'],
             ['stealth', '+Stealth / -Intercept'],
@@ -39,7 +39,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             />
           ))}
         </div>
-        <div className="inline basis-5/12">
+        <div className="inline basis-5/12 space-y-0.5">
           {[
             ['bloat', 'Blood to Uncontrolled'],
             ['bounce bleed', 'Bounce Bleed'],

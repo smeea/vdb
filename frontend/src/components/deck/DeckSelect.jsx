@@ -16,7 +16,7 @@ import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
 import {
   AccountLogin,
   AccountRegister,
-  Button,
+  ButtonIconed,
   DeckBranchSelect,
   DeckButtons,
   DeckChangeAuthor,
@@ -42,7 +42,13 @@ import {
 import { deckStore, useApp, setDeck, deckUpdate } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
 
-const DeckSelect = ({ deck, deckid, decks, handleSelect }) => {
+const DeckSelect = ({
+  deck,
+  deckid,
+  decks,
+  handleSelect,
+  setShowDeckSelectAdv,
+}) => {
   const {
     addRecentDeck,
     inventoryMode,
@@ -83,7 +89,7 @@ const DeckSelect = ({ deck, deckid, decks, handleSelect }) => {
   }, [deckid, decks]);
 
   return (
-    <>
+    <div className="space-y-2">
       <div className="flex space-x-1">
         <div className="w-full">
           {selectFrom == 'my' && decks ? (
@@ -127,8 +133,8 @@ const DeckSelect = ({ deck, deckid, decks, handleSelect }) => {
           </div>
         )}
       </div>
-      <div className="flex items-center justify-between ">
-        <div className="flex space-x-8">
+      <div className="flex items-center justify-between space-x-6">
+        <div className="flex space-x-6">
           {username && decks && Object.keys(decks).length > 0 && (
             <>
               <Radio
@@ -156,18 +162,17 @@ const DeckSelect = ({ deck, deckid, decks, handleSelect }) => {
         </div>
         <div className="flex flex-row space-x-1">
           {decks && (
-            <Button
+            <ButtonIconed
               title="Advanced Deck Select"
               variant="primary"
               onClick={() => {
                 setShowFloatingButtons(false);
                 setShowDeckSelectAdv(true);
               }}
-            >
-              <div className="flex">
+              icon={
                 <BinocularsFill width="16" height="22" viewBox="0 0 16 18" />
-              </div>
-            </Button>
+              }
+            />
           )}
           {isMobile && deck && (
             <Button variant="primary" onClick={() => setShowInfo(!showInfo)}>
@@ -178,7 +183,7 @@ const DeckSelect = ({ deck, deckid, decks, handleSelect }) => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

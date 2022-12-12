@@ -7,7 +7,7 @@ const InventoryShowSelect = ({ category, setCategory }) => {
         type="radio"
         id="all"
         label={
-          <div className="blue">
+          <div className="text-blue">
             <b>Show All</b>
           </div>
         }
@@ -18,7 +18,7 @@ const InventoryShowSelect = ({ category, setCategory }) => {
         type="radio"
         id="ok"
         label={
-          <div className="blue">
+          <div className="text-blue">
             <b>Only Owned</b>
           </div>
         }
@@ -29,7 +29,7 @@ const InventoryShowSelect = ({ category, setCategory }) => {
         type="radio"
         id="nok"
         label={
-          <div className="blue">
+          <div className="text-blue">
             <b>Only Problems</b>
           </div>
         }

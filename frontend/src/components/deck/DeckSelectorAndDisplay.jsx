@@ -25,8 +25,8 @@ const DeckSelectorAndDisplay = () => {
   };
 
   return (
-    <>
-      <div className="sticky-selector flex justify-end  ">
+    <div className="space-y-4">
+      <div className="sticky-selector flex justify-end space-x-1">
         {addMode && (
           <>
             <div className={isBranches ? 'w-75' : 'w-full'}>
@@ -67,7 +67,7 @@ const DeckSelectorAndDisplay = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 
