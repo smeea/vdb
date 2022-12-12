@@ -4,26 +4,24 @@ import Hammer from 'assets/images/icons/hammer.svg';
 const ResultCryptName = ({ card }) => {
   return (
     <div className="inline whitespace-nowrap">
-      {card['Banned'] ? (
-        <div className="inline whitespace-normal">
-          <strike>{card['Name']}</strike>
-        </div>
-      ) : (
-        <div className="inline whitespace-normal">{card['Name']}</div>
-      )}
+      <div className="inline whitespace-normal">
+        {card['Banned'] ? <strike>{card['Name']}</strike> : <>{card['Name']}</>}
+      </div>
       {card.Adv[0] && (
-        <span>
+        <>
+          {' '}
           <img
             className="advanced-image-results inline h-[22px] align-text-bottom"
             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
             title="Advanced"
           />
-        </span>
+        </>
       )}
       {card['Banned'] && (
-        <span>
+        <>
+          {' '}
           [{card['Banned']} <Hammer className="inline h-[20px]" />]
-        </span>
+        </>
       )}
     </div>
   );

@@ -205,7 +205,7 @@ const LibrarySearchForm = () => {
   }, [preresults]);
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-2">
       <SearchFormTextAndButtons
         value={libraryFormState.text}
         onChange={handleTextChange}

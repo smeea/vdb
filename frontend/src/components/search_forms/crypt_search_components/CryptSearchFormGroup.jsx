@@ -7,15 +7,15 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
   const groups = [1, 2, 3, 4, 5, 6, 7];
 
   return (
-    <div className="flex flex-row items-center ">
-      <div className="flex basis-1/4">
+    <div className="flex items-center">
+      <div className="w-1/4">
         <div className="text-blue font-bold">Group:</div>
       </div>
-      <div className="flex basis-9/12 justify-end">
+      <div className="flex w-3/4 justify-end">
         {groups.map((i, index) => {
           return (
             <Button
-              className={`group-form ${!isMobile && isNarrow ? '' : '4px'}`}
+              className="w-full rounded-none"
               key={index}
               value={i}
               name="group"

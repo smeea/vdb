@@ -38,6 +38,7 @@ import {
   Modal,
   Radio,
   Seating,
+  Button,
 } from 'components';
 import { deckStore, useApp, setDeck, deckUpdate } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';

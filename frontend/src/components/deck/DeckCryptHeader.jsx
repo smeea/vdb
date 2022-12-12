@@ -1,8 +1,8 @@
 import React from 'react';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
+import Exclamation from 'assets/images/icons/exclamation-triangle.svg';
 import { Button, SortButton } from 'components';
 import { useApp } from 'context';
-import Exclamation from 'assets/images/icons/exclamation-triangle.svg';
 
 const DeckCryptHeader = ({
   cryptTotal,
@@ -21,7 +21,7 @@ const DeckCryptHeader = ({
 
   return (
     <div className="info-message flex items-center justify-between">
-      <div className="font-bold space-x-2">
+      <div className="font-bold space-x-2 px-2 py-1">
         <div className="inline">
           Crypt [{cryptTotal}
           {!inMissing && cryptTotal < 12 && ' of 12+'}]
@@ -41,28 +41,26 @@ const DeckCryptHeader = ({
           </div>
         )}
       </div>
-      <div className="flex items-center justify-between">
-        <div className="flex flex-row space-x-1">
-          {!inMissing && (
-            <SortButton
-              sortMethods={sortMethods}
-              sortMethod={sortMethod}
-              setSortMethod={setSortMethod}
-            />
-          )}
-          <Button
-            title="Additional Info"
-            variant="primary"
-            onClick={toggleShowInfo}
-          >
-            <InfoCircle />
+      <div className="flex space-x-1">
+        {!inMissing && (
+          <SortButton
+            sortMethods={sortMethods}
+            sortMethod={sortMethod}
+            setSortMethod={setSortMethod}
+          />
+        )}
+        <Button
+          title="Additional Info"
+          variant="primary"
+          onClick={toggleShowInfo}
+        >
+          <InfoCircle />
+        </Button>
+        {(inReview || isEditable) && !isMobile && (
+          <Button title="Add Card" variant="primary" onClick={toggleShowAdd}>
+            +
           </Button>
-          {(inReview || isEditable) && !isMobile && (
-            <Button title="Add Card" variant="primary" onClick={toggleShowAdd}>
-              +
-            </Button>
-          )}
-        </div>
+        )}
       </div>
     </div>
   );

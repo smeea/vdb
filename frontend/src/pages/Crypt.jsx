@@ -48,16 +48,19 @@ const Crypt = () => {
     }
   }, [deck, decks, lastDeckId]);
 
+  const SPACING = 8;
+  const TOP_SPACING = `pt-${SPACING}`;
+
   return (
-    <div className="search-container  mx-auto">
-      <div className="flex flex-row">
+    <div className="search-container mx-auto">
+      <div className={`flex flex-row space-x-${SPACING} ${TOP_SPACING}`}>
         {!isMobile && (
           <div
             className={`${
               showSearchForm
                 ? 'md:basis-0/12 lg:basis-1/12'
                 : 'md:basis-5/12 lg:basis-6/12'
-            } ${deck && addMode ? 'xl:basis:4/12' : 'xl:basis2/12'}  `}
+            } ${deck && addMode ? 'xl:basis:4/12' : 'xl:basis2/12'}`}
           >
             {decks !== undefined &&
               (isDesktop || (!isDesktop && !showSearchForm)) && (

@@ -18,6 +18,7 @@
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 
 # TAILWIND MIGRATION
-- Style for className="input-group"
-- Clean Dec, DeckSelect, DeckDetails imports
+- Clean Deck, DeckSelect, DeckDetails imports
 - Fix show password in Account on enter
+- Account tooltips
+- Refactor TWD/PDA form

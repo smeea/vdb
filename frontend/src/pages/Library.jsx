@@ -48,9 +48,12 @@ const Library = () => {
     }
   }, [deck, decks, lastDeckId]);
 
+  const SPACING = 8;
+  const TOP_SPACING = `pt-${SPACING}`;
+
   return (
-    <div className="search-container  mx-auto">
-      <div className="flex flex-row">
+    <div className="search-container mx-auto">
+      <div className={`flex flex-row space-x-${SPACING} ${TOP_SPACING}`}>
         {!isMobile && (
           <div
             className={`${
@@ -69,7 +72,7 @@ const Library = () => {
           <div
             className={`md:basis-7/12 lg:basis-1/2 xl:${
               deck && addMode ? '5/12' : '6/12'
-            }    2xl:basis-5/12`}
+            }  2xl:basis-5/12`}
           >
             {((isMobile && libraryCompare && libraryResults) ||
               (!isMobile && libraryCompare)) && (

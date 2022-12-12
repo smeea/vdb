@@ -63,25 +63,23 @@ const AccountPlaytestAdd = ({
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="input-group">
-        <input
-          placeholder="Add Playtester (login)"
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleChange}
-          ref={ref}
-        />
-        {!spinnerState ? (
-          <Button variant="primary" type="submit">
-            <Check2 />
-          </Button>
-        ) : (
-          <Button variant="primary">
-            <Spinner />
-          </Button>
-        )}
-      </div>
+      <input
+        placeholder="Add Playtester (login)"
+        type="text"
+        name="username"
+        value={username}
+        onChange={handleChange}
+        ref={ref}
+      />
+      {!spinnerState ? (
+        <Button variant="primary" type="submit">
+          <Check2 />
+        </Button>
+      ) : (
+        <Button variant="primary">
+          <Spinner />
+        </Button>
+      )}
       {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
     </form>
   );

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Input } from 'components';
 
-const AccountUsernameForm = ({ value, setValue }) => {
+const AccountUsernameForm = ({ value, setValue, isNew }) => {
   return (
     <Input
-      className="inline w-full"
-      placeholder="New Username"
+      className="inline w-full rounded-r-none"
+      placeholder={isNew ? 'New Username' : 'Username'}
       type="text"
       name="username"
       value={value}

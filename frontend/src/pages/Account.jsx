@@ -31,9 +31,11 @@ const Account = () => {
         <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
           {username ? (
             <div className="flex flex-col space-y-6">
-              <div className="text-blue logo-box flex w-full items-center   font-bold">
-                <PersonFill />
-                <span>Logged as: &lt;{username}&gt;</span>
+              <div className="text-blue logo-box flex w-full items-center font-bold px-2 py-1">
+                <div className="pr-2">
+                  <PersonFill />
+                </div>
+                Logged as: &lt;{username}&gt;
               </div>
               <div>
                 <AccountChangeName />

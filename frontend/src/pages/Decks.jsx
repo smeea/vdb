@@ -226,11 +226,13 @@ const Decks = () => {
     }
   }, [deck]);
 
+  const SPACING = 8;
+  const TOP_SPACING = `pt-${SPACING}`;
+
   return (
     <div className="deck-container mx-auto">
-      <div className=" flex flex-row">
-        <div className="xl:basis-1/12"></div>
-        <div className="basis-full lg:basis-10/12 xl:basis-9/12">
+      <div className={`flex flex-row space-x-${SPACING} ${TOP_SPACING}`}>
+        <div className={`basis-full lg:basis-10/12 space-y-${SPACING}`}>
           <div className="flex flex-row">
             <div className="md:basis-5/12">
               <DeckSelect
@@ -262,7 +264,7 @@ const Decks = () => {
             </div>
           )}
           {deck && (
-            <div className="flex flex-row">
+            <div className={`flex flex-row space-x-${SPACING}`}>
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||

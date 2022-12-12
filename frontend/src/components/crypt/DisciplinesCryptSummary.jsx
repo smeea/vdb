@@ -15,19 +15,21 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
     .map((d, idx) => {
       withDisciplines = true;
       return (
-        <span key={idx} className="inline-block whitespace-nowrap  ">
-          <div className="flex items-center ">
+        <div
+          key={idx}
+          className="inline-block whitespace-nowrap items-center pr-5"
+        >
+          <div className="flex items-center space-x-1">
             <ResultDisciplineImage
               title={`${d} Superior | Inferior`}
               superior={true}
               value={d}
             />
-            <div className="flex ">
-              {disciplinesDetailed[d][2]} <div className="gray ">|</div>{' '}
-              {disciplinesDetailed[d][1]}
-            </div>
+            <div>{disciplinesDetailed[d][2]}</div>
+            <div className="text-neutral-500">|</div>
+            <div>{disciplinesDetailed[d][1]}</div>
           </div>
-        </span>
+        </div>
       );
     });
 
@@ -36,20 +38,20 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
     .map((d, idx) => {
       withVirtues = true;
       return (
-        <span key={idx} className="inline-block whitespace-nowrap  ">
-          <div className="flex items-center ">
+        <div key={idx} className="inline-block whitespace-nowrap pr-5">
+          <div className="flex items-center space-x-1">
             <ResultDisciplineImage value={d} />
-            <div className="flex ">{disciplinesDetailed[d][1]}</div>
+            <div className="flex">{disciplinesDetailed[d][1]}</div>
           </div>
-        </span>
+        </div>
       );
     });
 
   return (
-    <>
-      {withDisciplines && <div>{DisciplinesInfo}</div>}
-      {withVirtues && <div>{VirtuesInfo}</div>}
-    </>
+    <div className="space-y-2">
+      {withDisciplines && <>{DisciplinesInfo}</>}
+      {withVirtues && <>{VirtuesInfo}</>}
+    </div>
   );
 };
 

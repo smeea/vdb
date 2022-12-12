@@ -44,7 +44,7 @@ const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
   };
 
   return (
-    <div className="input-group">
+    <>
       <input
         placeholder="Disabled"
         type="text"
@@ -64,7 +64,7 @@ const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
           <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
         )}
       </div>
-    </div>
+    </>
   );
 };
 

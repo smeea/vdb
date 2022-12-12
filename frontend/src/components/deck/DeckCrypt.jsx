@@ -89,7 +89,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
         setSortMethod={changeCryptDeckSort}
       />
       {showInfo && (
-        <div className="info-message ">
+        <div className="info-message p-2">
           <DeckCryptTotalInfo
             disciplinesDetailed={disciplinesDetailed}
             cards={crypt}

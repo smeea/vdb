@@ -69,36 +69,34 @@ const AccountDeleteConfirmation = ({ setShow }) => {
         </div>
         <div>
           <form onSubmit={handleSubmitButton}>
-            <div className="input-group">
-              <input
-                placeholder="Enter password"
-                type={hidePassword ? 'password' : 'text'}
-                name="password"
-                value={password}
-                onChange={handleChange}
-                autoFocus={true}
-                ref={refPassword}
-              />
-              <Button
-                tabIndex="-1"
-                variant="primary"
-                onClick={() => setHidePassword(!hidePassword)}
-              >
-                {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+            <input
+              placeholder="Enter password"
+              type={hidePassword ? 'password' : 'text'}
+              name="password"
+              value={password}
+              onChange={handleChange}
+              autoFocus={true}
+              ref={refPassword}
+            />
+            <Button
+              tabIndex="-1"
+              variant="primary"
+              onClick={() => setHidePassword(!hidePassword)}
+            >
+              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+            </Button>
+            {!spinnerState ? (
+              <Button variant="danger" type="submit">
+                Delete
               </Button>
-              {!spinnerState ? (
-                <Button variant="danger" type="submit">
-                  Delete
-                </Button>
-              ) : (
-                <Button variant="primary">
-                  <Spinner />
-                </Button>
-              )}
-              <Button variant="primary" onClick={() => setShow(false)}>
-                Cancel
+            ) : (
+              <Button variant="primary">
+                <Spinner />
               </Button>
-            </div>
+            )}
+            <Button variant="primary" onClick={() => setShow(false)}>
+              Cancel
+            </Button>
             {emptyPassword && (
               <ErrorOverlay placement="bottom">ENTER PASSWORD</ErrorOverlay>
             )}

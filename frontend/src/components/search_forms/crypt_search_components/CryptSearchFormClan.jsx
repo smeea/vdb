@@ -45,18 +45,16 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
 
   return (
     <>
-      <div className=" flex flex-row items-center  ">
-        <div className="basis-1/4 ">
+      <div className="flex items-center">
+        <div className="flex w-1/4 items-center justify-between">
           <div className="text-blue font-bold">Clan:</div>
           {value.value[0] !== 'any' && (
-            <div className="flex justify-end ">
-              <div>
-                <SearchFormButtonLogicToggle
-                  name={name}
-                  value={value.logic}
-                  searchForm={searchForm}
-                />
-              </div>
+            <div className="flex justify-end space-x-1 px-1">
+              <SearchFormButtonLogicToggle
+                name={name}
+                value={value.logic}
+                searchForm={searchForm}
+              />
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -69,7 +67,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
             </div>
           )}
         </div>
-        <div className="inline basis-9/12 ">
+        <div className="w-3/4">
           <Select
             classNamePrefix="react-select"
             options={options}

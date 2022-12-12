@@ -19,17 +19,15 @@ const SeatingRandomDeckAddForm = ({ addDeck }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="input-group">
-        <input
-          placeholder="Add Random Deck"
-          type="text"
-          value={name}
-          onChange={handleChange}
-        />
-        <Button variant="primary" type="submit">
-          <Check2 />
-        </Button>
-      </div>
+      <input
+        placeholder="Add Random Deck"
+        type="text"
+        value={name}
+        onChange={handleChange}
+      />
+      <Button variant="primary" type="submit">
+        <Check2 />
+      </Button>
     </form>
   );
 };

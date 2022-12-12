@@ -57,7 +57,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype}>
-      <div className="flex justify-between ">
+      <div className="flex justify-between">
         <ResultLibraryType
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
@@ -105,8 +105,10 @@ const DeckLibrary = ({ deck, inMissing }) => {
   ));
 
   return (
-    <>
-      <div className={!inMissing && !isMobile ? 'sticky-deck-library' : null}>
+    <div className="space-y-2">
+      <div
+        className={`${!inMissing && !isMobile ? 'sticky-deck-library' : null}`}
+      >
         <DeckLibraryHeader
           isMobile={isMobile}
           libraryTotal={libraryTotal}
@@ -119,7 +121,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
           isEditable={isEditable}
         />
         {showInfo && (
-          <div className="info-message ">
+          <div className="info-message p-2">
             <DeckLibraryTotalInfo
               byDisciplines={libraryByDisciplinesTotal}
               byTypes={libraryByTypeTotal}
@@ -151,13 +153,13 @@ const DeckLibrary = ({ deck, inMissing }) => {
             </Modal>
           ))}
       </div>
-      {LibraryDeck}
+      <div className="space-y-2">{LibraryDeck}</div>
       {librarySide.length > 0 && (
-        <div className=" opacity-60">
-          <div className="info-message  ">
+        <div className="opacity-60 space-y-2">
+          <div className="flex info-message min-h-[42px] items-center px-2 py-1">
             <b>Side Library</b>
           </div>
-          {LibrarySideDeck}
+          <div className="space-y-2">{LibrarySideDeck}</div>
         </div>
       )}
       {isMobile && isEditable && showFloatingButtons && (
@@ -186,7 +188,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
           setModalDraw={setModalDraw}
         />
       )}
-    </>
+    </div>
   );
 };
 

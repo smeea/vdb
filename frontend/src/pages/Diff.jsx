@@ -256,23 +256,21 @@ const Diff = () => {
                   onSubmit={handleUrlSubmit}
                   className=" min-w-[270px]"
                 >
-                  <div className="input-group">
-                    <input
-                      placeholder="First Deck (ID or URL)"
-                      type="text"
-                      name="from"
-                      value={urlFrom}
-                      onChange={handleUrlChange}
-                    />
-                    <Button variant="primary" type="submit">
-                      <Check2 />
+                  <input
+                    placeholder="First Deck (ID or URL)"
+                    type="text"
+                    name="from"
+                    value={urlFrom}
+                    onChange={handleUrlChange}
+                  />
+                  <Button variant="primary" type="submit">
+                    <Check2 />
+                  </Button>
+                  {isMobile && (
+                    <Button variant="primary" onClick={handleSwap}>
+                      <ArrowLeftRight />
                     </Button>
-                    {isMobile && (
-                      <Button variant="primary" onClick={handleSwap}>
-                        <ArrowLeftRight />
-                      </Button>
-                    )}
-                  </div>
+                  )}
                 </form>
               ) : (
                 <div
@@ -395,18 +393,16 @@ const Diff = () => {
                   onSubmit={handleUrlSubmit}
                   className=" min-w-[270px]"
                 >
-                  <div className="input-group">
-                    <input
-                      placeholder="First Deck (ID or URL)"
-                      type="text"
-                      name="to"
-                      value={urlTo}
-                      onChange={handleUrlChange}
-                    />
-                    <Button variant="primary" type="submit">
-                      <Check2 />
-                    </Button>
-                  </div>
+                  <input
+                    placeholder="First Deck (ID or URL)"
+                    type="text"
+                    name="to"
+                    value={urlTo}
+                    onChange={handleUrlChange}
+                  />
+                  <Button variant="primary" type="submit">
+                    <Check2 />
+                  </Button>
                 </form>
               ) : (
                 <div

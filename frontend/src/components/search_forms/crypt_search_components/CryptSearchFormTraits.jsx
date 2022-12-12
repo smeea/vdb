@@ -7,13 +7,9 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="flex flex-row">
-        <div className="flex">
-          <div className="text-blue font-bold">Traits:</div>
-        </div>
-      </div>
-      <div className="flex flex-row">
-        <div className="inline basis-7/12 space-y-0.5">
+      <div className="text-blue font-bold">Traits:</div>
+      <div className="flex">
+        <div className="w-7/12 space-y-0.5">
           {[
             ['1 intercept', '+1 intercept'],
             ['1 stealth', '+1 stealth'],
@@ -37,7 +33,7 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             />
           ))}
         </div>
-        <div className="inline basis-5/12 space-y-0.5">
+        <div className="w-5/12 space-y-0.5">
           {[
             ['enter combat', 'Enter combat'],
             ['unlock', 'Unlock'],

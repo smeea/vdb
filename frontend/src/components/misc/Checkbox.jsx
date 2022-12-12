@@ -21,9 +21,7 @@ const Checkbox = ({
         onChange={onChange}
         checked={checked}
       />
-      <label className="tet-xs" htmlFor={id}>
-        {label}
-      </label>
+      <label htmlFor={id}>{label}</label>
     </div>
   );
 };

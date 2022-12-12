@@ -5,68 +5,69 @@ import {
   ResultLibraryClan,
 } from 'components';
 
-function DeckLibraryTotalInfo(props) {
-  const total = Object.values(props.byTypes).reduce((a, b) => a + b, 0);
-  const totalExMasters = total - (props.byTypes['Master'] || 0);
+const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
+  const total = Object.values(byTypes).reduce((a, b) => a + b, 0);
+  const totalExMasters = total - (byTypes['Master'] || 0);
 
-  const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
-    return (
-      <div key={idx} className="inline-block whitespace-nowrap  ">
-        <div className="flex items-center">
-          <ResultLibraryTypeImage value={t} />
-          <div className="flex ">{props.byTypes[t]}</div>
-          <span className="text-neutral-500">
-            ({Math.round((props.byTypes[t] / total) * 100)}%)
-          </span>
-        </div>
-      </div>
-    );
+  const byDisciplinesSorted = Object.keys(byDisciplines).sort((a, b) => {
+    return byDisciplines[b] - byDisciplines[a];
   });
 
-  const byDisciplinesSorted = Object.keys(props.byDisciplines).sort((a, b) => {
-    return props.byDisciplines[b] - props.byDisciplines[a];
-  });
-
-  const byClansSorted = Object.keys(props.byClans).sort((a, b) => {
-    return props.byClans[b] - props.byClans[a];
-  });
-
-  const DisciplinesInfo = byDisciplinesSorted.map((d, idx) => {
-    return (
-      <div key={idx} className="inline-block whitespace-nowrap  ">
-        <div className="flex items-center">
-          <ResultLibraryDisciplines value={d} />
-          <div className="flex ">{props.byDisciplines[d]}</div>
-          <span className="gray">
-            ({Math.round((props.byDisciplines[d] / totalExMasters) * 100)}%)
-          </span>
-        </div>
-      </div>
-    );
-  });
-
-  const ClansInfo = byClansSorted.map((d, idx) => {
-    return (
-      <div key={idx} className="inline-block whitespace-nowrap  ">
-        <div className="flex items-center">
-          <ResultLibraryClan value={d} />
-          <div className="flex ">{props.byClans[d]}</div>
-          <span className="gray">
-            ({Math.round((props.byClans[d] / total) * 100)}%)
-          </span>
-        </div>
-      </div>
-    );
+  const byClansSorted = Object.keys(byClans).sort((a, b) => {
+    return byClans[b] - byClans[a];
   });
 
   return (
-    <>
-      <div>{TypesInfo}</div>
-      <div>Excluding Master / Event:</div>
-      <div>{DisciplinesInfo}</div>
-      <div>{ClansInfo}</div>
-    </>
+    <div className="space-y-2">
+      <div>
+        {Object.keys(byTypes).map((t, idx) => {
+          return (
+            <div key={idx} className="inline-block whitespace-nowrap pr-5">
+              <div className="flex items-center space-x-1">
+                <ResultLibraryTypeImage value={t} />
+                <div className="flex ">{byTypes[t]}</div>
+                <div className="text-neutral-500">
+                  ({Math.round((byTypes[t] / total) * 100)}%)
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="space-y-1">
+        <div>Excluding Master / Event:</div>
+        {byDisciplinesSorted.map((d, idx) => {
+          return (
+            <div key={idx} className="inline-block whitespace-nowrap pr-5">
+              <div className="flex items-center space-x-1">
+                <ResultLibraryDisciplines value={d} />
+                <div className="flex">{byDisciplines[d]}</div>
+                <div className="text-neutral-500">
+                  ({Math.round((byDisciplines[d] / totalExMasters) * 100)}
+                  %)
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        {byClansSorted.map((d, idx) => {
+          return (
+            <div key={idx} className="inline-block whitespace-nowrap pr-5">
+              <div className="flex items-center space-x-1">
+                <ResultLibraryClan value={d} />
+                <div className="flex">{byClans[d]}</div>
+                <div className="text-neutral-500">
+                  ({Math.round((byClans[d] / total) * 100)}%)
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
-}
+};
 
 export default DeckLibraryTotalInfo;

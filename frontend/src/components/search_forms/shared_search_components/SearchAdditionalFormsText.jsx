@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useImmer } from 'use-immer';
-import { Checkbox } from 'components';
+import { Input, Checkbox } from 'components';
 import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
@@ -49,55 +49,53 @@ const SearchAdditionalFormsText = ({
     },
   ];
 
-  const forms = [];
-  for (let i = 1; i < value.length; i++) {
-    forms.push(
-      <div key={i} className="flex flex-row items-center ">
-        <input
-          placeholder="Card Name / Text / RegEx"
-          type="text"
-          name={i}
-          autoComplete="off"
-          spellCheck="false"
-          value={text[i] || ''}
-          onChange={onTextChange}
-          autoFocus={true}
-        />
-        <div className="flex flex-row ">
-          <div className="basis-2/12 md:basis-1/4">
-            <div className="flex flex-row space-x-1">
-              <SearchFormButtonLogicToggle
-                name="text"
-                value={value[i].logic}
-                i={i}
-                searchForm={searchForm}
-              />
-              <SearchFormButtonAddText searchForm={searchForm} />
-              <SearchFormButtonDelText searchForm={searchForm} i={i} />
-            </div>
-          </div>
-          <div className="flex justify-end">
-            <div className="flex flex-col items-start space-x-2">
-              {options.map((opt, idx) => {
-                return (
-                  <Checkbox
-                    key={idx}
-                    prefix="text"
-                    name={i}
-                    value={opt.value}
-                    onChange={onChangeOptions}
-                    label={opt.label}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const [, ...values] = value;
 
-  return <>{forms}</>;
+  return (
+    <>
+      {values.map((v, idx) => {
+        const i = idx + 1;
+        return (
+          <div key={i}>
+            <Input
+              placeholder="Card Name / Text / RegEx"
+              name={i}
+              value={text[i] || ''}
+              onChange={onTextChange}
+              className="w-full"
+            />
+            <div className="flex">
+              <div className="flex w-1/5 space-x-1">
+                <SearchFormButtonLogicToggle
+                  name="text"
+                  value={v.logic}
+                  i={i}
+                  searchForm={searchForm}
+                />
+                <SearchFormButtonAddText searchForm={searchForm} />
+                <SearchFormButtonDelText searchForm={searchForm} i={i} />
+              </div>
+              <div className="flex items-center justify-end space-x-4">
+                {options.map((opt, index) => {
+                  return (
+                    <Checkbox
+                      className="text-xs"
+                      key={`${i}-${index}`}
+                      prefix="text"
+                      name={i}
+                      value={opt.value}
+                      onChange={onChangeOptions}
+                      label={opt.label}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
 };
 
 export default SearchAdditionalFormsText;

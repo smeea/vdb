@@ -13,12 +13,12 @@ const AccountPlaytest = () => {
     <>
       <div className="flex items-center justify-between">
         <div
-          className="flex items-center"
+          className={`flex items-center ${playtest ? '' : 'text-neutral-500'}`}
           onClick={() => {
             togglePlaytest();
           }}
         >
-          <div className={playtest ? '' : 'text-neutral-500-font '}>
+          <div className="pr-2">
             {playtest ? (
               <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
             ) : (

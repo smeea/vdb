@@ -66,16 +66,16 @@ const Navigation = () => {
         isMobile ? 'fixed bottom-0' : 'sticky top-0'
       } z-50 bg-green-900`}
     >
-      <div className="flex h-[42px] justify-between">
-        <div className="flex items-center pl-3 space-x-8 ">
+      <div className="navbar-container mx-auto flex h-[42px] justify-between">
+        <div className="flex items-center pl-3 space-x-3 ">
           {isMobile ? (
             <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
           ) : (
             <>
-              <div className="flex h-full">
+              <div className="flex items-center justify-center min-w-[40px] h-full">
                 <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
               </div>
-              <div>
+              <div className="flex items-center justify-center min-w-[40px] h-full">
                 <ThemeSelect />
               </div>
             </>

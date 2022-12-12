@@ -95,6 +95,8 @@ const CryptSearchForm = () => {
     const i = id.name;
     const { name, value } = event;
 
+    console.log(i, name, value);
+
     if (['capacity'].includes(name)) {
       if (['le', 'ge', 'eq'].includes(value)) {
         searchCryptForm[name].value[i].moreless = value;
@@ -216,7 +218,7 @@ const CryptSearchForm = () => {
   }, [preresults]);
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-2">
       <SearchFormTextAndButtons
         value={cryptFormState.text}
         onChange={handleTextChange}

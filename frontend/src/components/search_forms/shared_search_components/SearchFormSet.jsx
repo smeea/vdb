@@ -41,14 +41,14 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
     .filter((i) => playtest || i !== 'PLAYTEST')
     .map((i) => {
       const year = setsAndPrecons[i].date.slice(2, 4);
-      const name = setsAndPrecons[i].name;
+      const fullName = setsAndPrecons[i].name;
 
       options.push({
         value: i,
         name: name,
         label: (
           <div className="flex items-center justify-between">
-            <div>{name}</div>
+            <div>{fullName}</div>
             {year && <div className="text-xs">{`'${year}`}</div>}
           </div>
         ),
@@ -70,12 +70,12 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   };
 
   return (
-    <>
-      <div className="flex flex-row items-center">
-        <div className="flex basis-1/4 items-center justify-between">
+    <div className="space-y-1">
+      <div className="flex items-center">
+        <div className="flex w-1/4 items-center justify-between">
           <div className="text-blue font-bold">Set:</div>
           {value.value[0] !== 'any' && (
-            <div className="flex justify-end">
+            <div className="flex justify-end space-x-1 px-1">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -88,7 +88,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             </div>
           )}
         </div>
-        <div className="inline basis-9/12">
+        <div className="w-3/4">
           <Select
             classNamePrefix="react-select"
             options={options}
@@ -111,88 +111,92 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="flex flex-row items-center justify-end space-x-4">
-        {[
-          {
-            value: 'or-newer',
-            label: 'Or Newer',
-            title:
-              'Printed in selected set or any newer (can be in older sets too)',
-          },
-          {
-            value: 'or-older',
-            label: 'Or Older',
-            title:
-              'Printed in selected set or any older (can be in newer sets too)',
-          },
-          {
-            value: 'not-newer',
-            label: 'Not Newer',
-            title: 'Not printed in newer set',
-          },
-          {
-            value: 'not-older',
-            label: 'Not Older',
-            title: 'Not printed in older set',
-          },
-        ].map((i) => {
-          return (
-            <Checkbox
-              key={i.value}
-              name="set"
-              value={i.value}
-              label={i.label}
-              title={i.title}
-              disabled={
-                value.value.length > 1 ||
-                value.value[0] === 'bcp' ||
-                value.value[0] === 'Promo' ||
-                value.value[0] === 'POD'
-              }
-              checked={value['age'] === i.value}
-              onChange={onChangeOptions}
-            />
-          );
-        })}
-      </div>
-      <div className="flex flex-row items-center justify-end space-x-4">
-        {[
-          {
-            value: 'only',
-            label: 'Only In',
-            title: 'Printed only in selected Set',
-          },
-          {
-            value: 'first',
-            label: 'First Print',
-            title: 'Printed first in selected Set',
-          },
-          {
-            value: 'reprint',
-            label: 'Reprint',
-            title: 'Reprinted in selected Set',
-          },
-        ].map((i) => {
-          return (
-            <Checkbox
-              key={i.value}
-              name={name}
-              value={i.value}
-              label={i.label}
-              title={i.title}
-              disabled={
-                (value.value[0] === 'bcp' ||
+      <div className="space-y-2">
+        <div className="flex items-center justify-end space-x-4">
+          {[
+            {
+              value: 'or-newer',
+              label: 'Or Newer',
+              title:
+                'Printed in selected set or any newer (can be in older sets too)',
+            },
+            {
+              value: 'or-older',
+              label: 'Or Older',
+              title:
+                'Printed in selected set or any older (can be in newer sets too)',
+            },
+            {
+              value: 'not-newer',
+              label: 'Not Newer',
+              title: 'Not printed in newer set',
+            },
+            {
+              value: 'not-older',
+              label: 'Not Older',
+              title: 'Not printed in older set',
+            },
+          ].map((i) => {
+            return (
+              <Checkbox
+                key={i.value}
+                className="text-xs"
+                name={name}
+                value={i.value}
+                label={i.label}
+                title={i.title}
+                disabled={
+                  value.value.length > 1 ||
+                  value.value[0] === 'bcp' ||
                   value.value[0] === 'Promo' ||
-                  value.value[0] === 'POD') &&
-                i.value === 'reprint'
-              }
-              checked={value['print'] === i.value}
-              onChange={onChangeOptions}
-            />
-          );
-        })}
+                  value.value[0] === 'POD'
+                }
+                checked={value['age'] === i.value}
+                onChange={onChangeOptions}
+              />
+            );
+          })}
+        </div>
+        <div className="flex items-center justify-end space-x-4">
+          {[
+            {
+              value: 'only',
+              label: 'Only In',
+              title: 'Printed only in selected Set',
+            },
+            {
+              value: 'first',
+              label: 'First Print',
+              title: 'Printed first in selected Set',
+            },
+            {
+              value: 'reprint',
+              label: 'Reprint',
+              title: 'Reprinted in selected Set',
+            },
+          ].map((i) => {
+            return (
+              <Checkbox
+                key={i.value}
+                className="text-xs"
+                name={name}
+                value={i.value}
+                label={i.label}
+                title={i.title}
+                disabled={
+                  (value.value[0] === 'bcp' ||
+                    value.value[0] === 'Promo' ||
+                    value.value[0] === 'POD') &&
+                  i.value === 'reprint'
+                }
+                checked={value['print'] === i.value}
+                onChange={onChangeOptions}
+              />
+            );
+          })}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

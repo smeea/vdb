@@ -52,9 +52,9 @@ const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
 
   let cryptGroups;
   if (cryptGroupMax - cryptGroupMin == 1) {
-    cryptGroups = ` - G${cryptGroupMin}-${cryptGroupMax}`;
+    cryptGroups = `- G${cryptGroupMin}-${cryptGroupMax}`;
   } else if (cryptGroupMax - cryptGroupMin == 0) {
-    cryptGroups = ` - G${cryptGroupMax}`;
+    cryptGroups = `- G${cryptGroupMax}`;
   } else {
     cryptGroups = (
       <div className="inline items-center  text-red-600">

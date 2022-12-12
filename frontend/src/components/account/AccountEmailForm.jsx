@@ -4,7 +4,7 @@ import { Input } from 'components';
 const AccountEmailForm = ({ value, setValue, isMobile }) => {
   return (
     <Input
-      className="w-full"
+      className="w-full rounded-r-none"
       placeholder={`Email (Optional${
         isMobile ? '' : ', only for password reset'
       })`}

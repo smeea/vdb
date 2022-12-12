@@ -6,7 +6,7 @@ import virtuesList from 'assets/data/virtuesList.json';
 const TwdSearchFormDisciplines = ({ value, onChange }) => {
   return (
     <>
-      <div className="input-group flex flex-wrap justify-start ">
+      <div className="flex flex-wrap justify-start ">
         {disciplinesList.map((i, index) => {
           return (
             <div
@@ -25,7 +25,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           );
         })}
       </div>
-      <div className="input-group flex flex-wrap ">
+      <div className="flex flex-wrap ">
         {virtuesList.map((i, index) => {
           return (
             <div

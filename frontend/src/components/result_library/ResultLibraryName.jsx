@@ -1,21 +1,19 @@
 import React from 'react';
 import Hammer from 'assets/images/icons/hammer.svg';
 
-function ResultLibraryName(props) {
+const ResultLibraryName = ({ card }) => {
   return (
-    <div className="inline">
-      {props.card['Banned'] ? (
-        <strike>{props.card['Name']}</strike>
+    <>
+      {card['Banned'] ? (
+        <>
+          <strike>{card['Name']}</strike> [{card['Banned']}{' '}
+          <Hammer className="inline" />]
+        </>
       ) : (
-        <>{props.card['Name']}</>
+        <>{card['Name']}</>
       )}
-      {props.card['Banned'] && (
-        <span>
-          [{props.card['Banned']} <Hammer />]
-        </span>
-      )}
-    </div>
+    </>
   );
-}
+};
 
 export default ResultLibraryName;

@@ -8,18 +8,11 @@ import { userServices } from 'services';
 
 const AccountChangeName = () => {
   const { publicName, setPublicName, isMobile } = useApp();
-
   const [state, setState] = useState(publicName || '');
-  // const refName = useRef();
-
   const [showModal, setShowModal] = useState(false);
   const [buttonState, setButtonState] = useState(false);
   const [error, setError] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
-
-  const handleChange = (event) => {
-    setState(event.target.value);
-  };
 
   const onError = (e) => {
     if (e.message != 401) {
@@ -64,9 +57,9 @@ const AccountChangeName = () => {
 
   return (
     <>
-      <div className="text-blue flex items-center text-lg font-bold">
+      <div className="text-blue flex items-center text-lg font-bold p-1">
         <PenFill />
-        <span>Change public name</span>
+        <div className="px-2">Change public name</div>
         {!isMobile ? (
           <Tooltip text={tooltipText}>
             <span className="question-tooltip ">[?]</span>
@@ -84,9 +77,8 @@ const AccountChangeName = () => {
         <Input
           placeholder="Public name"
           value={state}
-          onChange={handleChange}
+          onChange={(e) => setState(e.target.value)}
           className="w-full rounded-r-none"
-          /* ref={refName} */
         />
         <Button
           className="rounded-l-none"

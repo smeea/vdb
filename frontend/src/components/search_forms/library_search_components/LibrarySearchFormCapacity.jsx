@@ -20,14 +20,9 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
     '10',
     '11',
   ].map((i) => ({
-    value: i === 'ANY' ? i.toLowerCase() : i,
+    value: i.toLowerCase(),
     name: name,
-    label: (
-      <>
-        <span className="  " />
-        {i}
-      </>
-    ),
+    label: <div className="flex justify-center">{i}</div>,
   }));
 
   const morelessOptions = [
@@ -36,39 +31,36 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
   ].map((i) => ({
     value: i[0],
     name: name,
-    label: (
-      <>
-        <span className="  " />
-        {i[1]}
-      </>
-    ),
+    label: <div className="flex justify-center">{i[1]}</div>,
   }));
 
   return (
-    <div className="flex flex-row items-center">
-      <div className="flex basis-1/4">
+    <div className="flex items-center">
+      <div className="w-1/4">
         <div className="text-blue font-bold">Capacity:</div>
       </div>
-      <div className="inline basis-1/3">
-        <Select
-          classNamePrefix="react-select"
-          options={morelessOptions}
-          isSearchable={false}
-          name={0}
-          value={morelessOptions.find((obj) => obj.value === value.moreless)}
-          onChange={onChange}
-        />
-      </div>
-      <div className="inline basis-5/12">
-        <Select
-          classNamePrefix="react-select"
-          options={options}
-          isSearchable={false}
-          name={0}
-          maxMenuHeight={maxMenuHeight}
-          value={options.find((obj) => obj.value === value[name])}
-          onChange={onChange}
-        />
+      <div className="flex w-3/4 space-x-1">
+        <div className="w-1/2">
+          <Select
+            classNamePrefix="react-select"
+            options={morelessOptions}
+            isSearchable={false}
+            name={0}
+            value={morelessOptions.find((obj) => obj.value === value.moreless)}
+            onChange={onChange}
+          />
+        </div>
+        <div className="w-1/2">
+          <Select
+            classNamePrefix="react-select"
+            options={options}
+            isSearchable={false}
+            name={0}
+            maxMenuHeight={maxMenuHeight}
+            value={options.find((obj) => obj.value === value[name])}
+            onChange={onChange}
+          />
+        </div>
       </div>
     </div>
   );

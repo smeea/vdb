@@ -54,50 +54,50 @@ const SearchFormTextAndButtons = ({
   };
 
   return (
-    <>
-      <div className="flex items-stretch justify-between">
-        {isMobile ? (
-          <Input
-            placeholder="Card Name / Text / RegEx"
-            name={0}
-            value={text}
-            onChange={onTextChange}
-          />
-        ) : (
-          <>
+    <div className="space-y-3">
+      <div>
+        <div className="flex justify-between">
+          {isMobile ? (
             <Input
-              /* TODO ignore enter */
               placeholder="Card Name / Text / RegEx"
               name={0}
               value={text}
               onChange={onTextChange}
-              className="w-full rounded-r-none"
             />
-            {preresults > showLimit && (
-              <ButtonIconed
-                className="flex flex-nowrap rounded-l-none rounded-r-none"
-                variant="primary"
-                onClick={handleShowResults}
-                text={`SHOW ${preresults}`}
-                icon=<Check2 />
+          ) : (
+            <>
+              <Input
+                /* TODO ignore enter */
+                placeholder="Card Name / Text / RegEx"
+                name={0}
+                value={text}
+                onChange={onTextChange}
+                className="w-full rounded-r-none"
               />
-            )}
-            <Button
-              title="Clear Forms & Results"
-              variant="primary"
-              onClick={handleClearButton}
-              className="rounded-l-none"
-            >
-              <div className="flex items-center">
-                <X />
-              </div>
-            </Button>
-          </>
-        )}
-      </div>
-      <div className="flex flex-row ">
-        <div className="basis-2/12 md:basis-1/4">
-          <div className="flex flex-row space-x-1">
+              {preresults > showLimit && (
+                <ButtonIconed
+                  className="flex flex-nowrap rounded-l-none rounded-r-none"
+                  variant="primary"
+                  onClick={handleShowResults}
+                  text={`SHOW ${preresults}`}
+                  icon=<Check2 />
+                />
+              )}
+              <Button
+                title="Clear Forms & Results"
+                variant="primary"
+                onClick={handleClearButton}
+                className="rounded-l-none"
+              >
+                <div className="flex items-center">
+                  <X />
+                </div>
+              </Button>
+            </>
+          )}
+        </div>
+        <div className="flex">
+          <div className="flex w-1/5 space-x-1">
             {value[0].value !== '' && (
               <>
                 <SearchFormButtonLogicToggle
@@ -114,26 +114,27 @@ const SearchFormTextAndButtons = ({
               </>
             )}
           </div>
-        </div>
-        <div className="flex items-start justify-end space-x-3">
-          {options.map((opt, idx) => {
-            return (
-              <Checkbox
-                key={idx}
-                prefix="text"
-                name={0}
-                value={opt.value}
-                onChange={onChangeOptions}
-                label={opt.label}
-                checked={
-                  opt.value === 'regex'
-                    ? value[0].regex || false
-                    : value[0].in === opt.value
-                }
-                onChange={onChangeOptions}
-              />
-            );
-          })}
+          <div className="flex items-center justify-end space-x-4">
+            {options.map((opt, idx) => {
+              return (
+                <Checkbox
+                  className="text-xs"
+                  key={idx}
+                  prefix="text"
+                  name={0}
+                  value={opt.value}
+                  onChange={onChangeOptions}
+                  label={opt.label}
+                  checked={
+                    opt.value === 'regex'
+                      ? value[0].regex || false
+                      : value[0].in === opt.value
+                  }
+                  onChange={onChangeOptions}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
       <SearchAdditionalFormsText
@@ -151,7 +152,7 @@ const SearchFormTextAndButtons = ({
           onChange={() => setHideMissing(!hideMissing)}
         />
       )}
-    </>
+    </div>
   );
 };
 

@@ -45,57 +45,44 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       if (setsAndPrecons[set].precons) {
         const year = setsAndPrecons[set].date.slice(2, 4);
         Object.keys(setsAndPrecons[set].precons).map((precon) => {
-          const name = setsAndPrecons[set].precons[precon].name;
+          const fullName = setsAndPrecons[set].precons[precon].name;
           const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
-          if (set === 'any') {
-            options.push({
-              value: set,
-              name: name,
-              label: (
-                <div className="flex items-center">
-                  <div className="flex w-[40px]" />
-                  {name}
-                </div>
-              ),
-            });
-          } else {
-            const clanImages = clans.map((clan) => {
-              return (
-                <React.Fragment key={clan}>
-                  {clan === 'Bundle' ? (
-                    <div className="clan-image-results inline items-center justify-center">
-                      <GiftFill />
-                    </div>
-                  ) : clan === 'Mix' ? null : (
-                    <ResultLibraryClan value={clan} />
-                  )}
-                </React.Fragment>
-              );
-            });
-
-            options.push({
-              value: `${set}:${precon}`,
-              name: 'precon',
-              label: (
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div
-                      className={
-                        clanImages.length == 1
-                          ? 'flex w-[40px] items-center justify-center'
-                          : 'inline'
-                      }
-                    >
-                      {clanImages}
-                    </div>
-                    {name}
+          const clanImages = clans.map((clan) => {
+            return (
+              <React.Fragment key={clan}>
+                {clan === 'Bundle' ? (
+                  <div className="clan-image-results inline items-center justify-center">
+                    <GiftFill />
                   </div>
-                  <div className="text-xs">{`${set} '${year}`}</div>
+                ) : clan === 'Mix' ? null : (
+                  <ResultLibraryClan value={clan} />
+                )}
+              </React.Fragment>
+            );
+          });
+
+          options.push({
+            value: `${set}:${precon}`,
+            name: 'precon',
+            label: (
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <div
+                    className={
+                      clanImages.length == 1
+                        ? 'flex w-[40px] items-center justify-center'
+                        : 'inline'
+                    }
+                  >
+                    {clanImages}
+                  </div>
+                  {fullName}
                 </div>
-              ),
-            });
-          }
+                <div className="text-xs">{`${set} '${year}`}</div>
+              </div>
+            ),
+          });
         });
       }
     });
@@ -115,12 +102,12 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   };
 
   return (
-    <>
-      <div className="flex flex-row items-center">
-        <div className="basis-1/4">
+    <div className="space-y-1">
+      <div className="flex items-center">
+        <div className="flex w-1/4 items-center justify-between">
           <div className="text-blue font-bold">Precon:</div>
           {value.value[0] !== 'any' && (
-            <div className="flex justify-end">
+            <div className="flex justify-end space-x-1 px-1">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -133,7 +120,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
             </div>
           )}
         </div>
-        <div className="inline basis-9/12">
+        <div className="w-3/4">
           <Select
             classNamePrefix="react-select"
             options={options}
@@ -156,7 +143,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="flex flex-row items-center justify-end space-x-4">
+      <div className="flex items-center justify-end space-x-4">
         {[
           {
             value: 'only',
@@ -177,7 +164,8 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
           return (
             <Checkbox
               key={i.value}
-              name="precon"
+              className="text-xs"
+              name={name}
               value={i.value}
               label={i.label}
               title={i.title}
@@ -188,7 +176,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
