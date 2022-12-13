@@ -138,7 +138,7 @@ const InventoryDesktop = ({
         )}
       </div>
       <div className="hide-on-lt1200px    lg:basis-1/6">
-        <div className="sticky-buttons">
+        <div className="sticky top-[77px] z-2">
           <InventoryButtons
             crypt={sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt}
             library={

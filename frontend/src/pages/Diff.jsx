@@ -281,7 +281,7 @@ const Diff = () => {
                   <div
                     className={
                       deck?.isBranches && selectFrom == 'from-my'
-                        ? 'w-75'
+                        ? 'w-3/4'
                         : 'w-full'
                     }
                   >
@@ -305,7 +305,7 @@ const Diff = () => {
                     )}
                   </div>
                   {selectFrom == 'from-my' && decks && deck.isBranches && (
-                    <div className="w-25 ">
+                    <div className="w-1/4">
                       <DeckBranchSelect
                         handleSelect={handleSelectFrom}
                         deck={deck}
@@ -417,7 +417,7 @@ const Diff = () => {
                   <div
                     className={
                       deckTo?.isBranches && selectTo == 'to-my'
-                        ? 'w-75'
+                        ? 'w-3/4'
                         : 'w-full'
                     }
                   >
@@ -439,7 +439,7 @@ const Diff = () => {
                     )}
                   </div>
                   {selectTo == 'to-my' && decks && deckTo?.isBranches && (
-                    <div className="w-25 ">
+                    <div className="w-1/4">
                       <DeckBranchSelect
                         handleSelect={handleSelectTo}
                         deck={deckTo}
@@ -556,7 +556,7 @@ const Diff = () => {
         </div>
         {!isMobile && (
           <div className="hide-on-lt992px    lg:basis-1/6">
-            <div className="sticky-buttons">
+            <div className="sticky top-[77px] z-2">
               <DiffButtons
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}

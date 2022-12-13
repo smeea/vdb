@@ -421,7 +421,7 @@ const InventoryLibrary = ({
       {!compact && (
         <>
           <div className="info-message flex items-center justify-between">
-            <div className="w-75">
+            <div className="w-3/4">
               <div className="flex flex-col space-y-1">
                 <InventoryFilterForm
                   value={type}

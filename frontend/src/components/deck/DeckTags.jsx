@@ -41,7 +41,7 @@ const DeckTags = ({ deck, tagsSuperior, bordered, allTagsOptions }) => {
 
   let classNamePrefix = 'react-select-tags';
   if (bordered) {
-    classNamePrefix = 'bordered ' + classNamePrefix;
+    classNamePrefix = 'tags-bordered ' + classNamePrefix;
   }
   if (!isEditable) {
     classNamePrefix = 'tags-no-remove ' + classNamePrefix;

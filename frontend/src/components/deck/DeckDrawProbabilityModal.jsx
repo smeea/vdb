@@ -5,7 +5,7 @@ const DeckDrawProbabilityModal = ({ setModalDraw, modalDraw }) => {
   return (
     <Modal
       size="xs"
-      dialogClassName="w-50 flex justify-center nested-modal"
+      dialogClassName="w-1/2 flex justify-center nested-modal"
       handleClose={() => setModalDraw(null)}
       centered
       title={modalDraw.name}

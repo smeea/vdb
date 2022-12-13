@@ -227,11 +227,10 @@ const Decks = () => {
   }, [deck]);
 
   const SPACING = 8;
-  const TOP_SPACING = `pt-${SPACING}`;
 
   return (
     <div className="deck-container mx-auto">
-      <div className={`flex flex-row space-x-${SPACING} ${TOP_SPACING}`}>
+      <div className={`flex flex-row space-x-${SPACING} pt-${SPACING}`}>
         <div className={`basis-full lg:basis-10/12 space-y-${SPACING}`}>
           <div className="flex flex-row">
             <div className="md:basis-5/12">
@@ -290,7 +289,7 @@ const Decks = () => {
         </div>
         {!isMobile && (
           <div className="hide-on-lt992px lg:basis-2/12">
-            <div className="sticky-buttons">
+            <div className="sticky top-[77px] z-2">
               <DeckButtons
                 deck={deck}
                 setShowInfo={setShowInfo}

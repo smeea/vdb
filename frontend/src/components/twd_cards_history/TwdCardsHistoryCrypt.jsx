@@ -123,7 +123,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
   return (
     <div className="inventory-container-crypt">
       <div className="info-message flex items-center justify-between">
-        <div className="w-75">
+        <div className="w-3/4">
           <InventoryFilterForm
             value={clan}
             setValue={setClan}

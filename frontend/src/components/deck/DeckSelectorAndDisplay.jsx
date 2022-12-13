@@ -26,17 +26,17 @@ const DeckSelectorAndDisplay = () => {
 
   return (
     <div className="space-y-4">
-      <div className="sticky-selector flex justify-end space-x-1">
+      <div className="sticky-selector flex space-x-1">
         {addMode && (
           <>
-            <div className={isBranches ? 'w-75' : 'w-full'}>
+            <div className={isBranches ? 'w-3/4' : 'w-full'}>
               <DeckSelectMy
                 handleSelect={handleSelect}
                 deckid={deck?.deckid ?? null}
               />
             </div>
             {isBranches && (
-              <div className="w-25 ">
+              <div className="w-1/4">
                 <DeckBranchSelect deck={deck ?? null} />
               </div>
             )}

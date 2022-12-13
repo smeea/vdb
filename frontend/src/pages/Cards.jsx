@@ -66,14 +66,16 @@ const Cards = () => {
     }
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
+  const SPACING = 8;
+
   return (
-    <div className="cards-container  mx-auto ">
+    <div className="cards-container mx-auto">
       <>
         {isMobile ? (
           <>
             {card && (
               <>
-                <div className=" flex flex-row">
+                <div className="flex flex-row">
                   <div className="m-0">
                     {showImage ? (
                       <CardImage
@@ -124,28 +126,29 @@ const Cards = () => {
             </div>
           </>
         ) : (
-          <div className="flex flex-row">
-            <div className="md={{ span: 8, offset: 2 }} quick-cards">
+          <div
+            className={`flex flex-row space-x-${SPACING} space-y-${SPACING}`}
+          >
+            <div className="md:basis-1/12" />
+            <div className={`md:basis-9/12 quick-cards space-y-${SPACING}`}>
               {cryptCardBase && libraryCardBase && (
-                <div className="align-justify-center flex flex-row justify-center ">
-                  <div>
-                    <QuickSelect
-                      selectedCardid={card && card.Id}
-                      setCard={handleSetCard}
-                    />
-                  </div>
+                <div>
+                  <QuickSelect
+                    selectedCardid={card && card.Id}
+                    setCard={handleSetCard}
+                  />
                 </div>
               )}
               {card && (
-                <div className="align-justify-center bordered  flex flex-row justify-center">
-                  <div className=" md:basis-1/2">
+                <div className="flex flex-row bordered">
+                  <div className="w-1/2">
                     <CardImage
                       className="h-auto w-full"
                       card={card}
                       set={imageSet}
                     />
                   </div>
-                  <div className=" md:basis-1/2">
+                  <div className="w-1/2 p-5">
                     <ResultLayoutText
                       card={card}
                       setImageSet={setImageSet}
@@ -156,8 +159,8 @@ const Cards = () => {
                 </div>
               )}
             </div>
-            <div>
-              <div className="flex flex-col space-y-1">
+            <div className="md:basis-2/12">
+              <div className="flex flex-col space-y-1 sticky top-[77px] z-2">
                 <ButtonIconed
                   variant="secondary"
                   onClick={() => randomCrypt()}

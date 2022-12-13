@@ -95,7 +95,7 @@ const ResultLayoutTextSets = (props) => {
         <Modal
           size="xs"
           className="nested-modal flex justify-center"
-          dialogClassName="w-75"
+          dialogClassName="w-3/4"
           handleClose={() => setModal(null)}
           centered={true}
           title="Sets"

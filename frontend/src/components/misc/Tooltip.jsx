@@ -45,7 +45,7 @@ const Tooltip = ({ children, overlay, placement }) => {
 
   return (
     <>
-      <div ref={reference} {...getReferenceProps()}>
+      <div className="inline" ref={reference} {...getReferenceProps()}>
         {children}
       </div>
       <FloatingPortal>

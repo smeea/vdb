@@ -92,7 +92,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
       <Disclosure.Button onClick={() => handlePlayerClick()}>
         <div
           className={`flex ${
-            isMobile ? 'h-auto w-full' : 'w-75'
+            isMobile ? 'h-auto w-full' : 'w-3/4'
           } items-center justify-between `}
         >
           <div className="flex w-[55%] items-center">

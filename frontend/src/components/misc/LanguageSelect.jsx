@@ -8,13 +8,15 @@ import { useApp } from 'context';
 const LanguagesMenu = ({ languages, lang, onClick }) => (
   <div>
     <div className=" ">Card Language:</div>
-    <div className="flex items-center justify-between">
+    <div className="flex items-center space-x-3">
       {Object.keys(languages).map((l) => {
         const Flag = languages[l];
         return (
           <div
             key={l}
-            className={`${lang == l ? 'flag-active ' : ''}`}
+            className={`${
+              lang == l ? 'rounded-[16px] border-[#606080] border-[3px]' : ''
+            }`}
             onClick={onClick}
           >
             <Flag width="22" height="22" viewBox="0 0 500 500" />
@@ -56,7 +58,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
           >
             <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
             {showMenu && (
-              <div className="absolute top-2 bg-black">
+              <div className="absolute left-[-24] top-[30] rounded bg-black border border-[red] p-3">
                 <LanguagesMenu
                   languages={languages}
                   lang={lang}

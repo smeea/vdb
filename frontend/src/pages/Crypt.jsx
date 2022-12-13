@@ -49,11 +49,10 @@ const Crypt = () => {
   }, [deck, decks, lastDeckId]);
 
   const SPACING = 8;
-  const TOP_SPACING = `pt-${SPACING}`;
 
   return (
     <div className="search-container mx-auto">
-      <div className={`flex flex-row space-x-${SPACING} ${TOP_SPACING}`}>
+      <div className={`flex flex-row space-x-${SPACING} pt-${SPACING}`}>
         {!isMobile && (
           <div
             className={`${

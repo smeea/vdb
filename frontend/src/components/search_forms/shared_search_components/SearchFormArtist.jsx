@@ -31,11 +31,11 @@ const SearchFormArtist = ({ target, value, onChange }) => {
   });
 
   return (
-    <div className="flex flex-row items-center">
-      <div className="flex basis-1/4">
+    <div className="flex items-center">
+      <div className="w-1/4">
         <div className="text-blue font-bold">Artist:</div>
       </div>
-      <div className="inline basis-9/12">
+      <div className="w-3/4">
         <Select
           classNamePrefix="react-select"
           options={options}
