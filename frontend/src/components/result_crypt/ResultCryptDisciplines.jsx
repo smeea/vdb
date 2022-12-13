@@ -2,15 +2,11 @@ import React from 'react';
 import { ResultDisciplineImage } from 'components';
 
 const ResultCryptDisciplines = ({ value, maxDisciplines }) => {
-  const emptyCols = [];
-  let counter = 0;
   const width = 100 / maxDisciplines + '%';
 
-  const disciplineCols = Object.keys(value).map((d, index) => {
-    counter += 1;
-
+  const disciplines = Object.keys(value).map((d, idx) => {
     return (
-      <td width={width} key={index}>
+      <td width={width} key={idx}>
         {value[d] && (
           <ResultDisciplineImage value={d} superior={value[d] === 2} />
         )}
@@ -18,18 +14,17 @@ const ResultCryptDisciplines = ({ value, maxDisciplines }) => {
     );
   });
 
-  while (counter < maxDisciplines) {
-    counter += 1;
-    emptyCols.push(<td width={width} key={counter} />);
-  }
+  disciplines.push(
+    <td
+      width={(1 - disciplines.length / maxDisciplines) * 100 + '%'}
+      key={maxDisciplines}
+    />
+  );
 
   return (
     <table>
       <tbody>
-        <tr>
-          {disciplineCols}
-          {emptyCols}
-        </tr>
+        <tr>{disciplines}</tr>
       </tbody>
     </table>
   );

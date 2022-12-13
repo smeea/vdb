@@ -2,51 +2,31 @@ import React from 'react';
 import { ResultDisciplineImage } from 'components';
 
 const ResultLibraryDisciplines = ({ value }) => {
-  let disciplinesImages;
-
   if (value.indexOf('&') != -1) {
     const disciplines = value.split(' & ');
-    let items = disciplines.length;
-    disciplinesImages = disciplines.map((d, index) => {
-      if (items > 1) {
-        items -= 1;
-        return (
-          <React.Fragment key={index}>
-            <ResultDisciplineImage value={d} />+
-          </React.Fragment>
-        );
-      } else {
-        return (
-          <React.Fragment key={index}>
-            <ResultDisciplineImage value={d} />
-          </React.Fragment>
-        );
-      }
-    });
+    return (
+      <>
+        <ResultDisciplineImage value={disciplines[0]} />+
+        <ResultDisciplineImage value={disciplines[1]} />
+      </>
+    );
   } else if (value.indexOf('/') != -1) {
     const disciplines = value.split('/');
-    let items = disciplines.length;
-    disciplinesImages = disciplines.map((d, index) => {
-      if (items > 1) {
-        items -= 1;
-        return (
-          <React.Fragment key={index}>
-            <ResultDisciplineImage value={d} />/
-          </React.Fragment>
-        );
-      } else {
-        return (
-          <React.Fragment key={index}>
-            <ResultDisciplineImage value={d} />
-          </React.Fragment>
-        );
-      }
-    });
-  } else if (value) {
-    disciplinesImages = <ResultDisciplineImage value={value} />;
+    return (
+      <>
+        {disciplines.map((d, idx) => {
+          return (
+            <React.Fragment key={idx}>
+              <ResultDisciplineImage value={d} />
+              {idx + 1 < disciplines.length && '/'}
+            </React.Fragment>
+          );
+        })}
+      </>
+    );
+  } else {
+    return <ResultDisciplineImage value={value} />;
   }
-
-  return <>{disciplinesImages}</>;
 };
 
 export default ResultLibraryDisciplines;
