@@ -73,10 +73,8 @@ const ResultCryptLayoutText = ({
       </div>
       {Object.keys(card['Rulings']).length > 0 && (
         <>
-          <div>
-            <b>Rulings:</b>
-          </div>
-          <div className=" text-xs">
+          <b>Rulings:</b>
+          <div className="text-xs">
             <ResultLayoutTextRulings rulings={card['Rulings']} />
           </div>
         </>

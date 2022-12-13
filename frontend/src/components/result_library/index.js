@@ -5,7 +5,6 @@ export { default as ResultLibraryCost } from './ResultLibraryCost.jsx';
 export { default as ResultLibraryDisciplines } from './ResultLibraryDisciplines.jsx';
 export { default as ResultLibraryLayoutText } from './ResultLibraryLayoutText.jsx';
 export { default as ResultLibraryName } from './ResultLibraryName.jsx';
-export { default as ResultLibraryPopover } from './ResultLibraryPopover.jsx';
 export { default as ResultLibraryTable } from './ResultLibraryTable.jsx';
 export { default as ResultLibraryTableRow } from './ResultLibraryTableRow.jsx';
 export { default as ResultLibraryTotal } from './ResultLibraryTotal.jsx';

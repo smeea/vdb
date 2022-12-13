@@ -1,5 +1,9 @@
 import React from 'react';
-import { ResultCryptPopover, ResultLibraryPopover } from 'components';
+import {
+  CardImage,
+  ResultCryptLayoutText,
+  ResultLibraryLayoutText,
+} from 'components';
 import { useApp } from 'context';
 
 const CardPopover = ({ card }) => {
@@ -7,10 +11,16 @@ const CardPopover = ({ card }) => {
 
   return (
     <div className={showImage ? '' : ''}>
-      {card.Id > 200000 ? (
-        <ResultCryptPopover card={card} />
+      {showImage ? (
+        <CardImage card={card} />
       ) : (
-        <ResultLibraryPopover card={card} />
+        <div className="max-w-[325px] bordered-sm p-4">
+          {card.Id > 200000 ? (
+            <ResultCryptLayoutText card={card} />
+          ) : (
+            <ResultLibraryLayoutText card={card} />
+          )}
+        </div>
       )}
     </div>
   );
