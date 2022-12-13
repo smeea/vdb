@@ -15,7 +15,7 @@ const LanguagesMenu = ({ languages, lang, onClick }) => (
           <div
             key={l}
             className={`${
-              lang == l ? 'rounded-[16px] border-[#606080] border-[3px]' : ''
+              lang == l ? 'rounded-[16px] border-[3px] border-[#606080]' : ''
             }`}
             onClick={onClick}
           >
@@ -58,7 +58,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
           >
             <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
             {showMenu && (
-              <div className="absolute left-[-24] top-[30] rounded bg-black border border-[red] p-3">
+              <div className="absolute left-[-24] top-[30] rounded border border-[red] bg-black p-3">
                 <LanguagesMenu
                   languages={languages}
                   lang={lang}

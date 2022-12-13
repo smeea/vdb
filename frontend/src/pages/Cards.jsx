@@ -66,7 +66,9 @@ const Cards = () => {
     }
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
-  const SPACING = 8;
+  const X_SPACING = 'space-x-8';
+  const Y_SPACING = 'space-y-8';
+  const TOP_SPACING = 'pt-8';
 
   return (
     <div className="cards-container mx-auto">
@@ -126,11 +128,9 @@ const Cards = () => {
             </div>
           </>
         ) : (
-          <div
-            className={`flex flex-row space-x-${SPACING} space-y-${SPACING}`}
-          >
+          <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
             <div className="md:basis-1/12" />
-            <div className={`md:basis-9/12 quick-cards space-y-${SPACING}`}>
+            <div className={`quick-cards md:basis-9/12 ${Y_SPACING}`}>
               {cryptCardBase && libraryCardBase && (
                 <div>
                   <QuickSelect
@@ -140,7 +140,7 @@ const Cards = () => {
                 </div>
               )}
               {card && (
-                <div className="flex flex-row bordered">
+                <div className="bordered flex flex-row">
                   <div className="w-1/2">
                     <CardImage
                       className="h-auto w-full"
@@ -160,7 +160,7 @@ const Cards = () => {
               )}
             </div>
             <div className="md:basis-2/12">
-              <div className="flex flex-col space-y-1 sticky top-[77px] z-2">
+              <div className="z-2 sticky top-[77px] flex flex-col space-y-1">
                 <ButtonIconed
                   variant="secondary"
                   onClick={() => randomCrypt()}

@@ -131,7 +131,7 @@ const TwdResultDescription = ({ deck }) => {
             <div className="md:basis-1/2">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </div>
-            <div className="md:basis-1/2 justify-end">
+            <div className="justify-end md:basis-1/2">
               {username && <DeckCloneButton deck={deck} noRedirect />}
             </div>
           </div>

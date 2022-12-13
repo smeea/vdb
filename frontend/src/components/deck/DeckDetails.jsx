@@ -1,45 +1,12 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useSnapshot } from 'valtio';
+import React from 'react';
 import {
-  useNavigate,
-  useLocation,
-  useParams,
-  useLoaderData,
-  defer,
-} from 'react-router-dom';
-import Shuffle from 'assets/images/icons/shuffle.svg';
-import At from 'assets/images/icons/at.svg';
-import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
-import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
-import List from 'assets/images/icons/list.svg';
-import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
-import {
-  AccountLogin,
-  AccountRegister,
-  DeckSelectMy,
-  DeckSelectRecent,
-  DeckSelectPrecon,
-  DeckSelectAdvModal,
-  DeckQrModal,
   DeckTags,
-  DeckDraw,
-  DeckButtons,
-  DeckBranchSelect,
-  DeckCrypt,
-  DeckLibrary,
-  DeckRecommendation,
   DeckChangeName,
   DeckChangeBranchName,
   DeckChangeAuthor,
   DeckChangeDescription,
-  DeckImport,
-  Seating,
-  Modal,
-  Button,
-  Radio,
 } from 'components';
-import { deckStore, useApp, setDeck, deckUpdate } from 'context';
-import { useDeck, useDeckMissing, useTags } from 'hooks';
+import { useApp } from 'context';
 
 const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
   const { isMobile } = useApp();

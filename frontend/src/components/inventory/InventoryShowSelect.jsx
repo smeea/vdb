@@ -1,42 +1,28 @@
 import React from 'react';
+import { Radio } from 'components';
 
 const InventoryShowSelect = ({ category, setCategory }) => {
   return (
-    <form>
-      <input
-        type="radio"
+    <>
+      <Radio
         id="all"
-        label={
-          <div className="text-blue">
-            <b>Show All</b>
-          </div>
-        }
+        value="Show All"
         checked={category == 'all'}
         onChange={(e) => setCategory(e.target.id)}
       />
-      <input
-        type="radio"
+      <Radio
         id="ok"
-        label={
-          <div className="text-blue">
-            <b>Only Owned</b>
-          </div>
-        }
+        value="Only Owned"
         checked={category == 'ok'}
         onChange={(e) => setCategory(e.target.id)}
       />
-      <input
-        type="radio"
+      <Radio
         id="nok"
-        label={
-          <div className="text-blue">
-            <b>Only Problems</b>
-          </div>
-        }
+        value="Only Problems"
         checked={category == 'nok'}
         onChange={(e) => setCategory(e.target.id)}
       />
-    </form>
+    </>
   );
 };
 

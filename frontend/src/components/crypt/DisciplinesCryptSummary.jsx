@@ -17,7 +17,7 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
       return (
         <div
           key={idx}
-          className="inline-block whitespace-nowrap items-center pr-5"
+          className="inline-block items-center whitespace-nowrap pr-5"
         >
           <div className="flex items-center space-x-1">
             <ResultDisciplineImage

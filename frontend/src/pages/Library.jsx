@@ -48,11 +48,12 @@ const Library = () => {
     }
   }, [deck, decks, lastDeckId]);
 
-  const SPACING = 8;
+  const X_SPACING = 'space-x-8';
+  const TOP_SPACING = 'pt-8';
 
   return (
     <div className="search-container mx-auto">
-      <div className={`flex flex-row space-x-${SPACING} pt-${SPACING}`}>
+      <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
         {!isMobile && (
           <div
             className={`${

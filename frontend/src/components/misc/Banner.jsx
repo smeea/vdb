@@ -14,9 +14,9 @@ const Banner = () => {
           width="48"
           height="48"
         />
-        <div className="text-blue inline text-3xl font-bold pl-2">VDB</div>
+        <div className="text-blue inline pl-2 text-3xl font-bold">VDB</div>
       </div>
-      <div className="inline text-xs italic space-y-1 px-2">
+      <div className="inline space-y-1 px-2 text-xs italic">
         <div className="flex justify-end">If only I had a laptop...</div>
         <div className="flex justify-end">- Enkidu, The Noah</div>
       </div>

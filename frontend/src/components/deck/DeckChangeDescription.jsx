@@ -52,7 +52,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
         <input
           className={`${
             folded ? '' : 'w-full'
-          } px-1.5 py-1 border-2 border-red-400 bg-blue-900`}
+          } border-2 border-red-400 bg-blue-900 px-1.5 py-1`}
           type="text"
           value={state}
           onChange={handleChange}
@@ -63,7 +63,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
         <textarea
           className={`${
             folded ? '' : 'w-full'
-          } px-1.5 py-1 border-2 border-red-400 bg-blue-900`}
+          } border-2 border-red-400 bg-blue-900 px-1.5 py-1`}
           rows={12}
           type="text"
           value={state}

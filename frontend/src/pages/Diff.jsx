@@ -332,7 +332,6 @@ const Diff = () => {
                           <b>{isMobile ? 'My' : 'My Decks'}</b>
                         </div>
                       }
-                      inline
                     />
                   )}
                   <input
@@ -345,7 +344,6 @@ const Diff = () => {
                         <b>Precons</b>
                       </div>
                     }
-                    inline
                   />
                   {recentDecks.length > 0 && (
                     <input
@@ -358,7 +356,6 @@ const Diff = () => {
                           <b>Recent</b>
                         </div>
                       }
-                      inline
                     />
                   )}
                   <input
@@ -371,7 +368,6 @@ const Diff = () => {
                         <b>URL</b>
                       </div>
                     }
-                    inline
                   />
                 </form>
               </div>
@@ -461,7 +457,6 @@ const Diff = () => {
                           <b>{isMobile ? 'My' : 'My Decks'}</b>
                         </div>
                       }
-                      inline
                     />
                   )}
                   <input
@@ -474,7 +469,6 @@ const Diff = () => {
                         <b>Precons</b>
                       </div>
                     }
-                    inline
                   />
                   {recentDecks.length > 0 && (
                     <input
@@ -487,7 +481,6 @@ const Diff = () => {
                           <b>Recent</b>
                         </div>
                       }
-                      inline
                     />
                   )}
                   <input
@@ -500,7 +493,6 @@ const Diff = () => {
                         <b>URL</b>
                       </div>
                     }
-                    inline
                   />
                 </form>
               </div>
@@ -556,7 +548,7 @@ const Diff = () => {
         </div>
         {!isMobile && (
           <div className="hide-on-lt992px    lg:basis-1/6">
-            <div className="sticky top-[77px] z-2">
+            <div className="z-2 sticky top-[77px]">
               <DiffButtons
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}

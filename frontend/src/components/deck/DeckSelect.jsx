@@ -1,47 +1,19 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useSnapshot } from 'valtio';
-import {
-  useNavigate,
-  useLocation,
-  useParams,
-  useLoaderData,
-  defer,
-} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import At from 'assets/images/icons/at.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
-import List from 'assets/images/icons/list.svg';
 import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
 import {
-  AccountLogin,
-  AccountRegister,
   ButtonIconed,
   DeckBranchSelect,
-  DeckButtons,
-  DeckChangeAuthor,
-  DeckChangeBranchName,
-  DeckChangeDescription,
-  DeckChangeName,
-  DeckCrypt,
-  DeckDetails,
-  DeckDraw,
-  DeckImport,
-  DeckLibrary,
-  DeckQrModal,
-  DeckRecommendation,
-  DeckSelectAdvModal,
   DeckSelectMy,
   DeckSelectPrecon,
   DeckSelectRecent,
-  DeckTags,
-  Modal,
   Radio,
-  Seating,
   Button,
 } from 'components';
-import { deckStore, useApp, setDeck, deckUpdate } from 'context';
-import { useDeck, useDeckMissing, useTags } from 'hooks';
+import { useApp, deckUpdate } from 'context';
 
 const DeckSelect = ({
   deck,
@@ -49,22 +21,15 @@ const DeckSelect = ({
   decks,
   handleSelect,
   setShowDeckSelectAdv,
+  showInfo,
+  setShowInfo,
 }) => {
   const {
-    addRecentDeck,
     inventoryMode,
     isMobile,
-    playtest,
-    preconDecks,
     recentDecks,
     setShowFloatingButtons,
-    setShowMenuButtons,
-    showFloatingButtons,
-    showMenuButtons,
     username,
-    lastDeckId,
-    cryptCardBase,
-    libraryCardBase,
   } = useApp();
 
   const toggleInventoryState = (id) => {

@@ -28,14 +28,14 @@ const TwdResultTotal = ({
         isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'
       } info-message items-center justify-between`}
     >
-      <div className={`px-2 inline  ${isMobile ? '' : 'whitespace-nowrap'}`}>
+      <div className={`inline px-2  ${isMobile ? '' : 'whitespace-nowrap'}`}>
         <b>TOTAL: {total}</b>
       </div>
-      <div className="block px-2 space-x-4">
+      <div className="block space-x-4 px-2">
         {Object.keys(byYear).map((k) => {
           return (
             <div key={k} className="inline-block whitespace-nowrap">
-              <div className="inline text-blue font-bold">{k}: </div>
+              <div className="text-blue inline font-bold">{k}: </div>
               {byYear[k]}
             </div>
           );

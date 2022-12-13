@@ -7,22 +7,11 @@ import {
   useLoaderData,
   defer,
 } from 'react-router-dom';
-import Shuffle from 'assets/images/icons/shuffle.svg';
-import At from 'assets/images/icons/at.svg';
-import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
-import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
 import List from 'assets/images/icons/list.svg';
-import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
 import {
   AccountLogin,
   AccountRegister,
-  Button,
-  DeckBranchSelect,
   DeckButtons,
-  DeckChangeAuthor,
-  DeckChangeBranchName,
-  DeckChangeDescription,
-  DeckChangeName,
   DeckCrypt,
   DeckDetails,
   DeckDraw,
@@ -32,25 +21,18 @@ import {
   DeckRecommendation,
   DeckSelect,
   DeckSelectAdvModal,
-  DeckSelectMy,
-  DeckSelectPrecon,
-  DeckSelectRecent,
-  DeckTags,
   Modal,
-  Radio,
   Seating,
 } from 'components';
-import { deckStore, useApp, setDeck, deckUpdate } from 'context';
+import { deckStore, useApp, setDeck } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
 
 const Decks = () => {
   const {
     addRecentDeck,
-    inventoryMode,
     isMobile,
     playtest,
     preconDecks,
-    recentDecks,
     setShowFloatingButtons,
     setShowMenuButtons,
     showFloatingButtons,
@@ -226,12 +208,14 @@ const Decks = () => {
     }
   }, [deck]);
 
-  const SPACING = 8;
+  const X_SPACING = 'space-x-8';
+  const Y_SPACING = 'space-y-8';
+  const TOP_SPACING = 'pt-8';
 
   return (
     <div className="deck-container mx-auto">
-      <div className={`flex flex-row space-x-${SPACING} pt-${SPACING}`}>
-        <div className={`basis-full lg:basis-10/12 space-y-${SPACING}`}>
+      <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
+        <div className={`basis-full lg:basis-10/12 ${Y_SPACING}`}>
           <div className="flex flex-row">
             <div className="md:basis-5/12">
               <DeckSelect
@@ -240,6 +224,8 @@ const Decks = () => {
                 decks={decks}
                 handleSelect={handleSelect}
                 setShowDeckSelectAdv={setShowDeckSelectAdv}
+                showInfo={showInfo}
+                setShowInfo={setShowInfo}
               />
             </div>
             <div className="md:basis-7/12">
@@ -263,7 +249,7 @@ const Decks = () => {
             </div>
           )}
           {deck && (
-            <div className={`flex flex-row space-x-${SPACING}`}>
+            <div className={`flex flex-row ${X_SPACING}`}>
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
@@ -289,7 +275,7 @@ const Decks = () => {
         </div>
         {!isMobile && (
           <div className="hide-on-lt992px lg:basis-2/12">
-            <div className="sticky top-[77px] z-2">
+            <div className="z-2 sticky top-[77px]">
               <DeckButtons
                 deck={deck}
                 setShowInfo={setShowInfo}

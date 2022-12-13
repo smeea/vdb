@@ -17,7 +17,7 @@ const DeckLibraryHeader = ({
 }) => {
   return (
     <div className="info-message flex items-center justify-between">
-      <div className="font-bold space-x-2 px-2 py-1">
+      <div className="space-x-2 px-2 py-1 font-bold">
         <div className="inline">
           Library [{libraryTotal}
           {!inMissing &&

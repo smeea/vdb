@@ -137,8 +137,8 @@ const InventoryDesktop = ({
           </div>
         )}
       </div>
-      <div className="hide-on-lt1200px    lg:basis-1/6">
-        <div className="sticky top-[77px] z-2">
+      <div className="hide-on-lt1200px lg:basis-1/6">
+        <div className="z-2 sticky top-[77px] space-y-6">
           <InventoryButtons
             crypt={sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt}
             library={
@@ -156,7 +156,7 @@ const InventoryDesktop = ({
             setInventoryKey={setInventoryKey}
             inShared={inShared}
           />
-          <div className=" ">
+          <div>
             <InventoryShowSelect
               category={category}
               setCategory={setCategory}

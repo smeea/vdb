@@ -105,6 +105,9 @@ const Inventory = () => {
   const newLibraryFocus = () => newLibraryRef.current.focus();
   const newLibraryRef = useRef(null);
 
+  const X_SPACING = 'space-x-8';
+  const TOP_SPACING = 'pt-8';
+
   return (
     <div className="search-container mx-auto">
       {(!inventoryKey && username) || (inventoryKey && !inventoryError) ? (
@@ -140,7 +143,7 @@ const Inventory = () => {
               inShared={inventoryKey ? true : false}
             />
           ) : (
-            <div className=" flex flex-row">
+            <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
               <InventoryDesktop
                 newCryptId={newCryptId}
                 newLibraryId={newLibraryId}
@@ -224,7 +227,7 @@ const Inventory = () => {
           centered
           size="sm"
         >
-          <div>
+          <div className="z-2 sticky top-[77px] space-y-3">
             <InventoryButtons
               crypt={
                 sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
@@ -244,7 +247,7 @@ const Inventory = () => {
               setInventoryKey={setInventoryKey}
               inShared={inventoryKey ? true : false}
             />
-            <div className=" ">
+            <div>
               <InventoryShowSelect
                 category={category}
                 setCategory={setCategory}

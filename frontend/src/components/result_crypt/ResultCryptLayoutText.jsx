@@ -25,7 +25,7 @@ const ResultCryptLayoutText = ({
   const { inventoryMode, isMobile, cryptCardBase } = useApp();
 
   return (
-    <>
+    <div className="space-y-2">
       <div className="flex items-center justify-between whitespace-nowrap ">
         <div className="flex items-center whitespace-nowrap">
           <ResultClanImage value={card.Clan} />
@@ -72,23 +72,23 @@ const ResultCryptLayoutText = ({
         </div>
       </div>
       {Object.keys(card['Rulings']).length > 0 && (
-        <>
+        <div>
           <b>Rulings:</b>
           <div className="text-xs">
             <ResultLayoutTextRulings rulings={card['Rulings']} />
           </div>
-        </>
+        </div>
       )}
       {(forceInventoryMode || inventoryMode) && (
         <>
           <hr />
           <div>
             <b>Inventory:</b>
+            <ResultLayoutTextInventory cardid={card.Id} />
           </div>
-          <ResultLayoutTextInventory cardid={card.Id} />
         </>
       )}
-    </>
+    </div>
   );
 };
 
