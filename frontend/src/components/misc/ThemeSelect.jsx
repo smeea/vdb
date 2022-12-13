@@ -10,7 +10,9 @@ const ThemeSelect = ({ setShowMenu }) => {
 
   return (
     <div
-      className={`flex ${isMobile ? 'items-center' : 'text-white'}   `}
+      className={`flex h-full min-w-[40px] items-center justify-center ${
+        isMobile ? '' : 'text-white'
+      }   `}
       onClick={() => {
         toggleTheme();
         isMobile && setShowMenu(false);

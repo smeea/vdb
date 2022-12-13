@@ -17,10 +17,13 @@ const Title = ({ children }) => {
 
 const About = () => {
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
+  const TOP_SPACING = 'pt-8';
 
   return (
     <div className="search-container mx-auto flex justify-center">
-      <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
+      <div
+        className={`basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 ${TOP_SPACING}`}
+      >
         <div>
           <Banner />
         </div>

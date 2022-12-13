@@ -67,17 +67,13 @@ const Navigation = () => {
       } z-50 bg-green-900`}
     >
       <div className="navbar-container mx-auto flex h-[42px] justify-between">
-        <div className="flex items-center space-x-3 pl-3 ">
+        <div className="flex items-center space-x-3">
           {isMobile ? (
             <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
           ) : (
             <>
-              <div className="flex h-full min-w-[40px] items-center justify-center">
-                <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
-              </div>
-              <div className="flex h-full min-w-[40px] items-center justify-center">
-                <ThemeSelect />
-              </div>
+              <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
+              <ThemeSelect />
             </>
           )}
           {username &&
@@ -88,7 +84,7 @@ const Navigation = () => {
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
               <div
-                className={`flex h-full items-center ${
+                className={`flex h-full items-center px-3 ${
                   inventoryMode ? 'text-white' : 'text-neutral-500-font'
                 }`}
                 onClick={() => {

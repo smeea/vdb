@@ -3,29 +3,8 @@ import FlagEn from 'assets/images/flags/en.svg';
 import FlagEs from 'assets/images/flags/es.svg';
 import FlagFr from 'assets/images/flags/fr.svg';
 import FlagBr from 'assets/images/flags/br.svg';
+import { LanguageMenu } from 'components';
 import { useApp } from 'context';
-
-const LanguagesMenu = ({ languages, lang, onClick }) => (
-  <div>
-    <div className=" ">Card Language:</div>
-    <div className="flex items-center space-x-3">
-      {Object.keys(languages).map((l) => {
-        const Flag = languages[l];
-        return (
-          <div
-            key={l}
-            className={`${
-              lang == l ? 'rounded-[16px] border-[3px] border-[#606080]' : ''
-            }`}
-            onClick={onClick}
-          >
-            <Flag width="22" height="22" viewBox="0 0 500 500" />
-          </div>
-        );
-      })}
-    </div>
-  </div>
-);
 
 const LanguageSelect = ({ showMenu, setShowMenu }) => {
   const { isMobile, lang, changeLang } = useApp();
@@ -36,38 +15,26 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
     'fr-FR': FlagFr,
     'pt-PT': FlagBr,
   };
-
   const SelectedFlag = languages[lang];
-
-  const onClick = () => {
-    changeLang(l);
-    setShowMenu(false);
-  };
 
   return (
     <>
       {isMobile ? (
         <div>
-          <LanguagesMenu languages={languages} lang={lang} onClick={onClick} />
+          <LanguageMenu languages={languages} setShowMenu={setShowMenu} />
         </div>
       ) : (
-        <>
-          <div
-            className="relative flex items-center"
-            onClick={() => setShowMenu(!showMenu)}
-          >
-            <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
-            {showMenu && (
-              <div className="absolute left-[-24] top-[30] rounded border border-[red] bg-black p-3">
-                <LanguagesMenu
-                  languages={languages}
-                  lang={lang}
-                  onClick={onClick}
-                />
-              </div>
-            )}
-          </div>
-        </>
+        <div
+          className="relative flex justify-center items-center h-full min-w-[40px]"
+          onClick={() => setShowMenu(!showMenu)}
+        >
+          <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
+          {showMenu && (
+            <div className="absolute left-0 top-[42] rounded border border-[red] bg-black p-3">
+              <LanguageMenu languages={languages} setShowMenu={setShowMenu} />
+            </div>
+          )}
+        </div>
       )}
     </>
   );
