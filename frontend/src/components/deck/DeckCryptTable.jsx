@@ -17,7 +17,7 @@ const DeckCryptTable = ({
   isModalOpen,
 }) => {
   const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
-  const [modalDraw, setModalDraw] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState();
 
   let maxDisciplines = 0;
   cards.map((card) => {

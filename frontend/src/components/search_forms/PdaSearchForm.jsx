@@ -310,13 +310,13 @@ const PdaSearchForm = ({ error, setError }) => {
             variant="float-clear"
             position="middle"
           >
-            <X width="40" height="auto" viewBox="0 0 16 16" />
+            <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
           <ButtonFloat onClick={processSearch} variant="float-search">
             {!spinnerState ? (
               <Check2 viewBox="0 0 16 16" />
             ) : (
-              <Spinner width="35" height="auto" viewBox="0 0 16 16" />
+              <Spinner width="35" height="35" viewBox="0 0 16 16" />
             )}
             {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
           </ButtonFloat>

@@ -56,7 +56,7 @@ const SearchAdditionalFormsText = ({
       {values.map((v, idx) => {
         const i = idx + 1;
         return (
-          <div key={i}>
+          <div className="space-y-1" key={i}>
             <Input
               placeholder="Card Name / Text / RegEx"
               name={i}

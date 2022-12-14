@@ -44,7 +44,7 @@ const DiffLibraryTable = ({
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
 
-  const [modalDraw, setModalDraw] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState();
 
   const cardRows = cards.map((card, idx) => {
     const handleClick = () => {

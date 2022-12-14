@@ -27,7 +27,7 @@ const DeckChangeAuthor = ({ deck }) => {
     }, 1000);
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     deckChangeAuthor();
   };
@@ -39,7 +39,7 @@ const DeckChangeAuthor = ({ deck }) => {
   };
 
   return (
-    <form className="flex" onSubmit={handleSubmitButton}>
+    <form className="flex" onSubmit={handleSubmit}>
       <div
         className="flex items-center rounded-l bg-red-900 p-2"
         title="Author"

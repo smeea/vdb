@@ -12,7 +12,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
   const refUrl = useRef(null);
-  const [idReference, setIdReference] = useState(undefined);
+  const [idReference, setIdReference] = useState();
   const [spinnerState, setSpinnerState] = useState(false);
 
   const getIdReference = () => {
@@ -30,7 +30,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
     setDeckUrl('');
   };
 
-  const handleImportButton = () => {
+  const handleImport = () => {
     setImportError(false);
 
     if (/.*#deck\//.test(deckUrl)) {
@@ -192,11 +192,11 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
         />
         <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
           {!spinnerState ? (
-            <Button variant="primary" onClick={handleImportButton}>
+            <Button variant="primary" onClick={handleImport}>
               Import
             </Button>
           ) : (
-            <Button variant="primary" onClick={handleImportButton}>
+            <Button variant="primary" onClick={handleImport}>
               <Spinner />
               <span>Import</span>
             </Button>

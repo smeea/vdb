@@ -84,7 +84,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
       )}
       {isMobile && showFloatingButtons && (
         <ButtonFloat onClick={handleClear} variant="float-clear">
-          <X width="40" height="auto" viewBox="0 0 16 16" />
+          <X width="40" height="40" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}
       {isMobile && showFloatingButtons && isEditable && (
@@ -93,7 +93,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
           position="middle"
           variant={addMode ? 'float-add-on' : 'float-add-off'}
         >
-          <Plus width="47" height="auto" viewBox="0 0 16 16" />
+          <Plus width="47" height="47" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}
     </>

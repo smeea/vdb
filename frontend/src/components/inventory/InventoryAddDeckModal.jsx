@@ -28,7 +28,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
   const inventoryLibrary = useSnapshot(inventoryStore).library;
 
   const [sortMethod, setSortMethod] = useState('byName');
-  const [showDeck, setShowDeck] = useState(undefined);
+  const [showDeck, setShowDeck] = useState();
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
   const [tagsFilter, setTagsFilter] = useState([]);

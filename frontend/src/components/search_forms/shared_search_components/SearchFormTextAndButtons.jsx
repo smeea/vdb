@@ -18,7 +18,7 @@ const SearchFormTextAndButtons = ({
   onChange,
   onChangeOptions,
   handleShowResults,
-  handleClearButton,
+  handleClear,
   hideMissing,
   setHideMissing,
 }) => {
@@ -55,8 +55,8 @@ const SearchFormTextAndButtons = ({
 
   return (
     <div className="space-y-3">
-      <div>
-        <div className="flex justify-between">
+      <div className="space-y-1">
+        <div className="flex">
           {isMobile ? (
             <Input
               placeholder="Card Name / Text / RegEx"
@@ -72,11 +72,11 @@ const SearchFormTextAndButtons = ({
                 name={0}
                 value={text}
                 onChange={onTextChange}
-                className="w-full rounded-r-none"
+                className="rounded-r-none w-full"
               />
               {preresults > showLimit && (
                 <ButtonIconed
-                  className="flex flex-nowrap rounded-l-none rounded-r-none"
+                  className="whitespace-nowrap rounded-l-none rounded-r-none"
                   variant="primary"
                   onClick={handleShowResults}
                   text={`SHOW ${preresults}`}
@@ -86,11 +86,11 @@ const SearchFormTextAndButtons = ({
               <Button
                 title="Clear Forms & Results"
                 variant="primary"
-                onClick={handleClearButton}
+                onClick={handleClear}
                 className="rounded-l-none"
               >
                 <div className="flex items-center">
-                  <X />
+                  <X width="20" height="20" viewBox="0 0 16 16" />
                 </div>
               </Button>
             </>

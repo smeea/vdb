@@ -21,7 +21,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
   const toggleShowAdd = () => setShowAdd(!showAdd);
-  const [modalDraw, setModalDraw] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState();
 
   const {
     library,

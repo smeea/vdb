@@ -48,7 +48,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
     }
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     deleteAccount();
   };
@@ -68,7 +68,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
           via URL anymore.
         </div>
         <div>
-          <form onSubmit={handleSubmitButton}>
+          <form onSubmit={handleSubmit}>
             <input
               placeholder="Enter password"
               type={hidePassword ? 'password' : 'text'}

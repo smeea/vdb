@@ -29,7 +29,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
     }, 1000);
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     deckChangeDescription();
   };
@@ -41,7 +41,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   };
 
   return (
-    <form className="flex" onSubmit={handleSubmitButton}>
+    <form className="flex" onSubmit={handleSubmit}>
       <div
         className="flex items-center rounded-l bg-red-900 p-2"
         title="Description"

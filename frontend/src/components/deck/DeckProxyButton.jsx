@@ -18,7 +18,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
   } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
-  const [showSelectModal, setShowSelectModal] = useState(undefined);
+  const [showSelectModal, setShowSelectModal] = useState();
 
   const checkImage = (url) => {
     const request = new XMLHttpRequest();

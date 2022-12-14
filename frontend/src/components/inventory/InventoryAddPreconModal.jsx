@@ -22,7 +22,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
   const inventoryLibrary = useSnapshot(inventoryStore).library;
 
   const [sortMethod, setSortMethod] = useState('byDate');
-  const [showDeck, setShowDeck] = useState(undefined);
+  const [showDeck, setShowDeck] = useState();
   const [nameFilter, setNameFilter] = useState('');
   const [setFilter, setSetFilter] = useState('');
 

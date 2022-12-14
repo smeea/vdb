@@ -51,7 +51,7 @@ const AccountRegister = () => {
     );
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     registerUser();
   };
@@ -83,7 +83,7 @@ const AccountRegister = () => {
             />
           </>
         ) : (
-          <form className="relative" onSubmit={handleSubmitButton}>
+          <form className="relative" onSubmit={handleSubmit}>
             <div className="flex">
               <AccountUsernameForm
                 value={formUsername}

@@ -100,7 +100,7 @@ const Cards = () => {
                   </div>
                 </div>
                 <ButtonFloat onClick={toggleShowImage} variant="float-turn">
-                  <ArrowRepeat width="40" height="auto" viewBox="0 0 16 16" />
+                  <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
                 </ButtonFloat>
               </>
             )}
@@ -119,7 +119,7 @@ const Cards = () => {
             >
               <Dice3
                 width="22"
-                height="auto"
+                height="22"
                 className="pr-1"
                 viewBox="0 0 16 16"
               />
@@ -132,7 +132,7 @@ const Cards = () => {
             >
               <Dice3
                 width="22"
-                height="auto"
+                height="22"
                 className="pr-1"
                 viewBox="0 0 16 16"
               />

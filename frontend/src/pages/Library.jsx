@@ -72,7 +72,7 @@ const Library = () => {
           <div
             className={`md:basis-7/12 lg:basis-1/2 xl:${
               deck && addMode ? '5/12' : '6/12'
-            }  2xl:basis-5/12`}
+            } 2xl:basis-5/12`}
           >
             {((isMobile && libraryCompare && libraryResults) ||
               (!isMobile && libraryCompare)) && (
@@ -96,7 +96,7 @@ const Library = () => {
           <div
             className={`md:basis-5/12 xl:${
               deck && addMode ? '3/12' : '4/12'
-            }    2xl:basis-1/4`}
+            } 2xl:basis-1/4`}
           >
             <LibrarySearchForm />
           </div>

@@ -33,7 +33,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     setProxySelected(cards);
   }, [deck]);
 
-  const handleToggleSelectButton = () => {
+  const handleToggleSelect = () => {
     const newState = proxySelected;
     if (toggleState) {
       Object.keys(newState).map((cardid) => {
@@ -48,7 +48,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     setToggleState(!toggleState);
   };
 
-  const handleToggleResolveButton = () => {
+  const handleToggleResolve = () => {
     const crypt = {};
     const library = {};
 
@@ -148,7 +148,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     }
   };
 
-  const handleGenerateButton = (isWhiteGaps) => {
+  const handleGenerate = (isWhiteGaps) => {
     const crypt = {};
     const library = {};
     Object.keys(proxySelected)
@@ -217,26 +217,26 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             >
               <Button
                 variant="primary"
-                onClick={() => handleGenerateButton(false)}
+                onClick={() => handleGenerate(false)}
               >
                 Generate - Gray gaps
               </Button>
               <Button
                 variant="primary"
-                onClick={() => handleGenerateButton(true)}
+                onClick={() => handleGenerate(true)}
               >
                 Generate - White gaps
               </Button>
               <Button
                 variant="primary"
-                onClick={() => handleToggleSelectButton()}
+                onClick={() => handleToggleSelect()}
               >
                 Select / Deselect All
               </Button>
               {inventoryMode && (
                 <Button
                   variant="primary"
-                  onClick={() => handleToggleResolveButton()}
+                  onClick={() => handleToggleResolve()}
                 >
                   Add Missing in Inventory
                 </Button>

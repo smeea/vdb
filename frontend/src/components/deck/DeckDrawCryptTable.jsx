@@ -27,7 +27,7 @@ const DeckDrawCryptTable = ({
   ashHeap,
 }) => {
   const { isMobile, isWide } = useApp();
-  const [modalDraw, setModalDraw] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState();
 
   let N = 0;
   let n = 0;

@@ -6,7 +6,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
   const { playtest } = useApp();
 
   return (
-    <>
+    <div className="space-y-1">
       <div className="text-blue font-bold">Traits:</div>
       <div className="flex">
         <div className="w-7/12 space-y-0.5">
@@ -64,7 +64,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

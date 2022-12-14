@@ -8,7 +8,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [state, setState] = useState(false);
 
-  const handleStandardButton = () => {
+  const handleStandard = () => {
     const url = `${process.env.ROOT_URL}decks/${deck.deckid.replace(' ', '_')}`;
 
     navigator.clipboard.writeText(url);
@@ -20,7 +20,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
     }, 1000);
   };
 
-  const handleStandardQrButton = () => {
+  const handleStandardQr = () => {
     const url = `${process.env.ROOT_URL}decks/${deck.deckid.replace(' ', '_')}`;
 
     setShowMenuButtons(false);
@@ -28,7 +28,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
     setQrUrl(url);
   };
 
-  const handleDeckInUrlButton = () => {
+  const handleDeckInUrl = () => {
     const url = getDeckInUrl();
 
     navigator.clipboard.writeText(url);
@@ -40,7 +40,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
     }, 1000);
   };
 
-  const handleDeckInQrButton = () => {
+  const handleDeckInQr = () => {
     const url = getDeckInUrl();
 
     setShowMenuButtons(false);
@@ -48,7 +48,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
     setQrUrl(url);
   };
 
-  const handleSnapshotButton = () => {
+  const handleSnapshot = () => {
     const cards = {};
     Object.keys(deck.crypt).map((cardid) => {
       cards[cardid] = deck.crypt[cardid].q;
@@ -144,10 +144,10 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
           {deck.deckid !== 'deck' && (
             <>
               <Menu.Item title="Copy URL (will follow deck changes, if any)">
-                <div onClick={handleStandardButton}>Standard URL</div>
+                <div onClick={handleStandard}>Standard URL</div>
               </Menu.Item>
               <Menu.Item title="Create QR with Standard URL (will follow deck changes, if any)">
-                <div onClick={handleStandardQrButton}>Standard URL - QR</div>
+                <div onClick={handleStandardQr}>Standard URL - QR</div>
               </Menu.Item>
             </>
           )}
@@ -156,16 +156,16 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
               {/* <Dropdown.Divider /> */}
               {/* <Dropdown.Header>Non-modifiable</Dropdown.Header> */}
               <Menu.Item title="Copy long URL containing full deck info (will not follow deck changes)">
-                <div onClick={handleDeckInUrlButton}>Deck-in-URL</div>
+                <div onClick={handleDeckInUrl}>Deck-in-URL</div>
               </Menu.Item>
               <Menu.Item title="Create QR with long URL containing full deck info (will not follow deck changes)">
-                <div onClick={handleDeckInQrButton}>Deck-in-QR</div>
+                <div onClick={handleDeckInQr}>Deck-in-QR</div>
               </Menu.Item>
             </>
           )}
           {deck.deckid.length === 32 && (
             <Menu.Item title="Copy URL to snapshot of the deck (will not follow deck changes)">
-              <div onClick={handleSnapshotButton}>Snapshot URL</div>
+              <div onClick={handleSnapshot}>Snapshot URL</div>
             </Menu.Item>
           )}
         </>

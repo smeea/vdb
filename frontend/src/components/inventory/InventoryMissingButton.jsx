@@ -21,7 +21,7 @@ const InventoryMissingButton = ({
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const [showModal, setShowModal] = useState(undefined);
+  const [showModal, setShowModal] = useState();
 
   const handleClose = () => {
     setShowModal(false);

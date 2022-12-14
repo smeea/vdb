@@ -9,7 +9,7 @@ const ButtonSearchCardInDecks = ({ cardid, target }) => {
   const navigate = useNavigate();
   const value = { [cardid]: { q: 1, m: 'gt' } };
 
-  const handleButton = () => {
+  const onClick = () => {
     clearSearchForm(target);
     if (target === 'pda') {
       searchPdaForm[cardid > 200000 ? 'crypt' : 'library'] = value;
@@ -27,7 +27,7 @@ const ButtonSearchCardInDecks = ({ cardid, target }) => {
     <Button
       title={`Search in ${target.toUpperCase()}`}
       variant="primary"
-      onClick={handleButton}
+      onClick={onClick}
     >
       {target === 'pda' ? <PeopleFill /> : <TrophyFill />}
     </Button>

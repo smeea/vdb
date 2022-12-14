@@ -3,7 +3,7 @@ import { Checkbox } from 'components';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
   return (
-    <>
+    <div className="space-y-1">
       <div className="text-blue font-bold">Title:</div>
       <div className="flex">
         <div className="w-7/12 space-y-0.5">
@@ -47,7 +47,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

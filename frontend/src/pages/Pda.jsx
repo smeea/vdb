@@ -15,9 +15,9 @@ const Pda = () => {
     <div className="twd-container mx-auto">
       <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
         <div
-          className={`basis-full md:basis-8/12 xl:basis-9/12
-            ${!isMobile || (isMobile && !error) ? '' : 'hidden'}
-          `}
+          className={`basis-full md:basis-8/12 xl:basis-9/12 ${
+            !isMobile || (isMobile && !error) ? '' : 'hidden'
+          }`}
         >
           {pdaResults && (
             <PdaResult results={pdaResults} setResults={setPdaResults} />
@@ -29,12 +29,8 @@ const Pda = () => {
           )}
         </div>
         <div
-          className={`
-            basis-full
-            md:basis-1/3
-            xl:basis-1/4
-            ${!isMobile || (isMobile && !pdaResults) ? '' : 'hidden'}
-          `}
+          className={`basis-full md:basis-1/3 xl:basis-1/4
+            ${!isMobile || (isMobile && !twdResults) ? '' : 'hidden'}`}
         >
           <PdaSearchForm error={error} setError={setError} />
         </div>

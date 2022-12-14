@@ -139,12 +139,12 @@ const ResultModal = ({
             variant="float-turn"
             position="middle"
           >
-            <ArrowRepeat width="40" height="auto" viewBox="0 0 16 16" />
+            <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
         )}
         {isNarrow && (
           <ButtonFloat onClick={handleClose} variant="float-clear">
-            <X width="40" height="auto" viewBox="0 0 16 16" />
+            <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
         )}
       </div>

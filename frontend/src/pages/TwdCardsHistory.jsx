@@ -13,9 +13,9 @@ import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 const TwdCardsHistory = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
 
-  const [crypt, setCrypt] = useState(undefined);
-  const [library, setLibrary] = useState(undefined);
-  const [players, setPlayers] = useState(undefined);
+  const [crypt, setCrypt] = useState();
+  const [library, setLibrary] = useState();
+  const [players, setPlayers] = useState();
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const {

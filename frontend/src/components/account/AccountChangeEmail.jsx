@@ -51,7 +51,7 @@ const AccountChangeEmail = () => {
     userServices.changeEmail(formPassword, formEmail, onSuccess, onError);
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     changeEmail();
   };
@@ -76,7 +76,7 @@ const AccountChangeEmail = () => {
           </span>
         )}
       </div>
-      <form className="flex" onSubmit={handleSubmitButton}>
+      <form className="flex" onSubmit={handleSubmit}>
         {isMobile ? (
           <>
             <AccountEmailForm

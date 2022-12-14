@@ -13,7 +13,7 @@ const ButtonToggleShowImage = () => {
   } = useApp();
   const [state, setState] = useState(false);
 
-  const handleButton = () => {
+  const onClick = () => {
     toggleShowImage();
     setState(true);
     setTimeout(() => {
@@ -29,12 +29,12 @@ const ButtonToggleShowImage = () => {
         <Button
           title="Show card image or text preview on mouse hover"
           variant="primary"
-          onClick={handleButton}
+          onClick={onClick}
         >
           {showImage ? <ImageAlt /> : <FileTextFill />}
         </Button>
       ) : (
-        <Button variant="success" onClick={handleButton}>
+        <Button variant="success" onClick={onClick}>
           {showImage ? 'Image' : 'Text'} on Hover
         </Button>
       )}

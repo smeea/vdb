@@ -7,7 +7,7 @@ const DiffCopyUrlButton = ({ deckFromId, deckToId }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [state, setState] = useState(false);
 
-  const handleStandardButton = () => {
+  const handleStandard = () => {
     const deckUrl = `${process.env.ROOT_URL}diff/${deckFromId}/${deckToId}`;
 
     navigator.clipboard.writeText(deckUrl);
@@ -22,7 +22,7 @@ const DiffCopyUrlButton = ({ deckFromId, deckToId }) => {
   return (
     <ButtonIconed
       variant={state ? 'success' : 'secondary'}
-      onClick={handleStandardButton}
+      onClick={handleStandard}
       title="Copy Standard Deck URL (will follow future deck changes)"
       icon={<Link45Deg width="19" height="19" viewBox="0 0 15 15" />}
       text={state ? 'Copied' : 'Copy URL'}

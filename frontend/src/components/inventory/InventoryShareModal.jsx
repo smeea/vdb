@@ -16,7 +16,7 @@ const InventoryShareModal = ({ setShow }) => {
     setInventoryKey,
   } = useApp();
 
-  const [state, setState] = useState(undefined);
+  const [state, setState] = useState();
   const [shareUrl, setShareUrl] = useState(
     `${process.env.ROOT_URL}inventory?key=${inventoryKey}`
   );
@@ -111,7 +111,7 @@ const InventoryShareModal = ({ setShow }) => {
       </Modal>
       {isNarrow && (
         <ButtonFloat onClick={handleClose} variant="float-clear">
-          <X width="40" height="auto" viewBox="0 0 16 16" />
+          <X width="40" height="40" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}
     </>

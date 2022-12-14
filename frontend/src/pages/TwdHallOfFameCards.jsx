@@ -7,7 +7,7 @@ import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 const TwdHallOfFameCards = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
 
-  const [players, setPlayers] = useState(undefined);
+  const [players, setPlayers] = useState();
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const INNOVATION_PERIOD = 2 * 365;

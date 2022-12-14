@@ -5,7 +5,7 @@ import { MenuButton } from 'components';
 import { useApp } from 'context';
 
 const DeckImportButton = ({
-  handleCreateButton,
+  handleCreate,
   handleFileInputClick,
   handleOpenTextModal,
   handleOpenAmaranthModal,
@@ -24,7 +24,7 @@ const DeckImportButton = ({
         {username && (
           <>
             <Menu.Item>
-              <div onClick={handleCreateButton}>Create New Deck</div>
+              <div onClick={handleCreate}>Create New Deck</div>
             </Menu.Item>
             {/* <Dropdown.Divider /> */}
             <Menu.Item>

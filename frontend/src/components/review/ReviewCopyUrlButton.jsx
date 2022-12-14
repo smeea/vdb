@@ -7,7 +7,7 @@ const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [state, setState] = useState(false);
 
-  const handleStandardButton = () => {
+  const handleStandard = () => {
     const deckUrl = `${process.env.ROOT_URL}review/${deckid}#${urlDiff}`;
 
     navigator.clipboard.writeText(deckUrl);
@@ -22,7 +22,7 @@ const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
   return (
     <ButtonIconed
       variant={state ? 'success' : 'secondary'}
-      onClick={handleStandardButton}
+      onClick={handleStandard}
       title="Copy URL"
       icon={<Link45Deg width="19" height="19" viewBox="0 0 15 15" />}
       text={state ? 'Copied' : 'Copy URL'}

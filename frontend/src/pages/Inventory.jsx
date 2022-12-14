@@ -88,8 +88,8 @@ const Inventory = () => {
     }
   }, [inventoryKey, cryptCardBase, libraryCardBase]);
 
-  const [newCryptId, setNewCryptId] = useState(undefined);
-  const [newLibraryId, setNewLibraryId] = useState(undefined);
+  const [newCryptId, setNewCryptId] = useState();
+  const [newLibraryId, setNewLibraryId] = useState();
   const [category, setCategory] = useState('all');
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
@@ -97,9 +97,9 @@ const Inventory = () => {
   const [type, setType] = useState('All');
   const [discipline, setDiscipline] = useState('All');
 
-  const [missingByClan, setMissingByClan] = useState(undefined);
-  const [missingByType, setMissingByType] = useState(undefined);
-  const [missingByDiscipline, setMissingByDiscipline] = useState(undefined);
+  const [missingByClan, setMissingByClan] = useState();
+  const [missingByType, setMissingByType] = useState();
+  const [missingByDiscipline, setMissingByDiscipline] = useState();
 
   const newCryptFocus = () => newCryptRef.current.focus();
   const newCryptRef = useRef(null);
@@ -216,7 +216,7 @@ const Inventory = () => {
           }}
           variant="hide-on-gt992px float-menu"
         >
-          <List width="35" height="auto" viewBox="0 0 16 16" />
+          <List width="35" height="35" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}
       {showMenuButtons && (

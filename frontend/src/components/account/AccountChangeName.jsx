@@ -36,7 +36,7 @@ const AccountChangeName = () => {
     userServices.changeName(state, onSuccess, onError);
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     changeName();
   };
@@ -73,7 +73,7 @@ const AccountChangeName = () => {
           </span>
         )}
       </div>
-      <form className="flex" onSubmit={handleSubmitButton}>
+      <form className="flex" onSubmit={handleSubmit}>
         <Input
           placeholder="Public name"
           value={state}

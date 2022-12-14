@@ -568,7 +568,7 @@ const Diff = () => {
           }}
           variant="hide-on-gt992px float-menu"
         >
-          <List width="35" height="auto" viewBox="0 0 16 16" />
+          <List width="35" height="35" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}
       {showMenuButtons && (

@@ -49,7 +49,7 @@ const AccountChangePassword = () => {
     );
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     changePassword();
   };
@@ -60,7 +60,7 @@ const AccountChangePassword = () => {
         <LockFill />
         <div className="px-2">Change password</div>
       </div>
-      <form className="flex" onSubmit={handleSubmitButton}>
+      <form className="flex" onSubmit={handleSubmit}>
         {isMobile ? (
           <>
             <AccountPasswordForm

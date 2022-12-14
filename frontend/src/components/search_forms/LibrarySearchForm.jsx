@@ -45,7 +45,7 @@ const LibrarySearchForm = () => {
   const libraryFormState = useSnapshot(searchLibraryForm);
   const { filterLibrary } = useFilters(libraryCardBase);
 
-  const [preresults, setPreresults] = useState(undefined);
+  const [preresults, setPreresults] = useState();
   const showLimit = 300;
 
   const navigate = useNavigate();
@@ -283,10 +283,10 @@ const LibrarySearchForm = () => {
             variant="float-clear"
             position="middle"
           >
-            <X width="40" height="auto" viewBox="0 0 16 16" />
+            <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
           <ButtonFloat onClick={processSearch} variant="float-search">
-            <Check2 width="35" height="auto" viewBox="0 0 16 16" />
+            <Check2 width="35" height="35" viewBox="0 0 16 16" />
             {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
           </ButtonFloat>
         </>

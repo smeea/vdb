@@ -14,7 +14,7 @@ const DeckLibraryTable = ({
   isModalOpen,
 }) => {
   const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
-  const [modalDraw, setModalDraw] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState();
 
   cards.sort((a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {

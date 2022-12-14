@@ -47,7 +47,7 @@ const DiffCryptTable = ({
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
-  const [modalDraw, setModalDraw] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState();
 
   let maxDisciplines = 0;
   cards.map((card) => {

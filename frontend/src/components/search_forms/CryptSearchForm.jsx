@@ -43,10 +43,9 @@ const CryptSearchForm = () => {
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const cryptFormState = useSnapshot(searchCryptForm);
-
   const { filterCrypt } = useFilters(cryptCardBase);
 
-  const [preresults, setPreresults] = useState([]);
+  const [preresults, setPreresults] = useState();
   const showLimit = 300;
 
   const navigate = useNavigate();
@@ -93,8 +92,6 @@ const CryptSearchForm = () => {
   const handleMultiSelectChange = (event, id) => {
     const i = id.name;
     const { name, value } = event;
-
-    console.log(i, name, value);
 
     if (['capacity'].includes(name)) {
       if (['le', 'ge', 'eq'].includes(value)) {
@@ -194,7 +191,7 @@ const CryptSearchForm = () => {
       if (Object.keys(input).length === 0) {
         if (query) {
           setCryptResults(undefined);
-          // setPreresults(undefined);
+          setPreresults(undefined);
           navigate('/crypt');
         }
       } else if (
@@ -293,10 +290,10 @@ const CryptSearchForm = () => {
             variant="float-clear"
             position="middle"
           >
-            <X width="40" height="auto" viewBox="0 0 16 16" />
+            <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
           <ButtonFloat onClick={processSearch} variant="float-search">
-            <Check2 width="35" height="auto" viewBox="0 0 16 16" />
+            <Check2 width="35" height="35" viewBox="0 0 16 16" />
             {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
           </ButtonFloat>
         </>

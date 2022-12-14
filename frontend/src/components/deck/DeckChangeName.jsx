@@ -30,7 +30,7 @@ const DeckChangeName = ({ deck }) => {
     }, 1000);
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     deckChangeName();
   };
@@ -42,7 +42,7 @@ const DeckChangeName = ({ deck }) => {
   };
 
   return (
-    <form className="flex" onSubmit={handleSubmitButton}>
+    <form className="flex" onSubmit={handleSubmit}>
       <div
         className="flex items-center rounded-l bg-red-900 p-2"
         title="Deck Name"

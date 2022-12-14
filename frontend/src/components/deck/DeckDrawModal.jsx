@@ -281,7 +281,7 @@ const DeckDrawModal = ({
       </Modal>
       {isNarrow && (
         <ButtonFloat onClick={handleClose} variant="float-clear">
-          <X width="40" height="auto" viewBox="0 0 16 16" />
+          <X width="40" height="40" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}
     </>

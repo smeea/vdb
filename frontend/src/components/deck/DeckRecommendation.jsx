@@ -5,8 +5,8 @@ import { useApp } from 'context';
 const DeckRecommendation = ({ setShow, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();
   const [showModal, setShowModal] = useState(true);
-  const [crypt, setCrypt] = useState(undefined);
-  const [library, setLibrary] = useState(undefined);
+  const [crypt, setCrypt] = useState();
+  const [library, setLibrary] = useState();
 
   const getRecommendation = () => {
     const url = `${process.env.API_URL}deck/${deck.deckid}/recommendation`;

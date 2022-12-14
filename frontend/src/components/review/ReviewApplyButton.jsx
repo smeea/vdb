@@ -7,7 +7,7 @@ const ReviewApplyButton = ({ deck, parentId }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [state, setState] = useState(false);
 
-  const handleStandardButton = () => {
+  const handleStandard = () => {
     deckUpdate(parentId, 'cards', { crypt: deck.crypt, library: deck.library });
 
     setState(true);
@@ -21,7 +21,7 @@ const ReviewApplyButton = ({ deck, parentId }) => {
   return (
     <ButtonIconed
       variant={state ? 'success' : 'secondary'}
-      onClick={handleStandardButton}
+      onClick={handleStandard}
       title="Apply Changes"
       icon={<Check2All width="20" height="20" viewBox="0 0 16 16" />}
       text={state ? 'Applied' : 'Apply Changes'}

@@ -24,7 +24,7 @@ const DeckDrawLibraryTable = ({
   placement,
 }) => {
   const { isMobile } = useApp();
-  const [modalDraw, setModalDraw] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState();
 
   let N = 0;
   let n = 0;

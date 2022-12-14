@@ -6,7 +6,7 @@ import { ButtonIconed } from 'components';
 
 const DeckReviewButton = ({ deck }) => {
   const { setShowFloatingButtons, setShowMenuButtons, publicName } = useApp();
-  const [snapshotId, setSnapshotId] = useState(undefined);
+  const [snapshotId, setSnapshotId] = useState();
   const navigate = useNavigate();
 
   const getSnapshot = () => {

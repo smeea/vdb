@@ -10,7 +10,7 @@ const ButtonCardCopyUrl = ({ cardid }) => {
 
   const deckUrl = `${process.env.ROOT_URL}cards/${cardid}`;
 
-  const handleButton = () => {
+  const onClick = () => {
     navigator.clipboard.writeText(deckUrl);
     setState(true);
     setTimeout(() => {
@@ -23,11 +23,11 @@ const ButtonCardCopyUrl = ({ cardid }) => {
   return (
     <>
       {!state ? (
-        <Button variant="primary" onClick={handleButton} title="Copy URL">
+        <Button variant="primary" onClick={onClick} title="Copy URL">
           <Link45Deg width="20" height="20" viewBox="0 2 14 14" />
         </Button>
       ) : (
-        <Button variant="success" onClick={handleButton}>
+        <Button variant="success" onClick={onClick}>
           Copied
         </Button>
       )}

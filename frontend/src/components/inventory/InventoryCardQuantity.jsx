@@ -29,7 +29,7 @@ const InventoryCardQuantity = ({
     setState(event.target.value ? event.target.value : '');
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (compact && q === 0) newFocus();
     inventoryCardChange(card, state ? parseInt(state) : 0);
@@ -87,7 +87,7 @@ const InventoryCardQuantity = ({
             onFocus={() => setManual(true)}
           >
             {manual ? (
-              <form onSubmit={handleSubmitButton}>
+              <form onSubmit={handleSubmit}>
                 <input
                   className="quantity"
                   placeholder=""
@@ -95,7 +95,7 @@ const InventoryCardQuantity = ({
                   name="Quantity"
                   autoFocus={true}
                   value={state}
-                  onBlur={handleSubmitButton}
+                  onBlur={handleSubmit}
                   onChange={handleManualChange}
                 />
               </form>

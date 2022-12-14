@@ -57,7 +57,7 @@ const AccountLogin = () => {
     }
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     loginUser();
   };
@@ -109,7 +109,7 @@ const AccountLogin = () => {
           </span>
         )}
       </div>
-      <form className="relative" onSubmit={handleSubmitButton}>
+      <form className="relative" onSubmit={handleSubmit}>
         {isMobile ? (
           <>
             <AccountUsernameForm

@@ -6,7 +6,7 @@ import { deckStore, deckCardChange } from 'context';
 const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
   const decks = useSnapshot(deckStore).decks;
 
-  const handleButton = () => {
+  const onClick = () => {
     deckCardChange(deckid, card, inDeck + 1);
   };
 
@@ -21,7 +21,7 @@ const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
     <Button
       className={`h-[33px] w-[24px] ${inDeck > 0 ? 'in' : ''}`}
       variant="primary"
-      onClick={handleButton}
+      onClick={onClick}
       title={title}
     >
       {inDeck ? inDeck : '+'}

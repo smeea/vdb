@@ -5,7 +5,7 @@ import { useApp } from 'context';
 
 const DeckMissing = ({ deck, missingCrypt, missingLibrary }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
-  const [showModal, setShowModal] = useState(undefined);
+  const [showModal, setShowModal] = useState();
   const handleClose = () => {
     setShowModal(false);
     setShowMenuButtons(false);

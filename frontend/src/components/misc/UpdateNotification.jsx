@@ -4,8 +4,8 @@ import Activity from 'assets/images/icons/activity.svg';
 import ListUl from 'assets/images/icons/list-task.svg';
 
 const UpdateNotification = ({ appVersion }) => {
-  const [version, setVersion] = useState(undefined);
-  const [changes, setChanges] = useState(undefined);
+  const [version, setVersion] = useState();
+  const [changes, setChanges] = useState();
   const [show, setShow] = useState(
     version && appVersion && appVersion < version
   );

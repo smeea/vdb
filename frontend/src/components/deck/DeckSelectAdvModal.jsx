@@ -45,7 +45,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
   const [sortedDecks, setSortedDecks] = useState([]);
   const [isSelectedAll, setIsSelectedAll] = useState(false);
   const [selectedDecks, setSelectedDecks] = useState({});
-  const [showDeck, setShowDeck] = useState(undefined);
+  const [showDeck, setShowDeck] = useState();
   const [invFilter, setInvFilter] = useState('any');
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
@@ -570,7 +570,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
       </Modal>
       {isNarrow && (
         <ButtonFloat onClick={handleClose} variant="float-clear">
-          <X width="40" height="auto" viewBox="0 0 16 16" />
+          <X width="40" height="40" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}
     </>

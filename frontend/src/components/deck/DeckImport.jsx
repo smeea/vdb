@@ -159,7 +159,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
       ) : (
         <>
           <DeckImportButton
-            handleCreateButton={createNewDeck}
+            handleCreate={createNewDeck}
             handleFileInputClick={handleFileInputClick}
             handleOpenTextModal={handleOpenTextModal}
             handleOpenAmaranthModal={handleOpenAmaranthModal}

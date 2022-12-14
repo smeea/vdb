@@ -5,7 +5,7 @@ import { useApp } from 'context';
 
 const ResultLayoutTextSets = (props) => {
   const { playtest, isMobile } = useApp();
-  const [modal, setModal] = useState(undefined);
+  const [modal, setModal] = useState();
 
   const byDate = (a, b) => {
     return setsAndPrecons[a].date - setsAndPrecons[b].date;

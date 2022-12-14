@@ -27,7 +27,7 @@ const DeckChangeBranchName = ({ deck }) => {
     }, 1000);
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     deckChangeBranchName();
   };
@@ -39,7 +39,7 @@ const DeckChangeBranchName = ({ deck }) => {
   };
 
   return (
-    <form className="flex" onSubmit={handleSubmitButton}>
+    <form className="flex" onSubmit={handleSubmit}>
       {isMobile && <PaletteFill />}
       <Input
         value={state}

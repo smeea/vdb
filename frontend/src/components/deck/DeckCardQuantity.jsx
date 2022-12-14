@@ -27,7 +27,7 @@ const DeckCardQuantity = ({
     setState(event.target.value ? parseInt(event.target.value) : '');
   };
 
-  const handleSubmitButton = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     cardChange(deckid, card, state ? state : 0);
     setManual(false);
@@ -93,7 +93,7 @@ const DeckCardQuantity = ({
             onFocus={() => setManual(true)}
           >
             {manual ? (
-              <form onSubmit={handleSubmitButton}>
+              <form onSubmit={handleSubmit}>
                 <input
                   className="quantity"
                   placeholder=""
@@ -101,7 +101,7 @@ const DeckCardQuantity = ({
                   name="Quantity"
                   autoFocus={true}
                   value={state}
-                  onBlur={handleSubmitButton}
+                  onBlur={handleSubmit}
                   onChange={handleManualChange}
                 />
               </form>
