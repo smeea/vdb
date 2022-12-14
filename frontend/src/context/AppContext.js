@@ -163,7 +163,7 @@ export const AppProvider = (props) => {
     setUsername(null);
     setEmail(undefined);
     deckStore.deck = undefined;
-    deckStore.decks = {};
+    deckStore.decks = undefined;
   };
 
   useEffect(() => {
@@ -405,7 +405,9 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     if (decks || username === null) {
-      const d = recentDecks.filter((v) => !decks[v.deckid]);
+      const d = recentDecks.filter(
+        (v) => username === null || !decks[v.deckid]
+      );
       if (d.length < recentDecks.length) {
         updateRecentDecks(d);
       }
