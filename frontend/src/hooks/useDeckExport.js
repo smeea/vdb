@@ -8,7 +8,7 @@ const getCryptTitle = (crypt) => {
     cryptTotalCap += card.c['Capacity'] * card.q;
     for (let i = 0; i < card.q; i++) capacityList.push(card.c['Capacity']);
   });
-  capacityList.sort();
+  capacityList.sort((a, b) => a - b);
   const cryptTotalCards = capacityList.length;
   const cryptAvg = cryptTotalCards
     ? Math.round((cryptTotalCap / cryptTotalCards) * 100) / 100
@@ -23,7 +23,6 @@ const getCryptTitle = (crypt) => {
   }
 
   const title = `Crypt (${cryptTotalCards} cards, min=${cryptMin} max=${cryptMax} avg=${cryptAvg})`;
-
   return title;
 };
 
