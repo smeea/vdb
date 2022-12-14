@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
 import ChevronCompactRight from 'assets/images/icons/chevron-compact-right.svg';
-import { Modal, CardImage, ResultLayoutText } from 'components';
+import { ButtonFloat, Modal, CardImage, ResultLayoutText } from 'components';
 import { useApp } from 'context';
 
 const ResultModal = ({
@@ -134,20 +134,18 @@ const ResultModal = ({
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>
         {isMobile && (
-          <div
-            onClick={() => toggleShowImage()}
-            className="float-right-middle float-turn flex items-center justify-center"
+          <ButtonFloat
+            onClick={toggleShowImage}
+            variant="float-turn"
+            position="middle"
           >
-            <ArrowRepeat viewBox="0 0 16 16" />
-          </div>
+            <ArrowRepeat width="40" height="auto" viewBox="0 0 16 16" />
+          </ButtonFloat>
         )}
         {isNarrow && (
-          <div
-            onClick={handleClose}
-            className="float-right-bottom float-clear flex items-center justify-center"
-          >
-            <X viewBox="0 0 16 16" />
-          </div>
+          <ButtonFloat onClick={handleClose} variant="float-clear">
+            <X width="40" height="auto" viewBox="0 0 16 16" />
+          </ButtonFloat>
         )}
       </div>
     </Modal>

@@ -7,6 +7,7 @@ import {
   ResultLayoutText,
   ButtonIconed,
   CardImage,
+  ButtonFloat,
 } from 'components';
 import { useApp, setQuickCard } from 'context';
 
@@ -98,12 +99,9 @@ const Cards = () => {
                     )}
                   </div>
                 </div>
-                <div
-                  onClick={() => toggleShowImage()}
-                  className="float-right-bottom float-turn flex items-center justify-center"
-                >
-                  <ArrowRepeat viewBox="0 0 16 16" />
-                </div>
+                <ButtonFloat onClick={toggleShowImage} variant="float-turn">
+                  <ArrowRepeat width="40" height="auto" viewBox="0 0 16 16" />
+                </ButtonFloat>
               </>
             )}
             <div className="fixed bottom-[40px]  flex w-full flex-row  ">
@@ -114,18 +112,32 @@ const Cards = () => {
                 />
               </div>
             </div>
-            <div
-              onClick={() => randomCrypt()}
-              className="float-right-top float-random flex items-center justify-center"
+            <ButtonFloat
+              onClick={randomCrypt}
+              position="top"
+              variant="float-random"
             >
-              <Dice3 viewBox="0 0 16 16" /> C
-            </div>
-            <div
-              onClick={() => randomLibrary()}
-              className="float-right-middle float-random flex items-center justify-center"
+              <Dice3
+                width="22"
+                height="auto"
+                className="pr-1"
+                viewBox="0 0 16 16"
+              />
+              <b>C</b>
+            </ButtonFloat>
+            <ButtonFloat
+              onClick={randomLibrary}
+              position="middle"
+              variant="float-random"
             >
-              <Dice3 viewBox="0 0 16 16" /> L
-            </div>
+              <Dice3
+                width="22"
+                height="auto"
+                className="pr-1"
+                viewBox="0 0 16 16"
+              />
+              <b>L</b>
+            </ButtonFloat>
           </>
         ) : (
           <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>

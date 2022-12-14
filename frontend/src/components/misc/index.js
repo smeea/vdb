@@ -3,6 +3,7 @@ export { default as Button } from './Button.jsx';
 export { default as ButtonAddCard } from './ButtonAddCard.jsx';
 export { default as ButtonCardCopyUrl } from './ButtonCardCopyUrl.jsx';
 export { default as ButtonIconed } from './ButtonIconed.jsx';
+export { default as ButtonFloat } from './ButtonFloat.jsx';
 export { default as ButtonSearchCardInDecks } from './ButtonSearchCardInDecks.jsx';
 export { default as ButtonToggleShowImage } from './ButtonToggleShowImage.jsx';
 export { default as CardImage } from './CardImage.jsx';

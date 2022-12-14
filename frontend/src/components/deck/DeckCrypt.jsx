@@ -7,6 +7,7 @@ import {
   DeckCryptHeader,
   ResultModal,
   Modal,
+  ButtonFloat,
 } from 'components';
 import { useApp, deckStore } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
@@ -152,17 +153,16 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
         </div>
       )}
       {isMobile && isEditable && showFloatingButtons && (
-        <div
+        <ButtonFloat
           onClick={() => setShowAdd(true)}
-          className="float-right-top float-add-on flex items-center justify-center"
+          position="top"
+          variant="float-add-on"
         >
-          <div className="inline" style={{ fontSize: '1.4em' }}>
-            +
+          <div className="flex items-center">
+            <div className="text-xl pb-0.5">+</div>
+            <div className="text-2xl">C</div>
           </div>
-          <div className="inline" style={{ fontSize: '1.6em' }}>
-            C
-          </div>
-        </div>
+        </ButtonFloat>
       )}
       {shouldShowModal && (
         <ResultModal

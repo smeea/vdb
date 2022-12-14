@@ -149,17 +149,16 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         </div>
       )}
       {isMobile && isEditable && showFloatingButtons && (
-        <div
+        <ButtonFloat
           onClick={() => setShowAdd(true)}
-          className="float-right-middle float-add-on flex items-center justify-center"
+          position="middle"
+          variant="float-add-on"
         >
-          <div className="inline" style={{ fontSize: '1.4em' }}>
-            +
+          <div className="flex items-center">
+            <div className="text-xl pb-0.5">+</div>
+            <div className="text-2xl">L</div>
           </div>
-          <div className="inline" style={{ fontSize: '1.6em' }}>
-            L
-          </div>
-        </div>
+        </ButtonFloat>
       )}
       {shouldShowModal && (
         <ResultModal

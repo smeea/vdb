@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
 import {
-  ErrorOverlay,
   PdaSearchFormSrcSelector,
   TwdSearchFormButtons,
   TwdSearchFormCapacity,
@@ -21,6 +20,8 @@ import {
   TwdSearchFormMatchInventoryScaling,
   TwdSearchFormPlayer,
   Checkbox,
+  ButtonFloat,
+  ErrorOverlay,
 } from 'components';
 import { sanitizeFormState } from 'utils';
 import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from 'context';
@@ -32,7 +33,6 @@ const PdaSearchForm = ({ error, setError }) => {
   const [spinnerState, setSpinnerState] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
-  const refError = useRef(null);
 
   useEffect(() => {
     if (query) {
@@ -81,7 +81,7 @@ const PdaSearchForm = ({ error, setError }) => {
     }
   };
 
-  const handleClearButton = () => {
+  const handleClear = () => {
     clearSearchForm('pda');
     setPdaResults(undefined);
     setError(false);
@@ -207,7 +207,7 @@ const PdaSearchForm = ({ error, setError }) => {
     <div className="space-y-1">
       <div className="flex flex-row justify-between ">
         <TwdSearchFormButtons
-          handleClearButton={handleClearButton}
+          handleClear={handleClear}
           getNew={getNewPda}
           getRandom={getRandomPda}
           inPda
@@ -394,24 +394,21 @@ const PdaSearchForm = ({ error, setError }) => {
       </div>
       {isMobile && (
         <>
-          <div
-            onClick={handleClearButton}
-            className="float-right-middle float-clear flex items-center justify-center"
+          <ButtonFloat
+            onClick={handleClear}
+            variant="float-clear"
+            position="middle"
           >
-            <X viewBox="0 0 16 16" />
-          </div>
-          <div
-            ref={refError}
-            onClick={processSearch}
-            className="float-right-bottom float-search flex items-center justify-center"
-          >
+            <X width="40" height="auto" viewBox="0 0 16 16" />
+          </ButtonFloat>
+          <ButtonFloat onClick={processSearch} variant="float-search">
             {!spinnerState ? (
               <Check2 viewBox="0 0 16 16" />
             ) : (
-              <Spinner animation="border" variant="light" />
+              <Spinner width="35" height="auto" viewBox="0 0 16 16" />
             )}
             {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
-          </div>
+          </ButtonFloat>
         </>
       )}
     </div>

@@ -5,6 +5,7 @@ import {
   DiffBackButton,
   DeckProxyButton,
   DeckMissingButton,
+  ButtonFloat,
 } from 'components';
 import { useApp } from 'context';
 
@@ -40,12 +41,9 @@ const DiffButtons = ({
         </div>
       )}
       {isNarrow && (
-        <div
-          onClick={handleClose}
-          className="float-right-bottom float-clear flex items-center justify-center"
-        >
-          <X viewBox="0 0 16 16" />
-        </div>
+        <ButtonFloat onClick={handleClose} variant="float-clear">
+          <X width="40" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
     </>
   );

@@ -3,7 +3,7 @@ import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
-import { Modal, Button, ButtonIconed } from 'components';
+import { ButtonFloat, Modal, Button, ButtonIconed } from 'components';
 import { useApp } from 'context';
 
 const InventoryShareModal = ({ setShow }) => {
@@ -110,12 +110,9 @@ const InventoryShareModal = ({ setShow }) => {
         </div>
       </Modal>
       {isNarrow && (
-        <div
-          onClick={handleClose}
-          className="float-right-bottom float-clear flex items-center justify-center"
-        >
-          <X viewBox="0 0 16 16" />
-        </div>
+        <ButtonFloat onClick={handleClose} variant="float-clear">
+          <X width="40" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
     </>
   );

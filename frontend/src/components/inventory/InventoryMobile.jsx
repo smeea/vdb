@@ -5,6 +5,7 @@ import {
   InventoryNewLibraryCard,
   InventoryCrypt,
   InventoryLibrary,
+  ButtonFloat,
 } from 'components';
 import { useApp, inventoryStore, usedStore } from 'context';
 
@@ -124,14 +125,13 @@ const InventoryMobile = ({
         </>
       )}
       {showFloatingButtons && (
-        <div
+        <ButtonFloat
           onClick={() => setShowCrypt(!showCrypt)}
-          className="float-right-middle float-add-on flex items-center justify-center"
+          position="middle"
+          variant="float-add-on"
         >
-          <div className="inline" style={{ fontSize: '1.6em' }}>
-            {showCrypt ? 'LIB' : 'CR'}
-          </div>
-        </div>
+          <div className="text-2xl">{showCrypt ? 'LIB' : 'CR'}</div>
+        </ButtonFloat>
       )}
     </>
   );

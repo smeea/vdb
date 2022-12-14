@@ -10,6 +10,7 @@ import {
   InventoryMissingButton,
   InventoryShareButton,
   ButtonIconed,
+  ButtonFloat,
 } from 'components';
 import FolderPlus from 'assets/images/icons/folder-plus.svg';
 import { useApp, deckStore } from 'context';
@@ -113,12 +114,9 @@ const InventoryButtons = ({
         )}
       </div>
       {isNarrow && (
-        <div
-          onClick={handleClose}
-          className="float-right-bottom float-clear flex items-center justify-center"
-        >
-          <X viewBox="0 0 16 16" />
-        </div>
+        <ButtonFloat onClick={handleClose} variant="float-clear">
+          <X width="40" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
     </>
   );

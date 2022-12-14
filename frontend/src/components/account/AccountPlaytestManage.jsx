@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import X from 'assets/images/icons/x.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import { AccountPlaytestAdd, Button, Modal } from 'components';
+import { ButtonFloat, AccountPlaytestAdd, Button, Modal } from 'components';
 import { useApp } from 'context';
 
 const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
@@ -106,12 +106,9 @@ const AccountPlaytestManage = ({ setShow }) => {
         </div>
       </Modal>
       {isNarrow && (
-        <div
-          onClick={handleClose}
-          className="float-right-bottom float-clear flex items-center justify-center"
-        >
-          <X viewBox="0 0 16 16" />
-        </div>
+        <ButtonFloat onClick={handleClose} variant="float-clear">
+          <X width="40" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
     </>
   );

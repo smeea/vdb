@@ -23,6 +23,7 @@ import {
   DeckSelectAdvModal,
   Modal,
   Seating,
+  ButtonFloat,
 } from 'components';
 import { deckStore, useApp, setDeck } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
@@ -327,15 +328,15 @@ const Decks = () => {
       )}
 
       {showFloatingButtons && (
-        <div
+        <ButtonFloat
           onClick={() => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          className="hide-on-gt992px float-right-bottom float-menu flex items-center justify-center"
+          variant="hide-on-gt992px float-menu"
         >
-          <List viewBox="0 0 16 16" />
-        </div>
+          <List width="35" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
       {showMenuButtons && (
         <Modal

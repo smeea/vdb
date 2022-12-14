@@ -1,21 +1,17 @@
 import React from 'react';
 import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
 import Plus from 'assets/images/icons/plus.svg';
+import { ButtonFloat } from 'components';
 
 const ToogleSearchAddButton = ({ addMode, toggleAddMode }) => {
   return (
-    <div
-      onClick={() => toggleAddMode()}
-      className={`float-right-bottom flex float-add-${
-        addMode ? 'on' : 'off'
-      } items-center justify-center`}
-    >
+    <ButtonFloat onClick={toggleAddMode} variant="float-add-on">
       {addMode ? (
-        <BinocularsFill viewBox="0 -2 16 22" />
+        <BinocularsFill width="27" height="auto" viewBox="0 1 16 16" />
       ) : (
-        <Plus viewBox="0 0 16 16" />
+        <Plus width="47" height="auto" viewBox="0 0 16 16" />
       )}
-    </div>
+    </ButtonFloat>
   );
 };
 

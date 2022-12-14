@@ -1,7 +1,12 @@
 import React from 'react';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import X from 'assets/images/icons/x.svg';
-import { ResultCryptTable, DeckRecommendationLibrary, Modal } from 'components';
+import {
+  ButtonFloat,
+  ResultCryptTable,
+  DeckRecommendationLibrary,
+  Modal,
+} from 'components';
 import { useApp } from 'context';
 
 const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
@@ -28,8 +33,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
                 />
               ) : (
                 <div className="flex justify-center">
-                  {' '}
-                  <Spinner animation="border" />
+                  <Spinner />
                 </div>
               )}
             </div>
@@ -41,8 +45,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
                 <DeckRecommendationLibrary cards={library} />
               ) : (
                 <div className="flex justify-center">
-                  {' '}
-                  <Spinner animation="border" />
+                  <Spinner width="35" height="auto" viewBox="0 0 16 16" />
                 </div>
               )}
             </div>
@@ -50,12 +53,9 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
         </div>
       </Modal>
       {isNarrow && (
-        <div
-          onClick={handleClose}
-          className="float-right-bottom float-clear flex items-center justify-center"
-        >
-          <X viewBox="0 0 16 16" />
-        </div>
+        <ButtonFloat onClick={handleClose} variant="float-clear">
+          <X width="40" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
     </>
   );

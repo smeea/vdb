@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
-import { ErrorOverlay } from 'components';
+import { ButtonFloat, ErrorOverlay } from 'components';
 import {
   SearchFormTextAndButtons,
   SearchFormSet,
@@ -66,7 +66,6 @@ const LibrarySearchForm = () => {
   }, []);
 
   const [error, setError] = useState(false);
-  const refError = useRef(null);
 
   const handleTextChange = (event) => {
     const { name, value } = event.target;
@@ -120,7 +119,7 @@ const LibrarySearchForm = () => {
     }
   };
 
-  const handleClearButton = () => {
+  const handleClear = () => {
     clearSearchForm('library');
     setLibraryResults(undefined);
     setPreresults(undefined);
@@ -212,7 +211,7 @@ const LibrarySearchForm = () => {
         onChangeOptions={handleTextCheckboxesChange}
         searchForm={searchLibraryForm}
         handleShowResults={handleShowResults}
-        handleClearButton={handleClearButton}
+        handleClear={handleClear}
         preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
         hideMissing={hideMissing}
@@ -279,20 +278,17 @@ const LibrarySearchForm = () => {
       />
       {isMobile && (
         <>
-          <div
-            onClick={handleClearButton}
-            className="float-right-middle float-clear flex items-center justify-center"
+          <ButtonFloat
+            onClick={handleClear}
+            variant="float-clear"
+            position="middle"
           >
-            <X viewBox="0 0 16 16" />
-          </div>
-          <div
-            ref={refError}
-            onClick={processSearch}
-            className="float-right-bottom float-search flex items-center justify-center"
-          >
-            <Check2 viewBox="0 0 16 16" />
+            <X width="40" height="auto" viewBox="0 0 16 16" />
+          </ButtonFloat>
+          <ButtonFloat onClick={processSearch} variant="float-search">
+            <Check2 width="35" height="auto" viewBox="0 0 16 16" />
             {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
-          </div>
+          </ButtonFloat>
         </>
       )}
     </div>

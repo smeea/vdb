@@ -7,6 +7,7 @@ import {
   ResultCryptTable,
   ResultCryptTotal,
   ResultCryptTotalInfo,
+  ButtonFloat,
 } from 'components';
 import { cryptSort } from 'utils';
 import { useApp, deckStore } from 'context';
@@ -82,22 +83,18 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
         </>
       )}
       {isMobile && showFloatingButtons && (
-        <div
-          onClick={handleClear}
-          className="float-right-bottom float-clear flex items-center justify-center"
-        >
-          <X viewBox="0 0 16 16" />
-        </div>
+        <ButtonFloat onClick={handleClear} variant="float-clear">
+          <X width="40" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
       {isMobile && showFloatingButtons && isEditable && (
-        <div
-          onClick={() => toggleAddMode()}
-          className={`float-right-middle flex float-add-${
-            addMode ? 'on' : 'off'
-          } items-center justify-center`}
+        <ButtonFloat
+          onClick={toggleAddMode}
+          position="middle"
+          variant={addMode ? 'float-add-on' : 'float-add-off'}
         >
-          <Plus viewBox="0 0 16 16" />
-        </div>
+          <Plus width="47" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
     </>
   );

@@ -107,11 +107,9 @@ const DeckLibraryTableRow = ({
                 <td>
                   <div className="relative flex items-center">
                     <div
-                      className={
-                        card.i
-                          ? 'inventory-card-custom'
-                          : 'inventory-card-custom not-selected'
-                      }
+                      className={`absolute left-[-24px] inventory-card-custom
+                        ${card.i ? '' : 'not-selected opacity-0'}
+                      `}
                       onClick={() => toggleInventoryState(deckid, card.c.Id)}
                     >
                       {deck.inventoryType == 's' ? (

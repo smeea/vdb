@@ -3,7 +3,11 @@ import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
-import { ResultLibraryTable, ResultLibraryTotal } from 'components';
+import {
+  ButtonFloat,
+  ResultLibraryTable,
+  ResultLibraryTotal,
+} from 'components';
 import { librarySort } from 'utils';
 import { useApp, deckStore } from 'context';
 
@@ -66,22 +70,18 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
         </>
       )}
       {isMobile && showFloatingButtons && (
-        <div
-          onClick={handleClear}
-          className="float-right-bottom float-clear flex items-center justify-center"
-        >
-          <X viewBox="0 0 16 16" />
-        </div>
+        <ButtonFloat onClick={handleClose} variant="float-clear">
+          <X width="40" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
       {isMobile && showFloatingButtons && isEditable && (
-        <div
-          onClick={() => toggleAddMode()}
-          className={`float-right-middle flex float-add-${
-            addMode ? 'on' : 'off'
-          } items-center justify-center`}
+        <ButtonFloat
+          onClick={toggleAddMode}
+          position="middle"
+          variant={addMode ? 'float-add-on' : 'float-add-off'}
         >
-          <Plus viewBox="0 0 16 16" />
-        </div>
+          <Plus width="47" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
     </>
   );

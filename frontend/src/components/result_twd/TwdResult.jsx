@@ -8,6 +8,7 @@ import {
   TwdResultLibraryByType,
   TwdResultLibraryKeyCards,
   Button,
+  ButtonFloat,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp } from 'context';
@@ -116,14 +117,9 @@ const TwdResult = ({ results, setResults }) => {
         </div>
       )}
       {isMobile && showFloatingButtons && (
-        <>
-          <div
-            onClick={handleClear}
-            className="float-right-bottom float-clear flex items-center justify-center"
-          >
-            <X viewBox="0 0 16 16" />
-          </div>
-        </>
+        <ButtonFloat onClick={handleClear} variant="float-clear">
+          <X width="40" height="auto" viewBox="0 0 16 16" />
+        </ButtonFloat>
       )}
     </>
   );
