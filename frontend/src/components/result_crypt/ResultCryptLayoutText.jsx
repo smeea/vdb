@@ -51,16 +51,16 @@ const ResultCryptLayoutText = ({
           <ResultCryptGroup value={card.Group} />
         </div>
       </div>
-      <hr />
+      <hr className="border-1 border-neutral-500" />
       <div>
         <ResultLayoutTextText text={card['Card Text']} />
       </div>
-      <hr />
+      <hr className="border-1 border-neutral-500" />
       <div className="flex items-center justify-between">
         <ResultCryptDisciplines value={card.Disciplines} />
         <ResultCryptCapacity value={card.Capacity} />
       </div>
-      <hr />
+      <hr className="border-1 border-neutral-500" />
       <div>
         <b>Sets: </b>
         <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
@@ -81,7 +81,7 @@ const ResultCryptLayoutText = ({
       )}
       {(forceInventoryMode || inventoryMode) && (
         <>
-          <hr />
+          <hr className="border-1 border-neutral-500" />
           <div>
             <b>Inventory:</b>
             <ResultLayoutTextInventory cardid={card.Id} />

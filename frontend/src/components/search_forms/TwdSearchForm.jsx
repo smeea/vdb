@@ -209,94 +209,55 @@ const TwdSearchForm = ({ error, setError }) => {
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   return (
-    <div className="space-y-1">
-      <div className="flex flex-row justify-between ">
-        <TwdSearchFormButtons
-          handleClear={handleClear}
-          getNew={getNewTwd}
-          getRandom={getRandomTwd}
-        />
-      </div>
+    <div className="space-y-2">
+      <TwdSearchFormButtons
+        handleClear={handleClear}
+        getNew={getNewTwd}
+        getRandom={getRandomTwd}
+      />
       {inventoryMode && (
         <>
-          <div className="flex flex-row items-center">
-            <div className="text-blue flex basis-1/2  font-bold">
-              In Inventory by Crypt:
-            </div>
-            <div className="inline basis-1/2">
-              <TwdSearchFormMatchInventory
-                value={twdFormState.matchInventory.crypt}
-                target={'crypt'}
-                onChange={handleChangeWithOpt}
-              />
-            </div>
-          </div>
-          <div className="flex flex-row items-center">
-            <div className="text-blue flex basis-1/2  font-bold">
-              In Inventory by Library:
-            </div>
-            <div className="inline basis-1/2">
-              <TwdSearchFormMatchInventory
-                value={twdFormState.matchInventory.library}
-                target={'library'}
-                onChange={handleChangeWithOpt}
-              />
-            </div>
-          </div>
-          <div className="flex flex-row items-center">
-            <div className="xs={{ span: 6, offset: 6 }} inline">
-              <Checkbox
-                name="60"
-                label="Scale to 60 cards"
-                value={twdFormState.matchInventory.scaling}
-                onChange={handleMatchInventoryScalingChange}
-              />
-              <Checkbox
-                name="75"
-                label="Scale to 75 cards"
-                value={twdFormState.matchInventory.scaling}
-                onChange={handleMatchInventoryScalingChange}
-              />
-            </div>
+          <TwdSearchFormMatchInventory
+            value={twdFormState.matchInventory.crypt}
+            target={'crypt'}
+            onChange={handleChangeWithOpt}
+          />
+          <TwdSearchFormMatchInventory
+            value={twdFormState.matchInventory.library}
+            target={'library'}
+            onChange={handleChangeWithOpt}
+          />
+          <div className="flex">
+            <Checkbox
+              name="60"
+              label="Scale to 60 cards"
+              value={twdFormState.matchInventory.scaling}
+              onChange={handleMatchInventoryScalingChange}
+            />
+            <Checkbox
+              name="75"
+              label="Scale to 75 cards"
+              value={twdFormState.matchInventory.scaling}
+              onChange={handleMatchInventoryScalingChange}
+            />
           </div>
         </>
       )}
-      <div className="flex flex-row items-center">
-        <div className="flex basis-2/12">
-          <div className="text-blue font-bold">Year:</div>
-        </div>
-        <div className="inline basis-10/12">
-          <TwdSearchFormDate
-            value={twdFormState.date}
-            onChange={handleChangeWithOpt}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="flex basis-2/12">
-          <div className="text-blue font-bold">Players:</div>
-        </div>
-        <div className="inline basis-10/12">
-          <TwdSearchFormPlayers
-            value={twdFormState.players}
-            onChange={handleChangeWithOpt}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="text-blue font-bold">Crypt Cards:</div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="inline basis-full">
-          {cryptCardBase && (
-            <TwdSearchFormCrypt
-              value={twdFormState.crypt}
-              form={searchTwdForm.crypt}
-            />
-          )}
-        </div>
-      </div>
-      <div className="flex flex-row justify-end ">
+      <TwdSearchFormDate
+        value={twdFormState.date}
+        onChange={handleChangeWithOpt}
+      />
+      <TwdSearchFormPlayers
+        value={twdFormState.players}
+        onChange={handleChangeWithOpt}
+      />
+      {cryptCardBase && (
+        <TwdSearchFormCrypt
+          value={twdFormState.crypt}
+          form={searchTwdForm.crypt}
+        />
+      )}
+      <div className="flex justify-end">
         <Checkbox
           name="traits"
           value="star"
@@ -305,42 +266,18 @@ const TwdSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <div className="flex flex-row items-center">
-        <div className="text-blue font-bold">Library Cards:</div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="inline basis-full">
-          {libraryCardBase && (
-            <TwdSearchFormLibrary
-              value={twdFormState.library}
-              form={searchTwdForm.library}
-            />
-          )}
-        </div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="flex basis-1/4">
-          <div className="text-blue font-bold">Library Size:</div>
-        </div>
-        <div className="flex basis-9/12 justify-end">
-          <TwdSearchFormLibraryTotal
-            value={twdFormState.libraryTotal}
-            onChange={handleMultiChange}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="flex basis-1/4">
-          <div className="text-blue font-bold">Clan:</div>
-        </div>
-        <div className="inline basis-9/12">
-          <TwdSearchFormClan
-            value={twdFormState.clan}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row justify-end ">
+      {libraryCardBase && (
+        <TwdSearchFormLibrary
+          value={twdFormState.library}
+          form={searchTwdForm.library}
+        />
+      )}
+      <TwdSearchFormLibraryTotal
+        value={twdFormState.libraryTotal}
+        onChange={handleMultiChange}
+      />
+      <TwdSearchFormClan value={twdFormState.clan} onChange={handleChange} />
+      <div className="flex justify-end">
         <Checkbox
           name="traits"
           value="monoclan"
@@ -349,78 +286,28 @@ const TwdSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <div className="flex flex-row items-center">
-        <div className="flex basis-1/4">
-          <div className="text-blue font-bold">Sect:</div>
-        </div>
-        <div className="inline basis-9/12">
-          <TwdSearchFormSect
-            value={twdFormState.sect}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="flex basis-5/12">
-          <div className="text-blue font-bold">Capacity Avg:</div>
-        </div>
-        <div className="flex basis-7/12 justify-end">
-          <TwdSearchFormCapacity
-            value={twdFormState.capacity}
-            onChange={handleMultiChange}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="text-blue font-bold">Library Disciplines:</div>
-      </div>
+      <TwdSearchFormSect value={twdFormState.sect} onChange={handleChange} />
+      <TwdSearchFormCapacity
+        value={twdFormState.capacity}
+        onChange={handleMultiChange}
+      />
       <TwdSearchFormDisciplines
         value={twdFormState.disciplines}
         onChange={handleMultiChange}
       />
-      <div className="flex flex-row items-center">
-        <div className="inline basis-full">
-          <TwdSearchFormCardtypes
-            value={twdFormState.cardtypes}
-            onChange={handleChangeWithOpt}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="flex basis-1/4">
-          <div className="text-blue font-bold">Event:</div>
-        </div>
-        <div className="inline basis-9/12">
-          <Input
-            className="w-full"
-            placeholder="Event Name"
-            value={twdFormState.event}
-            onChange={handleEventChange}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="flex basis-1/4">
-          <div className="text-blue font-bold">Location:</div>
-        </div>
-        <div className="inline basis-9/12">
-          <TwdSearchFormLocation
-            value={twdFormState.location}
-            form={searchTwdForm}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row items-center">
-        <div className="flex basis-1/4">
-          <div className="text-blue font-bold">Winner:</div>
-        </div>
-        <div className="inline basis-9/12">
-          <TwdSearchFormPlayer
-            value={twdFormState.author}
-            form={searchTwdForm}
-          />
-        </div>
-      </div>
+      <TwdSearchFormCardtypes
+        value={twdFormState.cardtypes}
+        onChange={handleChangeWithOpt}
+      />
+      <TwdSearchFormEvent
+        value={twdFormState.event}
+        onChange={handleEventChange}
+      />
+      <TwdSearchFormLocation
+        value={twdFormState.location}
+        form={searchTwdForm}
+      />
+      <TwdSearchFormPlayer value={twdFormState.author} form={searchTwdForm} />
       {isMobile && (
         <>
           <ButtonFloat

@@ -44,12 +44,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
       fromOptions.push({
         value: i.toLowerCase(),
         name: 'from',
-        label: (
-          <>
-            <span />
-            {i}
-          </>
-        ),
+        label: <div className="flex justify-center">{i}</div>,
       });
     }
 
@@ -57,21 +52,18 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
       toOptions.push({
         value: i.toLowerCase(),
         name: 'to',
-        label: (
-          <>
-            <span />
-            {i}
-          </>
-        ),
+        label: <div className="flex justify-center">{i}</div>,
       });
     }
   });
 
   return (
-    <>
-      <div className="flex flex-row items-center">
-        <div className="inline sm:basis-1/12" />
-        <div className="inline basis-5/12">
+    <div className="flex items-center space-x-1">
+      <div className="w-1/4">
+        <div className="text-blue font-bold">Year:</div>
+      </div>
+      <div className="flex w-3/4 items-center space-x-1">
+        <div className="w-full">
           <Select
             classNamePrefix="react-select"
             options={fromOptions}
@@ -82,10 +74,8 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
             onChange={onChange}
           />
         </div>
-        <div className="flex basis-1/12 justify-center">
-          <div className="text-xs">to</div>
-        </div>
-        <div className="inline basis-5/12">
+        <div className="text-xs">to</div>
+        <div className="w-full">
           <Select
             classNamePrefix="react-select"
             options={toOptions}
@@ -97,7 +87,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

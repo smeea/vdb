@@ -32,25 +32,34 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
   };
 
   return (
-    <AsyncSelect
-      classNamePrefix="react-select"
-      cacheOptions
-      menuPlacement="top"
-      maxMenuHeight={maxMenuHeight}
-      autoFocus={false}
-      placeholder="Name"
-      loadOptions={loadOptions}
-      isClearable={true}
-      value={
-        value
-          ? {
-              label: value,
-              value: value,
-            }
-          : null
-      }
-      onChange={handleChange}
-    />
+    <div className="flex items-center">
+      <div className="w-1/4">
+        <div className="text-blue font-bold">
+          {inPda ? 'Author' : 'Winner'}:
+        </div>
+      </div>
+      <div className="w-3/4">
+        <AsyncSelect
+          classNamePrefix="react-select"
+          cacheOptions
+          menuPlacement="top"
+          maxMenuHeight={maxMenuHeight}
+          autoFocus={false}
+          placeholder="Name"
+          loadOptions={loadOptions}
+          isClearable={true}
+          value={
+            value
+              ? {
+                  label: value,
+                  value: value,
+                }
+              : null
+          }
+          onChange={handleChange}
+        />
+      </div>
+    </div>
   );
 };
 

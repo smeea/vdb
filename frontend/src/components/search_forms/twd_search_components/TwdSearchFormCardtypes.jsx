@@ -111,7 +111,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       {
         value: 'any',
         name: i[0].toLowerCase(),
-        label: <div>ANY</div>,
+        label: <div className="flex justify-center">ANY</div>,
       },
     ];
 
@@ -119,60 +119,44 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       options.push({
         value: j[0],
         name: i[0].toLowerCase(),
-        label: <div>{j[1]}</div>,
+        label: <div className="flex justify-center">{j[1]}</div>,
       });
     });
 
+    const form = (
+      <div className="flex items-center space-x-1" key={i[0]}>
+        <div className="flex w-1/6 justify-center">
+          <ResultLibraryTypeImage value={i[0]} />
+        </div>
+        <div className="w-5/6">
+          <Select
+            classNamePrefix="react-select"
+            options={options}
+            isSearchable={false}
+            name={name}
+            maxMenuHeight={maxMenuHeight}
+            value={options.find(
+              (obj) => obj.value === value[i[0].toLowerCase()]
+            )}
+            onChange={onChange}
+          />
+        </div>
+      </div>
+    );
+
     if (idx < 5) {
-      formsLeft.push(
-        <div className=" flex flex-row items-center" key={i[0]}>
-          <div className="flex basis-2/12 justify-center ">
-            <ResultLibraryTypeImage value={i[0]} />
-          </div>
-          <div className="inline basis-10/12 ">
-            <Select
-              classNamePrefix="react-select"
-              options={options}
-              isSearchable={false}
-              name={name}
-              maxMenuHeight={maxMenuHeight}
-              value={options.find(
-                (obj) => obj.value === value[i[0].toLowerCase()]
-              )}
-              onChange={onChange}
-            />
-          </div>
-        </div>
-      );
+      formsLeft.push(form);
     } else {
-      formsRight.push(
-        <div className=" flex flex-row items-center " key={i[0]}>
-          <div className="flex basis-2/12 justify-center ">
-            <ResultLibraryTypeImage value={i[0]} />
-          </div>
-          <div className="inline basis-10/12 ">
-            <Select
-              classNamePrefix="react-select"
-              options={options}
-              isSearchable={false}
-              name={name}
-              maxMenuHeight={maxMenuHeight}
-              value={options.find(
-                (obj) => obj.value === value[i[0].toLowerCase()]
-              )}
-              onChange={onChange}
-            />
-          </div>
-        </div>
-      );
+      formsRight.push(form);
     }
   });
 
   return (
     <>
-      <div className="flex flex-row space-x-3">
-        <div className="basis-1/2 space-y-1">{formsLeft}</div>
-        <div className="basis-1/2 space-y-1">{formsRight}</div>
+      <div className="text-blue font-bold">Library Card Types:</div>
+      <div className="flex space-x-6">
+        <div className="w-1/2 space-y-1">{formsLeft}</div>
+        <div className="w-1/2 space-y-1">{formsRight}</div>
       </div>
     </>
   );

@@ -32,25 +32,32 @@ const TwdSearchFormLocation = ({ value, form }) => {
   };
 
   return (
-    <AsyncSelect
-      classNamePrefix="react-select"
-      cacheOptions
-      menuPlacement="top"
-      maxMenuHeight={maxMenuHeight}
-      autoFocus={false}
-      placeholder="Location"
-      loadOptions={loadOptions}
-      isClearable={true}
-      value={
-        value
-          ? {
-              label: value,
-              value: value,
-            }
-          : null
-      }
-      onChange={handleChange}
-    />
+    <div className="flex items-center">
+      <div className="w-1/4">
+        <div className="text-blue font-bold">Location:</div>
+      </div>
+      <div className="w-3/4">
+        <AsyncSelect
+          classNamePrefix="react-select"
+          cacheOptions
+          menuPlacement="top"
+          maxMenuHeight={maxMenuHeight}
+          autoFocus={false}
+          placeholder="Location"
+          loadOptions={loadOptions}
+          isClearable={true}
+          value={
+            value
+              ? {
+                  label: value,
+                  value: value,
+                }
+              : null
+          }
+          onChange={handleChange}
+        />
+      </div>
+    </div>
   );
 };
 

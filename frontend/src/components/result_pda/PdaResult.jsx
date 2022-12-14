@@ -7,6 +7,7 @@ import {
   TwdResultCrypt,
   TwdResultLibraryByType,
   TwdResultLibraryKeyCards,
+  Button,
   ButtonFloat,
 } from 'components';
 import { decksSort } from 'utils';
@@ -99,7 +100,9 @@ const PdaResult = ({ results, setResults }) => {
                   </>
                 )}
               </div>
-              {index + 1 < showCounter && <hr className="thick" />}
+              {index + 1 < showCounter && (
+                <hr className="border-2 border-red-500" />
+              )}
             </React.Fragment>
           );
         }

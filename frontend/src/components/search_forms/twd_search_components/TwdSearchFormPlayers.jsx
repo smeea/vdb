@@ -14,12 +14,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
       fromOptions.push({
         value: i.toLowerCase(),
         name: 'from',
-        label: (
-          <>
-            <span />
-            {i}
-          </>
-        ),
+        label: <div className="flex justify-center">{i}</div>,
       });
     }
 
@@ -27,44 +22,41 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
       toOptions.push({
         value: i.toLowerCase(),
         name: 'to',
-        label: (
-          <>
-            <span />
-            {i}
-          </>
-        ),
+        label: <div className="flex justify-center">{i}</div>,
       });
     }
   });
 
   return (
     <>
-      <div className=" flex flex-row items-center">
-        <div className="inline  sm:basis-1/12" />
-        <div className="inline basis-5/12 ">
-          <Select
-            classNamePrefix="react-select"
-            options={fromOptions}
-            isSearchable={false}
-            name={name}
-            maxMenuHeight={maxMenuHeight}
-            value={fromOptions.find((obj) => obj.value === value.from)}
-            onChange={onChange}
-          />
+      <div className="flex items-center space-x-1">
+        <div className="w-1/4">
+          <div className="text-blue font-bold">Players:</div>
         </div>
-        <div className="flex basis-1/12 justify-center ">
-          <div className=" text-xs">to</div>
-        </div>
-        <div className="inline basis-5/12 ">
-          <Select
-            classNamePrefix="react-select"
-            options={toOptions}
-            isSearchable={false}
-            name={name}
-            maxMenuHeight={maxMenuHeight}
-            value={toOptions.find((obj) => obj.value === value.to)}
-            onChange={onChange}
-          />
+        <div className="flex w-3/4 items-center space-x-1">
+          <div className="w-full">
+            <Select
+              classNamePrefix="react-select"
+              options={fromOptions}
+              isSearchable={false}
+              name={name}
+              maxMenuHeight={maxMenuHeight}
+              value={fromOptions.find((obj) => obj.value === value.from)}
+              onChange={onChange}
+            />
+          </div>
+          <div className="text-xs">to</div>
+          <div className="w-full">
+            <Select
+              classNamePrefix="react-select"
+              options={toOptions}
+              isSearchable={false}
+              name={name}
+              maxMenuHeight={maxMenuHeight}
+              value={toOptions.find((obj) => obj.value === value.to)}
+              onChange={onChange}
+            />
+          </div>
         </div>
       </div>
     </>

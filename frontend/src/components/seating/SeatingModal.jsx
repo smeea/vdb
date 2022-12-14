@@ -112,7 +112,7 @@ const SeatingModal = ({
             </div>
             {editRandom && (
               <div className="flex flex-row ">
-                <hr />
+                <hr className="border-1 border-neutral-500" />
                 <div className="flex flex-row ">
                   <div className="flex flex-row">
                     <div
@@ -196,7 +196,7 @@ const SeatingModal = ({
                       })}
                   </div>
                 </div>
-                <hr />
+                <hr className="border-1 border-neutral-500" />
                 <div className="flex flex-row">
                   <div
                     className="flex items-center"

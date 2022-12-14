@@ -1,17 +1,22 @@
 import React from 'react';
+import { Input } from 'components';
 
-const TwdSearchFormEventAndButtons = ({ value, onChange }) => {
+const TwdSearchFormEvent = ({ value, onChange }) => {
   return (
-    <input
-      className="text-form"
-      type="text"
-      name="event"
-      autoComplete="off"
-      spellCheck="false"
-      value={value}
-      onChange={onChange}
-    />
+    <div className="flex items-center">
+      <div className="w-1/4">
+        <div className="text-blue font-bold">Event:</div>
+      </div>
+      <div className="w-3/4">
+        <Input
+          className="w-full"
+          placeholder="Event Name"
+          value={value}
+          onChange={onChange}
+        />
+      </div>
+    </div>
   );
 };
 
-export default TwdSearchFormEventAndButtons;
+export default TwdSearchFormEvent;

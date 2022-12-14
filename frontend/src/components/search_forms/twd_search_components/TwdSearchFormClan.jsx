@@ -38,15 +38,22 @@ const TwdSearchFormClan = ({ value, onChange }) => {
   });
 
   return (
-    <Select
-      classNamePrefix="react-select"
-      options={options}
-      isSearchable={!isMobile}
-      name="clan"
-      maxMenuHeight={maxMenuHeight}
-      value={options.find((obj) => obj.value === value.toLowerCase())}
-      onChange={onChange}
-    />
+    <div className="flex items-center">
+      <div className="w-1/4">
+        <div className="text-blue font-bold">Clan:</div>
+      </div>
+      <div className="w-3/4">
+        <Select
+          classNamePrefix="react-select"
+          options={options}
+          isSearchable={!isMobile}
+          name="clan"
+          maxMenuHeight={maxMenuHeight}
+          value={options.find((obj) => obj.value === value.toLowerCase())}
+          onChange={onChange}
+        />
+      </div>
+    </div>
   );
 };
 

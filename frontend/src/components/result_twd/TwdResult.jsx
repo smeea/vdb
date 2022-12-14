@@ -89,7 +89,9 @@ const TwdResult = ({ results, setResults }) => {
                   </>
                 )}
               </div>
-              {index + 1 < showCounter && <hr className="thick" />}
+              {index + 1 < showCounter && (
+                <hr className="border-2 border-red-500" />
+              )}
             </React.Fragment>
           );
         }

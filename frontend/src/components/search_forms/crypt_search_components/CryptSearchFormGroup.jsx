@@ -12,17 +12,17 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
         <div className="text-blue font-bold">Group:</div>
       </div>
       <div className="flex w-3/4 justify-end">
-        {groups.map((i, index) => {
+        {groups.map((i, idx) => {
           return (
             <Button
               className="w-full rounded-none"
-              key={index}
+              key={idx}
               value={i}
               name="group"
               variant={value[i] ? 'third' : 'outline-primary'}
               onClick={onChange}
             >
-              <div>{i}</div>
+              {i}
             </Button>
           );
         })}

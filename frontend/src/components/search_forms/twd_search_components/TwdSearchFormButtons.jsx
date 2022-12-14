@@ -7,25 +7,20 @@ import {
   TwdRandomButton,
 } from 'components';
 
-const TwdSearchFormButtons = ({
-  getRandom,
-  getNew,
-  handleClearButton,
-  inPda,
-}) => {
+const TwdSearchFormButtons = ({ getRandom, getNew, handleClear, inPda }) => {
   const { isMobile, isWide } = useApp();
 
   return (
-    <>
-      <div className="flex flex-row space-x-1">
+    <div className="flex justify-between">
+      <div className="flex space-x-1">
         <TwdRandomButton getRandom={getRandom} />
         <TwdNewDecksButton getNew={getNew} />
       </div>
-      <div className="flex flex-row space-x-1">
+      <div className="flex space-x-1">
         {!inPda && <TwdMoreButton noText={!isWide} />}
-        {!isMobile && <TwdClearButton handleClick={handleClearButton} />}
+        {!isMobile && <TwdClearButton handleClick={handleClear} />}
       </div>
-    </>
+    </div>
   );
 };
 

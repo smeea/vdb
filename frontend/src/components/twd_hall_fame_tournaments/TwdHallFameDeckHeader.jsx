@@ -52,7 +52,7 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
 
         {showDeck && cards && (
           <div>
-            <hr />
+            <hr className="border-1 border-neutral-500" />
             {deck && (
               <TwdHallFameDeckBody
                 deck={{

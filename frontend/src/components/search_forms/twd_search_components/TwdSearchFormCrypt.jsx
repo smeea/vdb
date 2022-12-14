@@ -22,6 +22,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
 
   return (
     <>
+      <div className="text-blue font-bold">Crypt:</div>
       <NewCryptCard onChange={handleAdd} selectedValue={null} />
       <>
         {Object.keys(value)
