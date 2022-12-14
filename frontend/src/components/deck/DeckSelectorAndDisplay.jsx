@@ -24,8 +24,10 @@ const DeckSelectorAndDisplay = () => {
     setDeck(decks[e.value]);
   };
 
+  const Y_SPACING = 'space-y-8';
+
   return (
-    <div className="space-y-4">
+    <div className={Y_SPACING}>
       <div className="sticky-selector flex space-x-1">
         {addMode && (
           <>

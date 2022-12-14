@@ -15,22 +15,21 @@ import { useApp } from 'context';
 
 const Account = () => {
   const { isMobile, username, isPlaytester, isPlaytestAdmin } = useApp();
+  const TOP_SPACING = 'pt-8';
 
   return (
-    <div className="search-container mx-auto">
-      <div className="flex justify-center">
-        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-          <Banner />
-        </div>
-      </div>
+    <div className="search-container mx-auto flex justify-center">
       <div
-        className={`md: flex flex-row items-center   justify-center ${
-          isMobile ? (username ? '' : 'h-[80vh]') : 'h-[70vh]'
-        }`}
+        className={`basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 ${TOP_SPACING}`}
       >
-        <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
+        <Banner />
+        <div
+          className={`flex items-center justify-center ${
+            isMobile ? (username ? '' : 'h-[80vh]') : 'h-[70vh]'
+          }`}
+        >
           {username ? (
-            <div className="flex flex-col space-y-6">
+            <div className="w-full space-y-6">
               <div className="text-blue logo-box flex w-full items-center px-2 py-1 font-bold">
                 <div className="pr-2">
                   <PersonFill />
@@ -57,7 +56,7 @@ const Account = () => {
               </div>
             </div>
           ) : (
-            <div className="flex flex-col space-y-16">
+            <div className="w-full space-y-16">
               <div>
                 <AccountLogin />
               </div>

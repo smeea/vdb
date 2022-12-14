@@ -8,9 +8,12 @@ const Pda = () => {
   const pdaResults = useSnapshot(searchResults).pda;
   const [error, setError] = useState();
 
+  const X_SPACING = 'space-x-8';
+  const TOP_SPACING = 'pt-8';
+
   return (
     <div className="twd-container mx-auto">
-      <div className="flex flex-row justify-center">
+      <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
         <div
           className={`basis-full md:basis-8/12 xl:basis-9/12
             ${!isMobile || (isMobile && !error) ? '' : 'hidden'}
