@@ -13,8 +13,7 @@ import {
   DeckDrawProbabilityModal,
   ConditionalTooltip,
 } from 'components';
-
-import { drawProbability } from 'utils';
+import { isTrifle, drawProbability } from 'utils';
 import { useApp } from 'context';
 
 const DeckDrawLibraryTable = ({
@@ -54,18 +53,22 @@ const DeckDrawLibraryTable = ({
             className={card['Blood Cost'] ? 'cost blood ' : 'cost '}
             onClick={() => handleClick(idx)}
           >
-            <ResultLibraryCost
-              valueBlood={card['Blood Cost']}
-              valuePool={card['Pool Cost']}
-            />
+            {(card['Blood Cost'] || card['Pool Cost']) && (
+              <ResultLibraryCost
+                valueBlood={card['Blood Cost']}
+                valuePool={card['Pool Cost']}
+              />
+            )}
           </td>
           <td className="type " onClick={() => handleClick(idx)}>
             <ResultLibraryTypeImage value={card.Type} />
           </td>
           <td className="disciplines " onClick={() => handleClick(idx)}>
-            <ResultLibraryClan value={card.Clan} />
+            {card.Clan && <ResultLibraryClan value={card.Clan} />}
             {card.Discipline && card.Clan && '+'}
-            <ResultLibraryDisciplines value={card.Discipline} />
+            {card.Discipline && (
+              <ResultLibraryDisciplines value={card.Discipline} />
+            )}
           </td>
           <td className="name " onClick={() => handleClick(idx)}>
             <ConditionalTooltip
@@ -77,8 +80,8 @@ const DeckDrawLibraryTable = ({
             </ConditionalTooltip>
           </td>
           <td className="burn " onClick={() => handleClick(idx)}>
-            <ResultLibraryBurn value={card['Burn Option']} />
-            <ResultLibraryTrifle card={card} />
+            {card['Burn Option'] && <ResultLibraryBurn />}
+            {isTrifle(card) && <ResultLibraryTrifle />}
           </td>
           <td className="text-blue w-9  text-right">
             {!ashHeap && (

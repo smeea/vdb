@@ -77,9 +77,9 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
             <ResultLibraryTypeImage value={card.Type} />
           </td>
           <td className="disciplines " onClick={() => handleClick(idx)}>
-            <ResultLibraryClan value={card.Clan} />
+            {card.Clan && <ResultLibraryClan value={card.Clan} />}
             {card.Discipline && card.Clan && '+'}
-            <ResultLibraryDisciplines value={card.Discipline} />
+            {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
           </td>
           <td className="name " onClick={() => handleClick(idx)}>
             <ConditionalTooltip
@@ -92,8 +92,8 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
           </td>
           {!isMobile && (
             <td className="burn " onClick={() => handleClick(idx)}>
-              <ResultLibraryBurn value={card[BURN_OPTION]} />
-              <ResultLibraryTrifle card={card} />
+              {card[BURN_OPTION] && <ResultLibraryBurn />}
+              {isTrifle(card) && <ResultLibraryTrifle />}
             </td>
           )}
         </>

@@ -20,11 +20,11 @@ const ResultLayoutTextText = (props) => {
     replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => (
       <img
         key={`${match}-${idx}`}
-        className={
+        className={`inline ${
           match.toLowerCase() === match
             ? 'discipline-base-image-results'
             : 'discipline-superior-image-results'
-        }
+        }`}
         src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
         title={match}
       />

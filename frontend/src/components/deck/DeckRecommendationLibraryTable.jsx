@@ -11,6 +11,7 @@ import {
   ResultLibraryTrifle,
   ConditionalTooltip,
 } from 'components';
+import { isTrifle } from 'utils';
 import { BURN_OPTION, POOL_COST, BLOOD_COST } from 'utils/constants';
 import { deckStore, useApp } from 'context';
 
@@ -27,12 +28,6 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
 
     const inDeck = deck.library[card.Id]?.q || 0;
 
-    const DisciplineOrClan = card.Clan ? (
-      <ResultLibraryClan value={card.Clan} />
-    ) : (
-      <ResultLibraryDisciplines value={card.Discipline} />
-    );
-
     return (
       <React.Fragment key={card.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
@@ -46,31 +41,38 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
               />
             </td>
           )}
-          <ConditionalTooltip
-            placement={isDesktop ? 'left' : 'bottom'}
-            overlay={<CardPopover card={card} />}
-            disabled={isMobile}
-          >
-            <td className="name " onClick={() => handleClick()}>
+          <td className="name " onClick={() => handleClick()}>
+            <ConditionalTooltip
+              placement={isDesktop ? 'left' : 'bottom'}
+              overlay={<CardPopover card={card} />}
+              disabled={isMobile}
+            >
               <ResultLibraryName card={card} />
-            </td>
-          </ConditionalTooltip>
-
+            </ConditionalTooltip>
+          </td>
           <td
             className={card[BLOOD_COST] ? 'cost blood' : 'cost'}
             onClick={() => handleClick()}
           >
-            <ResultLibraryCost
-              valueBlood={card[BLOOD_COST]}
-              valuePool={card[POOL_COST]}
-            />
+            {(card[BLOOD_COST] || card[POOL_COST]) && (
+              <ResultLibraryCost
+                valueBlood={card[BLOOD_COST]}
+                valuePool={card[POOL_COST]}
+              />
+            )}
           </td>
           <td className="disciplines " onClick={() => handleClick()}>
-            {DisciplineOrClan}
+            {card.Clan && <ResultLibraryClan value={card.Clan} />}
+            {card.Discipline && card.Clan && '+'}
+            {card.Discipline && (
+              <ResultLibraryDisciplines value={card.Discipline} />
+            )}
           </td>
           <td className="burn" onClick={() => handleClick()}>
-            <ResultLibraryBurn value={card[BURN_OPTION]} />
-            <ResultLibraryTrifle card={card} />
+            {card[BURN_OPTION] && (
+              <ResultLibraryBurn value={card[BURN_OPTION]} />
+            )}
+            {isTrifle(card) && <ResultLibraryTrifle />}
           </td>
         </tr>
       </React.Fragment>

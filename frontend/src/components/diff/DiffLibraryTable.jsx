@@ -16,7 +16,8 @@ import {
   DiffQuantityDiff,
   Tooltip,
 } from 'components';
-import { drawProbability } from 'utils';
+import { isTrifle, drawProbability } from 'utils';
+import { BURN_OPTION } from 'utils/constants';
 import {
   useApp,
   deckStore,
@@ -50,13 +51,6 @@ const DiffLibraryTable = ({
       handleModalCardOpen(card.c);
       setShowFloatingButtons(false);
     };
-
-    let DisciplineOrClan;
-    if (card.c.Clan) {
-      DisciplineOrClan = <ResultLibraryClan value={card.c.Clan} />;
-    } else {
-      DisciplineOrClan = <ResultLibraryDisciplines value={card.c.Discipline} />;
-    }
 
     let inInventory = 0;
     let softUsedMax = 0;
@@ -146,11 +140,15 @@ const DiffLibraryTable = ({
             />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
-            {DisciplineOrClan}
+            {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
+            {card.c.Discipline && card.c.Clan && '+'}
+            {card.c.Discipline && (
+              <ResultLibraryDisciplines value={card.c.Discipline} />
+            )}
           </td>
           <td className="burn" onClick={() => handleClick()}>
-            <ResultLibraryBurn value={card.c['Burn Option']} />
-            <ResultLibraryTrifle card={card.c} />
+            {card.c[BURN_OPTION] && <ResultLibraryBurn />}
+            {isTrifle(card.c) && <ResultLibraryTrifle />}
           </td>
           {showInfo && (
             <td className="text-blue w-9 text-right">

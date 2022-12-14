@@ -12,6 +12,7 @@ import { useApp, inventoryStore } from 'context';
 const SelectLabelLibrary = ({ cardid, inInventory }) => {
   const { libraryCardBase } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const card = libraryCardBase[cardid];
 
   return (
     <>
@@ -28,27 +29,24 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
               {inventoryLibrary[cardid] && inventoryLibrary[cardid].q}
             </div>
           )}
-          <ResultLibraryTypeImage value={libraryCardBase[cardid].Type} />
+          <ResultLibraryTypeImage value={card.Type} />
           <div>
-            <ResultLibraryName card={libraryCardBase[cardid]} />
+            <ResultLibraryName card={card} />
           </div>
         </div>
         <div>
           <div className="inline ">
-            <ResultLibraryDisciplines
-              value={libraryCardBase[cardid].Discipline}
-            />
-            {libraryCardBase[cardid].Discipline &&
-              libraryCardBase[cardid].Clan &&
-              '+'}
-            <ResultLibraryClan value={libraryCardBase[cardid].Clan} />
+            {card.Discipline && (
+              <ResultLibraryDisciplines value={card.Discipline} />
+            )}
+            {card.Discipline && card.Clan && '+'}
+            {card.Clan && <ResultLibraryClan value={card.Clan} />}
           </div>
-          {(libraryCardBase[cardid]['Blood Cost'] ||
-            libraryCardBase[cardid]['Pool Cost']) && (
+          {(card['Blood Cost'] || card['Pool Cost']) && (
             <div className="inline ">
               <ResultLibraryCost
-                valuePool={libraryCardBase[cardid]['Pool Cost']}
-                valueBlood={libraryCardBase[cardid]['Blood Cost']}
+                valuePool={card['Pool Cost']}
+                valueBlood={card['Blood Cost']}
               />
             </div>
           )}

@@ -16,7 +16,7 @@ import {
   Tooltip,
 } from 'components';
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
-import { getHardTotal, getSoftMax } from 'utils';
+import { isTrifle, getHardTotal, getSoftMax } from 'utils';
 import {
   useApp,
   deckStore,
@@ -129,10 +129,12 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         className={card[BLOOD_COST] ? 'cost blood' : 'cost'}
         onClick={() => handleClick(idx)}
       >
-        <ResultLibraryCost
-          valueBlood={card[BLOOD_COST]}
-          valuePool={card[POOL_COST]}
-        />
+        {(card[BLOOD_COST] || card[POOL_COST]) && (
+          <ResultLibraryCost
+            valueBlood={card[BLOOD_COST]}
+            valuePool={card[POOL_COST]}
+          />
+        )}
       </td>
       <td className="type" onClick={() => handleClick(idx)}>
         <ResultLibraryTypeImage value={card.Type} />
@@ -141,9 +143,9 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         className="disciplines flex items-center justify-center"
         onClick={() => handleClick(idx)}
       >
-        <ResultLibraryClan value={card.Clan} />
+        {card.Clan && <ResultLibraryClan value={card.Clan} />}
         {card.Discipline && card.Clan && '+'}
-        <ResultLibraryDisciplines value={card.Discipline} />
+        {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
       </td>
       <td className="name" onClick={() => handleClick(idx)}>
         <ConditionalTooltip
@@ -155,8 +157,8 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         </ConditionalTooltip>
       </td>
       <td className="burn" onClick={() => handleClick(idx)}>
-        <ResultLibraryBurn value={card[BURN_OPTION]} />
-        <ResultLibraryTrifle card={card} />
+        {card[BURN_OPTION] && <ResultLibraryBurn />}
+        {isTrifle(card) && <ResultLibraryTrifle />}
       </td>
     </tr>
   );

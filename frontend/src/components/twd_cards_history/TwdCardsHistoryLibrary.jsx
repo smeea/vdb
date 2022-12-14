@@ -173,9 +173,9 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           className="clan-disciplines flex items-center justify-center"
           onClick={() => handleClick(idx)}
         >
-          <ResultLibraryClan value={card.Clan} />
+          {card.Clan && <ResultLibraryClan value={card.Clan} />}
           {card.Discipline && card.Clan && '+'}
-          <ResultLibraryDisciplines value={card.Discipline} />
+          {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
         </div>
         <ConditionalTooltip
           placement={'right'}
@@ -196,7 +196,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
             className="burn flex items-center justify-center"
             onClick={() => handleClick(idx)}
           >
-            <ResultLibraryBurn value={card['Burn Option']} />
+            {card['Burn Option'] && <ResultLibraryBurn />}
           </div>
         )}
         <TwdCardsHistoryCardAppearance

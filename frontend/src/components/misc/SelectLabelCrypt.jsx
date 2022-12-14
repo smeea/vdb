@@ -11,6 +11,7 @@ import { useApp, inventoryStore } from 'context';
 const SelectLabelCrypt = ({ cardid, inInventory }) => {
   const { cryptCardBase } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const card = cryptCardBase[cardid];
 
   return (
     <>
@@ -27,21 +28,19 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
               {inventoryCrypt[cardid] && inventoryCrypt[cardid].q}
             </div>
           )}
-          <ResultCryptCapacity value={cryptCardBase[cardid].Capacity} />
+          <ResultCryptCapacity value={card.Capacity} />
           <div>
-            <ResultCryptName card={cryptCardBase[cardid]} />
-            {cryptCardBase[cardid]['New'] && (
-              <div className="inline  text-neutral-500">
-                [G{cryptCardBase[cardid].Group}]
-              </div>
+            <ResultCryptName card={card} />
+            {card['New'] && (
+              <div className="inline  text-neutral-500">[G{card.Group}]</div>
             )}
           </div>
           <div>
-            <ResultClanImage value={cryptCardBase[cardid].Clan} />
+            <ResultClanImage value={card.Clan} />
           </div>
         </div>
         <div className="flex whitespace-nowrap">
-          <ResultCryptDisciplines value={cryptCardBase[cardid].Disciplines} />
+          <ResultCryptDisciplines value={card.Disciplines} />
         </div>
       </div>
     </>

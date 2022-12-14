@@ -19,7 +19,7 @@ import {
 } from 'components';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp, deckStore, usedStore, inventoryStore } from 'context';
-import { getSoftMax, getHardTotal } from 'utils';
+import { isTrifle, getSoftMax, getHardTotal } from 'utils';
 
 const DeckProxyLibraryTable = ({
   handleModalCardOpen,
@@ -126,19 +126,23 @@ const DeckProxyLibraryTable = ({
           </ConditionalTooltip>
 
           <td className="cost" onClick={() => handleClick(card.c)}>
-            <ResultLibraryCost
-              valueBlood={card.c['Blood Cost']}
-              valuePool={card.c['Pool Cost']}
-            />
+            {(card.c['Blood Cost'] || card.c['Pool Cost']) && (
+              <ResultLibraryCost
+                valueBlood={card.c['Blood Cost']}
+                valuePool={card.c['Pool Cost']}
+              />
+            )}
           </td>
           <td className="disciplines" onClick={() => handleClick(card.c)}>
-            <ResultLibraryClan value={card.c.Clan} />
+            {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
             {card.c.Discipline && card.c.Clan && '+'}
-            <ResultLibraryDisciplines value={card.c.Discipline} />
+            {card.c.Discipline && (
+              <ResultLibraryDisciplines value={card.c.Discipline} />
+            )}
           </td>
           <td className="burn" onClick={() => handleClick(card.c)}>
-            <ResultLibraryBurn value={card.c['Burn Option']} />
-            <ResultLibraryTrifle card={card.c} />
+            {card.c['Burn Option'] && <ResultLibraryBurn />}
+            {isTrifle(card.c) && <ResultLibraryTrifle />}
           </td>
           {!isMobile && (
             <>

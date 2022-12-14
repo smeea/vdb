@@ -14,12 +14,14 @@ const ResultCryptDisciplines = ({ value, maxDisciplines }) => {
     );
   });
 
-  disciplines.push(
-    <td
-      width={(1 - disciplines.length / maxDisciplines) * 100 + '%'}
-      key={maxDisciplines}
-    />
-  );
+  if (disciplines.length < maxDisciplines) {
+    disciplines.push(
+      <td
+        width={(1 - disciplines.length / maxDisciplines) * 100 + '%'}
+        key={maxDisciplines}
+      />
+    );
+  }
 
   return (
     <table>

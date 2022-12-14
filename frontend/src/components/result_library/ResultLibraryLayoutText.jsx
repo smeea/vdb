@@ -29,18 +29,18 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
           </div>
         </div>
         <div className="flex items-center ">
-          <ResultLibraryDisciplines value={card.Discipline} />
+          {card.Discipline && (
+            <ResultLibraryDisciplines value={card.Discipline} />
+          )}
           {card.Discipline && card.Clan && '+'}
-          <ResultLibraryClan value={card.Clan} />
+          {card.Clan && <ResultLibraryClan value={card.Clan} />}
         </div>
         {card['Burn Option'] && (
-          <div>
-            <ResultLibraryBurn value={card['Burn Option']} />
-          </div>
+          <div>{card['Burn Option'] && <ResultLibraryBurn />}</div>
         )}
         {isTrifle(card) && (
           <div>
-            <ResultLibraryTrifle card={card} />
+            <ResultLibraryTrifle />
           </div>
         )}
       </div>

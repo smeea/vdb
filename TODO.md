@@ -22,4 +22,3 @@
 - Account tooltips
 - Refactor TWD/PDA form
 - Refactor login window and reuse in Account, Inventory, Decks
-- Refactor table to render burn, trifle, etc optional components only after tests

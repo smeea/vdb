@@ -1,19 +1,15 @@
 import React from 'react';
 
-function ResultLibraryBurn(props) {
+const ResultLibraryBurn = () => {
   const imgClass = 'burn-image-results';
   const imgSrc = `${process.env.ROOT_URL}images/misc/burn.svg`;
   const imgTitle = 'Burn Option';
 
-  if (props.value) {
-    return (
-      <span className="burn">
-        <img className={imgClass} src={imgSrc} title={imgTitle} />
-      </span>
-    );
-  } else {
-    return null;
-  }
-}
+  return (
+    <span className="burn">
+      <img className={imgClass} src={imgSrc} title={imgTitle} />
+    </span>
+  );
+};
 
 export default ResultLibraryBurn;
