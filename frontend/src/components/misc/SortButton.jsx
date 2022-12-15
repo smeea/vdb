@@ -7,7 +7,7 @@ const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
   return (
     <Menu>
       <MenuButton
-        title="Sort Crypt"
+        title="Sort"
         icon={<SortDown />}
         text={sortMethods[sortMethod]}
       />
