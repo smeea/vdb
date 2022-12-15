@@ -124,6 +124,10 @@ a.nav-link
   background: var(--bg-error)
   color: var(--bg-checkbox)
 
+/* .navbar
+/*   background: var(--bg-nav)
+
+
 .offline-bar
   background: var(--bg-error)
   color: var(--bg-checkbox)
@@ -908,9 +912,6 @@ div.float-random
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
 
-/* .navbar
-/*   background: var(--bg-nav)
-
 @media (max-width: 767px)
   .twd-container,
   .search-container,
@@ -919,8 +920,9 @@ tr:hover div.not-selected.inventory-card-custom
     padding-bottom: 40px
   .hide-on-lt992px
     display: none
-  .modal-xl
-    min-width: 100%
+  /* TODO check if required - basically all modals on mobile must be full-width
+  /* .modal-xl
+  /*   min-width: 100%
   .hof-cards-container,
   .hof-history-container,
   .hof-tournaments-container
@@ -929,14 +931,8 @@ tr:hover div.not-selected.inventory-card-custom
     padding-bottom: 72px
 
 @media (min-width: 768px) and (max-width: 991px)
-  .twd-container,
-  .search-container,
-  .navbar-nav,
-  .deck-container
-    max-width: 100%
-    min-width: 768px
   .hof-cards-container
-    max-width: 767px
+    max-width: 768px
   .cards-container,
   .hof-history-container,
   .hof-tournaments-container
@@ -952,18 +948,12 @@ tr:hover div.not-selected.inventory-card-custom
     display: none !important
 
 @media (min-width: 992px) and (max-width: 1199px)
-  .twd-container,
-  .search-container,
-  .navbar-nav,
-  .deck-container
-    max-width: 100%
-    min-width: 768px
   .hof-cards-container
-    max-width: 767px
+    max-width: 768px
   .cards-container,
   .hof-history-container,
   .hof-tournaments-container
-    max-width: 1024px
+    max-width: 1140px
   .modal-lg
     min-width: 80%
   .modal-xl
@@ -973,20 +963,14 @@ tr:hover div.not-selected.inventory-card-custom
     display: none !important
 
 @media (min-width: 1200px)
-  .twd-container,
-  .search-container,
-  .navbar-container
-    max-width: 100%
-    min-width: 100%
+  .hof-cards-container
+    max-width: 768px
+  .cards-container,
+  .hof-history-container,
+  .hof-tournaments-container
+    max-width: 1140px
   .deck-container
     max-width: 1400px
-    min-width: 1200px
-  .hof-cards-container
-    max-width: 767px
-  .cards-container,
-  .hof-tournaments-container,
-  .hof-history-container
-    max-width: 1140px
   .modal-lg
     min-width: 70%
   .modal-xl
@@ -999,34 +983,15 @@ tr:hover div.not-selected.inventory-card-custom
 @media (min-width: 1600px)
   .search-container,
   .navbar-container
-    max-width: 1550px
-    min-width: 1550px
-  .twd-container
-    max-width: 100%
-    min-width: 100%
-  .hof-cards-container
-    max-width: 767px
-  .cards-container,
-  .hof-tournaments-container,
-  .hof-history-container
-    max-width: 1140px
-  .modal-lg
-    min-width: 70%
-  .modal-xl
-    min-width: 85%
-  .hide-on-gt992px,
-  .hide-on-gt1200px,
-  .hide-wide
-    display: none !important
-
-@media (min-width: 1920px)
-  .search-container,
-  .navbar-container
     max-width: 1650px
-    min-width: 1650px
   .twd-container
     max-width: 1800px
-    min-width: 1800px
+  .modal-lg
+    min-width: 60%
+  .modal-xl
+    min-width: 75%
+
+@media (min-width: 1920px)
   .modal-lg
     min-width: 55%
   .modal-xl
