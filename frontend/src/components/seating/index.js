@@ -6,3 +6,4 @@ export { default as SeatingRandomDeck } from './SeatingRandomDeck.jsx';
 export { default as SeatingCustomDeckAdd } from './SeatingCustomDeckAdd.jsx';
 export { default as SeatingTableLayout } from './SeatingTableLayout.jsx';
 export { default as SeatingTablePlayer } from './SeatingTablePlayer.jsx';
+export { default as SeatingEditRandom } from './SeatingEditRandom.jsx';

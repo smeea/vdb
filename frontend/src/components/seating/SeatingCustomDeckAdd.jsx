@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Check2 from 'assets/images/icons/check2.svg';
-import { Button } from 'components';
+import { Input, Button } from 'components';
 
 const SeatingRandomDeckAddForm = ({ addDeck }) => {
   const [name, setName] = useState('');
@@ -18,14 +18,14 @@ const SeatingRandomDeckAddForm = ({ addDeck }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <form onSubmit={handleSubmit} className="flex">
+      <Input
         placeholder="Add Random Deck"
-        type="text"
         value={name}
         onChange={handleChange}
+        className="rounded-r-none"
       />
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="rounded-l-none">
         <Check2 />
       </Button>
     </form>

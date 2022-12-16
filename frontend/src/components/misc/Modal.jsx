@@ -18,14 +18,14 @@ const Modal = ({ handleClose, centered, size, title, children }) => {
       />
 
       <div
-        className={`fixed inset-0 flex ${
-          centered ? 'items-center' : 'items-start pt-8'
+        className={`fixed inset-0 flex p-8 ${
+          centered ? 'items-center' : 'items-start'
         } justify-center overflow-auto`}
       >
         <Dialog.Panel
           className={`${
             size ? `modal-${size}` : ''
-          } rounded bg-neutral-700 p-5 space-y-2`}
+          } rounded bg-teal-600 p-5 space-y-2`}
         >
           {title && (
             <Dialog.Title className="flex border-none justify-between items-start">
