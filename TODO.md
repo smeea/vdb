@@ -20,3 +20,4 @@
 - Refactor login window and reuse in Account, Inventory, Decks
 - Refactor hide-on-lt/gt into size:hide
 - Refactor crypt/library tables of Diff, Compare, Draw, Results, Deck, TWD to reuse component sets (most except q-ty)
+- Style forms with https://github.com/tailwindlabs/tailwindcss-forms
