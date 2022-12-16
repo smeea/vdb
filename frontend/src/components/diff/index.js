@@ -6,3 +6,4 @@ export { default as DiffCryptTable } from './DiffCryptTable.jsx';
 export { default as DiffLibrary } from './DiffLibrary.jsx';
 export { default as DiffLibraryTable } from './DiffLibraryTable.jsx';
 export { default as DiffQuantityDiff } from './DiffQuantityDiff.jsx';
+export { default as DiffSelect } from './DiffSelect.jsx';
