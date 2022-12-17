@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { DeckDrawModal } from 'components';
 import { POOL_COST, BLOOD_COST } from 'utils/constants';
 import { countCards, getCardsArray } from 'utils';
-import { useKeyDisciplines } from 'hooks';
 import { useApp } from 'context';
 
 const getRandomInt = (max) => {
@@ -46,9 +45,6 @@ const DeckDraw = ({ deck, setShow }) => {
   const [initialTransfers, setInitialTransfers] = useState(
     getRandomTransfers()
   );
-
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
-    useKeyDisciplines(deck.crypt, cryptTotal);
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
@@ -162,30 +158,27 @@ const DeckDraw = ({ deck, setShow }) => {
     <>
       {showDrawModal && (
         <DeckDrawModal
+          burnCrypt={burnCrypt}
+          burnLibrary={burnLibrary}
+          burnedBloodTotal={burnedBloodTotal}
+          burnedCapacityTotal={burnedCapacityTotal}
+          burnedCrypt={burnedCrypt}
+          burnedLibrary={burnedLibrary}
+          burnedPoolTotal={burnedPoolTotal}
           crypt={deck.crypt}
-          library={deck.library}
           cryptTotal={cryptTotal}
-          libraryTotal={libraryArr.length}
-          initialTransfers={initialTransfers}
           drawedCrypt={drawedCrypt}
           drawedLibrary={drawedLibrary}
-          handleReDrawCrypt={handleReDrawCrypt}
-          handleReDrawLibrary={handleReDrawLibrary}
+          handleClose={handleCloseDrawModal}
           handleCryptHandSize={handleCryptHandSize}
           handleLibraryHandSize={handleLibraryHandSize}
-          burnCrypt={burnCrypt}
-          burnedCrypt={burnedCrypt}
-          burnLibrary={burnLibrary}
-          burnedLibrary={burnedLibrary}
+          handleReDrawCrypt={handleReDrawCrypt}
+          handleReDrawLibrary={handleReDrawLibrary}
+          initialTransfers={initialTransfers}
+          library={deck.library}
+          libraryTotal={libraryArr.length}
           restCrypt={restCrypt}
           restLibrary={restLibrary}
-          handleClose={handleCloseDrawModal}
-          burnedCapacityTotal={burnedCapacityTotal}
-          burnedPoolTotal={burnedPoolTotal}
-          burnedBloodTotal={burnedBloodTotal}
-          disciplinesSet={disciplinesSet}
-          keyDisciplines={keyDisciplines}
-          nonKeyDisciplines={nonKeyDisciplines}
         />
       )}
     </>

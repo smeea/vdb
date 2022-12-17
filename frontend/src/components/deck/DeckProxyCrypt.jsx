@@ -33,9 +33,6 @@ const DeckProxyCrypt = ({
 
   const cryptTotalSelected = countCards(proxiesToPrint);
 
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
-    useKeyDisciplines(cards, cryptTotal);
-
   // Modal Card Controller
   const {
     currentModalCard,
@@ -62,9 +59,6 @@ const DeckProxyCrypt = ({
       <DeckProxyCryptTable
         handleModalCardOpen={handleModalCardOpen}
         cards={sortedCards}
-        disciplinesSet={disciplinesSet}
-        keyDisciplines={keyDisciplines}
-        nonKeyDisciplines={nonKeyDisciplines}
         handleProxySelector={handleProxySelector}
         handleSetSelector={handleSetSelector}
         handleProxyCounter={handleProxyCounter}
@@ -78,9 +72,6 @@ const DeckProxyCrypt = ({
           <DeckProxyCryptTable
             handleModalCardOpen={handleModalSideCardOpen}
             cards={sortedCardsSide}
-            disciplinesSet={disciplinesSet}
-            keyDisciplines={keyDisciplines}
-            nonKeyDisciplines={nonKeyDisciplines}
             handleProxySelector={handleProxySelector}
             handleSetSelector={handleSetSelector}
             handleProxyCounter={handleProxyCounter}

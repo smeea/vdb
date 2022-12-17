@@ -2,16 +2,9 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import {
-  CardPopover,
   UsedPopover,
-  ResultCryptCapacity,
-  ResultCryptDisciplines,
-  ResultCryptName,
-  ResultClanImage,
-  ResultCryptGroup,
-  ResultCryptTitle,
+  ResultCryptTableRowCommon,
   ButtonAddCard,
-  ConditionalTooltip,
   Tooltip,
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
@@ -31,7 +24,7 @@ const ResultCryptTableRow = ({
   placement,
   maxDisciplines,
 }) => {
-  const { addMode, inventoryMode, isMobile, isDesktop, isWide } = useApp();
+  const { addMode, inventoryMode, isDesktop } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
@@ -135,54 +128,12 @@ const ResultCryptTableRow = ({
           </Tooltip>
         </td>
       )}
-      <td
-        className={isMobile ? 'capacity' : 'capacity'}
-        onClick={() => handleClick(card)}
-      >
-        <ResultCryptCapacity value={card.Capacity} />
-      </td>
-      <td className="disciplines" onClick={() => handleClick(card)}>
-        <ResultCryptDisciplines
-          maxDisciplines={maxDisciplines}
-          value={card.Disciplines}
-        />
-      </td>
-      <td className="name" onClick={() => handleClick(card)}>
-        <ConditionalTooltip
-          placement={placement}
-          overlay={<CardPopover card={card} />}
-          disabled={isMobile}
-        >
-          <ResultCryptName card={card} />
-        </ConditionalTooltip>
-      </td>
-      {isWide ? (
-        <>
-          <td className="title " onClick={() => handleClick(card)}>
-            <ResultCryptTitle value={card.Title} />
-          </td>
-          <td className="clan" onClick={() => handleClick(card)}>
-            <ResultClanImage value={card.Clan} />
-          </td>
-          <td className="group" onClick={() => handleClick(card)}>
-            <ResultCryptGroup value={card.Group} />
-          </td>
-        </>
-      ) : (
-        <>
-          <td className="clan-group" onClick={() => handleClick(card)}>
-            <div>
-              <ResultClanImage value={card.Clan} />
-            </div>
-            <div className="flex justify-end text-xs">
-              <div className="text-blue font-bold">
-                <ResultCryptTitle value={card.Title} />
-              </div>
-              <ResultCryptGroup value={card.Group} />
-            </div>
-          </td>
-        </>
-      )}
+      <ResultCryptTableRowCommon
+        card={card}
+        handleClick={handleClick}
+        placement={placement}
+        maxDisciplines={maxDisciplines}
+      />
     </tr>
   );
 };

@@ -1,12 +1,7 @@
 import React from 'react';
 import { useApp } from 'context';
 import {
-  ResultCryptCapacity,
-  ResultCryptDisciplines,
-  ResultCryptName,
-  ResultClanImage,
-  ResultCryptGroup,
-  ResultCryptTitle,
+  ResultCryptTableRowCommon,
   ResultLibraryBurn,
   ResultLibraryClan,
   ResultLibraryCost,
@@ -19,6 +14,7 @@ import {
   TwdOpenDeckButton,
 } from 'components';
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
+import { isTrifle } from 'utils';
 
 const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
   const { isMobile, isNarrow } = useApp();
@@ -26,42 +22,10 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
   return (
     <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
       {card.Id > 200000 ? (
-        <>
-          <td
-            className={isMobile ? 'capacity ' : 'capacity '}
-            onClick={() => handleClick(idx)}
-          >
-            <ResultCryptCapacity value={card.Capacity} />
-          </td>
-          {!isMobile && (
-            <td className="disciplines" onClick={() => handleClick(idx)}>
-              <ResultCryptDisciplines
-                maxDisciplines={8}
-                value={card.Disciplines}
-              />
-            </td>
-          )}
-          <td className="name " onClick={() => handleClick(idx)}>
-            <ConditionalTooltip
-              placement={isNarrow ? 'bottom' : 'right'}
-              overlay={<CardPopover card={card} />}
-              disabled={isMobile}
-            >
-              <ResultCryptName card={card} />
-            </ConditionalTooltip>
-          </td>
-          <td className="clan-group" onClick={() => handleClick()}>
-            <div>
-              <ResultClanImage value={card.Clan} />
-            </div>
-            <div className="flex justify-end text-xs">
-              <div className="text-blue font-bold">
-                <ResultCryptTitle value={card.Title} />
-              </div>
-              <ResultCryptGroup value={card.Group} />
-            </div>
-          </td>
-        </>
+        <ResultCryptTableRowCommon
+          card={card}
+          handleClick={() => handleClick(idx)}
+        />
       ) : (
         <>
           <td
@@ -79,7 +43,9 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
           <td className="disciplines " onClick={() => handleClick(idx)}>
             {card.Clan && <ResultLibraryClan value={card.Clan} />}
             {card.Discipline && card.Clan && '+'}
-            {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
+            {card.Discipline && (
+              <ResultLibraryDisciplines value={card.Discipline} />
+            )}
           </td>
           <td className="name " onClick={() => handleClick(idx)}>
             <ConditionalTooltip

@@ -54,7 +54,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
     keyDisciplines,
     nonKeyDisciplines,
     disciplinesDetailed,
-  } = useKeyDisciplines(deck.crypt, cryptTotal);
+  } = useKeyDisciplines(deck.crypt);
 
   // Modal Card Controller
   const {

@@ -12,16 +12,9 @@ import {
   deckStore,
 } from 'context';
 import {
-  CardPopover,
   UsedPopover,
   DeckCardQuantity,
-  DeckCryptDisciplines,
-  ResultCryptDisciplines,
-  ResultCryptCapacity,
-  ResultCryptName,
-  ResultClanImage,
-  ResultCryptGroup,
-  ResultCryptTitle,
+  ResultCryptTableRowCommon,
   DeckDrawProbabilityText,
   Tooltip,
 } from 'components';
@@ -51,7 +44,6 @@ const DeckCryptTableRow = ({
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
-  const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
   const [isSwiped, setIsSwiped] = useState();
   const SWIPE_THRESHOLD = 50;
@@ -184,64 +176,17 @@ const DeckCryptTableRow = ({
           )}
         </>
       )}
-      <td
-        className={isMobile ? 'capacity' : 'capacity'}
-        onClick={() => handleClick(card.c)}
-      >
-        <ResultCryptCapacity value={card.c.Capacity} />
-      </td>
-      {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
-        <td className="disciplines" onClick={() => handleClick(card.c)}>
-          {keyDisciplines &&
-          disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
-            <DeckCryptDisciplines
-              value={card.c.Disciplines}
-              disciplinesSet={disciplinesSet}
-              keyDisciplines={keyDisciplines}
-              nonKeyDisciplines={nonKeyDisciplines}
-            />
-          ) : (
-            <ResultCryptDisciplines
-              value={card.c.Disciplines}
-              maxDisciplines={maxDisciplines}
-            />
-          )}
-        </td>
-      )}
-
-      <td className="name" onClick={() => handleClick(card.c)}>
-        <Tooltip placement={placement} overlay={<CardPopover card={card.c} />}>
-          <ResultCryptName card={card.c} />
-        </Tooltip>
-      </td>
-
-      {isWide && !(keyDisciplines + nonKeyDisciplines > 6 && inSearch) ? (
-        <>
-          <td className="title " onClick={() => handleClick(card.c)}>
-            <ResultCryptTitle value={card.c.Title} />
-          </td>
-          <td className="clan" onClick={() => handleClick(card.c)}>
-            <ResultClanImage value={card.c.Clan} />
-          </td>
-          <td className="group" onClick={() => handleClick(card.c)}>
-            <ResultCryptGroup value={card.c.Group} />
-          </td>
-        </>
-      ) : (
-        <>
-          <td className="clan-group" onClick={() => handleClick(card.c)}>
-            <div>
-              <ResultClanImage value={card.c.Clan} />
-            </div>
-            <div className="flex justify-end text-xs">
-              <div className="text-blue font-bold">
-                <ResultCryptTitle value={card.c.Title} />
-              </div>
-              <ResultCryptGroup value={card.c.Group} />
-            </div>
-          </td>
-        </>
-      )}
+      <ResultCryptTableRowCommon
+        card={card.c}
+        handleClick={handleClick}
+        placement={placement}
+        maxDisciplines={maxDisciplines}
+        keyDisciplines={keyDisciplines}
+        nonKeyDisciplines={nonKeyDisciplines}
+        disciplinesSet={disciplinesSet}
+        inSearch={inSearch}
+        inDeck
+      />
       {showInfo && (
         <td className="text-blue w-9 text-right">
           {isMobile ? (

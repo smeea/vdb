@@ -6,6 +6,7 @@ export { default as ResultCryptLayoutText } from './ResultCryptLayoutText.jsx';
 export { default as ResultCryptName } from './ResultCryptName.jsx';
 export { default as ResultCryptTable } from './ResultCryptTable.jsx';
 export { default as ResultCryptTableRow } from './ResultCryptTableRow.jsx';
+export { default as ResultCryptTableRowCommon } from './ResultCryptTableRowCommon.jsx';
 export { default as ResultCryptTitle } from './ResultCryptTitle.jsx';
 export { default as ResultCryptTotal } from './ResultCryptTotal.jsx';
 export { default as ResultCryptTotalInfo } from './ResultCryptTotalInfo.jsx';

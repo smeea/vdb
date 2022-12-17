@@ -85,11 +85,11 @@ const DiffLibraryTable = ({
           {isEditable ? (
             <>
               {inventoryMode && decks && !inReview ? (
-                <Tooltip
-                  placement="right"
-                  overlay={<UsedPopover cardid={card.c.Id} />}
-                >
-                  <td className="quantity">
+                <td className="quantity">
+                  <Tooltip
+                    placement="right"
+                    overlay={<UsedPopover cardid={card.c.Id} />}
+                  >
                     <DeckCardQuantity
                       card={card.c}
                       q={qFrom}
@@ -100,8 +100,8 @@ const DiffLibraryTable = ({
                       hardUsedTotal={hardUsedTotal}
                       inventoryType={decks[deckid].inventoryType}
                     />
-                  </td>
-                </Tooltip>
+                  </Tooltip>
+                </td>
               ) : (
                 <td className="quantity">
                   <DeckCardQuantity
@@ -120,15 +120,15 @@ const DiffLibraryTable = ({
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
 
-          <ConditionalTooltip
-            placement={placement}
-            overlay={<CardPopover card={card.c} />}
-            disabled={isMobile}
-          >
-            <td className="name" onClick={() => handleClick()}>
+          <td className="name" onClick={() => handleClick()}>
+            <ConditionalTooltip
+              placement={placement}
+              overlay={<CardPopover card={card.c} />}
+              disabled={isMobile}
+            >
               <ResultLibraryName card={card.c} />
-            </td>
-          </ConditionalTooltip>
+            </ConditionalTooltip>
+          </td>
 
           <td
             className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}

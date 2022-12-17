@@ -11,10 +11,7 @@ const ResultCryptTotalInfo = ({ cards }) => {
     };
   });
 
-  const { disciplinesDetailed } = useKeyDisciplines(
-    cardsById,
-    Object.keys(cardsById).length
-  );
+  const { disciplinesDetailed } = useKeyDisciplines(cardsById);
 
   return (
     <>

@@ -1,32 +1,24 @@
 import React, { useState } from 'react';
 import {
-  CardPopover,
   Tooltip,
-  ResultCryptCapacity,
-  DeckCryptDisciplines,
-  ResultCryptName,
-  ResultClanImage,
-  ResultCryptGroup,
-  ResultCryptTitle,
+  ResultCryptTableRowCommon,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
-  ConditionalTooltip,
 } from 'components';
 
 import { drawProbability } from 'utils';
 import { useApp } from 'context';
+import { useKeyDisciplines } from 'hooks';
 
 const DeckDrawCryptTable = ({
   handleClick,
   restCards,
   resultCards,
   className,
-  disciplinesSet,
-  keyDisciplines,
-  nonKeyDisciplines,
   ashHeap,
+  crypt,
 }) => {
-  const { isMobile, isWide } = useApp();
+  const { isMobile } = useApp();
   const [modalDraw, setModalDraw] = useState();
 
   let N = 0;
@@ -46,59 +38,24 @@ const DeckDrawCryptTable = ({
     });
   }
 
+  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
+    useKeyDisciplines(crypt);
+
   const cardRows = resultCards.map((card, idx) => {
     const k = nonPlayed[card.Id];
 
     return (
       <React.Fragment key={`${idx}-${card.Id}`}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          <td
-            className={isMobile ? 'capacity ' : 'capacity '}
-            onClick={() => handleClick(idx)}
-          >
-            <ResultCryptCapacity value={card.Capacity} />
-          </td>
-          <td className="disciplines" onClick={() => handleClick(idx)}>
-            <DeckCryptDisciplines
-              value={card.Disciplines}
-              disciplinesSet={disciplinesSet}
-              keyDisciplines={keyDisciplines}
-              nonKeyDisciplines={nonKeyDisciplines}
-            />
-          </td>
-          <td className="name " onClick={() => handleClick(idx)}>
-            <ConditionalTooltip
-              overlay={<CardPopover card={card} />}
-              disabled={isMobile}
-            >
-              <ResultCryptName card={card} />
-            </ConditionalTooltip>
-          </td>
-          {isWide ? (
-            <>
-              <td className="title " onClick={() => handleClick(idx)}>
-                <ResultCryptTitle value={card.Title} />
-              </td>
-              <td className="clan" onClick={() => handleClick(idx)}>
-                <ResultClanImage value={card.Clan} />
-              </td>
-              <td className="group" onClick={() => handleClick(idx)}>
-                <ResultCryptGroup value={card.Group} />
-              </td>
-            </>
-          ) : (
-            <td className="clan-group" onClick={() => handleClick(idx)}>
-              <div>
-                <ResultClanImage value={card.Clan} />
-              </div>
-              <div className="flex justify-end text-xs">
-                <div className="text-blue font-bold">
-                  <ResultCryptTitle value={card.Title} />
-                </div>
-                <ResultCryptGroup value={card.Group} />
-              </div>
-            </td>
-          )}
+          <ResultCryptTableRowCommon
+            card={card}
+            handleClick={handleClick}
+            maxDisciplines={maxDisciplines}
+            keyDisciplines={keyDisciplines}
+            nonKeyDisciplines={nonKeyDisciplines}
+            disciplinesSet={disciplinesSet}
+            inDeck
+          />
           <td className="text-blue w-9  text-right">
             {!ashHeap && (
               <>

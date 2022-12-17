@@ -52,7 +52,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
     keyDisciplines,
     nonKeyDisciplines,
     disciplinesDetailed,
-  } = useKeyDisciplines(crypt, cryptTotal);
+  } = useKeyDisciplines(crypt);
 
   // Modal Card Controller
   const {

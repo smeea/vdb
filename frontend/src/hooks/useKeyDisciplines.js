@@ -1,25 +1,32 @@
 import virtuesList from 'assets/data/virtuesList.json';
 
-const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
+const useKeyDisciplines = (crypt = {}) => {
+  let cryptTotal = 0;
   const disciplinesDetailed = {};
   const disciplinesDict = {};
-  for (const card of Object.keys(cards)) {
-    for (const d of Object.keys(cards[card].c.Disciplines)) {
-      const levelModifier = cards[card].c.Disciplines[d] > 1 ? 1.5 : 1;
+  let maxDisciplines = 0;
+
+  for (const card of Object.keys(crypt)) {
+    cryptTotal += crypt[card].q;
+    const n = Object.keys(crypt[card].c.Disciplines).length;
+    if (maxDisciplines < n) maxDisciplines = n;
+
+    for (const d of Object.keys(crypt[card].c.Disciplines)) {
+      const levelModifier = crypt[card].c.Disciplines[d] > 1 ? 1.5 : 1;
 
       if (disciplinesDict[d] === undefined) {
-        disciplinesDict[d] = cards[card].q;
+        disciplinesDict[d] = crypt[card].q;
         if (virtuesList.includes(d)) {
           disciplinesDetailed[d] = { 0: 0, 1: 0 };
         } else {
           disciplinesDetailed[d] = { 0: 0, 1: 0, 2: 0 };
         }
-        disciplinesDetailed[d][cards[card].c.Disciplines[d]] += cards[card].q;
-        disciplinesDetailed[d][0] += cards[card].q * levelModifier;
+        disciplinesDetailed[d][crypt[card].c.Disciplines[d]] += crypt[card].q;
+        disciplinesDetailed[d][0] += crypt[card].q * levelModifier;
       } else {
-        disciplinesDict[d] += cards[card].q;
-        disciplinesDetailed[d][cards[card].c.Disciplines[d]] += cards[card].q;
-        disciplinesDetailed[d][0] += cards[card].q * levelModifier;
+        disciplinesDict[d] += crypt[card].q;
+        disciplinesDetailed[d][crypt[card].c.Disciplines[d]] += crypt[card].q;
+        disciplinesDetailed[d][0] += crypt[card].q * levelModifier;
       }
     }
   }
@@ -51,9 +58,9 @@ const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
   }
 
   let nonKeyDisciplines = 0;
-  Object.keys(cards).map((card) => {
+  Object.keys(crypt).map((card) => {
     let counter = 0;
-    Object.keys(cards[card].c.Disciplines).map((d) => {
+    Object.keys(crypt[card].c.Disciplines).map((d) => {
       if (nonKeyDisciplinesList.includes(d)) {
         counter += 1;
       }
@@ -66,6 +73,7 @@ const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
     keyDisciplines,
     nonKeyDisciplines,
     disciplinesDetailed,
+    maxDisciplines,
   };
 };
 

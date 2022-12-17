@@ -46,12 +46,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   } = useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
 
   // Disciplines Sort and Key non-Key selection
-  const {
-    disciplinesSet,
-    keyDisciplines,
-    nonKeyDisciplines,
-    disciplinesDetailed,
-  } = useKeyDisciplines(crypt, cryptTotal);
+  const { disciplinesDetailed } = useKeyDisciplines(crypt);
 
   // Modal Card Controller
   const {
@@ -114,11 +109,8 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
         cryptTotal={cryptTotal}
-        disciplinesSet={disciplinesSet}
         showInfo={showInfo}
         isEditable={isEditable}
-        keyDisciplines={keyDisciplines}
-        nonKeyDisciplines={nonKeyDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className=" opacity-60">
@@ -131,10 +123,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
             cards={sortedCardsSide}
             cardsFrom={cardsFrom}
             cardsTo={cardsTo}
-            disciplinesSet={disciplinesSet}
             isEditable={isEditable}
-            keyDisciplines={keyDisciplines}
-            nonKeyDisciplines={nonKeyDisciplines}
           />
         </div>
       )}

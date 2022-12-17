@@ -15,28 +15,27 @@ import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
 const DeckDrawModal = ({
+  burnCrypt,
+  burnLibrary,
+  burnedBloodTotal,
+  burnedCapacityTotal,
   burnedCrypt,
   burnedLibrary,
-  restCrypt,
-  restLibrary,
-  drawedCrypt,
-  libraryTotal,
-  burnLibrary,
-  burnCrypt,
-  keyDisciplines,
-  disciplinesSet,
-  nonKeyDisciplines,
-  burnedCapacityTotal,
-  burnedBloodTotal,
   burnedPoolTotal,
+  crypt,
+  cryptTotal,
+  drawedCrypt,
+  drawedLibrary,
   handleClose,
   handleCryptHandSize,
-  handleReDrawCrypt,
-  drawedLibrary,
   handleLibraryHandSize,
+  handleReDrawCrypt,
   handleReDrawLibrary,
   initialTransfers,
-  cryptTotal,
+  library,
+  libraryTotal,
+  restCrypt,
+  restLibrary,
 }) => {
   const { isNarrow } = useApp();
 
@@ -115,13 +114,11 @@ const DeckDrawModal = ({
                 </div>
               )}
               <DeckDrawCryptTable
+                crypt={crypt}
                 handleClick={burnCrypt}
                 restCards={restCrypt}
                 resultCards={drawedCrypt}
                 className="deck-crypt-table"
-                disciplinesSet={disciplinesSet}
-                keyDisciplines={keyDisciplines}
-                nonKeyDisciplines={nonKeyDisciplines}
               />
             </div>
           </div>
@@ -209,10 +206,7 @@ const DeckDrawModal = ({
                     handleClick={handleModalCardOpen}
                     resultCards={burnedCrypt}
                     className="search-crypt-table"
-                    ashHeap={true}
-                    disciplinesSet={disciplinesSet}
-                    keyDisciplines={keyDisciplines}
-                    nonKeyDisciplines={nonKeyDisciplines}
+                    ashHeap
                   />
                 </div>
               )}

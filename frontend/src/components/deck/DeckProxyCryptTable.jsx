@@ -3,24 +3,17 @@ import { useSnapshot } from 'valtio';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import {
-  CardPopover,
   UsedPopover,
   DeckCardQuantity,
-  DeckCryptDisciplines,
-  ResultCryptDisciplines,
-  ResultCryptCapacity,
-  ResultCryptName,
-  ResultClanImage,
-  ResultCryptGroup,
-  ResultCryptTitle,
+  ResultCryptTableRowCommon,
   CardImage,
-  ConditionalTooltip,
   Tooltip,
   Checkbox,
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp, usedStore, inventoryStore, deckStore } from 'context';
+import { useKeyDisciplines } from 'hooks';
 
 const DeckProxyCryptTable = ({
   handleModalCardOpen,
@@ -30,23 +23,14 @@ const DeckProxyCryptTable = ({
   handleProxyCounter,
   handleSetSelector,
   placement,
-  disciplinesSet,
-  keyDisciplines,
-  nonKeyDisciplines,
 }) => {
   const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
-  const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
 
-  let maxDisciplines = 0;
-  cards.map((card) => {
-    const n = Object.keys(card.c.Disciplines).length;
-    if (maxDisciplines < n) {
-      maxDisciplines = n;
-    }
-  });
+  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
+    useKeyDisciplines(cards);
 
   const handleClick = (idx) => {
     handleModalCardOpen(idx);
@@ -129,49 +113,16 @@ const DeckProxyCryptTable = ({
               />
             </td>
           )}
-          <td
-            className={isMobile ? 'capacity' : 'capacity'}
-            onClick={() => handleClick(card.c)}
-          >
-            <ResultCryptCapacity value={card.c.Capacity} />
-          </td>
-          <td className="disciplines" onClick={() => handleClick(card.c)}>
-            {disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
-              <DeckCryptDisciplines
-                value={card.c.Disciplines}
-                disciplinesSet={disciplinesSet}
-                keyDisciplines={keyDisciplines}
-                nonKeyDisciplines={nonKeyDisciplines}
-              />
-            ) : (
-              <ResultCryptDisciplines
-                value={card.c.Disciplines}
-                maxDisciplines={maxDisciplines}
-              />
-            )}
-          </td>
-
-          <ConditionalTooltip
+          <ResultCryptTableRowCommon
+            card={card.c}
+            handleClick={handleClick}
             placement={placement}
-            overlay={<CardPopover card={card.c} />}
-            disabled={isMobile}
-          >
-            <td className="name" onClick={() => handleClick(card.c)}>
-              <ResultCryptName card={card.c} />
-            </td>
-          </ConditionalTooltip>
-
-          <td className="clan-group" onClick={() => handleClick(card.c)}>
-            <div>
-              <ResultClanImage value={card.c.Clan} />
-            </div>
-            <div className="flex justify-end text-xs">
-              <b>
-                <ResultCryptTitle value={card.c.Title} />
-              </b>
-              <ResultCryptGroup value={card.c.Group} />
-            </div>
-          </td>
+            maxDisciplines={maxDisciplines}
+            keyDisciplines={keyDisciplines}
+            nonKeyDisciplines={nonKeyDisciplines}
+            disciplinesSet={disciplinesSet}
+            inDeck
+          />
           {!isMobile && (
             <>
               <td className="proxy-set">

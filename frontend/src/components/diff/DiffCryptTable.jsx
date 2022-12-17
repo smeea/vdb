@@ -1,20 +1,12 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import {
-  CardPopover,
   UsedPopover,
   DeckCardQuantity,
-  DeckCryptDisciplines,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
-  ResultCryptDisciplines,
-  ResultCryptCapacity,
-  ResultCryptName,
-  ResultClanImage,
-  ResultCryptGroup,
-  ResultCryptTitle,
+  ResultCryptTableRowCommon,
   Tooltip,
-  ConditionalTooltip,
   DiffQuantityDiff,
 } from 'components';
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
@@ -25,13 +17,11 @@ import {
   deckStore,
   deckCardChange,
 } from 'context';
+import { useKeyDisciplines } from 'hooks';
 
 const DiffCryptTable = ({
   cardChange,
   deckid,
-  disciplinesSet,
-  keyDisciplines,
-  nonKeyDisciplines,
   cards,
   cardsFrom,
   cardsTo,
@@ -42,27 +32,21 @@ const DiffCryptTable = ({
   handleModalCardOpen,
   inReview,
 }) => {
-  const { inventoryMode, isMobile, isWide, setShowFloatingButtons } = useApp();
+  const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
-  const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
   const [modalDraw, setModalDraw] = useState();
 
-  let maxDisciplines = 0;
-  cards.map((card) => {
-    const n = Object.keys(card.c.Disciplines).length;
-    if (maxDisciplines < n) {
-      maxDisciplines = n;
-    }
-  });
+  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
+    useKeyDisciplines(cards);
+
+  const handleClick = (card) => {
+    handleModalCardOpen(card.c);
+    setShowFloatingButtons(false);
+  };
 
   const cardRows = cards.map((card, idx) => {
-    const handleClick = () => {
-      handleModalCardOpen(card.c);
-      setShowFloatingButtons(false);
-    };
-
     let inInventory = 0;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
@@ -87,11 +71,11 @@ const DiffCryptTable = ({
           {isEditable ? (
             <>
               {!inReview && inventoryMode && decks ? (
-                <Tooltip
-                  placement="right"
-                  overlay={<UsedPopover cardid={card.c.Id} />}
-                >
-                  <td className="quantity">
+                <td className="quantity">
+                  <Tooltip
+                    placement="right"
+                    overlay={<UsedPopover cardid={card.c.Id} />}
+                  >
                     <DeckCardQuantity
                       card={card.c}
                       q={qFrom}
@@ -102,8 +86,8 @@ const DiffCryptTable = ({
                       hardUsedTotal={hardUsedTotal}
                       inventoryType={decks[deckid].inventoryType}
                     />
-                  </td>
-                </Tooltip>
+                  </Tooltip>
+                </td>
               ) : (
                 <td className="quantity">
                   <DeckCardQuantity
@@ -121,64 +105,16 @@ const DiffCryptTable = ({
           <td className={`w-[42px] min-w-[35px] text-lg ${!isMobile && ''}`}>
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
-          <td
-            className={isMobile ? 'capacity' : 'capacity '}
-            onClick={() => handleClick()}
-          >
-            <ResultCryptCapacity value={card.c.Capacity} />
-          </td>
-          <td className="disciplines" onClick={() => handleClick()}>
-            {disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
-              <DeckCryptDisciplines
-                value={card.c.Disciplines}
-                disciplinesSet={disciplinesSet}
-                keyDisciplines={keyDisciplines}
-                nonKeyDisciplines={nonKeyDisciplines}
-              />
-            ) : (
-              <ResultCryptDisciplines
-                value={card.c.Disciplines}
-                maxDisciplines={maxDisciplines}
-              />
-            )}
-          </td>
-
-          <ConditionalTooltip
+          <ResultCryptTableRowCommon
+            card={card.c}
+            handleClick={handleClick}
             placement={placement}
-            overlay={<CardPopover card={card.c} />}
-            disabled={isMobile}
-          >
-            <td className="name" onClick={() => handleClick()}>
-              <ResultCryptName card={card.c} />
-            </td>
-          </ConditionalTooltip>
-          {isWide ? (
-            <>
-              <td className="title " onClick={() => handleClick()}>
-                <ResultCryptTitle value={card.c.Title} />
-              </td>
-              <td className="clan" onClick={() => handleClick()}>
-                <ResultClanImage value={card.c.Clan} />
-              </td>
-              <td className="group" onClick={() => handleClick()}>
-                <ResultCryptGroup value={card.c.Group} />
-              </td>
-            </>
-          ) : (
-            <>
-              <td className="clan-group" onClick={() => handleClick()}>
-                <div>
-                  <ResultClanImage value={card.c.Clan} />
-                </div>
-                <div className="flex justify-end text-xs">
-                  <div className="text-blue font-bold">
-                    <ResultCryptTitle value={card.c.Title} />
-                  </div>
-                  <ResultCryptGroup value={card.c.Group} />
-                </div>
-              </td>
-            </>
-          )}
+            maxDisciplines={maxDisciplines}
+            keyDisciplines={keyDisciplines}
+            nonKeyDisciplines={nonKeyDisciplines}
+            disciplinesSet={disciplinesSet}
+            inDeck
+          />
           {showInfo && (
             <td className="text-blue w-9 text-right">
               {isMobile ? (
