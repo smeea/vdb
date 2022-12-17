@@ -292,19 +292,17 @@ const Decks = () => {
         )}
       </div>
       {!username && !deckid && !hash && (
-        <div className="flex h-[70vh] flex-col items-center justify-center space-y-8">
+        <div className="flex h-[70vh] flex-col items-center justify-center space-y-10">
           <div className="text-blue justify-center font-bold">
             <div className="flex justify-center text-lg">
-              Login required to create decks
+              Login to create your decks
             </div>
             <div className="flex justify-center">
               (Browse preconstructed decks without login)
             </div>
           </div>
-          <div>
+          <div className="space-y-16">
             <AccountLogin />
-          </div>
-          <div>
             <AccountRegister />
           </div>
         </div>

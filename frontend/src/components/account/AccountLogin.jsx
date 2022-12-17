@@ -83,7 +83,7 @@ const AccountLogin = () => {
   );
 
   return (
-    <>
+    <div>
       <div className="text-blue flex items-center text-xl font-bold">
         <div className="flex">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
@@ -167,7 +167,7 @@ const AccountLogin = () => {
           <div>{loginTooltipText}</div>
         </Modal>
       )}
-    </>
+    </div>
   );
 };
 

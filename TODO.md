@@ -17,7 +17,6 @@
 # TAILWIND MIGRATION
 - Fix show password in Account on enter
 - Account tooltips
-- Refactor login window and reuse in Account, Inventory, Decks
 - Refactor hide-on-lt/gt into size:hide
 - Style forms with https://github.com/tailwindlabs/tailwindcss-forms
 - Refactor maxDisciplines to use from hook/utils

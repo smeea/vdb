@@ -57,12 +57,8 @@ const Account = () => {
             </div>
           ) : (
             <div className="w-full space-y-16">
-              <div>
-                <AccountLogin />
-              </div>
-              <div>
-                <AccountRegister />
-              </div>
+              <AccountLogin />
+              <AccountRegister />
             </div>
           )}
         </div>

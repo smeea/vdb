@@ -51,7 +51,7 @@ const AccountRegister = () => {
   };
 
   return (
-    <>
+    <div>
       <div className="text-blue flex items-center text-xl font-bold">
         <div className="flex">
           <PersonPlusFill width="22" height="22" viewBox="0 1 16 16" />
@@ -105,7 +105,7 @@ const AccountRegister = () => {
           <ErrorOverlay placement="bottom">{connectionError}</ErrorOverlay>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

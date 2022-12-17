@@ -184,25 +184,19 @@ const Inventory = () => {
           {inventoryError ? (
             <div className=" flex flex-row items-center justify-center">
               <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-                <div className="error-message flex items-center justify-center">
-                  <b>{inventoryError}</b>
+                <div className="error-message flex items-center justify-center font-bold">
+                  {inventoryError}
                 </div>
               </div>
             </div>
           ) : (
-            <div className=" flex h-[80vh] flex-row items-center justify-center ">
-              <div className="basis-full  md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-                <div className="flex justify-center">
-                  <div className="text-blue font-bold">
-                    Login required to manage inventory
-                  </div>
-                </div>
-                <div>
-                  <AccountLogin />
-                </div>
-                <div>
-                  <AccountRegister />
-                </div>
+            <div className="flex h-[70vh] flex-col items-center justify-center space-y-10">
+              <div className="flex text-blue justify-center font-bold text-lg">
+                Login to manage your inventory
+              </div>
+              <div className="space-y-16">
+                <AccountLogin />
+                <AccountRegister />
               </div>
             </div>
           )}
