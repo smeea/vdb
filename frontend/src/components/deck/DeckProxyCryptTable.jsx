@@ -83,11 +83,11 @@ const DeckProxyCryptTable = ({
             />
           </td>
           {inventoryMode && decks ? (
-            <Tooltip
-              placement="right"
-              overlay={<UsedPopover cardid={card.c.Id} />}
-            >
-              <td className="quantity">
+            <td className="quantity">
+              <Tooltip
+                placement="right"
+                overlay={<UsedPopover cardid={card.c.Id} />}
+              >
                 <DeckCardQuantity
                   card={card.c}
                   deckid={null}
@@ -101,8 +101,8 @@ const DeckProxyCryptTable = ({
                   }
                   inProxy
                 />
-              </td>
-            </Tooltip>
+              </Tooltip>
+            </td>
           ) : (
             <td className="quantity">
               <DeckCardQuantity
@@ -143,27 +143,27 @@ const DeckProxyCryptTable = ({
                   onChange={handleSetSelector}
                 />
               </td>
-              <Tooltip
-                placement="right"
-                overlay={
-                  <div>
-                    <CardImage
-                      card={card.c}
-                      set={
-                        proxySelected[card.c.Id]
-                          ? proxySelected[card.c.Id].set
-                          : null
-                      }
-                    />
-                  </div>
-                }
-              >
-                <td className="proxy-set-image">
+              <td className="proxy-set-image">
+                <Tooltip
+                  placement="right"
+                  overlay={
+                    <div>
+                      <CardImage
+                        card={card.c}
+                        set={
+                          proxySelected[card.c.Id]
+                            ? proxySelected[card.c.Id].set
+                            : null
+                        }
+                      />
+                    </div>
+                  }
+                >
                   <div>
                     <EyeFill />
                   </div>
-                </td>
-              </Tooltip>
+                </Tooltip>
+              </td>
             </>
           )}
         </tr>

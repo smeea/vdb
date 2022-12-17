@@ -42,7 +42,7 @@ const DiffCryptTable = ({
     useKeyDisciplines(cards);
 
   const handleClick = (card) => {
-    handleModalCardOpen(card.c);
+    handleModalCardOpen(card);
     setShowFloatingButtons(false);
   };
 

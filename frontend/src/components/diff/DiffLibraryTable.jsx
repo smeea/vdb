@@ -1,23 +1,15 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import {
-  CardPopover,
   UsedPopover,
   DeckCardQuantity,
-  ResultLibraryBurn,
-  ResultLibraryClan,
-  ResultLibraryCost,
-  ResultLibraryDisciplines,
-  ResultLibraryName,
-  ResultLibraryTrifle,
+  ResultLibraryTableRowCommon,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
-  ConditionalTooltip,
   DiffQuantityDiff,
   Tooltip,
 } from 'components';
-import { isTrifle, drawProbability } from 'utils';
-import { BURN_OPTION } from 'utils/constants';
+import { drawProbability } from 'utils';
 import {
   useApp,
   deckStore,
@@ -46,12 +38,12 @@ const DiffLibraryTable = ({
 
   const [modalDraw, setModalDraw] = useState();
 
-  const cardRows = cards.map((card, idx) => {
-    const handleClick = () => {
-      handleModalCardOpen(card.c);
-      setShowFloatingButtons(false);
-    };
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
 
+  const cardRows = cards.map((card, idx) => {
     let inInventory = 0;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
@@ -120,36 +112,12 @@ const DiffLibraryTable = ({
             <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
           </td>
 
-          <td className="name" onClick={() => handleClick()}>
-            <ConditionalTooltip
-              placement={placement}
-              overlay={<CardPopover card={card.c} />}
-              disabled={isMobile}
-            >
-              <ResultLibraryName card={card.c} />
-            </ConditionalTooltip>
-          </td>
-
-          <td
-            className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
-            onClick={() => handleClick()}
-          >
-            <ResultLibraryCost
-              valueBlood={card.c['Blood Cost']}
-              valuePool={card.c['Pool Cost']}
-            />
-          </td>
-          <td className="disciplines" onClick={() => handleClick()}>
-            {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
-            {card.c.Discipline && card.c.Clan && '+'}
-            {card.c.Discipline && (
-              <ResultLibraryDisciplines value={card.c.Discipline} />
-            )}
-          </td>
-          <td className="burn" onClick={() => handleClick()}>
-            {card.c[BURN_OPTION] && <ResultLibraryBurn />}
-            {isTrifle(card.c) && <ResultLibraryTrifle />}
-          </td>
+          <ResultLibraryTableRowCommon
+            card={card.c}
+            handleClick={handleClick}
+            placement={placement}
+            inDeck
+          />
           {showInfo && (
             <td className="text-blue w-9 text-right">
               {isMobile ? (

@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
 import {
-  CardPopover,
   Tooltip,
-  ResultLibraryBurn,
-  ResultLibraryClan,
-  ResultLibraryCost,
-  ResultLibraryDisciplines,
-  ResultLibraryName,
-  ResultLibraryTrifle,
-  ResultLibraryTypeImage,
+  ResultLibraryTableRowCommon,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
-  ConditionalTooltip,
 } from 'components';
-import { isTrifle, drawProbability } from 'utils';
+import { drawProbability } from 'utils';
 import { useApp } from 'context';
 
 const DeckDrawLibraryTable = ({
@@ -49,40 +41,11 @@ const DeckDrawLibraryTable = ({
     return (
       <React.Fragment key={`${idx}-${card.Id}`}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          <td
-            className={card['Blood Cost'] ? 'cost blood ' : 'cost '}
-            onClick={() => handleClick(idx)}
-          >
-            {(card['Blood Cost'] || card['Pool Cost']) && (
-              <ResultLibraryCost
-                valueBlood={card['Blood Cost']}
-                valuePool={card['Pool Cost']}
-              />
-            )}
-          </td>
-          <td className="type " onClick={() => handleClick(idx)}>
-            <ResultLibraryTypeImage value={card.Type} />
-          </td>
-          <td className="disciplines " onClick={() => handleClick(idx)}>
-            {card.Clan && <ResultLibraryClan value={card.Clan} />}
-            {card.Discipline && card.Clan && '+'}
-            {card.Discipline && (
-              <ResultLibraryDisciplines value={card.Discipline} />
-            )}
-          </td>
-          <td className="name " onClick={() => handleClick(idx)}>
-            <ConditionalTooltip
-              overlay={<CardPopover card={card} />}
-              disabled={isMobile}
-              placement={placement}
-            >
-              <ResultLibraryName card={card} />
-            </ConditionalTooltip>
-          </td>
-          <td className="burn " onClick={() => handleClick(idx)}>
-            {card['Burn Option'] && <ResultLibraryBurn />}
-            {isTrifle(card) && <ResultLibraryTrifle />}
-          </td>
+          <ResultLibraryTableRowCommon
+            card={card}
+            handleClick={handleClick}
+            placement={placement}
+          />
           <td className="text-blue w-9  text-right">
             {!ashHeap && (
               <>

@@ -2,21 +2,12 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import {
-  CardPopover,
   UsedPopover,
   ButtonAddCard,
-  ResultLibraryBurn,
-  ResultLibraryClan,
-  ResultLibraryCost,
-  ResultLibraryDisciplines,
-  ResultLibraryName,
-  ResultLibraryTrifle,
-  ResultLibraryTypeImage,
-  ConditionalTooltip,
+  ResultLibraryTableRowCommon,
   Tooltip,
 } from 'components';
-import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
-import { isTrifle, getHardTotal, getSoftMax } from 'utils';
+import { getHardTotal, getSoftMax } from 'utils';
 import {
   useApp,
   deckStore,
@@ -125,41 +116,11 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
           </Tooltip>
         </td>
       )}
-      <td
-        className={card[BLOOD_COST] ? 'cost blood' : 'cost'}
-        onClick={() => handleClick(idx)}
-      >
-        {(card[BLOOD_COST] || card[POOL_COST]) && (
-          <ResultLibraryCost
-            valueBlood={card[BLOOD_COST]}
-            valuePool={card[POOL_COST]}
-          />
-        )}
-      </td>
-      <td className="type" onClick={() => handleClick(idx)}>
-        <ResultLibraryTypeImage value={card.Type} />
-      </td>
-      <td
-        className="disciplines flex items-center justify-center"
-        onClick={() => handleClick(idx)}
-      >
-        {card.Clan && <ResultLibraryClan value={card.Clan} />}
-        {card.Discipline && card.Clan && '+'}
-        {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
-      </td>
-      <td className="name" onClick={() => handleClick(idx)}>
-        <ConditionalTooltip
-          placement={placement}
-          overlay={<CardPopover card={card} />}
-          disabled={isMobile}
-        >
-          <ResultLibraryName card={card} />
-        </ConditionalTooltip>
-      </td>
-      <td className="burn" onClick={() => handleClick(idx)}>
-        {card[BURN_OPTION] && <ResultLibraryBurn />}
-        {isTrifle(card) && <ResultLibraryTrifle />}
-      </td>
+      <ResultLibraryTableRowCommon
+        card={card}
+        handleClick={handleClick}
+        placement={placement}
+      />
     </tr>
   );
 };

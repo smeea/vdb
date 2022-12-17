@@ -13,19 +13,13 @@ import {
 } from 'context';
 import {
   Tooltip,
-  CardPopover,
   UsedPopover,
   DeckCardQuantity,
-  ResultLibraryBurn,
-  ResultLibraryClan,
-  ResultLibraryCost,
-  ResultLibraryDisciplines,
-  ResultLibraryName,
-  ResultLibraryTrifle,
+  ResultLibraryTableRowCommon,
   DeckDrawProbabilityText,
   ConditionalTooltip,
 } from 'components';
-import { isTrifle, getSoftMax, getHardTotal, drawProbability } from 'utils';
+import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 
 const DeckLibraryTableRow = ({
   idx,
@@ -40,7 +34,7 @@ const DeckLibraryTableRow = ({
   inMissing,
   setModalDraw,
 }) => {
-  const { inventoryMode, isMobile, isDesktop, isNarrow, isWide } = useApp();
+  const { inventoryMode, isMobile } = useApp();
 
   const decks = useSnapshot(deckStore).decks;
   const usedLibrary = useSnapshot(usedStore).library;
@@ -180,41 +174,13 @@ const DeckLibraryTableRow = ({
           )}
         </>
       )}
-      <td className="name  " onClick={() => handleClick(card.c)}>
-        <ConditionalTooltip
-          placement={placement}
-          overlay={<CardPopover card={card.c} />}
-          disabled={disableOverlay}
-        >
-          <ResultLibraryName card={card.c} />
-        </ConditionalTooltip>
-      </td>
-      {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
-        <td
-          className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
-          onClick={() => handleClick(card.c)}
-        >
-          {(card.c['Blood Cost'] || card.c['Pool Cost']) && (
-            <ResultLibraryCost
-              valueBlood={card.c['Blood Cost']}
-              valuePool={card.c['Pool Cost']}
-            />
-          )}
-        </td>
-      )}
-      <td className="disciplines " onClick={() => handleClick(card.c)}>
-        {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
-        {card.c.Discipline && card.c.Clan && '+'}
-        {card.c.Discipline && (
-          <ResultLibraryDisciplines value={card.c.Discipline} />
-        )}
-      </td>
-      {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
-        <td className="burn" onClick={() => handleClick(card.c)}>
-          {card.c['Burn Option'] && <ResultLibraryBurn />}
-          {isTrifle(card.c) && <ResultLibraryTrifle />}
-        </td>
-      )}
+      <ResultLibraryTableRowCommon
+        card={card.c}
+        handleClick={handleClick}
+        placement={placement}
+        inSearch={inSearch}
+        inDeck
+      />
       {showInfo && (
         <td className="text-blue w-9  text-right">
           {isMobile ? (

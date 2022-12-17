@@ -3,23 +3,16 @@ import { useSnapshot } from 'valtio';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import {
-  CardPopover,
   UsedPopover,
   DeckCardQuantity,
-  ResultLibraryBurn,
-  ResultLibraryClan,
-  ResultLibraryCost,
-  ResultLibraryDisciplines,
-  ResultLibraryName,
-  ResultLibraryTrifle,
+  ResultLibraryTableRowCommon,
   CardImage,
-  ConditionalTooltip,
   Tooltip,
   Checkbox,
 } from 'components';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp, deckStore, usedStore, inventoryStore } from 'context';
-import { isTrifle, getSoftMax, getHardTotal } from 'utils';
+import { getSoftMax, getHardTotal } from 'utils';
 
 const DeckProxyLibraryTable = ({
   handleModalCardOpen,
@@ -85,11 +78,11 @@ const DeckProxyLibraryTable = ({
             />
           </td>
           {inventoryMode && decks ? (
-            <Tooltip
-              placement="right"
-              overlay={<UsedPopover cardid={card.c.Id} />}
-            >
-              <td className="quantity">
+            <td className="quantity">
+              <Tooltip
+                placement="right"
+                overlay={<UsedPopover cardid={card.c.Id} />}
+              >
                 <DeckCardQuantity
                   card={card.c}
                   deckid={null}
@@ -103,8 +96,8 @@ const DeckProxyLibraryTable = ({
                   }
                   inProxy
                 />
-              </td>
-            </Tooltip>
+              </Tooltip>
+            </td>
           ) : (
             <td className="quantity">
               <DeckCardQuantity
@@ -115,35 +108,12 @@ const DeckProxyLibraryTable = ({
               />
             </td>
           )}
-          <ConditionalTooltip
+          <ResultLibraryTableRowCommon
+            card={card.c}
+            handleClick={handleClick}
             placement={placement}
-            overlay={<CardPopover card={card.c} />}
-            disabled={isMobile}
-          >
-            <td className="name " onClick={() => handleClick(card.c)}>
-              <ResultLibraryName card={card.c} />
-            </td>
-          </ConditionalTooltip>
-
-          <td className="cost" onClick={() => handleClick(card.c)}>
-            {(card.c['Blood Cost'] || card.c['Pool Cost']) && (
-              <ResultLibraryCost
-                valueBlood={card.c['Blood Cost']}
-                valuePool={card.c['Pool Cost']}
-              />
-            )}
-          </td>
-          <td className="disciplines" onClick={() => handleClick(card.c)}>
-            {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
-            {card.c.Discipline && card.c.Clan && '+'}
-            {card.c.Discipline && (
-              <ResultLibraryDisciplines value={card.c.Discipline} />
-            )}
-          </td>
-          <td className="burn" onClick={() => handleClick(card.c)}>
-            {card.c['Burn Option'] && <ResultLibraryBurn />}
-            {isTrifle(card.c) && <ResultLibraryTrifle />}
-          </td>
+            inDeck
+          />
           {!isMobile && (
             <>
               <td className="proxy-set">
@@ -164,25 +134,26 @@ const DeckProxyLibraryTable = ({
                   onChange={handleSetSelector}
                 />
               </td>
-              <Tooltip
-                placement="left"
-                overlay={
-                  <div>
-                    <CardImage
-                      card={card.c}
-                      set={
-                        proxySelected[card.c.Id] && proxySelected[card.c.Id].set
-                      }
-                    />
-                  </div>
-                }
-              >
-                <td className="proxy-set-image">
+              <td className="proxy-set-image">
+                <Tooltip
+                  placement="left"
+                  overlay={
+                    <div>
+                      <CardImage
+                        card={card.c}
+                        set={
+                          proxySelected[card.c.Id] &&
+                          proxySelected[card.c.Id].set
+                        }
+                      />
+                    </div>
+                  }
+                >
                   <div>
                     <EyeFill />
                   </div>
-                </td>
-              </Tooltip>
+                </Tooltip>
+              </td>
             </>
           )}
         </tr>

@@ -7,6 +7,7 @@ export { default as ResultLibraryLayoutText } from './ResultLibraryLayoutText.js
 export { default as ResultLibraryName } from './ResultLibraryName.jsx';
 export { default as ResultLibraryTable } from './ResultLibraryTable.jsx';
 export { default as ResultLibraryTableRow } from './ResultLibraryTableRow.jsx';
+export { default as ResultLibraryTableRowCommon } from './ResultLibraryTableRowCommon.jsx';
 export { default as ResultLibraryTotal } from './ResultLibraryTotal.jsx';
 export { default as ResultLibraryTrifle } from './ResultLibraryTrifle.jsx';
 export { default as ResultLibraryType } from './ResultLibraryType.jsx';
