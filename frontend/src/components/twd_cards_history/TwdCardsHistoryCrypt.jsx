@@ -97,7 +97,7 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
             </div>
             <div className="flex justify-end text-xs">
               <div className="text-blue font-bold">
-                <ResultCryptTitle value={card.Title} />
+                {card.Title && <ResultCryptTitle value={card.Title} />}
               </div>
               <ResultCryptGroup value={card.Group} />
             </div>

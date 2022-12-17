@@ -37,7 +37,7 @@ const DeckCryptTableRow = ({
   inMissing,
   setModalDraw,
 }) => {
-  const { inventoryMode, isMobile, isDesktop, isNarrow, isWide } = useApp();
+  const { inventoryMode, isMobile } = useApp();
 
   const decks = useSnapshot(deckStore).decks;
   const usedCrypt = useSnapshot(usedStore).crypt;
@@ -104,7 +104,7 @@ const DeckCryptTableRow = ({
                 <td>
                   <div className="relative flex items-center">
                     <div
-                      className={`absolute left-[-24px] inventory-card-custom
+                      className={`inventory-card-custom absolute left-[-24px]
                         ${card.i ? '' : 'not-selected opacity-0'}
                       `}
                       onClick={() => toggleInventoryState(deckid, card.c.Id)}

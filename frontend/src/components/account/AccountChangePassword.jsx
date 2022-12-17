@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import Check2 from 'assets/images/icons/check2.svg';
 import LockFill from 'assets/images/icons/lock-fill.svg';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { AccountPasswordForm, Input, Button, ErrorOverlay } from 'components';
+import { AccountPasswordForm, ErrorOverlay } from 'components';
 import { userServices } from 'services';
 import { useApp } from 'context';
 
@@ -15,8 +11,7 @@ const AccountChangePassword = () => {
   const [formNewPassword, setFormNewPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
-  const [hidePassword, setHidePassword] = useState(true);
-  const [buttonState, setButtonState] = useState(false);
+  // const [buttonState, setButtonState] = useState(false);
 
   const onError = (e) => {
     if (e.message == 401) {
@@ -28,11 +23,11 @@ const AccountChangePassword = () => {
   };
 
   const onSuccess = () => {
-    setButtonState(true);
     setSpinnerState(false);
-    setTimeout(() => {
-      setButtonState(false);
-    }, 1000);
+    // setButtonState(true);
+    // setTimeout(() => {
+    //   setButtonState(false);
+    // }, 1000);
     setFormPassword('');
     setFormNewPassword('');
   };

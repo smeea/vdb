@@ -9,6 +9,7 @@ import {
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
   Modal,
+  ButtonFloat,
 } from 'components';
 import { MASTER } from 'utils/constants';
 import { useApp } from 'context';
@@ -155,7 +156,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
           variant="float-add-on"
         >
           <div className="flex items-center">
-            <div className="text-xl pb-0.5">+</div>
+            <div className="pb-0.5 text-xl">+</div>
             <div className="text-2xl">L</div>
           </div>
         </ButtonFloat>

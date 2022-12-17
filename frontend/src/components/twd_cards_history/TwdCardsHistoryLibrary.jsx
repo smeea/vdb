@@ -175,7 +175,9 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         >
           {card.Clan && <ResultLibraryClan value={card.Clan} />}
           {card.Discipline && card.Clan && '+'}
-          {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
+          {card.Discipline && (
+            <ResultLibraryDisciplines value={card.Discipline} />
+          )}
         </div>
         <ConditionalTooltip
           placement={'right'}

@@ -17,7 +17,7 @@ import {
 } from 'context';
 
 const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
-  const { addMode, inventoryMode, isMobile, isDesktop } = useApp();
+  const { addMode, inventoryMode, isDesktop } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;

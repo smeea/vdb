@@ -96,7 +96,9 @@ const TwdResultLibraryKeyCards = ({ library }) => {
         </td>
         {!isMobile && (
           <td className="disciplines" onClick={() => handleClick(card.c)}>
-            {card.c.Discipline && <ResultLibraryDisciplines value={card.c.Discipline} />}
+            {card.c.Discipline && (
+              <ResultLibraryDisciplines value={card.c.Discipline} />
+            )}
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
           </td>
         )}

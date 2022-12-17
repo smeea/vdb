@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import Check2 from 'assets/images/icons/check2.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import {
   AccountEmailForm,
   AccountPasswordForm,
-  Input,
-  Button,
   Tooltip,
   ErrorOverlay,
   Modal,
@@ -17,14 +11,13 @@ import { useApp } from 'context';
 import { userServices } from 'services';
 
 const AccountChangeEmail = () => {
-  const { email, setEmail, isMobile } = useApp();
+  const { setEmail, isMobile } = useApp();
   const [formPassword, setFormPassword] = useState('');
   const [formEmail, setFormEmail] = useState('');
   const [showModal, setShowModal] = useState(false);
-  const [buttonState, setButtonState] = useState(false);
+  // const [buttonState, setButtonState] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
-  const [hidePassword, setHidePassword] = useState(true);
 
   const onError = (e) => {
     setSpinnerState(false);
@@ -38,11 +31,11 @@ const AccountChangeEmail = () => {
   const onSuccess = () => {
     setSpinnerState(false);
     setEmail(formEmail);
-    setPassword('');
-    setButtonState(true);
-    setTimeout(() => {
-      setButtonState(false);
-    }, 1000);
+    setFormPassword('');
+    // setButtonState(true);
+    // setTimeout(() => {
+    //   setButtonState(false);
+    // }, 1000);
   };
 
   const changeEmail = () => {

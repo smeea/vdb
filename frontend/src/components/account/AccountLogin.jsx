@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
-import Spinner from 'assets/images/icons/three-dots.svg';
 import DoorOpenFill from 'assets/images/icons/door-open-fill.svg';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import Check2 from 'assets/images/icons/check2.svg';
 import {
   AccountPasswordForm,
   AccountUsernameForm,
-  Button,
   ErrorOverlay,
-  Input,
   Modal,
   Tooltip,
 } from 'components';
@@ -28,7 +22,6 @@ const AccountLogin = () => {
 
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [hidePassword, setHidePassword] = useState(true);
 
   const onError = (e) => {
     setSpinnerState(false);

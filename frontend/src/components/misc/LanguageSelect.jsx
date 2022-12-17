@@ -7,7 +7,7 @@ import { LanguageMenu } from 'components';
 import { useApp } from 'context';
 
 const LanguageSelect = ({ showMenu, setShowMenu }) => {
-  const { isMobile, lang, changeLang } = useApp();
+  const { isMobile, lang } = useApp();
 
   const languages = {
     'en-EN': FlagEn,
@@ -25,7 +25,7 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
         </div>
       ) : (
         <div
-          className="relative flex justify-center items-center h-full min-w-[40px]"
+          className="relative flex h-full min-w-[40px] items-center justify-center"
           onClick={() => setShowMenu(!showMenu)}
         >
           <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />

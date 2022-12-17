@@ -90,8 +90,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       title="Import from Text"
     >
       <div>
-        <input
-          as="textarea"
+        <textarea
           className="deck-import "
           rows={isMobile ? '20' : '25'}
           value={deckText}

@@ -25,10 +25,10 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
         <Dialog.Panel
           className={`${
             size ? `modal-${size}` : ''
-          } rounded bg-teal-600 p-5 space-y-2`}
+          } space-y-2 rounded bg-teal-600 p-5`}
         >
           {title && (
-            <Dialog.Title className="flex border-none justify-between items-start">
+            <Dialog.Title className="flex items-start justify-between border-none">
               <div className="text-blue text-lg font-bold">{title}</div>
               <Button variant="outline-secondary" onClick={handleClose}>
                 <X width="32" height="32" viewBox="0 0 16 16" />

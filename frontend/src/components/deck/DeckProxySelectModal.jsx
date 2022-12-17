@@ -215,29 +215,17 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
                 isMobile ? 'flex-row space-y-2' : 'flex-col space-x-2'
               }`}
             >
-              <Button
-                variant="primary"
-                onClick={() => handleGenerate(false)}
-              >
+              <Button variant="primary" onClick={() => handleGenerate(false)}>
                 Generate - Gray gaps
               </Button>
-              <Button
-                variant="primary"
-                onClick={() => handleGenerate(true)}
-              >
+              <Button variant="primary" onClick={() => handleGenerate(true)}>
                 Generate - White gaps
               </Button>
-              <Button
-                variant="primary"
-                onClick={() => handleToggleSelect()}
-              >
+              <Button variant="primary" onClick={() => handleToggleSelect()}>
                 Select / Deselect All
               </Button>
               {inventoryMode && (
-                <Button
-                  variant="primary"
-                  onClick={() => handleToggleResolve()}
-                >
+                <Button variant="primary" onClick={() => handleToggleResolve()}>
                   Add Missing in Inventory
                 </Button>
               )}

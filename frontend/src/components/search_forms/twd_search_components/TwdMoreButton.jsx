@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
-import { MenuButton, Button } from 'components';
+import { MenuButton } from 'components';
 import Gem from 'assets/images/icons/gem.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import ClockHistory from 'assets/images/icons/clock-history.svg';

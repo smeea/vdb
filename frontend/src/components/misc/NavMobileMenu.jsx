@@ -69,7 +69,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             </div>
           </div>
           <div className="flex items-center justify-between ">
-            <LanguageMenu languages={languages} lang={lang} onClick={onClick} />
+            <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
           </div>
         </div>
       )}

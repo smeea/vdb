@@ -1,9 +1,7 @@
 import React from 'react';
 import { Button } from 'components';
-import { useApp } from 'context';
 
 const CryptSearchFormGroup = ({ value, onChange }) => {
-  const { isMobile, isNarrow } = useApp();
   const groups = [1, 2, 3, 4, 5, 6, 7];
 
   return (

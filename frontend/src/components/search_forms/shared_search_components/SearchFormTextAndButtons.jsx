@@ -72,7 +72,7 @@ const SearchFormTextAndButtons = ({
                 name={0}
                 value={text}
                 onChange={onTextChange}
-                className="rounded-r-none w-full"
+                className="w-full rounded-r-none"
               />
               {preresults > showLimit && (
                 <ButtonIconed
@@ -130,7 +130,6 @@ const SearchFormTextAndButtons = ({
                       ? value[0].regex || false
                       : value[0].in === opt.value
                   }
-                  onChange={onChangeOptions}
                 />
               );
             })}

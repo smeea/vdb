@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import X from 'assets/images/icons/x.svg';
 import PencilSquare from 'assets/images/icons/pencil-square.svg';
 import Recycle from 'assets/images/icons/recycle.svg';
-import ToggleOn from 'assets/images/icons/toggle-on.svg';
-import ToggleOff from 'assets/images/icons/toggle-off.svg';
 import {
   ButtonIconed,
   SeatingPlayerSelector,
@@ -58,7 +56,7 @@ const SeatingModal = ({
       >
         <div className="space-y-5">
           <div className="flex">
-            <div className="md:w-5/12 xl:w-1/3 space-y-5">
+            <div className="space-y-5 md:w-5/12 xl:w-1/3">
               <div className="space-y-2">
                 {players.map((p, idx) => {
                   return (

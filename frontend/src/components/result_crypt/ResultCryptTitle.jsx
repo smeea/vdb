@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ResultCryptTitle(props) {
+const ResultCryptTitle = ({ value }) => {
   const titles = {
     primogen: ['Primogen', 'Pg'],
     prince: ['Prince', 'Pc'],
@@ -17,13 +17,7 @@ function ResultCryptTitle(props) {
     magaji: ['Magaji', 'Mj'],
   };
 
-  return (
-    <>
-      {props.value && (
-        <span title={titles[props.value][0]}>{titles[props.value][1]}</span>
-      )}
-    </>
-  );
-}
+  return <span title={titles[value][0]}>{titles[value][1]}</span>;
+};
 
 export default ResultCryptTitle;

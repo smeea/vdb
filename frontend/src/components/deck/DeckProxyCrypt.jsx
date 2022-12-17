@@ -4,7 +4,7 @@ import { DeckProxyCryptTable, ResultModal } from 'components';
 import { useApp } from 'context';
 import { countCards } from 'utils';
 import { deckStore } from 'context';
-import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
+import { useModalCardController, useDeckCrypt } from 'hooks';
 
 const DeckProxyCrypt = ({
   cards,
@@ -16,7 +16,7 @@ const DeckProxyCrypt = ({
   const { cryptDeckSort, isMobile, setShowFloatingButtons } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
 
-  const { cryptSide, cryptTotal, sortedCards, sortedCardsSide } = useDeckCrypt(
+  const { cryptSide, sortedCards, sortedCardsSide } = useDeckCrypt(
     cards,
     cryptDeckSort,
     changeTimer

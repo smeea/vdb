@@ -13,7 +13,7 @@ import {
 } from 'components';
 import { useApp, deckStore } from 'context';
 
-const DeckPublicButton = ({ deck, noText }) => {
+const DeckPublicButton = ({ deck }) => {
   const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();

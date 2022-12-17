@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
-import Spinner from 'assets/images/icons/three-dots.svg';
 import PersonPlusFill from 'assets/images/icons/person-plus-fill.svg';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import Check2 from 'assets/images/icons/check2.svg';
 import {
   AccountEmailForm,
   AccountPasswordForm,
   AccountUsernameForm,
-  Button,
   ErrorOverlay,
-  Input,
 } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';

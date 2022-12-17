@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Menu } from '@headlessui/react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import SortDown from 'assets/images/icons/sort-down.svg';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';

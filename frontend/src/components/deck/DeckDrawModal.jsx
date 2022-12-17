@@ -32,7 +32,6 @@ const DeckDrawModal = ({
   handleReDrawCrypt,
   handleReDrawLibrary,
   initialTransfers,
-  library,
   libraryTotal,
   restCrypt,
   restLibrary,

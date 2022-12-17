@@ -21,3 +21,6 @@
 - Refactor hide-on-lt/gt into size:hide
 - Style forms with https://github.com/tailwindlabs/tailwindcss-forms
 - Refactor maxDisciplines to use from hook/utils
+- Test autoFocus
+- React.createRef vs useRef
+- Fix buttonOkState (search by setTimeout)

@@ -68,8 +68,10 @@ const DeckChangeName = ({ deck }) => {
         </div>
       )}
       {isNonEditable && (
-        <div title="Deck is non-editable and will never change">
+        <div
+          title="Deck is non-editable and will never change"
           className="rounded-l-none"
+        >
           <Snow width="16" height="23" viewBox="0 0 16 16" />
         </div>
       )}

@@ -175,7 +175,6 @@ const DeckDraw = ({ deck, setShow }) => {
           handleReDrawCrypt={handleReDrawCrypt}
           handleReDrawLibrary={handleReDrawLibrary}
           initialTransfers={initialTransfers}
-          library={deck.library}
           libraryTotal={libraryArr.length}
           restCrypt={restCrypt}
           restLibrary={restLibrary}

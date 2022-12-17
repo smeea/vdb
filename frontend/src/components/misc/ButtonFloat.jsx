@@ -11,9 +11,9 @@ const ButtonFloat = ({ onClick, position = 'bottom', variant, children }) => {
   return (
     <div
       onClick={onClick}
-      className={`fixed text-white items-center justify-center rounded-[25px] w-[48px] h-[48px] z-10 right-[15px] sm:right-[25px] ${positionClass} ${variant}`}
+      className={`fixed right-[15px] z-10 h-[48px] w-[48px] items-center justify-center rounded-[25px] text-white sm:right-[25px] ${positionClass} ${variant}`}
     >
-      <div className="flex items-center justify-center w-full h-full">
+      <div className="flex h-full w-full items-center justify-center">
         {children}
       </div>
     </div>

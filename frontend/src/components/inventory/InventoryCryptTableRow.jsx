@@ -162,7 +162,7 @@ const InventoryCryptTableRow = ({
             className="title flex items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
-            <ResultCryptTitle value={card.c.Title} />
+            {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
           </div>
           <div
             className="clan flex items-center justify-center"
@@ -184,7 +184,7 @@ const InventoryCryptTableRow = ({
           </div>
           <div className="flex justify-end text-xs">
             <div className="text-blue font-bold">
-              <ResultCryptTitle value={card.c.Title} />
+              {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
             </div>
             <ResultCryptGroup value={card.c.Group} />
           </div>

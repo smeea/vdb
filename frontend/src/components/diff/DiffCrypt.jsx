@@ -7,6 +7,7 @@ import {
   ResultModal,
   DeckCryptHeader,
   Modal,
+  ButtonFloat,
 } from 'components';
 import { useApp, deckStore } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
@@ -134,7 +135,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
           variant="float-add-on"
         >
           <div className="flex items-center">
-            <div className="text-xl pb-0.5">+</div>
+            <div className="pb-0.5 text-xl">+</div>
             <div className="text-2xl">C</div>
           </div>
         </ButtonFloat>

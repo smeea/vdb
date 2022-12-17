@@ -101,7 +101,7 @@ const DeckLibraryTableRow = ({
                 <td>
                   <div className="relative flex items-center">
                     <div
-                      className={`absolute left-[-24px] inventory-card-custom
+                      className={`inventory-card-custom absolute left-[-24px]
                         ${card.i ? '' : 'not-selected opacity-0'}
                       `}
                       onClick={() => toggleInventoryState(deckid, card.c.Id)}

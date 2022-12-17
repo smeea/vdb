@@ -9,10 +9,9 @@ const OfflineNotification = () => {
     <>
       {isOffline ? (
         <nav
-          className="offline-bar sticky top-0"
-          /* fixed={isMobile ? null : 'bottom'} */
-          /* sticky={isMobile ? 'top' : null} */
-          /* className="offline-bar" */
+          className={`offline-bar
+          ${isMobile ? 'sticky top-0' : 'fixed bottom-0'}
+`}
         >
           <div className="flex w-full items-center justify-center">
             <div className="flex ">

@@ -1,15 +1,13 @@
 import React from 'react';
 import { ANY } from 'utils/constants';
 
-function ResultCryptGroup(props) {
+const ResultCryptGroup = ({ value }) => {
   return (
-    <div className="group ">
-      <b>
-        <font color="a0a0a0">G</font>
-        {props.value === ANY ? 'X' : props.value}
-      </b>
+    <div className="group font-bold flex">
+      <div className="text-[#a0a0a0]">G</div>
+      {value === ANY ? 'X' : value}
     </div>
   );
-}
+};
 
 export default ResultCryptGroup;

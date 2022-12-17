@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Check2 from 'assets/images/icons/check2.svg';
 import ArrowLeftRight from 'assets/images/icons/arrow-left-right.svg';
 import {

@@ -150,7 +150,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
           variant="float-add-on"
         >
           <div className="flex items-center">
-            <div className="text-xl pb-0.5">+</div>
+            <div className="pb-0.5 text-xl">+</div>
             <div className="text-2xl">C</div>
           </div>
         </ButtonFloat>
