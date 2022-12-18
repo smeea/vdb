@@ -27,11 +27,6 @@ const InventoryLibraryTable = ({
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   const handleClick = (card) => {
     handleModalCardOpen(card);
     setShowFloatingButtons(false);
@@ -91,8 +86,8 @@ const InventoryLibraryTable = ({
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
-          forceInventoryMode={true}
+          handleClose={handleModalCardClose}
+          forceInventoryMode
         />
       )}
     </>

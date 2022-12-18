@@ -30,11 +30,6 @@ const DeckLibraryTable = ({
     [isMobile, isDesktop, isModalOpen]
   );
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
-
   const cardRows = cards.map((card, idx) => {
     return (
       <DeckLibraryTableRow
@@ -42,7 +37,7 @@ const DeckLibraryTable = ({
         idx={idx}
         disableOverlay={disableOverlay}
         placement={placement}
-        handleClick={handleClick}
+        handleClick={handleModalCardOpen}
         card={card}
         deck={deck}
         showInfo={showInfo}

@@ -38,11 +38,6 @@ const DiffLibraryTable = ({
 
   const [modalDraw, setModalDraw] = useState();
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
-
   const cardRows = cards.map((card, idx) => {
     let inInventory = 0;
     let softUsedMax = 0;
@@ -114,7 +109,7 @@ const DiffLibraryTable = ({
 
           <ResultLibraryTableRowCommon
             card={card.c}
-            handleClick={handleClick}
+            handleClick={handleModalCardOpen}
             placement={placement}
             inDeck
           />

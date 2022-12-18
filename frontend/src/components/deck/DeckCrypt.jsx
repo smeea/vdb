@@ -66,11 +66,6 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   return (
     <div
       className={`${!inSearch && !inMissing && !inAdvSelect ? '' : ''} ${
@@ -168,7 +163,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </div>

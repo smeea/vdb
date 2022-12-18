@@ -32,11 +32,6 @@ const DeckProxyCryptTable = ({
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
     useKeyDisciplines(cards);
 
-  const handleClick = (idx) => {
-    handleModalCardOpen(idx);
-    setShowFloatingButtons(false);
-  };
-
   const cardRows = cards.map((card, idx) => {
     let inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
     let softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
@@ -115,7 +110,7 @@ const DeckProxyCryptTable = ({
           )}
           <ResultCryptTableRowCommon
             card={card.c}
-            handleClick={handleClick}
+            handleClick={handleModalCardOpen}
             placement={placement}
             maxDisciplines={maxDisciplines}
             keyDisciplines={keyDisciplines}

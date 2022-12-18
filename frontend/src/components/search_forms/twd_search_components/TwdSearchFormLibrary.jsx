@@ -53,8 +53,8 @@ const TwdSearchFormLibrary = ({ value, form }) => {
       </div>
       {modalCard && (
         <ResultModal
-          show={modalCard ? true : false}
           card={modalCard}
+          handleModalCardChange={() => {}}
           handleClose={() => setModalCard(false)}
         />
       )}

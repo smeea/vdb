@@ -13,13 +13,15 @@ import {
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
+  ResultModal,
 } from 'components';
 import imbuedClansList from 'assets/data/imbuedClansList.json';
 import vampireClansList from 'assets/data/vampireClansList.json';
 import { cryptSort } from 'utils';
 import { useApp } from 'context';
+import { useModalCardController } from 'hooks';
 
-const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
+const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const { isMobile } = useApp();
 
   const [clan, setClan] = useState('All');
@@ -59,19 +61,27 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
     [cardsByClan, sortMethod]
   );
 
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(sortedCards);
+
   const cardRows = sortedCards.map((card, idx) => {
     return (
       <>
         <div
           className="capacity flex items-center justify-center"
-          onClick={() => handleClick(idx)}
+          onClick={() => handleModalCardOpen(card)}
         >
           <ResultCryptCapacity value={card.Capacity} />
         </div>
         {!isMobile && (
           <div
             className="content-left disciplines flex items-center"
-            onClick={() => handleClick(idx)}
+            onClick={() => handleModalCardOpen(card)}
           >
             <ResultCryptDisciplines value={card.Disciplines} />
           </div>
@@ -85,13 +95,13 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
             className={`name flex items-center justify-start ${
               card.deckid ? '' : 'bold'
             } `}
-            onClick={() => handleClick(idx)}
+            onClick={() => handleModalCardOpen(card)}
           >
             <ResultCryptName card={card} />
           </div>
         </ConditionalTooltip>
         {!isMobile && (
-          <div className="clan-group" onClick={() => handleClick(idx)}>
+          <div className="clan-group" onClick={() => handleModalCardOpen(card)}>
             <div className="flex justify-center">
               <ResultClanImage value={card.Clan} />
             </div>
@@ -185,6 +195,13 @@ const TwdCardsHistoryCrypt = ({ cards, players, handleClick }) => {
           </FixedSizeList>
         )}
       </AutoSizer>
+      {shouldShowModal && (
+        <ResultModal
+          card={currentModalCard}
+          handleModalCardChange={handleModalCardChange}
+          handleClose={handleModalCardClose}
+        />
+      )}
     </div>
   );
 };

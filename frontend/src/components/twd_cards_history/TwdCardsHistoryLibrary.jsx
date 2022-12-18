@@ -13,14 +13,21 @@ import {
   ResultLibraryName,
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
+  ResultModal,
 } from 'components';
-import { cardtypeSorted, POOL_COST, BLOOD_COST } from 'utils/constants';
+import {
+  cardtypeSorted,
+  BURN_OPTION,
+  POOL_COST,
+  BLOOD_COST,
+} from 'utils/constants';
 import disciplinesList from 'assets/data/disciplinesList.json';
 import virtuesList from 'assets/data/virtuesList.json';
 import { librarySort } from 'utils';
 import { useApp } from 'context';
+import { useModalCardController } from 'hooks';
 
-const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
+const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const { isMobile } = useApp();
 
   const [type, setType] = useState('All');
@@ -145,6 +152,14 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
     [cardsByType, cardsByDiscipline, sortMethod]
   );
 
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(sortedCards);
+
   const cardRows = sortedCards.map((card, idx) => {
     return (
       <>
@@ -154,16 +169,19 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
               className={`flex items-center justify-center ${
                 card[BLOOD_COST] && 'blood'
               } cost`}
-              onClick={() => handleClick(idx)}
+              onClick={() => handleModalCardOpen(card)}
             >
-              <ResultLibraryCost
-                valueBlood={card[BLOOD_COST]}
-                valuePool={card[POOL_COST]}
-              />
+              {card[BLOOD_COST] ||
+                (card[POOL_COST] && (
+                  <ResultLibraryCost
+                    valueBlood={card[BLOOD_COST]}
+                    valuePool={card[POOL_COST]}
+                  />
+                ))}
             </div>
             <div
               className="type flex items-center justify-center"
-              onClick={() => handleClick(idx)}
+              onClick={() => handleModalCardOpen(card)}
             >
               <ResultLibraryTypeImage value={card.Type} />
             </div>
@@ -171,7 +189,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         )}
         <div
           className="clan-disciplines flex items-center justify-center"
-          onClick={() => handleClick(idx)}
+          onClick={() => handleModalCardOpen(card)}
         >
           {card.Clan && <ResultLibraryClan value={card.Clan} />}
           {card.Discipline && card.Clan && '+'}
@@ -188,7 +206,7 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
             className={`name flex items-center justify-start ${
               card.deckid ? '' : 'bold'
             } `}
-            onClick={() => handleClick(idx)}
+            onClick={() => handleModalCardOpen(card)}
           >
             <ResultLibraryName card={card} />
           </div>
@@ -196,9 +214,9 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
         {!isMobile && (
           <div
             className="burn flex items-center justify-center"
-            onClick={() => handleClick(idx)}
+            onClick={() => handleModalCardOpen(card)}
           >
-            {card['Burn Option'] && <ResultLibraryBurn />}
+            {card[BURN_OPTION] && <ResultLibraryBurn />}
           </div>
         )}
         <TwdCardsHistoryCardAppearance
@@ -294,6 +312,13 @@ const TwdCardsHistoryLibrary = ({ cards, players, handleClick }) => {
           </FixedSizeList>
         )}
       </AutoSizer>
+      {shouldShowModal && (
+        <ResultModal
+          card={currentModalCard}
+          handleModalCardChange={handleModalCardChange}
+          handleClose={handleModalCardClose}
+        />
+      )}
     </div>
   );
 };

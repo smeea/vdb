@@ -49,11 +49,6 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype}>
       <div className="flex justify-between ">
@@ -165,7 +160,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
       {modalDraw && (

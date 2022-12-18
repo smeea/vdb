@@ -112,11 +112,22 @@ const TwdHallOfFameCards = () => {
 
   return (
     <div className="hof-cards-container  mx-auto ">
-      {/* TODO add styling to Tabs */}
-      <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-        <Tab.List>
-          <Tab>By Total</Tab>
-          <Tab>By Innovation</Tab>
+      <Tab.Group manual>
+        <Tab.List className="flex space-x-1 rounded bg-blue-900 p-1">
+          <Tab
+            className={({ selected }) =>
+              `w-full rounded px-3 py-1.5 ${selected ? 'bg-neutral-300 ' : ''}`
+            }
+          >
+            By Total
+          </Tab>
+          <Tab
+            className={({ selected }) =>
+              `w-full rounded px-3 py-1.5 ${selected ? 'bg-neutral-300 ' : ''}`
+            }
+          >
+            By Innovation
+          </Tab>
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>

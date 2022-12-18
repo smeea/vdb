@@ -64,11 +64,6 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   return (
     <div className={isMobile ? null : 'sticky top-[32px] z-10'}>
       <DeckCryptHeader
@@ -159,7 +154,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </div>

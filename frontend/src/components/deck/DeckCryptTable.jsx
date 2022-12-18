@@ -26,11 +26,6 @@ const DeckCryptTable = ({
     [isMobile, isDesktop, isModalOpen]
   );
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
-
   const cardRows = cards.map((card, idx) => {
     return (
       <DeckCryptTableRow
@@ -38,7 +33,7 @@ const DeckCryptTable = ({
         idx={idx}
         disableOverlay={disableOverlay}
         placement={placement}
-        handleClick={handleClick}
+        handleClick={handleModalCardOpen}
         card={card}
         deck={deck}
         disciplinesSet={disciplinesSet}

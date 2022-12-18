@@ -24,11 +24,6 @@ const DeckRecommendationLibrary = ({ cards }) => {
     handleModalCardClose,
   } = useModalCardController(sortedLibrary);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   return (
     <>
       {Object.keys(libraryByType).map((cardtype) => (
@@ -47,7 +42,7 @@ const DeckRecommendationLibrary = ({ cards }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </>

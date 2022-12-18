@@ -64,11 +64,6 @@ const TwdResultLibraryByType = ({ library }) => {
     handleModalCardClose,
   } = useModalCardController(cards);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   const LibraryTypes = [];
 
   cardtypeSortedFull
@@ -138,7 +133,7 @@ const TwdResultLibraryByType = ({ library }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </>

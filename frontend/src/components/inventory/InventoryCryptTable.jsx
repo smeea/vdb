@@ -27,16 +27,6 @@ const InventoryCryptTable = ({
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
-
   const cardRows = sortedCards.map((card) => {
     return (
       <InventoryCryptTableRow
@@ -46,7 +36,7 @@ const InventoryCryptTable = ({
         compact={compact}
         newFocus={newFocus}
         inShared={inShared}
-        handleClick={handleClick}
+        handleClick={handleModalCardOpen}
       />
     );
   });
@@ -91,8 +81,8 @@ const InventoryCryptTable = ({
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
-          forceInventoryMode={true}
+          handleClose={handleModalCardClose}
+          forceInventoryMode
         />
       )}
     </>

@@ -28,11 +28,6 @@ const DeckProxyLibraryTable = ({
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
 
-  const handleClick = (idx) => {
-    handleModalCardOpen(idx);
-    setShowFloatingButtons(false);
-  };
-
   const cardRows = cards.map((card, idx) => {
     let inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
     let softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
@@ -110,7 +105,7 @@ const DeckProxyLibraryTable = ({
           )}
           <ResultLibraryTableRowCommon
             card={card.c}
-            handleClick={handleClick}
+            handleClick={handleModalCardOpen}
             placement={placement}
             inDeck
           />

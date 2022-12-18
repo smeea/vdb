@@ -34,11 +34,6 @@ const TwdResultCrypt = ({ crypt }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   const handleClick = (card) => {
     handleModalCardOpen(card);
     setShowFloatingButtons(false);
@@ -115,7 +110,7 @@ const TwdResultCrypt = ({ crypt }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </>

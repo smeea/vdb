@@ -6,37 +6,14 @@ import {
   ResultModal,
 } from 'components';
 import { useApp } from 'context';
-import { useModalCardController } from 'hooks';
 import { byName } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const TwdCardsHistory = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
-
   const [crypt, setCrypt] = useState();
   const [library, setLibrary] = useState();
   const [players, setPlayers] = useState();
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const {
-    currentModalCard,
-    shouldShowModal,
-    handleModalCardOpen,
-    handleModalCardChange,
-    handleModalCardClose,
-  } = useModalCardController(
-    selectedIndex === 0
-      ? crypt && Object.values(crypt)
-      : library && Object.values(library)
-  );
-
-  const handleClick = (idx) => {
-    handleModalCardOpen(idx);
-  };
-
-  const handleCloseModal = () => {
-    handleModalCardClose();
-  };
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
@@ -95,45 +72,35 @@ const TwdCardsHistory = () => {
   }, [cryptCardBase, libraryCardBase]);
 
   return (
-    <div className="hof-history-container  mx-auto ">
-      {/* TODO add styling to Tabs */}
-      <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-        <Tab.List>
-          <Tab>Crypt</Tab>
-          <Tab>Library</Tab>
+    <div className="hof-history-container mx-auto">
+      <Tab.Group manual>
+        <Tab.List className="flex space-x-1 rounded bg-blue-900 p-1">
+          <Tab
+            className={({ selected }) =>
+              `w-full rounded px-3 py-1.5 ${selected ? 'bg-neutral-300 ' : ''}`
+            }
+          >
+            Crypt
+          </Tab>
+          <Tab
+            className={({ selected }) =>
+              `w-full rounded px-3 py-1.5 ${selected ? 'bg-neutral-300 ' : ''}`
+            }
+          >
+            Library
+          </Tab>
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>
-            {crypt && (
-              <Tab eventKey="crypt" title="Crypt">
-                <TwdCardsHistoryCrypt
-                  cards={crypt}
-                  players={players}
-                  handleClick={handleClick}
-                />
-              </Tab>
-            )}
+            {crypt && <TwdCardsHistoryCrypt cards={crypt} players={players} />}
           </Tab.Panel>
           <Tab.Panel>
             {library && (
-              <Tab eventKey="library" title="Library">
-                <TwdCardsHistoryLibrary
-                  cards={library}
-                  players={players}
-                  handleClick={handleClick}
-                />
-              </Tab>
+              <TwdCardsHistoryLibrary cards={library} players={players} />
             )}
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
-      {shouldShowModal && (
-        <ResultModal
-          card={currentModalCard}
-          handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
-        />
-      )}
     </div>
   );
 };

@@ -59,11 +59,6 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   return (
     <>
       <DeckCryptHeader
@@ -144,7 +139,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </>

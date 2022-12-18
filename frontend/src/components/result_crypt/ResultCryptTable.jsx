@@ -21,22 +21,12 @@ const ResultCryptTable = ({
     handleModalCardClose,
   } = useModalCardController(resultCards);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
-
   const cardRows = resultCards.map((card, idx) => {
     return (
       <ResultCryptTableRow
         key={card.Id}
         card={card}
-        handleClick={handleClick}
+        handleClick={handleModalCardOpen}
         idx={idx}
         inRecommendation={inRecommendation}
         placement={placement}
@@ -54,7 +44,7 @@ const ResultCryptTable = ({
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </>

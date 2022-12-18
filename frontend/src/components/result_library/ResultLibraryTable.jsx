@@ -14,22 +14,12 @@ const ResultLibraryTable = ({ resultCards, placement }) => {
     handleModalCardClose,
   } = useModalCardController(resultCards);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
-
   const cardRows = resultCards.map((card, idx) => {
     return (
       <ResultLibraryTableRow
         key={card.Id}
         card={card}
-        handleClick={handleClick}
+        handleClick={handleModalCardOpen}
         idx={idx}
         placement={placement}
       />
@@ -45,7 +35,7 @@ const ResultLibraryTable = ({ resultCards, placement }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </>

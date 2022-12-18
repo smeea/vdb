@@ -35,11 +35,6 @@ const TwdResultLibraryKeyCards = ({ library }) => {
     handleModalCardClose,
   } = useModalCardController(keyCards);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   const handleClick = (card) => {
     handleModalCardOpen(card);
     setShowFloatingButtons(false);
@@ -120,7 +115,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </>

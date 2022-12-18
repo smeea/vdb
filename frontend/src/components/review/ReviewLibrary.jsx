@@ -49,11 +49,6 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype}>
       <div className="flex justify-between ">
@@ -174,7 +169,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
         />
       )}
       {modalDraw && (

@@ -48,10 +48,6 @@ const DeckProxyLibrary = ({
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype}>
@@ -111,7 +107,7 @@ const DeckProxyLibrary = ({
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
           nested={true}
         />
       )}

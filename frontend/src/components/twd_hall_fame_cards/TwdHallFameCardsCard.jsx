@@ -14,7 +14,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
       {card.Id > 200000 ? (
         <ResultCryptTableRowCommon
           card={card}
-          handleClick={() => handleClick(idx)}
+          handleClick={handleClick}
         />
       ) : (
         <ResultLibraryTableRowCommon card={card} handleClick={handleClick} />

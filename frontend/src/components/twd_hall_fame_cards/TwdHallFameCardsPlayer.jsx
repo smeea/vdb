@@ -53,14 +53,6 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     handleModalCardClose,
   } = useModalCardController([...cryptSorted, ...librarySorted]);
 
-  const handleCardClick = (idx) => {
-    handleModalCardOpen(idx);
-  };
-
-  const handleCloseCardModal = () => {
-    handleModalCardClose();
-  };
-
   const cryptSortMethods = {
     'Capacity - Max to Min': 'C↓',
     'Capacity - Min to Max': 'C↑',
@@ -160,7 +152,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                       key={card.Id}
                       idx={idx}
                       card={card}
-                      handleClick={handleCardClick}
+                      handleClick={handleModalCardOpen}
                     />
                   );
                 })}
@@ -208,7 +200,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                       key={card.Id}
                       idx={idx + cryptSorted.length}
                       card={card}
-                      handleClick={handleCardClick}
+                      handleClick={handleModalCardOpen}
                     />
                   );
                 })}
@@ -221,7 +213,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseCardModal}
+          handleClose={handleModalCardClose}
         />
       )}
     </>
