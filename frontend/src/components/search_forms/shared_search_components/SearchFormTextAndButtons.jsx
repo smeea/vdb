@@ -5,7 +5,7 @@ import {
   SearchAdditionalFormsText,
   SearchFormButtonLogicToggle,
   SearchFormButtonAddText,
-  SearchFormButtonDelText,
+  SearchFormButtonDel,
 } from '../shared_search_components';
 import { Input, Checkbox, Button, ButtonIconed } from 'components';
 import { useApp } from 'context';
@@ -109,7 +109,7 @@ const SearchFormTextAndButtons = ({
                 {value.length == 1 ? (
                   <SearchFormButtonAddText searchForm={searchForm} />
                 ) : (
-                  <SearchFormButtonDelText searchForm={searchForm} i={0} />
+                  <SearchFormButtonDel searchForm={searchForm} i={0} />
                 )}
               </>
             )}

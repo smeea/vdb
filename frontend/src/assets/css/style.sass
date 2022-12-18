@@ -64,7 +64,7 @@ body
 
 html
   scroll-padding-top: 60px
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     scroll-padding-top: 12px
 
 a:hover, span.link-like:hover, a, .link-like
@@ -399,7 +399,7 @@ button.btn-danger:hover
 .deck-crypt-table,
 .deck-library-table
   border: 1px solid var(--bg-secondary)
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     border: 0
   tr.result-odd, td.result-even
     border-bottom: 1px solid var(--bg-secondary)
@@ -434,7 +434,7 @@ button.btn-danger:hover
     width: 40px
   td.disciplines td
     min-width: 27px
-    @media (max-width: 767px)
+    @media (max-width: 639px)
       min-width: 24px
   td.clan-group
     width: 50px
@@ -454,22 +454,22 @@ button.btn-danger:hover
 
 .inventory-container-crypt
   height: calc(100vh - 195px)
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     height: calc(100vh - 132px)
 
 .inventory-container-library
   height: calc(100vh - 240px)
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     height: calc(100vh - 174px)
 
 .inventory-container-crypt-with-compact
   height: calc(100vh - 241px)
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     height: calc(100vh - 177px)
 
 .inventory-container-library-with-compact
   height: calc(100vh - 286px)
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     height: calc(100vh - 219px)
 
 .history-crypt-table,
@@ -477,7 +477,7 @@ button.btn-danger:hover
 .inventory-crypt-table,
 .inventory-library-table
   border: 1px solid var(--bg-secondary)
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     border: 0
   div.bordered
     border-bottom: 1px solid var(--bg-secondary)
@@ -505,22 +505,22 @@ button.btn-danger:hover
 .history-library-table
   div.year
     min-width: 60px
-    @media (max-width: 767px)
+    @media (max-width: 639px)
       min-width: 45px
   div.ytw
     min-width: 45px
-    @media (max-width: 767px)
+    @media (max-width: 639px)
       min-width: 25px
   div.player
     min-width: 250px
-    @media (max-width: 767px)
+    @media (max-width: 639px)
       min-width: 90px
     text-align: left
   div.name
     text-align: left
   div.button
     min-width: 110px
-    @media (max-width: 767px)
+    @media (max-width: 639px)
       min-width: 45px
   div.scroll-bar
     min-width: 18px
@@ -529,7 +529,7 @@ button.btn-danger:hover
 .inventory-crypt-table
   div.capacity
     min-width: 40px
-    @media (max-width: 767px)
+    @media (max-width: 639px)
       min-width: 32px
   div.disciplines
     min-width: 180px
@@ -561,14 +561,14 @@ button.btn-danger:hover
     min-width: 40px
   div.clan-disciplines
     min-width: 80px
-    @media (max-width: 767px)
+    @media (max-width: 639px)
       min-width: 32px
 
 .search-crypt-table,
 .search-library-table
   border-left: 1px solid var(--bg-secondary)
   border-right: 1px solid var(--bg-secondary)
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     border: 0
   tr.result-odd, td.result-even
     border-bottom: 1px solid var(--bg-secondary)
@@ -641,7 +641,7 @@ div.name
 
 .decks-table
   border: 1px solid var(--bg-secondary)
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     border: 0
   td
     border-bottom: 1px solid var(--bg-secondary)
@@ -652,7 +652,7 @@ div.name
   .name
     cursor: pointer
     min-width: 25vw
-    @media (max-width: 767px)
+    @media (max-width: 639px)
       min-width: 45vw
   .revision
     color: var(--fg-third)
@@ -669,7 +669,7 @@ div.name
 .inv-import-decks-table,
 .inv-import-precons-table
   border: 1px solid var(--bg-secondary)
-  @media (max-width: 767px)
+  @media (max-width: 639px)
     border: 0
   td
     border-bottom: 1px solid var(--bg-secondary)
@@ -819,34 +819,12 @@ button.quantity
   background: var(--border-primary)
   color: var(--bg-checkbox)
 
-button.multi-form
-  display: block
-  font-size: x-small
-  height: 18px
-  padding: 0
-  width: 18px
-
-input.quantity
-  color: black
-  font-size: 1.1em
-  height: 32px
-  text-align: center
-  width: 65px
-
 /* textarea:focus
 /*   color: var(--fg-primary)
-
-pre
-  font-family: monospace
-  font-size: large
-pre.twd-length-marker
-  margin-bottom: 0
-  margin-left: 13px
 /* hr
 /*   color: var(--border-primary)
-
-/* TODO test all sticky
-/* background-color: var(--bg-primary)
+/* sticky
+/*   background-color: var(--bg-primary)
 
 div.float-search
   background-color: #709070
@@ -869,15 +847,16 @@ div.float-random
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
 
-@media (max-width: 767px)
+@media (max-width: 639px)
   .twd-container,
   .search-container,
   .deck-container
     max-width: 100%
     padding-bottom: 40px
-  /* TODO check if required - basically all modals on mobile must be full-width
-  /* .modal-xl
-  /*   min-width: 100%
+  .modal-md,
+  .modal-lg,
+  .modal-xl
+    min-width: 100%
   .hof-cards-container,
   .hof-history-container,
   .hof-tournaments-container
@@ -885,13 +864,27 @@ tr:hover div.not-selected.inventory-card-custom
   .cards-container
     padding-bottom: 72px
 
-@media (min-width: 768px) and (max-width: 991px)
-  .hof-cards-container
-    max-width: 768px
+@media (min-width: 639px) and (max-width: 1023px)
   .cards-container,
   .hof-history-container,
   .hof-tournaments-container
-    max-width: 1024px
+    max-width: 100%
+  .hof-cards-container
+    max-width: 800px
+  .modal-md
+    min-width: 80%
+  .modal-lg
+    min-width: 100%
+  .modal-xl
+    min-width: 100%
+
+@media (min-width: 1024px) and (max-width: 1279px)
+  .cards-container,
+  .hof-history-container,
+  .hof-tournaments-container
+    max-width: 100%
+  .hof-cards-container
+    max-width: 800px
   .modal-md
     min-width: 65%
   .modal-lg
@@ -899,23 +892,9 @@ tr:hover div.not-selected.inventory-card-custom
   .modal-xl
     min-width: 95%
 
-@media (min-width: 992px) and (max-width: 1199px)
+@media (min-width: 1280px)
   .hof-cards-container
-    max-width: 768px
-  .cards-container,
-  .hof-history-container,
-  .hof-tournaments-container
-    max-width: 1140px
-  .modal-md
-    min-width: 65%
-  .modal-lg
-    min-width: 80%
-  .modal-xl
-    min-width: 95%
-
-@media (min-width: 1200px)
-  .hof-cards-container
-    max-width: 768px
+    max-width: 639px
   .cards-container,
   .hof-history-container,
   .hof-tournaments-container
@@ -929,7 +908,7 @@ tr:hover div.not-selected.inventory-card-custom
   .modal-xl
     min-width: 85%
 
-@media (min-width: 1600px)
+@media (min-width: 1536px)
   .search-container,
   .navbar-container
     max-width: 1650px

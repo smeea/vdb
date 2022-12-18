@@ -18,7 +18,7 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
       />
 
       <div
-        className={`fixed inset-0 flex p-8 ${
+        className={`fixed inset-0 flex p-0 sm:p-8 ${
           centered ? 'items-center' : 'items-start'
         } justify-center overflow-auto`}
       >

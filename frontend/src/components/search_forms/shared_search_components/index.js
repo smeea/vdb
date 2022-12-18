@@ -6,6 +6,5 @@ export { default as SearchFormButtonLogicToggle } from './SearchFormButtonLogicT
 export { default as SearchFormSet } from './SearchFormSet.jsx';
 export { default as SearchFormArtist } from './SearchFormArtist.jsx';
 export { default as SearchFormButtonDel } from './SearchFormButtonDel.jsx';
-export { default as SearchFormButtonDelText } from './SearchFormButtonDelText.jsx';
 export { default as SearchFormPrecon } from './SearchFormPrecon.jsx';
 export { default as SearchFormTextAndButtons } from './SearchFormTextAndButtons.jsx';

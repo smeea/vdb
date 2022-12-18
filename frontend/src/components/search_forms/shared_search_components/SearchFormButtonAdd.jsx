@@ -12,7 +12,11 @@ const SearchFormButtonAdd = ({ name, searchForm, withMoreless }) => {
   };
 
   return (
-    <Button className="multi-form" variant="primary" onClick={() => addForm()}>
+    <Button
+      className="w-[18px] h-[18px] px-0 py-0"
+      variant="primary"
+      onClick={() => addForm()}
+    >
       <Plus />
     </Button>
   );

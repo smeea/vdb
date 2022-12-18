@@ -3,7 +3,7 @@ import { useImmer } from 'use-immer';
 import { Input, Checkbox } from 'components';
 import {
   SearchFormButtonAddText,
-  SearchFormButtonDelText,
+  SearchFormButtonDel,
   SearchFormButtonLogicToggle,
 } from '../shared_search_components';
 
@@ -73,7 +73,7 @@ const SearchAdditionalFormsText = ({
                   searchForm={searchForm}
                 />
                 <SearchFormButtonAddText searchForm={searchForm} />
-                <SearchFormButtonDelText searchForm={searchForm} i={i} />
+                <SearchFormButtonDel searchForm={searchForm} i={i} />
               </div>
               <div className="flex items-center justify-end space-x-4">
                 {options.map((opt, index) => {

@@ -54,9 +54,9 @@ const SearchFormButtonLogicToggle = ({
 
   return (
     <Button
-      className="multi-form"
+      className="w-[18px] h-[18px] px-0 py-0 text-[10px]"
       variant="primary"
-      onClick={() => handleToggleForm()}
+      onClick={handleToggleForm}
       title={title}
     >
       {icon}

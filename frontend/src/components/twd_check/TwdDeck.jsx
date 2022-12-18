@@ -106,10 +106,10 @@ const TwdDeck = ({ eventId, setEventId }) => {
       <div className="flex flex-row">
         <div className="xl:basis-1/6">
           <div className="flex justify-end">
-            <pre>{fieldNames}</pre>
+            <pre className="font-mono text-sm">{fieldNames}</pre>
           </div>
           <div className="flex justify-end">
-            <pre className="gray">{descriptionInfo}</pre>
+            <pre className="font-mono text-sm gray">{descriptionInfo}</pre>
           </div>
         </div>
         <div className="xl:basis-10/12">
@@ -122,7 +122,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
             ref={refText}
             autoFocus
           />
-          <pre className="twd-length-marker text-neutral-500">
+          <pre className="font-mono text-sm mb-0 ml-[13px] text-neutral-500">
             {lengthMarker}
           </pre>
         </div>

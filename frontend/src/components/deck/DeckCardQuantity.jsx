@@ -95,10 +95,9 @@ const DeckCardQuantity = ({
             {manual ? (
               <form onSubmit={handleSubmit}>
                 <input
-                  className="quantity"
+                  className="w-[63px] h[32px] text-center text-black bg-red-500"
                   placeholder=""
                   type="number"
-                  name="Quantity"
                   autoFocus={true}
                   value={state}
                   onBlur={handleSubmit}
