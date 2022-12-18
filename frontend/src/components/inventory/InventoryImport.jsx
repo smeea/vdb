@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   ErrorOverlay,
   InventoryImportButton,
@@ -12,7 +12,7 @@ const InventoryImport = () => {
 
   const [importError, setImportError] = useState(false);
   const [badCards, setBadCards] = useState([]);
-  const fileInput = React.createRef();
+  const fileInput = useRef();
 
   const handleFileInputClick = () => {
     fileInput.current.click();

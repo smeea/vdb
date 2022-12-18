@@ -15,7 +15,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
   const [hidePassword, setHidePassword] = useState(true);
   const [spinnerState, setSpinnerState] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
-  const refPassword = useRef(null);
+  const refPassword = useRef();
 
   const handleChange = (event) => setPassword(event.target.value);
 

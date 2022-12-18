@@ -102,9 +102,9 @@ const Inventory = () => {
   const [missingByDiscipline, setMissingByDiscipline] = useState();
 
   const newCryptFocus = () => newCryptRef.current.focus();
-  const newCryptRef = useRef(null);
+  const newCryptRef = useRef();
   const newLibraryFocus = () => newLibraryRef.current.focus();
-  const newLibraryRef = useRef(null);
+  const newLibraryRef = useRef();
 
   const X_SPACING = 'space-x-8';
   const TOP_SPACING = 'pt-8';

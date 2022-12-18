@@ -15,6 +15,17 @@ export const countCards = (cardsList) => {
   return cardsList.reduce((acc, card) => acc + card.q, 0);
 };
 
+export const countDisciplines = (cardsList) => {
+  if (!cardsList.length) return 0;
+  return cardsList.reduce((acc, card) => {
+    const n = card.c
+      ? Object.keys(card.c.Disciplines).length
+      : Object.keys(card.Disciplines).length;
+    if (acc > n) return acc;
+    return n;
+  });
+};
+
 export const countTotalCost = (cardsList, type) => {
   if (!cardsList.length) return 0;
   return cardsList

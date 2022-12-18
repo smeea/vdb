@@ -8,8 +8,8 @@ const TwdDeck = ({ eventId, setEventId }) => {
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
-  const fileInput = React.createRef();
-  const refText = useRef(null);
+  const fileInput = useRef();
+  const refText = useRef();
 
   const handleLoad = () => {
     fileInput.current.click();

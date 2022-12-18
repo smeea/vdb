@@ -1,6 +1,7 @@
 import React from 'react';
 import { ResultModal, ResultCryptTableRow } from 'components';
 import { useApp } from 'context';
+import { countDisciplines } from 'utils';
 import { useModalCardController } from 'hooks';
 
 const ResultCryptTable = ({
@@ -10,14 +11,7 @@ const ResultCryptTable = ({
   inRecommendation,
 }) => {
   const { setShowFloatingButtons } = useApp();
-
-  let maxDisciplines = 0;
-  resultCards.map((card) => {
-    const n = Object.keys(card.Disciplines).length;
-    if (maxDisciplines < n) {
-      maxDisciplines = n;
-    }
-  });
+  const maxDisciplines = countDisciplines(resultCards);
 
   const {
     currentModalCard,

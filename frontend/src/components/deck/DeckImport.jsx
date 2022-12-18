@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
@@ -30,8 +30,8 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const [showAmaranthModal, setShowAmaranthModal] = useState(false);
   const [badCards, setBadCards] = useState([]);
 
-  const fileInput = React.createRef();
-  const fileInputAnonymous = React.createRef();
+  const fileInput = useRef();
+  const fileInputAnonymous = useRef();
 
   const handleFileInputClick = (isAnonymous) => {
     isAnonymous

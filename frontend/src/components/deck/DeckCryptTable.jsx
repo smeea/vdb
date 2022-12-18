@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { DeckCryptTableRow, DeckDrawProbabilityModal } from 'components';
 import { useApp } from 'context';
+import { countDisciplines } from 'utils';
 
 const DeckCryptTable = ({
   deck,
@@ -18,14 +19,7 @@ const DeckCryptTable = ({
 }) => {
   const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
   const [modalDraw, setModalDraw] = useState();
-
-  let maxDisciplines = 0;
-  cards.map((card) => {
-    const n = Object.keys(card.c.Disciplines).length;
-    if (maxDisciplines < n) {
-      maxDisciplines = n;
-    }
-  });
+  const maxDisciplines = countDisciplines(cards);
 
   const disableOverlay = useMemo(
     () => isMobile || (!isDesktop && isModalOpen),

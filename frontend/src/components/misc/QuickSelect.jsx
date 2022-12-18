@@ -8,7 +8,7 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
   const { isMobile, cryptCardBase, libraryCardBase, playtest } = useApp();
   const { filterCrypt } = useFilters(cryptCardBase);
   const { filterLibrary } = useFilters(libraryCardBase);
-  const ref = useRef(null);
+  const ref = useRef();
 
   const handleChange = (event) => {
     setCard(

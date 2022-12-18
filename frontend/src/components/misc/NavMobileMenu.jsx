@@ -10,7 +10,7 @@ import { useApp } from 'context';
 
 const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   const { inventoryMode, toggleInventoryMode, username } = useApp();
-  const menuRef = useRef(null);
+  const menuRef = useRef();
 
   return (
     <div

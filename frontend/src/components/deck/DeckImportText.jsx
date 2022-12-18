@@ -18,7 +18,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
-  const refText = useRef(null);
+  const refText = useRef();
 
   const handleChange = (event) => {
     setDeckText(event.target.value);

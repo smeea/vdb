@@ -15,7 +15,7 @@ const ModalConfirmation = ({
   const { isMobile } = useApp();
   const [confirmation, setConfirmation] = useState('');
   const [errorConfirmation, setErrorConfirmation] = useState(false);
-  const refConfirmation = useRef(null);
+  const refConfirmation = useRef();
 
   const confirm = () => {
     if (withConfirmation) {

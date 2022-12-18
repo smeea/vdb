@@ -11,7 +11,7 @@ const AccountPlaytestAdd = ({
   const [username, setUsername] = useState('');
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef();
 
   const addPlaytester = () => {
     setSpinnerState(true);

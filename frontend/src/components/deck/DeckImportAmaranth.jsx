@@ -11,7 +11,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
-  const refUrl = useRef(null);
+  const refUrl = useRef();
   const [idReference, setIdReference] = useState();
   const [spinnerState, setSpinnerState] = useState(false);
 
