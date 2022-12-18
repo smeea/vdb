@@ -5,15 +5,15 @@ import { ButtonIconed } from 'components';
 
 const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
-  const [state, setState] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
     const deckUrl = `${process.env.ROOT_URL}review/${deckid}#${urlDiff}`;
 
     navigator.clipboard.writeText(deckUrl);
-    setState(true);
+    setSuccess(true);
     setTimeout(() => {
-      setState(false);
+      setSuccess(false);
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
     }, 1000);
@@ -21,11 +21,11 @@ const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
 
   return (
     <ButtonIconed
-      variant={state ? 'success' : 'secondary'}
+      variant={success ? 'success' : 'secondary'}
       onClick={handleStandard}
       title="Copy URL"
       icon={<Link45Deg width="19" height="19" viewBox="0 0 15 15" />}
-      text={state ? 'Copied' : 'Copy URL'}
+      text={success ? 'Copied' : 'Copy URL'}
     />
   );
 };

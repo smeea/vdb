@@ -7,23 +7,23 @@ import { useApp, deckUpdate } from 'context';
 const DeckChangeAuthor = ({ deck }) => {
   const { isMobile } = useApp();
   const { deckid, author, isAuthor, isPublic, isFrozen } = deck;
-  const [state, setState] = useState(author);
-  const [buttonState, setButtonState] = useState(false);
+  const [value, setValue] = useState(author);
+  const [success, setSuccess] = useState(false);
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (state !== author) setState(author);
+    if (value !== author) setValue(author);
   }, [author]);
 
   const handleChange = (event) => {
-    setState(event.target.value);
+    setValue(event.target.value);
   };
 
   const deckChangeAuthor = () => {
-    deckUpdate(deckid, 'author', state);
-    setButtonState(true);
+    deckUpdate(deckid, 'author', value);
+    setSuccess(true);
     setTimeout(() => {
-      setButtonState(false);
+      setSuccess(false);
     }, 1000);
   };
 
@@ -33,7 +33,7 @@ const DeckChangeAuthor = ({ deck }) => {
   };
 
   const handleOnBlur = () => {
-    if (state !== author) {
+    if (value !== author) {
       deckChangeAuthor();
     }
   };
@@ -47,14 +47,14 @@ const DeckChangeAuthor = ({ deck }) => {
         <PersonFill width="20" height="20" viewBox="0 0 16 16" />
       </div>
       <Input
-        value={state}
+        value={value}
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
         className="w-full rounded-l-none"
       />
       {isMobile && isAuthor && (
-        <Button variant={buttonState ? 'success' : 'primary'} type="submit">
+        <Button variant={success ? 'success' : 'primary'} type="submit">
           <Check2 />
         </Button>
       )}

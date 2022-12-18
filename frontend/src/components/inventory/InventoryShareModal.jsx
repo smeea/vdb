@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import X from 'assets/images/icons/x.svg';
-import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
 import { ButtonFloat, Modal, Button, ButtonIconed } from 'components';
@@ -16,7 +15,7 @@ const InventoryShareModal = ({ setShow }) => {
     setInventoryKey,
   } = useApp();
 
-  const [state, setState] = useState();
+  const [success, setSuccess] = useState();
   const [shareUrl, setShareUrl] = useState(
     `${process.env.ROOT_URL}inventory?key=${inventoryKey}`
   );
@@ -47,9 +46,9 @@ const InventoryShareModal = ({ setShow }) => {
         navigator.clipboard.writeText(u);
       })
       .then(() => {
-        setState(true);
+        setSuccess(true);
         setTimeout(() => {
-          setState(false);
+          setSuccess(false);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
         }, 1000);
@@ -92,16 +91,10 @@ const InventoryShareModal = ({ setShow }) => {
         </div>
         <div>
           <ButtonIconed
-            variant="primary"
+            variant={success ? 'success' : 'primary'}
             onClick={createUrl}
             title="Create URL"
-            icon={
-              !state ? (
-                <Link45Deg width="19" height="19" viewBox="0 0 14 14" />
-              ) : (
-                <ArrowRepeat />
-              )
-            }
+            icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
             text="Create URL"
           />
           <Button variant="primary" onClick={handleClose}>

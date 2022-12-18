@@ -6,15 +6,15 @@ import { useApp } from 'context';
 
 const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
-  const [state, setState] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
     const url = `${process.env.ROOT_URL}decks/${deck.deckid.replace(' ', '_')}`;
 
     navigator.clipboard.writeText(url);
-    setState(true);
+    setSuccess(true);
     setTimeout(() => {
-      setState(false);
+      setSuccess(false);
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
     }, 1000);
@@ -32,9 +32,9 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
     const url = getDeckInUrl();
 
     navigator.clipboard.writeText(url);
-    setState(true);
+    setSuccess(true);
     setTimeout(() => {
-      setState(false);
+      setSuccess(false);
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
     }, 1000);
@@ -85,9 +85,9 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
         navigator.clipboard.writeText(url);
       })
       .then(() => {
-        setState(true);
+        setSuccess(true);
         setTimeout(() => {
-          setState(false);
+          setSuccess(false);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
         }, 1000);
@@ -136,8 +136,8 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
             viewBox="0 0 15 15"
           />
         }
-        variant={state ? 'success' : noText ? 'primary' : 'secondary'}
-        text={state ? 'Copied' : 'Copy URL'}
+        variant={success ? 'success' : noText ? 'primary' : 'secondary'}
+        text={success ? 'Copied' : 'Copy URL'}
       />
       <Menu.Items>
         <>

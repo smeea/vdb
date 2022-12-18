@@ -327,24 +327,11 @@ const Review = () => {
           size="sm"
           centered
         >
-          <div>
-            <ReviewButtons
-              backDeckid={deck?.deckid}
-              deckid={deckFrom?.deckid}
-              urlDiff={urlDiff}
-            />
-            <div className="flex justify-end ">
-              <ButtonIconed
-                variant="secondary"
-                onClick={() => {
-                  setShowMenuButtons(false);
-                  setShowFloatingButtons(true);
-                }}
-                title="Close"
-                icon={<X width="24" height="24" viewBox="0 0 16 16" />}
-              />
-            </div>
-          </div>
+          <ReviewButtons
+            backDeckid={deck?.deckid}
+            deckid={deckFrom?.deckid}
+            urlDiff={urlDiff}
+          />
         </Modal>
       )}
     </div>

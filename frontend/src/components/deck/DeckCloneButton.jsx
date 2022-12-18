@@ -7,8 +7,7 @@ import { ButtonIconed } from 'components';
 const DeckCloneButton = ({ deck, noText, noRedirect }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
-
-  const [state, setState] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const cloneDeck = () => {
     const name = `${deck.name} [by ${deck.author}]`;
@@ -60,12 +59,13 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
           };
 
           if (!noRedirect) navigate(`/decks/${data.deckid}`);
-          setState(true);
+          setSuccess(true);
           setTimeout(() => {
-            setState(false);
+            setSuccess(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
           }, 1000);
-          setShowMenuButtons(false);
-          setShowFloatingButtons(true);
+
         }
       });
   };
@@ -73,11 +73,11 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
   return (
     <ButtonIconed
       className="w-full"
-      variant={state ? 'success' : noText ? 'primary' : 'secondary'}
+      variant={success ? 'success' : noText ? 'primary' : 'secondary'}
       onClick={cloneDeck}
       title="Clone Deck to your account for editing"
       icon={<Files />}
-      text={!noText && (state ? 'Cloned' : 'Clone')}
+      text={!noText && (success ? 'Cloned' : 'Clone')}
     />
   );
 };

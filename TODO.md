@@ -20,4 +20,3 @@
 - Account tooltips
 - Style forms with https://github.com/tailwindlabs/tailwindcss-forms
 - Test autoFocus
-- Fix buttonOkState (search by setTimeout)

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import PenFill from 'assets/images/icons/pen-fill.svg';
 import { Input, Tooltip, ErrorOverlay, Modal, Button } from 'components';
@@ -10,29 +9,25 @@ const AccountChangeName = () => {
   const { publicName, setPublicName, isMobile } = useApp();
   const [state, setState] = useState(publicName || '');
   const [showModal, setShowModal] = useState(false);
-  const [buttonState, setButtonState] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-  const [spinnerState, setSpinnerState] = useState(false);
 
   const onError = (e) => {
     if (e.message != 401) {
       setError('CONNECTION PROBLEM');
     }
-    setSpinnerState(false);
   };
 
   const onSuccess = () => {
-    setSpinnerState(false);
-    setButtonState(true);
     setPublicName(state);
+    setSuccess(true);
     setTimeout(() => {
-      setButtonState(false);
+      setSuccess(false);
     }, 1000);
   };
 
   const changeName = () => {
     setError(false);
-    setSpinnerState(true);
     userServices.changeName(state, onSuccess, onError);
   };
 
@@ -82,10 +77,10 @@ const AccountChangeName = () => {
         />
         <Button
           className="rounded-l-none"
-          variant={buttonState ? 'success' : 'primary'}
+          variant={success ? 'success' : 'primary'}
           type="submit"
         >
-          {!spinnerState ? <Check2 /> : <Spinner />}
+          <Check2 />
         </Button>
         {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
       </form>

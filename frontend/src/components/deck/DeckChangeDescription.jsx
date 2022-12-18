@@ -9,23 +9,23 @@ import { useApp, deckUpdate } from 'context';
 const DeckDescription = ({ deck, folded, setFolded }) => {
   const { isMobile } = useApp();
   const { deckid, description, isAuthor, isPublic, isFrozen } = deck;
-  const [state, setState] = useState(description);
-  const [buttonState, setButtonState] = useState(false);
+  const [value, setValue] = useState(description);
+  const [success, setSuccess] = useState(false);
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (state !== description) setState(description);
+    if (value !== description) setValue(description);
   }, [description]);
 
   const handleChange = (event) => {
-    setState(event.target.value);
+    setValue(event.target.value);
   };
 
   const deckChangeDescription = () => {
-    deckUpdate(deckid, 'description', state);
-    setButtonState(true);
+    deckUpdate(deckid, 'description', value);
+    setSuccess(true);
     setTimeout(() => {
-      setButtonState(false);
+      setSuccess(false);
     }, 1000);
   };
 
@@ -35,7 +35,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   };
 
   const handleOnBlur = () => {
-    if (state !== description) {
+    if (value !== description) {
       deckChangeDescription();
     }
   };
@@ -54,7 +54,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
             folded ? '' : 'w-full'
           } border-2 border-red-400 bg-blue-900 px-1.5 py-1`}
           type="text"
-          value={state}
+          value={value}
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!isEditable}
@@ -66,7 +66,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
           } border-2 border-red-400 bg-blue-900 px-1.5 py-1`}
           rows={12}
           type="text"
-          value={state}
+          value={value}
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!isEditable}
@@ -83,7 +83,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
         </Button>
       )}
       {isMobile && isAuthor && (
-        <Button variant={buttonState ? 'success' : 'primary'} type="submit">
+        <Button variant={success ? 'success' : 'primary'} type="submit">
           <Check2 />
         </Button>
       )}

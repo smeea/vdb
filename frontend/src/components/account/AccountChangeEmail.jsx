@@ -15,12 +15,10 @@ const AccountChangeEmail = () => {
   const [formPassword, setFormPassword] = useState('');
   const [formEmail, setFormEmail] = useState('');
   const [showModal, setShowModal] = useState(false);
-  // const [buttonState, setButtonState] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [spinnerState, setSpinnerState] = useState(false);
 
   const onError = (e) => {
-    setSpinnerState(false);
     if (e.message == 401) {
       setPasswordError('WRONG PASSWORD');
     } else {
@@ -29,18 +27,16 @@ const AccountChangeEmail = () => {
   };
 
   const onSuccess = () => {
-    setSpinnerState(false);
     setEmail(formEmail);
     setFormPassword('');
-    // setButtonState(true);
-    // setTimeout(() => {
-    //   setButtonState(false);
-    // }, 1000);
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 1000);
   };
 
   const changeEmail = () => {
     setPasswordError(false);
-    setSpinnerState(true);
     userServices.changeEmail(formPassword, formEmail, onSuccess, onError);
   };
 
@@ -80,7 +76,6 @@ const AccountChangeEmail = () => {
             <AccountPasswordForm
               value={formPassword}
               setValue={setFormPassword}
-              spinnerState={spinnerState}
             />
           </>
         ) : (
@@ -93,7 +88,7 @@ const AccountChangeEmail = () => {
             <AccountPasswordForm
               value={formPassword}
               setValue={setFormPassword}
-              spinnerState={spinnerState}
+              success={success}
             />
           </>
         )}

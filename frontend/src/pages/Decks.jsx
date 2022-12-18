@@ -343,25 +343,23 @@ const Decks = () => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          centered={true}
           size="sm"
+          centered
         >
-          <div>
-            <DeckButtons
-              deck={deck}
-              setShowInfo={setShowInfo}
-              setShowDraw={setShowDraw}
-              setShowSeating={setShowSeating}
-              setShowRecommendation={setShowRecommendation}
-              setQrUrl={setQrUrl}
-              missingCrypt={missingCrypt}
-              missingLibrary={missingLibrary}
-              handleClose={() => {
-                setShowMenuButtons(false);
-                setShowFloatingButtons(true);
-              }}
-            />
-          </div>
+          <DeckButtons
+            deck={deck}
+            setShowInfo={setShowInfo}
+            setShowDraw={setShowDraw}
+            setShowSeating={setShowSeating}
+            setShowRecommendation={setShowRecommendation}
+            setQrUrl={setQrUrl}
+            missingCrypt={missingCrypt}
+            missingLibrary={missingLibrary}
+            handleClose={() => {
+              setShowMenuButtons(false);
+              setShowFloatingButtons(true);
+            }}
+          />
         </Modal>
       )}
       {showDeckSelectAdv && (

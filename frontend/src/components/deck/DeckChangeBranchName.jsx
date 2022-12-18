@@ -7,23 +7,23 @@ import { useApp, deckUpdate } from 'context';
 const DeckChangeBranchName = ({ deck }) => {
   const { isMobile } = useApp();
   const { deckid, branchName, isAuthor, isPublic, isFrozen } = deck;
-  const [state, setState] = useState(branchName);
-  const [buttonState, setButtonState] = useState(false);
+  const [value, setValue] = useState(branchName);
+  const [success, setSuccess] = useState(false);
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (state !== branchName) setState(branchName);
+    if (value !== branchName) setValue(branchName);
   }, [branchName]);
 
   const handleChange = (event) => {
-    setState(event.target.value);
+    setValue(event.target.value);
   };
 
   const deckChangeBranchName = () => {
-    deckUpdate(deckid, 'branchName', state);
-    setButtonState(true);
+    deckUpdate(deckid, 'branchName', value);
+    setSuccess(true);
     setTimeout(() => {
-      setButtonState(false);
+      setSuccess(false);
     }, 1000);
   };
 
@@ -33,7 +33,7 @@ const DeckChangeBranchName = ({ deck }) => {
   };
 
   const handleOnBlur = () => {
-    if (state != branchName) {
+    if (value != branchName) {
       deckChangeBranchName();
     }
   };
@@ -42,7 +42,7 @@ const DeckChangeBranchName = ({ deck }) => {
     <form className="flex" onSubmit={handleSubmit}>
       {isMobile && <PaletteFill />}
       <Input
-        value={state}
+        value={value}
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
@@ -51,7 +51,7 @@ const DeckChangeBranchName = ({ deck }) => {
       {isMobile && isAuthor && (
         <Button
           className="rounded-l-none"
-          variant={buttonState ? 'success' : 'primary'}
+          variant={success ? 'success' : 'primary'}
           type="submit"
         >
           <Check2 />

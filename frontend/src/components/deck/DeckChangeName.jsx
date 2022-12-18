@@ -10,23 +10,23 @@ import { Input, Button, DeckFreezeButton } from 'components';
 const DeckChangeName = ({ deck }) => {
   const { isMobile } = useApp();
   const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
-  const [state, setState] = useState(deck.name);
-  const [buttonState, setButtonState] = useState(false);
+  const [value, setValue] = useState(deck.name);
+  const [success, setSuccess] = useState(false);
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (state !== deck.name) setState(deck.name);
+    if (value !== deck.name) setValue(deck.name);
   }, [deck.name]);
 
   const handleChange = (event) => {
-    setState(event.target.value);
+    setValue(event.target.value);
   };
 
   const deckChangeName = () => {
-    deckUpdate(deck.deckid, 'name', state);
-    setButtonState(true);
+    deckUpdate(deck.deckid, 'name', value);
+    setSuccess(true);
     setTimeout(() => {
-      setButtonState(false);
+      setSuccess(false);
     }, 1000);
   };
 
@@ -36,7 +36,7 @@ const DeckChangeName = ({ deck }) => {
   };
 
   const handleOnBlur = () => {
-    if (state != deck.name) {
+    if (value != deck.name) {
       deckChangeName();
     }
   };
@@ -50,7 +50,7 @@ const DeckChangeName = ({ deck }) => {
         <TagFill width="20" height="20" viewBox="0 0 16 16" />
       </div>
       <Input
-        value={state}
+        value={value}
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
@@ -81,7 +81,7 @@ const DeckChangeName = ({ deck }) => {
       {isMobile && isEditable && (
         <Button
           className="rounded-l-none"
-          variant={buttonState ? 'success' : 'primary'}
+          variant={success ? 'success' : 'primary'}
           type="submit"
         >
           <Check2 />

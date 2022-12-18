@@ -10,8 +10,7 @@ const AccountChangePassword = () => {
   const [formPassword, setFormPassword] = useState('');
   const [formNewPassword, setFormNewPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);
-  const [spinnerState, setSpinnerState] = useState(false);
-  // const [buttonState, setButtonState] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const onError = (e) => {
     if (e.message == 401) {
@@ -19,23 +18,19 @@ const AccountChangePassword = () => {
     } else {
       setPasswordError('CONNECTION PROBLEM');
     }
-    setSpinnerState(false);
   };
 
   const onSuccess = () => {
-    setSpinnerState(false);
-    // setButtonState(true);
-    // setTimeout(() => {
-    //   setButtonState(false);
-    // }, 1000);
     setFormPassword('');
     setFormNewPassword('');
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 1000);
   };
 
   const changePassword = () => {
     setPasswordError(false);
-    setSpinnerState(true);
-
     userServices.changePassword(
       formPassword,
       formNewPassword,
@@ -66,7 +61,7 @@ const AccountChangePassword = () => {
             <AccountPasswordForm
               value={formNewPassword}
               setValue={setFormNewPassword}
-              spinnerState={spinnerState}
+              success={success}
               isNew
             />
           </>
@@ -80,7 +75,7 @@ const AccountChangePassword = () => {
             <AccountPasswordForm
               value={formNewPassword}
               setValue={setFormNewPassword}
-              spinnerState={spinnerState}
+              success={success}
               isNew
             />
           </>

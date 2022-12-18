@@ -5,14 +5,13 @@ import { ButtonIconed } from 'components';
 
 const ReviewApplyButton = ({ deck, parentId }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
-  const [state, setState] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
     deckUpdate(parentId, 'cards', { crypt: deck.crypt, library: deck.library });
-
-    setState(true);
+    setSuccess(true);
     setTimeout(() => {
-      setState(false);
+      setSuccess(false);
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
     }, 1000);
@@ -20,11 +19,11 @@ const ReviewApplyButton = ({ deck, parentId }) => {
 
   return (
     <ButtonIconed
-      variant={state ? 'success' : 'secondary'}
+      variant={success ? 'success' : 'secondary'}
       onClick={handleStandard}
       title="Apply Changes"
       icon={<Check2All width="20" height="20" viewBox="0 0 16 16" />}
-      text={state ? 'Applied' : 'Apply Changes'}
+      text={success ? 'Applied' : 'Apply Changes'}
     />
   );
 };
