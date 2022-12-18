@@ -222,7 +222,7 @@ const Inventory = () => {
           centered
           size="sm"
         >
-          <div className="z-2 sticky top-[77px] space-y-3">
+          <div className="z-20 sticky top-[77px] space-y-3">
             <InventoryButtons
               crypt={
                 sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt

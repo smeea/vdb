@@ -91,7 +91,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
     >
       <div>
         <textarea
-          className="deck-import "
+          className="text-sm font-mono focus:text-red-500"
           rows={isMobile ? '20' : '25'}
           value={deckText}
           placeholder={placeholder}

@@ -113,9 +113,8 @@ const TwdDeck = ({ eventId, setEventId }) => {
           </div>
         </div>
         <div className="xl:basis-10/12">
-          <input
-            className="deck-import"
-            as="textarea"
+          <textarea
+            className="text-sm font-mono focus:text-red-500"
             rows={window.innerHeight / 21 - 14}
             value={deckText}
             placeholder={placeholder}

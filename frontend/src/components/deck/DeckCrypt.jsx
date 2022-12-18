@@ -74,7 +74,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
   return (
     <div
       className={`${!inSearch && !inMissing && !inAdvSelect ? '' : ''} ${
-        !isMobile && !inAdvSelect ? 'sticky-deck-crypt' : ''
+        !isMobile && !inAdvSelect ? null : 'sticky top-[32px] z-10'
       }`}
     >
       <DeckCryptHeader

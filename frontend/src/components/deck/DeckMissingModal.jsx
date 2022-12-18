@@ -29,7 +29,11 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
       <div>
         <div className="flex flex-row ">
           <div className="basis-full md:basis-7/12">
-            <div className={isMobile || inInventory ? null : 'sticky-modal'}>
+            <div
+              className={
+                isMobile || inInventory ? null : 'sticky top-[22px] z-10'
+              }
+            >
               <DeckCrypt
                 deck={{ ...deck, crypt: crypt, library: library }}
                 inMissing

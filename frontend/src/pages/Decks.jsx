@@ -276,7 +276,7 @@ const Decks = () => {
         </div>
         {!isMobile && (
           <div className="hidden lg:flex lg:basis-2/12">
-            <div className="z-2 sticky top-[77px]">
+            <div className="z-20 sticky top-[77px]">
               <DeckButtons
                 deck={deck}
                 setShowInfo={setShowInfo}

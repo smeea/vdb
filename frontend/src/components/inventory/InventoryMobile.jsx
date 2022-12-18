@@ -52,7 +52,7 @@ const InventoryMobile = ({
             />
           </div>
           {newCryptId && (
-            <div className="sticky-inv-result">
+            <div className="sticky top-[46px] sm:top-[102px] z-10">
               <InventoryCrypt
                 cards={{
                   [newCryptId]: inventoryCrypt[newCryptId]
@@ -90,7 +90,7 @@ const InventoryMobile = ({
             />
           </div>
           {newLibraryId && (
-            <div className="sticky-inv-result">
+            <div className="sticky top-[46px] sm:top-[102px] z-10">
               <InventoryLibrary
                 cards={{
                   [newLibraryId]: inventoryLibrary[newLibraryId]

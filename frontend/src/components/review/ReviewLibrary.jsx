@@ -107,7 +107,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
 
   return (
     <>
-      <div className={!isMobile ? 'sticky-deck-library  ' : null}>
+      <div className={isMobile ? null : 'sticky top-[32px] z-10'}>
         <DeckLibraryHeader
           isMobile={isMobile}
           libraryTotal={libraryTotal}

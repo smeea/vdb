@@ -70,7 +70,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   };
 
   return (
-    <div className={` ${isMobile ? null : 'sticky-deck-crypt'}`}>
+    <div className={isMobile ? null : 'sticky top-[32px] z-10'}>
       <DeckCryptHeader
         cryptTotal={cryptTotal}
         cryptGroups={cryptGroups}

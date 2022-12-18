@@ -108,7 +108,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
   return (
     <div className="space-y-2">
       <div
-        className={`${!inMissing && !isMobile ? 'sticky-deck-library' : null}`}
+        className={!inMissing && !isMobile ? 'sticky top-[32px] z-10' : null}
       >
         <DeckLibraryHeader
           isMobile={isMobile}
