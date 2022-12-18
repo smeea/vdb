@@ -275,7 +275,7 @@ const Decks = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="hide-on-lt992px lg:basis-2/12">
+          <div className="hidden lg:flex lg:basis-2/12">
             <div className="z-2 sticky top-[77px]">
               <DeckButtons
                 deck={deck}
@@ -331,7 +331,7 @@ const Decks = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          variant="hide-on-gt992px float-menu"
+          variant="lg:hidden float-menu"
         >
           <List width="35" height="35" viewBox="0 0 16 16" />
         </ButtonFloat>

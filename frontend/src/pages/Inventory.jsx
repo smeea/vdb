@@ -208,7 +208,7 @@ const Inventory = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          variant="hide-on-gt992px float-menu"
+          variant="lg:hidden float-menu"
         >
           <List width="35" height="35" viewBox="0 0 16 16" />
         </ButtonFloat>
