@@ -68,7 +68,7 @@ const DiffCryptTable = ({
     return (
       <React.Fragment key={card.c.Id}>
         <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
-          {isEditable ? (
+          {isEditable || inReview ? (
             <>
               {!inReview && inventoryMode && decks ? (
                 <td className="quantity">

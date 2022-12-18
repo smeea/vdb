@@ -1,5 +1,11 @@
 [
   {
+    "version": "2022-12-16",
+    "changes": [
+      "Fix deck review"
+    ]
+  },
+  {
     "version": "2022-12-01",
     "changes": [
       "Add visual indicator to card change via swipes and several fixes (it is not yet perfect but should be better and I try to graudally improve it)",
