@@ -11,7 +11,7 @@ VDB consist of two components communicating with each other.
 ### FRONTEND
 Serve the UI for the modern browsers using:
 ```
-   ReactJS
+   ReactJS (v18)
    Tailwind CSS
 ```
 
