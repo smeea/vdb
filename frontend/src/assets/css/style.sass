@@ -3,7 +3,6 @@
 @tailwind utilities
 
 :root
-  --bs-border-color: var(--border-primary)
   @media (prefers-color-scheme: light)
     --bg-button: #ffffff
     --bg-button-secondary: #ffffff
@@ -299,6 +298,9 @@ button.btn-danger:focus
 button.btn-danger:hover
   background: var(--bg-error-secondary)
 
+/* TODO
+/* button.btn-success
+
 .react-select
   &__single-value
     color: var(--fg-primary) !important
@@ -382,6 +384,65 @@ button.btn-danger:hover
 /* .dropdown-item:hover
 /*   background: var(--border-primary)
 /*   color: var(--fg-primary)
+
+ul
+  list-style-type: square
+  padding-left: 20px
+  .icon
+    color: var(--fg-third)
+
+li
+  padding-left: 6px
+  &.rulings
+    padding: 3px
+
+.question-tooltip
+  color: var(--fg-third)
+  font-size: middle
+
+.clan-image
+  filter: brightness(var(--clan-icon-brightness))
+.burn-image,
+.type-image,
+.trifle-image,
+.discipline-image
+  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
+.cost-image,
+.capacity-image
+  filter: brightness(var(--icons-brightness))
+  image-rendering: -webkit-optimize-contrast
+
+/* ButtonAddCard.in
+/*   background: var(--border-primary)
+/*   color: var(--bg-checkbox)
+
+/* textarea:focus
+/*   color: var(--fg-primary)
+/* hr
+/*   color: var(--border-primary)
+/* sticky
+/*   background-color: var(--bg-primary)
+
+div.float-search
+  background-color: #709070
+  opacity: .8
+div.float-add-off
+  background-color: #A0A0A0
+  opacity: .8
+div.float-menu,
+div.float-add-on,
+div.float-turn
+  background-color: #707070
+  opacity: .8
+div.float-clear
+  background-color: #A06060
+  opacity: .8
+div.float-random
+  background-color: #404040
+  opacity: .3
+
+tr:hover div.not-selected.inventory-card-custom
+  opacity: .35
 
 .nav-menu
   border: 1px solid var(--border-nest-modal)
@@ -710,75 +771,6 @@ div.name
   .set
     color: var(--fg-third)
     width: 100%
-
-ul
-  list-style-type: square
-  padding-left: 20px
-  &.no-bullets
-    list-style-type: none
-    padding-left: 0
-    .icon
-      color: var(--fg-third)
-    li
-      padding-left: 0
-  &.rulings
-    list-style-type: square
-    margin: 0
-    padding-left: 1.5em
-    padding-right: 1em
-
-li
-  padding-left: 6px
-  &.rulings
-    padding: 3px
-
-.question-tooltip
-  color: var(--fg-third)
-  font-size: middle
-
-.clan-image
-  filter: brightness(var(--clan-icon-brightness))
-.burn-image,
-.type-image,
-.trifle-image,
-.discipline-image
-  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
-.cost-image,
-.capacity-image
-  filter: brightness(var(--icons-brightness))
-  image-rendering: -webkit-optimize-contrast
-
-/* ButtonAddCard.in
-/*   background: var(--border-primary)
-/*   color: var(--bg-checkbox)
-
-/* textarea:focus
-/*   color: var(--fg-primary)
-/* hr
-/*   color: var(--border-primary)
-/* sticky
-/*   background-color: var(--bg-primary)
-
-div.float-search
-  background-color: #709070
-  opacity: .8
-div.float-add-off
-  background-color: #A0A0A0
-  opacity: .8
-div.float-menu,
-div.float-add-on,
-div.float-turn
-  background-color: #707070
-  opacity: .8
-div.float-clear
-  background-color: #A06060
-  opacity: .8
-div.float-random
-  background-color: #404040
-  opacity: .3
-
-tr:hover div.not-selected.inventory-card-custom
-  opacity: .35
 
 @media (max-width: 639px)
   .twd-container,

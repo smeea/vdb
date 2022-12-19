@@ -193,14 +193,14 @@ const About = () => {
 
           <div className="space-y-1">
             <Title>DONATIONS</Title>
-            <ul className="no-bullets space-y-2">
-              <li>
+            <ul className="list-none p-0 space-y-2">
+              <li className="p-0">
                 Patreon:{' '}
                 <a href="https://www.patreon.com/smeea">
                   www.patreon.com/smeea
                 </a>
               </li>
-              <li>
+              <li className="p-0">
                 Bitcoin (BTC):{' '}
                 <a
                   href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
@@ -208,7 +208,7 @@ const About = () => {
                   <div className="inline font-mono text-sm">{BTC_WALLET}</div>
                 </a>
                 <div
-                  className="with-hover inline "
+                  className="with-hover inline pl-1"
                   onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
                 >
                   <ClipboardFill className="inline" viewBox="0 0 18 18" />
@@ -219,9 +219,9 @@ const About = () => {
 
           <div className="space-y-1">
             <Title>CONTACTS</Title>
-            <ul className="no-bullets space-y-1">
-              <li>
-                <div className="flex items-center">
+            <ul className="list-none p-0 space-y-1">
+              <li className="p-0">
+                <div className="flex items-center space-x-1">
                   <div className="icon ">
                     <Globe2 />
                   </div>
@@ -230,8 +230,8 @@ const About = () => {
                   </a>
                 </div>
               </li>
-              <li>
-                <div className="flex items-center">
+              <li className="p-0">
+                <div className="flex items-center space-x-1">
                   <div className="icon ">
                     <Github />
                   </div>
@@ -240,24 +240,24 @@ const About = () => {
                   </a>
                 </div>
               </li>
-              <li>
-                <div className="flex items-center">
+              <li className="p-0">
+                <div className="flex items-center space-x-1">
                   <div className="icon ">
                     <EnvelopeFill />
                   </div>
                   <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
                 </div>
               </li>
-              <li>
-                <div className="flex items-center">
+              <li className="p-0">
+                <div className="flex items-center space-x-1">
                   <div className="icon ">
                     <Telegram />
                   </div>
                   <a href="https://t.me/smeea">@smeea</a>
                 </div>
               </li>
-              <li>
-                <div className="flex items-center">
+              <li className="p-0">
+                <div className="flex items-center space-x-1">
                   <div className="icon ">
                     <Discord />
                   </div>
