@@ -736,88 +736,21 @@ li
   color: var(--fg-third)
   font-size: middle
 
-.capacity-image-results
-  filter: brightness(var(--icons-brightness))
-  height: 23px
-  min-width: 23px
-  image-rendering: -webkit-optimize-contrast
-.discipline-base-image-results
-  height: 22px
-.discipline-superior-image-results
-  height: 25px
-  @media (max-width: 576px)
-    height: 24px
-
-
-.discipline-base-image-results,
-.discipline-base-image-forms,
-.discipline-superior-image-results,
-.discipline-superior-image-forms
-  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
-
-.clan-image-results
+.clan-image
   filter: brightness(var(--clan-icon-brightness))
-  height: 24px
-  min-width: 24px
-@media (max-width: 576px)
-  .clan-image-results
-    height: 21px
-    min-width: 21px
-.burn-image-results,
-.trifle-image-results
+.burn-image,
+.type-image,
+.trifle-image,
+.discipline-image
   filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
-  height: 24px
-.type-image-results
-  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
-.cost-blood-image-results
+.cost-image,
+.capacity-image
   filter: brightness(var(--icons-brightness))
-  height: 30px
   image-rendering: -webkit-optimize-contrast
-.cost-pool-image-results
-  filter: brightness(var(--icons-brightness))
-  height: 35px
-  image-rendering: -webkit-optimize-contrast
-.type-discipline-image-forms
-  height: 25px
-.discipline-base-image-forms
-  height: 32px
-  width: 32px
-.discipline-superior-image-forms
-  height: 37px
-  width: 37px
-.virtue-image
-  height: 29px
-  margin-left: 4px
-  margin-right: 5px
 
-.discipline-container
-  height: 38px
-  width: 38px
-.discipline-container:hover
-  cursor: pointer
-
-a.quantity
-  position: relative
-a.quantity:before
-    bottom: -12px
-    content: ''
-    left: -12px
-    position: absolute
-    right: -24px
-    top: -12px
-
-button.quantity,
-button.quantity-wide
-  display: block
-  height: 27px
-  padding: 0
-
-button.quantity
-  width: 18px
-
-.quantity-add button.in
-  background: var(--border-primary)
-  color: var(--bg-checkbox)
+/* ButtonAddCard.in
+/*   background: var(--border-primary)
+/*   color: var(--bg-checkbox)
 
 /* textarea:focus
 /*   color: var(--fg-primary)

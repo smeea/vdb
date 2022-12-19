@@ -8,61 +8,54 @@ import { useApp } from 'context';
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const { isMobile, playtest } = useApp();
 
-  const preOptions = [];
-
+  const options = [];
   Object.keys(setsAndPrecons)
     .filter((i) => playtest || i !== 'PLAYTEST')
-    .map((i) => {
-      if (setsAndPrecons[i].precons) {
-        const set = i;
-        const year = setsAndPrecons[i].date.slice(2, 4);
-        Object.keys(setsAndPrecons[i].precons).map((j) => {
-          const name = setsAndPrecons[i].precons[j].name;
-          const clans = setsAndPrecons[i].precons[j].clan.split('/');
-          preOptions.push({
-            set: set,
-            precon: j,
-            year: year,
-            name: name,
-            clans: clans,
+    .map((set) => {
+      if (setsAndPrecons[set].precons) {
+        const year = setsAndPrecons[set].date.slice(2, 4);
+        Object.keys(setsAndPrecons[set].precons).map((precon) => {
+          const fullName = setsAndPrecons[set].precons[precon].name;
+          const clans = setsAndPrecons[set].precons[precon].clan.split('/');
+
+          const clanImages = clans.map((clan) => {
+            return (
+              <React.Fragment key={clan}>
+                {clan === 'Bundle' ? (
+                  <div className="h-[21px] sm:h-[24px] clan-image inline">
+                    <GiftFill />
+                  </div>
+                ) : clan === 'Mix' ? null : (
+                  <ResultLibraryClan value={clan} />
+                )}
+              </React.Fragment>
+            );
+          });
+
+          options.push({
+            value: `${set}:${precon}`,
+            name: 'precon',
+            label: (
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <div
+                    className={
+                      clanImages.length == 1
+                        ? 'flex w-[40px] items-center justify-center'
+                        : 'inline'
+                    }
+                  >
+                    {clanImages}
+                  </div>
+                  {fullName}
+                </div>
+                <div className="text-xs">{`${set} '${year}`}</div>
+              </div>
+            ),
           });
         });
       }
     });
-
-  const options = [];
-
-  preOptions.map((i) => {
-    const clanImages = i.clans.map((clan) => {
-      return (
-        <div className="inline " key={clan}>
-          {clan === 'Bundle' ? (
-            <div className="clan-image-results inline">
-              <GiftFill />
-            </div>
-          ) : clan === 'Mix' ? null : (
-            <ResultLibraryClan value={clan} />
-          )}
-        </div>
-      );
-    });
-
-    options.push({
-      value: `${i.set}:${i.precon}`,
-      name: 'precon',
-      label: (
-        <div className="flex items-center justify-between">
-          <div>
-            <div className={clanImages.length == 1 ? 'margin-full' : 'inline'}>
-              {clanImages}
-            </div>
-            {i.name}
-          </div>
-          <div className="text-xs">{`${i.set} '${i.year}`}</div>
-        </div>
-      ),
-    });
-  });
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1];

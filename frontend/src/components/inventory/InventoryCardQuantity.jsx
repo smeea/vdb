@@ -45,8 +45,14 @@ const InventoryCardQuantity = ({
     <div className="flex w-full items-center justify-between">
       {isMobile ? (
         <>
-          <a className="quantity" onClick={() => handleQuantityChange(-1)}>
-            <Button className="quantity" variant="primary">
+          <a
+            className="relative before:content-[''] before:absolute before:inset-[-12px]"
+            onClick={() => handleQuantityChange(-1)}
+          >
+            <Button
+              className="w-[18px] h-[27px] px-0 py-0 text-sm"
+              variant="primary"
+            >
               -
             </Button>
           </a>
@@ -57,8 +63,14 @@ const InventoryCardQuantity = ({
           >
             {state == 0 ? <>&nbsp;&nbsp;</> : state}
           </div>
-          <a className="quantity" onClick={() => handleQuantityChange(1)}>
-            <Button className="quantity" variant="primary">
+          <a
+            className="relative before:content-[''] before:absolute before:inset-[-12px]"
+            onClick={() => handleQuantityChange(1)}
+          >
+            <Button
+              className="w-[18px] h-[27px] px-0 py-0 text-sm"
+              variant="primary"
+            >
               +
             </Button>
           </a>
@@ -67,7 +79,7 @@ const InventoryCardQuantity = ({
         <>
           {!manual && (
             <Button
-              className="quantity"
+              className="w-[18px] h-[27px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => handleQuantityChange(-1)}
               tabIndex={-1}
@@ -104,7 +116,7 @@ const InventoryCardQuantity = ({
           </div>
           {!manual && (
             <Button
-              className="quantity"
+              className="w-[18px] h-[27px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => handleQuantityChange(1)}
               tabIndex={-1}

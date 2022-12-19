@@ -43,7 +43,7 @@ const InventoryFilterForm = ({
               ) : (
                 <>
                   <span className="margin-full">
-                    <img src={imgSrc} className="type-discipline-image-forms" />
+                    <img src={imgSrc} className="w-[25px] discipline-image" />
                   </span>
                   {i}
                 </>
@@ -59,7 +59,7 @@ const InventoryFilterForm = ({
                   <span className="margin-full">
                     {i !== 'None' && (
                       <ResultDisciplineImage
-                        className="type-discipline-image-forms"
+                        className="w-[25px discipline-image"
                         value={i}
                       />
                     )}

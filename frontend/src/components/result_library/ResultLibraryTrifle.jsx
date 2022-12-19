@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ResultLibraryTrifle = () => {
-  const imgClass = 'trifle-image-results';
+  const imgClass = 'w-[24px] trifle-image';
   const imgSrc = `${process.env.ROOT_URL}images/misc/trifle.svg`;
   const imgTitle = 'Trifle';
 

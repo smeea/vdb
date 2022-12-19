@@ -12,13 +12,13 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           return (
             <div
               key={index}
-              className={`discipline-container flex items-center justify-center ${
+              className={`w-[38px] h-[38px] cursor-pointer flex items-center justify-center ${
                 value[i] ? '' : 'opacity-40'
               }`}
               onClick={onChange}
             >
               <ResultDisciplineImage
-                className="discipline-base-image-forms"
+                className="w-[25px] discipline-image"
                 name="disciplines"
                 value={i}
               />
@@ -31,13 +31,13 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           return (
             <div
               key={index}
-              className={`discipline-container flex items-center justify-center ${
+              className={`w-[38px] h-[38px] cursor-pointer flex items-center justify-center ${
                 value[i] ? '' : 'opacity-40'
               }`}
               onClick={onChange}
             >
               <ResultDisciplineImage
-                className="virtue-image"
+                className="discipline-image w-[29px]"
                 name="disciplines"
                 value={i}
               />

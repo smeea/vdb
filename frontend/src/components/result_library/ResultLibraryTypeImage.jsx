@@ -13,7 +13,7 @@ const ResultLibraryTypeImage = ({ value }) => {
         return (
           <img
             key={index}
-            className="type-image-results inline h-[25px] max-w-none"
+            className="type-image inline h-[25px]"
             src={imgSrc}
             title={cardtype}
           />

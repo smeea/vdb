@@ -52,7 +52,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
             return (
               <React.Fragment key={clan}>
                 {clan === 'Bundle' ? (
-                  <div className="clan-image-results inline items-center justify-center">
+                  <div className="h-[21px] sm:h-[24px] clan-image inline">
                     <GiftFill />
                   </div>
                 ) : clan === 'Mix' ? null : (

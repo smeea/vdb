@@ -77,7 +77,7 @@ const TwdResultLibraryByType = ({ library }) => {
         return (
           <img
             key={`${idx}-${index}`}
-            className="type-image-results h-[25px] max-w-none"
+            className="type-image h-[25px]"
             src={imgSrc}
             title={cardtype}
           />

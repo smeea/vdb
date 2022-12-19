@@ -47,7 +47,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
           <div className="flex items-center">
             <div className="flex w-[40px] justify-center">
               <ResultDisciplineImage
-                className="type-discipline-image-forms"
+                className="w-[25px] discipline-image"
                 value={i}
               />
             </div>

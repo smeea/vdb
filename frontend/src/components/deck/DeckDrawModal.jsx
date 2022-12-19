@@ -195,7 +195,7 @@ const DeckDrawModal = ({
                     </div>
                     <div className="flex items-center" title="Total Capacity">
                       <img
-                        className="capacity-image-results "
+                        className="w-[23px] capacity-image"
                         src={process.env.ROOT_URL + 'images/misc/capX.png'}
                       />
                       <b>{burnedCapacityTotal}</b>
@@ -226,7 +226,7 @@ const DeckDrawModal = ({
                         title="Total Blood Cost"
                       >
                         <img
-                          className="cost-blood-image-results "
+                          className="w-[30px] cost-image"
                           src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
                         />
                         <b>{burnedBloodTotal}</b>
@@ -236,7 +236,7 @@ const DeckDrawModal = ({
                         title="Total Pool Cost"
                       >
                         <img
-                          className="cost-pool-image-results "
+                          className="w-[35px] cost-image"
                           src={process.env.ROOT_URL + 'images/misc/poolX.png'}
                         />
                         <b>{burnedPoolTotal}</b>

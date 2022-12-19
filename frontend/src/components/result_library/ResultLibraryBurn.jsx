@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ResultLibraryBurn = () => {
-  const imgClass = 'burn-image-results';
+  const imgClass = 'w-[24px] burn-image';
   const imgSrc = `${process.env.ROOT_URL}images/misc/burn.svg`;
   const imgTitle = 'Burn Option';
 

@@ -4,17 +4,17 @@ import virtuesList from 'assets/data/virtuesList.json';
 
 const CryptSearchFormVirtues = ({ value, onChange }) => {
   return (
-    <div className="flex flex-wrap ">
+    <div className="flex flex-wrap">
       {virtuesList.map((i, index) => (
         <div
           key={index}
-          className={`discipline-container ${
+          className={`w-[38px] h-[38px] cursor-pointer flex items-center justify-center ${
             value[i] === 0 ? 'opacity-40' : ''
           }`}
           onClick={onChange}
         >
           <ResultDisciplineImage
-            className="virtue-image"
+            className="w-[29px]"
             name="virtues"
             value={i}
           />

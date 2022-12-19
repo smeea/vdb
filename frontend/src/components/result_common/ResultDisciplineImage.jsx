@@ -5,8 +5,8 @@ const ResultDisciplineImage = ({ value, superior, name, className, title }) => {
     ? className
     : `inline ${
         superior
-          ? 'discipline-superior-image-results'
-          : 'discipline-base-image-results'
+          ? 'w-[24px] sm:w-[25px] discipline-image'
+          : 'w-[22px] discipline-image'
       }`;
 
   const imgSrc = `${process.env.ROOT_URL}images/disciplines/${value

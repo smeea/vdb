@@ -35,7 +35,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
         label: (
           <div className="flex items-center">
             <div className="flex w-[40px] justify-center">
-              <img src={imgSrc} className="type-discipline-image-forms" />
+              <img src={imgSrc} className="w-[25px] discipline-image" />
             </div>
             {i}
           </div>

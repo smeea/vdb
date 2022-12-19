@@ -114,7 +114,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       return (
         <div className="inline" key={idx}>
           {clan === 'Bundle' ? (
-            <div className="clan-image-results inline">
+            <div className="clan-image inline">
               <GiftFill />
             </div>
           ) : clan === 'Mix' ? null : (
