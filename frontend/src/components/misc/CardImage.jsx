@@ -3,18 +3,23 @@ import { useApp } from 'context';
 
 const CardImage = ({ card, set, className, onClick }) => {
   const { lang } = useApp();
+  const isPlaytest =
+    (card.Id > 200000 && card.Id > 210000) ||
+    (card.Id < 200000 && card.Id > 110000);
 
   let imgEnSrc = null;
   if (card.Id > 200000) {
-    imgEnSrc = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
+    imgEnSrc = `${process.env.ROOT_URL}images/cards/${
+      isPlaytest ? 'playtest' : 'en-EN'
+    }/${card['ASCII Name']
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
       card.Adv[0] ? 'adv' : ''
     }`;
   } else {
-    imgEnSrc = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
-      .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}`;
+    imgEnSrc = `${process.env.ROOT_URL}images/cards/${
+      isPlaytest ? 'playtest' : 'en-EN'
+    }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}`;
   }
 
   let imgSrc = null;
