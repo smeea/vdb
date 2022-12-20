@@ -672,6 +672,10 @@
         "value":"Devir Livraria, S\u00e3o Paulo, Brazil"
     },
     {
+        "label":"Dragon's Lair Comics & Fantasy, Lewis Center, Ohio, United States",
+        "value":"Dragon's Lair Comics & Fantasy, Lewis Center, Ohio, United States"
+    },
+    {
         "label":"Dragon's Lair, Austin, Texas",
         "value":"Dragon's Lair, Austin, Texas"
     },
@@ -2012,6 +2016,10 @@
         "value":"Online"
     },
     {
+        "label":"Online -- Lackey",
+        "value":"Online -- Lackey"
+    },
+    {
         "label":"Ontario",
         "value":"Ontario"
     },
@@ -2154,6 +2162,10 @@
     {
         "label":"Phoenix, Arizona",
         "value":"Phoenix, Arizona"
+    },
+    {
+        "label":"Pindoretama, Brazil",
+        "value":"Pindoretama, Brazil"
     },
     {
         "label":"Pineville, North Carolina",
@@ -2820,6 +2832,10 @@
         "value":"United Kingdom"
     },
     {
+        "label":"United States",
+        "value":"United States"
+    },
+    {
         "label":"Unlimited Hobbies, Sydney, Australia",
         "value":"Unlimited Hobbies, Sydney, Australia"
     },
@@ -2862,6 +2878,10 @@
     {
         "label":"Victoria",
         "value":"Victoria"
+    },
+    {
+        "label":"Vidor, Texas",
+        "value":"Vidor, Texas"
     },
     {
         "label":"Vielvic, France",
