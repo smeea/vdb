@@ -4,7 +4,7 @@ import Printer from 'assets/images/icons/printer.svg';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import { MenuButton, ButtonIconed, DeckProxySelectModal } from 'components';
 import { cryptSort } from 'utils';
-import { useDeckLibrary } from 'hooks';
+import { useCardImageUrl, useDeckLibrary } from 'hooks';
 import { cardtypeSortedFull } from 'utils/constants';
 import { useApp } from 'context';
 
@@ -27,42 +27,6 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     return request.status == 200;
   };
 
-  const getUrl = (card, set, language) => {
-    let url = null;
-    let urlLangSet = null;
-    if (card.Id > 200000) {
-      url = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
-        .toLowerCase()
-        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
-        card.Adv[0] ? 'adv' : ''
-      }.jpg`;
-    } else {
-      url = `${process.env.ROOT_URL}images/cards/en-EN/${card['ASCII Name']
-        .toLowerCase()
-        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-    }
-
-    if (language !== 'en-EN' || set) {
-      if (card.Id > 200000) {
-        urlLangSet = `${process.env.ROOT_URL}images/cards/${
-          set ? `set/${set}` : language
-        }/${card['ASCII Name']
-          .toLowerCase()
-          .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
-          card.Adv[0] ? 'adv' : ''
-        }.jpg`;
-      } else {
-        urlLangSet = `${process.env.ROOT_URL}images/cards/${
-          set ? `set/${set}` : language
-        }/${card['ASCII Name']
-          .toLowerCase()
-          .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-      }
-    }
-
-    return { base: url, langset: urlLangSet };
-  };
-
   const proxyCards = async (crypt, library, isWhiteGaps) => {
     setSpinnerState(true);
 
@@ -75,14 +39,17 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     let cardsTotal = 0;
 
     cryptSorted.map((card) => {
-      cards.push({ url: getUrl(card.c, card.set, lang), q: card.q });
+      cards.push({ url: useCardImageUrl(card.c, card.set, lang), q: card.q });
       cardsTotal += card.q;
     });
 
     cardtypeSortedFull.map((type) => {
       if (libraryByType[type]) {
         libraryByType[type].map((card) => {
-          cards.push({ url: getUrl(card.c, card.set, lang), q: card.q });
+          cards.push({
+            url: useCardImageUrl(card.c, card.set, lang),
+            q: card.q,
+          });
           cardsTotal += card.q;
         });
       }
@@ -106,10 +73,10 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
 
     Object.values(cards).map((card) => {
       const img = new Image();
-      if (card.url.langset && checkImage(card.url.langset)) {
-        img.src = card.url.langset;
+      if (card.url.otherUrl && checkImage(card.url.otherUrl)) {
+        img.src = `${card.url.otherUrl}.jpg`;
       } else {
-        img.src = card.url.base;
+        img.src = `${card.url.baseUrl}.jpg`;
       }
 
       for (let i = 0; i < card.q; i++) {

@@ -1,49 +1,14 @@
 import React from 'react';
 import { useApp } from 'context';
+import { useCardImageUrl } from 'hooks';
 
 const CardImage = ({ card, set, className, onClick }) => {
   const { lang } = useApp();
-  const isPlaytest =
-    (card.Id > 200000 && card.Id > 210000) ||
-    (card.Id < 200000 && card.Id > 110000);
-
-  let imgEnSrc = null;
-  if (card.Id > 200000) {
-    imgEnSrc = `${process.env.ROOT_URL}images/cards/${
-      isPlaytest ? 'playtest' : 'en-EN'
-    }/${card['ASCII Name']
-      .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
-      card.Adv[0] ? 'adv' : ''
-    }`;
-  } else {
-    imgEnSrc = `${process.env.ROOT_URL}images/cards/${
-      isPlaytest ? 'playtest' : 'en-EN'
-    }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}`;
-  }
-
-  let imgSrc = null;
-  if (lang !== 'en-EN' || set) {
-    if (card.Id > 200000) {
-      imgSrc = `${process.env.ROOT_URL}images/cards/${
-        set ? `set/${set}` : lang
-      }/${card['ASCII Name']
-        .toLowerCase()
-        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
-        card.Adv[0] ? 'adv' : ''
-      }`;
-    } else {
-      imgSrc = `${process.env.ROOT_URL}images/cards/${
-        set ? `set/${set}` : lang
-      }/${card['ASCII Name']
-        .toLowerCase()
-        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}`;
-    }
-  }
+  const { baseUrl, otherUrl } = useCardImageUrl(card, set, lang);
 
   const resetImgSrc = (event) => {
-    if (event.target.src != `${imgEnSrc}.jpg`) {
-      event.target.src = `${imgEnSrc}.jpg`;
+    if (event.target.src != `${baseUrl}.jpg`) {
+      event.target.src = `${baseUrl}.jpg`;
     }
   };
 
@@ -52,7 +17,7 @@ const CardImage = ({ card, set, className, onClick }) => {
       {lang !== 'en-EN' || set ? (
         <img
           className={className ?? 'h-[420px]'}
-          src={`${imgSrc}.jpg`}
+          src={`${otherUrl}.jpg`}
           alt={card['Name']}
           onClick={onClick}
           onError={resetImgSrc}
@@ -61,12 +26,12 @@ const CardImage = ({ card, set, className, onClick }) => {
         <picture>
           <source
             media="(max-width: 576px)"
-            srcSet={`${imgEnSrc}.webp`}
+            srcSet={`${baseUrl}.webp`}
             type="image/webp"
           />
           <img
             className={className ?? 'h-[420px]'}
-            src={`${imgEnSrc}.jpg`}
+            src={`${baseUrl}.jpg`}
             alt={card['Name']}
             onClick={onClick}
           />
