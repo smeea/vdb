@@ -14,7 +14,7 @@ const CardPopover = ({ card }) => {
       {showImage ? (
         <CardImage card={card} />
       ) : (
-        <div className="bordered-sm max-w-[325px] p-4">
+        <div className="bordered-sm max-w-[350px] p-4">
           {card.Id > 200000 ? (
             <ResultCryptLayoutText card={card} />
           ) : (

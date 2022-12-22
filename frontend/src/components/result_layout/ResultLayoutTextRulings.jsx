@@ -21,11 +21,14 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
   const Rulings = Object(rulings).map((k, idxRuling) => {
     const Refs = Object.keys(k['refs']).map((j) => {
       return (
-        <div key={`${idxRuling}-rulingRef-${j}`} className="inline  text-xs">
-          <a target="_blank" rel="noreferrer" href={k['refs'][j]}>
-            {j}
-          </a>
-        </div>
+        <a
+          key={`${idxRuling}-${j}`}
+          target="_blank"
+          rel="noreferrer"
+          href={k['refs'][j]}
+        >
+          {j}
+        </a>
       );
     });
 
@@ -54,7 +57,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
 
           if (cardid) {
             return (
-              <span key={`${idxRuling}-${idxText}-cardRef-${idx}`}>
+              <span key={`${idxRuling}-${idxText}-${idx}`}>
                 <ConditionalTooltip
                   placement={placement}
                   overlay={
@@ -80,7 +83,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
             );
           } else {
             return (
-              <React.Fragment key={`${idxRuling}-${idxText}-ref-${idx}`}>
+              <React.Fragment key={`${idxRuling}-${idxText}-${idx}`}>
                 &#123;{match}&#125;
               </React.Fragment>
             );
@@ -96,14 +99,14 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
     });
 
     return (
-      <li className="rulings" key={idxRuling}>
-        <div className="inline">{RulingText}</div>
+      <li key={idxRuling}>
+        {RulingText}
         {Refs}
       </li>
     );
   });
 
-  return <ul className="rulings">{Rulings}</ul>;
+  return <ul className="space-y-2">{Rulings}</ul>;
 };
 
 export default ResultLayoutTextRulings;

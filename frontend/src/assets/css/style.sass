@@ -2,6 +2,15 @@
 @tailwind components
 @tailwind utilities
 
+@layer components
+  ul
+    list-style-type: square
+    padding-left: 1.2em
+    .icon
+      color: var(--fg-third)
+  li
+    padding-left: 6px
+
 :root
   @media (prefers-color-scheme: light)
     --bg-button: #ffffff
@@ -91,6 +100,12 @@ a.nav-link
       background: var(--border-secondary)
       border: 1px solid var(--border-primary)
       border-bottom: 0
+
+.nav-menu
+  border: 1px solid var(--border-nest-modal)
+  .nav-link
+    &.active
+      background: var(--border-secondary)
 
 .name
   color: var(--fg-name)
@@ -385,17 +400,6 @@ button.btn-danger:hover
 /*   background: var(--border-primary)
 /*   color: var(--fg-primary)
 
-ul
-  list-style-type: square
-  padding-left: 20px
-  .icon
-    color: var(--fg-third)
-
-li
-  padding-left: 6px
-  &.rulings
-    padding: 3px
-
 .question-tooltip
   color: var(--fg-third)
   font-size: middle
@@ -443,12 +447,6 @@ div.float-random
 
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
-
-.nav-menu
-  border: 1px solid var(--border-nest-modal)
-  .nav-link
-    &.active
-      background: var(--border-secondary)
 
 .logo-box
   background: var(--bg-secondary)

@@ -27,41 +27,32 @@ const ResultLayoutTextSets = (props) => {
 
         if (setsAndPrecons[k].precons && setsAndPrecons[k].precons[i]) {
           return (
-            <li className="rulings" key={idx}>
+            <li key={idx}>
               {setsAndPrecons[k].precons[i].name} - {props.sets[k][i]}x
             </li>
           );
         } else {
           if (k === 'Promo') {
-            return (
-              <li className="rulings" key={idx}>
-                {i}
-              </li>
-            );
+            return <li key={idx}>{i}</li>;
           } else if (i !== 'DTC') {
-            return (
-              <li className="rulings" key={idx}>
-                {abbrevs[i]}
-              </li>
-            );
+            return <li key={idx}>{abbrevs[i]}</li>;
           }
         }
       });
 
       const popoverText = (
-        <>
+        <div className="bordered-sm max-w-[350px] text-sm space-y-1 p-3">
           <b>{setsAndPrecons[k].name}</b>
           {k !== 'POD' &&
             k !== 'Promo' &&
             ' - ' + setsAndPrecons[k].date.slice(0, 4)}
-          <br />
-          <ul className="rulings">{preconsDetailed}</ul>
-        </>
+          <ul className="space-y-1 text-xs">{preconsDetailed}</ul>
+        </div>
       );
 
       return (
         <div
-          className="inline-block whitespace-nowrap "
+          className="inline-block whitespace-nowrap"
           onClick={() => {
             if (k !== 'POD') props.setImageSet(k.toLowerCase());
           }}
@@ -75,7 +66,7 @@ const ResultLayoutTextSets = (props) => {
               </div>
             </div>
           ) : (
-            <Tooltip text={popoverText} placement="bottom">
+            <Tooltip overlay={popoverText} placement="bottom">
               <div className="inline">
                 {k}
                 <div className="inline text-neutral-500">
