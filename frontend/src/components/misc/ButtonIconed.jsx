@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'components';
 
 const ButtonIconed = ({
   className,
@@ -9,16 +10,13 @@ const ButtonIconed = ({
   title,
   variant,
 }) => {
-  const btnVariant = `btn-${variant}`;
-
   return (
-    <button
-      className={`${btnVariant} items-center justify-center rounded-md px-3 py-1.5 ${
-        className ?? ''
-      }`}
+    <Button
+      className={className ?? null}
       onClick={onClick}
       title={title}
       disabled={disabled}
+      variant={variant}
     >
       {text === undefined || text === null ? (
         <>{icon}</>
@@ -28,7 +26,7 @@ const ButtonIconed = ({
           {text}
         </div>
       )}
-    </button>
+    </Button>
   );
 };
 
