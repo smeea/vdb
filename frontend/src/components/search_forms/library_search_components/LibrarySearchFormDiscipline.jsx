@@ -47,7 +47,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
           <div className="flex items-center">
             <div className="flex w-[40px] justify-center">
               <ResultDisciplineImage
-                className="w-[25px] discipline-image"
+                className="discipline-image w-[25px]"
                 value={i}
               />
             </div>
@@ -62,7 +62,9 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Discipline:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            Discipline:
+          </div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle

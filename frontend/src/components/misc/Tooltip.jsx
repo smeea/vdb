@@ -51,7 +51,7 @@ const Tooltip = ({ children, overlay, placement }) => {
       <FloatingPortal>
         {open && (
           <div
-            className="tooltip-main"
+            className="max-w-[800px] rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark"
             ref={floating}
             style={{
               position: strategy,
@@ -62,22 +62,22 @@ const Tooltip = ({ children, overlay, placement }) => {
           >
             {overlay}
             {placement === 'right' && (
-              <div className="absolute top-1/2 left-[-12] text-neutral-500">
+              <div className="text-neutral-500 absolute top-1/2 left-[-12]">
                 <CaretLeftFill />
               </div>
             )}
             {placement === 'left' && (
-              <div className="absolute top-1/2 right-[-12] text-neutral-500">
+              <div className="text-neutral-500 absolute top-1/2 right-[-12]">
                 <CaretRightFill />
               </div>
             )}
             {placement === 'top' && (
-              <div className="absolute left-1/2 top-[-12] text-neutral-500">
+              <div className="text-neutral-500 absolute left-1/2 top-[-12]">
                 <CaretUpFill />
               </div>
             )}
             {placement === 'bottom' && (
-              <div className="absolute left-1/2 bottom-[-12] text-neutral-500">
+              <div className="text-neutral-500 absolute left-1/2 bottom-[-12]">
                 <CaretDownFill />
               </div>
             )}

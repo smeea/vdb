@@ -34,7 +34,9 @@ const TwdSearchFormLocation = ({ value, form }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Location:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          Location:
+        </div>
       </div>
       <div className="w-3/4">
         <AsyncSelect

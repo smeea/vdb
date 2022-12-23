@@ -20,7 +20,7 @@ const DeckCryptHeader = ({
   const { isMobile } = useApp();
 
   return (
-    <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
+    <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
       <div className="space-x-2 px-2 py-1 font-bold">
         <div className="inline">
           Crypt [{cryptTotal}
@@ -30,7 +30,7 @@ const DeckCryptHeader = ({
           <div className="inline">{cryptGroups}</div>
         )}
         {!inMissing && hasBanned && (
-          <div className="inline items-center text-red-600">
+          <div className="text-red-600 inline items-center">
             <Exclamation
               width="17"
               heigth="17"

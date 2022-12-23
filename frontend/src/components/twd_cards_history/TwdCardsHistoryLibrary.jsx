@@ -204,7 +204,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         >
           <div
             className={`name flex items-center justify-start ${
-              card.deckid ? '' : 'bold'
+              card.deckid ? '' : 'font-bold'
             } `}
             onClick={() => handleModalCardOpen(card)}
           >
@@ -230,7 +230,11 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`bordered flex ${index % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}
+      className={`bordered flex ${
+        index % 2
+          ? 'bg-bgThird dark:bg-bgThirdDark'
+          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+      }`}
     >
       {cardRows[index]}
     </div>
@@ -238,7 +242,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   return (
     <div className="inventory-container-library">
-      <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
+      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <div className="flex flex-col space-y-1">
             <InventoryFilterForm
@@ -268,7 +272,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         />
       </div>
 
-      <div className="bg-bgSecondary dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgSecondaryDark history-library-table flex font-bold">
+      <div className="history-library-table flex bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
         {!isMobile && <div className="cost flex" />}
         {!isMobile && <div className="type flex" />}
         <div className="name flex" />

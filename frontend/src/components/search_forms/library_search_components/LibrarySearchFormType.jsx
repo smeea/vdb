@@ -35,7 +35,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
         label: (
           <div className="flex items-center">
             <div className="flex w-[40px] justify-center">
-              <img src={imgSrc} className="w-[25px] discipline-image" />
+              <img src={imgSrc} className="discipline-image w-[25px]" />
             </div>
             {i}
           </div>
@@ -48,7 +48,9 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Type:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            Type:
+          </div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle

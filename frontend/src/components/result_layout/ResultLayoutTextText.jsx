@@ -22,8 +22,8 @@ const ResultLayoutTextText = (props) => {
         key={`${match}-${idx}`}
         className={`inline ${
           match.toLowerCase() === match
-            ? 'w-[32px] discipline-image'
-            : 'w-[37px] discipline-image'
+            ? 'discipline-image w-[32px]'
+            : 'discipline-image w-[37px]'
         }`}
         src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
         title={match}

@@ -43,10 +43,10 @@ const DeckProxyCrypt = ({
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
-   return (
+  return (
     <>
       <div
-        className={`ps-2 bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between  ${
+        className={`ps-2 flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark  ${
           isMobile ? '' : ''
         }`}
       >

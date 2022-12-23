@@ -153,7 +153,9 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
   return (
     <div className="space-y-2">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Library Card Types:</div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        Library Card Types:
+      </div>
       <div className="flex space-x-6">
         <div className="w-1/2 space-y-1">{formsLeft}</div>
         <div className="w-1/2 space-y-1">{formsRight}</div>

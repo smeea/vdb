@@ -103,7 +103,11 @@ const DeckLibrary = ({ deck, inMissing }) => {
   return (
     <div className="space-y-2">
       <div
-        className={!inMissing && !isMobile ? 'bg-bgPrimary dark:bg-bgPrimaryDark top-[32px] z-10' : null}
+        className={
+          !inMissing && !isMobile
+            ? 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+            : null
+        }
       >
         <DeckLibraryHeader
           isMobile={isMobile}
@@ -117,7 +121,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
           isEditable={isEditable}
         />
         {showInfo && (
-          <div className="bg-bgSecondary dark:bg-bgSecondaryDark p-2">
+          <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
             <DeckLibraryTotalInfo
               byDisciplines={libraryByDisciplinesTotal}
               byTypes={libraryByTypeTotal}
@@ -152,7 +156,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
       <div className="space-y-2">{LibraryDeck}</div>
       {librarySide.length > 0 && (
         <div className="space-y-2 opacity-60">
-          <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex min-h-[42px] items-center px-2 py-1">
+          <div className="flex min-h-[42px] items-center bg-bgSecondary px-2 py-1 dark:bg-bgSecondaryDark">
             <b>Side Library</b>
           </div>
           <div className="space-y-2">{LibrarySideDeck}</div>

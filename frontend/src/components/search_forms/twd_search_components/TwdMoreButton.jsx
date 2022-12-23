@@ -17,7 +17,7 @@ const TwdMoreButton = ({ noText }) => {
         icon={<Gem size={24} />}
         text={noText ? null : 'More'}
       />
-      <Menu.Items className="absolute right-0  w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+      <Menu.Items className="divide-gray-100 bg-white  ring-black absolute right-0 w-56 origin-top-right divide-y rounded-md shadow-lg ring-1 ring-opacity-5 focus:outline-none">
         <Menu.Item>
           <div onClick={() => navigate('/twd/hall_of_fame/tournaments')}>
             <div className="flex items-center justify-start ">

@@ -43,7 +43,7 @@ const InventoryFilterForm = ({
               ) : (
                 <>
                   <span className="margin-full">
-                    <img src={imgSrc} className="w-[25px] discipline-image" />
+                    <img src={imgSrc} className="discipline-image w-[25px]" />
                   </span>
                   {i}
                 </>

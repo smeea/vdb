@@ -6,19 +6,21 @@ import virtuesList from 'assets/data/virtuesList.json';
 const TwdSearchFormDisciplines = ({ value, onChange }) => {
   return (
     <div className="space-y-1">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Library Disciplines:</div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        Library Disciplines:
+      </div>
       <div className="flex flex-wrap justify-start ">
         {disciplinesList.map((i, index) => {
           return (
             <div
               key={index}
-              className={`w-[38px] h-[38px] cursor-pointer flex items-center justify-center ${
+              className={`flex h-[38px] w-[38px] cursor-pointer items-center justify-center ${
                 value[i] ? '' : 'opacity-40'
               }`}
               onClick={onChange}
             >
               <ResultDisciplineImage
-                className="w-[25px] discipline-image"
+                className="discipline-image w-[25px]"
                 name="disciplines"
                 value={i}
               />
@@ -31,7 +33,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
           return (
             <div
               key={index}
-              className={`w-[38px] h-[38px] cursor-pointer flex items-center justify-center ${
+              className={`flex h-[38px] w-[38px] cursor-pointer items-center justify-center ${
                 value[i] ? '' : 'opacity-40'
               }`}
               onClick={onChange}

@@ -42,7 +42,7 @@ const UpdateNotification = ({ appVersion }) => {
           centered
         >
           <div>
-            <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center font-bold">
+            <div className="flex items-center font-bold text-fgSecondary dark:text-fgSecondaryDark">
               <div className="flex ">
                 <ListUl />
               </div>

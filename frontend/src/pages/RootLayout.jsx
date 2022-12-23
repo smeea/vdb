@@ -13,7 +13,7 @@ const RootLayout = () => {
         <Navigation />
         <OfflineNotification />
       </ThemeProvider>
-      <div className="bg-bgPrimary dark:bg-bgPrimaryDark text-fgPrimary dark:text-fgPrimaryDark">
+      <div className="bg-bgPrimary text-fgPrimary dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
         <Outlet />
       </div>
       <UpdateNotification appVersion={changes[0].version} />

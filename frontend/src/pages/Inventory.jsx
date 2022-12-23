@@ -191,7 +191,7 @@ const Inventory = () => {
             </div>
           ) : (
             <div className="flex h-[70vh] flex-col items-center justify-center space-y-10">
-              <div className="flex text-fgSecondary dark:text-fgSecondaryDark justify-center font-bold text-lg">
+              <div className="flex justify-center text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Login to manage your inventory
               </div>
               <div className="space-y-16">
@@ -222,7 +222,7 @@ const Inventory = () => {
           centered
           size="sm"
         >
-          <div className="z-20 bg-bgPrimary dark:bg-bgPrimaryDark top-[77px] space-y-3">
+          <div className="top-[77px] z-20 space-y-3 bg-bgPrimary dark:bg-bgPrimaryDark">
             <InventoryButtons
               crypt={
                 sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt

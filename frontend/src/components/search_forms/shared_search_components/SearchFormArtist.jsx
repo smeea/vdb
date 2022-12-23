@@ -33,7 +33,9 @@ const SearchFormArtist = ({ target, value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Artist:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          Artist:
+        </div>
       </div>
       <div className="w-3/4">
         <Select

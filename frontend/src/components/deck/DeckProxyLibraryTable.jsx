@@ -59,7 +59,13 @@ const DeckProxyLibraryTable = ({
 
     return (
       <React.Fragment key={card.c.Id}>
-        <tr className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
+        <tr
+          className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+            idx % 2
+              ? 'bg-bgThird dark:bg-bgThirdDark'
+              : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+          }`}
+        >
           <td className="proxy-selector">
             <Checkbox
               id={card.c.Id}

@@ -41,7 +41,7 @@ const ResultLayoutTextSets = (props) => {
       });
 
       const popoverText = (
-        <div className="bordered-sm max-w-[350px] text-sm space-y-1 p-3">
+        <div className="bordered-sm max-w-[350px] space-y-1 p-3 text-sm">
           <b>{setsAndPrecons[k].name}</b>
           {k !== 'POD' &&
             k !== 'Promo' &&
@@ -61,7 +61,7 @@ const ResultLayoutTextSets = (props) => {
           {isMobile ? (
             <div className="inline" onClick={() => setModal(popoverText)}>
               {k}
-              <div className="inline text-neutral-500">
+              <div className="text-neutral-500 inline">
                 {preconsShort ? `:${preconsShort}` : null}
               </div>
             </div>
@@ -69,7 +69,7 @@ const ResultLayoutTextSets = (props) => {
             <Tooltip overlay={popoverText} placement="bottom">
               <div className="inline">
                 {k}
-                <div className="inline text-neutral-500">
+                <div className="text-neutral-500 inline">
                   {preconsShort ? `:${preconsShort}` : null}
                 </div>
               </div>

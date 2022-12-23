@@ -93,7 +93,7 @@ const ResultCryptTotal = ({
   );
 
   return (
-    <div className="bg-bgSecondary dark:bg-bgSecondaryDark  flex items-center justify-between ">
+    <div className="flex items-center  justify-between bg-bgSecondary dark:bg-bgSecondaryDark ">
       {value}
     </div>
   );

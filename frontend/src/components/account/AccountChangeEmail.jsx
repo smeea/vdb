@@ -49,7 +49,7 @@ const AccountChangeEmail = () => {
 
   return (
     <>
-      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center p-1 text-lg font-bold">
+      <div className="flex items-center p-1 text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
         <EnvelopeFill />
         <div className="px-2">Change email (optional)</div>
         {!isMobile ? (

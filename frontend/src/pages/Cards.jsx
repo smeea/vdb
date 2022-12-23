@@ -172,7 +172,7 @@ const Cards = () => {
               )}
             </div>
             <div className="md:basis-2/12">
-              <div className="z-20 bg-bgPrimary dark:bg-bgPrimaryDark top-[77px] flex flex-col space-y-1">
+              <div className="top-[77px] z-20 flex flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark">
                 <ButtonIconed
                   variant="secondary"
                   onClick={() => randomCrypt()}

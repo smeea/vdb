@@ -74,9 +74,11 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
   return (
     <tr
       {...swipeHandlers}
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'} ${
-        isSwiped ? `swiped-${isSwiped}` : ''
-      }
+      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+        idx % 2
+          ? 'bg-bgThird dark:bg-bgThirdDark'
+          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+      } ${isSwiped ? `swiped-${isSwiped}` : ''}
 `}
     >
       {isEditable && addMode && (
@@ -94,7 +96,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
               <div
                 className={`used  flex items-center justify-between ${
                   inInventory < softUsedMax + hardUsedTotal
-                    ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
+                    ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
                     : ''
                 }
                   `}

@@ -20,3 +20,4 @@
 - Account tooltips
 - Style forms with https://github.com/tailwindlabs/tailwindcss-forms
 - Test autoFocus
+- Form with errorOverlay to have 'relative' class

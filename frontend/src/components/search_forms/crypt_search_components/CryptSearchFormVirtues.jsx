@@ -8,7 +8,7 @@ const CryptSearchFormVirtues = ({ value, onChange }) => {
       {virtuesList.map((i, index) => (
         <div
           key={index}
-          className={`w-[38px] h-[38px] cursor-pointer flex items-center justify-center ${
+          className={`flex h-[38px] w-[38px] cursor-pointer items-center justify-center ${
             value[i] === 0 ? 'opacity-40' : ''
           }`}
           onClick={onChange}

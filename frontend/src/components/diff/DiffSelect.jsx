@@ -77,7 +77,9 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
   return (
     <div className="flex flex-row space-x-5">
       <div className="md:basis-1/2">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Deck You Edit:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          Deck You Edit:
+        </div>
         {selectFrom === 'from-url' ? (
           <form
             name="from"
@@ -183,7 +185,9 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
         </div>
       )}
       <div className="md:basis-1/2">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Show Changes Against:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          Show Changes Against:
+        </div>
         {selectTo === 'to-url' ? (
           <form name="to" onSubmit={handleUrlSubmit} className=" min-w-[270px]">
             <input

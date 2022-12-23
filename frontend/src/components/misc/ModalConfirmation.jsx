@@ -46,7 +46,11 @@ const ModalConfirmation = ({
         dialogClassName={nested ? 'nested-modal' : 'border-none'}
         title={headerText}
       >
-        {mainText && <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">{mainText}</div>}
+        {mainText && (
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            {mainText}
+          </div>
+        )}
         {withConfirmation && (
           <form onSubmit={confirm}>
             <div className="form-control">

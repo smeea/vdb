@@ -204,7 +204,13 @@ const Diff = () => {
           {deck && deckTo && (
             <div className={`flex flex-row ${X_SPACING}`}>
               <div className="md:basis-7/12">
-                <div className={isMobile ? null : 'bg-bgPrimary dark:bg-bgPrimaryDark top-[32px] z-10'}>
+                <div
+                  className={
+                    isMobile
+                      ? null
+                      : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+                  }
+                >
                   <DiffCrypt
                     deckid={deck.deckid}
                     isEditable={
@@ -216,7 +222,13 @@ const Diff = () => {
                 </div>
               </div>
               <div className="md:basis-5/12">
-                <div className={isMobile ? null : 'bg-bgPrimary dark:bg-bgPrimaryDark top-[32px] z-10'}>
+                <div
+                  className={
+                    isMobile
+                      ? null
+                      : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+                  }
+                >
                   <DiffLibrary
                     deckid={deck.deckid}
                     isEditable={
@@ -232,7 +244,7 @@ const Diff = () => {
         </div>
         {!isMobile && (
           <div className="hidden lg:flex lg:basis-2/12">
-            <div className="z-20 bg-bgPrimary dark:bg-bgPrimaryDark top-[77px]">
+            <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
               <DiffButtons
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}

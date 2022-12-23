@@ -52,7 +52,7 @@ const AccountRegister = () => {
 
   return (
     <div>
-      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center text-xl font-bold">
+      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
         <div className="flex">
           <PersonPlusFill width="22" height="22" viewBox="0 1 16 16" />
         </div>

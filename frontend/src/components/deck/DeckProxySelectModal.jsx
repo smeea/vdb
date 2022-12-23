@@ -185,7 +185,13 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         <div className="flex flex-row">
           <div className="basis-full md:basis-7/12">
             {deck.crypt && (
-              <div className={isMobile ? null : 'bg-bgPrimary dark:bg-bgPrimaryDark top-[22px] z-10'}>
+              <div
+                className={
+                  isMobile
+                    ? null
+                    : 'top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+                }
+              >
                 <DeckProxyCrypt
                   cards={deck.crypt}
                   handleProxySelector={handleProxySelector}

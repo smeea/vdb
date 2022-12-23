@@ -60,7 +60,9 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   return (
     <div className="flex items-center space-x-1">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Year:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          Year:
+        </div>
       </div>
       <div className="flex w-3/4 items-center space-x-1">
         <div className="w-full">

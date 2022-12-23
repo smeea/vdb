@@ -32,42 +32,42 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
   };
 
   return (
-    <>
-      <div className="border-thick ">
-        <div
-          onClick={() => handleClick()}
-          className={`link-like flex justify-between ${isStar ? 'bold' : ''}`}
-        >
-          <div className="flex items-center">
-            {deck.players}
-            <div className="flex   ">
-              <PeopleFill viewBox="0 0 18 18" />
-            </div>
-            {`${deck.event}: ${deck.location}`}
+    <div className="rounded-md border-2 border-borderPrimary dark:border-borderPrimaryDark">
+      <div
+        onClick={() => handleClick()}
+        className={`link-like flex justify-between ${
+          isStar ? 'font-bold' : ''
+        }`}
+      >
+        <div className="flex items-center">
+          {deck.players}
+          <div className="flex   ">
+            <PeopleFill viewBox="0 0 18 18" />
           </div>
-          <div className="whitespace-nowrap ">
-            {isMobile ? deck.date.slice(0, 4) : deck.date}
-          </div>
+          {`${deck.event}: ${deck.location}`}
         </div>
-
-        {showDeck && cards && (
-          <div>
-            <hr className="border-1 border-neutral-500" />
-            {deck && (
-              <TwdHallFameDeckBody
-                deck={{
-                  ...deck,
-                  creation_date: deck.date,
-                  crypt: cards.crypt,
-                  library: cards.library,
-                }}
-                isMobile={isMobile}
-              />
-            )}
-          </div>
-        )}
+        <div className="whitespace-nowrap ">
+          {isMobile ? deck.date.slice(0, 4) : deck.date}
+        </div>
       </div>
-    </>
+
+      {showDeck && cards && (
+        <div>
+          <hr className="border-1 border-neutral-500" />
+          {deck && (
+            <TwdHallFameDeckBody
+              deck={{
+                ...deck,
+                creation_date: deck.date,
+                crypt: cards.crypt,
+                library: cards.library,
+              }}
+              isMobile={isMobile}
+            />
+          )}
+        </div>
+      )}
+    </div>
   );
 };
 

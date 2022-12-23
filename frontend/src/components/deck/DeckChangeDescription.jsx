@@ -43,7 +43,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   return (
     <form className="flex" onSubmit={handleSubmit}>
       <div
-        className="flex items-center rounded-l bg-red-900 p-2"
+        className="bg-red-900 flex items-center rounded-l p-2"
         title="Description"
       >
         <ChatLeftQuoteFill width="20" height="18" viewBox="0 0 16 16" />
@@ -52,7 +52,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
         <input
           className={`${
             folded ? '' : 'w-full'
-          } border-2 border-red-400 bg-blue-900 px-1.5 py-1`}
+          } border-red-400 bg-blue-900 border-2 px-1.5 py-1`}
           type="text"
           value={value}
           onChange={handleChange}
@@ -63,7 +63,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
         <textarea
           className={`${
             folded ? '' : 'w-full'
-          } border-2 border-red-400 bg-blue-900 px-1.5 py-1`}
+          } border-red-400 bg-blue-900 border-2 px-1.5 py-1`}
           rows={12}
           type="text"
           value={value}

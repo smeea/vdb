@@ -160,7 +160,13 @@ const InventoryAddDeckModal = ({ handleClose }) => {
 
     return (
       <React.Fragment key={deck.deckid}>
-        <tr className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
+        <tr
+          className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+            idx % 2
+              ? 'bg-bgThird dark:bg-bgThirdDark'
+              : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+          }`}
+        >
           {!isMobile && (
             <td className="inventory">
               <Button onClick={() => toggleInventoryState(deck.deckid)}>
@@ -292,7 +298,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               {!isMobile && (
                 <th className="tags">
                   <Select
-                    classNamePrefix="tags-filter react-select-tags"
+                    classNamePrefix="border-bgSecondary dark:border-bgSecondary react-select-tags"
                     isMulti
                     options={defaultTagsOptions}
                     onChange={handleChangeTagsFilter}

@@ -22,7 +22,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
             return (
               <React.Fragment key={clan}>
                 {clan === 'Bundle' ? (
-                  <div className="h-[21px] sm:h-[24px] clan-image inline">
+                  <div className="clan-image inline h-[21px] sm:h-[24px]">
                     <GiftFill />
                   </div>
                 ) : clan === 'Mix' ? null : (

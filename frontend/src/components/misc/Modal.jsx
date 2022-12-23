@@ -13,7 +13,7 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
   return (
     <Dialog open={true} onClose={handleClose} className="relative z-50">
       <div
-        className="fixed inset-0 bg-black bg-opacity-50"
+        className="bg-black fixed inset-0 bg-opacity-50"
         aria-hidden="true"
       />
 
@@ -25,11 +25,13 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
         <Dialog.Panel
           className={`${
             size ? `modal-${size}` : ''
-          } space-y-2 rounded bg-teal-600 p-5`}
+          } bg-teal-600 space-y-2 rounded p-5`}
         >
           {title && (
             <Dialog.Title className="flex items-start justify-between border-none">
-              <div className="text-fgSecondary dark:text-fgSecondaryDark text-lg font-bold">{title}</div>
+              <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                {title}
+              </div>
               <Button variant="outline-secondary" onClick={handleClose}>
                 <X width="32" height="32" viewBox="0 0 16 16" />
               </Button>

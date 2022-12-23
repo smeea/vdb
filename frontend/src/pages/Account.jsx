@@ -30,7 +30,7 @@ const Account = () => {
         >
           {username ? (
             <div className="w-full space-y-6">
-              <div className="text-fgSecondary dark:text-fgSecondaryDark bg-bgSecondary dark:bg-bgSecondaryDark border border-borderSecondary dark:border-borderSecondaryDark flex w-full items-center px-2 py-1 font-bold">
+              <div className="flex w-full items-center border border-borderSecondary bg-bgSecondary px-2 py-1 font-bold text-fgSecondary dark:border-borderSecondaryDark dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
                 <div className="pr-2">
                   <PersonFill />
                 </div>

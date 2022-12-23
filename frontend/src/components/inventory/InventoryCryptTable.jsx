@@ -44,7 +44,11 @@ const InventoryCryptTable = ({
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`bordered flex ${index % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}
+      className={`bordered flex ${
+        index % 2
+          ? 'bg-bgThird dark:bg-bgThirdDark'
+          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+      }`}
     >
       {cardRows[index]}
     </div>
@@ -53,7 +57,7 @@ const InventoryCryptTable = ({
   return (
     <>
       {compact ? (
-        <div className="inventory-crypt-table bordered bg-bgPrimary dark:bg-bgPrimaryDark compact flex">
+        <div className="inventory-crypt-table bordered compact flex bg-bgPrimary dark:bg-bgPrimaryDark">
           {cardRows[0]}
         </div>
       ) : (

@@ -54,7 +54,7 @@ const DeckDrawModal = ({
         <div className="flex flex-row">
           <div className="basis-full md:basis-7/12">
             <div>
-              <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-10 justify-between">
+              <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
                 <div className="flex items-center">
                   <b>Uncontrolled</b>
                 </div>
@@ -122,7 +122,7 @@ const DeckDrawModal = ({
             </div>
           </div>
           <div className="basis-full md:basis-5/12">
-            <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-10 justify-between">
+            <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
               <div className="flex items-center">
                 <b>Hand</b>
               </div>
@@ -186,7 +186,7 @@ const DeckDrawModal = ({
             <div className="basis-full md:basis-7/12">
               {burnedCrypt.length > 0 && (
                 <div>
-                  <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-10 justify-between">
+                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
                     <div className="flex items-center">
                       <b>Controlled</b>
                     </div>
@@ -195,7 +195,7 @@ const DeckDrawModal = ({
                     </div>
                     <div className="flex items-center" title="Total Capacity">
                       <img
-                        className="w-[23px] capacity-image"
+                        className="capacity-image w-[23px]"
                         src={process.env.ROOT_URL + 'images/misc/capX.png'}
                       />
                       <b>{burnedCapacityTotal}</b>
@@ -213,7 +213,7 @@ const DeckDrawModal = ({
             <div className="basis-full md:basis-5/12">
               {burnedLibrary.length > 0 && (
                 <div>
-                  <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-10 justify-between">
+                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
                     <div className="flex items-center">
                       <b>Ash Heap</b>
                     </div>
@@ -226,7 +226,7 @@ const DeckDrawModal = ({
                         title="Total Blood Cost"
                       >
                         <img
-                          className="w-[30px] cost-image"
+                          className="cost-image w-[30px]"
                           src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
                         />
                         <b>{burnedBloodTotal}</b>
@@ -236,7 +236,7 @@ const DeckDrawModal = ({
                         title="Total Pool Cost"
                       >
                         <img
-                          className="w-[35px] cost-image"
+                          className="cost-image w-[35px]"
                           src={process.env.ROOT_URL + 'images/misc/poolX.png'}
                         />
                         <b>{burnedPoolTotal}</b>

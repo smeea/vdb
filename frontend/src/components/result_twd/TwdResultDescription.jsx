@@ -114,10 +114,10 @@ const TwdResultDescription = ({ deck }) => {
       {isDesktop ? (
         <>
           <div
-            className={`text-fgSecondary dark:text-fgSecondaryDark   flex items-center justify-center text-lg ${
+            className={`flex items-center justify-center rounded-md border-dashed text-lg text-fgSecondary dark:text-fgSecondaryDark ${
               deck['players'] >= 30
-                ? 'bold border-dashed-thick'
-                : 'border-dashed'
+                ? 'border-[3px] border-fgSecondary font-bold dark:border-fgSecondaryDark'
+                : 'border-2 border-borderPrimary dark:border-borderPrimaryDark'
             }`}
             title="Players"
           >
@@ -142,10 +142,10 @@ const TwdResultDescription = ({ deck }) => {
           <div className="basis-1/4">
             <div className="flex flex-col space-y-1">
               <div
-                className={`text-fgSecondary dark:text-fgSecondaryDark  flex items-center justify-center text-lg ${
+                className={`flex items-center  justify-center rounded-md border-dashed text-lg text-fgSecondary dark:text-fgSecondaryDark ${
                   deck['players'] >= 30
-                    ? 'bold border-dashed-thick'
-                    : 'border-dashed'
+                    ? 'border-[3px] border-fgSecondary font-bold dark:border-fgSecondaryDark'
+                    : 'border-2 border-borderPrimary dark:border-borderPrimaryDark'
                 }`}
               >
                 <div className="flex items-center">

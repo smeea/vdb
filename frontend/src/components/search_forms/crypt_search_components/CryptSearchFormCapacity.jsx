@@ -46,7 +46,9 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Capacity:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            Capacity:
+          </div>
           {value.value[0][name] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle

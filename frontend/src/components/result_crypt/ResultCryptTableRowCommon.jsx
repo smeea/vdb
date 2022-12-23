@@ -82,7 +82,7 @@ const ResultCryptTableRowCommon = ({
               <ResultClanImage value={card.Clan} />
             </div>
             <div className="flex justify-end text-xs">
-              <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
+              <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 {card.Title && <ResultCryptTitle value={card.Title} />}
               </div>
               <ResultCryptGroup value={card.Group} />

@@ -46,11 +46,11 @@ const InventoryCardQuantity = ({
       {isMobile ? (
         <>
           <a
-            className="relative before:content-[''] before:absolute before:inset-[-12px]"
+            className="relative before:absolute before:inset-[-12px] before:content-['']"
             onClick={() => handleQuantityChange(-1)}
           >
             <Button
-              className="w-[18px] h-[27px] px-0 py-0 text-sm"
+              className="h-[27px] w-[18px] px-0 py-0 text-sm"
               variant="primary"
             >
               -
@@ -58,17 +58,19 @@ const InventoryCardQuantity = ({
           </a>
           <div
             className={
-              state < softUsedMax + hardUsedTotal ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark' : null
+              state < softUsedMax + hardUsedTotal
+                ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
+                : null
             }
           >
             {state == 0 ? <>&nbsp;&nbsp;</> : state}
           </div>
           <a
-            className="relative before:content-[''] before:absolute before:inset-[-12px]"
+            className="relative before:absolute before:inset-[-12px] before:content-['']"
             onClick={() => handleQuantityChange(1)}
           >
             <Button
-              className="w-[18px] h-[27px] px-0 py-0 text-sm"
+              className="h-[27px] w-[18px] px-0 py-0 text-sm"
               variant="primary"
             >
               +
@@ -79,7 +81,7 @@ const InventoryCardQuantity = ({
         <>
           {!manual && (
             <Button
-              className="w-[18px] h-[27px] px-0 py-0 text-sm"
+              className="h-[27px] w-[18px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => handleQuantityChange(-1)}
               tabIndex={-1}
@@ -93,7 +95,7 @@ const InventoryCardQuantity = ({
               manual
                 ? ''
                 : state < softUsedMax + hardUsedTotal
-                ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark '
+                ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark '
                 : ''
             }
             onFocus={() => setManual(true)}
@@ -101,7 +103,7 @@ const InventoryCardQuantity = ({
             {manual ? (
               <form onSubmit={handleSubmit}>
                 <input
-                  className="w-[63px] h[32px] text-center text-black bg-red-500"
+                  className="h[32px] text-black bg-red-500 w-[63px] text-center"
                   placeholder=""
                   type="number"
                   autoFocus={true}
@@ -116,7 +118,7 @@ const InventoryCardQuantity = ({
           </div>
           {!manual && (
             <Button
-              className="w-[18px] h-[27px] px-0 py-0 text-sm"
+              className="h-[27px] w-[18px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => handleQuantityChange(1)}
               tabIndex={-1}

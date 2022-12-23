@@ -117,8 +117,8 @@ const ResultModal = ({
           onClick={() => handleModalCardChange(-1)}
           className={`absolute bottom-1/2 ${
             isMobile
-              ? 'left-0 h-[50px] text-neutral-500'
-              : 'left-[-40px] text-white'
+              ? 'text-neutral-500 left-0 h-[50px]'
+              : 'text-white left-[-40px]'
           }`}
         >
           <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
@@ -127,8 +127,8 @@ const ResultModal = ({
           onClick={() => handleModalCardChange(1)}
           className={`absolute bottom-1/2 ${
             isMobile
-              ? 'right-0 h-[50px] text-neutral-500'
-              : 'right-[-40px] text-white'
+              ? 'text-neutral-500 right-0 h-[50px]'
+              : 'text-white right-[-40px]'
           }`}
         >
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />

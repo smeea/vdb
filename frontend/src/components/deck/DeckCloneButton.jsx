@@ -65,7 +65,6 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }, 1000);
-
         }
       });
   };

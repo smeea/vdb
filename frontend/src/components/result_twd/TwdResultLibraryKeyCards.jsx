@@ -55,7 +55,14 @@ const TwdResultLibraryKeyCards = ({ library }) => {
     }
 
     return (
-      <tr key={card.c.Id} className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
+      <tr
+        key={card.c.Id}
+        className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+          idx % 2
+            ? 'bg-bgThird dark:bg-bgThirdDark'
+            : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        }`}
+      >
         {inventoryMode ? (
           <td className="quantity-no-buttons ">
             <ConditionalTooltip
@@ -65,7 +72,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
               <div
                 className={
                   inInventory < card.q
-                    ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
+                    ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
                     : inInventory - hardUsedTotal < card.q
                     ? 'bg-bgWarning dark:bg-bgWarningDark'
                     : null

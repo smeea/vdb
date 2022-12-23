@@ -67,7 +67,13 @@ const DiffCryptTable = ({
 
     return (
       <React.Fragment key={card.c.Id}>
-        <tr className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
+        <tr
+          className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+            idx % 2
+              ? 'bg-bgThird dark:bg-bgThirdDark'
+              : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+          }`}
+        >
           {isEditable || inReview ? (
             <>
               {!inReview && inventoryMode && decks ? (
@@ -116,7 +122,7 @@ const DiffCryptTable = ({
             inDeck
           />
           {showInfo && (
-            <td className="text-fgSecondary dark:text-fgSecondaryDark w-9 text-right">
+            <td className="w-9 text-right text-fgSecondary dark:text-fgSecondaryDark">
               {isMobile ? (
                 <div
                   onClick={() =>

@@ -79,7 +79,7 @@ const DeckCardQuantity = ({
         <>
           {!manual && (
             <Button
-              className="w-[18px] h-[27px] px-0 py-0 text-sm"
+              className="h-[27px] w-[18px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => cardChange(deckid, card, q - 1)}
               tabIndex={-1}
@@ -95,7 +95,7 @@ const DeckCardQuantity = ({
             {manual ? (
               <form onSubmit={handleSubmit}>
                 <input
-                  className="w-[63px] h[32px] text-center text-black bg-red-500"
+                  className="h[32px] text-black bg-red-500 w-[63px] text-center"
                   placeholder=""
                   type="number"
                   autoFocus={true}
@@ -110,7 +110,7 @@ const DeckCardQuantity = ({
           </div>
           {!manual && (
             <Button
-              className="w-[18px] h-[27px] px-0 py-0 text-sm"
+              className="h-[27px] w-[18px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => cardChange(deckid, card, q + 1)}
               tabIndex={-1}

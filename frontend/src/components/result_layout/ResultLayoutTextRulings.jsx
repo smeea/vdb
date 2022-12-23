@@ -40,7 +40,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
       replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => (
         <img
           key={`${idxRuling}-${idxText}-icon-${idx}`}
-          className="w-[32px] discipline-image inline"
+          className="discipline-image inline w-[32px]"
           src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
           title={match}
         />

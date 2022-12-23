@@ -5,7 +5,9 @@ const TwdSearchFormCapacity = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Capacity Avg:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          Capacity Avg:
+        </div>
       </div>
       <div className="flex w-3/4 justify-end">
         {['1-4', '4-6', '6-8', '8-11'].map((i, index) => {

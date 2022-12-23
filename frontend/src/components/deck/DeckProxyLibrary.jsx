@@ -48,7 +48,6 @@ const DeckProxyLibrary = ({
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
-
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype}>
       <div className="flex justify-between ">
@@ -90,7 +89,7 @@ const DeckProxyLibrary = ({
   return (
     <>
       <div
-        className={`bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between   ${
+        className={`flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark   ${
           isMobile ? '' : ''
         }`}
       >

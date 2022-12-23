@@ -3,17 +3,17 @@ import React from 'react';
 const ErrorOverlay = ({ placement, children }) => {
   return (
     <div
-      className={`absolute ${
+      className={`absolute whitespace-nowrap ${
         placement === 'bottom'
-          ? 'max-w-auto top-8'
+          ? 'top-11'
           : placement === 'top'
-          ? 'bottom-8'
+          ? 'bottom-11'
           : placement === 'left'
-          ? 'right-8'
+          ? 'right-12'
           : placement === 'right'
-          ? 'left-8'
+          ? 'left-12'
           : ''
-      } rounded  bg-red-800 text-xs font-bold`}
+      } rounded bg-bgError px-1.5 py-0.5 text-xs font-bold text-[#fff] dark:bg-bgErrorDark dark:text-fgPrimaryDark`}
     >
       {children}
     </div>

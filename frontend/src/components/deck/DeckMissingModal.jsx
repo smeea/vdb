@@ -31,7 +31,9 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
           <div className="basis-full md:basis-7/12">
             <div
               className={
-                isMobile || inInventory ? null : 'bg-bgPrimary dark:bg-bgPrimaryDark top-[22px] z-10'
+                isMobile || inInventory
+                  ? null
+                  : 'top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
               }
             >
               <DeckCrypt

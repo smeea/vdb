@@ -41,7 +41,7 @@ const DeckChangeAuthor = ({ deck }) => {
   return (
     <form className="flex" onSubmit={handleSubmit}>
       <div
-        className="flex items-center rounded-l bg-red-900 p-2"
+        className="bg-red-900 flex items-center rounded-l p-2"
         title="Author"
       >
         <PersonFill width="20" height="20" viewBox="0 0 16 16" />

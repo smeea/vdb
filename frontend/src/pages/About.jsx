@@ -11,7 +11,9 @@ import changes from '../../../CHANGES.json';
 
 const Title = ({ children }) => {
   return (
-    <div className="text-fgSecondary dark:text-fgSecondaryDark  text-xl font-bold underline">{children}</div>
+    <div className="text-xl font-bold  text-fgSecondary underline dark:text-fgSecondaryDark">
+      {children}
+    </div>
   );
 };
 
@@ -84,7 +86,7 @@ const About = () => {
               <a href="https://www.vekn.net/card-lists">VEKN official list</a>:{' '}
               <span className="whitespace-nowrap">2022-11-14</span>
             </div>
-            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
+            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               Last update [{changes[0].version}]:
             </div>
             <ul className="space-y-1">
@@ -193,7 +195,7 @@ const About = () => {
 
           <div className="space-y-1">
             <Title>DONATIONS</Title>
-            <ul className="list-none p-0 space-y-2">
+            <ul className="list-none space-y-2 p-0">
               <li className="p-0">
                 Patreon:{' '}
                 <a href="https://www.patreon.com/smeea">
@@ -208,7 +210,7 @@ const About = () => {
                   <div className="inline font-mono text-sm">{BTC_WALLET}</div>
                 </a>
                 <div
-                  className="text-fgSecondary dark:text-fgSecondaryDark hover:text-fgPrimary dark:hover:text-fgPrimaryDark inline pl-1"
+                  className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark"
                   onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
                 >
                   <ClipboardFill className="inline" viewBox="0 0 18 18" />
@@ -219,7 +221,7 @@ const About = () => {
 
           <div className="space-y-1">
             <Title>CONTACTS</Title>
-            <ul className="list-none p-0 space-y-1">
+            <ul className="list-none space-y-1 p-0">
               <li className="p-0">
                 <div className="flex items-center space-x-1">
                   <div className="text-fgThird dark:text-fgThirdDark">

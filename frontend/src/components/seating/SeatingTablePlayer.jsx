@@ -8,7 +8,9 @@ const SeatingTablePlayer = ({ deck }) => {
   return (
     <div
       className={`flex justify-center ${isMobile ? '' : 'whitespace-nowrap'}  ${
-        deck.first ? 'border-dashed font-bold' : ''
+        deck.first
+          ? 'rounded-md border-2 border-dashed border-borderPrimary font-bold dark:border-borderPrimaryDark'
+          : ''
       }`}
     >
       {deck.deckid ? (

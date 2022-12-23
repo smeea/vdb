@@ -35,7 +35,9 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Sect:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            Sect:
+          </div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               <div>

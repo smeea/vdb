@@ -113,7 +113,7 @@ const TwdHallOfFameCards = () => {
   return (
     <div className="hof-cards-container  mx-auto ">
       <Tab.Group manual>
-        <Tab.List className="flex space-x-1 rounded bg-blue-900 p-1">
+        <Tab.List className="bg-blue-900 flex space-x-1 rounded p-1">
           <Tab
             className={({ selected }) =>
               `w-full rounded px-3 py-1.5 ${selected ? 'bg-neutral-300 ' : ''}`

@@ -69,7 +69,9 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
   return (
     <div
       className={`${!inSearch && !inMissing && !inAdvSelect ? '' : ''} ${
-        !isMobile && !inAdvSelect ? null : 'bg-bgPrimary dark:bg-bgPrimaryDark top-[32px] z-10'
+        !isMobile && !inAdvSelect
+          ? null
+          : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
       <DeckCryptHeader
@@ -85,7 +87,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
         setSortMethod={changeCryptDeckSort}
       />
       {showInfo && (
-        <div className="bg-bgSecondary dark:bg-bgSecondaryDark p-2">
+        <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
           <DeckCryptTotalInfo
             disciplinesDetailed={disciplinesDetailed}
             cards={crypt}

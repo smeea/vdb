@@ -5,7 +5,7 @@ const Banner = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-bgSecondary dark:bg-bgSecondaryDark border border-borderSecondary dark:border-borderSecondaryDark flex w-full items-center justify-between p-2">
+    <div className="flex w-full items-center justify-between border border-borderSecondary bg-bgSecondary p-2 dark:border-borderSecondaryDark dark:bg-bgSecondaryDark">
       <div onClick={() => navigate('/')} className="flex items-center">
         <img
           className="logo-image"
@@ -14,7 +14,7 @@ const Banner = () => {
           width="48"
           height="48"
         />
-        <div className="text-fgSecondary dark:text-fgSecondaryDark inline pl-2 text-3xl font-bold">
+        <div className="inline pl-2 text-3xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
           VDB
         </div>
       </div>

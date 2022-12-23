@@ -29,7 +29,9 @@ const TwdSearchFormSect = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Sect:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          Sect:
+        </div>
       </div>
       <div className="w-3/4">
         <Select

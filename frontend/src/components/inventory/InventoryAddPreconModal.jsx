@@ -126,7 +126,13 @@ const InventoryAddDeckModal = ({ handleClose }) => {
 
     return (
       <React.Fragment key={deck.deckid}>
-        <tr className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
+        <tr
+          className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+            idx % 2
+              ? 'bg-bgThird dark:bg-bgThirdDark'
+              : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+          }`}
+        >
           {!isMobile && (
             <td className="clan">{clanImages.length > 0 && clanImages}</td>
           )}

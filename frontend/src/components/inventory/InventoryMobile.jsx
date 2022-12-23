@@ -52,7 +52,7 @@ const InventoryMobile = ({
             />
           </div>
           {newCryptId && (
-            <div className="bg-bgPrimary dark:bg-bgPrimaryDark top-[46px] sm:top-[102px] z-10">
+            <div className="top-[46px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[102px]">
               <InventoryCrypt
                 cards={{
                   [newCryptId]: inventoryCrypt[newCryptId]
@@ -90,7 +90,7 @@ const InventoryMobile = ({
             />
           </div>
           {newLibraryId && (
-            <div className="bg-bgPrimary dark:bg-bgPrimaryDark top-[46px] sm:top-[102px] z-10">
+            <div className="top-[46px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[102px]">
               <InventoryLibrary
                 cards={{
                   [newLibraryId]: inventoryLibrary[newLibraryId]

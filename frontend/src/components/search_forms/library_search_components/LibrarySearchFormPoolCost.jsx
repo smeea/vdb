@@ -26,7 +26,9 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Pool Cost:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            Pool Cost:
+          </div>
         </div>
         <div className="flex w-3/4 space-x-1">
           <div className="w-1/2">

@@ -15,7 +15,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   return (
     <div
       ref={menuRef}
-      className="relative  text-white"
+      className="text-white  relative"
       onClick={() => setShowMenu(!showMenu)}
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
@@ -26,7 +26,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             onClick={() => setShowMenu(false)}
             className="nav-link  "
           >
-            <div className="text-fgPrimary dark:text-fgPrimaryDark flex items-center">
+            <div className="flex items-center text-fgPrimary dark:text-fgPrimaryDark">
               <div className="flex min-w-[30px] justify-center">
                 <PersonFill height="20" width="20" viewBox="0 0 16 16" />
               </div>

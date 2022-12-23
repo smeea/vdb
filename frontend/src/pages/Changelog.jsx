@@ -13,10 +13,14 @@ const Changelog = () => {
       >
         <Banner />
         <div className="space-y-4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark text-xl font-bold underline">CHANGELOG</div>
+          <div className="text-xl font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
+            CHANGELOG
+          </div>
           {changes.map((item) => (
             <div key={item.version}>
-              <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">{item.version}:</div>
+              <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                {item.version}:
+              </div>
               <ul className="space-y-1">
                 {item.changes.map((change, idx) => (
                   <li key={idx}>{change}</li>

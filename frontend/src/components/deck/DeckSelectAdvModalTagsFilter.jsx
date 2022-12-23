@@ -18,7 +18,7 @@ const DeckSelectAdvModalTagsFilter = ({
 
   return (
     <Select
-      classNamePrefix="tags-filter react-select-tags"
+      classNamePrefix="border border-bgSecondary dark:border-bgSecondary react-select-tags"
       isMulti
       options={allTagsOptions}
       onChange={handleChangeTagsFilter}

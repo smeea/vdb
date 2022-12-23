@@ -62,9 +62,13 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`${isMobile ? 'fixed bottom-0 w-full' : 'bg-bgPrimary dark:bg-bgPrimaryDark top-0'} z-50 `}
+      className={`${
+        isMobile
+          ? 'fixed bottom-0 w-full'
+          : 'top-0 bg-bgPrimary dark:bg-bgPrimaryDark'
+      } z-50 `}
     >
-      <div className="navbar-container bg-bgNav dark:bg-bgNav mx-auto flex h-[42px] justify-between">
+      <div className="navbar-container mx-auto flex h-[42px] justify-between bg-bgNav dark:bg-bgNav">
         <div className="flex items-center space-x-3">
           {isMobile ? (
             <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />

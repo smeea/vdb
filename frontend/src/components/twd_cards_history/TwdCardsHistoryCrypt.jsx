@@ -93,7 +93,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
         >
           <div
             className={`name flex items-center justify-start ${
-              card.deckid ? '' : 'bold'
+              card.deckid ? '' : 'font-bold'
             } `}
             onClick={() => handleModalCardOpen(card)}
           >
@@ -106,7 +106,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
               <ResultClanImage value={card.Clan} />
             </div>
             <div className="flex justify-end text-xs">
-              <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
+              <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 {card.Title && <ResultCryptTitle value={card.Title} />}
               </div>
               <ResultCryptGroup value={card.Group} />
@@ -124,7 +124,11 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`bordered flex ${index % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}
+      className={`bordered flex ${
+        index % 2
+          ? 'bg-bgThird dark:bg-bgThirdDark'
+          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+      }`}
     >
       {cardRows[index]}
     </div>
@@ -132,7 +136,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   return (
     <div className="inventory-container-crypt">
-      <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
+      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <InventoryFilterForm
             value={clan}
@@ -151,7 +155,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
         />
       </div>
 
-      <div className="bg-bgSecondary dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgSecondaryDark history-crypt-table flex font-bold">
+      <div className="history-crypt-table flex bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
         {!isMobile && <div className="capacity flex" />}
         {!isMobile && <div className="disciplines flex" />}
         <div className="name flex" />

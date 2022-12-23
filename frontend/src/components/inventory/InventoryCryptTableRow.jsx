@@ -183,7 +183,7 @@ const InventoryCryptTableRow = ({
             <ResultClanImage value={card.c.Clan} />
           </div>
           <div className="flex justify-end text-xs">
-            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
+            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
             </div>
             <ResultCryptGroup value={card.c.Group} />

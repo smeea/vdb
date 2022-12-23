@@ -7,7 +7,7 @@ const MenuButton = ({ title, icon, variant = 'primary', text }) => {
   return (
     <Menu.Button>
       <div
-        className={`flex h-full items-center justify-center space-x-2 rounded bg-red-800 px-3 py-1.5 ${btnVariant}`}
+        className={`bg-red-800 flex h-full items-center justify-center space-x-2 rounded px-3 py-1.5 ${btnVariant}`}
         title={title}
       >
         {icon}
