@@ -85,7 +85,7 @@ const TwdResultLibraryByType = ({ library }) => {
       });
 
       LibraryTypes.push(
-        <tr key={cardtype} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+        <tr key={cardtype} className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
           <td className="type flex items-center justify-center">
             {cardtypeImages}
           </td>

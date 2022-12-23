@@ -46,7 +46,7 @@ const AccountChangePassword = () => {
 
   return (
     <div>
-      <div className="text-blue flex items-center p-1 text-lg font-bold">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center p-1 text-lg font-bold">
         <LockFill />
         <div className="px-2">Change password</div>
       </div>

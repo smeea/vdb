@@ -31,7 +31,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
     <>
       <div className="flex items-center space-x-1">
         <div className="w-1/4">
-          <div className="text-blue font-bold">Players:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Players:</div>
         </div>
         <div className="flex w-3/4 items-center space-x-1">
           <div className="w-full">

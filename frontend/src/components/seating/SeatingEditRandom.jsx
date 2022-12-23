@@ -28,7 +28,7 @@ const SeatingEditRandom = ({
           ) : (
             <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
           )}
-          <div className="text-blue font-bold">Custom Decks</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Custom Decks</div>
         </div>
         <SeatingCustomDeckAdd addDeck={addCustomDeck} />
         <div className="flex">
@@ -96,7 +96,7 @@ const SeatingEditRandom = ({
           ) : (
             <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
           )}
-          <div className="text-blue font-bold">
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
             Standard Decks (from{' '}
             <a
               className="name"

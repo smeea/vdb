@@ -26,7 +26,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             onClick={() => setShowMenu(false)}
             className="nav-link  "
           >
-            <div className="main-font flex items-center">
+            <div className="text-fgPrimary dark:text-fgPrimaryDark flex items-center">
               <div className="flex min-w-[30px] justify-center">
                 <PersonFill height="20" width="20" viewBox="0 0 16 16" />
               </div>

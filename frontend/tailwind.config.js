@@ -2,6 +2,13 @@ module.exports = {
   content: ['index.html', './src/**/*.{html,js,jsx}'],
   darkMode: 'class',
   theme: {
+    screens: {
+      sm: '768px',
+      md: '1024px',
+      lg: '1280px',
+      xl: '1440px',
+      '2xl': '1920px',
+    },
     listStyleType: {
       none: 'none',
       decimal: 'decimal',

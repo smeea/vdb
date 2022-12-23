@@ -111,7 +111,7 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         isEditable={isEditable}
       />
       {showInfo && (
-        <div className="info-message ">
+        <div className="bg-bgSecondary dark:bg-bgSecondaryDark ">
           <DeckLibraryTotalInfo
             byDisciplines={libraryByDisciplinesTotal}
             byTypes={libraryByTypeTotal}

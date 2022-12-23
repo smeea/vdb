@@ -49,7 +49,7 @@ const InventoryLibraryTable = ({
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`bordered flex ${index % 2 ? 'result-even' : 'result-odd'}`}
+      className={`bordered flex ${index % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}
     >
       {cardRows[index]}
     </div>
@@ -58,7 +58,7 @@ const InventoryLibraryTable = ({
   return (
     <>
       {compact ? (
-        <div className="inventory-library-table bordered result-odd compact flex">
+        <div className="inventory-library-table bordered bg-bgPrimary dark:bg-bgPrimaryDark compact flex">
           {cardRows[0]}
         </div>
       ) : (

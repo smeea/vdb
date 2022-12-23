@@ -6,7 +6,7 @@ import virtuesList from 'assets/data/virtuesList.json';
 const TwdSearchFormDisciplines = ({ value, onChange }) => {
   return (
     <div className="space-y-1">
-      <div className="text-blue font-bold">Library Disciplines:</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Library Disciplines:</div>
       <div className="flex flex-wrap justify-start ">
         {disciplinesList.map((i, index) => {
           return (

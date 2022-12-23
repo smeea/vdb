@@ -90,7 +90,7 @@ const DeckPublicButton = ({ deck }) => {
           title={`Sync &quot;${deck.name}&quot; with Public Deck Archive?`}
         >
           <div>
-            <div className="text-blue  font-bold">
+            <div className="text-fgSecondary dark:text-fgSecondaryDark  font-bold">
               Changes from currently published version:
             </div>
             <DeckPublicDiff deckTo={deck} deckFrom={decks[deck.publicParent]} />

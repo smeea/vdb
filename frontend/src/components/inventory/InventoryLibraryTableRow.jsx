@@ -97,8 +97,8 @@ const InventoryLibraryTableRow = ({
                 card.q == softUsedMax + hardUsedTotal
                   ? 'gray'
                   : card.q >= softUsedMax + hardUsedTotal
-                  ? 'green'
-                  : 'red'
+                  ? 'text-fgGreen dark:text-fgGreenDark'
+                  : 'text-fgRed dark:text-fgRedDark'
               }`}
             >
               {card.q === softUsedMax + hardUsedTotal
@@ -117,8 +117,8 @@ const InventoryLibraryTableRow = ({
                   card.q == softUsedMax + hardUsedTotal
                     ? 'gray'
                     : card.q >= softUsedMax + hardUsedTotal
-                    ? 'green'
-                    : 'red'
+                    ? 'text-fgGreen dark:text-fgGreenDark'
+                    : 'text-fgRed dark:text-fgRedDark'
                 }`}
               >
                 {card.q === softUsedMax + hardUsedTotal

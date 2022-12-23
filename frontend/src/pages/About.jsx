@@ -11,7 +11,7 @@ import changes from '../../../CHANGES.json';
 
 const Title = ({ children }) => {
   return (
-    <div className="text-blue  text-xl font-bold underline">{children}</div>
+    <div className="text-fgSecondary dark:text-fgSecondaryDark  text-xl font-bold underline">{children}</div>
   );
 };
 
@@ -84,7 +84,7 @@ const About = () => {
               <a href="https://www.vekn.net/card-lists">VEKN official list</a>:{' '}
               <span className="whitespace-nowrap">2022-11-14</span>
             </div>
-            <div className="text-blue font-bold">
+            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
               Last update [{changes[0].version}]:
             </div>
             <ul className="space-y-1">
@@ -208,7 +208,7 @@ const About = () => {
                   <div className="inline font-mono text-sm">{BTC_WALLET}</div>
                 </a>
                 <div
-                  className="with-hover inline pl-1"
+                  className="text-fgSecondary dark:text-fgSecondaryDark hover:text-fgPrimary dark:hover:text-fgPrimaryDark inline pl-1"
                   onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
                 >
                   <ClipboardFill className="inline" viewBox="0 0 18 18" />
@@ -222,7 +222,7 @@ const About = () => {
             <ul className="list-none p-0 space-y-1">
               <li className="p-0">
                 <div className="flex items-center space-x-1">
-                  <div className="icon ">
+                  <div className="text-fgThird dark:text-fgThirdDark">
                     <Globe2 />
                   </div>
                   <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
@@ -232,7 +232,7 @@ const About = () => {
               </li>
               <li className="p-0">
                 <div className="flex items-center space-x-1">
-                  <div className="icon ">
+                  <div className="text-fgThird dark:text-fgThirdDark">
                     <Github />
                   </div>
                   <a href="https://github.com/smeea/vdb">
@@ -242,7 +242,7 @@ const About = () => {
               </li>
               <li className="p-0">
                 <div className="flex items-center space-x-1">
-                  <div className="icon ">
+                  <div className="text-fgThird dark:text-fgThirdDark">
                     <EnvelopeFill />
                   </div>
                   <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
@@ -250,7 +250,7 @@ const About = () => {
               </li>
               <li className="p-0">
                 <div className="flex items-center space-x-1">
-                  <div className="icon ">
+                  <div className="text-fgThird dark:text-fgThirdDark">
                     <Telegram />
                   </div>
                   <a href="https://t.me/smeea">@smeea</a>
@@ -258,7 +258,7 @@ const About = () => {
               </li>
               <li className="p-0">
                 <div className="flex items-center space-x-1">
-                  <div className="icon ">
+                  <div className="text-fgThird dark:text-fgThirdDark">
                     <Discord />
                   </div>
                   <a href="https://discord.com/users/264725500226830336">

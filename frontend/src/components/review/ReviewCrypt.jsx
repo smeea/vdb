@@ -65,7 +65,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   } = useModalCardController(sortedCards, sortedCardsSide);
 
   return (
-    <div className={isMobile ? null : 'sticky top-[32px] z-10'}>
+    <div className={isMobile ? null : 'bg-bgPrimary dark:bg-bgPrimaryDark top-[32px] z-10'}>
       <DeckCryptHeader
         cryptTotal={cryptTotal}
         cryptGroups={cryptGroups}
@@ -78,7 +78,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         inReview
       />
       {showInfo && (
-        <div className="info-message ">
+        <div className="bg-bgSecondary dark:bg-bgSecondaryDark ">
           <DeckCryptTotalInfo
             disciplinesDetailed={disciplinesDetailed}
             cards={crypt}

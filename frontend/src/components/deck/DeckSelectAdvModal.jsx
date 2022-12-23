@@ -329,7 +329,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
     return (
       <React.Fragment key={deck.deckid}>
         {decks[deck.deckid] && (
-          <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+          <tr className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
             <td className="select">
               <Checkbox
                 checked={selectedDecks[deck.deckid] ?? false}

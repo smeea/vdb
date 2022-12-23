@@ -22,7 +22,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
 
   return (
     <div className="space-y-2">
-      <div className="text-blue font-bold">Library:</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Library:</div>
       <NewLibraryCard onChange={handleAdd} selectedValue={null} />
       <div className="space-y-1">
         {Object.keys(value)

@@ -43,14 +43,10 @@ const DeckProxyCrypt = ({
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
-  const handleCloseModal = () => {
-    handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
-  return (
+   return (
     <>
       <div
-        className={`ps-2 info-message flex items-center justify-between  ${
+        className={`ps-2 bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between  ${
           isMobile ? '' : ''
         }`}
       >
@@ -83,7 +79,7 @@ const DeckProxyCrypt = ({
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleCloseModal}
+          handleClose={handleModalCardClose}
           nested={true}
         />
       )}

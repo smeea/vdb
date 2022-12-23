@@ -66,7 +66,7 @@ const ResultLibraryTotal = ({
   );
 
   return (
-    <div className="info-message  flex items-center justify-between ">
+    <div className="bg-bgSecondary dark:bg-bgSecondaryDark  flex items-center justify-between ">
       {value}
     </div>
   );

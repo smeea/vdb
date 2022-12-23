@@ -40,13 +40,13 @@ const DeckDrawLibraryTable = ({
 
     return (
       <React.Fragment key={`${idx}-${card.Id}`}>
-        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+        <tr className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
           <ResultLibraryTableRowCommon
             card={card}
             handleClick={handleClick}
             placement={placement}
           />
-          <td className="text-blue w-9  text-right">
+          <td className="text-fgSecondary dark:text-fgSecondaryDark w-9  text-right">
             {!ashHeap && (
               <>
                 {isMobile ? (

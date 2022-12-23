@@ -297,7 +297,7 @@ const Review = () => {
         </div>
         {!isMobile && (
           <div className="hidden lg:flex lg:basis-1/6">
-            <div className="z-20 sticky top-[77px]">
+            <div className="z-20 bg-bgPrimary dark:bg-bgPrimaryDark top-[77px]">
               <ReviewButtons
                 deck={deckFrom}
                 urlDiff={urlDiff}

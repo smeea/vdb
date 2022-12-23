@@ -73,7 +73,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         setSortMethod={changeCryptDeckSort}
       />
       {showInfo && (
-        <div className="info-message ">
+        <div className="bg-bgSecondary dark:bg-bgSecondaryDark ">
           <DeckCryptTotalInfo
             disciplinesDetailed={disciplinesDetailed}
             cards={crypt}

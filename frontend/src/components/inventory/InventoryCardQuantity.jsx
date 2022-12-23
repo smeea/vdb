@@ -58,7 +58,7 @@ const InventoryCardQuantity = ({
           </a>
           <div
             className={
-              state < softUsedMax + hardUsedTotal ? 'inv-miss-full' : null
+              state < softUsedMax + hardUsedTotal ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark' : null
             }
           >
             {state == 0 ? <>&nbsp;&nbsp;</> : state}
@@ -93,7 +93,7 @@ const InventoryCardQuantity = ({
               manual
                 ? ''
                 : state < softUsedMax + hardUsedTotal
-                ? 'inv-miss-full '
+                ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark '
                 : ''
             }
             onFocus={() => setManual(true)}

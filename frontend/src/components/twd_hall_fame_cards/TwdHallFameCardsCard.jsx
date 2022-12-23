@@ -10,7 +10,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
   const { isMobile } = useApp();
 
   return (
-    <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+    <tr className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
       {card.Id > 200000 ? (
         <ResultCryptTableRowCommon
           card={card}

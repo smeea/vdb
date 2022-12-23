@@ -37,14 +37,14 @@ const DeckCardQuantity = ({
     if (inventoryType) {
       if (inProxy) {
         return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
-          ? 'inv-miss-full'
+          ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
           : null;
       } else {
         return inInventory < softUsedMax + hardUsedTotal
           ? inInventory < q
-            ? 'inv-miss-full'
+            ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
             : inventoryType === 'h'
-            ? 'inv-miss-part'
+            ? 'bg-bgWarning dark:bg-bgWarningDark'
             : null
           : null;
       }

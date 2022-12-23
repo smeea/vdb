@@ -21,7 +21,7 @@ const DiffQuantityDiff = ({ qFrom, qTo }) => {
     );
   } else if (qFrom > qTo) {
     return (
-      <div className="green">
+      <div className="text-fgGreen dark:text-fgGreenDark">
         <ArrowUp className="inline" viewBox="0 2 16 16" />
         {qFrom - qTo}
       </div>

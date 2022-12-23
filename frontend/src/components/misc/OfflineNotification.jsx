@@ -9,8 +9,8 @@ const OfflineNotification = () => {
     <>
       {isOffline ? (
         <nav
-          className={`offline-bar
-          ${isMobile ? 'sticky top-0' : 'fixed bottom-0'}
+          className={`bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark
+          ${isMobile ? 'bg-bgPrimary dark:bg-bgPrimaryDark top-0' : 'fixed bottom-0'}
 `}
         >
           <div className="flex w-full items-center justify-center">

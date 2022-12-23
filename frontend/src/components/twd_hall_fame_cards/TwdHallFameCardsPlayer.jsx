@@ -125,7 +125,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               inHoF={true}
             />
             <table className="search-crypt-table">
-              <thead className="info-message text-blue">
+              <thead className="bg-bgSecondary dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgSecondaryDark">
                 <tr>
                   <th />
                   {!isMobile && <th />}
@@ -169,7 +169,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               inHoF={true}
             />
             <table className="search-library-table">
-              <thead className="info-message text-blue">
+              <thead className="bg-bgSecondary dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgSecondaryDark">
                 <tr>
                   <th />
                   <th />

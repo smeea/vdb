@@ -84,19 +84,19 @@ const AccountLogin = () => {
 
   return (
     <div>
-      <div className="text-blue flex items-center text-xl font-bold">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center text-xl font-bold">
         <div className="flex">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
         Login
         {!isMobile ? (
           <Tooltip text={loginTooltipText}>
-            <span className="question-tooltip ">[?]</span>
+            <span className="text-fgThird dark:text-fgThirdDark ">[?]</span>
           </Tooltip>
         ) : (
           <span
             onClick={() => setShowLoginTooltip(true)}
-            className="question-tooltip "
+            className="text-fgThird dark:text-fgThirdDark "
           >
             [?]
           </span>

@@ -30,7 +30,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
 
     return (
       <React.Fragment key={card.Id}>
-        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
+        <tr className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}>
           {isEditable && (
             <td className="quantity-add ">
               <ButtonAddCard

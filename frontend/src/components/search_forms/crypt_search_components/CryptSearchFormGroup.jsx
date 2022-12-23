@@ -7,7 +7,7 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-blue font-bold">Group:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Group:</div>
       </div>
       <div className="flex w-3/4 justify-end">
         {groups.map((i, idx) => {

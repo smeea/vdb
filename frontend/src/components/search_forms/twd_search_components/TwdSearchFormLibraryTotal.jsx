@@ -7,7 +7,7 @@ const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-blue font-bold">Library Size:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Library Size:</div>
       </div>
       <div className="flex w-3/4 justify-end">
         {['60-67', '68-75', '76-83', '84-90'].map((i, idx) => {

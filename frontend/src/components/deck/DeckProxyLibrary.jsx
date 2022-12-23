@@ -90,7 +90,7 @@ const DeckProxyLibrary = ({
   return (
     <>
       <div
-        className={`info-message flex items-center justify-between   ${
+        className={`bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between   ${
           isMobile ? '' : ''
         }`}
       >

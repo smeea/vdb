@@ -9,12 +9,12 @@ import { Banner } from 'components';
 
 const Title = ({ children }) => {
   return (
-    <div className="text-blue text-xl font-bold underline">{children}</div>
+    <div className="text-fgSecondary dark:text-fgSecondaryDark text-xl font-bold underline">{children}</div>
   );
 };
 
 const SubTitle = ({ children }) => {
-  return <div className="text-blue font-bold">{children}</div>;
+  return <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">{children}</div>;
 };
 
 const Documentation = () => {

@@ -28,7 +28,7 @@ const TwdResultDescription = ({ deck }) => {
       <table>
         <tbody>
           <tr>
-            <td className="text-blue">
+            <td className="text-fgSecondary dark:text-fgSecondaryDark">
               {isMobile ? (
                 <div className="flex items-center">
                   <CalendarEvent />
@@ -40,7 +40,7 @@ const TwdResultDescription = ({ deck }) => {
             <td>{deck['creation_date']}</td>
           </tr>
           <tr>
-            <td className="text-blue">
+            <td className="text-fgSecondary dark:text-fgSecondaryDark">
               {isMobile ? (
                 <div className="flex items-center">
                   <TrophyFill />
@@ -52,7 +52,7 @@ const TwdResultDescription = ({ deck }) => {
             <td>{deck['event']}</td>
           </tr>
           <tr>
-            <td className="text-blue">
+            <td className="text-fgSecondary dark:text-fgSecondaryDark">
               {isMobile ? (
                 <div className="flex items-center">
                   <GeoAltFill />
@@ -71,7 +71,7 @@ const TwdResultDescription = ({ deck }) => {
             </td>
           </tr>
           <tr>
-            <td className="text-blue">
+            <td className="text-fgSecondary dark:text-fgSecondaryDark">
               {isMobile ? (
                 <div className="flex items-center">
                   <PersonFill />
@@ -90,7 +90,7 @@ const TwdResultDescription = ({ deck }) => {
             </td>
           </tr>
           <tr>
-            <td className="text-blue">
+            <td className="text-fgSecondary dark:text-fgSecondaryDark">
               {isMobile ? (
                 <div className="flex items-center">
                   <TagFill />
@@ -114,7 +114,7 @@ const TwdResultDescription = ({ deck }) => {
       {isDesktop ? (
         <>
           <div
-            className={`text-blue   flex items-center justify-center text-lg ${
+            className={`text-fgSecondary dark:text-fgSecondaryDark   flex items-center justify-center text-lg ${
               deck['players'] >= 30
                 ? 'bold border-dashed-thick'
                 : 'border-dashed'
@@ -142,7 +142,7 @@ const TwdResultDescription = ({ deck }) => {
           <div className="basis-1/4">
             <div className="flex flex-col space-y-1">
               <div
-                className={`text-blue  flex items-center justify-center text-lg ${
+                className={`text-fgSecondary dark:text-fgSecondaryDark  flex items-center justify-center text-lg ${
                   deck['players'] >= 30
                     ? 'bold border-dashed-thick'
                     : 'border-dashed'

@@ -62,11 +62,9 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`${
-        isMobile ? 'fixed bottom-0 w-full' : 'sticky top-0'
-      } z-50 bg-green-900`}
+      className={`${isMobile ? 'fixed bottom-0 w-full' : 'bg-bgPrimary dark:bg-bgPrimaryDark top-0'} z-50 `}
     >
-      <div className="navbar-container mx-auto flex h-[42px] justify-between">
+      <div className="navbar-container bg-bgNav dark:bg-bgNav mx-auto flex h-[42px] justify-between">
         <div className="flex items-center space-x-3">
           {isMobile ? (
             <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
@@ -85,7 +83,7 @@ const Navigation = () => {
             location.pathname !== '/inventory' && (
               <div
                 className={`flex h-full items-center px-3 ${
-                  inventoryMode ? 'text-white' : 'text-neutral-500-font'
+                  inventoryMode ? 'text-white' : 'text-neutral-500'
                 }`}
                 onClick={() => {
                   toggleInventoryMode();

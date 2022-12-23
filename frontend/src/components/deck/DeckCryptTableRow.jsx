@@ -91,7 +91,7 @@ const DeckCryptTableRow = ({
   return (
     <tr
       {...swipeHandlers}
-      className={`result-${idx % 2 ? 'even' : 'odd'} ${
+      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'} ${
         isSwiped ? `swiped-${isSwiped}` : ''
       }
 `}
@@ -161,9 +161,9 @@ const DeckCryptTableRow = ({
                     inMissing
                       ? ''
                       : inInventory < card.q
-                      ? 'inv-miss-full'
+                      ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
                       : inInventory < hardUsedTotal + card.q
-                      ? 'inv-miss-part'
+                      ? 'bg-bgWarning dark:bg-bgWarningDark'
                       : ''
                   }
                 >
@@ -188,7 +188,7 @@ const DeckCryptTableRow = ({
         inDeck
       />
       {showInfo && (
-        <td className="text-blue w-9 text-right">
+        <td className="text-fgSecondary dark:text-fgSecondaryDark w-9 text-right">
           {isMobile ? (
             <div
               onClick={() =>

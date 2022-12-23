@@ -54,7 +54,7 @@ const DeckDrawModal = ({
         <div className="flex flex-row">
           <div className="basis-full md:basis-7/12">
             <div>
-              <div className="info-message flex h-10 justify-between">
+              <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-10 justify-between">
                 <div className="flex items-center">
                   <b>Uncontrolled</b>
                 </div>
@@ -122,7 +122,7 @@ const DeckDrawModal = ({
             </div>
           </div>
           <div className="basis-full md:basis-5/12">
-            <div className="info-message flex h-10 justify-between">
+            <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-10 justify-between">
               <div className="flex items-center">
                 <b>Hand</b>
               </div>
@@ -186,7 +186,7 @@ const DeckDrawModal = ({
             <div className="basis-full md:basis-7/12">
               {burnedCrypt.length > 0 && (
                 <div>
-                  <div className="info-message flex h-10 justify-between">
+                  <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-10 justify-between">
                     <div className="flex items-center">
                       <b>Controlled</b>
                     </div>
@@ -213,7 +213,7 @@ const DeckDrawModal = ({
             <div className="basis-full md:basis-5/12">
               {burnedLibrary.length > 0 && (
                 <div>
-                  <div className="info-message flex h-10 justify-between">
+                  <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-10 justify-between">
                     <div className="flex items-center">
                       <b>Ash Heap</b>
                     </div>

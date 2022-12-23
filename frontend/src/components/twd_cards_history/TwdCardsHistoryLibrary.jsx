@@ -230,7 +230,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`bordered flex ${index % 2 ? 'result-even' : 'result-odd'}`}
+      className={`bordered flex ${index % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'}`}
     >
       {cardRows[index]}
     </div>
@@ -238,7 +238,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   return (
     <div className="inventory-container-library">
-      <div className="info-message flex items-center justify-between">
+      <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
         <div className="w-3/4">
           <div className="flex flex-col space-y-1">
             <InventoryFilterForm
@@ -268,7 +268,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         />
       </div>
 
-      <div className="info-message text-blue history-library-table flex font-bold">
+      <div className="bg-bgSecondary dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgSecondaryDark history-library-table flex font-bold">
         {!isMobile && <div className="cost flex" />}
         {!isMobile && <div className="type flex" />}
         <div className="name flex" />

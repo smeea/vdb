@@ -32,7 +32,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
     <>
       <div
         className={`year flex items-center justify-center ${
-          card.deckid ? '' : 'text-blue font-bold'
+          card.deckid ? '' : 'text-fgSecondary dark:text-fgSecondaryDark font-bold'
         }`}
       >
         {card.release_date.slice(0, 4)}
@@ -44,7 +44,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       )}
       <div
         className={`ytw flex items-center justify-center ${
-          card.deckid ? '' : 'text-blue font-bold'
+          card.deckid ? '' : 'text-fgSecondary dark:text-fgSecondaryDark font-bold'
         }`}
       >
         {yearsToWin}

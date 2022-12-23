@@ -37,7 +37,7 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-blue font-bold">Capacity:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Capacity:</div>
       </div>
       <div className="flex w-3/4 space-x-1">
         <div className="w-1/2">

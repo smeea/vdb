@@ -96,8 +96,8 @@ const InventoryCryptTableRow = ({
                 card.q == softUsedMax + hardUsedTotal
                   ? 'gray'
                   : card.q >= softUsedMax + hardUsedTotal
-                  ? 'green'
-                  : 'red'
+                  ? 'text-fgGreen dark:text-fgGreenDark'
+                  : 'text-fgRed dark:text-fgRedDark'
               }`}
             >
               {card.q === softUsedMax + hardUsedTotal
@@ -116,8 +116,8 @@ const InventoryCryptTableRow = ({
                   card.q == softUsedMax + hardUsedTotal
                     ? 'gray'
                     : card.q >= softUsedMax + hardUsedTotal
-                    ? 'green'
-                    : 'red'
+                    ? 'text-fgGreen dark:text-fgGreenDark'
+                    : 'text-fgRed dark:text-fgRedDark'
                 }`}
               >
                 {card.q === softUsedMax + hardUsedTotal
@@ -183,7 +183,7 @@ const InventoryCryptTableRow = ({
             <ResultClanImage value={card.c.Clan} />
           </div>
           <div className="flex justify-end text-xs">
-            <div className="text-blue font-bold">
+            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
               {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
             </div>
             <ResultCryptGroup value={card.c.Group} />

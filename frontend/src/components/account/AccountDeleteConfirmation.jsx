@@ -62,7 +62,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
       >
         <div>
           <div>
-            <div className="text-blue font-bold">THIS CANNOT BE UNDONE!</div>
+            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">THIS CANNOT BE UNDONE!</div>
           </div>
           This will also delete all your decks and they will not be available
           via URL anymore.

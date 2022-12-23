@@ -81,7 +81,7 @@ const ResultCryptTableRow = ({
   return (
     <tr
       {...swipeHandlers}
-      className={`result-${idx % 2 ? 'even' : 'odd'} ${
+      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'} ${
         isSwiped ? `swiped-${isSwiped}` : ''
       }
 `}
@@ -106,7 +106,7 @@ const ResultCryptTableRow = ({
               <div
                 className={`used  flex items-center justify-between ${
                   inInventory < softUsedMax + hardUsedTotal
-                    ? 'inv-miss-full'
+                    ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
                     : ''
                 }
                   `}

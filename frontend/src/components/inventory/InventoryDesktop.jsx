@@ -61,7 +61,7 @@ const InventoryDesktop = ({
               />
             </div>
             {newCryptId && (
-              <div className="sticky top-[46px] sm:top-[102px] z-10">
+              <div className="bg-bgPrimary dark:bg-bgPrimaryDark top-[46px] sm:top-[102px] z-10">
                 <InventoryCrypt
                   cards={{
                     [newCryptId]: inventoryCrypt[newCryptId]
@@ -102,7 +102,7 @@ const InventoryDesktop = ({
               />
             </div>
             {newLibraryId && (
-              <div className="sticky top-[46px] sm:top-[102px] z-10">
+              <div className="bg-bgPrimary dark:bg-bgPrimaryDark top-[46px] sm:top-[102px] z-10">
                 <InventoryLibrary
                   cards={{
                     [newLibraryId]: inventoryLibrary[newLibraryId]
@@ -138,7 +138,7 @@ const InventoryDesktop = ({
         )}
       </div>
       <div className="hidden lg:flex lg:basis-1/6">
-        <div className="z-20 sticky top-[77px] space-y-6">
+        <div className="z-20 bg-bgPrimary dark:bg-bgPrimaryDark top-[77px] space-y-6">
           <InventoryButtons
             crypt={sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt}
             library={

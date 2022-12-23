@@ -276,7 +276,7 @@ const Decks = () => {
         </div>
         {!isMobile && (
           <div className="hidden lg:flex lg:basis-2/12">
-            <div className="z-20 sticky top-[77px]">
+            <div className="z-20 bg-bgPrimary dark:bg-bgPrimaryDark top-[77px]">
               <DeckButtons
                 deck={deck}
                 setShowInfo={setShowInfo}
@@ -293,7 +293,7 @@ const Decks = () => {
       </div>
       {!username && !deckid && !hash && (
         <div className="flex h-[70vh] flex-col items-center justify-center space-y-10">
-          <div className="text-blue justify-center font-bold">
+          <div className="text-fgSecondary dark:text-fgSecondaryDark justify-center font-bold">
             <div className="flex justify-center text-lg">
               Login to create your decks
             </div>
@@ -310,7 +310,7 @@ const Decks = () => {
 
       {username && decks && Object.keys(decks).length === 0 && !deck && (
         <div className="flex h-[70vh] flex-col items-center justify-center space-y-8">
-          <div className="text-blue justify-center font-bold">
+          <div className="text-fgSecondary dark:text-fgSecondaryDark justify-center font-bold">
             <div className="flex justify-center text-lg">
               You do not have any decks in your collection yet
             </div>

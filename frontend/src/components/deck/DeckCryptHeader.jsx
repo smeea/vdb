@@ -20,7 +20,7 @@ const DeckCryptHeader = ({
   const { isMobile } = useApp();
 
   return (
-    <div className="info-message flex items-center justify-between">
+    <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
       <div className="space-x-2 px-2 py-1 font-bold">
         <div className="inline">
           Crypt [{cryptTotal}
