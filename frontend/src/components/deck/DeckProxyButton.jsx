@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
 import Printer from 'assets/images/icons/printer.svg';
 import Spinner from 'assets/images/icons/three-dots.svg';
-import { MenuButton, ButtonIconed, DeckProxySelectModal } from 'components';
+import {
+  MenuButton,
+  MenuItems,
+  MenuItem,
+  ButtonIconed,
+  DeckProxySelectModal,
+} from 'components';
 import { cryptSort } from 'utils';
 import { useCardImageUrl, useDeckLibrary } from 'hooks';
 import { cardtypeSortedFull } from 'utils/constants';
@@ -131,62 +137,66 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
         />
       ) : (
         <Menu>
-          <MenuButton
-            title="Create PDF with Cards"
-            icon={
-              spinnerState ? (
-                <Spinner />
-              ) : (
-                <Printer width="18" height="18" viewBox="0 0 18 16" />
-              )
-            }
-            variant="secondary"
-            text="PDF Proxy"
-          />
-          <Menu.Items>
-            <Menu.Item>
-              <div onClick={() => proxyCards(deck.crypt, deck.library, false)}>
-                Full Deck - Gray gaps
-              </div>
-            </Menu.Item>
-            <Menu.Item>
-              <div onClick={() => proxyCards(deck.crypt, deck.library, true)}>
-                Full Deck - White gaps
-              </div>
-            </Menu.Item>
-            {inventoryMode && (
-              <>
-                <Menu.Item>
-                  <div
-                    onClick={() =>
-                      proxyCards(missingCrypt, missingLibrary, false)
-                    }
-                  >
-                    Missing in Inventory - Gray gaps
-                  </div>
-                </Menu.Item>
-                <Menu.Item>
-                  <div
-                    onClick={() =>
-                      proxyCards(missingCrypt, missingLibrary, true)
-                    }
-                  >
-                    Missing in Inventory - White gaps
-                  </div>
-                </Menu.Item>
-              </>
-            )}
-            <Menu.Item>
-              <div
-                onClick={() => {
-                  setShowSelectModal(true);
-                  setShowFloatingButtons(false);
-                }}
-              >
-                Select Cards
-              </div>
-            </Menu.Item>
-          </Menu.Items>
+          <div className="relative">
+            <MenuButton
+              title="Create PDF with Cards"
+              icon={
+                spinnerState ? (
+                  <Spinner />
+                ) : (
+                  <Printer width="18" height="18" viewBox="0 0 18 16" />
+                )
+              }
+              variant="secondary"
+              text="PDF Proxy"
+            />
+            <MenuItems>
+              <MenuItem>
+                <div
+                  onClick={() => proxyCards(deck.crypt, deck.library, false)}
+                >
+                  Full Deck - Gray gaps
+                </div>
+              </MenuItem>
+              <MenuItem>
+                <div onClick={() => proxyCards(deck.crypt, deck.library, true)}>
+                  Full Deck - White gaps
+                </div>
+              </MenuItem>
+              {inventoryMode && (
+                <>
+                  <MenuItem>
+                    <div
+                      onClick={() =>
+                        proxyCards(missingCrypt, missingLibrary, false)
+                      }
+                    >
+                      Missing in Inventory - Gray gaps
+                    </div>
+                  </MenuItem>
+                  <MenuItem>
+                    <div
+                      onClick={() =>
+                        proxyCards(missingCrypt, missingLibrary, true)
+                      }
+                    >
+                      Missing in Inventory - White gaps
+                    </div>
+                  </MenuItem>
+                </>
+              )}
+              <MenuItem>
+                <div
+                  onClick={() => {
+                    setShowSelectModal(true);
+                    setShowFloatingButtons(false);
+                  }}
+                >
+                  Select Cards
+                </div>
+              </MenuItem>
+            </MenuItems>
+          </div>
         </Menu>
       )}
       {showSelectModal && (

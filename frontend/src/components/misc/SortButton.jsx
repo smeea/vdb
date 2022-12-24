@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
 import SortDown from 'assets/images/icons/sort-down.svg';
-import { MenuButton } from 'components';
+import { MenuItems, MenuItem, MenuButton } from 'components';
 
 const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
   return (
@@ -11,15 +11,15 @@ const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
         icon={<SortDown />}
         text={sortMethods[sortMethod]}
       />
-      <Menu.Items>
+      <MenuItems>
         {Object.keys(sortMethods).map((i, index) => {
           return (
-            <Menu.Item key={index}>
+            <MenuItem key={index}>
               <div onClick={() => setSortMethod(i)}>Sort by {i}</div>
-            </Menu.Item>
+            </MenuItem>
           );
         })}
-      </Menu.Items>
+      </MenuItems>
     </Menu>
   );
 };

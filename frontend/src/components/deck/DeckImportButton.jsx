@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
 import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
-import { MenuButton } from 'components';
+import { MenuItems, MenuItem, MenuButton } from 'components';
 import { useApp } from 'context';
 
 const DeckImportButton = ({
@@ -20,26 +20,26 @@ const DeckImportButton = ({
         variant="secondary"
         text="New / Import"
       />
-      <Menu.Items>
+      <MenuItems>
         {username && (
           <>
-            <Menu.Item>
+            <MenuItem>
               <div onClick={handleCreate}>Create New Deck</div>
-            </Menu.Item>
+            </MenuItem>
             {/* <Dropdown.Divider /> */}
-            <Menu.Item>
+            <MenuItem>
               <div onClick={() => handleFileInputClick(false)}>
                 Import from File
               </div>
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <div onClick={() => handleOpenTextModal(false)}>
                 Import from Text
               </div>
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <div onClick={handleOpenAmaranthModal}>Import from Amaranth</div>
-            </Menu.Item>
+            </MenuItem>
             {/* <Dropdown.Divider /> */}
           </>
         )}
@@ -50,17 +50,17 @@ const DeckImportButton = ({
         {/*     Useful only to copy URL */}
         {/*   </> */}
         {/* </Dropdown.Header> */}
-        <Menu.Item>
+        <MenuItem>
           <div onClick={() => handleFileInputClick(true)}>
             Import w/o Acc. from File
           </div>
-        </Menu.Item>
-        <Menu.Item>
+        </MenuItem>
+        <MenuItem>
           <div onClick={() => handleOpenTextModal(true)}>
             Import w/o Acc. from Text
           </div>
-        </Menu.Item>
-      </Menu.Items>
+        </MenuItem>
+      </MenuItems>
     </Menu>
   );
 };

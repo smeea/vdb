@@ -5,6 +5,8 @@ import { Menu } from '@headlessui/react';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import {
+  MenuItems,
+  MenuItem,
   MenuButton,
   Modal,
   Button,
@@ -63,25 +65,25 @@ const DeckPublicButton = ({ deck }) => {
           icon={!spinnerState ? <PeopleFill /> : <Spinner />}
           text="Public"
         />
-        <Menu.Items>
+        <MenuItems>
           {isPublished && (
-            <Menu.Item>
+            <MenuItem>
               <div onClick={() => handleSwitch(deck.deckid)}>
                 {isChild ? 'Go to Main Deck' : 'Go to Public Deck'}
               </div>
-            </Menu.Item>
+            </MenuItem>
           )}
           {isChild && (
-            <Menu.Item>
+            <MenuItem>
               <div onClick={() => setShowSyncConfirmation(true)}>
                 Sync Public Deck
               </div>
-            </Menu.Item>
+            </MenuItem>
           )}
           {(isChild || !isPublished) && (
             <DeckTogglePublicButton deck={deck} isDropdown />
           )}
-        </Menu.Items>
+        </MenuItems>
       </Menu>
       {showSyncConfirmation && (
         <Modal

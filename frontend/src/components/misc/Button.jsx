@@ -9,7 +9,7 @@ const Button = ({
   onClick,
   title,
   value,
-  variant,
+  variant = 'primary',
 }) => {
   const getStyle = (variant) => {
     switch (variant) {

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import Download from 'assets/images/icons/download.svg';
 import { Menu } from '@headlessui/react';
-import { MenuButton } from 'components';
+import { MenuItems, MenuItem, MenuButton } from 'components';
 import { useDeckExport } from 'hooks';
 import { useApp, deckStore } from 'context';
 import { deckServices } from 'services';
@@ -35,11 +35,11 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     };
 
     return (
-      <Menu.Item>
+      <MenuItem>
         <div onClick={() => actions[action][0](format)}>
           {actions[action][1]} - {formats[format]}
         </div>
-      </Menu.Item>
+      </MenuItem>
     );
   };
 
@@ -115,7 +115,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
         variant={inMissing ? 'primary' : 'secondary'}
         text={`Export ${inMissing ? 'Missing' : ''}`}
       />
-      <Menu.Items>
+      <MenuItems>
         {inInventory ? (
           <>
             <ExportDropdown action="save" format="text" />
@@ -147,21 +147,18 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
                 <ExportDropdown action="copy" format="jol" />
               </>
             )}
-            {!inMissing &&
-              username &&
-              decks &&
-              Object.keys(decks).length > 1 && (
-                <>
-                  {/* <Dropdown.Divider /> */}
-                  <ExportDropdown action="exportAll" format="text" />
-                  <ExportDropdown action="exportAll" format="lackey" />
-                  <ExportDropdown action="exportAll" format="jol" />
-                  <ExportDropdown action="exportAll" format="xlsx" />
-                </>
-              )}
+            {!inMissing && username && decks && Object.keys(decks).length > 1 && (
+              <>
+                {/* <Dropdown.Divider /> */}
+                <ExportDropdown action="exportAll" format="text" />
+                <ExportDropdown action="exportAll" format="lackey" />
+                <ExportDropdown action="exportAll" format="jol" />
+                <ExportDropdown action="exportAll" format="xlsx" />
+              </>
+            )}
           </>
         )}
-      </Menu.Items>
+      </MenuItems>
     </Menu>
   );
 };

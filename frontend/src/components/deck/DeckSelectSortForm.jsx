@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
 import SortDown from 'assets/images/icons/sort-down.svg';
-import { MenuButton } from 'components';
+import { MenuItems, MenuItem, MenuButton } from 'components';
 
 const DeckSelectSortForm = ({ onChange }) => {
   const sortMethods = { Name: 'byName', Date: 'byDate' };
@@ -9,15 +9,15 @@ const DeckSelectSortForm = ({ onChange }) => {
   return (
     <Menu>
       <MenuButton title="Sort Decks" icon={<SortDown />} text="Public" />
-      <Menu.Items>
+      <MenuItems>
         {Object.keys(sortMethods).map((k) => {
           return (
-            <Menu.Item key={k}>
+            <MenuItem key={k}>
               <div onClick={() => onChange(sortMethods[k])}>Sort by {k}</div>
-            </Menu.Item>
+            </MenuItem>
           );
         })}
-      </Menu.Items>
+      </MenuItems>
     </Menu>
   );
 };

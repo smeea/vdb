@@ -20,12 +20,8 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
       {showMenu && (
-        <div className="nav-menu absolute text-lg">
-          <NavLink
-            to="/account"
-            onClick={() => setShowMenu(false)}
-            className="nav-link  "
-          >
+        <div className="absolute text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark border border-borderPrimary dark:border-borderPrimaryDark rounded bottom-8 text-lg p-3">
+          <NavLink to="/account" onClick={() => setShowMenu(false)}>
             <div className="flex items-center text-fgPrimary dark:text-fgPrimaryDark">
               <div className="flex min-w-[30px] justify-center">
                 <PersonFill height="20" width="20" viewBox="0 0 16 16" />
@@ -33,12 +29,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               <div>{username ? 'Account' : 'Login'}</div>
             </div>
           </NavLink>
-          <NavLink
-            to="/"
-            end
-            onClick={() => setShowMenu(false)}
-            className="nav-link  "
-          >
+          <NavLink to="/" end onClick={() => setShowMenu(false)}>
             <div className="main-font flex items-center">
               <div className="flex min-w-[30px] justify-center">
                 <InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />
@@ -46,7 +37,6 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               <div>About</div>
             </div>
           </NavLink>
-
           <ThemeSelect setShowMenu={setShowMenu} />
           <div
             className="flex items-center  "
@@ -63,7 +53,9 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               )}
             </div>
             <div
-              className={`${inventoryMode ? '' : 'gray'} whitespace-nowrap `}
+              className={`${
+                inventoryMode ? '' : 'text-[gray]'
+              } whitespace-nowrap `}
             >
               Inventory Mode
             </div>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
-import { ButtonIconed, ModalConfirmation } from 'components';
+import { MenuItem, ButtonIconed, ModalConfirmation } from 'components';
 import { countCards } from 'utils';
 import { deckStore } from 'context';
 
@@ -55,11 +55,11 @@ const DeckTogglePublicButton = ({ deck, isDropdown }) => {
   return (
     <>
       {isDropdown ? (
-        <Menu.Item>
+        <MenuItem>
           <div onClick={() => setShowConfirmation(true)}>
             {isPublished ? 'Remove from Public' : 'Make Public'}
           </div>
-        </Menu.Item>
+        </MenuItem>
       ) : (
         <ButtonIconed
           variant={isPublished ? 'third' : 'primary'}

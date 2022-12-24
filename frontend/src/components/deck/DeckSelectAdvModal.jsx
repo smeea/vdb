@@ -25,6 +25,8 @@ import {
   ResultClanImage,
   Tooltip,
   Modal,
+  MenuItems,
+  MenuItem,
   MenuButton,
   Button,
   ButtonFloat,
@@ -555,20 +557,20 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                 icon={<Download />}
                 text="Export Selected"
               />
-              <Menu.Items>
-                <Menu.Item>
+              <MenuItems>
+                <MenuItem>
                   <div onClick={() => exportSelected('text')}>Text</div>
-                </Menu.Item>
-                <Menu.Item>
+                </MenuItem>
+                <MenuItem>
                   <div onClick={() => exportSelected('lackey')}>Lackey</div>
-                </Menu.Item>
-                <Menu.Item>
+                </MenuItem>
+                <MenuItem>
                   <div onClick={() => exportSelected('jol')}>JOL</div>
-                </Menu.Item>
-                <Menu.Item>
+                </MenuItem>
+                <MenuItem>
                   <div onClick={() => exportSelected('xlsx')}>Excel</div>
-                </Menu.Item>
-              </Menu.Items>
+                </MenuItem>
+              </MenuItems>
             </Menu>
           </div>
         </div>

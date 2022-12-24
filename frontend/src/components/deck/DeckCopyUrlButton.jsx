@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
-import { MenuButton } from 'components';
+import { MenuItems, MenuItem, MenuButton } from 'components';
 import { useApp } from 'context';
 
 const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
@@ -139,37 +139,37 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
         variant={success ? 'success' : noText ? 'primary' : 'secondary'}
         text={success ? 'Copied' : 'Copy URL'}
       />
-      <Menu.Items>
+      <MenuItems>
         <>
           {deck.deckid !== 'deck' && (
             <>
-              <Menu.Item title="Copy URL (will follow deck changes, if any)">
+              <MenuItem title="Copy URL (will follow deck changes, if any)">
                 <div onClick={handleStandard}>Standard URL</div>
-              </Menu.Item>
-              <Menu.Item title="Create QR with Standard URL (will follow deck changes, if any)">
+              </MenuItem>
+              <MenuItem title="Create QR with Standard URL (will follow deck changes, if any)">
                 <div onClick={handleStandardQr}>Standard URL - QR</div>
-              </Menu.Item>
+              </MenuItem>
             </>
           )}
           {(deck.deckid.length === 32 || deck.deckid === 'deck') && (
             <>
               {/* <Dropdown.Divider /> */}
               {/* <Dropdown.Header>Non-modifiable</Dropdown.Header> */}
-              <Menu.Item title="Copy long URL containing full deck info (will not follow deck changes)">
+              <MenuItem title="Copy long URL containing full deck info (will not follow deck changes)">
                 <div onClick={handleDeckInUrl}>Deck-in-URL</div>
-              </Menu.Item>
-              <Menu.Item title="Create QR with long URL containing full deck info (will not follow deck changes)">
+              </MenuItem>
+              <MenuItem title="Create QR with long URL containing full deck info (will not follow deck changes)">
                 <div onClick={handleDeckInQr}>Deck-in-QR</div>
-              </Menu.Item>
+              </MenuItem>
             </>
           )}
           {deck.deckid.length === 32 && (
-            <Menu.Item title="Copy URL to snapshot of the deck (will not follow deck changes)">
+            <MenuItem title="Copy URL to snapshot of the deck (will not follow deck changes)">
               <div onClick={handleSnapshot}>Snapshot URL</div>
-            </Menu.Item>
+            </MenuItem>
           )}
         </>
-      </Menu.Items>
+      </MenuItems>
     </Menu>
   );
 };

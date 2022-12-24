@@ -24,14 +24,6 @@ html
   @media (max-width: 639px)
     scroll-padding-top: 12px
 
-div.sticky-selector
-  background-color: var(--bg-primary)
-  position: sticky
-  top: 40
-  @media (max-width: 767px)
-    top: 0
-  z-index: 2
-
 /* ButtonAddCard.in
 /*   background: var(--border-primary)
 /*   color: var(--bg-checkbox)
@@ -52,27 +44,11 @@ a:link, a:visited, a.nav-link:hover, a:hover.dropdown-item,
 a:hover, span.link-like:hover, .link-like:hover
   text-decoration: underline
 
-a.nav-link
-  color: #afafaf
-  &.active
-    background: var(--border-nest-modal)
-    color: var(--fg-primary)
-
-.nav-tabs
-  .nav-link
-    background: var(--bg-third)
-    border: 1px solid var(--border-third)
-    color: var(--fg-third)
-    &.active
-      background: var(--border-secondary)
-      border: 1px solid var(--border-primary)
-      border-bottom: 0
-
-.nav-menu
-  border: 1px solid var(--border-nest-modal)
-  .nav-link
-    &.active
-      background: var(--border-secondary)
+.active
+  background: blue
+  /* TODO
+  /* background: var(--border-nest-modal)
+  /* color: var(--fg-primary)
 
 .name
   color: var(--fg-name)
@@ -91,16 +67,6 @@ a.nav-link
 
 .nested-modal div.modal-content
   border: 1px solid var(--border-nest-modal)
-
-.tags-no-remove
-  .react-select-tags__multi-value__remove
-    display: none
-  .react-select-tags__multi-value__label
-    border: 1px solid var(--bg-secondary)
-    border-radius: 4px !important
-    padding-right: 8px !important
-  .react-select-tags__input-container
-    display: none
 
 input.quantity, input.quantity:focus
   background: var(--bg-primary)
@@ -128,6 +94,7 @@ input.quantity, input.quantity:focus
 /*   background: var(--bg-secondary)
 /*   border-color: var(--bg-secondary)
 /*   color: var(--fg-third)
+
 
 .react-select
   &__single-value
@@ -201,6 +168,17 @@ input.quantity, input.quantity:focus
     color: var(--fg-third) !important
   &__multi-value-container
     background: var(--bg-primary)
+
+
+.tags-no-remove
+  .react-select-tags__multi-value__remove
+    display: none
+  .react-select-tags__multi-value__label
+    border: 1px solid var(--bg-secondary)
+    border-radius: 4px !important
+    padding-right: 8px !important
+  .react-select-tags__input-container
+    display: none
 
 .tags-bordered.react-select-tags__control
   border: 1px solid var(--bg-secondary) !important

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
 import SymmetryVertical from 'assets/images/icons/symmetry-vertical.svg';
-import { MenuButton } from 'components';
+import { MenuItems, MenuItem, MenuButton } from 'components';
 import { useApp, clearSearchForm, searchTwdForm, searchPdaForm } from 'context';
 
 const DeckSearchSimilarButton = ({ deck }) => {
@@ -29,14 +29,14 @@ const DeckSearchSimilarButton = ({ deck }) => {
         variant="secondary"
         text="Similar Decks"
       />
-      <Menu.Items>
-        <Menu.Item title="Search similar Decks in Tournament Winning Decks Archive">
+      <MenuItems>
+        <MenuItem title="Search similar Decks in Tournament Winning Decks Archive">
           <div onClick={() => handleClick('twd')}>Search in TWD</div>
-        </Menu.Item>
-        <Menu.Item title="Search similar Decks in Public Decks Archive">
+        </MenuItem>
+        <MenuItem title="Search similar Decks in Public Decks Archive">
           <div onClick={() => handleClick('pda')}>Search in PDA</div>
-        </Menu.Item>
-      </Menu.Items>
+        </MenuItem>
+      </MenuItems>
     </Menu>
   );
 };

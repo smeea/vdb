@@ -53,7 +53,7 @@ const InventoryDesktop = ({
       <div className="   md:basis-1/2 lg:basis-1/2 xl:basis-5/12">
         {!inShared && (
           <>
-            <div className="sticky-selector  ">
+            <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky top-0 sm:top-[40px] z-20  ">
               <InventoryNewCryptCard
                 cards={inventoryCrypt}
                 setNewId={setNewCryptId}
@@ -94,7 +94,7 @@ const InventoryDesktop = ({
       <div className="xl={isWide ? 4 : 5}    md:basis-1/2 lg:basis-1/2">
         {!inShared && (
           <>
-            <div className="sticky-selector  ">
+            <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky top-0 sm:top-[40px] z-20  ">
               <InventoryNewLibraryCard
                 cards={inventoryLibrary}
                 setNewId={setNewLibraryId}

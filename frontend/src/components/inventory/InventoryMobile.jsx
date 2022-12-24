@@ -44,7 +44,7 @@ const InventoryMobile = ({
     <>
       {showCrypt ? (
         <>
-          <div className="sticky-selector  ">
+          <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky top-0 sm:top-[40px] z-20  ">
             <InventoryNewCryptCard
               cards={inventoryCrypt}
               setNewId={setNewCryptId}
@@ -82,7 +82,7 @@ const InventoryMobile = ({
         </>
       ) : (
         <>
-          <div className="sticky-selector  ">
+          <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky top-0 sm:top-[40px] z-20  ">
             <InventoryNewLibraryCard
               cards={inventoryLibrary}
               setNewId={setNewLibraryId}

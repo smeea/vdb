@@ -15,6 +15,8 @@ export { default as Input } from './Input.jsx';
 export { default as LanguageSelect } from './LanguageSelect.jsx';
 export { default as LanguageMenu } from './LanguageMenu.jsx';
 export { default as MenuButton } from './MenuButton.jsx';
+export { default as MenuItems } from './MenuItems.jsx';
+export { default as MenuItem } from './MenuItem.jsx';
 export { default as Modal } from './Modal.jsx';
 export { default as ModalConfirmation } from './ModalConfirmation.jsx';
 export { default as NavMobileMenu } from './NavMobileMenu.jsx';
