@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+import { ResultLibraryTypeImage } from 'components'
 import {
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
@@ -26,16 +27,13 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
         ),
       };
     } else {
-      const imgSrc = `${process.env.ROOT_URL}images/types/${i
-        .toLowerCase()
-        .replace(/[\s,:!?'.-]/g, '')}.svg`;
       return {
         value: i.toLowerCase(),
         name: 'type',
         label: (
           <div className="flex items-center">
             <div className="flex w-[40px] justify-center">
-              <img src={imgSrc} className="discipline-image w-[25px]" />
+              <ResultLibraryTypeImage value={i} />
             </div>
             {i}
           </div>

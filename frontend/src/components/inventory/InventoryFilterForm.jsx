@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResultDisciplineImage, ResultClanImage } from 'components';
+import { ResultLibraryTypeImage, ResultDisciplineImage, ResultClanImage } from 'components';
 import Select from 'react-select';
 
 const InventoryFilterForm = ({
@@ -13,10 +13,6 @@ const InventoryFilterForm = ({
   const options = [];
 
   values.map((i) => {
-    const imgSrc = `${process.env.ROOT_URL}images/types/${i
-      .toLowerCase()
-      .replace(/[\s,:!?'.-]/g, '')}.svg`;
-
     options.push({
       value: i,
       label: (
@@ -24,14 +20,17 @@ const InventoryFilterForm = ({
           {target === 'crypt' && (
             <div>
               {i === 'All' ? (
-                <div>All Clans</div>
+                <div className="flex items-center">
+                  <div className="flex w-[40px]" />
+                  All Clans
+                </div>
               ) : (
-                <>
-                  <span className="margin-full">
+                <div className="flex items-center">
+                  <div className="flex w-[40px] justify-center">
                     <ResultClanImage value={i} />
-                  </span>
+                  </div>
                   {i}
-                </>
+                </div>
               )}
             </div>
           )}
@@ -39,40 +38,45 @@ const InventoryFilterForm = ({
           {target === 'type' && (
             <div>
               {i === 'All' ? (
-                <div>All Types</div>
+                <div className="flex items-center">
+                  <div className="flex w-[40px]" />
+                  All Types
+                </div>
               ) : (
-                <>
-                  <span className="margin-full">
-                    <img src={imgSrc} className="discipline-image w-[25px]" />
-                  </span>
+                <div className="flex items-center">
+                  <div className="flex w-[40px]">
+                    <ResultLibraryTypeImage value={i} />
+                  </div>
                   {i}
-                </>
+                </div>
               )}
             </div>
           )}
+
           {target === 'discipline' && (
             <div>
-              {i === 'All' ? (
-                <div>All Disciplines</div>
+              {['All', 'None'].includes(i) ? (
+                <div className="flex items-center">
+                  <div className="flex w-[40px]" />
+                  {i === 'All' ? 'All Disciplines' : 'None'}
+                </div>
               ) : (
-                <>
-                  <span className="margin-full">
-                    {i !== 'None' && (
-                      <ResultDisciplineImage
-                        className="w-[25px discipline-image"
-                        value={i}
-                      />
-                    )}
-                  </span>
+                <div className="flex items-center">
+                  <div className="flex w-[40px]">
+                    <ResultDisciplineImage
+                      className="w-[25px]"
+                      value={i}
+                    />
+                  </div>
                   {i}
-                </>
+                </div>
               )}
             </div>
           )}
-          <div className="whitespace-nowrap">
+          < div className="whitespace-nowrap" >
             {byTotal[i]} {byUnique ? `(${byUnique[i]} uniq)` : null}
-          </div>
-        </div>
+          </div >
+        </div >
       ),
     });
   });

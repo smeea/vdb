@@ -13,7 +13,7 @@ const ResultLibraryTypeImage = ({ value }) => {
         return (
           <img
             key={index}
-            className="type-image inline h-[25px]"
+            className="dark:brightness-[0.85] drop-shadow-[0px_0px_0.8px_#9a9a9a] dark:drop-shadow-[0px_0px_0.8px_#e0e0e0] inline h-[25px]"
             src={imgSrc}
             title={cardtype}
           />

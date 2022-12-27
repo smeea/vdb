@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import { ResultLibraryClan } from 'components';
+import { ResultClanImage } from 'components';
 import {
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
@@ -34,7 +34,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
         label: (
           <div className="flex items-center">
             <div className="flex w-[40px] justify-center">
-              <ResultLibraryClan value={i} />
+              <ResultClanImage value={i} />
             </div>
             {i}
           </div>

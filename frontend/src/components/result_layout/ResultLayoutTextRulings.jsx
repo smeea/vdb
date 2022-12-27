@@ -1,11 +1,12 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
-import icons from 'assets/data/disciplineIcons.json';
+import disciplineNames from 'assets/data/disciplineIcons.json';
 import { useApp } from 'context';
 import {
   CardPopover,
   ResultCryptName,
   ResultLibraryName,
+  ResultDisciplineImage,
   ConditionalTooltip,
 } from 'components';
 
@@ -37,19 +38,19 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
     const RulingText = text.map((i, idxText) => {
       let replacedText;
 
-      replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => (
-        <img
+      replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => {
+        const superior = match === match.toUpperCase()
+        return <ResultDisciplineImage
           key={`${idxRuling}-${idxText}-icon-${idx}`}
-          className="discipline-image inline w-[32px]"
-          src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
-          title={match}
+                 value={disciplineNames[match.toLowerCase()]}
+          superior={superior}
         />
-      ));
+      });
 
       replacedText = reactStringReplace(
         replacedText,
         /{(.*?)}/g,
-        (match, idx) => {
+        (match) => {
           const cardBase = { ...nativeCrypt, ...nativeLibrary };
           const cardid = Object.keys(cardBase).find(
             (j) => cardBase[j]['Name'] == match
@@ -57,7 +58,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
 
           if (cardid) {
             return (
-              <span key={`${idxRuling}-${idxText}-${idx}`}>
+              <span key={`${idxRuling}-${idxText}-text-${cardid}`}>
                 <ConditionalTooltip
                   placement={placement}
                   overlay={
