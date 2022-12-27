@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, ButtonIconed } from 'components';
 import Activity from 'assets/images/icons/activity.svg';
 import ListUl from 'assets/images/icons/list-task.svg';
-import changes from '../../../../CHANGES.json';
+import changes from '~/../CHANGES.json';
 
 const UpdateNotification = () => {
   const version = changes[0].version

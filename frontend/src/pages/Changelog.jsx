@@ -1,6 +1,6 @@
 import React from 'react';
 import { Banner } from 'components';
-import changes from '../../../CHANGES.json';
+import changes from '~/../CHANGES.json';
 
 const Changelog = () => {
   const TOP_SPACING = 'pt-8';

@@ -7,7 +7,7 @@ import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import Globe2 from 'assets/images/icons/globe2.svg';
 import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
 import { Banner } from 'components';
-import changes from '../../../CHANGES.json';
+import changes from '~/../CHANGES.json';
 
 const Title = ({ children }) => {
   return (
