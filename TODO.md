@@ -2,6 +2,8 @@
 - Fix scroll + swipes
 - Notification on Incognito mode
 - Pdf image sharpness
+- Dont bundle changes - lazyload changelog + hardcode version
+- Add fetch to api/version instead of include recent change in answer
 
 # FEATURES
 - Check TWD
@@ -14,6 +16,8 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Inventory/deck import in excel
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
+- Debouncing for text search query
+- Forward refs for autofocus
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter

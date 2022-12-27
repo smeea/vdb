@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Modal, ButtonIconed } from 'components';
 import Activity from 'assets/images/icons/activity.svg';
 import ListUl from 'assets/images/icons/list-task.svg';
+import changes from '../../../../CHANGES.json';
 
-const UpdateNotification = ({ appVersion }) => {
-  const [version, setVersion] = useState();
-  const [changes, setChanges] = useState();
-  const [show, setShow] = useState(
-    version && appVersion && appVersion < version
-  );
+const UpdateNotification = () => {
+  const version = changes[0].version
+  const [update, setUpdate] = useState();
 
   useEffect(() => {
     const url = `${process.env.API_URL}version`;
@@ -21,35 +19,33 @@ const UpdateNotification = ({ appVersion }) => {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        setVersion(data.version);
-
-        setChanges(
-          <ul>
-            {data.changes.map((change, idx) => (
-              <li key={idx}>{change}</li>
-            ))}
-          </ul>
-        );
+        if (data.version > version) {
+          setUpdate(data);
+        }
       });
   }, []);
 
   return (
     <>
-      {show && (
+      {update && (
         <Modal
-          handleClose={() => setShow(false)}
+          handleClose={() => setUpdate(false)}
           title="Update available!"
           centered
         >
-          <div>
             <div className="flex items-center font-bold text-fgSecondary dark:text-fgSecondaryDark">
               <div className="flex ">
                 <ListUl />
               </div>
-              Changes [{version}]:
+              Changes [{update.version}]:
             </div>
-            <div>{changes}</div>
-            {/* TODO fix button placement */}
+            <div>
+              <ul>
+                {update.changes.map((change, idx) => (
+                  <li key={idx}>{change}</li>
+                ))}
+              </ul>
+              </div>
             <ButtonIconed
               variant="primary"
               onClick={() => {
@@ -58,7 +54,6 @@ const UpdateNotification = ({ appVersion }) => {
               icon={<Activity />}
               text="Apply Update"
             />
-          </div>
         </Modal>
       )}
     </>
