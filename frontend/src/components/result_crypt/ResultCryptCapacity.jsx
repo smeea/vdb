@@ -1,8 +1,8 @@
 import React from 'react';
 
-function ResultCryptCapacity(props) {
-  const imgClass = 'w-[23px] capacity-image';
-  const imgSrc = `${process.env.ROOT_URL}images/misc/cap${props.value}.png`;
+const ResultCryptCapacity = ({value}) => {
+  const imgClass = 'w-[23px] dark:brightness-[0.85] capacity-image';
+  const imgSrc = `${process.env.ROOT_URL}images/misc/cap${value}.png`;
 
   return <img className={imgClass} src={imgSrc} title="Capacity" />;
 }

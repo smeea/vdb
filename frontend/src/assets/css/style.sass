@@ -12,16 +12,6 @@
   li
     padding-left: 6px
 
-/* :root
-/*   @media (prefers-color-scheme: light)
-/*     --clan-icon-brightness: 100%
-/*     --icons-brightness: 100%
-/*     --logo-brightness: 100%
-/*   @media (prefers-color-scheme: dark)
-/*     --clan-icon-brightness: 65%
-/*     --icons-brightness: 85%
-/*     --logo-brightness: 150%
-
 html
   scroll-padding-top: 60px
   @media (max-width: 639px)
@@ -194,16 +184,16 @@ input.quantity, input.quantity:focus
 /*   background: var(--border-primary)
 /*   color: var(--fg-primary)
 
-.clan-image
-  filter: brightness(var(--clan-icon-brightness))
 .burn-image,
 .type-image,
 .trifle-image,
 .discipline-image
   filter: brightness(var(--icons-brightness)) drop-shadow(0px 0 .8px var(--bg-checkbox))
+  /*   @media (prefers-color-scheme: dark)
+  /*     --icons-brightness: 85%
+
 .cost-image,
 .capacity-image
-  filter: brightness(var(--icons-brightness))
   image-rendering: -webkit-optimize-contrast
 
 div.float-search
@@ -226,9 +216,6 @@ div.float-random
 
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
-
-.logo-image
-  filter: brightness(var(--logo-brightness))
 
 .deck-crypt-table,
 .deck-library-table

@@ -9,6 +9,7 @@ import {
   DeckDrawCryptTable,
   DeckDrawLibraryTable,
   ButtonFloat,
+  ResultCryptCapacity,
 } from 'components';
 
 import { useApp } from 'context';
@@ -194,10 +195,7 @@ const DeckDrawModal = ({
                       <b>{burnedCrypt.length}</b>
                     </div>
                     <div className="flex items-center" title="Total Capacity">
-                      <img
-                        className="capacity-image w-[23px]"
-                        src={process.env.ROOT_URL + 'images/misc/capX.png'}
-                      />
+                      <ResultCryptCapacity value='X'/>
                       <b>{burnedCapacityTotal}</b>
                     </div>
                   </div>
