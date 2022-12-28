@@ -46,6 +46,9 @@ a:hover, span.link-like:hover, .link-like:hover
 .name
   color: var(--fg-name)
 
+/* div.name
+/*   white-space: normal
+
 .title, .adv
   color: var(--fg-secondary)
 
@@ -161,7 +164,6 @@ input.quantity, input.quantity:focus
   &__multi-value-container
     background: var(--bg-primary)
 
-
 .tags-no-remove
   .react-select-tags__multi-value__remove
     display: none
@@ -183,27 +185,8 @@ input.quantity, input.quantity:focus
 /*   background: var(--border-primary)
 /*   color: var(--fg-primary)
 
-.cost-image,
-.capacity-image
+.optimize-contrast
   image-rendering: -webkit-optimize-contrast
-
-div.float-search
-  background-color: #709070
-  opacity: .8
-div.float-add-off
-  background-color: #A0A0A0
-  opacity: .8
-div.float-menu,
-div.float-add-on,
-div.float-turn
-  background-color: #707070
-  opacity: .8
-div.float-clear
-  background-color: #A06060
-  opacity: .8
-div.float-random
-  background-color: #404040
-  opacity: .3
 
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
@@ -389,10 +372,6 @@ tr:hover div.not-selected.inventory-card-custom
   td.name
     text-align: left
   width: 100%
-div.name-container
-  white-space: nowrap
-div.name
-  white-space: normal
 
 .search-crypt-table
   td
@@ -518,25 +497,17 @@ div.name
 @media (max-width: 639px)
   .twd-container,
   .search-container,
-  .deck-container
-    max-width: 100%
+  .deck-container,
+  .hof-cards-container,
+  .hof-history-container,
+  .hof-tournaments-container
     padding-bottom: 40px
   .modal-md,
   .modal-lg,
   .modal-xl
     min-width: 100%
-  .hof-cards-container,
-  .hof-history-container,
-  .hof-tournaments-container
-    padding-bottom: 40px
-  .cards-container
-    padding-bottom: 72px
 
 @media (min-width: 639px) and (max-width: 1023px)
-  .cards-container,
-  .hof-history-container,
-  .hof-tournaments-container
-    max-width: 100%
   .hof-cards-container
     max-width: 800px
   .modal-md
@@ -547,10 +518,6 @@ div.name
     min-width: 100%
 
 @media (min-width: 1024px) and (max-width: 1279px)
-  .cards-container,
-  .hof-history-container,
-  .hof-tournaments-container
-    max-width: 100%
   .hof-cards-container
     max-width: 800px
   .modal-md
@@ -562,7 +529,7 @@ div.name
 
 @media (min-width: 1280px)
   .hof-cards-container
-    max-width: 639px
+    max-width: 800px
   .cards-container,
   .hof-history-container,
   .hof-tournaments-container

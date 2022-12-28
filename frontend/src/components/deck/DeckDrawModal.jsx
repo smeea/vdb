@@ -195,7 +195,7 @@ const DeckDrawModal = ({
                       <b>{burnedCrypt.length}</b>
                     </div>
                     <div className="flex items-center" title="Total Capacity">
-                      <ResultCryptCapacity value='X'/>
+                      <ResultCryptCapacity value="X" />
                       <b>{burnedCapacityTotal}</b>
                     </div>
                   </div>
@@ -224,7 +224,7 @@ const DeckDrawModal = ({
                         title="Total Blood Cost"
                       >
                         <img
-                          className="cost-image w-[30px]"
+                          className="optimize-contrast w-[30px]"
                           src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
                         />
                         <b>{burnedBloodTotal}</b>
@@ -234,7 +234,7 @@ const DeckDrawModal = ({
                         title="Total Pool Cost"
                       >
                         <img
-                          className="cost-image w-[35px]"
+                          className="optimize-contrast w-[35px]"
                           src={process.env.ROOT_URL + 'images/misc/poolX.png'}
                         />
                         <b>{burnedPoolTotal}</b>
@@ -263,7 +263,7 @@ const DeckDrawModal = ({
         )}
       </Modal>
       {isNarrow && (
-        <ButtonFloat onClick={handleClose} variant="float-clear">
+        <ButtonFloat onClick={handleClose} variant="bg-[#a06060] opacity-80">
           <X width="40" height="40" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}

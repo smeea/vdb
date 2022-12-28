@@ -77,7 +77,7 @@ const TwdResultLibraryByType = ({ library }) => {
         return (
           <img
             key={`${idx}-${index}`}
-            className="dark:brightness-[0.85] drop-shadow-[0px_0px_0.8px_#9a9a9a] dark:drop-shadow-[0px_0px_0.8px_#e0e0e0] h-[25px]"
+            className="h-[25px] drop-shadow-[0px_0px_0.8px_#9a9a9a] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_0.8px_#e0e0e0]"
             src={imgSrc}
             title={cardtype}
           />

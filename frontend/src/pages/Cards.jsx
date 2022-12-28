@@ -99,7 +99,10 @@ const Cards = () => {
                     )}
                   </div>
                 </div>
-                <ButtonFloat onClick={toggleShowImage} variant="float-turn">
+                <ButtonFloat
+                  onClick={toggleShowImage}
+                  variant="bg-[#707070] opacity-80"
+                >
                   <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
                 </ButtonFloat>
               </>
@@ -115,7 +118,7 @@ const Cards = () => {
             <ButtonFloat
               onClick={randomCrypt}
               position="top"
-              variant="float-random"
+              variant="bg-[#404040] opacity-30"
             >
               <Dice3
                 width="22"
@@ -128,7 +131,7 @@ const Cards = () => {
             <ButtonFloat
               onClick={randomLibrary}
               position="middle"
-              variant="float-random"
+              variant="bg-[#404040] opacity-30"
             >
               <Dice3
                 width="22"

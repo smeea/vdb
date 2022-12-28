@@ -114,7 +114,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       return (
         <div className="inline" key={idx}>
           {clan === 'Bundle' ? (
-            <div className="dark:brightness-[0.65] inline">
+            <div className="inline dark:brightness-[0.65]">
               <GiftFill />
             </div>
           ) : clan === 'Mix' ? null : (

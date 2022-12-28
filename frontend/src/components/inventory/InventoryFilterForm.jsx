@@ -1,5 +1,9 @@
 import React from 'react';
-import { ResultLibraryTypeImage, ResultDisciplineImage, ResultClanImage } from 'components';
+import {
+  ResultLibraryTypeImage,
+  ResultDisciplineImage,
+  ResultClanImage,
+} from 'components';
 import Select from 'react-select';
 
 const InventoryFilterForm = ({
@@ -63,20 +67,17 @@ const InventoryFilterForm = ({
               ) : (
                 <div className="flex items-center">
                   <div className="flex w-[40px]">
-                    <ResultDisciplineImage
-                      className="w-[25px]"
-                      value={i}
-                    />
+                    <ResultDisciplineImage className="w-[25px]" value={i} />
                   </div>
                   {i}
                 </div>
               )}
             </div>
           )}
-          < div className="whitespace-nowrap" >
+          <div className="whitespace-nowrap">
             {byTotal[i]} {byUnique ? `(${byUnique[i]} uniq)` : null}
-          </div >
-        </div >
+          </div>
+        </div>
       ),
     });
   });

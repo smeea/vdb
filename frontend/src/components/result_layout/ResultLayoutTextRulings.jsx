@@ -39,58 +39,56 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
       let replacedText;
 
       replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => {
-        const superior = match === match.toUpperCase()
-        return <ResultDisciplineImage
-          key={`${idxRuling}-${idxText}-icon-${idx}`}
-                 value={disciplineNames[match.toLowerCase()]}
-          superior={superior}
-        />
+        const superior = match === match.toUpperCase();
+        return (
+          <ResultDisciplineImage
+            key={`${idxRuling}-${idxText}-icon-${idx}`}
+            value={disciplineNames[match.toLowerCase()]}
+            superior={superior}
+          />
+        );
       });
 
-      replacedText = reactStringReplace(
-        replacedText,
-        /{(.*?)}/g,
-        (match) => {
-          const cardBase = { ...nativeCrypt, ...nativeLibrary };
-          const cardid = Object.keys(cardBase).find(
-            (j) => cardBase[j]['Name'] == match
-          );
+      replacedText = reactStringReplace(replacedText, /{(.*?)}/g, (match) => {
+        const cardBase = { ...nativeCrypt, ...nativeLibrary };
+        const cardid = Object.keys(cardBase).find(
+          (j) => cardBase[j]['Name'] == match
+        );
 
-          if (cardid) {
-            return (
-              <span key={`${idxRuling}-${idxText}-text-${cardid}`}>
-                <ConditionalTooltip
-                  placement={placement}
-                  overlay={
-                    <CardPopover
-                      card={
-                        cardid > 200000
-                          ? cryptCardBase[cardid]
-                          : libraryCardBase[cardid]
-                      }
-                    />
-                  }
-                  disabled={isMobile}
-                >
-                  <div className="name inline">
-                    {cardid > 200000 ? (
-                      <ResultCryptName card={cryptCardBase[cardid]} />
-                    ) : (
-                      <ResultLibraryName card={libraryCardBase[cardid]} />
-                    )}
-                  </div>
-                </ConditionalTooltip>
-              </span>
-            );
-          } else {
-            return (
-              <React.Fragment key={`${idxRuling}-${idxText}-${idx}`}>
-                &#123;{match}&#125;
-              </React.Fragment>
-            );
-          }
+        if (cardid) {
+          return (
+            <span key={`${idxRuling}-${idxText}-text-${cardid}`}>
+              <ConditionalTooltip
+                placement={placement}
+                overlay={
+                  <CardPopover
+                    card={
+                      cardid > 200000
+                        ? cryptCardBase[cardid]
+                        : libraryCardBase[cardid]
+                    }
+                  />
+                }
+                disabled={isMobile}
+              >
+                <div className="name inline">
+                  {cardid > 200000 ? (
+                    <ResultCryptName card={cryptCardBase[cardid]} />
+                  ) : (
+                    <ResultLibraryName card={libraryCardBase[cardid]} />
+                  )}
+                </div>
+              </ConditionalTooltip>
+            </span>
+          );
+        } else {
+          return (
+            <React.Fragment key={`${idxRuling}-${idxText}-${idx}`}>
+              &#123;{match}&#125;
+            </React.Fragment>
+          );
         }
-      );
+      });
 
       return (
         <React.Fragment key={`${idxRuling}-${idxText}`}>

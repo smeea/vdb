@@ -130,7 +130,7 @@ const PdaResult = ({ results, setResults }) => {
         </div>
       )}
       {isMobile && showFloatingButtons && (
-        <ButtonFloat onClick={handleClear} variant="float-clear">
+        <ButtonFloat onClick={handleClear} variant="bg-[#a06060] opacity-80">
           <X width="40" height="40" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}

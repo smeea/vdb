@@ -44,7 +44,7 @@ const InventoryMobile = ({
     <>
       {showCrypt ? (
         <>
-          <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky top-0 sm:top-[40px] z-20  ">
+          <div className="sticky top-0 z-20 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[40px]  ">
             <InventoryNewCryptCard
               cards={inventoryCrypt}
               setNewId={setNewCryptId}
@@ -82,7 +82,7 @@ const InventoryMobile = ({
         </>
       ) : (
         <>
-          <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky top-0 sm:top-[40px] z-20  ">
+          <div className="sticky top-0 z-20 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[40px]  ">
             <InventoryNewLibraryCard
               cards={inventoryLibrary}
               setNewId={setNewLibraryId}
@@ -128,7 +128,7 @@ const InventoryMobile = ({
         <ButtonFloat
           onClick={() => setShowCrypt(!showCrypt)}
           position="middle"
-          variant="float-add-on"
+          variant="bg-[#707070] opacity-80"
         >
           <div className="text-2xl">{showCrypt ? 'LIB' : 'CR'}</div>
         </ButtonFloat>

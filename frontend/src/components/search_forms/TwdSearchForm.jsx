@@ -311,12 +311,15 @@ const TwdSearchForm = ({ error, setError }) => {
         <>
           <ButtonFloat
             onClick={handleClear}
-            variant="float-clear"
+            variant="bg-[#a06060] opacity-80"
             position="middle"
           >
             <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
-          <ButtonFloat onClick={processSearch} variant="float-search">
+          <ButtonFloat
+            onClick={processSearch}
+            variant="bg-[#709070] opacity-80"
+          >
             {!spinnerState ? (
               <Check2 width="35" height="35" viewBox="0 0 16 16" />
             ) : (

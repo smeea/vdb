@@ -136,14 +136,14 @@ const ResultModal = ({
         {isMobile && (
           <ButtonFloat
             onClick={toggleShowImage}
-            variant="float-turn"
+            variant="bg-[#707070] opacity-80"
             position="middle"
           >
             <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
         )}
         {isNarrow && (
-          <ButtonFloat onClick={handleClose} variant="float-clear">
+          <ButtonFloat onClick={handleClose} variant="bg-[#a06060] opacity-80">
             <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
         )}

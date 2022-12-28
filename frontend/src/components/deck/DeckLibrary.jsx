@@ -166,7 +166,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
         <ButtonFloat
           onClick={() => setShowAdd(true)}
           position="middle"
-          variant="float-add-on"
+          variant="bg-[#707070] opacity-80"
         >
           <div className="flex items-center">
             <div className="pb-0.5 text-xl">+</div>

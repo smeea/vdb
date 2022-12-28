@@ -20,7 +20,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
       {showMenu && (
-        <div className="absolute text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark border border-borderPrimary dark:border-borderPrimaryDark rounded bottom-8 text-lg p-3">
+        <div className="absolute bottom-8 rounded border border-borderPrimary bg-bgPrimary p-3 text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
           <NavLink to="/account" onClick={() => setShowMenu(false)}>
             <div className="flex items-center text-fgPrimary dark:text-fgPrimaryDark">
               <div className="flex min-w-[30px] justify-center">

@@ -21,12 +21,14 @@ const ResultLayoutTextText = ({ text, placement }) => {
         let replacedText;
 
         replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => {
-          const superior = match === match.toUpperCase()
-          return <ResultDisciplineImage
-            key={`${idxText}-${idx}`}
-            value={disciplineNames[match.toLowerCase()]}
-            superior={superior}
-          />
+          const superior = match === match.toUpperCase();
+          return (
+            <ResultDisciplineImage
+              key={`${idxText}-${idx}`}
+              value={disciplineNames[match.toLowerCase()]}
+              superior={superior}
+            />
+          );
         });
 
         replacedText = reactStringReplace(
@@ -78,7 +80,7 @@ const ResultLayoutTextText = ({ text, placement }) => {
         );
       })}
     </>
-  )
+  );
 };
 
 export default ResultLayoutTextText;

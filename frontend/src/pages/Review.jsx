@@ -313,7 +313,7 @@ const Review = () => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
           }}
-          variant="lg:hidden float-menu"
+          variant="lg:hidden bg-[#707070] opacity-80"
         >
           <List width="35" height="35" viewBox="0 0 16 16" />
         </ButtonFloat>

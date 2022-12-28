@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import { ResultLibraryTypeImage } from 'components'
+import { ResultLibraryTypeImage } from 'components';
 import {
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
