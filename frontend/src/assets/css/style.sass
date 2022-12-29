@@ -2,15 +2,22 @@
 @tailwind components
 @tailwind utilities
 
-@layer components
+@layer base
   body
     @apply text-fgPrimary bg-bgPrimary dark:bg-bgPrimaryDark dark:text-fgPrimaryDark
-
+  textarea:focus
+    @apply text-fgPrimary dark:text-fgPrimaryDark
+  hr
+    @apply text-borderPrimary dark:text-borderPrimaryDark
   ul
     list-style-type: square
     padding-left: 1.2em
   li
     padding-left: 6px
+
+@layer utilities
+  .optimize-contrast
+    image-rendering: -webkit-optimize-contrast
 
 html
   scroll-padding-top: 60px
@@ -21,27 +28,12 @@ html
 /*   background: var(--border-primary)
 /*   color: var(--bg-checkbox)
 
-/* textarea:focus
-/*   color: var(--fg-primary)
-/* hr
-/*   color: var(--border-primary)
+/* a:link, a:visited, a:hover.dropdown-item,
+/* .link-like, a.quantity, a.quantity:hover
+/*   text-decoration: none
 
-
-a:hover, span.link-like:hover, a, .link-like
-  color: var(--fg-secondary)
-
-a:link, a:visited, a.nav-link:hover, a:hover.dropdown-item,
-.link-like, a.quantity, a.quantity:hover
-  text-decoration: none
-
-a:hover, span.link-like:hover, .link-like:hover
-  text-decoration: underline
-
-.active
-  background: blue
-  /* TODO
-  /* background: var(--border-nest-modal)
-  /* color: var(--fg-primary)
+/* a:hover, span.link-like:hover, .link-like:hover
+/*   text-decoration: underline
 
 .name
   color: var(--fg-name)
@@ -178,9 +170,6 @@ input.quantity, input.quantity:focus
 /* .dropdown-item:hover
 /*   background: var(--border-primary)
 /*   color: var(--fg-primary)
-
-.optimize-contrast
-  image-rendering: -webkit-optimize-contrast
 
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35

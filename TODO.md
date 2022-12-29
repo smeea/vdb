@@ -3,6 +3,7 @@
 - Notification on Incognito mode
 - Pdf image sharpness
 - Autofocus forms with forward refs
+- Update url for playtest images to mitigate caching
 
 # IMPROVEMENTS
 - Dont bundle changes - lazyload changelog + hardcode version

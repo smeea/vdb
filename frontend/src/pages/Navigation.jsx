@@ -21,6 +21,17 @@ import {
   deckStore,
 } from 'context';
 
+const Link = ({ to, end, ariaLabel, icon, text }) => {
+  return <NavLink
+    to={to}
+    end={end}
+    aria-label={ariaLabel}
+    className={({ isActive }) => `flex h-full items-center ${icon ? 'px-3' : 'pb-1 px-2'} ${isActive ? 'text-fgPrimary dark:text-fgPrimaryDark bg-borderNestModal dark:bg-borderNestModalDark' : ''}`}
+  >
+    {icon ?? text}
+  </NavLink>
+}
+
 const Navigation = () => {
   const { inventoryMode, toggleInventoryMode, isMobile, username } = useApp();
   const [showMenu, setShowMenu] = useState(false);
@@ -62,13 +73,12 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`${
-        isMobile
+      className={`${isMobile
           ? 'fixed bottom-0 w-full'
           : 'top-0 bg-bgPrimary dark:bg-bgPrimaryDark'
-      } z-50 `}
+        } z-50 `}
     >
-      <div className="navbar-container mx-auto flex h-[42px] justify-between bg-bgNav dark:bg-bgNav">
+      <div className="navbar-container mx-auto flex h-[42px] justify-between bg-bgNav dark:bg-bgNavDark">
         <div className="flex items-center space-x-3">
           {isMobile ? (
             <>
@@ -88,9 +98,8 @@ const Navigation = () => {
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
               <div
-                className={`flex h-full items-center px-3 ${
-                  inventoryMode ? 'text-white' : 'text-neutral-500'
-                }`}
+                className={`flex h-full items-center px-3 ${inventoryMode ? 'text-white' : 'text-neutral-500'
+                  }`}
                 onClick={() => {
                   toggleInventoryMode();
                 }}
@@ -109,48 +118,48 @@ const Navigation = () => {
         <div className="flex items-center">
           {!isMobile && (
             <>
-              <NavLink
+              <Link
                 to="/account"
-                className={`flex h-full items-center px-3 ${
-                  username ? '' : ''
-                }`}
-              >
-                {username ? (
-                  <PersonFill width="20" height="20" viewBox="0 1 16 16" />
-                ) : (
-                  'Login'
-                )}
-              </NavLink>
-              <NavLink to="/" end className="flex h-full items-center px-2">
-                About
-              </NavLink>
+                icon={username ? <PersonFill width="20" height="20" viewBox="0 1 16 16" /> : null}
+                text={username ? null : 'Login'}
+                ariaLabel="Login"
+              />
+              <Link
+                to="/"
+                text="About"
+                end
+              />
             </>
           )}
-          <NavLink to={pdaUrl} className="flex h-full items-center px-2 ">
-            PDA
-          </NavLink>
-          <NavLink to={twdUrl} className="flex h-full items-center px-2 ">
-            TWD
-          </NavLink>
-          <NavLink to="/inventory" className="flex h-full items-center px-2 ">
-            {isMobile ? 'INV' : 'Inventory'}
-          </NavLink>
-          <NavLink to={decksUrl} className="flex h-full items-center px-2 ">
-            {isMobile ? 'DKS' : 'Decks'}
-          </NavLink>
-          <NavLink to={cryptUrl} className="flex h-full items-center px-2 ">
-            {isMobile ? 'CRY' : 'Crypt'}
-          </NavLink>
-          <NavLink to={libraryUrl} className="flex h-full items-center px-2 ">
-            {isMobile ? 'LIB' : 'Library'}
-          </NavLink>
-          <NavLink
+          <Link
+            to={pdaUrl}
+            text="PDA"
+          />
+          <Link
+            to={twdUrl}
+            text="TWD"
+          />
+          <Link
+            to="/inventory"
+            text={isMobile ? 'INV' : 'Inventory'}
+          />
+          <Link
+            to={decksUrl}
+            text={isMobile ? 'DKS' : 'Decks'}
+          />
+          <Link
+            to={cryptUrl}
+            text={isMobile ? 'CRY' : 'Crypt'}
+          />
+          <Link
+            to={libraryUrl}
+            text={isMobile ? 'LIB' : 'Library'}
+          />
+          <Link
             to={cardsUrl}
-            aria-label="Quick card search"
-            className="flex h-full items-center px-3 "
-          >
-            <LightningFill width="18" height="18" viewBox="0 0 16 16" />
-          </NavLink>
+            ariaLabel="Quick card search"
+            icon={<LightningFill width="18" height="18" viewBox="0 0 16 16" />}
+          />
         </div>
       </div>
     </nav>
