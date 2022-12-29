@@ -85,15 +85,16 @@ const DeckLibraryTableRow = ({
     });
   };
 
+  const trBg = isSwiped
+    ? isSwiped === 'left' ? 'bg-bgSuccess dark:bg-bgSuccessDark' : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
+    : idx % 2
+      ? 'bg-bgThird dark:bg-bgThirdDark'
+      : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+
   return (
     <tr
       {...swipeHandlers}
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      } ${isSwiped ? `swiped-${isSwiped}` : ''}
-`}
+      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
       {isEditable ? (
         <>

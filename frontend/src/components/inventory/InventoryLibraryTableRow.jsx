@@ -64,11 +64,13 @@ const InventoryLibraryTableRow = ({
     hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
   }
 
+  const trBg = isSwiped
+    ? isSwiped === 'left' ? 'bg-bgSuccess dark:bg-bgSuccessDark' : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
+    : ''
+
   return (
     <div
-      className={`inventory-library-table flex border-none ${
-        isSwiped ? `swiped-${isSwiped}` : ''
-      }`}
+    className={`inventory-library-table flex border-none ${trBg}`}
       {...swipeHandlers}
     >
       <div
