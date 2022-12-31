@@ -199,8 +199,8 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
           />
           {(createError || importError) && (
             <ErrorOverlay placement="left">
-              {createError && <b>ERROR</b>}
-              {importError && <b>CANNOT IMPORT THIS DECK</b>}
+              {createError && <>ERROR</>}
+              {importError && <>CANNOT IMPORT THIS DECK</>}
             </ErrorOverlay>
           )}
         </>

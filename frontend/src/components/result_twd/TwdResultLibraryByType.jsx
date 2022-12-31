@@ -99,7 +99,7 @@ const TwdResultLibraryByType = ({ library }) => {
           <td
             onMouseOver={() => handleHover(cardtype)}
             onClick={() => handleClick(cardtype)}
-            className="name"
+            className="name text-fgName dark:text-fgNameDark"
           >
             <Tooltip
               placement="right"
@@ -128,10 +128,8 @@ const TwdResultLibraryByType = ({ library }) => {
 
   return (
     <>
-      <div>
-        <b>
-          Library [{libraryTotal}]{hasBanned && ' - WITH BANNED'}
-        </b>
+      <div className="font-bold">
+        Library [{libraryTotal}]{hasBanned && ' - WITH BANNED'}
       </div>
       <table className="twd-librarybytype-table">
         <tbody>{LibraryTypes}</tbody>

@@ -64,8 +64,10 @@ const InventoryCryptTableRow = ({
   }
 
   const trBg = isSwiped
-    ? isSwiped === 'left' ? 'bg-bgSuccess dark:bg-bgSuccessDark' : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : ''
+    ? isSwiped === 'left'
+      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
+      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
+    : '';
 
   return (
     <div
@@ -152,7 +154,7 @@ const InventoryCryptTableRow = ({
         disabled={isMobile}
       >
         <div
-          className="name flex items-center justify-start"
+          className="name flex items-center justify-start text-fgName dark:text-fgNameDark"
           onClick={() => handleClick(card.c)}
         >
           <ResultCryptName card={card.c} />

@@ -56,9 +56,7 @@ const DeckDrawModal = ({
           <div className="basis-full md:basis-7/12">
             <div>
               <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-                <div className="flex items-center">
-                  <b>Uncontrolled</b>
-                </div>
+                <div className="flex items-center font-bold">Uncontrolled</div>
                 <div
                   className="flex items-center font-bold"
                   title="In Uncontrolled + Remaining in Crypt"
@@ -109,8 +107,8 @@ const DeckDrawModal = ({
                 </div>
               </div>
               {cryptTotal < 4 && (
-                <div className="error-message flex items-center justify-center">
-                  <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
+                <div className="error-message flex items-center justify-center font-bold">
+                  NOT ENOUGH CARDS FOR INITIAL DRAW
                 </div>
               )}
               <DeckDrawCryptTable
@@ -124,9 +122,7 @@ const DeckDrawModal = ({
           </div>
           <div className="basis-full md:basis-5/12">
             <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-              <div className="flex items-center">
-                <b>Hand</b>
-              </div>
+              <div className="flex items-center font-bold">Hand</div>
               <div
                 className="flex items-center font-bold"
                 title="In Hand + Remaining in Library"
@@ -169,8 +165,8 @@ const DeckDrawModal = ({
               </div>
             </div>
             {libraryTotal < 7 && (
-              <div className="error-message flex items-center justify-center">
-                <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
+              <div className="error-message flex items-center justify-center font-bold">
+                NOT ENOUGH CARDS FOR INITIAL DRAW
               </div>
             )}
             <DeckDrawLibraryTable
@@ -188,11 +184,11 @@ const DeckDrawModal = ({
               {burnedCrypt.length > 0 && (
                 <div>
                   <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-                    <div className="flex items-center">
-                      <b>Controlled</b>
+                    <div className="flex items-center font-bold">
+                      Controlled
                     </div>
-                    <div className="flex items-center">
-                      <b>{burnedCrypt.length}</b>
+                    <div className="flex items-center font-bold">
+                      {burnedCrypt.length}
                     </div>
                     <div className="flex items-center" title="Total Capacity">
                       <ResultCryptCapacity value="X" />
@@ -212,11 +208,9 @@ const DeckDrawModal = ({
               {burnedLibrary.length > 0 && (
                 <div>
                   <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-                    <div className="flex items-center">
-                      <b>Ash Heap</b>
-                    </div>
-                    <div className="flex items-center">
-                      <b>{burnedLibrary.length}</b>
+                    <div className="flex items-center font-bold">Ash Heap</div>
+                    <div className="flex items-center font-bold">
+                      {burnedLibrary.length}
                     </div>
                     <div className="flex">
                       <div

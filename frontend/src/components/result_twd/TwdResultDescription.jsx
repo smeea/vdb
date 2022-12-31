@@ -29,37 +29,25 @@ const TwdResultDescription = ({ deck }) => {
         <tbody>
           <tr>
             <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              {isMobile ? (
-                <div className="flex items-center">
-                  <CalendarEvent />
-                </div>
-              ) : (
-                <b>Date:</b>
-              )}
+              <div className="flex items-center font-bold">
+                {isMobile ? <CalendarEvent /> : <>Date:</>}
+              </div>
             </td>
             <td>{deck['creation_date']}</td>
           </tr>
           <tr>
             <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              {isMobile ? (
-                <div className="flex items-center">
-                  <TrophyFill />
-                </div>
-              ) : (
-                <b>Event:</b>
-              )}
+              <div className="flex items-center font-bold">
+                {isMobile ? <TrophyFill /> : <>Event:</>}
+              </div>
             </td>
             <td>{deck['event']}</td>
           </tr>
           <tr>
             <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              {isMobile ? (
-                <div className="flex items-center">
-                  <GeoAltFill />
-                </div>
-              ) : (
-                <b>Location:</b>
-              )}
+              <div className="flex items-center font-bold">
+                {isMobile ? <GeoAltFill /> : <>Location:</>}
+              </div>
             </td>
             <td>
               <div
@@ -72,13 +60,9 @@ const TwdResultDescription = ({ deck }) => {
           </tr>
           <tr>
             <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              {isMobile ? (
-                <div className="flex items-center">
-                  <PersonFill />
-                </div>
-              ) : (
-                <b>Player:</b>
-              )}
+              <div className="flex items-center font-bold">
+                {isMobile ? <PersonFill /> : <>Player:</>}
+              </div>
             </td>
             <td>
               <div
@@ -91,13 +75,9 @@ const TwdResultDescription = ({ deck }) => {
           </tr>
           <tr>
             <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              {isMobile ? (
-                <div className="flex items-center">
-                  <TagFill />
-                </div>
-              ) : (
-                <b>Deck:</b>
-              )}
+              <div className="flex items-center">
+                {isMobile ? <TagFill /> : <>Deck:</>}
+              </div>
             </td>
             <td>{deck['name']}</td>
           </tr>

@@ -136,7 +136,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           {!isMobile && (
             <td className="clan">{clanImages.length > 0 && clanImages}</td>
           )}
-          <td className="name">
+          <td className="name text-fgName dark:text-fgNameDark">
             <div
               className="text-overflow name flex justify-between"
               title={deck.name}
@@ -234,7 +234,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           <thead>
             <tr>
               {!isMobile && <th className="clan"></th>}
-              <th className="name">
+              <th className="name text-fgName dark:text-fgNameDark">
                 <input
                   placeholder="Filter by Name"
                   type="text"

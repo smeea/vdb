@@ -73,19 +73,14 @@ const ResultLayoutTextInventory = (props) => {
           <div className="opacity-40">
             <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
           </div>
-          <div>
-            <b>{softUsedMax + hardUsedTotal}</b>
-          </div>
-          - Total Used
+          <div className="font-bold">{softUsedMax + hardUsedTotal}</div>- Total
+          Used
         </div>
         <div className="flex items-center">
           <div className="opacity-40">
             <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
           </div>
-          <div>
-            <b>{inInventory}</b>
-          </div>
-          - In Inventory
+          <div className="font-bold">{inInventory}</div>- In Inventory
         </div>
       </div>
       <div className={`basis-full lg:basis-7/12 ${isMobile ? '' : ''}`}>

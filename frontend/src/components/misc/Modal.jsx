@@ -19,9 +19,9 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
       case 'xl':
         return 'min-w-full sm:min-w-full md:min-w-[95%] lg:min-w-[85%] xl:min-w-[75%] 2xl-min-w-[70%]';
     }
-  }
+  };
 
-  const widthClass = getWidth(size)
+  const widthClass = getWidth(size);
 
   return (
     <Dialog open={true} onClose={handleClose} className="relative z-50">
@@ -31,8 +31,9 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
       />
 
       <div
-        className={`fixed inset-0 flex p-0 sm:p-8 ${centered ? 'items-center' : 'items-start'
-          } justify-center overflow-auto`}
+        className={`fixed inset-0 flex p-0 sm:p-8 ${
+          centered ? 'items-center' : 'items-start'
+        } justify-center overflow-auto`}
       >
         <Dialog.Panel
           className={`${widthClass} space-y-2 rounded bg-bgPrimary p-5 dark:bg-bgPrimaryDark`}

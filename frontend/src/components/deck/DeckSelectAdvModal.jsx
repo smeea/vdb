@@ -368,9 +368,12 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                 {clan && <ResultClanImage value={clan} />}
               </td>
             )}
-            <td className="name" onClick={() => handleOpen(deck.deckid)}>
+            <td
+              className="name text-fgName dark:text-fgNameDark"
+              onClick={() => handleOpen(deck.deckid)}
+            >
               <div
-                className="name flex justify-between truncate"
+                className="name flex justify-between text-fgName dark:text-fgNameDark"
                 title={deck.name}
               >
                 {deck.name}
@@ -509,7 +512,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                     />
                   </th>
                 )}
-                <th className="name truncate">
+                <th className="name text-fgName dark:text-fgNameDark">
                   <input
                     placeholder="Filter by Deck or Card Name"
                     type="text"

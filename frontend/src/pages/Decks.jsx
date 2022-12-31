@@ -266,8 +266,8 @@ const Decks = () => {
                 </>
               ) : (
                 <div>
-                  <div className="error-message flex items-center justify-center">
-                    <b>CONTAIN PLAYTEST CARDS</b>
+                  <div className="error-message flex items-center justify-center font-bold">
+                    CONTAIN PLAYTEST CARDS
                   </div>
                 </div>
               )}

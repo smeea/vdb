@@ -22,7 +22,9 @@ const TwdSearchFormCrypt = ({ value, form }) => {
 
   return (
     <div className="space-y-2">
-      <div className="text-blue font-bold">Crypt:</div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        Crypt:
+      </div>
       <NewCryptCard onChange={handleAdd} selectedValue={null} />
       <div className="space-y-1">
         {Object.keys(value)
@@ -41,7 +43,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                   disabled={isMobile}
                 >
                   <div
-                    className="name"
+                    className="name text-fgName dark:text-fgNameDark"
                     onClick={() => setModalCard(cryptCardBase[id])}
                   >
                     <ResultCryptName card={cryptCardBase[id]} />
@@ -58,8 +60,8 @@ const TwdSearchFormCrypt = ({ value, form }) => {
       </div>
       {modalCard && (
         <ResultModal
+          show={modalCard ? true : false}
           card={modalCard}
-          handleModalCardChange={() => {}}
           handleClose={() => setModalCard(false)}
         />
       )}

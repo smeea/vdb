@@ -270,8 +270,8 @@ const Review = () => {
           {error && (
             <div className="flex flex-row">
               <div>
-                <div className="error-message flex items-center justify-center">
-                  <b>{error}</b>
+                <div className="error-message flex items-center justify-center font-bold">
+                  {error}
                 </div>
               </div>
             </div>

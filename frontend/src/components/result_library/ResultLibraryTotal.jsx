@@ -37,10 +37,8 @@ const ResultLibraryTotal = ({
 
   const value = (
     <>
-      <div className="whitespace-nowrap ">
-        <b>
-          {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
-        </b>
+      <div className="whitespace-nowrap font-bold">
+        {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
       </div>
       <div>{totalOutput}</div>
       <div className="flex">

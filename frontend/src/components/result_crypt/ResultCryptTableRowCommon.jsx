@@ -54,7 +54,10 @@ const ResultCryptTableRowCommon = ({
         </td>
       )}
 
-      <td className="name" onClick={() => handleClick(card)}>
+      <td
+        className="name text-fgName dark:text-fgNameDark"
+        onClick={() => handleClick(card)}
+      >
         <ConditionalTooltip
           placement={placement}
           overlay={<CardPopover card={card} />}

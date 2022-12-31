@@ -24,7 +24,7 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
       <div className="flex items-center justify-between whitespace-nowrap ">
         <div className="flex items-center whitespace-nowrap">
           <ResultLibraryTypeImage value={card.Type} />
-          <div className="name  font-bold">
+          <div className="name font-bold text-fgName  dark:text-fgNameDark">
             <ResultLibraryName card={card} />
           </div>
         </div>
@@ -72,9 +72,7 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
       </div>
       {Object.keys(card['Rulings']).length > 0 && (
         <>
-          <div>
-            <b>Rulings:</b>
-          </div>
+          <div className="font-bold">Rulings:</div>
           <div className=" text-xs">
             <ResultLayoutTextRulings rulings={card['Rulings']} />
           </div>
@@ -83,9 +81,7 @@ const ResultLibraryLayoutText = ({ card, setImageSet, forceInventoryMode }) => {
       {(forceInventoryMode || inventoryMode) && (
         <>
           <hr className="border-1 border-neutral-500" />
-          <div>
-            <b>Inventory:</b>
-          </div>
+          <div className="font-bold">Inventory:</div>
           <ResultLayoutTextInventory cardid={card.Id} />
         </>
       )}

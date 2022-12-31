@@ -19,8 +19,8 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
       if (i > 0) {
         return (
           <div className="inline" key={idx}>
-            <span className="text-fgSecondary dark:text-fgSecondaryDark">
-              <b>{idx}:</b>
+            <span className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+              {idx}:
             </span>{' '}
             {Math.round(i * 100)}%
           </div>

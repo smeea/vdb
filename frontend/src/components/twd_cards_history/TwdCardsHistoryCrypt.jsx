@@ -158,7 +158,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
       <div className="history-crypt-table flex bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
         {!isMobile && <div className="capacity flex" />}
         {!isMobile && <div className="disciplines flex" />}
-        <div className="name flex" />
+        <div className="name flex text-fgName dark:text-fgNameDark" />
         {!isMobile && <div className="clan-group flex" />}
         <div
           className="year flex items-center justify-center"

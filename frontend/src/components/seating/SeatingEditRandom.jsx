@@ -101,7 +101,7 @@ const SeatingEditRandom = ({
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Standard Decks (from{' '}
             <a
-              className="name"
+              className="name text-fgName dark:text-fgNameDark"
               target="_blank"
               rel="noreferrer"
               href="https://codex-of-the-damned.org/en/archetypes/index.html"

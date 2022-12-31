@@ -71,7 +71,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
                 }
                 disabled={isMobile}
               >
-                <div className="name inline">
+                <div className="name inline text-fgName dark:text-fgNameDark">
                   {cardid > 200000 ? (
                     <ResultCryptName card={cryptCardBase[cardid]} />
                   ) : (

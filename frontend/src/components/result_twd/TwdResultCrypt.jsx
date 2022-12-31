@@ -86,7 +86,10 @@ const TwdResultCrypt = ({ crypt }) => {
           <ResultCryptCapacity value={card.c.Capacity} />
         </td>
 
-        <td className="name " onClick={() => handleClick(card.c)}>
+        <td
+          className="name text-fgName dark:text-fgNameDark "
+          onClick={() => handleClick(card.c)}
+        >
           <ConditionalTooltip
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
@@ -104,11 +107,9 @@ const TwdResultCrypt = ({ crypt }) => {
 
   return (
     <>
-      <div>
-        <b>
-          Crypt [{cryptTotal}] - {cryptGroups}
-          {hasBanned && ' - WITH BANNED'}
-        </b>
+      <div className="font-bold">
+        Crypt [{cryptTotal}] - {cryptGroups}
+        {hasBanned && ' - WITH BANNED'}
       </div>
       <table className="twd-crypt-table">
         <tbody>{cardLines}</tbody>

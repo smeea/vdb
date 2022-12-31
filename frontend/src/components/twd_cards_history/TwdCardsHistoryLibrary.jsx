@@ -275,7 +275,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
       <div className="history-library-table flex bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
         {!isMobile && <div className="cost flex" />}
         {!isMobile && <div className="type flex" />}
-        <div className="name flex" />
+        <div className="name flex text-fgName dark:text-fgNameDark" />
         {!isMobile && <div className="clan-disciplines flex" />}
         <div
           className="year flex items-center justify-center"

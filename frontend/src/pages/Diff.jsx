@@ -190,13 +190,13 @@ const Diff = () => {
           {(errorFrom || errorTo) && (
             <div className="flex flex-row">
               {errorFrom && (
-                <div className="error-message flex items-center justify-center">
-                  <b>NO DECK WITH THIS ID</b>
+                <div className="error-message flex items-center justify-center font-bold">
+                  NO DECK WITH THIS ID
                 </div>
               )}
               {errorTo && (
-                <div className="error-message flex items-center justify-center">
-                  <b>NO DECK WITH THIS ID</b>
+                <div className="error-message flex items-center justify-center font-bold">
+                  NO DECK WITH THIS ID
                 </div>
               )}
             </div>

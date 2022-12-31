@@ -65,12 +65,14 @@ const InventoryLibraryTableRow = ({
   }
 
   const trBg = isSwiped
-    ? isSwiped === 'left' ? 'bg-bgSuccess dark:bg-bgSuccessDark' : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : ''
+    ? isSwiped === 'left'
+      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
+      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
+    : '';
 
   return (
     <div
-    className={`inventory-library-table flex border-none ${trBg}`}
+      className={`inventory-library-table flex border-none ${trBg}`}
       {...swipeHandlers}
     >
       <div
@@ -146,7 +148,7 @@ const InventoryLibraryTableRow = ({
         disabled={isMobile}
       >
         <div
-          className="name flex items-center justify-start"
+          className="name flex items-center justify-start text-fgName dark:text-fgNameDark"
           onClick={() => handleClick(card.c)}
         >
           <ResultLibraryName card={card.c} />

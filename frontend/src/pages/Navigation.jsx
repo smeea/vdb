@@ -28,9 +28,9 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
       end={end}
       aria-label={ariaLabel}
       className={({ isActive }) =>
-        `flex h-full items-center ${icon ? 'px-3' : 'pb-0.5 px-2'} ${
+        `flex h-full items-center ${icon ? 'px-3' : 'px-2 pb-0.5'} ${
           isActive
-            ? 'text-fgPrimary dark:text-fgPrimaryDark bg-borderNestModal dark:bg-borderNestModalDark'
+            ? 'bg-borderNestModal text-fgPrimary dark:bg-borderNestModalDark dark:text-fgPrimaryDark'
             : ''
         }`
       }

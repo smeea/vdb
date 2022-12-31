@@ -189,9 +189,9 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           {!isMobile && (
             <td className="clan">{clan && <ResultClanImage value={clan} />}</td>
           )}
-          <td className="name">
+          <td className="name text-fgName dark:text-fgNameDark">
             <div
-              className="name flex justify-between truncate"
+              className="name flex justify-between truncate text-fgName dark:text-fgNameDark"
               title={deck.name}
             >
               {deck.name}
@@ -282,7 +282,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             <tr>
               {!isMobile && <th className="inventory"></th>}
               {!isMobile && <th className="clan"></th>}
-              <th className="name">
+              <th className="name text-fgName dark:text-fgNameDark">
                 <input
                   placeholder="Filter by Name"
                   type="text"

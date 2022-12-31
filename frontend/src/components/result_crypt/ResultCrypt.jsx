@@ -54,8 +54,8 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
-        <div className="error-message flex items-center justify-center">
-          <b>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</b>
+        <div className="error-message flex items-center justify-center font-bold">
+          {cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}
         </div>
       )}
       {cards && cards.length > 0 && (

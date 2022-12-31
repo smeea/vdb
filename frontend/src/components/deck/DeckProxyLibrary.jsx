@@ -88,12 +88,8 @@ const DeckProxyLibrary = ({
 
   return (
     <>
-      <div
-        className={`flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark   ${
-          isMobile ? '' : ''
-        }`}
-      >
-        <b>Library [{libraryTotalSelected}]</b>
+      <div className="flex items-center justify-between bg-bgSecondary font-bold dark:bg-bgSecondaryDark">
+        Library [{libraryTotalSelected}]
       </div>
       {LibraryDeck}
       {librarySide.length > 0 && (

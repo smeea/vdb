@@ -57,9 +57,9 @@ const ResultCryptTableRow = ({
     onSwiping: (e) => {
       if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && addMode) {
         if (e.deltaX < -SWIPE_THRESHOLD) {
-          setIsSwiped('left')
+          setIsSwiped('left');
         } else if (e.deltaX > SWIPE_THRESHOLD) {
-          setIsSwiped('right')
+          setIsSwiped('right');
         } else {
           setIsSwiped(false);
         }
@@ -79,10 +79,12 @@ const ResultCryptTableRow = ({
   }
 
   const trBg = isSwiped
-    ? isSwiped === 'left' ? 'bg-bgSuccess dark:bg-bgSuccessDark' : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
+    ? isSwiped === 'left'
+      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
+      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
     : idx % 2
-      ? 'bg-bgThird dark:bg-bgThirdDark'
-      : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+    ? 'bg-bgThird dark:bg-bgThirdDark'
+    : 'bg-bgPrimary dark:bg-bgPrimaryDark';
 
   return (
     <tr
@@ -107,18 +109,20 @@ const ResultCryptTableRow = ({
           >
             {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
               <div
-                className={`used  flex items-center justify-between ${inInventory < softUsedMax + hardUsedTotal
+                className={`used  flex items-center justify-between ${
+                  inInventory < softUsedMax + hardUsedTotal
                     ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
                     : ''
-                  }
+                }
                   `}
               >
                 {inInventory}
                 <div
-                  className={`text-xs ${inInventory >= softUsedMax + hardUsedTotal
+                  className={`text-xs ${
+                    inInventory >= softUsedMax + hardUsedTotal
                       ? 'gray'
                       : 'white'
-                    } `}
+                  } `}
                 >
                   {inInventory >= softUsedMax + hardUsedTotal
                     ? `+${inInventory - softUsedMax - hardUsedTotal}`

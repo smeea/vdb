@@ -32,25 +32,17 @@ const PdaResultDescription = ({ deck }) => {
         <tbody>
           <tr>
             <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              {isMobile ? (
-                <div className="flex items-center">
-                  <TagFill />
-                </div>
-              ) : (
-                <b>Deck:</b>
-              )}
+              <div className="flex items-center font-bold">
+                {isMobile ? <TagFill /> : <>Deck:</>}
+              </div>
             </td>
             <td>{deck['name']}</td>
           </tr>
           <tr>
             <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              {isMobile ? (
-                <div className="flex items-center">
-                  <PersonFill />
-                </div>
-              ) : (
-                <b>Author:</b>
-              )}
+              <div className="flex items-center font-bold">
+                {isMobile ? <PersonFill /> : <>Author:</>}
+              </div>
             </td>
             <td>
               <div
@@ -63,26 +55,18 @@ const PdaResultDescription = ({ deck }) => {
           </tr>
           <tr>
             <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              {isMobile ? (
-                <div className="flex items-center">
-                  <CalendarEvent />
-                </div>
-              ) : (
-                <b>Created:</b>
-              )}
+              <div className="flex items-center font-bold">
+                {isMobile ? <CalendarEvent /> : <>Created:</>}
+              </div>
             </td>
             <td>{deck['creation_date']}</td>
           </tr>
           {lastUpdated !== deck['creation_date'] && (
             <tr>
               <td className="text-fgSecondary dark:text-fgSecondaryDark">
-                {isMobile ? (
-                  <div className="flex items-center">
-                    <CalendarEvent />
-                  </div>
-                ) : (
-                  <b>Updated:</b>
-                )}
+                <div className="flex items-center font-bold">
+                  {isMobile ? <CalendarEvent /> : <>Updated:</>}
+                </div>
               </td>
               <td>{lastUpdated}</td>
             </tr>

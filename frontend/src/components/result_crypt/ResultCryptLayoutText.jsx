@@ -29,7 +29,7 @@ const ResultCryptLayoutText = ({
       <div className="flex items-center justify-between whitespace-nowrap ">
         <div className="flex items-center whitespace-nowrap">
           <ResultClanImage value={card.Clan} />
-          <div className="name  font-bold">
+          <div className="name font-bold text-fgName  dark:text-fgNameDark">
             <ResultCryptName card={card} />
             {card.Adv[1] && (
               <ConditionalTooltip

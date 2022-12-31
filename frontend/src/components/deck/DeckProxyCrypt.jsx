@@ -45,12 +45,8 @@ const DeckProxyCrypt = ({
 
   return (
     <>
-      <div
-        className={`ps-2 flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark  ${
-          isMobile ? '' : ''
-        }`}
-      >
-        <b>Crypt [{cryptTotalSelected}]</b>
+      <div className="flex items-center justify-between bg-bgSecondary font-bold dark:bg-bgSecondaryDark">
+        Crypt [{cryptTotalSelected}]
       </div>
       <DeckProxyCryptTable
         handleModalCardOpen={handleModalCardOpen}

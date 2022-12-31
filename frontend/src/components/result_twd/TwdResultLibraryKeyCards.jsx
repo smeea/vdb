@@ -88,7 +88,10 @@ const TwdResultLibraryKeyCards = ({ library }) => {
         <td className="type" onClick={() => handleClick(card.c)}>
           <ResultLibraryTypeImage value={card.c.Type} />
         </td>
-        <td className="name " onClick={() => handleClick(card.c)}>
+        <td
+          className="name text-fgName dark:text-fgNameDark "
+          onClick={() => handleClick(card.c)}
+        >
           <ConditionalTooltip
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
@@ -110,8 +113,8 @@ const TwdResultLibraryKeyCards = ({ library }) => {
 
   return (
     <>
-      <div>
-        <b>{isMobile ? `Library [${libraryTotal}]` : 'Key cards:'}</b>
+      <div className="font-bold">
+        {isMobile ? `Library [${libraryTotal}]` : 'Key cards:'}
       </div>
       <div className="library">
         <table className="twd-library-table">

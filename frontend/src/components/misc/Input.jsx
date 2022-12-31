@@ -17,7 +17,7 @@ const Input = ({
 }) => {
   return (
     <input
-      className={`bg-bgPrimary dark:bg-bgPrimaryDark min-h-[42px] rounded border border-borderSecondary dark:border-borderSecondaryDark px-1.5 py-1 ${
+      className={`min-h-[42px] rounded border border-borderSecondary bg-bgPrimary px-1.5 py-1 dark:border-borderSecondaryDark dark:bg-bgPrimaryDark ${
         className ?? ''
       }`}
       placeholder={placeholder}

@@ -133,8 +133,8 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className=" opacity-60">
-          <div className="flex items-center justify-between ">
-            <b>Side Crypt</b>
+          <div className="flex items-center justify-between font-bold">
+            Side Crypt
           </div>
           <DeckCryptTable
             deck={deck}

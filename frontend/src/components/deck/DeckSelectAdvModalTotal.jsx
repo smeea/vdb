@@ -37,8 +37,8 @@ const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
           onClick={() => handleClick(k)}
           className="inline-block whitespace-nowrap "
         >
-          <span className="text-fgSecondary dark:text-fgSecondaryDark">
-            <b>{k}:</b>
+          <span className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            {k}:
           </span>
           {byTags[k]}
         </span>
@@ -47,9 +47,7 @@ const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
 
   const value = (
     <>
-      <div className="whitespace-nowrap ">
-        <b>TOTAL: {total}</b>
-      </div>
+      <div className="whitespace-nowrap font-bold">TOTAL: {total}</div>
       <div>{totalOutput}</div>
       <div />
     </>

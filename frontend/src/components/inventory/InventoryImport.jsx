@@ -62,7 +62,7 @@ const InventoryImport = () => {
       />
       {importError && (
         <ErrorOverlay placement="left">
-          {importError && <b>CANNOT IMPORT THIS INVENTORY</b>}
+          CANNOT IMPORT THIS INVENTORY
         </ErrorOverlay>
       )}
     </>
