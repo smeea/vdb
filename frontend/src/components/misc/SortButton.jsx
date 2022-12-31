@@ -5,7 +5,7 @@ import { MenuItems, MenuItem, MenuButton } from 'components';
 
 const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
   return (
-    <Menu>
+    <Menu as="div" className="relative">
       <MenuButton
         title="Sort"
         icon={<SortDown />}

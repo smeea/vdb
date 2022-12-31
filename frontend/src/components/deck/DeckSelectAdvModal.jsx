@@ -554,7 +554,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
             <tbody>{deckRows}</tbody>
           </table>
           <div className="flex justify-end ">
-            <Menu>
+            <Menu as="div" className="relative">
               <MenuButton
                 title="Export Selected"
                 icon={<Download />}

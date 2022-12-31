@@ -46,7 +46,7 @@ const PdaResultDescription = ({ deck }) => {
             </td>
             <td>
               <div
-                className="link-like"
+                className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
                 onClick={() => handleClick(deck['author'])}
               >
                 {deck['author']} <br />

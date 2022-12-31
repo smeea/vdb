@@ -126,7 +126,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   return (
-    <Menu>
+    <Menu as="div" className="relative">
       <MenuButton
         title="Copy URL"
         icon={

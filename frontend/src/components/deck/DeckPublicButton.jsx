@@ -58,7 +58,7 @@ const DeckPublicButton = ({ deck }) => {
 
   return (
     <>
-      <Menu>
+      <Menu as="div" className="relative">
         <MenuButton
           variant="secondary"
           title="Public Deck Archive Actions"

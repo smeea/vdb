@@ -28,10 +28,12 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
       end={end}
       aria-label={ariaLabel}
       className={({ isActive }) =>
-        `flex h-full items-center ${icon ? 'px-3' : 'px-2 pb-0.5'} ${
+        `flex h-full items-center hover:no-underline ${
+          icon ? 'px-3' : 'px-2 pb-0.5'
+        } ${
           isActive
-            ? 'bg-borderNestModal text-fgPrimary dark:bg-borderNestModalDark dark:text-fgPrimaryDark'
-            : ''
+            ? 'text:text-[#ffffff] dark:text-[#ffffff] bg-borderNestModal dark:bg-borderNestModalDark'
+            : 'text:text-[#afafaf] dark:text-[#afafaf]'
         }`
       }
     >
@@ -81,13 +83,11 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`${
-        isMobile
-          ? 'fixed bottom-0 w-full'
-          : 'top-0 bg-bgPrimary dark:bg-bgPrimaryDark'
+      className={` bg-bgNav dark:bg-bgNavDark ${
+        isMobile ? 'fixed bottom-0 w-full' : 'top-0'
       } z-50 `}
     >
-      <div className="navbar-container mx-auto flex h-[42px] justify-between bg-bgNav dark:bg-bgNavDark">
+      <div className="navbar-container mx-auto flex h-[42px] justify-between">
         <div className="flex items-center space-x-3">
           {isMobile ? (
             <>

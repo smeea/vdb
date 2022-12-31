@@ -136,67 +136,63 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           text="Proxy Missing"
         />
       ) : (
-        <Menu>
-          <div className="relative">
-            <MenuButton
-              title="Create PDF with Cards"
-              icon={
-                spinnerState ? (
-                  <Spinner />
-                ) : (
-                  <Printer width="18" height="18" viewBox="0 0 18 16" />
-                )
-              }
-              variant="secondary"
-              text="PDF Proxy"
-            />
-            <MenuItems>
-              <MenuItem>
-                <div
-                  onClick={() => proxyCards(deck.crypt, deck.library, false)}
-                >
-                  Full Deck - Gray gaps
-                </div>
-              </MenuItem>
-              <MenuItem>
-                <div onClick={() => proxyCards(deck.crypt, deck.library, true)}>
-                  Full Deck - White gaps
-                </div>
-              </MenuItem>
-              {inventoryMode && (
-                <>
-                  <MenuItem>
-                    <div
-                      onClick={() =>
-                        proxyCards(missingCrypt, missingLibrary, false)
-                      }
-                    >
-                      Missing in Inventory - Gray gaps
-                    </div>
-                  </MenuItem>
-                  <MenuItem>
-                    <div
-                      onClick={() =>
-                        proxyCards(missingCrypt, missingLibrary, true)
-                      }
-                    >
-                      Missing in Inventory - White gaps
-                    </div>
-                  </MenuItem>
-                </>
-              )}
-              <MenuItem>
-                <div
-                  onClick={() => {
-                    setShowSelectModal(true);
-                    setShowFloatingButtons(false);
-                  }}
-                >
-                  Select Cards
-                </div>
-              </MenuItem>
-            </MenuItems>
-          </div>
+        <Menu as="div" className="relative">
+          <MenuButton
+            title="Create PDF with Cards"
+            icon={
+              spinnerState ? (
+                <Spinner />
+              ) : (
+                <Printer width="18" height="18" viewBox="0 0 18 16" />
+              )
+            }
+            variant="secondary"
+            text="PDF Proxy"
+          />
+          <MenuItems>
+            <MenuItem>
+              <div onClick={() => proxyCards(deck.crypt, deck.library, false)}>
+                Full Deck - Gray gaps
+              </div>
+            </MenuItem>
+            <MenuItem>
+              <div onClick={() => proxyCards(deck.crypt, deck.library, true)}>
+                Full Deck - White gaps
+              </div>
+            </MenuItem>
+            {inventoryMode && (
+              <>
+                <MenuItem>
+                  <div
+                    onClick={() =>
+                      proxyCards(missingCrypt, missingLibrary, false)
+                    }
+                  >
+                    Missing in Inventory - Gray gaps
+                  </div>
+                </MenuItem>
+                <MenuItem>
+                  <div
+                    onClick={() =>
+                      proxyCards(missingCrypt, missingLibrary, true)
+                    }
+                  >
+                    Missing in Inventory - White gaps
+                  </div>
+                </MenuItem>
+              </>
+            )}
+            <MenuItem>
+              <div
+                onClick={() => {
+                  setShowSelectModal(true);
+                  setShowFloatingButtons(false);
+                }}
+              >
+                Select Cards
+              </div>
+            </MenuItem>
+          </MenuItems>
         </Menu>
       )}
       {showSelectModal && (

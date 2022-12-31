@@ -11,7 +11,7 @@ const TwdMoreButton = ({ noText }) => {
   const navigate = useNavigate();
 
   return (
-    <Menu>
+    <Menu as="div" className="relative">
       <MenuButton
         title="More interesting stuff"
         icon={<Gem size={24} />}

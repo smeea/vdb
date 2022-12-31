@@ -13,7 +13,7 @@ const DeckImportButton = ({
   const { username } = useApp();
 
   return (
-    <Menu>
+    <Menu as="div" className="relative">
       <MenuButton
         title="Create or Import Deck"
         icon={<ClipboardPlus size={24} />}

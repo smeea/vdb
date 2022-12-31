@@ -7,7 +7,7 @@ const DeckSelectSortForm = ({ onChange }) => {
   const sortMethods = { Name: 'byName', Date: 'byDate' };
 
   return (
-    <Menu>
+    <Menu as="div" className="relative">
       <MenuButton title="Sort Decks" icon={<SortDown />} text="Public" />
       <MenuItems>
         {Object.keys(sortMethods).map((k) => {
