@@ -11,8 +11,8 @@ const LanguageMenu = ({ languages, setShowMenu }) => {
 
   return (
     <div className="space-y-2">
-      <div className="text-sm">Card Language:</div>
-      <div className="flex items-center space-x-3">
+      <div>Card Language:</div>
+      <div className="flex items-center space-x-5">
         {Object.keys(languages).map((l) => {
           const Flag = languages[l];
           return (

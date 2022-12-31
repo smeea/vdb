@@ -9,17 +9,17 @@ const ThemeSelect = ({ setShowMenu }) => {
   const { isMobile } = useApp();
 
   return (
-    <div
-      className={`flex h-full min-w-[40px] items-center justify-center ${
-        isMobile ? '' : 'text-white'
-      }   `}
-      onClick={() => {
-        toggleTheme();
-        isMobile && setShowMenu(false);
-      }}
-    >
+    <>
       {isMobile ? (
-        <>
+        <div
+          className={`flex items-center px-3 py-1.5 space-x-2 ${
+            isMobile ? '' : 'text-[#ffffff] dark:text-[#ffffff]'
+          }   `}
+          onClick={() => {
+            toggleTheme();
+            isMobile && setShowMenu(false);
+          }}
+        >
           <div className="flex min-w-[30px] justify-center">
             {theme === 'dark' && (
               <MoonFill height="20" width="20" viewBox="0 0 16 16" />
@@ -36,15 +36,23 @@ const ThemeSelect = ({ setShowMenu }) => {
             {theme === 'light' && 'Light Theme'}
             {theme === 'auto' && 'System Theme'}
           </div>
-        </>
+        </div>
       ) : (
-        <>
+        <div
+          className={`flex h-full items-center justify-center ${
+            isMobile ? '' : 'text-[#ffffff] dark:text-[#ffffff]'
+          }   `}
+          onClick={() => {
+            toggleTheme();
+            isMobile && setShowMenu(false);
+          }}
+        >
           {theme === 'dark' && <MoonFill />}
           {theme === 'light' && <SunFill />}
           {theme === 'auto' && <PcDisplay />}
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

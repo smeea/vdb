@@ -15,31 +15,52 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   return (
     <div
       ref={menuRef}
-      className="text-white  relative"
+      className="text-[#ffffff] h-full flex px-1 items-center relative"
       onClick={() => setShowMenu(!showMenu)}
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
       {showMenu && (
-        <div className="absolute bottom-8 rounded border border-borderPrimary bg-bgPrimary p-3 text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
-          <NavLink to="/account" onClick={() => setShowMenu(false)}>
-            <div className="flex items-center text-fgPrimary dark:text-fgPrimaryDark">
+        <div className="absolute bottom-10 rounded-lg border border-borderPrimary bg-bgPrimary py-4 space-y-0 text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
+          <div className="w-full">
+            <NavLink
+              to="/account"
+              onClick={() => setShowMenu(false)}
+              className={({ isActive }) =>
+                `text-fgPrimary dark:text-fgPrimaryDark flex items-center px-3 py-1.5 space-x-2 ${
+                  isActive
+                    ? 'bg-borderNestModal dark:bg-borderNestModalDark'
+                    : ''
+                }`
+              }
+            >
               <div className="flex min-w-[30px] justify-center">
                 <PersonFill height="20" width="20" viewBox="0 0 16 16" />
               </div>
               <div>{username ? 'Account' : 'Login'}</div>
-            </div>
-          </NavLink>
-          <NavLink to="/" end onClick={() => setShowMenu(false)}>
-            <div className="main-font flex items-center">
+            </NavLink>
+          </div>
+          <div className="w-full">
+            <NavLink
+              to="/"
+              end
+              onClick={() => setShowMenu(false)}
+              className={({ isActive }) =>
+                `text-fgPrimary dark:text-fgPrimaryDark flex items-center px-3 py-1.5 space-x-2 ${
+                  isActive
+                    ? 'bg-borderNestModal dark:bg-borderNestModalDark'
+                    : ''
+                }`
+              }
+            >
               <div className="flex min-w-[30px] justify-center">
                 <InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />
               </div>
               <div>About</div>
-            </div>
-          </NavLink>
+            </NavLink>
+          </div>
           <ThemeSelect setShowMenu={setShowMenu} />
           <div
-            className="flex items-center  "
+            className="flex items-center px-3 py-1.5 space-x-2"
             onClick={() => {
               toggleInventoryMode();
               setShowMenu(false);
@@ -53,14 +74,17 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               )}
             </div>
             <div
-              className={`${
-                inventoryMode ? '' : 'text-[gray]'
-              } whitespace-nowrap `}
+              className={`whitespace-nowrap ${
+                inventoryMode ? '' : 'text-[#afafaf]'
+              }`}
             >
               Inventory Mode
             </div>
           </div>
-          <div className="flex items-center justify-between ">
+          <div className="px-3 py-1.5">
+            <hr />
+          </div>
+          <div className="flex px-3 py-1.5">
             <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
           </div>
         </div>

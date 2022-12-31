@@ -29,7 +29,7 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
       aria-label={ariaLabel}
       className={({ isActive }) =>
         `flex h-full items-center hover:no-underline ${
-          icon ? 'px-3' : 'px-2 pb-0.5'
+          icon ? 'px-3' : 'px-1.5 sm:px-2 pb-0.5'
         } ${
           isActive
             ? 'text-[#ffffff] dark:text-[#ffffff] bg-borderNestModal dark:bg-borderNestModalDark'
@@ -90,9 +90,7 @@ const Navigation = () => {
       <div className="navbar-container mx-auto flex h-[42px] justify-between">
         <div className="flex items-center space-x-3">
           {isMobile ? (
-            <>
-              <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
-            </>
+            <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
           ) : (
             <>
               <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
@@ -108,7 +106,9 @@ const Navigation = () => {
             location.pathname !== '/inventory' && (
               <div
                 className={`flex h-full items-center px-3 ${
-                  inventoryMode ? 'text-white' : 'text-neutral-500'
+                  inventoryMode
+                    ? 'text-[#ffffff] dark:text-[#ffffff]'
+                    : 'text-[#afafaf] dark:text-[#afafaf]'
                 }`}
                 onClick={() => {
                   toggleInventoryMode();
