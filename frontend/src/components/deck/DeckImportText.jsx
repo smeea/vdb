@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Modal, Button, ErrorOverlay } from 'components';
+import { Textarea, Modal, Button, ErrorOverlay } from 'components';
 import { useApp, deckAdd } from 'context';
 import { useDeckImport } from 'hooks';
 import { deckServices } from 'services';
@@ -90,8 +90,8 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       title="Import from Text"
     >
       <div>
-        <textarea
-          className="focus:text-red-500 font-mono text-sm"
+        <Textarea
+          className="w-full"
           rows={isMobile ? '20' : '25'}
           value={deckText}
           placeholder={placeholder}

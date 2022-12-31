@@ -9,7 +9,14 @@ const Checkbox = ({
   label,
   className,
 }) => {
-  const id = `${prefix ? prefix + '-' : ''}${name}-${value}`;
+  const id = `${prefix ?? ''}-${name}-${value}`;
+
+  // TODO styling
+  // .form-check-input
+  //     background: var(--bg-checkbox)
+  // .form-check-input:checked
+  //   background: var(--bg-checkbox-selected)
+  //   border-color: var(--bg-checkbox-selected)
 
   return (
     <div className={`flex items-center space-x-1.5 ${className ?? ''}`}>

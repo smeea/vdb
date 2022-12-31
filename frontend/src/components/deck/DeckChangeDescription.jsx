@@ -3,7 +3,7 @@ import Check2 from 'assets/images/icons/check2.svg';
 import ChevronBarExpand from 'assets/images/icons/chevron-bar-expand.svg';
 import ChevronBarContract from 'assets/images/icons/chevron-bar-contract.svg';
 import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
-import { Button } from 'components';
+import { Input, Textarea, Button } from 'components';
 import { useApp, deckUpdate } from 'context';
 
 const DeckDescription = ({ deck, folded, setFolded }) => {
@@ -49,23 +49,17 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
         <ChatLeftQuoteFill width="20" height="18" viewBox="0 0 16 16" />
       </div>
       {folded ? (
-        <input
-          className={`${
-            folded ? '' : 'w-full'
-          } border-red-400 bg-blue-900 border-2 px-1.5 py-1`}
-          type="text"
+        <Input
+          className="rounded-r-none"
           value={value}
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!isEditable}
         />
       ) : (
-        <textarea
-          className={`${
-            folded ? '' : 'w-full'
-          } border-red-400 bg-blue-900 border-2 px-1.5 py-1`}
+        <Textarea
+          className="w-full rounded-none"
           rows={12}
-          type="text"
           value={value}
           onChange={handleChange}
           onBlur={handleOnBlur}

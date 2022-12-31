@@ -22,15 +22,23 @@ import {
 } from 'context';
 
 const Link = ({ to, end, ariaLabel, icon, text }) => {
-  return <NavLink
-    to={to}
-    end={end}
-    aria-label={ariaLabel}
-    className={({ isActive }) => `flex h-full items-center ${icon ? 'px-3' : 'pb-1 px-2'} ${isActive ? 'text-fgPrimary dark:text-fgPrimaryDark bg-borderNestModal dark:bg-borderNestModalDark' : ''}`}
-  >
-    {icon ?? text}
-  </NavLink>
-}
+  return (
+    <NavLink
+      to={to}
+      end={end}
+      aria-label={ariaLabel}
+      className={({ isActive }) =>
+        `flex h-full items-center ${icon ? 'px-3' : 'pb-0.5 px-2'} ${
+          isActive
+            ? 'text-fgPrimary dark:text-fgPrimaryDark bg-borderNestModal dark:bg-borderNestModalDark'
+            : ''
+        }`
+      }
+    >
+      {icon ?? text}
+    </NavLink>
+  );
+};
 
 const Navigation = () => {
   const { inventoryMode, toggleInventoryMode, isMobile, username } = useApp();
@@ -73,10 +81,11 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`${isMobile
+      className={`${
+        isMobile
           ? 'fixed bottom-0 w-full'
           : 'top-0 bg-bgPrimary dark:bg-bgPrimaryDark'
-        } z-50 `}
+      } z-50 `}
     >
       <div className="navbar-container mx-auto flex h-[42px] justify-between bg-bgNav dark:bg-bgNavDark">
         <div className="flex items-center space-x-3">
@@ -98,8 +107,9 @@ const Navigation = () => {
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
               <div
-                className={`flex h-full items-center px-3 ${inventoryMode ? 'text-white' : 'text-neutral-500'
-                  }`}
+                className={`flex h-full items-center px-3 ${
+                  inventoryMode ? 'text-white' : 'text-neutral-500'
+                }`}
                 onClick={() => {
                   toggleInventoryMode();
                 }}
@@ -120,41 +130,23 @@ const Navigation = () => {
             <>
               <Link
                 to="/account"
-                icon={username ? <PersonFill width="20" height="20" viewBox="0 1 16 16" /> : null}
+                icon={
+                  username ? (
+                    <PersonFill width="20" height="20" viewBox="0 1 16 16" />
+                  ) : null
+                }
                 text={username ? null : 'Login'}
                 ariaLabel="Login"
               />
-              <Link
-                to="/"
-                text="About"
-                end
-              />
+              <Link to="/" text="About" end />
             </>
           )}
-          <Link
-            to={pdaUrl}
-            text="PDA"
-          />
-          <Link
-            to={twdUrl}
-            text="TWD"
-          />
-          <Link
-            to="/inventory"
-            text={isMobile ? 'INV' : 'Inventory'}
-          />
-          <Link
-            to={decksUrl}
-            text={isMobile ? 'DKS' : 'Decks'}
-          />
-          <Link
-            to={cryptUrl}
-            text={isMobile ? 'CRY' : 'Crypt'}
-          />
-          <Link
-            to={libraryUrl}
-            text={isMobile ? 'LIB' : 'Library'}
-          />
+          <Link to={pdaUrl} text="PDA" />
+          <Link to={twdUrl} text="TWD" />
+          <Link to="/inventory" text={isMobile ? 'INV' : 'Inventory'} />
+          <Link to={decksUrl} text={isMobile ? 'DKS' : 'Decks'} />
+          <Link to={cryptUrl} text={isMobile ? 'CRY' : 'Crypt'} />
+          <Link to={libraryUrl} text={isMobile ? 'LIB' : 'Library'} />
           <Link
             to={cardsUrl}
             ariaLabel="Quick card search"

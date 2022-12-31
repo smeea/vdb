@@ -12,11 +12,12 @@ const Input = ({
   type = 'text',
   autoComplete = 'off',
   spellCheck = false,
+  autoFocus = false,
   readOnly = false,
 }) => {
   return (
     <input
-      className={`border-red-400 bg-blue-900 min-h-[42px] rounded border-2 px-1.5 py-1 ${
+      className={`bg-bgPrimary dark:bg-bgPrimaryDark min-h-[42px] rounded border border-borderSecondary dark:border-borderSecondaryDark px-1.5 py-1 ${
         className ?? ''
       }`}
       placeholder={placeholder}
@@ -27,6 +28,7 @@ const Input = ({
       value={value}
       onChange={onChange}
       onBlur={onBlur}
+      autoFocus={autoFocus}
       disabled={readOnly}
       required={required}
       id={id}
