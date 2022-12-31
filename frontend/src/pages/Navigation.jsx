@@ -32,8 +32,8 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
           icon ? 'px-3' : 'px-2 pb-0.5'
         } ${
           isActive
-            ? 'text:text-[#ffffff] dark:text-[#ffffff] bg-borderNestModal dark:bg-borderNestModalDark'
-            : 'text:text-[#afafaf] dark:text-[#afafaf]'
+            ? 'text-[#ffffff] dark:text-[#ffffff] bg-borderNestModal dark:bg-borderNestModalDark'
+            : 'text-[#afafaf] dark:text-[#afafaf]'
         }`
       }
     >

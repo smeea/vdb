@@ -9,7 +9,7 @@ const Button = ({
   onClick,
   title,
   value,
-  variant = 'primary',
+  variant,
 }) => {
   const getStyle = (variant) => {
     switch (variant) {
@@ -18,7 +18,7 @@ const Button = ({
       case 'secondary':
         return 'text-fgThird dark:text-fgThirdDark bg-bgButtonSecondary dark:bg-bgButtonSecondaryDark border border-borderThird dark:border-borderThirdDark';
       case 'third':
-        return 'bg-borderPrimary dark:bg-borderPrimaryDark border border-borderThird dark:border-borderThirdDark';
+        return 'xx bg-borderPrimary dark:bg-borderPrimaryDark border border-borderThird dark:border-borderThirdDark yy';
       case 'outline-primary':
         return 'border border-borderSecondary dark:border-borderSecondaryDark';
       case 'danger':

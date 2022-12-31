@@ -10,11 +10,17 @@ const TwdSearchFormCapacity = ({ value, onChange }) => {
         </div>
       </div>
       <div className="flex w-3/4 justify-end">
-        {['1-4', '4-6', '6-8', '8-11'].map((i, index) => {
+        {['1-4', '4-6', '6-8', '8-11'].map((i, idx) => {
           return (
             <Button
-              className="w-full rounded-none"
-              key={index}
+              className={`w-full ${idx !== 0 ? 'rounded-l-none' : ''} ${
+                idx !== 3 ? 'rounded-r-none' : ''
+              } ${
+                !value[i]
+                  ? 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark'
+                  : ''
+              }`}
+              key={idx}
               value={i}
               name="capacity"
               variant={value[i] ? 'third' : 'outline-primary'}
