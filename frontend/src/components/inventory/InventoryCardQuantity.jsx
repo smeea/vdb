@@ -103,7 +103,7 @@ const InventoryCardQuantity = ({
             {manual ? (
               <form onSubmit={handleSubmit}>
                 <input
-                  className="h[32px] text-black bg-red-500 w-[63px] text-center"
+                  className="focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark border-2 rounded-sm border-bgSecondary dark:border-bgSecondaryDark w-[63px] text-center"
                   placeholder=""
                   type="number"
                   autoFocus={true}

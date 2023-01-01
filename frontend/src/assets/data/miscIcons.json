@@ -1,0 +1,18 @@
+{
+  "1CONVICTION": "con1",
+  "2CONVICTION": "con2",
+  "FLIGHT": "flight",
+  "MERGED": "merged",
+  "ACTION": "action",
+  "ACTIONMODIFIER": "actionmodifier",
+  "ALLY": "ally",
+  "COMBAT": "combat",
+  "EQUIPMENT": "equipment",
+  "EVENT": "event",
+  "MASTER": "master",
+  "POLITICALACTION": "politicalaction",
+  "POWER": "power",
+  "REACTION": "reaction",
+  "REFLEX": "reflex",
+  "RETAINER": "retainer"
+}

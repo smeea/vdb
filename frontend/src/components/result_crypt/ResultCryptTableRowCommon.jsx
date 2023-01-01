@@ -53,7 +53,6 @@ const ResultCryptTableRowCommon = ({
           )}
         </td>
       )}
-
       <td
         className="name text-fgName dark:text-fgNameDark"
         onClick={() => handleClick(card)}

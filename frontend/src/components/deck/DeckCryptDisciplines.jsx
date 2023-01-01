@@ -23,7 +23,7 @@ const DeckCryptDisciplines = ({
       counter += 1;
       return (
         <td width={width} key={index}>
-          {value[d] && (
+          {value?.[d] && (
             <ResultDisciplineImage value={d} superior={value[d] === 2} />
           )}
         </td>

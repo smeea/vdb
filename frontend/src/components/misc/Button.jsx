@@ -29,13 +29,13 @@ const Button = ({
   };
 
   const baseStyle =
-    'hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark hover:border hover:border-borderPrimary dark:hover:border-borderPrimaryDark';
+    'focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark hover:border hover:border-borderPrimary dark:hover:border-borderPrimaryDark';
 
   const customStyle = getStyle(variant);
 
   return (
     <button
-      className={`${baseStyle} ${customStyle} items-center justify-center rounded-md px-3 py-1.5 ${
+      className={`${baseStyle} ${customStyle} items-center justify-center rounded px-3 py-1.5 ${
         className ?? ''
       }`}
       onClick={onClick}

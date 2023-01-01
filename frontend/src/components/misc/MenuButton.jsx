@@ -12,12 +12,12 @@ const MenuButton = ({ title, icon, variant = 'primary', text }) => {
   };
 
   const baseStyle =
-    'hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark hover:border hover:border-borderPrimary dark:hover:border-borderPrimaryDark';
+    'hover:bg-bordrPrimary dark:hover:bg-borderPrimaryDark hover:border hover:border-borderPrimary dark:hover:border-borderPrimaryDark';
 
   const customStyle = getStyle(variant);
 
   return (
-    <Menu.Button className="block w-full">
+    <Menu.Button className="block w-full focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark rounded">
       <div
         className={`${baseStyle} ${customStyle} flex h-full items-center justify-center space-x-2 rounded px-3 py-1.5`}
         title={title}

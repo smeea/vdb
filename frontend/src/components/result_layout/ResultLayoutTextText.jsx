@@ -1,12 +1,13 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
-import disciplineNames from 'assets/data/disciplineIcons.json';
+import miscIcons from 'assets/data/miscIcons.json';
 import { useApp } from 'context';
 import {
   CardPopover,
   ResultCryptName,
   ResultLibraryName,
   ResultDisciplineImage,
+  ResultMiscImage,
   ConditionalTooltip,
 } from 'components';
 
@@ -21,14 +22,18 @@ const ResultLayoutTextText = ({ text, placement }) => {
         let replacedText;
 
         replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => {
-          const superior = match === match.toUpperCase();
-          return (
-            <ResultDisciplineImage
-              key={`${idxText}-${idx}`}
-              value={disciplineNames[match.toLowerCase()]}
-              superior={superior}
-            />
-          );
+          if (miscIcons[match]) {
+            return <ResultMiscImage key={`${idxText}-${idx}`} value={match} />;
+          } else {
+            const superior = match === match.toUpperCase();
+            return (
+              <ResultDisciplineImage
+                key={`${idxText}-${idx}`}
+                value={match}
+                superior={superior}
+              />
+            );
+          }
         });
 
         replacedText = reactStringReplace(
