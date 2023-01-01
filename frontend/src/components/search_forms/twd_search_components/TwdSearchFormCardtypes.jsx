@@ -126,7 +126,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
     const form = (
       <div className="flex items-center space-x-1" key={i[0]}>
         <div className="flex w-1/6 justify-center">
-          <ResultLibraryTypeImage value={i[0]} />
+          <ResultLibraryTypeImage className="h-[29px]" value={i[0]} />
         </div>
         <div className="w-5/6">
           <Select

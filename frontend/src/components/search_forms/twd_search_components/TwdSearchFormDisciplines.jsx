@@ -20,7 +20,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
               onClick={onChange}
             >
               <ResultDisciplineImage
-                className="w-[25px]"
+                className="w-[31px]"
                 name="disciplines"
                 value={i}
               />
