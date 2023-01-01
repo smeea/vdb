@@ -252,13 +252,13 @@ const Review = () => {
                         </div>
                         {foldedDescription && deckFrom?.tags.length > 0 && (
                           <div>
-                            <DeckTags deck={deckFrom} bordered />
+                            <DeckTags deck={deckFrom} isBordered />
                           </div>
                         )}
                       </div>
                       {!foldedDescription && deckFrom?.tags.length > 0 && (
                         <div className="block ">
-                          <DeckTags deck={deckFrom} bordered />
+                          <DeckTags deck={deckFrom} isBordered />
                         </div>
                       )}
                     </>

@@ -116,7 +116,6 @@ const DeckDrawModal = ({
                 handleClick={burnCrypt}
                 restCards={restCrypt}
                 resultCards={drawedCrypt}
-                className="deck-crypt-table"
               />
             </div>
           </div>
@@ -198,7 +197,6 @@ const DeckDrawModal = ({
                   <DeckDrawCryptTable
                     handleClick={handleModalCardOpen}
                     resultCards={burnedCrypt}
-                    className="search-crypt-table"
                     ashHeap
                   />
                 </div>

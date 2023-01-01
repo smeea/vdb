@@ -14,7 +14,6 @@ const DeckDrawCryptTable = ({
   handleClick,
   restCards,
   resultCards,
-  className,
   ashHeap,
   crypt,
 }) => {
@@ -96,7 +95,11 @@ const DeckDrawCryptTable = ({
 
   return (
     <>
-      <table className={className}>
+      <table
+        className={`sm:border border-bgSecondary dark:border-bgSecondaryDark ${
+          ashHeap ? 'search-crypt-table' : 'deck-crypt-table'
+        }`}
+      >
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (

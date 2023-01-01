@@ -1,16 +1,9 @@
 import React from 'react';
 import { ResultModal, ResultCryptTableRow } from 'components';
-import { useApp } from 'context';
 import { countDisciplines } from 'utils';
 import { useModalCardController } from 'hooks';
 
-const ResultCryptTable = ({
-  resultCards,
-  placement,
-  className,
-  inRecommendation,
-}) => {
-  const { setShowFloatingButtons } = useApp();
+const ResultCryptTable = ({ resultCards, placement, inRecommendation }) => {
   const maxDisciplines = countDisciplines(resultCards);
 
   const {
@@ -37,7 +30,7 @@ const ResultCryptTable = ({
 
   return (
     <>
-      <table className={className}>
+      <table className="search-crypt-table sm:border border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>{cardRows}</tbody>
       </table>
       {shouldShowModal && (

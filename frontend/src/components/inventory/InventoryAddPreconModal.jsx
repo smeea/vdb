@@ -230,7 +230,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       title="Import Precon to Inventory"
     >
       <div>
-        <table className="inv-import-precons-table">
+        <table className="inv-import-precons-table sm:border border-bgSecondary dark:border-bgSecondaryDark">
           <thead>
             <tr>
               {!isMobile && <th className="clan"></th>}

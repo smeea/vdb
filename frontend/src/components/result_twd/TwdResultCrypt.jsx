@@ -111,7 +111,7 @@ const TwdResultCrypt = ({ crypt }) => {
         Crypt [{cryptTotal}] - {cryptGroups}
         {hasBanned && ' - WITH BANNED'}
       </div>
-      <table className="twd-crypt-table">
+      <table className="twd-table">
         <tbody>{cardLines}</tbody>
       </table>
       {shouldShowModal && (

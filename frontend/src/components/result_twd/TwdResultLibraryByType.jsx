@@ -131,7 +131,7 @@ const TwdResultLibraryByType = ({ library }) => {
       <div className="font-bold">
         Library [{libraryTotal}]{hasBanned && ' - WITH BANNED'}
       </div>
-      <table className="twd-librarybytype-table">
+      <table className="twd-table">
         <tbody>{LibraryTypes}</tbody>
       </table>
       {shouldShowModal && (

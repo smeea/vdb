@@ -26,11 +26,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
                 CRYPT
               </div>
               {crypt ? (
-                <ResultCryptTable
-                  resultCards={crypt}
-                  className="search-crypt-table"
-                  inRecommendation
-                />
+                <ResultCryptTable resultCards={crypt} inRecommendation />
               ) : (
                 <div className="flex justify-center">
                   <Spinner />

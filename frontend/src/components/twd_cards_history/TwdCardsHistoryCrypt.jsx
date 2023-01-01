@@ -124,7 +124,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`bordered flex ${
+      className={`border-b border-bgSecondary dark:border-bgSecondaryDark  flex ${
         index % 2
           ? 'bg-bgThird dark:bg-bgThirdDark'
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
@@ -154,7 +154,6 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           setSortMethod={setSortMethod}
         />
       </div>
-
       <div className="history-crypt-table flex bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
         {!isMobile && <div className="capacity flex" />}
         {!isMobile && <div className="disciplines flex" />}
@@ -189,7 +188,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
       <AutoSizer>
         {({ width, height }) => (
           <FixedSizeList
-            className="history-crypt-table"
+            className="history-crypt-table sm:border border-bgSecondary dark:border-bgSecondaryDark"
             height={height}
             width={width}
             itemCount={cardRows.length}

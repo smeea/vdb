@@ -39,7 +39,11 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
           </div>
           {(deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
             <div className="md:basis-6/12">
-              <DeckTags deck={deck} allTagsOptions={allTagsOptions} bordered />
+              <DeckTags
+                deck={deck}
+                allTagsOptions={allTagsOptions}
+                isBordered
+              />
             </div>
           )}
         </div>
@@ -55,7 +59,11 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
               />
             </div>
             <div className={isMobile ? '' : ''}>
-              <DeckTags deck={deck} allTagsOptions={allTagsOptions} bordered />
+              <DeckTags
+                deck={deck}
+                allTagsOptions={allTagsOptions}
+                isBordered
+              />
             </div>
           </>
         )}

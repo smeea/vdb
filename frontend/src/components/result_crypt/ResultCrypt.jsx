@@ -26,7 +26,6 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
   const navigate = useNavigate();
   const deck = useSnapshot(deckStore).deck;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
-  const className = 'search-crypt-table';
 
   const sortMethods = {
     'Capacity - Max to Min': 'C↓',
@@ -74,7 +73,6 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
             </div>
           )}
           <ResultCryptTable
-            className={className}
             resultCards={sortedCards}
             placement={
               isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'

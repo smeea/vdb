@@ -41,7 +41,7 @@ const ResultLayoutTextSets = (props) => {
       });
 
       const popoverText = (
-        <div className="bordered-sm max-w-[350px] space-y-1 p-3 text-sm">
+        <div className="max-w-[400px] space-y-1 p-3 text-sm">
           <b>{setsAndPrecons[k].name}</b>
           {k !== 'POD' &&
             k !== 'Promo' &&

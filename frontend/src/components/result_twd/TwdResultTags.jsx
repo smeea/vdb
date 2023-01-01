@@ -11,7 +11,7 @@ const TwdResultTags = ({ tags }) => {
               tags: tags.base,
             }}
             tagsSuperior={tags.superior}
-            bordered={false}
+            isBordered={false}
             allTagsOptions={[]}
           />
         </div>

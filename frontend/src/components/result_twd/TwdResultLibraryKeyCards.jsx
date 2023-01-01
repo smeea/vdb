@@ -117,7 +117,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
         {isMobile ? `Library [${libraryTotal}]` : 'Key cards:'}
       </div>
       <div className="library">
-        <table className="twd-library-table">
+        <table className="twd-table">
           <tbody>{cardRows}</tbody>
         </table>
       </div>

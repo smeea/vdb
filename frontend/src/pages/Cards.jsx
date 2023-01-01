@@ -155,7 +155,7 @@ const Cards = () => {
                 </div>
               )}
               {card && (
-                <div className="bordered flex flex-row">
+                <div className="border border-bgSecondary dark:border-bgSecondaryDark flex flex-row">
                   <div className="w-1/2">
                     <CardImage
                       className="h-auto w-full"

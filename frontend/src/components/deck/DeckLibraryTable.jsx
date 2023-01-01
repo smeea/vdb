@@ -51,7 +51,7 @@ const DeckLibraryTable = ({
 
   return (
     <>
-      <table className="deck-library-table">
+      <table className="deck-library-table sm:border border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (

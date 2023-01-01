@@ -51,7 +51,7 @@ const DeckCryptTable = ({
 
   return (
     <>
-      <table className="deck-crypt-table">
+      <table className="deck-crypt-table sm:border border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (
