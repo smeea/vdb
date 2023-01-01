@@ -130,14 +130,10 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
       <MenuButton
         title="Copy URL"
         icon={
-          <Link45Deg
-            width={noText ? 19 : 21}
-            height={noText ? 19 : 21}
-            viewBox="0 0 15 15"
-          />
+          <Link45Deg width={noText ? 19 : 21} height="23" viewBox="0 0 15 15" />
         }
         variant={success ? 'success' : noText ? 'primary' : 'secondary'}
-        text={success ? 'Copied' : 'Copy URL'}
+        text={noText ? null : success ? 'Copied' : 'Copy URL'}
       />
       <MenuItems>
         <>

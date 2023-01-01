@@ -58,7 +58,7 @@ const DeckCardQuantity = ({
       {isMobile ? (
         <>
           <a
-            className="quantity"
+            className="relative before:absolute before:inset-[-12px] before:content-['']"
             onClick={() => cardChange(deckid, card, q - 1)}
           >
             <Button variant="primary" className="quantity">
@@ -67,7 +67,7 @@ const DeckCardQuantity = ({
           </a>
           <div className={miss ? `${miss}` : ''}>{q == 0 ? '' : q}</div>
           <a
-            className="quantity"
+            className="relative before:absolute before:inset-[-12px] before:content-['']"
             onClick={() => cardChange(deckid, card, q + 1)}
           >
             <Button variant="primary" className="quantity">

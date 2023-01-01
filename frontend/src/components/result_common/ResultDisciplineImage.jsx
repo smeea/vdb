@@ -10,15 +10,13 @@ const ResultDisciplineImage = ({ value, superior, name, className, title }) => {
     .toLowerCase()
     .replace(/[\s,:!?'.-]/g, '')}${superior ? 'sup' : ''}.svg`;
 
-  const imgTitle = title ?? value;
-
   return (
     <img
       className={imgClass}
       src={imgSrc}
       name={name}
-      id={imgTitle}
-      title={imgTitle}
+      id={title ?? value}
+      title={title ?? value}
     />
   );
 };

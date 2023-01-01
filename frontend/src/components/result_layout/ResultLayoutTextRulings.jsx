@@ -1,6 +1,6 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
-import miscIcons from 'assets/data/miscIcons.json';
+import cardtextIcons from 'assets/data/cardtextIcons.json';
 import { useApp } from 'context';
 import {
   CardPopover,
@@ -40,18 +40,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
       let replacedText;
 
       replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => {
-        if (miscIcons[match]) {
-          return <ResultMiscImage key={`${idxText}-${idx}`} value={match} />;
-        } else {
-          const superior = match === match.toUpperCase();
-          return (
-            <ResultDisciplineImage
-              key={`${idxRuling}-${idxText}-icon-${idx}`}
-              value={match}
-              superior={superior}
-            />
-          );
-        }
+        return <ResultMiscImage key={`${idxText}-${idx}`} value={match} />;
       });
 
       replacedText = reactStringReplace(replacedText, /{(.*?)}/g, (match) => {

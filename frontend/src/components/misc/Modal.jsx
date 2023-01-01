@@ -28,21 +28,21 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
       />
 
       <div
-        className={`fixed inset-0 flex p-0 sm:p-8 ${
+        className={`fixed inset-0 flex p-0 sm:p-8 justify-center overflow-auto ${
           centered ? 'items-center' : 'items-start'
-        } justify-center overflow-auto`}
+        }`}
       >
         <Dialog.Panel
-          className={`${widthClass} space-y-2 rounded bg-bgPrimary p-5 dark:bg-bgPrimaryDark`}
+          className={`${widthClass} space-y-2 border border-bgSecondary dark:border-bgSecondaryDark rounded bg-bgPrimary p-5 dark:bg-bgPrimaryDark`}
         >
           {title && (
             <Dialog.Title className="flex items-start justify-between border-none">
               <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 {title}
               </div>
-              <Button onClick={handleClose}>
+              <button onClick={handleClose}>
                 <X width="32" height="32" viewBox="0 0 16 16" />
-              </Button>
+              </button>
             </Dialog.Title>
           )}
           {children}

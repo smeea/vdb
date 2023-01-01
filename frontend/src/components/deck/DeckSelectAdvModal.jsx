@@ -434,7 +434,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
               <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
             </td>
             <td className="buttons">
-              <div className="flex flex-col justify-end space-x-1">
+              <div className="flex justify-end space-x-1">
                 <DeckHideButton deck={deck} />
                 {!isMobile && (
                   <>
@@ -444,11 +444,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                 )}
                 {isDesktop && (
                   <>
-                    <DeckCopyUrlButton
-                      noText={true}
-                      isAuthor={true}
-                      deck={deck}
-                    />
+                    <DeckCopyUrlButton deck={deck} noText isAuthor />
                     {revFilter &&
                     (deck.master ||
                       (deck.branches && deck.branches.length > 0)) ? (

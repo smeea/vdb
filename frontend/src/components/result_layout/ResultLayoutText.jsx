@@ -55,12 +55,16 @@ const ResultLayoutText = ({
           setCard={setCard}
           setImageSet={setImageSet}
           forceInventoryMode={forceInventoryMode}
+          handleClose={handleClose}
+          noClose={noClose}
         />
       ) : (
         <ResultLibraryLayoutText
           card={card}
           setImageSet={setImageSet}
           forceInventoryMode={forceInventoryMode}
+          handleClose={handleClose}
+          noClose={noClose}
         />
       )}
       <div className="flex justify-between ">

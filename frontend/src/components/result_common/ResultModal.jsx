@@ -96,7 +96,7 @@ const ResultModal = ({
           <div className="flex flex-row">
             <div className="bg-black md:basis-5/12">
               <CardImage
-                className="h-auto w-full"
+                className="w-[358px]"
                 card={activeCard}
                 set={imageSet}
                 onClick={handleClose}

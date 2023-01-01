@@ -1,5 +1,6 @@
 import React from 'react';
 import { useApp } from 'context';
+import X from 'assets/images/icons/x.svg';
 import {
   CardPopover,
   ResultCryptName,
@@ -21,6 +22,8 @@ const ResultCryptLayoutText = ({
   setCard,
   setImageSet,
   forceInventoryMode,
+  handleClose,
+  noClose,
 }) => {
   const { inventoryMode, isMobile, cryptCardBase } = useApp();
 
@@ -47,8 +50,16 @@ const ResultCryptLayoutText = ({
             )}
           </div>
         </div>
-        <div>
+        <div className="flex items-center space-x-3">
           <ResultCryptGroup value={card.Group} />
+          {!noClose && (
+            <button
+              onClick={handleClose}
+              className="relative before:absolute before:inset-[-6px] before:content-['']"
+            >
+              <X width="32" height="32" viewBox="0 0 16 16" />
+            </button>
+          )}
         </div>
       </div>
       <hr className="border-1 border-neutral-500" />
