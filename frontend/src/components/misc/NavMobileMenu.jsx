@@ -5,7 +5,7 @@ import InfoCircleFill from 'assets/images/icons/info-circle-fill.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
 import List from 'assets/images/icons/list.svg';
-import { LanguageSelect, ThemeSelect } from 'components';
+import { LanguageMenu, ThemeSelect } from 'components';
 import { useApp } from 'context';
 
 const NavMobileMenu = ({ showMenu, setShowMenu }) => {
@@ -85,7 +85,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             <hr />
           </div>
           <div className="flex px-3 py-1.5">
-            <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
+            <LanguageMenu setShowMenu={setShowMenu} />
           </div>
         </div>
       )}
