@@ -15,12 +15,12 @@ const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
         {['60-67', '68-75', '76-83', '84-90'].map((i, idx) => {
           return (
             <Button
-              className={`w-full ${idx !== 0 ? 'rounded-l-none' : ''} ${
-                idx !== 3 ? 'rounded-r-none' : ''
-              } ${
+              className={`w-full ${
+                idx !== 0 ? 'rounded-l-none border-l-0' : ''
+              } ${idx !== 3 ? 'rounded-r-none' : ''} ${
                 !value[i]
                   ? 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark'
-                  : ''
+                  : 'border border-borderPrimary dark:border-borderPrimaryDark'
               }`}
               key={idx}
               value={i}

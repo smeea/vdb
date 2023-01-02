@@ -1,7 +1,6 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
 import X from 'assets/images/icons/x.svg';
-import { Button } from 'components';
 
 const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
   // TODO unfocus close
@@ -10,11 +9,11 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
   const getWidth = (s) => {
     switch (s) {
       case 'md':
-        return 'min-w-full sm:min-w-[80%] md:min-w-[65%] lg:min-w-[55%] xl:min-w-[45%] 2xl-min-w-[40%]';
+        return 'min-w-full sm:min-w-[80%] md:min-w-[65%] lg:min-w-[55%] xl:min-w-[45%] 2xl:min-w-[40%]';
       case 'lg':
-        return 'min-w-full sm:min-w-full md:min-w-[80%] lg:min-w-[70%] xl:min-w-[60%] 2xl-min-w-[55%]';
+        return 'min-w-full sm:min-w-full md:min-w-[80%] lg:min-w-[70%] xl:min-w-[60%] 2xl:min-w-[55%]';
       case 'xl':
-        return 'min-w-full sm:min-w-full md:min-w-[95%] lg:min-w-[85%] xl:min-w-[75%] 2xl-min-w-[70%]';
+        return 'min-w-full sm:min-w-full md:min-w-[95%] lg:min-w-[85%] xl:min-w-[75%] 2xl:min-w-[70%]';
     }
   };
 
@@ -23,7 +22,7 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
   return (
     <Dialog open={true} onClose={handleClose} className="relative z-50">
       <div
-        className="bg-black fixed inset-0 bg-opacity-50"
+        className="bg-[#000] fixed inset-0 bg-opacity-50"
         aria-hidden="true"
       />
 

@@ -15,12 +15,12 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
         {groups.map((i, idx) => {
           return (
             <Button
-              className={`w-full ${idx !== 0 ? 'rounded-l-none' : ''} ${
-                idx !== groups.length ? 'rounded-r-none' : ''
-              } ${
+              className={`w-full ${
+                idx !== 0 ? 'rounded-l-none border-l-0' : ''
+              } ${idx !== groups.length - 1 ? 'rounded-r-none' : ''} ${
                 !value[i]
                   ? 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark'
-                  : ''
+                  : 'border border-borderPrimary dark:border-borderPrimaryDark'
               }`}
               key={idx}
               value={i}

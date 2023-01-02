@@ -16,7 +16,7 @@ const CardImage = ({ card, set, className, onClick }) => {
     <>
       {lang !== 'en-EN' || set ? (
         <img
-          className={className ?? 'h-[420px]'}
+          className={className ?? 'min-w-[358px]'}
           src={`${otherUrl}.jpg`}
           alt={card['Name']}
           onClick={onClick}
@@ -30,7 +30,7 @@ const CardImage = ({ card, set, className, onClick }) => {
             type="image/webp"
           />
           <img
-            className={className ?? 'h-[420px]'}
+            className={className ?? 'min-w-[358px]'}
             src={`${baseUrl}.jpg`}
             alt={card['Name']}
             onClick={onClick}

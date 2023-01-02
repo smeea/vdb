@@ -41,7 +41,7 @@ const DeckChangeAuthor = ({ deck }) => {
   return (
     <form className="flex" onSubmit={handleSubmit}>
       <div
-        className="bg-red-900 flex items-center rounded-l p-2"
+        className="bg-bgSecondary dark:bg-bgSecondaryDark border border-bgSecondary dark:border-bgSecondaryDark text-fgThird dark:text-fgThirdDark flex items-center rounded-l p-2"
         title="Author"
       >
         <PersonFill width="20" height="20" viewBox="0 0 16 16" />
@@ -51,7 +51,7 @@ const DeckChangeAuthor = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        className="w-full rounded-l-none"
+        className="w-full rounded-l-none border-bgSecondary dark:border-bgSecondaryDark"
       />
       {isMobile && isAuthor && (
         <Button variant={success ? 'success' : 'primary'} type="submit">

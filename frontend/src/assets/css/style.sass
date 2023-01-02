@@ -26,58 +26,33 @@
   .optimize-contrast
     image-rendering: -webkit-optimize-contrast
 
-/* ButtonAddCard.in
-/*   background: var(--border-primary)
-/*   color: var(--bg-checkbox)
-
 .title, .adv
   color: var(--fg-secondary)
 
-.nested-modal div.modal-content
-  border: 1px solid var(--border-nest-modal)
-
-/* input.quantity, input.quantity:focus
-/*   background: var(--bg-primary)
-/*   border-color: var(--bg-secondary)
-/*   color: var(--fg-primary)
-/*   &::placeholder
-/*     color: var(--fg-primary)
-/*     opacity: .45
-
-/* .input-group-text
-/*   background: var(--bg-secondary)
-/*   border-color: var(--bg-secondary)
-/*   color: var(--fg-third)
-
 .react-select
-  &__single-value
-    color: var(--fg-primary) !important
-  &__input
-    color: var(--fg-primary) !important
-  &__control
-    background: var(--bg-primary) !important
-    border-color: var(--border-secondary) !important
-  &__value-container
-    background: var(--bg-primary)
-  &__dropdown-indicator
-    background: var(--bg-primary)
   &__menu
-    z-index:  4 !important
-  &__menu-list
-    background: var(--bg-primary)
-    color: var(--fg-primary)
+    z-index: 4 #{!important}
+  &__single-value,
+  &__input
+    @apply text-fgPrimary dark:text-fgPrimaryDark #{!important}
+  &__control
+    @apply bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark #{!important}
+  &__value-container,
+  &__dropdown-indicator,
   &__indicators
-    background: var(--bg-primary)
+    @apply bg-bgPrimary dark:bg-bgPrimaryDark #{!important}
+  &__menu-list
+    @apply bg-bgPrimary dark:bg-bgPrimaryDark text-fgPrimary dark:text-fgPrimaryDark #{!important}
   &__indicator-separator
-    background-color: var(--border-secondary) !important
+    @apply bg-borderSecondary dark:bg-borderSecondaryDark #{!important}
   &__dropdown-indicator
-    color: var(--border-secondary) !important
+    @apply text-borderSecondary dark:text-borderSecondaryDark #{!important}
   &__option--is-focused
-    background: var(--bg-checkbox-selected) !important
+    @apply bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark #{!important}
   &__option--is-selected
-    background: var(--border-primary) !important
-.no-dropdown.react-select__dropdown-indicator
-    display: none
+    @apply bg-borderPrimary dark:bg-borderPrimaryDark #{!important}
+
+.no-dropdown.react-select__dropdown-indicator,
 .no-dropdown.react-select__indicators
   display: none
 

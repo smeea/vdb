@@ -46,7 +46,7 @@ const DeckChangeBranchName = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        className={`w-full ${isMobile ? 'rounded-r-none' : ''}`}
+        className={`w-full rounded-r-none sm:rounded-r border-bgSecondary dark:border-bgSecondaryDark`}
       />
       {isMobile && isAuthor && (
         <Button

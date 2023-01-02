@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Dialog } from '@headlessui/react';
 import { useSwipeable } from 'react-swipeable';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
 import ChevronCompactRight from 'assets/images/icons/chevron-compact-right.svg';
-import { ButtonFloat, Modal, CardImage, ResultLayoutText } from 'components';
+import { ButtonFloat, CardImage, ResultLayoutText } from 'components';
 import { useApp } from 'context';
 
 const ResultModal = ({
@@ -62,93 +63,92 @@ const ResultModal = ({
   });
 
   return (
-    <Modal
-      size="lg"
-      handleClose={handleClose}
-      dialogClassName={nested ? 'nested-modal' : 'border-none'}
-      centered
-    >
-      <div>
-        {isMobile ? (
-          <div {...swipeHandlers}>
-            {showImage ? (
-              <>
-                <CardImage
-                  className="h-auto w-full"
-                  card={activeCard}
-                  set={imageSet}
-                  onClick={handleClose}
-                />
-              </>
+    <Dialog open={true} onClose={handleClose} className="relative z-50">
+      <div
+        className="bg-[#000] fixed inset-0 bg-opacity-50"
+        aria-hidden="true"
+      />
+      <div className="fixed inset-0 flex p-0 sm:p-8 justify-center overflow-auto items-center">
+        <Dialog.Panel
+          className={`w-full md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:min-w-[55%] space-y-2 ${
+            nested ? 'border' : 'border-none'
+          } border-borderNestModal dark:border-borderNestModalDark rounded bg-bgPrimary dark:bg-bgPrimaryDark`}
+        >
+          <div className="relative">
+            {isMobile ? (
+              <div {...swipeHandlers}>
+                {showImage ? (
+                  <CardImage
+                    className="h-auto w-full"
+                    card={activeCard}
+                    set={imageSet}
+                    onClick={handleClose}
+                  />
+                ) : (
+                  <div>
+                    <ResultLayoutText
+                      card={activeCard}
+                      setCard={setActiveCard}
+                      handleClose={handleClose}
+                      setImageSet={setImageSet}
+                      forceInventoryMode={forceInventoryMode}
+                    />
+                  </div>
+                )}
+              </div>
             ) : (
-              <div>
-                <ResultLayoutText
-                  card={activeCard}
-                  setCard={setActiveCard}
-                  handleClose={handleClose}
-                  setImageSet={setImageSet}
-                  forceInventoryMode={forceInventoryMode}
-                />
+              <div className="flex">
+                <div className="bg-[#000]">
+                  <CardImage
+                    card={activeCard}
+                    set={imageSet}
+                    onClick={handleClose}
+                  />
+                </div>
+                <div className="p-5">
+                  <ResultLayoutText
+                    card={activeCard}
+                    setCard={setActiveCard}
+                    handleClose={handleClose}
+                    setImageSet={setImageSet}
+                    forceInventoryMode={forceInventoryMode}
+                  />
+                </div>
               </div>
             )}
-          </div>
-        ) : (
-          <div className="flex flex-row">
-            <div className="bg-black md:basis-5/12">
-              <CardImage
-                className="w-[358px]"
-                card={activeCard}
-                set={imageSet}
+            <div
+              onClick={() => handleModalCardChange(-1)}
+              className="absolute bottom-1/2 text-[#555] sm:text-[#fff] left-0 sm:left-[-40px] h-[50px]"
+            >
+              <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
+            </div>
+            <div
+              onClick={() => handleModalCardChange(1)}
+              className="absolute bottom-1/2 text-[#555] sm:text-[#fff] right-0 sm:right-[-40px] h-[50px]"
+            >
+              <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
+            </div>
+            {isMobile && (
+              <ButtonFloat
+                onClick={toggleShowImage}
+                variant="bg-[#707070] opacity-80"
+                position="middle"
+              >
+                <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
+              </ButtonFloat>
+            )}
+            {isNarrow && (
+              <ButtonFloat
                 onClick={handleClose}
-              />
-            </div>
-            <div className="md:basis-7/12">
-              <ResultLayoutText
-                card={activeCard}
-                setCard={setActiveCard}
-                handleClose={handleClose}
-                setImageSet={setImageSet}
-                forceInventoryMode={forceInventoryMode}
-              />
-            </div>
+                variant="bg-[#a06060] opacity-80"
+              >
+                <X width="40" height="40" viewBox="0 0 16 16" />
+              </ButtonFloat>
+            )}
           </div>
-        )}
-        <div
-          onClick={() => handleModalCardChange(-1)}
-          className={`absolute bottom-1/2 ${
-            isMobile
-              ? 'text-neutral-500 left-0 h-[50px]'
-              : 'text-white left-[-40px]'
-          }`}
-        >
-          <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
-        </div>
-        <div
-          onClick={() => handleModalCardChange(1)}
-          className={`absolute bottom-1/2 ${
-            isMobile
-              ? 'text-neutral-500 right-0 h-[50px]'
-              : 'text-white right-[-40px]'
-          }`}
-        >
-          <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
-        </div>
-        {isMobile && (
-          <ButtonFloat
-            onClick={toggleShowImage}
-            variant="bg-[#707070] opacity-80"
-            position="middle"
-          >
-            <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
-          </ButtonFloat>
-        )}
-        {isNarrow && (
-          <ButtonFloat onClick={handleClose} variant="bg-[#a06060] opacity-80">
-            <X width="40" height="40" viewBox="0 0 16 16" />
-          </ButtonFloat>
-        )}
+        </Dialog.Panel>
       </div>
-    </Modal>
+    </Dialog>
   );
 };
 

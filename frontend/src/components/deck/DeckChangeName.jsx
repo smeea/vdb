@@ -44,7 +44,7 @@ const DeckChangeName = ({ deck }) => {
   return (
     <form className="flex" onSubmit={handleSubmit}>
       <div
-        className="bg-red-900 flex items-center rounded-l p-2"
+        className="bg-bgSecondary dark:bg-bgSecondaryDark border border-bgSecondary dark:border-bgSecondaryDark text-fgThird dark:text-fgThirdDark flex items-center rounded-l p-2"
         title="Deck Name"
       >
         <TagFill width="20" height="20" viewBox="0 0 16 16" />
@@ -54,7 +54,7 @@ const DeckChangeName = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        className="w-full rounded-r-none rounded-l-none"
+        className="w-full rounded-none border-bgSecondary dark:border-bgSecondaryDark"
       />
       {(isPublic ||
         (deck.deckid !== 'deck' &&

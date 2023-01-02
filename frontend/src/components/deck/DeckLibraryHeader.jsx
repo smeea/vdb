@@ -42,14 +42,14 @@ const DeckLibraryHeader = ({
           <div className="flex items-center space-x-1" title="Total Blood Cost">
             <img
               className="optimize-contrast h-[31px] pb-1"
-              src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
+              src={`${process.env.ROOT_URL}images/misc/bloodX.png`}
             />
             <b>{bloodTotal}</b>
           </div>
           <div className="flex items-center space-x-1" title="Total Pool Cost">
             <img
               className="optimize-contrast h-[30px]"
-              src={process.env.ROOT_URL + 'images/misc/poolX.png'}
+              src={`${process.env.ROOT_URL}images/misc/poolX.png`}
             />
             <b>{poolTotal}</b>
           </div>

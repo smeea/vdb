@@ -9,7 +9,7 @@ const Button = ({
   onClick,
   title,
   value,
-  variant,
+  variant = 'primary',
 }) => {
   const getStyle = (variant) => {
     switch (variant) {
@@ -18,7 +18,7 @@ const Button = ({
       case 'secondary':
         return 'text-fgThird dark:text-fgThirdDark bg-bgButtonSecondary dark:bg-bgButtonSecondaryDark border border-borderThird dark:border-borderThirdDark';
       case 'third':
-        return 'xx bg-borderPrimary dark:bg-borderPrimaryDark border border-borderThird dark:border-borderThirdDark yy';
+        return 'bg-borderPrimary dark:bg-borderPrimaryDark';
       case 'outline-primary':
         return 'border border-borderSecondary dark:border-borderSecondaryDark';
       case 'danger':
@@ -29,7 +29,7 @@ const Button = ({
   };
 
   const baseStyle =
-    'focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark hover:border hover:border-borderPrimary dark:hover:border-borderPrimaryDark';
+    'focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark';
 
   const customStyle = getStyle(variant);
 
