@@ -3,10 +3,8 @@ import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
 import List from 'assets/images/icons/list.svg';
-import X from 'assets/images/icons/x.svg';
 import {
   DeckTags,
-  ButtonIconed,
   ReviewButtons,
   ReviewCrypt,
   ReviewLibrary,
@@ -268,12 +266,8 @@ const Review = () => {
             </div>
           </div>
           {error && (
-            <div className="flex flex-row">
-              <div>
-                <div className="error-message flex items-center justify-center font-bold">
-                  {error}
-                </div>
-              </div>
+            <div className="error-message flex items-center justify-center font-bold">
+              {error}
             </div>
           )}
           {deckFrom && (

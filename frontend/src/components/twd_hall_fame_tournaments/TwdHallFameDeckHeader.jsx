@@ -35,7 +35,7 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
     <div className="rounded-md border-2 border-borderPrimary dark:border-borderPrimaryDark">
       <div
         onClick={() => handleClick()}
-        className={`text-fgSecondary dark:text-fgSecondaryDark hover:underline flex justify-between ${
+        className={`flex justify-between text-fgSecondary hover:underline dark:text-fgSecondaryDark ${
           isStar ? 'font-bold' : ''
         }`}
       >

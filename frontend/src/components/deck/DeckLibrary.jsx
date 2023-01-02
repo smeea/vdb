@@ -156,7 +156,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
       <div className="space-y-2">{LibraryDeck}</div>
       {librarySide.length > 0 && (
         <div className="space-y-2 opacity-60">
-          <div className="flex min-h-[42px] items-center bg-bgSecondary px-2 py-1 font-bold dark:bg-bgSecondaryDark">
+          <div className="flex h-[42px] items-center bg-bgSecondary px-2 py-1 font-bold dark:bg-bgSecondaryDark">
             Side Library
           </div>
           <div className="space-y-2">{LibrarySideDeck}</div>

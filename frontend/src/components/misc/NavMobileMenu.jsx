@@ -15,18 +15,18 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   return (
     <div
       ref={menuRef}
-      className="text-[#ffffff] h-full flex px-1 items-center relative"
+      className="relative flex h-full items-center px-1 text-[#ffffff]"
       onClick={() => setShowMenu(!showMenu)}
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
       {showMenu && (
-        <div className="absolute bottom-10 rounded-lg border border-borderPrimary bg-bgPrimary py-4 space-y-0 text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
+        <div className="absolute bottom-10 space-y-0 rounded-lg border border-borderPrimary bg-bgPrimary py-4 text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
           <div className="w-full">
             <NavLink
               to="/account"
               onClick={() => setShowMenu(false)}
               className={({ isActive }) =>
-                `text-fgPrimary dark:text-fgPrimaryDark flex items-center px-3 py-1.5 space-x-2 ${
+                `flex items-center space-x-2 px-3 py-1.5 text-fgPrimary dark:text-fgPrimaryDark ${
                   isActive
                     ? 'bg-borderNestModal dark:bg-borderNestModalDark'
                     : ''
@@ -45,7 +45,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               end
               onClick={() => setShowMenu(false)}
               className={({ isActive }) =>
-                `text-fgPrimary dark:text-fgPrimaryDark flex items-center px-3 py-1.5 space-x-2 ${
+                `flex items-center space-x-2 px-3 py-1.5 text-fgPrimary dark:text-fgPrimaryDark ${
                   isActive
                     ? 'bg-borderNestModal dark:bg-borderNestModalDark'
                     : ''
@@ -60,7 +60,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
           </div>
           <ThemeSelect setShowMenu={setShowMenu} />
           <div
-            className="flex items-center px-3 py-1.5 space-x-2"
+            className="flex items-center space-x-2 px-3 py-1.5"
             onClick={() => {
               toggleInventoryMode();
               setShowMenu(false);

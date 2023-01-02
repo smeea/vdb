@@ -22,17 +22,17 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
   return (
     <Dialog open={true} onClose={handleClose} className="relative z-50">
       <div
-        className="bg-[#000] fixed inset-0 bg-opacity-50"
+        className="fixed inset-0 bg-[#000] bg-opacity-50"
         aria-hidden="true"
       />
 
       <div
-        className={`fixed inset-0 flex p-0 sm:p-8 justify-center overflow-auto ${
+        className={`fixed inset-0 flex justify-center overflow-auto p-0 sm:p-8 ${
           centered ? 'items-center' : 'items-start'
         }`}
       >
         <Dialog.Panel
-          className={`${widthClass} space-y-2 border border-bgSecondary dark:border-bgSecondaryDark rounded bg-bgPrimary p-5 dark:bg-bgPrimaryDark`}
+          className={`${widthClass} space-y-2 rounded border border-bgSecondary bg-bgPrimary p-5 dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
         >
           {title && (
             <Dialog.Title className="flex items-start justify-between border-none">

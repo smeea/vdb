@@ -65,14 +65,14 @@ const ResultModal = ({
   return (
     <Dialog open={true} onClose={handleClose} className="relative z-50">
       <div
-        className="bg-[#000] fixed inset-0 bg-opacity-50"
+        className="fixed inset-0 bg-[#000] bg-opacity-50"
         aria-hidden="true"
       />
-      <div className="fixed inset-0 flex p-0 sm:p-8 justify-center overflow-auto items-center">
+      <div className="fixed inset-0 flex items-center justify-center overflow-auto p-0 sm:p-8">
         <Dialog.Panel
-          className={`w-full md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:min-w-[55%] space-y-2 ${
+          className={`w-full space-y-2 md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:min-w-[55%] ${
             nested ? 'border' : 'border-none'
-          } border-borderNestModal dark:border-borderNestModalDark rounded bg-bgPrimary dark:bg-bgPrimaryDark`}
+          } rounded border-borderNestModal bg-bgPrimary dark:border-borderNestModalDark dark:bg-bgPrimaryDark`}
         >
           <div className="relative">
             {isMobile ? (
@@ -118,13 +118,13 @@ const ResultModal = ({
             )}
             <div
               onClick={() => handleModalCardChange(-1)}
-              className="absolute bottom-1/2 text-[#555] sm:text-[#fff] left-0 sm:left-[-40px] h-[50px]"
+              className="absolute bottom-1/2 left-0 h-[50px] text-[#555] sm:left-[-40px] sm:text-[#fff]"
             >
               <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
             </div>
             <div
               onClick={() => handleModalCardChange(1)}
-              className="absolute bottom-1/2 text-[#555] sm:text-[#fff] right-0 sm:right-[-40px] h-[50px]"
+              className="absolute bottom-1/2 right-0 h-[50px] text-[#555] sm:right-[-40px] sm:text-[#fff]"
             >
               <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
             </div>

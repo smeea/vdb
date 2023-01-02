@@ -29,10 +29,10 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
       aria-label={ariaLabel}
       className={({ isActive }) =>
         `flex h-full items-center hover:no-underline ${
-          icon ? 'px-3' : 'px-1.5 sm:px-2 pb-0.5'
+          icon ? 'px-3' : 'px-1.5 pb-0.5 sm:px-2'
         } ${
           isActive
-            ? 'text-[#ffffff] dark:text-[#ffffff] bg-borderNestModal dark:bg-borderNestModalDark'
+            ? 'bg-borderNestModal text-[#ffffff] dark:bg-borderNestModalDark dark:text-[#ffffff]'
             : 'text-[#afafaf] dark:text-[#afafaf]'
         }`
       }
@@ -87,7 +87,7 @@ const Navigation = () => {
         isMobile ? 'fixed bottom-0 w-full' : 'top-0'
       } z-50 `}
     >
-      <div className="navbar-container mx-auto flex h-[42px] justify-between">
+      <div className="navbar-container mx-auto flex h-10 justify-between">
         <div className="flex items-center space-x-3">
           {isMobile ? (
             <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />

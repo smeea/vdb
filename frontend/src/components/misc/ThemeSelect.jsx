@@ -12,7 +12,7 @@ const ThemeSelect = ({ setShowMenu }) => {
     <>
       {isMobile ? (
         <div
-          className={`flex items-center px-3 py-1.5 space-x-2 ${
+          className={`flex items-center space-x-2 px-3 py-1.5 ${
             isMobile ? '' : 'text-[#ffffff] dark:text-[#ffffff]'
           }   `}
           onClick={() => {

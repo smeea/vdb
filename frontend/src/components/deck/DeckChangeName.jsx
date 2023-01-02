@@ -44,7 +44,7 @@ const DeckChangeName = ({ deck }) => {
   return (
     <form className="flex" onSubmit={handleSubmit}>
       <div
-        className="bg-bgSecondary dark:bg-bgSecondaryDark border border-bgSecondary dark:border-bgSecondaryDark text-fgThird dark:text-fgThirdDark flex items-center rounded-l p-2"
+        className="flex items-center rounded-l border border-bgSecondary bg-bgSecondary p-2 text-fgThird dark:border-bgSecondaryDark dark:bg-bgSecondaryDark dark:text-fgThirdDark"
         title="Deck Name"
       >
         <TagFill width="20" height="20" viewBox="0 0 16 16" />
@@ -61,7 +61,7 @@ const DeckChangeName = ({ deck }) => {
           deck.deckid.length !== 32 &&
           !deck.deckid.includes(':'))) && (
         <div
-          className="rounded-l-none"
+          className="flex items-center rounded-r border border-bgSecondary bg-bgSecondary p-2 text-fgThird dark:border-bgSecondaryDark dark:bg-bgSecondaryDark dark:text-fgThirdDark"
           title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}
         >
           {isPublic ? <PeopleFill /> : <TrophyFill />}
@@ -70,7 +70,7 @@ const DeckChangeName = ({ deck }) => {
       {isNonEditable && (
         <div
           title="Deck is non-editable and will never change"
-          className="rounded-l-none"
+          className="flex items-center rounded-r border border-bgSecondary bg-bgSecondary p-2 text-fgThird dark:border-bgSecondaryDark dark:bg-bgSecondaryDark dark:text-fgThirdDark"
         >
           <Snow width="16" height="23" viewBox="0 0 16 16" />
         </div>

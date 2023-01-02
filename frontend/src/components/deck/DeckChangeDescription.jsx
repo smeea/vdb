@@ -43,7 +43,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   return (
     <form className="flex" onSubmit={handleSubmit}>
       <div
-        className="bg-bgSecondary dark:bg-bgSecondaryDark border border-bgSecondary dark:border-bgSecondaryDark text-fgThird dark:text-fgThirdDark flex items-center rounded-l p-2"
+        className="flex items-center rounded-l border border-bgSecondary bg-bgSecondary p-2 text-fgThird dark:border-bgSecondaryDark dark:bg-bgSecondaryDark dark:text-fgThirdDark"
         title="Description"
       >
         <ChatLeftQuoteFill width="20" height="18" viewBox="0 0 16 16" />

@@ -61,7 +61,10 @@ const DeckCardQuantity = ({
             className="relative before:absolute before:inset-[-12px] before:content-['']"
             onClick={() => cardChange(deckid, card, q - 1)}
           >
-            <Button variant="primary" className="quantity">
+            <Button
+              variant="primary"
+              className="h-[27px] w-[18px] px-0 py-0 text-sm"
+            >
               -
             </Button>
           </a>
@@ -70,7 +73,10 @@ const DeckCardQuantity = ({
             className="relative before:absolute before:inset-[-12px] before:content-['']"
             onClick={() => cardChange(deckid, card, q + 1)}
           >
-            <Button variant="primary" className="quantity">
+            <Button
+              variant="primary"
+              className="h-[27px] w-[18px] px-0 py-0 text-sm"
+            >
               +
             </Button>
           </a>
@@ -95,7 +101,7 @@ const DeckCardQuantity = ({
             {manual ? (
               <form onSubmit={handleSubmit}>
                 <input
-                  className="focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark border-2 rounded-sm border-bgSecondary dark:border-bgSecondaryDark w-[63px] text-center"
+                  className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-2 outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
                   placeholder=""
                   type="number"
                   autoFocus={true}

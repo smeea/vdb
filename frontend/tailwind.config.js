@@ -59,6 +59,8 @@ module.exports = {
       borderThirdDark: '#303040',
       borderNestModal: '#555570',
       borderNestModalDark: '#404050',
+      midGray: '#9090c0',
+      midGrayDark: '#808090',
     },
     extend: {},
   },

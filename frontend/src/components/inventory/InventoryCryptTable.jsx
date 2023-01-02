@@ -44,7 +44,7 @@ const InventoryCryptTable = ({
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`border-b border-bgSecondary dark:border-bgSecondaryDark  flex ${
+      className={`flex border-b border-bgSecondary  dark:border-bgSecondaryDark ${
         index % 2
           ? 'bg-bgThird dark:bg-bgThirdDark'
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
@@ -57,7 +57,7 @@ const InventoryCryptTable = ({
   return (
     <>
       {compact ? (
-        <div className="inventory-crypt-table border border-bgSecondary dark:border-bgSecondaryDark compact flex bg-bgPrimary dark:bg-bgPrimaryDark">
+        <div className="inventory-crypt-table compact flex border border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark">
           {cardRows[0]}
         </div>
       ) : (
@@ -69,7 +69,7 @@ const InventoryCryptTable = ({
           <AutoSizer>
             {({ width, height }) => (
               <FixedSizeList
-                className="inventory-crypt-table sm:border border-bgSecondary dark:border-bgSecondaryDark"
+                className="inventory-crypt-table border-bgSecondary dark:border-bgSecondaryDark sm:border"
                 height={height}
                 width={width}
                 itemCount={cardRows.length}

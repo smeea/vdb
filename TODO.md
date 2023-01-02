@@ -29,3 +29,6 @@
 - Style forms with https://github.com/tailwindlabs/tailwindcss-forms
 - Test autoFocus
 - Form with errorOverlay to have 'relative' class
+- ButtonFloat variant to className (or create variants inside button component)
+- Replace generic tailwind colors (-neutral -gray -red -black -white) and -[#HEX]
+- Refactor div with single nested div

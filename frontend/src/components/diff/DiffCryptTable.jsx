@@ -163,7 +163,7 @@ const DiffCryptTable = ({
 
   return (
     <>
-      <table className="deck-crypt-table sm:border border-bgSecondary dark:border-bgSecondaryDark">
+      <table className="deck-crypt-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (

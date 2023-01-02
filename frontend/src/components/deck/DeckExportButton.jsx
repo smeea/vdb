@@ -147,15 +147,18 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
                 <ExportDropdown action="copy" format="jol" />
               </>
             )}
-            {!inMissing && username && decks && Object.keys(decks).length > 1 && (
-              <>
-                {/* <Dropdown.Divider /> */}
-                <ExportDropdown action="exportAll" format="text" />
-                <ExportDropdown action="exportAll" format="lackey" />
-                <ExportDropdown action="exportAll" format="jol" />
-                <ExportDropdown action="exportAll" format="xlsx" />
-              </>
-            )}
+            {!inMissing &&
+              username &&
+              decks &&
+              Object.keys(decks).length > 1 && (
+                <>
+                  {/* <Dropdown.Divider /> */}
+                  <ExportDropdown action="exportAll" format="text" />
+                  <ExportDropdown action="exportAll" format="lackey" />
+                  <ExportDropdown action="exportAll" format="jol" />
+                  <ExportDropdown action="exportAll" format="xlsx" />
+                </>
+              )}
           </>
         )}
       </MenuItems>

@@ -29,7 +29,7 @@ const ResultLibraryLayoutText = ({
   return (
     <>
       <div className="flex items-center justify-between whitespace-nowrap ">
-        <div className="flex justify-between items-center whitespace-nowrap">
+        <div className="flex items-center justify-between whitespace-nowrap">
           <ResultLibraryTypeImage value={card.Type} />
           <div className="name font-bold text-fgName  dark:text-fgNameDark">
             <ResultLibraryName card={card} />

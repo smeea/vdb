@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Tab } from '@headlessui/react';
-import {
-  TwdCardsHistoryCrypt,
-  TwdCardsHistoryLibrary,
-  ResultModal,
-} from 'components';
+import { TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from 'components';
 import { useApp } from 'context';
 import { byName } from 'utils';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';

@@ -230,7 +230,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`border-b border-bgSecondary dark:border-bgSecondaryDark  flex ${
+      className={`flex border-b border-bgSecondary  dark:border-bgSecondaryDark ${
         index % 2
           ? 'bg-bgThird dark:bg-bgThirdDark'
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
@@ -306,7 +306,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
       <AutoSizer>
         {({ width, height }) => (
           <FixedSizeList
-            className="history-library-table sm:border border-bgSecondary dark:border-bgSecondaryDark"
+            className="history-library-table border-bgSecondary dark:border-bgSecondaryDark sm:border"
             height={height}
             width={width}
             itemCount={cardRows.length}

@@ -51,7 +51,7 @@ const TwdResultDescription = ({ deck }) => {
             </td>
             <td>
               <div
-                className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
+                className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
                 onClick={() => handleClick('location', deck['location'])}
               >
                 {deck['location']}
@@ -66,7 +66,7 @@ const TwdResultDescription = ({ deck }) => {
             </td>
             <td>
               <div
-                className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
+                className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
                 onClick={() => handleClick('author', deck['author'])}
               >
                 {deck['author']} <br />

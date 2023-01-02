@@ -474,7 +474,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
             tagsFilter={tagsFilter}
             setTagsFilter={setTagsFilter}
           />
-          <table className="decks-table sm:border border-bgSecondary dark:border-bgSecondaryDark">
+          <table className="decks-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
             <thead>
               <tr>
                 <th className="select">

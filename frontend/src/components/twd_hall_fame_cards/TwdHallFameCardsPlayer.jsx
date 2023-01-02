@@ -124,7 +124,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               setSortMethod={changeCryptSearchSort}
               inHoF={true}
             />
-            <table className="search-crypt-table sm:border border-bgSecondary dark:border-bgSecondaryDark">
+            <table className="search-crypt-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
               <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
                 <tr>
                   <th />

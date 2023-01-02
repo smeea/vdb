@@ -86,7 +86,7 @@ const DeckDrawLibraryTable = ({
 
   return (
     <>
-      <table className="search-library-table sm:border border-bgSecondary dark:border-bgSecondaryDark">
+      <table className="search-library-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (
