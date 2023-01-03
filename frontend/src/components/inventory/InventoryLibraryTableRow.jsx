@@ -57,12 +57,8 @@ const InventoryLibraryTableRow = ({
     },
   });
 
-  let softUsedMax = 0;
-  let hardUsedTotal = 0;
-  if (usedLibrary) {
-    softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
-    hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
-  }
+  const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
+  const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
 
   const trBg = isSwiped
     ? isSwiped === 'left'
@@ -77,7 +73,7 @@ const InventoryLibraryTableRow = ({
     >
       <div
         className={`flex items-center justify-center ${
-          inShared ? 'quantity-no-buttons ' : 'quantity]'
+          inShared ? 'quantity-no-buttons ' : 'quantity'
         }`}
       >
         {inShared ? (

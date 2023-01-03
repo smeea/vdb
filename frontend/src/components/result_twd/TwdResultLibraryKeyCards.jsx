@@ -41,18 +41,8 @@ const TwdResultLibraryKeyCards = ({ library }) => {
   };
 
   const cardRows = keyCards.map((card, idx) => {
-    let inInventory = 0;
-    let hardUsedTotal = 0;
-
-    if (inventoryMode) {
-      if (inventoryLibrary[card.c.Id]) {
-        inInventory = inventoryLibrary[card.c.Id].q;
-      }
-
-      if (usedLibrary) {
-        hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
-      }
-    }
+    const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
+    const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
 
     return (
       <tr

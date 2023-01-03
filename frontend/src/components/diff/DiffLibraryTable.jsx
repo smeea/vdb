@@ -9,7 +9,7 @@ import {
   DiffQuantityDiff,
   Tooltip,
 } from 'components';
-import { drawProbability } from 'utils';
+import { drawProbability, getHardTotal, getSoftMax } from 'utils';
 import {
   useApp,
   deckStore,
@@ -38,30 +38,15 @@ const DiffLibraryTable = ({
 
   const [modalDraw, setModalDraw] = useState();
 
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
   const cardRows = cards.map((card, idx) => {
-    let inInventory = 0;
-    let softUsedMax = 0;
-    let hardUsedTotal = 0;
-
-    if (decks && inventoryMode && !inReview) {
-      if (inventoryLibrary[card.c.Id]) {
-        inInventory = inventoryLibrary[card.c.Id].q;
-      }
-
-      if (usedLibrary && usedLibrary.soft[card.c.Id]) {
-        Object.keys(usedLibrary.soft[card.c.Id]).map((id) => {
-          if (softUsedMax < usedLibrary.soft[card.c.Id][id]) {
-            softUsedMax = usedLibrary.soft[card.c.Id][id];
-          }
-        });
-      }
-
-      if (usedLibrary && usedLibrary.hard[card.c.Id]) {
-        Object.keys(usedLibrary.hard[card.c.Id]).map((id) => {
-          hardUsedTotal += usedLibrary.hard[card.c.Id][id];
-        });
-      }
-    }
+    const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
+    const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
+    const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
 
     const qFrom = cardsFrom[card.c.Id] ? cardsFrom[card.c.Id].q : 0;
     const qTo = cardsTo[card.c.Id] ? cardsTo[card.c.Id].q : 0;
@@ -115,7 +100,7 @@ const DiffLibraryTable = ({
 
           <ResultLibraryTableRowCommon
             card={card.c}
-            handleClick={handleModalCardOpen}
+            handleClick={handleClick}
             placement={placement}
             inDeck
           />

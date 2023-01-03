@@ -3,68 +3,21 @@ import { useSnapshot } from 'valtio';
 import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
-import { useApp, inventoryStore, usedStore, deckStore } from 'context';
+import { inventoryStore, usedStore, deckStore } from 'context';
+import { getHardTotal, getSoftMax } from 'utils';
 
-const ResultLayoutTextInventory = (props) => {
-  const { isMobile } = useApp();
+const ResultLayoutTextInventory = ({ cardid }) => {
   const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const usedLibrary = useSnapshot(usedStore).library;
-
-  let softUsedMax = 0;
-  let hardUsedTotal = 0;
-  let SoftUsedDescription;
-  let HardUsedDescription;
-  let usedCards = null;
-
-  let inInventory = 0;
-  if (props.cardid > 200000) {
-    if (inventoryCrypt[props.cardid]) {
-      inInventory = inventoryCrypt[props.cardid].q;
-    }
-    usedCards = usedCrypt;
-  } else {
-    if (inventoryLibrary[props.cardid]) {
-      inInventory = inventoryLibrary[props.cardid].q;
-    }
-    usedCards = usedLibrary;
-  }
-
-  if (usedCards && usedCards.soft[props.cardid]) {
-    SoftUsedDescription = Object.keys(usedCards.soft[props.cardid]).map(
-      (id) => {
-        if (softUsedMax < usedCards.soft[props.cardid][id]) {
-          softUsedMax = usedCards.soft[props.cardid][id];
-        }
-        return (
-          <UsedDescription
-            key={id}
-            q={usedCards.soft[props.cardid][id]}
-            deck={decks[id]}
-            t="s"
-          />
-        );
-      }
-    );
-  }
-
-  if (usedCards && usedCards.hard[props.cardid]) {
-    HardUsedDescription = Object.keys(usedCards.hard[props.cardid]).map(
-      (id) => {
-        hardUsedTotal += usedCards.hard[props.cardid][id];
-        return (
-          <UsedDescription
-            key={id}
-            q={usedCards.hard[props.cardid][id]}
-            deck={decks[id]}
-            t="h"
-          />
-        );
-      }
-    );
-  }
+  const usedCards = cardid > 200000 ? usedCrypt : usedLibrary;
+  const softUsedMax = getSoftMax(usedCards.soft[cardid]);
+  const hardUsedTotal = getHardTotal(usedCards.hard[cardid]);
+  let inInventory =
+    cardid > 200000 ? inventoryCrypt[cardid]?.q : inventoryLibrary[cardid]?.q;
+  if (!inInventory) inInventory = 0;
 
   return (
     <div className="flex flex-row">
@@ -83,9 +36,21 @@ const ResultLayoutTextInventory = (props) => {
           <div className="font-bold">{inInventory}</div>- In Inventory
         </div>
       </div>
-      <div className={`basis-full lg:basis-7/12 ${isMobile ? '' : ''}`}>
-        {SoftUsedDescription && <>{SoftUsedDescription}</>}
-        {HardUsedDescription && <>{HardUsedDescription}</>}
+      <div className={`basis-full lg:basis-7/12`}>
+        {softUsedMax > 0 && (
+          <UsedDescription
+            usedCards={usedCards.soft[cardid]}
+            decks={decks}
+            inventoryType="s"
+          />
+        )}
+        {hardUsedTotal > 0 && (
+          <UsedDescription
+            usedCards={usedCards.hard[cardid]}
+            decks={decks}
+            inventoryType="h"
+          />
+        )}
       </div>
     </div>
   );

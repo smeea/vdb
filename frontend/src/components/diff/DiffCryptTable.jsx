@@ -47,20 +47,9 @@ const DiffCryptTable = ({
   };
 
   const cardRows = cards.map((card, idx) => {
-    let inInventory = 0;
-    let softUsedMax = 0;
-    let hardUsedTotal = 0;
-
-    if (decks && inventoryMode && !inReview) {
-      if (inventoryCrypt[card.c.Id]) {
-        inInventory = inventoryCrypt[card.c.Id].q;
-      }
-
-      if (usedCrypt) {
-        softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
-        hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
-      }
-    }
+    const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+    const softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
+    const hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
 
     const qFrom = cardsFrom[card.c.Id] ? cardsFrom[card.c.Id].q : 0;
     const qTo = cardsTo[card.c.Id] ? cardsTo[card.c.Id].q : 0;

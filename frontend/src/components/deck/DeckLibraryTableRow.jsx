@@ -74,9 +74,9 @@ const DeckLibraryTableRow = ({
     },
   });
 
-  let inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
-  let softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
-  let hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
+  const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
+  const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
+  const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
 
   const toggleInventoryState = (deckid, cardid) => {
     const value = card.i ? '' : deck.inventoryType === 's' ? 'h' : 's';

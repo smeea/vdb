@@ -67,16 +67,9 @@ const ResultCryptTableRow = ({
     },
   });
 
-  let softUsedMax = 0;
-  let hardUsedTotal = 0;
-  let inInventory = 0;
-  if (inventoryMode) {
-    if (inventoryCrypt[card.Id]) {
-      inInventory = inventoryCrypt[card.Id].q;
-    }
-    softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
-    hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
-  }
+  const softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
+  const hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
+  const inInventory = inventoryCrypt[card.Id].q;
 
   const trBg = isSwiped
     ? isSwiped === 'left'

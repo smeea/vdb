@@ -39,17 +39,9 @@ const TwdResultCrypt = ({ crypt }) => {
     setShowFloatingButtons(false);
   };
 
-  const cardLines = sortedCards.map((card, idx) => {
-    let inInventory = 0;
-    let hardUsedTotal = 0;
-
-    if (inventoryMode) {
-      if (inventoryCrypt[card.c.Id]) {
-        inInventory = inventoryCrypt[card.c.Id].q;
-      }
-
-      hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
-    }
+  const cardRows = sortedCards.map((card, idx) => {
+    const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+    const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
 
     return (
       <tr
@@ -112,7 +104,7 @@ const TwdResultCrypt = ({ crypt }) => {
         {hasBanned && ' - WITH BANNED'}
       </div>
       <table className="twd-table">
-        <tbody>{cardLines}</tbody>
+        <tbody>{cardRows}</tbody>
       </table>
       {shouldShowModal && (
         <ResultModal

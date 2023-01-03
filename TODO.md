@@ -22,6 +22,7 @@
 - Inventory/deck import in excel
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Debouncing for text search query
+- Refactor InventoryCrypt and InventoryLibrary
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter
@@ -30,5 +31,6 @@
 - Test autoFocus
 - Form with errorOverlay to have 'relative' class
 - ButtonFloat variant to className (or create variants inside button component)
-- Replace generic tailwind colors (-neutral -gray -red -black -white) and -[#HEX]
+- Replace generic tailwind colors (-neutral -gray -red -black -white) and -[#HEX] with config colors
+- Refactor generic color classNames (gray, white) into tailwind colors
 - Refactor div with single nested div

@@ -77,9 +77,9 @@ const DeckCryptTableRow = ({
     },
   });
 
-  let inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
-  let softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
-  let hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
+  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+  const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
+  const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
 
   const toggleInventoryState = (deckid, cardid) => {
     const value = card.i ? '' : deck.inventoryType === 's' ? 'h' : 's';

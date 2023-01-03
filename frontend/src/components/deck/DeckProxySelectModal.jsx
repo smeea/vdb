@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from 'components';
 import { useApp, usedStore, inventoryStore } from 'context';
+import { getHardTotal, getSoftMax } from 'utils';
 
 const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const { isMobile, inventoryMode } = useApp();
@@ -53,21 +54,10 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     const library = {};
 
     Object.keys(deck.crypt).map((card) => {
-      let softUsedMax = 0;
-      if (usedCrypt.soft[card]) {
-        Object.keys(usedCrypt.soft[card]).map((id) => {
-          if (softUsedMax < usedCrypt.soft[card][id]) {
-            softUsedMax = usedCrypt.soft[card][id];
-          }
-        });
-      }
-      let hardUsedTotal = 0;
-      if (usedCrypt.hard[card]) {
-        Object.keys(usedCrypt.hard[card]).map((id) => {
-          hardUsedTotal += usedCrypt.hard[card][id];
-        });
-      }
+      const softUsedMax = getSoftMax(usedCrypt.soft[card]);
+      const hardUsedTotal = getHardTotal(usedCrypt.hard[card]);
 
+      // TODO make it readable (see UsedPopover)
       let miss = softUsedMax + hardUsedTotal;
       if (!deck.inventoryType && deck.crypt[card].q > softUsedMax)
         miss += deck.crypt[card].q - softUsedMax;
@@ -82,21 +72,10 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     });
 
     Object.keys(deck.library).map((card) => {
-      let softUsedMax = 0;
-      if (usedLibrary.soft[card]) {
-        Object.keys(usedLibrary.soft[card]).map((id) => {
-          if (softUsedMax < usedLibrary.soft[card][id]) {
-            softUsedMax = usedLibrary.soft[card][id];
-          }
-        });
-      }
-      let hardUsedTotal = 0;
-      if (usedLibrary.hard[card]) {
-        Object.keys(usedLibrary.hard[card]).map((id) => {
-          hardUsedTotal += usedLibrary.hard[card][id];
-        });
-      }
+      const softUsedMax = getSoftMax(usedLibrary.soft[card]);
+      const hardUsedTotal = getHardTotal(usedLibrary.hard[card]);
 
+      // TODO make it readable (see UsedPopover)
       let miss = softUsedMax + hardUsedTotal;
       if (!deck.inventoryType && deck.library[card].q > softUsedMax)
         miss += deck.library[card].q - softUsedMax;

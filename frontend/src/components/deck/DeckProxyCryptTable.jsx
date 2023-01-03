@@ -33,9 +33,9 @@ const DeckProxyCryptTable = ({
     useKeyDisciplines(cards);
 
   const cardRows = cards.map((card, idx) => {
-    let inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
-    let softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
-    let hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
+    const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+    const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
+    const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
 
     const setOptions = [
       {

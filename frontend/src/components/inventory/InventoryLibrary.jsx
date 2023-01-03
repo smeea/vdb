@@ -6,6 +6,7 @@ import {
   SortButton,
 } from 'components';
 import { useApp, usedStore } from 'context';
+import { getHardTotal, getSoftMax } from 'utils';
 import { cardtypeSorted } from 'utils/constants';
 import disciplinesList from 'assets/data/disciplinesList.json';
 import virtuesList from 'assets/data/virtuesList.json';
@@ -116,23 +117,10 @@ const InventoryLibrary = ({
         }
       }
 
-      let softUsedMax = 0;
-      if (usedLibrary.soft[cardid]) {
-        Object.keys(usedLibrary.soft[cardid]).map((id) => {
-          if (softUsedMax < usedLibrary.soft[cardid][id]) {
-            softUsedMax = usedLibrary.soft[cardid][id];
-          }
-        });
-      }
-
-      let hardUsedTotal = 0;
-      if (usedLibrary.hard[cardid]) {
-        Object.keys(usedLibrary.hard[cardid]).map((id) => {
-          hardUsedTotal += usedLibrary.hard[cardid][id];
-        });
-      }
-
+      const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
+      const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
       const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
+
       if (miss > 0) {
         types.map((t) => {
           missingByType[t][cardid] = {
@@ -230,12 +218,7 @@ const InventoryLibrary = ({
           }
         }
 
-        let softUsedMax = 0;
-        Object.keys(usedLibrary.soft[cardid]).map((id) => {
-          if (softUsedMax < usedLibrary.soft[cardid][id]) {
-            softUsedMax = usedLibrary.soft[cardid][id];
-          }
-        });
+        const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
 
         types.map((t) => {
           missingByType[t][cardid] = {
@@ -301,12 +284,7 @@ const InventoryLibrary = ({
           }
         }
 
-        let hardUsedTotal = 0;
-        if (usedLibrary.hard[cardid]) {
-          Object.keys(usedLibrary.hard[cardid]).map((id) => {
-            hardUsedTotal += usedLibrary.hard[cardid][id];
-          });
-        }
+        const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
 
         types.map((t) => {
           if (missingByType[t][cardid]) {

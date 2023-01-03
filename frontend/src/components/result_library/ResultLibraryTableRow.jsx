@@ -60,16 +60,9 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
     },
   });
 
-  let softUsedMax = 0;
-  let hardUsedTotal = 0;
-  let inInventory = 0;
-  if (inventoryMode) {
-    if (inventoryLibrary[card.Id]) {
-      inInventory = inventoryLibrary[card.Id].q;
-    }
-    softUsedMax = getSoftMax(usedLibrary.soft[card.Id]);
-    hardUsedTotal = getHardTotal(usedLibrary.hard[card.Id]);
-  }
+  const softUsedMax = getSoftMax(usedLibrary.soft[card.Id]);
+  const hardUsedTotal = getHardTotal(usedLibrary.hard[card.Id]);
+  const inInventory = inventoryLibrary[card.Id].q;
 
   const trBg = isSwiped
     ? isSwiped === 'left'

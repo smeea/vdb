@@ -6,6 +6,7 @@ import {
   SortButton,
 } from 'components';
 import { useApp, usedStore } from 'context';
+import { getHardTotal, getSoftMax } from 'utils';
 import imbuedClansList from 'assets/data/imbuedClansList.json';
 import vampireClansList from 'assets/data/vampireClansList.json';
 
@@ -58,22 +59,8 @@ const InventoryCrypt = ({
     Object.keys(cards).map((cardid) => {
       const i = cards[cardid].c.Clan;
 
-      let softUsedMax = 0;
-      if (usedCrypt.soft[cardid]) {
-        Object.keys(usedCrypt.soft[cardid]).map((id) => {
-          if (softUsedMax < usedCrypt.soft[cardid][id]) {
-            softUsedMax = usedCrypt.soft[cardid][id];
-          }
-        });
-      }
-
-      let hardUsedTotal = 0;
-      if (usedCrypt.hard[cardid]) {
-        Object.keys(usedCrypt.hard[cardid]).map((id) => {
-          hardUsedTotal += usedCrypt.hard[cardid][id];
-        });
-      }
-
+      const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
+      const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
       const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
 
       if (miss > 0) {
@@ -110,12 +97,7 @@ const InventoryCrypt = ({
           };
         }
 
-        let softUsedMax = 0;
-        Object.keys(usedCrypt.soft[cardid]).map((id) => {
-          if (softUsedMax < usedCrypt.soft[cardid][id]) {
-            softUsedMax = usedCrypt.soft[cardid][id];
-          }
-        });
+        const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
 
         missingByClan[i][cardid] = {
           q: softUsedMax,
@@ -143,12 +125,7 @@ const InventoryCrypt = ({
           };
         }
 
-        let hardUsedTotal = 0;
-        if (usedCrypt.hard[cardid]) {
-          Object.keys(usedCrypt.hard[cardid]).map((id) => {
-            hardUsedTotal += usedCrypt.hard[cardid][id];
-          });
-        }
+        const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
 
         if (missingByClan[i][cardid]) {
           missingByClan[i][cardid].q += hardUsedTotal;

@@ -4,6 +4,7 @@ import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
 import { deckStore, usedStore, inventoryStore } from 'context';
+import { getHardTotal, getSoftMax } from 'utils';
 
 const UsedPopover = ({ cardid }) => {
   const decks = useSnapshot(deckStore).decks;
@@ -11,55 +12,12 @@ const UsedPopover = ({ cardid }) => {
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
-
-  let softUsedMax = 0;
-  let hardUsedTotal = 0;
-  let SoftUsedDescription;
-  let HardUsedDescription;
-  let usedCards = null;
-
-  let inInventory = 0;
-  if (cardid > 200000) {
-    if (inventoryCrypt[cardid]) {
-      inInventory = inventoryCrypt[cardid].q;
-    }
-    usedCards = usedCrypt;
-  } else {
-    if (inventoryLibrary[cardid]) {
-      inInventory = inventoryLibrary[cardid].q;
-    }
-    usedCards = usedLibrary;
-  }
-
-  if (usedCards && usedCards.soft[cardid]) {
-    SoftUsedDescription = Object.keys(usedCards.soft[cardid]).map((id) => {
-      if (softUsedMax < usedCards.soft[cardid][id]) {
-        softUsedMax = usedCards.soft[cardid][id];
-      }
-      return (
-        <UsedDescription
-          key={id}
-          q={usedCards.soft[cardid][id]}
-          deck={decks[id]}
-          t="s"
-        />
-      );
-    });
-  }
-
-  if (usedCards && usedCards.hard[cardid]) {
-    HardUsedDescription = Object.keys(usedCards.hard[cardid]).map((id) => {
-      hardUsedTotal += usedCards.hard[cardid][id];
-      return (
-        <UsedDescription
-          key={id}
-          q={usedCards.hard[cardid][id]}
-          deck={decks[id]}
-          t="h"
-        />
-      );
-    });
-  }
+  const usedCards = cardid > 200000 ? usedCrypt : usedLibrary;
+  const softUsedMax = getSoftMax(usedCards.soft[cardid]);
+  const hardUsedTotal = getHardTotal(usedCards.hard[cardid]);
+  let inInventory =
+    cardid > 200000 ? inventoryCrypt[cardid]?.q : inventoryLibrary[cardid]?.q;
+  if (!inInventory) inInventory = 0;
 
   return (
     <div>
@@ -67,8 +25,20 @@ const UsedPopover = ({ cardid }) => {
         <div>Not used in inventory decks</div>
       ) : (
         <>
-          {softUsedMax > 0 && <>{SoftUsedDescription}</>}
-          {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
+          {softUsedMax > 0 && (
+            <UsedDescription
+              usedCards={usedCards.soft[cardid]}
+              decks={decks}
+              inventoryType="s"
+            />
+          )}
+          {hardUsedTotal > 0 && (
+            <UsedDescription
+              usedCards={usedCards.hard[cardid]}
+              decks={decks}
+              inventoryType="h"
+            />
+          )}
         </>
       )}
       <hr className="border-1 border-neutral-500" />

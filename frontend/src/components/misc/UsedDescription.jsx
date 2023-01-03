@@ -2,7 +2,7 @@ import React from 'react';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 
-const UsedDescription = ({ deck, t, q }) => {
+const UsedDescriptionDeck = ({ deck, t, q }) => {
   const isBranches = deck.master || (deck.branches && deck.branches.length > 0);
 
   return (
@@ -19,6 +19,23 @@ const UsedDescription = ({ deck, t, q }) => {
         {` - ${deck.name}${isBranches ? ` [${deck.branchName}]` : ''} `}
       </div>
     </div>
+  );
+};
+
+const UsedDescription = ({ usedCards, decks, inventoryType }) => {
+  return (
+    <>
+      {Object.keys(usedCards).map((id) => {
+        return (
+          <UsedDescriptionDeck
+            key={id}
+            q={usedCards[id]}
+            deck={decks[id]}
+            t={inventoryType}
+          />
+        );
+      })}
+    </>
   );
 };
 

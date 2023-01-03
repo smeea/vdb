@@ -55,13 +55,8 @@ const InventoryCryptTableRow = ({
     },
   });
 
-  let softUsedMax = 0;
-  let hardUsedTotal = 0;
-
-  if (usedCrypt) {
-    softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]);
-    hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
-  }
+  const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]);
+  const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
 
   const trBg = isSwiped
     ? isSwiped === 'left'
@@ -76,7 +71,7 @@ const InventoryCryptTableRow = ({
     >
       <div
         className={`flex items-center justify-center ${
-          inShared ? 'quantity-no-buttons ' : 'quantity]'
+          inShared ? 'quantity-no-buttons ' : 'quantity'
         }`}
       >
         {inShared ? (
