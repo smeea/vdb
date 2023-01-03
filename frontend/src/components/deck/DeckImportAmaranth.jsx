@@ -183,7 +183,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
       <div>
         <input
           placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
-          className="focus:text-red-500 text-xl"
+          className="focus:text-fgRed dark:text-fgRedDark text-xl"
           type="text"
           name="url"
           value={deckUrl}

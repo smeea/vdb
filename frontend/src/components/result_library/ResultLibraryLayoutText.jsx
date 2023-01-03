@@ -61,11 +61,11 @@ const ResultLibraryLayoutText = ({
           )}
         </div>
       </div>
-      <hr className="border-1 border-neutral-500" />
+      <hr className="border-1 border-midGray dark:border-midGrayDark" />
       <div>
         <ResultLayoutTextText text={card['Card Text']} />
       </div>
-      <hr className="border-1 border-neutral-500" />
+      <hr className="border-1 border-midGray dark:border-midGrayDark" />
       {(card['Blood Cost'] || card['Pool Cost']) && (
         <>
           <div className="flex items-center justify-between">
@@ -74,7 +74,7 @@ const ResultLibraryLayoutText = ({
               valueBlood={card['Blood Cost']}
             />
           </div>
-          <hr className="border-1 border-neutral-500" />
+          <hr className="border-1 border-midGray dark:border-midGrayDark" />
         </>
       )}
       <div>
@@ -97,7 +97,7 @@ const ResultLibraryLayoutText = ({
       )}
       {(forceInventoryMode || inventoryMode) && (
         <>
-          <hr className="border-1 border-neutral-500" />
+          <hr className="border-1 border-midGray dark:border-midGrayDark" />
           <div className="font-bold">Inventory:</div>
           <ResultLayoutTextInventory cardid={card.Id} />
         </>

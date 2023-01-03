@@ -12,6 +12,9 @@ const Button = ({
   variant = 'primary',
 }) => {
   const getStyle = (variant) => {
+    // TODO style hover && copy to MenuButton
+    // hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark hover:border hover:border-borderPrimary dark:hover:border-borderPrimaryDark
+
     switch (variant) {
       case 'primary':
         return 'text-fgThird dark:text-fgThirdDark bg-bgButton dark:bg-bgButtonDark border border-borderSecondary dark:border-borderSecondaryDark disabled:opacity-40 disabled:text-fgPrimary dark:disabled:text-fgPrimaryDark';
@@ -24,12 +27,12 @@ const Button = ({
       case 'danger':
         return 'bg-bgError dark:bg-bgErrorDark hover:bg-bgErrorSecondary dark:hover:bg-bgErrorSecondaryDark border border-borderSecondary dark:border-borderSecondaryDark';
       case 'success':
-        return 'bg-bgSuccess dark:bg-bgSuccessDark hover:bg-bgSuccess dark:hover:bg-bgSuccessDark border border-borderSecondary dark:border-borderSecondaryDark';
+        return 'bg-bgSuccess dark:bg-bgSuccessDark border border-borderSecondary dark:border-borderSecondaryDark';
     }
   };
 
   const baseStyle =
-    'focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark';
+    'focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
 
   const customStyle = getStyle(variant);
 

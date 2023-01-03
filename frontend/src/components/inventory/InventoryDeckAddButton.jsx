@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Button } from 'components';
 import Check2 from 'assets/images/icons/check2.svg';
 import Plus from 'assets/images/icons/plus.svg';
-import { ModalConfirmation } from 'components';
+import { ButtonIconed, ModalConfirmation } from 'components';
 import { useApp, inventoryCardsAdd } from 'context';
 
 const InventoryDeckAddButton = ({ deck, inInventory }) => {
@@ -23,23 +22,13 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
 
   return (
     <>
-      <Button
-        className={inInventory ? 'in' : ''}
-        variant="primary"
+      <ButtonIconed
+        variant={inInventory ? 'third' : 'primary'}
         onClick={() => setShowConfirmation(true)}
         title={inInventory ? 'Already in Inventory' : 'Add Deck to Inventory'}
-      >
-        {inInventory ? (
-          <div className="flex items-center justify-center">
-            <div className="flex ">
-              <Check2 />
-            </div>
-            {inInventory}
-          </div>
-        ) : (
-          <Plus />
-        )}
-      </Button>
+        text={inInventory ? inInventory : null}
+        icon={inInventory ? <Check2 /> : <Plus />}
+      />
       {showConfirmation && (
         <ModalConfirmation
           handleConfirm={handleConfirm}

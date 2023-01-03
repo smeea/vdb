@@ -12,7 +12,7 @@ const MenuButton = ({ title, icon, variant = 'primary', text }) => {
   };
 
   const baseStyle =
-    'hover:bg-bordrPrimary dark:hover:bg-borderPrimaryDark hover:border hover:border-borderPrimary dark:hover:border-borderPrimaryDark';
+    'focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
 
   const customStyle = getStyle(variant);
 

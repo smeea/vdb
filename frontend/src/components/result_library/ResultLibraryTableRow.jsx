@@ -62,7 +62,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
 
   const softUsedMax = getSoftMax(usedLibrary.soft[card.Id]);
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.Id]);
-  const inInventory = inventoryLibrary[card.Id].q;
+  const inInventory = inventoryLibrary[card.Id]?.q;
 
   const trBg = isSwiped
     ? isSwiped === 'left'
@@ -101,8 +101,8 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
                 <div
                   className={`text-xs ${
                     inInventory >= softUsedMax + hardUsedTotal
-                      ? 'gray'
-                      : 'white'
+                      ? 'text-midGray dark:text-midGrayDark'
+                      : 'text-[#fff] dark:text-[#fff]'
                   } `}
                 >
                   {inInventory >= softUsedMax + hardUsedTotal

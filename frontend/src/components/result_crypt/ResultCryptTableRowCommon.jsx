@@ -67,7 +67,7 @@ const ResultCryptTableRowCommon = ({
       </td>
       {isWide ? (
         <>
-          <td className="title " onClick={() => handleClick(card)}>
+          <td className="title" onClick={() => handleClick(card)}>
             {card.Title && <ResultCryptTitle value={card.Title} />}
           </td>
           <td className="clan" onClick={() => handleClick(card)}>

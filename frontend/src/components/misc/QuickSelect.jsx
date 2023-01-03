@@ -26,7 +26,11 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
     } else if (cardid > 100000) {
       return <SelectLabelLibrary cardid={cardid} />;
     } else {
-      return <div className="gray">Enter Card Name</div>;
+      return (
+        <div className="text-midGray dark:text-midGrayDark">
+          Enter Card Name
+        </div>
+      );
     }
   };
 

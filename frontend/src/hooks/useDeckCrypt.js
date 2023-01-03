@@ -57,7 +57,7 @@ const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
     cryptGroups = `- G${cryptGroupMax}`;
   } else {
     cryptGroups = (
-      <div className="text-red-600 inline  items-center">
+      <div className="text-fgRed dark:text-fgRedDark inline items-center">
         <Exclamation
           width="17"
           heigth="17"

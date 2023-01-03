@@ -4,34 +4,25 @@
 
 @layer base
   html
-    scroll-padding-top: 60px
-    @media (max-width: 767px)
-      scroll-padding-top: 12px
+    @apply scroll-pt-3 sm:scroll-pt-16
   body
-    @apply text-fgPrimary bg-bgPrimary dark:bg-bgPrimaryDark dark:text-fgPrimaryDark
-    padding-bottom: 25px
-    @media (max-width: 767px)
-      padding-bottom: 45px
+    @apply text-fgPrimary bg-bgPrimary dark:bg-bgPrimaryDark dark:text-fgPrimaryDark pb-[45px] sm:pb-[25px]
   hr
     @apply text-borderPrimary dark:text-borderPrimaryDark
   a
     @apply text-fgSecondary dark:text-fgSecondaryDark hover:underline
   ul
-    list-style-type: square
-    padding-left: 1.2em
+    @apply list-square pl-5
   li
-    padding-left: 6px
+    @apply pl-1.5
 
 @layer utilities
   .optimize-contrast
     image-rendering: -webkit-optimize-contrast
 
-.title, .adv
-  color: var(--fg-secondary)
-
 .react-select
   &__menu
-    z-index: 4 #{!important}
+    @apply z-10 #{!important}
   &__single-value,
   &__input
     @apply text-fgPrimary dark:text-fgPrimaryDark #{!important}
@@ -54,61 +45,46 @@
 
 .no-dropdown.react-select__dropdown-indicator,
 .no-dropdown.react-select__indicators
-  display: none
+  @apply hidden
 
 .react-select-tags
   &__value-container
-    padding: 2px 2px !important
+    @apply p-0.5 #{!important}
   &__input
-    color: var(--fg-primary) !important
+    @apply text-fgPrimary dark:text-fgPrimaryDark #{!important}
   &__control
-    background: rgba(0, 0, 0, 0) !important
-    border-color: rgba(0, 0, 0, 0) !important
+    @apply border-transparent bg-transparent #{!important}
   &__dropdown-indicator,
   &__indicators
-    display: none !important
+    @apply hidden #{!important}
   &__menu
-    z-index:  4 !important
+    @apply z-10 #{!important}
   &__menu-list
-    background: var(--bg-primary)
-    color: var(--fg-primary)
+    @apply bg-bgPrimary dark:bg-bgPrimaryDark text-fgPrimary dark:text-fgPrimaryDark
   &__option--is-focused
-    background: var(--bg-checkbox-selected-primary) !important
+    @apply bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark #{!important}
   &__option--is-selected
-    background: var(--border-primary) !important
+    @apply bg-borderPrimary dark:bg-borderPrimaryDark #{!important}
   &__multi-value
-    background: var(--bg-button) !important
-    border-radius: 4px !important
+    @apply bg-bgButton dark:bg-bgButtonDark rounded #{!important}
   &__multi-value__label
-    border-bottom: 1px solid var(--border-secondary)
-    border-left: 1px solid var(--border-secondary)
-    border-radius: 4px 0 0 4px !important
-    border-top: 1px solid var(--border-secondary)
-    color: var(--fg-primary) !important
+    @apply border-l border-y border-borderSecondary rounded-l dark:border-borderSecondaryDark text-fgPrimary dark:text-fgPrimaryDark #{!important}
   &__multi-value__remove
-    background: var(--bg-button) !important
-    border-bottom: 1px solid var(--border-secondary)
-    border-radius: 0 4px 4px 0 !important
-    border-right: 1px solid var(--border-secondary)
-    border-top: 1px solid var(--border-secondary)
+    @apply bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark #{!important}
   &__multi-value__remove:hover
-    background: var(--border-primary) !important
-    color: var(--fg-third) !important
+    @apply bg-borderPrimary dark:bg-borderPrimaryDark text-fgThird dark:text-fgThirdDark #{!important}
   &__multi-value-container
-    background: var(--bg-primary)
+    @apply bg-bgPrimary dark:bg-bgPrimaryDark
 
 .tags-no-remove
+  .react-select-tags__input-container,
   .react-select-tags__multi-value__remove
-    display: none
+    @apply hidden
   .react-select-tags__multi-value__label
-    border: 1px solid var(--bg-secondary)
-    border-radius: 4px !important
-    padding-right: 8px !important
-  .react-select-tags__input-container
-    display: none
+    @apply pr-1.5 hidden border rounded border-bgSecondary dark:border-bgSecondaryDark #{!important}
 
 .tags-bordered.react-select-tags__control
-  border: 1px solid var(--bg-secondary) !important
+  @apply border border-bgSecondary dark:border-bgSecondaryDark #{!important}
 
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
@@ -393,23 +369,16 @@ tr:hover div.not-selected.inventory-card-custom
     color: var(--fg-third)
     width: 100%
 
-@media (min-width: 767px) and (max-width: 1279px)
-  .hof-cards-container
-    max-width: 800px
-
-@media (min-width: 1280px)
-  .hof-cards-container
-    max-width: 800px
-  .cards-container,
-  .hof-history-container,
-  .hof-tournaments-container
-    max-width: 1140px
-  .deck-container
-    max-width: 1400px
-
-@media (min-width: 1536px)
-  .search-container,
-  .navbar-container
-    max-width: 1650px
-  .twd-container
-    max-width: 1800px
+.hof-cards-container
+  max-width: 800px
+.cards-container,
+.hof-history-container,
+.hof-tournaments-container
+  max-width: 1140px
+.deck-container
+  max-width: 1400px
+.search-container,
+.navbar-container
+  max-width: 1650px
+.twd-container
+  max-width: 1800px

@@ -13,7 +13,7 @@ const AccountPlaytest = () => {
     <>
       <div className="flex items-center justify-between">
         <div
-          className={`flex items-center ${playtest ? '' : 'text-neutral-500'}`}
+          className={`flex items-center ${playtest ? '' : 'text-midGray dark:text-midGrayDark'}`}
           onClick={() => {
             togglePlaytest();
           }}

@@ -30,7 +30,7 @@ const DeckCryptHeader = ({
           <div className="inline">{cryptGroups}</div>
         )}
         {!inMissing && hasBanned && (
-          <div className="text-red-600 inline items-center">
+          <div className="text-fgRed dark:text-fgRedDarkark:text-fgRedDark inline items-center">
             <Exclamation
               width="17"
               heigth="17"

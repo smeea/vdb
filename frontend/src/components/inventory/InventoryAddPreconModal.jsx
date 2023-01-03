@@ -207,10 +207,8 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             )}
           </td>
           <td className="buttons">
-            <div className="inline">
+            <div className="flex justify-end space-x-1">
               <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
-            </div>
-            <div className="inline">
               <InventoryDeckDeleteButton
                 deck={deck}
                 inInventory={inInventory}

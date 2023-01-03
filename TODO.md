@@ -31,6 +31,5 @@
 - Test autoFocus
 - Form with errorOverlay to have 'relative' class
 - ButtonFloat variant to className (or create variants inside button component)
-- Replace generic tailwind colors (-neutral -gray -red -black -white) and -[#HEX] with config colors
-- Refactor generic color classNames (gray, white) into tailwind colors
+- Replace -[#HEX] with config colors
 - Refactor div with single nested div

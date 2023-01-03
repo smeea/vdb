@@ -11,7 +11,7 @@ const ResultCryptName = ({ card }) => {
         <>
           {' '}
           <img
-            className="advanced-image-results inline h-[22px] align-text-bottom"
+            className="inline h-[22px] align-text-bottom"
             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
             title="Advanced"
           />

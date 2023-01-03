@@ -14,10 +14,10 @@ const TwdMoreButton = ({ noText }) => {
     <Menu as="div" className="relative">
       <MenuButton
         title="More interesting stuff"
-        icon={<Gem size={24} />}
+        icon={<Gem />}
         text={noText ? null : 'More'}
       />
-      <MenuItems className="divide-gray-100 bg-white  ring-black absolute right-0 w-56 origin-top-right divide-y rounded-md shadow-lg ring-1 ring-opacity-5 focus:outline-none">
+      <MenuItems>
         <MenuItem>
           <div onClick={() => navigate('/twd/hall_of_fame/tournaments')}>
             <div className="flex items-center justify-start ">

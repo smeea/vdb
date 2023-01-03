@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Button } from 'components';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
-import { ModalConfirmation } from 'components';
+import { ButtonIconed, ModalConfirmation } from 'components';
 import { inventoryCardsAdd } from 'context';
 
 const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
@@ -29,22 +28,23 @@ const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
 
   return (
     <>
-      <Button
-        variant="primary"
+      <ButtonIconed
+        variant={inInventory ? 'third' : 'primary'}
         onClick={() => setShowConfirmation(true)}
         title="Remove Deck from Inventory"
         disabled={!inInventory}
-      >
-        <TrashFill />
-      </Button>
-      <ModalConfirmation
-        show={showConfirmation}
-        handleConfirm={handleConfirm}
-        handleCancel={handleCancel}
-        buttonText="Remove"
-        headerText={'Remove deck ' + deck.name + ' from Inventory?'}
-        nested
+        icon={<TrashFill width="18" height="22" viewBox="0 0 18 16" />}
       />
+      {showConfirmation && (
+        <ModalConfirmation
+          show={showConfirmation}
+          handleConfirm={handleConfirm}
+          handleCancel={handleCancel}
+          buttonText="Remove"
+          headerText={'Remove deck ' + deck.name + ' from Inventory?'}
+          nested
+        />
+      )}
     </>
   );
 };

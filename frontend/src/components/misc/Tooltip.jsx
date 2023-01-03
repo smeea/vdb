@@ -62,22 +62,22 @@ const Tooltip = ({ children, overlay, placement }) => {
           >
             {overlay}
             {placement === 'right' && (
-              <div className="text-neutral-500 absolute top-1/2 left-[-12]">
+              <div className="text-midGray dark:text-midGrayDarkk:text-midGrayDark absolute top-1/2 left-[-12]">
                 <CaretLeftFill />
               </div>
             )}
             {placement === 'left' && (
-              <div className="text-neutral-500 absolute top-1/2 right-[-12]">
+              <div className="text-midGray dark:text-midGrayDark absolute top-1/2 right-[-12]">
                 <CaretRightFill />
               </div>
             )}
             {placement === 'top' && (
-              <div className="text-neutral-500 absolute left-1/2 top-[-12]">
+              <div className="text-midGray dark:text-midGrayDark absolute left-1/2 top-[-12]">
                 <CaretUpFill />
               </div>
             )}
             {placement === 'bottom' && (
-              <div className="text-neutral-500 absolute left-1/2 bottom-[-12]">
+              <div className="text-midGray dark:text-midGrayDark absolute left-1/2 bottom-[-12]">
                 <CaretDownFill />
               </div>
             )}

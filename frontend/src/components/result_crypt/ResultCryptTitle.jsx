@@ -17,7 +17,14 @@ const ResultCryptTitle = ({ value }) => {
     magaji: ['Magaji', 'Mj'],
   };
 
-  return <span title={titles[value][0]}>{titles[value][1]}</span>;
+  return (
+    <div
+      className="text-fg-fgSecondary dark:text-fgSecondaryDark"
+      title={titles[value][0]}
+    >
+      {titles[value][1]}
+    </div>
+  );
 };
 
 export default ResultCryptTitle;

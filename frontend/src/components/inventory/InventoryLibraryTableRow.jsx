@@ -95,7 +95,7 @@ const InventoryLibraryTableRow = ({
             <div
               className={`flex w-full justify-center ${
                 card.q == softUsedMax + hardUsedTotal
-                  ? 'gray'
+                  ? 'text-midGray dark:text-midGrayDark'
                   : card.q >= softUsedMax + hardUsedTotal
                   ? 'text-fgGreen dark:text-fgGreenDark'
                   : 'text-fgRed dark:text-fgRedDark'
@@ -115,7 +115,7 @@ const InventoryLibraryTableRow = ({
               <div
                 className={`flex w-full justify-center ${
                   card.q == softUsedMax + hardUsedTotal
-                    ? 'gray'
+                    ? 'text-midGray dark:text-midGrayDark'
                     : card.q >= softUsedMax + hardUsedTotal
                     ? 'text-fgGreen dark:text-fgGreenDark'
                     : 'text-fgRed dark:text-fgRedDark'

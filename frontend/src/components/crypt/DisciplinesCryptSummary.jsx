@@ -26,7 +26,7 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
               value={d}
             />
             <div>{disciplinesDetailed[d][2]}</div>
-            <div className="text-neutral-500">|</div>
+            <div className="text-midGray dark:text-midGrayDark">|</div>
             <div>{disciplinesDetailed[d][1]}</div>
           </div>
         </div>

@@ -422,7 +422,7 @@ const InventoryLibrary = ({
                   target="discipline"
                 />
               </div>
-              <div className="text-neutral-500 flex  justify-end font-bold">
+              <div className="text-midGray dark:text-midGrayDark flex  justify-end font-bold">
                 {missingFilteredTotal ? (
                   <>
                     {missingFilteredTotal} (

@@ -22,7 +22,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
             <div
               className={` inline w-7 text-center text-lg ${
                 inventoryLibrary[cardid]
-                  ? 'border-gray-500 rounded-md border-2'
+                  ? 'border-midGray dark:border-midGrayDark rounded-md border-2'
                   : ''
               }`}
             >

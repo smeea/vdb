@@ -48,7 +48,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                   >
                     <ResultCryptName card={cryptCardBase[id]} />
                     {cryptCardBase[id]['New'] && (
-                      <div className="text-neutral-500  inline">
+                      <div className="text-midGray dark:text-midGrayDark  inline">
                         [G{cryptCardBase[id].Group}]
                       </div>
                     )}

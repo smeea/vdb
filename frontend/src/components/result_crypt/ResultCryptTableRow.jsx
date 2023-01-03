@@ -69,7 +69,7 @@ const ResultCryptTableRow = ({
 
   const softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
-  const inInventory = inventoryCrypt[card.Id].q;
+  const inInventory = inventoryCrypt[card.Id]?.q;
 
   const trBg = isSwiped
     ? isSwiped === 'left'
@@ -113,8 +113,8 @@ const ResultCryptTableRow = ({
                 <div
                   className={`text-xs ${
                     inInventory >= softUsedMax + hardUsedTotal
-                      ? 'gray'
-                      : 'white'
+                      ? 'text-midGray dark:text-midGrayDark'
+                      : 'text-[#fff] dark:text-[#fff]'
                   } `}
                 >
                   {inInventory >= softUsedMax + hardUsedTotal

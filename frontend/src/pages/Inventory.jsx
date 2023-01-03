@@ -253,7 +253,6 @@ const Inventory = () => {
       )}
       {showAddDeck && (
         <InventoryAddDeckModal
-          show={showAddDeck}
           handleClose={() => {
             setShowAddDeck(false);
             setShowMenuButtons(false);
@@ -263,7 +262,6 @@ const Inventory = () => {
       )}
       {showAddPrecon && (
         <InventoryAddPreconModal
-          show={showAddPrecon}
           handleClose={() => {
             setShowAddPrecon(false);
             setShowMenuButtons(false);

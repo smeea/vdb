@@ -26,7 +26,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
               <div className="flex items-center space-x-1">
                 <ResultLibraryTypeImage value={t} />
                 <div className="flex ">{byTypes[t]}</div>
-                <div className="text-neutral-500">
+                <div className="text-midGray dark:text-midGrayDark">
                   ({Math.round((byTypes[t] / total) * 100)}%)
                 </div>
               </div>
@@ -42,7 +42,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
               <div className="flex items-center space-x-1">
                 <ResultLibraryDisciplines value={d} />
                 <div className="flex">{byDisciplines[d]}</div>
-                <div className="text-neutral-500">
+                <div className="text-midGray dark:text-midGrayDark">
                   ({Math.round((byDisciplines[d] / totalExMasters) * 100)}
                   %)
                 </div>
@@ -58,7 +58,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
               <div className="flex items-center space-x-1">
                 <ResultLibraryClan value={d} />
                 <div className="flex">{byClans[d]}</div>
-                <div className="text-neutral-500">
+                <div className="text-midGray dark:text-midGrayDark">
                   ({Math.round((byClans[d] / total) * 100)}%)
                 </div>
               </div>

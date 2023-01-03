@@ -40,12 +40,12 @@ const ResultCryptLayoutText = ({
                 overlay={<CardPopover card={cryptCardBase[card.Adv[1]]} />}
                 disabled={isMobile}
               >
-                <span
-                  className="adv "
+                <div
+                  className="inline text-fgSecondary dark:text-fgSecondaryDark"
                   onClick={() => setCard(cryptCardBase[card.Adv[1]])}
                 >
                   [see {`${card.Adv[0] ? 'Base' : 'Adv'}`}]
-                </span>
+                </div>
               </ConditionalTooltip>
             )}
           </div>
@@ -62,16 +62,16 @@ const ResultCryptLayoutText = ({
           )}
         </div>
       </div>
-      <hr className="border-1 border-neutral-500" />
+      <hr className="border-1 border-midGray dark:border-midGrayDark" />
       <div>
         <ResultLayoutTextText text={card['Card Text']} />
       </div>
-      <hr className="border-1 border-neutral-500" />
+      <hr className="border-1 border-midGray dark:border-midGrayDark" />
       <div className="flex items-center justify-between">
         <ResultCryptDisciplines value={card.Disciplines} />
         <ResultCryptCapacity value={card.Capacity} />
       </div>
-      <hr className="border-1 border-neutral-500" />
+      <hr className="border-1 border-midGray dark:border-midGrayDark" />
       <div>
         <b>Sets: </b>
         <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
@@ -92,7 +92,7 @@ const ResultCryptLayoutText = ({
       )}
       {(forceInventoryMode || inventoryMode) && (
         <>
-          <hr className="border-1 border-neutral-500" />
+          <hr className="border-1 border-midGray dark:border-midGrayDark" />
           <div>
             <b>Inventory:</b>
             <ResultLayoutTextInventory cardid={card.Id} />
