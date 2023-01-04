@@ -212,7 +212,7 @@ const DeckCryptTableRow = ({
           ) : (
             <Tooltip
               placement="right"
-              text={<DeckDrawProbabilityText N={cryptTotal} n={4} k={card.q} />}
+              overlay={<DeckDrawProbabilityText N={cryptTotal} n={4} k={card.q} />}
             >
               <div>{`${Math.floor(
                 drawProbability(1, cryptTotal, 4, card.q) * 100

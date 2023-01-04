@@ -35,4 +35,4 @@
 - Refactor div with single nested div
 - Remove useless text-fgName (where ResultCrypt-LibraryName component used)
 - Remove useless items-center and justify-center from Table components
-- Tooltips components change props from text to overlay
+- Tooltips components to have overlay padding

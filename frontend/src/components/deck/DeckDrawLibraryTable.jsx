@@ -69,7 +69,7 @@ const DeckDrawLibraryTable = ({
                 ) : (
                   <Tooltip
                     placement={placement}
-                    text={<DeckDrawProbabilityText N={N} n={n} k={k} />}
+                    overlay={<DeckDrawProbabilityText N={N} n={n} k={k} />}
                   >
                     <div>{`${Math.floor(
                       drawProbability(1, N, n, k) * 100

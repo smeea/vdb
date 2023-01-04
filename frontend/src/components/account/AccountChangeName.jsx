@@ -56,7 +56,7 @@ const AccountChangeName = () => {
         <PenFill />
         <div className="px-2">Change public name</div>
         {!isMobile ? (
-          <Tooltip text={tooltipText}>
+          <Tooltip overlay={tooltipText}>
             <span className="text-fgThird dark:text-fgThirdDark ">[?]</span>
           </Tooltip>
         ) : (

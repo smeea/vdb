@@ -219,7 +219,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                   placement="right"
                   show={showDeck === deck.deckid}
                   overlay={
-                    <div className="flex p-3">
+                    <div className="flex">
                       <div
                         onClick={(event) => {
                           if (event.target === event.currentTarget)

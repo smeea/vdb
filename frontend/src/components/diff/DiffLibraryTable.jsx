@@ -128,7 +128,7 @@ const DiffLibraryTable = ({
               ) : (
                 <Tooltip
                   placement="right"
-                  text={
+                  overlay={
                     <DeckDrawProbabilityText
                       N={libraryTotal}
                       n={7}

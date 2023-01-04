@@ -31,7 +31,7 @@ const DeckLibraryTypeDrawInfo = (props) => {
       ) : (
         <Tooltip
           placement="right"
-          text={
+          overlay={
             <DeckDrawProbabilityText
               N={libraryTotal}
               n={7}

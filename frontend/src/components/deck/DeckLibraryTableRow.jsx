@@ -210,7 +210,7 @@ const DeckLibraryTableRow = ({
           ) : (
             <Tooltip
               placement={placement}
-              text={
+              overlay={
                 <DeckDrawProbabilityText N={libraryTotal} n={7} k={card.q} />
               }
             >

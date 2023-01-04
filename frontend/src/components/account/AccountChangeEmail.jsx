@@ -53,7 +53,7 @@ const AccountChangeEmail = () => {
         <EnvelopeFill />
         <div className="px-2">Change email (optional)</div>
         {!isMobile ? (
-          <Tooltip text={tooltipText}>
+          <Tooltip overlay={tooltipText}>
             <span className="text-fgThird dark:text-fgThirdDark ">[?]</span>
           </Tooltip>
         ) : (

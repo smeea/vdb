@@ -90,7 +90,7 @@ const AccountLogin = () => {
         </div>
         Login
         {!isMobile ? (
-          <Tooltip text={loginTooltipText}>
+          <Tooltip overlay={loginTooltipText}>
             <span className="text-fgThird dark:text-fgThirdDark ">[?]</span>
           </Tooltip>
         ) : (
@@ -140,7 +140,7 @@ const AccountLogin = () => {
           <Tooltip
             delay={{ show: 0, hide: 2000 }}
             placement="bottom"
-            text={passwordTooltipText}
+            overlay={passwordTooltipText}
           >
             <a href="#">
               <i>Forgot password?</i>

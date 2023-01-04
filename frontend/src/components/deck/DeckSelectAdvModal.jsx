@@ -395,7 +395,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                   <Tooltip
                     placement="right"
                     show={showDeck === deck.deckid}
-                    text={
+                    overlay={
                       <div className="flex flex-row items-start">
                         <div
                           onClick={(event) => {

@@ -134,7 +134,7 @@ const DiffCryptTable = ({
               ) : (
                 <Tooltip
                   placement="right"
-                  text={
+                  overlay={
                     <DeckDrawProbabilityText N={cryptTotal} n={4} k={card.q} />
                   }
                 >

@@ -17,13 +17,13 @@ import CaretRightFill from 'assets/images/icons/caret-right-fill.svg';
 import CaretUpFill from 'assets/images/icons/caret-up-fill.svg';
 import CaretDownFill from 'assets/images/icons/caret-down-fill.svg';
 
-const Tooltip = ({ children, overlay, placement }) => {
+const Tooltip = ({ children, overlay, noPadding, placement = 'right' }) => {
   const [open, setOpen] = useState(false);
 
   const { x, y, reference, floating, strategy, context } = useFloating({
     open,
     onOpenChange: setOpen,
-    placement: placement ?? 'right',
+    placement: placement,
     whileElementsMounted: autoUpdate,
     middleware: [offset(5), flip(), shift()],
   });
@@ -40,6 +40,8 @@ const Tooltip = ({ children, overlay, placement }) => {
     role,
   ]);
 
+  // TODO add sizing as in modals for other than max-w-[800px]
+
   // TODO see if getFloatingProps required
   // console.log(getFloatingProps());
 
@@ -51,7 +53,9 @@ const Tooltip = ({ children, overlay, placement }) => {
       <FloatingPortal>
         {open && (
           <div
-            className="max-w-[800px] rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark"
+            className={`max-w-[800px] rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark ${
+              noPadding ? '' : 'p-3'
+            }`}
             ref={floating}
             style={{
               position: strategy,
