@@ -134,34 +134,32 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           }`}
         >
           {!isMobile && (
-            <td className="clan">{clanImages.length > 0 && clanImages}</td>
+            <td className="min-w-[50px] sm:min-w-[70px]">
+              <div className="flex justify-center">
+                {clanImages.length > 0 && clanImages}
+              </div>
+            </td>
           )}
-          <td className="name text-fgName dark:text-fgNameDark">
+          <td className="w-[135px] sm:w-[250px]">
             <div
-              className="text-overflow name flex justify-between"
+              className="text-fgName dark:text-fgNameDark text-overflow flex justify-between"
               title={deck.name}
             >
               {deck.name}
-              {deck.branchName &&
-                (deck.master ||
-                  (deck.branches && deck.branches.length > 0)) && (
-                  <div className="revision inline" title={deck.branchName}>
-                    {deck.branchName}
-                  </div>
-                )}
             </div>
           </td>
           {isDesktop && (
-            <td className="preview">
+            <td className="min-w-[40px]">
               <div
+                className="flex justify-center"
                 onMouseEnter={() => setShowDeck(deck.deckid)}
                 onMouseLeave={() => setShowDeck(false)}
               >
                 <Tooltip
                   placement="right"
                   show={showDeck === deck.deckid}
-                  text={
-                    <div className="flex flex-row">
+                  overlay={
+                    <div className="flex p-3">
                       <div
                         onClick={(event) => {
                           if (event.target === event.currentTarget)
@@ -183,14 +181,12 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                     </div>
                   }
                 >
-                  <div>
-                    <EyeFill />
-                  </div>
+                  <EyeFill />
                 </Tooltip>
               </div>
             </td>
           )}
-          <td className="set">
+          <td className="w-full text-fgThird dark:text-fgThirdDark">
             {isMobile ? (
               <>
                 <div>{setsAndPrecons[set].name}</div>
@@ -206,7 +202,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               </>
             )}
           </td>
-          <td className="buttons">
+          <td className="min-w-[110px]">
             <div className="flex justify-end space-x-1">
               <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
               <InventoryDeckDeleteButton
@@ -231,8 +227,8 @@ const InventoryAddDeckModal = ({ handleClose }) => {
         <table className="inv-import-precons-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
           <thead>
             <tr>
-              {!isMobile && <th className="clan"></th>}
-              <th className="name text-fgName dark:text-fgNameDark">
+              {!isMobile && <th className="min-w-[50px]"></th>}
+              <th className="min-w-[230px] sm:min-w-[250px]">
                 <input
                   placeholder="Filter by Name"
                   type="text"
@@ -243,8 +239,8 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              {isDesktop && <th className="preview"></th>}
-              <th className="set">
+              {isDesktop && <th className="min-w-[40px]"></th>}
+              <th className="w-full">
                 <input
                   placeholder="Filter by Set"
                   type="text"
@@ -255,7 +251,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                   onChange={handleChangeSetFilter}
                 />
               </th>
-              <th className="buttons">
+              <th className="min-w-[110px]">
                 <div className="flex items-center justify-end">
                   <DeckSelectSortForm onChange={setSortMethod} />
                 </div>

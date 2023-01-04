@@ -168,7 +168,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           }`}
         >
           {!isMobile && (
-            <td className="inventory">
+            <td>
               <Button onClick={() => toggleInventoryState(deck.deckid)}>
                 <div
                   title={
@@ -187,11 +187,15 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             </td>
           )}
           {!isMobile && (
-            <td className="clan">{clan && <ResultClanImage value={clan} />}</td>
+            <td className="min-w-[50px]">
+              <div className="flex justify-center">
+                {clan && <ResultClanImage value={clan} />}
+              </div>
+            </td>
           )}
-          <td className="name text-fgName dark:text-fgNameDark">
+          <td className="w-[230px] sm:w-[250px]">
             <div
-              className="name flex justify-between truncate text-fgName dark:text-fgNameDark"
+              className="flex justify-between truncate text-fgName dark:text-fgNameDark"
               title={deck.name}
             >
               {deck.name}
@@ -205,16 +209,17 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             </div>
           </td>
           {isDesktop && (
-            <td className="preview">
+            <td className="min-w-[40px]">
               <div
+                className="flex justify-center"
                 onMouseEnter={() => setShowDeck(deck.deckid)}
                 onMouseLeave={() => setShowDeck(false)}
               >
                 <Tooltip
                   placement="right"
                   show={showDeck === deck.deckid}
-                  text={
-                    <div className="flex flex-row">
+                  overlay={
+                    <div className="flex p-3">
                       <div
                         onClick={(event) => {
                           if (event.target === event.currentTarget)
@@ -236,24 +241,22 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                     </div>
                   }
                 >
-                  <div>
-                    <EyeFill />
-                  </div>
+                  <EyeFill />
                 </Tooltip>
               </div>
             </td>
           )}
           {!isMobile && (
-            <td className="date">
+            <td className="min-w-[100px] whitespace-nowrap">
               {new Date(deck.timestamp).toISOString().slice(0, 10)}
             </td>
           )}
           {!isMobile && (
-            <td className="tags">
+            <td className="w-full">
               <DeckTags deck={deck} defaultTagsOptions={defaultTagsOptions} />
             </td>
           )}
-          <td className="buttons">
+          <td className="min-w-[110px]">
             <div className="flex justify-end space-x-1">
               <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
               <InventoryDeckDeleteButton
@@ -275,12 +278,12 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       title="Import Deck to Inventory"
     >
       <div>
-        <table className="inv-import-decks-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
+        <table className="border-y sm:border-x border-bgSecondary dark:border-bgSecondaryDark">
           <thead>
             <tr>
               {!isMobile && <th className="inventory"></th>}
-              {!isMobile && <th className="clan"></th>}
-              <th className="name text-fgName dark:text-fgNameDark">
+              {!isMobile && <th className="min-w-[50px]"></th>}
+              <th className="min-w-[230px] sm:min-w-[250px] text-fgName dark:text-fgNameDark">
                 <input
                   placeholder="Filter by Name"
                   type="text"
@@ -291,10 +294,10 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              {isDesktop && <th className="preview"></th>}
-              {!isMobile && <th className="date"></th>}
+              {isDesktop && <th className="min-w-[40px]"></th>}
+              {!isMobile && <th className="min-w-[100px]"></th>}
               {!isMobile && (
-                <th className="tags">
+                <th className="w-full">
                   <Select
                     classNamePrefix="border-bgSecondary dark:border-bgSecondary react-select-tags"
                     isMulti
@@ -305,7 +308,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                   />
                 </th>
               )}
-              <th className="buttons">
+              <th className="min-w-[110px]">
                 <div className="flex items-center justify-end">
                   <Checkbox
                     id="revFilter"

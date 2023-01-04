@@ -34,4 +34,5 @@
 - Replace -[#HEX] with config colors
 - Refactor div with single nested div
 - Remove useless text-fgName (where ResultCrypt-LibraryName component used)
-- Remove useless items-center and justify-center from TwdCardsHistory
+- Remove useless items-center and justify-center from Table components
+- Tooltips components change props from text to overlay
