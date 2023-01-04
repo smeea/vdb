@@ -53,35 +53,37 @@ const TwdResultLibraryKeyCards = ({ library }) => {
             : 'bg-bgPrimary dark:bg-bgPrimaryDark'
         }`}
       >
-        {inventoryMode ? (
-          <td className="quantity-no-buttons ">
+        <td className="min-w-[28px] sm:min-w-[35px] bg-[#0000aa]/5 border-r border-bgSecondary dark:border-bgSecondaryDark">
+          {inventoryMode ? (
             <ConditionalTooltip
               overlay={<UsedPopover cardid={card.c.Id} />}
               disabled={isMobile}
             >
               <div
-                className={
+                className={`flex justify-center text-lg ${
                   inInventory < card.q
                     ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
                     : inInventory - hardUsedTotal < card.q
                     ? 'bg-bgWarning dark:bg-bgWarningDark'
                     : null
-                }
+                }`}
               >
                 {card.q}
               </div>
             </ConditionalTooltip>
-          </td>
-        ) : (
-          <td className="quantity-no-buttons ">{card.q}</td>
-        )}
-        <td className="type" onClick={() => handleClick(card.c)}>
-          <ResultLibraryTypeImage value={card.c.Type} />
+          ) : (
+            <div className="flex justify-center text-lg">{card.q}</div>
+          )}
         </td>
         <td
-          className="name"
+          className="min-w-[30px] sm:min-w-[60px]"
           onClick={() => handleClick(card.c)}
         >
+          <div className="flex justify-center">
+            <ResultLibraryTypeImage value={card.c.Type} />
+          </div>
+        </td>
+        <td className="w-full" onClick={() => handleClick(card.c)}>
           <ConditionalTooltip
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
@@ -90,11 +92,17 @@ const TwdResultLibraryKeyCards = ({ library }) => {
           </ConditionalTooltip>
         </td>
         {!isMobile && (
-          <td className="disciplines" onClick={() => handleClick(card.c)}>
-            {card.c.Discipline && (
-              <ResultLibraryDisciplines value={card.c.Discipline} />
-            )}
-            {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
+          <td
+            className="min-w-[62px] sm:min-w-[85px]"
+            onClick={() => handleClick(card.c)}
+          >
+            <div className="flex justify-center items-center">
+              {card.c.Discipline && (
+                <ResultLibraryDisciplines value={card.c.Discipline} />
+              )}
+              {card.c.Discipline && card.c.Clan && '+'}
+              {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
+            </div>
           </td>
         )}
       </tr>
@@ -106,11 +114,9 @@ const TwdResultLibraryKeyCards = ({ library }) => {
       <div className="font-bold">
         {isMobile ? `Library [${libraryTotal}]` : 'Key cards:'}
       </div>
-      <div className="library">
-        <table className="twd-table">
-          <tbody>{cardRows}</tbody>
-        </table>
-      </div>
+      <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
+        <tbody>{cardRows}</tbody>
+      </table>
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}

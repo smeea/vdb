@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { DeckLibraryTable, ResultModal, Tooltip } from 'components';
+import {
+  ResultLibraryTypeImage,
+  DeckLibraryTable,
+  ResultModal,
+  Tooltip,
+} from 'components';
 import { useApp } from 'context';
 import { isTrifle } from 'utils';
 import { cardtypeSortedFull } from 'utils/constants';
@@ -69,21 +74,6 @@ const TwdResultLibraryByType = ({ library }) => {
   cardtypeSortedFull
     .filter((cardtype) => libraryByType[cardtype] !== undefined)
     .map((cardtype, idx) => {
-      const cardtypes = cardtype.split('/');
-      const cardtypeImages = cardtypes.map((cardtype, index) => {
-        const imgSrc = `${process.env.ROOT_URL}images/types/${cardtype
-          .toLowerCase()
-          .replace(/[\s,:!?'.-]/g, '')}.svg`;
-        return (
-          <img
-            key={`${idx}-${index}`}
-            className="h-[25px] drop-shadow-[0px_0px_0.8px_#9a9a9a] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_0.8px_#e0e0e0]"
-            src={imgSrc}
-            title={cardtype}
-          />
-        );
-      });
-
       LibraryTypes.push(
         <tr
           key={cardtype}
@@ -93,8 +83,10 @@ const TwdResultLibraryByType = ({ library }) => {
               : 'bg-bgPrimary dark:bg-bgPrimaryDark'
           }`}
         >
-          <td className="type flex items-center justify-center">
-            {cardtypeImages}
+          <td className="min-w-[30px] sm:min-w-[60px]">
+            <div className="flex justify-center">
+              <ResultLibraryTypeImage value={cardtype} />
+            </div>
           </td>
           <td
             onMouseOver={() => handleHover(cardtype)}
@@ -103,8 +95,9 @@ const TwdResultLibraryByType = ({ library }) => {
             <Tooltip
               placement="right"
               show={show[cardtype]}
+              noPadding
               overlay={
-                <div>
+                <div className="p-1">
                   <DeckLibraryTable
                     deck={{}}
                     handleModalCardOpen={handleModalCardOpen}
@@ -113,7 +106,7 @@ const TwdResultLibraryByType = ({ library }) => {
                 </div>
               }
             >
-              <div className="text-left text-fgName dark:text-fgNameDark">
+              <div className="text-fgName dark:text-fgNameDark">
                 {cardtype} [{libraryByTypeTotal[cardtype]}]
                 {cardtype == 'Master' && trifleTotal > 0 && (
                   <> - {trifleTotal} trifle</>
@@ -130,7 +123,7 @@ const TwdResultLibraryByType = ({ library }) => {
       <div className="font-bold">
         Library [{libraryTotal}]{hasBanned && ' - WITH BANNED'}
       </div>
-      <table className="twd-table">
+      <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>{LibraryTypes}</tbody>
       </table>
       {shouldShowModal && (
