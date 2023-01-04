@@ -69,47 +69,52 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const cardRows = sortedCards.map((card, idx) => {
+  const cardRows = sortedCards.map((card) => {
     return (
       <>
         <div
-          className="capacity flex items-center justify-center"
+          className="flex min-w-[32px] sm:min-w-[40px] items-center justify-center"
           onClick={() => handleModalCardOpen(card)}
         >
           <ResultCryptCapacity value={card.Capacity} />
         </div>
         {!isMobile && (
           <div
-            className="content-left disciplines flex items-center"
+            className="flex min-w-[170px] lg:min-w-[180px] items-center"
             onClick={() => handleModalCardOpen(card)}
           >
             <ResultCryptDisciplines value={card.Disciplines} />
           </div>
         )}
-        <ConditionalTooltip
-          placement={'right'}
-          overlay={<CardPopover card={card} />}
-          disabled={isMobile}
+        <div
+          className={`flex w-full items-center justify-start ${
+            card.deckid ? '' : 'font-bold'
+          } `}
+          onClick={() => handleModalCardOpen(card)}
         >
-          <div
-            className={`name flex items-center justify-start ${
-              card.deckid ? '' : 'font-bold'
-            } `}
-            onClick={() => handleModalCardOpen(card)}
+          <ConditionalTooltip
+            placement={'right'}
+            overlay={<CardPopover card={card} />}
+            disabled={isMobile}
           >
             <ResultCryptName card={card} />
-          </div>
-        </ConditionalTooltip>
+          </ConditionalTooltip>
+        </div>
         {!isMobile && (
-          <div className="clan-group" onClick={() => handleModalCardOpen(card)}>
+          <div
+            className="min-w-[60px]"
+            onClick={() => handleModalCardOpen(card)}
+          >
             <div className="flex justify-center">
               <ResultClanImage value={card.Clan} />
             </div>
-            <div className="flex justify-end text-xs">
-              <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            <div className="flex justify-center text-xs space-x-1">
+              <div className="flex w-full justify-end font-bold">
                 {card.Title && <ResultCryptTitle value={card.Title} />}
               </div>
-              <ResultCryptGroup value={card.Group} />
+              <div className="w-full">
+                <ResultCryptGroup value={card.Group} />
+              </div>
             </div>
           </div>
         )}
@@ -135,7 +140,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
   );
 
   return (
-    <div className="inventory-container-crypt">
+    <div className="h-[calc(100vh-132px)] sm:h-[calc(100vh-195px)]">
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <InventoryFilterForm
@@ -154,41 +159,43 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           setSortMethod={setSortMethod}
         />
       </div>
-      <div className="history-crypt-table flex bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
-        {!isMobile && <div className="capacity flex" />}
-        {!isMobile && <div className="disciplines flex" />}
-        <div className="name flex text-fgName dark:text-fgNameDark" />
-        {!isMobile && <div className="clan-group flex" />}
+      <div className="flex w-full bg-bgSecondary dark:bg-bgSecondaryDark font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        {!isMobile && <div className="flex min-w-[32px] sm:min-w-[40px]" />}
+        {!isMobile && <div className="flex min-w-[170px] lg:min-w-[180px]" />}
+        <div className="flex w-full" />
+        {!isMobile && <div className="flex min-w-[45px]" />}
         <div
-          className="year flex items-center justify-center"
+          className="flex min-w-[45px] sm:min-w-[60px] items-center justify-center"
           title="First Print Date"
         >
           Print
         </div>
         {!isMobile && (
           <div
-            className="year flex items-center justify-center"
+            className="flex min-w-[45px] sm:min-w-[60px] justify-center"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
         <div
-          className="ytw flex items-center justify-center"
+          className="flex min-w-[25px] sm:min-w-[65px] justify-center"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
-        <div className="player flex items-center" title="First Winner">
+        <div
+          className="flex min-w-[90px] sm:min-w-[250px] justify-center"
+          title="First Winner"
+        >
           Player
         </div>
-        <div className="button flex " />
-        {!isMobile && <div className="scroll-bar flex" />}
+        <div className="flex min-w-[45px] sm:min-w-[110px]" />
       </div>
       <AutoSizer>
         {({ width, height }) => (
           <FixedSizeList
-            className="history-crypt-table border-bgSecondary dark:border-bgSecondaryDark sm:border"
+            className="border-bgSecondary dark:border-bgSecondaryDark sm:border"
             height={height}
             width={width}
             itemCount={cardRows.length}

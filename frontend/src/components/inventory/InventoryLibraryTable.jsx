@@ -49,7 +49,7 @@ const InventoryLibraryTable = ({
   const Rows = ({ index, style }) => (
     <div
       style={style}
-      className={`flex border-b border-bgSecondary  dark:border-bgSecondaryDark ${
+      className={`flex border-b border-bgSecondary dark:border-bgSecondaryDark ${
         index % 2
           ? 'bg-bgThird dark:bg-bgThirdDark'
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
@@ -62,19 +62,21 @@ const InventoryLibraryTable = ({
   return (
     <>
       {compact ? (
-        <div className="inventory-library-table compact flex border border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark">
+        <div className="flex h-[45px] border border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark">
           {cardRows[0]}
         </div>
       ) : (
         <div
-          className={`inventory-container-library${
-            withCompact ? '-with-compact' : ''
-          }`}
+          className={
+            withCompact
+              ? 'h-[calc(100vh-219px)] sm:h-[calc(100vh-286px)]'
+              : 'h-[calc(100vh-174px)] sm:h-[calc(100vh-240px)]'
+          }
         >
           <AutoSizer>
             {({ width, height }) => (
               <FixedSizeList
-                className="inventory-library-table border-bgSecondary dark:border-bgSecondaryDark sm:border"
+                className="border-bgSecondary dark:border-bgSecondaryDark sm:border"
                 height={height}
                 width={width}
                 itemCount={cardRows.length}

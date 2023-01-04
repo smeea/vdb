@@ -66,17 +66,18 @@ const InventoryCryptTableRow = ({
 
   return (
     <div
-      className={`inventory-crypt-table flex border-none ${trBg}`}
+      className={`inventory-crypt-table flex w-full items-center border-none ${trBg}`}
       {...swipeHandlers}
     >
-      <div
-        className={`flex items-center justify-center ${
-          inShared ? 'quantity-no-buttons ' : 'quantity'
+      {inShared ? (
+        <div
+          className={`flex items-center justify-center text-lg bg-[#0000aa]/5 border-r border-bgSecondary dark:border-bgSecondaryDark min-w-[45px]'
         }`}
-      >
-        {inShared ? (
-          <>{card.q || null}</>
-        ) : (
+        >
+          {card.q || null}
+        </div>
+      ) : (
+        <div className="flex items-center min-w-[70px]">
           <InventoryCardQuantity
             cardid={card.c.Id}
             q={card.q}
@@ -85,10 +86,10 @@ const InventoryCryptTableRow = ({
             compact={compact}
             newFocus={newFocus}
           />
-        )}
-      </div>
+        </div>
+      )}
       {!inShared && (
-        <div className="used flex items-center justify-center">
+        <div className="flex items-center justify-center min-w-[40px]">
           {isMobile ? (
             <div
               className={`flex w-full justify-center ${
@@ -130,58 +131,58 @@ const InventoryCryptTableRow = ({
         </div>
       )}
       <div
-        className="capacity flex items-center justify-center"
+        className="flex min-w-[32px] sm:min-w-[40px] items-center justify-center"
         onClick={() => handleClick(card.c)}
       >
         <ResultCryptCapacity value={card.c.Capacity} />
       </div>
       {!isMobile && !isNarrow && (
         <div
-          className="content-left disciplines flex items-center"
+          className="flex min-w-[170px] lg:min-w-[180px] items-center"
           onClick={() => handleClick(card.c)}
         >
           <ResultCryptDisciplines value={card.c.Disciplines} />
         </div>
       )}
-      <ConditionalTooltip
-        placement={placement}
-        overlay={<CardPopover card={card.c} />}
-        disabled={isMobile}
+      <div
+        className="flex w-full text-fgName dark:text-fgNameDark"
+        onClick={() => handleClick(card.c)}
       >
-        <div
-          className="name flex items-center justify-start text-fgName dark:text-fgNameDark"
-          onClick={() => handleClick(card.c)}
+        <ConditionalTooltip
+          placement={placement}
+          overlay={<CardPopover card={card.c} />}
+          disabled={isMobile}
         >
           <ResultCryptName card={card.c} />
-        </div>
-      </ConditionalTooltip>
+        </ConditionalTooltip>
+      </div>
       {isWide ? (
         <>
           <div
-            className="title flex items-center justify-center"
+            className="flex min-w-[25px] items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
           </div>
           <div
-            className="clan flex items-center justify-center"
+            className="flex min-w-[30px] items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultClanImage value={card.c.Clan} />
           </div>
           <div
-            className="group flex items-center justify-center"
+            className="flex min-w-[30px] items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultCryptGroup value={card.c.Group} />
           </div>
         </>
       ) : (
-        <div className="clan-group" onClick={() => handleClick(card.c)}>
+        <div className="min-w-[45px]" onClick={() => handleClick(card.c)}>
           <div className="flex justify-center">
             <ResultClanImage value={card.c.Clan} />
           </div>
-          <div className="flex justify-end text-xs">
+          <div className="flex justify-end text-xs space-x-1">
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
             </div>

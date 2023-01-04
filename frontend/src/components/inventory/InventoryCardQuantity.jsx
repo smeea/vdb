@@ -42,7 +42,7 @@ const InventoryCardQuantity = ({
   };
 
   return (
-    <div className="flex w-full items-center justify-between">
+    <div className="flex w-full items-center justify-between text-lg">
       {isMobile ? (
         <>
           <a

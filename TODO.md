@@ -33,3 +33,5 @@
 - ButtonFloat variant to className (or create variants inside button component)
 - Replace -[#HEX] with config colors
 - Refactor div with single nested div
+- Remove useless text-fgName (where ResultCrypt-LibraryName component used)
+- Remove useless items-center and justify-center from TwdCardsHistory

@@ -68,17 +68,18 @@ const InventoryLibraryTableRow = ({
 
   return (
     <div
-      className={`inventory-library-table flex border-none ${trBg}`}
+      className={`flex w-full items-center border-none ${trBg}`}
       {...swipeHandlers}
     >
-      <div
-        className={`flex items-center justify-center ${
-          inShared ? 'quantity-no-buttons ' : 'quantity'
+      {inShared ? (
+        <div
+          className={`flex items-center justify-center text-lg bg-[#0000aa]/5 border-r border-bgSecondary dark:border-bgSecondaryDark min-w-[45px]'
         }`}
-      >
-        {inShared ? (
-          <>{card.q || null}</>
-        ) : (
+        >
+          {card.q || null}
+        </div>
+      ) : (
+        <div className="flex items-center min-w-[70px]">
           <InventoryCardQuantity
             cardid={card.c.Id}
             q={card.q}
@@ -87,10 +88,10 @@ const InventoryLibraryTableRow = ({
             compact={compact}
             newFocus={newFocus}
           />
-        )}
-      </div>
+        </div>
+      )}
       {!inShared && (
-        <div className="used flex items-center justify-center">
+        <div className="flex items-center justify-center min-w-[40px]">
           {isMobile ? (
             <div
               className={`flex w-full justify-center ${
@@ -132,28 +133,26 @@ const InventoryLibraryTableRow = ({
         </div>
       )}
       <div
-        className="type flex items-center justify-center"
+        className="flex min-w-[40px] items-center justify-center"
         onClick={() => handleClick(card.c)}
       >
         <ResultLibraryTypeImage value={card.c.Type} />
       </div>
-
-      <ConditionalTooltip
-        placement={placement}
-        overlay={<CardPopover card={card.c} />}
-        disabled={isMobile}
+      <div
+        className="flex w-full text-fgName dark:text-fgNameDark"
+        onClick={() => handleClick(card.c)}
       >
-        <div
-          className="name flex items-center justify-start text-fgName dark:text-fgNameDark"
-          onClick={() => handleClick(card.c)}
+        <ConditionalTooltip
+          placement={placement}
+          overlay={<CardPopover card={card.c} />}
+          disabled={isMobile}
         >
           <ResultLibraryName card={card.c} />
-        </div>
-      </ConditionalTooltip>
-
+        </ConditionalTooltip>
+      </div>
       {isMobile ? (
         <div
-          className="disciplines flex items-center justify-between"
+          className="flex min-w-[82px] items-center justify-between"
           onClick={() => handleClick(card.c)}
         >
           <div
@@ -183,9 +182,9 @@ const InventoryLibraryTableRow = ({
       ) : (
         <>
           <div
-            className={`flex items-center justify-center ${
-              card.c[BLOOD_COST] && 'blood'
-            } cost`}
+            className={`flex min-w-[30px] items-center justify-center ${
+              card.c[BLOOD_COST] && 'pb-1'
+            }`}
             onClick={() => handleClick(card.c)}
           >
             {(card.c[BLOOD_COST] || card.c[POOL_COST]) && (
@@ -196,7 +195,7 @@ const InventoryLibraryTableRow = ({
             )}
           </div>
           <div
-            className="disciplines flex items-center justify-center"
+            className="min-w-[82px] flex items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
@@ -209,7 +208,7 @@ const InventoryLibraryTableRow = ({
       )}
       {!isNarrow && (
         <div
-          className="burn flex items-center justify-center"
+          className="flex min-w-[30px] items-center justify-center"
           onClick={() => handleClick(card.c)}
         >
           {card.c[BURN_OPTION] && <ResultLibraryBurn />}

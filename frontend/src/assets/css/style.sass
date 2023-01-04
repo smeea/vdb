@@ -81,7 +81,7 @@
   .react-select-tags__multi-value__remove
     @apply hidden
   .react-select-tags__multi-value__label
-    @apply pr-1.5 hidden border rounded border-bgSecondary dark:border-bgSecondaryDark #{!important}
+    @apply border rounded border-bgSecondary dark:border-bgSecondaryDark pr-1.5 #{!important}
 
 .tags-bordered.react-select-tags__control
   @apply border border-bgSecondary dark:border-bgSecondaryDark #{!important}
@@ -137,113 +137,6 @@ tr:hover div.not-selected.inventory-card-custom
     width: 88px
   td.burn
     width: 30px
-
-.inventory-container-crypt
-  height: calc(100vh - 195px)
-  @media (max-width: 767px)
-    height: calc(100vh - 132px)
-
-.inventory-container-library
-  height: calc(100vh - 240px)
-  @media (max-width: 767px)
-    height: calc(100vh - 174px)
-
-.inventory-container-crypt-with-compact
-  height: calc(100vh - 241px)
-  @media (max-width: 767px)
-    height: calc(100vh - 177px)
-
-.inventory-container-library-with-compact
-  height: calc(100vh - 286px)
-  @media (max-width: 767px)
-    height: calc(100vh - 219px)
-
-.history-crypt-table,
-.history-library-table,
-.inventory-crypt-table,
-.inventory-library-table
-  div.quantity
-    font-size: 1.1em
-    min-width: 75px
-    @media (max-width: 1399px)
-      min-width: 70px
-  div.quantity-no-buttons
-    background: rgba(0, 0, 170, .05)
-    border-right: 1px solid var(--bg-secondary)
-    font-size: 1.1em
-    min-width: 45px
-  div.used
-    min-width: 40px
-    @media (max-width: 1399px)
-      min-width: 35px
-  div.name
-    width: 100%
-  &.compact
-    height: 45px
-  width: 100%
-
-.history-crypt-table,
-.history-library-table
-  div.year
-    min-width: 60px
-    @media (max-width: 767px)
-      min-width: 45px
-  div.ytw
-    min-width: 45px
-    @media (max-width: 767px)
-      min-width: 25px
-  div.player
-    min-width: 250px
-    @media (max-width: 767px)
-      min-width: 90px
-    text-align: left
-  div.name
-    text-align: left
-  div.button
-    min-width: 110px
-    @media (max-width: 767px)
-      min-width: 45px
-  div.scroll-bar
-    min-width: 18px
-
-.history-crypt-table,
-.inventory-crypt-table
-  div.capacity
-    min-width: 40px
-    @media (max-width: 767px)
-      min-width: 32px
-  div.disciplines
-    min-width: 180px
-    @media (max-width: 1399px)
-      min-width: 170px
-  div.title
-    min-width: 25px
-  div.clan
-    min-width: 30px
-  div.group
-    min-width: 30px
-  div.clan-group
-    min-width: 45px
-    .group
-      min-width: 0
-
-.history-library-table,
-.inventory-library-table
-  div.cost
-    min-width: 30px
-  div.blood
-    padding-bottom: 4px
-    padding-top: 0
-  div.disciplines
-    min-width: 82px
-  div.burn
-    min-width: 30px
-  div.type
-    min-width: 40px
-  div.clan-disciplines
-    min-width: 80px
-    @media (max-width: 767px)
-      min-width: 32px
 
 .search-crypt-table,
 .search-library-table
@@ -339,15 +232,14 @@ tr:hover div.not-selected.inventory-card-custom
     text-align: center
   .preview
     min-width: 40px
-  .name
-    max-width: 250px
-    min-width: 250px
   .buttons
     min-width: 110px
     text-align: right
 
 .inv-import-decks-table
   .name
+    max-width: 250px
+    min-width: 250px
     @media (max-width: 576px)
       max-width: 230px
       min-width: 230px

@@ -57,19 +57,21 @@ const InventoryCryptTable = ({
   return (
     <>
       {compact ? (
-        <div className="inventory-crypt-table compact flex border border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark">
+        <div className="flex h-[45px] border border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark">
           {cardRows[0]}
         </div>
       ) : (
         <div
-          className={`inventory-container-crypt${
-            withCompact ? '-with-compact' : ''
-          }`}
+          className={
+            withCompact
+              ? 'h-[calc(100vh-177px)] sm:h-[calc(100vh-241px)]'
+              : 'h-[calc(100vh-132px)] sm:h-[calc(100vh-195px)]'
+          }
         >
           <AutoSizer>
             {({ width, height }) => (
               <FixedSizeList
-                className="inventory-crypt-table border-bgSecondary dark:border-bgSecondaryDark sm:border"
+                className="border-bgSecondary dark:border-bgSecondaryDark sm:border"
                 height={height}
                 width={width}
                 itemCount={cardRows.length}

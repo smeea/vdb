@@ -160,15 +160,15 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const cardRows = sortedCards.map((card, idx) => {
+  const cardRows = sortedCards.map((card) => {
     return (
       <>
         {!isMobile && (
           <>
             <div
-              className={`flex items-center justify-center ${
-                card[BLOOD_COST] && 'blood'
-              } cost`}
+              className={`flex min-w-[30px] items-center justify-center ${
+                card[BLOOD_COST] && 'pb-1'
+              }`}
               onClick={() => handleModalCardOpen(card)}
             >
               {card[BLOOD_COST] ||
@@ -180,7 +180,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
                 ))}
             </div>
             <div
-              className="type flex items-center justify-center"
+              className="flex min-w-[40px] items-center justify-center"
               onClick={() => handleModalCardOpen(card)}
             >
               <ResultLibraryTypeImage value={card.Type} />
@@ -188,7 +188,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
           </>
         )}
         <div
-          className="clan-disciplines flex items-center justify-center"
+          className="flex min-w-[32px] sm:min-w-[80px] items-center justify-center"
           onClick={() => handleModalCardOpen(card)}
         >
           {card.Clan && <ResultLibraryClan value={card.Clan} />}
@@ -197,23 +197,23 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
             <ResultLibraryDisciplines value={card.Discipline} />
           )}
         </div>
-        <ConditionalTooltip
-          placement={'right'}
-          overlay={<CardPopover card={card} />}
-          disabled={isMobile}
+        <div
+          className={`flex w-full items-center justify-start ${
+            card.deckid ? '' : 'font-bold'
+          } `}
+          onClick={() => handleModalCardOpen(card)}
         >
-          <div
-            className={`name flex items-center justify-start ${
-              card.deckid ? '' : 'font-bold'
-            } `}
-            onClick={() => handleModalCardOpen(card)}
+          <ConditionalTooltip
+            placement={'right'}
+            overlay={<CardPopover card={card} />}
+            disabled={isMobile}
           >
             <ResultLibraryName card={card} />
-          </div>
-        </ConditionalTooltip>
+          </ConditionalTooltip>
+        </div>
         {!isMobile && (
           <div
-            className="burn flex items-center justify-center"
+            className="flex min-w-[30px] items-center justify-center"
             onClick={() => handleModalCardOpen(card)}
           >
             {card[BURN_OPTION] && <ResultLibraryBurn />}
@@ -241,7 +241,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   );
 
   return (
-    <div className="inventory-container-library">
+    <div className="h-[calc(100vh-174px)] sm:h-[calc(100vh-240px)]">
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <div className="flex flex-col space-y-1">
@@ -272,41 +272,43 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         />
       </div>
 
-      <div className="history-library-table flex bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
-        {!isMobile && <div className="cost flex" />}
-        {!isMobile && <div className="type flex" />}
-        <div className="name flex text-fgName dark:text-fgNameDark" />
-        {!isMobile && <div className="clan-disciplines flex" />}
+      <div className="flex w-full bg-bgSecondary dark:bg-bgSecondaryDark font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        {!isMobile && <div className="flex min-w-[30px]" />}
+        {!isMobile && <div className="flex min-w-[40px]" />}
+        <div className="flex w-full" />
+        {!isMobile && <div className="flex min-w-[32px] sm:min-w-[80px]" />}
         <div
-          className="year flex items-center justify-center"
+          className="flex min-w-[45px] sm:min-w-[60px] items-center justify-center"
           title="First Print Date"
         >
           Print
         </div>
         {!isMobile && (
           <div
-            className="year flex items-center justify-center"
+            className="flex min-w-[45px] sm:min-w-[60px] items-center justify-center"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
         <div
-          className="ytw flex items-center justify-center"
+          className="flex min-w-[25px] sm:min-w-[60px] items-center justify-center"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
-        <div className="player flex items-center" title="First Winner">
+        <div
+          className="flex min-w-[90px] sm:min-w-[250px] items-center"
+          title="First Winner"
+        >
           Player
         </div>
-        <div className="button flex " />
-        {!isMobile && <div className="scroll-bar flex" />}
+        <div className="flex min-w-[45px] sm:min-w-[110px]" />
       </div>
       <AutoSizer>
         {({ width, height }) => (
           <FixedSizeList
-            className="history-library-table border-bgSecondary dark:border-bgSecondaryDark sm:border"
+            className="border-bgSecondary dark:border-bgSecondaryDark sm:border"
             height={height}
             width={width}
             itemCount={cardRows.length}

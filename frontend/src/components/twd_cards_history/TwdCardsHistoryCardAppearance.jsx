@@ -31,7 +31,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   return (
     <>
       <div
-        className={`year flex items-center justify-center ${
+        className={`flex min-w-[45px] sm:min-w-[60px] items-center justify-center ${
           card.deckid
             ? ''
             : 'font-bold text-fgSecondary dark:text-fgSecondaryDark'
@@ -40,12 +40,12 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
         {card.release_date.slice(0, 4)}
       </div>
       {!isMobile && (
-        <div className="year flex items-center justify-center">
+        <div className="flex min-w-[45px] sm:min-w-[60px] items-center justify-center">
           {card.twd_date && card.twd_date.slice(0, 4)}
         </div>
       )}
       <div
-        className={`ytw flex items-center justify-center ${
+        className={`flex min-w-[25px] sm:min-w-[60px] items-center justify-center ${
           card.deckid
             ? ''
             : 'font-bold text-fgSecondary dark:text-fgSecondaryDark'
@@ -53,7 +53,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       >
         {yearsToWin}
       </div>
-      <div className="player flex items-center justify-between">
+      <div className="flex min-w-[90px] sm:min-w-[250px] items-center justify-between">
         <div
           className="inline text-fgSecondary hover:underline dark:text-fgSecondaryDark"
           onClick={() => handleClick(card.player)}
@@ -62,7 +62,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
         </div>
         {!isMobile && byPlayer && (
           <div
-            className="inline "
+            className="inline"
             title={`First appearance in TWDA:
 Crypt: ${byPlayer.crypt}
 Library: ${byPlayer.library}`}
@@ -71,7 +71,7 @@ Library: ${byPlayer.library}`}
           </div>
         )}
       </div>
-      <div className="flex items-center justify-end ">
+      <div className="flex min-w-[45px] sm:min-w-[110px] items-center justify-end">
         {card.deckid && (
           <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} inHistory />
         )}
