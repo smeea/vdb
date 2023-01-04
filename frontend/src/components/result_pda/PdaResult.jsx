@@ -101,7 +101,7 @@ const PdaResult = ({ results, setResults }) => {
                 )}
               </div>
               {index + 1 < showCounter && (
-                <hr className="border-fgRed dark:border-fgRedDark border-2" />
+                <hr className="border-2 border-fgRed dark:border-fgRedDark" />
               )}
             </React.Fragment>
           );

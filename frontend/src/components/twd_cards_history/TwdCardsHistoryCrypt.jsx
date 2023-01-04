@@ -73,14 +73,14 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
     return (
       <>
         <div
-          className="flex min-w-[32px] sm:min-w-[40px] items-center justify-center"
+          className="flex min-w-[32px] items-center justify-center sm:min-w-[40px]"
           onClick={() => handleModalCardOpen(card)}
         >
           <ResultCryptCapacity value={card.Capacity} />
         </div>
         {!isMobile && (
           <div
-            className="flex min-w-[170px] lg:min-w-[180px] items-center"
+            className="flex min-w-[170px] items-center lg:min-w-[180px]"
             onClick={() => handleModalCardOpen(card)}
           >
             <ResultCryptDisciplines value={card.Disciplines} />
@@ -108,7 +108,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
             <div className="flex justify-center">
               <ResultClanImage value={card.Clan} />
             </div>
-            <div className="flex justify-center text-xs space-x-1">
+            <div className="flex justify-center space-x-1 text-xs">
               <div className="flex w-full justify-end font-bold">
                 {card.Title && <ResultCryptTitle value={card.Title} />}
               </div>
@@ -159,33 +159,33 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           setSortMethod={setSortMethod}
         />
       </div>
-      <div className="flex w-full bg-bgSecondary dark:bg-bgSecondaryDark font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="flex w-full bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
         {!isMobile && <div className="flex min-w-[32px] sm:min-w-[40px]" />}
         {!isMobile && <div className="flex min-w-[170px] lg:min-w-[180px]" />}
         <div className="flex w-full" />
         {!isMobile && <div className="flex min-w-[45px]" />}
         <div
-          className="flex min-w-[45px] sm:min-w-[60px] items-center justify-center"
+          className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]"
           title="First Print Date"
         >
           Print
         </div>
         {!isMobile && (
           <div
-            className="flex min-w-[45px] sm:min-w-[60px] justify-center"
+            className="flex min-w-[45px] justify-center sm:min-w-[60px]"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
         <div
-          className="flex min-w-[25px] sm:min-w-[65px] justify-center"
+          className="flex min-w-[25px] justify-center sm:min-w-[65px]"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
         <div
-          className="flex min-w-[90px] sm:min-w-[250px] justify-center"
+          className="flex min-w-[90px] justify-center sm:min-w-[250px]"
           title="First Winner"
         >
           Player

@@ -21,7 +21,7 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
             <div
               className={` inline w-7 text-center text-lg ${
                 inventoryCrypt[cardid]
-                  ? 'border-midGray dark:border-midGrayDark rounded-md border-2'
+                  ? 'rounded-md border-2 border-midGray dark:border-midGrayDark'
                   : ''
               }`}
             >
@@ -32,7 +32,9 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
           <div>
             <ResultCryptName card={card} />
             {card['New'] && (
-              <div className="text-midGray dark:text-midGrayDark  inline">[G{card.Group}]</div>
+              <div className="inline text-midGray  dark:text-midGrayDark">
+                [G{card.Group}]
+              </div>
             )}
           </div>
           <div>

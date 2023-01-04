@@ -96,7 +96,7 @@ const DeckDrawCryptTable = ({
   return (
     <>
       <table
-        className={`border-bgSecondary dark:border-bgSecondaryDark sm:border ${
+        className={`w-full border-bgSecondary dark:border-bgSecondaryDark sm:border ${
           ashHeap ? 'search-crypt-table' : 'deck-crypt-table'
         }`}
       >

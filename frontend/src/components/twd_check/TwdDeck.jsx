@@ -111,14 +111,14 @@ const TwdDeck = ({ eventId, setEventId }) => {
             <pre className="font-mono text-sm">{fieldNames}</pre>
           </div>
           <div className="flex justify-end">
-            <pre className="text-midGray dark:text-midGrayDark font-mono text-sm">
+            <pre className="font-mono text-sm text-midGray dark:text-midGrayDark">
               {descriptionInfo}
             </pre>
           </div>
         </div>
         <div className="xl:basis-10/12">
           <textarea
-            className="focus:text-fgRed dark:text-fgRedDark font-mono text-sm"
+            className="font-mono text-sm focus:text-fgRed dark:text-fgRedDark"
             rows={window.innerHeight / 21 - 14}
             value={deckText}
             placeholder={placeholder}
@@ -126,7 +126,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
             ref={refText}
             autoFocus
           />
-          <pre className="text-midGray dark:text-midGrayDark mb-0 ml-[13px] font-mono text-sm">
+          <pre className="mb-0 ml-[13px] font-mono text-sm text-midGray dark:text-midGrayDark">
             {lengthMarker}
           </pre>
         </div>

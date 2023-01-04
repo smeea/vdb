@@ -16,7 +16,7 @@ const DeckProxyLibrary = ({
   handleProxyCounter,
   handleProxySelector,
 }) => {
-  const { isMobile, setShowFloatingButtons } = useApp();
+  const { setShowFloatingButtons } = useApp();
 
   const {
     library,

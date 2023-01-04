@@ -1,12 +1,10 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
-import cardtextIcons from 'assets/data/cardtextIcons.json';
 import { useApp } from 'context';
 import {
   CardPopover,
   ResultCryptName,
   ResultLibraryName,
-  ResultDisciplineImage,
   ResultMiscImage,
   ConditionalTooltip,
 } from 'components';
@@ -72,7 +70,7 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
                   }
                   disabled={isMobile}
                 >
-                  <div className="name inline text-fgName dark:text-fgNameDark">
+                  <div className="inline">
                     {cardid > 200000 ? (
                       <ResultCryptName card={cryptCardBase[cardid]} />
                     ) : (

@@ -15,7 +15,9 @@ const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
 
   return (
     <div
-      className={`flex items-center ${state ? '' : 'text-midGray dark:text-midGrayDark'}`}
+      className={`flex items-center ${
+        state ? '' : 'text-midGray dark:text-midGrayDark'
+      }`}
       onClick={handleClick}
     >
       <div className="flex items-center">

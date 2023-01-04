@@ -83,7 +83,7 @@ const TwdResultLibraryByType = ({ library }) => {
               : 'bg-bgPrimary dark:bg-bgPrimaryDark'
           }`}
         >
-          <td className="min-w-[30px] sm:min-w-[60px]">
+          <td className="min-w-[30px] 2xl:min-w-[60px]">
             <div className="flex justify-center">
               <ResultLibraryTypeImage value={cardtype} />
             </div>

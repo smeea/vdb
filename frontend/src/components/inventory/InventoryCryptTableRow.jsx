@@ -71,13 +71,13 @@ const InventoryCryptTableRow = ({
     >
       {inShared ? (
         <div
-          className={`flex items-center justify-center text-lg bg-[#0000aa]/5 border-r border-bgSecondary dark:border-bgSecondaryDark min-w-[45px]'
-        }`}
+          className={`min-w-[45px]' } flex items-center justify-center border-r border-bgSecondary bg-[#0000aa]/5 text-lg
+        dark:border-bgSecondaryDark`}
         >
           {card.q || null}
         </div>
       ) : (
-        <div className="flex items-center min-w-[70px]">
+        <div className="flex min-w-[70px] items-center">
           <InventoryCardQuantity
             cardid={card.c.Id}
             q={card.q}
@@ -89,7 +89,7 @@ const InventoryCryptTableRow = ({
         </div>
       )}
       {!inShared && (
-        <div className="flex items-center justify-center min-w-[40px]">
+        <div className="flex min-w-[40px] items-center justify-center">
           {isMobile ? (
             <div
               className={`flex w-full justify-center ${
@@ -131,23 +131,20 @@ const InventoryCryptTableRow = ({
         </div>
       )}
       <div
-        className="flex min-w-[32px] sm:min-w-[40px] items-center justify-center"
+        className="flex min-w-[32px] items-center justify-center sm:min-w-[40px]"
         onClick={() => handleClick(card.c)}
       >
         <ResultCryptCapacity value={card.c.Capacity} />
       </div>
       {!isMobile && !isNarrow && (
         <div
-          className="flex min-w-[170px] lg:min-w-[180px] items-center"
+          className="flex min-w-[170px] items-center lg:min-w-[180px]"
           onClick={() => handleClick(card.c)}
         >
           <ResultCryptDisciplines value={card.c.Disciplines} />
         </div>
       )}
-      <div
-        className="flex w-full text-fgName dark:text-fgNameDark"
-        onClick={() => handleClick(card.c)}
-      >
+      <div className="flex w-full" onClick={() => handleClick(card.c)}>
         <ConditionalTooltip
           placement={placement}
           overlay={<CardPopover card={card.c} />}
@@ -182,7 +179,7 @@ const InventoryCryptTableRow = ({
           <div className="flex justify-center">
             <ResultClanImage value={card.c.Clan} />
           </div>
-          <div className="flex justify-end text-xs space-x-1">
+          <div className="flex justify-end space-x-1 text-xs">
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
             </div>

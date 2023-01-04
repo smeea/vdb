@@ -434,7 +434,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
             )}
             {!isMobile && (
               <td
-                className="min-w-[100px] whitespace-nowrap cursor-pointer"
+                className="min-w-[100px] cursor-pointer whitespace-nowrap"
                 onClick={() => handleOpen(deck.deckid)}
               >
                 {new Date(deck.timestamp).toISOString().slice(0, 10)}

@@ -164,7 +164,7 @@ const DeckProxyLibraryTable = ({
 
   return (
     <>
-      <table className="deck-library-table">
+      <table className="w-full">
         <tbody>{cardRows}</tbody>
       </table>
     </>

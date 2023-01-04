@@ -28,7 +28,10 @@ const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
           <PlayFill width="18" height="18" viewBox="0 1 14 14" />
         </Link>
       ) : (
-        <div className="text-fgRed dark:text-fgRedDark cursor-pointer" onClick={() => remove(i)}>
+        <div
+          className="cursor-pointer text-fgRed dark:text-fgRedDark"
+          onClick={() => remove(i)}
+        >
           <X width="22" height="22" viewBox="0 0 16 16" />
         </div>
       )}

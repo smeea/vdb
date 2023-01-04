@@ -143,7 +143,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           )}
           <td className="w-[135px] sm:w-[250px]">
             <div
-              className="text-fgName dark:text-fgNameDark text-overflow flex justify-between"
+              className="text-overflow flex justify-between text-fgName dark:text-fgNameDark"
               title={deck.name}
             >
               {deck.name}

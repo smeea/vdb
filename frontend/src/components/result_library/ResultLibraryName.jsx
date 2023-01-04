@@ -3,7 +3,7 @@ import Hammer from 'assets/images/icons/hammer.svg';
 
 const ResultLibraryName = ({ card }) => {
   return (
-    <div className="text-fgName dark:text-fgNameDark">
+    <div className="inline whitespace-nowrap text-fgName dark:text-fgNameDark">
       {card['Banned'] ? (
         <>
           <strike>{card['Name']}</strike> [{card['Banned']}{' '}

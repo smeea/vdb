@@ -116,14 +116,18 @@ const TwdHallOfFameCards = () => {
         <Tab.List className="bg-blue-900 flex space-x-1 rounded p-1">
           <Tab
             className={({ selected }) =>
-              `w-full rounded px-3 py-1.5 ${selected ? 'bg-midGray dark:bg-midGrayDark ' : ''}`
+              `w-full rounded px-3 py-1.5 ${
+                selected ? 'bg-midGray dark:bg-midGrayDark ' : ''
+              }`
             }
           >
             By Total
           </Tab>
           <Tab
             className={({ selected }) =>
-              `w-full rounded px-3 py-1.5 ${selected ? 'bg-midGray dark:bg-midGrayDark ' : ''}`
+              `w-full rounded px-3 py-1.5 ${
+                selected ? 'bg-midGray dark:bg-midGrayDark ' : ''
+              }`
             }
           >
             By Innovation

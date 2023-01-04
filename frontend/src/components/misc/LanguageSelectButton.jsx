@@ -23,7 +23,7 @@ const LanguageSelectButton = ({ showMenu, setShowMenu }) => {
     >
       <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
       {showMenu && (
-        <div className="bg-[#000] absolute left-1 top-11 rounded border border-borderPrimary p-3 dark:border-borderPrimaryDark">
+        <div className="absolute left-1 top-11 rounded border border-borderPrimary bg-[#000] p-3 dark:border-borderPrimaryDark">
           <LanguageMenu setShowMenu={setShowMenu} />
         </div>
       )}

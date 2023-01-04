@@ -279,12 +279,12 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       title="Import Deck to Inventory"
     >
       <div>
-        <table className="border-y sm:border-x border-bgSecondary dark:border-bgSecondaryDark">
+        <table className="border-y border-bgSecondary dark:border-bgSecondaryDark sm:border-x">
           <thead>
             <tr>
               {!isMobile && <th className="inventory"></th>}
               {!isMobile && <th className="min-w-[50px]"></th>}
-              <th className="min-w-[230px] sm:min-w-[250px] text-fgName dark:text-fgNameDark">
+              <th className="min-w-[230px] sm:min-w-[250px]">
                 <Input
                   placeholder="Filter by Name"
                   type="text"

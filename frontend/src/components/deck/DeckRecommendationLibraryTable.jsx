@@ -47,10 +47,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
               />
             </td>
           )}
-          <td
-            className="name"
-            onClick={() => handleClick()}
-          >
+          <td className="name" onClick={() => handleClick()}>
             <ConditionalTooltip
               placement={isDesktop ? 'left' : 'bottom'}
               overlay={<CardPopover card={card} />}
@@ -90,7 +87,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
 
   return (
     <>
-      <table className="deck-library-table">
+      <table className="w-full">
         <tbody>{cardRows}</tbody>
       </table>
     </>

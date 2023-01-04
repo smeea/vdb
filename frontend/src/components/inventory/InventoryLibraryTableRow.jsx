@@ -73,13 +73,13 @@ const InventoryLibraryTableRow = ({
     >
       {inShared ? (
         <div
-          className={`flex items-center justify-center text-lg bg-[#0000aa]/5 border-r border-bgSecondary dark:border-bgSecondaryDark min-w-[45px]'
-        }`}
+          className={`min-w-[45px]' } flex items-center justify-center border-r border-bgSecondary bg-[#0000aa]/5 text-lg
+        dark:border-bgSecondaryDark`}
         >
           {card.q || null}
         </div>
       ) : (
-        <div className="flex items-center min-w-[70px]">
+        <div className="flex min-w-[70px] items-center">
           <InventoryCardQuantity
             cardid={card.c.Id}
             q={card.q}
@@ -91,7 +91,7 @@ const InventoryLibraryTableRow = ({
         </div>
       )}
       {!inShared && (
-        <div className="flex items-center justify-center min-w-[40px]">
+        <div className="flex min-w-[40px] items-center justify-center">
           {isMobile ? (
             <div
               className={`flex w-full justify-center ${
@@ -195,7 +195,7 @@ const InventoryLibraryTableRow = ({
             )}
           </div>
           <div
-            className="min-w-[82px] flex items-center justify-center"
+            className="flex min-w-[82px] items-center justify-center"
             onClick={() => handleClick(card.c)}
           >
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}

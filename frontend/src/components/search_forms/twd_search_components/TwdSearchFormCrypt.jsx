@@ -43,12 +43,12 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                   disabled={isMobile}
                 >
                   <div
-                    className="name text-fgName dark:text-fgNameDark"
+                    className="name"
                     onClick={() => setModalCard(cryptCardBase[id])}
                   >
                     <ResultCryptName card={cryptCardBase[id]} />
                     {cryptCardBase[id]['New'] && (
-                      <div className="text-midGray dark:text-midGrayDark  inline">
+                      <div className="inline text-midGray  dark:text-midGrayDark">
                         [G{cryptCardBase[id].Group}]
                       </div>
                     )}

@@ -154,7 +154,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
           <div>
             {(deck.deckid.length === 32 || deck.deckid === 'deck') && (
               <>
-                <div className="px-3 pt-2 text-midGray dark:text-midGrayDark text-sm">
+                <div className="px-3 pt-2 text-sm text-midGray dark:text-midGrayDark">
                   Non-modifiable:
                 </div>
                 <MenuItem title="Copy long URL containing full deck info (will not follow deck changes)">

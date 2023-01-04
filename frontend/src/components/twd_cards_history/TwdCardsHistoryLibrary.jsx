@@ -188,7 +188,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
           </>
         )}
         <div
-          className="flex min-w-[32px] sm:min-w-[80px] items-center justify-center"
+          className="flex min-w-[32px] items-center justify-center sm:min-w-[80px]"
           onClick={() => handleModalCardOpen(card)}
         >
           {card.Clan && <ResultLibraryClan value={card.Clan} />}
@@ -272,33 +272,33 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         />
       </div>
 
-      <div className="flex w-full bg-bgSecondary dark:bg-bgSecondaryDark font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="flex w-full bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
         {!isMobile && <div className="flex min-w-[30px]" />}
         {!isMobile && <div className="flex min-w-[40px]" />}
         <div className="flex w-full" />
         {!isMobile && <div className="flex min-w-[32px] sm:min-w-[80px]" />}
         <div
-          className="flex min-w-[45px] sm:min-w-[60px] items-center justify-center"
+          className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]"
           title="First Print Date"
         >
           Print
         </div>
         {!isMobile && (
           <div
-            className="flex min-w-[45px] sm:min-w-[60px] items-center justify-center"
+            className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
         <div
-          className="flex min-w-[25px] sm:min-w-[60px] items-center justify-center"
+          className="flex min-w-[25px] items-center justify-center sm:min-w-[60px]"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
         <div
-          className="flex min-w-[90px] sm:min-w-[250px] items-center"
+          className="flex min-w-[90px] items-center sm:min-w-[250px]"
           title="First Winner"
         >
           Player

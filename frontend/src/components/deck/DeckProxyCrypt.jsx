@@ -13,7 +13,7 @@ const DeckProxyCrypt = ({
   handleSetSelector,
   handleProxyCounter,
 }) => {
-  const { cryptDeckSort, isMobile, setShowFloatingButtons } = useApp();
+  const { cryptDeckSort, setShowFloatingButtons } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
 
   const { cryptSide, sortedCards, sortedCardsSide } = useDeckCrypt(

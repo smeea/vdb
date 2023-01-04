@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu } from '@headlessui/react';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { MenuItem, ButtonIconed, ModalConfirmation } from 'components';

@@ -52,7 +52,7 @@ const TwdResultCrypt = ({ crypt }) => {
             : 'bg-bgPrimary dark:bg-bgPrimaryDark'
         }`}
       >
-        <td className="min-w-[28px] sm:min-w-[35px] bg-[#0000aa]/5 border-r border-bgSecondary dark:border-bgSecondaryDark">
+        <td className="min-w-[28px] border-r border-bgSecondary bg-[#0000aa]/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
           {inventoryMode ? (
             <ConditionalTooltip
               overlay={<UsedPopover cardid={card.c.Id} />}

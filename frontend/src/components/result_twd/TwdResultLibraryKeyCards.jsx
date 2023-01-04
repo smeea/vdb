@@ -53,7 +53,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
             : 'bg-bgPrimary dark:bg-bgPrimaryDark'
         }`}
       >
-        <td className="min-w-[28px] sm:min-w-[35px] bg-[#0000aa]/5 border-r border-bgSecondary dark:border-bgSecondaryDark">
+        <td className="min-w-[28px] border-r border-bgSecondary bg-[#0000aa]/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
           {inventoryMode ? (
             <ConditionalTooltip
               overlay={<UsedPopover cardid={card.c.Id} />}
@@ -76,7 +76,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
           )}
         </td>
         <td
-          className="min-w-[30px] sm:min-w-[60px]"
+          className="min-w-[30px] 2xl:min-w-[60px]"
           onClick={() => handleClick(card.c)}
         >
           <div className="flex justify-center">
@@ -93,10 +93,10 @@ const TwdResultLibraryKeyCards = ({ library }) => {
         </td>
         {!isMobile && (
           <td
-            className="min-w-[62px] sm:min-w-[85px]"
+            className="min-w-[62px] 2xl:min-w-[85px]"
             onClick={() => handleClick(card.c)}
           >
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
               {card.c.Discipline && (
                 <ResultLibraryDisciplines value={card.c.Discipline} />
               )}

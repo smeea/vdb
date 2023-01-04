@@ -1,12 +1,10 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
-import cardtextIcons from 'assets/data/cardtextIcons.json';
 import { useApp } from 'context';
 import {
   CardPopover,
   ResultCryptName,
   ResultLibraryName,
-  ResultDisciplineImage,
   ResultMiscImage,
   ConditionalTooltip,
 } from 'components';
@@ -36,7 +34,7 @@ const ResultLayoutTextText = ({ text, placement }) => {
 
             if (cardid) {
               return (
-                <span key={`${cardid}`}>
+                <span key={cardid}>
                   <ConditionalTooltip
                     placement={placement}
                     overlay={
@@ -50,13 +48,11 @@ const ResultLayoutTextText = ({ text, placement }) => {
                     }
                     disabled={isMobile}
                   >
-                    <div className="name inline text-fgName dark:text-fgNameDark">
-                      {cardid > 200000 ? (
-                        <ResultCryptName card={cryptCardBase[cardid]} />
-                      ) : (
-                        <ResultLibraryName card={libraryCardBase[cardid]} />
-                      )}
-                    </div>
+                    {cardid > 200000 ? (
+                      <ResultCryptName card={cryptCardBase[cardid]} />
+                    ) : (
+                      <ResultLibraryName card={libraryCardBase[cardid]} />
+                    )}
                   </ConditionalTooltip>
                 </span>
               );

@@ -26,7 +26,7 @@ const DeckLibraryHeader = ({
           ]
         </div>
         {!inMissing && hasBanned && (
-          <div className="text-fgRed dark:text-fgRedDark inline items-center">
+          <div className="inline items-center text-fgRed dark:text-fgRedDark">
             <Exclamation
               width="17"
               heigth="17"

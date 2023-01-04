@@ -17,7 +17,7 @@ const MenuButton = ({ title, icon, variant = 'primary', text }) => {
   const customStyle = getStyle(variant);
 
   return (
-    <Menu.Button className="block w-full h-full rounded outline-2 outline-bgCheckboxSelected focus:outline dark:outline-bgCheckboxSelectedDark">
+    <Menu.Button className="block h-full w-full rounded outline-2 outline-bgCheckboxSelected focus:outline dark:outline-bgCheckboxSelectedDark">
       <div
         className={`${baseStyle} ${customStyle} flex h-full items-center justify-center space-x-2 rounded px-3 py-1.5`}
         title={title}
