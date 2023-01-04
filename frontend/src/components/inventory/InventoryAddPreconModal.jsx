@@ -11,6 +11,7 @@ import {
   ResultLibraryClan,
   Tooltip,
   Modal,
+  Input,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, inventoryStore } from 'context';
@@ -229,7 +230,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             <tr>
               {!isMobile && <th className="min-w-[50px]"></th>}
               <th className="min-w-[230px] sm:min-w-[250px]">
-                <input
+                <Input
                   placeholder="Filter by Name"
                   type="text"
                   name="text"

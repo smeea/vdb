@@ -99,7 +99,6 @@ const TwdResultLibraryByType = ({ library }) => {
           <td
             onMouseOver={() => handleHover(cardtype)}
             onClick={() => handleClick(cardtype)}
-            className="name text-fgName dark:text-fgNameDark"
           >
             <Tooltip
               placement="right"
@@ -114,7 +113,7 @@ const TwdResultLibraryByType = ({ library }) => {
                 </div>
               }
             >
-              <div>
+              <div className="text-left text-fgName dark:text-fgNameDark">
                 {cardtype} [{libraryByTypeTotal[cardtype]}]
                 {cardtype == 'Master' && trifleTotal > 0 && (
                   <> - {trifleTotal} trifle</>

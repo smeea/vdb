@@ -48,7 +48,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
             </td>
           )}
           <td
-            className="name text-fgName dark:text-fgNameDark "
+            className="name"
             onClick={() => handleClick()}
           >
             <ConditionalTooltip

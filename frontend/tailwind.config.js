@@ -28,7 +28,7 @@ module.exports = {
       fgName: '#3060c0',
       fgNameDark: '#d59000',
       fgRed: '#f01020',
-      fgRedDark: '#ee3040',
+      fgRedDark: '#ee3030',
       fgGreen: '#00a000',
       fgGreenDark: '#00d000',
       bgNav: '#404060',

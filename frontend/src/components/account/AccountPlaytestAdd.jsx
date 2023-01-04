@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Spinner from 'assets/images/icons/three-dots.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import { Button, ErrorOverlay } from 'components';
+import { Input, Button, ErrorOverlay } from 'components';
 
 const AccountPlaytestAdd = ({
   playtesters,
@@ -63,7 +63,7 @@ const AccountPlaytestAdd = ({
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <Input
         placeholder="Add Playtester (login)"
         type="text"
         name="username"

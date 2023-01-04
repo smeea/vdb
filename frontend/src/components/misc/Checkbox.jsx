@@ -28,7 +28,7 @@ const Checkbox = ({
         onChange={onChange}
         checked={checked}
       />
-      <label htmlFor={id}>{label}</label>
+      {label ? <label htmlFor={id}>{label}</label> : null}
     </div>
   );
 };

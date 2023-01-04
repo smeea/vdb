@@ -31,6 +31,7 @@ import {
   Button,
   ButtonFloat,
   Checkbox,
+  Input,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, deckUpdate } from 'context';
@@ -278,9 +279,6 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
     }
   };
 
-  // const deleteSelected = () => {
-  // };
-
   const exportSelected = (format) => {
     const target = {};
     Object.keys(selectedDecks)
@@ -338,16 +336,19 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                 : 'bg-bgPrimary dark:bg-bgPrimaryDark'
             }`}
           >
-            <td className="select">
+            <td className="min-w-[30px]">
               <Checkbox
                 checked={selectedDecks[deck.deckid] ?? false}
                 onChange={() => toggleSelect(deck.deckid)}
+                className="justify-center"
               />
             </td>
             {inventoryMode && !isMobile && (
-              <td className="inventory">
-                <Button onClick={() => toggleInventoryState(deck.deckid)}>
-                  <div
+              <td>
+                <div className="flex justify-center">
+                  <Button
+                    variant="primary"
+                    onClick={() => toggleInventoryState(deck.deckid)}
                     title={
                       deck.inventoryType === 's'
                         ? 'Flexible'
@@ -356,24 +357,31 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                         : 'Virtual'
                     }
                   >
-                    {deck.inventoryType == 's' && <Shuffle />}
-                    {deck.inventoryType == 'h' && <PinAngleFill />}
-                    {!deck.inventoryType && <At />}
-                  </div>
-                </Button>
+                    {deck.inventoryType == 's' ? (
+                      <Shuffle />
+                    ) : deck.inventoryType == 'h' ? (
+                      <PinAngleFill />
+                    ) : (
+                      <At />
+                    )}
+                  </Button>
+                </div>
               </td>
             )}
             {!isMobile && (
-              <td className="clan" onClick={() => handleOpen(deck.deckid)}>
-                {clan && <ResultClanImage value={clan} />}
+              <td onClick={() => handleOpen(deck.deckid)}>
+                <div className="flex justify-center">
+                  {clan && <ResultClanImage value={clan} />}
+                </div>
               </td>
             )}
+
             <td
-              className="name text-fgName dark:text-fgNameDark"
+              className="min-w-[340px] cursor-pointer"
               onClick={() => handleOpen(deck.deckid)}
             >
               <div
-                className="name flex justify-between text-fgName dark:text-fgNameDark"
+                className="flex justify-between text-fgName dark:text-fgNameDark"
                 title={deck.name}
               >
                 {deck.name}
@@ -387,8 +395,9 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
               </div>
             </td>
             {isDesktop && (
-              <td className="preview">
+              <td className="min-w-[40px]">
                 <div
+                  className="flex justify-center"
                   onMouseEnter={() => setShowDeck(deck.deckid)}
                   onMouseLeave={() => setShowDeck(false)}
                 >
@@ -396,7 +405,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                     placement="right"
                     show={showDeck === deck.deckid}
                     overlay={
-                      <div className="flex flex-row items-start">
+                      <div className="flex">
                         <div
                           onClick={(event) => {
                             if (event.target === event.currentTarget)
@@ -418,22 +427,23 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                       </div>
                     }
                   >
-                    <div>
-                      <EyeFill />
-                    </div>
+                    <EyeFill />
                   </Tooltip>
                 </div>
               </td>
             )}
             {!isMobile && (
-              <td className="date" onClick={() => handleOpen(deck.deckid)}>
+              <td
+                className="min-w-[100px] whitespace-nowrap cursor-pointer"
+                onClick={() => handleOpen(deck.deckid)}
+              >
                 {new Date(deck.timestamp).toISOString().slice(0, 10)}
               </td>
             )}
-            <td className="tags">
+            <td className="w-full">
               <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
             </td>
-            <td className="buttons">
+            <td>
               <div className="flex justify-end space-x-1">
                 <DeckHideButton deck={deck} />
                 {!isMobile && (
@@ -469,86 +479,88 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
         dialogClassName={isMobile ? '' : 'modal-x-wide'}
         title="Select Deck"
       >
-        <div>
-          <DeckSelectAdvModalTotal
-            tagsFilter={tagsFilter}
-            setTagsFilter={setTagsFilter}
-          />
-          <table className="decks-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
-            <thead>
-              <tr>
-                <th className="select">
-                  <Checkbox
-                    name="selectAll"
-                    checked={isSelectedAll}
-                    onChange={() => toggleSelectAll()}
-                  />
-                </th>
-                {inventoryMode && !isMobile && (
-                  <th className="inventory">
-                    <Select
-                      classNamePrefix="no-dropdown react-select"
-                      options={invOptions}
-                      onChange={(e) => setInvFilter(e.value)}
-                      value={invOptions.find((obj) => obj.value === invFilter)}
-                      isSearchable={false}
-                    />
-                  </th>
-                )}
-                {!isMobile && (
-                  <th className="clan">
-                    <Select
-                      classNamePrefix="no-dropdown react-select"
-                      options={clanOptions}
-                      onChange={(e) => setClanFilter(e.value)}
-                      value={clanOptions.find(
-                        (obj) => obj.value === clanFilter.toLowerCase()
-                      )}
-                      isSearchable={!isMobile}
-                    />
-                  </th>
-                )}
-                <th className="name text-fgName dark:text-fgNameDark">
-                  <input
-                    placeholder="Filter by Deck or Card Name"
-                    type="text"
-                    name="text"
-                    autoComplete="off"
-                    spellCheck="false"
-                    value={nameFilter}
-                    onChange={handleChangeNameFilter}
-                  />
-                </th>
-                {isDesktop && <th />}
-                {!isMobile && <th />}
-                <th className="tags">
-                  <DeckSelectAdvModalTagsFilter
-                    tagsFilter={tagsFilter}
-                    handleChangeTagsFilter={handleChangeTagsFilter}
-                    allTagsOptions={allTagsOptions}
-                  />
-                </th>
-                <th className="buttons">
-                  <div
-                    className={`${
-                      isMobile ? '' : 'flex items-center justify-end '
-                    }`}
-                  >
+        <div className="space-y-4">
+          <div>
+            <DeckSelectAdvModalTotal
+              tagsFilter={tagsFilter}
+              setTagsFilter={setTagsFilter}
+            />
+            <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
+              <thead>
+                <tr>
+                  <th className="min-w-[30px]">
                     <Checkbox
-                      name="revFilter"
-                      label={isDesktop ? 'Show Revisions' : 'Rev'}
-                      checked={revFilter}
-                      onChange={() => setRevFilter(!revFilter)}
+                      name="selectAll"
+                      checked={isSelectedAll}
+                      onChange={toggleSelectAll}
+                      className="justify-center"
                     />
-                    <div className="flex justify-end">
-                      <DeckSelectSortForm onChange={setSortMethod} />
+                  </th>
+                  {inventoryMode && !isMobile && (
+                    <th>
+                      <Select
+                        classNamePrefix="no-dropdown react-select"
+                        options={invOptions}
+                        onChange={(e) => setInvFilter(e.value)}
+                        value={invOptions.find(
+                          (obj) => obj.value === invFilter
+                        )}
+                        isSearchable={false}
+                      />
+                    </th>
+                  )}
+                  {!isMobile && (
+                    <th>
+                      <Select
+                        classNamePrefix="no-dropdown react-select"
+                        options={clanOptions}
+                        onChange={(e) => setClanFilter(e.value)}
+                        value={clanOptions.find(
+                          (obj) => obj.value === clanFilter.toLowerCase()
+                        )}
+                        isSearchable={!isMobile}
+                      />
+                    </th>
+                  )}
+                  <th className="min-w-[340px]">
+                    <Input
+                      placeholder="Filter by Deck or Card Name"
+                      type="text"
+                      name="text"
+                      autoComplete="off"
+                      spellCheck="false"
+                      value={nameFilter}
+                      onChange={handleChangeNameFilter}
+                    />
+                  </th>
+                  {isDesktop && <th />}
+                  {!isMobile && <th />}
+                  <th className="w-full">
+                    <DeckSelectAdvModalTagsFilter
+                      tagsFilter={tagsFilter}
+                      handleChangeTagsFilter={handleChangeTagsFilter}
+                      allTagsOptions={allTagsOptions}
+                    />
+                  </th>
+                  <th>
+                    {/* TODO check on mobile, className was '' */}
+                    <div className="flex items-center justify-end">
+                      <Checkbox
+                        name="revFilter"
+                        label={isDesktop ? 'Show Revisions' : 'Rev'}
+                        checked={revFilter}
+                        onChange={() => setRevFilter(!revFilter)}
+                      />
+                      <div className="flex justify-end">
+                        <DeckSelectSortForm onChange={setSortMethod} />
+                      </div>
                     </div>
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>{deckRows}</tbody>
-          </table>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>{deckRows}</tbody>
+            </table>
+          </div>
           <div className="flex justify-end ">
             <Menu as="div" className="relative">
               <MenuButton

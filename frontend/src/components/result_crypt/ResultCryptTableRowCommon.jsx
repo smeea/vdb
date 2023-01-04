@@ -54,7 +54,7 @@ const ResultCryptTableRowCommon = ({
         </td>
       )}
       <td
-        className="name text-fgName dark:text-fgNameDark"
+        className="name"
         onClick={() => handleClick(card)}
       >
         <ConditionalTooltip

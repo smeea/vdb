@@ -17,6 +17,7 @@ import {
   Modal,
   Button,
   Checkbox,
+  Input,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp, deckStore, inventoryStore, deckUpdate } from 'context';
@@ -284,7 +285,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               {!isMobile && <th className="inventory"></th>}
               {!isMobile && <th className="min-w-[50px]"></th>}
               <th className="min-w-[230px] sm:min-w-[250px] text-fgName dark:text-fgNameDark">
-                <input
+                <Input
                   placeholder="Filter by Name"
                   type="text"
                   name="text"

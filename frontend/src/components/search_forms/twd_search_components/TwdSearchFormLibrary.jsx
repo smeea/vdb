@@ -43,7 +43,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
                   disabled={isMobile}
                 >
                   <div
-                    className="name text-fgName dark:text-fgNameDark"
+                    className="name"
                     onClick={() => setModalCard(libraryCardBase[id])}
                   >
                     <ResultLibraryName card={libraryCardBase[id]} />

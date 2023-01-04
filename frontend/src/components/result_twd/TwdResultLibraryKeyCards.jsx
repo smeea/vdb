@@ -79,7 +79,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
           <ResultLibraryTypeImage value={card.c.Type} />
         </td>
         <td
-          className="name text-fgName dark:text-fgNameDark "
+          className="name"
           onClick={() => handleClick(card.c)}
         >
           <ConditionalTooltip
