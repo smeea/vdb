@@ -8,6 +8,7 @@ import {
   ResultCryptTotal,
   ResultCryptTotalInfo,
   ButtonFloat,
+  ErrorMessage,
 } from 'components';
 import { cryptSort } from 'utils';
 import { useApp, deckStore } from 'context';
@@ -53,9 +54,9 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
-        <div className="error-message flex items-center justify-center font-bold">
+        <ErrorMessage>
           {cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}
-        </div>
+        </ErrorMessage>
       )}
       {cards && cards.length > 0 && (
         <>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { TwdResult, TwdSearchForm } from 'components';
+import { TwdResult, TwdSearchForm, ErrorMessage } from 'components';
 import { useApp, searchResults, setTwdResults } from 'context';
 
 const Twd = () => {
@@ -22,11 +22,7 @@ const Twd = () => {
           {twdResults && (
             <TwdResult results={twdResults} setResults={setTwdResults} />
           )}
-          {error && (
-            <div className="error-message flex items-center justify-center font-bold">
-              {error}
-            </div>
-          )}
+          {error && <ErrorMessage>{error}</ErrorMessage>}
         </div>
         <div
           className={`basis-full md:basis-1/3 xl:basis-1/4

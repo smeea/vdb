@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { PdaResult, PdaSearchForm } from 'components';
+import { PdaResult, PdaSearchForm, ErrorMessage } from 'components';
 import { useApp, searchResults, setPdaResults } from 'context';
 
 const Pda = () => {
@@ -22,11 +22,7 @@ const Pda = () => {
           {pdaResults && (
             <PdaResult results={pdaResults} setResults={setPdaResults} />
           )}
-          {error && (
-            <div className="error-message flex items-center justify-center font-bold">
-              {error}
-            </div>
-          )}
+          {error && <ErrorMessage>{error}</ErrorMessage>}
         </div>
         <div
           className={`basis-full md:basis-1/3 xl:basis-1/4

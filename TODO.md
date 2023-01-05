@@ -34,5 +34,4 @@
 - Replace -[#HEX] with config colors
 - Refactor div with single nested div
 - Remove useless items-center and justify-center from Table components
-- error-message elements into component
 - Check if getClan can be used elsewhere

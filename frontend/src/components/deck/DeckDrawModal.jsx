@@ -10,6 +10,7 @@ import {
   DeckDrawLibraryTable,
   ButtonFloat,
   ResultCryptCapacity,
+  ErrorMessage,
 } from 'components';
 
 import { useApp } from 'context';
@@ -107,9 +108,7 @@ const DeckDrawModal = ({
                 </div>
               </div>
               {cryptTotal < 4 && (
-                <div className="error-message flex items-center justify-center font-bold">
-                  NOT ENOUGH CARDS FOR INITIAL DRAW
-                </div>
+                <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>
               )}
               <DeckDrawCryptTable
                 crypt={crypt}
@@ -164,9 +163,7 @@ const DeckDrawModal = ({
               </div>
             </div>
             {libraryTotal < 7 && (
-              <div className="error-message flex items-center justify-center font-bold">
-                NOT ENOUGH CARDS FOR INITIAL DRAW
-              </div>
+              <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>
             )}
             <DeckDrawLibraryTable
               handleClick={burnLibrary}

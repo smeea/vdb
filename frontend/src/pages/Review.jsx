@@ -13,6 +13,7 @@ import {
   DeckChangeDescription,
   Modal,
   ButtonFloat,
+  ErrorMessage,
 } from 'components';
 import { useApp, deckStore } from 'context';
 import { useDeck, useTags } from 'hooks';
@@ -265,11 +266,7 @@ const Review = () => {
               )}
             </div>
           </div>
-          {error && (
-            <div className="error-message flex items-center justify-center font-bold">
-              {error}
-            </div>
-          )}
+          {error && <ErrorMessage>{error}</ErrorMessage>}
           {deckFrom && (
             <div className="flex flex-row">
               <div className="md:basis-7/12">

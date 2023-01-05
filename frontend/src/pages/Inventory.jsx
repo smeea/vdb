@@ -14,6 +14,7 @@ import {
   InventoryShareModal,
   Modal,
   ButtonFloat,
+  ErrorMessage,
 } from 'components';
 import { useApp, inventoryStore } from 'context';
 
@@ -182,13 +183,7 @@ const Inventory = () => {
       ) : (
         <>
           {inventoryError ? (
-            <div className=" flex flex-row items-center justify-center">
-              <div className="basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-                <div className="error-message flex items-center justify-center font-bold">
-                  {inventoryError}
-                </div>
-              </div>
-            </div>
+            <ErrorMessage>{inventoryError}</ErrorMessage>
           ) : (
             <div className="flex h-[70vh] flex-col items-center justify-center space-y-10">
               <div className="flex justify-center text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">

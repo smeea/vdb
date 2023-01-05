@@ -7,6 +7,7 @@ import {
   ButtonFloat,
   ResultLibraryTable,
   ResultLibraryTotal,
+  ErrorMessage,
 } from 'components';
 import { librarySort } from 'utils';
 import { useApp, deckStore } from 'context';
@@ -48,9 +49,9 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
-        <div className="error-message flex items-center justify-center font-bold">
+        <ErrorMessage>
           {cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}
-        </div>
+        </ErrorMessage>
       )}
       {cards && cards.length > 0 && (
         <>

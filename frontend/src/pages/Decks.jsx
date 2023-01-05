@@ -24,6 +24,7 @@ import {
   Modal,
   Seating,
   ButtonFloat,
+  ErrorMessage,
 } from 'components';
 import { deckStore, useApp, setDeck } from 'context';
 import { useDeck, useDeckMissing, useTags } from 'hooks';
@@ -242,13 +243,7 @@ const Decks = () => {
               )}
             </div>
           </div>
-          {error && (
-            <div className="flex flex-row">
-              <div className="error-message flex items-center justify-center font-bold">
-                {error}
-              </div>
-            </div>
-          )}
+          {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
             <div className={`flex flex-row ${X_SPACING}`}>
               {playtest ||
@@ -265,11 +260,9 @@ const Decks = () => {
                   </div>
                 </>
               ) : (
-                <div>
-                  <div className="error-message flex items-center justify-center font-bold">
-                    CONTAIN PLAYTEST CARDS
-                  </div>
-                </div>
+                <>
+                  {error && <ErrorMessage>CONTAIN PLAYTEST CARDS</ErrorMessage>}
+                </>
               )}
             </div>
           )}
