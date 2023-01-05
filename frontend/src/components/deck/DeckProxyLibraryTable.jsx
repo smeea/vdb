@@ -1,20 +1,9 @@
 import React from 'react';
-import { useSnapshot } from 'valtio';
-import Select from 'react-select';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import {
-  UsedPopover,
-  DeckCardQuantity,
-  ResultLibraryTableRowCommon,
-  CardImage,
-  Tooltip,
-  Checkbox,
-} from 'components';
-import setsAndPrecons from 'assets/data/setsAndPrecons.json';
-import { useApp, deckStore, usedStore, inventoryStore } from 'context';
-import { getSoftMax, getHardTotal } from 'utils';
+import { DeckProxyLibraryTableRow } from 'components';
+import { useApp } from 'context';
 
 const DeckProxyLibraryTable = ({
+  inventoryType,
   handleModalCardOpen,
   cards,
   proxySelected,
@@ -23,151 +12,29 @@ const DeckProxyLibraryTable = ({
   handleSetSelector,
   placement,
 }) => {
-  const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();
-  const decks = useSnapshot(deckStore).decks;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const usedLibrary = useSnapshot(usedStore).library;
+  // const { setShowFloatingButtons } = useApp();
 
   const cardRows = cards.map((card, idx) => {
-    const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
-    const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
-    const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
-
-    const setOptions = [
-      {
-        value: '',
-        id: card.c.Id,
-        label: <div className="text-xs">Newest (default)</div>,
-      },
-    ];
-
-    Object.keys(setsAndPrecons).map((i) => {
-      if (card.c['Set'][i] && i !== 'POD') {
-        setOptions.push({
-          value: i.toLowerCase(),
-          id: card.c.Id,
-          label: (
-            <div className="text-xs">
-              {setsAndPrecons[i].name}
-              {" '"}
-              {setsAndPrecons[i].date.slice(2, 4)}
-            </div>
-          ),
-        });
-      }
-    });
-
     return (
-      <React.Fragment key={card.c.Id}>
-        <tr
-          className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-            idx % 2
-              ? 'bg-bgThird dark:bg-bgThirdDark'
-              : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-          }`}
-        >
-          <td className="proxy-selector">
-            <Checkbox
-              id={card.c.Id}
-              name="print"
-              checked={
-                proxySelected[card.c.Id]
-                  ? proxySelected[card.c.Id].print
-                  : false
-              }
-              onChange={handleProxySelector}
-            />
-          </td>
-          {inventoryMode && decks ? (
-            <td className="quantity">
-              <Tooltip
-                placement="right"
-                overlay={<UsedPopover cardid={card.c.Id} />}
-              >
-                <DeckCardQuantity
-                  card={card.c}
-                  deckid={null}
-                  q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
-                  inInventory={inInventory}
-                  softUsedMax={softUsedMax}
-                  hardUsedTotal={hardUsedTotal}
-                  cardChange={handleProxyCounter}
-                  isSelected={
-                    proxySelected[card.c.Id] && proxySelected[card.c.Id].print
-                  }
-                  inProxy
-                />
-              </Tooltip>
-            </td>
-          ) : (
-            <td className="quantity">
-              <DeckCardQuantity
-                card={card.c}
-                deckid={null}
-                q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
-                cardChange={handleProxyCounter}
-              />
-            </td>
-          )}
-          <ResultLibraryTableRowCommon
-            card={card.c}
-            handleClick={handleModalCardOpen}
-            placement={placement}
-            inDeck
-          />
-          {!isMobile && (
-            <>
-              <td className="proxy-set">
-                <Select
-                  classNamePrefix="react-select"
-                  options={setOptions}
-                  isSearchable={false}
-                  name="set"
-                  placeholder="Set"
-                  value={setOptions.find((obj) => {
-                    if (
-                      proxySelected[card.c.Id] &&
-                      proxySelected[card.c.Id].set
-                    ) {
-                      obj.value === proxySelected[card.c.Id].set.toLowerCase();
-                    }
-                  })}
-                  onChange={handleSetSelector}
-                />
-              </td>
-              <td className="proxy-set-image">
-                <Tooltip
-                  placement="left"
-                  overlay={
-                    <div>
-                      <CardImage
-                        card={card.c}
-                        set={
-                          proxySelected[card.c.Id] &&
-                          proxySelected[card.c.Id].set
-                        }
-                      />
-                    </div>
-                  }
-                >
-                  <div>
-                    <EyeFill />
-                  </div>
-                </Tooltip>
-              </td>
-            </>
-          )}
-        </tr>
-      </React.Fragment>
+      <DeckProxyLibraryTableRow
+        inventoryType={inventoryType}
+        key={card.Id}
+        card={card}
+        idx={idx}
+        handleClick={handleModalCardOpen}
+        proxySelected={proxySelected}
+        handleProxySelector={handleProxySelector}
+        handleProxyCounter={handleProxyCounter}
+        handleSetSelector={handleSetSelector}
+        placement={placement}
+      />
     );
   });
 
   return (
-    <>
-      <table className="w-full">
-        <tbody>{cardRows}</tbody>
-      </table>
-    </>
+    <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+      <tbody>{cardRows}</tbody>
+    </table>
   );
 };
 

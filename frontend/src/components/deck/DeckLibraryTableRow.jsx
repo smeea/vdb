@@ -98,87 +98,39 @@ const DeckLibraryTableRow = ({
       {...swipeHandlers}
       className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
-      {isEditable ? (
-        <>
-          {inventoryMode && decks ? (
-            <>
-              {deck.inventoryType && !inSearch && !isMobile && (
-                <td>
-                  <div className="relative flex items-center">
-                    <div
-                      className={`inventory-card-custom absolute left-[-24px]
+      {inventoryMode && deck.inventoryType && !inSearch && !isMobile && (
+        <td className="max-w-0">
+          <div className="relative flex items-center">
+            <div
+              className={`inventory-card-custom absolute left-[-24px]
                         ${card.i ? '' : 'not-selected opacity-0'}
                       `}
-                      onClick={() => toggleInventoryState(deckid, card.c.Id)}
-                    >
-                      {deck.inventoryType == 's' ? (
-                        <PinAngleFill />
-                      ) : (
-                        <Shuffle />
-                      )}
-                    </div>
-                  </div>
-                </td>
-              )}
-              <td className="quantity">
-                <ConditionalTooltip
-                  placement="bottom"
-                  overlay={<UsedPopover cardid={card.c.Id} />}
-                  disabled={disableOverlay}
-                >
-                  <DeckCardQuantity
-                    card={card.c}
-                    q={card.q}
-                    deckid={deckid}
-                    cardChange={deckCardChange}
-                    inInventory={inInventory}
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                    inventoryType={decks[deckid]?.inventoryType}
-                  />
-                </ConditionalTooltip>
-              </td>
-            </>
-          ) : (
-            <td className="quantity">
-              <DeckCardQuantity
-                card={card.c}
-                q={card.q}
-                deckid={deckid}
-                cardChange={deckCardChange}
-              />
-            </td>
-          )}
-        </>
-      ) : (
-        <>
-          {inventoryMode && decks ? (
-            <td className="quantity-no-buttons ">
-              <ConditionalTooltip
-                placement="bottom"
-                overlay={<UsedPopover cardid={card.c.Id} />}
-                disabled={disableOverlay}
-              >
-                <div
-                  className={
-                    inMissing
-                      ? null
-                      : inInventory < card.q
-                      ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
-                      : inInventory < hardUsedTotal + card.q
-                      ? 'bg-bgWarning dark:bg-bgWarningDark'
-                      : null
-                  }
-                >
-                  {card.q || null}
-                </div>
-              </ConditionalTooltip>
-            </td>
-          ) : (
-            <td className="quantity-no-buttons ">{card.q || null}</td>
-          )}
-        </>
+              onClick={() => toggleInventoryState(deckid, card.c.Id)}
+            >
+              {deck.inventoryType == 's' ? <PinAngleFill /> : <Shuffle />}
+            </div>
+          </div>
+        </td>
       )}
+      <td className={isEditable ? 'w-[75px]' : 'w-[40px]'}>
+        <ConditionalTooltip
+          placement="bottom"
+          overlay={<UsedPopover cardid={card.c.Id} />}
+          disabled={disableOverlay || !inventoryMode}
+        >
+          <DeckCardQuantity
+            card={card.c}
+            q={card.q}
+            deckid={deckid}
+            cardChange={deckCardChange}
+            inInventory={inInventory}
+            softUsedMax={softUsedMax}
+            hardUsedTotal={hardUsedTotal}
+            inventoryType={decks[deckid]?.inventoryType}
+            isEditable={isEditable}
+          />
+        </ConditionalTooltip>
+      </td>
       <ResultLibraryTableRowCommon
         card={card.c}
         handleClick={handleClick}

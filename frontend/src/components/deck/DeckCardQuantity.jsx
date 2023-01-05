@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'components';
 import { useApp } from 'context';
 
@@ -13,8 +13,9 @@ const DeckCardQuantity = ({
   isSelected,
   cardChange,
   inProxy,
+  isEditable,
 }) => {
-  const { isMobile } = useApp();
+  const { inventoryMode, isMobile } = useApp();
 
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(q ? q : '');
@@ -33,100 +34,125 @@ const DeckCardQuantity = ({
     setManual(false);
   };
 
-  const miss = useMemo(() => {
-    if (inventoryType) {
+  const getInventoryColor = () => {
+    if (inventoryMode && inventoryType) {
       if (inProxy) {
         return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
           ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
-          : null;
+          : '';
       } else {
         return inInventory < softUsedMax + hardUsedTotal
           ? inInventory < q
             ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
             : inventoryType === 'h'
             ? 'bg-bgWarning dark:bg-bgWarningDark'
-            : null
-          : null;
+            : ''
+          : '';
       }
     } else {
-      return null;
+      return '';
     }
-  }, [q, inventoryType, inProxy, softUsedMax, hardUsedTotal, isSelected]);
+  };
+
+  // TODO check if works OK inMissing
+  //     className={
+  //       inMissing
+  //         ? null
+  //         : inInventory < card.q
+  //         ? 'inv-miss-full'
+  //         : inInventory < hardUsedTotal + card.q
+  //         ? 'inv-miss-part'
+  //         : null
+  //     }
+
+  const inventoryColor = getInventoryColor();
 
   return (
-    <div className="flex items-center justify-between">
-      {isMobile ? (
+    <div className="flex items-center justify-between text-lg">
+      {isEditable || inProxy ? (
         <>
-          <a
-            className="relative before:absolute before:inset-[-12px] before:content-['']"
-            onClick={() => cardChange(deckid, card, q - 1)}
-          >
-            <Button
-              variant="primary"
-              className="h-[27px] w-[18px] px-0 py-0 text-sm"
-            >
-              -
-            </Button>
-          </a>
-          <div className={miss ? `${miss}` : ''}>{q == 0 ? '' : q}</div>
-          <a
-            className="relative before:absolute before:inset-[-12px] before:content-['']"
-            onClick={() => cardChange(deckid, card, q + 1)}
-          >
-            <Button
-              variant="primary"
-              className="h-[27px] w-[18px] px-0 py-0 text-sm"
-            >
-              +
-            </Button>
-          </a>
+          {isMobile ? (
+            <>
+              <a
+                className="relative before:absolute before:inset-[-12px] before:content-['']"
+                onClick={() => cardChange(deckid, card, q - 1)}
+              >
+                <Button
+                  variant="primary"
+                  className="h-[27px] w-[18px] px-0 py-0 text-sm"
+                >
+                  -
+                </Button>
+              </a>
+              <div className={inventoryColor}>{q == 0 ? '' : q}</div>
+              <a
+                className="relative before:absolute before:inset-[-12px] before:content-['']"
+                onClick={() => cardChange(deckid, card, q + 1)}
+              >
+                <Button
+                  variant="primary"
+                  className="h-[27px] w-[18px] px-0 py-0 text-sm"
+                >
+                  +
+                </Button>
+              </a>
+            </>
+          ) : (
+            <>
+              {!manual && (
+                <Button
+                  className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
+                  variant="primary"
+                  onClick={() => cardChange(deckid, card, q - 1)}
+                  tabIndex={-1}
+                >
+                  -
+                </Button>
+              )}
+              <div
+                tabIndex={0}
+                className={
+                  manual
+                    ? ''
+                    : `flex w-full justify-center mx-1 ${inventoryColor}`
+                }
+                onFocus={() => setManual(true)}
+              >
+                {manual ? (
+                  <form onSubmit={handleSubmit}>
+                    <input
+                      className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-2 outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+                      placeholder=""
+                      type="number"
+                      value={state}
+                      onBlur={handleSubmit}
+                      onChange={handleManualChange}
+                      autoFocus
+                    />
+                  </form>
+                ) : (
+                  <>{q == 0 ? <>&nbsp;&nbsp;</> : q}</>
+                )}
+              </div>
+              {!manual && (
+                <Button
+                  className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
+                  variant="primary"
+                  onClick={() => cardChange(deckid, card, q + 1)}
+                  tabIndex={-1}
+                >
+                  +
+                </Button>
+              )}
+            </>
+          )}
         </>
       ) : (
-        <>
-          {!manual && (
-            <Button
-              className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
-              variant="primary"
-              onClick={() => cardChange(deckid, card, q - 1)}
-              tabIndex={-1}
-            >
-              -
-            </Button>
-          )}
-          <div
-            tabIndex={0}
-            className={
-              manual ? '' : `flex w-full justify-center mx-1 ${miss ?? ''}`
-            }
-            onFocus={() => setManual(true)}
-          >
-            {manual ? (
-              <form onSubmit={handleSubmit}>
-                <input
-                  className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-2 outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
-                  placeholder=""
-                  type="number"
-                  autoFocus={true}
-                  value={state}
-                  onBlur={handleSubmit}
-                  onChange={handleManualChange}
-                />
-              </form>
-            ) : (
-              <>{q == 0 ? <>&nbsp;&nbsp;</> : q}</>
-            )}
-          </div>
-          {!manual && (
-            <Button
-              className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
-              variant="primary"
-              onClick={() => cardChange(deckid, card, q + 1)}
-              tabIndex={-1}
-            >
-              +
-            </Button>
-          )}
-        </>
+        <div
+          className={`flex w-full items-center justify-center ${inventoryColor} bg-[#0000aa]/5 border-r border-bgSecondary dark:border-bgSecondaryDark`}
+        >
+          {q || null}
+        </div>
       )}
     </div>
   );

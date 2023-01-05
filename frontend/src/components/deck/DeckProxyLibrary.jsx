@@ -10,7 +10,7 @@ import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DeckProxyLibrary = ({
-  cards,
+  deck,
   proxySelected,
   handleSetSelector,
   handleProxyCounter,
@@ -25,7 +25,7 @@ const DeckProxyLibrary = ({
     librarySideByType,
     trifleTotal,
     libraryByTypeTotal,
-  } = useDeckLibrary(cards);
+  } = useDeckLibrary(deck.library);
 
   const proxiesToPrint = Object.keys(proxySelected)
     .filter(
@@ -58,6 +58,7 @@ const DeckProxyLibrary = ({
         />
       </div>
       <DeckProxyLibraryTable
+        inventoryType={deck.inventoryType}
         handleModalCardOpen={handleModalCardOpen}
         cards={libraryByType[cardtype]}
         handleProxySelector={handleProxySelector}
@@ -76,6 +77,7 @@ const DeckProxyLibrary = ({
         trifleTotal={cardtype == MASTER && trifleTotal}
       />
       <DeckProxyLibraryTable
+        inventoryType={deck.inventoryType}
         handleModalCardOpen={handleModalSideCardOpen}
         cards={librarySideByType[cardtype]}
         handleProxySelector={handleProxySelector}

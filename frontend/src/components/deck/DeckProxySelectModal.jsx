@@ -172,7 +172,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
                 }
               >
                 <DeckProxyCrypt
-                  cards={deck.crypt}
+                  deck={deck}
                   handleProxySelector={handleProxySelector}
                   handleSetSelector={handleSetSelector}
                   handleProxyCounter={handleProxyCounter}
@@ -184,7 +184,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
           <div className="basis-full md:basis-5/12">
             {deck.library && (
               <DeckProxyLibrary
-                cards={deck.library}
+                deck={deck}
                 handleProxySelector={handleProxySelector}
                 handleSetSelector={handleSetSelector}
                 handleProxyCounter={handleProxyCounter}

@@ -71,7 +71,7 @@ const InventoryCryptTableRow = ({
     >
       {inShared ? (
         <div
-          className={`min-w-[45px]' } flex items-center justify-center border-r border-bgSecondary bg-[#0000aa]/5 text-lg
+          className={`flex min-w-[40px] items-center justify-center border-r border-bgSecondary bg-[#0000aa]/5 text-lg
         dark:border-bgSecondaryDark`}
         >
           {card.q || null}

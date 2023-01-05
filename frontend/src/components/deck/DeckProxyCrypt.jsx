@@ -7,7 +7,7 @@ import { deckStore } from 'context';
 import { useModalCardController, useDeckCrypt } from 'hooks';
 
 const DeckProxyCrypt = ({
-  cards,
+  deck,
   proxySelected,
   handleProxySelector,
   handleSetSelector,
@@ -17,7 +17,7 @@ const DeckProxyCrypt = ({
   const changeTimer = useSnapshot(deckStore).cryptTimer;
 
   const { cryptSide, sortedCards, sortedCardsSide } = useDeckCrypt(
-    cards,
+    deck.crypt,
     cryptDeckSort,
     changeTimer
   );
@@ -49,6 +49,7 @@ const DeckProxyCrypt = ({
         Crypt [{cryptTotalSelected}]
       </div>
       <DeckProxyCryptTable
+        inventoryType={deck.inventoryType}
         handleModalCardOpen={handleModalCardOpen}
         cards={sortedCards}
         handleProxySelector={handleProxySelector}
@@ -62,6 +63,7 @@ const DeckProxyCrypt = ({
             <b>Side Crypt</b>
           </div>
           <DeckProxyCryptTable
+            inventoryType={deck.inventoryType}
             handleModalCardOpen={handleModalSideCardOpen}
             cards={sortedCardsSide}
             handleProxySelector={handleProxySelector}
