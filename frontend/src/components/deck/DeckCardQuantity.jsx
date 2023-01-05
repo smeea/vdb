@@ -85,7 +85,7 @@ const DeckCardQuantity = ({
         <>
           {!manual && (
             <Button
-              className="h-[27px] w-[18px] px-0 py-0 text-sm"
+              className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => cardChange(deckid, card, q - 1)}
               tabIndex={-1}
@@ -95,7 +95,9 @@ const DeckCardQuantity = ({
           )}
           <div
             tabIndex={0}
-            className={manual ? '' : miss ? `${miss}` : ''}
+            className={
+              manual ? '' : `flex w-full justify-center mx-1 ${miss ?? ''}`
+            }
             onFocus={() => setManual(true)}
           >
             {manual ? (
@@ -116,7 +118,7 @@ const DeckCardQuantity = ({
           </div>
           {!manual && (
             <Button
-              className="h-[27px] w-[18px] px-0 py-0 text-sm"
+              className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => cardChange(deckid, card, q + 1)}
               tabIndex={-1}

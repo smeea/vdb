@@ -79,7 +79,7 @@ const InventoryLibraryTableRow = ({
           {card.q || null}
         </div>
       ) : (
-        <div className="flex min-w-[70px] items-center">
+        <div className="flex min-w-[75px] items-center px-0.5">
           <InventoryCardQuantity
             cardid={card.c.Id}
             q={card.q}

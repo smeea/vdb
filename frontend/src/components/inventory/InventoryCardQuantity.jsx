@@ -81,7 +81,7 @@ const InventoryCardQuantity = ({
         <>
           {!manual && (
             <Button
-              className="h-[27px] w-[18px] px-0 py-0 text-sm"
+              className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => handleQuantityChange(-1)}
               tabIndex={-1}
@@ -94,9 +94,11 @@ const InventoryCardQuantity = ({
             className={
               manual
                 ? ''
-                : state < softUsedMax + hardUsedTotal
-                ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark '
-                : ''
+                : `flex w-full justify-center mx-1 ${
+                    state < softUsedMax + hardUsedTotal
+                      ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
+                      : ''
+                  }`
             }
             onFocus={() => setManual(true)}
           >
@@ -118,7 +120,7 @@ const InventoryCardQuantity = ({
           </div>
           {!manual && (
             <Button
-              className="h-[27px] w-[18px] px-0 py-0 text-sm"
+              className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
               variant="primary"
               onClick={() => handleQuantityChange(1)}
               tabIndex={-1}
