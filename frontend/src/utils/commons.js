@@ -102,3 +102,25 @@ export const getCardsArray = (cardsList) => {
   });
   return cryptArr;
 };
+
+export const getClan = (crypt) => {
+  const topClan = Object.values(crypt).reduce(
+    (acc, card) => {
+      const total = card.q + acc.t;
+
+      if (acc.c === card.c.Clan) {
+        return { c: acc.c, q: acc.q + card.q, t: total };
+      } else if (card.q > acc.q) {
+        return { c: card.c.Clan, q: card.q, t: total };
+      }
+      return { c: acc.c, q: acc.q, t: total };
+    },
+    { c: null, q: 0, t: 0 }
+  );
+
+  if (topClan.q > topClan.t / 2) {
+    return topClan.c;
+  } else {
+    return null;
+  }
+};

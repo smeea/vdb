@@ -60,6 +60,7 @@ export { default as DeckReviewButton } from './DeckReviewButton.jsx';
 export { default as DeckSearchSimilarButton } from './DeckSearchSimilarButton.jsx';
 export { default as DeckSelect } from './DeckSelect.jsx';
 export { default as DeckSelectAdvModal } from './DeckSelectAdvModal.jsx';
+export { default as DeckSelectAdvModalTableRow } from './DeckSelectAdvModalTableRow.jsx';
 export { default as DeckSelectAdvModalTagsFilter } from './DeckSelectAdvModalTagsFilter.jsx';
 export { default as DeckSelectAdvModalTotal } from './DeckSelectAdvModalTotal.jsx';
 export { default as DeckSelectMy } from './DeckSelectMy.jsx';
