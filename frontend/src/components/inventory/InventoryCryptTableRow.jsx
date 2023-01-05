@@ -11,6 +11,7 @@ import {
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
+  ResultCryptClanGroupTitle,
   ConditionalTooltip,
   Tooltip,
 } from 'components';
@@ -176,15 +177,7 @@ const InventoryCryptTableRow = ({
         </>
       ) : (
         <div className="min-w-[45px]" onClick={() => handleClick(card.c)}>
-          <div className="flex justify-center">
-            <ResultClanImage value={card.c.Clan} />
-          </div>
-          <div className="flex justify-end space-x-1 text-xs">
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
-            </div>
-            <ResultCryptGroup value={card.c.Group} />
-          </div>
+          <ResultCryptClanGroupTitle card={card.c} />
         </div>
       )}
     </div>

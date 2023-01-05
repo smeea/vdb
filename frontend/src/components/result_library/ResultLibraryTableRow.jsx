@@ -2,25 +2,15 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import {
-  UsedPopover,
+  ResultUsed,
   ButtonAddCard,
   ResultLibraryTableRowCommon,
-  Tooltip,
 } from 'components';
-import { getHardTotal, getSoftMax } from 'utils';
-import {
-  useApp,
-  deckStore,
-  inventoryStore,
-  usedStore,
-  deckCardChange,
-} from 'context';
+import { useApp, deckStore, deckCardChange } from 'context';
 
 const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
-  const { addMode, inventoryMode, isDesktop } = useApp();
+  const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const usedLibrary = useSnapshot(usedStore).library;
   const inDeck = deck?.library[card.Id]?.q || 0;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
@@ -60,10 +50,6 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
     },
   });
 
-  const softUsedMax = getSoftMax(usedLibrary.soft[card.Id]);
-  const hardUsedTotal = getHardTotal(usedLibrary.hard[card.Id]);
-  const inInventory = inventoryLibrary[card.Id]?.q;
-
   const trBg = isSwiped
     ? isSwiped === 'left'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
@@ -83,35 +69,8 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
         </td>
       )}
       {inventoryMode && (
-        <td className="used">
-          <Tooltip
-            placement={isDesktop ? 'left' : 'bottom'}
-            overlay={<UsedPopover cardid={card.Id} />}
-          >
-            {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
-              <div
-                className={`used  flex items-center justify-between ${
-                  inInventory < softUsedMax + hardUsedTotal
-                    ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
-                    : ''
-                }
-                  `}
-              >
-                {inInventory}
-                <div
-                  className={`text-xs ${
-                    inInventory >= softUsedMax + hardUsedTotal
-                      ? 'text-midGray dark:text-midGrayDark'
-                      : 'text-[#fff] dark:text-[#fff]'
-                  } `}
-                >
-                  {inInventory >= softUsedMax + hardUsedTotal
-                    ? `+${inInventory - softUsedMax - hardUsedTotal}`
-                    : inInventory - softUsedMax - hardUsedTotal}
-                </div>
-              </div>
-            )}
-          </Tooltip>
+        <td className="min-w-[40px]">
+          <ResultUsed card={card} />
         </td>
       )}
       <ResultLibraryTableRowCommon

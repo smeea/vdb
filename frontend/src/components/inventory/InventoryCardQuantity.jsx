@@ -94,7 +94,7 @@ const InventoryCardQuantity = ({
             className={
               manual
                 ? ''
-                : `flex w-full justify-center mx-1 ${
+                : `mx-1 flex w-full justify-center ${
                     state < softUsedMax + hardUsedTotal
                       ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
                       : ''

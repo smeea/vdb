@@ -1,5 +1,6 @@
 export { default as ResultCrypt } from './ResultCrypt.jsx';
 export { default as ResultCryptCapacity } from './ResultCryptCapacity.jsx';
+export { default as ResultCryptClanGroupTitle } from './ResultCryptClanGroupTitle.jsx';
 export { default as ResultCryptDisciplines } from './ResultCryptDisciplines.jsx';
 export { default as ResultCryptGroup } from './ResultCryptGroup.jsx';
 export { default as ResultCryptLayoutText } from './ResultCryptLayoutText.jsx';

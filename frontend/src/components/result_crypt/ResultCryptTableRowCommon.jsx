@@ -8,6 +8,7 @@ import {
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
+  ResultCryptClanGroupTitle,
   ConditionalTooltip,
 } from 'components';
 import { useApp } from 'context';
@@ -28,14 +29,11 @@ const ResultCryptTableRowCommon = ({
 
   return (
     <>
-      <td
-        className={isMobile ? 'capacity' : 'capacity'}
-        onClick={() => handleClick(card)}
-      >
+      <td className="min-w-[25px]" onClick={() => handleClick(card)}>
         <ResultCryptCapacity value={card.Capacity} />
       </td>
       {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
-        <td className="disciplines" onClick={() => handleClick(card)}>
+        <td className="min-w-[170px]" onClick={() => handleClick(card)}>
           {inDeck &&
           keyDisciplines &&
           disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
@@ -53,40 +51,34 @@ const ResultCryptTableRowCommon = ({
           )}
         </td>
       )}
-      <td className="name" onClick={() => handleClick(card)}>
+      <td className="w-full" onClick={() => handleClick(card)}>
         <ConditionalTooltip
           placement={placement}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
           noPadding
         >
-          <ResultCryptName card={card} />
+          <div className="flex">
+            <ResultCryptName card={card} />
+          </div>
         </ConditionalTooltip>
       </td>
       {isWide ? (
         <>
-          <td className="title" onClick={() => handleClick(card)}>
+          <td className="min-w-[25px]" onClick={() => handleClick(card)}>
             {card.Title && <ResultCryptTitle value={card.Title} />}
           </td>
-          <td className="clan" onClick={() => handleClick(card)}>
+          <td className="min-w-[35px]" onClick={() => handleClick(card)}>
             <ResultClanImage value={card.Clan} />
           </td>
-          <td className="group" onClick={() => handleClick(card)}>
+          <td className="min-w-[15px]" onClick={() => handleClick(card)}>
             <ResultCryptGroup value={card.Group} />
           </td>
         </>
       ) : (
         <>
-          <td className="clan-group" onClick={() => handleClick(card)}>
-            <div>
-              <ResultClanImage value={card.Clan} />
-            </div>
-            <div className="flex justify-end text-xs">
-              <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-                {card.Title && <ResultCryptTitle value={card.Title} />}
-              </div>
-              <ResultCryptGroup value={card.Group} />
-            </div>
+          <td className="min-w-[50px]" onClick={() => handleClick(card)}>
+            <ResultCryptClanGroupTitle card={card} />
           </td>
         </>
       )}

@@ -16,7 +16,7 @@ import { useApp } from 'context';
 
 const Type = ({ card, handleClick }) => {
   return (
-    <td className="type" onClick={() => handleClick(card)}>
+    <td className="min-w-[25px]" onClick={() => handleClick(card)}>
       <ResultLibraryTypeImage value={card.Type} />
     </td>
   );
@@ -25,7 +25,7 @@ const Type = ({ card, handleClick }) => {
 const Cost = ({ card, handleClick }) => {
   return (
     <td
-      className={card[BLOOD_COST] ? 'cost blood' : 'cost'}
+      className={`min-w-[30px] ${card[BLOOD_COST] ? 'pb-1' : ''}`}
       onClick={() => handleClick(card)}
     >
       {(card[BLOOD_COST] || card[POOL_COST]) && (
@@ -42,7 +42,7 @@ const Name = ({ card, handleClick, placement }) => {
   const { isMobile } = useApp();
 
   return (
-    <td className="name" onClick={() => handleClick(card)}>
+    <td className="w-full" onClick={() => handleClick(card)}>
       <ConditionalTooltip
         placement={placement}
         overlay={<CardPopover card={card} />}
@@ -58,7 +58,7 @@ const Name = ({ card, handleClick, placement }) => {
 const Disciplines = ({ card, handleClick }) => {
   return (
     <td
-      className="disciplines flex items-center justify-center"
+      className="flex min-w-[90px] items-center justify-center"
       onClick={() => handleClick(card)}
     >
       {card.Clan && <ResultLibraryClan value={card.Clan} />}
@@ -70,7 +70,7 @@ const Disciplines = ({ card, handleClick }) => {
 
 const Burn = ({ card, handleClick }) => {
   return (
-    <td className="burn" onClick={() => handleClick(card)}>
+    <td className="min-w-[30px]" onClick={() => handleClick(card)}>
       {card[BURN_OPTION] && <ResultLibraryBurn />}
       {isTrifle(card) && <ResultLibraryTrifle />}
     </td>

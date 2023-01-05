@@ -44,52 +44,51 @@ const DeckDrawCryptTable = ({
     const k = nonPlayed[card.Id];
 
     return (
-      <React.Fragment key={`${idx}-${card.Id}`}>
-        <tr
-          className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-            idx % 2
-              ? 'bg-bgThird dark:bg-bgThirdDark'
-              : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-          } `}
-        >
-          <ResultCryptTableRowCommon
-            card={card}
-            handleClick={handleClick}
-            maxDisciplines={maxDisciplines}
-            keyDisciplines={keyDisciplines}
-            nonKeyDisciplines={nonKeyDisciplines}
-            disciplinesSet={disciplinesSet}
-            inDeck
-          />
-          <td className="w-9 text-right text-fgSecondary  dark:text-fgSecondaryDark">
-            {!ashHeap && (
-              <>
-                {isMobile ? (
-                  <div
-                    onClick={() =>
-                      setModalDraw({
-                        name: card['Name'],
-                        prob: <DeckDrawProbabilityText N={N} n={n} k={k} />,
-                      })
-                    }
-                  >
-                    {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
-                  </div>
-                ) : (
-                  <Tooltip
-                    placement="right"
-                    overlay={<DeckDrawProbabilityText N={N} n={n} k={k} />}
-                  >
-                    <div>{`${Math.floor(
-                      drawProbability(1, N, n, k) * 100
-                    )}%`}</div>
-                  </Tooltip>
-                )}
-              </>
-            )}
-          </td>
-        </tr>
-      </React.Fragment>
+      <tr
+        key={`${idx}-${card.Id}`}
+        className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+          idx % 2
+            ? 'bg-bgThird dark:bg-bgThirdDark'
+            : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        } `}
+      >
+        <ResultCryptTableRowCommon
+          card={card}
+          handleClick={handleClick}
+          maxDisciplines={maxDisciplines}
+          keyDisciplines={keyDisciplines}
+          nonKeyDisciplines={nonKeyDisciplines}
+          disciplinesSet={disciplinesSet}
+          inDeck
+        />
+        <td className="w-9 text-right text-fgSecondary  dark:text-fgSecondaryDark">
+          {!ashHeap && (
+            <>
+              {isMobile ? (
+                <div
+                  onClick={() =>
+                    setModalDraw({
+                      name: card['Name'],
+                      prob: <DeckDrawProbabilityText N={N} n={n} k={k} />,
+                    })
+                  }
+                >
+                  {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
+                </div>
+              ) : (
+                <Tooltip
+                  placement="right"
+                  overlay={<DeckDrawProbabilityText N={N} n={n} k={k} />}
+                >
+                  <div>{`${Math.floor(
+                    drawProbability(1, N, n, k) * 100
+                  )}%`}</div>
+                </Tooltip>
+              )}
+            </>
+          )}
+        </td>
+      </tr>
     );
   });
 
@@ -97,7 +96,7 @@ const DeckDrawCryptTable = ({
     <>
       <table
         className={`w-full border-bgSecondary dark:border-bgSecondaryDark sm:border ${
-          ashHeap ? 'search-crypt-table' : 'deck-crypt-table'
+          ashHeap ? 'search-crypt-table' : ''
         }`}
       >
         <tbody>{cardRows}</tbody>

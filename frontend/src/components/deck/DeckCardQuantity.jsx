@@ -114,7 +114,7 @@ const DeckCardQuantity = ({
                 className={
                   manual
                     ? ''
-                    : `flex w-full justify-center mx-1 ${inventoryColor}`
+                    : `mx-1 flex w-full justify-center ${inventoryColor}`
                 }
                 onFocus={() => setManual(true)}
               >
@@ -149,7 +149,7 @@ const DeckCardQuantity = ({
         </>
       ) : (
         <div
-          className={`flex w-full items-center justify-center ${inventoryColor} bg-[#0000aa]/5 border-r border-bgSecondary dark:border-bgSecondaryDark`}
+          className={`flex w-full items-center justify-center ${inventoryColor} border-r border-bgSecondary bg-[#0000aa]/5 dark:border-bgSecondaryDark`}
         >
           {q || null}
         </div>

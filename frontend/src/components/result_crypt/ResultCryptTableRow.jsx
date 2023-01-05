@@ -2,19 +2,11 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import {
-  UsedPopover,
+  ResultUsed,
   ResultCryptTableRowCommon,
   ButtonAddCard,
-  Tooltip,
 } from 'components';
-import { getSoftMax, getHardTotal } from 'utils';
-import {
-  useApp,
-  deckStore,
-  inventoryStore,
-  usedStore,
-  deckCardChange,
-} from 'context';
+import { useApp, deckStore, deckCardChange } from 'context';
 
 const ResultCryptTableRow = ({
   card,
@@ -24,10 +16,8 @@ const ResultCryptTableRow = ({
   placement,
   maxDisciplines,
 }) => {
-  const { addMode, inventoryMode, isDesktop } = useApp();
+  const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const usedCrypt = useSnapshot(usedStore).crypt;
   const inDeck = deck?.crypt[card.Id]?.q || 0;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
@@ -67,10 +57,6 @@ const ResultCryptTableRow = ({
     },
   });
 
-  const softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
-  const hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
-  const inInventory = inventoryCrypt[card.Id]?.q;
-
   const trBg = isSwiped
     ? isSwiped === 'left'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
@@ -85,7 +71,7 @@ const ResultCryptTableRow = ({
       className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
       {(inRecommendation ? isEditable : isEditable && addMode) && (
-        <td className="quantity-add ">
+        <td className="min-w-[22px]">
           <ButtonAddCard
             cardid={card.Id}
             deckid={deck.deckid}
@@ -95,35 +81,8 @@ const ResultCryptTableRow = ({
         </td>
       )}
       {inventoryMode && (
-        <td className="used">
-          <Tooltip
-            placement={isDesktop ? 'left' : 'bottom'}
-            overlay={<UsedPopover cardid={card.Id} />}
-          >
-            {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
-              <div
-                className={`used  flex items-center justify-between ${
-                  inInventory < softUsedMax + hardUsedTotal
-                    ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
-                    : ''
-                }
-                  `}
-              >
-                {inInventory}
-                <div
-                  className={`text-xs ${
-                    inInventory >= softUsedMax + hardUsedTotal
-                      ? 'text-midGray dark:text-midGrayDark'
-                      : 'text-[#fff] dark:text-[#fff]'
-                  } `}
-                >
-                  {inInventory >= softUsedMax + hardUsedTotal
-                    ? `+${inInventory - softUsedMax - hardUsedTotal}`
-                    : inInventory - softUsedMax - hardUsedTotal}
-                </div>
-              </div>
-            )}
-          </Tooltip>
+        <td className="min-w-[40px]">
+          <ResultUsed card={card} />
         </td>
       )}
       <ResultCryptTableRowCommon
