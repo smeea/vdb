@@ -35,3 +35,4 @@
 - Refactor div with single nested div
 - Remove useless items-center and justify-center from Table components
 - Check if getClan can be used elsewhere
+- Exclude AC from getClan

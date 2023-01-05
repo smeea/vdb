@@ -19,11 +19,11 @@ import {
   Checkbox,
   Input,
 } from 'components';
-import { decksSort } from 'utils';
+import { getClan, decksSort } from 'utils';
 import { useApp, deckStore, inventoryStore, deckUpdate } from 'context';
 
 const InventoryAddDeckModal = ({ handleClose }) => {
-  const { cryptCardBase, isDesktop, isMobile } = useApp();
+  const { isDesktop, isMobile } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
@@ -91,11 +91,8 @@ const InventoryAddDeckModal = ({ handleClose }) => {
   }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
 
   const deckRows = sortedDecks.map((deck, idx) => {
-    let cryptInInventory = null;
-    let libraryInInventory = null;
-
-    const clans = {};
-    let cryptTotal = 0;
+    let cryptInInventory;
+    let libraryInInventory;
 
     Object.keys(deck.crypt).map((cardid) => {
       if (deck.crypt[cardid].q > 0) {
@@ -108,18 +105,6 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           }
         } else {
           cryptInInventory = 0;
-        }
-      }
-
-      if (cardid != 200076) {
-        const clan = cryptCardBase[cardid].Clan;
-
-        if (clan in clans) {
-          clans[cryptCardBase[cardid].Clan] += deck.crypt[cardid].q;
-          cryptTotal += deck.crypt[cardid].q;
-        } else {
-          clans[cryptCardBase[cardid].Clan] = deck.crypt[cardid].q;
-          cryptTotal += deck.crypt[cardid].q;
         }
       }
     });
@@ -140,13 +125,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
     });
 
     const inInventory = Math.min(cryptInInventory, libraryInInventory);
-
-    let clan;
-    Object.keys(clans).forEach((c) => {
-      if (clans[c] / cryptTotal > 0.5) {
-        clan = c;
-      }
-    });
+    const clan = getClan(deck.crypt);
 
     const inventoryType = deck.inventoryType;
     const toggleInventoryState = (deckid) => {

@@ -21,7 +21,7 @@ import {
   Checkbox,
   Input,
 } from 'components';
-import { decksSort } from 'utils';
+import { getClan, decksSort } from 'utils';
 import { useApp, deckStore } from 'context';
 import { deckServices } from 'services';
 
@@ -160,30 +160,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
 
       if (clanFilter !== 'any') {
         filtered = filtered.filter((deck) => {
-          const clans = {};
-          let cryptTotal = 0;
-
-          Object.keys(deck.crypt).map((cardid) => {
-            if (cardid != 200076) {
-              const clan = cryptCardBase[cardid].Clan;
-              if (clan in clans) {
-                clans[cryptCardBase[cardid].Clan] += deck.crypt[cardid].q;
-                cryptTotal += deck.crypt[cardid].q;
-              } else {
-                clans[cryptCardBase[cardid].Clan] = deck.crypt[cardid].q;
-                cryptTotal += deck.crypt[cardid].q;
-              }
-            }
-          });
-
-          let clan = '';
-          Object.keys(clans).forEach((c) => {
-            if (clans[c] / cryptTotal > 0.5) {
-              clan = c;
-            }
-          });
-
-          if (clan.toLowerCase() === clanFilter) return true;
+          if (getClan(deck.crypt).toLowerCase() === clanFilter) return true;
         });
       }
 
