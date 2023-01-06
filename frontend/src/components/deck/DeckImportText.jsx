@@ -18,7 +18,6 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
-  const refText = useRef();
 
   const handleChange = (event) => {
     setDeckText(event.target.value);
@@ -83,8 +82,6 @@ It will skip other (useless) lines, you don't have to remove it yourself.
   return (
     <Modal
       handleClose={handleClose}
-      /* TODO add onShow */
-      onShow={() => refText.current.focus()}
       size="lg"
       dialogClassName={isMobile ? '' : null}
       title="Import from Text"
@@ -96,7 +93,6 @@ It will skip other (useless) lines, you don't have to remove it yourself.
           value={deckText}
           placeholder={placeholder}
           onChange={handleChange}
-          ref={refText}
           autoFocus
         />
         <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
