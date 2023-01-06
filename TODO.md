@@ -1,5 +1,5 @@
 # FIX
-- Fix scroll + swipes
+- Fix scroll + swipes (maybe add swipeDuration: <200 or something)
 - Notification on Incognito mode
 - Pdf image sharpness
 - Autofocus forms with forward refs
@@ -9,8 +9,6 @@
 - Dont bundle changes - lazyload changelog + hardcode version
 - Test bundle size with lazy load of pages
 - Add fetch to api/version instead of include recent change in answer
-- Exclude AC from getClan
-- Test swiping during scrolling (maybe add swipeDuration: <200 or something)
 
 # FEATURES
 - Check TWD
@@ -31,7 +29,6 @@
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter
-- Account tooltips
 - Style forms with https://github.com/tailwindlabs/tailwindcss-forms
 - Test autoFocus
 - Form with errorOverlay to have 'relative' class
@@ -39,3 +36,4 @@
 - Replace -[#HEX] with config colors
 - Refactor div with single nested div
 - Remove useless items-center and justify-center from Table components (i.e. Inventory)
+- Tooltip arrows
