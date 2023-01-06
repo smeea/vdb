@@ -75,11 +75,9 @@ const ResultCryptTableRowCommon = ({
           </td>
         </>
       ) : (
-        <>
-          <td className="min-w-[50px]" onClick={() => handleClick(card)}>
-            <ResultCryptClanGroupTitle card={card} />
-          </td>
-        </>
+        <td className="min-w-[40px]" onClick={() => handleClick(card)}>
+          <ResultCryptClanGroupTitle card={card} />
+        </td>
       )}
     </>
   );

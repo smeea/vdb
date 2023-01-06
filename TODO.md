@@ -2,7 +2,6 @@
 - Fix scroll + swipes (maybe add swipeDuration: <200 or something)
 - Notification on Incognito mode
 - Pdf image sharpness
-- Autofocus forms with forward refs
 - Update url for playtest images to mitigate caching
 
 # IMPROVEMENTS
@@ -30,7 +29,7 @@
 # TAILWIND MIGRATION
 - Fix show password in Account on enter
 - Style forms with https://github.com/tailwindlabs/tailwindcss-forms
-- Test autoFocus
+- Test autoFocus / fix with forwardRefs
 - Form with errorOverlay to have 'relative' class
 - ButtonFloat variant to className (or create variants inside button component)
 - Replace -[#HEX] with config colors
