@@ -17,7 +17,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
   return (
     <>
       <div className="flex items-center justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center space-x-1">
           {inInventory && (
             <div
               className={` inline w-7 text-center text-lg ${
@@ -30,12 +30,10 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
             </div>
           )}
           <ResultLibraryTypeImage value={card.Type} />
-          <div>
-            <ResultLibraryName card={card} />
-          </div>
+          <ResultLibraryName card={card} />
         </div>
-        <div>
-          <div className="inline ">
+        <div className="flex items-center space-x-2">
+          <div>
             {card.Discipline && (
               <ResultLibraryDisciplines value={card.Discipline} />
             )}
@@ -43,12 +41,10 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
             {card.Clan && <ResultLibraryClan value={card.Clan} />}
           </div>
           {(card['Blood Cost'] || card['Pool Cost']) && (
-            <div className="inline ">
-              <ResultLibraryCost
-                valuePool={card['Pool Cost']}
-                valueBlood={card['Blood Cost']}
-              />
-            </div>
+            <ResultLibraryCost
+              valuePool={card['Pool Cost']}
+              valueBlood={card['Blood Cost']}
+            />
           )}
         </div>
       </div>
