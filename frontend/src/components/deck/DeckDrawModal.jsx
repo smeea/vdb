@@ -169,7 +169,7 @@ const DeckDrawModal = ({
               handleClick={burnLibrary}
               restCards={restLibrary}
               resultCards={drawedLibrary}
-              className="search-library-table"
+              /* className="search-library-table" */
               placement={isNarrow ? 'bottom' : 'right'}
             />
           </div>
@@ -233,7 +233,7 @@ const DeckDrawModal = ({
                   <DeckDrawLibraryTable
                     handleClick={handleModalSideCardOpen}
                     resultCards={burnedLibrary}
-                    className="search-library-table"
+                    /* className="search-library-table" */
                     placement={isNarrow ? 'bottom' : 'right'}
                     ashHeap
                   />

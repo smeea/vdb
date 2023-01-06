@@ -94,11 +94,7 @@ const DeckDrawCryptTable = ({
 
   return (
     <>
-      <table
-        className={`w-full border-bgSecondary dark:border-bgSecondaryDark sm:border ${
-          ashHeap ? 'search-crypt-table' : ''
-        }`}
-      >
+      <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (

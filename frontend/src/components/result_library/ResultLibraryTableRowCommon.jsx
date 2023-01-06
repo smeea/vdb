@@ -24,16 +24,15 @@ const Type = ({ card, handleClick }) => {
 
 const Cost = ({ card, handleClick }) => {
   return (
-    <td
-      className={`min-w-[30px] ${card[BLOOD_COST] ? 'pb-1' : ''}`}
-      onClick={() => handleClick(card)}
-    >
-      {(card[BLOOD_COST] || card[POOL_COST]) && (
-        <ResultLibraryCost
-          valueBlood={card[BLOOD_COST]}
-          valuePool={card[POOL_COST]}
-        />
-      )}
+    <td className="min-w-[25px]" onClick={() => handleClick(card)}>
+      <div className={`flex justify-center {card[BLOOD_COST] ? 'pb-2' : ''}`}>
+        {(card[BLOOD_COST] || card[POOL_COST]) && (
+          <ResultLibraryCost
+            valueBlood={card[BLOOD_COST]}
+            valuePool={card[POOL_COST]}
+          />
+        )}
+      </div>
     </td>
   );
 };
@@ -48,7 +47,9 @@ const Name = ({ card, handleClick, placement }) => {
         overlay={<CardPopover card={card} />}
         disabled={isMobile}
       >
-        <ResultLibraryName card={card} />
+        <div className="flex">
+          <ResultLibraryName card={card} />
+        </div>
       </ConditionalTooltip>
     </td>
   );

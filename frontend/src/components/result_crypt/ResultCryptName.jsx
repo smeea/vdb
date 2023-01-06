@@ -3,8 +3,8 @@ import Hammer from 'assets/images/icons/hammer.svg';
 
 const ResultCryptName = ({ card }) => {
   return (
-    <div className="inline whitespace-nowrap">
-      <div className="inline whitespace-normal text-fgName dark:text-fgNameDark">
+    <div className="inline whitespace-nowrap text-fgName dark:text-fgNameDark">
+      <div className="inline whitespace-normal ">
         {card['Banned'] ? <strike>{card['Name']}</strike> : <>{card['Name']}</>}
       </div>
       {card.Adv[0] && (

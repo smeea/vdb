@@ -116,7 +116,7 @@ const DeckCryptTableRow = ({
           </div>
         </td>
       )}
-      <td className={isEditable ? 'w-[75px]' : 'w-[40px]'}>
+      <td className={isEditable ? 'min-w-[75px]' : 'min-w-[40px]'}>
         <ConditionalTooltip
           placement="bottom"
           overlay={<UsedPopover cardid={card.c.Id} />}
@@ -147,7 +147,7 @@ const DeckCryptTableRow = ({
         inDeck
       />
       {showInfo && (
-        <td className="w-9 text-right text-fgSecondary dark:text-fgSecondaryDark">
+        <td className="min-w-[45px] text-right text-fgSecondary dark:text-fgSecondaryDark">
           {isMobile ? (
             <div
               onClick={() =>

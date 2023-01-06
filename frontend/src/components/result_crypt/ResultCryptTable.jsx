@@ -30,7 +30,7 @@ const ResultCryptTable = ({ resultCards, placement, inRecommendation }) => {
 
   return (
     <>
-      <table className="search-crypt-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
+      <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <tbody>{cardRows}</tbody>
       </table>
       {shouldShowModal && (

@@ -34,3 +34,4 @@
 - Replace -[#HEX] with config colors
 - Refactor div with single nested div
 - Remove useless items-center and justify-center from Table components (i.e. Inventory)
+- DeckDraw ash heap tables (class prop)

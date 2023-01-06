@@ -124,7 +124,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               setSortMethod={changeCryptSearchSort}
               inHoF={true}
             />
-            <table className="search-crypt-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
+            <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
               <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
                 <tr>
                   <th />
@@ -166,9 +166,9 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               sortMethods={librarySortMethods}
               sortMethod={librarySearchSort}
               setSortMethod={changeLibrarySearchSort}
-              inHoF={true}
+              inHoF
             />
-            <table className="search-library-table">
+            <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
               <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
                 <tr>
                   <th />

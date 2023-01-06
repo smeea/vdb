@@ -28,7 +28,7 @@ const ResultLibraryTable = ({ resultCards, placement }) => {
 
   return (
     <>
-      <table className="search-library-table">
+      <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <tbody>{cardRows}</tbody>
       </table>
       {shouldShowModal && (
