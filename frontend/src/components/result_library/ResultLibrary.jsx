@@ -71,7 +71,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
         </>
       )}
       {isMobile && showFloatingButtons && (
-        <ButtonFloat onClick={handleClear} variant="bg-[#a06060] opacity-80">
+        <ButtonFloat onClick={handleClear} variant="danger">
           <X width="40" height="40" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}
@@ -79,9 +79,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
         <ButtonFloat
           onClick={toggleAddMode}
           position="middle"
-          variant={
-            addMode ? 'bg-[#707070] opacity-80' : 'bg-[#a0a0a0] opacity-80'
-          }
+          variant="primary"
         >
           <Plus width="47" height="47" viewBox="0 0 16 16" />
         </ButtonFloat>

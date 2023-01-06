@@ -5,7 +5,7 @@ import { ButtonFloat } from 'components';
 
 const ToogleSearchAddButton = ({ addMode, toggleAddMode }) => {
   return (
-    <ButtonFloat onClick={toggleAddMode} variant="bg-[#707070] opacity-80">
+    <ButtonFloat onClick={toggleAddMode} variant="primary">
       {addMode ? (
         <BinocularsFill width="27" height="27" viewBox="0 1 16 16" />
       ) : (

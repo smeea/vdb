@@ -127,7 +127,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         <ButtonFloat
           onClick={() => setShowAdd(true)}
           position="top"
-          variant="bg-[#707070] opacity-80"
+          variant="primary"
         >
           <div className="flex items-center">
             <div className="pb-0.5 text-xl">+</div>

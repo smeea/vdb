@@ -119,7 +119,7 @@ const TwdResult = ({ results, setResults }) => {
         </div>
       )}
       {isMobile && showFloatingButtons && (
-        <ButtonFloat onClick={handleClear} variant="bg-[#a06060] opacity-80">
+        <ButtonFloat onClick={handleClear} variant="danger">
           <X width="40" height="40" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}

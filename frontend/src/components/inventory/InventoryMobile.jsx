@@ -128,7 +128,7 @@ const InventoryMobile = ({
         <ButtonFloat
           onClick={() => setShowCrypt(!showCrypt)}
           position="middle"
-          variant="bg-[#707070] opacity-80"
+          variant="primary"
         >
           <div className="text-2xl">{showCrypt ? 'LIB' : 'CR'}</div>
         </ButtonFloat>
