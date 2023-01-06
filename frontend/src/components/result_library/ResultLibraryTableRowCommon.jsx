@@ -47,7 +47,6 @@ const Name = ({ card, handleClick, placement }) => {
         placement={placement}
         overlay={<CardPopover card={card} />}
         disabled={isMobile}
-        noPadding
       >
         <ResultLibraryName card={card} />
       </ConditionalTooltip>

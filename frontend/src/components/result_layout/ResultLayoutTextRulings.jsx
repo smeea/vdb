@@ -54,29 +54,22 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
             (j) => cardBase[j]['Name'] == match
           );
 
-          if (cardid) {
+          const card =
+            cardid > 2000000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+
+          if (card) {
             return (
               <span key={`${idxRuling}-${idxText}-text-${idxReference}`}>
                 <ConditionalTooltip
                   placement={placement}
-                  overlay={
-                    <CardPopover
-                      card={
-                        cardid > 200000
-                          ? cryptCardBase[cardid]
-                          : libraryCardBase[cardid]
-                      }
-                    />
-                  }
+                  overlay={<CardPopover card={card} />}
                   disabled={isMobile}
                 >
-                  <div className="inline">
-                    {cardid > 200000 ? (
-                      <ResultCryptName card={cryptCardBase[cardid]} />
-                    ) : (
-                      <ResultLibraryName card={libraryCardBase[cardid]} />
-                    )}
-                  </div>
+                  {cardid > 200000 ? (
+                    <ResultCryptName card={card} />
+                  ) : (
+                    <ResultLibraryName card={card} />
+                  )}
                 </ConditionalTooltip>
               </span>
             );

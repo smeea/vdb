@@ -9,49 +9,70 @@ import {
   ConditionalTooltip,
 } from 'components';
 
-const ResultLayoutTextText = ({ text, placement }) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
+const ResultLayoutTextText = ({ cardid, placement }) => {
+  const {
+    nativeCrypt,
+    nativeLibrary,
+    cryptCardBase,
+    libraryCardBase,
+    isMobile,
+  } = useApp();
 
-  const cardText = text.replace(/\(D\)/g, '\u24B9').split('\n');
+  const cardNative =
+    cardid > 200000 ? nativeCrypt[cardid] : nativeLibrary[cardid];
+
+  const cardTextNative = cardNative['Card Text']
+    .replace(/\(D\)/g, '\u24B9')
+    .split('\n');
+
+  const refCards = [];
+  cardTextNative.map((i) => {
+    reactStringReplace(i, /\/(.*?)\//g, (match) => {
+      const cardBase = { ...nativeCrypt, ...nativeLibrary };
+      const refCardid = Object.keys(cardBase).find(
+        (j) => cardBase[j].Name == match
+      );
+
+      refCards.push(refCardid);
+    });
+  });
+
+  const c = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+  const cardText = c['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
 
   return (
     <>
       {cardText.map((i, idxText) => {
-        let replacedText;
-
-        replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => {
-          return <ResultMiscImage key={`${idxText}-${idx}`} value={match} />;
-        });
+        let replacedText = reactStringReplace(
+          i,
+          /\[(\w+?)\]/g,
+          (match, idx) => {
+            return <ResultMiscImage key={`${idxText}-${idx}`} value={match} />;
+          }
+        );
 
         replacedText = reactStringReplace(
           replacedText,
           /\/(.*?)\//g,
           (match, idx) => {
-            const cardBase = { ...cryptCardBase, ...libraryCardBase };
-            const cardid = Object.keys(cardBase).find(
-              (j) => cardBase[j]['Name'] == match
-            );
+            const refCardid = refCards[idx - 1];
+            const card =
+              refCardid > 200000
+                ? cryptCardBase[refCardid]
+                : libraryCardBase[refCardid];
 
-            if (cardid) {
+            if (card) {
               return (
-                <span key={cardid}>
+                <span key={card.Id}>
                   <ConditionalTooltip
                     placement={placement}
-                    overlay={
-                      <CardPopover
-                        card={
-                          cardid > 200000
-                            ? cryptCardBase[cardid]
-                            : libraryCardBase[cardid]
-                        }
-                      />
-                    }
+                    overlay={<CardPopover card={card} />}
                     disabled={isMobile}
                   >
-                    {cardid > 200000 ? (
-                      <ResultCryptName card={cryptCardBase[cardid]} />
+                    {card.Id > 200000 ? (
+                      <ResultCryptName card={card} />
                     ) : (
-                      <ResultLibraryName card={libraryCardBase[cardid]} />
+                      <ResultLibraryName card={card} />
                     )}
                   </ConditionalTooltip>
                 </span>

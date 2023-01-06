@@ -7,14 +7,17 @@
 
 # IMPROVEMENTS
 - Dont bundle changes - lazyload changelog + hardcode version
+- Test bundle size with lazy load of pages
 - Add fetch to api/version instead of include recent change in answer
 - Exclude AC from getClan
+- Test swiping during scrolling (maybe add swipeDuration: <200 or something)
 
 # FEATURES
 - Check TWD
 - Events decks archive analyzing
 - Custom values for cardtypes in TWD/PDA
 - Playtest decks to PDA
+- Multitable seating
 
 # MAYBE LATER FEATURES
 - Offline decks storage
@@ -24,6 +27,7 @@
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Debouncing for text search query
 - Refactor InventoryCrypt and InventoryLibrary
+- Explicit image width/height
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter

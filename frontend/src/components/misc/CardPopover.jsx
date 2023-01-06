@@ -15,9 +15,9 @@ const CardPopover = ({ card }) => {
     return (
       <div className="max-w-[400px] p-4">
         {card.Id > 200000 ? (
-          <ResultCryptLayoutText card={card} />
+          <ResultCryptLayoutText card={card} noClose />
         ) : (
-          <ResultLibraryLayoutText card={card} />
+          <ResultLibraryLayoutText card={card} noClose />
         )}
       </div>
     );

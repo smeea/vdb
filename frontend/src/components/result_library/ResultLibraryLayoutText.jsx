@@ -63,7 +63,7 @@ const ResultLibraryLayoutText = ({
       </div>
       <hr className="border-1 border-midGray dark:border-midGrayDark" />
       <div>
-        <ResultLayoutTextText text={card['Card Text']} />
+        <ResultLayoutTextText cardid={card.Id} />
       </div>
       <hr className="border-1 border-midGray dark:border-midGrayDark" />
       {(card['Blood Cost'] || card['Pool Cost']) && (

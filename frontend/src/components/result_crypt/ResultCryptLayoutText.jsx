@@ -64,7 +64,7 @@ const ResultCryptLayoutText = ({
       </div>
       <hr className="border-1 border-midGray dark:border-midGrayDark" />
       <div>
-        <ResultLayoutTextText text={card['Card Text']} />
+        <ResultLayoutTextText cardid={card.Id} />
       </div>
       <hr className="border-1 border-midGray dark:border-midGrayDark" />
       <div className="flex items-center justify-between">
