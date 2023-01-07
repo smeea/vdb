@@ -1,9 +1,33 @@
 import React, { useState } from 'react';
 import Check2 from 'assets/images/icons/check2.svg';
 import PenFill from 'assets/images/icons/pen-fill.svg';
-import { Input, Tooltip, ErrorOverlay, Modal, Button } from 'components';
+import {
+  Input,
+  ConditionalTooltip,
+  ErrorOverlay,
+  Modal,
+  Button,
+} from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
+
+const TooltipText = () => {
+  return (
+    <>
+      <div>Public name is default author name for new decks.</div>
+      <div>
+        Author name is per-deck and can be changed anytime for each deck.
+      </div>
+      <div>Public names are not unique.</div>
+      <div>
+        Changing public name will not change author name of your existing decks.
+      </div>
+      <div>
+        Public name is *not* your account username which cannot be changed.
+      </div>
+    </>
+  );
+};
 
 const AccountChangeName = () => {
   const { publicName, setPublicName, isMobile } = useApp();
@@ -36,60 +60,41 @@ const AccountChangeName = () => {
     changeName();
   };
 
-  const tooltipText = (
-    <>
-      Public name is default author name for new decks.
-      <br />
-      Author name is per-deck and can be changed anytime for each deck.
-      <br />
-      Public names are not unique.
-      <br />
-      Changing public name will not change author name of your existing decks.
-      <br />
-      Public name is *not* your account username which cannot be changed.
-    </>
-  );
-
   return (
-    <>
-      <div className="flex items-center p-1 text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
-        <PenFill />
-        <div className="px-2">Change public name</div>
-        {!isMobile ? (
-          <Tooltip overlay={tooltipText}>
+    <div className="space-y-2">
+      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark space-x-2">
+        <div className="flex justify-center min-w-[23px]">
+          <PenFill />
+        </div>
+        <div className="flex">Change public name</div>
+        <div onClick={() => isMobile && setShowModal(true)}>
+          <ConditionalTooltip disabled={isMobile} overlay={<TooltipText />}>
             <span className="text-fgThird dark:text-fgThirdDark ">[?]</span>
-          </Tooltip>
-        ) : (
-          <span
-            onClick={() => setShowModal(true)}
-            className="text-fgThird dark:text-fgThirdDark "
-          >
-            [?]
-          </span>
-        )}
+          </ConditionalTooltip>
+        </div>
       </div>
-      <form className="flex" onSubmit={handleSubmit}>
-        <Input
-          placeholder="Public name"
-          value={state}
-          onChange={(e) => setState(e.target.value)}
-          className="w-full rounded-r-none"
-        />
-        <Button
-          className="rounded-l-none"
-          variant={success ? 'success' : 'primary'}
-          type="submit"
-        >
-          <Check2 />
-        </Button>
-        {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
+      <form className="space-y-2" onSubmit={handleSubmit}>
+        <div className="flex w-full relative">
+          <Input
+            placeholder="Public name"
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+            className="w-full rounded-r-none"
+          />
+          <Button
+            className="rounded-l-none"
+            variant={success ? 'success' : 'primary'}
+            type="submit"
+          >
+            <Check2 />
+          </Button>
+          {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
+        </div>
       </form>
       {showModal && (
-        <Modal handleClose={() => setShowModal(false)}>
-          <div>{tooltipText}</div>
-        </Modal>
+        <Modal handleClose={() => setShowModal(false)}>{<TooltipText />}</Modal>
       )}
-    </>
+    </div>
   );
 };
 

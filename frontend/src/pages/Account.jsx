@@ -46,11 +46,11 @@ const Account = () => {
                 <AccountChangeEmail />
               </div>
               {(isPlaytester || isPlaytestAdmin) && <AccountPlaytest />}
-              <div className="flex flex-row space-x-6">
-                <div className="md:basis-1/2">
+              <div className="flex space-x-6">
+                <div className="w-full">
                   <AccountDeleteButton />
                 </div>
-                <div className="md:basis-1/2">
+                <div className="w-full">
                   <AccountLogoutButton />
                 </div>
               </div>

@@ -30,6 +30,6 @@
 # TAILWIND MIGRATION
 - Fix show password in Account on enter
 - Test autoFocus / fix with forwardRefs
-- Form with errorOverlay to have 'relative' class
 - Replace -[#HEX] with config colors
 - DeckDraw ash heap tables (class prop)
+- Floating menu buttons in Deck/Inventory

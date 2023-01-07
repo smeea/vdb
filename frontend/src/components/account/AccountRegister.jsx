@@ -51,60 +51,37 @@ const AccountRegister = () => {
   };
 
   return (
-    <div>
-      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
-        <div className="flex">
-          <PersonPlusFill width="22" height="22" viewBox="0 1 16 16" />
+    <div className="space-y-2">
+      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark space-x-2">
+        <div className="flex justify-center min-w-[23px]">
+          <PersonPlusFill width="22" height="22" viewBox="0 0 16 16" />
         </div>
-        Create account
+        <div className="flex">Create account</div>
       </div>
-      <div>
-        {isMobile ? (
-          <>
-            <AccountUsernameForm
-              value={formUsername}
-              setValue={setFormUsername}
-            />
-            <AccountEmailForm
-              value={formEmail}
-              setValue={setFormEmail}
-              isMobile={isMobile}
-            />
-            <AccountPasswordForm
-              value={formPassword}
-              setValue={setFormPassword}
-              spinnerState={spinnerState}
-            />
-          </>
-        ) : (
-          <form className="relative" onSubmit={handleSubmit}>
-            <div className="flex">
-              <AccountUsernameForm
-                value={formUsername}
-                setValue={setFormUsername}
-              />
-              <AccountPasswordForm
-                value={formPassword}
-                setValue={setFormPassword}
-                spinnerState={spinnerState}
-              />
-            </div>
-            <div className="flex">
-              <AccountEmailForm
-                value={formEmail}
-                setValue={setFormEmail}
-                isMobile={isMobile}
-              />
-            </div>
-          </form>
-        )}
-        {usernameError && (
-          <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>
-        )}
-        {connectionError && (
-          <ErrorOverlay placement="bottom">{connectionError}</ErrorOverlay>
-        )}
-      </div>
+      <form className="space-y-2" onSubmit={handleSubmit}>
+        <div className="flex w-full relative">
+          <AccountUsernameForm
+            value={formUsername}
+            setValue={setFormUsername}
+          />
+          {usernameError && (
+            <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>
+          )}
+        </div>
+        <div className="flex w-full relative">
+          <AccountEmailForm value={formEmail} setValue={setFormEmail} />
+        </div>
+        <div className="flex w-full relative">
+          <AccountPasswordForm
+            value={formPassword}
+            setValue={setFormPassword}
+            spinnerState={spinnerState}
+          />
+          {connectionError && (
+            <ErrorOverlay placement="bottom">{connectionError}</ErrorOverlay>
+          )}
+        </div>
+      </form>
     </div>
   );
 };

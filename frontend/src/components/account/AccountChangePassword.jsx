@@ -45,44 +45,32 @@ const AccountChangePassword = () => {
   };
 
   return (
-    <div>
-      <div className="flex items-center p-1 text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
-        <LockFill />
-        <div className="px-2">Change password</div>
+    <div className="space-y-2">
+      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark space-x-2">
+        <div className="flex justify-center min-w-[23px]">
+          <LockFill />
+        </div>
+        <div className="flex">Change password</div>
       </div>
-      <form className="flex" onSubmit={handleSubmit}>
-        {isMobile ? (
-          <>
-            <AccountPasswordForm
-              value={formPassword}
-              setValue={setFormPassword}
-              isOld
-            />
-            <AccountPasswordForm
-              value={formNewPassword}
-              setValue={setFormNewPassword}
-              success={success}
-              isNew
-            />
-          </>
-        ) : (
-          <>
-            <AccountPasswordForm
-              value={formPassword}
-              setValue={setFormPassword}
-              isOld
-            />
-            <AccountPasswordForm
-              value={formNewPassword}
-              setValue={setFormNewPassword}
-              success={success}
-              isNew
-            />
-          </>
-        )}
-        {passwordError && (
-          <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
-        )}
+      <form className="space-y-2" onSubmit={handleSubmit}>
+        <div className="flex w-full relative">
+          <AccountPasswordForm
+            value={formPassword}
+            setValue={setFormPassword}
+            isOld
+          />
+        </div>
+        <div className="flex w-full relative">
+          <AccountPasswordForm
+            value={formNewPassword}
+            setValue={setFormNewPassword}
+            success={success}
+            isNew
+          />
+          {passwordError && (
+            <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
+          )}
+        </div>
       </form>
     </div>
   );

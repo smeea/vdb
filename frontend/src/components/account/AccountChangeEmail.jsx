@@ -3,12 +3,16 @@ import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import {
   AccountEmailForm,
   AccountPasswordForm,
-  Tooltip,
+  ConditionalTooltip,
   ErrorOverlay,
   Modal,
 } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';
+
+const TooltipText = () => {
+  return <div>Email is for password recovery only.</div>;
+};
 
 const AccountChangeEmail = () => {
   const { setEmail, isMobile } = useApp();
@@ -45,63 +49,44 @@ const AccountChangeEmail = () => {
     changeEmail();
   };
 
-  const tooltipText = <>Email is for password recovery only.</>;
-
   return (
-    <>
-      <div className="flex items-center p-1 text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
-        <EnvelopeFill />
-        <div className="px-2">Change email (optional)</div>
-        {!isMobile ? (
-          <Tooltip overlay={tooltipText}>
-            <span className="text-fgThird dark:text-fgThirdDark ">[?]</span>
-          </Tooltip>
-        ) : (
-          <span
-            onClick={() => setShowModal(true)}
-            className="text-fgThird dark:text-fgThirdDark "
-          >
-            [?]
-          </span>
-        )}
+    <div className="space-y-2">
+      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark space-x-2">
+        <div className="flex justify-center min-w-[23px]">
+          <EnvelopeFill />
+        </div>
+        <div className="flex">Change email (optional)</div>
+        <div onClick={() => isMobile && setShowModal(true)}>
+          <ConditionalTooltip disabled={isMobile} overlay={<TooltipText />}>
+            <div className="text-fgThird dark:text-fgThirdDark ">[?]</div>
+          </ConditionalTooltip>
+        </div>
       </div>
-      <form className="flex" onSubmit={handleSubmit}>
-        {isMobile ? (
-          <>
-            <AccountEmailForm
-              value={formEmail}
-              setValue={setFormEmail}
-              isMobile={isMobile}
-            />
-            <AccountPasswordForm
-              value={formPassword}
-              setValue={setFormPassword}
-            />
-          </>
-        ) : (
-          <>
-            <AccountEmailForm
-              value={formEmail}
-              setValue={setFormEmail}
-              isMobile={isMobile}
-            />
-            <AccountPasswordForm
-              value={formPassword}
-              setValue={setFormPassword}
-              success={success}
-            />
-          </>
-        )}
-        {passwordError && (
-          <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
-        )}
+      <form className="space-y-2" onSubmit={handleSubmit}>
+        <div className="flex w-full relative">
+          <AccountEmailForm value={formEmail} setValue={setFormEmail} />
+        </div>
+        <div className="flex w-full relative">
+          <AccountPasswordForm
+            value={formPassword}
+            setValue={setFormPassword}
+            success={success}
+          />
+          {passwordError && (
+            <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
+          )}
+        </div>
       </form>
       {showModal && (
-        <Modal handleClose={() => setShowModal(false)}>
-          <div>{tooltipText}</div>
+        <Modal
+          title="Why email"
+          handleClose={() => setShowModal(false)}
+          centered
+        >
+          <TooltipText />
         </Modal>
       )}
-    </>
+    </div>
   );
 };
 
