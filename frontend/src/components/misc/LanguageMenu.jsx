@@ -30,7 +30,9 @@ const LanguageMenu = ({ setShowMenu }) => {
             <div
               key={l}
               className={`${
-                lang == l ? 'rounded-[16px] border-[3px] border-[#606080]' : ''
+                lang == l
+                  ? 'rounded-full border-4 border-borderPrimary dark:border-borderPrimaryDark'
+                  : ''
               }`}
               onClick={() => onClick(l)}
             >
