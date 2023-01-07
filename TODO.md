@@ -3,6 +3,7 @@
 - Notification on Incognito mode
 - Pdf image sharpness
 - Update url for playtest images to mitigate caching
+- Pdf proxy add missing from inventory in card selection
 
 # IMPROVEMENTS
 - Dont bundle changes - lazyload changelog + hardcode version
@@ -28,7 +29,6 @@
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter
-- Style forms with https://github.com/tailwindlabs/tailwindcss-forms
 - Test autoFocus / fix with forwardRefs
 - Form with errorOverlay to have 'relative' class
 - Replace -[#HEX] with config colors
