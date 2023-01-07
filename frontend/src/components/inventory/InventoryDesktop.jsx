@@ -49,8 +49,8 @@ const InventoryDesktop = ({
 
   return (
     <>
-      {isWide && <div className="xl:basis-1/12" />}
-      <div className="   md:basis-1/2 lg:basis-1/2 xl:basis-5/12">
+      <div className="basis-0 2xl:basis-1/12" />
+      <div className="md:basis-1/2 lg:basis-1/2 xl:basis-1/2">
         {!inShared && (
           <>
             <div className="sticky top-0 z-20 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[40px]  ">
@@ -91,7 +91,7 @@ const InventoryDesktop = ({
           </div>
         )}
       </div>
-      <div className="xl={isWide ? 4 : 5}    md:basis-1/2 lg:basis-1/2">
+      <div className="md:basis-1/2 lg:basis-1/2 xl:basis-1/2">
         {!inShared && (
           <>
             <div className="sticky top-0 z-20 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[40px]  ">

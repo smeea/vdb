@@ -13,7 +13,6 @@ import {
   ResultLibraryName,
   ResultLibraryTrifle,
   ConditionalTooltip,
-  Tooltip,
 } from 'components';
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
 import { isTrifle, getHardTotal, getSoftMax } from 'utils';
@@ -67,18 +66,15 @@ const InventoryLibraryTableRow = ({
     : '';
 
   return (
-    <div
-      className={`flex w-full items-center border-none ${trBg}`}
-      {...swipeHandlers}
-    >
+    <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>
       {inShared ? (
         <div
-          className={`flex min-w-[40px] items-center justify-center border-r border-bgSecondary bg-[#0000aa]/5 text-lg dark:border-bgSecondaryDark`}
+          className={`flex h-full min-w-[45px] items-center justify-center border-r border-bgSecondary bg-[#0000aa]/5 text-lg dark:border-bgSecondaryDark`}
         >
           {card.q || null}
         </div>
       ) : (
-        <div className="flex min-w-[75px] items-center px-0.5">
+        <div className="flex min-w-[75px] px-0.5">
           <InventoryCardQuantity
             cardid={card.c.Id}
             q={card.q}
@@ -90,10 +86,14 @@ const InventoryLibraryTableRow = ({
         </div>
       )}
       {!inShared && (
-        <div className="flex min-w-[40px] items-center justify-center">
-          {isMobile ? (
+        <div className="flex min-w-[40px] justify-center">
+          <ConditionalTooltip
+            placement="bottom"
+            overlay={<UsedPopover cardid={card.c.Id} />}
+            disabled={isMobile}
+          >
             <div
-              className={`flex w-full justify-center ${
+              className={`${
                 card.q == softUsedMax + hardUsedTotal
                   ? 'text-midGray dark:text-midGrayDark'
                   : card.q >= softUsedMax + hardUsedTotal
@@ -107,40 +107,16 @@ const InventoryLibraryTableRow = ({
                 ? `+${card.q - softUsedMax - hardUsedTotal}`
                 : card.q - softUsedMax - hardUsedTotal}
             </div>
-          ) : (
-            <Tooltip
-              placement="bottom"
-              overlay={<UsedPopover cardid={card.c.Id} />}
-            >
-              <div
-                className={`flex w-full justify-center ${
-                  card.q == softUsedMax + hardUsedTotal
-                    ? 'text-midGray dark:text-midGrayDark'
-                    : card.q >= softUsedMax + hardUsedTotal
-                    ? 'text-fgGreen dark:text-fgGreenDark'
-                    : 'text-fgRed dark:text-fgRedDark'
-                }`}
-              >
-                {card.q === softUsedMax + hardUsedTotal
-                  ? '='
-                  : card.q > softUsedMax + hardUsedTotal
-                  ? `+${card.q - softUsedMax - hardUsedTotal}`
-                  : card.q - softUsedMax - hardUsedTotal}
-              </div>
-            </Tooltip>
-          )}
+          </ConditionalTooltip>
         </div>
       )}
       <div
-        className="flex min-w-[40px] items-center justify-center"
+        className="flex min-w-[40px] justify-center"
         onClick={() => handleClick(card.c)}
       >
         <ResultLibraryTypeImage value={card.c.Type} />
       </div>
-      <div
-        className="flex w-full text-fgName dark:text-fgNameDark"
-        onClick={() => handleClick(card.c)}
-      >
+      <div className="flex w-full" onClick={() => handleClick(card.c)}>
         <ConditionalTooltip
           placement={placement}
           overlay={<CardPopover card={card.c} />}
@@ -151,24 +127,24 @@ const InventoryLibraryTableRow = ({
       </div>
       {isMobile ? (
         <div
-          className="flex min-w-[82px] items-center justify-between"
+          className="flex min-w-[82px] justify-between"
           onClick={() => handleClick(card.c)}
         >
-          <div
-            className={`flex items-center justify-center ${
-              card.c[BLOOD_COST] && 'blood'
-            }`}
-            onClick={() => handleClick(card.c)}
-          >
-            {(card.c[BLOOD_COST] || card.c[POOL_COST]) && (
+          {(card.c[BLOOD_COST] || card.c[POOL_COST]) && (
+            <div
+              className={`flex min-w-[22px] justify-center ${
+                card.c[BLOOD_COST] && 'pb-1'
+              }`}
+              onClick={() => handleClick(card.c)}
+            >
               <ResultLibraryCost
                 valueBlood={card.c[BLOOD_COST]}
                 valuePool={card.c[POOL_COST]}
               />
-            )}
-          </div>
+            </div>
+          )}
           <div
-            className="flex items-center justify-center"
+            className="flex items-center justify-end w-full"
             onClick={() => handleClick(card.c)}
           >
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
@@ -181,7 +157,7 @@ const InventoryLibraryTableRow = ({
       ) : (
         <>
           <div
-            className={`flex min-w-[30px] items-center justify-center ${
+            className={`flex min-w-[30px] justify-center ${
               card.c[BLOOD_COST] && 'pb-1'
             }`}
             onClick={() => handleClick(card.c)}
@@ -194,7 +170,7 @@ const InventoryLibraryTableRow = ({
             )}
           </div>
           <div
-            className="flex min-w-[82px] items-center justify-center"
+            className="flex min-w-[82px] justify-center"
             onClick={() => handleClick(card.c)}
           >
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
@@ -207,7 +183,7 @@ const InventoryLibraryTableRow = ({
       )}
       {!isNarrow && (
         <div
-          className="flex min-w-[30px] items-center justify-center"
+          className="flex min-w-[30px] justify-center"
           onClick={() => handleClick(card.c)}
         >
           {card.c[BURN_OPTION] && <ResultLibraryBurn />}
