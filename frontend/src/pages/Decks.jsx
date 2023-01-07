@@ -267,22 +267,20 @@ const Decks = () => {
             </div>
           )}
         </div>
-        {!isMobile && (
-          <div className="hidden lg:flex lg:basis-2/12">
-            <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
-              <DeckButtons
-                deck={deck}
-                setShowInfo={setShowInfo}
-                setShowDraw={setShowDraw}
-                setShowSeating={setShowSeating}
-                setShowRecommendation={setShowRecommendation}
-                setQrUrl={setQrUrl}
-                missingCrypt={missingCrypt}
-                missingLibrary={missingLibrary}
-              />
-            </div>
+        <div className="hidden md:flex md:basis-2/12">
+          <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
+            <DeckButtons
+              deck={deck}
+              setShowInfo={setShowInfo}
+              setShowDraw={setShowDraw}
+              setShowSeating={setShowSeating}
+              setShowRecommendation={setShowRecommendation}
+              setQrUrl={setQrUrl}
+              missingCrypt={missingCrypt}
+              missingLibrary={missingLibrary}
+            />
           </div>
-        )}
+        </div>
       </div>
       {!username && !deckid && !hash && (
         <div className="flex h-[70vh] flex-col items-center justify-center space-y-10">
@@ -317,9 +315,9 @@ const Decks = () => {
           </div>
         </div>
       )}
-
       {showFloatingButtons && (
         <ButtonFloat
+          className="md:hidden"
           onClick={() => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
@@ -329,7 +327,6 @@ const Decks = () => {
           <List width="35" height="35" viewBox="0 0 16 16" />
         </ButtonFloat>
       )}
-
       {showMenuButtons && (
         <Modal
           handleClose={() => {
