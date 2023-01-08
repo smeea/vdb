@@ -56,11 +56,14 @@ const AccountChangeEmail = () => {
           <EnvelopeFill />
         </div>
         <div className="flex">Change email (optional)</div>
-        <div onClick={() => isMobile && setShowModal(true)}>
-          <ConditionalTooltip disabled={isMobile} overlay={<TooltipText />}>
-            <div className="text-fgThird dark:text-fgThirdDark ">[?]</div>
-          </ConditionalTooltip>
-        </div>
+        <ConditionalTooltip disabled={isMobile} overlay={<TooltipText />}>
+          <div
+            className="text-fgThird dark:text-fgThirdDark"
+            onClick={() => isMobile && setShowModal(true)}
+          >
+            [?]
+          </div>
+        </ConditionalTooltip>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
         <div className="flex w-full relative">

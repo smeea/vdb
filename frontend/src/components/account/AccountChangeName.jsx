@@ -67,11 +67,14 @@ const AccountChangeName = () => {
           <PenFill />
         </div>
         <div className="flex">Change public name</div>
-        <div onClick={() => isMobile && setShowModal(true)}>
-          <ConditionalTooltip disabled={isMobile} overlay={<TooltipText />}>
-            <span className="text-fgThird dark:text-fgThirdDark ">[?]</span>
-          </ConditionalTooltip>
-        </div>
+        <ConditionalTooltip disabled={isMobile} overlay={<TooltipText />}>
+          <div
+            className="text-fgThird dark:text-fgThirdDark"
+            onClick={() => isMobile && setShowModal(true)}
+          >
+            [?]
+          </div>
+        </ConditionalTooltip>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
         <div className="flex w-full relative">

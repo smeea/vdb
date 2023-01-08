@@ -1,97 +1,109 @@
 import React, { useState } from 'react';
-import { Modal, Tooltip } from 'components';
+import { Modal, ConditionalTooltip } from 'components';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp } from 'context';
 
-const ResultLayoutTextSets = (props) => {
-  const { playtest, isMobile } = useApp();
-  const [modal, setModal] = useState();
+const PreconsDetailed = ({ sets, set }) => {
+  return Object.keys(sets[set]).map((i, idx) => {
+    const abbrevs = {
+      U: 'Uncommon',
+      R: 'Rare',
+      C: 'Common',
+      V: 'Vampire',
+    };
 
+    if (setsAndPrecons[set].precons && setsAndPrecons[set].precons[i]) {
+      return (
+        <li key={idx}>
+          {setsAndPrecons[set].precons[i].name} - {sets[set][i]}x
+        </li>
+      );
+    } else {
+      if (set === 'Promo') {
+        return <li key={idx}>{i}</li>;
+      } else if (i !== 'DTC') {
+        return <li key={idx}>{abbrevs[i]}</li>;
+      }
+    }
+  });
+};
+
+const PopoverText = ({ sets, set }) => {
+  return (
+    <div className="max-w-[400px] space-y-1 text-sm">
+      <b>{setsAndPrecons[set].name}</b>
+      {set !== 'POD' &&
+        set !== 'Promo' &&
+        ' - ' + setsAndPrecons[set].date.slice(0, 4)}
+      <ul className="space-y-1 text-xs">
+        <PreconsDetailed sets={sets} set={set} />
+      </ul>
+    </div>
+  );
+};
+
+const Sets = ({ sets, setImageSet, setSelectedSet }) => {
+  const { playtest, isMobile } = useApp();
   const byDate = (a, b) => {
     return setsAndPrecons[a].date - setsAndPrecons[b].date;
   };
 
-  const Sets = Object.keys(props.sets)
+  return Object.keys(sets)
     .filter((set) => playtest || set !== 'PLAYTEST')
     .sort(byDate)
-    .map((k, index) => {
-      const preconsShort = Object.keys(props.sets[k]).join('/');
-
-      const preconsDetailed = Object.keys(props.sets[k]).map((i, idx) => {
-        const abbrevs = {
-          U: 'Uncommon',
-          R: 'Rare',
-          C: 'Common',
-          V: 'Vampire',
-        };
-
-        if (setsAndPrecons[k].precons && setsAndPrecons[k].precons[i]) {
-          return (
-            <li key={idx}>
-              {setsAndPrecons[k].precons[i].name} - {props.sets[k][i]}x
-            </li>
-          );
-        } else {
-          if (k === 'Promo') {
-            return <li key={idx}>{i}</li>;
-          } else if (i !== 'DTC') {
-            return <li key={idx}>{abbrevs[i]}</li>;
-          }
-        }
-      });
-
-      const popoverText = (
-        <div className="max-w-[400px] space-y-1 p-3 text-sm">
-          <b>{setsAndPrecons[k].name}</b>
-          {k !== 'POD' &&
-            k !== 'Promo' &&
-            ' - ' + setsAndPrecons[k].date.slice(0, 4)}
-          <ul className="space-y-1 text-xs">{preconsDetailed}</ul>
-        </div>
-      );
+    .map((set, index) => {
+      const preconsShort = Object.keys(sets[set]).join('/');
 
       return (
         <div
           className="inline-block whitespace-nowrap"
           onClick={() => {
-            if (k !== 'POD') props.setImageSet(k.toLowerCase());
+            if (set !== 'POD') setImageSet(set.toLowerCase());
           }}
           key={index}
         >
-          {isMobile ? (
-            <div className="inline" onClick={() => setModal(popoverText)}>
-              {k}
+          <ConditionalTooltip
+            disable={isMobile}
+            overlay={<PopoverText sets={sets} set={set} />}
+            placement="bottom"
+          >
+            <div
+              className="inline"
+              onClick={() => isMobile && setSelectedSet(set)}
+            >
+              {set}
               <div className="inline text-midGray dark:text-midGrayDark">
                 {preconsShort ? `:${preconsShort}` : null}
               </div>
             </div>
-          ) : (
-            <Tooltip overlay={popoverText} placement="bottom">
-              <div className="inline">
-                {k}
-                <div className="inline text-midGray dark:text-midGrayDark">
-                  {preconsShort ? `:${preconsShort}` : null}
-                </div>
-              </div>
-            </Tooltip>
-          )}
+          </ConditionalTooltip>
         </div>
       );
     });
+};
+
+const ResultLayoutTextSets = ({ sets, setImageSet }) => {
+  const [selectedSet, setSelectedSet] = useState();
 
   return (
     <>
-      <div className="inline ">{Sets}</div>
-      {modal && (
+      <div className="inline space-x-2.5">
+        <Sets
+          sets={sets}
+          setImageSet={setImageSet}
+          setSelectedSet={setSelectedSet}
+        />
+      </div>
+      {selectedSet && (
         <Modal
           size="xs"
-          className="nested-modal flex justify-center"
+          className="nested-selectedSet flex justify-center"
           dialogClassName="w-3/4"
-          handleClose={() => setModal(null)}
-          centered={true}
+          handleClose={() => setSelectedSet(null)}
           title="Sets"
+          centered
         >
-          <div>{modal}</div>
+          <PopoverText sets={sets} set={selectedSet} />
         </Modal>
       )}
     </>

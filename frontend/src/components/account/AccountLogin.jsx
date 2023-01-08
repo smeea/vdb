@@ -91,14 +91,14 @@ const AccountLogin = () => {
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
         <div className="flex">Login</div>
-        <div onClick={() => isMobile && setShowLoginTooltip(true)}>
-          <ConditionalTooltip
-            disabled={isMobile}
-            overlay={<LoginTooltipText />}
+        <ConditionalTooltip disabled={isMobile} overlay={<LoginTooltipText />}>
+          <div
+            className="text-fgThird dark:text-fgThirdDark"
+            onClick={() => isMobile && setShowLoginTooltip(true)}
           >
-            <div className="text-fgThird dark:text-fgThirdDark ">[?]</div>
-          </ConditionalTooltip>
-        </div>
+            [?]
+          </div>
+        </ConditionalTooltip>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
         <div className="flex w-full relative">
@@ -120,18 +120,18 @@ const AccountLogin = () => {
             <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
           )}
         </div>
-        <div
-          className="flex text-xs"
-          onClick={() => isMobile && setShowPasswordTooltip(true)}
-        >
+        <div className="flex">
           <ConditionalTooltip
             disabled={isMobile}
             placement="bottom"
             overlay={<PasswordTooltipText />}
           >
-            <a href="#">
+            <div
+              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline text-xs"
+              onClick={() => isMobile && setShowPasswordTooltip(true)}
+            >
               <i>Forgot password?</i>
-            </a>
+            </div>
           </ConditionalTooltip>
         </div>
       </form>
