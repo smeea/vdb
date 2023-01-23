@@ -13,6 +13,7 @@ import {
   ResultLayoutTextRulings,
   ResultLayoutTextArtist,
   ResultLayoutTextText,
+  Hr,
 } from 'components';
 import { isTrifle } from 'utils';
 import { useApp } from 'context';
@@ -27,7 +28,7 @@ const ResultLibraryLayoutText = ({
   const { inventoryMode } = useApp();
 
   return (
-    <>
+    <div className="space-y-2">
       <div className="flex items-center justify-between whitespace-nowrap ">
         <div className="flex items-center justify-between whitespace-nowrap">
           <ResultLibraryTypeImage value={card.Type} />
@@ -61,11 +62,11 @@ const ResultLibraryLayoutText = ({
           )}
         </div>
       </div>
-      <hr className="border-1 border-midGray dark:border-midGrayDark" />
+      <Hr variant="secondary" />
       <div>
         <ResultLayoutTextText cardid={card.Id} />
       </div>
-      <hr className="border-1 border-midGray dark:border-midGrayDark" />
+      <Hr variant="secondary" />
       {(card['Blood Cost'] || card['Pool Cost']) && (
         <>
           <div className="flex items-center justify-between">
@@ -74,7 +75,7 @@ const ResultLibraryLayoutText = ({
               valueBlood={card['Blood Cost']}
             />
           </div>
-          <hr className="border-1 border-midGray dark:border-midGrayDark" />
+          <Hr variant="secondary" />
         </>
       )}
       <div>
@@ -97,12 +98,12 @@ const ResultLibraryLayoutText = ({
       )}
       {(forceInventoryMode || inventoryMode) && (
         <>
-          <hr className="border-1 border-midGray dark:border-midGrayDark" />
+          <Hr variant="secondary" />
           <div className="font-bold">Inventory:</div>
           <ResultLayoutTextInventory cardid={card.Id} />
         </>
       )}
-    </>
+    </div>
   );
 };
 

@@ -14,6 +14,7 @@ import {
   ResultLayoutTextArtist,
   ResultLayoutTextText,
   ConditionalTooltip,
+  Hr,
 } from 'components';
 
 const ResultCryptLayoutText = ({
@@ -62,16 +63,16 @@ const ResultCryptLayoutText = ({
           )}
         </div>
       </div>
-      <hr className="border-1 border-midGray dark:border-midGrayDark" />
+      <Hr variant="secondary" />
       <div>
         <ResultLayoutTextText cardid={card.Id} />
       </div>
-      <hr className="border-1 border-midGray dark:border-midGrayDark" />
+      <Hr variant="secondary" />
       <div className="flex items-center justify-between">
         <ResultCryptDisciplines value={card.Disciplines} />
         <ResultCryptCapacity value={card.Capacity} />
       </div>
-      <hr className="border-1 border-midGray dark:border-midGrayDark" />
+      <Hr variant="secondary" />
       <div>
         <b>Sets: </b>
         <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
@@ -92,7 +93,7 @@ const ResultCryptLayoutText = ({
       )}
       {(forceInventoryMode || inventoryMode) && (
         <>
-          <hr className="border-1 border-midGray dark:border-midGrayDark" />
+          <Hr variant="secondary" />
           <div>
             <b>Inventory:</b>
             <ResultLayoutTextInventory cardid={card.Id} />

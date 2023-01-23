@@ -1,7 +1,7 @@
 import React from 'react';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import { SeatingRandomDeck, SeatingCustomDeckAdd } from 'components';
+import { Hr, SeatingRandomDeck, SeatingCustomDeckAdd } from 'components';
 
 const SeatingEditRandom = ({
   addCustomDeck,
@@ -17,7 +17,7 @@ const SeatingEditRandom = ({
 }) => {
   return (
     <div className="space-y-4">
-      <hr className="border-1 border-midGray dark:border-midGrayDark" />
+      <Hr variant="secondary" />
       <div className="space-y-2">
         <div
           className="flex items-center space-x-2"
@@ -87,7 +87,7 @@ const SeatingEditRandom = ({
           </div>
         </div>
       </div>
-      <hr className="border-1 border-midGray dark:border-midGrayDark" />
+      <Hr variant="secondary" />
       <div className="space-y-2">
         <div
           className="flex items-center space-x-2"

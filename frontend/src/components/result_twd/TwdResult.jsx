@@ -9,6 +9,7 @@ import {
   TwdResultLibraryKeyCards,
   Button,
   ButtonFloat,
+  Hr,
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp } from 'context';
@@ -90,7 +91,7 @@ const TwdResult = ({ results, setResults }) => {
                 )}
               </div>
               {index + 1 < showCounter && (
-                <hr className="border-2 border-fgRed dark:border-fgRedDark" />
+                <Hr variant="thick" className="my-4" />
               )}
             </React.Fragment>
           );
