@@ -37,17 +37,19 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
   }
 
   return (
-    <>
-      <Disclosure.Button>
-        <div className="flex items-center">
-          {Object.keys(decks).length}
-          <div className="flex">
-            <TrophyFill height="13" width="13" viewBox="0 0 18 18" />
+    <div className="bg-bgSecondary dark:bg-bgThirdDark rounded border border-borderPrimary dark:border-borderPrimaryDark">
+      <Disclosure.Button className="w-full p-3">
+        <div className="flex items-center text-fgName dark:text-fgNameDark px-2 space-x-4">
+          <div className="flex space-x-1">
+            <div>{Object.keys(decks).length}</div>
+            <div className="flex items-center">
+              <TrophyFill width="13" height="13" viewBox="0 0 16 16" />
+            </div>
           </div>
-          <div className="flex items-center whitespace-nowrap">
-            {name}
+          <div className="flex items-center whitespace-nowrap space-x-1">
+            <div>{name}</div>
             <div
-              className="flex "
+              className="flex items-center"
               title="National or Continental Championships (in bold below)"
             >
               {stars}
@@ -56,17 +58,19 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
         </div>
       </Disclosure.Button>
       <Disclosure.Panel>
-        {decks.sort(byDate).map((deck) => {
-          return (
-            <TwdHallFameDeckHeader
-              key={deck.deckid}
-              deck={{ ...deck, author: name }}
-              isStar={testStar(deck['event'])}
-            />
-          );
-        })}
+        <div className="px-2 space-y-1.5">
+          {decks.sort(byDate).map((deck) => {
+            return (
+              <TwdHallFameDeckHeader
+                key={deck.deckid}
+                deck={{ ...deck, author: name }}
+                isStar={testStar(deck['event'])}
+              />
+            );
+          })}
+        </div>
       </Disclosure.Panel>
-    </>
+    </div>
   );
 };
 

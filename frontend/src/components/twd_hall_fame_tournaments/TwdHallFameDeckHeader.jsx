@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { useApp } from 'context';
-import { TwdHallFameDeckBody } from 'components';
+import { Hr, TwdHallFameDeckBody } from 'components';
 import { useDeck } from 'hooks';
 
 const TwdHallFameDeckHeader = ({ deck, isStar }) => {
@@ -32,28 +32,31 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
   };
 
   return (
-    <div className="rounded-md border-2 border-borderPrimary dark:border-borderPrimaryDark">
+    <div className="bg-bgPrimary dark:bg-bgPrimaryDark rounded-md border-2 border-borderPrimary dark:border-borderPrimaryDark p-2.5">
       <div
         onClick={() => handleClick()}
         className={`flex justify-between text-fgSecondary hover:underline dark:text-fgSecondaryDark ${
           isStar ? 'font-bold' : ''
         }`}
       >
-        <div className="flex items-center">
-          {deck.players}
-          <div className="flex   ">
-            <PeopleFill viewBox="0 0 18 18" />
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-1">
+            <div>{deck.players}</div>
+            <div className="flex items-center">
+              <PeopleFill width="15" height="15" viewBox="0 0 16 16" />
+            </div>
           </div>
-          {`${deck.event}: ${deck.location}`}
+          <div className="flex items-center space-x-1">
+            <div>{`${deck.event}: ${deck.location}`}</div>
+          </div>
         </div>
         <div className="whitespace-nowrap ">
           {isMobile ? deck.date.slice(0, 4) : deck.date}
         </div>
       </div>
-
       {showDeck && cards && (
         <div>
-          <hr className="border-1 border-midGray dark:border-midGrayDark" />
+          <Hr variant="secondary" className="my-2" />
           {deck && (
             <TwdHallFameDeckBody
               deck={{

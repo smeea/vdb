@@ -29,20 +29,21 @@ const TwdHallOfFameTournaments = () => {
   };
 
   return (
-    <div className="hof-tournaments-container mx-auto">
+    <div className="hof-tournaments-container mx-auto space-y-1.5">
       {players && (
-        <Disclosure>
+        <>
           {Object.keys(players)
             .sort(byName)
             .sort(byWins)
             .map((player) => (
-              <TwdHallFameTournamentsPlayer
-                key={player}
-                name={player}
-                decks={players[player]}
-              />
+              <Disclosure key={player}>
+                <TwdHallFameTournamentsPlayer
+                  name={player}
+                  decks={players[player]}
+                />
+              </Disclosure>
             ))}
-        </Disclosure>
+        </>
       )}
     </div>
   );
