@@ -50,6 +50,7 @@ const DeckCryptTableRow = ({
   const SWIPE_THRESHOLD = 50;
   const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
+    swipeDuration: 250,
     onSwipedRight: (e) => {
       if (
         e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&

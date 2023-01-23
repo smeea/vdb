@@ -151,8 +151,8 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
           variant="primary"
         >
           <div className="flex items-center">
-            <div className="pb-0.5 text-xl">+</div>
-            <div className="text-2xl">L</div>
+            <div className="text-[24px]">+</div>
+            <div className="text-[28px]">L</div>
           </div>
         </ButtonFloat>
       )}

@@ -17,8 +17,8 @@ const DeckProxyLibraryTable = ({
   const cardRows = cards.map((card, idx) => {
     return (
       <DeckProxyLibraryTableRow
+        key={card.c.Id}
         inventoryType={inventoryType}
-        key={card.Id}
         card={card}
         idx={idx}
         handleClick={handleModalCardOpen}

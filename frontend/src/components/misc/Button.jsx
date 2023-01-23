@@ -9,6 +9,8 @@ const Button = ({
   onClick,
   title,
   value,
+  type,
+  tabIndex,
   variant = 'primary',
 }) => {
   const getStyle = (variant) => {
@@ -47,6 +49,8 @@ const Button = ({
       id={id}
       name={name}
       value={value}
+      tabIndex={tabIndex}
+      type={type}
     >
       {children}
     </button>

@@ -156,8 +156,8 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
           variant="primary"
         >
           <div className="flex items-center">
-            <div className="pb-0.5 text-xl">+</div>
-            <div className="text-2xl">C</div>
+            <div className="text-[24px]">+</div>
+            <div className="text-[28px]">C</div>
           </div>
         </ButtonFloat>
       )}

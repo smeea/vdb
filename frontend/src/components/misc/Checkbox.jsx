@@ -8,8 +8,9 @@ const Checkbox = ({
   onChange,
   label,
   className,
+  id,
 }) => {
-  const id = `${prefix ?? ''}-${name}-${value}`;
+  const htmlId = id ?? `${prefix ?? ''}-${name}-${value}`;
 
   return (
     <div className={`flex items-center space-x-1.5 ${className ?? ''}`}>
@@ -18,7 +19,7 @@ const Checkbox = ({
         value={value}
         type="checkbox"
         className="form-checkbox w-[16px] h-[16px] rounded bg-bgCheckbox dark:bg-bgCheckboxDark checked:bg-bgCheckboxSelected checked:dark:bg-bgCheckboxSelectedDark border-borderPrimary dark:border-none"
-        id={id}
+        id={htmlId}
         onChange={onChange}
         checked={checked}
       />

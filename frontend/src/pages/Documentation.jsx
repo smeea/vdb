@@ -9,7 +9,7 @@ import { Banner } from 'components';
 
 const Title = ({ children }) => {
   return (
-    <div className="text-xl font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
+    <div className="text-lg font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
       {children}
     </div>
   );

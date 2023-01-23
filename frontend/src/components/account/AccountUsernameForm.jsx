@@ -4,7 +4,7 @@ import { Input } from 'components';
 const AccountUsernameForm = ({ value, setValue, isNew }) => {
   return (
     <Input
-      className="inline w-full rounded-r-none"
+      className="w-full"
       placeholder={isNew ? 'New Username' : 'Username'}
       type="text"
       name="username"

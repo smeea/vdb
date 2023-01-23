@@ -14,7 +14,7 @@ const Banner = () => {
           width="48"
           height="48"
         />
-        <div className="inline pl-2 text-3xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="inline pl-2 text-[30px] font-bold text-fgSecondary dark:text-fgSecondaryDark">
           VDB
         </div>
       </div>

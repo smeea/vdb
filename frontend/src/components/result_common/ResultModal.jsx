@@ -50,6 +50,7 @@ const ResultModal = ({
   const SWIPE_THRESHOLD = 50;
   const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
+    swipeDuration: 250,
     onSwipedRight: (e) => {
       if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD) {
         handleModalCardChange(-1);
@@ -138,10 +139,7 @@ const ResultModal = ({
               </ButtonFloat>
             )}
             {isNarrow && (
-              <ButtonFloat
-                onClick={handleClose}
-                variant="danger"
-              >
+              <ButtonFloat onClick={handleClose} variant="danger">
                 <X width="40" height="40" viewBox="0 0 16 16" />
               </ButtonFloat>
             )}

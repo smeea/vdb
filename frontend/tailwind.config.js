@@ -14,6 +14,13 @@ module.exports = {
       decimal: 'decimal',
       square: 'square',
     },
+    fontSize: {
+      xs: ['13px', '20px'],
+      sm: ['15px', '22px'],
+      base: ['16px', '24px'],
+      lg: ['18px', '28px'],
+      xl: ['20px', '28px'],
+    },
     colors: {
       transparent: 'transparent',
       black: '#000000',

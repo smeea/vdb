@@ -19,12 +19,12 @@ const DeckProxyCryptTable = ({
   const cardRows = cards.map((card, idx) => {
     return (
       <DeckProxyCryptTableRow
+        key={card.c.Id}
         inventoryType={inventoryType}
         disciplinesSet={disciplinesSet}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
         maxDisciplines={maxDisciplines}
-        key={card.Id}
         card={card}
         idx={idx}
         handleClick={handleModalCardOpen}

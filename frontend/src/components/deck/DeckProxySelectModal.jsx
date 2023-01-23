@@ -116,13 +116,13 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     }));
   };
 
-  const handleProxyCounter = (deckid, id, q) => {
+  const handleProxyCounter = (deckid, card, q) => {
     if (q >= 0) {
       const newState = proxySelected;
-      newState[id].q = q;
+      newState[card.Id].q = q;
       setProxySelected((prevState) => ({
         ...prevState,
-        [id]: newState[id],
+        [card.Id]: newState[card.Id],
       }));
     }
   };

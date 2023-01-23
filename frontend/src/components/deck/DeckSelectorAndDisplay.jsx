@@ -28,7 +28,7 @@ const DeckSelectorAndDisplay = () => {
 
   return (
     <div className={Y_SPACING}>
-      <div className="top-0 z-10 space-x-1 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[40px]">
+      <div className="flex top-0 z-10 space-x-1 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[40px]">
         {addMode && (
           <>
             <div className={isBranches ? 'w-3/4' : 'w-full'}>

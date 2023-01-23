@@ -10,9 +10,7 @@ const AccountPasswordForm = ({ value, setValue, success, isOld, isNew }) => {
   return (
     <>
       <Input
-        className={`inline w-full ${
-          isOld ? '' : 'rounded-l-none'
-        } rounded-r-none`}
+        className={`w-full ${isOld ? '' : 'rounded-r-none'}`}
         placeholder={isNew ? 'New Password' : 'Password'}
         type={hidePassword ? 'password' : 'text'}
         autoComplete={isNew ? 'new-password' : 'password'}
@@ -24,10 +22,11 @@ const AccountPasswordForm = ({ value, setValue, success, isOld, isNew }) => {
       {!isOld && (
         <>
           <Button
-            className="rounded-l-none rounded-r-none"
+            className="rounded-none"
             tabIndex="-1"
-            variant="primary"
-            onClick={() => setHidePassword(!hidePassword)}
+            onClick={() => {
+              setHidePassword(!hidePassword);
+            }}
           >
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>

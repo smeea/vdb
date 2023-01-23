@@ -6,7 +6,6 @@ import {
   ErrorOverlay,
   Modal,
   ConditionalTooltip,
-  Tooltip,
 } from 'components';
 import { useApp } from 'context';
 import { userServices } from 'services';

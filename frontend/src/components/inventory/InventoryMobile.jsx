@@ -130,7 +130,7 @@ const InventoryMobile = ({
           position="middle"
           variant="primary"
         >
-          <div className="text-2xl">{showCrypt ? 'LIB' : 'CR'}</div>
+          <div className="text-[28px]">{showCrypt ? 'LIB' : 'CR'}</div>
         </ButtonFloat>
       )}
     </>

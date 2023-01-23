@@ -124,7 +124,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         nonKeyDisciplines={nonKeyDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
-        <div className=" opacity-60">
+        <div className="opacity-60">
           <div className="flex items-center justify-between font-bold">
             Side Crypt
           </div>
@@ -149,8 +149,8 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
           variant="primary"
         >
           <div className="flex items-center">
-            <div className="pb-0.5 text-xl">+</div>
-            <div className="text-2xl">C</div>
+            <div className="text-[24px]">+</div>
+            <div className="text-[28px]">C</div>
           </div>
         </ButtonFloat>
       )}

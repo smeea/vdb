@@ -152,7 +152,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
       </div>
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
-        <div className=" opacity-60">
+        <div className="opacity-60">
           <b>Side Library</b>
           {LibrarySideDeck}
         </div>
@@ -164,8 +164,8 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           variant="primary"
         >
           <div className="flex items-center">
-            <div className="pb-0.5 text-xl">+</div>
-            <div className="text-2xl">L</div>
+            <div className="text-[24px]">+</div>
+            <div className="text-[28px]">L</div>
           </div>
         </ButtonFloat>
       )}
