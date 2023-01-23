@@ -455,26 +455,27 @@ const missingBloodCost = (filterBloodCost, card) => {
   return missingCostCheck(moreless, filterCost, cardCost);
 };
 
+const testType = (card, type) => {
+  if (type === 'reflex') {
+    return card['Card Text'].includes('[REFLEX]');
+  } else {
+    return card['Type'].toLowerCase().split('/').includes(type);
+  }
+};
+
 const missingType = (filterType, card) => {
   if (!filterType || filterType === 'any') return false;
 
   const types = filterType.value;
-  const logic = filterType.logic;
 
-  switch (logic) {
+  switch (filterType.logic) {
     case 'and':
-      return !types.every((type) =>
-        card['Type'].toLowerCase().split('/').includes(type)
-      );
+      return !types.every((type) => testType(card, type));
 
     case 'or':
-      return !types.some((type) =>
-        card['Type'].toLowerCase().split('/').includes(type)
-      );
+      return !types.some((type) => testType(card, type));
     case 'not':
-      return types.some((type) =>
-        card['Type'].toLowerCase().split('/').includes(type)
-      );
+      return types.some((type) => testType(card, type));
   }
 };
 

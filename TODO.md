@@ -1,7 +1,6 @@
 # FIX
 - Fix scroll + swipes (maybe add swipeDuration: <200 or something)
 - Notification on Incognito mode
-- Update url for playtest images to mitigate caching
 - Pdf proxy add missing from inventory in card selection
 
 # FEATURES
@@ -11,12 +10,12 @@
 - Multitable seating
 - Playable by buttons to lib/crypt
 - Make Public button text related to deck PDA status
-- Reflex filter
 
 # MAYBE LATER FEATURES
 - Offline decks storage
 
 # IMPROVE TECHNOLOGY - FRONTEND
+- Update url for playtest images to mitigate caching
 - Inventory/deck import in excel
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Debouncing for text search query

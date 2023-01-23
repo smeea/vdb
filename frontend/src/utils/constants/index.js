@@ -34,6 +34,7 @@ export const cardtypeSorted = [
   'Event',
   'Conviction',
   'Power',
+  'Reflex',
 ];
 
 export const GROUPED_TYPE = 'GroupedType';
