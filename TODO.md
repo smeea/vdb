@@ -4,11 +4,9 @@
 - Pdf image sharpness
 - Update url for playtest images to mitigate caching
 - Pdf proxy add missing from inventory in card selection
-
-# IMPROVEMENTS
-- Dont bundle changes - lazyload changelog + hardcode version
-- Test bundle size with lazy load of pages
-- Add fetch to api/version instead of include recent change in answer
+- Login form before no login answer
+- No swipe for locked deck
+- Increase navbar spacing on mobile
 
 # FEATURES
 - Check TWD
@@ -16,6 +14,9 @@
 - Custom values for cardtypes in TWD/PDA
 - Playtest decks to PDA
 - Multitable seating
+- Playable by buttons to lib/crypt
+- Make Public button text related to deck PDA status
+- Reflex filter
 
 # MAYBE LATER FEATURES
 - Offline decks storage
@@ -26,6 +27,9 @@
 - Debouncing for text search query
 - Refactor InventoryCrypt and InventoryLibrary
 - Explicit image width/height
+- Dont bundle changes - lazyload changelog + hardcode version
+- Test bundle size with lazy load of pages
+- Add fetch to api/version instead of include recent change in answer
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter
