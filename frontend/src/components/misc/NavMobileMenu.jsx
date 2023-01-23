@@ -20,7 +20,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
       {showMenu && (
-        <div className="absolute bottom-10 space-y-0 rounded-lg border border-borderPrimary bg-bgPrimary py-4 text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
+        <div className="absolute bottom-10 space-y-0 rounded-lg border border-borderPrimary bg-bgPrimary text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
           <div className="w-full">
             <NavLink
               to="/account"
@@ -81,10 +81,10 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               Inventory Mode
             </div>
           </div>
-          <div className="px-3 py-1.5">
+          <div className="px-3.5 pt-2.5">
             <hr />
           </div>
-          <div className="flex px-3 py-1.5">
+          <div className="flex p-3.5">
             <LanguageMenu setShowMenu={setShowMenu} />
           </div>
         </div>

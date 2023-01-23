@@ -39,7 +39,7 @@ const ThemeSelect = ({ setShowMenu }) => {
         </div>
       ) : (
         <div
-          className={`flex h-full items-center justify-center ${
+          className={`flex min-w-[40px] h-full items-center justify-center ${
             isMobile ? '' : 'text-[#ffffff] dark:text-[#ffffff]'
           }   `}
           onClick={() => {

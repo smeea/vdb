@@ -29,7 +29,7 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
       aria-label={ariaLabel}
       className={({ isActive }) =>
         `flex h-full items-center hover:no-underline ${
-          icon ? 'px-3' : 'px-1.5 sm:px-2 pb-0'
+          icon ? 'px-3' : 'px-2 pb-0'
         } ${
           isActive
             ? 'bg-borderNestModal text-[#ffffff] dark:bg-borderNestModalDark dark:text-[#ffffff]'
@@ -88,7 +88,7 @@ const Navigation = () => {
       } z-50 `}
     >
       <div className="navbar-container mx-auto flex h-10 justify-between">
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-6">
           {isMobile ? (
             <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
           ) : (
@@ -108,7 +108,7 @@ const Navigation = () => {
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
               <div
-                className={`flex h-full items-center px-3 ${
+                className={`flex h-full items-center px-1.5 ${
                   inventoryMode
                     ? 'text-[#ffffff] dark:text-[#ffffff]'
                     : 'text-[#afafaf] dark:text-[#afafaf]'
@@ -117,14 +117,12 @@ const Navigation = () => {
                   toggleInventoryMode();
                 }}
               >
-                <div className="pr-2">
-                  {inventoryMode ? (
-                    <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
-                  ) : (
-                    <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
-                  )}
-                </div>
-                Inventory Mode
+                {inventoryMode ? (
+                  <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
+                ) : (
+                  <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
+                )}
+                <div className="pl-2">Inventory Mode</div>
               </div>
             )}
         </div>
@@ -135,7 +133,7 @@ const Navigation = () => {
                 to="/account"
                 icon={
                   username ? (
-                    <PersonFill width="20" height="20" viewBox="0 1 16 16" />
+                    <PersonFill width="20" height="20" viewBox="0 0 16 16" />
                   ) : null
                 }
                 text={username ? null : 'Login'}
@@ -153,7 +151,7 @@ const Navigation = () => {
           <Link
             to={cardsUrl}
             ariaLabel="Quick card search"
-            icon={<LightningFill width="18" height="18" viewBox="0 0 16 16" />}
+            icon={<LightningFill width="19" height="19" viewBox="0 0 16 16" />}
           />
         </div>
       </div>

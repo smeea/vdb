@@ -21,7 +21,7 @@ const ResultCryptName = ({ card }) => {
         )}
       </div>
       {card['Banned'] && (
-        <div className="inline">
+        <div className="inline whitespace-nowrap">
           [{card['Banned']} <Hammer className="inline h-[20px]" />]
         </div>
       )}

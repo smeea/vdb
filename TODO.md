@@ -1,18 +1,13 @@
 # FIX
 - Fix scroll + swipes (maybe add swipeDuration: <200 or something)
 - Notification on Incognito mode
-- Pdf image sharpness
 - Update url for playtest images to mitigate caching
 - Pdf proxy add missing from inventory in card selection
-- Login form before no login answer
-- No swipe for locked deck
-- Increase navbar spacing on mobile
 
 # FEATURES
 - Check TWD
 - Events decks archive analyzing
 - Custom values for cardtypes in TWD/PDA
-- Playtest decks to PDA
 - Multitable seating
 - Playable by buttons to lib/crypt
 - Make Public button text related to deck PDA status

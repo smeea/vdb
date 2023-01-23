@@ -8,7 +8,7 @@ const ResultLibraryName = ({ card }) => {
         {card['Name']}
       </div>
       {card['Banned'] && (
-        <div className="inline">
+        <div className="inline whitespace-nowrap">
           [{card['Banned']} <Hammer className="inline h-[20px]" />]
         </div>
       )}

@@ -431,7 +431,6 @@ export const AppProvider = (props) => {
       setupHardAndSoftInventory();
     }
   }, [decks]);
-
   const setupHardAndSoftInventory = () => {
     const softCrypt = {};
     const softLibrary = {};

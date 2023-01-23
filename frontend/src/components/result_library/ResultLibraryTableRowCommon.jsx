@@ -57,13 +57,14 @@ const Name = ({ card, handleClick, placement }) => {
 
 const Disciplines = ({ card, handleClick }) => {
   return (
-    <td
-      className="flex min-w-[90px] items-center justify-center"
-      onClick={() => handleClick(card)}
-    >
-      {card.Clan && <ResultLibraryClan value={card.Clan} />}
-      {card.Discipline && card.Clan && '+'}
-      {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
+    <td className="min-w-[90px]" onClick={() => handleClick(card)}>
+      <div className="flex items-center justify-center">
+        {card.Clan && <ResultLibraryClan value={card.Clan} />}
+        {card.Discipline && card.Clan && '+'}
+        {card.Discipline && (
+          <ResultLibraryDisciplines value={card.Discipline} />
+        )}
+      </div>
     </td>
   );
 };

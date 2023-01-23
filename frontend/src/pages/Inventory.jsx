@@ -182,14 +182,13 @@ const Inventory = () => {
         </>
       ) : (
         <>
-          {inventoryError ? (
-            <ErrorMessage>{inventoryError}</ErrorMessage>
-          ) : (
-            <div className="flex h-[70vh] flex-col items-center justify-center space-y-10">
+          {inventoryError && <ErrorMessage>{inventoryError}</ErrorMessage>}
+          {!inventoryError && username === null && (
+            <div className="flex basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 h-[70vh] flex-col items-center justify-center space-y-10">
               <div className="flex justify-center text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Login to manage your inventory
               </div>
-              <div className="space-y-16">
+              <div className="w-full space-y-16">
                 <AccountLogin />
                 <AccountRegister />
               </div>

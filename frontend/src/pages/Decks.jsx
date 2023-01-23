@@ -282,8 +282,8 @@ const Decks = () => {
           </div>
         </div>
       </div>
-      {!username && !deckid && !hash && (
-        <div className="flex h-[70vh] flex-col items-center justify-center space-y-10">
+      {username === null && !deckid && !hash && (
+        <div className="flex basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 h-[70vh] flex-col items-center justify-center space-y-10">
           <div className="justify-center font-bold text-fgSecondary dark:text-fgSecondaryDark">
             <div className="flex justify-center text-lg">
               Login to create your decks
@@ -292,13 +292,12 @@ const Decks = () => {
               (Browse preconstructed decks without login)
             </div>
           </div>
-          <div className="space-y-16">
+          <div className="w-full space-y-16">
             <AccountLogin />
             <AccountRegister />
           </div>
         </div>
       )}
-
       {username && decks && Object.keys(decks).length === 0 && !deck && (
         <div className="flex h-[70vh] flex-col items-center justify-center space-y-8">
           <div className="justify-center font-bold text-fgSecondary dark:text-fgSecondaryDark">
