@@ -21,9 +21,7 @@
 - Debouncing for text search query
 - Refactor InventoryCrypt and InventoryLibrary
 - Explicit image width/height
-- Dont bundle changes - lazyload changelog + hardcode version
 - Test bundle size with lazy load of pages
-- Add fetch to api/version instead of include recent change in answer
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter

@@ -1,6 +1,5 @@
 from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user, login_required
-import json
 from api import app, db, login
 from models import User
 from routes.decks_routes import parse_user_decks
@@ -10,14 +9,6 @@ from routes.inventory_routes import parse_user_inventory
 @login.unauthorized_handler
 def unauthorized_handler():
     abort(401)
-
-
-@app.route("/api/version", methods=["GET"])
-def version_route():
-    with open("../CHANGES.json", "r") as changes_file:
-        changes = json.load(changes_file)
-        return jsonify(changes[0])
-
 
 @app.route("/api/login", methods=["POST"])
 def login_route():

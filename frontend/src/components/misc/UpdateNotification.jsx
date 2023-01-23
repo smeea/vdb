@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Modal, ButtonIconed } from 'components';
 import Activity from 'assets/images/icons/activity.svg';
 import ListUl from 'assets/images/icons/list-task.svg';
-import changes from '~/../CHANGES.json';
+import lastChange from '~/../LAST_CHANGE.json';
 
 const UpdateNotification = () => {
-  const version = changes[0].version;
   const [update, setUpdate] = useState();
 
   useEffect(() => {
@@ -19,7 +18,7 @@ const UpdateNotification = () => {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        if (data.version > version) {
+        if (data.version > lastChange.version) {
           setUpdate(data);
         }
       });

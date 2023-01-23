@@ -7,7 +7,7 @@ import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import Globe2 from 'assets/images/icons/globe2.svg';
 import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
 import { Banner } from 'components';
-import changes from '~/../CHANGES.json';
+import lastChange from '~/../LAST_CHANGE.json';
 
 const Title = ({ children }) => {
   return (
@@ -87,10 +87,10 @@ const About = () => {
               <span className="whitespace-nowrap">2022-11-14</span>
             </div>
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              Last update [{changes[0].version}]:
+              Last update [{lastChange.version}]:
             </div>
             <ul className="space-y-1">
-              {changes[0].changes.map((change, idx) => (
+              {lastChange.changes.map((change, idx) => (
                 <li key={idx}>{change}</li>
               ))}
             </ul>
