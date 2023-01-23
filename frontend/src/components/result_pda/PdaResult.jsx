@@ -101,9 +101,7 @@ const PdaResult = ({ results, setResults }) => {
                   </>
                 )}
               </div>
-              {index + 1 < showCounter && (
-                <Hr variant="thick" className="my-4" />
-              )}
+              {index + 1 < showCounter && <Hr isThick />}
             </React.Fragment>
           );
         }
@@ -119,7 +117,7 @@ const PdaResult = ({ results, setResults }) => {
         sortMethod={pdaSearchSort}
         setSortMethod={changePdaSearchSort}
       />
-      {resultEntries}
+      <div className="space-y-4">{resultEntries}</div>
       {deckCounter > showCounter && (
         <div className="flex justify-center ">
           <Button

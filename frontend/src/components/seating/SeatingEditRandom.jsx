@@ -17,7 +17,7 @@ const SeatingEditRandom = ({
 }) => {
   return (
     <div className="space-y-4">
-      <Hr variant="secondary" />
+      <Hr />
       <div className="space-y-2">
         <div
           className="flex items-center space-x-2"
@@ -87,7 +87,7 @@ const SeatingEditRandom = ({
           </div>
         </div>
       </div>
-      <Hr variant="secondary" />
+      <Hr />
       <div className="space-y-2">
         <div
           className="flex items-center space-x-2"

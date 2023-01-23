@@ -15,10 +15,7 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
     .map((d, idx) => {
       withDisciplines = true;
       return (
-        <div
-          key={idx}
-          className="inline-block items-center whitespace-nowrap pr-5"
-        >
+        <div key={idx} className="inline-block whitespace-nowrap pr-5">
           <div className="flex items-center space-x-1">
             <ResultDisciplineImage
               title={`${d} Superior | Inferior`}

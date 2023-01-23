@@ -24,23 +24,23 @@ const ResultLibraryTotal = ({
     total += 1;
   });
 
-  const totalOutput = Object.keys(byTypes).map((k) => {
-    return (
-      <span key={k} className="inline-block whitespace-nowrap ">
-        <div className="flex items-center">
-          <ResultLibraryTypeImage value={k} />
-          {byTypes[k]}
-        </div>
-      </span>
-    );
-  });
-
-  const value = (
-    <>
-      <div className="whitespace-nowrap font-bold">
+  return (
+    <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+      <div className="p-2 whitespace-nowrap font-bold">
         {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
       </div>
-      <div>{totalOutput}</div>
+      <div>
+        {Object.keys(byTypes).map((k) => {
+          return (
+            <span key={k} className="inline-block whitespace-nowrap px-2">
+              <div className="flex items-center">
+                <ResultLibraryTypeImage value={k} />
+                {byTypes[k]}
+              </div>
+            </span>
+          );
+        })}
+      </div>
       <div className="flex">
         {!inCompare ? (
           <SortButton
@@ -60,12 +60,6 @@ const ResultLibraryTotal = ({
           </div>
         )}
       </div>
-    </>
-  );
-
-  return (
-    <div className="flex items-center  justify-between bg-bgSecondary dark:bg-bgSecondaryDark ">
-      {value}
     </div>
   );
 };

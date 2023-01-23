@@ -29,7 +29,7 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
       aria-label={ariaLabel}
       className={({ isActive }) =>
         `flex h-full items-center hover:no-underline ${
-          icon ? 'px-3' : 'px-2 pb-0'
+          icon ? 'px-3' : 'px-2 pb-[2px]'
         } ${
           isActive
             ? 'bg-borderNestModal text-[#ffffff] dark:bg-borderNestModalDark dark:text-[#ffffff]'
@@ -108,7 +108,7 @@ const Navigation = () => {
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
               <div
-                className={`flex h-full items-center px-1.5 ${
+                className={`flex h-full items-center ${
                   inventoryMode
                     ? 'text-[#ffffff] dark:text-[#ffffff]'
                     : 'text-[#afafaf] dark:text-[#afafaf]'
@@ -117,12 +117,14 @@ const Navigation = () => {
                   toggleInventoryMode();
                 }}
               >
-                {inventoryMode ? (
-                  <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
-                ) : (
-                  <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
-                )}
-                <div className="pl-2">Inventory Mode</div>
+                <div className="flex min-w-[44px] justify-center">
+                  {inventoryMode ? (
+                    <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
+                  ) : (
+                    <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
+                  )}
+                </div>
+                <div className="pl-1 pb-[2px]">Inventory Mode</div>
               </div>
             )}
         </div>
@@ -133,7 +135,7 @@ const Navigation = () => {
                 to="/account"
                 icon={
                   username ? (
-                    <PersonFill width="20" height="20" viewBox="0 0 16 16" />
+                    <PersonFill width="21" height="21" viewBox="0 1 16 16" />
                   ) : null
                 }
                 text={username ? null : 'Login'}

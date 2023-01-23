@@ -41,7 +41,7 @@ const UsedPopover = ({ cardid }) => {
           )}
         </>
       )}
-      <Hr variant="secondary" />
+      <Hr />
       <div className="flex items-center">
         <div className="opacity-40">
           <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />

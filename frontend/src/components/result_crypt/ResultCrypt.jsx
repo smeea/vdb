@@ -46,10 +46,16 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
     setShowCryptSearch(true);
   };
 
-  const sortedCards = useMemo(
-    () => cryptSort(cards, cryptSearchSort),
-    [cards, cryptSearchSort]
-  );
+  const table = useMemo(() => {
+    const sortedCards = cryptSort(cards, cryptSearchSort);
+
+    return (
+      <ResultCryptTable
+        resultCards={sortedCards}
+        placement={isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'}
+      />
+    );
+  }, [cards, cryptSearchSort]);
 
   return (
     <>
@@ -69,16 +75,11 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
             setSortMethod={changeCryptSearchSort}
           />
           {showInfo && (
-            <div className="bg-bgSecondary dark:bg-bgSecondaryDark ">
+            <div className="bg-bgSecondary dark:bg-bgSecondaryDark px-2 py-1">
               <ResultCryptTotalInfo cards={cards} />
             </div>
           )}
-          <ResultCryptTable
-            resultCards={sortedCards}
-            placement={
-              isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'
-            }
-          />
+          {table}
         </>
       )}
       {isMobile && showFloatingButtons && (

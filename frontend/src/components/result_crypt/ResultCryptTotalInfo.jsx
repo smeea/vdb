@@ -13,11 +13,7 @@ const ResultCryptTotalInfo = ({ cards }) => {
 
   const { disciplinesDetailed } = useKeyDisciplines(cardsById);
 
-  return (
-    <>
-      <DisciplinesCryptSummary disciplinesDetailed={disciplinesDetailed} />
-    </>
-  );
+  return <DisciplinesCryptSummary disciplinesDetailed={disciplinesDetailed} />;
 };
 
 export default ResultCryptTotalInfo;

@@ -28,11 +28,11 @@ const ResultLibraryLayoutText = ({
   const { inventoryMode } = useApp();
 
   return (
-    <div className="space-y-2">
-      <div className="flex items-center justify-between whitespace-nowrap ">
-        <div className="flex items-center justify-between whitespace-nowrap">
+    <div className="space-y-3">
+      <div className="flex items-center justify-between whitespace-nowrap">
+        <div className="flex items-center justify-between whitespace-nowrap space-x-2">
           <ResultLibraryTypeImage value={card.Type} />
-          <div className="name font-bold text-fgName  dark:text-fgNameDark">
+          <div className="font-bold text-fgName  dark:text-fgNameDark">
             <ResultLibraryName card={card} />
           </div>
         </div>
@@ -62,11 +62,11 @@ const ResultLibraryLayoutText = ({
           )}
         </div>
       </div>
-      <Hr variant="secondary" />
+      <Hr />
       <div>
         <ResultLayoutTextText cardid={card.Id} />
       </div>
-      <Hr variant="secondary" />
+      <Hr />
       {(card['Blood Cost'] || card['Pool Cost']) && (
         <>
           <div className="flex items-center justify-between">
@@ -75,32 +75,34 @@ const ResultLibraryLayoutText = ({
               valueBlood={card['Blood Cost']}
             />
           </div>
-          <Hr variant="secondary" />
+          <Hr />
         </>
       )}
-      <div>
-        <b>Sets: </b>
+      <div className="space-x-2">
+        <b>Sets:</b>
         <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
       </div>
-      <div>
-        <b>Artist: </b>
-        <div className="inline ">
+      <div className="space-x-2">
+        <b>Artist:</b>
+        <div className="inline">
           <ResultLayoutTextArtist artists={card['Artist']} />
         </div>
       </div>
       {Object.keys(card['Rulings']).length > 0 && (
-        <>
-          <div className="font-bold">Rulings:</div>
-          <div className=" text-xs">
+        <div className="space-y-1">
+          <b>Rulings:</b>
+          <div className="text-xs">
             <ResultLayoutTextRulings rulings={card['Rulings']} />
           </div>
-        </>
+        </div>
       )}
       {(forceInventoryMode || inventoryMode) && (
         <>
-          <Hr variant="secondary" />
-          <div className="font-bold">Inventory:</div>
-          <ResultLayoutTextInventory cardid={card.Id} />
+          <Hr />
+          <div>
+            <b>Inventory:</b>
+            <ResultLayoutTextInventory cardid={card.Id} />
+          </div>
         </>
       )}
     </div>

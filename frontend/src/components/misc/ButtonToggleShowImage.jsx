@@ -22,7 +22,7 @@ const ButtonToggleShowImage = () => {
       variant={success ? 'success' : 'primary'}
       onClick={onClick}
       icon={showImage ? <ImageAlt /> : <FileTextFill />}
-      text={`${showImage ? 'Image' : 'Text'} on Hover`}
+      text={success ? `${showImage ? 'Image' : 'Text'} on Hover` : null}
     />
   );
 };

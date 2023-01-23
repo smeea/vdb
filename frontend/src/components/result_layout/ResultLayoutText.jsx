@@ -48,7 +48,7 @@ const ResultLayoutText = ({
   };
 
   return (
-    <>
+    <div className="space-y-2">
       {card.Id > 200000 ? (
         <ResultCryptLayoutText
           card={card}
@@ -72,7 +72,7 @@ const ResultLayoutText = ({
           <ButtonCardCopyUrl cardid={card.Id} />
           <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
           <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
-          {!isMobile && !noClose && <ButtonToggleShowImage />}
+          {!isMobile && <ButtonToggleShowImage />}
           <ButtonIconed
             variant={inCompare ? 'third' : 'primary'}
             onClick={handleCompare}
@@ -94,7 +94,7 @@ const ResultLayoutText = ({
           />
         )}
       </div>
-    </>
+    </div>
   );
 };
 

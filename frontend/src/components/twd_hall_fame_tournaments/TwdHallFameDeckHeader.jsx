@@ -32,10 +32,10 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
   };
 
   return (
-    <div className="bg-bgPrimary dark:bg-bgPrimaryDark rounded-md border-2 border-borderPrimary dark:border-borderPrimaryDark p-2.5">
+    <div className="bg-bgPrimary dark:bg-bgPrimaryDark rounded-md border-2 border-borderPrimary dark:border-borderPrimaryDark">
       <div
         onClick={() => handleClick()}
-        className={`flex justify-between text-fgSecondary hover:underline dark:text-fgSecondaryDark ${
+        className={`flex p-2.5 justify-between text-fgSecondary hover:underline dark:text-fgSecondaryDark ${
           isStar ? 'font-bold' : ''
         }`}
       >
@@ -55,20 +55,22 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
         </div>
       </div>
       {showDeck && cards && (
-        <div>
-          <Hr variant="secondary" className="my-2" />
-          {deck && (
-            <TwdHallFameDeckBody
-              deck={{
-                ...deck,
-                creation_date: deck.date,
-                crypt: cards.crypt,
-                library: cards.library,
-              }}
-              isMobile={isMobile}
-            />
-          )}
-        </div>
+        <>
+          <Hr />
+          <div className="p-2.5">
+            {deck && (
+              <TwdHallFameDeckBody
+                deck={{
+                  ...deck,
+                  creation_date: deck.date,
+                  crypt: cards.crypt,
+                  library: cards.library,
+                }}
+                isMobile={isMobile}
+              />
+            )}
+          </div>
+        </>
       )}
     </div>
   );

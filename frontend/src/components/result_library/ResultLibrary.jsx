@@ -41,10 +41,16 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
     setShowLibrarySearch(true);
   };
 
-  const sortedCards = useMemo(
-    () => librarySort(cards, librarySearchSort),
-    [cards, librarySearchSort]
-  );
+  const table = useMemo(() => {
+    const sortedCards = librarySort(cards, librarySearchSort);
+
+    return (
+      <ResultLibraryTable
+        resultCards={sortedCards}
+        placement={isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'}
+      />
+    );
+  }, [cards, librarySearchSort]);
 
   return (
     <>
@@ -62,12 +68,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
             sortMethod={librarySearchSort}
             setSortMethod={changeLibrarySearchSort}
           />
-          <ResultLibraryTable
-            resultCards={sortedCards}
-            placement={
-              isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'
-            }
-          />
+          {table}
         </>
       )}
       {isMobile && showFloatingButtons && (

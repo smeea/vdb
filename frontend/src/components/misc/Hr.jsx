@@ -1,20 +1,13 @@
 import React from 'react';
 
-const Hr = ({ className, variant = 'primary' }) => {
-  const getStyle = (variant) => {
-    switch (variant) {
-      case 'primary':
-        return 'text-borderPrimary dark:text-borderPrimaryDark';
-      case 'secondary':
-        return 'text-darkGray dark:text-darkGrayDark';
-      case 'thick':
-        return 'border-2 text-darkGray dark:text-darkGrayDark';
-    }
-  };
-
-  const customStyle = getStyle(variant);
-
-  return <hr className={`${customStyle} ${className}`} />;
+const Hr = ({ isThick }) => {
+  return (
+    <hr
+      className={`text-bgSecondary dark:text-bgSecondaryDark ${
+        isThick ? 'border-2' : ''
+      }`}
+    />
+  );
 };
 
 export default Hr;

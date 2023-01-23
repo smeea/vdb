@@ -90,9 +90,7 @@ const TwdResult = ({ results, setResults }) => {
                   </>
                 )}
               </div>
-              {index + 1 < showCounter && (
-                <Hr variant="thick" className="my-4" />
-              )}
+              {index + 1 < showCounter && <Hr isThick />}
             </React.Fragment>
           );
         }
@@ -108,7 +106,7 @@ const TwdResult = ({ results, setResults }) => {
         sortMethod={twdSearchSort}
         setSortMethod={changeTwdSearchSort}
       />
-      {resultEntries}
+      <div className="space-y-4">{resultEntries}</div>
       {deckCounter > showCounter && (
         <div className="flex justify-center ">
           <Button

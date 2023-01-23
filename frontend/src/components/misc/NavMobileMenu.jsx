@@ -82,7 +82,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             </div>
           </div>
           <div className="px-3.5 pt-2.5">
-            <Hr variant="secondary" />
+            <Hr />
           </div>
           <div className="flex p-3.5">
             <LanguageMenu setShowMenu={setShowMenu} />

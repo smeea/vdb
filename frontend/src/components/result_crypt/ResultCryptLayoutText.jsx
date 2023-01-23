@@ -29,11 +29,11 @@ const ResultCryptLayoutText = ({
   const { inventoryMode, isMobile, cryptCardBase } = useApp();
 
   return (
-    <div className="space-y-2">
-      <div className="flex items-center justify-between whitespace-nowrap ">
-        <div className="flex items-center whitespace-nowrap">
+    <div className="space-y-3">
+      <div className="flex items-center justify-between whitespace-nowrap">
+        <div className="flex items-center whitespace-nowrap space-x-2">
           <ResultClanImage value={card.Clan} />
-          <div className="name font-bold text-fgName  dark:text-fgNameDark">
+          <div className="font-bold text-fgName dark:text-fgNameDark">
             <ResultCryptName card={card} />
             {card.Adv[1] && (
               <ConditionalTooltip
@@ -63,28 +63,28 @@ const ResultCryptLayoutText = ({
           )}
         </div>
       </div>
-      <Hr variant="secondary" />
+      <Hr />
       <div>
         <ResultLayoutTextText cardid={card.Id} />
       </div>
-      <Hr variant="secondary" />
+      <Hr />
       <div className="flex items-center justify-between">
         <ResultCryptDisciplines value={card.Disciplines} />
         <ResultCryptCapacity value={card.Capacity} />
       </div>
-      <Hr variant="secondary" />
-      <div>
-        <b>Sets: </b>
+      <Hr />
+      <div className="space-x-2">
+        <b>Sets:</b>
         <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
       </div>
-      <div>
-        <b>Artist: </b>
-        <div className="inline ">
+      <div className="space-x-2">
+        <b>Artist:</b>
+        <div className="inline">
           <ResultLayoutTextArtist artists={card['Artist']} />
         </div>
       </div>
       {Object.keys(card['Rulings']).length > 0 && (
-        <div>
+        <div className="space-y-1">
           <b>Rulings:</b>
           <div className="text-xs">
             <ResultLayoutTextRulings rulings={card['Rulings']} />
@@ -93,7 +93,7 @@ const ResultCryptLayoutText = ({
       )}
       {(forceInventoryMode || inventoryMode) && (
         <>
-          <Hr variant="secondary" />
+          <Hr />
           <div>
             <b>Inventory:</b>
             <ResultLayoutTextInventory cardid={card.Id} />
