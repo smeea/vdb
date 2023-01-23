@@ -226,19 +226,23 @@ const TwdSearchForm = ({ error, setError }) => {
             target={'library'}
             onChange={handleChangeWithOpt}
           />
-          <div className="flex">
-            <Checkbox
-              name="60"
-              label="Scale to 60 cards"
-              value={twdFormState.matchInventory.scaling}
-              onChange={handleMatchInventoryScalingChange}
-            />
-            <Checkbox
-              name="75"
-              label="Scale to 75 cards"
-              value={twdFormState.matchInventory.scaling}
-              onChange={handleMatchInventoryScalingChange}
-            />
+          <div className="flex justify-end">
+            <div>
+              <Checkbox
+                name="60"
+                label="Scale to 60 cards"
+                checked={twdFormState.matchInventory.scaling == 60}
+                value={twdFormState.matchInventory.scaling}
+                onChange={handleMatchInventoryScalingChange}
+              />
+              <Checkbox
+                name="75"
+                label="Scale to 75 cards"
+                checked={twdFormState.matchInventory.scaling == 75}
+                value={twdFormState.matchInventory.scaling}
+                onChange={handleMatchInventoryScalingChange}
+              />
+            </div>
           </div>
         </>
       )}
@@ -256,7 +260,7 @@ const TwdSearchForm = ({ error, setError }) => {
           form={searchTwdForm.crypt}
         />
       )}
-      <div className="flex items-start justify-end">
+      <div className="flex justify-end">
         <Checkbox
           name="traits"
           value="star"
@@ -309,17 +313,10 @@ const TwdSearchForm = ({ error, setError }) => {
       <TwdSearchFormPlayer value={twdFormState.author} form={searchTwdForm} />
       {isMobile && (
         <>
-          <ButtonFloat
-            onClick={handleClear}
-            variant="danger"
-            position="middle"
-          >
+          <ButtonFloat onClick={handleClear} variant="danger" position="middle">
             <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
-          <ButtonFloat
-            onClick={processSearch}
-            variant="success"
-          >
+          <ButtonFloat onClick={processSearch} variant="success">
             {!spinnerState ? (
               <Check2 width="35" height="35" viewBox="0 0 16 16" />
             ) : (

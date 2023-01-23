@@ -21,14 +21,23 @@ const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
   }));
 
   return (
-    <Select
-      classNamePrefix="react-select"
-      options={options}
-      isSearchable={false}
-      name={name}
-      value={options.find((obj) => obj.value === value.toLowerCase())}
-      onChange={onChange}
-    />
+    <div className="flex items-center">
+      <div className="w-full">
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          In Inventory by {`${target[0].toUpperCase()}${target.slice(1)}`}:
+        </div>
+      </div>
+      <div className="w-full">
+        <Select
+          classNamePrefix="react-select"
+          options={options}
+          isSearchable={false}
+          name={name}
+          value={options.find((obj) => obj.value === value.toLowerCase())}
+          onChange={onChange}
+        />
+      </div>
+    </div>
   );
 };
 

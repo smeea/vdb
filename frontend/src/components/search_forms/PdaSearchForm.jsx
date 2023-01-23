@@ -232,12 +232,14 @@ const PdaSearchForm = ({ error, setError }) => {
             <Checkbox
               name="60"
               label="Scale to 60 cards"
+              checked={pdaFormState.matchInventory.scaling == 60}
               value={pdaFormState.matchInventory.scaling}
               onChange={handleMatchInventoryScalingChange}
             />
             <Checkbox
               name="75"
               label="Scale to 75 cards"
+              checked={pdaFormState.matchInventory.scaling == 75}
               value={pdaFormState.matchInventory.scaling}
               onChange={handleMatchInventoryScalingChange}
             />
@@ -304,17 +306,10 @@ const PdaSearchForm = ({ error, setError }) => {
       />
       {isMobile && (
         <>
-          <ButtonFloat
-            onClick={handleClear}
-            variant="danger"
-            position="middle"
-          >
+          <ButtonFloat onClick={handleClear} variant="danger" position="middle">
             <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
-          <ButtonFloat
-            onClick={processSearch}
-            variant="success"
-          >
+          <ButtonFloat onClick={processSearch} variant="success">
             {!spinnerState ? (
               <Check2 viewBox="0 0 16 16" />
             ) : (
