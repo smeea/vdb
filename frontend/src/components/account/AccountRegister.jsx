@@ -52,14 +52,14 @@ const AccountRegister = () => {
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark space-x-2">
-        <div className="flex justify-center min-w-[23px]">
+      <div className="flex items-center space-x-2 text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="flex min-w-[23px] justify-center">
           <PersonPlusFill width="22" height="22" viewBox="0 0 16 16" />
         </div>
         <div className="flex">Create account</div>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <AccountUsernameForm
             value={formUsername}
             setValue={setFormUsername}
@@ -68,10 +68,10 @@ const AccountRegister = () => {
             <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>
           )}
         </div>
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <AccountEmailForm value={formEmail} setValue={setFormEmail} />
         </div>
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <AccountPasswordForm
             value={formPassword}
             setValue={setFormPassword}

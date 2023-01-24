@@ -145,7 +145,7 @@ const InventoryLibraryTableRow = ({
             </div>
           )}
           <div
-            className="flex items-center justify-end w-full"
+            className="flex w-full items-center justify-end"
             onClick={() => handleClick(card.c)}
           >
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}

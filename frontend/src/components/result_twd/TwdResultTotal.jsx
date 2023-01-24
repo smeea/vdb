@@ -28,7 +28,7 @@ const TwdResultTotal = ({
         isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'
       } items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark sm:space-x-2`}
     >
-      <div className="p-2 font-bold whitespace-nowrap">TOTAL: {total}</div>
+      <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
       <div>
         {Object.keys(byYear).map((k) => {
           return (

@@ -9,13 +9,12 @@ const Pda = () => {
   const [error, setError] = useState();
 
   const X_SPACING = 'space-x-8';
-  const TOP_SPACING = 'pt-8';
 
   return (
     <div className="twd-container mx-auto">
-      <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
+      <div className="flex gap-8">
         <div
-          className={`basis-full md:basis-8/12 xl:basis-9/12 ${
+          className={`basis-8/12 xl:basis-9/12 ${
             !isMobile || (isMobile && !error) ? '' : 'hidden'
           }`}
         >
@@ -25,7 +24,7 @@ const Pda = () => {
           {error && <ErrorMessage>{error}</ErrorMessage>}
         </div>
         <div
-          className={`basis-full md:basis-1/3 xl:basis-1/4
+          className={`basis-1/3 xl:basis-1/4
             ${!isMobile || (isMobile && !pdaResults) ? '' : 'hidden'}`}
         >
           <PdaSearchForm error={error} setError={setError} />

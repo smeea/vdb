@@ -76,7 +76,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
           )}
         </td>
         <td
-          className="min-w-[30px] 2xl:min-w-[60px]"
+          className="2xl:min-w-[60px] min-w-[30px]"
           onClick={() => handleClick(card.c)}
         >
           <div className="flex justify-center">
@@ -93,7 +93,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
         </td>
         {!isMobile && (
           <td
-            className="min-w-[62px] 2xl:min-w-[85px]"
+            className="2xl:min-w-[85px] min-w-[62px]"
             onClick={() => handleClick(card.c)}
           >
             <div className="flex items-center justify-center">

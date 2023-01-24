@@ -35,7 +35,7 @@ const ResultCryptTotal = ({
 
   return (
     <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-      <div className="p-2 whitespace-nowrap font-bold">
+      <div className="whitespace-nowrap p-2 font-bold">
         {inHoF ? 'CRYPT' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
       </div>
       <div>

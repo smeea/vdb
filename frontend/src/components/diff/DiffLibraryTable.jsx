@@ -150,7 +150,7 @@ const DiffLibraryTable = ({
 
   return (
     <>
-      <table className="w-full">
+      <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (

@@ -46,21 +46,21 @@ const AccountChangePassword = () => {
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark space-x-2">
-        <div className="flex justify-center min-w-[23px]">
+      <div className="flex items-center space-x-2 text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="flex min-w-[23px] justify-center">
           <LockFill />
         </div>
         <div className="flex">Change password</div>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <AccountPasswordForm
             value={formPassword}
             setValue={setFormPassword}
             isOld
           />
         </div>
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <AccountPasswordForm
             value={formNewPassword}
             setValue={setFormNewPassword}

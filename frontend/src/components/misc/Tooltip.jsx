@@ -65,7 +65,7 @@ const Tooltip = ({ children, overlay, noPadding, placement = 'right' }) => {
       <FloatingPortal>
         {open && (
           <div
-            className={`max-w-[800px] rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark z-50 ${
+            className={`z-50 max-w-[800px] rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark ${
               noPadding ? '' : 'p-3'
             }`}
             ref={floating}
@@ -78,7 +78,7 @@ const Tooltip = ({ children, overlay, noPadding, placement = 'right' }) => {
             {overlay}
             <div
               ref={arrowRef}
-              className={`absolute w-[12px] h-[12px] border-l border-b border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark z-[-1] ${arrowOffset} rotate-45`}
+              className={`absolute z-[-1] h-[12px] w-[12px] border-l border-b border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark ${arrowOffset} rotate-45`}
               style={{
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',

@@ -67,9 +67,9 @@ const Cards = () => {
     }
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
-  const X_SPACING = 'space-x-8';
-  const Y_SPACING = 'space-y-8';
-  const TOP_SPACING = 'pt-8';
+  // const X_SPACING = 'space-x-8';
+  // const Y_SPACING = 'space-y-8';
+  // const TOP_SPACING = 'pt-8';
 
   return (
     <div className="cards-container mx-auto">
@@ -78,7 +78,7 @@ const Cards = () => {
           <>
             {card && (
               <>
-                <div className="flex flex-row">
+                <div className="flex">
                   <div className="m-0">
                     {showImage ? (
                       <CardImage
@@ -140,9 +140,9 @@ const Cards = () => {
             </ButtonFloat>
           </>
         ) : (
-          <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
-            <div className="md:basis-1/12" />
-            <div className={`quick-cards md:basis-9/12 ${Y_SPACING}`}>
+          <div className="flex gap-8">
+            <div className="basis-1/12" />
+            <div className="flex basis-9/12 flex-col gap-8">
               {cryptCardBase && libraryCardBase && (
                 <div>
                   <QuickSelect
@@ -171,7 +171,7 @@ const Cards = () => {
                 </div>
               )}
             </div>
-            <div className="md:basis-2/12">
+            <div className="basis-2/12">
               <div className="top-[77px] z-20 flex flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark">
                 <ButtonIconed
                   variant="secondary"

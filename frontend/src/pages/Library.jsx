@@ -48,19 +48,16 @@ const Library = () => {
     }
   }, [deck, decks, lastDeckId]);
 
-  const X_SPACING = 'space-x-8';
-  const TOP_SPACING = 'pt-8';
-
   return (
     <div className="search-container mx-auto">
-      <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
+      <div className="flex gap-8">
         {!isMobile && (
           <div
             className={`${
               showSearchForm
                 ? 'md:basis-0/12 lg:basis-1/12'
                 : 'md:basis-5/12 lg:basis-6/12'
-            } ${deck && addMode ? 'xl:basis:4/12' : 'xl:basis2/12'}`}
+            } ${deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12'}`}
           >
             {decks !== undefined &&
               (isDesktop || (!isDesktop && !showSearchForm)) && (
@@ -70,9 +67,9 @@ const Library = () => {
         )}
         {showResultCol && (
           <div
-            className={`md:basis-7/12 lg:basis-1/2 xl:${
-              deck && addMode ? '5/12' : '6/12'
-            } 2xl:basis-5/12`}
+            className={`md:basis-7/12 lg:basis-1/2 ${
+              deck && addMode ? 'xl:basis-5/12' : 'xl:basis-6/12'
+            }`}
           >
             {((isMobile && libraryCompare && libraryResults) ||
               (!isMobile && libraryCompare)) && (

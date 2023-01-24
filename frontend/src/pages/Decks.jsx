@@ -210,16 +210,12 @@ const Decks = () => {
     }
   }, [deck]);
 
-  const X_SPACING = 'space-x-8';
-  const Y_SPACING = 'space-y-8';
-  const TOP_SPACING = 'pt-8';
-
   return (
     <div className="deck-container mx-auto">
-      <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
-        <div className={`basis-full lg:basis-10/12 ${Y_SPACING}`}>
-          <div className="flex flex-row">
-            <div className="md:basis-5/12">
+      <div className="flex gap-8">
+        <div className="flex flex-auto basis-10/12 flex-col gap-8">
+          <div className="flex gap-4">
+            <div className="flex-auto basis-5/12">
               <DeckSelect
                 deckid={deckid}
                 deck={deck}
@@ -230,32 +226,30 @@ const Decks = () => {
                 setShowInfo={setShowInfo}
               />
             </div>
-            <div className="md:basis-7/12">
+            <div className="flex-auto basis-7/12">
               {deck && (showInfo || !isMobile) && (
-                <>
-                  <DeckDetails
-                    deck={deck}
-                    folded={foldedDescription}
-                    setFolded={setFoldedDescription}
-                    allTagsOptions={allTagsOptions}
-                  />
-                </>
+                <DeckDetails
+                  deck={deck}
+                  folded={foldedDescription}
+                  setFolded={setFoldedDescription}
+                  allTagsOptions={allTagsOptions}
+                />
               )}
             </div>
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
-            <div className={`flex flex-row ${X_SPACING}`}>
+            <div className={`flex gap-8`}>
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
                 Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
-                  <div className="md:basis-7/12">
+                  <div className="flex-auto basis-7/12">
                     <DeckCrypt deck={deck} />
                   </div>
-                  <div className="md:basis-5/12">
+                  <div className="flex-auto basis-5/12">
                     <DeckLibrary deck={deck} />
                   </div>
                 </>
@@ -267,7 +261,7 @@ const Decks = () => {
             </div>
           )}
         </div>
-        <div className="hidden md:flex md:basis-2/12">
+        <div className="hidden flex-auto basis-2/12 md:flex">
           <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
             <DeckButtons
               deck={deck}
@@ -283,7 +277,7 @@ const Decks = () => {
         </div>
       </div>
       {username === null && !deckid && !hash && (
-        <div className="flex basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 h-[70vh] flex-col items-center justify-center space-y-10">
+        <div className="flex h-[70vh] basis-full flex-col items-center justify-center space-y-10 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
           <div className="justify-center font-bold text-fgSecondary dark:text-fgSecondaryDark">
             <div className="flex justify-center text-lg">
               Login to create your decks

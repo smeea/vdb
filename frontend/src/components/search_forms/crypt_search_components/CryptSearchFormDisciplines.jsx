@@ -14,7 +14,7 @@ const CryptSearchFormDisciplines = ({ value, onChange }) => {
           onClick={onChange}
         >
           <ResultDisciplineImage
-            className={value[i] === 2 ? 'w-[37px]' : 'w-[31px]'}
+            width={value[i] === 2 ? 'w-[37px]' : 'w-[31px]'}
             name="disciplines"
             value={i}
             superior={value[i] === 2}

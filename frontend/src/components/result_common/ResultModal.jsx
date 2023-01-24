@@ -71,7 +71,7 @@ const ResultModal = ({
       />
       <div className="fixed inset-0 flex items-center justify-center overflow-auto p-0 sm:p-8">
         <Dialog.Panel
-          className={`w-full space-y-2 md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:min-w-[55%] ${
+          className={`2xl:min-w-[55%] w-full space-y-2 md:w-[80%] lg:w-[70%] xl:w-[60%] ${
             nested ? 'border' : 'border-none'
           } rounded border-borderNestModal bg-bgPrimary dark:border-borderNestModalDark dark:bg-bgPrimaryDark`}
         >

@@ -173,14 +173,10 @@ const Diff = () => {
     }
   }, [deck, deckTo]);
 
-  const X_SPACING = 'space-x-8';
-  const Y_SPACING = 'space-y-8';
-  const TOP_SPACING = 'pt-8';
-
   return (
     <div className="deck-container mx-auto">
-      <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
-        <div className={`basis-full lg:basis-10/12 ${Y_SPACING}`}>
+      <div className="flex gap-8">
+        <div className="flex flex-col gap-8 lg:basis-10/12">
           <DiffSelect
             decks={decks}
             deck={deck}
@@ -199,7 +195,7 @@ const Diff = () => {
             </div>
           )}
           {deck && deckTo && (
-            <div className={`flex flex-row ${X_SPACING}`}>
+            <div className="flex gap-8">
               <div className="md:basis-7/12">
                 <div
                   className={

@@ -222,61 +222,56 @@ const Review = () => {
 
   return (
     <div className="deck-container mx-auto">
-      <div className="flex flex-row">
-        <div className="xl:basis-1/12" />
-        <div className="basis-full lg:basis-5/6 xl:basis-9/12">
-          <div className="flex flex-row ">
-            <div>
-              {deckFrom && (
+      <div className="flex gap-8">
+        <div className="flex flex-auto basis-10/12 flex-col gap-8">
+          {deckFrom && (
+            <div className="flex gap-4">
+              {isMobile ? (
+                <DeckChangeName deck={deckFrom} isAuthor={false} />
+              ) : (
                 <>
-                  {isMobile ? (
-                    <DeckChangeName deck={deckFrom} isAuthor={false} />
-                  ) : (
-                    <>
-                      <div className="flex flex-row">
-                        <div className="md:basis-8/12">
-                          <DeckChangeName deck={deckFrom} />
-                        </div>
-                        <div className="md:basis-1/3">
-                          <DeckChangeAuthor deck={deckFrom} />
-                        </div>
+                  <div className="flex flex-row">
+                    <div className="md:basis-8/12">
+                      <DeckChangeName deck={deckFrom} />
+                    </div>
+                    <div className="md:basis-1/3">
+                      <DeckChangeAuthor deck={deckFrom} />
+                    </div>
+                  </div>
+                  <div className="flex flex-row">
+                    <div>
+                      <DeckChangeDescription
+                        deck={deckFrom}
+                        folded={foldedDescription}
+                        setFolded={setFoldedDescription}
+                      />
+                    </div>
+                    {foldedDescription && deckFrom?.tags.length > 0 && (
+                      <div>
+                        <DeckTags deck={deckFrom} isBordered />
                       </div>
-                      <div className="flex flex-row">
-                        <div>
-                          <DeckChangeDescription
-                            deck={deckFrom}
-                            folded={foldedDescription}
-                            setFolded={setFoldedDescription}
-                          />
-                        </div>
-                        {foldedDescription && deckFrom?.tags.length > 0 && (
-                          <div>
-                            <DeckTags deck={deckFrom} isBordered />
-                          </div>
-                        )}
-                      </div>
-                      {!foldedDescription && deckFrom?.tags.length > 0 && (
-                        <div className="block ">
-                          <DeckTags deck={deckFrom} isBordered />
-                        </div>
-                      )}
-                    </>
+                    )}
+                  </div>
+                  {!foldedDescription && deckFrom?.tags.length > 0 && (
+                    <div className="block ">
+                      <DeckTags deck={deckFrom} isBordered />
+                    </div>
                   )}
                 </>
               )}
             </div>
-          </div>
+          )}
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deckFrom && (
-            <div className="flex flex-row">
-              <div className="md:basis-7/12">
+            <div className="flex gap-8">
+              <div className="flex-auto basis-7/12">
                 <ReviewCrypt
                   cardsFrom={deckFrom.crypt}
                   cardsTo={deckTo.crypt}
                   cardChange={cardChange}
                 />
               </div>
-              <div className="md:basis-5/12">
+              <div className="flex-auto basis-5/12">
                 <ReviewLibrary
                   cardsFrom={deckFrom.library}
                   cardsTo={deckTo.library}

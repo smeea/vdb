@@ -25,7 +25,7 @@ const ResultCryptLayoutText = ({
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between whitespace-nowrap">
-        <div className="flex items-center whitespace-nowrap space-x-2">
+        <div className="flex items-center space-x-2 whitespace-nowrap">
           <ResultClanImage value={card.Clan} />
           <div className="font-bold text-fgName dark:text-fgNameDark">
             <ResultCryptName card={card} />

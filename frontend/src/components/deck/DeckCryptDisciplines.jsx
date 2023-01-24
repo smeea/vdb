@@ -22,7 +22,7 @@ const DeckCryptDisciplines = ({
     .map((d, index) => {
       counter += 1;
       return (
-        <td width={width} key={index}>
+        <td className="min-w-[24px] sm:min-w-[27px]" width={width} key={index}>
           {value?.[d] && (
             <ResultDisciplineImage value={d} superior={value[d] === 2} />
           )}
@@ -37,7 +37,11 @@ const DeckCryptDisciplines = ({
       if (value[d]) {
         counter += 1;
         return (
-          <td width={width} key={index}>
+          <td
+            className="min-w-[24px] sm:min-w-[27px]"
+            width={width}
+            key={index}
+          >
             {value[d] && (
               <ResultDisciplineImage value={d} superior={value[d] === 2} />
             )}

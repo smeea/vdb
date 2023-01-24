@@ -17,7 +17,7 @@ const ErrorOverlay = ({ placement = 'bottom', children }) => {
   const placementStyle = getPlacement(placement);
 
   return (
-    <div className={`flex absolute items-center z-10 ${placementStyle}`}>
+    <div className={`absolute z-10 flex items-center ${placementStyle}`}>
       <div className="inline whitespace-nowrap rounded bg-bgError px-1.5 py-0.5 text-xs font-bold text-[#fff] dark:bg-bgErrorDark dark:text-fgPrimaryDark">
         {children}
       </div>

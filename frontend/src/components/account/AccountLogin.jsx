@@ -85,8 +85,8 @@ const AccountLogin = () => {
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark space-x-2">
-        <div className="flex justify-center min-w-[23px]">
+      <div className="flex items-center space-x-2 text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="flex min-w-[23px] justify-center">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
         <div className="flex">Login</div>
@@ -100,7 +100,7 @@ const AccountLogin = () => {
         </ConditionalTooltip>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <AccountUsernameForm
             value={formUsername}
             setValue={setFormUsername}
@@ -109,7 +109,7 @@ const AccountLogin = () => {
             <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>
           )}
         </div>
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <AccountPasswordForm
             value={formPassword}
             setValue={setFormPassword}
@@ -126,7 +126,7 @@ const AccountLogin = () => {
             overlay={<PasswordTooltipText />}
           >
             <div
-              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline text-xs"
+              className="text-xs text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => isMobile && setShowPasswordTooltip(true)}
             >
               <i>Forgot password?</i>

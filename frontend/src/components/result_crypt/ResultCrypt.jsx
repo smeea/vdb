@@ -75,7 +75,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
             setSortMethod={changeCryptSearchSort}
           />
           {showInfo && (
-            <div className="bg-bgSecondary dark:bg-bgSecondaryDark px-2 py-1">
+            <div className="bg-bgSecondary px-2 py-1 dark:bg-bgSecondaryDark">
               <ResultCryptTotalInfo cards={cards} />
             </div>
           )}

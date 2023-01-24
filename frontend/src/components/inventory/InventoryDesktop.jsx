@@ -49,7 +49,7 @@ const InventoryDesktop = ({
 
   return (
     <>
-      <div className="basis-0 2xl:basis-1/12" />
+      <div className="2xl:basis-1/12 basis-0" />
       <div className="md:basis-1/2 lg:basis-1/2 xl:basis-1/2">
         {!inShared && (
           <>

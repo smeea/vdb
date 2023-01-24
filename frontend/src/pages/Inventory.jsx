@@ -107,9 +107,6 @@ const Inventory = () => {
   const newLibraryFocus = () => newLibraryRef.current.focus();
   const newLibraryRef = useRef();
 
-  const X_SPACING = 'space-x-8';
-  const TOP_SPACING = 'pt-8';
-
   return (
     <div className="search-container mx-auto">
       {(!inventoryKey && username) || (inventoryKey && !inventoryError) ? (
@@ -145,7 +142,7 @@ const Inventory = () => {
               inShared={inventoryKey ? true : false}
             />
           ) : (
-            <div className={`flex flex-row ${X_SPACING} ${TOP_SPACING}`}>
+            <div className="flex gap-8">
               <InventoryDesktop
                 newCryptId={newCryptId}
                 newLibraryId={newLibraryId}
@@ -184,7 +181,7 @@ const Inventory = () => {
         <>
           {inventoryError && <ErrorMessage>{inventoryError}</ErrorMessage>}
           {!inventoryError && username === null && (
-            <div className="flex basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 h-[70vh] flex-col items-center justify-center space-y-10">
+            <div className="flex h-[70vh] basis-full flex-col items-center justify-center space-y-10 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
               <div className="flex justify-center text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Login to manage your inventory
               </div>

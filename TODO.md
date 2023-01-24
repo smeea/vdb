@@ -22,6 +22,7 @@
 - Refactor InventoryCrypt and InventoryLibrary
 - Explicit image width/height
 - Test bundle size with lazy load of pages
+- ResultDisciplineImage class to width/size
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter

@@ -3,7 +3,7 @@ import Hammer from 'assets/images/icons/hammer.svg';
 
 const ResultLibraryName = ({ card }) => {
   return (
-    <div className="inline text-fgName dark:text-fgNameDark space-x-1">
+    <div className="inline space-x-1 text-fgName dark:text-fgNameDark">
       <div className={`inline ${card.Banned ? 'line-through' : ''}`}>
         {card['Name']}
       </div>

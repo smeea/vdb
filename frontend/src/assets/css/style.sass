@@ -87,6 +87,10 @@
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
 
+.account-container
+  max-width: 500px
+.about-container
+  max-width: 700px
 .hof-cards-container
   max-width: 800px
 .cards-container,
@@ -100,3 +104,15 @@ tr:hover div.not-selected.inventory-card-custom
   max-width: 1650px
 .twd-container
   max-width: 1800px
+
+.account-container,
+.about-container,
+.hof-cards-container,
+.cards-container,
+.hof-history-container,
+.hof-tournaments-container,
+.deck-container,
+.search-container,
+.twd-container
+  @media (min-width: 768px)
+    padding-top: 36px

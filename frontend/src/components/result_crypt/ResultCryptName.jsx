@@ -3,10 +3,10 @@ import Hammer from 'assets/images/icons/hammer.svg';
 
 const ResultCryptName = ({ card }) => {
   return (
-    <div className="inline text-fgName dark:text-fgNameDark space-x-1">
-      <div className="inline whitespace-nowrap space-x-1">
+    <div className="inline space-x-1 text-fgName dark:text-fgNameDark">
+      <div className="inline space-x-1 whitespace-nowrap">
         <div
-          className={`inline whitespace-normal space-x-1 ${
+          className={`inline space-x-1 whitespace-normal ${
             card.Banned ? 'line-through' : ''
           }`}
         >

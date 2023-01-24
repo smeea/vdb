@@ -62,8 +62,8 @@ const AccountChangeName = () => {
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark space-x-2">
-        <div className="flex justify-center min-w-[23px]">
+      <div className="flex items-center space-x-2 text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="flex min-w-[23px] justify-center">
           <PenFill />
         </div>
         <div className="flex">Change public name</div>
@@ -77,7 +77,7 @@ const AccountChangeName = () => {
         </ConditionalTooltip>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <Input
             placeholder="Public name"
             value={state}

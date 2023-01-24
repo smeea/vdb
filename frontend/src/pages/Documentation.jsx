@@ -7,9 +7,12 @@ import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import ImageAlt from 'assets/images/icons/image-alt.svg';
 import { Banner } from 'components';
 
-const Title = ({ children }) => {
+const Title = ({ children, id }) => {
   return (
-    <div className="text-lg font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
+    <div
+      id={id}
+      className="text-lg font-bold text-fgSecondary underline dark:text-fgSecondaryDark"
+    >
       {children}
     </div>
   );
@@ -24,14 +27,9 @@ const SubTitle = ({ children }) => {
 };
 
 const Documentation = () => {
-  const TOP_SPACING = 'pt-8';
-  const Y_SPACING = 'space-y-8';
-
   return (
-    <div className="search-container flex justify-center">
-      <div
-        className={`basis-full md:basis-8/12 lg:basis-7/12 xl:basis-1/2 ${TOP_SPACING} ${Y_SPACING}`}
-      >
+    <div className="about-container mx-auto">
+      <div className="space-y-6">
         <Banner />
         <div className="space-y-4">
           <div>
@@ -48,7 +46,7 @@ const Documentation = () => {
           <div>
             <Title>TABLE OF CONTENT</Title>
             <div>
-              <ul>
+              <ul className="space-y-2">
                 <li>
                   <a href="#crypt">Crypt search</a>
                 </li>
@@ -74,7 +72,7 @@ const Documentation = () => {
             </div>
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Title id="crypt">CRYPT SEARCH</Title>
             <div>
               <SubTitle>Name or Text</SubTitle>
@@ -123,7 +121,7 @@ const Documentation = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Title id="library">LIBRARY SEARCH</Title>
             <div>
               <SubTitle>Name or Text</SubTitle>
@@ -158,7 +156,7 @@ const Documentation = () => {
             </div>
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Title id="twd">TWD SEARCH</Title>
             <div>
               <SubTitle>Star Vampire</SubTitle>
@@ -241,7 +239,7 @@ const Documentation = () => {
             </div>
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Title id="pda">PDA SEARCH</Title>
             <div>
               Public Deck Archive (PDA) let you share your decks with other
@@ -292,7 +290,7 @@ const Documentation = () => {
             </div>
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Title id="cards">CARD VIEW</Title>
             <div>
               <ul>
@@ -312,7 +310,7 @@ const Documentation = () => {
             </div>
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Title id="decks">DECK BUILDING</Title>
             <div>
               <SubTitle>Hints</SubTitle>
@@ -376,7 +374,7 @@ const Documentation = () => {
             </div>
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Title id="inventory">INVENTORY MANAGEMENT</Title>
             <div>
               Inventory management in VDB let you browse your card collection

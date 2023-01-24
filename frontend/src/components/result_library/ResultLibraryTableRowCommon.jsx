@@ -25,7 +25,7 @@ const Type = ({ card, handleClick }) => {
 const Cost = ({ card, handleClick }) => {
   return (
     <td className="min-w-[25px]" onClick={() => handleClick(card)}>
-      <div className={`flex justify-center {card[BLOOD_COST] ? 'pb-2' : ''}`}>
+      <div className={`{card[BLOOD_COST] ? 'pb-2' : ''} flex justify-center`}>
         {(card[BLOOD_COST] || card[POOL_COST]) && (
           <ResultLibraryCost
             valueBlood={card[BLOOD_COST]}
