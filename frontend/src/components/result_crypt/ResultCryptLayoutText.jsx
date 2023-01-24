@@ -8,10 +8,6 @@ import {
   ResultCryptCapacity,
   ResultCryptGroup,
   ResultCryptDisciplines,
-  ResultLayoutTextInventory,
-  ResultLayoutTextSets,
-  ResultLayoutTextRulings,
-  ResultLayoutTextArtist,
   ResultLayoutTextText,
   ConditionalTooltip,
   Hr,
@@ -21,12 +17,10 @@ const ResultCryptLayoutText = ({
   card,
   placement,
   setCard,
-  setImageSet,
-  forceInventoryMode,
   handleClose,
   noClose,
 }) => {
-  const { inventoryMode, isMobile, cryptCardBase } = useApp();
+  const { isMobile, cryptCardBase } = useApp();
 
   return (
     <div className="space-y-3">
@@ -73,33 +67,6 @@ const ResultCryptLayoutText = ({
         <ResultCryptCapacity value={card.Capacity} />
       </div>
       <Hr />
-      <div className="space-x-2">
-        <b>Sets:</b>
-        <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
-      </div>
-      <div className="space-x-2">
-        <b>Artist:</b>
-        <div className="inline">
-          <ResultLayoutTextArtist artists={card['Artist']} />
-        </div>
-      </div>
-      {Object.keys(card['Rulings']).length > 0 && (
-        <div className="space-y-1">
-          <b>Rulings:</b>
-          <div className="text-xs">
-            <ResultLayoutTextRulings rulings={card['Rulings']} />
-          </div>
-        </div>
-      )}
-      {(forceInventoryMode || inventoryMode) && (
-        <>
-          <Hr />
-          <div>
-            <b>Inventory:</b>
-            <ResultLayoutTextInventory cardid={card.Id} />
-          </div>
-        </>
-      )}
     </div>
   );
 };

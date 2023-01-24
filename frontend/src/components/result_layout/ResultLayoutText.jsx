@@ -5,6 +5,7 @@ import SearchHeartFill from 'assets/images/icons/search-heart-fill.svg';
 import {
   ResultCryptLayoutText,
   ResultLibraryLayoutText,
+  ResultLayoutTextCommon,
   ButtonCardCopyUrl,
   ButtonToggleShowImage,
   ButtonSearchCardInDecks,
@@ -48,25 +49,26 @@ const ResultLayoutText = ({
   };
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       {card.Id > 200000 ? (
         <ResultCryptLayoutText
           card={card}
           setCard={setCard}
-          setImageSet={setImageSet}
-          forceInventoryMode={forceInventoryMode}
           handleClose={handleClose}
           noClose={noClose}
         />
       ) : (
         <ResultLibraryLayoutText
           card={card}
-          setImageSet={setImageSet}
-          forceInventoryMode={forceInventoryMode}
           handleClose={handleClose}
           noClose={noClose}
         />
       )}
+      <ResultLayoutTextCommon
+        card={card}
+        setImageSet={setImageSet}
+        forceInventoryMode={forceInventoryMode}
+      />
       <div className="flex justify-between ">
         <div className="flex flex-row space-x-1">
           <ButtonCardCopyUrl cardid={card.Id} />

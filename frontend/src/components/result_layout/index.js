@@ -3,4 +3,5 @@ export { default as ResultLayoutTextInventory } from './ResultLayoutTextInventor
 export { default as ResultLayoutTextRulings } from './ResultLayoutTextRulings.jsx';
 export { default as ResultLayoutTextSets } from './ResultLayoutTextSets.jsx';
 export { default as ResultLayoutTextText } from './ResultLayoutTextText.jsx';
+export { default as ResultLayoutTextCommon } from './ResultLayoutTextCommon.jsx';
 export { default as ResultLayoutText } from './ResultLayoutText.jsx';

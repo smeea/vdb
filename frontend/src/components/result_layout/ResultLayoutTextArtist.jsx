@@ -1,17 +1,15 @@
 import React from 'react';
 
-const ResultLayoutTextArtist = (props) => {
+const ResultLayoutTextArtist = ({ artists }) => {
   return (
     <>
-      {props.artists.length > 1
-        ? props.artists.map((artist, index) => {
-            return (
-              <div className="inline-block whitespace-nowrap " key={index}>
-                {artist}
-              </div>
-            );
-          })
-        : props.artists}
+      {artists.map((artist, idx) => {
+        return (
+          <div className="inline-block whitespace-nowrap" key={idx}>
+            {artist}
+          </div>
+        );
+      })}
     </>
   );
 };

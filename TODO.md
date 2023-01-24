@@ -6,15 +6,16 @@
 - Custom values for cardtypes in TWD/PDA
 - Multitable seating
 - Playable by buttons to lib/crypt
+- Artist clickable in card modal
 
 # MAYBE LATER FEATURES
 - Offline decks storage
 - Notification on Incognito mode
 - Prioritize exact matches in add card (more than twda)
+- Inventory/deck import in excel
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Update url for playtest images to mitigate caching
-- Inventory/deck import in excel
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Refactor DeckProxySelectModal proxySelected to useImmmer
 - Debouncing for text search query
