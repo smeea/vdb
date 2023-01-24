@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import CreatableSelect from 'react-select/creatable';
-import { deckUpdate } from 'context';
+import { deckUpdate } from '@/context';
 
 const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
   const { deckid, tags, isPublic, isAuthor, isFrozen } = deck;

@@ -6,7 +6,7 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 
 const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();

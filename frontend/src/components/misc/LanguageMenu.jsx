@@ -1,9 +1,9 @@
 import React from 'react';
-import FlagEn from 'assets/images/flags/en.svg';
-import FlagEs from 'assets/images/flags/es.svg';
-import FlagFr from 'assets/images/flags/fr.svg';
-import FlagBr from 'assets/images/flags/br.svg';
-import { useApp } from 'context';
+import FlagEn from '@/assets/images/flags/en.svg';
+import FlagEs from '@/assets/images/flags/es.svg';
+import FlagFr from '@/assets/images/flags/fr.svg';
+import FlagBr from '@/assets/images/flags/br.svg';
+import { useApp } from '@/context';
 
 const LanguageMenu = ({ setShowMenu }) => {
   const { lang, changeLang } = useApp();

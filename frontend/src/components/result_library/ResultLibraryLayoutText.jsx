@@ -1,5 +1,5 @@
 import React from 'react';
-import X from 'assets/images/icons/x.svg';
+import X from '@/assets/images/icons/x.svg';
 import {
   ResultLibraryName,
   ResultLibraryTypeImage,
@@ -10,8 +10,8 @@ import {
   ResultLibraryDisciplines,
   ResultLayoutTextText,
   Hr,
-} from 'components';
-import { isTrifle } from 'utils';
+} from '@/components';
+import { isTrifle } from '@/utils';
 
 const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
   return (

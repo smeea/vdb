@@ -1,13 +1,13 @@
 import React from 'react';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import X from 'assets/images/icons/x.svg';
+import Spinner from '@/assets/images/icons/three-dots.svg';
+import X from '@/assets/images/icons/x.svg';
 import {
   ButtonFloat,
   ResultCryptTable,
   DeckRecommendationLibrary,
   Modal,
-} from 'components';
-import { useApp } from 'context';
+} from '@/components';
+import { useApp } from '@/context';
 
 const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
   const { isNarrow, isMobile } = useApp();

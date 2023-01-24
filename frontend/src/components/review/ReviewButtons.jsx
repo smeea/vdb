@@ -3,7 +3,7 @@ import {
   ReviewApplyButton,
   ReviewCopyUrlButton,
   DiffBackButton,
-} from 'components';
+} from '@/components';
 
 const ReviewButtons = ({ parentId, deck, urlDiff }) => {
   return (

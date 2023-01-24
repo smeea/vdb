@@ -10,8 +10,8 @@ import {
   ResultCryptTitle,
   ResultCryptClanGroupTitle,
   ConditionalTooltip,
-} from 'components';
-import { useApp } from 'context';
+} from '@/components';
+import { useApp } from '@/context';
 
 const ResultCryptTableRowCommon = ({
   card,

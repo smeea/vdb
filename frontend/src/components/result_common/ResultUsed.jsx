@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { UsedPopover, Tooltip } from 'components';
-import { getSoftMax, getHardTotal } from 'utils';
-import { useApp, inventoryStore, usedStore } from 'context';
+import { UsedPopover, Tooltip } from '@/components';
+import { getSoftMax, getHardTotal } from '@/utils';
+import { useApp, inventoryStore, usedStore } from '@/context';
 
 const ResultUsed = ({ card }) => {
   const { isDesktop } = useApp();

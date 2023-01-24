@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { DeckCryptTableRow, DeckDrawProbabilityModal } from 'components';
-import { useApp } from 'context';
-import { countDisciplines } from 'utils';
+import { DeckCryptTableRow, DeckDrawProbabilityModal } from '@/components';
+import { useApp } from '@/context';
+import { countDisciplines } from '@/utils';
 
 const DeckCryptTable = ({
   deck,
@@ -51,7 +51,7 @@ const DeckCryptTable = ({
 
   return (
     <>
-      <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+      <table className="deck-crypt-table">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (

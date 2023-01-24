@@ -10,10 +10,10 @@ import {
   DeckLibraryTypeDrawInfo,
   Modal,
   ButtonFloat,
-} from 'components';
-import { MASTER } from 'utils/constants';
-import { useApp } from 'context';
-import { useModalCardController, useDeckLibrary } from 'hooks';
+} from '@/components';
+import { MASTER } from '@/utils/constants';
+import { useApp } from '@/context';
+import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();

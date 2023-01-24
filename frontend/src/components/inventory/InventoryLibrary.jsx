@@ -4,12 +4,12 @@ import {
   InventoryLibraryTable,
   InventoryFilterForm,
   SortButton,
-} from 'components';
-import { useApp, usedStore } from 'context';
-import { getHardTotal, getSoftMax } from 'utils';
-import { cardtypeSorted } from 'utils/constants';
-import disciplinesList from 'assets/data/disciplinesList.json';
-import virtuesList from 'assets/data/virtuesList.json';
+} from '@/components';
+import { useApp, usedStore } from '@/context';
+import { getHardTotal, getSoftMax } from '@/utils';
+import { cardtypeSorted } from '@/utils/constants';
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import virtuesList from '@/assets/data/virtuesList.json';
 
 const InventoryLibrary = ({
   compact,

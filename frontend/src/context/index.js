@@ -1,6 +1,6 @@
-export { AppProvider, useApp } from './AppContext.js';
+export { AppProvider, useApp } from './AppContext.jsx';
 
-export { ThemeProvider, useTheme } from './ThemeContext.js';
+export { ThemeProvider, useTheme } from './ThemeContext.jsx';
 
 export {
   clearSearchForm,

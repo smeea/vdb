@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio } from 'components';
+import { Radio } from '@/components';
 
 const InventoryShowSelect = ({ category, setCategory }) => {
   return (

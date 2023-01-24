@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Banner } from 'components';
+import { Banner } from '@/components';
 
 const Changelog = () => {
   const [changes, setChanges] = useState();
 
   useEffect(() => {
-    const url = `${process.env.API_URL}changelog`;
+    const url = `${import.meta.env.VITE_API_URL}/changelog`;
     const options = {
       method: 'GET',
       mode: 'cors',

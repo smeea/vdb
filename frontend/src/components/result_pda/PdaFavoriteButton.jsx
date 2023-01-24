@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Star from 'assets/images/icons/star.svg';
-import StarFill from 'assets/images/icons/star-fill.svg';
-import { useApp } from 'context';
-import { ButtonIconed } from 'components';
+import Star from '@/assets/images/icons/star.svg';
+import StarFill from '@/assets/images/icons/star-fill.svg';
+import { useApp } from '@/context';
+import { ButtonIconed } from '@/components';
 
 const PdaFavoriteButton = ({ deck }) => {
   const { username } = useApp();
@@ -12,7 +12,7 @@ const PdaFavoriteButton = ({ deck }) => {
   const handleClick = () => {
     if (!username) return;
 
-    const url = `${process.env.API_URL}pda/favorite/${deck.deckid}`;
+    const url = `${import.meta.env.VITE_API_URL}/pda/favorite/${deck.deckid}`;
     const options = {
       method: isFavorited ? 'DELETE' : 'POST',
       mode: 'cors',

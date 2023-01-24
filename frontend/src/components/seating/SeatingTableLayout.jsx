@@ -1,5 +1,5 @@
 import React from 'react';
-import { SeatingTablePlayer } from 'components';
+import { SeatingTablePlayer } from '@/components';
 
 const SeatingTableLayout = ({ players }) => {
   if (players.length === 5) {

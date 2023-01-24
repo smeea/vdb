@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import X from 'assets/images/icons/x.svg';
-import Check2 from 'assets/images/icons/check2.svg';
+import X from '@/assets/images/icons/x.svg';
+import Check2 from '@/assets/images/icons/check2.svg';
 import {
   SearchAdditionalFormsText,
   SearchFormButtonLogicToggle,
   SearchFormButtonAddText,
   SearchFormButtonDel,
-} from '../shared_search_components';
-import { Input, Checkbox, Button, ButtonIconed } from 'components';
-import { useApp } from 'context';
+  Input,
+  Checkbox,
+  Button,
+  ButtonIconed,
+} from '@/components';
+import { useApp } from '@/context';
 
 const SearchFormTextAndButtons = ({
   searchForm,
@@ -80,7 +83,7 @@ const SearchFormTextAndButtons = ({
                   variant="primary"
                   onClick={handleShowResults}
                   text={`SHOW ${preresults}`}
-                  icon=<Check2 />
+                  icon={<Check2 />}
                 />
               )}
               <Button

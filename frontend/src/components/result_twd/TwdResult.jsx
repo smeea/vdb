@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import X from 'assets/images/icons/x.svg';
+import X from '@/assets/images/icons/x.svg';
 import {
   TwdResultTotal,
   TwdResultDescription,
@@ -10,10 +10,10 @@ import {
   Button,
   ButtonFloat,
   Hr,
-} from 'components';
-import { decksSort } from 'utils';
-import { useApp } from 'context';
-import { useDeck } from 'hooks';
+} from '@/components';
+import { decksSort } from '@/utils';
+import { useApp } from '@/context';
+import { useDeck } from '@/hooks';
 
 const TwdResult = ({ results, setResults }) => {
   const {

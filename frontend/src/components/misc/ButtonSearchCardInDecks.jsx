@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'components';
-import PeopleFill from 'assets/images/icons/people-fill.svg';
-import TrophyFill from 'assets/images/icons/trophy-fill.svg';
-import { clearSearchForm, searchTwdForm, searchPdaForm } from 'context';
+import { Button } from '@/components';
+import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
+import { clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
 
 const ButtonSearchCardInDecks = ({ cardid, target }) => {
   const navigate = useNavigate();

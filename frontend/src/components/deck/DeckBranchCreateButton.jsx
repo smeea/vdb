@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import NodePlusFill from 'assets/images/icons/node-plus-fill.svg';
-import { deckStore, useApp } from 'context';
-import { ButtonIconed } from 'components';
+import NodePlusFill from '@/assets/images/icons/node-plus-fill.svg';
+import { deckStore, useApp } from '@/context';
+import { ButtonIconed } from '@/components';
 
 const DeckBranchCreateButton = ({ deck }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -10,7 +10,7 @@ const DeckBranchCreateButton = ({ deck }) => {
 
   const branchCreate = () => {
     const master = deck.master ? deck.master : deck.deckid;
-    const url = `${process.env.API_URL}deck/${master}/branch`;
+    const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
 
     const options = {
       method: 'POST',

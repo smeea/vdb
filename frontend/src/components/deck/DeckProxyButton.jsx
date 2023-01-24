@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
-import Printer from 'assets/images/icons/printer.svg';
-import Spinner from 'assets/images/icons/three-dots.svg';
+import Printer from '@/assets/images/icons/printer.svg';
+import Spinner from '@/assets/images/icons/three-dots.svg';
 import {
   MenuButton,
   MenuItems,
   MenuItem,
   ButtonIconed,
   DeckProxySelectModal,
-} from 'components';
-import { cryptSort } from 'utils';
-import { useCardImageUrl, useDeckLibrary } from 'hooks';
-import { cardtypeSortedFull } from 'utils/constants';
-import { useApp } from 'context';
+} from '@/components';
+import { cryptSort } from '@/utils';
+import { useCardImageUrl, useDeckLibrary } from '@/hooks';
+import { cardtypeSortedFull } from '@/utils/constants';
+import { useApp } from '@/context';
 
 const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
   const {

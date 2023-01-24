@@ -4,7 +4,7 @@ import {
   TwdResultCrypt,
   TwdResultLibraryByType,
   TwdResultLibraryKeyCards,
-} from 'components';
+} from '@/components';
 
 const TwdHallFameDeckBody = ({ deck, isMobile }) => {
   return (

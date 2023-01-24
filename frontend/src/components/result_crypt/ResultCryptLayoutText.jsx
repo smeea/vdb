@@ -1,6 +1,6 @@
 import React from 'react';
-import { useApp } from 'context';
-import X from 'assets/images/icons/x.svg';
+import { useApp } from '@/context';
+import X from '@/assets/images/icons/x.svg';
 import {
   CardPopover,
   ResultCryptName,
@@ -11,7 +11,7 @@ import {
   ResultLayoutTextText,
   ConditionalTooltip,
   Hr,
-} from 'components';
+} from '@/components';
 
 const ResultCryptLayoutText = ({
   card,

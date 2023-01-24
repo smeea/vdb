@@ -13,9 +13,9 @@ import {
   ResultCryptTitle,
   ResultCryptClanGroupTitle,
   ConditionalTooltip,
-} from 'components';
-import { getHardTotal, getSoftMax } from 'utils';
-import { useApp, usedStore, inventoryCardChange } from 'context';
+} from '@/components';
+import { getHardTotal, getSoftMax } from '@/utils';
+import { useApp, usedStore, inventoryCardChange } from '@/context';
 
 const InventoryCryptTableRow = ({
   card,

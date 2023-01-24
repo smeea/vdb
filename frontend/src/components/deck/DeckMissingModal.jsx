@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Gem from 'assets/images/icons/gem.svg';
+import Gem from '@/assets/images/icons/gem.svg';
 import {
   DeckCrypt,
   DeckLibrary,
   DeckExportButton,
   ButtonIconed,
   Modal,
-} from 'components';
-import { useApp } from 'context';
+} from '@/components';
+import { useApp } from '@/context';
 
 const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
   const { isMobile } = useApp();

@@ -10,10 +10,10 @@ import {
   DeckLibraryTypeDrawInfo,
   Modal,
   ButtonFloat,
-} from 'components';
-import { MASTER } from 'utils/constants';
-import { useApp } from 'context';
-import { useModalCardController, useDeckLibrary } from 'hooks';
+} from '@/components';
+import { MASTER } from '@/utils/constants';
+import { useApp } from '@/context';
+import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
   const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();

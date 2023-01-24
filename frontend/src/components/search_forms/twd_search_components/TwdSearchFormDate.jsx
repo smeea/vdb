@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 
 const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const { isXWide } = useApp();

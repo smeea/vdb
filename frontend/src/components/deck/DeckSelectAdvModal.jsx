@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Menu } from '@headlessui/react';
 import { useSnapshot } from 'valtio';
 import Select from 'react-select';
-import Shuffle from 'assets/images/icons/shuffle.svg';
-import Download from 'assets/images/icons/download.svg';
-import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
-import At from 'assets/images/icons/at.svg';
-import X from 'assets/images/icons/x.svg';
+import Shuffle from '@/assets/images/icons/shuffle.svg';
+import Download from '@/assets/images/icons/download.svg';
+import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
+import At from '@/assets/images/icons/at.svg';
+import X from '@/assets/images/icons/x.svg';
 import {
   DeckSelectAdvModalTotal,
   DeckSelectAdvModalTableRow,
@@ -20,10 +20,10 @@ import {
   ButtonFloat,
   Checkbox,
   Input,
-} from 'components';
-import { getClan, decksSort } from 'utils';
-import { useApp, deckStore } from 'context';
-import { deckServices } from 'services';
+} from '@/components';
+import { getClan, decksSort } from '@/utils';
+import { useApp, deckStore } from '@/context';
+import { deckServices } from '@/services';
 
 const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
   const { cryptCardBase, inventoryMode, isNarrow, isMobile, isDesktop } =

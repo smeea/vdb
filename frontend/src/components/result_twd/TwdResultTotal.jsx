@@ -1,6 +1,6 @@
 import React from 'react';
-import { SortButton } from 'components';
-import { useApp } from 'context';
+import { SortButton } from '@/components';
+import { useApp } from '@/context';
 
 const TwdResultTotal = ({
   results,

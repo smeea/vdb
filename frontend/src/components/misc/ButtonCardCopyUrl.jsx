@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Link45Deg from 'assets/images/icons/link-45deg.svg';
-import { ButtonIconed } from 'components';
+import Link45Deg from '@/assets/images/icons/link-45deg.svg';
+import { ButtonIconed } from '@/components';
 
 const ButtonCardCopyUrl = ({ cardid }) => {
   const [success, setSuccess] = useState(false);
-  const deckUrl = `${process.env.ROOT_URL}cards/${cardid}`;
+  const deckUrl = `${import.meta.env.BASE_URL}cards/${cardid}`;
 
   const onClick = () => {
     navigator.clipboard.writeText(deckUrl);

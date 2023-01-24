@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import Link45Deg from 'assets/images/icons/link-45deg.svg';
-import { useApp } from 'context';
-import { ButtonIconed } from 'components';
+import Link45Deg from '@/assets/images/icons/link-45deg.svg';
+import { useApp } from '@/context';
+import { ButtonIconed } from '@/components';
 
 const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
-    const deckUrl = `${process.env.ROOT_URL}review/${deckid}#${urlDiff}`;
+    const deckUrl = `${import.meta.env.BASE_URL}review/${deckid}#${urlDiff}`;
 
     navigator.clipboard.writeText(deckUrl);
     setSuccess(true);

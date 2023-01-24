@@ -1,16 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import CalendarEvent from 'assets/images/icons/calendar-event.svg';
-import PersonFill from 'assets/images/icons/person-fill.svg';
-import TagFill from 'assets/images/icons/tag-fill.svg';
+import CalendarEvent from '@/assets/images/icons/calendar-event.svg';
+import PersonFill from '@/assets/images/icons/person-fill.svg';
+import TagFill from '@/assets/images/icons/tag-fill.svg';
 import {
   TwdResultTags,
   PdaFavoriteButton,
   TwdOpenDeckButton,
   DeckCloneButton,
-} from 'components';
-import { useApp, clearSearchForm, searchPdaForm } from 'context';
-import { useTags } from 'hooks';
+} from '@/components';
+import { useApp, clearSearchForm, searchPdaForm } from '@/context';
+import { useTags } from '@/hooks';
 
 const PdaResultDescription = ({ deck }) => {
   const { username, isMobile, isDesktop } = useApp();

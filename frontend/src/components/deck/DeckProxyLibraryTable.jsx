@@ -1,6 +1,6 @@
 import React from 'react';
-import { DeckProxyLibraryTableRow } from 'components';
-import { useApp } from 'context';
+import { DeckProxyLibraryTableRow } from '@/components';
+import { useApp } from '@/context';
 
 const DeckProxyLibraryTable = ({
   inventoryType,

@@ -1,4 +1,4 @@
-import { byTimestamp } from 'utils';
+import { byTimestamp } from '@/utils';
 
 const decksSort = (decks, sortMethod) => {
   const byFavorites = (a, b) => {

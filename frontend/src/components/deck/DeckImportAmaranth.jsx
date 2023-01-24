@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import { Modal, Button, ErrorOverlay } from 'components';
-import { useApp, deckAdd } from 'context';
-import { deckServices } from 'services';
+import Spinner from '@/assets/images/icons/three-dots.svg';
+import { Modal, Button, ErrorOverlay } from '@/components';
+import { useApp, deckAdd } from '@/context';
+import { deckServices } from '@/services';
 
 const DeckImportAmaranth = ({ handleCloseModal, show }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
@@ -17,7 +17,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
 
   const getIdReference = () => {
     const VERSION = '2022-07-22';
-    const url = `${process.env.ROOT_URL}data/amaranth_ids.json?v=${VERSION}`;
+    const url = `${import.meta.env.BASE_URL}data/amaranth_ids.json?v=${VERSION}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => data.error === undefined && setIdReference(data));

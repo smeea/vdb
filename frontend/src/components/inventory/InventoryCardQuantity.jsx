@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'components';
-import { useApp, inventoryCardChange } from 'context';
+import { Button } from '@/components';
+import { useApp, inventoryCardChange } from '@/context';
 
 const InventoryCardQuantity = ({
   q,

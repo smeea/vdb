@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import PeopleFill from 'assets/images/icons/people-fill.svg';
-import { DeckPublicToggleConfirmation, ButtonIconed } from 'components';
-import { deckStore } from 'context';
+import Spinner from '@/assets/images/icons/three-dots.svg';
+import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import { DeckPublicToggleConfirmation, ButtonIconed } from '@/components';
+import { deckStore } from '@/context';
 
 const DeckPublicToggleButton = ({ deck }) => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const DeckPublicToggleButton = ({ deck }) => {
   };
 
   const createOrDelete = () => {
-    const url = `${process.env.API_URL}pda/${deck.deckid}`;
+    const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
     const options = {
       method: isPublished ? 'DELETE' : 'POST',
       mode: 'cors',

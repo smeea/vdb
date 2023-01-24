@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import NodeMinusFill from 'assets/images/icons/node-minus-fill.svg';
-import { ButtonIconed, ModalConfirmation } from 'components';
-import { deckStore, useApp } from 'context';
+import NodeMinusFill from '@/assets/images/icons/node-minus-fill.svg';
+import { ButtonIconed, ModalConfirmation } from '@/components';
+import { deckStore, useApp } from '@/context';
 
 const DeckBranchDeleteButton = ({ deck, noText }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -20,7 +20,7 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
   };
 
   const deleteBranch = (deckid) => {
-    const url = `${process.env.API_URL}deck/${deckid}/branch`;
+    const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}/branch`;
     const options = {
       method: 'DELETE',
       mode: 'cors',

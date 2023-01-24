@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Check2 from 'assets/images/icons/check2.svg';
-import PaletteFill from 'assets/images/icons/palette-fill.svg';
-import { Input, Button } from 'components';
-import { useApp, deckUpdate } from 'context';
+import Check2 from '@/assets/images/icons/check2.svg';
+import PaletteFill from '@/assets/images/icons/palette-fill.svg';
+import { Input, Button } from '@/components';
+import { useApp, deckUpdate } from '@/context';
 
 const DeckChangeBranchName = ({ deck }) => {
   const { isMobile } = useApp();

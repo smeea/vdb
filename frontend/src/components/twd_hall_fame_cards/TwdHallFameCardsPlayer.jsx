@@ -1,15 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import { Disclosure } from '@headlessui/react';
-import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
+import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg';
 import {
   ResultCryptTotal,
   ResultLibraryTotal,
   TwdHallFameCardsCard,
   ResultModal,
-} from 'components';
-import { cryptSort, librarySort } from 'utils';
-import { useModalCardController } from 'hooks';
-import { useApp } from 'context';
+} from '@/components';
+import { cryptSort, librarySort } from '@/utils';
+import { useModalCardController } from '@/hooks';
+import { useApp } from '@/context';
 
 const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const {

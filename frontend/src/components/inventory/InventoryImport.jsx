@@ -3,9 +3,9 @@ import {
   ErrorOverlay,
   InventoryImportButton,
   InventoryImportBadCardsModal,
-} from 'components';
-import { useApp, inventoryCardsAdd } from 'context';
-import { useDeckImport } from 'hooks';
+} from '@/components';
+import { useApp, inventoryCardsAdd } from '@/context';
+import { useDeckImport } from '@/hooks';
 
 const InventoryImport = () => {
   const { cryptCardBase, libraryCardBase } = useApp();

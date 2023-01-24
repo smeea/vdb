@@ -1,14 +1,14 @@
 import React from 'react';
 import Select from 'react-select';
-import { ResultLibraryTypeImage } from 'components';
+import { ResultLibraryTypeImage } from '@/components';
 import {
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
-import { cardtypeSorted } from 'utils/constants';
-import { useApp } from 'context';
+import { cardtypeSorted } from '@/utils/constants';
+import { useApp } from '@/context';
 
 const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();

@@ -5,8 +5,8 @@ import {
   ResultUsed,
   ResultCryptTableRowCommon,
   ButtonAddCard,
-} from 'components';
-import { useApp, deckStore, deckCardChange } from 'context';
+} from '@/components';
+import { useApp, deckStore, deckCardChange } from '@/context';
 
 const ResultCryptTableRow = ({
   card,

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Disclosure } from '@headlessui/react';
-import { TwdHallFameTournamentsPlayer } from 'components';
+import { TwdHallFameTournamentsPlayer } from '@/components';
 
 const TwdHallOfFameTournaments = () => {
   const [players, setPlayers] = useState();
 
   useEffect(() => {
-    const url = `${process.env.API_URL}twd/hall_of_fame`;
+    const url = `${import.meta.env.VITE_API_URL}/twd/hall_of_fame`;
     const options = {
       method: 'GET',
       mode: 'cors',

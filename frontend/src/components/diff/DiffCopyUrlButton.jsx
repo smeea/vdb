@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import Link45Deg from 'assets/images/icons/link-45deg.svg';
-import { useApp } from 'context';
-import { ButtonIconed } from 'components';
+import Link45Deg from '@/assets/images/icons/link-45deg.svg';
+import { useApp } from '@/context';
+import { ButtonIconed } from '@/components';
 
 const DiffCopyUrlButton = ({ deckFromId, deckToId }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
-    const deckUrl = `${process.env.ROOT_URL}diff/${deckFromId}/${deckToId}`;
+    const deckUrl = `${import.meta.env.BASE_URL}diff/${deckFromId}/${deckToId}`;
 
     navigator.clipboard.writeText(deckUrl);
     setSuccess(true);

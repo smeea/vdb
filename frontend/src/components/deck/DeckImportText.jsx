@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Textarea, Modal, Button, ErrorOverlay } from 'components';
-import { useApp, deckAdd } from 'context';
-import { useDeckImport } from 'hooks';
-import { deckServices } from 'services';
+import { Textarea, Modal, Button, ErrorOverlay } from '@/components';
+import { useApp, deckAdd } from '@/context';
+import { useDeckImport } from '@/hooks';
+import { deckServices } from '@/services';
 
 const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
   const {

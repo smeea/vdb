@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import Check2 from 'assets/images/icons/check2.svg';
-import { Input, Button, ErrorOverlay } from 'components';
+import Spinner from '@/assets/images/icons/three-dots.svg';
+import Check2 from '@/assets/images/icons/check2.svg';
+import { Input, Button, ErrorOverlay } from '@/components';
 
 const AccountPlaytestAdd = ({
   playtesters,
@@ -16,7 +16,7 @@ const AccountPlaytestAdd = ({
   const addPlaytester = () => {
     setSpinnerState(true);
 
-    const url = `${process.env.API_URL}playtest`;
+    const url = `${import.meta.env.VITE_API_URL}/playtest`;
     const options = {
       method: 'PUT',
       mode: 'cors',

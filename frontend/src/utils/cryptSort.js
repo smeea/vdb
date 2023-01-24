@@ -8,7 +8,7 @@ import {
   byPlayer,
   byDateWin,
   byDatePrint,
-} from 'utils';
+} from '@/utils';
 
 const cryptSort = (cards, sortMethod) => {
   if (cards) {

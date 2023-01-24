@@ -13,10 +13,10 @@ import {
   ResultLibraryName,
   ResultLibraryTrifle,
   ConditionalTooltip,
-} from 'components';
-import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
-import { isTrifle, getHardTotal, getSoftMax } from 'utils';
-import { useApp, usedStore, inventoryCardChange } from 'context';
+} from '@/components';
+import { POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
+import { isTrifle, getHardTotal, getSoftMax } from '@/utils';
+import { useApp, usedStore, inventoryCardChange } from '@/context';
 
 const InventoryLibraryTableRow = ({
   card,

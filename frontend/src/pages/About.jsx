@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Telegram from 'assets/images/icons/telegram.svg';
-import Github from 'assets/images/icons/github.svg';
-import Discord from 'assets/images/icons/discord.svg';
-import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
-import Globe2 from 'assets/images/icons/globe2.svg';
-import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
-import { Banner } from 'components';
-import lastChange from '~/../LAST_CHANGE.json';
+import Telegram from '@/assets/images/icons/telegram.svg';
+import Github from '@/assets/images/icons/github.svg';
+import Discord from '@/assets/images/icons/discord.svg';
+import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg';
+import Globe2 from '@/assets/images/icons/globe2.svg';
+import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg';
+import { Banner } from '@/components';
+import lastChange from '@/LAST_CHANGE.json';
 
 const Title = ({ children }) => {
   return (
@@ -19,6 +19,8 @@ const Title = ({ children }) => {
 
 const About = () => {
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
+
+  console.log(import.meta.env);
 
   return (
     <div className="about-container mx-auto">

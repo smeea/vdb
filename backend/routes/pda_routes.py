@@ -10,10 +10,10 @@ from search_decks_components import match_inventory
 from api import app, db, login
 from models import Deck
 
-with open("../frontend/dist/data/cardbase_crypt.json", "r") as crypt_file:
+with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file:
     crypt_db = json.load(crypt_file)
 
-with open("../frontend/dist/data/cardbase_lib.json", "r") as library_file:
+with open("../frontend/public/data/cardbase_lib.json", "r") as library_file:
     library_db = json.load(library_file)
 
 

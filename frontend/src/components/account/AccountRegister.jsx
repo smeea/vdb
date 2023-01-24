@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import PersonPlusFill from 'assets/images/icons/person-plus-fill.svg';
+import PersonPlusFill from '@/assets/images/icons/person-plus-fill.svg';
 import {
   AccountEmailForm,
   AccountPasswordForm,
   AccountUsernameForm,
   ErrorOverlay,
-} from 'components';
-import { useApp } from 'context';
-import { userServices } from 'services';
+} from '@/components';
+import { useApp } from '@/context';
+import { userServices } from '@/services';
 
 const AccountRegister = () => {
   const { isMobile, setUsername, setEmail } = useApp();

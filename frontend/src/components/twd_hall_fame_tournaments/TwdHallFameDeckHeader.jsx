@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import PeopleFill from 'assets/images/icons/people-fill.svg';
-import { useApp } from 'context';
-import { Hr, TwdHallFameDeckBody } from 'components';
-import { useDeck } from 'hooks';
+import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import { useApp } from '@/context';
+import { Hr, TwdHallFameDeckBody } from '@/components';
+import { useDeck } from '@/hooks';
 
 const TwdHallFameDeckHeader = ({ deck, isStar }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
@@ -11,7 +11,7 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
   const [cards, setCards] = useState(null);
 
   const getCards = async () => {
-    const url = `${process.env.API_URL}deck/${deck.deckid}`;
+    const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
     const options = {
       method: 'GET',
       mode: 'cors',

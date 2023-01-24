@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Check2 from 'assets/images/icons/check2.svg';
-import Snow from 'assets/images/icons/snow.svg';
-import TagFill from 'assets/images/icons/tag-fill.svg';
-import PeopleFill from 'assets/images/icons/people-fill.svg';
-import TrophyFill from 'assets/images/icons/trophy-fill.svg';
-import { useApp, deckUpdate } from 'context';
-import { Input, Button, DeckFreezeButton } from 'components';
+import Check2 from '@/assets/images/icons/check2.svg';
+import Snow from '@/assets/images/icons/snow.svg';
+import TagFill from '@/assets/images/icons/tag-fill.svg';
+import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
+import { useApp, deckUpdate } from '@/context';
+import { Input, Button, DeckFreezeButton } from '@/components';
 
 const DeckChangeName = ({ deck }) => {
   const { isMobile } = useApp();

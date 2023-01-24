@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { countCards, containCard, cryptSort } from 'utils';
-import { ANY } from 'utils/constants';
-import Exclamation from 'assets/images/icons/exclamation-triangle.svg';
+import { countCards, containCard, cryptSort } from '@/utils';
+import { ANY } from '@/utils/constants';
+import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
 
 const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
   const cardsFrom = Object.values(cardsList);

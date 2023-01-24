@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import X from 'assets/images/icons/x.svg';
-import ToggleOn from 'assets/images/icons/toggle-on.svg';
-import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import { ButtonFloat, AccountPlaytestAdd, Button, Modal } from 'components';
-import { useApp } from 'context';
+import X from '@/assets/images/icons/x.svg';
+import ToggleOn from '@/assets/images/icons/toggle-on.svg';
+import ToggleOff from '@/assets/images/icons/toggle-off.svg';
+import { ButtonFloat, AccountPlaytestAdd, Button, Modal } from '@/components';
+import { useApp } from '@/context';
 
 const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
   const [state, setState] = useState(true);
@@ -41,7 +41,7 @@ const AccountPlaytestManage = ({ setShow }) => {
   const [newPlaytesters, setNewPlaytesters] = useState([]);
 
   const changePlaytester = (u, isAdd) => {
-    const url = `${process.env.API_URL}playtest`;
+    const url = `${import.meta.env.VITE_API_URL}/playtest`;
     const options = {
       method: isAdd ? 'PUT' : 'DELETE',
       mode: 'cors',
@@ -56,7 +56,7 @@ const AccountPlaytestManage = ({ setShow }) => {
   };
 
   const getPlaytesters = () => {
-    const url = `${process.env.API_URL}playtest`;
+    const url = `${import.meta.env.VITE_API_URL}/playtest`;
     const options = {
       method: 'GET',
       mode: 'cors',

@@ -10,10 +10,10 @@ import {
   ResultLibraryName,
   ResultLibraryTrifle,
   ConditionalTooltip,
-} from 'components';
-import { isTrifle } from 'utils';
-import { BURN_OPTION, POOL_COST, BLOOD_COST } from 'utils/constants';
-import { deckStore, useApp } from 'context';
+} from '@/components';
+import { isTrifle } from '@/utils';
+import { BURN_OPTION, POOL_COST, BLOOD_COST } from '@/utils/constants';
+import { deckStore, useApp } from '@/context';
 
 const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
   const { isDesktop, isMobile, setShowFloatingButtons } = useApp();

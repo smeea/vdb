@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from 'components';
-import LockFill from 'assets/images/icons/lock-fill.svg';
-import UnlockFill from 'assets/images/icons/unlock-fill.svg';
-import { deckUpdate } from 'context';
+import { Button } from '@/components';
+import LockFill from '@/assets/images/icons/lock-fill.svg';
+import UnlockFill from '@/assets/images/icons/unlock-fill.svg';
+import { deckUpdate } from '@/context';
 
 const DeckFreezeButton = ({ deck, className }) => {
   const handleClick = () => {

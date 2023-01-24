@@ -1,8 +1,8 @@
 import React from 'react';
-import DoorClosedFill from 'assets/images/icons/door-closed-fill.svg';
-import { useApp } from 'context';
-import { userServices } from 'services';
-import { ButtonIconed } from 'components';
+import DoorClosedFill from '@/assets/images/icons/door-closed-fill.svg';
+import { useApp } from '@/context';
+import { userServices } from '@/services';
+import { ButtonIconed } from '@/components';
 
 const AccountLogoutButton = () => {
   const { initializeUnauthenticatedUser } = useApp();

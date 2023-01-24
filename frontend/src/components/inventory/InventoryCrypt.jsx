@@ -4,11 +4,11 @@ import {
   InventoryCryptTable,
   InventoryFilterForm,
   SortButton,
-} from 'components';
-import { useApp, usedStore } from 'context';
-import { getHardTotal, getSoftMax } from 'utils';
-import imbuedClansList from 'assets/data/imbuedClansList.json';
-import vampireClansList from 'assets/data/vampireClansList.json';
+} from '@/components';
+import { useApp, usedStore } from '@/context';
+import { getHardTotal, getSoftMax } from '@/utils';
+import imbuedClansList from '@/assets/data/imbuedClansList.json';
+import vampireClansList from '@/assets/data/vampireClansList.json';
 
 const InventoryCrypt = ({
   compact,

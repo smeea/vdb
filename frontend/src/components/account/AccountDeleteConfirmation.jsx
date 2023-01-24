@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import { Modal, Button, ErrorOverlay } from 'components';
-import { useApp } from 'context';
-import { userServices } from 'services';
+import Spinner from '@/assets/images/icons/three-dots.svg';
+import EyeFill from '@/assets/images/icons/eye-fill.svg';
+import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg';
+import { Modal, Button, ErrorOverlay } from '@/components';
+import { useApp } from '@/context';
+import { userServices } from '@/services';
 
 const AccountDeleteConfirmation = ({ setShow }) => {
   const { setUsername, isMobile } = useApp();

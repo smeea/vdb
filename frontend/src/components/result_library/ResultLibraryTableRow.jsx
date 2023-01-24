@@ -5,8 +5,8 @@ import {
   ResultUsed,
   ButtonAddCard,
   ResultLibraryTableRowCommon,
-} from 'components';
-import { useApp, deckStore, deckCardChange } from 'context';
+} from '@/components';
+import { useApp, deckStore, deckCardChange } from '@/context';
 
 const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
   const { addMode, inventoryMode } = useApp();

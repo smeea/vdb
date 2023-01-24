@@ -3,7 +3,7 @@ import {
   ResultLibraryTypeImage,
   ResultDisciplineImage,
   ResultClanImage,
-} from 'components';
+} from '@/components';
 import Select from 'react-select';
 
 const InventoryFilterForm = ({

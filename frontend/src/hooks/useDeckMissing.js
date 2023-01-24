@@ -1,6 +1,6 @@
 import { useSnapshot } from 'valtio';
-import { usedStore, inventoryStore } from 'context';
-import { getHardTotal, getSoftMax } from 'utils';
+import { usedStore, inventoryStore } from '@/context';
+import { getHardTotal, getSoftMax } from '@/utils';
 
 const getMissing = (cards, inventoryType, used, inventory) => {
   const crypt = {};

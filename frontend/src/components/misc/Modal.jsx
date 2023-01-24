@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
-import X from 'assets/images/icons/x.svg';
+import X from '@/assets/images/icons/x.svg';
 
 const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
   // TODO unfocus close

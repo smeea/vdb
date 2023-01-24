@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from 'components';
+import { Modal } from '@/components';
 
 const DeckDrawProbabilityModal = ({ setModalDraw, modalDraw }) => {
   return (

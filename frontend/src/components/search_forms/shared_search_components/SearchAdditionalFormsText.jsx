@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useImmer } from 'use-immer';
-import { Input, Checkbox } from 'components';
+import { Input, Checkbox } from '@/components';
 import {
   SearchFormButtonAddText,
   SearchFormButtonDel,

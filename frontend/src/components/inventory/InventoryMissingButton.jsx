@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import Cart4 from 'assets/images/icons/cart4.svg';
-import { ButtonIconed, DeckMissingModal } from 'components';
-import { useApp, inventoryStore } from 'context';
+import Cart4 from '@/assets/images/icons/cart4.svg';
+import { ButtonIconed, DeckMissingModal } from '@/components';
+import { useApp, inventoryStore } from '@/context';
 
 const InventoryMissingButton = ({
   clan,

@@ -3,7 +3,7 @@
 // in case of missing filter or matching them the method returns false, meaning there's no missing criteria
 // if the filter is present and the card dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that card check.
-import setsAndPrecons from 'assets/data/setsAndPrecons.json';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const useFilters = (cards = {}) => {
   const filterCrypt = (filter) => {

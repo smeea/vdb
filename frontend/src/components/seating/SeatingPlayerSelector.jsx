@@ -1,8 +1,8 @@
 import React from 'react';
-import Dice3 from 'assets/images/icons/dice-3-fill.svg';
-import ToggleOn from 'assets/images/icons/toggle-on.svg';
-import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import { Input, Button } from 'components';
+import Dice3 from '@/assets/images/icons/dice-3-fill.svg';
+import ToggleOn from '@/assets/images/icons/toggle-on.svg';
+import ToggleOff from '@/assets/images/icons/toggle-off.svg';
+import { Input, Button } from '@/components';
 
 const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
   const handleChange = (event) => {

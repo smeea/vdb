@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import TrashFill from 'assets/images/icons/trash-fill.svg';
-import { ButtonIconed, ModalConfirmation } from 'components';
-import { deckStore, useApp } from 'context';
-import { byTimestamp } from 'utils';
+import TrashFill from '@/assets/images/icons/trash-fill.svg';
+import { ButtonIconed, ModalConfirmation } from '@/components';
+import { deckStore, useApp } from '@/context';
+import { byTimestamp } from '@/utils';
 
 const DeckDeleteButton = ({ deck, noText }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -33,7 +33,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
   };
 
   const deleteDeck = () => {
-    const url = `${process.env.API_URL}deck/${deck.deckid}`;
+    const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
     const options = {
       method: 'DELETE',
       mode: 'cors',

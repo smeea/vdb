@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
-import { MenuItems, MenuItem, MenuButton } from 'components';
-import Gem from 'assets/images/icons/gem.svg';
-import TrophyFill from 'assets/images/icons/trophy-fill.svg';
-import ClockHistory from 'assets/images/icons/clock-history.svg';
-import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
+import { MenuItems, MenuItem, MenuButton } from '@/components';
+import Gem from '@/assets/images/icons/gem.svg';
+import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
+import ClockHistory from '@/assets/images/icons/clock-history.svg';
+import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg';
 
 const TwdMoreButton = ({ noText }) => {
   const navigate = useNavigate();

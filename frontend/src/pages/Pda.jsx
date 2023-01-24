@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { PdaResult, PdaSearchForm, ErrorMessage } from 'components';
-import { useApp, searchResults, setPdaResults } from 'context';
+import { PdaResult, PdaSearchForm, ErrorMessage } from '@/components';
+import { useApp, searchResults, setPdaResults } from '@/context';
 
 const Pda = () => {
   const { isMobile } = useApp();

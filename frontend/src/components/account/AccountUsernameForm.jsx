@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from 'components';
+import { Input } from '@/components';
 
 const AccountUsernameForm = ({ value, setValue, isNew }) => {
   return (

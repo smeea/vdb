@@ -6,7 +6,7 @@ export const addCards = (cards) => {
     }
   });
 
-  const url = `${process.env.API_URL}inventory`;
+  const url = `${import.meta.env.VITE_API_URL}/inventory`;
   const options = {
     method: 'PATCH',
     mode: 'cors',
@@ -20,7 +20,7 @@ export const addCards = (cards) => {
 };
 
 export const setCard = (card, count) => {
-  const url = `${process.env.API_URL}inventory`;
+  const url = `${import.meta.env.VITE_API_URL}/inventory`;
   const options = {
     method: 'PUT',
     mode: 'cors',

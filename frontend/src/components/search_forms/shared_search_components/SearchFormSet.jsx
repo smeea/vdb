@@ -5,9 +5,9 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
   Checkbox,
-} from 'components';
-import { useApp } from 'context';
-import setsAndPrecons from 'assets/data/setsAndPrecons.json';
+} from '@/components';
+import { useApp } from '@/context';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtest, isMobile, isXWide } = useApp();

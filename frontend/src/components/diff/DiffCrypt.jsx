@@ -8,9 +8,9 @@ import {
   DeckCryptHeader,
   Modal,
   ButtonFloat,
-} from 'components';
-import { useApp, deckStore } from 'context';
-import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
+} from '@/components';
+import { useApp, deckStore } from '@/context';
+import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
 const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const {

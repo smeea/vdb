@@ -1,15 +1,15 @@
 import React from 'react';
 import Select from 'react-select';
-import { ResultDisciplineImage } from 'components';
+import { ResultDisciplineImage } from '@/components';
 import {
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
-import disciplinesList from 'assets/data/disciplinesList.json';
-import virtuesList from 'assets/data/virtuesList.json';
-import { useApp } from 'context';
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import virtuesList from '@/assets/data/virtuesList.json';
+import { useApp } from '@/context';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const { isXWide, isMobile } = useApp();

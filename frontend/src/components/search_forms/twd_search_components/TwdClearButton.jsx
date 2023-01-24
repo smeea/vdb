@@ -1,6 +1,6 @@
 import React from 'react';
-import X from 'assets/images/icons/x.svg';
-import { ButtonIconed } from 'components';
+import X from '@/assets/images/icons/x.svg';
+import { ButtonIconed } from '@/components';
 
 const TwdClearButton = ({ handleClick }) => {
   return (

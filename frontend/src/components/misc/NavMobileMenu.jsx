@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import PersonFill from 'assets/images/icons/person-fill.svg';
-import InfoCircleFill from 'assets/images/icons/info-circle-fill.svg';
-import ToggleOn from 'assets/images/icons/toggle-on.svg';
-import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import List from 'assets/images/icons/list.svg';
-import { LanguageMenu, ThemeSelect, Hr } from 'components';
-import { useApp } from 'context';
+import PersonFill from '@/assets/images/icons/person-fill.svg';
+import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg';
+import ToggleOn from '@/assets/images/icons/toggle-on.svg';
+import ToggleOff from '@/assets/images/icons/toggle-off.svg';
+import List from '@/assets/images/icons/list.svg';
+import { LanguageMenu, ThemeSelect, Hr } from '@/components';
+import { useApp } from '@/context';
 
 const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   const { inventoryMode, toggleInventoryMode, username } = useApp();

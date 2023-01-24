@@ -3,7 +3,7 @@ import {
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
-} from 'components';
+} from '@/components';
 
 const ResultCryptClanGroupTitle = ({ card }) => {
   return (

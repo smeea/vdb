@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Cart4 from 'assets/images/icons/cart4.svg';
-import { ButtonIconed, DeckMissingModal } from 'components';
-import { useApp } from 'context';
+import Cart4 from '@/assets/images/icons/cart4.svg';
+import { ButtonIconed, DeckMissingModal } from '@/components';
+import { useApp } from '@/context';
 
 const DeckMissing = ({ deck, missingCrypt, missingLibrary }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();

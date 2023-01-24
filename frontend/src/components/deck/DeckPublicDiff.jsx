@@ -1,5 +1,5 @@
 import React from 'react';
-import { DiffCrypt, DiffLibrary } from 'components';
+import { DiffCrypt, DiffLibrary } from '@/components';
 
 const DeckPublicDiff = ({ deckFrom, deckTo }) => {
   return (

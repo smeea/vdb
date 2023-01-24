@@ -8,10 +8,10 @@ import {
   ResultClanImage,
   ResultModal,
   ConditionalTooltip,
-} from 'components';
-import { getHardTotal } from 'utils';
-import { useApp, inventoryStore, usedStore } from 'context';
-import { useDeckCrypt, useModalCardController } from 'hooks';
+} from '@/components';
+import { getHardTotal } from '@/utils';
+import { useApp, inventoryStore, usedStore } from '@/context';
+import { useDeckCrypt, useModalCardController } from '@/hooks';
 
 const TwdResultCrypt = ({ crypt }) => {
   const { cryptDeckSort, inventoryMode, isMobile, setShowFloatingButtons } =

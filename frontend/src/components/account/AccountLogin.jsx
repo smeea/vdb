@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import DoorOpenFill from 'assets/images/icons/door-open-fill.svg';
+import DoorOpenFill from '@/assets/images/icons/door-open-fill.svg';
 import {
   AccountPasswordForm,
   AccountUsernameForm,
   ErrorOverlay,
   Modal,
   ConditionalTooltip,
-} from 'components';
-import { useApp } from 'context';
-import { userServices } from 'services';
+} from '@/components';
+import { useApp } from '@/context';
+import { userServices } from '@/services';
 
 const LoginTooltipText = () => {
   return (

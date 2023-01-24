@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Files from 'assets/images/icons/files.svg';
-import { deckStore, useApp } from 'context';
-import { ButtonIconed } from 'components';
+import Files from '@/assets/images/icons/files.svg';
+import { deckStore, useApp } from '@/context';
+import { ButtonIconed } from '@/components';
 
 const DeckCloneButton = ({ deck, noText, noRedirect }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -19,7 +19,7 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
       cards[cardid] = deck.library[cardid].q;
     });
 
-    const url = `${process.env.API_URL}deck`;
+    const url = `${import.meta.env.VITE_API_URL}/deck`;
     const options = {
       method: 'POST',
       mode: 'cors',

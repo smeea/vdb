@@ -1,13 +1,13 @@
 import React from 'react';
-import { useApp } from 'context';
-import X from 'assets/images/icons/x.svg';
+import { useApp } from '@/context';
+import X from '@/assets/images/icons/x.svg';
 import {
   ResultLayoutTextInventory,
   ResultLayoutTextSets,
   ResultLayoutTextRulings,
   ResultLayoutTextArtist,
   Hr,
-} from 'components';
+} from '@/components';
 
 const ResultLayoutTextCommon = ({ card, setImageSet, forceInventoryMode }) => {
   const { inventoryMode } = useApp();

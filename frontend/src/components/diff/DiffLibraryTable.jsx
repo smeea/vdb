@@ -8,15 +8,15 @@ import {
   DeckDrawProbabilityModal,
   DiffQuantityDiff,
   Tooltip,
-} from 'components';
-import { drawProbability, getHardTotal, getSoftMax } from 'utils';
+} from '@/components';
+import { drawProbability, getHardTotal, getSoftMax } from '@/utils';
 import {
   useApp,
   deckStore,
   usedStore,
   inventoryStore,
   deckCardChange,
-} from 'context';
+} from '@/context';
 
 const DiffLibraryTable = ({
   cardChange,

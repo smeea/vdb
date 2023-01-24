@@ -1,10 +1,10 @@
 import React from 'react';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 import {
   ResultCryptTableRowCommon,
   ResultLibraryTableRowCommon,
   TwdOpenDeckButton,
-} from 'components';
+} from '@/components';
 
 const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
   const { isMobile } = useApp();

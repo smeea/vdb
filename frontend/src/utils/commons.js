@@ -1,4 +1,4 @@
-import { CARD_TEXT, MASTER, ID } from 'utils/constants';
+import { CARD_TEXT, MASTER, ID } from '@/utils/constants';
 
 export const getCardProperty = (card, property) => {
   return card.c ? card.c[property] : card[property];

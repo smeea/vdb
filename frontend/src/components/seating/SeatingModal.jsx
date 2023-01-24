@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import X from 'assets/images/icons/x.svg';
-import PencilSquare from 'assets/images/icons/pencil-square.svg';
-import Recycle from 'assets/images/icons/recycle.svg';
+import X from '@/assets/images/icons/x.svg';
+import PencilSquare from '@/assets/images/icons/pencil-square.svg';
+import Recycle from '@/assets/images/icons/recycle.svg';
 import {
   ButtonIconed,
   SeatingPlayerSelector,
@@ -9,8 +9,8 @@ import {
   SeatingEditRandom,
   Modal,
   ButtonFloat,
-} from 'components';
-import { useApp } from 'context';
+} from '@/components';
+import { useApp } from '@/context';
 
 const SeatingModal = ({
   addCustomDeck,

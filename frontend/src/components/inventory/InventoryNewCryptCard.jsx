@@ -1,5 +1,5 @@
 import React from 'react';
-import { NewCryptCard } from 'components';
+import { NewCryptCard } from '@/components';
 
 const InventoryNewCryptCard = ({ setNewId, setShowAdd, newRef }) => {
   const addCard = (value) => {

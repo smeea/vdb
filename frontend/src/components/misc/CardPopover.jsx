@@ -4,8 +4,8 @@ import {
   ResultCryptLayoutText,
   ResultLibraryLayoutText,
   ResultLayoutTextCommon,
-} from 'components';
-import { useApp } from 'context';
+} from '@/components';
+import { useApp } from '@/context';
 
 const CardPopover = ({ card }) => {
   const { showImage } = useApp();

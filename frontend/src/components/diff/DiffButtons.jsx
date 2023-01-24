@@ -1,13 +1,13 @@
 import React from 'react';
-import X from 'assets/images/icons/x.svg';
+import X from '@/assets/images/icons/x.svg';
 import {
   DiffCopyUrlButton,
   DiffBackButton,
   DeckProxyButton,
   DeckMissingButton,
   ButtonFloat,
-} from 'components';
-import { useApp } from 'context';
+} from '@/components';
+import { useApp } from '@/context';
 
 const DiffButtons = ({
   deckFrom,

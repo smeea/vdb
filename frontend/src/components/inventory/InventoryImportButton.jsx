@@ -1,6 +1,6 @@
 import React from 'react';
-import { ButtonIconed } from 'components';
-import Upload from 'assets/images/icons/upload.svg';
+import { ButtonIconed } from '@/components';
+import Upload from '@/assets/images/icons/upload.svg';
 
 const InventoryImportButton = ({ handleClick }) => {
   return (

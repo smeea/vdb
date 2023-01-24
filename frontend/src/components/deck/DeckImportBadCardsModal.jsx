@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useApp, deckCardChange } from 'context';
-import { Modal, DeckCardQuantity, QuickSelect } from 'components';
+import { useApp, deckCardChange } from '@/context';
+import { Modal, DeckCardQuantity, QuickSelect } from '@/components';
 
 const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
   const { isMobile } = useApp();

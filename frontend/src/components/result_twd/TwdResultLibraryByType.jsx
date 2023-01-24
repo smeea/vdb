@@ -4,11 +4,11 @@ import {
   DeckLibraryTable,
   ResultModal,
   Tooltip,
-} from 'components';
-import { useApp } from 'context';
-import { isTrifle } from 'utils';
-import { cardtypeSortedFull } from 'utils/constants';
-import { useModalCardController } from 'hooks';
+} from '@/components';
+import { useApp } from '@/context';
+import { isTrifle } from '@/utils';
+import { cardtypeSortedFull } from '@/utils/constants';
+import { useModalCardController } from '@/hooks';
 
 const TwdResultLibraryByType = ({ library }) => {
   const { setShowFloatingButtons } = useApp();

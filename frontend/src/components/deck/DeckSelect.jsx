@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Shuffle from 'assets/images/icons/shuffle.svg';
-import At from 'assets/images/icons/at.svg';
-import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
-import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
-import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
+import Shuffle from '@/assets/images/icons/shuffle.svg';
+import At from '@/assets/images/icons/at.svg';
+import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
+import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg';
+import BinocularsFill from '@/assets/images/icons/binoculars-fill.svg';
 import {
   ButtonIconed,
   DeckBranchSelect,
@@ -12,8 +12,8 @@ import {
   DeckSelectRecent,
   Radio,
   Button,
-} from 'components';
-import { useApp, deckUpdate } from 'context';
+} from '@/components';
+import { useApp, deckUpdate } from '@/context';
 
 const DeckSelect = ({
   deck,

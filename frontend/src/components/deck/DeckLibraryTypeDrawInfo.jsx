@@ -1,6 +1,6 @@
 import React from 'react';
-import { Tooltip, DeckDrawProbabilityText } from 'components';
-import { drawProbability } from 'utils';
+import { Tooltip, DeckDrawProbabilityText } from '@/components';
+import { drawProbability } from '@/utils';
 
 const DeckLibraryTypeDrawInfo = (props) => {
   const { isMobile, libraryTotal, libraryByTypeTotal, cardtype, setModalDraw } =

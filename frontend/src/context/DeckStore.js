@@ -1,5 +1,5 @@
 import { proxy } from 'valtio';
-import { deckServices } from 'services';
+import { deckServices } from '@/services';
 
 export const deckStore = proxy({
   deck: undefined,

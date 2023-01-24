@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, ButtonIconed } from 'components';
-import Activity from 'assets/images/icons/activity.svg';
-import ListUl from 'assets/images/icons/list-task.svg';
-import lastChange from '~/../LAST_CHANGE.json';
+import { Modal, ButtonIconed } from '@/components';
+import Activity from '@/assets/images/icons/activity.svg';
+import ListUl from '@/assets/images/icons/list-task.svg';
+import lastChange from '@/LAST_CHANGE.json';
 
 const UpdateNotification = () => {
   const [update, setUpdate] = useState();
 
   useEffect(() => {
-    const url = `${process.env.API_URL}version`;
+    const url = `${import.meta.env.VITE_API_URL}/version`;
     const options = {
       method: 'GET',
       mode: 'cors',

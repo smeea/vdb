@@ -1,6 +1,6 @@
 import React from 'react';
-import WifiOff from 'assets/images/icons/wifi-off.svg';
-import { useApp } from 'context';
+import WifiOff from '@/assets/images/icons/wifi-off.svg';
+import { useApp } from '@/context';
 
 const OfflineNotification = () => {
   const { isOffline, isMobile } = useApp();

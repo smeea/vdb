@@ -3,11 +3,11 @@ import {
   ResultLibraryType,
   DeckRecommendationLibraryTable,
   ResultModal,
-} from 'components';
-import { useApp } from 'context';
-import { librarySort, getCardsGroupedBy } from 'utils';
-import { useModalCardController } from 'hooks';
-import { GROUPED_TYPE, TYPE } from 'utils/constants';
+} from '@/components';
+import { useApp } from '@/context';
+import { librarySort, getCardsGroupedBy } from '@/utils';
+import { useModalCardController } from '@/hooks';
+import { GROUPED_TYPE, TYPE } from '@/utils/constants';
 
 const DeckRecommendationLibrary = ({ cards }) => {
   const { setShowFloatingButtons } = useApp();

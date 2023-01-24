@@ -6,7 +6,7 @@ const ResultLibraryCost = ({ valueBlood, valuePool }) => {
       <>
         <img
           className="optimize-contrast h-[30px]"
-          src={`${process.env.ROOT_URL}images/misc/blood${valueBlood}.png`}
+          src={`${import.meta.env.BASE_URL}images/misc/blood${valueBlood}.png`}
           title="Blood Cost"
         />
       </>
@@ -15,7 +15,7 @@ const ResultLibraryCost = ({ valueBlood, valuePool }) => {
     return (
       <img
         className="optimize-contrast h-[35px]"
-        src={`${process.env.ROOT_URL}images/misc/pool${valuePool}.png`}
+        src={`${import.meta.env.BASE_URL}images/misc/pool${valuePool}.png`}
         title="Pool Cost"
       />
     );

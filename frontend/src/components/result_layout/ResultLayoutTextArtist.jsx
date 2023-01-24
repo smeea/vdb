@@ -1,5 +1,5 @@
 import React from 'react';
-import { useApp, searchCryptForm, clearSearchForm } from 'context';
+import { useApp, searchCryptForm, clearSearchForm } from '@/context';
 
 const ResultLayoutTextArtist = ({ artists }) => {
   const handleClick = (target, value) => {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import Check2 from 'assets/images/icons/check2.svg';
-import X from 'assets/images/icons/x.svg';
+import Spinner from '@/assets/images/icons/three-dots.svg';
+import Check2 from '@/assets/images/icons/check2.svg';
+import X from '@/assets/images/icons/x.svg';
 import {
   TwdSearchFormButtons,
   TwdSearchFormPlayer,
@@ -23,9 +23,9 @@ import {
   ButtonFloat,
   Checkbox,
   ErrorOverlay,
-} from 'components';
-import { sanitizeFormState } from 'utils';
-import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from 'context';
+} from '@/components';
+import { sanitizeFormState } from '@/utils';
+import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from '@/context';
 
 const TwdSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, inventoryMode, isMobile } = useApp();
@@ -115,7 +115,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
     navigate(`/twd?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
-    const url = `${process.env.API_URL}search/twd`;
+    const url = `${import.meta.env.VITE_API_URL}/search/twd`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -146,7 +146,7 @@ const TwdSearchForm = ({ error, setError }) => {
     setError(false);
     clearSearchForm('twd');
 
-    const url = `${process.env.API_URL}twd/new/${q}`;
+    const url = `${import.meta.env.VITE_API_URL}/twd/new/${q}`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -172,7 +172,7 @@ const TwdSearchForm = ({ error, setError }) => {
     setError(false);
     clearSearchForm('twd');
 
-    const url = `${process.env.API_URL}twd/random/${q}`;
+    const url = `${import.meta.env.VITE_API_URL}/twd/random/${q}`;
     const options = {
       method: 'GET',
       mode: 'cors',

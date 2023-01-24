@@ -8,9 +8,9 @@ import {
   AccountChangeName,
   AccountDeleteButton,
   AccountPlaytest,
-} from 'components';
-import PersonFill from 'assets/images/icons/person-fill.svg';
-import { useApp } from 'context';
+} from '@/components';
+import PersonFill from '@/assets/images/icons/person-fill.svg';
+import { useApp } from '@/context';
 
 const Account = () => {
   const { username, isPlaytester, isPlaytestAdmin } = useApp();

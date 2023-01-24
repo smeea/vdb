@@ -5,7 +5,7 @@ import {
   CryptSearchForm,
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
-} from 'components';
+} from '@/components';
 import {
   useApp,
   searchResults,
@@ -13,7 +13,7 @@ import {
   setCryptCompare,
   setDeck,
   deckStore,
-} from 'context';
+} from '@/context';
 
 const Crypt = () => {
   const {

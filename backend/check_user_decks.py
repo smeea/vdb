@@ -3,7 +3,7 @@ from models import User
 from sys import argv, exit
 import json
 
-with open("../frontend/dist/data/cardbase_crypt.json", "r") as crypt_file:
+with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file:
     cardbase = json.load(crypt_file)
 
 if len(argv) <= 1:

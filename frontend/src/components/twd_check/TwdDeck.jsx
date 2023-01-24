@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
-import X from 'assets/images/icons/x.svg';
-import Download from 'assets/images/icons/download.svg';
-import Upload from 'assets/images/icons/upload.svg';
-import { Button, ButtonIconed, ErrorOverlay } from 'components';
+import X from '@/assets/images/icons/x.svg';
+import Download from '@/assets/images/icons/download.svg';
+import Upload from '@/assets/images/icons/upload.svg';
+import { Button, ButtonIconed, ErrorOverlay } from '@/components';
 
 const TwdDeck = ({ eventId, setEventId }) => {
   const [deckText, setDeckText] = useState('');

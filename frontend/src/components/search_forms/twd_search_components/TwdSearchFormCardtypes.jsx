@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
-import { ResultLibraryTypeImage } from 'components';
-import { useApp } from 'context';
+import { ResultLibraryTypeImage } from '@/components';
+import { useApp } from '@/context';
 
 const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const { isXWide } = useApp();

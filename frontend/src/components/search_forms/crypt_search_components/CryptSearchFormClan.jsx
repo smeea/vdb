@@ -1,15 +1,15 @@
 import React from 'react';
 import Select from 'react-select';
-import { ResultClanImage } from 'components';
+import { ResultClanImage } from '@/components';
 import {
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
-import imbuedClansList from 'assets/data/imbuedClansList.json';
-import vampireClansList from 'assets/data/vampireClansList.json';
-import { useApp } from 'context';
+import imbuedClansList from '@/assets/data/imbuedClansList.json';
+import vampireClansList from '@/assets/data/vampireClansList.json';
+import { useApp } from '@/context';
 
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { isXWide, isMobile } = useApp();

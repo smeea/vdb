@@ -1,8 +1,8 @@
 import React from 'react';
-import InfoCircle from 'assets/images/icons/info-circle.svg';
-import Exclamation from 'assets/images/icons/exclamation-triangle.svg';
-import { Button, SortButton } from 'components';
-import { useApp } from 'context';
+import InfoCircle from '@/assets/images/icons/info-circle.svg';
+import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
+import { Button, SortButton } from '@/components';
+import { useApp } from '@/context';
 
 const DeckCryptHeader = ({
   cryptTotal,

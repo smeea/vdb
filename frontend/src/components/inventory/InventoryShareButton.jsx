@@ -1,7 +1,7 @@
 import React from 'react';
-import Link45Deg from 'assets/images/icons/link-45deg.svg';
-import { ButtonIconed } from 'components';
-import { useApp } from 'context';
+import Link45Deg from '@/assets/images/icons/link-45deg.svg';
+import { ButtonIconed } from '@/components';
+import { useApp } from '@/context';
 
 const InventoryShareButton = ({ setShow }) => {
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();

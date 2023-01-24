@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import X from 'assets/images/icons/x.svg';
-import SearchHeartFill from 'assets/images/icons/search-heart-fill.svg';
+import X from '@/assets/images/icons/x.svg';
+import SearchHeartFill from '@/assets/images/icons/search-heart-fill.svg';
 import {
   ResultCryptLayoutText,
   ResultLibraryLayoutText,
@@ -10,13 +10,13 @@ import {
   ButtonToggleShowImage,
   ButtonSearchCardInDecks,
   ButtonIconed,
-} from 'components';
+} from '@/components';
 import {
   useApp,
   searchResults,
   setCryptCompare,
   setLibraryCompare,
-} from 'context';
+} from '@/context';
 
 const ResultLayoutText = ({
   card,

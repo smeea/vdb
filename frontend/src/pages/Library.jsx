@@ -5,7 +5,7 @@ import {
   LibrarySearchForm,
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
-} from 'components';
+} from '@/components';
 import {
   useApp,
   searchResults,
@@ -13,7 +13,7 @@ import {
   setLibraryCompare,
   setDeck,
   deckStore,
-} from 'context';
+} from '@/context';
 
 const Library = () => {
   const {

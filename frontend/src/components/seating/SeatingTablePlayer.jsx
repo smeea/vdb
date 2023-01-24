@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 
 const SeatingTablePlayer = ({ deck }) => {
   const { isMobile } = useApp();

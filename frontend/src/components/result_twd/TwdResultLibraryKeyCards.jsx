@@ -9,11 +9,11 @@ import {
   ResultLibraryClan,
   ResultModal,
   ConditionalTooltip,
-} from 'components';
-import { GROUPED_TYPE, ASCII_NAME } from 'utils/constants';
-import { useApp, inventoryStore, usedStore } from 'context';
-import { countCards, librarySort, getHardTotal } from 'utils';
-import { useModalCardController } from 'hooks';
+} from '@/components';
+import { GROUPED_TYPE, ASCII_NAME } from '@/utils/constants';
+import { useApp, inventoryStore, usedStore } from '@/context';
+import { countCards, librarySort, getHardTotal } from '@/utils';
+import { useModalCardController } from '@/hooks';
 
 const TwdResultLibraryKeyCards = ({ library }) => {
   const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();

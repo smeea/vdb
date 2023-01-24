@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from 'components';
+import { Tooltip } from '@/components';
 
 const ConditionalTooltip = ({ children, placement, overlay, disabled }) => {
   return (

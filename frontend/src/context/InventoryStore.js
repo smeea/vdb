@@ -1,5 +1,5 @@
 import { proxy } from 'valtio';
-import { inventoryServices } from 'services';
+import { inventoryServices } from '@/services';
 
 export const inventoryStore = proxy({
   crypt: {},

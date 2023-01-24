@@ -1,7 +1,7 @@
 import React from 'react';
-import ToggleOn from 'assets/images/icons/toggle-on.svg';
-import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import { Hr, SeatingRandomDeck, SeatingCustomDeckAdd } from 'components';
+import ToggleOn from '@/assets/images/icons/toggle-on.svg';
+import ToggleOff from '@/assets/images/icons/toggle-off.svg';
+import { Hr, SeatingRandomDeck, SeatingCustomDeckAdd } from '@/components';
 
 const SeatingEditRandom = ({
   addCustomDeck,

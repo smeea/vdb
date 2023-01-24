@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { useSnapshot } from 'valtio';
 import Select from 'react-select';
-import { deckStore } from 'context';
+import { deckStore } from '@/context';
 
 const DeckBranchSelect = ({ deck, handleSelect }) => {
   const decks = useSnapshot(deckStore).decks;

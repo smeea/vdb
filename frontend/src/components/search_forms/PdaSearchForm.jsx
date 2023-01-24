@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import Check2 from 'assets/images/icons/check2.svg';
-import X from 'assets/images/icons/x.svg';
+import Spinner from '@/assets/images/icons/three-dots.svg';
+import Check2 from '@/assets/images/icons/check2.svg';
+import X from '@/assets/images/icons/x.svg';
 import {
   PdaSearchFormSrcSelector,
   TwdSearchFormButtons,
@@ -21,9 +21,9 @@ import {
   Checkbox,
   ButtonFloat,
   ErrorOverlay,
-} from 'components';
-import { sanitizeFormState } from 'utils';
-import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from 'context';
+} from '@/components';
+import { sanitizeFormState } from '@/utils';
+import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from '@/context';
 
 const PdaSearchForm = ({ error, setError }) => {
   const { username, cryptCardBase, libraryCardBase, inventoryMode, isMobile } =
@@ -112,7 +112,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
     navigate(`/pda?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
-    const url = `${process.env.API_URL}search/pda`;
+    const url = `${import.meta.env.VITE_API_URL}/search/pda`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -143,7 +143,7 @@ const PdaSearchForm = ({ error, setError }) => {
     setError(false);
     clearSearchForm('pda');
 
-    const url = `${process.env.API_URL}pda/new/${q}`;
+    const url = `${import.meta.env.VITE_API_URL}/pda/new/${q}`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -169,7 +169,7 @@ const PdaSearchForm = ({ error, setError }) => {
     setError(false);
     clearSearchForm('pda');
 
-    const url = `${process.env.API_URL}pda/random/${q}`;
+    const url = `${import.meta.env.VITE_API_URL}/pda/random/${q}`;
     const options = {
       method: 'GET',
       mode: 'cors',

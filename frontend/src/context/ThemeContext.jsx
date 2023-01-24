@@ -3,7 +3,7 @@ import {
   initFromStorage,
   setLocalStorage,
   getLocalStorage,
-} from 'services/storageServices.js';
+} from '@/services/storageServices.js';
 
 const ThemeContext = React.createContext({
   theme: 'auto',

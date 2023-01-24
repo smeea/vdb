@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PencilSquare from 'assets/images/icons/pencil-square.svg';
-import { useApp } from 'context';
-import { ButtonIconed } from 'components';
+import PencilSquare from '@/assets/images/icons/pencil-square.svg';
+import { useApp } from '@/context';
+import { ButtonIconed } from '@/components';
 
 const DeckReviewButton = ({ deck }) => {
   const { setShowFloatingButtons, setShowMenuButtons, publicName } = useApp();
@@ -18,7 +18,7 @@ const DeckReviewButton = ({ deck }) => {
       cards[cardid] = deck.library[cardid].q;
     });
 
-    const url = `${process.env.API_URL}deck`;
+    const url = `${import.meta.env.VITE_API_URL}/deck`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -28,7 +28,7 @@ const DeckReviewButton = ({ deck }) => {
       },
       body: JSON.stringify({
         name: deck.name,
-        description: `Review of ${process.env.ROOT_URL}decks/${deck.deckid}`,
+        description: `Review of ${import.meta.env.BASE_URL}decks/${deck.deckid}`,
         author: publicName ? `review by ${publicName}` : '',
         cards: cards,
         tags: deck.tags,

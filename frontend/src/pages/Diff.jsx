@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useParams } from 'react-router-dom';
-import List from 'assets/images/icons/list.svg';
+import List from '@/assets/images/icons/list.svg';
 import {
   DiffButtons,
   DiffCrypt,
@@ -10,9 +10,9 @@ import {
   ButtonFloat,
   Modal,
   ErrorMessage,
-} from 'components';
-import { useApp, deckStore, setDeck } from 'context';
-import { useDeck } from 'hooks';
+} from '@/components';
+import { useApp, deckStore, setDeck } from '@/context';
+import { useDeck } from '@/hooks';
 
 const Diff = () => {
   const {
@@ -36,7 +36,7 @@ const Diff = () => {
 
   const getDeck = (id, setD, setE) => {
     setE(false);
-    const url = `${process.env.API_URL}deck/${id}`;
+    const url = `${import.meta.env.VITE_API_URL}/deck/${id}`;
     const options = {
       method: 'GET',
       mode: 'cors',

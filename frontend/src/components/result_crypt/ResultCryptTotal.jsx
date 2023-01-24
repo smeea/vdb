@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button } from 'components';
-import X from 'assets/images/icons/x.svg';
-import InfoCircle from 'assets/images/icons/info-circle.svg';
-import { ANY } from 'utils/constants';
-import { SortButton } from 'components';
-import { setCryptCompare } from 'context';
+import { Button } from '@/components';
+import X from '@/assets/images/icons/x.svg';
+import InfoCircle from '@/assets/images/icons/info-circle.svg';
+import { ANY } from '@/utils/constants';
+import { SortButton } from '@/components';
+import { setCryptCompare } from '@/context';
 
 const ResultCryptTotal = ({
   cards,

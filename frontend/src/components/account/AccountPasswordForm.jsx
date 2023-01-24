@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
-import Check2 from 'assets/images/icons/check2.svg';
-import { Input, Button } from 'components';
+import EyeFill from '@/assets/images/icons/eye-fill.svg';
+import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg';
+import Check2 from '@/assets/images/icons/check2.svg';
+import { Input, Button } from '@/components';
 
 const AccountPasswordForm = ({ value, setValue, success, isOld, isNew }) => {
   const [hidePassword, setHidePassword] = useState(true);

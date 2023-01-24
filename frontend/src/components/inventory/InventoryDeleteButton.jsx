@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import TrashFill from 'assets/images/icons/trash-fill.svg';
-import { ButtonIconed, ModalConfirmation } from 'components';
-import { useApp, setInventoryCrypt, setInventoryLibrary } from 'context';
+import TrashFill from '@/assets/images/icons/trash-fill.svg';
+import { ButtonIconed, ModalConfirmation } from '@/components';
+import { useApp, setInventoryCrypt, setInventoryLibrary } from '@/context';
 
 const InventoryDelete = () => {
   const { setShowMenuButtons, setShowFloatingButtons, isMobile } = useApp();
@@ -16,7 +16,7 @@ const InventoryDelete = () => {
   };
 
   const deleteInventory = () => {
-    const url = `${process.env.API_URL}inventory`;
+    const url = `${import.meta.env.VITE_API_URL}/inventory`;
     const options = {
       method: 'DELETE',
       mode: 'cors',

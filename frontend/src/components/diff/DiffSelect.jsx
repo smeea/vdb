@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Check2 from 'assets/images/icons/check2.svg';
-import ArrowLeftRight from 'assets/images/icons/arrow-left-right.svg';
+import Check2 from '@/assets/images/icons/check2.svg';
+import ArrowLeftRight from '@/assets/images/icons/arrow-left-right.svg';
 import {
   DeckSelectMy,
   DeckBranchSelect,
@@ -9,8 +9,8 @@ import {
   DeckSelectRecent,
   Button,
   Radio,
-} from 'components';
-import { useApp } from 'context';
+} from '@/components';
+import { useApp } from '@/context';
 
 const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
   const { recentDecks, inventoryMode, username, isMobile } = useApp();
@@ -42,10 +42,10 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
 
     let newId;
     if (e.taret.name === 'from') {
-      newId = urlFrom.replace(`${process.env.ROOT_URL}decks/`, '');
+      newId = urlFrom.replace(`${import.meta.env.BASE_URL}decks/`, '');
       navigate(`/diff/${newId}/${deckidTo}`);
     } else {
-      newId = urlTo.replace(`${process.env.ROOT_URL}decks/`, '');
+      newId = urlTo.replace(`${import.meta.env.BASE_URL}decks/`, '');
       navigate(`/diff/${deckidFrom}/${newId}`);
     }
   };

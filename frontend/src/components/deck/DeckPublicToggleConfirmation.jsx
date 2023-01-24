@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ModalConfirmation } from 'components';
-import { countCards } from 'utils';
+import { ModalConfirmation } from '@/components';
+import { countCards } from '@/utils';
 
 const DeckPublicToggleConfirmation = ({
   deck,

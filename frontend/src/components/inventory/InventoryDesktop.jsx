@@ -7,8 +7,8 @@ import {
   InventoryLibrary,
   InventoryButtons,
   InventoryShowSelect,
-} from 'components';
-import { useApp, inventoryStore, usedStore } from 'context';
+} from '@/components';
+import { useApp, inventoryStore, usedStore } from '@/context';
 
 const InventoryDesktop = ({
   newCryptId,

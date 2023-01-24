@@ -1,8 +1,8 @@
 import React from 'react';
-import { DisciplinesCryptSummary } from 'components/crypt';
-import { useApp } from 'context';
-import { drawUniqueProbability, countCards, countTotalCost } from 'utils';
-import { CAPACITY } from 'utils/constants';
+import { DisciplinesCryptSummary } from '@/components/crypt';
+import { useApp } from '@/context';
+import { drawUniqueProbability, countCards, countTotalCost } from '@/utils';
+import { CAPACITY } from '@/utils/constants';
 
 const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
   const { isMobile } = useApp();

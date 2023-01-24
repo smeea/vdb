@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
-import List from 'assets/images/icons/list.svg';
+import List from '@/assets/images/icons/list.svg';
 import {
   DeckTags,
   ReviewButtons,
@@ -14,9 +14,9 @@ import {
   Modal,
   ButtonFloat,
   ErrorMessage,
-} from 'components';
-import { useApp, deckStore } from 'context';
-import { useDeck, useTags } from 'hooks';
+} from '@/components';
+import { useApp, deckStore } from '@/context';
+import { useDeck, useTags } from '@/hooks';
 
 const Review = () => {
   const {
@@ -50,7 +50,7 @@ const Review = () => {
 
   const getDeck = (deckid) => {
     setError(false);
-    const url = `${process.env.API_URL}deck/${deckid}`;
+    const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -215,7 +215,7 @@ const Review = () => {
   }, [deckFrom]);
 
   const parentId = deckFrom?.description.replace(
-    `Review of ${process.env.ROOT_URL}decks/`,
+    `Review of ${import.meta.env.BASE_URL}decks/`,
     ''
   );
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;

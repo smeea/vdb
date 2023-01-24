@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import X from 'assets/images/icons/x.svg';
-import Link45Deg from 'assets/images/icons/link-45deg.svg';
-import ClipboardFill from 'assets/images/icons/clipboard-fill.svg';
-import { ButtonFloat, Modal, Button, ButtonIconed } from 'components';
-import { useApp } from 'context';
+import X from '@/assets/images/icons/x.svg';
+import Link45Deg from '@/assets/images/icons/link-45deg.svg';
+import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg';
+import { ButtonFloat, Modal, Button, ButtonIconed } from '@/components';
+import { useApp } from '@/context';
 
 const InventoryShareModal = ({ setShow }) => {
   const {
@@ -17,11 +17,11 @@ const InventoryShareModal = ({ setShow }) => {
 
   const [success, setSuccess] = useState();
   const [shareUrl, setShareUrl] = useState(
-    `${process.env.ROOT_URL}inventory?key=${inventoryKey}`
+    `${import.meta.env.BASE_URL}inventory?key=${inventoryKey}`
   );
 
   const createUrl = () => {
-    const url = `${process.env.API_URL}account`;
+    const url = `${import.meta.env.VITE_API_URL}/account`;
     const newKey = Math.random().toString(36).substring(2, 10);
 
     const options = {
@@ -41,7 +41,7 @@ const InventoryShareModal = ({ setShow }) => {
       })
       .then(() => {
         setInventoryKey(newKey);
-        const u = `${process.env.ROOT_URL}inventory?key=${newKey}`;
+        const u = `${import.meta.env.BASE_URL}inventory?key=${newKey}`;
         setShareUrl(u);
         navigator.clipboard.writeText(u);
       })

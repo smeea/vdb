@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import Select from 'react-select';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import Shuffle from 'assets/images/icons/shuffle.svg';
-import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
-import At from 'assets/images/icons/at.svg';
+import EyeFill from '@/assets/images/icons/eye-fill.svg';
+import Shuffle from '@/assets/images/icons/shuffle.svg';
+import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
+import At from '@/assets/images/icons/at.svg';
 import {
   DeckCrypt,
   DeckLibrary,
@@ -18,9 +18,9 @@ import {
   Button,
   Checkbox,
   Input,
-} from 'components';
-import { getClan, decksSort } from 'utils';
-import { useApp, deckStore, inventoryStore, deckUpdate } from 'context';
+} from '@/components';
+import { getClan, decksSort } from '@/utils';
+import { useApp, deckStore, inventoryStore, deckUpdate } from '@/context';
 
 const InventoryAddDeckModal = ({ handleClose }) => {
   const { isDesktop, isMobile } = useApp();

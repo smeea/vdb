@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import PeopleFill from 'assets/images/icons/people-fill.svg';
-import Spinner from 'assets/images/icons/three-dots.svg';
-import { Modal, Button, DeckPublicDiff, ButtonIconed } from 'components';
-import { useApp, deckStore } from 'context';
+import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import Spinner from '@/assets/images/icons/three-dots.svg';
+import { Modal, Button, DeckPublicDiff, ButtonIconed } from '@/components';
+import { useApp, deckStore } from '@/context';
 
 const DeckPublicSyncButton = ({ deck }) => {
   const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();
@@ -19,7 +19,7 @@ const DeckPublicSyncButton = ({ deck }) => {
   };
 
   const syncPublic = () => {
-    const url = `${process.env.API_URL}pda/${deck.deckid}`;
+    const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
     const options = {
       method: 'PUT',
       mode: 'cors',

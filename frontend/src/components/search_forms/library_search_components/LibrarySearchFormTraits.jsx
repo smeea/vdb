@@ -1,6 +1,6 @@
 import React from 'react';
-import { Checkbox } from 'components';
-import { useApp } from 'context';
+import { Checkbox } from '@/components';
+import { useApp } from '@/context';
 
 const LibrarySearchFormTraits = ({ value, onChange }) => {
   const { playtest } = useApp();

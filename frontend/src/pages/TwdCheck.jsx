@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { TwdDeck, TwdEvent } from 'components';
-import { useApp } from 'context';
+import { TwdDeck, TwdEvent } from '@/components';
+import { useApp } from '@/context';
 
 const TwdCheck = () => {
   const { isWide } = useApp();

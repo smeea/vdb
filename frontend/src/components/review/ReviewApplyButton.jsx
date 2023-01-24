@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Check2All from 'assets/images/icons/check2-all.svg';
-import { useApp, deckUpdate } from 'context';
-import { ButtonIconed } from 'components';
+import Check2All from '@/assets/images/icons/check2-all.svg';
+import { useApp, deckUpdate } from '@/context';
+import { ButtonIconed } from '@/components';
 
 const ReviewApplyButton = ({ deck, parentId }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();

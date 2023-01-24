@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
-import Dice3 from 'assets/images/icons/dice-3-fill.svg';
+import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg';
+import Dice3 from '@/assets/images/icons/dice-3-fill.svg';
 import {
   QuickSelect,
   ResultLayoutText,
   ButtonIconed,
   CardImage,
   ButtonFloat,
-} from 'components';
-import { useApp, setQuickCard } from 'context';
+} from '@/components';
+import { useApp, setQuickCard } from '@/context';
 
 const Cards = () => {
   const params = useParams();

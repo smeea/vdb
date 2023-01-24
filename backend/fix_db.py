@@ -2,7 +2,7 @@ from api import app, db
 from models import Deck
 import json
 
-with open("../frontend/dist/data/cardbase_crypt.json", "r") as crypt_file:
+with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file:
     crypt_db = json.load(crypt_file)
 
 # NOT REQUIRED; USE ONLY AS TEMPLATE FOR FUTURE FIXES

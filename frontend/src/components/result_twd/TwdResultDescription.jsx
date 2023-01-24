@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import CalendarEvent from 'assets/images/icons/calendar-event.svg';
-import GeoAltFill from 'assets/images/icons/geo-alt-fill.svg';
-import PeopleFill from 'assets/images/icons/people-fill.svg';
-import PersonFill from 'assets/images/icons/person-fill.svg';
-import TagFill from 'assets/images/icons/tag-fill.svg';
-import TrophyFill from 'assets/images/icons/trophy-fill.svg';
-import { TwdResultTags, TwdOpenDeckButton, DeckCloneButton } from 'components';
-import { useApp, searchTwdForm, clearSearchForm } from 'context';
-import { useTags } from 'hooks';
+import CalendarEvent from '@/assets/images/icons/calendar-event.svg';
+import GeoAltFill from '@/assets/images/icons/geo-alt-fill.svg';
+import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import PersonFill from '@/assets/images/icons/person-fill.svg';
+import TagFill from '@/assets/images/icons/tag-fill.svg';
+import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
+import { TwdResultTags, TwdOpenDeckButton, DeckCloneButton } from '@/components';
+import { useApp, searchTwdForm, clearSearchForm } from '@/context';
+import { useTags } from '@/hooks';
 
 const TwdResultDescription = ({ deck }) => {
   const { username, isMobile, isDesktop } = useApp();

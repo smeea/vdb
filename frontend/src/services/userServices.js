@@ -1,5 +1,5 @@
-const accountUrl = `${process.env.API_URL}account`;
-const loginUrl = `${process.env.API_URL}login`;
+const accountUrl = `${import.meta.env.VITE_API_URL}/account`;
+const loginUrl = `${import.meta.env.VITE_API_URL}/login`;
 
 export const login = (
   username,

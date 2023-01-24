@@ -1,7 +1,7 @@
 import React from 'react';
-import Recycle from 'assets/images/icons/recycle.svg';
-import { useApp } from 'context';
-import { ButtonIconed } from 'components';
+import Recycle from '@/assets/images/icons/recycle.svg';
+import { useApp } from '@/context';
+import { ButtonIconed } from '@/components';
 
 const SeatingButton = ({ setShow }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();

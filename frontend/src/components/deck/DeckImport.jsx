@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
+import ClipboardPlus from '@/assets/images/icons/clipboard-plus.svg';
 import {
   ButtonIconed,
   ErrorOverlay,
@@ -9,10 +9,10 @@ import {
   DeckImportText,
   DeckImportAmaranth,
   DeckImportBadCardsModal,
-} from 'components';
-import { useApp, deckStore, deckAdd } from 'context';
-import { useDeckImport } from 'hooks';
-import { deckServices } from 'services';
+} from '@/components';
+import { useApp, deckStore, deckAdd } from '@/context';
+import { useDeckImport } from '@/hooks';
+import { deckServices } from '@/services';
 
 const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const {

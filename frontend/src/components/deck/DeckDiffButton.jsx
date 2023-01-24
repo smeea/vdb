@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import PlusSlashMinus from 'assets/images/icons/plus-slash-minus.svg';
-import { useApp } from 'context';
-import { ButtonIconed } from 'components';
+import PlusSlashMinus from '@/assets/images/icons/plus-slash-minus.svg';
+import { useApp } from '@/context';
+import { ButtonIconed } from '@/components';
 
 const DeckDiffButton = ({ deckid }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useApp, inventoryCardChange } from 'context';
-import { Modal, DeckCardQuantity, QuickSelect } from 'components';
+import { useApp, inventoryCardChange } from '@/context';
+import { Modal, DeckCardQuantity, QuickSelect } from '@/components';
 
 const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
   const { isMobile } = useApp();

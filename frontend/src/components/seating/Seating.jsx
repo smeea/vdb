@@ -1,9 +1,9 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
-import { SeatingModal } from 'components';
-import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
-import { useApp } from 'context';
-import standardDecksData from 'assets/data/standardDecks.json';
+import { SeatingModal } from '@/components';
+import { initFromStorage, setLocalStorage } from '@/services/storageServices.js';
+import { useApp } from '@/context';
+import standardDecksData from '@/assets/data/standardDecks.json';
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));

@@ -1,8 +1,8 @@
 import React from 'react';
-import PcDisplay from 'assets/images/icons/pc-display.svg';
-import SunFill from 'assets/images/icons/sun-fill.svg';
-import MoonFill from 'assets/images/icons/moon-fill.svg';
-import { useApp, useTheme } from 'context';
+import PcDisplay from '@/assets/images/icons/pc-display.svg';
+import SunFill from '@/assets/images/icons/sun-fill.svg';
+import MoonFill from '@/assets/images/icons/moon-fill.svg';
+import { useApp, useTheme } from '@/context';
 
 const ThemeSelect = ({ setShowMenu }) => {
   const { theme, toggleTheme } = useTheme();

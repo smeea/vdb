@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Disclosure, Tab } from '@headlessui/react';
-import { TwdHallFameCardsPlayer } from 'components';
-import { useApp } from 'context';
-import setsAndPrecons from 'assets/data/setsAndPrecons.json';
+import { TwdHallFameCardsPlayer } from '@/components';
+import { useApp } from '@/context';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdHallOfFameCards = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -20,7 +20,7 @@ const TwdHallOfFameCards = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
-      const url = `${process.env.ROOT_URL}data/twd_cards_history.json`;
+      const url = `${import.meta.env.BASE_URL}data/twd_cards_history.json`;
       const options = {
         method: 'GET',
         mode: 'cors',

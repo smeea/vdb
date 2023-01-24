@@ -5,8 +5,8 @@ import {
   DeckChangeBranchName,
   DeckChangeAuthor,
   DeckChangeDescription,
-} from 'components';
-import { useApp } from 'context';
+} from '@/components';
+import { useApp } from '@/context';
 
 const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
   const { isMobile } = useApp();

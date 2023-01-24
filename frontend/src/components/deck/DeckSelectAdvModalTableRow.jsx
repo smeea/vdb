@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import Shuffle from 'assets/images/icons/shuffle.svg';
-import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
-import At from 'assets/images/icons/at.svg';
+import EyeFill from '@/assets/images/icons/eye-fill.svg';
+import Shuffle from '@/assets/images/icons/shuffle.svg';
+import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
+import At from '@/assets/images/icons/at.svg';
 import {
   DeckCrypt,
   DeckLibrary,
@@ -18,9 +18,9 @@ import {
   Tooltip,
   Button,
   Checkbox,
-} from 'components';
-import { useApp, deckUpdate } from 'context';
-import { getClan } from 'utils';
+} from '@/components';
+import { useApp, deckUpdate } from '@/context';
+import { getClan } from '@/utils';
 
 const DeckSelectAdvModalTableRow = ({
   deck,

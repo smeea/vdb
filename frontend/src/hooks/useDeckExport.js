@@ -1,4 +1,4 @@
-import { cryptSort, librarySort } from 'utils';
+import { cryptSort, librarySort } from '@/utils';
 
 const getCryptTitle = (crypt) => {
   let cryptTotalCap = 0;

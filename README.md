@@ -59,9 +59,9 @@ Now go to http://localhost:1234 in the browser and you are ready to go.
 ### FOR PRODUCTION
 
 For production, in addition to the steps above, you should at least:
-* setup web-server instead of `parcel serve` embedded server
+* setup web-server instead of `npm run start` (`vite`) embedded server
 * setup wsgi-server instead of `flask run` embedded server
-* build frontend for production (see your prefered bundler documentation, for `parcel` use `npm run build`)
+* build frontend for production (`npm run build`)
 * change `app.config['SECRET_KEY']` in `backend/config.py`
 
 For reference:

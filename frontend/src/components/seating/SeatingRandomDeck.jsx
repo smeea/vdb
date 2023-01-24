@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PlayFill from 'assets/images/icons/play-fill.svg';
-import X from 'assets/images/icons/x.svg';
-import ToggleOn from 'assets/images/icons/toggle-on.svg';
-import ToggleOff from 'assets/images/icons/toggle-off.svg';
+import PlayFill from '@/assets/images/icons/play-fill.svg';
+import X from '@/assets/images/icons/x.svg';
+import ToggleOn from '@/assets/images/icons/toggle-on.svg';
+import ToggleOff from '@/assets/images/icons/toggle-off.svg';
 
 const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (

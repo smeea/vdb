@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from 'components';
-import X from 'assets/images/icons/x.svg';
-import { ResultLibraryTypeImage, SortButton } from 'components';
-import { setLibraryCompare } from 'context';
+import { Button } from '@/components';
+import X from '@/assets/images/icons/x.svg';
+import { ResultLibraryTypeImage, SortButton } from '@/components';
+import { setLibraryCompare } from '@/context';
 
 const ResultLibraryTotal = ({
   cards,

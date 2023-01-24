@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { useSwipeable } from 'react-swipeable';
-import X from 'assets/images/icons/x.svg';
-import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
-import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
-import ChevronCompactRight from 'assets/images/icons/chevron-compact-right.svg';
-import { ButtonFloat, CardImage, ResultLayoutText } from 'components';
-import { useApp } from 'context';
+import X from '@/assets/images/icons/x.svg';
+import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg';
+import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg';
+import ChevronCompactRight from '@/assets/images/icons/chevron-compact-right.svg';
+import { ButtonFloat, CardImage, ResultLayoutText } from '@/components';
+import { useApp } from '@/context';
 
 const ResultModal = ({
   card,

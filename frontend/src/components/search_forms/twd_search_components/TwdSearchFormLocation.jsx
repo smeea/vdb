@@ -1,6 +1,6 @@
 import React from 'react';
 import AsyncSelect from 'react-select/async';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 
 const TwdSearchFormLocation = ({ value, form }) => {
   const { isXWide } = useApp();
@@ -11,7 +11,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
   };
 
   const loadOptions = (inputValue) => {
-    const url = `${process.env.API_URL}twd/locations`;
+    const url = `${import.meta.env.VITE_API_URL}/twd/locations`;
     const options = {
       method: 'GET',
       mode: 'cors',

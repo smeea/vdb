@@ -1,13 +1,13 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 import {
   CardPopover,
   ResultCryptName,
   ResultLibraryName,
   ResultMiscImage,
   ConditionalTooltip,
-} from 'components';
+} from '@/components';
 
 const ResultLayoutTextText = ({ cardid, placement }) => {
   const {

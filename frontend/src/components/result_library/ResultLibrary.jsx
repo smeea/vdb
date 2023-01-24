@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import X from 'assets/images/icons/x.svg';
-import Plus from 'assets/images/icons/plus.svg';
+import X from '@/assets/images/icons/x.svg';
+import Plus from '@/assets/images/icons/plus.svg';
 import {
   ButtonFloat,
   ResultLibraryTable,
   ResultLibraryTotal,
   ErrorMessage,
-} from 'components';
-import { librarySort } from 'utils';
-import { useApp, deckStore } from 'context';
+} from '@/components';
+import { librarySort } from '@/utils';
+import { useApp, deckStore } from '@/context';
 
 const ResultLibrary = ({ cards, setCards, inCompare }) => {
   const {

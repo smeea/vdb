@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import AsyncSelect from 'react-select/async';
-import { useApp } from 'context';
-import { SelectLabelCrypt, SelectLabelLibrary } from 'components';
-import { useFilters } from 'hooks';
+import { useApp } from '@/context';
+import { SelectLabelCrypt, SelectLabelLibrary } from '@/components';
+import { useFilters } from '@/hooks';
 
 const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
   const { isMobile, cryptCardBase, libraryCardBase, playtest } = useApp();

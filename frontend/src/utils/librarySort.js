@@ -1,4 +1,4 @@
-import { cardtypeSortedFull } from 'utils/constants';
+import { cardtypeSortedFull } from '@/utils/constants';
 import {
   byBloodCost,
   byPoolCost,
@@ -11,7 +11,7 @@ import {
   byDateWin,
   byDatePrint,
   getCardProperty,
-} from 'utils';
+} from '@/utils';
 
 const librarySort = (cards, sortMethod) => {
   const byGroupedType = (a, b) => {

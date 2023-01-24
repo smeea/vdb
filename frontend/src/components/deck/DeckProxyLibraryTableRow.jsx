@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import Select from 'react-select';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
+import EyeFill from '@/assets/images/icons/eye-fill.svg';
 import {
   UsedPopover,
   DeckCardQuantity,
@@ -10,10 +10,10 @@ import {
   Tooltip,
   ConditionalTooltip,
   Checkbox,
-} from 'components';
-import setsAndPrecons from 'assets/data/setsAndPrecons.json';
-import { useApp, usedStore, inventoryStore } from 'context';
-import { getSoftMax, getHardTotal } from 'utils';
+} from '@/components';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import { useApp, usedStore, inventoryStore } from '@/context';
+import { getSoftMax, getHardTotal } from '@/utils';
 
 const DeckProxyLibraryTableRow = ({
   handleClick,

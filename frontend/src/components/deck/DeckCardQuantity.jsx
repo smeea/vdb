@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'components';
-import { useApp } from 'context';
+import { Button } from '@/components';
+import { useApp } from '@/context';
 
 const DeckCardQuantity = ({
   deckid,

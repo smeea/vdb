@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { useSnapshot } from 'valtio';
-import Shuffle from 'assets/images/icons/shuffle.svg';
-import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
+import Shuffle from '@/assets/images/icons/shuffle.svg';
+import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
 import {
   deckCardChange,
   deckUpdate,
@@ -10,7 +10,7 @@ import {
   usedStore,
   inventoryStore,
   deckStore,
-} from 'context';
+} from '@/context';
 import {
   Tooltip,
   UsedPopover,
@@ -18,8 +18,8 @@ import {
   ResultLibraryTableRowCommon,
   DeckDrawProbabilityText,
   ConditionalTooltip,
-} from 'components';
-import { getSoftMax, getHardTotal, drawProbability } from 'utils';
+} from '@/components';
+import { getSoftMax, getHardTotal, drawProbability } from '@/utils';
 
 const DeckLibraryTableRow = ({
   idx,

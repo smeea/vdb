@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
-import { Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from 'components';
-import { useApp, usedStore, inventoryStore } from 'context';
-import { getHardTotal, getSoftMax } from 'utils';
+import { Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
+import { useApp, usedStore, inventoryStore } from '@/context';
+import { getHardTotal, getSoftMax } from '@/utils';
 
 const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const { isMobile, inventoryMode } = useApp();

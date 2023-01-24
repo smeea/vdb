@@ -14,18 +14,18 @@ import {
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
   ResultModal,
-} from 'components';
+} from '@/components';
 import {
   cardtypeSorted,
   BURN_OPTION,
   POOL_COST,
   BLOOD_COST,
-} from 'utils/constants';
-import disciplinesList from 'assets/data/disciplinesList.json';
-import virtuesList from 'assets/data/virtuesList.json';
-import { librarySort } from 'utils';
-import { useApp } from 'context';
-import { useModalCardController } from 'hooks';
+} from '@/utils/constants';
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import virtuesList from '@/assets/data/virtuesList.json';
+import { librarySort } from '@/utils';
+import { useApp } from '@/context';
+import { useModalCardController } from '@/hooks';
 
 const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const { isMobile } = useApp();

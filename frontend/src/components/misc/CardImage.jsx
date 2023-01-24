@@ -1,6 +1,6 @@
 import React from 'react';
-import { useApp } from 'context';
-import { useCardImageUrl } from 'hooks';
+import { useApp } from '@/context';
+import { useCardImageUrl } from '@/hooks';
 
 const CardImage = ({ card, set, className, onClick }) => {
   const { lang } = useApp();

@@ -1,7 +1,7 @@
-import { useDeckExport } from 'hooks';
+import { useDeckExport } from '@/hooks';
 
 export const update = (deckid, field, value) => {
-  const url = `${process.env.API_URL}deck/${deckid}`;
+  const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
   const options = {
     method: 'PUT',
     mode: 'cors',
@@ -16,7 +16,7 @@ export const update = (deckid, field, value) => {
 };
 
 export const cardChange = (deckid, cardid, q) => {
-  const url = `${process.env.API_URL}deck/${deckid}`;
+  const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
   const options = {
     method: 'PUT',
     mode: 'cors',
@@ -36,7 +36,7 @@ export const deckImport = (deck) => {
     cards[card.c.Id] = card.q;
   });
 
-  const url = `${process.env.API_URL}deck`;
+  const url = `${import.meta.env.VITE_API_URL}/deck`;
   const options = {
     method: 'POST',
     mode: 'cors',
@@ -57,7 +57,7 @@ export const deckImport = (deck) => {
 };
 
 export const branchesImport = async (masterId, branches) => {
-  const url = `${process.env.API_URL}deck/${masterId}/branch`;
+  const url = `${import.meta.env.VITE_API_URL}/deck/${masterId}/branch`;
   const options = {
     method: 'POST',
     mode: 'cors',
@@ -83,7 +83,7 @@ export const branchesImport = async (masterId, branches) => {
 };
 
 export const getDeckFromAmaranth = async (deckUrl) => {
-  const url = `${process.env.AMARANTH_API_URL}deck`;
+  const url = `${import.meta.env.AMARANTH_VITE_API_URL}/deck`;
   const id = deckUrl.replace(/.*#deck\//i, '');
   const options = {
     method: 'POST',

@@ -1,6 +1,6 @@
 import React from 'react';
-import { ResultDisciplineImage } from 'components';
-import disciplinesList from 'assets/data/disciplinesList.json';
+import { ResultDisciplineImage } from '@/components';
+import disciplinesList from '@/assets/data/disciplinesList.json';
 
 const CryptSearchFormDisciplines = ({ value, onChange }) => {
   return (

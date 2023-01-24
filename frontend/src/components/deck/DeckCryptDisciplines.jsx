@@ -1,6 +1,6 @@
 import React from 'react';
-import { ResultDisciplineImage } from 'components';
-import { useApp } from 'context';
+import { ResultDisciplineImage } from '@/components';
+import { useApp } from '@/context';
 
 const DeckCryptDisciplines = ({
   value,

@@ -1,11 +1,11 @@
 import React from 'react';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 import {
   TwdClearButton,
   TwdMoreButton,
   TwdNewDecksButton,
   TwdRandomButton,
-} from 'components';
+} from '@/components';
 
 const TwdSearchFormButtons = ({ getRandom, getNew, handleClear, inPda }) => {
   const { isMobile, isWide } = useApp();

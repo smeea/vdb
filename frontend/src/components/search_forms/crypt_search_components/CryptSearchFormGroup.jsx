@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'components';
+import { Button } from '@/components';
 
 const CryptSearchFormGroup = ({ value, onChange }) => {
   const groups = [1, 2, 3, 4, 5, 6, 7];

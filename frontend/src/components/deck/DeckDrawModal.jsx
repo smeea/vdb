@@ -1,7 +1,7 @@
 import React from 'react';
-import X from 'assets/images/icons/x.svg';
-import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
-import StackIcon from 'assets/images/icons/stack.svg';
+import X from '@/assets/images/icons/x.svg';
+import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg';
+import StackIcon from '@/assets/images/icons/stack.svg';
 import {
   Button,
   Modal,
@@ -11,10 +11,10 @@ import {
   ButtonFloat,
   ResultCryptCapacity,
   ErrorMessage,
-} from 'components';
+} from '@/components';
 
-import { useApp } from 'context';
-import { useModalCardController } from 'hooks';
+import { useApp } from '@/context';
+import { useModalCardController } from '@/hooks';
 
 const DeckDrawModal = ({
   burnCrypt,
@@ -214,7 +214,7 @@ const DeckDrawModal = ({
                       >
                         <img
                           className="optimize-contrast h-[31px] pb-1"
-                          src={`${process.env.ROOT_URL}images/misc/bloodX.png`}
+                          src={`${import.meta.env.BASE_URL}images/misc/bloodX.png`}
                         />
                         <b>{burnedBloodTotal}</b>
                       </div>
@@ -224,7 +224,7 @@ const DeckDrawModal = ({
                       >
                         <img
                           className="optimize-contrast h-[30px]"
-                          src={`${process.env.ROOT_URL}images/misc/poolX.png`}
+                          src={`${import.meta.env.BASE_URL}images/misc/poolX.png`}
                         />
                         <b>{burnedPoolTotal}</b>
                       </div>

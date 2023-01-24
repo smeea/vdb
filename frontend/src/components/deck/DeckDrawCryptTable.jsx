@@ -4,11 +4,11 @@ import {
   ResultCryptTableRowCommon,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
-} from 'components';
+} from '@/components';
 
-import { drawProbability } from 'utils';
-import { useApp } from 'context';
-import { useKeyDisciplines } from 'hooks';
+import { drawProbability } from '@/utils';
+import { useApp } from '@/context';
+import { useKeyDisciplines } from '@/hooks';
 
 const DeckDrawCryptTable = ({
   handleClick,

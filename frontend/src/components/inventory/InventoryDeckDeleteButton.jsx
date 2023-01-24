@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import TrashFill from 'assets/images/icons/trash-fill.svg';
-import { ButtonIconed, ModalConfirmation } from 'components';
-import { inventoryCardsAdd } from 'context';
+import TrashFill from '@/assets/images/icons/trash-fill.svg';
+import { ButtonIconed, ModalConfirmation } from '@/components';
+import { inventoryCardsAdd } from '@/context';
 
 const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
   const [showConfirmation, setShowConfirmation] = useState(false);

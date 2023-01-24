@@ -1,5 +1,5 @@
 import React from 'react';
-import Hammer from 'assets/images/icons/hammer.svg';
+import Hammer from '@/assets/images/icons/hammer.svg';
 
 const ResultCryptName = ({ card }) => {
   return (
@@ -15,7 +15,7 @@ const ResultCryptName = ({ card }) => {
         {card.Adv[0] && (
           <img
             className="inline h-[22px] align-text-bottom"
-            src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+            src={`${import.meta.env.BASE_URL}images/misc/advanced.svg`}
             title="Advanced"
           />
         )}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TwdOpenDeckButton } from 'components';
-import { useApp, clearSearchForm, searchTwdForm } from 'context';
+import { TwdOpenDeckButton } from '@/components';
+import { useApp, clearSearchForm, searchTwdForm } from '@/context';
 
 const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const { isMobile } = useApp();

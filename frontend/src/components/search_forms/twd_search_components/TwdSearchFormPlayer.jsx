@@ -1,6 +1,6 @@
 import React from 'react';
 import AsyncSelect from 'react-select/async';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 
 const TwdSearchFormPlayer = ({ inPda, value, form }) => {
   const { isXWide } = useApp();
@@ -11,7 +11,7 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
   };
 
   const loadOptions = (inputValue) => {
-    const url = `${process.env.API_URL}${inPda ? 'pda' : 'twd'}/authors`;
+    const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/authors`;
     const options = {
       method: 'GET',
       mode: 'cors',

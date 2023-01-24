@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import Check2 from 'assets/images/icons/check2.svg';
-import PenFill from 'assets/images/icons/pen-fill.svg';
+import Check2 from '@/assets/images/icons/check2.svg';
+import PenFill from '@/assets/images/icons/pen-fill.svg';
 import {
   Input,
   ConditionalTooltip,
   ErrorOverlay,
   Modal,
   Button,
-} from 'components';
-import { useApp } from 'context';
-import { userServices } from 'services';
+} from '@/components';
+import { useApp } from '@/context';
+import { userServices } from '@/services';
 
 const TooltipText = () => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import EyeFill from 'assets/images/icons/eye-fill.svg';
-import GiftFill from 'assets/images/icons/gift-fill.svg';
+import EyeFill from '@/assets/images/icons/eye-fill.svg';
+import GiftFill from '@/assets/images/icons/gift-fill.svg';
 import {
   DeckCrypt,
   DeckLibrary,
@@ -12,10 +12,10 @@ import {
   Tooltip,
   Modal,
   Input,
-} from 'components';
-import { decksSort } from 'utils';
-import { useApp, inventoryStore } from 'context';
-import setsAndPrecons from 'assets/data/setsAndPrecons.json';
+} from '@/components';
+import { decksSort } from '@/utils';
+import { useApp, inventoryStore } from '@/context';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const InventoryAddDeckModal = ({ handleClose }) => {
   const { preconDecks, playtest, isDesktop, isMobile } = useApp();

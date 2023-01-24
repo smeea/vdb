@@ -6,7 +6,7 @@ const ResultLibraryTypeImage = ({ value, className }) => {
   return (
     <>
       {cardtypes.map((cardtype, index) => {
-        const imgSrc = `${process.env.ROOT_URL}images/types/${cardtype
+        const imgSrc = `${import.meta.env.BASE_URL}images/types/${cardtype
           .toLowerCase()
           .replace(/[\s,:!?'.-]/g, '')}.svg`;
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import { ResultModal, ResultLibraryTableRow } from 'components';
-import { useApp } from 'context';
-import { useModalCardController } from 'hooks';
+import { ResultModal, ResultLibraryTableRow } from '@/components';
+import { useApp } from '@/context';
+import { useModalCardController } from '@/hooks';
 
 const ResultLibraryTable = ({ resultCards, placement }) => {
   const { setShowFloatingButtons } = useApp();

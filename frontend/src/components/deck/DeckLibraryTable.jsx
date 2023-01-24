@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { DeckLibraryTableRow, DeckDrawProbabilityModal } from 'components';
-import { useApp } from 'context';
+import { DeckLibraryTableRow, DeckDrawProbabilityModal } from '@/components';
+import { useApp } from '@/context';
 
 const DeckLibraryTable = ({
   deck,

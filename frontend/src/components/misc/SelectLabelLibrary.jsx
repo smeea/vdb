@@ -6,8 +6,8 @@ import {
   ResultLibraryTypeImage,
   ResultLibraryCost,
   ResultLibraryClan,
-} from 'components';
-import { useApp, inventoryStore } from 'context';
+} from '@/components';
+import { useApp, inventoryStore } from '@/context';
 
 const SelectLabelLibrary = ({ cardid, inInventory }) => {
   const { libraryCardBase } = useApp();

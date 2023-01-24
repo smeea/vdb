@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import PeopleFill from 'assets/images/icons/people-fill.svg';
-import { ButtonIconed } from 'components';
+import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import { ButtonIconed } from '@/components';
 
 const DeckPublicSwitchButton = ({ deck }) => {
   const navigate = useNavigate();

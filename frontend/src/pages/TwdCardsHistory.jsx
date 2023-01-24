@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Tab } from '@headlessui/react';
-import { TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from 'components';
-import { useApp } from 'context';
-import { byName } from 'utils';
-import setsAndPrecons from 'assets/data/setsAndPrecons.json';
+import { TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from '@/components';
+import { useApp } from '@/context';
+import { byName } from '@/utils';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdCardsHistory = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -13,7 +13,7 @@ const TwdCardsHistory = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
-      const url = `${process.env.ROOT_URL}data/twd_cards_history.json`;
+      const url = `${import.meta.env.BASE_URL}data/twd_cards_history.json`;
       const options = {
         method: 'GET',
         mode: 'cors',

@@ -1,6 +1,6 @@
 import React from 'react';
-import { DeckProxyCryptTableRow } from 'components';
-import { useKeyDisciplines } from 'hooks';
+import { DeckProxyCryptTableRow } from '@/components';
+import { useKeyDisciplines } from '@/hooks';
 
 const DeckProxyCryptTable = ({
   handleModalCardOpen,

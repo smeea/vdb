@@ -1,7 +1,7 @@
 import React from 'react';
-import BinocularsFill from 'assets/images/icons/binoculars-fill.svg';
-import Plus from 'assets/images/icons/plus.svg';
-import { ButtonFloat } from 'components';
+import BinocularsFill from '@/assets/images/icons/binoculars-fill.svg';
+import Plus from '@/assets/images/icons/plus.svg';
+import { ButtonFloat } from '@/components';
 
 const ToogleSearchAddButton = ({ addMode, toggleAddMode }) => {
   return (

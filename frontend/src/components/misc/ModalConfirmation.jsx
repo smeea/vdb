@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { Modal, Button, ErrorOverlay } from 'components';
-import { useApp } from 'context';
+import { Modal, Button, ErrorOverlay } from '@/components';
+import { useApp } from '@/context';
 
 const ModalConfirmation = ({
   headerText,

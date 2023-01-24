@@ -3,11 +3,11 @@ import {
   DeckProxyLibraryTable,
   ResultLibraryType,
   ResultModal,
-} from 'components';
-import { useApp } from 'context';
-import { countCards } from 'utils';
-import { MASTER } from 'utils/constants';
-import { useModalCardController, useDeckLibrary } from 'hooks';
+} from '@/components';
+import { useApp } from '@/context';
+import { countCards } from '@/utils';
+import { MASTER } from '@/utils/constants';
+import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DeckProxyLibrary = ({
   deck,

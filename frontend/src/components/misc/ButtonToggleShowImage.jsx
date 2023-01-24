@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import FileTextFill from 'assets/images/icons/chat-quote-fill.svg';
-import ImageAlt from 'assets/images/icons/image-alt.svg';
-import { ButtonIconed } from 'components';
-import { useApp } from 'context';
+import FileTextFill from '@/assets/images/icons/chat-quote-fill.svg';
+import ImageAlt from '@/assets/images/icons/image-alt.svg';
+import { ButtonIconed } from '@/components';
+import { useApp } from '@/context';
 
 const ButtonToggleShowImage = () => {
   const { showImage, toggleShowImage } = useApp();

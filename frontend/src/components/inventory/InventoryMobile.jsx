@@ -6,8 +6,8 @@ import {
   InventoryCrypt,
   InventoryLibrary,
   ButtonFloat,
-} from 'components';
-import { useApp, inventoryStore, usedStore } from 'context';
+} from '@/components';
+import { useApp, inventoryStore, usedStore } from '@/context';
 
 const InventoryMobile = ({
   newCryptId,

@@ -8,16 +8,16 @@ import {
   ResultCryptTableRowCommon,
   Tooltip,
   DiffQuantityDiff,
-} from 'components';
-import { getSoftMax, getHardTotal, drawProbability } from 'utils';
+} from '@/components';
+import { getSoftMax, getHardTotal, drawProbability } from '@/utils';
 import {
   useApp,
   usedStore,
   inventoryStore,
   deckStore,
   deckCardChange,
-} from 'context';
-import { useKeyDisciplines } from 'hooks';
+} from '@/context';
+import { useKeyDisciplines } from '@/hooks';
 
 const DiffCryptTable = ({
   cardChange,

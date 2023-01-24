@@ -4,9 +4,9 @@ import {
   ResultLibraryTableRowCommon,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
-} from 'components';
-import { drawProbability } from 'utils';
-import { useApp } from 'context';
+} from '@/components';
+import { drawProbability } from '@/utils';
+import { useApp } from '@/context';
 
 const DeckDrawLibraryTable = ({
   handleClick,

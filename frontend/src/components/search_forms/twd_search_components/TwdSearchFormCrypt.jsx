@@ -5,9 +5,9 @@ import {
   ResultModal,
   NewCryptCard,
   ConditionalTooltip,
-} from 'components';
+} from '@/components';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 
 const TwdSearchFormCrypt = ({ value, form }) => {
   const { cryptCardBase, isMobile } = useApp();

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import Check2 from 'assets/images/icons/check2.svg';
-import X from 'assets/images/icons/x.svg';
-import { ButtonFloat, ErrorOverlay } from 'components';
+import Check2 from '@/assets/images/icons/check2.svg';
+import X from '@/assets/images/icons/x.svg';
+import { ButtonFloat, ErrorOverlay } from '@/components';
 import {
   SearchFormTextAndButtons,
   SearchFormSet,
@@ -21,15 +21,15 @@ import {
   LibrarySearchFormPoolCost,
   LibrarySearchFormCapacity,
 } from './library_search_components';
-import { sanitizeFormState } from 'utils';
-import { useFilters } from 'hooks';
+import { sanitizeFormState } from '@/utils';
+import { useFilters } from '@/hooks';
 import {
   useApp,
   setLibraryResults,
   searchLibraryForm,
   clearSearchForm,
   inventoryStore,
-} from 'context';
+} from '@/context';
 
 const LibrarySearchForm = () => {
   const {

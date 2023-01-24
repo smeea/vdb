@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { DeckRecommendationModal } from 'components';
-import { useApp } from 'context';
+import { DeckRecommendationModal } from '@/components';
+import { useApp } from '@/context';
 
 const DeckRecommendation = ({ setShow, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();
@@ -9,7 +9,7 @@ const DeckRecommendation = ({ setShow, deck }) => {
   const [library, setLibrary] = useState();
 
   const getRecommendation = () => {
-    const url = `${process.env.API_URL}deck/${deck.deckid}/recommendation`;
+    const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}/recommendation`;
     const options = {
       method: 'GET',
       mode: 'cors',

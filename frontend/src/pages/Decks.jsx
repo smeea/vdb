@@ -7,7 +7,7 @@ import {
   useLoaderData,
   defer,
 } from 'react-router-dom';
-import List from 'assets/images/icons/list.svg';
+import List from '@/assets/images/icons/list.svg';
 import {
   AccountLogin,
   AccountRegister,
@@ -25,9 +25,9 @@ import {
   Seating,
   ButtonFloat,
   ErrorMessage,
-} from 'components';
-import { deckStore, useApp, setDeck } from 'context';
-import { useDeck, useDeckMissing, useTags } from 'hooks';
+} from '@/components';
+import { deckStore, useApp, setDeck } from '@/context';
+import { useDeck, useDeckMissing, useTags } from '@/hooks';
 
 const Decks = () => {
   const {
@@ -370,7 +370,7 @@ export default Decks;
 export const loader = async ({ params }) => {
   if (params.deckid === 'deck' || params.deckid.includes(':')) return null;
 
-  const url = `${process.env.API_URL}deck/${params.deckid}`;
+  const url = `${import.meta.env.VITE_API_URL}/deck/${params.deckid}`;
   const options = {
     method: 'GET',
     mode: 'cors',

@@ -1,10 +1,10 @@
 import React from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { ResultModal, InventoryLibraryTableRow } from 'components';
-import { librarySort } from 'utils';
-import { useApp } from 'context';
-import { useModalCardController } from 'hooks';
+import { ResultModal, InventoryLibraryTableRow } from '@/components';
+import { librarySort } from '@/utils';
+import { useApp } from '@/context';
+import { useModalCardController } from '@/hooks';
 
 const InventoryLibraryTable = ({
   cards,

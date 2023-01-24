@@ -2,17 +2,17 @@ import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { setMany, getMany, update } from 'idb-keyval';
-import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
-import { cardServices } from 'services';
-import { useDeck, useWindowSize } from 'hooks';
+import { initFromStorage, setLocalStorage } from '@/services/storageServices.js';
+import { cardServices } from '@/services';
+import { useDeck, useWindowSize } from '@/hooks';
 import {
   setInventoryCrypt,
   setInventoryLibrary,
   setUsedCrypt,
   setUsedLibrary,
-} from 'context';
-import { byTimestamp } from 'utils';
-import { deckStore, deckLocalize } from 'context';
+} from '@/context';
+import { byTimestamp } from '@/utils';
+import { deckStore, deckLocalize } from '@/context';
 
 const AppContext = React.createContext();
 
@@ -121,7 +121,7 @@ export const AppProvider = (props) => {
   // USER
   const [userData, setUserData] = useState();
   const whoAmI = () => {
-    const url = `${process.env.API_URL}account`;
+    const url = `${import.meta.env.VITE_API_URL}/account`;
     const options = {
       method: 'GET',
       mode: 'cors',

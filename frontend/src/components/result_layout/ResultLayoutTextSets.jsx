@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Modal, ConditionalTooltip } from 'components';
-import setsAndPrecons from 'assets/data/setsAndPrecons.json';
-import { useApp } from 'context';
+import { Modal, ConditionalTooltip } from '@/components';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import { useApp } from '@/context';
 
 const PreconsDetailed = ({ sets, set }) => {
   return Object.keys(sets[set]).map((i, idx) => {

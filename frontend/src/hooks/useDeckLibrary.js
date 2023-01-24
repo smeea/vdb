@@ -6,7 +6,7 @@ import {
   getTotalCardsGroupedBy,
   getCardsGroupedBy,
   containCard,
-} from 'utils';
+} from '@/utils';
 import {
   GROUPED_TYPE,
   POOL_COST,
@@ -17,7 +17,7 @@ import {
   MASTER,
   EVENT,
   CLAN,
-} from 'utils/constants';
+} from '@/utils/constants';
 
 const useDeckLibrary = (cardsList, cardsToList = {}) => {
   const cardsFrom = Object.values(cardsList);

@@ -9,10 +9,10 @@ import {
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
   ConditionalTooltip,
-} from 'components';
-import { POOL_COST, BLOOD_COST, BURN_OPTION } from 'utils/constants';
-import { isTrifle } from 'utils';
-import { useApp } from 'context';
+} from '@/components';
+import { POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
+import { isTrifle } from '@/utils';
+import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {
   return (

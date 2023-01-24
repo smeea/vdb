@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResultClanImage } from 'components';
+import { ResultClanImage } from '@/components';
 
 const ResultLibraryClan = ({ value }) => {
   let clanImages = null;

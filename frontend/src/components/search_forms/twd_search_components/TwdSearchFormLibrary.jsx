@@ -5,9 +5,9 @@ import {
   ResultModal,
   NewLibraryCard,
   ConditionalTooltip,
-} from 'components';
+} from '@/components';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
-import { useApp } from 'context';
+import { useApp } from '@/context';
 
 const TwdSearchFormLibrary = ({ value, form }) => {
   const { libraryCardBase, isMobile } = useApp();

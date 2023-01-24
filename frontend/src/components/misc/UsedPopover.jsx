@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import ArchiveFill from 'assets/images/icons/archive-fill.svg';
-import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
-import { Hr, UsedDescription } from 'components';
-import { deckStore, usedStore, inventoryStore } from 'context';
-import { getHardTotal, getSoftMax } from 'utils';
+import ArchiveFill from '@/assets/images/icons/archive-fill.svg';
+import CalculatorFill from '@/assets/images/icons/calculator-fill.svg';
+import { Hr, UsedDescription } from '@/components';
+import { deckStore, usedStore, inventoryStore } from '@/context';
+import { getHardTotal, getSoftMax } from '@/utils';
 
 const UsedPopover = ({ cardid }) => {
   const decks = useSnapshot(deckStore).decks;

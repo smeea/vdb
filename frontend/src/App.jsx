@@ -6,26 +6,25 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import RootLayout from 'pages/RootLayout.jsx';
-import About from 'pages/About.jsx';
-import Account from 'pages/Account.jsx';
-import Cards from 'pages/Cards.jsx';
-import Crypt from 'pages/Crypt.jsx';
-import Decks from 'pages/Decks.jsx';
-import Diff from 'pages/Diff.jsx';
-import Inventory from 'pages/Inventory.jsx';
-import Library from 'pages/Library.jsx';
-import Review from 'pages/Review.jsx';
-import Pda from 'pages/Pda.jsx';
-import Twd from 'pages/Twd.jsx';
-import Changelog from 'pages/Changelog.jsx';
-import Documentation from 'pages/Documentation.jsx';
-import TwdHallOfFameCards from 'pages/TwdHallOfFameCards.jsx';
-import TwdHallOfFameTournaments from 'pages/TwdHallOfFameTournaments.jsx';
-import TwdCardsHistory from 'pages/TwdCardsHistory.jsx';
-import TwdCheck from 'pages/TwdCheck.jsx';
-import { loader as deckLoader } from 'pages/Decks.jsx';
-import 'assets/css/style.sass';
+import RootLayout from './pages/RootLayout.jsx';
+import About from './pages/About.jsx';
+import Account from './pages/Account.jsx';
+import Cards from './pages/Cards.jsx';
+import Crypt from './pages/Crypt.jsx';
+import Decks from './pages/Decks.jsx';
+import Diff from './pages/Diff.jsx';
+import Inventory from './pages/Inventory.jsx';
+import Library from './pages/Library.jsx';
+import Review from './pages/Review.jsx';
+import Pda from './pages/Pda.jsx';
+import Twd from './pages/Twd.jsx';
+import Changelog from './pages/Changelog.jsx';
+import Documentation from './pages/Documentation.jsx';
+import TwdHallOfFameCards from './pages/TwdHallOfFameCards.jsx';
+import TwdHallOfFameTournaments from './pages/TwdHallOfFameTournaments.jsx';
+import TwdCardsHistory from './pages/TwdCardsHistory.jsx';
+import TwdCheck from './pages/TwdCheck.jsx';
+import { loader as deckLoader } from './pages/Decks.jsx';
 
 const App = () => {
   const router = createBrowserRouter(

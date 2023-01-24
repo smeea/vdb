@@ -3,7 +3,7 @@ import {
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
   ResultLibraryClan,
-} from 'components';
+} from '@/components';
 
 const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
   const total = Object.values(byTypes).reduce((a, b) => a + b, 0);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { NewCryptCard, NewLibraryCard } from 'components';
-import { useApp, deckCardChange } from 'context';
+import { NewCryptCard, NewLibraryCard } from '@/components';
+import { useApp, deckCardChange } from '@/context';
 
 const DeckNewCard = ({ target, cards, deckid, setShowAdd, cardChange }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

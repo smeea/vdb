@@ -1,5 +1,5 @@
 import React from 'react';
-import { DeckTags } from 'components';
+import { DeckTags } from '@/components';
 
 const TwdResultTags = ({ tags }) => {
   return (

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ToggleOn from 'assets/images/icons/toggle-on.svg';
-import ToggleOff from 'assets/images/icons/toggle-off.svg';
-import Wrench from 'assets/images/icons/wrench.svg';
-import { AccountPlaytestManage, ButtonIconed } from 'components';
-import { useApp } from 'context';
+import ToggleOn from '@/assets/images/icons/toggle-on.svg';
+import ToggleOff from '@/assets/images/icons/toggle-off.svg';
+import Wrench from '@/assets/images/icons/wrench.svg';
+import { AccountPlaytestManage, ButtonIconed } from '@/components';
+import { useApp } from '@/context';
 
 const AccountPlaytest = () => {
   const { playtest, isPlaytestAdmin, togglePlaytest } = useApp();

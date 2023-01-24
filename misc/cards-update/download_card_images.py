@@ -13,7 +13,7 @@ def url_response(url):
 
 with open("vtes.json", "r", encoding="utf8") as krcg_file:
     prefix = "https://static.krcg.org/card/"
-    save_directory = "../../frontend/dist/images/cards/en-EN"
+    save_directory = "../../frontend/public/images/cards/en-EN"
     krcg_cards = json.load(krcg_file)
     cards = []
     for card in krcg_cards:

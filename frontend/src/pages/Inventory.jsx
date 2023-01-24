@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { useLocation } from 'react-router-dom';
-import List from 'assets/images/icons/list.svg';
+import List from '@/assets/images/icons/list.svg';
 import {
   AccountLogin,
   AccountRegister,
@@ -15,8 +15,8 @@ import {
   Modal,
   ButtonFloat,
   ErrorMessage,
-} from 'components';
-import { useApp, inventoryStore } from 'context';
+} from '@/components';
+import { useApp, inventoryStore } from '@/context';
 
 const Inventory = () => {
   const {
@@ -40,7 +40,7 @@ const Inventory = () => {
   const [showShareModal, setShowShareModal] = useState(false);
 
   const getInventory = (key) => {
-    const url = `${process.env.API_URL}inventory/${key}`;
+    const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
     const options = {
       method: 'GET',
       mode: 'cors',

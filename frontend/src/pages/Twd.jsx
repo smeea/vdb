@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { TwdResult, TwdSearchForm, ErrorMessage } from 'components';
-import { useApp, searchResults, setTwdResults } from 'context';
+import { TwdResult, TwdSearchForm, ErrorMessage } from '@/components';
+import { useApp, searchResults, setTwdResults } from '@/context';
 
 const Twd = () => {
   const { isMobile } = useApp();

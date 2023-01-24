@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { DeckProxyCryptTable, ResultModal } from 'components';
-import { useApp } from 'context';
-import { countCards } from 'utils';
-import { deckStore } from 'context';
-import { useModalCardController, useDeckCrypt } from 'hooks';
+import { DeckProxyCryptTable, ResultModal } from '@/components';
+import { useApp } from '@/context';
+import { countCards } from '@/utils';
+import { deckStore } from '@/context';
+import { useModalCardController, useDeckCrypt } from '@/hooks';
 
 const DeckProxyCrypt = ({
   deck,

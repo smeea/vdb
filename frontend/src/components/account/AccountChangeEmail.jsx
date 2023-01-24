@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
+import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg';
 import {
   AccountEmailForm,
   AccountPasswordForm,
   ConditionalTooltip,
   ErrorOverlay,
   Modal,
-} from 'components';
-import { useApp } from 'context';
-import { userServices } from 'services';
+} from '@/components';
+import { useApp } from '@/context';
+import { userServices } from '@/services';
 
 const TooltipText = () => {
   return <div>Email is for password recovery only.</div>;

@@ -1,8 +1,8 @@
 import React from 'react';
 import AsyncSelect from 'react-select/async';
-import { SelectLabelLibrary } from 'components';
-import { useFilters } from 'hooks';
-import { useApp } from 'context';
+import { SelectLabelLibrary } from '@/components';
+import { useFilters } from '@/hooks';
+import { useApp } from '@/context';
 
 const NewLibraryCard = ({
   inInventory,

@@ -14,12 +14,12 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
   ResultModal,
-} from 'components';
-import imbuedClansList from 'assets/data/imbuedClansList.json';
-import vampireClansList from 'assets/data/vampireClansList.json';
-import { cryptSort } from 'utils';
-import { useApp } from 'context';
-import { useModalCardController } from 'hooks';
+} from '@/components';
+import imbuedClansList from '@/assets/data/imbuedClansList.json';
+import vampireClansList from '@/assets/data/vampireClansList.json';
+import { cryptSort } from '@/utils';
+import { useApp } from '@/context';
+import { useModalCardController } from '@/hooks';
 
 const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const { isMobile } = useApp();

@@ -10,10 +10,10 @@ import {
   DeckLibraryTypeDrawInfo,
   Modal,
   ButtonFloat,
-} from 'components';
-import { useApp } from 'context';
-import { MASTER } from 'utils/constants';
-import { useModalCardController, useDeckLibrary } from 'hooks';
+} from '@/components';
+import { useApp } from '@/context';
+import { MASTER } from '@/utils/constants';
+import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DeckLibrary = ({ deck, inMissing }) => {
   const { isMobile, isNarrow, showFloatingButtons, setShowFloatingButtons } =

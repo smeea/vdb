@@ -1,7 +1,7 @@
 import React from 'react';
-import { ResultModal, ResultCryptTableRow } from 'components';
-import { countDisciplines } from 'utils';
-import { useModalCardController } from 'hooks';
+import { ResultModal, ResultCryptTableRow } from '@/components';
+import { countDisciplines } from '@/utils';
+import { useModalCardController } from '@/hooks';
 
 const ResultCryptTable = ({ resultCards, placement, inRecommendation }) => {
   const maxDisciplines = countDisciplines(resultCards);

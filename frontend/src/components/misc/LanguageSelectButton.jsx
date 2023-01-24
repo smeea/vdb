@@ -1,10 +1,10 @@
 import React from 'react';
-import FlagEn from 'assets/images/flags/en.svg';
-import FlagEs from 'assets/images/flags/es.svg';
-import FlagFr from 'assets/images/flags/fr.svg';
-import FlagBr from 'assets/images/flags/br.svg';
-import { LanguageMenu } from 'components';
-import { useApp } from 'context';
+import FlagEn from '@/assets/images/flags/en.svg';
+import FlagEs from '@/assets/images/flags/es.svg';
+import FlagFr from '@/assets/images/flags/fr.svg';
+import FlagBr from '@/assets/images/flags/br.svg';
+import { LanguageMenu } from '@/components';
+import { useApp } from '@/context';
 
 const LanguageSelectButton = ({ showMenu, setShowMenu }) => {
   const { lang } = useApp();

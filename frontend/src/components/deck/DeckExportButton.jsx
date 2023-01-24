@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import Download from 'assets/images/icons/download.svg';
+import Download from '@/assets/images/icons/download.svg';
 import { Menu } from '@headlessui/react';
-import { MenuItems, MenuItem, MenuButton } from 'components';
-import { useDeckExport } from 'hooks';
-import { useApp, deckStore } from 'context';
-import { deckServices } from 'services';
+import { MenuItems, MenuItem, MenuButton } from '@/components';
+import { useDeckExport } from '@/hooks';
+import { useApp, deckStore } from '@/context';
+import { deckServices } from '@/services';
 
 const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   const {
@@ -108,7 +108,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   };
 
   return (
-    <Menu as="div" className="relative">
+    <Menu>
       <MenuButton
         title={`Export ${inMissing ? 'Missing' : ''}`}
         icon={<Download />}

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
-import TrophyFill from 'assets/images/icons/trophy-fill.svg';
-import StarFill from 'assets/images/icons/star-fill.svg';
-import { TwdHallFameDeckHeader } from 'components';
+import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
+import StarFill from '@/assets/images/icons/star-fill.svg';
+import { TwdHallFameDeckHeader } from '@/components';
 
 const testStar = (eventName) => {
   return (
