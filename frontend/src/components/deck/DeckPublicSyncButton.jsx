@@ -1,39 +1,21 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { useNavigate } from 'react-router-dom';
-import { Menu } from '@headlessui/react';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import Spinner from 'assets/images/icons/three-dots.svg';
-import {
-  MenuItems,
-  MenuItem,
-  MenuButton,
-  Modal,
-  Button,
-  DeckPublicDiff,
-  DeckTogglePublicButton,
-} from 'components';
+import { Modal, Button, DeckPublicDiff, ButtonIconed } from 'components';
 import { useApp, deckStore } from 'context';
 
-const DeckPublicButton = ({ deck }) => {
+const DeckPublicSyncButton = ({ deck }) => {
   const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
-  const navigate = useNavigate();
   const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
-
-  const isChild = Boolean(deck.publicParent);
-  const isPublished = Boolean(deck.publicParent || deck.publicChild);
 
   const handleSync = () => {
     syncPublic();
     setShowSyncConfirmation(false);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
-  };
-
-  const handleSwitch = () => {
-    navigate(`/decks/${isChild ? deck.publicParent : deck.publicChild}`);
   };
 
   const syncPublic = () => {
@@ -58,38 +40,18 @@ const DeckPublicButton = ({ deck }) => {
 
   return (
     <>
-      <Menu as="div" className="relative">
-        <MenuButton
-          variant="secondary"
-          title="Public Deck Archive Actions"
-          icon={!spinnerState ? <PeopleFill /> : <Spinner />}
-          text="Public"
-        />
-        <MenuItems>
-          {isPublished && (
-            <MenuItem>
-              <div onClick={() => handleSwitch(deck.deckid)}>
-                {isChild ? 'Go to Main Deck' : 'Go to Public Deck'}
-              </div>
-            </MenuItem>
-          )}
-          {isChild && (
-            <MenuItem>
-              <div onClick={() => setShowSyncConfirmation(true)}>
-                Sync Public Deck
-              </div>
-            </MenuItem>
-          )}
-          {(isChild || !isPublished) && (
-            <DeckTogglePublicButton deck={deck} isDropdown />
-          )}
-        </MenuItems>
-      </Menu>
+      <ButtonIconed
+        variant="secondary"
+        onClick={() => setShowSyncConfirmation(true)}
+        title="Sync Deck with Public Deck Archive"
+        text="Sync Public Deck"
+        icon={!spinnerState ? <PeopleFill /> : <Spinner />}
+      />
       {showSyncConfirmation && (
         <Modal
           handleClose={() => setShowSyncConfirmation(false)}
           dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
-          title={`Sync &quot;${deck.name}&quot; with Public Deck Archive?`}
+          title={`Sync "${deck.name}" with Public Deck Archive?`}
         >
           <div>
             <div className="font-bold text-fgSecondary  dark:text-fgSecondaryDark">
@@ -114,4 +76,4 @@ const DeckPublicButton = ({ deck }) => {
   );
 };
 
-export default DeckPublicButton;
+export default DeckPublicSyncButton;

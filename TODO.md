@@ -6,11 +6,11 @@
 - Custom values for cardtypes in TWD/PDA
 - Multitable seating
 - Playable by buttons to lib/crypt
-- Make Public button text related to deck PDA status
 
 # MAYBE LATER FEATURES
 - Offline decks storage
 - Notification on Incognito mode
+- Prioritize exact matches in add card (more than twda)
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Update url for playtest images to mitigate caching

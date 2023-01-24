@@ -46,8 +46,9 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
     setShowFloatingButtons(true);
   };
 
-  const handleOpenTextModal = (isAnonymous) =>
+  const handleOpenTextModal = (isAnonymous) => {
     setShowTextModal({ isAnonymous: isAnonymous, show: true });
+  };
 
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 

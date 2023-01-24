@@ -15,7 +15,9 @@ import {
   DeckReviewButton,
   DeckBranchCreateButton,
   DeckBranchDeleteButton,
-  DeckPublicButton,
+  DeckPublicSwitchButton,
+  DeckPublicSyncButton,
+  DeckPublicToggleButton,
   SeatingButton,
   ButtonFloat,
 } from 'components';
@@ -33,7 +35,7 @@ const DeckButtons = ({
   handleClose,
 }) => {
   const { playtest, inventoryMode, username, isNarrow } = useApp();
-  const { isPublic, isAuthor, isBranches } = { ...deck };
+  const { publicChild, isPublic, isAuthor, isBranches } = { ...deck };
 
   return (
     <>
@@ -53,7 +55,13 @@ const DeckButtons = ({
               {isAuthor && !isPublic && isBranches && (
                 <DeckBranchDeleteButton deck={deck} />
               )}
-              {isAuthor && <DeckPublicButton deck={deck} />}
+              {(isPublic || publicChild) && (
+                <DeckPublicSwitchButton deck={deck} />
+              )}
+              {isPublic && <DeckPublicSyncButton deck={deck} />}
+              {isAuthor && !publicChild && (
+                <DeckPublicToggleButton deck={deck} />
+              )}
               <DeckDiffButton deckid={deck.deckid} />
               <DeckReviewButton deck={deck} />
               <DeckCopyUrlButton setQrUrl={setQrUrl} deck={deck} />

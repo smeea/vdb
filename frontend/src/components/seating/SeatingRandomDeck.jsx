@@ -8,7 +8,7 @@ import ToggleOff from 'assets/images/icons/toggle-off.svg';
 const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (
     <div
-      className={`flex items-center space-x-1 ${
+      className={`flex items-center ${
         !disabled && deck.state ? '' : 'text-midGray dark:text-midGrayDark'
       }`}
     >
@@ -21,15 +21,15 @@ const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
         ) : (
           <ToggleOff width="22" height="22" viewBox="0 0 16 16" />
         )}
-        <div>{deck.name}</div>
+        <div className="inline">{deck.name}</div>
       </div>
       {deck.deckid ? (
-        <Link target="_blank" to={`/decks/${deck.deckid}`}>
-          <PlayFill width="18" height="18" viewBox="0 1 14 14" />
+        <Link className="p-1" target="_blank" to={`/decks/${deck.deckid}`}>
+          <PlayFill width="20" height="20" viewBox="0 0 16 16" />
         </Link>
       ) : (
         <div
-          className="cursor-pointer text-fgRed dark:text-fgRedDark"
+          className="cursor-pointer text-fgRed dark:text-fgRedDark p-0.5"
           onClick={() => remove(i)}
         >
           <X width="22" height="22" viewBox="0 0 16 16" />

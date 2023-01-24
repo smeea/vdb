@@ -70,14 +70,18 @@ const ModalConfirmation = ({
             )}
           </form>
         )}
-        {buttonText && (
-          <Button variant="danger" onClick={confirm}>
-            {buttonText}
+        <div className="flex justify-between">
+          {buttonText ? (
+            <Button variant="danger" onClick={confirm}>
+              {buttonText}
+            </Button>
+          ) : (
+            <div />
+          )}
+          <Button variant="primary" onClick={cancel}>
+            Cancel
           </Button>
-        )}
-        <Button variant="primary" onClick={cancel}>
-          Cancel
-        </Button>
+        </div>
       </Modal>
     </>
   );

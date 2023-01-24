@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -14,7 +13,7 @@ import {
   DeckFreezeButton,
   DeckBranchDeleteButton,
   DeckCopyUrlButton,
-  DeckTogglePublicButton,
+  DeckPublicToggleButton,
   ResultClanImage,
   Tooltip,
   Button,
@@ -174,7 +173,7 @@ const DeckSelectAdvModalTableRow = ({
           {!isMobile && (
             <>
               <DeckFreezeButton deck={deck} />
-              <DeckTogglePublicButton deck={deck} />
+              <DeckPublicToggleButton deck={deck} />
             </>
           )}
           {isDesktop && (

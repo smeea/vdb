@@ -34,7 +34,7 @@ const SeatingEditRandom = ({
         </div>
         <SeatingCustomDeckAdd addDeck={addCustomDeck} />
         <div className="flex">
-          <div className="w-full md:w-1/2 lg:w-1/3">
+          <div className="w-full md:w-1/2 lg:w-1/3 space-y-1">
             {customDecks
               .slice(0, Math.ceil(customDecks.length / 3))
               .map((d, idx) => {
@@ -50,7 +50,7 @@ const SeatingEditRandom = ({
                 );
               })}
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/3">
+          <div className="w-full md:w-1/2 lg:w-1/3 space-y-1">
             {customDecks
               .slice(
                 Math.ceil(customDecks.length / 3),
@@ -69,7 +69,7 @@ const SeatingEditRandom = ({
                 );
               })}
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/3">
+          <div className="w-full md:w-1/2 lg:w-1/3 space-y-1">
             {customDecks
               .slice(Math.ceil((customDecks.length * 2) / 3))
               .map((d, idx) => {
@@ -112,7 +112,7 @@ const SeatingEditRandom = ({
           </div>
         </div>
         <div className="flex">
-          <div className="w-full md:w-1/2 lg:w-1/3">
+          <div className="w-full md:w-1/2 lg:w-1/3 space-y-1">
             {standardDecks
               .slice(0, Math.ceil(standardDecks.length / 3))
               .map((d, idx) => {
@@ -127,7 +127,7 @@ const SeatingEditRandom = ({
                 );
               })}
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/3">
+          <div className="w-full md:w-1/2 lg:w-1/3 space-y-1">
             {standardDecks
               .slice(
                 Math.ceil(standardDecks.length / 3),
@@ -145,7 +145,7 @@ const SeatingEditRandom = ({
                 );
               })}
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/3">
+          <div className="w-full md:w-1/2 lg:w-1/3 space-y-1">
             {standardDecks
               .slice(Math.ceil((standardDecks.length * 2) / 3))
               .map((d, idx) => {
