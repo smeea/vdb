@@ -24,6 +24,9 @@
 - Test bundle size with lazy load of pages
 - ResultDisciplineImage class to width/size
 
+# IMPROVE TECHNOLOGY - BACKEND
+- Migration to SQLAlchemy 2.0
+
 # TAILWIND MIGRATION
 - Fix show password in Account on enter
 - Test autoFocus / fix with forwardRefs

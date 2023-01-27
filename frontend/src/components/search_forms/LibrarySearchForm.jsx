@@ -222,7 +222,6 @@ const LibrarySearchForm = () => {
         onChange={handleMultiSelectChange}
         searchForm={searchLibraryForm}
       />
-
       <LibrarySearchFormDiscipline
         value={libraryFormState.discipline}
         onChange={handleMultiSelectChange}

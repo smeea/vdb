@@ -311,7 +311,7 @@ const PdaSearchForm = ({ error, setError }) => {
           </ButtonFloat>
           <ButtonFloat onClick={processSearch} variant="success">
             {!spinnerState ? (
-              <Check2 viewBox="0 0 16 16" />
+              <Check2 width="35" height="35" viewBox="0 0 16 16" />
             ) : (
               <Spinner width="35" height="35" viewBox="0 0 16 16" />
             )}

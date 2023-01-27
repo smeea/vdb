@@ -60,23 +60,16 @@ const SearchFormTextAndButtons = ({
     <div className="space-y-3">
       <div className="space-y-1">
         <div className="flex">
-          {isMobile ? (
-            <Input
-              placeholder="Card Name / Text / RegEx"
-              name={0}
-              value={text}
-              onChange={onTextChange}
-            />
-          ) : (
+          <Input
+            /* TODO ignore enter */
+            placeholder="Card Name / Text / RegEx"
+            name={0}
+            value={text}
+            onChange={onTextChange}
+            className="w-full sm:rounded-r-none"
+          />
+          {!isMobile &&
             <>
-              <Input
-                /* TODO ignore enter */
-                placeholder="Card Name / Text / RegEx"
-                name={0}
-                value={text}
-                onChange={onTextChange}
-                className="w-full rounded-r-none"
-              />
               {preresults > showLimit && (
                 <ButtonIconed
                   className="whitespace-nowrap rounded-l-none rounded-r-none"
@@ -97,7 +90,7 @@ const SearchFormTextAndButtons = ({
                 </div>
               </Button>
             </>
-          )}
+          }
         </div>
         <div className="flex">
           <div className="flex w-1/5 space-x-1">

@@ -105,7 +105,7 @@ const Cards = () => {
               </>
             )}
             <div className="fixed bottom-[40px]  flex w-full flex-row  ">
-              <div className=" md:basis-8/12">
+              <div className="w-full md:basis-8/12">
                 <QuickSelect
                   selectedCardid={card && card.Id}
                   setCard={handleSetCard}

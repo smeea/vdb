@@ -91,8 +91,8 @@ const Library = () => {
         )}
         {showSearchForm && (
           <div
-            className={`md:basis-5/12 xl:${
-              deck && addMode ? '3/12' : '4/12'
+            className={`w-full md:basis-5/12 ${
+              deck && addMode ? 'xl:basis-3/12' : 'xl:basis-4/12'
             } 2xl:basis-1/4`}
           >
             <LibrarySearchForm />
