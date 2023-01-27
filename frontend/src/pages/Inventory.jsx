@@ -3,8 +3,7 @@ import { useSnapshot } from 'valtio';
 import { useLocation } from 'react-router-dom';
 import List from '@/assets/images/icons/list.svg';
 import {
-  AccountLogin,
-  AccountRegister,
+  LoginBlock,
   InventoryAddDeckModal,
   InventoryAddPreconModal,
   InventoryDesktop,
@@ -181,15 +180,11 @@ const Inventory = () => {
         <>
           {inventoryError && <ErrorMessage>{inventoryError}</ErrorMessage>}
           {!inventoryError && username === null && (
-            <div className="flex h-[70vh] basis-full flex-col items-center justify-center space-y-10 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-              <div className="flex justify-center text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            <LoginBlock>
+              <div className="flex justify-center text-xl">
                 Login to manage your inventory
               </div>
-              <div className="w-full space-y-16">
-                <AccountLogin />
-                <AccountRegister />
-              </div>
-            </div>
+            </LoginBlock>
           )}
         </>
       )}

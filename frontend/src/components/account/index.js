@@ -12,3 +12,4 @@ export { default as AccountPlaytestAdd } from './AccountPlaytestAdd';
 export { default as AccountPlaytestManage } from './AccountPlaytestManage';
 export { default as AccountRegister } from './AccountRegister';
 export { default as AccountUsernameForm } from './AccountUsernameForm';
+export { default as LoginBlock } from './LoginBlock';

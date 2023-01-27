@@ -9,8 +9,7 @@ import {
 } from 'react-router-dom';
 import List from '@/assets/images/icons/list.svg';
 import {
-  AccountLogin,
-  AccountRegister,
+  LoginBlock,
   DeckButtons,
   DeckCrypt,
   DeckDetails,
@@ -277,20 +276,14 @@ const Decks = () => {
         </div>
       </div>
       {username === null && !deckid && !hash && (
-        <div className="flex h-[70vh] basis-full flex-col items-center justify-center space-y-10 md:basis-8/12 lg:basis-7/12 xl:basis-1/2">
-          <div className="justify-center font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            <div className="flex justify-center text-lg">
-              Login to create your decks
-            </div>
-            <div className="flex justify-center">
-              (Browse preconstructed decks without login)
-            </div>
+        <LoginBlock>
+          <div className="flex justify-center text-xl">
+            Login to create your decks
           </div>
-          <div className="w-full space-y-16">
-            <AccountLogin />
-            <AccountRegister />
+          <div className="flex justify-center text-lg">
+            (Browse preconstructed decks without login)
           </div>
-        </div>
+        </LoginBlock>
       )}
       {username && decks && Object.keys(decks).length === 0 && !deck && (
         <div className="flex h-[70vh] flex-col items-center justify-center space-y-8">

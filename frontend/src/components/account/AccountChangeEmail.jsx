@@ -3,16 +3,11 @@ import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg';
 import {
   AccountEmailForm,
   AccountPasswordForm,
-  ConditionalTooltip,
   ErrorOverlay,
   Modal,
 } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
-
-const TooltipText = () => {
-  return <div>Email is for password recovery only.</div>;
-};
 
 const AccountChangeEmail = () => {
   const { setEmail, isMobile } = useApp();
@@ -55,15 +50,7 @@ const AccountChangeEmail = () => {
         <div className="flex min-w-[23px] justify-center">
           <EnvelopeFill />
         </div>
-        <div className="flex">Change email (optional)</div>
-        <ConditionalTooltip disabled={isMobile} overlay={<TooltipText />}>
-          <div
-            className="text-fgThird dark:text-fgThirdDark"
-            onClick={() => isMobile && setShowModal(true)}
-          >
-            [?]
-          </div>
-        </ConditionalTooltip>
+        <div className="flex">Change email</div>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
         <div className="relative flex w-full">

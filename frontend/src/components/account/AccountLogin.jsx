@@ -12,19 +12,19 @@ import { userServices } from '@/services';
 
 const LoginTooltipText = () => {
   return (
-    <>
+    <div className="p-2">
       <div>Account is required for Deck Building and Inventory.</div>
       <div>
         Decks and Inventory are stored on the server and you can access them
         from any device.
       </div>
-    </>
+    </div>
   );
 };
 
 const PasswordTooltipText = () => {
   return (
-    <>
+    <div className="p-2">
       There is no automatic password restoration yet.
       <br />
       Please{' '}
@@ -34,7 +34,7 @@ const PasswordTooltipText = () => {
       with your username and I will generate temporary password.
       <br />
       Usually I do it within a day, but sometimes it takes a bit more.
-    </>
+    </div>
   );
 };
 

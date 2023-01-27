@@ -49,6 +49,7 @@ const Tooltip = ({ children, overlay, noPadding, placement = 'right' }) => {
   // <div className="inline" ref={reference} {...getFloatingProps()} {...getReferenceProps()}>
 
   // TODO add sizing as in modals for other than max-w-[800px]
+  // TODO arrow for non-right placement
 
   const arrowOffset = {
     top: 'bottom-[-7px]',

@@ -16,8 +16,7 @@ const Account = () => {
   const { username, isPlaytester, isPlaytestAdmin } = useApp();
 
   return (
-    <div className="account-container mx-auto">
-      <div className="grid h-[90vh] place-items-center sm:h-[80vh]">
+      <div className="account-container mx-auto grid sm:h-[90vh] place-items-center">
         {username ? (
           <div className="w-full space-y-6 sm:space-y-10">
             <div className="flex w-full items-center border border-borderSecondary bg-bgSecondary px-2 py-1 font-bold text-fgSecondary dark:border-borderSecondaryDark dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
@@ -52,7 +51,6 @@ const Account = () => {
           </div>
         )}
       </div>
-    </div>
   );
 };
 
