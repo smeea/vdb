@@ -9,7 +9,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
-    const url = `${import.meta.env.BASE_URL}decks/${deck.deckid.replace(' ', '_')}`;
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(' ', '_')}`;
 
     navigator.clipboard.writeText(url);
     setSuccess(true);
@@ -21,7 +21,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   const handleStandardQr = () => {
-    const url = `${import.meta.env.BASE_URL}decks/${deck.deckid.replace(' ', '_')}`;
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(' ', '_')}`;
 
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
@@ -81,7 +81,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
         return response.json();
       })
       .then((data) => {
-        const url = `${import.meta.env.BASE_URL}decks/${data.deckid}`;
+        const url = `${import.meta.env.VITE_BASE_URL}/decks/${data.deckid}`;
         navigator.clipboard.writeText(url);
       })
       .then(() => {
@@ -115,7 +115,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
           .replace(/,/g, '%2C')
       );
 
-    const url = `${import.meta.env.BASE_URL}decks/deck?${info
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/deck?${info
       .toString()
       .replace(/,/g, '&')}#${cards
       .toString()

@@ -13,7 +13,7 @@ const ResultDisciplineImage = ({
     width ?? (superior || virtuesList.includes(value) ? 'w-[25px]' : 'w-[22px]')
   } ${className ?? ''}`;
 
-  const imgSrc = `${import.meta.env.BASE_URL}images/disciplines/${value
+  const imgSrc = `${import.meta.env.VITE_BASE_URL}/images/disciplines/${value
     .toLowerCase()
     .replace(/[\s,:!?'.-]/g, '')}${superior ? 'sup' : ''}.svg`;
 

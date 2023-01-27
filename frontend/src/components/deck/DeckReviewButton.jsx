@@ -28,7 +28,7 @@ const DeckReviewButton = ({ deck }) => {
       },
       body: JSON.stringify({
         name: deck.name,
-        description: `Review of ${import.meta.env.BASE_URL}decks/${deck.deckid}`,
+        description: `Review of ${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid}`,
         author: publicName ? `review by ${publicName}` : '',
         cards: cards,
         tags: deck.tags,

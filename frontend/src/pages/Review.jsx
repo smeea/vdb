@@ -215,7 +215,7 @@ const Review = () => {
   }, [deckFrom]);
 
   const parentId = deckFrom?.description.replace(
-    `Review of ${import.meta.env.BASE_URL}decks/`,
+    `Review of ${import.meta.env.VITE_BASE_URL}/decks/`,
     ''
   );
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;

@@ -17,7 +17,7 @@ const InventoryShareModal = ({ setShow }) => {
 
   const [success, setSuccess] = useState();
   const [shareUrl, setShareUrl] = useState(
-    `${import.meta.env.BASE_URL}inventory?key=${inventoryKey}`
+    `${import.meta.env.VITE_BASE_URL}/inventory?key=${inventoryKey}`
   );
 
   const createUrl = () => {
@@ -41,7 +41,7 @@ const InventoryShareModal = ({ setShow }) => {
       })
       .then(() => {
         setInventoryKey(newKey);
-        const u = `${import.meta.env.BASE_URL}inventory?key=${newKey}`;
+        const u = `${import.meta.env.VITE_BASE_URL}/inventory?key=${newKey}`;
         setShareUrl(u);
         navigator.clipboard.writeText(u);
       })

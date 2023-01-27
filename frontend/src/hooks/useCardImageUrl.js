@@ -5,7 +5,7 @@ const useCardImageUrl = (card, set, language) => {
   let otherUrl = null;
 
   if (card.Id > 200000) {
-    baseUrl = `${import.meta.env.BASE_URL}images/cards/${
+    baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
       isPlaytest ? 'playtest' : 'en-EN'
     }/${card['ASCII Name']
       .toLowerCase()
@@ -13,14 +13,14 @@ const useCardImageUrl = (card, set, language) => {
       card.Adv[0] ? 'adv' : ''
     }`;
   } else {
-    baseUrl = `${import.meta.env.BASE_URL}images/cards/${
+    baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
       isPlaytest ? 'playtest' : 'en-EN'
     }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}`;
   }
 
   if (language !== 'en-EN' || set) {
     if (card.Id > 200000) {
-      otherUrl = `${import.meta.env.BASE_URL}images/cards/${
+      otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
         set ? `set/${set}` : language
       }/${card['ASCII Name']
         .toLowerCase()
@@ -28,7 +28,7 @@ const useCardImageUrl = (card, set, language) => {
         card.Adv[0] ? 'adv' : ''
       }`;
     } else {
-      otherUrl = `${import.meta.env.BASE_URL}images/cards/${
+      otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
         set ? `set/${set}` : language
       }/${card['ASCII Name']
         .toLowerCase()

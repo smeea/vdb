@@ -9,7 +9,7 @@ const Banner = () => {
       <div onClick={() => navigate('/')} className="flex items-center">
         <img
           className="dark:brightness-150"
-          src={`${import.meta.env.BASE_URL}images/misc/logo.svg`}
+          src={`${import.meta.env.VITE_BASE_URL}/images/misc/logo.svg`}
           title="logo"
           width="48"
           height="48"

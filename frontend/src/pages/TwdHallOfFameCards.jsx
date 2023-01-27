@@ -20,7 +20,7 @@ const TwdHallOfFameCards = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
-      const url = `${import.meta.env.BASE_URL}data/twd_cards_history.json`;
+      const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
       const options = {
         method: 'GET',
         mode: 'cors',

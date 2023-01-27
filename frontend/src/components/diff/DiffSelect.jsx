@@ -42,10 +42,10 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
 
     let newId;
     if (e.taret.name === 'from') {
-      newId = urlFrom.replace(`${import.meta.env.BASE_URL}decks/`, '');
+      newId = urlFrom.replace(`${import.meta.env.VITE_BASE_URL}/decks/`, '');
       navigate(`/diff/${newId}/${deckidTo}`);
     } else {
-      newId = urlTo.replace(`${import.meta.env.BASE_URL}decks/`, '');
+      newId = urlTo.replace(`${import.meta.env.VITE_BASE_URL}/decks/`, '');
       navigate(`/diff/${deckidFrom}/${newId}`);
     }
   };

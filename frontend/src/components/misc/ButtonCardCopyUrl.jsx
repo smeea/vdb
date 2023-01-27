@@ -4,7 +4,7 @@ import { ButtonIconed } from '@/components';
 
 const ButtonCardCopyUrl = ({ cardid }) => {
   const [success, setSuccess] = useState(false);
-  const deckUrl = `${import.meta.env.BASE_URL}cards/${cardid}`;
+  const deckUrl = `${import.meta.env.VITE_BASE_URL}/cards/${cardid}`;
 
   const onClick = () => {
     navigator.clipboard.writeText(deckUrl);

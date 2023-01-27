@@ -20,8 +20,6 @@ const Title = ({ children }) => {
 const About = () => {
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
 
-  console.log(import.meta.env);
-
   return (
     <div className="about-container mx-auto">
       <div className="space-y-6">

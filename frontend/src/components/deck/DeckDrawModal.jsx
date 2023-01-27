@@ -214,7 +214,7 @@ const DeckDrawModal = ({
                       >
                         <img
                           className="optimize-contrast h-[31px] pb-1"
-                          src={`${import.meta.env.BASE_URL}images/misc/bloodX.png`}
+                          src={`${import.meta.env.VITE_BASE_URL}/images/misc/bloodX.png`}
                         />
                         <b>{burnedBloodTotal}</b>
                       </div>
@@ -224,7 +224,7 @@ const DeckDrawModal = ({
                       >
                         <img
                           className="optimize-contrast h-[30px]"
-                          src={`${import.meta.env.BASE_URL}images/misc/poolX.png`}
+                          src={`${import.meta.env.VITE_BASE_URL}/images/misc/poolX.png`}
                         />
                         <b>{burnedPoolTotal}</b>
                       </div>

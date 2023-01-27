@@ -54,7 +54,7 @@ Start frontend:
     npm run start
 ```
 
-Now go to http://localhost:1234 in the browser and you are ready to go.
+Now go to http://localhost:5173 in the browser and you are ready to go.
 
 ### FOR PRODUCTION
 

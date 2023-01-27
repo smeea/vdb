@@ -15,7 +15,7 @@ const ResultCryptName = ({ card }) => {
         {card.Adv[0] && (
           <img
             className="inline h-[22px] align-text-bottom"
-            src={`${import.meta.env.BASE_URL}images/misc/advanced.svg`}
+            src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
             title="Advanced"
           />
         )}
