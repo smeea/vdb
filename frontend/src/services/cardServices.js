@@ -25,10 +25,22 @@ export const getCardBase = async () => {
         .then(response => response.json());
 
   const cryptPlaytest = await fetch(urlCryptPlaytest, options)
-        .then(response => response.ok ? response.json() : {});
+        .then(response => {
+            if (response.headers.get("content-type") === 'application/json') {
+                return response.json()
+            } else {
+                return {}
+            }
+        })
 
   const libraryPlaytest = await fetch(urlLibraryPlaytest, options)
-        .then(response => response.ok ? response.json() : {});
+        .then(response => {
+            if (response.headers.get("content-type") === 'application/json') {
+                return response.json()
+            } else {
+                return {}
+            }
+        })
 
   const nativeCrypt = {};
   const nativeLibrary = {};
