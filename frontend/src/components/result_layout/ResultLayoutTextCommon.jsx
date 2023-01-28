@@ -1,6 +1,5 @@
 import React from 'react';
 import { useApp } from '@/context';
-import X from '@/assets/images/icons/x.svg';
 import {
   ResultLayoutTextInventory,
   ResultLayoutTextSets,
@@ -9,7 +8,7 @@ import {
   Hr,
 } from '@/components';
 
-const ResultLayoutTextCommon = ({ card, setImageSet, forceInventoryMode }) => {
+const ResultLayoutTextCommon = ({ handleClose, card, setImageSet, forceInventoryMode }) => {
   const { inventoryMode } = useApp();
 
   return (
@@ -21,7 +20,7 @@ const ResultLayoutTextCommon = ({ card, setImageSet, forceInventoryMode }) => {
       <div className="space-x-2">
         <b>Artist:</b>
         <div className="inline space-x-2.5">
-          <ResultLayoutTextArtist artists={card['Artist']} />
+          <ResultLayoutTextArtist handleClose={handleClose} inCrypt={card.Id > 200000} artists={card['Artist']} />
         </div>
       </div>
       {Object.keys(card['Rulings']).length > 0 && (

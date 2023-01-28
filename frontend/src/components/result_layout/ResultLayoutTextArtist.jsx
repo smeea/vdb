@@ -1,13 +1,17 @@
 import React from 'react';
-import { useApp, searchCryptForm, clearSearchForm } from '@/context';
+import { useNavigate } from 'react-router-dom';
+import { searchLibraryForm, searchCryptForm, clearSearchForm } from '@/context';
 
-const ResultLayoutTextArtist = ({ artists }) => {
-  const handleClick = (target, value) => {
-    clearSearchForm('crypt');
-    searchCryptForm.artist = value;
+const ResultLayoutTextArtist = ({ handleClose, inCrypt, artists }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (value) => {
+    clearSearchForm(inCrypt ? 'crypt' : 'library');
+    inCrypt ? searchCryptForm.artist = value : searchLibraryForm.artist = value;
     navigate(
-      `/crypt?q=${encodeURIComponent(JSON.stringify({ author: value }))}`
+      `/${inCrypt ? 'crypt' : 'library'}?q=${encodeURIComponent(JSON.stringify({ artist: value }))}`
     );
+    handleClose()
   };
 
   return (
@@ -15,9 +19,9 @@ const ResultLayoutTextArtist = ({ artists }) => {
       {artists.map((artist, idx) => {
         return (
           <div
-            className="inline-block whitespace-nowrap"
+            className="inline-block whitespace-nowrap text-fgSecondary hover:underline dark:text-fgSecondaryDark"
             key={idx}
-            onClick={() => handleClick('author', deck['location'])}
+            onClick={() => handleClick(artist)}
           >
             {artist}
           </div>

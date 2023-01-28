@@ -6,7 +6,6 @@
 - Custom values for cardtypes in TWD/PDA
 - Multitable seating
 - Playable by buttons to lib/crypt
-- Artist clickable in card modal
 
 # MAYBE LATER FEATURES
 - Offline decks storage

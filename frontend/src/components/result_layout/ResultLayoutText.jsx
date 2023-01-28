@@ -65,6 +65,7 @@ const ResultLayoutText = ({
         />
       )}
       <ResultLayoutTextCommon
+        handleClose={handleClose}
         card={card}
         setImageSet={setImageSet}
         forceInventoryMode={forceInventoryMode}
