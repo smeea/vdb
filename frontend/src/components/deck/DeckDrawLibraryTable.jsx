@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ResultLibraryTableRowCommon,
   DeckDrawProbability,
 } from '@/components';
-import { drawProbability } from '@/utils';
-import { useApp } from '@/context';
 
 const DeckDrawLibraryTable = ({
   handleClick,
@@ -13,9 +11,6 @@ const DeckDrawLibraryTable = ({
   ashHeap,
   placement,
 }) => {
-  const { isMobile } = useApp();
-  const [modalDraw, setModalDraw] = useState();
-
   let N = 0;
   let n = 0;
   const nonPlayed = {};

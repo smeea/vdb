@@ -1,7 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import { DeckCryptTableRow,
-         // DeckDrawProbabilityModal
-       } from '@/components';
+import React, { useMemo } from 'react';
+import { DeckCryptTableRow } from '@/components';
 import { useApp } from '@/context';
 import { countDisciplines } from '@/utils';
 

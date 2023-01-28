@@ -7,7 +7,6 @@ import {
   DeckNewCard,
   DeckDrawProbability,
   DeckLibraryHeader,
-  DeckLibraryTypeDrawInfo,
   Modal,
   ButtonFloat,
 } from '@/components';
@@ -17,7 +16,6 @@ import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
-
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);

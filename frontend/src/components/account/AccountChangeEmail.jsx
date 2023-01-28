@@ -4,16 +4,14 @@ import {
   AccountEmailForm,
   AccountPasswordForm,
   ErrorOverlay,
-  Modal,
 } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
 
 const AccountChangeEmail = () => {
-  const { setEmail, isMobile } = useApp();
+  const { setEmail } = useApp();
   const [formPassword, setFormPassword] = useState('');
   const [formEmail, setFormEmail] = useState('');
-  const [showModal, setShowModal] = useState(false);
   const [success, setSuccess] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
@@ -67,15 +65,6 @@ const AccountChangeEmail = () => {
           )}
         </div>
       </form>
-      {showModal && (
-        <Modal
-          title="Why email"
-          handleClose={() => setShowModal(false)}
-          centered
-        >
-          <TooltipText />
-        </Modal>
-      )}
     </div>
   );
 };

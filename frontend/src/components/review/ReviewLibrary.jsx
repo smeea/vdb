@@ -5,9 +5,8 @@ import {
   ResultModal,
   DeckLibraryTotalInfo,
   DeckNewCard,
-  // DeckDrawProbabilityModal,
+  DeckDrawProbability,
   DeckLibraryHeader,
-  DeckLibraryTypeDrawInfo,
   Modal,
   ButtonFloat,
 } from '@/components';
@@ -17,12 +16,10 @@ import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
   const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
-
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
   const toggleShowAdd = () => setShowAdd(!showAdd);
-  const [modalDraw, setModalDraw] = useState();
 
   const {
     library,
@@ -58,12 +55,11 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           trifleTotal={cardtype === MASTER && trifleTotal}
         />
         {showInfo && (
-          <DeckLibraryTypeDrawInfo
-            cardtype={cardtype}
-            isMobile={isMobile}
-            libraryTotal={libraryTotal}
-            libraryByTypeTotal={libraryByTypeTotal}
-            setModalDraw={setModalDraw}
+          <DeckDrawProbability
+            cardName={cardtype}
+            N={libraryTotal}
+            n={7}
+            k={libraryByTypeTotal[cardtype]}
           />
         )}
       </div>
@@ -176,12 +172,6 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           handleClose={handleModalCardClose}
         />
       )}
-      {/* {modalDraw && ( */}
-      {/*   <DeckDrawProbabilityModal */}
-      {/*     modalDraw={modalDraw} */}
-      {/*     setModalDraw={setModalDraw} */}
-      {/*   /> */}
-      {/* )} */}
     </>
   );
 };

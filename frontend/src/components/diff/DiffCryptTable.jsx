@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
   UsedPopover,
@@ -8,7 +8,7 @@ import {
   Tooltip,
   DiffQuantityDiff,
 } from '@/components';
-import { getSoftMax, getHardTotal, drawProbability } from '@/utils';
+import { getSoftMax, getHardTotal } from '@/utils';
 import {
   useApp,
   usedStore,

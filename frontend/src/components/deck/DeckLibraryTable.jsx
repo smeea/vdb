@@ -1,8 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import {
-  DeckLibraryTableRow,
-  // DeckDrawProbabilityModal
-} from '@/components';
+import React, { useMemo } from 'react';
+import { DeckLibraryTableRow } from '@/components';
 import { useApp } from '@/context';
 
 const DeckLibraryTable = ({
@@ -33,29 +30,27 @@ const DeckLibraryTable = ({
   );
 
   return (
-    <>
-      <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
-        <tbody>
-          {cards.map((card, idx) => {
-            return (
-              <DeckLibraryTableRow
-                key={card.c.Id}
-                idx={idx}
-                disableOverlay={disableOverlay}
-                placement={placement}
-                handleClick={handleModalCardOpen}
-                card={card}
-                deck={deck}
-                showInfo={showInfo}
-                libraryTotal={libraryTotal}
-                inSearch={inSearch}
-                inMissing={inMissing}
-              />
-            );
-          })}
-        </tbody>
-      </table>
-    </>
+    <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+      <tbody>
+        {cards.map((card, idx) => {
+          return (
+            <DeckLibraryTableRow
+              key={card.c.Id}
+              idx={idx}
+              disableOverlay={disableOverlay}
+              placement={placement}
+              handleClick={handleModalCardOpen}
+              card={card}
+              deck={deck}
+              showInfo={showInfo}
+              libraryTotal={libraryTotal}
+              inSearch={inSearch}
+              inMissing={inMissing}
+            />
+          );
+        })}
+      </tbody>
+    </table>
   );
 };
 

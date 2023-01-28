@@ -8,8 +8,6 @@ const Pda = () => {
   const pdaResults = useSnapshot(searchResults).pda;
   const [error, setError] = useState();
 
-  const X_SPACING = 'space-x-8';
-
   return (
     <div className="twd-container mx-auto">
       <div className="flex gap-8">

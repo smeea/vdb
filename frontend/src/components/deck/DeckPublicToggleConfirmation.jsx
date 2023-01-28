@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ModalConfirmation } from '@/components';
 import { countCards } from '@/utils';
 

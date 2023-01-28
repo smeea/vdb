@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import LockFill from '@/assets/images/icons/lock-fill.svg';
 import { AccountPasswordForm, ErrorOverlay } from '@/components';
 import { userServices } from '@/services';
-import { useApp } from '@/context';
 
 const AccountChangePassword = () => {
-  const { isMobile } = useApp();
-
   const [formPassword, setFormPassword] = useState('');
   const [formNewPassword, setFormNewPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);

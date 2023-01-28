@@ -10,7 +10,7 @@ import { useApp } from '@/context';
 import { userServices } from '@/services';
 
 const AccountRegister = () => {
-  const { isMobile, setUsername, setEmail } = useApp();
+  const { setUsername, setEmail } = useApp();
   const [formUsername, setFormUsername] = useState('');
   const [formPassword, setFormPassword] = useState('');
   const [formEmail, setFormEmail] = useState('');

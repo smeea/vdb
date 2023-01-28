@@ -12,14 +12,13 @@ import {
   deckStore,
 } from '@/context';
 import {
-  Tooltip,
   UsedPopover,
   DeckCardQuantity,
   ResultLibraryTableRowCommon,
   DeckDrawProbability,
   ConditionalTooltip,
 } from '@/components';
-import { getSoftMax, getHardTotal, drawProbability } from '@/utils';
+import { getSoftMax, getHardTotal } from '@/utils';
 
 const DeckLibraryTableRow = ({
   idx,

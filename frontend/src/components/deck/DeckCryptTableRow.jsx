@@ -16,10 +16,9 @@ import {
   DeckCardQuantity,
   ResultCryptTableRowCommon,
   DeckDrawProbability,
-  Tooltip,
   ConditionalTooltip,
 } from '@/components';
-import { getSoftMax, getHardTotal, drawProbability } from '@/utils';
+import { getSoftMax, getHardTotal } from '@/utils';
 
 const DeckCryptTableRow = ({
   idx,

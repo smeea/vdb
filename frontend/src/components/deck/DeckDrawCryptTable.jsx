@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ResultCryptTableRowCommon,
   DeckDrawProbability,
 } from '@/components';
-import { drawProbability } from '@/utils';
-import { useApp } from '@/context';
 import { useKeyDisciplines } from '@/hooks';
 
 const DeckDrawCryptTable = ({
@@ -14,7 +12,6 @@ const DeckDrawCryptTable = ({
   ashHeap,
   crypt,
 }) => {
-  const { isMobile } = useApp();
 
   let N = 0;
   let n = 0;

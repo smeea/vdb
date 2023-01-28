@@ -9,13 +9,13 @@ const useCardImageUrl = (card, set, language) => {
       isPlaytest ? 'playtest' : 'en-EN'
     }/${card['ASCII Name']
       .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
+      .replace(/[\s,:!?'".\-()/]/g, '')}g${card.Group.toLowerCase()}${
       card.Adv[0] ? 'adv' : ''
     }`;
   } else {
     baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
       isPlaytest ? 'playtest' : 'en-EN'
-    }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}`;
+    }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-()/]/g, '')}`;
   }
 
   if (language !== 'en-EN' || set) {
@@ -24,7 +24,7 @@ const useCardImageUrl = (card, set, language) => {
         set ? `set/${set}` : language
       }/${card['ASCII Name']
         .toLowerCase()
-        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}g${card.Group.toLowerCase()}${
+        .replace(/[\s,:!?'".\-()/]/g, '')}g${card.Group.toLowerCase()}${
         card.Adv[0] ? 'adv' : ''
       }`;
     } else {
@@ -32,7 +32,7 @@ const useCardImageUrl = (card, set, language) => {
         set ? `set/${set}` : language
       }/${card['ASCII Name']
         .toLowerCase()
-        .replace(/[\s,:!?'".\-\(\)\/]/g, '')}`;
+        .replace(/[\s,:!?'".\-()/]/g, '')}`;
     }
   }
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Textarea, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
@@ -14,7 +14,6 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
     libraryCardBase,
   } = useApp();
   const navigate = useNavigate();
-
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);

@@ -41,7 +41,7 @@ const InventoryDesktop = ({
   setInventoryKey,
   inShared,
 }) => {
-  const { cryptCardBase, libraryCardBase, isWide } = useApp();
+  const { cryptCardBase, libraryCardBase } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedCrypt = useSnapshot(usedStore).crypt;
