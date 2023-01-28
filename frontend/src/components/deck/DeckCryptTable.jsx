@@ -1,5 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { DeckCryptTableRow, DeckDrawProbabilityModal } from '@/components';
+import { DeckCryptTableRow,
+         // DeckDrawProbabilityModal
+       } from '@/components';
 import { useApp } from '@/context';
 import { countDisciplines } from '@/utils';
 
@@ -18,7 +20,6 @@ const DeckCryptTable = ({
   isModalOpen,
 }) => {
   const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
-  const [modalDraw, setModalDraw] = useState();
   const maxDisciplines = countDisciplines(cards);
 
   const disableOverlay = useMemo(
@@ -26,41 +27,32 @@ const DeckCryptTable = ({
     [isMobile, isDesktop, isModalOpen]
   );
 
-  const cardRows = cards.map((card, idx) => {
-    return (
-      <DeckCryptTableRow
-        key={card.c.Id}
-        idx={idx}
-        disableOverlay={disableOverlay}
-        placement={placement}
-        handleClick={handleModalCardOpen}
-        card={card}
-        deck={deck}
-        disciplinesSet={disciplinesSet}
-        keyDisciplines={keyDisciplines}
-        nonKeyDisciplines={nonKeyDisciplines}
-        maxDisciplines={maxDisciplines}
-        showInfo={showInfo}
-        cryptTotal={cryptTotal}
-        inSearch={inSearch}
-        inMissing={inMissing}
-        setModalDraw={setModalDraw}
-      />
-    );
-  });
-
   return (
-    <>
-      <table className="deck-crypt-table">
-        <tbody>{cardRows}</tbody>
-      </table>
-      {modalDraw && (
-        <DeckDrawProbabilityModal
-          modalDraw={modalDraw}
-          setModalDraw={setModalDraw}
-        />
-      )}
-    </>
+    <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+      <tbody>
+        {cards.map((card, idx) => {
+          return (
+            <DeckCryptTableRow
+              key={card.c.Id}
+              idx={idx}
+              disableOverlay={disableOverlay}
+              placement={placement}
+              handleClick={handleModalCardOpen}
+              card={card}
+              deck={deck}
+              disciplinesSet={disciplinesSet}
+              keyDisciplines={keyDisciplines}
+              nonKeyDisciplines={nonKeyDisciplines}
+              maxDisciplines={maxDisciplines}
+              showInfo={showInfo}
+              cryptTotal={cryptTotal}
+              inSearch={inSearch}
+              inMissing={inMissing}
+            />
+          );
+        })}
+      </tbody>
+    </table>
   );
 };
 

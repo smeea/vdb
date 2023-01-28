@@ -5,7 +5,7 @@ import {
   DeckNewCard,
   ResultLibraryType,
   ResultModal,
-  DeckDrawProbabilityModal,
+  DeckDrawProbability,
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
   Modal,
@@ -24,7 +24,6 @@ const DeckLibrary = ({ deck, inMissing }) => {
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
   const toggleShowAdd = () => setShowAdd(!showAdd);
-  const [modalDraw, setModalDraw] = useState();
 
   const {
     library,
@@ -60,12 +59,11 @@ const DeckLibrary = ({ deck, inMissing }) => {
           trifleTotal={cardtype === MASTER && trifleTotal}
         />
         {showInfo && (
-          <DeckLibraryTypeDrawInfo
-            cardtype={cardtype}
-            isMobile={isMobile}
-            libraryTotal={libraryTotal}
-            libraryByTypeTotal={libraryByTypeTotal}
-            setModalDraw={setModalDraw}
+          <DeckDrawProbability
+            cardName={cardtype}
+            N={libraryTotal}
+            n={7}
+            k={libraryByTypeTotal[cardtype]}
           />
         )}
       </div>
@@ -179,12 +177,6 @@ const DeckLibrary = ({ deck, inMissing }) => {
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleModalCardClose}
-        />
-      )}
-      {modalDraw && (
-        <DeckDrawProbabilityModal
-          modalDraw={modalDraw}
-          setModalDraw={setModalDraw}
         />
       )}
     </div>

@@ -15,7 +15,7 @@ import {
   UsedPopover,
   DeckCardQuantity,
   ResultCryptTableRowCommon,
-  DeckDrawProbabilityText,
+  DeckDrawProbability,
   Tooltip,
   ConditionalTooltip,
 } from '@/components';
@@ -36,7 +36,6 @@ const DeckCryptTableRow = ({
   cryptTotal,
   inSearch,
   // inMissing,
-  setModalDraw,
 }) => {
   const { inventoryMode, isMobile } = useApp();
 
@@ -149,33 +148,7 @@ const DeckCryptTableRow = ({
       />
       {showInfo && (
         <td className="min-w-[45px] text-right text-fgSecondary dark:text-fgSecondaryDark">
-          {isMobile ? (
-            <div
-              onClick={() =>
-                setModalDraw({
-                  name: card.c['Name'],
-                  prob: (
-                    <DeckDrawProbabilityText N={cryptTotal} n={4} k={card.q} />
-                  ),
-                })
-              }
-            >
-              {`${Math.floor(
-                drawProbability(1, cryptTotal, 4, card.q) * 100
-              )}%`}
-            </div>
-          ) : (
-            <Tooltip
-              placement="right"
-              overlay={
-                <DeckDrawProbabilityText N={cryptTotal} n={4} k={card.q} />
-              }
-            >
-              <div>{`${Math.floor(
-                drawProbability(1, cryptTotal, 4, card.q) * 100
-              )}%`}</div>
-            </Tooltip>
-          )}
+          <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
         </td>
       )}
     </tr>

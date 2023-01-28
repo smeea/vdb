@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import {
-  Tooltip,
   ResultLibraryTableRowCommon,
-  DeckDrawProbabilityText,
-  DeckDrawProbabilityModal,
+  DeckDrawProbability,
 } from '@/components';
 import { drawProbability } from '@/utils';
 import { useApp } from '@/context';
@@ -35,66 +33,33 @@ const DeckDrawLibraryTable = ({
     });
   }
 
-  const cardRows = resultCards.map((card, idx) => {
-    const k = nonPlayed[card.Id];
-
-    return (
-      <tr
-        key={`${idx}-${card.Id}`}
-        className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-          idx % 2
-            ? 'bg-bgThird dark:bg-bgThirdDark'
-            : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-        }`}
-      >
-        <ResultLibraryTableRowCommon
-          card={card}
-          handleClick={handleClick}
-          placement={placement}
-        />
-        <td className="w-9 text-right text-fgSecondary  dark:text-fgSecondaryDark">
-          {!ashHeap && (
-            <>
-              {isMobile ? (
-                <div
-                  onClick={() =>
-                    setModalDraw({
-                      name: card['Name'],
-                      prob: <DeckDrawProbabilityText N={N} n={n} k={k} />,
-                    })
-                  }
-                >
-                  {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
-                </div>
-              ) : (
-                <Tooltip
-                  placement={placement}
-                  overlay={<DeckDrawProbabilityText N={N} n={n} k={k} />}
-                >
-                  <div>{`${Math.floor(
-                    drawProbability(1, N, n, k) * 100
-                  )}%`}</div>
-                </Tooltip>
-              )}
-            </>
-          )}
-        </td>
-      </tr>
-    );
-  });
-
   return (
-    <>
-      <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
-        <tbody>{cardRows}</tbody>
-      </table>
-      {modalDraw && (
-        <DeckDrawProbabilityModal
-          modalDraw={modalDraw}
-          setModalDraw={setModalDraw}
-        />
-      )}
-    </>
+    <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+      <tbody>
+        {resultCards.map((card, idx) => {
+          return (
+            <tr
+              key={`${idx}-${card.Id}`}
+              className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2
+                ? 'bg-bgThird dark:bg-bgThirdDark'
+                : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+                }`}
+            >
+              <ResultLibraryTableRowCommon
+                card={card}
+                handleClick={handleClick}
+                placement={placement}
+              />
+              <td className="w-9 text-right text-fgSecondary  dark:text-fgSecondaryDark">
+                {!ashHeap && (
+                  <DeckDrawProbability cardName={card.Name} N={N} n={n} k={nonPlayed[card.Id]} />
+                )}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 };
 

@@ -16,7 +16,7 @@ import {
   UsedPopover,
   DeckCardQuantity,
   ResultLibraryTableRowCommon,
-  DeckDrawProbabilityText,
+  DeckDrawProbability,
   ConditionalTooltip,
 } from '@/components';
 import { getSoftMax, getHardTotal, drawProbability } from '@/utils';
@@ -32,7 +32,6 @@ const DeckLibraryTableRow = ({
   libraryTotal,
   inSearch,
   inMissing,
-  setModalDraw,
 }) => {
   const { inventoryMode, isMobile } = useApp();
 
@@ -141,37 +140,8 @@ const DeckLibraryTableRow = ({
       />
       {showInfo && (
         <td className="min-w-[45px] text-right text-fgSecondary  dark:text-fgSecondaryDark">
-          {isMobile ? (
-            <div
-              onClick={() =>
-                setModalDraw({
-                  name: card.c['Name'],
-                  prob: (
-                    <DeckDrawProbabilityText
-                      N={libraryTotal}
-                      n={7}
-                      k={card.q}
-                    />
-                  ),
-                })
-              }
-            >
-              {`${Math.floor(
-                drawProbability(1, libraryTotal, 7, card.q) * 100
-              )}%`}
-            </div>
-          ) : (
-            <Tooltip
-              placement={placement}
-              overlay={
-                <DeckDrawProbabilityText N={libraryTotal} n={7} k={card.q} />
-              }
-            >
-              <div>{`${Math.floor(
-                drawProbability(1, libraryTotal, 7, card.q) * 100
-              )}%`}</div>
-            </Tooltip>
-          )}
+
+          <DeckDrawProbability cardName={card.c.Name} N={libraryTotal} n={7} k={card.q} />
         </td>
       )}
     </tr>

@@ -153,14 +153,14 @@ const Cards = () => {
               )}
               {card && (
                 <div className="flex flex-row border border-bgSecondary dark:border-bgSecondaryDark">
-                  <div className="w-1/2">
+                  <div className="w-5/12">
                     <CardImage
                       className="h-auto w-full"
                       card={card}
                       set={imageSet}
                     />
                   </div>
-                  <div className="w-1/2 p-5">
+                  <div className="w-7/12 p-5">
                     <ResultLayoutText
                       card={card}
                       setImageSet={setImageSet}

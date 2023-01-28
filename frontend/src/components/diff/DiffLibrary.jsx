@@ -5,7 +5,7 @@ import {
   ResultModal,
   DeckLibraryTotalInfo,
   DeckNewCard,
-  DeckDrawProbabilityModal,
+  DeckDrawProbability,
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
   Modal,
@@ -22,7 +22,6 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
   const toggleShowAdd = () => setShowAdd(!showAdd);
-  const [modalDraw, setModalDraw] = useState();
 
   const {
     library,
@@ -58,12 +57,11 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
           trifleTotal={cardtype === MASTER && trifleTotal}
         />
         {showInfo && (
-          <DeckLibraryTypeDrawInfo
-            cardtype={cardtype}
-            isMobile={isMobile}
-            libraryTotal={libraryTotal}
-            libraryByTypeTotal={libraryByTypeTotal}
-            setModalDraw={setModalDraw}
+          <DeckDrawProbability
+            cardName={cardtype}
+            N={libraryTotal}
+            n={7}
+            k={libraryByTypeTotal[cardtype]}
           />
         )}
       </div>
@@ -161,12 +159,6 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleModalCardClose}
-        />
-      )}
-      {modalDraw && (
-        <DeckDrawProbabilityModal
-          modalDraw={modalDraw}
-          setModalDraw={setModalDraw}
         />
       )}
     </>

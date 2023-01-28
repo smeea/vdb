@@ -4,8 +4,7 @@ import {
   UsedPopover,
   DeckCardQuantity,
   ResultLibraryTableRowCommon,
-  DeckDrawProbabilityText,
-  DeckDrawProbabilityModal,
+  DeckDrawProbability,
   DiffQuantityDiff,
   Tooltip,
 } from '@/components';
@@ -35,8 +34,6 @@ const DiffLibraryTable = ({
   const decks = useSnapshot(deckStore).decks;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
-
-  const [modalDraw, setModalDraw] = useState();
 
   const handleClick = (card) => {
     handleModalCardOpen(card);
@@ -106,41 +103,7 @@ const DiffLibraryTable = ({
           />
           {showInfo && (
             <td className="w-9 text-right text-fgSecondary dark:text-fgSecondaryDark">
-              {isMobile ? (
-                <div
-                  onClick={() =>
-                    setModalDraw({
-                      name: card.c['Name'],
-                      prob: (
-                        <DeckDrawProbabilityText
-                          N={libraryTotal}
-                          n={7}
-                          k={card.q}
-                        />
-                      ),
-                    })
-                  }
-                >
-                  {`${Math.floor(
-                    drawProbability(1, libraryTotal, 7, card.q) * 100
-                  )}%`}
-                </div>
-              ) : (
-                <Tooltip
-                  placement="right"
-                  overlay={
-                    <DeckDrawProbabilityText
-                      N={libraryTotal}
-                      n={7}
-                      k={card.q}
-                    />
-                  }
-                >
-                  <div>{`${Math.floor(
-                    drawProbability(1, libraryTotal, 7, card.q) * 100
-                  )}%`}</div>
-                </Tooltip>
-              )}
+              <DeckDrawProbability cardName={card.c.Name} N={libraryTotal} n={4} k={card.q} />
             </td>
           )}
         </tr>
@@ -149,17 +112,9 @@ const DiffLibraryTable = ({
   });
 
   return (
-    <>
       <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <tbody>{cardRows}</tbody>
       </table>
-      {modalDraw && (
-        <DeckDrawProbabilityModal
-          modalDraw={modalDraw}
-          setModalDraw={setModalDraw}
-        />
-      )}
-    </>
   );
 };
 

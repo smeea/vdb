@@ -5,7 +5,7 @@ import {
   ResultModal,
   DeckLibraryTotalInfo,
   DeckNewCard,
-  DeckDrawProbabilityModal,
+  // DeckDrawProbabilityModal,
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
   Modal,
@@ -176,12 +176,12 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           handleClose={handleModalCardClose}
         />
       )}
-      {modalDraw && (
-        <DeckDrawProbabilityModal
-          modalDraw={modalDraw}
-          setModalDraw={setModalDraw}
-        />
-      )}
+      {/* {modalDraw && ( */}
+      {/*   <DeckDrawProbabilityModal */}
+      {/*     modalDraw={modalDraw} */}
+      {/*     setModalDraw={setModalDraw} */}
+      {/*   /> */}
+      {/* )} */}
     </>
   );
 };
