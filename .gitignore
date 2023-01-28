@@ -6,13 +6,7 @@ backend/app.db
 **/node_modules/
 **/.parcel-cache/
 **/.nvmrc
-frontend/public/*
-!frontend/public/images/
-frontend/public/images/cards/playtest/
-!frontend/public/favicon.ico
-!frontend/public/data/
-frontend/public/data/cardbase_crypt_playtest.json
-frontend/public/data/cardbase_lib_playtest.json
+frontend/dist/
 misc/cards-update/vtescrypt_playtest.csv
 misc/cards-update/vteslib_playtest.csv
 misc/cards-update/cardbase_crypt_playtest.json
