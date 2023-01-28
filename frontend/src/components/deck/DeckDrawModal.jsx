@@ -53,24 +53,26 @@ const DeckDrawModal = ({
   return (
     <>
       <Modal handleClose={handleClose} title="Deck Draw" size="lg">
-        <div className="flex flex-row">
+      <div className="flex flex-col gap-5">
+        <div className="flex gap-5">
           <div className="basis-full md:basis-7/12">
             <div>
               <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-                <div className="flex items-center font-bold">Uncontrolled</div>
-                <div
-                  className="flex items-center font-bold"
-                  title="In Uncontrolled + Remaining in Crypt"
-                >
-                  {drawedCrypt.length} + {restCrypt.length}
-                </div>
-                <div className="flex">
+                <div className="flex w-full justify-between px-2">
+                  <div className="flex items-center font-bold">Uncontrolled</div>
+                  <div
+                    className="flex items-center font-bold"
+                    title="In Uncontrolled + Remaining in Crypt"
+                  >
+                    {drawedCrypt.length} + {restCrypt.length}
+                  </div>
                   <div
                     className="flex items-center font-bold"
                     title="Initial Transfers"
                   >
                     {initialTransfers}t
                   </div>
+                </div>
                   <div className="flex flex-row space-x-1">
                     <Button
                       variant="primary"
@@ -104,7 +106,6 @@ const DeckDrawModal = ({
                     >
                       +1
                     </Button>
-                  </div>
                 </div>
               </div>
               {cryptTotal < 4 && (
@@ -120,12 +121,15 @@ const DeckDrawModal = ({
           </div>
           <div className="basis-full md:basis-5/12">
             <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-              <div className="flex items-center font-bold">Hand</div>
-              <div
-                className="flex items-center font-bold"
-                title="In Hand + Remaining in Library"
-              >
-                {drawedLibrary.length} + {restLibrary.length}
+              <div className="flex w-full justify-between px-2">
+                <div className="flex items-center font-bold">Hand</div>
+                <div
+                  className="flex items-center font-bold"
+                  title="In Hand + Remaining in Library"
+                >
+                  {drawedLibrary.length} + {restLibrary.length}
+                </div>
+                <div/>
               </div>
               <div className="flex flex-row space-x-1">
                 <Button
@@ -175,11 +179,11 @@ const DeckDrawModal = ({
           </div>
         </div>
         {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-          <div className="flex flex-row">
+          <div className="flex gap-5">
             <div className="basis-full md:basis-7/12">
               {burnedCrypt.length > 0 && (
                 <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark px-2">
                     <div className="flex items-center font-bold">
                       Controlled
                     </div>
@@ -202,7 +206,7 @@ const DeckDrawModal = ({
             <div className="basis-full md:basis-5/12">
               {burnedLibrary.length > 0 && (
                 <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark px-2">
                     <div className="flex items-center font-bold">Ash Heap</div>
                     <div className="flex items-center font-bold">
                       {burnedLibrary.length}
@@ -242,6 +246,7 @@ const DeckDrawModal = ({
             </div>
           </div>
         )}
+        </div>
         {shouldShowModal && (
           <ResultModal
             card={currentModalCard}

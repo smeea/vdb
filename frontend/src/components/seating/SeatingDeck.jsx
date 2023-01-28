@@ -13,7 +13,7 @@ const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
       }`}
     >
       <div
-        className="flex items-center space-x-2"
+        className="flex items-center space-x-2 "
         onClick={() => !disabled && toggle(i)}
       >
         {deck.state ? (
@@ -21,7 +21,7 @@ const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
         ) : (
           <ToggleOff width="22" height="22" viewBox="0 0 16 16" />
         )}
-        <div className="inline">{deck.name}</div>
+        <div className="pb-[3px]">{deck.name}</div>
       </div>
       {deck.deckid ? (
         <Link className="p-1" target="_blank" to={`/decks/${deck.deckid}`}>

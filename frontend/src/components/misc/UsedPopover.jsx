@@ -20,7 +20,7 @@ const UsedPopover = ({ cardid }) => {
   if (!inInventory) inInventory = 0;
 
   return (
-    <div>
+    <div className="space-y-1">
       {softUsedMax == 0 && hardUsedTotal == 0 ? (
         <div>Not used in inventory decks</div>
       ) : (
@@ -42,18 +42,19 @@ const UsedPopover = ({ cardid }) => {
         </>
       )}
       <Hr />
-      <div className="flex items-center">
+      <div className="flex items-center space-x-1">
         <div className="opacity-40">
           <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
         </div>
-        <div className="font-bold">{softUsedMax + hardUsedTotal}</div>- Total
-        Used
+        <b>{softUsedMax + hardUsedTotal}</b>
+        <div>- Total Used</div>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center space-x-1">
         <div className="opacity-40">
           <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
         </div>
-        <div className="font-bold">{inInventory}</div>- In Inventory
+        <b>{inInventory}</b>
+        <div>- In Inventory</div>
       </div>
     </div>
   );

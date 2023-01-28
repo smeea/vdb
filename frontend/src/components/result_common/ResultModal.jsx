@@ -106,7 +106,7 @@ const ResultModal = ({
                     onClick={handleClose}
                   />
                 </div>
-                <div className="p-5">
+                <div className="w-full p-5">
                   <ResultLayoutText
                     card={activeCard}
                     setCard={setActiveCard}

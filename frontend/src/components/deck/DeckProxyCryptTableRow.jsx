@@ -1,18 +1,14 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import Select from 'react-select';
-import EyeFill from '@/assets/images/icons/eye-fill.svg';
 import {
   UsedPopover,
   DeckCardQuantity,
   ResultCryptTableRowCommon,
-  CardImage,
-  Tooltip,
   ConditionalTooltip,
   Checkbox,
+  DeckProxyTableSetSelect,
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useApp, usedStore, inventoryStore } from '@/context';
 
 const DeckProxyCryptTableRow = ({
@@ -36,31 +32,6 @@ const DeckProxyCryptTableRow = ({
   const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
   const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
-
-  const setOptions = [
-    {
-      value: '',
-      id: card.c.Id,
-      label: <div className="text-xs">Newest (default)</div>,
-    },
-  ];
-
-  Object.keys(setsAndPrecons).map((i) => {
-    if (card.c['Set'][i] && i !== 'POD') {
-      setOptions.push({
-        value: i.toLowerCase(),
-        id: card.c.Id,
-        label: (
-          <div className="text-xs">
-            {setsAndPrecons[i].name}
-            {setsAndPrecons[i].date
-              ? ` '${setsAndPrecons[i].date.slice(2, 4)}`
-              : null}
-          </div>
-        ),
-      });
-    }
-  });
 
   return (
     <tr
@@ -96,9 +67,7 @@ const DeckProxyCryptTableRow = ({
             softUsedMax={softUsedMax}
             hardUsedTotal={hardUsedTotal}
             cardChange={handleProxyCounter}
-            isSelected={
-              proxySelected[card.c.Id] && proxySelected[card.c.Id].print
-            }
+            isSelected={proxySelected[card.c.Id]?.print}
             inProxy
           />
         </ConditionalTooltip>
@@ -113,46 +82,7 @@ const DeckProxyCryptTableRow = ({
         disciplinesSet={disciplinesSet}
         inDeck
       />
-      {!isMobile && (
-        <>
-          <td className="proxy-set">
-            <Select
-              classNamePrefix="react-select"
-              options={setOptions}
-              isSearchable={false}
-              name="set"
-              placeholder="Set"
-              value={setOptions.find((obj) => {
-                if (proxySelected[card.c.Id] && proxySelected[card.c.Id].set) {
-                  obj.value === proxySelected[card.c.Id].set.toLowerCase();
-                }
-              })}
-              onChange={handleSetSelector}
-            />
-          </td>
-          <td className="proxy-set-image">
-            <Tooltip
-              placement="right"
-              overlay={
-                <div>
-                  <CardImage
-                    card={card.c}
-                    set={
-                      proxySelected[card.c.Id]
-                        ? proxySelected[card.c.Id].set
-                        : null
-                    }
-                  />
-                </div>
-              }
-            >
-              <div>
-                <EyeFill />
-              </div>
-            </Tooltip>
-          </td>
-        </>
-      )}
+      {!isMobile && <DeckProxyTableSetSelect card={card.c} handleSetSelector={handleSetSelector} value={proxySelected[card.c.Id]?.set}/>}
     </tr>
   );
 };

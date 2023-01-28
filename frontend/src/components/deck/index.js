@@ -43,6 +43,7 @@ export { default as DeckMissingButton } from './DeckMissingButton.jsx';
 export { default as DeckMissingModal } from './DeckMissingModal.jsx';
 export { default as DeckNewCard } from './DeckNewCard.jsx';
 export { default as DeckProxyButton } from './DeckProxyButton.jsx';
+export { default as DeckProxyTableSetSelect } from './DeckProxyTableSetSelect.jsx';
 export { default as DeckProxyCrypt } from './DeckProxyCrypt.jsx';
 export { default as DeckProxyCryptTable } from './DeckProxyCryptTable.jsx';
 export { default as DeckProxyCryptTableRow } from './DeckProxyCryptTableRow.jsx';

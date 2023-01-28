@@ -90,7 +90,7 @@ const InventoryLibraryTableRow = ({
         <div className="flex min-w-[40px] justify-center">
           <ConditionalTooltip
             placement="bottom"
-            overlay={<UsedPopover cardid={card.c.Id} />}
+            overlay={<div className="p-2"><UsedPopover cardid={card.c.Id} /></div>}
             disabled={isMobile}
           >
             <div

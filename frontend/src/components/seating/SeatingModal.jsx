@@ -86,10 +86,10 @@ const SeatingModal = ({
                   }
                   text="Select Random"
                 />
-                {withRandom && !haveRandomSelected && (
-                  <div className="red ">No random players source selected</div>
-                )}
               </div>
+              {withRandom && !haveRandomSelected && (
+                <div className="text-fgRed dark:text-fgRedDark">No random source selected</div>
+              )}
             </div>
             <div className="flex justify-center items-center md:w-7/12 xl:w-2/3">
               {seating && <SeatingTableLayout players={seating} />}

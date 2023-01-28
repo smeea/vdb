@@ -92,7 +92,7 @@ const SearchFormTextAndButtons = ({
             </>
           }
         </div>
-        <div className="flex">
+        <div className="flex justify-between">
           <div className="flex w-1/5 space-x-1">
             {value[0].value !== '' && (
               <>

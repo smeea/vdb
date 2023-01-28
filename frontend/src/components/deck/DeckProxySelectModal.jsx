@@ -160,9 +160,9 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       dialogClassName={isMobile ? '' : 'modal-x-wide'}
       title="Create PDF with Card Proxies"
     >
-      <div>
-        <div className="flex flex-row">
-          <div className="basis-full md:basis-7/12">
+      <div className="space-y-5">
+        <div className="flex gap-6">
+          <div className="md:basis-7/12">
             {deck.crypt && (
               <div
                 className={
@@ -181,7 +181,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
               </div>
             )}
           </div>
-          <div className="basis-full md:basis-5/12">
+          <div className="md:basis-5/12">
             {deck.library && (
               <DeckProxyLibrary
                 deck={deck}
@@ -193,29 +193,21 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
         </div>
-        <div className="flex flex-row">
-          <div className="flex justify-end">
-            <div
-              className={`flex ${
-                isMobile ? 'flex-row space-y-2' : 'flex-col space-x-2'
-              }`}
-            >
-              <Button variant="primary" onClick={() => handleGenerate(false)}>
-                Generate - Gray gaps
-              </Button>
-              <Button variant="primary" onClick={() => handleGenerate(true)}>
-                Generate - White gaps
-              </Button>
-              <Button variant="primary" onClick={() => handleToggleSelect()}>
-                Select / Deselect All
-              </Button>
-              {inventoryMode && (
-                <Button variant="primary" onClick={() => handleToggleResolve()}>
-                  Add Missing in Inventory
-                </Button>
-              )}
-            </div>
-          </div>
+        <div className="flex justify-end space-x-1">
+          <Button variant="primary" onClick={() => handleGenerate(false)}>
+            Generate - Gray gaps
+          </Button>
+          <Button variant="primary" onClick={() => handleGenerate(true)}>
+            Generate - White gaps
+          </Button>
+          <Button variant="primary" onClick={() => handleToggleSelect()}>
+            Select / Deselect All
+          </Button>
+          {inventoryMode && (
+            <Button variant="primary" onClick={() => handleToggleResolve()}>
+              Add Missing in Inventory
+            </Button>
+          )}
         </div>
       </div>
     </Modal>
