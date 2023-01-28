@@ -6,7 +6,7 @@ import {
   ButtonIconed,
   SeatingPlayerSelector,
   SeatingTableLayout,
-  SeatingEditRandom,
+  SeatingSelectRandom,
   Modal,
   ButtonFloat,
 } from '@/components';
@@ -30,7 +30,7 @@ const SeatingModal = ({
   withStandard,
 }) => {
   const { isNarrow, isMobile } = useApp();
-  const [showEditRandom, setShowEditRandom] = useState();
+  const [showSelectRandom, setShowSelectRandom] = useState();
 
   const withRandom = Object.values(players).some((d) => {
     return d.random;
@@ -79,7 +79,7 @@ const SeatingModal = ({
                 />
                 <ButtonIconed
                   variant="primary"
-                  onClick={() => setShowEditRandom(!showEditRandom)}
+                  onClick={() => setShowSelectRandom(!showSelectRandom)}
                   title="Reshuffle"
                   icon={
                     <PencilSquare width="18" height="18" viewBox="0 0 16 16" />
@@ -91,12 +91,12 @@ const SeatingModal = ({
                 )}
               </div>
             </div>
-            <div className="md:w-7/12 xl:w-2/3">
+            <div className="flex justify-center items-center md:w-7/12 xl:w-2/3">
               {seating && <SeatingTableLayout players={seating} />}
             </div>
           </div>
-          {showEditRandom && (
-            <SeatingEditRandom
+          {showSelectRandom && (
+            <SeatingSelectRandom
               addCustomDeck={addCustomDeck}
               customDecks={customDecks}
               removeCustomDeck={removeCustomDeck}

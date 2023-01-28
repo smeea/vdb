@@ -1,9 +1,9 @@
 import React from 'react';
 import ToggleOn from '@/assets/images/icons/toggle-on.svg';
 import ToggleOff from '@/assets/images/icons/toggle-off.svg';
-import { Hr, SeatingRandomDeck, SeatingCustomDeckAdd } from '@/components';
+import { Hr, SeatingDeck, SeatingCustomDeckAdd } from '@/components';
 
-const SeatingEditRandom = ({
+const SeatingSelectRandom = ({
   addCustomDeck,
   customDecks,
   removeCustomDeck,
@@ -39,7 +39,7 @@ const SeatingEditRandom = ({
               .slice(0, Math.ceil(customDecks.length / 3))
               .map((d, idx) => {
                 return (
-                  <SeatingRandomDeck
+                  <SeatingDeck
                     key={idx}
                     i={idx}
                     deck={d}
@@ -58,7 +58,7 @@ const SeatingEditRandom = ({
               )
               .map((d, idx) => {
                 return (
-                  <SeatingRandomDeck
+                  <SeatingDeck
                     key={idx}
                     i={Math.ceil(customDecks.length / 3) + idx}
                     deck={d}
@@ -74,7 +74,7 @@ const SeatingEditRandom = ({
               .slice(Math.ceil((customDecks.length * 2) / 3))
               .map((d, idx) => {
                 return (
-                  <SeatingRandomDeck
+                  <SeatingDeck
                     key={idx}
                     i={Math.ceil((customDecks.length * 2) / 3) + idx}
                     deck={d}
@@ -117,7 +117,7 @@ const SeatingEditRandom = ({
               .slice(0, Math.ceil(standardDecks.length / 3))
               .map((d, idx) => {
                 return (
-                  <SeatingRandomDeck
+                  <SeatingDeck
                     key={idx}
                     i={idx}
                     deck={d}
@@ -135,7 +135,7 @@ const SeatingEditRandom = ({
               )
               .map((d, idx) => {
                 return (
-                  <SeatingRandomDeck
+                  <SeatingDeck
                     key={idx}
                     i={Math.ceil(standardDecks.length / 3) + idx}
                     deck={d}
@@ -150,7 +150,7 @@ const SeatingEditRandom = ({
               .slice(Math.ceil((standardDecks.length * 2) / 3))
               .map((d, idx) => {
                 return (
-                  <SeatingRandomDeck
+                  <SeatingDeck
                     key={idx}
                     i={Math.ceil((standardDecks.length * 2) / 3) + idx}
                     deck={d}
@@ -166,4 +166,4 @@ const SeatingEditRandom = ({
   );
 };
 
-export default SeatingEditRandom;
+export default SeatingSelectRandom;

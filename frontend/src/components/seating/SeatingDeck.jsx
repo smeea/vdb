@@ -5,7 +5,7 @@ import X from '@/assets/images/icons/x.svg';
 import ToggleOn from '@/assets/images/icons/toggle-on.svg';
 import ToggleOff from '@/assets/images/icons/toggle-off.svg';
 
-const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
+const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (
     <div
       className={`flex items-center ${
@@ -39,4 +39,4 @@ const SeatingRandomDeck = ({ toggle, i, deck, disabled, remove }) => {
   );
 };
 
-export default SeatingRandomDeck;
+export default SeatingDeck;

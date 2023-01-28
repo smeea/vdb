@@ -19,8 +19,6 @@ const getRandomTable = (players) => {
 
 const Seating = ({ setShow }) => {
   const { setShowFloatingButtons } = useApp();
-
-  const [showModal, setShowModal] = useState(true);
   const [seating, setSeating] = useState();
   const [withCustom, setWithCustom] = useState();
   const [withStandard, setWithStandard] = useState();
@@ -69,7 +67,6 @@ const Seating = ({ setShow }) => {
   };
 
   const handleCloseModal = () => {
-    setShowModal(false);
     setShow(false);
     setShowFloatingButtons(true);
   };
@@ -144,27 +141,23 @@ const Seating = ({ setShow }) => {
   }, [customDecks, standardDecks, withCustom, withStandard, players]);
 
   return (
-    <>
-      {showModal && (
-        <SeatingModal
-          addCustomDeck={addCustomDeck}
-          removeCustomDeck={removeCustomDeck}
-          customDecks={customDecks}
-          handleClose={handleCloseModal}
-          players={players}
-          reshuffle={reshuffle}
-          seating={seating}
-          setPlayer={setPlayer}
-          setWithCustom={setWithCustom}
-          setWithStandard={setWithStandard}
-          standardDecks={standardDecks}
-          toggleCustom={toggleCustom}
-          toggleStandard={toggleStandard}
-          withCustom={withCustom}
-          withStandard={withStandard}
-        />
-      )}
-    </>
+    <SeatingModal
+      addCustomDeck={addCustomDeck}
+      removeCustomDeck={removeCustomDeck}
+      customDecks={customDecks}
+      handleClose={handleCloseModal}
+      players={players}
+      reshuffle={reshuffle}
+      seating={seating}
+      setPlayer={setPlayer}
+      setWithCustom={setWithCustom}
+      setWithStandard={setWithStandard}
+      standardDecks={standardDecks}
+      toggleCustom={toggleCustom}
+      toggleStandard={toggleStandard}
+      withCustom={withCustom}
+      withStandard={withStandard}
+    />
   );
 };
 
