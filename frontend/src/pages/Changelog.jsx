@@ -1,23 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { Banner } from '@/components';
 
 const Changelog = () => {
-  const [changes, setChanges] = useState();
-
-  useEffect(() => {
-    const url = `${import.meta.env.VITE_API_URL}/changelog`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        setChanges(data);
-      });
-  }, []);
+  const { changes } = useLoaderData();
 
   return (
     <div className="about-container mx-auto">
@@ -50,3 +36,18 @@ const Changelog = () => {
 };
 
 export default Changelog;
+
+export const loader = async () => {
+  const url = `${import.meta.env.VITE_API_URL}/changelog`;
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+  };
+
+  const response = await fetch(url, options)
+  if (!response.ok) return { error: response.status };
+  const changes = await response.json();
+
+  return { changes };
+};

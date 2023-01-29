@@ -25,6 +25,7 @@ import TwdHallOfFameTournaments from './pages/TwdHallOfFameTournaments.jsx';
 import TwdCardsHistory from './pages/TwdCardsHistory.jsx';
 import TwdCheck from './pages/TwdCheck.jsx';
 import { loader as deckLoader } from './pages/Decks.jsx';
+import { loader as changesLoader } from './pages/Changelog.jsx';
 
 const App = () => {
   const router = createBrowserRouter(
@@ -33,7 +34,7 @@ const App = () => {
         <Route index element={<About />} />
         <Route path="about" element={<Navigate to="/" />} />
         <Route path="documentation" element={<Documentation />} />
-        <Route path="changelog" element={<Changelog />} />
+        <Route path="changelog" element={<Changelog />} loader={changesLoader} />
         <Route path="account" element={<Account />} />
         <Route path="diff" element={<Diff />} />
         <Route path="diff/:deckidFrom/:deckidTo" element={<Diff />} />
