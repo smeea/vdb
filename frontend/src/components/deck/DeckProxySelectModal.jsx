@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useImmer } from 'use-immer'
 import { useSnapshot } from 'valtio';
 import { Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
@@ -11,7 +12,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const usedCrypt = useSnapshot(usedStore).crypt;
   const usedLibrary = useSnapshot(usedStore).library;
 
-  const [proxySelected, setProxySelected] = useState({});
+  const [proxySelected, setProxySelected] = useImmer({});
   const [toggleState, setToggleState] = useState(false);
 
   useEffect(() => {
@@ -19,14 +20,14 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     Object.keys(deck.crypt).map((cardid) => {
       cards[cardid] = {
         print: false,
-        c: deck.crypt[cardid].c,
+        set: '',
         q: deck.crypt[cardid].q,
       };
     });
     Object.keys(deck.library).map((cardid) => {
       cards[cardid] = {
         print: false,
-        c: deck.library[cardid].c,
+        set: '',
         q: deck.library[cardid].q,
       };
     });
@@ -35,17 +36,12 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   }, [deck]);
 
   const handleToggleSelect = () => {
-    const newState = proxySelected;
-    if (toggleState) {
-      Object.keys(newState).map((cardid) => {
-        newState[cardid].print = false;
-      });
-    } else {
-      Object.keys(newState).map((cardid) => {
-        newState[cardid].print = true;
-      });
-    }
-    setProxySelected(newState);
+    setProxySelected(draft => {
+      Object.keys(draft).map((cardid) => {
+        draft[cardid].print = !toggleState
+      })
+    })
+
     setToggleState(!toggleState);
   };
 
@@ -53,40 +49,48 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     const crypt = {};
     const library = {};
 
-    Object.keys(deck.crypt).map((card) => {
-      const softUsedMax = getSoftMax(usedCrypt.soft[card]);
-      const hardUsedTotal = getHardTotal(usedCrypt.hard[card]);
+    Object.keys(deck.crypt)
+      .filter(cardid => deck.crypt[cardid].q > 0)
+      .map((cardid) => {
+        const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
+        const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
 
-      // TODO make it readable (see UsedPopover)
-      let miss = softUsedMax + hardUsedTotal;
-      if (!deck.inventoryType && deck.crypt[card].q > softUsedMax)
-        miss += deck.crypt[card].q - softUsedMax;
-      if (inventoryCrypt[card]) miss -= inventoryCrypt[card].q;
+        const inInventory = inventoryCrypt[cardid]?.q || 0
+        const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
+        const miss = deck.inventoryType
+            ? Math.min(inventoryMiss, deck.crypt[cardid].q)
+            : inventoryMiss >= 0
+              ? deck.crypt[cardid].q
+              : deck.crypt[cardid].q + inventoryMiss
 
-      if (miss > 0 && deck.crypt[card].q > 0) {
-        crypt[card] = {
-          print: true,
-          q: miss > deck.crypt[card].q ? deck.crypt[card].q : miss,
-        };
-      }
+        if (miss > 0) {
+          crypt[cardid] = {
+            print: true,
+            q: miss
+          };
+        }
     });
 
-    Object.keys(deck.library).map((card) => {
-      const softUsedMax = getSoftMax(usedLibrary.soft[card]);
-      const hardUsedTotal = getHardTotal(usedLibrary.hard[card]);
+    Object.keys(deck.library)
+      .filter(cardid => deck.library[cardid].q > 0)
+      .map((cardid) => {
+        const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
+        const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
 
-      // TODO make it readable (see UsedPopover)
-      let miss = softUsedMax + hardUsedTotal;
-      if (!deck.inventoryType && deck.library[card].q > softUsedMax)
-        miss += deck.library[card].q - softUsedMax;
-      if (inventoryLibrary[card]) miss -= inventoryLibrary[card].q;
+        const inInventory = inventoryLibrary[cardid]?.q || 0
+        const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
+        const miss = deck.inventoryType
+          ? Math.min(inventoryMiss, deck.library[cardid].q)
+          : inventoryMiss >= 0
+            ? deck.library[cardid].q
+            : deck.library[cardid].q + inventoryMiss
 
-      if (miss > 0 && deck.library[card].q > 0) {
-        library[card] = {
-          print: true,
-          q: miss > deck.library[card].q ? deck.library[card].q : miss,
-        };
-      }
+        if (miss > 0) {
+          library[cardid] = {
+            print: true,
+            q: miss
+          };
+        }
     });
 
     setProxySelected({ ...proxySelected, ...crypt, ...library });
@@ -94,36 +98,23 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
 
   const handleProxySelector = (e) => {
     const { id, name } = e.target;
-    const newState = proxySelected;
-    newState[id][name] = !newState[id][name];
-    setProxySelected((prevState) => ({
-      ...prevState,
-      [id]: newState[id],
-    }));
+    setProxySelected((draft) => {
+      draft[id][name] = !draft[id][name]
+    });
   };
 
   const handleSetSelector = (e) => {
     const { id, value } = e;
-    const newState = proxySelected;
-    if (value) {
-      newState[id].set = value;
-    } else {
-      delete newState[id].set;
-    }
-    setProxySelected((prevState) => ({
-      ...prevState,
-      [id]: newState[id],
-    }));
+    setProxySelected((draft) => {
+        draft[id].set = value
+    });
   };
 
-  const handleProxyCounter = (deckid, card, q) => {
+  const handleProxyCounter = (_, card, q) => {
     if (q >= 0) {
-      const newState = proxySelected;
-      newState[card.Id].q = q;
-      setProxySelected((prevState) => ({
-        ...prevState,
-        [card.Id]: newState[card.Id],
-      }));
+      setProxySelected((draft) => {
+        draft[card.Id].q = q
+      });
     }
   };
 
@@ -131,13 +122,11 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     const crypt = {};
     const library = {};
     Object.keys(proxySelected)
-      .filter((cardid) => {
-        return proxySelected[cardid].print;
-      })
+      .filter((cardid) => proxySelected[cardid].print)
       .map((cardid) => {
         if (proxySelected[cardid].q > 0) {
           const card = {
-            c: proxySelected[cardid].c,
+            c: cardid > 200000 ? deck.crypt[cardid].c : deck.library[cardid].c,
             q: proxySelected[cardid].q,
             set: proxySelected[cardid].set,
           };

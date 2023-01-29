@@ -16,7 +16,6 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Update url for playtest images to mitigate caching
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
-- Refactor DeckProxySelectModal proxySelected to useImmmer
 - Debouncing for text search query
 - Refactor InventoryCrypt and InventoryLibrary
 - Explicit image width/height
