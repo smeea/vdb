@@ -54,9 +54,7 @@ const DeckReviewButton = ({ deck }) => {
   return (
     <ButtonIconed
       variant="secondary"
-      onClick={() => {
-        getSnapshot();
-      }}
+      onClick={() => getSnapshot()}
       title="Review Deck"
       icon={<PencilSquare />}
       text="Review"

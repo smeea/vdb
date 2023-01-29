@@ -7,10 +7,10 @@ import ToggleOn from '@/assets/images/icons/toggle-on.svg';
 import ToggleOff from '@/assets/images/icons/toggle-off.svg';
 import { useApp } from '@/context';
 import { NavMobileMenu, LanguageSelectButton, ThemeSelect } from '@/components';
-import cryptDefaults from '@/components/forms_data/defaultsCryptForm.json';
-import libraryDefaults from '@/components/forms_data/defaultsLibraryForm.json';
-import twdDefaults from '@/components/forms_data/defaultsTwdForm.json';
-import pdaDefaults from '@/components/forms_data/defaultsPdaForm.json';
+import cryptDefaults from '@/components/search_forms/forms_data/defaultsCryptForm.json';
+import libraryDefaults from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
+import twdDefaults from '@/components/search_forms/forms_data/defaultsTwdForm.json';
+import pdaDefaults from '@/components/search_forms/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from '@/utils';
 import {
   searchCryptForm,
