@@ -39,11 +39,11 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
           </div>
           {(deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
             <div className="md:basis-6/12">
-              <DeckTags
-                deck={deck}
-                allTagsOptions={allTagsOptions}
-                isBordered
-              />
+                <DeckTags
+                  deck={deck}
+                  allTagsOptions={allTagsOptions}
+                  isBordered
+                />
             </div>
           )}
         </div>

@@ -3,9 +3,8 @@ import Check2 from '@/assets/images/icons/check2.svg';
 import PenFill from '@/assets/images/icons/pen-fill.svg';
 import {
   Input,
-  ConditionalTooltip,
+  ConditionalTooltipOrModal,
   ErrorOverlay,
-  Modal,
   Button,
 } from '@/components';
 import { useApp } from '@/context';
@@ -13,7 +12,7 @@ import { userServices } from '@/services';
 
 const TooltipText = () => {
   return (
-    <div className="p-2">
+    <>
       <div>Public name is default author name for new decks.</div>
       <div>
         Author name is per-deck and can be changed anytime for each deck.
@@ -23,16 +22,15 @@ const TooltipText = () => {
         Changing public name will not change author name of your existing decks.
       </div>
       <div>
-        Public name is *not* your account username which cannot be changed.
+        Public name is <b>not</b> your account username (the one you login with, which cannot be changed).
       </div>
-    </div>
+    </>
   );
 };
 
 const AccountChangeName = () => {
   const { publicName, setPublicName, isMobile } = useApp();
   const [state, setState] = useState(publicName || '');
-  const [showModal, setShowModal] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
@@ -67,14 +65,11 @@ const AccountChangeName = () => {
           <PenFill />
         </div>
         <div className="flex">Change public name</div>
-        <ConditionalTooltip disabled={isMobile} overlay={<TooltipText />}>
-          <div
-            className="text-fgThird dark:text-fgThirdDark"
-            onClick={() => isMobile && setShowModal(true)}
-          >
+        <ConditionalTooltipOrModal title="Public name" isModal={isMobile} overlay={<TooltipText />}>
+          <div className="text-fgThird dark:text-fgThirdDark">
             [?]
           </div>
-        </ConditionalTooltip>
+        </ConditionalTooltipOrModal>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
         <div className="relative flex w-full">
@@ -94,9 +89,6 @@ const AccountChangeName = () => {
           {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>
       </form>
-      {showModal && (
-        <Modal handleClose={() => setShowModal(false)}>{<TooltipText />}</Modal>
-      )}
     </div>
   );
 };

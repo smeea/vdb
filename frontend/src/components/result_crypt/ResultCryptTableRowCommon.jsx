@@ -56,6 +56,7 @@ const ResultCryptTableRowCommon = ({
           placement={placement}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
+          noPadding
         >
           <div className="flex">
             <ResultCryptName card={card} />

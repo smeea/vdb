@@ -10,6 +10,7 @@ export { default as CardImage } from './CardImage.jsx';
 export { default as CardPopover } from './CardPopover.jsx';
 export { default as Checkbox } from './Checkbox.jsx';
 export { default as ConditionalTooltip } from './ConditionalTooltip.jsx';
+export { default as ConditionalTooltipOrModal } from './ConditionalTooltipOrModal.jsx';
 export { default as ErrorOverlay } from './ErrorOverlay.jsx';
 export { default as ErrorMessage } from './ErrorMessage.jsx';
 export { default as Input } from './Input.jsx';

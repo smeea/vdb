@@ -4,50 +4,47 @@ import {
   AccountPasswordForm,
   AccountUsernameForm,
   ErrorOverlay,
-  Modal,
-  ConditionalTooltip,
+  ConditionalTooltipOrModal,
 } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
 
 const LoginTooltipText = () => {
   return (
-    <div className="p-2">
+    <>
       <div>Account is required for Deck Building and Inventory.</div>
       <div>
         Decks and Inventory are stored on the server and you can access them
         from any device.
       </div>
-    </div>
+    </>
   );
 };
 
 const PasswordTooltipText = () => {
   return (
-    <div className="p-2">
-      There is no automatic password restoration yet.
-      <br />
-      Please{' '}
-      <a href="mailto:smeea@riseup.net?subject=VDB - Password reset&body=Account: <PUT YOUR ACCOUNT NAME HERE>">
-        send me an email
-      </a>{' '}
-      with your username and I will generate temporary password.
-      <br />
-      Usually I do it within a day, but sometimes it takes a bit more.
-    </div>
+    <>
+      <div>
+        There is no automatic password restoration yet.
+      </div>
+      <div>Please{' '}
+        <a href="mailto:smeea@riseup.net?subject=VDB - Password reset&body=Account: <PUT YOUR ACCOUNT NAME HERE>">
+          send me an email
+        </a>{' '}
+        with your username and I will generate temporary password.
+      </div>
+      <div>
+        Usually I do it within a day, but sometimes it takes a bit more.
+      </div>
+    </>
   );
 };
 
 const AccountLogin = () => {
   const { isMobile, initializeUserData } = useApp();
-
   const [formUsername, setFormUsername] = useState('');
   const [formPassword, setFormPassword] = useState('');
-
   const [spinnerState, setSpinnerState] = useState(false);
-  const [showLoginTooltip, setShowLoginTooltip] = useState(false);
-  const [showPasswordTooltip, setShowPasswordTooltip] = useState(false);
-
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
@@ -90,14 +87,15 @@ const AccountLogin = () => {
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
         <div className="flex">Login</div>
-        <ConditionalTooltip disabled={isMobile} overlay={<LoginTooltipText />}>
-          <div
-            className="text-fgThird dark:text-fgThirdDark"
-            onClick={() => isMobile && setShowLoginTooltip(true)}
-          >
+        <ConditionalTooltipOrModal
+          title="Why to have account"
+          isModal={isMobile}
+          overlay={<LoginTooltipText />}
+        >
+          <div className="text-fgThird dark:text-fgThirdDark">
             [?]
           </div>
-        </ConditionalTooltip>
+        </ConditionalTooltipOrModal>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
         <div className="relative flex w-full">
@@ -120,38 +118,26 @@ const AccountLogin = () => {
           )}
         </div>
         <div className="flex">
-          <ConditionalTooltip
-            disabled={isMobile}
+          <ConditionalTooltipOrModal
+            isModal={isMobile}
             placement="bottom"
             overlay={<PasswordTooltipText />}
+            title="Password reset"
           >
-            <div
-              className="text-xs text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-              onClick={() => isMobile && setShowPasswordTooltip(true)}
-            >
+            <div className="text-xs text-fgSecondary hover:underline dark:text-fgSecondaryDark">
               <i>Forgot password?</i>
             </div>
-          </ConditionalTooltip>
+          </ConditionalTooltipOrModal>
         </div>
       </form>
-      {showPasswordTooltip && (
-        <Modal
-          title="Password reset"
-          centered
-          handleClose={() => setShowPasswordTooltip(false)}
-        >
-          <PasswordTooltipText />
-        </Modal>
-      )}
-      {showLoginTooltip && (
-        <Modal
-          title="Why to have account"
-          centered
-          handleClose={() => setShowLoginTooltip(false)}
-        >
-          <LoginTooltipText />
-        </Modal>
-      )}
+      {/* {showLoginTooltip && ( */}
+      {/*   <Modal */}
+      {/*     centered */}
+      {/*     handleClose={() => setShowLoginTooltip(false)} */}
+      {/*   > */}
+      {/*     <LoginTooltipText /> */}
+      {/*   </Modal> */}
+      {/* )} */}
     </div>
   );
 };

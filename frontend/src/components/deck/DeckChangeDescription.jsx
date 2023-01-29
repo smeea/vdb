@@ -54,7 +54,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!isEditable}
-          className="rounded-none border-bgSecondary dark:border-bgSecondaryDark"
+          className="w-full rounded-none border-bgSecondary dark:border-bgSecondaryDark"
         />
       ) : (
         <Textarea
