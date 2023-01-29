@@ -97,9 +97,9 @@ const Inventory = () => {
   const [type, setType] = useState('All');
   const [discipline, setDiscipline] = useState('All');
 
-  const [missingByClan, setMissingByClan] = useState();
-  const [missingByType, setMissingByType] = useState();
-  const [missingByDiscipline, setMissingByDiscipline] = useState();
+  const [missingCryptByClan, setMissingCryptByClan] = useState();
+  const [missingLibraryByType, setMissingLibraryByType] = useState();
+  const [missingLibraryByDiscipline, setMissingLibraryByDiscipline] = useState();
 
   const newCryptFocus = () => newCryptRef.current.focus();
   const newCryptRef = useRef();
@@ -126,19 +126,16 @@ const Inventory = () => {
               setClan={setClan}
               setType={setType}
               setDiscipline={setDiscipline}
-              missingByClan={missingByClan}
-              missingByType={missingByType}
-              missingByDiscipline={missingByDiscipline}
-              setMissingByClan={setMissingByClan}
-              setMissingByType={setMissingByType}
-              setMissingByDiscipline={setMissingByDiscipline}
+              setMissingCryptByClan={setMissingCryptByClan}
+              setMissingLibraryByType={setMissingLibraryByType}
+              setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
               category={category}
               setCategory={setCategory}
               setShowAddDeck={setShowAddDeck}
               setShowAddPrecon={setShowAddPrecon}
               sharedInventoryCrypt={sharedInventoryCrypt}
               sharedInventoryLibrary={sharedInventoryLibrary}
-              inShared={inventoryKey ? true : false}
+              inShared={Boolean(inventoryKey)}
             />
           ) : (
             <div className="flex gap-8">
@@ -157,12 +154,12 @@ const Inventory = () => {
                 setClan={setClan}
                 setType={setType}
                 setDiscipline={setDiscipline}
-                missingByClan={missingByClan}
-                missingByType={missingByType}
-                missingByDiscipline={missingByDiscipline}
-                setMissingByClan={setMissingByClan}
-                setMissingByType={setMissingByType}
-                setMissingByDiscipline={setMissingByDiscipline}
+                missingCryptByClan={missingCryptByClan}
+                missingLibraryByType={missingLibraryByType}
+                missingLibraryByDiscipline={missingLibraryByDiscipline}
+                setMissingCryptByClan={setMissingCryptByClan}
+                setMissingLibraryByType={setMissingLibraryByType}
+                setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
                 category={category}
                 setCategory={setCategory}
                 setShowAddDeck={setShowAddDeck}
@@ -171,7 +168,7 @@ const Inventory = () => {
                 sharedInventoryCrypt={sharedInventoryCrypt}
                 sharedInventoryLibrary={sharedInventoryLibrary}
                 setInventoryKey={setInventoryKey}
-                inShared={inventoryKey ? true : false}
+                inShared={Boolean(inventoryKey)}
               />
             </div>
           )}
@@ -223,9 +220,9 @@ const Inventory = () => {
               clan={clan}
               discipline={discipline}
               type={type}
-              missingByClan={missingByClan}
-              missingByType={missingByType}
-              missingByDiscipline={missingByDiscipline}
+              missingCryptByClan={missingCryptByClan}
+              missingLibraryByType={missingLibraryByType}
+              missingLibraryByDiscipline={missingLibraryByDiscipline}
               setInventoryKey={setInventoryKey}
               inShared={inventoryKey ? true : false}
             />

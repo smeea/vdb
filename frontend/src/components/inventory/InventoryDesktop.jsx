@@ -25,12 +25,12 @@ const InventoryDesktop = ({
   setClan,
   setType,
   setDiscipline,
-  missingByClan,
-  missingByType,
-  missingByDiscipline,
-  setMissingByClan,
-  setMissingByType,
-  setMissingByDiscipline,
+  missingCryptByClan,
+  missingLibraryByType,
+  missingLibraryByDiscipline,
+  setMissingCryptByClan,
+  setMissingLibraryByType,
+  setMissingLibraryByDiscipline,
   category,
   setCategory,
   setShowAddDeck,
@@ -68,8 +68,8 @@ const InventoryDesktop = ({
                       ? inventoryCrypt[newCryptId]
                       : { c: cryptCardBase[newCryptId], q: 0 },
                   }}
-                  compact={true}
                   newFocus={newCryptFocus}
+                  compact
                 />
               </div>
             )}
@@ -85,7 +85,7 @@ const InventoryDesktop = ({
               }
               clan={clan}
               setClan={setClan}
-              setMissingByClan={setMissingByClan}
+              setMissingCryptByClan={setMissingCryptByClan}
               inShared={inShared}
             />
           </div>
@@ -109,8 +109,8 @@ const InventoryDesktop = ({
                       ? inventoryLibrary[newLibraryId]
                       : { c: libraryCardBase[newLibraryId], q: 0 },
                   }}
-                  compact={true}
                   newFocus={newLibraryFocus}
+                  compact
                 />
               </div>
             )}
@@ -130,8 +130,8 @@ const InventoryDesktop = ({
               setType={setType}
               discipline={discipline}
               setDiscipline={setDiscipline}
-              setMissingByType={setMissingByType}
-              setMissingByDiscipline={setMissingByDiscipline}
+              setMissingLibraryByType={setMissingLibraryByType}
+              setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
               inShared={inShared}
             />
           </div>
@@ -150,9 +150,9 @@ const InventoryDesktop = ({
             clan={clan}
             discipline={discipline}
             type={type}
-            missingByClan={missingByClan}
-            missingByType={missingByType}
-            missingByDiscipline={missingByDiscipline}
+            missingCryptByClan={missingCryptByClan}
+            missingLibraryByType={missingLibraryByType}
+            missingLibraryByDiscipline={missingLibraryByDiscipline}
             setInventoryKey={setInventoryKey}
             inShared={inShared}
           />

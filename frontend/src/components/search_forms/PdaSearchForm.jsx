@@ -228,7 +228,7 @@ const PdaSearchForm = ({ error, setError }) => {
             target={'library'}
             onChange={handleChangeWithOpt}
           />
-          <div className="flex">
+          <div className="flex justify-end space-x-6">
             <Checkbox
               name="60"
               label="Scale to 60 cards"

@@ -8,9 +8,9 @@ const InventoryMissingButton = ({
   clan,
   type,
   discipline,
-  missingByClan,
-  missingByType,
-  missingByDiscipline,
+  missingCryptByClan,
+  missingLibraryByType,
+  missingLibraryByDiscipline,
 }) => {
   const {
     cryptCardBase,
@@ -30,23 +30,23 @@ const InventoryMissingButton = ({
   };
 
   const missingCrypt = useMemo(() => {
-    if (missingByClan) return missingByClan[clan];
+    if (missingCryptByClan) return missingCryptByClan[clan];
     else return {};
-  }, [clan, missingByClan]);
+  }, [clan, missingCryptByClan]);
 
   const missingLibrary = useMemo(() => {
-    if (missingByDiscipline && missingByType) {
+    if (missingLibraryByDiscipline && missingLibraryByType) {
       const missing = {};
-      Object.values(missingByType[type])
+      Object.values(missingLibraryByType[type])
         .filter((i) => {
-          return missingByDiscipline[discipline][i.c.Id];
+          return missingLibraryByDiscipline[discipline][i.c.Id];
         })
         .map((i) => (missing[i.c.Id] = i));
       return missing;
     } else {
       return {};
     }
-  }, [type, discipline, missingByType, missingByDiscipline]);
+  }, [type, discipline, missingLibraryByType, missingLibraryByDiscipline]);
 
   const missAllVtesCrypt = {};
   const missAllVtesLibrary = {};
@@ -97,7 +97,7 @@ const InventoryMissingButton = ({
           missAllVtes={{ crypt: missAllVtesCrypt, library: missAllVtesLibrary }}
           show={showModal}
           handleClose={handleClose}
-          inInventory={true}
+          inInventory
         />
       )}
     </>

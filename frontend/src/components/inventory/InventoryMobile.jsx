@@ -24,9 +24,9 @@ const InventoryMobile = ({
   setClan,
   setType,
   setDiscipline,
-  setMissingByClan,
-  setMissingByType,
-  setMissingByDiscipline,
+  setMissingCryptByClan,
+  setMissingLibraryByType,
+  setMissingLibraryByDiscipline,
   category,
   sharedInventoryCrypt,
   sharedInventoryLibrary,
@@ -59,8 +59,8 @@ const InventoryMobile = ({
                     ? inventoryCrypt[newCryptId]
                     : { c: cryptCardBase[newCryptId], q: 0 },
                 }}
-                compact={true}
                 newFocus={newCryptFocus}
+                compact
               />
             </div>
           )}
@@ -74,7 +74,7 @@ const InventoryMobile = ({
                 }
                 clan={clan}
                 setClan={setClan}
-                setMissingByClan={setMissingByClan}
+                setMissingByClan={setMissingCryptByClan}
                 inShared={inShared}
               />
             </div>
@@ -97,8 +97,8 @@ const InventoryMobile = ({
                     ? inventoryLibrary[newLibraryId]
                     : { c: libraryCardBase[newLibraryId], q: 0 },
                 }}
-                compact={true}
                 newFocus={newLibraryFocus}
+                compact
               />
             </div>
           )}
@@ -116,8 +116,8 @@ const InventoryMobile = ({
                 setType={setType}
                 discipline={discipline}
                 setDiscipline={setDiscipline}
-                setMissingByType={setMissingByType}
-                setMissingByDiscipline={setMissingByDiscipline}
+                setMissingLibraryByType={setMissingLibraryByType}
+                setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
                 inShared={inShared}
               />
             </div>

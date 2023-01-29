@@ -226,23 +226,21 @@ const TwdSearchForm = ({ error, setError }) => {
             target={'library'}
             onChange={handleChangeWithOpt}
           />
-          <div className="flex justify-end">
-            <div>
-              <Checkbox
-                name="60"
-                label="Scale to 60 cards"
-                checked={twdFormState.matchInventory.scaling == 60}
-                value={twdFormState.matchInventory.scaling}
-                onChange={handleMatchInventoryScalingChange}
-              />
-              <Checkbox
-                name="75"
-                label="Scale to 75 cards"
-                checked={twdFormState.matchInventory.scaling == 75}
-                value={twdFormState.matchInventory.scaling}
-                onChange={handleMatchInventoryScalingChange}
-              />
-            </div>
+          <div className="flex justify-end space-x-6">
+            <Checkbox
+              name="60"
+              label="Scale to 60 cards"
+              checked={twdFormState.matchInventory.scaling == 60}
+              value={twdFormState.matchInventory.scaling}
+              onChange={handleMatchInventoryScalingChange}
+            />
+            <Checkbox
+              name="75"
+              label="Scale to 75 cards"
+              checked={twdFormState.matchInventory.scaling == 75}
+              value={twdFormState.matchInventory.scaling}
+              onChange={handleMatchInventoryScalingChange}
+            />
           </div>
         </>
       )}

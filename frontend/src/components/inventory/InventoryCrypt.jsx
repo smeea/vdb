@@ -18,7 +18,7 @@ const InventoryCrypt = ({
   clan,
   setClan,
   newFocus,
-  setMissingByClan,
+  setMissingCryptByClan,
   inShared,
 }) => {
   const usedCrypt = useSnapshot(usedStore).crypt;
@@ -167,7 +167,7 @@ const InventoryCrypt = ({
   }
 
   useEffect(() => {
-    if (!compact) setMissingByClan(missingByClan);
+    if (!compact) setMissingCryptByClan(missingByClan);
   }, [cards]);
 
   return (

@@ -21,9 +21,9 @@ const InventoryButtons = ({
   clan,
   type,
   discipline,
-  missingByClan,
-  missingByType,
-  missingByDiscipline,
+  missingCryptByClan,
+  missingLibraryByType,
+  missingLibraryByDiscipline,
   crypt,
   library,
   setShowShareModal,
@@ -102,9 +102,9 @@ const InventoryButtons = ({
             )}
             <InventoryDeleteButton />
             <InventoryMissingButton
-              missingByClan={missingByClan}
-              missingByType={missingByType}
-              missingByDiscipline={missingByDiscipline}
+              missingCryptByClan={missingCryptByClan}
+              missingLibraryByType={missingLibraryByType}
+              missingLibraryByDiscipline={missingLibraryByDiscipline}
               clan={clan}
               type={type}
               discipline={discipline}

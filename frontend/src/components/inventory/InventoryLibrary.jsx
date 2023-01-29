@@ -21,8 +21,8 @@ const InventoryLibrary = ({
   discipline,
   setDiscipline,
   newFocus,
-  setMissingByType,
-  setMissingByDiscipline,
+  setMissingLibraryByType,
+  setMissingLibraryByDiscipline,
   inShared,
 }) => {
   const usedLibrary = useSnapshot(usedStore).library;
@@ -389,8 +389,8 @@ const InventoryLibrary = ({
 
   useEffect(() => {
     if (!compact) {
-      setMissingByType(missingByType);
-      setMissingByDiscipline(missingByDiscipline);
+      setMissingLibraryByType(missingByType);
+      setMissingLibraryByDiscipline(missingByDiscipline);
     }
   }, [cards]);
 
