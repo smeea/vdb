@@ -15,7 +15,8 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 - Update url for playtest images to mitigate caching
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
-- Debouncing for text search query
+- Debouncing for text search query - useTimeout+useDebouncing hook https://youtu.be/0c6znExIqRw?t=118
+- Refactor fetch to useAsync+useFetch hook https://youtu.be/vrIxu-kfAUo&t=546
 - Refactor InventoryCrypt and InventoryLibrary
 - Explicit image width/height
 - Test bundle size with lazy load of pages

@@ -49,7 +49,7 @@ const Decks = () => {
   const { deckid } = useParams();
   const { hash } = useLocation();
   const query = new URLSearchParams(useLocation().search);
-  const { fetchedDeck } = useLoaderData();
+  const loaderData = useLoaderData();
 
   if (hash && deckid !== 'deck') {
     const name = query.get('name') ?? '';
@@ -69,7 +69,7 @@ const Decks = () => {
   const [showRecommendation, setShowRecommendation] = useState(false);
 
   const getDeck = async () => {
-    const deckData = await fetchedDeck;
+    const { deckData } = await loaderData;
 
     if (deckData.error) {
       if (deckData.error == 400) {
@@ -184,7 +184,7 @@ const Decks = () => {
               setDeck(undefined);
               setError('NO DECK WITH THIS ID');
             }
-          } else if (fetchedDeck) {
+          } else if (loaderData) {
             getDeck();
           }
         }
@@ -194,7 +194,7 @@ const Decks = () => {
     }
   }, [
     deckid,
-    fetchedDeck,
+    loaderData,
     lastDeckId,
     decks,
     preconDecks,
@@ -372,7 +372,7 @@ export const loader = async ({ params }) => {
 
   const response = await fetch(url, options)
   if (!response.ok) return { error: response.status };
-  const fetchedDeck = await response.json()
+  const deckData = await response.json()
 
-  return defer({ fetchedDeck });
+  return defer({ deckData });
 };
