@@ -14,4 +14,7 @@ export default defineConfig({
       '@': require('path').resolve(__dirname, 'src'),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1024,
+  },
 });
