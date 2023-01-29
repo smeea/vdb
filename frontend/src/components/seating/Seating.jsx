@@ -5,16 +5,17 @@ import { initFromStorage, setLocalStorage } from '@/services/storageServices.js'
 import { useApp } from '@/context';
 import standardDecksData from '@/assets/data/standardDecks.json';
 
-const getRandomInt = (max) => {
-  return Math.floor(Math.random() * Math.floor(max));
-};
-
 const getRandomDeck = (players) => {
-  return players[getRandomInt(players.length)];
+  return players[Math.floor(Math.random() * Math.floor(players.length))]
 };
 
-const getRandomTable = (players) => {
-  return players.sort(() => Math.random() - 0.5);
+const randomizeArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array
 };
 
 const Seating = ({ setShow }) => {
@@ -46,7 +47,6 @@ const Seating = ({ setShow }) => {
       players.map((p, idx) => {
         draft[idx] = p;
       });
-      return draft;
     });
   };
 
@@ -55,14 +55,24 @@ const Seating = ({ setShow }) => {
       decks.map((d, idx) => {
         draft[idx] = d;
       });
-      return draft;
     });
   };
 
   const setPlayer = (i, value) => {
     setPlayers((draft) => {
       draft[i] = value;
-      return draft;
+    });
+  };
+
+  const addPlayer = () => {
+    setPlayers((draft) => {
+      draft.push({ name: `Player ${draft.length + 1}`, random: false, state: true })
+    });
+  };
+
+  const delPlayer = (i) => {
+    setPlayers((draft) => {
+      draft.splice(i, 1)
     });
   };
 
@@ -87,10 +97,56 @@ const Seating = ({ setShow }) => {
         }
       });
 
-    const results = [options[0], ...getRandomTable(options.slice(1))];
-    results[getRandomInt(results.length)].first = true;
-    setSeating(results);
-  };
+    if ([7, 11].includes(options.length)) {
+      options.push({ name: 'First oust from another table'})
+    }
+
+    const randomizedPlayers = randomizeArray(options);
+    const tablesWithQty = getTablesWithQty(randomizedPlayers.length)
+    const tablesWithPlayers = []
+    tablesWithQty.map(n => {
+      tablesWithPlayers.push(randomizedPlayers.slice(0, n))
+      randomizedPlayers.splice(0, n)
+    })
+
+    setSeating(tablesWithPlayers)
+  }
+
+  const getTablesWithQty = (q) => {
+    const fullTablesQty = Math.floor(q / 5)
+
+    switch (q) {
+      case 3:
+        return [3]
+      case 6:
+        return [6]
+    }
+
+    let tables;
+    switch (q % 5) {
+      case 0:
+        tables = Array(fullTablesQty).fill(5)
+        break
+      case 1:
+        tables = Array(fullTablesQty + 1).fill(5)
+        tables.fill(4, tables.length - 4)
+        break
+      case 2:
+        tables = Array(fullTablesQty + 1).fill(5)
+        tables.fill(4, tables.length - 3)
+        break
+      case 3:
+        tables = Array(fullTablesQty + 1).fill(5)
+        tables.fill(4, tables.length - 2)
+        break
+      case 4:
+        tables = Array(fullTablesQty + 1).fill(5)
+        tables.fill(4, tables.length - 1)
+        break
+    }
+
+    return tables
+  }
 
   const toggleCustom = (i) => {
     setCustomDecks((draft) => {
@@ -150,6 +206,8 @@ const Seating = ({ setShow }) => {
       reshuffle={reshuffle}
       seating={seating}
       setPlayer={setPlayer}
+      delPlayer={delPlayer}
+      addPlayer={addPlayer}
       setWithCustom={setWithCustom}
       setWithStandard={setWithStandard}
       standardDecks={standardDecks}

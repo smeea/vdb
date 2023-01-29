@@ -2,9 +2,10 @@ import React from 'react';
 import Dice3 from '@/assets/images/icons/dice-3-fill.svg';
 import ToggleOn from '@/assets/images/icons/toggle-on.svg';
 import ToggleOff from '@/assets/images/icons/toggle-off.svg';
+import X from '@/assets/images/icons/x.svg';
 import { Input, Button } from '@/components';
 
-const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
+const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
   const handleChange = (event) => {
     if (event.target.value) {
       setPlayer(i, {
@@ -45,12 +46,12 @@ const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
 
   return (
     <div className="flex justify-between space-x-2">
-      <div className="flex">
+      <div className="flex w-full">
         <Input
           placeholder="Disabled"
           value={player.state ? (player.random ? 'RANDOM' : player.name) : ''}
           onChange={handleChange}
-          className="rounded-r-none"
+          className="w-full rounded-r-none"
         />
         <Button
           variant={player.random && player.state ? 'primary' : 'secondary'}
@@ -66,6 +67,12 @@ const SeatingPlayerSelector = ({ setPlayer, i, player }) => {
         ) : (
           <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
         )}
+      </div>
+      <div
+        className="flex items-center cursor-pointer p-0.5 text-fgRed dark:text-fgRedDark"
+        onClick={() => delPlayer(i)}
+      >
+        <X width="22" height="22" viewBox="0 0 16 16" />
       </div>
     </div>
   );

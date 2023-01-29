@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import X from '@/assets/images/icons/x.svg';
 import PencilSquare from '@/assets/images/icons/pencil-square.svg';
 import Recycle from '@/assets/images/icons/recycle.svg';
+import PersonFill from '@/assets/images/icons/person-fill.svg';
 import {
   ButtonIconed,
   SeatingPlayerSelector,
-  SeatingTableLayout,
+  SeatingTables,
   SeatingSelectRandom,
   Modal,
   ButtonFloat,
@@ -21,6 +22,8 @@ const SeatingModal = ({
   reshuffle,
   seating,
   setPlayer,
+  delPlayer,
+  addPlayer,
   setWithCustom,
   setWithStandard,
   standardDecks,
@@ -33,7 +36,7 @@ const SeatingModal = ({
   const [showSelectRandom, setShowSelectRandom] = useState();
 
   const withRandom = Object.values(players).some((d) => {
-    return d.random;
+    return d.state && d.random;
   });
 
   const haveRandomSelected =
@@ -55,8 +58,8 @@ const SeatingModal = ({
         size="lg"
       >
         <div className="space-y-5">
-          <div className="flex">
-            <div className="space-y-5 md:w-5/12 xl:w-1/3">
+          <div className="flex gap-4">
+            <div className="space-y-5 md:w-5/12 xl:w-5/12">
               <div className="space-y-2">
                 {players.map((p, idx) => {
                   return (
@@ -65,9 +68,18 @@ const SeatingModal = ({
                       i={idx}
                       player={p}
                       setPlayer={setPlayer}
+                      delPlayer={delPlayer}
                     />
                   );
                 })}
+                <ButtonIconed
+                  variant="primary"
+                  onClick={addPlayer}
+                  className='w-full'
+                  title="Add Player"
+                  icon={<PersonFill width="18" height="18" viewBox="0 0 16 16" />}
+                  text="Add Player"
+                />
               </div>
               <div className="flex justify-between">
                 <ButtonIconed
@@ -76,6 +88,7 @@ const SeatingModal = ({
                   title="Reshuffle"
                   icon={<Recycle width="18" height="18" viewBox="0 0 16 16" />}
                   text="Reshuffle"
+                  disabled={players.length < 3}
                 />
                 <ButtonIconed
                   variant="primary"
@@ -91,8 +104,8 @@ const SeatingModal = ({
                 <div className="text-fgRed dark:text-fgRedDark">No random source selected</div>
               )}
             </div>
-            <div className="flex justify-center items-center md:w-7/12 xl:w-2/3">
-              {seating && <SeatingTableLayout players={seating} />}
+            <div className="flex justify-center items-center md:w-7/12 xl:w-7/12">
+              {seating && <SeatingTables seating={seating} />}
             </div>
           </div>
           {showSelectRandom && (

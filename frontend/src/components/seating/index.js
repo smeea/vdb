@@ -4,6 +4,7 @@ export { default as SeatingModal } from './SeatingModal.jsx';
 export { default as SeatingPlayerSelector } from './SeatingPlayerSelector.jsx';
 export { default as SeatingDeck } from './SeatingDeck.jsx';
 export { default as SeatingCustomDeckAdd } from './SeatingCustomDeckAdd.jsx';
+export { default as SeatingTables } from './SeatingTables.jsx';
 export { default as SeatingTableLayout } from './SeatingTableLayout.jsx';
 export { default as SeatingTablePlayer } from './SeatingTablePlayer.jsx';
 export { default as SeatingSelectRandom } from './SeatingSelectRandom.jsx';

@@ -4,7 +4,6 @@
 - Check TWD
 - Events decks archive analyzing
 - Custom values for cardtypes in TWD/PDA
-- Multitable seating
 - Playable by buttons to lib/crypt
 
 # MAYBE LATER FEATURES

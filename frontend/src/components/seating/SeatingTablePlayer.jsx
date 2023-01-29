@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '@/context';
 
-const SeatingTablePlayer = ({ deck }) => {
+const SeatingTablePlayer = ({ deck, isFirst }) => {
   const { isMobile } = useApp();
 
   return (
     <div
       className={`flex justify-center ${isMobile ? '' : 'whitespace-nowrap'}  ${
-        deck.first
+        isFirst
           ? 'rounded-md border-2 border-dashed border-borderPrimary font-bold dark:border-borderPrimaryDark p-3'
           : 'p-3.5'
       }`}
