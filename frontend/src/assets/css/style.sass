@@ -6,7 +6,7 @@
   html
     @apply scroll-pt-3 sm:scroll-pt-16
   body
-    @apply text-fgPrimary bg-bgPrimary dark:bg-bgPrimaryDark dark:text-fgPrimaryDark pb-[45px] sm:pb-[25px]
+    @apply text-fgPrimary bg-bgPrimary dark:bg-bgPrimaryDark dark:text-fgPrimaryDark
   a
     @apply text-fgSecondary dark:text-fgSecondaryDark hover:underline
   ul
@@ -114,5 +114,6 @@ tr:hover div.not-selected.inventory-card-custom
 .deck-container,
 .search-container,
 .twd-container
+  padding-bottom: 45px
   @media (min-width: 768px)
-    padding-top: 36px
+    padding: 32px

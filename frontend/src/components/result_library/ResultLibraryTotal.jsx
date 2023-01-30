@@ -29,7 +29,7 @@ const ResultLibraryTotal = ({
       <div className="whitespace-nowrap p-2 font-bold">
         {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
       </div>
-      <div>
+      <div className="flex items-center">
         {Object.keys(byTypes).map((k) => {
           return (
             <span key={k} className="inline-block whitespace-nowrap px-2">

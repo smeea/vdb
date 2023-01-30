@@ -2,7 +2,7 @@ import React from 'react';
 import { Dialog } from '@headlessui/react';
 import X from '@/assets/images/icons/x.svg';
 
-const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
+const Modal = ({ handleClose, centered, size = 'md', title, children, noPadding}) => {
   // TODO unfocus close
   // TODO close with Esc
 
@@ -32,10 +32,10 @@ const Modal = ({ handleClose, centered, size = 'md', title, children }) => {
         }`}
       >
         <Dialog.Panel
-          className={`${widthClass} space-y-2 rounded border border-bgSecondary bg-bgPrimary p-5 dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
+          className={`${widthClass} rounded border border-bgSecondary bg-bgPrimary ${noPadding ? '' : 'p-5'} dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
         >
-          <Dialog.Title className="flex items-start justify-between border-none">
-            <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          <Dialog.Title className={`flex items-center justify-between border-none  ${noPadding ? 'p-1.5' : 'pb-3'}`}>
+            <div className='text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark'>
               {title}
             </div>
             <button onClick={handleClose}>

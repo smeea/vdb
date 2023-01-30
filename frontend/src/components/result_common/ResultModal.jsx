@@ -64,16 +64,15 @@ const ResultModal = ({
   });
 
   return (
-    <Dialog open={true} onClose={handleClose} className="relative z-50">
+    <Dialog open onClose={handleClose} className="relative z-50">
       <div
         className="fixed inset-0 bg-[#000] bg-opacity-50"
         aria-hidden="true"
       />
       <div className="fixed inset-0 flex items-center justify-center overflow-auto p-0 sm:p-8">
         <Dialog.Panel
-          className={`2xl:min-w-[55%] w-full space-y-2 md:w-[80%] lg:w-[70%] xl:w-[60%] ${
-            nested ? 'border' : 'border-none'
-          } rounded border-borderNestModal bg-bgPrimary dark:border-borderNestModalDark dark:bg-bgPrimaryDark`}
+          className={`2xl:min-w-[55%] w-full space-y-2 md:w-[80%] lg:w-[70%] xl:w-[60%] ${nested ? 'border border-borderNestModal dark:border-borderNestModalDark' : 'border-none'
+            } rounded bg-bgPrimary dark:bg-bgPrimaryDark m-2`}
         >
           <div className="relative">
             {isMobile ? (
@@ -86,7 +85,7 @@ const ResultModal = ({
                     onClick={handleClose}
                   />
                 ) : (
-                  <div>
+                  <div className="w-full p-3">
                     <ResultLayoutText
                       card={activeCard}
                       setCard={setActiveCard}

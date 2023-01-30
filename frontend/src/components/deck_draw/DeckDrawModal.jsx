@@ -38,7 +38,7 @@ const DeckDrawModal = ({
   restCrypt,
   restLibrary,
 }) => {
-  const { isNarrow } = useApp();
+  const { isMobile, isNarrow } = useApp();
 
   // Modal Card Controller
   const {
@@ -52,27 +52,27 @@ const DeckDrawModal = ({
 
   return (
     <>
-      <Modal handleClose={handleClose} title="Deck Draw" size="lg">
-      <div className="flex flex-col gap-5">
-        <div className="flex flex-col md:flex-row gap-5">
-          <div className="md:basis-7/12">
-            <div>
-              <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-                <div className="flex w-full justify-between px-2">
-                  <div className="flex items-center font-bold">Uncontrolled</div>
-                  <div
-                    className="flex items-center font-bold"
-                    title="In Uncontrolled + Remaining in Crypt"
-                  >
-                    {drawedCrypt.length} + {restCrypt.length}
+      <Modal handleClose={handleClose} title="Deck Draw" size="lg" noPadding={isMobile}>
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col md:flex-row gap-5">
+            <div className="md:basis-7/12">
+              <div>
+                <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+                  <div className="flex w-full justify-between px-2">
+                    <div className="flex items-center font-bold">Uncontrolled</div>
+                    <div
+                      className="flex items-center font-bold"
+                      title="In Uncontrolled + Remaining in Crypt"
+                    >
+                      {drawedCrypt.length} + {restCrypt.length}
+                    </div>
+                    <div
+                      className="flex items-center font-bold"
+                      title="Initial Transfers"
+                    >
+                      {initialTransfers}t
+                    </div>
                   </div>
-                  <div
-                    className="flex items-center font-bold"
-                    title="Initial Transfers"
-                  >
-                    {initialTransfers}t
-                  </div>
-                </div>
                   <div className="flex flex-row space-x-1">
                     <Button
                       variant="primary"
@@ -106,146 +106,146 @@ const DeckDrawModal = ({
                     >
                       +1
                     </Button>
+                  </div>
+                </div>
+                {cryptTotal < 4 && (
+                  <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>
+                )}
+                <DeckDrawCryptTable
+                  crypt={crypt}
+                  handleClick={burnCrypt}
+                  restCards={restCrypt}
+                  resultCards={drawedCrypt}
+                />
+              </div>
+            </div>
+            <div className="md:basis-5/12">
+              <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+                <div className="flex w-full justify-between px-2">
+                  <div className="flex items-center font-bold">Hand</div>
+                  <div
+                    className="flex items-center font-bold"
+                    title="In Hand + Remaining in Library"
+                  >
+                    {drawedLibrary.length} + {restLibrary.length}
+                  </div>
+                  <div />
+                </div>
+                <div className="flex flex-row space-x-1">
+                  <Button
+                    title="Draw All"
+                    variant="primary"
+                    onClick={() => handleLibraryHandSize(restLibrary.length)}
+                    disabled={restLibrary.length < 1}
+                  >
+                    <StackIcon />
+                  </Button>
+                  <Button
+                    title="Hand Size -1"
+                    variant="primary"
+                    onClick={() => handleLibraryHandSize(-1)}
+                    disabled={drawedLibrary.length < 1}
+                  >
+                    -1
+                  </Button>
+                  <Button
+                    title="Re-Draw"
+                    variant="primary"
+                    onClick={handleReDrawLibrary}
+                    disabled={libraryTotal < 7}
+                  >
+                    <ArrowRepeat />
+                  </Button>
+                  <Button
+                    title="Hand Size +1"
+                    variant="primary"
+                    onClick={() => handleLibraryHandSize(1)}
+                    disabled={restLibrary.length < 1}
+                  >
+                    +1
+                  </Button>
                 </div>
               </div>
-              {cryptTotal < 4 && (
+              {libraryTotal < 7 && (
                 <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>
               )}
-              <DeckDrawCryptTable
-                crypt={crypt}
-                handleClick={burnCrypt}
-                restCards={restCrypt}
-                resultCards={drawedCrypt}
+              <DeckDrawLibraryTable
+                handleClick={burnLibrary}
+                restCards={restLibrary}
+                resultCards={drawedLibrary}
+                /* className="search-library-table" */
+                placement={isNarrow ? 'bottom' : 'right'}
               />
             </div>
           </div>
-          <div className="md:basis-5/12">
-            <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-              <div className="flex w-full justify-between px-2">
-                <div className="flex items-center font-bold">Hand</div>
-                <div
-                  className="flex items-center font-bold"
-                  title="In Hand + Remaining in Library"
-                >
-                  {drawedLibrary.length} + {restLibrary.length}
-                </div>
-                <div/>
-              </div>
-              <div className="flex flex-row space-x-1">
-                <Button
-                  title="Draw All"
-                  variant="primary"
-                  onClick={() => handleLibraryHandSize(restLibrary.length)}
-                  disabled={restLibrary.length < 1}
-                >
-                  <StackIcon />
-                </Button>
-                <Button
-                  title="Hand Size -1"
-                  variant="primary"
-                  onClick={() => handleLibraryHandSize(-1)}
-                  disabled={drawedLibrary.length < 1}
-                >
-                  -1
-                </Button>
-                <Button
-                  title="Re-Draw"
-                  variant="primary"
-                  onClick={handleReDrawLibrary}
-                  disabled={libraryTotal < 7}
-                >
-                  <ArrowRepeat />
-                </Button>
-                <Button
-                  title="Hand Size +1"
-                  variant="primary"
-                  onClick={() => handleLibraryHandSize(1)}
-                  disabled={restLibrary.length < 1}
-                >
-                  +1
-                </Button>
-              </div>
-            </div>
-            {libraryTotal < 7 && (
-              <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>
-            )}
-            <DeckDrawLibraryTable
-              handleClick={burnLibrary}
-              restCards={restLibrary}
-              resultCards={drawedLibrary}
-              /* className="search-library-table" */
-              placement={isNarrow ? 'bottom' : 'right'}
-            />
-          </div>
-        </div>
-        {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-          <div className="flex gap-5">
-            <div className="basis-full md:basis-7/12">
-              {burnedCrypt.length > 0 && (
-                <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark px-2">
-                    <div className="flex items-center font-bold">
-                      Controlled
-                    </div>
-                    <div className="flex items-center font-bold">
-                      {burnedCrypt.length}
-                    </div>
-                    <div className="flex items-center" title="Total Capacity">
-                      <ResultCryptCapacity value="X" />
-                      <b>{burnedCapacityTotal}</b>
-                    </div>
-                  </div>
-                  <DeckDrawCryptTable
-                    handleClick={handleModalCardOpen}
-                    resultCards={burnedCrypt}
-                    ashHeap
-                  />
-                </div>
-              )}
-            </div>
-            <div className="basis-full md:basis-5/12">
-              {burnedLibrary.length > 0 && (
-                <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark px-2">
-                    <div className="flex items-center font-bold">Ash Heap</div>
-                    <div className="flex items-center font-bold">
-                      {burnedLibrary.length}
-                    </div>
-                    <div className="flex space-x-3">
-                      <div
-                        className="flex items-center space-x-1"
-                        title="Total Blood Cost"
-                      >
-                        <img
-                          className="optimize-contrast h-[31px] pb-1"
-                          src={`${import.meta.env.VITE_BASE_URL}/images/misc/bloodX.png`}
-                        />
-                        <b>{burnedBloodTotal}</b>
+          {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
+            <div className="flex gap-5">
+              <div className="basis-full md:basis-7/12">
+                {burnedCrypt.length > 0 && (
+                  <div>
+                    <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark px-2">
+                      <div className="flex items-center font-bold">
+                        Controlled
                       </div>
-                      <div
-                        className="flex items-center space-x-1"
-                        title="Total Pool Cost"
-                      >
-                        <img
-                          className="optimize-contrast h-[30px]"
-                          src={`${import.meta.env.VITE_BASE_URL}/images/misc/poolX.png`}
-                        />
-                        <b>{burnedPoolTotal}</b>
+                      <div className="flex items-center font-bold">
+                        {burnedCrypt.length}
+                      </div>
+                      <div className="flex items-center" title="Total Capacity">
+                        <ResultCryptCapacity value="X" />
+                        <b>{burnedCapacityTotal}</b>
                       </div>
                     </div>
+                    <DeckDrawCryptTable
+                      handleClick={handleModalCardOpen}
+                      resultCards={burnedCrypt}
+                      ashHeap
+                    />
                   </div>
-                  <DeckDrawLibraryTable
-                    handleClick={handleModalSideCardOpen}
-                    resultCards={burnedLibrary}
-                    /* className="search-library-table" */
-                    placement={isNarrow ? 'bottom' : 'right'}
-                    ashHeap
-                  />
-                </div>
-              )}
+                )}
+              </div>
+              <div className="basis-full md:basis-5/12">
+                {burnedLibrary.length > 0 && (
+                  <div>
+                    <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark px-2">
+                      <div className="flex items-center font-bold">Ash Heap</div>
+                      <div className="flex items-center font-bold">
+                        {burnedLibrary.length}
+                      </div>
+                      <div className="flex space-x-3">
+                        <div
+                          className="flex items-center space-x-1"
+                          title="Total Blood Cost"
+                        >
+                          <img
+                            className="optimize-contrast h-[31px] pb-1"
+                            src={`${import.meta.env.VITE_BASE_URL}/images/misc/bloodX.png`}
+                          />
+                          <b>{burnedBloodTotal}</b>
+                        </div>
+                        <div
+                          className="flex items-center space-x-1"
+                          title="Total Pool Cost"
+                        >
+                          <img
+                            className="optimize-contrast h-[30px]"
+                            src={`${import.meta.env.VITE_BASE_URL}/images/misc/poolX.png`}
+                          />
+                          <b>{burnedPoolTotal}</b>
+                        </div>
+                      </div>
+                    </div>
+                    <DeckDrawLibraryTable
+                      handleClick={handleModalSideCardOpen}
+                      resultCards={burnedLibrary}
+                      /* className="search-library-table" */
+                      placement={isNarrow ? 'bottom' : 'right'}
+                      ashHeap
+                    />
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )}
         </div>
         {shouldShowModal && (
           <ResultModal

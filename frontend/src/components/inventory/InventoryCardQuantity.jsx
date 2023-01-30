@@ -47,6 +47,7 @@ const InventoryCardQuantity = ({
         <>
           <a
             className="relative before:absolute before:inset-[-12px] before:content-['']"
+
             onClick={() => handleQuantityChange(-1)}
           >
             <Button
@@ -59,11 +60,11 @@ const InventoryCardQuantity = ({
           <div
             className={
               state < softUsedMax + hardUsedTotal
-                ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
+                ? 'mx-1 flex w-full justify-center bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
                 : null
             }
           >
-            {state == 0 ? <>&nbsp;&nbsp;</> : state}
+            {state == 0 ? <>&nbsp;</> : state}
           </div>
           <a
             className="relative before:absolute before:inset-[-12px] before:content-['']"

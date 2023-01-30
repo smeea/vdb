@@ -212,9 +212,9 @@ const Decks = () => {
   return (
     <div className="deck-container mx-auto">
       <div className="flex gap-8">
-        <div className="flex flex-auto basis-10/12 flex-col gap-8">
-          <div className="flex gap-4">
-            <div className="flex-auto basis-5/12">
+        <div className="flex flex-col basis-full sm:basis-10/12 gap-8">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="basis-full sm:basis-5/12">
               <DeckSelect
                 deckid={deckid}
                 deck={deck}
@@ -225,7 +225,7 @@ const Decks = () => {
                 setShowInfo={setShowInfo}
               />
             </div>
-            <div className="flex-auto basis-7/12">
+            <div className="basis-full sm:basis-7/12">
               {deck && (showInfo || !isMobile) && (
                 <DeckDetails
                   deck={deck}
@@ -238,17 +238,17 @@ const Decks = () => {
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
-            <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex flex-col sm:flex-row gap-8">
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
                 Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
-                  <div className="md:basis-7/12">
+                  <div className="basis-full sm:basis-7/12">
                     <DeckCrypt deck={deck} />
                   </div>
-                  <div className="md:basis-5/12">
+                  <div className="basis-full sm:basis-5/12">
                     <DeckLibrary deck={deck} />
                   </div>
                 </>

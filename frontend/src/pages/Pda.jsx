@@ -12,7 +12,7 @@ const Pda = () => {
     <div className="twd-container mx-auto">
       <div className="flex gap-8">
         <div
-          className={`md:basis-8/12 xl:basis-9/12 ${
+          className={`sm:basis-8/12 xl:basis-9/12 ${
             isMobile && (error || !pdaResults) ? 'hidden' : ''
           }`}
         >
@@ -22,7 +22,7 @@ const Pda = () => {
           {error && <ErrorMessage>{error}</ErrorMessage>}
         </div>
         <div
-          className={`md:basis-1/3 xl:basis-1/4 ${isMobile && pdaResults ? 'hidden' : ''}`}
+          className={`sm:basis-4/12 xl:basis-3/12 ${isMobile && pdaResults ? 'hidden' : ''}`}
         >
           <PdaSearchForm error={error} setError={setError} />
         </div>
