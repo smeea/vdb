@@ -138,39 +138,37 @@ const Inventory = () => {
               inShared={Boolean(inventoryKey)}
             />
           ) : (
-            <div className="flex gap-8">
-              <InventoryDesktop
-                newCryptId={newCryptId}
-                newLibraryId={newLibraryId}
-                setNewCryptId={setNewCryptId}
-                setNewLibraryId={setNewLibraryId}
-                newCryptRef={newCryptRef}
-                newLibraryRef={newLibraryRef}
-                newCryptFocus={newCryptFocus}
-                newLibraryFocus={newLibraryFocus}
-                clan={clan}
-                type={type}
-                discipline={discipline}
-                setClan={setClan}
-                setType={setType}
-                setDiscipline={setDiscipline}
-                missingCryptByClan={missingCryptByClan}
-                missingLibraryByType={missingLibraryByType}
-                missingLibraryByDiscipline={missingLibraryByDiscipline}
-                setMissingCryptByClan={setMissingCryptByClan}
-                setMissingLibraryByType={setMissingLibraryByType}
-                setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
-                category={category}
-                setCategory={setCategory}
-                setShowAddDeck={setShowAddDeck}
-                setShowAddPrecon={setShowAddPrecon}
-                setShowShareModal={setShowShareModal}
-                sharedInventoryCrypt={sharedInventoryCrypt}
-                sharedInventoryLibrary={sharedInventoryLibrary}
-                setInventoryKey={setInventoryKey}
-                inShared={Boolean(inventoryKey)}
-              />
-            </div>
+            <InventoryDesktop
+              newCryptId={newCryptId}
+              newLibraryId={newLibraryId}
+              setNewCryptId={setNewCryptId}
+              setNewLibraryId={setNewLibraryId}
+              newCryptRef={newCryptRef}
+              newLibraryRef={newLibraryRef}
+              newCryptFocus={newCryptFocus}
+              newLibraryFocus={newLibraryFocus}
+              clan={clan}
+              type={type}
+              discipline={discipline}
+              setClan={setClan}
+              setType={setType}
+              setDiscipline={setDiscipline}
+              missingCryptByClan={missingCryptByClan}
+              missingLibraryByType={missingLibraryByType}
+              missingLibraryByDiscipline={missingLibraryByDiscipline}
+              setMissingCryptByClan={setMissingCryptByClan}
+              setMissingLibraryByType={setMissingLibraryByType}
+              setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
+              category={category}
+              setCategory={setCategory}
+              setShowAddDeck={setShowAddDeck}
+              setShowAddPrecon={setShowAddPrecon}
+              setShowShareModal={setShowShareModal}
+              sharedInventoryCrypt={sharedInventoryCrypt}
+              sharedInventoryLibrary={sharedInventoryLibrary}
+              setInventoryKey={setInventoryKey}
+              inShared={Boolean(inventoryKey)}
+            />
           )}
         </>
       ) : (

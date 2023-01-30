@@ -212,7 +212,7 @@ const Decks = () => {
   return (
     <div className="deck-container mx-auto">
       <div className="flex gap-8">
-        <div className="flex flex-col basis-full sm:basis-10/12 gap-8">
+        <div className="flex flex-col basis-full lg:basis-10/12 gap-8">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="basis-full sm:basis-5/12">
               <DeckSelect
@@ -245,22 +245,20 @@ const Decks = () => {
                 Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
-                  <div className="basis-full sm:basis-7/12">
+                  <div className="basis-full sm:basis-5/9">
                     <DeckCrypt deck={deck} />
                   </div>
-                  <div className="basis-full sm:basis-5/12">
+                  <div className="basis-full sm:basis-4/9">
                     <DeckLibrary deck={deck} />
                   </div>
                 </>
               ) : (
-                <>
-                  {error && <ErrorMessage>CONTAIN PLAYTEST CARDS</ErrorMessage>}
-                </>
+                <ErrorMessage>CONTAIN PLAYTEST CARDS</ErrorMessage>
               )}
             </div>
           )}
         </div>
-        <div className="hidden flex-auto basis-2/12 md:flex">
+        <div className="hidden flex-auto basis-2/12 lg:flex">
           <div className="w-full top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
             <DeckButtons
               deck={deck}
@@ -303,7 +301,7 @@ const Decks = () => {
       )}
       {showFloatingButtons && (
         <ButtonFloat
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);
@@ -319,8 +317,7 @@ const Decks = () => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          size="sm"
-          centered
+          noCloseButton
         >
           <DeckButtons
             deck={deck}

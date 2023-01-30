@@ -49,7 +49,7 @@ const ResultLayoutText = ({
   };
 
   return (
-    <div className="space-y-3">
+    <div className="w-full space-y-3">
       {card.Id > 200000 ? (
         <ResultCryptLayoutText
           card={card}

@@ -67,40 +67,34 @@ const Cards = () => {
     }
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
-  // const X_SPACING = 'space-x-8';
-  // const Y_SPACING = 'space-y-8';
-  // const TOP_SPACING = 'pt-8';
-
   return (
     <div className="cards-container mx-auto">
       <>
         {isMobile ? (
           <>
             {card && (
-              <>
-                <div className="flex w-full">
-                  <>
-                    {showImage ? (
-                      <CardImage
-                        className="w-full"
-                        card={card}
-                        set={imageSet}
-                      />
-                    ) : (
-                        <ResultLayoutText
-                          card={card}
-                          setImageSet={setImageSet}
-                          noClose={true}
-                        />
-                    )}
-                  </>
-                </div>
+              <div className="pb-10">
+                {showImage ? (
+                  <CardImage
+                    className="w-full"
+                    card={card}
+                    set={imageSet}
+                  />
+                ) : (
+                  <div className="p-3">
+                    <ResultLayoutText
+                      card={card}
+                      setImageSet={setImageSet}
+                      noClose
+                    />
+                  </div>
+                )}
                 <ButtonFloat onClick={toggleShowImage} variant="primary">
                   <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
                 </ButtonFloat>
-              </>
+              </div>
             )}
-            <div className="fixed bottom-[40px]  flex w-full flex-row  ">
+            <div className="fixed bottom-[40px] flex w-full flex-row bg-bgPrimary dark:bg-bgPrimaryDark p-1">
               <div className="w-full md:basis-8/12">
                 <QuickSelect
                   selectedCardid={card && card.Id}

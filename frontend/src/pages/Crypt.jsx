@@ -90,7 +90,7 @@ const Crypt = () => {
           <div
             className={`basis-full sm:basis-5/12 ${
               deck && addMode ? 'xl:basis-3/12' : 'xl:basis-4/12'
-            } 2xl:basis-3/12`}
+            } 2xl:basis-3/12 p-1 sm:p-0`}
           >
             <CryptSearchForm />
           </div>
