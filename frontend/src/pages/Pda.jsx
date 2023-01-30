@@ -22,7 +22,7 @@ const Pda = () => {
           {error && <ErrorMessage>{error}</ErrorMessage>}
         </div>
         <div
-          className={`w-full md:basis-1/3 xl:basis-1/4 ${isMobile && pdaResults ? 'hidden' : ''}`}
+          className={`md:basis-1/3 xl:basis-1/4 ${isMobile && pdaResults ? 'hidden' : ''}`}
         >
           <PdaSearchForm error={error} setError={setError} />
         </div>

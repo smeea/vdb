@@ -74,7 +74,7 @@ const InventoryMobile = ({
                 }
                 clan={clan}
                 setClan={setClan}
-                setMissingByClan={setMissingCryptByClan}
+                setMissingCryptByClan={setMissingCryptByClan}
                 inShared={inShared}
               />
             </div>

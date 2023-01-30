@@ -1,7 +1,5 @@
 import React from 'react';
-import ToggleOn from '@/assets/images/icons/toggle-on.svg';
-import ToggleOff from '@/assets/images/icons/toggle-off.svg';
-import { Hr, SeatingDeck, SeatingCustomDeckAdd } from '@/components';
+import { Toggle, Hr, SeatingDeck, SeatingCustomDeckAdd } from '@/components';
 
 const SeatingSelectRandom = ({
   addCustomDeck,
@@ -19,19 +17,11 @@ const SeatingSelectRandom = ({
     <div className="space-y-4">
       <Hr />
       <div className="space-y-2">
-        <div
-          className="flex items-center space-x-2"
-          onClick={() => setWithCustom(!withCustom)}
-        >
-          {withCustom ? (
-            <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
-          ) : (
-            <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
-          )}
+        <Toggle size="lg" isOn={withCustom} toggle={() => setWithCustom(!withCustom)}>
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Custom Decks
           </div>
-        </div>
+        </Toggle>
         <SeatingCustomDeckAdd addDeck={addCustomDeck} />
         <div className="flex">
           <div className="w-full space-y-1 md:w-1/2 lg:w-1/3">
@@ -89,15 +79,7 @@ const SeatingSelectRandom = ({
       </div>
       <Hr />
       <div className="space-y-2">
-        <div
-          className="flex items-center space-x-2"
-          onClick={() => setWithStandard(!withStandard)}
-        >
-          {withStandard ? (
-            <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
-          ) : (
-            <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
-          )}
+        <Toggle size="lg" isOn={withStandard} toggle={() => setWithStandard(!withStandard)}>
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Standard Decks (from{' '}
             <a
@@ -110,7 +92,7 @@ const SeatingSelectRandom = ({
             </a>
             )
           </div>
-        </div>
+        </Toggle>
         <div className="flex">
           <div className="w-full space-y-1 md:w-1/2 lg:w-1/3">
             {standardDecks

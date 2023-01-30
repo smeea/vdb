@@ -23,7 +23,7 @@ const CardImage = ({ card, set, className, onClick }) => {
           onError={resetImgSrc}
         />
       ) : (
-        <picture>
+        <picture className={className ?? 'min-w-[358px]'}>
           <source
             media="(max-width: 576px)"
             srcSet={`${baseUrl}.webp`}

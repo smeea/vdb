@@ -238,17 +238,17 @@ const Decks = () => {
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
-            <div className={`flex gap-8`}>
+            <div className="flex flex-col md:flex-row gap-8">
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
                 Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
-                  <div className="flex-auto basis-7/12">
+                  <div className="md:basis-7/12">
                     <DeckCrypt deck={deck} />
                   </div>
-                  <div className="flex-auto basis-5/12">
+                  <div className="md:basis-5/12">
                     <DeckLibrary deck={deck} />
                   </div>
                 </>
@@ -261,7 +261,7 @@ const Decks = () => {
           )}
         </div>
         <div className="hidden flex-auto basis-2/12 md:flex">
-          <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
+          <div className="w-full top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
             <DeckButtons
               deck={deck}
               setShowInfo={setShowInfo}

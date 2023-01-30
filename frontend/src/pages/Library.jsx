@@ -4,7 +4,7 @@ import {
   ResultLibrary,
   LibrarySearchForm,
   DeckSelectorAndDisplay,
-  ToogleSearchAddButton,
+  ToggleSearchAddButton,
 } from '@/components';
 import {
   useApp,
@@ -55,7 +55,7 @@ const Library = () => {
           <div
             className={`${
               showSearchForm
-                ? 'md:basis-0/12 lg:basis-1/12'
+                ? 'basis-0 lg:basis-1/12'
                 : 'md:basis-5/12 lg:basis-6/12'
             } ${deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12'}`}
           >
@@ -91,7 +91,7 @@ const Library = () => {
         )}
         {showSearchForm && (
           <div
-            className={`w-full md:basis-5/12 ${
+            className={`md:basis-5/12 ${
               deck && addMode ? 'xl:basis-3/12' : 'xl:basis-4/12'
             } 2xl:basis-1/4`}
           >
@@ -100,7 +100,7 @@ const Library = () => {
         )}
       </div>
       {showToggleAddMode && (
-        <ToogleSearchAddButton
+        <ToggleSearchAddButton
           addMode={addMode}
           toggleAddMode={toggleAddMode}
         />

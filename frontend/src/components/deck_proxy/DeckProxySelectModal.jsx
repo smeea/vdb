@@ -150,7 +150,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       title="Create PDF with Card Proxies"
     >
       <div className="space-y-5">
-        <div className="flex gap-6">
+        <div className="flex flex-col md:flex-row gap-5">
           <div className="md:basis-7/12">
             {deck.crypt && (
               <div
@@ -182,7 +182,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
         </div>
-        <div className="flex justify-end space-x-1">
+        <div className="flex flex-col md:flex-row space-y-1 sm:space-y-0 justify-center md:justify-end space-x-0 md:space-x-1">
           <Button variant="primary" onClick={() => handleGenerate(false)}>
             Generate - Gray gaps
           </Button>

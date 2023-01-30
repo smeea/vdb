@@ -1,9 +1,7 @@
 import React from 'react';
 import Dice3 from '@/assets/images/icons/dice-3-fill.svg';
-import ToggleOn from '@/assets/images/icons/toggle-on.svg';
-import ToggleOff from '@/assets/images/icons/toggle-off.svg';
 import X from '@/assets/images/icons/x.svg';
-import { Input, Button } from '@/components';
+import { Toggle, Input, Button } from '@/components';
 
 const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
   const handleChange = (event) => {
@@ -61,13 +59,7 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
           <Dice3 />
         </Button>
       </div>
-      <div className="flex items-center" onClick={toggle}>
-        {player.state ? (
-          <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
-        ) : (
-          <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
-        )}
-      </div>
+      <Toggle isOn={player.state} toggle={toggle} size="lg" />
       <div
         className="flex items-center cursor-pointer p-0.5 text-fgRed dark:text-fgRedDark"
         onClick={() => delPlayer(i)}

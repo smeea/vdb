@@ -78,26 +78,22 @@ const Cards = () => {
           <>
             {card && (
               <>
-                <div className="flex">
-                  <div className="m-0">
+                <div className="flex w-full">
+                  <>
                     {showImage ? (
                       <CardImage
-                        className="h-auto w-full"
+                        className="w-full"
                         card={card}
                         set={imageSet}
                       />
                     ) : (
-                      <>
-                        <div className=" ">
-                          <ResultLayoutText
-                            card={card}
-                            setImageSet={setImageSet}
-                            noClose={true}
-                          />
-                        </div>
-                      </>
+                        <ResultLayoutText
+                          card={card}
+                          setImageSet={setImageSet}
+                          noClose={true}
+                        />
                     )}
-                  </div>
+                  </>
                 </div>
                 <ButtonFloat onClick={toggleShowImage} variant="primary">
                   <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
@@ -153,14 +149,14 @@ const Cards = () => {
               )}
               {card && (
                 <div className="flex flex-row border border-bgSecondary dark:border-bgSecondaryDark">
-                  <div className="w-5/12">
+                  <div className="md:basis-5/12">
                     <CardImage
                       className="h-auto w-full"
                       card={card}
                       set={imageSet}
                     />
                   </div>
-                  <div className="w-7/12 p-5">
+                  <div className="md:basis-7/12 p-5">
                     <ResultLayoutText
                       card={card}
                       setImageSet={setImageSet}

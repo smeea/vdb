@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Spinner from '@/assets/images/icons/three-dots.svg';
 import Check2 from '@/assets/images/icons/check2.svg';
 import { Input, Button, ErrorOverlay } from '@/components';
@@ -11,7 +11,6 @@ const AccountPlaytestAdd = ({
   const [username, setUsername] = useState('');
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
-  const ref = useRef();
 
   const addPlaytester = () => {
     setSpinnerState(true);
@@ -63,23 +62,27 @@ const AccountPlaytestAdd = ({
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input
-        placeholder="Add Playtester (login)"
-        type="text"
-        name="username"
-        value={username}
-        onChange={handleChange}
-        ref={ref}
-      />
-      {!spinnerState ? (
-        <Button variant="primary" type="submit">
-          <Check2 />
-        </Button>
-      ) : (
-        <Button variant="primary">
-          <Spinner />
-        </Button>
-      )}
+      <div className="flex">
+        <Input
+          placeholder="Add Playtester (login)"
+          type="text"
+          name="username"
+          value={username}
+          onChange={handleChange}
+          className="w-full rounded-r-none"
+        />
+        {!spinnerState ? (
+          <Button
+            className="rounded-l-none"
+            variant="primary" type="submit">
+            <Check2 />
+          </Button>
+        ) : (
+          <Button variant="primary">
+            <Spinner />
+          </Button>
+        )}
+      </div>
       {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
     </form>
   );

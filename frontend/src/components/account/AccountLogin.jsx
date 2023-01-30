@@ -130,14 +130,6 @@ const AccountLogin = () => {
           </ConditionalTooltipOrModal>
         </div>
       </form>
-      {/* {showLoginTooltip && ( */}
-      {/*   <Modal */}
-      {/*     centered */}
-      {/*     handleClose={() => setShowLoginTooltip(false)} */}
-      {/*   > */}
-      {/*     <LoginTooltipText /> */}
-      {/*   </Modal> */}
-      {/* )} */}
     </div>
   );
 };

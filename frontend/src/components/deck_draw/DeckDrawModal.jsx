@@ -54,8 +54,8 @@ const DeckDrawModal = ({
     <>
       <Modal handleClose={handleClose} title="Deck Draw" size="lg">
       <div className="flex flex-col gap-5">
-        <div className="flex gap-5">
-          <div className="basis-full md:basis-7/12">
+        <div className="flex flex-col md:flex-row gap-5">
+          <div className="md:basis-7/12">
             <div>
               <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
                 <div className="flex w-full justify-between px-2">
@@ -119,7 +119,7 @@ const DeckDrawModal = ({
               />
             </div>
           </div>
-          <div className="basis-full md:basis-5/12">
+          <div className="md:basis-5/12">
             <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
               <div className="flex w-full justify-between px-2">
                 <div className="flex items-center font-bold">Hand</div>

@@ -4,7 +4,7 @@ import {
   ResultCrypt,
   CryptSearchForm,
   DeckSelectorAndDisplay,
-  ToogleSearchAddButton,
+  ToggleSearchAddButton,
 } from '@/components';
 import {
   useApp,
@@ -50,13 +50,13 @@ const Crypt = () => {
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex gap-8">
+      <div className="flex flex-row gap-8">
         {!isMobile && (
           <div
             className={`${
               showSearchForm
-                ? 'basis-0/12 lg:basis-1/12'
-                : 'basis-5/12 lg:basis-6/12'
+                ? 'basis-0 lg:basis-1/12'
+                : 'md:basis-5/12 lg:basis-6/12'
             } ${deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12'}`}
           >
             {decks !== undefined &&
@@ -88,7 +88,7 @@ const Crypt = () => {
         )}
         {showSearchForm && (
           <div
-            className={`w-full md:basis-5/12 ${
+            className={`md:basis-5/12 ${
               deck && addMode ? 'xl:basis-3/12' : 'xl:basis-4/12'
             } 2xl:basis-1/4`}
           >
@@ -97,7 +97,7 @@ const Crypt = () => {
         )}
       </div>
       {showToggleAddMode && (
-        <ToogleSearchAddButton
+        <ToggleSearchAddButton
           addMode={addMode}
           toggleAddMode={toggleAddMode}
         />

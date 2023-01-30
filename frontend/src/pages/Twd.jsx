@@ -22,7 +22,7 @@ const Twd = () => {
           {error && <ErrorMessage>{error}</ErrorMessage>}
         </div>
         <div
-          className={`w-full md:basis-1/3 xl:basis-1/4 ${isMobile && twdResults ? 'hidden' : ''}`}
+          className={`md:basis-1/3 xl:basis-1/4 ${isMobile && twdResults ? 'hidden' : ''}`}
         >
           <TwdSearchForm error={error} setError={setError} />
         </div>

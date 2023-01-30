@@ -31,12 +31,13 @@ const Documentation = () => {
     <div className="about-container mx-auto">
       <div className="space-y-6">
         <Banner />
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div>
             <Title>HELP / DOCUMENTATION</Title>
             <div>
               Documentation below describe some logic of VDB components.
-              <br />
+            </div>
+            <div>
               If something is not clear or you need additional information,
               please reach me by the contacts in the bottom of{' '}
               <Link to="/">About page</Link>

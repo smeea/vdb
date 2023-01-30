@@ -1,42 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import X from '@/assets/images/icons/x.svg';
-import ToggleOn from '@/assets/images/icons/toggle-on.svg';
-import ToggleOff from '@/assets/images/icons/toggle-off.svg';
-import { ButtonFloat, AccountPlaytestAdd, Button, Modal } from '@/components';
+import { AccountPlaytestPlayer, AccountPlaytestAdd, ButtonFloat, Button, Modal } from '@/components';
 import { useApp } from '@/context';
 
-const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
-  const [state, setState] = useState(true);
-
-  const handleClick = () => {
-    changePlaytester(username, !state);
-    setState(!state);
-  };
-
-  return (
-    <div
-      className={`flex items-center ${
-        state ? '' : 'text-midGray dark:text-midGrayDark'
-      }`}
-      onClick={handleClick}
-    >
-      <div className="flex items-center">
-        <>
-          {state ? (
-            <ToggleOn width="30" height="30" viewBox="0 0 16 16" />
-          ) : (
-            <ToggleOff width="30" height="30" viewBox="0 0 16 16" />
-          )}
-        </>
-      </div>
-      {username}
-    </div>
-  );
-};
-
-const AccountPlaytestManage = ({ setShow }) => {
+const AccountPlaytestModal = ({ setShow }) => {
   const { isNarrow, username } = useApp();
-
   const [playtesters, setPlaytesters] = useState([]);
   const [newPlaytesters, setNewPlaytesters] = useState([]);
 
@@ -116,4 +84,4 @@ const AccountPlaytestManage = ({ setShow }) => {
   );
 };
 
-export default AccountPlaytestManage;
+export default AccountPlaytestModal;

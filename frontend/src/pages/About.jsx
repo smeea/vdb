@@ -24,8 +24,8 @@ const About = () => {
     <div className="about-container mx-auto">
       <div className="space-y-6">
         <Banner />
-        <div className="space-y-4">
-          <div>
+        <div className="space-y-6">
+          <div className="space-y-1">
             <Title>WHAT IS IT</Title>
             <div>
               VDB is online card search, TWD (tournament winning decks) browser,
@@ -34,7 +34,7 @@ const About = () => {
             </div>
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Title>QUICKSTART</Title>
             <div>
               <ul className="space-y-2">
@@ -90,56 +90,54 @@ const About = () => {
                 <li key={idx}>{change}</li>
               ))}
             </ul>
-            <div>
+            <div className>
               <Link to="/changelog">&gt;&gt; Full changes history</Link>
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-1">
             <Title>RELATED PROJECTS</Title>
-            <div>
-              <a href="https://amaranth.vtes.co.nz/">
-                <b>Amaranth</b>
-              </a>
-              <br />
-              Online card search and deck-building tool
-            </div>
+            <div className="space-y-2">
+              <div>
+                <a href="https://amaranth.vtes.co.nz/">
+                  <b>Amaranth</b>
+                </a>
+                <div>Online card search and deck-building tool</div>
+              </div>
 
-            <div>
-              <a href="https://vtesdecks.com/">
-                <b>VTES Decks</b>
-              </a>
-              <br />
-              Online deck builder and TWD browser
-            </div>
+              <div>
+                <a href="https://vtesdecks.com/">
+                  <b>VTES Decks</b>
+                </a>
+                <div>Online deck builder and TWD browser</div>
+              </div>
 
-            <div>
-              <a href="https://codex-of-the-damned.org/">
-                <b>Codex of the Damned</b>
-              </a>
-              <br />
-              Strategy portal
-            </div>
+              <div>
+                <a href="https://codex-of-the-damned.org/">
+                  <b>Codex of the Damned</b>
+                </a>
+                <div>Strategy portal</div>
+              </div>
 
-            <div>
-              <a href="https://vtes-hook.com/">
-                <b>VTES Hook</b>
-              </a>
-              <br />
-              Events portal
-            </div>
+              <div>
+                <a href="https://vtes-hook.com/">
+                  <b>VTES Hook</b>
+                </a>
+                <div>Events portal</div>
+              </div>
 
-            <div>
-              <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
-                <b>There are more!</b>
-              </a>
-              <br />
-              Check{' '}
-              <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
-                VEKN forum
-              </a>{' '}
-              for more tools
-              <br />
+              <div>
+                <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
+                  <b>There are more!</b>
+                </a>
+                <div>
+                  Check{' '}
+                  <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
+                    VEKN forum
+                  </a>{' '}
+                  for more tools
+                </div>
+              </div>
             </div>
           </div>
 
@@ -148,18 +146,19 @@ const About = () => {
             <div>
               Development happens in{' '}
               <a href="https://github.com/smeea/vdb">this Github repository</a>
-              <br />
+            </div>
+            <div>
               Source code of the site is available under free{' '}
               <a href="https://en.wikipedia.org/wiki/MIT_License">
                 MIT license
               </a>
-              <br />
+            </div>
+            <div>
               Card images & icons are copyrighted by{' '}
               <a href="https://www.paradoxinteractive.com/">
                 Paradox Interactive AB
               </a>
             </div>
-
             <div>
               There is amazing KRCG project with useful{' '}
               <a href="https://static.krcg.org/">Static files</a> and{' '}
@@ -191,28 +190,26 @@ const About = () => {
 
           <div className="space-y-1">
             <Title>DONATIONS</Title>
-            <ul className="list-none space-y-2 p-0">
-              <li className="p-0">
-                Patreon:{' '}
-                <a href="https://www.patreon.com/smeea">
-                  www.patreon.com/smeea
-                </a>
-              </li>
-              <li className="p-0">
-                Bitcoin (BTC):{' '}
-                <a
-                  href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
-                >
-                  <div className="inline font-mono text-sm">{BTC_WALLET}</div>
-                </a>
-                <div
-                  className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark"
-                  onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
-                >
-                  <ClipboardFill className="inline" viewBox="0 0 18 18" />
-                </div>
-              </li>
-            </ul>
+            <div>
+              Patreon:{' '}
+              <a href="https://www.patreon.com/smeea">
+                www.patreon.com/smeea
+              </a>
+            </div>
+            <div>
+              Bitcoin (BTC):{' '}
+              <a
+                href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
+              >
+                <div className="inline font-mono text-sm">{BTC_WALLET}</div>
+              </a>
+              <div
+                className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark"
+                onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
+              >
+                <ClipboardFill className="inline" viewBox="0 0 18 18" />
+              </div>
+            </div>
           </div>
 
           <div className="space-y-1">
