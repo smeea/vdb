@@ -41,10 +41,10 @@ const ResultCryptTotal = ({
       <div>
         {Object.keys(byGroups).map((k) => {
           return (
-            <span key={k} className="inline-block whitespace-nowrap px-2">
-              <span className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            <div key={k} className="inline-block whitespace-nowrap px-2">
+              <div className="inline font-bold text-fgSecondary dark:text-fgSecondaryDark pr-0.5">
                 G{k == ANY ? 'X' : k}:
-              </span>
+              </div>
               {byGroups[k]}
               {!inHoF && (
                 <div
@@ -56,7 +56,7 @@ const ResultCryptTotal = ({
                     10}
                 </div>
               )}
-            </span>
+            </div>
           );
         })}
       </div>

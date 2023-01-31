@@ -23,7 +23,7 @@ const AccountPlaytestButtons = () => {
           />
         )}
       </div>
-      {showModal && <AccountPlaytestModal setShow={setShowModal} />}
+      {showModal && <AccountPlaytestModal size='sm' setShow={setShowModal} />}
     </>
   );
 };

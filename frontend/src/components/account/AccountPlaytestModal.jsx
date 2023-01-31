@@ -50,8 +50,8 @@ const AccountPlaytestModal = ({ setShow }) => {
   };
 
   return (
-    <>
-      <Modal handleClose={handleClose} title="Manage Playtesters">
+    <Modal handleClose={handleClose} title="Manage Playtesters">
+      <div className="space-y-3">
         <AccountPlaytestAdd
           playtesters={playtesters}
           newPlaytesters={newPlaytesters}
@@ -68,19 +68,18 @@ const AccountPlaytestModal = ({ setShow }) => {
               />
             ))}
         </div>
-
-        <div>
+        <div className="flex justify-end">
           <Button variant="primary" onClick={handleClose}>
             Close
           </Button>
         </div>
-      </Modal>
-      {isNarrow && (
-        <ButtonFloat onClick={handleClose} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
-    </>
+        {isNarrow && (
+          <ButtonFloat onClick={handleClose} variant="danger">
+            <X width="40" height="40" viewBox="0 0 16 16" />
+          </ButtonFloat>
+        )}
+      </div>
+    </Modal>
   );
 };
 

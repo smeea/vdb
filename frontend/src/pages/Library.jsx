@@ -91,13 +91,12 @@ const Library = () => {
           </div>
         )}
         {showSearchForm && (
-          <div
-            className={`basis-full sm:basis-5/12 ${
-              deck && addMode ? 'xl:basis-3/12' : 'xl:basis-4/12'
-            } 2xl:basis-3/12 p-1 sm:p-0`}
-          >
-            <LibrarySearchForm />
-          </div>
+          <>
+            <div className='basis-full sm:basis-5/12 lg:basis-4/12 xl:basis-3/12 p-1 sm:p-0'>
+              <LibrarySearchForm />
+            </div>
+            <div className={`hidden ${deck && addMode ? '' : 'lg:flex lg:basis-1/12'}`} />
+          </>
         )}
       </div>
       {showToggleAddMode && (

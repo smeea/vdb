@@ -89,12 +89,14 @@ const Cards = () => {
                     />
                   </div>
                 )}
-                <ButtonFloat onClick={toggleShowImage} variant="primary">
-                  <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
-                </ButtonFloat>
+                <div className="fixed z-30">
+                  <ButtonFloat onClick={toggleShowImage} variant="primary">
+                    <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
+                  </ButtonFloat>
+                </div>
               </div>
             )}
-            <div className="fixed bottom-[40px] flex w-full flex-row bg-bgPrimary dark:bg-bgPrimaryDark p-1">
+            <div className="fixed z-20 bottom-[40px] flex w-full flex-row bg-bgPrimary dark:bg-bgPrimaryDark p-1">
               <div className="w-full md:basis-8/12">
                 <QuickSelect
                   selectedCardid={card && card.Id}
@@ -102,32 +104,34 @@ const Cards = () => {
                 />
               </div>
             </div>
-            <ButtonFloat
-              onClick={randomCrypt}
-              position="top"
-              variant="secondary"
-            >
-              <Dice3
-                width="22"
-                height="22"
-                className="pr-1"
-                viewBox="0 0 16 16"
-              />
-              <b>C</b>
-            </ButtonFloat>
-            <ButtonFloat
-              onClick={randomLibrary}
-              position="middle"
-              variant="secondary"
-            >
-              <Dice3
-                width="22"
-                height="22"
-                className="pr-1"
-                viewBox="0 0 16 16"
-              />
-              <b>L</b>
-            </ButtonFloat>
+            <div className="fixed z-10">
+              <ButtonFloat
+                onClick={randomCrypt}
+                position="top"
+                variant="secondary"
+              >
+                <Dice3
+                  width="22"
+                  height="22"
+                  className="pr-1"
+                  viewBox="0 0 16 16"
+                />
+                <b>C</b>
+              </ButtonFloat>
+              <ButtonFloat
+                onClick={randomLibrary}
+                position="middle"
+                variant="secondary"
+              >
+                <Dice3
+                  width="22"
+                  height="22"
+                  className="pr-1"
+                  viewBox="0 0 16 16"
+                />
+                <b>L</b>
+              </ButtonFloat>
+            </div>
           </>
         ) : (
           <div className="flex gap-8">
@@ -142,15 +146,14 @@ const Cards = () => {
                 </div>
               )}
               {card && (
-                <div className="flex flex-row border border-bgSecondary dark:border-bgSecondaryDark">
-                  <div className="md:basis-5/12">
+                <div className="flex border border-bgSecondary dark:border-bgSecondaryDark">
+                  <div>
                     <CardImage
-                      className="h-auto w-full"
                       card={card}
                       set={imageSet}
                     />
                   </div>
-                  <div className="md:basis-7/12 p-5">
+                  <div className="w-full p-5">
                     <ResultLayoutText
                       card={card}
                       setImageSet={setImageSet}
@@ -162,7 +165,7 @@ const Cards = () => {
               )}
             </div>
             <div className="basis-2/12">
-              <div className="top-[77px] z-20 flex flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark">
+              <div className="top-[77px] z-30 flex flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark">
                 <ButtonIconed
                   variant="secondary"
                   onClick={() => randomCrypt()}

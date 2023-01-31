@@ -67,7 +67,7 @@ const Crypt = () => {
         )}
         {showResultCol && (
           <div
-            className={`basis-full sm:basis-7/12 lg:basis-6/12 ${
+            className={`sm:basis-7/12 lg:basis-6/12 ${
               deck && addMode ? 'xl:basis-5/12' : 'xl:basis-6/12'
             }`}
           >
@@ -87,13 +87,12 @@ const Crypt = () => {
           </div>
         )}
         {showSearchForm && (
-          <div
-            className={`basis-full sm:basis-5/12 ${
-              deck && addMode ? 'xl:basis-3/12' : 'xl:basis-4/12'
-            } 2xl:basis-3/12 p-1 sm:p-0`}
-          >
-            <CryptSearchForm />
-          </div>
+          <>
+            <div className='basis-full sm:basis-5/12 lg:basis-4/12 xl:basis-3/12 p-1 sm:p-0'>
+              <CryptSearchForm />
+            </div>
+            <div className={`hidden ${deck && addMode ? '' : 'lg:flex lg:basis-1/12'}`} />
+          </>
         )}
       </div>
       {showToggleAddMode && (

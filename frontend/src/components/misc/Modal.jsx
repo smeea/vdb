@@ -12,6 +12,8 @@ const Modal = ({ handleClose, centered, size = 'md', title, children, noPadding 
 
   const getWidth = (s) => {
     switch (s) {
+      case 'sm':
+        return 'min-w-full sm:min-w-[65%] md:min-w-[50%] lg:min-w-[45%] xl:min-w-[35%] 2xl:min-w-[25%]';
       case 'md':
         return 'min-w-full sm:min-w-[80%] md:min-w-[65%] lg:min-w-[55%] xl:min-w-[45%] 2xl:min-w-[40%]';
       case 'lg':

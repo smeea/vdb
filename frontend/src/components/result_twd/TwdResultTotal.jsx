@@ -33,8 +33,8 @@ const TwdResultTotal = ({
         {Object.keys(byYear).map((k) => {
           return (
             <div key={k} className="inline-block whitespace-nowrap px-2">
-              <div className="inline font-bold text-fgSecondary dark:text-fgSecondaryDark">
-                {k}:{' '}
+              <div className="inline font-bold text-fgSecondary dark:text-fgSecondaryDark pr-0.5">
+                {k}:
               </div>
               {byYear[k]}
             </div>

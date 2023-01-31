@@ -19,8 +19,9 @@
 - Refactor fetch to useAsync+useFetch hook https://youtu.be/vrIxu-kfAUo&t=546
 - Refactor InventoryCrypt and InventoryLibrary
 - Explicit image width/height
-- Test bundle size with lazy load of pages
 - ResultDisciplineImage class to width/size
+- Resize clan/types/misc images
+- Merge disciplines and types images folders OR split in Text/Rulings
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter

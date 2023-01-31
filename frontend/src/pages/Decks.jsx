@@ -212,7 +212,8 @@ const Decks = () => {
   return (
     <div className="deck-container mx-auto">
       <div className="flex gap-8">
-        <div className="flex flex-col basis-full lg:basis-10/12 gap-8">
+        <div className="hidden xl:flex xl:basis-1/12" />
+        <div className="flex flex-col basis-full gap-8">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="basis-full sm:basis-5/12">
               <DeckSelect
@@ -258,8 +259,8 @@ const Decks = () => {
             </div>
           )}
         </div>
-        <div className="hidden flex-auto basis-2/12 lg:flex">
-          <div className="w-full top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
+        <div className="hidden lg:block min-w-[175px]">
+          <div className="w-full sticky top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
             <DeckButtons
               deck={deck}
               setShowInfo={setShowInfo}
