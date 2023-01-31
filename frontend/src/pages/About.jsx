@@ -192,15 +192,11 @@ const About = () => {
             <Title>DONATIONS</Title>
             <div>
               Patreon:{' '}
-              <a href="https://www.patreon.com/smeea">
-                www.patreon.com/smeea
-              </a>
+              <a href="https://www.patreon.com/smeea">www.patreon.com/smeea</a>
             </div>
             <div>
               Bitcoin (BTC):{' '}
-              <a
-                href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}
-              >
+              <a href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}>
                 <div className="inline font-mono text-sm">{BTC_WALLET}</div>
               </a>
               <div

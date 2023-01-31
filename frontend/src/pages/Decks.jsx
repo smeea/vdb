@@ -212,9 +212,9 @@ const Decks = () => {
   return (
     <div className="deck-container mx-auto">
       <div className="flex gap-8">
-        <div className="hidden xl:flex xl:basis-1/12" />
-        <div className="flex flex-col basis-full gap-8">
-          <div className="flex flex-col sm:flex-row gap-4">
+        <div className="hidden min-w-[175px] xl:block" />
+        <div className="flex basis-full flex-col gap-8">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <div className="basis-full sm:basis-5/12">
               <DeckSelect
                 deckid={deckid}
@@ -239,7 +239,7 @@ const Decks = () => {
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
-            <div className="flex flex-col sm:flex-row gap-8">
+            <div className="flex flex-col gap-8 sm:flex-row">
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
@@ -259,8 +259,8 @@ const Decks = () => {
             </div>
           )}
         </div>
-        <div className="hidden lg:block min-w-[175px]">
-          <div className="w-full sticky top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
+        <div className="hidden min-w-[175px] lg:block">
+          <div className="sticky top-[77px] z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark">
             <DeckButtons
               deck={deck}
               setShowInfo={setShowInfo}
@@ -368,9 +368,9 @@ export const loader = async ({ params }) => {
     credentials: 'include',
   };
 
-  const response = await fetch(url, options)
+  const response = await fetch(url, options);
   if (!response.ok) return { error: response.status };
-  const deckData = await response.json()
+  const deckData = await response.json();
 
   return defer({ deckData });
 };

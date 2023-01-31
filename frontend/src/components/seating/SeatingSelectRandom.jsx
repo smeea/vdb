@@ -17,13 +17,19 @@ const SeatingSelectRandom = ({
     <div className="space-y-4">
       <Hr />
       <div className="space-y-2">
-        <Toggle size="lg" isOn={withCustom} toggle={() => setWithCustom(!withCustom)}>
+        <Toggle
+          size="lg"
+          isOn={withCustom}
+          toggle={() => setWithCustom(!withCustom)}
+        >
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Custom Decks
           </div>
         </Toggle>
-        <SeatingCustomDeckAdd addDeck={addCustomDeck} />
-        <div className="flex">
+        <div className="w-full sm:w-1/3">
+          <SeatingCustomDeckAdd addDeck={addCustomDeck} />
+        </div>
+        <div className="flex flex-wrap">
           <div className="w-full space-y-1 md:w-1/2 lg:w-1/3">
             {customDecks
               .slice(0, Math.ceil(customDecks.length / 3))
@@ -79,7 +85,11 @@ const SeatingSelectRandom = ({
       </div>
       <Hr />
       <div className="space-y-2">
-        <Toggle size="lg" isOn={withStandard} toggle={() => setWithStandard(!withStandard)}>
+        <Toggle
+          size="lg"
+          isOn={withStandard}
+          toggle={() => setWithStandard(!withStandard)}
+        >
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Standard Decks (from{' '}
             <a
@@ -93,8 +103,8 @@ const SeatingSelectRandom = ({
             )
           </div>
         </Toggle>
-        <div className="flex">
-          <div className="w-full space-y-1 md:w-1/2 lg:w-1/3">
+        <div className="flex flex-wrap">
+          <div className="w-full space-y-1 sm:w-1/2 md:w-1/3">
             {standardDecks
               .slice(0, Math.ceil(standardDecks.length / 3))
               .map((d, idx) => {
@@ -109,7 +119,7 @@ const SeatingSelectRandom = ({
                 );
               })}
           </div>
-          <div className="w-full space-y-1 md:w-1/2 lg:w-1/3">
+          <div className="w-full space-y-1 sm:w-1/2 md:w-1/3">
             {standardDecks
               .slice(
                 Math.ceil(standardDecks.length / 3),
@@ -127,7 +137,7 @@ const SeatingSelectRandom = ({
                 );
               })}
           </div>
-          <div className="w-full space-y-1 md:w-1/2 lg:w-1/3">
+          <div className="w-full space-y-1 sm:w-1/2 md:w-1/3">
             {standardDecks
               .slice(Math.ceil((standardDecks.length * 2) / 3))
               .map((d, idx) => {

@@ -58,6 +58,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
             <ConditionalTooltip
               overlay={<UsedPopover cardid={card.c.Id} />}
               disabled={isMobile}
+              noPadding
             >
               <div
                 className={`flex justify-center text-lg ${
@@ -75,10 +76,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
             <div className="flex justify-center text-lg">{card.q}</div>
           )}
         </td>
-        <td
-          className="2xl:min-w-[60px] min-w-[30px]"
-          onClick={() => handleClick(card.c)}
-        >
+        <td className="min-w-[55px]" onClick={() => handleClick(card.c)}>
           <div className="flex justify-center">
             <ResultLibraryTypeImage value={card.c.Type} />
           </div>
@@ -88,12 +86,14 @@ const TwdResultLibraryKeyCards = ({ library }) => {
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
           >
-            <ResultLibraryName card={card.c} />
+            <div className="flex">
+              <ResultLibraryName card={card.c} />
+            </div>
           </ConditionalTooltip>
         </td>
         {!isMobile && (
           <td
-            className="2xl:min-w-[85px] min-w-[62px]"
+            className="min-w-[62px] 2xl:min-w-[85px]"
             onClick={() => handleClick(card.c)}
           >
             <div className="flex items-center justify-center">
@@ -110,7 +110,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
   });
 
   return (
-    <>
+    <div>
       <div className="font-bold">
         {isMobile ? `Library [${libraryTotal}]` : 'Key cards:'}
       </div>
@@ -124,7 +124,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
           handleClose={handleModalCardClose}
         />
       )}
-    </>
+    </div>
   );
 };
 

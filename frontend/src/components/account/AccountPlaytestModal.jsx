@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import X from '@/assets/images/icons/x.svg';
-import { AccountPlaytestPlayer, AccountPlaytestAdd, ButtonFloat, Button, Modal } from '@/components';
+import {
+  AccountPlaytestPlayer,
+  AccountPlaytestAdd,
+  ButtonFloat,
+  Button,
+  Modal,
+} from '@/components';
 import { useApp } from '@/context';
 
 const AccountPlaytestModal = ({ setShow }) => {

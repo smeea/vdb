@@ -4,6 +4,7 @@ import {
   DeckLibraryTable,
   ResultModal,
   Tooltip,
+  Banned,
 } from '@/components';
 import { useApp } from '@/context';
 import { isTrifle } from '@/utils';
@@ -69,12 +70,10 @@ const TwdResultLibraryByType = ({ library }) => {
     handleModalCardClose,
   } = useModalCardController(cards);
 
-  const LibraryTypes = [];
-
-  cardtypeSortedFull
+  const typeRows = cardtypeSortedFull
     .filter((cardtype) => libraryByType[cardtype] !== undefined)
     .map((cardtype, idx) => {
-      LibraryTypes.push(
+      return (
         <tr
           key={cardtype}
           className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
@@ -83,7 +82,7 @@ const TwdResultLibraryByType = ({ library }) => {
               : 'bg-bgPrimary dark:bg-bgPrimaryDark'
           }`}
         >
-          <td className="2xl:min-w-[60px] min-w-[30px]">
+          <td className="min-w-[55px]">
             <div className="flex justify-center">
               <ResultLibraryTypeImage value={cardtype} />
             </div>
@@ -91,6 +90,7 @@ const TwdResultLibraryByType = ({ library }) => {
           <td
             onMouseOver={() => handleHover(cardtype)}
             onClick={() => handleClick(cardtype)}
+            className="w-full"
           >
             <Tooltip
               placement="right"
@@ -119,12 +119,12 @@ const TwdResultLibraryByType = ({ library }) => {
     });
 
   return (
-    <>
+    <div>
       <div className="font-bold">
-        Library [{libraryTotal}]{hasBanned && ' - WITH BANNED'}
+        Library [{libraryTotal}] {hasBanned && <Banned />}
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
-        <tbody>{LibraryTypes}</tbody>
+        <tbody>{typeRows}</tbody>
       </table>
       {shouldShowModal && (
         <ResultModal
@@ -133,7 +133,7 @@ const TwdResultLibraryByType = ({ library }) => {
           handleClose={handleModalCardClose}
         />
       )}
-    </>
+    </div>
   );
 };
 

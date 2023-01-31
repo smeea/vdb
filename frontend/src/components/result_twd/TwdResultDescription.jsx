@@ -1,140 +1,46 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import CalendarEvent from '@/assets/images/icons/calendar-event.svg';
-import GeoAltFill from '@/assets/images/icons/geo-alt-fill.svg';
-import PeopleFill from '@/assets/images/icons/people-fill.svg';
-import PersonFill from '@/assets/images/icons/person-fill.svg';
-import TagFill from '@/assets/images/icons/tag-fill.svg';
-import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
-import { TwdResultTags, TwdOpenDeckButton, DeckCloneButton } from '@/components';
-import { useApp, searchTwdForm, clearSearchForm } from '@/context';
-import { useTags } from '@/hooks';
+import {
+  TwdResultDescriptionPlayers,
+  TwdResultDescriptionText,
+  TwdOpenDeckButton,
+  DeckCloneButton,
+} from '@/components';
+import { useApp } from '@/context';
 
 const TwdResultDescription = ({ deck }) => {
-  const { username, isMobile, isDesktop } = useApp();
-  const tags = useTags(deck.crypt, deck.library);
-  const navigate = useNavigate();
-
-  const handleClick = (target, value) => {
-    clearSearchForm('twd');
-    searchTwdForm[target] = value;
-    navigate(
-      `/twd?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`
-    );
-  };
-
-  const Description = (
-    <>
-      <table>
-        <tbody>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center font-bold">
-                {isMobile ? <CalendarEvent /> : <>Date:</>}
-              </div>
-            </td>
-            <td>{deck['creation_date']}</td>
-          </tr>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center font-bold">
-                {isMobile ? <TrophyFill /> : <>Event:</>}
-              </div>
-            </td>
-            <td>{deck['event']}</td>
-          </tr>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center font-bold">
-                {isMobile ? <GeoAltFill /> : <>Location:</>}
-              </div>
-            </td>
-            <td>
-              <div
-                className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-                onClick={() => handleClick('location', deck['location'])}
-              >
-                {deck['location']}
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center font-bold">
-                {isMobile ? <PersonFill /> : <>Player:</>}
-              </div>
-            </td>
-            <td>
-              <div
-                className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-                onClick={() => handleClick('author', deck['author'])}
-              >
-                {deck['author']} <br />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center">
-                {isMobile ? <TagFill /> : <>Deck:</>}
-              </div>
-            </td>
-            <td>{deck['name']}</td>
-          </tr>
-        </tbody>
-      </table>
-      {(tags.superior.length > 0 || tags.base.length > 0) && (
-        <TwdResultTags tags={tags} />
-      )}
-    </>
-  );
+  const { username, isDesktop } = useApp();
 
   return (
     <>
       {isDesktop ? (
-        <>
-          <div
-            className={`flex items-center justify-center rounded-md border-dashed text-lg text-fgSecondary dark:text-fgSecondaryDark ${
-              deck['players'] >= 30
-                ? 'border-[3px] border-fgSecondary font-bold dark:border-fgSecondaryDark'
-                : 'border-2 border-borderPrimary dark:border-borderPrimaryDark'
-            }`}
-            title="Players"
-          >
-            <div className="flex items-center">
-              <PeopleFill />
-            </div>{' '}
-            {deck['players']}
+        <div className="space-y-2">
+          <div>
+            <TwdResultDescriptionPlayers players={deck.players} />
+            <TwdResultDescriptionText deck={deck} />
           </div>
-          {Description}
-          <div className="flex flex-row">
-            <div className="md:basis-1/2">
+          <div className="flex gap-2">
+            <div className="w-full">
               <TwdOpenDeckButton deckid={deck['deckid']} />
             </div>
-            <div className="justify-end md:basis-1/2">
-              {username && <DeckCloneButton deck={deck} noRedirect />}
-            </div>
-          </div>
-        </>
-      ) : (
-        <div className="flex flex-row ">
-          <div className="basis-9/12">{Description}</div>
-          <div className="basis-1/4">
-            <div className="flex flex-col space-y-1">
-              <div
-                className={`flex items-center  justify-center rounded-md border-dashed text-lg text-fgSecondary dark:text-fgSecondaryDark ${
-                  deck['players'] >= 30
-                    ? 'border-[3px] border-fgSecondary font-bold dark:border-fgSecondaryDark'
-                    : 'border-2 border-borderPrimary dark:border-borderPrimaryDark'
-                }`}
-              >
-                <div className="flex items-center">
-                  <PeopleFill />
-                </div>{' '}
-                {deck['players']}
+            {username && (
+              <div className="w-full">
+                <DeckCloneButton deck={deck} noRedirect />
               </div>
-              <TwdOpenDeckButton deckid={deck['deckid']} />
-              {username && <DeckCloneButton deck={deck} src="twd" inTwd />}
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="flex px-1 sm:px-0">
+          <div className="basis-9/12">
+            <TwdResultDescriptionText deck={deck} />
+          </div>
+          <div className="basis-3/12">
+            <div className="flex flex-col gap-2">
+              <TwdResultDescriptionPlayers players={deck.players} />
+              <div className="flex flex-col gap-1">
+                <TwdOpenDeckButton deckid={deck['deckid']} />
+                {username && <DeckCloneButton deck={deck} src="twd" inTwd />}
+              </div>
             </div>
           </div>
         </div>

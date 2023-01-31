@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   ConditionalTooltip,
   DeckDrawProbabilityText,
-  Modal
+  Modal,
 } from '@/components';
 import { useApp } from '@/context';
 import { drawProbability } from '@/utils';
@@ -13,8 +13,13 @@ const DeckDrawProbability = ({ cardName, n, N, k }) => {
 
   return (
     <>
-      <ConditionalTooltip disabled={isMobile}
-        overlay={<div className="p-2"><DeckDrawProbabilityText N={N} n={n} k={k} /></div>}
+      <ConditionalTooltip
+        disabled={isMobile}
+        overlay={
+          <div className="p-2">
+            <DeckDrawProbabilityText N={N} n={n} k={k} />
+          </div>
+        }
       >
         <div
           className="text-fgSecondary dark:text-fgSecondaryDark"
@@ -35,7 +40,7 @@ const DeckDrawProbability = ({ cardName, n, N, k }) => {
         </Modal>
       )}
     </>
-  )
-}
+  );
+};
 
 export default DeckDrawProbability;

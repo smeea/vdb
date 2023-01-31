@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  ResultCryptTableRowCommon,
-  DeckDrawProbability,
-} from '@/components';
+import { ResultCryptTableRowCommon, DeckDrawProbability } from '@/components';
 import { useKeyDisciplines } from '@/hooks';
 
 const DeckDrawCryptTable = ({
@@ -12,7 +9,6 @@ const DeckDrawCryptTable = ({
   ashHeap,
   crypt,
 }) => {
-
   let N = 0;
   let n = 0;
   const nonPlayed = {};
@@ -40,10 +36,11 @@ const DeckDrawCryptTable = ({
           return (
             <tr
               key={`${idx}-${card.Id}`}
-              className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2
-                ? 'bg-bgThird dark:bg-bgThirdDark'
-                : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-                } `}
+              className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+                idx % 2
+                  ? 'bg-bgThird dark:bg-bgThirdDark'
+                  : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+              } `}
             >
               <ResultCryptTableRowCommon
                 card={card}
@@ -56,7 +53,12 @@ const DeckDrawCryptTable = ({
               />
               <td className="w-9 text-right text-fgSecondary  dark:text-fgSecondaryDark">
                 {!ashHeap && (
-                  <DeckDrawProbability cardName={card.Name} N={N} n={n} k={nonPlayed[card.Id]} />
+                  <DeckDrawProbability
+                    cardName={card.Name}
+                    N={N}
+                    n={n}
+                    k={nonPlayed[card.Id]}
+                  />
                 )}
               </td>
             </tr>

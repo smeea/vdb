@@ -22,7 +22,8 @@ const TooltipText = () => {
         Changing public name will not change author name of your existing decks.
       </div>
       <div>
-        Public name is <b>not</b> your account username (the one you login with, which cannot be changed).
+        Public name is <b>not</b> your account username (the one you login with,
+        which cannot be changed).
       </div>
     </>
   );
@@ -65,10 +66,12 @@ const AccountChangeName = () => {
           <PenFill />
         </div>
         <div className="flex">Change public name</div>
-        <ConditionalTooltipOrModal title="Public name" isModal={isMobile} overlay={<TooltipText />}>
-          <div className="text-fgThird dark:text-fgThirdDark">
-            [?]
-          </div>
+        <ConditionalTooltipOrModal
+          title="Public name"
+          isModal={isMobile}
+          overlay={<TooltipText />}
+        >
+          <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
         </ConditionalTooltipOrModal>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>

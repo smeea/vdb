@@ -14,7 +14,13 @@ import {
   FloatingPortal,
 } from '@floating-ui/react';
 
-const Tooltip = ({ children, className = 'inline', overlay, noPadding, placement = 'right' }) => {
+const Tooltip = ({
+  children,
+  className = 'inline',
+  overlay,
+  noPadding,
+  placement = 'right',
+}) => {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
 

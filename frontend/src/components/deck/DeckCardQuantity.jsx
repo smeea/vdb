@@ -14,6 +14,7 @@ const DeckCardQuantity = ({
   cardChange,
   inProxy,
   isEditable,
+  inMissing,
 }) => {
   const { inventoryMode, isMobile } = useApp();
 
@@ -35,7 +36,7 @@ const DeckCardQuantity = ({
   };
 
   const getInventoryColor = () => {
-    if (inventoryMode && inventoryType) {
+    if (inventoryMode && inventoryType && !inMissing) {
       if (inProxy) {
         return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
           ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'

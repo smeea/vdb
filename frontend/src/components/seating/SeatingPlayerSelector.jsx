@@ -61,7 +61,7 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
       </div>
       <Toggle isOn={player.state} toggle={toggle} size="lg" />
       <div
-        className="flex items-center cursor-pointer p-0.5 text-fgRed dark:text-fgRedDark"
+        className="flex cursor-pointer items-center p-0.5 text-fgRed dark:text-fgRedDark"
         onClick={() => delPlayer(i)}
       >
         <X width="22" height="22" viewBox="0 0 16 16" />

@@ -47,7 +47,6 @@ const InventoryCardQuantity = ({
         <>
           <a
             className="relative before:absolute before:inset-[-12px] before:content-['']"
-
             onClick={() => handleQuantityChange(-1)}
           >
             <Button

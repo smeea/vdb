@@ -58,40 +58,25 @@ const TwdResult = ({ results, setResults }) => {
           deck.library = cardsData.library;
 
           return (
-            <React.Fragment key={deck['deckid']}>
-              <div className="flex flex-row ">
-                <div
-                  className={`basis-full md:basis-full xl:basis-1/4 ${
-                    isMobile ? '' : ''
-                  }`}
-                >
+            <div className="space-y-6" key={deck['deckid']}>
+              <div className="flex flex-col gap-2 lg:flex-row">
+                <div className="basis-full lg:basis-1/4">
                   <TwdResultDescription deck={deck} />
                 </div>
-                {isMobile ? (
-                  <>
-                    <div className="basis-1/2 ">
-                      <TwdResultCrypt crypt={deck['crypt']} />
-                    </div>
-                    <div className="basis-1/2 ">
-                      <TwdResultLibraryKeyCards library={deck['library']} />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="basis-full md:basis-1/3 xl:basis-1/4">
-                      <TwdResultCrypt crypt={deck['crypt']} />
-                    </div>
-                    <div className="basis-full md:basis-1/3 xl:basis-1/4">
-                      <TwdResultLibraryByType library={deck['library']} />
-                    </div>
-                    <div className="basis-full md:basis-1/3 xl:basis-1/4 ">
-                      <TwdResultLibraryKeyCards library={deck['library']} />
-                    </div>
-                  </>
-                )}
+                <div className="flex basis-full gap-2 lg:basis-3/4">
+                  <div className="basis-1/2 sm:basis-1/3">
+                    <TwdResultCrypt crypt={deck['crypt']} />
+                  </div>
+                  <div className="hidden sm:block sm:basis-1/3">
+                    <TwdResultLibraryByType library={deck['library']} />
+                  </div>
+                  <div className="basis-1/2 sm:basis-1/3">
+                    <TwdResultLibraryKeyCards library={deck['library']} />
+                  </div>
+                </div>
               </div>
               {index + 1 < showCounter && <Hr isThick />}
-            </React.Fragment>
+            </div>
           );
         }
       });
@@ -106,17 +91,19 @@ const TwdResult = ({ results, setResults }) => {
         sortMethod={twdSearchSort}
         setSortMethod={changeTwdSearchSort}
       />
-      <div className="space-y-4">{resultEntries}</div>
-      {deckCounter > showCounter && (
-        <div className="flex justify-center ">
-          <Button
-            variant="primary"
-            onClick={() => setShowCounter(showCounter + showCounterStep)}
-          >
-            Show More ({deckCounter - showCounter} left)
-          </Button>
-        </div>
-      )}
+      <div className="space-y-4">
+        {resultEntries}
+        {deckCounter > showCounter && (
+          <div className="flex justify-center ">
+            <Button
+              variant="primary"
+              onClick={() => setShowCounter(showCounter + showCounterStep)}
+            >
+              Show More ({deckCounter - showCounter} left)
+            </Button>
+          </div>
+        )}
+      </div>
       {isMobile && showFloatingButtons && (
         <ButtonFloat onClick={handleClear} variant="danger">
           <X width="40" height="40" viewBox="0 0 16 16" />

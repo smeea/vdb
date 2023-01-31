@@ -50,13 +50,11 @@ const Crypt = () => {
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex flex-row gap-8">
+      <div className="flex gap-8">
         {!isMobile && (
           <div
             className={`${
-              showSearchForm
-                ? 'lg:basis-1/12'
-                : 'sm:basis-5/12 lg:basis-6/12'
+              showSearchForm ? 'lg:basis-1/12' : 'sm:basis-5/12 lg:basis-6/12'
             } ${deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12'}`}
           >
             {decks !== undefined &&
@@ -66,11 +64,7 @@ const Crypt = () => {
           </div>
         )}
         {showResultCol && (
-          <div
-            className={`sm:basis-7/12 lg:basis-6/12 ${
-              deck && addMode ? 'xl:basis-5/12' : 'xl:basis-6/12'
-            }`}
-          >
+          <div className="sm:basis-7/12 lg:basis-7/12 xl:basis-5/12">
             {((isMobile && cryptCompare && cryptResults) ||
               (!isMobile && cryptCompare)) && (
               <div>
@@ -88,10 +82,14 @@ const Crypt = () => {
         )}
         {showSearchForm && (
           <>
-            <div className='basis-full sm:basis-5/12 lg:basis-4/12 xl:basis-3/12 p-1 sm:p-0'>
+            <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
               <CryptSearchForm />
             </div>
-            <div className={`hidden ${deck && addMode ? '' : 'lg:flex lg:basis-1/12'}`} />
+            <div
+              className={`hidden ${
+                deck && addMode ? '' : 'lg:flex lg:basis-1/12'
+              }`}
+            />
           </>
         )}
       </div>

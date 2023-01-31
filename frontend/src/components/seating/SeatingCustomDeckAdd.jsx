@@ -23,7 +23,7 @@ const SeatingRandomDeckAddForm = ({ addDeck }) => {
         placeholder="Add Random Deck"
         value={name}
         onChange={handleChange}
-        className="rounded-r-none"
+        className="w-full rounded-r-none"
       />
       <Button variant="primary" type="submit" className="rounded-l-none">
         <Check2 />

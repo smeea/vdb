@@ -13,9 +13,11 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex flex-col sm:flex-row gap-2">
+      <div className="flex flex-col gap-2 sm:flex-row">
         <div
-          className={`basis-full ${deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-8/12'}`}
+          className={`basis-full ${
+            deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-8/12'
+          }`}
         >
           <DeckChangeName deck={deck} />
         </div>
@@ -28,7 +30,11 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
           <DeckChangeAuthor deck={deck} />
         </div>
       </div>
-      <div className={`flex ${!folded || isMobile ? 'flex-col' : 'flex-row'} gap-2`}>
+      <div
+        className={`flex ${
+          !folded || isMobile ? 'flex-col' : 'flex-row'
+        } gap-2`}
+      >
         <div className="basis-full sm:basis-6/12">
           <DeckChangeDescription
             deck={deck}
@@ -38,11 +44,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
         </div>
         {(deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
           <div className="basis-full sm:basis-6/12">
-            <DeckTags
-              deck={deck}
-              allTagsOptions={allTagsOptions}
-              isBordered
-            />
+            <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered />
           </div>
         )}
       </div>

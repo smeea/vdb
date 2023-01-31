@@ -68,7 +68,7 @@ const SearchFormTextAndButtons = ({
             onChange={onTextChange}
             className="w-full sm:rounded-r-none"
           />
-          {!isMobile &&
+          {!isMobile && (
             <>
               {preresults > showLimit && (
                 <ButtonIconed
@@ -90,7 +90,7 @@ const SearchFormTextAndButtons = ({
                 </div>
               </Button>
             </>
-          }
+          )}
         </div>
         <div className="flex justify-between">
           <div className="flex w-1/5 space-x-1">

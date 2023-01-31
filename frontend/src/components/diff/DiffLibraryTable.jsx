@@ -103,7 +103,12 @@ const DiffLibraryTable = ({
           />
           {showInfo && (
             <td className="w-9 text-right text-fgSecondary dark:text-fgSecondaryDark">
-              <DeckDrawProbability cardName={card.c.Name} N={libraryTotal} n={4} k={card.q} />
+              <DeckDrawProbability
+                cardName={card.c.Name}
+                N={libraryTotal}
+                n={4}
+                k={card.q}
+              />
             </td>
           )}
         </tr>
@@ -112,9 +117,9 @@ const DiffLibraryTable = ({
   });
 
   return (
-      <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
-        <tbody>{cardRows}</tbody>
-      </table>
+    <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+      <tbody>{cardRows}</tbody>
+    </table>
   );
 };
 

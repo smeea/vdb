@@ -24,10 +24,9 @@ const LoginTooltipText = () => {
 const PasswordTooltipText = () => {
   return (
     <>
+      <div>There is no automatic password restoration yet.</div>
       <div>
-        There is no automatic password restoration yet.
-      </div>
-      <div>Please{' '}
+        Please{' '}
         <a href="mailto:smeea@riseup.net?subject=VDB - Password reset&body=Account: <PUT YOUR ACCOUNT NAME HERE>">
           send me an email
         </a>{' '}
@@ -92,9 +91,7 @@ const AccountLogin = () => {
           isModal={isMobile}
           overlay={<LoginTooltipText />}
         >
-          <div className="text-fgThird dark:text-fgThirdDark">
-            [?]
-          </div>
+          <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
         </ConditionalTooltipOrModal>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>

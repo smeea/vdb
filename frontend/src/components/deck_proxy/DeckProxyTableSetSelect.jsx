@@ -1,10 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import EyeFill from '@/assets/images/icons/eye-fill.svg';
-import {
-  CardImage,
-  Tooltip,
-} from '@/components';
+import { CardImage, Tooltip } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
@@ -42,7 +39,9 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
           isSearchable={false}
           name="set"
           placeholder="Set"
-          value={setOptions.find((obj) => value && obj.value === value.toLowerCase)}
+          value={setOptions.find(
+            (obj) => value && obj.value === value.toLowerCase
+          )}
           onChange={handleSetSelector}
         />
       </td>
@@ -50,12 +49,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
         <Tooltip
           placement="right"
           noPadding
-          overlay={
-            <CardImage
-              card={card}
-              set={value ?? null}
-            />
-          }
+          overlay={<CardImage card={card} set={value ?? null} />}
         >
           <div>
             <EyeFill />
@@ -63,7 +57,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
         </Tooltip>
       </td>
     </>
-  )
-}
+  );
+};
 
 export default DeckProxyTableSetSelect;

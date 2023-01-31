@@ -45,7 +45,7 @@ export const loader = async () => {
     credentials: 'include',
   };
 
-  const response = await fetch(url, options)
+  const response = await fetch(url, options);
   if (!response.ok) return { error: response.status };
   const changes = await response.json();
 

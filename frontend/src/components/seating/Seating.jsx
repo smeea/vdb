@@ -1,12 +1,15 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
 import { SeatingModal } from '@/components';
-import { initFromStorage, setLocalStorage } from '@/services/storageServices.js';
+import {
+  initFromStorage,
+  setLocalStorage,
+} from '@/services/storageServices.js';
 import { useApp } from '@/context';
 import standardDecksData from '@/assets/data/standardDecks.json';
 
 const getRandomDeck = (players) => {
-  return players[Math.floor(Math.random() * Math.floor(players.length))]
+  return players[Math.floor(Math.random() * Math.floor(players.length))];
 };
 
 const randomizeArray = (array) => {
@@ -15,7 +18,7 @@ const randomizeArray = (array) => {
 
     [array[i], array[j]] = [array[j], array[i]];
   }
-  return array
+  return array;
 };
 
 const Seating = ({ setShow }) => {
@@ -66,13 +69,17 @@ const Seating = ({ setShow }) => {
 
   const addPlayer = () => {
     setPlayers((draft) => {
-      draft.push({ name: `Player ${draft.length + 1}`, random: false, state: true })
+      draft.push({
+        name: `Player ${draft.length + 1}`,
+        random: false,
+        state: true,
+      });
     });
   };
 
   const delPlayer = (i) => {
     setPlayers((draft) => {
-      draft.splice(i, 1)
+      draft.splice(i, 1);
     });
   };
 
@@ -98,55 +105,55 @@ const Seating = ({ setShow }) => {
       });
 
     if ([7, 11].includes(options.length)) {
-      options.push({ name: 'First oust from another table'})
+      options.push({ name: 'First oust from another table' });
     }
 
     const randomizedPlayers = randomizeArray(options);
-    const tablesWithQty = getTablesWithQty(randomizedPlayers.length)
-    const tablesWithPlayers = []
-    tablesWithQty.map(n => {
-      tablesWithPlayers.push(randomizedPlayers.slice(0, n))
-      randomizedPlayers.splice(0, n)
-    })
+    const tablesWithQty = getTablesWithQty(randomizedPlayers.length);
+    const tablesWithPlayers = [];
+    tablesWithQty.map((n) => {
+      tablesWithPlayers.push(randomizedPlayers.slice(0, n));
+      randomizedPlayers.splice(0, n);
+    });
 
-    setSeating(tablesWithPlayers)
-  }
+    setSeating(tablesWithPlayers);
+  };
 
   const getTablesWithQty = (q) => {
-    const fullTablesQty = Math.floor(q / 5)
+    const fullTablesQty = Math.floor(q / 5);
 
     switch (q) {
       case 3:
-        return [3]
+        return [3];
       case 6:
-        return [6]
+        return [6];
     }
 
     let tables;
     switch (q % 5) {
       case 0:
-        tables = Array(fullTablesQty).fill(5)
-        break
+        tables = Array(fullTablesQty).fill(5);
+        break;
       case 1:
-        tables = Array(fullTablesQty + 1).fill(5)
-        tables.fill(4, tables.length - 4)
-        break
+        tables = Array(fullTablesQty + 1).fill(5);
+        tables.fill(4, tables.length - 4);
+        break;
       case 2:
-        tables = Array(fullTablesQty + 1).fill(5)
-        tables.fill(4, tables.length - 3)
-        break
+        tables = Array(fullTablesQty + 1).fill(5);
+        tables.fill(4, tables.length - 3);
+        break;
       case 3:
-        tables = Array(fullTablesQty + 1).fill(5)
-        tables.fill(4, tables.length - 2)
-        break
+        tables = Array(fullTablesQty + 1).fill(5);
+        tables.fill(4, tables.length - 2);
+        break;
       case 4:
-        tables = Array(fullTablesQty + 1).fill(5)
-        tables.fill(4, tables.length - 1)
-        break
+        tables = Array(fullTablesQty + 1).fill(5);
+        tables.fill(4, tables.length - 1);
+        break;
     }
 
-    return tables
-  }
+    return tables;
+  };
 
   const toggleCustom = (i) => {
     setCustomDecks((draft) => {

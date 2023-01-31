@@ -34,7 +34,7 @@ const DeckCryptTableRow = ({
   showInfo,
   cryptTotal,
   inSearch,
-  // inMissing,
+  inMissing,
 }) => {
   const { inventoryMode, isMobile } = useApp();
 
@@ -101,20 +101,24 @@ const DeckCryptTableRow = ({
       {...swipeHandlers}
       className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
-      {inventoryMode && deck.inventoryType && !inSearch && !isMobile && (
-        <td className="max-w-0">
-          <div className="relative flex items-center">
-            <div
-              className={`inventory-card-custom absolute left-[-24px]
+      {inventoryMode &&
+        deck.inventoryType &&
+        !inMissing &&
+        !inSearch &&
+        !isMobile && (
+          <td className="max-w-0">
+            <div className="relative flex items-center">
+              <div
+                className={`inventory-card-custom absolute left-[-24px]
                         ${card.i ? '' : 'not-selected opacity-0'}
                       `}
-              onClick={() => toggleInventoryState(deckid, card.c.Id)}
-            >
-              {deck.inventoryType == 's' ? <PinAngleFill /> : <Shuffle />}
+                onClick={() => toggleInventoryState(deckid, card.c.Id)}
+              >
+                {deck.inventoryType == 's' ? <PinAngleFill /> : <Shuffle />}
+              </div>
             </div>
-          </div>
-        </td>
-      )}
+          </td>
+        )}
       <td className={isEditable ? 'min-w-[75px]' : 'min-w-[40px]'}>
         <ConditionalTooltip
           placement="bottom"
@@ -131,6 +135,7 @@ const DeckCryptTableRow = ({
             hardUsedTotal={hardUsedTotal}
             inventoryType={decks[deckid]?.inventoryType}
             isEditable={isEditable}
+            inMissing={inMissing}
           />
         </ConditionalTooltip>
       </td>
@@ -147,7 +152,12 @@ const DeckCryptTableRow = ({
       />
       {showInfo && (
         <td className="min-w-[45px] text-right text-fgSecondary dark:text-fgSecondaryDark">
-          <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
+          <DeckDrawProbability
+            cardName={card.c.Name}
+            N={cryptTotal}
+            n={4}
+            k={card.q}
+          />
         </td>
       )}
     </tr>

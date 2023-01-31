@@ -22,7 +22,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
         <div>
           <div className="flex flex-row gap-5">
             <div className="basis-full md:basis-7/12">
-              <div className="flex h-10 items-center justify-between bg-bgSecondary font-bold dark:bg-bgSecondaryDark px-2">
+              <div className="flex h-10 items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
                 Crypt
               </div>
               {crypt ? (
@@ -34,7 +34,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
               )}
             </div>
             <div className="basis-full md:basis-5/12">
-              <div className="flex h-10 items-center justify-between bg-bgSecondary font-bold dark:bg-bgSecondaryDark px-2">
+              <div className="flex h-10 items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
                 Library
               </div>
               {library ? (

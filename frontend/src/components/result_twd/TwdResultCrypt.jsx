@@ -8,6 +8,7 @@ import {
   ResultClanImage,
   ResultModal,
   ConditionalTooltip,
+  Banned,
 } from '@/components';
 import { getHardTotal } from '@/utils';
 import { useApp, inventoryStore, usedStore } from '@/context';
@@ -87,8 +88,11 @@ const TwdResultCrypt = ({ crypt }) => {
           <ConditionalTooltip
             overlay={<CardPopover card={card.c} />}
             disabled={isMobile}
+            noPadding
           >
-            <ResultCryptName card={card.c} />
+            <div className="flex">
+              <ResultCryptName card={card.c} />
+            </div>
           </ConditionalTooltip>
         </td>
         <td className="min-w-[30px]" onClick={() => handleClick(card.c)}>
@@ -101,10 +105,9 @@ const TwdResultCrypt = ({ crypt }) => {
   });
 
   return (
-    <>
+    <div>
       <div className="font-bold">
-        Crypt [{cryptTotal}] {cryptGroups}
-        {hasBanned && ' - WITH BANNED'}
+        Crypt [{cryptTotal}] {cryptGroups} {hasBanned && <Banned />}
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>{cardRows}</tbody>
@@ -116,7 +119,7 @@ const TwdResultCrypt = ({ crypt }) => {
           handleClose={handleModalCardClose}
         />
       )}
-    </>
+    </div>
   );
 };
 

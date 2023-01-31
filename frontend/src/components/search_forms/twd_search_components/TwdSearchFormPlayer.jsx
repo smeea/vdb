@@ -11,7 +11,9 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
   };
 
   const loadOptions = (inputValue) => {
-    const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/authors`;
+    const url = `${import.meta.env.VITE_API_URL}/${
+      inPda ? 'pda' : 'twd'
+    }/authors`;
     const options = {
       method: 'GET',
       mode: 'cors',

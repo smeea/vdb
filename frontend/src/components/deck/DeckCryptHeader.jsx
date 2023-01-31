@@ -1,7 +1,6 @@
 import React from 'react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg';
-import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
-import { Button, SortButton } from '@/components';
+import { Banned, Button, SortButton } from '@/components';
 import { useApp } from '@/context';
 
 const DeckCryptHeader = ({
@@ -29,17 +28,7 @@ const DeckCryptHeader = ({
         {!inMissing && cryptGroups && (
           <div className="inline">{cryptGroups}</div>
         )}
-        {!inMissing && hasBanned && (
-          <div className="dark:text-fgRedDarkark:text-fgRedDark inline items-center text-fgRed">
-            <Exclamation
-              width="17"
-              heigth="17"
-              viewBox="0 2 16 16"
-              className="inline pr-1"
-            />
-            BANNED
-          </div>
-        )}
+        {!inMissing && hasBanned && <Banned />}
       </div>
       <div className="flex space-x-1">
         {!inMissing && (

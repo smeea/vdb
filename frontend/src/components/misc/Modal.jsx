@@ -4,7 +4,14 @@ import X from '@/assets/images/icons/x.svg';
 import { ButtonFloat } from '@/components';
 import { useApp } from '@/context';
 
-const Modal = ({ handleClose, centered, size = 'md', title, children, noPadding }) => {
+const Modal = ({
+  handleClose,
+  centered,
+  size = 'md',
+  title,
+  children,
+  noPadding,
+}) => {
   const { isNarrow } = useApp();
 
   // TODO unfocus close
@@ -33,30 +40,37 @@ const Modal = ({ handleClose, centered, size = 'md', title, children, noPadding 
       />
 
       <div
-        className={`fixed inset-0 flex justify-center overflow-auto p-0 sm:p-8 ${centered ? 'items-center' : 'items-start'
-          }`}
+        className={`fixed inset-0 flex justify-center overflow-auto p-0 sm:p-8 ${
+          centered ? 'items-center' : 'items-start'
+        }`}
       >
         <Dialog.Panel
-          className={`${widthClass} rounded border border-bgSecondary bg-bgPrimary ${noPadding ? '' : 'p-3 sm:p-5'} dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
+          className={`${widthClass} rounded border border-bgSecondary bg-bgPrimary ${
+            noPadding ? '' : 'p-3 sm:p-5'
+          } dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
         >
-          <Dialog.Title className={`flex items-center justify-between border-none  ${noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3'}`}>
-            <div className='text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark'>
+          <Dialog.Title
+            className={`flex items-center justify-between border-none  ${
+              noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3'
+            }`}
+          >
+            <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
               {title}
             </div>
-            {!isNarrow &&
+            {!isNarrow && (
               <button onClick={handleClose}>
                 <X width="32" height="32" viewBox="0 0 16 16" />
               </button>
-            }
+            )}
           </Dialog.Title>
           {children}
         </Dialog.Panel>
       </div>
-      {isNarrow &&
+      {isNarrow && (
         <ButtonFloat onClick={handleClose} variant="danger">
           <X width="40" height="40" viewBox="0 0 16 16" />
         </ButtonFloat>
-      }
+      )}
     </Dialog>
   );
 };

@@ -23,7 +23,12 @@ import {
   ErrorOverlay,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
-import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from '@/context';
+import {
+  useApp,
+  setPdaResults,
+  searchPdaForm,
+  clearSearchForm,
+} from '@/context';
 
 const PdaSearchForm = ({ error, setError }) => {
   const { username, cryptCardBase, libraryCardBase, inventoryMode, isMobile } =

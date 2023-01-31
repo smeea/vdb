@@ -38,17 +38,17 @@ const DeckProxyLibraryTableRow = ({
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
-      <td className="proxy-selector">
-        <Checkbox
-          id={card.c.Id}
-          name="print"
-          checked={
-            proxySelected[card.c.Id] ? proxySelected[card.c.Id].print : false
-          }
-          onChange={handleProxySelector}
-        />
+      <td className="min-w-[25px]">
+        <div className="flex items-center justify-center">
+          <Checkbox
+            id={card.c.Id}
+            name="print"
+            checked={proxySelected[card.c.Id]?.print}
+            onChange={handleProxySelector}
+          />
+        </div>
       </td>
-      <td className="quantity">
+      <td className='min-w-[75px]'>
         <ConditionalTooltip
           placement="right"
           overlay={<UsedPopover cardid={card.c.Id} />}
@@ -74,7 +74,13 @@ const DeckProxyLibraryTableRow = ({
         placement={placement}
         inDeck
       />
-      {!isMobile && <DeckProxyTableSetSelect card={card.c} handleSetSelector={handleSetSelector} value={proxySelected[card.c.Id]?.set} />}
+      {!isMobile && (
+        <DeckProxyTableSetSelect
+          card={card.c}
+          handleSetSelector={handleSetSelector}
+          value={proxySelected[card.c.Id]?.set}
+        />
+      )}
     </tr>
   );
 };

@@ -1,4 +1,5 @@
 export { default as Banner } from './Banner.jsx';
+export { default as Banned } from './Banned.jsx';
 export { default as Button } from './Button.jsx';
 export { default as ButtonAddCard } from './ButtonAddCard.jsx';
 export { default as ButtonCardCopyUrl } from './ButtonCardCopyUrl.jsx';

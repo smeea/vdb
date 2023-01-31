@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { Button } from '@/components';
 import EyeFill from '@/assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg';
 import {
@@ -8,6 +7,7 @@ import {
   DeckBranchSelect,
   DeckCrypt,
   DeckLibrary,
+  ButtonIconed,
 } from '@/components';
 import { setDeck, deckStore, useApp } from '@/context';
 
@@ -24,10 +24,8 @@ const DeckSelectorAndDisplay = () => {
     setDeck(decks[e.value]);
   };
 
-  const Y_SPACING = 'space-y-8';
-
   return (
-    <div className={Y_SPACING}>
+    <div className="flex flex-col gap-8">
       <div className="top-0 z-10 flex space-x-1 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[40px]">
         {addMode && (
           <>
@@ -45,28 +43,19 @@ const DeckSelectorAndDisplay = () => {
           </>
         )}
         {isDesktop && (
-          <Button
+          <ButtonIconed
             title="Hide Deck Panel"
             variant="primary"
             onClick={() => toggleAddMode()}
-          >
-            <div className="flex items-center justify-center">
-              <div className={`flex ${addMode ? '' : ''}`}>
-                {addMode ? <EyeSlashFill /> : <EyeFill />}
-              </div>
-              {addMode ? '' : 'Show Deck'}
-            </div>
-          </Button>
+            icon={addMode ? <EyeSlashFill /> : <EyeFill />}
+            text={addMode ? null : 'Show Deck'}
+          />
         )}
       </div>
       {deck && addMode && (
         <>
-          <div>
-            <DeckCrypt deck={deck} inSearch />
-          </div>
-          <div>
-            <DeckLibrary deck={deck} inSearch />
-          </div>
+          <DeckCrypt deck={deck} inSearch />
+          <DeckLibrary deck={deck} inSearch />
         </>
       )}
     </div>

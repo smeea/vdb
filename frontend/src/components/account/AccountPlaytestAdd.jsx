@@ -72,9 +72,7 @@ const AccountPlaytestAdd = ({
           className="w-full rounded-r-none"
         />
         {!spinnerState ? (
-          <Button
-            className="rounded-l-none"
-            variant="primary" type="submit">
+          <Button className="rounded-l-none" variant="primary" type="submit">
             <Check2 />
           </Button>
         ) : (

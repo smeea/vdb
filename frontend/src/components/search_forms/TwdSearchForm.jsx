@@ -25,7 +25,12 @@ import {
   ErrorOverlay,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
-import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from '@/context';
+import {
+  useApp,
+  setTwdResults,
+  searchTwdForm,
+  clearSearchForm,
+} from '@/context';
 
 const TwdSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, inventoryMode, isMobile } = useApp();

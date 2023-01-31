@@ -3,14 +3,26 @@ import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useDeck, useTags } from '@/hooks';
 
 const CARD_VERSION = '2022-12-23';
-const urlCrypt = `${import.meta.env.VITE_BASE_URL}/data/cardbase_crypt.json?v=${CARD_VERSION}`;
-const urlLibrary = `${import.meta.env.VITE_BASE_URL}/data/cardbase_lib.json?v=${CARD_VERSION}`;
-const urlCryptPlaytest = `${import.meta.env.VITE_BASE_URL}/data/cardbase_crypt_playtest.json?v=${CARD_VERSION}`;
-const urlLibraryPlaytest = `${import.meta.env.VITE_BASE_URL}/data/cardbase_lib_playtest.json?v=${CARD_VERSION}`;
+const urlCrypt = `${
+  import.meta.env.VITE_BASE_URL
+}/data/cardbase_crypt.json?v=${CARD_VERSION}`;
+const urlLibrary = `${
+  import.meta.env.VITE_BASE_URL
+}/data/cardbase_lib.json?v=${CARD_VERSION}`;
+const urlCryptPlaytest = `${
+  import.meta.env.VITE_BASE_URL
+}/data/cardbase_crypt_playtest.json?v=${CARD_VERSION}`;
+const urlLibraryPlaytest = `${
+  import.meta.env.VITE_BASE_URL
+}/data/cardbase_lib_playtest.json?v=${CARD_VERSION}`;
 const urlLocalizedCrypt = (lang) =>
-  `${import.meta.env.VITE_BASE_URL}/data/cardbase_crypt.${lang}.json?v=${CARD_VERSION}`;
+  `${
+    import.meta.env.VITE_BASE_URL
+  }/data/cardbase_crypt.${lang}.json?v=${CARD_VERSION}`;
 const urlLocalizedLibrary = (lang) =>
-  `${import.meta.env.VITE_BASE_URL}/data/cardbase_lib.${lang}.json?v=${CARD_VERSION}`;
+  `${
+    import.meta.env.VITE_BASE_URL
+  }/data/cardbase_lib.${lang}.json?v=${CARD_VERSION}`;
 
 export const getCardBase = async () => {
   const options = {
@@ -19,28 +31,32 @@ export const getCardBase = async () => {
     credentials: 'include',
   };
 
-  const crypt = await fetch(urlCrypt, options)
-        .then(response => response.json());
-  const library = await fetch(urlLibrary, options)
-        .then(response => response.json());
+  const crypt = await fetch(urlCrypt, options).then((response) =>
+    response.json()
+  );
+  const library = await fetch(urlLibrary, options).then((response) =>
+    response.json()
+  );
 
-  const cryptPlaytest = await fetch(urlCryptPlaytest, options)
-        .then(response => {
-            if (response.headers.get("content-type") === 'application/json') {
-                return response.json()
-            } else {
-                return {}
-            }
-        })
+  const cryptPlaytest = await fetch(urlCryptPlaytest, options).then(
+    (response) => {
+      if (response.headers.get('content-type') === 'application/json') {
+        return response.json();
+      } else {
+        return {};
+      }
+    }
+  );
 
-  const libraryPlaytest = await fetch(urlLibraryPlaytest, options)
-        .then(response => {
-            if (response.headers.get("content-type") === 'application/json') {
-                return response.json()
-            } else {
-                return {}
-            }
-        })
+  const libraryPlaytest = await fetch(urlLibraryPlaytest, options).then(
+    (response) => {
+      if (response.headers.get('content-type') === 'application/json') {
+        return response.json();
+      } else {
+        return {};
+      }
+    }
+  );
 
   const nativeCrypt = {};
   const nativeLibrary = {};
@@ -72,10 +88,12 @@ export const getLocalizedCardBase = async (lang) => {
     credentials: 'include',
   };
 
-  const crypt = await fetch(urlLocalizedCrypt(lang), options)
-    .then(response => response.json());
-  const library = await fetch(urlLocalizedLibrary(lang), options)
-    .then(response => response.json());
+  const crypt = await fetch(urlLocalizedCrypt(lang), options).then((response) =>
+    response.json()
+  );
+  const library = await fetch(urlLocalizedLibrary(lang), options).then(
+    (response) => response.json()
+  );
 
   return {
     crypt: crypt,
@@ -107,7 +125,10 @@ export const getPreconDecks = (cryptCardBase, libraryCardBase) => {
       );
 
       let tags = [];
-      if (set !== 'PLAYTEST' || cryptCardBase[210001] && libraryCardBase[110001]) {
+      if (
+        set !== 'PLAYTEST' ||
+        (cryptCardBase[210001] && libraryCardBase[110001])
+      ) {
         Object.values(useTags(cardsData.crypt, cardsData.library)).map((v) => {
           tags = tags.concat(v);
         });

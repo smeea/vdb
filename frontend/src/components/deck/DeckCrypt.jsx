@@ -10,7 +10,11 @@ import {
   ButtonFloat,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
-import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
+import {
+  useModalCardController,
+  useKeyDisciplines,
+  useDeckCrypt,
+} from '@/hooks';
 
 const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
   const {

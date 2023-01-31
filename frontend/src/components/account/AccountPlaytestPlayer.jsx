@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Toggle } from '@/components'
+import { Toggle } from '@/components';
 
 const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
   const [state, setState] = useState(true);

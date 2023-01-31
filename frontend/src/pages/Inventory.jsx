@@ -99,7 +99,8 @@ const Inventory = () => {
 
   const [missingCryptByClan, setMissingCryptByClan] = useState();
   const [missingLibraryByType, setMissingLibraryByType] = useState();
-  const [missingLibraryByDiscipline, setMissingLibraryByDiscipline] = useState();
+  const [missingLibraryByDiscipline, setMissingLibraryByDiscipline] =
+    useState();
 
   const newCryptFocus = () => newCryptRef.current.focus();
   const newCryptRef = useRef();

@@ -75,11 +75,7 @@ const Cards = () => {
             {card && (
               <div className="pb-10">
                 {showImage ? (
-                  <CardImage
-                    className="w-full"
-                    card={card}
-                    set={imageSet}
-                  />
+                  <CardImage className="w-full" card={card} set={imageSet} />
                 ) : (
                   <div className="p-3">
                     <ResultLayoutText
@@ -96,7 +92,7 @@ const Cards = () => {
                 </div>
               </div>
             )}
-            <div className="fixed z-20 bottom-[40px] flex w-full flex-row bg-bgPrimary dark:bg-bgPrimaryDark p-1">
+            <div className="fixed bottom-[40px] z-20 flex w-full flex-row bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
               <div className="w-full md:basis-8/12">
                 <QuickSelect
                   selectedCardid={card && card.Id}
@@ -135,8 +131,8 @@ const Cards = () => {
           </>
         ) : (
           <div className="flex gap-8">
-            <div className="basis-1/12" />
-            <div className="flex basis-9/12 flex-col gap-8">
+            <div className="block lg:min-w-[175px]" />
+            <div className="flex basis-full flex-col gap-8">
               {cryptCardBase && libraryCardBase && (
                 <div>
                   <QuickSelect
@@ -148,10 +144,7 @@ const Cards = () => {
               {card && (
                 <div className="flex border border-bgSecondary dark:border-bgSecondaryDark">
                   <div>
-                    <CardImage
-                      card={card}
-                      set={imageSet}
-                    />
+                    <CardImage card={card} set={imageSet} />
                   </div>
                   <div className="w-full p-5">
                     <ResultLayoutText
@@ -164,8 +157,8 @@ const Cards = () => {
                 </div>
               )}
             </div>
-            <div className="basis-2/12">
-              <div className="top-[77px] z-30 flex flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark">
+            <div className="hidden min-w-[175px] md:block">
+              <div className="sticky top-[77px] z-30 flex w-full flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark">
                 <ButtonIconed
                   variant="secondary"
                   onClick={() => randomCrypt()}

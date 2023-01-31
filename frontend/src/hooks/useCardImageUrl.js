@@ -30,9 +30,7 @@ const useCardImageUrl = (card, set, language) => {
     } else {
       otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
         set ? `set/${set}` : language
-      }/${card['ASCII Name']
-        .toLowerCase()
-        .replace(/[\s,:!?'".\-()/]/g, '')}`;
+      }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-()/]/g, '')}`;
     }
   }
 

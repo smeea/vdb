@@ -3,12 +3,12 @@ import { SeatingTableLayout } from '@/components';
 
 const SeatingTables = ({ seating }) => {
   return (
-    <div className="space-y-12 px-4 pb-4">
-      {seating.map(players => {
-        return <SeatingTableLayout players={players} />
+    <div className="space-y-12 p-4">
+      {seating.map((players, idx) => {
+        return <SeatingTableLayout key={idx} players={players} />;
       })}
     </div>
-  )
+  );
 };
 
 export default SeatingTables;

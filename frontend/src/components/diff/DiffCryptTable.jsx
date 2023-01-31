@@ -55,10 +55,11 @@ const DiffCryptTable = ({
     return (
       <tr
         key={card.c.Id}
-        className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-          }`}
+        className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+          idx % 2
+            ? 'bg-bgThird dark:bg-bgThirdDark'
+            : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        }`}
       >
         {isEditable || inReview ? (
           <>
@@ -109,7 +110,12 @@ const DiffCryptTable = ({
         />
         {showInfo && (
           <td className="w-9 text-right text-fgSecondary dark:text-fgSecondaryDark">
-            <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
+            <DeckDrawProbability
+              cardName={card.c.Name}
+              N={cryptTotal}
+              n={4}
+              k={card.q}
+            />
           </td>
         )}
       </tr>

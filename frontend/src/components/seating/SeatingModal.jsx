@@ -58,8 +58,8 @@ const SeatingModal = ({
         size="lg"
       >
         <div className="space-y-5">
-          <div className="flex gap-4">
-            <div className="space-y-5 md:w-5/12 xl:w-5/12">
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="space-y-3 sm:w-5/12 xl:w-5/12">
               <div className="space-y-2">
                 {players.map((p, idx) => {
                   return (
@@ -72,16 +72,17 @@ const SeatingModal = ({
                     />
                   );
                 })}
+              </div>
+              <div className="flex flex-col gap-1">
                 <ButtonIconed
                   variant="primary"
                   onClick={addPlayer}
-                  className='w-full'
                   title="Add Player"
-                  icon={<PersonFill width="18" height="18" viewBox="0 0 16 16" />}
+                  icon={
+                    <PersonFill width="18" height="18" viewBox="0 0 16 16" />
+                  }
                   text="Add Player"
                 />
-              </div>
-              <div className="flex justify-between">
                 <ButtonIconed
                   variant="primary"
                   onClick={reshuffle}
@@ -99,12 +100,14 @@ const SeatingModal = ({
                   }
                   text="Select Random"
                 />
+                {withRandom && !haveRandomSelected && (
+                  <div className="text-fgRed dark:text-fgRedDark">
+                    No random source selected
+                  </div>
+                )}
               </div>
-              {withRandom && !haveRandomSelected && (
-                <div className="text-fgRed dark:text-fgRedDark">No random source selected</div>
-              )}
             </div>
-            <div className="flex justify-center items-center md:w-7/12 xl:w-7/12">
+            <div className="flex items-center justify-center md:w-7/12 xl:w-7/12">
               {seating && <SeatingTables seating={seating} />}
             </div>
           </div>

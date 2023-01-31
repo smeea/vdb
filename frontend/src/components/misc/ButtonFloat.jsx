@@ -32,7 +32,7 @@ const ButtonFloat = ({
   return (
     <div
       onClick={onClick}
-      className={`fixed right-[15px] z-60 h-[48px] w-[48px] items-center justify-center rounded-[25px] text-[#fff] sm:right-[25px] ${positionClass} ${style} ${
+      className={`z-60 fixed right-[15px] h-[48px] w-[48px] items-center justify-center rounded-[25px] text-[#fff] sm:right-[25px] ${positionClass} ${style} ${
         className ?? ''
       }`}
     >

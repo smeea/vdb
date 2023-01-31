@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useImmer } from 'use-immer'
+import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
@@ -36,11 +36,11 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   }, [deck]);
 
   const handleToggleSelect = () => {
-    setProxySelected(draft => {
+    setProxySelected((draft) => {
       Object.keys(draft).map((cardid) => {
-        draft[cardid].print = !toggleState
-      })
-    })
+        draft[cardid].print = !toggleState;
+      });
+    });
 
     setToggleState(!toggleState);
   };
@@ -50,48 +50,48 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     const library = {};
 
     Object.keys(deck.crypt)
-      .filter(cardid => deck.crypt[cardid].q > 0)
+      .filter((cardid) => deck.crypt[cardid].q > 0)
       .map((cardid) => {
         const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
         const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
 
-        const inInventory = inventoryCrypt[cardid]?.q || 0
+        const inInventory = inventoryCrypt[cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
         const miss = deck.inventoryType
-            ? Math.min(inventoryMiss, deck.crypt[cardid].q)
-            : inventoryMiss >= 0
-              ? deck.crypt[cardid].q
-              : deck.crypt[cardid].q + inventoryMiss
+          ? Math.min(inventoryMiss, deck.crypt[cardid].q)
+          : inventoryMiss >= 0
+          ? deck.crypt[cardid].q
+          : deck.crypt[cardid].q + inventoryMiss;
 
         if (miss > 0) {
           crypt[cardid] = {
             print: true,
-            q: miss
+            q: miss,
           };
         }
-    });
+      });
 
     Object.keys(deck.library)
-      .filter(cardid => deck.library[cardid].q > 0)
+      .filter((cardid) => deck.library[cardid].q > 0)
       .map((cardid) => {
         const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
         const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
 
-        const inInventory = inventoryLibrary[cardid]?.q || 0
+        const inInventory = inventoryLibrary[cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
         const miss = deck.inventoryType
           ? Math.min(inventoryMiss, deck.library[cardid].q)
           : inventoryMiss >= 0
-            ? deck.library[cardid].q
-            : deck.library[cardid].q + inventoryMiss
+          ? deck.library[cardid].q
+          : deck.library[cardid].q + inventoryMiss;
 
         if (miss > 0) {
           library[cardid] = {
             print: true,
-            q: miss
+            q: miss,
           };
         }
-    });
+      });
 
     setProxySelected({ ...proxySelected, ...crypt, ...library });
   };
@@ -99,21 +99,21 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const handleProxySelector = (e) => {
     const { id, name } = e.target;
     setProxySelected((draft) => {
-      draft[id][name] = !draft[id][name]
+      draft[id][name] = !draft[id][name];
     });
   };
 
   const handleSetSelector = (e) => {
     const { id, value } = e;
     setProxySelected((draft) => {
-        draft[id].set = value
+      draft[id].set = value;
     });
   };
 
   const handleProxyCounter = (_, card, q) => {
     if (q >= 0) {
       setProxySelected((draft) => {
-        draft[card.Id].q = q
+        draft[card.Id].q = q;
       });
     }
   };
@@ -150,8 +150,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       title="Create PDF with Card Proxies"
     >
       <div className="space-y-5">
-        <div className="flex flex-col md:flex-row gap-5">
-          <div className="md:basis-7/12">
+        <div className="flex flex-col gap-5 md:flex-row">
+          <div className="sm:basis-5/9">
             {deck.crypt && (
               <div
                 className={
@@ -170,7 +170,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
               </div>
             )}
           </div>
-          <div className="md:basis-5/12">
+          <div className="sm:basis-4/9">
             {deck.library && (
               <DeckProxyLibrary
                 deck={deck}
@@ -182,7 +182,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
         </div>
-        <div className="flex flex-col md:flex-row space-y-1 sm:space-y-0 justify-center md:justify-end space-x-0 md:space-x-1">
+        <div className="flex flex-col justify-center space-y-1 space-x-0 sm:space-y-0 md:flex-row md:justify-end md:space-x-1">
           <Button variant="primary" onClick={() => handleGenerate(false)}>
             Generate - Gray gaps
           </Button>

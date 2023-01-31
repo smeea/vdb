@@ -8,7 +8,9 @@ const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
   const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
-    const deckUrl = `${import.meta.env.VITE_BASE_URL}/review/${deckid}#${urlDiff}`;
+    const deckUrl = `${
+      import.meta.env.VITE_BASE_URL
+    }/review/${deckid}#${urlDiff}`;
 
     navigator.clipboard.writeText(deckUrl);
     setSuccess(true);

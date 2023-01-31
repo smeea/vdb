@@ -3,19 +3,19 @@ import { SeatingTablePlayer } from '@/components';
 
 const Row = ({ children }) => {
   return (
-    <div className="flex shrink-0 w-full justify-center items-center py-4">
+    <div className="flex w-full shrink-0 items-center justify-center py-4">
       {children}
     </div>
-  )
-}
+  );
+};
 
 const Table = ({ children }) => {
   return (
-    <div className="flex flex-wrap w-full border-4 rounded-full border-borderSecondary dark:border-borderSecondaryDark">
+    <div className="flex w-full flex-wrap rounded-full border-4 border-borderSecondary dark:border-borderSecondaryDark">
       {children}
     </div>
-  )
-}
+  );
+};
 
 const SeatingTableLayout = ({ players }) => {
   switch (players.length) {
@@ -48,7 +48,7 @@ const SeatingTableLayout = ({ players }) => {
             </div>
           </Row>
         </Table>
-      )
+      );
     case 5:
       return (
         <Table>

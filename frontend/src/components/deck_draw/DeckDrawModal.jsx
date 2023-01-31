@@ -1,5 +1,4 @@
 import React from 'react';
-import X from '@/assets/images/icons/x.svg';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg';
 import StackIcon from '@/assets/images/icons/stack.svg';
 import {
@@ -8,7 +7,6 @@ import {
   ResultModal,
   DeckDrawCryptTable,
   DeckDrawLibraryTable,
-  ButtonFloat,
   ResultCryptCapacity,
   ErrorMessage,
 } from '@/components';
@@ -51,14 +49,21 @@ const DeckDrawModal = ({
   } = useModalCardController(burnedCrypt, burnedLibrary);
 
   return (
-    <Modal handleClose={handleClose} title="Deck Draw" size="lg" noPadding={isMobile}>
+    <Modal
+      handleClose={handleClose}
+      title="Deck Draw"
+      size="lg"
+      noPadding={isMobile}
+    >
       <div className="flex flex-col gap-5">
-        <div className="flex flex-col sm:flex-row gap-5">
+        <div className="flex flex-col gap-5 sm:flex-row">
           <div className="sm:basis-5/9">
             <div>
               <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
                 <div className="flex w-full justify-between px-2">
-                  <div className="flex items-center font-bold">Uncontrolled</div>
+                  <div className="flex items-center font-bold">
+                    Uncontrolled
+                  </div>
                   <div
                     className="flex items-center font-bold"
                     title="In Uncontrolled + Remaining in Crypt"
@@ -178,11 +183,11 @@ const DeckDrawModal = ({
           </div>
         </div>
         {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-          <div className="flex flex-col md:flex-row gap-5">
+          <div className="flex flex-col gap-5 md:flex-row">
             <div className="md:basis-7/12">
               {burnedCrypt.length > 0 && (
                 <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark px-2">
+                  <div className="flex h-10 justify-between bg-bgSecondary px-2 dark:bg-bgSecondaryDark">
                     <div className="flex items-center font-bold">
                       Controlled
                     </div>
@@ -205,7 +210,7 @@ const DeckDrawModal = ({
             <div className="md:basis-5/12">
               {burnedLibrary.length > 0 && (
                 <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark px-2">
+                  <div className="flex h-10 justify-between bg-bgSecondary px-2 dark:bg-bgSecondaryDark">
                     <div className="flex items-center font-bold">Ash Heap</div>
                     <div className="flex items-center font-bold">
                       {burnedLibrary.length}
@@ -217,7 +222,9 @@ const DeckDrawModal = ({
                       >
                         <img
                           className="optimize-contrast h-[31px] pb-1"
-                          src={`${import.meta.env.VITE_BASE_URL}/images/misc/bloodX.png`}
+                          src={`${
+                            import.meta.env.VITE_BASE_URL
+                          }/images/misc/bloodX.png`}
                         />
                         <b>{burnedBloodTotal}</b>
                       </div>
@@ -227,7 +234,9 @@ const DeckDrawModal = ({
                       >
                         <img
                           className="optimize-contrast h-[30px]"
-                          src={`${import.meta.env.VITE_BASE_URL}/images/misc/poolX.png`}
+                          src={`${
+                            import.meta.env.VITE_BASE_URL
+                          }/images/misc/poolX.png`}
                         />
                         <b>{burnedPoolTotal}</b>
                       </div>
@@ -236,7 +245,6 @@ const DeckDrawModal = ({
                   <DeckDrawLibraryTable
                     handleClick={handleModalSideCardOpen}
                     resultCards={burnedLibrary}
-                    /* className="search-library-table" */
                     placement={isNarrow ? 'bottom' : 'right'}
                     ashHeap
                   />

@@ -2,7 +2,10 @@ import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { setMany, getMany, update } from 'idb-keyval';
-import { initFromStorage, setLocalStorage } from '@/services/storageServices.js';
+import {
+  initFromStorage,
+  setLocalStorage,
+} from '@/services/storageServices.js';
 import { cardServices } from '@/services';
 import { useDeck, useWindowSize } from '@/hooks';
 import {
@@ -26,8 +29,8 @@ export const useApp = () => {
 export const AppProvider = (props) => {
   const screenSize = useWindowSize();
   const isMobile = useMemo(() => screenSize <= 767, [screenSize]);
-  const isNarrow = useMemo(() => screenSize <= 992, [screenSize]);
-  const isDesktop = useMemo(() => screenSize >= 1200, [screenSize]);
+  const isNarrow = useMemo(() => screenSize <= 1024, [screenSize]);
+  const isDesktop = useMemo(() => screenSize >= 1280, [screenSize]);
   const isWide = useMemo(() => screenSize >= 1440, [screenSize]);
   const isXWide = useMemo(() => screenSize >= 1920, [screenSize]);
 
