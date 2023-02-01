@@ -4,9 +4,9 @@ import X from '@/assets/images/icons/x.svg';
 import {
   TwdResultTotal,
   TwdResultDescription,
-  TwdResultCrypt,
-  TwdResultLibraryByType,
-  TwdResultLibraryKeyCards,
+  TwdResultCryptTable,
+  TwdResultLibraryByTypeTable,
+  TwdResultLibraryKeyCardsTable,
   Button,
   ButtonFloat,
   Hr,
@@ -65,13 +65,13 @@ const TwdResult = ({ results, setResults }) => {
                 </div>
                 <div className="flex basis-full gap-2 lg:basis-3/4">
                   <div className="basis-1/2 sm:basis-1/3">
-                    <TwdResultCrypt crypt={deck['crypt']} />
+                    <TwdResultCryptTable crypt={deck['crypt']} />
                   </div>
                   <div className="hidden sm:block sm:basis-1/3">
-                    <TwdResultLibraryByType library={deck['library']} />
+                    <TwdResultLibraryByTypeTable library={deck['library']} />
                   </div>
                   <div className="basis-1/2 sm:basis-1/3">
-                    <TwdResultLibraryKeyCards library={deck['library']} />
+                    <TwdResultLibraryKeyCardsTable library={deck['library']} />
                   </div>
                 </div>
               </div>

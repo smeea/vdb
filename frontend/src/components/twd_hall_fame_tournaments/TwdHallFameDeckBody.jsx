@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   TwdResultDescription,
-  TwdResultCrypt,
-  TwdResultLibraryByType,
-  TwdResultLibraryKeyCards,
+  TwdResultCryptTable,
+  TwdResultLibraryByTypeTable,
+  TwdResultLibraryKeyCardsTable,
 } from '@/components';
 
 const TwdHallFameDeckBody = ({ deck, isMobile }) => {
@@ -19,22 +19,22 @@ const TwdHallFameDeckBody = ({ deck, isMobile }) => {
       {isMobile ? (
         <>
           <div className="basis-1/2">
-            <TwdResultCrypt crypt={deck.crypt} />
+            <TwdResultCryptTable crypt={deck.crypt} />
           </div>
           <div className="basis-1/2">
-            <TwdResultLibraryKeyCards library={deck.library} />
+            <TwdResultLibraryKeyCardsTable library={deck.library} />
           </div>
         </>
       ) : (
         <>
           <div className="basis-full md:basis-1/3 xl:basis-1/4">
-            <TwdResultCrypt crypt={deck.crypt} />
+            <TwdResultCryptTable crypt={deck.crypt} />
           </div>
           <div className="basis-full md:basis-1/3 xl:basis-1/4">
-            <TwdResultLibraryByType library={deck.library} />
+            <TwdResultLibraryByTypeTable library={deck.library} />
           </div>
           <div className="basis-full md:basis-1/3 xl:basis-1/4">
-            <TwdResultLibraryKeyCards library={deck.library} />
+            <TwdResultLibraryKeyCardsTable library={deck.library} />
           </div>
         </>
       )}

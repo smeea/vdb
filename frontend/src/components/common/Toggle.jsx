@@ -29,7 +29,9 @@ const Toggle = ({ isOn, toggle, size = 'md', disabled = false, children }) => {
       ) : (
         <ToggleOff width={customSize} height={customSize} viewBox="0 0 16 16" />
       )}
-      {children}
+      <div className="flex items-center">
+        {children}
+      </div>
     </div>
   );
 };

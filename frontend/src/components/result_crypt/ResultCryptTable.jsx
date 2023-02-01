@@ -14,24 +14,24 @@ const ResultCryptTable = ({ resultCards, placement, inRecommendation }) => {
     handleModalCardClose,
   } = useModalCardController(resultCards);
 
-  const cardRows = resultCards.map((card, idx) => {
-    return (
-      <ResultCryptTableRow
-        key={card.Id}
-        card={card}
-        handleClick={handleModalCardOpen}
-        idx={idx}
-        inRecommendation={inRecommendation}
-        placement={placement}
-        maxDisciplines={maxDisciplines}
-      />
-    );
-  });
-
   return (
     <>
       <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
-        <tbody>{cardRows}</tbody>
+        <tbody>
+          {resultCards.map((card, idx) => {
+            return (
+              <ResultCryptTableRow
+                key={card.Id}
+                card={card}
+                handleClick={handleModalCardOpen}
+                idx={idx}
+                inRecommendation={inRecommendation}
+                placement={placement}
+                maxDisciplines={maxDisciplines}
+              />
+            );
+          })}
+        </tbody>
       </table>
       {shouldShowModal && (
         <ResultModal

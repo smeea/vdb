@@ -24,6 +24,7 @@
 - Resize clan/types/misc images
 
 # TAILWIND MIGRATION
-- Fix show password in Account on enter
 - Test autoFocus / fix with forwardRefs
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
+- Refactor or restore setShowFloatingButtons functionality
+- TwdLibraryByType click to freeze popover

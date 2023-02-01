@@ -4,9 +4,9 @@ import X from '@/assets/images/icons/x.svg';
 import {
   PdaResultDescription,
   TwdResultTotal,
-  TwdResultCrypt,
-  TwdResultLibraryByType,
-  TwdResultLibraryKeyCards,
+  TwdResultCryptTable,
+  TwdResultLibraryByTypeTable,
+  TwdResultLibraryKeyCardsTable,
   Button,
   ButtonFloat,
   Hr,
@@ -72,31 +72,30 @@ const PdaResult = ({ results, setResults }) => {
             <React.Fragment key={deck['deckid']}>
               <div className="flex flex-row ">
                 <div
-                  className={`basis-full md:basis-full xl:basis-1/4 ${
-                    isMobile ? '' : ''
-                  }`}
+                  className={`basis-full md:basis-full xl:basis-1/4 ${isMobile ? '' : ''
+                    }`}
                 >
                   <PdaResultDescription deck={deck} />
                 </div>
                 {isMobile ? (
                   <>
                     <div className="basis-1/2 ">
-                      <TwdResultCrypt crypt={deck['crypt']} />
+                      <TwdResultCryptTable crypt={deck['crypt']} />
                     </div>
                     <div className="basis-1/2 ">
-                      <TwdResultLibraryKeyCards library={deck['library']} />
+                      <TwdResultLibraryKeyCardsTable library={deck['library']} />
                     </div>
                   </>
                 ) : (
                   <>
                     <div className="basis-full md:basis-1/3 xl:basis-1/4">
-                      <TwdResultCrypt crypt={deck['crypt']} />
+                      <TwdResultCryptTable crypt={deck['crypt']} />
                     </div>
                     <div className="basis-full md:basis-1/3 xl:basis-1/4">
-                      <TwdResultLibraryByType library={deck['library']} />
+                      <TwdResultLibraryByTypeTable library={deck['library']} />
                     </div>
                     <div className="basis-full md:basis-1/3 xl:basis-1/4 ">
-                      <TwdResultLibraryKeyCards library={deck['library']} />
+                      <TwdResultLibraryKeyCardsTable library={deck['library']} />
                     </div>
                   </>
                 )}

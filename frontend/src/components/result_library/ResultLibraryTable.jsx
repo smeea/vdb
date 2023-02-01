@@ -14,22 +14,22 @@ const ResultLibraryTable = ({ resultCards, placement }) => {
     handleModalCardClose,
   } = useModalCardController(resultCards);
 
-  const cardRows = resultCards.map((card, idx) => {
-    return (
-      <ResultLibraryTableRow
-        key={card.Id}
-        card={card}
-        handleClick={handleModalCardOpen}
-        idx={idx}
-        placement={placement}
-      />
-    );
-  });
-
   return (
     <>
       <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
-        <tbody>{cardRows}</tbody>
+        <tbody>
+          {resultCards.map((card, idx) => {
+            return (
+              <ResultLibraryTableRow
+                key={card.Id}
+                card={card}
+                handleClick={handleModalCardOpen}
+                idx={idx}
+                placement={placement}
+              />
+            );
+          })}
+        </tbody>
       </table>
       {shouldShowModal && (
         <ResultModal

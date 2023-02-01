@@ -37,7 +37,6 @@ const DeckRecommendationLibrary = ({ cards }) => {
           />
         </div>
       ))}
-
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}

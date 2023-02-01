@@ -14,26 +14,26 @@ const DeckProxyLibraryTable = ({
 }) => {
   // const { setShowFloatingButtons } = useApp();
 
-  const cardRows = cards.map((card, idx) => {
-    return (
-      <DeckProxyLibraryTableRow
-        key={card.c.Id}
-        inventoryType={inventoryType}
-        card={card}
-        idx={idx}
-        handleClick={handleModalCardOpen}
-        proxySelected={proxySelected}
-        handleProxySelector={handleProxySelector}
-        handleProxyCounter={handleProxyCounter}
-        handleSetSelector={handleSetSelector}
-        placement={placement}
-      />
-    );
-  });
-
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
-      <tbody>{cardRows}</tbody>
+      <tbody>
+        {cards.map((card, idx) => {
+          return (
+            <DeckProxyLibraryTableRow
+              key={card.c.Id}
+              inventoryType={inventoryType}
+              card={card}
+              idx={idx}
+              handleClick={handleModalCardOpen}
+              proxySelected={proxySelected}
+              handleProxySelector={handleProxySelector}
+              handleProxyCounter={handleProxyCounter}
+              handleSetSelector={handleSetSelector}
+              placement={placement}
+            />
+          );
+        })}
+      </tbody>
     </table>
   );
 };
