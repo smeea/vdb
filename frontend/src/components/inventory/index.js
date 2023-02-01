@@ -1,5 +1,7 @@
 export { default as InventoryAddDeckModal } from './InventoryAddDeckModal.jsx';
+export { default as InventoryAddDeckRow } from './InventoryAddDeckRow.jsx';
 export { default as InventoryAddPreconModal } from './InventoryAddPreconModal.jsx';
+export { default as InventoryAddPreconRow } from './InventoryAddPreconRow.jsx';
 export { default as InventoryButtons } from './InventoryButtons.jsx';
 export { default as InventoryCardQuantity } from './InventoryCardQuantity.jsx';
 export { default as InventoryCrypt } from './InventoryCrypt.jsx';

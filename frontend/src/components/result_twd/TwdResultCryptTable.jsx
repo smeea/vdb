@@ -1,15 +1,10 @@
 import React from 'react';
-import {
-  ResultModal,
-  TwdResultCryptTableRow,
-  Banned,
-} from '@/components';
-import { useApp, } from '@/context';
+import { ResultModal, TwdResultCryptTableRow, Banned } from '@/components';
+import { useApp } from '@/context';
 import { useDeckCrypt, useModalCardController } from '@/hooks';
 
 const TwdResultCryptTable = ({ crypt }) => {
-  const { cryptDeckSort, setShowFloatingButtons } =
-    useApp();
+  const { cryptDeckSort, setShowFloatingButtons } = useApp();
 
   const { cryptGroups, hasBanned, cryptTotal, sortedCards } = useDeckCrypt(
     crypt,
@@ -39,7 +34,14 @@ const TwdResultCryptTable = ({ crypt }) => {
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>
           {sortedCards.map((card, idx) => {
-            return <TwdResultCryptTableRow key={card.c.Id} handleClick={handleClick} idx={idx} card={card} />
+            return (
+              <TwdResultCryptTableRow
+                key={card.c.Id}
+                handleClick={handleClick}
+                idx={idx}
+                card={card}
+              />
+            );
           })}
         </tbody>
       </table>

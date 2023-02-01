@@ -25,13 +25,13 @@ const About = () => {
       <div className="sm:pb-6">
         <Banner />
       </div>
-      <div className="p-3 sm:p-0 space-y-6">
+      <div className="space-y-6 p-3 sm:p-0">
         <div className="space-y-1">
           <Title>WHAT IS IT</Title>
           <div>
             VDB is online card search, TWD (tournament winning decks) browser,
-            deck building and inventory (collection) management tool for
-            Vampire the Eternal Struggle (VTES)
+            deck building and inventory (collection) management tool for Vampire
+            the Eternal Struggle (VTES)
           </div>
         </div>
 
@@ -93,7 +93,7 @@ const About = () => {
               ))}
             </ul>
           </div>
-            <Link to="/changelog">&gt;&gt; Full changes history</Link>
+          <Link to="/changelog">&gt;&gt; Full changes history</Link>
         </div>
 
         <div className="space-y-1">
@@ -150,9 +150,7 @@ const About = () => {
           </div>
           <div>
             Source code of the site is available under free{' '}
-            <a href="https://en.wikipedia.org/wiki/MIT_License">
-              MIT license
-            </a>
+            <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license</a>
           </div>
           <div>
             Card images & icons are copyrighted by{' '}
@@ -227,9 +225,7 @@ const About = () => {
                 <div className="text-fgThird dark:text-fgThirdDark">
                   <Github />
                 </div>
-                <a href="https://github.com/smeea/vdb">
-                  github.com/smeea/vdb
-                </a>
+                <a href="https://github.com/smeea/vdb">github.com/smeea/vdb</a>
               </div>
             </li>
             <li className="p-0">

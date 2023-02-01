@@ -38,11 +38,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
   };
 
   return (
-    <Modal
-      handleClose={() => setBadCards([])}
-      size="xl"
-      title="Fix Bad Import"
-    >
+    <Modal handleClose={() => setBadCards([])} size="xl" title="Fix Bad Import">
       <div>
         {badCards.map((c, idx) => {
           return (

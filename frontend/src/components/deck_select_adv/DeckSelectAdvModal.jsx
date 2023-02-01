@@ -24,8 +24,7 @@ import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
 
 const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
-  const { cryptCardBase, inventoryMode, isMobile, isDesktop } =
-    useApp();
+  const { cryptCardBase, inventoryMode, isMobile, isDesktop } = useApp();
   const decks = useSnapshot(deckStore).decks;
 
   const [sortMethod, setSortMethod] = useState('byName');
@@ -247,132 +246,126 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
   };
 
   return (
-      <Modal
-        handleClose={handleClose}
-        size='xl'
-        title="Select Deck"
-      >
-        <div className="space-y-4">
-          <div>
-            <DeckSelectAdvModalTotal
-              tagsFilter={tagsFilter}
-              setTagsFilter={setTagsFilter}
-            />
-            <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
-              <thead>
-                <tr>
-                  <th className="min-w-[30px]">
-                    <Checkbox
-                      name="selectAll"
-                      checked={isSelectedAll}
-                      onChange={toggleSelectAll}
-                      className="justify-center"
-                    />
-                  </th>
-                  {inventoryMode && !isMobile && (
-                    <th>
-                      <Select
-                        classNamePrefix="no-dropdown react-select"
-                        options={invOptions}
-                        onChange={(e) => setInvFilter(e.value)}
-                        value={invOptions.find(
-                          (obj) => obj.value === invFilter
-                        )}
-                        isSearchable={false}
-                      />
-                    </th>
-                  )}
-                  {!isMobile && (
-                    <th>
-                      <Select
-                        classNamePrefix="no-dropdown react-select"
-                        options={clanOptions}
-                        onChange={(e) => setClanFilter(e.value)}
-                        value={clanOptions.find(
-                          (obj) => obj.value === clanFilter.toLowerCase()
-                        )}
-                        isSearchable
-                      />
-                    </th>
-                  )}
-                  <th className="min-w-[340px]">
-                    <Input
-                      placeholder="Filter by Deck or Card Name"
-                      type="text"
-                      name="text"
-                      autoComplete="off"
-                      spellCheck="false"
-                      value={nameFilter}
-                      onChange={handleChangeNameFilter}
-                    />
-                  </th>
-                  {isDesktop && <th />}
-                  {!isMobile && <th />}
-                  <th className="w-full">
-                    <DeckSelectAdvModalTagsFilter
-                      tagsFilter={tagsFilter}
-                      handleChangeTagsFilter={handleChangeTagsFilter}
-                      allTagsOptions={allTagsOptions}
-                    />
-                  </th>
+    <Modal handleClose={handleClose} size="xl" title="Select Deck">
+      <div className="space-y-4">
+        <div>
+          <DeckSelectAdvModalTotal
+            tagsFilter={tagsFilter}
+            setTagsFilter={setTagsFilter}
+          />
+          <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
+            <thead>
+              <tr>
+                <th className="min-w-[30px]">
+                  <Checkbox
+                    name="selectAll"
+                    checked={isSelectedAll}
+                    onChange={toggleSelectAll}
+                    className="justify-center"
+                  />
+                </th>
+                {inventoryMode && !isMobile && (
                   <th>
-                    <div className="flex items-center justify-end">
-                      <Checkbox
-                        name="revFilter"
-                        label={isDesktop ? 'Show Revisions' : 'Rev'}
-                        checked={revFilter}
-                        onChange={() => setRevFilter(!revFilter)}
-                      />
-                      <div className="flex justify-end">
-                        <DeckSelectSortForm onChange={setSortMethod} />
-                      </div>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {sortedDecks.map((deck, idx) => {
-                  return (
-                    <DeckSelectAdvModalTableRow
-                      key={deck.deckid}
-                      deck={deck}
-                      idx={idx}
-                      handleClose={handleClose}
-                      allTagsOptions={allTagsOptions}
-                      selectedDecks={selectedDecks}
-                      toggleSelect={toggleSelect}
-                      revFilter={revFilter}
+                    <Select
+                      classNamePrefix="no-dropdown react-select"
+                      options={invOptions}
+                      onChange={(e) => setInvFilter(e.value)}
+                      value={invOptions.find((obj) => obj.value === invFilter)}
+                      isSearchable={false}
                     />
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          <div className="flex justify-end ">
-            <Menu as="div" className="relative">
-              <MenuButton
-                title="Export Selected"
-                icon={<Download />}
-                text="Export Selected"
-              />
-              <MenuItems>
-                <MenuItem>
-                  <div onClick={() => exportSelected('text')}>Text</div>
-                </MenuItem>
-                <MenuItem>
-                  <div onClick={() => exportSelected('lackey')}>Lackey</div>
-                </MenuItem>
-                <MenuItem>
-                  <div onClick={() => exportSelected('jol')}>JOL</div>
-                </MenuItem>
-                <MenuItem>
-                  <div onClick={() => exportSelected('xlsx')}>Excel</div>
-                </MenuItem>
-              </MenuItems>
-            </Menu>
-          </div>
+                  </th>
+                )}
+                {!isMobile && (
+                  <th>
+                    <Select
+                      classNamePrefix="no-dropdown react-select"
+                      options={clanOptions}
+                      onChange={(e) => setClanFilter(e.value)}
+                      value={clanOptions.find(
+                        (obj) => obj.value === clanFilter.toLowerCase()
+                      )}
+                      isSearchable
+                    />
+                  </th>
+                )}
+                <th className="min-w-[340px]">
+                  <Input
+                    placeholder="Filter by Deck or Card Name"
+                    type="text"
+                    name="text"
+                    autoComplete="off"
+                    spellCheck="false"
+                    value={nameFilter}
+                    onChange={handleChangeNameFilter}
+                  />
+                </th>
+                {isDesktop && <th />}
+                {!isMobile && <th />}
+                <th className="w-full">
+                  <DeckSelectAdvModalTagsFilter
+                    tagsFilter={tagsFilter}
+                    handleChangeTagsFilter={handleChangeTagsFilter}
+                    allTagsOptions={allTagsOptions}
+                  />
+                </th>
+                <th>
+                  <div className="flex items-center justify-end">
+                    <Checkbox
+                      name="revFilter"
+                      label={isDesktop ? 'Show Revisions' : 'Rev'}
+                      checked={revFilter}
+                      onChange={() => setRevFilter(!revFilter)}
+                    />
+                    <div className="flex justify-end">
+                      <DeckSelectSortForm onChange={setSortMethod} />
+                    </div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedDecks.map((deck, idx) => {
+                return (
+                  <DeckSelectAdvModalTableRow
+                    key={deck.deckid}
+                    deck={deck}
+                    idx={idx}
+                    handleClose={handleClose}
+                    allTagsOptions={allTagsOptions}
+                    selectedDecks={selectedDecks}
+                    toggleSelect={toggleSelect}
+                    revFilter={revFilter}
+                  />
+                );
+              })}
+            </tbody>
+          </table>
         </div>
-      </Modal>
+        <div className="flex justify-end ">
+          <Menu as="div" className="relative">
+            <MenuButton
+              title="Export Selected"
+              icon={<Download />}
+              text="Export Selected"
+            />
+            <MenuItems>
+              <MenuItem>
+                <div onClick={() => exportSelected('text')}>Text</div>
+              </MenuItem>
+              <MenuItem>
+                <div onClick={() => exportSelected('lackey')}>Lackey</div>
+              </MenuItem>
+              <MenuItem>
+                <div onClick={() => exportSelected('jol')}>JOL</div>
+              </MenuItem>
+              <MenuItem>
+                <div onClick={() => exportSelected('xlsx')}>Excel</div>
+              </MenuItem>
+            </MenuItems>
+          </Menu>
+        </div>
+      </div>
+    </Modal>
   );
 };
 

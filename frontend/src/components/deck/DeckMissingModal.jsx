@@ -21,11 +21,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
   };
 
   return (
-    <Modal
-      handleClose={handleClose}
-      size='lg'
-      title={deck.name}
-    >
+    <Modal handleClose={handleClose} size="lg" title={deck.name}>
       <div>
         <div className="flex flex-row ">
           <div className="basis-full md:basis-7/12">
@@ -49,7 +45,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
             />
           </div>
         </div>
-        <div className='flex justify-end'>
+        <div className="flex justify-end">
           {inInventory && (
             <div>
               <ButtonIconed

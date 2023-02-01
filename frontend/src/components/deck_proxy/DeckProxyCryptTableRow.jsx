@@ -52,7 +52,7 @@ const DeckProxyCryptTableRow = ({
           />
         </div>
       </td>
-      <td className='min-w-[75px]'>
+      <td className="min-w-[75px]">
         <ConditionalTooltip
           placement="right"
           overlay={<UsedPopover cardid={card.c.Id} />}

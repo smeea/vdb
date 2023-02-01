@@ -46,11 +46,7 @@ const SeatingModal = ({
       }));
 
   return (
-    <Modal
-      handleClose={handleClose}
-      title="Table Seating"
-      size="lg"
-    >
+    <Modal handleClose={handleClose} title="Table Seating" size="lg">
       <div className="space-y-5">
         <div className="flex flex-col gap-4 sm:flex-row">
           <div className="space-y-3 sm:w-5/12 xl:w-5/12">
@@ -72,9 +68,7 @@ const SeatingModal = ({
                 variant="primary"
                 onClick={addPlayer}
                 title="Add Player"
-                icon={
-                  <PersonFill width="18" height="18" viewBox="0 0 16 16" />
-                }
+                icon={<PersonFill width="18" height="18" viewBox="0 0 16 16" />}
                 text="Add Player"
               />
               <ButtonIconed

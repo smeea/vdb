@@ -79,11 +79,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
 `;
 
   return (
-    <Modal
-      handleClose={handleClose}
-      size="lg"
-      title="Import from Text"
-    >
+    <Modal handleClose={handleClose} size="lg" title="Import from Text">
       <div>
         <Textarea
           className="w-full"

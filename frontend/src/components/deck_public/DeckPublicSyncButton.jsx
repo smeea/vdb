@@ -51,7 +51,7 @@ const DeckPublicSyncButton = ({ deck }) => {
         /* TODO refactor to ModalConfirmation */
         <Modal
           handleClose={() => setShowSyncConfirmation(false)}
-          size='xl'
+          size="xl"
           title={`Sync "${deck.name}" with Public Deck Archive?`}
         >
           <div>

@@ -12,6 +12,7 @@ import {
   DeckSelectSortForm,
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
+  InventoryAddDeckRow,
   ResultClanImage,
   Tooltip,
   Modal,
@@ -90,172 +91,8 @@ const InventoryAddDeckModal = ({ handleClose }) => {
     }
   }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
 
-  const deckRows = sortedDecks.map((deck, idx) => {
-    let cryptInInventory;
-    let libraryInInventory;
-
-    Object.keys(deck.crypt).map((cardid) => {
-      if (deck.crypt[cardid].q > 0) {
-        if (inventoryCrypt[cardid]) {
-          const inInventory = Math.floor(
-            inventoryCrypt[cardid].q / deck.crypt[cardid].q
-          );
-          if (cryptInInventory === null || inInventory < cryptInInventory) {
-            cryptInInventory = inInventory;
-          }
-        } else {
-          cryptInInventory = 0;
-        }
-      }
-    });
-
-    Object.keys(deck.library).map((cardid) => {
-      if (deck.library[cardid].q > 0) {
-        if (inventoryLibrary[cardid] && deck.library[cardid].q > 0) {
-          const inInventory = Math.floor(
-            inventoryLibrary[cardid].q / deck.library[cardid].q
-          );
-          if (libraryInInventory === null || inInventory < libraryInInventory) {
-            libraryInInventory = inInventory;
-          }
-        } else {
-          libraryInInventory = 0;
-        }
-      }
-    });
-
-    const inInventory = Math.min(cryptInInventory, libraryInInventory);
-    const clan = getClan(deck.crypt);
-
-    const inventoryType = deck.inventoryType;
-    const toggleInventoryState = (deckid) => {
-      if (!inventoryType) {
-        deckUpdate(deckid, 'inventoryType', 's');
-      } else if (inventoryType === 's') {
-        deckUpdate(deckid, 'inventoryType', 'h');
-      } else if (inventoryType === 'h') {
-        deckUpdate(deckid, 'inventoryType', '');
-      }
-    };
-
-    return (
-      <React.Fragment key={deck.deckid}>
-        <tr
-          className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-            idx % 2
-              ? 'bg-bgThird dark:bg-bgThirdDark'
-              : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-          }`}
-        >
-          {!isMobile && (
-            <td>
-              <Button onClick={() => toggleInventoryState(deck.deckid)}>
-                <div
-                  title={
-                    deck.inventoryType === 's'
-                      ? 'Flexible'
-                      : deck.inventoryType === 'h'
-                      ? 'Fixed'
-                      : 'Virtual'
-                  }
-                >
-                  {deck.inventoryType == 's' && <Shuffle />}
-                  {deck.inventoryType == 'h' && <PinAngleFill />}
-                  {!deck.inventoryType && <At />}
-                </div>
-              </Button>
-            </td>
-          )}
-          {!isMobile && (
-            <td className="min-w-[50px]">
-              <div className="flex justify-center">
-                {clan && <ResultClanImage value={clan} />}
-              </div>
-            </td>
-          )}
-          <td className="w-[230px] sm:w-[250px]">
-            <div
-              className="flex justify-between truncate text-fgName dark:text-fgNameDark"
-              title={deck.name}
-            >
-              {deck.name}
-              {deck.branchName &&
-                (deck.master ||
-                  (deck.branches && deck.branches.length > 0)) && (
-                  <div className="revision inline" title={deck.branchName}>
-                    {deck.branchName}
-                  </div>
-                )}
-            </div>
-          </td>
-          {isDesktop && (
-            <td className="min-w-[40px]">
-              <div
-                className="flex justify-center"
-                onMouseEnter={() => setShowDeck(deck.deckid)}
-                onMouseLeave={() => setShowDeck(false)}
-              >
-                <Tooltip
-                  placement="right"
-                  show={showDeck === deck.deckid}
-                  overlay={
-                    <div className="flex">
-                      <div
-                        onClick={(event) => {
-                          if (event.target === event.currentTarget)
-                            setShowDeck(false);
-                        }}
-                        className="h-[80vh] overflow-y-auto md:basis-7/12"
-                      >
-                        <DeckCrypt deck={deck} inAdvSelect />
-                      </div>
-                      <div
-                        onClick={(event) => {
-                          if (event.target === event.currentTarget)
-                            setShowDeck(false);
-                        }}
-                        className="h-[80vh] overflow-y-auto md:basis-5/12"
-                      >
-                        <DeckLibrary deck={deck} />
-                      </div>
-                    </div>
-                  }
-                >
-                  <EyeFill />
-                </Tooltip>
-              </div>
-            </td>
-          )}
-          {!isMobile && (
-            <td className="min-w-[100px] whitespace-nowrap">
-              {new Date(deck.timestamp).toISOString().slice(0, 10)}
-            </td>
-          )}
-          {!isMobile && (
-            <td className="w-full">
-              <DeckTags deck={deck} defaultTagsOptions={defaultTagsOptions} />
-            </td>
-          )}
-          <td className="min-w-[110px]">
-            <div className="flex justify-end space-x-1">
-              <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
-              <InventoryDeckDeleteButton
-                deck={deck}
-                inInventory={inInventory}
-              />
-            </div>
-          </td>
-        </tr>
-      </React.Fragment>
-    );
-  });
-
   return (
-    <Modal
-      handleClose={handleClose}
-      size="xl"
-      title="Import Deck to Inventory"
-    >
+    <Modal handleClose={handleClose} size="xl" title="Import Deck to Inventory">
       <div>
         <table className="border-y border-bgSecondary dark:border-bgSecondaryDark sm:border-x">
           <thead>
@@ -300,7 +137,18 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               </th>
             </tr>
           </thead>
-          <tbody>{deckRows}</tbody>
+          <tbody>
+            {sortedDecks.map((deck, idx) => {
+              return (
+                <InventoryAddDeckRow
+                  key={deck.deckid}
+                  deck={deck}
+                  defaultTagsOptions={defaultTagsOptions}
+                  idx={idx}
+                />
+              );
+            })}
+          </tbody>
         </table>
       </div>
     </Modal>

@@ -22,10 +22,11 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
   return (
     <tr
       key={card.c.Id}
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${idx % 2
+      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+        idx % 2
           ? 'bg-bgThird dark:bg-bgThirdDark'
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-        }`}
+      }`}
     >
       <td className="min-w-[28px] border-r border-bgSecondary bg-[#0000aa]/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
         {inventoryMode ? (
@@ -35,12 +36,13 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
             noPadding
           >
             <div
-              className={`flex justify-center text-lg ${inInventory < card.q
+              className={`flex justify-center text-lg ${
+                inInventory < card.q
                   ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
                   : inInventory - hardUsedTotal < card.q
-                    ? 'bg-bgWarning dark:bg-bgWarningDark'
-                    : ''
-                }`}
+                  ? 'bg-bgWarning dark:bg-bgWarningDark'
+                  : ''
+              }`}
             >
               {card.q}
             </div>
@@ -80,7 +82,6 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
       )}
     </tr>
   );
-});
 };
 
 export default TwdResultLibraryKeyCardsTableRow;

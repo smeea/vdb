@@ -10,7 +10,7 @@ const Changelog = () => {
       <div className="sm:pb-6">
         <Banner />
       </div>
-      <div className="p-3 sm:p-0 space-y-4">
+      <div className="space-y-4 p-3 sm:p-0">
         {changes && (
           <>
             <div className="text-xl font-bold text-fgSecondary underline dark:text-fgSecondaryDark">

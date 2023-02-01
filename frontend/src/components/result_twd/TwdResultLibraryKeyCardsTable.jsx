@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  ResultModal,
-  TwdResultLibraryKeyCardsTableRow
-} from '@/components';
+import { ResultModal, TwdResultLibraryKeyCardsTableRow } from '@/components';
 import { GROUPED_TYPE, ASCII_NAME } from '@/utils/constants';
 import { useApp } from '@/context';
 import { countCards, librarySort } from '@/utils';
@@ -39,7 +36,14 @@ const TwdResultLibraryKeyCardsTable = ({ library }) => {
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>
           {keyCards.map((card, idx) => {
-            return <TwdResultLibraryKeyCardsTableRow key={card.c.Id} card={card} idx={idx} handleClick={handleClick} />
+            return (
+              <TwdResultLibraryKeyCardsTableRow
+                key={card.c.Id}
+                card={card}
+                idx={idx}
+                handleClick={handleClick}
+              />
+            );
           })}
         </tbody>
       </table>

@@ -32,15 +32,13 @@ const Documentation = () => {
       <div className="sm:pb-6">
         <Banner />
       </div>
-      <div className="p-3 sm:p-0 space-y-6">
+      <div className="space-y-6 p-3 sm:p-0">
         <div>
           <Title>HELP / DOCUMENTATION</Title>
+          <div>Documentation below describe some logic of VDB components.</div>
           <div>
-            Documentation below describe some logic of VDB components.
-          </div>
-          <div>
-            If something is not clear or you need additional information,
-            please reach me by the contacts in the bottom of{' '}
+            If something is not clear or you need additional information, please
+            reach me by the contacts in the bottom of{' '}
             <Link to="/about">About page</Link>
           </div>
         </div>
@@ -80,8 +78,8 @@ const Documentation = () => {
             <SubTitle>Name or Text</SubTitle>
             <ul>
               <li>
-                Match cards if name or card text includes given string (not
-                only starting at the beginning of the word)
+                Match cards if name or card text includes given string (not only
+                starting at the beginning of the word)
               </li>
               <li>
                 Exact match of the word can be achieved with double-quoting
@@ -129,8 +127,8 @@ const Documentation = () => {
             <SubTitle>Name or Text</SubTitle>
             <ul>
               <li>
-                Match cards if name or card text includes given string (not
-                only starting at the beginning of the word)
+                Match cards if name or card text includes given string (not only
+                starting at the beginning of the word)
               </li>
               <li>
                 Exact match of the word can be achieved with double-quoting
@@ -164,9 +162,9 @@ const Documentation = () => {
             <SubTitle>Star Vampire</SubTitle>
             <ul>
               <li>
-                Match decks with more than 38% in the crypt being any
-                particular vampire (both Base + Adv), excluding Anarch Convert
-                (does not counted at all).
+                Match decks with more than 38% in the crypt being any particular
+                vampire (both Base + Adv), excluding Anarch Convert (does not
+                counted at all).
                 <ul>
                   <li>
                     E.g.: 5x Arika + 7x Other is Star Deck
@@ -211,8 +209,7 @@ const Documentation = () => {
                 Calculated excluding Anarch Convert (does not counted at all)
                 <ul>
                   <li>
-                    E.g.: 5x 11-cap + 4x Anarch Convert + 3x 3-cap is 8 avg.
-                    cap
+                    E.g.: 5x 11-cap + 4x Anarch Convert + 3x 3-cap is 8 avg. cap
                     <tt>
                       <i> -&gt; (5*11+3*3)/(5+3) = 8</i>
                     </tt>
@@ -224,16 +221,16 @@ const Documentation = () => {
             <SubTitle>Library Disciplines</SubTitle>
             <ul>
               <li>
-                Matches decks with library cards using all selected
-                disciplines at least once
+                Matches decks with library cards using all selected disciplines
+                at least once
               </li>
               <li>
                 Multi-discipline cards considered as of all given disciplines
                 <ul>
                   <li>
                     E.g.: Deck with Condemnation: Mute (chi/dai/DAI card) will
-                    match Chimerstry search, even if it was never planned by
-                    the deck to use it with chi.
+                    match Chimerstry search, even if it was never planned by the
+                    deck to use it with chi.
                   </li>
                 </ul>
               </li>
@@ -253,30 +250,29 @@ const Documentation = () => {
             <ul>
               <li>
                 Public it can be searched (using similar set of filters as for
-                TWDA), viewed, copied by other players in the PDA page, and
-                can be deleted by the author (but as with any other deck,
-                author cannot delete your copy of the deck made with Copy deck
-                button)
+                TWDA), viewed, copied by other players in the PDA page, and can
+                be deleted by the author (but as with any other deck, author
+                cannot delete your copy of the deck made with Copy deck button)
               </li>
               <li>
                 Public Deck is created from one of your existing deck (parent)
                 in the Decks page using Public Archive button
               </li>
               <li>
-                You can switch to/from your public (child) and parent deck
-                using Public Archive button in Deck page, with Public deck
+                You can switch to/from your public (child) and parent deck using
+                Public Archive button in Deck page, with Public deck
               </li>
               <li>
-                Public deck is non-editable with standard card buttons. The
-                only way to update Public Deck is to sync it with the parent
-                deck using Public Archive button in Deck page. It does not
+                Public deck is non-editable with standard card buttons. The only
+                way to update Public Deck is to sync it with the parent deck
+                using Public Archive button in Deck page. It does not
                 automatically follows updates of the parent deck
               </li>
               <li>
                 We encourage people to mostly leave the deck unchanged after
-                publishing. For significant changes please create new deck
-                (feel free to use Description to give cross-references between
-                sister decks and/or give any explanation you want)
+                publishing. For significant changes please create new deck (feel
+                free to use Description to give cross-references between sister
+                decks and/or give any explanation you want)
               </li>
               <li>
                 Author can remove the deck from PDA anytime, but each re-add
@@ -303,10 +299,10 @@ const Documentation = () => {
                 <ImageAlt className="inline" /> button.
               </li>
               <li>
-                Compare (<SearchHeartFill className="inline" />) button will
-                add the card to Compare: it will appear above Crypt/Library
-                search results (and will be saved between different searches
-                or page changes).
+                Compare (<SearchHeartFill className="inline" />) button will add
+                the card to Compare: it will appear above Crypt/Library search
+                results (and will be saved between different searches or page
+                changes).
               </li>
             </ul>
           </div>
@@ -321,9 +317,8 @@ const Documentation = () => {
                 VDB save changes automatically, you don&apos;t have to do
                 anything to save the deck. If it cannot save the change (i.e.
                 network problem) it will immediatelly revert the change, the
-                cards you see in the deck is what actually saved on the
-                server. You can close the page anytime without losing
-                progress.
+                cards you see in the deck is what actually saved on the server.
+                You can close the page anytime without losing progress.
               </li>
               <li>
                 You can change card quantity by clicking on the quantity to
@@ -334,8 +329,8 @@ const Documentation = () => {
             <SubTitle>URLs</SubTitle>
             <ul>
               <li>
-                Standard URL (Copy URL button) - copy URL to the deck and
-                follow your changes.
+                Standard URL (Copy URL button) - copy URL to the deck and follow
+                your changes.
               </li>
               <li>
                 Immutable URL - create link to unchangeable copy of the deck.
@@ -345,29 +340,28 @@ const Documentation = () => {
               </li>
               <li>
                 Deck-in-URL - copy URL containing everything about the deck.
-                Bulletproof, can be decoded even if VDB is dead. Good, but
-                long.
+                Bulletproof, can be decoded even if VDB is dead. Good, but long.
               </li>
             </ul>
 
             <SubTitle>Draw Probability</SubTitle>
             <ul>
               <li>
-                Draw probability in main deck window available on (i) button
-                is calculated as initial draw of 4 crypt and 7 library.
+                Draw probability in main deck window available on (i) button is
+                calculated as initial draw of 4 crypt and 7 library.
               </li>
               <li>
-                Draw probability in draw simulator available on Deck Draw
-                button is calculated as chance to initially draw cards in
-                existing hand (with respect to hand size and discarded cards).
-                It is not the chance to draw additional cards to your hand,
-                but chance to draw cards in the hand in the first place
-                (imagine you return hand to the library, excluding already
-                played cards, shuffle it and draw back to your hand size)
+                Draw probability in draw simulator available on Deck Draw button
+                is calculated as chance to initially draw cards in existing hand
+                (with respect to hand size and discarded cards). It is not the
+                chance to draw additional cards to your hand, but chance to draw
+                cards in the hand in the first place (imagine you return hand to
+                the library, excluding already played cards, shuffle it and draw
+                back to your hand size)
               </li>
               <li>
-                Draw calculation code (requires a little programming literacy
-                to read) is{' '}
+                Draw calculation code (requires a little programming literacy to
+                read) is{' '}
                 <a href="https://github.com/smeea/vdb/blob/master/frontend/pages/components/drawProbability.js">
                   there
                 </a>
@@ -379,21 +373,21 @@ const Documentation = () => {
         <div className="space-y-1">
           <Title id="inventory">INVENTORY MANAGEMENT</Title>
           <div>
-            Inventory management in VDB let you browse your card collection
-            with existing crypt/library search and track how collection is
-            used in your existing decks
+            Inventory management in VDB let you browse your card collection with
+            existing crypt/library search and track how collection is used in
+            your existing decks
           </div>
           <div>
             <SubTitle>Add cards from you collection:</SubTitle>
             <ul>
               <li>
-                One by one using &#39;Add Card&#39; forms on top (last card
-                you add stays on top so you can change quantity without
-                scrolling down)
+                One by one using &#39;Add Card&#39; forms on top (last card you
+                add stays on top so you can change quantity without scrolling
+                down)
               </li>
               <li>
-                Add full deck from your Deck collection (be careful you can
-                add one deck multiple times doubling the quantity)
+                Add full deck from your Deck collection (be careful you can add
+                one deck multiple times doubling the quantity)
               </li>
             </ul>
             <SubTitle>Search cards from inventory:</SubTitle>
@@ -438,20 +432,19 @@ const Documentation = () => {
                 <div className="inline ">
                   <PinAngleFill className="inline" />
                 </div>
-                Fixed. These decks each use unique cards like for your
-                permanent decks you dont want to disassembly between game
-                sessions
+                Fixed. These decks each use unique cards like for your permanent
+                decks you dont want to disassembly between game sessions
               </li>
             </ul>
             <p>
-              You can change status of the deck in Deck page by clicking
-              Status button next to deck select form
+              You can change status of the deck in Deck page by clicking Status
+              button next to deck select form
             </p>
             <p>
               Additionally you can set status per-card (i.e. if your deck is
               fixed except few Masters you swap between decks) clicking on the
-              icon to the left of the card in the deck list. All other cards
-              of the deck will continue to be of the deck status
+              icon to the left of the card in the deck list. All other cards of
+              the deck will continue to be of the deck status
             </p>
           </div>
         </div>
