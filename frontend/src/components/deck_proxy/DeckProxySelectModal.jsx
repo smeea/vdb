@@ -146,7 +146,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   return (
     <Modal
       handleClose={() => handleClose()}
-      dialogClassName={isMobile ? '' : 'modal-x-wide'}
+      size='xl'
       title="Create PDF with Card Proxies"
     >
       <div className="space-y-5">

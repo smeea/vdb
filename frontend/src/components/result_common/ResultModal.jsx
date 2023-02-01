@@ -12,7 +12,7 @@ const ResultModal = ({
   card,
   handleModalCardChange,
   handleClose,
-  nested,
+  bordered,
   forceInventoryMode,
 }) => {
   const { showImage, toggleShowImage, isMobile, isNarrow } = useApp();
@@ -72,7 +72,7 @@ const ResultModal = ({
       <div className="fixed inset-0 flex items-center justify-center overflow-auto p-0 sm:p-8">
         <Dialog.Panel
           className={`w-full space-y-2 md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:min-w-[55%] ${
-            nested
+            bordered
               ? 'border border-borderNestModal dark:border-borderNestModalDark'
               : 'border-none'
           } m-2 rounded bg-bgPrimary dark:bg-bgPrimaryDark`}

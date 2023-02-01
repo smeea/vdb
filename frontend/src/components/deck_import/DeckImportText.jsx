@@ -82,7 +82,6 @@ It will skip other (useless) lines, you don't have to remove it yourself.
     <Modal
       handleClose={handleClose}
       size="lg"
-      dialogClassName={isMobile ? '' : null}
       title="Import from Text"
     >
       <div>

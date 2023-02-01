@@ -176,10 +176,10 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
   return (
     <Modal
       handleClose={handleClose}
-      onShow={() => refUrl.current.focus()}
+      /* TODO drop/implement onShow*/
+      /* onShow={() => refUrl.current.focus()} */
       size="lg"
       centered={isMobile}
-      dialogClassName={isMobile ? '' : null}
       title="Import from Amaranth"
     >
       <div>

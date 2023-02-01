@@ -1,22 +1,16 @@
 import React from 'react';
 import Spinner from '@/assets/images/icons/three-dots.svg';
-import X from '@/assets/images/icons/x.svg';
 import {
-  ButtonFloat,
   ResultCryptTable,
   DeckRecommendationLibrary,
   Modal,
 } from '@/components';
-import { useApp } from '@/context';
 
 const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
-  const { isNarrow, isMobile } = useApp();
-
   return (
-    <>
       <Modal
         handleClose={handleClose}
-        dialogClassName={isMobile ? '' : 'modal-wide'}
+        size='lg'
         title="Card Ideas"
       >
         <div>
@@ -48,12 +42,6 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
           </div>
         </div>
       </Modal>
-      {isNarrow && (
-        <ButtonFloat onClick={handleClose} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
-    </>
   );
 };
 

@@ -6,7 +6,7 @@ import { Modal, Button, DeckPublicDiff, ButtonIconed } from '@/components';
 import { useApp, deckStore } from '@/context';
 
 const DeckPublicSyncButton = ({ deck }) => {
-  const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();
+  const { setShowMenuButtons, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
@@ -48,9 +48,10 @@ const DeckPublicSyncButton = ({ deck }) => {
         icon={!spinnerState ? <PeopleFill /> : <Spinner />}
       />
       {showSyncConfirmation && (
+        /* TODO refactor to ModalConfirmation */
         <Modal
           handleClose={() => setShowSyncConfirmation(false)}
-          dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
+          size='xl'
           title={`Sync "${deck.name}" with Public Deck Archive?`}
         >
           <div>

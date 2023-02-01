@@ -6,11 +6,13 @@ import { useApp } from '@/context';
 
 const Modal = ({
   handleClose,
-  centered,
-  size = 'md',
   title,
   children,
-  noPadding,
+  size = 'md',
+  noPadding = false,
+  centered = false,
+  // TODO implement bordered
+  bordered = false,
 }) => {
   const { isNarrow } = useApp();
 
@@ -38,7 +40,6 @@ const Modal = ({
         className="fixed inset-0 bg-[#000] bg-opacity-50"
         aria-hidden="true"
       />
-
       <div
         className={`fixed inset-0 flex justify-center overflow-auto p-0 sm:p-8 ${
           centered ? 'items-center' : 'items-start'

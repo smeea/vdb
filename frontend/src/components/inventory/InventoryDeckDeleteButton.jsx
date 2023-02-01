@@ -42,7 +42,7 @@ const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
           handleCancel={handleCancel}
           buttonText="Remove"
           headerText={'Remove deck ' + deck.name + ' from Inventory?'}
-          nested
+          bordered
         />
       )}
     </>

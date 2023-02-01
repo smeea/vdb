@@ -97,10 +97,9 @@ const ResultLayoutTextSets = ({ sets, setImageSet }) => {
       {selectedSet && (
         <Modal
           size="xs"
-          className="nested-selectedSet flex justify-center"
-          dialogClassName="w-3/4"
           handleClose={() => setSelectedSet(null)}
           title="Sets"
+          bordered
           centered
         >
           <PopoverText sets={sets} set={selectedSet} />

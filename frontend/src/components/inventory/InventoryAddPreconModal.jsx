@@ -221,7 +221,6 @@ const InventoryAddDeckModal = ({ handleClose }) => {
     <Modal
       handleClose={handleClose}
       size="xl"
-      dialogClassName={isMobile ? '' : null}
       title="Import Precon to Inventory"
     >
       <div>

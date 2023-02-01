@@ -42,7 +42,6 @@ const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
     <Modal
       handleClose={() => setBadCards([])}
       size="xl"
-      dialogClassName={isMobile ? '' : null}
       title="Fix Bad Import"
     >
       <div>

@@ -23,7 +23,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
   return (
     <Modal
       handleClose={handleClose}
-      dialogClassName={isMobile ? '' : 'modal-wide'}
+      size='lg'
       title={deck.name}
     >
       <div>
@@ -49,7 +49,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
             />
           </div>
         </div>
-        <div className={isMobile ? 'flex justify-end ' : 'flex justify-end '}>
+        <div className='flex justify-end'>
           {inInventory && (
             <div>
               <ButtonIconed

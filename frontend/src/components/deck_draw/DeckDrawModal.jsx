@@ -259,7 +259,7 @@ const DeckDrawModal = ({
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleModalCardClose}
-          nested
+          bordered
         />
       )}
     </Modal>

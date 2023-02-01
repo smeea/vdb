@@ -105,7 +105,7 @@ const DeckProxyLibrary = ({
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleModalCardClose}
-          nested={true}
+          bordered
         />
       )}
     </>

@@ -6,7 +6,6 @@ import Shuffle from '@/assets/images/icons/shuffle.svg';
 import Download from '@/assets/images/icons/download.svg';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
 import At from '@/assets/images/icons/at.svg';
-import X from '@/assets/images/icons/x.svg';
 import {
   DeckSelectAdvModalTotal,
   DeckSelectAdvModalTableRow,
@@ -17,7 +16,6 @@ import {
   MenuItems,
   MenuItem,
   MenuButton,
-  ButtonFloat,
   Checkbox,
   Input,
 } from '@/components';
@@ -26,7 +24,7 @@ import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
 
 const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
-  const { cryptCardBase, inventoryMode, isNarrow, isMobile, isDesktop } =
+  const { cryptCardBase, inventoryMode, isMobile, isDesktop } =
     useApp();
   const decks = useSnapshot(deckStore).decks;
 
@@ -249,10 +247,9 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
   };
 
   return (
-    <>
       <Modal
         handleClose={handleClose}
-        dialogClassName={isMobile ? '' : 'modal-x-wide'}
+        size='xl'
         title="Select Deck"
       >
         <div className="space-y-4">
@@ -294,7 +291,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                         value={clanOptions.find(
                           (obj) => obj.value === clanFilter.toLowerCase()
                         )}
-                        isSearchable={!isMobile}
+                        isSearchable
                       />
                     </th>
                   )}
@@ -319,7 +316,6 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                     />
                   </th>
                   <th>
-                    {/* TODO check on mobile, className was '' */}
                     <div className="flex items-center justify-end">
                       <Checkbox
                         name="revFilter"
@@ -377,12 +373,6 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
           </div>
         </div>
       </Modal>
-      {isNarrow && (
-        <ButtonFloat onClick={handleClose} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
-    </>
   );
 };
 

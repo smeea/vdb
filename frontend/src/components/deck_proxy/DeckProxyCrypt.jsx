@@ -78,7 +78,7 @@ const DeckProxyCrypt = ({
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleModalCardClose}
-          nested={true}
+          bordered
         />
       )}
     </>

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useApp, deckCardChange } from '@/context';
+import { deckCardChange } from '@/context';
 import { Modal, DeckCardQuantity, QuickSelect } from '@/components';
 
 const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
-  const { isMobile } = useApp();
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -42,7 +41,6 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
     <Modal
       handleClose={() => setBadCards([])}
       size="xl"
-      dialogClassName={isMobile ? '' : null}
       title="Fix Bad Import"
     >
       <div>
