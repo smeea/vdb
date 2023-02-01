@@ -1,4 +1,5 @@
 # FIX
+- Fill conviction icons
 
 # FEATURES
 - Check TWD
@@ -21,7 +22,6 @@
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
 - Resize clan/types/misc images
-- Merge disciplines and types images folders OR split in Text/Rulings
 
 # TAILWIND MIGRATION
 - Fix show password in Account on enter
