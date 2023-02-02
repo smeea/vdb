@@ -3,11 +3,8 @@ import {
   DiffLibraryTable,
   ResultLibraryType,
   ResultModal,
-  DeckLibraryTotalInfo,
-  DeckNewCard,
   DeckDrawProbability,
   DeckLibraryHeader,
-  Modal,
   ButtonFloat,
 } from '@/components';
 import { MASTER } from '@/utils/constants';
@@ -16,10 +13,7 @@ import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
-  const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const toggleShowInfo = () => setShowInfo(!showInfo);
-  const toggleShowAdd = () => setShowAdd(!showAdd);
 
   const {
     library,
@@ -97,43 +91,20 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   return (
     <>
       <DeckLibraryHeader
-        isMobile={isMobile}
         libraryTotal={libraryTotal}
         bloodTotal={bloodTotal}
         poolTotal={poolTotal}
-        toggleShowInfo={toggleShowInfo}
-        toggleShowAdd={toggleShowAdd}
         hasBanned={hasBanned}
         isEditable={isEditable}
+        showInfo={showInfo}
+        setShowInfo={setShowInfo}
+        cards={library}
+        deckid={deckid}
+        byTypes={libraryByTypeTotal}
+        byClan={libraryByClansTotal}
+        byDisciplines={libraryByDisciplinesTotal}
       />
-      {showInfo && (
-        <div className="bg-bgSecondary dark:bg-bgSecondaryDark ">
-          <DeckLibraryTotalInfo
-            byDisciplines={libraryByDisciplinesTotal}
-            byTypes={libraryByTypeTotal}
-            byClans={libraryByClansTotal}
-          />
-        </div>
-      )}
-      {showAdd &&
-        (!isMobile ? (
-          <DeckNewCard
-            setShowAdd={setShowAdd}
-            cards={cardsFrom}
-            deckid={deckid}
-            target="library"
-          />
-        ) : (
-          <Modal handleClose={() => setShowAdd(false)} title="Add Library Card">
-            <DeckNewCard
-              setShowAdd={setShowAdd}
-              cards={cardsFrom}
-              deckid={deckid}
-              target="library"
-            />
-          </Modal>
-        ))}
-      {LibraryDeck}
+      <div className="space-y-2">{LibraryDeck}</div>
       {Object.keys(librarySide).length > 0 && (
         <div className=" opacity-60 dark:opacity-50">
           <b>Side Library</b>

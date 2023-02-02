@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import {
   DiffCryptTable,
-  DeckCryptTotalInfo,
-  DeckNewCard,
   ResultModal,
   DeckCryptHeader,
-  Modal,
   ButtonFloat,
 } from '@/components';
 import { deckStore, useApp } from '@/context';
@@ -25,40 +22,23 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
     setShowFloatingButtons,
   } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
+  const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {
     Capacity: 'C',
-    'Clan ': 'CL', // SPACE SUFFIX IS INTENTIONAL
-    'Group ': 'G', // SPACE SUFFIX IS INTENTIONAL
+    'Clan ': 'CL ', // SPACE SUFFIX IS INTENTIONAL
+    'Group ': 'G ', // SPACE SUFFIX IS INTENTIONAL
     Name: 'N',
-    'Quantity ': 'Q', // SPACE SUFFIX IS INTENTIONAL
+    'Quantity ': 'Q ', // SPACE SUFFIX IS INTENTIONAL
     Sect: 'S',
   };
 
-  const [showAdd, setShowAdd] = useState(false);
-  const [showInfo, setShowInfo] = useState(false);
-  const toggleShowInfo = () => setShowInfo(!showInfo);
-  const toggleShowAdd = () => setShowAdd(!showAdd);
+  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } =
+    useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
 
-  const {
-    crypt,
-    cryptSide,
-    hasBanned,
-    cryptTotal,
-    cryptGroups,
-    sortedCards,
-    sortedCardsSide,
-  } = useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
+  const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
+    useKeyDisciplines(crypt);
 
-  // Disciplines Sort and Key non-Key selection
-  const {
-    disciplinesSet,
-    keyDisciplines,
-    nonKeyDisciplines,
-    disciplinesDetailed,
-  } = useKeyDisciplines(crypt);
-
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -75,55 +55,24 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
       }
     >
       <DeckCryptHeader
-        cryptTotal={cryptTotal}
-        cryptGroups={cryptGroups}
-        toggleShowInfo={toggleShowInfo}
-        toggleShowAdd={toggleShowAdd}
-        hasBanned={hasBanned}
         sortMethods={sortMethods}
         sortMethod={cryptDeckSort}
         setSortMethod={changeCryptDeckSort}
-        inReview
+        showInfo={showInfo}
+        setShowInfo={setShowInfo}
+        cards={crypt}
+        cardChange={cardChange}
       />
-      {showInfo && (
-        <div className="bg-bgSecondary dark:bg-bgSecondaryDark ">
-          <DeckCryptTotalInfo
-            disciplinesDetailed={disciplinesDetailed}
-            cards={crypt}
-          />
-        </div>
-      )}
-      {showAdd &&
-        (!isMobile ? (
-          <DeckNewCard
-            setShowAdd={setShowAdd}
-            cards={cardsFrom}
-            target="crypt"
-            cardChange={cardChange}
-          />
-        ) : (
-          <Modal title="Add Crypt Card" handleClose={() => setShowAdd(false)}>
-            <div>
-              <DeckNewCard
-                setShowAdd={setShowAdd}
-                cards={cardsFrom}
-                target="crypt"
-                cardChange={cardChange}
-              />
-            </div>
-          </Modal>
-        ))}
       <DiffCryptTable
-        inReview
-        isAuthor={true}
+        isEditable
         cardChange={cardChange}
         handleModalCardOpen={handleModalCardOpen}
         cards={sortedCards}
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
+        showInfo={showInfo}
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
-        showInfo={showInfo}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
       />
@@ -133,8 +82,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
             Side Crypt
           </div>
           <DiffCryptTable
-            inReview
-            isAuthor={true}
+            isEditable
             cardChange={cardChange}
             handleModalCardOpen={handleModalSideCardOpen}
             cards={sortedCardsSide}

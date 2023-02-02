@@ -13,7 +13,6 @@ const DiffLibraryTable = ({
   showInfo,
   libraryTotal,
   handleModalCardOpen,
-  inReview,
 }) => {
   const { setShowFloatingButtons } = useApp();
 
@@ -36,7 +35,6 @@ const DiffLibraryTable = ({
               placement={placement}
               showInfo={showInfo}
               libraryTotal={libraryTotal}
-              inReview={inReview}
               key={card.c.Id}
               card={card}
               idx={idx}

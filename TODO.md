@@ -19,6 +19,7 @@
 - Debouncing for text search query - useTimeout+useDebouncing hook https://youtu.be/0c6znExIqRw?t=118
 - Refactor fetch to useAsync+useFetch hook https://youtu.be/vrIxu-kfAUo&t=546
 - Refactor InventoryCrypt and InventoryLibrary
+- Refactor DiffSelect
 - Refactor deck buttons (split in button ui and function)
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
@@ -29,4 +30,5 @@
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Refactor or restore setShowFloatingButtons functionality
 - TwdLibraryByType click to freeze popover
-- Crypt & Library sticky headers (+ full crypt)
+- Library sticky hide above header
+- Test if disableOverlay is required (possible to change?)

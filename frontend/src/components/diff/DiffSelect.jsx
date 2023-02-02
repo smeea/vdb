@@ -9,6 +9,7 @@ import {
   DeckSelectRecent,
   Button,
   Radio,
+  Input,
 } from '@/components';
 import { useApp } from '@/context';
 
@@ -30,7 +31,7 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
   };
 
   const handleUrlChange = (e) => {
-    if (e.taret.name === 'from') {
+    if (e.target.name === 'from') {
       setUrlFrom(e.target.value);
     } else {
       setUrlTo(e.target.value);
@@ -40,12 +41,17 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
   const handleUrlSubmit = (e) => {
     e.preventDefault();
 
-    let newId;
-    if (e.taret.name === 'from') {
-      newId = urlFrom.replace(`${import.meta.env.VITE_BASE_URL}/decks/`, '');
+    if (e.target.name === 'from') {
+      const newId = urlFrom.replace(
+        `${import.meta.env.VITE_BASE_URL}/decks/`,
+        ''
+      );
       navigate(`/diff/${newId}/${deckidTo}`);
     } else {
-      newId = urlTo.replace(`${import.meta.env.VITE_BASE_URL}/decks/`, '');
+      const newId = urlTo.replace(
+        `${import.meta.env.VITE_BASE_URL}/decks/`,
+        ''
+      );
       navigate(`/diff/${deckidFrom}/${newId}`);
     }
   };
@@ -84,23 +90,30 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
           <form
             name="from"
             onSubmit={handleUrlSubmit}
-            className=" min-w-[270px]"
+            className="min-w-[270px]"
           >
-            <input
-              placeholder="First Deck (ID or URL)"
-              type="text"
-              name="from"
-              value={urlFrom}
-              onChange={handleUrlChange}
-            />
-            <Button variant="primary" type="submit">
-              <Check2 />
-            </Button>
-            {isMobile && (
-              <Button variant="primary" onClick={handleSwap}>
-                <ArrowLeftRight />
+            <div className="flex">
+              <Input
+                className="w-full rounded-r-none"
+                placeholder="First Deck (ID or URL)"
+                type="text"
+                name="from"
+                value={urlFrom}
+                onChange={handleUrlChange}
+              />
+              <Button
+                className="rounded-l-none"
+                variant="primary"
+                type="submit"
+              >
+                <Check2 />
               </Button>
-            )}
+              {isMobile && (
+                <Button variant="primary" type="button" onClick={handleSwap}>
+                  <ArrowLeftRight />
+                </Button>
+              )}
+            </div>
           </form>
         ) : (
           <div
@@ -114,12 +127,10 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
               }
             >
               {selectFrom == 'from-my' && decks ? (
-                <>
-                  <DeckSelectMy
-                    handleSelect={handleSelectFrom}
-                    deckid={deck?.deckid}
-                  />
-                </>
+                <DeckSelectMy
+                  handleSelect={handleSelectFrom}
+                  deckid={deck?.deckid}
+                />
               ) : selectFrom == 'from-recent' ? (
                 <DeckSelectRecent
                   handleSelect={handleSelectFrom}
@@ -132,7 +143,7 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
                 />
               )}
             </div>
-            {selectFrom == 'from-my' && decks && deck.isBranches && (
+            {selectFrom == 'from-my' && decks && deck?.isBranches && (
               <div className="w-1/4">
                 <DeckBranchSelect handleSelect={handleSelectFrom} deck={deck} />
               </div>
@@ -190,16 +201,23 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
         </div>
         {selectTo === 'to-url' ? (
           <form name="to" onSubmit={handleUrlSubmit} className=" min-w-[270px]">
-            <input
-              placeholder="First Deck (ID or URL)"
-              type="text"
-              name="to"
-              value={urlTo}
-              onChange={handleUrlChange}
-            />
-            <Button variant="primary" type="submit">
-              <Check2 />
-            </Button>
+            <div className="flex">
+              <Input
+                className="w-full rounded-r-none"
+                placeholder="First Deck (ID or URL)"
+                type="text"
+                name="to"
+                value={urlTo}
+                onChange={handleUrlChange}
+              />
+              <Button
+                className="rounded-l-none"
+                variant="primary"
+                type="submit"
+              >
+                <Check2 />
+              </Button>
+            </div>
           </form>
         ) : (
           <div

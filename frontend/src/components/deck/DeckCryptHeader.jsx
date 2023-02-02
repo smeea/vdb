@@ -1,57 +1,107 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg';
-import { Banned, Button, SortButton } from '@/components';
+import {
+  DeckCryptTotalInfo,
+  DeckNewCard,
+  Modal,
+  Banned,
+  Button,
+  SortButton,
+} from '@/components';
 import { useApp } from '@/context';
+import { useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
 const DeckCryptHeader = ({
-  cryptTotal,
+  deckid,
+  showInfo,
+  setShowInfo,
   inMissing,
-  cryptGroups,
-  toggleShowInfo,
-  toggleShowAdd,
-  hasBanned,
   isEditable,
   sortMethods,
   sortMethod,
   setSortMethod,
-  inReview,
+  cardChange,
+  cards,
 }) => {
   const { isMobile } = useApp();
+  const [showAdd, setShowAdd] = useState(false);
+  const { disciplinesDetailed } = useKeyDisciplines(cards);
+  const { hasBanned, cryptTotal, cryptGroups } = useDeckCrypt(
+    cards,
+    null,
+    null
+  );
 
   return (
-    <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-      <div className="space-x-2 px-2 py-1 font-bold">
-        <div className="inline">
-          Crypt [{cryptTotal}
-          {!inMissing && cryptTotal < 12 && ' of 12+'}]
+    <>
+      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+        <div className="space-x-2 px-2 py-1 font-bold">
+          <div className="inline">
+            Crypt [{cryptTotal}
+            {!inMissing && cryptTotal < 12 && ' of 12+'}]
+          </div>
+          {!inMissing && cryptGroups && (
+            <div className="inline">{cryptGroups}</div>
+          )}
+          {!inMissing && hasBanned && <Banned />}
         </div>
-        {!inMissing && cryptGroups && (
-          <div className="inline">{cryptGroups}</div>
-        )}
-        {!inMissing && hasBanned && <Banned />}
-      </div>
-      <div className="flex space-x-1">
-        {!inMissing && (
-          <SortButton
-            sortMethods={sortMethods}
-            sortMethod={sortMethod}
-            setSortMethod={setSortMethod}
-          />
-        )}
-        <Button
-          title="Additional Info"
-          variant="primary"
-          onClick={toggleShowInfo}
-        >
-          <InfoCircle />
-        </Button>
-        {(inReview || isEditable) && !isMobile && (
-          <Button title="Add Card" variant="primary" onClick={toggleShowAdd}>
-            +
+        <div className="flex space-x-1">
+          {!inMissing && (
+            <SortButton
+              sortMethods={sortMethods}
+              sortMethod={sortMethod}
+              setSortMethod={setSortMethod}
+            />
+          )}
+          <Button
+            title="Additional Info"
+            variant="primary"
+            onClick={() => setShowInfo(!showInfo)}
+          >
+            <InfoCircle />
           </Button>
-        )}
+          {isEditable && !isMobile && (
+            <Button
+              title="Add Card"
+              variant="primary"
+              onClick={() => setShowAdd(!showAdd)}
+            >
+              +
+            </Button>
+          )}
+        </div>
       </div>
-    </div>
+      {showInfo && (
+        <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
+          <DeckCryptTotalInfo
+            disciplinesDetailed={disciplinesDetailed}
+            cards={cards}
+          />
+        </div>
+      )}
+      {showAdd &&
+        (!isMobile ? (
+          <DeckNewCard
+            setShowAdd={setShowAdd}
+            cards={cards}
+            deckid={deckid}
+            target="crypt"
+            cardChange={cardChange}
+          />
+        ) : (
+          <Modal handleClose={() => setShowAdd(false)} title="Add Crypt Card">
+            <div>
+              <DeckNewCard
+                setShowAdd={setShowAdd}
+                cards={cards}
+                deckid={deckid}
+                target="crypt"
+                cardChange={cardChange}
+              />
+            </div>
+          </Modal>
+        ))}
+    </>
   );
 };
 

@@ -33,8 +33,8 @@ const InventoryLibrary = ({
     Quantity: 'Q',
     'Type ': 'T',
     'Clan / Discipline': 'C/D',
-    'Cost - Min to Max ': 'C↑', // SPACE SUFFIX IS INTENTIONAL
-    'Cost - Max to Min ': 'C↓', // SPACE SUFFIX IS INTENTIONAL
+    'Cost - Min to Max ': 'C↑ ', // SPACE SUFFIX IS INTENTIONAL
+    'Cost - Max to Min ': 'C↓ ', // SPACE SUFFIX IS INTENTIONAL
   };
 
   const cardsByType = {};

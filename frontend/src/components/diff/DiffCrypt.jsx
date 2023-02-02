@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import {
   DiffCryptTable,
-  DeckCryptTotalInfo,
-  DeckNewCard,
   ResultModal,
   DeckCryptHeader,
-  Modal,
   ButtonFloat,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
@@ -25,33 +22,22 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
     setShowFloatingButtons,
   } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
+  const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {
     Capacity: 'C',
-    'Clan ': 'CL', // SPACE SUFFIX IS INTENTIONAL
-    'Group ': 'G', // SPACE SUFFIX IS INTENTIONAL
+    'Clan ': 'CL ', // SPACE SUFFIX IS INTENTIONAL
+    'Group ': 'G ', // SPACE SUFFIX IS INTENTIONAL
     Name: 'N',
-    'Quantity ': 'Q', // SPACE SUFFIX IS INTENTIONAL
+    'Quantity ': 'Q ', // SPACE SUFFIX IS INTENTIONAL
     Sect: 'S',
   };
 
-  const [showAdd, setShowAdd] = useState(false);
-  const [showInfo, setShowInfo] = useState(false);
-  const toggleShowInfo = () => setShowInfo(!showInfo);
-  const toggleShowAdd = () => setShowAdd(!showAdd);
+  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } =
+    useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
 
-  const {
-    crypt,
-    cryptSide,
-    hasBanned,
-    cryptTotal,
-    cryptGroups,
-    sortedCards,
-    sortedCardsSide,
-  } = useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
-
-  // Disciplines Sort and Key non-Key selection
-  const { disciplinesDetailed } = useKeyDisciplines(crypt);
+  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
+    useKeyDisciplines(crypt);
 
   // Modal Card Controller
   const {
@@ -66,42 +52,15 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   return (
     <>
       <DeckCryptHeader
-        cryptTotal={cryptTotal}
-        cryptGroups={cryptGroups}
-        toggleShowInfo={toggleShowInfo}
-        toggleShowAdd={toggleShowAdd}
-        hasBanned={hasBanned}
         isEditable={isEditable}
         sortMethods={sortMethods}
         sortMethod={cryptDeckSort}
         setSortMethod={changeCryptDeckSort}
+        showInfo={showInfo}
+        setShowInfo={setShowInfo}
+        cards={crypt}
+        deckid={deckid}
       />
-      {showInfo && (
-        <div className="bg-bgSecondary dark:bg-bgSecondaryDark ">
-          <DeckCryptTotalInfo
-            disciplinesDetailed={disciplinesDetailed}
-            cards={crypt}
-          />
-        </div>
-      )}
-      {showAdd &&
-        (!isMobile ? (
-          <DeckNewCard
-            setShowAdd={setShowAdd}
-            cards={cardsFrom}
-            deckid={deckid}
-            target="crypt"
-          />
-        ) : (
-          <Modal handleClose={() => setShowAdd(false)} title="Add Crypt Card">
-            <DeckNewCard
-              setShowAdd={setShowAdd}
-              cards={cardsFrom}
-              deckid={deckid}
-              target="crypt"
-            />
-          </Modal>
-        ))}
       <DiffCryptTable
         handleModalCardOpen={handleModalCardOpen}
         deckid={deckid}
@@ -111,6 +70,10 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         cryptTotal={cryptTotal}
         showInfo={showInfo}
         isEditable={isEditable}
+        disciplinesSet={disciplinesSet}
+        keyDisciplines={keyDisciplines}
+        nonKeyDisciplines={nonKeyDisciplines}
+        maxDisciplines={maxDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className=" opacity-60 dark:opacity-50">
@@ -124,6 +87,10 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
             cardsFrom={cardsFrom}
             cardsTo={cardsTo}
             isEditable={isEditable}
+            disciplinesSet={disciplinesSet}
+            keyDisciplines={keyDisciplines}
+            nonKeyDisciplines={nonKeyDisciplines}
+            maxDisciplines={maxDisciplines}
           />
         </div>
       )}

@@ -5,7 +5,7 @@ import {
   DeckCardQuantity,
   DeckDrawProbability,
   ResultCryptTableRowCommon,
-  Tooltip,
+  ConditionalTooltip,
   DiffQuantityDiff,
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
@@ -26,7 +26,6 @@ const DiffCryptTableRow = ({
   placement,
   showInfo,
   cryptTotal,
-  inReview,
   card,
   idx,
   handleClick,
@@ -35,15 +34,15 @@ const DiffCryptTableRow = ({
   nonKeyDisciplines,
   maxDisciplines,
 }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const { inventoryMode } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
-  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
   const softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
-  const qFrom = cardsFrom[card.c.Id] ? cardsFrom[card.c.Id].q : 0;
-  const qTo = cardsTo[card.c.Id] ? cardsTo[card.c.Id].q : 0;
+  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+  const qFrom = cardsFrom[card.c.Id]?.q ?? 0;
+  const qTo = cardsTo[card.c.Id]?.q ?? 0;
 
   return (
     <tr
@@ -53,41 +52,26 @@ const DiffCryptTableRow = ({
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
-      {isEditable || inReview ? (
-        <>
-          {!inReview && inventoryMode && decks ? (
-            <td className="quantity">
-              <Tooltip
-                placement="right"
-                overlay={<UsedPopover cardid={card.c.Id} />}
-              >
-                <DeckCardQuantity
-                  card={card.c}
-                  q={qFrom}
-                  deckid={cardChange ? null : deckid}
-                  cardChange={cardChange ?? deckCardChange}
-                  inInventory={inInventory}
-                  softUsedMax={softUsedMax}
-                  hardUsedTotal={hardUsedTotal}
-                  inventoryType={decks[deckid].inventoryType}
-                />
-              </Tooltip>
-            </td>
-          ) : (
-            <td className="quantity">
-              <DeckCardQuantity
-                card={card.c}
-                q={qFrom}
-                deckid={cardChange ? null : deckid}
-                cardChange={cardChange ?? deckCardChange}
-              />
-            </td>
-          )}
-        </>
-      ) : (
-        <td className="quantity-no-buttons">{qFrom ? qFrom : null}</td>
-      )}
-      <td className={`w-[42px] min-w-[35px] text-lg ${!isMobile && ''}`}>
+      <td className={isEditable ? 'min-w-[75px]' : 'min-w-[40px]'}>
+        <ConditionalTooltip
+          placement="bottom"
+          overlay={<UsedPopover cardid={card.c.Id} />}
+          disabled={!inventoryMode}
+        >
+          <DeckCardQuantity
+            card={card.c}
+            q={qFrom}
+            deckid={cardChange ? null : deckid}
+            cardChange={cardChange ?? deckCardChange}
+            inInventory={inInventory}
+            softUsedMax={softUsedMax}
+            hardUsedTotal={hardUsedTotal}
+            inventoryType={decks[deckid]?.inventoryType}
+            isEditable={isEditable}
+          />
+        </ConditionalTooltip>
+      </td>
+      <td className="w-[42px] min-w-[35px] text-lg">
         <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
       </td>
       <ResultCryptTableRowCommon

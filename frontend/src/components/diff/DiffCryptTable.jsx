@@ -1,7 +1,6 @@
 import React from 'react';
 import { DiffCryptTableRow } from '@/components';
 import { useApp } from '@/context';
-import { useKeyDisciplines } from '@/hooks';
 
 const DiffCryptTable = ({
   cardChange,
@@ -14,11 +13,12 @@ const DiffCryptTable = ({
   showInfo,
   cryptTotal,
   handleModalCardOpen,
-  inReview,
+  disciplinesSet,
+  keyDisciplines,
+  nonKeyDisciplines,
+  maxDisciplines,
 }) => {
   const { setShowFloatingButtons } = useApp();
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
-    useKeyDisciplines(cards);
 
   const handleClick = (card) => {
     handleModalCardOpen(card);
@@ -38,7 +38,6 @@ const DiffCryptTable = ({
               isEditable={isEditable}
               placement={placement}
               showInfo={showInfo}
-              inReview={inReview}
               key={card.c.Id}
               card={card}
               idx={idx}

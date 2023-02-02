@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import {
   DeckLibraryTable,
-  DeckLibraryTotalInfo,
-  DeckNewCard,
   ResultLibraryType,
   ResultModal,
   DeckDrawProbability,
   DeckLibraryHeader,
-  Modal,
   ButtonFloat,
 } from '@/components';
 import { useApp } from '@/context';
@@ -19,10 +16,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
     useApp();
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
-  const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const toggleShowInfo = () => setShowInfo(!showInfo);
-  const toggleShowAdd = () => setShowAdd(!showAdd);
 
   const {
     library,
@@ -103,53 +97,25 @@ const DeckLibrary = ({ deck, inMissing }) => {
         <div
           className={
             !inMissing && !isMobile
-              ? 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+              ? 'sticky sm:top-[56px] lg:top-[64px] xl:top-[72px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
               : ''
           }
         >
           <DeckLibraryHeader
-            isMobile={isMobile}
             libraryTotal={libraryTotal}
             inMissing={inMissing}
             bloodTotal={bloodTotal}
             poolTotal={poolTotal}
-            toggleShowInfo={toggleShowInfo}
-            toggleShowAdd={toggleShowAdd}
             hasBanned={hasBanned}
             isEditable={isEditable}
+            showInfo={showInfo}
+            setShowInfo={setShowInfo}
+            cards={library}
+            deckid={deckid}
+            byTypes={libraryByTypeTotal}
+            byClan={libraryByClansTotal}
+            byDisciplines={libraryByDisciplinesTotal}
           />
-          {showInfo && (
-            <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
-              <DeckLibraryTotalInfo
-                byDisciplines={libraryByDisciplinesTotal}
-                byTypes={libraryByTypeTotal}
-                byClans={libraryByClansTotal}
-              />
-            </div>
-          )}
-          {showAdd &&
-            (!isMobile ? (
-              <DeckNewCard
-                setShowAdd={setShowAdd}
-                cards={deck.library}
-                deckid={deckid}
-                target="library"
-              />
-            ) : (
-              <Modal
-                handleClose={() => setShowAdd(false)}
-                title="Add Library Card"
-              >
-                <div>
-                  <DeckNewCard
-                    setShowAdd={setShowAdd}
-                    cards={deck.library}
-                    deckid={deckid}
-                    target="library"
-                  />
-                </div>
-              </Modal>
-            ))}
         </div>
         <div className="space-y-2">{LibraryDeck}</div>
       </div>

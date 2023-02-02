@@ -260,7 +260,7 @@ const Decks = () => {
           )}
         </div>
         <div className="hidden min-w-[175px] lg:block">
-          <div className="sticky top-[77px] z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark">
+          <div className="sticky sm:top-[56px] lg:top-[64px] xl:top-[72px] z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark">
             <DeckButtons
               deck={deck}
               setShowInfo={setShowInfo}

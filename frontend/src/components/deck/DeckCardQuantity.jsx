@@ -17,7 +17,6 @@ const DeckCardQuantity = ({
   inMissing,
 }) => {
   const { inventoryMode, isMobile } = useApp();
-
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(q ? q : '');
 
@@ -54,17 +53,6 @@ const DeckCardQuantity = ({
       return '';
     }
   };
-
-  // TODO check if works OK inMissing
-  //     className={
-  //       inMissing
-  //         ? null
-  //         : inInventory < card.q
-  //         ? 'inv-miss-full'
-  //         : inInventory < hardUsedTotal + card.q
-  //         ? 'inv-miss-part'
-  //         : null
-  //     }
 
   const inventoryColor = getInventoryColor();
 

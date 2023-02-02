@@ -3,11 +3,8 @@ import {
   DiffLibraryTable,
   ResultLibraryType,
   ResultModal,
-  DeckLibraryTotalInfo,
-  DeckNewCard,
   DeckDrawProbability,
   DeckLibraryHeader,
-  Modal,
   ButtonFloat,
 } from '@/components';
 import { MASTER } from '@/utils/constants';
@@ -16,10 +13,7 @@ import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
   const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
-  const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const toggleShowInfo = () => setShowInfo(!showInfo);
-  const toggleShowAdd = () => setShowAdd(!showAdd);
 
   const {
     library,
@@ -64,8 +58,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
         )}
       </div>
       <DiffLibraryTable
-        inReview
-        isAuthor
+        isEditable
         cardChange={cardChange}
         handleModalCardOpen={handleModalCardOpen}
         libraryTotal={libraryTotal}
@@ -85,7 +78,6 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
         trifleTotal={cardtype === MASTER && trifleTotal}
       />
       <DiffLibraryTable
-        inReview
         isAuthor
         cardChange={cardChange}
         handleModalCardOpen={handleModalSideCardOpen}
@@ -104,47 +96,19 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
         }
       >
         <DeckLibraryHeader
-          isMobile={isMobile}
           libraryTotal={libraryTotal}
           bloodTotal={bloodTotal}
           poolTotal={poolTotal}
-          toggleShowInfo={toggleShowInfo}
-          toggleShowAdd={toggleShowAdd}
           hasBanned={hasBanned}
-          inReview
+          showInfo={showInfo}
+          setShowInfo={setShowInfo}
+          cards={library}
+          byTypes={libraryByTypeTotal}
+          byClan={libraryByClansTotal}
+          byDisciplines={libraryByDisciplinesTotal}
+          cardChange={cardChange}
+          isEditable
         />
-        {showInfo && (
-          <div className="bg-bgSecondary dark:bg-bgSecondaryDark ">
-            <DeckLibraryTotalInfo
-              byDisciplines={libraryByDisciplinesTotal}
-              byTypes={libraryByTypeTotal}
-              byClans={libraryByClansTotal}
-            />
-          </div>
-        )}
-        {showAdd &&
-          (!isMobile ? (
-            <DeckNewCard
-              setShowAdd={setShowAdd}
-              cards={cardsFrom}
-              target="library"
-              cardChange={cardChange}
-            />
-          ) : (
-            <Modal
-              handleClose={() => setShowAdd(false)}
-              title="Add Library Card"
-            >
-              <div>
-                <DeckNewCard
-                  setShowAdd={setShowAdd}
-                  cards={cardsFrom}
-                  target="library"
-                  cardChange={cardChange}
-                />
-              </div>
-            </Modal>
-          ))}
       </div>
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (

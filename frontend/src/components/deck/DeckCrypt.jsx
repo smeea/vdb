@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import {
-  DeckCryptTotalInfo,
   DeckCryptTable,
-  DeckNewCard,
   DeckCryptHeader,
   ResultModal,
-  Modal,
   ButtonFloat,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
@@ -27,40 +24,23 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
   const changeTimer = useSnapshot(deckStore).cryptTimer;
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
+  const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {
     Capacity: 'C',
-    'Clan ': 'CL', // SPACE SUFFIX IS INTENTIONAL
-    'Group ': 'G', // SPACE SUFFIX IS INTENTIONAL
-    Name: 'N',
-    'Quantity ': 'Q', // SPACE SUFFIX IS INTENTIONAL
+    'Clan ': 'CL ', // SPACE SUFFIX IS INTENTIONAL
+    'Group ': 'G ', // SPACE SUFFIX IS INTENTIONAL
+    Name: 'N ',
+    'Quantity ': 'Q ', // SPACE SUFFIX IS INTENTIONAL
     Sect: 'S',
   };
 
-  const [showAdd, setShowAdd] = useState(false);
-  const [showInfo, setShowInfo] = useState(false);
-  const toggleShowInfo = () => setShowInfo(!showInfo);
-  const toggleShowAdd = () => setShowAdd(!showAdd);
+  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } =
+    useDeckCrypt(deck.crypt, cryptDeckSort, changeTimer);
 
-  const {
-    crypt,
-    cryptSide,
-    hasBanned,
-    cryptTotal,
-    cryptGroups,
-    sortedCards,
-    sortedCardsSide,
-  } = useDeckCrypt(deck.crypt, cryptDeckSort, changeTimer);
+  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
+    useKeyDisciplines(deck.crypt);
 
-  // Disciplines Sort and Key non-Key selection
-  const {
-    disciplinesSet,
-    keyDisciplines,
-    nonKeyDisciplines,
-    disciplinesDetailed,
-  } = useKeyDisciplines(deck.crypt);
-
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -74,51 +54,22 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
     <div
       className={`flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 ${
         !isMobile && !inAdvSelect
-          ? ''
-          : 'sticky top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+          ? 'sticky sm:top-[56px] lg:top-[64px] xl:top-[72px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+          : ''
       }`}
     >
       <div>
         <DeckCryptHeader
-          cryptTotal={cryptTotal}
           inMissing={inMissing}
-          cryptGroups={cryptGroups}
-          toggleShowInfo={toggleShowInfo}
-          toggleShowAdd={toggleShowAdd}
-          hasBanned={hasBanned}
           isEditable={isEditable}
           sortMethods={sortMethods}
           sortMethod={cryptDeckSort}
           setSortMethod={changeCryptDeckSort}
+          showInfo={showInfo}
+          setShowInfo={setShowInfo}
+          deckid={deckid}
+          cards={crypt}
         />
-        {showInfo && (
-          <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
-            <DeckCryptTotalInfo
-              disciplinesDetailed={disciplinesDetailed}
-              cards={crypt}
-            />
-          </div>
-        )}
-        {showAdd &&
-          (!isMobile ? (
-            <DeckNewCard
-              setShowAdd={setShowAdd}
-              cards={deck.crypt}
-              deckid={deckid}
-              target="crypt"
-            />
-          ) : (
-            <Modal handleClose={() => setShowAdd(false)} title="Add Crypt Card">
-              <div>
-                <DeckNewCard
-                  setShowAdd={setShowAdd}
-                  cards={deck.crypt}
-                  deckid={deckid}
-                  target="crypt"
-                />
-              </div>
-            </Modal>
-          ))}
         <DeckCryptTable
           deck={deck}
           handleModalCardOpen={handleModalCardOpen}
@@ -128,10 +79,11 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
               : sortedCards
           }
           cryptTotal={cryptTotal}
-          disciplinesSet={disciplinesSet}
           showInfo={showInfo}
+          disciplinesSet={disciplinesSet}
           keyDisciplines={keyDisciplines}
           nonKeyDisciplines={nonKeyDisciplines}
+          maxDisciplines={maxDisciplines}
           inSearch={inSearch}
           inMissing={inMissing}
           isModalOpen={shouldShowModal}

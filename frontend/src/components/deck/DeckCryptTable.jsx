@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react';
 import { DeckCryptTableRow } from '@/components';
 import { useApp } from '@/context';
-import { countDisciplines } from '@/utils';
 
 const DeckCryptTable = ({
   deck,
   disciplinesSet,
   keyDisciplines,
   nonKeyDisciplines,
+  maxDisciplines,
   cards,
   placement,
   showInfo,
@@ -18,7 +18,6 @@ const DeckCryptTable = ({
   isModalOpen,
 }) => {
   const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
-  const maxDisciplines = countDisciplines(cards);
 
   const disableOverlay = useMemo(
     () => isMobile || (!isDesktop && isModalOpen),
