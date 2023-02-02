@@ -19,7 +19,6 @@
 - Debouncing for text search query - useTimeout+useDebouncing hook https://youtu.be/0c6znExIqRw?t=118
 - Refactor fetch to useAsync+useFetch hook https://youtu.be/vrIxu-kfAUo&t=546
 - Refactor InventoryCrypt and InventoryLibrary
-- Refactor DiffSelect
 - Refactor deck buttons (split in button ui and function)
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
@@ -32,3 +31,6 @@
 - TwdLibraryByType click to freeze popover
 - Library sticky hide above header
 - Test if disableOverlay is required (possible to change?)
+- Refactor PdaResultDescription as in Twd
+- Refactor getStyle / getSize into object
+- Refactor DiffSelect

@@ -9,6 +9,19 @@ import { TwdResultTags } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';
 
+const Tr = ({ title, children }) => {
+  return (
+    <tr>
+      <td className="text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="flex items-center font-bold px-1.5 sm:px-0">
+          {title}
+        </div>
+      </td>
+      <td className="sm:pl-3">{children}</td>
+    </tr>
+  );
+};
+
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
@@ -26,60 +39,29 @@ const TwdResultDescriptionText = ({ deck }) => {
     <>
       <table>
         <tbody>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center font-bold">
-                {isMobile ? <CalendarEvent /> : <>Date:</>}
-              </div>
-            </td>
-            <td className="px-1">{deck['creation_date']}</td>
-          </tr>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center font-bold">
-                {isMobile ? <TrophyFill /> : <>Event:</>}
-              </div>
-            </td>
-            <td className="px-1">{deck['event']}</td>
-          </tr>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center font-bold">
-                {isMobile ? <GeoAltFill /> : <>Location:</>}
-              </div>
-            </td>
-            <td className="px-1">
-              <div
-                className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-                onClick={() => handleClick('location', deck['location'])}
-              >
-                {deck['location']}
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center font-bold">
-                {isMobile ? <PersonFill /> : <>Player:</>}
-              </div>
-            </td>
-            <td className="px-1">
-              <div
-                className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-                onClick={() => handleClick('author', deck['author'])}
-              >
-                {deck['author']} <br />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td className="text-fgSecondary dark:text-fgSecondaryDark">
-              <div className="flex items-center font-bold">
-                {isMobile ? <TagFill /> : <>Deck:</>}
-              </div>
-            </td>
-            <td className="px-1">{deck['name']}</td>
-          </tr>
+          <Tr title={isMobile ? <CalendarEvent /> : <>Date:</>}>
+            {deck['creation_date']}
+          </Tr>
+          <Tr title={isMobile ? <TrophyFill /> : <>Event:</>}>
+            {deck['event']}
+          </Tr>
+          <Tr title={isMobile ? <GeoAltFill /> : <>Place:</>}>
+            <div
+              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+              onClick={() => handleClick('location', deck['location'])}
+            >
+              {deck['location']}
+            </div>
+          </Tr>
+          <Tr title={isMobile ? <PersonFill /> : <>Player:</>}>
+            <div
+              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+              onClick={() => handleClick('author', deck['author'])}
+            >
+              {deck['author']} <br />
+            </div>
+          </Tr>
+          <Tr title={isMobile ? <TagFill /> : <>Deck:</>}>{deck['name']}</Tr>
         </tbody>
       </table>
       {(tags.superior.length > 0 || tags.base.length > 0) && (

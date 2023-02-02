@@ -13,7 +13,7 @@ const TwdResultDescription = ({ deck }) => {
   return (
     <>
       {isDesktop ? (
-        <div className="space-y-2">
+        <div className="space-y-3">
           <div>
             <TwdResultDescriptionPlayers players={deck.players} />
             <TwdResultDescriptionText deck={deck} />
