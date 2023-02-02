@@ -48,7 +48,7 @@ const InventoryDesktop = ({
   const usedLibrary = useSnapshot(usedStore).library;
 
   return (
-    <div className="flex gap-8">
+    <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
       <div className="hidden xl:flex xl:basis-1/12" />
       <div className="sm:basis-5/9">
         {!inShared && (

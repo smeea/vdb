@@ -29,3 +29,4 @@
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Refactor or restore setShowFloatingButtons functionality
 - TwdLibraryByType click to freeze popover
+- Crypt & Library sticky headers (+ full crypt)

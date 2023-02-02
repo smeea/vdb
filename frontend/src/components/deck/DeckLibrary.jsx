@@ -98,61 +98,63 @@ const DeckLibrary = ({ deck, inMissing }) => {
   ));
 
   return (
-    <div className="space-y-2">
-      <div
-        className={
-          !inMissing && !isMobile
-            ? 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
-            : null
-        }
-      >
-        <DeckLibraryHeader
-          isMobile={isMobile}
-          libraryTotal={libraryTotal}
-          inMissing={inMissing}
-          bloodTotal={bloodTotal}
-          poolTotal={poolTotal}
-          toggleShowInfo={toggleShowInfo}
-          toggleShowAdd={toggleShowAdd}
-          hasBanned={hasBanned}
-          isEditable={isEditable}
-        />
-        {showInfo && (
-          <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
-            <DeckLibraryTotalInfo
-              byDisciplines={libraryByDisciplinesTotal}
-              byTypes={libraryByTypeTotal}
-              byClans={libraryByClansTotal}
-            />
-          </div>
-        )}
-        {showAdd &&
-          (!isMobile ? (
-            <DeckNewCard
-              setShowAdd={setShowAdd}
-              cards={deck.library}
-              deckid={deckid}
-              target="library"
-            />
-          ) : (
-            <Modal
-              handleClose={() => setShowAdd(false)}
-              title="Add Library Card"
-            >
-              <div>
-                <DeckNewCard
-                  setShowAdd={setShowAdd}
-                  cards={deck.library}
-                  deckid={deckid}
-                  target="library"
-                />
-              </div>
-            </Modal>
-          ))}
+    <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+      <div className="space-y-2">
+        <div
+          className={
+            !inMissing && !isMobile
+              ? 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+              : ''
+          }
+        >
+          <DeckLibraryHeader
+            isMobile={isMobile}
+            libraryTotal={libraryTotal}
+            inMissing={inMissing}
+            bloodTotal={bloodTotal}
+            poolTotal={poolTotal}
+            toggleShowInfo={toggleShowInfo}
+            toggleShowAdd={toggleShowAdd}
+            hasBanned={hasBanned}
+            isEditable={isEditable}
+          />
+          {showInfo && (
+            <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
+              <DeckLibraryTotalInfo
+                byDisciplines={libraryByDisciplinesTotal}
+                byTypes={libraryByTypeTotal}
+                byClans={libraryByClansTotal}
+              />
+            </div>
+          )}
+          {showAdd &&
+            (!isMobile ? (
+              <DeckNewCard
+                setShowAdd={setShowAdd}
+                cards={deck.library}
+                deckid={deckid}
+                target="library"
+              />
+            ) : (
+              <Modal
+                handleClose={() => setShowAdd(false)}
+                title="Add Library Card"
+              >
+                <div>
+                  <DeckNewCard
+                    setShowAdd={setShowAdd}
+                    cards={deck.library}
+                    deckid={deckid}
+                    target="library"
+                  />
+                </div>
+              </Modal>
+            ))}
+        </div>
+        <div className="space-y-2">{LibraryDeck}</div>
       </div>
-      <div className="space-y-2">{LibraryDeck}</div>
       {librarySide.length > 0 && (
-        <div className="space-y-2 opacity-60">
+        <div className="space-y-2 opacity-60 dark:opacity-50">
           <div className="flex h-[42px] items-center bg-bgSecondary px-2 py-1 font-bold dark:bg-bgSecondaryDark">
             Side Library
           </div>

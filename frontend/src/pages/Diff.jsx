@@ -175,8 +175,8 @@ const Diff = () => {
 
   return (
     <div className="deck-container mx-auto">
-      <div className="flex gap-8">
-        <div className="flex flex-col gap-8 lg:basis-10/12">
+      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+        <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 lg:basis-10/12">
           <DiffSelect
             decks={decks}
             deck={deck}
@@ -195,7 +195,7 @@ const Diff = () => {
             </div>
           )}
           {deck && deckTo && (
-            <div className="flex gap-8">
+            <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
               <div className="md:basis-7/12">
                 <div
                   className={

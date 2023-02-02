@@ -3,7 +3,7 @@ import Check2 from '@/assets/images/icons/check2.svg';
 import ChevronBarExpand from '@/assets/images/icons/chevron-bar-expand.svg';
 import ChevronBarContract from '@/assets/images/icons/chevron-bar-contract.svg';
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg';
-import { Input, Textarea, Button } from '@/components';
+import { Input, InputPreLabel, Textarea, Button } from '@/components';
 import { useApp, deckUpdate } from '@/context';
 
 const DeckDescription = ({ deck, folded, setFolded }) => {
@@ -42,12 +42,9 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
 
   return (
     <form className="flex" onSubmit={handleSubmit}>
-      <div
-        className="flex items-center rounded-l border border-bgSecondary bg-bgSecondary p-2 text-fgThird dark:border-bgSecondaryDark dark:bg-bgSecondaryDark dark:text-fgThirdDark"
-        title="Description"
-      >
+      <InputPreLabel title="Description">
         <ChatLeftQuoteFill width="20" height="18" viewBox="0 0 16 16" />
-      </div>
+      </InputPreLabel>
       {folded ? (
         <Input
           value={value}

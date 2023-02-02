@@ -211,9 +211,9 @@ const Decks = () => {
 
   return (
     <div className="deck-container mx-auto">
-      <div className="flex gap-8">
+      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
         <div className="hidden min-w-[175px] xl:block" />
-        <div className="flex basis-full flex-col gap-8">
+        <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
           <div className="flex flex-col gap-4 sm:flex-row">
             <div className="basis-full sm:basis-5/12">
               <DeckSelect
@@ -239,7 +239,7 @@ const Decks = () => {
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
-            <div className="flex flex-col gap-8 sm:flex-row">
+            <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 sm:flex-row">
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||

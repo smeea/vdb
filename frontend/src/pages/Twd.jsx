@@ -10,7 +10,7 @@ const Twd = () => {
 
   return (
     <div className="twd-container mx-auto">
-      <div className="flex gap-8">
+      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
         {!(isMobile && (error || !twdResults)) && (
           <div className="sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
             {twdResults && (

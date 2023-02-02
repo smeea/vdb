@@ -7,6 +7,7 @@ export { default as ConditionalTooltipOrModal } from './ConditionalTooltipOrModa
 export { default as ErrorOverlay } from './ErrorOverlay.jsx';
 export { default as ErrorMessage } from './ErrorMessage.jsx';
 export { default as Input } from './Input.jsx';
+export { default as InputPreLabel } from './InputPreLabel.jsx';
 export { default as Hr } from './Hr.jsx';
 export { default as MenuButton } from './MenuButton.jsx';
 export { default as MenuItems } from './MenuItems.jsx';

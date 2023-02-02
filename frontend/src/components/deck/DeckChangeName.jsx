@@ -5,7 +5,7 @@ import TagFill from '@/assets/images/icons/tag-fill.svg';
 import PeopleFill from '@/assets/images/icons/people-fill.svg';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
 import { useApp, deckUpdate } from '@/context';
-import { Input, Button, DeckFreezeButton } from '@/components';
+import { Input, InputPreLabel, Button, DeckFreezeButton } from '@/components';
 
 const DeckChangeName = ({ deck }) => {
   const { isMobile } = useApp();
@@ -43,12 +43,9 @@ const DeckChangeName = ({ deck }) => {
 
   return (
     <form className="flex" onSubmit={handleSubmit}>
-      <div
-        className="flex items-center rounded-l border border-bgSecondary bg-bgSecondary p-2 text-fgThird dark:border-bgSecondaryDark dark:bg-bgSecondaryDark dark:text-fgThirdDark"
-        title="Deck Name"
-      >
+      <InputPreLabel title="Deck Name">
         <TagFill width="20" height="20" viewBox="0 0 16 16" />
-      </div>
+      </InputPreLabel>
       <Input
         value={value}
         onChange={handleChange}

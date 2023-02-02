@@ -148,7 +148,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
       </div>
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
-        <div className="opacity-60">
+        <div className="opacity-60 dark:opacity-50">
           <b>Side Library</b>
           {LibrarySideDeck}
         </div>

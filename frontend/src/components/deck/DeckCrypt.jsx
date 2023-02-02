@@ -72,72 +72,74 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
 
   return (
     <div
-      className={`${!inSearch && !inMissing && !inAdvSelect ? '' : ''} ${
+      className={`flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 ${
         !isMobile && !inAdvSelect
-          ? null
-          : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+          ? ''
+          : 'sticky top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
-      <DeckCryptHeader
-        cryptTotal={cryptTotal}
-        inMissing={inMissing}
-        cryptGroups={cryptGroups}
-        toggleShowInfo={toggleShowInfo}
-        toggleShowAdd={toggleShowAdd}
-        hasBanned={hasBanned}
-        isEditable={isEditable}
-        sortMethods={sortMethods}
-        sortMethod={cryptDeckSort}
-        setSortMethod={changeCryptDeckSort}
-      />
-      {showInfo && (
-        <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
-          <DeckCryptTotalInfo
-            disciplinesDetailed={disciplinesDetailed}
-            cards={crypt}
-          />
-        </div>
-      )}
-      {showAdd &&
-        (!isMobile ? (
-          <DeckNewCard
-            setShowAdd={setShowAdd}
-            cards={deck.crypt}
-            deckid={deckid}
-            target="crypt"
-          />
-        ) : (
-          <Modal handleClose={() => setShowAdd(false)} title="Add Crypt Card">
-            <div>
-              <DeckNewCard
-                setShowAdd={setShowAdd}
-                cards={deck.crypt}
-                deckid={deckid}
-                target="crypt"
-              />
-            </div>
-          </Modal>
-        ))}
-      <DeckCryptTable
-        deck={deck}
-        handleModalCardOpen={handleModalCardOpen}
-        cards={
-          inMissing
-            ? useDeckCrypt(deck.crypt, 'Name')['sortedCards']
-            : sortedCards
-        }
-        cryptTotal={cryptTotal}
-        disciplinesSet={disciplinesSet}
-        showInfo={showInfo}
-        keyDisciplines={keyDisciplines}
-        nonKeyDisciplines={nonKeyDisciplines}
-        inSearch={inSearch}
-        inMissing={inMissing}
-        isModalOpen={shouldShowModal}
-      />
+      <div>
+        <DeckCryptHeader
+          cryptTotal={cryptTotal}
+          inMissing={inMissing}
+          cryptGroups={cryptGroups}
+          toggleShowInfo={toggleShowInfo}
+          toggleShowAdd={toggleShowAdd}
+          hasBanned={hasBanned}
+          isEditable={isEditable}
+          sortMethods={sortMethods}
+          sortMethod={cryptDeckSort}
+          setSortMethod={changeCryptDeckSort}
+        />
+        {showInfo && (
+          <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
+            <DeckCryptTotalInfo
+              disciplinesDetailed={disciplinesDetailed}
+              cards={crypt}
+            />
+          </div>
+        )}
+        {showAdd &&
+          (!isMobile ? (
+            <DeckNewCard
+              setShowAdd={setShowAdd}
+              cards={deck.crypt}
+              deckid={deckid}
+              target="crypt"
+            />
+          ) : (
+            <Modal handleClose={() => setShowAdd(false)} title="Add Crypt Card">
+              <div>
+                <DeckNewCard
+                  setShowAdd={setShowAdd}
+                  cards={deck.crypt}
+                  deckid={deckid}
+                  target="crypt"
+                />
+              </div>
+            </Modal>
+          ))}
+        <DeckCryptTable
+          deck={deck}
+          handleModalCardOpen={handleModalCardOpen}
+          cards={
+            inMissing
+              ? useDeckCrypt(deck.crypt, 'Name')['sortedCards']
+              : sortedCards
+          }
+          cryptTotal={cryptTotal}
+          disciplinesSet={disciplinesSet}
+          showInfo={showInfo}
+          keyDisciplines={keyDisciplines}
+          nonKeyDisciplines={nonKeyDisciplines}
+          inSearch={inSearch}
+          inMissing={inMissing}
+          isModalOpen={shouldShowModal}
+        />
+      </div>
       {Object.keys(cryptSide).length > 0 && (
-        <div className=" opacity-60">
-          <div className="flex items-center justify-between font-bold">
+        <div className="space-y-2 opacity-60 dark:opacity-50">
+          <div className="flex h-[42px] items-center bg-bgSecondary px-2 py-1 font-bold dark:bg-bgSecondaryDark">
             Side Crypt
           </div>
           <DeckCryptTable

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg';
 import PersonFill from '@/assets/images/icons/person-fill.svg';
-import { Input, Button } from '@/components';
+import { Input, InputPreLabel, Button } from '@/components';
 import { useApp, deckUpdate } from '@/context';
 
 const DeckChangeAuthor = ({ deck }) => {
@@ -40,12 +40,9 @@ const DeckChangeAuthor = ({ deck }) => {
 
   return (
     <form className="flex" onSubmit={handleSubmit}>
-      <div
-        className="flex items-center rounded-l border border-bgSecondary bg-bgSecondary p-2 text-fgThird dark:border-bgSecondaryDark dark:bg-bgSecondaryDark dark:text-fgThirdDark"
-        title="Author"
-      >
+      <InputPreLabel title="Author">
         <PersonFill width="20" height="20" viewBox="0 0 16 16" />
-      </div>
+      </InputPreLabel>
       <Input
         value={value}
         onChange={handleChange}

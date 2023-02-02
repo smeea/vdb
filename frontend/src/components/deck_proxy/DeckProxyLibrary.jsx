@@ -95,7 +95,7 @@ const DeckProxyLibrary = ({
       </div>
       {LibraryDeck}
       {librarySide.length > 0 && (
-        <div className=" opacity-60">
+        <div className=" opacity-60 dark:opacity-50">
           <b>Side Library</b>
           {LibrarySideDeck}
         </div>

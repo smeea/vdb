@@ -50,7 +50,7 @@ const Crypt = () => {
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex gap-8">
+      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
         {!isMobile && (
           <div
             className={`${

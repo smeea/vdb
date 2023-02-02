@@ -25,7 +25,7 @@ const DeckSelectorAndDisplay = () => {
   };
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
       <div className="top-0 z-10 flex space-x-1 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[40px]">
         {addMode && (
           <>
