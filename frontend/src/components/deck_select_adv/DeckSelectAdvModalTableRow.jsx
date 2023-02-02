@@ -173,7 +173,7 @@ const DeckSelectAdvModalTableRow = ({
           {!isMobile && (
             <>
               <DeckFreezeButton deck={deck} />
-              <DeckPublicToggleButton deck={deck} />
+              <DeckPublicToggleButton deck={deck} inAdv />
             </>
           )}
           {isDesktop && (

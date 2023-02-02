@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useSnapshot } from 'valtio';
 import EyeFill from '@/assets/images/icons/eye-fill.svg';
 import GiftFill from '@/assets/images/icons/gift-fill.svg';
 import {
@@ -10,54 +9,14 @@ import {
   ResultLibraryClan,
   Tooltip,
 } from '@/components';
-import { useApp, inventoryStore } from '@/context';
+import { useDeckInInventory } from '@/hooks';
+import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const InventoryAddPreconRow = ({ deck, idx }) => {
   const { isDesktop, isMobile } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
   const [showDeck, setShowDeck] = useState();
-
-  let cryptInInventory;
-  let libraryInInventory;
-  if (deck.crypt) {
-    Object.keys(deck.crypt).map((cardid) => {
-      if (deck.crypt[cardid].q > 0) {
-        if (inventoryCrypt[cardid]) {
-          const inInventory = Math.floor(
-            inventoryCrypt[cardid].q / deck.crypt[cardid].q
-          );
-          if (!cryptInInventory || inInventory < cryptInInventory) {
-            cryptInInventory = inInventory;
-          }
-        } else {
-          cryptInInventory = 0;
-        }
-      }
-    });
-  }
-
-  if (deck.library) {
-    Object.keys(deck.library).map((cardid) => {
-      if (deck.library[cardid].q > 0) {
-        if (inventoryLibrary[cardid]) {
-          const inInventory = Math.floor(
-            inventoryLibrary[cardid].q / deck.library[cardid].q
-          );
-          if (!libraryInInventory || inInventory < libraryInInventory) {
-            libraryInInventory = inInventory;
-          }
-        } else {
-          libraryInInventory = 0;
-        }
-      }
-    });
-  }
-
-  if (cryptInInventory === undefined) cryptInInventory = libraryInInventory;
-  if (libraryInInventory === undefined) libraryInInventory = cryptInInventory;
-  const inInventory = Math.min(cryptInInventory, libraryInInventory);
+  const inInventory = useDeckInInventory(deck)
   const [set, precon] = deck.deckid.split(':');
   const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
@@ -147,7 +106,7 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
         ) : (
           <>
             {setsAndPrecons[set].date.slice(0, 4)}
-            <span>–</span>
+            {' '}–{' '}
             {setsAndPrecons[set].name}
           </>
         )}

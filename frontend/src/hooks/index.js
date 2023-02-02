@@ -3,6 +3,7 @@ export { default as useDeck } from './useDeck.js';
 export { default as useDeckCrypt } from './useDeckCrypt.jsx';
 export { default as useDeckExport } from './useDeckExport.js';
 export { default as useDeckImport } from './useDeckImport.js';
+export { default as useDeckInInventory } from './useDeckInInventory.js';
 export { default as useDeckLibrary } from './useDeckLibrary.js';
 export { default as useDeckMissing } from './useDeckMissing.js';
 export { default as useFilters } from './useFilters.js';

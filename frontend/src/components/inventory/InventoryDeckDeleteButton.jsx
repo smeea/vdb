@@ -41,7 +41,7 @@ const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
           handleConfirm={handleConfirm}
           handleCancel={handleCancel}
           buttonText="Remove"
-          headerText={'Remove deck ' + deck.name + ' from Inventory?'}
+          title={'Remove deck ' + deck.name + ' from Inventory?'}
           bordered
         />
       )}

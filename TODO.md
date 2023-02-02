@@ -19,6 +19,7 @@
 - Debouncing for text search query - useTimeout+useDebouncing hook https://youtu.be/0c6znExIqRw?t=118
 - Refactor fetch to useAsync+useFetch hook https://youtu.be/vrIxu-kfAUo&t=546
 - Refactor InventoryCrypt and InventoryLibrary
+- Refactor deck buttons (split in button ui and function)
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
 - Resize clan/types/misc images
@@ -27,8 +28,4 @@
 - Test autoFocus / fix with forwardRefs
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Refactor or restore setShowFloatingButtons functionality
-- Refactor deck buttons
 - TwdLibraryByType click to freeze popover
-- Fix popover arrow for non-right placement
-- InventoryAddDeck/Precon row to refactor (merge) some code
-- InventoryAddDeck/Precon fix filter

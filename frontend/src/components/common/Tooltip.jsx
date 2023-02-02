@@ -55,13 +55,19 @@ const Tooltip = ({
   // <div className="inline" ref={reference} {...getFloatingProps()} {...getReferenceProps()}>
 
   // TODO add sizing as in modals for other than max-w-[800px]
-  // TODO arrow for non-right placement
 
   const arrowOffset = {
-    top: 'bottom-[-7px]',
-    right: 'left-[-7px]',
     bottom: 'top-[-7px]',
     left: 'right-[-7px]',
+    right: 'left-[-7px]',
+    top: 'bottom-[-7px]',
+  }[arrowPlacement.split('-')[0]];
+
+  const arrowRotate = {
+    bottom: 'rotate-[135deg]',
+    left: 'rotate-[225deg]',
+    right: 'rotate-[45deg]',
+    top: 'rotate-[315deg]',
   }[arrowPlacement.split('-')[0]];
 
   return (
@@ -85,7 +91,7 @@ const Tooltip = ({
             {overlay}
             <div
               ref={arrowRef}
-              className={`absolute z-[-1] h-[12px] w-[12px] border-l border-b border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark ${arrowOffset} rotate-45`}
+          className={`absolute z-[-1] h-[12px] w-[12px] border-l border-b border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark ${arrowOffset} ${arrowRotate}`}
               style={{
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',

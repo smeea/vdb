@@ -23,12 +23,20 @@ const DeckPublicToggleConfirmation = ({
     <ModalConfirmation
       handleConfirm={handleConfirmation}
       handleCancel={() => setShow(false)}
-      headerText={
+      title={
         isPublished
           ? `Remove "${deck.name}" from Public Deck Archive?`
           : `Add "${deck.name}" to Public Deck Archive?`
       }
-      mainText={
+      buttonText={
+        isWrongQtyCards || withPlaytestCards
+          ? null
+          : isPublished
+            ? 'Remove Public'
+            : 'Make Public'
+      }
+    >
+      {
         isWrongQtyCards ? (
           <div className="text-fgRed dark:text-fgRedDark">
             Public Deck must have 12-35 crypt and 60-90 library cards
@@ -41,14 +49,7 @@ const DeckPublicToggleConfirmation = ({
           'You can remove it from Public Deck Archive at any time'
         )
       }
-      buttonText={
-        isWrongQtyCards || withPlaytestCards
-          ? null
-          : isPublished
-          ? 'Remove Public'
-          : 'Make Public'
-      }
-    />
+    </ModalConfirmation>
   );
 };
 

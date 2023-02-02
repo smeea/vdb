@@ -43,11 +43,12 @@ const InventoryDelete = () => {
           withConfirmation={true}
           handleConfirm={handleConfirm}
           handleCancel={handleCancel}
-          headerText={`Delete Inventory`}
-          mainText="THIS CANNOT BE UNDONE!"
+          title={`Delete Inventory`}
           buttonText="Delete"
           nested={isMobile}
-        />
+        >
+          THIS CANNOT BE UNDONE!
+        </ModalConfirmation>
       )}
     </>
   );

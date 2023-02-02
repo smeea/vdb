@@ -3,12 +3,12 @@ import { Menu } from '@headlessui/react';
 import SortDown from '@/assets/images/icons/sort-down.svg';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
 
-const DeckSelectSortForm = ({ onChange }) => {
+const DeckSelectSortForm = ({ value, onChange }) => {
   const sortMethods = { Name: 'byName', Date: 'byDate' };
 
   return (
     <Menu as="div" className="relative">
-      <MenuButton title="Sort Decks" icon={<SortDown />} text="Public" />
+      <MenuButton title="Sort Decks" icon={<SortDown />} text={value ? value.replace('by', '') : null} />
       <MenuItems>
         {Object.keys(sortMethods).map((k) => {
           return (

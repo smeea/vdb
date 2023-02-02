@@ -290,6 +290,7 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                 )}
                 <th className="min-w-[340px]">
                   <Input
+                    className="w-full"
                     placeholder="Filter by Deck or Card Name"
                     type="text"
                     name="text"
@@ -309,16 +310,14 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
                   />
                 </th>
                 <th>
-                  <div className="flex items-center justify-end">
+                  <div className="flex justify-end space-x-1">
                     <Checkbox
                       name="revFilter"
                       label={isDesktop ? 'Show Revisions' : 'Rev'}
                       checked={revFilter}
                       onChange={() => setRevFilter(!revFilter)}
                     />
-                    <div className="flex justify-end">
-                      <DeckSelectSortForm onChange={setSortMethod} />
-                    </div>
+                    <DeckSelectSortForm onChange={setSortMethod} />
                   </div>
                 </th>
               </tr>

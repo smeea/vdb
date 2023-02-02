@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Spinner from '@/assets/images/icons/three-dots.svg';
 import EyeFill from '@/assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg';
-import { Modal, Button, ErrorOverlay } from '@/components';
+import { Input, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
 
@@ -11,7 +11,6 @@ const AccountDeleteConfirmation = ({ setShow }) => {
 
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);
-  const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
@@ -39,7 +38,6 @@ const AccountDeleteConfirmation = ({ setShow }) => {
     if (isLoading) return;
 
     setPasswordError(false);
-    setEmptyPassword(!password);
     setConnectionError(false);
 
     if (password) {
@@ -60,55 +58,60 @@ const AccountDeleteConfirmation = ({ setShow }) => {
         centered={isMobile}
         title="Delete Account"
       >
-        <div>
+        <div className="space-y-3 sm:space-y-5">
           <div>
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               THIS CANNOT BE UNDONE!
             </div>
+            This will also delete all your decks and they will not be available
+            via URL anymore.
           </div>
-          This will also delete all your decks and they will not be available
-          via URL anymore.
-        </div>
-        <div>
-          <form onSubmit={handleSubmit}>
-            <input
-              placeholder="Enter password"
-              type={hidePassword ? 'password' : 'text'}
-              name="password"
-              value={password}
-              onChange={handleChange}
-              autoFocus={true}
-              ref={refPassword}
-            />
-            <Button
-              tabIndex="-1"
-              variant="primary"
-              onClick={() => setHidePassword(!hidePassword)}
-            >
-              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-            </Button>
-            {!isLoading ? (
-              <Button variant="danger" type="submit">
-                Delete
-              </Button>
-            ) : (
-              <Button variant="primary">
-                <Spinner />
-              </Button>
-            )}
+          <div className="flex justify-end space-x-2">
+            <form onSubmit={handleSubmit}>
+              <div className="relative flex w-full">
+                <Input
+                  placeholder="Enter password"
+                  type={hidePassword ? 'password' : 'text'}
+                  name="password"
+                  value={password}
+                  onChange={handleChange}
+                  autoFocus={true}
+                  ref={refPassword}
+                  className="rounded-r-none"
+                  required={true}
+                />
+                <Button
+                  className="rounded-l-none"
+                  tabIndex="-1"
+                  variant="primary"
+                  type="button"
+                  onClick={() => setHidePassword(!hidePassword)}
+                >
+                  {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+                </Button>
+                <div className="flex pl-2">
+                  {!isLoading ? (
+                    <Button variant="danger" type="submit" >
+                      Delete
+                    </Button>
+                  ) : (
+                    <Button variant="primary">
+                      <Spinner />
+                    </Button>
+                  )}
+                </div>
+                {passwordError && (
+                  <ErrorOverlay placement="bottom">WRONG PASSWORD</ErrorOverlay>
+                )}
+                {connectionError && (
+                  <ErrorOverlay placement="bottom">CONNECTION PROBME</ErrorOverlay>
+                )}
+              </div>
+            </form>
             <Button variant="primary" onClick={() => setShow(false)}>
               Cancel
             </Button>
-            {emptyPassword && (
-              <ErrorOverlay placement="bottom">ENTER PASSWORD</ErrorOverlay>
-            )}
-            {passwordError && (
-              <ErrorOverlay placement="bottom">WRONG PASSWORD</ErrorOverlay>
-            )}
-            {connectionError && (
-              <ErrorOverlay placement="bottom">CONNECTION PROBME</ErrorOverlay>
-            )}
-          </form>
+          </div>
         </div>
       </Modal>
     </>

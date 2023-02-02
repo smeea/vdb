@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '@/assets/images/icons/three-dots.svg';
+import People from '@/assets/images/icons/people.svg';
 import PeopleFill from '@/assets/images/icons/people-fill.svg';
 import { DeckPublicToggleConfirmation, ButtonIconed } from '@/components';
 import { deckStore } from '@/context';
 
-const DeckPublicToggleButton = ({ deck }) => {
+const DeckPublicToggleButton = ({ deck, inAdv }) => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -45,17 +46,19 @@ const DeckPublicToggleButton = ({ deck }) => {
   return (
     <>
       <ButtonIconed
-        variant="secondary"
+        variant={inAdv ? "primary" : "secondary"}
         onClick={() => setShowConfirmation(true)}
         title={`${isPublished ? 'In' : 'Not in'} Public Deck Archive`}
         icon={
           !isLoading ? (
-            <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
+            inAdv && !isPublished
+              ? <People width="16" height="23" viewBox="0 0 16 18" />
+              : <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
           ) : (
             <Spinner />
           )
         }
-        text={isPublished ? 'Remove from Public' : 'Make Public'}
+        text={inAdv ? null : isPublished ? 'Remove from Public' : 'Make Public'}
       />
       {showConfirmation && (
         <DeckPublicToggleConfirmation

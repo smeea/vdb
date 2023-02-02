@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useSnapshot } from 'valtio';
 import EyeFill from '@/assets/images/icons/eye-fill.svg';
 import Shuffle from '@/assets/images/icons/shuffle.svg';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
@@ -15,47 +14,13 @@ import {
   Button,
 } from '@/components';
 import { getClan } from '@/utils';
-import { useApp, inventoryStore, deckUpdate } from '@/context';
+import { useDeckInInventory } from '@/hooks';
+import { useApp, deckUpdate } from '@/context';
 
 const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
   const { isDesktop, isMobile } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
   const [showDeck, setShowDeck] = useState();
-
-  let cryptInInventory;
-  let libraryInInventory;
-  Object.keys(deck.crypt).map((cardid) => {
-    if (deck.crypt[cardid].q > 0) {
-      if (inventoryCrypt[cardid]) {
-        const inInventory = Math.floor(
-          inventoryCrypt[cardid].q / deck.crypt[cardid].q
-        );
-        if (cryptInInventory === null || inInventory < cryptInInventory) {
-          cryptInInventory = inInventory;
-        }
-      } else {
-        cryptInInventory = 0;
-      }
-    }
-  });
-
-  Object.keys(deck.library).map((cardid) => {
-    if (deck.library[cardid].q > 0) {
-      if (inventoryLibrary[cardid] && deck.library[cardid].q > 0) {
-        const inInventory = Math.floor(
-          inventoryLibrary[cardid].q / deck.library[cardid].q
-        );
-        if (libraryInInventory === null || inInventory < libraryInInventory) {
-          libraryInInventory = inInventory;
-        }
-      } else {
-        libraryInInventory = 0;
-      }
-    }
-  });
-
-  const inInventory = Math.min(cryptInInventory, libraryInInventory);
+  const inInventory = useDeckInInventory(deck)
   const clan = getClan(deck.crypt);
 
   const toggleInventoryState = (deckid) => {
@@ -102,7 +67,7 @@ const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
           </div>
         </td>
       )}
-      <td className="w-[230px] sm:w-[250px]">
+      <td className="min-w-[230px] sm:min-w-[250px]">
         <div
           className="flex justify-between truncate text-fgName dark:text-fgNameDark"
           title={deck.name}

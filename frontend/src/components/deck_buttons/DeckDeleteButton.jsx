@@ -75,10 +75,11 @@ const DeckDeleteButton = ({ deck, noText }) => {
           withConfirmation={deck.isBranches}
           handleConfirm={handleConfirm}
           handleCancel={handleCancel}
-          headerText={`Delete deck "${deck.name} and all its revisions"`}
-          mainText="THIS CANNOT BE UNDONE!"
+          title={`Delete deck "${deck.name} and all its revisions"`}
           buttonText="Delete"
-        />
+        >
+          THIS CANNOT BE UNDONE!
+        </ModalConfirmation>
       )}
     </>
   );
