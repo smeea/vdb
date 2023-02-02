@@ -14,12 +14,12 @@ const AccountRegister = () => {
   const [formUsername, setFormUsername] = useState('');
   const [formPassword, setFormPassword] = useState('');
   const [formEmail, setFormEmail] = useState('');
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
 
   const onError = (e) => {
-    setSpinnerState(false);
+    setIsLoading(false);
     if (e.message == 409) {
       setUsernameError('USER ALREADY EXIST');
     } else {
@@ -28,14 +28,14 @@ const AccountRegister = () => {
   };
 
   const onSuccess = (data) => {
-    setSpinnerState(false);
+    setIsLoading(false);
     setUsername(data.username);
     setEmail(data.email);
   };
 
   const registerUser = () => {
     setConnectionError(false);
-    setSpinnerState(true);
+    setIsLoading(true);
     userServices.register(
       formUsername,
       formPassword,
@@ -75,7 +75,7 @@ const AccountRegister = () => {
           <AccountPasswordForm
             value={formPassword}
             setValue={setFormPassword}
-            spinnerState={spinnerState}
+            isLoading={isLoading}
           />
           {connectionError && (
             <ErrorOverlay placement="bottom">{connectionError}</ErrorOverlay>

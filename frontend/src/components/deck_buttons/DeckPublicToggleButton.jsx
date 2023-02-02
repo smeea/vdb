@@ -7,7 +7,7 @@ import { deckStore } from '@/context';
 
 const DeckPublicToggleButton = ({ deck }) => {
   const navigate = useNavigate();
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const isPublished = Boolean(deck.publicParent || deck.publicChild);
   const parentId = deck.publicParent ?? deck.deckid;
@@ -28,7 +28,7 @@ const DeckPublicToggleButton = ({ deck }) => {
       },
     };
 
-    setSpinnerState(true);
+    setIsLoading(true);
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
@@ -39,7 +39,7 @@ const DeckPublicToggleButton = ({ deck }) => {
         navigate(`/decks/${isPublished ? deck.publicParent : data.deckid}`);
       });
 
-    setSpinnerState(false);
+    setIsLoading(false);
   };
 
   return (
@@ -49,7 +49,7 @@ const DeckPublicToggleButton = ({ deck }) => {
         onClick={() => setShowConfirmation(true)}
         title={`${isPublished ? 'In' : 'Not in'} Public Deck Archive`}
         icon={
-          !spinnerState ? (
+          !isLoading ? (
             <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
           ) : (
             <Spinner />

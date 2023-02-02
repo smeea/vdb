@@ -1,4 +1,3 @@
-export { default as DeckProxyButton } from './DeckProxyButton.jsx';
 export { default as DeckProxyTableSetSelect } from './DeckProxyTableSetSelect.jsx';
 export { default as DeckProxyCrypt } from './DeckProxyCrypt.jsx';
 export { default as DeckProxyCryptTable } from './DeckProxyCryptTable.jsx';

@@ -34,7 +34,7 @@ const PdaSearchForm = ({ error, setError }) => {
   const { username, cryptCardBase, libraryCardBase, inventoryMode, isMobile } =
     useApp();
   const pdaFormState = useSnapshot(searchPdaForm);
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -101,7 +101,7 @@ const PdaSearchForm = ({ error, setError }) => {
     }
 
     if (isMobile) {
-      setSpinnerState(false);
+      setIsLoading(false);
       navigate('/pda');
     }
   };
@@ -128,14 +128,14 @@ const PdaSearchForm = ({ error, setError }) => {
       body: JSON.stringify(sanitizedForm),
     };
 
-    setSpinnerState(true);
+    setIsLoading(true);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
       .then((data) => {
-        setSpinnerState(false);
+        setIsLoading(false);
         setPdaResults(data);
       })
       .catch((error) => {
@@ -144,7 +144,7 @@ const PdaSearchForm = ({ error, setError }) => {
   };
 
   const getNewPda = (q) => {
-    setSpinnerState(true);
+    setIsLoading(true);
     setError(false);
     clearSearchForm('pda');
 
@@ -161,7 +161,7 @@ const PdaSearchForm = ({ error, setError }) => {
         return response.json();
       })
       .then((data) => {
-        setSpinnerState(false);
+        setIsLoading(false);
         setPdaResults(data);
       })
       .catch((error) => {
@@ -170,7 +170,7 @@ const PdaSearchForm = ({ error, setError }) => {
   };
 
   const getRandomPda = (q) => {
-    setSpinnerState(true);
+    setIsLoading(true);
     setError(false);
     clearSearchForm('pda');
 
@@ -187,7 +187,7 @@ const PdaSearchForm = ({ error, setError }) => {
         return response.json();
       })
       .then((data) => {
-        setSpinnerState(false);
+        setIsLoading(false);
         setPdaResults(data);
       })
       .catch((error) => {
@@ -315,7 +315,7 @@ const PdaSearchForm = ({ error, setError }) => {
             <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
           <ButtonFloat onClick={processSearch} variant="success">
-            {!spinnerState ? (
+            {!isLoading ? (
               <Check2 width="35" height="35" viewBox="0 0 16 16" />
             ) : (
               <Spinner width="35" height="35" viewBox="0 0 16 16" />

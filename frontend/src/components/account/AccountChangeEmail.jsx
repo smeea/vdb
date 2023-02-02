@@ -12,10 +12,12 @@ const AccountChangeEmail = () => {
   const { setEmail } = useApp();
   const [formPassword, setFormPassword] = useState('');
   const [formEmail, setFormEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
   const onError = (e) => {
+    setIsLoading(false);
     if (e.message == 401) {
       setPasswordError('WRONG PASSWORD');
     } else {
@@ -24,6 +26,7 @@ const AccountChangeEmail = () => {
   };
 
   const onSuccess = () => {
+    setIsLoading(false);
     setEmail(formEmail);
     setFormPassword('');
     setSuccess(true);
@@ -33,8 +36,13 @@ const AccountChangeEmail = () => {
   };
 
   const changeEmail = () => {
+    if (isLoading) return;
     setPasswordError(false);
-    userServices.changeEmail(formPassword, formEmail, onSuccess, onError);
+
+    if (formPassword) {
+      setIsLoading(true);
+      userServices.changeEmail(formPassword, formEmail, onSuccess, onError);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -58,6 +66,7 @@ const AccountChangeEmail = () => {
           <AccountPasswordForm
             value={formPassword}
             setValue={setFormPassword}
+            isLoading={isLoading}
             success={success}
           />
           {passwordError && (

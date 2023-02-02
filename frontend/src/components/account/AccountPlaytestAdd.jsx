@@ -9,11 +9,11 @@ const AccountPlaytestAdd = ({
   setNewPlaytesters,
 }) => {
   const [username, setUsername] = useState('');
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const addPlaytester = () => {
-    setSpinnerState(true);
+    setIsLoading(true);
 
     const url = `${import.meta.env.VITE_API_URL}/playtest`;
     const options = {
@@ -47,7 +47,7 @@ const AccountPlaytestAdd = ({
         setError('USER DOES NOT EXIST');
       });
 
-    setSpinnerState(false);
+    setIsLoading(false);
   };
 
   const handleChange = (event) => {
@@ -71,7 +71,7 @@ const AccountPlaytestAdd = ({
           onChange={handleChange}
           className="w-full rounded-r-none"
         />
-        {!spinnerState ? (
+        {!isLoading ? (
           <Button className="rounded-l-none" variant="primary" type="submit">
             <Check2 />
           </Button>

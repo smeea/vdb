@@ -13,7 +13,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
   const [importError, setImportError] = useState(false);
   const refUrl = useRef();
   const [idReference, setIdReference] = useState();
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getIdReference = () => {
     const VERSION = '2022-07-22';
@@ -37,7 +37,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
 
     if (/.*#deck\//.test(deckUrl)) {
       setEmptyError(false);
-      setSpinnerState(true);
+      setIsLoading(true);
 
       if (idReference) {
         deckServices
@@ -45,12 +45,12 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
           .then((deck) => importDeckFromAmaranth(deck))
           .then(() => {
             setDeckUrl('');
-            setSpinnerState(false);
+            setIsLoading(false);
             handleClose();
           })
           .catch(() => {
             setImportError(true);
-            setSpinnerState(false);
+            setIsLoading(false);
           });
       }
     } else {
@@ -193,7 +193,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
           ref={refUrl}
         />
         <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
-          {!spinnerState ? (
+          {!isLoading ? (
             <Button variant="primary" onClick={handleImport}>
               Import
             </Button>

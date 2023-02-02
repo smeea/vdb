@@ -43,12 +43,12 @@ const AccountLogin = () => {
   const { isMobile, initializeUserData } = useApp();
   const [formUsername, setFormUsername] = useState('');
   const [formPassword, setFormPassword] = useState('');
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
   const onError = (e) => {
-    setSpinnerState(false);
+    setIsLoading(false);
     if (e.message == 401) {
       setPasswordError('WRONG PASSWORD');
     } else if (e.message == 400) {
@@ -59,17 +59,17 @@ const AccountLogin = () => {
   };
 
   const onSuccess = (data) => {
-    setSpinnerState(false);
+    setIsLoading(false);
     initializeUserData(data);
   };
 
   const loginUser = () => {
-    if (spinnerState) return;
+    if (isLoading) return;
     setUsernameError(false);
     setPasswordError(false);
 
     if (formUsername && formPassword) {
-      setSpinnerState(true);
+      setIsLoading(true);
       userServices.login(formUsername, formPassword, onSuccess, onError);
     }
   };
@@ -108,7 +108,7 @@ const AccountLogin = () => {
           <AccountPasswordForm
             value={formPassword}
             setValue={setFormPassword}
-            spinnerState={spinnerState}
+            isLoading={isLoading}
           />
           {passwordError && (
             <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>

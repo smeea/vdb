@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg';
+import Spinner from '@/assets/images/icons/three-dots.svg';
 import PenFill from '@/assets/images/icons/pen-fill.svg';
 import {
   Input,
@@ -31,18 +32,21 @@ const TooltipText = () => {
 
 const AccountChangeName = () => {
   const { publicName, setPublicName, isMobile } = useApp();
-  const [state, setState] = useState(publicName || '');
+  const [formName, setFormName] = useState(publicName || '');
+  const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
   const onError = (e) => {
+    setIsLoading(false);
     if (e.message != 401) {
       setError('CONNECTION PROBLEM');
     }
   };
 
   const onSuccess = () => {
-    setPublicName(state);
+    setIsLoading(false);
+    setPublicName(formName);
     setSuccess(true);
     setTimeout(() => {
       setSuccess(false);
@@ -50,8 +54,13 @@ const AccountChangeName = () => {
   };
 
   const changeName = () => {
+    if (isLoading) return;
     setError(false);
-    userServices.changeName(state, onSuccess, onError);
+
+    if (formName) {
+      setIsLoading(true);
+      userServices.changeName(formName, onSuccess, onError);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -78,8 +87,8 @@ const AccountChangeName = () => {
         <div className="relative flex w-full">
           <Input
             placeholder="Public name"
-            value={state}
-            onChange={(e) => setState(e.target.value)}
+            value={formName}
+            onChange={(e) => setFormName(e.target.value)}
             className="w-full rounded-r-none"
           />
           <Button
@@ -87,7 +96,11 @@ const AccountChangeName = () => {
             variant={success ? 'success' : 'primary'}
             type="submit"
           >
-            <Check2 />
+            {isLoading ? (
+              <Spinner />
+            ) : (
+              <Check2 />
+            )}
           </Button>
           {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>

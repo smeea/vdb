@@ -35,7 +35,7 @@ import {
 const TwdSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, inventoryMode, isMobile } = useApp();
   const twdFormState = useSnapshot(searchTwdForm);
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -104,7 +104,7 @@ const TwdSearchForm = ({ error, setError }) => {
     }
 
     if (isMobile) {
-      setSpinnerState(false);
+      setIsLoading(false);
       navigate('/twd');
     }
   };
@@ -131,14 +131,14 @@ const TwdSearchForm = ({ error, setError }) => {
       body: JSON.stringify(sanitizedForm),
     };
 
-    setSpinnerState(true);
+    setIsLoading(true);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
       .then((data) => {
-        setSpinnerState(false);
+        setIsLoading(false);
         setTwdResults(data);
       })
       .catch((error) => {
@@ -147,7 +147,7 @@ const TwdSearchForm = ({ error, setError }) => {
   };
 
   const getNewTwd = (q) => {
-    setSpinnerState(true);
+    setIsLoading(true);
     setError(false);
     clearSearchForm('twd');
 
@@ -164,7 +164,7 @@ const TwdSearchForm = ({ error, setError }) => {
         return response.json();
       })
       .then((data) => {
-        setSpinnerState(false);
+        setIsLoading(false);
         setTwdResults(data);
       })
       .catch((error) => {
@@ -173,7 +173,7 @@ const TwdSearchForm = ({ error, setError }) => {
   };
 
   const getRandomTwd = (q) => {
-    setSpinnerState(true);
+    setIsLoading(true);
     setError(false);
     clearSearchForm('twd');
 
@@ -190,7 +190,7 @@ const TwdSearchForm = ({ error, setError }) => {
         return response.json();
       })
       .then((data) => {
-        setSpinnerState(false);
+        setIsLoading(false);
         setTwdResults(data);
       })
       .catch((error) => {
@@ -320,7 +320,7 @@ const TwdSearchForm = ({ error, setError }) => {
             <X width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
           <ButtonFloat onClick={processSearch} variant="success">
-            {!spinnerState ? (
+            {!isLoading ? (
               <Check2 width="35" height="35" viewBox="0 0 16 16" />
             ) : (
               <Spinner width="35" height="35" viewBox="0 0 16 16" />

@@ -23,7 +23,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     lang,
   } = useApp();
 
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState();
 
   const checkImage = (url) => {
@@ -34,7 +34,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
   };
 
   const proxyCards = async (crypt, library, isWhiteGaps) => {
-    setSpinnerState(true);
+    setIsLoading(true);
 
     const cryptSorted = cryptSort(
       Object.values(crypt).filter((card) => card.q > 0),
@@ -122,7 +122,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     });
 
     pdf.save(`${deck['name']}.pdf`);
-    setSpinnerState(false);
+    setIsLoading(false);
   };
 
   return (
@@ -140,7 +140,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           <MenuButton
             title="Create PDF with Cards"
             icon={
-              spinnerState ? (
+              isLoading ? (
                 <Spinner />
               ) : (
                 <Printer width="18" height="18" viewBox="0 0 18 16" />

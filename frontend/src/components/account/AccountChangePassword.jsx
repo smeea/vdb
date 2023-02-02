@@ -6,10 +6,12 @@ import { userServices } from '@/services';
 const AccountChangePassword = () => {
   const [formPassword, setFormPassword] = useState('');
   const [formNewPassword, setFormNewPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const onError = (e) => {
+    setIsLoading(false);
     if (e.message == 401) {
       setPasswordError('WRONG OLD PASSWORD');
     } else {
@@ -18,6 +20,7 @@ const AccountChangePassword = () => {
   };
 
   const onSuccess = () => {
+    setIsLoading(false);
     setFormPassword('');
     setFormNewPassword('');
     setSuccess(true);
@@ -27,13 +30,18 @@ const AccountChangePassword = () => {
   };
 
   const changePassword = () => {
+    if (isLoading) return;
     setPasswordError(false);
-    userServices.changePassword(
-      formPassword,
-      formNewPassword,
-      onSuccess,
-      onError
-    );
+
+    if (formPassword && formNewPassword) {
+      setIsLoading(true);
+      userServices.changePassword(
+        formPassword,
+        formNewPassword,
+        onSuccess,
+        onError
+      );
+    }
   };
 
   const handleSubmit = (event) => {
@@ -62,6 +70,7 @@ const AccountChangePassword = () => {
             value={formNewPassword}
             setValue={setFormNewPassword}
             success={success}
+            isLoading={isLoading}
             isNew
           />
           {passwordError && (

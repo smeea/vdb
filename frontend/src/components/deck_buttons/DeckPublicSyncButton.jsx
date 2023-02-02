@@ -9,7 +9,7 @@ const DeckPublicSyncButton = ({ deck }) => {
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSync = () => {
     syncPublic();
@@ -28,14 +28,14 @@ const DeckPublicSyncButton = ({ deck }) => {
         'Content-Type': 'application/json',
       },
     };
-    setSpinnerState(true);
+    setIsLoading(true);
     fetch(url, options)
       .then((response) => response.json())
       .then(() => {
         deckStore.deck.crypt = { ...decks[deck.publicParent].crypt };
         deckStore.deck.library = { ...decks[deck.publicParent].library };
       });
-    setSpinnerState(false);
+    setIsLoading(false);
   };
 
   return (
@@ -45,7 +45,7 @@ const DeckPublicSyncButton = ({ deck }) => {
         onClick={() => setShowSyncConfirmation(true)}
         title="Sync Deck with Public Deck Archive"
         text="Sync Public Deck"
-        icon={!spinnerState ? <PeopleFill /> : <Spinner />}
+        icon={!isLoading ? <PeopleFill /> : <Spinner />}
       />
       {showSyncConfirmation && (
         /* TODO refactor to ModalConfirmation */

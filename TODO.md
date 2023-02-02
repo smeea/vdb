@@ -27,6 +27,7 @@
 - Test autoFocus / fix with forwardRefs
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Refactor or restore setShowFloatingButtons functionality
+- Refactor deck buttons
 - TwdLibraryByType click to freeze popover
 - Fix popover arrow for non-right placement
 - InventoryAddDeck/Precon row to refactor (merge) some code

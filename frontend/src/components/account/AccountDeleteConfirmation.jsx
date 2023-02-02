@@ -13,14 +13,14 @@ const AccountDeleteConfirmation = ({ setShow }) => {
   const [passwordError, setPasswordError] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
   const refPassword = useRef();
 
   const handleChange = (event) => setPassword(event.target.value);
 
   const onError = (e) => {
-    setSpinnerState(false);
+    setIsLoading(false);
     if (e.message == 401) {
       setPasswordError(true);
       setPassword('');
@@ -30,20 +30,20 @@ const AccountDeleteConfirmation = ({ setShow }) => {
   };
 
   const onSuccess = () => {
-    setSpinnerState(false);
+    setIsLoading(false);
     setShow(false);
     setUsername(undefined);
   };
 
   const deleteAccount = () => {
-    if (spinnerState) return;
+    if (isLoading) return;
 
     setPasswordError(false);
     setEmptyPassword(!password);
     setConnectionError(false);
 
     if (password) {
-      setSpinnerState(true);
+      setIsLoading(true);
       userServices.deleteAccount(password, onSuccess, onError);
     }
   };
@@ -87,7 +87,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
             >
               {hidePassword ? <EyeFill /> : <EyeSlashFill />}
             </Button>
-            {!spinnerState ? (
+            {!isLoading ? (
               <Button variant="danger" type="submit">
                 Delete
               </Button>
