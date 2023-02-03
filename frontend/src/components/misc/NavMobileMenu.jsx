@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PersonFill from '@/assets/images/icons/person-fill.svg';
 import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg';
@@ -10,11 +10,9 @@ import { useApp } from '@/context';
 
 const NavMobileMenu = ({ showMenu, setShowMenu }) => {
   const { inventoryMode, toggleInventoryMode, username } = useApp();
-  const menuRef = useRef();
 
   return (
     <div
-      ref={menuRef}
       className="relative flex h-full items-center px-1 text-[#ffffff]"
       onClick={() => setShowMenu(!showMenu)}
     >

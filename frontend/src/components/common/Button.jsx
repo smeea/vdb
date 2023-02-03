@@ -36,7 +36,9 @@ const Button = ({
     <button
       className={`${baseStyle} ${
         customStyle[variant]
-      } items-center justify-center rounded px-3 py-1.5 ${className ?? ''}`}
+      } flex items-center justify-center rounded px-3 py-1.5 ${
+        className ?? ''
+      }`}
       onClick={onClick}
       title={title}
       disabled={disabled}

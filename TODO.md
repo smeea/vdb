@@ -25,9 +25,8 @@
 - Resize clan/types/misc images
 
 # TAILWIND MIGRATION
-- Test autoFocus / fix with forwardRefs
-- Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Refactor or restore setShowFloatingButtons functionality
+- Test if disableOverlay is required (possible to change?)
+- Replace -[#HEX] with config colors, merge same config colors, name config colors
 - TwdLibraryByType click to freeze popover
 - Library sticky hide above header
-- Test if disableOverlay is required (possible to change?)

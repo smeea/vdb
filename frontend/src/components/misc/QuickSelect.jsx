@@ -67,24 +67,19 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
     }
   };
 
-  const CardSelect = React.forwardRef((props, ref) => {
-    return (
-      <AsyncSelect
-        classNamePrefix="react-select"
-        autoFocus={!isMobile || !selectedCardid}
-        menuPlacement={isMobile ? 'top' : 'bottom'}
-        cacheOptions
-        loadOptions={loadOptions}
-        value={{ value: inBadImport ? selectedCardid : null }}
-        getOptionLabel={getOptionLabel}
-        onChange={handleChange}
-        ref={ref}
-      />
-    );
-  });
-  CardSelect.displayName = 'CardSelect';
-
-  return <CardSelect ref={ref} />;
+  return (
+    <AsyncSelect
+      classNamePrefix="react-select"
+      autoFocus={!isMobile || !selectedCardid}
+      menuPlacement={isMobile ? 'top' : 'bottom'}
+      cacheOptions
+      loadOptions={loadOptions}
+      value={{ value: inBadImport ? selectedCardid : null }}
+      getOptionLabel={getOptionLabel}
+      onChange={handleChange}
+      ref={ref}
+    />
+  );
 };
 
 export default QuickSelect;

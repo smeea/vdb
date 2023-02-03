@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Spinner from '@/assets/images/icons/three-dots.svg';
 import EyeFill from '@/assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg';
@@ -8,13 +8,11 @@ import { userServices } from '@/services';
 
 const AccountDeleteConfirmation = ({ setShow }) => {
   const { setUsername, isMobile } = useApp();
-
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
-  const refPassword = useRef();
 
   const handleChange = (event) => setPassword(event.target.value);
 
@@ -68,44 +66,47 @@ const AccountDeleteConfirmation = ({ setShow }) => {
           </div>
           <div className="flex justify-end space-x-2">
             <form onSubmit={handleSubmit}>
-              <div className="relative flex w-full">
-                <Input
-                  placeholder="Enter password"
-                  type={hidePassword ? 'password' : 'text'}
-                  name="password"
-                  value={password}
-                  onChange={handleChange}
-                  autoFocus={true}
-                  ref={refPassword}
-                  className="rounded-r-none"
-                  required={true}
-                />
-                <Button
-                  className="rounded-l-none"
-                  tabIndex="-1"
-                  variant="primary"
-                  type="button"
-                  onClick={() => setHidePassword(!hidePassword)}
-                >
-                  {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-                </Button>
-                <div className="flex pl-2">
-                  {!isLoading ? (
-                    <Button variant="danger" type="submit" >
-                      Delete
-                    </Button>
-                  ) : (
-                    <Button variant="primary">
-                      <Spinner />
-                    </Button>
+              <div className="flex">
+                <div className="relative flex w-full">
+                  <Input
+                    placeholder="Enter password"
+                    type={hidePassword ? 'password' : 'text'}
+                    name="password"
+                    value={password}
+                    onChange={handleChange}
+                    className="rounded-r-none"
+                    autoFocus
+                    required
+                  />
+                  {passwordError && (
+                    <ErrorOverlay placement="bottom">
+                      WRONG PASSWORD
+                    </ErrorOverlay>
+                  )}
+                  {connectionError && (
+                    <ErrorOverlay placement="bottom">
+                      CONNECTION PROBME
+                    </ErrorOverlay>
                   )}
                 </div>
-                {passwordError && (
-                  <ErrorOverlay placement="bottom">WRONG PASSWORD</ErrorOverlay>
-                )}
-                {connectionError && (
-                  <ErrorOverlay placement="bottom">CONNECTION PROBME</ErrorOverlay>
-                )}
+                <div className="flex space-x-2">
+                  <Button
+                    className="rounded-l-none"
+                    tabIndex="-1"
+                    variant="primary"
+                    type="button"
+                    onClick={() => setHidePassword(!hidePassword)}
+                  >
+                    {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+                  </Button>
+                  <Button
+                    className="min-w-[72px]"
+                    variant="danger"
+                    type="submit"
+                  >
+                    {isLoading ? <Spinner /> : 'Delete'}
+                  </Button>
+                </div>
               </div>
             </form>
             <Button variant="primary" onClick={() => setShow(false)}>

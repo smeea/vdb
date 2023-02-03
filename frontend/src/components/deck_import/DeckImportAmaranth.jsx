@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '@/assets/images/icons/three-dots.svg';
-import { Modal, Button, ErrorOverlay } from '@/components';
+import { Modal, Input, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { deckServices } from '@/services';
 
@@ -11,9 +11,9 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
-  const refUrl = useRef();
   const [idReference, setIdReference] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const ref = useRef();
 
   const getIdReference = () => {
     const VERSION = '2022-07-22';
@@ -176,40 +176,36 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
   return (
     <Modal
       handleClose={handleClose}
-      /* TODO drop/implement onShow*/
-      /* onShow={() => refUrl.current.focus()} */
+      initialFocus={ref}
       size="lg"
       centered={isMobile}
       title="Import from Amaranth"
     >
-      <div>
-        <input
-          placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
-          className="text-xl focus:text-fgRed dark:text-fgRedDark"
-          type="text"
-          name="url"
-          value={deckUrl}
-          onChange={(event) => setDeckUrl(event.target.value)}
-          ref={refUrl}
-        />
-        <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
-          {!isLoading ? (
-            <Button variant="primary" onClick={handleImport}>
-              Import
-            </Button>
-          ) : (
-            <Button variant="primary" onClick={handleImport}>
-              <Spinner />
-              <span>Import</span>
-            </Button>
+      <div className="flex">
+        <div className="flex w-full relative">
+          <Input
+            placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
+            className="w-full text-xl rounded-r-none"
+            type="text"
+            name="url"
+            value={deckUrl}
+            onChange={(event) => setDeckUrl(event.target.value)}
+            ref={ref}
+          />
+          {emptyError && (
+            <ErrorOverlay placement="bottom">ERROR IN URL</ErrorOverlay>
+          )}
+          {importError && (
+            <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
           )}
         </div>
-        {emptyError && (
-          <ErrorOverlay placement="bottom">ERROR IN URL</ErrorOverlay>
-        )}
-        {importError && (
-          <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
-        )}
+        <Button
+          className="rounded-l-none min-w-[72px]"
+          variant="primary"
+          onClick={handleImport}
+        >
+          {isLoading ? <Spinner /> : 'Import'}
+        </Button>
       </div>
     </Modal>
   );

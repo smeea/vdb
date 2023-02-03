@@ -9,7 +9,6 @@ const TwdDeck = ({ eventId, setEventId }) => {
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
   const fileInput = useRef();
-  const refText = useRef();
 
   const handleLoad = () => {
     fileInput.current.click();
@@ -123,7 +122,6 @@ const TwdDeck = ({ eventId, setEventId }) => {
             value={deckText}
             placeholder={placeholder}
             onChange={handleChange}
-            ref={refText}
             autoFocus
           />
           <pre className="mb-0 ml-[13px] font-mono text-sm text-midGray dark:text-midGrayDark">

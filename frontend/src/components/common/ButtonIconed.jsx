@@ -18,14 +18,10 @@ const ButtonIconed = ({
       disabled={disabled}
       variant={variant}
     >
-      {text === undefined || text === null ? (
-        <>{icon}</>
-      ) : (
-        <div className="flex items-center justify-center">
-          <div className="pr-2">{icon}</div>
-          {text}
-        </div>
-      )}
+      <div className="flex items-center justify-center space-x-2">
+        <div className="flex items-center">{icon}</div>
+        {text && <div>{text}</div>}
+      </div>
     </Button>
   );
 };

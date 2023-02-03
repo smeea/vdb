@@ -11,6 +11,7 @@ const Modal = ({
   size = 'md',
   noPadding = false,
   centered = false,
+  initialFocus,
   // TODO implement bordered
   bordered = false,
 }) => {
@@ -35,7 +36,12 @@ const Modal = ({
   const widthClass = getWidth(size);
 
   return (
-    <Dialog open onClose={handleClose} className="relative z-50">
+    <Dialog
+      initialFocus={initialFocus}
+      onClose={handleClose}
+      className="relative z-50"
+      open
+    >
       <div
         className="fixed inset-0 bg-[#000] bg-opacity-50"
         aria-hidden="true"

@@ -99,6 +99,7 @@ const AccountLogin = () => {
           <AccountUsernameForm
             value={formUsername}
             setValue={setFormUsername}
+            autoFocus
           />
           {usernameError && (
             <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>
