@@ -32,4 +32,3 @@
 - Library sticky hide above header
 - Test if disableOverlay is required (possible to change?)
 - Refactor PdaResultDescription as in Twd
-- Refactor getStyle / getSize into object
