@@ -9,3 +9,4 @@ export { default as DiffLibraryTable } from './DiffLibraryTable.jsx';
 export { default as DiffLibraryTableRow } from './DiffLibraryTableRow.jsx';
 export { default as DiffQuantityDiff } from './DiffQuantityDiff.jsx';
 export { default as DiffSelect } from './DiffSelect.jsx';
+export { default as DiffSelectDeck } from './DiffSelectDeck.jsx';

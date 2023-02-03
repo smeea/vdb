@@ -176,7 +176,7 @@ const Diff = () => {
   return (
     <div className="deck-container mx-auto">
       <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-        <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 lg:basis-10/12">
+        <div className="flex flex-col w-full sm:gap-4 lg:gap-6 xl:gap-8 lg:basis-10/12">
           <DiffSelect
             decks={decks}
             deck={deck}
@@ -194,43 +194,24 @@ const Diff = () => {
               </div>
             </div>
           )}
+
           {deck && deckTo && (
-            <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-              <div className="md:basis-7/12">
-                <div
-                  className={
-                    isMobile
-                      ? null
-                      : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
-                  }
-                >
-                  <DiffCrypt
-                    deckid={deck.deckid}
-                    isEditable={
-                      deck.isAuthor && !deck.isPublic && !deck.isFrozen
-                    }
-                    cardsFrom={deck.crypt}
-                    cardsTo={deckTo.crypt}
-                  />
-                </div>
+            <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 sm:flex-row">
+              <div className="basis-full sm:basis-5/9">
+                <DiffCrypt
+                  deckid={deck.deckid}
+                  isEditable={deck.isAuthor && !deck.isPublic && !deck.isFrozen}
+                  cardsFrom={deck.crypt}
+                  cardsTo={deckTo.crypt}
+                />
               </div>
-              <div className="md:basis-5/12">
-                <div
-                  className={
-                    isMobile
-                      ? null
-                      : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
-                  }
-                >
-                  <DiffLibrary
-                    deckid={deck.deckid}
-                    isEditable={
-                      deck.isAuthor && !deck.isPublic && !deck.isFrozen
-                    }
-                    cardsFrom={deck.library}
-                    cardsTo={deckTo.library}
-                  />
-                </div>
+              <div className="basis-full sm:basis-4/9">
+                <DiffLibrary
+                  deckid={deck.deckid}
+                  isEditable={deck.isAuthor && !deck.isPublic && !deck.isFrozen}
+                  cardsFrom={deck.library}
+                  cardsTo={deckTo.library}
+                />
               </div>
             </div>
           )}
