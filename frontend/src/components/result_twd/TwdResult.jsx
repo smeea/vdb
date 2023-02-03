@@ -58,7 +58,7 @@ const TwdResult = ({ results, setResults }) => {
           deck.library = cardsData.library;
 
           return (
-            <div className="space-y-6" key={deck['deckid']}>
+            <div className="space-y-6" key={deck.deckid}>
               <div className="flex flex-col gap-2 lg:flex-row">
                 <div className="basis-full lg:basis-1/4">
                   <TwdResultDescription deck={deck} />

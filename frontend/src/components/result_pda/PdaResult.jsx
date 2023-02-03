@@ -53,36 +53,36 @@ const PdaResult = ({ results, setResults }) => {
         while (newCounter > 0) {
           newCounter -= 1;
 
-          const cardsData = useDeck(deck.cards, cryptCardBase, libraryCardBase);
-          Object.values({ ...cardsData.crypt, ...cardsData.library }).map(
-            (card) => {
-              if (card.q === 0) {
-                if (card.c.Id > 200000) {
-                  delete cardsData.crypt[card.c.Id];
-                } else {
-                  delete cardsData.library[card.c.Id];
-                }
-              }
-            }
+          const { crypt, library } = useDeck(
+            deck.cards,
+            cryptCardBase,
+            libraryCardBase
           );
-          deck.crypt = cardsData.crypt;
-          deck.library = cardsData.library;
+          Object.values(crypt).map((card) => {
+            card.q === 0 && delete crypt[card.c.Id];
+          });
+          Object.values(library).map((card) => {
+            card.q === 0 && delete library[card.c.Id];
+          });
+
+          deck.crypt = crypt;
+          deck.library = library;
 
           return (
-            <div className="space-y-6" key={deck['deckid']}>
+            <div className="space-y-6" key={deck.deckid}>
               <div className="flex flex-col gap-2 lg:flex-row">
                 <div className="basis-full lg:basis-1/4">
                   <PdaResultDescription deck={deck} />
                 </div>
                 <div className="flex basis-full gap-2 lg:basis-3/4">
                   <div className="basis-1/2 sm:basis-1/3">
-                    <TwdResultCryptTable crypt={deck['crypt']} />
+                    <TwdResultCryptTable crypt={deck.crypt} />
                   </div>
                   <div className="hidden sm:block sm:basis-1/3">
-                    <TwdResultLibraryByTypeTable library={deck['library']} />
+                    <TwdResultLibraryByTypeTable library={deck.library} />
                   </div>
                   <div className="basis-1/2 sm:basis-1/3">
-                    <TwdResultLibraryKeyCardsTable library={deck['library']} />
+                    <TwdResultLibraryKeyCardsTable library={deck.library} />
                   </div>
                 </div>
               </div>

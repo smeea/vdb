@@ -1,24 +1,23 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
 import PersonFill from '@/assets/images/icons/person-fill.svg';
 import TagFill from '@/assets/images/icons/tag-fill.svg';
 import CalendarEvent from '@/assets/images/icons/calendar-event.svg';
-import GeoAltFill from '@/assets/images/icons/geo-alt-fill.svg';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';
 
-const TwdResultDescriptionText = ({ deck }) => {
+const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
   const tags = useTags(deck.crypt, deck.library);
+  const lastUpdated = new Date(deck['timestamp']).toISOString().slice(0, 10);
 
   const handleClick = (target, value) => {
     clearSearchForm('twd');
     searchTwdForm[target] = value;
     navigate(
-      `/twd?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`
+      `/pda?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`
     );
   };
 
@@ -27,40 +26,32 @@ const TwdResultDescriptionText = ({ deck }) => {
       <table>
         <tbody>
           <TwdResultDescriptionTextTr
-            title={isMobile ? <CalendarEvent /> : <>Date:</>}
+            title={isMobile ? <TagFill /> : <>Deck:</>}
+          >
+            {deck.name}
+          </TwdResultDescriptionTextTr>
+          <TwdResultDescriptionTextTr
+            title={isMobile ? <PersonFill /> : <>Author:</>}
+          >
+            <div
+              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+              onClick={() => handleClick(deck['author'])}
+            >
+              {deck['author']}
+            </div>
+          </TwdResultDescriptionTextTr>
+          <TwdResultDescriptionTextTr
+            title={isMobile ? <CalendarEvent /> : <>Created:</>}
           >
             {deck['creation_date']}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <TrophyFill /> : <>Event:</>}
-          >
-            {deck['event']}
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <GeoAltFill /> : <>Place:</>}
-          >
-            <div
-              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-              onClick={() => handleClick('location', deck['location'])}
+          {lastUpdated !== deck['creation_date'] && (
+            <TwdResultDescriptionTextTr
+              title={isMobile ? <CalendarEvent /> : <>Updated:</>}
             >
-              {deck['location']}
-            </div>
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <PersonFill /> : <>Player:</>}
-          >
-            <div
-              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-              onClick={() => handleClick('author', deck['author'])}
-            >
-              {deck['author']} <br />
-            </div>
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <TagFill /> : <>Deck:</>}
-          >
-            {deck['name']}
-          </TwdResultDescriptionTextTr>
+              {lastUpdated}
+            </TwdResultDescriptionTextTr>
+          )}
         </tbody>
       </table>
       {(tags.superior.length > 0 || tags.base.length > 0) && (
@@ -70,4 +61,4 @@ const TwdResultDescriptionText = ({ deck }) => {
   );
 };
 
-export default TwdResultDescriptionText;
+export default PdaResultDescriptionText;
