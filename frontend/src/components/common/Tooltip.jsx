@@ -7,9 +7,9 @@ import {
   shift,
   arrow,
   useHover,
+  useClick,
   useFocus,
   useDismiss,
-  useRole,
   useInteractions,
   FloatingPortal,
 } from '@floating-ui/react';
@@ -21,6 +21,8 @@ const Tooltip = ({
   noPadding,
   placement = 'right',
 }) => {
+  // TODO add sizing as in modals for other than max-w-[800px]
+
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
 
@@ -38,23 +40,19 @@ const Tooltip = ({
     onOpenChange: setOpen,
     placement: placement,
     whileElementsMounted: autoUpdate,
-    middleware: [offset(5), flip(), shift(), arrow({ element: arrowRef })],
+    middleware: [offset(7), flip(), shift(), arrow({ element: arrowRef })],
   });
 
-  const hover = useHover(context, { move: false });
-  // const focus = useFocus(context);
-  // const dismiss = useDismiss(context);
-  // const role = useRole(context, { role: 'tooltip' });
-  // const { getReferenceProps, getFloatingProps } = useInteractions([
-  //   hover,
-  //   focus,
-  //   dismiss,
-  //   role,
-  // ]);
-  // TODO see if required
-  // <div className="inline" ref={reference} {...getFloatingProps()} {...getReferenceProps()}>
-
-  // TODO add sizing as in modals for other than max-w-[800px]
+  const click = useClick(context);
+  const hover = useHover(context);
+  const focus = useFocus(context);
+  const dismiss = useDismiss(context);
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    click,
+    hover,
+    focus,
+    dismiss,
+  ]);
 
   const arrowOffset = {
     bottom: 'top-[-7px]',
@@ -72,7 +70,7 @@ const Tooltip = ({
 
   return (
     <>
-      <div className={className} ref={reference}>
+      <div className={className} ref={reference} {...getReferenceProps()}>
         {children}
       </div>
       <FloatingPortal>
@@ -87,11 +85,12 @@ const Tooltip = ({
               top: y ?? 0,
               left: x ?? 0,
             }}
+            {...getFloatingProps()}
           >
             {overlay}
             <div
               ref={arrowRef}
-          className={`absolute z-[-1] h-[12px] w-[12px] border-l border-b border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark ${arrowOffset} ${arrowRotate}`}
+              className={`absolute z-[-1] h-[12px] w-[12px] border-l border-b border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark ${arrowOffset} ${arrowRotate}`}
               style={{
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',

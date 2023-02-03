@@ -28,5 +28,4 @@
 - Refactor or restore setShowFloatingButtons functionality
 - Test if disableOverlay is required (possible to change?)
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
-- TwdLibraryByType click to freeze popover
 - Library sticky hide above header
