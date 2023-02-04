@@ -7,6 +7,7 @@ import {
   ResultModal,
   DeckDrawCryptTable,
   DeckDrawLibraryTable,
+  ResultLibraryCost,
   ResultCryptCapacity,
   ErrorMessage,
 } from '@/components';
@@ -195,7 +196,7 @@ const DeckDrawModal = ({
                       {burnedCrypt.length}
                     </div>
                     <div className="flex items-center" title="Total Capacity">
-                      <ResultCryptCapacity value="X" />
+                      <ResultCryptCapacity card={{ Capacity: 'X' }} />
                       <b>{burnedCapacityTotal}</b>
                     </div>
                   </div>
@@ -220,11 +221,9 @@ const DeckDrawModal = ({
                         className="flex items-center space-x-1"
                         title="Total Blood Cost"
                       >
-                        <img
-                          className="optimize-contrast h-[31px] pb-1"
-                          src={`${
-                            import.meta.env.VITE_BASE_URL
-                          }/images/misc/bloodX.png`}
+                        <ResultLibraryCost
+                          valueBlood="X"
+                          className="h-[30px] pb-1"
                         />
                         <b>{burnedBloodTotal}</b>
                       </div>
@@ -232,12 +231,7 @@ const DeckDrawModal = ({
                         className="flex items-center space-x-1"
                         title="Total Pool Cost"
                       >
-                        <img
-                          className="optimize-contrast h-[30px]"
-                          src={`${
-                            import.meta.env.VITE_BASE_URL
-                          }/images/misc/poolX.png`}
-                        />
+                        <ResultLibraryCost valuePool="X" className="h-[30px]" />
                         <b>{burnedPoolTotal}</b>
                       </div>
                     </div>

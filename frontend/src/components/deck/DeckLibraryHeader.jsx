@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
-import { Modal, Button, ButtonFloat, DeckNewCard } from '@/components';
+import {
+  Modal,
+  Button,
+  ButtonFloat,
+  DeckNewCard,
+  DeckLibraryTotalInfo,
+  ResultLibraryCost,
+} from '@/components';
 import { useApp } from '@/context';
 
 const DeckLibraryHeader = ({
@@ -62,20 +69,14 @@ const DeckLibraryHeader = ({
               className="flex items-center space-x-1"
               title="Total Blood Cost"
             >
-              <img
-                className="optimize-contrast h-[31px] pb-1"
-                src={`${import.meta.env.VITE_BASE_URL}/images/misc/bloodX.png`}
-              />
+              <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
               <b>{bloodTotal}</b>
             </div>
             <div
               className="flex items-center space-x-1"
               title="Total Pool Cost"
             >
-              <img
-                className="optimize-contrast h-[30px]"
-                src={`${import.meta.env.VITE_BASE_URL}/images/misc/poolX.png`}
-              />
+              <ResultLibraryCost valuePool="X" className="h-[30px]" />
               <b>{poolTotal}</b>
             </div>
           </div>

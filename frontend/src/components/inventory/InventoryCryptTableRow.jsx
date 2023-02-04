@@ -114,7 +114,7 @@ const InventoryCryptTableRow = ({
         className="flex min-w-[32px] justify-center sm:min-w-[40px]"
         onClick={() => handleClick(card.c)}
       >
-        <ResultCryptCapacity value={card.c.Capacity} />
+        <ResultCryptCapacity card={card.c} />
       </div>
       {!isMobile && !isNarrow && (
         <div

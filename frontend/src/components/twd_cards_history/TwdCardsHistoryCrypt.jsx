@@ -76,7 +76,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           className="flex min-w-[32px] items-center justify-center sm:min-w-[40px]"
           onClick={() => handleModalCardOpen(card)}
         >
-          <ResultCryptCapacity value={card.Capacity} />
+          <ResultCryptCapacity card={card} />
         </div>
         {!isMobile && (
           <div

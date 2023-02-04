@@ -30,7 +30,7 @@ const ResultCryptTableRowCommon = ({
   return (
     <>
       <td className="min-w-[25px]" onClick={() => handleClick(card)}>
-        <ResultCryptCapacity value={card.Capacity} />
+        <ResultCryptCapacity card={card} />
       </td>
       {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
         <td className="min-w-[170px]" onClick={() => handleClick(card)}>

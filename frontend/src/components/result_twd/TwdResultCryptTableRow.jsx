@@ -54,7 +54,7 @@ const TwdResultCryptTableRow = ({ card, idx, handleClick }) => {
         onClick={() => handleClick(card.c)}
       >
         <div className="flex justify-center">
-          <ResultCryptCapacity value={card.c.Capacity} />
+          <ResultCryptCapacity card={card.c} />
         </div>
       </td>
 
