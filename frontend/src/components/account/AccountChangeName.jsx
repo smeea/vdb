@@ -70,7 +70,7 @@ const AccountChangeName = () => {
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center space-x-2 text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="flex items-center space-x-2 text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
         <div className="flex min-w-[23px] justify-center">
           <PenFill />
         </div>
@@ -96,11 +96,7 @@ const AccountChangeName = () => {
             variant={success ? 'success' : 'primary'}
             type="submit"
           >
-            {isLoading ? (
-              <Spinner />
-            ) : (
-              <Check2 />
-            )}
+            {isLoading ? <Spinner /> : <Check2 />}
           </Button>
           {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>

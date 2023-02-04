@@ -60,6 +60,7 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
         <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
+          noPadding
         >
           <div className="flex">
             <ResultLibraryName card={card.c} />

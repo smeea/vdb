@@ -91,7 +91,7 @@ const Diff = () => {
         if (decks[deckidFrom]) {
           setDeck(decks[deckidFrom]);
         } else if (deckidFrom.includes(':')) {
-          if (preconDecks && preconDecks[deckidFrom]) {
+          if (preconDecks?.[deckidFrom]) {
             setDeck(preconDecks[deckidFrom]);
           } else {
             setDeck(undefined);
@@ -110,7 +110,7 @@ const Diff = () => {
         if (decks[deckidTo]) {
           setDeckTo(decks[deckidTo]);
         } else if (deckidTo.includes(':')) {
-          if (preconDecks && preconDecks[deckidTo]) {
+          if (preconDecks?.[deckidTo]) {
             setDeckTo(preconDecks[deckidTo]);
           } else {
             setDeckTo(undefined);

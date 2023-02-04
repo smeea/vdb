@@ -53,7 +53,7 @@ const DiffSelectDeck = ({
   useEffect(() => {
     if (deckid?.includes(':')) {
       setSource(`${target}-precons`);
-    } else if (decks && decks[deckid]) {
+    } else if (decks?.[deckid]) {
       setSource(`${target}-my`);
     } else {
       setSource(`${target}-recent`);

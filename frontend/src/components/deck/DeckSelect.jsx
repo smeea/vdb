@@ -47,7 +47,7 @@ const DeckSelect = ({
   useEffect(() => {
     if (deckid?.includes(':')) {
       setSelectFrom('precons');
-    } else if (decks && decks[deckid]) {
+    } else if (decks?.[deckid]) {
       setSelectFrom('my');
     } else {
       setSelectFrom('precons');

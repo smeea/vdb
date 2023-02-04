@@ -41,9 +41,10 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                   placement="left"
                   overlay={<CardPopover card={cryptCardBase[id]} />}
                   disabled={isMobile}
+                  noPadding
                 >
                   <div
-                    className="name"
+                    className="flex"
                     onClick={() => setModalCard(cryptCardBase[id])}
                   >
                     <ResultCryptName card={cryptCardBase[id]} />

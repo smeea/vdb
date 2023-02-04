@@ -11,7 +11,7 @@ const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
   };
 
   let title = 'Add to Deck';
-  if (inQuick && decks && decks[deckid]) {
+  if (inQuick && decks?.[deckid]) {
     title = inDeck
       ? `In deck "${decks[deckid].name}"`
       : `Add to Deck "${decks[deckid].name}"`;

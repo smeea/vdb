@@ -41,9 +41,10 @@ const TwdSearchFormLibrary = ({ value, form }) => {
                   placement="left"
                   overlay={<CardPopover card={libraryCardBase[id]} />}
                   disabled={isMobile}
+                  noPadding
                 >
                   <div
-                    className="name"
+                    className="flex"
                     onClick={() => setModalCard(libraryCardBase[id])}
                   >
                     <ResultLibraryName card={libraryCardBase[id]} />

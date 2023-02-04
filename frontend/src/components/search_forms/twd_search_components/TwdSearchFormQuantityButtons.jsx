@@ -43,7 +43,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
   return (
     <div className="flex items-center justify-between space-x-1">
       <Button
-        className="quantity min-w-[40px]"
+        className="h-[27px] w-[35px] px-0 py-0 text-sm"
         variant="primary"
         onClick={handleToggleMoreLess}
         title={getIconAndText(value[id].m)[1]}
@@ -51,7 +51,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
         {getIconAndText(value[id].m)[0]}
       </Button>
       <Button
-        className="quantity"
+        className="h-[27px] w-[18px] px-0 py-0 text-sm"
         variant="primary"
         onClick={() => handleChangeQ(value[id].q - 1)}
       >
@@ -59,7 +59,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
       </Button>
       <div>{value[id].q}</div>
       <Button
-        className="quantity"
+        className="h-[27px] w-[18px] px-0 py-0 text-sm"
         variant="primary"
         onClick={() => handleChangeQ(value[id].q + 1)}
       >

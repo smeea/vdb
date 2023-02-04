@@ -7,7 +7,7 @@ const Changelog = () => {
 
   return (
     <div className="about-container mx-auto">
-      <div className="sm:pb-6">
+      <div className="sm:mb-6">
         <Banner />
       </div>
       <div className="space-y-4 p-3 sm:p-0">

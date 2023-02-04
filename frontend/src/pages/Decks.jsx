@@ -178,7 +178,7 @@ const Decks = () => {
             setDeck(decks[deckid]);
           } else if (deckid.includes(':')) {
             const deckidFixed = deckid.replace('_', ' ');
-            if (preconDecks && preconDecks[deckidFixed]) {
+            if (preconDecks?.[deckidFixed]) {
               setDeck(preconDecks[deckidFixed]);
             } else {
               setDeck(undefined);

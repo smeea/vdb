@@ -33,7 +33,6 @@ const DeckLibraryTableRow = ({
   inMissing,
 }) => {
   const { inventoryMode, isMobile } = useApp();
-
   const decks = useSnapshot(deckStore).decks;
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
@@ -129,7 +128,7 @@ const DeckLibraryTableRow = ({
             inInventory={inInventory}
             softUsedMax={softUsedMax}
             hardUsedTotal={hardUsedTotal}
-            inventoryType={decks[deckid]?.inventoryType}
+            inventoryType={decks?.[deckid]?.inventoryType}
             isEditable={isEditable}
             inMissing={inMissing}
           />

@@ -18,32 +18,34 @@ const Account = () => {
   return (
     <div className="account-container mx-auto grid place-items-center sm:h-[90vh]">
       {username ? (
-        <div className="w-full space-y-6 sm:space-y-10">
-          <div className="flex w-full items-center border border-borderSecondary bg-bgSecondary px-2 py-1 font-bold text-fgSecondary dark:border-borderSecondaryDark dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
-            <div className="pr-2">
-              <PersonFill />
+        <>
+          <div className="flex w-full items-center border border-borderSecondary bg-bgSecondary p-2 font-bold text-fgSecondary dark:border-borderSecondaryDark dark:bg-bgSecondaryDark dark:text-fgSecondaryDark space-x-2 mb-3 sm:mb-0">
+            <div className="flex min-w-[20px] justify-center">
+              <PersonFill width="20" height="20" viewBox="0 0 16 16" />
             </div>
-            Logged as: &lt;{username}&gt;
+            <div className="text-xl">Logged as: &lt;{username}&gt;</div>
           </div>
-          <div>
-            <AccountChangeName />
-          </div>
-          <div>
-            <AccountChangePassword />
-          </div>
-          <div>
-            <AccountChangeEmail />
-          </div>
-          {(isPlaytester || isPlaytestAdmin) && <AccountPlaytestButtons />}
-          <div className="flex space-x-6">
-            <div className="w-full">
-              <AccountDeleteButton />
+          <div className="w-full space-y-6 p-2 sm:p-0">
+            <div>
+              <AccountChangeName />
             </div>
-            <div className="w-full">
-              <AccountLogoutButton />
+            <div>
+              <AccountChangePassword />
+            </div>
+            <div>
+              <AccountChangeEmail />
+            </div>
+            {(isPlaytester || isPlaytestAdmin) && <AccountPlaytestButtons />}
+            <div className="flex space-x-6">
+              <div className="w-full">
+                <AccountDeleteButton />
+              </div>
+              <div className="w-full">
+                <AccountLogoutButton />
+              </div>
             </div>
           </div>
-        </div>
+        </>
       ) : (
         <div className="w-full space-y-16">
           <AccountLogin />

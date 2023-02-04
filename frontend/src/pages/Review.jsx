@@ -199,7 +199,7 @@ const Review = () => {
       if (decks[deckid]) {
         setDeckFrom(decks[deckid]);
       } else if (deckid.includes(':')) {
-        if (preconDecks && preconDecks[deckid]) {
+        if (preconDecks?.[deckid]) {
           setDeckFrom(preconDecks[deckid]);
         } else {
           setError('NO DECK WITH THIS ID');
