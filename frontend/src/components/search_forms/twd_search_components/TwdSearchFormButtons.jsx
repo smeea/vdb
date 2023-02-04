@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApp } from '@/context';
 import {
-  TwdClearButton,
+  ButtonClose,
   TwdMoreButton,
   TwdNewDecksButton,
   TwdRandomButton,
@@ -18,7 +18,12 @@ const TwdSearchFormButtons = ({ getRandom, getNew, handleClear, inPda }) => {
       </div>
       <div className="flex space-x-1">
         {!inPda && <TwdMoreButton noText={!isWide} />}
-        {!isMobile && <TwdClearButton handleClick={handleClear} />}
+        {!isMobile && (
+          <ButtonClose
+            title="Clear Forms & Results"
+            handleClick={handleClear}
+          />
+        )}
       </div>
     </div>
   );

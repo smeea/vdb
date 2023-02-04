@@ -27,4 +27,4 @@
 - Test if disableOverlay is required (possible to change?)
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Library sticky hide above header
-- Remove useless placement props
+- Remove useless placement props from tooltips

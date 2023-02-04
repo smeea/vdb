@@ -5,14 +5,13 @@ import {
   ResultModal,
   DeckDrawProbability,
   DeckLibraryHeader,
-  ButtonFloat,
 } from '@/components';
 import { MASTER } from '@/utils/constants';
 import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
-  const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
+  const { isMobile } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const {
@@ -30,7 +29,6 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
     libraryByDisciplinesTotal,
   } = useDeckLibrary(cardsFrom, cardsTo);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -116,18 +114,6 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
           <b>Side Library</b>
           {LibrarySideDeck}
         </div>
-      )}
-      {isMobile && showFloatingButtons && (
-        <ButtonFloat
-          onClick={() => setShowAdd(true)}
-          position="middle"
-          variant="primary"
-        >
-          <div className="flex items-center">
-            <div className="text-[24px]">+</div>
-            <div className="text-[28px]">L</div>
-          </div>
-        </ButtonFloat>
       )}
       {shouldShowModal && (
         <ResultModal

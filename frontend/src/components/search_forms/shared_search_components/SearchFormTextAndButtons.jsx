@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import X from '@/assets/images/icons/x.svg';
 import Check2 from '@/assets/images/icons/check2.svg';
 import {
   SearchAdditionalFormsText,
@@ -8,7 +7,7 @@ import {
   SearchFormButtonDel,
   Input,
   Checkbox,
-  Button,
+  ButtonClose,
   ButtonIconed,
 } from '@/components';
 import { useApp } from '@/context';
@@ -78,16 +77,11 @@ const SearchFormTextAndButtons = ({
                   icon={<Check2 />}
                 />
               )}
-              <Button
+              <ButtonClose
                 title="Clear Forms & Results"
-                variant="primary"
-                onClick={handleClear}
                 className="rounded-l-none"
-              >
-                <div className="flex items-center">
-                  <X width="20" height="20" viewBox="0 0 16 16" />
-                </div>
-              </Button>
+                handleClick={handleClear}
+              />
             </>
           )}
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
-import { ButtonClose, ButtonFloatClose } from '@/components';
+import { ButtonCloseModal, ButtonFloatClose } from '@/components';
 import { useApp } from '@/context';
 
 const Modal = ({
@@ -63,7 +63,7 @@ const Modal = ({
             <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
               {title}
             </div>
-            {!isNarrow && <ButtonClose handleClose={handleClose} />}
+            {!isNarrow && <ButtonCloseModal handleClose={handleClose} />}
           </Dialog.Title>
           {children}
         </Dialog.Panel>

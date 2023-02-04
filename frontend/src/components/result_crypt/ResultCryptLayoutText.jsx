@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApp } from '@/context';
 import {
-  ButtonClose,
+  ButtonCloseModal,
   CardPopover,
   ConditionalTooltip,
   Hr,
@@ -47,7 +47,9 @@ const ResultCryptLayoutText = ({
         </div>
         <div className="flex items-center space-x-3">
           <ResultCryptGroup value={card.Group} />
-          {!noClose && !isMobile && <ButtonClose handleClose={handleClose} />}
+          {!noClose && !isMobile && (
+            <ButtonCloseModal handleClose={handleClose} />
+          )}
         </div>
       </div>
       <Hr />

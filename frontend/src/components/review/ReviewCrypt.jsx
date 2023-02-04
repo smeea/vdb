@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import {
-  DiffCryptTable,
-  ResultModal,
-  DeckCryptHeader,
-  ButtonFloat,
-} from '@/components';
+import { DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { deckStore, useApp } from '@/context';
 import {
   useModalCardController,
@@ -14,13 +9,7 @@ import {
 } from '@/hooks';
 
 const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
-  const {
-    cryptDeckSort,
-    changeCryptDeckSort,
-    isMobile,
-    showFloatingButtons,
-    setShowFloatingButtons,
-  } = useApp();
+  const { cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
   const [showInfo, setShowInfo] = useState(false);
 
@@ -93,18 +82,6 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
             nonKeyDisciplines={nonKeyDisciplines}
           />
         </div>
-      )}
-      {isMobile && showFloatingButtons && (
-        <ButtonFloat
-          onClick={() => setShowAdd(true)}
-          position="top"
-          variant="primary"
-        >
-          <div className="flex items-center">
-            <div className="text-[24px]">+</div>
-            <div className="text-[28px]">C</div>
-          </div>
-        </ButtonFloat>
       )}
       {shouldShowModal && (
         <ResultModal

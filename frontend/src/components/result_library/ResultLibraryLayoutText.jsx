@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ButtonClose,
+  ButtonCloseModal,
   Hr,
   ResultLayoutTextText,
   ResultLibraryBurn,
@@ -42,7 +42,9 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
               <ResultLibraryTrifle />
             </div>
           )}
-          {!noClose && !isMobile && <ButtonClose handleClose={handleClose} />}
+          {!noClose && !isMobile && (
+            <ButtonCloseModal handleClose={handleClose} />
+          )}
         </div>
       </div>
       <Hr />

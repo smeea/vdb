@@ -1,13 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import Plus from '@/assets/images/icons/plus.svg';
 import {
   ResultCryptTable,
   ResultCryptTotal,
   ResultCryptTotalInfo,
-  ButtonFloat,
   ButtonFloatClose,
+  ButtonFloatAdd,
   ErrorMessage,
 } from '@/components';
 import { cryptSort } from '@/utils';
@@ -17,7 +16,6 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
   const {
     setShowCryptSearch,
     addMode,
-    toggleAddMode,
     isMobile,
     isDesktop,
     cryptSearchSort,
@@ -85,15 +83,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
       {isMobile && showFloatingButtons && (
         <ButtonFloatClose handleClose={handleClear} />
       )}
-      {isMobile && showFloatingButtons && isEditable && (
-        <ButtonFloat
-          onClick={toggleAddMode}
-          position="middle"
-          variant="primary"
-        >
-          <Plus width="47" height="47" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
+      {isMobile && isEditable && <ButtonFloatAdd />}
     </>
   );
 };

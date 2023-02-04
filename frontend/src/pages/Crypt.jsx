@@ -4,7 +4,7 @@ import {
   ResultCrypt,
   CryptSearchForm,
   DeckSelectorAndDisplay,
-  ButtonFloatAddOrSearch,
+  ButtonFloatDeckOrSearch,
 } from '@/components';
 import {
   useApp,
@@ -94,7 +94,7 @@ const Crypt = () => {
         )}
       </div>
       {showToggleAddMode && (
-        <ButtonFloatAddOrSearch
+        <ButtonFloatDeckOrSearch
           addMode={addMode}
           toggleAddMode={toggleAddMode}
         />

@@ -1,9 +1,8 @@
 import React, { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import Plus from '@/assets/images/icons/plus.svg';
 import {
-  ButtonFloat,
+  ButtonFloatAdd,
   ButtonFloatClose,
   ResultLibraryTable,
   ResultLibraryTotal,
@@ -16,7 +15,6 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
   const {
     setShowLibrarySearch,
     addMode,
-    toggleAddMode,
     isMobile,
     isDesktop,
     librarySearchSort,
@@ -74,15 +72,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
       {isMobile && showFloatingButtons && (
         <ButtonFloatClose handleClose={handleClear} />
       )}
-      {isMobile && showFloatingButtons && isEditable && (
-        <ButtonFloat
-          onClick={toggleAddMode}
-          position="middle"
-          variant="primary"
-        >
-          <Plus width="47" height="47" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
+      {isMobile && isEditable && <ButtonFloatAdd />}
     </>
   );
 };

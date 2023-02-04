@@ -3,16 +3,17 @@ import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
 import {
+  ButtonFloatMenu,
+  DeckChangeAuthor,
+  DeckChangeDescription,
+  DeckChangeName,
+  DeckNewCardFloating,
   DeckTags,
+  ErrorMessage,
+  Modal,
   ReviewButtons,
   ReviewCrypt,
   ReviewLibrary,
-  DeckChangeName,
-  DeckChangeAuthor,
-  DeckChangeDescription,
-  Modal,
-  ButtonFloatMenu,
-  ErrorMessage,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { useDeck, useTags } from '@/hooks';
@@ -291,6 +292,16 @@ const Review = () => {
           </div>
         )}
       </div>
+      <DeckNewCardFloating
+        target="crypt"
+        deckid={deck.deckid}
+        cards={deck.crypt}
+      />
+      <DeckNewCardFloating
+        target="library"
+        deckid={deck.deckid}
+        cards={deck.library}
+      />
       <ButtonFloatMenu />
       {showMenuButtons && (
         <Modal

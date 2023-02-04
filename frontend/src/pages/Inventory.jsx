@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { useLocation } from 'react-router-dom';
-import List from '@/assets/images/icons/list.svg';
 import {
   LoginBlock,
   InventoryAddDeckModal,
@@ -12,7 +11,7 @@ import {
   InventoryShowSelect,
   InventoryShareModal,
   Modal,
-  ButtonFloat,
+  ButtonFloatMenu,
   ErrorMessage,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
@@ -23,7 +22,6 @@ const Inventory = () => {
     isMobile,
     showMenuButtons,
     setShowMenuButtons,
-    showFloatingButtons,
     setShowFloatingButtons,
     cryptCardBase,
     libraryCardBase,
@@ -184,18 +182,7 @@ const Inventory = () => {
           )}
         </>
       )}
-      {showFloatingButtons && (
-        <ButtonFloat
-          className="lg:hidden"
-          onClick={() => {
-            setShowMenuButtons(true);
-            setShowFloatingButtons(false);
-          }}
-          variant="primary"
-        >
-          <List width="35" height="35" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
+      <ButtonFloatMenu />
       {showMenuButtons && (
         <Modal
           handleClose={() => {
