@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import X from '@/assets/images/icons/x.svg';
 import {
   AccountPlaytestPlayer,
   AccountPlaytestAdd,
-  ButtonFloat,
   Button,
   Modal,
 } from '@/components';
 import { useApp } from '@/context';
 
 const AccountPlaytestModal = ({ setShow }) => {
-  const { isNarrow, username } = useApp();
+  const { username } = useApp();
   const [playtesters, setPlaytesters] = useState([]);
   const [newPlaytesters, setNewPlaytesters] = useState([]);
 
-  const changePlaytester = (u, isAdd) => {
+  const changePlaytester = (user, isAdd) => {
     const url = `${import.meta.env.VITE_API_URL}/playtest`;
     const options = {
       method: isAdd ? 'PUT' : 'DELETE',
@@ -23,7 +21,7 @@ const AccountPlaytestModal = ({ setShow }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username: u }),
+      body: JSON.stringify({ username: user }),
     };
 
     fetch(url, options);
@@ -79,11 +77,6 @@ const AccountPlaytestModal = ({ setShow }) => {
             Close
           </Button>
         </div>
-        {isNarrow && (
-          <ButtonFloat onClick={handleClose} variant="danger">
-            <X width="40" height="40" viewBox="0 0 16 16" />
-          </ButtonFloat>
-        )}
       </div>
     </Modal>
   );

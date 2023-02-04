@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import X from '@/assets/images/icons/x.svg';
 import Link45Deg from '@/assets/images/icons/link-45deg.svg';
 import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg';
-import { ButtonFloat, Modal, Button, ButtonIconed } from '@/components';
+import { ButtonFloatClose, Modal, Button, ButtonIconed } from '@/components';
 import { useApp } from '@/context';
 
 const InventoryShareModal = ({ setShow }) => {
@@ -102,11 +101,7 @@ const InventoryShareModal = ({ setShow }) => {
           </Button>
         </div>
       </Modal>
-      {isNarrow && (
-        <ButtonFloat onClick={handleClose} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
+      {isNarrow && <ButtonFloatClose handleClose={handleClose} />}
     </>
   );
 };

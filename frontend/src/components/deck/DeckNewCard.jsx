@@ -30,13 +30,13 @@ const DeckNewCard = ({ target, cards, deckid, setShowAdd, cardChange }) => {
         <NewCryptCard
           selectedValue={selectedValue}
           onChange={(value) => setSelectedValue(value.value)}
-          autoFocus={true}
+          autoFocus
         />
       ) : (
         <NewLibraryCard
           selectedValue={selectedValue}
           onChange={(value) => setSelectedValue(value.value)}
-          autoFocus={true}
+          autoFocus
         />
       )}
     </>

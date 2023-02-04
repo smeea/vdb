@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import Spinner from '@/assets/images/icons/three-dots.svg';
-import Check2 from '@/assets/images/icons/check2.svg';
-import X from '@/assets/images/icons/x.svg';
 import {
+  ButtonFloatSearch,
+  ButtonFloatClose,
+  Checkbox,
   PdaSearchFormSrcSelector,
   TwdSearchFormButtons,
   TwdSearchFormCapacity,
   TwdSearchFormCardtypes,
   TwdSearchFormClan,
-  TwdSearchFormSect,
   TwdSearchFormCrypt,
   TwdSearchFormDate,
   TwdSearchFormDisciplines,
@@ -18,9 +17,7 @@ import {
   TwdSearchFormLibraryTotal,
   TwdSearchFormMatchInventory,
   TwdSearchFormPlayer,
-  Checkbox,
-  ButtonFloat,
-  ErrorOverlay,
+  TwdSearchFormSect,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
 import {
@@ -311,17 +308,12 @@ const PdaSearchForm = ({ error, setError }) => {
       />
       {isMobile && (
         <>
-          <ButtonFloat onClick={handleClear} variant="danger" position="middle">
-            <X width="40" height="40" viewBox="0 0 16 16" />
-          </ButtonFloat>
-          <ButtonFloat onClick={processSearch} variant="success">
-            {!isLoading ? (
-              <Check2 width="35" height="35" viewBox="0 0 16 16" />
-            ) : (
-              <Spinner width="35" height="35" viewBox="0 0 16 16" />
-            )}
-            {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
-          </ButtonFloat>
+          <ButtonFloatClose handleClose={handleClear} position="middle" />
+          <ButtonFloatSearch
+            handleSearch={processSearch}
+            error={error}
+            isLoading={isLoading}
+          />
         </>
       )}
     </div>

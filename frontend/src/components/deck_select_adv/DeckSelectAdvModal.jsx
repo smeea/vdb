@@ -23,10 +23,9 @@ import { getClan, decksSort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
 
-const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
+const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
   const { cryptCardBase, inventoryMode, isMobile, isDesktop } = useApp();
   const decks = useSnapshot(deckStore).decks;
-
   const [sortMethod, setSortMethod] = useState('byName');
   const [sortedDecks, setSortedDecks] = useState([]);
   const [isSelectedAll, setIsSelectedAll] = useState(false);
@@ -36,6 +35,11 @@ const DeckSelectAdvModal = ({ allTagsOptions, handleClose }) => {
   const [nameFilter, setNameFilter] = useState('');
   const [tagsFilter, setTagsFilter] = useState([]);
   const [clanFilter, setClanFilter] = useState('any');
+
+  const handleClose = () => {
+    setShow(false);
+    setShowFloatingButtons(true);
+  };
 
   const handleChangeNameFilter = (event) => {
     setNameFilter(event.target.value);

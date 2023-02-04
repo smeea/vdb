@@ -5,7 +5,6 @@ import { useApp } from '@/context';
 const DeckLibraryTable = ({
   deck,
   cards,
-  placement,
   showInfo,
   libraryTotal,
   handleModalCardOpen,
@@ -38,7 +37,6 @@ const DeckLibraryTable = ({
               key={card.c.Id}
               idx={idx}
               disableOverlay={disableOverlay}
-              placement={placement}
               handleClick={handleModalCardOpen}
               card={card}
               deck={deck}

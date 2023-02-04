@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import Check2 from '@/assets/images/icons/check2.svg';
-import X from '@/assets/images/icons/x.svg';
-import { ButtonFloat, ErrorOverlay } from '@/components';
 import {
+  ButtonFloatSearch,
+  ButtonFloatClose,
   SearchFormTextAndButtons,
   SearchFormSet,
   SearchFormPrecon,
   SearchFormArtist,
-} from './shared_search_components';
-import {
   CryptSearchFormDisciplines,
   CryptSearchFormVirtues,
   CryptSearchFormCapacity,
@@ -20,7 +17,7 @@ import {
   CryptSearchFormTitles,
   CryptSearchFormGroup,
   CryptSearchFormTraits,
-} from './crypt_search_components';
+} from '@/components';
 import { sanitizeFormState } from '@/utils';
 import { useFilters } from '@/hooks';
 import {
@@ -285,13 +282,8 @@ const CryptSearchForm = () => {
       />
       {isMobile && (
         <>
-          <ButtonFloat onClick={handleClear} variant="danger" position="middle">
-            <X width="40" height="40" viewBox="0 0 16 16" />
-          </ButtonFloat>
-          <ButtonFloat onClick={processSearch} variant="success">
-            <Check2 width="35" height="35" viewBox="0 0 16 16" />
-            {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
-          </ButtonFloat>
+          <ButtonFloatClose handleClose={handleClear} position="middle" />
+          <ButtonFloatSearch handleSearch={processSearch} error={error} />
         </>
       )}
     </div>

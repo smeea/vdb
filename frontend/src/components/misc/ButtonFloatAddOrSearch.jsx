@@ -3,7 +3,7 @@ import BinocularsFill from '@/assets/images/icons/binoculars-fill.svg';
 import Plus from '@/assets/images/icons/plus.svg';
 import { ButtonFloat } from '@/components';
 
-const ToggleSearchAddButton = ({ addMode, toggleAddMode }) => {
+const ButtonFloatAddOrSearch = ({ addMode, toggleAddMode }) => {
   return (
     <ButtonFloat onClick={toggleAddMode} variant="primary">
       {addMode ? (
@@ -15,4 +15,4 @@ const ToggleSearchAddButton = ({ addMode, toggleAddMode }) => {
   );
 };
 
-export default ToggleSearchAddButton;
+export default ButtonFloatAddOrSearch;

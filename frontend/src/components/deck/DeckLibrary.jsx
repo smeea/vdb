@@ -65,7 +65,6 @@ const DeckLibrary = ({ deck, inMissing }) => {
         cards={libraryByType[cardtype]}
         inMissing={inMissing}
         isModalOpen={shouldShowModal}
-        placement={isNarrow ? 'bottom' : 'right'}
       />
     </div>
   ));

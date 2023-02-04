@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
-import List from '@/assets/images/icons/list.svg';
 import {
   DeckTags,
   ReviewButtons,
@@ -12,7 +11,7 @@ import {
   DeckChangeAuthor,
   DeckChangeDescription,
   Modal,
-  ButtonFloat,
+  ButtonFloatMenu,
   ErrorMessage,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
@@ -26,7 +25,6 @@ const Review = () => {
     preconDecks,
     setShowFloatingButtons,
     setShowMenuButtons,
-    showFloatingButtons,
     showMenuButtons,
   } = useApp();
   const deck = useSnapshot(deckStore).deck;
@@ -293,17 +291,7 @@ const Review = () => {
           </div>
         )}
       </div>
-      {showFloatingButtons && (
-        <ButtonFloat
-          onClick={() => {
-            setShowMenuButtons(true);
-            setShowFloatingButtons(false);
-          }}
-          variant="primary"
-        >
-          <List width="35" height="35" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
+      <ButtonFloatMenu />
       {showMenuButtons && (
         <Modal
           handleClose={() => {

@@ -1,19 +1,22 @@
 import React from 'react';
-import X from '@/assets/images/icons/x.svg';
 import {
-  ResultLibraryName,
-  ResultLibraryTypeImage,
-  ResultLibraryCost,
+  ButtonClose,
+  Hr,
+  ResultLayoutTextText,
   ResultLibraryBurn,
   ResultLibraryClan,
-  ResultLibraryTrifle,
+  ResultLibraryCost,
   ResultLibraryDisciplines,
-  ResultLayoutTextText,
-  Hr,
+  ResultLibraryName,
+  ResultLibraryTrifle,
+  ResultLibraryTypeImage,
 } from '@/components';
 import { isTrifle } from '@/utils';
+import { useApp } from '@/context';
 
 const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
+  const { isMobile } = useApp();
+
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between whitespace-nowrap">
@@ -39,14 +42,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
               <ResultLibraryTrifle />
             </div>
           )}
-          {!noClose && (
-            <button
-              onClick={handleClose}
-              className="relative before:absolute before:inset-[-6px] before:content-['']"
-            >
-              <X width="32" height="32" viewBox="0 0 16 16" />
-            </button>
-          )}
+          {!noClose && !isMobile && <ButtonClose handleClose={handleClose} />}
         </div>
       </div>
       <Hr />

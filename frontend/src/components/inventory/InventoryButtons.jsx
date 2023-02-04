@@ -2,7 +2,6 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import Folder2Open from '@/assets/images/icons/folder2-open.svg';
-import X from '@/assets/images/icons/x.svg';
 import {
   InventoryImport,
   DeckExportButton,
@@ -10,7 +9,7 @@ import {
   InventoryMissingButton,
   InventoryShareButton,
   ButtonIconed,
-  ButtonFloat,
+  ButtonFloatClose,
 } from '@/components';
 import FolderPlus from '@/assets/images/icons/folder-plus.svg';
 import { useApp, deckStore } from '@/context';
@@ -113,11 +112,7 @@ const InventoryButtons = ({
           </>
         )}
       </div>
-      {isNarrow && (
-        <ButtonFloat onClick={handleClose} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
+      {isNarrow && <ButtonFloatClose handleClose={handleClose} />}
     </>
   );
 };

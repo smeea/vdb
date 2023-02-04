@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import X from '@/assets/images/icons/x.svg';
 import Plus from '@/assets/images/icons/plus.svg';
 import {
   ButtonFloat,
+  ButtonFloatClose,
   ResultLibraryTable,
   ResultLibraryTotal,
   ErrorMessage,
@@ -72,9 +72,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
         </>
       )}
       {isMobile && showFloatingButtons && (
-        <ButtonFloat onClick={handleClear} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
+        <ButtonFloatClose handleClose={handleClear} />
       )}
       {isMobile && showFloatingButtons && isEditable && (
         <ButtonFloat

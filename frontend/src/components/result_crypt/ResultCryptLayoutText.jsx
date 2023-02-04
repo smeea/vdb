@@ -1,16 +1,16 @@
 import React from 'react';
 import { useApp } from '@/context';
-import X from '@/assets/images/icons/x.svg';
 import {
+  ButtonClose,
   CardPopover,
-  ResultCryptName,
-  ResultClanImage,
-  ResultCryptCapacity,
-  ResultCryptGroup,
-  ResultCryptDisciplines,
-  ResultLayoutTextText,
   ConditionalTooltip,
   Hr,
+  ResultClanImage,
+  ResultCryptCapacity,
+  ResultCryptDisciplines,
+  ResultCryptGroup,
+  ResultCryptName,
+  ResultLayoutTextText,
 } from '@/components';
 
 const ResultCryptLayoutText = ({
@@ -47,14 +47,7 @@ const ResultCryptLayoutText = ({
         </div>
         <div className="flex items-center space-x-3">
           <ResultCryptGroup value={card.Group} />
-          {!noClose && (
-            <button
-              onClick={handleClose}
-              className="relative before:absolute before:inset-[-6px] before:content-['']"
-            >
-              <X width="32" height="32" viewBox="0 0 16 16" />
-            </button>
-          )}
+          {!noClose && !isMobile && <ButtonClose handleClose={handleClose} />}
         </div>
       </div>
       <Hr />

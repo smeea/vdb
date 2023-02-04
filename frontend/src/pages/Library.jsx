@@ -4,7 +4,7 @@ import {
   ResultLibrary,
   LibrarySearchForm,
   DeckSelectorAndDisplay,
-  ToggleSearchAddButton,
+  ButtonFloatAddOrSearch,
 } from '@/components';
 import {
   useApp,
@@ -97,7 +97,7 @@ const Library = () => {
         )}
       </div>
       {showToggleAddMode && (
-        <ToggleSearchAddButton
+        <ButtonFloatAddOrSearch
           addMode={addMode}
           toggleAddMode={toggleAddMode}
         />

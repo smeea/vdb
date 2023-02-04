@@ -8,13 +8,13 @@ const DiffQuantityDiff = ({ qFrom, qTo }) => {
     return '';
   } else if (qFrom == 0) {
     return (
-      <div className="red">
+      <div className="text-fgRed dark:text-fgRedDark">
         <XLg className="inline" viewBox="-3 0 17 17" />
       </div>
     );
   } else if (qFrom < qTo) {
     return (
-      <div className="red">
+      <div className="text-fgRed dark:text-fgRedDark">
         <ArrowDown className="inline" viewBox="0 2 16 16" />
         {qTo - qFrom}
       </div>

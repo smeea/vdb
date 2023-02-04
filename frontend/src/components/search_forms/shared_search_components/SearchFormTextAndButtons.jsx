@@ -61,7 +61,6 @@ const SearchFormTextAndButtons = ({
       <div className="space-y-1">
         <div className="flex">
           <Input
-            /* TODO ignore enter */
             placeholder="Card Name / Text / RegEx"
             name={0}
             value={text}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
-import X from '@/assets/images/icons/x.svg';
-import { ButtonFloat } from '@/components';
+import { ButtonClose, ButtonFloatClose } from '@/components';
 import { useApp } from '@/context';
 
 const Modal = ({
@@ -64,20 +63,12 @@ const Modal = ({
             <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
               {title}
             </div>
-            {!isNarrow && (
-              <button onClick={handleClose}>
-                <X width="32" height="32" viewBox="0 0 16 16" />
-              </button>
-            )}
+            {!isNarrow && <ButtonClose handleClose={handleClose} />}
           </Dialog.Title>
           {children}
         </Dialog.Panel>
       </div>
-      {isNarrow && (
-        <ButtonFloat onClick={handleClose} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
+      {isNarrow && <ButtonFloatClose handleClose={handleClose} />}
     </Dialog>
   );
 };

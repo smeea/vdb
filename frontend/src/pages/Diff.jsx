@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useParams } from 'react-router-dom';
-import List from '@/assets/images/icons/list.svg';
 import {
   DiffButtons,
   DiffCrypt,
   DiffLibrary,
   DiffSelect,
-  ButtonFloat,
+  ButtonFloatMenu,
   Modal,
   ErrorMessage,
 } from '@/components';
@@ -21,7 +20,6 @@ const Diff = () => {
     cryptCardBase,
     libraryCardBase,
     isMobile,
-    showFloatingButtons,
     setShowFloatingButtons,
     showMenuButtons,
     setShowMenuButtons,
@@ -230,18 +228,7 @@ const Diff = () => {
         )}
       </div>
 
-      {showFloatingButtons && (
-        <ButtonFloat
-          onClick={() => {
-            setShowMenuButtons(true);
-            setShowFloatingButtons(false);
-          }}
-          variant="primary"
-        >
-          <List width="35" height="35" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
-
+      <ButtonFloatMenu />
       {showMenuButtons && (
         <Modal
           show={showMenuButtons}

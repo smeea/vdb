@@ -137,7 +137,6 @@ const DeckLibraryTableRow = ({
       <ResultLibraryTableRowCommon
         card={card.c}
         handleClick={handleClick}
-        placement={placement}
         inSearch={inSearch}
         inDeck
       />

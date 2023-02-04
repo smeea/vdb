@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
 import {
-  Modal,
   Button,
-  ButtonFloat,
   DeckNewCard,
   DeckLibraryTotalInfo,
   ResultLibraryCost,
@@ -27,18 +25,8 @@ const DeckLibraryHeader = ({
   byTypes,
   byDisciplines,
 }) => {
-  const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
+  const { isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
-
-  const handleClick = () => {
-    isMobile && setShowFloatingButtons(false);
-    setShowAdd(true);
-  };
-
-  const handleClose = () => {
-    isMobile && setShowFloatingButtons(true);
-    setShowAdd(false);
-  };
 
   return (
     <>
@@ -109,35 +97,14 @@ const DeckLibraryHeader = ({
           />
         </div>
       )}
-      {showAdd &&
-        (!isMobile ? (
-          <DeckNewCard
-            setShowAdd={setShowAdd}
-            cards={cards}
-            deckid={deckid}
-            target="library"
-            cardChange={cardChange}
-          />
-        ) : (
-          <Modal handleClose={handleClose} title="Add Library Card">
-            <div>
-              <DeckNewCard
-                setShowAdd={setShowAdd}
-                cards={cards}
-                deckid={deckid}
-                target="library"
-                cardChange={cardChange}
-              />
-            </div>
-          </Modal>
-        ))}
-      {isMobile && isEditable && showFloatingButtons && (
-        <ButtonFloat onClick={handleClick} position="middle" variant="primary">
-          <div className="flex items-center">
-            <div className="text-[24px]">+</div>
-            <div className="text-[28px]">L</div>
-          </div>
-        </ButtonFloat>
+      {showAdd && (
+        <DeckNewCard
+          setShowAdd={setShowAdd}
+          cards={cards}
+          deckid={deckid}
+          target="library"
+          cardChange={cardChange}
+        />
       )}
     </>
   );

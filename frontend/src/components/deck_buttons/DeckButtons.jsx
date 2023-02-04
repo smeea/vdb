@@ -1,5 +1,4 @@
 import React from 'react';
-import X from '@/assets/images/icons/x.svg';
 import {
   DeckSearchSimilarButton,
   DeckCloneButton,
@@ -19,7 +18,7 @@ import {
   DeckPublicSyncButton,
   DeckPublicToggleButton,
   SeatingButton,
-  ButtonFloat,
+  ButtonFloatClose,
 } from '@/components';
 import { useApp } from '@/context';
 
@@ -32,10 +31,21 @@ const DeckButtons = ({
   setShowSeating,
   setQrUrl,
   setShowRecommendation,
-  handleClose,
 }) => {
-  const { playtest, inventoryMode, username, isNarrow } = useApp();
+  const {
+    setShowMenuButtons,
+    setShowFloatingButtons,
+    playtest,
+    inventoryMode,
+    username,
+    isNarrow,
+  } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = { ...deck };
+
+  const handleClose = () => {
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
 
   return (
     <>
@@ -86,11 +96,6 @@ const DeckButtons = ({
           )}
         <SeatingButton setShow={setShowSeating} />
       </div>
-      {isNarrow && (
-        <ButtonFloat onClick={handleClose} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
-      )}
     </>
   );
 };

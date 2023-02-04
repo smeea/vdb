@@ -21,6 +21,7 @@ export { default as DeckLibraryTotalInfo } from './DeckLibraryTotalInfo.jsx';
 export { default as DeckLibraryTypeDrawInfo } from './DeckLibraryTypeDrawInfo.jsx';
 export { default as DeckMissingModal } from './DeckMissingModal.jsx';
 export { default as DeckNewCard } from './DeckNewCard.jsx';
+export { default as DeckNewCardFloating } from './DeckNewCardFloating.jsx';
 export { default as DeckQrModal } from './DeckQrModal.jsx';
 export { default as DeckSelect } from './DeckSelect.jsx';
 export { default as DeckSelectMy } from './DeckSelectMy.jsx';

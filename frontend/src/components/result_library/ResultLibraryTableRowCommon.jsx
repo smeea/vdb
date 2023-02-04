@@ -37,13 +37,12 @@ const Cost = ({ card, handleClick }) => {
   );
 };
 
-const Name = ({ card, handleClick, placement }) => {
+const Name = ({ card, handleClick }) => {
   const { isMobile } = useApp();
 
   return (
     <td className="w-full" onClick={() => handleClick(card)}>
       <ConditionalTooltip
-        placement={placement}
         overlay={<CardPopover card={card} />}
         disabled={isMobile}
         noPadding
@@ -82,7 +81,6 @@ const Burn = ({ card, handleClick }) => {
 const ResultLibraryTableRowCommon = ({
   card,
   handleClick,
-  placement,
   inSearch,
   inDeck,
 }) => {
@@ -92,7 +90,7 @@ const ResultLibraryTableRowCommon = ({
     <>
       {inDeck ? (
         <>
-          <Name card={card} handleClick={handleClick} placement={placement} />
+          <Name card={card} handleClick={handleClick} />
           {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <Cost card={card} handleClick={handleClick} />
           )}
@@ -106,7 +104,7 @@ const ResultLibraryTableRowCommon = ({
           <Cost card={card} handleClick={handleClick} />
           <Type card={card} handleClick={handleClick} />
           <Disciplines card={card} handleClick={handleClick} />
-          <Name card={card} handleClick={handleClick} placement={placement} />
+          <Name card={card} handleClick={handleClick} />
           <Burn card={card} handleClick={handleClick} />
         </>
       )}

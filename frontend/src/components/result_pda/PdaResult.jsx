@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import X from '@/assets/images/icons/x.svg';
 import {
   PdaResultDescription,
   TwdResultTotal,
@@ -8,7 +7,7 @@ import {
   TwdResultLibraryByTypeTable,
   TwdResultLibraryKeyCardsTable,
   Button,
-  ButtonFloat,
+  ButtonFloatClose,
   Hr,
 } from '@/components';
 import { decksSort } from '@/utils';
@@ -116,9 +115,7 @@ const PdaResult = ({ results, setResults }) => {
         )}
       </div>
       {isMobile && showFloatingButtons && (
-        <ButtonFloat onClick={handleClear} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
+        <ButtonFloatClose handleClose={handleClear} />
       )}
     </>
   );

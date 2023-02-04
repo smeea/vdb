@@ -7,23 +7,23 @@ import {
   useLoaderData,
   defer,
 } from 'react-router-dom';
-import List from '@/assets/images/icons/list.svg';
 import {
-  LoginBlock,
+  ButtonFloatMenu,
   DeckButtons,
   DeckCrypt,
   DeckDetails,
   DeckDraw,
   DeckImport,
   DeckLibrary,
+  DeckNewCardFloating,
   DeckQrModal,
   DeckRecommendation,
   DeckSelect,
   DeckSelectAdvModal,
+  ErrorMessage,
+  LoginBlock,
   Modal,
   Seating,
-  ButtonFloat,
-  ErrorMessage,
 } from '@/components';
 import { deckStore, useApp, setDeck } from '@/context';
 import { useDeck, useDeckMissing, useTags } from '@/hooks';
@@ -36,7 +36,6 @@ const Decks = () => {
     preconDecks,
     setShowFloatingButtons,
     setShowMenuButtons,
-    showFloatingButtons,
     showMenuButtons,
     username,
     lastDeckId,
@@ -67,6 +66,9 @@ const Decks = () => {
   const [showSeating, setShowSeating] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
+
+  const { isPublic, isAuthor, isFrozen } = deck || {};
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const getDeck = async () => {
     const { deckData } = await loaderData;
@@ -300,25 +302,27 @@ const Decks = () => {
           </div>
         </div>
       )}
-      {showFloatingButtons && (
-        <ButtonFloat
-          className="lg:hidden"
-          onClick={() => {
-            setShowMenuButtons(true);
-            setShowFloatingButtons(false);
-          }}
-          variant="primary"
-        >
-          <List width="35" height="35" viewBox="0 0 16 16" />
-        </ButtonFloat>
+      {isEditable && (
+        <>
+          <DeckNewCardFloating
+            target="crypt"
+            deckid={deckid}
+            cards={deck.crypt}
+          />
+          <DeckNewCardFloating
+            target="library"
+            deckid={deckid}
+            cards={deck.library}
+          />
+        </>
       )}
+      <ButtonFloatMenu />
       {showMenuButtons && (
         <Modal
           handleClose={() => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          noCloseButton
         >
           <DeckButtons
             deck={deck}
@@ -329,20 +333,12 @@ const Decks = () => {
             setQrUrl={setQrUrl}
             missingCrypt={missingCrypt}
             missingLibrary={missingLibrary}
-            handleClose={() => {
-              setShowMenuButtons(false);
-              setShowFloatingButtons(true);
-            }}
           />
         </Modal>
       )}
       {showDeckSelectAdv && (
         <DeckSelectAdvModal
-          handleClose={() => {
-            setShowDeckSelectAdv(false);
-            setShowFloatingButtons(true);
-          }}
-          show={showDeckSelectAdv}
+          setShow={setShowDeckSelectAdv}
           allTagsOptions={allTagsOptions}
         />
       )}

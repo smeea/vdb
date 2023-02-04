@@ -1,13 +1,13 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import X from '@/assets/images/icons/x.svg';
 import Plus from '@/assets/images/icons/plus.svg';
 import {
   ResultCryptTable,
   ResultCryptTotal,
   ResultCryptTotalInfo,
   ButtonFloat,
+  ButtonFloatClose,
   ErrorMessage,
 } from '@/components';
 import { cryptSort } from '@/utils';
@@ -83,9 +83,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
         </>
       )}
       {isMobile && showFloatingButtons && (
-        <ButtonFloat onClick={handleClear} variant="danger">
-          <X width="40" height="40" viewBox="0 0 16 16" />
-        </ButtonFloat>
+        <ButtonFloatClose handleClose={handleClear} />
       )}
       {isMobile && showFloatingButtons && isEditable && (
         <ButtonFloat
