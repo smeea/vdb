@@ -21,10 +21,10 @@
 - Refactor deck buttons (split in button ui and function)
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
-- Resize clan/types/misc images
 
 # TAILWIND MIGRATION
 - Refactor or restore setShowFloatingButtons functionality
 - Test if disableOverlay is required (possible to change?)
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Library sticky hide above header
+- Add FloatingCardAdd component (see DeckCrypt) to Library and other

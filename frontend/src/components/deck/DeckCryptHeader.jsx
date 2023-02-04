@@ -3,7 +3,6 @@ import InfoCircle from '@/assets/images/icons/info-circle.svg';
 import {
   DeckCryptTotalInfo,
   DeckNewCard,
-  Modal,
   Banned,
   Button,
   SortButton,
@@ -79,28 +78,15 @@ const DeckCryptHeader = ({
           />
         </div>
       )}
-      {showAdd &&
-        (!isMobile ? (
-          <DeckNewCard
-            setShowAdd={setShowAdd}
-            cards={cards}
-            deckid={deckid}
-            target="crypt"
-            cardChange={cardChange}
-          />
-        ) : (
-          <Modal handleClose={() => setShowAdd(false)} title="Add Crypt Card">
-            <div>
-              <DeckNewCard
-                setShowAdd={setShowAdd}
-                cards={cards}
-                deckid={deckid}
-                target="crypt"
-                cardChange={cardChange}
-              />
-            </div>
-          </Modal>
-        ))}
+      {showAdd && (
+        <DeckNewCard
+          setShowAdd={setShowAdd}
+          cards={cards}
+          deckid={deckid}
+          target="crypt"
+          cardChange={cardChange}
+        />
+      )}
     </>
   );
 };

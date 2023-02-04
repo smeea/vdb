@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import {
+  Modal,
+  ButtonFloat,
   DeckCryptTable,
   DeckCryptHeader,
   ResultModal,
-  ButtonFloat,
+  DeckNewCard,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import {
@@ -15,16 +17,17 @@ import {
 
 const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
   const {
+    showFloatingButtons,
+    setShowFloatingButtons,
     cryptDeckSort,
     changeCryptDeckSort,
     isMobile,
-    showFloatingButtons,
-    setShowFloatingButtons,
   } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
   const [showInfo, setShowInfo] = useState(false);
+  const [showAdd, setShowAdd] = useState(false);
 
   const sortMethods = {
     Capacity: 'C',
@@ -40,6 +43,16 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
 
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
     useKeyDisciplines(deck.crypt);
+
+  const handleClick = () => {
+    isMobile && setShowFloatingButtons(false);
+    setShowAdd(true);
+  };
+
+  const handleClose = () => {
+    isMobile && setShowFloatingButtons(true);
+    setShowAdd(false);
+  };
 
   const {
     currentModalCard,
@@ -107,24 +120,33 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
           />
         </div>
       )}
-      {isMobile && isEditable && showFloatingButtons && (
-        <ButtonFloat
-          onClick={() => setShowAdd(true)}
-          position="top"
-          variant="primary"
-        >
-          <div className="flex items-center">
-            <div className="text-[24px]">+</div>
-            <div className="text-[28px]">C</div>
-          </div>
-        </ButtonFloat>
-      )}
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleModalCardClose}
         />
+      )}
+      {showAdd && (
+        <Modal handleClose={handleClose} title="Add Crypt Card">
+          <div>
+            <DeckNewCard
+              setShowAdd={setShowAdd}
+              cards={cards}
+              deckid={deckid}
+              target="crypt"
+              cardChange={cardChange}
+            />
+          </div>
+        </Modal>
+      )}
+      {isMobile && isEditable && showFloatingButtons && (
+        <ButtonFloat onClick={handleClick} position="top" variant="primary">
+          <div className="flex items-center">
+            <div className="text-[24px]">+</div>
+            <div className="text-[28px]">C</div>
+          </div>
+        </ButtonFloat>
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
-import { Button } from '@/components';
+import { Modal, Button, ButtonFloat, DeckNewCard } from '@/components';
 import { useApp } from '@/context';
 
 const DeckLibraryHeader = ({
@@ -20,8 +20,18 @@ const DeckLibraryHeader = ({
   byTypes,
   byDisciplines,
 }) => {
-  const { isMobile } = useApp();
+  const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
   const [showAdd, setShowAdd] = useState(false);
+
+  const handleClick = () => {
+    isMobile && setShowFloatingButtons(false);
+    setShowAdd(true);
+  };
+
+  const handleClose = () => {
+    isMobile && setShowFloatingButtons(true);
+    setShowAdd(false);
+  };
 
   return (
     <>
@@ -108,7 +118,7 @@ const DeckLibraryHeader = ({
             cardChange={cardChange}
           />
         ) : (
-          <Modal handleClose={() => setShowAdd(false)} title="Add Library Card">
+          <Modal handleClose={handleClose} title="Add Library Card">
             <div>
               <DeckNewCard
                 setShowAdd={setShowAdd}
@@ -120,6 +130,14 @@ const DeckLibraryHeader = ({
             </div>
           </Modal>
         ))}
+      {isMobile && isEditable && showFloatingButtons && (
+        <ButtonFloat onClick={handleClick} position="middle" variant="primary">
+          <div className="flex items-center">
+            <div className="text-[24px]">+</div>
+            <div className="text-[28px]">L</div>
+          </div>
+        </ButtonFloat>
+      )}
     </>
   );
 };
