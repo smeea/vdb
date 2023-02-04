@@ -62,6 +62,7 @@
   "FLIGHT": "disciplines/flight",
   "1CONVICTION": "misc/con1",
   "2CONVICTION": "misc/con2",
+  "5CONVICTION": "misc/con5",
   "MERGED": "misc/merged",
   "ACTION": "types/action",
   "ACTIONMODIFIER": "types/actionmodifier",

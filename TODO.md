@@ -1,5 +1,4 @@
 # FIX
-- Fill conviction icons
 
 # FEATURES
 - Check TWD
