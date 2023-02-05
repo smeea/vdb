@@ -10,7 +10,7 @@ import { useApp } from '@/context';
 import { MASTER } from '@/utils/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
-const DeckLibrary = ({ deck, inMissing }) => {
+const DeckLibrary = ({ deck, inSearch, inMissing }) => {
   const { isMobile, isNarrow } = useApp();
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
@@ -92,7 +92,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
       <div className="space-y-2">
         <div
           className={
-            !inMissing && !isMobile
+            !inMissing && !inSearch && !isMobile
               ? 'sticky z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]'
               : ''
           }

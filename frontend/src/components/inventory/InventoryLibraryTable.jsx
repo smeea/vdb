@@ -66,8 +66,8 @@ const InventoryLibraryTable = ({
         <div
           className={
             withCompact
-              ? 'h-[calc(100vh-219px)] sm:h-[calc(100vh-286px)]'
-              : 'h-[calc(100vh-174px)] sm:h-[calc(100vh-240px)]'
+              ? 'h-[calc(100vh-251px)] sm:h-[calc(100vh-291px)] lg:h-[calc(100vh-304px)] xl:h-[calc(100vh-326px)]'
+              : 'h-[calc(100vh-206px)] sm:h-[calc(100vh-237px)] lg:h-[calc(100vh-250px)] xl:h-[calc(100vh-272px)]'
           }
         >
           <AutoSizer>

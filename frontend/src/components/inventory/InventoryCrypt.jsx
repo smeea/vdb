@@ -174,7 +174,7 @@ const InventoryCrypt = ({
     <>
       {!compact && (
         <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-          <div className="w-3/4">
+          <div className="w-3/4 p-1">
             <InventoryFilterForm
               value={clan}
               setValue={setClan}

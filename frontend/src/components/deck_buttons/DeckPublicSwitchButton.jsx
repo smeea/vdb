@@ -5,7 +5,7 @@ import { ButtonIconed } from '@/components';
 
 const DeckPublicSwitchButton = ({ deck }) => {
   const navigate = useNavigate();
-  const isChild = Boolean(deck.publicParent);
+  const isChild = !!deck.publicParent;
 
   const handleSwitch = () => {
     navigate(`/decks/${isChild ? deck.publicParent : deck.publicChild}`);

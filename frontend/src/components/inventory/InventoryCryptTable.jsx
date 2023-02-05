@@ -61,8 +61,8 @@ const InventoryCryptTable = ({
         <div
           className={
             withCompact
-              ? 'h-[calc(100vh-177px)] sm:h-[calc(100vh-241px)]'
-              : 'h-[calc(100vh-132px)] sm:h-[calc(100vh-195px)]'
+              ? 'h-[calc(100vh-209px)] sm:h-[calc(100vh-249px)] lg:h-[calc(100vh-262px)] xl:h-[calc(100vh-284px)]'
+              : 'h-[calc(100vh-164px)] sm:h-[calc(100vh-195px)] lg:h-[calc(100vh-208px)] xl:h-[calc(100vh-230px)]'
           }
         >
           <AutoSizer>

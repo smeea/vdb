@@ -10,7 +10,6 @@ export { default as InventoryCryptTableRow } from './InventoryCryptTableRow.jsx'
 export { default as InventoryDeckAddButton } from './InventoryDeckAddButton.jsx';
 export { default as InventoryDeckDeleteButton } from './InventoryDeckDeleteButton.jsx';
 export { default as InventoryDeleteButton } from './InventoryDeleteButton.jsx';
-export { default as InventoryDesktop } from './InventoryDesktop.jsx';
 export { default as InventoryFilterForm } from './InventoryFilterForm.jsx';
 export { default as InventoryImport } from './InventoryImport.jsx';
 export { default as InventoryImportBadCardsModal } from './InventoryImportBadCardsModal.jsx';
@@ -19,7 +18,6 @@ export { default as InventoryLibrary } from './InventoryLibrary.jsx';
 export { default as InventoryLibraryTable } from './InventoryLibraryTable.jsx';
 export { default as InventoryLibraryTableRow } from './InventoryLibraryTableRow.jsx';
 export { default as InventoryMissingButton } from './InventoryMissingButton.jsx';
-export { default as InventoryMobile } from './InventoryMobile.jsx';
 export { default as InventoryNewCryptCard } from './InventoryNewCryptCard.jsx';
 export { default as InventoryNewLibraryCard } from './InventoryNewLibraryCard.jsx';
 export { default as InventoryShareButton } from './InventoryShareButton.jsx';

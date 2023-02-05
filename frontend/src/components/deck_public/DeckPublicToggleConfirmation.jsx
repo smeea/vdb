@@ -7,7 +7,7 @@ const DeckPublicToggleConfirmation = ({
   handleConfirmation,
   setShow,
 }) => {
-  const isPublished = Boolean(deck.publicParent || deck.publicChild);
+  const isPublished = !!(deck.publicParent || deck.publicChild);
 
   const isWrongQtyCards =
     countCards(Object.values(deck.crypt)) > 35 ||

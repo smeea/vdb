@@ -10,7 +10,7 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const isPublished = Boolean(deck.publicParent || deck.publicChild);
+  const isPublished = !!(deck.publicParent || deck.publicChild);
   const parentId = deck.publicParent ?? deck.deckid;
 
   const handleConfirmation = () => {

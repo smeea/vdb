@@ -5,16 +5,19 @@ import {
   LoginBlock,
   InventoryAddDeckModal,
   InventoryAddPreconModal,
-  InventoryDesktop,
-  InventoryMobile,
+  InventoryNewCryptCard,
+  InventoryNewLibraryCard,
+  InventoryCrypt,
+  InventoryLibrary,
   InventoryButtons,
   InventoryShowSelect,
   InventoryShareModal,
   Modal,
+  ButtonFloat,
   ButtonFloatMenu,
   ErrorMessage,
 } from '@/components';
-import { useApp, inventoryStore } from '@/context';
+import { useApp, inventoryStore, usedStore } from '@/context';
 
 const Inventory = () => {
   const {
@@ -22,12 +25,15 @@ const Inventory = () => {
     isMobile,
     showMenuButtons,
     setShowMenuButtons,
+    showFloatingButtons,
     setShowFloatingButtons,
     cryptCardBase,
     libraryCardBase,
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const usedCrypt = useSnapshot(usedStore).crypt;
+  const usedLibrary = useSnapshot(usedStore).library;
 
   const [inventoryError, setInventoryError] = useState();
   const [inventoryKey, setInventoryKey] = useState();
@@ -35,6 +41,7 @@ const Inventory = () => {
   const [sharedInventoryCrypt, setSharedInventoryCrypt] = useState();
   const [sharedInventoryLibrary, setSharedInventoryLibrary] = useState();
   const [showShareModal, setShowShareModal] = useState(false);
+  const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
 
   const getInventory = (key) => {
     const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
@@ -105,82 +112,153 @@ const Inventory = () => {
   const newLibraryFocus = () => newLibraryRef.current.focus();
   const newLibraryRef = useRef();
 
+  const inShared = !!inventoryKey;
+
   return (
     <div className="search-container mx-auto">
-      {(!inventoryKey && username) || (inventoryKey && !inventoryError) ? (
-        <>
-          {isMobile ? (
-            <InventoryMobile
-              newCryptId={newCryptId}
-              newLibraryId={newLibraryId}
-              setNewCryptId={setNewCryptId}
-              setNewLibraryId={setNewLibraryId}
-              newCryptRef={newCryptRef}
-              newLibraryRef={newLibraryRef}
-              newCryptFocus={newCryptFocus}
-              newLibraryFocus={newLibraryFocus}
-              clan={clan}
-              type={type}
-              discipline={discipline}
-              setClan={setClan}
-              setType={setType}
-              setDiscipline={setDiscipline}
-              setMissingCryptByClan={setMissingCryptByClan}
-              setMissingLibraryByType={setMissingLibraryByType}
-              setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
-              category={category}
-              setCategory={setCategory}
-              setShowAddDeck={setShowAddDeck}
-              setShowAddPrecon={setShowAddPrecon}
-              sharedInventoryCrypt={sharedInventoryCrypt}
-              sharedInventoryLibrary={sharedInventoryLibrary}
-              inShared={Boolean(inventoryKey)}
-            />
-          ) : (
-            <InventoryDesktop
-              newCryptId={newCryptId}
-              newLibraryId={newLibraryId}
-              setNewCryptId={setNewCryptId}
-              setNewLibraryId={setNewLibraryId}
-              newCryptRef={newCryptRef}
-              newLibraryRef={newLibraryRef}
-              newCryptFocus={newCryptFocus}
-              newLibraryFocus={newLibraryFocus}
-              clan={clan}
-              type={type}
-              discipline={discipline}
-              setClan={setClan}
-              setType={setType}
-              setDiscipline={setDiscipline}
-              missingCryptByClan={missingCryptByClan}
-              missingLibraryByType={missingLibraryByType}
-              missingLibraryByDiscipline={missingLibraryByDiscipline}
-              setMissingCryptByClan={setMissingCryptByClan}
-              setMissingLibraryByType={setMissingLibraryByType}
-              setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
-              category={category}
-              setCategory={setCategory}
+      {(!inShared && username) || (inShared && !inventoryError) ? (
+        <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+          <div className="hidden xl:flex xl:basis-1/12" />
+          <div
+            className={`${
+              showCryptOnMobile ? 'flex' : 'hidden'
+            } basis-full flex-col sm:flex sm:basis-5/9 sm:gap-2 lg:gap-3 xl:gap-4`}
+          >
+            {!inShared && (
+              <>
+                <div className="p-2 sm:p-0">
+                  <InventoryNewCryptCard
+                    cards={inventoryCrypt}
+                    setNewId={setNewCryptId}
+                    newRef={newCryptRef}
+                  />
+                </div>
+                {newCryptId && (
+                  <InventoryCrypt
+                    cards={{
+                      [newCryptId]: inventoryCrypt[newCryptId]
+                        ? inventoryCrypt[newCryptId]
+                        : { c: cryptCardBase[newCryptId], q: 0 },
+                    }}
+                    newFocus={newCryptFocus}
+                    compact
+                  />
+                )}
+              </>
+            )}
+            {inventoryCrypt && (usedCrypt.soft || usedCrypt.hard) && (
+              <div>
+                <InventoryCrypt
+                  withCompact={newCryptId}
+                  category={sharedInventoryCrypt ? 'ok' : category}
+                  cards={
+                    sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
+                  }
+                  clan={clan}
+                  setClan={setClan}
+                  setMissingCryptByClan={setMissingCryptByClan}
+                  inShared={inShared}
+                />
+              </div>
+            )}
+          </div>
+          <div
+            className={`${
+              showCryptOnMobile ? 'hidden' : 'flex'
+            } basis-full flex-col sm:flex sm:basis-4/9 sm:gap-2 lg:gap-3 xl:gap-4`}
+          >
+            {!inShared && (
+              <>
+                <div className="p-2 sm:p-0">
+                  <InventoryNewLibraryCard
+                    cards={inventoryLibrary}
+                    setNewId={setNewLibraryId}
+                    newRef={newLibraryRef}
+                  />
+                </div>
+                {newLibraryId && (
+                  <InventoryLibrary
+                    cards={{
+                      [newLibraryId]: inventoryLibrary[newLibraryId]
+                        ? inventoryLibrary[newLibraryId]
+                        : { c: libraryCardBase[newLibraryId], q: 0 },
+                    }}
+                    newFocus={newLibraryFocus}
+                    compact
+                  />
+                )}
+              </>
+            )}
+            {inventoryLibrary && (usedLibrary.soft || usedLibrary.hard) && (
+              <div>
+                <InventoryLibrary
+                  withCompact={newLibraryId}
+                  category={sharedInventoryLibrary ? 'ok' : category}
+                  cards={
+                    sharedInventoryLibrary
+                      ? sharedInventoryLibrary
+                      : inventoryLibrary
+                  }
+                  type={type}
+                  setType={setType}
+                  discipline={discipline}
+                  setDiscipline={setDiscipline}
+                  setMissingLibraryByType={setMissingLibraryByType}
+                  setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
+                  inShared={inShared}
+                />
+              </div>
+            )}
+          </div>
+          <div className="hidden basis-full flex-col space-y-6 lg:flex lg:basis-2/12">
+            <InventoryButtons
+              crypt={
+                sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
+              }
+              library={
+                sharedInventoryLibrary
+                  ? sharedInventoryLibrary
+                  : inventoryLibrary
+              }
               setShowAddDeck={setShowAddDeck}
               setShowAddPrecon={setShowAddPrecon}
               setShowShareModal={setShowShareModal}
-              sharedInventoryCrypt={sharedInventoryCrypt}
-              sharedInventoryLibrary={sharedInventoryLibrary}
+              clan={clan}
+              discipline={discipline}
+              type={type}
+              missingCryptByClan={missingCryptByClan}
+              missingLibraryByType={missingLibraryByType}
+              missingLibraryByDiscipline={missingLibraryByDiscipline}
               setInventoryKey={setInventoryKey}
-              inShared={Boolean(inventoryKey)}
+              inShared={inShared}
             />
-          )}
-        </>
-      ) : (
-        <>
-          {inventoryError && <ErrorMessage>{inventoryError}</ErrorMessage>}
-          {!inventoryError && username === null && (
-            <LoginBlock>
-              <div className="flex justify-center text-xl">
-                Login to manage your inventory
+            <div>
+              <InventoryShowSelect
+                category={category}
+                setCategory={setCategory}
+              />
+            </div>
+          </div>
+          {isMobile && showFloatingButtons && (
+            <ButtonFloat
+              onClick={() => setShowCryptOnMobile(!showCryptOnMobile)}
+              position="middle"
+              variant="primary"
+            >
+              <div className="text-[28px]">
+                {showCryptOnMobile ? 'LIB' : 'CR'}
               </div>
-            </LoginBlock>
+            </ButtonFloat>
           )}
-        </>
+        </div>
+      ) : inventoryError ? (
+        <ErrorMessage>{inventoryError}</ErrorMessage>
+      ) : (
+        <LoginBlock>
+          <div className="flex justify-center text-xl">
+            Login to manage your inventory
+          </div>
+        </LoginBlock>
       )}
       <ButtonFloatMenu />
       {showMenuButtons && (
@@ -192,7 +270,7 @@ const Inventory = () => {
           centered
           size="sm"
         >
-          <div className="top-[77px] z-20 space-y-3 bg-bgPrimary dark:bg-bgPrimaryDark">
+          <div className="space-y-3">
             <InventoryButtons
               crypt={
                 sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
@@ -210,7 +288,7 @@ const Inventory = () => {
               missingLibraryByType={missingLibraryByType}
               missingLibraryByDiscipline={missingLibraryByDiscipline}
               setInventoryKey={setInventoryKey}
-              inShared={inventoryKey ? true : false}
+              inShared={inShared}
             />
             <div>
               <InventoryShowSelect
