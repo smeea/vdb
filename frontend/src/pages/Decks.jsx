@@ -241,7 +241,7 @@ const Decks = () => {
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
-            <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 sm:flex-row">
+            <div className="flex flex-col sm:flex-row sm:gap-4 lg:gap-6 xl:gap-8">
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
@@ -262,7 +262,7 @@ const Decks = () => {
           )}
         </div>
         <div className="hidden min-w-[175px] lg:block">
-          <div className="sticky sm:top-[56px] lg:top-[64px] xl:top-[72px] z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark">
+          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]">
             <DeckButtons
               deck={deck}
               setShowInfo={setShowInfo}

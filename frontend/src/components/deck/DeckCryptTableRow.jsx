@@ -23,7 +23,6 @@ import { getSoftMax, getHardTotal } from '@/utils';
 const DeckCryptTableRow = ({
   idx,
   disableOverlay,
-  placement,
   handleClick,
   card,
   deck,
@@ -142,7 +141,6 @@ const DeckCryptTableRow = ({
       <ResultCryptTableRowCommon
         card={card.c}
         handleClick={handleClick}
-        placement={placement}
         maxDisciplines={maxDisciplines}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}

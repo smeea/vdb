@@ -13,7 +13,6 @@ const ResultCryptTableRow = ({
   handleClick,
   idx,
   inRecommendation,
-  placement,
   maxDisciplines,
 }) => {
   const { addMode, inventoryMode } = useApp();
@@ -89,7 +88,6 @@ const ResultCryptTableRow = ({
       <ResultCryptTableRowCommon
         card={card}
         handleClick={handleClick}
-        placement={placement}
         maxDisciplines={maxDisciplines}
       />
     </tr>

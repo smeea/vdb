@@ -8,7 +8,6 @@ import { useModalCardController } from '@/hooks';
 
 const InventoryLibraryTable = ({
   cards,
-  placement,
   sortMethod,
   compact,
   withCompact,
@@ -18,7 +17,6 @@ const InventoryLibraryTable = ({
   const { setShowFloatingButtons } = useApp();
   const sortedCards = librarySort(cards, sortMethod);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -37,7 +35,6 @@ const InventoryLibraryTable = ({
       <InventoryLibraryTableRow
         key={card.c.Id}
         card={card}
-        placement={placement}
         compact={compact}
         newFocus={newFocus}
         inShared={inShared}

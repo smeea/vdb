@@ -6,6 +6,7 @@ import {
   DiffCrypt,
   DiffLibrary,
   DiffSelect,
+  DeckNewCardFloating,
   ButtonFloatMenu,
   Modal,
   ErrorMessage,
@@ -31,6 +32,9 @@ const Diff = () => {
   const [errorFrom, setErrorFrom] = useState(false);
   const [errorTo, setErrorTo] = useState(false);
   const [deckTo, setDeckTo] = useState();
+
+  const { isPublic, isAuthor, isFrozen } = deck || {};
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const getDeck = (id, setD, setE) => {
     setE(false);
@@ -174,7 +178,7 @@ const Diff = () => {
   return (
     <div className="deck-container mx-auto">
       <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-        <div className="flex flex-col w-full sm:gap-4 lg:gap-6 xl:gap-8 lg:basis-10/12">
+        <div className="flex w-full flex-col sm:gap-4 lg:basis-10/12 lg:gap-6 xl:gap-8">
           <DiffSelect
             decks={decks}
             deck={deck}
@@ -194,7 +198,7 @@ const Diff = () => {
           )}
 
           {deck && deckTo && (
-            <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 sm:flex-row">
+            <div className="flex flex-col sm:flex-row sm:gap-4 lg:gap-6 xl:gap-8">
               <div className="basis-full sm:basis-5/9">
                 <DiffCrypt
                   deckid={deck.deckid}
@@ -227,7 +231,20 @@ const Diff = () => {
           </div>
         )}
       </div>
-
+      {isEditable && (
+        <>
+          <DeckNewCardFloating
+            target="crypt"
+            deckid={deck.deckid}
+            cards={deck.crypt}
+          />
+          <DeckNewCardFloating
+            target="library"
+            deckid={deck.deckid}
+            cards={deck.library}
+          />
+        </>
+      )}
       <ButtonFloatMenu />
       {showMenuButtons && (
         <Modal

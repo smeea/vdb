@@ -19,7 +19,6 @@ import { useApp, usedStore, inventoryCardChange } from '@/context';
 
 const InventoryCryptTableRow = ({
   card,
-  placement,
   compact,
   newFocus,
   inShared,
@@ -126,7 +125,6 @@ const InventoryCryptTableRow = ({
       )}
       <div className="flex w-full" onClick={() => handleClick(card.c)}>
         <ConditionalTooltip
-          placement={placement}
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
           className="flex w-full"

@@ -32,23 +32,21 @@ const DeckPublicToggleConfirmation = ({
         isWrongQtyCards || withPlaytestCards
           ? null
           : isPublished
-            ? 'Remove Public'
-            : 'Make Public'
+          ? 'Remove Public'
+          : 'Make Public'
       }
     >
-      {
-        isWrongQtyCards ? (
-          <div className="text-fgRed dark:text-fgRedDark">
-            Public Deck must have 12-35 crypt and 60-90 library cards
-          </div>
-        ) : withPlaytestCards ? (
-          'Public Deck cannot have playtest cards'
-        ) : isPublished ? (
-          'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
-        ) : (
-          'You can remove it from Public Deck Archive at any time'
-        )
-      }
+      {isWrongQtyCards ? (
+        <div className="text-fgRed dark:text-fgRedDark">
+          Public Deck must have 12-35 crypt and 60-90 library cards
+        </div>
+      ) : withPlaytestCards ? (
+        'Public Deck cannot have playtest cards'
+      ) : isPublished ? (
+        'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
+      ) : (
+        'You can remove it from Public Deck Archive at any time'
+      )}
     </ModalConfirmation>
   );
 };

@@ -5,7 +5,14 @@ import Check2 from '@/assets/images/icons/check2.svg';
 import Spinner from '@/assets/images/icons/three-dots.svg';
 import { Input, Button } from '@/components';
 
-const AccountPasswordForm = ({ value, setValue, success, isLoading, isOld, isNew }) => {
+const AccountPasswordForm = ({
+  value,
+  setValue,
+  success,
+  isLoading,
+  isOld,
+  isNew,
+}) => {
   const [hidePassword, setHidePassword] = useState(true);
 
   return (
@@ -35,11 +42,7 @@ const AccountPasswordForm = ({ value, setValue, success, isLoading, isOld, isNew
             variant={success ? 'success' : 'primary'}
             type="submit"
           >
-            {isLoading ? (
-              <Spinner />
-            ) : (
-              <Check2 />
-            )}
+            {isLoading ? <Spinner /> : <Check2 />}
           </Button>
         </>
       )}

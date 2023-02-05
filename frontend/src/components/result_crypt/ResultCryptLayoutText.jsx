@@ -13,13 +13,7 @@ import {
   ResultLayoutTextText,
 } from '@/components';
 
-const ResultCryptLayoutText = ({
-  card,
-  placement,
-  setCard,
-  handleClose,
-  noClose,
-}) => {
+const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose }) => {
   const { isMobile, cryptCardBase } = useApp();
 
   return (
@@ -31,7 +25,6 @@ const ResultCryptLayoutText = ({
             <ResultCryptName card={card} />
             {card.Adv[1] && (
               <ConditionalTooltip
-                placement={placement}
                 overlay={<CardPopover card={cryptCardBase[card.Adv[1]]} />}
                 disabled={isMobile}
               >

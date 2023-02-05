@@ -16,7 +16,6 @@ const DeckProxyCryptTableRow = ({
   handleProxySelector,
   handleProxyCounter,
   handleSetSelector,
-  placement,
   disciplinesSet,
   keyDisciplines,
   nonKeyDisciplines,
@@ -54,7 +53,6 @@ const DeckProxyCryptTableRow = ({
       </td>
       <td className="min-w-[75px]">
         <ConditionalTooltip
-          placement="right"
           overlay={<UsedPopover cardid={card.c.Id} />}
           disabled={!inventoryMode}
         >
@@ -75,7 +73,6 @@ const DeckProxyCryptTableRow = ({
       <ResultCryptTableRowCommon
         card={card.c}
         handleClick={handleClick}
-        placement={placement}
         maxDisciplines={maxDisciplines}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}

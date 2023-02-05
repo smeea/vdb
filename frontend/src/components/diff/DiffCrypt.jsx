@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import {
-  DiffCryptTable,
-  ResultModal,
-  DeckCryptHeader,
-  ButtonFloat,
-} from '@/components';
+import { DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { useApp, deckStore } from '@/context';
 import {
   useModalCardController,
@@ -14,13 +9,7 @@ import {
 } from '@/hooks';
 
 const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
-  const {
-    cryptDeckSort,
-    changeCryptDeckSort,
-    isMobile,
-    showFloatingButtons,
-    setShowFloatingButtons,
-  } = useApp();
+  const { cryptDeckSort, changeCryptDeckSort } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
   const [showInfo, setShowInfo] = useState(false);
 
@@ -39,7 +28,6 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
     useKeyDisciplines(crypt);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -93,18 +81,6 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
             maxDisciplines={maxDisciplines}
           />
         </div>
-      )}
-      {isMobile && isEditable && showFloatingButtons && (
-        <ButtonFloat
-          onClick={() => setShowAdd(true)}
-          position="top"
-          variant="primary"
-        >
-          <div className="flex items-center">
-            <div className="text-[24px]">+</div>
-            <div className="text-[28px]">C</div>
-          </div>
-        </ButtonFloat>
       )}
       {shouldShowModal && (
         <ResultModal

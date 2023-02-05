@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useApp, inventoryCardChange } from '@/context';
+import { inventoryCardChange } from '@/context';
 import { Modal, DeckCardQuantity, QuickSelect } from '@/components';
 
 const InventoryImportBadCardsModal = ({ badCards, setBadCards }) => {
-  const { isMobile } = useApp();
   const [cards, setCards] = useState([]);
 
   useEffect(() => {

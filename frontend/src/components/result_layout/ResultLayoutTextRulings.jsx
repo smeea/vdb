@@ -9,7 +9,7 @@ import {
   ConditionalTooltip,
 } from '@/components';
 
-const ResultLayoutTextRulings = ({ rulings, placement }) => {
+const ResultLayoutTextRulings = ({ rulings }) => {
   const {
     nativeCrypt,
     nativeLibrary,
@@ -61,7 +61,6 @@ const ResultLayoutTextRulings = ({ rulings, placement }) => {
             return (
               <span key={`${idxRuling}-${idxText}-text-${idxReference}`}>
                 <ConditionalTooltip
-                  placement={placement}
                   overlay={<CardPopover card={card} />}
                   disabled={isMobile}
                 >

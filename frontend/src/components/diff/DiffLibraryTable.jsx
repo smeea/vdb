@@ -9,7 +9,6 @@ const DiffLibraryTable = ({
   cardsFrom,
   cardsTo,
   isEditable,
-  placement,
   showInfo,
   libraryTotal,
   handleModalCardOpen,
@@ -32,7 +31,6 @@ const DiffLibraryTable = ({
               cardsFrom={cardsFrom}
               cardsTo={cardsTo}
               isEditable={isEditable}
-              placement={placement}
               showInfo={showInfo}
               libraryTotal={libraryTotal}
               key={card.c.Id}

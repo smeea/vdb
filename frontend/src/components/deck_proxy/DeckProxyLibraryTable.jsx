@@ -1,6 +1,5 @@
 import React from 'react';
 import { DeckProxyLibraryTableRow } from '@/components';
-// import { useApp } from '@/context';
 
 const DeckProxyLibraryTable = ({
   inventoryType,
@@ -10,10 +9,7 @@ const DeckProxyLibraryTable = ({
   handleProxySelector,
   handleProxyCounter,
   handleSetSelector,
-  placement,
 }) => {
-  // const { setShowFloatingButtons } = useApp();
-
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
@@ -29,7 +25,6 @@ const DeckProxyLibraryTable = ({
               handleProxySelector={handleProxySelector}
               handleProxyCounter={handleProxyCounter}
               handleSetSelector={handleSetSelector}
-              placement={placement}
             />
           );
         })}

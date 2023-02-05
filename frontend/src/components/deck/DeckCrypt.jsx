@@ -43,7 +43,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
     <div
       className={`flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 ${
         !isMobile && !inAdvSelect
-          ? 'sticky sm:top-[56px] lg:top-[64px] xl:top-[72px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+          ? 'sticky z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]'
           : ''
       }`}
     >

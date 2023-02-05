@@ -16,7 +16,6 @@ import { useApp } from '@/context';
 const ResultCryptTableRowCommon = ({
   card,
   handleClick,
-  placement,
   maxDisciplines,
   keyDisciplines,
   nonKeyDisciplines,
@@ -53,7 +52,6 @@ const ResultCryptTableRowCommon = ({
       )}
       <td className="w-full" onClick={() => handleClick(card)}>
         <ConditionalTooltip
-          placement={placement}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
           noPadding

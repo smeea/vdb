@@ -13,6 +13,7 @@
 - Inventory/deck import in excel
 
 # IMPROVE TECHNOLOGY - FRONTEND
+- Move preconDecks to fetch+localStorage
 - Update url for playtest images to mitigate caching
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Debouncing for text search query - useTimeout+useDebouncing hook https://youtu.be/0c6znExIqRw?t=118
@@ -23,8 +24,8 @@
 - ResultDisciplineImage class to width/size
 
 # TAILWIND MIGRATION
+- Update card-update scripts
 - Refactor or restore setShowFloatingButtons functionality
 - Test if disableOverlay is required (possible to change?)
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Library sticky hide above header
-- Remove useless placement props from tooltips

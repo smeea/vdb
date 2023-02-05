@@ -9,7 +9,7 @@ import {
   ConditionalTooltip,
 } from '@/components';
 
-const ResultLayoutTextText = ({ cardid, placement }) => {
+const ResultLayoutTextText = ({ cardid }) => {
   const {
     nativeCrypt,
     nativeLibrary,
@@ -65,7 +65,6 @@ const ResultLayoutTextText = ({ cardid, placement }) => {
               return (
                 <span key={card.Id}>
                   <ConditionalTooltip
-                    placement={placement}
                     overlay={<CardPopover card={card} />}
                     disabled={isMobile}
                   >

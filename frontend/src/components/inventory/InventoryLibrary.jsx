@@ -26,7 +26,7 @@ const InventoryLibrary = ({
   inShared,
 }) => {
   const usedLibrary = useSnapshot(usedStore).library;
-  const { libraryCardBase, isDesktop } = useApp();
+  const { libraryCardBase } = useApp();
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
     Name: 'N',
@@ -451,7 +451,6 @@ const InventoryLibrary = ({
               })
         }
         newFocus={newFocus}
-        placement={isDesktop ? 'right' : 'bottom'}
         inShared={inShared}
       />
     </>

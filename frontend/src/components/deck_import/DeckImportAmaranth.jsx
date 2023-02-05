@@ -182,10 +182,10 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
       title="Import from Amaranth"
     >
       <div className="flex">
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <Input
             placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
-            className="w-full text-xl rounded-r-none"
+            className="w-full rounded-r-none text-xl"
             type="text"
             name="url"
             value={deckUrl}
@@ -200,7 +200,7 @@ const DeckImportAmaranth = ({ handleCloseModal, show }) => {
           )}
         </div>
         <Button
-          className="rounded-l-none min-w-[72px]"
+          className="min-w-[72px] rounded-l-none"
           variant="primary"
           onClick={handleImport}
         >

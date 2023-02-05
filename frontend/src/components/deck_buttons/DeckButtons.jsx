@@ -18,7 +18,6 @@ import {
   DeckPublicSyncButton,
   DeckPublicToggleButton,
   SeatingButton,
-  ButtonFloatClose,
 } from '@/components';
 import { useApp } from '@/context';
 
@@ -32,20 +31,8 @@ const DeckButtons = ({
   setQrUrl,
   setShowRecommendation,
 }) => {
-  const {
-    setShowMenuButtons,
-    setShowFloatingButtons,
-    playtest,
-    inventoryMode,
-    username,
-    isNarrow,
-  } = useApp();
+  const { playtest, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = { ...deck };
-
-  const handleClose = () => {
-    setShowMenuButtons(false);
-    setShowFloatingButtons(true);
-  };
 
   return (
     <>

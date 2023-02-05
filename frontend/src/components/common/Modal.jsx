@@ -12,7 +12,7 @@ const Modal = ({
   centered = false,
   initialFocus,
   // TODO implement bordered
-  bordered = false,
+  // bordered = false,
 }) => {
   const { isNarrow } = useApp();
 

@@ -8,7 +8,6 @@ import { useModalCardController } from '@/hooks';
 
 const InventoryCryptTable = ({
   cards,
-  placement,
   sortMethod,
   compact,
   withCompact,
@@ -18,7 +17,6 @@ const InventoryCryptTable = ({
   const { setShowFloatingButtons } = useApp();
   const sortedCards = cryptSort(cards, sortMethod);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -32,7 +30,6 @@ const InventoryCryptTable = ({
       <InventoryCryptTableRow
         key={card.c.Id}
         card={card}
-        placement={placement}
         compact={compact}
         newFocus={newFocus}
         inShared={inShared}

@@ -1,11 +1,8 @@
 import React from 'react';
 import { ResultModal, ResultLibraryTableRow } from '@/components';
-import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 
-const ResultLibraryTable = ({ resultCards, placement }) => {
-  const { setShowFloatingButtons } = useApp();
-
+const ResultLibraryTable = ({ resultCards }) => {
   const {
     currentModalCard,
     shouldShowModal,
@@ -25,7 +22,6 @@ const ResultLibraryTable = ({ resultCards, placement }) => {
                 card={card}
                 handleClick={handleModalCardOpen}
                 idx={idx}
-                placement={placement}
               />
             );
           })}

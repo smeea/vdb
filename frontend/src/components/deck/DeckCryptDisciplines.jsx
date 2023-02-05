@@ -58,7 +58,7 @@ const DeckCryptDisciplines = ({
   }
 
   return (
-    <table className="disciplines">
+    <table>
       <tbody>
         <tr>
           {keyDisciplinesCols}

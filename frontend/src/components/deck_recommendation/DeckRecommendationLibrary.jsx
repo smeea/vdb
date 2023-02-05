@@ -4,18 +4,14 @@ import {
   DeckRecommendationLibraryTable,
   ResultModal,
 } from '@/components';
-import { useApp } from '@/context';
 import { librarySort, getCardsGroupedBy } from '@/utils';
 import { useModalCardController } from '@/hooks';
 import { GROUPED_TYPE, TYPE } from '@/utils/constants';
 
 const DeckRecommendationLibrary = ({ cards }) => {
-  const { setShowFloatingButtons } = useApp();
-
   const sortedLibrary = librarySort(cards, GROUPED_TYPE);
   const libraryByType = getCardsGroupedBy(sortedLibrary, TYPE);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,

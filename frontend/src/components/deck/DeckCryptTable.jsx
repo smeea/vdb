@@ -9,7 +9,6 @@ const DeckCryptTable = ({
   nonKeyDisciplines,
   maxDisciplines,
   cards,
-  placement,
   showInfo,
   cryptTotal,
   handleModalCardOpen,
@@ -33,7 +32,6 @@ const DeckCryptTable = ({
               key={card.c.Id}
               idx={idx}
               disableOverlay={disableOverlay}
-              placement={placement}
               handleClick={handleModalCardOpen}
               card={card}
               deck={deck}

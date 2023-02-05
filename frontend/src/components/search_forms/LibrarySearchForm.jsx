@@ -4,7 +4,6 @@ import { useSnapshot } from 'valtio';
 import {
   ButtonFloatSearch,
   ButtonFloatClose,
-  ErrorOverlay,
   SearchFormTextAndButtons,
   SearchFormSet,
   SearchFormPrecon,

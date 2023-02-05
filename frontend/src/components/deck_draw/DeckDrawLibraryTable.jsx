@@ -6,7 +6,6 @@ const DeckDrawLibraryTable = ({
   restCards,
   resultCards,
   ashHeap,
-  placement,
 }) => {
   let N = 0;
   let n = 0;
@@ -41,7 +40,6 @@ const DeckDrawLibraryTable = ({
               <ResultLibraryTableRowCommon
                 card={card}
                 handleClick={handleClick}
-                placement={placement}
               />
               <td className="w-9 text-right text-fgSecondary  dark:text-fgSecondaryDark">
                 {!ashHeap && (

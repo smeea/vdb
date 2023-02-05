@@ -38,7 +38,7 @@ const PdaResultDescription = ({ deck }) => {
           <div className="basis-9/12">
             <PdaResultDescriptionText deck={deck} />
           </div>
-          <div className="flex flex-col gap-1 basis-3/12">
+          <div className="flex basis-3/12 flex-col gap-1">
             <TwdOpenDeckButton deckid={deck['deckid']} />
             {username && (
               <>

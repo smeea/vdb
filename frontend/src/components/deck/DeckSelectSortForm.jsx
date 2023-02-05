@@ -8,7 +8,11 @@ const DeckSelectSortForm = ({ value, onChange }) => {
 
   return (
     <Menu as="div" className="relative">
-      <MenuButton title="Sort Decks" icon={<SortDown />} text={value ? value.replace('by', '') : null} />
+      <MenuButton
+        title="Sort Decks"
+        icon={<SortDown />}
+        text={value ? value.replace('by', '') : null}
+      />
       <MenuItems>
         {Object.keys(sortMethods).map((k) => {
           return (

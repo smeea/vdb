@@ -5,14 +5,11 @@ import {
   ResultModal,
   DeckDrawProbability,
   DeckLibraryHeader,
-  ButtonFloat,
 } from '@/components';
 import { MASTER } from '@/utils/constants';
-import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
-  const { isMobile, showFloatingButtons, setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const {
@@ -30,7 +27,6 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
     libraryByDisciplinesTotal,
   } = useDeckLibrary(cardsFrom, cardsTo);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -110,18 +106,6 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
           <b>Side Library</b>
           {LibrarySideDeck}
         </div>
-      )}
-      {isMobile && isEditable && showFloatingButtons && (
-        <ButtonFloat
-          onClick={() => setShowAdd(true)}
-          position="middle"
-          variant="primary"
-        >
-          <div className="flex items-center">
-            <div className="text-[24px]">+</div>
-            <div className="text-[28px]">L</div>
-          </div>
-        </ButtonFloat>
       )}
       {shouldShowModal && (
         <ResultModal

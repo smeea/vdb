@@ -3,7 +3,7 @@ import { ResultModal, ResultCryptTableRow } from '@/components';
 import { countDisciplines } from '@/utils';
 import { useModalCardController } from '@/hooks';
 
-const ResultCryptTable = ({ resultCards, placement, inRecommendation }) => {
+const ResultCryptTable = ({ resultCards, inRecommendation }) => {
   const maxDisciplines = countDisciplines(resultCards);
 
   const {
@@ -26,7 +26,6 @@ const ResultCryptTable = ({ resultCards, placement, inRecommendation }) => {
                 handleClick={handleModalCardOpen}
                 idx={idx}
                 inRecommendation={inRecommendation}
-                placement={placement}
                 maxDisciplines={maxDisciplines}
               />
             );

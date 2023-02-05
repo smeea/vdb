@@ -16,7 +16,7 @@ import { BURN_OPTION, POOL_COST, BLOOD_COST } from '@/utils/constants';
 import { deckStore, useApp } from '@/context';
 
 const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
-  const { isDesktop, isMobile, setShowFloatingButtons } = useApp();
+  const { isMobile, setShowFloatingButtons } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
@@ -39,7 +39,7 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
                 }`}
               >
                 {isEditable && (
-                  <td className="quantity-add ">
+                  <td>
                     <ButtonAddCard
                       cardid={card.Id}
                       deckid={deck.deckid}
@@ -48,19 +48,15 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
                     />
                   </td>
                 )}
-                <td className="name" onClick={() => handleClick(card.Id)}>
+                <td className="w-full" onClick={() => handleClick(card.Id)}>
                   <ConditionalTooltip
-                    placement={isDesktop ? 'left' : 'bottom'}
                     overlay={<CardPopover card={card} />}
                     disabled={isMobile}
                   >
                     <ResultLibraryName card={card} />
                   </ConditionalTooltip>
                 </td>
-                <td
-                  className={card[BLOOD_COST] ? 'cost blood' : 'cost'}
-                  onClick={() => handleClick(card.Id)}
-                >
+                <td onClick={() => handleClick(card.Id)}>
                   {(card[BLOOD_COST] || card[POOL_COST]) && (
                     <ResultLibraryCost
                       valueBlood={card[BLOOD_COST]}
@@ -68,17 +64,14 @@ const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
                     />
                   )}
                 </td>
-                <td
-                  className="disciplines "
-                  onClick={() => handleClick(card.Id)}
-                >
+                <td onClick={() => handleClick(card.Id)}>
                   {card.Clan && <ResultLibraryClan value={card.Clan} />}
                   {card.Discipline && card.Clan && '+'}
                   {card.Discipline && (
                     <ResultLibraryDisciplines value={card.Discipline} />
                   )}
                 </td>
-                <td className="burn" onClick={() => handleClick(card.Id)}>
+                <td onClick={() => handleClick(card.Id)}>
                   {card[BURN_OPTION] && (
                     <ResultLibraryBurn value={card[BURN_OPTION]} />
                   )}

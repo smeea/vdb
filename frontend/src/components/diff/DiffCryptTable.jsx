@@ -9,7 +9,6 @@ const DiffCryptTable = ({
   cardsFrom,
   cardsTo,
   isEditable,
-  placement,
   showInfo,
   cryptTotal,
   handleModalCardOpen,
@@ -36,7 +35,6 @@ const DiffCryptTable = ({
               cardsFrom={cardsFrom}
               cardsTo={cardsTo}
               isEditable={isEditable}
-              placement={placement}
               showInfo={showInfo}
               key={card.c.Id}
               card={card}

@@ -23,7 +23,6 @@ const DiffCryptTableRow = ({
   cardsFrom,
   cardsTo,
   isEditable,
-  placement,
   showInfo,
   cryptTotal,
   card,
@@ -77,7 +76,6 @@ const DiffCryptTableRow = ({
       <ResultCryptTableRowCommon
         card={card.c}
         handleClick={handleClick}
-        placement={placement}
         maxDisciplines={maxDisciplines}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}

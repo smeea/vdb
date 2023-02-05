@@ -23,7 +23,6 @@ import { getSoftMax, getHardTotal } from '@/utils';
 const DeckLibraryTableRow = ({
   idx,
   disableOverlay,
-  placement,
   handleClick,
   card,
   deck,

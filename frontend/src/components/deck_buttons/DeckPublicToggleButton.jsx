@@ -46,14 +46,16 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
   return (
     <>
       <ButtonIconed
-        variant={inAdv ? "primary" : "secondary"}
+        variant={inAdv ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
         title={`${isPublished ? 'In' : 'Not in'} Public Deck Archive`}
         icon={
           !isLoading ? (
-            inAdv && !isPublished
-              ? <People width="16" height="23" viewBox="0 0 16 18" />
-              : <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
+            inAdv && !isPublished ? (
+              <People width="16" height="23" viewBox="0 0 16 18" />
+            ) : (
+              <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
+            )
           ) : (
             <Spinner />
           )

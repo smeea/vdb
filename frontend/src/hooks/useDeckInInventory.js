@@ -29,7 +29,10 @@ const useDeckInInventory = (deck) => {
         const inInventory = Math.floor(
           inventoryLibrary[cardid].q / deck.library[cardid].q
         );
-        if (libraryInInventory === undefined || inInventory < libraryInInventory) {
+        if (
+          libraryInInventory === undefined ||
+          inInventory < libraryInInventory
+        ) {
           libraryInInventory = inInventory;
         }
       } else {

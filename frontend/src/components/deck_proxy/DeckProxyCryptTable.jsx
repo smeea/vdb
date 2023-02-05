@@ -10,9 +10,7 @@ const DeckProxyCryptTable = ({
   handleProxySelector,
   handleProxyCounter,
   handleSetSelector,
-  placement,
 }) => {
-  // const { setShowFloatingButtons } = useApp();
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
     useKeyDisciplines(cards);
 
@@ -35,7 +33,6 @@ const DeckProxyCryptTable = ({
               handleProxySelector={handleProxySelector}
               handleProxyCounter={handleProxyCounter}
               handleSetSelector={handleSetSelector}
-              placement={placement}
             />
           );
         })}

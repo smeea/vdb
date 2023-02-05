@@ -93,7 +93,7 @@ const DeckLibrary = ({ deck, inMissing }) => {
         <div
           className={
             !inMissing && !isMobile
-              ? 'sticky sm:top-[56px] lg:top-[64px] xl:top-[72px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
+              ? 'sticky z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]'
               : ''
           }
         >

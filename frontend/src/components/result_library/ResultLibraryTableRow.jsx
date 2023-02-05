@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { useApp, deckStore, deckCardChange } from '@/context';
 
-const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
+const ResultLibraryTableRow = ({ card, handleClick, idx }) => {
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inDeck = deck?.library[card.Id]?.q || 0;
@@ -65,7 +65,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
       className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
       {isEditable && addMode && (
-        <td className="quantity-add ">
+        <td>
           <ButtonAddCard deckid={deck.deckid} card={card} inDeck={inDeck} />
         </td>
       )}
@@ -74,11 +74,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, placement }) => {
           <ResultUsed card={card} />
         </td>
       )}
-      <ResultLibraryTableRowCommon
-        card={card}
-        handleClick={handleClick}
-        placement={placement}
-      />
+      <ResultLibraryTableRowCommon card={card} handleClick={handleClick} />
     </tr>
   );
 };

@@ -23,7 +23,6 @@ const DiffLibraryTableRow = ({
   cardsFrom,
   cardsTo,
   isEditable,
-  placement,
   showInfo,
   libraryTotal,
   card,
@@ -73,7 +72,6 @@ const DiffLibraryTableRow = ({
       <ResultLibraryTableRowCommon
         card={card.c}
         handleClick={handleClick}
-        placement={placement}
         inDeck
       />
       {showInfo && (

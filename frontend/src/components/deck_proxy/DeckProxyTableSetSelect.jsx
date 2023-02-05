@@ -47,9 +47,8 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
       </td>
       <td className="proxy-set-image">
         <Tooltip
-          placement="right"
-          noPadding
           overlay={<CardImage card={card} set={value ?? null} />}
+          noPadding
         >
           <div>
             <EyeFill />

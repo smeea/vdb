@@ -5,9 +5,9 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint-css": "npx stylelint \"src/assets/css/style.sass\"",
-    "lint-js": "npx eslint \"src/**/*.{js,jsx}\"",
-    "prettify": "npx prettier --write  \"src/**/*.{js,jsx}\""
+    "stylelint": "npx stylelint \"src/assets/css/style.sass\"",
+    "eslint": "npx eslint \"src/**/*.{js,jsx}\"",
+    "prettier": "npx prettier --write  \"src/**/*.{js,jsx}\""
   },
   "author": "Vadim Matveev",
   "license": "MIT",

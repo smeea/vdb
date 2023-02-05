@@ -9,7 +9,7 @@ import {
   Input,
 } from '@/components';
 import { decksSort } from '@/utils';
-import { useApp, deckStore, } from '@/context';
+import { useApp, deckStore } from '@/context';
 
 const InventoryAddDeckModal = ({ handleClose }) => {
   const { isDesktop, isMobile } = useApp();
@@ -134,7 +134,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           })}
         </tbody>
       </table>
-    </Modal >
+    </Modal>
   );
 };
 

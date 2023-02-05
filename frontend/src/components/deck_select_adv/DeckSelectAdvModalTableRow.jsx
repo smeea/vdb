@@ -112,7 +112,7 @@ const DeckSelectAdvModalTableRow = ({
           {deck.name}
           {deck.branchName &&
             (deck.master || (deck.branches && deck.branches.length > 0)) && (
-              <div className="revision inline" title={deck.branchName}>
+              <div className="inline" title={deck.branchName}>
                 {deck.branchName}
               </div>
             )}
@@ -126,7 +126,6 @@ const DeckSelectAdvModalTableRow = ({
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
-              placement="right"
               show={showDeck === deck.deckid}
               overlay={
                 <div className="flex">

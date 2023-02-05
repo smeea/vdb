@@ -20,7 +20,7 @@ import { useApp, deckUpdate } from '@/context';
 const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
   const { isDesktop, isMobile } = useApp();
   const [showDeck, setShowDeck] = useState();
-  const inInventory = useDeckInInventory(deck)
+  const inInventory = useDeckInInventory(deck);
   const clan = getClan(deck.crypt);
 
   const toggleInventoryState = (deckid) => {
@@ -75,7 +75,7 @@ const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
           {deck.name}
           {deck.branchName &&
             (deck.master || (deck.branches && deck.branches.length > 0)) && (
-              <div className="revision inline" title={deck.branchName}>
+              <div className="inline" title={deck.branchName}>
                 {deck.branchName}
               </div>
             )}
@@ -85,11 +85,11 @@ const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
         <td className="min-w-[40px]">
           <div
             className="flex justify-center"
+            /* TODO not hide after click */
             onMouseEnter={() => setShowDeck(deck.deckid)}
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
-              placement="right"
               show={showDeck === deck.deckid}
               overlay={
                 <div className="flex">

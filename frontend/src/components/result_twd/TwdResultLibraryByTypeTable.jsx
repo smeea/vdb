@@ -100,7 +100,6 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
                     className="w-full"
                   >
                     <Tooltip
-                      placement="right"
                       show={show[cardtype]}
                       noPadding
                       overlay={

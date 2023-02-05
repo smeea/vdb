@@ -16,7 +16,7 @@ import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 const InventoryAddPreconRow = ({ deck, idx }) => {
   const { isDesktop, isMobile } = useApp();
   const [showDeck, setShowDeck] = useState();
-  const inInventory = useDeckInInventory(deck)
+  const inInventory = useDeckInInventory(deck);
   const [set, precon] = deck.deckid.split(':');
   const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
@@ -61,11 +61,11 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
         <td className="min-w-[40px]">
           <div
             className="flex justify-center"
+            /* TODO not hide after click */
             onMouseEnter={() => setShowDeck(deck.deckid)}
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
-              placement="right"
               show={showDeck === deck.deckid}
               overlay={
                 <div className="flex">
@@ -105,9 +105,7 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
           </>
         ) : (
           <>
-            {setsAndPrecons[set].date.slice(0, 4)}
-            {' '}–{' '}
-            {setsAndPrecons[set].name}
+            {setsAndPrecons[set].date.slice(0, 4)} – {setsAndPrecons[set].name}
           </>
         )}
       </td>

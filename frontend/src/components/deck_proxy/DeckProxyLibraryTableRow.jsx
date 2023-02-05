@@ -17,7 +17,6 @@ const DeckProxyLibraryTableRow = ({
   handleProxySelector,
   handleProxyCounter,
   handleSetSelector,
-  placement,
   inventoryType,
   card,
   idx,
@@ -50,7 +49,6 @@ const DeckProxyLibraryTableRow = ({
       </td>
       <td className="min-w-[75px]">
         <ConditionalTooltip
-          placement="right"
           overlay={<UsedPopover cardid={card.c.Id} />}
           disabled={!inventoryMode}
         >
@@ -71,7 +69,6 @@ const DeckProxyLibraryTableRow = ({
       <ResultLibraryTableRowCommon
         card={card.c}
         handleClick={handleClick}
-        placement={placement}
         inDeck
       />
       {!isMobile && (
