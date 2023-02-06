@@ -29,4 +29,3 @@
 - Test if disableOverlay is required (possible to change?)
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Library sticky hide above header
-- Fix autofocus in multiforms

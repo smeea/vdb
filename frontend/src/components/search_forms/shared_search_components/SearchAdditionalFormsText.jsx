@@ -63,6 +63,7 @@ const SearchAdditionalFormsText = ({
               value={text[i] || ''}
               onChange={onTextChange}
               className="w-full"
+              autoFocus
             />
             <div className="flex">
               <div className="flex w-1/5 space-x-1">

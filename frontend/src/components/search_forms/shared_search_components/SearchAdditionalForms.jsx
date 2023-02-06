@@ -72,6 +72,7 @@ const SearchAdditionalForms = ({
                   (obj) => obj.value === value.value[i].capacity
                 )}
                 onChange={onChange}
+                autoFocus
               />
             </div>
           </div>
@@ -89,6 +90,7 @@ const SearchAdditionalForms = ({
               name={i}
               value={options.find((obj) => obj.value === value.value[i])}
               onChange={onChange}
+              autoFocus
             />
           </div>
         )}
