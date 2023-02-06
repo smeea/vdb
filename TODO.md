@@ -20,7 +20,7 @@
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
 - Refactor fetch to useAsync+useFetch hook https://youtu.be/vrIxu-kfAUo&t=546
 - Refactor InventoryCrypt and InventoryLibrary
-- Refactor deck buttons (split in button ui and function)
+- Refactor deck buttons (split in button ui and function incl. deckstore functions )
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
 

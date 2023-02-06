@@ -57,9 +57,9 @@ const DeckCardQuantity = ({
   const inventoryColor = getInventoryColor();
 
   return (
-    <div className="flex items-center justify-between text-lg">
-      {isEditable || inProxy ? (
-        <>
+    <>
+      {isEditable ? (
+        <div className="flex items-center justify-between text-lg">
           {isMobile ? (
             <>
               <a
@@ -135,15 +135,13 @@ const DeckCardQuantity = ({
               )}
             </>
           )}
-        </>
+        </div>
       ) : (
-        <div
-          className={`flex w-full items-center justify-center ${inventoryColor} border-r border-bgSecondary bg-[#0000aa]/5 dark:border-bgSecondaryDark`}
-        >
+        <div className="flex items-center justify-center text-lg">
           {q || null}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

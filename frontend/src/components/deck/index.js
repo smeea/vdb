@@ -9,6 +9,7 @@ export { default as DeckCryptDisciplines } from './DeckCryptDisciplines.jsx';
 export { default as DeckCryptHeader } from './DeckCryptHeader.jsx';
 export { default as DeckCryptTable } from './DeckCryptTable.jsx';
 export { default as DeckCryptTableRow } from './DeckCryptTableRow.jsx';
+export { default as DeckCardQuantityTd } from './DeckCardQuantityTd.jsx';
 export { default as DeckCryptTotalInfo } from './DeckCryptTotalInfo.jsx';
 export { default as DeckDetails } from './DeckDetails.jsx';
 export { default as DeckFreezeButton } from './DeckFreezeButton.jsx';

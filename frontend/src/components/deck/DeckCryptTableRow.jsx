@@ -12,11 +12,9 @@ import {
   deckStore,
 } from '@/context';
 import {
-  UsedPopover,
-  DeckCardQuantity,
+  DeckCardQuantityTd,
   ResultCryptTableRowCommon,
   DeckDrawProbability,
-  ConditionalTooltip,
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 
@@ -36,7 +34,6 @@ const DeckCryptTableRow = ({
   inMissing,
 }) => {
   const { inventoryMode, isMobile } = useApp();
-
   const decks = useSnapshot(deckStore).decks;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
@@ -118,26 +115,19 @@ const DeckCryptTableRow = ({
             </div>
           </td>
         )}
-      <td className={isEditable ? 'min-w-[75px]' : 'min-w-[40px]'}>
-        <ConditionalTooltip
-          placement="bottom"
-          overlay={<UsedPopover cardid={card.c.Id} />}
-          disabled={disableOverlay || !inventoryMode}
-        >
-          <DeckCardQuantity
-            card={card.c}
-            q={card.q}
-            deckid={deckid}
-            cardChange={deckCardChange}
-            inInventory={inInventory}
-            softUsedMax={softUsedMax}
-            hardUsedTotal={hardUsedTotal}
-            inventoryType={decks[deckid]?.inventoryType}
-            isEditable={isEditable}
-            inMissing={inMissing}
-          />
-        </ConditionalTooltip>
-      </td>
+      <DeckCardQuantityTd
+        card={card.c}
+        cardChange={deckCardChange}
+        deckid={deckid}
+        disabledTooltip={disableOverlay || !inventoryMode}
+        hardUsedTotal={hardUsedTotal}
+        inInventory={inInventory}
+        inMissing={inMissing}
+        inventoryType={decks?.[deckid]?.inventoryType}
+        isEditable={isEditable}
+        q={card.q}
+        softUsedMax={softUsedMax}
+      />
       <ResultCryptTableRowCommon
         card={card.c}
         handleClick={handleClick}

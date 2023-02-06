@@ -1,12 +1,10 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
-  UsedPopover,
-  DeckCardQuantity,
-  ResultLibraryTableRowCommon,
+  DeckCardQuantityTd,
   DeckDrawProbability,
   DiffQuantityDiff,
-  ConditionalTooltip,
+  ResultLibraryTableRowCommon,
 } from '@/components';
 import { getHardTotal, getSoftMax } from '@/utils';
 import {
@@ -47,28 +45,20 @@ const DiffLibraryTableRow = ({
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
-      <td className={isEditable ? 'min-w-[75px]' : 'min-w-[40px]'}>
-        <ConditionalTooltip
-          placement="bottom"
-          overlay={<UsedPopover cardid={card.c.Id} />}
-          disabled={!inventoryMode}
-        >
-          <DeckCardQuantity
-            card={card.c}
-            q={qFrom}
-            deckid={cardChange ? null : deckid}
-            cardChange={cardChange ?? deckCardChange}
-            inInventory={inInventory}
-            softUsedMax={softUsedMax}
-            hardUsedTotal={hardUsedTotal}
-            inventoryType={decks[deckid]?.inventoryType}
-            isEditable={isEditable}
-          />
-        </ConditionalTooltip>
-      </td>
-      <td className="w-[42px] min-w-[35px] text-lg">
-        <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
-      </td>
+      <DeckCardQuantityTd
+        card={card.c}
+        cardChange={cardChange ?? deckCardChange}
+        deckid={cardChange ? null : deckid}
+        disabledTooltip={!inventoryMode}
+        hardUsedTotal={hardUsedTotal}
+        inInventory={inInventory}
+        inMissing={inMissing}
+        inventoryType={decks?.[deckid]?.inventoryType}
+        isEditable={isEditable}
+        q={qFrom}
+        softUsedMax={softUsedMax}
+      />
+      <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
       <ResultLibraryTableRowCommon
         card={card.c}
         handleClick={handleClick}

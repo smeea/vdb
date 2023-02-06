@@ -1,10 +1,8 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
-  UsedPopover,
-  DeckCardQuantity,
+  DeckCardQuantityTd,
   ResultLibraryTableRowCommon,
-  ConditionalTooltip,
   Checkbox,
   DeckProxyTableSetSelect,
 } from '@/components';
@@ -47,25 +45,20 @@ const DeckProxyLibraryTableRow = ({
           />
         </div>
       </td>
-      <td className="min-w-[75px]">
-        <ConditionalTooltip
-          overlay={<UsedPopover cardid={card.c.Id} />}
-          disabled={!inventoryMode}
-        >
-          <DeckCardQuantity
-            card={card.c}
-            deckid={null}
-            q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
-            inInventory={inInventory}
-            inventoryType={inventoryType}
-            softUsedMax={softUsedMax}
-            hardUsedTotal={hardUsedTotal}
-            cardChange={handleProxyCounter}
-            isSelected={proxySelected[card.c.Id]?.print}
-            inProxy
-          />
-        </ConditionalTooltip>
-      </td>
+      <DeckCardQuantityTd
+        card={card.c}
+        cardChange={handleProxyCounter}
+        deckid={null}
+        disabledTooltip={disableOverlay || !inventoryMode}
+        hardUsedTotal={hardUsedTotal}
+        inInventory={inInventory}
+        inProxy
+        inventoryType={inventoryType}
+        isEditable
+        isSelected={proxySelected[card.c.Id]?.print}
+        q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
+        softUsedMax={softUsedMax}
+      />
       <ResultLibraryTableRowCommon
         card={card.c}
         handleClick={handleClick}

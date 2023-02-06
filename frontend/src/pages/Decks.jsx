@@ -173,14 +173,14 @@ const Decks = () => {
   }, [hash, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (cryptCardBase && libraryCardBase && decks !== undefined) {
+    if (cryptCardBase && libraryCardBase) {
       if (deckid) {
         if (!deck || deck.deckid != deckid) {
-          if (decks[deckid]) {
+          if (decks?.[deckid]) {
             setDeck(decks[deckid]);
-          } else if (deckid.includes(':')) {
+          } else if (deckid.includes(':') && preconDecks) {
             const deckidFixed = deckid.replace('_', ' ');
-            if (preconDecks?.[deckidFixed]) {
+            if (preconDecks[deckidFixed]) {
               setDeck(preconDecks[deckidFixed]);
             } else {
               setDeck(undefined);
@@ -191,7 +191,7 @@ const Decks = () => {
           }
         }
       } else if (lastDeckId) {
-        setDeck(decks[lastDeckId]);
+        setDeck(decks?.[lastDeckId]);
       }
     }
   }, [
@@ -278,7 +278,7 @@ const Decks = () => {
       </div>
       {username === null && !deckid && !hash && (
         <LoginBlock>
-          <div className="flex justify-center text-xl">
+          <div className="flex justify-center text-lg">
             Login to create your decks
           </div>
           <div className="flex justify-center text-lg">

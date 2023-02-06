@@ -1,10 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
-  UsedPopover,
-  DeckCardQuantity,
   ResultCryptTableRowCommon,
-  ConditionalTooltip,
   Checkbox,
   DeckProxyTableSetSelect,
 } from '@/components';
@@ -25,7 +22,7 @@ const DeckProxyCryptTableRow = ({
   idx,
   handleClick,
 }) => {
-  const { inventoryMode, isMobile, setShowFloatingButtons } = useApp();
+  const { inventoryMode, isMobile } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
@@ -51,25 +48,20 @@ const DeckProxyCryptTableRow = ({
           />
         </div>
       </td>
-      <td className="min-w-[75px]">
-        <ConditionalTooltip
-          overlay={<UsedPopover cardid={card.c.Id} />}
-          disabled={!inventoryMode}
-        >
-          <DeckCardQuantity
-            card={card.c}
-            deckid={null}
-            q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
-            inInventory={inInventory}
-            inventoryType={inventoryType}
-            softUsedMax={softUsedMax}
-            hardUsedTotal={hardUsedTotal}
-            cardChange={handleProxyCounter}
-            isSelected={proxySelected[card.c.Id]?.print}
-            inProxy
-          />
-        </ConditionalTooltip>
-      </td>
+      <DeckCardQuantityTd
+        card={card.c}
+        cardChange={handleProxyCounter}
+        deckid={null}
+        disabledTooltip={!inventoryMode}
+        hardUsedTotal={hardUsedTotal}
+        inInventory={inInventory}
+        inProxy
+        inventoryType={inventoryType}
+        isEditable
+        isSelected={proxySelected[card.c.Id]?.print}
+        q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
+        softUsedMax={softUsedMax}
+      />
       <ResultCryptTableRowCommon
         card={card.c}
         handleClick={handleClick}

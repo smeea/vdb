@@ -23,7 +23,7 @@ const Account = () => {
             <div className="flex min-w-[20px] justify-center">
               <PersonFill width="20" height="20" viewBox="0 0 16 16" />
             </div>
-            <div className="text-xl">Logged as: &lt;{username}&gt;</div>
+            <div className="text-lg">Logged as: &lt;{username}&gt;</div>
           </div>
           <div className="w-full space-y-6 p-2 sm:p-0">
             <div>
