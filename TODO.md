@@ -5,6 +5,7 @@
 - Events decks archive analyzing
 - Custom values for cardtypes in TWD/PDA
 - Playable by buttons to lib/crypt
+- Add deck as revision
 
 # MAYBE LATER FEATURES
 - Offline decks storage
@@ -13,10 +14,10 @@
 - Inventory/deck import in excel
 
 # IMPROVE TECHNOLOGY - FRONTEND
+- Configure vite-pwa
 - Move preconDecks to fetch+localStorage
 - Update url for playtest images to mitigate caching
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
-- Debouncing for text search query - useTimeout+useDebouncing hook https://youtu.be/0c6znExIqRw?t=118
 - Refactor fetch to useAsync+useFetch hook https://youtu.be/vrIxu-kfAUo&t=546
 - Refactor InventoryCrypt and InventoryLibrary
 - Refactor deck buttons (split in button ui and function)
@@ -24,8 +25,8 @@
 - ResultDisciplineImage class to width/size
 
 # TAILWIND MIGRATION
-- Update card-update scripts
 - Refactor or restore setShowFloatingButtons functionality
 - Test if disableOverlay is required (possible to change?)
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Library sticky hide above header
+- Fix autofocus in multiforms

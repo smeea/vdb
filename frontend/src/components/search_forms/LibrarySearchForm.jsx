@@ -19,11 +19,13 @@ import {
   LibrarySearchFormCapacity,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
-import { useFilters } from '@/hooks';
+import { useDebounce, useFilters } from '@/hooks';
 import {
   useApp,
   setLibraryResults,
   searchLibraryForm,
+  searchLibraryFormInstant,
+  searchLibraryFormDebouncable,
   clearSearchForm,
   inventoryStore,
 } from '@/context';
@@ -40,11 +42,12 @@ const LibrarySearchForm = () => {
   } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const libraryFormState = useSnapshot(searchLibraryForm);
+  const libraryFormStateInstant = useSnapshot(searchLibraryFormInstant);
+  const libraryFormStateDebouncable = useSnapshot(searchLibraryFormDebouncable);
   const { filterLibrary } = useFilters(libraryCardBase);
-
+  const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
-  const showLimit = 300;
-
+  const showLimit = 250;
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -62,13 +65,9 @@ const LibrarySearchForm = () => {
     }
   }, []);
 
-  const [error, setError] = useState(false);
-
   const handleTextChange = (event) => {
     const { name, value } = event.target;
     searchLibraryForm.text[name].value = value;
-    // TODO idk why multiforms dont work without touching cryptFormState.text[name].value;
-    if (libraryFormState.text[name].value) null;
   };
 
   const handleTextCheckboxesChange = (event) => {
@@ -172,7 +171,7 @@ const LibrarySearchForm = () => {
     }
   }, [libraryFormState, libraryCardBase]);
 
-  useEffect(() => {
+  const testInputsAndSearch = () => {
     if (!isMobile && libraryCardBase) {
       const input = sanitizeFormState('library', libraryFormState);
       if (Object.keys(input).length === 0) {
@@ -188,7 +187,19 @@ const LibrarySearchForm = () => {
         processSearch();
       }
     }
-  }, [libraryFormState, hideMissing, inventoryMode, libraryCardBase]);
+  };
+
+  useEffect(
+    () => testInputsAndSearch(),
+    [libraryFormStateInstant, hideMissing, inventoryMode, libraryCardBase]
+  );
+
+  useDebounce(() => testInputsAndSearch(), 400, [
+    libraryFormStateDebouncable,
+    hideMissing,
+    inventoryMode,
+    libraryCardBase,
+  ]);
 
   useEffect(() => {
     if (!isMobile && preresults) {

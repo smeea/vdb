@@ -126,3 +126,5 @@ export const getClan = (crypt) => {
     return null;
   }
 };
+
+export const deepClone = (v) => JSON.parse(JSON.stringify(v));

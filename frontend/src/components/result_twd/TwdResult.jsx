@@ -24,7 +24,7 @@ const TwdResult = ({ results, setResults }) => {
     libraryCardBase,
   } = useApp();
   const navigate = useNavigate();
-  const showCounterStep = 20;
+  const showCounterStep = 10;
   const deckCounter = results.length || 0;
   const [showCounter, setShowCounter] = useState(showCounterStep);
 

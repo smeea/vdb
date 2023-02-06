@@ -1,4 +1,5 @@
 import { proxy } from 'valtio';
+import { deepClone } from '@/utils';
 import defaultsPdaForm from '@/components/search_forms/forms_data/defaultsPdaForm.json';
 import defaultsTwdForm from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from '@/components/search_forms/forms_data/defaultsCryptForm.json';
@@ -7,19 +8,56 @@ import defaultsLibraryForm from '@/components/search_forms/forms_data/defaultsLi
 export const searchResults = proxy({});
 
 export const searchCryptForm = proxy({
-  ...JSON.parse(JSON.stringify(defaultsCryptForm)),
+  ...deepClone(defaultsCryptForm),
+});
+
+export const searchCryptFormDebouncable = proxy({
+  text: searchCryptForm.text,
+  disciplines: searchCryptForm.disciplines,
+});
+
+export const searchCryptFormInstant = proxy({
+  capacity: searchCryptForm.capacity,
+  clan: searchCryptForm.clan,
+  sect: searchCryptForm.sect,
+  votes: searchCryptForm.votes,
+  titles: searchCryptForm.titles,
+  group: searchCryptForm.group,
+  traits: searchCryptForm.traits,
+  set: searchCryptForm.set,
+  precon: searchCryptForm.precon,
+  artist: searchCryptForm.artist,
 });
 
 export const searchLibraryForm = proxy({
-  ...JSON.parse(JSON.stringify(defaultsLibraryForm)),
+  ...deepClone(defaultsLibraryForm),
+});
+
+export const searchLibraryFormDebouncable = proxy({
+  text: searchLibraryForm.text,
+});
+
+export const searchLibraryFormInstant = proxy({
+  type: searchLibraryForm.type,
+  discipline: searchLibraryForm.discipline,
+  blood: searchLibraryForm.blood,
+  pool: searchLibraryForm.pool,
+  capacity: searchLibraryForm.capacity,
+  clan: searchLibraryForm.clan,
+  sect: searchLibraryForm.sect,
+  title: searchLibraryForm.title,
+  traits: searchLibraryForm.traits,
+  set: searchLibraryForm.set,
+  precon: searchLibraryForm.precon,
+  artist: searchLibraryForm.artist,
 });
 
 export const searchTwdForm = proxy({
-  ...JSON.parse(JSON.stringify(defaultsTwdForm)),
+  ...deepClone(defaultsTwdForm),
 });
 
 export const searchPdaForm = proxy({
-  ...JSON.parse(JSON.stringify(defaultsPdaForm)),
+  ...deepClone(defaultsPdaForm),
 });
 
 export const setCryptResults = (v) => {
@@ -53,25 +91,42 @@ export const setQuickCard = (v) => {
 export const clearSearchForm = (target) => {
   switch (target) {
     case 'crypt':
-      Object.keys(defaultsCryptForm).map((k) => {
-        searchCryptForm[k] = JSON.parse(JSON.stringify(defaultsCryptForm[k]));
+      searchCryptForm.text[0] = deepClone(defaultsCryptForm.text[0]);
+      for (let i = 1; i < searchCryptForm.text.length; i++) {
+        searchCryptForm.text.pop();
+      }
+      searchCryptForm.votes = 'any';
+      searchCryptForm.artist = 'any';
+
+      Object.keys(defaultsCryptForm).forEach((k) => {
+        if (['text', 'votes', 'artist'].includes(k)) return;
+        Object.keys(defaultsCryptForm[k]).forEach((v) => {
+          searchCryptForm[k][v] = deepClone(defaultsCryptForm[k][v]);
+        });
       });
       break;
     case 'library':
-      Object.keys(defaultsLibraryForm).map((k) => {
-        searchLibraryForm[k] = JSON.parse(
-          JSON.stringify(defaultsLibraryForm[k])
-        );
+      searchLibraryForm.text[0] = deepClone(defaultsLibraryForm.text[0]);
+      for (let i = 1; i < searchCryptForm.text.length; i++) {
+        searchCryptForm.text.pop();
+      }
+      searchLibraryForm.artist = 'any';
+
+      Object.keys(defaultsLibraryForm).forEach((k) => {
+        if (['text', 'artist'].includes(k)) return;
+        Object.keys(defaultsLibraryForm[k]).forEach((v) => {
+          searchLibraryForm[k][v] = deepClone(defaultsLibraryForm[k][v]);
+        });
       });
       break;
     case 'twd':
       Object.keys(defaultsTwdForm).map((k) => {
-        searchTwdForm[k] = JSON.parse(JSON.stringify(defaultsTwdForm[k]));
+        searchTwdForm[k] = deepClone(defaultsTwdForm[k]);
       });
       break;
     case 'pda':
       Object.keys(defaultsPdaForm).map((k) => {
-        searchPdaForm[k] = JSON.parse(JSON.stringify(defaultsPdaForm[k]));
+        searchPdaForm[k] = deepClone(defaultsPdaForm[k]);
       });
       break;
   }

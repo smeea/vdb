@@ -1,4 +1,5 @@
 export { default as useCardImageUrl } from './useCardImageUrl.js';
+export { default as useDebounce } from './useDebounce.js';
 export { default as useDeck } from './useDeck.js';
 export { default as useDeckCrypt } from './useDeckCrypt.jsx';
 export { default as useDeckExport } from './useDeckExport.js';
@@ -10,4 +11,5 @@ export { default as useFilters } from './useFilters.js';
 export { default as useKeyDisciplines } from './useKeyDisciplines.js';
 export { default as useModalCardController } from './useModalCardController.js';
 export { default as useTags } from './useTags.js';
+export { default as useTimeout } from './useTimeout.js';
 export { default as useWindowSize } from './useWindowSize.js';

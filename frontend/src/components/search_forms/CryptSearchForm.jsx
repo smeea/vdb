@@ -19,11 +19,13 @@ import {
   CryptSearchFormTraits,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
-import { useFilters } from '@/hooks';
+import { useDebounce, useFilters } from '@/hooks';
 import {
   useApp,
   setCryptResults,
   searchCryptForm,
+  searchCryptFormInstant,
+  searchCryptFormDebouncable,
   clearSearchForm,
   inventoryStore,
 } from '@/context';
@@ -40,11 +42,12 @@ const CryptSearchForm = () => {
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const cryptFormState = useSnapshot(searchCryptForm);
+  const cryptFormStateInstant = useSnapshot(searchCryptFormInstant);
+  const cryptFormStateDebouncable = useSnapshot(searchCryptFormDebouncable);
   const { filterCrypt } = useFilters(cryptCardBase);
-
+  const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
-  const showLimit = 300;
-
+  const showLimit = 250;
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -62,13 +65,9 @@ const CryptSearchForm = () => {
     }
   }, []);
 
-  const [error, setError] = useState(false);
-
   const handleTextChange = (event) => {
     const { name, value } = event.target;
     searchCryptForm.text[name].value = value;
-    // TODO idk why multiforms dont work without touching cryptFormState.text[name].value;
-    if (cryptFormState.text[name].value) null;
   };
 
   const handleTextCheckboxesChange = (event) => {
@@ -182,7 +181,7 @@ const CryptSearchForm = () => {
     }
   }, [cryptFormState, cryptCardBase]);
 
-  useEffect(() => {
+  const testInputsAndSearch = () => {
     if (!isMobile && cryptCardBase) {
       const input = sanitizeFormState('crypt', cryptFormState);
       if (Object.keys(input).length === 0) {
@@ -198,7 +197,19 @@ const CryptSearchForm = () => {
         processSearch();
       }
     }
-  }, [cryptFormState, hideMissing, inventoryMode, cryptCardBase]);
+  };
+
+  useEffect(
+    () => testInputsAndSearch(),
+    [cryptFormStateInstant, hideMissing, inventoryMode, cryptCardBase]
+  );
+
+  useDebounce(() => testInputsAndSearch(), 400, [
+    cryptFormStateDebouncable,
+    hideMissing,
+    inventoryMode,
+    cryptCardBase,
+  ]);
 
   useEffect(() => {
     if (!isMobile && preresults) {
