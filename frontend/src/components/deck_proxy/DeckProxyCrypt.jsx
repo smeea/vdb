@@ -33,7 +33,6 @@ const DeckProxyCrypt = ({
 
   const cryptTotalSelected = countCards(proxiesToPrint);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,

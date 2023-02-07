@@ -4,12 +4,12 @@ import {
   DeckCardQuantity,
   ConditionalTooltip,
 } from '@/components';
+import { useApp } from '@/context';
 
 const DeckCardQuantityTd = ({
   card,
   cardChange,
   deckid,
-  disabledTooltip,
   hardUsedTotal,
   inInventory,
   inMissing,
@@ -20,6 +20,8 @@ const DeckCardQuantityTd = ({
   q,
   softUsedMax,
 }) => {
+  const { inventoryMode } = useApp();
+
   return (
     <td
       className={
@@ -31,7 +33,7 @@ const DeckCardQuantityTd = ({
       <ConditionalTooltip
         placement="bottom"
         overlay={<UsedPopover cardid={card.Id} />}
-        disabled={disabledTooltip}
+        disabled={!inventoryMode}
       >
         <DeckCardQuantity
           card={card}

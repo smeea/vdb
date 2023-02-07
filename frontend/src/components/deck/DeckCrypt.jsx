@@ -75,7 +75,6 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
           maxDisciplines={maxDisciplines}
           inSearch={inSearch}
           inMissing={inMissing}
-          isModalOpen={shouldShowModal}
         />
       </div>
       {Object.keys(cryptSide).length > 0 && (
@@ -92,7 +91,6 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
             nonKeyDisciplines={nonKeyDisciplines}
             inSearch={inSearch}
             inMissing={inMissing}
-            isModalOpen={shouldShowModal}
           />
         </div>
       )}

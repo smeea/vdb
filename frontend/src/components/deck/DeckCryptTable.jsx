@@ -1,6 +1,5 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { DeckCryptTableRow } from '@/components';
-import { useApp } from '@/context';
 
 const DeckCryptTable = ({
   deck,
@@ -14,14 +13,8 @@ const DeckCryptTable = ({
   handleModalCardOpen,
   inSearch,
   inMissing,
-  isModalOpen,
 }) => {
-  const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
-
-  const disableOverlay = useMemo(
-    () => isMobile || (!isDesktop && isModalOpen),
-    [isMobile, isDesktop, isModalOpen]
-  );
+  const { setShowFloatingButtons } = useApp();
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
@@ -31,7 +24,6 @@ const DeckCryptTable = ({
             <DeckCryptTableRow
               key={card.c.Id}
               idx={idx}
-              disableOverlay={disableOverlay}
               handleClick={handleModalCardOpen}
               card={card}
               deck={deck}

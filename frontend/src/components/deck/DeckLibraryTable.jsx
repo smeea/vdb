@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { DeckLibraryTableRow } from '@/components';
 import { useApp } from '@/context';
 
@@ -10,9 +10,8 @@ const DeckLibraryTable = ({
   handleModalCardOpen,
   inSearch,
   inMissing,
-  isModalOpen,
 }) => {
-  const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
+  const { setShowFloatingButtons } = useApp();
 
   cards.sort((a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {
@@ -23,11 +22,6 @@ const DeckLibraryTable = ({
     }
   });
 
-  const disableOverlay = useMemo(
-    () => isMobile || (!isDesktop && isModalOpen),
-    [isMobile, isDesktop, isModalOpen]
-  );
-
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
@@ -36,7 +30,6 @@ const DeckLibraryTable = ({
             <DeckLibraryTableRow
               key={card.c.Id}
               idx={idx}
-              disableOverlay={disableOverlay}
               handleClick={handleModalCardOpen}
               card={card}
               deck={deck}

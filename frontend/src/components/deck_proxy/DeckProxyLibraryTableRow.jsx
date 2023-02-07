@@ -19,7 +19,7 @@ const DeckProxyLibraryTableRow = ({
   card,
   idx,
 }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const { isMobile } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
   const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
@@ -49,7 +49,6 @@ const DeckProxyLibraryTableRow = ({
         card={card.c}
         cardChange={handleProxyCounter}
         deckid={null}
-        disabledTooltip={disableOverlay || !inventoryMode}
         hardUsedTotal={hardUsedTotal}
         inInventory={inInventory}
         inProxy

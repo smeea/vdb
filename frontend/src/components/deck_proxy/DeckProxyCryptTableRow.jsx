@@ -22,7 +22,7 @@ const DeckProxyCryptTableRow = ({
   idx,
   handleClick,
 }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const { isMobile } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
@@ -52,7 +52,6 @@ const DeckProxyCryptTableRow = ({
         card={card.c}
         cardChange={handleProxyCounter}
         deckid={null}
-        disabledTooltip={!inventoryMode}
         hardUsedTotal={hardUsedTotal}
         inInventory={inInventory}
         inProxy

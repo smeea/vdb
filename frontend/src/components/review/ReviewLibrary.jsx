@@ -76,7 +76,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
         trifleTotal={cardtype === MASTER && trifleTotal}
       />
       <DiffLibraryTable
-        isAuthor
+        isEditable
         cardChange={cardChange}
         handleModalCardOpen={handleModalSideCardOpen}
         cards={librarySideByType[cardtype]}

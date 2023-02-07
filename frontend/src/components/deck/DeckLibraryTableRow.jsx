@@ -20,7 +20,6 @@ import { getSoftMax, getHardTotal } from '@/utils';
 
 const DeckLibraryTableRow = ({
   idx,
-  disableOverlay,
   handleClick,
   card,
   deck,
@@ -115,7 +114,6 @@ const DeckLibraryTableRow = ({
         card={card.c}
         cardChange={deckCardChange}
         deckid={deckid}
-        disabledTooltip={disableOverlay || !inventoryMode}
         hardUsedTotal={hardUsedTotal}
         inInventory={inInventory}
         inMissing={inMissing}
