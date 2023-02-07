@@ -97,7 +97,7 @@ const ResultLayoutTextRulings = ({ rulings }) => {
     );
   });
 
-  return <ul className="space-y-2">{Rulings}</ul>;
+  return <ul className="text-sm space-y-2">{Rulings}</ul>;
 };
 
 export default ResultLayoutTextRulings;

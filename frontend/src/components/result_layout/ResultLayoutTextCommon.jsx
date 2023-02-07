@@ -18,13 +18,13 @@ const ResultLayoutTextCommon = ({
 
   return (
     <div className="space-y-3">
-      <div className="space-x-2">
+      <div className="flex gap-2">
         <b>Sets:</b>
         <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
       </div>
-      <div className="space-x-2">
+      <div className="flex gap-2">
         <b>Artist:</b>
-        <div className="inline space-x-2.5">
+        <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
           <ResultLayoutTextArtist
             handleClose={handleClose}
             inCrypt={card.Id > 200000}
@@ -35,9 +35,7 @@ const ResultLayoutTextCommon = ({
       {Object.keys(card['Rulings']).length > 0 && (
         <div className="space-y-1">
           <b>Rulings:</b>
-          <div className="text-xs">
-            <ResultLayoutTextRulings rulings={card['Rulings']} />
-          </div>
+          <ResultLayoutTextRulings rulings={card['Rulings']} />
         </div>
       )}
       {(forceInventoryMode || inventoryMode) && (

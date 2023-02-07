@@ -17,11 +17,18 @@ import {
 const Tooltip = ({
   children,
   className = 'inline',
+  size = 'md',
   overlay,
   noPadding,
   placement = 'right',
 }) => {
-  // TODO add sizing as in modals for other than max-w-[800px]
+  // TODO customize width (maybe less steps/variants is OK?)
+  const widthClass = {
+    sm: 'max-w-full sm:max-w-[65%] md:max-w-[50%] lg:max-w-[45%] xl:max-w-[35%] 2xl:max-w-[25%]',
+    md: 'max-w-full sm:max-w-[80%] md:max-w-[65%] lg:max-w-[55%] xl:max-w-[45%] 2xl:max-w-[40%]',
+    lg: 'max-w-full sm:max-w-[80%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] 2xl:max-w-[55%]',
+    xl: 'max-w-full sm:max-w-[80%] md:max-w-[95%] lg:max-w-[85%] xl:max-w-[75%] 2xl:max-w-[70%]',
+  };
 
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
@@ -76,9 +83,10 @@ const Tooltip = ({
       <FloatingPortal>
         {open && (
           <div
-            className={`z-50 max-w-[800px] rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark ${
+            className={`z-50 rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark ${
               noPadding ? '' : 'p-3'
-            }`}
+            } ${widthClass[size]}
+`}
             ref={floating}
             style={{
               position: strategy,

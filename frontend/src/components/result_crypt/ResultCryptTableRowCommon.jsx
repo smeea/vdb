@@ -28,8 +28,13 @@ const ResultCryptTableRowCommon = ({
 
   return (
     <>
-      <td className="min-w-[25px]" onClick={() => handleClick(card)}>
-        <ResultCryptCapacity card={card} />
+      <td
+        className="min-w-[25px] md:min-w-[35px]"
+        onClick={() => handleClick(card)}
+      >
+        <div className="flex items-center justify-center">
+          <ResultCryptCapacity card={card} />
+        </div>
       </td>
       {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
         <td className="min-w-[170px]" onClick={() => handleClick(card)}>
@@ -56,12 +61,12 @@ const ResultCryptTableRowCommon = ({
           disabled={isMobile}
           noPadding
         >
-          <div className="flex">
+          <div className="flex px-1">
             <ResultCryptName card={card} />
           </div>
         </ConditionalTooltip>
       </td>
-      {isWide ? (
+      {isWide && !inSearch ? (
         <>
           <td className="min-w-[25px]" onClick={() => handleClick(card)}>
             {card.Title && <ResultCryptTitle value={card.Title} />}

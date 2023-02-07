@@ -68,7 +68,7 @@ const ResultCryptTableRow = ({
   return (
     <tr
       {...swipeHandlers}
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
+      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
       {(inRecommendation ? isEditable : isEditable && addMode) && (
         <td className="min-w-[22px]">

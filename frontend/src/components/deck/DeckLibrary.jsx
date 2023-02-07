@@ -11,7 +11,7 @@ import { MASTER } from '@/utils/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DeckLibrary = ({ deck, inSearch, inMissing }) => {
-  const { isMobile, isNarrow } = useApp();
+  const { setShowFloatingButtons, isMobile, isNarrow } = useApp();
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
   const [showInfo, setShowInfo] = useState(false);

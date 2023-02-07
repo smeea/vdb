@@ -27,7 +27,7 @@ const DeckCardQuantityTd = ({
       className={
         isEditable
           ? 'min-w-[75px]'
-          : 'min-w-[40px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark'
+          : 'min-w-[30px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark'
       }
     >
       <ConditionalTooltip

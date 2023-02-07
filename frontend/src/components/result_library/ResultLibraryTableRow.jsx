@@ -62,7 +62,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx }) => {
   return (
     <tr
       {...swipeHandlers}
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
+      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
       {isEditable && addMode && (
         <td>

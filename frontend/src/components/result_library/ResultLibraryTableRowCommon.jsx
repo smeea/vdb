@@ -47,7 +47,7 @@ const Name = ({ card, handleClick }) => {
         disabled={isMobile}
         noPadding
       >
-        <div className="flex">
+        <div className="flex px-1">
           <ResultLibraryName card={card} />
         </div>
       </ConditionalTooltip>
@@ -57,7 +57,10 @@ const Name = ({ card, handleClick }) => {
 
 const Disciplines = ({ card, handleClick }) => {
   return (
-    <td className="min-w-[90px]" onClick={() => handleClick(card)}>
+    <td
+      className="min-w-[60px] md:min-w-[90px]"
+      onClick={() => handleClick(card)}
+    >
       <div className="flex items-center justify-center">
         {card.Clan && <ResultLibraryClan value={card.Clan} />}
         {card.Discipline && card.Clan && '+'}

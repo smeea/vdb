@@ -5,7 +5,7 @@ const ResultLibraryDisciplines = ({ value }) => {
   if (value.indexOf('&') != -1) {
     const disciplines = value.split(' & ');
     return (
-      <div className="flex items-center">
+      <div className="flex flex-wrap items-center justify-center">
         <ResultDisciplineImage className="w-[22px]" value={disciplines[0]} />+
         <ResultDisciplineImage className="w-[22px]" value={disciplines[1]} />
       </div>
@@ -13,7 +13,7 @@ const ResultLibraryDisciplines = ({ value }) => {
   } else if (value.indexOf('/') != -1) {
     const disciplines = value.split('/');
     return (
-      <div className="flex items-center">
+      <div className="flex flex-wrap items-center justify-center">
         {disciplines.map((d, idx) => {
           return (
             <React.Fragment key={idx}>

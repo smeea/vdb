@@ -94,7 +94,7 @@ const DeckCryptTableRow = ({
   return (
     <tr
       {...swipeHandlers}
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
+      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
       {inventoryMode &&
         deck.inventoryType &&

@@ -11,8 +11,8 @@ const ResultCryptClanGroupTitle = ({ card }) => {
       <div className="flex justify-center">
         <ResultClanImage value={card.Clan} />
       </div>
-      <div className="flex justify-between space-x-1 text-xs">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="flex justify-between space-x-1 font-bold text-sm">
+        <div className="text-fgSecondary dark:text-fgSecondaryDark">
           {card.Title && <ResultCryptTitle value={card.Title} />}
         </div>
         <ResultCryptGroup value={card.Group} />

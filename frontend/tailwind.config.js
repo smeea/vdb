@@ -15,8 +15,8 @@ module.exports = {
       square: 'square',
     },
     fontSize: {
-      xs: ['13px', '20px'],
-      sm: ['15px', '22px'],
+      xs: ['11px', '14px'],
+      sm: ['13px', '18px'],
       base: ['16px', '24px'],
       lg: ['18px', '28px'],
       xl: ['20px', '28px'],
@@ -24,7 +24,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       black: '#000000',
-      blue: '#0000ff',
+      blue: '#0000aa',
       bgPrimary: '#ffffff',
       bgPrimaryDark: '#252530',
       fgPrimary: '#353595',

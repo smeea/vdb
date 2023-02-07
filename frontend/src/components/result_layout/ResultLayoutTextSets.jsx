@@ -30,12 +30,12 @@ const PreconsDetailed = ({ sets, set }) => {
 
 const PopoverText = ({ sets, set }) => {
   return (
-    <div className="max-w-[400px] space-y-1 text-sm">
+    <div className="max-w-[400px] space-y-1">
       <b>{setsAndPrecons[set].name}</b>
       {set !== 'POD' &&
         set !== 'Promo' &&
         ' - ' + setsAndPrecons[set].date.slice(0, 4)}
-      <ul className="space-y-1 text-xs">
+      <ul className="space-y-1">
         <PreconsDetailed sets={sets} set={set} />
       </ul>
     </div>
@@ -87,7 +87,7 @@ const ResultLayoutTextSets = ({ sets, setImageSet }) => {
 
   return (
     <>
-      <div className="inline space-x-2.5">
+      <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
         <Sets
           sets={sets}
           setImageSet={setImageSet}

@@ -15,24 +15,15 @@ const Modal = ({
   // bordered = false,
 }) => {
   const { isNarrow } = useApp();
-
-  // TODO unfocus close
   // TODO close with Esc
 
-  const getWidth = (s) => {
-    switch (s) {
-      case 'sm':
-        return 'min-w-full sm:min-w-[65%] md:min-w-[50%] lg:min-w-[45%] xl:min-w-[35%] 2xl:min-w-[25%]';
-      case 'md':
-        return 'min-w-full sm:min-w-[80%] md:min-w-[65%] lg:min-w-[55%] xl:min-w-[45%] 2xl:min-w-[40%]';
-      case 'lg':
-        return 'min-w-full sm:min-w-full md:min-w-[80%] lg:min-w-[70%] xl:min-w-[60%] 2xl:min-w-[55%]';
-      case 'xl':
-        return 'min-w-full sm:min-w-full md:min-w-[95%] lg:min-w-[85%] xl:min-w-[75%] 2xl:min-w-[70%]';
-    }
+  // TODO customize width (maybe less steps/variants is OK?)
+  const widthClass = {
+    sm: 'min-w-full sm:min-w-[65%] md:min-w-[50%] lg:min-w-[45%] xl:min-w-[35%] 2xl:min-w-[25%]',
+    md: 'min-w-full sm:min-w-[80%] md:min-w-[65%] lg:min-w-[55%] xl:min-w-[45%] 2xl:min-w-[40%]',
+    lg: 'min-w-full sm:min-w-full md:min-w-[80%] lg:min-w-[70%] xl:min-w-[60%] 2xl:min-w-[55%]',
+    xl: 'min-w-full sm:min-w-full md:min-w-[95%] lg:min-w-[85%] xl:min-w-[75%] 2xl:min-w-[70%]',
   };
-
-  const widthClass = getWidth(size);
 
   return (
     <Dialog
@@ -51,7 +42,9 @@ const Modal = ({
         }`}
       >
         <Dialog.Panel
-          className={`${widthClass} rounded border border-bgSecondary bg-bgPrimary ${
+          className={`${
+            widthClass[size]
+          } rounded border border-bgSecondary bg-bgPrimary ${
             noPadding ? '' : 'p-3 sm:p-5'
           } dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
         >
