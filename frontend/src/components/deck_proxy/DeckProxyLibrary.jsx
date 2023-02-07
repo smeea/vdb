@@ -38,7 +38,6 @@ const DeckProxyLibrary = ({
 
   const libraryTotalSelected = countCards(proxiesToPrint);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -47,6 +46,21 @@ const DeckProxyLibrary = ({
     handleModalCardChange,
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
+
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClickSide = (card) => {
+    handleModalSideCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
+  };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype}>
@@ -59,7 +73,7 @@ const DeckProxyLibrary = ({
       </div>
       <DeckProxyLibraryTable
         inventoryType={deck.inventoryType}
-        handleModalCardOpen={handleModalCardOpen}
+        handleClick={handleClick}
         cards={libraryByType[cardtype]}
         handleProxySelector={handleProxySelector}
         handleSetSelector={handleSetSelector}
@@ -78,7 +92,7 @@ const DeckProxyLibrary = ({
       />
       <DeckProxyLibraryTable
         inventoryType={deck.inventoryType}
-        handleModalCardOpen={handleModalSideCardOpen}
+        handleClick={handleClickSide}
         cards={librarySideByType[cardtype]}
         handleProxySelector={handleProxySelector}
         handleSetSelector={handleSetSelector}
@@ -104,7 +118,7 @@ const DeckProxyLibrary = ({
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
           bordered
         />
       )}

@@ -37,6 +37,21 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClickSide = (card) => {
+    handleModalSideCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
+  };
+
   return (
     <>
       <DeckCryptHeader
@@ -50,7 +65,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         deckid={deckid}
       />
       <DiffCryptTable
-        handleModalCardOpen={handleModalCardOpen}
+        handleClick={handleClick}
         deckid={deckid}
         cards={sortedCards}
         cardsFrom={cardsFrom}
@@ -69,7 +84,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
             Side Crypt
           </div>
           <DiffCryptTable
-            handleModalCardOpen={handleModalSideCardOpen}
+            handleClick={handleClickSide}
             deckid={deckid}
             cards={sortedCardsSide}
             cardsFrom={cardsFrom}
@@ -86,7 +101,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </>

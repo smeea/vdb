@@ -9,7 +9,12 @@ import {
 } from '@/hooks';
 
 const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
-  const { cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
+  const {
+    setShowFloatingButtons,
+    cryptDeckSort,
+    changeCryptDeckSort,
+    isMobile,
+  } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
@@ -39,6 +44,21 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClickSide = (card) => {
+    handleModalSideCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
+  };
+
   return (
     <div
       className={`flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 ${
@@ -61,7 +81,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
         />
         <DeckCryptTable
           deck={deck}
-          handleModalCardOpen={handleModalCardOpen}
+          handleClick={handleClick}
           cards={
             inMissing
               ? useDeckCrypt(deck.crypt, 'Name')['sortedCards']
@@ -84,7 +104,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
           </div>
           <DeckCryptTable
             deck={deck}
-            handleModalCardOpen={handleModalSideCardOpen}
+            handleClick={handleClickSide}
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             keyDisciplines={keyDisciplines}
@@ -98,7 +118,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </div>

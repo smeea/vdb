@@ -42,6 +42,21 @@ const DeckProxyCrypt = ({
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClickSide = (card) => {
+    handleModalSideCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
+  };
+
   return (
     <>
       <div className="flex min-h-[38px] items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
@@ -49,7 +64,7 @@ const DeckProxyCrypt = ({
       </div>
       <DeckProxyCryptTable
         inventoryType={deck.inventoryType}
-        handleModalCardOpen={handleModalCardOpen}
+        handleClick={handleClick}
         cards={sortedCards}
         handleProxySelector={handleProxySelector}
         handleSetSelector={handleSetSelector}
@@ -63,7 +78,7 @@ const DeckProxyCrypt = ({
           </div>
           <DeckProxyCryptTable
             inventoryType={deck.inventoryType}
-            handleModalCardOpen={handleModalSideCardOpen}
+            handleClick={handleClickSide}
             cards={sortedCardsSide}
             handleProxySelector={handleProxySelector}
             handleSetSelector={handleSetSelector}
@@ -76,7 +91,7 @@ const DeckProxyCrypt = ({
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
           bordered
         />
       )}

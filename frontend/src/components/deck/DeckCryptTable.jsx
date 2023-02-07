@@ -10,12 +10,10 @@ const DeckCryptTable = ({
   cards,
   showInfo,
   cryptTotal,
-  handleModalCardOpen,
+  handleClick,
   inSearch,
   inMissing,
 }) => {
-  const { setShowFloatingButtons } = useApp();
-
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
@@ -24,7 +22,7 @@ const DeckCryptTable = ({
             <DeckCryptTableRow
               key={card.c.Id}
               idx={idx}
-              handleClick={handleModalCardOpen}
+              handleClick={handleClick}
               card={card}
               deck={deck}
               disciplinesSet={disciplinesSet}

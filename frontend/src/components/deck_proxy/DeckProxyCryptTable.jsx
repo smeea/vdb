@@ -3,7 +3,7 @@ import { DeckProxyCryptTableRow } from '@/components';
 import { useKeyDisciplines } from '@/hooks';
 
 const DeckProxyCryptTable = ({
-  handleModalCardOpen,
+  handleClick,
   inventoryType,
   cards,
   proxySelected,
@@ -28,7 +28,7 @@ const DeckProxyCryptTable = ({
               maxDisciplines={maxDisciplines}
               card={card}
               idx={idx}
-              handleClick={handleModalCardOpen}
+              handleClick={handleClick}
               proxySelected={proxySelected}
               handleProxySelector={handleProxySelector}
               handleProxyCounter={handleProxyCounter}

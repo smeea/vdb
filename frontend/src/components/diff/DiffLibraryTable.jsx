@@ -1,6 +1,5 @@
 import React from 'react';
 import { DiffLibraryTableRow } from '@/components';
-import { useApp } from '@/context';
 
 const DiffLibraryTable = ({
   cardChange,
@@ -11,15 +10,8 @@ const DiffLibraryTable = ({
   isEditable,
   showInfo,
   libraryTotal,
-  handleModalCardOpen,
+  handleClick,
 }) => {
-  const { setShowFloatingButtons } = useApp();
-
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
-
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>

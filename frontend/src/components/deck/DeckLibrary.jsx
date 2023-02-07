@@ -40,6 +40,21 @@ const DeckLibrary = ({ deck, inSearch, inMissing }) => {
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClickSide = (card) => {
+    handleModalSideCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
+  };
+
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
     <div key={cardtype}>
       <div className="flex justify-between">
@@ -59,7 +74,7 @@ const DeckLibrary = ({ deck, inSearch, inMissing }) => {
       </div>
       <DeckLibraryTable
         deck={deck}
-        handleModalCardOpen={handleModalCardOpen}
+        handleClick={handleClick}
         libraryTotal={libraryTotal}
         showInfo={showInfo}
         cards={libraryByType[cardtype]}
@@ -77,7 +92,7 @@ const DeckLibrary = ({ deck, inSearch, inMissing }) => {
       />
       <DeckLibraryTable
         deck={deck}
-        handleModalCardOpen={handleModalSideCardOpen}
+        handleClick={handleClickSide}
         cards={librarySideByType[cardtype]}
         inMissing={inMissing}
         placement={isNarrow ? 'bottom' : 'right'}
@@ -125,7 +140,7 @@ const DeckLibrary = ({ deck, inSearch, inMissing }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </div>

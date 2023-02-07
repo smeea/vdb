@@ -3,7 +3,7 @@ import { DeckProxyLibraryTableRow } from '@/components';
 
 const DeckProxyLibraryTable = ({
   inventoryType,
-  handleModalCardOpen,
+  handleClick,
   cards,
   proxySelected,
   handleProxySelector,
@@ -20,7 +20,7 @@ const DeckProxyLibraryTable = ({
               inventoryType={inventoryType}
               card={card}
               idx={idx}
-              handleClick={handleModalCardOpen}
+              handleClick={handleClick}
               proxySelected={proxySelected}
               handleProxySelector={handleProxySelector}
               handleProxyCounter={handleProxyCounter}

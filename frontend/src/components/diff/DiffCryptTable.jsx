@@ -1,6 +1,5 @@
 import React from 'react';
 import { DiffCryptTableRow } from '@/components';
-import { useApp } from '@/context';
 
 const DiffCryptTable = ({
   cardChange,
@@ -11,19 +10,12 @@ const DiffCryptTable = ({
   isEditable,
   showInfo,
   cryptTotal,
-  handleModalCardOpen,
+  handleClick,
   disciplinesSet,
   keyDisciplines,
   nonKeyDisciplines,
   maxDisciplines,
 }) => {
-  const { setShowFloatingButtons } = useApp();
-
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
-
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>

@@ -1,18 +1,15 @@
 import React from 'react';
 import { DeckLibraryTableRow } from '@/components';
-import { useApp } from '@/context';
 
 const DeckLibraryTable = ({
   deck,
   cards,
   showInfo,
   libraryTotal,
-  handleModalCardOpen,
+  handleClick,
   inSearch,
   inMissing,
 }) => {
-  const { setShowFloatingButtons } = useApp();
-
   cards.sort((a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {
       return -1;
@@ -30,7 +27,7 @@ const DeckLibraryTable = ({
             <DeckLibraryTableRow
               key={card.c.Id}
               idx={idx}
-              handleClick={handleModalCardOpen}
+              handleClick={handleClick}
               card={card}
               deck={deck}
               showInfo={showInfo}
