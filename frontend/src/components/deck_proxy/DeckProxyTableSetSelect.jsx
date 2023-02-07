@@ -9,7 +9,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
     {
       value: '',
       id: card.Id,
-      label: <div className="text-xs">Newest (default)</div>,
+      label: <div className="text-sm">Newest (default)</div>,
     },
   ];
 
@@ -19,7 +19,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
         value: i.toLowerCase(),
         id: card.Id,
         label: (
-          <div className="text-xs">
+          <div className="text-sm">
             {setsAndPrecons[i].name}
             {setsAndPrecons[i].date
               ? ` '${setsAndPrecons[i].date.slice(2, 4)}`

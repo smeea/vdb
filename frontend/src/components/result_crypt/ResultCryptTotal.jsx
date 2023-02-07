@@ -48,7 +48,7 @@ const ResultCryptTotal = ({
               {byGroups[k]}
               {!inHoF && (
                 <div
-                  className="flex justify-center text-xs"
+                  className="flex justify-center text-sm"
                   title="Average Capacity"
                 >
                   ~

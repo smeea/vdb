@@ -80,7 +80,7 @@ const SearchAdditionalFormsText = ({
                 {options.map((opt, index) => {
                   return (
                     <Checkbox
-                      className="text-xs"
+                      className="text-sm"
                       key={`${i}-${index}`}
                       prefix="text"
                       name={i}

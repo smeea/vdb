@@ -44,7 +44,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                     inventoryMode ? (isWide ? 28 : 23) : 32
                   )}
                 </div>
-                <div className="flex items-center  text-xs">
+                <div className="flex items-center space-x-1">
                   {inventoryMode && (
                     <div>
                       {decks[i].inventoryType == 's' && <Shuffle />}
@@ -52,7 +52,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                       {!decks[i].inventoryType && <At />}
                     </div>
                   )}
-                  {lastEdit}
+                  <div className="text-sm">{lastEdit}</div>
                 </div>
               </div>
             ),
@@ -91,7 +91,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           label: (
             <div className="flex items-center justify-between">
               <div className="inline">{decks[deckid].name}</div>
-              <div className="flex items-center  text-xs">
+              <div className="flex items-center space-x-1">
                 {inventoryMode && (
                   <div>
                     {decks[deckid].inventoryType == 's' && <Shuffle />}
@@ -99,9 +99,11 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                     {!decks[deckid].inventoryType && <At />}
                   </div>
                 )}
-                {new Date(decks[deckid]['timestamp'])
-                  .toISOString()
-                  .slice(0, 10)}
+                <div className="text-sm">
+                  {new Date(decks[deckid]['timestamp'])
+                    .toISOString()
+                    .slice(0, 10)}
+                </div>
               </div>
             </div>
           ),

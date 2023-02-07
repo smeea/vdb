@@ -1,9 +1,13 @@
 import React from 'react';
 import Hammer from '@/assets/images/icons/hammer.svg';
 
-const ResultLibraryName = ({ card }) => {
+const ResultLibraryName = ({ card, colored = true }) => {
   return (
-    <div className="inline space-x-1 text-fgName dark:text-fgNameDark">
+    <div
+      className={`inline space-x-1 ${
+        colored ? 'text-fgName dark:text-fgNameDark' : ''
+      }`}
+    >
       <div className={`inline ${card.Banned ? 'line-through' : ''}`}>
         {card['Name']}
       </div>

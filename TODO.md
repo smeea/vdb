@@ -27,4 +27,3 @@
 # TAILWIND MIGRATION
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Library sticky hide above header
-- Tables items alignment

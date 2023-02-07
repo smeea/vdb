@@ -2,33 +2,23 @@ import React from 'react';
 import { ResultClanImage } from '@/components';
 
 const ResultLibraryClan = ({ value }) => {
-  let clanImages = null;
-
-  if (value.indexOf('/') != -1) {
-    const clans = value.split('/');
-    let items = clans.length;
-    clanImages = clans.map((clan, index) => {
-      if (items > 1) {
-        items -= 1;
-        return (
-          <React.Fragment key={index}>
+  const clans = value.split('/');
+  return (
+    <>
+      {clans.map((clan, idx) => (
+        <React.Fragment key={idx}>
+          {idx + 1 < clans.length ? (
+            <>
+              <ResultClanImage value={clan} />
+              <div className="px-0.5">/</div>
+            </>
+          ) : (
             <ResultClanImage value={clan} />
-            {' / '}
-          </React.Fragment>
-        );
-      } else {
-        return (
-          <React.Fragment key={index}>
-            <ResultClanImage value={clan} />
-          </React.Fragment>
-        );
-      }
-    });
-  } else if (value) {
-    clanImages = <ResultClanImage value={value} />;
-  }
-
-  return <>{clanImages}</>;
+          )}
+        </React.Fragment>
+      ))}
+    </>
+  );
 };
 
 export default ResultLibraryClan;

@@ -49,7 +49,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         label: (
           <div className="flex items-center justify-between">
             <div>{fullName}</div>
-            {year && <div className="text-xs">{`'${year}`}</div>}
+            {year && <div className="text-sm">{`'${year}`}</div>}
           </div>
         ),
       });
@@ -142,7 +142,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             return (
               <Checkbox
                 key={i.value}
-                className="text-xs"
+                className="text-sm"
                 name={name}
                 value={i.value}
                 label={i.label}
@@ -180,7 +180,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             return (
               <Checkbox
                 key={i.value}
-                className="text-xs"
+                className="text-sm"
                 name={name}
                 value={i.value}
                 label={i.label}

@@ -70,7 +70,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx }) => {
         </td>
       )}
       {inventoryMode && (
-        <td className="min-w-[40px]">
+        <td className="min-w-[60px]">
           <ResultUsed card={card} />
         </td>
       )}

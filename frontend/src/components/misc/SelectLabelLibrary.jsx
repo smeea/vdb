@@ -30,7 +30,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
             </div>
           )}
           <ResultLibraryTypeImage value={card.Type} />
-          <ResultLibraryName card={card} />
+          <ResultLibraryName card={card} colored={false} />
         </div>
         <div className="flex items-center space-x-2">
           <div>

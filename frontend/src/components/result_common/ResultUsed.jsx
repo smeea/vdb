@@ -25,16 +25,18 @@ const ResultUsed = ({ card }) => {
     >
       {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
         <div
-          className={`mx-1 flex items-center justify-between px-0.5 ${
+          className={`mx-1 flex items-center space-x-1 px-0.5 ${
             inInventory < softUsedMax + hardUsedTotal
               ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
               : ''
           }
                   `}
         >
-          <div className="text-lg">{inInventory}</div>
+          <div className="flex basis-full justify-center text-lg">
+            {inInventory}
+          </div>
           <div
-            className={`text-xs ${
+            className={`flex basis-full justify-center text-sm ${
               inInventory >= softUsedMax + hardUsedTotal
                 ? 'text-midGray dark:text-midGrayDark'
                 : 'text-[#fff] dark:text-[#fff]'

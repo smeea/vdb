@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import EyeFill from '@/assets/images/icons/eye-fill.svg';
-import GiftFill from '@/assets/images/icons/gift-fill.svg';
 import {
   DeckCrypt,
   DeckLibrary,
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
-  ResultLibraryClan,
+  ResultPreconClan,
   Tooltip,
 } from '@/components';
 import { useDeckInInventory } from '@/hooks';
@@ -20,20 +19,6 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
   const [set, precon] = deck.deckid.split(':');
   const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
-  const clanImages = clans.map((clan, idx) => {
-    return (
-      <div className="inline" key={idx}>
-        {clan === 'Bundle' ? (
-          <div className="inline dark:brightness-[0.65]">
-            <GiftFill />
-          </div>
-        ) : clan === 'Mix' ? null : (
-          <ResultLibraryClan value={clan} />
-        )}
-      </div>
-    );
-  });
-
   return (
     <tr
       className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
@@ -45,7 +30,13 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
       {!isMobile && (
         <td className="min-w-[50px] sm:min-w-[70px]">
           <div className="flex justify-center">
-            {clanImages.length > 0 && clanImages}
+            {clans.length > 0 && (
+              <>
+                {clans.map((clan) => (
+                  <ResultPreconClan key={clan} clan={clan} />
+                ))}
+              </>
+            )}
           </div>
         </td>
       )}
@@ -99,7 +90,7 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
         {isMobile ? (
           <>
             <div>{setsAndPrecons[set].name}</div>
-            <div className="flex justify-end text-xs">
+            <div className="flex justify-end text-sm">
               {setsAndPrecons[set].date.slice(0, 4)}
             </div>
           </>

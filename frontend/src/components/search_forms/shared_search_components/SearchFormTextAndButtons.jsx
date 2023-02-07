@@ -107,7 +107,7 @@ const SearchFormTextAndButtons = ({
             {options.map((opt, idx) => {
               return (
                 <Checkbox
-                  className="text-xs"
+                  className="text-sm"
                   key={idx}
                   prefix="text"
                   name={0}

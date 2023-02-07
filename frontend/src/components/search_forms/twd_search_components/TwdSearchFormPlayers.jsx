@@ -47,7 +47,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
               onChange={onChange}
             />
           </div>
-          <div className="text-xs">to</div>
+          <div className="px-1">to</div>
           <div className="w-full">
             <Select
               classNamePrefix="react-select"

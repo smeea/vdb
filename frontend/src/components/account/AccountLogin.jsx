@@ -122,8 +122,8 @@ const AccountLogin = () => {
             overlay={<PasswordTooltipText />}
             title="Password reset"
           >
-            <div className="text-xs text-fgSecondary hover:underline dark:text-fgSecondaryDark">
-              <i>Forgot password?</i>
+            <div className="text-sm italic text-fgSecondary hover:underline dark:text-fgSecondaryDark">
+              Forgot password
             </div>
           </ConditionalTooltipOrModal>
         </div>

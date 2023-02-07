@@ -1,8 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
-import GiftFill from '@/assets/images/icons/gift-fill.svg';
-import { ResultLibraryClan } from '@/components';
 import {
+  ResultPreconClan,
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
@@ -48,20 +47,6 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
           const fullName = setsAndPrecons[set].precons[precon].name;
           const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
-          const clanImages = clans.map((clan) => {
-            return (
-              <React.Fragment key={clan}>
-                {clan === 'Bundle' ? (
-                  <div className="inline h-[21px] dark:brightness-[0.65] sm:h-[24px]">
-                    <GiftFill />
-                  </div>
-                ) : clan === 'Mix' ? null : (
-                  <ResultLibraryClan value={clan} />
-                )}
-              </React.Fragment>
-            );
-          });
-
           options.push({
             value: `${set}:${precon}`,
             name: 'precon',
@@ -70,16 +55,18 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                 <div className="flex items-center">
                   <div
                     className={
-                      clanImages.length == 1
+                      clans.length == 1
                         ? 'flex w-[40px] items-center justify-center'
                         : 'inline'
                     }
                   >
-                    {clanImages}
+                    {clans.map((clan) => (
+                      <ResultPreconClan key={clan} clan={clan} />
+                    ))}
                   </div>
                   {fullName}
                 </div>
-                <div className="text-xs">{`${set} '${year}`}</div>
+                <div className="text-sm">{`${set} '${year}`}</div>
               </div>
             ),
           });
@@ -166,7 +153,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
           return (
             <Checkbox
               key={i.value}
-              className="text-xs"
+              className="text-sm"
               name={name}
               value={i.value}
               label={i.label}
