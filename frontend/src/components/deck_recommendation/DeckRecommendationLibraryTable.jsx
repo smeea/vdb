@@ -1,84 +1,41 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import {
-  CardPopover,
-  ButtonAddCard,
-  ResultLibraryBurn,
-  ResultLibraryClan,
-  ResultLibraryCost,
-  ResultLibraryDisciplines,
-  ResultLibraryName,
-  ResultLibraryTrifle,
-  ConditionalTooltip,
-} from '@/components';
-import { isTrifle } from '@/utils';
-import { BURN_OPTION, POOL_COST, BLOOD_COST } from '@/utils/constants';
-import { deckStore, useApp } from '@/context';
+import { ButtonAddCard, ResultLibraryTableRowCommon } from '@/components';
+import { deckStore } from '@/context';
 
-const DeckRecommendationLibraryTable = ({ handleModalCardOpen, cards }) => {
-  const { isMobile, setShowFloatingButtons } = useApp();
+const DeckRecommendationLibraryTable = ({ handleClick, cards }) => {
   const deck = useSnapshot(deckStore).deck;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
-
-  const handleClick = (cardid) => {
-    handleModalCardOpen(cardid);
-    setShowFloatingButtons(false);
-  };
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
         {cards.map((card, idx) => {
           return (
-            <React.Fragment key={card.Id}>
-              <tr
-                className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-                  idx % 2
-                    ? 'bg-bgThird dark:bg-bgThirdDark'
-                    : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-                }`}
-              >
-                {isEditable && (
-                  <td>
-                    <ButtonAddCard
-                      cardid={card.Id}
-                      deckid={deck.deckid}
-                      card={card}
-                      inDeck={deck.library[card.Id]?.q || 0}
-                    />
-                  </td>
-                )}
-                <td className="w-full" onClick={() => handleClick(card.Id)}>
-                  <ConditionalTooltip
-                    overlay={<CardPopover card={card} />}
-                    disabled={isMobile}
-                  >
-                    <ResultLibraryName card={card} />
-                  </ConditionalTooltip>
+            <tr
+              key={card.Id}
+              className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+                idx % 2
+                  ? 'bg-bgThird dark:bg-bgThirdDark'
+                  : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+              }`}
+            >
+              {isEditable && (
+                <td>
+                  <ButtonAddCard
+                    cardid={card.Id}
+                    deckid={deck.deckid}
+                    card={card}
+                    inDeck={deck.library[card.Id]?.q || 0}
+                  />
                 </td>
-                <td onClick={() => handleClick(card.Id)}>
-                  {(card[BLOOD_COST] || card[POOL_COST]) && (
-                    <ResultLibraryCost
-                      valueBlood={card[BLOOD_COST]}
-                      valuePool={card[POOL_COST]}
-                    />
-                  )}
-                </td>
-                <td onClick={() => handleClick(card.Id)}>
-                  {card.Clan && <ResultLibraryClan value={card.Clan} />}
-                  {card.Discipline && card.Clan && '+'}
-                  {card.Discipline && (
-                    <ResultLibraryDisciplines value={card.Discipline} />
-                  )}
-                </td>
-                <td onClick={() => handleClick(card.Id)}>
-                  {card[BURN_OPTION] && (
-                    <ResultLibraryBurn value={card[BURN_OPTION]} />
-                  )}
-                  {isTrifle(card) && <ResultLibraryTrifle />}
-                </td>
-              </tr>
-            </React.Fragment>
+              )}
+              <ResultLibraryTableRowCommon
+                card={card}
+                handleClick={handleClick}
+                inDeck
+              />
+            </tr>
           );
         })}
       </tbody>

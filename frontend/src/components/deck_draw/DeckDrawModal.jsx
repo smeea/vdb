@@ -39,7 +39,6 @@ const DeckDrawModal = ({
 }) => {
   const { isMobile, isNarrow } = useApp();
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -178,7 +177,6 @@ const DeckDrawModal = ({
               handleClick={burnLibrary}
               restCards={restLibrary}
               resultCards={drawedLibrary}
-              /* className="search-library-table" */
               placement={isNarrow ? 'bottom' : 'right'}
             />
           </div>

@@ -23,7 +23,6 @@
 - Refactor deck buttons (split in button ui and function incl. deckstore functions )
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
-- Refactor useModalCardController to include showFloatingButtons
 
 # TAILWIND MIGRATION
 - Replace -[#HEX] with config colors, merge same config colors, name config colors

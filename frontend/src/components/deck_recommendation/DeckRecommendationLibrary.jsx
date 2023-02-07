@@ -28,7 +28,7 @@ const DeckRecommendationLibrary = ({ cards }) => {
             <ResultLibraryType cardtype={cardtype} total={0} />
           </div>
           <DeckRecommendationLibraryTable
-            handleModalCardOpen={handleModalCardOpen}
+            handleClick={handleModalCardOpen}
             cards={libraryByType[cardtype]}
           />
         </div>
