@@ -190,8 +190,8 @@ const Decks = () => {
             getDeck();
           }
         }
-      } else if (lastDeckId) {
-        setDeck(decks?.[lastDeckId]);
+      } else if (decks?.[lastDeckId]) {
+        setDeck(decks[lastDeckId]);
       }
     }
   }, [

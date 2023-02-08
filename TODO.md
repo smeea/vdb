@@ -14,6 +14,7 @@
 - Inventory/deck import in excel
 
 # IMPROVE TECHNOLOGY - FRONTEND
+- Refactor react-select to css-in-js styles
 - Configure vite-pwa
 - Move preconDecks to fetch+localStorage
 - Update url for playtest images to mitigate caching
@@ -27,3 +28,8 @@
 # TAILWIND MIGRATION
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Library sticky hide above header
+- Autoswitch to add mode on first search
+- Library search total
+- Checkbox labels non-clickable
+- Import to inventory deck preview
+- Modal initial focus
