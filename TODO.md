@@ -1,4 +1,5 @@
 # FIX
+- Problem with valtio update
 
 # FEATURES
 - Check TWD
@@ -20,7 +21,7 @@
 - Move preconDecks to fetch+localStorage
 - Update url for playtest images to mitigate caching
 - Move Clone/Delete/Branches fetches to services and create relevant deck store functions
-- Refactor fetch to useAsync+useFetch hook https://youtu.be/vrIxu-kfAUo&t=546
+- Refactor fetch to useFetch
 - Refactor InventoryCrypt and InventoryLibrary
 - Refactor deck buttons (split in button ui and function incl. deckstore functions )
 - Explicit image width/height

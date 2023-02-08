@@ -15,7 +15,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
             <div className="flex h-10 items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
               Crypt
             </div>
-            {crypt ? (
+            {crypt.length > 0 ? (
               <ResultCryptTable resultCards={crypt} inRecommendation />
             ) : (
               <div className="flex justify-center pt-5">
@@ -27,7 +27,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
             <div className="flex h-10 items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
               Library
             </div>
-            {library ? (
+            {library.length > 0 ? (
               <DeckRecommendationLibrary cards={library} />
             ) : (
               <div className="flex justify-center pt-5">

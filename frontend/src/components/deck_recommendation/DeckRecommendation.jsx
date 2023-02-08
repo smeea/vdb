@@ -1,59 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { DeckRecommendationModal } from '@/components';
 import { useApp } from '@/context';
+import { useFetch } from '@/hooks';
 
 const DeckRecommendation = ({ setShow, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();
-  const [showModal, setShowModal] = useState(true);
-  const [crypt, setCrypt] = useState();
-  const [library, setLibrary] = useState();
+  const url = `${import.meta.env.VITE_API_URL}/deck/${
+    deck.deckid
+  }/recommendation`;
 
-  const getRecommendation = () => {
-    const url = `${import.meta.env.VITE_API_URL}/deck/${
-      deck.deckid
-    }/recommendation`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          const c = [];
-          const l = [];
-          Object.keys(data.crypt).map((i) => {
-            c.push(cryptCardBase[data.crypt[i]]);
-          });
-          Object.keys(data.library).map((i) => {
-            l.push(libraryCardBase[data.library[i]]);
-          });
-          setCrypt(c);
-          setLibrary(l);
-        }
-      });
-  };
+  const { value } = useFetch(url, {}, []);
+  const crypt = [];
+  const library = [];
+  if (value) {
+    Object.keys(value.crypt).map((i) => {
+      crypt.push(cryptCardBase[value.crypt[i]]);
+    });
+    Object.keys(value.library).map((i) => {
+      library.push(libraryCardBase[value.library[i]]);
+    });
+  }
 
   const handleCloseModal = () => {
-    setShowModal(false);
     setShow(false);
     setShowFloatingButtons(true);
   };
 
-  if (!crypt && !library) getRecommendation();
-
   return (
-    <>
-      {showModal && (
-        <DeckRecommendationModal
-          handleClose={handleCloseModal}
-          show={showModal}
-          crypt={crypt}
-          library={library}
-        />
-      )}
-    </>
+    <DeckRecommendationModal
+      handleClose={handleCloseModal}
+      crypt={crypt}
+      library={library}
+    />
   );
 };
 
