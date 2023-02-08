@@ -30,6 +30,5 @@
 - Replace -[#HEX] with config colors, merge same config colors, name config colors
 - Library sticky hide above header
 - Autoswitch to add mode on first search
-- Library search total
 - Import to inventory deck preview
 - Modal initial focus
