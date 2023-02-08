@@ -20,8 +20,6 @@
 - Configure vite-pwa
 - Move preconDecks to fetch+localStorage
 - Update url for playtest images to mitigate caching
-- Move Clone/Delete/Branches fetches to services and create relevant deck store functions
-- Refactor fetch to useFetch
 - Refactor InventoryCrypt and InventoryLibrary
 - Refactor deck buttons (split in button ui and function incl. deckstore functions )
 - Explicit image width/height
@@ -31,3 +29,4 @@
 - Slow switching decks
 - Library sticky hide above header
 - Autoswitch to add mode on first search
+- Unify modal button blocks

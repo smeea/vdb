@@ -84,10 +84,6 @@ export const setLibraryCompare = (v) => {
   searchResults.libraryCompare = v;
 };
 
-export const setQuickCard = (v) => {
-  searchResults.quickCard = v;
-};
-
 export const clearSearchForm = (target) => {
   switch (target) {
     case 'crypt':

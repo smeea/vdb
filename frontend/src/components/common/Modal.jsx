@@ -58,7 +58,7 @@ const Modal = ({
               <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 {title}
               </div>
-              {isNarrow && <ButtonCloseModal handleClose={handleClose} />}
+              {!isNarrow && <ButtonCloseModal handleClose={handleClose} />}
             </Dialog.Title>
           )}
           <div className="max-h-0 max-w-0 opacity-0">

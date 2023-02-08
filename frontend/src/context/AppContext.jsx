@@ -67,7 +67,11 @@ export const AppProvider = (props) => {
 
   const deck = useSnapshot(deckStore).deck;
   const decks = useSnapshot(deckStore).decks;
-  const [lastDeckId, setLastDeckId] = useState();
+  const lastDeckArray = (decks && Object.values(decks).sort(byTimestamp)) ?? [
+    { deckid: undefined },
+  ];
+  const lastDeckId = lastDeckArray[0].deckid;
+
   const [recentDecks, setRecentDecks] = useState([]);
 
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
@@ -174,6 +178,11 @@ export const AppProvider = (props) => {
       setPreconDecks(
         cardServices.getPreconDecks(cryptCardBase, libraryCardBase)
       );
+    }
+  }, [cryptCardBase, libraryCardBase]);
+
+  useEffect(() => {
+    if (cryptCardBase && libraryCardBase) {
       if (userData === null) {
         initializeUnauthenticatedUser();
       } else if (userData) {
@@ -400,13 +409,6 @@ export const AppProvider = (props) => {
   };
 
   useEffect(() => {
-    if (decks && Object.keys(decks).length > 0) {
-      const lastDeckArray = Object.values(decks).sort(byTimestamp);
-      setLastDeckId(lastDeckArray[0].deckid);
-    }
-  }, [decks]);
-
-  useEffect(() => {
     if (decks || username === null) {
       const d = recentDecks.filter(
         (v) => username === null || !decks[v.deckid]
@@ -428,12 +430,12 @@ export const AppProvider = (props) => {
     return { crypt: inventoryData.crypt, library: inventoryData.library };
   };
 
-  // Trigger  Hard and Soft count function on changing decks
   useEffect(() => {
     if (decks) {
       setupHardAndSoftInventory();
     }
   }, [decks]);
+
   const setupHardAndSoftInventory = () => {
     const softCrypt = {};
     const softLibrary = {};

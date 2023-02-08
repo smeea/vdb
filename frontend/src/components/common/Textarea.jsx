@@ -15,7 +15,7 @@ const Textarea = ({
 }) => {
   return (
     <textarea
-      className={`rounded border border-borderSecondary bg-bgPrimary px-1.5 py-1 font-mono text-sm outline-2 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark ${
+      className={`rounded border border-borderSecondary bg-bgPrimary px-1.5 py-1 font-mono outline-2 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark ${
         className ?? ''
       }`}
       rows={rows}

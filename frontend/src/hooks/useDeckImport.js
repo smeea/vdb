@@ -1,5 +1,5 @@
 const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
-  const unidecode = await import('unidecode');
+  const { default: unidecode } = await import('unidecode');
 
   const cardbase = {};
   Object.values(cryptCardBase).map((card) => {

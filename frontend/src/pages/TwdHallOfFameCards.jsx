@@ -1,83 +1,73 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { Disclosure, Tab } from '@headlessui/react';
 import { TwdHallFameCardsPlayer } from '@/components';
 import { useApp } from '@/context';
+import { useFetch } from '@/hooks';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdHallOfFameCards = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
-  const [players, setPlayers] = useState();
   const INNOVATION_PERIOD = 2 * 365;
-  const IGNORED_TOURNAMENTS_DATE = '1999-04-11'; // first was 1997-04-11
+  const IGNORED_BEFORE_DATE = '1999-04-11'; // first was 1997-04-11
   const MS_TO_DAYS = 1000 * 60 * 60 * 24;
 
   const byName = (a, b) => {
     return a.localeCompare(b);
   };
 
-  useEffect(() => {
-    if (cryptCardBase && libraryCardBase) {
-      const url = `${
-        import.meta.env.VITE_BASE_URL
-      }/data/twd_cards_history.json`;
-      const options = {
-        method: 'GET',
-        mode: 'cors',
-        credentials: 'include',
-      };
+  const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
+  const { value } = useFetch(url, {}, []);
 
-      fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-          const p = {};
+  const players = useMemo(() => {
+    if (value && cryptCardBase && libraryCardBase) {
+      const p = {};
 
-          Object.keys(data).map((cardid) => {
-            const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
-            const card = cardBase[cardid];
-            const player = data[cardid].player;
-            const deckid = data[cardid].deckid;
+      Object.keys(value).map((cardid) => {
+        const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
+        const card = cardBase[cardid];
+        const player = value[cardid].player;
+        const deckid = value[cardid].deckid;
 
-            let releaseDate = null;
-            const twdDate = data[cardid].twd_date;
+        let releaseDate = null;
 
-            Object.keys(card.Set)
-              .filter((set) => set !== 'POD')
-              .map((set) => {
-                const d =
-                  set === 'Promo'
-                    ? Object.keys(card.Set.Promo)[0]
-                    : setsAndPrecons[set].date;
+        Object.keys(card.Set)
+          .filter((set) => set !== 'POD')
+          .map((set) => {
+            const d =
+              set === 'Promo'
+                ? Object.keys(card.Set.Promo)[0]
+                : setsAndPrecons[set].date;
 
-                if (!releaseDate || releaseDate > d) {
-                  releaseDate = d;
-                }
-              });
-
-            if (twdDate) {
-              if (!p[player]) {
-                p[player] = {
-                  [cardid]: {
-                    ...card,
-                    deckid: deckid,
-                    twdDate: twdDate,
-                    releaseDate: releaseDate,
-                  },
-                };
-              } else {
-                p[player][cardid] = {
-                  ...card,
-                  deckid: deckid,
-                  twdDate: twdDate,
-                  releaseDate: releaseDate,
-                };
-              }
+            if (!releaseDate || releaseDate > d) {
+              releaseDate = d;
             }
           });
 
-          setPlayers(p);
-        });
-    }
-  }, [cryptCardBase, libraryCardBase]);
+        const twdDate = value[cardid].twd_date;
+        if (twdDate) {
+          if (!p[player]) {
+            p[player] = {
+              [cardid]: {
+                ...card,
+                deckid: deckid,
+                twdDate: twdDate,
+                releaseDate: releaseDate,
+              },
+            };
+          } else {
+            p[player][cardid] = {
+              ...card,
+              deckid: deckid,
+              twdDate: twdDate,
+              releaseDate: releaseDate,
+            };
+          }
+        }
+      });
+
+      return p;
+    } else return {};
+  }, [value, cryptCardBase, libraryCardBase]);
 
   const byTotal = (a, b) => {
     return Object.keys(players[b]).length - Object.keys(players[a]).length;
@@ -87,8 +77,7 @@ const TwdHallOfFameCards = () => {
     const twdAppearanceDelay =
       (new Date(card.twdDate) - new Date(card.releaseDate)) / MS_TO_DAYS;
 
-    if (card.twdDate < IGNORED_TOURNAMENTS_DATE) return false;
-
+    if (card.twdDate < IGNORED_BEFORE_DATE) return false;
     return twdAppearanceDelay > INNOVATION_PERIOD;
   };
 
@@ -153,7 +142,7 @@ const TwdHallOfFameCards = () => {
             <div className="border">
               Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365}{' '}
               years after card print, and excluding cards from first 2 years of
-              active tournaments (till {IGNORED_TOURNAMENTS_DATE})
+              active tournaments (till {IGNORED_BEFORE_DATE})
             </div>
             {players && (
               <Disclosure>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSnapshot } from 'valtio';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg';
 import Dice3 from '@/assets/images/icons/dice-3-fill.svg';
 import {
@@ -9,7 +10,7 @@ import {
   CardImage,
   ButtonFloat,
 } from '@/components';
-import { useApp, setQuickCard } from '@/context';
+import { useApp, searchResults } from '@/context';
 
 const Cards = () => {
   const params = useParams();
@@ -22,7 +23,7 @@ const Cards = () => {
     playtest,
   } = useApp();
 
-  const [card, setCard] = useState();
+  const card = useSnapshot(searchResults).quickCard;
   const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
 
@@ -58,12 +59,10 @@ const Cards = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
-      setQuickCard(params.cardid);
-      setCard(
+      searchResults.quickCard =
         params.cardid > 200000
           ? cryptCardBase[params.cardid]
-          : libraryCardBase[params.cardid]
-      );
+          : libraryCardBase[params.cardid];
     }
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
@@ -95,7 +94,7 @@ const Cards = () => {
             <div className="fixed bottom-[40px] z-20 flex w-full flex-row bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
               <div className="w-full md:basis-8/12">
                 <QuickSelect
-                  selectedCardid={card && card.Id}
+                  selectedCardid={card?.Id}
                   setCard={handleSetCard}
                 />
               </div>
@@ -136,7 +135,7 @@ const Cards = () => {
               {cryptCardBase && libraryCardBase && (
                 <div>
                   <QuickSelect
-                    selectedCardid={card && card.Id}
+                    selectedCardid={card?.Id}
                     setCard={handleSetCard}
                   />
                 </div>

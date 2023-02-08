@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import Link45Deg from '@/assets/images/icons/link-45deg.svg';
 import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg';
-import { ButtonFloatClose, Modal, Button, ButtonIconed } from '@/components';
+import { Modal, Button, ButtonIconed } from '@/components';
 import { useApp } from '@/context';
 
 const InventoryShareModal = ({ setShow }) => {
   const {
     isMobile,
-    isNarrow,
     setShowFloatingButtons,
     setShowMenuButtons,
     inventoryKey,
@@ -61,48 +60,45 @@ const InventoryShareModal = ({ setShow }) => {
   };
 
   return (
-    <>
-      <Modal
-        handleClose={handleClose}
-        centered={isMobile}
-        title="Inventory Share"
-      >
-        <div>
-          {inventoryKey ? (
-            <>
-              <a href={shareUrl}>{shareUrl}</a>
-              <span
-                className="inline text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark  "
-                onClick={() => navigator.clipboard.writeText(shareUrl)}
-              >
-                <ClipboardFill viewBox="0 0 18 18" />
-              </span>
-              <div>
-                Only this URL will work (old become obsolete after creating new)
-              </div>
-            </>
-          ) : (
+    <Modal
+      handleClose={handleClose}
+      centered={isMobile}
+      title="Inventory Share"
+    >
+      <div>
+        {inventoryKey ? (
+          <>
+            <a href={shareUrl}>{shareUrl}</a>
+            <span
+              className="inline text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark  "
+              onClick={() => navigator.clipboard.writeText(shareUrl)}
+            >
+              <ClipboardFill viewBox="0 0 18 18" />
+            </span>
             <div>
-              After creating Share URL people can view (not edit!) your
-              inventory by opening the link
+              Only this URL will work (old become obsolete after creating new)
             </div>
-          )}
-        </div>
-        <div>
-          <ButtonIconed
-            variant={success ? 'success' : 'primary'}
-            onClick={createUrl}
-            title="Create URL"
-            icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
-            text="Create URL"
-          />
-          <Button variant="primary" onClick={handleClose}>
-            Close
-          </Button>
-        </div>
-      </Modal>
-      {isNarrow && <ButtonFloatClose handleClose={handleClose} />}
-    </>
+          </>
+        ) : (
+          <div>
+            After creating Share URL people can view (not edit!) your inventory
+            by opening the link
+          </div>
+        )}
+      </div>
+      <div>
+        <ButtonIconed
+          variant={success ? 'success' : 'primary'}
+          onClick={createUrl}
+          title="Create URL"
+          icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
+          text="Create URL"
+        />
+        <Button variant="primary" onClick={handleClose}>
+          Close
+        </Button>
+      </div>
+    </Modal>
   );
 };
 

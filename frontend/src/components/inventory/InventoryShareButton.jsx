@@ -6,15 +6,17 @@ import { useApp } from '@/context';
 const InventoryShareButton = ({ setShow }) => {
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
 
+  const handleClick = () => {
+    setShow(true);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(false);
+  };
+
   return (
     <ButtonIconed
       variant="secondary"
       title="Share Inventory"
-      onClick={() => {
-        setShow(true);
-        setShowMenuButtons(false);
-        setShowFloatingButtons(false);
-      }}
+      onClick={handleClick}
       icon={<Link45Deg width="21" height="21" viewBox="0 0 15 15" />}
       text="Share Inventory"
     />
