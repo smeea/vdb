@@ -25,6 +25,7 @@ module.exports = {
       transparent: 'transparent',
       black: '#000000',
       white: '#ffffff',
+      whiteDark: '#eeeeee',
       blue: '#0000aa',
       bgPrimary: '#ffffff',
       bgPrimaryDark: '#252530',
@@ -78,6 +79,8 @@ module.exports = {
       midGrayDark: '#808090',
       darkGray: '#606070',
       darkGrayDark: '#404050',
+      lightGray: '#a0a0a0',
+      lightGrayDark: '#959595',
     },
     extend: {
       flexBasis: {

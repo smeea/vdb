@@ -13,7 +13,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
 
   return (
     <div
-      className="relative flex h-full items-center px-1 text-[#ffffff]"
+      className="relative flex h-full items-center px-1 text-white"
       onClick={() => setShowMenu(!showMenu)}
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
@@ -73,7 +73,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             </div>
             <div
               className={`whitespace-nowrap ${
-                inventoryMode ? '' : 'text-[#afafaf]'
+                inventoryMode ? '' : 'text-midGray dark:text-midGrayDark'
               }`}
             >
               Inventory Mode

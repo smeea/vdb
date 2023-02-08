@@ -1,6 +1,5 @@
 import { proxy } from 'valtio';
 import { deckServices } from '@/services';
-import { deepClone } from '@/utils';
 
 export const deckStore = proxy({
   deck: undefined,
@@ -10,7 +9,7 @@ export const deckStore = proxy({
 });
 
 export const setDeck = (v) => {
-  deckStore.deck = deepClone(v);
+  deckStore.deck = v;
   deckStore.cryptTimer = !deckStore.cryptTimer;
 };
 

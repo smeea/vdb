@@ -14,7 +14,7 @@ import {
 } from '@/components';
 
 const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose }) => {
-  const { isMobile, cryptCardBase } = useApp();
+  const { isNarrow, isMobile, cryptCardBase } = useApp();
 
   return (
     <div className="space-y-3">
@@ -40,7 +40,11 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose }) => {
         </div>
         <div className="flex items-center space-x-3">
           <ResultCryptGroup value={card.Group} />
-          {!noClose && !isMobile && (
+          {noClose || isNarrow ? (
+            <div className="max-h-0 max-w-0 opacity-0">
+              <button />
+            </div>
+          ) : (
             <ButtonCloseModal handleClose={handleClose} />
           )}
         </div>

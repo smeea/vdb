@@ -15,7 +15,7 @@ import { isTrifle } from '@/utils';
 import { useApp } from '@/context';
 
 const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
-  const { isMobile } = useApp();
+  const { isNarrow } = useApp();
 
   return (
     <div className="space-y-3">
@@ -42,7 +42,11 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
               <ResultLibraryTrifle />
             </div>
           )}
-          {!noClose && !isMobile && (
+          {noClose || isNarrow ? (
+            <div className="max-h-0 max-w-0 opacity-0">
+              <button />
+            </div>
+          ) : (
             <ButtonCloseModal handleClose={handleClose} />
           )}
         </div>

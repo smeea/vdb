@@ -21,10 +21,15 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
   };
 
   return (
-    <Modal handleClose={handleClose} size="lg" title={deck.name}>
+    <Modal
+      handleClose={handleClose}
+      size="lg"
+      title={deck.name}
+      noPadding={isMobile}
+    >
       <div>
-        <div className="flex flex-row ">
-          <div className="basis-full md:basis-7/12">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">
+          <div className="basis-full md:basis-5/9">
             <div
               className={
                 isMobile || inInventory
@@ -38,7 +43,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
               />
             </div>
           </div>
-          <div className="basis-full md:basis-5/12">
+          <div className="basis-full md:basis-4/9">
             <DeckLibrary
               deck={{ ...deck, crypt: crypt, library: library }}
               inMissing

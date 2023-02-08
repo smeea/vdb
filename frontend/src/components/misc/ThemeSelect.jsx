@@ -8,17 +8,17 @@ const ThemeSelect = ({ setShowMenu }) => {
   const { theme, toggleTheme } = useTheme();
   const { isMobile } = useApp();
 
+  const handleClick = () => {
+    toggleTheme();
+    isMobile && setShowMenu(false);
+  };
+
   return (
     <>
       {isMobile ? (
         <div
-          className={`flex items-center space-x-2 px-3 py-1.5 ${
-            isMobile ? '' : 'text-[#ffffff] dark:text-[#ffffff]'
-          }   `}
-          onClick={() => {
-            toggleTheme();
-            isMobile && setShowMenu(false);
-          }}
+          className="flex items-center space-x-2 px-3 py-1.5 sm:text-white sm:dark:text-white"
+          onClick={handleClick}
         >
           <div className="flex min-w-[30px] justify-center">
             {theme === 'dark' && (
@@ -39,13 +39,8 @@ const ThemeSelect = ({ setShowMenu }) => {
         </div>
       ) : (
         <div
-          className={`flex h-full min-w-[40px] items-center justify-center ${
-            isMobile ? '' : 'text-[#ffffff] dark:text-[#ffffff]'
-          }   `}
-          onClick={() => {
-            toggleTheme();
-            isMobile && setShowMenu(false);
-          }}
+          className="flex h-full min-w-[40px] items-center justify-center sm:text-white sm:dark:text-white"
+          onClick={handleClick}
         >
           {theme === 'dark' && <MoonFill />}
           {theme === 'light' && <SunFill />}

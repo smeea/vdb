@@ -68,7 +68,7 @@ const InventoryCryptTableRow = ({
     <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>
       {inShared ? (
         <div
-          className={`flex h-full min-w-[40px] items-center justify-center border-r border-bgSecondary bg-[#0000aa]/5 text-lg dark:border-bgSecondaryDark`}
+          className={`flex h-full min-w-[40px] items-center justify-center border-r border-bgSecondary bg-blue/5 text-lg dark:border-bgSecondaryDark`}
         >
           {card.q || null}
         </div>

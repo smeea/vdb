@@ -14,6 +14,7 @@
 - Inventory/deck import in excel
 
 # IMPROVE TECHNOLOGY - FRONTEND
+- Refactor standard colors
 - Refactor react-select to css-in-js styles
 - Configure vite-pwa
 - Move preconDecks to fetch+localStorage
@@ -26,9 +27,6 @@
 - ResultDisciplineImage class to width/size
 
 # TAILWIND MIGRATION
-- Slow switching decks - deepClone issue?
-- Replace -[#HEX] with config colors, merge same config colors, name config colors
+- Slow switching decks
 - Library sticky hide above header
 - Autoswitch to add mode on first search
-- Import to inventory deck preview
-- Modal initial focus

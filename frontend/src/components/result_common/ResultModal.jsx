@@ -70,7 +70,7 @@ const ResultModal = ({
   return (
     <Dialog open onClose={handleClose} className="relative z-50">
       <div
-        className="fixed inset-0 bg-[#000] bg-opacity-50"
+        className="fixed inset-0 bg-black bg-opacity-50"
         aria-hidden="true"
       />
       <div className="fixed inset-0 flex items-center justify-center overflow-auto p-0 sm:p-8">
@@ -105,7 +105,7 @@ const ResultModal = ({
               </div>
             ) : (
               <div className="flex">
-                <div className="bg-[#000]">
+                <div className="bg-black">
                   <CardImage
                     card={activeCard}
                     set={imageSet}
@@ -125,13 +125,13 @@ const ResultModal = ({
             )}
             <div
               onClick={() => handleModalCardChange(-1)}
-              className="absolute bottom-1/2 left-0 h-[50px] text-[#555] sm:left-[-40px] sm:text-[#fff]"
+              className="absolute bottom-1/2 left-0 h-[50px] text-darkGray/50 sm:left-[-40px] sm:text-white dark:text-midGray/50 sm:dark:text-bgCheckboxDark"
             >
               <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
             </div>
             <div
               onClick={() => handleModalCardChange(1)}
-              className="absolute bottom-1/2 right-0 h-[50px] text-[#555] sm:right-[-40px] sm:text-[#fff]"
+              className="absolute bottom-1/2 right-0 h-[50px] text-darkGray/50 sm:right-[-40px] sm:text-white dark:text-midGray/50 sm:dark:text-bgCheckboxDark"
             >
               <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
             </div>

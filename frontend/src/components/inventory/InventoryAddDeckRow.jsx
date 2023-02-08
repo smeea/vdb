@@ -4,8 +4,7 @@ import Shuffle from '@/assets/images/icons/shuffle.svg';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
 import At from '@/assets/images/icons/at.svg';
 import {
-  DeckCrypt,
-  DeckLibrary,
+  DeckPreview,
   DeckTags,
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
@@ -85,34 +84,12 @@ const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
         <td className="min-w-[40px]">
           <div
             className="flex justify-center"
-            /* TODO not hide after click */
             onMouseEnter={() => setShowDeck(deck.deckid)}
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
               show={showDeck === deck.deckid}
-              overlay={
-                <div className="flex">
-                  <div
-                    onClick={(event) => {
-                      if (event.target === event.currentTarget)
-                        setShowDeck(false);
-                    }}
-                    className="h-[80vh] overflow-y-auto md:basis-7/12"
-                  >
-                    <DeckCrypt deck={deck} inAdvSelect />
-                  </div>
-                  <div
-                    onClick={(event) => {
-                      if (event.target === event.currentTarget)
-                        setShowDeck(false);
-                    }}
-                    className="h-[80vh] overflow-y-auto md:basis-5/12"
-                  >
-                    <DeckLibrary deck={deck} />
-                  </div>
-                </div>
-              }
+              overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
             >
               <EyeFill />
             </Tooltip>

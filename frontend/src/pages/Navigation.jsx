@@ -32,8 +32,8 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
           icon ? 'px-3' : 'px-2 pb-[2px]'
         } ${
           isActive
-            ? 'bg-borderNestModal text-[#ffffff] dark:bg-borderNestModalDark dark:text-[#ffffff]'
-            : 'text-[#afafaf] dark:text-[#afafaf]'
+            ? 'bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark'
+            : 'text-lightGray dark:text-lightGrayDark'
         }`
       }
     >
@@ -110,8 +110,8 @@ const Navigation = () => {
               <div
                 className={`flex h-full items-center space-x-1 ${
                   inventoryMode
-                    ? 'text-[#ffffff] dark:text-[#ffffff]'
-                    : 'text-[#afafaf] dark:text-[#afafaf]'
+                    ? 'text-white dark:text-whiteDark'
+                    : 'text-lightGray dark:text-lightGrayDark'
                 }`}
                 onClick={() => {
                   toggleInventoryMode();

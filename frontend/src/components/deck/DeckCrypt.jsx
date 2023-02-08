@@ -8,7 +8,7 @@ import {
   useDeckCrypt,
 } from '@/hooks';
 
-const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
+const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
   const {
     setShowFloatingButtons,
     cryptDeckSort,
@@ -62,7 +62,7 @@ const DeckCrypt = ({ inSearch, inAdvSelect, inMissing, deck }) => {
   return (
     <div
       className={`flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 ${
-        !inAdvSelect && !inSearch && !isMobile
+        !inPreview && !inMissing && !inSearch && !isMobile
           ? 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]'
           : ''
       }`}

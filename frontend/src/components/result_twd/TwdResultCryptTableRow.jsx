@@ -27,7 +27,7 @@ const TwdResultCryptTableRow = ({ card, idx, handleClick }) => {
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
-      <td className="min-w-[28px] border-r border-bgSecondary bg-[#0000aa]/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
+      <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
         {inventoryMode ? (
           <ConditionalTooltip
             overlay={<UsedPopover cardid={card.c.Id} />}

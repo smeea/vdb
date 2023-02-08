@@ -5,8 +5,7 @@ import Shuffle from '@/assets/images/icons/shuffle.svg';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
 import At from '@/assets/images/icons/at.svg';
 import {
-  DeckCrypt,
-  DeckLibrary,
+  DeckPreview,
   DeckTags,
   DeckDeleteButton,
   DeckHideButton,
@@ -127,28 +126,7 @@ const DeckSelectAdvModalTableRow = ({
           >
             <Tooltip
               show={showDeck === deck.deckid}
-              overlay={
-                <div className="flex">
-                  <div
-                    onClick={(event) => {
-                      if (event.target === event.currentTarget)
-                        setShowDeck(false);
-                    }}
-                    className="h-[80vh] overflow-y-auto md:basis-1/2"
-                  >
-                    <DeckCrypt inAdvSelect={true} deck={deck} />
-                  </div>
-                  <div
-                    onClick={(event) => {
-                      if (event.target === event.currentTarget)
-                        setShowDeck(false);
-                    }}
-                    className="h-[80vh] overflow-y-auto md:basis-1/2"
-                  >
-                    <DeckLibrary deck={deck} />
-                  </div>
-                </div>
-              }
+              overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
             >
               <EyeFill />
             </Tooltip>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ButtonCloseModal, ButtonFloatClose } from '@/components';
 import { useApp } from '@/context';
@@ -15,6 +15,7 @@ const Modal = ({
   // bordered = false,
 }) => {
   const { isNarrow } = useApp();
+  const emptyRef = useRef();
   // TODO close with Esc
 
   // TODO customize width (maybe less steps/variants is OK?)
@@ -27,13 +28,13 @@ const Modal = ({
 
   return (
     <Dialog
-      initialFocus={initialFocus}
+      initialFocus={initialFocus ?? emptyRef}
       onClose={handleClose}
       className="relative z-50"
       open
     >
       <div
-        className="fixed inset-0 bg-[#000] bg-opacity-50"
+        className="fixed inset-0 bg-black bg-opacity-50"
         aria-hidden="true"
       />
       <div
@@ -48,16 +49,21 @@ const Modal = ({
             noPadding ? '' : 'p-3 sm:p-5'
           } dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
         >
-          <Dialog.Title
-            className={`flex items-center justify-between border-none  ${
-              noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3'
-            }`}
-          >
-            <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              {title}
-            </div>
-            {!isNarrow && <ButtonCloseModal handleClose={handleClose} />}
-          </Dialog.Title>
+          {title && (
+            <Dialog.Title
+              className={`flex items-center justify-between border-none  ${
+                noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3'
+              }`}
+            >
+              <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                {title}
+              </div>
+              {isNarrow && <ButtonCloseModal handleClose={handleClose} />}
+            </Dialog.Title>
+          )}
+          <div className="max-h-0 max-w-0 opacity-0">
+            <button />
+          </div>
           {children}
         </Dialog.Panel>
       </div>

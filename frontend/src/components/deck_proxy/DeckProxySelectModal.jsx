@@ -145,9 +145,10 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
 
   return (
     <Modal
-      handleClose={() => handleClose()}
+      handleClose={handleClose}
       size="xl"
       title="Create PDF with Card Proxies"
+      noPadding={isMobile}
     >
       <div className="space-y-5">
         <div className="flex flex-col gap-5 md:flex-row">

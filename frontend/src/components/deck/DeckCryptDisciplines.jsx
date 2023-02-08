@@ -22,9 +22,11 @@ const DeckCryptDisciplines = ({
     .map((d, index) => {
       counter += 1;
       return (
-        <td className="min-w-[24px] sm:min-w-[27px]" width={width} key={index}>
+        <td width={width} key={index}>
           {value?.[d] && (
-            <ResultDisciplineImage value={d} superior={value[d] === 2} />
+            <div className="flex justify-center items-center">
+              <ResultDisciplineImage value={d} superior={value[d] === 2} />
+            </div>
           )}
         </td>
       );

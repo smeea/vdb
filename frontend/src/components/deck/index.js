@@ -1,5 +1,6 @@
 export { default as DeckBranchSelect } from './DeckBranchSelect.jsx';
 export { default as DeckCardQuantity } from './DeckCardQuantity.jsx';
+export { default as DeckCardQuantityTd } from './DeckCardQuantityTd.jsx';
 export { default as DeckChangeAuthor } from './DeckChangeAuthor.jsx';
 export { default as DeckChangeBranchName } from './DeckChangeBranchName.jsx';
 export { default as DeckChangeDescription } from './DeckChangeDescription.jsx';
@@ -9,7 +10,6 @@ export { default as DeckCryptDisciplines } from './DeckCryptDisciplines.jsx';
 export { default as DeckCryptHeader } from './DeckCryptHeader.jsx';
 export { default as DeckCryptTable } from './DeckCryptTable.jsx';
 export { default as DeckCryptTableRow } from './DeckCryptTableRow.jsx';
-export { default as DeckCardQuantityTd } from './DeckCardQuantityTd.jsx';
 export { default as DeckCryptTotalInfo } from './DeckCryptTotalInfo.jsx';
 export { default as DeckDetails } from './DeckDetails.jsx';
 export { default as DeckFreezeButton } from './DeckFreezeButton.jsx';
@@ -23,6 +23,7 @@ export { default as DeckLibraryTypeDrawInfo } from './DeckLibraryTypeDrawInfo.js
 export { default as DeckMissingModal } from './DeckMissingModal.jsx';
 export { default as DeckNewCard } from './DeckNewCard.jsx';
 export { default as DeckNewCardFloating } from './DeckNewCardFloating.jsx';
+export { default as DeckPreview } from './DeckPreview.jsx';
 export { default as DeckQrModal } from './DeckQrModal.jsx';
 export { default as DeckSelect } from './DeckSelect.jsx';
 export { default as DeckSelectMy } from './DeckSelectMy.jsx';
