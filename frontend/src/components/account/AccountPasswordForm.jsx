@@ -38,7 +38,7 @@ const AccountPasswordForm = ({
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>
           <Button
-            className="rounded-l-none "
+            className="rounded-l-none"
             variant={success ? 'success' : 'primary'}
             type="submit"
           >

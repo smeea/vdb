@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Menu } from '@headlessui/react';
 import { useSnapshot } from 'valtio';
 import Select from 'react-select';
@@ -27,7 +27,6 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
   const { cryptCardBase, inventoryMode, isMobile, isDesktop } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const [sortMethod, setSortMethod] = useState('byName');
-  const [sortedDecks, setSortedDecks] = useState([]);
   const [isSelectedAll, setIsSelectedAll] = useState(false);
   const [selectedDecks, setSelectedDecks] = useState({});
   const [invFilter, setInvFilter] = useState('any');
@@ -149,20 +148,18 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
     },
   ];
 
-  useEffect(() => {
+  const sortedDecks = useMemo(() => {
     if (Object.values(decks).length > 0) {
       let filtered = Object.values(decks);
 
       if (invFilter !== 'any') {
-        filtered = filtered.filter((deck) => {
-          return deck.inventoryType === invFilter;
-        });
+        filtered = filtered.filter((deck) => deck.inventoryType === invFilter);
       }
 
       if (clanFilter !== 'any') {
-        filtered = filtered.filter((deck) => {
-          if (getClan(deck.crypt).toLowerCase() === clanFilter) return true;
-        });
+        filtered = filtered.filter(
+          (deck) => getClan(deck.crypt).toLowerCase() === clanFilter
+        );
       }
 
       if (nameFilter) {
@@ -200,10 +197,8 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
         });
       }
 
-      const sorted = decksSort(filtered, sortMethod);
-      setSortedDecks(sorted);
-      setSelectedDecks({});
-    }
+      return decksSort(filtered, sortMethod);
+    } else return [];
   }, [
     decks,
     invFilter,

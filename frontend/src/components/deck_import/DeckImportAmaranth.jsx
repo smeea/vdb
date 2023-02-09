@@ -4,33 +4,22 @@ import Spinner from '@/assets/images/icons/three-dots.svg';
 import { Modal, Input, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { deckServices } from '@/services';
+import { useFetch } from '@/hooks';
 
-const DeckImportAmaranth = ({ handleCloseModal, show }) => {
+const DeckImportAmaranth = ({ handleClose }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const navigate = useNavigate();
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
-  const [idReference, setIdReference] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const ref = useRef();
 
-  const getIdReference = () => {
-    const VERSION = '2022-07-22';
-    const url = `${
-      import.meta.env.VITE_BASE_URL
-    }/data/amaranth_ids.json?v=${VERSION}`;
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => data.error === undefined && setIdReference(data));
-  };
-
-  if (show && !idReference) getIdReference();
-
-  const handleClose = () => {
-    handleCloseModal();
-    setDeckUrl('');
-  };
+  const VERSION = '2022-07-22';
+  const url = `${
+    import.meta.env.VITE_BASE_URL
+  }/data/amaranth_ids.json?v=${VERSION}`;
+  const { value: idReference } = useFetch(url, {}, []);
 
   const handleImport = () => {
     setImportError(false);

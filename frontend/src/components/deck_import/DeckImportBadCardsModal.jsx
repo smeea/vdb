@@ -1,10 +1,16 @@
 import React from 'react';
 import { useImmer } from 'use-immer';
-import { useApp, deckCardChange } from '@/context';
+import { useApp, deckCardChange, inventoryCardChange } from '@/context';
 import { Modal, DeckCardQuantity, QuickSelect } from '@/components';
 
-const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
+const DeckImportBadCardsModal = ({
+  deckid,
+  badCards,
+  setBadCards,
+  inInventory,
+}) => {
   const { isMobile } = useApp();
+
   const [cards, setCards] = useImmer(
     badCards.map(() => ({
       c: null,
@@ -14,7 +20,11 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
 
   const handleCardChange = (deckid, idx, q) => {
     if (cards[idx] && q >= 0) {
-      deckCardChange(deckid, cards[idx].c, q);
+      if (inInventory) {
+        inventoryCardChange(cards[idx].c, q);
+      } else {
+        deckCardChange(deckid, cards[idx].c, q);
+      }
       setCards((draft) => {
         draft[idx].q = q;
       });

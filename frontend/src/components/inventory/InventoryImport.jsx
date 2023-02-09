@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import {
   ErrorOverlay,
   InventoryImportButton,
-  InventoryImportBadCardsModal,
+  DeckImportBadCardsModal,
 } from '@/components';
 import { useApp, inventoryCardsAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
@@ -48,9 +48,10 @@ const InventoryImport = () => {
     <>
       <InventoryImportButton handleClick={handleFileInputClick} />
       {badCards.length > 0 && (
-        <InventoryImportBadCardsModal
+        <DeckImportBadCardsModal
           badCards={badCards}
           setBadCards={setBadCards}
+          inInventory
         />
       )}
       <input

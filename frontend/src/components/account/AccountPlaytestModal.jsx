@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   AccountPlaytestPlayer,
   AccountPlaytestAdd,
@@ -6,11 +6,15 @@ import {
   Modal,
 } from '@/components';
 import { useApp } from '@/context';
+import { useFetch } from '@/hooks';
 
 const AccountPlaytestModal = ({ setShow }) => {
   const { username } = useApp();
-  const [playtesters, setPlaytesters] = useState([]);
   const [newPlaytesters, setNewPlaytesters] = useState([]);
+  const url = `${import.meta.env.VITE_API_URL}/playtest`;
+  const { value } = useFetch(url, {}, []);
+
+  const handleClose = () => setShow(false);
 
   const changePlaytester = (user, isAdd) => {
     const url = `${import.meta.env.VITE_API_URL}/playtest`;
@@ -27,50 +31,25 @@ const AccountPlaytestModal = ({ setShow }) => {
     fetch(url, options);
   };
 
-  const getPlaytesters = () => {
-    const url = `${import.meta.env.VITE_API_URL}/playtest`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        setPlaytesters(data);
-      });
-  };
-
-  useEffect(() => {
-    getPlaytesters();
-  }, []);
-
-  const handleClose = () => {
-    setShow(false);
-  };
-
   return (
     <Modal handleClose={handleClose} title="Manage Playtesters">
       <div className="space-y-3">
         <AccountPlaytestAdd
-          playtesters={playtesters}
+          playtesters={value}
           newPlaytesters={newPlaytesters}
           setNewPlaytesters={setNewPlaytesters}
         />
         <div>
-          {[...newPlaytesters.reverse(), ...playtesters.sort()]
-            .filter((u) => u != username)
-            .map((u) => (
-              <AccountPlaytestPlayer
-                key={u}
-                changePlaytester={changePlaytester}
-                username={u}
-              />
-            ))}
+          {value &&
+            [...newPlaytesters.reverse(), ...value.sort()]
+              .filter((u) => u != username)
+              .map((u) => (
+                <AccountPlaytestPlayer
+                  key={u}
+                  changePlaytester={changePlaytester}
+                  username={u}
+                />
+              ))}
         </div>
         <div className="flex justify-end">
           <Button variant="primary" onClick={handleClose}>

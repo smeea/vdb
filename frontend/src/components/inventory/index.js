@@ -12,7 +12,6 @@ export { default as InventoryDeckDeleteButton } from './InventoryDeckDeleteButto
 export { default as InventoryDeleteButton } from './InventoryDeleteButton.jsx';
 export { default as InventoryFilterForm } from './InventoryFilterForm.jsx';
 export { default as InventoryImport } from './InventoryImport.jsx';
-export { default as InventoryImportBadCardsModal } from './InventoryImportBadCardsModal.jsx';
 export { default as InventoryImportButton } from './InventoryImportButton.jsx';
 export { default as InventoryLibrary } from './InventoryLibrary.jsx';
 export { default as InventoryLibraryTable } from './InventoryLibraryTable.jsx';

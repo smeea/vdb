@@ -1,5 +1,6 @@
 # FIX
 - Problem with valtio update
+- Modal initialFocus forwardRef
 
 # FEATURES
 - Check TWD
@@ -24,7 +25,6 @@
 - Refactor deck buttons (split in button ui and function incl. deckstore functions )
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
-- Refactor useless useEffects
 - Refactor fetch to useFetch where possible
 
 # TAILWIND MIGRATION

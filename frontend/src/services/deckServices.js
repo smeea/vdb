@@ -32,6 +32,7 @@ export const cardChange = (deckid, cardid, q) => {
 };
 
 export const deckImport = (deck) => {
+  console.log(deck);
   const cards = {};
   Object.values({ ...deck.crypt, ...deck.library }).map((card) => {
     cards[card.c.Id] = card.q;
@@ -84,7 +85,7 @@ export const branchesImport = async (masterId, branches) => {
 };
 
 export const getDeckFromAmaranth = async (deckUrl) => {
-  const url = `${import.meta.env.AMARANTH_VITE_API_URL}/deck`;
+  const url = `${import.meta.env.VITE_AMARANTH_API_URL}/deck`;
   const id = deckUrl.replace(/.*#deck\//i, '');
   const options = {
     method: 'POST',

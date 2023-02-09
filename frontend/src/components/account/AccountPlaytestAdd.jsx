@@ -63,25 +63,21 @@ const AccountPlaytestAdd = ({
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex">
-        <Input
-          placeholder="Add Playtester (login)"
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleChange}
-          className="w-full rounded-r-none"
-        />
-        {!isLoading ? (
-          <Button className="rounded-l-none" variant="primary" type="submit">
-            <Check2 />
-          </Button>
-        ) : (
-          <Button variant="primary">
-            <Spinner />
-          </Button>
-        )}
+        <div className="flex w-full relative">
+          <Input
+            placeholder="Add Playtester (login)"
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleChange}
+            className="w-full rounded-r-none"
+          />
+          {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
+        </div>
+        <Button className="rounded-l-none" variant="primary" type="submit">
+          {isLoading ? <Spinner /> : <Check2 />}
+        </Button>
       </div>
-      {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
     </form>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
@@ -12,10 +12,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const usedCrypt = useSnapshot(usedStore).crypt;
   const usedLibrary = useSnapshot(usedStore).library;
 
-  const [proxySelected, setProxySelected] = useImmer({});
-  const [toggleState, setToggleState] = useState(false);
-
-  useEffect(() => {
+  const [proxySelected, setProxySelected] = useImmer(() => {
     const cards = {};
     Object.keys(deck.crypt).map((cardid) => {
       cards[cardid] = {
@@ -32,8 +29,10 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       };
     });
 
-    setProxySelected(cards);
-  }, [deck]);
+    return cards;
+  });
+
+  const [toggleState, setToggleState] = useState(false);
 
   const handleToggleSelect = () => {
     setProxySelected((draft) => {

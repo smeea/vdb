@@ -179,10 +179,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             />
           )}
           {showAmaranthModal && (
-            <DeckImportAmaranth
-              handleCloseModal={handleCloseImportModal}
-              show={showAmaranthModal}
-            />
+            <DeckImportAmaranth handleClose={handleCloseImportModal} />
           )}
           <input
             ref={fileInput}
