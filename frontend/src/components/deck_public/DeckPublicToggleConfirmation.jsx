@@ -28,13 +28,8 @@ const DeckPublicToggleConfirmation = ({
           ? `Remove "${deck.name}" from Public Deck Archive?`
           : `Add "${deck.name}" to Public Deck Archive?`
       }
-      buttonText={
-        isWrongQtyCards || withPlaytestCards
-          ? null
-          : isPublished
-          ? 'Remove Public'
-          : 'Make Public'
-      }
+      disabled={isWrongQtyCards || withPlaytestCards}
+      buttonText={isPublished ? 'Remove Public' : 'Make Public'}
     >
       {isWrongQtyCards ? (
         <div className="text-fgRed dark:text-fgRedDark">

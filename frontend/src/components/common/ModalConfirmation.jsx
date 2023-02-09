@@ -5,12 +5,13 @@ import { useApp } from '@/context';
 const ModalConfirmation = ({
   title,
   buttonText,
-  withConfirmation,
+  withWrittenConfirmation,
   handleConfirm,
   handleCancel,
   bordered,
   centered,
   size,
+  disabled,
   children,
 }) => {
   const { isMobile } = useApp();
@@ -18,7 +19,7 @@ const ModalConfirmation = ({
   const [errorConfirmation, setErrorConfirmation] = useState(false);
 
   const confirm = () => {
-    if (withConfirmation) {
+    if (withWrittenConfirmation) {
       if (confirmation === 'YES') {
         setErrorConfirmation(false);
         setConfirmation('');
@@ -45,14 +46,14 @@ const ModalConfirmation = ({
       title={title}
       bordered={bordered}
     >
-      <div className="space-y-3 sm:space-y-5">
+      <div className="flex flex-col gap-3 sm:gap-5">
         {children && (
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             {children}
           </div>
         )}
-        <div className="flex justify-end space-x-2">
-          {withConfirmation && (
+        <div className="flex justify-end gap-2">
+          {withWrittenConfirmation && (
             <form onSubmit={confirm}>
               <Input
                 placeholder="Type 'YES' to confirm"
@@ -68,14 +69,10 @@ const ModalConfirmation = ({
               )}
             </form>
           )}
-          <div className="flex justify-between space-x-2">
-            {buttonText ? (
-              <Button variant="primary" onClick={confirm}>
-                {buttonText}
-              </Button>
-            ) : (
-              <div />
-            )}
+          <div className="flex justify-between gap-2">
+            <Button disabled={disabled} variant="primary" onClick={confirm}>
+              {buttonText}
+            </Button>
             <Button variant="primary" onClick={cancel}>
               Cancel
             </Button>

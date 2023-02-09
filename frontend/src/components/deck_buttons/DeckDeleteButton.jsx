@@ -72,7 +72,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
       />
       {showConfirmation && (
         <ModalConfirmation
-          withConfirmation={deck.isBranches}
+          withWrittenConfirmation={deck.isBranches}
           handleConfirm={handleConfirm}
           handleCancel={handleCancel}
           title={`Delete deck "${deck.name} and all its revisions"`}

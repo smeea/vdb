@@ -52,7 +52,6 @@ const DiffLibraryTableRow = ({
         disabledTooltip={!inventoryMode}
         hardUsedTotal={hardUsedTotal}
         inInventory={inInventory}
-        inMissing={inMissing}
         inventoryType={decks?.[deckid]?.inventoryType}
         isEditable={isEditable}
         q={qFrom}

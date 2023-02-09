@@ -40,7 +40,7 @@ const InventoryDelete = () => {
       />
       {showConfirmation && (
         <ModalConfirmation
-          withConfirmation={true}
+          withWrittenConfirmation={true}
           handleConfirm={handleConfirm}
           handleCancel={handleCancel}
           title={`Delete Inventory`}
