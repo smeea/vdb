@@ -28,5 +28,4 @@
 # TAILWIND MIGRATION
 - Slow switching decks
 - Library sticky hide above header
-- Autoswitch to add mode on first search
 - Unify modal button blocks

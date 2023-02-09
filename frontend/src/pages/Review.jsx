@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import {
+  useNavigate,
+  useLocation,
+  useParams,
+  useLoaderData,
+} from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
 import {
   ButtonFloatMenu,
-  DeckChangeAuthor,
-  DeckChangeDescription,
-  DeckChangeName,
   DeckNewCardFloating,
-  DeckTags,
+  DeckDetails,
   ErrorMessage,
   Modal,
   ReviewButtons,
@@ -34,6 +36,7 @@ const Review = () => {
   const { deckid } = useParams();
   const { hash } = useLocation();
   const query = new URLSearchParams(useLocation().search);
+  const loaderData = useLoaderData();
 
   // Redirect from old links
   if (query.get('id') && hash) {
@@ -47,63 +50,46 @@ const Review = () => {
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
   const [urlDiff, setUrlDiff] = useState();
 
-  const getDeck = (deckid) => {
+  const getDeck = async () => {
+    const { deckData } = await loaderData;
+
+    if (deckData.error) {
+      if (deckData.error == 400) {
+        setError('NO DECK WITH THIS ID');
+      } else {
+        setError('CONNECTION PROBLEM');
+      }
+      setDeckTo(undefined);
+      setDeckFrom(undefined);
+      return;
+    }
+
     setError(false);
-    const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((deckData) => {
-        const cardsData = useDeck(
-          deckData.cards,
-          cryptCardBase,
-          libraryCardBase
-        );
-
-        if (deckid.length !== 32 || deckData.publicParent) {
-          deckData.tags = [];
-          Object.values(useTags(deckData.crypt, deckData.library)).map((v) => {
-            deckData.tags = deckData.tags.concat(v);
-          });
-        }
-
-        const d = {
-          author: deckData.author,
-          crypt: cardsData.crypt,
-          deckid: deckData.deckid,
-          description: deckData.description,
-          isAuthor: deckData.isAuthor,
-          isBranches: !!(deckData.master || deckData.branches?.length > 0),
-          isNonEditable: deckData.isNonEditable,
-          isPublic: !!deckData.publicParent,
-          library: cardsData.library,
-          name: deckData.name,
-          publicChild: deckData.publicChild,
-          publicParent: deckData.publicParent,
-          tags: deckData.tags,
-          timestamp: deckData.timestamp,
-        };
-
-        setDeckTo(d);
-        setDeckFrom(d);
-      })
-      .catch((error) => {
-        if (error.message == 400) {
-          setError('NO DECK WITH THIS ID');
-        } else {
-          setError('CONNECTION PROBLEM');
-        }
-        setDeckTo(undefined);
-        setDeckFrom(undefined);
+    const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
+    if (deckid.length !== 32 || deckData.publicParent) {
+      deckData.tags = [];
+      Object.values(useTags(cardsData.crypt, cardsData.library)).map((v) => {
+        deckData.tags = deckData.tags.concat(v);
       });
+    }
+    const d = {
+      author: deckData.author,
+      crypt: cardsData.crypt,
+      deckid: deckData.deckid,
+      description: deckData.description,
+      isAuthor: deckData.isAuthor,
+      isBranches: !!(deckData.master || deckData.branches?.length > 0),
+      isNonEditable: deckData.isNonEditable,
+      isPublic: !!deckData.publicParent,
+      library: cardsData.library,
+      name: deckData.name,
+      publicChild: deckData.publicChild,
+      publicParent: deckData.publicParent,
+      tags: deckData.tags,
+      timestamp: deckData.timestamp,
+    };
+    setDeckTo(d);
+    setDeckFrom(d);
   };
 
   const getDiff = (cardsFrom, cardsTo) => {
@@ -188,26 +174,24 @@ const Review = () => {
   }, [deckTo]);
 
   useEffect(() => {
-    if (
-      cryptCardBase &&
-      libraryCardBase &&
-      decks !== undefined &&
-      deckid &&
-      (deckFrom?.deckid !== deckid || !deckFrom)
-    ) {
-      if (decks[deckid]) {
-        setDeckFrom(decks[deckid]);
-      } else if (deckid.includes(':')) {
-        if (preconDecks?.[deckid]) {
-          setDeckFrom(preconDecks[deckid]);
-        } else {
-          setError('NO DECK WITH THIS ID');
+    if (cryptCardBase && libraryCardBase && deckid) {
+      if (!deck || deck.deckid != deckid) {
+        if (decks?.[deckid]) {
+          setDeckFrom(decks[deckid]);
+        } else if (deckid.includes(':') && preconDecks) {
+          const deckidFixed = deckid.replace('_', ' ');
+          if (preconDecks[deckidFixed]) {
+            setDeckFrom(preconDecks[deckidFixed]);
+          } else {
+            setDeckFrom(undefined);
+            setError('NO DECK WITH THIS ID');
+          }
+        } else if (loaderData) {
+          getDeck();
         }
-      } else {
-        getDeck(deckid);
       }
     }
-  }, [deckid, decks, preconDecks, cryptCardBase, libraryCardBase]);
+  }, [deckid, loaderData, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (deckFrom) setError(false);
@@ -222,55 +206,26 @@ const Review = () => {
   return (
     <div className="deck-container mx-auto">
       <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-        <div className="flex flex-auto basis-10/12 flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+        <div className="hidden min-w-[175px] xl:block" />
+        <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
           {deckFrom && (
-            <div className="flex gap-4">
-              {isMobile ? (
-                <DeckChangeName deck={deckFrom} isAuthor={false} />
-              ) : (
-                <>
-                  <div className="flex flex-row">
-                    <div className="md:basis-8/12">
-                      <DeckChangeName deck={deckFrom} />
-                    </div>
-                    <div className="md:basis-1/3">
-                      <DeckChangeAuthor deck={deckFrom} />
-                    </div>
-                  </div>
-                  <div className="flex flex-row">
-                    <div>
-                      <DeckChangeDescription
-                        deck={deckFrom}
-                        folded={foldedDescription}
-                        setFolded={setFoldedDescription}
-                      />
-                    </div>
-                    {foldedDescription && deckFrom?.tags.length > 0 && (
-                      <div>
-                        <DeckTags deck={deckFrom} isBordered />
-                      </div>
-                    )}
-                  </div>
-                  {!foldedDescription && deckFrom?.tags.length > 0 && (
-                    <div className="block ">
-                      <DeckTags deck={deckFrom} isBordered />
-                    </div>
-                  )}
-                </>
-              )}
-            </div>
+            <DeckDetails
+              deck={deckFrom}
+              folded={foldedDescription}
+              setFolded={setFoldedDescription}
+            />
           )}
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deckFrom && (
-            <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-              <div className="flex-auto basis-7/12">
+            <div className="flex flex-col sm:flex-row sm:gap-4 lg:gap-6 xl:gap-8">
+              <div className="basis-full sm:basis-5/9">
                 <ReviewCrypt
                   cardsFrom={deckFrom.crypt}
                   cardsTo={deckTo.crypt}
                   cardChange={cardChange}
                 />
               </div>
-              <div className="flex-auto basis-5/12">
+              <div className="basis-full sm:basis-4/9">
                 <ReviewLibrary
                   cardsFrom={deckFrom.library}
                   cardsTo={deckTo.library}
@@ -280,27 +235,25 @@ const Review = () => {
             </div>
           )}
         </div>
-        {!isMobile && (
-          <div className="hidden lg:flex lg:basis-1/6">
-            <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
-              <ReviewButtons
-                deck={deckFrom}
-                urlDiff={urlDiff}
-                parentId={inDecks ? parentId : null}
-              />
-            </div>
+        <div className="hidden min-w-[175px] lg:block">
+          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]">
+            <ReviewButtons
+              deck={deckFrom}
+              urlDiff={urlDiff}
+              parentId={inDecks ? parentId : null}
+            />
           </div>
-        )}
+        </div>
       </div>
       <DeckNewCardFloating
         target="crypt"
-        deckid={deck.deckid}
-        cards={deck.crypt}
+        deckid={deckFrom?.deckid}
+        cards={deckFrom?.crypt}
       />
       <DeckNewCardFloating
         target="library"
-        deckid={deck.deckid}
-        cards={deck.library}
+        deckid={deckFrom?.deckid}
+        cards={deckFrom?.library}
       />
       <ButtonFloatMenu />
       {showMenuButtons && (

@@ -28,7 +28,7 @@ const TwdHallOfFameTournaments = lazy(() =>
 const TwdCardsHistory = lazy(() => import('./pages/TwdCardsHistory.jsx'));
 const TwdCheck = lazy(() => import('./pages/TwdCheck.jsx'));
 
-import { loader as deckLoader } from './pages/Decks.jsx';
+import { deckServices } from '@/services';
 import { loader as changesLoader } from './pages/Changelog.jsx';
 
 const App = () => {
@@ -44,7 +44,11 @@ const App = () => {
         <Route path="crypt" element={<Crypt />} />
         <Route path="library" element={<Library />} />
         <Route path="decks" element={<Decks />} />
-        <Route path="/decks/:deckid" element={<Decks />} loader={deckLoader} />
+        <Route
+          path="/decks/:deckid"
+          element={<Decks />}
+          loader={deckServices.deckLoader}
+        />
 
         <Route
           path="documentation"
@@ -110,6 +114,7 @@ const App = () => {
               <Review />
             </Suspense>
           }
+          loader={deckServices.deckLoader}
         />
         <Route
           path="twd"

@@ -5,7 +5,6 @@ import {
   useLocation,
   useParams,
   useLoaderData,
-  defer,
 } from 'react-router-dom';
 import {
   ButtonFloatMenu,
@@ -353,20 +352,3 @@ const Decks = () => {
 };
 
 export default Decks;
-
-export const loader = async ({ params }) => {
-  if (params.deckid === 'deck' || params.deckid.includes(':')) return null;
-
-  const url = `${import.meta.env.VITE_API_URL}/deck/${params.deckid}`;
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-  };
-
-  const response = await fetch(url, options);
-  if (!response.ok) return { error: response.status };
-  const deckData = await response.json();
-
-  return defer({ deckData });
-};

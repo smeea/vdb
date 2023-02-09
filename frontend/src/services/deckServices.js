@@ -1,4 +1,5 @@
 import { useDeckExport } from '@/hooks';
+import { defer } from 'react-router-dom';
 
 export const update = (deckid, field, value) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
@@ -167,4 +168,21 @@ export const exportXlsx = async (deck) => {
 const saveFile = async (file, name) => {
   let { saveAs } = await import('file-saver');
   saveAs(file, name);
+};
+
+export const deckLoader = async ({ params }) => {
+  if (params.deckid === 'deck' || params.deckid.includes(':')) return null;
+
+  const url = `${import.meta.env.VITE_API_URL}/deck/${params.deckid}`;
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+  };
+
+  const response = await fetch(url, options);
+  if (!response.ok) return { error: response.status };
+  const deckData = await response.json();
+
+  return defer({ deckData });
 };
