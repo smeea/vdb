@@ -4,11 +4,10 @@ import Snow from '@/assets/images/icons/snow.svg';
 import TagFill from '@/assets/images/icons/tag-fill.svg';
 import PeopleFill from '@/assets/images/icons/people-fill.svg';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
-import { useApp, deckUpdate } from '@/context';
+import { deckUpdate } from '@/context';
 import { Input, InputPreLabel, Button, DeckFreezeButton } from '@/components';
 
 const DeckChangeName = ({ deck }) => {
-  const { isMobile } = useApp();
   const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
   const [value, setValue] = useState(deck.name);
   const [success, setSuccess] = useState(false);
@@ -73,11 +72,14 @@ const DeckChangeName = ({ deck }) => {
         </div>
       )}
       {isAuthor && !isPublic && (
-        <DeckFreezeButton className="rounded-l-none" deck={deck} />
+        <DeckFreezeButton
+          className="rounded-l-none max-sm:rounded-r-none"
+          deck={deck}
+        />
       )}
-      {isMobile && isEditable && (
+      {isEditable && (
         <Button
-          className="rounded-l-none"
+          className="sm:hidden rounded-l-none"
           variant={success ? 'success' : 'primary'}
           type="submit"
         >

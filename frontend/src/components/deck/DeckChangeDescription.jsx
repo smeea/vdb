@@ -4,10 +4,9 @@ import ChevronBarExpand from '@/assets/images/icons/chevron-bar-expand.svg';
 import ChevronBarContract from '@/assets/images/icons/chevron-bar-contract.svg';
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg';
 import { Input, InputPreLabel, Textarea, Button } from '@/components';
-import { useApp, deckUpdate } from '@/context';
+import { deckUpdate } from '@/context';
 
 const DeckDescription = ({ deck, folded, setFolded }) => {
-  const { isMobile } = useApp();
   const { deckid, description, isAuthor, isPublic, isFrozen } = deck;
   const [value, setValue] = useState(description);
   const [success, setSuccess] = useState(false);
@@ -63,18 +62,20 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
           readOnly={!isEditable}
         />
       )}
-      {!isMobile && (
+      <Button
+        className="max-sm:hidden rounded-l-none"
+        title="Collapse/Uncollapse Description"
+        variant="primary"
+        onClick={() => setFolded(!folded)}
+      >
+        {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
+      </Button>
+      {isAuthor && (
         <Button
-          className="rounded-l-none"
-          title="Collapse/Uncollapse Description"
-          variant="primary"
-          onClick={() => setFolded(!folded)}
+          className="sm:hidden rounded-l-none"
+          variant={success ? 'success' : 'primary'}
+          type="submit"
         >
-          {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
-        </Button>
-      )}
-      {isMobile && isAuthor && (
-        <Button variant={success ? 'success' : 'primary'} type="submit">
           <Check2 />
         </Button>
       )}

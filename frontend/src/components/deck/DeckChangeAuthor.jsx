@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg';
 import PersonFill from '@/assets/images/icons/person-fill.svg';
 import { Input, InputPreLabel, Button } from '@/components';
-import { useApp, deckUpdate } from '@/context';
+import { deckUpdate } from '@/context';
 
 const DeckChangeAuthor = ({ deck }) => {
-  const { isMobile } = useApp();
   const { deckid, author, isAuthor, isPublic, isFrozen } = deck;
   const [value, setValue] = useState(author);
   const [success, setSuccess] = useState(false);
@@ -48,10 +47,14 @@ const DeckChangeAuthor = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        className="w-full rounded-l-none border-bgSecondary dark:border-bgSecondaryDark"
+        className="w-full rounded-l-none max-sm:rounded-r-none border-bgSecondary dark:border-bgSecondaryDark"
       />
-      {isMobile && isAuthor && (
-        <Button variant={success ? 'success' : 'primary'} type="submit">
+      {isAuthor && (
+        <Button
+          className="sm:hidden rounded-l-none"
+          variant={success ? 'success' : 'primary'}
+          type="submit"
+        >
           <Check2 />
         </Button>
       )}

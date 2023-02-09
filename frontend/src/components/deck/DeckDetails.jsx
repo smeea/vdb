@@ -21,13 +21,19 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
         >
           <DeckChangeName deck={deck} />
         </div>
-        {deck.isBranches && (
-          <div className="basis-full sm:basis-2/12">
-            <DeckChangeBranchName deck={deck} />
+        <div
+          className={`flex basis-full flex-col sm:flex-row ${
+            deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-4/12'
+          } gap-2`}
+        >
+          {deck.isBranches && (
+            <div className="basis-full sm:basis-4/12">
+              <DeckChangeBranchName deck={deck} />
+            </div>
+          )}
+          <div className="basis-full">
+            <DeckChangeAuthor deck={deck} />
           </div>
-        )}
-        <div className="basis-full sm:basis-4/12">
-          <DeckChangeAuthor deck={deck} />
         </div>
       </div>
       <div

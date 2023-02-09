@@ -16,6 +16,7 @@
 - Inventory/deck import in excel
 
 # IMPROVE TECHNOLOGY - FRONTEND
+- Migration from screen width to container queries where possible
 - Refactor standard colors
 - Refactor react-select to css-in-js styles
 - Configure vite-pwa
@@ -31,3 +32,5 @@
 - Slow switching decks
 - Library sticky hide above header
 - Unify modal button blocks
+- Switch from 'hidden sm:other' to 'max-sm:hidden'
+- Rulings spacing between references and nowrap

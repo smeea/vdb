@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg';
 import PaletteFill from '@/assets/images/icons/palette-fill.svg';
-import { Input, Button } from '@/components';
-import { useApp, deckUpdate } from '@/context';
+import { Input, InputPreLabel, Button } from '@/components';
+import { deckUpdate } from '@/context';
 
 const DeckChangeBranchName = ({ deck }) => {
-  const { isMobile } = useApp();
   const { deckid, branchName, isAuthor, isPublic, isFrozen } = deck;
   const [value, setValue] = useState(branchName);
   const [success, setSuccess] = useState(false);
@@ -40,17 +39,19 @@ const DeckChangeBranchName = ({ deck }) => {
 
   return (
     <form className="flex" onSubmit={handleSubmit}>
-      {isMobile && <PaletteFill />}
+      <InputPreLabel className="sm:hidden" title="Branch Name">
+        <PaletteFill width="20" height="20" viewBox="0 0 16 16" />
+      </InputPreLabel>
       <Input
         value={value}
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        className={`w-full rounded-r-none border-bgSecondary dark:border-bgSecondaryDark sm:rounded-r`}
+        className={`w-full border-bgSecondary dark:border-bgSecondaryDark max-sm:rounded-none`}
       />
-      {isMobile && isAuthor && (
+      {isAuthor && (
         <Button
-          className="rounded-l-none"
+          className="sm:hidden rounded-l-none"
           variant={success ? 'success' : 'primary'}
           type="submit"
         >
