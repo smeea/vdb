@@ -213,7 +213,7 @@ const Decks = () => {
   return (
     <div className="deck-container mx-auto">
       <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-        <div className="hidden min-w-[175px] xl:block" />
+        <div className="max-xl:hidden min-w-[175px]" />
         <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
           <div className="flex flex-col gap-4 sm:flex-row">
             <div className="basis-full sm:basis-5/12">
@@ -260,7 +260,7 @@ const Decks = () => {
             </div>
           )}
         </div>
-        <div className="hidden min-w-[175px] lg:block">
+        <div className="max-lg:hidden min-w-[175px]">
           <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]">
             <DeckButtons
               deck={deck}

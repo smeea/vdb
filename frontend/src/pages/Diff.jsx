@@ -219,7 +219,7 @@ const Diff = () => {
           )}
         </div>
         {!isMobile && (
-          <div className="hidden lg:flex lg:basis-2/12">
+          <div className="max-lg:hidden basis-2/12">
             <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
               <DiffButtons
                 missingCrypt={missingCrypt}

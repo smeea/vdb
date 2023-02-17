@@ -66,7 +66,7 @@ const TwdResult = ({ results, setResults }) => {
                   <div className="basis-1/2 sm:basis-1/3">
                     <TwdResultCryptTable crypt={deck['crypt']} />
                   </div>
-                  <div className="hidden sm:block sm:basis-1/3">
+                  <div className="max-sm:hidden sm:basis-1/3">
                     <TwdResultLibraryByTypeTable library={deck['library']} />
                   </div>
                   <div className="basis-1/2 sm:basis-1/3">
