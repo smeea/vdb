@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Textarea, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
@@ -17,6 +17,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
+  const ref = useRef();
 
   const handleChange = (event) => {
     setDeckText(event.target.value);
@@ -79,7 +80,12 @@ It will skip other (useless) lines, you don't have to remove it yourself.
 `;
 
   return (
-    <Modal handleClose={handleClose} size="lg" title="Import from Text">
+    <Modal
+      initialFocus={ref}
+      handleClose={handleClose}
+      size="lg"
+      title="Import from Text"
+    >
       <div>
         <Textarea
           className="w-full"
@@ -87,7 +93,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
           value={deckText}
           placeholder={placeholder}
           onChange={handleChange}
-          autoFocus
+          ref={ref}
         />
         <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
           <Button variant="primary" onClick={importDeckFromText}>

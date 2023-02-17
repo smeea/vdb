@@ -1,6 +1,5 @@
 # FIX
 - Problem with valtio update
-- Modal initialFocus forwardRef
 
 # FEATURES
 - Check TWD
