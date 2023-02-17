@@ -19,10 +19,11 @@ const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
 
   return (
     <Button
-      className="h-[33px] w-[24px] px-0 py-0"
+      className="h-[33px] w-[24px]"
       variant={inDeck ? 'third' : 'primary'}
       onClick={onClick}
       title={title}
+      noPadding
     >
       {inDeck ? inDeck : '+'}
     </Button>

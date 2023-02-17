@@ -13,9 +13,10 @@ const SearchFormButtonDel = ({ i, name, searchForm }) => {
 
   return (
     <Button
-      className="h-[18px] w-[18px] px-0 py-0"
+      className="h-[18px] w-[18px]"
       variant="primary"
       onClick={() => delForm(i)}
+      noPadding
     >
       <Dash />
     </Button>

@@ -68,7 +68,8 @@ const DeckCardQuantity = ({
               >
                 <Button
                   variant="primary"
-                  className="h-[27px] w-[18px] px-0 py-0 text-sm"
+                  className="h-[27px] w-[18px] text-sm"
+                  noPadding
                 >
                   -
                 </Button>
@@ -80,7 +81,8 @@ const DeckCardQuantity = ({
               >
                 <Button
                   variant="primary"
-                  className="h-[27px] w-[18px] px-0 py-0 text-sm"
+                  className="h-[27px] w-[18px] text-sm"
+                  noPadding
                 >
                   +
                 </Button>
@@ -90,10 +92,11 @@ const DeckCardQuantity = ({
             <>
               {!manual && (
                 <Button
-                  className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
+                  className="h-[27px] min-w-[18px] text-sm"
                   variant="primary"
                   onClick={() => cardChange(deckid, card, q - 1)}
                   tabIndex={-1}
+                  noPadding
                 >
                   -
                 </Button>
@@ -125,10 +128,11 @@ const DeckCardQuantity = ({
               </div>
               {!manual && (
                 <Button
-                  className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
+                  className="h-[27px] min-w-[18px] text-sm"
                   variant="primary"
                   onClick={() => cardChange(deckid, card, q + 1)}
                   tabIndex={-1}
+                  noPadding
                 >
                   +
                 </Button>

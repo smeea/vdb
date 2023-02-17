@@ -12,6 +12,7 @@ const Button = ({
   type,
   tabIndex,
   variant = 'primary',
+  noPadding,
 }) => {
   const baseStyle =
     'focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
@@ -36,9 +37,9 @@ const Button = ({
     <button
       className={`${baseStyle} ${
         customStyle[variant]
-      } flex items-center justify-center rounded px-3 py-1.5 ${
-        className ?? ''
-      }`}
+      } flex items-center justify-center rounded ${
+        noPadding ? '' : 'px-3 py-1.5'
+      } ${className ?? ''}`}
       onClick={onClick}
       title={title}
       disabled={disabled}

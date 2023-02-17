@@ -50,8 +50,9 @@ const InventoryCardQuantity = ({
             onClick={() => handleQuantityChange(-1)}
           >
             <Button
-              className="h-[27px] w-[18px] px-0 py-0 text-sm"
+              className="h-[27px] w-[18px] text-sm"
               variant="primary"
+              noPadding
             >
               -
             </Button>
@@ -70,8 +71,9 @@ const InventoryCardQuantity = ({
             onClick={() => handleQuantityChange(1)}
           >
             <Button
-              className="h-[27px] w-[18px] px-0 py-0 text-sm"
+              className="h-[27px] w-[18px] text-sm"
               variant="primary"
+              noPadding
             >
               +
             </Button>
@@ -81,10 +83,11 @@ const InventoryCardQuantity = ({
         <>
           {!manual && (
             <Button
-              className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
+              className="h-[27px] min-w-[18px] text-sm"
               variant="primary"
               onClick={() => handleQuantityChange(-1)}
               tabIndex={-1}
+              noPadding
             >
               -
             </Button>
@@ -120,10 +123,11 @@ const InventoryCardQuantity = ({
           </div>
           {!manual && (
             <Button
-              className="h-[27px] min-w-[18px] px-0 py-0 text-sm"
+              className="h-[27px] min-w-[18px] text-sm"
               variant="primary"
               onClick={() => handleQuantityChange(1)}
               tabIndex={-1}
+              noPadding
             >
               +
             </Button>

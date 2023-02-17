@@ -54,10 +54,11 @@ const SearchFormButtonLogicToggle = ({
 
   return (
     <Button
-      className="h-[18px] w-[18px] px-0 py-0 text-[10px]"
+      className="h-[18px] w-[18px] text-[10px]"
       variant="primary"
       onClick={handleToggleForm}
       title={title}
+      noPadding
     >
       {icon}
     </Button>
