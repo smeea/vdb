@@ -1729,7 +1729,9 @@
         "player":"Leonardo Bensi"
     },
     "201639":{
-        "deckid":null
+        "deckid":"10483",
+        "twd_date":"2022-12-28",
+        "player":"Aapo J\u00e4rvelin"
     },
     "201583":{
         "deckid":"10008",
@@ -2179,9 +2181,9 @@
         "player":"Robyn Tatu"
     },
     "201585":{
-        "deckid":"10211",
-        "twd_date":"2022-06-09",
-        "player":"Darby Keeney"
+        "deckid":"10090",
+        "twd_date":"2022-05-14",
+        "player":"Norman Brown"
     },
     "200407":{
         "deckid":"2k5seekonkjan",
@@ -2758,7 +2760,9 @@
         "player":"Alex Harmon"
     },
     "201617":{
-        "deckid":null
+        "deckid":"9961",
+        "twd_date":"2021-12-19",
+        "player":"\u00c1lex Cort\u00e9s"
     },
     "200518":{
         "deckid":"crusade_atlanta_2k1",
@@ -3160,7 +3164,9 @@
         "player":"Ian Lee"
     },
     "201591":{
-        "deckid":null
+        "deckid":"9997",
+        "twd_date":"2021-12-05",
+        "player":"Dayvisson Magalh\u00e3es Alves"
     },
     "200595":{
         "deckid":"2k4cambridgecq",
@@ -3938,7 +3944,9 @@
         "player":"Matt Green"
     },
     "201596":{
-        "deckid":null
+        "deckid":"9980",
+        "twd_date":"2021-12-19",
+        "player":"Lasse P\u00f6yry"
     },
     "200746":{
         "deckid":"mikejones",
@@ -5222,7 +5230,9 @@
         "player":"Miguel Angel Vasquez"
     },
     "201644":{
-        "deckid":null
+        "deckid":"10469",
+        "twd_date":"2022-12-17",
+        "player":"\u00d3scar Caballero"
     },
     "200984":{
         "deckid":"2012ttfpf",
@@ -7214,7 +7224,9 @@
         "player":"Archibald Zimonyi"
     },
     "201613":{
-        "deckid":null
+        "deckid":"10090",
+        "twd_date":"2022-05-14",
+        "player":"Norman Brown"
     },
     "201364":{
         "deckid":"camarillaconclave2k1",

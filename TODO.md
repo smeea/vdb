@@ -1,5 +1,4 @@
 # FIX
-- Problem with valtio update
 
 # FEATURES
 - Check TWD
@@ -15,6 +14,7 @@
 - Inventory/deck import in excel
 
 # IMPROVE TECHNOLOGY - FRONTEND
+- Problem with valtio update
 - Migration from screen width to container queries where possible
 - Refactor standard colors
 - Refactor react-select to css-in-js styles
