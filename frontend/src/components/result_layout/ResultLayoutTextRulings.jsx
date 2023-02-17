@@ -9,7 +9,23 @@ import {
   ConditionalTooltip,
 } from '@/components';
 
-const ResultLayoutTextRulings = ({ rulings }) => {
+const Refs = ({ refs }) => {
+  return (
+    <>
+      {Object.keys(refs).map((i) => {
+        return (
+          <div key={i} className="inline whitespace-nowrap">
+            <a target="_blank" rel="noreferrer" href={refs[i]}>
+              {i}
+            </a>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+const Text = ({ text }) => {
   const {
     nativeCrypt,
     nativeLibrary,
@@ -18,86 +34,67 @@ const ResultLayoutTextRulings = ({ rulings }) => {
     isMobile,
   } = useApp();
 
-  const Rulings = Object(rulings).map((k, idxRuling) => {
-    const Refs = Object.keys(k['refs']).map((j) => {
-      return (
-        <a
-          key={`${idxRuling}-${j}`}
-          target="_blank"
-          rel="noreferrer"
-          href={k['refs'][j]}
-        >
-          {j}
-        </a>
-      );
-    });
+  const textWithIcons = reactStringReplace(
+    text,
+    /\[(\w+?)\]/g,
+    (match, idx) => {
+      return <ResultMiscImage key={`icon-${idx}`} value={match} />;
+    }
+  );
 
-    const text = k.text.replace(/\(D\)/g, '\u24B9').split('\n');
+  return (
+    <>
+      {reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
+        const cardBase = { ...nativeCrypt, ...nativeLibrary };
+        const cardid = Object.keys(cardBase).find(
+          (j) => cardBase[j]['Name'] == match
+        );
 
-    const RulingText = text.map((i, idxText) => {
-      const textWithIcons = reactStringReplace(
-        i,
-        /\[(\w+?)\]/g,
-        (match, idxIcons) => {
+        const card =
+          cardid > 2000000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+
+        if (card) {
           return (
-            <ResultMiscImage key={`${idxText}-${idxIcons}`} value={match} />
+            <span key={idx}>
+              <ConditionalTooltip
+                overlay={<CardPopover card={card} />}
+                disabled={isMobile}
+              >
+                {cardid > 200000 ? (
+                  <ResultCryptName card={card} />
+                ) : (
+                  <ResultLibraryName card={card} />
+                )}
+              </ConditionalTooltip>
+            </span>
           );
+        } else {
+          return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
         }
-      );
+      })}
+    </>
+  );
+};
 
-      const textWithIconsReferences = reactStringReplace(
-        textWithIcons,
-        /{(.*?)}/g,
-        (match, idxReference) => {
-          const cardBase = { ...nativeCrypt, ...nativeLibrary };
-          const cardid = Object.keys(cardBase).find(
-            (j) => cardBase[j]['Name'] == match
-          );
+const ResultLayoutTextRulings = ({ rulings }) => {
+  return (
+    <ul className="text-sm space-y-2">
+      {rulings.map((k, idx) => {
+        const text = k.text.replace(/\(D\)/g, '\u24B9').split('\n');
 
-          const card =
-            cardid > 2000000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-
-          if (card) {
-            return (
-              <span key={`${idxRuling}-${idxText}-text-${idxReference}`}>
-                <ConditionalTooltip
-                  overlay={<CardPopover card={card} />}
-                  disabled={isMobile}
-                >
-                  {cardid > 200000 ? (
-                    <ResultCryptName card={card} />
-                  ) : (
-                    <ResultLibraryName card={card} />
-                  )}
-                </ConditionalTooltip>
-              </span>
-            );
-          } else {
-            return (
-              <React.Fragment key={`${idxRuling}-${idxText}-${idxReference}`}>
-                &#123;{match}&#125;
-              </React.Fragment>
-            );
-          }
-        }
-      );
-
-      return (
-        <React.Fragment key={`${idxRuling}-${idxText}`}>
-          {textWithIconsReferences}
-        </React.Fragment>
-      );
-    });
-
-    return (
-      <li key={idxRuling}>
-        {RulingText}
-        {Refs}
-      </li>
-    );
-  });
-
-  return <ul className="text-sm space-y-2">{Rulings}</ul>;
+        return (
+          <li key={idx}>
+            {text.map((i, idxText) => {
+              return <Text key={idxText} text={i} />;
+            })}
+            <div className="inline space-x-1">
+              <Refs refs={k['refs']} />
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  );
 };
 
 export default ResultLayoutTextRulings;

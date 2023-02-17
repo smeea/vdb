@@ -33,4 +33,3 @@
 - Library sticky hide above header
 - Unify modal button blocks
 - Switch from 'hidden sm:other' to 'max-sm:hidden'
-- Rulings spacing between references and nowrap
