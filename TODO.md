@@ -26,8 +26,7 @@
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
 - Refactor fetch to useFetch where possible
+- Add standard modal button blocks
 
 # TAILWIND MIGRATION
-- Slow switching decks
 - Library sticky hide above header
-- Unify modal button blocks

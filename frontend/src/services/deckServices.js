@@ -32,7 +32,6 @@ export const cardChange = (deckid, cardid, q) => {
 };
 
 export const deckImport = (deck) => {
-  console.log(deck);
   const cards = {};
   Object.values({ ...deck.crypt, ...deck.library }).map((card) => {
     cards[card.c.Id] = card.q;
@@ -181,9 +180,10 @@ export const deckLoader = async ({ params }) => {
     credentials: 'include',
   };
 
-  const response = await fetch(url, options);
-  if (!response.ok) return { error: response.status };
-  const deckData = await response.json();
+  const response = fetch(url, options).then((response) => {
+    if (!response.ok) return { error: response.status };
+    return response.json();
+  });
 
-  return defer({ deckData });
+  return defer({ deckData: response });
 };

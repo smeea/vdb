@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Await, useLoaderData } from 'react-router-dom';
 import { Banner } from '@/components';
 
 const Changelog = () => {
-  const { changes } = useLoaderData();
+  const loaderData = useLoaderData();
 
   return (
     <div className="about-container mx-auto">
@@ -11,25 +11,27 @@ const Changelog = () => {
         <Banner />
       </div>
       <div className="space-y-4 p-3 sm:p-0">
-        {changes && (
-          <>
-            <div className="text-xl font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
-              CHANGELOG
-            </div>
-            {changes.map((item) => (
-              <div key={item.version}>
-                <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-                  {item.version}:
-                </div>
-                <ul className="space-y-1">
-                  {item.changes.map((change, idx) => (
-                    <li key={idx}>{change}</li>
-                  ))}
-                </ul>
+        <Await resolve={loaderData.changes}>
+          {(changes) => (
+            <>
+              <div className="text-xl font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
+                CHANGELOG
               </div>
-            ))}
-          </>
-        )}
+              {changes.map((item) => (
+                <div key={item.version}>
+                  <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                    {item.version}:
+                  </div>
+                  <ul className="space-y-1">
+                    {item.changes.map((change, idx) => (
+                      <li key={idx}>{change}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </>
+          )}
+        </Await>
       </div>
     </div>
   );
@@ -45,9 +47,10 @@ export const loader = async () => {
     credentials: 'include',
   };
 
-  const response = await fetch(url, options);
-  if (!response.ok) return { error: response.status };
-  const changes = await response.json();
+  const response = fetch(url, options).then((response) => {
+    if (!response.ok) return { error: response.status };
+    return response.json();
+  });
 
-  return { changes };
+  return { changes: response };
 };

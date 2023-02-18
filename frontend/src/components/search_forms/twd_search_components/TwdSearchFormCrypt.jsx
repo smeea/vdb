@@ -44,12 +44,12 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                   noPadding
                 >
                   <div
-                    className="flex"
+                    className="flex gap-1"
                     onClick={() => setModalCard(cryptCardBase[id])}
                   >
                     <ResultCryptName card={cryptCardBase[id]} />
                     {cryptCardBase[id]['New'] && (
-                      <div className="inline text-midGray  dark:text-midGrayDark">
+                      <div className="text-midGray  dark:text-midGrayDark">
                         [G{cryptCardBase[id].Group}]
                       </div>
                     )}
@@ -61,7 +61,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
       </div>
       {modalCard && (
         <ResultModal
-          show={modalCard ? true : false}
+          show={!!modalCard}
           card={modalCard}
           handleClose={() => setModalCard(false)}
         />

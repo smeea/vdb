@@ -3,7 +3,7 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
 
   const cardbase = {};
   Object.values(cryptCardBase).map((card) => {
-    const adv = card?.Adv[0] ? true : false;
+    const adv = !!card?.Adv[0];
     const name = card['ASCII Name'].toLowerCase().replace(/\W/g, '');
 
     if (!Object.keys(cardbase).includes(name)) {

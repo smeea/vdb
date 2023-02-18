@@ -31,7 +31,7 @@ const DeckLibraryHeader = ({
   return (
     <>
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-        <div className="space-x-2 px-2 py-1 font-bold">
+        <div className="space-x-2 p-2 font-bold">
           <div className="inline">
             Library [{libraryTotal}
             {!inMissing &&

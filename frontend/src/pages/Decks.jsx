@@ -70,7 +70,7 @@ const Decks = () => {
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const getDeck = async () => {
-    const { deckData } = await loaderData;
+    const deckData = await loaderData.deckData;
 
     if (deckData.error) {
       if (deckData.error == 400) {

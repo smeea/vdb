@@ -364,7 +364,7 @@ export const AppProvider = (props) => {
     initFromStorage('twdSearchSort', 'Date - New to Old', setTwdSearchSort);
     initFromStorage('pdaSearchSort', 'Date - New to Old', setPdaSearchSort);
     initFromStorage('lang', 'en-EN', setLang);
-    initFromStorage('addMode', isDesktop ? true : false, setAddMode);
+    initFromStorage('addMode', isDesktop, setAddMode);
     initFromStorage('inventoryMode', false, setInventoryMode);
     initFromStorage('showImage', true, setShowImage);
     initFromStorage('recentDecks', [], setRecentDecks);

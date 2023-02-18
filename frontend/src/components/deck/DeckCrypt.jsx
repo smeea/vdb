@@ -99,7 +99,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
       </div>
       {Object.keys(cryptSide).length > 0 && (
         <div className="space-y-2 opacity-60 dark:opacity-50">
-          <div className="flex h-[42px] items-center bg-bgSecondary px-2 py-1 font-bold dark:bg-bgSecondaryDark">
+          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
             Side Crypt
           </div>
           <DeckCryptTable

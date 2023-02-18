@@ -21,7 +21,7 @@ const Input = React.forwardRef(
   ) => {
     return (
       <input
-        className={`min-h-[42px] rounded border border-borderSecondary bg-bgPrimary px-2.5 py-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${
+        className={`min-h-[42px] rounded border border-borderSecondary bg-bgPrimary px-2 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${
           className ?? ''
         }`}
         placeholder={placeholder}
