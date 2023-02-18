@@ -10,7 +10,7 @@ const Changelog = () => {
       <div className="sm:mb-6">
         <Banner />
       </div>
-      <div className="space-y-4 p-3 sm:p-0">
+      <div className="space-y-4 max-sm:p-3">
         <Await resolve={loaderData.changes}>
           {(changes) => (
             <>

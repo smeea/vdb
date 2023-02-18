@@ -64,7 +64,7 @@ const Library = () => {
           </div>
         )}
         {showResultCol && (
-          <div className="sm:basis-7/12 lg:basis-6/12 xl:basis-5/12">
+          <div className="basis-full sm:basis-7/12 lg:basis-6/12 xl:basis-5/12">
             {((isMobile && libraryCompare && libraryResults) ||
               (!isMobile && libraryCompare)) && (
               <div>

@@ -25,7 +25,7 @@ const About = () => {
       <div className="sm:mb-6">
         <Banner />
       </div>
-      <div className="space-y-6 p-3 sm:p-0">
+      <div className="space-y-6 max-sm:p-3">
         <div className="space-y-1">
           <Title>WHAT IS IT</Title>
           <div>

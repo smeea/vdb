@@ -66,11 +66,11 @@ const SeatingTableLayout = ({ players }) => {
             </div>
             <div className="flex w-1/3" />
             <div className="flex w-1/3 justify-center">
-              <SeatingTablePlayer deck={players[3]} isFirst />
+              <SeatingTablePlayer deck={players[3]} />
             </div>
           </Row>
           <Row>
-            <SeatingTablePlayer deck={players[4]} />
+            <SeatingTablePlayer deck={players[4]} isFirst />
           </Row>
         </Table>
       );

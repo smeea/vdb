@@ -29,14 +29,12 @@ const ResultLibraryTotal = ({
       <div className="whitespace-nowrap p-2 font-bold">
         {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
       </div>
-      <div className="flex items-center">
+      <div>
         {Object.keys(byTypes).map((k) => {
           return (
             <div key={k} className="inline-block whitespace-nowrap px-2">
-              <div className="flex items-center">
-                <ResultLibraryTypeImage value={k} />
-                {byTypes[k]}
-              </div>
+              <ResultLibraryTypeImage value={k} />
+              {byTypes[k]}
             </div>
           );
         })}

@@ -12,7 +12,7 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
 
   return (
     <div className="flex max-sm:flex-col gap-2 sm:gap-4 lg:gap-6 xl:gap-8">
-      <div className="sm:basis-1/2">
+      <div className="basis-full sm:basis-1/2">
         <DiffSelectDeck
           target="from"
           title="Deck You Edit"
@@ -27,7 +27,7 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
           <ArrowLeftRight />
         </Button>
       </div>
-      <div className="sm:basis-1/2">
+      <div className="basis-full sm:basis-1/2">
         <DiffSelectDeck
           target="to"
           title="Show Changes Against:"

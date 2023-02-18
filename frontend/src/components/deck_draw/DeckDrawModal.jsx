@@ -57,7 +57,7 @@ const DeckDrawModal = ({
     >
       <div className="flex flex-col gap-5">
         <div className="flex max-sm:flex-col gap-5">
-          <div className="sm:basis-5/9">
+          <div className="basis-full sm:basis-5/9">
             <div>
               <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
                 <div className="flex w-full justify-between px-2">
@@ -123,7 +123,7 @@ const DeckDrawModal = ({
               />
             </div>
           </div>
-          <div className="sm:basis-4/9">
+          <div className="basis-full sm:basis-4/9">
             <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
               <div className="flex w-full justify-between px-2">
                 <div className="flex items-center font-bold">Hand</div>

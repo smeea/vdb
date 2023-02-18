@@ -32,7 +32,7 @@ const Documentation = () => {
       <div className="sm:mb-6">
         <Banner />
       </div>
-      <div className="space-y-6 p-3 sm:p-0">
+      <div className="space-y-6 max-sm:p-3">
         <div>
           <Title>HELP / DOCUMENTATION</Title>
           <div>Documentation below describe some logic of VDB components.</div>

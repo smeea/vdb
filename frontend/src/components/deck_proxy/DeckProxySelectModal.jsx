@@ -151,7 +151,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     >
       <div className="space-y-5">
         <div className="flex max-md:flex-col gap-5">
-          <div className="sm:basis-5/9">
+          <div className="basis-full sm:basis-5/9">
             {deck.crypt && (
               <div
                 className={
@@ -170,7 +170,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
               </div>
             )}
           </div>
-          <div className="sm:basis-4/9">
+          <div className="basis-full sm:basis-4/9">
             {deck.library && (
               <DeckProxyLibrary
                 deck={deck}

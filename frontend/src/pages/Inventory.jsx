@@ -254,11 +254,7 @@ const Inventory = () => {
       ) : inventoryError ? (
         <ErrorMessage>{inventoryError}</ErrorMessage>
       ) : (
-        <LoginBlock>
-          <div className="flex justify-center text-xl">
-            Login to manage your inventory
-          </div>
-        </LoginBlock>
+        <LoginBlock>Login to manage your inventory</LoginBlock>
       )}
       <ButtonFloatMenu />
       {showMenuButtons && (
