@@ -13,8 +13,6 @@ const DiffCryptTable = ({
   handleClick,
   disciplinesSet,
   keyDisciplines,
-  nonKeyDisciplines,
-  maxDisciplines,
 }) => {
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
@@ -35,8 +33,6 @@ const DiffCryptTable = ({
               cryptTotal={cryptTotal}
               disciplinesSet={disciplinesSet}
               keyDisciplines={keyDisciplines}
-              nonKeyDisciplines={nonKeyDisciplines}
-              maxDisciplines={maxDisciplines}
             />
           );
         })}

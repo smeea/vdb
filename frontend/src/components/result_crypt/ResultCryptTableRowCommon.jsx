@@ -16,9 +16,7 @@ import { useApp } from '@/context';
 const ResultCryptTableRowCommon = ({
   card,
   handleClick,
-  maxDisciplines,
   keyDisciplines,
-  nonKeyDisciplines,
   disciplinesSet,
   inSearch,
   inDeck,
@@ -37,7 +35,7 @@ const ResultCryptTableRowCommon = ({
         </div>
       </td>
       {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
-        <td className="min-w-[170px]" onClick={() => handleClick(card)}>
+        <td className="sm:min-w-[170px]" onClick={() => handleClick(card)}>
           {inDeck &&
           keyDisciplines &&
           disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
@@ -45,13 +43,9 @@ const ResultCryptTableRowCommon = ({
               value={card.Disciplines}
               disciplinesSet={disciplinesSet}
               keyDisciplines={keyDisciplines}
-              nonKeyDisciplines={nonKeyDisciplines}
             />
           ) : (
-            <ResultCryptDisciplines
-              value={card.Disciplines}
-              maxDisciplines={maxDisciplines}
-            />
+            <ResultCryptDisciplines value={card.Disciplines} />
           )}
         </td>
       )}

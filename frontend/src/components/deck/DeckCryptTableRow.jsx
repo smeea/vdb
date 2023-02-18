@@ -25,8 +25,6 @@ const DeckCryptTableRow = ({
   deck,
   disciplinesSet,
   keyDisciplines,
-  nonKeyDisciplines,
-  maxDisciplines,
   showInfo,
   cryptTotal,
   inSearch,
@@ -130,9 +128,7 @@ const DeckCryptTableRow = ({
       <ResultCryptTableRowCommon
         card={card.c}
         handleClick={handleClick}
-        maxDisciplines={maxDisciplines}
         keyDisciplines={keyDisciplines}
-        nonKeyDisciplines={nonKeyDisciplines}
         disciplinesSet={disciplinesSet}
         inSearch={inSearch}
         inDeck

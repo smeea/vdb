@@ -9,7 +9,8 @@ import {
 } from '@/hooks';
 
 const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
-  const { cryptDeckSort, changeCryptDeckSort } = useApp();
+  const { cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } =
+    useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
   const [showInfo, setShowInfo] = useState(false);
 
@@ -25,8 +26,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } =
     useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
 
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
-    useKeyDisciplines(crypt);
+  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
 
   const {
     currentModalCard,
@@ -75,8 +75,6 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
         isEditable={isEditable}
         disciplinesSet={disciplinesSet}
         keyDisciplines={keyDisciplines}
-        nonKeyDisciplines={nonKeyDisciplines}
-        maxDisciplines={maxDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className=" opacity-60 dark:opacity-50">
@@ -92,8 +90,6 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
             isEditable={isEditable}
             disciplinesSet={disciplinesSet}
             keyDisciplines={keyDisciplines}
-            nonKeyDisciplines={nonKeyDisciplines}
-            maxDisciplines={maxDisciplines}
           />
         </div>
       )}

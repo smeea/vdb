@@ -16,8 +16,6 @@ const DeckProxyCryptTableRow = ({
   handleSetSelector,
   disciplinesSet,
   keyDisciplines,
-  nonKeyDisciplines,
-  maxDisciplines,
   inventoryType,
   card,
   idx,
@@ -65,9 +63,7 @@ const DeckProxyCryptTableRow = ({
       <ResultCryptTableRowCommon
         card={card.c}
         handleClick={handleClick}
-        maxDisciplines={maxDisciplines}
         keyDisciplines={keyDisciplines}
-        nonKeyDisciplines={nonKeyDisciplines}
         disciplinesSet={disciplinesSet}
         inDeck
       />

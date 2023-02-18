@@ -8,13 +8,7 @@ import {
 } from '@/components';
 import { useApp, deckStore, deckCardChange } from '@/context';
 
-const ResultCryptTableRow = ({
-  card,
-  handleClick,
-  idx,
-  inRecommendation,
-  maxDisciplines,
-}) => {
+const ResultCryptTableRow = ({ card, handleClick, idx, inRecommendation }) => {
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inDeck = deck?.crypt[card.Id]?.q || 0;
@@ -85,11 +79,7 @@ const ResultCryptTableRow = ({
           <ResultUsed card={card} />
         </td>
       )}
-      <ResultCryptTableRowCommon
-        card={card}
-        handleClick={handleClick}
-        maxDisciplines={maxDisciplines}
-      />
+      <ResultCryptTableRowCommon card={card} handleClick={handleClick} />
     </tr>
   );
 };

@@ -1,71 +1,50 @@
 import React from 'react';
 import { ResultDisciplineImage } from '@/components';
-import { useApp } from '@/context';
 
-const DeckCryptDisciplines = ({
-  value,
-  disciplinesSet,
-  keyDisciplines,
-  nonKeyDisciplines,
-}) => {
-  const { isMobile } = useApp();
-
-  const emptyCols = [];
-  let counter = 0;
-  const n = keyDisciplines + nonKeyDisciplines;
-  const maxCols = n < 8 ? n : isMobile ? 7 : 8;
-
-  const width = 100 / maxCols + '%';
-
-  const keyDisciplinesCols = disciplinesSet
-    .slice(0, keyDisciplines)
-    .map((d, index) => {
-      counter += 1;
-      return (
-        <td width={width} key={index}>
-          {value?.[d] && (
-            <div className="flex justify-center items-center">
-              <ResultDisciplineImage value={d} superior={value[d] === 2} />
-            </div>
-          )}
-        </td>
-      );
-    });
-
-  const restDisciplinesCols = disciplinesSet
-    .slice(keyDisciplines)
-    .sort()
-    .map((d, index) => {
-      if (value[d]) {
-        counter += 1;
-        return (
-          <td
-            className="min-w-[24px] sm:min-w-[27px]"
-            width={width}
-            key={index}
-          >
-            {value[d] && (
-              <ResultDisciplineImage value={d} superior={value[d] === 2} />
-            )}
-          </td>
-        );
-      } else {
-        return null;
-      }
-    });
-
-  while (counter < maxCols) {
-    counter += 1;
-    emptyCols.push(<td width={width} key={counter}></td>);
-  }
-
+const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
   return (
     <table>
       <tbody>
         <tr>
-          {keyDisciplinesCols}
-          {restDisciplinesCols}
-          {emptyCols}
+          {disciplinesSet.slice(0, keyDisciplines).map((d, index) => {
+            return (
+              <td
+                className="min-w-[25px] max-w-[25px] sm:max-w-[28px] sm:min-w-[28px]"
+                key={index}
+              >
+                {value?.[d] && (
+                  <div className="flex justify-center items-center">
+                    <ResultDisciplineImage
+                      value={d}
+                      superior={value[d] === 2}
+                    />
+                  </div>
+                )}
+              </td>
+            );
+          })}
+          {disciplinesSet
+            .slice(keyDisciplines)
+            .sort()
+            .map((d, index) => {
+              if (value[d]) {
+                return (
+                  <td
+                    className="min-w-[25px] max-w-[25px] sm:max-w-[28px] sm:min-w-[28px]"
+                    key={index}
+                  >
+                    {value[d] && (
+                      <ResultDisciplineImage
+                        value={d}
+                        superior={value[d] === 2}
+                      />
+                    )}
+                  </td>
+                );
+              } else {
+                return null;
+              }
+            })}
         </tr>
       </tbody>
     </table>

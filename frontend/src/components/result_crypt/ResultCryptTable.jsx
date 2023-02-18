@@ -1,11 +1,8 @@
 import React from 'react';
 import { ResultModal, ResultCryptTableRow } from '@/components';
-import { countDisciplines } from '@/utils';
 import { useModalCardController } from '@/hooks';
 
 const ResultCryptTable = ({ resultCards, inRecommendation }) => {
-  const maxDisciplines = countDisciplines(resultCards);
-
   const {
     currentModalCard,
     shouldShowModal,
@@ -26,7 +23,6 @@ const ResultCryptTable = ({ resultCards, inRecommendation }) => {
                 handleClick={handleModalCardOpen}
                 idx={idx}
                 inRecommendation={inRecommendation}
-                maxDisciplines={maxDisciplines}
               />
             );
           })}

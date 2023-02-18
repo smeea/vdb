@@ -32,8 +32,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
   const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } =
     useDeckCrypt(deck.crypt, cryptDeckSort, changeTimer);
 
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
-    useKeyDisciplines(deck.crypt);
+  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(deck.crypt);
 
   const {
     currentModalCard,
@@ -91,8 +90,6 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
           showInfo={showInfo}
           disciplinesSet={disciplinesSet}
           keyDisciplines={keyDisciplines}
-          nonKeyDisciplines={nonKeyDisciplines}
-          maxDisciplines={maxDisciplines}
           inSearch={inSearch}
           inMissing={inMissing}
         />
@@ -108,7 +105,6 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             keyDisciplines={keyDisciplines}
-            nonKeyDisciplines={nonKeyDisciplines}
             inSearch={inSearch}
             inMissing={inMissing}
           />

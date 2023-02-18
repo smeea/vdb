@@ -4,13 +4,9 @@ const useKeyDisciplines = (crypt = {}) => {
   let cryptTotal = 0;
   const disciplinesDetailed = {};
   const disciplinesDict = {};
-  let maxDisciplines = 0;
 
   for (const card of Object.keys(crypt)) {
     cryptTotal += crypt[card].q;
-    const n = Object.keys(crypt[card].c.Disciplines).length;
-    if (maxDisciplines < n) maxDisciplines = n;
-
     for (const d of Object.keys(crypt[card].c.Disciplines)) {
       const levelModifier = crypt[card].c.Disciplines[d] > 1 ? 1.5 : 1;
 
@@ -52,28 +48,10 @@ const useKeyDisciplines = (crypt = {}) => {
       }
     });
 
-  const nonKeyDisciplinesList = [];
-  for (let i = keyDisciplines; i < disciplinesSet.length; i++) {
-    nonKeyDisciplinesList.push(disciplinesSet[i]);
-  }
-
-  let nonKeyDisciplines = 0;
-  Object.keys(crypt).map((card) => {
-    let counter = 0;
-    Object.keys(crypt[card].c.Disciplines).map((d) => {
-      if (nonKeyDisciplinesList.includes(d)) {
-        counter += 1;
-      }
-    });
-    if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
-  });
-
   return {
     disciplinesSet,
     keyDisciplines,
-    nonKeyDisciplines,
     disciplinesDetailed,
-    maxDisciplines,
   };
 };
 

@@ -26,8 +26,7 @@ const DeckDrawCryptTable = ({
     });
   }
 
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
-    useKeyDisciplines(crypt);
+  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
@@ -45,9 +44,7 @@ const DeckDrawCryptTable = ({
               <ResultCryptTableRowCommon
                 card={card}
                 handleClick={handleClick}
-                maxDisciplines={maxDisciplines}
                 keyDisciplines={keyDisciplines}
-                nonKeyDisciplines={nonKeyDisciplines}
                 disciplinesSet={disciplinesSet}
                 inDeck
               />

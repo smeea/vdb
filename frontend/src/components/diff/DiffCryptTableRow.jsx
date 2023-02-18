@@ -28,8 +28,6 @@ const DiffCryptTableRow = ({
   handleClick,
   disciplinesSet,
   keyDisciplines,
-  nonKeyDisciplines,
-  maxDisciplines,
 }) => {
   const { inventoryMode } = useApp();
   const decks = useSnapshot(deckStore).decks;
@@ -65,9 +63,7 @@ const DiffCryptTableRow = ({
       <ResultCryptTableRowCommon
         card={card.c}
         handleClick={handleClick}
-        maxDisciplines={maxDisciplines}
         keyDisciplines={keyDisciplines}
-        nonKeyDisciplines={nonKeyDisciplines}
         disciplinesSet={disciplinesSet}
         inDeck
       />

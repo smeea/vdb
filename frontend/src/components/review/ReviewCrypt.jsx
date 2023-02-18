@@ -25,8 +25,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } =
     useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
 
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
-    useKeyDisciplines(crypt);
+  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
 
   const {
     currentModalCard,
@@ -63,7 +62,6 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
         keyDisciplines={keyDisciplines}
-        nonKeyDisciplines={nonKeyDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="opacity-60 dark:opacity-50">
@@ -79,7 +77,6 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
             cardsTo={cardsTo}
             disciplinesSet={disciplinesSet}
             keyDisciplines={keyDisciplines}
-            nonKeyDisciplines={nonKeyDisciplines}
           />
         </div>
       )}

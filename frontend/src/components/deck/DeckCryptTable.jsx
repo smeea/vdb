@@ -5,8 +5,6 @@ const DeckCryptTable = ({
   deck,
   disciplinesSet,
   keyDisciplines,
-  nonKeyDisciplines,
-  maxDisciplines,
   cards,
   showInfo,
   cryptTotal,
@@ -27,8 +25,6 @@ const DeckCryptTable = ({
               deck={deck}
               disciplinesSet={disciplinesSet}
               keyDisciplines={keyDisciplines}
-              nonKeyDisciplines={nonKeyDisciplines}
-              maxDisciplines={maxDisciplines}
               showInfo={showInfo}
               cryptTotal={cryptTotal}
               inSearch={inSearch}

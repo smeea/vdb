@@ -11,8 +11,7 @@ const DeckProxyCryptTable = ({
   handleProxyCounter,
   handleSetSelector,
 }) => {
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines, maxDisciplines } =
-    useKeyDisciplines(cards);
+  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(cards);
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
@@ -24,8 +23,6 @@ const DeckProxyCryptTable = ({
               inventoryType={inventoryType}
               disciplinesSet={disciplinesSet}
               keyDisciplines={keyDisciplines}
-              nonKeyDisciplines={nonKeyDisciplines}
-              maxDisciplines={maxDisciplines}
               card={card}
               idx={idx}
               handleClick={handleClick}
