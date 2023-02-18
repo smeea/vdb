@@ -30,13 +30,13 @@ const TwdResultTotal = ({
     >
       <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
       <div>
-        {Object.keys(byYear).map((k) => {
+        {Object.keys(byYear).map((i) => {
           return (
-            <div key={k} className="inline-block whitespace-nowrap px-2">
+            <div key={i} className="inline-block whitespace-nowrap px-2">
               <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
-                {k}:
+                {i}:
               </div>
-              {byYear[k]}
+              {byYear[i]}
             </div>
           );
         })}

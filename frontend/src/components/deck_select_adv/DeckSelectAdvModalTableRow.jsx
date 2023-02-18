@@ -101,7 +101,7 @@ const DeckSelectAdvModalTableRow = ({
       )}
 
       <td
-        className="min-w-[340px] cursor-pointer"
+        className="min-w-[45vw] sm:min-w-[340px] cursor-pointer"
         onClick={() => handleOpen(deck.deckid)}
       >
         <div
@@ -118,7 +118,7 @@ const DeckSelectAdvModalTableRow = ({
         </div>
       </td>
       {isDesktop && (
-        <td className="min-w-[40px]">
+        <td className="w-full">
           <div
             className="flex justify-center"
             onMouseEnter={() => setShowDeck(deck.deckid)}

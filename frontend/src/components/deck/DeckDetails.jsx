@@ -13,7 +13,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
 
   return (
     <div className="flex flex-col basis-full gap-2">
-      <div className="flex flex-col gap-2 sm:flex-row">
+      <div className="flex max-sm:flex-col gap-2">
         <div
           className={`basis-full ${
             deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-8/12'
@@ -22,7 +22,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
           <DeckChangeName deck={deck} />
         </div>
         <div
-          className={`flex basis-full flex-col sm:flex-row ${
+          className={`flex basis-full max-sm:flex-col ${
             deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-4/12'
           } gap-2`}
         >

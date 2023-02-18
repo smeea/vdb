@@ -215,8 +215,8 @@ const Decks = () => {
       <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
         <div className="max-xl:hidden min-w-[175px]" />
         <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <div className="basis-full sm:basis-5/12">
+          <div className="flex max-sm:flex-col gap-2 sm:gap-4 max-sm:pt-2 max-sm:px-2">
+            <div className="basis-full sm:basis-5/12 ">
               <DeckSelect
                 deckid={deckid}
                 deck={deck}
@@ -227,6 +227,7 @@ const Decks = () => {
                 setShowInfo={setShowInfo}
               />
             </div>
+
             <div className="basis-full sm:basis-7/12">
               {deck && (showInfo || !isMobile) && (
                 <DeckDetails
@@ -240,7 +241,7 @@ const Decks = () => {
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
-            <div className="flex flex-col sm:flex-row sm:gap-4 lg:gap-6 xl:gap-8">
+            <div className="flex max-sm:flex-col sm:gap-4 lg:gap-6 xl:gap-8">
               {playtest ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
@@ -261,7 +262,7 @@ const Decks = () => {
           )}
         </div>
         <div className="max-lg:hidden min-w-[175px]">
-          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]">
+          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-[44px]">
             <DeckButtons
               deck={deck}
               setShowInfo={setShowInfo}

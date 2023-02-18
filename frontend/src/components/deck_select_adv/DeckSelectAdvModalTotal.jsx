@@ -28,34 +28,28 @@ const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
     }
   });
 
-  const totalOutput = Object.keys(byTags)
-    .sort()
-    .map((k) => {
-      return (
-        <span
-          key={k}
-          onClick={() => handleClick(k)}
-          className="inline-block whitespace-nowrap "
-        >
-          <span className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            {k}:
-          </span>
-          {byTags[k]}
-        </span>
-      );
-    });
-
-  const value = (
-    <>
-      <div className="whitespace-nowrap font-bold">TOTAL: {total}</div>
-      <div>{totalOutput}</div>
-      <div />
-    </>
-  );
-
   return (
     <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-      {value}
+      <div className="whitespace-nowrap font-bold p-2">TOTAL: {total}</div>
+      <div>
+        {Object.keys(byTags)
+          .sort()
+          .map((i) => {
+            return (
+              <div
+                key={i}
+                onClick={() => handleClick(i)}
+                className="inline-block whitespace-nowrap px-2"
+              >
+                <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                  {i}:
+                </div>
+                {byTags[i]}
+              </div>
+            );
+          })}
+      </div>
+      <div />
     </div>
   );
 };

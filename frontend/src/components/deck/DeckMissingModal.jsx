@@ -28,7 +28,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
       noPadding={isMobile}
     >
       <div>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">
+        <div className="flex max-sm:flex-col gap-3 sm:gap-5">
           <div className="basis-full md:basis-5/9">
             <div
               className={

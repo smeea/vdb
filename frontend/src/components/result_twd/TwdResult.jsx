@@ -58,7 +58,7 @@ const TwdResult = ({ results, setResults }) => {
 
           return (
             <div className="space-y-6" key={deck.deckid}>
-              <div className="flex flex-col gap-2 lg:flex-row">
+              <div className="flex max-lg:flex-col gap-2">
                 <div className="basis-full lg:basis-1/4">
                   <TwdResultDescription deck={deck} />
                 </div>

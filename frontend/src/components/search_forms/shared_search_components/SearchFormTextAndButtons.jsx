@@ -56,7 +56,7 @@ const SearchFormTextAndButtons = ({
   };
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-2">
       <div className="space-y-1">
         <div className="flex">
           <Input

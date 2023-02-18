@@ -120,7 +120,7 @@ export const getClan = (crypt) => {
       { c: null, q: 0, t: 0 }
     );
 
-  if (topClan.q > topClan.t / 2) {
+  if (topClan.q / topClan.t > 0.5) {
     return topClan.c;
   } else {
     return null;

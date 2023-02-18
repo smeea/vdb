@@ -94,6 +94,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
           placeholder={placeholder}
           onChange={handleChange}
           ref={ref}
+          isMono
         />
         <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
           <Button variant="primary" onClick={importDeckFromText}>

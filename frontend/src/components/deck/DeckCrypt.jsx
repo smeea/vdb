@@ -63,7 +63,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
     <div
       className={`flex flex-col sm:gap-4 lg:gap-6 xl:gap-8 ${
         !inPreview && !inMissing && !inSearch && !isMobile
-          ? 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]'
+          ? 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[44px]'
           : ''
       }`}
     >

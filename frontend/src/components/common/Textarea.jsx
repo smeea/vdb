@@ -13,14 +13,15 @@ const Textarea = React.forwardRef(
       spellCheck = false,
       autoFocus = false,
       readOnly = false,
+      isMono,
     },
     ref
   ) => {
     return (
       <textarea
-        className={`rounded border border-borderSecondary bg-bgPrimary px-1.5 py-1 font-mono outline-2 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark ${
-          className ?? ''
-        }`}
+        className={`rounded border border-borderSecondary bg-bgPrimary px-1.5 py-1 outline-2 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark ${
+          isMono ? 'font-mono' : ''
+        } ${className ?? ''}`}
         rows={rows}
         value={value}
         placeholder={placeholder}

@@ -56,7 +56,7 @@ const DeckSelect = ({
 
   return (
     <div className="space-y-2">
-      <div className="z-20 flex space-x-1">
+      <div className="z-20 flex">
         <div className="w-full">
           {selectFrom == 'my' && decks ? (
             <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />
@@ -99,8 +99,8 @@ const DeckSelect = ({
           </div>
         )}
       </div>
-      <div className="flex items-center justify-between space-x-6">
-        <div className="flex space-x-6">
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex gap-4 sm:gap-6">
           {username && decks && Object.keys(decks).length > 0 && (
             <>
               <Radio

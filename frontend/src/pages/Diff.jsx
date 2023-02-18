@@ -198,7 +198,7 @@ const Diff = () => {
           )}
 
           {deck && deckTo && (
-            <div className="flex flex-col sm:flex-row sm:gap-4 lg:gap-6 xl:gap-8">
+            <div className="flex max-sm:flex-col sm:gap-4 lg:gap-6 xl:gap-8">
               <div className="basis-full sm:basis-5/9">
                 <DiffCrypt
                   deckid={deck.deckid}

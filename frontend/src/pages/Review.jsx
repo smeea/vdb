@@ -217,7 +217,7 @@ const Review = () => {
           )}
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deckFrom && (
-            <div className="flex flex-col sm:flex-row sm:gap-4 lg:gap-6 xl:gap-8">
+            <div className="flex max-sm:flex-col sm:gap-4 lg:gap-6 xl:gap-8">
               <div className="basis-full sm:basis-5/9">
                 <ReviewCrypt
                   cardsFrom={deckFrom.crypt}
@@ -236,7 +236,7 @@ const Review = () => {
           )}
         </div>
         <div className="max-lg:hidden min-w-[175px]">
-          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[56px] lg:top-[64px] xl:top-[72px]">
+          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-[44px]">
             <ReviewButtons
               deck={deckFrom}
               urlDiff={urlDiff}

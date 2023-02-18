@@ -1,30 +1,23 @@
 import React, { useState, useMemo } from 'react';
 import { Menu } from '@headlessui/react';
 import { useSnapshot } from 'valtio';
-import Select from 'react-select';
-import Shuffle from '@/assets/images/icons/shuffle.svg';
 import Download from '@/assets/images/icons/download.svg';
-import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
-import At from '@/assets/images/icons/at.svg';
 import {
   DeckSelectAdvModalTotal,
   DeckSelectAdvModalTableRow,
-  DeckSelectSortForm,
-  DeckSelectAdvModalTagsFilter,
+  DeckSelectAdvModalTableHeader,
   ResultClanImage,
   Modal,
   MenuItems,
   MenuItem,
   MenuButton,
-  Checkbox,
-  Input,
 } from '@/components';
 import { getClan, decksSort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
 
 const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
-  const { cryptCardBase, inventoryMode, isMobile, isDesktop } = useApp();
+  const { setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const [sortMethod, setSortMethod] = useState('byName');
   const [isSelectedAll, setIsSelectedAll] = useState(false);
@@ -35,18 +28,11 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
   const [tagsFilter, setTagsFilter] = useState([]);
   const [clanFilter, setClanFilter] = useState('any');
 
+  console.log(clanFilter);
+
   const handleClose = () => {
     setShow(false);
     setShowFloatingButtons(true);
-  };
-
-  const handleChangeNameFilter = (event) => {
-    setNameFilter(event.target.value);
-  };
-
-  const handleChangeTagsFilter = (event) => {
-    const tags = event.map((t) => t.value);
-    setTagsFilter(tags);
   };
 
   const cardInDeck = (deck, query) => {
@@ -80,28 +66,11 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
 
   const allDecksClans = [];
   Object.values(decks).map((deck) => {
-    const clans = {};
-    let cryptTotal = 0;
+    const clan = getClan(deck.crypt);
 
-    Object.keys(deck.crypt).map((cardid) => {
-      if (cardid != 200076) {
-        const clan = cryptCardBase[cardid].Clan;
-
-        if (clan in clans) {
-          clans[cryptCardBase[cardid].Clan] += deck.crypt[cardid].q;
-          cryptTotal += deck.crypt[cardid].q;
-        } else {
-          clans[cryptCardBase[cardid].Clan] = deck.crypt[cardid].q;
-          cryptTotal += deck.crypt[cardid].q;
-        }
-      }
-    });
-
-    Object.keys(clans).forEach((c) => {
-      if (clans[c] / cryptTotal > 0.5 && !allDecksClans.includes(c)) {
-        allDecksClans.push(c);
-      }
-    });
+    if (clan && !allDecksClans.includes(clan)) {
+      allDecksClans.push(clan);
+    }
   });
 
   const clanOptions = [
@@ -125,29 +94,6 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
     });
   });
 
-  const invOptions = [
-    {
-      value: 'any',
-      name: 'inventory',
-      label: 'ANY',
-    },
-    {
-      value: '',
-      name: 'inventory',
-      label: <At />,
-    },
-    {
-      value: 's',
-      name: 'inventory',
-      label: <Shuffle />,
-    },
-    {
-      value: 'h',
-      name: 'inventory',
-      label: <PinAngleFill />,
-    },
-  ];
-
   const sortedDecks = useMemo(() => {
     if (Object.values(decks).length > 0) {
       let filtered = Object.values(decks);
@@ -157,9 +103,10 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
       }
 
       if (clanFilter !== 'any') {
-        filtered = filtered.filter(
-          (deck) => getClan(deck.crypt).toLowerCase() === clanFilter
-        );
+        filtered = filtered.filter((deck) => {
+          const clan = getClan(deck.crypt) || '';
+          return clan.toLowerCase() === clanFilter;
+        });
       }
 
       if (nameFilter) {
@@ -245,7 +192,7 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
   };
 
   return (
-    <Modal handleClose={handleClose} size="xl" title="Select Deck">
+    <Modal noPadding handleClose={handleClose} size="xl" title="Select Deck">
       <div className="space-y-4">
         <div>
           <DeckSelectAdvModalTotal
@@ -253,74 +200,23 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
             setTagsFilter={setTagsFilter}
           />
           <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
-            <thead>
-              <tr>
-                <th className="min-w-[30px]">
-                  <Checkbox
-                    name="selectAll"
-                    checked={isSelectedAll}
-                    onChange={toggleSelectAll}
-                    className="justify-center"
-                  />
-                </th>
-                {inventoryMode && !isMobile && (
-                  <th>
-                    <Select
-                      classNamePrefix="no-dropdown react-select"
-                      options={invOptions}
-                      onChange={(e) => setInvFilter(e.value)}
-                      value={invOptions.find((obj) => obj.value === invFilter)}
-                      isSearchable={false}
-                    />
-                  </th>
-                )}
-                {!isMobile && (
-                  <th>
-                    <Select
-                      classNamePrefix="no-dropdown react-select"
-                      options={clanOptions}
-                      onChange={(e) => setClanFilter(e.value)}
-                      value={clanOptions.find(
-                        (obj) => obj.value === clanFilter.toLowerCase()
-                      )}
-                      isSearchable
-                    />
-                  </th>
-                )}
-                <th className="min-w-[340px]">
-                  <Input
-                    className="w-full"
-                    placeholder="Filter by Deck or Card Name"
-                    type="text"
-                    name="text"
-                    autoComplete="off"
-                    spellCheck="false"
-                    value={nameFilter}
-                    onChange={handleChangeNameFilter}
-                  />
-                </th>
-                {isDesktop && <th />}
-                {!isMobile && <th />}
-                <th className="w-full">
-                  <DeckSelectAdvModalTagsFilter
-                    tagsFilter={tagsFilter}
-                    handleChangeTagsFilter={handleChangeTagsFilter}
-                    allTagsOptions={allTagsOptions}
-                  />
-                </th>
-                <th>
-                  <div className="flex justify-end space-x-1">
-                    <Checkbox
-                      name="revFilter"
-                      label={isDesktop ? 'Show Revisions' : 'Rev'}
-                      checked={revFilter}
-                      onChange={() => setRevFilter(!revFilter)}
-                    />
-                    <DeckSelectSortForm onChange={setSortMethod} />
-                  </div>
-                </th>
-              </tr>
-            </thead>
+            <DeckSelectAdvModalTableHeader
+              allTagsOptions={allTagsOptions}
+              clanOptions={clanOptions}
+              setSortMethod={setSortMethod}
+              setClanFilter={setClanFilter}
+              setInvFilter={setInvFilter}
+              setNameFilter={setNameFilter}
+              setRevFilter={setRevFilter}
+              setTagsFilter={setTagsFilter}
+              clanFilter={clanFilter}
+              invFilter={invFilter}
+              nameFilter={nameFilter}
+              revFilter={revFilter}
+              tagsFilter={tagsFilter}
+              toggleSelectAll={toggleSelectAll}
+              isSelectedAll={isSelectedAll}
+            />
             <tbody>
               {sortedDecks.map((deck, idx) => {
                 return (

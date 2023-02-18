@@ -150,7 +150,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       noPadding={isMobile}
     >
       <div className="space-y-5">
-        <div className="flex flex-col gap-5 md:flex-row">
+        <div className="flex max-md:flex-col gap-5">
           <div className="sm:basis-5/9">
             {deck.crypt && (
               <div
@@ -182,18 +182,18 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
         </div>
-        <div className="flex flex-col justify-center space-y-1 space-x-0 sm:space-y-0 md:flex-row md:justify-end md:space-x-1">
+        <div className="flex max-md:flex-col justify-center space-y-1 space-x-0 sm:space-y-0 md:justify-end md:space-x-1">
           <Button variant="primary" onClick={() => handleGenerate(false)}>
             Generate - Gray gaps
           </Button>
           <Button variant="primary" onClick={() => handleGenerate(true)}>
             Generate - White gaps
           </Button>
-          <Button variant="primary" onClick={() => handleToggleSelect()}>
+          <Button variant="primary" onClick={handleToggleSelect}>
             Select / Deselect All
           </Button>
           {inventoryMode && (
-            <Button variant="primary" onClick={() => handleToggleResolve()}>
+            <Button variant="primary" onClick={handleToggleResolve}>
               Add Missing in Inventory
             </Button>
           )}
