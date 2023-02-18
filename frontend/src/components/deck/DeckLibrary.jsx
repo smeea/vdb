@@ -129,7 +129,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
         <div className="space-y-2">{LibraryDeck}</div>
       </div>
       {librarySide.length > 0 && (
-        <div className="space-y-2 opacity-60 dark:opacity-50">
+        <div className="opacity-60 dark:opacity-50">
           <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
             Side Library
           </div>

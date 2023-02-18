@@ -22,12 +22,10 @@ const Tooltip = ({
   noPadding,
   placement = 'right',
 }) => {
-  // TODO customize width (maybe less steps/variants is OK?)
   const widthClass = {
-    sm: 'max-w-full sm:max-w-[65%] md:max-w-[50%] lg:max-w-[45%] xl:max-w-[35%] 2xl:max-w-[25%]',
-    md: 'max-w-full sm:max-w-[80%] md:max-w-[65%] lg:max-w-[55%] xl:max-w-[45%] 2xl:max-w-[40%]',
-    lg: 'max-w-full sm:max-w-[80%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] 2xl:max-w-[55%]',
-    xl: 'max-w-full sm:max-w-[80%] md:max-w-[95%] lg:max-w-[85%] xl:max-w-[75%] 2xl:max-w-[70%]',
+    sm: 'max-w-[35%] xl:max-w-[25%] 2xl:max-w-[20%]',
+    md: 'max-w-[45%] xl:max-w-[35%] 2xl:max-w-[30%]',
+    lg: 'max-w-[75%] xl:max-w-[60%] 2xl:max-w-[50%]',
   };
 
   const [open, setOpen] = useState(false);

@@ -182,7 +182,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
         </div>
-        <div className="flex max-md:flex-col justify-center space-y-1 space-x-0 sm:space-y-0 md:justify-end md:space-x-1">
+        <div className="flex max-md:flex-col gap-1 md:justify-end">
           <Button variant="primary" onClick={() => handleGenerate(false)}>
             Generate - Gray gaps
           </Button>

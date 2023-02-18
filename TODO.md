@@ -1,4 +1,5 @@
 # FIX
+- Buttons & Menu borders on hover
 
 # FEATURES
 - Check TWD
@@ -15,7 +16,7 @@
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Problem with valtio update
-- Migration from screen width to container queries where possible
+- Migration from screen width (isWide, etc) to container queries
 - Refactor standard colors
 - Refactor react-select to css-in-js styles
 - Configure vite-pwa
@@ -29,4 +30,3 @@
 - Add standard modal button blocks
 
 # TAILWIND MIGRATION
-- Library sticky hide above header

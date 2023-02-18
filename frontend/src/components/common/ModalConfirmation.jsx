@@ -18,7 +18,7 @@ const ModalConfirmation = ({
   const [confirmation, setConfirmation] = useState('');
   const [errorConfirmation, setErrorConfirmation] = useState(false);
 
-  const confirm = () => {
+  const handleClick = () => {
     if (withWrittenConfirmation) {
       if (confirmation === 'YES') {
         setErrorConfirmation(false);
@@ -32,7 +32,7 @@ const ModalConfirmation = ({
     }
   };
 
-  const cancel = () => {
+  const handleClose = () => {
     setErrorConfirmation(false);
     setConfirmation('');
     handleCancel();
@@ -40,21 +40,17 @@ const ModalConfirmation = ({
 
   return (
     <Modal
-      handleClose={cancel}
+      handleClose={handleClose}
       centered={centered ?? isMobile}
       size={size}
       title={title}
       bordered={bordered}
     >
       <div className="flex flex-col gap-3 sm:gap-5">
-        {children && (
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            {children}
-          </div>
-        )}
+        {children && <>{children}</>}
         <div className="flex justify-end gap-2">
           {withWrittenConfirmation && (
-            <form onSubmit={confirm}>
+            <form onSubmit={handleClick}>
               <Input
                 placeholder="Type 'YES' to confirm"
                 name="text"
@@ -70,10 +66,10 @@ const ModalConfirmation = ({
             </form>
           )}
           <div className="flex justify-between gap-2">
-            <Button disabled={disabled} variant="primary" onClick={confirm}>
+            <Button disabled={disabled} variant="primary" onClick={handleClick}>
               {buttonText}
             </Button>
-            <Button variant="primary" onClick={cancel}>
+            <Button variant="primary" onClick={handleClose}>
               Cancel
             </Button>
           </div>

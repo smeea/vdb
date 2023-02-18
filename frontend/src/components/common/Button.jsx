@@ -14,16 +14,14 @@ const Button = ({
   variant = 'primary',
   noPadding,
 }) => {
-  const baseStyle =
-    'focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
+  const outlineStyle =
+    'rounded focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
 
-  // TODO style hover && copy to MenuButton
-  // hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark hover:border hover:border-borderPrimary dark:hover:border-borderPrimaryDark
   const customStyle = {
     primary:
-      'text-fgThird dark:text-fgThirdDark bg-bgButton dark:bg-bgButtonDark border border-borderSecondary dark:border-borderSecondaryDark disabled:opacity-40 disabled:text-fgPrimary dark:disabled:text-fgPrimaryDark',
+      'text-fgThird dark:text-fgThirdDark bg-bgButton dark:bg-bgButtonDark border border-borderSecondary dark:border-borderSecondaryDark disabled:opacity-40 disabled:text-fgPrimary dark:disabled:text-fgPrimaryDark hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark',
     secondary:
-      'text-fgThird dark:text-fgThirdDark bg-bgButtonSecondary dark:bg-bgButtonSecondaryDark border border-borderThird dark:border-borderThirdDark',
+      'text-fgThird dark:text-fgThirdDark bg-bgButtonSecondary dark:bg-bgButtonSecondaryDark border border-borderThird dark:border-borderThirdDark hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark',
     third: 'bg-borderPrimary dark:bg-borderPrimaryDark',
     'outline-primary':
       'border border-borderSecondary dark:border-borderSecondaryDark',
@@ -35,11 +33,11 @@ const Button = ({
 
   return (
     <button
-      className={`${baseStyle} ${
+      className={`${outlineStyle} ${
         customStyle[variant]
-      } flex items-center justify-center rounded ${
-        noPadding ? '' : 'px-3 py-1.5'
-      } ${className ?? ''}`}
+      } flex items-center justify-center ${noPadding ? '' : 'px-3 py-1.5'} ${
+        className ?? ''
+      }`}
       onClick={onClick}
       title={title}
       disabled={disabled}

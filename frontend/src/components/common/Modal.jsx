@@ -10,20 +10,18 @@ const Modal = ({
   size = 'md',
   noPadding = false,
   centered = false,
+  bordered = false,
   initialFocus,
-  // TODO implement bordered
-  // bordered = false,
 }) => {
   const { isNarrow } = useApp();
   const emptyRef = useRef();
   // TODO close with Esc
 
-  // TODO customize width (maybe less steps/variants is OK?)
   const widthClass = {
     sm: 'min-w-full sm:min-w-[65%] md:min-w-[50%] lg:min-w-[45%] xl:min-w-[35%] 2xl:min-w-[25%]',
-    md: 'min-w-full sm:min-w-[80%] md:min-w-[65%] lg:min-w-[55%] xl:min-w-[45%] 2xl:min-w-[40%]',
-    lg: 'min-w-full sm:min-w-full md:min-w-[80%] lg:min-w-[70%] xl:min-w-[60%] 2xl:min-w-[55%]',
-    xl: 'min-w-full sm:min-w-full md:min-w-[95%] lg:min-w-[85%] xl:min-w-[75%] 2xl:min-w-[70%]',
+    md: 'min-w-full sm:min-w-[80%] md:min-w-[65%] lg:min-w-[55%] xl:min-w-[45%] 2xl:min-w-[35%]',
+    lg: 'min-w-full sm:min-w-full md:min-w-[80%] lg:min-w-[75%] xl:min-w-[70%] 2xl:min-w-[60%]',
+    xl: 'min-w-full sm:min-w-full md:min-w-[90%] lg:min-w-[85%] xl:min-w-[75%] 2xl:min-w-[70%]',
   };
 
   return (
@@ -43,7 +41,12 @@ const Modal = ({
         }`}
       >
         <Dialog.Panel
-          className={`${
+          className={`
+            ${
+              bordered
+                ? 'border border-borderNestModal dark:border-borderNestModalDark'
+                : ''
+            } ${
             widthClass[size]
           } rounded border border-bgSecondary bg-bgPrimary ${
             noPadding ? '' : 'p-3 sm:p-5'

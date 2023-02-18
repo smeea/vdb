@@ -2,18 +2,24 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import PeopleFill from '@/assets/images/icons/people-fill.svg';
 import Spinner from '@/assets/images/icons/three-dots.svg';
-import { Modal, Button, DeckPublicDiff, ButtonIconed } from '@/components';
+import { ModalConfirmation, DeckPublicDiff, ButtonIconed } from '@/components';
 import { useApp, deckStore } from '@/context';
 
 const DeckPublicSyncButton = ({ deck }) => {
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
-  const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSync = () => {
     syncPublic();
-    setShowSyncConfirmation(false);
+    setShowConfirmation(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
+
+  const handleCancel = () => {
+    setShowConfirmation(false);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };
@@ -42,17 +48,18 @@ const DeckPublicSyncButton = ({ deck }) => {
     <>
       <ButtonIconed
         variant="secondary"
-        onClick={() => setShowSyncConfirmation(true)}
+        onClick={() => setShowConfirmation(true)}
         title="Sync Deck with Public Deck Archive"
         text="Sync Public Deck"
         icon={!isLoading ? <PeopleFill /> : <Spinner />}
       />
-      {showSyncConfirmation && (
-        /* TODO refactor to ModalConfirmation */
-        <Modal
-          handleClose={() => setShowSyncConfirmation(false)}
+      {showConfirmation && (
+        <ModalConfirmation
           size="xl"
           title={`Sync "${deck.name}" with Public Deck Archive?`}
+          buttonText="Sync"
+          handleConfirm={handleSync}
+          handleCancel={handleCancel}
         >
           <div>
             <div className="font-bold text-fgSecondary  dark:text-fgSecondaryDark">
@@ -60,18 +67,7 @@ const DeckPublicSyncButton = ({ deck }) => {
             </div>
             <DeckPublicDiff deckTo={deck} deckFrom={decks[deck.publicParent]} />
           </div>
-          <div>
-            <Button variant="danger" onClick={handleSync}>
-              Sync
-            </Button>
-            <Button
-              variant="primary"
-              onClick={() => setShowSyncConfirmation(false)}
-            >
-              Cancel
-            </Button>
-          </div>
-        </Modal>
+        </ModalConfirmation>
       )}
     </>
   );

@@ -118,13 +118,14 @@ const DeckSelectAdvModalTableRow = ({
         </div>
       </td>
       {isDesktop && (
-        <td className="w-full">
+        <td className="min-w-[30px]">
           <div
             className="flex justify-center"
             onMouseEnter={() => setShowDeck(deck.deckid)}
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
+              size="lg"
               show={showDeck === deck.deckid}
               overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
             >

@@ -78,7 +78,7 @@ const ResultModal = ({
           className={`w-full space-y-2 md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:min-w-[55%] ${
             bordered
               ? 'border border-borderNestModal dark:border-borderNestModalDark'
-              : 'border-none'
+              : ''
           } m-2 rounded bg-bgPrimary dark:bg-bgPrimaryDark`}
         >
           <div className="relative">

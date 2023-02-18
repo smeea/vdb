@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import Download from '@/assets/images/icons/download.svg';
 import { Menu } from '@headlessui/react';
-import { MenuItems, MenuItem, MenuButton } from '@/components';
+import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
 import { useDeckExport } from '@/hooks';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
@@ -121,7 +121,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
             <ExportDropdown action="save" format="text" />
             <ExportDropdown action="save" format="lackey" />
             <ExportDropdown action="save" format="xlsx" />
-            {/* TODO <Dropdown.Divider /> */}
+            <MenuItemDivider />
             <ExportDropdown action="copy" format="text" />
             <ExportDropdown action="copy" format="lackey" />
           </>
@@ -137,7 +137,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
               </>
             )}
             <ExportDropdown action="save" format="xlsx" />
-            {/* TODO <Dropdown.Divider /> */}
+            <MenuItemDivider />
             <ExportDropdown action="copy" format="text" />
             {!inMissing && (
               <>
@@ -147,18 +147,15 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
                 <ExportDropdown action="copy" format="jol" />
               </>
             )}
-            {!inMissing &&
-              username &&
-              decks &&
-              Object.keys(decks).length > 1 && (
-                <>
-                  {/* <Dropdown.Divider /> */}
-                  <ExportDropdown action="exportAll" format="text" />
-                  <ExportDropdown action="exportAll" format="lackey" />
-                  <ExportDropdown action="exportAll" format="jol" />
-                  <ExportDropdown action="exportAll" format="xlsx" />
-                </>
-              )}
+            {!inMissing && username && decks && Object.keys(decks).length > 1 && (
+              <>
+                <MenuItemDivider />
+                <ExportDropdown action="exportAll" format="text" />
+                <ExportDropdown action="exportAll" format="lackey" />
+                <ExportDropdown action="exportAll" format="jol" />
+                <ExportDropdown action="exportAll" format="xlsx" />
+              </>
+            )}
           </>
         )}
       </MenuItems>

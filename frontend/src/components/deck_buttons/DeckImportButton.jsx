@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
 import ClipboardPlus from '@/assets/images/icons/clipboard-plus.svg';
-import { MenuItems, MenuItem, MenuButton } from '@/components';
+import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
 import { useApp } from '@/context';
 
 const DeckImportButton = ({
@@ -26,7 +26,7 @@ const DeckImportButton = ({
             <MenuItem>
               <div onClick={handleCreate}>Create New Deck</div>
             </MenuItem>
-            {/* <Dropdown.Divider /> */}
+            <MenuItemDivider />
             <MenuItem>
               <div onClick={() => handleFileInputClick(false)}>
                 Import from File
@@ -40,16 +40,12 @@ const DeckImportButton = ({
             <MenuItem>
               <div onClick={handleOpenAmaranthModal}>Import from Amaranth</div>
             </MenuItem>
-            {/* TODO <Dropdown.Divider /> */}
+            <MenuItemDivider />
           </>
         )}
-        {/* TODO <Dropdown.Header> */}
-        {/*   <> */}
-        {/*     Anonymous (non-editable) */}
-        {/*     <br /> */}
-        {/*     Useful only to copy URL */}
-        {/*   </> */}
-        {/* </Dropdown.Header> */}
+        <div className="flex px-3 py-1 text-sm text-midGray dark:text-midGrayDark">
+          Anonymous (non-editable), useful only to share URL:
+        </div>
         <MenuItem>
           <div onClick={() => handleFileInputClick(true)}>
             Import w/o Acc. from File
