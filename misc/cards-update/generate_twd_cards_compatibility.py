@@ -41,5 +41,9 @@ for twd in twda:
                 cards[i][k] = 0
             cards[i][k] += score
 
+for i in cards:
+    for j in cards[i]:
+        cards[i][j] = round(cards[i][j], 2)
+
 with open("cards_compatibility.json", "w") as output:
     json.dump(cards, output, indent=4, separators=(",", ":"))
