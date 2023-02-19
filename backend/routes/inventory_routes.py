@@ -51,7 +51,7 @@ def delete_inventory_route():
 def inventory_add_cards_route():
     i = current_user.inventory
     new_cards = request.json
-    merged_cards = i.copy() if i else {}
+    merged_cards = i.copy()
     for k, v in new_cards.items():
         k = int(k)
         if k in merged_cards:
@@ -72,13 +72,13 @@ def inventory_add_cards_route():
 def inventory_change_card_route():
     i = current_user.inventory
     new_cards = request.json
-    merged_cards = i.copy() if i else {}
+    merged_cards = i.copy()
     for k, v in new_cards.items():
         k = int(k)
-        if v < 0:
-            del merged_cards[k]
-        else:
+        if v >= 0:
             merged_cards[k] = v
+        elif k in merged_cards:
+            del merged_cards[k]
 
     current_user.inventory = merged_cards.copy()
     db.session.commit()
