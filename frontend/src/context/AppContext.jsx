@@ -169,7 +169,9 @@ export const AppProvider = (props) => {
     setInventoryLibrary({});
     setUsername(null);
     setEmail(undefined);
-    deckStore.deck = undefined;
+    if (decks?.[deck.deckid]) {
+      deckStore.deck = undefined;
+    }
     deckStore.decks = undefined;
   };
 
