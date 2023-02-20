@@ -35,19 +35,28 @@ const DeckCardQuantity = ({
   };
 
   const getInventoryColor = () => {
-    if (inventoryMode && inventoryType && !inMissing) {
-      if (inProxy) {
-        return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
-          ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
-          : '';
-      } else {
-        return inInventory < softUsedMax + hardUsedTotal
-          ? inInventory < q
+    if (inventoryMode && !inMissing) {
+      if (inventoryType) {
+        if (inProxy) {
+          return inInventory + (isSelected ? q : 0) <
+            softUsedMax + hardUsedTotal
             ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
-            : inventoryType === 'h'
-            ? 'bg-bgWarning dark:bg-bgWarningDark'
-            : ''
-          : '';
+            : '';
+        } else {
+          return inInventory < softUsedMax + hardUsedTotal
+            ? inInventory < q
+              ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
+              : inventoryType === 'h'
+              ? 'bg-bgWarning dark:bg-bgWarningDark'
+              : ''
+            : '';
+        }
+      } else {
+        return inInventory - softUsedMax - hardUsedTotal >= q
+          ? ''
+          : inInventory - hardUsedTotal >= q
+          ? 'bg-bgWarning dark:bg-bgWarningDark'
+          : 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark';
       }
     } else {
       return '';
@@ -141,7 +150,9 @@ const DeckCardQuantity = ({
           )}
         </div>
       ) : (
-        <div className="flex items-center justify-center text-lg">
+        <div
+          className={`flex items-center justify-center text-lg ${inventoryColor}`}
+        >
           {q || null}
         </div>
       )}

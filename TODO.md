@@ -1,7 +1,6 @@
 # FIX
 - Buttons & Menu borders on hover
 - System is always light
-- Inventory mode for non-your decks
 - Autofocus add card modal
 
 # FEATURES
