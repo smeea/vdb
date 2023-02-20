@@ -99,7 +99,7 @@ const DeckLibraryHeader = ({
       )}
       {showAdd && (
         <DeckNewCard
-          setShowAdd={setShowAdd}
+          handleClose={() => setShowAdd(false)}
           cards={cards}
           deckid={deckid}
           target="library"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NewCryptCard, NewLibraryCard } from '@/components';
 import { useApp, deckCardChange } from '@/context';
 
-const DeckNewCard = ({ target, cards, deckid, setShowAdd, cardChange }) => {
+const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
   const [selectedValue, setSelectedValue] = useState(null);
   const changeAction = cardChange ? cardChange : deckCardChange;
@@ -17,7 +17,7 @@ const DeckNewCard = ({ target, cards, deckid, setShowAdd, cardChange }) => {
       changeAction(deckid, card, 1);
     }
     setSelectedValue('');
-    setShowAdd && setShowAdd(false);
+    handleClose();
   };
 
   useEffect(() => {

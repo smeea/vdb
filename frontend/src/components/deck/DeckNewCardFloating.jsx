@@ -37,7 +37,7 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, target }) => {
         >
           <div>
             <DeckNewCard
-              setShowAdd={setShowAdd}
+              handleClose={handleClose}
               cards={cards}
               deckid={deckid}
               target={target}
