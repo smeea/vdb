@@ -11,45 +11,8 @@ export const searchCryptForm = proxy({
   ...deepClone(defaultsCryptForm),
 });
 
-export const searchCryptFormDebouncable = proxy({
-  text: searchCryptForm.text,
-  disciplines: searchCryptForm.disciplines,
-});
-
-export const searchCryptFormInstant = proxy({
-  capacity: searchCryptForm.capacity,
-  clan: searchCryptForm.clan,
-  sect: searchCryptForm.sect,
-  votes: searchCryptForm.votes,
-  titles: searchCryptForm.titles,
-  group: searchCryptForm.group,
-  traits: searchCryptForm.traits,
-  set: searchCryptForm.set,
-  precon: searchCryptForm.precon,
-  artist: searchCryptForm.artist,
-});
-
 export const searchLibraryForm = proxy({
   ...deepClone(defaultsLibraryForm),
-});
-
-export const searchLibraryFormDebouncable = proxy({
-  text: searchLibraryForm.text,
-});
-
-export const searchLibraryFormInstant = proxy({
-  type: searchLibraryForm.type,
-  discipline: searchLibraryForm.discipline,
-  blood: searchLibraryForm.blood,
-  pool: searchLibraryForm.pool,
-  capacity: searchLibraryForm.capacity,
-  clan: searchLibraryForm.clan,
-  sect: searchLibraryForm.sect,
-  title: searchLibraryForm.title,
-  traits: searchLibraryForm.traits,
-  set: searchLibraryForm.set,
-  precon: searchLibraryForm.precon,
-  artist: searchLibraryForm.artist,
 });
 
 export const searchTwdForm = proxy({

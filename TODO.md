@@ -3,7 +3,6 @@
 - No return from search on mobile after adding card
 - System is always light
 - Inventory mode for non-your decks
-- Crypt vote search
 
 # FEATURES
 - Check TWD

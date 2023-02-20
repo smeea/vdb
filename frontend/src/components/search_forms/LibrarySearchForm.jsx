@@ -24,8 +24,6 @@ import {
   useApp,
   setLibraryResults,
   searchLibraryForm,
-  searchLibraryFormInstant,
-  searchLibraryFormDebouncable,
   clearSearchForm,
   inventoryStore,
 } from '@/context';
@@ -42,8 +40,6 @@ const LibrarySearchForm = () => {
   } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const libraryFormState = useSnapshot(searchLibraryForm);
-  const libraryFormStateInstant = useSnapshot(searchLibraryFormInstant);
-  const libraryFormStateDebouncable = useSnapshot(searchLibraryFormDebouncable);
   const { filterLibrary } = useFilters(libraryCardBase);
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
@@ -191,11 +187,27 @@ const LibrarySearchForm = () => {
 
   useEffect(
     () => testInputsAndSearch(),
-    [libraryFormStateInstant, hideMissing, inventoryMode, libraryCardBase]
+    [
+      libraryFormState.artist,
+      libraryFormState.blood,
+      libraryFormState.capacity,
+      libraryFormState.clan,
+      libraryFormState.discipline,
+      libraryFormState.pool,
+      libraryFormState.precon,
+      libraryFormState.sect,
+      libraryFormState.set,
+      libraryFormState.title,
+      libraryFormState.traits,
+      libraryFormState.type,
+      hideMissing,
+      inventoryMode,
+      libraryCardBase,
+    ]
   );
 
   useDebounce(() => testInputsAndSearch(), 400, [
-    libraryFormStateDebouncable,
+    libraryFormState.text,
     hideMissing,
     inventoryMode,
     libraryCardBase,

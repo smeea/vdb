@@ -24,8 +24,6 @@ import {
   useApp,
   setCryptResults,
   searchCryptForm,
-  searchCryptFormInstant,
-  searchCryptFormDebouncable,
   clearSearchForm,
   inventoryStore,
 } from '@/context';
@@ -42,8 +40,6 @@ const CryptSearchForm = () => {
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const cryptFormState = useSnapshot(searchCryptForm);
-  const cryptFormStateInstant = useSnapshot(searchCryptFormInstant);
-  const cryptFormStateDebouncable = useSnapshot(searchCryptFormDebouncable);
   const { filterCrypt } = useFilters(cryptCardBase);
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
@@ -201,11 +197,26 @@ const CryptSearchForm = () => {
 
   useEffect(
     () => testInputsAndSearch(),
-    [cryptFormStateInstant, hideMissing, inventoryMode, cryptCardBase]
+    [
+      cryptFormState.artist,
+      cryptFormState.capacity,
+      cryptFormState.clan,
+      cryptFormState.group,
+      cryptFormState.precon,
+      cryptFormState.sect,
+      cryptFormState.set,
+      cryptFormState.titles,
+      cryptFormState.traits,
+      cryptFormState.votes,
+      hideMissing,
+      inventoryMode,
+      cryptCardBase,
+    ]
   );
 
   useDebounce(() => testInputsAndSearch(), 400, [
-    cryptFormStateDebouncable,
+    cryptFormState.disciplines,
+    cryptFormState.text,
     hideMissing,
     inventoryMode,
     cryptCardBase,
@@ -220,6 +231,8 @@ const CryptSearchForm = () => {
       }
     }
   }, [preresults]);
+
+  console.log(cryptFormState.votes, cryptFormState.sect);
 
   return (
     <div className="space-y-2">
