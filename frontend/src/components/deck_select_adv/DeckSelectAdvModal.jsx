@@ -28,8 +28,6 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
   const [tagsFilter, setTagsFilter] = useState([]);
   const [clanFilter, setClanFilter] = useState('any');
 
-  console.log(clanFilter);
-
   const handleClose = () => {
     setShow(false);
     setShowFloatingButtons(true);

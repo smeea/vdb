@@ -110,14 +110,11 @@ const CryptSearchForm = () => {
     }
   };
 
-  const handleDisciplinesChange = (event) => {
-    const { id, name } = event.target;
-    const max = name === 'disciplines' ? 2 : 1;
-
-    if (cryptFormState.disciplines[id] < max) {
-      searchCryptForm.disciplines[id] += 1;
+  const handleDisciplinesChange = (name, max) => {
+    if (cryptFormState.disciplines[name] < max) {
+      searchCryptForm.disciplines[name] += 1;
     } else {
-      searchCryptForm.disciplines[id] = 0;
+      searchCryptForm.disciplines[name] = 0;
     }
   };
 
@@ -231,8 +228,6 @@ const CryptSearchForm = () => {
       }
     }
   }, [preresults]);
-
-  console.log(cryptFormState.votes, cryptFormState.sect);
 
   return (
     <div className="space-y-2">
