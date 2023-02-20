@@ -39,7 +39,7 @@ const DeckDrawLibraryTable = ({
             >
               <ResultLibraryTableRowCommon
                 card={card}
-                handleClick={handleClick}
+                handleClick={() => handleClick(idx)}
               />
               <td className="w-9 text-right text-fgSecondary  dark:text-fgSecondaryDark">
                 {!ashHeap && (
