@@ -1,6 +1,7 @@
 # FIX
 - Buttons & Menu borders on hover
 - Autofocus add card modal
+- Library info
 
 # FEATURES
 - Check TWD

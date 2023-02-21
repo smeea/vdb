@@ -87,7 +87,13 @@ const ResultLayoutTextRulings = ({ rulings }) => {
             {text.map((i, idxText) => {
               return <Text key={idxText} text={i} />;
             })}
-            <div className="inline space-x-1">
+            <div
+              className={
+                Object.keys(k['refs']).length > 2
+                  ? 'flex flex-wrap gap-1'
+                  : 'inline space-x-1'
+              }
+            >
               <Refs refs={k['refs']} />
             </div>
           </li>
