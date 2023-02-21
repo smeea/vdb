@@ -232,12 +232,20 @@ const missingTitleCrypt = (filterTitles, card) => {
 
   if (titles.includes(cardTitle)) return false;
 
-  if (card['Adv'] && card['Adv'][0]) {
-    if (
-      RegExp(`\\[MERGED\\].*(${titles.join('|')})`, 'i').test(card['Card Text'])
-    ) {
-      return false;
-    }
+  if (
+    card['Adv']?.[0] &&
+    RegExp(
+      `\\[MERGED\\].*(${titles
+        .map((t) =>
+          t
+            .replace('1 vote', '1 vote (titled)')
+            .replace('2 votes', '2 votes (titled)')
+        )
+        .join('|')})`,
+      'i'
+    ).test(card['Card Text'])
+  ) {
+    return false;
   }
 
   return true;

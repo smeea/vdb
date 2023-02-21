@@ -1,8 +1,8 @@
 # FIX
-- Alfred Benezri searched by 1-titled trait
 - Radu Bistri image
 - Buttons & Menu borders on hover
 - Autofocus add card modal
+- Run useFilters only for active filters
 
 # FEATURES
 - Check TWD
