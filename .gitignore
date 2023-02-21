@@ -4,8 +4,6 @@
 **/migrations/
 backend/app.db
 **/node_modules/
-**/.parcel-cache/
-**/.nvmrc
 frontend/dist/
 frontend/public/data/cardbase_crypt_playtest.json
 frontend/public/data/cardbase_lib_playtest.json

@@ -6,7 +6,7 @@ import { UsedDescription } from '@/components';
 import { inventoryStore, usedStore, deckStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
 
-const ResultLayoutTextInventory = ({ cardid }) => {
+const ResultLayoutTextInventory = ({ cardid, inPopover }) => {
   const decks = useSnapshot(deckStore).decks;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
@@ -20,8 +20,10 @@ const ResultLayoutTextInventory = ({ cardid }) => {
   if (!inInventory) inInventory = 0;
 
   return (
-    <div className="flex">
-      <div className="basis-1/2 lg:basis-5/12">
+    <div
+      className={`flex ${inPopover ? 'flex-col' : 'max-md:flex-col'} gap-1.5`}
+    >
+      <div className="basis-full md:basis-1/3">
         <div className="flex items-center space-x-1">
           <div className="opacity-40">
             <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
@@ -37,7 +39,7 @@ const ResultLayoutTextInventory = ({ cardid }) => {
           <div>- In Inventory</div>
         </div>
       </div>
-      <div className={`basis-full lg:basis-7/12`}>
+      <div className="basis-full md:basis-2/3">
         {softUsedMax > 0 && (
           <UsedDescription
             usedCards={usedCards.soft[cardid]}

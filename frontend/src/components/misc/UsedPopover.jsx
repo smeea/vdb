@@ -20,7 +20,7 @@ const UsedPopover = ({ cardid }) => {
   if (!inInventory) inInventory = 0;
 
   return (
-    <div className="space-y-1">
+    <div className="max-w-[250px] space-y-1">
       {softUsedMax == 0 && hardUsedTotal == 0 ? (
         <div>Not used in inventory decks</div>
       ) : (

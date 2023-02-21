@@ -13,6 +13,7 @@ const ResultLayoutTextCommon = ({
   card,
   setImageSet,
   forceInventoryMode,
+  inPopover,
 }) => {
   const { inventoryMode } = useApp();
 
@@ -43,7 +44,7 @@ const ResultLayoutTextCommon = ({
           <Hr />
           <div>
             <b>Inventory:</b>
-            <ResultLayoutTextInventory cardid={card.Id} />
+            <ResultLayoutTextInventory cardid={card.Id} inPopover={inPopover} />
           </div>
         </>
       )}
