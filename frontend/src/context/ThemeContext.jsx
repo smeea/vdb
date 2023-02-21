@@ -25,8 +25,13 @@ export const ThemeProvider = (props) => {
   useLayoutEffect(() => {
     initFromStorage(THEME, 'auto', setTheme);
 
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+      .matches
+      ? 'dark'
+      : 'light';
+
     const root = document.getElementsByTagName('html')[0];
-    root.className = theme;
+    root.className = theme === 'auto' ? systemTheme : theme;
   }, [theme]);
 
   const toggleTheme = () => {

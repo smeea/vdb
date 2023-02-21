@@ -13,6 +13,39 @@ const ThemeSelect = ({ setShowMenu }) => {
     isMobile && setShowMenu(false);
   };
 
+  const themeVisual = {
+    auto: {
+      icon: (
+        <PcDisplay
+          width={isMobile ? '20' : '16'}
+          height={isMobile ? '20' : '16'}
+          viewBox="0 0 16 16"
+        />
+      ),
+      name: 'System Theme',
+    },
+    dark: {
+      icon: (
+        <MoonFill
+          width={isMobile ? '20' : '16'}
+          height={isMobile ? '20' : '16'}
+          viewBox="0 0 16 16"
+        />
+      ),
+      name: 'Dark Theme',
+    },
+    light: {
+      icon: (
+        <SunFill
+          width={isMobile ? '20' : '16'}
+          height={isMobile ? '20' : '16'}
+          viewBox="0 0 16 16"
+        />
+      ),
+      name: 'Light Theme',
+    },
+  };
+
   return (
     <>
       {isMobile ? (
@@ -21,30 +54,16 @@ const ThemeSelect = ({ setShowMenu }) => {
           onClick={handleClick}
         >
           <div className="flex min-w-[30px] justify-center">
-            {theme === 'dark' && (
-              <MoonFill height="20" width="20" viewBox="0 0 16 16" />
-            )}
-            {theme === 'light' && (
-              <SunFill height="20" width="20" viewBox="0 0 16 16" />
-            )}
-            {theme === 'auto' && (
-              <PcDisplay height="20" width="20" viewBox="0 0 16 16" />
-            )}
+            {themeVisual[theme].icon}
           </div>
-          <div className="whitespace-nowrap ">
-            {theme === 'dark' && 'Dark Theme'}
-            {theme === 'light' && 'Light Theme'}
-            {theme === 'auto' && 'System Theme'}
-          </div>
+          <div className="whitespace-nowrap ">{themeVisual[theme].name}</div>
         </div>
       ) : (
         <div
           className="flex h-full min-w-[40px] items-center justify-center sm:text-white sm:dark:text-white"
           onClick={handleClick}
         >
-          {theme === 'dark' && <MoonFill />}
-          {theme === 'light' && <SunFill />}
-          {theme === 'auto' && <PcDisplay />}
+          {themeVisual[theme].icon}
         </div>
       )}
     </>
