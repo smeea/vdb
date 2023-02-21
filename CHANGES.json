@@ -1,5 +1,17 @@
 [
   {
+    "version": "2023-02-20",
+    "changes": [
+      "Fix deck draw",
+      "Fix crypt search by votes/artist",
+      "Fix hidden mobile buttons after adding new card to deck",
+      "Fix inventory mode highlights for not-your decks",
+      "Fix click between discipline icons in crypt",
+      "Fix system color theme",
+      "Fix page crash for some users (need further testing)"
+    ]
+  },
+  {
     "version": "2023-02-18",
     "changes": [
       "IMPORTANT! In this update codebase was singificantly re-done and improved. I tried to make everything as-good-as-it-was and make update not noticable, realistically I understand it brings some new bugs and inconveniences - please let me know if you find something unusual, annoying or face any problem. Next weeks would be well spend fixing evething!",

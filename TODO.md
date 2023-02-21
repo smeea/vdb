@@ -1,6 +1,5 @@
 # FIX
 - Buttons & Menu borders on hover
-- System is always light
 - Autofocus add card modal
 
 # FEATURES

@@ -1,12 +1,12 @@
 {
-  "version": "2023-02-18",
+  "version": "2023-02-20",
   "changes": [
-    "IMPORTANT! In this update codebase was singificantly re-done and improved. I tried to make everything as-good-as-it-was and make update not noticable, realistically I understand it brings some new bugs and inconveniences - please let me know if you find something unusual, annoying or face any problem. Next weeks would be well spend fixing evething!",
-    "Improved page loading time from network",
-    "Search must work a lot better offline when 'installed as app' on mobiles (should not fail running without network)",
-    "Add multi-table seating (follow more or less how Amaranth do it, let me know if it can be improved - our local group never needed multitable seating and feedback from real user appreciated)",
-    "Add small delay for searching card by text and clicking discipline icon in crypt - this should make typing (and double-clicking for superior discipline) smoother",
-    "Artist in card view is now clickable to search for other cards of that artist (search in crypt or library depending on card you clicked)",
-    "A lot of small fixes and improvements"
+    "Fix deck draw",
+    "Fix crypt search by votes/artist",
+    "Fix hidden mobile buttons after adding new card to deck",
+    "Fix inventory mode highlights for not-your decks",
+    "Fix click between discipline icons in crypt",
+    "Fix system color theme",
+    "Fix page crash for some users (need further testing)"
   ]
 }
