@@ -70,7 +70,7 @@ export const AppProvider = (props) => {
   const lastDeckArray = (decks && Object.values(decks).sort(byTimestamp)) ?? [
     { deckid: undefined },
   ];
-  const lastDeckId = lastDeckArray[0].deckid;
+  const lastDeckId = lastDeckArray[0]?.deckid;
 
   const [recentDecks, setRecentDecks] = useState([]);
 
