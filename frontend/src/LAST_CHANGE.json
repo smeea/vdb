@@ -1,12 +1,9 @@
 {
-  "version": "2023-02-20",
+  "version": "2023-02-21",
   "changes": [
-    "Fix deck draw",
-    "Fix crypt search by votes/artist",
-    "Fix hidden mobile buttons after adding new card to deck",
-    "Fix inventory mode highlights for not-your decks",
-    "Fix click between discipline icons in crypt",
-    "Fix system color theme",
-    "Fix page crash for some users (need further testing)"
+    "Fix playtest decks/cards",
+    "Fix deck summary (i) button",
+    "Fix card popup (was too wide)",
+    "Improved inventory info layout in card tooltip / card popup"
   ]
 }
