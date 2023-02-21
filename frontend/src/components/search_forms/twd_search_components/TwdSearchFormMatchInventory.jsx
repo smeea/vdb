@@ -9,6 +9,7 @@ const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
     ['0.7', '70%+'],
     ['0.8', '80%+'],
     ['0.9', '90%+'],
+    ['1.0', '100%'],
   ].map((i) => ({
     value: i[0],
     name: target,
