@@ -18,6 +18,8 @@ const ResultLayoutTextText = ({ cardid }) => {
     isMobile,
   } = useApp();
 
+  const cardBase = { ...nativeCrypt, ...nativeLibrary };
+
   const cardNative =
     cardid > 200000 ? nativeCrypt[cardid] : nativeLibrary[cardid];
 
@@ -28,7 +30,6 @@ const ResultLayoutTextText = ({ cardid }) => {
   const refCards = [];
   cardTextNative.map((i) => {
     reactStringReplace(i, /\/(.*?)\//g, (match) => {
-      const cardBase = { ...nativeCrypt, ...nativeLibrary };
       const refCardid = Object.keys(cardBase).find(
         (j) => cardBase[j].Name == match
       );
@@ -51,11 +52,13 @@ const ResultLayoutTextText = ({ cardid }) => {
           }
         );
 
+        let counter = 0; // have no idea why index for replacedText don't work
         replacedText = reactStringReplace(
           replacedText,
           /\/(.*?)\//g,
-          (match, idx) => {
-            const refCardid = refCards[idx - 1];
+          (match) => {
+            const refCardid = refCards[counter++];
+
             const card =
               refCardid > 200000
                 ? cryptCardBase[refCardid]
@@ -63,10 +66,11 @@ const ResultLayoutTextText = ({ cardid }) => {
 
             if (card) {
               return (
-                <span key={card.Id}>
+                <span key={counter}>
                   <ConditionalTooltip
                     overlay={<CardPopover card={card} />}
                     disabled={isMobile}
+                    noPadding
                   >
                     {card.Id > 200000 ? (
                       <ResultCryptName card={card} />
@@ -77,7 +81,7 @@ const ResultLayoutTextText = ({ cardid }) => {
                 </span>
               );
             } else {
-              return <React.Fragment key={idx}>/{match}/</React.Fragment>;
+              return <React.Fragment key={counter}>/{match}/</React.Fragment>;
             }
           }
         );
