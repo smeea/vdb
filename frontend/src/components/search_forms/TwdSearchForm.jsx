@@ -71,10 +71,13 @@ const TwdSearchForm = ({ error, setError }) => {
     searchTwdForm[i][name] = value;
   };
 
+  const handleDisciplinesChange = (name) => {
+    searchTwdForm.disciplines[name] = !twdFormState.disciplines[name];
+  };
+
   const handleMultiChange = (event) => {
-    const { name, id, value } = event.target;
-    const i = value ?? id;
-    searchTwdForm[name][i] = !twdFormState[name][i];
+    const { name, value } = event.target;
+    searchTwdForm[name][value] = !twdFormState[name][value];
   };
 
   const handleMatchInventoryScalingChange = (e) => {
@@ -296,7 +299,7 @@ const TwdSearchForm = ({ error, setError }) => {
       />
       <TwdSearchFormDisciplines
         value={twdFormState.disciplines}
-        onChange={handleMultiChange}
+        onChange={handleDisciplinesChange}
       />
       <TwdSearchFormCardtypes
         value={twdFormState.cardtypes}

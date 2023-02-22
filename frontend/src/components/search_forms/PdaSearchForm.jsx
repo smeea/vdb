@@ -68,10 +68,13 @@ const PdaSearchForm = ({ error, setError }) => {
     searchPdaForm[i][name] = value;
   };
 
+  const handleDisciplinesChange = (name) => {
+    searchPdaForm.disciplines[name] = !pdaFormState.disciplines[name];
+  };
+
   const handleMultiChange = (event) => {
-    const { name, id, value } = event.target;
-    const i = value ?? id;
-    searchPdaForm[name][i] = !pdaFormState[name][i];
+    const { name, value } = event.target;
+    searchPdaForm[name][value] = !pdaFormState[name][value];
   };
 
   const handleMatchInventoryScalingChange = (e) => {
@@ -295,7 +298,7 @@ const PdaSearchForm = ({ error, setError }) => {
       />
       <TwdSearchFormDisciplines
         value={pdaFormState.disciplines}
-        onChange={handleMultiChange}
+        onChange={handleDisciplinesChange}
       />
       <TwdSearchFormCardtypes
         value={pdaFormState.cardtypes}

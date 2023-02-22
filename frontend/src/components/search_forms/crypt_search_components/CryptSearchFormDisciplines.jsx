@@ -9,7 +9,7 @@ const CryptSearchFormDisciplines = ({ value, onChange }) => {
         <div
           key={i}
           className={`flex h-[38px] w-[38px] cursor-pointer items-center justify-center ${
-            value[i] === 0 ? 'opacity-40' : ''
+            value[i] ? '' : 'opacity-40'
           }`}
           onClick={() => onChange(i, 2)}
         >
