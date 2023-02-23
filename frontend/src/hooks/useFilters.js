@@ -8,19 +8,25 @@ import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 const useFilters = (cards = {}) => {
   const filterCrypt = (filter) => {
     return Object.values(cards).filter((card) => {
-      if (missingDisciplinesCrypt(filter.disciplines, card)) return false;
-      if (missingTextQueries(filter.text, card)) return false;
-      if (missingTraitsCrypt(filter.traits, card)) return false;
-      if (missingTitleCrypt(filter.titles, card)) return false;
-      if (missingVotes(filter.votes, card)) return false;
-      if (missingCapacityCrypt(filter.capacity, card)) return false;
-      if (missingClan(filter.clan, card)) return false;
-      if (missingSectCrypt(filter.sect, card)) return false;
-      if (missingGroup(filter.group, card)) return false;
-      if (missingSet(filter.set, card)) return false;
-      if (missingPrecon(filter.precon, card)) return false;
-      if (missingArtist(filter.artist, card)) return false;
-      if (missingNameOrInitials(filter.name, card)) return false;
+      if (
+        filter.disciplines &&
+        missingDisciplinesCrypt(filter.disciplines, card)
+      )
+        return false;
+      if (filter.text && missingTextQueries(filter.text, card)) return false;
+      if (filter.traits && missingTraitsCrypt(filter.traits, card))
+        return false;
+      if (filter.titles && missingTitleCrypt(filter.titles, card)) return false;
+      if (filter.votes && missingVotes(filter.votes, card)) return false;
+      if (filter.capacity && missingCapacityCrypt(filter.capacity, card))
+        return false;
+      if (filter.clan && missingClan(filter.clan, card)) return false;
+      if (filter.sect && missingSectCrypt(filter.sect, card)) return false;
+      if (filter.group && missingGroup(filter.group, card)) return false;
+      if (filter.set && missingSet(filter.set, card)) return false;
+      if (filter.precon && missingPrecon(filter.precon, card)) return false;
+      if (filter.artist && missingArtist(filter.artist, card)) return false;
+      if (filter.name && missingNameOrInitials(filter.name, card)) return false;
 
       return true;
     });
@@ -28,52 +34,52 @@ const useFilters = (cards = {}) => {
 
   const filterLibrary = (filter) => {
     return Object.values(cards).filter((card) => {
-      if (missingTextQueries(filter.text, card)) return false;
-      if (missingDisciplinesLibrary(filter.discipline, card)) return false;
-      if (missingClan(filter.clan, card)) return false;
-      if (missingTitleLibrary(filter.title, card)) return false;
-      if (missingType(filter.type, card)) return false;
-      if (missingSectLibrary(filter.sect, card)) return false;
-      if (missingBloodCost(filter.blood, card)) return false;
-      if (missingPoolCost(filter.pool, card)) return false;
-      if (missingTraitsLibrary(filter.traits, card)) return false;
-      if (missingCapacityLibrary(filter.capacity, card)) return false;
-      if (missingSet(filter.set, card)) return false;
-      if (missingPrecon(filter.precon, card)) return false;
-      if (missingArtist(filter.artist, card)) return false;
-      if (missingNameOrInitials(filter.name, card)) return false;
+      if (filter.text && missingTextQueries(filter.text, card)) return false;
+      if (
+        filter.discipline &&
+        missingDisciplinesLibrary(filter.discipline, card)
+      )
+        return false;
+      if (filter.clan && missingClan(filter.clan, card)) return false;
+      if (filter.title && missingTitleLibrary(filter.title, card)) return false;
+      if (filter.type && missingType(filter.type, card)) return false;
+      if (filter.sect && missingSectLibrary(filter.sect, card)) return false;
+      if (filter.blood && missingBloodCost(filter.blood, card)) return false;
+      if (filter.pool && missingPoolCost(filter.pool, card)) return false;
+      if (filter.traits && missingTraitsLibrary(filter.traits, card))
+        return false;
+      if (filter.capacity && missingCapacityLibrary(filter.capacity, card))
+        return false;
+      if (filter.set && missingSet(filter.set, card)) return false;
+      if (filter.precon && missingPrecon(filter.precon, card)) return false;
+      if (filter.artist && missingArtist(filter.artist, card)) return false;
+      if (filter.name && missingNameOrInitials(filter.name, card)) return false;
 
       return true;
     });
   };
 
-  const filterTWD = () => {};
-
   return {
     filterCrypt,
     filterLibrary,
-    filterTWD,
   };
 };
 
 export default useFilters;
 
-const missingDisciplinesCrypt = (filterDiscipline, card) => {
-  if (!filterDiscipline) return false;
-  return Object.keys(filterDiscipline).some(
+const missingDisciplinesCrypt = (filter, card) => {
+  return Object.keys(filter).some(
     (name) =>
-      filterDiscipline[name] > 0 &&
+      filter[name] > 0 &&
       (!card.Disciplines ||
         !card.Disciplines[name] ||
-        card.Disciplines[name] < filterDiscipline[name])
+        card.Disciplines[name] < filter[name])
   );
 };
 
-const missingDisciplinesLibrary = (filterDiscipline, card) => {
-  if (!filterDiscipline) return false;
-
-  const disciplines = filterDiscipline.value;
-  const logic = filterDiscipline.logic;
+const missingDisciplinesLibrary = (filter, card) => {
+  const disciplines = filter.value;
+  const logic = filter.logic;
 
   switch (logic) {
     case 'and':
@@ -95,12 +101,8 @@ const missingDisciplinesLibrary = (filterDiscipline, card) => {
   }
 };
 
-const missingTextQueries = (filterTextQueries, card) => {
-  if (!filterTextQueries) return false;
-
-  return filterTextQueries.some((textQuery) =>
-    missingTextQuery(textQuery, card)
-  );
+const missingTextQueries = (filter, card) => {
+  return filter.some((textQuery) => missingTextQuery(textQuery, card));
 };
 
 const missingTextQuery = (query, card) => {
@@ -135,18 +137,16 @@ const missingTextQuery = (query, card) => {
   return !((match && hasToMatch) || (!match && !hasToMatch));
 };
 
-const missingTraitsCrypt = (filterTraits, card) => {
-  return missingTraits(filterTraits, card, CryptTraitsRegexMap);
+const missingTraitsCrypt = (filter, card) => {
+  return missingTraits(filter, card, CryptTraitsRegexMap);
 };
 
-const missingTraitsLibrary = (filterTraits, card) => {
-  return missingTraits(filterTraits, card, LibraryTraitsRegexMap);
+const missingTraitsLibrary = (filter, card) => {
+  return missingTraits(filter, card, LibraryTraitsRegexMap);
 };
 
-const missingTraits = (filterTraits, card, traitsRegexMap) => {
-  if (!filterTraits) return false;
-
-  const filterKeys = Object.keys(filterTraits);
+const missingTraits = (filter, card, traitsRegexMap) => {
+  const filterKeys = Object.keys(filter);
 
   return filterKeys.some((trait) => missingTrait(trait, card, traitsRegexMap));
 };
@@ -224,11 +224,9 @@ const LibraryTraitsRegexMap = {
     /add .* blood (from the blood bank )?to .* in your uncontrolled region/i,
 };
 
-const missingTitleCrypt = (filterTitles, card) => {
-  if (!filterTitles) return false;
-
+const missingTitleCrypt = (filter, card) => {
   const cardTitle = card['Title'].toLowerCase() || 'none';
-  const titles = Object.keys(filterTitles);
+  const titles = Object.keys(filter);
 
   if (titles.includes(cardTitle)) return false;
 
@@ -251,17 +249,15 @@ const missingTitleCrypt = (filterTitles, card) => {
   return true;
 };
 
-const missingTitleLibrary = (filterTitles, card) => {
-  if (!filterTitles) return false;
-
+const missingTitleLibrary = (filter, card) => {
   const requirements = card.Requirement.toLowerCase();
   const hasNoTitleRequirement = !requiredTitleList.some((title) =>
     requirements.includes(title)
   );
 
   return missingRequirementsCheck(
-    filterTitles.logic,
-    filterTitles.value,
+    filter.logic,
+    filter.value,
     requirements,
     hasNoTitleRequirement
   );
@@ -281,13 +277,11 @@ const requiredTitleList = [
   'magaji',
 ];
 
-const missingVotes = (filterVotes, card) => {
-  if (!filterVotes || filterVotes === 'any') return false;
-
+const missingVotes = (filter, card) => {
   const cardTitle = card['Title'].toLowerCase() || 'none';
-  if (parseInt(filterVotes) === 0) return !(cardTitle === 'none');
+  if (parseInt(filter) === 0) return !(cardTitle === 'none');
 
-  return !(titleWorth[cardTitle] >= parseInt(filterVotes));
+  return !(titleWorth[cardTitle] >= parseInt(filter));
 };
 
 const titleWorth = {
@@ -309,11 +303,9 @@ const titleWorth = {
   none: 0,
 };
 
-const missingCapacityCrypt = (filterCapacity, card) => {
-  if (!filterCapacity) return false;
-
-  const values = filterCapacity.value;
-  const logic = filterCapacity.logic;
+const missingCapacityCrypt = (filter, card) => {
+  const values = filter.value;
+  const logic = filter.logic;
 
   switch (logic) {
     case 'or':
@@ -347,10 +339,9 @@ const missingCapacityCrypt = (filterCapacity, card) => {
   }
 };
 
-const missingCapacityLibrary = (filterCapacity, card) => {
-  if (!filterCapacity) return false;
-  const capacity = parseInt(filterCapacity.capacity);
-  const moreless = filterCapacity.moreless;
+const missingCapacityLibrary = (filter, card) => {
+  const capacity = parseInt(filter.capacity);
+  const moreless = filter.moreless;
 
   const match1 = capacityRegex[moreless + '1'].exec(card['Card Text']);
   const match2 = capacityRegex[moreless + '2'].exec(card['Card Text']);
@@ -375,8 +366,6 @@ const capacityRegex = {
 };
 
 const missingClan = (filterClan, card) => {
-  if (!filterClan || filterClan.value['0'] === 'any') return false;
-
   const clans = filterClan.value;
   const logic = filterClan.logic;
 
@@ -394,30 +383,24 @@ const missingClan = (filterClan, card) => {
   }
 };
 
-const missingSectCrypt = (filterSect, card) => {
-  if (!filterSect || filterSect.value['0'] === 'any') return false;
-
-  const requirements = card.Sect.toLowerCase();
-
+const missingSectCrypt = (filter, card) => {
   return missingRequirementsCheck(
-    filterSect.logic,
-    filterSect.value,
-    requirements,
+    filter.logic,
+    filter.value,
+    card.Sect.toLowerCase(),
     false
   );
 };
 
-const missingSectLibrary = (filterSect, card) => {
-  if (!filterSect || filterSect.value['0'] === 'any') return false;
-
+const missingSectLibrary = (filter, card) => {
   const requirements = card.Requirement.toLowerCase();
   const hasNoTitleRequirement = !requiredSectList.some((sect) =>
     requirements.includes(sect)
   );
 
   return missingRequirementsCheck(
-    filterSect.logic,
-    filterSect.value,
+    filter.logic,
+    filter.value,
     requirements,
     hasNoTitleRequirement
   );
@@ -432,35 +415,18 @@ const requiredSectList = [
   'imbued',
 ];
 
-const missingGroup = (filterGroup, card) => {
-  if (!filterGroup || card['Group'].toLowerCase() === 'any') return false;
-
-  const groups = Object.keys(filterGroup);
-
-  return !groups.includes(card['Group']);
+const missingGroup = (filter, card) => {
+  return !Object.keys(filter).includes(card['Group']);
 };
 
-const missingPoolCost = (filterPoolCost, card) => {
-  if (!filterPoolCost || filterPoolCost === 'any') return false;
+const missingPoolCost = (filter, card) => {
   if (card['Pool Cost'] === 'X') return false;
-
-  const cardCost = card['Pool Cost'];
-  const moreless = filterPoolCost.moreless;
-  const filterCost = filterPoolCost.pool;
-
-  return missingCostCheck(moreless, filterCost, cardCost);
+  return missingCostCheck(filter.moreless, filter.pool, card['Pool Cost']);
 };
 
-const missingBloodCost = (filterBloodCost, card) => {
-  if (!filterBloodCost || filterBloodCost === 'any') return false;
-
+const missingBloodCost = (filter, card) => {
   if (card['Blood Cost'] === 'X') return false;
-
-  const cardCost = card['Blood Cost'];
-  const moreless = filterBloodCost.moreless;
-  const filterCost = filterBloodCost.blood;
-
-  return missingCostCheck(moreless, filterCost, cardCost);
+  return missingCostCheck(filter.moreless, filter.blood, card['Blood Cost']);
 };
 
 const testType = (card, type) => {
@@ -471,12 +437,10 @@ const testType = (card, type) => {
   }
 };
 
-const missingType = (filterType, card) => {
-  if (!filterType || filterType === 'any') return false;
+const missingType = (filter, card) => {
+  const types = filter.value;
 
-  const types = filterType.value;
-
-  switch (filterType.logic) {
+  switch (filter.logic) {
     case 'and':
       return !types.every((type) => testType(card, type));
 
@@ -491,14 +455,10 @@ const BCP_START = '2018-01-01';
 const FUTURE = '2077-01-01';
 const PAST = '1984-01-01';
 
-const missingSet = (filterSet, card) => {
-  if (!filterSet || filterSet === 'any') return false;
-
-  if (!card.Set || card.Set.length === 0) return true;
-
-  const sets = filterSet.value;
-  const print = filterSet.print ? filterSet.print : null;
-  const age = filterSet.age ? filterSet.age : null;
+const missingSet = (filter, card) => {
+  const sets = filter.value;
+  const print = filter.print ? filter.print : null;
+  const age = filter.age ? filter.age : null;
 
   const dates = cardDates(card, true);
 
@@ -541,12 +501,9 @@ const missingSet = (filterSet, card) => {
   });
 };
 
-const missingPrecon = (filterPrecon, card) => {
-  if (!filterPrecon || filterPrecon === 'any') return false;
-  if (!card.Set || card.Set.length === 0) return true;
-
-  const setsAndSub = filterPrecon.value;
-  const print = filterPrecon.print ? filterPrecon.print : null;
+const missingPrecon = (filter, card) => {
+  const setsAndSub = filter.value;
+  const print = filter.print ? filter.print : null;
 
   const dates = cardDates(card, false);
 
@@ -585,16 +542,12 @@ const missingPrecon = (filterPrecon, card) => {
   });
 };
 
-const missingArtist = (filterArtist, card) => {
-  if (!filterArtist || filterArtist === 'any') return false;
-
-  return !card['Artist'].includes(filterArtist);
+const missingArtist = (filter, card) => {
+  return !card['Artist'].includes(filter);
 };
 
-const missingNameOrInitials = (filterName, card) => {
-  if (!filterName) return false;
-
-  const charRegExp = '^' + filterName.split('').join('(\\w* )?');
+const missingNameOrInitials = (filter, card) => {
+  const charRegExp = '^' + filter.split('').join('(\\w* )?');
   let checkInitials;
   try {
     checkInitials = RegExp(charRegExp, 'i');
@@ -604,18 +557,18 @@ const missingNameOrInitials = (filterName, card) => {
 
   let name = card['Name'].toLowerCase();
   let nameASCII = card['ASCII Name'].toLowerCase();
-  if (/^the .*/.test(filterName) && /, the$/.test(name)) {
+  if (/^the .*/.test(filter) && /, the$/.test(name)) {
     name = `the ${name.replace(/, the$/, '')}`;
     nameASCII = `the ${nameASCII.replace(/, the$/, '')}`;
   }
 
-  filterName = filterName.replace(/[^a-z]/gi, '');
+  filter = filter.replace(/[^a-z]/gi, '');
 
   return !(
-    name.includes(filterName) ||
-    name.replace(/[^a-z]/gi, '').includes(filterName) ||
-    nameASCII.includes(filterName) ||
-    nameASCII.replace(/[^a-z]/gi, '').includes(filterName) ||
+    name.includes(filter) ||
+    name.replace(/[^a-z]/gi, '').includes(filter) ||
+    nameASCII.includes(filter) ||
+    nameASCII.replace(/[^a-z]/gi, '').includes(filter) ||
     checkInitials.test(name) ||
     checkInitials.test(nameASCII)
   );
@@ -647,12 +600,12 @@ const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
   }
 };
 
-const missingCostCheck = (logic, filterCost, cardCost) => {
+const missingCostCheck = (logic, filter, cardCost) => {
   return !(
-    (logic === 'le' && cardCost <= filterCost) ||
-    (logic !== 'le' && !cardCost && filterCost === '0') ||
-    (logic === 'ge' && cardCost >= filterCost) ||
-    (logic === 'eq' && cardCost === filterCost)
+    (logic === 'le' && cardCost <= filter) ||
+    (logic !== 'le' && !cardCost && filter === '0') ||
+    (logic === 'ge' && cardCost >= filter) ||
+    (logic === 'eq' && cardCost === filter)
   );
 };
 
