@@ -13,16 +13,25 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
 
   const uniqueDraw = drawUniqueProbability(quantityList, 4)
     .map((i, idx) => {
-      if (i > 0 && i < 0.01) i = 0.01;
-      if (i > 0.999) i = 1;
+      if (i > 0 && i < 0.02) {
+        i = Math.round(i * 1000) / 10;
+      } else if (i > 0.999) {
+        i = 1;
+      } else {
+        i = Math.round(i * 100);
+      }
 
       if (i > 0) {
         return (
-          <div className="inline" key={idx}>
+          <div
+            className="inline"
+            key={idx}
+            title="Chance to draw X unique vampires"
+          >
             <span className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               {idx}:
             </span>{' '}
-            {Math.round(i * 100)}%
+            {i}%
           </div>
         );
       }
@@ -40,10 +49,7 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
           </div>
           <div>{cryptAvg}</div>
         </div>
-        <div
-          className="flex space-x-3"
-          title="Chance to draw X unique vampires"
-        >
+        <div className="flex space-x-3">
           <div className="text-fgSecondary dark:text-fgSecondaryDark">
             Uniq:
           </div>
