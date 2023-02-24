@@ -9,7 +9,7 @@ const ResultCryptDisciplines = ({ value }) => {
           {Object.keys(value).map((d, idx) => {
             return (
               <td
-                className="min-w-[25px] max-w-[25px] sm:max-w-[28px] sm:min-w-[28px]"
+                className="min-w-[25px] max-w-[25px] sm:min-w-[28px] sm:max-w-[28px]"
                 key={idx}
               >
                 {value[d] && (

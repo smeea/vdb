@@ -63,7 +63,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
         />
       )}
       <Button
-        className="max-sm:hidden rounded-l-none"
+        className="rounded-l-none max-sm:hidden"
         title="Collapse/Uncollapse Description"
         variant="primary"
         onClick={() => setFolded(!folded)}
@@ -72,7 +72,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
       </Button>
       {isAuthor && (
         <Button
-          className="sm:hidden rounded-l-none"
+          className="rounded-l-none sm:hidden"
           variant={success ? 'success' : 'primary'}
           type="submit"
         >

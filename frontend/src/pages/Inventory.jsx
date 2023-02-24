@@ -210,7 +210,7 @@ const Inventory = () => {
               </div>
             )}
           </div>
-          <div className="max-lg:hidden basis-full flex-col space-y-6 flex lg:basis-2/12">
+          <div className="flex basis-full flex-col space-y-6 max-lg:hidden lg:basis-2/12">
             <InventoryButtons
               crypt={
                 sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt

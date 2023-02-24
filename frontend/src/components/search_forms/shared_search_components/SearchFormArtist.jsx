@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import cryptArtists from '@/assets/data/artistsCrypt.json';
 import libraryArtists from '@/assets/data/artistsLib.json';
 import { useApp } from '@/context';
@@ -39,7 +39,6 @@ const SearchFormArtist = ({ target, value, onChange }) => {
       </div>
       <div className="w-3/4">
         <Select
-          classNamePrefix="react-select"
           options={options}
           onChange={onChange}
           menuPlacement="top"

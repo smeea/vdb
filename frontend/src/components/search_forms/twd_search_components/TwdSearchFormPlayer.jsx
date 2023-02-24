@@ -42,7 +42,6 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
       </div>
       <div className="w-3/4">
         <AsyncSelect
-          classNamePrefix="react-select"
           cacheOptions
           menuPlacement="top"
           maxMenuHeight={maxMenuHeight}

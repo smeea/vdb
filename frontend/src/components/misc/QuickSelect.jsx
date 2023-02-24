@@ -69,7 +69,6 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
 
   return (
     <AsyncSelect
-      classNamePrefix="react-select"
       autoFocus={!isMobile || !selectedCardid}
       menuPlacement={isMobile ? 'top' : 'bottom'}
       cacheOptions

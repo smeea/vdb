@@ -69,7 +69,7 @@ const PdaResult = ({ results, setResults }) => {
 
           return (
             <div className="space-y-6" key={deck.deckid}>
-              <div className="flex max-lg:flex-col gap-2">
+              <div className="flex gap-2 max-lg:flex-col">
                 <div className="basis-full lg:basis-1/4">
                   <PdaResultDescription deck={deck} />
                 </div>

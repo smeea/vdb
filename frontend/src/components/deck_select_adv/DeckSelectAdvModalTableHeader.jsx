@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import Shuffle from '@/assets/images/icons/shuffle.svg';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
 import At from '@/assets/images/icons/at.svg';
@@ -76,24 +76,24 @@ const DeckSelectAdvModalTableHeader = ({
         {inventoryMode && !isMobile && (
           <th>
             <Select
-              classNamePrefix="no-dropdown react-select"
               options={invOptions}
               onChange={(e) => setInvFilter(e.value)}
               value={invOptions.find((obj) => obj.value === invFilter)}
               isSearchable={false}
+              noDropdown
             />
           </th>
         )}
         {!isMobile && (
           <th className="min-w-[60px]">
             <Select
-              classNamePrefix="no-dropdown react-select"
               options={clanOptions}
               onChange={(e) => setClanFilter(e.value)}
               value={clanOptions.find(
                 (obj) => obj.value === clanFilter.toLowerCase()
               )}
               isSearchable
+              noDropdown
             />
           </th>
         )}
@@ -119,7 +119,7 @@ const DeckSelectAdvModalTableHeader = ({
           />
         </th>
         <th>
-          <div className="flex max-sm:flex-col justify-end gap-1">
+          <div className="flex justify-end gap-1 max-sm:flex-col">
             <Checkbox
               name="revFilter"
               label={isDesktop ? 'Show Revisions' : 'Rev'}

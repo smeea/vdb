@@ -63,7 +63,7 @@ const AccountPlaytestAdd = ({
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex">
-        <div className="flex w-full relative">
+        <div className="relative flex w-full">
           <Input
             placeholder="Add Playtester (login)"
             type="text"

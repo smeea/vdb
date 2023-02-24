@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { ResultPreconClan } from '@/components';
 import { useApp } from '@/context';
@@ -56,7 +56,6 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   return (
     <>
       <Select
-        classNamePrefix="react-select"
         options={options}
         isSearchable={!isMobile}
         name="decks"

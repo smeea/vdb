@@ -79,7 +79,7 @@ const DeckChangeName = ({ deck }) => {
       )}
       {isEditable && (
         <Button
-          className="sm:hidden rounded-l-none"
+          className="rounded-l-none sm:hidden"
           variant={success ? 'success' : 'primary'}
           type="submit"
         >

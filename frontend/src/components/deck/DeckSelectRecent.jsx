@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
 import PeopleFill from '@/assets/images/icons/people-fill.svg';
 import { useApp } from '@/context';
@@ -33,7 +33,6 @@ const DeckSelectRecent = ({ deckid, handleSelect }) => {
 
   return (
     <Select
-      classNamePrefix="react-select"
       options={options}
       isSearchable={!isMobile}
       name="decks"

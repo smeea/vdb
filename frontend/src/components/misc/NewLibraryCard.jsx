@@ -41,7 +41,6 @@ const NewLibraryCard = ({
   return (
     <AsyncSelect
       ref={newRef}
-      classNamePrefix="react-select"
       cacheOptions
       autoFocus={autoFocus}
       value={selectedValue}

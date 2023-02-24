@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import Select from 'react-select';
+import { Select } from '@/components';
 import {
   DeckSelectSortForm,
   InventoryAddDeckRow,

@@ -20,33 +20,6 @@
   .optimize-contrast
     image-rendering: -webkit-optimize-contrast
 
-.react-select
-  &__menu
-    @apply z-10 #{!important}
-  &__single-value,
-  &__input
-    @apply text-fgPrimary dark:text-fgPrimaryDark #{!important}
-  &__control
-    @apply bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark #{!important}
-  &__value-container,
-  &__dropdown-indicator,
-  &__indicators
-    @apply bg-bgPrimary dark:bg-bgPrimaryDark #{!important}
-  &__menu-list
-    @apply bg-bgPrimary dark:bg-bgPrimaryDark text-fgPrimary dark:text-fgPrimaryDark #{!important}
-  &__indicator-separator
-    @apply bg-borderSecondary dark:bg-borderSecondaryDark #{!important}
-  &__dropdown-indicator
-    @apply text-borderSecondary dark:text-borderSecondaryDark #{!important}
-  &__option--is-focused
-    @apply bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark #{!important}
-  &__option--is-selected
-    @apply bg-borderPrimary dark:bg-borderPrimaryDark #{!important}
-
-.no-dropdown.react-select__dropdown-indicator,
-.no-dropdown.react-select__indicators
-  @apply hidden
-
 .react-select-tags
   &__value-container
     @apply p-0.5 #{!important}

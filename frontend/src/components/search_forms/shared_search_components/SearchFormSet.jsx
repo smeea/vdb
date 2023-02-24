@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import {
   SearchAdditionalForms,
   SearchFormButtonAdd,
@@ -92,7 +92,6 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         </div>
         <div className="w-3/4">
           <Select
-            classNamePrefix="react-select"
             options={options}
             isSearchable={!isMobile}
             menuPlacement="top"

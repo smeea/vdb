@@ -150,7 +150,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       noPadding={isMobile}
     >
       <div className="space-y-5">
-        <div className="flex max-md:flex-col gap-5">
+        <div className="flex gap-5 max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
             {deck.crypt && (
               <div
@@ -182,7 +182,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
         </div>
-        <div className="flex max-md:flex-col gap-1 md:justify-end">
+        <div className="flex gap-1 max-md:flex-col md:justify-end">
           <Button variant="primary" onClick={() => handleGenerate(false)}>
             Generate - Gray gaps
           </Button>

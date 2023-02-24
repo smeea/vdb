@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useSnapshot } from 'valtio';
-import Select from 'react-select';
+import { Select } from '@/components';
 import { deckStore } from '@/context';
 
 const DeckBranchSelect = ({ deck, handleSelect }) => {
@@ -55,7 +55,6 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
 
   return (
     <Select
-      classNamePrefix="react-select"
       options={options}
       isSearchable={false}
       value={options.find((obj) => obj.value === deck.deckid)}

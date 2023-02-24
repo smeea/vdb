@@ -12,8 +12,8 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
   const { isMobile } = useApp();
 
   return (
-    <div className="flex flex-col basis-full gap-2">
-      <div className="flex max-sm:flex-col gap-2">
+    <div className="flex basis-full flex-col gap-2">
+      <div className="flex gap-2 max-sm:flex-col">
         <div
           className={`basis-full ${
             deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-8/12'

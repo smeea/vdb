@@ -2,6 +2,7 @@
 - Radu Bistri image
 - Buttons & Menu borders on hover
 - Autofocus add card modal
+- Fix react-select-tags, tags-no-remove, tags-bordered
 
 # FEATURES
 - Check TWD
@@ -21,7 +22,6 @@
 - Problem with valtio update
 - Migration from screen width (isWide, etc) to container queries
 - Refactor standard colors
-- Refactor react-select to css-in-js styles
 - Configure vite-pwa
 - Move preconDecks to fetch+localStorage
 - Update url for playtest images to mitigate caching

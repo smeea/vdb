@@ -206,7 +206,7 @@ const Review = () => {
   return (
     <div className="deck-container mx-auto">
       <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-        <div className="max-xl:hidden min-w-[175px]" />
+        <div className="min-w-[175px] max-xl:hidden" />
         <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
           {deckFrom && (
             <DeckDetails
@@ -235,7 +235,7 @@ const Review = () => {
             </div>
           )}
         </div>
-        <div className="max-lg:hidden min-w-[175px]">
+        <div className="min-w-[175px] max-lg:hidden">
           <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-[44px]">
             <ReviewButtons
               deck={deckFrom}

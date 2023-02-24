@@ -156,7 +156,7 @@ const Cards = () => {
                 </div>
               )}
             </div>
-            <div className="max-sm:hidden min-w-[175px]">
+            <div className="min-w-[175px] max-sm:hidden">
               <div className="sticky top-[77px] z-30 flex w-full flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark">
                 <ButtonIconed
                   variant="secondary"

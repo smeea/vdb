@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import { useApp } from '@/context';
 import {
   SearchAdditionalForms,
@@ -75,7 +75,6 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
         <div className="flex w-3/4 space-x-1">
           <div className="w-1/2">
             <Select
-              classNamePrefix="react-select"
               options={morelessOptions}
               isSearchable={false}
               name={0}
@@ -87,7 +86,6 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
           </div>
           <div className="w-1/2">
             <Select
-              classNamePrefix="react-select"
               options={options}
               isSearchable={false}
               name={0}

@@ -4,7 +4,7 @@ import {
   ResultDisciplineImage,
   ResultClanImage,
 } from '@/components';
-import Select from 'react-select';
+import { Select } from '@/components';
 
 const InventoryFilterForm = ({
   value,
@@ -84,7 +84,6 @@ const InventoryFilterForm = ({
 
   return (
     <Select
-      classNamePrefix="react-select"
       options={options}
       placeholder="Select Filter"
       value={options.find((obj) => obj.value === value)}

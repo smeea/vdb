@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import Select from 'react-select';
+import { Select } from '@/components';
 import Shuffle from '@/assets/images/icons/shuffle.svg';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
 import At from '@/assets/images/icons/at.svg';
@@ -114,7 +114,6 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
   return (
     <Select
-      classNamePrefix="react-select"
       options={options}
       isSearchable={!isMobile}
       filterOption={filterOption}

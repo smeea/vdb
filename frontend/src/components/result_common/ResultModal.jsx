@@ -75,7 +75,7 @@ const ResultModal = ({
       />
       <div className="fixed inset-0 flex items-center justify-center overflow-auto p-0 sm:p-8">
         <Dialog.Panel
-          className={`w-full sm:w-[900px] space-y-2 ${
+          className={`w-full space-y-2 sm:w-[900px] ${
             bordered
               ? 'border border-borderNestModal dark:border-borderNestModalDark'
               : ''
@@ -125,13 +125,13 @@ const ResultModal = ({
             )}
             <div
               onClick={() => handleModalCardChange(-1)}
-              className="absolute bottom-1/2 left-0 h-[50px] text-darkGray/50 sm:left-[-40px] sm:text-white dark:text-midGray/50 sm:dark:text-bgCheckboxDark"
+              className="absolute bottom-1/2 left-0 h-[50px] text-darkGray/50 dark:text-midGray/50 sm:left-[-40px] sm:text-white sm:dark:text-bgCheckboxDark"
             >
               <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
             </div>
             <div
               onClick={() => handleModalCardChange(1)}
-              className="absolute bottom-1/2 right-0 h-[50px] text-darkGray/50 sm:right-[-40px] sm:text-white dark:text-midGray/50 sm:dark:text-bgCheckboxDark"
+              className="absolute bottom-1/2 right-0 h-[50px] text-darkGray/50 dark:text-midGray/50 sm:right-[-40px] sm:text-white sm:dark:text-bgCheckboxDark"
             >
               <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
             </div>

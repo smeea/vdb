@@ -47,11 +47,11 @@ const DeckChangeAuthor = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        className="w-full rounded-l-none max-sm:rounded-r-none border-bgSecondary dark:border-bgSecondaryDark"
+        className="w-full rounded-l-none border-bgSecondary dark:border-bgSecondaryDark max-sm:rounded-r-none"
       />
       {isAuthor && (
         <Button
-          className="sm:hidden rounded-l-none"
+          className="rounded-l-none sm:hidden"
           variant={success ? 'success' : 'primary'}
           type="submit"
         >

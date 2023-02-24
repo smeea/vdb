@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import EyeFill from '@/assets/images/icons/eye-fill.svg';
 import { CardImage, Tooltip } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
@@ -34,7 +34,6 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
     <>
       <td className="min-w-[110px]">
         <Select
-          classNamePrefix="react-select"
           options={setOptions}
           isSearchable={false}
           name="set"

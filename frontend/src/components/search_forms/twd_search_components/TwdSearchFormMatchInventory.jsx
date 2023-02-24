@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 
 const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
   const name = 'matchInventory';
@@ -30,7 +30,6 @@ const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
       </div>
       <div className="w-full">
         <Select
-          classNamePrefix="react-select"
           options={options}
           isSearchable={false}
           name={name}

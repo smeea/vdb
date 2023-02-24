@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import { ResultLibraryTypeImage } from '@/components';
 import { useApp } from '@/context';
 
@@ -130,7 +130,6 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
         </div>
         <div className="w-5/6">
           <Select
-            classNamePrefix="react-select"
             options={options}
             isSearchable={false}
             name={name}

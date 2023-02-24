@@ -101,7 +101,7 @@ const DeckSelectAdvModalTableRow = ({
       )}
 
       <td
-        className="min-w-[45vw] sm:min-w-[340px] cursor-pointer"
+        className="min-w-[45vw] cursor-pointer sm:min-w-[340px]"
         onClick={() => handleOpen(deck.deckid)}
       >
         <div

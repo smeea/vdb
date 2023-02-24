@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import { useApp } from '@/context';
 
 const TwdSearchFormDate = ({ inPda, value, onChange }) => {
@@ -53,7 +53,6 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
       <div className="flex w-3/4 items-center space-x-1">
         <div className="w-full">
           <Select
-            classNamePrefix="react-select"
             options={fromOptions}
             isSearchable={false}
             name={name}
@@ -65,7 +64,6 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
         <div className="px-1">to</div>
         <div className="w-full">
           <Select
-            classNamePrefix="react-select"
             options={toOptions}
             isSearchable={false}
             name={name}

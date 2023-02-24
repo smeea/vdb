@@ -30,7 +30,7 @@ const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
 
   return (
     <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-      <div className="whitespace-nowrap font-bold p-2">TOTAL: {total}</div>
+      <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
       <div>
         {Object.keys(byTags)
           .sort()

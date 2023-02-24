@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import {
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
@@ -68,7 +68,6 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
         </div>
         <div className="w-3/4">
           <Select
-            classNamePrefix="react-select"
             options={options}
             isSearchable={false}
             name={0}

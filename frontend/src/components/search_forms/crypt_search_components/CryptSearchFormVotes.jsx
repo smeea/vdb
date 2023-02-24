@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import { useApp } from '@/context';
 
 const CryptSearchFormVotes = ({ value, onChange }) => {
@@ -33,7 +33,6 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
       </div>
       <div className="w-3/4">
         <Select
-          classNamePrefix="react-select"
           options={options}
           isSearchable={false}
           name="votes"

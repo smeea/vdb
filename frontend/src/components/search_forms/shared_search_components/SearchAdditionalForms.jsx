@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
@@ -40,7 +40,6 @@ const SearchAdditionalForms = ({
           <div className="flex w-3/4 space-x-1">
             <div className="w-1/2">
               <Select
-                classNamePrefix="react-select"
                 options={morelessOptions}
                 isSearchable={false}
                 menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
@@ -53,7 +52,6 @@ const SearchAdditionalForms = ({
             </div>
             <div className="w-1/2">
               <Select
-                classNamePrefix="react-select"
                 options={options}
                 isSearchable={false}
                 defaultMenuIsOpen={
@@ -79,7 +77,6 @@ const SearchAdditionalForms = ({
         ) : (
           <div className="w-3/4">
             <Select
-              classNamePrefix="react-select"
               options={options}
               isSearchable={!isMobile}
               defaultMenuIsOpen={value.value[i] === 'any'}

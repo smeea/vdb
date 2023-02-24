@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import { useApp } from '@/context';
 
 const DeckSelectAdvModalTagsFilter = ({

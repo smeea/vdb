@@ -10,7 +10,7 @@ const DeckPreview = ({ deck, setShow }) => {
         onClick={(event) => {
           if (event.target === event.currentTarget) setShow(false);
         }}
-        className="h-[80vh] overflow-y-auto basis-5/9"
+        className="h-[80vh] basis-5/9 overflow-y-auto"
       >
         <DeckCrypt deck={d} inPreview />
       </div>
@@ -18,7 +18,7 @@ const DeckPreview = ({ deck, setShow }) => {
         onClick={(event) => {
           if (event.target === event.currentTarget) setShow(false);
         }}
-        className="h-[80vh] overflow-y-auto basis-4/9"
+        className="h-[80vh] basis-4/9 overflow-y-auto"
       >
         <DeckLibrary deck={d} inPreview />
       </div>

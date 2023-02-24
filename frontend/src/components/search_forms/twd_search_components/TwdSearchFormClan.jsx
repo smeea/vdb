@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import { ResultClanImage } from '@/components';
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
@@ -46,7 +46,6 @@ const TwdSearchFormClan = ({ value, onChange }) => {
       </div>
       <div className="w-3/4">
         <Select
-          classNamePrefix="react-select"
           options={options}
           isSearchable={!isMobile}
           name="clan"

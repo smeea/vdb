@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import { Select } from '@/components';
 import { ResultClanImage } from '@/components';
 import {
   SearchAdditionalForms,
@@ -71,7 +71,6 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
         </div>
         <div className="w-3/4">
           <Select
-            classNamePrefix="react-select"
             options={options}
             isSearchable={!isMobile}
             name={0}

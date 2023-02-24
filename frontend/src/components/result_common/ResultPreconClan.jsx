@@ -6,7 +6,7 @@ const ResultPreconClan = ({ clan }) => {
   return (
     <>
       {clan === 'Bundle' ? (
-        <div className="flex items-center h-[21px] dark:brightness-[0.65] sm:h-[24px]">
+        <div className="flex h-[21px] items-center dark:brightness-[0.65] sm:h-[24px]">
           <GiftFill />
         </div>
       ) : clan === 'Mix' ? null : (
