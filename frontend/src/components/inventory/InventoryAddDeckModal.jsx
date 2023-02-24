@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { Select } from '@/components';
+import { SelectCreatable } from '@/components';
 import {
   DeckSelectSortForm,
   InventoryAddDeckRow,
@@ -98,8 +98,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             {!isMobile && <th className="min-w-[100px]"></th>}
             {!isMobile && (
               <th className="w-full">
-                <Select
-                  classNamePrefix="tags-bordered react-select-tags"
+                <SelectCreatable
                   isMulti
                   options={defaultTagsOptions}
                   onChange={handleChangeTagsFilter}

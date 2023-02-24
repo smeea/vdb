@@ -4,6 +4,7 @@ export { default as ButtonIconed } from './ButtonIconed.jsx';
 export { default as Checkbox } from './Checkbox.jsx';
 export { default as ConditionalTooltip } from './ConditionalTooltip.jsx';
 export { default as ConditionalTooltipOrModal } from './ConditionalTooltipOrModal.jsx';
+export { default as SelectCreatable } from './SelectCreatable.jsx';
 export { default as ErrorMessage } from './ErrorMessage.jsx';
 export { default as ErrorOverlay } from './ErrorOverlay.jsx';
 export { default as Hr } from './Hr.jsx';

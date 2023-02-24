@@ -2,7 +2,7 @@
 - Radu Bistri image
 - Buttons & Menu borders on hover
 - Autofocus add card modal
-- Fix react-select-tags, tags-no-remove, tags-bordered
+- Fix z-index for Select
 
 # FEATURES
 - Check TWD

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import CreatableSelect from 'react-select/creatable';
+import { SelectCreatable } from '@/components';
 import { deckUpdate } from '@/context';
 
 const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
@@ -39,21 +39,12 @@ const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
   );
   const noOptionsMessage = () => 'Enter new tag';
 
-  let classNamePrefix = 'react-select-tags';
-  if (isBordered) {
-    classNamePrefix = `tags-bordered ${classNamePrefix}`;
-  }
-  if (!isEditable) {
-    classNamePrefix = `tags-no-remove ${classNamePrefix}`;
-  }
-
   return (
-    <CreatableSelect
-      className="w-full"
-      classNamePrefix={classNamePrefix}
+    <SelectCreatable
+      noBorder={!isBordered}
+      noRemove={!isEditable}
       isMulti
       isDisabled={!isEditable}
-      isClearable={false}
       options={allTagsOptions}
       onChange={handleChange}
       value={tagList}

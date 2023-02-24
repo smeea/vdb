@@ -20,45 +20,6 @@
   .optimize-contrast
     image-rendering: -webkit-optimize-contrast
 
-.react-select-tags
-  &__value-container
-    @apply p-0.5 #{!important}
-  &__input
-    @apply text-fgPrimary dark:text-fgPrimaryDark #{!important}
-  &__control
-    @apply border-transparent bg-transparent #{!important}
-  &__dropdown-indicator,
-  &__indicators
-    @apply hidden #{!important}
-  &__menu
-    @apply z-10 #{!important}
-  &__menu-list
-    @apply bg-bgPrimary dark:bg-bgPrimaryDark text-fgPrimary dark:text-fgPrimaryDark
-  &__option--is-focused
-    @apply bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark #{!important}
-  &__option--is-selected
-    @apply bg-borderPrimary dark:bg-borderPrimaryDark #{!important}
-  &__multi-value
-    @apply bg-bgButton dark:bg-bgButtonDark rounded #{!important}
-  &__multi-value__label
-    @apply border-l border-y border-borderSecondary rounded-l dark:border-borderSecondaryDark text-fgPrimary dark:text-fgPrimaryDark #{!important}
-  &__multi-value__remove
-    @apply bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark #{!important}
-  &__multi-value__remove:hover
-    @apply bg-borderPrimary dark:bg-borderPrimaryDark text-fgThird dark:text-fgThirdDark #{!important}
-  &__multi-value-container
-    @apply bg-bgPrimary dark:bg-bgPrimaryDark
-
-.tags-no-remove
-  .react-select-tags__input-container,
-  .react-select-tags__multi-value__remove
-    @apply hidden
-  .react-select-tags__multi-value__label
-    @apply border rounded border-bgSecondary dark:border-bgSecondaryDark pr-1.5 #{!important}
-
-.tags-bordered.react-select-tags__control
-  @apply border border-bgSecondary dark:border-bgSecondaryDark #{!important}
-
 tr:hover div.not-selected.inventory-card-custom
   opacity: .35
 
