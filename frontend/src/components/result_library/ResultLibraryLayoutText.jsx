@@ -27,7 +27,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
           </div>
         </div>
         <div className="flex items-center space-x-3">
-          <div className="flex items-center ">
+          <div className="flex items-center">
             {card.Discipline && (
               <ResultLibraryDisciplines value={card.Discipline} />
             )}
@@ -42,13 +42,15 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
               <ResultLibraryTrifle />
             </div>
           )}
-          {noClose || isNarrow ? (
-            <div className="max-h-0 max-w-0 opacity-0">
-              <button />
-            </div>
-          ) : (
+          <div
+            className={
+              noClose || isNarrow
+                ? 'max-h-0 max-w-0 opacity-0 hidden'
+                : 'flex justify-center'
+            }
+          >
             <ButtonCloseModal handleClose={handleClose} />
-          )}
+          </div>
         </div>
       </div>
       <Hr />

@@ -55,7 +55,7 @@ module.exports = {
       bgRedDark: '#b56060',
       bgGreen: '#659065',
       bgGreenDark: '#709570',
-      bgNav: '#404060',
+      bgNav: '#3a3a5a',
       bgNavDark: '#303040',
       bgSecondary: '#e0e5ff',
       bgSecondaryDark: '#353545',
@@ -89,7 +89,7 @@ module.exports = {
       midGrayDark: '#808090',
       darkGray: '#606070',
       darkGrayDark: '#404050',
-      lightGray: '#a0a0a0',
+      lightGray: '#a8a8a8',
       lightGrayDark: '#959595',
     },
     extend: {

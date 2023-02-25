@@ -40,13 +40,15 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose }) => {
         </div>
         <div className="flex items-center space-x-3">
           <ResultCryptGroup value={card.Group} />
-          {noClose || isNarrow ? (
-            <div className="max-h-0 max-w-0 opacity-0">
-              <button />
-            </div>
-          ) : (
+          <div
+            className={
+              noClose || isNarrow
+                ? 'max-h-0 max-w-0 opacity-0 hidden'
+                : 'flex justify-center'
+            }
+          >
             <ButtonCloseModal handleClose={handleClose} />
-          )}
+          </div>
         </div>
       </div>
       <Hr />

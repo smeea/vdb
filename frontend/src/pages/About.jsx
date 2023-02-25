@@ -9,6 +9,17 @@ import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg';
 import { Banner } from '@/components';
 import lastChange from '@/LAST_CHANGE.json';
 
+const ContactLi = ({ icon, children }) => {
+  return (
+    <li className="flex px-0.5 gap-2.5">
+      <div className="flex items-center text-fgThird dark:text-fgThirdDark">
+        {icon}
+      </div>
+      {children}
+    </li>
+  );
+};
+
 const Title = ({ children }) => {
   return (
     <div className="text-xl font-bold  text-fgSecondary underline dark:text-fgSecondaryDark">
@@ -209,51 +220,26 @@ const About = () => {
 
         <div className="space-y-1">
           <Title>CONTACTS</Title>
-          <ul className="list-none space-y-1 p-0">
-            <li className="p-0">
-              <div className="flex items-center space-x-1">
-                <div className="text-fgThird dark:text-fgThirdDark">
-                  <Globe2 />
-                </div>
-                <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
-                  VEKN forum
-                </a>
-              </div>
-            </li>
-            <li className="p-0">
-              <div className="flex items-center space-x-1">
-                <div className="text-fgThird dark:text-fgThirdDark">
-                  <Github />
-                </div>
-                <a href="https://github.com/smeea/vdb">github.com/smeea/vdb</a>
-              </div>
-            </li>
-            <li className="p-0">
-              <div className="flex items-center space-x-1">
-                <div className="text-fgThird dark:text-fgThirdDark">
-                  <EnvelopeFill />
-                </div>
-                <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
-              </div>
-            </li>
-            <li className="p-0">
-              <div className="flex items-center space-x-1">
-                <div className="text-fgThird dark:text-fgThirdDark">
-                  <Telegram />
-                </div>
-                <a href="https://t.me/smeea">@smeea</a>
-              </div>
-            </li>
-            <li className="p-0">
-              <div className="flex items-center space-x-1">
-                <div className="text-fgThird dark:text-fgThirdDark">
-                  <Discord />
-                </div>
-                <a href="https://discord.com/users/264725500226830336">
-                  Smeea#3259
-                </a>
-              </div>
-            </li>
+          <ul className="list-none space-y-2 px-0">
+            <ContactLi icon={<Globe2 />}>
+              <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
+                VEKN forum
+              </a>
+            </ContactLi>
+            <ContactLi icon={<Github />}>
+              <a href="https://github.com/smeea/vdb">github.com/smeea/vdb</a>
+            </ContactLi>
+            <ContactLi icon={<EnvelopeFill />}>
+              <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
+            </ContactLi>
+            <ContactLi icon={<Telegram />}>
+              <a href="https://t.me/smeea">@smeea</a>
+            </ContactLi>
+            <ContactLi icon={<Discord />}>
+              <a href="https://discord.com/users/264725500226830336">
+                Smeea#3259
+              </a>
+            </ContactLi>
           </ul>
         </div>
       </div>
