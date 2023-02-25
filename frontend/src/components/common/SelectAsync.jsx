@@ -1,18 +1,18 @@
 import React from 'react';
-import ReactSelect from 'react-select';
+import AsyncSelect from 'react-select/async';
 
-const Select = React.forwardRef(
+const SelectAsync = React.forwardRef(
   (
     {
-      filterOption,
-      isSearchable,
-      maxMenuHeight,
-      menuPlacement,
+      autoFocus,
+      cacheOptions,
+      getOptionLabel,
+      loadOptions,
       noBorder,
       noDropdown,
       onChange,
-      options,
       placeholder,
+      menuPlacement,
       value,
     },
     ref
@@ -20,13 +20,13 @@ const Select = React.forwardRef(
     return (
       // TODO add outline
       // dark:outline-bgCheckboxSelectedDark focus:outline outline-bgCheckboxSelected
-      <ReactSelect
-        filterOption={filterOption}
-        isSearchable={isSearchable}
-        maxMenuHeight={maxMenuHeight}
+      <AsyncSelect
+        autoFocus={autoFocus}
+        cacheOptions={cacheOptions}
+        getOptionLabel={getOptionLabel}
+        loadOptions={loadOptions}
         menuPlacement={menuPlacement}
         onChange={onChange}
-        options={options}
         placeholder={placeholder}
         ref={ref}
         unstyled
@@ -70,14 +70,12 @@ const Select = React.forwardRef(
           /* multiValue: () => '', */
           /* multiValueLabel: () => '', */
           /* multiValueRemove: () => '', */
-          /* noOptionsMessage: () => '', */
-          /* placeholder: () => '', */
           /* singleValue: () => '', */
         }}
       />
     );
   }
 );
-Select.displayName = 'Select';
+SelectAsync.displayName = 'SelectAsync';
 
-export default Select;
+export default SelectAsync;

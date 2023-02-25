@@ -1,7 +1,10 @@
 import React, { useRef } from 'react';
-import AsyncSelect from 'react-select/async';
 import { useApp } from '@/context';
-import { SelectLabelCrypt, SelectLabelLibrary } from '@/components';
+import {
+  SelectAsync,
+  SelectLabelCrypt,
+  SelectLabelLibrary,
+} from '@/components';
 import { useFilters } from '@/hooks';
 
 const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
@@ -68,7 +71,7 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
   };
 
   return (
-    <AsyncSelect
+    <SelectAsync
       autoFocus={!isMobile || !selectedCardid}
       menuPlacement={isMobile ? 'top' : 'bottom'}
       cacheOptions

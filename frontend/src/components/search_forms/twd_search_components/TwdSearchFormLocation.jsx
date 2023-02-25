@@ -1,5 +1,5 @@
 import React from 'react';
-import AsyncSelect from 'react-select/async';
+import { SelectAsync } from '@/components';
 import { useApp } from '@/context';
 
 const TwdSearchFormLocation = ({ value, form }) => {
@@ -39,7 +39,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
         </div>
       </div>
       <div className="w-3/4">
-        <AsyncSelect
+        <SelectAsync
           cacheOptions
           menuPlacement="top"
           maxMenuHeight={maxMenuHeight}

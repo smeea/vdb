@@ -1,6 +1,5 @@
 import React from 'react';
-import AsyncSelect from 'react-select/async';
-import { SelectLabelCrypt } from '@/components';
+import { SelectAsync, SelectLabelCrypt } from '@/components';
 import { useFilters } from '@/hooks';
 import { useApp } from '@/context';
 
@@ -37,7 +36,7 @@ const NewCryptCard = ({
   };
 
   return (
-    <AsyncSelect
+    <SelectAsync
       ref={newRef}
       cacheOptions
       autoFocus={autoFocus}
