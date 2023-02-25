@@ -8,7 +8,6 @@ const SelectAsync = React.forwardRef(
       cacheOptions,
       getOptionLabel,
       loadOptions,
-      noBorder,
       noDropdown,
       onChange,
       placeholder,
@@ -18,8 +17,6 @@ const SelectAsync = React.forwardRef(
     ref
   ) => {
     return (
-      // TODO add outline
-      // dark:outline-bgCheckboxSelectedDark focus:outline outline-bgCheckboxSelected
       <AsyncSelect
         autoFocus={autoFocus}
         cacheOptions={cacheOptions}
@@ -32,10 +29,9 @@ const SelectAsync = React.forwardRef(
         unstyled
         value={value}
         classNames={{
-          container: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
-          control: () =>
-            noBorder
-              ? ''
+          control: (state) =>
+            state.isFocused
+              ? 'rounded border border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
               : 'rounded border border-borderSecondary dark:border-borderSecondaryDark',
           dropdownIndicator: () =>
             noDropdown
@@ -57,6 +53,8 @@ const SelectAsync = React.forwardRef(
               : ''
           }
 `,
+          noOptionsMessage: () => 'rounded p-2',
+          /* input: () => */
           valueContainer: () =>
             'px-2 min-h-[40px] bg-bgPrimary dark:bg-bgPrimaryDark rounded',
           /* clearIndicator: '', */

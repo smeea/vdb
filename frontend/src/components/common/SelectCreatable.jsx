@@ -34,10 +34,14 @@ const SelectCreatable = React.forwardRef(
         unstyled
         value={value}
         classNames={{
-          control: () =>
-            noBorder
-              ? ''
-              : 'rounded border border-borderSecondary dark:border-borderSecondaryDark',
+          control: (state) => `
+            ${
+              noBorder
+                ? ''
+                : state.isFocused
+                ? 'rounded border border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
+                : 'rounded border border-borderSecondary dark:border-borderSecondaryDark'
+            }`,
           dropdownIndicator: () => 'max-w-[0px] max-h-[0px]',
           indicatorsContainer: () => 'max-h-[0px] max-w-[0px]',
           menu: () =>

@@ -32,11 +32,14 @@ const Select = React.forwardRef(
         unstyled
         value={value}
         classNames={{
-          container: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
-          control: () =>
-            noBorder
-              ? ''
-              : 'rounded border border-borderSecondary dark:border-borderSecondaryDark',
+          control: (state) => `
+            ${
+              noBorder
+                ? ''
+                : state.isFocused
+                ? 'rounded border border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
+                : 'rounded border border-borderSecondary dark:border-borderSecondaryDark'
+            }`,
           dropdownIndicator: () =>
             noDropdown
               ? 'max-w-[0px] max-h-[0px]'
