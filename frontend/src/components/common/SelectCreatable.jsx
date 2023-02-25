@@ -20,7 +20,7 @@ const SelectCreatable = React.forwardRef(
   ) => {
     return (
       // TODO add outline
-      // dark:outline-bgCheckboxSelectedDark focus:outline outline-bgCheckboxSelected
+      // dark:outline-bgCheckboxSelectedDark focus:outline outline-1 outline-bgCheckboxSelected
       <ReactSelectCreatable
         isClearable={isClearable}
         isDisabled={isDisabled}
@@ -45,7 +45,7 @@ const SelectCreatable = React.forwardRef(
           dropdownIndicator: () => 'max-w-[0px] max-h-[0px]',
           indicatorsContainer: () => 'max-h-[0px] max-w-[0px]',
           menu: () =>
-            'mt-2 rounded border border-bgThird dark:border-bgThirdDark',
+            'my-2 rounded border border-bgThird dark:border-bgThirdDark',
           menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2
           ${

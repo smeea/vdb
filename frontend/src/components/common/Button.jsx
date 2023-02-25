@@ -15,7 +15,7 @@ const Button = ({
   noPadding,
 }) => {
   const outlineStyle =
-    'rounded focus:outline outline-2 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
+    'rounded focus:outline outline-1 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
 
   const customStyle = {
     primary:

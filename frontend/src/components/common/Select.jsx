@@ -19,7 +19,7 @@ const Select = React.forwardRef(
   ) => {
     return (
       // TODO add outline
-      // dark:outline-bgCheckboxSelectedDark focus:outline outline-bgCheckboxSelected
+      // dark:outline-bgCheckboxSelectedDark focus:outline outline-1 outline-bgCheckboxSelected
       <ReactSelect
         filterOption={filterOption}
         isSearchable={isSearchable}
@@ -49,7 +49,7 @@ const Select = React.forwardRef(
           indicatorSeparator: () =>
             'bg-borderSecondary dark:bg-borderSecondaryDark',
           menu: () =>
-            'mt-2 rounded border border-bgThird dark:border-bgThirdDark',
+            'my-2 rounded border border-bgThird dark:border-bgThirdDark',
           menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2
           ${

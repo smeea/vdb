@@ -51,15 +51,21 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
           onBlur={handleOnBlur}
           readOnly={!isEditable}
           className="w-full rounded-none border-bgSecondary dark:border-bgSecondaryDark"
+          borderStyle="border-y"
         />
       ) : (
         <Textarea
-          className="w-full rounded-none"
+          className="w-full"
           rows={12}
           value={value}
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!isEditable}
+          borderStyle={
+            isAuthor
+              ? 'border-y max-sm:border-r rounded-l-none rounded-r-none'
+              : 'border-y max-sm:border-r rounded-l-none sm:rounded-r-none'
+          }
         />
       )}
       <Button

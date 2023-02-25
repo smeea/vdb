@@ -16,14 +16,16 @@ const Input = React.forwardRef(
       spellCheck = false,
       autoFocus = false,
       readOnly = false,
+      borderStyle,
     },
     ref
   ) => {
     return (
       <input
-        className={`min-h-[42px] rounded border border-borderSecondary bg-bgPrimary px-2 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${
+        className={`min-h-[42px] rounded border-borderSecondary bg-bgPrimary px-2 outline-bgCheckboxSelected placeholder:text-midGray focus:outline outline-1 dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${
           className ?? ''
-        }`}
+        } ${borderStyle ?? 'border'}
+`}
         placeholder={placeholder}
         type={type}
         name={name}

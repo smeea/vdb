@@ -3,7 +3,7 @@ import { Menu } from '@headlessui/react';
 
 const MenuButton = ({ title, icon, variant = 'primary', text }) => {
   const outlineStyle =
-    'rounded outline-2 outline-bgCheckboxSelected focus:outline dark:outline-bgCheckboxSelectedDark';
+    'rounded outline-bgCheckboxSelected focus:outline outline-1 dark:outline-bgCheckboxSelectedDark';
 
   const customStyle = {
     primary:

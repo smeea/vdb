@@ -3,6 +3,7 @@
 - Buttons & Menu borders on hover
 - Autofocus add card modal
 - Fix z-index for Select
+- Refactor all Inputs with borderStyle
 
 # FEATURES
 - Check TWD
@@ -31,5 +32,3 @@
 - ResultDisciplineImage class to width/size
 - Refactor fetch to useFetch where possible
 - Add standard modal button blocks
-
-# TAILWIND MIGRATION

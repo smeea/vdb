@@ -42,7 +42,7 @@ const SelectAsync = React.forwardRef(
           indicatorSeparator: () =>
             'bg-borderSecondary dark:bg-borderSecondaryDark',
           menu: () =>
-            'mt-2 rounded border border-bgThird dark:border-bgThirdDark',
+            'my-2 rounded border border-bgThird dark:border-bgThirdDark',
           menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2
           ${

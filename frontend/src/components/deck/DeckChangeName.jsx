@@ -50,7 +50,16 @@ const DeckChangeName = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        className="w-full rounded-none border-bgSecondary dark:border-bgSecondaryDark"
+        className="w-full rounded-none"
+        borderStyle={
+          isEditable ||
+          isPublic ||
+          (deck.deckid !== 'deck' &&
+            deck.deckid.length !== 32 &&
+            !deck.deckid.includes(':'))
+            ? 'border-y'
+            : 'border-y border-r rounded-r'
+        }
       />
       {(isPublic ||
         (deck.deckid !== 'deck' &&

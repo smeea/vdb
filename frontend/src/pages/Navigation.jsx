@@ -28,7 +28,7 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
       end={end}
       aria-label={ariaLabel}
       className={({ isActive }) =>
-        `flex h-full items-center hover:no-underline ${
+        `flex h-full items-center hover:no-underline outline-none ${
           icon ? 'px-3' : 'px-2 pb-[2px]'
         } ${
           isActive
