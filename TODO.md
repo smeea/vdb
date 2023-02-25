@@ -20,7 +20,6 @@
 - Inventory/deck import in excel
 
 # IMPROVE TECHNOLOGY - FRONTEND
-- Problem with valtio update
 - Migration from screen width (isWide, etc) to container queries
 - Refactor standard colors
 - Configure vite-pwa

@@ -13,7 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "@floating-ui/react": "^0.19.2",
-    "@headlessui/react": "^1.7.11",
+    "@headlessui/react": "^1.7.12",
     "@tailwindcss/forms": "^0.5.3",
     "@vitejs/plugin-react-swc": "^3.2.0",
     "autoprefixer": "^10.4.13",
@@ -45,7 +45,7 @@
     "tailwindcss": "^3.2.7",
     "unidecode": "^0.1.8",
     "use-immer": "^0.8.1",
-    "valtio": "=1.9.0",
+    "valtio": "^1.10.3",
     "vite": "^4.1.4",
     "vite-plugin-pwa": "^0.14.4",
     "vite-plugin-svgr": "^2.4.0",
