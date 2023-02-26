@@ -1,5 +1,4 @@
 # FIX
-- Radu Bistri image
 - Buttons & Menu borders on hover
 - Autofocus add card modal
 - Fix z-index for Select
