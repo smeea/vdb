@@ -1,5 +1,4 @@
 # FIX
-- Buttons & Menu borders on hover
 - Older links (redirect in the web server)
 
 # FEATURES
