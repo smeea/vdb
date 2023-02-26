@@ -4,6 +4,8 @@
 - Autofocus add card modal
 - Fix z-index for Select
 - Refactor all Inputs with borderStyle
+- Older links (redirect in the web server)
+- Underline on mobile on clicked +- buttons
 
 # FEATURES
 - Check TWD

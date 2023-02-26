@@ -51,7 +51,7 @@ const Review = () => {
   const [urlDiff, setUrlDiff] = useState();
 
   const getDeck = async () => {
-    const { deckData } = await loaderData;
+    const deckData = await loaderData.deckData;
 
     if (deckData.error) {
       if (deckData.error == 400) {
