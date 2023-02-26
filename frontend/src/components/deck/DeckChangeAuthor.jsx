@@ -47,9 +47,10 @@ const DeckChangeAuthor = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        className="w-full"
-        borderStyle={`border-y rounded-l-none sm:border-r
-          ${isAuthor ? 'max-sm:rounded-r-none' : 'max-sm:border-r'}`}
+        roundedStyle={`rounded rounded-l-none
+          ${isAuthor ? 'max-sm:rounded-r-none' : ''}`}
+        borderStyle={`border-y sm:border-r
+          ${isAuthor ? '' : 'max-sm:border-r'}`}
       />
       {isAuthor && (
         <Button

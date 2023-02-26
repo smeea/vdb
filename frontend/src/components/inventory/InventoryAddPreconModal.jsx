@@ -68,7 +68,6 @@ const InventoryAddPreconModal = ({ handleClose }) => {
               {!isMobile && <th className="min-w-[50px]"></th>}
               <th className="min-w-[230px] sm:min-w-[250px]">
                 <Input
-                  className="w-full"
                   placeholder="Filter by Name"
                   type="text"
                   name="text"
@@ -81,7 +80,6 @@ const InventoryAddPreconModal = ({ handleClose }) => {
               {isDesktop && <th className="min-w-[40px]"></th>}
               <th className="w-full">
                 <Input
-                  className="w-full"
                   placeholder="Filter by Set"
                   type="text"
                   name="text"

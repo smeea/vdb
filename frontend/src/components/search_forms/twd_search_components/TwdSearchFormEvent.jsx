@@ -10,12 +10,7 @@ const TwdSearchFormEvent = ({ value, onChange }) => {
         </div>
       </div>
       <div className="w-3/4">
-        <Input
-          className="w-full"
-          placeholder="Event Name"
-          value={value}
-          onChange={onChange}
-        />
+        <Input placeholder="Event Name" value={value} onChange={onChange} />
       </div>
     </div>
   );

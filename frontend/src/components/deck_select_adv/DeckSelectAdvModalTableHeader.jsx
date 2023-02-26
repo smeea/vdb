@@ -99,7 +99,6 @@ const DeckSelectAdvModalTableHeader = ({
         )}
         <th className="min-w-[45vw] sm:min-w-[340px]">
           <Input
-            className="w-full"
             placeholder="Filter by Deck or Card Name"
             type="text"
             name="text"

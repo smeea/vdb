@@ -72,7 +72,7 @@ const DiffSelectDeck = ({
         >
           <div className="flex">
             <Input
-              className="w-full rounded-r-none"
+              roundedStyle="rounded rounded-r-none"
               placeholder="First Deck (ID or URL)"
               type="text"
               name={target}

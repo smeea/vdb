@@ -64,8 +64,8 @@ const SearchFormTextAndButtons = ({
             name={0}
             value={text}
             onChange={onTextChange}
-            borderStyle="sm:rounded-r-none max-sm:border sm:border-y sm:border-l"
-            className="w-full"
+            borderStyle="max-sm:border sm:border-y sm:border-l"
+            roundedStyle="sm:rounded-r-none rounded"
           />
           {!isMobile && (
             <>

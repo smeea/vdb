@@ -18,7 +18,7 @@ const AccountPasswordForm = ({
   return (
     <>
       <Input
-        className={`w-full ${isOld ? '' : 'rounded-r-none'}`}
+        roundedStyle={`rounded ${isOld ? '' : 'rounded-r-none'}`}
         placeholder={isNew ? 'New Password' : 'Password'}
         type={hidePassword ? 'password' : 'text'}
         autoComplete={isNew ? 'new-password' : 'password'}

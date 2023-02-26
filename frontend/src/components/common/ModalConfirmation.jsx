@@ -56,7 +56,7 @@ const ModalConfirmation = ({
                 name="text"
                 value={confirmation}
                 onChange={(e) => setConfirmation(e.target.value)}
-                autoFocus={true}
+                autoFocus
               />
               {errorConfirmation && (
                 <ErrorOverlay placement="bottom">

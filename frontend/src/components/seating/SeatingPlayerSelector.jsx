@@ -49,7 +49,7 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
           placeholder="Disabled"
           value={player.state ? (player.random ? 'RANDOM' : player.name) : ''}
           onChange={handleChange}
-          className="w-full rounded-r-none"
+          roundedStyle="rounded rounded-r-none"
         />
         <Button
           variant={player.random && player.state ? 'primary' : 'secondary'}

@@ -70,7 +70,7 @@ const AccountPlaytestAdd = ({
             name="username"
             value={username}
             onChange={handleChange}
-            className="w-full rounded-r-none"
+            roundedStyle="rounded rounded-r-none"
           />
           {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>

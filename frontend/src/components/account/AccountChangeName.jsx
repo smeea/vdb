@@ -89,7 +89,7 @@ const AccountChangeName = () => {
             placeholder="Public name"
             value={formName}
             onChange={(e) => setFormName(e.target.value)}
-            className="w-full rounded-r-none"
+            roundedStyle="rounded rounded-r-none"
           />
           <Button
             className="rounded-l-none"

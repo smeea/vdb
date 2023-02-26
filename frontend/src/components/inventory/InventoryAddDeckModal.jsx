@@ -84,7 +84,6 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             {!isMobile && <th className="min-w-[50px]"></th>}
             <th className="min-w-[230px] sm:min-w-[250px]">
               <Input
-                className="w-full"
                 placeholder="Filter by Name"
                 type="text"
                 name="text"

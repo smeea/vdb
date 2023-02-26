@@ -74,7 +74,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                     name="password"
                     value={password}
                     onChange={handleChange}
-                    className="rounded-r-none"
+                    roundedStyle="rounded rounded-r-none"
                     autoFocus
                     required
                   />

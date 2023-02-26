@@ -1,6 +1,5 @@
 # FIX
 - Buttons & Menu borders on hover
-- Refactor all Inputs with borderStyle
 - Older links (redirect in the web server)
 
 # FEATURES

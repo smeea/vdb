@@ -174,7 +174,8 @@ const DeckImportAmaranth = ({ handleClose }) => {
         <div className="relative flex w-full">
           <Input
             placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
-            className="w-full rounded-r-none text-xl"
+            className="text-xl"
+            roundedStyle="rounded rounded-r-none"
             type="text"
             name="url"
             value={deckUrl}
