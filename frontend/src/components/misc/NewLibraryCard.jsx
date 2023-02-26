@@ -10,7 +10,7 @@ const NewLibraryCard = ({
   autoFocus,
   newRef,
 }) => {
-  const { libraryCardBase, playtest } = useApp();
+  const { isMobile, libraryCardBase, playtest } = useApp();
   const { filterLibrary } = useFilters(libraryCardBase);
 
   const byTwd = (a, b) => {
@@ -47,6 +47,7 @@ const NewLibraryCard = ({
       loadOptions={loadOptions}
       getOptionLabel={getOptionLabel}
       onChange={onChange}
+      menuPlacement={isMobile ? 'top' : 'bottom'}
     />
   );
 };

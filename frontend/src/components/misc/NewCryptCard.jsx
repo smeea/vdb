@@ -10,7 +10,7 @@ const NewCryptCard = ({
   autoFocus,
   newRef,
 }) => {
-  const { cryptCardBase, playtest } = useApp();
+  const { isMobile, cryptCardBase, playtest } = useApp();
   const { filterCrypt } = useFilters(cryptCardBase);
 
   const byTwd = (a, b) => {
@@ -37,14 +37,15 @@ const NewCryptCard = ({
 
   return (
     <SelectAsync
-      ref={newRef}
-      cacheOptions
       autoFocus={autoFocus}
-      value={selectedValue}
-      placeholder="Add Crypt Card"
-      loadOptions={loadOptions}
+      cacheOptions
       getOptionLabel={getOptionLabel}
+      loadOptions={loadOptions}
+      menuPlacement={isMobile ? 'top' : 'bottom'}
       onChange={onChange}
+      placeholder="Add Crypt Card"
+      ref={newRef}
+      value={selectedValue}
     />
   );
 };

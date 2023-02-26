@@ -72,6 +72,7 @@ const SelectCreatable = React.forwardRef(
               ? 'max-w-[0px] max-h-[0px] hidden'
               : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark',
           noOptionsMessage: () => 'rounded p-2',
+          placeholder: () => 'text-midGray dark:text-midGrayDark',
           /* clearIndicator: () => ''), */
           /* group: () => '', */
           /* groupHeading: () => '', */
@@ -80,7 +81,6 @@ const SelectCreatable = React.forwardRef(
           /* loadingIndicator: () => '', */
           /* loadingMessage: () => '', */
           /* menuPortal: () => '', */
-          /* placeholder: () => '', */
           /* singleValue: () => '', */
           // indicatorSeparator: () => '',
         }}

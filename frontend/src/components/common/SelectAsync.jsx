@@ -54,6 +54,7 @@ const SelectAsync = React.forwardRef(
           }
 `,
           noOptionsMessage: () => 'rounded p-2',
+          placeholder: () => 'text-midGray dark:text-midGrayDark',
           /* input: () => */
           valueContainer: () =>
             'px-2 min-h-[40px] bg-bgPrimary dark:bg-bgPrimaryDark rounded',

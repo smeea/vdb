@@ -52,7 +52,8 @@ const DeckChangeName = ({ deck }) => {
         readOnly={!isEditable}
         className="w-full rounded-none"
         borderStyle={
-          isEditable ||
+          isAuthor ||
+          !isEditable ||
           isPublic ||
           (deck.deckid !== 'deck' &&
             deck.deckid.length !== 32 &&

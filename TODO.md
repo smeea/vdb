@@ -1,7 +1,5 @@
 # FIX
 - Buttons & Menu borders on hover
-- Autofocus add card modal
-- Fix z-index for Select
 - Refactor all Inputs with borderStyle
 - Older links (redirect in the web server)
 

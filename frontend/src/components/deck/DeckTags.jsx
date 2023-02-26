@@ -34,11 +34,6 @@ const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
     deckUpdate(deckid, 'tags', v);
   };
 
-  const placeholder = (
-    <div className="text-midGray dark:text-midGrayDark">Click to add tags</div>
-  );
-  const noOptionsMessage = () => 'Enter new tag';
-
   return (
     <SelectCreatable
       noBorder={!isBordered}
@@ -48,8 +43,8 @@ const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
       options={allTagsOptions}
       onChange={handleChange}
       value={tagList}
-      placeholder={placeholder}
-      noOptionsMessage={noOptionsMessage}
+      placeholder="Click to add tags"
+      noOptionsMessage={() => 'Enter new tag'}
     />
   );
 };

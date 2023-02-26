@@ -91,7 +91,7 @@ const Cards = () => {
                 </div>
               </div>
             )}
-            <div className="fixed bottom-[40px] z-20 flex w-full flex-row bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
+            <div className="fixed bottom-[44px] z-20 flex w-full flex-row bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
               <div className="w-full md:basis-8/12">
                 <QuickSelect
                   selectedCardid={card?.Id}

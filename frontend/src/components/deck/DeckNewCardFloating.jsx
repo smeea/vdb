@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { Modal, ButtonFloat, DeckNewCard } from '@/components';
+import { ButtonFloat, DeckNewCard } from '@/components';
 import { useApp } from '@/context';
 
 const DeckNewCardFloating = ({ deckid, cards, cardChange, target }) => {
-  const { isMobile, setShowFloatingButtons, showFloatingButtons } = useApp();
+  const { isMobile, showFloatingButtons } = useApp();
   const [showAdd, setShowAdd] = useState(false);
 
   const handleClick = () => {
     setShowAdd(true);
-    setShowFloatingButtons(false);
   };
 
   const handleClose = () => {
     setShowAdd(false);
-    setShowFloatingButtons(true);
   };
 
   return (
@@ -31,11 +29,8 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, target }) => {
         </ButtonFloat>
       )}
       {showAdd && (
-        <Modal
-          handleClose={handleClose}
-          title={`Add ${target === 'crypt' ? 'Crypt' : 'Library'} Card`}
-        >
-          <div>
+        <div className="fixed bottom-[44px] z-20 flex w-full flex-row bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
+          <div className="w-full" onBlur={handleClose}>
             <DeckNewCard
               handleClose={handleClose}
               cards={cards}
@@ -44,7 +39,7 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, target }) => {
               cardChange={cardChange}
             />
           </div>
-        </Modal>
+        </div>
       )}
     </>
   );

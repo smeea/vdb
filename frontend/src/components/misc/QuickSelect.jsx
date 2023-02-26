@@ -28,12 +28,6 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
       return <SelectLabelCrypt cardid={cardid} />;
     } else if (cardid > 100000) {
       return <SelectLabelLibrary cardid={cardid} />;
-    } else {
-      return (
-        <div className="text-midGray dark:text-midGrayDark">
-          Enter Card Name
-        </div>
-      );
     }
   };
 
@@ -73,13 +67,14 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
   return (
     <SelectAsync
       autoFocus={!isMobile || !selectedCardid}
-      menuPlacement={isMobile ? 'top' : 'bottom'}
       cacheOptions
-      loadOptions={loadOptions}
-      value={{ value: inBadImport ? selectedCardid : null }}
       getOptionLabel={getOptionLabel}
+      loadOptions={loadOptions}
+      menuPlacement={isMobile ? 'top' : 'bottom'}
       onChange={handleChange}
+      placeholder="Enter Card Name"
       ref={ref}
+      value={inBadImport ? { value: selectedCardid } : null}
     />
   );
 };

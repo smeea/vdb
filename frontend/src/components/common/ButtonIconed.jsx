@@ -18,7 +18,7 @@ const ButtonIconed = ({
       disabled={disabled}
       variant={variant}
     >
-      <div className="flex items-center justify-center space-x-2">
+      <div className="flex items-center justify-center gap-2">
         <div className="flex items-center">{icon}</div>
         {text && <div>{text}</div>}
       </div>

@@ -5,7 +5,7 @@ import { ButtonIconed } from '@/components';
 
 const TwdOpenDeckButton = ({ deckid, inHistory, noText }) => {
   return (
-    <Link to={`/decks/${deckid}`}>
+    <Link to={`/decks/${deckid}`} className="hover:no-underline">
       <ButtonIconed
         className="w-full"
         variant={inHistory ? 'primary' : 'secondary'}
