@@ -13,6 +13,7 @@ const Select = React.forwardRef(
       onChange,
       options,
       placeholder,
+      name,
       value,
     },
     ref
@@ -29,6 +30,7 @@ const Select = React.forwardRef(
         options={options}
         placeholder={placeholder}
         ref={ref}
+        name={name}
         unstyled
         value={value}
         classNames={{
