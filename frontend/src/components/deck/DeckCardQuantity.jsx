@@ -72,7 +72,7 @@ const DeckCardQuantity = ({
           {isMobile ? (
             <>
               <a
-                className="relative before:absolute before:inset-[-12px] before:content-['']"
+                className="relative hover:no-underline before:absolute before:inset-[-12px] before:content-['']"
                 onClick={() => cardChange(deckid, card, q - 1)}
               >
                 <Button
@@ -85,7 +85,7 @@ const DeckCardQuantity = ({
               </a>
               <div className={inventoryColor}>{q == 0 ? '' : q}</div>
               <a
-                className="relative before:absolute before:inset-[-12px] before:content-['']"
+                className="relative hover:no-underline before:absolute before:inset-[-12px] before:content-['']"
                 onClick={() => cardChange(deckid, card, q + 1)}
               >
                 <Button

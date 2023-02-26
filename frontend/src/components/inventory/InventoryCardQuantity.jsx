@@ -46,7 +46,7 @@ const InventoryCardQuantity = ({
       {isMobile ? (
         <>
           <a
-            className="relative before:absolute before:inset-[-12px] before:content-['']"
+            className="relative hover:no-underline before:absolute before:inset-[-12px] before:content-['']"
             onClick={() => handleQuantityChange(-1)}
           >
             <Button
@@ -67,7 +67,7 @@ const InventoryCardQuantity = ({
             {state == 0 ? <>&nbsp;</> : state}
           </div>
           <a
-            className="relative before:absolute before:inset-[-12px] before:content-['']"
+            className="relative hover:no-underline before:absolute before:inset-[-12px] before:content-['']"
             onClick={() => handleQuantityChange(1)}
           >
             <Button
