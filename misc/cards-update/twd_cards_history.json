@@ -10293,7 +10293,9 @@
         "player":"Jay Kristoff"
     },
     "100489":{
-        "deckid":null
+        "deckid":"10510",
+        "twd_date":"2023-02-11",
+        "player":"Paul Jones"
     },
     "100490":{
         "deckid":null
@@ -10603,7 +10605,9 @@
         "player":"Orian Gissler"
     },
     "100553":{
-        "deckid":null
+        "deckid":"10510",
+        "twd_date":"2023-02-11",
+        "player":"Paul Jones"
     },
     "100554":{
         "deckid":"2k5originsthur8",
