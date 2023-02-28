@@ -1,9 +1,7 @@
 {
-  "version": "2023-02-21",
+  "version": "2023-02-27",
   "changes": [
-    "Fix playtest decks/cards",
-    "Fix deck summary (i) button",
-    "Fix card popup (was too wide)",
-    "Improved inventory info layout in card tooltip / card popup"
+    "Update TWD",
+    "Small fixes"
   ]
 }
