@@ -3,13 +3,7 @@ import { SelectAsync, SelectLabelLibrary } from '@/components';
 import { useFilters } from '@/hooks';
 import { useApp } from '@/context';
 
-const NewLibraryCard = ({
-  inInventory,
-  selectedValue,
-  onChange,
-  autoFocus,
-  newRef,
-}) => {
+const NewLibraryCard = ({ inInventory, onChange, autoFocus, ref }) => {
   const { isMobile, libraryCardBase, playtest } = useApp();
   const { filterLibrary } = useFilters(libraryCardBase);
 
@@ -39,10 +33,9 @@ const NewLibraryCard = ({
 
   return (
     <SelectAsync
-      ref={newRef}
+      ref={ref}
       cacheOptions
       autoFocus={autoFocus}
-      value={selectedValue}
       placeholder="Add Library Card"
       loadOptions={loadOptions}
       getOptionLabel={getOptionLabel}

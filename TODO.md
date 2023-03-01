@@ -1,6 +1,7 @@
 # FIX
 - Older links (redirect in the web server)
 - Add card to deck from mobile
+- Ref errors in Inventory
 
 # FEATURES
 - Check TWD
@@ -29,3 +30,4 @@
 - ResultDisciplineImage class to width/size
 - Refactor fetch to useFetch where possible
 - Add standard modal button blocks
+- Refactor QuickSelect + NewCryptCard + NewLibraryCard

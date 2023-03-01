@@ -17,8 +17,6 @@ export { default as InventoryLibrary } from './InventoryLibrary.jsx';
 export { default as InventoryLibraryTable } from './InventoryLibraryTable.jsx';
 export { default as InventoryLibraryTableRow } from './InventoryLibraryTableRow.jsx';
 export { default as InventoryMissingButton } from './InventoryMissingButton.jsx';
-export { default as InventoryNewCryptCard } from './InventoryNewCryptCard.jsx';
-export { default as InventoryNewLibraryCard } from './InventoryNewLibraryCard.jsx';
 export { default as InventoryShareButton } from './InventoryShareButton.jsx';
 export { default as InventoryShareModal } from './InventoryShareModal.jsx';
 export { default as InventoryShowSelect } from './InventoryShowSelect.jsx';

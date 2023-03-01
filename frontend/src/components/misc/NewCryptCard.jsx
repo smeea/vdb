@@ -3,13 +3,7 @@ import { SelectAsync, SelectLabelCrypt } from '@/components';
 import { useFilters } from '@/hooks';
 import { useApp } from '@/context';
 
-const NewCryptCard = ({
-  inInventory,
-  selectedValue,
-  onChange,
-  autoFocus,
-  newRef,
-}) => {
+const NewCryptCard = ({ inInventory, onChange, autoFocus, ref }) => {
   const { isMobile, cryptCardBase, playtest } = useApp();
   const { filterCrypt } = useFilters(cryptCardBase);
 
@@ -44,8 +38,7 @@ const NewCryptCard = ({
       menuPlacement={isMobile ? 'top' : 'bottom'}
       onChange={onChange}
       placeholder="Add Crypt Card"
-      ref={newRef}
-      value={selectedValue}
+      ref={ref}
     />
   );
 };

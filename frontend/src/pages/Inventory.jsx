@@ -5,8 +5,8 @@ import {
   LoginBlock,
   InventoryAddDeckModal,
   InventoryAddPreconModal,
-  InventoryNewCryptCard,
-  InventoryNewLibraryCard,
+  NewCryptCard,
+  NewLibraryCard,
   InventoryCrypt,
   InventoryLibrary,
   InventoryButtons,
@@ -114,6 +114,14 @@ const Inventory = () => {
 
   const inShared = !!inventoryKey;
 
+  const handleNewCard = (event) => {
+    if (event.value > 200000) {
+      setNewCryptId(event.value);
+    } else {
+      setNewLibraryId(event.value);
+    }
+  };
+
   return (
     <div className="inventory-container mx-auto">
       {(!inShared && username) || (inShared && !inventoryError) ? (
@@ -127,10 +135,10 @@ const Inventory = () => {
             {!inShared && (
               <>
                 <div className="p-2 sm:p-0">
-                  <InventoryNewCryptCard
-                    cards={inventoryCrypt}
-                    setNewId={setNewCryptId}
-                    newRef={newCryptRef}
+                  <NewCryptCard
+                    onChange={handleNewCard}
+                    ref={newCryptRef}
+                    inInventory
                   />
                 </div>
                 {newCryptId && (
@@ -170,10 +178,10 @@ const Inventory = () => {
             {!inShared && (
               <>
                 <div className="p-2 sm:p-0">
-                  <InventoryNewLibraryCard
-                    cards={inventoryLibrary}
-                    setNewId={setNewLibraryId}
-                    newRef={newLibraryRef}
+                  <NewLibraryCard
+                    onChange={handleNewCard}
+                    ref={newLibraryRef}
+                    inInventory
                   />
                 </div>
                 {newLibraryId && (
