@@ -1,5 +1,7 @@
 # FIX
 - Older links (redirect in the web server)
+- Crypt/Lib width layout
+- Add card to deck from mobile
 
 # FEATURES
 - Check TWD
@@ -8,6 +10,7 @@
 - Playable by buttons to lib/crypt
 - Add deck as revision
 - Country twd search
+- Search in deck/precons by set
 
 # MAYBE LATER FEATURES
 - Offline decks storage

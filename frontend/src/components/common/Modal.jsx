@@ -36,40 +36,42 @@ const Modal = ({
         className="fixed inset-0 bg-black bg-opacity-50"
         aria-hidden="true"
       />
-      <div
-        className={`fixed inset-0 flex justify-center overflow-auto p-0 sm:p-8 ${
-          centered ? 'items-center' : 'items-start'
-        }`}
-      >
-        <Dialog.Panel
-          className={`
+      <div className="fixed inset-0 overflow-y-auto">
+        <div
+          className={`min-h-full justify-center flex p-0 sm:p-8 ${
+            centered ? 'items-center' : 'items-start'
+          }`}
+        >
+          <Dialog.Panel
+            className={`
             ${
               bordered
                 ? 'border border-borderNestModal dark:border-borderNestModalDark'
                 : ''
             } ${
-            widthClass[size]
-          } rounded border border-bgSecondary bg-bgPrimary ${
-            noPadding ? '' : 'p-3 sm:p-5'
-          } dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
-        >
-          {title && (
-            <Dialog.Title
-              className={`flex items-center justify-between border-none  ${
-                noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3'
-              }`}
-            >
-              <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
-                {title}
-              </div>
-              {!isNarrow && <ButtonCloseModal handleClose={handleClose} />}
-            </Dialog.Title>
-          )}
-          <div className="max-h-0 max-w-0 opacity-0">
-            <button />
-          </div>
-          {children}
-        </Dialog.Panel>
+              widthClass[size]
+            } rounded border border-bgSecondary bg-bgPrimary ${
+              noPadding ? '' : 'p-3 sm:p-5'
+            } dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
+          >
+            {title && (
+              <Dialog.Title
+                className={`flex items-center justify-between border-none  ${
+                  noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3'
+                }`}
+              >
+                <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                  {title}
+                </div>
+                {!isNarrow && <ButtonCloseModal handleClose={handleClose} />}
+              </Dialog.Title>
+            )}
+            <div className="max-h-0 max-w-0 opacity-0">
+              <button />
+            </div>
+            {children}
+          </Dialog.Panel>
+        </div>
       </div>
       {isNarrow && <ButtonFloatClose handleClose={handleClose} />}
     </Dialog>
