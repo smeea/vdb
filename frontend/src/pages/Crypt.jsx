@@ -64,7 +64,7 @@ const Crypt = () => {
           </div>
         )}
         {showResultCol && (
-          <div className="basis-full sm:basis-7/12 lg:basis-7/12 xl:basis-5/12">
+          <div className="basis-full sm:basis-7/12 lg:basis-6/12 xl:basis-5/12">
             {((isMobile && cryptCompare && cryptResults) ||
               (!isMobile && cryptCompare)) && (
               <div>

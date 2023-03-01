@@ -1,6 +1,5 @@
 # FIX
 - Older links (redirect in the web server)
-- Crypt/Lib width layout
 - Add card to deck from mobile
 
 # FEATURES
