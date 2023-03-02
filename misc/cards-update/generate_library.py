@@ -40,7 +40,7 @@ integer_fields = ["Id"]
 useless_fields = ["Aka", "Flavor Text"]
 
 
-def generate_artists(cardbase_csv, artist_output, artist_output_min):
+def generate_artists(cardbase_csv, artists_file, artists_file_min):
     reader_main = csv.reader(cardbase_csv)
     fieldnames_main = next(reader_main)
     csv_cards = csv.DictReader(cardbase_csv, fieldnames_main)
@@ -57,7 +57,7 @@ def generate_artists(cardbase_csv, artist_output, artist_output_min):
     json.dump(sorted(artists), artists_file, indent=4, separators=(",", ":"))
 
 
-def generate_cards(cardbase_csv, cardbase_output, cardbase_output_min):
+def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
     reader_main = csv.reader(cardbase_csv)
     fieldnames_main = next(reader_main)
     csv_cards = csv.DictReader(cardbase_csv, fieldnames_main)
