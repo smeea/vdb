@@ -21,6 +21,7 @@ const Diff = () => {
     cryptCardBase,
     libraryCardBase,
     isMobile,
+    showFloatingButtons,
     setShowFloatingButtons,
     showMenuButtons,
     setShowMenuButtons,
@@ -231,7 +232,7 @@ const Diff = () => {
           </div>
         )}
       </div>
-      {isEditable && (
+      {isEditable && isMobile && showFloatingButtons && (
         <>
           <DeckNewCardFloating
             target="crypt"

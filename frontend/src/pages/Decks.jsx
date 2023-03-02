@@ -33,6 +33,7 @@ const Decks = () => {
     isMobile,
     playtest,
     preconDecks,
+    showFloatingButtons,
     setShowFloatingButtons,
     setShowMenuButtons,
     showMenuButtons,
@@ -295,7 +296,7 @@ const Decks = () => {
           </div>
         </div>
       )}
-      {isEditable && (
+      {isEditable && isMobile && showFloatingButtons && (
         <>
           <DeckNewCardFloating
             target="crypt"

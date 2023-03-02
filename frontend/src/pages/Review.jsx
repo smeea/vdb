@@ -26,6 +26,7 @@ const Review = () => {
     cryptCardBase,
     libraryCardBase,
     preconDecks,
+    showFloatingButtons,
     setShowFloatingButtons,
     setShowMenuButtons,
     showMenuButtons,
@@ -245,16 +246,20 @@ const Review = () => {
           </div>
         </div>
       </div>
-      <DeckNewCardFloating
-        target="crypt"
-        deckid={deckFrom?.deckid}
-        cards={deckFrom?.crypt}
-      />
-      <DeckNewCardFloating
-        target="library"
-        deckid={deckFrom?.deckid}
-        cards={deckFrom?.library}
-      />
+      {isMobile && showFloatingButtons && (
+        <>
+          <DeckNewCardFloating
+            target="crypt"
+            deckid={deckFrom?.deckid}
+            cards={deckFrom?.crypt}
+          />
+          <DeckNewCardFloating
+            target="library"
+            deckid={deckFrom?.deckid}
+            cards={deckFrom?.library}
+          />
+        </>
+      )}
       <ButtonFloatMenu />
       {showMenuButtons && (
         <Modal
