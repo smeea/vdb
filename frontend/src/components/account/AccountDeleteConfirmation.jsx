@@ -94,7 +94,6 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                     className="rounded-l-none"
                     tabIndex="-1"
                     variant="primary"
-                    type="button"
                     onClick={() => setHidePassword(!hidePassword)}
                   >
                     {hidePassword ? <EyeFill /> : <EyeSlashFill />}

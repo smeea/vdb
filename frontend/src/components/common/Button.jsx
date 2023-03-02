@@ -9,7 +9,7 @@ const Button = ({
   onClick,
   title,
   value,
-  type,
+  type = 'button',
   tabIndex,
   variant = 'primary',
   noPadding,

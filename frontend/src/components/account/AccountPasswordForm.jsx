@@ -32,7 +32,6 @@ const AccountPasswordForm = ({
           <Button
             className="rounded-none"
             tabIndex="-1"
-            type="button"
             onClick={() => setHidePassword(!hidePassword)}
           >
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}

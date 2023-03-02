@@ -1,6 +1,8 @@
 # FIX
 - Older links (redirect in the web server)
 - Ref errors in Inventory
+- Parity shift vampire set rarity
+- Discord Jaakkon
 
 # FEATURES
 - Check TWD

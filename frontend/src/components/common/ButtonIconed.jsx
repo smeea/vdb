@@ -8,6 +8,7 @@ const ButtonIconed = ({
   onClick,
   text,
   title,
+  type,
   variant,
 }) => {
   return (
@@ -17,6 +18,7 @@ const ButtonIconed = ({
       title={title}
       disabled={disabled}
       variant={variant}
+      type={type}
     >
       <div className="flex items-center justify-center gap-2">
         <div className="flex items-center">{icon}</div>
