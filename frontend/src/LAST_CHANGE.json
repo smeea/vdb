@@ -1,7 +1,7 @@
 {
-  "version": "2023-02-27",
+  "version": "2023-03-01",
   "changes": [
-    "Update TWD",
-    "Small fixes"
+    "Fix add new card to deck on mobile",
+    "Fix tall card view windows to overflow screen on top"
   ]
 }
