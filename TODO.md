@@ -1,6 +1,5 @@
 # FIX
 - Older links (redirect in the web server)
-- Add card to deck from mobile
 - Ref errors in Inventory
 
 # FEATURES

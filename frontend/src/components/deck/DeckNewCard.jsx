@@ -4,7 +4,7 @@ import { useApp, deckCardChange } from '@/context';
 
 const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
-  const changeAction = cardChange ? cardChange : deckCardChange;
+  const changeAction = cardChange ?? deckCardChange;
 
   const handleChange = (event) => {
     const cardid = event.value;
