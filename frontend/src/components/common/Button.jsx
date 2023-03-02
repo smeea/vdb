@@ -26,7 +26,7 @@ const Button = ({
     'outline-primary':
       'border border-borderSecondary dark:border-borderSecondaryDark',
     danger:
-      'bg-bgError dark:bg-bgErrorDark hover:border-bgErrorSecondary hover:dark:border-bgErrorSecondaryDark hover:bg-bgErrorSecondary dark:hover:bg-bgErrorSecondaryDark border border-bgError dark:border-bgError',
+      'bg-bgError dark:bg-bgErrorDark hover:border-bgErrorSecondary hover:dark:border-bgErrorSecondaryDark hover:bg-bgErrorSecondary dark:hover:bg-bgErrorSecondaryDark border border-bgError dark:border-bgErrorDark',
     success:
       'bg-bgSuccess dark:bg-bgSuccessDark border border-bgSuccess dark:border-borderSuccessDark',
   };

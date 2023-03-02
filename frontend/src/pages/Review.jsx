@@ -267,8 +267,8 @@ const Review = () => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          size="sm"
           centered
+          size="sm"
         >
           <ReviewButtons
             backDeckid={deck?.deckid}

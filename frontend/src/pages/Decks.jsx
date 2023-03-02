@@ -317,6 +317,8 @@ const Decks = () => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
+          centered
+          size="sm"
         >
           <DeckButtons
             deck={deck}

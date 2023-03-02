@@ -249,22 +249,19 @@ const Diff = () => {
       <ButtonFloatMenu />
       {showMenuButtons && (
         <Modal
-          show={showMenuButtons}
           handleClose={() => {
             setShowMenuButtons(false);
             setShowFloatingButtons(true);
           }}
-          centered={true}
+          centered
           size="sm"
         >
-          <div>
-            <DiffButtons
-              missingCrypt={missingCrypt}
-              missingLibrary={missingLibrary}
-              deckFrom={deck}
-              deckTo={deckTo}
-            />
-          </div>
+          <DiffButtons
+            missingCrypt={missingCrypt}
+            missingLibrary={missingLibrary}
+            deckFrom={deck}
+            deckTo={deckTo}
+          />
         </Modal>
       )}
     </div>
