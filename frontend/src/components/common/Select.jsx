@@ -65,6 +65,7 @@ const Select = React.forwardRef(
           placeholder: () => 'text-midGray dark:text-midGrayDark',
           valueContainer: () =>
             'px-2 min-h-[40px] bg-bgPrimary dark:bg-bgPrimaryDark rounded',
+          noOptionsMessage: () => 'rounded p-2',
           /* clearIndicator: '', */
           /* group: () => '', */
           /* groupHeading: () => '', */
@@ -76,7 +77,6 @@ const Select = React.forwardRef(
           /* multiValue: () => '', */
           /* multiValueLabel: () => '', */
           /* multiValueRemove: () => '', */
-          /* noOptionsMessage: () => '', */
           /* singleValue: () => '', */
         }}
       />

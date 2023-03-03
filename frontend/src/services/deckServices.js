@@ -13,7 +13,9 @@ export const update = (deckid, field, value) => {
     body: JSON.stringify({ [field]: value }),
   };
 
-  return fetch(url, options);
+  return fetch(url, options).then((response) => {
+    if (!response.ok) throw response;
+  });
 };
 
 export const cardChange = (deckid, cardid, q) => {
@@ -28,7 +30,9 @@ export const cardChange = (deckid, cardid, q) => {
     body: JSON.stringify({ cardChange: { [cardid]: q } }),
   };
 
-  return fetch(url, options);
+  return fetch(url, options).then((response) => {
+    if (!response.ok) throw response;
+  });
 };
 
 export const deckImport = (deck) => {
@@ -54,7 +58,9 @@ export const deckImport = (deck) => {
     }),
   };
 
-  return fetch(url, options);
+  return fetch(url, options).then((response) => {
+    if (!response.ok) throw response;
+  });
 };
 
 export const branchesImport = async (masterId, branches) => {
@@ -72,7 +78,10 @@ export const branchesImport = async (masterId, branches) => {
   };
 
   return fetch(url, options)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) throw response;
+      return response.json();
+    })
     .then((data) => {
       data.map((branch, idx) => {
         branches[idx].deckid = branch.deckid;
