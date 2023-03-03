@@ -34,14 +34,15 @@ const NewLibraryCard = React.forwardRef(
 
     return (
       <SelectAsync
-        ref={ref}
-        cacheOptions
         autoFocus={autoFocus}
-        placeholder="Add Library Card"
-        loadOptions={loadOptions}
+        cacheOptions
         getOptionLabel={getOptionLabel}
-        onChange={onChange}
+        loadOptions={loadOptions}
         menuPlacement={isMobile ? 'top' : 'bottom'}
+        onChange={onChange}
+        placeholder="Add Library Card"
+        ref={ref}
+        value={null}
       />
     );
   }

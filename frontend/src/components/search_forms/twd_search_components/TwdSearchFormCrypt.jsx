@@ -25,7 +25,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
         Crypt:
       </div>
-      <NewCryptCard onChange={handleAdd} selectedValue={null} />
+      <NewCryptCard onChange={handleAdd} />
       <div className="space-y-1">
         {Object.keys(value)
           .filter((id) => value[id].q >= 0)

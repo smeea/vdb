@@ -42,6 +42,7 @@ const NewCryptCard = React.forwardRef(
         onChange={onChange}
         placeholder="Add Crypt Card"
         ref={ref}
+        value={null}
       />
     );
   }
