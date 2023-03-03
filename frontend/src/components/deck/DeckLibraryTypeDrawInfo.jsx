@@ -23,7 +23,7 @@ const DeckLibraryTypeDrawInfo = (props) => {
     <>
       {isMobile ? (
         <div onClick={() => handleClickModalDraw(cardtype)}>
-          {`${Math.floor(
+          {`${Math.round(
             drawProbability(1, libraryTotal, 7, libraryByTypeTotal[cardtype]) *
               100
           )}%`}
@@ -38,7 +38,7 @@ const DeckLibraryTypeDrawInfo = (props) => {
             />
           }
         >
-          <div className="inline">{`${Math.floor(
+          <div className="inline">{`${Math.round(
             drawProbability(1, libraryTotal, 7, libraryByTypeTotal[cardtype]) *
               100
           )}%`}</div>

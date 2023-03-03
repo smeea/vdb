@@ -16,7 +16,7 @@ const DeckDrawProbability = ({ cardName, n, N, k }) => {
       title={cardName}
     >
       <div className="text-fgSecondary dark:text-fgSecondaryDark">
-        {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
+        {`${Math.round(drawProbability(1, N, n, k) * 100)}%`}
       </div>
     </ConditionalTooltipOrModal>
   );

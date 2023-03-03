@@ -1,7 +1,5 @@
 # FIX
 - Older links (redirect in the web server)
-- Parity shift vampire set rarity
-- Discord Jaakkon
 
 # FEATURES
 - Check TWD
