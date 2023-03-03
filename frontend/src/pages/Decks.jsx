@@ -96,6 +96,7 @@ const Decks = () => {
       crypt: cardsData.crypt,
       deckid: deckData.deckid,
       description: deckData.description,
+      isFrozen: deckData.isFrozen,
       isAuthor: deckData.isAuthor,
       isBranches: !!(deckData.master || deckData.branches?.length > 0),
       isNonEditable: deckData.isNonEditable,
