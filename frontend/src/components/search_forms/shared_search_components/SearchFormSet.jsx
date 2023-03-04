@@ -56,17 +56,19 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
     });
 
   const filterOption = ({ label, value }, string) => {
-    let name = undefined;
+    let name;
+    let year;
     if (value == 'any' || value == 'bcp') {
       name = label.props.children[1];
     } else {
       name = label.props.children[0].props.children;
+      year = label.props.children[1].props?.children;
     }
+
     if (name) {
-      return name.toLowerCase().includes(string);
-    } else {
-      return true;
+      return `${name} ${year}`.toLowerCase().includes(string);
     }
+    return true;
   };
 
   return (

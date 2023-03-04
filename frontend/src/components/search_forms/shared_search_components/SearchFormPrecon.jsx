@@ -75,17 +75,19 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     });
 
   const filterOption = ({ label, value }, string) => {
-    let name = undefined;
+    let name;
+    let set;
     if (value == 'any' || value == 'bcp') {
       name = label.props.children[1];
     } else {
       name = label.props.children[0].props.children[1];
+      set = label.props.children[1].props.children;
     }
+
     if (name) {
-      return name.toLowerCase().includes(string);
-    } else {
-      return true;
+      return `${name} ${set}`.toLowerCase().includes(string);
     }
+    return true;
   };
 
   return (

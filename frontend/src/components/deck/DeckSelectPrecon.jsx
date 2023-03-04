@@ -46,11 +46,12 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1];
+    const set = label.props.children[1].props.children;
+
     if (name) {
-      return name.toLowerCase().includes(string.toLowerCase());
-    } else {
-      return true;
+      return `${name} ${set}`.toLowerCase().includes(string.toLowerCase());
     }
+    return true;
   };
 
   return (
