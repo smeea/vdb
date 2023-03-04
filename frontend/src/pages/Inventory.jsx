@@ -5,8 +5,7 @@ import {
   LoginBlock,
   InventoryAddDeckModal,
   InventoryAddPreconModal,
-  NewCryptCard,
-  NewLibraryCard,
+  NewCardSelect,
   InventoryCrypt,
   InventoryLibrary,
   InventoryButtons,
@@ -135,9 +134,10 @@ const Inventory = () => {
             {!inShared && (
               <>
                 <div className="p-2 sm:p-0">
-                  <NewCryptCard
+                  <NewCardSelect
                     onChange={handleNewCard}
                     ref={newCryptRef}
+                    target="crypt"
                     inInventory
                   />
                 </div>
@@ -178,9 +178,10 @@ const Inventory = () => {
             {!inShared && (
               <>
                 <div className="p-2 sm:p-0">
-                  <NewLibraryCard
+                  <NewCardSelect
                     onChange={handleNewCard}
                     ref={newLibraryRef}
+                    target="library"
                     inInventory
                   />
                 </div>

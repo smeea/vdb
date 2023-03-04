@@ -13,11 +13,11 @@ export { default as ButtonSearchCardInDecks } from './ButtonSearchCardInDecks.js
 export { default as ButtonToggleShowImage } from './ButtonToggleShowImage.jsx';
 export { default as CardImage } from './CardImage.jsx';
 export { default as CardPopover } from './CardPopover.jsx';
+export { default as CardSelect } from './CardSelect.jsx';
 export { default as LanguageMenu } from './LanguageMenu.jsx';
 export { default as LanguageSelectButton } from './LanguageSelectButton.jsx';
 export { default as NavMobileMenu } from './NavMobileMenu.jsx';
-export { default as NewCryptCard } from './NewCryptCard.jsx';
-export { default as NewLibraryCard } from './NewLibraryCard.jsx';
+export { default as NewCardSelect } from './NewCardSelect.jsx';
 export { default as OfflineNotification } from './OfflineNotification.jsx';
 export { default as QuickSelect } from './QuickSelect.jsx';
 export { default as SelectLabelCrypt } from './SelectLabelCrypt.jsx';

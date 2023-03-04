@@ -1,5 +1,5 @@
 import React from 'react';
-import { NewCryptCard, NewLibraryCard } from '@/components';
+import { NewCardSelect } from '@/components';
 import { useApp, deckCardChange } from '@/context';
 
 const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange }) => {
@@ -17,15 +17,7 @@ const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange }) => {
     handleClose();
   };
 
-  return (
-    <>
-      {target === 'crypt' ? (
-        <NewCryptCard onChange={handleChange} autoFocus />
-      ) : (
-        <NewLibraryCard onChange={handleChange} autoFocus />
-      )}
-    </>
-  );
+  return <NewCardSelect onChange={handleChange} autoFocus target={target} />;
 };
 
 export default DeckNewCard;

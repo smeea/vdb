@@ -3,7 +3,7 @@ import {
   CardPopover,
   ResultCryptName,
   ResultModal,
-  NewCryptCard,
+  NewCardSelect,
   ConditionalTooltip,
 } from '@/components';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
@@ -25,7 +25,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
         Crypt:
       </div>
-      <NewCryptCard onChange={handleAdd} />
+      <NewCardSelect target="crypt" onChange={handleAdd} />
       <div className="space-y-1">
         {Object.keys(value)
           .filter((id) => value[id].q >= 0)

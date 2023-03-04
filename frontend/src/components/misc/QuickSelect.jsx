@@ -1,17 +1,14 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useApp } from '@/context';
-import {
-  SelectAsync,
-  SelectLabelCrypt,
-  SelectLabelLibrary,
-} from '@/components';
-import { useFilters } from '@/hooks';
+import { CardSelect } from '@/components';
 
-const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
-  const { isMobile, cryptCardBase, libraryCardBase, playtest } = useApp();
-  const { filterCrypt } = useFilters(cryptCardBase);
-  const { filterLibrary } = useFilters(libraryCardBase);
-  const ref = useRef();
+const QuickSelect = ({
+  placeholder = 'Enter Card Name',
+  selectedCardid,
+  inBadImport,
+  setCard,
+}) => {
+  const { isMobile, cryptCardBase, libraryCardBase } = useApp();
 
   const handleChange = (event) => {
     setCard(
@@ -21,59 +18,11 @@ const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
     );
   };
 
-  const getOptionLabel = (option) => {
-    const cardid = option.value;
-
-    if (cardid > 200000) {
-      return <SelectLabelCrypt cardid={cardid} />;
-    } else if (cardid > 100000) {
-      return <SelectLabelLibrary cardid={cardid} />;
-    }
-  };
-
-  const byTwd = (a, b) => {
-    const aInTwd =
-      a.value > 200000
-        ? cryptCardBase[a.value].Twd
-        : libraryCardBase[a.value].Twd;
-    const bInTwd =
-      b.value > 200000
-        ? cryptCardBase[b.value].Twd
-        : libraryCardBase[b.value].Twd;
-
-    return bInTwd - aInTwd;
-  };
-
-  const loadOptions = async (inputValue) => {
-    if (inputValue.length > 2) {
-      const input = { name: inputValue };
-
-      const filteredCryptCards = filterCrypt(input)
-        .filter((card) => playtest || card.Id < 210000)
-        .map((card) => ({
-          value: card.Id,
-        }));
-
-      const filteredLibCards = filterLibrary(input)
-        .filter((card) => playtest || card.Id < 110000)
-        .map((card) => ({
-          value: card.Id,
-        }));
-
-      return [...filteredCryptCards, ...filteredLibCards].sort(byTwd);
-    }
-  };
-
   return (
-    <SelectAsync
+    <CardSelect
       autoFocus={!isMobile || !selectedCardid}
-      cacheOptions
-      getOptionLabel={getOptionLabel}
-      loadOptions={loadOptions}
-      menuPlacement={isMobile ? 'top' : 'bottom'}
       onChange={handleChange}
-      placeholder="Enter Card Name"
-      ref={ref}
+      placeholder={placeholder}
       value={inBadImport ? { value: selectedCardid } : null}
     />
   );

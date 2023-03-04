@@ -28,4 +28,3 @@
 - ResultDisciplineImage class to width/size
 - Refactor fetch to useFetch where possible
 - Add standard modal button blocks
-- Refactor QuickSelect + NewCryptCard + NewLibraryCard

@@ -3,7 +3,7 @@ import {
   CardPopover,
   ResultLibraryName,
   ResultModal,
-  NewLibraryCard,
+  NewCardSelect,
   ConditionalTooltip,
 } from '@/components';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
@@ -25,7 +25,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
         Library:
       </div>
-      <NewLibraryCard onChange={handleAdd} />
+      <NewCardSelect target="library" onChange={handleAdd} />
       <div className="space-y-1">
         {Object.keys(value)
           .filter((id) => value[id].q >= 0)
