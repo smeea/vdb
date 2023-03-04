@@ -24,11 +24,18 @@ const TwdSearchFormLocation = ({ value, form }) => {
       return fetch(url, options)
         .then((response) => response.json())
         .then((data) =>
-          data.filter((value) =>
-            unidecode(value.label)
-              .toLowerCase()
-              .includes(unidecode(inputValue).toLowerCase())
-          )
+          data
+            .filter((v) =>
+              unidecode(v)
+                .toLowerCase()
+                .includes(unidecode(inputValue).toLowerCase())
+            )
+            .map((v) => {
+              return {
+                label: v,
+                value: v,
+              };
+            })
         );
     }
   };
