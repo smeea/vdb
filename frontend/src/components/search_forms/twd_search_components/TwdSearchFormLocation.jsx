@@ -10,7 +10,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
     form.location = v.value ?? '';
   };
 
-  const loadOptions = (inputValue) => {
+  const loadOptions = async (inputValue) => {
     const url = `${import.meta.env.VITE_API_URL}/twd/locations`;
     const options = {
       method: 'GET',
@@ -18,16 +18,18 @@ const TwdSearchFormLocation = ({ value, form }) => {
       credentials: 'include',
     };
 
-    if (inputValue.length >= 2) {
+    if (inputValue.length >= 3) {
+      const { default: unidecode } = await import('unidecode');
+
       return fetch(url, options)
         .then((response) => response.json())
         .then((data) =>
           data.filter((value) =>
-            value.label.toLowerCase().includes(inputValue.toLowerCase())
+            unidecode(value.label)
+              .toLowerCase()
+              .includes(unidecode(inputValue).toLowerCase())
           )
         );
-    } else {
-      return null;
     }
   };
 
@@ -46,7 +48,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
           autoFocus={false}
           placeholder="Location"
           loadOptions={loadOptions}
-          isClearable={true}
+          isClearable
           value={
             value
               ? {

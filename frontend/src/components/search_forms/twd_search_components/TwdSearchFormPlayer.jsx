@@ -48,7 +48,7 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
           autoFocus={false}
           placeholder="Name"
           loadOptions={loadOptions}
-          isClearable={true}
+          isClearable
           value={
             value
               ? {

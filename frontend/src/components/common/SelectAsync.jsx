@@ -54,6 +54,7 @@ const SelectAsync = React.forwardRef(
           }
 `,
           noOptionsMessage: () => 'rounded p-2',
+          loadingMessage: () => 'rounded p-2',
           placeholder: () => 'text-midGray dark:text-midGrayDark',
           /* input: () => */
           valueContainer: () =>
@@ -64,7 +65,6 @@ const SelectAsync = React.forwardRef(
           /* indicators: () => '', */
           /* input: () => '', */
           /* loadingIndicator: () => '', */
-          /* loadingMessage: () => '', */
           /* menuPortal: () => '', */
           /* multiValue: () => '', */
           /* multiValueLabel: () => '', */

@@ -2,7 +2,7 @@
 - Older links (redirect in the web server)
 
 # FEATURES
-- Check TWD
+- Check TWD (include check country/city)
 - Events decks archive analyzing
 - Custom values for cardtypes in TWD/PDA
 - Playable by buttons to lib/crypt
