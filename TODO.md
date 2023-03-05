@@ -7,8 +7,6 @@
 - Custom values for cardtypes in TWD/PDA
 - Playable by buttons to lib/crypt
 - Add deck as revision
-- Country twd search
-- Search in deck/precons by set
 
 # MAYBE LATER FEATURES
 - Offline decks storage

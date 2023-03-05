@@ -101,9 +101,11 @@ def get_decks_by_author(author, decks):
 
 
 def get_decks_by_location(location, decks):
+    country = location['country'] if 'country' in location else ''
+    city = location['city'] if 'city' in location else ''
     match_decks = []
     for deck in decks:
-        if location == deck["location"]:
+        if country in deck["location"] and city in deck["location"]:
             match_decks.append(deck)
 
     return match_decks

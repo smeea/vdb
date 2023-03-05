@@ -48,6 +48,7 @@ const sanitizeFormState = (target, state) => {
         'cardtypes',
         'date',
         'players',
+        'location',
         'capacity',
         'libraryTotal',
       ];

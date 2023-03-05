@@ -132,11 +132,10 @@ with open("twda.json", "r") as twd_input, open("twd_decks.json", "w") as twd_dec
 
 with open("twda.json", "r") as twd_input, open(
         "twd_locations.json", "w") as twd_locations_file, open(
-            "twd_countries.json", "w") as twd_countries_file, open(
                 "twd_players.json", "w") as twd_players_file:
 
     twda = json.load(twd_input)
-    locations = set(())
+    cities = set(())
     countries = set(())
     players = set(())
     total = len(twda)
@@ -144,17 +143,18 @@ with open("twda.json", "r") as twd_input, open(
     for i in twda:
         if "place" in i:
             place = i["place"].split(", ")
-            countries.add(place.pop())
-            locations.add(i["place"])
-        else:
-            locations.add("Unknown")
+            countries.add(place[-1])
+            if len(place) > 1:
+                cities.add(f"{place[-2]}, {place[-1]}")
 
         players.add(i["player"])
 
-    locations = sorted(locations)
+    cities = sorted(cities)
     countries = sorted(countries)
     players = sorted(players)
 
     json.dump(players, twd_players_file, indent=4, separators=(",", ":"))
-    json.dump(locations, twd_locations_file, indent=4, separators=(",", ":"))
-    json.dump(countries, twd_countries_file, indent=4, separators=(",", ":"))
+    json.dump({
+        'countries': countries,
+        'cities': cities
+    }, twd_locations_file, indent=4, separators=(",", ":"))

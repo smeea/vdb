@@ -43,18 +43,22 @@ def sanitize_twd(d):
     return deck
 
 
-@app.route("/api/twd/locations", methods=["GET"])
-def getLocations():
-    return jsonify(twd_locations)
+@app.route("/api/twd/cities", methods=["GET"])
+def get_cities():
+    return jsonify(twd_locations['cities'])
+
+@app.route("/api/twd/countries", methods=["GET"])
+def get_countries():
+    return jsonify(twd_locations['countries'])
 
 
 @app.route("/api/twd/authors", methods=["GET"])
-def getTwdAuthors():
+def get_twd_authors():
     return jsonify(twd_players)
 
 
 @app.route("/api/twd/hall_of_fame", methods=["GET"])
-def getTwdHoFPlayers():
+def get_twd_hof_players():
     return jsonify(get_hof_players(twd_decks.values()))
 
 

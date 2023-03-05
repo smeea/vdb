@@ -2,7 +2,10 @@
   "similar": "",
   "event": "",
   "author": "",
-  "location": "",
+  "location": {
+    "country": "",
+    "city": ""
+  },
   "players": {
     "from": "any",
     "to": "any"
