@@ -3,6 +3,7 @@
 **/venv/
 **/migrations/
 backend/app.db
+backend/.env
 **/node_modules/
 frontend/dist/
 frontend/public/data/cardbase_crypt_playtest.json
