@@ -1,6 +1,7 @@
 from flask import jsonify, request, abort
 from flask_login import current_user
 import json
+import requests
 from random import random
 from search_decks import search_decks
 from search_decks_components import match_inventory
@@ -42,6 +43,21 @@ def sanitize_twd(d):
 
     return deck
 
+
+@app.route("/api/twd/event/<string:event_id>", methods=["GET"])
+def get_event(event_id):
+    base_url = 'https://www.vekn.net/api/vekn'
+    login_url = f"{base_url}/login"
+    data = {'username': 'vdb', 'password': 'Vdbpassword123'}
+
+    r = requests.post(login_url, data=data)
+    token = r.json()['data']['auth']
+
+    event_url = f"{base_url}/event/{event_id}"
+    r = requests.get(event_url, headers={'Authorization': f"Bearer {token}"})
+    data = r.json()['data']['events'][0]
+
+    return(data)
 
 @app.route("/api/twd/cities", methods=["GET"])
 def get_cities():

@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import { TwdDeck, TwdEvent } from '@/components';
-import { useApp } from '@/context';
 
 const TwdCheck = () => {
-  const { isWide } = useApp();
-
-  const [eventId, setEventId] = useState(10043);
+  const [deckData, setDeckData] = useState();
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex flex-row justify-center ">
-        <div className={`xl:${isWide ? '8/12' : '9/12'} border `}>
-          <TwdDeck eventId={eventId} setEventId={setEventId} />
+      <div className="flex justify-center ">
+        <div className="xl:basis-8/12 2xl-basis-9/12 border">
+          <TwdDeck deckData={deckData} setDeckData={setDeckData} />
         </div>
-        <div className={`xl:${isWide ? '4/12' : '3/12'} border `}>
-          <TwdEvent eventId={eventId} setEventId={setEventId} />
+        <div className="xl:basis-4/12 2xl:basis-3/12 border">
+          {deckData && <TwdEvent deckData={deckData} />}
         </div>
       </div>
     </div>

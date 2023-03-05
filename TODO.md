@@ -1,8 +1,10 @@
 # FIX
 - Older links (redirect in the web server)
+- Focus add new card
+- Check TWD - check countries/cities (to repeat previously used cities)
+- Check TWD - country codes
 
 # FEATURES
-- Check TWD (include check country/city)
 - Events decks archive analyzing
 - Custom values for cardtypes in TWD/PDA
 - Playable by buttons to lib/crypt
@@ -26,3 +28,4 @@
 - ResultDisciplineImage class to width/size
 - Refactor fetch to useFetch where possible
 - Add standard modal button blocks
+- TwdResultLibrary (crypt also?) refactor to use banned check

@@ -2,9 +2,12 @@ import React, { useState, useRef } from 'react';
 import X from '@/assets/images/icons/x.svg';
 import Download from '@/assets/images/icons/download.svg';
 import Upload from '@/assets/images/icons/upload.svg';
-import { Button, ButtonIconed, ErrorOverlay } from '@/components';
+import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
+import { useApp } from '@/context';
+import { useDeckImport } from '@/hooks';
 
-const TwdDeck = ({ eventId, setEventId }) => {
+const TwdDeck = ({ deckData, setDeckData }) => {
+  const { cryptCardBase, libraryCardBase } = useApp();
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
@@ -17,33 +20,37 @@ const TwdDeck = ({ eventId, setEventId }) => {
   const handleChange = (event) => {
     setEmptyError(false);
     setDeckText(event.target.value);
-    refreshEventId(event.target.value);
+    refreshDeckData(event.target.value);
   };
 
   const handleClear = () => {
     setEmptyError(false);
     setDeckText('');
+    setDeckData();
   };
 
-  const refreshEventId = (text) => {
-    const url = text.match(
-      /https:\/\/www.vekn.net\/event-calendar\/event\/\d+/g
+  const refreshDeckData = async (text) => {
+    const lines = text.split('\n');
+    const d = await useDeckImport(text, cryptCardBase, libraryCardBase);
+
+    const id = lines[6].replace(
+      /.*vekn.net\/event-calendar\/event\/(\d+).*/,
+      '$1'
     );
-    if (url) {
-      setEventId(
-        url[0].replace('https://www.vekn.net/event-calendar/event/', '')
-      );
-    }
-  };
 
-  const checkDeck = () => {
-    setImportError(false);
-
-    if (deckText) {
-      setEmptyError(false);
-    } else {
-      setEmptyError(true);
-    }
+    setDeckData({
+      id: id,
+      event: lines[0].trim(),
+      location: lines[1].trim(),
+      date: lines[2].trim(),
+      format: lines[3].trim(),
+      players: lines[4].trim(),
+      url: lines[6].trim(),
+      deck: {
+        crypt: d.crypt,
+        library: d.library,
+      },
+    });
   };
 
   const saveDeck = async (text, name) => {
@@ -84,11 +91,11 @@ const TwdDeck = ({ eventId, setEventId }) => {
         Scores:
 
      Deck Name:
-
    Description:
 `;
 
-  const descriptionInfo = `   can multiline,
+  const descriptionInfo = `       (optional)
+   can multiline,
   trim length ≤90
     letters or no
       trim at all
@@ -105,7 +112,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
         </div>
       </div>
       <div className="flex flex-row">
-        <div className="xl:basis-1/6">
+        <div className="p-1 xl:basis-1/6">
           <div className="flex justify-end">
             <pre className="font-mono text-sm">{fieldNames}</pre>
           </div>
@@ -116,15 +123,16 @@ const TwdDeck = ({ eventId, setEventId }) => {
           </div>
         </div>
         <div className="xl:basis-10/12">
-          <textarea
-            className="font-mono text-sm focus:text-fgRed dark:text-fgRedDark"
+          <Textarea
+            className="text-sm"
+            isMono
             rows={window.innerHeight / 21 - 14}
             value={deckText}
             placeholder={placeholder}
             onChange={handleChange}
             autoFocus
           />
-          <pre className="mb-0 ml-[13px] font-mono text-sm text-midGray dark:text-midGrayDark">
+          <pre className="mb-0 ml-1 font-mono text-sm text-midGray dark:text-midGrayDark">
             {lengthMarker}
           </pre>
         </div>
@@ -133,7 +141,7 @@ const TwdDeck = ({ eventId, setEventId }) => {
         <div className="flex flex-row space-x-2">
           <ButtonIconed
             variant="primary"
-            onClick={() => saveDeck(deckText, eventId)}
+            onClick={() => saveDeck(deckText, deckData.id)}
             title="Save to File"
             icon={<Download />}
             text="Save to File"
@@ -145,9 +153,6 @@ const TwdDeck = ({ eventId, setEventId }) => {
             icon={<Upload />}
             text="Load from File"
           />
-          <Button variant="primary" onClick={checkDeck}>
-            Check Deck
-          </Button>
           <ButtonIconed
             variant="primary"
             onClick={handleClear}

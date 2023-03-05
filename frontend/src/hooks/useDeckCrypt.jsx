@@ -3,7 +3,12 @@ import { countCards, containCard, cryptSort } from '@/utils';
 import { ANY } from '@/utils/constants';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
 
-const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
+const useDeckCrypt = (
+  cardsList,
+  sortMethod = 'byName',
+  timer,
+  cardsToList = {}
+) => {
   const cardsFrom = Object.values(cardsList);
   const cardsTo = Object.values(cardsToList);
 
@@ -51,11 +56,13 @@ const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
   }
 
   let cryptGroups;
+  let hasWrongGroups;
   if (cryptGroupMax - cryptGroupMin == 1) {
     cryptGroups = `- G${cryptGroupMin}-${cryptGroupMax}`;
   } else if (cryptGroupMax - cryptGroupMin == 0) {
     cryptGroups = `- G${cryptGroupMax}`;
   } else {
+    hasWrongGroups = true;
     cryptGroups = (
       <div className="inline items-center text-fgRed dark:text-fgRedDark">
         <Exclamation
@@ -91,6 +98,7 @@ const useDeckCrypt = (cardsList, sortMethod, timer, cardsToList = {}) => {
     hasBanned,
     cryptTotal,
     cryptGroups,
+    hasWrongGroups,
     sortedCards,
     sortedCardsSide,
   };

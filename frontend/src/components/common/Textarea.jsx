@@ -20,7 +20,7 @@ const Textarea = React.forwardRef(
   ) => {
     return (
       <textarea
-        className={`rounded border-borderSecondary bg-bgPrimary px-1.5 py-1 outline-bgCheckboxSelected focus:outline outline-1 dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark ${
+        className={`rounded w-full border-borderSecondary bg-bgPrimary px-1.5 py-1 outline-bgCheckboxSelected focus:outline outline-1 dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark placeholder:text-midGray dark:placeholder:text-midGrayDark ${
           isMono ? 'font-mono' : ''
         } ${className ?? ''} ${borderStyle ?? 'border'}
 `}
