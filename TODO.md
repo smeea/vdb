@@ -2,7 +2,6 @@
 - Older links (redirect in the web server)
 - Focus add new card
 - Check TWD - check countries/cities (to repeat previously used cities)
-- Check TWD - country codes
 
 # FEATURES
 - Events decks archive analyzing
