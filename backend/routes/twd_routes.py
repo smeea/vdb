@@ -1,5 +1,6 @@
-from flask import jsonify, request, abort
+from flask import jsonify, request, abort, session
 from flask_login import current_user
+from datetime import datetime
 import json
 import requests
 from random import random
@@ -43,18 +44,21 @@ def sanitize_twd(d):
 
     return deck
 
-
 @app.route("/api/twd/event/<string:event_id>", methods=["GET"])
 def get_event(event_id):
     base_url = 'https://www.vekn.net/api/vekn'
-    login_url = f"{base_url}/login"
-    data = {'username': 'vdb', 'password': 'Vdbpassword123'}
+    token_age = datetime.now().timestamp() - session['vekn_timestamp'].timestamp() - 18000
 
-    r = requests.post(login_url, data=data)
-    token = r.json()['data']['auth']
+    if 'vekn_token' not in session and token_age > (60 * 4):
+        login_url = f"{base_url}/login"
+        credentials = {'username': 'smeeag', 'password': 'giuZcD88'}
+        r = requests.post(login_url, data=credentials)
+        token = r.json()['data']['auth']
+        session['vekn_token'] = token
+        session['vekn_timestamp'] = datetime.now()
 
     event_url = f"{base_url}/event/{event_id}"
-    r = requests.get(event_url, headers={'Authorization': f"Bearer {token}"})
+    r = requests.get(event_url, headers={'Authorization': f"Bearer {session['vekn_token']}"})
     data = r.json()['data']['events'][0]
 
     return(data)
