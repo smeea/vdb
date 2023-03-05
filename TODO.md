@@ -27,3 +27,5 @@
 - Refactor fetch to useFetch where possible
 - Add standard modal button blocks
 - TwdResultLibrary (crypt also?) refactor to use banned check
+- Modal max width in pixels
+- Close modal with esc

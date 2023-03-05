@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Dialog } from '@headlessui/react';
 import { ButtonCloseModal, ButtonFloatClose } from '@/components';
 import { useApp } from '@/context';
@@ -14,10 +14,7 @@ const Modal = ({
   initialFocus,
 }) => {
   const { isNarrow } = useApp();
-  const emptyRef = useRef();
-  // TODO close with Esc
 
-  // TODO add max width in px
   const widthClass = {
     sm: 'min-w-full sm:min-w-[65%] md:min-w-[50%] lg:min-w-[45%] xl:min-w-[35%] 2xl:min-w-[25%]',
     md: 'min-w-full sm:min-w-[80%] md:min-w-[65%] lg:min-w-[55%] xl:min-w-[45%] 2xl:min-w-[35%]',
@@ -27,7 +24,7 @@ const Modal = ({
 
   return (
     <Dialog
-      initialFocus={initialFocus ?? emptyRef}
+      initialFocus={initialFocus}
       onClose={handleClose}
       className="relative z-50"
       open

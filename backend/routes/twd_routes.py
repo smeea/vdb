@@ -51,7 +51,7 @@ def get_event(event_id):
 
     if 'vekn_token' not in session and token_age > (60 * 4):
         login_url = f"{base_url}/login"
-        credentials = {'username': 'smeeag', 'password': 'giuZcD88'}
+        credentials = {'username': 'vdb.vtes', 'password': 'Vdbpassword123'}
         r = requests.post(login_url, data=credentials)
         token = r.json()['data']['auth']
         session['vekn_token'] = token

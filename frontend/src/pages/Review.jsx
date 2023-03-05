@@ -143,7 +143,6 @@ const Review = () => {
       const deckWithHash = JSON.parse(
         JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library })
       );
-
       hash
         .slice(1)
         .split(';')
@@ -161,7 +160,6 @@ const Review = () => {
             };
           }
         });
-
       if (
         JSON.stringify({ crypt: deckFrom.crypt, library: deckFrom.library }) !=
         JSON.stringify(deckWithHash)
@@ -176,7 +174,8 @@ const Review = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && deckid) {
-      if (!deck || deck.deckid != deckid) {
+      if (!deckFrom || deckFrom.deckid != deckid) {
+        console.log();
         if (decks?.[deckid]) {
           setDeckFrom(decks[deckid]);
         } else if (deckid.includes(':') && preconDecks) {
