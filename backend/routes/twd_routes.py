@@ -47,9 +47,13 @@ def sanitize_twd(d):
 @app.route("/api/twd/event/<string:event_id>", methods=["GET"])
 def get_event(event_id):
     base_url = 'https://www.vekn.net/api/vekn'
-    token_age = datetime.now().timestamp() - session['vekn_timestamp'].timestamp() - 18000
+    token_valid = None
+    if 'vekn_timestamp' in session and 'vekn_token' in session:
+        token_age = datetime.now().timestamp() - session['vekn_timestamp'].timestamp() - 18000
+        if token_age > (60 * 4):
+            token_valid = True
 
-    if 'vekn_token' not in session and token_age > (60 * 4):
+    if not token_valid:
         login_url = f"{base_url}/login"
         credentials = {'username': 'vdb.vtes', 'password': 'Vdbpassword123'}
         r = requests.post(login_url, data=credentials)
