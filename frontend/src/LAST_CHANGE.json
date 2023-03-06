@@ -1,7 +1,7 @@
 {
-  "version": "2023-03-01",
+  "version": "2023-03-06",
   "changes": [
-    "Fix add new card to deck on mobile",
-    "Fix tall card view windows to overflow screen on top"
+    "Add filtering precons/sets in selectors typing set or year abbreviation (e.g. kmw, kot, 98, 23)",
+    "Many fixes, including inventory & review pages"
   ]
 }

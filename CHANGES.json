@@ -1,5 +1,12 @@
 [
   {
+    "version": "2023-03-06",
+    "changes": [
+      "Add filtering precons/sets in selectors typing set or year abbreviation (e.g. kmw, kot, 98, 23)",
+      "Many fixes, including inventory & review pages"
+    ]
+  },
+  {
     "version": "2023-03-01",
     "changes": [
       "Fix add new card to deck on mobile",
