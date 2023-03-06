@@ -88,13 +88,12 @@ It will skip other (useless) lines, you don't have to remove it yourself.
     >
       <div>
         <Textarea
-          className="w-full"
+          className="w-full font-mono"
           rows={isMobile ? '20' : '25'}
           value={deckText}
           placeholder={placeholder}
           onChange={handleChange}
           ref={ref}
-          isMono
         />
         <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
           <Button variant="primary" onClick={importDeckFromText}>

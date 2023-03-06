@@ -73,90 +73,85 @@ const TwdEvent = ({ deckData }) => {
   const libraryQtyError = libraryTotal > 90 || libraryTotal < 60;
 
   return (
-    <div>
-      <div className="px-0.5 text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
-        EVENT AT VEKN.NET{deckData.id ? ` - ${deckData.id}` : ''}
-      </div>
-      <>
-        {value && value.event_id === deckData.id ? (
-          <div className="font-mono text-sm p-1">
-            <div
-              className={
-                deckData.event === veknEvent.name
-                  ? ''
-                  : 'decoration-fgRed underline'
-              }
-            >
-              {veknEvent.name}
-            </div>
-            <div
-              className={
-                deckData.location === veknEvent.location
-                  ? ''
-                  : 'decoration-fgRed underline'
-              }
-            >
-              {veknEvent.location}
-            </div>
-            <br />
-            <div
-              className={
-                deckData.format === veknEvent.format
-                  ? ''
-                  : 'decoration-fgRed underline'
-              }
-            >
-              {veknEvent.format}
-            </div>
-            <br />
-            <br />
-            <div>
-              <a
-                className={
-                  deckData.url === veknEvent.url
-                    ? ''
-                    : 'decoration-fgRed underline'
-                }
-                href={veknEvent.url}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {veknEvent.url}
-              </a>
-            </div>
-            <br />
-            {hasWrongGroups && (
-              <div className="text-fgRed dark:text-fgRedDark">
-                Crypt has non-matching groups
-              </div>
-            )}
-            {cryptQtyError && (
-              <div className="text-fgRed dark:text-fgRedDark">
-                Crypt has &lt;12 cards
-              </div>
-            )}
-            {libraryQtyError && (
-              <div className="text-fgRed dark:text-fgRedDark">
-                Library has &lt;60 or &gt;90 cards
-              </div>
-            )}
-
-            {cryptHasBanned && (
-              <div className="text-fgRed dark:text-fgRedDark">
-                Crypt has banned cards
-              </div>
-            )}
-            {libraryHasBanned && (
-              <div className="text-fgRed dark:text-fgRedDark">
-                Library has banned cards
-              </div>
-            )}
+    <>
+      {value && value.event_id === deckData.id ? (
+        <div className="font-mono text-sm pt-[5px]">
+          <div
+            className={
+              deckData.event === veknEvent.name
+                ? ''
+                : 'decoration-fgRed underline'
+            }
+          >
+            {veknEvent.name}
           </div>
-        ) : (
-          <>Loading...</>
-        )}
-      </>
-    </div>
+          <div
+            className={
+              deckData.location === veknEvent.location
+                ? ''
+                : 'decoration-fgRed underline'
+            }
+          >
+            {veknEvent.location}
+          </div>
+          <br />
+          <div
+            className={
+              deckData.format === veknEvent.format
+                ? ''
+                : 'decoration-fgRed underline'
+            }
+          >
+            {veknEvent.format}
+          </div>
+          <br />
+          <br />
+          <div>
+            <a
+              className={
+                deckData.url === veknEvent.url
+                  ? ''
+                  : 'decoration-fgRed underline'
+              }
+              href={veknEvent.url}
+              rel="noreferrer"
+              target="_blank"
+            >
+              {veknEvent.url}
+            </a>
+          </div>
+          <br />
+          {hasWrongGroups && (
+            <div className="text-fgRed dark:text-fgRedDark">
+              Crypt has non-matching groups
+            </div>
+          )}
+          {cryptQtyError && (
+            <div className="text-fgRed dark:text-fgRedDark">
+              Crypt has &lt;12 cards
+            </div>
+          )}
+          {libraryQtyError && (
+            <div className="text-fgRed dark:text-fgRedDark">
+              Library has &lt;60 or &gt;90 cards
+            </div>
+          )}
+
+          {cryptHasBanned && (
+            <div className="text-fgRed dark:text-fgRedDark">
+              Crypt has banned cards
+            </div>
+          )}
+          {libraryHasBanned && (
+            <div className="text-fgRed dark:text-fgRedDark">
+              Library has banned cards
+            </div>
+          )}
+        </div>
+      ) : (
+        <>Loading...</>
+      )}
+    </>
   );
 };
 

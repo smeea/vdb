@@ -125,7 +125,7 @@ const App = () => {
           }
         />
         <Route
-          path="twd/deck_check"
+          path="twd/check"
           element={
             <Suspense fallback={<div />}>
               <TwdCheck />

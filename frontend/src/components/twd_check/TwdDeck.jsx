@@ -5,6 +5,14 @@ import Upload from '@/assets/images/icons/upload.svg';
 import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { useDeckImport } from '@/hooks';
+import { cardtypeSortedFull } from '@/utils/constants';
+
+const fixForumBreaks = (text) => {
+  cardtypeSortedFull.map((cardtype) => {});
+  // const url = text.match(/vekn.net\/event-calendar\/event\/\d+/g);
+
+  return text;
+};
 
 const TwdDeck = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -19,7 +27,8 @@ const TwdDeck = ({ deckData, setDeckData }) => {
 
   const handleChange = (event) => {
     setEmptyError(false);
-    setDeckText(event.target.value);
+    const text = fixForumBreaks(event.target.value);
+    setDeckText(text);
     refreshDeckData(event.target.value);
   };
 
@@ -31,21 +40,20 @@ const TwdDeck = ({ deckData, setDeckData }) => {
 
   const refreshDeckData = async (text) => {
     const lines = text.split('\n');
+    const url = text.match(/.*vekn.net\/event-calendar\/event\/\d+/g);
+    const id = url
+      ? url[0].replace(/.*vekn.net\/event-calendar\/event\/(\d+)/g, '$1')
+      : null;
+
     const d = await useDeckImport(text, cryptCardBase, libraryCardBase);
-
-    const id = lines[6].replace(
-      /.*vekn.net\/event-calendar\/event\/(\d+).*/,
-      '$1'
-    );
-
     setDeckData({
       id: id,
-      event: lines[0].trim(),
-      location: lines[1].trim(),
-      date: lines[2].trim(),
-      format: lines[3].trim(),
-      players: lines[4].trim(),
-      url: lines[6].trim(),
+      event: lines[0],
+      location: lines[1],
+      date: lines[2],
+      format: lines[3],
+      players: lines[4],
+      url: url ? url[0] : null,
       deck: {
         crypt: d.crypt,
         library: d.library,
@@ -102,17 +110,12 @@ const TwdDeck = ({ deckData, setDeckData }) => {
   (one long line)
 `;
 
-  const lengthMarker = `${' '.repeat(79)}90 letters |`;
+  const lengthMarker = `${' '.repeat(79)}90 letters | `;
 
   return (
-    <>
-      <div className="flex justify-center">
-        <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
-          TWD
-        </div>
-      </div>
-      <div className="flex flex-row">
-        <div className="p-1 xl:basis-1/6">
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        <div className="pt-[5px] xl:basis-2/12">
           <div className="flex justify-end">
             <pre className="font-mono text-sm">{fieldNames}</pre>
           </div>
@@ -124,8 +127,7 @@ const TwdDeck = ({ deckData, setDeckData }) => {
         </div>
         <div className="xl:basis-10/12">
           <Textarea
-            className="text-sm"
-            isMono
+            className="text-sm font-mono"
             rows={window.innerHeight / 21 - 14}
             value={deckText}
             placeholder={placeholder}
@@ -137,7 +139,7 @@ const TwdDeck = ({ deckData, setDeckData }) => {
           </pre>
         </div>
       </div>
-      <div className="flex justify-end ">
+      <div className="flex justify-end">
         <div className="flex flex-row space-x-2">
           <ButtonIconed
             variant="primary"
@@ -173,7 +175,7 @@ const TwdDeck = ({ deckData, setDeckData }) => {
         onChange={() => loadDeck(fileInput)}
         style={{ display: 'none' }}
       />
-    </>
+    </div>
   );
 };
 
