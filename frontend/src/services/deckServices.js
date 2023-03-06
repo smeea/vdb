@@ -15,6 +15,7 @@ export const update = (deckid, field, value) => {
 
   return fetch(url, options).then((response) => {
     if (!response.ok) throw response;
+    return response.json();
   });
 };
 
@@ -32,6 +33,7 @@ export const cardChange = (deckid, cardid, q) => {
 
   return fetch(url, options).then((response) => {
     if (!response.ok) throw response;
+    return response.json();
   });
 };
 
@@ -60,6 +62,7 @@ export const deckImport = (deck) => {
 
   return fetch(url, options).then((response) => {
     if (!response.ok) throw response;
+    return response.json();
   });
 };
 

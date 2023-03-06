@@ -24,8 +24,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const navigate = useNavigate();
-  const [importError, setImportError] = useState(false);
-  const [createError, setCreateError] = useState('');
+  const [error, setError] = useState(false);
   const [showTextModal, setShowTextModal] = useState(false);
   const [showAmaranthModal, setShowAmaranthModal] = useState(false);
   const [badCards, setBadCards] = useState([]);
@@ -53,7 +52,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 
   const createNewDeck = () => {
-    setCreateError(false);
+    setError(false);
     const d = {
       name: 'New deck',
       author: publicName,
@@ -61,7 +60,6 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
 
     deckServices
       .deckImport({ ...d })
-      .then((response) => response.json())
       .then((data) => {
         setShowInfo && setShowInfo(true);
         setShowMenuButtons(false);
@@ -74,11 +72,11 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
         });
         navigate(`/decks/${data.deckid}`);
       })
-      .catch(() => setCreateError(true));
+      .catch(() => setError(true));
   };
 
   const importDeckFromFile = (fileInput, isAnonymous) => {
-    setImportError(false);
+    setError(false);
 
     const reader = new FileReader();
     const file = fileInput.current.files[0];
@@ -129,7 +127,6 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
 
       deckServices
         .deckImport({ ...d, anonymous: isAnonymous })
-        .then((response) => response.json())
         .then((data) => {
           deckAdd({
             ...d,
@@ -142,7 +139,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
           handleClose();
         })
         .catch(() => {
-          setImportError(true);
+          setError(true);
         });
     };
   };
@@ -195,12 +192,7 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
             onChange={() => importDeckFromFile(fileInputAnonymous, true)}
             style={{ display: 'none' }}
           />
-          {(createError || importError) && (
-            <ErrorOverlay placement="left">
-              {createError && <>ERROR</>}
-              {importError && <>CANNOT IMPORT THIS DECK</>}
-            </ErrorOverlay>
-          )}
+          {error && <ErrorOverlay placement="left">ERROR</ErrorOverlay>}
         </>
       )}
     </>
