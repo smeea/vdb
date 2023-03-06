@@ -9,6 +9,7 @@ const NewCardSelect = React.forwardRef(
         inInventory={inInventory}
         onChange={onChange}
         placeholder={`Add ${target === 'crypt' ? 'Crypt' : 'Library'} Card`}
+        value={null}
         target={target}
         ref={ref}
       />
