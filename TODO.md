@@ -8,6 +8,7 @@
 - Custom values for cardtypes in TWD/PDA
 - Playable by buttons to lib/crypt
 - Add deck as revision
+- Letter size for proxy
 
 # MAYBE LATER FEATURES
 - Offline decks storage
