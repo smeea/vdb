@@ -33,7 +33,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     return request.status == 200;
   };
 
-  const proxyCards = async (crypt, library, isWhiteGaps) => {
+  const proxyCards = async (crypt, library, format) => {
     setIsLoading(true);
 
     const cryptSorted = cryptSort(
@@ -62,16 +62,20 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     });
 
     let { jsPDF } = await import('jspdf');
-    const pdf = new jsPDF();
-    isWhiteGaps
+    const pdf = new jsPDF(
+      'p',
+      'mm',
+      format.isLetter ? [215.9, 279.4] : [210, 297]
+    );
+    format.isWhiteGaps
       ? pdf.setFillColor(255, 255, 255)
       : pdf.setFillColor(60, 60, 60);
 
     const w = 63;
     const h = 88;
     const gap = 0.25;
-    const marginLeft = 10;
-    const marginTop = 10;
+    const marginLeft = format.isLetter ? 13 : 10;
+    const marginTop = format.isLetter ? 7 : 10;
 
     let counterX = 0;
     let counterY = 0;
@@ -113,7 +117,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
         if (counterY == 3 && page * 9 < cardsTotal) {
           page += 1;
           pdf.addPage();
-          isWhiteGaps
+          format.isWhiteGaps
             ? pdf.setFillColor(255, 255, 255)
             : pdf.setFillColor(60, 60, 60);
           counterY = 0;
@@ -151,13 +155,51 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           />
           <MenuItems>
             <MenuItem>
-              <div onClick={() => proxyCards(deck.crypt, deck.library, false)}>
-                Full Deck - Gray gaps
+              <div
+                onClick={() =>
+                  proxyCards(deck.crypt, deck.library, {
+                    isWhiteGaps: false,
+                    isLetter: false,
+                  })
+                }
+              >
+                Full Deck - Gray gaps (A4)
               </div>
             </MenuItem>
             <MenuItem>
-              <div onClick={() => proxyCards(deck.crypt, deck.library, true)}>
-                Full Deck - White gaps
+              <div
+                onClick={() =>
+                  proxyCards(deck.crypt, deck.library, {
+                    isWhite: true,
+                    isLetter: false,
+                  })
+                }
+              >
+                Full Deck - White gaps (A4)
+              </div>
+            </MenuItem>
+            <MenuItem>
+              <div
+                onClick={() =>
+                  proxyCards(deck.crypt, deck.library, {
+                    isWhiteGaps: false,
+                    isLetter: true,
+                  })
+                }
+              >
+                Full Deck - Gray gaps (Letter)
+              </div>
+            </MenuItem>
+            <MenuItem>
+              <div
+                onClick={() =>
+                  proxyCards(deck.crypt, deck.library, {
+                    isWhite: true,
+                    isLetter: true,
+                  })
+                }
+              >
+                Full Deck - White gaps (Letter)
               </div>
             </MenuItem>
             {inventoryMode && (
@@ -165,7 +207,10 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
                 <MenuItem>
                   <div
                     onClick={() =>
-                      proxyCards(missingCrypt, missingLibrary, false)
+                      proxyCards(missingCrypt, missingLibrary, {
+                        isWhite: false,
+                        isLetter: false,
+                      })
                     }
                   >
                     Missing in Inventory - Gray gaps
@@ -174,10 +219,37 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
                 <MenuItem>
                   <div
                     onClick={() =>
-                      proxyCards(missingCrypt, missingLibrary, true)
+                      proxyCards(missingCrypt, missingLibrary, {
+                        isWhite: true,
+                        isLetter: false,
+                      })
                     }
                   >
                     Missing in Inventory - White gaps
+                  </div>
+                </MenuItem>
+                <MenuItem>
+                  <div
+                    onClick={() =>
+                      proxyCards(missingCrypt, missingLibrary, {
+                        isWhite: false,
+                        isLetter: true,
+                      })
+                    }
+                  >
+                    Missing in Inventory - Gray gaps (Letter)
+                  </div>
+                </MenuItem>
+                <MenuItem>
+                  <div
+                    onClick={() =>
+                      proxyCards(missingCrypt, missingLibrary, {
+                        isWhite: true,
+                        isLetter: true,
+                      })
+                    }
+                  >
+                    Missing in Inventory - White gaps (Letter)
                   </div>
                 </MenuItem>
               </>

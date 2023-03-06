@@ -117,7 +117,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     }
   };
 
-  const handleGenerate = (isWhiteGaps) => {
+  const handleGenerate = (format) => {
     const crypt = {};
     const library = {};
     Object.keys(proxySelected)
@@ -138,7 +138,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         }
       });
 
-    proxyCards(crypt, library, isWhiteGaps);
+    proxyCards(crypt, library, format);
     handleClose();
   };
 
@@ -183,11 +183,49 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
           </div>
         </div>
         <div className="flex gap-1 max-md:flex-col md:justify-end">
-          <Button variant="primary" onClick={() => handleGenerate(false)}>
-            Generate - Gray gaps
+          <Button
+            variant="primary"
+            onClick={() =>
+              handleGenerate({
+                isWhite: false,
+                isLetter: false,
+              })
+            }
+          >
+            Generate - Gray gaps (A4)
           </Button>
-          <Button variant="primary" onClick={() => handleGenerate(true)}>
-            Generate - White gaps
+          <Button
+            variant="primary"
+            onClick={() =>
+              handleGenerate({
+                isWhite: true,
+                isLetter: false,
+              })
+            }
+          >
+            Generate - White gaps (A4)
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() =>
+              handleGenerate({
+                isWhite: false,
+                isLetter: true,
+              })
+            }
+          >
+            Generate - Gray gaps (Letter)
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() =>
+              handleGenerate({
+                isWhite: true,
+                isLetter: true,
+              })
+            }
+          >
+            Generate - White gaps (Letter)
           </Button>
           <Button variant="primary" onClick={handleToggleSelect}>
             Select / Deselect All
