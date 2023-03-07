@@ -19,28 +19,35 @@ const getDateWithSuffix = (d) => {
 };
 
 const TwdEvent = ({ deckData }) => {
+  const urlCountries = `${import.meta.env.VITE_API_URL}/twd/countries`;
+  const urlCities = `${import.meta.env.VITE_API_URL}/twd/cities`;
+  const { value: countries } = useFetch(urlCountries, {}, []);
+  const { value: cities } = useFetch(urlCities, {}, []);
+
   const url = `${import.meta.env.VITE_API_URL}/twd/event/${deckData.id}`;
   const { value } = useFetch(url, {}, [deckData.id]);
 
   const countriesFixes = {
-    AU: 'Australia',
     AT: 'Austria',
-    BY: 'Belarus',
+    AU: 'Australia',
     BE: 'Belgium',
     BR: 'Brazil',
+    BY: 'Belarus',
     CA: 'Canada',
+    CH: 'Switzerland',
     CL: 'Chile',
-    HR: 'Croatia',
     CZ: 'Czech Republic',
+    DE: 'Germany',
     DK: 'Denmark',
-    GB: 'United Kingdom',
+    ES: 'Spain',
     FI: 'Finland',
     FR: 'France',
-    DE: 'Germany',
+    GB: 'United Kingdom',
     GR: 'Greece',
+    HR: 'Croatia',
     HU: 'Hungary',
-    IS: 'Iceland',
     IE: 'Ireland',
+    IS: 'Iceland',
     IT: 'Italy',
     JP: 'Japan',
     LT: 'Lithuania',
@@ -48,18 +55,16 @@ const TwdEvent = ({ deckData }) => {
     NL: 'Netherlands',
     NO: 'Norway',
     ONLINE: 'Online',
+    PH: 'Philipines',
     PL: 'Poland',
     PT: 'Portugal',
-    PH: 'Philipines',
-    RU: 'Russia',
     RS: 'Serbia',
+    RU: 'Russia',
+    SE: 'Sweden',
     SG: 'Singapore',
     SK: 'Slovakia',
-    ZA: 'South Africa',
-    SP: 'Spain',
-    SE: 'Sweden',
-    CH: 'Switzerland',
     US: 'USA',
+    ZA: 'South Africa',
   };
 
   const country = countriesFixes[value?.venue_country] ?? value?.venue_country;
@@ -111,6 +116,13 @@ const TwdEvent = ({ deckData }) => {
 
   const cryptQtyError = cryptTotal < 12;
   const libraryQtyError = libraryTotal > 90 || libraryTotal < 60;
+
+  const deckLocation = deckData.location.split(', ');
+  const deckCountry = deckLocation[deckLocation.length - 1];
+  const deckCity = deckLocation[deckLocation.length - 2];
+  const isUniqueCity =
+    deckCity && cities && !cities.includes(`${deckCity}, ${deckCountry}`);
+  const isUniqueCountry = countries && !countries.includes(deckCountry);
 
   return (
     <>
@@ -201,6 +213,16 @@ const TwdEvent = ({ deckData }) => {
           {libraryHasBanned && (
             <div className="text-fgRed dark:text-fgRedDark">
               Library has banned cards
+            </div>
+          )}
+          {isUniqueCity && (
+            <div className="text-fgRed dark:text-fgRedDark">
+              City never appear in TWDA before. Spelling is correct?
+            </div>
+          )}
+          {isUniqueCountry && (
+            <div className="text-fgRed dark:text-fgRedDark">
+              Country never appear in TWDA before. Spelling is correct?
             </div>
           )}
         </div>

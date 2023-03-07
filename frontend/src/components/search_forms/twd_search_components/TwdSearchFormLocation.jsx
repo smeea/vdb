@@ -1,9 +1,14 @@
 import React from 'react';
 import { SelectAsync } from '@/components';
 import { useApp } from '@/context';
+import { useFetch } from '@/hooks';
 
 const TwdSearchFormLocation = ({ value, form }) => {
   const { isXWide } = useApp();
+  const urlCountries = `${import.meta.env.VITE_API_URL}/twd/countries`;
+  const urlCities = `${import.meta.env.VITE_API_URL}/twd/cities`;
+  const { value: countries } = useFetch(urlCountries, {}, []);
+  const { value: cities } = useFetch(urlCities, {}, []);
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const handleChange = (v, target) => {
@@ -16,35 +21,25 @@ const TwdSearchFormLocation = ({ value, form }) => {
   };
 
   const loadOptions = async (inputValue, target) => {
-    const url = `${import.meta.env.VITE_API_URL}/twd/${target}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    if (inputValue.length >= 3) {
+    if (inputValue.length >= 2) {
       const { default: unidecode } = await import('unidecode');
+      const data = target === 'cities' ? cities : countries;
 
-      return fetch(url, options)
-        .then((response) => response.json())
-        .then((data) =>
-          data
-            .filter((v) => {
-              if (target === 'cities' && !v.includes(value.country)) {
-                return false;
-              }
-              return unidecode(v.replace(/,.*$/, ''))
-                .toLowerCase()
-                .includes(unidecode(inputValue).toLowerCase());
-            })
-            .map((v) => {
-              return {
-                label: v,
-                value: v,
-              };
-            })
-        );
+      return data
+        .filter((v) => {
+          if (target === 'cities' && !v.includes(value.country)) {
+            return false;
+          }
+          return unidecode(v.replace(/,.*$/, ''))
+            .toLowerCase()
+            .includes(unidecode(inputValue).toLowerCase());
+        })
+        .map((v) => {
+          return {
+            label: v,
+            value: v,
+          };
+        });
     }
   };
 
