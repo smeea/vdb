@@ -2,6 +2,8 @@
 - Older links (redirect in the web server)
 - Check TWD - check countries/cities (to repeat previously used cities)
 - Text multi search
+- isClearable for filters like winner/country
+- Inventory data layout in quick card
 
 # FEATURES
 - Events decks archive analyzing

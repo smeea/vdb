@@ -1,6 +1,23 @@
 import React from 'react';
 import { useDeckCrypt, useDeckLibrary, useFetch } from '@/hooks';
 
+const getDateWithSuffix = (d) => {
+  if (!d) return;
+  const date = d.replace(/^0/, '');
+
+  if (date > 20 || date < 10) {
+    switch (date % 10) {
+      case 1:
+        return `${date}st`;
+      case 2:
+        return `${date}nd`;
+      case 3:
+        return `${date}rd`;
+    }
+  }
+  return `${date}th`;
+};
+
 const TwdEvent = ({ deckData }) => {
   const url = `${import.meta.env.VITE_API_URL}/twd/event/${deckData.id}`;
   const { value } = useFetch(url, {}, [deckData.id]);
@@ -52,10 +69,33 @@ const TwdEvent = ({ deckData }) => {
     ? `${venue ? `${venue}, ` : ''}${city}, ${country}` || ''
     : 'Unknown';
 
+  const [year, m, d] = value?.event_enddate.split('-') || [];
+
+  const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  const month = monthNames[m - 1];
+  const day = getDateWithSuffix(d);
+  const date = `${month} ${day} ${year}`;
+
   const veknEvent = {
     name: value?.event_name,
     format: value?.rounds,
     location: location,
+    date: date,
+    players: `${value?.attendance} players`,
     url: `https://www.vekn.net/event-calendar/event/${value?.event_id}`,
   };
 
@@ -94,7 +134,15 @@ const TwdEvent = ({ deckData }) => {
           >
             {veknEvent.location}
           </div>
-          <br />
+          <div
+            className={
+              deckData.date === veknEvent.date
+                ? ''
+                : 'decoration-fgRed underline'
+            }
+          >
+            {veknEvent.date}
+          </div>
           <div
             className={
               deckData.format === veknEvent.format
@@ -104,7 +152,15 @@ const TwdEvent = ({ deckData }) => {
           >
             {veknEvent.format}
           </div>
-          <br />
+          <div
+            className={
+              deckData.players === veknEvent.players
+                ? ''
+                : 'decoration-fgRed underline'
+            }
+          >
+            {veknEvent.players}
+          </div>
           <br />
           <div>
             <a
