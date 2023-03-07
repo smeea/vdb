@@ -130,8 +130,8 @@ const Cards = () => {
           </>
         ) : (
           <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-            <div className="block lg:min-w-[175px]" />
-            <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+            <div className="block xl:min-w-[175px]" />
+            <div className="flex min-w-[900px] basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
               {cryptCardBase && libraryCardBase && (
                 <div>
                   <QuickSelect
@@ -157,7 +157,7 @@ const Cards = () => {
               )}
             </div>
             <div className="min-w-[175px] max-sm:hidden">
-              <div className="sticky top-[77px] z-30 flex w-full flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark">
+              <div className="sticky lg:top-[44px] z-30 flex w-full flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark">
                 <ButtonIconed
                   variant="secondary"
                   onClick={() => randomCrypt()}
