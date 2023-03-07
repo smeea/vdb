@@ -11,7 +11,7 @@ const DeckChangeName = ({ deck }) => {
   const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
   const [value, setValue] = useState(deck.name);
   const [success, setSuccess] = useState(false);
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
 
   useEffect(() => {
     if (value !== deck.name) setValue(deck.name);
@@ -52,7 +52,7 @@ const DeckChangeName = ({ deck }) => {
         readOnly={!isEditable}
         roundedStyle={
           isAuthor ||
-          !isEditable ||
+          isNonEditable ||
           isPublic ||
           (deck.deckid !== 'deck' &&
             deck.deckid.length !== 32 &&
@@ -63,7 +63,7 @@ const DeckChangeName = ({ deck }) => {
         borderStyle={`border-y
           ${
             isAuthor ||
-            !isEditable ||
+            isNonEditable ||
             isPublic ||
             (deck.deckid !== 'deck' &&
               deck.deckid.length !== 32 &&
