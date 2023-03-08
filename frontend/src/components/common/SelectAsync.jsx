@@ -7,17 +7,19 @@ const SelectAsync = React.forwardRef(
       autoFocus,
       cacheOptions,
       getOptionLabel,
+      isClearable,
       loadOptions,
+      menuPlacement,
       noDropdown,
       onChange,
       placeholder,
-      menuPlacement,
       value,
     },
     ref
   ) => {
     return (
       <AsyncSelect
+        isClearable={isClearable}
         autoFocus={autoFocus}
         cacheOptions={cacheOptions}
         getOptionLabel={getOptionLabel}
@@ -56,20 +58,10 @@ const SelectAsync = React.forwardRef(
           noOptionsMessage: () => 'rounded p-2',
           loadingMessage: () => 'rounded p-2',
           placeholder: () => 'text-midGray dark:text-midGrayDark',
-          /* input: () => */
           valueContainer: () =>
             'px-2 min-h-[40px] bg-bgPrimary dark:bg-bgPrimaryDark rounded',
-          /* clearIndicator: '', */
-          /* group: () => '', */
-          /* groupHeading: () => '', */
-          /* indicators: () => '', */
-          /* input: () => '', */
-          /* loadingIndicator: () => '', */
-          /* menuPortal: () => '', */
-          /* multiValue: () => '', */
-          /* multiValueLabel: () => '', */
-          /* multiValueRemove: () => '', */
-          /* singleValue: () => '', */
+          clearIndicator: () => 'text-lightGray dark:text-lightGrayDark px-2',
+          loadingIndicator: () => 'text-lightGray dark:text-lightGrayDark px-2',
         }}
       />
     );

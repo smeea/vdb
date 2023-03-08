@@ -56,7 +56,7 @@ const DeckSelect = ({
 
   return (
     <div className="space-y-2">
-      <div className="z-20 flex">
+      <div className="z-20 flex gap-1">
         <div className="w-full">
           {selectFrom == 'my' && decks ? (
             <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />

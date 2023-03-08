@@ -4,7 +4,7 @@ import ReactSelectCreatable from 'react-select/creatable';
 const SelectCreatable = React.forwardRef(
   (
     {
-      isClearable = false,
+      isClearable,
       isDisabled,
       isMulti,
       menuPlacement,
@@ -73,16 +73,7 @@ const SelectCreatable = React.forwardRef(
               : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark',
           noOptionsMessage: () => 'rounded p-2',
           placeholder: () => 'text-midGray dark:text-midGrayDark',
-          /* clearIndicator: () => ''), */
-          /* group: () => '', */
-          /* groupHeading: () => '', */
-          /* indicators: () => '', */
-          /* inputContainer: () => '', */
-          /* loadingIndicator: () => '', */
-          /* loadingMessage: () => '', */
-          /* menuPortal: () => '', */
-          /* singleValue: () => '', */
-          // indicatorSeparator: () => '',
+          clearIndicator: () => 'text-lightGray dark:text-lightGrayDark px-2',
         }}
       />
     );

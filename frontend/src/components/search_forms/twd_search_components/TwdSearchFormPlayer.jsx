@@ -1,44 +1,36 @@
 import React from 'react';
 import { SelectAsync } from '@/components';
 import { useApp } from '@/context';
+import { useFetch } from '@/hooks';
 
 const TwdSearchFormPlayer = ({ inPda, value, form }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
+  const url = `${import.meta.env.VITE_API_URL}/${
+    inPda ? 'pda' : 'twd'
+  }/authors`;
+  const { value: players } = useFetch(url, {}, []);
 
   const handleChange = (v) => {
-    form.author = v.value ?? '';
+    form.author = v?.value ?? '';
   };
 
   const loadOptions = async (inputValue) => {
-    const url = `${import.meta.env.VITE_API_URL}/${
-      inPda ? 'pda' : 'twd'
-    }/authors`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
     if (inputValue.length >= 3) {
       const { default: unidecode } = await import('unidecode');
 
-      return fetch(url, options)
-        .then((response) => response.json())
-        .then((data) =>
-          data
-            .filter((v) =>
-              unidecode(v)
-                .toLowerCase()
-                .includes(unidecode(inputValue).toLowerCase())
-            )
-            .map((v) => {
-              return {
-                label: v,
-                value: v,
-              };
-            })
-        );
+      return players
+        .filter((v) =>
+          unidecode(v)
+            .toLowerCase()
+            .includes(unidecode(inputValue).toLowerCase())
+        )
+        .map((v) => {
+          return {
+            label: v,
+            value: v,
+          };
+        });
     }
   };
 

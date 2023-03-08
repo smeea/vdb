@@ -12,7 +12,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const handleChange = (v, target) => {
-    form.location[target] = v.value ?? '';
+    form.location[target] = v?.value ?? '';
     if (target === 'country') {
       form.location.city = '';
     } else if (!v.value.includes(value.country)) {
@@ -21,7 +21,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
   };
 
   const loadOptions = async (inputValue, target) => {
-    if (inputValue.length >= 2) {
+    if (inputValue.length >= 3) {
       const { default: unidecode } = await import('unidecode');
       const data = target === 'cities' ? cities : countries;
 

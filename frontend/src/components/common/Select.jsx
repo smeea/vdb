@@ -5,23 +5,23 @@ const Select = React.forwardRef(
   (
     {
       filterOption,
+      isClearable,
       isSearchable,
       maxMenuHeight,
       menuPlacement,
+      name,
       noBorder,
       noDropdown,
       onChange,
       options,
       placeholder,
-      name,
       value,
     },
     ref
   ) => {
     return (
-      // TODO add outline
-      // dark:outline-bgCheckboxSelectedDark focus:outline outline-1 outline-bgCheckboxSelected
       <ReactSelect
+        isClearable={isClearable}
         filterOption={filterOption}
         isSearchable={isSearchable}
         maxMenuHeight={maxMenuHeight}
@@ -66,18 +66,7 @@ const Select = React.forwardRef(
           valueContainer: () =>
             'px-2 min-h-[40px] bg-bgPrimary dark:bg-bgPrimaryDark rounded',
           noOptionsMessage: () => 'rounded p-2',
-          /* clearIndicator: '', */
-          /* group: () => '', */
-          /* groupHeading: () => '', */
-          /* indicators: () => '', */
-          /* input: () => '', */
-          /* loadingIndicator: () => '', */
-          /* loadingMessage: () => '', */
-          /* menuPortal: () => '', */
-          /* multiValue: () => '', */
-          /* multiValueLabel: () => '', */
-          /* multiValueRemove: () => '', */
-          /* singleValue: () => '', */
+          clearIndicator: () => 'text-lightGray dark:text-lightGrayDark px-2',
         }}
       />
     );

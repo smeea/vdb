@@ -150,7 +150,7 @@ def get_pda_authors_route():
         if d.author_public_name not in authors:
             authors.append(d.author_public_name)
 
-    return jsonify([{"label": a, "value": a} for a in authors])
+    return jsonify(authors)
 
 
 @app.route("/api/search/pda", methods=["POST"])

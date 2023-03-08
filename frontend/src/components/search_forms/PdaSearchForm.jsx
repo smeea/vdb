@@ -305,7 +305,7 @@ const PdaSearchForm = ({ error, setError }) => {
         onChange={handleChangeWithOpt}
       />
       <TwdSearchFormPlayer
-        state={pdaFormState.author}
+        value={pdaFormState.author}
         form={searchPdaForm}
         inPda
       />
