@@ -2,6 +2,7 @@
 - Older links (redirect in the web server)
 - Check TWD - check countries/cities (to repeat previously used cities)
 - Text multi search
+- Clear tags
 
 # FEATURES
 - Events decks archive analyzing

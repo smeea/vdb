@@ -105,7 +105,6 @@ const DeckImportAmaranth = ({ handleClose }) => {
 
     deckServices
       .deckImport(deck)
-      .then((response) => response.json())
       .then((data) => {
         deck.deckid = data.deckid;
 

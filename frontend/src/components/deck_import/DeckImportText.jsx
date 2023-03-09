@@ -38,7 +38,6 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
 
       deckServices
         .deckImport({ ...d, anonymous: isAnonymous })
-        .then((response) => response.json())
         .then((data) => {
           deckAdd({
             ...d,
