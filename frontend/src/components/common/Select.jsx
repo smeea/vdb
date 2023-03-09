@@ -5,7 +5,8 @@ const Select = React.forwardRef(
   (
     {
       filterOption,
-      isClearable,
+      isClearable = false,
+      isDisabled = false,
       isSearchable,
       maxMenuHeight,
       menuPlacement,
@@ -21,16 +22,17 @@ const Select = React.forwardRef(
   ) => {
     return (
       <ReactSelect
-        isClearable={isClearable}
         filterOption={filterOption}
+        isClearable={isClearable}
+        isDisabled={isDisabled}
         isSearchable={isSearchable}
         maxMenuHeight={maxMenuHeight}
         menuPlacement={menuPlacement}
+        name={name}
         onChange={onChange}
         options={options}
         placeholder={placeholder}
         ref={ref}
-        name={name}
         unstyled
         value={value}
         classNames={{

@@ -4,8 +4,9 @@ import ReactSelectCreatable from 'react-select/creatable';
 const SelectCreatable = React.forwardRef(
   (
     {
-      isClearable,
-      isDisabled,
+      autoFocus,
+      isClearable = false,
+      isDisabled = false,
       isMulti,
       menuPlacement,
       noBorder,
@@ -22,6 +23,7 @@ const SelectCreatable = React.forwardRef(
       // TODO add outline
       // dark:outline-bgCheckboxSelectedDark focus:outline outline-1 outline-bgCheckboxSelected
       <ReactSelectCreatable
+        autoFocus={autoFocus}
         isClearable={isClearable}
         isDisabled={isDisabled}
         isMulti={isMulti}

@@ -7,7 +7,8 @@ const SelectAsync = React.forwardRef(
       autoFocus,
       cacheOptions,
       getOptionLabel,
-      isClearable,
+      isClearable = false,
+      isDisabled = false,
       loadOptions,
       menuPlacement,
       noDropdown,
@@ -19,10 +20,11 @@ const SelectAsync = React.forwardRef(
   ) => {
     return (
       <AsyncSelect
-        isClearable={isClearable}
         autoFocus={autoFocus}
         cacheOptions={cacheOptions}
         getOptionLabel={getOptionLabel}
+        isClearable={isClearable}
+        isDisabled={isDisabled}
         loadOptions={loadOptions}
         menuPlacement={menuPlacement}
         onChange={onChange}
