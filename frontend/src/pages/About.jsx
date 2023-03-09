@@ -92,7 +92,7 @@ const About = () => {
           <div>
             Card text based on{' '}
             <a href="https://www.vekn.net/card-lists">VEKN official list</a>:{' '}
-            <span className="whitespace-nowrap">2022-11-14</span>
+            <span className="whitespace-nowrap">2023-03-09</span>
           </div>
           <div className="py-2">
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">

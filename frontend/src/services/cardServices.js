@@ -2,7 +2,7 @@ import preconDecksData from '@/assets/data/preconDecks.json';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useDeck, useTags } from '@/hooks';
 
-const CARD_VERSION = '2023-02-21';
+const CARD_VERSION = '2023-03-09';
 const urlCrypt = `${
   import.meta.env.VITE_BASE_URL
 }/data/cardbase_crypt.json?v=${CARD_VERSION}`;
