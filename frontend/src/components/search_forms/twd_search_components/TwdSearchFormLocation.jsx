@@ -15,8 +15,6 @@ const TwdSearchFormLocation = ({ value, form }) => {
     form.location[target] = v?.value ?? '';
     if (target === 'country') {
       form.location.city = '';
-    } else if (!v.value.includes(value.country)) {
-      form.location.country = '';
     }
   };
 
