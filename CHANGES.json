@@ -1,5 +1,14 @@
 [
   {
+    "version": "2023-03-09",
+    "changes": [
+      "Update cardbase to 2023-03-09 (DTC batch of legacy cards)",
+      "Fix twd location/winner selectors to have clear buttons",
+      "Fix deck import",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-03-07",
     "changes": [
       "Add TWD search by country",
