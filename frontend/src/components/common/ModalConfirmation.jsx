@@ -10,7 +10,7 @@ const ModalConfirmation = ({
   handleCancel,
   bordered,
   centered,
-  size,
+  size = 'sm',
   disabled,
   children,
 }) => {

@@ -17,7 +17,9 @@ import { useApp } from '@/context';
 const Type = ({ card, handleClick }) => {
   return (
     <td className="min-w-[25px]" onClick={() => handleClick(card)}>
-      <ResultLibraryTypeImage value={card.Type} />
+      <div className="flex justify-center">
+        <ResultLibraryTypeImage value={card.Type} />
+      </div>
     </td>
   );
 };
@@ -75,8 +77,10 @@ const Disciplines = ({ card, handleClick }) => {
 const Burn = ({ card, handleClick }) => {
   return (
     <td className="min-w-[30px]" onClick={() => handleClick(card)}>
-      {card[BURN_OPTION] && <ResultLibraryBurn />}
-      {isTrifle(card) && <ResultLibraryTrifle />}
+      <div className="flex justify-center">
+        {card[BURN_OPTION] && <ResultLibraryBurn />}
+        {isTrifle(card) && <ResultLibraryTrifle />}
+      </div>
     </td>
   );
 };

@@ -63,13 +63,19 @@ const ResultCryptTableRowCommon = ({
       {isWide && !inSearch ? (
         <>
           <td className="min-w-[25px]" onClick={() => handleClick(card)}>
-            {card.Title && <ResultCryptTitle value={card.Title} />}
+            <div className="flex justify-center">
+              {card.Title && <ResultCryptTitle value={card.Title} />}
+            </div>
           </td>
           <td className="min-w-[35px]" onClick={() => handleClick(card)}>
-            <ResultClanImage value={card.Clan} />
+            <div className="flex justify-center">
+              <ResultClanImage value={card.Clan} />
+            </div>
           </td>
           <td className="min-w-[15px]" onClick={() => handleClick(card)}>
-            <ResultCryptGroup value={card.Group} />
+            <div className="flex justify-center">
+              <ResultCryptGroup value={card.Group} />
+            </div>
           </td>
         </>
       ) : (

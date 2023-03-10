@@ -144,20 +144,20 @@ const InventoryCryptTableRow = ({
             {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
           </div>
           <div
-            className="flex min-w-[30px] justify-center"
+            className="flex min-w-[35px] justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultClanImage value={card.c.Clan} />
           </div>
           <div
-            className="flex min-w-[30px] justify-center"
+            className="flex min-w-[15px] justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultCryptGroup value={card.c.Group} />
           </div>
         </>
       ) : (
-        <div className="min-w-[45px]" onClick={() => handleClick(card.c)}>
+        <div className="min-w-[40px]" onClick={() => handleClick(card.c)}>
           <ResultCryptClanGroupTitle card={card.c} />
         </div>
       )}
