@@ -1,6 +1,7 @@
 # FIX
 - Older links (redirect in the web server)
 - Text multi search
+- DeckSelectSortForm to justify-start menu items
 
 # FEATURES
 - Events decks archive analyzing
@@ -29,3 +30,4 @@
 - TwdResultLibrary (crypt also?) refactor to use banned check
 - Modal max width in pixels
 - Close modal with esc
+- Refactor SortButton and DeckSelectSortForm
