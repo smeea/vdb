@@ -2,39 +2,18 @@ import React, { useState } from 'react';
 import PeopleFill from '@/assets/images/icons/people-fill.svg';
 import { useApp } from '@/context';
 import { Hr, TwdHallFameDeckBody } from '@/components';
-import { useDeck } from '@/hooks';
 
 const TwdHallFameDeckHeader = ({ deck, isStar }) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
-
+  const { isMobile } = useApp();
   const [showDeck, setShowDeck] = useState(false);
-  const [cards, setCards] = useState(null);
-
-  const getCards = async () => {
-    const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    const result = await fetch(url, options).then((response) =>
-      response.json()
-    );
-
-    const cardsData = useDeck(result.cards, cryptCardBase, libraryCardBase);
-    setCards(cardsData);
-  };
-
-  const handleClick = async () => {
-    if (!cards) await getCards();
+  const handleClick = () => {
     setShowDeck(!showDeck);
   };
 
   return (
     <div className="rounded-md border-2 border-borderPrimary bg-bgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark">
       <div
-        onClick={() => handleClick()}
+        onClick={handleClick}
         className={`flex justify-between p-2.5 text-fgSecondary hover:underline dark:text-fgSecondaryDark ${
           isStar ? 'font-bold' : ''
         }`}
@@ -54,19 +33,13 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
           {isMobile ? deck.date.slice(0, 4) : deck.date}
         </div>
       </div>
-      {showDeck && cards && (
+      {showDeck && (
         <>
           <Hr />
           <div className="p-2.5">
-            {deck && (
+            {showDeck && (
               <TwdHallFameDeckBody
-                deck={{
-                  ...deck,
-                  creation_date: deck.date,
-                  crypt: cards.crypt,
-                  library: cards.library,
-                }}
-                isMobile={isMobile}
+                deck={{ ...deck, creation_date: deck.date }}
               />
             )}
           </div>

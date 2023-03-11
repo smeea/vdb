@@ -30,9 +30,6 @@ const AccountPlaytestAdd = ({
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then(() => {
         if (
           !newPlaytesters.includes(username) &&
           !playtesters.includes(username)

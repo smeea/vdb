@@ -25,7 +25,6 @@
 - Refactor deck buttons (split in button ui and function incl. deckstore functions )
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
-- Refactor fetch to useFetch where possible
 - Add standard modal button blocks
 - TwdResultLibrary (crypt also?) refactor to use banned check
 - Modal max width in pixels
