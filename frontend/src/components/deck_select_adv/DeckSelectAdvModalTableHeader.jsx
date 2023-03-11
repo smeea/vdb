@@ -4,7 +4,7 @@ import Shuffle from '@/assets/images/icons/shuffle.svg';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
 import At from '@/assets/images/icons/at.svg';
 import {
-  DeckSelectSortForm,
+  DeckSortButton,
   DeckSelectAdvModalTagsFilter,
   Checkbox,
   Input,
@@ -125,7 +125,7 @@ const DeckSelectAdvModalTableHeader = ({
               checked={revFilter}
               onChange={() => setRevFilter(!revFilter)}
             />
-            <DeckSelectSortForm onChange={setSortMethod} />
+            <DeckSortButton onChange={setSortMethod} />
           </div>
         </th>
       </tr>

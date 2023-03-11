@@ -29,6 +29,6 @@ export { default as DeckSelect } from './DeckSelect.jsx';
 export { default as DeckSelectMy } from './DeckSelectMy.jsx';
 export { default as DeckSelectPrecon } from './DeckSelectPrecon.jsx';
 export { default as DeckSelectRecent } from './DeckSelectRecent.jsx';
-export { default as DeckSelectSortForm } from './DeckSelectSortForm.jsx';
+export { default as DeckSortButton } from './DeckSortButton.jsx';
 export { default as DeckSelectorAndDisplay } from './DeckSelectorAndDisplay.jsx';
 export { default as DeckTags } from './DeckTags.jsx';

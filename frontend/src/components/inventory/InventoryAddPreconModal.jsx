@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import {
-  DeckSelectSortForm,
+  DeckSortButton,
   InventoryAddPreconRow,
   Modal,
   Input,
@@ -91,7 +91,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
               </th>
               <th className="min-w-[110px]">
                 <div className="flex items-center justify-end">
-                  <DeckSelectSortForm onChange={setSortMethod} />
+                  <DeckSortButton onChange={setSortMethod} />
                 </div>
               </th>
             </tr>

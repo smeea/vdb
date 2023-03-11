@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { SelectCreatable } from '@/components';
 import {
-  DeckSelectSortForm,
+  DeckSortButton,
   InventoryAddDeckRow,
   Modal,
   Checkbox,
@@ -114,7 +114,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                   checked={revFilter}
                   onChange={() => setRevFilter(!revFilter)}
                 />
-                <DeckSelectSortForm onChange={setSortMethod} />
+                <DeckSortButton onChange={setSortMethod} />
               </div>
             </th>
           </tr>
