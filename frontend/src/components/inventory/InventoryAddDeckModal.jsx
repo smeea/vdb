@@ -114,7 +114,9 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                   checked={revFilter}
                   onChange={() => setRevFilter(!revFilter)}
                 />
-                <DeckSortButton onChange={setSortMethod} />
+                <div className="flex items-center">
+                  <DeckSortButton onChange={setSortMethod} />
+                </div>
               </div>
             </th>
           </tr>

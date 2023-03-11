@@ -13,14 +13,12 @@ const MenuButton = ({ title, icon, variant = 'primary', text }) => {
   };
 
   return (
-    <Menu.Button className={`block h-full w-full ${outlineStyle}`}>
-      <div
-        className={`${customStyle[variant]} flex h-full items-center justify-center gap-2 rounded px-3 py-1.5`}
-        title={title}
-      >
-        {icon}
-        {text && <div>{text}</div>}
-      </div>
+    <Menu.Button
+      className={`${customStyle[variant]} flex items-center justify-center min-h-[41px] gap-2 rounded px-3 py-1.5 w-full ${outlineStyle}`}
+      title={title}
+    >
+      {icon}
+      {text && <div>{text}</div>}
     </Menu.Button>
   );
 };

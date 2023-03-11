@@ -13,7 +13,7 @@ const ButtonIconed = ({
 }) => {
   return (
     <Button
-      className={className ?? null}
+      className={`min-h-[41px] ${className ?? ''}`}
       onClick={onClick}
       title={title}
       disabled={disabled}
