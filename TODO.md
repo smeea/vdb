@@ -1,6 +1,7 @@
 # FIX
 - Older links (redirect in the web server)
 - Text multi search
+- Arrows to navigate in Menu components
 
 # FEATURES
 - Events decks archive analyzing
@@ -18,7 +19,6 @@
 - Migration from screen width (isWide, etc) to container queries
 - Refactor standard colors
 - Configure vite-pwa
-- Move preconDecks to fetch+localStorage
 - Update url for playtest images to mitigate caching
 - Refactor InventoryCrypt and InventoryLibrary
 - Refactor deck buttons (split in button ui and function incl. deckstore functions )
@@ -26,4 +26,3 @@
 - ResultDisciplineImage class to width/size
 - Add standard modal button blocks
 - Modal max width in pixels
-- Close modal with esc

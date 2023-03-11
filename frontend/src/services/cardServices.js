@@ -1,4 +1,3 @@
-import preconDecksData from '@/assets/data/preconDecks.json';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useDeck, useTags } from '@/hooks';
 
@@ -23,6 +22,9 @@ const urlLocalizedLibrary = (lang) =>
   `${
     import.meta.env.VITE_BASE_URL
   }/data/cardbase_lib.${lang}.json?v=${CARD_VERSION}`;
+const urlPreconDecks = `${
+  import.meta.env.VITE_BASE_URL
+}/data/precon_decks.json?v=${CARD_VERSION}`;
 
 export const getCardBase = async () => {
   const options = {
@@ -101,9 +103,18 @@ export const getLocalizedCardBase = async (lang) => {
   };
 };
 
-export const getPreconDecks = (cryptCardBase, libraryCardBase) => {
-  const preconDecks = {};
+export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+  };
 
+  const preconDecksData = await fetch(urlPreconDecks, options).then(
+    (response) => response.json()
+  );
+
+  const preconDecks = {};
   Object.keys(preconDecksData).map((set) => {
     Object.keys(preconDecksData[set]).map((precon) => {
       const deckid = `${set}:${precon}`;

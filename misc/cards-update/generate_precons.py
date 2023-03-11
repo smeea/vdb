@@ -153,8 +153,8 @@ playtest_bundles = {
 
 with open("cardbase_crypt.json", "r") as crypt_file, open(
     "cardbase_lib.json", "r"
-) as library_file, open("preconDecks.json", "w") as precons_file, open(
-    "preconDecks.min.json", "w"
+) as library_file, open("precon_decks.json", "w") as precons_file, open(
+    "precon_decks.min.json", "w"
 ) as precons_file_min:
     crypt = list(json.load(crypt_file).values())
     library = list(json.load(library_file).values())

@@ -358,7 +358,7 @@ def get_recommendation_route(deckid):
     elif ":" in deckid:
         set, precon = deckid.split(":")
 
-        with open("../frontend/src/assets/data/preconDecks.json", "r") as precons_file:
+        with open("../frontend/public/data/precon_decks.json", "r") as precons_file:
             precon_decks = json.load(precons_file)
             cards = {}
             for k, v in precon_decks[set][precon].items():

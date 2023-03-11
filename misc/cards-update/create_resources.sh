@@ -11,7 +11,7 @@ mv cardbase_crypt.min.json ../../frontend/public/data/cardbase_crypt.json
 mv cardbase_lib.min.json ../../frontend/public/data/cardbase_lib.json
 mv cardbase_crypt_playtest.min.json ../../frontend/public/data/cardbase_crypt_playtest.json
 mv cardbase_lib_playtest.min.json ../../frontend/public/data/cardbase_lib_playtest.json
-mv preconDecks.min.json ../../frontend/src/assets/data/preconDecks.json
+mv precon_decks.min.json ../../frontend/public/data/precon_decks.json
 mv artistsCrypt.min.json ../../frontend/src/assets/data/artistsCrypt.json
 mv artistsLib.min.json ../../frontend/src/assets/data/artistsLib.json
 

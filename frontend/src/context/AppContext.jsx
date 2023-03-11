@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
-import { setMany, getMany, update } from 'idb-keyval';
+import { set, setMany, getMany, update } from 'idb-keyval';
 import {
   initFromStorage,
   setLocalStorage,
@@ -97,6 +97,13 @@ export const AppProvider = (props) => {
       setNativeLibrary(data.nativeLibrary);
       setLocalizedCrypt({ 'en-EN': data.nativeCrypt });
       setLocalizedLibrary({ 'en-EN': data.nativeLibrary });
+
+      cardServices
+        .getPreconDecks(data.crypt, data.library)
+        .then((preconData) => {
+          set('preconDecks', preconData);
+          setPreconDecks(preconData);
+        });
     });
   };
 
@@ -109,7 +116,8 @@ export const AppProvider = (props) => {
       'nativeLibrary',
       'localizedCrypt',
       'localizedLibrary',
-    ]).then(([v, cb, lb, nc, nl, lc, ll]) => {
+      'preconDecks',
+    ]).then(([v, cb, lb, nc, nl, lc, ll, pd]) => {
       if (!v || CARD_VERSION > v) {
         fetchAndSetCardBase();
       } else {
@@ -119,6 +127,7 @@ export const AppProvider = (props) => {
         setNativeLibrary(nl);
         setLocalizedCrypt(lc);
         setLocalizedLibrary(ll);
+        setPreconDecks(pd);
       }
     });
 
@@ -174,14 +183,6 @@ export const AppProvider = (props) => {
     }
     deckStore.decks = undefined;
   };
-
-  useEffect(() => {
-    if (cryptCardBase && libraryCardBase) {
-      setPreconDecks(
-        cardServices.getPreconDecks(cryptCardBase, libraryCardBase)
-      );
-    }
-  }, [cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
