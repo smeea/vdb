@@ -150,7 +150,7 @@ const InventoryCryptTableRow = ({
             <ResultClanImage value={card.c.Clan} />
           </div>
           <div
-            className="flex min-w-[15px] justify-center"
+            className="flex min-w-[30px] justify-center"
             onClick={() => handleClick(card.c)}
           >
             <ResultCryptGroup value={card.c.Group} />

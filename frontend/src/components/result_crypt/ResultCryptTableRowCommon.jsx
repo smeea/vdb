@@ -72,7 +72,7 @@ const ResultCryptTableRowCommon = ({
               <ResultClanImage value={card.Clan} />
             </div>
           </td>
-          <td className="min-w-[15px]" onClick={() => handleClick(card)}>
+          <td className="min-w-[30px]" onClick={() => handleClick(card)}>
             <div className="flex justify-center">
               <ResultCryptGroup value={card.Group} />
             </div>

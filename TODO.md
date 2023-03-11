@@ -1,7 +1,6 @@
 # FIX
 - Older links (redirect in the web server)
 - Text multi search
-- DeckSortButton to justify-start menu items
 
 # FEATURES
 - Events decks archive analyzing
