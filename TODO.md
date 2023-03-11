@@ -26,6 +26,5 @@
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
 - Add standard modal button blocks
-- TwdResultLibrary (crypt also?) refactor to use banned check
 - Modal max width in pixels
 - Close modal with esc

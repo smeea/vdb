@@ -4,14 +4,14 @@ import {
   DeckLibraryTable,
   ResultModal,
   Tooltip,
-  Banned,
+  Warning,
 } from '@/components';
 // import { useApp } from '@/context';
-import { isTrifle } from '@/utils';
 import { cardtypeSortedFull } from '@/utils/constants';
-import { useModalCardController } from '@/hooks';
+import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryByTypeTable = ({ library }) => {
+  // TODO check if required
   // const { setShowFloatingButtons } = useApp();
   const [show, setShow] = useState({});
 
@@ -31,28 +31,13 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
     }
   };
 
-  let hasBanned = false;
-  let libraryTotal = 0;
-  let trifleTotal = 0;
-  const libraryByType = {};
-  const libraryByTypeTotal = {};
-
-  Object.keys(library).map((cardid) => {
-    if (library[cardid].c['Banned']) {
-      hasBanned = true;
-    }
-    libraryTotal += library[cardid].q;
-    const cardtype = library[cardid].c.Type;
-    if (libraryByType[cardtype] === undefined) {
-      libraryByType[cardtype] = [];
-      libraryByTypeTotal[cardtype] = 0;
-    }
-    libraryByType[cardtype].push(library[cardid]);
-    libraryByTypeTotal[cardtype] += library[cardid].q;
-    if (isTrifle(library[cardid].c)) {
-      trifleTotal += library[cardid].q;
-    }
-  });
+  const {
+    libraryByType,
+    hasBanned,
+    trifleTotal,
+    libraryTotal,
+    libraryByTypeTotal,
+  } = useDeckLibrary(library);
 
   const cards = [];
   cardtypeSortedFull
@@ -61,7 +46,6 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
       cards.push(...libraryByType[cardtype]);
     });
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -73,7 +57,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
   return (
     <div>
       <div className="font-bold">
-        Library [{libraryTotal}] {hasBanned && <Banned />}
+        Library [{libraryTotal}] {hasBanned && <Warning value="BANNED" />}
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>

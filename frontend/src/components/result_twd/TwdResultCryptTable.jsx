@@ -1,18 +1,14 @@
 import React from 'react';
-import { ResultModal, TwdResultCryptTableRow, Banned } from '@/components';
+import { ResultModal, TwdResultCryptTableRow, Warning } from '@/components';
 import { useApp } from '@/context';
 import { useDeckCrypt, useModalCardController } from '@/hooks';
 
 const TwdResultCryptTable = ({ crypt }) => {
   const { cryptDeckSort, setShowFloatingButtons } = useApp();
 
-  const { cryptGroups, hasBanned, cryptTotal, sortedCards } = useDeckCrypt(
-    crypt,
-    cryptDeckSort,
-    true
-  );
+  const { cryptGroups, hasBanned, hasWrongGroups, cryptTotal, sortedCards } =
+    useDeckCrypt(crypt, cryptDeckSort, true);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -29,7 +25,13 @@ const TwdResultCryptTable = ({ crypt }) => {
   return (
     <div>
       <div className="font-bold">
-        Crypt [{cryptTotal}] {cryptGroups} {hasBanned && <Banned />}
+        Crypt [{cryptTotal}] {cryptGroups}{' '}
+        {hasBanned && <Warning value="BANNED" />}
+        {hasWrongGroups ? (
+          <Warning value="GROUPS" />
+        ) : (
+          <div className="inline">{cryptGroups}</div>
+        )}
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>

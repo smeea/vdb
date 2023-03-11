@@ -37,23 +37,13 @@ const useDeckCrypt = (
 
   const cryptTotal = countCards(cryptFrom);
 
-  let cryptGroupMin = undefined;
-  let cryptGroupMax = undefined;
-  if (cryptFrom.length) {
-    cryptGroupMin = cryptFrom
-      .filter((card) => card.c.Group !== ANY)
-      .reduce(
-        (acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc),
-        10
-      );
+  const cryptGroupMin = cryptFrom
+    .filter((card) => card.c.Group !== ANY)
+    .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc), 10);
 
-    cryptGroupMax = cryptFrom
-      .filter((card) => card.c.Group !== ANY)
-      .reduce(
-        (acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc),
-        0
-      );
-  }
+  const cryptGroupMax = cryptFrom
+    .filter((card) => card.c.Group !== ANY)
+    .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
 
   let cryptGroups;
   let hasWrongGroups;
@@ -61,19 +51,8 @@ const useDeckCrypt = (
     cryptGroups = `- G${cryptGroupMin}-${cryptGroupMax}`;
   } else if (cryptGroupMax - cryptGroupMin == 0) {
     cryptGroups = `- G${cryptGroupMax}`;
-  } else {
+  } else if (cryptGroupMin && cryptGroupMax) {
     hasWrongGroups = true;
-    cryptGroups = (
-      <div className="inline items-center text-fgRed dark:text-fgRedDark">
-        <Exclamation
-          width="17"
-          heigth="17"
-          viewBox="0 2 16 16"
-          className="inline pr-1"
-        />
-        GROUPS
-      </div>
-    );
   }
 
   const sortedState = useMemo(() => {

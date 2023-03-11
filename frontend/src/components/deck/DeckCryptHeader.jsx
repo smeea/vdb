@@ -3,7 +3,7 @@ import InfoCircle from '@/assets/images/icons/info-circle.svg';
 import {
   DeckCryptTotalInfo,
   DeckNewCard,
-  Banned,
+  Warning,
   Button,
   SortButton,
 } from '@/components';
@@ -25,7 +25,7 @@ const DeckCryptHeader = ({
   const { isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
   const { disciplinesDetailed } = useKeyDisciplines(cards);
-  const { hasBanned, cryptTotal, cryptGroups } = useDeckCrypt(
+  const { hasBanned, cryptTotal, hasWrongGroups, cryptGroups } = useDeckCrypt(
     cards,
     null,
     null
@@ -39,10 +39,16 @@ const DeckCryptHeader = ({
             Crypt [{cryptTotal}
             {!inMissing && cryptTotal < 12 && ' of 12+'}]
           </div>
-          {!inMissing && cryptGroups && (
-            <div className="inline">{cryptGroups}</div>
+          {!inMissing && (
+            <>
+              {!inMissing && hasBanned && <Warning value="BANNED" />}
+              {hasWrongGroups ? (
+                <Warning value="GROUPS" />
+              ) : (
+                <div className="inline">{cryptGroups}</div>
+              )}
+            </>
           )}
-          {!inMissing && hasBanned && <Banned />}
         </div>
         <div className="flex space-x-1">
           {!inMissing && (
