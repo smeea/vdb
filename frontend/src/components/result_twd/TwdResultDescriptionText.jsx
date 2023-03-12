@@ -16,6 +16,9 @@ const TwdResultDescriptionText = ({ deck }) => {
 
   const handleClick = (target, value) => {
     clearSearchForm('twd');
+    if (target === 'location') {
+      value = { city: value };
+    }
     searchTwdForm[target] = value;
     navigate(
       `/twd?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`
