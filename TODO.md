@@ -1,6 +1,5 @@
 # FIX
 - Older links (redirect in the web server)
-- Text multi search
 - Arrows to navigate in Menu components
 
 # FEATURES
