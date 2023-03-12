@@ -68,7 +68,12 @@ const ResultModal = ({
   });
 
   return (
-    <Dialog open onClose={handleClose} className="relative z-50">
+    <Dialog
+      initialFocus={null}
+      open
+      onClose={handleClose}
+      className="relative z-50"
+    >
       <div
         className="fixed inset-0 bg-black bg-opacity-50"
         aria-hidden="true"
@@ -83,6 +88,9 @@ const ResultModal = ({
             } m-2 rounded bg-bgPrimary dark:bg-bgPrimaryDark`}
           >
             <div className="relative">
+              <div className="max-h-0 max-w-0 opacity-0">
+                <button />
+              </div>
               {isMobile ? (
                 <div {...swipeHandlers}>
                   {showImage ? (

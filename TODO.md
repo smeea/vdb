@@ -2,7 +2,6 @@
 - Older links (redirect in the web server)
 - Text multi search
 - Arrows to navigate in Menu components
-- Focus on mobile in modal
 - Swipe color stays
 
 # FEATURES
