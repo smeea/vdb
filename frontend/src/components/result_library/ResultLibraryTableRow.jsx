@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import {
-  ResultUsed,
   ButtonAddCard,
   ResultLibraryTableRowCommon,
+  ResultUsed,
 } from '@/components';
 import { useApp, deckStore, deckCardChange } from '@/context';
+import { useDebounce } from '@/hooks';
 
 const ResultLibraryTableRow = ({ card, handleClick, idx }) => {
   const { addMode, inventoryMode } = useApp();
@@ -15,6 +16,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx }) => {
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
   const [isSwiped, setIsSwiped] = useState();
+  useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
   const SWIPE_THRESHOLD = 50;
   const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
@@ -27,26 +29,14 @@ const ResultLibraryTableRow = ({ card, handleClick, idx }) => {
         addMode &&
         inDeck > 0
       ) {
+        setIsSwiped('left');
         deckCardChange(deck.deckid, card, inDeck - 1);
       }
     },
     onSwipedLeft: (e) => {
       if (e.absX > SWIPE_THRESHOLD && isEditable && addMode) {
+        setIsSwiped('right');
         deckCardChange(deck.deckid, card, inDeck + 1);
-      }
-    },
-    onSwiped: () => {
-      setIsSwiped(false);
-    },
-    onSwiping: (e) => {
-      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && addMode) {
-        if (e.deltaX < -SWIPE_THRESHOLD) {
-          setIsSwiped('left');
-        } else if (e.deltaX > SWIPE_THRESHOLD) {
-          setIsSwiped('right');
-        } else {
-          setIsSwiped(false);
-        }
       }
     },
   });

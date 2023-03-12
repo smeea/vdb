@@ -17,6 +17,7 @@ import {
   DeckDrawProbability,
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
+import { useDebounce } from '@/hooks';
 
 const DeckCryptTableRow = ({
   idx,
@@ -38,6 +39,7 @@ const DeckCryptTableRow = ({
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const [isSwiped, setIsSwiped] = useState();
+  useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
   const SWIPE_THRESHOLD = 50;
   const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
@@ -47,25 +49,15 @@ const DeckCryptTableRow = ({
         e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
         e.absX > SWIPE_THRESHOLD &&
         isEditable
-      )
+      ) {
+        setIsSwiped('left');
         deckCardChange(deckid, card.c, card.q - 1);
+      }
     },
     onSwipedLeft: (e) => {
-      if (e.absX > SWIPE_THRESHOLD && isEditable)
+      if (e.absX > SWIPE_THRESHOLD && isEditable) {
+        setIsSwiped('right');
         deckCardChange(deckid, card.c, card.q + 1);
-    },
-    onSwiped: () => {
-      setIsSwiped(false);
-    },
-    onSwiping: (e) => {
-      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE) {
-        if (e.deltaX < -SWIPE_THRESHOLD) {
-          setIsSwiped('left');
-        } else if (e.deltaX > SWIPE_THRESHOLD) {
-          setIsSwiped('right');
-        } else {
-          setIsSwiped(false);
-        }
       }
     },
   });

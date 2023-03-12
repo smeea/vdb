@@ -17,6 +17,7 @@ import {
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
 import { isTrifle, getHardTotal, getSoftMax } from '@/utils';
 import { useApp, usedStore, inventoryCardChange } from '@/context';
+import { useDebounce } from '@/hooks';
 
 const InventoryLibraryTableRow = ({
   card,
@@ -29,29 +30,21 @@ const InventoryLibraryTableRow = ({
   const { isMobile, isNarrow } = useApp();
 
   const [isSwiped, setIsSwiped] = useState();
+  useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
   const SWIPE_THRESHOLD = 50;
   const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
     swipeDuration: 250,
     onSwipedRight: (e) => {
-      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD)
+      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD) {
+        setIsSwiped('left');
         inventoryCardChange(card.c, card.q - 1);
+      }
     },
     onSwipedLeft: (e) => {
-      if (e.absX > SWIPE_THRESHOLD) inventoryCardChange(card.c, card.q + 1);
-    },
-    onSwiped: () => {
-      setIsSwiped(false);
-    },
-    onSwiping: (e) => {
-      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE) {
-        if (e.deltaX < -SWIPE_THRESHOLD) {
-          setIsSwiped('left');
-        } else if (e.deltaX > SWIPE_THRESHOLD) {
-          setIsSwiped('right');
-        } else {
-          setIsSwiped(false);
-        }
+      if (e.absX > SWIPE_THRESHOLD) {
+        setIsSwiped('right');
+        inventoryCardChange(card.c, card.q + 1);
       }
     },
   });
