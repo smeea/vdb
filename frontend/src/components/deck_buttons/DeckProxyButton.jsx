@@ -213,7 +213,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
                       })
                     }
                   >
-                    Missing in Inventory - Gray gaps
+                    Missing in Inventory - Gray gaps (A4)
                   </div>
                 </MenuItem>
                 <MenuItem>
@@ -225,7 +225,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
                       })
                     }
                   >
-                    Missing in Inventory - White gaps
+                    Missing in Inventory - White gaps (A4)
                   </div>
                 </MenuItem>
                 <MenuItem>

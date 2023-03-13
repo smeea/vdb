@@ -10,9 +10,7 @@
 
 # MAYBE LATER FEATURES
 - Offline decks storage
-- Notification on Incognito mode
 - Prioritize exact matches in add card (more than twda)
-- Inventory/deck import in excel
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Migration from screen width (isWide, etc) to container queries

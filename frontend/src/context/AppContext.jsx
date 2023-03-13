@@ -42,6 +42,7 @@ export const AppProvider = (props) => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
+  const [isNoIndexDB, setNoIndexDB] = useState();
   const [playtest, setPlaytest] = useState();
   const [showImage, setShowImage] = useState();
   const [addMode, setAddMode] = useState();
@@ -117,19 +118,23 @@ export const AppProvider = (props) => {
       'localizedCrypt',
       'localizedLibrary',
       'preconDecks',
-    ]).then(([v, cb, lb, nc, nl, lc, ll, pd]) => {
-      if (!v || CARD_VERSION > v) {
-        fetchAndSetCardBase();
-      } else {
-        setCryptCardBase(cb);
-        setLibraryCardBase(lb);
-        setNativeCrypt(nc);
-        setNativeLibrary(nl);
-        setLocalizedCrypt(lc);
-        setLocalizedLibrary(ll);
-        setPreconDecks(pd);
-      }
-    });
+    ])
+      .then(([v, cb, lb, nc, nl, lc, ll, pd]) => {
+        if (!v || CARD_VERSION > v) {
+          fetchAndSetCardBase();
+        } else {
+          setCryptCardBase(cb);
+          setLibraryCardBase(lb);
+          setNativeCrypt(nc);
+          setNativeLibrary(nl);
+          setLocalizedCrypt(lc);
+          setLocalizedLibrary(ll);
+          setPreconDecks(pd);
+        }
+      })
+      .catch(() => {
+        setNoIndexDB(true);
+      });
 
     whoAmI();
   }, []);
@@ -488,6 +493,7 @@ export const AppProvider = (props) => {
         isDesktop,
         lang,
         changeLang,
+        isNoIndexDB,
         isPlaytester,
         isPlaytestAdmin,
         playtest,
