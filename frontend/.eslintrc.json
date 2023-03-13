@@ -1,24 +1,25 @@
 {
 	"extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
 	],
 	"plugins": [
-    "react",
-    "import"
-  ],
+        "react",
+        "import"
+      ],
 	"parserOptions": {
 		"ecmaVersion": 2021,
 		"sourceType": "module",
-    "ecmaFeatures": {
+        "ecmaFeatures": {
 			"jsx": true
 		}
 	},
-	"env": {
-    "browser": true,
-    "node": true,
-    "es2021": true
-  },
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
 	"rules": {
 		"require-jsdoc": "off",
 		"react/prop-types": "off",

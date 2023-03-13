@@ -25,3 +25,4 @@
 - ResultDisciplineImage class to width/size
 - Add standard modal button blocks
 - Modal max width in pixels
+- Fix hooks eslint errors
