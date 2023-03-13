@@ -72,11 +72,11 @@ const Cards = () => {
         {isMobile ? (
           <>
             {card && (
-              <div className="pb-10">
+              <div className="pb-[59px]">
                 {showImage ? (
                   <CardImage className="w-full" card={card} set={imageSet} />
                 ) : (
-                  <div className="p-3">
+                  <div className="p-3 pb-0">
                     <ResultLayoutText
                       card={card}
                       setImageSet={setImageSet}
