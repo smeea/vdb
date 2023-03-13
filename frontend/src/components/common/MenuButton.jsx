@@ -14,7 +14,7 @@ const MenuButton = ({ title, icon, variant = 'primary', text }) => {
 
   return (
     <Menu.Button
-      className={`${customStyle[variant]} flex items-center justify-center min-h-[41px] gap-2 rounded px-3 py-1.5 w-full ${outlineStyle}`}
+      className={`${customStyle[variant]} flex min-h-[41px] w-full items-center justify-center gap-2 rounded px-3 py-1.5 ${outlineStyle}`}
       title={title}
     >
       {icon}

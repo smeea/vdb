@@ -35,7 +35,7 @@ const Modal = ({
       />
       <div className="fixed inset-0 overflow-y-auto">
         <div
-          className={`min-h-full justify-center flex p-0 sm:p-8 ${
+          className={`flex min-h-full justify-center p-0 sm:p-8 ${
             centered ? 'items-center' : 'items-start'
           }`}
         >

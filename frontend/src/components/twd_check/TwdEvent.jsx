@@ -127,12 +127,12 @@ const TwdEvent = ({ deckData }) => {
   return (
     <>
       {value && value.event_id === deckData.id ? (
-        <div className="font-mono text-sm pt-[5px]">
+        <div className="pt-[5px] font-mono text-sm">
           <div
             className={
               deckData.event === veknEvent.name
                 ? ''
-                : 'decoration-fgRed underline'
+                : 'underline decoration-fgRed'
             }
           >
             {veknEvent.name}
@@ -141,7 +141,7 @@ const TwdEvent = ({ deckData }) => {
             className={
               deckData.location === veknEvent.location
                 ? ''
-                : 'decoration-fgRed underline'
+                : 'underline decoration-fgRed'
             }
           >
             {veknEvent.location}
@@ -150,7 +150,7 @@ const TwdEvent = ({ deckData }) => {
             className={
               deckData.date === veknEvent.date
                 ? ''
-                : 'decoration-fgRed underline'
+                : 'underline decoration-fgRed'
             }
           >
             {veknEvent.date}
@@ -159,7 +159,7 @@ const TwdEvent = ({ deckData }) => {
             className={
               deckData.format === veknEvent.format
                 ? ''
-                : 'decoration-fgRed underline'
+                : 'underline decoration-fgRed'
             }
           >
             {veknEvent.format}
@@ -168,7 +168,7 @@ const TwdEvent = ({ deckData }) => {
             className={
               deckData.players === veknEvent.players
                 ? ''
-                : 'decoration-fgRed underline'
+                : 'underline decoration-fgRed'
             }
           >
             {veknEvent.players}
@@ -179,7 +179,7 @@ const TwdEvent = ({ deckData }) => {
               className={
                 deckData.url === veknEvent.url
                   ? ''
-                  : 'decoration-fgRed underline'
+                  : 'underline decoration-fgRed'
               }
               href={veknEvent.url}
               rel="noreferrer"

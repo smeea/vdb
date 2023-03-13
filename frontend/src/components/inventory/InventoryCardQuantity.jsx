@@ -46,7 +46,7 @@ const InventoryCardQuantity = ({
       {isMobile ? (
         <>
           <a
-            className="relative hover:no-underline before:absolute before:inset-[-12px] before:content-['']"
+            className="relative before:absolute before:inset-[-12px] before:content-[''] hover:no-underline"
             onClick={() => handleQuantityChange(-1)}
           >
             <Button
@@ -67,7 +67,7 @@ const InventoryCardQuantity = ({
             {state == 0 ? <>&nbsp;</> : state}
           </div>
           <a
-            className="relative hover:no-underline before:absolute before:inset-[-12px] before:content-['']"
+            className="relative before:absolute before:inset-[-12px] before:content-[''] hover:no-underline"
             onClick={() => handleQuantityChange(1)}
           >
             <Button
@@ -108,7 +108,7 @@ const InventoryCardQuantity = ({
             {manual ? (
               <form onSubmit={handleSubmit}>
                 <input
-                  className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-bgCheckboxSelected focus:outline outline-1 dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+                  className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
                   placeholder=""
                   type="number"
                   autoFocus={true}

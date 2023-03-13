@@ -11,7 +11,7 @@ import lastChange from '@/LAST_CHANGE.json';
 
 const ContactLi = ({ icon, children }) => {
   return (
-    <li className="flex px-0.5 gap-2.5">
+    <li className="flex gap-2.5 px-0.5">
       <div className="flex items-center text-fgThird dark:text-fgThirdDark">
         {icon}
       </div>

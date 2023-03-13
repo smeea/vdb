@@ -5,7 +5,6 @@ import { useDeckCrypt, useModalCardController } from '@/hooks';
 
 const TwdResultCryptTable = ({ crypt }) => {
   const { cryptDeckSort, setShowFloatingButtons } = useApp();
-
   const { cryptGroups, hasBanned, hasWrongGroups, cryptTotal, sortedCards } =
     useDeckCrypt(crypt, cryptDeckSort, true);
 
@@ -20,6 +19,11 @@ const TwdResultCryptTable = ({ crypt }) => {
   const handleClick = (card) => {
     handleModalCardOpen(card);
     setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -51,7 +55,7 @@ const TwdResultCryptTable = ({ crypt }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </div>

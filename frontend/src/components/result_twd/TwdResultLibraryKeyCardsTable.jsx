@@ -7,14 +7,11 @@ import { useModalCardController } from '@/hooks';
 
 const TwdResultLibraryKeyCardsTable = ({ library }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
-
   const sortedLibrary = librarySort(Object.values(library), GROUPED_TYPE);
   const libraryTotal = countCards(sortedLibrary);
-
   const keyCards = sortedLibrary.filter((card) => card.q >= 4);
   keyCards.sort((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
@@ -26,6 +23,11 @@ const TwdResultLibraryKeyCardsTable = ({ library }) => {
   const handleClick = (card) => {
     handleModalCardOpen(card);
     setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -51,7 +53,7 @@ const TwdResultLibraryKeyCardsTable = ({ library }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </div>

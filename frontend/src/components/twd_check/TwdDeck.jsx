@@ -5,12 +5,12 @@ import Upload from '@/assets/images/icons/upload.svg';
 import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { useDeckImport } from '@/hooks';
-import { cardtypeSortedFull } from '@/utils/constants';
+// import { cardtypeSortedFull } from '@/utils/constants';
 
 const fixForumBreaks = (text) => {
-  cardtypeSortedFull.map((cardtype) => {});
+  // TODO
+  // cardtypeSortedFull.map((cardtype) => {});
   // const url = text.match(/vekn.net\/event-calendar\/event\/\d+/g);
-
   return text;
 };
 
@@ -127,7 +127,7 @@ const TwdDeck = ({ deckData, setDeckData }) => {
         </div>
         <div className="xl:basis-10/12">
           <Textarea
-            className="text-sm font-mono"
+            className="font-mono text-sm"
             rows={window.innerHeight / 21 - 14}
             value={deckText}
             placeholder={placeholder}

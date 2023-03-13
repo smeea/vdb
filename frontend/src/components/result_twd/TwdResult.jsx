@@ -63,13 +63,13 @@ const TwdResult = ({ results, setResults }) => {
                   <TwdResultDescription deck={deck} />
                 </div>
                 <div className="flex basis-full gap-2 lg:basis-3/4">
-                  <div className="basis-1/2 sm:basis-1/3">
+                  <div className="basis-1/2 md:basis-1/3">
                     <TwdResultCryptTable crypt={deck['crypt']} />
                   </div>
-                  <div className="max-sm:hidden sm:basis-1/3">
+                  <div className="max-md:hidden md:basis-1/3">
                     <TwdResultLibraryByTypeTable library={deck['library']} />
                   </div>
-                  <div className="basis-1/2 sm:basis-1/3">
+                  <div className="basis-1/2 md:basis-1/3">
                     <TwdResultLibraryKeyCardsTable library={deck['library']} />
                   </div>
                 </div>

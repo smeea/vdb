@@ -3,7 +3,7 @@ import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
 
 const Warning = ({ value }) => {
   return (
-    <div className="dark:text-fgRedDarkark:text-fgRedDark whitespace-nowrap inline items-center text-fgRed">
+    <div className="dark:text-fgRedDarkark:text-fgRedDark inline items-center whitespace-nowrap text-fgRed">
       <Exclamation
         width="17"
         heigth="17"

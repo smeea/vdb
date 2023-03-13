@@ -7,9 +7,11 @@ import {
   DeckLibraryHeader,
 } from '@/components';
 import { MASTER } from '@/utils/constants';
+import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
+  const { setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const {

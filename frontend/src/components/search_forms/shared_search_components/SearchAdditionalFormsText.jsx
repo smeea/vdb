@@ -20,7 +20,6 @@ const SearchAdditionalFormsText = ({
       value.map((v, idx) => {
         draft[idx] = v.value.toString();
       });
-      return draft;
     });
   }, [value]);
 
@@ -28,7 +27,6 @@ const SearchAdditionalFormsText = ({
     const { name, value } = e.target;
     setText((draft) => {
       draft[name] = value;
-      return draft;
     });
 
     onChange(e);

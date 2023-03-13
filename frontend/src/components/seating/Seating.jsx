@@ -158,28 +158,24 @@ const Seating = ({ setShow }) => {
   const toggleCustom = (i) => {
     setCustomDecks((draft) => {
       draft[i].state = !draft[i].state;
-      return draft;
     });
   };
 
   const toggleStandard = (i) => {
     setStandardDecks((draft) => {
       draft[i].state = !draft[i].state;
-      return draft;
     });
   };
 
   const addCustomDeck = (name) => {
     setCustomDecks((draft) => {
       draft.unshift({ deckid: null, name: name, state: true });
-      return draft;
     });
   };
 
   const removeCustomDeck = (i) => {
     setCustomDecks((draft) => {
       draft.splice(i, 1);
-      return draft;
     });
   };
 

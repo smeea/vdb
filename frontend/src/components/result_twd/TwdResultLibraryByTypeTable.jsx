@@ -6,16 +6,15 @@ import {
   Tooltip,
   Warning,
 } from '@/components';
-// import { useApp } from '@/context';
+import { useApp } from '@/context';
 import { cardtypeSortedFull } from '@/utils/constants';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryByTypeTable = ({ library }) => {
-  // TODO check if required
-  // const { setShowFloatingButtons } = useApp();
+  const { setShowFloatingButtons } = useApp();
   const [show, setShow] = useState({});
 
-  const handleClick = (cardtype) => {
+  const handleClickType = (cardtype) => {
     setShow((prevState) => {
       if (prevState[cardtype]) {
         return {};
@@ -25,8 +24,18 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
     });
   };
 
+  const handleClickCard = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
+  };
+
   const handleHover = (cardtype) => {
-    if (Object.keys(show).length && !show[cardtype]) {
+    if (Object.keys(show).length > 0 && !show[cardtype]) {
       setShow({});
     }
   };
@@ -80,7 +89,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
                   </td>
                   <td
                     onMouseOver={() => handleHover(cardtype)}
-                    onClick={() => handleClick(cardtype)}
+                    onClick={() => handleClickType(cardtype)}
                     className="w-full"
                   >
                     <Tooltip
@@ -90,7 +99,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
                         <div className="p-1">
                           <DeckLibraryTable
                             deck={{}}
-                            handleModalCardOpen={handleModalCardOpen}
+                            handleClick={handleClickCard}
                             cards={libraryByType[cardtype]}
                           />
                         </div>
@@ -113,7 +122,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </div>

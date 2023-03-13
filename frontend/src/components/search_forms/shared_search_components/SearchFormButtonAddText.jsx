@@ -7,7 +7,7 @@ const SearchFormButtonAddText = ({ searchForm }) => {
     searchForm.text.push({
       value: '',
       regex: false,
-      inText: false,
+      in: false,
       logic: 'and',
     });
   };

@@ -45,7 +45,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
           <div
             className={
               noClose || isNarrow
-                ? 'max-h-0 max-w-0 opacity-0 hidden'
+                ? 'hidden max-h-0 max-w-0 opacity-0'
                 : 'flex justify-center'
             }
           >

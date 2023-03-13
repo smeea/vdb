@@ -175,7 +175,6 @@ const Review = () => {
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && deckid) {
       if (!deckFrom || deckFrom.deckid != deckid) {
-        console.log();
         if (decks?.[deckid]) {
           setDeckFrom(decks[deckid]);
         } else if (deckid.includes(':') && preconDecks) {

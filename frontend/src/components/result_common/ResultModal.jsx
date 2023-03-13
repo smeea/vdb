@@ -79,7 +79,7 @@ const ResultModal = ({
         aria-hidden="true"
       />
       <div className="fixed inset-0 overflow-y-auto">
-        <div className="min-h-full items-center justify-center flex p-0 sm:p-8">
+        <div className="flex min-h-full items-center justify-center p-0 sm:p-8">
           <Dialog.Panel
             className={`w-full space-y-2 sm:w-[900px] ${
               bordered

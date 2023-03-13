@@ -23,7 +23,7 @@ const Input = React.forwardRef(
   ) => {
     return (
       <input
-        className={`min-h-[42px] w-full border-borderSecondary bg-bgPrimary px-2 outline-bgCheckboxSelected placeholder:text-midGray focus:outline outline-1 dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${
+        className={`min-h-[42px] w-full border-borderSecondary bg-bgPrimary px-2 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${
           className ?? ''
         } ${borderStyle ?? 'border'} ${roundedStyle ?? 'rounded'}
 `}

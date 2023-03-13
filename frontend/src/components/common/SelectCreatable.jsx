@@ -20,8 +20,6 @@ const SelectCreatable = React.forwardRef(
     ref
   ) => {
     return (
-      // TODO add outline
-      // dark:outline-bgCheckboxSelectedDark focus:outline outline-1 outline-bgCheckboxSelected
       <ReactSelectCreatable
         autoFocus={autoFocus}
         isClearable={isClearable}
