@@ -16,7 +16,6 @@
 - Migration from screen width (isWide, etc) to container queries
 - Refactor standard colors
 - Configure vite-pwa
-- Update url for playtest images to mitigate caching
 - Refactor InventoryCrypt and InventoryLibrary
 - Refactor deck buttons (split in button ui and function incl. deckstore functions )
 - Explicit image width/height

@@ -26,12 +26,12 @@ const CardImage = ({ card, set, className, onClick }) => {
         <picture className={className ?? 'min-w-[358px]'}>
           <source
             media="(max-width: 576px)"
-            srcSet={`${baseUrl}.webp`}
+            src={`${baseUrl}.webp?v=${import.meta.env.VITE_CARD_VERSION}`}
             type="image/webp"
           />
           <img
             className={className ?? 'min-w-[358px]'}
-            src={`${baseUrl}.jpg`}
+            src={`${baseUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
             alt={card['Name']}
             onClick={onClick}
           />

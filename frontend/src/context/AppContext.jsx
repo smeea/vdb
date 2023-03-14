@@ -79,7 +79,7 @@ export const AppProvider = (props) => {
   const [showMenuButtons, setShowMenuButtons] = useState();
 
   // CARD BASE
-  const CARD_VERSION = '2023-03-09';
+  const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
   const fetchAndSetCardBase = () => {
     cardServices.getCardBase().then((data) => {
       setMany([
