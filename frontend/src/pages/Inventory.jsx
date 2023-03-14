@@ -125,7 +125,7 @@ const Inventory = () => {
     <div className="inventory-container mx-auto">
       {(!inShared && username) || (inShared && !inventoryError) ? (
         <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-          <div className="max-xl:hidden xl:basis-1/12" />
+          {/* <div className="max-xl:hidden xl:basis-1/12" /> */}
           <div
             className={`${
               showCryptOnMobile ? 'flex' : 'hidden'
