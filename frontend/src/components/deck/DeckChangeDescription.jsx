@@ -8,12 +8,12 @@ import { deckUpdate } from '@/context';
 
 const DeckDescription = ({ deck, folded, setFolded }) => {
   const { deckid, description, isAuthor, isPublic, isFrozen } = deck;
-  const [value, setValue] = useState(description);
+  const [value, setValue] = useState(description || '');
   const [success, setSuccess] = useState(false);
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (value !== description) setValue(description);
+    if (value !== description && description) setValue(description);
   }, [description]);
 
   const handleChange = (event) => {

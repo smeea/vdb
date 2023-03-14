@@ -9,12 +9,12 @@ import { Input, InputPreLabel, Button, DeckFreezeButton } from '@/components';
 
 const DeckChangeName = ({ deck }) => {
   const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
-  const [value, setValue] = useState(deck.name);
+  const [value, setValue] = useState(deck.name || '');
   const [success, setSuccess] = useState(false);
   const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
 
   useEffect(() => {
-    if (value !== deck.name) setValue(deck.name);
+    if (value !== deck.name && deck.name) setValue(deck.name);
   }, [deck.name]);
 
   const handleChange = (event) => {

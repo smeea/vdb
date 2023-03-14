@@ -6,12 +6,12 @@ import { deckUpdate } from '@/context';
 
 const DeckChangeBranchName = ({ deck }) => {
   const { deckid, branchName, isAuthor, isPublic, isFrozen } = deck;
-  const [value, setValue] = useState(branchName);
+  const [value, setValue] = useState(branchName || '');
   const [success, setSuccess] = useState(false);
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (value !== branchName) setValue(branchName);
+    if (value !== branchName && branchName) setValue(branchName);
   }, [branchName]);
 
   const handleChange = (event) => {

@@ -6,12 +6,12 @@ import { deckUpdate } from '@/context';
 
 const DeckChangeAuthor = ({ deck }) => {
   const { deckid, author, isAuthor, isPublic, isFrozen } = deck;
-  const [value, setValue] = useState(author);
+  const [value, setValue] = useState(author || '');
   const [success, setSuccess] = useState(false);
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (value !== author) setValue(author);
+    if (value !== author && author) setValue(author);
   }, [author]);
 
   const handleChange = (event) => {
