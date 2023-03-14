@@ -206,6 +206,12 @@ const Decks = () => {
   ]);
 
   useEffect(() => {
+    if (cryptCardBase && libraryCardBase && decks?.[deckid]) {
+      setDeck(decks[deckid]);
+    }
+  }, [username]);
+
+  useEffect(() => {
     if (deck) {
       setError(false);
       if (!deckid) navigate(`/decks/${deck.deckid}`);
