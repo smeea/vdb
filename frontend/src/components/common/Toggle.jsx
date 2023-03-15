@@ -11,7 +11,7 @@ const Toggle = ({ isOn, toggle, size = 'md', disabled = false, children }) => {
 
   return (
     <div
-      className={`flex items-center space-x-2 ${
+      className={`flex items-center gap-2 ${
         !disabled && isOn ? '' : 'text-midGray dark:text-midGrayDark'
       }`}
       onClick={() => !disabled && toggle()}
@@ -29,7 +29,7 @@ const Toggle = ({ isOn, toggle, size = 'md', disabled = false, children }) => {
           viewBox="0 0 16 16"
         />
       )}
-      <div className="flex items-center">{children}</div>
+      {children && <div className="flex items-center">{children}</div>}
     </div>
   );
 };

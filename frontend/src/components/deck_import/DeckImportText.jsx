@@ -85,26 +85,28 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       size="lg"
       title="Import from Text"
     >
-      <div>
-        <Textarea
-          className="w-full font-mono"
-          rows={isMobile ? '20' : '25'}
-          value={deckText}
-          placeholder={placeholder}
-          onChange={handleChange}
-          ref={ref}
-        />
-        <div className={isMobile ? 'flex justify-end' : 'flex justify-end'}>
+      <div className="flex flex-col gap-3 sm:gap-5">
+        <div className="relative">
+          <Textarea
+            className="w-full font-mono"
+            rows={isMobile ? '20' : '25'}
+            value={deckText}
+            placeholder={placeholder}
+            onChange={handleChange}
+            ref={ref}
+          />
+          {emptyError && (
+            <ErrorOverlay placement="bottom">ENTER DECK LIST</ErrorOverlay>
+          )}
+          {importError && (
+            <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
+          )}
+        </div>
+        <div className="flex justify-end">
           <Button variant="primary" onClick={importDeckFromText}>
             Import
           </Button>
         </div>
-        {emptyError && (
-          <ErrorOverlay placement="bottom">ENTER DECK LIST</ErrorOverlay>
-        )}
-        {importError && (
-          <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
-        )}
       </div>
     </Modal>
   );

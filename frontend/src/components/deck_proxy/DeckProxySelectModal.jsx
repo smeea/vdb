@@ -149,7 +149,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       title="Create PDF with Card Proxies"
       noPadding={isMobile}
     >
-      <div className="space-y-5">
+      <div className="flex flex-col gap-3 sm:gap-5">
         <div className="flex gap-5 max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
             {deck.crypt && (
@@ -182,7 +182,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
         </div>
-        <div className="flex gap-1 max-md:flex-col md:justify-end">
+        <div className="flex max-sm:p-2 max-sm:pt-0 max-sm:flex-col gap-2 justify-end">
           <Button
             variant="primary"
             onClick={() =>

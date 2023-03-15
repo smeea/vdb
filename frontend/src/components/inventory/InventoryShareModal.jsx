@@ -35,9 +35,6 @@ const InventoryShareModal = ({ setShow }) => {
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then(() => {
         setInventoryKey(newKey);
         const u = `${import.meta.env.VITE_BASE_URL}/inventory?key=${newKey}`;
         setShareUrl(u);
@@ -65,38 +62,40 @@ const InventoryShareModal = ({ setShow }) => {
       centered={isMobile}
       title="Inventory Share"
     >
-      <div>
-        {inventoryKey ? (
-          <>
-            <a href={shareUrl}>{shareUrl}</a>
-            <span
-              className="inline text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark  "
-              onClick={() => navigator.clipboard.writeText(shareUrl)}
-            >
-              <ClipboardFill viewBox="0 0 18 18" />
-            </span>
+      <div className="flex gap-3 flex-col sm:gap-5">
+        <div>
+          {inventoryKey ? (
+            <>
+              <a href={shareUrl}>{shareUrl}</a>
+              <div
+                className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark  "
+                onClick={() => navigator.clipboard.writeText(shareUrl)}
+              >
+                <ClipboardFill className="inline" viewBox="0 0 18 18" />
+              </div>
+              <div>
+                Only this URL will work (old become obsolete after creating new)
+              </div>
+            </>
+          ) : (
             <div>
-              Only this URL will work (old become obsolete after creating new)
+              After creating Share URL people can view (not edit!) your
+              inventory by opening the link
             </div>
-          </>
-        ) : (
-          <div>
-            After creating Share URL people can view (not edit!) your inventory
-            by opening the link
-          </div>
-        )}
-      </div>
-      <div>
-        <ButtonIconed
-          variant={success ? 'success' : 'primary'}
-          onClick={createUrl}
-          title="Create URL"
-          icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
-          text="Create URL"
-        />
-        <Button variant="primary" onClick={handleClose}>
-          Close
-        </Button>
+          )}
+        </div>
+        <div className="flex sm:flex-row flex-col justify-end gap-2">
+          <ButtonIconed
+            variant={success ? 'success' : 'primary'}
+            onClick={createUrl}
+            title="Create URL"
+            icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
+            text="Create URL"
+          />
+          <Button variant="primary" onClick={handleClose}>
+            Close
+          </Button>
+        </div>
       </div>
     </Modal>
   );

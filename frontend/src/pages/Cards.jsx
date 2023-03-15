@@ -130,8 +130,7 @@ const Cards = () => {
           </>
         ) : (
           <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-            <div className="block xl:min-w-[175px]" />
-            <div className="flex min-w-[900px] basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+            <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
               {cryptCardBase && libraryCardBase && (
                 <div>
                   <QuickSelect

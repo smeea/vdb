@@ -95,9 +95,11 @@ const SeatingModal = ({
               )}
             </div>
           </div>
-          <div className="flex items-center justify-center md:w-7/12 xl:w-7/12">
-            {seating && <SeatingTables seating={seating} />}
-          </div>
+          {seating && (
+            <div className="flex items-center justify-center md:w-7/12 xl:w-7/12">
+              <SeatingTables seating={seating} />
+            </div>
+          )}
         </div>
         {showSelectRandom && (
           <SeatingSelectRandom

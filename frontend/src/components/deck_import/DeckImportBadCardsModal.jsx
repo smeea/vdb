@@ -40,38 +40,32 @@ const DeckImportBadCardsModal = ({
   return (
     <Modal
       handleClose={() => setBadCards([])}
-      size="lg"
       title="Fix Bad Import"
       noPadding={isMobile}
     >
-      <div>
-        {badCards.map((c, idx) => {
-          return (
-            <div
-              key={idx}
-              className="flex flex-row items-center gap-1 sm:gap-3"
-            >
-              <div className="basis-1/3 sm:basis-2/5">{c}</div>
-              <div className="min-w-[75px]">
-                <DeckCardQuantity
-                  deckid={deckid}
-                  cardChange={handleCardChange}
-                  card={idx}
-                  q={cards[idx]?.q}
-                  isEditable
-                />
-              </div>
-              <div className="basis-2/3 sm:basis-3/5">
-                <QuickSelect
-                  setCard={(card) => handleSetCard(card, idx)}
-                  selectedCardid={cards[idx]?.c?.Id}
-                  inBadImport
-                />
-              </div>
+      {badCards.map((c, idx) => {
+        return (
+          <div key={idx} className="flex flex-row items-center gap-1 sm:gap-3">
+            <div className="basis-1/3 sm:basis-2/5">{c}</div>
+            <div className="min-w-[75px]">
+              <DeckCardQuantity
+                deckid={deckid}
+                cardChange={handleCardChange}
+                card={idx}
+                q={cards[idx]?.q}
+                isEditable
+              />
             </div>
-          );
-        })}
-      </div>
+            <div className="basis-2/3 sm:basis-3/5">
+              <QuickSelect
+                setCard={(card) => handleSetCard(card, idx)}
+                selectedCardid={cards[idx]?.c?.Id}
+                inBadImport
+              />
+            </div>
+          </div>
+        );
+      })}
     </Modal>
   );
 };

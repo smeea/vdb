@@ -27,7 +27,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
       title={deck.name}
       noPadding={isMobile}
     >
-      <div>
+      <div className="flex gap-3 flex-col sm:gap-5">
         <div className="flex gap-3 max-sm:flex-col sm:gap-5">
           <div className="basis-full md:basis-5/9">
             <div
@@ -50,23 +50,19 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
             />
           </div>
         </div>
-        <div className="flex justify-end">
+        <div className="flex max-sm:p-2 max-sm:pt-0 sm:flex-row flex-col justify-end gap-2">
           {inInventory && (
-            <div>
-              <ButtonIconed
-                variant="primary"
-                onClick={handleMissAllVtes}
-                text="Missing for Complete VTES Collection (SLOW!)"
-                icon={<Gem />}
-              />
-            </div>
-          )}
-          <div>
-            <DeckExportButton
-              deck={{ ...deck, crypt: crypt, library: library }}
-              inMissing
+            <ButtonIconed
+              variant="primary"
+              onClick={handleMissAllVtes}
+              text="Missing for Complete VTES Collection (SLOW!)"
+              icon={<Gem />}
             />
-          </div>
+          )}
+          <DeckExportButton
+            deck={{ ...deck, crypt: crypt, library: library }}
+            inMissing
+          />
         </div>
       </div>
     </Modal>

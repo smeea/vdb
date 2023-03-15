@@ -17,7 +17,7 @@ import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
 
 const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
-  const { setShowFloatingButtons } = useApp();
+  const { isMobile, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const [sortMethod, setSortMethod] = useState('byName');
   const [isSelectedAll, setIsSelectedAll] = useState(false);
@@ -190,8 +190,13 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
   };
 
   return (
-    <Modal noPadding handleClose={handleClose} size="xl" title="Select Deck">
-      <div className="space-y-4">
+    <Modal
+      noPadding={isMobile}
+      handleClose={handleClose}
+      size="xl"
+      title="Select Deck"
+    >
+      <div className="flex flex-col gap-3 sm:gap-5">
         <div>
           <DeckSelectAdvModalTotal
             tagsFilter={tagsFilter}
@@ -233,7 +238,7 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
             </tbody>
           </table>
         </div>
-        <div className="flex justify-end ">
+        <div className="flex max-sm:p-2 max-sm:pt-0 max-sm:flex-col justify-end">
           <Menu as="div" className="relative">
             <MenuButton
               title="Export Selected"

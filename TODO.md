@@ -1,6 +1,7 @@
 # FIX
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
+- Menu buttons in dark theme to be variant="primary"
 
 # FEATURES
 - Events decks archive analyzing
@@ -20,6 +21,5 @@
 - Refactor deck buttons (split in button ui and function incl. deckstore functions )
 - Explicit image width/height
 - ResultDisciplineImage class to width/size
-- Add standard modal button blocks
 - Modal max width in pixels
 - Fix hooks eslint errors

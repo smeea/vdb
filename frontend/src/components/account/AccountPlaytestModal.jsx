@@ -33,7 +33,7 @@ const AccountPlaytestModal = ({ setShow }) => {
 
   return (
     <Modal handleClose={handleClose} title="Manage Playtesters">
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         <AccountPlaytestAdd
           playtesters={value}
           newPlaytesters={newPlaytesters}
@@ -50,11 +50,6 @@ const AccountPlaytestModal = ({ setShow }) => {
                   username={u}
                 />
               ))}
-        </div>
-        <div className="flex justify-end">
-          <Button variant="primary" onClick={handleClose}>
-            Close
-          </Button>
         </div>
       </div>
     </Modal>

@@ -83,7 +83,11 @@ const DeckCardQuantity = ({
                   -
                 </Button>
               </a>
-              <div className={inventoryColor}>{q == 0 ? '' : q}</div>
+              <div
+                className={`mx-1 flex w-full justify-center ${inventoryColor}`}
+              >
+                {q == 0 ? '' : q}
+              </div>
               <a
                 className="relative before:absolute before:inset-[-12px] before:content-[''] hover:no-underline"
                 onClick={() => cardChange(deckid, card, q + 1)}
@@ -150,9 +154,7 @@ const DeckCardQuantity = ({
           )}
         </div>
       ) : (
-        <div
-          className={`flex items-center justify-center text-lg ${inventoryColor}`}
-        >
+        <div className={`flex justify-center text-lg ${inventoryColor}`}>
           {q || null}
         </div>
       )}
