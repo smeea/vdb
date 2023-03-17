@@ -2,12 +2,14 @@
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
 - Menu buttons in dark theme to be variant="primary"
+- Draw chances in Review
 
 # FEATURES
 - Events decks archive analyzing
 - Custom values for cardtypes in TWD/PDA
 - Playable by buttons to lib/crypt
 - Add deck as revision
+- Update Card Images
 
 # MAYBE LATER FEATURES
 - Offline decks storage
