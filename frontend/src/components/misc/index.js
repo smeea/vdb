@@ -20,7 +20,6 @@ export { default as NavMobileMenu } from './NavMobileMenu.jsx';
 export { default as NewCardSelect } from './NewCardSelect.jsx';
 export { default as OfflineNotification } from './OfflineNotification.jsx';
 export { default as GlobalNotification } from './GlobalNotification.jsx';
-export { default as IncognitoNotification } from './IncognitoNotification.jsx';
 export { default as QuickSelect } from './QuickSelect.jsx';
 export { default as SelectLabelCrypt } from './SelectLabelCrypt.jsx';
 export { default as SelectLabelLibrary } from './SelectLabelLibrary.jsx';

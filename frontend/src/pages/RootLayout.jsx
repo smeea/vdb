@@ -2,11 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { AppProvider, ThemeProvider } from '@/context';
 import Navigation from '@/pages/Navigation.jsx';
-import {
-  IncognitoNotification,
-  OfflineNotification,
-  UpdateNotification,
-} from '@/components';
+import { OfflineNotification, UpdateNotification } from '@/components';
 
 const RootLayout = () => {
   return (
@@ -14,7 +10,6 @@ const RootLayout = () => {
       <ThemeProvider>
         <Navigation />
         <OfflineNotification />
-        <IncognitoNotification />
       </ThemeProvider>
       <Outlet />
       <UpdateNotification />

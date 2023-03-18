@@ -42,7 +42,6 @@ export const AppProvider = (props) => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
-  const [isNoIndexDB, setNoIndexDB] = useState();
   const [playtest, setPlaytest] = useState();
   const [showImage, setShowImage] = useState();
   const [addMode, setAddMode] = useState();
@@ -80,17 +79,19 @@ export const AppProvider = (props) => {
 
   // CARD BASE
   const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
-  const fetchAndSetCardBase = () => {
+  const fetchAndSetCardBase = (isIndexedDB = true) => {
     cardServices.getCardBase().then((data) => {
-      setMany([
-        ['cardVersion', CARD_VERSION],
-        ['cryptCardBase', data.crypt],
-        ['libraryCardBase', data.library],
-        ['nativeCrypt', data.nativeCrypt],
-        ['nativeLibrary', data.nativeLibrary],
-        ['localizedCrypt', { 'en-EN': data.nativeCrypt }],
-        ['localizedLibrary', { 'en-EN': data.nativeLibrary }],
-      ]);
+      if (isIndexedDB) {
+        setMany([
+          ['cardVersion', CARD_VERSION],
+          ['cryptCardBase', data.crypt],
+          ['libraryCardBase', data.library],
+          ['nativeCrypt', data.nativeCrypt],
+          ['nativeLibrary', data.nativeLibrary],
+          ['localizedCrypt', { 'en-EN': data.nativeCrypt }],
+          ['localizedLibrary', { 'en-EN': data.nativeLibrary }],
+        ]);
+      }
 
       setCryptCardBase(data.crypt);
       setLibraryCardBase(data.library);
@@ -102,7 +103,9 @@ export const AppProvider = (props) => {
       cardServices
         .getPreconDecks(data.crypt, data.library)
         .then((preconData) => {
-          set('preconDecks', preconData);
+          if (isIndexedDB) {
+            set('preconDecks', preconData);
+          }
           setPreconDecks(preconData);
         });
     });
@@ -133,7 +136,7 @@ export const AppProvider = (props) => {
         }
       })
       .catch(() => {
-        setNoIndexDB(true);
+        fetchAndSetCardBase(false);
       });
 
     whoAmI();
@@ -493,7 +496,6 @@ export const AppProvider = (props) => {
         isDesktop,
         lang,
         changeLang,
-        isNoIndexDB,
         isPlaytester,
         isPlaytestAdmin,
         playtest,
