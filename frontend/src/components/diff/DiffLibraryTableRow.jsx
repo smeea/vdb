@@ -68,7 +68,7 @@ const DiffLibraryTableRow = ({
           <DeckDrawProbability
             cardName={card.c.Name}
             N={libraryTotal}
-            n={4}
+            n={7}
             k={card.q}
           />
         </td>
