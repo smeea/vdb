@@ -201,8 +201,7 @@ const About = () => {
         <div className="space-y-1">
           <Title>DONATIONS</Title>
           <div>
-            Patreon:{' '}
-            <a href="https://www.patreon.com/smeea">www.patreon.com/smeea</a>
+            Patreon: <a href="https://patreon.com/smeea">patreon.com/smeea</a>
           </div>
           <div>
             Bitcoin (BTC):{' '}

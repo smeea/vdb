@@ -1181,7 +1181,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[dom] (D) Bleed with +1 bleed.\n[obe] (D) Bleed with +1 bleed. Vampires with Dementation [dem], mortals, and mages get -1 intercept against this action.\n[OBE] +1 stealth action. (D) Take control of any Malkavian, Malkavian antitribu, mortal, or mage until the end of the turn.",
+        "Card Text":"[dom] (D) Bleed with +1 bleed.\n[obe] (D) Bleed with +1 bleed. Vampires with Dementation [dem], mortals, and mages get -1 intercept during this action.\n[OBE] +1 stealth action. (D) Take control of a Malkavian, Malkavian antitribu, mortal, or mage until the end of the turn.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Dominate/Obeah",
@@ -1196,6 +1196,9 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -1522,7 +1525,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique dhampir with 2 life. 1 strength, 0 bleed.\nRequires at least two Gehenna cards in play. Alia can play cards that require basic Auspex [aus] or Obeah [obe] as a vampire. She may move a vampire in your torpor region to your ready region as a +1 stealth action. (D) actions directed at her cost an additional pool.",
+        "Card Text":"Unique dhampir with 2 life. 1 strength, 0 bleed. Requires 2 or more Gehenna events in play.\nAlia can play cards requiring basic Auspex [aus] and/or basic Obeah [obe] as a vampire. She can move a vampire from your torpor region to your ready region as a +1 stealth action. Actions directed at her cost +1 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -1541,6 +1544,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":25,
@@ -2650,6 +2656,9 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":33,
@@ -4004,7 +4013,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[aus] (D) Lock an unlocked minion.\n[mel] (D) As [aus] above, and the target minion burns 1 blood or life.\n[MEL] (D) Put this card on a ready unlocked minion and lock them. The attached minion burns 1 blood or life each time they announce an action or attempt to block. During their master phase, they can lock and burn 1 pool to burn this card. A minion can have only one Art's Traumatic Essence.",
+        "Card Text":"+1 stealth action.\n[aus] (D) Lock any unlocked minion.\n[mel] (D) Lock any unlocked minion, and that minion burns 1 blood or life.\n[MEL] (D) Put this card on any ready unlocked minion and lock that minion. The minion with this card burns 1 additional blood or life each time he or she attempts to take an action or block. During his or her master phase, the controller of the minion with this card may lock this minion and burn a pool to burn this card. A minion may have only one Art's Traumatic Essence.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Melpominee",
@@ -4026,9 +4035,6 @@
             },
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":8,
@@ -5650,7 +5656,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nYou can lock this card during the polling step of a political action to get +1 vote for each ready Daughter of Cacophony you control. If you control no ready Daughters of Cacophony, you can lock and burn this location during the polling step of a political action to get +1 vote.",
+        "Card Text":"Master: unique location.\nLock during the referendum of a political action to gain X votes, where X is the number of ready Daughters of Cacophony you control. If you control no ready Daughters of Cacophony, you may lock and burn this location during the referendum of a political action to gain 1 vote.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -5665,9 +5671,6 @@
             },
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":8,
@@ -5706,7 +5709,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[vic] Put this card on the acting vampire. Search your library and put a non-unique, non-location equipment card on another minion you control. Do not pay the cost to equip. The vampire with this card cannot attempt actions, block or cast votes or ballots. You may burn this card and the chosen equipment card during your unlock phase or when the minion with the chosen equipment leaves the controlled region.\n[VIC] As above, but you may burn this card and the chosen equipment at any time.",
+        "Card Text":"+1 stealth action.\n[vic] Put this card on this vampire, search your library for a non-unique non-location equipment card, and put it on another minion you control (ignore requirements and cost; shuffle afterward). This vampire cannot perform actions, block or cast votes or ballots. You can burn this card and the chosen equipment during your unlock phase or after the minion with the chosen equipment leaves the controlled region.\n[VIC] As above, but you can burn this card and the chosen equipment at any time.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -5744,6 +5747,9 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -6065,7 +6071,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Successful referendum means you gain 1 pool for each ready Daughter of Cacophony you control, and each non-Daughter of Cacophony vampire casting votes or ballots in favor gains 1 blood.",
+        "Card Text":"Successful referendum means you gain 1 pool for each ready Daughter of Cacophony you control, and each non-Daughter of Cacophony vampire who cast votes or ballots in favor gains 1 blood.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -6080,9 +6086,6 @@
             },
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":2,
@@ -7088,7 +7091,7 @@
         "Banned":"",
         "Blood Cost":"X",
         "Burn Option":"",
-        "Card Text":"[aus] (D) Lock X-1 allies or younger vampires controlled by your predator and/or prey.\n[mel] As [aus] above, with +1 stealth.\n[MEL] As [mel] above, and this vampire can increase their capacity for purposes of choosing the targets of this effect. This action costs +1 blood for each point of capacity gained (chosen as the action is announced).",
+        "Card Text":"[aus] (D) Lock X-1 allies or younger vampires controlled by your predator or prey.\n[mel] As [aus] above, at +1 stealth.\n[MEL] As [mel] above, and this vampire can increase his or her capacity for purposes of selecting the targets of this effect. The cost of this action is increased by one blood for each point of capacity gained (chosen when the action is announced).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Melpominee",
@@ -7100,9 +7103,6 @@
         "Set":{
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":1,
@@ -8093,7 +8093,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"[vic] Only usable at close range before strikes are chosen. During each strike resolution this round, the opposing minion takes an amount of damage equal to the damage he or she successfully inflicts. A vampire may play only one Blood of Acid each round.\n[VIC] As above, but the damage is aggravated.",
+        "Card Text":"Only usable at close range before strikes are chosen. A vampire can play only one Blood of Acid each round.\n[vic] During each strike resolution this round, the opposing minion takes environmental damage equal to the amount of damage they successfully inflict on this vampire.\n[VIC] As above, but the damage is aggravated.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -8141,6 +8141,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":14,
@@ -8692,7 +8695,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[vic] Strike: combat ends, only usable when in combat with an ally.\n[VIC] Play before range is chosen. This vampire is immune to non-aggravated damage for the current round. This vampire cannot strike this round. This vampire gets an optional press, only usable to end combat.",
+        "Card Text":"[vic] Only usable in combat with an ally. Strike: combat ends.\n[VIC] Only usable before range is determined. This round, this vampire is immune to non-aggravated damage, cannot strike and gets 1 optional press, only usable to end combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -8719,6 +8722,9 @@
         "Set":{
             "SW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":7,
@@ -8844,7 +8850,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Only usable if this Baali blocks an ally or younger vampire, before block resolution.\nLock this Baali. This Baali inflicts 1 unpreventable damage on the acting minion and each retainer on the acting minion. The action ends.",
+        "Card Text":"Only usable when this Baali successfully blocks an ally or a younger vampire.\nLock this Baali and end the action (with no combat). This Baali inflicts 1 unpreventable damage on the acting minion and each of his or her retainers.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -8865,9 +8871,6 @@
             "KMW":{
                 "C":true,
                 "PB":"2"
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":2,
@@ -8982,7 +8985,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"[vic] For the remainder of this round, damage from this vampire's hand strikes is aggravated.\n[VIC] As above, and this vampire gets +1 strength for the remainder of this combat.",
+        "Card Text":"[vic] Damage from this vampire's hand strikes is aggravated this round.\n[VIC] As above, and this vampire gets +1 strength this combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -9008,6 +9011,9 @@
             "Third":{
                 "PTz":"4",
                 "SKTz":"3"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":5,
@@ -9432,7 +9438,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[vic] Strike: 1 damage. Put this card on the opposing minion. The minion with this card has -1 strength. (This does not affect the current Strike Resolution step.) He or she may burn this card by paying 2 blood as a +1 stealth action.\n[VIC] As above, but the minion with this card has -2 strength.",
+        "Card Text":"[vic] Strike: 1 damage and put this card on the opposing minion. The attached minion gets -1 strength (after the current strike resolution step). The attached minion can burn this card as a +1 stealth action that costs 2 blood (allies cannot pay blood costs).\n[VIC] As above, but the attached minion gets -2 strength.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -9459,6 +9465,9 @@
             "Third":{
                 "PTz":"3",
                 "SKTz":"3"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -9864,7 +9873,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[vic] Strike: 1R aggravated damage. If this strike is used at close range, this vampire also takes the damage.\n[VIC] As above, but for 2R aggravated damage.",
+        "Card Text":"[vic] Strike: 1R aggravated damage. If this strike is used at close range, this striking vampire also takes 1 environmental aggravated damage.\n[VIC] Strike: 2R aggravated damage. If this strike is used at close range, this striking vampire also takes 2 environmental aggravated damage.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -9892,6 +9901,9 @@
             },
             "SP":{
                 "DoF":"3"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":91,
@@ -11021,7 +11033,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nPut this card with X ritual counters on this Baali, where X is this Baali's capacity. This Baali can put 1 ritual counter on this card as a +1 stealth action. If this card has 11 or more ritual counters, move this card to your ready region, burn this Baali and choose three Disciplines; this card becomes a 9-capacity unique clanless Independent infernal vampire with 4 strength, 3 bleed, the chosen three Disciplines at the superior level and 9 blood who can enter combat with a minion as a (D) action and can prevent 1 damage each combat.",
+        "Card Text":"+1 stealth action.\nPut this card on the acting Baali and put X ritual counters on it, where X is the capacity of this Baali. This Baali may put a ritual counter on this card as a +1 stealth action. When this card has more than 10 ritual counters, burn this Baali and choose three Disciplines. This card becomes a unique clanless independent infernal vampire with 9 capacity, 4 strength and 3 bleed. The Great Beast has the chosen three Disciplines at superior. Move 9 blood to him from the blood bank. The Great Beast can enter combat with any ready minion controlled by another Methuselah as a (D) action and can prevent 1 damage each combat.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -11062,9 +11074,6 @@
             },
             "KMW":{
                 "PB":1
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":38,
@@ -12902,6 +12911,9 @@
             },
             "SP":{
                 "DoF":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":87,
@@ -13719,6 +13731,9 @@
             },
             "SP":{
                 "DoF":"6"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":98,
@@ -13732,7 +13747,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[mel] Put this card in play. Burn this card during your influence phase.\n[MEL] (D) Your prey burns 2 pool for each copy of this card you control (not counting this one). Burn all those copies.",
+        "Card Text":"+1 stealth action.\n[mel] Put this card into play. Burn this card during your influence phase.\n[MEL] (D) Your prey burns 2 pool for each Choir card you control (not counting this one). Burn all Choir cards you control.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee",
@@ -13747,9 +13762,6 @@
             },
             "LoB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":1,
@@ -14174,7 +14186,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[dom] Add 1 blood to a vampire you control.\n[obe] Burn a card on an ally or younger vampire in your ready region.\n[OBE] As [obe] above, and unlock that minion at the end of the turn.",
+        "Card Text":"+1 stealth action.\n[dom] Add 1 blood to a vampire you control.\n[obe] Burn a card on an ally or younger vampire in your ready region.\n[OBE] As [obe] above, and unlock the target minion during the next discard phase.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Dominate/Obeah",
@@ -14186,6 +14198,9 @@
         "Set":{
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -15100,7 +15115,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique.\nPut this card in play. You can lock this card during your minion phase to unlock a ready Daughter of Cacophony. Titled vampires can call a referendum to burn this card as a +1 stealth political action.",
+        "Card Text":"Unique.\nPut this card in play. Lock during your minion phase to unlock a ready Daughter of Cacophony. Any titled vampire can call a referendum to burn this card as a +1 stealth political action.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -15115,9 +15130,6 @@
             },
             "HttB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":15,
@@ -15527,7 +15539,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"Y",
-        "Card Text":"+1 stealth action.\nPut this card on this Daughter of Cacophony. During your unlock phase, burn this card to have this vampire gain enough blood to reach full capacity.",
+        "Card Text":"+1 stealth action.\nPut this card on this acting Daughter of Cacophony. During your next unlock phase, burn this card to restore this vampire to full capacity with blood from the blood bank.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -15542,9 +15554,6 @@
             },
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":11,
@@ -15663,7 +15672,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Condemnation.\n[ser] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready minion. Bleed actions cost the attached minion +1 blood (allies cannot pay blood costs). Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached minion's controller burns the top card of their library during their unlock phase.",
+        "Card Text":"+1 stealth action. Condemnation.\n[ser] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready minion. Bleed actions cost the attached minion 1 additional blood (allies cannot pay blood costs). Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached minion's controller burns the top card of their library during their unlock phase.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Serpentis",
@@ -15691,7 +15700,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Condemnation.\n[obf] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready minion. The attached minion gets -1 stealth. Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and if the attached minion is blocked, their controller burns 1 pool before block resolution.",
+        "Card Text":"+1 stealth action. Condemnation.\n[obf] (D) Lock a younger vampire.\n[dai] Requires an Infernal vampire. (D) Put this card on a ready minion. The minion with this card has -1 stealth. Burn all other Condemnations on this minion.\n[DAI] As [dai] above, and the minion's controller burns 1 pool each time the minion is successfully blocked.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Obfuscate",
@@ -15703,9 +15712,6 @@
         "Set":{
             "BL":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":3,
@@ -15719,7 +15725,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Condemnation.\n[pre] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready minion. The attached minion gets -1 strength. Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached minion cannot press in combat.",
+        "Card Text":"+1 stealth action. Condemnation.\n[pre] (D) Lock a younger vampire.\n[dai] Requires an Infernal vampire. (D) Put this card on a ready minion. The minion with this card has -1 strength. Burn all other Condemnations on this minion.\n[DAI] As [dai] above, and the minion cannot use presses in combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Presence",
@@ -15731,9 +15737,6 @@
         "Set":{
             "BL":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":0,
@@ -15747,7 +15750,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Condemnation.\n[chi] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready vampire. The attached vampire gets -3 votes. Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached vampire burns 1 blood after a referendum passes.",
+        "Card Text":"+1 stealth action. Condemnation.\n[chi] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready vampire. The attached vampire gets -3 votes. Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached vampire burns 1 blood each time a referendum passes.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Chimerstry/Daimoinon",
@@ -15845,7 +15848,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card on a Daughter of Cacophony. While this Daughter of Cacophony is unlocked or acting, each unlocked or acting Daughter of Cacophony gets +1 vote.",
+        "Card Text":"Unique master.\nPut this card on a Daughter of Cacophony. While this Daughter of Cacophony is unlocked or acting, each unlocked or acting Daughter of Cacophony gets an additional vote.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -15857,9 +15860,6 @@
         "Set":{
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":7,
@@ -15888,9 +15888,6 @@
             },
             "KMW":{
                 "PB":"3"
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":11,
@@ -16438,7 +16435,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card on this vampire. During each other Methuselah's unlock phase, they burn 1 pool if this vampire is ready.\n[DAI] As [dai] above, and once each combat, this vampire can strike: put 1 corruption counter on the opposing minion; if the number of your corruption counters on the minion equals or exceeds their capacity or cost, you can burn those counters to steal the opposing minion after the resolution of this strike (ending combat).",
+        "Card Text":"+1 stealth action. Requires an Infernal vampire. Unique.\n[dai] Put this card on the acting vampire. During each other Methuselah's unlock phase, he or she burns 1 pool if this vampire is ready.\n[DAI] As [dai] above, and once per combat, this vampire can put a corruption counter on the opposing minion as a strike. If the number of your corruption counters on the minion equals or exceeds the capacity of that vampire or the cost of that ally, you may burn all of your corruption counters on that minion to gain control of him or her after strike resolution (ending combat).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon",
@@ -16458,9 +16455,6 @@
         "Set":{
             "BL":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":57,
@@ -16546,7 +16540,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nMove 1 blood from each ready Pander you control to a Pander in your uncontrolled region.",
+        "Card Text":"Move 1 blood from each ready Pander you control to a Pander in your uncontrolled region.",
         "Clan":"Pander",
         "Conviction Cost":"",
         "Discipline":"",
@@ -16558,6 +16552,9 @@
         "Set":{
             "Promo":{
                 "2008-02-03":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -16737,7 +16734,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Ghoul with 1 life.\n[vic] If the minion with this retainer blocks a (D) action, he or she gets an optional maneuver on the first round of the resulting combat.\n[VIC] As above, and this minion gets +1 intercept against (D) actions.",
+        "Card Text":"Ghoul with 1 life.\n[vic] If the employer blocks a directed action, they get 1 optional maneuver during the first round of the resulting combat.\n[VIC] As above, and the employer gets +1 intercept during directed actions.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -16764,6 +16761,9 @@
         "Set":{
             "BH":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":19,
@@ -16812,7 +16812,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Ghoul with 1 life. 0 strength, 0 bleed.\n[vic] When the Construction enters play, you may remove from the game any number of ally, retainer, or vampire cards from your ash heap or hand. The Construction gains one life for each card removed in that way. The Construction gets +1 strength for each life counter it has. During your unlock phase, the Construction burns 1 life.\n[VIC] As above, and the Construction has an additional life.",
+        "Card Text":"Ghoul with 1 life. 0 strength, 0 bleed.\n[vic] After this ally enters play, you can remove from the game any number of ally, retainer or vampire cards from your ash heap or hand; this ally gains 1 life for each card removed this way. This ally gets +1 strength for each life it has. During your unlock phase, this ally burns 1 life.\n[VIC] As above, and this ally has 1 additional life.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -16838,6 +16838,9 @@
         "Set":{
             "Third":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":7,
@@ -17935,7 +17938,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a Sabbat vampire. Title.\nIf this referendum passes, put this card on the acting vampire to represent the unique Sabbat title of Archbishop of Istanbul. This could lead to a contested title. If this vampire is Tzimisce, he or she unlocks during your next discard phase.",
+        "Card Text":"Title. Requires a Sabbat vampire.\nSuccessful referendum means this card is put on this vampire to represent the unique Sabbat title of Archbishop of Istanbul. If this vampire is Tzimisce, they unlock during your next discard phase.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -17947,6 +17950,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":6,
@@ -18627,7 +18633,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Ghoul with 2 life.\nThis Baali gets +1 bleed.",
+        "Card Text":"Ghoul with 2 life.\nThe Baali with this retainer gets +1 bleed.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -18650,9 +18656,6 @@
             },
             "KMW":{
                 "PB":1
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":20,
@@ -19665,7 +19668,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable at long range.\n[cel]: Strike: 1R damage.\n[mel]: Strike: 2R damage, only preventable by cards requiring Fortitude [for] or Visceratika [vis].\n[MEL]: As [mel] above, and the damage is aggravated.",
+        "Card Text":"Only usable at long range.\n[cel]: Strike: 1R damage.\n[mel]: Strike: 2R damage, only preventable by cards that require Fortitude [for] or Visceratika [vis].\n[MEL]: As [mel] above, and the damage is aggravated.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity/Melpominee",
@@ -19677,9 +19680,6 @@
         "Set":{
             "LoB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":4,
@@ -21161,7 +21161,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] Reduce a bleed against you by 1.\n[dai] Requires an infernal vampire. Only usable if this vampire blocks, before block resolution. Put 4 pact counters on the acting minion; if the number of pact counters equals or exceeds their capacity or cost, burn those counters to make them infernal.\n[DAI] As [dai] above, and the acting minion's controller burns 1 pool.",
+        "Card Text":"[aus] Reduce a bleed against you by 1.\n[dai] Requires an infernal vampire. Only usable when this vampire successfully blocks. Put 4 pact counters on the acting minion. If the number of pact counters equals or exceeds his or her capacity or cost, burn them to make him or her infernal.\n[DAI] As [dai] above, and the acting minion's controller burns 1 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Daimoinon",
@@ -21181,9 +21181,6 @@
         "Set":{
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":0,
@@ -23963,7 +23960,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[mel] As [pre] above, and usable by a ready vampire other than the acting minion.\n[MEL] Only usable after resolution of a political action. Usable by a ready vampire other than the acting minion. Move the political action card [POLITICALACTION] used to call the referendum from your ash heap to this vampire, face down and out of play; this vampire can play it as if from your hand (requirements and cost apply as normal).",
+        "Card Text":"Only usable during a referendum.\n[pre] If you burn the Edge for a vote, this vampire gains 2 votes.\n[mel] Usable by a ready vampire other than the acting minion. This vampire gains 2 votes.\n[MEL] Usable by a ready vampire other than the acting minion. After the referendum, move the political action card used to call the referendum from your ash heap to this vampire, face down. This vampire may play the political action card as if from your hand (requirements and cost apply as normal).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee/Presence",
@@ -24030,9 +24027,6 @@
             },
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":4,
@@ -25727,9 +25721,6 @@
         "Set":{
             "Promo":{
                 "2006-10-26":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":0,
@@ -27742,7 +27733,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[mel] Choose up to five older vampires. Successful referendum means each chosen vampire gains 1 blood.\n[MEL] As above, and successful referendum means this card is put in play. Unique. You can burn this card before range is determined to end a combat.",
+        "Card Text":"[mel] Choose up to five older vampires. Successful referendum means each chosen vampire gains 1 blood.\n[MEL] As above, and successful referendum means this card is put in play. Unique. You can burn this card before range is determined to end any combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee",
@@ -27757,9 +27748,6 @@
             },
             "HttB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":3,
@@ -28196,7 +28184,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"A vampire can play only one Fear of the Void Below each combat.\n[obf] Maneuver.\n[dai] Only usable before range is determined. This combat, each round defaults to long range, and this vampire gets 1 optional press each round, only usable to end combat.\n[DAI] As [dai] above, and the opposing minion's controller discards 1 card at random each round during normal strike resolution.",
+        "Card Text":"A vampire may play only one Fear of the Void Below each combat.\n[obf] Maneuver.\n[dai] Only usable before range is determined. Each round of this combat defaults to long range, and this vampire gets an optional press each round, only usable to end combat.\n[DAI] As [dai] above, and the opposing minion's controller discards one card at random from his or her hand during the initial strike resolution phase of each round.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Obfuscate",
@@ -28211,9 +28199,6 @@
             },
             "KMW":{
                 "PB":1
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":2,
@@ -28553,6 +28538,9 @@
             "25th":{
                 "":"1"
             },
+            "POD":{
+                "DTC":true
+            },
             "PLAYTEST":{
                 "PTz":1
             }
@@ -28762,7 +28750,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a Sabbat vampire.\n(D) Bleed at +1 bleed. Anarch vampires get -1 intercept on this action. If this acting vampire is Tzimisce and the bleed is successful, this Tzimisce may burn 1 blood during your discard phase this turn to unlock.",
+        "Card Text":"Requires a Sabbat vampire.\n(D) Bleed with +1 bleed. Anarchs get -1 intercept during this action. If this vampire is Tzimisce and the bleed is successful, this Tzimisce can burn 1 blood during your next discard phase to unlock.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -28777,6 +28765,9 @@
             },
             "Third":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":22,
@@ -29271,9 +29262,6 @@
             },
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":17,
@@ -29633,7 +29621,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[vic] Strike: 1 damage. Put this card on the opposing minion. The minion with this card has -1 stealth. He or she may burn this card as a +1 stealth action.\n[VIC] As above, but the minion with this card has -2 stealth.",
+        "Card Text":"[vic] Strike: 1 damage and put this card on the opposing minion. The attached minion gets -1 stealth. The attached minion can burn this card as a +1 stealth action.\n[VIC] As above, but the attached minion minion gets -2 stealth.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -29661,6 +29649,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -32527,7 +32518,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Ghoul with 2 life. 1 strength, 0 bleed.\nGhouled Street Thug may strike for 1R damage. Ghouled Street Thug may play cards requiring basic Potence [pot] as a vampire with a capacity of 2. If a card would give him blood, give him life instead.",
+        "Card Text":"Ghoul with 2 life. 1 strength, 0 bleed.\nThis ally can strike: 1R damage. This ally can play cards requiring basic Potence [pot] as a 2-capacity vampire.",
         "Clan":"Pander",
         "Conviction Cost":"",
         "Discipline":"",
@@ -32556,6 +32547,9 @@
             },
             "SW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -32831,6 +32825,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":32,
@@ -33054,7 +33051,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable when a minion is attempting to bleed you.\n[aus][obe] You may look at the acting minion's controller's hand.\n[AUS][OBE] As above, and the bleed amount is reduced by X, where X is the number of action modifiers in his or her hand.",
+        "Card Text":"Only usable if a minion is bleeding you.\n[aus][obe] You can look at the acting minion's controller's hand.\n[AUS][OBE] As above, and the bleed amount is reduced by 1 for each action modifier card in their hand.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex & Obeah",
@@ -33066,6 +33063,9 @@
         "Set":{
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -33820,7 +33820,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[dai] (D) Bleed and gain 1 pool.\n[mal] (D) Put this card on an ally or younger vampire. Bleed actions and combat cards cost the attached minion +1 blood or life. A minion can have only one Greater Curse. [mal] is not a Discipline.\n[MAL] As [mal] above, but the vampire need not be younger.",
+        "Card Text":"+1 stealth action.\n[dai] (D) Bleed and gain 1 pool.\n[mal] (D) Put this card on an ally or a younger vampire. Bleed actions and combat cards cost this minion an additional blood or life. A minion can have only one Greater Curse. [mal] is not a Discipline.\n[MAL] As [mal] above, but the vampire need not be younger.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Maleficia",
@@ -33832,9 +33832,6 @@
         "Set":{
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":3,
@@ -34381,7 +34378,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Ghoul with 1 life. 1 strength, 0 bleed.\nIf a card controlled by another Methuselah burns a location you control, you may burn Guardian Ghoul instead.",
+        "Card Text":"Ghoul with 1 life. 1 strength, 0 bleed.\nIf a card played or controlled by another Methuselah would burn a location you control, you can instead burn Guardian Ghoul.",
         "Clan":"Tzimisce",
         "Conviction Cost":"",
         "Discipline":"",
@@ -34404,6 +34401,9 @@
             },
             "SW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -34922,7 +34922,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Out-of-turn. Only usable during your influence phase. Not usable if you played a Hanging Fermata during your last turn.\nNo cards named /Choir/ are burned during this influence phase.",
+        "Card Text":"Master: out-of-turn.\nPlay during your influence phase. No /Choir/ cards are burned during this influence phase. Not usable if you played a Hanging Fermata during your last turn.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -34934,9 +34934,6 @@
         "Set":{
             "LoB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":1,
@@ -35139,7 +35136,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n(D) Your prey burns 3 pool for each card named /Choir/ you control. Burn all those cards.",
+        "Card Text":"+1 stealth action.\n(D) Your prey burns 3 pool for each /Choir/ card you control. Burn all /Choir/ cards you control.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -35154,9 +35151,6 @@
             },
             "HttB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":1,
@@ -35392,7 +35386,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card on a Tzimisce. When this Tzimisce blocks, he or she may play combat cards in the resulting combat as if all of his or her Disciplines were at the superior level.",
+        "Card Text":"Unique.\nPut this card on a Tzimisce. If this Tzimisce blocks, they can play combat cards during the resulting combat as if they had the superior level of all their Disciplines.",
         "Clan":"Tzimisce",
         "Conviction Cost":"",
         "Discipline":"",
@@ -35407,6 +35401,9 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -35624,7 +35621,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[cel] Unlock a younger vampire you control.\n[obe] Add up to 2 life to an ally, not to exceed his or her starting amount.\n[OBE] Rescue a vampire from torpor, and that vampire gains 1 blood from the blood bank.",
+        "Card Text":"+1 stealth action.\n[cel] Unlock a younger vampire you control.\n[obe] Add up to 2 life to an ally, not to exceed their starting life.\n[OBE] Rescue a vampire from torpor. The rescued vampire gains 1 blood.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity/Obeah",
@@ -35643,6 +35640,9 @@
         "Set":{
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -35822,7 +35822,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable by a ready unlocked vampire not involved in the combat.\n[nec] Prevent 1 damage to an ally in combat.\n[obe] Only usable if an ally would be burned in combat. Instead, add 1 life to that ally if they have no life, and they cannot enter (or be involved in) combat, perform actions, or block this turn; end combat.\n[OBE] As [obe] above, but add 2 life if they have no life, not to exceed their starting life.",
+        "Card Text":"Only usable by a ready unlocked vampire not involved in the combat.\n[nec] Prevent 1 damage to an ally in combat.\n[obe] Only usable if an ally would be burned in combat. Instead, they gain 1 life if they have no life, and they cannot enter (or be involved in) combat, perform actions, or block this turn; end combat.\n[OBE] As [obe] above, but add 2 life if they have no life, not to exceed their starting life.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Necromancy/Obeah",
@@ -36043,7 +36043,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Demon with 5 life. 3 strength, 1 bleed, flight [FLIGHT]. Infernal.\nHerald of Topheth can play cards requiring basic Daimoinon [dai], basic Potence [pot] and/or basic Presence [pre] as a vampire with capacity 5. It can enter combat with a minion as a (D) action. If it has 4 or fewer life during your unlock phase, it gains 1 life.",
+        "Card Text":"Demon with 5 life. 3 strength, 1 bleed, flight [FLIGHT].\nThe Herald may enter combat with a ready minion controlled by another Methuselah as a (D) action. The Herald may play cards requiring basic Daimoinon [dai], Potence [pot] and/or Presence [pre] as a vampire with a capacity of 5. If a card would give him blood, give him life instead. If the Herald has less than 5 life during your unlock phase, add 1 life. During your influence phase, burn 1 pool or burn the Herald.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -36074,9 +36074,6 @@
         "Set":{
             "BL":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":4,
@@ -36165,9 +36162,6 @@
         "Set":{
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":2,
@@ -36887,6 +36881,9 @@
             },
             "SP":{
                 "DoF":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":23,
@@ -37402,9 +37399,6 @@
             },
             "HttB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":68,
@@ -37833,7 +37827,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined.\n[vic] The opposing minion cannot play grapple cards (such as /Immortal Grapple/ and /Mighty Grapple/) this combat. A vampire may play only one Immense Size each combat.\n[VIC] As above, with an optional press this round.",
+        "Card Text":"Only usable before range is determined. A vampire can play only one Immense Size each combat.\n[vic] The opposing minion cannot play grapple cards (this includes cards named /Immortal Grapple/ and /Mighty Grapple/) this combat.\n[VIC] As above, with 1 optional press.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -37845,6 +37839,9 @@
         "Set":{
             "KMW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -38476,7 +38473,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card on a Red List Anarch vampire. This vampire is infernal, Bahari, and gets +2 votes. During this vampire's minion phase, their controller can unlock a ready Anarch they control.",
+        "Card Text":"Unique master.\nPut this card on a Red List Anarch vampire. This vampire is infernal, Bahari, and gets 2 additional votes. During this vampire's minion phase, his or her controller may unlock a ready anarch he or she controls.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -38495,9 +38492,6 @@
         "Set":{
             "Promo":{
                 "2010-05-10":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":4,
@@ -38717,7 +38711,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique demon with 2 life. 1 strength, 3 bleed. Requires an infernal vampire.\n[dai] Infernal Servitor can perform actions the turn it is recruited. Remove it from the game if you control no infernal vampires, or after it performs a successful action.\n[DAI] As above, and Infernal Servitor can play cards requiring basic Daimoinon [dai] and/or basic Obfuscate [obf] as a vampire.",
+        "Card Text":"Unique demon with 2 life. 1 strength, 3 bleed. Requires an infernal vampire.\n[dai] Infernal Servitor can act the turn it is recruited. Remove it from the game if you control no infernal vampires, or after it performs a successful action.\n[DAI] As above, and the Servitor can play cards requiring basic Daimoinon [dai] and/or Obfuscate [obf] as a vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon",
@@ -38745,9 +38739,6 @@
             },
             "HttB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":29,
@@ -38916,6 +38907,9 @@
             },
             "SP":{
                 "DoF":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":24,
@@ -40381,7 +40375,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. Lock and burn 1 pool to cause a (D) action against a Pander you control to fail. During your master phase, choose a Pander. Once this turn, that Pander may enter combat with any minion as a (D) action. Any Sabbat vampire may burn this card as a (D) action.",
+        "Card Text":"Unique.\nPut this card in play. You can lock this card and burn 1 pool to have an action directed at a Pander you control fail. During your master phase, choose a Pander; once this turn, the chosen Pander can enter combat with a minion as a (D) action. Sabbat vampires can burn this card as a (D) action.",
         "Clan":"Pander",
         "Conviction Cost":"",
         "Discipline":"",
@@ -40400,6 +40394,9 @@
         "Set":{
             "SoC":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":10,
@@ -40441,7 +40438,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique.\nAdd 1 counter on this card after this Salubri performs a successful action. Burn these counters if this card is moved. Except during an action, you can remove this ready Salubri from the game to move these counters to your pool.",
+        "Card Text":"Unique.\nAdd 1 counter to this card after this Salubri performs a successful action. Burn these counters if this card is moved. You can remove this ready Salubri from the game to move these counters to your pool, except during an action.",
         "Clan":"Salubri",
         "Conviction Cost":"",
         "Discipline":"",
@@ -40469,6 +40466,9 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -40745,7 +40745,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nThis Sabbat vampire can draw 5 cards as an action (discard down afterward). This infernal minion can add 3 blood to a vampire in your uncontrolled region as a +1 stealth action. An opposing minion can strike: steal this equipment.",
+        "Card Text":"Unique equipment.\nThis Sabbat vampire may allow you to draw 5 cards from your library as an action (discard afterward). This infernal minion may move 3 blood from the bank to a vampire in your uncontrolled region as a +1 stealth action. Any minion may steal this equipment as a strike.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -40776,9 +40776,6 @@
         "Set":{
             "Promo":{
                 "2008-10-23":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":30,
@@ -41913,7 +41910,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an infernal vampire. Only usable during the polling step of a political action.\nForce a younger vampire to abstain (this can cancel their votes and ballots).",
+        "Card Text":"Requires an infernal vampire. Only usable during a referendum.\nChoose a younger vampire. The chosen vampire abstains. This can cancel that vampire's votes and ballots.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -41933,9 +41930,6 @@
         "Set":{
             "HttB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":2,
@@ -41981,7 +41975,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[vic] Strike: strength+1 ranged damage. If this striking minion takes more than 3 damage this combat, he or she goes to torpor.\n[VIC] As above, with an optional press, only usable to continue combat, and once each round for the remainder of combat, this vampire may strike to steal two blood at close or long range.",
+        "Card Text":"[vic] Strike: strength+1 ranged damage. If this striking minion takes 4 or more damage this combat, they go to torpor.\n[VIC] As above, with 1 optional press, only usable to continue combat, and once each round this combat, this vampire can strike, ranged: steal 2 blood or life (becoming blood).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -42016,6 +42010,9 @@
             },
             "Third":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":5,
@@ -42177,7 +42174,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. Do not replace until after combat. Strike: hand strike or use a melee weapon strike.\n[for] This strike is at +1 damage, with an optional maneuver.\n[pot] This strike is at +2 damage.\n[vic] This strike is at +1 damage, with an optional press. If another round of combat occurs, range is automatically close.",
+        "Card Text":"Requires an Anarch. Do not replace until after combat. Strike: hand strike or use a melee weapon strike.\n[for] This strike is at +1 damage, with 1 optional maneuver.\n[pot] This strike is at +2 damage.\n[vic] This strike is at +1 damage, with 1 optional press. If another round of combat occurs, that round is at close range (skip the determine range step for that round).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude/Potence/Vicissitude",
@@ -42202,6 +42199,9 @@
         "Set":{
             "TR":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":5,
@@ -42853,7 +42853,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a Sabbat vampire.\nIf this referendum is successful, put this card in play. Each non-titled Pander has 1 vote. Any Sabbat vampire may call a referendum to burn this card as a +1 stealth political action.",
+        "Card Text":"Requires a Sabbat vampire.\nSuccessful referendum means this card is put in play. Each non-titled Pander gets 1 vote (this is not a title). Sabbat vampires can call a referendum to burn this card as a +1 stealth political action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -42876,6 +42876,9 @@
             },
             "SW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":27,
@@ -43407,6 +43410,9 @@
             "SP":{
                 "DoF":"1"
             },
+            "POD":{
+                "DTC":true
+            },
             "PLAYTEST":{
                 "PTz":1
             }
@@ -43647,7 +43653,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[mel] Allocate 4 points among one or more Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.\n[MEL] As above, and choose a Methuselah. Successful referendum means the chosen Methuselah gains 1 pool.",
+        "Card Text":"[mel] Allocate 4 points among one or more Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.\n[MEL] As above, and choose any Methuselah. Successful referendum means the chosen Methuselah gains 1 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee",
@@ -43675,9 +43681,6 @@
             },
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":6,
@@ -43760,7 +43763,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"[vic] Strike: burn the opposing ally or burn 3 blood from the opposing younger vampire. If the opposing vampire has no blood after strike resolution, combat ends.\n[VIC] Play before range is determined in combat with a younger vampire. This vampire cannot strike this round. As his or her initial strike next round, this vampire may strike to diablerize the opposing younger vampire.",
+        "Card Text":"[vic] Strike: burn the opposing ally or burn 3 blood from the opposing younger vampire. If the opposing vampire has no blood after the resolution of this strike, combat ends.\n[VIC] Only usable before range is determined in combat with a younger vampire. This vampire cannot strike this round. As their initial strike next round, this vampire can strike: diablerize the opposing younger vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -43772,6 +43775,9 @@
         "Set":{
             "SoC":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -43888,6 +43894,9 @@
             },
             "SP":{
                 "DoF":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":26,
@@ -43939,7 +43948,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable when recruiting an ally.\n[vic] If the action is successful, put this card on the ally and lock the ally. Actions that require Dominate [dom] or Presence [pre] do not affect this ally. This ally has -1 bleed and cannot use maneuvers.\n[VIC] As above, but the ally is not locked.",
+        "Card Text":"Only usable during a recruit ally action.\n[vic] Put this card on the ally and lock the ally after action resolution if this action is successful. Actions requiring Dominate [dom] or Presence [pre] have no effect on the attached ally. The attached ally gets -1 bleed and cannot maneuver.\n[VIC] As above, but the ally is not locked.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -43954,6 +43963,9 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -44140,7 +44152,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. Only usable as the action is announced. If this action is blocked, apply the following effect (before combat occurs):\n[dem] Lock a younger non-blocking vampire controlled by the blocking minion's controller.\n[tha] Move 2 blood from a non-blocking vampire controlled by the blocking minion's controller to this vampire.\n[vic] This acting vampire's hand damage is aggravated in the resulting combat.",
+        "Card Text":"Requires an Anarch. Only usable as the action is announced. If this action is blocked, apply the following effect before block resolution:\n[dem] Lock a younger non-blocking vampire controlled by the blocking minion's controller.\n[tha] Move 2 blood from a non-blocking vampire controlled by the blocking minion's controller to this vampire.\n[vic] Damage from this vampire's hand strikes is aggravated during the resulting combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Dementation/Blood Sorcery/Vicissitude",
@@ -44165,6 +44177,9 @@
         "Set":{
             "Gehenna":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -44178,7 +44193,7 @@
         "Banned":"",
         "Blood Cost":"3",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[for] Rescue up to two vampires from torpor. Ready vampires can ignore the normal prey, predator or target restrictions for blocking this action.\n[obe] Put this card on this vampire. During your unlock phase, this vampire can gain 1 blood. Any vampire can burn this card as a (D) action.\n[OBE] As [obe] above, but this vampire can gain 2 blood.",
+        "Card Text":"+1 stealth action.\n[for] Rescue up to two vampires from torpor. Vampires can ignore the normal prey, predator or target restrictions for blocking this action.\n[obe] Put this card on this vampire. During your unlock phase, this vampire can gain 1 blood. Vampires can burn this card as a (D) action.\n[OBE] As [obe] above, but this vampire can gain 2 blood.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude/Obeah",
@@ -44200,6 +44215,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":5,
@@ -44943,7 +44961,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during the polling step of a political action before votes and ballots are cast.\n[pre] [REACTION] This vampire gets +2 votes.\n[mel] [ACTIONMODIFIER][REACTION] This vampire gets +2 votes.\n[MEL] [ACTIONMODIFIER][REACTION] As [mel] above, and vampires casting votes or ballots in agreement with this vampire gain 1 blood. Vampires casting votes or ballots in opposition to this vampire burn 1 blood. Blood is gained or burned once results are tallied.",
+        "Card Text":"Only usable during a referendum before votes and ballots are cast.\n[pre] [REACTION] Only usable by a reacting vampire. Gain 2 votes.\n[mel] [ACTIONMODIFIER][REACTION] Gain 2 votes.\n[MEL] [ACTIONMODIFIER][REACTION] As [mel] above, and any vampire casting votes or ballots in agreement with this vampire gains 1 blood from the blood bank. Any vampire casting votes or ballots in opposition to this vampire burns 1 blood. Blood is gained or lost when the results are tallied.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee/Presence",
@@ -44978,9 +44996,6 @@
             },
             "LoB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":7,
@@ -45697,7 +45712,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[vic] Only usable by a ready, unlocked vampire. Usable when an ally you control is blocked, before combat begins. The combat is canceled; unlock the acting minion and lock this modifying vampire. This vampire enters combat with the blocking minion.\n[VIC] As above, but usable when a vampire you control is blocked.",
+        "Card Text":"Only usable by a ready unlocked vampire other than the acting minion.\n[vic] Only usable if an ally you control is blocked, before block resolution. Instead of resolving the block, unlock the acting minion, and this vampire and the blocking minion lock and enter combat (the action is still blocked).\n[VIC] As above, but usable if a vampire you control is blocked.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -45723,6 +45738,9 @@
         "Set":{
             "FN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -47110,7 +47128,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[vic] Strike: combat ends and unlock the opposing minion (even at long range).\n[VIC] Strike: combat ends.",
+        "Card Text":"[vic] Strike: combat ends, and unlock the opposing minion (at any range) before combat ends.\n[VIC] Strike: combat ends.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -47141,6 +47159,9 @@
             },
             "Third":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":37,
@@ -47154,7 +47175,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally cannot perform actions. During an action directed at you (or a card you control), this ally can burn 1 life to get +1 intercept. Burn this ally if he blocks a vampire, before block resolution.",
+        "Card Text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally cannot act. During a (D) action against you (or a card you control), this ally can burn 1 life to get +1 intercept. Burn this ally if he blocks a vampire, before block resolution.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -47169,9 +47190,6 @@
             },
             "HttB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":8,
@@ -48322,7 +48340,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Requires a vampire with capacity 5 or more. Vampires with capacity 4 or less get -1 intercept.\n[mel] Allies and younger vampires get -1 intercept.\n[MEL] +1 stealth.",
+        "Card Text":"[cel] Requires a vampire with a capacity greater than 4. Vampires with a capacity less than 5 get -1 intercept when attempting to block this action.\n[mel] Allies and younger vampires get -1 intercept when attempting to block this action.\n[MEL] +1 stealth.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity/Melpominee",
@@ -48337,9 +48355,6 @@
             },
             "LoB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":22,
@@ -50350,7 +50365,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable when this vampire announces an action.\n[for] Vampires must pay 1 blood to attempt to block this action.\n[obe] For the remainder of this action, when this vampire is in combat, the range is automatically long; skip the determine range step of each round.\n[OBE] As [obe] above, and allies and younger vampires cannot block this action.",
+        "Card Text":"Only usable as the action is announced.\n[for] Vampires must burn 1 blood to attempt to block this action.\n[obe] This action, while this vampire is in combat, each round is at long range (skip the determine range step for each round).\n[OBE] As [obe] above, and allies and younger vampires cannot block this action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude/Obeah",
@@ -50372,6 +50387,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":15,
@@ -50599,6 +50617,9 @@
             },
             "KSU":{
                 "AU":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -53113,7 +53134,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[aus] This vampire burns 1 blood to unlock a younger vampire.\n[obe] Add 1 life to an ally who has fewer life than his or her starting amount.\n[OBE] As [obe] above, and unlock that ally at the end of the turn.",
+        "Card Text":"+1 stealth action.\n[aus] Burn 1 blood to unlock a younger vampire.\n[obe] Add 1 life to an ally who has fewer life than their starting life.\n[OBE] As [obe] above, and unlock that ally during the next discard phase.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Obeah",
@@ -53135,6 +53156,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -53250,7 +53274,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique location.\nYou can lock this card to give a Daughter of Cacophony you control +1 stealth. You can lock this card and a Daughter of Cacophony you control to give a minion +1 stealth.",
+        "Card Text":"Master: unique location.\nLock to give a Daughter of Cacophony you control +1 stealth. Lock this card and a Daughter of Cacophony you control to give any minion +1 stealth.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -53265,9 +53289,6 @@
             },
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":25,
@@ -53610,7 +53631,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. During your master phase, you can burn 1 pool to unlock all infernal minions you control. Minions can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
+        "Card Text":"Unique master.\nPut this card in play. During your master phase, you may burn 1 pool to unlock all infernal minions you control. Any minion may burn this card as a (D) action; if that minion is a vampire, he or she takes one damage (damage not preventable) when this card is burned.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -53622,9 +53643,6 @@
         "Set":{
             "BH":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":20,
@@ -53691,7 +53709,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. Cards that require Vicissitude [vic] cost Tzimisce 1 less blood. Any minion may burn this card as a (D) action; if that minion is a vampire, he or she takes 1 unpreventable damage when this card is burned.",
+        "Card Text":"Unique.\nPut this card in play. Cards requiring Vicissitude [vic] cost Tzimisce -1 blood. Minions can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
         "Clan":"Tzimisce",
         "Conviction Cost":"",
         "Discipline":"",
@@ -53706,6 +53724,9 @@
             },
             "Third":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":17,
@@ -53837,7 +53858,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: out-of-turn. Path.\nPut this card on a Salubri when you move that Salubri from your uncontrolled region to your ready region during your influence phase. If you burned 3 or more pool for the scarce penalty for this vampire, you gain 3 pool. Cards that require Obeah [obe] cost this Salubri 1 less blood. Any minion may burn this card as a (D) action. A vampire can have only one path.",
+        "Card Text":"Out-of-turn. Path. Only usable after you move a Salubri from your uncontrolled region to your ready region during your influence phase.\nPut this card on that Salubri. If you burned 3 or more pool for the scarce penalty for this vampire, you gain 3 pool. Cards requiring Obeah [obe] cost this Salubri -1 blood. Minions can burn this card as a (D) action. A vampire can have only one path.",
         "Clan":"Salubri",
         "Conviction Cost":"",
         "Discipline":"",
@@ -53849,6 +53870,9 @@
         "Set":{
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -54222,7 +54246,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable by a vampire who successfully blocks a (D) action directed at you (play before combat).\n[pre] Cancel combat. The action continues as if unblocked. For the remainder of this action, all minions get -1 bleed and -1 strength.\n[obe] As [pre] above, and unlock this blocking vampire at the end of the action.\n[OBE] As [obe] above, but all minions get -2 bleed and -2 strength and cannot use weapons.",
+        "Card Text":"Only usable if this vampire blocks an action directed at you (or a card you control), before block resolution.\n[pre] Lock this blocking vampire. The action continues as if unblocked. This action, all minions get -1 bleed and -1 strength.\n[obe] As [pre] above, and unlock this blocking vampire after action resolution.\n[OBE] As [obe] above, but all minions get -2 bleed and -2 strength and cannot use weapons.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obeah/Presence",
@@ -54254,6 +54278,9 @@
         "Set":{
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -54267,7 +54294,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and /Flash/ /Grenade/s have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTIONMODIFIER] Only usable as the action is announced. Choose any vampire. The chosen vampire cannot block this action.",
+        "Card Text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and cards named //Flash/ /Grenade// have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTIONMODIFIER] Only usable as the action is announced. Choose a vampire. The chosen vampire cannot block this action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude & Obeah",
@@ -54295,6 +54322,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":6,
@@ -54644,7 +54674,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[aus] Unlock a vampire with Melpominee [mel].\n[mel] Put this card in play with one card requiring Melpominee from your hand on it, face down and out of play (you can look at the card at any time). A vampire you control can burn this card to play the card on it as if from your hand and as if they had basic Melpominee.\n[MEL] As [mel] above, and the vampire can play the card as if they had superior Melpominee.",
+        "Card Text":"+1 stealth action.\n[aus] Unlock a vampire with Melpominee [mel].\n[mel] Put this card in play and put a card from your hand that requires Melpominee on this card, face down. You may look at the card at any time. Any vampire you control may burn this card to play the card on it as if from your hand and as if he or she had basic Melpominee.\n[MEL] As [mel] above, and the vampire may play the card as if he or she had superior Melpominee [MEL].",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Melpominee",
@@ -54663,9 +54693,6 @@
         "Set":{
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":0,
@@ -55022,6 +55049,9 @@
             "Third":{
                 "PTz":"2",
                 "SKTz":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":65,
@@ -55990,7 +56020,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Equipment.\nIf the action to equip with the Powder is successful, unlock the acting minion at the end of the turn. The bearer may burn this equipment before range is chosen in a round of combat. If he or she does so, the opposing minion cannot use cards that require Protean [pro] or Vicissitude [vic] for the remainder of combat. If the opposing minion is a werewolf, he has -2 strength for the remainder of combat.",
+        "Card Text":"If the action to equip with the Powder is successful, unlock the acting minion during the next discard phase. The bearer can burn this equipment before range is determined in a round of combat. If they do so, the opposing minion cannot use cards requiring Protean [pro] or Vicissitude [vic] until the end of combat and if the opposing minion is a werewolf, they get -2 strength until the end of combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -56002,6 +56032,9 @@
         "Set":{
             "KMW":{
                 "PAl":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -59023,7 +59056,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable if an ally or younger vampire blocks, before block resolution.\n[pre] Unlock this vampire, and the action ends (unsuccessfully).\n[dai] The block fails, and the action continues. The blocking minion cannot attempt to block this action again.\n[DAI] As [dai] above, and the blocking minion takes 1 unpreventable environmental damage.",
+        "Card Text":"Only usable when an ally or younger vampire successfully blocks before locking the blocker.\n[pre] Cancel the current action and unlock this acting vampire. The blocking minion is not locked.\n[dai] The block fails, and the action continues. The blocking minion cannot attempt to block this action again.\n[DAI] As [dai] above, and the blocking minion takes 1 damage (damage not preventable).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Presence",
@@ -59052,9 +59085,6 @@
             },
             "KMW":{
                 "PB":"3"
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":50,
@@ -61716,7 +61746,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[vic] Only usable by a vampire being burned; he or she is sent into torpor instead. Usable by a vampire in torpor. Usable by a locked vampire.\n[VIC] As above, and this vampire gains 2 blood from the blood bank.",
+        "Card Text":"Only usable if this vampire would be burned. Usable by a vampire in torpor. Usable by a locked vampire.\n[vic] Instead, this vampire goes to torpor.\n[VIC] As above, and this vampire gains 2 blood.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -61750,6 +61780,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":3,
@@ -62487,7 +62520,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[for] Put this card on this acting vampire. During your unlock phase, if this vampire is in torpor, you can burn this card to move him or her to your ready region. A vampire can have only one Renewed Vigor.\n[obe] Move a vampire in torpor to his controller's ready region, or restore an ally or retainer to his or her starting life (with life counters from the blood bank).\n[OBE] Choose any other vampire. That vampire gains enough blood from the blood bank to reach full capacity.",
+        "Card Text":"+1 stealth action.\n[for] Put this card on this vampire. During your unlock phase, this vampire can burn this card to move from torpor to the ready region. A vampire can have only one Renewed Vigor.\n[obe] Move a vampire from torpor to their controller's ready region.\n[obe] Add enough life to an ally or retainer to reach their starting life.\n[OBE] Add enough blood to another vampire to reach full capacity.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude/Obeah",
@@ -62509,6 +62542,9 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":37,
@@ -62580,7 +62616,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[pre] Only usable when the acting vampire's action is announced. If this action is blocked, the acting vampire gets an optional maneuver, only usable to maneuver to long range, during the resulting combat.\n[obe] +1 stealth.\n[OBE] Put this card on this vampire. This vampire gets +1 stealth. Burn this card if this vampire goes to torpor. This vampire cannot have or play another Repulsion.",
+        "Card Text":"[pre] Only usable as the action is announced. If this action is blocked, this vampire gets 1 optional maneuver, only usable to get to long range, during the resulting combat.\n[obe] +1 stealth.\n[OBE] Put this card on this vampire. This vampire gets +1 stealth. Burn this card if this vampire is in torpor. This vampire cannot have or play another Repulsion.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obeah/Presence",
@@ -62614,6 +62650,9 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":46,
@@ -62716,7 +62755,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[for] Put this card on this vampire. As another minion plays an action or combat card requiring Dementation [dem], Dominate [dom], Obeah [obe] or Serpentis [ser], this vampire can burn 1 blood. If they do so, that card has no effect on them.\n[FOR] As above, and unlock this vampire at the end of this action.",
+        "Card Text":"+1 stealth action.\n[for] Put this card on this vampire. As another minion plays an action or combat card requiring Dementation [dem], Dominate [dom], Obeah [obe] or Serpentis [ser], this vampire can burn 1 blood. If they do so, that card has no effect on them.\n[FOR] As above, and unlock this vampire after putting this card in play.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude",
@@ -63022,7 +63061,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Only usable if a retainer or ally has been burned from play since your last turn.\n[val] Move the retainer or ally card from your ash heap to your hand.\n[obe] Move the retainer card from its Methuselah's ash heap to this acting vampire, with life from the blood bank equal to its starting life. Use the normal version, if it requires a Discipline.\n[OBE] As [obe] above, but move the ally card instead. Put it in your ready region, unlocked.",
+        "Card Text":"+1 stealth action. Only usable if an ally or retainer has been burned from play since your last turn.\n[val] Move the ally or retainer card from your ash heap to your hand.\n[obe] Move the retainer card from an ash heap to this vampire, with life equal to its starting life. If it requires a Discipline, use the basic level.\n[OBE] As [obe] above, but move the ally card instead and put it in your ready region, unlocked.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obeah/Valeren",
@@ -63050,6 +63089,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -63443,7 +63485,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Ghoul with 2 life.\nThe minion with this retainer gets +1 intercept.",
+        "Card Text":"Ghoul with 2 life.\nThe employer gets +1 intercept.",
         "Clan":"Tzimisce",
         "Conviction Cost":"",
         "Discipline":"",
@@ -63463,6 +63505,9 @@
                 "U":true,
                 "PTz":1,
                 "SKTz":"1"
+            },
+            "POD":{
+                "DTC":true
             },
             "PLAYTEST":{
                 "PTz":3
@@ -63858,7 +63903,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an infernal minion. Unique.\nPut this card in play. Your prey burns 1 pool after resolution of each action during which you have burned corruption counters. Methuselahs can burn a vampire they control with any corruption counters during their unlock phase to burn this card.",
+        "Card Text":"+1 stealth action. Requires an infernal minion. Unique.\nPut this card in play. Your prey burns 1 pool after resolution of each action during which you have burned corruption counters. Any Methuselah can burn a vampire they control with any corruption counters during their unlock phase to burn this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -63874,9 +63919,6 @@
             "KSU":{
                 "TUA":"1",
                 "TUB":"1"
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":0,
@@ -64399,7 +64441,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[vic] Rescue a vampire from torpor.\n[VIC] Move 1 life counter from the blood bank to an ally who has fewer life than his or her starting amount.",
+        "Card Text":"+1 stealth action.\n[vic] Rescue a vampire from torpor.\n[VIC] Add 1 life to an ally who has fewer life than their starting life.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -64421,6 +64463,9 @@
             },
             "Third":{
                 "PTz":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -64783,7 +64828,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nPut pool you burn to unlock infernal minions you control using the infernal trait on this card. During an action, you can burn X counters from this card to reduce a bleed against you by X. During your predator's discard phase, burn all the counters from this card.",
+        "Card Text":"Master: unique location.\nPut pool you burn to unlock your infernal minions (using the infernal ability) on this card. Once each action, you may burn X counters from this card to reduce a bleed against you by X. Burn all counters from this card during your predator's discard phase.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -64803,9 +64848,6 @@
             "KMW":{
                 "R":true,
                 "PB":1
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":25,
@@ -65350,7 +65392,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] Allies get -1 intercept.\n[obe] As [for] above, and reaction cards cost 1 additional blood or life this action.\n[OBE] As [obe] above, and put this card on this vampire. Actions against this vampire cost 1 additional blood or life. Burn this card during your unlock phase.",
+        "Card Text":"[for] Allies get -1 intercept this action.\n[obe] As [for] above, and reaction cards cost +1 blood or life this action.\n[OBE] As [obe] above, and put this card on this vampire. Actions directed at this attached vampire cost +1 blood or life. Burn this card during your unlock phase.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude/Obeah",
@@ -65365,6 +65407,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -67122,7 +67167,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] [REACTION] Only usable if a younger vampire is acting. +1 intercept.\n[dai] [REACTION] +1 intercept, with an additional +1 intercept if the acting minion has any corruption counters.\n[DAI] [ACTIONMODIFIER] Only usable during a bleed action. +2 bleed (limited). Minions with any corruption counters get -1 intercept.",
+        "Card Text":"[aus] Only usable when a younger vampire is acting. +1 intercept.\n[dai] +1 intercept. +2 intercept if the acting minion has a corruption counter.\n[DAI] Only usable during a bleed action. +2 bleed (limited). Minions with corruption counters get -1 intercept when attempting to block this action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Daimoinon",
@@ -67137,9 +67182,6 @@
             },
             "KMW":{
                 "PB":"3"
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":71,
@@ -68743,7 +68785,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"+1 stealth action. Requires an infernal Baali with capacity 9 or more.\nPut this card on this Baali; if this Baali has three copies of this card, burn these copies to give each other Methuselah who has no shattered counters 1 shattered counter with \"During your unlock phase, burn 3 pool\". A vampire with capacity 6 or more can burn the Edge to burn this card as a (D) action.",
+        "Card Text":"+1 stealth action. Requires an infernal Baali with capacity 9 or more.\nPut this card on this Baali. A vampire with capacity 6 or more can burn the Edge to burn this card as a (D) action. If this Baali has three Shatter the Gate, burn them all to give each other Methuselah 1 shattered counter. A Methuselah with any shattered counters burns 3 pool during their unlock phase.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -68758,9 +68800,6 @@
             },
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":4,
@@ -68878,7 +68917,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[pro] (D) Inflict 1 unpreventable damage on an ally or retainer.\n[mel] (D) Discard a Shattering Crescendo to inflict 2 unpreventable damage on each of up to two minions controlled by a single Methuselah.\n[MEL] As [mel] above, but for 3 unpreventable damage each.",
+        "Card Text":"[pro] (D) Inflict 1 unpreventable damage on an ally or retainer.\n[mel] (D) Discard a Shattering Crescendo to inflict 2 unpreventable damage on each of up to 2 minions controlled by a single Methuselah.\n[MEL] As [mel] above, but for 3 unpreventable damage each.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee/Protean",
@@ -68901,9 +68940,6 @@
             },
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":14,
@@ -69611,7 +69647,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique master.\nPut this card on a Salubri you control. The Salubri with this card gets +1 intercept.",
+        "Card Text":"Unique.\nPut this card on a Salubri you control. This Salubri gets +1 intercept.",
         "Clan":"Salubri",
         "Conviction Cost":"",
         "Discipline":"",
@@ -69626,6 +69662,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":17,
@@ -69826,7 +69865,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Burn 2 blood to get +1 stealth.\n[mel] Only usable by a ready unlocked vampire other than the acting minion if a minion attempts to block. That attempt fails and the blocking minion cannot attempt to block this action again. Lock this vampire and the blocking minion. After the action resolution, this vampire and the blocking minion enter combat.\n[MEL] As [mel] above, but do not lock this modifying vampire.",
+        "Card Text":"[cel] This vampire burns 2 blood to get +1 stealth.\n[mel] Only usable by an unlocked ready vampire other than the acting minion when a minion attempts to block. That minion cannot block this action. Lock this vampire and that minion. Once the action resolves, this vampire enters combat with that minion.\n[MEL] As [mel] above, but do not lock this modifying vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity/Melpominee",
@@ -69878,9 +69917,6 @@
             },
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":16,
@@ -70204,7 +70240,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Play before range is determined.\n[vic] Opposing minion may not attempt to dodge this round. A vampire can play only one Skin Trap each round.\n[VIC] As above, and opposing minion cannot strike at all this round unless he or she burns 1 blood immediately.",
+        "Card Text":"Only usable before range is determined. A vampire can play only one Skin Trap each round.\n[vic] The opposing minion cannot dodge this round.\n[VIC] As above, and the opposing minion cannot strike this round unless they burn 1 blood immediately (allies cannot burn blood).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -70219,6 +70255,9 @@
             },
             "Third":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -71598,7 +71637,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[obf][vic] (D) Bleed.\n[OBF][VIC] Put this card on this acting vampire. Once each action this vampire performs, he or she can cancel a card that requires Auspex [aus] as it is played (no cost is paid).",
+        "Card Text":"+1 stealth action.\n[obf][vic] (D) Bleed.\n[OBF][VIC] Put this card on this vampire. During an action this vampire performs, they can cancel a card requiring Auspex [aus] as it is played, and its cost is not paid.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obfuscate & Vicissitude",
@@ -71610,6 +71649,9 @@
         "Set":{
             "KMW":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":3,
@@ -72269,7 +72311,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[dom] (D) Bleed at +1 bleed.\n[obe] (D) Bleed at +1 bleed and lock a ready minion controlled by your prey (even if the target of the bleed is changed).\n[OBE] +1 stealth action. (D) Take control of a ready unlocked minion until the end of the next action. That minion must bleed your prey unless he or she must hunt.",
+        "Card Text":"[dom] (D) Bleed with +1 bleed.\n[obe] (D) Bleed with +1 bleed and lock a ready minion controlled by your prey (even if the target of the bleed is changed).\n[OBE] +1 stealth action. (D) Take control of a ready unlocked minion until the end of the next action. That minion must bleed your prey unless they must hunt.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Dominate/Obeah",
@@ -72328,6 +72370,9 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":42,
@@ -72905,7 +72950,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[vic] Strike: 2R damage, with an optional press.\n[VIC] As above, but for 3R damage.",
+        "Card Text":"[vic] Strike: 2R damage, with 1 optional press.\n[VIC] As above, but for 3R damage.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Vicissitude",
@@ -72927,6 +72972,9 @@
             },
             "Third":{
                 "PTz":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":10,
@@ -76903,9 +76951,6 @@
             },
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":52,
@@ -77129,7 +77174,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nThis vampire gets superior Daimoinon [DAI] and is infernal. Cards requiring Daimoinon [dai] cost this vampire -2 blood. If this vampire is locked during your master phase, burn this equipment.",
+        "Card Text":"Unique equipment.\nThe vampire with this equipment has superior Daimoinon [DAI] and is infernal. Cards that require Daimoinon [dai] cost this vampire 2 less blood. During your master phase, if this vampire is locked, burn this equipment.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -77141,9 +77186,6 @@
         "Set":{
             "KMW":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":4,
@@ -78307,7 +78349,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable in combat with a Toreador, Toreador antitribu, ally or younger vampire.\n[pre] Strike: combat ends.\n[mel] Strike: combat ends. After combat ends, if this vampire was blocked while performing a non-bleed non-political action, the action continues as if unblocked.\n[MEL] As [mel] above, but usable to continue a bleed or political action.",
+        "Card Text":"Only usable in combat with a Toreador, Toreador antitribu, ally or younger vampire.\n[pre] Strike: combat ends.\n[mel] Strike: combat ends, and if this vampire was blocked while performing an action other than a political action or bleeding, the action continues as if unblocked.\n[MEL] Strike: combat ends, and if this vampire was blocked, the action continues as if unblocked.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee/Presence",
@@ -78355,9 +78397,6 @@
             },
             "LoB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":5,
@@ -78726,9 +78765,6 @@
             },
             "LoB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":7,
@@ -79271,7 +79307,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[dem] [ACTION] Unlock an ally or younger vampire.\n[obe] As [dem] above, with +1 stealth.\n[OBE] [REACTION] Cancel a card played by another Methuselah that would be placed on a vampire with Dementation [dem] he or she does not control. Usable even if there is no action.",
+        "Card Text":"[dem] [ACTION] Unlock an ally or younger vampire.\n[obe] [ACTION] As [dem] above, with +1 stealth.\n[OBE] [REACTION] Cancel a card as it is played by another Methuselah that would be put on a vampire with Dementation [dem] they do not control. Usable even if there is no action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Dementation/Obeah",
@@ -79308,6 +79344,9 @@
         "Set":{
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -80056,7 +80095,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card on a non-infernal mortal ally you control, or burn 2 pool to put this card on a non-infernal minion you control. This minion cannot be the target of directed actions requiring Dominate [dom] or Presence [pre]. In combat, damage this minion inflicts on infernal minions is aggravated. Infernal minions cannot block or strike against this minion. Burn this card if this minion becomes infernal.",
+        "Card Text":"Unique master.\nPut this card on a non-infernal mortal ally you control, or pay 2 pool to put this card on any non-infernal minion you control. Actions requiring Dominate [dom] or Presence [pre] cannot be directed at this minion. In combat, any damage this minion inflicts on an infernal minion is aggravated. Infernal minions cannot block or strike this minion. Burn this card if this minion becomes infernal.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -80068,9 +80107,6 @@
         "Set":{
             "BL":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":2,
@@ -80542,7 +80578,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a Nosferatu antitribu. The vampire with this card is no longer considered to be a Nosferatu antitribu. He or she is now a Pander, and any Nosferatu antitribu with a different controller may enter combat with him or her as a (D) action. The vampire with this card may burn it as a (D) action that costs 2 blood.",
+        "Card Text":"Put this card on a Nosferatu antitribu. This vampire is considered a Pander, and any Nosferatu antitribu can enter combat with them as a (D) action. This vampire can burn this card as a (D) action that costs 2 blood.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -80557,6 +80593,9 @@
             },
             "SW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -80570,7 +80609,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[ani] +1 stealth action. Move 1 or more blood from this vampire to any other vampire.\n[obe] As [ani] above, and unlock this acting vampire.\n[OBE] (D) Put this card on an ally or a younger vampire. The minion with this card cannot take actions, block or play reaction cards. During this minion's unlock phase, this card is burned unless this acting vampire burns 2 blood.",
+        "Card Text":"[ani] +1 stealth action. Move 1 or more blood from this vampire to another vampire.\n[obe] As [ani] above, and unlock this acting vampire.\n[OBE] (D) Put this card on an ally or younger vampire. The attached minion cannot perform actions, block or play reaction cards. During the attached minion's unlock phase, burn this card unless this acting vampire burns 2 blood.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Animalism/Obeah",
@@ -80585,6 +80624,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":10,
@@ -81141,7 +81183,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Only usable if this Baali blocks, before block resolution.\nPut this card on the acting vampire. If there are any vampires in torpor that the attached vampire can diablerize, they cannot perform any action other than diablerie (although they are free not to perform any action). If they must hunt, they can choose to diablerize a vampire instead.",
+        "Card Text":"Only usable when a Baali successfully blocks (play before combat, if any).\nPut this card on the acting vampire. When there are any vampires in torpor that this vampire can diablerize, this vampire cannot take any action other than diablerie (although he or she is free not to take any action). If this vampire must hunt, he or she may choose to diablerize a vampire instead.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -81166,9 +81208,6 @@
         "Set":{
             "KMW":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":3,
@@ -81404,7 +81443,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card in play. This card can attempt to block an action directed at you (or a card you control) and is considered a 9-capacity infernal vampire with +2 intercept during that attempt; if successful, the acting minion takes 1 unpreventable environmental aggravated damage and this card is burned.\n[DAI] As above, and unlock this vampire.",
+        "Card Text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card in play. This card can attempt to block a (D) action against you (or a card you control) and is considered a 9-capacity infernal vampire with +2 intercept during that attempt; if successful, the acting minion takes 1 unpreventable environmental aggravated damage and this card is burned.\n[DAI] As above, and unlock this vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon",
@@ -81468,9 +81507,6 @@
             },
             "Anthology I":{
                 "":"1"
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":140,
@@ -82497,7 +82533,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique mage with 2 life. 1 strength, 2 bleed. Requires an infernal vampire.\nVeneficti has +1 stealth. He can steal a demon ally or burn a demon retainer as a (D) action. He cannot be the target of a directed action performed by an ally or a vampire with capacity 6 or less.",
+        "Card Text":"Unique mage with 2 life. 1 strength, 2 bleed. Requires an infernal vampire.\nVeneficti has +1 stealth. He can steal a demon ally or burn a demon retainer as a (D) action. He cannot be the target of a (D) action by an ally or a vampire with capacity 6 or less.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -82519,9 +82555,6 @@
             },
             "HttB":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":72,
@@ -82989,7 +83022,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Vicissitude [vic]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Vicissitude [VIC].",
+        "Card Text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Vicissitude [vic] and +1 capacity. Cannot be put on a vampire with superior Vicissitude [VIC].",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -83009,6 +83042,9 @@
             "Third":{
                 "PTz":1,
                 "SKTz":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":23,
@@ -83022,7 +83058,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a Tzimisce. Put a poison counter on this card each time this vampire plays a card that requires Vicissitude [vic]. If the number of poison counters on this card is greater than the capacity of the vampire, burn him or her at the end of the current action or combat.",
+        "Card Text":"Put this card on a Tzimisce. Put 1 poison counter on this card each time this vampire plays a card requiring Vicissitude [vic]. If the number of poison counters on this card is greater than this vampire's capacity, burn this vampire at the end of the current action or combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -83038,6 +83074,9 @@
             "SW":{
                 "R":true,
                 "PL":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -83299,9 +83338,6 @@
             },
             "HttB":{
                 "C":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Twd":11,
@@ -83394,7 +83430,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Play before range is determined. Only usable if the opposing minion is a vampire. A vampire can play only one Vitae Block each combat.\n[ani] This vampire gets an optional press this round.\n[obe] Put this card in play and move up to 2 blood from the opposing vampire to this card. During your unlock phase, return the blood counters to that vampire and burn this card.\n[OBE] As [obe] above, but move up to 3 blood to this card.",
+        "Card Text":"Only usable before range is determined in combat with a vampire. A vampire can play only one Vitae Block each combat.\n[ani] This vampire gets 1 optional press this round.\n[obe] Put this card in play and move up to 2 blood from the opposing vampire to this card. During your unlock phase, move all the blood from this card to the opposing vampire and burn this card.\n[OBE] As [obe] above, but move up to 3 blood to this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Animalism/Obeah",
@@ -83409,6 +83445,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":10,
@@ -84124,7 +84163,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Ghoul with 5 life. 4 strength, 0 bleed.\nWhen War Ghoul enters play, burn an ally or retainer you control. She can enter combat with any ready vampire controlled by another Methuselah as a (D) action. She may prevent 1 damage each round. Lock and burn War Ghoul to burn any location; you cannot use this ability during combat.",
+        "Card Text":"Ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. It can prevent 1 damage each round of combat. It can enter combat with a vampire as a (D) action. It can lock and burn itself to burn a location, except during combat.",
         "Clan":"Tzimisce",
         "Conviction Cost":"",
         "Discipline":"",
@@ -84168,6 +84207,9 @@
             "Third":{
                 "R":true,
                 "PTz":1
+            },
+            "POD":{
+                "DTC":true
             },
             "PLAYTEST":{
                 "PTz":2
@@ -85147,7 +85189,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Equipment.\nDuring any Methuselah's unlock phase, you may look at the top card of that Methuselah's library. If that card is a master card, this vampire may burn 1 blood to burn that card.",
+        "Card Text":"During any Methuselah's unlock phase, you can look at the top card of that Methuselah's library; if it is a master card, this vampire can burn 1 blood to burn it.",
         "Clan":"Tzimisce",
         "Conviction Cost":"",
         "Discipline":"",
@@ -85166,6 +85208,9 @@
         "Set":{
             "BH":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -86004,7 +86049,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\n[dom] (D) Burn half the blood counters on an uncontrolled minion in your prey's uncontrolled region (round down).\n[obf] +1 stealth action. (D) Burn a location.\n[vic] (D) Burn 4 blood from a ready, titled, non-Anarch vampire.",
+        "Card Text":"Requires an Anarch.\n[dom] (D) Burn half the blood rounded down on a crypt card in your prey's uncontrolled region.\n[obf] +1 stealth action. (D) Burn a location.\n[vic] (D) Burn 4 blood from a ready titled non-Anarch vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Dominate/Obfuscate/Vicissitude",
@@ -86024,6 +86069,9 @@
         "Set":{
             "TR":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,

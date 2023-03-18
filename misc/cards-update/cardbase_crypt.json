@@ -491,7 +491,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Laibon: Adhiambo gets +1 stealth when equipping with a weapon from your hand and +1 stealth on actions to enter combat with other minions.",
+        "Card Text":"Laibon: Adhiambo gets +1 stealth during actions to equip with a weapon card from your hand and actions to enter combat with a minion.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Potence":1,
@@ -507,6 +507,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -970,7 +973,7 @@
         ],
         "Banned":"",
         "Capacity":2,
-        "Card Text":"Independent: You can burn 1 pool and use 4 transfers to give Aimee +1 level of Melpominee [mel]. She cannot play reaction cards.",
+        "Card Text":"Independent: You may use four transfers and burn 1 pool to give Aimee an additional level of Melpominee [mel]. Aimee cannot play reaction cards.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":1,
@@ -985,9 +988,6 @@
         "Set":{
             "LoB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -2006,6 +2006,9 @@
             },
             "BSC":{
                 "X":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"bishop",
@@ -2022,7 +2025,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Advanced, Sabbat bishop: If Alfred is ready, he may lock before range is determined to end combat between two other Sabbat vampires.\n[MERGED] Archbishop of Montreal: Once each referendum, he may burn 1 blood to gain 1 vote.",
+        "Card Text":"Sabbat bishop: If Alfred is ready, he can lock before range is determined to end combat involving two other Sabbat vampires.\n[MERGED] Archbishop of Montreal: During the polling step of any referendum, he can burn 1 blood to get +1 vote.",
         "Clan":"Pander",
         "Disciplines":{
             "Auspex":1,
@@ -2039,6 +2042,9 @@
         "Set":{
             "Anarchs":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"bishop",
@@ -2980,6 +2986,9 @@
         "Set":{
             "SP":{
                 "DoF":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -3053,6 +3062,9 @@
         "Set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -3622,7 +3634,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: If Angela is burned in combat, burn 2 pool.",
+        "Card Text":"Sabbat: After Angela is burned in combat, burn 2 pool.",
         "Clan":"Pander",
         "Disciplines":{
             "Presence":1
@@ -3639,6 +3651,9 @@
             },
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -3652,7 +3667,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Camarilla: During your influence phase, Angela can lock to unlock another vampire. She must burn 1 blood to attempt to block an older vampire.",
+        "Card Text":"Camarilla: Angela must burn 1 blood to attempt to block an older vampire. You may lock Angela during your influence phase to unlock any other vampire.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":1,
@@ -3682,9 +3697,6 @@
         "Set":{
             "BL":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -4157,9 +4169,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"2 votes",
@@ -4399,9 +4408,6 @@
         "Set":{
             "LoB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -4468,6 +4474,9 @@
             "SW":{
                 "U":true,
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -5281,7 +5290,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent. 1 vote (titled): During the polling step of any referendum, Arishat can burn 1 blood to force a vampire to abstain. Infernal.",
+        "Card Text":"Independent. 1 vote (titled): During the polling step of any referendum, Arishat can burn 1 blood to force any vampire to abstain. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Daimoinon":2,
@@ -5330,9 +5339,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"1 vote",
@@ -6179,7 +6185,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: Actions to put vampires in play cost Azaneal -1 blood or pool. Infernal.",
+        "Card Text":"Independent: Actions to put vampires in play cost Azaneal 1 less blood or pool. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Presence":1,
@@ -6198,9 +6204,6 @@
             "KMW":{
                 "U":true,
                 "PB":1
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -6646,7 +6649,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Independent: Barbaro can change his clan to Tremere antitribu as +1 stealth action. He can put 1 taint counter on a minion as a +1 stealth (D) action; if the minion has 2 taint counters, burn them and the minion becomes infernal. Infernal.",
+        "Card Text":"Independent: Barbaro may place a taint counter on a minion as a +1 stealth (D) action. If a minion has 2 taint counters, burn those counters to make the minion infernal. Barbaro may change his clan to Tremere antitribu as +1 stealth action. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Daimoinon":1,
@@ -6670,9 +6673,6 @@
         "Set":{
             "Promo":{
                 "2004-10-15":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -6903,7 +6903,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: Any older vampire gets +1 strength when in combat with Basil.",
+        "Card Text":"Sabbat: Older vampires get +1 strength in combat with Basil.",
         "Clan":"Pander",
         "Disciplines":{
             "Obfuscate":1
@@ -6920,6 +6920,9 @@
             },
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -8168,7 +8171,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent: Once per turn, when Blanche successfully hunts, unlock her at the end of the action. Scarce.",
+        "Card Text":"Independent: Once each turn, Blanche can unlock after successfully hunting. Scarce.",
         "Clan":"Salubri",
         "Disciplines":{
             "Auspex":1,
@@ -8191,6 +8194,9 @@
         "Set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -9325,6 +9331,9 @@
         "Set":{
             "SW":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -9891,6 +9900,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -10227,7 +10239,7 @@
         ],
         "Banned":"",
         "Capacity":3,
-        "Card Text":"Independent: C\u00e9leste gets +1 bleed against Methuselahs who control a ready Toreador. She gets -1 intercept during bleed actions.",
+        "Card Text":"Independent: C\u00e9leste gets -1 intercept when attempting to block a bleed action. C\u00e9leste gets +1 bleed when bleeding a Methuselah who controls a ready Toreador.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Melpominee":1,
@@ -10242,9 +10254,6 @@
         "Set":{
             "BL":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -10772,7 +10781,7 @@
         ],
         "Banned":"",
         "Capacity":2,
-        "Card Text":"Sabbat: Christine gets -1 intercept when attempting to block a bleed action.",
+        "Card Text":"Sabbat: Christine gets -1 intercept during bleed actions.",
         "Clan":"Pander",
         "Disciplines":{
             "Dominate":1,
@@ -10790,6 +10799,9 @@
             },
             "Tenth":{
                 "B":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -11487,6 +11499,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -11672,7 +11687,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Sabbat: When you draw to replace a combat card Vladimir plays, you may draw an additional card (discard afterward). He gets +1 strength in combat with a werewolf. Flight [FLIGHT].",
+        "Card Text":"Sabbat: After you replace a combat card Vladimir played, you can draw 1 additional card (discard down afterward). He gets +1 strength in combat with a werewolf. Flight [FLIGHT].",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Dominate":1,
@@ -11691,6 +11706,9 @@
         "Set":{
             "Third":{
                 "PTz":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -12006,7 +12024,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Independent: If Cybele is unlocked at the start of your master phase, you get +1 master phase action. She can bleed with +2 bleed as a (D) action that costs 1 blood. Infernal.",
+        "Card Text":"Independent: If Cybele is unlocked during your master phase, you get an additional master phase action. Cybele may bleed at +2 bleed as (D) action that costs 1 blood. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Animalism":2,
@@ -12026,9 +12044,6 @@
             "KMW":{
                 "U":true,
                 "PB":1
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -12072,7 +12087,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Sabbat: When any Methuselah plays a Gehenna card while Cyscek is ready, that Methuselah burns 1 pool, and you get the Edge. +1 stealth.",
+        "Card Text":"Sabbat: If Cyscek is ready after any Methuselah plays a Gehenna event, you gain the Edge and that Methuselah burns 1 pool. +1 stealth.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Dementation":1,
@@ -12090,6 +12105,9 @@
         "Set":{
             "Gehenna":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -12123,6 +12141,9 @@
             },
             "KSU":{
                 "AU":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -12783,7 +12804,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Sabbat. Black Hand: Darvag may burn a location as a (D) action.",
+        "Card Text":"Sabbat: Darvag can burn a location as a (D) action. Black Hand.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Auspex":1,
@@ -12809,6 +12830,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -12995,7 +13019,7 @@
         ],
         "Banned":"",
         "Capacity":4,
-        "Card Text":"Independent: Delilah gets -1 intercept against older vampires.",
+        "Card Text":"Independent: Delilah gets -1 intercept when attempting to block an older vampire.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":1,
@@ -13011,9 +13035,6 @@
         "Set":{
             "BL":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -13060,7 +13081,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Laibon: If any Gehenna cards are in play during your unlock phase, you may move an animal retainer on Demdemeh to your ready region as an animal ally with 1 strength and 1 bleed. While that animal has more than 2 life, he or she gets +1 strength.",
+        "Card Text":"Laibon: If any Gehenna events are in play during your unlock phase, you can move an animal retainer on Demdemeh to your ready region; it becomes an animal ally with 1 strength and 1 bleed, and +1 strength while it has 3 or more life.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Auspex":1,
@@ -13087,6 +13108,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -13295,6 +13319,9 @@
             "SW":{
                 "U":true,
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -14883,6 +14910,9 @@
             },
             "SP":{
                 "DoF":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -15030,7 +15060,7 @@
         ],
         "Banned":"",
         "Capacity":11,
-        "Card Text":"Independent: Cards requiring Vicissitude [vic] cost The Dracon 1 fewer blood. He inflicts +1 damage or steals 1 additional blood or life with ranged strikes (even at close range). Flight [FLIGHT]. +1 bleed. +2 strength.",
+        "Card Text":"Independent: Cards requiring Vicissitude [vic] cost The Dracon -1 blood. He inflicts +1 damage or steals 1 additional blood or life with ranged strikes (even at close range). Flight [FLIGHT]. +1 bleed. +2 strength.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":2,
@@ -15050,6 +15080,9 @@
                 "2015-02-16":true,
                 "2018-10-04":true,
                 "2019-04-08":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -15063,7 +15096,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Sabbat: Dragos does not have to burn blood to pay the cost of combat cards he plays.",
+        "Card Text":"Sabbat: Dragos does not burn blood to pay the cost of combat cards he plays.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Vicissitude":1,
@@ -15096,6 +15129,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -15158,6 +15194,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -15241,7 +15280,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Sabbat: You can draw 1 additional card after replacing a card requiring Vicissitude [vic] Duality played.",
+        "Card Text":"Sabbat: After you replace a card requiring Vicissitude [vic] Duality played, you can draw 1 additional card (discard down afterward).",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":1,
@@ -15259,10 +15298,14 @@
                 "2006-07-10":true
             },
             "Third":{
-                "PTz":1
+                "PTz":1,
+                "SKTz":"1"
             },
             "SP":{
                 "DoF":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -15911,9 +15954,6 @@
         "Set":{
             "KMW":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -16145,6 +16185,9 @@
             },
             "Third":{
                 "PTz":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -17141,7 +17184,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent: Eurayle may unlock any minion as an action. If you control the minion, this is a +2 stealth action. Scarce.",
+        "Card Text":"Independent: Eurayle can unlock a minion as an action; that action gets +2 stealth if you control the minion. Scarce.",
         "Clan":"Salubri",
         "Disciplines":{
             "Fortitude":1,
@@ -17171,6 +17214,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -17314,7 +17360,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent: Evil Jensen can search your crypt for a vampire and move them to your uncontrolled region as a +1 stealth action that costs 2 pool. She must burn 1 blood to attempt to block older vampires.",
+        "Card Text":"Independent: Evil Jensen can search your crypt for a vampire and move them to your uncontrolled region as a +1 stealth action that costs 2 pool (shuffle afterward). She must burn 1 blood to attempt to block older vampires.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Melpominee":1,
@@ -17335,9 +17381,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -17921,7 +17964,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: During your unlock phase, any older Sabbat vampire controlled by another Methuselah can burn 1 blood to lock Feo.",
+        "Card Text":"Sabbat: During your unlock phase, older Sabbat vampires controlled by other Methuselahs can burn 1 blood to lock Feo.",
         "Clan":"Pander",
         "Disciplines":{
             "Auspex":1
@@ -17935,6 +17978,9 @@
         "Set":{
             "Anarchs":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -18930,7 +18976,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent: Ga\u00ebl can never have more than 1 intercept; any additional intercept she gains is lost.",
+        "Card Text":"Independent: Ga\u00ebl can never have more than 1 intercept. Any additional intercept she gains is lost.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Chimerstry":1,
@@ -18947,9 +18993,6 @@
         "Set":{
             "BL":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -19976,7 +20019,7 @@
         ],
         "Banned":"",
         "Capacity":2,
-        "Card Text":"Sabbat: Gillian cannot attempt political actions.",
+        "Card Text":"Sabbat: Gillian cannot perform political actions.",
         "Clan":"Pander",
         "Disciplines":{
             "Animalism":1,
@@ -19994,6 +20037,9 @@
             },
             "Tenth":{
                 "A":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -20007,7 +20053,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: During another Methuselah's discard phase, you can discard one card (draw up afterward). Vampires must burn 1 blood to attempt to block Giotto. Infernal.",
+        "Card Text":"Independent: During any other Methuselah's discard phase, you may discard a card from your hand (and draw a new one). Vampires must burn a blood to attempt to block Giotto. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Fortitude":1,
@@ -20025,9 +20071,6 @@
         "Set":{
             "BL":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -20941,6 +20984,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -21913,7 +21959,7 @@
         ],
         "Banned":"",
         "Capacity":4,
-        "Card Text":"Independent: If Harlan is diablerized, no blood hunt can be called. He gets -1 intercept during non-bleed actions.",
+        "Card Text":"Independent: If Harlan is diablerized, no blood hunt can be called. He gets -1 intercept against non-bleed actions.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Melpominee":1,
@@ -21932,9 +21978,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -22912,7 +22955,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Independent: While Angra is ready, your prey gets -1 hand size. During a non-bleed action, he can burn the Edge to get +1 stealth. Infernal.",
+        "Card Text":"Independent: While Angra is ready, your prey's hand size is 1 card smaller. You may burn the Edge to give Angra +1 stealth on a non-bleed action. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Dementation":1,
@@ -22930,9 +22973,6 @@
         "Set":{
             "BL":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -22946,7 +22986,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Independent: During a bleed action, Hillanvale can burn 1 blood and discard a card requiring Melpominee [mel] to get +1 bleed. She gets -1 intercept against non-Independent, non-Anarch vampires.",
+        "Card Text":"Independent: During an action, Hillanvale can burn 1 blood and discard a card requiring Melpominee [mel] to get +1 bleed. She gets -1 intercept against non-Independent, non-Anarch vampires.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Obfuscate":1,
@@ -22965,9 +23005,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -23148,6 +23185,9 @@
             "SW":{
                 "U":true,
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -23228,9 +23268,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -23393,7 +23430,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: Any Gangrel antitribu controlled by another Methuselah may enter combat with Huang as a (D) action.",
+        "Card Text":"Sabbat: Any Gangrel antitribu can enter combat with Huang as a (D) action.",
         "Clan":"Pander",
         "Disciplines":{
             "Protean":1
@@ -23410,6 +23447,9 @@
             },
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -23455,7 +23495,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Independent: If Huitzilopochtli is ready during your master phase, you can burn 1 pool to get +1 master phase action. Infernal. +1 bleed.",
+        "Card Text":"Independent: During your master phase, you may pay a pool to gain a master phase action if Huitzilopochtli is ready. +1 bleed. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Auspex":2,
@@ -23474,9 +23514,6 @@
         "Set":{
             "BL":{
                 "R":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -24028,6 +24065,9 @@
             },
             "SP":{
                 "DoF":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -25363,7 +25403,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: Whenever Andy goes to torpor, you must discard two cards at random from your hand. (Draw up to your hand size afterward.)",
+        "Card Text":"Sabbat: After Andy goes to torpor, discard 2 cards at random (draw up afterward).",
         "Clan":"Pander",
         "Disciplines":{
             "Potence":1
@@ -25384,6 +25424,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -25606,7 +25649,7 @@
         ],
         "Banned":"",
         "Capacity":4,
-        "Card Text":"Sabbat: Non-combat cards cost Jane an additional blood.",
+        "Card Text":"Sabbat: Non-combat cards cost Jane +1 blood.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":1,
@@ -25633,6 +25676,9 @@
             },
             "Third":{
                 "PTz":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -25664,9 +25710,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -26794,7 +26837,7 @@
         ],
         "Banned":"",
         "Capacity":4,
-        "Card Text":"Sabbat: Jimmy Dunn cannot be contested. If a second Jimmy comes into play, burn the first Jimmy in play instead of contesting him.",
+        "Card Text":"Sabbat: Jimmy Dunn cannot be contested; if a second Jimmy would enter play, burn the first Jimmy in play instead of contesting him.",
         "Clan":"Pander",
         "Disciplines":{
             "Fortitude":1,
@@ -26840,6 +26883,9 @@
             },
             "Tenth":{
                 "B":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -27216,7 +27262,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Sabbat Archbishop of Istanbul: During your unlock phase, if John is ready, he may burn 2 blood to cause your prey to burn 1 pool.",
+        "Card Text":"Sabbat Archbishop of Istanbul: If John is ready during your unlock phase, he can burn 2 blood to burn 1 pool from your prey.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Potence":1,
@@ -27234,6 +27280,9 @@
         "Set":{
             "Gehenna":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"archbishop",
@@ -28107,7 +28156,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: Any other Methuselah's titled Sabbat vampire may call a referendum to steal Kai for him or her as a +1 stealth political action.",
+        "Card Text":"Sabbat: Titled Sabbat vampires controlled by other Methuselahs can call a referendum to steal Kai as a +1 stealth political action.",
         "Clan":"Pander",
         "Disciplines":{
             "Celerity":1
@@ -28121,6 +28170,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -29115,7 +29167,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Sabbat. Black Hand Seraph: If Kazimir blocks an action, he gets an optional press in the resulting combat.",
+        "Card Text":"Sabbat: If Kazimir blocks, he gets 1 optional press during the resulting combat. Black Hand. Seraph.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":1,
@@ -29140,6 +29192,9 @@
         "Set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -30671,6 +30726,9 @@
         "Set":{
             "SP":{
                 "DoF":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"priscus",
@@ -30684,7 +30742,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Sabbat bishop: Zara gets an optional press each combat. She may enter combat with a ready Baali as a (D) action.",
+        "Card Text":"Sabbat bishop: Zara gets 1 optional press each combat. She can enter combat with a Baali as a (D) action.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":2,
@@ -30702,6 +30760,9 @@
             "Third":{
                 "PTz":"2",
                 "SKTz":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"bishop",
@@ -30744,7 +30805,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Sabbat: Laika may burn 1 blood to strike for 2R damage.",
+        "Card Text":"Sabbat: Laika can burn 1 blood to strike: 2R damage.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Chimerstry":1,
@@ -30763,6 +30824,9 @@
             "Third":{
                 "PTz":"2",
                 "SKTz":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -30841,7 +30905,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Sabbat cardinal: Once each combat, Lambach may burn 1 blood to make the damage from his hand strikes aggravated for the current round. +1 strength.",
+        "Card Text":"Sabbat cardinal: Once each combat, Lambach can burn 1 blood to make the damage from his hand strikes aggravated for the current round. +1 strength.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Presence":1,
@@ -30863,6 +30927,9 @@
             "SW":{
                 "U":true,
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"cardinal",
@@ -30879,7 +30946,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Advanced, Independent: Lambach has 2 votes (titled). He can equip with an Eye of /Hazimel/ at no cost from your library as a +1 stealth action (shuffle afterward).\n[MERGED] He unlocks when he successfully performs an action to put a vampire in play.",
+        "Card Text":"Independent. 2 votes (titled): Lambach can search your library for a card named /Eye of /Hazimel// and equip it at no cost as a +1 stealth action (shuffle afterward).\n[MERGED] Lambach can unlock after successfully performing an action to put a vampire in play.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Presence":1,
@@ -30916,6 +30983,9 @@
         "Set":{
             "Promo":{
                 "2003-09-01":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"2 votes",
@@ -31639,7 +31709,7 @@
         ],
         "Banned":"",
         "Capacity":3,
-        "Card Text":"Sabbat: Lena cannot attempt actions that would give her a title and cannot be chosen as the recipient of a title.",
+        "Card Text":"Sabbat: Lena cannot receive any title.",
         "Clan":"Pander",
         "Disciplines":{
             "Auspex":1,
@@ -31658,6 +31728,9 @@
             },
             "Tenth":{
                 "A":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -32163,7 +32236,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Sabbat: When the Tailor recruits an ally or employs a retainer that requires Tzimisce or Vicissitude [vic], the cost is reduced by one blood or pool. +1 bleed.",
+        "Card Text":"Sabbat: Allies and retainers requiring a Tzimisce or Vicissitude [vic] cost the Tailor -1 blood or pool. +1 bleed.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Dementation":1,
@@ -32188,6 +32261,9 @@
         "Set":{
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -32413,6 +32489,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -33537,7 +33616,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Sabbat bishop: Cards requiring Animalism [ani] cost Ludmijla 1 fewer blood.",
+        "Card Text":"Sabbat bishop: Cards requiring Animalism [ani] cost Ludmijla -1 blood.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":2,
@@ -33565,6 +33644,9 @@
             },
             "SP":{
                 "DoF":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"bishop",
@@ -34724,7 +34806,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: If March is diablerized, no one can call a blood hunt against the diablerist.",
+        "Card Text":"Sabbat: If March is diablerized, no blood hunt can be called.",
         "Clan":"Pander",
         "Disciplines":{
             "Fortitude":1
@@ -34741,6 +34823,9 @@
             },
             "SW":{
                 "PV":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -35001,7 +35086,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: Any Tzimisce controlled by another Methuselah may enter combat with Margarite as a (D) action.",
+        "Card Text":"Sabbat: Any Tzimisce can enter combat with Margarite as a (D) action.",
         "Clan":"Pander",
         "Disciplines":{
             "Obtenebration":1
@@ -35015,6 +35100,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -36074,7 +36162,7 @@
         ],
         "Banned":"",
         "Capacity":2,
-        "Card Text":"Sabbat: Any older vampire with Presence [pre] can steal Mary for his or her controller as a (D) action.",
+        "Card Text":"Sabbat: Older vampires with Presence [pre] can steal Mary as a (D) action.",
         "Clan":"Pander",
         "Disciplines":{
             "Fortitude":1,
@@ -36089,6 +36177,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -36102,7 +36193,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: Once each round, Mary can burn 1 blood to make the damage from her hand strikes aggravated that round. Infernal.",
+        "Card Text":"Independent: Once each round, Mary may burn a blood to make the damage from her hand strikes aggravated for the current round. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Celerity":1,
@@ -36120,9 +36211,6 @@
         "Set":{
             "BL":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -36737,6 +36825,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -36775,6 +36866,9 @@
         "Set":{
             "Gehenna":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -36788,7 +36882,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: While Matthias is ready, Baali and Ministers get -1 bleed when bleeding you. +1 intercept. Scarce.",
+        "Card Text":"Independent: While Matthias is ready, Baali and Ministers get -1 bleed against you. Scarce. +1 intercept.",
         "Clan":"Salubri",
         "Disciplines":{
             "Necromancy":1,
@@ -36812,6 +36906,9 @@
         "Set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -36825,7 +36922,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent. 1 vote (titled): Once each turn, you can gain 1 pool after Maureen performs a successful action requiring a Baali or Daimoinon [dai]. Infernal.",
+        "Card Text":"Independent: Maureen has 1 vote (titled). Once each turn, when Maureen successfully performs an action requiring Baali or Daimoinon [dai], you gain 1 pool. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Dominate":1,
@@ -36855,9 +36952,6 @@
         "Set":{
             "KMW":{
                 "PB":"2"
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"1 vote",
@@ -37482,7 +37576,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Sabbat priscus: Cards that require Vicissitude [vic] cost Meshenka one less blood.",
+        "Card Text":"Sabbat priscus: Cards requiring Vicissitude [vic] cost Meshenka -1 blood.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":2,
@@ -37501,6 +37595,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"priscus",
@@ -38106,7 +38203,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Independent: Rescuing a vampire from torpor costs Miriam 1 less blood. During your unlock phase, you may move 1 blood from Miriam to any ready vampire. Scarce.",
+        "Card Text":"Independent: Rescuing a vampire from torpor costs Miriam -1 blood. During your unlock phase, you can move 1 blood from her to a ready vampire. Scarce.",
         "Clan":"Salubri",
         "Disciplines":{
             "Fortitude":1,
@@ -38135,6 +38232,9 @@
         "Set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -38273,7 +38373,7 @@
         ],
         "Banned":"",
         "Capacity":2,
-        "Card Text":"Sabbat: Rescuing Mitchell from torpor costs an additional blood.",
+        "Card Text":"Sabbat: Rescuing Mitchell from torpor costs +1 blood.",
         "Clan":"Pander",
         "Disciplines":{
             "Obtenebration":1,
@@ -38291,6 +38391,9 @@
             },
             "SW":{
                 "PL":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -38892,7 +38995,7 @@
         ],
         "Banned":"",
         "Capacity":3,
-        "Card Text":"Independent: If Mr. Noir is burned in combat, you gain 2 pool. Scarce.",
+        "Card Text":"Independent: After Mr. Noir is burned in combat, you gain 2 pool. Scarce.",
         "Clan":"Salubri",
         "Disciplines":{
             "Fortitude":1,
@@ -38914,6 +39017,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -39214,9 +39320,6 @@
         "Set":{
             "BL":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -39440,6 +39543,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -40280,9 +40386,6 @@
             "Promo":{
                 "2005-10-01":true,
                 "2019-04-08":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -40299,7 +40402,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Independent: While Nergal is acting, reaction cards cost +1 blood. During an action, he can burn 1 blood to get +1 stealth. Infernal.",
+        "Card Text":"Independent: While Nergal is acting, reaction cards cost 1 additional blood. Once each action, he can burn 1 blood to get +1 stealth. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Auspex":2,
@@ -40326,9 +40429,6 @@
             "Promo":{
                 "2008-02-03":true,
                 "2019-04-08":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -41138,6 +41238,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -41328,7 +41431,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: Any Black Hand vampire can steal Olga for his or her controller as a (D) action that costs 1 pool.",
+        "Card Text":"Sabbat: Black Hand vampires can steal Olga as a (D) action that costs 1 pool.",
         "Clan":"Pander",
         "Disciplines":{
             "Vicissitude":1
@@ -41350,6 +41453,9 @@
         "Set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -42728,7 +42834,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Camarilla: Once each round of combat after the first, minions in combat with Petaniqua take 2 damage before range is determined. Allies and retainers cost her -1 blood or pool. Infernal. Red List. +1 bleed.",
+        "Card Text":"Camarilla. Red List: During any round of combat after the first, a minion opposing Petaniqua takes 2 points of damage before range is determined. Recruiting allies and employing retainers costs Petaniqua 1 less blood or pool. +1 bleed. Infernal.",
         "Clan":"Malkavian",
         "Disciplines":{
             "Chimerstry":1,
@@ -42755,9 +42861,6 @@
             "KMW":{
                 "U":true,
                 "PB":1
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -42774,7 +42877,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Independent: Once each combat, Petaniqua can burn 1 blood to get 1 press. She can recruit a werewolf ally as if she met the requirements of playing that card. Infernal. Red List. +1 strength.",
+        "Card Text":"Advanced, Independent. Red List: Once each combat, Petaniqua may burn a blood to gain a press. Petaniqua may recruit a werewolf ally as if she meets the requirements of playing that card. +1 strength. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Chimerstry":1,
@@ -42825,9 +42928,6 @@
             "KMW":{
                 "U":true,
                 "PB":1
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -43268,7 +43368,7 @@
         ],
         "Banned":"",
         "Capacity":2,
-        "Card Text":"Sabbat. Black Hand.",
+        "Card Text":"Sabbat: Black Hand.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Auspex":1
@@ -43290,6 +43390,9 @@
         "Set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -44166,7 +44269,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Sabbat cardinal: During your unlock phase, Radu gains 1 blood if the /Purchase Pact/ is in play.",
+        "Card Text":"Sabbat cardinal: If the card named /Purchase Pact/ is in play during your unlock phase, Radu can gain 1 blood.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":1,
@@ -44185,6 +44288,9 @@
             "Third":{
                 "PTz":"2",
                 "SKTz":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"cardinal",
@@ -45378,7 +45484,7 @@
         ],
         "Banned":"",
         "Capacity":3,
-        "Card Text":"Sabbat: Combat cards cost Rex an additional blood.",
+        "Card Text":"Sabbat: Combat cards cost Rex +1 blood.",
         "Clan":"Pander",
         "Disciplines":{
             "Potence":1,
@@ -45404,6 +45510,9 @@
             },
             "Tenth":{
                 "B":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -45682,6 +45791,9 @@
             },
             "KSU":{
                 "DM":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"priscus",
@@ -46166,6 +46278,9 @@
             },
             "BSC":{
                 "X":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -46208,7 +46323,7 @@
         ],
         "Banned":"",
         "Capacity":3,
-        "Card Text":"Camarilla: Combat cards that do not require Fortitude [for] cost Rosemarie +1 blood.",
+        "Card Text":"Camarilla: Combat cards that do not require Fortitude [for] cost Rosemarie an additional blood.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Melpominee":1,
@@ -46223,9 +46338,6 @@
         "Set":{
             "LoB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -46323,6 +46435,9 @@
             },
             "Tenth":{
                 "A":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -46418,6 +46533,9 @@
         "Set":{
             "SP":{
                 "DoF":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -47451,7 +47569,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Independent: After Sargon performs a successful action, you gain the Edge. Infernal. +1 strength.",
+        "Card Text":"Independent: Whenever Sargon successfully performs an action, you get the Edge. +1 strength. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Celerity":1,
@@ -47476,9 +47594,6 @@
         "Set":{
             "BL":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -47629,7 +47744,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Sabbat priscus: When a vampire opposing Sascha in combat goes to torpor, you may choose to increase your hand size by 2 for the remainder of the turn. This ability can be used only once per turn.",
+        "Card Text":"Sabbat priscus: Once each turn, after a vampire in combat with Sascha goes to torpor, you can get +2 hand size until the end of the turn.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":1,
@@ -47650,6 +47765,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"priscus",
@@ -47666,7 +47784,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Advanced, Sabbat Archbishop of Washington, D.C.: If Sascha is ready, you may draw a card from your library after another Methuselah plays a master card.\n[MERGED] Sabbat cardinal.",
+        "Card Text":"Sabbat Archbishop of Washington, D.C.: If Sascha is ready, you can draw 1 card after another Methuselah plays a master card.\n[MERGED] Sabbat cardinal.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":1,
@@ -47691,6 +47809,9 @@
         "Set":{
             "Gehenna":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"archbishop",
@@ -47778,7 +47899,7 @@
         ],
         "Banned":"",
         "Capacity":11,
-        "Card Text":"Independent: Damage Baali inflict on Saulot is reduced to 0. During your unlock phase, you may move 2 blood from Saulot to any vampire in your uncontrolled region or in play. +1 bleed. +1 strength. Scarce.",
+        "Card Text":"Independent: Damage Baali inflict on Saulot is reduced to 0. During your unlock phase, you can move 2 blood from him to a vampire in play or in your uncontrolled region. Scarce. +1 bleed. +1 strength.",
         "Clan":"Salubri",
         "Disciplines":{
             "Daimoinon":1,
@@ -47804,6 +47925,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -47847,7 +47971,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: If Sayshila is ready during the polling step of any referendum, she can lock to give another titled vampire you control +2 votes. Minions in combat with her cannot press to continue combat.",
+        "Card Text":"Independent: During a referendum, if Sayshila is ready, you may lock her to give another titled vampire you control 2 additional votes. Opposing minions cannot use presses to continue against her.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Dementation":1,
@@ -47864,9 +47988,6 @@
         "Set":{
             "LoB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -47911,7 +48032,7 @@
         ],
         "Banned":"",
         "Capacity":1,
-        "Card Text":"Sabbat: When Schuyler is blocked, your prey may move a library card from his or her ash heap to the top of his or her library.",
+        "Card Text":"Sabbat: If Schuyler is blocked, your prey can move a library card from their ash heap to the top of their library before block resolution.",
         "Clan":"Pander",
         "Disciplines":{
             "Blood Sorcery":1
@@ -47925,6 +48046,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -47938,7 +48062,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Independent. 2 votes (titled): During your unlock phase, Scout can burn 2 blood to lock an ally or younger vampire controlled by your prey. Reaction cards cost her +1 blood.",
+        "Card Text":"Independent. 2 votes (titled): During your unlock phase, Scout can burn 2 blood to lock an ally or younger vampire controlled by your prey. Reaction cards cost her 1 additional blood.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":1,
@@ -47972,9 +48096,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"2 votes",
@@ -48466,6 +48587,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -48595,7 +48719,7 @@
         ],
         "Banned":"",
         "Capacity":11,
-        "Card Text":"Sabbat regent: Vampires with capacity less than 4 cannot block Sha-Ennu. +2 bleed.",
+        "Card Text":"Sabbat regent: Vampires with capacity 3 or less cannot block Sha-Ennu. +2 bleed.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Obfuscate":1,
@@ -48614,6 +48738,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"regent",
@@ -50235,7 +50362,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Sabbat: Stephen gets +1 bleed when bleeding a Methuselah who controls a ready Tremere. +1 stealth.",
+        "Card Text":"Sabbat: Stephen gets +1 bleed against a Methuselah who controls a ready Tremere. +1 stealth.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Animalism":1,
@@ -50252,6 +50379,9 @@
         "Set":{
             "SoC":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -50362,7 +50492,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Sabbat Archbishop of Mexico City: Stravinsky gets an additional +1 bleed when bleeding a Methuselah who controls a younger ready Tzimisce. +1 bleed.",
+        "Card Text":"Sabbat Archbishop of Mexico City: Stravinsky gets an additional +1 bleed against a Methuselah who controls a younger ready Tzimisce. +1 bleed.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Potence":1,
@@ -50382,6 +50512,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"archbishop",
@@ -50968,7 +51101,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Sabbat bishop: When Jol\u00e1n successfully performs an employ retainer or recruit ally action, she unlocks at the end of the turn.",
+        "Card Text":"Sabbat bishop: If Jol\u00e1n performs a successful recruit or employ action, she can unlock during the next discard phase.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Celerity":1,
@@ -50987,6 +51120,9 @@
         "Set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"bishop",
@@ -51921,6 +52057,9 @@
         "Set":{
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -51934,7 +52073,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Sabbat Archbishop of Detroit: During a referendum called by Terrifisto, he may burn a blood when the results are tallied to inflict 2 damage on a ready vampire who cast votes or ballots against the referendum.",
+        "Card Text":"Sabbat Archbishop of Detroit: During a referendum called by Terrifisto, he can burn 1 blood once results are tallied to inflict 2 damage on a ready vampire who cast votes or ballots against the referendum.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Celerity":1,
@@ -51953,6 +52092,9 @@
         "Set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"archbishop",
@@ -53829,7 +53971,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Independent: The unnamed can burn 1 blood to strike: 2R aggravated damage. After it successfully bleeds, you can gain 2 pool. Infernal.",
+        "Card Text":"Independent: The unnamed can burn 1 blood to strike: 2R aggravated damage. You can gain 2 pool after it successfully bleeds. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Celerity":2,
@@ -53850,9 +53992,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -54688,7 +54827,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Sabbat cardinal: Once each combat, you may discard a card that requires Auspex [aus] to give Velya a press.",
+        "Card Text":"Sabbat cardinal: Once each combat, Velya can discard one card requiring Auspex [aus] to get 1 press.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Fortitude":1,
@@ -54713,6 +54852,9 @@
         "Set":{
             "Anarchs":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"cardinal",
@@ -55291,7 +55433,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Sabbat bishop: If Violet successfully inflicts at least 2 hand damage to an opposing vampire in a combat, reduce that vampire's capacity by 1 at the end of combat. (A vampire's capacity cannot be reduced below 1).",
+        "Card Text":"Sabbat bishop: If Violet successfully inflicts 2 or more damage with a hand strike to an opposing vampire in combat, that vampire gets -1 capacity at the end of combat.",
         "Clan":"Tzimisce",
         "Disciplines":{
             "Dominate":1,
@@ -55311,6 +55453,9 @@
             },
             "SW":{
                 "PT":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"bishop",
@@ -55634,6 +55779,9 @@
             "Promo":{
                 "2015-02-15":true,
                 "2021-07-01":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -56087,6 +56235,9 @@
             },
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -56626,9 +56777,6 @@
             },
             "HttB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -56690,6 +56838,9 @@
             },
             "KSU":{
                 "DM":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"archbishop",
@@ -57041,7 +57192,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Sabbat: After you replace a card requiring Melpominee [mel] Yseult played, you can draw 1 additional card. She cannot block vampires with capacity 5 or more.",
+        "Card Text":"Sabbat: When Yseult plays a card that requires Melpominee [mel], you may draw an additional card. Discard afterward. Yseult cannot block vampires with capacity above 4.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":2,
@@ -57057,9 +57208,6 @@
         "Set":{
             "LoB":{
                 "U":true
-            },
-            "POD":{
-                "DTC":true
             }
         },
         "Title":"",
@@ -57128,6 +57276,9 @@
             },
             "SP":{
                 "DoF":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"bishop",
