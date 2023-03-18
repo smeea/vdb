@@ -2,6 +2,7 @@
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
 - Menu buttons in dark theme to be variant="primary"
+- Bigger cards on hover
 
 # FEATURES
 - Events decks archive analyzing
@@ -12,6 +13,7 @@
 # MAYBE LATER FEATURES
 - Offline decks storage
 - Prioritize exact matches in add card (more than twda)
+- Notes to cards in Inventory
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Migration from screen width (isWide, etc) to container queries

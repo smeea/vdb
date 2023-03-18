@@ -11,7 +11,7 @@ const CardPopover = ({ card }) => {
   const { showImage } = useApp();
 
   if (showImage) {
-    return <CardImage card={card} className="max-w-[300px]" />;
+    return <CardImage card={card} className="max-w-[320px]" />;
   } else {
     return (
       <div className="w-[375px] space-y-3 p-4">
