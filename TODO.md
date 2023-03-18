@@ -1,6 +1,7 @@
 # FIX
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
+- Fix dropdown indicator in Inventory filters
 
 # FEATURES
 - Events decks archive analyzing
@@ -17,7 +18,6 @@
 - Migration from screen width (isWide, etc) to container queries
 - Refactor standard colors
 - Configure vite-pwa
-- Refactor InventoryCrypt and InventoryLibrary
 - Refactor deck buttons (split in button ui and function incl. deckstore functions )
 - Explicit image width/height
 - ResultDisciplineImage class to width/size

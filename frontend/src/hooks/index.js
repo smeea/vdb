@@ -3,6 +3,8 @@ export { default as useCardImageUrl } from './useCardImageUrl.js';
 export { default as useDebounce } from './useDebounce.js';
 export { default as useDeck } from './useDeck.js';
 export { default as useDeckCrypt } from './useDeckCrypt.jsx';
+export { default as useInventoryCrypt } from './useInventoryCrypt.jsx';
+export { default as useInventoryLibrary } from './useInventoryLibrary.jsx';
 export { default as useDeckExport } from './useDeckExport.js';
 export { default as useDeckImport } from './useDeckImport.js';
 export { default as useDeckInInventory } from './useDeckInInventory.js';
