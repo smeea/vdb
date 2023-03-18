@@ -41,15 +41,15 @@ const Select = React.forwardRef(
               noBorder
                 ? ''
                 : state.isFocused
-                ? 'rounded border border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
-                : 'rounded border border-borderSecondary dark:border-borderSecondaryDark'
+                ? 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
+                : 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark'
             }`,
           dropdownIndicator: () =>
             noDropdown
               ? 'max-w-[0px] max-h-[0px]'
               : 'px-2 text-borderSecondary dark:text-borderSecondaryDark',
-          indicatorsContainer: () =>
-            noDropdown ? 'max-h-[0px] max-w-[0px]' : 'py-1.5 ',
+          indicatorsContainer: () => `rounded
+            ${noDropdown ? 'max-h-[0px] max-w-[0px]' : 'py-1.5 '}`,
           indicatorSeparator: () =>
             'bg-borderSecondary dark:bg-borderSecondaryDark',
           menu: () =>
