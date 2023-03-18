@@ -6,7 +6,7 @@ import { ModalConfirmation, DeckPublicDiff, ButtonIconed } from '@/components';
 import { useApp, deckStore } from '@/context';
 
 const DeckPublicSyncButton = ({ deck }) => {
-  const { setShowMenuButtons, setShowFloatingButtons } = useApp();
+  const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -47,7 +47,7 @@ const DeckPublicSyncButton = ({ deck }) => {
   return (
     <>
       <ButtonIconed
-        variant="secondary"
+        variant={isDesktop ? 'secondary' : 'primary'}
         onClick={() => setShowConfirmation(true)}
         title="Sync Deck with Public Deck Archive"
         text="Sync Public Deck"

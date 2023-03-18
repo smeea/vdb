@@ -5,17 +5,18 @@ import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const DeckDiffButton = ({ deckid }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
+  const handleClick = () => {
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+    navigate(`/diff/${deckid}/${deckid}`);
+  };
 
   return (
     <ButtonIconed
-      variant="secondary"
-      onClick={() => {
-        setShowMenuButtons(false);
-        setShowFloatingButtons(true);
-        navigate(`/diff/${deckid}/${deckid}`);
-      }}
+      variant={isDesktop ? 'secondary' : 'primary'}
+      onClick={handleClick}
       title="Compare Decks"
       icon={<PlusSlashMinus />}
       text="Compare"

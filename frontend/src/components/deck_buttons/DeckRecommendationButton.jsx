@@ -4,16 +4,18 @@ import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const DeckRecommendationButton = ({ setShowRecommendation }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+
+  const handleClick = () => {
+    setShowRecommendation(true);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(false);
+  };
 
   return (
     <ButtonIconed
-      variant="secondary"
-      onClick={() => {
-        setShowRecommendation(true);
-        setShowMenuButtons(false);
-        setShowFloatingButtons(false);
-      }}
+      variant={isDesktop ? 'secondary' : 'primary'}
+      onClick={handleClick}
       title="Get Recommendation based on TWD with similar cards"
       icon={<LightbulbFill />}
       text="Card Ideas"

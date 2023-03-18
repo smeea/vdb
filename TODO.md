@@ -1,7 +1,6 @@
 # FIX
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
-- Menu buttons in dark theme to be variant="primary"
 
 # FEATURES
 - Events decks archive analyzing

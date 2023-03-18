@@ -4,8 +4,13 @@ import { ButtonIconed, DeckMissingModal } from '@/components';
 import { useApp } from '@/context';
 
 const DeckMissing = ({ deck, missingCrypt, missingLibrary }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showModal, setShowModal] = useState();
+
+  const handleClick = () => {
+    setShowModal(true);
+  };
+
   const handleClose = () => {
     setShowModal(false);
     setShowMenuButtons(false);
@@ -15,8 +20,8 @@ const DeckMissing = ({ deck, missingCrypt, missingLibrary }) => {
   return (
     <>
       <ButtonIconed
-        variant="secondary"
-        onClick={() => setShowModal(true)}
+        variant={isDesktop ? 'secondary' : 'primary'}
+        onClick={handleClick}
         title="Get Missing in Inventory Cards"
         icon={<Cart4 />}
         text="Missing Cards"

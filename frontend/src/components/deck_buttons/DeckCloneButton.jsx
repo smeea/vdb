@@ -5,7 +5,7 @@ import { deckStore, useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const DeckCloneButton = ({ deck, noText, noRedirect }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
   const [success, setSuccess] = useState(false);
 
@@ -72,7 +72,9 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
   return (
     <ButtonIconed
       className="w-full"
-      variant={success ? 'success' : noText ? 'primary' : 'secondary'}
+      variant={
+        success ? 'success' : noText || !isDesktop ? 'primary' : 'secondary'
+      }
       onClick={cloneDeck}
       title="Clone Deck to your account for editing"
       icon={<Files />}

@@ -20,6 +20,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     setShowFloatingButtons,
     setShowMenuButtons,
     cryptDeckSort,
+    isDesktop,
     lang,
   } = useApp();
 
@@ -133,7 +134,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     <>
       {inDiff ? (
         <ButtonIconed
-          variant="secondary"
+          variant={isDesktop ? 'secondary' : 'primary'}
           onClick={() => proxyCards(missingCrypt, missingLibrary)}
           title="Proxy Missing Cards to PDF ready for print"
           icon={<Printer />}
@@ -150,7 +151,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
                 <Printer width="18" height="18" viewBox="0 0 18 16" />
               )
             }
-            variant="secondary"
+            variant={isDesktop ? 'secondary' : 'primary'}
             text="PDF Proxy"
           />
           <MenuItems>

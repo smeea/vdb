@@ -10,14 +10,14 @@ const DeckImportButton = ({
   handleOpenTextModal,
   handleOpenAmaranthModal,
 }) => {
-  const { username } = useApp();
+  const { username, isDesktop } = useApp();
 
   return (
     <Menu as="div" className="relative">
       <MenuButton
         title="Create or Import Deck"
         icon={<ClipboardPlus size={24} />}
-        variant="secondary"
+        variant={isDesktop ? 'secondary' : 'primary'}
         text="New / Import"
       />
       <MenuItems>

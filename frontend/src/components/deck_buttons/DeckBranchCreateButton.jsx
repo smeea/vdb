@@ -5,7 +5,7 @@ import { deckStore, useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const DeckBranchCreateButton = ({ deck }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
 
   const branchCreate = () => {
@@ -57,7 +57,7 @@ const DeckBranchCreateButton = ({ deck }) => {
 
   return (
     <ButtonIconed
-      variant="secondary"
+      variant={isDesktop ? 'secondary' : 'primary'}
       onClick={branchCreate}
       title="Create New Revision of the Deck"
       icon={<NodePlusFill width="21" height="21" viewBox="0 0 16 16" />}

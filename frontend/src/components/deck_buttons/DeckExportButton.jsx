@@ -14,6 +14,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     setShowMenuButtons,
     nativeCrypt,
     nativeLibrary,
+    isDesktop,
     lang,
   } = useApp();
   const decks = useSnapshot(deckStore).decks;
@@ -112,7 +113,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       <MenuButton
         title={`Export ${inMissing ? 'Missing' : ''}`}
         icon={<Download />}
-        variant={inMissing ? 'primary' : 'secondary'}
+        variant={inMissing || !isDesktop ? 'primary' : 'secondary'}
         text={`Export ${inMissing ? 'Missing' : ''}`}
       />
       <MenuItems>
@@ -147,18 +148,15 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
                 <ExportDropdown action="copy" format="jol" />
               </>
             )}
-            {!inMissing &&
-              username &&
-              decks &&
-              Object.keys(decks).length > 1 && (
-                <>
-                  <MenuItemDivider />
-                  <ExportDropdown action="exportAll" format="text" />
-                  <ExportDropdown action="exportAll" format="lackey" />
-                  <ExportDropdown action="exportAll" format="jol" />
-                  <ExportDropdown action="exportAll" format="xlsx" />
-                </>
-              )}
+            {!inMissing && username && decks && Object.keys(decks).length > 1 && (
+              <>
+                <MenuItemDivider />
+                <ExportDropdown action="exportAll" format="text" />
+                <ExportDropdown action="exportAll" format="lackey" />
+                <ExportDropdown action="exportAll" format="jol" />
+                <ExportDropdown action="exportAll" format="xlsx" />
+              </>
+            )}
           </>
         )}
       </MenuItems>

@@ -4,9 +4,10 @@ import Spinner from '@/assets/images/icons/three-dots.svg';
 import People from '@/assets/images/icons/people.svg';
 import PeopleFill from '@/assets/images/icons/people-fill.svg';
 import { DeckPublicToggleConfirmation, ButtonIconed } from '@/components';
-import { deckStore } from '@/context';
+import { useApp, deckStore } from '@/context';
 
 const DeckPublicToggleButton = ({ deck, inAdv }) => {
+  const { isDesktop } = useApp();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -46,7 +47,7 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
   return (
     <>
       <ButtonIconed
-        variant={inAdv ? 'primary' : 'secondary'}
+        variant={inAdv || !isDesktop ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
         title={`${isPublished ? 'In' : 'Not in'} Public Deck Archive`}
         icon={

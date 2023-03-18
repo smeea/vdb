@@ -4,16 +4,17 @@ import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const DeckDrawButton = ({ setShow }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const handleClick = () => {
+    setShow(true);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(false);
+  };
 
   return (
     <ButtonIconed
-      variant="secondary"
-      onClick={() => {
-        setShow(true);
-        setShowMenuButtons(false);
-        setShowFloatingButtons(false);
-      }}
+      variant={isDesktop ? 'secondary' : 'primary'}
+      onClick={handleClick}
       title="Deck Draw Simulator"
       icon={<Dice3 />}
       text="Draw Cards"

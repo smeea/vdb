@@ -13,6 +13,7 @@ const InventoryMissingButton = ({
   missingLibraryByDiscipline,
 }) => {
   const {
+    isDesktop,
     cryptCardBase,
     libraryCardBase,
     publicName,
@@ -78,7 +79,7 @@ const InventoryMissingButton = ({
   return (
     <>
       <ButtonIconed
-        variant="secondary"
+        variant={isDesktop ? 'secondary' : 'primary'}
         onClick={() => setShowModal(true)}
         title="Get Missing in Inventory Cards"
         icon={<Cart4 />}

@@ -4,16 +4,17 @@ import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const SeatingButton = ({ setShow }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const handleClick = () => {
+    setShow(true);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(false);
+  };
 
   return (
     <ButtonIconed
-      variant="secondary"
-      onClick={() => {
-        setShow(true);
-        setShowMenuButtons(false);
-        setShowFloatingButtons(false);
-      }}
+      variant={isDesktop ? 'secondary' : 'primary'}
+      onClick={handleClick}
       title="Table Seating"
       icon={<Recycle width="18" height="18" viewBox="0 0 16 16" />}
       text="Table Seating"

@@ -11,7 +11,7 @@ import {
 } from '@/context';
 
 const DeckSearchSimilarButton = ({ deck }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
 
   const handleClick = (target) => {
@@ -31,7 +31,7 @@ const DeckSearchSimilarButton = ({ deck }) => {
       <MenuButton
         title="Search similar Decks in TWD/PDA"
         icon={<SymmetryVertical />}
-        variant="secondary"
+        variant={isDesktop ? 'secondary' : 'primary'}
         text="Similar Decks"
       />
       <MenuItems>

@@ -4,7 +4,8 @@ import { ButtonIconed, ModalConfirmation } from '@/components';
 import { useApp, setInventoryCrypt, setInventoryLibrary } from '@/context';
 
 const InventoryDelete = () => {
-  const { setShowMenuButtons, setShowFloatingButtons, isMobile } = useApp();
+  const { isDesktop, setShowMenuButtons, setShowFloatingButtons, isMobile } =
+    useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
@@ -32,7 +33,7 @@ const InventoryDelete = () => {
   return (
     <>
       <ButtonIconed
-        variant="secondary"
+        variant={isDesktop ? 'secondary' : 'primary'}
         onClick={() => setShowConfirmation(true)}
         title="Delete Inventory"
         icon={<TrashFill />}

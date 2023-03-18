@@ -35,6 +35,7 @@ const InventoryButtons = ({
     setShowMenuButtons,
     publicName,
     isNarrow,
+    isDesktop,
   } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ const InventoryButtons = ({
       <div className="flex flex-col space-y-1">
         {inShared && (
           <ButtonIconed
-            variant="secondary"
+            variant={isDesktop ? 'secondary' : 'primary'}
             onClick={() => {
               setShowMenuButtons(false);
               setShowFloatingButtons(true);
@@ -75,7 +76,7 @@ const InventoryButtons = ({
             <InventoryImport />
             {decks && (
               <ButtonIconed
-                variant="secondary"
+                variant={isDesktop ? 'secondary' : 'primary'}
                 onClick={() => {
                   setShowAddDeck(true);
                   setShowMenuButtons(false);
@@ -88,7 +89,7 @@ const InventoryButtons = ({
             )}
             {preconDecks && (
               <ButtonIconed
-                variant="secondary"
+                variant={isDesktop ? 'secondary' : 'primary'}
                 onClick={() => {
                   setShowAddPrecon(true);
                   setShowMenuButtons(false);

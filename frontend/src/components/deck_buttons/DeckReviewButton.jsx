@@ -5,7 +5,8 @@ import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const DeckReviewButton = ({ deck }) => {
-  const { setShowFloatingButtons, setShowMenuButtons, publicName } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons, publicName } =
+    useApp();
   const navigate = useNavigate();
 
   const getSnapshot = () => {
@@ -48,7 +49,7 @@ const DeckReviewButton = ({ deck }) => {
 
   return (
     <ButtonIconed
-      variant="secondary"
+      variant={isDesktop ? 'secondary' : 'primary'}
       onClick={getSnapshot}
       title="Review Deck"
       icon={<PencilSquare />}

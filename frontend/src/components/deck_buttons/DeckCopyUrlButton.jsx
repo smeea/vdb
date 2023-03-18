@@ -5,7 +5,7 @@ import { MenuItems, MenuItem, MenuButton } from '@/components';
 import { useApp } from '@/context';
 
 const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
-  const { setShowMenuButtons, setShowFloatingButtons } = useApp();
+  const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
@@ -142,7 +142,9 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
             viewBox="0 0 15 15"
           />
         }
-        variant={success ? 'success' : noText ? 'primary' : 'secondary'}
+        variant={
+          success ? 'success' : noText || !isDesktop ? 'primary' : 'secondary'
+        }
         text={noText ? null : success ? 'Copied' : 'Copy URL'}
       />
       <MenuItems divided>
