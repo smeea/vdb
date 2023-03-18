@@ -16,7 +16,7 @@ const ButtonCardCopyUrl = ({ cardid }) => {
 
   return (
     <ButtonIconed
-      icon={<Link45Deg width="20" height="20" viewBox="0 2 14 14" />}
+      icon={<Link45Deg width="22" height="22" viewBox="-1 0 16 16" />}
       variant={success ? 'success' : 'primary'}
       onClick={onClick}
       title="Copy URL"
