@@ -2,7 +2,6 @@
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
 - Menu buttons in dark theme to be variant="primary"
-- Bigger cards on hover
 
 # FEATURES
 - Events decks archive analyzing

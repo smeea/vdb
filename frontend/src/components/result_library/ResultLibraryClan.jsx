@@ -10,7 +10,7 @@ const ResultLibraryClan = ({ value }) => {
           {idx + 1 < clans.length ? (
             <>
               <ResultClanImage value={clan} />
-              <div className="px-0.5">/</div>
+              <div className="inline px-0.5">/</div>
             </>
           ) : (
             <ResultClanImage value={clan} />
