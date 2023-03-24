@@ -11,7 +11,7 @@ const DeckChangeAuthor = ({ deck }) => {
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (value !== author && author) setValue(author);
+    if (value !== author) setValue(author ?? '');
   }, [author]);
 
   const handleChange = (event) => {

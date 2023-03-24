@@ -11,7 +11,7 @@ const DeckChangeBranchName = ({ deck }) => {
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (value !== branchName && branchName) setValue(branchName);
+    if (value !== branchName) setValue(branchName ?? '');
   }, [branchName]);
 
   const handleChange = (event) => {

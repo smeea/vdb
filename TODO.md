@@ -1,7 +1,6 @@
 # FIX
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
-- Deck description not clearing on change deck to one with empty
 
 # FEATURES
 - Events decks archive analyzing

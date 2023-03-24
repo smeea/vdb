@@ -13,7 +13,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   useEffect(() => {
-    if (value !== description && description) setValue(description);
+    if (value !== description) setValue(description ?? '');
   }, [description]);
 
   const handleChange = (event) => {
