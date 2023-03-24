@@ -1,10 +1,10 @@
 # FIX
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
+- Deck description not clearing on change deck to one with empty
 
 # FEATURES
 - Events decks archive analyzing
-- Custom values for cardtypes in TWD/PDA
 - Playable by buttons to lib/crypt
 - Add deck as revision
 
@@ -22,3 +22,4 @@
 - ResultDisciplineImage class to width/size
 - Modal max width in pixels
 - Fix hooks eslint errors
+- Use Intl for dates

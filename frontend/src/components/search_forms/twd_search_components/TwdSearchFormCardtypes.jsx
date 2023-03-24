@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Select } from '@/components';
-import { ResultLibraryTypeImage } from '@/components';
+import { Input, Toggle, ResultLibraryTypeImage } from '@/components';
 import { useApp } from '@/context';
 
 const TwdSearchFormCardtypes = ({ value, onChange }) => {
+  const [isManual, setIsManual] = useState();
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'cardtypes';
@@ -96,12 +97,33 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       'Event',
       [
         ['0,0', 'None'],
-        ['0,3', '< 3%'],
-        ['3,7', '3-7%'],
-        ['7,100', '> 7%'],
+        ['0,4', '< 3%'],
+        ['4,8', '3-7%'],
+        ['8,100', '> 7%'],
       ],
     ],
   ];
+
+  const handleManual = (e) => {
+    const v = e.target.value;
+    let [min, max] = value[e.target.name].split(',');
+    if (e.target.id == 'min') {
+      if (v >= 0) {
+        min = e.target.value ?? 0;
+      }
+    } else {
+      if (v <= 100) {
+        max = e.target.value ?? 100;
+      }
+    }
+
+    min = min === 'any' || !min ? 0 : min;
+    max = max === 'any' || !max ? 100 : max;
+    onChange(
+      { name: e.target.name, value: `${min},${max}` },
+      { name: 'cardtypes' }
+    );
+  };
 
   const formsLeft = [];
   const formsRight = [];
@@ -123,22 +145,53 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       });
     });
 
+    const [min, max] =
+      value[i[0].toLowerCase()] == 'any'
+        ? [0, 100]
+        : value[i[0].toLowerCase()].split(',');
+
     const form = (
       <div className="flex items-center space-x-1" key={i[0]}>
         <div className="flex w-1/6 justify-center">
           <ResultLibraryTypeImage className="h-[29px]" value={i[0]} />
         </div>
         <div className="w-5/6">
-          <Select
-            options={options}
-            isSearchable={false}
-            name={name}
-            maxMenuHeight={maxMenuHeight}
-            value={options.find(
-              (obj) => obj.value === value[i[0].toLowerCase()]
-            )}
-            onChange={onChange}
-          />
+          {isManual ? (
+            <div className="flex justify-between items-center gap-1">
+              <div className="basis-full">
+                <input
+                  className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+                  type="number"
+                  value={min}
+                  name={i[0].toLowerCase()}
+                  id="min"
+                  onChange={handleManual}
+                />
+              </div>
+              -
+              <div className="basis-full">
+                <input
+                  className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+                  type="number"
+                  name={i[0].toLowerCase()}
+                  id="max"
+                  value={max}
+                  onChange={handleManual}
+                />
+              </div>
+            </div>
+          ) : (
+            <Select
+              options={options}
+              isSearchable={false}
+              name={name}
+              maxMenuHeight={maxMenuHeight}
+              value={options.find(
+                (obj) => obj.value === value[i[0].toLowerCase()]
+              )}
+              onChange={onChange}
+            />
+          )}
         </div>
       </div>
     );
@@ -151,9 +204,14 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   });
 
   return (
-    <div className="space-y-2">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-        Library Card Types:
+    <div className="flex flex-col gap-2">
+      <div className="flex justify-between gap-2">
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          Library Card Types:
+        </div>
+        <Toggle isOn={isManual} toggle={() => setIsManual(!isManual)}>
+          Manual %
+        </Toggle>
       </div>
       <div className="flex space-x-6">
         <div className="w-1/2 space-y-1">{formsLeft}</div>
