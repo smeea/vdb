@@ -110,8 +110,8 @@ export const getDeckFromAmaranth = async (deckUrl) => {
 };
 
 export const exportDecks = async (decks, format) => {
-  const Jszip = await import('jszip');
-  const zip = new Jszip();
+  const { default: JSzip } = await import('jszip');
+  const zip = JSzip();
   const date = new Date().toISOString().substring(0, 10);
 
   if (format === 'xlsx') {
@@ -155,7 +155,7 @@ export const exportDecks = async (decks, format) => {
 };
 
 export const exportXlsx = async (deck) => {
-  let XLSX = await import('xlsx');
+  const XLSX = await import('xlsx');
   const crypt = Object.values(deck.crypt).map((card) => {
     let name = card.c.Name;
     if (card.c.Adv && card.c.Adv[0]) name += ' (ADV)';
@@ -178,7 +178,7 @@ export const exportXlsx = async (deck) => {
 };
 
 const saveFile = async (file, name) => {
-  let { saveAs } = await import('file-saver');
+  const { saveAs } = await import('file-saver');
   saveAs(file, name);
 };
 

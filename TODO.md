@@ -1,7 +1,6 @@
 # FIX
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
-- Export All
 
 # FEATURES
 - Events decks archive analyzing
