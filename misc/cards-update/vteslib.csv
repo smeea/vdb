@@ -5624,7 +5624,7 @@ Hasani, Akunanse","LoB:R","","Leif Jones",""
 [thn] Strike: hand strike. Place this card on the opposing minion. The minion with this card has -1 strength. Burn this card during his or her controller's next discard phase.
 [THN] As [thn] above, and the minion with this card cannot play cards that require any Disciplines.","","BL:C2, LoB:C","","Leif Jones",""
 "102189","WMRH Talk Radio","","Master","","","1","","","","Unique location.
-You can lock this card to give a minion +1 intercept. After action resolution, burn 1 pool if that minion did not block the action.","","BH:R, LotN:PS, NB:PN1","","matrix von z",""
+You can lock this card to give a minion +1 intercept. {If that minion does not block the action, burn 1 pool after action resolution.}","","BH:R, LotN:PS, NB:PN1","","matrix von z",""
 "102190","Wolf Claws","","Combat","","Protean","","1","","","[pro] For the remainder of the round, this vampire's hand damage is aggravated.
 [PRO] Press.","How cheerfully he seems to grin,
 How neatly spread his claws...
