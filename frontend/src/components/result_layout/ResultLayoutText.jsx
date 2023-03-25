@@ -3,19 +3,20 @@ import { useSnapshot } from 'valtio';
 import X from '@/assets/images/icons/x.svg';
 import SearchHeartFill from '@/assets/images/icons/search-heart-fill.svg';
 import {
-  ResultCryptLayoutText,
-  ResultLibraryLayoutText,
-  ResultLayoutTextCommon,
   ButtonCardCopyUrl,
-  ButtonToggleShowImage,
-  ButtonSearchCardInDecks,
   ButtonIconed,
+  ButtonPlayableBy,
+  ButtonSearchCardInDecks,
+  ButtonToggleShowImage,
+  ResultCryptLayoutText,
+  ResultLayoutTextCommon,
+  ResultLibraryLayoutText,
 } from '@/components';
 import {
-  useApp,
   searchResults,
   setCryptCompare,
   setLibraryCompare,
+  useApp,
 } from '@/context';
 
 const ResultLayoutText = ({
@@ -75,6 +76,9 @@ const ResultLayoutText = ({
           <ButtonCardCopyUrl cardid={card.Id} />
           <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
           <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
+          {card.Id < 200000 && card?.Type !== 'Master' && (
+            <ButtonPlayableBy card={card} />
+          )}
           {!isMobile && <ButtonToggleShowImage />}
           <ButtonIconed
             variant={inCompare ? 'third' : 'primary'}
