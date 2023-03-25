@@ -38,7 +38,11 @@ const Text = ({ text }) => {
     text,
     /\[(\w+?)\]/g,
     (match, idx) => {
-      return <ResultMiscImage key={`icon-${idx}`} value={match} />;
+      return (
+        <div key={`icon-${idx}`} className="inline pr-0.5">
+          <ResultMiscImage value={match} />
+        </div>
+      );
     }
   );
 

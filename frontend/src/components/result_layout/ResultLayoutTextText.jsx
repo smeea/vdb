@@ -48,7 +48,11 @@ const ResultLayoutTextText = ({ cardid }) => {
           i,
           /\[(\w+?)\]/g,
           (match, idx) => {
-            return <ResultMiscImage key={`${idxText}-${idx}`} value={match} />;
+            return (
+              <div key={`${idxText}-${idx}`} className="inline pr-0.5">
+                <ResultMiscImage value={match} />
+              </div>
+            );
           }
         );
 
