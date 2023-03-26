@@ -19,4 +19,3 @@
 - ResultDisciplineImage class to width/size
 - Modal max width in pixels
 - Fix hooks eslint errors
-- Use Intl for dates

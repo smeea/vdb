@@ -112,7 +112,7 @@ export const getDeckFromAmaranth = async (deckUrl) => {
 export const exportDecks = async (decks, format) => {
   const { default: JSzip } = await import('jszip');
   const zip = JSzip();
-  const date = new Date().toISOString().substring(0, 10);
+  const date = new Date().toISOString().split('T')[0];
 
   if (format === 'xlsx') {
     const fetchPromises = Object.values(decks).map((deck) => {

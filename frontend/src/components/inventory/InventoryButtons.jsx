@@ -64,7 +64,7 @@ const InventoryButtons = ({
         )}
         <DeckExportButton
           deck={{
-            name: `Inventory ${new Date().toISOString().substring(0, 10)}`,
+            name: `Inventory ${new Date().toISOString().split('T')[0]}`,
             author: publicName,
             crypt: crypt,
             library: library,

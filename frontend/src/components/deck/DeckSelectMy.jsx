@@ -24,7 +24,9 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
         let lastEdit;
         if (diffDays > 90) {
-          lastEdit = new Date(decks[i]['timestamp']).toISOString().slice(0, 10);
+          lastEdit = new Date(decks[i]['timestamp'])
+            .toISOString()
+            .split('T')[0];
         } else if (diffDays > 30) {
           lastEdit = `${Math.round(diffDays / 30)}mo`;
         } else if (diffDays > 5) {
@@ -100,9 +102,11 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   </div>
                 )}
                 <div className="text-sm">
-                  {new Date(decks[deckid]['timestamp'])
-                    .toISOString()
-                    .slice(0, 10)}
+                  {
+                    new Date(decks[deckid]['timestamp'])
+                      .toISOString()
+                      .split('T')[0]
+                  }
                 </div>
               </div>
             </div>

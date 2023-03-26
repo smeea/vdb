@@ -11,7 +11,7 @@ const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
   const tags = useTags(deck.crypt, deck.library);
-  const lastUpdated = new Date(deck['timestamp']).toISOString().slice(0, 10);
+  const lastUpdated = new Date(deck['timestamp']).toISOString().split('T')[0];
 
   const handleClick = (target, value) => {
     clearSearchForm('twd');
