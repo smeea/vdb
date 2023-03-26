@@ -4,6 +4,8 @@ import ReactSelect from 'react-select';
 const Select = React.forwardRef(
   (
     {
+      defaultMenuIsOpen = false,
+      autoFocus = false,
       filterOption,
       isClearable = false,
       isDisabled = false,
@@ -22,6 +24,8 @@ const Select = React.forwardRef(
   ) => {
     return (
       <ReactSelect
+        defaultMenuIsOpen={defaultMenuIsOpen}
+        autoFocus={autoFocus}
         filterOption={filterOption}
         isClearable={isClearable}
         isDisabled={isDisabled}
