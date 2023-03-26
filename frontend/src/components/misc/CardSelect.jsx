@@ -50,24 +50,50 @@ const CardSelect = React.forwardRef(
       if (inputValue.length > 2) {
         const input = { name: inputValue };
 
+        const exactCryptMatches = [];
+        const exactLibraryMatches = [];
+
         const filteredCryptCards = filterCrypt(input)
           .filter((card) => playtest || card.Id < 210000)
+          .filter((card) => {
+            if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
+              exactCryptMatches.push({ value: card.Id });
+            } else {
+              return true;
+            }
+          })
           .map((card) => ({
             value: card.Id,
           }));
 
-        const filteredLibCards = filterLibrary(input)
+        const filteredLibraryCards = filterLibrary(input)
           .filter((card) => playtest || card.Id < 110000)
+          .filter((card) => {
+            if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
+              exactLibraryMatches.push({ value: card.Id });
+            } else {
+              return true;
+            }
+          })
           .map((card) => ({
             value: card.Id,
           }));
 
         if (target === 'crypt') {
-          return filteredCryptCards.sort(byTwd);
+          return [
+            ...exactCryptMatches.sort(byTwd),
+            ...filteredCryptCards.sort(byTwd),
+          ];
         } else if (target === 'library') {
-          return filteredLibCards.sort(byTwd);
+          return [
+            ...exactLibraryMatches.sort(byTwd),
+            ...filteredLibraryCards.sort(byTwd),
+          ];
         }
-        return [...filteredCryptCards, ...filteredLibCards].sort(byTwd);
+        return [
+          ...[...exactCryptMatches, ...exactLibraryMatches].sort(byTwd),
+          ...[...filteredCryptCards, ...filteredLibraryCards].sort(byTwd),
+        ];
       }
     };
 

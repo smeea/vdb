@@ -8,7 +8,6 @@
 
 # MAYBE LATER FEATURES
 - Offline decks storage
-- Prioritize exact matches in add card (more than twda)
 - Notes to cards in Inventory
 
 # IMPROVE TECHNOLOGY - FRONTEND
