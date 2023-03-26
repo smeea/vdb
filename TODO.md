@@ -1,6 +1,7 @@
 # FIX
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
+- Seraph / Black hand requirement to Playable By
 
 # FEATURES
 - Events decks archive analyzing
@@ -16,6 +17,5 @@
 - Configure vite-pwa
 - Refactor deck buttons (split in button ui and function incl. deckstore functions)
 - Explicit image width/height
-- ResultDisciplineImage class to width/size
 - Modal max width in pixels
 - Fix hooks eslint errors

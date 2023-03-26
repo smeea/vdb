@@ -13,7 +13,7 @@ const CryptSearchFormVirtues = ({ value, onChange }) => {
           }`}
           onClick={() => onChange(i, 1)}
         >
-          <ResultDisciplineImage width="w-[29px]" value={i} />
+          <ResultDisciplineImage size="lg" value={i} />
         </div>
       ))}
     </div>

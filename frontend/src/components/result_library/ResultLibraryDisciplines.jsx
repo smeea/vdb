@@ -6,8 +6,8 @@ const ResultLibraryDisciplines = ({ value }) => {
     const disciplines = value.split(' & ');
     return (
       <div className="flex flex-wrap items-center justify-center">
-        <ResultDisciplineImage className="w-[22px]" value={disciplines[0]} />+
-        <ResultDisciplineImage className="w-[22px]" value={disciplines[1]} />
+        <ResultDisciplineImage value={disciplines[0]} />+
+        <ResultDisciplineImage value={disciplines[1]} />
       </div>
     );
   } else if (value.indexOf('/') != -1) {
@@ -17,16 +17,16 @@ const ResultLibraryDisciplines = ({ value }) => {
         {disciplines.map((d, idx) => {
           return (
             <React.Fragment key={idx}>
-              <ResultDisciplineImage className="w-[22px]" value={d} />
+              <ResultDisciplineImage value={d} />
               {idx + 1 < disciplines.length && '/'}
             </React.Fragment>
           );
         })}
       </div>
     );
-  } else {
-    return <ResultDisciplineImage className="w-[22px]" value={value} />;
   }
+
+  return <ResultDisciplineImage value={value} />;
 };
 
 export default ResultLibraryDisciplines;

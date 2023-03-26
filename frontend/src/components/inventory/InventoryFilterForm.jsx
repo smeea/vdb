@@ -67,7 +67,7 @@ const InventoryFilterForm = ({
               ) : (
                 <div className="flex items-center">
                   <div className="flex w-[40px]">
-                    <ResultDisciplineImage className="w-[25px]" value={i} />
+                    <ResultDisciplineImage value={i} />
                   </div>
                   {i}
                 </div>

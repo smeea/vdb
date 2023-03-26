@@ -65,7 +65,6 @@ const useLibraryRequirements = (card) => {
       if (titles.includes(req)) isTitle.push(req.replace('non-titled', 'none'));
       if (req === 'red list') isRedlist = true;
       if (req.includes('capacity')) isCapacity = req.replace('capacity ', '');
-      console.log('req:', req);
     });
   }
 

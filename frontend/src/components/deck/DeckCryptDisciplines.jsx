@@ -1,7 +1,10 @@
 import React from 'react';
+import { useApp } from '@/context';
 import { ResultDisciplineImage } from '@/components';
 
 const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
+  const { isMobile } = useApp();
+
   return (
     <table>
       <tbody>
@@ -16,6 +19,7 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
                   <div className="flex items-center justify-center">
                     <ResultDisciplineImage
                       value={d}
+                      size={isMobile ? 'sm' : 'md'}
                       superior={value[d] === 2}
                     />
                   </div>
@@ -35,6 +39,7 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
                   >
                     {value[d] && (
                       <ResultDisciplineImage
+                        size={isMobile ? 'sm' : 'md'}
                         value={d}
                         superior={value[d] === 2}
                       />
