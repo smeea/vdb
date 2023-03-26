@@ -28,14 +28,14 @@ const TwdResultCryptTable = ({ crypt }) => {
 
   return (
     <div>
-      <div className="font-bold">
-        Crypt [{cryptTotal}] {cryptGroups}{' '}
-        {hasBanned && <Warning value="BANNED" />}
+      <div className="flex font-bold gap-1.5">
+        Crypt [{cryptTotal}]
         {hasWrongGroups ? (
           <Warning value="GROUPS" />
         ) : (
           <div className="inline">{cryptGroups}</div>
         )}
+        {hasBanned && <Warning value="BANNED" />}
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>

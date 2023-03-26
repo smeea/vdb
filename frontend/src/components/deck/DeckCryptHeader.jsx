@@ -34,19 +34,19 @@ const DeckCryptHeader = ({
   return (
     <>
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-        <div className="space-x-2 p-2 font-bold">
+        <div className="flex gap-1.5 p-2 font-bold">
           <div className="inline">
             Crypt [{cryptTotal}
             {!inMissing && cryptTotal < 12 && ' of 12+'}]
           </div>
           {!inMissing && (
             <>
-              {!inMissing && hasBanned && <Warning value="BANNED" />}
               {hasWrongGroups ? (
                 <Warning value="GROUPS" />
               ) : (
                 <div className="inline">{cryptGroups}</div>
               )}
+              {hasBanned && <Warning value="BANNED" />}
             </>
           )}
         </div>
