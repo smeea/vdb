@@ -210,7 +210,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
           Library Card Types:
         </div>
         <Toggle isOn={isManual} toggle={() => setIsManual(!isManual)}>
-          Manual %
+          Custom %
         </Toggle>
       </div>
       <div className="flex space-x-6">

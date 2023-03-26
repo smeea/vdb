@@ -1,5 +1,16 @@
 [
   {
+    "version": "2023-03-25",
+    "changes": [
+      "Allow custom card types values to search TWDA, should allow a lot more deep analyzing of meta trends",
+      "Add Playable By (bullseye icon) button to library card window to run crypt search (will search all disciplines for combo-disciplines cards, you must manually remove discipline you don't need)",
+      "Restore working on Firefox in Incognito mode (will fetch cardbase each time though, so may not be optimal on slow networks)",
+      "Update TWDA",
+      "Fix Export All decks",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-03-17",
     "changes": [
       "Update card images",
