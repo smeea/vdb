@@ -3,7 +3,6 @@
 - Arrows to navigate in Menu components
 - Seraph / Black hand requirement to Playable By
 - TWD HOF Card Appearance
-- TWD HOF Tournaments gap
 
 # FEATURES
 - Events decks archive analyzing

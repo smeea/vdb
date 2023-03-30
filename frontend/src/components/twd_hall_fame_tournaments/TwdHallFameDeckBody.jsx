@@ -15,32 +15,34 @@ const TwdHallFameDeckBody = ({ deck }) => {
   const cards = useDeck(value?.cards, cryptCardBase, libraryCardBase);
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row gap-2">
       <div className="basis-full md:basis-full xl:basis-1/4">
         <TwdResultDescription deck={deck} />
       </div>
-      {isMobile ? (
-        <>
-          <div className="basis-1/2">
-            <TwdResultCryptTable crypt={cards.crypt} />
-          </div>
-          <div className="basis-1/2">
-            <TwdResultLibraryKeyCardsTable library={deck.library} />
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="basis-full md:basis-1/3 xl:basis-1/4">
-            <TwdResultCryptTable crypt={cards.crypt} />
-          </div>
-          <div className="basis-full md:basis-1/3 xl:basis-1/4">
-            <TwdResultLibraryByTypeTable library={cards.library} />
-          </div>
-          <div className="basis-full md:basis-1/3 xl:basis-1/4">
-            <TwdResultLibraryKeyCardsTable library={cards.library} />
-          </div>
-        </>
-      )}
+      <div className="flex gap-2 basis-full md:basis-full xl:basis-3/4">
+        {isMobile ? (
+          <>
+            <div className="basis-1/2">
+              <TwdResultCryptTable crypt={cards.crypt} />
+            </div>
+            <div className="basis-1/2">
+              <TwdResultLibraryKeyCardsTable library={deck.library} />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="basis-full md:basis-1/3">
+              <TwdResultCryptTable crypt={cards.crypt} />
+            </div>
+            <div className="basis-full md:basis-1/3">
+              <TwdResultLibraryByTypeTable library={cards.library} />
+            </div>
+            <div className="basis-full md:basis-1/3">
+              <TwdResultLibraryKeyCardsTable library={cards.library} />
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 };
