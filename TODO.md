@@ -2,7 +2,6 @@
 - Older links (redirect in the web server)
 - Arrows to navigate in Menu components
 - Seraph / Black hand requirement to Playable By
-- TWD More buttons
 - TWD HOF Card Appearance
 - TWD HOF Tournaments gap
 
