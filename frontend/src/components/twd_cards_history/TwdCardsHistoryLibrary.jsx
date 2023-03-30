@@ -171,13 +171,12 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
               }`}
               onClick={() => handleModalCardOpen(card)}
             >
-              {card[BLOOD_COST] ||
-                (card[POOL_COST] && (
-                  <ResultLibraryCost
-                    valueBlood={card[BLOOD_COST]}
-                    valuePool={card[POOL_COST]}
-                  />
-                ))}
+              {(card[BLOOD_COST] || card[POOL_COST]) && (
+                <ResultLibraryCost
+                  valueBlood={card[BLOOD_COST]}
+                  valuePool={card[POOL_COST]}
+                />
+              )}
             </div>
             <div
               className="flex min-w-[40px] items-center justify-center"
