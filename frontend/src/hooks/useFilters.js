@@ -159,6 +159,7 @@ const missingTrait = (trait, card, traitsRegexMap) => {
         (card['Id'] > 100000 && card['Id'] < 110000)
       );
     case 'advancement':
+      console.log(card.Name, card.Adv, !card.Adv);
       return !card['Adv'];
     case 'banned':
       return !card['Banned'];

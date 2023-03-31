@@ -336,7 +336,7 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
                 and c["Group"] == card["Group"]
             ):
                 isAdv = True if card["Adv"] else False
-                card["Advancement"] = [isAdv, c["Id"]]
+                card["Advancement"] = [isAdv, int(c["Id"])]
 
         # Add new revision info
         card["New"] = False
