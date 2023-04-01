@@ -1,11 +1,8 @@
 {
-  "version": "2023-03-25",
+  "version": "2023-04-01",
   "changes": [
-    "Allow custom card types values to search TWDA, should allow a lot more deep analyzing of meta trends",
-    "Add Playable By (bullseye icon) button to library card window to run crypt search (will search all disciplines for combo-disciplines cards, you must manually remove discipline you don't need)",
-    "Restore working on Firefox in Incognito mode (will fetch cardbase each time though, so may not be optimal on slow networks)",
-    "Update TWDA",
-    "Fix Export All decks",
+    "Fix TWD Hall of Fame - Card Appearance",
+    "Prioritize exact matches over TWD popularity in card selector autocompletion",
     "Small other fixes"
   ]
 }

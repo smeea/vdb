@@ -1,5 +1,13 @@
 [
   {
+    "version": "2023-04-01",
+    "changes": [
+      "Fix TWD Hall of Fame - Card Appearance",
+      "Prioritize exact matches over TWD popularity in card selector autocompletion",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-03-25",
     "changes": [
       "Allow custom card types values to search TWDA, should allow a lot more deep analyzing of meta trends",
