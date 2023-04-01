@@ -20,6 +20,7 @@ const ResultCryptTableRowCommon = ({
   disciplinesSet,
   inSearch,
   inDeck,
+  noDisciplines,
 }) => {
   const { isMobile, isDesktop, isNarrow, isWide } = useApp();
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
@@ -34,7 +35,7 @@ const ResultCryptTableRowCommon = ({
           <ResultCryptCapacity card={card} />
         </div>
       </td>
-      {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
+      {!noDisciplines && (!inSearch || (!isDesktop && !isNarrow) || isWide) && (
         <td className="sm:min-w-[170px]" onClick={() => handleClick(card)}>
           {inDeck &&
           keyDisciplines &&

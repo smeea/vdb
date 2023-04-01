@@ -93,6 +93,7 @@ const ResultLibraryTableRowCommon = ({
   handleClick,
   inSearch,
   inDeck,
+  noBurn,
 }) => {
   const { isDesktop, isNarrow, isWide } = useApp();
 
@@ -115,7 +116,7 @@ const ResultLibraryTableRowCommon = ({
           <Type card={card} handleClick={handleClick} />
           <Disciplines card={card} handleClick={handleClick} />
           <Name card={card} handleClick={handleClick} />
-          <Burn card={card} handleClick={handleClick} />
+          {!noBurn && <Burn card={card} handleClick={handleClick} />}
         </>
       )}
     </>

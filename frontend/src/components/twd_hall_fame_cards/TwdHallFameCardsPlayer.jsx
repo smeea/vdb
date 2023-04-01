@@ -18,6 +18,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     librarySearchSort,
     changeLibrarySearchSort,
     isMobile,
+    isWide,
   } = useApp();
 
   const cryptSorted = useMemo(
@@ -111,22 +112,27 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           inHoF={true}
         />
         <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
-          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark font-bold">
             <tr>
               <th />
               {!isMobile && <th />}
               <th />
               <th />
+              {isWide && <th />}
+              {isWide && <th />}
               {!isMobile && (
-                <th className="text-center" title="First Print Date">
+                <th className="font-bold text-center" title="First Print Date">
                   Print
                 </th>
               )}
-              <th className="text-center" title="First TWD Appearance Date">
+              <th
+                className="font-bold text-center"
+                title="First TWD Appearance Date"
+              >
                 Win
               </th>
-              <th className="text-center" title="Years to Win">
-                YtW
+              <th className="font-bold text-center" title="Years to Win">
+                {isMobile ? 'Y' : 'YtW'}
               </th>
               <th />
             </tr>
@@ -144,9 +150,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
             })}
           </tbody>
         </table>
-
         <br />
-
         <ResultLibraryTotal
           cards={librarySorted}
           sortMethods={librarySortMethods}
@@ -163,18 +167,21 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               <th />
               {!isMobile && <th />}
               {!isMobile && (
-                <th className="text-center" title="First Print Date">
+                <th className="font-bold text-center" title="First Print Date">
                   Print
                 </th>
               )}
-              <th className="text-center" title="First TWD Appearance Date">
+              <th
+                className="font-bold text-center"
+                title="First TWD Appearance Date"
+              >
                 Win
               </th>
               <th
-                className="text-center"
+                className="font-bold text-center"
                 title="Years to Win - From release to first TWD appearance"
               >
-                YtW
+                {isMobile ? 'Y' : 'YtW'}
               </th>
               <th />
             </tr>

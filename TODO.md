@@ -1,7 +1,6 @@
 # FIX
 - Arrows to navigate in Menu components
 - Seraph / Black hand requirement to Playable By
-- TWD HOF Card Appearance
 
 # FEATURES
 - Events decks archive analyzing

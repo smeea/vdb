@@ -63,7 +63,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
         {!isMobile && byPlayer && (
           <div
             className="inline"
-            title={`First appearance in TWDA:
+            title={`First appearance in TWDA by Player:
 Crypt: ${byPlayer.crypt}
 Library: ${byPlayer.library}`}
           >

@@ -18,26 +18,37 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
       }`}
     >
       {card.Id > 200000 ? (
-        <ResultCryptTableRowCommon card={card} handleClick={handleClick} />
+        <ResultCryptTableRowCommon
+          card={card}
+          handleClick={handleClick}
+          noDisciplines={isMobile}
+        />
       ) : (
-        <ResultLibraryTableRowCommon card={card} handleClick={handleClick} />
+        <ResultLibraryTableRowCommon
+          card={card}
+          handleClick={handleClick}
+          noBurn={isMobile}
+        />
       )}
       {!isMobile && (
-        <td className=" text-center" onClick={() => handleClick(idx)}>
+        <td
+          className="min-w-[60px] text-center"
+          onClick={() => handleClick(idx)}
+        >
           {card.releaseDate.slice(0, 4)}
         </td>
       )}
-      <td className=" text-center" onClick={() => handleClick(idx)}>
+      <td className="min-w-[60px] text-center" onClick={() => handleClick(idx)}>
         {card.twdDate.slice(0, 4)}
       </td>
-      <td className=" text-center">
+      <td className="min-w-[25px] sm:min-w-[60px] text-center">
         {Math.round(
           (new Date(card.twdDate) - new Date(card.releaseDate)) /
             (1000 * 60 * 60 * 24) /
             365
         ) || 1}
       </td>
-      <td className={`${isMobile ? '' : ''}`}>
+      <td className="min-w-[45px] sm:min-w-[110px]">
         {card.deckid && (
           <div>
             <TwdOpenDeckButton
