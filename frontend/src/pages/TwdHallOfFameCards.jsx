@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Disclosure, Tab } from '@headlessui/react';
-import { TwdHallFameCardsPlayer } from '@/components';
+import { TabButton, TwdHallFameCardsPlayer } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
@@ -99,27 +99,11 @@ const TwdHallOfFameCards = () => {
   };
 
   return (
-    <div className="hof-cards-container  mx-auto">
+    <div className="flex flex-col hof-cards-container mx-auto gap-1.5">
       <Tab.Group manual>
-        <Tab.List className="bg-blue-900 flex space-x-1 rounded p-1">
-          <Tab
-            className={({ selected }) =>
-              `w-full rounded px-3 py-1.5 ${
-                selected ? 'bg-midGray dark:bg-midGrayDark ' : ''
-              }`
-            }
-          >
-            By Total
-          </Tab>
-          <Tab
-            className={({ selected }) =>
-              `w-full rounded px-3 py-1.5 ${
-                selected ? 'bg-midGray dark:bg-midGrayDark ' : ''
-              }`
-            }
-          >
-            By Innovation
-          </Tab>
+        <Tab.List className="flex gap-1.5">
+          <TabButton>By Total</TabButton>
+          <TabButton>By Innovation</TabButton>
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>

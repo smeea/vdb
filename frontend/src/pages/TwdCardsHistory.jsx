@@ -1,6 +1,10 @@
 import React, { useMemo } from 'react';
 import { Tab } from '@headlessui/react';
-import { TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from '@/components';
+import {
+  TabButton,
+  TwdCardsHistoryCrypt,
+  TwdCardsHistoryLibrary,
+} from '@/components';
 import { useApp } from '@/context';
 import { byName } from '@/utils';
 import { useFetch } from '@/hooks';
@@ -63,27 +67,11 @@ const TwdCardsHistory = () => {
   }, [value, cryptCardBase, libraryCardBase]);
 
   return (
-    <div className="hof-history-container mx-auto">
+    <div className="flex flex-col hof-history-container mx-auto gap-1.5">
       <Tab.Group manual>
-        <Tab.List className="bg-blue-900 flex space-x-1 rounded p-1">
-          <Tab
-            className={({ selected }) =>
-              `w-full rounded px-3 py-1.5 ${
-                selected ? 'bg-midGray dark:bg-midGrayDark ' : ''
-              }`
-            }
-          >
-            Crypt
-          </Tab>
-          <Tab
-            className={({ selected }) =>
-              `w-full rounded px-3 py-1.5 ${
-                selected ? 'bg-midGray dark:bg-midGrayDark ' : ''
-              }`
-            }
-          >
-            Library
-          </Tab>
+        <Tab.List className="flex gap-1.5">
+          <TabButton>Crypt</TabButton>
+          <TabButton>Library</TabButton>
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>

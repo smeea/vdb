@@ -75,7 +75,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   });
 
   return (
-    <div className="rounded border border-borderPrimary bg-bgSecondary dark:border-borderPrimaryDark dark:bg-bgThirdDark">
+    <div className="rounded border border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark">
       <Disclosure.Button className="w-full p-3">
         <div className="flex items-center space-x-4 px-2 text-fgName dark:text-fgNameDark">
           <div className="flex gap-1 items-center">
