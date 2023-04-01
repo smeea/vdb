@@ -20,12 +20,6 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     isMobile,
   } = useApp();
 
-  const [showPlayer, setShowPlayer] = useState(false);
-
-  const handlePlayerClick = () => {
-    setShowPlayer(!showPlayer);
-  };
-
   const cryptSorted = useMemo(
     () =>
       cryptSort(
@@ -80,23 +74,17 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   });
 
   return (
-    <>
-      <Disclosure.Button onClick={() => handlePlayerClick()}>
-        <div
-          className={`flex ${
-            isMobile ? 'h-auto w-full' : 'w-3/4'
-          } items-center justify-between `}
-        >
-          <div className="flex w-[55%] items-center">
-            {Object.keys(cards).length}
-            <div className="flex  ">
-              <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
-            </div>
-            <div className="flex items-center">{name}</div>
+    <div className="rounded border border-borderPrimary bg-bgSecondary dark:border-borderPrimaryDark dark:bg-bgThirdDark">
+      <Disclosure.Button className="w-full p-3">
+        <div className="flex items-center space-x-4 px-2 text-fgName dark:text-fgNameDark">
+          <div className="flex gap-1 items-center">
+            <div>{Object.keys(cards).length}</div>
+            <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
           </div>
-          <div className="flex w-[45%] justify-between">
+          <div className="flex basis-1/2 text-start">{name}</div>
+          <div className="flex basis-1/2 gap-2 justify-between">
             <div
-              className=" flex whitespace-nowrap "
+              className="flex whitespace-nowrap"
               title="First Card add to Hall of Fame / Last Card add to Hall of Fame"
             >
               {isMobile
@@ -115,99 +103,95 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
         </div>
       </Disclosure.Button>
       <Disclosure.Panel>
-        {showPlayer && (
-          <>
-            <ResultCryptTotal
-              cards={cryptSorted}
-              sortMethods={cryptSortMethods}
-              sortMethod={cryptSearchSort}
-              setSortMethod={changeCryptSearchSort}
-              inHoF={true}
-            />
-            <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
-              <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
-                <tr>
-                  <th />
-                  {!isMobile && <th />}
-                  <th />
-                  <th />
-                  {!isMobile && (
-                    <th className="text-center" title="First Print Date">
-                      Print
-                    </th>
-                  )}
-                  <th className="text-center" title="First TWD Appearance Date">
-                    Win
-                  </th>
-                  <th className="text-center" title="Years to Win">
-                    YtW
-                  </th>
-                  <th />
-                </tr>
-              </thead>
-              <tbody>
-                {cryptSorted.map((card, idx) => {
-                  return (
-                    <TwdHallFameCardsCard
-                      key={card.Id}
-                      idx={idx}
-                      card={card}
-                      handleClick={handleModalCardOpen}
-                    />
-                  );
-                })}
-              </tbody>
-            </table>
+        <ResultCryptTotal
+          cards={cryptSorted}
+          sortMethods={cryptSortMethods}
+          sortMethod={cryptSearchSort}
+          setSortMethod={changeCryptSearchSort}
+          inHoF={true}
+        />
+        <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
+          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+            <tr>
+              <th />
+              {!isMobile && <th />}
+              <th />
+              <th />
+              {!isMobile && (
+                <th className="text-center" title="First Print Date">
+                  Print
+                </th>
+              )}
+              <th className="text-center" title="First TWD Appearance Date">
+                Win
+              </th>
+              <th className="text-center" title="Years to Win">
+                YtW
+              </th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            {cryptSorted.map((card, idx) => {
+              return (
+                <TwdHallFameCardsCard
+                  key={card.Id}
+                  idx={idx}
+                  card={card}
+                  handleClick={handleModalCardOpen}
+                />
+              );
+            })}
+          </tbody>
+        </table>
 
-            <br />
+        <br />
 
-            <ResultLibraryTotal
-              cards={librarySorted}
-              sortMethods={librarySortMethods}
-              sortMethod={librarySearchSort}
-              setSortMethod={changeLibrarySearchSort}
-              inHoF
-            />
-            <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
-              <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
-                <tr>
-                  <th />
-                  <th />
-                  <th />
-                  <th />
-                  {!isMobile && <th />}
-                  {!isMobile && (
-                    <th className="text-center" title="First Print Date">
-                      Print
-                    </th>
-                  )}
-                  <th className="text-center" title="First TWD Appearance Date">
-                    Win
-                  </th>
-                  <th
-                    className="text-center"
-                    title="Years to Win - From release to first TWD appearance"
-                  >
-                    YtW
-                  </th>
-                  <th />
-                </tr>
-              </thead>
-              <tbody>
-                {librarySorted.map((card, idx) => {
-                  return (
-                    <TwdHallFameCardsCard
-                      key={card.Id}
-                      idx={idx + cryptSorted.length}
-                      card={card}
-                      handleClick={handleModalCardOpen}
-                    />
-                  );
-                })}
-              </tbody>
-            </table>
-          </>
-        )}
+        <ResultLibraryTotal
+          cards={librarySorted}
+          sortMethods={librarySortMethods}
+          sortMethod={librarySearchSort}
+          setSortMethod={changeLibrarySearchSort}
+          inHoF
+        />
+        <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+            <tr>
+              <th />
+              <th />
+              <th />
+              <th />
+              {!isMobile && <th />}
+              {!isMobile && (
+                <th className="text-center" title="First Print Date">
+                  Print
+                </th>
+              )}
+              <th className="text-center" title="First TWD Appearance Date">
+                Win
+              </th>
+              <th
+                className="text-center"
+                title="Years to Win - From release to first TWD appearance"
+              >
+                YtW
+              </th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            {librarySorted.map((card, idx) => {
+              return (
+                <TwdHallFameCardsCard
+                  key={card.Id}
+                  idx={idx + cryptSorted.length}
+                  card={card}
+                  handleClick={handleModalCardOpen}
+                />
+              );
+            })}
+          </tbody>
+        </table>
       </Disclosure.Panel>
       {shouldShowModal && (
         <ResultModal
@@ -216,7 +200,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           handleClose={handleModalCardClose}
         />
       )}
-    </>
+    </div>
   );
 };
 

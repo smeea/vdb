@@ -99,7 +99,7 @@ const TwdHallOfFameCards = () => {
   };
 
   return (
-    <div className="hof-cards-container  mx-auto ">
+    <div className="hof-cards-container  mx-auto">
       <Tab.Group manual>
         <Tab.List className="bg-blue-900 flex space-x-1 rounded p-1">
           <Tab
@@ -123,30 +123,31 @@ const TwdHallOfFameCards = () => {
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>
-            {players && (
-              <Disclosure>
-                {Object.keys(players)
+            <div className="flex flex-col gap-1.5">
+              {players &&
+                Object.keys(players)
                   .sort(byName)
                   .sort(byTotal)
                   .map((player) => (
-                    <TwdHallFameCardsPlayer
-                      key={player}
-                      name={player}
-                      cards={players[player]}
-                    />
+                    <Disclosure key={player}>
+                      <TwdHallFameCardsPlayer
+                        name={player}
+                        cards={players[player]}
+                      />
+                    </Disclosure>
                   ))}
-              </Disclosure>
-            )}
+            </div>
           </Tab.Panel>
           <Tab.Panel>
-            <div className="border">
-              Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365}{' '}
-              years after card print, and excluding cards from first 2 years of
-              active tournaments (till {IGNORED_BEFORE_DATE})
-            </div>
-            {players && (
-              <Disclosure>
-                {Object.keys(players)
+            <div className="flex flex-col gap-1.5">
+              <div className="border rounded p-3 dark:border-borderPrimaryDark border-borderPrimary">
+                Only counts cards first appeared in TWD{' '}
+                {INNOVATION_PERIOD / 365} years after card print, and excluding
+                cards from first 2 years of active tournaments (till{' '}
+                {IGNORED_BEFORE_DATE})
+              </div>
+              {players &&
+                Object.keys(players)
                   .sort(byName)
                   .sort(byInnovation)
                   .filter(
@@ -154,14 +155,14 @@ const TwdHallOfFameCards = () => {
                       Object.keys(getInnovationCards(players[player])).length
                   )
                   .map((player) => (
-                    <TwdHallFameCardsPlayer
-                      key={player}
-                      name={player}
-                      cards={getInnovationCards(players[player])}
-                    />
+                    <Disclosure key={player}>
+                      <TwdHallFameCardsPlayer
+                        name={player}
+                        cards={getInnovationCards(players[player])}
+                      />
+                    </Disclosure>
                   ))}
-              </Disclosure>
-            )}
+            </div>
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>

@@ -1,9 +1,7 @@
 # FIX
-- Older links (redirect in the web server)
 - Arrows to navigate in Menu components
 - Seraph / Black hand requirement to Playable By
 - TWD HOF Card Appearance
-- Search in twd button in card modal
 
 # FEATURES
 - Events decks archive analyzing
