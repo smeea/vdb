@@ -1,5 +1,11 @@
 [
   {
+    "version": "2023-04-06",
+    "changes": [
+      "Update card text and images (last POD batch)"
+    ]
+  },
+  {
     "version": "2023-04-01",
     "changes": [
       "Fix TWD Hall of Fame - Card Appearance",
