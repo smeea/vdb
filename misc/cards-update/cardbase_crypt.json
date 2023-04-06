@@ -285,7 +285,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "201634":{
         "ASCII Name":"Abraham Mellon",
@@ -316,7 +316,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "200009":{
         "ASCII Name":"Abu Nuwasi",
@@ -419,7 +419,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":65
+        "Twd":66
     },
     "200012":{
         "ASCII Name":"Adelaide Davis",
@@ -541,7 +541,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "200014":{
         "ASCII Name":"Adonai",
@@ -973,7 +973,7 @@
         ],
         "Banned":"",
         "Capacity":2,
-        "Card Text":"Independent: You may use four transfers and burn 1 pool to give Aimee an additional level of Melpominee [mel]. Aimee cannot play reaction cards.",
+        "Card Text":"Independent: You can burn 1 pool and use 4 transfers to give Aimee +1 level of Melpominee [mel]. She cannot play reaction cards.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":1,
@@ -988,6 +988,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -1288,7 +1291,7 @@
             }
         },
         "Title":"",
-        "Twd":71
+        "Twd":72
     },
     "200035":{
         "ASCII Name":"Al-Ashrad, Amr of Alamut",
@@ -1850,7 +1853,7 @@
             }
         },
         "Title":"prince",
-        "Twd":3
+        "Twd":4
     },
     "201530":{
         "ASCII Name":"Alexander Silverson",
@@ -1883,7 +1886,7 @@
             }
         },
         "Title":"prince",
-        "Twd":2
+        "Twd":5
     },
     "200049":{
         "ASCII Name":"Alexandra",
@@ -2112,7 +2115,7 @@
             }
         },
         "Title":"prince",
-        "Twd":6
+        "Twd":7
     },
     "200054":{
         "ASCII Name":"Alicia Barrows",
@@ -2208,7 +2211,7 @@
             }
         },
         "Title":"baron",
-        "Twd":8
+        "Twd":9
     },
     "200055":{
         "ASCII Name":"Allanyan Serata",
@@ -2471,7 +2474,7 @@
             }
         },
         "Title":"",
-        "Twd":34
+        "Twd":35
     },
     "201577":{
         "ASCII Name":"Aluc Romas de Leon",
@@ -3117,7 +3120,7 @@
             }
         },
         "Title":"",
-        "Twd":303
+        "Twd":306
     },
     "200077":{
         "ASCII Name":"Anastasia Grey",
@@ -3255,7 +3258,7 @@
             }
         },
         "Title":"prince",
-        "Twd":7
+        "Twd":10
     },
     "200080":{
         "ASCII Name":"Andre LeRoux",
@@ -3667,7 +3670,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Camarilla: Angela must burn 1 blood to attempt to block an older vampire. You may lock Angela during your influence phase to unlock any other vampire.",
+        "Card Text":"Camarilla: During your influence phase, Angela can lock to unlock another vampire. She must burn 1 blood to attempt to block an older vampire.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":1,
@@ -3697,6 +3700,9 @@
         "Set":{
             "BL":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -4169,6 +4175,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"2 votes",
@@ -4408,6 +4417,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -4588,7 +4600,7 @@
             }
         },
         "Title":"",
-        "Twd":82
+        "Twd":83
     },
     "200117":{
         "ASCII Name":"Antonio Delgado",
@@ -4990,7 +5002,7 @@
             }
         },
         "Title":"",
-        "Twd":30
+        "Twd":31
     },
     "200128":{
         "ASCII Name":"Ardan Lane",
@@ -5170,7 +5182,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "200133":{
         "ASCII Name":"Arianne, The Conqueror",
@@ -5290,7 +5302,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent. 1 vote (titled): During the polling step of any referendum, Arishat can burn 1 blood to force any vampire to abstain. Infernal.",
+        "Card Text":"Independent. 1 vote (titled): During the polling step of any referendum, Arishat can burn 1 blood to force a vampire to abstain. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Daimoinon":2,
@@ -5339,10 +5351,13 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"1 vote",
-        "Twd":48
+        "Twd":49
     },
     "200137":{
         "ASCII Name":"Aristotle de Laurent",
@@ -5767,7 +5782,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":6
     },
     "201578":{
         "ASCII Name":"Asmin Kobane",
@@ -5797,7 +5812,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200147":{
         "ASCII Name":"Assad Salhoum",
@@ -5912,7 +5927,7 @@
             }
         },
         "Title":"baron",
-        "Twd":10
+        "Twd":12
     },
     "200149":{
         "ASCII Name":"Augustus Giovanni",
@@ -6185,7 +6200,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: Actions to put vampires in play cost Azaneal 1 less blood or pool. Infernal.",
+        "Card Text":"Independent: Actions to put vampires in play cost Azaneal -1 blood or pool. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Presence":1,
@@ -6204,6 +6219,9 @@
             "KMW":{
                 "U":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -6429,7 +6447,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "200161":{
         "ASCII Name":"Badr al-Budur",
@@ -6649,7 +6667,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Independent: Barbaro may place a taint counter on a minion as a +1 stealth (D) action. If a minion has 2 taint counters, burn those counters to make the minion infernal. Barbaro may change his clan to Tremere antitribu as +1 stealth action. Infernal.",
+        "Card Text":"Independent: Barbaro can change his clan to Tremere antitribu as +1 stealth action. He can put 1 taint counter on a minion as a +1 stealth (D) action; if the minion has 2 taint counters, burn them and the minion becomes infernal. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Daimoinon":1,
@@ -6673,6 +6691,9 @@
         "Set":{
             "Promo":{
                 "2004-10-15":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -7205,7 +7226,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "200182":{
         "ASCII Name":"Beauregard Krueller",
@@ -7536,7 +7557,7 @@
             }
         },
         "Title":"baron",
-        "Twd":4
+        "Twd":5
     },
     "200190":{
         "ASCII Name":"Benjamin Rose",
@@ -7800,7 +7821,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "200197":{
         "ASCII Name":"Bill Butler",
@@ -10130,7 +10151,7 @@
             }
         },
         "Title":"prince",
-        "Twd":2
+        "Twd":3
     },
     "200256":{
         "ASCII Name":"Catherine du Bois",
@@ -10239,7 +10260,7 @@
         ],
         "Banned":"",
         "Capacity":3,
-        "Card Text":"Independent: C\u00e9leste gets -1 intercept when attempting to block a bleed action. C\u00e9leste gets +1 bleed when bleeding a Methuselah who controls a ready Toreador.",
+        "Card Text":"Independent: C\u00e9leste gets +1 bleed against Methuselahs who control a ready Toreador. She gets -1 intercept during bleed actions.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Melpominee":1,
@@ -10254,6 +10275,9 @@
         "Set":{
             "BL":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -11104,7 +11128,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":24
     },
     "200281":{
         "ASCII Name":"Claven",
@@ -11296,7 +11320,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":8
     },
     "200286":{
         "ASCII Name":"Colin Flynn",
@@ -11848,7 +11872,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "200301":{
         "ASCII Name":"Cristofero Giovanni",
@@ -12014,7 +12038,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "200305":{
         "ASCII Name":"Cybele",
@@ -12024,7 +12048,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Independent: If Cybele is unlocked during your master phase, you get an additional master phase action. Cybele may bleed at +2 bleed as (D) action that costs 1 blood. Infernal.",
+        "Card Text":"Independent: If Cybele is unlocked at the start of your master phase, you get +1 master phase action. She can bleed with +2 bleed as a (D) action that costs 1 blood. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Animalism":2,
@@ -12044,10 +12068,13 @@
             "KMW":{
                 "U":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
-        "Twd":77
+        "Twd":78
     },
     "200306":{
         "ASCII Name":"Cynthia Ingold",
@@ -12623,7 +12650,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "200320":{
         "ASCII Name":"Darius Styx",
@@ -13019,7 +13046,7 @@
         ],
         "Banned":"",
         "Capacity":4,
-        "Card Text":"Independent: Delilah gets -1 intercept when attempting to block an older vampire.",
+        "Card Text":"Independent: Delilah gets -1 intercept against older vampires.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":1,
@@ -13035,6 +13062,9 @@
         "Set":{
             "BL":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -14386,7 +14416,7 @@
             }
         },
         "Title":"prince",
-        "Twd":5
+        "Twd":6
     },
     "200368":{
         "ASCII Name":"Dorian Strack",
@@ -15864,7 +15894,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200407":{
         "ASCII Name":"Elena Gutierrez",
@@ -15954,6 +15984,9 @@
         "Set":{
             "KMW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -16095,7 +16128,7 @@
             }
         },
         "Title":"baron",
-        "Twd":16
+        "Twd":18
     },
     "200413":{
         "ASCII Name":"Elizabeth Conde",
@@ -16306,7 +16339,7 @@
             }
         },
         "Title":"",
-        "Twd":76
+        "Twd":77
     },
     "200419":{
         "ASCII Name":"Emerson Bridges",
@@ -16919,7 +16952,7 @@
             }
         },
         "Title":"",
-        "Twd":78
+        "Twd":79
     },
     "200436":{
         "ASCII Name":"Esau",
@@ -17290,7 +17323,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":4
     },
     "200445":{
         "ASCII Name":"Evan Rogers",
@@ -17360,7 +17393,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent: Evil Jensen can search your crypt for a vampire and move them to your uncontrolled region as a +1 stealth action that costs 2 pool (shuffle afterward). She must burn 1 blood to attempt to block older vampires.",
+        "Card Text":"Independent: Evil Jensen can search your crypt for a vampire and move them to your uncontrolled region as a +1 stealth action that costs 2 pool. She must burn 1 blood to attempt to block older vampires.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Melpominee":1,
@@ -17381,6 +17414,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -18271,7 +18307,7 @@
             }
         },
         "Title":"prince",
-        "Twd":3
+        "Twd":4
     },
     "200470":{
         "ASCII Name":"Fleurdumal",
@@ -18976,7 +19012,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent: Ga\u00ebl can never have more than 1 intercept. Any additional intercept she gains is lost.",
+        "Card Text":"Independent: Ga\u00ebl can never have more than 1 intercept; any additional intercept she gains is lost.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Chimerstry":1,
@@ -18993,6 +19029,9 @@
         "Set":{
             "BL":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -19224,7 +19263,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":6
     },
     "200498":{
         "ASCII Name":"Gem Ghastly",
@@ -19377,7 +19416,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":43
+        "Twd":44
     },
     "200502":{
         "ASCII Name":"Gengis",
@@ -19645,7 +19684,7 @@
             }
         },
         "Title":"",
-        "Twd":33
+        "Twd":34
     },
     "200509":{
         "ASCII Name":"Gerard",
@@ -19879,7 +19918,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200516":{
         "ASCII Name":"Gideon Fontaine",
@@ -19976,7 +20015,7 @@
             }
         },
         "Title":"baron",
-        "Twd":3
+        "Twd":6
     },
     "200518":{
         "ASCII Name":"Gillespi Giovanni",
@@ -20053,7 +20092,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: During any other Methuselah's discard phase, you may discard a card from your hand (and draw a new one). Vampires must burn a blood to attempt to block Giotto. Infernal.",
+        "Card Text":"Independent: During another Methuselah's discard phase, you can discard one card (draw up afterward). Vampires must burn 1 blood to attempt to block Giotto. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Fortitude":1,
@@ -20071,6 +20110,9 @@
         "Set":{
             "BL":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -20717,7 +20759,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200538":{
         "ASCII Name":"Greger Anderssen",
@@ -20849,7 +20891,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "200541":{
         "ASCII Name":"Grotesque",
@@ -21095,7 +21137,7 @@
             }
         },
         "Title":"",
-        "Twd":30
+        "Twd":32
     },
     "200546":{
         "ASCII Name":"Guillermo Arsuaga",
@@ -21959,7 +22001,7 @@
         ],
         "Banned":"",
         "Capacity":4,
-        "Card Text":"Independent: If Harlan is diablerized, no blood hunt can be called. He gets -1 intercept against non-bleed actions.",
+        "Card Text":"Independent: If Harlan is diablerized, no blood hunt can be called. He gets -1 intercept during non-bleed actions.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Melpominee":1,
@@ -21978,6 +22020,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -22157,7 +22202,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":34
+        "Twd":35
     },
     "200576":{
         "ASCII Name":"Hasani",
@@ -22955,7 +23000,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Independent: While Angra is ready, your prey's hand size is 1 card smaller. You may burn the Edge to give Angra +1 stealth on a non-bleed action. Infernal.",
+        "Card Text":"Independent: While Angra is ready, your prey gets -1 hand size. During a non-bleed action, he can burn the Edge to get +1 stealth. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Dementation":1,
@@ -22973,6 +23018,9 @@
         "Set":{
             "BL":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -22986,7 +23034,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Independent: During an action, Hillanvale can burn 1 blood and discard a card requiring Melpominee [mel] to get +1 bleed. She gets -1 intercept against non-Independent, non-Anarch vampires.",
+        "Card Text":"Independent: During a bleed action, Hillanvale can burn 1 blood and discard a card requiring Melpominee [mel] to get +1 bleed. She gets -1 intercept against non-Independent, non-Anarch vampires.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Obfuscate":1,
@@ -23005,6 +23053,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -23268,6 +23319,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -23337,7 +23391,7 @@
             }
         },
         "Title":"prince",
-        "Twd":2
+        "Twd":3
     },
     "200607":{
         "ASCII Name":"Howler",
@@ -23495,7 +23549,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Independent: During your master phase, you may pay a pool to gain a master phase action if Huitzilopochtli is ready. +1 bleed. Infernal.",
+        "Card Text":"Independent: If Huitzilopochtli is ready during your master phase, you can burn 1 pool to get +1 master phase action. Infernal. +1 bleed.",
         "Clan":"Baali",
         "Disciplines":{
             "Auspex":2,
@@ -23514,6 +23568,9 @@
         "Set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -24384,7 +24441,7 @@
             }
         },
         "Title":"prince",
-        "Twd":77
+        "Twd":78
     },
     "200635":{
         "ASCII Name":"Ingrid Russo",
@@ -24717,7 +24774,7 @@
             }
         },
         "Title":"",
-        "Twd":57
+        "Twd":58
     },
     "200645":{
         "ASCII Name":"Ismitta",
@@ -25393,7 +25450,7 @@
             }
         },
         "Title":"baron",
-        "Twd":8
+        "Twd":10
     },
     "200665":{
         "ASCII Name":"Jaggedy Andy",
@@ -25710,6 +25767,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -25982,7 +26042,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":1
+        "Twd":4
     },
     "200680":{
         "ASCII Name":"Javier Montoya",
@@ -28271,7 +28331,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":4
+        "Twd":5
     },
     "200746":{
         "ASCII Name":"Kallista, Master Sculptor",
@@ -28694,7 +28754,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":0
+        "Twd":1
     },
     "200756":{
         "ASCII Name":"Karmenita Yoryari",
@@ -28904,7 +28964,7 @@
             }
         },
         "Title":"prince",
-        "Twd":12
+        "Twd":13
     },
     "200760":{
         "ASCII Name":"Kassiym Malikhair",
@@ -29157,7 +29217,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":16
     },
     "200766":{
         "ASCII Name":"Kazimir Savostin",
@@ -29228,7 +29288,7 @@
             }
         },
         "Title":"",
-        "Twd":146
+        "Twd":147
     },
     "200768":{
         "ASCII Name":"Keller Thiel",
@@ -29582,7 +29642,7 @@
             }
         },
         "Title":"prince",
-        "Twd":0
+        "Twd":1
     },
     "201599":{
         "ASCII Name":"Khadija Al-Kindi",
@@ -31889,7 +31949,7 @@
             }
         },
         "Title":"baron",
-        "Twd":10
+        "Twd":12
     },
     "200834":{
         "ASCII Name":"Lia Milliner",
@@ -32636,7 +32696,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200855":{
         "ASCII Name":"Lord Fianna",
@@ -34025,7 +34085,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":110
+        "Twd":111
     },
     "200891":{
         "ASCII Name":"Lydia, Grand Praetor",
@@ -34730,7 +34790,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":12
     },
     "200909":{
         "ASCII Name":"Marcel de Breau",
@@ -35800,7 +35860,7 @@
             }
         },
         "Title":"prince",
-        "Twd":17
+        "Twd":18
     },
     "200938":{
         "ASCII Name":"Marla Kenyon",
@@ -36193,7 +36253,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: Once each round, Mary may burn a blood to make the damage from her hand strikes aggravated for the current round. Infernal.",
+        "Card Text":"Independent: Once each round, Mary can burn 1 blood to make the damage from her hand strikes aggravated that round. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Celerity":1,
@@ -36211,6 +36271,9 @@
         "Set":{
             "BL":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -36748,7 +36811,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200960":{
         "ASCII Name":"Matteus, Flesh Sculptor",
@@ -36922,7 +36985,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Independent: Maureen has 1 vote (titled). Once each turn, when Maureen successfully performs an action requiring Baali or Daimoinon [dai], you gain 1 pool. Infernal.",
+        "Card Text":"Independent. 1 vote (titled): Once each turn, you can gain 1 pool after Maureen performs a successful action requiring a Baali or Daimoinon [dai]. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Dominate":1,
@@ -36952,6 +37015,9 @@
         "Set":{
             "KMW":{
                 "PB":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"1 vote",
@@ -37128,7 +37194,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "201603":{
         "ASCII Name":"Melech",
@@ -38526,7 +38592,7 @@
             }
         },
         "Title":"prince",
-        "Twd":4
+        "Twd":5
     },
     "201003":{
         "ASCII Name":"Monica Chang",
@@ -39320,6 +39386,9 @@
         "Set":{
             "BL":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -39686,7 +39755,7 @@
             }
         },
         "Title":"",
-        "Twd":105
+        "Twd":106
     },
     "201036":{
         "ASCII Name":"Nangila Were",
@@ -39908,7 +39977,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":2
     },
     "201039":{
         "ASCII Name":"Navar McClaren",
@@ -40386,10 +40455,13 @@
             "Promo":{
                 "2005-10-01":true,
                 "2019-04-08":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
-        "Twd":31
+        "Twd":32
     },
     "201049":{
         "ASCII Name":"Nergal",
@@ -40402,7 +40474,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Independent: While Nergal is acting, reaction cards cost 1 additional blood. Once each action, he can burn 1 blood to get +1 stealth. Infernal.",
+        "Card Text":"Independent: While Nergal is acting, reaction cards cost +1 blood. During an action, he can burn 1 blood to get +1 stealth. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Auspex":2,
@@ -40429,6 +40501,9 @@
             "Promo":{
                 "2008-02-03":true,
                 "2019-04-08":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -41021,7 +41096,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "201065":{
         "ASCII Name":"Normal",
@@ -41302,7 +41377,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "201072":{
         "ASCII Name":"Ogwon",
@@ -41627,7 +41702,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "201081":{
         "ASCII Name":"Omme Enberbenight",
@@ -42834,7 +42909,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Camarilla. Red List: During any round of combat after the first, a minion opposing Petaniqua takes 2 points of damage before range is determined. Recruiting allies and employing retainers costs Petaniqua 1 less blood or pool. +1 bleed. Infernal.",
+        "Card Text":"Camarilla: Once each round of combat after the first, minions in combat with Petaniqua take 2 damage before range is determined. Allies and retainers cost her -1 blood or pool. Infernal. Red List. +1 bleed.",
         "Clan":"Malkavian",
         "Disciplines":{
             "Chimerstry":1,
@@ -42861,6 +42936,9 @@
             "KMW":{
                 "U":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -42877,7 +42955,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Advanced, Independent. Red List: Once each combat, Petaniqua may burn a blood to gain a press. Petaniqua may recruit a werewolf ally as if she meets the requirements of playing that card. +1 strength. Infernal.",
+        "Card Text":"Independent: Once each combat, Petaniqua can burn 1 blood to get 1 press. She can recruit a werewolf ally as if she met the requirements of playing that card. Infernal. Red List. +1 strength.",
         "Clan":"Baali",
         "Disciplines":{
             "Chimerstry":1,
@@ -42928,6 +43006,9 @@
             "KMW":{
                 "U":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -43159,7 +43240,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":34
+        "Twd":35
     },
     "201121":{
         "ASCII Name":"Philip van Vermeer IV",
@@ -43683,7 +43764,7 @@
             }
         },
         "Title":"",
-        "Twd":27
+        "Twd":28
     },
     "201135":{
         "ASCII Name":"Pug Jackson",
@@ -44328,7 +44409,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":85
+        "Twd":86
     },
     "201152":{
         "ASCII Name":"Rafaele Giovanni",
@@ -44806,7 +44887,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "201166":{
         "ASCII Name":"Rashid Stockton",
@@ -46323,7 +46404,7 @@
         ],
         "Banned":"",
         "Capacity":3,
-        "Card Text":"Camarilla: Combat cards that do not require Fortitude [for] cost Rosemarie an additional blood.",
+        "Card Text":"Camarilla: Combat cards that do not require Fortitude [for] cost Rosemarie +1 blood.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Melpominee":1,
@@ -46338,6 +46419,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -46991,7 +47075,7 @@
             }
         },
         "Title":"",
-        "Twd":81
+        "Twd":82
     },
     "201223":{
         "ASCII Name":"Sajid al Misbah",
@@ -47569,7 +47653,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Independent: Whenever Sargon successfully performs an action, you get the Edge. +1 strength. Infernal.",
+        "Card Text":"Independent: After Sargon performs a successful action, you gain the Edge. Infernal. +1 strength.",
         "Clan":"Baali",
         "Disciplines":{
             "Celerity":1,
@@ -47594,6 +47678,9 @@
         "Set":{
             "BL":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -47971,7 +48058,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: During a referendum, if Sayshila is ready, you may lock her to give another titled vampire you control 2 additional votes. Opposing minions cannot use presses to continue against her.",
+        "Card Text":"Independent: If Sayshila is ready during the polling step of any referendum, she can lock to give another titled vampire you control +2 votes. Minions in combat with her cannot press to continue combat.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Dementation":1,
@@ -47988,6 +48075,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -48062,7 +48152,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Independent. 2 votes (titled): During your unlock phase, Scout can burn 2 blood to lock an ally or younger vampire controlled by your prey. Reaction cards cost her 1 additional blood.",
+        "Card Text":"Independent. 2 votes (titled): During your unlock phase, Scout can burn 2 blood to lock an ally or younger vampire controlled by your prey. Reaction cards cost her +1 blood.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":1,
@@ -48096,10 +48186,13 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"2 votes",
-        "Twd":12
+        "Twd":13
     },
     "201254":{
         "ASCII Name":"Sean Andrews",
@@ -48468,7 +48561,7 @@
             }
         },
         "Title":"",
-        "Twd":19
+        "Twd":20
     },
     "201264":{
         "ASCII Name":"Sennuwy, The Promoter",
@@ -48636,7 +48729,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "201268":{
         "ASCII Name":"Servius Marius Pustula",
@@ -50279,7 +50372,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":67
+        "Twd":68
     },
     "201313":{
         "ASCII Name":"Stavros",
@@ -50674,7 +50767,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":6
     },
     "201324":{
         "ASCII Name":"Sundervere, The Devil Brahmin",
@@ -50918,7 +51011,7 @@
             }
         },
         "Title":"prince",
-        "Twd":3
+        "Twd":4
     },
     "201329":{
         "ASCII Name":"Sylvester Simms",
@@ -52316,7 +52409,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "201364":{
         "ASCII Name":"Theron",
@@ -53971,7 +54064,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Independent: The unnamed can burn 1 blood to strike: 2R aggravated damage. You can gain 2 pool after it successfully bleeds. Infernal.",
+        "Card Text":"Independent: The unnamed can burn 1 blood to strike: 2R aggravated damage. After it successfully bleeds, you can gain 2 pool. Infernal.",
         "Clan":"Baali",
         "Disciplines":{
             "Celerity":2,
@@ -53992,10 +54085,13 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
-        "Twd":47
+        "Twd":48
     },
     "201412":{
         "ASCII Name":"Unre, Keeper of Golgotha",
@@ -54443,7 +54539,7 @@
             }
         },
         "Title":"baron",
-        "Twd":7
+        "Twd":8
     },
     "201423":{
         "ASCII Name":"Valkyrie",
@@ -55703,7 +55799,7 @@
             }
         },
         "Title":"baron",
-        "Twd":15
+        "Twd":16
     },
     "201456":{
         "ASCII Name":"Vlad Tepes",
@@ -56092,7 +56188,7 @@
             }
         },
         "Title":"prince",
-        "Twd":12
+        "Twd":13
     },
     "201464":{
         "ASCII Name":"Watenda",
@@ -56709,7 +56805,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":17
+        "Twd":18
     },
     "201479":{
         "ASCII Name":"Xendil Charmer",
@@ -56777,6 +56873,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",
@@ -57192,7 +57291,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Sabbat: When Yseult plays a card that requires Melpominee [mel], you may draw an additional card. Discard afterward. Yseult cannot block vampires with capacity above 4.",
+        "Card Text":"Sabbat: After you replace a card requiring Melpominee [mel] Yseult played, you can draw 1 additional card. She cannot block vampires with capacity 5 or more.",
         "Clan":"Daughter of Cacophony",
         "Disciplines":{
             "Fortitude":2,
@@ -57208,6 +57307,9 @@
         "Set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Title":"",

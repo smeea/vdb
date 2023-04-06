@@ -56,7 +56,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":327,
+        "Twd":328,
         "Type":"Equipment"
     },
     "100002":{
@@ -655,7 +655,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":87,
+        "Twd":88,
         "Type":"Master"
     },
     "100016":{
@@ -1248,7 +1248,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":238,
+        "Twd":240,
         "Type":"Action Modifier"
     },
     "100032":{
@@ -1469,7 +1469,7 @@
                 "DTC":true
             }
         },
-        "Twd":41,
+        "Twd":42,
         "Type":"Master"
     },
     "100038":{
@@ -2065,7 +2065,7 @@
                 "PTz":1
             }
         },
-        "Twd":77,
+        "Twd":78,
         "Type":"Master"
     },
     "100053":{
@@ -2118,7 +2118,7 @@
                 "PG":"1"
             }
         },
-        "Twd":79,
+        "Twd":81,
         "Type":"Master"
     },
     "100055":{
@@ -2175,7 +2175,7 @@
                 "PTz":2
             }
         },
-        "Twd":160,
+        "Twd":162,
         "Type":"Master"
     },
     "100056":{
@@ -2274,7 +2274,7 @@
                 "PV":"1"
             }
         },
-        "Twd":423,
+        "Twd":428,
         "Type":"Master"
     },
     "100059":{
@@ -2325,7 +2325,7 @@
                 "PM":"1"
             }
         },
-        "Twd":310,
+        "Twd":313,
         "Type":"Political Action"
     },
     "100060":{
@@ -2560,7 +2560,7 @@
                 "":"1"
             }
         },
-        "Twd":379,
+        "Twd":380,
         "Type":"Political Action"
     },
     "100065":{
@@ -2611,7 +2611,7 @@
                 "PV":"1"
             }
         },
-        "Twd":317,
+        "Twd":320,
         "Type":"Political Action"
     },
     "100066":{
@@ -3246,7 +3246,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":108,
+        "Twd":109,
         "Type":"Master"
     },
     "100082":{
@@ -3435,7 +3435,7 @@
                 "PR":1
             }
         },
-        "Twd":608,
+        "Twd":611,
         "Type":"Master"
     },
     "100086":{
@@ -3743,7 +3743,7 @@
                 "PN":"1"
             }
         },
-        "Twd":240,
+        "Twd":241,
         "Type":"Action"
     },
     "100094":{
@@ -4013,7 +4013,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[aus] (D) Lock any unlocked minion.\n[mel] (D) Lock any unlocked minion, and that minion burns 1 blood or life.\n[MEL] (D) Put this card on any ready unlocked minion and lock that minion. The minion with this card burns 1 additional blood or life each time he or she attempts to take an action or block. During his or her master phase, the controller of the minion with this card may lock this minion and burn a pool to burn this card. A minion may have only one Art's Traumatic Essence.",
+        "Card Text":"+1 stealth action.\n[aus] (D) Lock an unlocked minion.\n[mel] (D) As [aus] above, and the target minion burns 1 blood or life.\n[MEL] (D) Put this card on a ready unlocked minion and lock them. The attached minion burns 1 blood or life each time they announce an action or attempt to block. During their master phase, they can lock and burn 1 pool to burn this card. A minion can have only one Art's Traumatic Essence.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Melpominee",
@@ -4035,6 +4035,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":8,
@@ -4282,7 +4285,7 @@
                 "":"3"
             }
         },
-        "Twd":362,
+        "Twd":365,
         "Type":"Master"
     },
     "100107":{
@@ -4369,7 +4372,7 @@
                 "PM":"1"
             }
         },
-        "Twd":72,
+        "Twd":74,
         "Type":"Master"
     },
     "100109":{
@@ -4780,7 +4783,7 @@
                 "R":true
             }
         },
-        "Twd":199,
+        "Twd":200,
         "Type":"Action Modifier"
     },
     "100120":{
@@ -5039,7 +5042,7 @@
                 "PG":"1"
             }
         },
-        "Twd":94,
+        "Twd":95,
         "Type":"Master"
     },
     "102218":{
@@ -5075,7 +5078,7 @@
                 "PTz":3
             }
         },
-        "Twd":29,
+        "Twd":32,
         "Type":"Reaction"
     },
     "100127":{
@@ -5341,7 +5344,7 @@
                 "":"2"
             }
         },
-        "Twd":492,
+        "Twd":493,
         "Type":"Political Action"
     },
     "100132":{
@@ -5517,7 +5520,7 @@
                 "PTz":1
             }
         },
-        "Twd":409,
+        "Twd":414,
         "Type":"Master"
     },
     "100136":{
@@ -5656,7 +5659,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nLock during the referendum of a political action to gain X votes, where X is the number of ready Daughters of Cacophony you control. If you control no ready Daughters of Cacophony, you may lock and burn this location during the referendum of a political action to gain 1 vote.",
+        "Card Text":"Unique location.\nYou can lock this card during the polling step of a political action to get +1 vote for each ready Daughter of Cacophony you control. If you control no ready Daughters of Cacophony, you can lock and burn this location during the polling step of a political action to get +1 vote.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -5671,6 +5674,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":8,
@@ -6071,7 +6077,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Successful referendum means you gain 1 pool for each ready Daughter of Cacophony you control, and each non-Daughter of Cacophony vampire who cast votes or ballots in favor gains 1 blood.",
+        "Card Text":"Successful referendum means you gain 1 pool for each ready Daughter of Cacophony you control, and each non-Daughter of Cacophony vampire casting votes or ballots in favor gains 1 blood.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -6086,6 +6092,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -6349,7 +6358,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":236,
+        "Twd":237,
         "Type":"Action Modifier"
     },
     "100158":{
@@ -6539,7 +6548,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":27,
+        "Twd":28,
         "Type":"Action"
     },
     "100163":{
@@ -6564,7 +6573,7 @@
                 "R":true
             }
         },
-        "Twd":55,
+        "Twd":56,
         "Type":"Event"
     },
     "100164":{
@@ -7052,7 +7061,7 @@
                 "DTC":true
             }
         },
-        "Twd":83,
+        "Twd":84,
         "Type":"Action Modifier"
     },
     "100178":{
@@ -7091,7 +7100,7 @@
         "Banned":"",
         "Blood Cost":"X",
         "Burn Option":"",
-        "Card Text":"[aus] (D) Lock X-1 allies or younger vampires controlled by your predator or prey.\n[mel] As [aus] above, at +1 stealth.\n[MEL] As [mel] above, and this vampire can increase his or her capacity for purposes of selecting the targets of this effect. The cost of this action is increased by one blood for each point of capacity gained (chosen when the action is announced).",
+        "Card Text":"[aus] (D) Lock X-1 allies or younger vampires controlled by your predator and/or prey.\n[mel] As [aus] above, with +1 stealth.\n[MEL] As [mel] above, and this vampire can increase their capacity for purposes of choosing the targets of this effect. This action costs +1 blood for each point of capacity gained (chosen as the action is announced).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Melpominee",
@@ -7103,6 +7112,9 @@
         "Set":{
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -7428,7 +7440,7 @@
                 "PKia":"2"
             }
         },
-        "Twd":53,
+        "Twd":54,
         "Type":"Master"
     },
     "100189":{
@@ -8174,7 +8186,7 @@
                 "U":true
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action"
     },
     "100205":{
@@ -8646,7 +8658,7 @@
                 "R":true
             }
         },
-        "Twd":60,
+        "Twd":61,
         "Type":"Event"
     },
     "100218":{
@@ -8850,7 +8862,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Only usable when this Baali successfully blocks an ally or a younger vampire.\nLock this Baali and end the action (with no combat). This Baali inflicts 1 unpreventable damage on the acting minion and each of his or her retainers.",
+        "Card Text":"Only usable if this Baali blocks an ally or younger vampire, before block resolution.\nLock this Baali. This Baali inflicts 1 unpreventable damage on the acting minion and each retainer on the acting minion. The action ends.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -8871,6 +8883,9 @@
             "KMW":{
                 "C":true,
                 "PB":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -9168,7 +9183,7 @@
                 "AU":"3"
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Combat"
     },
     "100233":{
@@ -9391,7 +9406,7 @@
                 "PSal":4
             }
         },
-        "Twd":384,
+        "Twd":389,
         "Type":"Action Modifier"
     },
     "100237":{
@@ -9655,7 +9670,7 @@
                 "PSal":1
             }
         },
-        "Twd":453,
+        "Twd":455,
         "Type":"Equipment"
     },
     "100244":{
@@ -11022,7 +11037,7 @@
                 "DTC":true
             }
         },
-        "Twd":193,
+        "Twd":194,
         "Type":"Action Modifier"
     },
     "100280":{
@@ -11033,7 +11048,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nPut this card on the acting Baali and put X ritual counters on it, where X is the capacity of this Baali. This Baali may put a ritual counter on this card as a +1 stealth action. When this card has more than 10 ritual counters, burn this Baali and choose three Disciplines. This card becomes a unique clanless independent infernal vampire with 9 capacity, 4 strength and 3 bleed. The Great Beast has the chosen three Disciplines at superior. Move 9 blood to him from the blood bank. The Great Beast can enter combat with any ready minion controlled by another Methuselah as a (D) action and can prevent 1 damage each combat.",
+        "Card Text":"+1 stealth action.\nPut this card with X ritual counters on this Baali, where X is this Baali's capacity. This Baali can put 1 ritual counter on this card as a +1 stealth action. If this card has 11 or more ritual counters, move this card to your ready region, burn this Baali and choose three Disciplines; this card becomes a 9-capacity unique clanless Independent infernal vampire with 4 strength, 3 bleed, the chosen three Disciplines at the superior level and 9 blood who can enter combat with a minion as a (D) action and can prevent 1 damage each combat.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -11074,6 +11089,9 @@
             },
             "KMW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":38,
@@ -11700,7 +11718,7 @@
                 "PB":"1"
             }
         },
-        "Twd":40,
+        "Twd":41,
         "Type":"Master"
     },
     "100298":{
@@ -11750,7 +11768,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":700,
+        "Twd":705,
         "Type":"Ally"
     },
     "100299":{
@@ -12213,7 +12231,7 @@
                 "PTz":4
             }
         },
-        "Twd":357,
+        "Twd":358,
         "Type":"Reaction"
     },
     "100309":{
@@ -13096,7 +13114,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":78,
+        "Twd":79,
         "Type":"Master"
     },
     "100330":{
@@ -13205,7 +13223,7 @@
                 "2019-11-23":true
             }
         },
-        "Twd":125,
+        "Twd":126,
         "Type":"Master"
     },
     "100333":{
@@ -13747,7 +13765,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[mel] Put this card into play. Burn this card during your influence phase.\n[MEL] (D) Your prey burns 2 pool for each Choir card you control (not counting this one). Burn all Choir cards you control.",
+        "Card Text":"+1 stealth action.\n[mel] Put this card in play. Burn this card during your influence phase.\n[MEL] (D) Your prey burns 2 pool for each copy of this card you control (not counting this one). Burn all those copies.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee",
@@ -13762,6 +13780,9 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -14424,7 +14445,7 @@
                 "PR":4
             }
         },
-        "Twd":602,
+        "Twd":604,
         "Type":"Action Modifier"
     },
     "100363":{
@@ -15115,7 +15136,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique.\nPut this card in play. Lock during your minion phase to unlock a ready Daughter of Cacophony. Any titled vampire can call a referendum to burn this card as a +1 stealth political action.",
+        "Card Text":"Unique.\nPut this card in play. You can lock this card during your minion phase to unlock a ready Daughter of Cacophony. Titled vampires can call a referendum to burn this card as a +1 stealth political action.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -15130,6 +15151,9 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":15,
@@ -15406,7 +15430,7 @@
                 "PN":"3"
             }
         },
-        "Twd":123,
+        "Twd":124,
         "Type":"Action"
     },
     "100391":{
@@ -15539,7 +15563,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"Y",
-        "Card Text":"+1 stealth action.\nPut this card on this acting Daughter of Cacophony. During your next unlock phase, burn this card to restore this vampire to full capacity with blood from the blood bank.",
+        "Card Text":"+1 stealth action.\nPut this card on this Daughter of Cacophony. During your unlock phase, burn this card to have this vampire gain enough blood to reach full capacity.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -15554,6 +15578,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":11,
@@ -15672,7 +15699,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Condemnation.\n[ser] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready minion. Bleed actions cost the attached minion 1 additional blood (allies cannot pay blood costs). Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached minion's controller burns the top card of their library during their unlock phase.",
+        "Card Text":"+1 stealth action. Condemnation.\n[ser] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready minion. Bleed actions cost the attached minion +1 blood (allies cannot pay blood costs). Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached minion's controller burns the top card of their library during their unlock phase.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Serpentis",
@@ -15700,7 +15727,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Condemnation.\n[obf] (D) Lock a younger vampire.\n[dai] Requires an Infernal vampire. (D) Put this card on a ready minion. The minion with this card has -1 stealth. Burn all other Condemnations on this minion.\n[DAI] As [dai] above, and the minion's controller burns 1 pool each time the minion is successfully blocked.",
+        "Card Text":"+1 stealth action. Condemnation.\n[obf] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready minion. The attached minion gets -1 stealth. Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and if the attached minion is blocked, their controller burns 1 pool before block resolution.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Obfuscate",
@@ -15712,6 +15739,9 @@
         "Set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":3,
@@ -15725,7 +15755,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Condemnation.\n[pre] (D) Lock a younger vampire.\n[dai] Requires an Infernal vampire. (D) Put this card on a ready minion. The minion with this card has -1 strength. Burn all other Condemnations on this minion.\n[DAI] As [dai] above, and the minion cannot use presses in combat.",
+        "Card Text":"+1 stealth action. Condemnation.\n[pre] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready minion. The attached minion gets -1 strength. Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached minion cannot press in combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Presence",
@@ -15737,6 +15767,9 @@
         "Set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -15750,7 +15783,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Condemnation.\n[chi] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready vampire. The attached vampire gets -3 votes. Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached vampire burns 1 blood each time a referendum passes.",
+        "Card Text":"+1 stealth action. Condemnation.\n[chi] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready vampire. The attached vampire gets -3 votes. Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached vampire burns 1 blood after a referendum passes.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Chimerstry/Daimoinon",
@@ -15774,7 +15807,7 @@
                 "DTC":true
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Action"
     },
     "100401":{
@@ -15837,7 +15870,7 @@
                 "PV":"4"
             }
         },
-        "Twd":942,
+        "Twd":948,
         "Type":"Action Modifier"
     },
     "100402":{
@@ -15848,7 +15881,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card on a Daughter of Cacophony. While this Daughter of Cacophony is unlocked or acting, each unlocked or acting Daughter of Cacophony gets an additional vote.",
+        "Card Text":"Unique.\nPut this card on a Daughter of Cacophony. While this Daughter of Cacophony is unlocked or acting, each unlocked or acting Daughter of Cacophony gets +1 vote.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -15860,6 +15893,9 @@
         "Set":{
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":7,
@@ -15888,6 +15924,9 @@
             },
             "KMW":{
                 "PB":"3"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":11,
@@ -15997,7 +16036,7 @@
                 "PS":"3"
             }
         },
-        "Twd":56,
+        "Twd":57,
         "Type":"Reaction"
     },
     "100407":{
@@ -16146,7 +16185,7 @@
                 "PTo":"4"
             }
         },
-        "Twd":222,
+        "Twd":223,
         "Type":"Political Action"
     },
     "100411":{
@@ -16324,7 +16363,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":192,
+        "Twd":194,
         "Type":"Political Action"
     },
     "100415":{
@@ -16399,7 +16438,7 @@
                 "PTz":1
             }
         },
-        "Twd":52,
+        "Twd":53,
         "Type":"Action"
     },
     "100417":{
@@ -16435,7 +16474,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an Infernal vampire. Unique.\n[dai] Put this card on the acting vampire. During each other Methuselah's unlock phase, he or she burns 1 pool if this vampire is ready.\n[DAI] As [dai] above, and once per combat, this vampire can put a corruption counter on the opposing minion as a strike. If the number of your corruption counters on the minion equals or exceeds the capacity of that vampire or the cost of that ally, you may burn all of your corruption counters on that minion to gain control of him or her after strike resolution (ending combat).",
+        "Card Text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card on this vampire. During each other Methuselah's unlock phase, they burn 1 pool if this vampire is ready.\n[DAI] As [dai] above, and once each combat, this vampire can strike: put 1 corruption counter on the opposing minion; if the number of your corruption counters on the minion equals or exceeds their capacity or cost, you can burn those counters to steal the opposing minion after the resolution of this strike (ending combat).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon",
@@ -16455,6 +16494,9 @@
         "Set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":57,
@@ -17073,7 +17115,7 @@
                 "":"1"
             }
         },
-        "Twd":417,
+        "Twd":423,
         "Type":"Master"
     },
     "100436":{
@@ -17368,7 +17410,7 @@
                 "PN":"2"
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action"
     },
     "100444":{
@@ -17402,7 +17444,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":222,
+        "Twd":224,
         "Type":"Master"
     },
     "100445":{
@@ -17476,7 +17518,7 @@
                 "DTC":true
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Action Modifier"
     },
     "100447":{
@@ -18633,7 +18675,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Ghoul with 2 life.\nThe Baali with this retainer gets +1 bleed.",
+        "Card Text":"Ghoul with 2 life.\nThis Baali gets +1 bleed.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -18656,6 +18698,9 @@
             },
             "KMW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":20,
@@ -18705,7 +18750,7 @@
                 "R":true
             }
         },
-        "Twd":17,
+        "Twd":18,
         "Type":"Master"
     },
     "100486":{
@@ -19019,7 +19064,7 @@
                 "PV":"1"
             }
         },
-        "Twd":260,
+        "Twd":261,
         "Type":"Action Modifier"
     },
     "100493":{
@@ -19092,7 +19137,7 @@
                 "U":true
             }
         },
-        "Twd":122,
+        "Twd":124,
         "Type":"Master"
     },
     "100494":{
@@ -19441,7 +19486,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Action Modifier"
     },
     "100502":{
@@ -19668,7 +19713,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable at long range.\n[cel]: Strike: 1R damage.\n[mel]: Strike: 2R damage, only preventable by cards that require Fortitude [for] or Visceratika [vis].\n[MEL]: As [mel] above, and the damage is aggravated.",
+        "Card Text":"Only usable at long range.\n[cel]: Strike: 1R damage.\n[mel]: Strike: 2R damage, only preventable by cards requiring Fortitude [for] or Visceratika [vis].\n[MEL]: As [mel] above, and the damage is aggravated.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity/Melpominee",
@@ -19680,6 +19725,9 @@
         "Set":{
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":4,
@@ -19957,7 +20005,7 @@
                 "PG":"6"
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Reaction"
     },
     "100515":{
@@ -20195,7 +20243,7 @@
                 "PSal":3
             }
         },
-        "Twd":1324,
+        "Twd":1333,
         "Type":"Reaction"
     },
     "100519":{
@@ -20274,7 +20322,7 @@
                 "PB":"2"
             }
         },
-        "Twd":850,
+        "Twd":856,
         "Type":"Reaction"
     },
     "100520":{
@@ -21161,7 +21209,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] Reduce a bleed against you by 1.\n[dai] Requires an infernal vampire. Only usable when this vampire successfully blocks. Put 4 pact counters on the acting minion. If the number of pact counters equals or exceeds his or her capacity or cost, burn them to make him or her infernal.\n[DAI] As [dai] above, and the acting minion's controller burns 1 pool.",
+        "Card Text":"[aus] Reduce a bleed against you by 1.\n[dai] Requires an infernal vampire. Only usable if this vampire blocks, before block resolution. Put 4 pact counters on the acting minion; if the number of pact counters equals or exceeds their capacity or cost, burn those counters to make them infernal.\n[DAI] As [dai] above, and the acting minion's controller burns 1 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Daimoinon",
@@ -21181,6 +21229,9 @@
         "Set":{
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -21353,7 +21404,7 @@
                 "DTC":true
             }
         },
-        "Twd":1106,
+        "Twd":1109,
         "Type":"Master"
     },
     "100546":{
@@ -21454,7 +21505,7 @@
                 "DTC":true
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Master"
     },
     "100549":{
@@ -21515,7 +21566,7 @@
                 "R":true
             }
         },
-        "Twd":173,
+        "Twd":174,
         "Type":"Combat"
     },
     "100550":{
@@ -22346,7 +22397,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":160,
+        "Twd":161,
         "Type":"Political Action"
     },
     "100571":{
@@ -22501,7 +22552,7 @@
                 "PV":"2"
             }
         },
-        "Twd":165,
+        "Twd":167,
         "Type":"Action"
     },
     "100574":{
@@ -22596,7 +22647,7 @@
                 "AU":"3"
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Combat"
     },
     "102220":{
@@ -23178,7 +23229,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":1684,
+        "Twd":1695,
         "Type":"Master"
     },
     "100589":{
@@ -23448,7 +23499,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":51,
+        "Twd":52,
         "Type":"Master"
     },
     "100595":{
@@ -23575,7 +23626,7 @@
                 "PB":"4"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Combat"
     },
     "100598":{
@@ -23716,7 +23767,7 @@
                 "PTz":3
             }
         },
-        "Twd":164,
+        "Twd":165,
         "Type":"Action Modifier"
     },
     "100601":{
@@ -23761,7 +23812,7 @@
                 "PMin":"5"
             }
         },
-        "Twd":237,
+        "Twd":239,
         "Type":"Combat"
     },
     "100602":{
@@ -23885,7 +23936,7 @@
                 "AU":"2"
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Political Action"
     },
     "100606":{
@@ -23960,7 +24011,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable during a referendum.\n[pre] If you burn the Edge for a vote, this vampire gains 2 votes.\n[mel] Usable by a ready vampire other than the acting minion. This vampire gains 2 votes.\n[MEL] Usable by a ready vampire other than the acting minion. After the referendum, move the political action card used to call the referendum from your ash heap to this vampire, face down. This vampire may play the political action card as if from your hand (requirements and cost apply as normal).",
+        "Card Text":"[pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[mel] As [pre] above, and usable by a ready vampire other than the acting minion.\n[MEL] Only usable after resolution of a political action. Usable by a ready vampire other than the acting minion. Move the political action card [POLITICALACTION] used to call the referendum from your ash heap to this vampire, face down and out of play; this vampire can play it as if from your hand (requirements and cost apply as normal).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee/Presence",
@@ -24027,6 +24078,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":4,
@@ -24390,7 +24444,7 @@
                 "PM":"2"
             }
         },
-        "Twd":635,
+        "Twd":639,
         "Type":"Action Modifier"
     },
     "100618":{
@@ -24529,7 +24583,7 @@
                 "PM":"1"
             }
         },
-        "Twd":108,
+        "Twd":111,
         "Type":"Master"
     },
     "100621":{
@@ -25011,7 +25065,7 @@
                 "LB":"9"
             }
         },
-        "Twd":158,
+        "Twd":159,
         "Type":"Action"
     },
     "100634":{
@@ -25212,7 +25266,7 @@
                 "C":true
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Action Modifier"
     },
     "100640":{
@@ -25282,7 +25336,7 @@
                 "PV":"4"
             }
         },
-        "Twd":233,
+        "Twd":234,
         "Type":"Action"
     },
     "100641":{
@@ -25352,7 +25406,7 @@
                 "PMin":"6"
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Action Modifier"
     },
     "100642":{
@@ -25571,7 +25625,7 @@
                 "":"1"
             }
         },
-        "Twd":361,
+        "Twd":364,
         "Type":"Action Modifier"
     },
     "100646":{
@@ -25721,6 +25775,9 @@
         "Set":{
             "Promo":{
                 "2006-10-26":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -25819,7 +25876,7 @@
                 "DTC":true
             }
         },
-        "Twd":51,
+        "Twd":52,
         "Type":"Combat"
     },
     "100652":{
@@ -25870,7 +25927,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":556,
+        "Twd":560,
         "Type":"Action"
     },
     "100653":{
@@ -26904,7 +26961,7 @@
                 "PSal":4
             }
         },
-        "Twd":569,
+        "Twd":571,
         "Type":"Reaction"
     },
     "100681":{
@@ -27203,7 +27260,7 @@
                 "PM":"2"
             }
         },
-        "Twd":670,
+        "Twd":676,
         "Type":"Action Modifier"
     },
     "100688":{
@@ -27405,7 +27462,7 @@
                 "PAG":1
             }
         },
-        "Twd":103,
+        "Twd":104,
         "Type":"Combat"
     },
     "100694":{
@@ -27684,7 +27741,7 @@
                 "PN":"1"
             }
         },
-        "Twd":648,
+        "Twd":651,
         "Type":"Master"
     },
     "100699":{
@@ -27733,7 +27790,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[mel] Choose up to five older vampires. Successful referendum means each chosen vampire gains 1 blood.\n[MEL] As above, and successful referendum means this card is put in play. Unique. You can burn this card before range is determined to end any combat.",
+        "Card Text":"[mel] Choose up to five older vampires. Successful referendum means each chosen vampire gains 1 blood.\n[MEL] As above, and successful referendum means this card is put in play. Unique. You can burn this card before range is determined to end a combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee",
@@ -27748,6 +27805,9 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":3,
@@ -27860,7 +27920,7 @@
                 "R":true
             }
         },
-        "Twd":190,
+        "Twd":192,
         "Type":"Action"
     },
     "100704":{
@@ -28135,7 +28195,7 @@
                 "R":true
             }
         },
-        "Twd":177,
+        "Twd":179,
         "Type":"Event"
     },
     "100710":{
@@ -28173,7 +28233,7 @@
                 "":"1"
             }
         },
-        "Twd":118,
+        "Twd":119,
         "Type":"Master"
     },
     "100711":{
@@ -28184,7 +28244,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"A vampire may play only one Fear of the Void Below each combat.\n[obf] Maneuver.\n[dai] Only usable before range is determined. Each round of this combat defaults to long range, and this vampire gets an optional press each round, only usable to end combat.\n[DAI] As [dai] above, and the opposing minion's controller discards one card at random from his or her hand during the initial strike resolution phase of each round.",
+        "Card Text":"A vampire can play only one Fear of the Void Below each combat.\n[obf] Maneuver.\n[dai] Only usable before range is determined. This combat, each round defaults to long range, and this vampire gets 1 optional press each round, only usable to end combat.\n[DAI] As [dai] above, and the opposing minion's controller discards 1 card at random each round during normal strike resolution.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Obfuscate",
@@ -28199,6 +28259,9 @@
             },
             "KMW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -28608,7 +28671,7 @@
                 "DTC":true
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Master"
     },
     "100723":{
@@ -29262,6 +29325,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":17,
@@ -29780,7 +29846,7 @@
                 "TUA":"4"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Combat"
     },
     "100754":{
@@ -29978,7 +30044,7 @@
                 "C":true
             }
         },
-        "Twd":75,
+        "Twd":76,
         "Type":"Action Modifier/Combat"
     },
     "100759":{
@@ -30178,7 +30244,7 @@
                 "":"3"
             }
         },
-        "Twd":177,
+        "Twd":178,
         "Type":"Action Modifier"
     },
     "100762":{
@@ -30348,7 +30414,7 @@
                 "PTz":3
             }
         },
-        "Twd":363,
+        "Twd":368,
         "Type":"Action Modifier"
     },
     "100766":{
@@ -30499,7 +30565,7 @@
                 "PM":"2"
             }
         },
-        "Twd":403,
+        "Twd":405,
         "Type":"Action Modifier"
     },
     "100770":{
@@ -30626,7 +30692,7 @@
                 "PTz":3
             }
         },
-        "Twd":232,
+        "Twd":234,
         "Type":"Combat"
     },
     "102223":{
@@ -30654,7 +30720,7 @@
                 "PTz":2
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Action Modifier/Reaction"
     },
     "102224":{
@@ -30847,7 +30913,7 @@
                 "R":true
             }
         },
-        "Twd":194,
+        "Twd":196,
         "Type":"Master"
     },
     "100776":{
@@ -31338,7 +31404,7 @@
                 "PV":"5"
             }
         },
-        "Twd":600,
+        "Twd":602,
         "Type":"Action Modifier"
     },
     "100789":{
@@ -31571,7 +31637,7 @@
                 "PB":"1"
             }
         },
-        "Twd":68,
+        "Twd":69,
         "Type":"Master"
     },
     "100795":{
@@ -32065,7 +32131,7 @@
                 "R":true
             }
         },
-        "Twd":38,
+        "Twd":40,
         "Type":"Master"
     },
     "100810":{
@@ -32690,7 +32756,7 @@
                 "":"1"
             }
         },
-        "Twd":1376,
+        "Twd":1385,
         "Type":"Master"
     },
     "100825":{
@@ -33040,7 +33106,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":84,
+        "Twd":85,
         "Type":"Combat"
     },
     "100835":{
@@ -33340,7 +33406,7 @@
                 "PV":1
             }
         },
-        "Twd":378,
+        "Twd":379,
         "Type":"Master"
     },
     "100843":{
@@ -33490,7 +33556,7 @@
                 "PSal":4
             }
         },
-        "Twd":967,
+        "Twd":974,
         "Type":"Action"
     },
     "100846":{
@@ -33560,7 +33626,7 @@
                 "2006-11-26":true
             }
         },
-        "Twd":59,
+        "Twd":60,
         "Type":"Equipment"
     },
     "100848":{
@@ -33768,7 +33834,7 @@
                 "PSal":1
             }
         },
-        "Twd":175,
+        "Twd":176,
         "Type":"Action"
     },
     "100853":{
@@ -33888,7 +33954,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":154,
+        "Twd":155,
         "Type":"Ally"
     },
     "100856":{
@@ -34244,7 +34310,7 @@
                 "PR":4
             }
         },
-        "Twd":127,
+        "Twd":128,
         "Type":"Reaction"
     },
     "100864":{
@@ -34922,7 +34988,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: out-of-turn.\nPlay during your influence phase. No /Choir/ cards are burned during this influence phase. Not usable if you played a Hanging Fermata during your last turn.",
+        "Card Text":"Out-of-turn. Only usable during your influence phase. Not usable if you played a Hanging Fermata during your last turn.\nNo cards named /Choir/ are burned during this influence phase.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -34934,6 +35000,9 @@
         "Set":{
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -35035,7 +35104,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Master"
     },
     "100886":{
@@ -35136,7 +35205,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n(D) Your prey burns 3 pool for each /Choir/ card you control. Burn all /Choir/ cards you control.",
+        "Card Text":"+1 stealth action.\n(D) Your prey burns 3 pool for each card named /Choir/ you control. Burn all those cards.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -35151,6 +35220,9 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":1,
@@ -35500,7 +35572,7 @@
                 "PTz":1
             }
         },
-        "Twd":267,
+        "Twd":269,
         "Type":"Master"
     },
     "100898":{
@@ -35720,7 +35792,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":678,
+        "Twd":684,
         "Type":"Equipment"
     },
     "100904":{
@@ -35993,7 +36065,7 @@
                 "DTC":true
             }
         },
-        "Twd":19,
+        "Twd":21,
         "Type":"Combat"
     },
     "100911":{
@@ -36043,7 +36115,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Demon with 5 life. 3 strength, 1 bleed, flight [FLIGHT].\nThe Herald may enter combat with a ready minion controlled by another Methuselah as a (D) action. The Herald may play cards requiring basic Daimoinon [dai], Potence [pot] and/or Presence [pre] as a vampire with a capacity of 5. If a card would give him blood, give him life instead. If the Herald has less than 5 life during your unlock phase, add 1 life. During your influence phase, burn 1 pool or burn the Herald.",
+        "Card Text":"Demon with 5 life. 3 strength, 1 bleed, flight [FLIGHT]. Infernal.\nHerald of Topheth can play cards requiring basic Daimoinon [dai], basic Potence [pot] and/or basic Presence [pre] as a vampire with capacity 5. It can enter combat with a minion as a (D) action. If it has 4 or fewer life during your unlock phase, it gains 1 life.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -36074,6 +36146,9 @@
         "Set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":4,
@@ -36463,7 +36538,7 @@
                 "R":true
             }
         },
-        "Twd":58,
+        "Twd":60,
         "Type":"Action Modifier/Combat"
     },
     "100922":{
@@ -36812,7 +36887,7 @@
                 "PTz":1
             }
         },
-        "Twd":104,
+        "Twd":105,
         "Type":"Retainer"
     },
     "100933":{
@@ -37399,9 +37474,12 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "Twd":68,
+        "Twd":69,
         "Type":"Action Modifier"
     },
     "100948":{
@@ -37929,7 +38007,7 @@
                 "PN":"2"
             }
         },
-        "Twd":267,
+        "Twd":269,
         "Type":"Combat"
     },
     "100960":{
@@ -38473,7 +38551,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card on a Red List Anarch vampire. This vampire is infernal, Bahari, and gets 2 additional votes. During this vampire's minion phase, his or her controller may unlock a ready anarch he or she controls.",
+        "Card Text":"Unique.\nPut this card on a Red List Anarch vampire. This vampire is infernal, Bahari, and gets +2 votes. During this vampire's minion phase, their controller can unlock a ready Anarch they control.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -38492,6 +38570,9 @@
         "Set":{
             "Promo":{
                 "2010-05-10":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":4,
@@ -38711,7 +38792,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique demon with 2 life. 1 strength, 3 bleed. Requires an infernal vampire.\n[dai] Infernal Servitor can act the turn it is recruited. Remove it from the game if you control no infernal vampires, or after it performs a successful action.\n[DAI] As above, and the Servitor can play cards requiring basic Daimoinon [dai] and/or Obfuscate [obf] as a vampire.",
+        "Card Text":"Unique demon with 2 life. 1 strength, 3 bleed. Requires an infernal vampire.\n[dai] Infernal Servitor can perform actions the turn it is recruited. Remove it from the game if you control no infernal vampires, or after it performs a successful action.\n[DAI] As above, and Infernal Servitor can play cards requiring basic Daimoinon [dai] and/or basic Obfuscate [obf] as a vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon",
@@ -38739,6 +38820,9 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":29,
@@ -38849,7 +38933,7 @@
                 "PV":"1"
             }
         },
-        "Twd":878,
+        "Twd":883,
         "Type":"Master"
     },
     "100985":{
@@ -39192,7 +39276,7 @@
                 "":"3"
             }
         },
-        "Twd":78,
+        "Twd":80,
         "Type":"Action Modifier"
     },
     "100995":{
@@ -39465,7 +39549,7 @@
                 "PM":"6"
             }
         },
-        "Twd":165,
+        "Twd":166,
         "Type":"Action Modifier"
     },
     "101002":{
@@ -39746,7 +39830,7 @@
                 "SKB":"3"
             }
         },
-        "Twd":67,
+        "Twd":68,
         "Type":"Action Modifier"
     },
     "101009":{
@@ -39970,7 +40054,7 @@
                 "PSal":1
             }
         },
-        "Twd":616,
+        "Twd":617,
         "Type":"Equipment"
     },
     "101015":{
@@ -40180,7 +40264,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":490,
+        "Twd":495,
         "Type":"Master"
     },
     "101020":{
@@ -40630,7 +40714,7 @@
                 "U":true
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Political Action"
     },
     "101032":{
@@ -40745,7 +40829,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nThis Sabbat vampire may allow you to draw 5 cards from your library as an action (discard afterward). This infernal minion may move 3 blood from the bank to a vampire in your uncontrolled region as a +1 stealth action. Any minion may steal this equipment as a strike.",
+        "Card Text":"Unique.\nThis Sabbat vampire can draw 5 cards as an action (discard down afterward). This infernal minion can add 3 blood to a vampire in your uncontrolled region as a +1 stealth action. An opposing minion can strike: steal this equipment.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -40776,6 +40860,9 @@
         "Set":{
             "Promo":{
                 "2008-10-23":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":31,
@@ -41011,7 +41098,7 @@
                 "DTC":true
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Master"
     },
     "101043":{
@@ -41042,7 +41129,7 @@
                 "DTC":true
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Action"
     },
     "101044":{
@@ -41652,7 +41739,7 @@
                 "PTo":"3"
             }
         },
-        "Twd":698,
+        "Twd":700,
         "Type":"Political Action"
     },
     "101057":{
@@ -41910,7 +41997,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an infernal vampire. Only usable during a referendum.\nChoose a younger vampire. The chosen vampire abstains. This can cancel that vampire's votes and ballots.",
+        "Card Text":"Requires an infernal vampire. Only usable during the polling step of a political action.\nForce a younger vampire to abstain (this can cancel their votes and ballots).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -41930,6 +42017,9 @@
         "Set":{
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -42063,7 +42153,7 @@
                 "PSal":1
             }
         },
-        "Twd":383,
+        "Twd":384,
         "Type":"Master"
     },
     "101068":{
@@ -42163,7 +42253,7 @@
                 "PN":"1"
             }
         },
-        "Twd":70,
+        "Twd":71,
         "Type":"Master"
     },
     "101071":{
@@ -42630,7 +42720,7 @@
                 "SKM":"2"
             }
         },
-        "Twd":156,
+        "Twd":157,
         "Type":"Equipment"
     },
     "101082":{
@@ -43049,7 +43139,7 @@
                 "":"1"
             }
         },
-        "Twd":120,
+        "Twd":121,
         "Type":"Master"
     },
     "101092":{
@@ -43653,7 +43743,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[mel] Allocate 4 points among one or more Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.\n[MEL] As above, and choose any Methuselah. Successful referendum means the chosen Methuselah gains 1 pool.",
+        "Card Text":"[mel] Allocate 4 points among one or more Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.\n[MEL] As above, and choose a Methuselah. Successful referendum means the chosen Methuselah gains 1 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee",
@@ -43681,6 +43771,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":6,
@@ -43752,7 +43845,7 @@
                 "PB":"6"
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action"
     },
     "101111":{
@@ -43821,7 +43914,7 @@
                 "":"1"
             }
         },
-        "Twd":221,
+        "Twd":223,
         "Type":"Master"
     },
     "101113":{
@@ -44329,7 +44422,7 @@
                 "PR":4
             }
         },
-        "Twd":821,
+        "Twd":828,
         "Type":"Action Modifier"
     },
     "101126":{
@@ -44368,7 +44461,7 @@
                 "PA":1
             }
         },
-        "Twd":65,
+        "Twd":66,
         "Type":"Reaction"
     },
     "101127":{
@@ -44594,7 +44687,7 @@
                 "PAG":1
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Combat"
     },
     "101132":{
@@ -44961,7 +45054,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a referendum before votes and ballots are cast.\n[pre] [REACTION] Only usable by a reacting vampire. Gain 2 votes.\n[mel] [ACTIONMODIFIER][REACTION] Gain 2 votes.\n[MEL] [ACTIONMODIFIER][REACTION] As [mel] above, and any vampire casting votes or ballots in agreement with this vampire gains 1 blood from the blood bank. Any vampire casting votes or ballots in opposition to this vampire burns 1 blood. Blood is gained or lost when the results are tallied.",
+        "Card Text":"Only usable during the polling step of a political action before votes and ballots are cast.\n[pre] [REACTION] This vampire gets +2 votes.\n[mel] [ACTIONMODIFIER][REACTION] This vampire gets +2 votes.\n[MEL] [ACTIONMODIFIER][REACTION] As [mel] above, and vampires casting votes or ballots in agreement with this vampire gain 1 blood. Vampires casting votes or ballots in opposition to this vampire burn 1 blood. Blood is gained or burned once results are tallied.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee/Presence",
@@ -44996,6 +45089,9 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":7,
@@ -45102,7 +45198,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":192,
+        "Twd":193,
         "Type":"Action"
     },
     "101144":{
@@ -45173,7 +45269,7 @@
                 "PR":4
             }
         },
-        "Twd":656,
+        "Twd":659,
         "Type":"Combat"
     },
     "101145":{
@@ -47175,7 +47271,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally cannot act. During a (D) action against you (or a card you control), this ally can burn 1 life to get +1 intercept. Burn this ally if he blocks a vampire, before block resolution.",
+        "Card Text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally cannot perform actions. During an action directed at you (or a card you control), this ally can burn 1 life to get +1 intercept. Burn this ally if he blocks a vampire, before block resolution.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -47190,6 +47286,9 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":8,
@@ -47339,7 +47438,7 @@
                 "DTC":true
             }
         },
-        "Twd":54,
+        "Twd":55,
         "Type":"Reaction"
     },
     "101202":{
@@ -47526,7 +47625,7 @@
                 "U":true
             }
         },
-        "Twd":170,
+        "Twd":173,
         "Type":"Master"
     },
     "102239":{
@@ -47680,7 +47779,7 @@
                 "R":true
             }
         },
-        "Twd":97,
+        "Twd":98,
         "Type":"Master"
     },
     "101211":{
@@ -47727,7 +47826,7 @@
                 "PV":"2"
             }
         },
-        "Twd":113,
+        "Twd":114,
         "Type":"Action"
     },
     "101212":{
@@ -48239,7 +48338,7 @@
                 "PTr":"6"
             }
         },
-        "Twd":184,
+        "Twd":186,
         "Type":"Action Modifier"
     },
     "101224":{
@@ -48329,7 +48428,7 @@
                 "PSal":1
             }
         },
-        "Twd":238,
+        "Twd":239,
         "Type":"Master"
     },
     "101226":{
@@ -48340,7 +48439,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Requires a vampire with a capacity greater than 4. Vampires with a capacity less than 5 get -1 intercept when attempting to block this action.\n[mel] Allies and younger vampires get -1 intercept when attempting to block this action.\n[MEL] +1 stealth.",
+        "Card Text":"[cel] Requires a vampire with capacity 5 or more. Vampires with capacity 4 or less get -1 intercept.\n[mel] Allies and younger vampires get -1 intercept.\n[MEL] +1 stealth.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity/Melpominee",
@@ -48355,6 +48454,9 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":22,
@@ -48763,7 +48865,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Combat"
     },
     "101236":{
@@ -48905,7 +49007,7 @@
                 "":"1"
             }
         },
-        "Twd":407,
+        "Twd":410,
         "Type":"Master"
     },
     "101239":{
@@ -48965,7 +49067,7 @@
                 "R":true
             }
         },
-        "Twd":11,
+        "Twd":12,
         "Type":"Equipment"
     },
     "101241":{
@@ -49070,7 +49172,7 @@
                 "DTC":true
             }
         },
-        "Twd":73,
+        "Twd":75,
         "Type":"Master"
     },
     "101244":{
@@ -49361,7 +49463,7 @@
                 "U":true
             }
         },
-        "Twd":87,
+        "Twd":89,
         "Type":"Ally"
     },
     "101251":{
@@ -49755,7 +49857,7 @@
                 "PSal":2
             }
         },
-        "Twd":564,
+        "Twd":566,
         "Type":"Reaction"
     },
     "101260":{
@@ -49953,7 +50055,7 @@
                 "R":true
             }
         },
-        "Twd":148,
+        "Twd":150,
         "Type":"Event"
     },
     "101266":{
@@ -50235,7 +50337,7 @@
                 "PwN":"8"
             }
         },
-        "Twd":98,
+        "Twd":99,
         "Type":"Ally"
     },
     "101273":{
@@ -50999,7 +51101,7 @@
                 "PM":"2"
             }
         },
-        "Twd":83,
+        "Twd":85,
         "Type":"Combat"
     },
     "101293":{
@@ -51044,7 +51146,7 @@
                 "DTC":true
             }
         },
-        "Twd":64,
+        "Twd":66,
         "Type":"Ally"
     },
     "101294":{
@@ -51391,7 +51493,7 @@
                 "R":true
             }
         },
-        "Twd":52,
+        "Twd":53,
         "Type":"Master"
     },
     "101304":{
@@ -51765,7 +51867,7 @@
                 "DTC":true
             }
         },
-        "Twd":26,
+        "Twd":27,
         "Type":"Master"
     },
     "101313":{
@@ -52118,7 +52220,7 @@
                 "PSal":2
             }
         },
-        "Twd":1626,
+        "Twd":1635,
         "Type":"Reaction"
     },
     "101322":{
@@ -52227,7 +52329,7 @@
                 "R":true
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Action"
     },
     "101325":{
@@ -52433,7 +52535,7 @@
                 "PTz":3
             }
         },
-        "Twd":21,
+        "Twd":23,
         "Type":"Reaction"
     },
     "101330":{
@@ -52595,7 +52697,7 @@
                 "R":true
             }
         },
-        "Twd":260,
+        "Twd":262,
         "Type":"Ally"
     },
     "101334":{
@@ -52653,7 +52755,7 @@
                 "DTC":true
             }
         },
-        "Twd":53,
+        "Twd":54,
         "Type":"Combat"
     },
     "101335":{
@@ -52748,7 +52850,7 @@
                 "U":true
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Ally"
     },
     "101338":{
@@ -53061,7 +53163,7 @@
                 "SKM":"1"
             }
         },
-        "Twd":136,
+        "Twd":137,
         "Type":"Equipment"
     },
     "101346":{
@@ -53238,7 +53340,7 @@
                 "PTz":1
             }
         },
-        "Twd":128,
+        "Twd":130,
         "Type":"Master"
     },
     "101351":{
@@ -53274,7 +53376,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Master: unique location.\nLock to give a Daughter of Cacophony you control +1 stealth. Lock this card and a Daughter of Cacophony you control to give any minion +1 stealth.",
+        "Card Text":"Unique location.\nYou can lock this card to give a Daughter of Cacophony you control +1 stealth. You can lock this card and a Daughter of Cacophony you control to give a minion +1 stealth.",
         "Clan":"Daughter of Cacophony",
         "Conviction Cost":"",
         "Discipline":"",
@@ -53289,6 +53391,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":25,
@@ -53365,7 +53470,7 @@
                 "PTo":"3"
             }
         },
-        "Twd":504,
+        "Twd":506,
         "Type":"Political Action"
     },
     "101354":{
@@ -53437,7 +53542,7 @@
                 "U":true
             }
         },
-        "Twd":555,
+        "Twd":559,
         "Type":"Master"
     },
     "102231":{
@@ -53462,7 +53567,7 @@
                 "PMin":"5"
             }
         },
-        "Twd":12,
+        "Twd":14,
         "Type":"Reaction"
     },
     "101356":{
@@ -53529,7 +53634,7 @@
                 "PSam":1
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action"
     },
     "101358":{
@@ -53631,7 +53736,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. During your master phase, you may burn 1 pool to unlock all infernal minions you control. Any minion may burn this card as a (D) action; if that minion is a vampire, he or she takes one damage (damage not preventable) when this card is burned.",
+        "Card Text":"Unique.\nPut this card in play. During your master phase, you can burn 1 pool to unlock all infernal minions you control. Minions can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -53643,6 +53748,9 @@
         "Set":{
             "BH":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":20,
@@ -53760,7 +53868,7 @@
                 "DTC":true
             }
         },
-        "Twd":58,
+        "Twd":59,
         "Type":"Master"
     },
     "101366":{
@@ -54407,7 +54515,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":1601,
+        "Twd":1610,
         "Type":"Master"
     },
     "101385":{
@@ -54520,7 +54628,7 @@
                 "PTo":"4"
             }
         },
-        "Twd":175,
+        "Twd":178,
         "Type":"Action Modifier"
     },
     "101388":{
@@ -54582,7 +54690,7 @@
                 "LB":"2"
             }
         },
-        "Twd":459,
+        "Twd":460,
         "Type":"Master"
     },
     "101389":{
@@ -54674,7 +54782,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[aus] Unlock a vampire with Melpominee [mel].\n[mel] Put this card in play and put a card from your hand that requires Melpominee on this card, face down. You may look at the card at any time. Any vampire you control may burn this card to play the card on it as if from your hand and as if he or she had basic Melpominee.\n[MEL] As [mel] above, and the vampire may play the card as if he or she had superior Melpominee [MEL].",
+        "Card Text":"+1 stealth action.\n[aus] Unlock a vampire with Melpominee [mel].\n[mel] Put this card in play with one card requiring Melpominee from your hand on it, face down and out of play (you can look at the card at any time). A vampire you control can burn this card to play the card on it as if from your hand and as if they had basic Melpominee.\n[MEL] As [mel] above, and the vampire can play the card as if they had superior Melpominee.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Melpominee",
@@ -54693,6 +54801,9 @@
         "Set":{
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -55093,7 +55204,7 @@
                 "PMin":"7"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Action"
     },
     "101403":{
@@ -55242,7 +55353,7 @@
                 "PM":"2"
             }
         },
-        "Twd":67,
+        "Twd":68,
         "Type":"Reaction"
     },
     "101407":{
@@ -55618,7 +55729,7 @@
                 "":"1"
             }
         },
-        "Twd":340,
+        "Twd":341,
         "Type":"Political Action"
     },
     "101418":{
@@ -55717,7 +55828,7 @@
                 "R":true
             }
         },
-        "Twd":87,
+        "Twd":88,
         "Type":"Ally"
     },
     "101420":{
@@ -56154,7 +56265,7 @@
                 "DTC":true
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Action Modifier"
     },
     "101430":{
@@ -56302,7 +56413,7 @@
                 "DTC":true
             }
         },
-        "Twd":76,
+        "Twd":77,
         "Type":"Master"
     },
     "101434":{
@@ -56371,7 +56482,7 @@
                 "B":1
             }
         },
-        "Twd":43,
+        "Twd":45,
         "Type":"Master"
     },
     "101436":{
@@ -56497,7 +56608,7 @@
                 "PSal":1
             }
         },
-        "Twd":737,
+        "Twd":740,
         "Type":"Master"
     },
     "101440":{
@@ -56592,7 +56703,7 @@
                 "R":true
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Master"
     },
     "101443":{
@@ -57231,7 +57342,7 @@
                 "DTC":true
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Political Action"
     },
     "101464":{
@@ -58009,7 +58120,7 @@
                 "PN":"1"
             }
         },
-        "Twd":71,
+        "Twd":72,
         "Type":"Action"
     },
     "101484":{
@@ -58167,7 +58278,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Master"
     },
     "101488":{
@@ -58632,7 +58743,7 @@
                 "R":true
             }
         },
-        "Twd":68,
+        "Twd":69,
         "Type":"Master"
     },
     "101501":{
@@ -58673,7 +58784,7 @@
                 "PR":4
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Reaction"
     },
     "101502":{
@@ -59056,7 +59167,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable when an ally or younger vampire successfully blocks before locking the blocker.\n[pre] Cancel the current action and unlock this acting vampire. The blocking minion is not locked.\n[dai] The block fails, and the action continues. The blocking minion cannot attempt to block this action again.\n[DAI] As [dai] above, and the blocking minion takes 1 damage (damage not preventable).",
+        "Card Text":"Only usable if an ally or younger vampire blocks, before block resolution.\n[pre] Unlock this vampire, and the action ends (unsuccessfully).\n[dai] The block fails, and the action continues. The blocking minion cannot attempt to block this action again.\n[DAI] As [dai] above, and the blocking minion takes 1 unpreventable environmental damage.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon/Presence",
@@ -59085,6 +59196,9 @@
             },
             "KMW":{
                 "PB":"3"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":50,
@@ -59244,7 +59358,7 @@
                 "PAG":1
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Combat"
     },
     "101516":{
@@ -59530,7 +59644,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":243,
+        "Twd":244,
         "Type":"Combat"
     },
     "101524":{
@@ -59866,7 +59980,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Combat"
     },
     "101533":{
@@ -60047,7 +60161,7 @@
                 "PG":"1"
             }
         },
-        "Twd":524,
+        "Twd":528,
         "Type":"Master"
     },
     "101537":{
@@ -60597,7 +60711,7 @@
                 "PN":"2"
             }
         },
-        "Twd":315,
+        "Twd":316,
         "Type":"Retainer"
     },
     "101551":{
@@ -60901,7 +61015,7 @@
                 "C":true
             }
         },
-        "Twd":98,
+        "Twd":99,
         "Type":"Conviction"
     },
     "101558":{
@@ -60978,7 +61092,7 @@
                 "DoF":"4"
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Reaction"
     },
     "101560":{
@@ -61258,7 +61372,7 @@
                 "PG":"3"
             }
         },
-        "Twd":81,
+        "Twd":82,
         "Type":"Political Action"
     },
     "101568":{
@@ -62037,7 +62151,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":67,
+        "Twd":68,
         "Type":"Combat"
     },
     "101589":{
@@ -62157,7 +62271,7 @@
                 "":"1"
             }
         },
-        "Twd":360,
+        "Twd":361,
         "Type":"Political Action"
     },
     "101592":{
@@ -62828,7 +62942,7 @@
                 "PTo":"4"
             }
         },
-        "Twd":125,
+        "Twd":127,
         "Type":"Action Modifier/Combat"
     },
     "101611":{
@@ -63340,7 +63454,7 @@
                 "PMin":"6"
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Action Modifier"
     },
     "101625":{
@@ -63903,7 +64017,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an infernal minion. Unique.\nPut this card in play. Your prey burns 1 pool after resolution of each action during which you have burned corruption counters. Any Methuselah can burn a vampire they control with any corruption counters during their unlock phase to burn this card.",
+        "Card Text":"+1 stealth action. Requires an infernal minion. Unique.\nPut this card in play. Your prey burns 1 pool after resolution of each action during which you have burned corruption counters. Methuselahs can burn a vampire they control with any corruption counters during their unlock phase to burn this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -63919,6 +64033,9 @@
             "KSU":{
                 "TUA":"1",
                 "TUB":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":0,
@@ -64640,7 +64757,7 @@
                 "PN":"6"
             }
         },
-        "Twd":5,
+        "Twd":7,
         "Type":"Combat"
     },
     "101655":{
@@ -64828,7 +64945,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nPut pool you burn to unlock your infernal minions (using the infernal ability) on this card. Once each action, you may burn X counters from this card to reduce a bleed against you by X. Burn all counters from this card during your predator's discard phase.",
+        "Card Text":"Unique location.\nPut pool you burn to unlock infernal minions you control using the infernal trait on this card. During an action, you can burn X counters from this card to reduce a bleed against you by X. During your predator's discard phase, burn all the counters from this card.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -64848,6 +64965,9 @@
             "KMW":{
                 "R":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":25,
@@ -65000,7 +65120,7 @@
                 "U":true
             }
         },
-        "Twd":124,
+        "Twd":125,
         "Type":"Political Action"
     },
     "101664":{
@@ -65047,7 +65167,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":108,
+        "Twd":109,
         "Type":"Action"
     },
     "101665":{
@@ -66303,7 +66423,7 @@
                 "R":true
             }
         },
-        "Twd":242,
+        "Twd":244,
         "Type":"Event"
     },
     "101698":{
@@ -66583,7 +66703,7 @@
                 "C":true
             }
         },
-        "Twd":103,
+        "Twd":104,
         "Type":"Conviction"
     },
     "101706":{
@@ -66673,7 +66793,7 @@
                 "PV":"2"
             }
         },
-        "Twd":469,
+        "Twd":470,
         "Type":"Reaction"
     },
     "101707":{
@@ -66894,7 +67014,7 @@
                 "PM":"1"
             }
         },
-        "Twd":459,
+        "Twd":463,
         "Type":"Master"
     },
     "101712":{
@@ -66962,7 +67082,7 @@
                 "PSal":2
             }
         },
-        "Twd":389,
+        "Twd":393,
         "Type":"Action Modifier"
     },
     "101713":{
@@ -67156,7 +67276,7 @@
                 "C":true
             }
         },
-        "Twd":199,
+        "Twd":200,
         "Type":"Reaction"
     },
     "101718":{
@@ -67167,7 +67287,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] Only usable when a younger vampire is acting. +1 intercept.\n[dai] +1 intercept. +2 intercept if the acting minion has a corruption counter.\n[DAI] Only usable during a bleed action. +2 bleed (limited). Minions with corruption counters get -1 intercept when attempting to block this action.",
+        "Card Text":"[aus] [REACTION] Only usable if a younger vampire is acting. +1 intercept.\n[dai] [REACTION] +1 intercept, with an additional +1 intercept if the acting minion has any corruption counters.\n[DAI] [ACTIONMODIFIER] Only usable during a bleed action. +2 bleed (limited). Minions with any corruption counters get -1 intercept.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Daimoinon",
@@ -67182,9 +67302,12 @@
             },
             "KMW":{
                 "PB":"3"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "Twd":71,
+        "Twd":72,
         "Type":"Action Modifier/Reaction"
     },
     "101719":{
@@ -67932,7 +68055,7 @@
                 "DTC":true
             }
         },
-        "Twd":90,
+        "Twd":91,
         "Type":"Combat"
     },
     "101736":{
@@ -67998,7 +68121,7 @@
                 "DM":"4"
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Action Modifier/Combat"
     },
     "101737":{
@@ -68307,7 +68430,7 @@
                 "DTC":true
             }
         },
-        "Twd":182,
+        "Twd":183,
         "Type":"Action Modifier"
     },
     "101744":{
@@ -68785,7 +68908,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"+1 stealth action. Requires an infernal Baali with capacity 9 or more.\nPut this card on this Baali. A vampire with capacity 6 or more can burn the Edge to burn this card as a (D) action. If this Baali has three Shatter the Gate, burn them all to give each other Methuselah 1 shattered counter. A Methuselah with any shattered counters burns 3 pool during their unlock phase.",
+        "Card Text":"+1 stealth action. Requires an infernal Baali with capacity 9 or more.\nPut this card on this Baali; if this Baali has three copies of this card, burn these copies to give each other Methuselah who has no shattered counters 1 shattered counter with \"During your unlock phase, burn 3 pool\". A vampire with capacity 6 or more can burn the Edge to burn this card as a (D) action.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -68800,6 +68923,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":4,
@@ -68917,7 +69043,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[pro] (D) Inflict 1 unpreventable damage on an ally or retainer.\n[mel] (D) Discard a Shattering Crescendo to inflict 2 unpreventable damage on each of up to 2 minions controlled by a single Methuselah.\n[MEL] As [mel] above, but for 3 unpreventable damage each.",
+        "Card Text":"[pro] (D) Inflict 1 unpreventable damage on an ally or retainer.\n[mel] (D) Discard a Shattering Crescendo to inflict 2 unpreventable damage on each of up to two minions controlled by a single Methuselah.\n[MEL] As [mel] above, but for 3 unpreventable damage each.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee/Protean",
@@ -68940,6 +69066,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":14,
@@ -69359,7 +69488,7 @@
                 "PB":"2"
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Action"
     },
     "101773":{
@@ -69442,7 +69571,7 @@
                 "DTC":true
             }
         },
-        "Twd":143,
+        "Twd":145,
         "Type":"Action Modifier"
     },
     "101775":{
@@ -69479,7 +69608,7 @@
                 "DTC":true
             }
         },
-        "Twd":125,
+        "Twd":126,
         "Type":"Action Modifier"
     },
     "101776":{
@@ -69865,7 +69994,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] This vampire burns 2 blood to get +1 stealth.\n[mel] Only usable by an unlocked ready vampire other than the acting minion when a minion attempts to block. That minion cannot block this action. Lock this vampire and that minion. Once the action resolves, this vampire enters combat with that minion.\n[MEL] As [mel] above, but do not lock this modifying vampire.",
+        "Card Text":"[cel] Burn 2 blood to get +1 stealth.\n[mel] Only usable by a ready unlocked vampire other than the acting minion if a minion attempts to block. That attempt fails and the blocking minion cannot attempt to block this action again. Lock this vampire and the blocking minion. After the action resolution, this vampire and the blocking minion enter combat.\n[MEL] As [mel] above, but do not lock this modifying vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity/Melpominee",
@@ -69917,6 +70046,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":16,
@@ -70059,7 +70191,7 @@
                 "PR":"2"
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Combat"
     },
     "101791":{
@@ -70717,7 +70849,7 @@
                 "R":true
             }
         },
-        "Twd":103,
+        "Twd":105,
         "Type":"Event"
     },
     "101808":{
@@ -70886,7 +71018,7 @@
                 "PG":"1"
             }
         },
-        "Twd":397,
+        "Twd":399,
         "Type":"Master"
     },
     "101812":{
@@ -71092,7 +71224,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":230,
+        "Twd":231,
         "Type":"Equipment"
     },
     "101817":{
@@ -72136,7 +72268,7 @@
                 "DTC":true
             }
         },
-        "Twd":157,
+        "Twd":158,
         "Type":"Action Modifier/Reaction"
     },
     "101844":{
@@ -72553,7 +72685,7 @@
                 "DTC":true
             }
         },
-        "Twd":92,
+        "Twd":93,
         "Type":"Combat"
     },
     "101853":{
@@ -72823,7 +72955,7 @@
                 "PN":"1"
             }
         },
-        "Twd":432,
+        "Twd":436,
         "Type":"Action Modifier"
     },
     "101858":{
@@ -73547,7 +73679,7 @@
                 "PG":1
             }
         },
-        "Twd":81,
+        "Twd":83,
         "Type":"Master"
     },
     "101878":{
@@ -73589,7 +73721,7 @@
                 "R":true
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Master"
     },
     "101879":{
@@ -73872,7 +74004,7 @@
                 "C":true
             }
         },
-        "Twd":102,
+        "Twd":103,
         "Type":"Conviction"
     },
     "101887":{
@@ -74250,7 +74382,7 @@
                 "DTC":true
             }
         },
-        "Twd":105,
+        "Twd":107,
         "Type":"Action"
     },
     "101896":{
@@ -74338,7 +74470,7 @@
                 "PM":"1"
             }
         },
-        "Twd":629,
+        "Twd":633,
         "Type":"Master"
     },
     "101897":{
@@ -75012,7 +75144,7 @@
                 "PR":4
             }
         },
-        "Twd":656,
+        "Twd":663,
         "Type":"Action Modifier/Combat"
     },
     "101914":{
@@ -75679,7 +75811,7 @@
                 "PTr":1
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Ally"
     },
     "101931":{
@@ -76200,7 +76332,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":326,
+        "Twd":328,
         "Type":"Combat"
     },
     "101943":{
@@ -76362,7 +76494,7 @@
                 "PN":"2"
             }
         },
-        "Twd":695,
+        "Twd":698,
         "Type":"Combat"
     },
     "101946":{
@@ -76581,7 +76713,7 @@
                 "PSal":3
             }
         },
-        "Twd":1017,
+        "Twd":1020,
         "Type":"Reaction"
     },
     "101950":{
@@ -76951,6 +77083,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":52,
@@ -76998,7 +77133,7 @@
                 "DTC":true
             }
         },
-        "Twd":68,
+        "Twd":69,
         "Type":"Action Modifier"
     },
     "101958":{
@@ -77174,7 +77309,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nThe vampire with this equipment has superior Daimoinon [DAI] and is infernal. Cards that require Daimoinon [dai] cost this vampire 2 less blood. During your master phase, if this vampire is locked, burn this equipment.",
+        "Card Text":"Unique.\nThis vampire gets superior Daimoinon [DAI] and is infernal. Cards requiring Daimoinon [dai] cost this vampire -2 blood. If this vampire is locked during your master phase, burn this equipment.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -77186,6 +77321,9 @@
         "Set":{
             "KMW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":4,
@@ -77223,7 +77361,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Ally"
     },
     "101964":{
@@ -77378,7 +77516,7 @@
                 "PTr":"5"
             }
         },
-        "Twd":128,
+        "Twd":129,
         "Type":"Combat"
     },
     "101967":{
@@ -78349,7 +78487,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable in combat with a Toreador, Toreador antitribu, ally or younger vampire.\n[pre] Strike: combat ends.\n[mel] Strike: combat ends, and if this vampire was blocked while performing an action other than a political action or bleeding, the action continues as if unblocked.\n[MEL] Strike: combat ends, and if this vampire was blocked, the action continues as if unblocked.",
+        "Card Text":"Only usable in combat with a Toreador, Toreador antitribu, ally or younger vampire.\n[pre] Strike: combat ends.\n[mel] Strike: combat ends. After combat ends, if this vampire was blocked while performing a non-bleed non-political action, the action continues as if unblocked.\n[MEL] As [mel] above, but usable to continue a bleed or political action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Melpominee/Presence",
@@ -78397,6 +78535,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":5,
@@ -78501,7 +78642,7 @@
                 "PB":"5"
             }
         },
-        "Twd":184,
+        "Twd":185,
         "Type":"Combat"
     },
     "101994":{
@@ -78765,6 +78906,9 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":7,
@@ -79171,7 +79315,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":147,
+        "Twd":148,
         "Type":"Combat"
     },
     "102013":{
@@ -80095,7 +80239,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card on a non-infernal mortal ally you control, or pay 2 pool to put this card on any non-infernal minion you control. Actions requiring Dominate [dom] or Presence [pre] cannot be directed at this minion. In combat, any damage this minion inflicts on an infernal minion is aggravated. Infernal minions cannot block or strike this minion. Burn this card if this minion becomes infernal.",
+        "Card Text":"Unique.\nPut this card on a non-infernal mortal ally you control, or burn 2 pool to put this card on a non-infernal minion you control. This minion cannot be the target of directed actions requiring Dominate [dom] or Presence [pre]. In combat, damage this minion inflicts on infernal minions is aggravated. Infernal minions cannot block or strike against this minion. Burn this card if this minion becomes infernal.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -80107,6 +80251,9 @@
         "Set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":2,
@@ -80654,7 +80801,7 @@
                 "R":true
             }
         },
-        "Twd":125,
+        "Twd":126,
         "Type":"Event"
     },
     "102058":{
@@ -81183,7 +81330,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Only usable when a Baali successfully blocks (play before combat, if any).\nPut this card on the acting vampire. When there are any vampires in torpor that this vampire can diablerize, this vampire cannot take any action other than diablerie (although he or she is free not to take any action). If this vampire must hunt, he or she may choose to diablerize a vampire instead.",
+        "Card Text":"Only usable if this Baali blocks, before block resolution.\nPut this card on the acting vampire. If there are any vampires in torpor that the attached vampire can diablerize, they cannot perform any action other than diablerie (although they are free not to perform any action). If they must hunt, they can choose to diablerize a vampire instead.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -81208,6 +81355,9 @@
         "Set":{
             "KMW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":3,
@@ -81443,7 +81593,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card in play. This card can attempt to block a (D) action against you (or a card you control) and is considered a 9-capacity infernal vampire with +2 intercept during that attempt; if successful, the acting minion takes 1 unpreventable environmental aggravated damage and this card is burned.\n[DAI] As above, and unlock this vampire.",
+        "Card Text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card in play. This card can attempt to block an action directed at you (or a card you control) and is considered a 9-capacity infernal vampire with +2 intercept during that attempt; if successful, the acting minion takes 1 unpreventable environmental aggravated damage and this card is burned.\n[DAI] As above, and unlock this vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Daimoinon",
@@ -81507,9 +81657,12 @@
             },
             "Anthology I":{
                 "":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "Twd":141,
+        "Twd":144,
         "Type":"Action"
     },
     "102077":{
@@ -81605,7 +81758,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":443,
+        "Twd":446,
         "Type":"Event"
     },
     "102080":{
@@ -81909,7 +82062,7 @@
                 "U":true
             }
         },
-        "Twd":195,
+        "Twd":197,
         "Type":"Ally"
     },
     "102245":{
@@ -82274,7 +82427,7 @@
                 "R":true
             }
         },
-        "Twd":59,
+        "Twd":60,
         "Type":"Event"
     },
     "102096":{
@@ -82353,7 +82506,7 @@
                 "PR":3
             }
         },
-        "Twd":243,
+        "Twd":244,
         "Type":"Action Modifier"
     },
     "102098":{
@@ -82533,7 +82686,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique mage with 2 life. 1 strength, 2 bleed. Requires an infernal vampire.\nVeneficti has +1 stealth. He can steal a demon ally or burn a demon retainer as a (D) action. He cannot be the target of a (D) action by an ally or a vampire with capacity 6 or less.",
+        "Card Text":"Unique mage with 2 life. 1 strength, 2 bleed. Requires an infernal vampire.\nVeneficti has +1 stealth. He can steal a demon ally or burn a demon retainer as a (D) action. He cannot be the target of a directed action performed by an ally or a vampire with capacity 6 or less.",
         "Clan":"Baali",
         "Conviction Cost":"",
         "Discipline":"",
@@ -82555,9 +82708,12 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "Twd":72,
+        "Twd":73,
         "Type":"Ally"
     },
     "102104":{
@@ -82795,7 +82951,7 @@
                 "PV":"1"
             }
         },
-        "Twd":141,
+        "Twd":142,
         "Type":"Master"
     },
     "102110":{
@@ -82952,7 +83108,7 @@
                 "PSal":2
             }
         },
-        "Twd":1034,
+        "Twd":1041,
         "Type":"Master"
     },
     "102114":{
@@ -83246,7 +83402,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":983,
+        "Twd":990,
         "Type":"Master"
     },
     "102122":{
@@ -83338,6 +83494,9 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Twd":11,
@@ -83647,7 +83806,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":447,
+        "Twd":449,
         "Type":"Action Modifier"
     },
     "102132":{
@@ -84417,7 +84576,7 @@
                 "PN":"1"
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Master"
     },
     "102150":{
@@ -84535,7 +84694,7 @@
                 "LB":"1"
             }
         },
-        "Twd":473,
+        "Twd":476,
         "Type":"Master"
     },
     "102152":{
@@ -84577,7 +84736,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":26,
+        "Twd":27,
         "Type":"Master"
     },
     "102153":{
@@ -84966,7 +85125,7 @@
                 "U":true
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Combat"
     },
     "102165":{
@@ -85178,7 +85337,7 @@
                 "PV":"3"
             }
         },
-        "Twd":187,
+        "Twd":188,
         "Type":"Combat"
     },
     "102170":{
@@ -85575,7 +85734,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":620,
+        "Twd":627,
         "Type":"Master"
     },
     "102181":{
@@ -85853,7 +86012,7 @@
                 "PN":"1"
             }
         },
-        "Twd":207,
+        "Twd":208,
         "Type":"Master"
     },
     "102190":{
@@ -86566,7 +86725,7 @@
                 "":"4"
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Action Modifier"
     },
     "102206":{
@@ -86635,7 +86794,7 @@
                 "":"4"
             }
         },
-        "Twd":324,
+        "Twd":326,
         "Type":"Master"
     },
     "102208":{
@@ -86682,7 +86841,7 @@
                 "U":true
             }
         },
-        "Twd":40,
+        "Twd":41,
         "Type":"Combat"
     },
     "102209":{

@@ -9,6 +9,7 @@
 # MAYBE LATER FEATURES
 - Offline decks storage
 - Notes to cards in Inventory
+- Playable by crypt filter to library
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Migration from screen width (isWide, etc) to container queries
