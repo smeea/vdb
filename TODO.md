@@ -1,6 +1,7 @@
 # FIX
 - Arrows to navigate in Menu components
 - Seraph / Black hand requirement to Playable By
+- Images available by direct links
 
 # FEATURES
 - Events decks archive analyzing
