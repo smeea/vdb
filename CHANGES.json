@@ -1,5 +1,11 @@
 [
   {
+    "version": "2023-04-18",
+    "changes": [
+      "Update Playtest to Round 3"
+    ]
+  },
+  {
     "version": "2023-04-06",
     "changes": [
       "Update card text and images (last POD batch)"
