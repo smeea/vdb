@@ -151,11 +151,17 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
         <>
           {deck.deckid !== 'deck' && (
             <div>
-              <MenuItem title="Copy URL (will follow deck changes, if any)">
-                <div onClick={handleStandard}>Standard URL</div>
+              <MenuItem
+                title="Copy URL (will follow deck changes, if any)"
+                onClick={handleStandard}
+              >
+                Standard URL
               </MenuItem>
-              <MenuItem title="Create QR with Standard URL (will follow deck changes, if any)">
-                <div onClick={handleStandardQr}>Standard URL - QR</div>
+              <MenuItem
+                title="Create QR with Standard URL (will follow deck changes, if any)"
+                onClick={handleStandardQr}
+              >
+                Standard URL - QR
               </MenuItem>
             </div>
           )}
@@ -165,17 +171,26 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
                 <div className="px-3 pt-2 text-sm text-midGray dark:text-midGrayDark">
                   Non-modifiable:
                 </div>
-                <MenuItem title="Copy long URL containing full deck info (will not follow deck changes)">
-                  <div onClick={handleDeckInUrl}>Deck-in-URL</div>
+                <MenuItem
+                  title="Copy long URL containing full deck info (will not follow deck changes)"
+                  onClick={handleDeckInUrl}
+                >
+                  Deck-in-URL
                 </MenuItem>
-                <MenuItem title="Create QR with long URL containing full deck info (will not follow deck changes)">
-                  <div onClick={handleDeckInQr}>Deck-in-QR</div>
+                <MenuItem
+                  title="Create QR with long URL containing full deck info (will not follow deck changes)"
+                  onClick={handleDeckInQr}
+                >
+                  Deck-in-QR
                 </MenuItem>
               </>
             )}
             {deck.deckid.length === 32 && (
-              <MenuItem title="Copy URL to snapshot of the deck (will not follow deck changes)">
-                <div onClick={handleSnapshot}>Snapshot URL</div>
+              <MenuItem
+                title="Copy URL to snapshot of the deck (will not follow deck changes)"
+                onClick={handleSnapshot}
+              >
+                Snapshot URL
               </MenuItem>
             )}
           </div>

@@ -246,18 +246,12 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
               text="Export Selected"
             />
             <MenuItems>
-              <MenuItem>
-                <div onClick={() => exportSelected('text')}>Text</div>
+              <MenuItem onClick={() => exportSelected('text')}>Text</MenuItem>
+              <MenuItem onClick={() => exportSelected('lackey')}>
+                Lackey
               </MenuItem>
-              <MenuItem>
-                <div onClick={() => exportSelected('lackey')}>Lackey</div>
-              </MenuItem>
-              <MenuItem>
-                <div onClick={() => exportSelected('jol')}>JOL</div>
-              </MenuItem>
-              <MenuItem>
-                <div onClick={() => exportSelected('xlsx')}>Excel</div>
-              </MenuItem>
+              <MenuItem onClick={() => exportSelected('jol')}>JOL</MenuItem>
+              <MenuItem onClick={() => exportSelected('xlsx')}>Excel</MenuItem>
             </MenuItems>
           </Menu>
         </div>

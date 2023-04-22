@@ -155,115 +155,97 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
             text="PDF Proxy"
           />
           <MenuItems>
-            <MenuItem>
-              <div
-                onClick={() =>
-                  proxyCards(deck.crypt, deck.library, {
-                    isWhiteGaps: false,
-                    isLetter: false,
-                  })
-                }
-              >
-                Full Deck - Gray gaps (A4)
-              </div>
+            <MenuItem
+              onClick={() =>
+                proxyCards(deck.crypt, deck.library, {
+                  isWhiteGaps: false,
+                  isLetter: false,
+                })
+              }
+            >
+              Full Deck - Gray gaps (A4)
             </MenuItem>
-            <MenuItem>
-              <div
-                onClick={() =>
-                  proxyCards(deck.crypt, deck.library, {
-                    isWhite: true,
-                    isLetter: false,
-                  })
-                }
-              >
-                Full Deck - White gaps (A4)
-              </div>
+            <MenuItem
+              onClick={() =>
+                proxyCards(deck.crypt, deck.library, {
+                  isWhite: true,
+                  isLetter: false,
+                })
+              }
+            >
+              Full Deck - White gaps (A4)
             </MenuItem>
-            <MenuItem>
-              <div
-                onClick={() =>
-                  proxyCards(deck.crypt, deck.library, {
-                    isWhiteGaps: false,
-                    isLetter: true,
-                  })
-                }
-              >
-                Full Deck - Gray gaps (Letter)
-              </div>
+            <MenuItem
+              onClick={() =>
+                proxyCards(deck.crypt, deck.library, {
+                  isWhiteGaps: false,
+                  isLetter: true,
+                })
+              }
+            >
+              Full Deck - Gray gaps (Letter)
             </MenuItem>
-            <MenuItem>
-              <div
-                onClick={() =>
-                  proxyCards(deck.crypt, deck.library, {
-                    isWhite: true,
-                    isLetter: true,
-                  })
-                }
-              >
-                Full Deck - White gaps (Letter)
-              </div>
+            <MenuItem
+              onClick={() =>
+                proxyCards(deck.crypt, deck.library, {
+                  isWhite: true,
+                  isLetter: true,
+                })
+              }
+            >
+              Full Deck - White gaps (Letter)
             </MenuItem>
             {inventoryMode && (
               <>
-                <MenuItem>
-                  <div
-                    onClick={() =>
-                      proxyCards(missingCrypt, missingLibrary, {
-                        isWhite: false,
-                        isLetter: false,
-                      })
-                    }
-                  >
-                    Missing in Inventory - Gray gaps (A4)
-                  </div>
+                <MenuItem
+                  onClick={() =>
+                    proxyCards(missingCrypt, missingLibrary, {
+                      isWhite: false,
+                      isLetter: false,
+                    })
+                  }
+                >
+                  Missing in Inventory - Gray gaps (A4)
                 </MenuItem>
-                <MenuItem>
-                  <div
-                    onClick={() =>
-                      proxyCards(missingCrypt, missingLibrary, {
-                        isWhite: true,
-                        isLetter: false,
-                      })
-                    }
-                  >
-                    Missing in Inventory - White gaps (A4)
-                  </div>
+                <MenuItem
+                  onClick={() =>
+                    proxyCards(missingCrypt, missingLibrary, {
+                      isWhite: true,
+                      isLetter: false,
+                    })
+                  }
+                >
+                  Missing in Inventory - White gaps (A4)
                 </MenuItem>
-                <MenuItem>
-                  <div
-                    onClick={() =>
-                      proxyCards(missingCrypt, missingLibrary, {
-                        isWhite: false,
-                        isLetter: true,
-                      })
-                    }
-                  >
-                    Missing in Inventory - Gray gaps (Letter)
-                  </div>
+                <MenuItem
+                  onClick={() =>
+                    proxyCards(missingCrypt, missingLibrary, {
+                      isWhite: false,
+                      isLetter: true,
+                    })
+                  }
+                >
+                  Missing in Inventory - Gray gaps (Letter)
                 </MenuItem>
-                <MenuItem>
-                  <div
-                    onClick={() =>
-                      proxyCards(missingCrypt, missingLibrary, {
-                        isWhite: true,
-                        isLetter: true,
-                      })
-                    }
-                  >
-                    Missing in Inventory - White gaps (Letter)
-                  </div>
+                <MenuItem
+                  onClick={() =>
+                    proxyCards(missingCrypt, missingLibrary, {
+                      isWhite: true,
+                      isLetter: true,
+                    })
+                  }
+                >
+                  Missing in Inventory - White gaps (Letter)
                 </MenuItem>
               </>
             )}
-            <MenuItem>
-              <div
-                onClick={() => {
-                  setShowSelectModal(true);
-                  setShowFloatingButtons(false);
-                }}
-              >
-                Select Cards
-              </div>
+            <MenuItem
+              onClick={() => {
+                setShowSelectModal(true);
+                setShowFloatingButtons(false);
+              }}
+            >
+              Select Cards
             </MenuItem>
           </MenuItems>
         </Menu>

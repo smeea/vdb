@@ -18,29 +18,20 @@ const TwdMoreButton = ({ noText }) => {
         text={noText ? null : 'More'}
       />
       <MenuItems>
-        <MenuItem>
-          <div
-            className="flex items-center gap-2"
-            onClick={() => navigate('/twd/hall_of_fame/tournaments')}
-          >
+        <MenuItem onClick={() => navigate('/twd/hall_of_fame/tournaments')}>
+          <div className="flex items-center gap-2">
             <TrophyFill />
             Hall Of Fame - Tournaments
           </div>
         </MenuItem>
-        <MenuItem>
-          <div
-            className="flex items-center gap-2"
-            onClick={() => navigate('/twd/hall_of_fame/cards')}
-          >
+        <MenuItem onClick={() => navigate('/twd/hall_of_fame/cards')}>
+          <div className="flex items-center gap-2">
             <LightbulbFill />
             Hall Of Fame - Cards Appearance
           </div>
         </MenuItem>
-        <MenuItem>
-          <div
-            className="flex items-center gap-2"
-            onClick={() => navigate('/twd/cards_history')}
-          >
+        <MenuItem onClick={() => navigate('/twd/cards_history')}>
+          <div className="flex items-center gap-2">
             <ClockHistory />
             Cards Appearance History
           </div>

@@ -35,11 +35,17 @@ const DeckSearchSimilarButton = ({ deck }) => {
         text="Similar Decks"
       />
       <MenuItems>
-        <MenuItem title="Search similar Decks in Tournament Winning Decks Archive">
-          <div onClick={() => handleClick('twd')}>Search in TWD</div>
+        <MenuItem
+          title="Search similar Decks in Tournament Winning Decks Archive"
+          onClick={() => handleClick('twd')}
+        >
+          Search in TWD
         </MenuItem>
-        <MenuItem title="Search similar Decks in Public Decks Archive">
-          <div onClick={() => handleClick('pda')}>Search in PDA</div>
+        <MenuItem
+          title="Search similar Decks in Public Decks Archive"
+          onClick={() => handleClick('pda')}
+        >
+          Search in PDA
         </MenuItem>
       </MenuItems>
     </Menu>

@@ -14,8 +14,8 @@ const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
       <MenuItems>
         {Object.keys(sortMethods).map((i, index) => {
           return (
-            <MenuItem key={index}>
-              <div onClick={() => setSortMethod(i)}>Sort by {i}</div>
+            <MenuItem key={index} onClick={() => setSortMethod(i)}>
+              Sort by {i}
             </MenuItem>
           );
         })}

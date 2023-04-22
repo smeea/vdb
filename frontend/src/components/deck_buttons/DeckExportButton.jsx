@@ -36,10 +36,8 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     };
 
     return (
-      <MenuItem>
-        <div onClick={() => actions[action][0](format)}>
-          {actions[action][1]} - {formats[format]}
-        </div>
+      <MenuItem onClick={() => actions[action][0](format)}>
+        {actions[action][1]} - {formats[format]}
       </MenuItem>
     );
   };

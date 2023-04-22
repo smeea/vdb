@@ -23,22 +23,16 @@ const DeckImportButton = ({
       <MenuItems>
         {username && (
           <>
-            <MenuItem>
-              <div onClick={handleCreate}>Create New Deck</div>
-            </MenuItem>
+            <MenuItem onClick={handleCreate}>Create New Deck</MenuItem>
             <MenuItemDivider />
-            <MenuItem>
-              <div onClick={() => handleFileInputClick(false)}>
-                Import from File
-              </div>
+            <MenuItem onClick={() => handleFileInputClick(false)}>
+              Import from File
             </MenuItem>
-            <MenuItem>
-              <div onClick={() => handleOpenTextModal(false)}>
-                Import from Text
-              </div>
+            <MenuItem onClick={() => handleOpenTextModal(false)}>
+              Import from Text
             </MenuItem>
-            <MenuItem>
-              <div onClick={handleOpenAmaranthModal}>Import from Amaranth</div>
+            <MenuItem onClick={handleOpenAmaranthModal}>
+              Import from Amaranth
             </MenuItem>
             <MenuItemDivider />
           </>
@@ -46,15 +40,11 @@ const DeckImportButton = ({
         <div className="flex px-3 py-1 text-sm text-midGray dark:text-midGrayDark">
           Anonymous (non-editable), useful only to share URL:
         </div>
-        <MenuItem>
-          <div onClick={() => handleFileInputClick(true)}>
-            Import w/o Acc. from File
-          </div>
+        <MenuItem onClick={() => handleFileInputClick(true)}>
+          Import w/o Acc. from File
         </MenuItem>
-        <MenuItem>
-          <div onClick={() => handleOpenTextModal(true)}>
-            Import w/o Acc. from Text
-          </div>
+        <MenuItem onClick={() => handleOpenTextModal(true)}>
+          Import w/o Acc. from Text
         </MenuItem>
       </MenuItems>
     </Menu>
