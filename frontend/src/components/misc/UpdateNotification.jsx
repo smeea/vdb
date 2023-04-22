@@ -20,7 +20,7 @@ const UpdateNotification = () => {
           title="Update available!"
           centered
         >
-          <div className="gap:3 flex flex-col sm:gap-5">
+          <div className="gap-3 flex flex-col sm:gap-5">
             <div>
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Changes [{update.version}]:
@@ -31,7 +31,7 @@ const UpdateNotification = () => {
                 ))}
               </ul>
             </div>
-            <div className="flex ">
+            <div className="flex">
               <ButtonIconed
                 variant="primary"
                 onClick={() => {
