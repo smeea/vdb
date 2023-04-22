@@ -24,18 +24,24 @@ import { getClan } from '@/utils';
 const DeckSelectAdvModalTableRow = ({
   deck,
   idx,
+  onClick,
   handleClose,
   allTagsOptions,
   selectedDecks,
   toggleSelect,
   revFilter,
+  short,
 }) => {
   const { inventoryMode, isMobile, isDesktop } = useApp();
   const navigate = useNavigate();
   const [showDeck, setShowDeck] = useState();
 
-  const handleOpen = (deckid) => {
-    navigate(`/decks/${deckid}`);
+  const handleClick = () => {
+    if (onClick) {
+      onClick(deck);
+    } else {
+      navigate(`/decks/${deck.deckid}`);
+    }
     handleClose();
   };
 
@@ -54,19 +60,21 @@ const DeckSelectAdvModalTableRow = ({
 
   return (
     <tr
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+      className={`border-y border-bgSecondary dark:border-bgSecondaryDark h-[41px] ${
         idx % 2
           ? 'bg-bgThird dark:bg-bgThirdDark'
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
-      <td className="min-w-[30px]">
-        <Checkbox
-          checked={selectedDecks[deck.deckid] ?? false}
-          onChange={() => toggleSelect(deck.deckid)}
-          className="justify-center"
-        />
-      </td>
+      {!short && (
+        <td className="min-w-[30px]">
+          <Checkbox
+            checked={selectedDecks[deck.deckid] ?? false}
+            onChange={() => toggleSelect(deck.deckid)}
+            className="justify-center"
+          />
+        </td>
+      )}
       {inventoryMode && !isMobile && (
         <td>
           <div className="flex justify-center">
@@ -92,8 +100,8 @@ const DeckSelectAdvModalTableRow = ({
           </div>
         </td>
       )}
-      {!isMobile && (
-        <td onClick={() => handleOpen(deck.deckid)}>
+      {(short || !isMobile) && (
+        <td className="min-w-[60px] sm:min-w-[75px]" onClick={handleClick}>
           <div className="flex justify-center">
             {clan && <ResultClanImage value={clan} />}
           </div>
@@ -101,8 +109,10 @@ const DeckSelectAdvModalTableRow = ({
       )}
 
       <td
-        className="min-w-[45vw] cursor-pointer sm:min-w-[340px]"
-        onClick={() => handleOpen(deck.deckid)}
+        className={`${
+          short ? 'w-full' : 'min-w-[45vw]'
+        } cursor-pointer sm:min-w-[340px]`}
+        onClick={handleClick}
       >
         <div
           className="flex justify-between text-fgName dark:text-fgNameDark"
@@ -118,7 +128,7 @@ const DeckSelectAdvModalTableRow = ({
         </div>
       </td>
       {isDesktop && (
-        <td className="min-w-[30px]">
+        <td className="min-w-[30px] sm:min-w-[45px]">
           <div
             className="flex justify-center"
             onMouseEnter={() => setShowDeck(deck.deckid)}
@@ -134,39 +144,44 @@ const DeckSelectAdvModalTableRow = ({
           </div>
         </td>
       )}
-      {!isMobile && (
+      {(short || !isMobile) && (
         <td
-          className="min-w-[100px] cursor-pointer whitespace-nowrap"
-          onClick={() => handleOpen(deck.deckid)}
+          className="min-w-[100px] sm:min-w-[105px] cursor-pointer whitespace-nowrap text-center"
+          onClick={handleClick}
         >
           {new Date(deck.timestamp).toISOString().split('T')[0]}
         </td>
       )}
-      <td className="w-full">
-        <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
-      </td>
-      <td>
-        <div className="flex justify-end space-x-1">
-          <DeckHideButton deck={deck} />
-          {!isMobile && (
-            <>
-              <DeckFreezeButton deck={deck} />
-              <DeckPublicToggleButton deck={deck} inAdv />
-            </>
-          )}
-          {isDesktop && (
-            <>
-              <DeckCopyUrlButton deck={deck} noText isAuthor />
-              {revFilter &&
-              (deck.master || (deck.branches && deck.branches.length > 0)) ? (
-                <DeckBranchDeleteButton noText deck={deck} />
-              ) : (
-                <DeckDeleteButton noText deck={deck} />
+      {!short && (
+        <>
+          <td className="w-full">
+            <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
+          </td>
+          <td>
+            <div className="flex justify-end space-x-1">
+              <DeckHideButton deck={deck} />
+              {!isMobile && (
+                <>
+                  <DeckFreezeButton deck={deck} />
+                  <DeckPublicToggleButton deck={deck} inAdv />
+                </>
               )}
-            </>
-          )}
-        </div>
-      </td>
+              {isDesktop && (
+                <>
+                  <DeckCopyUrlButton deck={deck} noText isAuthor />
+                  {revFilter &&
+                  (deck.master ||
+                    (deck.branches && deck.branches.length > 0)) ? (
+                    <DeckBranchDeleteButton noText deck={deck} />
+                  ) : (
+                    <DeckDeleteButton noText deck={deck} />
+                  )}
+                </>
+              )}
+            </div>
+          </td>
+        </>
+      )}
     </tr>
   );
 };

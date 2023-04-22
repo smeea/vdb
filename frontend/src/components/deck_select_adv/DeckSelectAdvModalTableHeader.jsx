@@ -27,6 +27,7 @@ const DeckSelectAdvModalTableHeader = ({
   tagsFilter,
   toggleSelectAll,
   isSelectedAll,
+  short,
 }) => {
   const { inventoryMode, isMobile, isDesktop } = useApp();
 
@@ -65,14 +66,16 @@ const DeckSelectAdvModalTableHeader = ({
   return (
     <thead>
       <tr>
-        <th className="min-w-[30px]">
-          <Checkbox
-            name="selectAll"
-            checked={isSelectedAll}
-            onChange={toggleSelectAll}
-            className="justify-center"
-          />
-        </th>
+        {!short && (
+          <th className="min-w-[30px]">
+            <Checkbox
+              name="selectAll"
+              checked={isSelectedAll}
+              onChange={toggleSelectAll}
+              className="justify-center"
+            />
+          </th>
+        )}
         {inventoryMode && !isMobile && (
           <th>
             <Select
@@ -84,8 +87,8 @@ const DeckSelectAdvModalTableHeader = ({
             />
           </th>
         )}
-        {!isMobile && (
-          <th className="min-w-[60px]">
+        {(short || !isMobile) && (
+          <th className="min-w-[60px] sm:min-w-[75px]">
             <Select
               options={clanOptions}
               onChange={(e) => setClanFilter(e.value)}
@@ -108,23 +111,27 @@ const DeckSelectAdvModalTableHeader = ({
             onChange={handleChangeNameFilter}
           />
         </th>
-        {isDesktop && <th />}
-        {!isMobile && <th />}
-        <th className="w-full">
-          <DeckSelectAdvModalTagsFilter
-            tagsFilter={tagsFilter}
-            handleChangeTagsFilter={handleChangeTagsFilter}
-            allTagsOptions={allTagsOptions}
-          />
-        </th>
-        <th>
-          <div className="flex justify-end gap-1 max-sm:flex-col">
-            <Checkbox
-              name="revFilter"
-              label={isDesktop ? 'Show Revisions' : 'Rev'}
-              checked={revFilter}
-              onChange={() => setRevFilter(!revFilter)}
+        {!short && isDesktop && <th />}
+        {!short && !isMobile && <th />}
+        {!short && (
+          <th className="w-full">
+            <DeckSelectAdvModalTagsFilter
+              tagsFilter={tagsFilter}
+              handleChangeTagsFilter={handleChangeTagsFilter}
+              allTagsOptions={allTagsOptions}
             />
+          </th>
+        )}
+        <th colSpan={short ? 2 : 1}>
+          <div className="flex justify-end gap-2 max-sm:flex-col">
+            <div className="flex items-center ps-1">
+              <Checkbox
+                name="revFilter"
+                label={isDesktop ? 'Show Revisions' : 'Rev'}
+                checked={revFilter}
+                onChange={() => setRevFilter(!revFilter)}
+              />
+            </div>
             <DeckSortButton onChange={setSortMethod} />
           </div>
         </th>

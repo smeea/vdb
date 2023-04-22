@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Menu } from '@headlessui/react';
 import { useNavigate } from 'react-router-dom';
 import NodePlusFill from '@/assets/images/icons/node-plus-fill.svg';
+import {
+  DeckSelectAdvModal,
+  MenuItems,
+  MenuItem,
+  MenuButton,
+} from '@/components';
 import { deckStore, useApp } from '@/context';
-import { ButtonIconed } from '@/components';
 
 const DeckBranchCreateButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
+  const [showSelect, setShowSelect] = useState();
 
-  const branchCreate = () => {
-    const master = deck.master ? deck.master : deck.deckid;
-    const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
+  const master = deck.master ? deck.master : deck.deckid;
+  const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
 
+  const branchCreate = (d) => {
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -20,7 +27,7 @@ const DeckBranchCreateButton = ({ deck }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        deckid: deck.deckid,
+        deckid: d.deckid,
       }),
     };
 
@@ -38,10 +45,10 @@ const DeckBranchCreateButton = ({ deck }) => {
           ...deck,
           deckid: data[0].deckid,
           description: `[${now.toISOString().split('T')[0]}] \n${
-            deck.description
+            d.description
           }`,
-          crypt: { ...deck.crypt },
-          library: { ...deck.library },
+          crypt: { ...d.crypt },
+          library: { ...d.library },
           inventoryType: '',
           master: master,
           branchName: data[0].branchName,
@@ -56,13 +63,31 @@ const DeckBranchCreateButton = ({ deck }) => {
   };
 
   return (
-    <ButtonIconed
-      variant={isDesktop ? 'secondary' : 'primary'}
-      onClick={branchCreate}
-      title="Create New Revision of the Deck"
-      icon={<NodePlusFill width="21" height="21" viewBox="0 0 16 16" />}
-      text="New Revision"
-    />
+    <>
+      <Menu as="div" className="relative">
+        <MenuButton
+          title="Create New Revision of the Deck"
+          icon={<NodePlusFill width="21" height="21" viewBox="0 0 16 16" />}
+          variant={isDesktop ? 'secondary' : 'primary'}
+          text="Add Revision"
+        />
+        <MenuItems>
+          <MenuItem onClick={() => branchCreate(deck)}>
+            From Active Deck
+          </MenuItem>
+          <MenuItem onClick={() => setShowSelect(true)}>
+            Select From Decks
+          </MenuItem>
+        </MenuItems>
+      </Menu>
+      {showSelect && (
+        <DeckSelectAdvModal
+          setShow={setShowSelect}
+          onClick={branchCreate}
+          short
+        />
+      )}
+    </>
   );
 };
 

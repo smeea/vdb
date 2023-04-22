@@ -16,7 +16,7 @@ import { getClan, decksSort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
 
-const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
+const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const [sortMethod, setSortMethod] = useState('byName');
@@ -137,9 +137,7 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
       }
 
       if (!revFilter) {
-        filtered = filtered.filter((deck) => {
-          if (!deck.master) return true;
-        });
+        filtered = filtered.filter((deck) => !deck.master);
       }
 
       return decksSort(filtered, sortMethod);
@@ -193,15 +191,17 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
     <Modal
       noPadding={isMobile}
       handleClose={handleClose}
-      size="xl"
+      size={short ? 'sm' : 'xl'}
       title="Select Deck"
     >
       <div className="flex flex-col gap-3 sm:gap-5">
         <div>
-          <DeckSelectAdvModalTotal
-            tagsFilter={tagsFilter}
-            setTagsFilter={setTagsFilter}
-          />
+          {!short && (
+            <DeckSelectAdvModalTotal
+              tagsFilter={tagsFilter}
+              setTagsFilter={setTagsFilter}
+            />
+          )}
           <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
             <DeckSelectAdvModalTableHeader
               allTagsOptions={allTagsOptions}
@@ -219,6 +219,7 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
               tagsFilter={tagsFilter}
               toggleSelectAll={toggleSelectAll}
               isSelectedAll={isSelectedAll}
+              short={short}
             />
             <tbody>
               {sortedDecks.map((deck, idx) => {
@@ -227,34 +228,40 @@ const DeckSelectAdvModal = ({ setShow, allTagsOptions }) => {
                     key={deck.deckid}
                     deck={deck}
                     idx={idx}
+                    onClick={onClick}
                     handleClose={handleClose}
                     allTagsOptions={allTagsOptions}
                     selectedDecks={selectedDecks}
                     toggleSelect={toggleSelect}
                     revFilter={revFilter}
+                    short={short}
                   />
                 );
               })}
             </tbody>
           </table>
         </div>
-        <div className="flex max-sm:p-2 max-sm:pt-0 max-sm:flex-col justify-end">
-          <Menu as="div" className="relative">
-            <MenuButton
-              title="Export Selected"
-              icon={<Download />}
-              text="Export Selected"
-            />
-            <MenuItems>
-              <MenuItem onClick={() => exportSelected('text')}>Text</MenuItem>
-              <MenuItem onClick={() => exportSelected('lackey')}>
-                Lackey
-              </MenuItem>
-              <MenuItem onClick={() => exportSelected('jol')}>JOL</MenuItem>
-              <MenuItem onClick={() => exportSelected('xlsx')}>Excel</MenuItem>
-            </MenuItems>
-          </Menu>
-        </div>
+        {!short && (
+          <div className="flex max-sm:p-2 max-sm:pt-0 max-sm:flex-col justify-end">
+            <Menu as="div" className="relative">
+              <MenuButton
+                title="Export Selected"
+                icon={<Download />}
+                text="Export Selected"
+              />
+              <MenuItems>
+                <MenuItem onClick={() => exportSelected('text')}>Text</MenuItem>
+                <MenuItem onClick={() => exportSelected('lackey')}>
+                  Lackey
+                </MenuItem>
+                <MenuItem onClick={() => exportSelected('jol')}>JOL</MenuItem>
+                <MenuItem onClick={() => exportSelected('xlsx')}>
+                  Excel
+                </MenuItem>
+              </MenuItems>
+            </Menu>
+          </div>
+        )}
       </div>
     </Modal>
   );

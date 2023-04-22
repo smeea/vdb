@@ -1,9 +1,9 @@
 # FIX
 - Seraph / Black hand requirement to Playable By
+- AdvSelect on smaller width
 
 # FEATURES
 - Events decks archive analyzing
-- Add deck as revision
 
 # MAYBE LATER FEATURES
 - Offline decks storage
