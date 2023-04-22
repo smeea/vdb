@@ -1,6 +1,7 @@
 {
-  "version": "2023-04-18",
+  "version": "2023-04-22",
   "changes": [
-    "Update Playtest to Round 3"
+    "Add option to create new revision from your other decks/revisions",
+    "Small other fixes"
   ]
 }
