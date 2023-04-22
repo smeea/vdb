@@ -32,7 +32,7 @@ const DeckSelectAdvModalTableRow = ({
   revFilter,
   short,
 }) => {
-  const { inventoryMode, isMobile, isDesktop } = useApp();
+  const { inventoryMode, isMobile, isNarrow, isDesktop } = useApp();
   const navigate = useNavigate();
   const [showDeck, setShowDeck] = useState();
 
@@ -101,7 +101,7 @@ const DeckSelectAdvModalTableRow = ({
         </td>
       )}
       {(short || !isMobile) && (
-        <td className="min-w-[60px] sm:min-w-[75px]" onClick={handleClick}>
+        <td className="min-w-[60px] sm:min-w-[70px]" onClick={handleClick}>
           <div className="flex justify-center">
             {clan && <ResultClanImage value={clan} />}
           </div>
@@ -144,7 +144,7 @@ const DeckSelectAdvModalTableRow = ({
           </div>
         </td>
       )}
-      {(short || !isMobile) && (
+      {(short || !isNarrow) && (
         <td
           className="min-w-[100px] sm:min-w-[105px] cursor-pointer whitespace-nowrap text-center"
           onClick={handleClick}
@@ -160,7 +160,7 @@ const DeckSelectAdvModalTableRow = ({
           <td>
             <div className="flex justify-end space-x-1">
               <DeckHideButton deck={deck} />
-              {!isMobile && (
+              {!isNarrow && (
                 <>
                   <DeckFreezeButton deck={deck} />
                   <DeckPublicToggleButton deck={deck} inAdv />

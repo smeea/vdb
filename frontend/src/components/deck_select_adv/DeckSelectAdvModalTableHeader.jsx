@@ -29,7 +29,7 @@ const DeckSelectAdvModalTableHeader = ({
   isSelectedAll,
   short,
 }) => {
-  const { inventoryMode, isMobile, isDesktop } = useApp();
+  const { inventoryMode, isMobile, isNarrow, isDesktop } = useApp();
 
   const invOptions = [
     {
@@ -88,7 +88,7 @@ const DeckSelectAdvModalTableHeader = ({
           </th>
         )}
         {(short || !isMobile) && (
-          <th className="min-w-[60px] sm:min-w-[75px]">
+          <th className="min-w-[60px] sm:min-w-[70px]">
             <Select
               options={clanOptions}
               onChange={(e) => setClanFilter(e.value)}
@@ -112,7 +112,7 @@ const DeckSelectAdvModalTableHeader = ({
           />
         </th>
         {!short && isDesktop && <th />}
-        {!short && !isMobile && <th />}
+        {!short && !isNarrow && <th />}
         {!short && (
           <th className="w-full">
             <DeckSelectAdvModalTagsFilter
