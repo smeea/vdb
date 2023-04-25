@@ -1,5 +1,11 @@
 [
   {
+    "version": "2023-04-25",
+    "changes": [
+      "Update Playtest precons to Round 3"
+    ]
+  },
+  {
     "version": "2023-04-22",
     "changes": [
       "Add option to create new revision from your other decks/revisions",
