@@ -9,6 +9,7 @@ const ResultDisciplineImage = ({
   title,
 }) => {
   const sizeStyle = {
+    xs: 'min-w-[20px] max-w-[20px]',
     sm: 'min-w-[22px] max-w-[22px]',
     md: 'min-w-[25px] max-w-[25px]',
     lg: 'min-w-[31px] max-w-[31px]',
@@ -17,7 +18,7 @@ const ResultDisciplineImage = ({
 
   if (!(superior || virtuesList.includes(value))) {
     const s = {
-      sm: 'md',
+      sm: 'xs',
       md: 'sm',
       lg: 'md',
       xl: 'lg',

@@ -12,7 +12,7 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
           {disciplinesSet.slice(0, keyDisciplines).map((d, index) => {
             return (
               <td
-                className="min-w-[25px] max-w-[25px] sm:min-w-[28px] sm:max-w-[28px]"
+                className="min-w-[24px] max-w-[24px] sm:min-w-[28px] sm:max-w-[28px]"
                 key={index}
               >
                 {value?.[d] && (
@@ -34,15 +34,17 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
               if (value[d]) {
                 return (
                   <td
-                    className="min-w-[25px] max-w-[25px] sm:min-w-[28px] sm:max-w-[28px]"
+                    className="min-w-[24px] max-w-[24px] sm:min-w-[28px] sm:max-w-[28px]"
                     key={index}
                   >
                     {value[d] && (
-                      <ResultDisciplineImage
-                        size={isMobile ? 'sm' : 'md'}
-                        value={d}
-                        superior={value[d] === 2}
-                      />
+                      <div className="flex items-center justify-center">
+                        <ResultDisciplineImage
+                          size={isMobile ? 'sm' : 'md'}
+                          value={d}
+                          superior={value[d] === 2}
+                        />
+                      </div>
                     )}
                   </td>
                 );
