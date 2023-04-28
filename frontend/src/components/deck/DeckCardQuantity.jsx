@@ -54,7 +54,7 @@ const DeckCardQuantity = ({
       } else {
         return inInventory - softUsedMax - hardUsedTotal >= q
           ? ''
-          : inInventory - hardUsedTotal >= q
+          : inInventory >= q
           ? 'bg-bgWarning dark:bg-bgWarningDark'
           : 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark';
       }

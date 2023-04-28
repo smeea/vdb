@@ -1,6 +1,5 @@
 # FIX
 - Seraph / Black hand requirement to Playable By
-- Fix virtual decks inventory highlight
 
 # FEATURES
 - Events decks archive analyzing
