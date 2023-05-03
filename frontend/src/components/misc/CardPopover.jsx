@@ -16,7 +16,7 @@ const CardPopover = ({ card }) => {
     return (
       <div className="w-[375px] space-y-3 p-4">
         {card.Id > 200000 ? (
-          <ResultCryptLayoutText card={card} noClose />
+          <ResultCryptLayoutText card={card} noClose inPopover />
         ) : (
           <ResultLibraryLayoutText card={card} noClose />
         )}

@@ -13,7 +13,13 @@ import {
   ResultLayoutTextText,
 } from '@/components';
 
-const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose }) => {
+const ResultCryptLayoutText = ({
+  card,
+  setCard,
+  handleClose,
+  noClose,
+  inPopover,
+}) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
 
   return (
@@ -32,7 +38,25 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose }) => {
                   className="inline text-fgSecondary dark:text-fgSecondaryDark"
                   onClick={() => setCard(cryptCardBase[card.Adv[1]])}
                 >
-                  [see {`${card.Adv[0] ? 'Base' : 'Adv'}`}]
+                  {inPopover ? (
+                    <>
+                      {!card.Adv[0] && (
+                        <>
+                          [has
+                          <img
+                            className="inline h-[22px] align-text-bottom ps-1"
+                            src={`${
+                              import.meta.env.VITE_BASE_URL
+                            }/images/misc/advanced.svg`}
+                            title="Advanced"
+                          />
+                          ]
+                        </>
+                      )}
+                    </>
+                  ) : (
+                    <>[see {`${card.Adv[0] ? 'Base' : 'Adv'}`}]</>
+                  )}
                 </div>
               </ConditionalTooltip>
             )}
