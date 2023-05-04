@@ -3,6 +3,7 @@
 
 # FEATURES
 - Events decks archive analyzing
+- TWD Deck Check (documentation?)
 
 # MAYBE LATER FEATURES
 - Offline decks storage

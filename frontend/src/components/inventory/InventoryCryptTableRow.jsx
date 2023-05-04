@@ -34,13 +34,13 @@ const InventoryCryptTableRow = ({
   const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
     swipeDuration: 250,
-    onSwipedRight: (e) => {
+    onSwipedLeft: (e) => {
       if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD) {
         setIsSwiped('left');
         inventoryCardChange(card.c, card.q - 1);
       }
     },
-    onSwipedLeft: (e) => {
+    onSwipedRight: (e) => {
       if (e.absX > SWIPE_THRESHOLD) {
         setIsSwiped('right');
         inventoryCardChange(card.c, card.q + 1);
@@ -52,7 +52,7 @@ const InventoryCryptTableRow = ({
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
 
   const trBg = isSwiped
-    ? isSwiped === 'left'
+    ? isSwiped === 'right'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
     : '';

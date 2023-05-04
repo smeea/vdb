@@ -42,7 +42,7 @@ const DeckLibraryTableRow = ({
   const SWIPE_IGNORED_LEFT_EDGE = 30;
   const swipeHandlers = useSwipeable({
     swipeDuration: 250,
-    onSwipedRight: (e) => {
+    onSwipedLeft: (e) => {
       if (
         e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
         e.absX > SWIPE_THRESHOLD &&
@@ -52,7 +52,7 @@ const DeckLibraryTableRow = ({
         deckCardChange(deckid, card.c, card.q - 1);
       }
     },
-    onSwipedLeft: (e) => {
+    onSwipedRight: (e) => {
       if (e.absX > SWIPE_THRESHOLD && isEditable) {
         setIsSwiped('right');
         deckCardChange(deckid, card.c, card.q + 1);
@@ -72,7 +72,7 @@ const DeckLibraryTableRow = ({
   };
 
   const trBg = isSwiped
-    ? isSwiped === 'left'
+    ? isSwiped === 'right'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
     : idx % 2
