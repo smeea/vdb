@@ -3,7 +3,6 @@
 
 # FEATURES
 - Events decks archive analyzing
-- Show Library cost in TWD
 
 # MAYBE LATER FEATURES
 - Offline decks storage

@@ -32,7 +32,7 @@ const TwdResultLibraryKeyCardsTable = ({ library }) => {
 
   return (
     <div>
-      <div className="font-bold">
+      <div className="flex items-center font-bold px-1 h-[30px]">
         {isMobile ? `Library [${libraryTotal}]` : 'Key cards:'}
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">

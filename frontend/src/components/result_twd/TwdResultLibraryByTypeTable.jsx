@@ -5,6 +5,7 @@ import {
   ResultModal,
   Tooltip,
   Warning,
+  ResultLibraryCost,
 } from '@/components';
 import { useApp } from '@/context';
 import { cardtypeSortedFull } from '@/utils/constants';
@@ -46,6 +47,8 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
     trifleTotal,
     libraryTotal,
     libraryByTypeTotal,
+    poolTotal,
+    bloodTotal,
   } = useDeckLibrary(library);
 
   const cards = [];
@@ -65,8 +68,20 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
 
   return (
     <div>
-      <div className="font-bold">
-        Library [{libraryTotal}] {hasBanned && <Warning value="BANNED" />}
+      <div className="flex items-center justify-between gap-3 font-bold px-1 h-[30px]">
+        <div className="whitespace-nowrap">
+          Library [{libraryTotal}] {hasBanned && <Warning value="BANNED" />}
+        </div>
+        <div className="flex space-x-3">
+          <div className="flex items-center space-x-1" title="Total Blood Cost">
+            <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
+            <b>{bloodTotal}</b>
+          </div>
+          <div className="flex items-center space-x-1" title="Total Pool Cost">
+            <ResultLibraryCost valuePool="X" className="h-[30px]" />
+            <b>{poolTotal}</b>
+          </div>
+        </div>
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>
