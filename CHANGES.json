@@ -1,5 +1,13 @@
 [
   {
+    "version": "2023-05-03",
+    "changes": [
+      "Add crypt avg capacity and library blood/pool cost to twd",
+      "Fix crypt discipline icons on mobile",
+      "Fix swipes to increment on right swipe and to have correct highlight colors"
+    ]
+  },
+  {
     "version": "2023-04-25",
     "changes": [
       "Update Playtest precons to Round 3"
