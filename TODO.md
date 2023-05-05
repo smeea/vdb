@@ -1,6 +1,5 @@
 # FIX
 - Seraph / Black hand requirement to Playable By
-- Library cost on mobile in twd
 
 # FEATURES
 - Events decks archive analyzing

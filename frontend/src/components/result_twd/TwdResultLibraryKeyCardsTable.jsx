@@ -1,9 +1,14 @@
 import React from 'react';
-import { ResultModal, TwdResultLibraryKeyCardsTableRow } from '@/components';
+import {
+  ResultModal,
+  TwdResultLibraryKeyCardsTableRow,
+  ResultLibraryCost,
+  Warning,
+} from '@/components';
 import { GROUPED_TYPE, ASCII_NAME } from '@/utils/constants';
 import { useApp } from '@/context';
 import { countCards, librarySort } from '@/utils';
-import { useModalCardController } from '@/hooks';
+import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryKeyCardsTable = ({ library }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
@@ -30,10 +35,36 @@ const TwdResultLibraryKeyCardsTable = ({ library }) => {
     setShowFloatingButtons(true);
   };
 
+  const { hasBanned, poolTotal, bloodTotal } = useDeckLibrary(library);
+
   return (
     <div>
-      <div className="flex items-center font-bold px-1 h-[30px]">
-        {isMobile ? `Library [${libraryTotal}]` : 'Key cards:'}
+      <div className="flex justify-between items-center gap-3 font-bold px-1 h-[30px]">
+        {isMobile ? (
+          <>
+            <div className="whitespace-nowrap">
+              Library [{libraryTotal}] {hasBanned && <Warning value="BANNED" />}
+            </div>
+            <div className="flex space-x-3">
+              <div
+                className="flex items-center space-x-1"
+                title="Total Blood Cost"
+              >
+                <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
+                <b>{bloodTotal}</b>
+              </div>
+              <div
+                className="flex items-center space-x-1"
+                title="Total Pool Cost"
+              >
+                <ResultLibraryCost valuePool="X" className="h-[30px]" />
+                <b>{poolTotal}</b>
+              </div>
+            </div>
+          </>
+        ) : (
+          'Key cards:'
+        )}
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>
