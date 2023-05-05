@@ -1,5 +1,6 @@
 # FIX
 - Seraph / Black hand requirement to Playable By
+- Library cost on mobile in twd
 
 # FEATURES
 - Events decks archive analyzing
@@ -18,3 +19,4 @@
 - Explicit image width/height
 - Modal max width in pixels
 - Fix hooks eslint errors
+- Use react-error-boundary for error handling

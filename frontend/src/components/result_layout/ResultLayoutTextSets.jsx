@@ -63,7 +63,7 @@ const Sets = ({ sets, setImageSet, setSelectedSet }) => {
           key={index}
         >
           <ConditionalTooltip
-            disable={isMobile}
+            disabled={isMobile}
             overlay={<PopoverText sets={sets} set={set} />}
             placement="bottom"
           >
