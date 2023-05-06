@@ -189,42 +189,44 @@ const TwdEvent = ({ deckData }) => {
             </a>
           </div>
           <br />
-          {hasWrongGroups && (
-            <div className="text-fgRed dark:text-fgRedDark">
-              Crypt has non-matching groups
-            </div>
-          )}
-          {cryptQtyError && (
-            <div className="text-fgRed dark:text-fgRedDark">
-              Crypt has &lt;12 cards
-            </div>
-          )}
-          {libraryQtyError && (
-            <div className="text-fgRed dark:text-fgRedDark">
-              Library has &lt;60 or &gt;90 cards
-            </div>
-          )}
+          <div className="flex flex-col gap-3">
+            {hasWrongGroups && (
+              <div className="text-fgRed dark:text-fgRedDark">
+                Crypt has non-matching groups
+              </div>
+            )}
+            {cryptQtyError && (
+              <div className="text-fgRed dark:text-fgRedDark">
+                Crypt has &lt;12 cards
+              </div>
+            )}
+            {libraryQtyError && (
+              <div className="text-fgRed dark:text-fgRedDark">
+                Library has &lt;60 or &gt;90 cards
+              </div>
+            )}
 
-          {cryptHasBanned && (
-            <div className="text-fgRed dark:text-fgRedDark">
-              Crypt has banned cards
-            </div>
-          )}
-          {libraryHasBanned && (
-            <div className="text-fgRed dark:text-fgRedDark">
-              Library has banned cards
-            </div>
-          )}
-          {isUniqueCity && (
-            <div className="text-fgRed dark:text-fgRedDark">
-              City never appear in TWDA before. Spelling is correct?
-            </div>
-          )}
-          {isUniqueCountry && (
-            <div className="text-fgRed dark:text-fgRedDark">
-              Country never appear in TWDA before. Spelling is correct?
-            </div>
-          )}
+            {cryptHasBanned && (
+              <div className="text-fgRed dark:text-fgRedDark">
+                Crypt has banned cards
+              </div>
+            )}
+            {libraryHasBanned && (
+              <div className="text-fgRed dark:text-fgRedDark">
+                Library has banned cards
+              </div>
+            )}
+            {isUniqueCity && (
+              <div className="text-fgRed dark:text-fgRedDark">
+                City never appear in TWDA before. Spelling is correct?
+              </div>
+            )}
+            {isUniqueCountry && (
+              <div className="text-fgRed dark:text-fgRedDark">
+                Country never appear in TWDA before. Spelling is correct?
+              </div>
+            )}
+          </div>
         </div>
       ) : (
         <>Loading...</>

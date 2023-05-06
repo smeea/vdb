@@ -285,34 +285,27 @@ const exportTwd = (deck, withHints) => {
   if (withHints) {
     result += `# REPLACE BELOW LINES WITH YOUR EVENT DATA
 # REMOVE EVERYTHING STARTING FROM "#" ON EACH LINE (FIRST LINE WILL BE EVENT NAME)
-#
-Nosferatu Hosting Loughman's Birthday              # Event Name
-Heath, Ohio                                        # Event Location
-December 5th 2021                                  # Event Date
-2R + F                                             # Number of Rounds
+6th Great Symposium                                # Event Name
+Mikkeli, Finland                                   # Event Location
+March 25th 2023                                    # Event Date
+3R+F                                               # Number of Rounds
 13 players                                         # Number of Players
-Karl Schaefer                                      # Winner
-https://www.vekn.net/event-calendar/event/9953     # Event Link
-
--- 2gw8 + 3vp in final                             # Scores
+Otso Saariluoma                                    # Winner
+https://www.vekn.net/event-calendar/event/10546    # Event Link
 
 Deck Name: ${deck.name}${' '.repeat(39 - deck.name.length)} # OPTIONAL
-Created by: Not-Karl-Schaefer ${' '.repeat(
-      20
-    )} # OPTIONAL, only if different from Winner
+Created by: Author Name                            # OPTIONAL, only if different from Winner
 Description:                                       # OPTIONAL
 ${
   deck.description
     ? deck.description
-    : `I was hoping to play the new Ministry today, but   # Don't format text width with line breaks
-with so many others planning to do the same, I     # Example on the left is how NOT TO DO
-played this instead.                               # Break line only to start new paragraph/list item/etc
+    : `Put your descriptiopn here, like how deck   # Don't format text width with line breaks
+worked, what would you like to change, say hello   # Example on the left is how NOT TO DO
+to your grandma or anything else.                  # Break line only to start new paragraph/list item/etc
 
-This is how you do very long lines. Text formatting to readable width will be done by TWDA team.
+Empty lines in description are OK. One empty line between Description and Crypt is necessary.
 
-Empty lines in description are OK. One empty line between Description and Crypt
-
-# Comments on particular cards are possible in the end on the same line using ' -- ':
+# Comments on particular cards are possible in the end on the same line using ' -- ' like this:
 # 4x Dummy Corporation -- will increase to 8x, saved me in every round and twice in finals'`
 }
 `;

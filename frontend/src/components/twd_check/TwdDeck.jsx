@@ -5,14 +5,6 @@ import Upload from '@/assets/images/icons/upload.svg';
 import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { useDeckImport } from '@/hooks';
-// import { cardtypeSortedFull } from '@/utils/constants';
-
-const fixForumBreaks = (text) => {
-  // TODO
-  // cardtypeSortedFull.map((cardtype) => {});
-  // const url = text.match(/vekn.net\/event-calendar\/event\/\d+/g);
-  return text;
-};
 
 const TwdDeck = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -27,8 +19,7 @@ const TwdDeck = ({ deckData, setDeckData }) => {
 
   const handleChange = (event) => {
     setEmptyError(false);
-    const text = fixForumBreaks(event.target.value);
-    setDeckText(text);
+    setDeckText(event.target.value);
     refreshDeckData(event.target.value);
   };
 
@@ -128,7 +119,7 @@ const TwdDeck = ({ deckData, setDeckData }) => {
         <div className="xl:basis-10/12">
           <Textarea
             className="font-mono text-sm"
-            rows={window.innerHeight / 21 - 14}
+            rows={(window.innerHeight - 215) / 20}
             value={deckText}
             placeholder={placeholder}
             onChange={handleChange}

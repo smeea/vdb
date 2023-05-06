@@ -6,6 +6,7 @@ import Gem from '@/assets/images/icons/gem.svg';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
 import ClockHistory from '@/assets/images/icons/clock-history.svg';
 import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg';
+import Calendar2EventFill from '@/assets/images/icons/calendar2-event-fill.svg';
 
 const TwdMoreButton = ({ noText }) => {
   const navigate = useNavigate();
@@ -34,6 +35,12 @@ const TwdMoreButton = ({ noText }) => {
           <div className="flex items-center gap-2">
             <ClockHistory />
             Cards Appearance History
+          </div>
+        </MenuItem>
+        <MenuItem onClick={() => navigate('/twd/check')}>
+          <div className="flex items-center gap-2">
+            <Calendar2EventFill />
+            Check TWD Report
           </div>
         </MenuItem>
       </MenuItems>
