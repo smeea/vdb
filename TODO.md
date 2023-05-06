@@ -1,5 +1,4 @@
 # FIX
-- Seraph / Black hand requirement to Playable By
 - Swipe to Card Ideas on mobile
 
 # FEATURES

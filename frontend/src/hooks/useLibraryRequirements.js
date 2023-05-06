@@ -6,9 +6,13 @@ const useLibraryRequirements = (card) => {
   let isRedlist;
   let isSect;
   let isTitle = [];
+  let isBlackHand;
+  let isSeraph;
 
   if (card) {
     const requirements = card?.Requirement.split(',');
+
+    console.log('req:', requirements);
 
     if (card.Clan) {
       isClan = card.Clan.split('/');
@@ -65,6 +69,8 @@ const useLibraryRequirements = (card) => {
       if (titles.includes(req)) isTitle.push(req.replace('non-titled', 'none'));
       if (req === 'red list') isRedlist = true;
       if (req.includes('capacity')) isCapacity = req.replace('capacity ', '');
+      if (req.includes('seraph')) isSeraph = true;
+      if (req.includes('black hand')) isBlackHand = true;
     });
   }
 
@@ -76,6 +82,8 @@ const useLibraryRequirements = (card) => {
     isRedlist,
     isSect,
     isTitle,
+    isSeraph,
+    isBlackHand,
   };
 };
 

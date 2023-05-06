@@ -16,10 +16,13 @@ const ButtonPlayableBy = ({ card }) => {
     isSect,
     isNonSect,
     isTitle,
+    isSeraph,
+    isBlackHand,
   } = useLibraryRequirements(card);
 
   const onClick = () => {
     const queries = [];
+    const traits = [];
 
     if (isDiscipline.length > 0) {
       const values = isDiscipline.map((i) => `"${i}"%3A1`);
@@ -50,8 +53,13 @@ const ButtonPlayableBy = ({ card }) => {
     if (isNonSect) {
       queries.push(`"sect"%3A{"value"%3A["${isNonSect}"]%2C"logic"%3A"not"}`);
     }
-    if (isRedlist) {
-      queries.push(`"traits"%3A{"red list"%3Atrue}`);
+    if (isRedlist) traits.push('red list');
+    if (isSeraph) traits.push('seraph');
+    if (isBlackHand) traits.push('black hand');
+
+    if (traits.length > 0) {
+      const traitsQuery = traits.map((t) => `"${t}"%3Atrue`).join('%2C');
+      queries.push(`"traits"%3A{${traitsQuery}}`);
     }
 
     clearSearchForm('crypt');
