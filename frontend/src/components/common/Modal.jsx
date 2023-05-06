@@ -16,10 +16,10 @@ const Modal = ({
   const { isNarrow } = useApp();
 
   const widthClass = {
-    sm: 'min-w-full sm:min-w-[65%] md:min-w-[50%] lg:min-w-[45%] xl:min-w-[35%] 2xl:min-w-[25%]',
-    md: 'min-w-full sm:min-w-[80%] md:min-w-[65%] lg:min-w-[55%] xl:min-w-[45%] 2xl:min-w-[35%]',
-    lg: 'min-w-full sm:min-w-full md:min-w-[80%] lg:min-w-[75%] xl:min-w-[70%] 2xl:min-w-[60%]',
-    xl: 'min-w-full sm:min-w-full md:min-w-[90%] lg:min-w-[85%] xl:min-w-[75%] 2xl:min-w-[70%]',
+    sm: 'min-w-full sm:min-w-[500px]',
+    md: 'min-w-full sm:min-w-[650px]',
+    lg: 'min-w-full lg:min-w-[1150px]',
+    xl: 'min-w-full xl:min-w-[1350px]',
   };
 
   return (

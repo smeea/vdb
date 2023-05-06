@@ -23,9 +23,10 @@ const Tooltip = ({
   placement = 'right',
 }) => {
   const widthClass = {
-    sm: 'max-w-[35%] xl:max-w-[25%] 2xl:max-w-[20%]',
-    md: 'max-w-[45%] xl:max-w-[35%] 2xl:max-w-[30%]',
-    lg: 'max-w-[75%] xl:max-w-[60%] 2xl:max-w-[50%]',
+    sm: 'max-w-full sm:max-w-[300px]',
+    md: 'max-w-full sm:max-w-[450px]',
+    lg: 'max-w-full lg:max-w-[700px]',
+    xl: 'max-w-full xl:max-w-[1000px]',
   };
 
   const [open, setOpen] = useState(false);

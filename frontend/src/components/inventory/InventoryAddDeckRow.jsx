@@ -88,6 +88,7 @@ const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
+              size="xl"
               show={showDeck === deck.deckid}
               overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
             >

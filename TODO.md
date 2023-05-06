@@ -16,6 +16,5 @@
 - Configure vite-pwa
 - Refactor deck buttons (split in button ui and function incl. deckstore functions)
 - Explicit image width/height
-- Modal max width in pixels
 - Fix hooks eslint errors
 - Use react-error-boundary for error handling

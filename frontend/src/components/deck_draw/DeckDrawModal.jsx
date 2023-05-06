@@ -49,7 +49,12 @@ const DeckDrawModal = ({
   } = useModalCardController(burnedCrypt, burnedLibrary);
 
   return (
-    <Modal handleClose={handleClose} title="Deck Draw" noPadding={isMobile}>
+    <Modal
+      size="lg"
+      handleClose={handleClose}
+      title="Deck Draw"
+      noPadding={isMobile}
+    >
       <div className="flex flex-col gap-3 sm:gap-5">
         <div className="flex gap-3 sm:gap-5 max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
