@@ -101,7 +101,7 @@ def get_new_twd_route(quantity):
     decks = []
     for i in range(quantity):
         deck = list(twd_decks.values())[i]
-        decks.append(sanitize_twd(deck))
+        decks.append(minify_twd(deck))
 
     return jsonify(decks)
 
@@ -115,7 +115,7 @@ def get_random_twd_route(quantity):
     while counter < quantity:
         counter += 1
         deck = all_decks[round(random() * max_id)]
-        decks.append(sanitize_twd(deck))
+        decks.append(minify_twd(deck))
 
     return jsonify(decks)
 
