@@ -9,10 +9,44 @@ const useLibraryRequirements = (card) => {
   let isBlackHand;
   let isSeraph;
 
+  const sects = [
+    'camarilla',
+    'sabbat',
+    'laibon',
+    'independent',
+    'anarch',
+    'imbued',
+  ];
+
+  const nonSects = [
+    'non-camarilla',
+    'non-sabbat',
+    'non-laibon',
+    'non-independent',
+    'non-anarch',
+    'non-imbued',
+  ];
+
+  const titles = [
+    'primogen',
+    'prince',
+    'justicar',
+    'inner circle',
+    'baron',
+    'bishop',
+    'archbishop',
+    'priscus',
+    'cardinal',
+    'regent',
+    'magaji',
+    'titled',
+    'non-titled',
+  ];
+
+  const uselessReqs = ['non-sterile'];
+
   if (card) {
     const requirements = card?.Requirement.split(',');
-
-    console.log('req:', requirements);
 
     if (card.Clan) {
       isClan = card.Clan.split('/');
@@ -25,42 +59,6 @@ const useLibraryRequirements = (card) => {
         isDiscipline = card.Discipline.split('/');
       }
     }
-
-    const sects = [
-      'camarilla',
-      'sabbat',
-      'laibon',
-      'independent',
-      'anarch',
-      'imbued',
-    ];
-
-    const nonSects = [
-      'non-camarilla',
-      'non-sabbat',
-      'non-laibon',
-      'non-independent',
-      'non-anarch',
-      'non-imbued',
-    ];
-
-    const titles = [
-      'primogen',
-      'prince',
-      'justicar',
-      'inner circle',
-      'baron',
-      'bishop',
-      'archbishop',
-      'priscus',
-      'cardinal',
-      'regent',
-      'magaji',
-      'titled',
-      'non-titled',
-    ];
-
-    const uselessReqs = ['non-sterile'];
 
     requirements.forEach((req) => {
       if (uselessReqs.includes(req)) return;
