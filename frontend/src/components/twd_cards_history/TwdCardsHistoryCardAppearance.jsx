@@ -73,7 +73,7 @@ Library: ${byPlayer.library}`}
       </div>
       <div className="flex min-w-[45px] items-center justify-end sm:min-w-[110px]">
         {card.deckid && (
-          <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} inHistory />
+          <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} />
         )}
       </div>
     </>

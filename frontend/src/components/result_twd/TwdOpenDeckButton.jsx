@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import PlayFill from '@/assets/images/icons/play-fill.svg';
 import { ButtonIconed } from '@/components';
 
-const TwdOpenDeckButton = ({ deckid, inHistory, noText }) => {
+const TwdOpenDeckButton = ({ deckid, noText }) => {
   return (
     <Link to={`/decks/${deckid}`} className="hover:no-underline">
       <ButtonIconed
         className="w-full"
-        variant={inHistory ? 'primary' : 'secondary'}
+        variant="primary"
         icon={<PlayFill height="18" viewBox="0 0 12 14" />}
         text={noText ? null : 'Open'}
       />
