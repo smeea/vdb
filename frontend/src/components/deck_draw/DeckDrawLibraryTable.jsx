@@ -41,7 +41,7 @@ const DeckDrawLibraryTable = ({
                 card={card}
                 handleClick={() => handleClick(idx)}
               />
-              <td className="w-9 text-right text-fgSecondary  dark:text-fgSecondaryDark">
+              <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
                 {!ashHeap && (
                   <DeckDrawProbability
                     cardName={card.Name}

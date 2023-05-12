@@ -48,17 +48,15 @@ const DeckDrawCryptTable = ({
                 disciplinesSet={disciplinesSet}
                 inDeck
               />
-              <td className="min-w-[40px]">
-                <div className="flex justify-end">
-                  {!ashHeap && (
-                    <DeckDrawProbability
-                      cardName={card.Name}
-                      N={N}
-                      n={n}
-                      k={nonPlayed[card.Id]}
-                    />
-                  )}
-                </div>
+              <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
+                {!ashHeap && (
+                  <DeckDrawProbability
+                    cardName={card.Name}
+                    N={N}
+                    n={n}
+                    k={nonPlayed[card.Id]}
+                  />
+                )}
               </td>
             </tr>
           );
