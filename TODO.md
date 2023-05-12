@@ -1,7 +1,5 @@
 # FIX
 - Swipe to Card Ideas on mobile
-- Twd crypt header spacing on mobile
-- Twd library header spacing with banned and cost
 
 # FEATURES
 - Events decks archive analyzing

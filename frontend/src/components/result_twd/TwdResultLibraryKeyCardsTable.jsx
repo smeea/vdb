@@ -39,26 +39,19 @@ const TwdResultLibraryKeyCardsTable = ({ library }) => {
 
   return (
     <div>
-      <div className="flex justify-between items-center gap-3 font-bold px-1 h-[30px]">
+      <div className="flex justify-between items-center sm:gap-3 font-bold px-1 h-[30px]">
         {isMobile ? (
           <>
-            <div className="whitespace-nowrap">
-              Library [{libraryTotal}] {hasBanned && <Warning value="BANNED" />}
-            </div>
-            <div className="flex space-x-3">
-              <div
-                className="flex items-center space-x-1"
-                title="Total Blood Cost"
-              >
+            <div className="whitespace-nowrap">Library [{libraryTotal}]</div>
+            {hasBanned && <Warning value={isMobile ? 'B' : 'BANNED'} />}
+            <div className="flex gap-1.5 sm:gap-3">
+              <div className="flex items-center gap-1" title="Total Blood Cost">
                 <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
-                <b>{bloodTotal}</b>
+                <div>{bloodTotal}</div>
               </div>
-              <div
-                className="flex items-center space-x-1"
-                title="Total Pool Cost"
-              >
+              <div className="flex items-center gap-1" title="Total Pool Cost">
                 <ResultLibraryCost valuePool="X" className="h-[30px]" />
-                <b>{poolTotal}</b>
+                <div>{poolTotal}</div>
               </div>
             </div>
           </>

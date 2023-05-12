@@ -35,8 +35,8 @@ const TwdResultCryptTable = ({ crypt }) => {
   return (
     <div>
       <div className="flex justify-between items-center font-bold gap-1.5 px-1 h-[30px]">
-        <div className="flex items-center">
-          Crypt [{cryptTotal}]
+        <div className="flex items-center gap-1.5">
+          <div>Crypt [{cryptTotal}]</div>
           {hasWrongGroups ? (
             <Warning value="GROUPS" />
           ) : (
