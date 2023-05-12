@@ -6,8 +6,8 @@ const TwdRandomButton = ({ getRandom, noText }) => {
   return (
     <ButtonIconed
       variant="primary"
-      onClick={() => getRandom(20)}
-      title="Get 20 random TWD"
+      onClick={() => getRandom(10)}
+      title="Get 10 random TWD"
       icon={<Dice3 />}
       text={noText ? null : 'Random'}
     />

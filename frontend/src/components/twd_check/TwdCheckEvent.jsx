@@ -18,7 +18,7 @@ const getDateWithSuffix = (d) => {
   return `${date}th`;
 };
 
-const TwdEvent = ({ deckData }) => {
+const TwdCheckEvent = ({ deckData }) => {
   const urlCountries = `${import.meta.env.VITE_API_URL}/twd/countries`;
   const urlCities = `${import.meta.env.VITE_API_URL}/twd/cities`;
   const { value: countries } = useFetch(urlCountries, {}, []);
@@ -235,4 +235,4 @@ const TwdEvent = ({ deckData }) => {
   );
 };
 
-export default TwdEvent;
+export default TwdCheckEvent;

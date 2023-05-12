@@ -1,4 +1,5 @@
 export { default as TwdOpenDeckButton } from './TwdOpenDeckButton.jsx';
+export { default as TwdDeck } from './TwdDeck.jsx';
 export { default as TwdResult } from './TwdResult.jsx';
 export { default as TwdResultCryptTable } from './TwdResultCryptTable.jsx';
 export { default as TwdResultCryptTableRow } from './TwdResultCryptTableRow.jsx';

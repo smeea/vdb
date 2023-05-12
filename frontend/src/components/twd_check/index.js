@@ -1,2 +1,2 @@
-export { default as TwdEvent } from './TwdEvent.jsx';
-export { default as TwdDeck } from './TwdDeck.jsx';
+export { default as TwdCheckEvent } from './TwdCheckEvent.jsx';
+export { default as TwdCheckInput } from './TwdCheckInput.jsx';

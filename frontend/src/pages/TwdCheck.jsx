@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TwdDeck, TwdEvent } from '@/components';
+import { TwdCheckInput, TwdCheckEvent } from '@/components';
 
 const TwdCheck = () => {
   const [deckData, setDeckData] = useState();
@@ -11,10 +11,10 @@ const TwdCheck = () => {
       </div>
       <div className="flex justify-center gap-2">
         <div className="basis-full md:basis-8/12">
-          <TwdDeck deckData={deckData} setDeckData={setDeckData} />
+          <TwdCheckInput deckData={deckData} setDeckData={setDeckData} />
         </div>
         <div className="basis-full md:basis-4/12">
-          {deckData?.id && <TwdEvent deckData={deckData} />}
+          {deckData?.id && <TwdCheckEvent deckData={deckData} />}
         </div>
       </div>
     </div>

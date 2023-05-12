@@ -6,7 +6,7 @@ import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { useDeckImport } from '@/hooks';
 
-const TwdDeck = ({ deckData, setDeckData }) => {
+const TwdCheckInput = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
@@ -170,4 +170,4 @@ const TwdDeck = ({ deckData, setDeckData }) => {
   );
 };
 
-export default TwdDeck;
+export default TwdCheckInput;

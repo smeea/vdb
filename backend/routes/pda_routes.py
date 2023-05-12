@@ -16,7 +16,6 @@ with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file:
 with open("../frontend/public/data/cardbase_lib.json", "r") as library_file:
     library_db = json.load(library_file)
 
-
 @login.unauthorized_handler
 def unauthorized_handler():
     abort(401)
@@ -142,6 +141,52 @@ def sanitize_pda(d):
 
     return deck
 
+def minify_pda(d):
+    deck = {
+        "deckid": d.deckid,
+        "creation_date": d.creation_date,
+    }
+
+    if current_user.is_authenticated and current_user.id in d.favorited:
+        deck["isFavorited"] = True
+
+    return deck
+
+@app.route("/api/pda/<string:deckid>", methods=["GET"])
+def get_pda(deckid):
+    d = Deck.query.get(deckid)
+    if not d:
+        abort(400)
+
+    is_author = current_user == d.author
+
+    deck = {
+        "author": d.author_public_name,
+        "cards": d.cards,
+        "deckid": d.deckid,
+        "description": d.description,
+        "favorited": d.favorited,
+        "isAuthor": is_author,
+        "isNonEditable": bool(not d.author),
+        "name": d.name,
+        "publicChild": d.public_child if is_author else bool(d.public_child),
+        "publicParent": d.public_parent if is_author else bool(d.public_parent),
+        "tags": d.tags,
+        "timestamp": d.timestamp,
+    }
+
+    if is_author:
+        deck = {
+            **deck,
+            "branches": d.branches,
+            "master": d.master,
+            "branchName": d.branch_name,
+            "inventoryType": d.inventory_type,
+            "isFrozen": d.frozen,
+            "isHidden": d.hidden,
+        }
+
+    return jsonify(deck)
 
 @app.route("/api/pda/authors", methods=["GET"])
 def get_pda_authors_route():
@@ -222,7 +267,9 @@ def search_pda_route():
 
     if not result:
         abort(400)
-    return jsonify([sanitize_pda(Deck.query.get(d["deckid"])) for d in result])
+
+    # return jsonify([sanitize_pda(d) for d in result[0:10]] + [minify_pda(d) for d in result[10:]])
+    return jsonify([sanitize_pda(Deck.query.get(d["deckid"])) for d in result[0:10]] + [minify_pda(Deck.query.get(d["deckid"])) for d in result[10:]])
 
 
 @app.route("/api/pda/<string:parent_id>", methods=["POST"])
@@ -348,9 +395,9 @@ def get_random_pda_route(quantity):
     while counter < quantity and len(decks_ids) <= max_id:
         id = round(random() * max_id)
         if id not in decks_ids:
-            counter += 1
             decks_ids.append(id)
-            decks.append(sanitize_pda(all_decks[id]))
+            decks.append(minify_pda(all_decks[id]) if counter > 9 else sanitize_pda(all_decks[id]))
+            counter += 1
 
     return jsonify(decks)
 
