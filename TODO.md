@@ -4,6 +4,7 @@
 # FEATURES
 - Events decks archive analyzing
 - TWD Deck check documentation
+- Custom lists for tournaments (search & verify)
 
 # MAYBE LATER FEATURES
 - Offline decks storage
@@ -19,3 +20,4 @@
 - Explicit image width/height
 - Fix hooks eslint errors
 - Use react-error-boundary for error handling
+- Use 'ASCII Name and remove Name+unidecode where possible

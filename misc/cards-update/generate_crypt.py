@@ -263,6 +263,8 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
         # ASCII-fication of name
         if card["Id"] == 201528:
             card["ASCII Name"] = "Boleslaw Gutowski"
+        elif card["Id"] == 210025:
+            card["ASCII Name"] = "Clara Hjortshoj"
         else:
             card["ASCII Name"] = letters_to_ascii(card["Name"])
 
