@@ -9,6 +9,7 @@ import {
   useApp,
   usedStore,
   inventoryStore,
+  limitedStore,
   deckStore,
 } from '@/context';
 import {
@@ -29,10 +30,11 @@ const DeckLibraryTableRow = ({
   inSearch,
   inMissing,
 }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const { limitedMode, inventoryMode, isMobile } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const limitedLibrary = useSnapshot(limitedStore).library;
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
@@ -60,7 +62,11 @@ const DeckLibraryTableRow = ({
     },
   });
 
-  const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
+  const inInventory = limitedMode
+    ? limitedLibrary[card.c.Id]
+      ? 99
+      : 0
+    : inventoryLibrary[card.c.Id]?.q ?? 0;
   const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
 

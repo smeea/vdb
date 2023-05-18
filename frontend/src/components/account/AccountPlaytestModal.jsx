@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import {
-  AccountPlaytestPlayer,
-  AccountPlaytestAdd,
-  Button,
-  Modal,
-} from '@/components';
+import { AccountPlaytestPlayer, AccountPlaytestAdd, Modal } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 
@@ -32,7 +27,7 @@ const AccountPlaytestModal = ({ setShow }) => {
   };
 
   return (
-    <Modal handleClose={handleClose} title="Manage Playtesters">
+    <Modal handleClose={handleClose} title="Manage Playtesters" size="sm">
       <div className="flex flex-col gap-3">
         <AccountPlaytestAdd
           playtesters={value}

@@ -6,6 +6,8 @@ export { default as AccountDeleteConfirmation } from './AccountDeleteConfirmatio
 export { default as AccountEmailForm } from './AccountEmailForm';
 export { default as AccountLogin } from './AccountLogin';
 export { default as AccountLogoutButton } from './AccountLogoutButton';
+export { default as AccountLimitedButtons } from './AccountLimitedButtons';
+export { default as AccountLimitedModal } from './AccountLimitedModal';
 export { default as AccountPasswordForm } from './AccountPasswordForm';
 export { default as AccountPlaytestButtons } from './AccountPlaytestButtons';
 export { default as AccountPlaytestAdd } from './AccountPlaytestAdd';

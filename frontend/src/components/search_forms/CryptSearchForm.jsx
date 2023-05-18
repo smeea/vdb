@@ -26,6 +26,7 @@ import {
   searchCryptForm,
   clearSearchForm,
   inventoryStore,
+  limitedStore,
 } from '@/context';
 
 const CryptSearchForm = () => {
@@ -37,10 +38,14 @@ const CryptSearchForm = () => {
     inventoryMode,
     isMobile,
     playtest,
+    limitedMode,
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const limitedCrypt = useSnapshot(limitedStore).crypt;
   const cryptFormState = useSnapshot(searchCryptForm);
-  const { filterCrypt } = useFilters(cryptCardBase);
+  const { filterCrypt } = useFilters(
+    limitedMode ? limitedCrypt : cryptCardBase
+  );
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
   const showLimit = 250;

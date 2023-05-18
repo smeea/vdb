@@ -9,6 +9,7 @@ import {
   useApp,
   usedStore,
   inventoryStore,
+  limitedStore,
   deckStore,
 } from '@/context';
 import {
@@ -31,10 +32,11 @@ const DeckCryptTableRow = ({
   inSearch,
   inMissing,
 }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const { limitedMode, inventoryMode, isMobile } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const usedCrypt = useSnapshot(usedStore).crypt;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const limitedCrypt = useSnapshot(limitedStore).crypt;
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
@@ -62,7 +64,11 @@ const DeckCryptTableRow = ({
     },
   });
 
-  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+  const inInventory = limitedMode
+    ? limitedCrypt[card.c.Id]
+      ? 99
+      : 0
+    : inventoryCrypt[card.c.Id]?.q ?? 0;
   const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
 

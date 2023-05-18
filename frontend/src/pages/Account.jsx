@@ -8,6 +8,7 @@ import {
   AccountChangeName,
   AccountDeleteButton,
   AccountPlaytestButtons,
+  AccountLimitedButtons,
 } from '@/components';
 import PersonFill from '@/assets/images/icons/person-fill.svg';
 import { useApp } from '@/context';
@@ -40,6 +41,7 @@ const Account = () => {
               <AccountChangeEmail />
             </div>
             {(isPlaytester || isPlaytestAdmin) && <AccountPlaytestButtons />}
+            <AccountLimitedButtons />
             <div className="flex space-x-6">
               <div className="w-full">
                 <AccountDeleteButton />

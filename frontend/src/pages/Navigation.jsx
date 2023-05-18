@@ -43,7 +43,15 @@ const Link = ({ to, end, ariaLabel, icon, text }) => {
 };
 
 const Navigation = () => {
-  const { inventoryMode, toggleInventoryMode, isMobile, username } = useApp();
+  const {
+    inventoryMode,
+    toggleInventoryMode,
+    limitedSwitch,
+    limitedMode,
+    toggleLimitedMode,
+    isMobile,
+    username,
+  } = useApp();
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
   const deck = useSnapshot(deckStore).deck;
@@ -107,25 +115,48 @@ const Navigation = () => {
             location.pathname !== '/changelog' &&
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
-              <div
-                className={`flex h-full items-center space-x-1 ${
-                  inventoryMode
-                    ? 'text-white dark:text-whiteDark'
-                    : 'text-lightGray dark:text-lightGrayDark'
-                }`}
-                onClick={() => {
-                  toggleInventoryMode();
-                }}
-              >
-                <div className="flex min-w-[36px] justify-center">
-                  {inventoryMode ? (
-                    <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
-                  ) : (
-                    <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
-                  )}
+              <>
+                <div
+                  className={`flex h-full items-center space-x-1 ${
+                    inventoryMode
+                      ? 'text-white dark:text-whiteDark'
+                      : 'text-lightGray dark:text-lightGrayDark'
+                  }`}
+                  onClick={() => {
+                    toggleInventoryMode();
+                  }}
+                >
+                  <div className="flex min-w-[36px] justify-center">
+                    {inventoryMode ? (
+                      <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
+                    ) : (
+                      <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
+                    )}
+                  </div>
+                  <div className="pb-[2px]">Inventory Mode</div>
                 </div>
-                <div className="pb-[2px]">Inventory Mode</div>
-              </div>
+                {limitedSwitch && (
+                  <div
+                    className={`flex h-full items-center space-x-1 ${
+                      limitedMode
+                        ? 'text-white dark:text-whiteDark'
+                        : 'text-lightGray dark:text-lightGrayDark'
+                    }`}
+                    onClick={() => {
+                      toggleLimitedMode();
+                    }}
+                  >
+                    <div className="flex min-w-[36px] justify-center">
+                      {limitedMode ? (
+                        <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
+                      ) : (
+                        <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
+                      )}
+                    </div>
+                    <div className="pb-[2px]">Limited Mode</div>
+                  </div>
+                )}
+              </>
             )}
         </div>
         <div className="flex items-center">

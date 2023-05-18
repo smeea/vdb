@@ -15,7 +15,12 @@ import {
   setUsedLibrary,
 } from '@/context';
 import { byTimestamp } from '@/utils';
-import { deckStore, deckLocalize } from '@/context';
+import {
+  setLimitedCrypt,
+  setLimitedLibrary,
+  deckStore,
+  deckLocalize,
+} from '@/context';
 
 const AppContext = React.createContext();
 
@@ -46,6 +51,8 @@ export const AppProvider = (props) => {
   const [showImage, setShowImage] = useState();
   const [addMode, setAddMode] = useState();
   const [inventoryMode, setInventoryMode] = useState();
+  const [limitedSwitch, setLimitedSwitch] = useState();
+  const [limitedMode, setLimitedMode] = useState();
   const [hideMissing, setHideMissing] = useState();
   const [cryptDeckSort, setCryptDeckSort] = useState();
   const [cryptSearchSort, setCryptSearchSort] = useState();
@@ -67,6 +74,7 @@ export const AppProvider = (props) => {
 
   const deck = useSnapshot(deckStore).deck;
   const decks = useSnapshot(deckStore).decks;
+
   const lastDeckArray = (decks && Object.values(decks).sort(byTimestamp)) ?? [
     { deckid: undefined },
   ];
@@ -121,8 +129,10 @@ export const AppProvider = (props) => {
       'localizedCrypt',
       'localizedLibrary',
       'preconDecks',
+      'limitedCrypt',
+      'limitedLibrary',
     ])
-      .then(([v, cb, lb, nc, nl, lc, ll, pd]) => {
+      .then(([v, cb, lb, nc, nl, lc, ll, pd, limC, limL]) => {
         if (!v || CARD_VERSION > v) {
           fetchAndSetCardBase();
         } else {
@@ -133,6 +143,17 @@ export const AppProvider = (props) => {
           setLocalizedCrypt(lc);
           setLocalizedLibrary(ll);
           setPreconDecks(pd);
+
+          const limitedCrypt = {};
+          const limitedLibrary = {};
+          Object.keys(limC).map((c) => {
+            limitedCrypt[c] = cb[c];
+          });
+          Object.keys(limL).map((c) => {
+            limitedLibrary[c] = lb[c];
+          });
+          setLimitedCrypt(limitedCrypt);
+          setLimitedLibrary(limitedLibrary);
         }
       })
       .catch(() => {
@@ -179,6 +200,7 @@ export const AppProvider = (props) => {
   const initializeUnauthenticatedUser = () => {
     setAddMode(false);
     setInventoryMode(false);
+    setLimitedMode(false);
     setIsPlaytester(false);
     setIsPlaytestAdmin(false);
     setPlaytest(false);
@@ -296,6 +318,31 @@ export const AppProvider = (props) => {
   const toggleInventoryMode = () => {
     setInventoryMode(!inventoryMode);
     setLocalStorage('inventoryMode', !inventoryMode);
+
+    if (!inventoryMode && limitedMode) {
+      setLimitedMode(false);
+      setLocalStorage('limitedMode', false);
+    }
+  };
+
+  const toggleLimitedMode = () => {
+    setLimitedMode(!limitedMode);
+    setLocalStorage('limitedMode', !limitedMode);
+
+    if (!limitedMode && inventoryMode) {
+      setInventoryMode(false);
+      setLocalStorage('inventoryMode', false);
+    }
+  };
+
+  const toggleLimitedSwitch = () => {
+    setLimitedSwitch(!limitedSwitch);
+    setLocalStorage('limitedSwitch', !limitedSwitch);
+
+    if (limitedSwitch && limitedMode) {
+      setLimitedMode(false);
+      setLocalStorage('limitedMode', false);
+    }
   };
 
   const changeCryptDeckSort = (method) => {
@@ -377,6 +424,8 @@ export const AppProvider = (props) => {
     initFromStorage('lang', 'en-EN', setLang);
     initFromStorage('addMode', isDesktop, setAddMode);
     initFromStorage('inventoryMode', false, setInventoryMode);
+    initFromStorage('limitedMode', false, setLimitedMode);
+    initFromStorage('limitedSwitch', false, setLimitedSwitch);
     initFromStorage('showImage', true, setShowImage);
     initFromStorage('recentDecks', [], setRecentDecks);
     initFromStorage('playtest', false, setPlaytest);
@@ -504,6 +553,10 @@ export const AppProvider = (props) => {
         setHideMissing,
         inventoryMode,
         toggleInventoryMode,
+        limitedMode,
+        toggleLimitedMode,
+        limitedSwitch,
+        toggleLimitedSwitch,
         setInventoryMode,
         addMode,
         toggleAddMode,
