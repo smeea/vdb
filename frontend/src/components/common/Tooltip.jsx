@@ -37,8 +37,7 @@ const Tooltip = ({
     placement: arrowPlacement,
     x,
     y,
-    reference,
-    floating,
+    refs,
     strategy,
     context,
   } = useFloating({
@@ -76,7 +75,11 @@ const Tooltip = ({
 
   return (
     <>
-      <div className={className} ref={reference} {...getReferenceProps()}>
+      <div
+        className={className}
+        ref={refs.setReference}
+        {...getReferenceProps()}
+      >
         {children}
       </div>
       <FloatingPortal>
@@ -86,7 +89,7 @@ const Tooltip = ({
               noPadding ? '' : 'p-3'
             } ${widthClass[size]}
 `}
-            ref={floating}
+            ref={refs.setFloating}
             style={{
               position: strategy,
               top: y ?? 0,
