@@ -16,8 +16,12 @@ import {
 } from '@/context';
 import { byTimestamp } from '@/utils';
 import {
-  setLimitedCrypt,
-  setLimitedLibrary,
+  setLimitedSets,
+  setLimitedAllowedCrypt,
+  setLimitedAllowedLibrary,
+  setLimitedBannedCrypt,
+  setLimitedBannedLibrary,
+  limitedFullStore,
   deckStore,
   deckLocalize,
 } from '@/context';
@@ -129,13 +133,18 @@ export const AppProvider = (props) => {
       'localizedCrypt',
       'localizedLibrary',
       'preconDecks',
-      'limitedCrypt',
-      'limitedLibrary',
+      'limitedAllowedCrypt',
+      'limitedAllowedLibrary',
+      'limitedBannedCrypt',
+      'limitedBannedLibrary',
+      'limitedSets',
     ])
-      .then(([v, cb, lb, nc, nl, lc, ll, pd, limC, limL]) => {
+      .then(([v, cb, lb, nc, nl, lc, ll, pd, lac, lal, lbc, lbl, ls]) => {
         if (!v || CARD_VERSION > v) {
           fetchAndSetCardBase();
         } else {
+          limitedFullStore.crypt = cb;
+          limitedFullStore.library = lb;
           setCryptCardBase(cb);
           setLibraryCardBase(lb);
           setNativeCrypt(nc);
@@ -144,16 +153,37 @@ export const AppProvider = (props) => {
           setLocalizedLibrary(ll);
           setPreconDecks(pd);
 
-          const limitedCrypt = {};
-          const limitedLibrary = {};
-          Object.keys(limC).map((c) => {
-            limitedCrypt[c] = cb[c];
-          });
-          Object.keys(limL).map((c) => {
-            limitedLibrary[c] = lb[c];
-          });
-          setLimitedCrypt(limitedCrypt);
-          setLimitedLibrary(limitedLibrary);
+          if (lac) {
+            const limitedAllowedCrypt = {};
+            Object.keys(lac).map((c) => {
+              limitedAllowedCrypt[c] = cb[c];
+            });
+            setLimitedAllowedCrypt(limitedAllowedCrypt);
+          }
+          if (lal) {
+            const limitedAllowedLibrary = {};
+            Object.keys(lal).map((c) => {
+              limitedAllowedLibrary[c] = lb[c];
+            });
+            setLimitedAllowedLibrary(limitedAllowedLibrary);
+          }
+          if (lbc) {
+            const limitedBannedCrypt = {};
+            Object.keys(lbc).map((c) => {
+              limitedBannedCrypt[c] = cb[c];
+            });
+            setLimitedBannedCrypt(limitedBannedCrypt);
+          }
+          if (lbl) {
+            const limitedBannedLibrary = {};
+            Object.keys(lbl).map((c) => {
+              limitedBannedLibrary[c] = lb[c];
+            });
+            setLimitedBannedLibrary(limitedBannedLibrary);
+          }
+          if (ls) {
+            setLimitedSets(ls);
+          }
         }
       })
       .catch(() => {

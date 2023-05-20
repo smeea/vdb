@@ -1,10 +1,11 @@
 # FIX
 - Swipe to Card Ideas on mobile
+- Add card delete to Limited
+- Add export/import to Limited
 
 # FEATURES
 - Events decks archive analyzing
 - TWD Deck check documentation
-- Custom lists for tournaments (search & verify)
 
 # MAYBE LATER FEATURES
 - Offline decks storage

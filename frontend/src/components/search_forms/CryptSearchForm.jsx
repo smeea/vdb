@@ -215,6 +215,7 @@ const CryptSearchForm = () => {
       hideMissing,
       inventoryMode,
       cryptCardBase,
+      limitedMode,
     ]
   );
 

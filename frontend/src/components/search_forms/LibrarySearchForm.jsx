@@ -26,6 +26,7 @@ import {
   searchLibraryForm,
   clearSearchForm,
   inventoryStore,
+  limitedStore,
 } from '@/context';
 
 const LibrarySearchForm = () => {
@@ -37,10 +38,14 @@ const LibrarySearchForm = () => {
     inventoryMode,
     isMobile,
     playtest,
+    limitedMode,
   } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const limitedLibrary = useSnapshot(limitedStore).library;
   const libraryFormState = useSnapshot(searchLibraryForm);
-  const { filterLibrary } = useFilters(libraryCardBase);
+  const { filterLibrary } = useFilters(
+    limitedMode ? limitedLibrary : libraryCardBase
+  );
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
   const showLimit = 250;
@@ -205,6 +210,7 @@ const LibrarySearchForm = () => {
       hideMissing,
       inventoryMode,
       libraryCardBase,
+      limitedMode,
     ]
   );
 
