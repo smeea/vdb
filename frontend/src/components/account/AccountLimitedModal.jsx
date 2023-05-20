@@ -4,28 +4,37 @@ import {
   ResultCryptTable,
   ResultLibraryTable,
   AccountLimitedSet,
-  QuickSelect,
+  NewCardSelect,
   Modal,
 } from '@/components';
 import {
   limitedSetChange,
   limitedCardChange,
   limitedFullStore,
+  useApp,
 } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const AccountLimitedModal = ({ setShow }) => {
+  const { cryptCardBase, libraryCardBase } = useApp();
+
   const limitedSets = useSnapshot(limitedFullStore).sets;
   const limitedAllowedCrypt = useSnapshot(limitedFullStore).allowed.crypt;
   const limitedAllowedLibrary = useSnapshot(limitedFullStore).allowed.library;
   const limitedBannedCrypt = useSnapshot(limitedFullStore).banned.crypt;
   const limitedBannedLibrary = useSnapshot(limitedFullStore).banned.library;
 
-  const allowedAdd = (card) => {
+  const allowedAdd = (e) => {
+    const card =
+      e.value > 200000 ? cryptCardBase[e.value] : libraryCardBase[e.value];
+
     limitedCardChange(card, true, true);
   };
 
-  const bannedAdd = (card) => {
+  const bannedAdd = (e) => {
+    const card =
+      e.value > 200000 ? cryptCardBase[e.value] : libraryCardBase[e.value];
+
     limitedCardChange(card, false, true);
   };
 
@@ -35,26 +44,48 @@ const AccountLimitedModal = ({ setShow }) => {
 
   const handleClose = () => setShow(false);
 
+  const BCP_START = '2018-01-01';
+
   return (
-    <Modal handleClose={handleClose} title="Manage Limited Format">
+    <Modal handleClose={handleClose} size="lg" title="Manage Limited Format">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
           <div className="underline text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Sets:
           </div>
-          <div className="flex flex-col gap-2">
-            {Object.keys(setsAndPrecons)
-              .filter((i) => i !== 'PLAYTEST')
-              .map((i) => {
-                return (
-                  <AccountLimitedSet
-                    key={i}
-                    isChecked={limitedSets[i]}
-                    handleSetChange={setChange}
-                    setid={i}
-                  />
-                );
-              })}
+          <div className="flex gap-3 sm:gap-5 max-sm:flex-col">
+            <div className="flex flex-col gap-2 basis-full sm:basis-1/2">
+              {Object.keys(setsAndPrecons)
+                .filter(
+                  (i) => i !== 'PLAYTEST' && setsAndPrecons[i].date > BCP_START
+                )
+                .map((i) => {
+                  return (
+                    <AccountLimitedSet
+                      key={i}
+                      isChecked={limitedSets[i]}
+                      handleSetChange={setChange}
+                      setid={i}
+                    />
+                  );
+                })}
+            </div>
+            <div className="flex flex-col gap-2 basis-full sm:basis-1/2">
+              {Object.keys(setsAndPrecons)
+                .filter(
+                  (i) => i !== 'PLAYTEST' && setsAndPrecons[i].date < BCP_START
+                )
+                .map((i) => {
+                  return (
+                    <AccountLimitedSet
+                      key={i}
+                      isChecked={limitedSets[i]}
+                      handleSetChange={setChange}
+                      setid={i}
+                    />
+                  );
+                })}
+            </div>
           </div>
         </div>
         <div className="flex flex-col gap-2">
@@ -66,30 +97,32 @@ const AccountLimitedModal = ({ setShow }) => {
               (in addition to Set selection):
             </div>
           </div>
-          <QuickSelect setCard={allowedAdd} />
-          {Object.keys(limitedAllowedCrypt).length > 0 && (
-            <div>
+          <div className="flex gap-3 sm:gap-5 max-sm:flex-col">
+            <div className="flex flex-col basis-full sm:basis-7/12 gap-2">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Crypt:
               </div>
-              <ResultCryptTable
-                resultCards={Object.values(limitedAllowedCrypt)}
-                inLimited="allowed"
-              />
+              <NewCardSelect target="crypt" onChange={allowedAdd} />
+              {Object.keys(limitedAllowedCrypt).length > 0 && (
+                <ResultCryptTable
+                  resultCards={Object.values(limitedAllowedCrypt)}
+                  inLimited="allowed"
+                />
+              )}
             </div>
-          )}
-          {Object.keys(limitedAllowedLibrary).length > 0 && (
-            <div>
+            <div className="flex flex-col basis-full sm:basis-5/12 gap-2">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Library:
               </div>
-
-              <ResultLibraryTable
-                resultCards={Object.values(limitedAllowedLibrary)}
-                inLimited="allowed"
-              />
+              <NewCardSelect target="library" onChange={allowedAdd} />
+              {Object.keys(limitedAllowedLibrary).length > 0 && (
+                <ResultLibraryTable
+                  resultCards={Object.values(limitedAllowedLibrary)}
+                  inLimited="allowed"
+                />
+              )}
             </div>
-          )}
+          </div>
         </div>
         <div className="flex flex-col gap-2">
           <div>
@@ -100,29 +133,32 @@ const AccountLimitedModal = ({ setShow }) => {
               (overwrite all):
             </div>
           </div>
-          <QuickSelect setCard={bannedAdd} />
-          {Object.keys(limitedBannedCrypt).length > 0 && (
-            <div>
+          <div className="flex gap-3 sm:gap-5 max-sm:flex-col">
+            <div className="flex flex-col basis-full sm:basis-7/12 gap-2">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Crypt:
               </div>
-              <ResultCryptTable
-                resultCards={Object.values(limitedBannedCrypt)}
-                inLimited="banned"
-              />
+              <NewCardSelect target="crypt" onChange={bannedAdd} />
+              {Object.keys(limitedBannedCrypt).length > 0 && (
+                <ResultCryptTable
+                  resultCards={Object.values(limitedBannedCrypt)}
+                  inLimited="banned"
+                />
+              )}
             </div>
-          )}
-          {Object.keys(limitedBannedLibrary).length > 0 && (
-            <div>
+            <div className="flex flex-col basis-full sm:basis-5/12 gap-2">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Library:
               </div>
-              <ResultLibraryTable
-                resultCards={Object.values(limitedBannedLibrary)}
-                inLimited="banned"
-              />
+              <NewCardSelect target="library" onChange={bannedAdd} />
+              {Object.keys(limitedBannedLibrary).length > 0 && (
+                <ResultLibraryTable
+                  resultCards={Object.values(limitedBannedLibrary)}
+                  inLimited="banned"
+                />
+              )}
             </div>
-          )}
+          </div>
         </div>
       </div>
     </Modal>

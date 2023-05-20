@@ -55,15 +55,17 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, inLimited }) => {
       {...swipeHandlers}
       className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
-      {isEditable && addMode && (
-        <td>
-          <ButtonAddCard deckid={deck.deckid} card={card} inDeck={inDeck} />
-        </td>
-      )}
-      {inLimited && (
+      {inLimited ? (
         <td className="min-w-[22px]">
           <AccountLimitedDelCard cardid={card.Id} target={inLimited} />
         </td>
+      ) : (
+        isEditable &&
+        addMode && (
+          <td>
+            <ButtonAddCard deckid={deck.deckid} card={card} inDeck={inDeck} />
+          </td>
+        )
       )}
       {inventoryMode && (
         <td className="min-w-[60px]">

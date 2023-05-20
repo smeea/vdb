@@ -21,7 +21,7 @@ const AccountLimitedButtons = () => {
           text="Manage Format"
         />
       </div>
-      {showModal && <AccountLimitedModal size="md" setShow={setShowModal} />}
+      {showModal && <AccountLimitedModal setShow={setShowModal} />}
     </>
   );
 };

@@ -61,20 +61,21 @@ const ResultCryptTableRow = ({
       {...swipeHandlers}
       className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
-      {(inRecommendation ? isEditable : isEditable && addMode) && (
-        <td className="min-w-[22px]">
-          <ButtonAddCard
-            cardid={card.Id}
-            deckid={deck.deckid}
-            card={card}
-            inDeck={inDeck}
-          />
-        </td>
-      )}
-      {inLimited && (
+      {inLimited ? (
         <td className="min-w-[22px]">
           <AccountLimitedDelCard cardid={card.Id} target={inLimited} />
         </td>
+      ) : (
+        (inRecommendation ? isEditable : isEditable && addMode) && (
+          <td className="min-w-[22px]">
+            <ButtonAddCard
+              cardid={card.Id}
+              deckid={deck.deckid}
+              card={card}
+              inDeck={inDeck}
+            />
+          </td>
+        )
       )}
       {inventoryMode && (
         <td className="min-w-[60px]">
