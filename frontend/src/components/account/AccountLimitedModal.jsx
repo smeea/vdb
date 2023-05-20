@@ -17,12 +17,12 @@ import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const AccountLimitedModal = ({ setShow }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
-
   const limitedSets = useSnapshot(limitedFullStore).sets;
   const limitedAllowedCrypt = useSnapshot(limitedFullStore).allowed.crypt;
   const limitedAllowedLibrary = useSnapshot(limitedFullStore).allowed.library;
   const limitedBannedCrypt = useSnapshot(limitedFullStore).banned.crypt;
   const limitedBannedLibrary = useSnapshot(limitedFullStore).banned.library;
+  const BCP_START = '2018-01-01';
 
   const allowedAdd = (e) => {
     const card =
@@ -42,12 +42,12 @@ const AccountLimitedModal = ({ setShow }) => {
     limitedSetChange(setid, isAdd);
   };
 
-  const handleClose = () => setShow(false);
-
-  const BCP_START = '2018-01-01';
-
   return (
-    <Modal handleClose={handleClose} size="lg" title="Manage Limited Format">
+    <Modal
+      handleClose={() => setShow(false)}
+      size="lg"
+      title="Manage Limited Format"
+    >
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
           <div className="underline text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
