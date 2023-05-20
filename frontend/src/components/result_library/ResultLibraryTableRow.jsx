@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import {
+  AccountLimitedDelCard,
   ButtonAddCard,
   ResultLibraryTableRowCommon,
   ResultUsed,
@@ -9,7 +10,7 @@ import {
 import { useApp, deckStore, deckCardChange } from '@/context';
 import { useDebounce } from '@/hooks';
 
-const ResultLibraryTableRow = ({ card, handleClick, idx }) => {
+const ResultLibraryTableRow = ({ card, handleClick, idx, inLimited }) => {
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inDeck = deck?.library[card.Id]?.q || 0;
@@ -57,6 +58,11 @@ const ResultLibraryTableRow = ({ card, handleClick, idx }) => {
       {isEditable && addMode && (
         <td>
           <ButtonAddCard deckid={deck.deckid} card={card} inDeck={inDeck} />
+        </td>
+      )}
+      {inLimited && (
+        <td className="min-w-[22px]">
+          <AccountLimitedDelCard cardid={card.Id} target={inLimited} />
         </td>
       )}
       {inventoryMode && (

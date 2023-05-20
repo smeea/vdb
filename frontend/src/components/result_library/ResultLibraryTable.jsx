@@ -2,7 +2,7 @@ import React from 'react';
 import { ResultModal, ResultLibraryTableRow } from '@/components';
 import { useModalCardController } from '@/hooks';
 
-const ResultLibraryTable = ({ resultCards }) => {
+const ResultLibraryTable = ({ resultCards, inLimited }) => {
   const {
     currentModalCard,
     shouldShowModal,
@@ -22,6 +22,7 @@ const ResultLibraryTable = ({ resultCards }) => {
                 card={card}
                 handleClick={handleModalCardOpen}
                 idx={idx}
+                inLimited={inLimited}
               />
             );
           })}

@@ -2,7 +2,7 @@ import React from 'react';
 import { ResultModal, ResultCryptTableRow } from '@/components';
 import { useModalCardController } from '@/hooks';
 
-const ResultCryptTable = ({ resultCards, inRecommendation }) => {
+const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
   const {
     currentModalCard,
     shouldShowModal,
@@ -23,6 +23,7 @@ const ResultCryptTable = ({ resultCards, inRecommendation }) => {
                 handleClick={handleModalCardOpen}
                 idx={idx}
                 inRecommendation={inRecommendation}
+                inLimited={inLimited}
               />
             );
           })}

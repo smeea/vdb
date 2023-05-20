@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
   ResultCryptTable,
   ResultLibraryTable,
-  Checkbox,
-  Button,
+  AccountLimitedSet,
   QuickSelect,
   Modal,
 } from '@/components';
@@ -12,35 +11,10 @@ import {
   limitedSetChange,
   limitedCardChange,
   limitedFullStore,
-  useApp,
 } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
-const AccountLimitedSet = ({ isChecked, handleSetChange, setid }) => {
-  return (
-    <div className="flex gap-1">
-      <Checkbox
-        name={setid}
-        label={
-          <div className="flex gap-1.5">
-            {setsAndPrecons[setid].name}{' '}
-            {setsAndPrecons[setid].date && (
-              <div className="text-fgSecondary dark:text-fgSecondaryDark">
-                [{setsAndPrecons[setid].date}]
-              </div>
-            )}
-          </div>
-        }
-        checked={isChecked ?? false}
-        value={setid}
-        onChange={() => handleSetChange(setid, !isChecked)}
-      />
-    </div>
-  );
-};
-
 const AccountLimitedModal = ({ setShow }) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const limitedSets = useSnapshot(limitedFullStore).sets;
   const limitedAllowedCrypt = useSnapshot(limitedFullStore).allowed.crypt;
   const limitedAllowedLibrary = useSnapshot(limitedFullStore).allowed.library;
@@ -100,6 +74,7 @@ const AccountLimitedModal = ({ setShow }) => {
               </div>
               <ResultCryptTable
                 resultCards={Object.values(limitedAllowedCrypt)}
+                inLimited="allowed"
               />
             </div>
           )}
@@ -111,6 +86,7 @@ const AccountLimitedModal = ({ setShow }) => {
 
               <ResultLibraryTable
                 resultCards={Object.values(limitedAllowedLibrary)}
+                inLimited="allowed"
               />
             </div>
           )}
@@ -132,6 +108,7 @@ const AccountLimitedModal = ({ setShow }) => {
               </div>
               <ResultCryptTable
                 resultCards={Object.values(limitedBannedCrypt)}
+                inLimited="banned"
               />
             </div>
           )}
@@ -142,6 +119,7 @@ const AccountLimitedModal = ({ setShow }) => {
               </div>
               <ResultLibraryTable
                 resultCards={Object.values(limitedBannedLibrary)}
+                inLimited="banned"
               />
             </div>
           )}

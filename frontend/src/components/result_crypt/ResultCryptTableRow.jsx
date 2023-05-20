@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import {
+  AccountLimitedDelCard,
   ButtonAddCard,
   ResultCryptTableRowCommon,
   ResultUsed,
@@ -9,7 +10,13 @@ import {
 import { useApp, deckStore, deckCardChange } from '@/context';
 import { useDebounce } from '@/hooks';
 
-const ResultCryptTableRow = ({ card, handleClick, idx, inRecommendation }) => {
+const ResultCryptTableRow = ({
+  card,
+  handleClick,
+  idx,
+  inRecommendation,
+  inLimited,
+}) => {
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inDeck = deck?.crypt[card.Id]?.q || 0;
@@ -62,6 +69,11 @@ const ResultCryptTableRow = ({ card, handleClick, idx, inRecommendation }) => {
             card={card}
             inDeck={inDeck}
           />
+        </td>
+      )}
+      {inLimited && (
+        <td className="min-w-[22px]">
+          <AccountLimitedDelCard cardid={card.Id} target={inLimited} />
         </td>
       )}
       {inventoryMode && (

@@ -1,6 +1,5 @@
 # FIX
 - Swipe to Card Ideas on mobile
-- Add card delete to Limited
 - Add export/import to Limited
 
 # FEATURES

@@ -8,6 +8,8 @@ export { default as AccountLogin } from './AccountLogin';
 export { default as AccountLogoutButton } from './AccountLogoutButton';
 export { default as AccountLimitedButtons } from './AccountLimitedButtons';
 export { default as AccountLimitedModal } from './AccountLimitedModal';
+export { default as AccountLimitedSet } from './AccountLimitedSet';
+export { default as AccountLimitedDelCard } from './AccountLimitedDelCard';
 export { default as AccountPasswordForm } from './AccountPasswordForm';
 export { default as AccountPlaytestButtons } from './AccountPlaytestButtons';
 export { default as AccountPlaytestAdd } from './AccountPlaytestAdd';
