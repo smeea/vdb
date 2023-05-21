@@ -9,13 +9,18 @@ import {
   ConditionalTooltip,
 } from '@/components';
 import { getHardTotal } from '@/utils';
-import { useApp, inventoryStore, usedStore } from '@/context';
+import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
 
 const TwdResultCryptTableRow = ({ card, idx, handleClick }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const { limitedMode, inventoryMode, isMobile } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const limitedCrypt = useSnapshot(limitedStore).crypt;
   const usedCrypt = useSnapshot(usedStore).crypt;
-  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+  const inInventory = limitedMode
+    ? limitedCrypt[card.c.Id]
+      ? 99
+      : 0
+    : inventoryCrypt[card.c.Id]?.q ?? 0;
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
 
   return (
@@ -28,7 +33,7 @@ const TwdResultCryptTableRow = ({ card, idx, handleClick }) => {
       }`}
     >
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
-        {inventoryMode ? (
+        {limitedMode || inventoryMode ? (
           <ConditionalTooltip
             overlay={<UsedPopover cardid={card.c.Id} />}
             disabled={isMobile}

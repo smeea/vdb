@@ -9,14 +9,19 @@ import {
   ResultLibraryClan,
   ConditionalTooltip,
 } from '@/components';
-import { useApp, inventoryStore, usedStore } from '@/context';
+import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
 import { getHardTotal } from '@/utils';
 
 const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const { limitedMode, inventoryMode, isMobile } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const limitedLibrary = useSnapshot(limitedStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
-  const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
+  const inInventory = limitedMode
+    ? limitedLibrary[card.c.Id]
+      ? 99
+      : 0
+    : inventoryLibrary[card.c.Id]?.q ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
 
   return (
@@ -29,11 +34,10 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
       }`}
     >
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
-        {inventoryMode ? (
+        {limitedMode || inventoryMode ? (
           <ConditionalTooltip
             overlay={<UsedPopover cardid={card.c.Id} />}
             disabled={isMobile}
-            noPadding
           >
             <div
               className={`flex justify-center text-lg ${

@@ -1,7 +1,5 @@
 # FIX
 - Swipe to Card Ideas on mobile
-- Limited mode to TWD
-- Refactor LimitedModal
 
 # FEATURES
 - Events decks archive analyzing
@@ -22,3 +20,4 @@
 - Fix hooks eslint errors
 - Use react-error-boundary for error handling
 - Use 'ASCII Name and remove Name+unidecode where possible
+- Refactor AccountLimitedModal
