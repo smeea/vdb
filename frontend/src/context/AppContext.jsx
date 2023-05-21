@@ -123,6 +123,14 @@ export const AppProvider = (props) => {
     });
   };
 
+  const setLimitedFormat = (lac, lal, lbc, lbl, ls) => {
+    if (lac) setLimitedAllowedCrypt(lac);
+    if (lal) setLimitedAllowedLibrary(lal);
+    if (lbc) setLimitedBannedCrypt(lbc);
+    if (lbl) setLimitedBannedLibrary(lbl);
+    if (ls) setLimitedSets(ls);
+  };
+
   useEffect(() => {
     getMany([
       'cardVersion',
@@ -152,38 +160,7 @@ export const AppProvider = (props) => {
           setLocalizedCrypt(lc);
           setLocalizedLibrary(ll);
           setPreconDecks(pd);
-
-          if (lac) {
-            const limitedAllowedCrypt = {};
-            Object.keys(lac).map((c) => {
-              limitedAllowedCrypt[c] = cb[c];
-            });
-            setLimitedAllowedCrypt(limitedAllowedCrypt);
-          }
-          if (lal) {
-            const limitedAllowedLibrary = {};
-            Object.keys(lal).map((c) => {
-              limitedAllowedLibrary[c] = lb[c];
-            });
-            setLimitedAllowedLibrary(limitedAllowedLibrary);
-          }
-          if (lbc) {
-            const limitedBannedCrypt = {};
-            Object.keys(lbc).map((c) => {
-              limitedBannedCrypt[c] = cb[c];
-            });
-            setLimitedBannedCrypt(limitedBannedCrypt);
-          }
-          if (lbl) {
-            const limitedBannedLibrary = {};
-            Object.keys(lbl).map((c) => {
-              limitedBannedLibrary[c] = lb[c];
-            });
-            setLimitedBannedLibrary(limitedBannedLibrary);
-          }
-          if (ls) {
-            setLimitedSets(ls);
-          }
+          setLimitedFormat(lac, lal, lbc, lbl, ls);
         }
       })
       .catch(() => {
@@ -587,6 +564,7 @@ export const AppProvider = (props) => {
         toggleLimitedMode,
         limitedSwitch,
         toggleLimitedSwitch,
+        setLimitedFormat,
         setInventoryMode,
         addMode,
         toggleAddMode,

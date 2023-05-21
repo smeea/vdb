@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useSnapshot } from 'valtio';
+import { setMany } from 'idb-keyval';
+import Download from '@/assets/images/icons/download.svg';
+import Upload from '@/assets/images/icons/upload.svg';
 import {
   ResultCryptTable,
   ResultLibraryTable,
   AccountLimitedSet,
   NewCardSelect,
   Modal,
+  ButtonIconed,
 } from '@/components';
 import {
   limitedSetChange,
@@ -16,13 +20,14 @@ import {
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const AccountLimitedModal = ({ setShow }) => {
-  const { cryptCardBase, libraryCardBase } = useApp();
+  const { setLimitedFormat, cryptCardBase, libraryCardBase } = useApp();
   const limitedSets = useSnapshot(limitedFullStore).sets;
   const limitedAllowedCrypt = useSnapshot(limitedFullStore).allowed.crypt;
   const limitedAllowedLibrary = useSnapshot(limitedFullStore).allowed.library;
   const limitedBannedCrypt = useSnapshot(limitedFullStore).banned.crypt;
   const limitedBannedLibrary = useSnapshot(limitedFullStore).banned.library;
   const BCP_START = '2018-01-01';
+  const fileInput = useRef();
 
   const allowedAdd = (e) => {
     const card =
@@ -38,8 +43,73 @@ const AccountLimitedModal = ({ setShow }) => {
     limitedCardChange(card, false, true);
   };
 
-  const setChange = (setid, isAdd) => {
-    limitedSetChange(setid, isAdd);
+  const handleFileInputClick = () => {
+    fileInput.current.click();
+  };
+
+  const importFormat = (fileInput) => {
+    const reader = new FileReader();
+    const file = fileInput.current.files[0];
+    reader.readAsText(file);
+    reader.onload = async () => {
+      const formatText = reader.result;
+      const f = JSON.parse(formatText);
+
+      setLimitedFormat(
+        f.allowed.crypt,
+        f.allowed.library,
+        f.banned.crypt,
+        f.banned.library,
+        f.sets
+      );
+
+      setMany([
+        ['limitedAllowedCrypt', f.allowed.crypt],
+        ['limitedAllowedLibrary', f.allowed.library],
+        ['limitedBannedCrypt', f.banned.crypt],
+        ['limitedBannedLibrary', f.banned.library],
+        ['limitedSets', f.sets],
+      ]);
+    };
+  };
+
+  const minifyFormat = () => {
+    const minified = {
+      sets: limitedSets,
+      allowed: {
+        crypt: {},
+        library: {},
+      },
+      banned: {
+        crypt: {},
+        library: {},
+      },
+    };
+    Object.keys(limitedAllowedCrypt).map((c) => {
+      minified.allowed.crypt[c] = true;
+    });
+    Object.keys(limitedAllowedLibrary).map((c) => {
+      minified.allowed.library[c] = true;
+    });
+    Object.keys(limitedBannedCrypt).map((c) => {
+      minified.banned.crypt[c] = true;
+    });
+    Object.keys(limitedBannedLibrary).map((c) => {
+      minified.banned.library[c] = true;
+    });
+    return minified;
+  };
+
+  const exportFormat = async () => {
+    let { saveAs } = await import('file-saver');
+    const fileName = `Limited Format [${
+      new Date().toISOString().split('T')[0]
+    }].txt`;
+    const formatText = JSON.stringify(minifyFormat(), null, '  ');
+    const file = new File([formatText], fileName, {
+      type: 'text/plain;charset=utf-8',
+    });
+    saveAs(file, fileName);
   };
 
   return (
@@ -64,7 +134,7 @@ const AccountLimitedModal = ({ setShow }) => {
                     <AccountLimitedSet
                       key={i}
                       isChecked={limitedSets[i]}
-                      handleSetChange={setChange}
+                      handleSetChange={limitedSetChange}
                       setid={i}
                     />
                   );
@@ -80,7 +150,7 @@ const AccountLimitedModal = ({ setShow }) => {
                     <AccountLimitedSet
                       key={i}
                       isChecked={limitedSets[i]}
-                      handleSetChange={setChange}
+                      handleSetChange={limitedSetChange}
                       setid={i}
                     />
                   );
@@ -105,7 +175,9 @@ const AccountLimitedModal = ({ setShow }) => {
               <NewCardSelect target="crypt" onChange={allowedAdd} />
               {Object.keys(limitedAllowedCrypt).length > 0 && (
                 <ResultCryptTable
-                  resultCards={Object.values(limitedAllowedCrypt)}
+                  resultCards={Object.values(cryptCardBase).filter(
+                    (c) => limitedAllowedCrypt[c.Id]
+                  )}
                   inLimited="allowed"
                 />
               )}
@@ -117,7 +189,9 @@ const AccountLimitedModal = ({ setShow }) => {
               <NewCardSelect target="library" onChange={allowedAdd} />
               {Object.keys(limitedAllowedLibrary).length > 0 && (
                 <ResultLibraryTable
-                  resultCards={Object.values(limitedAllowedLibrary)}
+                  resultCards={Object.values(libraryCardBase).filter(
+                    (c) => limitedAllowedLibrary[c.Id]
+                  )}
                   inLimited="allowed"
                 />
               )}
@@ -141,7 +215,9 @@ const AccountLimitedModal = ({ setShow }) => {
               <NewCardSelect target="crypt" onChange={bannedAdd} />
               {Object.keys(limitedBannedCrypt).length > 0 && (
                 <ResultCryptTable
-                  resultCards={Object.values(limitedBannedCrypt)}
+                  resultCards={Object.values(cryptCardBase).filter(
+                    (c) => limitedBannedCrypt[c.Id]
+                  )}
                   inLimited="banned"
                 />
               )}
@@ -153,14 +229,40 @@ const AccountLimitedModal = ({ setShow }) => {
               <NewCardSelect target="library" onChange={bannedAdd} />
               {Object.keys(limitedBannedLibrary).length > 0 && (
                 <ResultLibraryTable
-                  resultCards={Object.values(limitedBannedLibrary)}
+                  resultCards={Object.values(libraryCardBase).filter(
+                    (c) => limitedBannedLibrary[c.Id]
+                  )}
                   inLimited="banned"
                 />
               )}
             </div>
           </div>
         </div>
+        <div className="flex justify-end gap-2">
+          <ButtonIconed
+            variant="primary"
+            onClick={handleFileInputClick}
+            title="Import Format"
+            icon={<Upload />}
+            text="Import Format"
+          />
+
+          <ButtonIconed
+            variant="primary"
+            onClick={exportFormat}
+            title="Export Format"
+            icon={<Download />}
+            text="Export Format"
+          />
+        </div>
       </div>
+      <input
+        ref={fileInput}
+        accept=".txt"
+        type="file"
+        onChange={() => importFormat(fileInput)}
+        style={{ display: 'none' }}
+      />
     </Modal>
   );
 };

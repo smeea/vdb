@@ -1,7 +1,7 @@
 # FIX
 - Swipe to Card Ideas on mobile
-- Add export/import to Limited
 - Limited mode to TWD
+- Refactor LimitedModal
 
 # FEATURES
 - Events decks archive analyzing
