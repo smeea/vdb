@@ -24,7 +24,7 @@ const TwdResultDescription = ({ deck }) => {
             </div>
             {username && (
               <div className="w-full">
-                <DeckCloneButton deck={deck} noRedirect />
+                <DeckCloneButton deck={deck} inTwdPda />
               </div>
             )}
           </div>
@@ -39,7 +39,7 @@ const TwdResultDescription = ({ deck }) => {
               <TwdResultDescriptionPlayers players={deck.players} />
               <div className="flex flex-col gap-1">
                 <TwdOpenDeckButton deckid={deck['deckid']} />
-                {username && <DeckCloneButton deck={deck} noRedirect />}
+                {username && <DeckCloneButton deck={deck} inTwdPda />}
               </div>
             </div>
           </div>

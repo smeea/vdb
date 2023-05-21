@@ -32,7 +32,7 @@ const PdaFavoriteButton = ({ deck }) => {
 
   return (
     <ButtonIconed
-      variant={isFavorited ? 'third' : 'secondary'}
+      variant={isFavorited ? 'third' : 'primary'}
       onClick={handleClick}
       icon={isFavorited ? <StarFill /> : <Star />}
       text={favoritedBy}

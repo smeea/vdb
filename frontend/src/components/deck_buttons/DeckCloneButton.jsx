@@ -4,7 +4,7 @@ import Files from '@/assets/images/icons/files.svg';
 import { deckStore, useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
-const DeckCloneButton = ({ deck, noText, noRedirect }) => {
+const DeckCloneButton = ({ deck, inTwdPda, noText }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
   const [success, setSuccess] = useState(false);
@@ -58,7 +58,7 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
             isBranches: false,
           };
 
-          if (!noRedirect) navigate(`/decks/${data.deckid}`);
+          if (!inTwdPda) navigate(`/decks/${data.deckid}`);
           setSuccess(true);
           setTimeout(() => {
             setSuccess(false);
@@ -73,7 +73,11 @@ const DeckCloneButton = ({ deck, noText, noRedirect }) => {
     <ButtonIconed
       className="w-full"
       variant={
-        success ? 'success' : noText || !isDesktop ? 'primary' : 'secondary'
+        success
+          ? 'success'
+          : inTwdPda || noText || !isDesktop
+          ? 'primary'
+          : 'secondary'
       }
       onClick={cloneDeck}
       title="Clone Deck to your account for editing"

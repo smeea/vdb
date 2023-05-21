@@ -24,7 +24,7 @@ const PdaResultDescription = ({ deck }) => {
             {username && (
               <>
                 <div className="w-full">
-                  <DeckCloneButton deck={deck} noRedirect />
+                  <DeckCloneButton deck={deck} inTwdPda />
                 </div>
                 <div className="w-full">
                   <PdaFavoriteButton deck={deck} />
@@ -34,7 +34,7 @@ const PdaResultDescription = ({ deck }) => {
           </div>
         </div>
       ) : (
-        <div className="flex px-1 sm:px-0">
+        <div className="flex p-1 sm:px-0">
           <div className="basis-9/12">
             <PdaResultDescriptionText deck={deck} />
           </div>
@@ -42,7 +42,7 @@ const PdaResultDescription = ({ deck }) => {
             <TwdOpenDeckButton deckid={deck['deckid']} />
             {username && (
               <>
-                <DeckCloneButton deck={deck} noRedirect />
+                <DeckCloneButton deck={deck} inTwdPda />
                 <PdaFavoriteButton deck={deck} />
               </>
             )}
