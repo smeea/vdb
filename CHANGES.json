@@ -1,5 +1,12 @@
 [
   {
+    "version": "2023-05-21",
+    "changes": [
+      "Add support to Limited formats. In https://vdb.im/account you can enable it and customize cards you want to be included (allowed sets, and additional singles of allowed / banned cards) or load format file created by others, then on other pages you will see Limited Mode switch which will work similar to Inventory mode highlighting the cards not allowed by format and turning on-off search in Crypt/Library to search among all or only allowed card pool.",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-05-12",
     "changes": [
       "Solved CONNECTION PROBLEM for TWD with a lot of results, and reduced network usage for such searches for up to 15x, which must be very noticeable on slowest connections",

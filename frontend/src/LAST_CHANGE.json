@@ -1,8 +1,7 @@
 {
-  "version": "2023-05-12",
+  "version": "2023-05-21",
   "changes": [
-    "Solved CONNECTION PROBLEM for TWD with a lot of results, and reduced network usage for such searches for up to 15x, which must be very noticeable on slowest connections",
-    "Add Check TWD Report page (from 'More' button in TWD; not designed for mobile screen size) help prepare and check report before submit to https://www.vekn.net/forum/event-reports-and-twd - it will highlight some discrepancies from VEKN Event entry and common issues. It is not magic tool to do the job for you, it only helps but you must read and follow guidelines (see pinned post in Event Reports by the link above)",
-    "Small other fixes, including modal windows sizes (may still be not perfect, but more standardized as of now)"
+    "Add support to Limited formats. In https://vdb.im/account you can enable it and customize cards you want to be included (allowed sets, and additional singles of allowed / banned cards) or load format file created by others, then on other pages you will see Limited Mode switch which will work similar to Inventory mode highlighting the cards not allowed by format and turning on-off search in Crypt/Library to search among all or only allowed card pool.",
+    "Small other fixes"
   ]
 }
