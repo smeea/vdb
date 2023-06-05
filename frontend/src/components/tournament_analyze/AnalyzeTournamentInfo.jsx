@@ -55,7 +55,11 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
           <TwdResultDescriptionTextTr
             title={isMobile ? <TagFill /> : <>Scored GW + VP:</>}
           >
-            {info.totalGw} + {info.totalVp} <br />
+            {info.totalGw} + {info.totalVp}{' '}
+            <div className="inline text-midGray dark:text-midGrayDark">
+              (median: {info.medianGw} + {info.medianVp})
+            </div>
+            <br />
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>

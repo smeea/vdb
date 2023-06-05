@@ -21,18 +21,16 @@ const TournamentAnalyze = () => {
           setDecks={setDecks}
           setInfo={setInfo}
         />
-        {info && (
+        {info && decks && (
           <>
             <AnalyzeTournamentInfo info={info} decks={decks} />
-            <AnalyzeTournamentCharts info={info} decks={decks} />
+            <AnalyzeTournamentCharts decks={decks} />
+            <div className="flex flex-col gap-4 border">
+              {Object.values(decks).map((deck) => (
+                <AnalyzeTournamentDeck deck={deck} key={deck.author} />
+              ))}
+            </div>
           </>
-        )}
-        {decks && (
-          <div className="flex flex-col gap-4 border">
-            {Object.values(decks).map((deck) => (
-              <AnalyzeTournamentDeck deck={deck} key={deck.author} />
-            ))}
-          </div>
         )}
       </div>
     </div>

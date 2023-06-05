@@ -5,7 +5,7 @@ import {
   Title,
 } from '@/components';
 
-const AnalyzeTournamentCharts = ({ info, decks }) => {
+const AnalyzeTournamentCharts = ({ decks }) => {
   return (
     <div className="flex border gap-4 py-4">
       <div className="flex flex-col justify-center h-[450px] w-[450px]">

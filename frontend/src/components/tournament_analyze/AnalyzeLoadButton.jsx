@@ -54,11 +54,17 @@ const AnalyzeLoadButton = ({
     reader.onload = async () => {
       const wb = read(reader.result);
 
-      let totalGw = 0;
-      let totalVp = 0;
-
+      const wsInfo = wb.Sheets['Tournament Info'];
+      const dataInfo = utils.sheet_to_csv(wsInfo).split('\n');
       const wsScores = wb.Sheets['Methuselahs'];
       const dataScores = utils.sheet_to_csv(wsScores).split('\n');
+
+      let totalGw = 0;
+      let totalVp = 0;
+      let medianVp = 0;
+      let medianGw = 0;
+      const totalPlayers = dataInfo[9].split(',')[1];
+
       dataScores.forEach((n, idx) => {
         if (idx < 6 || n[0] === ',') return;
         const array = n.split(',');
@@ -70,20 +76,24 @@ const AnalyzeLoadButton = ({
         };
         scores[veknId] = results;
 
+        if (results.rank > Math.ceil(totalPlayers / 2)) {
+          if (medianVp < results.vp) medianVp = results.vp;
+          if (medianGw < results.gw) medianGw = results.gw;
+        }
         totalGw += results.gw;
         totalVp += results.vp;
       });
       setScores(scores);
 
-      const wsInfo = wb.Sheets['Tournament Info'];
-      const dataInfo = utils.sheet_to_csv(wsInfo).split('\n');
       const info = {
         name: dataInfo[2].split(',')[1],
         date: dataInfo[3].split(',')[1],
         location: dataInfo[6].split(',')[1],
-        players: dataInfo[9].split(',')[1],
+        players: totalPlayers,
         totalGw: totalGw,
         totalVp: totalVp,
+        medianGw: medianGw,
+        medianVp: medianVp,
       };
       setInfo(info);
     };

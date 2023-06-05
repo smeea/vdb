@@ -11,7 +11,6 @@ import { getClan } from '@/utils';
 
 const AnalyzeTournamentChartsClan = ({ decks }) => {
   const data = useMemo(() => {
-    // const qty = Object.keys(decks).length;
     const result = {};
 
     Object.values(decks).map((deck) => {

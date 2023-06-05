@@ -31,12 +31,12 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
 
     return [
       {
-        name: 'Stealth',
-        value: result.stealth / qty || 0,
+        name: 'Bleed',
+        value: result.bleed / qty || 0,
       },
       {
-        name: 'Vote',
-        value: result.vote / qty || 0,
+        name: 'Stealth',
+        value: result.stealth / qty || 0,
       },
       {
         name: 'Block',
@@ -51,8 +51,8 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
         value: result.ally / qty || 0,
       },
       {
-        name: 'Bleed',
-        value: result.bleed / qty || 0,
+        name: 'Vote',
+        value: result.vote / qty || 0,
       },
     ];
   }, [decks]);
