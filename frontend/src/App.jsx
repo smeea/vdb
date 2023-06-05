@@ -21,6 +21,7 @@ const Pda = lazy(() => import('./pages/Pda.jsx'));
 const Twd = lazy(() => import('./pages/Twd.jsx'));
 const Changelog = lazy(() => import('./pages/Changelog.jsx'));
 const Documentation = lazy(() => import('./pages/Documentation.jsx'));
+const TournamentAnalyze = lazy(() => import('./pages/TournamentAnalyze.jsx'));
 const TwdHallOfFameCards = lazy(() => import('./pages/TwdHallOfFameCards.jsx'));
 const TwdHallOfFameTournaments = lazy(() =>
   import('./pages/TwdHallOfFameTournaments.jsx')
@@ -153,6 +154,14 @@ const App = () => {
           element={
             <Suspense fallback={<div />}>
               <TwdCardsHistory />
+            </Suspense>
+          }
+        />
+        <Route
+          path="tournament_analyze"
+          element={
+            <Suspense fallback={<div />}>
+              <TournamentAnalyze />
             </Suspense>
           }
         />

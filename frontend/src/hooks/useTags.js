@@ -15,7 +15,7 @@ const useTags = (crypt, library) => {
   const threshold = {
     accel: 10,
     ally: 10,
-    bleed: 10,
+    bleed: 15,
     block: 15,
     combat: 20,
     mmpa: 10,

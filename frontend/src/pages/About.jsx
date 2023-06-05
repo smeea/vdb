@@ -6,7 +6,7 @@ import Discord from '@/assets/images/icons/discord.svg';
 import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg';
 import Globe2 from '@/assets/images/icons/globe2.svg';
 import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg';
-import { Banner } from '@/components';
+import { Title, Banner } from '@/components';
 import lastChange from '@/LAST_CHANGE.json';
 
 const ContactLi = ({ icon, children }) => {
@@ -17,14 +17,6 @@ const ContactLi = ({ icon, children }) => {
       </div>
       {children}
     </li>
-  );
-};
-
-const Title = ({ children }) => {
-  return (
-    <div className="text-xl font-bold  text-fgSecondary underline dark:text-fgSecondaryDark">
-      {children}
-    </div>
   );
 };
 

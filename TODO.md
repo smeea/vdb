@@ -4,6 +4,7 @@
 # FEATURES
 - Events decks archive analyzing
 - TWD Deck check documentation
+- Total info to TWD with tag appearance
 
 # MAYBE LATER FEATURES
 - Offline decks storage

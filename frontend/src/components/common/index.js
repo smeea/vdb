@@ -21,5 +21,6 @@ export { default as SelectAsync } from './SelectAsync.jsx';
 export { default as SelectCreatable } from './SelectCreatable.jsx';
 export { default as TabButton } from './TabButton.jsx';
 export { default as Textarea } from './Textarea.jsx';
+export { default as Title } from './Title.jsx';
 export { default as Toggle } from './Toggle.jsx';
 export { default as Tooltip } from './Tooltip.jsx';

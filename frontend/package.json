@@ -54,5 +54,8 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "dependencies": {
+    "recharts": "^2.6.2"
+  }
 }

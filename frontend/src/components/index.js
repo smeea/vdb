@@ -21,6 +21,7 @@ export * from './result_twd';
 export * from './review';
 export * from './search_forms';
 export * from './seating';
+export * from './tournament_analyze';
 export * from './twd_cards_history';
 export * from './twd_check';
 export * from './twd_hall_fame_cards';

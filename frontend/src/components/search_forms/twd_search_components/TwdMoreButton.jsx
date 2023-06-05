@@ -7,6 +7,7 @@ import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
 import ClockHistory from '@/assets/images/icons/clock-history.svg';
 import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg';
 import Calendar2EventFill from '@/assets/images/icons/calendar2-event-fill.svg';
+import PieChartFill from '@/assets/images/icons/pie-chart-fill.svg';
 
 const TwdMoreButton = ({ noText }) => {
   const navigate = useNavigate();
@@ -41,6 +42,12 @@ const TwdMoreButton = ({ noText }) => {
           <div className="flex items-center gap-2">
             <Calendar2EventFill />
             Check TWD Report
+          </div>
+        </MenuItem>
+        <MenuItem onClick={() => navigate('/tournament_analyze')}>
+          <div className="flex items-center gap-2">
+            <PieChartFill />
+            Analyze Tournament
           </div>
         </MenuItem>
       </MenuItems>
