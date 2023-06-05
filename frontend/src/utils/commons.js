@@ -104,24 +104,33 @@ export const getCardsArray = (cardsList) => {
 };
 
 export const getClan = (crypt) => {
-  const topClan = Object.values(crypt)
+  const clans = {};
+  Object.values(crypt)
     .filter((card) => card.c.Name !== 'Anarch Convert')
-    .reduce(
-      (acc, card) => {
-        const total = card.q + acc.t;
+    .map((card) => {
+      const clan = card.c.Clan;
+      if (clans[clan]) {
+        clans[clan] += card.q;
+      } else {
+        clans[clan] = card.q;
+      }
+    });
 
-        if (acc.c === card.c.Clan) {
-          return { c: acc.c, q: acc.q + card.q, t: total };
-        } else if (card.q > acc.q) {
-          return { c: card.c.Clan, q: card.q, t: total };
-        }
-        return { c: acc.c, q: acc.q, t: total };
-      },
-      { c: null, q: 0, t: 0 }
-    );
+  const topClan = Object.keys(clans).reduce(
+    (acc, c) => {
+      const t = acc.t + clans[c];
+
+      if (clans[c] > acc.q) {
+        return { clan: c, q: clans[c], t: t };
+      } else {
+        return { ...acc, t: t };
+      }
+    },
+    { clan: null, q: 0, t: 0 }
+  );
 
   if (topClan.q / topClan.t > 0.5) {
-    return topClan.c;
+    return topClan.clan;
   } else {
     return null;
   }
