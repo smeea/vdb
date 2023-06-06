@@ -1,12 +1,5 @@
 import React, { useMemo } from 'react';
-import {
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Tooltip,
-  Sector,
-  Cell,
-} from 'recharts';
+import { ResponsiveContainer, PieChart, Pie, Tooltip } from 'recharts';
 import { getClan } from '@/utils';
 
 const AnalyzeTournamentChartsClan = ({ decks }) => {
@@ -37,6 +30,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
     <ResponsiveContainer width="100%" height="100%">
       <PieChart>
         <Pie
+          isAnimationActive={false}
           data={data}
           dataKey="value"
           cx="50%"
@@ -45,7 +39,14 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
           fill="#8884d8"
           label={({ index }) => data[index].name}
         />
-        <Tooltip />
+        <Tooltip
+          contentStyle={{
+            padding: '2px 9px 2px 2px',
+            border: '1px solid #606070',
+            background: '#404050',
+          }}
+          itemStyle={{ color: 'white' }}
+        />
       </PieChart>
     </ResponsiveContainer>
   );

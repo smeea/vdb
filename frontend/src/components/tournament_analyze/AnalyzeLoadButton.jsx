@@ -108,43 +108,30 @@ const AnalyzeLoadButton = ({
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex gap-2">
-        <ButtonIconed
-          variant="primary"
-          onClick={() => fileInputDecks.current.click()}
-          title="Import Decks"
-          icon={<Upload />}
-          text="Import Decks (.txt)"
-        />
-        {isDecks && <Ok />}
-        <input
-          multiple
-          ref={fileInputDecks}
-          accept=".txt"
-          type="file"
-          onChange={() => loadDecks()}
-          style={{ display: 'none' }}
-        />
-      </div>
-      <div className="flex gap-2">
-        <ButtonIconed
-          variant="primary"
-          onClick={() => fileInputArchon.current.click()}
-          title="Import Archon"
-          icon={<Upload />}
-          text="Import Archon (.xlsx)"
-        />
-        {isScores && <Ok />}
-        <input
-          ref={fileInputArchon}
-          accept=".xlsx"
-          type="file"
-          onChange={() => loadArchon()}
-          style={{ display: 'none' }}
-        />
-      </div>
-      <div className="flex gap-2">
+    <>
+      <div className="flex flex-col gap-2">
+        <div className="flex w-full gap-2">
+          <ButtonIconed
+            className="w-full"
+            variant="primary"
+            onClick={() => fileInputDecks.current.click()}
+            title="Import Decks"
+            icon={<Upload />}
+            text="Import Decks (.txt)"
+          />
+          {isDecks && <Ok />}
+        </div>
+        <div className="flex w-full gap-2">
+          <ButtonIconed
+            className="w-full"
+            variant="primary"
+            onClick={() => fileInputArchon.current.click()}
+            title="Import Archon"
+            icon={<Upload />}
+            text="Import Archon (.xlsx)"
+          />
+          {isScores && <Ok />}
+        </div>
         <ButtonIconed
           variant="primary"
           onClick={handleClear}
@@ -153,7 +140,22 @@ const AnalyzeLoadButton = ({
           text="Clear"
         />
       </div>
-    </div>
+      <input
+        multiple
+        ref={fileInputDecks}
+        accept=".txt"
+        type="file"
+        onChange={() => loadDecks()}
+        style={{ display: 'none' }}
+      />
+      <input
+        ref={fileInputArchon}
+        accept=".xlsx"
+        type="file"
+        onChange={() => loadArchon()}
+        style={{ display: 'none' }}
+      />
+    </>
   );
 };
 

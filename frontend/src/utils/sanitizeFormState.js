@@ -53,6 +53,16 @@ const sanitizeFormState = (target, state) => {
         'libraryTotal',
       ];
       break;
+    case 'analyze':
+      forms = [
+        'disciplines',
+        'traits',
+        'cardtypes',
+        'rank',
+        'capacity',
+        'libraryTotal',
+      ];
+      break;
     default:
       forms = [];
   }
@@ -148,6 +158,7 @@ const sanitizeFormState = (target, state) => {
         });
       });
       break;
+    case 'analyze':
     case 'pda':
     case 'twd':
       forms = ['crypt', 'library'];

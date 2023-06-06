@@ -56,7 +56,7 @@ const TwdResultDescriptionText = ({ deck }) => {
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick('author', deck['author'])}
             >
-              {deck['author']} <br />
+              {deck['author']}
             </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr

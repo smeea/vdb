@@ -4,6 +4,7 @@ import defaultsPdaForm from '@/components/search_forms/forms_data/defaultsPdaFor
 import defaultsTwdForm from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from '@/components/search_forms/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
+import defaultsAnalyzeForm from '@/components/search_forms/forms_data/defaultsAnalyzeForm.json';
 
 export const searchResults = proxy({});
 
@@ -23,6 +24,10 @@ export const searchPdaForm = proxy({
   ...deepClone(defaultsPdaForm),
 });
 
+export const searchAnalyzeForm = proxy({
+  ...deepClone(defaultsAnalyzeForm),
+});
+
 export const setCryptResults = (v) => {
   searchResults.crypt = v;
 };
@@ -37,6 +42,10 @@ export const setPdaResults = (v) => {
 
 export const setTwdResults = (v) => {
   searchResults.twd = v;
+};
+
+export const setAnalyzeResults = (v) => {
+  searchResults.analyze = v;
 };
 
 export const setCryptCompare = (v) => {
@@ -81,6 +90,11 @@ export const clearSearchForm = (target) => {
     case 'twd':
       Object.keys(defaultsTwdForm).map((k) => {
         searchTwdForm[k] = deepClone(defaultsTwdForm[k]);
+      });
+      break;
+    case 'analyze':
+      Object.keys(defaultsAnalyzeForm).map((k) => {
+        searchAnalyzeForm[k] = deepClone(defaultsAnalyzeForm[k]);
       });
       break;
     case 'pda':

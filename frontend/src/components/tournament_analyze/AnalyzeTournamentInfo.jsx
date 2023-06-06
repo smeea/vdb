@@ -11,7 +11,7 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
   const { isMobile } = useApp();
 
   return (
-    <div className="flex flex-col border p-4">
+    <div className="flex basis-full flex-col py-2">
       <Title>General Info</Title>
       <table>
         <tbody>
@@ -50,16 +50,14 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
                 </div>
               </>
             )}
-            <br />
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
-            title={isMobile ? <TagFill /> : <>Scored GW + VP:</>}
+            title={isMobile ? <TagFill /> : <>Total GW + VP:</>}
           >
-            {info.totalGw} + {info.totalVp}{' '}
+            {info.totalGw}GW + {info.totalVp}VP{' '}
             <div className="inline text-midGray dark:text-midGrayDark">
-              (median: {info.medianGw} + {info.medianVp})
+              (median: {info.medianGw}GW + {info.medianVp}VP)
             </div>
-            <br />
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>
