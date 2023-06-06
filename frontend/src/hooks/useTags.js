@@ -14,15 +14,15 @@ const useTags = (crypt, library) => {
 
   const threshold = {
     accel: 10,
-    ally: 10,
+    ally: 8,
     bleed: 15,
     block: 15,
     combat: 20,
     mmpa: 10,
-    rush: 10,
+    rush: 8,
     stealth: 15,
-    swarm: 10,
-    vote: 10,
+    swarm: 8,
+    vote: 8,
   };
 
   const result = {
