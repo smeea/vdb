@@ -56,6 +56,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, scores, decks }) => {
             key={s}
             data={data[s]}
             name={s[0].toUpperCase() + s.slice(1)}
+            width={600}
           />
         );
       })}

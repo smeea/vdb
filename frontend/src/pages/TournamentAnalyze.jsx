@@ -15,9 +15,9 @@ const TournamentAnalyze = () => {
 
   return (
     <div className="twd-container mx-auto">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
         <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-          <div className="basis-9/12">
+          <div className="flex basis-9/12">
             {decks && info && (
               <AnalyzeTournamentCharts
                 info={info}
@@ -26,7 +26,7 @@ const TournamentAnalyze = () => {
               />
             )}
           </div>
-          <div className="flex basis-3/12 flex-col">
+          <div className="flex basis-3/12 flex-col sm:gap-4 lg:gap-6 xl:gap-8">
             <AnalyzeLoadButton
               isDecks={!!decks}
               isScores={!!scores}
@@ -40,7 +40,7 @@ const TournamentAnalyze = () => {
           </div>
         </div>
         {info && decks && (
-          <div className="flex gap-4">
+          <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
             <div className="flex flex-col gap-4">
               {Object.values(decks).map((deck) => (
                 <AnalyzeTournamentDeck deck={deck} key={deck.author} />

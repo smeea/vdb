@@ -1,11 +1,5 @@
 import React, { useMemo } from 'react';
-import {
-  ResponsiveContainer,
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-} from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 
 const AnalyzeTournamentChartsStyle = ({ decks }) => {
   const data = useMemo(() => {
@@ -66,20 +60,25 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
   }, [decks]);
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RadarChart cx="50%" cy="50%" outerRadius="85%" data={data}>
-        <PolarGrid />
-        <PolarAngleAxis axisLine={false} dataKey="name" />
-        <Radar
-          isAnimationActive={false}
-          name="Playstyle"
-          dataKey="value"
-          stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.7}
-        />
-      </RadarChart>
-    </ResponsiveContainer>
+    <RadarChart
+      width={450}
+      height={360}
+      cx="50%"
+      cy="50%"
+      outerRadius={150}
+      data={data}
+    >
+      <PolarGrid />
+      <PolarAngleAxis axisLine={false} dataKey="name" />
+      <Radar
+        isAnimationActive={false}
+        name="Playstyle"
+        dataKey="value"
+        stroke="#8884d8"
+        fill="#8884d8"
+        fillOpacity={0.7}
+      />
+    </RadarChart>
   );
 };
 
