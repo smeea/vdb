@@ -17,10 +17,16 @@ const TournamentAnalyze = () => {
     <div className="twd-container mx-auto">
       <div className="flex flex-col gap-4">
         <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-          <div className="basis-8/12">
-            {decks && info && <AnalyzeTournamentCharts decks={decks} />}
+          <div className="basis-9/12">
+            {decks && info && (
+              <AnalyzeTournamentCharts
+                info={info}
+                scores={scores}
+                decks={decks}
+              />
+            )}
           </div>
-          <div className="flex basis-4/12 flex-col">
+          <div className="flex basis-3/12 flex-col">
             <AnalyzeLoadButton
               isDecks={!!decks}
               isScores={!!scores}

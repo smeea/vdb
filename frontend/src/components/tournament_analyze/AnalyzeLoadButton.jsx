@@ -63,16 +63,19 @@ const AnalyzeLoadButton = ({
       let totalVp = 0;
       let medianVp = 0;
       let medianGw = 0;
-      const totalPlayers = dataInfo[9].split(',')[1];
+      const totalPlayers = parseInt(dataInfo[9].split(',')[1]);
 
       dataScores.forEach((n, idx) => {
         if (idx < 6 || n[0] === ',') return;
         const array = n.split(',');
         const veknId = parseInt(array[4]);
+        const rank =
+          parseInt(array[21]) !== 2 ? parseInt(array[21]) : parseInt(array[18]);
+
         const results = {
           gw: parseInt(array[7]),
           vp: parseInt(array[8]),
-          rank: parseInt(array[21]),
+          rank: rank,
         };
         scores[veknId] = results;
 
