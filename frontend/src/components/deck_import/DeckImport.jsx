@@ -14,7 +14,7 @@ import { useApp, deckStore, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
 
-const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
+const DeckImport = ({ setShowInfo, isOnlyNew }) => {
   const {
     setShowMenuButtons,
     setShowFloatingButtons,
@@ -136,11 +136,9 @@ const DeckImport = ({ handleClose, setShowInfo, isOnlyNew }) => {
           setBadCards(d.badCards);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
-          handleClose();
+          handleCloseImportModal();
         })
-        .catch(() => {
-          setError(true);
-        });
+        .catch(() => setError(true));
     };
   };
 
