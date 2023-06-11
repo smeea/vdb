@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { read, utils } from 'xlsx';
 import Upload from '@/assets/images/icons/upload.svg';
 import CheckCircleFill from '@/assets/images/icons/check-circle-fill.svg';
 import X from '@/assets/images/icons/x.svg';
 import { ButtonIconed } from '@/components';
-import { useApp } from '@/context';
-import { useTags } from '@/hooks';
-import { useDeckImport } from '@/hooks';
+import { setAnalyzeResults, useApp } from '@/context';
+import { useDeckImport, useTags } from '@/hooks';
 
 const Ok = () => {
   return (
@@ -16,34 +16,40 @@ const Ok = () => {
   );
 };
 
-const AnalyzeLoadButton = ({
-  setDecks,
-  setInfo,
-  isDecks,
-  isInfo,
-  // setScores,
-}) => {
+const AnalyzeLoadButton = ({ setDecks, setInfo, isDecks, isInfo }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
+  const navigate = useNavigate();
   const fileInputDecks = useRef();
   const fileInputArchon = useRef();
 
-  const loadDecks = () => {
-    let decks = {};
+  const getDeck = async (data) => {
+    const deck = await useDeckImport(data, cryptCardBase, libraryCardBase);
+    deck.tags = await useTags(deck.crypt, deck.library);
+    return deck;
+  };
 
+  const loadDecks = async () => {
     const files = fileInputDecks.current.files;
-    Object.keys(files).forEach((i) => {
-      const file = files[i];
-      const reader = new FileReader();
-      reader.readAsText(file);
-      reader.onload = async () => {
-        const data = reader.result;
-        const d = await useDeckImport(data, cryptCardBase, libraryCardBase);
-        d.tags = await useTags(d.crypt, d.library);
-        decks[d.author] = d;
-      };
+    const decks = Object.keys(files).map(async (i) => {
+      const result = await new Promise((resolve) => {
+        const file = files[i];
+        let fileReader = new FileReader();
+        fileReader.onload = () => resolve(getDeck(fileReader.result));
+        fileReader.readAsText(file);
+      });
+
+      return result;
     });
 
-    setDecks(decks);
+    Promise.all(decks).then((v) => {
+      const d = {};
+      v.forEach((i) => {
+        d[i.author] = i;
+      });
+      setDecks(d);
+      setAnalyzeResults(decks);
+      navigate('/tournament_analyze');
+    });
   };
 
   const loadArchon = () => {
@@ -106,8 +112,8 @@ const AnalyzeLoadButton = ({
 
   const handleClear = () => {
     setDecks();
-    // setScores();
     setInfo();
+    navigate('/tournament_analyze');
   };
 
   return (

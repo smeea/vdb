@@ -20,12 +20,15 @@ import {
   useApp,
   setAnalyzeResults,
   searchAnalyzeForm,
-  clearSearchForm,
+  clearAnalyzeForm,
+  analyzeStore,
 } from '@/context';
 
 const AnalyzeSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const analyzeFormState = useSnapshot(searchAnalyzeForm);
+  const decks = useSnapshot(analyzeStore).all;
+  // const results = useSnapshot(analyzeStore).results;
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
@@ -78,8 +81,8 @@ const AnalyzeSearchForm = ({ error, setError }) => {
   };
 
   const handleClear = () => {
-    clearSearchForm('analyze');
-    setAnalyzeResults(undefined);
+    clearAnalyzeForm();
+    setAnalyzeResults(decks);
     setError(false);
   };
 
@@ -107,24 +110,15 @@ const AnalyzeSearchForm = ({ error, setError }) => {
       return;
     }
 
-    // navigate(
-    //   `/tournament_analyze?q=${encodeURIComponent(
-    //     JSON.stringify(sanitizedForm)
-    //   )}`
-    // );
-
-    // const url = `${import.meta.env.VITE_API_URL}/search/twd`;
-    // const options = {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   credentials: 'include',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(sanitizedForm),
-    // };
+    navigate(
+      `/tournament_analyze?q=${encodeURIComponent(
+        JSON.stringify(sanitizedForm)
+      )}`
+    );
 
     setIsLoading(true);
+    // TODO add search
+    setAnalyzeResults(decks);
     // fetch(url, options)
     //   .then((response) => {
     //     if (!response.ok) throw Error(response.status);
@@ -144,12 +138,10 @@ const AnalyzeSearchForm = ({ error, setError }) => {
       const sanitizedForm = sanitizeFormState('analyze', analyzeFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) {
-          setAnalyzeResults(undefined);
+          setAnalyzeResults(decks);
           navigate('/tournament_analyze');
         }
-      } else if (!analyzeFormState.event || analyzeFormState.event.length > 2) {
-        processSearch();
-      }
+      } else processSearch();
     }
   }, [analyzeFormState, cryptCardBase, libraryCardBase]);
 
