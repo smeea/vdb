@@ -7,8 +7,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks }) => {
     const d = {};
 
     Object.values(decks).map((deck) => {
-      const rank = info.scores[deck.author].rank;
-      const position = info.players - rank;
+      const position = info.players - deck.score.rank;
       const clan = getClan(deck.crypt) || 'Multi';
 
       if (!d[clan]) {
@@ -21,7 +20,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks }) => {
       d[clan][position] = {
         index: -1,
         value: 1,
-        rank: rank,
+        rank: deck.score.rank,
       };
     });
 
@@ -30,16 +29,18 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks }) => {
 
   return (
     <div className="flex flex-col basis-full py-4">
-      {Object.keys(data).map((s) => {
-        return (
-          <BubbleChart
-            key={s}
-            data={data[s]}
-            name={s[0].toUpperCase() + s.slice(1)}
-            width={600}
-          />
-        );
-      })}
+      {Object.keys(data)
+        .sort((a, b) => a.localeCompare(b))
+        .map((s) => {
+          return (
+            <BubbleChart
+              key={s}
+              data={data[s]}
+              name={s[0].toUpperCase() + s.slice(1)}
+              width={600}
+            />
+          );
+        })}
     </div>
   );
 };

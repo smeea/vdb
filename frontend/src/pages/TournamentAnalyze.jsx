@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
   AnalyzeLoadButton,
@@ -7,18 +7,12 @@ import {
   AnalyzeTournamentCharts,
   AnalyzeSearchForm,
 } from '@/components';
-import {
-  setAnalyzeDecks,
-  setAnalyzeInfo,
-  setAnalyzeResults,
-  analyzeStore,
-} from '@/context';
+import { analyzeStore } from '@/context';
 
 const TournamentAnalyze = () => {
   const decks = useSnapshot(analyzeStore).all;
   const results = useSnapshot(analyzeStore).results;
   const info = useSnapshot(analyzeStore).info;
-  const [error, setError] = useState();
 
   return (
     <div className="twd-container mx-auto">
@@ -30,12 +24,7 @@ const TournamentAnalyze = () => {
             )}
           </div>
           <div className="flex basis-3/12 flex-col sm:gap-4 lg:gap-6 xl:gap-8">
-            <AnalyzeLoadButton
-              setDecks={setAnalyzeDecks}
-              setInfo={setAnalyzeInfo}
-              isDecks={!!decks}
-              isInfo={!!info}
-            />
+            <AnalyzeLoadButton />
             {decks && info && (
               <AnalyzeTournamentInfo info={info} decks={decks} />
             )}
@@ -50,7 +39,7 @@ const TournamentAnalyze = () => {
                 ))}
             </div>
             <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
-              <AnalyzeSearchForm error={error} setError={setError} />
+              <AnalyzeSearchForm />
             </div>
           </div>
         )}

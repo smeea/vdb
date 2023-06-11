@@ -15,6 +15,7 @@ import {
   AnalyzeSearchFormRank,
   TwdSearchFormSect,
 } from '@/components';
+import { useFiltersDecks } from '@/hooks';
 import { sanitizeFormState } from '@/utils';
 import {
   useApp,
@@ -24,12 +25,12 @@ import {
   analyzeStore,
 } from '@/context';
 
-const AnalyzeSearchForm = ({ error, setError }) => {
+const AnalyzeSearchForm = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const analyzeFormState = useSnapshot(searchAnalyzeForm);
   const decks = useSnapshot(analyzeStore).all;
-  // const results = useSnapshot(analyzeStore).results;
-  const [isLoading, setIsLoading] = useState(false);
+  const { filterDecks } = useFiltersDecks(decks);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -82,24 +83,9 @@ const AnalyzeSearchForm = ({ error, setError }) => {
 
   const handleClear = () => {
     clearAnalyzeForm();
-    setAnalyzeResults(decks);
+    // setAnalyzeResults(decks);
     setError(false);
   };
-
-  // const handleError = (error) => {
-  //   setAnalyzeResults(null);
-
-  //   if (error.message == 400) {
-  //     setError('NO DECKS FOUND');
-  //   } else {
-  //     setError('CONNECTION PROBLEM');
-  //   }
-
-  //   if (isMobile) {
-  //     setIsLoading(false);
-  //     navigate('/tournament_analyze');
-  //   }
-  // };
 
   const processSearch = () => {
     setError(false);
@@ -116,21 +102,9 @@ const AnalyzeSearchForm = ({ error, setError }) => {
       )}`
     );
 
-    setIsLoading(true);
+    const filteredDecks = filterDecks(sanitizedForm);
     // TODO add search
-    setAnalyzeResults(decks);
-    // fetch(url, options)
-    //   .then((response) => {
-    //     if (!response.ok) throw Error(response.status);
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     setIsLoading(false);
-    //     setAnalyzeResults(data);
-    //   })
-    //   .catch((error) => {
-    //     handleError(error);
-    //   });
+    setAnalyzeResults(filteredDecks);
   };
 
   useEffect(() => {
@@ -138,7 +112,7 @@ const AnalyzeSearchForm = ({ error, setError }) => {
       const sanitizedForm = sanitizeFormState('analyze', analyzeFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) {
-          setAnalyzeResults(decks);
+          // setAnalyzeResults(decks);
           navigate('/tournament_analyze');
         }
       } else processSearch();
@@ -208,11 +182,7 @@ const AnalyzeSearchForm = ({ error, setError }) => {
       {isMobile && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />
-          <ButtonFloatSearch
-            handleSearch={processSearch}
-            error={error}
-            isLoading={isLoading}
-          />
+          <ButtonFloatSearch handleSearch={processSearch} error={error} />
         </>
       )}
     </div>

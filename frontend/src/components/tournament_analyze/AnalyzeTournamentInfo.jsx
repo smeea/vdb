@@ -31,31 +31,28 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
             {info.date}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
-            title={
-              isMobile ? (
-                <PersonFill />
-              ) : (
-                <>Players{decks && ' / Known Decks'}:</>
-              )
-            }
+            title={isMobile ? <PersonFill /> : <>Players:</>}
           >
-            {info.players}{' '}
-            {decks && (
-              <>
-                / {Object.keys(decks).length}{' '}
-                <div className="inline text-midGray dark:text-midGrayDark">
-                  (
-                  {Math.round((Object.keys(decks).length / info.players) * 100)}
-                  %)
-                </div>
-              </>
-            )}
+            {info.players}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
-            title={isMobile ? <TagFill /> : <>Total GW + VP:</>}
+            title={isMobile ? <PersonFill /> : <>Reported Decks:</>}
+          >
+            <>
+              {Object.keys(decks).length}{' '}
+              <div className="inline text-midGray dark:text-midGrayDark">
+                ({Math.round((Object.keys(decks).length / info.players) * 100)}
+                %)
+              </div>
+            </>
+          </TwdResultDescriptionTextTr>
+          <TwdResultDescriptionTextTr
+            title={isMobile ? <TagFill /> : <>Total Score:</>}
           >
             {info.totalGw}GW + {info.totalVp}VP{' '}
-            <div className="inline text-midGray dark:text-midGrayDark">
+          </TwdResultDescriptionTextTr>
+          <TwdResultDescriptionTextTr title="">
+            <div className="text-midGray dark:text-midGrayDark">
               (median: {info.medianGw}GW + {info.medianVp}VP)
             </div>
           </TwdResultDescriptionTextTr>

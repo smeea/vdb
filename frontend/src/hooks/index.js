@@ -10,6 +10,7 @@ export { default as useDeckLibrary } from './useDeckLibrary.js';
 export { default as useDeckMissing } from './useDeckMissing.js';
 export { default as useFetch } from './useFetch.js';
 export { default as useFilters } from './useFilters.js';
+export { default as useFiltersDecks } from './useFiltersDecks.js';
 export { default as useInventoryCrypt } from './useInventoryCrypt.js';
 export { default as useInventoryLibrary } from './useInventoryLibrary.js';
 export { default as useKeyDisciplines } from './useKeyDisciplines.js';

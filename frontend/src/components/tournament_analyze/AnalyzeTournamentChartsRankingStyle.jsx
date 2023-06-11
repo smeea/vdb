@@ -23,15 +23,14 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks }) => {
     });
 
     Object.values(decks).map((deck) => {
-      const rank = info.scores[deck.author].rank;
-      const position = info.players - rank;
+      const position = info.players - deck.score.rank;
 
       deck.tags.superior.forEach((t) => {
         if (d[t]) {
           d[t][position] = {
             index: -1,
             value: 1,
-            rank: rank,
+            rank: deck.score.rank,
           };
         }
       });
@@ -40,7 +39,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks }) => {
           d[t][position] = {
             index: -1,
             value: 0.5,
-            rank: rank,
+            rank: deck.score.rank,
           };
         }
       });
