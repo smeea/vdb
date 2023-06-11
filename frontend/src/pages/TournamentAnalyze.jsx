@@ -9,7 +9,6 @@ import {
 
 const TournamentAnalyze = () => {
   const [decks, setDecks] = useState();
-  const [scores, setScores] = useState();
   const [info, setInfo] = useState();
   const [error, setError] = useState();
 
@@ -19,20 +18,15 @@ const TournamentAnalyze = () => {
         <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
           <div className="flex basis-9/12">
             {decks && info && (
-              <AnalyzeTournamentCharts
-                info={info}
-                scores={scores}
-                decks={decks}
-              />
+              <AnalyzeTournamentCharts info={info} decks={decks} />
             )}
           </div>
           <div className="flex basis-3/12 flex-col sm:gap-4 lg:gap-6 xl:gap-8">
             <AnalyzeLoadButton
-              isDecks={!!decks}
-              isScores={!!scores}
-              setScores={setScores}
               setDecks={setDecks}
               setInfo={setInfo}
+              isDecks={!!decks}
+              isInfo={!!info}
             />
             {decks && info && (
               <AnalyzeTournamentInfo info={info} decks={decks} />

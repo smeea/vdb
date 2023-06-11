@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { BubbleChart } from '@/components';
 
-const AnalyzeTournamentChartsRankingStyle = ({ info, scores, decks }) => {
+const AnalyzeTournamentChartsRankingStyle = ({ info, decks }) => {
   const data = useMemo(() => {
     const d = {};
 
@@ -23,7 +23,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, scores, decks }) => {
     });
 
     Object.values(decks).map((deck) => {
-      const rank = scores[deck.author].rank;
+      const rank = info.scores[deck.author].rank;
       const position = info.players - rank;
 
       deck.tags.superior.forEach((t) => {
@@ -46,7 +46,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, scores, decks }) => {
       });
     });
     return d;
-  }, [decks, info, scores]);
+  }, [decks, info]);
 
   return (
     <div className="flex flex-col basis-full py-4">

@@ -10,18 +10,18 @@ import { useDeckImport } from '@/hooks';
 
 const Ok = () => {
   return (
-    <div className="flex items-center text-bgGreen dark:text-bgGreenDark">
+    <div className="flex px-2 items-center text-bgGreen dark:text-bgGreenDark">
       <CheckCircleFill width="24" height="24" />
     </div>
   );
 };
 
 const AnalyzeLoadButton = ({
-  setInfo,
-  isScores,
-  isDecks,
   setDecks,
-  setScores,
+  setInfo,
+  isDecks,
+  isInfo,
+  // setScores,
 }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
   const fileInputDecks = useRef();
@@ -86,7 +86,6 @@ const AnalyzeLoadButton = ({
         totalGw += results.gw;
         totalVp += results.vp;
       });
-      setScores(scores);
 
       const info = {
         name: dataInfo[2].split(',')[1],
@@ -97,6 +96,7 @@ const AnalyzeLoadButton = ({
         totalVp: totalVp,
         medianGw: medianGw,
         medianVp: medianVp,
+        scores: scores,
       };
       setInfo(info);
     };
@@ -106,14 +106,14 @@ const AnalyzeLoadButton = ({
 
   const handleClear = () => {
     setDecks();
-    setScores();
+    // setScores();
     setInfo();
   };
 
   return (
     <>
       <div className="flex flex-col gap-2">
-        <div className="flex w-full gap-2">
+        <div className="flex w-full">
           <ButtonIconed
             className="w-full"
             variant="primary"
@@ -124,7 +124,7 @@ const AnalyzeLoadButton = ({
           />
           {isDecks && <Ok />}
         </div>
-        <div className="flex w-full gap-2">
+        <div className="flex w-full">
           <ButtonIconed
             className="w-full"
             variant="primary"
@@ -133,7 +133,7 @@ const AnalyzeLoadButton = ({
             icon={<Upload />}
             text="Import Archon (.xlsx)"
           />
-          {isScores && <Ok />}
+          {isInfo && <Ok />}
         </div>
         <ButtonIconed
           variant="primary"
