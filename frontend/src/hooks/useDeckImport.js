@@ -45,7 +45,6 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
     } else if (i.includes(' (G')) {
       const regexp = /^\s*([0-9]+)x?\s+(.*)\s\(G(.*)\)/;
       const match = i.match(regexp);
-      console.log('z');
       q = parseInt(match[1]);
       const cardname = minifyCardName(match[2]);
       const group = match[3];

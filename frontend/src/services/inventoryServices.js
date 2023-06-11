@@ -1,7 +1,7 @@
 export const addCards = (cards) => {
   const c = {};
   Object.values(cards).map((card) => {
-    if (card.q > 0) {
+    if (card.q !== 0) {
       c[card.c.Id] = card.q;
     }
   });

@@ -1,6 +1,5 @@
 # FIX
 - Swipe to Card Ideas on mobile
-- Delete precon in inventory (and test deck delete)
 
 # FEATURES
 - Events decks archive analyzing
