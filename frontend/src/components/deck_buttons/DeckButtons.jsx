@@ -1,5 +1,4 @@
 import React from 'react';
-import { Menu } from '@headlessui/react';
 import {
   DeckSearchSimilarButton,
   DeckCloneButton,

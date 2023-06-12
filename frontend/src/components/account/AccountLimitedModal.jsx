@@ -120,11 +120,11 @@ const AccountLimitedModal = ({ setShow }) => {
     >
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
-          <div className="underline text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+          <div className="text-lg font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
             Sets:
           </div>
-          <div className="flex gap-3 sm:gap-5 max-sm:flex-col">
-            <div className="flex flex-col gap-2 basis-full sm:basis-1/2">
+          <div className="flex gap-3 max-sm:flex-col sm:gap-5">
+            <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
               {Object.keys(setsAndPrecons)
                 .filter(
                   (i) => i !== 'PLAYTEST' && setsAndPrecons[i].date > BCP_START
@@ -140,7 +140,7 @@ const AccountLimitedModal = ({ setShow }) => {
                   );
                 })}
             </div>
-            <div className="flex flex-col gap-2 basis-full sm:basis-1/2">
+            <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
               {Object.keys(setsAndPrecons)
                 .filter(
                   (i) => i !== 'PLAYTEST' && setsAndPrecons[i].date < BCP_START
@@ -160,15 +160,15 @@ const AccountLimitedModal = ({ setShow }) => {
         </div>
         <div className="flex flex-col gap-2">
           <div>
-            <div className="inline underline text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            <div className="inline text-lg font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
               Allowed Cards{' '}
             </div>
-            <div className="inline underline text-fgSecondary dark:text-fgSecondaryDark">
+            <div className="inline text-fgSecondary underline dark:text-fgSecondaryDark">
               (in addition to Set selection):
             </div>
           </div>
-          <div className="flex gap-3 sm:gap-5 max-sm:flex-col">
-            <div className="flex flex-col basis-full sm:basis-7/12 gap-2">
+          <div className="flex gap-3 max-sm:flex-col sm:gap-5">
+            <div className="flex basis-full flex-col gap-2 sm:basis-7/12">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Crypt:
               </div>
@@ -182,7 +182,7 @@ const AccountLimitedModal = ({ setShow }) => {
                 />
               )}
             </div>
-            <div className="flex flex-col basis-full sm:basis-5/12 gap-2">
+            <div className="flex basis-full flex-col gap-2 sm:basis-5/12">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Library:
               </div>
@@ -200,15 +200,15 @@ const AccountLimitedModal = ({ setShow }) => {
         </div>
         <div className="flex flex-col gap-2">
           <div>
-            <div className="inline underline text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            <div className="inline text-lg font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
               Banned Cards{' '}
             </div>
-            <div className="inline underline text-fgSecondary dark:text-fgSecondaryDark">
+            <div className="inline text-fgSecondary underline dark:text-fgSecondaryDark">
               (overwrite all):
             </div>
           </div>
-          <div className="flex gap-3 sm:gap-5 max-sm:flex-col">
-            <div className="flex flex-col basis-full sm:basis-7/12 gap-2">
+          <div className="flex gap-3 max-sm:flex-col sm:gap-5">
+            <div className="flex basis-full flex-col gap-2 sm:basis-7/12">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Crypt:
               </div>
@@ -222,7 +222,7 @@ const AccountLimitedModal = ({ setShow }) => {
                 />
               )}
             </div>
-            <div className="flex flex-col basis-full sm:basis-5/12 gap-2">
+            <div className="flex basis-full flex-col gap-2 sm:basis-5/12">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Library:
               </div>

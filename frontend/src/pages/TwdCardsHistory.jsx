@@ -67,7 +67,7 @@ const TwdCardsHistory = () => {
   }, [value, cryptCardBase, libraryCardBase]);
 
   return (
-    <div className="flex flex-col hof-history-container mx-auto gap-1.5">
+    <div className="hof-history-container mx-auto flex flex-col gap-1.5">
       <Tab.Group manual>
         <Tab.List className="flex gap-1.5">
           <TabButton>Crypt</TabButton>

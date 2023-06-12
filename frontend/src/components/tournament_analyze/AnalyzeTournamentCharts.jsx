@@ -10,7 +10,7 @@ import {
 const AnalyzeTournamentCharts = ({ info, decks }) => {
   return (
     <>
-      <div className="flex flex-col basis-1/2">
+      <div className="flex basis-1/2 flex-col">
         <div className="flex flex-col items-center justify-center">
           <Title center>Playstyle</Title>
           <AnalyzeTournamentChartsStyle decks={decks} />
@@ -19,7 +19,7 @@ const AnalyzeTournamentCharts = ({ info, decks }) => {
           <AnalyzeTournamentChartsRankingStyle info={info} decks={decks} />
         </div>
       </div>
-      <div className="flex flex-col basis-1/2">
+      <div className="flex basis-1/2 flex-col">
         <div className="flex flex-col items-center justify-center">
           <Title center>Clans</Title>
           <AnalyzeTournamentChartsClan decks={decks} />

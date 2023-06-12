@@ -5,7 +5,7 @@ const TabButton = ({ children }) => {
   return (
     <Tab
       className={({ selected }) =>
-        `w-full border border-borderPrimary dark:border-borderPrimaryDark rounded px-3 py-1.5 ${
+        `w-full rounded border border-borderPrimary px-3 py-1.5 dark:border-borderPrimaryDark ${
           selected ? 'bg-bgSecondary dark:bg-bgSecondaryDark' : ''
         }`
       }

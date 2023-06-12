@@ -5,8 +5,7 @@ import {
   XAxis,
   YAxis,
   ZAxis,
-  Tooltip,
-  ResponsiveContainer,
+  // Tooltip
 } from 'recharts';
 
 const BubbleChart = ({ data, name, width }) => {

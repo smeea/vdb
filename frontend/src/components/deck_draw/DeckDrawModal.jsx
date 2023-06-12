@@ -56,7 +56,7 @@ const DeckDrawModal = ({
       noPadding={isMobile}
     >
       <div className="flex flex-col gap-3 sm:gap-5">
-        <div className="flex gap-3 sm:gap-5 max-md:flex-col">
+        <div className="flex gap-3 max-md:flex-col sm:gap-5">
           <div className="basis-full sm:basis-5/9">
             <div>
               <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
@@ -182,7 +182,7 @@ const DeckDrawModal = ({
           </div>
         </div>
         {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-          <div className="flex gap-3 sm:gap-5 max-md:flex-col">
+          <div className="flex gap-3 max-md:flex-col sm:gap-5">
             <div className="md:basis-5/9">
               {burnedCrypt.length > 0 && (
                 <div>

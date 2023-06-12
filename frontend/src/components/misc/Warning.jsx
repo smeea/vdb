@@ -1,7 +1,7 @@
 import React from 'react';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
 
-const Warning = ({ value, noText }) => {
+const Warning = ({ value }) => {
   return (
     <div className="dark:text-fgRedDarkark:text-fgRedDark inline items-center whitespace-nowrap text-fgRed">
       <Exclamation

@@ -20,7 +20,7 @@ const UpdateNotification = () => {
           title="Update available!"
           centered
         >
-          <div className="gap-3 flex flex-col sm:gap-5">
+          <div className="flex flex-col gap-3 sm:gap-5">
             <div>
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Changes [{update.version}]:

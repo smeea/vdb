@@ -62,7 +62,7 @@ const InventoryShareModal = ({ setShow }) => {
       centered={isMobile}
       title="Inventory Share"
     >
-      <div className="flex gap-3 flex-col sm:gap-5">
+      <div className="flex flex-col gap-3 sm:gap-5">
         <div>
           {inventoryKey ? (
             <>
@@ -84,7 +84,7 @@ const InventoryShareModal = ({ setShow }) => {
             </div>
           )}
         </div>
-        <div className="flex sm:flex-row flex-col justify-end gap-2">
+        <div className="flex flex-col justify-end gap-2 sm:flex-row">
           <ButtonIconed
             variant={success ? 'success' : 'primary'}
             onClick={createUrl}

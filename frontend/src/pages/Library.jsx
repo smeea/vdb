@@ -40,7 +40,7 @@ const Library = () => {
     return deck && libraryResults && !isMobile && !isDesktop;
   }, [deck, isMobile, isDesktop, libraryResults]);
 
-  const showResultCol = useMemo(() => !(isMobile && showLibrarySearch));
+  const showResultCol = !(isMobile && showLibrarySearch);
 
   useEffect(() => {
     if (!deck && decks !== undefined && lastDeckId) {

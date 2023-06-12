@@ -9,7 +9,7 @@ import {
 const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
   return (
     <Modal handleClose={handleClose} size="lg" title="Card Ideas">
-      <div className="flex gap-3 sm:gap-5 max-sm:flex-col">
+      <div className="flex gap-3 max-sm:flex-col sm:gap-5">
         <div className="basis-full sm:basis-7/12">
           <div className="flex h-10 items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
             Crypt

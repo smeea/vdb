@@ -182,7 +182,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
         </div>
-        <div className="flex max-sm:p-2 max-sm:pt-0 max-sm:flex-col gap-2 justify-end">
+        <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
           <Button
             variant="primary"
             onClick={() =>

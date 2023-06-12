@@ -39,7 +39,7 @@ const TwdResultLibraryKeyCardsTable = ({ library }) => {
 
   return (
     <div>
-      <div className="flex justify-between items-center sm:gap-3 font-bold px-1 h-[30px]">
+      <div className="flex h-[30px] items-center justify-between px-1 font-bold sm:gap-3">
         {isMobile ? (
           <>
             <div className="whitespace-nowrap">Library [{libraryTotal}]</div>

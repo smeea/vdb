@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Disclosure } from '@headlessui/react';
 import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg';
 import {
@@ -78,12 +78,12 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     <div className="rounded border border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark">
       <Disclosure.Button className="w-full p-3">
         <div className="flex items-center space-x-4 px-2 text-fgName dark:text-fgNameDark">
-          <div className="flex gap-1 items-center">
+          <div className="flex items-center gap-1">
             <div>{Object.keys(cards).length}</div>
             <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
           </div>
           <div className="flex basis-1/2 text-start">{name}</div>
-          <div className="flex basis-1/2 gap-2 justify-between">
+          <div className="flex basis-1/2 justify-between gap-2">
             <div
               className="flex whitespace-nowrap"
               title="First Card add to Hall of Fame / Last Card add to Hall of Fame"
@@ -112,7 +112,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           inHoF={true}
         />
         <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
-          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark font-bold">
+          <thead className="bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
             <tr>
               <th />
               {!isMobile && <th />}
@@ -121,17 +121,17 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               {isWide && <th />}
               {isWide && <th />}
               {!isMobile && (
-                <th className="font-bold text-center" title="First Print Date">
+                <th className="text-center font-bold" title="First Print Date">
                   Print
                 </th>
               )}
               <th
-                className="font-bold text-center"
+                className="text-center font-bold"
                 title="First TWD Appearance Date"
               >
                 Win
               </th>
-              <th className="font-bold text-center" title="Years to Win">
+              <th className="text-center font-bold" title="Years to Win">
                 {isMobile ? 'Y' : 'YtW'}
               </th>
               <th />
@@ -167,18 +167,18 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               <th />
               {!isMobile && <th />}
               {!isMobile && (
-                <th className="font-bold text-center" title="First Print Date">
+                <th className="text-center font-bold" title="First Print Date">
                   Print
                 </th>
               )}
               <th
-                className="font-bold text-center"
+                className="text-center font-bold"
                 title="First TWD Appearance Date"
               >
                 Win
               </th>
               <th
-                className="font-bold text-center"
+                className="text-center font-bold"
                 title="Years to Win - From release to first TWD appearance"
               >
                 {isMobile ? 'Y' : 'YtW'}

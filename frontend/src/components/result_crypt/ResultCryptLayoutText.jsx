@@ -44,7 +44,7 @@ const ResultCryptLayoutText = ({
                         <>
                           [has
                           <img
-                            className="inline h-[22px] align-text-bottom ps-1"
+                            className="inline h-[22px] ps-1 align-text-bottom"
                             src={`${
                               import.meta.env.VITE_BASE_URL
                             }/images/misc/advanced.svg`}

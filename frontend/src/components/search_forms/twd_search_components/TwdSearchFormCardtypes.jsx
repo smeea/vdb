@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Select } from '@/components';
-import { Input, Toggle, ResultLibraryTypeImage } from '@/components';
+import { Toggle, ResultLibraryTypeImage } from '@/components';
 import { useApp } from '@/context';
 
 const TwdSearchFormCardtypes = ({ value, onChange }) => {
@@ -157,7 +157,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
         </div>
         <div className="w-5/6">
           {isManual ? (
-            <div className="flex justify-between items-center gap-1">
+            <div className="flex items-center justify-between gap-1">
               <div className="basis-full">
                 <input
                   className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"

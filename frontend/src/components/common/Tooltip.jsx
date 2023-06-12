@@ -100,7 +100,7 @@ const Tooltip = ({
             {overlay}
             <div
               ref={arrowRef}
-              className={`absolute z-[-1] h-[12px] w-[12px] border-l border-b border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark ${arrowOffset} ${arrowRotate}`}
+              className={`absolute z-[-1] h-[12px] w-[12px] border-b border-l border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark ${arrowOffset} ${arrowRotate}`}
               style={{
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',

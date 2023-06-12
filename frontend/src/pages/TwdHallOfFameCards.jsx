@@ -99,7 +99,7 @@ const TwdHallOfFameCards = () => {
   };
 
   return (
-    <div className="flex flex-col hof-cards-container mx-auto gap-1.5">
+    <div className="hof-cards-container mx-auto flex flex-col gap-1.5">
       <Tab.Group manual>
         <Tab.List className="flex gap-1.5">
           <TabButton>By Total</TabButton>
@@ -124,7 +124,7 @@ const TwdHallOfFameCards = () => {
           </Tab.Panel>
           <Tab.Panel>
             <div className="flex flex-col gap-1.5">
-              <div className="border rounded p-3 dark:border-borderPrimaryDark border-borderPrimary">
+              <div className="rounded border border-borderPrimary p-3 dark:border-borderPrimaryDark">
                 Only counts cards first appeared in TWD{' '}
                 {INNOVATION_PERIOD / 365} years after card print, and excluding
                 cards from first 2 years of active tournaments (till{' '}

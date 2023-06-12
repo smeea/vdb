@@ -242,7 +242,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
           </table>
         </div>
         {!short && (
-          <div className="flex max-sm:p-2 max-sm:pt-0 max-sm:flex-col justify-end">
+          <div className="flex justify-end max-sm:flex-col max-sm:p-2 max-sm:pt-0">
             <Menu as="div" className="relative">
               <MenuButton
                 title="Export Selected"

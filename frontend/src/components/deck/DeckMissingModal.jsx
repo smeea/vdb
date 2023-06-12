@@ -27,7 +27,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
       title={deck.name}
       noPadding={isMobile}
     >
-      <div className="flex gap-3 flex-col sm:gap-5">
+      <div className="flex flex-col gap-3 sm:gap-5">
         <div className="flex gap-3 max-sm:flex-col sm:gap-5">
           <div className="basis-full md:basis-5/9">
             <div
@@ -50,7 +50,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
             />
           </div>
         </div>
-        <div className="flex max-sm:p-2 max-sm:pt-0 sm:flex-row flex-col justify-end gap-2">
+        <div className="flex flex-col justify-end gap-2 max-sm:p-2 max-sm:pt-0 sm:flex-row">
           {inInventory && (
             <ButtonIconed
               variant="primary"

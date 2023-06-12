@@ -60,7 +60,7 @@ const DeckSelectAdvModalTableRow = ({
 
   return (
     <tr
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark h-[41px] ${
+      className={`h-[41px] border-y border-bgSecondary dark:border-bgSecondaryDark ${
         idx % 2
           ? 'bg-bgThird dark:bg-bgThirdDark'
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
@@ -146,7 +146,7 @@ const DeckSelectAdvModalTableRow = ({
       )}
       {(short || !isNarrow) && (
         <td
-          className="min-w-[100px] sm:min-w-[105px] cursor-pointer whitespace-nowrap text-center"
+          className="min-w-[100px] cursor-pointer whitespace-nowrap text-center sm:min-w-[105px]"
           onClick={handleClick}
         >
           {new Date(deck.timestamp).toISOString().split('T')[0]}

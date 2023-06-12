@@ -3,7 +3,7 @@ import React from 'react';
 const GlobalNotification = ({ children }) => {
   return (
     <nav
-      className={`bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark top-0
+      className={`top-0 bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark
 `}
     >
       <div className="flex w-full items-center justify-center gap-2 text-xl">

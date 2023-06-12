@@ -19,7 +19,7 @@ const TwdHallFameDeckBody = ({ deck }) => {
       <div className="basis-full md:basis-full xl:basis-1/4">
         <TwdResultDescription deck={deck} />
       </div>
-      <div className="flex gap-2 basis-full md:basis-full xl:basis-3/4">
+      <div className="flex basis-full gap-2 md:basis-full xl:basis-3/4">
         {isMobile ? (
           <>
             <div className="basis-1/2">

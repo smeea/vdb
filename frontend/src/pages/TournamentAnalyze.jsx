@@ -32,7 +32,7 @@ const TournamentAnalyze = () => {
         </div>
         {decks && info && (
           <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-            <div className="flex flex-col sm:basis-7/12 sm:p-0 lg:basis-8/12 xl:basis-9/12 gap-4">
+            <div className="flex flex-col gap-4 sm:basis-7/12 sm:p-0 lg:basis-8/12 xl:basis-9/12">
               {results &&
                 Object.values(results).map((deck) => (
                   <AnalyzeTournamentDeck deck={deck} key={deck.author} />
