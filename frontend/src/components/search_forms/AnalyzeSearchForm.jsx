@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import {
+  ButtonClose,
   ButtonFloatSearch,
   ButtonFloatClose,
   Checkbox,
@@ -12,8 +13,8 @@ import {
   TwdSearchFormDisciplines,
   TwdSearchFormLibrary,
   TwdSearchFormLibraryTotal,
-  AnalyzeSearchFormRank,
   TwdSearchFormSect,
+  AnalyzeSearchFormRank,
 } from '@/components';
 import { useFiltersDecks } from '@/hooks';
 import { sanitizeFormState } from '@/utils';
@@ -83,7 +84,7 @@ const AnalyzeSearchForm = () => {
 
   const handleClear = () => {
     clearAnalyzeForm();
-    // setAnalyzeResults(decks);
+    setAnalyzeResults();
     setError(false);
   };
 
@@ -103,7 +104,6 @@ const AnalyzeSearchForm = () => {
     );
 
     const filteredDecks = filterDecks(sanitizedForm);
-    // TODO add search
     setAnalyzeResults(filteredDecks);
   };
 
@@ -112,7 +112,7 @@ const AnalyzeSearchForm = () => {
       const sanitizedForm = sanitizeFormState('analyze', analyzeFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) {
-          // setAnalyzeResults(decks);
+          setAnalyzeResults();
           navigate('/tournament_analyze');
         }
       } else processSearch();
@@ -121,10 +121,13 @@ const AnalyzeSearchForm = () => {
 
   return (
     <div className="space-y-2">
-      <AnalyzeSearchFormRank
-        value={analyzeFormState.rank}
-        onChange={handleChangeWithOpt}
-      />
+      <div className="flex gap-2">
+        <AnalyzeSearchFormRank
+          value={analyzeFormState.rank}
+          onChange={handleChangeWithOpt}
+        />
+        <ButtonClose title="Clear Forms & Results" handleClick={handleClear} />
+      </div>
       {cryptCardBase && (
         <TwdSearchFormCrypt
           value={analyzeFormState.crypt}

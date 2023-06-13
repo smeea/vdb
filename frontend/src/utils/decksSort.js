@@ -1,6 +1,10 @@
 import { byTimestamp } from '@/utils';
 
 const decksSort = (decks, sortMethod) => {
+  const byRank = (a, b) => {
+    return a.score.rank - b.score.rank;
+  };
+
   const byFavorites = (a, b) => {
     return b.favoritedBy - a.favoritedBy;
   };
@@ -20,6 +24,10 @@ const decksSort = (decks, sortMethod) => {
   if (decks) {
     decks = [...decks];
     switch (sortMethod) {
+      case 'Rank - High to Low':
+        return decks.sort(byRank);
+      case 'Rank - Low to High':
+        return decks.sort(byRank).reverse();
       case 'byName':
         return decks.sort(byName);
       case 'byDate':

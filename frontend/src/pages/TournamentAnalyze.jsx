@@ -5,6 +5,7 @@ import {
   AnalyzeTournamentDeck,
   AnalyzeTournamentInfo,
   AnalyzeTournamentCharts,
+  AnalyzeTournamentResult,
   AnalyzeSearchForm,
 } from '@/components';
 import { analyzeStore } from '@/context';
@@ -33,10 +34,9 @@ const TournamentAnalyze = () => {
         {decks && info && (
           <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
             <div className="flex flex-col gap-4 sm:basis-7/12 sm:p-0 lg:basis-8/12 xl:basis-9/12">
-              {results &&
-                Object.values(results).map((deck) => (
-                  <AnalyzeTournamentDeck deck={deck} key={deck.author} />
-                ))}
+              <AnalyzeTournamentResult
+                decks={results ?? Object.values(decks)}
+              />
             </div>
             <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
               <AnalyzeSearchForm />

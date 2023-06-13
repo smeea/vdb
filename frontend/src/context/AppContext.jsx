@@ -63,6 +63,7 @@ export const AppProvider = (props) => {
   const [librarySearchSort, setLibrarySearchSort] = useState();
   const [twdSearchSort, setTwdSearchSort] = useState();
   const [pdaSearchSort, setPdaSearchSort] = useState();
+  const [analyzeSearchSort, setAnalyzeSearchSort] = useState();
 
   const [cryptCardBase, setCryptCardBase] = useImmer();
   const [libraryCardBase, setLibraryCardBase] = useImmer();
@@ -377,6 +378,11 @@ export const AppProvider = (props) => {
     setLocalStorage('pdaSearchSort', method);
   };
 
+  const changeAnalyzeSearchSort = (method) => {
+    setAnalyzeSearchSort(method);
+    setLocalStorage('analyzeSearchSort', method);
+  };
+
   const toggleAddMode = () => {
     setAddMode(!addMode);
     setLocalStorage('addMode', !addMode);
@@ -621,6 +627,8 @@ export const AppProvider = (props) => {
         changeTwdSearchSort,
         pdaSearchSort,
         changePdaSearchSort,
+        analyzeSearchSort,
+        changeAnalyzeSearchSort,
         cryptDeckSort,
         changeCryptDeckSort,
       }}

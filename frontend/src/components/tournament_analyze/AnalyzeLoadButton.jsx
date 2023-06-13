@@ -9,6 +9,7 @@ import {
   setAnalyzeDecks,
   setAnalyzeInfo,
   setAnalyzeResults,
+  clearAnalyzeForm,
   analyzeStore,
   useApp,
 } from '@/context';
@@ -105,17 +106,17 @@ const AnalyzeLoadButton = () => {
 
       setAnalyzeInfo(info);
       setAnalyzeDecks(tempDecks);
-      setAnalyzeResults(tempDecks);
     };
 
     reader.readAsArrayBuffer(file);
   };
 
   const handleClear = () => {
+    clearAnalyzeForm();
     setTempDecks();
-    setAnalyzeResults();
-    setAnalyzeDecks();
     setAnalyzeInfo();
+    setAnalyzeDecks();
+    setAnalyzeResults();
     navigate('/tournament_analyze');
   };
 

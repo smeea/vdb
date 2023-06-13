@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Select } from '@/components';
 import { useApp } from '@/context';
 
@@ -39,7 +40,7 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="flex items-center space-x-1">
+      <div className="flex basis-full items-center space-x-1">
         <div className="w-1/4">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Rank:
