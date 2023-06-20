@@ -4,7 +4,6 @@
 # FEATURES
 - Events decks archive analyzing
 - TWD Deck check documentation
-- Total info to TWD with tag appearance
 - Change TWD type thresholds to be < and > and interval
 
 # MAYBE LATER FEATURES
