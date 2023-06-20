@@ -55,10 +55,30 @@ const missingRank = (filter, deck) => {
 };
 
 const missingCrypt = (filter, deck) => {
+  if (
+    Object.keys(filter).every((c) => {
+      const { q, m } = filter[c];
+      const cardQty = deck.crypt?.[c]?.q ?? 0;
+      return compareQty(cardQty, q, m);
+    })
+  ) {
+    return false;
+  }
+
   return true;
 };
 
 const missingLibrary = (filter, deck) => {
+  if (
+    Object.keys(filter).every((c) => {
+      const { q, m } = filter[c];
+      const cardQty = deck.library?.[c]?.q ?? 0;
+      return compareQty(cardQty, q, m);
+    })
+  ) {
+    return false;
+  }
+
   return true;
 };
 
@@ -101,6 +121,15 @@ const missingCapacity = (filter, deck) => {
 };
 
 const missingDisciplines = (filter, deck) => {
+  if (
+    Object.keys(filter).every((t) => {
+      return Object.values(deck.library).some((card) => {
+        return card.c.Discipline.includes(t);
+      });
+    })
+  ) {
+    return false;
+  }
   return true;
 };
 
@@ -110,4 +139,19 @@ const missingCardtypes = (filter, deck) => {
 
 const missingTraits = (filter, deck) => {
   return true;
+};
+
+const compareQty = (cardQty, q, m) => {
+  switch (m) {
+    case 'eq':
+      return cardQty == q;
+    case 'gt':
+      return cardQty >= q;
+    case 'lt':
+      return cardQty > 0 && cardQty <= q;
+    case 'lt0':
+      return cardQty <= q;
+    default:
+      return false;
+  }
 };
