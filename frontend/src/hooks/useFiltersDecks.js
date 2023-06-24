@@ -92,7 +92,7 @@ const missingLibraryTotal = (filter, deck) => {
 
 const missingClan = (filter, deck) => {
   const clan = getClan(deck.crypt);
-  if (clan === filter) return false;
+  if (clan && clan.toLowerCase() === filter) return false;
 
   return true;
 };
