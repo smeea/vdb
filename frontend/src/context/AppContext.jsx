@@ -434,6 +434,11 @@ export const AppProvider = (props) => {
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
     initFromStorage('twdSearchSort', 'Date - New to Old', setTwdSearchSort);
     initFromStorage('pdaSearchSort', 'Date - New to Old', setPdaSearchSort);
+    initFromStorage(
+      'analyzeSearchSort',
+      'Rank - High to Low',
+      setAnalyzeSearchSort
+    );
     initFromStorage('lang', 'en-EN', setLang);
     initFromStorage('addMode', isDesktop, setAddMode);
     initFromStorage('inventoryMode', false, setInventoryMode);

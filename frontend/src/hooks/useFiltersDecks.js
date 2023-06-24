@@ -161,6 +161,31 @@ const missingCardtypes = (filter, deck) => {
 };
 
 const missingTraits = (filter, deck) => {
+  let cryptTotal = 0;
+  let cryptMaxUnique = 0;
+  let clans = [];
+  Object.values(deck.crypt)
+    .filter((card) => card.Id !== 200076)
+    .forEach((card) => {
+      if (!clans.includes(card.c.Clan)) clans.push(card.c.Clan);
+      cryptTotal += card.q;
+      if (cryptMaxUnique < card.q) cryptMaxUnique = card.q;
+    });
+
+  if (
+    Object.keys(filter).every((t) => {
+      switch (t) {
+        case 'monoclan':
+          return clans.length === 1;
+        case 'star':
+          return cryptMaxUnique / cryptTotal > 0.33;
+        default:
+          return true;
+      }
+    })
+  ) {
+    return false;
+  }
   return true;
 };
 
