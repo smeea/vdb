@@ -456,11 +456,9 @@ const Documentation = () => {
           <Title id="analyze">ANALYZE TOURNAMENT</Title>
           <div>
             This feature available at{' '}
-            <a href="https://vdb.im/tournament_analyze">
-              https://vdb.im/tournament_analyze
-            </a>{' '}
-            lets you browse decks of particular tournament using standard TWD
-            search filters.
+            <Link to="/tournament_analyze">Tournament Analyze</Link> lets you
+            browse decks of particular tournament using standard TWD search
+            filters.
           </div>
 
           <div>
@@ -500,8 +498,7 @@ const Documentation = () => {
           <div>
             If you want to organize the tournament, collect the decks and have
             them at TWDA EXTENDED let me or Rune know (contacts at the bottom of{' '}
-            <a href="https://vdb.im/about">https://vdb.im/about</a>) and we will
-            direct you.
+            <Link to="/about">About page</Link>) and we will direct you.
           </div>
         </div>
       </div>
