@@ -7,7 +7,7 @@ import {
   Hr,
 } from '@/components';
 
-const AnalyzeTournamentDeck = ({ deck }) => {
+const AnalyzeTournamentDeck = ({ deck, isLast }) => {
   return (
     <div className="flex flex-col gap-6" key={deck.author}>
       <div className="flex gap-2 max-lg:flex-col">
@@ -26,7 +26,7 @@ const AnalyzeTournamentDeck = ({ deck }) => {
           </div>
         </div>
       </div>
-      <Hr isThick />
+      {!isLast && <Hr isThick />}
     </div>
   );
 };

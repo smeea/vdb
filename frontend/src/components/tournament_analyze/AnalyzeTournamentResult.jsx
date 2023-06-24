@@ -34,8 +34,12 @@ const AnalyzerTournamentResult = ({ decks }) => {
         setSortMethod={changeAnalyzeSearchSort}
       />
       <div className="flex flex-col gap-4">
-        {sortedDecks.map((deck) => (
-          <AnalyzeTournamentDeck deck={deck} key={deck.author} />
+        {sortedDecks.map((deck, idx) => (
+          <AnalyzeTournamentDeck
+            deck={deck}
+            key={deck.author}
+            isLast={idx === sortedDecks.length - 1}
+          />
         ))}
       </div>
     </>

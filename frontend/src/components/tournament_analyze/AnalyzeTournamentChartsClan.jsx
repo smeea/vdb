@@ -27,7 +27,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
   }, [decks]);
 
   return (
-    <PieChart width={600} height={360}>
+    <PieChart width={620} height={360}>
       <Pie
         isAnimationActive={false}
         data={data}
