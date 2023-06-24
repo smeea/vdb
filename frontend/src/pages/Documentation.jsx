@@ -68,6 +68,9 @@ const Documentation = () => {
               <li>
                 <a href="#inventory">Inventory</a>
               </li>
+              <li>
+                <a href="#analyze">Analyze Tournament</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -446,6 +449,59 @@ const Documentation = () => {
               icon to the left of the card in the deck list. All other cards of
               the deck will continue to be of the deck status
             </p>
+          </div>
+        </div>
+
+        <div className="space-y-1">
+          <Title id="analyze">ANALYZE TOURNAMENT</Title>
+          <div>
+            This feature available at{' '}
+            <a href="https://vdb.im/tournament_analyze">
+              https://vdb.im/tournament_analyze
+            </a>{' '}
+            lets you browse decks of particular tournament using standard TWD
+            search filters.
+          </div>
+
+          <div>
+            To work it uses:
+            <ul>
+              <li>
+                Decks in TWD-like text format. Hard requirement for all decks:
+                author must be VEKN_ID (that is how VDB will link the deck with
+                Archon to find scores/place). It does not require all decks from
+                the tournament, it will load what is available (but sure more
+                decks gives more info).
+              </li>
+              <li>
+                Correct Archon. Do not be surprised your Archon may not work out
+                of the box, but most likely it will be possible to fix.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            The approach is that you can either load Archon+Decks yourself, or
+            use data of any pre-processed tournament (like Finnish Nationals
+            2022 - the first already tournament).
+          </div>
+
+          <div>
+            The only way to have Archon and Decks is to proactively COLLECT
+            THEM. The initiative behind it is{' '}
+            <a href="https://static.krcg.org/data/tournament/index.html">
+              TWDA EXTENDED
+            </a>{' '}
+            by Rune (Discord: rune3483). It requires efforts from organizers, so
+            do not expect many tournaments to be available soon, but if you like
+            the feature convince *and help* your organizer to gather that data.
+          </div>
+
+          <div>
+            If you want to organize the tournament, collect the decks and have
+            them at TWDA EXTENDED let me or Rune know (contacts at the bottom of{' '}
+            <a href="https://vdb.im/about">https://vdb.im/about</a>) and we will
+            direct you.
           </div>
         </div>
       </div>
