@@ -1,5 +1,6 @@
 # FIX
 - Swipe to Card Ideas on mobile
+- Set sort (KoT reprint) in card view
 
 # FEATURES
 - Events decks archive analyzing

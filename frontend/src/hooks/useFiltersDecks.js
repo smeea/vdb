@@ -122,9 +122,9 @@ const missingCapacity = (filter, deck) => {
 
 const missingDisciplines = (filter, deck) => {
   if (
-    Object.keys(filter).every((t) => {
+    Object.keys(filter).every((d) => {
       return Object.values(deck.library).some((card) => {
-        return card.c.Discipline.includes(t);
+        return card.c.Discipline.includes(d);
       });
     })
   ) {
@@ -134,6 +134,29 @@ const missingDisciplines = (filter, deck) => {
 };
 
 const missingCardtypes = (filter, deck) => {
+  let cardTypes = {};
+  let totalLibrary = 0;
+
+  Object.values(deck.library).forEach((card) => {
+    totalLibrary += card.q;
+    const type = card.c['Type'].toLowerCase();
+    if (cardTypes[type]) {
+      cardTypes[type] += card.q;
+    } else {
+      cardTypes[type] = card.q;
+    }
+  });
+
+  if (
+    Object.keys(filter).every((t) => {
+      const value = filter[t].split(',');
+      const typeRatio = (cardTypes[t] / totalLibrary) * 100;
+      if (typeRatio >= value[0] && typeRatio <= value[1]) return true;
+    })
+  ) {
+    return false;
+  }
+
   return true;
 };
 
