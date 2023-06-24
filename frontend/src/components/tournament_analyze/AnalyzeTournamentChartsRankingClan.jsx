@@ -2,12 +2,15 @@ import React, { useMemo } from 'react';
 import { BubbleChart } from '@/components';
 import { getClan } from '@/utils';
 
-const AnalyzeTournamentChartsRankingClan = ({ info, decks }) => {
+const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   const data = useMemo(() => {
     const d = {};
 
     Object.values(decks).map((deck) => {
       const position = info.players - deck.score.rank;
+      const inSearch = Object.values(searchResults).some(
+        (d) => d.author === deck.author
+      );
       const clan = getClan(deck.crypt) || 'Multi';
 
       if (!d[clan]) {
@@ -18,6 +21,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks }) => {
       }
 
       d[clan][position] = {
+        inSearch: inSearch,
         index: -1,
         value: 1,
         rank: deck.score.rank,
@@ -25,7 +29,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks }) => {
     });
 
     return d;
-  }, [decks, info]);
+  }, [searchResults, decks, info]);
 
   return (
     <div className="flex basis-full flex-col py-4">
@@ -38,6 +42,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks }) => {
               data={data[s]}
               name={s[0].toUpperCase() + s.slice(1)}
               width={600}
+              titleWidth={160}
             />
           );
         })}

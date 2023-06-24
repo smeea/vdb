@@ -7,7 +7,7 @@ import {
   Title,
 } from '@/components';
 
-const AnalyzeTournamentCharts = ({ info, decks }) => {
+const AnalyzeTournamentCharts = ({ info, decks, searchResults }) => {
   return (
     <>
       <div className="flex basis-1/2 flex-col">
@@ -16,7 +16,11 @@ const AnalyzeTournamentCharts = ({ info, decks }) => {
           <AnalyzeTournamentChartsStyle decks={decks} />
         </div>
         <div className="flex flex-col justify-center">
-          <AnalyzeTournamentChartsRankingStyle info={info} decks={decks} />
+          <AnalyzeTournamentChartsRankingStyle
+            info={info}
+            decks={decks}
+            searchResults={searchResults}
+          />
         </div>
       </div>
       <div className="flex basis-1/2 flex-col">
@@ -25,7 +29,11 @@ const AnalyzeTournamentCharts = ({ info, decks }) => {
           <AnalyzeTournamentChartsClan decks={decks} />
         </div>
         <div className="flex flex-col justify-center">
-          <AnalyzeTournamentChartsRankingClan info={info} decks={decks} />
+          <AnalyzeTournamentChartsRankingClan
+            info={info}
+            decks={decks}
+            searchResults={searchResults}
+          />
         </div>
       </div>
     </>

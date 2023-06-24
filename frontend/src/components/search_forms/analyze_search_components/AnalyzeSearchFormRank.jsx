@@ -10,7 +10,7 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
   const fromOptions = [];
   const toOptions = [];
 
-  ['ANY', '1', '5', '10', '15', '25%', '50%', '75%'].map((i) => {
+  ['ANY', '5', '10', '15', '25%', '50%', '75%'].map((i) => {
     if (i === 'ANY' || value.to === 'any' || parseInt(i) > value.to) {
       fromOptions.push({
         value: i.toLowerCase(),

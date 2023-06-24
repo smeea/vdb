@@ -2,7 +2,6 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
   AnalyzeLoadButton,
-  AnalyzeTournamentDeck,
   AnalyzeTournamentInfo,
   AnalyzeTournamentCharts,
   AnalyzeTournamentResult,
@@ -21,7 +20,11 @@ const TournamentAnalyze = () => {
         <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
           <div className="flex basis-9/12">
             {decks && info && (
-              <AnalyzeTournamentCharts info={info} decks={decks} />
+              <AnalyzeTournamentCharts
+                info={info}
+                decks={decks}
+                searchResults={results ?? {}}
+              />
             )}
           </div>
           <div className="flex basis-3/12 flex-col sm:gap-4 lg:gap-6 xl:gap-8">
