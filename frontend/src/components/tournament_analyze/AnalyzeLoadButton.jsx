@@ -67,12 +67,6 @@ const AnalyzeLoadButton = () => {
       });
   };
 
-  useEffect(() => {
-    if (tempDecks && tempArchon) {
-      loadArchon(tempArchon);
-    }
-  }, [tempDecks, tempArchon]);
-
   const getDeck = async (data) => {
     const deck = await useDeckImport(data, cryptCardBase, libraryCardBase);
     deck.tags = await useTags(deck.crypt, deck.library);
@@ -111,11 +105,13 @@ const AnalyzeLoadButton = () => {
     const wsScores = wb.Sheets['Methuselahs'];
     const dataScores = utils.sheet_to_csv(wsScores).split('\n');
 
+    const totalPlayers = parseInt(dataInfo[9].split(',')[1]);
+
     let totalGw = 0;
     let totalVp = 0;
     let medianVp = 0;
     let medianGw = 0;
-    const totalPlayers = parseInt(dataInfo[9].split(',')[1]);
+    let reportedRanks = [];
 
     dataScores.forEach((n, idx) => {
       if (idx < 6 || n[0] === ',') return;
@@ -131,7 +127,10 @@ const AnalyzeLoadButton = () => {
         players: totalPlayers,
       };
 
-      if (tempDecks[veknId]) tempDecks[veknId].score = score;
+      if (tempDecks[veknId]) {
+        reportedRanks.push(score.rank);
+        tempDecks[veknId].score = score;
+      }
 
       if (score.rank > Math.ceil(totalPlayers / 2)) {
         if (medianVp < score.vp) medianVp = score.vp;
@@ -140,6 +139,16 @@ const AnalyzeLoadButton = () => {
       totalGw += score.gw;
       totalVp += score.vp;
     });
+
+    let medianReportedRank;
+    reportedRanks.sort((a, b) => a > b);
+    if (reportedRanks.length % 2) {
+      medianReportedRank = reportedRanks[(reportedRanks.length - 1) / 2];
+    } else {
+      const min = reportedRanks[reportedRanks.length / 2 + 1];
+      const max = reportedRanks[reportedRanks.length / 2 - 1];
+      medianReportedRank = (min + max) / 2;
+    }
 
     const info = {
       name: dataInfo[2].split(',')[1],
@@ -150,6 +159,8 @@ const AnalyzeLoadButton = () => {
       totalVp: totalVp,
       medianGw: medianGw,
       medianVp: medianVp,
+      medianRank: totalPlayers / 2,
+      medianReportedRank: medianReportedRank,
     };
 
     setIsLoading(false);
@@ -177,9 +188,16 @@ const AnalyzeLoadButton = () => {
     navigate('/tournament_analyze');
   };
 
+  useEffect(() => {
+    if (tempDecks && tempArchon) {
+      loadArchon(tempArchon);
+    }
+  }, [tempDecks, tempArchon]);
+
   return (
     <>
       <div className="flex flex-col gap-2">
+        {isLoading && 'Loading...'}
         {!(info || isLoading) && (
           <>
             {!tempDecks ? (

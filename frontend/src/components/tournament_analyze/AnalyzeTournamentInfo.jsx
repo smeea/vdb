@@ -46,12 +46,18 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
               </div>
             </>
           </TwdResultDescriptionTextTr>
+
+          <TwdResultDescriptionTextTr>
+            <div className="text-midGray dark:text-midGrayDark">
+              (median place: {info.medianReportedRank})
+            </div>
+          </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
             title={isMobile ? <TagFill /> : <>Total Score:</>}
           >
             {info.totalGw}GW + {info.totalVp}VP{' '}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title="">
+          <TwdResultDescriptionTextTr>
             <div className="text-midGray dark:text-midGrayDark">
               (median: {info.medianGw}GW + {info.medianVp}VP)
             </div>

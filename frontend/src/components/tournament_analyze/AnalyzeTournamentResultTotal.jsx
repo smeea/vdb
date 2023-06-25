@@ -43,7 +43,7 @@ const AnalyzeTournamentResultTotal = ({
           TOTAL: {results.length}
         </div>
         <div className="whitespace-nowrap font-bold">
-          AVG. RANK: {Math.round((totalRank / results.length) * 10) / 10}
+          AVG. PLACE: {Math.round((totalRank / results.length) * 10) / 10}
         </div>
       </div>
       <div className="flex flex-col gap-1">
