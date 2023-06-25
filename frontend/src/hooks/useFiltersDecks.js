@@ -84,8 +84,15 @@ const missingLibrary = (filter, deck) => {
 
 const missingLibraryTotal = (filter, deck) => {
   const { libraryTotal } = useDeckLibrary(deck.library);
-  const value = Object.keys(filter)[0].split('-');
-  if (libraryTotal >= value[0] && libraryTotal <= value[1]) return false;
+
+  if (
+    Object.keys(filter).some((i) => {
+      const value = i.split('-');
+      if (libraryTotal >= value[0] && libraryTotal <= value[1]) return true;
+    })
+  ) {
+    return false;
+  }
 
   return true;
 };
@@ -105,8 +112,6 @@ const missingSect = (filter, deck) => {
 };
 
 const missingCapacity = (filter, deck) => {
-  const value = Object.keys(filter)[0].split('-');
-
   let totalCapacity = 0;
   let totalCrypt = 0;
   Object.values(deck.crypt).forEach((card) => {
@@ -115,7 +120,14 @@ const missingCapacity = (filter, deck) => {
   });
   const avgCapacity = totalCapacity / totalCrypt;
 
-  if (avgCapacity >= value[0] && avgCapacity <= value[1]) return false;
+  if (
+    Object.keys(filter).some((i) => {
+      const value = i.split('-');
+      if (avgCapacity >= value[0] && avgCapacity <= value[1]) return true;
+    })
+  ) {
+    return false;
+  }
 
   return true;
 };
