@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { BubbleChart } from '@/components';
+import { getClan } from '@/utils';
 
 const AnalyzeTournamentChartsRankingStyle = ({
   info,
@@ -32,25 +33,29 @@ const AnalyzeTournamentChartsRankingStyle = ({
       const inSearch = Object.values(searchResults).some(
         (d) => d.author === deck.author
       );
+      const def = {
+        clan: getClan(deck.crypt) || 'Multi',
+        crypt: deck.crypt,
+        tags: deck.tags,
+        inSearch: inSearch,
+        rank: deck.score.rank,
+        index: -1,
+      };
 
       deck.tags.superior
         .filter((t) => allowedTags.includes(t))
         .forEach((t) => {
           d[t][position] = {
-            inSearch: inSearch,
-            index: -1,
+            ...def,
             value: 1,
-            rank: deck.score.rank,
           };
         });
       deck.tags.base
         .filter((t) => allowedTags.includes(t))
         .forEach((t) => {
           d[t][position] = {
-            inSearch: inSearch,
-            index: -1,
-            value: 0.5,
-            rank: deck.score.rank,
+            ...def,
+            value: 0.55,
           };
         });
     });

@@ -21,6 +21,9 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
       }
 
       d[clan][position] = {
+        clan: clan,
+        crypt: deck.crypt,
+        tags: deck.tags,
         inSearch: inSearch,
         index: -1,
         value: 1,
