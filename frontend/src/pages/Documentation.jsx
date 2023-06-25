@@ -481,7 +481,8 @@ const Documentation = () => {
           <div>
             The approach is that you can either load Archon+Decks yourself, or
             use data of any pre-processed tournament (like Finnish Nationals
-            2022 - the first already tournament).
+            2022 already available, and more to come when organizers starts to
+            adopt the practice of getting decklists from players).
           </div>
 
           <div>

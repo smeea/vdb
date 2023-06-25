@@ -1,5 +1,13 @@
 [
   {
+    "version": "2023-06-24",
+    "changes": [
+      "Add Analyze Tournament Feature (https://vdb.im/tournament_analyze or MORE button in TWD). It allows browsing decks (using standard TWD filters from VDB, you probable used to) of particular tournament. More details at https://vdb.im/documentation#analyze. Not optimized for phone screen yet.",
+      "Fix delete deck from inventory",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-05-21",
     "changes": [
       "Add support to Limited formats. In https://vdb.im/account you can enable it and customize cards you want to be included (allowed sets, and additional singles of allowed / banned cards) or load format file created by others, then on other pages you will see Limited Mode switch which will work similar to Inventory mode highlighting the cards not allowed by format and turning on-off search in Crypt/Library to search among all or only allowed card pool.",
