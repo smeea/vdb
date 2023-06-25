@@ -488,8 +488,11 @@ const Documentation = () => {
           <div>
             The only way to have Archon and Decks is to proactively COLLECT
             THEM. The initiative behind it is{' '}
-            <a href="https://static.krcg.org/data/tournament/index.html">
-              TWDA EXTENDED
+            <a
+              target="_blank"
+              href="https://static.krcg.org/data/tournament/index.html"
+            >
+              EXTENDED TOURNAMENTS DECKS ARCHIVE
             </a>{' '}
             by Rune (Discord: rune3483). It requires efforts from organizers, so
             do not expect many tournaments to be available soon, but if you like

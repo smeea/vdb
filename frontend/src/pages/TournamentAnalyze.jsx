@@ -16,6 +16,21 @@ const TournamentAnalyze = () => {
 
   return (
     <div className="twd-container mx-auto">
+      <div className="flex flex-col justify-center text-lg bg-bgError dark:bg-bgErrorDark p-2 mb-2 text-white dark:text-whiteDark">
+        <div className="flex justify-center">
+          Want more Tournaments here? Help your organizer to collect the data!
+        </div>
+        <div className="flex justify-center gap-1.5">
+          More details:
+          <a
+            target="_blank"
+            className="text-fgPrimary dark:text-fgSecondaryDark underline"
+            href="https://static.krcg.org/data/tournament/index.html"
+          >
+            EXTENDED TOURNAMENTS DECKS ARCHIVE
+          </a>
+        </div>
+      </div>
       <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
         <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
           <div className="flex basis-9/12">
