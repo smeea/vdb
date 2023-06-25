@@ -45,7 +45,7 @@ const PopoverText = ({ sets, set }) => {
 const Sets = ({ sets, setImageSet, setSelectedSet }) => {
   const { playtest, isMobile } = useApp();
   const byDate = (a, b) => {
-    return setsAndPrecons[a].date - setsAndPrecons[b].date;
+    return setsAndPrecons[a].date > setsAndPrecons[b].date;
   };
 
   return Object.keys(sets)

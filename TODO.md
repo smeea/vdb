@@ -1,12 +1,11 @@
 # FIX
 - Swipe to Card Ideas on mobile
-- Set sort (KoT reprint) in card view
 - Add links to changelog items looking like links
 
 # FEATURES
-- Events decks archive analyzing
 - TWD Deck check documentation
 - Change TWD type thresholds to be < and > and interval
+- Better crypt/library tooltips for analyzed decks
 
 # MAYBE LATER FEATURES
 - Offline decks storage
