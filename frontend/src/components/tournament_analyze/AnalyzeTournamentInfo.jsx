@@ -49,7 +49,9 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
 
           <TwdResultDescriptionTextTr>
             <div className="text-midGray dark:text-midGrayDark">
-              (median place: {info.medianReportedRank})
+              (median place: {info.medianReportedRank}, &quot;
+              <div className="inline text-sm font-bold text-[#ff00aa]">|</div>
+              &quot; )
             </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr

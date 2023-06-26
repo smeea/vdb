@@ -76,7 +76,7 @@ const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
         label={{ value: name, position: 'insideRight' }}
       />
       <ZAxis dataKey="value" range={[0, 85]} />
-      <ReferenceLine x={refLine} strokeWidth={2.5} stroke="#ff00aa" />
+      <ReferenceLine x={refLine} strokeWidth={2} stroke="#ff00aa" />
       <Tooltip
         cursor={null}
         wrapperStyle={{ zIndex: 100 }}
