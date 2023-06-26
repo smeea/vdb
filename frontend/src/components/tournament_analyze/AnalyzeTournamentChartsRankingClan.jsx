@@ -44,8 +44,9 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
               key={s}
               data={data[s]}
               name={s[0].toUpperCase() + s.slice(1)}
-              width={600}
+              refLine={info.medianReportedRank}
               titleWidth={160}
+              width={600}
             />
           );
         })}

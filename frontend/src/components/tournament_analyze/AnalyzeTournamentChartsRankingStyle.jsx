@@ -70,8 +70,9 @@ const AnalyzeTournamentChartsRankingStyle = ({
             key={s}
             data={data[s]}
             name={s[0].toUpperCase() + s.slice(1)}
-            width={600}
+            refLine={info.medianReportedRank}
             titleWidth={80}
+            width={600}
           />
         );
       })}
