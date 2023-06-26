@@ -15,12 +15,11 @@
 - Limited formats by url
 
 # IMPROVE TECHNOLOGY - FRONTEND
-- Migration from screen width (isWide, etc) to container queries
-- Refactor standard colors
-- Configure vite-pwa
-- Refactor deck buttons (split in button ui and function incl. deckstore functions)
-- Explicit image width/height
-- Fix hooks eslint errors
 - Use react-error-boundary for error handling
-- Use 'ASCII Name and remove Name+unidecode where possible
+- Migration from screen width (isWide, etc) to container queries
+- Configure vite-pwa (is there anything useful?)
+- Explicit image width/height
+- Refactor standard colors
 - Refactor AccountLimitedModal
+- Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
+- Use 'ASCII Name and remove Name+unidecode where possible

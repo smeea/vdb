@@ -16,7 +16,7 @@ const TournamentAnalyze = () => {
 
   return (
     <div className="twd-container mx-auto">
-      <div className="flex flex-col justify-center text-lg bg-bgError dark:bg-bgErrorDark p-2 mb-2 text-white dark:text-whiteDark">
+      <div className="mb-2 flex flex-col justify-center bg-bgError p-2 text-lg text-white dark:bg-bgErrorDark dark:text-whiteDark">
         <div className="flex justify-center">
           Want more Tournaments here? Help your organizer to collect the data!
         </div>
@@ -24,7 +24,8 @@ const TournamentAnalyze = () => {
           More details:
           <a
             target="_blank"
-            className="text-fgPrimary dark:text-fgSecondaryDark underline"
+            rel="noreferrer"
+            className="text-fgPrimary underline dark:text-fgSecondaryDark"
             href="https://static.krcg.org/data/tournament/index.html"
           >
             EXTENDED TOURNAMENTS DECKS ARCHIVE

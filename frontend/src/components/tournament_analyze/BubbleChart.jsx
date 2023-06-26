@@ -17,10 +17,10 @@ const CustomTooltip = ({ active, payload }) => {
 
     return (
       <div
-        className={`z-50 rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark p-1 flex flex-col gap-0.5`}
+        className={`z-50 flex flex-col gap-0.5 rounded-md border border-bgSecondary bg-bgPrimary p-1 text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark`}
       >
-        <div className="px-1 pt-1.5 gap-0.5">
-          <div className="flex items-center justify-between gap-1.5 dark:text-fgSecondaryDark text-fgSecondary">
+        <div className="gap-0.5 px-1 pt-1.5">
+          <div className="flex items-center justify-between gap-1.5 text-fgSecondary dark:text-fgSecondaryDark">
             <div className="flex">
               <b>{value.clan}</b>
             </div>
@@ -28,7 +28,7 @@ const CustomTooltip = ({ active, payload }) => {
               <b># {value.rank}</b>
             </div>
           </div>
-          <div className="flex text-sm flex-col text-fgPrimary dark:text-fgPrimaryDark">
+          <div className="flex flex-col text-sm text-fgPrimary dark:text-fgPrimaryDark">
             {Object.values(value.crypt).map((c) => {
               return (
                 <div key={c.c.Id}>

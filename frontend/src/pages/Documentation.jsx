@@ -490,6 +490,7 @@ const Documentation = () => {
             THEM. The initiative behind it is{' '}
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://static.krcg.org/data/tournament/index.html"
             >
               EXTENDED TOURNAMENTS DECKS ARCHIVE

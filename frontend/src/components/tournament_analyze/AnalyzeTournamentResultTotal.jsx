@@ -38,7 +38,7 @@ const AnalyzeTournamentResultTotal = ({
         isMobile && Object.keys(byRank).length > 10 ? 'block' : 'flex'
       } items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark sm:space-x-2`}
     >
-      <div className="flex flex-col p-2 gap-1">
+      <div className="flex flex-col gap-1 p-2">
         <div className="whitespace-nowrap font-bold">
           TOTAL: {results.length}
         </div>
@@ -48,7 +48,7 @@ const AnalyzeTournamentResultTotal = ({
       </div>
       <div className="flex flex-col gap-1">
         <div>
-          <div className="inline font-bold px-2 text-fgSecondary dark:text-fgSecondaryDark">
+          <div className="inline px-2 font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Places:
           </div>
           {Object.keys(byRank).map((i, idx) => {
@@ -61,7 +61,7 @@ const AnalyzeTournamentResultTotal = ({
           })}
         </div>
         <div>
-          <div className="inline font-bold px-2 text-fgSecondary dark:text-fgSecondaryDark">
+          <div className="inline px-2 font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Playstyles:
           </div>
           {Object.keys(byTags).map((i) => {
