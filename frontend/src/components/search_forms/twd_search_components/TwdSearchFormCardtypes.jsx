@@ -9,99 +9,16 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'cardtypes';
   const types = [
-    [
-      'Master',
-      [
-        ['0,15', '< 15%'],
-        ['15,25', '15-25%'],
-        ['25,35', '25-35%'],
-        ['35,100', '> 35%'],
-      ],
-    ],
-    [
-      'Action',
-      [
-        ['0,0', 'None'],
-        ['0,5', '< 5%'],
-        ['5,15', '5-15%'],
-        ['15,100', '> 15%'],
-      ],
-    ],
-    [
-      'Political Action',
-      [
-        ['0,0', 'None'],
-        ['0,5', '< 5%'],
-        ['5,15', '5-15%'],
-        ['15,100', '> 15%'],
-      ],
-    ],
-    [
-      'Ally',
-      [
-        ['0,0', 'None'],
-        ['0,5', '< 5%'],
-        ['5,15', '5-15%'],
-        ['15,100', '> 15%'],
-      ],
-    ],
-    [
-      'Equipment',
-      [
-        ['0,0', 'None'],
-        ['0,5', '< 5%'],
-        ['5,10', '5-10%'],
-        ['10,100', '> 10%'],
-      ],
-    ],
-    [
-      'Retainer',
-      [
-        ['0,0', 'None'],
-        ['0,5', '< 5%'],
-        ['5,10', '5-10%'],
-        ['10,100', '> 10%'],
-      ],
-    ],
-    [
-      'Action Modifier',
-      [
-        ['0,0', 'None'],
-        ['0,10', '< 10%'],
-        ['10,20', '10-20%'],
-        ['20,30', '20-30%'],
-        ['30,100', '> 30%'],
-      ],
-    ],
-    [
-      'Reaction',
-      [
-        ['0,0', 'None'],
-        ['0,10', '< 10%'],
-        ['10,20', '10-20%'],
-        ['20,30', '20-30%'],
-        ['30,100', '> 30%'],
-      ],
-    ],
-    [
-      'Combat',
-      [
-        ['0,0', 'None'],
-        ['0,10', '< 10%'],
-        ['10,20', '10-20%'],
-        ['20,30', '20-30%'],
-        ['30,100', '> 30%'],
-      ],
-    ],
-    [
-      'Event',
-      [
-        ['0,0', 'None'],
-        ['0,4', '< 3%'],
-        ['4,8', '3-7%'],
-        ['8,100', '> 7%'],
-      ],
-    ],
+    ['Master', [15, 25, 35]],
+    ['Action', [0, 5, 15]],
+    ['Political Action', [0, 5, 10, 15]],
+    ['Ally', [0, 5, 15]],
+    ['Equipment', [0, 5, 10]],
+    ['Retainer', [0, 5, 10]],
+    ['Action Modifier', [0, 10, 20, 30]],
+    ['Reaction', [0, 10, 20, 30]],
+    ['Combat', [0, 10, 20, 30]],
+    ['Event', [0, 4, 8]],
   ];
 
   const handleManual = (e) => {
@@ -137,13 +54,51 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       },
     ];
 
-    i[1].map((j) => {
+    if (i[1][0] === 0) {
       options.push({
-        value: j[0],
+        value: '0,0',
         name: i[0].toLowerCase(),
-        label: <div className="flex justify-center">{j[1]}</div>,
+        label: <div className="flex justify-center">None</div>,
       });
-    });
+    }
+
+    i[1]
+      .filter((i) => i !== 0)
+      .map((j) => {
+        options.push({
+          value: `0,${j}`,
+          name: i[0].toLowerCase(),
+          label: <div className="flex justify-center">&lt; {j}%</div>,
+        });
+      });
+
+    i[1]
+      .filter((i) => i !== 0)
+      .map((j, idx) => {
+        if (i[1][0] === 0) {
+          idx = idx + 1;
+        }
+        if (idx < i[1].length - 1)
+          options.push({
+            value: `${j},${i[1][idx + 1]}`,
+            name: i[0].toLowerCase(),
+            label: (
+              <div className="flex justify-center">
+                {j}...{i[1][idx + 1]}%
+              </div>
+            ),
+          });
+      });
+
+    i[1]
+      .filter((i) => i !== 0)
+      .map((j) => {
+        options.push({
+          value: `${j},100`,
+          name: i[0].toLowerCase(),
+          label: <div className="flex justify-center">&gt; {j}%</div>,
+        });
+      });
 
     const [min, max] =
       value[i[0].toLowerCase()] == 'any'

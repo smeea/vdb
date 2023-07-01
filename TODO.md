@@ -3,7 +3,6 @@
 
 # FEATURES
 - TWD Deck check documentation
-- Change TWD type thresholds to be < and > and interval
 
 # MAYBE LATER FEATURES
 - Offline decks storage
