@@ -5,7 +5,6 @@
 # FEATURES
 - TWD Deck check documentation
 - Change TWD type thresholds to be < and > and interval
-- Better crypt/library tooltips for analyzed decks
 
 # MAYBE LATER FEATURES
 - Offline decks storage

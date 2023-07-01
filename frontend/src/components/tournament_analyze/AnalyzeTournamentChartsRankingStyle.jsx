@@ -36,6 +36,7 @@ const AnalyzeTournamentChartsRankingStyle = ({
       const def = {
         clan: getClan(deck.crypt) || 'Multi',
         crypt: deck.crypt,
+        library: deck.library,
         tags: deck.tags,
         inSearch: inSearch,
         rank: deck.score.rank,
