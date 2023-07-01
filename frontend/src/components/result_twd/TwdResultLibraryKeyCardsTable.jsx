@@ -10,7 +10,7 @@ import { useApp } from '@/context';
 import { librarySort } from '@/utils';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
 
-const TwdResultLibraryKeyCardsTable = ({ library }) => {
+const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
   const sortedLibrary = librarySort(Object.values(library), GROUPED_TYPE);
   const keyCards = sortedLibrary.filter((card) => card.q >= 4);
@@ -40,9 +40,11 @@ const TwdResultLibraryKeyCardsTable = ({ library }) => {
   return (
     <div>
       <div className="flex h-[30px] items-center justify-between px-1 font-bold sm:gap-3">
-        {isMobile ? (
+        {withHeader || isMobile ? (
           <>
-            <div className="whitespace-nowrap">Library [{libraryTotal}]</div>
+            <div className="whitespace-nowrap">
+              Library [{libraryTotal}], Key cards:
+            </div>
             {hasBanned && <Warning value={isMobile ? 'B' : 'BANNED'} />}
             <div className="flex gap-1.5 sm:gap-3">
               <div className="flex items-center gap-1" title="Total Blood Cost">
