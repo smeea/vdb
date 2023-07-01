@@ -1,6 +1,5 @@
 # FIX
 - Swipe to Card Ideas on mobile
-- Add links to changelog items looking like links
 
 # FEATURES
 - TWD Deck check documentation

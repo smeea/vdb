@@ -6,7 +6,7 @@ import Discord from '@/assets/images/icons/discord.svg';
 import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg';
 import Globe2 from '@/assets/images/icons/globe2.svg';
 import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg';
-import { Title, Banner } from '@/components';
+import { Title, Banner, TextWithLinks } from '@/components';
 import lastChange from '@/LAST_CHANGE.json';
 
 const ContactLi = ({ icon, children }) => {
@@ -94,7 +94,9 @@ const About = () => {
             </div>
             <ul className="space-y-1">
               {lastChange.changes.map((change, idx) => (
-                <li key={idx}>{change}</li>
+                <li key={idx}>
+                  <TextWithLinks>{change}</TextWithLinks>
+                </li>
               ))}
             </ul>
           </div>

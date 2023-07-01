@@ -1,6 +1,6 @@
 import React from 'react';
 import { Await, useLoaderData } from 'react-router-dom';
-import { Banner } from '@/components';
+import { Banner, TextWithLinks } from '@/components';
 
 const Changelog = () => {
   const loaderData = useLoaderData();
@@ -24,7 +24,9 @@ const Changelog = () => {
                   </div>
                   <ul className="space-y-1">
                     {item.changes.map((change, idx) => (
-                      <li key={idx}>{change}</li>
+                      <li key={idx}>
+                        <TextWithLinks>{change}</TextWithLinks>
+                      </li>
                     ))}
                   </ul>
                 </div>

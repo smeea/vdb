@@ -24,3 +24,4 @@ export { default as Textarea } from './Textarea.jsx';
 export { default as Title } from './Title.jsx';
 export { default as Toggle } from './Toggle.jsx';
 export { default as Tooltip } from './Tooltip.jsx';
+export { default as TextWithLinks } from './TextWithLinks.jsx';
