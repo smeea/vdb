@@ -9,85 +9,8 @@ import {
   Tooltip,
   ReferenceLine,
 } from 'recharts';
-import { useApp } from '@/context';
-import { useDeckCrypt } from '@/hooks';
-import {
-  TwdResultCryptTableRow,
-  TwdResultLibraryKeyCardsTableRow,
-  TwdResultTags,
-} from '@/components';
-import { librarySort } from '@/utils';
-import { GROUPED_TYPE, ASCII_NAME } from '@/utils/constants';
 
-const CustomTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    const value = payload[0].payload;
-
-    const { cryptDeckSort } = useApp();
-    const { sortedCards: sortedCryptCards } = useDeckCrypt(
-      value.crypt,
-      cryptDeckSort,
-      true
-    );
-    const sortedLibrary = librarySort(
-      Object.values(value.library),
-      GROUPED_TYPE
-    );
-    const keyLibraryCards = sortedLibrary.filter((card) => card.q >= 4);
-
-    return (
-      <div
-        className={`z-50 flex flex-col gap-0.5 rounded-md border border-bgSecondary bg-bgPrimary p-1 text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark`}
-      >
-        <div className="flex flex-col gap-2 p-1">
-          <div className="flex items-center justify-between text-fgSecondary dark:text-fgSecondaryDark">
-            <div />
-            <div className="font-bold">{value.clan}</div>
-            <div className="rounded-lg border px-2 py-0.5">
-              <b># {value.rank}</b>
-            </div>
-          </div>
-          <div className="flex text-sm text-fgPrimary dark:text-fgPrimaryDark gap-2">
-            <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
-              <tbody>
-                {sortedCryptCards.map((card, idx) => {
-                  return (
-                    <TwdResultCryptTableRow
-                      key={card.c.Id}
-                      card={card}
-                      idx={idx}
-                    />
-                  );
-                })}
-              </tbody>
-            </table>
-            <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
-              <tbody>
-                {keyLibraryCards
-                  .sort((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME])
-                  .map((card, idx) => {
-                    return (
-                      <TwdResultLibraryKeyCardsTableRow
-                        key={card.c.Id}
-                        card={card}
-                        idx={idx}
-                      />
-                    );
-                  })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        {value.tags &&
-          (value.tags.superior.length > 0 || value.tags.base.length > 0) && (
-            <TwdResultTags tags={value.tags} />
-          )}
-      </div>
-    );
-  }
-
-  return null;
-};
+import { BubbleChartTooltip } from '@/components';
 
 const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
   return (
@@ -127,7 +50,7 @@ const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
           background: '#404050',
         }}
         itemStyle={{ color: 'white' }}
-        content={<CustomTooltip />}
+        content={<BubbleChartTooltip />}
         isAnimationActive={false}
       />
       <Scatter data={data}>

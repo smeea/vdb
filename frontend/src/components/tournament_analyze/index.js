@@ -1,4 +1,5 @@
 export { default as BubbleChart } from './BubbleChart.jsx';
+export { default as BubbleChartTooltip } from './BubbleChartTooltip.jsx';
 export { default as AnalyzeLoadButton } from './AnalyzeLoadButton.jsx';
 export { default as AnalyzeTournamentCharts } from './AnalyzeTournamentCharts.jsx';
 export { default as AnalyzeTournamentChartsClan } from './AnalyzeTournamentChartsClan.jsx';
