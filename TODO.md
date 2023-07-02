@@ -1,5 +1,4 @@
 # FIX
-- Swipe to Card Ideas on mobile
 
 # FEATURES
 - TWD Deck check documentation

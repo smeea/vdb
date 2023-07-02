@@ -3,24 +3,10 @@ import { Link } from 'react-router-dom';
 import reactStringReplace from 'react-string-replace';
 
 const TextWithLinks = ({ children }) => {
-  return reactStringReplace(children, /https:\/\/(.*?[ )])/g, (match, idx) => {
-    let ending;
-    if (match.endsWith('. ')) {
-      ending = '. ';
-    } else {
-      switch (match.slice(-1)) {
-        case ')':
-          ending = ')';
-          break;
-        case ' ':
-          ending = ' ';
-          break;
-        default:
-          ending = '';
-      }
-    }
-
+  return reactStringReplace(children, /https:\/\/(.*?[ ),])/g, (match, idx) => {
+    const ending = match.endsWith('. ') ? '. ' : match.slice(-1);
     const url = `https://${match.replace(ending, '')}`;
+
     return (
       <React.Fragment key={idx}>
         <Link to={url}>{url}</Link>
