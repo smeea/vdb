@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Activity from '@/assets/images/icons/activity.svg';
-import { Modal, ButtonIconed } from '@/components';
+import { Modal, ButtonIconed, TextWithLinks } from '@/components';
 import { useFetch } from '@/hooks';
 import lastChange from '@/LAST_CHANGE.json';
 
@@ -27,7 +27,9 @@ const UpdateNotification = () => {
               </div>
               <ul className="space-y-1">
                 {update.changes.map((change, idx) => (
-                  <li key={idx}>{change}</li>
+                  <li key={idx}>
+                    <TextWithLinks>{change}</TextWithLinks>
+                  </li>
                 ))}
               </ul>
             </div>
