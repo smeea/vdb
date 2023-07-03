@@ -7,7 +7,7 @@ const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
   const decks = useSnapshot(deckStore).decks;
 
   const onClick = () => {
-    deckCardChange(deckid, card, nDeck + 1);
+    deckCardChange(deckid, card, inDeck + 1);
   };
 
   let title = 'Add to Deck';

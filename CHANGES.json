@@ -1,5 +1,11 @@
 [
   {
+    "version": "2023-07-03",
+    "changes": [
+      "Fix add cards from search"
+    ]
+  },
+  {
     "version": "2023-07-02",
     "changes": [
       "Add Analyze Tournament Feature (https://vdb.im/tournament_analyze or MORE button in TWD). It allows browsing decks (using standard TWD filters from VDB, you probable used to) of particular tournament (if we have the required data collected - now only ONE tournament is available but hopefully more come in the future). More details at https://vdb.im/documentation#analyze. Not optimized for phone screen yet.",

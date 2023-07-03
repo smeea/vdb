@@ -176,7 +176,7 @@ const About = () => {
         <div className="space-y-1">
           <Title>ACKNOWLEDGMENTS</Title>
           <ul className="space-y-1">
-            <li>Card images by Fernando &quot;Sydnelson&quot; Cesar</li>
+            <li>Most card images by Fernando &quot;Sydnelson&quot; Cesar</li>
             <li>
               Rulings archive by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
               <a href="https://static.krcg.org/">KRCG</a>
