@@ -263,7 +263,7 @@ const Decks = () => {
                   </div>
                 </>
               ) : (
-                <ErrorMessage>CONTAIN PLAYTEST CARDS</ErrorMessage>
+                <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
               )}
             </div>
           )}
