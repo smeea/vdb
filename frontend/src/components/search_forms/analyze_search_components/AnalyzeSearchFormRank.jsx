@@ -10,8 +10,13 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
   const fromOptions = [];
   const toOptions = [];
 
-  ['ANY', '5', '10', '15', '25%', '50%', '75%'].map((i) => {
-    if (i === 'ANY' || value.to === 'any' || parseInt(i) > value.to) {
+  ['ANY', '5', '10', '15', '25%', '33%', '50%', '66%', '75%'].map((i) => {
+    if (
+      i === 'ANY' ||
+      value.to === 'any' ||
+      parseInt(i) > value.to ||
+      (value.to.includes('%') && i.includes('%') && i > value.to)
+    ) {
       fromOptions.push({
         value: i.toLowerCase(),
         name: 'from',
@@ -24,7 +29,12 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
       });
     }
 
-    if (i === 'ANY' || value.from === 'any' || parseInt(i) < value.from) {
+    if (
+      i === 'ANY' ||
+      value.from === 'any' ||
+      parseInt(i) < value.from ||
+      (value.from.includes('%') && i.includes('%') && i < value.from)
+    ) {
       toOptions.push({
         value: i.toLowerCase(),
         name: 'to',
@@ -43,7 +53,7 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
       <div className="flex basis-full items-center space-x-1">
         <div className="w-1/4">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Rank:
+            Place:
           </div>
         </div>
         <div className="flex w-3/4 items-center space-x-1">

@@ -1,8 +1,8 @@
 # FIX
-- From To in Tournament Analyze
 
 # FEATURES
 - TWD Deck check documentation
+- Clone deck from Analyze
 
 # MAYBE LATER FEATURES
 - Offline decks storage

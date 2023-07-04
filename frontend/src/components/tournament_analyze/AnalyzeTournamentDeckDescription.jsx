@@ -16,12 +16,12 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
       <table>
         <tbody>
           <TwdResultDescriptionTextTr
-            title={isMobile ? <TrophyFill /> : <>Final Rank:</>}
+            title={isMobile ? <TrophyFill /> : <>Place:</>}
           >
             {deck.score.rank}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
-            title={isMobile ? <StarFill /> : <>Scored GW + VP:</>}
+            title={isMobile ? <StarFill /> : <>GW + VP:</>}
           >
             {deck.score.gw}GW + {deck.score.vp}VP
           </TwdResultDescriptionTextTr>
