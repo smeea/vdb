@@ -4,17 +4,15 @@ import { GlobalNotification } from '@/components';
 import { useApp } from '@/context';
 
 const OfflineNotification = () => {
-  const { isOffline } = useApp();
+  const { isOnline } = useApp();
 
   return (
     <>
-      {isOffline ? (
+      {!isOnline && (
         <GlobalNotification>
           <WifiOff width="20" height="20" viewBox="0 0 16 16" />
           OFFLINE
         </GlobalNotification>
-      ) : (
-        <React.Fragment />
       )}
     </>
   );
