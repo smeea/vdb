@@ -17,11 +17,8 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
 
   const handleClickType = (cardtype) => {
     setShow((prevState) => {
-      if (prevState[cardtype]) {
-        return {};
-      } else {
-        return { [cardtype]: true };
-      }
+      if (prevState[cardtype]) return {};
+      return { [cardtype]: true };
     });
   };
 
@@ -36,9 +33,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
   };
 
   const handleHover = (cardtype) => {
-    if (Object.keys(show).length > 0 && !show[cardtype]) {
-      setShow({});
-    }
+    if (!show[cardtype]) setShow({});
   };
 
   const {

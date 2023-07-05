@@ -21,6 +21,7 @@ const Tooltip = ({
   overlay,
   noPadding,
   placement = 'right',
+  show,
 }) => {
   const widthClass = {
     sm: 'max-w-full sm:max-w-[300px]',
@@ -83,7 +84,7 @@ const Tooltip = ({
         {children}
       </div>
       <FloatingPortal>
-        {open && (
+        {(show || open) && (
           <div
             className={`z-50 rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark ${
               noPadding ? '' : 'p-3'
