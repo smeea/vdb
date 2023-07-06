@@ -3,13 +3,17 @@ import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
 import StarFill from '@/assets/images/icons/star-fill.svg';
 import {
   DeckCloneButton,
+  TwdOpenDeckButton,
   TwdResultTags,
   TwdResultDescriptionTextTr,
 } from '@/components';
 import { useApp } from '@/context';
+import { getDeckInUrl } from '@/utils';
 
 const AnalyzeTournamentDeckDescription = ({ deck }) => {
   const { username, isMobile } = useApp();
+
+  const deckInUrl = getDeckInUrl(deck);
 
   return (
     <>
@@ -30,14 +34,22 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
       {(deck.tags.superior.length > 0 || deck.base.length > 0) && (
         <TwdResultTags tags={deck.tags} />
       )}
-      {username && (
+      <div className="flex gap-2">
         <div className="w-full">
-          <DeckCloneButton
-            deck={{ ...deck, tags: [...deck.tags.superior, ...deck.tags.base] }}
-            inTwdPda
-          />
+          <TwdOpenDeckButton url={deckInUrl} />
         </div>
-      )}
+        {username && (
+          <div className="w-full">
+            <DeckCloneButton
+              deck={{
+                ...deck,
+                tags: [...deck.tags.superior, ...deck.tags.base],
+              }}
+              inTwdPda
+            />
+          </div>
+        )}
+      </div>
     </>
   );
 };
