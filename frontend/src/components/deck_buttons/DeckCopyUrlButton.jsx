@@ -3,6 +3,7 @@ import { Menu } from '@headlessui/react';
 import Link45Deg from '@/assets/images/icons/link-45deg.svg';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
 import { useApp } from '@/context';
+import { getDeckInUrl } from '@/utils';
 
 const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
@@ -35,7 +36,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   const handleDeckInUrl = () => {
-    const url = getDeckInUrl();
+    const url = getDeckInUrl(deck);
 
     navigator.clipboard.writeText(url);
     setSuccess(true);
@@ -47,7 +48,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   const handleDeckInQr = () => {
-    const url = getDeckInUrl();
+    const url = getDeckInUrl(deck);
 
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
@@ -98,37 +99,6 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
           setShowFloatingButtons(true);
         }, 1000);
       });
-  };
-
-  const getDeckInUrl = () => {
-    const cards = [];
-
-    Object.keys(deck.crypt).map((card) => {
-      cards.push(`${card}=${deck.crypt[card].q};`);
-    });
-    Object.keys(deck.library).map((card) => {
-      cards.push(`${card}=${deck.library[card].q};`);
-    });
-
-    const info = [];
-    deck.name && info.push(encodeURI(`name=${deck.name}`));
-    deck.author && info.push(encodeURI(`author=${deck.author}`));
-    deck.description &&
-      info.push(
-        encodeURI(`description=${deck.description.substring(0, 7168)}`)
-          .replace(/#/g, '%23')
-          .replace(/&/g, '%26')
-          .replace(/,/g, '%2C')
-      );
-
-    const url = `${import.meta.env.VITE_BASE_URL}/decks/deck?${info
-      .toString()
-      .replace(/,/g, '&')}#${cards
-      .toString()
-      .replace(/,/g, '')
-      .replace(/;$/, '')}`;
-
-    return url;
   };
 
   return (
