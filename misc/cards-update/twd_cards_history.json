@@ -674,7 +674,9 @@
         "player":"Ian Lee"
     },
     "200126":{
-        "deckid":null
+        "deckid":"10702",
+        "twd_date":"2023-04-02",
+        "player":"Sebastian Meurer"
     },
     "200127":{
         "deckid":"2010englisheq",
@@ -810,7 +812,9 @@
         "player":"Ian Lee"
     },
     "201534":{
-        "deckid":null
+        "deckid":"10744",
+        "twd_date":"2023-05-27",
+        "player":"Serge Cirri"
     },
     "200150":{
         "deckid":"barney",
@@ -838,7 +842,9 @@
         "player":"Ian Lee"
     },
     "201637":{
-        "deckid":null
+        "deckid":"10610",
+        "twd_date":"2023-05-21",
+        "player":"Nilceu Galv\u00e3o"
     },
     "200154":{
         "deckid":"2011sorno",
@@ -1059,7 +1065,9 @@
         "player":"O'Neil Schutte"
     },
     "200195":{
-        "deckid":null
+        "deckid":"10744",
+        "twd_date":"2023-05-27",
+        "player":"Serge Cirri"
     },
     "200196":{
         "deckid":"josh",
@@ -5871,7 +5879,9 @@
         "player":"Josh Duffin"
     },
     "201566":{
-        "deckid":null
+        "deckid":"10610",
+        "twd_date":"2023-05-21",
+        "player":"Nilceu Galv\u00e3o"
     },
     "201098":{
         "deckid":"2k9ecminiqsabadell",
@@ -15853,7 +15863,9 @@
         "player":"Rob Treasure"
     },
     "102243":{
-        "deckid":null
+        "deckid":"10551",
+        "twd_date":"2023-06-03",
+        "player":"Orian Gissler"
     },
     "101642":{
         "deckid":"2k3greatlakes",
@@ -18059,7 +18071,9 @@
         "player":"Tomas Vomacka"
     },
     "102114":{
-        "deckid":null
+        "deckid":"10551",
+        "twd_date":"2023-06-03",
+        "player":"Orian Gissler"
     },
     "102115":{
         "deckid":null

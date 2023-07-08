@@ -1,4 +1,5 @@
 # FIX
+- Inventory sort to respect group
 
 # FEATURES
 - TWD Deck check documentation
