@@ -22,7 +22,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
     : [];
 
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       <div>
         {Object.keys(byTypes).map((t, idx) => {
           return (
@@ -38,38 +38,42 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
           );
         })}
       </div>
-      <div className="space-y-1">
+      <div className="flex flex-col gap-1">
         <div>Excluding Master / Event:</div>
-        {byDisciplinesSorted.map((d, idx) => {
-          return (
-            <div key={idx} className="inline-block whitespace-nowrap pr-5">
-              <div className="flex items-center space-x-1">
-                <ResultLibraryDisciplines value={d} />
-                <div className="flex">{byDisciplines[d]}</div>
-                <div className="text-midGray dark:text-midGrayDark">
-                  ({Math.round((byDisciplines[d] / totalExMasters) * 100)}
-                  %)
+        <div>
+          {byDisciplinesSorted.map((d, idx) => {
+            return (
+              <div key={idx} className="inline-block whitespace-nowrap pr-5">
+                <div className="flex items-center space-x-1">
+                  <ResultLibraryDisciplines value={d} />
+                  <div className="flex">{byDisciplines[d]}</div>
+                  <div className="text-midGray dark:text-midGrayDark">
+                    ({Math.round((byDisciplines[d] / totalExMasters) * 100)}
+                    %)
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-      <div>
-        {byClansSorted.map((d, idx) => {
-          return (
-            <div key={idx} className="inline-block whitespace-nowrap pr-5">
-              <div className="flex items-center space-x-1">
-                <ResultLibraryClan value={d} />
-                <div className="flex">{byClans[d]}</div>
-                <div className="text-midGray dark:text-midGrayDark">
-                  ({Math.round((byClans[d] / total) * 100)}%)
+      {byClansSorted.length > 0 && (
+        <div>
+          {byClansSorted.map((d, idx) => {
+            return (
+              <div key={idx} className="inline-block whitespace-nowrap pr-5">
+                <div className="flex items-center space-x-1">
+                  <ResultLibraryClan value={d} />
+                  <div className="flex">{byClans[d]}</div>
+                  <div className="text-midGray dark:text-midGrayDark">
+                    ({Math.round((byClans[d] / total) * 100)}%)
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

@@ -122,7 +122,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
             cards={library}
             deckid={deckid}
             byTypes={libraryByTypeTotal}
-            byClan={libraryByClansTotal}
+            byClans={libraryByClansTotal}
             byDisciplines={libraryByDisciplinesTotal}
           />
         </div>
