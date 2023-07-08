@@ -41,7 +41,7 @@ const AccountRegister = () => {
       formPassword,
       formEmail,
       onSuccess,
-      onError
+      onError,
     );
   };
 

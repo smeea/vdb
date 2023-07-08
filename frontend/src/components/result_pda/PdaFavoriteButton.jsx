@@ -25,7 +25,7 @@ const PdaFavoriteButton = ({ deck }) => {
     fetch(url, options).then(() => {
       setIsFavorited(!isFavorited);
       setFavoritedBy((prevState) =>
-        isFavorited ? prevState - 1 : prevState + 1
+        isFavorited ? prevState - 1 : prevState + 1,
       );
     });
   };

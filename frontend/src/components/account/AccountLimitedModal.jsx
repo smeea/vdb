@@ -37,7 +37,7 @@ const AccountLimitedModal = ({ setShow }) => {
         f.allowed.library,
         f.banned.crypt,
         f.banned.library,
-        f.sets
+        f.sets,
       );
 
       setMany([

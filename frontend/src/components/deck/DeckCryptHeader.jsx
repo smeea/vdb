@@ -28,7 +28,7 @@ const DeckCryptHeader = ({
   const { hasBanned, cryptTotal, hasWrongGroups, cryptGroups } = useDeckCrypt(
     cards,
     null,
-    null
+    null,
   );
 
   return (

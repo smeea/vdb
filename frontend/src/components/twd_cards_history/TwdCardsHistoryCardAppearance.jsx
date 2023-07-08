@@ -13,7 +13,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       Math.round(
         (new Date(card.twd_date) - new Date(card.release_date)) /
           (1000 * 60 * 60 * 24) /
-          365
+          365,
       ) || 1;
   } else {
     const date = new Date();
@@ -24,7 +24,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
     clearSearchForm('twd');
     searchTwdForm.author = author;
     navigate(
-      `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
+      `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`,
     );
   };
 

@@ -21,7 +21,7 @@ const TwdResultDescriptionText = ({ deck }) => {
     }
     searchTwdForm[target] = value;
     navigate(
-      `/twd?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`
+      `/twd?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`,
     );
   };
 

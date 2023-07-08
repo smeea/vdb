@@ -15,7 +15,7 @@ const Textarea = React.forwardRef(
       readOnly = false,
       borderStyle,
     },
-    ref
+    ref,
   ) => {
     return (
       <textarea
@@ -35,7 +35,7 @@ const Textarea = React.forwardRef(
         ref={ref}
       />
     );
-  }
+  },
 );
 Textarea.displayName = 'Textarea';
 

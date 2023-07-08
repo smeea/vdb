@@ -14,7 +14,7 @@ const NewCardSelect = React.forwardRef(
         ref={ref}
       />
     );
-  }
+  },
 );
 NewCardSelect.displayName = 'NewCardSelect';
 

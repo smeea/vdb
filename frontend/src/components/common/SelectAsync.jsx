@@ -16,7 +16,7 @@ const SelectAsync = React.forwardRef(
       placeholder,
       value,
     },
-    ref
+    ref,
   ) => {
     return (
       <AsyncSelect
@@ -67,7 +67,7 @@ const SelectAsync = React.forwardRef(
         }}
       />
     );
-  }
+  },
 );
 SelectAsync.displayName = 'SelectAsync';
 

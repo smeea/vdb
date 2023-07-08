@@ -37,7 +37,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
               isSearchable={false}
               name={`${name}-moreless`}
               value={morelessOptions.find(
-                (obj) => obj.value === value.moreless
+                (obj) => obj.value === value.moreless,
               )}
               onChange={onChange}
             />

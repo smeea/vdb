@@ -55,7 +55,7 @@ const Diff = () => {
         const cardsData = useDeck(
           deckData.cards,
           cryptCardBase,
-          libraryCardBase
+          libraryCardBase,
         );
 
         const d = {

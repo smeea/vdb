@@ -12,7 +12,7 @@ const useDeckInInventory = (deck) => {
     if (deck.crypt[cardid].q > 0) {
       if (inventoryCrypt[cardid]) {
         const inInventory = Math.floor(
-          inventoryCrypt[cardid].q / deck.crypt[cardid].q
+          inventoryCrypt[cardid].q / deck.crypt[cardid].q,
         );
         if (cryptInInventory === undefined || inInventory < cryptInInventory) {
           cryptInInventory = inInventory;
@@ -27,7 +27,7 @@ const useDeckInInventory = (deck) => {
     if (deck.library[cardid].q > 0) {
       if (inventoryLibrary[cardid] && deck.library[cardid].q > 0) {
         const inInventory = Math.floor(
-          inventoryLibrary[cardid].q / deck.library[cardid].q
+          inventoryLibrary[cardid].q / deck.library[cardid].q,
         );
         if (
           libraryInInventory === undefined ||

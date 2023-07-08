@@ -61,7 +61,7 @@ const InventoryMissingButton = ({
     })
     .map(
       (cardid) =>
-        (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] })
+        (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] }),
     );
 
   Object.keys(libraryCardBase)
@@ -73,7 +73,7 @@ const InventoryMissingButton = ({
     })
     .map(
       (cardid) =>
-        (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] })
+        (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] }),
     );
 
   return (

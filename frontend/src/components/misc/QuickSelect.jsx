@@ -14,7 +14,7 @@ const QuickSelect = ({
     setCard(
       event.value > 200000
         ? cryptCardBase[event.value]
-        : libraryCardBase[event.value]
+        : libraryCardBase[event.value],
     );
   };
 

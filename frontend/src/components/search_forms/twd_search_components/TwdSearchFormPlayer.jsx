@@ -23,7 +23,7 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
         .filter((v) =>
           unidecode(v)
             .toLowerCase()
-            .includes(unidecode(inputValue).toLowerCase())
+            .includes(unidecode(inputValue).toLowerCase()),
         )
         .map((v) => {
           return {

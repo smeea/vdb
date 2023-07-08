@@ -38,7 +38,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
     max = max === 'any' || !max ? 100 : max;
     onChange(
       { name: e.target.name, value: `${min},${max}` },
-      { name: 'cardtypes' }
+      { name: 'cardtypes' },
     );
   };
 
@@ -142,7 +142,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
               name={name}
               maxMenuHeight={maxMenuHeight}
               value={options.find(
-                (obj) => obj.value === value[i[0].toLowerCase()]
+                (obj) => obj.value === value[i[0].toLowerCase()],
               )}
               onChange={onChange}
             />

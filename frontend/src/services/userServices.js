@@ -5,7 +5,7 @@ export const login = (
   username,
   password,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const method = 'POST';
   const body = {
@@ -31,7 +31,7 @@ export const register = (
   password,
   email,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const method = 'POST';
   const body = {
@@ -44,7 +44,7 @@ export const register = (
     accountUrl,
     defaultOption(body, method),
     onSuccess,
-    onError
+    onError,
   );
 };
 
@@ -52,7 +52,7 @@ export const changePassword = (
   password,
   newPassword,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const method = 'PUT';
   const body = {
@@ -64,7 +64,7 @@ export const changePassword = (
     accountUrl,
     defaultOption(body, method),
     onSuccess,
-    onError
+    onError,
   );
 };
 
@@ -72,7 +72,7 @@ export const changeEmail = (
   password,
   email,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const method = 'PUT';
   const body = {
@@ -84,14 +84,14 @@ export const changeEmail = (
     accountUrl,
     defaultOption(body, method),
     onSuccess,
-    onError
+    onError,
   );
 };
 
 export const changeName = (
   publicName,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const method = 'PUT';
   const body = {
@@ -102,14 +102,14 @@ export const changeName = (
     accountUrl,
     defaultOption(body, method),
     onSuccess,
-    onError
+    onError,
   );
 };
 
 export const deleteAccount = (
   password,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const method = 'DELETE';
   const body = {
@@ -120,7 +120,7 @@ export const deleteAccount = (
     accountUrl,
     defaultOption(body, method),
     onSuccess,
-    onError
+    onError,
   );
 };
 
@@ -142,7 +142,7 @@ const fetchWithCallbacks = (
   url,
   options,
   onSuccessCallBack,
-  onErrorCallBack
+  onErrorCallBack,
 ) => {
   fetch(url, options)
     .then((response) => {

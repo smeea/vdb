@@ -79,7 +79,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
               isSearchable={false}
               name={0}
               value={morelessOptions.find(
-                (obj) => obj.value === value.value[0].moreless
+                (obj) => obj.value === value.value[0].moreless,
               )}
               onChange={onChange}
             />

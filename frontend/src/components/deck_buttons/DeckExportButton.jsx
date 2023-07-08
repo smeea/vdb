@@ -86,7 +86,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
 
         exportText = useDeckExport(
           { ...deck, crypt: enCrypt, library: enLibrary },
-          format
+          format,
         );
       } else {
         exportText = useDeckExport(deck, format);

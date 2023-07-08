@@ -17,7 +17,7 @@ const PdaResultDescriptionText = ({ deck }) => {
     clearSearchForm('twd');
     searchTwdForm[target] = value;
     navigate(
-      `/pda?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`
+      `/pda?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`,
     );
   };
 

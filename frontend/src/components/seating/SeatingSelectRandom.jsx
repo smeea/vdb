@@ -50,7 +50,7 @@ const SeatingSelectRandom = ({
             {customDecks
               .slice(
                 Math.ceil(customDecks.length / 3),
-                Math.ceil((customDecks.length * 2) / 3)
+                Math.ceil((customDecks.length * 2) / 3),
               )
               .map((d, idx) => {
                 return (
@@ -123,7 +123,7 @@ const SeatingSelectRandom = ({
             {standardDecks
               .slice(
                 Math.ceil(standardDecks.length / 3),
-                Math.ceil((standardDecks.length * 2) / 3)
+                Math.ceil((standardDecks.length * 2) / 3),
               )
               .map((d, idx) => {
                 return (

@@ -39,7 +39,7 @@ const AccountChangePassword = () => {
         formPassword,
         formNewPassword,
         onSuccess,
-        onError
+        onError,
       );
     }
   };

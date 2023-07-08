@@ -16,7 +16,7 @@ const getDeckInUrl = (deck) => {
       encodeURI(`description=${deck.description.substring(0, 7168)}`)
         .replace(/#/g, '%23')
         .replace(/&/g, '%26')
-        .replace(/,/g, '%2C')
+        .replace(/,/g, '%2C'),
     );
 
   const url = `${import.meta.env.VITE_BASE_URL}/decks/deck?${info

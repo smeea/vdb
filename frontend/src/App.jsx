@@ -24,7 +24,7 @@ const Documentation = lazy(() => import('./pages/Documentation.jsx'));
 const TournamentAnalyze = lazy(() => import('./pages/TournamentAnalyze.jsx'));
 const TwdHallOfFameCards = lazy(() => import('./pages/TwdHallOfFameCards.jsx'));
 const TwdHallOfFameTournaments = lazy(() =>
-  import('./pages/TwdHallOfFameTournaments.jsx')
+  import('./pages/TwdHallOfFameTournaments.jsx'),
 );
 const TwdCardsHistory = lazy(() => import('./pages/TwdCardsHistory.jsx'));
 const TwdCheck = lazy(() => import('./pages/TwdCheck.jsx'));
@@ -165,8 +165,8 @@ const App = () => {
             </Suspense>
           }
         />
-      </Route>
-    )
+      </Route>,
+    ),
   );
 
   return <RouterProvider router={router} />;

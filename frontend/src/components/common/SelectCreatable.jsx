@@ -17,7 +17,7 @@ const SelectCreatable = React.forwardRef(
       placeholder,
       value,
     },
-    ref
+    ref,
   ) => {
     return (
       <ReactSelectCreatable
@@ -77,7 +77,7 @@ const SelectCreatable = React.forwardRef(
         }}
       />
     );
-  }
+  },
 );
 SelectCreatable.displayName = 'SelectCreatable';
 

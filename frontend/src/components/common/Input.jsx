@@ -19,7 +19,7 @@ const Input = React.forwardRef(
       borderStyle,
       roundedStyle,
     },
-    ref
+    ref,
   ) => {
     return (
       <input
@@ -42,7 +42,7 @@ const Input = React.forwardRef(
         ref={ref}
       />
     );
-  }
+  },
 );
 Input.displayName = 'Input';
 

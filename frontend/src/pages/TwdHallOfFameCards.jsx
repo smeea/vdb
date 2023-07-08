@@ -136,7 +136,7 @@ const TwdHallOfFameCards = () => {
                   .sort(byInnovation)
                   .filter(
                     (player) =>
-                      Object.keys(getInnovationCards(players[player])).length
+                      Object.keys(getInnovationCards(players[player])).length,
                   )
                   .map((player) => (
                     <Disclosure key={player}>

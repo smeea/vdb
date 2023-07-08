@@ -25,18 +25,18 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     () =>
       cryptSort(
         Object.values(cards).filter((card) => card.Id > 200000),
-        cryptSearchSort
+        cryptSearchSort,
       ),
-    [cards, cryptSearchSort]
+    [cards, cryptSearchSort],
   );
 
   const librarySorted = useMemo(
     () =>
       librarySort(
         Object.values(cards).filter((card) => card.Id < 200000),
-        librarySearchSort
+        librarySearchSort,
       ),
-    [cards, librarySearchSort]
+    [cards, librarySearchSort],
   );
 
   // Modal Card Controller

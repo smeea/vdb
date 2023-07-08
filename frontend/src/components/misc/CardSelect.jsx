@@ -17,7 +17,7 @@ const CardSelect = React.forwardRef(
       autoFocus,
       onChange,
     },
-    ref
+    ref,
   ) => {
     const { isMobile, cryptCardBase, libraryCardBase, playtest } = useApp();
     const { filterCrypt } = useFilters(cryptCardBase);
@@ -110,7 +110,7 @@ const CardSelect = React.forwardRef(
         value={value}
       />
     );
-  }
+  },
 );
 CardSelect.displayName = 'CardSelect';
 

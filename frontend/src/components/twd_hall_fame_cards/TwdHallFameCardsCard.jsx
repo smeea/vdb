@@ -45,7 +45,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
         {Math.round(
           (new Date(card.twdDate) - new Date(card.releaseDate)) /
             (1000 * 60 * 60 * 24) /
-            365
+            365,
         ) || 1}
       </td>
       <td className="min-w-[45px] sm:min-w-[110px]">

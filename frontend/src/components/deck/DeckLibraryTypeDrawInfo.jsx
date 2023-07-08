@@ -25,7 +25,7 @@ const DeckLibraryTypeDrawInfo = (props) => {
         <div onClick={() => handleClickModalDraw(cardtype)}>
           {`${Math.round(
             drawProbability(1, libraryTotal, 7, libraryByTypeTotal[cardtype]) *
-              100
+              100,
           )}%`}
         </div>
       ) : (
@@ -40,7 +40,7 @@ const DeckLibraryTypeDrawInfo = (props) => {
         >
           <div className="inline">{`${Math.round(
             drawProbability(1, libraryTotal, 7, libraryByTypeTotal[cardtype]) *
-              100
+              100,
           )}%`}</div>
         </Tooltip>
       )}

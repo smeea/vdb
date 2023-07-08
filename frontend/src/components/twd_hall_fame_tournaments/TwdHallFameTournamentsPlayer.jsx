@@ -8,7 +8,7 @@ const testStar = (eventName) => {
   return (
     RegExp(
       /(NAC|NC|EC|RESAC|SAC|ACC|Continental Championship) \d{4}( -- |$)/i,
-      'i'
+      'i',
     ).test(eventName) ||
     RegExp(/(NAC|NC|EC) \d{4} Day 2$/i, 'i').test(eventName)
   );

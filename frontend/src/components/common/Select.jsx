@@ -20,7 +20,7 @@ const Select = React.forwardRef(
       placeholder,
       value,
     },
-    ref
+    ref,
   ) => {
     return (
       <ReactSelect
@@ -76,7 +76,7 @@ const Select = React.forwardRef(
         }}
       />
     );
-  }
+  },
 );
 Select.displayName = 'Select';
 

@@ -36,7 +36,7 @@ export const setUsedLibrary = (v) => {
 export const inventoryCardsAdd = (cards) => {
   const initialCryptState = JSON.parse(JSON.stringify(inventoryStore.crypt));
   const initialLibraryState = JSON.parse(
-    JSON.stringify(inventoryStore.library)
+    JSON.stringify(inventoryStore.library),
   );
 
   inventoryServices.addCards(cards).catch(() => {
@@ -63,7 +63,7 @@ export const inventoryCardsAdd = (cards) => {
 export const inventoryCardChange = (card, q) => {
   const initialCryptState = JSON.parse(JSON.stringify(inventoryStore.crypt));
   const initialLibraryState = JSON.parse(
-    JSON.stringify(inventoryStore.library)
+    JSON.stringify(inventoryStore.library),
   );
 
   inventoryServices.setCard(card, q).catch(() => {
