@@ -6,6 +6,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import { deckServices } from '@/services';
 import RootLayout from './pages/RootLayout.jsx';
 import About from './pages/About.jsx';
 import Account from './pages/Account.jsx';
@@ -13,24 +14,23 @@ import Cards from './pages/Cards.jsx';
 import Crypt from './pages/Crypt.jsx';
 import Library from './pages/Library.jsx';
 import Decks from './pages/Decks.jsx';
-
+import {
+  default as Changelog,
+  loader as changesLoader,
+} from './pages/Changelog.jsx';
 const Diff = lazy(() => import('./pages/Diff.jsx'));
 const Inventory = lazy(() => import('./pages/Inventory.jsx'));
 const Review = lazy(() => import('./pages/Review.jsx'));
 const Pda = lazy(() => import('./pages/Pda.jsx'));
 const Twd = lazy(() => import('./pages/Twd.jsx'));
-const Changelog = lazy(() => import('./pages/Changelog.jsx'));
 const Documentation = lazy(() => import('./pages/Documentation.jsx'));
 const TournamentAnalyze = lazy(() => import('./pages/TournamentAnalyze.jsx'));
 const TwdHallOfFameCards = lazy(() => import('./pages/TwdHallOfFameCards.jsx'));
 const TwdHallOfFameTournaments = lazy(() =>
-  import('./pages/TwdHallOfFameTournaments.jsx'),
+  import('./pages/TwdHallOfFameTournaments.jsx')
 );
 const TwdCardsHistory = lazy(() => import('./pages/TwdCardsHistory.jsx'));
 const TwdCheck = lazy(() => import('./pages/TwdCheck.jsx'));
-
-import { deckServices } from '@/services';
-import { loader as changesLoader } from './pages/Changelog.jsx';
 
 const App = () => {
   const router = createBrowserRouter(
@@ -165,8 +165,8 @@ const App = () => {
             </Suspense>
           }
         />
-      </Route>,
-    ),
+      </Route>
+    )
   );
 
   return <RouterProvider router={router} />;
