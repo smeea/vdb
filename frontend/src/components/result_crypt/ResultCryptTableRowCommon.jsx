@@ -56,7 +56,7 @@ const ResultCryptTableRowCommon = ({
           disabled={isMobile}
           noPadding
         >
-          <div className="flex px-1">
+          <div className="flex cursor-pointer px-1">
             <ResultCryptName card={card} />
           </div>
         </ConditionalTooltip>

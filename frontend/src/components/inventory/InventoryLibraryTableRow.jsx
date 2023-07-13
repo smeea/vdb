@@ -116,7 +116,7 @@ const InventoryLibraryTableRow = ({
           className="flex w-full"
           noPadding
         >
-          <div className="flex">
+          <div className="flex cursor-pointer">
             <ResultLibraryName card={card.c} />
           </div>
         </ConditionalTooltip>

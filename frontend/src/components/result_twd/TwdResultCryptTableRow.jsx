@@ -69,7 +69,7 @@ const TwdResultCryptTableRow = ({ card, idx, handleClick }) => {
           disabled={isMobile}
           noPadding
         >
-          <div className="flex">
+          <div className="flex cursor-pointer">
             <ResultCryptName card={card.c} />
           </div>
         </ConditionalTooltip>

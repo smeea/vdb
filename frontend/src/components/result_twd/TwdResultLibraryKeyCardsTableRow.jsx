@@ -66,7 +66,7 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
           disabled={isMobile}
           noPadding
         >
-          <div className="flex">
+          <div className="flex cursor-pointer">
             <ResultLibraryName card={card.c} />
           </div>
         </ConditionalTooltip>

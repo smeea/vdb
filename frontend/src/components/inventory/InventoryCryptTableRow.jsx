@@ -123,7 +123,7 @@ const InventoryCryptTableRow = ({
           className="flex w-full"
           noPadding
         >
-          <div className="flex">
+          <div className="flex cursor-pointer">
             <ResultCryptName card={card.c} />
           </div>
         </ConditionalTooltip>

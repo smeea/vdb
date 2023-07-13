@@ -55,7 +55,7 @@ const Name = ({ card, handleClick }) => {
         disabled={isMobile}
         noPadding
       >
-        <div className="flex px-1">
+        <div className="flex cursor-pointer px-1">
           <ResultLibraryName card={card} />
         </div>
       </ConditionalTooltip>

@@ -44,7 +44,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                   noPadding
                 >
                   <div
-                    className="flex gap-1"
+                    className="flex cursor-pointer gap-1"
                     onClick={() => setModalCard(cryptCardBase[id])}
                   >
                     <ResultCryptName card={cryptCardBase[id]} />

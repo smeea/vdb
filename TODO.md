@@ -1,5 +1,6 @@
 # FIX
 - Inventory sort to respect group
+- Clear multiple forms in text search
 
 # FEATURES
 - TWD Deck check documentation

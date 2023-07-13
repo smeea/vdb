@@ -44,7 +44,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
                   noPadding
                 >
                   <div
-                    className="flex"
+                    className="flex cursor-pointer"
                     onClick={() => setModalCard(libraryCardBase[id])}
                   >
                     <ResultLibraryName card={libraryCardBase[id]} />
