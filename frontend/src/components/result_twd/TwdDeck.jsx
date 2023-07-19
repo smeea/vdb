@@ -11,7 +11,7 @@ import { useApp } from '@/context';
 import { useFetch, useDeck } from '@/hooks';
 
 const TwdDeck = ({ deck, inPda, withHr }) => {
-  const { cryptCardBase, libraryCardBase } = useApp();
+  const { cryptCardBase, libraryCardBase, isNarrow } = useApp();
   if (deck.cards) {
     deck = { ...deck, ...useDeck(deck.cards, cryptCardBase, libraryCardBase) };
   } else {
@@ -48,7 +48,10 @@ const TwdDeck = ({ deck, inPda, withHr }) => {
                 <TwdResultLibraryByTypeTable library={deck.library} />
               </div>
               <div className="basis-1/2 md:basis-1/3">
-                <TwdResultLibraryKeyCardsTable library={deck.library} />
+                <TwdResultLibraryKeyCardsTable
+                  withHeader={isNarrow}
+                  library={deck.library}
+                />
               </div>
             </div>
           </div>

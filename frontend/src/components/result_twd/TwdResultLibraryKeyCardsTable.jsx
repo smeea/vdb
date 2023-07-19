@@ -40,10 +40,10 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
   return (
     <div>
       <div className="flex h-[30px] items-center justify-between px-1 font-bold sm:gap-3">
-        {withHeader || isMobile ? (
+        {withHeader ? (
           <>
             <div className="whitespace-nowrap">
-              Library [{libraryTotal}], Key cards:
+              {isMobile ? 'Lib' : 'Library'} [{libraryTotal}], Keys:
             </div>
             {hasBanned && <Warning value={isMobile ? 'B' : 'BANNED'} />}
             <div className="flex gap-1.5 sm:gap-3">
@@ -58,7 +58,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
             </div>
           </>
         ) : (
-          'Key cards:'
+          'Key Cards:'
         )}
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">

@@ -1,12 +1,13 @@
 # FIX
 - Inventory sort to respect group
 - Clear multiple forms in text search
+- Delete deck with revisions
 
 # FEATURES
 - TWD Deck check documentation
 
 # MAYBE LATER FEATURES
-- Offline decks storage
+- Offline decks/inventory storage
 - Notes to cards in Inventory
 - Playable by crypt filter to library
 - Card change history
