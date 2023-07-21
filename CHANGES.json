@@ -1,5 +1,12 @@
 [
   {
+    "version": "2023-07-21",
+    "changes": [
+      "Update cardbase to include Shadows of Berlin and Echoes of Gehenna",
+      "Small fixes"
+    ]
+  },
+  {
     "version": "2023-07-08",
     "changes": [
       "Update TWDA",

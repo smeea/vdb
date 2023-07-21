@@ -1,10 +1,7 @@
 {
-  "version": "2023-07-08",
+  "version": "2023-07-21",
   "changes": [
-    "Update TWDA",
-    "Add open/clone deck buttons to Tournament Analyze decks",
-    "Fix Tournament Analyze Place filter not to show correct available options for second field (to or from) when something is selected in another one",
-    "Fix click on card type in TWD deck entry not freezing popup with cards of that type",
-    "Fix offline notification"
+    "Update cardbase to include Shadows of Berlin and Echoes of Gehenna",
+    "Small fixes"
   ]
 }
