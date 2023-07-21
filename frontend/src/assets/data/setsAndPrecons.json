@@ -25,6 +25,26 @@
       }
     }
   },
+  "EoG": {
+    "name": "Echoes of Gehenna",
+    "date": "2023-06-30",
+    "precons": {
+      "": {
+        "name": "Echoes of Gehenna",
+        "clan": "Bundle"
+      }
+    }
+  },
+  "SoB": {
+    "name": "Shadows of Berlin",
+    "date": "2023-06-30",
+    "precons": {
+      "": {
+        "name": "Shadows of Berlin",
+        "clan": "Bundle"
+      }
+    }
+  },
   "FoL": {
     "name": "Fall of London",
     "date": "2022-10-14",

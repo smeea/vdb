@@ -453,7 +453,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until a Methuselah is ousted.\nRequires at least one other Gehenna card in play. During each Methuselah's unlock phase, he or she may put the top card of his or her library in play. That card represents a nameless, textless ghoul ally with 2 life, 2 strength and 1 bleed. If the ally is burned, it is removed from the game. When a Methuselah is ousted, burn this card. Remove all such allies from the game when this card leaves play.",
+        "Card Text":"Gehenna. Requires 1 or more other Gehenna events in play. Do not replace until a Methuselah is ousted.\nDuring each Methuselah's unlock phase, that Methuselah can put the top card of their library in play (face up); it becomes a nameless, textless ghoul ally with 2 life, 2 strength and 1 bleed. After that ally is burned or this event leaves play, remove that ally from the game. After a Methuselah is ousted, burn this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -504,6 +504,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":4,
@@ -3152,7 +3155,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Unique.\nPut this card into play. You may lock Aranthebes to give a minion controlled by your predator -1 stealth for the current action. While Aranthebes is unlocked, vampires with a capacity less than 5 get -1 bleed when bleeding you. Any vampire with a capacity above 4 can move Aranthebes to your library as a (D) action. Shuffle afterward.",
+        "Card Text":"+1 stealth action. Unique.\nPut this card in play. You can lock Aranthebes to give a minion controlled by your predator -1 stealth. While Aranthebes is unlocked, vampires with capacity 4 or less get -1 bleed against you. Vampires with capacity 5 or more can shuffle Aranthebes into your library as a (D) action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -3167,6 +3170,9 @@
             },
             "Third":{
                 "PB":1
+            },
+            "SoB":{
+                "":"1"
             }
         },
         "Twd":460,
@@ -8561,7 +8567,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna.\nBurn all boons in play. No more boons may be put in play. During each Methuselah's unlock phase, that Methuselah may move a blood from a vampire he or she controls to a vampire controlled by another Methuselah.",
+        "Card Text":"Gehenna.\nBurn all boons. No more boons can be put in play. During each Methuselah's unlock phase, that Methuselah can move 1 blood from a vampire they control to a vampire controlled by another Methuselah.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -8580,6 +8586,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":30,
@@ -8631,7 +8640,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until a vampire commits diablerie.\nCards minions play in an action that require any Disciplines are not replaced until the end of the current action or until any Methuselah's hand is empty (whichever comes first). Any vampire who commits diablerie is immune to this effect until the next Gehenna card is played.",
+        "Card Text":"Gehenna. Do not replace until a vampire commits diablerie.\nDuring an action, cards minions play requiring 1 or more Disciplines are not replaced until the end of that action or until a Methuselah's hand is empty (whichever comes first). Vampires who commit diablerie ignore this effect until a Gehenna event is played.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -8659,6 +8668,9 @@
             },
             "KoT":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":62,
@@ -16103,7 +16115,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until your next discard phase.\nRequires at least two other Gehenna cards in play. During each Methuselah's unlock phase, he or she may choose a location controlled by his or her prey. The chosen location is burned unless its controller burns 2 pool.",
+        "Card Text":"Gehenna. Requires 2 or more other Gehenna events in play. Do not replace until your next discard phase.\nDuring each Methuselah's unlock phase, that Methuselah can choose a location controlled by their prey. The chosen location is burned unless its controller burns 2 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -16122,6 +16134,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":6,
@@ -27525,7 +27540,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace as long as this card is in play.\nRequires at least three other Gehenna cards in play. There is no Camarilla. Any Camarilla vampire is considered Independent instead.",
+        "Card Text":"Gehenna. Requires 3 or more other Gehenna events in play. Do not replace as long as this card is in play.\nThere is no Camarilla. Instead, Camarilla vampires are considered Independent.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -27564,6 +27579,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":21,
@@ -27577,7 +27595,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace as long as this card is in play.\nRequires at least three other Gehenna cards in play. Not playable if any ready vampire is Black Hand. There is no Sabbat. Any Sabbat vampire is considered Independent instead.",
+        "Card Text":"Gehenna. Requires 3 or more other Gehenna events in play. Not usable if a ready vampire is Black Hand. Do not replace as long as this card is in play.\nThere is no Sabbat. Instead, Sabbat vampires are considered Independent.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -27616,6 +27634,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":5,
@@ -28165,7 +28186,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Government.\nWhen an ally is burned in combat with an acting vampire, put a counter on this card, and that acting vampire takes 2 unpreventable damage (after combat ends). Burn this card when it has 4 counters.",
+        "Card Text":"Government.\nIf an ally is burned in combat with an acting vampire, add 1 counter to this card and inflict 2 unpreventable environmental damage on the acting vampire after the combat ends. If this card has 4 counters, burn it.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -28196,6 +28217,9 @@
         "Set":{
             "KMW":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":180,
@@ -28278,7 +28302,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch with capacity above 4. +1 stealth action. Title.\nPut this card on the acting anarch to represent the unique anarch title of Baron of Boston. This may lead to a contested title. If this anarch is Toreador or Toreador antitribu, he or she gets 1 additional vote in referendums he or she calls. Any vampire can call a referendum to burn this card as a +1 stealth political action. In that referendum, non-anarch titles are worth 1 fewer votes.",
+        "Card Text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Boston. While this Anarch is Toreador or Toreador antitribu, they get +1 vote during referendums they call. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -28304,6 +28328,9 @@
             "Anarchs":{
                 "R":true,
                 "PAB":1
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":22,
@@ -28388,13 +28415,12 @@
     "100715":{
         "ASCII Name":"Fee Stake: New York",
         "Artist":[
-            "Brian LeBlanc",
             "Steve Ellis"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch with capacity above 4. +1 stealth action. Title.\nPut this card on the acting anarch to represent the unique anarch title of Baron of New York. This may lead to a contested title. If this anarch is Brujah or Brujah antitribu, he or she gets 1 additional vote in referendums he or she calls. Any vampire can call a referendum to burn this card as a +1 stealth political action. In that referendum, non-anarch titles are worth 1 fewer votes.",
+        "Card Text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of New York. While this Anarch is Brujah or Brujah antitribu, they get +1 vote during referendums they call. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -28420,6 +28446,9 @@
             "Anarchs":{
                 "R":true,
                 "PAB":1
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":21,
@@ -28471,7 +28500,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch with capacity above 4. +1 stealth action. Title.\nPut this card on the acting anarch to represent the unique anarch title of Baron of Seattle. This may lead to a contested title. If this anarch is Gangrel or Gangrel antitribu, he or she gets 1 additional vote in referendums he or she calls. Any vampire can call a referendum to burn this card as a +1 stealth political action. In that referendum, non-anarch titles are worth 1 fewer votes.",
+        "Card Text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Seattle. While this Anarch is Gangrel or Gangrel antitribu, they get +1 vote during referendums they call. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -28497,6 +28526,9 @@
             "Anarchs":{
                 "R":true,
                 "PAB":1
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":23,
@@ -31082,7 +31114,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Event.\nRequires at least two Gehenna cards in play. When this card is played, burn all Gehenna cards and conviction [1CONVICTION] cards, then send all vampires with capacity 3 or less to torpor. No Gehenna cards may be played while this card remains in play.",
+        "Card Text":"Requires 2 or more Gehenna events in play.\nAfter this card enters play, burn all Gehenna events and conviction cards, then send all vampires with capacity 3 or less to torpor. Gehenna events cannot be played.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -31094,6 +31126,9 @@
         "Set":{
             "Promo":{
                 "2009-04-01":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":38,
@@ -31682,7 +31717,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until a vampire commits diablerie.\nPut 10 counters on this card. Remove one counter each time another Gehenna card is put in play. A blood hunt cannot be called on a vampire whose capacity is greater than the number of counters on this card when he or she diablerizes a younger vampire.",
+        "Card Text":"Gehenna. Do not replace until a vampire commits diablerie.\nThis card comes into play with 10 counters. After another Gehenna event is played, burn 1 counter from this card. Blood hunts cannot be called on vampires with capacity greater than the number of counters on this card who diablerize a younger vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -31701,6 +31736,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":7,
@@ -33385,7 +33423,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nChoose a vampire with a capacity 8 or more. Remove that vampire from the game. His or her controller gains pool equal to the vampire's capacity. His or her controller may cancel this card as it is played by burning 2 pool.",
+        "Card Text":"Remove a vampire with capacity 8 or more from the game. Their controller gains pool equal to the vampire's capacity. Their controller can burn 2 pool to cancel this card as it is played.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -33410,6 +33448,9 @@
             "KoT":{
                 "R":true,
                 "PV":1
+            },
+            "SoB":{
+                "":"1"
             }
         },
         "Twd":380,
@@ -43790,7 +43831,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock to reduce the cost of an action card played by a vampire you control by 1 blood (this location is not locked if that card is canceled as it is played). Any vampire can steal this location as a (D) action.",
+        "Card Text":"Unique location.\nYou can lock this location to reduce the cost of an action card a vampire you control plays by 1 blood (this location is not locked if that card is canceled as it is played). Vampires can steal this location as a (D) action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -43820,6 +43861,9 @@
         ],
         "Set":{
             "Anthology":{
+                "":"1"
+            },
+            "SoB":{
                 "":"1"
             }
         },
@@ -50035,7 +50079,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Inconnu. Do not replace until your unlock phase.\nMinion cards that change the target of a bleed cost an additional blood or life.",
+        "Card Text":"Inconnu. Do not replace until your next unlock phase.\nMinion cards that change the target of a bleed action cost +1 blood or life.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -50056,6 +50100,9 @@
         "Set":{
             "LotN":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":154,
@@ -50574,7 +50621,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until a titled vampire goes to torpor.\nRequires at least one other Gehenna card in play. During each Methuselah's unlock phase, he or she may choose a ready vampire controlled by his or her prey. That vampire takes 1 unpreventable damage. Any titled vampire may call a referendum to burn this card as a +1 stealth political action.",
+        "Card Text":"Gehenna. Requires 1 or more other Gehenna events in play. Do not replace until a titled vampire goes to torpor.\nDuring each Methuselah's unlock phase, that Methuselah can choose a ready vampire controlled by their prey. The chosen vampire takes 1 unpreventable environmental damage. Titled vampires can call a referendum to burn this card as a +1 stealth political action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -50605,6 +50652,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":6,
@@ -50808,7 +50858,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until your next discard phase.\nFor each minion a Methuselah controls during his or her unlock phase, the Methuselah must burn a card from his or her hand or lock that minion. Cards burned in this way are not replaced until the master phase. Vampires with capacity greater than the number of Gehenna cards in play and mortal allies are not affected by this card.",
+        "Card Text":"Gehenna. Do not replace until your next discard phase.\nDuring each Methuselah's unlock phase, for each minion they control, they lock that minion unless they discard a card; cards discarded this way are not replaced until the master phase. Mortal allies and vampires with capacity greater than the number of Gehenna events in play ignore this effect.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -50839,6 +50889,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":31,
@@ -53522,7 +53575,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nLock during your master phase to get an additional master phase action.",
+        "Card Text":"Unique location.\nDuring your master phase, you can lock this card to get +1 master phase action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -53543,6 +53596,9 @@
             },
             "Third":{
                 "U":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":570,
@@ -61311,7 +61367,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace as long as this card is in play.\nRequires at least two other Gehenna cards in play. During each Methuselah's unlock phase, if he or she controls more than two vampires of the same clan, he or she burns one such vampire. If that vampire's capacity is above 5, this Methuselah becomes immune to the effects of this card for the remainder of the game.",
+        "Card Text":"Gehenna. Requires 2 or more other Gehenna events in play. Do not replace as long as this card is in play.\nDuring each Methuselah's unlock phase, if that Methuselah controls 3 or more vampires of the same clan, they burn one of those vampires. If that vampire's capacity is 6 or more, that Methuselah ignores this effect until the end of the game.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -61330,6 +61386,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":30,
@@ -63070,7 +63129,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until a vampire successfully hunts.\nVampires cannot hunt unless forced to hunt. A vampire who must hunt may hunt by stealing a blood from a younger vampire as a (D) action instead of performing the usual hunt action.",
+        "Card Text":"Gehenna. Do not replace until a vampire successfully hunts.\nVampires cannot hunt unless they must hunt. Vampires who must hunt can steal 1 blood from a younger vampire as a (D) hunt action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -63098,6 +63157,9 @@
             },
             "KMW":{
                 "PAn":1
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":45,
@@ -64055,7 +64117,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until a vampire becomes a Liaison.\nRequires at least one other Gehenna card in play. Any Independent vampire may take an action to become liaison. Liaison is a unique Independent title worth 4 votes. If this title would be contested with a younger vampire, the younger vampire immediately yields instead of contesting.",
+        "Card Text":"Gehenna. Requires 1 or more other Gehenna events in play. Do not replace until a vampire becomes a liaison.\nIndependent vampires can receive the unique Independent title of Liaison (worth 4 votes) as an action. If this title would be contested with a younger vampire, the younger vampire immediately yields instead of contesting.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -64080,6 +64142,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":8,
@@ -70822,7 +70887,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until a vampire commits diablerie.\nRequires at least one other Gehenna card in play. Cards that require any superior Disciplines cost an additional blood. Any vampire who commits diablerie is immune to this effect until the next Gehenna card is played.",
+        "Card Text":"Gehenna. Requires 1 or more other Gehenna events in play. Do not replace until a vampire commits diablerie.\nCards requiring 1 or more Disciplines at the superior level cost +1 blood. Vampires who commit diablerie ignore this effect until a Gehenna event is played.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -70853,6 +70918,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":106,
@@ -77796,7 +77864,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna.\nAfter the end of a Methuselah's minion phase, each ready vampire he or she controls with capacity less than the number of Gehenna cards in play who did not hunt in that minion phase burns 1 blood.",
+        "Card Text":"Gehenna.\nAfter each Methuselah's minion phase ends, each ready vampire controlled by that Methuselah with capacity less than the number of Gehenna events in play who did not hunt during that minion phase burns 1 blood.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -77815,6 +77883,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":41,
@@ -78659,7 +78730,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until a vampire moves from torpor to the ready region.\nActions taken by vampires in torpor cost an additional blood. Rescuing an older vampire from torpor costs an additional blood.",
+        "Card Text":"Gehenna. Do not replace until a vampire moves from torpor to the ready region.\nActions performed by vampires in torpor cost +1 blood. Rescuing an older vampire from torpor costs +1 blood.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -78681,6 +78752,9 @@
             },
             "KoT":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":21,
@@ -80553,7 +80627,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play with 4 counters. When you put a non-titled, non-Anarch vampire in play from your uncontrolled region, you may burn a counter from this card to make that vampire Anarch. You may burn a counter from this card to add a blood to an anarch as a master phase action. Burn this card when it has no counters.",
+        "Card Text":"Put this card in play with 4 blood. After you put a non-titled non-Anarch vampire in play from your uncontrolled region, you can burn 1 blood from this card to make that vampire Anarch. You can use a master phase action to move 1 blood from this card to an Anarch. If this card has no blood, burn it.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -80565,6 +80639,9 @@
         "Set":{
             "TR":{
                 "R":true
+            },
+            "SoB":{
+                "":"1"
             }
         },
         "Twd":46,
@@ -80793,7 +80870,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Event. Do not replace as long as this card is in play.\nDuring your discard phase, burn one other event at random. Any other Methuselah may use a discard phase action and burn X pool to burn this card, where X is the number of other events in play.",
+        "Card Text":"Do not replace as long as this card is in play.\nDuring your discard phase, burn another event at random. Other Methuselahs can use a discard phase action and burn X pool to burn this card, where X is the number of other events in play.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -80805,6 +80882,9 @@
         "Set":{
             "SoC":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":127,
@@ -86247,7 +86327,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until your next discard phase.\nRequires at least one other Gehenna card in play. Put 10 counters on this card. Burn 1 counter whenever another Gehenna card is put in play. A vampire whose capacity is greater than X is treated as if his or her capacity is X (minimum of 1), where X is the number of counters on this card.",
+        "Card Text":"Gehenna. Requires 1 or more other Gehenna events in play. Do not replace until your next discard phase.\nThis card comes into play with 10 counters. After another Gehenna event is played, burn 1 counter from this card. Vampires with capacity greater than X are considered vampires with capacity X (minimum of 1), where X is the number of counters on this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -86278,6 +86358,9 @@
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "EoG":{
+                "":"1"
             }
         },
         "Twd":17,

@@ -1111,7 +1111,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Anarch: During the polling step of any referendum, Aisha can burn 1 blood to get +1 vote for each ready anarch you control. +1 bleed.",
+        "Card Text":"Anarch: During the polling step of any referendum, Aisha can burn 1 blood to get +1 vote for each ready Anarch you control. +1 bleed.",
         "Clan":"Toreador",
         "Disciplines":{
             "Obfuscate":1,
@@ -1136,6 +1136,9 @@
         "Set":{
             "Anthology":{
                 "":"1"
+            },
+            "EoG":{
+                "":"5"
             }
         },
         "Title":"",
@@ -1498,6 +1501,9 @@
             },
             "Anthology I":{
                 "":"1"
+            },
+            "EoG":{
+                "":"5"
             }
         },
         "Title":"",
@@ -1566,7 +1572,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2005-10-01":true
+                "":"20051001"
             }
         },
         "Title":"",
@@ -2156,7 +2162,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Camarilla Prince of Tampa: After Alicia performs a successful directed action, she can discard a political action card to lock a younger vampire controlled by (one of) the target Methuselah(s).",
+        "Card Text":"Camarilla Prince of Tampa: After Alicia performs a successful directed action, you can discard a political action card [POLITICALACTION] to lock a younger vampire controlled by (one of) the target Methuselah(s).",
         "Clan":"Lasombra",
         "Disciplines":{
             "Celerity":2,
@@ -2171,7 +2177,10 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2021-03-31":true
+                "":"20210331"
+            },
+            "EoG":{
+                "":"5"
             }
         },
         "Title":"prince",
@@ -3116,7 +3125,7 @@
                 "":"2"
             },
             "Promo":{
-                "2021-03-10":true
+                "":"20210310"
             }
         },
         "Title":"",
@@ -3344,6 +3353,9 @@
         "Set":{
             "Anthology":{
                 "":"1"
+            },
+            "SoB":{
+                "":"10"
             }
         },
         "Title":"",
@@ -3822,7 +3834,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2005-10-26":true
+                "":"20051026"
             }
         },
         "Title":"",
@@ -4191,7 +4203,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Camarilla: Equipment costs Anne-Marie 1 fewer pool.",
+        "Card Text":"Camarilla: Equipment cost Anne-Marie -1 pool.",
         "Clan":"Toreador",
         "Disciplines":{
             "Celerity":1,
@@ -4207,6 +4219,9 @@
         "Set":{
             "Anthology":{
                 "":"1"
+            },
+            "SoB":{
+                "":"10"
             }
         },
         "Title":"",
@@ -4840,6 +4855,9 @@
             },
             "FB":{
                 "PM":"1"
+            },
+            "EoG":{
+                "":"5"
             }
         },
         "Title":"",
@@ -5750,7 +5768,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2021-07-01":true
+                "":"20210701"
             }
         },
         "Title":"",
@@ -6339,7 +6357,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2015-02-21":true
+                "":"20150221"
             }
         },
         "Title":"",
@@ -6690,7 +6708,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2004-10-15":true
+                "":"20041015"
             },
             "POD":{
                 "DTC":true
@@ -6737,7 +6755,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2001-12-01":true
+                "":"20011201"
             },
             "BL":{
                 "U":true
@@ -7552,8 +7570,7 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2019-06-01":true,
-                "2020-05-11":true
+                "":"20200511"
             }
         },
         "Title":"baron",
@@ -7954,8 +7971,7 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2019-10-27":true,
-                "2020-05-11":true
+                "":"20200511"
             }
         },
         "Title":"baron",
@@ -8397,7 +8413,7 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2020-10-30":true
+                "":"20201030"
             }
         },
         "Title":"",
@@ -9020,7 +9036,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2015-02-14":true
+                "":"20150214"
             },
             "KSU":{
                 "TUA":"1",
@@ -9572,9 +9588,8 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2015-02-19":true,
-                "2018-10-04":true,
-                "2019-04-08":true
+                "":"20190408",
+                "2018-10-04":true
             }
         },
         "Title":"",
@@ -9983,8 +9998,7 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2019-06-15":true,
-                "2020-05-11":true
+                "":"20200511"
             }
         },
         "Title":"baron",
@@ -11047,7 +11061,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2010-05-10":true
+                "":"20100510"
             }
         },
         "Title":"",
@@ -11081,7 +11095,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2015-02-11":true
+                "":"20150211"
             },
             "KSU":{
                 "TUA":"1",
@@ -12296,7 +12310,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "1996-01-01":true
+                "":"19960101"
             }
         },
         "Title":"",
@@ -15107,9 +15121,8 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2015-02-16":true,
-                "2018-10-04":true,
-                "2019-04-08":true
+                "":"20190408",
+                "2018-10-04":true
             },
             "POD":{
                 "DTC":true
@@ -15325,7 +15338,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2006-07-10":true
+                "":"20060710"
             },
             "Third":{
                 "PTz":1,
@@ -15608,7 +15621,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2005-01-15":true
+                "":"20050115"
             },
             "KMW":{
                 "PAl":1
@@ -17909,7 +17922,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2001-04-28":true
+                "":"20010428"
             },
             "FN":{
                 "PA":1
@@ -18203,7 +18216,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2021-10-15":true
+                "":"20211015"
             }
         },
         "Title":"",
@@ -18936,6 +18949,35 @@
         "Title":"",
         "Twd":11
     },
+    "201527":{
+        "ASCII Name":"Gabriel Tremblay",
+        "Adv":"",
+        "Artist":[
+            "Marc Simonetti"
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Anarch: Once each combat, Gabriel can discard a card requiring an Anarch to get +1 strength that combat. -1 stealth.",
+        "Clan":"Caitiff",
+        "Disciplines":{
+            "Auspex":1,
+            "Potence":1,
+            "Protean":1
+        },
+        "Group":"6",
+        "Id":201527,
+        "Name":"Gabriel Tremblay",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "Promo":{
+                "2023-05-31":true
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200489":{
         "ASCII Name":"Gabrielle di Righetti",
         "Adv":"",
@@ -19534,7 +19576,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2005-09-14":true
+                "":"20050914"
             }
         },
         "Title":"",
@@ -20011,7 +20053,7 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2021-10-15":true
+                "":"20211015"
             }
         },
         "Title":"baron",
@@ -21728,6 +21770,9 @@
         "Set":{
             "Anthology":{
                 "":"1"
+            },
+            "SoB":{
+                "":"10"
             }
         },
         "Title":"",
@@ -21890,7 +21935,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2004-04-09":true
+                "":"20040409"
             }
         },
         "Title":"cardinal",
@@ -22631,8 +22676,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2005-10-01":true,
-                "2019-04-08":true
+                "":"20190408"
             }
         },
         "Title":"",
@@ -22888,7 +22932,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2001-03-02":true
+                "":"20010302"
             },
             "FN":{
                 "PS":1
@@ -25445,8 +25489,7 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2019-08-18":true,
-                "2020-05-11":true
+                "":"20200511"
             }
         },
         "Title":"baron",
@@ -26756,7 +26799,7 @@
                 "PTo":1
             },
             "Promo":{
-                "2004-04-09":true
+                "":"20040409"
             }
         },
         "Title":"bishop",
@@ -27568,6 +27611,9 @@
         "Set":{
             "Anthology":{
                 "":"1"
+            },
+            "EoG":{
+                "":"5"
             }
         },
         "Title":"",
@@ -28750,7 +28796,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2021-10-15":true
+                "":"20211015"
             }
         },
         "Title":"2 votes",
@@ -28858,8 +28904,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2010-05-10":true,
-                "2019-04-08":true
+                "":"20190408"
             }
         },
         "Title":"",
@@ -29606,7 +29651,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2007-01-01":true
+                "":"20070101"
             },
             "SoC":{
                 "V":true
@@ -29997,7 +30042,7 @@
         "Sect":"Laibon",
         "Set":{
             "Promo":{
-                "2006-10-26":true
+                "":"20061026"
             }
         },
         "Title":"magaji",
@@ -30426,7 +30471,7 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2021-11-13":true
+                "":"20211113"
             }
         },
         "Title":"baron",
@@ -31042,7 +31087,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2003-09-01":true
+                "":"20030901"
             },
             "POD":{
                 "DTC":true
@@ -31230,6 +31275,9 @@
         "Set":{
             "Anthology":{
                 "":"1"
+            },
+            "SoB":{
+                "":"10"
             }
         },
         "Title":"",
@@ -31755,7 +31803,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2021-07-01":true
+                "":"20210701"
             }
         },
         "Title":"",
@@ -31944,8 +31992,7 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2019-10-05":true,
-                "2020-05-11":true
+                "":"20200511"
             }
         },
         "Title":"baron",
@@ -32800,9 +32847,8 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2015-02-20":true,
-                "2018-10-04":true,
-                "2019-04-08":true
+                "":"20190408",
+                "2018-10-04":true
             }
         },
         "Title":"",
@@ -33511,7 +33557,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2002-08-11":true
+                "":"20020811"
             },
             "SW":{
                 "PL":1
@@ -34432,7 +34478,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2022-07-30":true
+                "":"20220730"
             }
         },
         "Title":"primogen",
@@ -35041,7 +35087,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2002-07-04":true
+                "":"20020704"
             },
             "CE":{
                 "V":true
@@ -35376,7 +35422,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "1996-01-01":true
+                "":"19960101"
             }
         },
         "Title":"",
@@ -36376,7 +36422,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2015-02-21":true
+                "":"20150221"
             },
             "Anthology":{
                 "":"1"
@@ -37522,8 +37568,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2009-09-29":true,
-                "2019-04-08":true
+                "":"20190408"
             }
         },
         "Title":"",
@@ -38490,9 +38535,8 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2015-02-18":true,
-                "2018-10-04":true,
-                "2019-04-08":true
+                "":"20190408",
+                "2018-10-04":true
             }
         },
         "Title":"",
@@ -38734,9 +38778,8 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2015-02-17":true,
-                "2018-10-04":true,
-                "2019-04-08":true
+                "":"20190408",
+                "2018-10-04":true
             },
             "POD":{
                 "DTC":true
@@ -40166,7 +40209,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2019-08-16":true
+                "":"20190816"
             },
             "POD":{
                 "DTC":true
@@ -40453,8 +40496,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2005-10-01":true,
-                "2019-04-08":true
+                "":"20190408"
             },
             "POD":{
                 "DTC":true
@@ -40499,8 +40541,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2008-02-03":true,
-                "2019-04-08":true
+                "":"20190408"
             },
             "POD":{
                 "DTC":true
@@ -40610,7 +40651,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2015-02-13":true
+                "":"20150213"
             },
             "Anthology":{
                 "":"2"
@@ -41465,7 +41506,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2021-10-15":true
+                "":"20211015"
             }
         },
         "Title":"",
@@ -45450,7 +45491,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2006-11-01":true
+                "":"20061101"
             }
         },
         "Title":"",
@@ -47848,7 +47889,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2001-03-02":true
+                "":"20010302"
             },
             "SW":{
                 "PT":1
@@ -48474,7 +48515,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2003-11-05":true
+                "":"20031105"
             },
             "BH":{
                 "U":true,
@@ -50671,6 +50712,9 @@
         "Set":{
             "Anthology":{
                 "":"1"
+            },
+            "EoG":{
+                "":"5"
             }
         },
         "Title":"",
@@ -53948,7 +53992,7 @@
                 "":"1"
             },
             "Promo":{
-                "2020-05-11":true
+                "":"20200511"
             }
         },
         "Title":"archbishop",
@@ -55165,7 +55209,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2006-04-17":true
+                "":"20060417"
             }
         },
         "Title":"",
@@ -55321,7 +55365,7 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2021-10-15":true
+                "":"20211015"
             }
         },
         "Title":"",
@@ -55873,8 +55917,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2015-02-15":true,
-                "2021-07-01":true
+                "":"20210701"
             },
             "POD":{
                 "DTC":true
@@ -56300,6 +56343,9 @@
         "Set":{
             "Anthology":{
                 "":"1"
+            },
+            "SoB":{
+                "":"10"
             }
         },
         "Title":"",
@@ -56384,7 +56430,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2006-07-10":true
+                "":"20060710"
             },
             "Third":{
                 "PM":1
@@ -56540,7 +56586,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2015-02-12":true
+                "":"20150212"
             },
             "KSU":{
                 "TUA":"1",
@@ -56748,7 +56794,7 @@
         "Sect":"Independent",
         "Set":{
             "Promo":{
-                "2003-03-07":true
+                "":"20030307"
             },
             "Anarchs":{
                 "U":true,
@@ -57108,8 +57154,7 @@
         "Sect":"Sabbat",
         "Set":{
             "Promo":{
-                "2009-09-29":true,
-                "2019-04-08":true
+                "":"20190408"
             },
             "POD":{
                 "DTC":true
@@ -57179,7 +57224,7 @@
                 "V":true
             },
             "Promo":{
-                "2004-04-09":true
+                "":"20040409"
             }
         },
         "Title":"cardinal",

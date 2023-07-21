@@ -2,6 +2,7 @@
 - Inventory sort to respect group
 - Clear multiple forms in text search
 - Delete deck with revisions
+- Deck preview in add deck to inventory and adv deck select
 
 # FEATURES
 - TWD Deck check documentation

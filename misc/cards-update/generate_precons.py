@@ -1,6 +1,12 @@
 import json
 
 bundles = {
+    "EoG": {
+        "": {},
+    },
+    "SoB": {
+        "": {},
+    },
     "FoL": {
         "": {},
     },
