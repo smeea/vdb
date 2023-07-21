@@ -43,7 +43,7 @@ const Text = ({ text }) => {
           <ResultMiscImage value={match} />
         </div>
       );
-    },
+    }
   );
 
   return (
@@ -51,7 +51,7 @@ const Text = ({ text }) => {
       {reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
         const cardBase = { ...nativeCrypt, ...nativeLibrary };
         const cardid = Object.keys(cardBase).find(
-          (j) => cardBase[j]['Name'] == match,
+          (j) => cardBase[j]['Name'] == match
         );
 
         const card =
@@ -63,6 +63,7 @@ const Text = ({ text }) => {
               <ConditionalTooltip
                 overlay={<CardPopover card={card} />}
                 disabled={isMobile}
+                noPadding
               >
                 {cardid > 200000 ? (
                   <ResultCryptName card={card} />
