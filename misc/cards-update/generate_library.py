@@ -231,7 +231,7 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
                                     card["Set"][set[0]][m.group(1)] = m.group(2)
                                 else:
                                     card["Set"][set[0]][m.group(1)] = 1
-                            elif m := re.match(r"^[0-9]$", precon):
+                            elif m := re.match(r"^[0-9][0-9]?$", precon):
                                 card["Set"][set[0]][""] = precon
                             else:
                                 date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
