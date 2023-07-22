@@ -135,7 +135,7 @@ const DeckSelectAdvModalTableRow = ({
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
-              size="lg"
+              size="xl"
               show={showDeck === deck.deckid}
               overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
             >

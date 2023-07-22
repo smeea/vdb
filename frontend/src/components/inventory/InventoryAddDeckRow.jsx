@@ -81,7 +81,7 @@ const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
         </div>
       </td>
       {isDesktop && (
-        <td className="min-w-[40px]">
+        <td className="min-w-[30px] sm:min-w-[45px]">
           <div
             className="flex justify-center"
             onMouseEnter={() => setShowDeck(deck.deckid)}

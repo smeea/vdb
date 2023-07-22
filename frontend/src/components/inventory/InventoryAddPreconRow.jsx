@@ -48,13 +48,14 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
         </div>
       </td>
       {isDesktop && (
-        <td className="min-w-[40px]">
+        <td className="min-w-[30px] sm:min-w-[45px]">
           <div
             className="flex justify-center"
             onMouseEnter={() => setShowDeck(deck.deckid)}
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
+              size="xl"
               show={showDeck === deck.deckid}
               overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
             >
