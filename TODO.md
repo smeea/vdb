@@ -2,7 +2,6 @@
 - Inventory sort to respect group
 - Clear multiple forms in text search
 - Delete deck with revisions
-- Promo dates for crypt cards
 
 # FEATURES
 - TWD Deck check documentation

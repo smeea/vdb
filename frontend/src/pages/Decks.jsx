@@ -222,8 +222,8 @@ const Decks = () => {
     <div className="deck-container mx-auto">
       <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
         <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
-          <div className="flex gap-2 max-sm:flex-col max-sm:px-2 max-sm:pt-2 sm:gap-4">
-            <div className="basis-full sm:basis-5/12 ">
+          <div className="flex gap-2 max-sm:flex-col max-sm:p-2 sm:gap-4">
+            <div className="basis-full sm:basis-5/12">
               <DeckSelect
                 deckid={deckid}
                 deck={deck}
@@ -234,17 +234,16 @@ const Decks = () => {
                 setShowInfo={setShowInfo}
               />
             </div>
-
-            <div className="basis-full sm:basis-7/12">
-              {deck && (showInfo || !isMobile) && (
+            {deck && (showInfo || !isMobile) && (
+              <div className="basis-full sm:basis-7/12">
                 <DeckDetails
                   deck={deck}
                   folded={foldedDescription}
                   setFolded={setFoldedDescription}
                   allTagsOptions={allTagsOptions}
                 />
-              )}
-            </div>
+              </div>
+            )}
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
