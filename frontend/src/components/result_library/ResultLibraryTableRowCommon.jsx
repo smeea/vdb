@@ -5,7 +5,7 @@ import {
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
-  ResultLibraryName,
+  ResultName,
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
   ConditionalTooltip,
@@ -56,7 +56,7 @@ const Name = ({ card, handleClick }) => {
         noPadding
       >
         <div className="flex cursor-pointer px-1">
-          <ResultLibraryName card={card} />
+          <ResultName card={card} />
         </div>
       </ConditionalTooltip>
     </td>

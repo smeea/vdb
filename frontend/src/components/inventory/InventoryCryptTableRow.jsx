@@ -7,7 +7,7 @@ import {
   InventoryCardQuantity,
   ResultCryptCapacity,
   ResultCryptDisciplines,
-  ResultCryptName,
+  ResultName,
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
@@ -124,7 +124,7 @@ const InventoryCryptTableRow = ({
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultCryptName card={card.c} />
+            <ResultName card={card.c} />
           </div>
         </ConditionalTooltip>
       </div>

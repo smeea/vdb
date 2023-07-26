@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import {
   CardPopover,
   UsedPopover,
-  ResultLibraryName,
+  ResultName,
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
   ResultLibraryClan,
@@ -67,7 +67,7 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultLibraryName card={card.c} />
+            <ResultName card={card.c} />
           </div>
         </ConditionalTooltip>
       </td>

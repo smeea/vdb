@@ -3,8 +3,7 @@ import reactStringReplace from 'react-string-replace';
 import { useApp } from '@/context';
 import {
   CardPopover,
-  ResultCryptName,
-  ResultLibraryName,
+  ResultName,
   ResultMiscImage,
   ConditionalTooltip,
 } from '@/components';
@@ -65,11 +64,7 @@ const Text = ({ text }) => {
                 disabled={isMobile}
                 noPadding
               >
-                {cardid > 200000 ? (
-                  <ResultCryptName card={card} />
-                ) : (
-                  <ResultLibraryName card={card} />
-                )}
+                <ResultName card={card} />
               </ConditionalTooltip>
             </span>
           );

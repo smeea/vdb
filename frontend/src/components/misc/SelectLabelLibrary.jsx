@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
-  ResultLibraryName,
+  ResultName,
   ResultLibraryDisciplines,
   ResultLibraryTypeImage,
   ResultLibraryCost,
@@ -30,7 +30,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
             </div>
           )}
           <ResultLibraryTypeImage value={card.Type} />
-          <ResultLibraryName card={card} colored={false} />
+          <ResultName card={card} colored={false} />
         </div>
         <div className="flex items-center space-x-2">
           <div>

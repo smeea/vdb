@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   CardPopover,
-  ResultLibraryName,
+  ResultName,
   ResultModal,
   NewCardSelect,
   ConditionalTooltip,
@@ -47,7 +47,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
                     className="flex cursor-pointer"
                     onClick={() => setModalCard(libraryCardBase[id])}
                   >
-                    <ResultLibraryName card={libraryCardBase[id]} />
+                    <ResultName card={libraryCardBase[id]} />
                   </div>
                 </ConditionalTooltip>
               </div>

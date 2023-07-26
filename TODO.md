@@ -1,8 +1,9 @@
 # FIX
-- Inventory sort to respect group
 - Delete deck with revisions
+- Text main field not changing value after removing it in multiple forms
 
 # FEATURES
+- Inventory sort options to respect group
 - TWD Deck check documentation
 
 # MAYBE LATER FEATURES
@@ -16,4 +17,3 @@
 - Migration from screen width (isWide, etc) to container queries
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
-- Add ResultName wrapper

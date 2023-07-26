@@ -3,8 +3,7 @@ import reactStringReplace from 'react-string-replace';
 import { useApp } from '@/context';
 import {
   CardPopover,
-  ResultCryptName,
-  ResultLibraryName,
+  ResultName,
   ResultMiscImage,
   ConditionalTooltip,
 } from '@/components';
@@ -31,7 +30,7 @@ const ResultLayoutTextText = ({ cardid }) => {
   cardTextNative.map((i) => {
     reactStringReplace(i, /\/(.*?)\//g, (match) => {
       const refCardid = Object.keys(cardBase).find(
-        (j) => cardBase[j].Name == match,
+        (j) => cardBase[j].Name == match
       );
 
       refCards.push(refCardid);
@@ -53,7 +52,7 @@ const ResultLayoutTextText = ({ cardid }) => {
                 <ResultMiscImage value={match} />
               </div>
             );
-          },
+          }
         );
 
         let counter = 0; // have no idea why index for replacedText don't work
@@ -76,18 +75,14 @@ const ResultLayoutTextText = ({ cardid }) => {
                     disabled={isMobile}
                     noPadding
                   >
-                    {card.Id > 200000 ? (
-                      <ResultCryptName card={card} />
-                    ) : (
-                      <ResultLibraryName card={card} />
-                    )}
+                    <ResultName card={card} />
                   </ConditionalTooltip>
                 </span>
               );
             } else {
               return <React.Fragment key={counter}>/{match}/</React.Fragment>;
             }
-          },
+          }
         );
 
         return (

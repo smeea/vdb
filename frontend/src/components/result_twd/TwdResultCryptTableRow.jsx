@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import {
   CardPopover,
   UsedPopover,
-  ResultCryptName,
+  ResultName,
   ResultCryptCapacity,
   ResultClanImage,
   ConditionalTooltip,
@@ -70,7 +70,7 @@ const TwdResultCryptTableRow = ({ card, idx, handleClick }) => {
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultCryptName card={card.c} />
+            <ResultName card={card.c} />
           </div>
         </ConditionalTooltip>
       </td>

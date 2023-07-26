@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   CardPopover,
-  ResultCryptName,
+  ResultName,
   ResultModal,
   NewCardSelect,
   ConditionalTooltip,
@@ -47,7 +47,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                     className="flex cursor-pointer gap-1"
                     onClick={() => setModalCard(cryptCardBase[id])}
                   >
-                    <ResultCryptName card={cryptCardBase[id]} />
+                    <ResultName card={cryptCardBase[id]} />
                     {cryptCardBase[id]['New'] && (
                       <div className="text-midGray  dark:text-midGrayDark">
                         [G{cryptCardBase[id].Group}]

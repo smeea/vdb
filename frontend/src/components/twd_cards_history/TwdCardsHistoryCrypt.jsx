@@ -9,7 +9,7 @@ import {
   ConditionalTooltip,
   ResultCryptCapacity,
   ResultCryptDisciplines,
-  ResultCryptName,
+  ResultName,
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
@@ -58,7 +58,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   const sortedCards = useMemo(
     () => cryptSort(Object.values(cardsByClan[clan]), sortMethod),
-    [cardsByClan, sortMethod],
+    [cardsByClan, sortMethod]
   );
 
   const {
@@ -97,7 +97,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >
-            <ResultCryptName card={card} />
+            <ResultName card={card} />
           </ConditionalTooltip>
         </div>
         {!isMobile && (

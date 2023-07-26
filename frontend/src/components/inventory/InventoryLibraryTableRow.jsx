@@ -10,7 +10,7 @@ import {
   ResultLibraryCost,
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
-  ResultLibraryName,
+  ResultName,
   ResultLibraryTrifle,
   ConditionalTooltip,
 } from '@/components';
@@ -117,7 +117,7 @@ const InventoryLibraryTableRow = ({
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultLibraryName card={card.c} />
+            <ResultName card={card.c} />
           </div>
         </ConditionalTooltip>
       </div>

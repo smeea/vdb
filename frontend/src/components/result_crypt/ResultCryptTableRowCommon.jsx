@@ -4,7 +4,7 @@ import {
   ResultCryptCapacity,
   ResultCryptDisciplines,
   DeckCryptDisciplines,
-  ResultCryptName,
+  ResultName,
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
@@ -57,7 +57,7 @@ const ResultCryptTableRowCommon = ({
           noPadding
         >
           <div className="flex cursor-pointer px-1">
-            <ResultCryptName card={card} />
+            <ResultName card={card} />
           </div>
         </ConditionalTooltip>
       </td>

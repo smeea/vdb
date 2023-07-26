@@ -7,7 +7,7 @@ import {
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
-  ResultLibraryName,
+  ResultName,
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
 } from '@/components';
@@ -23,7 +23,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose }) => {
         <div className="flex items-center justify-between space-x-2 whitespace-nowrap">
           <ResultLibraryTypeImage value={card.Type} />
           <div className="font-bold text-fgName  dark:text-fgNameDark">
-            <ResultLibraryName card={card} />
+            <ResultName card={card} />
           </div>
         </div>
         <div className="flex items-center space-x-3">

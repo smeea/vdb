@@ -10,7 +10,7 @@ import {
   ResultLibraryBurn,
   ResultLibraryClan,
   ResultLibraryCost,
-  ResultLibraryName,
+  ResultName,
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
   ResultModal,
@@ -147,9 +147,9 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         Object.values(cardsByType[type]).filter((i) => {
           return cardsByDiscipline[discipline][i.Id];
         }),
-        sortMethod,
+        sortMethod
       ),
-    [cardsByType, cardsByDiscipline, sortMethod],
+    [cardsByType, cardsByDiscipline, sortMethod]
   );
 
   const {
@@ -207,7 +207,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >
-            <ResultLibraryName card={card} />
+            <ResultName card={card} />
           </ConditionalTooltip>
         </div>
         {!isMobile && (

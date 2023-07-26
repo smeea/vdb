@@ -9,7 +9,7 @@ import {
   ResultCryptCapacity,
   ResultCryptDisciplines,
   ResultCryptGroup,
-  ResultCryptName,
+  ResultName,
   ResultLayoutTextText,
 } from '@/components';
 
@@ -28,7 +28,7 @@ const ResultCryptLayoutText = ({
         <div className="flex items-center space-x-2 whitespace-nowrap">
           <ResultClanImage value={card.Clan} />
           <div className="space-x-2 font-bold text-fgName dark:text-fgNameDark">
-            <ResultCryptName card={card} />
+            <ResultName card={card} />
             {card.Adv[1] && (
               <ConditionalTooltip
                 overlay={<CardPopover card={cryptCardBase[card.Adv[1]]} />}

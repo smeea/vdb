@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
-  ResultCryptName,
+  ResultName,
   ResultCryptCapacity,
   ResultCryptDisciplines,
   ResultClanImage,
@@ -29,7 +29,7 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
             </div>
           )}
           <ResultCryptCapacity card={card} />
-          <ResultCryptName card={card} colored={false} />
+          <ResultName card={card} colored={false} />
           <div className="text-midGray dark:text-midGrayDark">
             [G{card.Group}]
           </div>
