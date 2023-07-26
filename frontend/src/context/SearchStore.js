@@ -50,26 +50,19 @@ export const setLibraryCompare = (v) => {
 export const clearSearchForm = (target) => {
   switch (target) {
     case 'crypt':
-      searchCryptForm.text[0] = deepClone(defaultsCryptForm.text[0]);
-      for (let i = 1; i < searchCryptForm.text.length; i++) {
-        searchCryptForm.text.pop();
-      }
+      searchCryptForm.text = structuredClone(defaultsCryptForm.text);
       searchCryptForm.votes = 'any';
       searchCryptForm.artist = 'any';
 
       Object.keys(defaultsCryptForm).forEach((k) => {
         if (['text', 'votes', 'artist'].includes(k)) return;
         Object.keys(defaultsCryptForm[k]).forEach((v) => {
-          searchCryptForm[k][v] = deepClone(defaultsCryptForm[k][v]);
+          searchCryptForm[k][v] = structuredClone(defaultsCryptForm[k][v]);
         });
       });
       break;
     case 'library':
-      searchLibraryForm.text[0] = deepClone(defaultsLibraryForm.text[0]);
-      for (let i = 1; i < searchCryptForm.text.length; i++) {
-        searchCryptForm.text.pop();
-      }
-      searchLibraryForm.artist = 'any';
+      searchLibraryForm.text = structuredClone(defaultsLibraryForm.text);
 
       Object.keys(defaultsLibraryForm).forEach((k) => {
         if (['text', 'artist'].includes(k)) return;

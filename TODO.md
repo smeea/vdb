@@ -1,6 +1,5 @@
 # FIX
 - Inventory sort to respect group
-- Clear multiple forms in text search
 - Delete deck with revisions
 
 # FEATURES
