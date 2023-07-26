@@ -231,9 +231,7 @@ const About = () => {
               <a href="https://t.me/smeea">@smeea</a>
             </ContactLi>
             <ContactLi icon={<Discord />}>
-              <a href="https://discord.com/users/264725500226830336">
-                Smeea#3259
-              </a>
+              <a href="https://discord.com/users/264725500226830336">smeea</a>
             </ContactLi>
           </ul>
         </div>
