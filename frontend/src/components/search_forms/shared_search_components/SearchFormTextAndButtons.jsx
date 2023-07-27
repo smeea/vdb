@@ -137,7 +137,7 @@ const SearchFormTextAndButtons = ({
           name={0}
           value="hideMissing"
           label="Search In Inventory"
-          checked={hideMissing}
+          checked={!!hideMissing}
           onChange={() => setHideMissing(!hideMissing)}
         />
       )}

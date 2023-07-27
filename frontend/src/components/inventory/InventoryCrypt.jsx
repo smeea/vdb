@@ -20,11 +20,16 @@ const InventoryCrypt = ({
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
     Name: 'N',
-    Quantity: 'Q',
-    Clan: 'CL',
     Group: 'G',
+    'Group > Clan': 'G/CL',
+    Quantity: 'Q',
+    'Quantity > Group': 'Q/G',
+    Clan: 'CL',
+    'Clan > Group': 'CL/G',
     'Capacity - Min to Max': 'C↑',
+    'Capacity - Min to Max > Group': 'C↑/G',
     'Capacity - Max to Min': 'C↓',
+    'Capacity - Max to Min > Group': 'C↓/G',
   };
 
   const {

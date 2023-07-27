@@ -18,20 +18,35 @@ const cryptSort = (cards, sortMethod) => {
         return cards.sort(byName);
       case 'Capacity - Min to Max':
         return cards.sort(byName).reverse().sort(byCapacity).reverse();
+      case 'Capacity - Min to Max > Group':
+        return cards
+          .sort(byName)
+          .sort(byGroup)
+          .reverse()
+          .sort(byCapacity)
+          .reverse();
       case 'Capacity - Max to Min':
         return cards.sort(byName).sort(byCapacity);
+      case 'Capacity - Max to Min > Group':
+        return cards.sort(byName).sort(byGroup).sort(byCapacity);
       case 'Capacity':
         return cards.sort(byName).sort(byQuantity).sort(byCapacity);
       case 'Quantity':
         return cards.sort(byName).sort(byQuantity);
       case 'Quantity ': // SPACE SUFFIX IS INTENTIONAL
         return cards.sort(byName).sort(byCapacity).sort(byQuantity);
+      case 'Quantity > Group':
+        return cards.sort(byName).sort(byGroup).sort(byQuantity);
       case 'Clan':
         return cards.sort(byName).sort(byClan);
+      case 'Clan > Group':
+        return cards.sort(byName).sort(byGroup).sort(byClan);
       case 'Clan ': // SPACE SUFFIX IS INTENTIONAL
         return cards.sort(byName).sort(byCapacity).sort(byClan);
       case 'Group':
         return cards.sort(byName).sort(byGroup);
+      case 'Group > Clan':
+        return cards.sort(byName).sort(byClan).sort(byGroup);
       case 'Group ': // SPACE SUFFIX IS INTENTIONAL
         return cards.sort(byName).sort(byCapacity).sort(byGroup);
       case 'Sect':

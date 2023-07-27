@@ -3,7 +3,6 @@
 - Text main field not changing value after removing it in multiple forms
 
 # FEATURES
-- Inventory sort options to respect group
 - TWD Deck check documentation
 
 # MAYBE LATER FEATURES
