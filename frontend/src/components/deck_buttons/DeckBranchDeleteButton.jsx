@@ -35,8 +35,6 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
         ? [...decks[masterId].branches]
         : [...decks[deckid].branches];
 
-      delete deckStore.decks[deckid];
-
       if (masterId) {
         branches.splice(branches.indexOf(deckid), 1);
         deckStore.decks[masterId].branches = branches;
@@ -52,6 +50,8 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
         });
         navigate(`/decks/${newMasterId}`);
       }
+
+      delete deckStore.decks[deckid];
     });
   };
 

@@ -191,7 +191,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
     <Modal
       noPadding={isMobile}
       handleClose={handleClose}
-      size={short ? 'sm' : 'xl'}
+      size={short ? 'md' : 'xl'}
       title="Select Deck"
     >
       <div className="flex flex-col gap-3 sm:gap-5">
