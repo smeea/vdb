@@ -1,7 +1,9 @@
 {
-  "version": "2023-07-21",
+  "version": "2023-07-28",
   "changes": [
-    "Update cardbase to include Shadows of Berlin and Echoes of Gehenna",
-    "Small fixes"
+    "Update TWDA",
+    "Add more sort options (prioritizing group) to Inventory crypt",
+    "Fix autocomplete for card names with symbols in names (e.g. SNS or DBR)",
+    "Small other fixes"
   ]
 }
