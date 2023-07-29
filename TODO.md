@@ -1,5 +1,4 @@
 # FIX
-- Delete deck with revisions - test
 - Text main field not changing value after removing it in multiple forms
 
 # FEATURES

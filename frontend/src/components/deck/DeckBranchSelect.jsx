@@ -39,6 +39,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
 
   const options = useMemo(() => {
     return Object.keys(branches)
+      .filter((i) => decks[i])
       .map((i) => {
         return [
           {
