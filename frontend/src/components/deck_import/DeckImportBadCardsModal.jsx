@@ -1,7 +1,7 @@
 import React from 'react';
 import { useImmer } from 'use-immer';
 import { useApp, deckCardChange, inventoryCardChange } from '@/context';
-import { Modal, DeckCardQuantity, QuickSelect } from '@/components';
+import { Modal, DeckCardQuantity, CardSelect } from '@/components';
 
 const DeckImportBadCardsModal = ({
   deckid,
@@ -9,13 +9,13 @@ const DeckImportBadCardsModal = ({
   setBadCards,
   inInventory,
 }) => {
-  const { isMobile } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const [cards, setCards] = useImmer(
     badCards.map(() => ({
       c: null,
       q: null,
-    })),
+    }))
   );
 
   const handleCardChange = (deckid, idx, q) => {
@@ -31,7 +31,10 @@ const DeckImportBadCardsModal = ({
     }
   };
 
-  const handleSetCard = (card, idx) => {
+  const handleSetCard = (v, idx) => {
+    const card =
+      v.value > 200000 ? cryptCardBase[v.value] : libraryCardBase[v.value];
+
     setCards((draft) => {
       draft[idx].c = card;
     });
@@ -57,10 +60,10 @@ const DeckImportBadCardsModal = ({
               />
             </div>
             <div className="basis-2/3 sm:basis-3/5">
-              <QuickSelect
-                setCard={(card) => handleSetCard(card, idx)}
-                selectedCardid={cards[idx]?.c?.Id}
-                inBadImport
+              <CardSelect
+                autoFocus={!isMobile || !cards[idx]?.c?.Id}
+                onChange={(card) => handleSetCard(card, idx)}
+                value={{ value: cards[idx]?.c?.Id }}
               />
             </div>
           </div>

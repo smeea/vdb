@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg';
 import Dice3 from '@/assets/images/icons/dice-3-fill.svg';
 import {
-  QuickSelect,
+  CardSelect,
   ResultLayoutText,
   ButtonIconed,
   CardImage,
@@ -31,15 +31,19 @@ const Cards = () => {
     navigate(`/cards/${card.Id}`);
   };
 
+  const handleChange = (event) => {
+    handleSetCard({ Id: event.value });
+  };
+
   const randomCrypt = () => {
     const cardid =
       Math.floor(
         Math.random() *
           Math.floor(
             Object.keys(cryptCardBase).filter(
-              (cardid) => playtest || cardid < 210000,
-            ).length,
-          ),
+              (cardid) => playtest || cardid < 210000
+            ).length
+          )
       ) + 200000;
     navigate(`/cards/${cardid}`);
   };
@@ -50,9 +54,9 @@ const Cards = () => {
         Math.random() *
           Math.floor(
             Object.keys(libraryCardBase).filter(
-              (cardid) => playtest || cardid < 110000,
-            ).length,
-          ),
+              (cardid) => playtest || cardid < 110000
+            ).length
+          )
       ) + 100000;
     navigate(`/cards/${cardid}`);
   };
@@ -93,9 +97,10 @@ const Cards = () => {
             )}
             <div className="fixed bottom-[44px] z-20 flex w-full flex-row bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
               <div className="w-full md:basis-8/12">
-                <QuickSelect
-                  selectedCardid={card?.Id}
-                  setCard={handleSetCard}
+                <CardSelect
+                  autoFocus={!isMobile || !card?.Id}
+                  onChange={handleChange}
+                  value={null}
                 />
               </div>
             </div>
@@ -134,9 +139,10 @@ const Cards = () => {
             <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
               {cryptCardBase && libraryCardBase && (
                 <div>
-                  <QuickSelect
-                    selectedCardid={card?.Id}
-                    setCard={handleSetCard}
+                  <CardSelect
+                    autoFocus={!isMobile || !card?.Id}
+                    onChange={handleChange}
+                    value={null}
                   />
                 </div>
               )}
