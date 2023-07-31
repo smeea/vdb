@@ -51,18 +51,20 @@ const Modal = ({
               noPadding ? '' : 'p-3 sm:p-5'
             } dark:border-bgSecondaryDark dark:bg-bgPrimaryDark`}
           >
-            {title && (
-              <Dialog.Title
-                className={`flex items-center justify-between border-none  ${
-                  noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3'
-                }`}
-              >
-                <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
-                  {title}
-                </div>
-                {!isNarrow && <ButtonCloseModal handleClose={handleClose} />}
-              </Dialog.Title>
-            )}
+            <Dialog.Title
+              className={`flex items-center justify-between border-none  ${
+                title ? (noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3') : ''
+              }`}
+            >
+              {title && (
+                <>
+                  <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                    {title}
+                  </div>
+                  {!isNarrow && <ButtonCloseModal handleClose={handleClose} />}
+                </>
+              )}
+            </Dialog.Title>
             <div className="max-h-0 max-w-0 opacity-0">
               <button />
             </div>

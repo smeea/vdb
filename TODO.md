@@ -2,7 +2,6 @@
 - Text main field not changing value after removing it in multiple forms
 - Seating unchecked boxes to be ignored
 - Fix alignment in total header icon-text
-- Fix modal to not close on click after first page open
 
 # FEATURES
 - TWD Deck check documentation
