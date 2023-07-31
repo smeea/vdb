@@ -151,6 +151,8 @@ bundles = {
 
 playtest_bundles = {
     "PLAYTEST": {
+        "PH": {},
+        "PL": {},
         "PR": {},
         "PSal": {},
         "PTz": {},
