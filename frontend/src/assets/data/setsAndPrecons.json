@@ -9,8 +9,16 @@
   },
   "PLAYTEST": {
     "name": "PLAYTEST",
-    "date": "2022-09-01",
+    "date": "2023-07-30",
     "precons": {
+      "PH": {
+        "name": "Hecata",
+        "clan": "Hecata"
+      },
+      "PL": {
+        "name": "Lasombra",
+        "clan": "Lasombra"
+      },
       "PR": {
         "name": "Ravnos",
         "clan": "Ravnos"

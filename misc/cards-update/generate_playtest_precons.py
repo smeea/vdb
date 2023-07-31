@@ -6,6 +6,8 @@ playtest_files = {
     "playtest-precon-ravnos-round3.txt": "PR",
     "playtest-precon-tzimisce-round3.txt": "PTz",
     "playtest-precon-salubri-round3.txt": "PSal",
+    "playtest-precon-hecata-round1.txt": "PH",
+    "playtest-precon-lasombra-round1.txt": "PL",
 }
 
 playtest_cards = {}
