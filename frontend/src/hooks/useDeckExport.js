@@ -45,6 +45,7 @@ const getCryptText = (crypt) => {
     Necromancy: 'nec',
     Obeah: 'obe',
     Obfuscate: 'obf',
+    Oblivion: 'obl',
     Obtenebration: 'obt',
     Potence: 'pot',
     Presence: 'pre',

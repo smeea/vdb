@@ -3,7 +3,7 @@ import json
 blacklist = [
     'Auspex', 'Abombwe', 'Animalism', 'Blood Sorcery', 'Celerity',
     'Chimerstry', 'Daimoinon', 'Dementation', 'Dominate', 'Fortitude',
-    'Melpominee', 'Mytherceria', 'Necromancy', 'Obeah', 'Obfuscate',
+    'Melpominee', 'Mytherceria', 'Necromancy', 'Obeah', 'Obfuscate', 'Oblivion',
     'Obtenebration', 'Potence', 'Presence', 'Protean', 'Serpentis',
     'Sanguinus', 'Spiritus', 'Temporis', 'Thanatosis', 'Quietus', 'Valeren',
     'Vicissitude', 'Visceratika', 'Defense', 'Innocence', 'Judgment',
