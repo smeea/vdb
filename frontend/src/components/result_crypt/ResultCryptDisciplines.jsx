@@ -13,7 +13,12 @@ const ResultCryptDisciplines = ({ value }) => {
                 key={idx}
               >
                 {value[d] && (
-                  <ResultDisciplineImage value={d} superior={value[d] === 2} />
+                  <div className="flex items-center justify-center">
+                    <ResultDisciplineImage
+                      value={d}
+                      superior={value[d] === 2}
+                    />
+                  </div>
                 )}
               </td>
             );
