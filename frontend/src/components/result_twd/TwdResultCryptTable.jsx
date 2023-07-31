@@ -55,6 +55,7 @@ const TwdResultCryptTable = ({ crypt }) => {
                 handleClick={handleClick}
                 idx={idx}
                 card={card}
+                shouldShowModal={shouldShowModal}
               />
             );
           })}

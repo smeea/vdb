@@ -10,7 +10,13 @@ import {
 import { useApp, deckStore, deckCardChange } from '@/context';
 import { useDebounce } from '@/hooks';
 
-const ResultLibraryTableRow = ({ card, handleClick, idx, inLimited }) => {
+const ResultLibraryTableRow = ({
+  card,
+  handleClick,
+  idx,
+  inLimited,
+  shouldShowModal,
+}) => {
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inDeck = deck?.library[card.Id]?.q || 0;
@@ -72,7 +78,11 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, inLimited }) => {
           <ResultUsed card={card} />
         </td>
       )}
-      <ResultLibraryTableRowCommon card={card} handleClick={handleClick} />
+      <ResultLibraryTableRowCommon
+        card={card}
+        handleClick={handleClick}
+        shouldShowModal={shouldShowModal}
+      />
     </tr>
   );
 };

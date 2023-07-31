@@ -16,6 +16,7 @@ const ResultCryptTableRow = ({
   idx,
   inRecommendation,
   inLimited,
+  shouldShowModal,
 }) => {
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
@@ -82,7 +83,11 @@ const ResultCryptTableRow = ({
           <ResultUsed card={card} />
         </td>
       )}
-      <ResultCryptTableRowCommon card={card} handleClick={handleClick} />
+      <ResultCryptTableRowCommon
+        card={card}
+        handleClick={handleClick}
+        shouldShowModal={shouldShowModal}
+      />
     </tr>
   );
 };

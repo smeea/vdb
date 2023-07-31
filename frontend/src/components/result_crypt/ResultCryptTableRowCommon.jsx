@@ -21,6 +21,7 @@ const ResultCryptTableRowCommon = ({
   inSearch,
   inDeck,
   noDisciplines,
+  shouldShowModal,
 }) => {
   const { isMobile, isDesktop, isNarrow, isWide } = useApp();
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
@@ -53,7 +54,7 @@ const ResultCryptTableRowCommon = ({
       <td className="w-full" onClick={() => handleClick(card)}>
         <ConditionalTooltip
           overlay={<CardPopover card={card} />}
-          disabled={isMobile}
+          disabled={isMobile || shouldShowModal}
           noPadding
         >
           <div className="flex cursor-pointer px-1">

@@ -92,6 +92,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
           keyDisciplines={keyDisciplines}
           inSearch={inSearch}
           inMissing={inMissing}
+          shouldShowModal={shouldShowModal}
         />
       </div>
       {Object.keys(cryptSide).length > 0 && (
@@ -107,6 +108,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
             keyDisciplines={keyDisciplines}
             inSearch={inSearch}
             inMissing={inMissing}
+            shouldShowModal={shouldShowModal}
           />
         </div>
       )}

@@ -23,6 +23,7 @@ const Library = () => {
     isMobile,
     isDesktop,
     lastDeckId,
+    showFloatingButtons,
   } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const decks = useSnapshot(deckStore).decks;

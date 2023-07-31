@@ -11,6 +11,7 @@ const DeckCryptTable = ({
   handleClick,
   inSearch,
   inMissing,
+  shouldShowModal,
 }) => {
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
@@ -29,6 +30,7 @@ const DeckCryptTable = ({
               cryptTotal={cryptTotal}
               inSearch={inSearch}
               inMissing={inMissing}
+              shouldShowModal={shouldShowModal}
             />
           );
         })}

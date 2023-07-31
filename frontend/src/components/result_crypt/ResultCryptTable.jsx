@@ -24,6 +24,7 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
                 idx={idx}
                 inRecommendation={inRecommendation}
                 inLimited={inLimited}
+                shouldShowModal={shouldShowModal}
               />
             );
           })}

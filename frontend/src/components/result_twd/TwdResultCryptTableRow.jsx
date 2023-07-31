@@ -11,7 +11,12 @@ import {
 import { getHardTotal } from '@/utils';
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
 
-const TwdResultCryptTableRow = ({ card, idx, handleClick }) => {
+const TwdResultCryptTableRow = ({
+  card,
+  idx,
+  handleClick,
+  shouldShowModal,
+}) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const limitedCrypt = useSnapshot(limitedStore).crypt;
@@ -66,7 +71,7 @@ const TwdResultCryptTableRow = ({ card, idx, handleClick }) => {
       <td className="w-full" onClick={() => handleClick(card.c)}>
         <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}
-          disabled={isMobile}
+          disabled={isMobile || shouldShowModal}
           noPadding
         >
           <div className="flex cursor-pointer">

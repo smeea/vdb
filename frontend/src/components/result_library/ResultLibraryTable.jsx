@@ -1,8 +1,11 @@
 import React from 'react';
 import { ResultModal, ResultLibraryTableRow } from '@/components';
+import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 
 const ResultLibraryTable = ({ resultCards, inLimited }) => {
+  const { setShowFloatingButtons } = useApp();
+
   const {
     currentModalCard,
     shouldShowModal,
@@ -10,6 +13,16 @@ const ResultLibraryTable = ({ resultCards, inLimited }) => {
     handleModalCardChange,
     handleModalCardClose,
   } = useModalCardController(resultCards);
+
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
+  };
 
   return (
     <>
@@ -20,9 +33,10 @@ const ResultLibraryTable = ({ resultCards, inLimited }) => {
               <ResultLibraryTableRow
                 key={card.Id}
                 card={card}
-                handleClick={handleModalCardOpen}
+                handleClick={handleClick}
                 idx={idx}
                 inLimited={inLimited}
+                shouldShowModal={shouldShowModal}
               />
             );
           })}
@@ -32,7 +46,7 @@ const ResultLibraryTable = ({ resultCards, inLimited }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </>

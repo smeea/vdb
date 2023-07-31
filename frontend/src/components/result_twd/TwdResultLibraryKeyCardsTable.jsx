@@ -70,6 +70,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
                 card={card}
                 idx={idx}
                 handleClick={handleClick}
+                shouldShowModal={shouldShowModal}
               />
             );
           })}

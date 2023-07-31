@@ -12,7 +12,12 @@ import {
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
 import { getHardTotal } from '@/utils';
 
-const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
+const TwdResultLibraryKeyCardsTableRow = ({
+  card,
+  idx,
+  handleClick,
+  shouldShowModal,
+}) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const limitedLibrary = useSnapshot(limitedStore).library;
@@ -63,7 +68,7 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick }) => {
       <td className="w-full" onClick={() => handleClick(card.c)}>
         <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}
-          disabled={isMobile}
+          disabled={isMobile || shouldShowModal}
           noPadding
         >
           <div className="flex cursor-pointer">

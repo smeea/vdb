@@ -29,6 +29,7 @@ const DeckLibraryTableRow = ({
   libraryTotal,
   inSearch,
   inMissing,
+  shouldShowModal,
 }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
   const decks = useSnapshot(deckStore).decks;
@@ -124,6 +125,7 @@ const DeckLibraryTableRow = ({
         card={card.c}
         handleClick={handleClick}
         inSearch={inSearch}
+        shouldShowModal={shouldShowModal}
         inDeck
       />
       {showInfo && (

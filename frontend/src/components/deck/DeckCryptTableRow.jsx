@@ -31,6 +31,7 @@ const DeckCryptTableRow = ({
   cryptTotal,
   inSearch,
   inMissing,
+  shouldShowModal,
 }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
   const decks = useSnapshot(deckStore).decks;
@@ -129,6 +130,7 @@ const DeckCryptTableRow = ({
         keyDisciplines={keyDisciplines}
         disciplinesSet={disciplinesSet}
         inSearch={inSearch}
+        shouldShowModal={shouldShowModal}
         inDeck
       />
       {showInfo && (

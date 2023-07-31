@@ -9,6 +9,7 @@ const DeckLibraryTable = ({
   handleClick,
   inSearch,
   inMissing,
+  shouldShowModal,
 }) => {
   cards.sort((a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {
@@ -34,6 +35,7 @@ const DeckLibraryTable = ({
               libraryTotal={libraryTotal}
               inSearch={inSearch}
               inMissing={inMissing}
+              shouldShowModal={shouldShowModal}
             />
           );
         })}
