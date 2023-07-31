@@ -34,7 +34,7 @@ const Seating = ({ setShow }) => {
         deckid: deckid,
         name: standardDecksData[deckid],
         state: true,
-      })),
+      }))
   );
 
   const [players, setPlayers] = useImmer([
@@ -94,8 +94,8 @@ const Seating = ({ setShow }) => {
       .map((d) => {
         if (d.random) {
           const src = [];
-          if (withCustom) src.push(...customDecks);
-          if (withStandard) src.push(...standardDecks);
+          if (withCustom) src.push(...customDecks.filter((v) => v.state));
+          if (withStandard) src.push(...standardDecks.filter((v) => v.state));
           if (!src.length > 0) return { name: 'ERROR', deckid: null };
           const randomDeck = getRandomDeck(src);
           return { name: randomDeck.name, deckid: randomDeck.deckid };
