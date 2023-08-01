@@ -1,5 +1,14 @@
 [
   {
+    "version": "2023-07-31",
+    "changes": [
+      "Update playtest to Round 1",
+      "Fix some modal windows not working properly first click after page loading",
+      "Fix seating simulator to ignore unchecked decks",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-07-28",
     "changes": [
       "Update TWDA",
