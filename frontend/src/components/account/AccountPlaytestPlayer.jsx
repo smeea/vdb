@@ -5,7 +5,7 @@ const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
   const [state, setState] = useState(true);
 
   const handleClick = () => {
-    changePlaytester(username, state);
+    changePlaytester(username, !state);
     setState(!state);
   };
 
