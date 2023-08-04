@@ -1,9 +1,6 @@
 {
-  "version": "2023-07-31",
+  "version": "2023-08-04",
   "changes": [
-    "Update playtest to Round 1",
-    "Fix some modal windows not working properly first click after page loading",
-    "Fix seating simulator to ignore unchecked decks",
-    "Small other fixes"
+    "Fix playtest"
   ]
 }
