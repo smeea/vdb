@@ -1,6 +1,7 @@
 # FIX
 - Text main field not changing value after removing it in multiple forms
 - Fix alignment in total header icon-text
+- Modal opening new window instead of closing when click outside on mobile (touch)
 
 # FEATURES
 - TWD Deck check documentation
