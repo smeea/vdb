@@ -6,36 +6,37 @@ import vampireClansList from '@/assets/data/vampireClansList.json';
 import { useApp } from '@/context';
 
 const TwdSearchFormClan = ({ value, onChange }) => {
-  const { isMobile, isXWide } = useApp();
+  const { playtest, isMobile, isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-
-  const options = ['ANY', ...vampireClansList, ...imbuedClansList].map((i) => {
-    if (i == 'ANY' || i == 'NONE') {
-      return {
-        value: i.toLowerCase(),
-        name: 'clan',
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px]" />
-            {i}
-          </div>
-        ),
-      };
-    } else {
-      return {
-        value: i.toLowerCase(),
-        name: 'clan',
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px]">
-              <ResultClanImage value={i} />
+  const options = ['ANY', ...vampireClansList, ...imbuedClansList]
+    .filter((clan) => playtest || clan !== 'Hecata')
+    .map((i) => {
+      if (i == 'ANY' || i == 'NONE') {
+        return {
+          value: i.toLowerCase(),
+          name: 'clan',
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px]" />
+              {i}
             </div>
-            {i}
-          </div>
-        ),
-      };
-    }
-  });
+          ),
+        };
+      } else {
+        return {
+          value: i.toLowerCase(),
+          name: 'clan',
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px]">
+                <ResultClanImage value={i} />
+              </div>
+              {i}
+            </div>
+          ),
+        };
+      }
+    });
 
   return (
     <div className="flex items-center">

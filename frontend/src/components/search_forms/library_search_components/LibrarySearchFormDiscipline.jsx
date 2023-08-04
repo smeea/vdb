@@ -12,7 +12,7 @@ import virtuesList from '@/assets/data/virtuesList.json';
 import { useApp } from '@/context';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
-  const { isXWide, isMobile } = useApp();
+  const { playtest, isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'discipline';
   const disciplinesExtendedList = [
@@ -27,33 +27,35 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     'Not Required',
     ...disciplinesExtendedList,
     ...virtuesList,
-  ].map((i) => {
-    if (i == 'ANY' || i == 'Not Required') {
-      return {
-        value: i.toLowerCase(),
-        name: name,
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px]" />
-            {i}
-          </div>
-        ),
-      };
-    } else {
-      return {
-        value: i.toLowerCase(),
-        name: name,
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px] justify-center">
-              <ResultDisciplineImage value={i} size="lg" />
+  ]
+    .filter((discipline) => playtest || discipline !== 'Oblivion')
+    .map((i) => {
+      if (i == 'ANY' || i == 'Not Required') {
+        return {
+          value: i.toLowerCase(),
+          name: name,
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px]" />
+              {i}
             </div>
-            {i}
-          </div>
-        ),
-      };
-    }
-  });
+          ),
+        };
+      } else {
+        return {
+          value: i.toLowerCase(),
+          name: name,
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px] justify-center">
+                <ResultDisciplineImage value={i} size="lg" />
+              </div>
+              {i}
+            </div>
+          ),
+        };
+      }
+    });
 
   return (
     <>
@@ -89,7 +91,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
             onChange={onChange}
           />

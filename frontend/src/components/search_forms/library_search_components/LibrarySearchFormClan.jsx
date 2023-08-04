@@ -12,7 +12,7 @@ import vampireClansList from '@/assets/data/vampireClansList.json';
 import { useApp } from '@/context';
 
 const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
-  const { isXWide, isMobile } = useApp();
+  const { playtest, isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'clan';
 
@@ -21,33 +21,35 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
     'Not Required',
     ...vampireClansList,
     ...imbuedClansList,
-  ].map((i) => {
-    if (i == 'ANY' || i == 'Not Required') {
-      return {
-        value: i.toLowerCase(),
-        name: name,
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px]" />
-            {i}
-          </div>
-        ),
-      };
-    } else {
-      return {
-        value: i.toLowerCase(),
-        name: name,
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px] justify-center">
-              <ResultLibraryClan value={i} />
+  ]
+    .filter((clan) => playtest || clan !== 'Hecata')
+    .map((i) => {
+      if (i == 'ANY' || i == 'Not Required') {
+        return {
+          value: i.toLowerCase(),
+          name: name,
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px]" />
+              {i}
             </div>
-            {i}
-          </div>
-        ),
-      };
-    }
-  });
+          ),
+        };
+      } else {
+        return {
+          value: i.toLowerCase(),
+          name: name,
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px] justify-center">
+                <ResultLibraryClan value={i} />
+              </div>
+              {i}
+            </div>
+          ),
+        };
+      }
+    });
 
   return (
     <>
@@ -82,7 +84,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
             onChange={onChange}
           />
