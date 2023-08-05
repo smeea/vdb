@@ -17,8 +17,3 @@
 - Migration from screen width (isWide, etc) to container queries
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
-- Refactor disciplines list to be in one file only:
-  - fix_crossrefs.py
-  - useDeckExport.js
-  - disciplinesList.json
-  - generate_crypt.py

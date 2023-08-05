@@ -16,7 +16,7 @@ const ResultDisciplineImage = ({
     xl: 'min-w-[37px] max-w-[37px]',
   };
 
-  if (!(superior || virtuesList.includes(value))) {
+  if (!(superior || virtuesList[value])) {
     const s = {
       sm: 'xs',
       md: 'sm',

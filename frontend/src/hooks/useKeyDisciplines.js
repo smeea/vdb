@@ -12,7 +12,7 @@ const useKeyDisciplines = (crypt = {}) => {
 
       if (disciplinesDict[d] === undefined) {
         disciplinesDict[d] = crypt[card].q;
-        if (virtuesList.includes(d)) {
+        if (virtuesList[d]) {
           disciplinesDetailed[d] = { 0: 0, 1: 0 };
         } else {
           disciplinesDetailed[d] = { 0: 0, 1: 0, 2: 0 };

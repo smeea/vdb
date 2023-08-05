@@ -11,7 +11,7 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
   let withVirtues = false;
 
   const DisciplinesInfo = disciplinesSorted
-    .filter((d) => !virtuesList.includes(d) && disciplinesDetailed[d][0] > 0)
+    .filter((d) => !virtuesList[d] && disciplinesDetailed[d][0] > 0)
     .map((d, idx) => {
       withDisciplines = true;
       return (
@@ -31,7 +31,7 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
     });
 
   const VirtuesInfo = disciplinesSorted
-    .filter((d) => virtuesList.includes(d) && disciplinesDetailed[d][0] > 0)
+    .filter((d) => virtuesList[d] && disciplinesDetailed[d][0] > 0)
     .map((d, idx) => {
       withVirtues = true;
       return (

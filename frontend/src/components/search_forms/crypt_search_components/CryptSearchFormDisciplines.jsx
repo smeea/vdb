@@ -8,7 +8,7 @@ const CryptSearchFormDisciplines = ({ value, onChange }) => {
 
   return (
     <div className="flex flex-wrap">
-      {disciplinesList
+      {Object.keys(disciplinesList)
         .filter((discipline) => playtest || discipline !== 'Oblivion')
         .map((i) => (
           <div

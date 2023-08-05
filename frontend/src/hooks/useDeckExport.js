@@ -1,3 +1,5 @@
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import virtuesList from '@/assets/data/virtuesList.json';
 import { cryptSort, librarySort } from '@/utils';
 
 const getCryptTitle = (crypt) => {
@@ -29,53 +31,16 @@ const getCryptTitle = (crypt) => {
 const getCryptText = (crypt) => {
   let result = '';
 
-  const disciplinesList = {
-    Auspex: 'aus',
-    Abombwe: 'abo',
-    Animalism: 'ani',
-    'Blood Sorcery': 'tha',
-    Celerity: 'cel',
-    Chimerstry: 'chi',
-    Daimoinon: 'dai',
-    Dementation: 'dem',
-    Dominate: 'dom',
-    Fortitude: 'for',
-    Melpominee: 'mel',
-    Mytherceria: 'myt',
-    Necromancy: 'nec',
-    Obeah: 'obe',
-    Obfuscate: 'obf',
-    Oblivion: 'obl',
-    Obtenebration: 'obt',
-    Potence: 'pot',
-    Presence: 'pre',
-    Protean: 'pro',
-    Serpentis: 'ser',
-    Sanguinus: 'san',
-    Spiritus: 'spi',
-    Temporis: 'tem',
-    Thanatosis: 'thn',
-    Quietus: 'qui',
-    Valeren: 'val',
-    Vicissitude: 'vic',
-    Visceratika: 'vis',
-    Defense: 'def',
-    Innocence: 'inn',
-    Judgment: 'jud',
-    Martyrdom: 'mar',
-    Redemption: 'red',
-    Vengeance: 'ven',
-    Vision: 'vis',
-  };
+  const disciplinesAndVirtues = { ...disciplinesList, ...virtuesList };
 
   const getDisciplines = (disciplines) => {
     const baseDisciplines = [];
     const supDisciplines = [];
     Object.keys(disciplines).map((d) => {
       if (disciplines[d] === 1) {
-        baseDisciplines.push(disciplinesList[d].toLowerCase());
+        baseDisciplines.push(disciplinesAndVirtues[d].toLowerCase());
       } else {
-        supDisciplines.push(disciplinesList[d].toUpperCase());
+        supDisciplines.push(disciplinesAndVirtues[d].toUpperCase());
       }
     });
 

@@ -16,7 +16,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'discipline';
   const disciplinesExtendedList = [
-    ...disciplinesList,
+    ...Object.keys(disciplinesList),
     'Flight',
     'Maleficia',
     'Striga',
@@ -26,7 +26,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     'ANY',
     'Not Required',
     ...disciplinesExtendedList,
-    ...virtuesList,
+    ...Object.keys(virtuesList),
   ]
     .filter((discipline) => playtest || discipline !== 'Oblivion')
     .map((i) => {

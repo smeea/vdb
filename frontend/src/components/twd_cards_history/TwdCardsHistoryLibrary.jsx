@@ -56,16 +56,18 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const cardsByDiscipline = {};
   const cardsByDisciplineTotal = {};
   const disciplinesExtendedList = [
-    ...disciplinesList,
+    ...Object.keys(disciplinesList),
     'Flight',
     'Maleficia',
     'Striga',
   ].sort();
 
-  ['All', 'None', ...disciplinesExtendedList, ...virtuesList].map((i) => {
-    cardsByDiscipline[i] = {};
-    cardsByDisciplineTotal[i] = 0;
-  });
+  ['All', 'None', ...disciplinesExtendedList, ...Object.keys(virtuesList)].map(
+    (i) => {
+      cardsByDiscipline[i] = {};
+      cardsByDisciplineTotal[i] = 0;
+    }
+  );
 
   cards.map((card) => {
     const types = card.Type.split('/');

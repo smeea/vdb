@@ -1,9 +1,9 @@
-[
-  "Defense",
-  "Innocence",
-  "Judgment",
-  "Martyrdom",
-  "Redemption",
-  "Vengeance",
-  "Vision"
-]
+{
+  "Defense": "def",
+  "Innocence": "inn",
+  "Judgment": "jud",
+  "Martyrdom": "mar",
+  "Redemption": "red",
+  "Vision": "viz",
+  "Vengeance": "ven"
+}

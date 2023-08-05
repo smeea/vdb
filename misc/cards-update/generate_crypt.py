@@ -4,92 +4,36 @@ import json
 import unicodedata
 
 
+with open("../../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_file, open(
+        "../../frontend/src/assets/data/virtuesList.json", "r") as virtues_file, open(
+            "vtes.json", "r", encoding="utf8") as krcg_file, open(
+                "twda.json", "r") as twda_input:
+
+        krcg_cards = json.load(krcg_file)
+        twda = json.load(twda_input)
+        disciplines_list = json.load(disciplines_file)
+        virtues_list = json.load(virtues_file)
+
+        disciplines = {}
+        for d in disciplines_list.items():
+            disciplines[d[1]] = {
+                "name": d[0],
+                "value": 1
+            }
+            disciplines[d[1].upper()] = {
+                "name": d[0],
+                "value": 2
+            }
+
+        virtues = {}
+        for v in virtues_list.items():
+            virtues[v[1]] = v[0]
+
 def letters_to_ascii(text):
     return "".join(
         c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn"
     )
 
-
-disciplines = {
-    "aus": ["Auspex", 1],
-    "abo": ["Abombwe", 1],
-    "ani": ["Animalism", 1],
-    "cel": ["Celerity", 1],
-    "chi": ["Chimerstry", 1],
-    "dai": ["Daimoinon", 1],
-    "dem": ["Dementation", 1],
-    "dom": ["Dominate", 1],
-    "for": ["Fortitude", 1],
-    "mel": ["Melpominee", 1],
-    "myt": ["Mytherceria", 1],
-    "nec": ["Necromancy", 1],
-    "obe": ["Obeah", 1],
-    "obf": ["Obfuscate", 1],
-    "obl": ["Oblivion", 1],
-    "obt": ["Obtenebration", 1],
-    "pot": ["Potence", 1],
-    "pre": ["Presence", 1],
-    "pro": ["Protean", 1],
-    "ser": ["Serpentis", 1],
-    "san": ["Sanguinus", 1],
-    "spi": ["Spiritus", 1],
-    "tem": ["Temporis", 1],
-    "tha": ["Blood Sorcery", 1],
-    "thn": ["Thanatosis", 1],
-    "qui": ["Quietus", 1],
-    "val": ["Valeren", 1],
-    "vic": ["Vicissitude", 1],
-    "vis": ["Visceratika", 1],
-    "AUS": ["Auspex", 2],
-    "ABO": ["Abombwe", 2],
-    "ANI": ["Animalism", 2],
-    "CEL": ["Celerity", 2],
-    "CHI": ["Chimerstry", 2],
-    "DAI": ["Daimoinon", 2],
-    "DEM": ["Dementation", 2],
-    "DOM": ["Dominate", 2],
-    "FOR": ["Fortitude", 2],
-    "MEL": ["Melpominee", 2],
-    "MYT": ["Mytherceria", 2],
-    "NEC": ["Necromancy", 2],
-    "OBE": ["Obeah", 2],
-    "OBF": ["Obfuscate", 2],
-    "OBL": ["Oblivion", 2],
-    "OBT": ["Obtenebration", 2],
-    "POT": ["Potence", 2],
-    "PRE": ["Presence", 2],
-    "PRO": ["Protean", 2],
-    "SER": ["Serpentis", 2],
-    "SAN": ["Sanguinus", 2],
-    "SPI": ["Spiritus", 2],
-    "TEM": ["Temporis", 2],
-    "THA": ["Blood Sorcery", 2],
-    "THN": ["Thanatosis", 2],
-    "QUI": ["Quietus", 2],
-    "VAL": ["Valeren", 2],
-    "VIC": ["Vicissitude", 2],
-    "VIS": ["Visceratika", 2],
-}
-
-virtues = {
-    "def": "Defense",
-    "inn": "Innocence",
-    "jud": "Judgment",
-    "mar": "Martyrdom",
-    "red": "Redemption",
-    "ven": "Vengeance",
-    "viz": "Vision",
-}
-
-imbued_clans = [
-    "Avenger",
-    "Defender",
-    "Innocent",
-    "Judge",
-    "Martyr",
-    "Redeemer",
-    "Visionary",
-]
 
 artist_fixes = {
     "Alejandro Collucci": "Alejandro Colucci",
@@ -145,7 +89,6 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
     csv_cards = csv.DictReader(cardbase_csv, fieldnames_main)
 
     cardbase = {}
-    twda = json.load(twda_input)
 
     cards = []
     for card in csv_cards:
@@ -230,7 +173,7 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
                 else:
                     for precon in precons:
                         if set[0] in ["KoT", "HttB"] and (
-                            m := re.match(r"^(A|B)([0-9]+)?", precon)
+                                m := re.match(r"^(A|B)([0-9]+)?", precon)
                         ):
                             s = f"{set[0]}R"
                             if m.group(2):
@@ -253,7 +196,7 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
                                 card["Set"][set[0]][date] = True
 
         # Add Sect
-        if card["Clan"] in imbued_clans:
+        if card["Type"] == "Imbued":
             card["Sect"] = "Imbued"
         else:
             text = re.split("\W+", card["Card Text"])
@@ -289,7 +232,7 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
             card_disciplines = {}
             for d in card_disciplines_letters:
                 if d in disciplines:
-                    card_disciplines[disciplines[d][0]] = disciplines[d][1]
+                    card_disciplines[disciplines[d]['name']] = disciplines[d]['value']
 
             card["Disciplines"] = card_disciplines
 
@@ -335,9 +278,9 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
         card["Advancement"] = ""
         for c in cards:
             if (
-                c["Name"] == card["Name"]
-                and c["Id"] != card["Id"]
-                and c["Group"] == card["Group"]
+                    c["Name"] == card["Name"]
+                    and c["Id"] != card["Id"]
+                    and c["Group"] == card["Group"]
             ):
                 isAdv = True if card["Adv"] else False
                 card["Advancement"] = [isAdv, int(c["Id"])]
@@ -346,9 +289,9 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
         card["New"] = False
         for c in cards:
             if (
-                c["Name"] == card["Name"]
-                and int(c["Id"]) < card["Id"]
-                and c["Group"] != card["Group"]
+                    c["Name"] == card["Name"]
+                    and int(c["Id"]) < card["Id"]
+                    and c["Group"] != card["Group"]
             ):
                 card["New"] = True
 
@@ -398,38 +341,29 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
 
 
 with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
-    "cardbase_crypt.json", "w", encoding="utf8"
+        "cardbase_crypt.json", "w", encoding="utf8"
 ) as cardbase_file, open(
     "cardbase_crypt.min.json", "w", encoding="utf8"
-) as cardbase_file_min, open(
-    "vtes.json", "r", encoding="utf8"
-) as krcg_file, open(
-    "twda.json", "r"
-) as twda_input:
-    krcg_cards = json.load(krcg_file)
+) as cardbase_file_min:
     generate_cards(cardbase_csv, cardbase_file, cardbase_file_min)
 
 try:
     with open(
-        "vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
+            "vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
     ) as cardbase_csv, open(
         "cardbase_crypt_playtest.json", "w", encoding="utf8"
     ) as cardbase_file, open(
         "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
-    ) as cardbase_file_min, open(
-        "vtes.json", "r", encoding="utf8"
-    ) as krcg_file, open(
-        "twda.json", "r"
-    ) as twda_input:
-        krcg_cards = json.load(krcg_file)
+    ) as cardbase_file_min:
         generate_cards(cardbase_csv, cardbase_file, cardbase_file_min)
+
 except Exception:
     print(
         "PLAYTEST DISABLED - NO CRYPT PLAYTEST FILES FOUND (CONTACT PLAYTEST COORDINATOR TO GET IT)"
     )
 
 with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
-    "artistsCrypt.json", "w", encoding="utf8"
+        "artistsCrypt.json", "w", encoding="utf8"
 ) as artists_file, open(
     "artistsCrypt.min.json", "w", encoding="utf8"
 ) as artists_file_min:

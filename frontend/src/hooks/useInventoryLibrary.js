@@ -10,7 +10,7 @@ const useInventoryLibrary = (
   category = 'ok',
   compact,
   type,
-  discipline,
+  discipline
 ) => {
   const usedLibrary = useSnapshot(usedStore).library;
   const { libraryCardBase } = useApp();
@@ -29,16 +29,18 @@ const useInventoryLibrary = (
   const missingByDiscipline = {};
 
   const disciplinesExtendedList = [
-    ...disciplinesList,
+    ...Object.keys(disciplinesList),
     'Flight',
     'Maleficia',
     'Striga',
   ].sort();
 
-  ['All', 'None', ...disciplinesExtendedList, ...virtuesList].map((i) => {
-    cardsByDiscipline[i] = {};
-    missingByDiscipline[i] = {};
-  });
+  ['All', 'None', ...disciplinesExtendedList, ...Object.keys(virtuesList)].map(
+    (i) => {
+      cardsByDiscipline[i] = {};
+      missingByDiscipline[i] = {};
+    }
+  );
 
   if (compact) {
     Object.keys(cards).map((card) => {
