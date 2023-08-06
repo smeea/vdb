@@ -66,7 +66,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     (i) => {
       cardsByDiscipline[i] = {};
       cardsByDisciplineTotal[i] = 0;
-    }
+    },
   );
 
   cards.map((card) => {
@@ -149,9 +149,9 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         Object.values(cardsByType[type]).filter((i) => {
           return cardsByDiscipline[discipline][i.Id];
         }),
-        sortMethod
+        sortMethod,
       ),
-    [cardsByType, cardsByDiscipline, sortMethod]
+    [cardsByType, cardsByDiscipline, sortMethod],
   );
 
   const {

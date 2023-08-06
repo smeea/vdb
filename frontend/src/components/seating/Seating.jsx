@@ -34,7 +34,7 @@ const Seating = ({ setShow }) => {
         deckid: deckid,
         name: standardDecksData[deckid],
         state: true,
-      }))
+      })),
   );
 
   const [players, setPlayers] = useImmer([

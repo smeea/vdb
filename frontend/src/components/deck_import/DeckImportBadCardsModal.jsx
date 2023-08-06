@@ -15,7 +15,7 @@ const DeckImportBadCardsModal = ({
     badCards.map(() => ({
       c: null,
       q: null,
-    }))
+    })),
   );
 
   const handleCardChange = (deckid, idx, q) => {

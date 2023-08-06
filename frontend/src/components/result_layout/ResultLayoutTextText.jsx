@@ -30,7 +30,7 @@ const ResultLayoutTextText = ({ cardid }) => {
   cardTextNative.map((i) => {
     reactStringReplace(i, /\/(.*?)\//g, (match) => {
       const refCardid = Object.keys(cardBase).find(
-        (j) => cardBase[j].Name == match
+        (j) => cardBase[j].Name == match,
       );
 
       refCards.push(refCardid);
@@ -52,7 +52,7 @@ const ResultLayoutTextText = ({ cardid }) => {
                 <ResultMiscImage value={match} />
               </div>
             );
-          }
+          },
         );
 
         let counter = 0; // have no idea why index for replacedText don't work
@@ -82,7 +82,7 @@ const ResultLayoutTextText = ({ cardid }) => {
             } else {
               return <React.Fragment key={counter}>/{match}/</React.Fragment>;
             }
-          }
+          },
         );
 
         return (
