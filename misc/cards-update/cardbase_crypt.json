@@ -3741,7 +3741,22 @@
         "Id":200092,
         "Name":"Angelica, The Canonicus",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can only use her ability once per action if she needs intercept, but she can get more than she needs. ",
+                "refs":{
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates",
+                    "[RBK 20200701-9]":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                    "[LSJ 20010111]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3WSV1UXBV0/m/gvRQWzPxOzEJ"
+                }
+            },
+            {
+                "text":"The cards must all be burned at once. No further burning can be done once they're replaced. ",
+                "refs":{
+                    "[LSJ 19981005]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9vOWIR4P_4o/m/UkztBlUMR_QJ"
+                }
+            }
+        ],
         "Sect":"Sabbat",
         "Set":{
             "Sabbat":{
@@ -12569,7 +12584,15 @@
         "Id":200319,
         "Name":"Danylo",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cannot fetch equipments that are locations while in play (locquipments). ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ",
+                    "[ANK 20221210]":"https://www.vekn.net/forum/rules-questions/80203-danylo-special-clarification#106965"
+                }
+            }
+        ],
         "Sect":"Sabbat",
         "Set":{
             "HttBR":{
@@ -15723,7 +15746,14 @@
         "Id":200402,
         "Name":"Edward Neally",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Hand size can be increased more than once per turn (in case of multiple master phase actions). ",
+                "refs":{
+                    "[LSJ 20020814]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gt8wQhk76lA/m/qjDJXRLxM7cJ"
+                }
+            }
+        ],
         "Sect":"Sabbat",
         "Set":{
             "CE":{
@@ -19407,7 +19437,14 @@
         "Id":200500,
         "Name":"General Perfidio D\u00edos",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can use his ability multiple times during the same action. ",
+                "refs":{
+                    "[LSJ 20030605]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jlVA4lGfpkA/m/XrmR0nLZ-NUJ"
+                }
+            }
+        ],
         "Sect":"Sabbat",
         "Set":{
             "Anarchs":{
@@ -22860,6 +22897,13 @@
                 "refs":{
                     "[LSJ 20051126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/dDgHGEG18D0/m/OMk_F9bKqW4J"
                 }
+            },
+            {
+                "text":"If she creates a vampire (eg. {Embrace, The}), they are not Mexico Circle, they are each in their own individual circle of one. ",
+                "refs":{
+                    "[LSJ 20091012]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UWmuZnBo6FM/m/DrX_I39ZObcJ",
+                    "[LSJ 20020609]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Q_Lk0DPHqC8/nAfGfCvsISgJ"
+                }
             }
         ],
         "Sect":"Sabbat",
@@ -22894,6 +22938,13 @@
                 "text":"If influenced with more blood than her capacity, the blood drain off before her ability forces her to burn 2. ",
                 "refs":{
                     "[LSJ 20051126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/dDgHGEG18D0/m/OMk_F9bKqW4J"
+                }
+            },
+            {
+                "text":"If she creates a vampire (eg. {Embrace, The}), they are not Mexico Circle, they are each in their own individual circle of one. ",
+                "refs":{
+                    "[LSJ 20091012]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UWmuZnBo6FM/m/DrX_I39ZObcJ",
+                    "[LSJ 20020609]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Q_Lk0DPHqC8/nAfGfCvsISgJ"
                 }
             }
         ],
@@ -24977,7 +25028,14 @@
         "Id":200649,
         "Name":"Ivan Krenyenko",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The reduction applies for other effects that check the \"cost\" of equipment on him. ",
+                "refs":{
+                    "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ"
+                }
+            }
+        ],
         "Sect":"Independent",
         "Set":{
             "TU":{
@@ -26895,7 +26953,14 @@
         "Id":200703,
         "Name":"Jibade el-Bahrawi",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Gets +1 stealth when using {Summoning, The} at superior [PRE]. ",
+                "refs":{
+                    "[LSJ 20091207]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Eo9SQgj76K8/m/g1iOGx28IQQJ"
+                }
+            }
+        ],
         "Sect":"Laibon",
         "Set":{
             "LoB":{
@@ -30803,7 +30868,14 @@
         "Id":201643,
         "Name":"Lady Scarlett Churchill",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can be chosen as a target for {Toreador Grand Ball} to be locked, but unlocks normally in subsequent unlock phases. ",
+                "refs":{
+                    "[ANK 20220816-2]":"https://www.vekn.net/forum/rules-questions/79968-interaction-between-lady-scarlet-churchill-and-toreador-grand-ball#106003"
+                }
+            }
+        ],
         "Sect":"Camarilla",
         "Set":{
             "FoL":{
@@ -34484,7 +34556,15 @@
         "Id":201633,
         "Name":"Maila",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Her ability can only be used once during each of your turns. ",
+                "refs":{
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates",
+                    "[ANK 20230122]":"https://www.vekn.net/forum/rules-questions/79926-maila-ability-new-promo-from-ec?start=0#107235"
+                }
+            }
+        ],
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
@@ -35827,7 +35907,7 @@
             {
                 "text":"Can use her ability multiple times each action. ",
                 "refs":{
-                    "[LSJ 20020926]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/C7vgb-0Mcbo/6UHJsQjBs9wJ",
+                    "[LSJ 20020814]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gt8wQhk76lA/m/qjDJXRLxM7cJ",
                     "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598"
                 }
             },
@@ -36647,12 +36727,6 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Orun and Aye cards cannot be placed on her as long as she's not a Laibon. ",
-                "refs":{
-                    "[LSJ 20110611]":"https://boardgamegeek.com/thread/662413/article/6920306"
-                }
-            },
-            {
                 "text":"Keeps her title and votes if she changes sects. ",
                 "refs":{
                     "[LSJ 20010714]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/-xrhpMEiMrw/Vnr8QIyt41cJ"
@@ -36661,13 +36735,28 @@
             {
                 "text":"When playing a card requiring a sect and/or a clan, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play. ",
                 "refs":{
+                    "[RTR 20070707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/vSOt2c1uRzQ/MsRAv47Cd4YJ",
+                    "[LSJ 20070708]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
                     "[ANK 20190228]":"http://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
+                }
+            },
+            {
+                "text":"If a contract chooses her when played (eg. {Dirty Contract}), she is \"chosen for the contract\" for other cards (eg. {Open Dossier}). If the contract choice is an effect of the card in play (eg. {Clandestine Contract}), she's not chosen. ",
+                "refs":{
+                    "[LSJ 20070708]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                    "[LSJ 20071109]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mXspOwNnPDc/m/UJAVuSqFBNoJ"
                 }
             },
             {
                 "text":"When playing a card requiring a sect, her title makes her a titled vampire of that sect (eg. she can play {Hand Intervention}). ",
                 "refs":{
                     "[LSJ 20050526]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x98guZkL_CQ/m/5JmxFmAbm2IJ"
+                }
+            },
+            {
+                "text":"Orun and Aye cards cannot be placed on her as long as she's not a Laibon. ",
+                "refs":{
+                    "[LSJ 20110611]":"https://boardgamegeek.com/thread/662413/article/6920306"
                 }
             },
             {
@@ -41974,7 +42063,15 @@
         "Id":201085,
         "Name":"Osric Vladislav",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability can be used more than once during an action, but only if he is acting and stealth is needed. ",
+                "refs":{
+                    "[LSJ 20020814]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gt8wQhk76lA/m/qjDJXRLxM7cJ",
+                    "[ANK 20221229]":"https://www.vekn.net/forum/rules-questions/80231-clarifications-on-osric-vladislav-s-wording#107109"
+                }
+            }
+        ],
         "Sect":"Camarilla",
         "Set":{
             "KoTR":{
@@ -45230,8 +45327,9 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His ability is activated after he equips with the equipment. He cannot use his ability to move the {Eye of Hazimel}. ",
+                "text":"His ability is activated after he equips with the equipment. He cannot use his ability to move the {Eye of Hazimel}, or an equipment that is a locatino while in play. ",
                 "refs":{
+                    "[LSJ 20020211]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ubqDaLeG3qo/m/TGKL07dP8NkJ",
                     "[LSJ 20060221]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/OC41YQYfJO4/g_y0RPVpXNkJ"
                 }
             },
@@ -45301,7 +45399,15 @@
         "Id":201648,
         "Name":"Regina Blake",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"She can use her ability to pay for equipments that are locations while in play (eg. {Palatial Estate}). ",
+                "refs":{
+                    "[LSJ 20080107]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XpZ6F53jK-c/m/wB6HHGzgFi4J",
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
+                }
+            }
+        ],
         "Sect":"Camarilla",
         "Set":{
             "FoL":{
@@ -46833,6 +46939,13 @@
         "Name":"Ruxandra",
         "New":false,
         "Rulings":[
+            {
+                "text":"The cards must all be discarded at once, then replaced. ",
+                "refs":{
+                    "[LSJ 19981005]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9vOWIR4P_4o/m/UkztBlUMR_QJ",
+                    "[ANK 20230404]":"https://www.vekn.net/forum/rules-questions/80431-ruxandra-and-discarding#107788"
+                }
+            },
             {
                 "text":"Her ability can be used when in torpor. ",
                 "refs":{
@@ -55444,27 +55557,11 @@
             {
                 "text":"When meeting a requirement to play a card, he is treated as such for all the effects of the card, and only them, including duration effects. He is not treated as meeting the requirements for effects the card has from being in play. ",
                 "refs":{
+                    "[RTR 20070707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/vSOt2c1uRzQ/MsRAv47Cd4YJ",
+                    "[LSJ 20070708]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
                     "[ANK 20200703-3]":"http://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
                     "[ANK 20190228]":"http://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
                     "[LSJ 20101013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J"
-                }
-            },
-            {
-                "text":"If a card he plays is canceled as it is played, he is still considered having used the requirement, if any. ",
-                "refs":{
-                    "[ANK 20200710]":"http://www.vekn.net/forum/rules-questions/77985-vidal-jarbeaux-ability#100333"
-                }
-            },
-            {
-                "text":"He can meet any title as well as non-requirements (eg. non-Red List), but cannot meet requirements that are not vampire traits (eg. Mortal, unlocked, older, ..) ",
-                "refs":{
-                    "[LSJ 20081120-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/e2PNDpg-l_c/zsGPhfQgLL8J"
-                }
-            },
-            {
-                "text":"When meeting a title requirement, he is considered as a vampire of the underlying sect. ",
-                "refs":{
-                    "[LSJ 20050128]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HVy8iPUxNbI/ZHGTnprQjGUJ"
                 }
             },
             {
@@ -55475,34 +55572,57 @@
                 }
             },
             {
-                "text":"He cannot fulfill a non-vampire trait requirement (eg. Gehenna), but he can fulfill the \"Red List\" or \"Flight\" requirements. ",
+                "text":"If a card he plays is canceled as it is played, he is still considered having used the requirement, if any. ",
                 "refs":{
-                    "[LSJ 20091016]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/pqa7mYZ6NEM/yvS8jE0ncrQJ"
+                    "[ANK 20200710]":"http://www.vekn.net/forum/rules-questions/77985-vidal-jarbeaux-ability#100333"
                 }
             },
             {
-                "text":"Striga and Maleficia are not vampire traits. ",
+                "text":"Vampire traits: titles, \"Red List\", \"Flight\", non-requirements (eg. non-Red List) are vampire traits. Mortal, unlocked, ready, older, Striga, Maleficia, etc. are not. ",
                 "refs":{
+                    "[LSJ 20081120-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/e2PNDpg-l_c/zsGPhfQgLL8J",
+                    "[LSJ 20091016]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/pqa7mYZ6NEM/yvS8jE0ncrQJ",
                     "[LSJ 20100226]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/JnycCGrNQmY/CCqxwTVXpbEJ"
                 }
             },
             {
-                "text":"When meeting a requirement, the controller can choose how he meets it (eg. he can play {Anarch Secession} as a Prince of any city, even a made-up one). ",
+                "text":"Titles: When meeting a title requirement, he is considered a member of the underlying sect. He can meet a given generic title (eg. Prince) only once, but the controller chooses how it is met (any city, even a made-up one). He must choose a title when playing a card required a \"titled\" vampire (eg. {Rubicon}), but can only choose each title once. He can choose the non-descript \"X votes\" title, but only once. ",
                 "refs":{
+                    "[LSJ 20050128]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HVy8iPUxNbI/ZHGTnprQjGUJ",
                     "[PIB 20150306]":"http://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=12#69696",
-                    "[PIB 20150307]":"http://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=18#69732"
-                }
-            },
-            {
-                "text":"He can meet a given generic requirement (eg. Prince) only once, however he decides to meet it (eg. city choice). ",
-                "refs":{
-                    "[ANK 20210812]":"https://www.vekn.net/forum/rules-questions/79278-vidal-jarbeaux-cards-requiring-prince#102892"
-                }
-            },
-            {
-                "text":"He must choose a title when playing a card required a \"titled\" vampire (eg. {Rubicon}), but can only choose each title once. He can choose the non-descript \"X votes\" title, but only once. ",
-                "refs":{
+                    "[PIB 20150307]":"http://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=18#69732",
                     "[ANK 20211019]":"https://www.vekn.net/forum/rules-questions/79278-vidal-jarbeaux-cards-requiring-prince#103598"
+                }
+            },
+            {
+                "text":"If a contract chooses him when played (eg. {Dirty Contract}), he is \"chosen for the contract\" for other cards (eg. {Open Dossier}). If the contract choice is an effect of the card in play (eg. {Clandestine Contract}), he's not chosen. ",
+                "refs":{
+                    "[LSJ 20070708]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                    "[LSJ 20071109]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mXspOwNnPDc/m/UJAVuSqFBNoJ"
+                }
+            },
+            {
+                "text":"Orun and Aye cards cannot be placed on him as long as he's not a Laibon. ",
+                "refs":{
+                    "[LSJ 20110611]":"https://boardgamegeek.com/thread/662413/article/6920306"
+                }
+            },
+            {
+                "text":"If his capacity is above 10 when playing {Call the Great Beast}, he burns and it is put into play. If his capacity is less, the card is put on him with tokens equal to his capacity, but he will not be able to add counters to it later on. ",
+                "refs":{
+                    "[ANK 20180723]":"http://www.vekn.net/forum/rules-questions/76853-mata-hari-call-the-great-beast#89244"
+                }
+            },
+            {
+                "text":"You can still use the burn options of cards with a requirement he could meet when you play them, but does not meet while in play. ",
+                "refs":{
+                    "[LSJ 20050225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/OjszbddbvxM/eKkxVIJPoG4J"
+                }
+            },
+            {
+                "text":"His ability do not let him fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {Summoning, The} for an ally. ",
+                "refs":{
+                    "[LSJ 20050119]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NKWhBnp7uP4/6_56LlSV658J"
                 }
             }
         ],
@@ -57870,6 +57990,13 @@
                 "text":"The allies brought into play by her ability are not \"played in the normal way\" (eg. {Direct Intervention} cannot be used to counter them). ",
                 "refs":{
                     "[LSJ 20060530-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ezcZoziFWw/m/G07cu5_UZnQJ"
+                }
+            },
+            {
+                "text":"Her ability does not work with {Piper} (not an action). ",
+                "refs":{
+                    "[LSJ 20090115-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/RQ3ARP9Kvfk/dBN_M7SnIHAJ",
+                    "[ANK 20170309]":"http://www.vekn.net/forum/rules-questions/75649-reduce-ally-cost-and-piper-combo#81049"
                 }
             }
         ],

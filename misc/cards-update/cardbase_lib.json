@@ -204,7 +204,7 @@
                 }
             },
             {
-                "text":"The Blood Hunt referendum is part of the action resolution. Cards that are played \"after a successful action\" or \"after resolution\" must be played after the referendum. {Heidelberg Castle, Germany} can not be used before the referendum. ",
+                "text":"The Blood Hunt referendum is part of the action resolution. Cards that are played \"after a successful action\" or \"after resolution\" must be played after the referendum. {Heidelberg Castle, Germany} cannot be used before the referendum. ",
                 "refs":{
                     "[LSJ 20100112]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/SJu0kgw_2tE/p5cshF90vkEJ",
                     "[PIB 20121028]":"http://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
@@ -1571,7 +1571,15 @@
         "Name":"Alpha Glint",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards that are played at the end of round/combat can still be played (eg. {Taste of Vitae}, {Disarm}). ",
+                "refs":{
+                    "[RTR 20001020]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GvxNYsYsWJ4/EY7NOjdsGCsJ",
+                    "[LSJ 20001024]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/8PDeV_mQ8XEJ"
+                }
+            }
+        ],
         "Set":{
             "BH":{
                 "C":true
@@ -1774,7 +1782,7 @@
                 }
             },
             {
-                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -1904,6 +1912,12 @@
         "Requirement":"",
         "Rulings":[
             {
+                "text":"A second copy allows a second use in the same turn. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
+            },
+            {
                 "text":"\"Once each turn\" means once during each player's turn. ",
                 "refs":{
                     "[ANK 20180719-4]":"http://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
@@ -1970,7 +1984,14 @@
         "Name":"Anachronism",
         "Pool Cost":"1",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"All weapons that provide ranged strikes are considered \"ranged weapons\" (eg. {Kerrie}). ",
+                "refs":{
+                    "[LSJ 20060825]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2usG7ml8BAw/m/Xa1o5-C1dSAJ"
+                }
+            }
+        ],
         "Set":{
             "AH":{
                 "C":true
@@ -2842,9 +2863,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -3531,7 +3558,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[vic], [VIC] Can be used by a non-slave Gragoyle. ",
+                "text":"[vis], [VIS] Can be used by a non-slave Gragoyle. ",
                 "refs":{
                     "[LSJ 20011204-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0gKrr9ChclY/m/WYNIe2IgrCoJ"
                 }
@@ -4211,8 +4238,9 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[thn], [THN] The end of combat is triggered by the vampire going to torpor - this can be interrupted by cards such as {Undying Tenacity} or {Undead Persistence}, but the vampire would still be wounded. ",
+                "text":"[thn], [THN] The end of combat is triggered by the vampire going to torpor - this can be interrupted by cards such as {Undying Tenacity} or {Undead Persistence}, but the vampire would still unlock, gain blood and be wounded. ",
                 "refs":{
+                    "[LSJ 20020211]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ubqDaLeG3qo/m/TGKL07dP8NkJ",
                     "[LSJ 20021122]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/LieFYA_gyFo/Ma_4_gNijmoJ"
                 }
             },
@@ -4283,6 +4311,12 @@
                 "text":"Is played without announcing targets: they are only chosen once the third copy get into play. ",
                 "refs":{
                     "[LSJ 20091030]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZKuCyTayYbc/m/5nMjLpX4DuMJ"
+                }
+            },
+            {
+                "text":"You must show which one goes in hand. ",
+                "refs":{
+                    "[LSJ 20081129]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7fMPCYIPrag/m/_gGD-1da2N8J"
                 }
             }
         ],
@@ -4819,6 +4853,12 @@
                 "text":"Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion. ",
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
+                }
+            },
+            {
+                "text":"The cards effects do not apply if the vampire is not Laibon. ",
+                "refs":{
+                    "[ANK 20221208]":"https://www.vekn.net/forum/rules-questions/80197-clarification-on-using-orun-and-changing-sect#106952"
                 }
             }
         ],
@@ -6579,7 +6619,14 @@
         "Name":"Bitter and Sweet Story, The",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"When the controller is ousted, their predator does not draw cards. ",
+                "refs":{
+                    "[ANK 20230527-2]":"https://www.vekn.net/forum/rules-questions/80554-the-bitter-and-sweet-story#108180"
+                }
+            }
+        ],
         "Set":{
             "EK":{
                 "R":true
@@ -6945,6 +6992,12 @@
                 "text":"Multiple clot counters can be placed on the same vampires if he his hit multiple times. When rescued by an older vampire, all clot counters are burned. ",
                 "refs":{
                     "[PIB 20150122]":"http://www.vekn.net/forum/rules-questions/68785-blade-clot-and-additional-strikes#68786"
+                }
+            },
+            {
+                "text":"The controller of a vampire with a clot counter in torpor chooses whether they stay there or burn. Allies cannot go to torpor, so they must burn. ",
+                "refs":{
+                    "[LSJ 20080612-3]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZqfNrPzOz3g/m/lBLjvcVg0wsJ"
                 }
             }
         ],
@@ -7612,7 +7665,14 @@
         "Name":"Blithe Acceptance",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[OBF] If a new combat begins (eg. {Psyche!}, you need to burn 1 blood again (or the card). ",
+                "refs":{
+                    "[ANK 20230527]":"https://www.vekn.net/forum/rules-questions/80553-blithe-acceptance-and-multiple-combat#108178"
+                }
+            }
+        ],
         "Set":{
             "LotN":{
                 "C":true,
@@ -8863,7 +8923,15 @@
         "Name":"Bloodstone",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"It's still an equip action (eg. can benefit from {The British Museum, London} or {Filchware's Pawn Shop}). ",
+                "refs":{
+                    "[LSJ 20050313]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ",
+                    "[ANK 20230408]":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810"
+                }
+            }
+        ],
         "Set":{
             "KMW":{
                 "C":true
@@ -9797,7 +9865,14 @@
         "Name":"Brass Knuckles",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A second copy allows a second use in the same combat. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
+            }
+        ],
         "Set":{
             "Sabbat":{
                 "C":true
@@ -10017,7 +10092,15 @@
         "Name":"Brick by Brick",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[VIS] No other effect can be used to reset the range, but other pre-range effects can be played afterwards. ",
+                "refs":{
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "A":"2"
@@ -10464,7 +10547,14 @@
         "Name":"Brutal Influence",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"You may lock Orun cards the vampire has even if they're not Laibon: in this case none burns because of the bleed. ",
+                "refs":{
+                    "[ANK 20221208]":"https://www.vekn.net/forum/rules-questions/80197-clarification-on-using-orun-and-changing-sect#106952"
+                }
+            }
+        ],
         "Set":{
             "EK":{
                 "C":true
@@ -10829,9 +10919,10 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Damage done to the striking minion is environmental. ",
+                "text":"Damage done to the striking minion is environmental, it is inflicted regardless of the range. ",
                 "refs":{
-                    "[LSJ 19970801]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/7ZnLKTdPEn4/6L-nVarAJwMJ"
+                    "[LSJ 19970801]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/7ZnLKTdPEn4/6L-nVarAJwMJ",
+                    "[ANK 20221212]":"https://www.vekn.net/forum/rules-questions/80208-burst-of-sunlight?start=6#107000"
                 }
             }
         ],
@@ -11324,6 +11415,12 @@
         "Requirement":"",
         "Rulings":[
             {
+                "text":"Is neither a Ghoul nor a mortal, it has no subtype. ",
+                "refs":{
+                    "[ANK 20230308]":"https://www.vekn.net/forum/rules-questions/80369-camarilla-vitae-slave-creature-type-putrescent-servitude#107576"
+                }
+            },
+            {
                 "text":"The vampire keeps his chosen Discipline at superior until his controller's next unlock phase even if the retainer is burned or stolen. ",
                 "refs":{
                     "[LSJ 19970224]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/80KRDjVFkyg/TBJso9Ra_9QJ"
@@ -11593,15 +11690,18 @@
                 }
             },
             {
-                "text":"The action fails. Action modifiers and reactions can be played afterwards (eg. {Zephyr}). ",
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "[ANK 20220118]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506"
+                    "[ANK 20220118]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
                 }
             },
             {
                 "text":"The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
                 "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             }
@@ -12076,9 +12176,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -12190,13 +12296,15 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[ani] Is played after combat ",
+                "text":"[ani] Is played after all combats are handled. ",
                 "refs":{
-                    "[RTR 19980623]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/tSpd9dtTElc/-CuHJF54_n0J"
+                    "[RTR 19980623]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/tSpd9dtTElc/-CuHJF54_n0J",
+                    "[LSJ 20040219]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zFmoLa6tzWA/m/eJnERTCB-NEJ",
+                    "[ANK 20221130]":"https://www.vekn.net/forum/rules-questions/80176-cats-guidance-before-psyche-combat?start=0#106906"
                 }
             },
             {
-                "text":"[ani] Can not be played if the vampire is in torpor, for example if he went into torpor during the combat resulting from the block. ",
+                "text":"[ani] Cannot be played if the vampire is in torpor, for example if he went into torpor during the combat resulting from the block. ",
                 "refs":{
                     "[LSJ 20000103]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0KEYzv22kjs/H4MWvI5F_hEJ"
                 }
@@ -12569,7 +12677,14 @@
         "Name":"Chainsaw",
         "Pool Cost":"2",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A second copy allows a second use in the same combat. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
+            }
+        ],
         "Set":{
             "Jyhad":{
                 "U":true
@@ -12720,7 +12835,7 @@
                 }
             },
             {
-                "text":"[SPI] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"[SPI] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -12781,14 +12896,17 @@
                 }
             },
             {
-                "text":"[REACTION] Modifiers and reactions that can be used at the end/after an action can still be used after combat. ",
+                "text":"[REACTION] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
                 }
             },
             {
-                "text":"[REACTION] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "text":"[REACTION] The action fails has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
                 "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             }
@@ -15032,7 +15150,14 @@
         "Name":"Combat Shotgun",
         "Pool Cost":"3",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A second copy allows a second use in the same round. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
+            }
+        ],
         "Set":{
             "Sabbat":{
                 "C":true
@@ -15383,6 +15508,12 @@
                 "refs":{
                     "[TOM 19960225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0LLTOfvyVbM/ih72_C-LriwJ"
                 }
+            },
+            {
+                "text":"[thn], [THN] Not a hand strike. ",
+                "refs":{
+                    "[LSJ 20020211]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ubqDaLeG3qo/m/TGKL07dP8NkJ"
+                }
             }
         ],
         "Set":{
@@ -15658,7 +15789,14 @@
         "Name":"Concordance",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[dai], [DAI] Once played, it continues to apply even if the vampire stops being Infernal (eg. {The Textbook Damnation}) ",
+                "refs":{
+                    "[LSJ 20090207]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0UGI9W2sSpk/m/An-ZYLIxAiwJ"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "C":true
@@ -16447,7 +16585,14 @@
         "Name":"Constant Revolution",
         "Pool Cost":"",
         "Requirement":"anarch",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The cards are all discarded at once (no replace). One cannot discard more cards than they have in hand, the rest must be pool. ",
+                "refs":{
+                    "[LSJ 20090618]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jxTaf6lnYb0/m/KoQF6jLw5zAJ"
+                }
+            }
+        ],
         "Set":{
             "TR":{
                 "R":true
@@ -19113,7 +19258,7 @@
                 }
             },
             {
-                "text":"If used to cancel an action, the action is not performed in respect to section 3 of the rules. ",
+                "text":"If used to cancel an action, the action is not performed in respect to section 3 of the rules and the minion is free to attempt the same action again. ",
                 "refs":{
                     "[LSJ 19980212]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fLFLlXZXHqA/ggjw8aGjdRoJ"
                 }
@@ -19125,7 +19270,7 @@
                 }
             },
             {
-                "text":"The card is still considered played. The same reaction or modifier cannot be played again by the same minion. Another Aim card can not be played once one has been canceled, nor any other card which text prohibits to be played more than once. ",
+                "text":"The card is still considered played. The same reaction or modifier cannot be played again by the same minion. Another Aim card cannot be played once one has been canceled, nor any other card which text prohibits to be played more than once. ",
                 "refs":{
                     "[LSJ 19980212]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fLFLlXZXHqA/ggjw8aGjdRoJ",
                     "[ANK 20190104]":"http://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640"
@@ -19403,9 +19548,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -20831,9 +20982,18 @@
         "Requirement":"anarch",
         "Rulings":[
             {
-                "text":"[ani] If the action ends, no action modifier or reaction can be played afterwards. ",
+                "text":"[ani] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                }
+            },
+            {
+                "text":"[ani] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             },
             {
@@ -21384,7 +21544,7 @@
                 }
             },
             {
-                "text":"The card is still considered played. The same reaction or modifier cannot be played again by the same minion. Another Aim card can not be played once one has been canceled, nor any other card which text prohibits to be played more than once. ",
+                "text":"The card is still considered played. The same reaction or modifier cannot be played again by the same minion. Another Aim card cannot be played once one has been canceled, nor any other card which text prohibits to be played more than once. ",
                 "refs":{
                     "[LSJ 19980212]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fLFLlXZXHqA/ggjw8aGjdRoJ",
                     "[ANK 20190104]":"http://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640"
@@ -24078,7 +24238,7 @@
                 }
             },
             {
-                "text":"[MEL] The retained political action can not be played with {Charming Lobby}. ",
+                "text":"[MEL] The retained political action cannot be played with {Charming Lobby}. ",
                 "refs":{
                     "[ANK 20201029]":"http://www.vekn.net/forum/rules-questions/78889-charming-lobby-and-echo-of-harmonies#101020"
                 }
@@ -24980,7 +25140,15 @@
         "Name":"Elysium: The Arboretum",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"When ending combat, cards that are played at the end of round/combat can still be played (eg. {Taste of Vitae}, {Disarm}). ",
+                "refs":{
+                    "[RTR 20001020]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GvxNYsYsWJ4/EY7NOjdsGCsJ",
+                    "[LSJ 20001024]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/8PDeV_mQ8XEJ"
+                }
+            }
+        ],
         "Set":{
             "Jyhad":{
                 "U":true
@@ -25763,7 +25931,16 @@
             {
                 "text":"[VIS][REACTION] Modifiers and reactions that can be used at the end/after an action can still be used after combat. ",
                 "refs":{
-                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                }
+            },
+            {
+                "text":"[VIS][REACTION] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             }
         ],
@@ -26734,7 +26911,14 @@
         "Name":"Exile",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[PRE] You may lock Orun cards the vampire has even if they're not Laibon. ",
+                "refs":{
+                    "[ANK 20221208]":"https://www.vekn.net/forum/rules-questions/80197-clarification-on-using-orun-and-changing-sect#106952"
+                }
+            }
+        ],
         "Set":{
             "EK":{
                 "C":true
@@ -27246,13 +27430,15 @@
             {
                 "text":"[OBF] A minion that has attempted to block but failed before it was played is not affected. ",
                 "refs":{
-                    "[ANK 20190509]":"http://www.vekn.net/forum/rules-questions/77622-faceless-night-after-elder-impersonation#94847"
+                    "[ANK 20190509]":"http://www.vekn.net/forum/rules-questions/77622-faceless-night-after-elder-impersonation#94847",
+                    "[LSJ 20020101]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hT7ezy_N8FQ/m/d2Yt5N6SwacJ"
                 }
             },
             {
-                "text":"[OBF] The lock of the minion happens at action resolution. He can play a reaction before that (eg. {Deflection}), and he still locks if he unlocked before that (eg. with {Guard Dogs}). Only cards that can be played \"after action resolution\" can be played after the lock happens. ",
+                "text":"[OBF] The aspirant blocker is locked at resolution. He can play {Deflection} before that, and even attempt to block again if it is deflected back. He can play {Guard Dogs} before the lock, not after. ",
                 "refs":{
-                    "[ANK 20171017]":"http://www.vekn.net/forum/rules-questions/76233-question-about-failing-to-block-faceless-night-and-playing-guard-dogs#83900"
+                    "[ANK 20171017]":"http://www.vekn.net/forum/rules-questions/76233-question-about-failing-to-block-faceless-night-and-playing-guard-dogs#83900",
+                    "[ANK 20230305]":"https://www.vekn.net/forum/rules-questions/63821-re-faceless-night-x-deflection?start=36#107536"
                 }
             }
         ],
@@ -27385,7 +27571,16 @@
             {
                 "text":"[myt], [MYT] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                }
+            },
+            {
+                "text":"[myt], [MYT] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             }
         ],
@@ -28045,6 +28240,12 @@
                 "refs":{
                     "[RTR 20020501]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/M1snoR2msbQ/RFwCmX3anDkJ"
                 }
+            },
+            {
+                "text":"The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot strike. ",
+                "refs":{
+                    "[LSJ 20001126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
             }
         ],
         "Set":{
@@ -28288,7 +28489,14 @@
         "Name":"Fear of the Void Below",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[dai], [DAI] Affects the range immediately (eg. {Outside the Hourglass} and {Alpha Glint} could be played, but not {Disarm} because the range is long). ",
+                "refs":{
+                    "[LSJ 20100709]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/j98aqFIFjnE/m/h_FjFos8S2UJ"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "C":true
@@ -28993,7 +29201,16 @@
             {
                 "text":"[for] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                }
+            },
+            {
+                "text":"[for] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             }
         ],
@@ -29795,7 +30012,7 @@
                 }
             },
             {
-                "text":"[VIS] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"[VIS] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -30197,6 +30414,12 @@
                 "refs":{
                     "[LSJ 20070417]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ecDUqbSUsNg/m/3W9aOm0MfYEJ"
                 }
+            },
+            {
+                "text":"Does not consider blocks made before the card was played (if the action has been continued with eg. {Form of Mist}). ",
+                "refs":{
+                    "[ANK 20230319]":"https://www.vekn.net/forum/rules-questions/80393-forced-awakening-and-wmrh-talk-radio-vs-form-of-mist#107674"
+                }
             }
         ],
         "Set":{
@@ -30382,7 +30605,7 @@
                 }
             },
             {
-                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -30683,7 +30906,7 @@
                 }
             },
             {
-                "text":"[PRO] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"[PRO] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -31943,6 +32166,19 @@
         "Requirement":"",
         "Rulings":[
             {
+                "text":"If blocked, no other effect can be used to reset the range, but other pre-range effects can be played. ",
+                "refs":{
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+                }
+            },
+            {
+                "text":"If another effect also sets the range, the first to resolve has priority (eg. {Asanbonsam Ghoul} and {Neutral Guard} resolve after). ",
+                "refs":{
+                    "[PIB 20120214]":"http://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+                }
+            },
+            {
                 "text":"Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}). ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
@@ -32176,7 +32412,15 @@
         "Name":"Garibaldi-Meucci Museum",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"When ending combat, cards that are played at the end of round/combat can still be played (eg. {Taste of Vitae}, {Disarm}). ",
+                "refs":{
+                    "[RTR 20001020]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GvxNYsYsWJ4/EY7NOjdsGCsJ",
+                    "[LSJ 20001024]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/8PDeV_mQ8XEJ"
+                }
+            }
+        ],
         "Set":{
             "TR":{
                 "R":true
@@ -32244,7 +32488,14 @@
         "Name":"Gas-Powered Chainsaw",
         "Pool Cost":"1",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A second copy allows a second use in the same combat. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
+            }
+        ],
         "Set":{
             "Sabbat":{
                 "C":true
@@ -32536,15 +32787,28 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The Ghoul is never the \"bearer\" of the weapon that it uses. Any side-effect of using the weapon is applied to the employing minion, as normal. ",
+                "text":"The 1 Damage is not inflicted at long range. ",
                 "refs":{
-                    "[TOM 19951114]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/LOEFFpprXKs/3iG4c1loOqgJ"
+                    "[ANK 20210929]":"https://www.vekn.net/forum/generic-v-tes-discussion/75623-ghoul-retainer?start=12#103386"
                 }
             },
             {
-                "text":"Damage is not inflicted at long range. ",
+                "text":"The Ghoul is not the bearer of the weapon, the employer is (eg. using {Garrote} does not allow the bearer to burn the opponent, {Zip Gun}'s damage go to the employer). ",
                 "refs":{
-                    "[ANK 20210929]":"https://www.vekn.net/forum/generic-v-tes-discussion/75623-ghoul-retainer?start=12#103386"
+                    "[TOM 19951114]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/LOEFFpprXKs/3iG4c1loOqgJ",
+                    "[LSJ 20080210]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nL-xqiydvYg/m/hWQZF3aBdwsJ"
+                }
+            },
+            {
+                "text":"The Ghoul uses weapon as if making the strike, including all side-effects (eg. {Zip Gun}'s damage, {Weighted Walking Stick} tokens), and is not limited to damage dealing strikes (eg. {Rowan Ring} sends to torpor, {Flash Grenade} ends combat). It is not a strike and cannot provide a maneuver, press or additional strike to the employer (eg. {Meat Hook}). ",
+                "refs":{
+                    "[LSJ 20080210]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nL-xqiydvYg/m/hWQZF3aBdwsJ"
+                }
+            },
+            {
+                "text":"The Ghoul cannot play ammo cards (not even with a {Magazine}), although it can benefit from ammo cards played by the employer in an earlier round (eg. {Scattershot}). ",
+                "refs":{
+                    "[LSJ 20080210]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nL-xqiydvYg/m/hWQZF3aBdwsJ"
                 }
             },
             {
@@ -33673,9 +33937,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -33798,6 +34068,19 @@
                 "text":"The press can only be used during the current round. ",
                 "refs":{
                     "[TOM 19960521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/poYD3n0TKGo/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"[SER] No other effect can be used to reset next round's range, but other pre-range effects can be played. ",
+                "refs":{
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+                }
+            },
+            {
+                "text":"[SER] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority. ",
+                "refs":{
+                    "[PIB 20120214]":"http://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
                 }
             }
         ],
@@ -34118,6 +34401,13 @@
                 "text":"Can play cards requiring [cel] or [pot] but not both. ",
                 "refs":{
                     "[ANK 20180731-1]":"http://www.vekn.net/forum/rules-questions/76877-vivienne-geroux-and-anarh-cards#89482"
+                }
+            },
+            {
+                "text":"Is not Anarch (eg. does not benefit from {Anarch Manifesto, An}). ",
+                "refs":{
+                    "[RBK 20200701-6]":"https://www.vekn.net/rulebook#allies",
+                    "[ANK 20230417]":"https://www.vekn.net/forum/rules-questions/80399-an-anarch-manifesto-grey-thorne-vivienne-geroux#107686"
                 }
             },
             {
@@ -35150,6 +35440,12 @@
         "Pool Cost":"",
         "Requirement":"",
         "Rulings":[
+            {
+                "text":"Can only be used once per action (multiple Haqim's Law: Retribution can each be used once). ",
+                "refs":{
+                    "[ANK 20221102-2]":"https://www.vekn.net/forum/rules-questions/80130-motf-hl-retribution#106694"
+                }
+            },
             {
                 "text":"If used by a Banu Haqim and another takes the action over with {Mask of a Thousand Faces}, they cannot use it again. ",
                 "refs":{
@@ -36341,6 +36637,12 @@
                 "refs":{
                     "[LSJ 20100604-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Tr3X4DsZr-8/DMXtyDoNqLIJ"
                 }
+            },
+            {
+                "text":"The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot strike. ",
+                "refs":{
+                    "[LSJ 20001126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
             }
         ],
         "Set":{
@@ -36418,9 +36720,17 @@
                 }
             },
             {
-                "text":"Prevents up to X+1 damage, it can prevent less. ",
+                "text":"Prevents up to X+1 damage, it can prevent less (X can be higher than strictly needed). ",
                 "refs":{
-                    "[RTR 20041202]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WUWh7AdooDU/vojisZMCSnsJ"
+                    "[RTR 20041202]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WUWh7AdooDU/vojisZMCSnsJ",
+                    "[PIB 20121202]":"https://www.vekn.net/forum/rules-questions/42195-hidden-strength-can-you-prevent-damage-that-wasn-t-dealt#42225"
+                }
+            },
+            {
+                "text":"Cannot be used if there is no damage to prevent (X cannot be negative). ",
+                "refs":{
+                    "[LSJ 20001114]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/qXSlM7Grq1c/cSDoQ9mw0z4J",
+                    "[LSJ 20030121]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lED3kZ2UUUo/m/8TgrW3RxQ9QJ"
                 }
             },
             {
@@ -36486,11 +36796,20 @@
             {
                 "text":"[REACTION] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
                 }
             },
             {
-                "text":"[ACTIONMODIFIER] [1CONVICTION] Cards and effects that are played \"as the action is announced\" must be played before playing \"regular\" action modifier or reaction cards. ",
+                "text":"[REACTION] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                }
+            },
+            {
+                "text":"[ACTIONMODIFIER] [1CONVICTION] Effects that are used \"as the action is announced\" must be used before playing \"regular\" action modifier or reaction cards. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -36524,7 +36843,16 @@
             {
                 "text":"[val] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                }
+            },
+            {
+                "text":"[val] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             },
             {
@@ -37049,12 +37377,6 @@
                 "text":"If the weapon retrieved has requirements that the vampire does not meet, then it is burned. ",
                 "refs":{
                     "[RTR 20010710]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GsI1UyH54jU/x9LfDZX1vR4J"
-                }
-            },
-            {
-                "text":"If a copy of a unique card already in play is retrieved, then the weapon is contested until the end of combat. It becomes uncontested during the next appropriate unlock phase. ",
-                "refs":{
-                    "[TOM 19951212-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NJa6LfMSPks/0CQKgKoeWgUJ"
                 }
             },
             {
@@ -38003,7 +38325,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"If a minion is committed to using a strike other than a hand strike (e.g. used a maneuver from a gun), then he gets no strike. ",
+                "text":"If a minion is committed to a strike other than a hand strike (e.g. used a maneuver from a gun), then he gets no strike. ",
                 "refs":{
                     "[TOM 19951217]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Y2_A66iRqMc/LkT-8j5cz2cJ"
                 }
@@ -38018,6 +38340,19 @@
                 "text":"The press can only be used during the current round. ",
                 "refs":{
                     "[TOM 19960521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/poYD3n0TKGo/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"[POT] No other effect can be used to reset next round's range, but other pre-range effects can be played. ",
+                "refs":{
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+                }
+            },
+            {
+                "text":"[POT] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority. ",
+                "refs":{
+                    "[PIB 20120214]":"http://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
                 }
             }
         ],
@@ -38199,6 +38534,12 @@
                 "text":"If any ranged damage is inflicted at long range, even if it is prevented or ignored, the Flamethrower will burn and inflict damage. ",
                 "refs":{
                     "[LSJ 20040802]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/b6V_OGl-TgE/bi8evHga9X8J"
+                }
+            },
+            {
+                "text":"A second copy allows a second use in the same combat. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
                 }
             }
         ],
@@ -38495,9 +38836,16 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"If it is stolen, then the chosen minion is unable to block the new possessor of the Videotape (and can now block whoever used to have it). If it is removed from play, its effect ends. ",
+                "text":"The target is chosen when the card is played, and does not change. If stolen, the chosen minion is unable to block the new possessor (and can now block whoever used to have it). ",
                 "refs":{
-                    "[TOM 19960114]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/cOqrGO0UrSw/5pDhn3YVyG4J"
+                    "[TOM 19960114]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/cOqrGO0UrSw/5pDhn3YVyG4J",
+                    "[LSJ 20020514]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/xBDPee5wq40/m/WWX0GrKppzsJ"
+                }
+            },
+            {
+                "text":"If it is not equipped but merely put into play (eg. {Alastor}), no minion is chosen. One is if it is equipped (eg. {Magic of the Smith}). ",
+                "refs":{
+                    "[LSJ 20090506]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/887DQTpntKI/m/L-ETC1-5nR0J"
                 }
             }
         ],
@@ -38726,6 +39074,12 @@
                 "refs":{
                     "[RTR 20020501]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/M1snoR2msbQ/RFwCmX3anDkJ",
                     "[LSJ 20100517]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/88K5Hd0NxlU/m/zaGQhDET3F0J"
+                }
+            },
+            {
+                "text":"A counter is added if the card is canceled as it is played (eg. {Direct Intervention}). ",
+                "refs":{
+                    "[LSJ 20000424]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6pK4rFvqmmg/m/LGEB9PuA4TUJ"
                 }
             }
         ],
@@ -39486,6 +39840,13 @@
                 "refs":{
                     "[RTR 20020501]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/M1snoR2msbQ/RFwCmX3anDkJ"
                 }
+            },
+            {
+                "text":"[tem] No other effect can be used to reset the range, but other pre-range effects can be played afterwards. ",
+                "refs":{
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+                }
             }
         ],
         "Set":{
@@ -39637,9 +39998,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -40945,7 +41312,14 @@
         "Name":"Kaymakli Nightmares",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"\"Any crypt cards\" means all of them. ",
+                "refs":{
+                    "[LSJ 20080229]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ADaYHy8GqCo/m/eXVYy5bUHWsJ"
+                }
+            }
+        ],
         "Set":{
             "Gehenna":{
                 "R":true
@@ -41995,7 +42369,7 @@
                 }
             },
             {
-                "text":"The action was still taken (eg. counts against {Enkil Cog} of [OBF] {Veil the Legions}). ",
+                "text":"The action was still taken (eg. counts against {Enkil Cog} or [OBF] {Veil the Legions}). ",
                 "refs":{
                     "[ANK 20210124]":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
                 }
@@ -42139,6 +42513,12 @@
         "Requirement":"",
         "Rulings":[
             {
+                "text":"Does not count the damage inflicted before the card was played. ",
+                "refs":{
+                    "[LSJ 20010610]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KVyVn-Y_UIY/m/FmhagXANIzcJ"
+                }
+            },
+            {
                 "text":"[VIC] The strike to steal 2 blood can be used on a minion with less than 2 blood or life. ",
                 "refs":{
                     "[RTR 20010711]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GsI1UyH54jU/x9LfDZX1vR4J"
@@ -42148,12 +42528,6 @@
                 "text":"[VIC] The press can only be used during the current round. ",
                 "refs":{
                     "[TOM 19960521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/poYD3n0TKGo/xvU5HW7lBxMJ"
-                }
-            },
-            {
-                "text":"[VIC] The strike to steal blood is ranged (eg. {Dracon, The} steals one more). ",
-                "refs":{
-                    "[PIB 20150603-2]":"http://www.vekn.net/forum/rules-questions/71416-the-dracon-and-kraken-s-kiss#71467"
                 }
             }
         ],
@@ -42345,6 +42719,19 @@
                 "refs":{
                     "[TOM 19960521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/poYD3n0TKGo/xvU5HW7lBxMJ"
                 }
+            },
+            {
+                "text":"[vic] No other effect can be used to reset next round's range, but other pre-range effects can be played. ",
+                "refs":{
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+                }
+            },
+            {
+                "text":"[vic] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority. ",
+                "refs":{
+                    "[PIB 20120214]":"http://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+                }
             }
         ],
         "Set":{
@@ -42374,7 +42761,14 @@
         "Name":"Lapse",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[TEM] The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot strike. ",
+                "refs":{
+                    "[LSJ 20001126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "C":true
@@ -43858,9 +44252,10 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Can be locked when the action is announced or when the cost is paid. ",
+                "text":"Can be locked to reduce the cost at any point before resolution, from when the action is announced to just before the cost is paid. ",
                 "refs":{
-                    "[ANK 20170605]":"http://www.vekn.net/forum/rules-questions/75862-timing-of-the-line#82113"
+                    "[ANK 20170605]":"http://www.vekn.net/forum/rules-questions/75862-timing-of-the-line#82113",
+                    "[ANK 20230620]":"https://www.vekn.net/forum/rules-questions/80612-when-to-use-shard-the-line-when-action-becoems-to-expensive-after-announcement#108409"
                 }
             },
             {
@@ -44033,9 +44428,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -44155,9 +44556,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -44547,7 +44954,14 @@
         "Name":"Louvre, Paris, The",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can be used at any time, even between two actions, during another Methuselah's turn. ",
+                "refs":{
+                    "[ANK 20210608]":"https://www.vekn.net/forum/rules-questions/79166-correct-time-to-use-heidelberg-castle-germany-for-non-acting-player?start=12#102425"
+                }
+            }
+        ],
         "Set":{
             "DS":{
                 "C":true
@@ -44907,9 +45321,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -45560,11 +45980,17 @@
                 }
             },
             {
-                "text":"The loss of control happens at the start of unlock phase, before unlocking. This can not be ordered among other unlock effects, the Malkavian is not unlocked. ",
+                "text":"The loss of control happens at the start of unlock phase, before unlocking. This cannot be ordered among other unlock effects, the Malkavian is not unlocked. ",
                 "refs":{
                     "[ANK 20200129]":"http://www.vekn.net/forum/rules-questions/78701-replace-during-unlock-and-other-unlock-effects#100210",
                     "[LSJ 20091208]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ptHbJM9MlVI/m/O61W2JkI_rIJ",
                     "[RTR 19951017]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/ouhNUbHYg50/rco157ZHyqEJ"
+                }
+            },
+            {
+                "text":"It makes no difference if the target changes clan afterwards. ",
+                "refs":{
+                    "[ANK 20221208-2]":"https://www.vekn.net/forum/rules-questions/80200-malkavian-dementia?start=6#106953"
                 }
             }
         ],
@@ -45597,9 +46023,18 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Modifier and reactions that can be used at the end/after an action can still be used after the action fails. ",
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                }
+            },
+            {
+                "text":"If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             }
         ],
@@ -46216,7 +46651,14 @@
         "Name":"Mark V",
         "Pool Cost":"2",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A second copy allows a second use in the same round. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "R":true
@@ -47108,7 +47550,14 @@
         "Name":"Meat Hook",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A second copy allows a second use in the same round. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
+            }
+        ],
         "Set":{
             "FN":{
                 "C":true
@@ -47711,7 +48160,15 @@
         "Name":"Michael Harris, the Incinerator",
         "Pool Cost":"3",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If used to set the range, no other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects can be played afterwards. ",
+                "refs":{
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+                }
+            }
+        ],
         "Set":{
             "FoL":{
                 "":"1"
@@ -48320,7 +48777,7 @@
                 }
             },
             {
-                "text":"[CHI] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"[CHI] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -48391,6 +48848,12 @@
                     "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
                     "[ANK 20211207]":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
                     "[ANK 20220116]":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488"
+                }
+            },
+            {
+                "text":"[THA] If the action is blocked and it was leaving torpor, the blocker does not get an opportunity to diablerize. ",
+                "refs":{
+                    "[PIB 20121216]":"https://www.vekn.net/forum/rules-questions/42974-leave-from-torpor-question#43002"
                 }
             }
         ],
@@ -48547,9 +49010,12 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"No reaction or modifier can be played afterwards: the action ends immediately. ",
+                "text":"The action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20220118]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
                 }
             }
         ],
@@ -48809,6 +49275,12 @@
                 }
             },
             {
+                "text":"If it is not equipped but merely put into play (eg. {Alastor}), it does not get cards. It does is if it is equipped (eg. {Magic of the Smith}). ",
+                "refs":{
+                    "[LSJ 20090506]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/887DQTpntKI/m/L-ETC1-5nR0J"
+                }
+            },
+            {
                 "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements. ",
                 "refs":{
                     "[ANK 20180719-3]":"http://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
@@ -48966,7 +49438,7 @@
                 }
             },
             {
-                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -49193,6 +49665,12 @@
         "Requirement":"",
         "Rulings":[
             {
+                "text":"Is used after combat effectively ends and can be order against other cards and effects played after combat (eg. {Provision of the Silsila}). ",
+                "refs":{
+                    "[ANK 20230314]":"https://www.vekn.net/forum/rules-questions/80378-monster-vs-provision-of-silsila#107622"
+                }
+            },
+            {
                 "text":"\"Once each turn\" means once during each player's turn. ",
                 "refs":{
                     "[ANK 20180719-4]":"http://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
@@ -49285,7 +49763,7 @@
                 }
             },
             {
-                "text":"[VAL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"[VAL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -50253,7 +50731,7 @@
         "Requirement":"laibon",
         "Rulings":[
             {
-                "text":"When setting the range for the round, no other effect can be used to reset the range, but other pre-range effects can be played afterwards. ",
+                "text":"No other effect can be used to reset the range, but other pre-range effects can be played afterwards. ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
                     "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
@@ -50546,6 +51024,13 @@
         "Pool Cost":"",
         "Requirement":"",
         "Rulings":[
+            {
+                "text":"No other effect can be used to reset the range, but other pre-range effects can be played. ",
+                "refs":{
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+                }
+            },
             {
                 "text":"If another effect also sets the range, the first to resolve has priority (eg. {Squirrel Balance} and {Asanbonsam Ghoul} resolve before). ",
                 "refs":{
@@ -50986,6 +51471,12 @@
                 "refs":{
                     "[ANK 20220814-2]":"https://www.vekn.net/forum/rules-questions/79960-nightstick-and-defensive-strikes?start=6#105963"
                 }
+            },
+            {
+                "text":"A second copy allows a second use in the same round. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
             }
         ],
         "Set":{
@@ -51126,9 +51617,10 @@
         "Requirement":"magaji,laibon",
         "Rulings":[
             {
-                "text":"It still burns if a block is attempted and then an effect prevents the block (eg. {Daring the Dawn}). ",
+                "text":"It still burns if a block is attempted and then an effect prevents the block (eg. {Daring the Dawn}, {Psalm of the Damned}). ",
                 "refs":{
-                    "[LSJ 20090810]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3ukXdsh8xo/m/0qTp2vtFVz8J"
+                    "[LSJ 20090810]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3ukXdsh8xo/m/0qTp2vtFVz8J",
+                    "[LSJ 20100305]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gyDkgm2qXMs/m/j_7nZNsJTrgJ"
                 }
             },
             {
@@ -52668,9 +53160,29 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"A vampire with multiple Oruns will only burn one Orun if he successfully bleeds for more than 2. ",
+                "text":"A vampire with multiple Oruns will only burn one if he successfully bleeds for more than 2. ",
                 "refs":{
                     "[LSJ 20090603]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/LpFSLRuWONA/Ma_3LtLeyCAJ"
+                }
+            },
+            {
+                "text":"The capacity bonus stacks (2 per Orun), the votes do not (1 per 3 Oruns altogether). ",
+                "refs":{
+                    "[LSJ 20051204]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/K-RE-nTJ_Cg/m/pw5WbBaM1WEJ",
+                    "[LSJ 20060407]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/YY2aBVshruI/m/2EBdovv4CeEJ",
+                    "[LSJ 20090625-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WqwoI03BW1U/m/C5t35BEoTroJ"
+                }
+            },
+            {
+                "text":"The capacity bonus applies to cards played before the Orun was played (eg. {Aranthebes, The Immortal}). ",
+                "refs":{
+                    "[LSJ 20051110]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fMW3tSF5oUc/m/-Eft6gDzxmsJ"
+                }
+            },
+            {
+                "text":"The effects do not apply if the vampire is not Laibon. ",
+                "refs":{
+                    "[ANK 20221208]":"https://www.vekn.net/forum/rules-questions/80197-clarification-on-using-orun-and-changing-sect#106952"
                 }
             }
         ],
@@ -53222,9 +53734,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -53495,7 +54013,7 @@
         "Requirement":"prince,justicar,camarilla",
         "Rulings":[
             {
-                "text":"Can not be played if there is no legal target (no other Methuselah with more pool than you). ",
+                "text":"Cannot be played if there is no legal target (no other Methuselah with more pool than you). ",
                 "refs":{
                     "[ANK 20191228]":"http://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
@@ -53802,7 +54320,20 @@
         "Name":"Path of Death and the Soul",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"You cannot choose a Discipline card that all your vampires already have at superior. ",
+                "refs":{
+                    "[LSJ 20031209]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/uIq8_Lkgq_0/m/2yCzdE1Mr9YJ"
+                }
+            },
+            {
+                "text":"If you fail to find a Discipline card, you still get the blood. ",
+                "refs":{
+                    "[LSJ 20031209]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/uIq8_Lkgq_0/m/2yCzdE1Mr9YJ"
+                }
+            }
+        ],
         "Set":{
             "BH":{
                 "R":true
@@ -54657,6 +55188,13 @@
         "Requirement":"",
         "Rulings":[
             {
+                "text":"Does prevent bleed redirection (eg. {Deflection}). ",
+                "refs":{
+                    "[LSJ 20010621]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VTHXJOrxlP4/m/be0uDkX78NwJ",
+                    "[LSJ 20010830]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/pWNZjWmtCk0/m/yV-5T_pUB3oJ"
+                }
+            },
+            {
                 "text":"Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}). ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
@@ -55064,7 +55602,21 @@
         "Name":"Phased Motion Detector",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can provide intercept only once during each action. ",
+                "refs":{
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates",
+                    "[ANK 20230116]":"https://www.vekn.net/forum/rules-questions/80266-confirmation-needed-about-phased-motion-detector#107207"
+                }
+            },
+            {
+                "text":"Grants intercept even if the bearer is not blocking yet. ",
+                "refs":{
+                    "[LSJ 20100329]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1SAloV6P7Xk/m/p96tZsTI9SsJ"
+                }
+            }
+        ],
         "Set":{
             "KMW":{
                 "C":true
@@ -55134,9 +55686,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -58935,6 +59493,12 @@
                 "refs":{
                     "[PIB 20150512]":"http://www.vekn.net/forum/rules-questions/71020-priority-contract-and-provision-of-the-silsila#71053"
                 }
+            },
+            {
+                "text":"Is used after combat effectively ends and can be order before or after other cards and effects played after combat (eg. {Monster}). ",
+                "refs":{
+                    "[ANK 20230314]":"https://www.vekn.net/forum/rules-questions/80378-monster-vs-provision-of-silsila#107622"
+                }
             }
         ],
         "Set":{
@@ -59126,6 +59690,12 @@
                 "text":"Can be retrieved by {Marthe Dizier} (reversal of previous rulings). ",
                 "refs":{
                     "[PIB 20111208]":"http://www.vekn.net/forum/rules-questions/16769-rules-team-rulings-02-dec-11?limit=10&start=40#17547"
+                }
+            },
+            {
+                "text":"[CEL] Cards that are only replaced after combat (eg. {Lucky Blow}) are replaced before the new combat. ",
+                "refs":{
+                    "[LSJ 20001122]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/EUCAQhATZC8J"
                 }
             }
         ],
@@ -59640,7 +60210,23 @@
         "Name":"Purification",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[QUI] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
+                "refs":{
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                }
+            },
+            {
+                "text":"[QUI] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                }
+            }
+        ],
         "Set":{
             "KMW":{
                 "R":true
@@ -61445,7 +62031,7 @@
         "Requirement":"Independent,anarch,capacity 5 or more",
         "Rulings":[
             {
-                "text":"Cannot allocate 6 points to a single Methuselah, and you cannot allocate points to yourself. ",
+                "text":"Cannot allocate 6 points to a single Methuselah, nor any point to yourself. Cannot be played if there is only one opponent left. ",
                 "refs":{
                     "[LSJ 20000622]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/znQHUWouQkw/-T_Tx-YRwrAJ",
                     "[LSJ 20100129]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ"
@@ -63911,6 +64497,13 @@
                 }
             },
             {
+                "text":"[tem] If used to cancel an action, the action is not performed in respect to section 3 of the rules and the minion is free to attempt the same action again. ",
+                "refs":{
+                    "[LSJ 19980212]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fLFLlXZXHqA/ggjw8aGjdRoJ",
+                    "[LSJ 20020801]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ"
+                }
+            },
+            {
                 "text":"[TEM] Other reaction cards (eg. wake effects) cannot be used if there is no action. ",
                 "refs":{
                     "[PIB 20120808]":"http://www.vekn.net/forum/rules-questions/34265-rules-tweak-suggestion-rewind-time-et-al?start=12#34448"
@@ -64034,6 +64627,25 @@
                 "text":"[thn], [THN] The press can only be used during the current round. ",
                 "refs":{
                     "[TOM 19960521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/poYD3n0TKGo/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"[THN] Canceling a maneuver provided by a strike does not cancel the strike (eg. {Aid from Bats}, {.44 Magnum}). The chosen strike cannot be changed. ",
+                "refs":{
+                    "[LSJ 20050228-3]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UHEZEmX22jA/m/u0IldHuItjgJ",
+                    "[ANK 20230111]":"https://www.vekn.net/forum/rules-questions/80258-rigor-mortis-and-aid-from-bats-and-other-manuver-strike-cards#107179"
+                }
+            },
+            {
+                "text":"[THN] Canceling a maneuver that provides a press does cancel the press. ",
+                "refs":{
+                    "[ANK 20230114]":"https://www.vekn.net/forum/rules-questions/80258-rigor-mortis-and-aid-from-bats-and-other-manuver-strike-cards?start=6#107195"
+                }
+            },
+            {
+                "text":"The opponent cannot play a card that provides an additional strike, even if just to benefit from another effect (eg. {Acrobatics}). ",
+                "refs":{
+                    "[LSJ 20011214-5]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
                 }
             }
         ],
@@ -64462,7 +65074,14 @@
         "Name":"Rockheart",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[VIS] Superior still prevents only half of the current strike. ",
+                "refs":{
+                    "[PIB 20120116]":"https://www.vekn.net/forum/rules-questions/20929-superior-rockheart-how-much-does-it-prevent#20934"
+                }
+            }
+        ],
         "Set":{
             "LoB":{
                 "C":true
@@ -65031,9 +65650,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -65105,9 +65730,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -65519,9 +66150,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -65628,7 +66265,14 @@
         "Name":"Safe Passage",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[obe] The additional cost does not apply to reaction powers [POWER][REACTION]. ",
+                "refs":{
+                    "[ANK 20180805]":"https://www.vekn.net/forum/rules-questions/76897-a-question-on-function-of-safe-passage#89666"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "B":"2"
@@ -65730,9 +66374,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -65768,9 +66418,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -66056,7 +66712,14 @@
         "Name":"Sawed-Off Shotgun",
         "Pool Cost":"2",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A second copy allows a second use in the same combat. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
+            }
+        ],
         "Set":{
             "Jyhad":{
                 "C":true
@@ -66271,13 +66934,16 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[STR] If the action ends, no other action modifier or reaction can be played afterwards. ",
+                "text":"[STR] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20220118]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
                 }
             },
             {
-                "text":"[STR] If the action ends, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "text":"[STR] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
                 "refs":{
                     "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
@@ -67075,12 +67741,6 @@
                 }
             },
             {
-                "text":"Adds one to the cost of the master card targetting the vampire, cost reductions from other effects do apply. ",
-                "refs":{
-                    "[LSJ 20070829-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/sVXZw1J43ik/OByFPgQsynwJ"
-                }
-            },
-            {
                 "text":"Choosing is targeting: cards that \"choose\" the vampire like {Rack, The}, {Toreador Grand Ball}, {Piper} or {Tend the Flock} are considered to target it, their cost is increased. Actions that choose the vampire cannot be played against him (eg. {Propaganda}, {Spirit Marionette}, {Shattering Crescendo}) ",
                 "refs":{
                     "[LSJ 20031010]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/clifT98_Zrk/aQ4cGuJnT9wJ",
@@ -67093,6 +67753,18 @@
                 "refs":{
                     "[TOM 19951208-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/tEHebi9BYfc/Q2zsWUbTURUJ",
                     "[LSJ 19980302-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kijV8VfB56s/_iWuwvavBGgJ"
+                }
+            },
+            {
+                "text":"There is no additional cost for using the effects of cards already in play (eg. {KRCG News Radio}). ",
+                "refs":{
+                    "[ANK 20221120]":"https://www.vekn.net/forum/rules-questions/80172-secure-haven-and-cards-with-targeted-effects-that-are-already-in-play#106845"
+                }
+            },
+            {
+                "text":"Can be played on a vampire in torpor. ",
+                "refs":{
+                    "[LSJ 20010610]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KVyVn-Y_UIY/m/FmhagXANIzcJ"
                 }
             },
             {
@@ -68133,7 +68805,7 @@
                 }
             },
             {
-                "text":"[OBT] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"[OBT] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -68187,26 +68859,26 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block. ",
+                "text":"[OBF][POT][ACTIONMODIFIER] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block. ",
                 "refs":{
                     "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
+                "text":"[OBF][POT][ACTIONMODIFIER] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
             },
             {
-                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"[OBF][POT][ACTIONMODIFIER] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
             },
             {
-                "text":"\"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued. ",
+                "text":"[OBF][POT][ACTIONMODIFIER] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued. ",
                 "refs":{
                     "[LSJ 20070808-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/jzMOxZ9oxOs/o0X7GUFmii0J"
                 }
@@ -68221,6 +68893,12 @@
                 "text":"[OBF][POT][ACTIONMODIFIER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[OBF][POT][ACTIONMODIFIER] Is used after combat effectively ends and can be order against other cards and effects played after combat (eg. {Provision of the Silsila}). ",
+                "refs":{
+                    "[ANK 20230314]":"https://www.vekn.net/forum/rules-questions/80378-monster-vs-provision-of-silsila#107622"
                 }
             }
         ],
@@ -68948,6 +69626,18 @@
                 "refs":{
                     "[ANK 20221102]":"https://www.vekn.net/forum/rules-questions/80129-fall-of-london-card-rules-questions#106688"
                 }
+            },
+            {
+                "text":"Can be locked to reduce the cost at any point before resolution, from when the action is announced to just before the cost is paid. ",
+                "refs":{
+                    "[ANK 20230620]":"https://www.vekn.net/forum/rules-questions/80612-when-to-use-shard-the-line-when-action-becoems-to-expensive-after-announcement#108409"
+                }
+            },
+            {
+                "text":"Can be used to allow you to play cards which cost you could not pay otherwise (eg. {Procurer}). ",
+                "refs":{
+                    "[ANK 20230621]":"https://www.vekn.net/forum/rules-questions/80691-procurer-recruiting-another-with-the-shard?start=12#108765"
+                }
             }
         ],
         "Set":{
@@ -69027,7 +69717,14 @@
         "Name":"Shatter the Gate",
         "Pool Cost":"",
         "Requirement":"infernal,capacity 9 or more",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The counters stay active after the acting Methuselah is ousted. ",
+                "refs":{
+                    "[LSJ 20100206-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/reXyybyIYX8/m/jeCyjdiZ5T4J"
+                }
+            }
+        ],
         "Set":{
             "HttBR":{
                 "A":"3"
@@ -69397,6 +70094,12 @@
                 "refs":{
                     "[ANK 20221028]":"https://www.vekn.net/forum/rules-questions/80119-contesting-mokole-blood#106671",
                     "[LSJ 20090428-1]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/887DQTpntKI/m/hYSLzUDm5iUJ"
+                }
+            },
+            {
+                "text":"If it is not equipped but merely put into play (eg. {Alastor}), it does not get 2 cards. It does is if it is equipped (eg. {Magic of the Smith}). ",
+                "refs":{
+                    "[LSJ 20090506]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/887DQTpntKI/m/L-ETC1-5nR0J"
                 }
             },
             {
@@ -70553,7 +71256,7 @@
             {
                 "text":"If multiple effects make you gain blood, even due to a single card (eg. {Redistribution}), you choose on which effect to apply Slake the Thirst. ",
                 "refs":{
-                    "[LJS 20100203]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HQD-UNP7Y0s/cHxAnD8Z9dwJ"
+                    "[LSJ 20100203]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HQD-UNP7Y0s/cHxAnD8Z9dwJ"
                 }
             },
             {
@@ -71305,7 +72008,7 @@
                 }
             },
             {
-                "text":"If a new combat occurs due to an effect like {Psyche!}, the Rifle can not be used to set the range. ",
+                "text":"If a new combat occurs due to an effect like {Psyche!}, the Rifle cannot be used to set the range. ",
                 "refs":{
                     "[LSJ 20010814]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/z7uYIO39YCo/aufoimHncvQJ"
                 }
@@ -72498,6 +73201,12 @@
                 "refs":{
                     "[LSJ 20050114]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/JWiZmyC2Y6s/q6JHYrE1zKYJ"
                 }
+            },
+            {
+                "text":"A second copy allows a second use in the same round. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
             }
         ],
         "Set":{
@@ -73102,7 +73811,14 @@
                 }
             },
             {
-                "text":"If another effect also sets the range, the first to resolve has priority (eg. {Asanbonsam Ghoul} and {Neutral Guard} resolve after). ",
+                "text":"[cel] If blocked, no other effect can be used to reset the range, but other pre-range effects can be played. ",
+                "refs":{
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20180720]":"http://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+                }
+            },
+            {
+                "text":"[cel] If another effect also sets the range, the first to resolve has priority (eg. {Asanbonsam Ghoul} and {Neutral Guard} resolve after). ",
                 "refs":{
                     "[PIB 20120214]":"http://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
                 }
@@ -73174,6 +73890,24 @@
                 "text":"Using the Launcher to reduce stealth does not force the minion to strike with it if he blocks. ",
                 "refs":{
                     "[LSJ 19971215]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mfBmRrUKZQ0/5Py-ENuzoGwJ"
+                }
+            },
+            {
+                "text":"Can be used to reduce stealth multiple times in the same action if the bearer manages to unlock. ",
+                "refs":{
+                    "[LSJ 20011023-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/47-PhTMiAOU/m/g4sVfXt9TmsJ"
+                }
+            },
+            {
+                "text":"Locking to reduce stealth makes the bearer unable to block if he does not unlock or wake. ",
+                "refs":{
+                    "[LSJ 20010702]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ"
+                }
+            },
+            {
+                "text":"A second copy allows a second use in the same combat. ",
+                "refs":{
+                    "[ANK 20230316]":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
                 }
             }
         ],
@@ -74467,9 +75201,10 @@
                 }
             },
             {
-                "text":"Any copy of the named card can be fetched upon resolution. ",
+                "text":"Any copy of the named card can be fetched upon resolution, except the current Sudario Refraction. ",
                 "refs":{
-                    "[LSJ 20090722]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/r-N65rA52uo/OXW8xk1r1iMJ"
+                    "[LSJ 20090722]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/r-N65rA52uo/OXW8xk1r1iMJ",
+                    "[ANK 20230105]":"https://www.vekn.net/forum/rules-questions/80244-sudario-refraction#107145"
                 }
             },
             {
@@ -76548,6 +77283,8 @@
             {
                 "text":"Must be played after the presses are handled and can be played if the round ends prematurely. ",
                 "refs":{
+                    "[RTR 20001020]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GvxNYsYsWJ4/EY7NOjdsGCsJ",
+                    "[LSJ 20001024]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/8PDeV_mQ8XEJ",
                     "[RTR 20030519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NOBWXWrd-vA/iEOpQp1uhvAJ"
                 }
             },
@@ -78631,7 +79368,7 @@
                 }
             },
             {
-                "text":"[mel] [MEL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"[mel] [MEL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -78835,7 +79572,7 @@
                 }
             },
             {
-                "text":"[CEL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action. ",
+                "text":"[CEL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}). ",
                 "refs":{
                     "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
                 }
@@ -81404,6 +82141,12 @@
                 "refs":{
                     "[LSJ 20060623]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mfgW0TeoLNM/e_QgbzZCqa8J"
                 }
+            },
+            {
+                "text":"All variants are affected by {Blood Cult Awareness Network}. ",
+                "refs":{
+                    "[LSJ 20060414]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Kok_AGc9i68/m/tiI176IwHKkJ"
+                }
             }
         ],
         "Set":{
@@ -81733,7 +82476,7 @@
         "Requirement":"infernal",
         "Rulings":[
             {
-                "text":"If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Change of Target}) before burning Unleash Hell's Fury and inflicting aggravated damage. However, effects that trigger at the same moment (eg. {Banshee Ironwail}) are still applied and ordered by the acting Methuselah. ",
+                "text":"If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Change of Target}) before burning Unleash Hell's Fury and inflicting aggravated damage. However, effects that trigger at the same moment (eg. {Banshee Ironwail}) are still applied and ordered by the acting Methuselah. Other effects and modifiers can be played after (eg. {Change of Target}). ",
                 "refs":{
                     "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
                     "[ANK 20211207]":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
@@ -81760,9 +82503,21 @@
                 }
             },
             {
-                "text":"Once it's attempting to block, its intercept can be affected by other cards normally (eg. {KRCG News Radio}). ",
+                "text":"If attempting to block requires to pay or burn blood (eg. {Dominion}), Unleash Hell's Fury cannot block. ",
+                "refs":{
+                    "[ANK 20230226]":"https://www.vekn.net/forum/rules-questions/31040-unleash-hells-fury-vs-burn-x-blood-to-attempt-to-block?start=6#107484"
+                }
+            },
+            {
+                "text":"Once it is attempting to block, its intercept can be affected by other cards normally (eg. {KRCG News Radio}). ",
                 "refs":{
                     "[ANK 20211112-2]":"https://www.vekn.net/forum/rules-questions/79478-unleash-hell-s-fury-and-extra-intercept#103870"
+                }
+            },
+            {
+                "text":"Is not a minion when it burns (eg. does not trigger {Tension in the Ranks}). ",
+                "refs":{
+                    "[ANK 20230317]":"https://www.vekn.net/forum/rules-questions/76656-unleash-hell-s-fury-tension-in-the-ranks#107653"
                 }
             },
             {
@@ -81774,7 +82529,7 @@
             {
                 "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you have an infernal vampire ready, even if you already have an Unleash Hell's Fury in play. ",
                 "refs":{
-                    "[LJS 20100203-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                    "[LSJ 20100203-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
                 }
             }
         ],
@@ -81947,9 +82702,12 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[abo] The action ends immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"[abo] The action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards. ",
                 "refs":{
-                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                    "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ",
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20220118]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "[ANK 20221205]":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
                 }
             },
             {
@@ -82248,6 +83006,12 @@
                 "refs":{
                     "[ANK 20170227]":"http://www.vekn.net/forum/rules-questions/75632-untapping-an-untapped-minion-triggers#80891",
                     "[LSJ 20020408]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4LXlqwmGQGc/m/S8aQ4et5KMIJ"
+                }
+            },
+            {
+                "text":"Any unlock, even one costing blood already, triggers the burning blood effect (eg. {Freak Drive}, {Derange}). ",
+                "refs":{
+                    "[ANK 20221210-2]":"https://www.vekn.net/forum/rules-questions/80206-derange-disease-counter-from-vampiric-disease#106970"
                 }
             },
             {
@@ -83390,6 +84154,12 @@
                 "refs":{
                     "[LSJ 20050408-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1TXRhYopt70/m/74vkJl3Fh4wJ"
                 }
+            },
+            {
+                "text":"Once the prey is ousted, the chosen card does not change, but the effect can be used on the new prey. ",
+                "refs":{
+                    "[ANK 20230103]":"https://www.vekn.net/forum/rules-questions/80237-victim-of-habit-subsequent-prey#107123"
+                }
             }
         ],
         "Set":{
@@ -83767,6 +84537,13 @@
                 "text":"Can play cards requiring both [for] and [cel]. ",
                 "refs":{
                     "[ANK 20210719]":"https://www.vekn.net/forum/rules-questions/76877-vivienne-geroux-and-anarh-cards?start=6#102731"
+                }
+            },
+            {
+                "text":"Is not Anarch (eg. does not benefit from {Anarch Manifesto, An}). ",
+                "refs":{
+                    "[RBK 20200701-6]":"https://www.vekn.net/rulebook#allies",
+                    "[ANK 20230417]":"https://www.vekn.net/forum/rules-questions/80399-an-anarch-manifesto-grey-thorne-vivienne-geroux#107686"
                 }
             },
             {
@@ -85995,9 +86772,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
@@ -86103,7 +86886,14 @@
         "Name":"Withering",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Does not apply to the current strike of the opponent. ",
+                "refs":{
+                    "[LSJ 20020211]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ubqDaLeG3qo/m/TGKL07dP8NkJ"
+                }
+            }
+        ],
         "Set":{
             "BL":{
                 "C":true
@@ -86131,7 +86921,14 @@
         "Name":"WMRH Talk Radio",
         "Pool Cost":"1",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Does not consider blocks made before the effect was used (if the action has been continued with eg. {Form of Mist}). ",
+                "refs":{
+                    "[ANK 20230319]":"https://www.vekn.net/forum/rules-questions/80393-forced-awakening-and-wmrh-talk-radio-vs-form-of-mist#107674"
+                }
+            }
+        ],
         "Set":{
             "BH":{
                 "R":true
@@ -86599,6 +87396,12 @@
                 }
             },
             {
+                "text":"If {R\u00f6tschreck} is played against the acting vampire, the Sabbat vampire takes 2 damage (combat ends before torpor), the acting vampire goes to torpor and no referendum is conducted. ",
+                "refs":{
+                    "[LSJ 20080821]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hZF1Joxwc2s/m/o1FSURsGv0wJ"
+                }
+            },
+            {
                 "text":"The effect is applied after cards that are played \"at the end of the round (eg. {Disarm}) or \"when combat would end\". If a combat ends and a new combat would begin, the damage is applied between the two combats and the referendum is conducted after all the combats if the acting vampire is still ready. ",
                 "refs":{
                     "[ANK 20180910-1]":"http://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517",
@@ -86750,9 +87553,15 @@
                 }
             },
             {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it's on. ",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. ",
                 "refs":{
                     "[LSJ 20090324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play. ",
+                "refs":{
+                    "[LSJ 20080114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
             }
         ],
