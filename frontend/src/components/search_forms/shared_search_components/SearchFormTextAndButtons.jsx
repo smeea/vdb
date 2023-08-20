@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useImmer } from 'use-immer';
 import Check2 from '@/assets/images/icons/check2.svg';
 import {
   SearchAdditionalFormsText,
@@ -28,11 +29,7 @@ const SearchFormTextAndButtons = ({
   const [text, setText] = useState('');
 
   useEffect(() => {
-    if (!text && value[0].value) {
-      setText(value[0].value);
-    } else if (!value[0].value) {
-      setText('');
-    }
+    setText(value[0].value ?? '');
   }, [value]);
 
   const options = [

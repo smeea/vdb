@@ -1,6 +1,5 @@
 # FIX
-- Text main field not changing value after removing it in multiple forms
-- Fix alignment in total header icon-text
+- Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
 
 # FEATURES
