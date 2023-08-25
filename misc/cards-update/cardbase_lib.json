@@ -850,7 +850,8 @@
             },
             "Third":{
                 "C":true,
-                "PB":"3"
+                "PB":"3",
+                "SKB":"2"
             }
         },
         "Twd":30,
@@ -1449,7 +1450,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nAfter an Banu Haqim you control successfully bleeds a Methuselah, put the pool lost by that Methuselah on this card. Burn X counters from this card during the polling step of a political action to give a vampire you control +X votes.",
+        "Card Text":"Unique location.\nAfter an Banu Haqim you control successfully bleeds a Methuselah, put the pool lost by that Methuselah on this card. During the polling step of a political action, you can burn X counters from this card to give a vampire you control +X votes.",
         "Clan":"Banu Haqim",
         "Conviction Cost":"",
         "Discipline":"",
@@ -1470,6 +1471,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":42,
@@ -1702,7 +1706,8 @@
                 "PTo":"2"
             },
             "Third":{
-                "PTz":1
+                "PTz":1,
+                "SKTz":1
             },
             "KoT":{
                 "U":true
@@ -2125,7 +2130,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock to give an Anarch +1 stealth.",
+        "Card Text":"Unique location.\nYou can lock this card to give an Anarch +1 stealth.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -2140,6 +2145,9 @@
             },
             "V5A":{
                 "PG":"1"
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Twd":90,
@@ -2210,7 +2218,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\nSuccessful referendum means each ready anarch gains 1 blood from the blood bank, and each Methuselah who controls at least one anarch gains 1 pool from the blood bank.",
+        "Card Text":"Requires an Anarch.\nSuccessful referendum means each ready Anarch gains 1 blood and each Methuselah controlling an Anarch gains 1 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -2223,6 +2231,9 @@
             "Anarchs":{
                 "C":true,
                 "PAB":"2"
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Twd":10,
@@ -3089,7 +3100,8 @@
             },
             "Third":{
                 "C":true,
-                "PTr":"5"
+                "PTr":"5",
+                "SKTr":"4"
             },
             "FB":{
                 "PTr":"4"
@@ -3359,7 +3371,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a prince or justicar.\nChoose a Camarilla vampire. If this referendum is successful, put this card on the chosen vampire. This vampire may enter combat with a vampire controlled by another Methuselah as a +1 stealth (D) action. Any vampire attempting to block this vampire burns 1 blood. Blood hunts cannot be called on this vampire. Any Camarilla vampire can call a referendum to burn this card as a +1 stealth political action.",
+        "Card Text":"Requires a prince or justicar.\nChoose a Camarilla vampire. Successful referendum means this card is put on the chosen vampire. The attached vampire can enter combat with a vampire as a +1 stealth (D) action. Vampires attempting to block the attached vampire burn 1 blood. Blood hunts cannot be called on the attached vampire. Camarilla vampires can call a referendum to burn this card as a +1 stealth political action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -3411,6 +3423,9 @@
             },
             "KMW":{
                 "PAl":"3"
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":36,
@@ -3742,7 +3757,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[ani] Put this card in play. During your unlock phase, your prey burns 1 pool. You can burn only 1 pool each turn with Army of Rats cards. Minions can burn this card as a (D) action.",
+        "Card Text":"+1 stealth action.\n[ani] Put this card in play. During your unlock phase, your prey burns 1 pool. A Methuselah can burn only 1 pool each turn with Army of Rats cards. Minions can burn this card as a (D) action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Animalism",
@@ -3780,6 +3795,9 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Twd":244,
@@ -5126,6 +5144,11 @@
             "V5A":{
                 "PB":"2"
             },
+            "NB2":{
+                "PB":"2",
+                "PG":"2",
+                "PMi":"2"
+            },
             "PLAYTEST":{
                 "PTz":3
             }
@@ -5394,6 +5417,9 @@
             },
             "25th":{
                 "":"2"
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":505,
@@ -6912,7 +6938,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock during the polling step of any referendum to get +2 votes. Lock after a minion with a contract for which an Banu Haqim you control is chosen leaves the ready region to gain 1 pool.",
+        "Card Text":"Unique location.\nYou can lock this card during the polling step of any referendum to get +2 votes. You can lock this card after a minion with a contract for which an Banu Haqim you control is chosen leaves the ready region to gain 1 pool.",
         "Clan":"Banu Haqim",
         "Conviction Cost":"",
         "Discipline":"",
@@ -6940,6 +6966,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":22,
@@ -7987,6 +8016,7 @@
                 "PTr":"2",
                 "PTz":"2",
                 "SKB":"2",
+                "SKM":"2",
                 "SKTr":"2",
                 "SKTz":"2"
             },
@@ -8011,6 +8041,9 @@
                 "PN":"3",
                 "PTr":"2",
                 "PV":"2"
+            },
+            "NB2":{
+                "PG":"3"
             },
             "PLAYTEST":{
                 "PR":3,
@@ -9033,13 +9066,13 @@
     "100227":{
         "ASCII Name":"Blur",
         "Artist":[
-            "Ken Meyer, Jr.",
-            "Harold Arthur McNeill"
+            "Harold Arthur McNeill",
+            "Ken Meyer, Jr."
         ],
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[cel] Additional strike (limited).\n[CEL] Two additional strikes (limited).",
+        "Card Text":"[cel] Additional strike (limited).\n[CEL] 2 additional strikes (limited).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity",
@@ -9073,6 +9106,9 @@
             },
             "Third":{
                 "C":true
+            },
+            "NB2":{
+                "PBH":"2"
             }
         },
         "Twd":205,
@@ -9178,6 +9214,9 @@
             },
             "Third":{
                 "R":true
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Twd":26,
@@ -10392,12 +10431,13 @@
     "100260":{
         "ASCII Name":"Brujah Debate",
         "Artist":[
-            "Edward Beard, Jr."
+            "Edward Beard, Jr.",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play. During each Methuselah's master phase, he or she locks (one of) the highest capacity Brujah he or she controls (if any). Each Brujah gets +1 strength and an optional maneuver each combat. Any minion who is not Ventrue my burn this card as a (D) action.",
+        "Card Text":"Put this card in play. During each Methuselah's master phase, that Methuselah locks one of the oldest Brujah they control (if any). Brujah get +1 strength and 1 optional maneuver each combat. Non-Ventrue minions can burn this card as a (D) action.",
         "Clan":"Brujah",
         "Conviction Cost":"",
         "Discipline":"",
@@ -10425,6 +10465,9 @@
             },
             "Tenth":{
                 "A":1
+            },
+            "NB2":{
+                "PB":"3"
             }
         },
         "Twd":17,
@@ -12458,7 +12501,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nAny Minister you control can put 1 corruption counter on an ally or younger vampire controlled by your prey as a (D) action. If the action is successful and the number of your corruption counters on the minion equals or exceeds their capacity or cost, you can burn those counters to steal that minion.",
+        "Card Text":"Unique location.\nMinisters you control can put 1 corruption counter on an ally or younger vampire controlled by your prey as a (D) action. If the action is successful and the number of your corruption counters on the minion equals or exceeds their capacity or cost, you can burn those counters to steal that minion.",
         "Clan":"Ministry",
         "Conviction Cost":"",
         "Discipline":"",
@@ -12473,6 +12516,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Twd":10,
@@ -12488,7 +12534,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: Discipline.\nPut this card on a vampire. This vampire gains one level of Celerity [cel]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Celerity [CEL].",
+        "Card Text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Celerity [cel] and +1 capacity. Cannot be put on a vampire with superior Celerity [CEL].",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -12534,6 +12580,9 @@
             "KoT":{
                 "PB":1,
                 "PT":1
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Twd":72,
@@ -13655,6 +13704,31 @@
         "Twd":0,
         "Type":"Action Modifier"
     },
+    "102246":{
+        "ASCII Name":"Childe of the Revolution",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"+1 stealth action. Requires a non-sterile baron.\nPut this card in play. It becomes a 1-capacity (non-unique) Anarch vampire of the same clan as the acting vampire and must hunt this turn. You can search your library (shuffle afterward), hand and/or ash heap for a Discipline master card and put it on this new vampire.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102246,
+        "Name":"Childe of the Revolution",
+        "Pool Cost":"",
+        "Requirement":"non-sterile,baron,anarch",
+        "Rulings":[],
+        "Set":{
+            "NB2":{
+                "PB":"2"
+            }
+        },
+        "Twd":0,
+        "Type":"Action"
+    },
     "100338":{
         "ASCII Name":"Childling Muse",
         "Artist":[
@@ -14622,12 +14696,13 @@
     "100364":{
         "ASCII Name":"Closed Session",
         "Artist":[
-            "Harold Arthur McNeill"
+            "Harold Arthur McNeill",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready prince, justicar or Inner Circle member. Only usable during a referendum, before any votes and ballots are cast.\nNon-Camarilla vampires cannot cast votes or ballots in this referendum.",
+        "Card Text":"Requires a prince, justicar or Inner Circle member. Only usable during the polling step of a political action before votes and ballots are cast.\nNon-Camarilla vampires cannot cast votes or ballots during this referendum.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -14653,6 +14728,9 @@
             },
             "KMW":{
                 "PAl":1
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":19,
@@ -16342,6 +16420,9 @@
             },
             "V5":{
                 "PTo":"4"
+            },
+            "NB2":{
+                "PB":"3"
             }
         },
         "Twd":228,
@@ -18880,7 +18961,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Archetype. Trifle.\nPut this card on a vampire you control. Once each turn, this vampire can gain 1 blood or burn 1 blood to unlock after an action (successful or not) is performed during which they used 3 or more Disciplines to play cards. A vampire can have only one archetype.",
+        "Card Text":"Archetype. Trifle.\nPut this card on a vampire you control. Once each turn, after an action (successful or not) is resolved during which this vampire used 3 or more Disciplines to play cards, this vampire can either burn 1 blood to unlock or gain 1 blood. A vampire can have only one archetype.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -18914,6 +18995,9 @@
             },
             "HttB":{
                 "R":true
+            },
+            "NB2":{
+                "PMi":"2"
             }
         },
         "Twd":19,
@@ -20175,6 +20259,9 @@
         "Set":{
             "V5A":{
                 "PG":"6"
+            },
+            "NB2":{
+                "PG":"3"
             }
         },
         "Twd":21,
@@ -20237,6 +20324,9 @@
             },
             "NB":{
                 "PN":"3"
+            },
+            "NB2":{
+                "PG":"2"
             }
         },
         "Twd":237,
@@ -21695,7 +21785,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[pot] Only usable at close range at the end of a round of combat in which this vampire successfully inflicted more damage than the opposing vampire. Not usable by a vampire being burned or going into torpor. Put this card on the opposing vampire and send that vampire into torpor. The vampire with this card has -1 strength. He or she may burn this card by burning 3 blood. A vampire can have only one Disarm.\n[POT] As above, but the vampire with this card has -2 strength.",
+        "Card Text":"Only usable at close range at the end of a round during which this vampire successfully inflicted more damage than the opposing vampire. Not usable by a vampire being burned or going to torpor.\n[pot] Put this card on the opposing vampire and send them to torpor. The attached vampire gets -1 strength. They can burn 3 blood to burn this card. A vampire can have only one Disarm.\n[POT] As above, but the attached vampire gets -2 strength.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Potence",
@@ -21743,6 +21833,9 @@
             },
             "Third":{
                 "R":true
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Twd":179,
@@ -22090,6 +22183,9 @@
             "Third":{
                 "PB":1,
                 "SKB":"1"
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Twd":187,
@@ -22266,12 +22362,13 @@
     "100563":{
         "ASCII Name":"Diversion",
         "Artist":[
-            "Andrew Bates"
+            "Andrew Bates",
+            "Noora Hirvonen"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch.\n[cel] Gain one additional strike (limited).\n[for] Prevent up to 2 damage.\n[tha] Strike: ranged. Steal 1 blood with an optional maneuver.",
+        "Card Text":"Requires an Anarch.\n[cel] Additional strike (limited).\n[for] Prevent 2 damage.\n[tha] Strike, ranged: steal 1 blood or life (becoming blood), with 1 optional maneuver.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity/Fortitude/Blood Sorcery",
@@ -22291,6 +22388,9 @@
             "Anarchs":{
                 "C":true,
                 "PAG":"4"
+            },
+            "NB2":{
+                "PB":"3"
             }
         },
         "Twd":39,
@@ -22458,7 +22558,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Animal with 1 life.\nMinions opposing the minion with this retainer cannot end combat as a strike.",
+        "Card Text":"Animal with 1 life.\nMinions in combat with the employer cannot strike: combat ends.",
         "Clan":"Gangrel",
         "Conviction Cost":"",
         "Discipline":"",
@@ -22487,6 +22587,9 @@
             },
             "Anarchs":{
                 "PG":1
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Twd":21,
@@ -23803,6 +23906,9 @@
             },
             "V5A":{
                 "PB":"4"
+            },
+            "NB2":{
+                "PB":"4"
             }
         },
         "Twd":14,
@@ -23942,6 +24048,9 @@
             "V5A":{
                 "PG":"4"
             },
+            "NB2":{
+                "PG":"2"
+            },
             "PLAYTEST":{
                 "PTz":3
             }
@@ -23989,6 +24098,9 @@
             },
             "V5A":{
                 "PMin":"5"
+            },
+            "NB2":{
+                "PG":"3"
             }
         },
         "Twd":247,
@@ -24621,6 +24733,9 @@
             },
             "NB":{
                 "PM":"2"
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Twd":653,
@@ -24630,12 +24745,13 @@
         "ASCII Name":"Elder Intervention",
         "Artist":[
             "Michael Weaver",
-            "Melissa Uran"
+            "Melissa Uran",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Do not replace until after this action.\nOnly usable during a bleed against you. This vampire gets +2 intercept. A vampire cannot play both /Pack Tactics/ and Elder Intervention in the same action.",
+        "Card Text":"Only usable during a bleed action directed at you. Do not replace until after this action.\n+2 intercept. A vampire cannot play both Elder Intervention and cards named /Pack Tactics/ during the same action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -24663,6 +24779,9 @@
             },
             "HttB":{
                 "PSam":"2"
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":14,
@@ -25594,6 +25713,9 @@
         "Set":{
             "V5A":{
                 "PMin":"6"
+            },
+            "NB2":{
+                "PMi":"2"
             }
         },
         "Twd":16,
@@ -27398,6 +27520,9 @@
         "Set":{
             "V5A":{
                 "PG":"6"
+            },
+            "NB2":{
+                "PG":"3"
             }
         },
         "Twd":21,
@@ -27471,6 +27596,9 @@
             },
             "NB":{
                 "PM":"2"
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Twd":690,
@@ -28918,6 +29046,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Twd":28,
@@ -29893,7 +30024,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is chosen.\n[pro] For the duration of the combat, when this vampire suffers a point of damage (that he or she does not prevent) in a given round, any additional damage inflicted on this vampire in the same round is automatically prevented. Aggravated damage cannot be prevented in this way.\n[PRO] As above, but aggravated damage is prevented in this way as well.",
+        "Card Text":"Only usable before range is determined.\n[pro] This combat, if a damage is successfully inflicted on this vampire in a given round, any additional damage inflicted on this vampire in the same round is automatically prevented. Aggravated damage cannot be prevented this way.\n[PRO] As above, but aggravated damage is prevented this way as well.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Protean",
@@ -29932,6 +30063,9 @@
             },
             "KoT":{
                 "U":true
+            },
+            "NB2":{
+                "PG":"2"
             }
         },
         "Twd":92,
@@ -30883,7 +31017,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[pro] Strike: dodge.\n[PRO] Strike: combat ends. If this vampire is acting and the action was blocked, they can burn 1 blood after combat ends to continue the action with +1 stealth as if unblocked, even if stealth is not yet needed. A vampire can play only one Form of Mist at superior each action.",
+        "Card Text":"[pro] Strike: dodge.\n[PRO] Strike: combat ends. After combat ends, if this vampire was blocked while performing an action, they can burn 1 blood to continue the action with +1 stealth as if unblocked, even if stealth is not yet needed. A vampire can play only one Form of Mist at superior each action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Protean",
@@ -30952,6 +31086,10 @@
             "V5A":{
                 "PMin":"4"
             },
+            "NB2":{
+                "PG":"2",
+                "PMi":"3"
+            },
             "PLAYTEST":{
                 "PTz":3
             }
@@ -30980,6 +31118,9 @@
             "V5A":{
                 "PG":"2"
             },
+            "NB2":{
+                "PG":"3"
+            },
             "PLAYTEST":{
                 "PTz":2
             }
@@ -31007,6 +31148,9 @@
         "Set":{
             "V5A":{
                 "PMin":"4"
+            },
+            "NB2":{
+                "PMi":"2"
             }
         },
         "Twd":4,
@@ -31400,6 +31544,9 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "NB2":{
+                "PBH":"2"
             }
         },
         "Twd":55,
@@ -32341,7 +32488,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Each Gangrel you control gets +1 strength. Any non-Ravnos minion can burn this card as a (D) action.",
+        "Card Text":"Unique.\nPut this card in play. Gangrel you control get +1 strength. Non-Ravnos minions can burn this card as a (D) action.",
         "Clan":"Gangrel",
         "Conviction Cost":"",
         "Discipline":"",
@@ -32359,6 +32506,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Twd":18,
@@ -32404,7 +32554,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nLock and burn 1 pool during your unlock phase to exchange a card in your ash heap that requires an anarch for a card from your hand. Lock before range is determined to end combat between an anarch you control and another anarch.",
+        "Card Text":"Unique location.\nYou can lock this location and burn 1 pool during your unlock phase to exchange one card from your hand for one card in your ash heap requiring an Anarch. You can lock this location before range is determined to end a combat involving an Anarch you control and another Anarch.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -32424,6 +32574,9 @@
         "Set":{
             "TR":{
                 "R":true
+            },
+            "NB2":{
+                "PMi":"1"
             },
             "PLAYTEST":{
                 "PR":1
@@ -33031,7 +33184,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only one Giant's Blood can be played in a game.\nFill any vampire to full capacity with blood from the blood bank.",
+        "Card Text":"Only one Giant's Blood can be played in a game.\nChoose a vampire. The chosen vampire gains enough blood to reach full capacity.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -33072,6 +33225,9 @@
             },
             "25th":{
                 "":"1"
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Twd":1413,
@@ -34472,7 +34628,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nMove up to 3 blood from a ready vampire you control to a younger vampire of the same clan in your uncontrolled region.",
+        "Card Text":"Move up to 3 blood from a ready vampire you control to a younger vampire of the same clan in your uncontrolled region.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -34484,6 +34640,9 @@
         "Set":{
             "Third":{
                 "C":true
+            },
+            "NB2":{
+                "PBH":"2"
             }
         },
         "Twd":47,
@@ -35456,6 +35615,9 @@
         "Set":{
             "V5A":{
                 "PBh":"4"
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":20,
@@ -37239,7 +37401,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Retainer with 1 life.\n[pro] During any Methuselah's unlock phase, this vampire can burn 1 blood to unlock.\n[PRO] As above, but Homunculus has 2 life.",
+        "Card Text":"Retainer with 1 life.\n[pro] During any Methuselah's unlock phase, the employer can burn 1 blood to unlock.\n[PRO] As above, but Homunculus has 2 life.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Protean",
@@ -37268,6 +37430,9 @@
             },
             "25th":{
                 "":"1"
+            },
+            "NB2":{
+                "PMi":"1"
             },
             "PLAYTEST":{
                 "PTz":1
@@ -37715,6 +37880,9 @@
         "Set":{
             "V5A":{
                 "PBh":"10"
+            },
+            "NB2":{
+                "PBH":"6"
             }
         },
         "Twd":16,
@@ -37807,6 +37975,9 @@
         "Set":{
             "V5A":{
                 "PBh":"4"
+            },
+            "NB2":{
+                "PBH":"3"
             }
         },
         "Twd":16,
@@ -38398,6 +38569,9 @@
             },
             "NB":{
                 "PN":"2"
+            },
+            "NB2":{
+                "PB":"3"
             }
         },
         "Twd":277,
@@ -41020,7 +41194,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a prince or justicar.\nPut this card in play. Each Methuselah controlling a non-Camarilla vampire burns 1 pool during their unlock phase. Any Methuselah can burn a non-Camarilla vampire they control during their master phase to burn this card.",
+        "Card Text":"+1 stealth action. Requires a prince or justicar.\nPut this card in play. Each Methuselah controlling a non-Camarilla vampire burns 1 pool during their unlock phase. Methuselahs can burn a non-Camarilla vampire they control during their master phase to burn this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -41051,6 +41225,9 @@
             },
             "Promo":{
                 "2021-10-15":true
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":68,
@@ -41178,6 +41355,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":3,
@@ -41513,7 +41693,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Each Banu Haqim gets +1 stealth when bleeding. Any minion can burn this card as a (D) action; Tremere get +1 stealth during that action.",
+        "Card Text":"Unique.\nPut this card in play. Banu Haqim get +1 stealth when bleeding. Minions can burn this card as a (D) action; Tremere get +1 stealth during that action.",
         "Clan":"Banu Haqim",
         "Conviction Cost":"",
         "Discipline":"",
@@ -41531,6 +41711,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":18,
@@ -41562,6 +41745,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PBH":"2"
             }
         },
         "Twd":38,
@@ -43864,7 +44050,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master. Requires an anarch.\nPut this card on an anarch. Allies cannot block this anarch. Cards that require Dominate [dom] or Presence [pre] cost other minions an additional blood while this anarch is acting, attempting to block, or in combat.",
+        "Card Text":"Requires an Anarch.\nPut this card on an Anarch. Allies cannot block this Anarch. Cards requiring Dominate [dom] or Presence [pre] cost other minions +1 blood while this Anarch is acting, attempting to block or in combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -43883,6 +44069,9 @@
         "Set":{
             "TR":{
                 "C":true
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Twd":19,
@@ -44141,7 +44330,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[cel] Additional strike (limited).\n[CEL] This vampire may burn X blood to gain X additional strikes (limited).",
+        "Card Text":"[cel] Additional strike (limited).\n[CEL] Burn X blood to get X additional strikes (limited).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Celerity",
@@ -44160,6 +44349,9 @@
             },
             "KoT":{
                 "R":true
+            },
+            "NB2":{
+                "PBH":"2"
             }
         },
         "Twd":10,
@@ -44302,6 +44494,9 @@
         "Set":{
             "V5A":{
                 "PB":"6"
+            },
+            "NB2":{
+                "PB":"3"
             }
         },
         "Twd":11,
@@ -44836,7 +45031,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf] +1 stealth. Lost in Crowds and cards named /Into Thin Air/ cannot both be played on the same action.\n[OBF] As above, but for +2 stealth.",
+        "Card Text":"[obf] +1 stealth. Lost in Crowds and cards named /Into Thin Air/ cannot both be played during the same action.\n[OBF] As above, but for +2 stealth.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obfuscate",
@@ -44891,6 +45086,9 @@
             "NB":{
                 "PM":"2",
                 "PN":"1"
+            },
+            "NB2":{
+                "PMi":"1"
             },
             "PLAYTEST":{
                 "PR":4
@@ -45901,6 +46099,9 @@
             },
             "KSU":{
                 "AU":"3"
+            },
+            "NB2":{
+                "PB":"2"
             }
         },
         "Twd":4,
@@ -49000,7 +49201,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Play when a Ventrue antitribu attempts to hunt. This action is ended (unsuccessfully), and the acting vampire goes into torpor.",
+        "Card Text":"Only usable if a Ventrue antitribu is hunting.\nThe action fails and the acting vampire goes to torpor.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -49572,6 +49773,9 @@
             },
             "V5A":{
                 "PB":"2"
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Twd":44,
@@ -50810,6 +51014,9 @@
             },
             "25th":{
                 "":"1"
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Twd":165,
@@ -51081,6 +51288,9 @@
             },
             "Anthology I":{
                 "":"1"
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Twd":45,
@@ -52332,7 +52542,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: Discipline.\nPut this card on a vampire. This vampire gains one level of Obfuscate [obf]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Obfuscate [OBF].",
+        "Card Text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Obfuscate [obf] and +1 capacity. Cannot be put on a vampire with superior Obfuscate [OBF].",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -52369,6 +52579,9 @@
             },
             "KoT":{
                 "PM":"2"
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Twd":160,
@@ -52782,6 +52995,10 @@
             "NB":{
                 "PTo":"2"
             },
+            "NB2":{
+                "PBH":"1",
+                "PMi":"2"
+            },
             "PLAYTEST":{
                 "PR":4,
                 "PTz":4,
@@ -52863,7 +53080,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a baron.\nPut this card in play. Anarch vampires can enter combat with any minion as a (D) action. They can burn a location as a (D) action that costs 2 pool. Any Methuselah may use a master phase action to move 1 counter from his or her pool to this card. When this card has 4 pool, burn it and gain 4 pool. Only one Open War may be played in a game.",
+        "Card Text":"+1 stealth action. Requires a baron. Only one Open War can be played in a game.\nPut this card in play. Anarchs can enter combat with a minion as a (D) action. Anarchs can burn a location as a (D) action that costs 2 pool. Methuselahs can use a master phase action to move 1 counter from their pool to this card. If this card has 4 counters, burn it and gain 4 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -52896,6 +53113,9 @@
         "Set":{
             "TR":{
                 "R":true
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Twd":11,
@@ -53099,6 +53319,10 @@
         "Set":{
             "V5A":{
                 "PB":"6"
+            },
+            "NB2":{
+                "PB":"5",
+                "PG":"3"
             },
             "PLAYTEST":{
                 "PTz":3
@@ -53596,7 +53820,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nDuring the referendum of a political action, you may lock this card and burn X pool to get X votes.",
+        "Card Text":"Unique location.\nYou can lock this card and burn X pool during the polling step of a political action to get +2X votes.",
         "Clan":"Brujah",
         "Conviction Cost":"",
         "Discipline":"",
@@ -53611,6 +53835,9 @@
             },
             "CE":{
                 "PB":1
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Twd":8,
@@ -53619,12 +53846,13 @@
     "101342":{
         "ASCII Name":"Pack Alpha",
         "Artist":[
-            "Travis Ingram"
+            "Travis Ingram",
+            "Noora Hirvonen"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"A vampire may play only one Pack Alpha each round.\n[ani] This vampire employs an animal retainer from your hand before range is determined. Pay cost as normal.\n[ANI] Burn an animal retainer employed by this vampire and put this card on this vampire. The minion with this card gets +1 strength. A minion may have only one Pack Alpha.",
+        "Card Text":"A vampire can play only one Pack Alpha each round.\n[ani] Only usable before range is determined. Employ an animal retainer from your hand (requirements and cost apply as normal).\n[ANI] Burn an animal retainer employed by this vampire to put this card on this vampire. This minion gets +1 strength. A minion can have only one Pack Alpha.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Animalism",
@@ -53643,6 +53871,9 @@
         "Set":{
             "KMW":{
                 "C":true
+            },
+            "NB2":{
+                "PG":"2"
             },
             "PLAYTEST":{
                 "PR":2
@@ -54003,7 +54234,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a prince or justicar.\nChoose a Methuselah who has more pool than you do, and allocate 3 of their pool between 1 or more of the other Methuselahs (including you). Successful referendum means the chosen Methuselah loses that pool, and it is allocated as you chose.",
+        "Card Text":"Requires a prince or justicar.\nChoose a Methuselah who has more pool than you do and allocate 3 of their pool among 1 or more other Methuselahs (including you). Successful referendum means the pool is distributed as you chose.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -54063,6 +54294,9 @@
             "NB":{
                 "PM":"3",
                 "PTo":"3"
+            },
+            "NB2":{
+                "PBH":"2"
             },
             "PLAYTEST":{
                 "PL":2
@@ -54166,6 +54400,9 @@
         "Set":{
             "V5A":{
                 "PMin":"5"
+            },
+            "NB2":{
+                "PMi":"4"
             }
         },
         "Twd":15,
@@ -55843,6 +56080,9 @@
         "Set":{
             "V5A":{
                 "PMin":"7"
+            },
+            "NB2":{
+                "PMi":"5"
             }
         },
         "Twd":13,
@@ -57106,7 +57346,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nLock during your discard phase to gain a discard phase action. If you use that discard phase action to discard a card that requires an anarch or a card that makes a vampire an anarch, you may unlock a ready anarch. Any anarch controlled by another Methuselah may steal this location for his or her controller as a (D) action.",
+        "Card Text":"Unique location.\nDuring your discard phase, you can lock this location to get +1 discard phase action. If you use that discard phase action to discard a card requiring an Anarch or making a vampire Anarch, you can unlock a ready Anarch. Anarchs controlled by other Methuselahs can steal this location as a (D) action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -57127,6 +57367,9 @@
             "Tenth":{
                 "A":1,
                 "B":1
+            },
+            "NB2":{
+                "PB":"1"
             },
             "PLAYTEST":{
                 "PR":1
@@ -57231,7 +57474,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nDuring your influence phase, you can add 1 blood to a vampire in your uncontrolled region. Any vampire can steal this location as a (D) action.",
+        "Card Text":"Unique location.\nDuring your influence phase, you can add 1 blood to a vampire in your uncontrolled region. Vampires can steal this location as a (D) action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -57253,6 +57496,9 @@
             },
             "FB":{
                 "PN":"1"
+            },
+            "NB2":{
+                "PG":"1"
             },
             "PLAYTEST":{
                 "PSal":1
@@ -58929,6 +59175,9 @@
             },
             "V5A":{
                 "PBh":"4"
+            },
+            "NB2":{
+                "PBH":"2"
             }
         },
         "Twd":19,
@@ -59166,7 +59415,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"[pre] (D) Bleed at +1 bleed. Titled vampires cannot block this action.\n[PRE] As above, and the Methuselah you are bleeding locks one of his or her ready unlocked minions when the action resolves.",
+        "Card Text":"[pre] (D) Bleed with +1 bleed. Titled vampires cannot block this action.\n[PRE] As above, and the target Methuselah locks a ready unlocked minion they control.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Presence",
@@ -59190,6 +59439,9 @@
             },
             "Third":{
                 "U":true
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Twd":19,
@@ -59257,7 +59509,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: Discipline.\nPut this card on a vampire. This vampire gains one level of Protean [pro]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Protean [PRO].",
+        "Card Text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Protean [pro] and +1 capacity. Cannot be put on a vampire with superior Protean [PRO].",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -59284,6 +59536,9 @@
             },
             "KMW":{
                 "PG":1
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Twd":64,
@@ -59407,7 +59662,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an Anarch.\n+1 intercept, with an additional +1 intercept if the acting vampire is titled.",
+        "Card Text":"Requires an Anarch.\n+1 intercept, with an additional +1 intercept if the acting minion is titled.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -59432,6 +59687,9 @@
             },
             "V5A":{
                 "PG":"4"
+            },
+            "NB2":{
+                "PB":"2"
             },
             "PLAYTEST":{
                 "PR":4
@@ -59909,7 +60167,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[pre] (D) Bleed at +2 bleed.\n[PRE] As above, and if the bleed is successful (for 1 or more), add 1 counter from the blood bank to a vampire in your uncontrolled region.",
+        "Card Text":"[pre] (D) Bleed with +2 bleed.\n[PRE] As above, and if the bleed is successful (for 1 or more), add 1 blood to a vampire in your uncontrolled region.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Presence",
@@ -59927,6 +60185,9 @@
                 "C":true,
                 "PB":"3",
                 "PT":"6"
+            },
+            "NB2":{
+                "PB":"2"
             }
         },
         "Twd":80,
@@ -61033,6 +61294,9 @@
             },
             "25th":{
                 "":"2"
+            },
+            "NB2":{
+                "PMi":"2"
             }
         },
         "Twd":97,
@@ -61130,7 +61394,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"Animal with 1 life.\n[ani] The minion with this retainer gets +1 intercept.\n[ANI] As above, and when the minion with this retainer is in combat, the opposing minion's controller gets -1 hand size.",
+        "Card Text":"Animal with 1 life.\n[ani] The employer gets +1 intercept.\n[ANI] As above, and while the employer is in combat, the opposing minion's controller gets -1 hand size.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Animalism",
@@ -61169,6 +61433,9 @@
             },
             "Third":{
                 "U":true
+            },
+            "NB2":{
+                "PG":"2"
             }
         },
         "Twd":12,
@@ -62054,6 +62321,9 @@
             "LotN":{
                 "C":true,
                 "PG":"3"
+            },
+            "NB2":{
+                "PMi":"2"
             }
         },
         "Twd":88,
@@ -63627,6 +63897,9 @@
             },
             "NB":{
                 "PTo":"4"
+            },
+            "NB2":{
+                "PBH":"3"
             }
         },
         "Twd":134,
@@ -64142,6 +64415,9 @@
         "Set":{
             "V5A":{
                 "PMin":"6"
+            },
+            "NB2":{
+                "PMi":"3"
             }
         },
         "Twd":16,
@@ -64390,7 +64666,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a baron.\nChoose X, then choose X ready unlocked anarchs you control and allocate 2X points among one or more Methuselahs, locations, and equipment. Successful referendum means each chosen anarch is locked, each Methuselah burns 1 pool for each point assigned, and each location or equipment assigned a point is burned.",
+        "Card Text":"Requires a baron.\nChoose X ready unlocked Anarchs you control and allocate 2X points among one or more Methuselahs, locations, and equipment. Successful referendum means each chosen Anarch is locked, each Methuselah burns 1 pool for each point allocated, and each location or equipment allocated a point is burned.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -64416,6 +64692,9 @@
         "Set":{
             "TR":{
                 "C":true
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Twd":22,
@@ -64455,6 +64734,9 @@
                 "TUA":"2"
             },
             "V5A":{
+                "PG":"1"
+            },
+            "NB2":{
                 "PG":"1"
             }
         },
@@ -66924,7 +67206,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[pre] Reduce a bleed against you by 1.\n[str] The acting minion gets -1 stealth. [str] is not a Discipline.\n[STR] As [str] above, and the action ends immediately (unsuccessfully) unless the acting minion burns 1 blood or life.",
+        "Card Text":"[pre] Reduce a bleed against you by 1.\n[str] The acting minion gets -1 stealth. [str] is not a Discipline.\n[STR] As [str] above, and the action fails unless the acting minion burns 1 blood or life.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Presence/Striga",
@@ -67565,6 +67847,9 @@
             "NB":{
                 "PTo":"3",
                 "PV":"2"
+            },
+            "NB2":{
+                "PBH":"4"
             },
             "PLAYTEST":{
                 "PL":6
@@ -70523,6 +70808,9 @@
             },
             "LoB":{
                 "PI":"4"
+            },
+            "NB2":{
+                "PBH":"2"
             }
         },
         "Twd":92,
@@ -71787,7 +72075,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. During your unlock phase, move 1 counter from your pool to this card. During each other Methuselah's unlock phase, for each counter on this card, that Methuselah burns 1 pool or burns 1 blood from a vampire they control. Any vampire can burn this card as a (D) action.",
+        "Card Text":"Unique.\nPut this card in play. During your unlock phase, move 1 counter from your pool to this card. During each other Methuselah's unlock phase, for each counter on this card, that Methuselah burns 1 pool or burns 1 blood from a vampire they control. Vampires can burn this card as a (D) action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -71832,6 +72120,9 @@
                 "PN":"1"
             },
             "V5A":{
+                "PG":"1"
+            },
+            "NB2":{
                 "PG":"1"
             }
         },
@@ -73423,7 +73714,9 @@
             },
             "Third":{
                 "PTr":"5",
-                "PTz":"2"
+                "PTz":"2",
+                "SKTr":"4",
+                "SKTz":"2"
             },
             "KoT":{
                 "C":true,
@@ -74290,7 +74583,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Vehicle.\nOnly usable by an anarch. This anarch gets +1 bleed. Allies and younger vampires get -1 intercept when attempting to block this anarch. Any vampire can burn this card as a (D) action that costs 1 pool. If that action is successful, this anarch is locked and doesn't unlock as normal during his or her next unlock phase. A minion may have only one vehicle.",
+        "Card Text":"Vehicle.\nThis Anarch gets +1 bleed. Allies and younger vampires get -1 intercept against this Anarch. Vampires can burn this card as a (D) action that costs 1 pool; if that action is successful, this Anarch is locked and does not unlock as normal during their next unlock phase. A minion can have only one vehicle.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -74315,6 +74608,9 @@
         "Set":{
             "Anarchs":{
                 "R":true
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Twd":10,
@@ -75992,6 +76288,10 @@
             "NB":{
                 "PN":"2"
             },
+            "NB2":{
+                "PBH":"2",
+                "PMi":"1"
+            },
             "PLAYTEST":{
                 "PR":4
             }
@@ -77346,6 +77646,9 @@
             },
             "NB":{
                 "PN":"2"
+            },
+            "NB2":{
+                "PB":"2"
             }
         },
         "Twd":710,
@@ -78572,6 +78875,9 @@
             },
             "V5A":{
                 "PG":"4"
+            },
+            "NB2":{
+                "PG":"5"
             }
         },
         "Twd":25,
@@ -82692,7 +82998,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Only usable during a (D) action directed at this vampire. Not usable if the acting minion is an older vampire. The action ends (unsuccessfully), and no cost is paid.\n[ABO] As above, but usable by a locked vampire.",
+        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Only usable during a (D) action directed at this vampire. Not usable if the acting minion is an older vampire. The action fails.\n[ABO] As above, but usable by a locked vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Abombwe",
@@ -84245,7 +84551,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ cost you 1 additional pool to play. Villein costs 1 additional pool to play on this vampire.",
+        "Card Text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ cost you +1 pool to play. Villein costs +1 pool to play on this vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -84300,6 +84606,10 @@
             },
             "V5A":{
                 "PBh":"4"
+            },
+            "NB2":{
+                "PB":"2",
+                "PMi":"2"
             },
             "PLAYTEST":{
                 "PH":3,
@@ -84715,6 +85025,9 @@
             },
             "NB":{
                 "PTo":"2"
+            },
+            "NB2":{
+                "PMi":"2"
             }
         },
         "Twd":458,
@@ -84996,7 +85309,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose X ready Blood Brothers you control who belong to the same circle as this acting vampire (including this acting vampire). Each chosen vampire must burn a blood, or this card has no effect.\n[san] Only usable as a bleed action is announced. Choose X ready Blood Brothers you control of the same circle as this Blood Brother, including this Blood Brother. Each chosen Blood Brother burns 1 blood to give this Blood Brother +X bleed (limited).\n[SAN] As [san] above, but usable any time before the action is resolved.",
+        "Card Text":"[san] Only usable as a bleed action is announced. Choose X ready Blood Brothers you control with 1 or more blood of the same circle as this Blood Brother, including this Blood Brother. Each chosen Blood Brother burns 1 blood. +X bleed (limited).\n[SAN] As above, but usable any time before the action is resolved.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Sanguinus",
@@ -85815,7 +86128,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a non-sterile Minister with capacity 5 or more.\nPut this card in play. It becomes a 1-capacity (non-unique) Minister of the same sect as the acting Minister and must hunt this turn. You can search your library (shuffle afterward), hand, and/or ash heap for a master Discipline card and put it on this new vampire.",
+        "Card Text":"+1 stealth action. Requires a non-sterile Minister with capacity 5 or more.\nPut this card in play. It becomes a 1-capacity (non-unique) Minister and must hunt this turn. You can search your library (shuffle afterward), hand, and/or ash heap for a Discipline master card and put it on this new vampire.",
         "Clan":"Ministry",
         "Conviction Cost":"",
         "Discipline":"",
@@ -85843,6 +86156,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PMi":"2"
             }
         },
         "Twd":11,
@@ -85984,7 +86300,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined on the first round.\n[tha] Both combatants and each of their retainers take 1 unpreventable damage before range is determined each round. A vampire may play only one Weather Control each combat.\n[THA] As above, but the amount of damage inflicted increases by 1 in each subsequent round.",
+        "Card Text":"Only usable before range is determined during the first round. A vampire can play only one Weather Control each combat.\n[tha] Both combatants and each retainer on them take 1 unpreventable environmental damage before range is determined each round this combat.\n[THA] As above, but the amount of damage inflicted is increased by 1 in each subsequent round.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Blood Sorcery",
@@ -86031,6 +86347,9 @@
             },
             "KoT":{
                 "U":true
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":20,
@@ -86803,7 +87122,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[tha] Strike: dodge.\n[THA] Strike: dodge with an additional strike: dodge this round.",
+        "Card Text":"[tha] Strike: dodge.\n[THA] As above, with 1 additional strike: dodge (limited).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Blood Sorcery",
@@ -86815,6 +87134,9 @@
         "Set":{
             "Promo":{
                 "2002-12-01":true
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":26,
@@ -86946,13 +87268,13 @@
     "102190":{
         "ASCII Name":"Wolf Claws",
         "Artist":[
-            "Ron Spencer",
-            "Pete Venters"
+            "Pete Venters",
+            "Ron Spencer"
         ],
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[pro] For the remainder of the round, this vampire's hand damage is aggravated.\n[PRO] Press.",
+        "Card Text":"[pro] Damage from this vampire's hand strikes is aggravated this round.\n[PRO] Press.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Protean",
@@ -86980,6 +87302,9 @@
             },
             "SW":{
                 "C":true
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Twd":33,
@@ -87479,6 +87804,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Twd":29,

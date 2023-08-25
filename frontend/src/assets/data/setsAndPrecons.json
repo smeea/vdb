@@ -33,6 +33,28 @@
       }
     }
   },
+  "NB2": {
+    "name": "New Blood II",
+    "date": "2023-08-01",
+    "precons": {
+      "PB": {
+        "name": "Brujah",
+        "clan": "Brujah"
+      },
+      "PBH": {
+        "name": "Banu Haqim",
+        "clan": "Banu Haqim"
+      },
+      "PMi": {
+        "name": "Ministry",
+        "clan": "Ministry"
+      },
+      "PG": {
+        "name": "Gangrel",
+        "clan": "Gangrel"
+      }
+    }
+  },
   "EoG": {
     "name": "Echoes of Gehenna",
     "date": "2023-06-30",

@@ -1,6 +1,8 @@
 # FIX
 - Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
+- Join lines in card text for search
+- Url with search text without regex=true
 
 # FEATURES
 - TWD Deck check documentation

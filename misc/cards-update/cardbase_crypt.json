@@ -2217,6 +2217,9 @@
         "Set":{
             "V5A":{
                 "PB":"2"
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Title":"baron",
@@ -3922,6 +3925,34 @@
         "Title":"",
         "Twd":4
     },
+    "201657":{
+        "ASCII Name":"Anita Wainwright",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Anarch.",
+        "Clan":"Brujah",
+        "Disciplines":{
+            "Celerity":1,
+            "Presence":1
+        },
+        "Group":"6",
+        "Id":201657,
+        "Name":"Anita Wainwright",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "NB2":{
+                "PB":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200097":{
         "ASCII Name":"Anjalika Underwood",
         "Adv":"",
@@ -5423,6 +5454,34 @@
         },
         "Title":"",
         "Twd":11
+    },
+    "201655":{
+        "ASCII Name":"Arjun Shah",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Clan":"Banu Haqim",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Blood Sorcery":2
+        },
+        "Group":"6",
+        "Id":201655,
+        "Name":"Arjun Shah",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "NB2":{
+                "PBH":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200138":{
         "ASCII Name":"Armin Brenner",
@@ -8620,6 +8679,9 @@
         "Set":{
             "V5A":{
                 "PB":"1"
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Title":"",
@@ -10018,6 +10080,9 @@
             "Promo":{
                 "2019-06-15":true,
                 "2020-05-11":true
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Title":"baron",
@@ -11289,6 +11354,34 @@
         "Title":"justicar",
         "Twd":18
     },
+    "201661":{
+        "ASCII Name":"\"Coach\" Tyrone Soros",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Anarch.",
+        "Clan":"Ministry",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Presence":1
+        },
+        "Group":"6",
+        "Id":201661,
+        "Name":"\"Coach\" Tyrone Soros",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "NB2":{
+                "PMi":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200285":{
         "ASCII Name":"Cohn Rose",
         "Adv":"",
@@ -11762,7 +11855,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTz":1
+                "PTz":1,
+                "SKTz":1
             },
             "POD":{
                 "DTC":true
@@ -12068,6 +12162,9 @@
         "Set":{
             "V5A":{
                 "PMin":"1"
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Title":"",
@@ -16173,6 +16270,9 @@
         "Set":{
             "V5A":{
                 "PMin":"1"
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Title":"baron",
@@ -17823,6 +17923,9 @@
         "Set":{
             "V5A":{
                 "PBh":"1"
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Title":"prince",
@@ -21874,6 +21977,9 @@
         "Sect":"Anarch",
         "Set":{
             "V5A":{
+                "PG":"1"
+            },
+            "NB2":{
                 "PG":"1"
             }
         },
@@ -29032,7 +29138,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Camarilla Banu Haqim Justicar: Once each combat, Kasim can discard a political action card before range is determined to get +2 strength that combat. +1 bleed.",
+        "Card Text":"Camarilla Banu Haqim Justicar: Once each combat, Kasim can discard a political action card [POLITICALACTION] before range is determined to get +2 strength that combat. +1 bleed.",
         "Clan":"Banu Haqim",
         "Disciplines":{
             "Auspex":1,
@@ -29050,6 +29156,9 @@
         "Set":{
             "V5A":{
                 "PBh":"1"
+            },
+            "NB2":{
+                "PBH":"2"
             }
         },
         "Title":"justicar",
@@ -29377,6 +29486,37 @@
         },
         "Title":"",
         "Twd":22
+    },
+    "201659":{
+        "ASCII Name":"Keegan",
+        "Adv":"",
+        "Artist":[
+            "Alan Mayoral"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Anarch: Once each turn, Keegan can unlock after performing a successful action requiring a Gangrel.",
+        "Clan":"Gangrel",
+        "Disciplines":{
+            "Auspex":1,
+            "Celerity":1,
+            "Animalism":2,
+            "Fortitude":2,
+            "Protean":2
+        },
+        "Group":"6",
+        "Id":201659,
+        "Name":"Keegan",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "NB2":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200767":{
         "ASCII Name":"Keith Moody",
@@ -30522,7 +30662,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Anarch Baron of Santiago: Animals (allies and retainers) cost Kuy\u00e9n 1 fewer blood or pool.",
+        "Card Text":"Anarch Baron of Santiago: Animals (allies and retainers) cost Kuy\u00e9n -1 blood or pool.",
         "Clan":"Gangrel",
         "Disciplines":{
             "Animalism":2,
@@ -30545,6 +30685,9 @@
         "Set":{
             "Promo":{
                 "2021-11-13":true
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Title":"baron",
@@ -32074,6 +32217,9 @@
             "Promo":{
                 "2019-10-05":true,
                 "2020-05-11":true
+            },
+            "NB2":{
+                "PB":"1"
             }
         },
         "Title":"baron",
@@ -34923,6 +35069,9 @@
         "Set":{
             "V5A":{
                 "PMin":"1"
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Title":"",
@@ -36670,6 +36819,9 @@
         "Set":{
             "V5A":{
                 "PG":"2"
+            },
+            "NB2":{
+                "PG":"1"
             }
         },
         "Title":"baron",
@@ -41781,6 +41933,36 @@
         "Title":"magaji",
         "Twd":14
     },
+    "201656":{
+        "ASCII Name":"Oluwafunmilayo",
+        "Adv":"",
+        "Artist":[
+            "Samuel Araya"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Camarilla Prince of Lagos: Oluwafunmilayo gets +1 intercept during political actions.",
+        "Clan":"Banu Haqim",
+        "Disciplines":{
+            "Auspex":2,
+            "Celerity":2,
+            "Obfuscate":2,
+            "Blood Sorcery":2
+        },
+        "Group":"6",
+        "Id":201656,
+        "Name":"Oluwafunmilayo",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "NB2":{
+                "PBH":"1"
+            }
+        },
+        "Title":"prince",
+        "Twd":0
+    },
     "201079":{
         "ASCII Name":"Omaya",
         "Adv":"",
@@ -44636,6 +44818,37 @@
         "Title":"",
         "Twd":2
     },
+    "201660":{
+        "ASCII Name":"Ragnar Nordstrom",
+        "Adv":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Anarch: Cards requiring Protean [pro] cost Ragnar -1 blood. Ragnar gets +1 strength in combat with an ally or younger vampire.",
+        "Clan":"Gangrel",
+        "Disciplines":{
+            "Celerity":1,
+            "Potence":1,
+            "Animalism":2,
+            "Fortitude":2,
+            "Protean":2
+        },
+        "Group":"6",
+        "Id":201660,
+        "Name":"Ragnar Nordstrom",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "NB2":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201154":{
         "ASCII Name":"Rain",
         "Adv":"",
@@ -47276,6 +47489,37 @@
         "Title":"",
         "Twd":9
     },
+    "201658":{
+        "ASCII Name":"Saku Pihlajamaki",
+        "Adv":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Anarch Baron of Helsinki: Saku gets 1 optional maneuver each combat.",
+        "Clan":"Brujah",
+        "Disciplines":{
+            "Fortitude":1,
+            "Protean":1,
+            "Celerity":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201658,
+        "Name":"Saku Pihlajam\u00e4ki",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "NB2":{
+                "PB":"1"
+            }
+        },
+        "Title":"baron",
+        "Twd":0
+    },
     "201224":{
         "ASCII Name":"Salbatore Bokkengro",
         "Adv":"",
@@ -48899,6 +49143,37 @@
         },
         "Title":"",
         "Twd":1
+    },
+    "201662":{
+        "ASCII Name":"Sergio Bueno",
+        "Adv":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Anarch Baron of Santo Domingo: Minions with 1 or more of your corruption counters must burn 1 blood or life to attempt to block Sergio.",
+        "Clan":"Ministry",
+        "Disciplines":{
+            "Auspex":1,
+            "Potence":1,
+            "Obfuscate":2,
+            "Presence":2,
+            "Protean":2
+        },
+        "Group":"6",
+        "Id":201662,
+        "Name":"Sergio Bueno",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "NB2":{
+                "PMi":"1"
+            }
+        },
+        "Title":"baron",
+        "Twd":0
     },
     "201268":{
         "ASCII Name":"Servius Marius Pustula",
@@ -54468,7 +54743,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PB":"2"
+                "PB":"2",
+                "SKB":1
             }
         },
         "Title":"bishop",
@@ -54498,7 +54774,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTr":"2"
+                "PTr":"2",
+                "SKTr":1
             }
         },
         "Title":"",
@@ -54707,6 +54984,9 @@
         "Sect":"Anarch",
         "Set":{
             "V5A":{
+                "PB":"1"
+            },
+            "NB2":{
                 "PB":"1"
             }
         },
@@ -55975,6 +56255,9 @@
         "Set":{
             "V5A":{
                 "PMin":"1"
+            },
+            "NB2":{
+                "PMi":"1"
             }
         },
         "Title":"baron",
@@ -56364,6 +56647,9 @@
         "Set":{
             "V5A":{
                 "PBh":"2"
+            },
+            "NB2":{
+                "PBH":"1"
             }
         },
         "Title":"prince",
@@ -57556,7 +57842,8 @@
         "Sect":"Sabbat",
         "Set":{
             "Third":{
-                "PTz":"2"
+                "PTz":"2",
+                "SKTz":1
             },
             "SP":{
                 "DoF":"1"
