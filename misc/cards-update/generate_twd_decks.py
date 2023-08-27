@@ -47,30 +47,29 @@ def generate_twd(i):
             total_crypt_ex_ac += card["count"]
 
     for id, c in crypt.items():
-        deck["cards"][id] = c["q"]
+        q = c["q"]
+        deck["cards"][id] = q
 
         # Skip Anarch Convert
         if id != 200076:
-            total_capacity += c["q"] * c["Capacity"]
+            total_capacity += q * c["Capacity"]
 
             if (clan := c["Clan"]) in clans:
-                clans[clan] += c["q"]
+                clans[clan] += q
             else:
-                clans[clan] = c["q"]
+                clans[clan] = q
 
         if (sect := c["Sect"]) in sects:
-            sects[sect] += c["q"]
+            sects[sect] += q
         else:
-            sects[sect] = c["q"]
+            sects[sect] = q
 
         if "star" not in deck["traits"] and id != 200076:
-            adv = c["Adv"]
-            if adv and adv[1] in crypt:
-                if (c["q"] + crypt[adv[1]]["q"]) / total_crypt_ex_ac > 0.33:
-                    deck["traits"].append("star")
-            else:
-                if c["q"] / total_crypt_ex_ac > 0.33:
-                    deck["traits"].append("star")
+            if c["Adv"] and c["Adv"][1] in crypt:
+                q += crypt[c["Adv"][1]]["q"]
+
+            if q / total_crypt_ex_ac > 0.33:
+                deck["traits"].append("star")
 
         for d in c["Disciplines"].keys():
             crypt_disciplines.add(d)

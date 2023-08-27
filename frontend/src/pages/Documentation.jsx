@@ -165,44 +165,54 @@ const Documentation = () => {
             <SubTitle>Star Vampire</SubTitle>
             <ul>
               <li>
-                Match decks with more than 38% in the crypt being any particular
+                Match decks with more than 33% in the crypt being any particular
                 vampire (both Base + Adv), excluding Anarch Convert (does not
                 counted at all).
                 <ul>
                   <li>
-                    E.g.: 5x Arika + 7x Other is Star Deck
+                    E.g.: 4x Arika + 8x Other is Star Deck
                     <tt>
-                      <i> -&gt; 5/12 = 41%</i>
+                      <i> -&gt; 4/12 = 33.3%</i>
                     </tt>
                   </li>
                   <li>
-                    Ex: 4x Arika + 4x AC + 4x Other is Star Deck
+                    Ex: 3x Arika + 4x AC + 5x Other is Star Deck
                     <tt>
-                      <i> -&gt; 4/(4+4) = 50%</i>
+                      <i> -&gt; 3/(3+5) = 37.5%</i>
                     </tt>
                   </li>
                 </ul>
-                Reason for strange percentage (38%) is to include decks with 5
-                of 13 vampires (38,4%), but exclude everything below starting
-                from decks with 3 of 8 vampires (with 4+ Anarch Converts
-                (37,5%))
               </li>
             </ul>
 
             <SubTitle>Clan</SubTitle>
             <ul>
               <li>
-                Match decks with more than 60% vampires in the crypt of the
+                Match decks with more than 65% vampires in the crypt of the
                 given clan, excluding Anarch Convert (does not counted at all)
                 <ul>
                   <li>
-                    E.g.: 5x Ventrue + 3 Anarch Convert + 3x Other is Ventrue
+                    E.g.: 6x Ventrue + 3x Anarch Convert + 3x Other is Ventrue
                     Deck
                     <tt>
-                      <i> -&gt; 5/(5+3) = 62%</i>
+                      <i> -&gt; 6/(6+3) = 66%</i>
+                    </tt>
+                  </li>
+                  <li>
+                    E.g.: 6x Ventrue + 6x Other is Not Ventrue Deck
+                    <tt>
+                      <i> -&gt; 6/(6+6) = 50%</i>
                     </tt>
                   </li>
                 </ul>
+              </li>
+            </ul>
+
+            <SubTitle>Sect</SubTitle>
+            <ul>
+              <li>
+                Match decks with more than 65% vampires in the crypt of the
+                given sect
               </li>
             </ul>
 
