@@ -1,5 +1,13 @@
 [
   {
+    "version": "2023-08-28",
+    "changes": [
+      "Add New Blood 2 (tournament legal on August 31)",
+      "Update Rulings",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-08-04",
     "changes": [
       "Fix playtest"
