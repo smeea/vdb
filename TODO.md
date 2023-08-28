@@ -11,6 +11,7 @@
 - Playable by crypt filter to library
 - Card change history
 - Limited formats by url
+- Promo Packs into Bundles
 
 # POSSIBLE IMPROVEMENTS
 - Migration from screen width (isWide, etc) to container queries

@@ -2081,6 +2081,12 @@
                 "refs":{
                     "[LSJ 20050720-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/1vbIkgvKDJ0/3ErIIMXFgPIJ"
                 }
+            },
+            {
+                "text":"Using it for the hunt bonus does not make the hunt an action \"requiring an Anarch\". ",
+                "refs":{
+                    "[ANK 20220317]":"https://www.vekn.net/forum/rules-questions/79706-crimetheinc-anarch-free-press-club-illusion#104811"
+                }
             }
         ],
         "Set":{
@@ -7696,7 +7702,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[OBF] If a new combat begins (eg. {Psyche!}, you need to burn 1 blood again (or the card). ",
+                "text":"[OBF] If a new combat begins (eg. {Psyche!}), you need to burn 1 blood again (or the card). ",
                 "refs":{
                     "[ANK 20230527]":"https://www.vekn.net/forum/rules-questions/80553-blithe-acceptance-and-multiple-combat#108178"
                 }
@@ -9297,6 +9303,12 @@
                 "text":"[tha] The opponent cannot play [for] prevention cards (eg. for cycling). ",
                 "refs":{
                     "[LSJ 20050628]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
+                }
+            },
+            {
+                "text":"[tha] Does not protect from weapons if played at long range. ",
+                "refs":{
+                    "[ANK 20230823]":"https://www.vekn.net/forum/rules-questions/75182-can-you-use-bollix-tha-as-defense-against-long-range-strike?start=6#109132"
                 }
             }
         ],
@@ -13367,7 +13379,15 @@
         "Name":"Charigger, The Axe",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His replacement effect triggers before effects depending on the minion burning (eg. {Soul Gem of Etrius}), but other replacements effect can be played before (eg. {Heaven's Gate}), depending on sequencing. ",
+                "refs":{
+                    "[LSJ 20071003-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr9VQRVDbg0/m/EKNVTdvidvIJ",
+                    "[ANK 20230816]":"https://www.vekn.net/forum/rules-questions/80772-heaven-s-gate-vs-charigger-the-axe#109057"
+                }
+            }
+        ],
         "Set":{
             "LotN":{
                 "R":true
@@ -14780,7 +14800,14 @@
         "Name":"Club Illusion",
         "Pool Cost":"1",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Does not make the action an action \"requiring an Anarch\". ",
+                "refs":{
+                    "[ANK 20220317]":"https://www.vekn.net/forum/rules-questions/79706-crimetheinc-anarch-free-press-club-illusion#104811"
+                }
+            }
+        ],
         "Set":{
             "TR":{
                 "R":true
@@ -36426,9 +36453,15 @@
                 }
             },
             {
-                "text":"[obe] / [OBE] Forbids any combat with the ally afterwards. Cards that would start a new combat cannot be played (eg. {Psyche!}, {Bum's Rush}). ",
+                "text":"[obe], [OBE] Forbids any combat with the ally afterwards. Cards that would start a new combat cannot be played (eg. {Psyche!}, {Bum's Rush}). ",
                 "refs":{
                     "[ANK 20220429]":"https://www.vekn.net/forum/rules-questions/79754-heavens-gate-new-wording#105112"
+                }
+            },
+            {
+                "text":"[obe], [OBE] Can be played before another replacement effect triggers (eg. {Charigger, The Axe}), depending on sequencing. ",
+                "refs":{
+                    "[ANK 20230816]":"https://www.vekn.net/forum/rules-questions/80772-heaven-s-gate-vs-charigger-the-axe#109057"
                 }
             }
         ],
@@ -36650,6 +36683,12 @@
                 "text":"If it uses its last life to pay for an action, the action still resolves fully. If that leads to an oust, the oust is resolved before resolving effects triggered by the fact that the Herald burns. ",
                 "refs":{
                     "[LSJ 20080512]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/z2DGSFph6sM/IjJB89nbtlsJ"
+                }
+            },
+            {
+                "text":"Cannot play Anarch cards. ",
+                "refs":{
+                    "[ANK 20230810]":"https://www.vekn.net/forum/rules-questions/80760-herald-of-tophet-cards-with-anarch-requirement#109002"
                 }
             },
             {
@@ -37030,6 +37069,13 @@
                     "[LSJ 20100507]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vJQTPYtp-Eg/m/6_nkxd28-v8J",
                     "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
                     "[RBK 20200701-2]":"https://www.vekn.net/rulebook#sequencing"
+                }
+            },
+            {
+                "text":"[VAL] To reduce a bleed against another Methuselah, you need to be unlocked. ",
+                "refs":{
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates",
+                    "[ANK 20230817]":"https://www.vekn.net/forum/rules-questions/80780-hide-the-heart#109068"
                 }
             }
         ],
@@ -39658,7 +39704,8 @@
             {
                 "text":"The vampire receiving the card must meet all of the requirements of the card other than the Blood Sorcery requirement. The vampire playing the Inscription need not meet any of the requirements (other than the Blood Sorcery needed to play Inscription in the first place). ",
                 "refs":{
-                    "[LSJ 20031116]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/RQBw8EnnD5s/NpdTwIuChy8J"
+                    "[LSJ 20031116]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/RQBw8EnnD5s/NpdTwIuChy8J",
+                    "[ANK 20230816-2]":"https://www.vekn.net/forum/rules-questions/80683-inscription-and-hunger-of-marduk?start=12#109056"
                 }
             },
             {
@@ -44178,9 +44225,10 @@
                 }
             },
             {
-                "text":"If a player has gone to negative pool, the Life Boon player must give her enough pool to compensate for that. ",
+                "text":"If a player has gone to negative pool, or has to pay more than he has, the Life Boon player must give her enough pool to compensate for that. ",
                 "refs":{
-                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ",
+                    "[ANK 20230817-2]":"https://www.vekn.net/forum/rules-questions/80779-play-to-win-first-tradition-life-boom#109075"
                 }
             },
             {
@@ -44454,6 +44502,13 @@
                 "text":"Can reduce the cost in blood (not in pool) of any action (ally, retainer, equipment, political). ",
                 "refs":{
                     "[ANK 20181007]":"http://www.vekn.net/forum/rules-questions/77057-quick-question-on-the-line#91020"
+                }
+            },
+            {
+                "text":"Can reduce the cost of an action card even if it is not played as an action (ie. a retainer played with {Pack Alpha}). ",
+                "refs":{
+                    "[RTR 20070707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/vSOt2c1uRzQ/MsRAv47Cd4YJ",
+                    "[ANK 20230824]":"https://www.vekn.net/forum/news-and-announcements/80782-the-line-pack-alpha?start=6#109157"
                 }
             },
             {
@@ -49044,7 +49099,7 @@
                 }
             },
             {
-                "text":"[THA] If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Promise of 1528}) before resolving Mirror Walk delayed effect. However, effects that trigger at the same moment (eg. {Banshee Ironwail}) are still applied and ordered by the acting Methuselah. ",
+                "text":"[THA] If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Promise of 1528}, slave rule, {Sowing Dissension}) before resolving Mirror Walk delayed effect. However, effects that trigger at the same moment (eg. {Banshee Ironwail}) are still applied and ordered by the acting Methuselah. ",
                 "refs":{
                     "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
                     "[ANK 20211207]":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
@@ -50759,6 +50814,12 @@
                 "text":"Supersedes previous effects that changed the acting minion for the combat (eg. {Deep Song}). ",
                 "refs":{
                     "[ANK 20211022]":"https://www.vekn.net/forum/rules-questions/79422-nar-sheptha#103636"
+                }
+            },
+            {
+                "text":"If combat ends and a new combat start (eg. [CEL] {Psyche!}), the opponent redraws and discard again. ",
+                "refs":{
+                    "[LSJ 20030530]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/SZehI8SwAc4/shpyPIdsHxUJ"
                 }
             }
         ],
@@ -53865,6 +53926,13 @@
                 "text":"Requirements (clan, discipline) apply. ",
                 "refs":{
                     "[LSJ 20051207]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/H_Tuv0uJt1w/ccPPm2lSjyIJ"
+                }
+            },
+            {
+                "text":"Cost reductions apply. ",
+                "refs":{
+                    "[RTR 20070707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/vSOt2c1uRzQ/MsRAv47Cd4YJ",
+                    "[ANK 20230824]":"https://www.vekn.net/forum/news-and-announcements/80782-the-line-pack-alpha?start=6#109157"
                 }
             }
         ],
@@ -57593,7 +57661,14 @@
         "Name":"Powerbase: Savannah",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Takes into account effects that change who is considered the acting vampire in combat (eg.{Deep Song}). ",
+                "refs":{
+                    "[ANK 20230814]":"https://www.vekn.net/forum/rules-questions/80752-deep-song-and-powerbase-savannah?start=12#109035"
+                }
+            }
+        ],
         "Set":{
             "LotN":{
                 "R":true
