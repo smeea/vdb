@@ -43,20 +43,18 @@ const DeckCardQuantity = ({
             ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
             : '';
         } else {
-          return inInventory < softUsedMax + hardUsedTotal
-            ? inInventory < q
-              ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
-              : inventoryType === 'h'
-              ? 'bg-bgWarning dark:bg-bgWarningDark'
-              : ''
-            : '';
+          return inInventory >= softUsedMax + hardUsedTotal
+            ? ''
+            : inInventory < q
+            ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
+            : 'bg-bgWarning dark:bg-bgWarningDark';
         }
       } else {
         return inInventory - softUsedMax - hardUsedTotal >= q
           ? ''
-          : inInventory >= q
-          ? 'bg-bgWarning dark:bg-bgWarningDark'
-          : 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark';
+          : inInventory < q
+          ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
+          : 'bg-bgWarning dark:bg-bgWarningDark';
       }
     } else {
       return '';
