@@ -20,3 +20,4 @@ export { default as InventoryMissingButton } from './InventoryMissingButton.jsx'
 export { default as InventoryShareButton } from './InventoryShareButton.jsx';
 export { default as InventoryShareModal } from './InventoryShareModal.jsx';
 export { default as InventoryShowSelect } from './InventoryShowSelect.jsx';
+export { default as InventoryText } from './InventoryText.jsx';

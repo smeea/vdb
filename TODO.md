@@ -1,13 +1,13 @@
 # FIX
 - Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
+- Fix street creed put to uncontrolled
 
 # FEATURES
 - TWD Deck check documentation
 
 # MAYBE LATER FEATURES
 - Offline decks/inventory storage
-- Notes to cards in Inventory
 - Playable by crypt filter to library
 - Card change history
 - Limited formats by url

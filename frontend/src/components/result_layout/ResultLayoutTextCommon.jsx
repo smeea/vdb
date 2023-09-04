@@ -42,9 +42,9 @@ const ResultLayoutTextCommon = ({
       {(forceInventoryMode || inventoryMode) && (
         <>
           <Hr />
-          <div>
+          <div className="flex flex-col gap-1">
             <b>Inventory:</b>
-            <ResultLayoutTextInventory cardid={card.Id} inPopover={inPopover} />
+            <ResultLayoutTextInventory card={card} inPopover={inPopover} />
           </div>
         </>
       )}

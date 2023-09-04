@@ -319,7 +319,6 @@ def new_public_deck_route(parent_id):
 def update_public_deck(child_id):
     child = Deck.query.get(child_id)
     if not child:
-        print("bad deck request\n", child_id, current_user.username, request.json)
         abort(400)
 
     elif child.author != current_user:
