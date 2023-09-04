@@ -1,7 +1,6 @@
 # FIX
 - Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
-- Fix street creed put to uncontrolled
 
 # FEATURES
 - TWD Deck check documentation
