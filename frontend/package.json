@@ -12,23 +12,23 @@
   "author": "Vadim Matveev",
   "license": "MIT",
   "devDependencies": {
-    "@floating-ui/react": "^0.25.1",
+    "@floating-ui/react": "^0.25.3",
     "@headlessui/react": "^1.7.17",
-    "@tailwindcss/forms": "^0.5.4",
+    "@tailwindcss/forms": "^0.5.6",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "autoprefixer": "^10.4.15",
     "browserslist": "^4.21.10",
     "dotenv": "^16.3.1",
-    "eslint": "^8.47.0",
+    "eslint": "^8.48.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-react": "^7.33.2",
     "file-saver": "^2.0.5",
     "idb-keyval": "^6.2.1",
     "jspdf": "^2.5.1",
     "jszip": "^3.10.1",
-    "postcss": "^8.4.28",
-    "prettier": "^3.0.2",
-    "prettier-plugin-tailwindcss": "^0.5.3",
+    "postcss": "^8.4.29",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-qr-code": "^2.0.12",
@@ -38,8 +38,9 @@
     "react-swipeable": "^7.0.1",
     "react-virtualized-auto-sizer": "^1.0.20",
     "react-window": "^1.8.9",
+    "recharts": "^2.8.0",
     "stylelint": "^15.10.3",
-    "stylelint-config-recommended-scss": "^12.0.0",
+    "stylelint-config-recommended-scss": "^13.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-scss": "^5.1.0",
     "tailwindcss": "^3.3.3",
@@ -53,8 +54,5 @@
   },
   "browserslist": [
     "defaults"
-  ],
-  "dependencies": {
-    "recharts": "^2.7.3"
-  }
+  ]
 }
