@@ -20,6 +20,8 @@ export const addCards = (cards) => {
 };
 
 export const setCard = (cardid, count) => {
+  console.log(cardid);
+
   const url = `${import.meta.env.VITE_API_URL}/inventory`;
   const options = {
     method: 'PUT',
