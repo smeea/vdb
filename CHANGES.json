@@ -1,5 +1,13 @@
 [
   {
+    "version": "2023-09-05",
+    "changes": [
+      "Add custom notes to cards in inventory mode (edited in card popup window)",
+      "Fix Blood to uncontrolled library trait to include more cards",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-08-28",
     "changes": [
       "Add New Blood 2 (tournament legal on August 31)",
