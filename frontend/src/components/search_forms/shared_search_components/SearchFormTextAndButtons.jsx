@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useImmer } from 'use-immer';
 import Check2 from '@/assets/images/icons/check2.svg';
 import {
   SearchAdditionalFormsText,

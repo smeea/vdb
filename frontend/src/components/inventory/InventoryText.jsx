@@ -1,7 +1,7 @@
 import React from 'react';
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg';
 import { inventoryCardTextChange } from '@/context';
-import { Textarea, Input } from '@/components';
+import { Textarea } from '@/components';
 
 const InventoryText = ({ card, text }) => {
   const handleChange = (event) => {
