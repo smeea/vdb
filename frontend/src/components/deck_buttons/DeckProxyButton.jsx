@@ -27,11 +27,13 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState();
 
-  const checkImage = (url) => {
-    const request = new XMLHttpRequest();
-    request.open('GET', url, false);
-    request.send();
-    return request.status == 200;
+  const checkImage = async (url) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onload = () => {
+      if (xhr.readyState === 4) return xhr.status === 200;
+    };
+    xhr.send(null);
   };
 
   const proxyCards = async (crypt, library, format) => {
@@ -39,7 +41,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
 
     const cryptSorted = cryptSort(
       Object.values(crypt).filter((card) => card.q > 0),
-      cryptDeckSort,
+      cryptDeckSort
     );
     const { libraryByType } = useDeckLibrary(library);
     const cards = [];
@@ -66,7 +68,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     const pdf = new jsPDF(
       'p',
       'mm',
-      format.isLetter ? [215.9, 279.4] : [210, 297],
+      format.isLetter ? [215.9, 279.4] : [210, 297]
     );
     format.isWhiteGaps
       ? pdf.setFillColor(255, 255, 255)
@@ -84,7 +86,8 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
 
     Object.values(cards).map((card) => {
       const img = new Image();
-      if (card.url.otherUrl && checkImage(card.url.otherUrl)) {
+
+      if (card.url.otherUrl && checkImage(`${card.url.otherUrl}.jpg`)) {
         img.src = `${card.url.otherUrl}.jpg`;
       } else {
         img.src = `${card.url.baseUrl}.jpg`;
@@ -96,7 +99,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           marginTop + counterY * (h + gap),
           w + gap,
           h + gap,
-          'F',
+          'F'
         );
 
         pdf.addImage(
@@ -105,7 +108,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           (w + gap) * counterX + marginLeft,
           (h + gap) * counterY + marginTop,
           w,
-          h,
+          h
         );
 
         counterX += 1;
