@@ -1,5 +1,15 @@
 [
   {
+    "version": "2023-09-18",
+    "changes": [
+      "Fix floating buttons (mobile) dissapearing when using Search in TWD/PDA or Playable By button from card view",
+      "Fix card name autocompletion for input with Capitalized Letters",
+      "Fix PDF proxy for cards with not available images of selected set (will fallback to latest image)",
+      "Fix ruling references for crypt cards",
+      "Fix TWD 'In Inventory By Crypt/Library'"
+    ]
+  },
+  {
     "version": "2023-09-05",
     "changes": [
       "Add custom notes to cards in inventory mode (edited in card popup window)",
