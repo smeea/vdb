@@ -73,7 +73,7 @@ const missingDisciplinesCrypt = (filter, card) => {
       filter[name] > 0 &&
       (!card.Disciplines ||
         !card.Disciplines[name] ||
-        card.Disciplines[name] < filter[name]),
+        card.Disciplines[name] < filter[name])
   );
 };
 
@@ -175,7 +175,7 @@ const missingTrait = (trait, card, traitsRegexMap) => {
     default:
       return !RegExp(
         traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait,
-        'i',
+        'i'
       ).test(card['Card Text']);
   }
 };
@@ -236,10 +236,10 @@ const missingTitleCrypt = (filter, card) => {
         .map((t) =>
           t
             .replace('1 vote', '1 vote (titled)')
-            .replace('2 votes', '2 votes (titled)'),
+            .replace('2 votes', '2 votes (titled)')
         )
         .join('|')})`,
-      'i',
+      'i'
     ).test(card['Card Text'])
   ) {
     return false;
@@ -251,14 +251,14 @@ const missingTitleCrypt = (filter, card) => {
 const missingTitleLibrary = (filter, card) => {
   const requirements = card.Requirement.toLowerCase();
   const hasNoTitleRequirement = !requiredTitleList.some((title) =>
-    requirements.includes(title),
+    requirements.includes(title)
   );
 
   return missingRequirementsCheck(
     filter.logic,
     filter.value,
     requirements,
-    hasNoTitleRequirement,
+    hasNoTitleRequirement
   );
 };
 
@@ -387,21 +387,21 @@ const missingSectCrypt = (filter, card) => {
     filter.logic,
     filter.value,
     card.Sect.toLowerCase(),
-    false,
+    false
   );
 };
 
 const missingSectLibrary = (filter, card) => {
   const requirements = card.Requirement.toLowerCase();
   const hasNoTitleRequirement = !requiredSectList.some((sect) =>
-    requirements.includes(sect),
+    requirements.includes(sect)
   );
 
   return missingRequirementsCheck(
     filter.logic,
     filter.value,
     requirements,
-    hasNoTitleRequirement,
+    hasNoTitleRequirement
   );
 };
 
@@ -550,11 +550,11 @@ const missingNameOrInitials = (filter, card) => {
   const checkInitials = RegExp(charRegExp, 'i') || true;
   let name = card['Name'].toLowerCase();
   let nameASCII = card['ASCII Name'].toLowerCase();
+  filter = filter.toLowerCase();
   if (/^the .*/.test(filter) && /, the$/.test(name)) {
     name = `the ${name.replace(/, the$/, '')}`;
     nameASCII = `the ${nameASCII.replace(/, the$/, '')}`;
   }
-
   filter = filter.replace(/[^a-z]/gi, '');
 
   return !(
@@ -576,19 +576,19 @@ const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
           !(
             RegExp('(^|[, ])' + name, 'i').test(value) ||
             (name === 'not required' && hasNoRequirement)
-          ),
+          )
       );
     case 'or':
       return !array.some(
         (name) =>
           RegExp('(^|[, ])' + name, 'i').test(value) ||
-          (name === 'not required' && hasNoRequirement),
+          (name === 'not required' && hasNoRequirement)
       );
     case 'not':
       return array.some(
         (name) =>
           RegExp('(^|[, ])' + name, 'i').test(value) ||
-          (name === 'not required' && hasNoRequirement),
+          (name === 'not required' && hasNoRequirement)
       );
   }
 };
@@ -604,7 +604,7 @@ const missingCostCheck = (logic, filter, cardCost) => {
 
 const cardDates = (card, addPromo = false) => {
   const cardSets = Object.keys(card.Set).filter(
-    (set) => set !== 'Promo' && set !== 'PLAYTEST',
+    (set) => set !== 'Promo' && set !== 'PLAYTEST'
   );
   const setsDates = cardSets
     .map((key) => setsAndPrecons[key].date)
