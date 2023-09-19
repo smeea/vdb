@@ -285,8 +285,8 @@ def match_inventory(request, inventory, decks):
 
             for card, q in deck["crypt"].items():
                 if card in inventory:
-                    if q > inventory[card]:
-                        counter += inventory[card]
+                    if q > inventory[card]['q']:
+                        counter += inventory[card]['q']
                     else:
                         counter += q
 
@@ -306,8 +306,8 @@ def match_inventory(request, inventory, decks):
                 if card in inventory:
                     q = q / scaling_factor if scaling_factor else q
 
-                    if q > inventory[card]:
-                        counter += inventory[card]
+                    if q > inventory[card]['q']:
+                        counter += inventory[card]['q']
                     else:
                         counter += q
 
