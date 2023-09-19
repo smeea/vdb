@@ -42,7 +42,7 @@ const Text = ({ text }) => {
           <ResultMiscImage value={match} />
         </div>
       );
-    },
+    }
   );
 
   return (
@@ -50,11 +50,11 @@ const Text = ({ text }) => {
       {reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
         const cardBase = { ...nativeCrypt, ...nativeLibrary };
         const cardid = Object.keys(cardBase).find(
-          (j) => cardBase[j]['Name'] == match,
+          (j) => cardBase[j]['Name'] == match
         );
 
         const card =
-          cardid > 2000000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+          cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
 
         if (card) {
           return (
