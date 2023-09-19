@@ -1,6 +1,9 @@
 # FIX
 - Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
+- Proxy for non-existing images
+- Ruling references with {Card Name} i.e. Spell of Life
+- Card completion from not first word with capital letter
 
 # FEATURES
 - TWD Deck check documentation

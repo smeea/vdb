@@ -74,10 +74,21 @@ const ResultLayoutText = ({
       <div className="flex justify-between ">
         <div className="flex flex-row space-x-1">
           <ButtonCardCopyUrl cardid={card.Id} />
-          <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
-          <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
+          <ButtonSearchCardInDecks
+            cardid={card.Id}
+            target="twd"
+            handleClose={noClose ? null : handleClose}
+          />
+          <ButtonSearchCardInDecks
+            cardid={card.Id}
+            target="pda"
+            handleClose={noClose ? null : handleClose}
+          />
           {card.Id < 200000 && card?.Type !== 'Master' && (
-            <ButtonPlayableBy card={card} />
+            <ButtonPlayableBy
+              card={card}
+              handleClose={noClose ? null : handleClose}
+            />
           )}
           {!isMobile && <ButtonToggleShowImage />}
           <ButtonIconed

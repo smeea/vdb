@@ -5,7 +5,7 @@ import { Button } from '@/components';
 import { clearSearchForm } from '@/context';
 import { useLibraryRequirements } from '@/hooks';
 
-const ButtonPlayableBy = ({ card }) => {
+const ButtonPlayableBy = ({ card, handleClose }) => {
   const navigate = useNavigate();
 
   const {
@@ -32,7 +32,7 @@ const ButtonPlayableBy = ({ card }) => {
     if (isClan.length > 0) {
       const values = isClan.map((i) => `"${i.toLowerCase()}"`);
       queries.push(
-        `"clan"%3A{"value"%3A[${values.join('%2C')}]%2C"logic"%3A"or"}`,
+        `"clan"%3A{"value"%3A[${values.join('%2C')}]%2C"logic"%3A"or"}`
       );
     }
     if (isTitle.length > 0) {
@@ -44,7 +44,7 @@ const ButtonPlayableBy = ({ card }) => {
       queries.push(
         `"capacity"%3A{"value"%3A[{"capacity"%3A"${v}"%2C"moreless"%3A"${
           logic === 'more' ? 'ge' : 'le'
-        }"}]%2C"logic"%3A"or"}`,
+        }"}]%2C"logic"%3A"or"}`
       );
     }
     if (isSect) {
@@ -64,6 +64,8 @@ const ButtonPlayableBy = ({ card }) => {
 
     clearSearchForm('crypt');
     navigate(`/crypt?q={${queries.join('%2C')}}`);
+
+    handleClose && handleClose();
   };
 
   return (
