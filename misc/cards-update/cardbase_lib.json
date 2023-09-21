@@ -55321,7 +55321,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and cards named //Flash/ /Grenade// have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTIONMODIFIER] Only usable as the action is announced. Choose a vampire. The chosen vampire cannot block this action.",
+        "Card Text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and cards named /Flash Grenade/ have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTIONMODIFIER] Only usable as the action is announced. Choose a vampire. The chosen vampire cannot block this action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude & Obeah",
