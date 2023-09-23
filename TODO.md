@@ -2,6 +2,7 @@
 - Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Numbers in autocompletion
+- Visible comments in inventory
 
 # FEATURES
 - TWD Deck check documentation
@@ -17,5 +18,6 @@
 
 # POSSIBLE IMPROVEMENTS
 - Migration from screen width (isWide, etc) to container queries
+- Migration to useSearchParams where possible for state in url
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
