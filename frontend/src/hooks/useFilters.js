@@ -555,13 +555,15 @@ const missingNameOrInitials = (filter, card) => {
     name = `the ${name.replace(/, the$/, '')}`;
     nameASCII = `the ${nameASCII.replace(/, the$/, '')}`;
   }
-  filter = filter.replace(/[^a-z]/gi, '');
+  filter = filter.replace(/[^a-z0-9]/gi, '');
+
+  console.log(filter);
 
   return !(
     name.includes(filter) ||
-    name.replace(/[^a-z]/gi, '').includes(filter) ||
+    name.replace(/[^a-z0-9]/gi, '').includes(filter) ||
     nameASCII.includes(filter) ||
-    nameASCII.replace(/[^a-z]/gi, '').includes(filter) ||
+    nameASCII.replace(/[^a-z0-9]/gi, '').includes(filter) ||
     checkInitials.test(name) ||
     checkInitials.test(nameASCII)
   );
