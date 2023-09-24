@@ -4,7 +4,7 @@
 
 # FEATURES
 - TWD Deck check documentation
-- Mark inventory notes
+- Mark inventory notes + sort
 
 # MAYBE LATER FEATURES
 - Offline decks/inventory storage

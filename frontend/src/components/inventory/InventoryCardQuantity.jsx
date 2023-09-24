@@ -3,42 +3,38 @@ import { Button } from '@/components';
 import { useApp, inventoryCardChange } from '@/context';
 
 const InventoryCardQuantity = ({
-  q,
-  cardid,
+  card,
   softUsedMax,
   hardUsedTotal,
   compact,
   newFocus,
 }) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
+  const { isMobile } = useApp();
   const [manual, setManual] = useState(false);
-  const [state, setState] = useState(q ? q : '');
-
-  const card =
-    cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+  const [state, setState] = useState(card.q ?? '');
 
   useEffect(() => {
-    if (state !== q) setState(q ? q : '');
-  }, [q]);
+    if (state !== card.q) setState(card.q ?? '');
+  }, [card.q]);
 
   useEffect(() => {
-    if (compact && q === 0) setManual(true);
-  }, [cardid]);
+    if (compact && card.q === 0) setManual(true);
+  }, [card.Id]);
 
   const handleManualChange = (event) => {
-    setState(event.target.value ? event.target.value : '');
+    setState(event.target.value ?? '');
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (compact && q === 0) newFocus();
-    inventoryCardChange(card, state ? parseInt(state) : 0);
+    if (compact && card.q === 0) newFocus();
+    inventoryCardChange(card.c, state ? parseInt(state) : 0);
     setManual(false);
   };
 
   const handleQuantityChange = (diff) => {
     if (diff + state >= 0) setState(diff + state);
-    inventoryCardChange(card, parseInt(diff + state));
+    inventoryCardChange(card.c, parseInt(diff + state));
   };
 
   return (

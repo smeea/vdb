@@ -68,8 +68,7 @@ const InventoryCryptTableRow = ({
       ) : (
         <div className="flex min-w-[75px] px-0.5">
           <InventoryCardQuantity
-            cardid={card.c.Id}
-            q={card.q}
+            card={card}
             softUsedMax={softUsedMax}
             hardUsedTotal={hardUsedTotal}
             compact={compact}
