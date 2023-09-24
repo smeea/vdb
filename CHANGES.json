@@ -1,5 +1,12 @@
 [
   {
+    "version": "2023-09-23",
+    "changes": [
+      "Update TWDA",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-09-18",
     "changes": [
       "Fix floating buttons (mobile) dissapearing when using Search in TWD/PDA or Playable By button from card view",
