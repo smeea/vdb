@@ -16,6 +16,5 @@
 
 # POSSIBLE IMPROVEMENTS
 - Migration from screen width (isWide, etc) to container queries
-- Migration to useSearchParams where possible for state in url
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)

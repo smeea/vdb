@@ -9,9 +9,9 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
     <div className="flex items-center gap-1">
       <div className="opacity-40">
         {t == 's' ? (
-          <Shuffle width="14" height="14" viewBox="0 0 16 16" />
+          <Shuffle width="16" height="16" viewBox="0 0 16 16" />
         ) : (
-          <PinAngleFill width="14" height="14" viewBox="0 0 16 16" />
+          <PinAngleFill width="16" height="16" viewBox="0 0 16 16" />
         )}
       </div>
       <b>{q}</b>

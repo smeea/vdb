@@ -557,8 +557,6 @@ const missingNameOrInitials = (filter, card) => {
   }
   filter = filter.replace(/[^a-z0-9]/gi, '');
 
-  console.log(filter);
-
   return !(
     name.includes(filter) ||
     name.replace(/[^a-z0-9]/gi, '').includes(filter) ||

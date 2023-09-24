@@ -25,7 +25,7 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
       : inventoryLibrary[card.Id]?.t;
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-1.5">
       <div
         className={`flex ${inPopover ? 'flex-col' : 'max-md:flex-col'} gap-1.5`}
       >
@@ -62,7 +62,7 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
           )}
         </div>
       </div>
-      <InventoryText text={text} card={card} />
+      <InventoryText text={text} card={card} inPopover={inPopover} />
     </div>
   );
 };
