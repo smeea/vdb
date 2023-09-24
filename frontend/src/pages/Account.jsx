@@ -10,7 +10,7 @@ import {
   AccountPlaytestButtons,
   AccountLimitedButtons,
 } from '@/components';
-import PersonFill from '@/assets/images/icons/person-fill.svg';
+import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
 const Account = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg';
+import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
 import { inventoryCardTextChange } from '@/context';
 import { Textarea } from '@/components';
 

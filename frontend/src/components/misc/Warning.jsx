@@ -1,5 +1,5 @@
 import React from 'react';
-import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
+import Exclamation from '@/assets/images/icons/exclamation-triangle.svg?react';
 
 const Warning = ({ value }) => {
   return (

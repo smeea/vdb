@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Cart4 from '@/assets/images/icons/cart4.svg';
+import Cart4 from '@/assets/images/icons/cart4.svg?react';
 import { ButtonIconed, DeckMissingModal } from '@/components';
 import { useApp } from '@/context';
 

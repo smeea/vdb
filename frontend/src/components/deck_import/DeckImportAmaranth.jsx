@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Spinner from '@/assets/images/icons/three-dots.svg';
+import Spinner from '@/assets/images/icons/three-dots.svg?react';
 import { Modal, Input, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { deckServices } from '@/services';

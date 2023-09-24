@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import PersonFill from '@/assets/images/icons/person-fill.svg';
-import TagFill from '@/assets/images/icons/tag-fill.svg';
-import CalendarEvent from '@/assets/images/icons/calendar-event.svg';
+import PersonFill from '@/assets/images/icons/person-fill.svg?react';
+import TagFill from '@/assets/images/icons/tag-fill.svg?react';
+import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';

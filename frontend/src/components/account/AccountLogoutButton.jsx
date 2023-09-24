@@ -1,5 +1,5 @@
 import React from 'react';
-import DoorClosedFill from '@/assets/images/icons/door-closed-fill.svg';
+import DoorClosedFill from '@/assets/images/icons/door-closed-fill.svg?react';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
 import { ButtonIconed } from '@/components';

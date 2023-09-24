@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Bullseye from '@/assets/images/icons/bullseye.svg';
+import Bullseye from '@/assets/images/icons/bullseye.svg?react';
 import { Button } from '@/components';
 import { clearSearchForm } from '@/context';
 import { useLibraryRequirements } from '@/hooks';

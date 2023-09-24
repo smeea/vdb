@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LockFill from '@/assets/images/icons/lock-fill.svg';
+import LockFill from '@/assets/images/icons/lock-fill.svg?react';
 import { AccountPasswordForm, ErrorOverlay } from '@/components';
 import { userServices } from '@/services';
 

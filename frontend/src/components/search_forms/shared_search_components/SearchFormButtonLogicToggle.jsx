@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components';
-import Exclamation from '@/assets/images/icons/exclamation.svg';
+import Exclamation from '@/assets/images/icons/exclamation.svg?react';
 
 const SearchFormButtonLogicToggle = ({
   name,

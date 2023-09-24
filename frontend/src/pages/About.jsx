@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Telegram from '@/assets/images/icons/telegram.svg';
-import Github from '@/assets/images/icons/github.svg';
-import Discord from '@/assets/images/icons/discord.svg';
-import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg';
-import Globe2 from '@/assets/images/icons/globe2.svg';
-import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg';
+import Telegram from '@/assets/images/icons/telegram.svg?react';
+import Github from '@/assets/images/icons/github.svg?react';
+import Discord from '@/assets/images/icons/discord.svg?react';
+import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg?react';
+import Globe2 from '@/assets/images/icons/globe2.svg?react';
+import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg?react';
 import { Title, Banner, TextWithLinks } from '@/components';
 import lastChange from '@/LAST_CHANGE.json';
 

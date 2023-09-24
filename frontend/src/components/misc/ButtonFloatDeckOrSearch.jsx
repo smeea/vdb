@@ -1,6 +1,6 @@
 import React from 'react';
-import BinocularsFill from '@/assets/images/icons/binoculars-fill.svg';
-import Plus from '@/assets/images/icons/plus.svg';
+import BinocularsFill from '@/assets/images/icons/binoculars-fill.svg?react';
+import Plus from '@/assets/images/icons/plus.svg?react';
 import { ButtonFloat } from '@/components';
 
 const ButtonFloatAddOrSearch = ({ addMode, toggleAddMode }) => {

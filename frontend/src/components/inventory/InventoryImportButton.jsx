@@ -1,5 +1,5 @@
 import React from 'react';
-import Upload from '@/assets/images/icons/upload.svg';
+import Upload from '@/assets/images/icons/upload.svg?react';
 import { ButtonIconed } from '@/components';
 import { useApp } from '@/context';
 

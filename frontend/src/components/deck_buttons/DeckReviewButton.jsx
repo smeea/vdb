@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import PencilSquare from '@/assets/images/icons/pencil-square.svg';
+import PencilSquare from '@/assets/images/icons/pencil-square.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 

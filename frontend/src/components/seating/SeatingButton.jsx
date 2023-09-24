@@ -1,5 +1,5 @@
 import React from 'react';
-import Recycle from '@/assets/images/icons/recycle.svg';
+import Recycle from '@/assets/images/icons/recycle.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 

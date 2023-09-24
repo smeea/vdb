@@ -1,5 +1,5 @@
 import React from 'react';
-import GiftFill from '@/assets/images/icons/gift-fill.svg';
+import GiftFill from '@/assets/images/icons/gift-fill.svg?react';
 import { ResultLibraryClan } from '@/components';
 
 const ResultPreconClan = ({ clan }) => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { useApp } from '@/context';
 import { Hr, TwdHallFameDeckBody } from '@/components';
 

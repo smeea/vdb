@@ -1,6 +1,6 @@
 import React from 'react';
-import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg';
-import LightbulbOffFill from '@/assets/images/icons/lightbulb-off-fill.svg';
+import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg?react';
+import LightbulbOffFill from '@/assets/images/icons/lightbulb-off-fill.svg?react';
 import { deckUpdate } from '@/context';
 import { ButtonIconed } from '@/components';
 

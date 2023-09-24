@@ -1,5 +1,5 @@
 import React from 'react';
-import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg';
+import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 

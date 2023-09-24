@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Gem from '@/assets/images/icons/gem.svg';
+import Gem from '@/assets/images/icons/gem.svg?react';
 import {
   DeckCrypt,
   DeckLibrary,

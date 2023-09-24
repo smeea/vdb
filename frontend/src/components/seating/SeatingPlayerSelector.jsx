@@ -1,6 +1,6 @@
 import React from 'react';
-import Dice3 from '@/assets/images/icons/dice-3-fill.svg';
-import X from '@/assets/images/icons/x.svg';
+import Dice3 from '@/assets/images/icons/dice-3-fill.svg?react';
+import X from '@/assets/images/icons/x.svg?react';
 import { Toggle, Input, Button } from '@/components';
 
 const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {

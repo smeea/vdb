@@ -1,6 +1,7 @@
 # FIX
 - Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
+- Backend remove_deck_route errors
 
 # FEATURES
 - TWD Deck check documentation

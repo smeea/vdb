@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Files from '@/assets/images/icons/files.svg';
+import Files from '@/assets/images/icons/files.svg?react';
 import { deckStore, useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 

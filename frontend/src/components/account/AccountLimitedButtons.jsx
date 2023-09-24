@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UiChecksGrid from '@/assets/images/icons/ui-checks-grid.svg';
+import UiChecksGrid from '@/assets/images/icons/ui-checks-grid.svg?react';
 import { AccountLimitedModal, ButtonIconed, Toggle } from '@/components';
 import { useApp } from '@/context';
 

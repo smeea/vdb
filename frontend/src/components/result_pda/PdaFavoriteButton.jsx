@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Star from '@/assets/images/icons/star.svg';
-import StarFill from '@/assets/images/icons/star-fill.svg';
+import Star from '@/assets/images/icons/star.svg?react';
+import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import PersonFill from '@/assets/images/icons/person-fill.svg';
-import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg';
-import ToggleOn from '@/assets/images/icons/toggle-on.svg';
-import ToggleOff from '@/assets/images/icons/toggle-off.svg';
-import List from '@/assets/images/icons/list.svg';
+import PersonFill from '@/assets/images/icons/person-fill.svg?react';
+import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg?react';
+import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
+import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
+import List from '@/assets/images/icons/list.svg?react';
 import { LanguageMenu, ThemeSelect, Hr } from '@/components';
 import { useApp } from '@/context';
 

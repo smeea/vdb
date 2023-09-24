@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { useSnapshot } from 'valtio';
-import Shuffle from '@/assets/images/icons/shuffle.svg';
-import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
+import Shuffle from '@/assets/images/icons/shuffle.svg?react';
+import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import {
   deckCardChange,
   deckUpdate,

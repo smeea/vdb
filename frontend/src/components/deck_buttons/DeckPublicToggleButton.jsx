@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Spinner from '@/assets/images/icons/three-dots.svg';
-import People from '@/assets/images/icons/people.svg';
-import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import Spinner from '@/assets/images/icons/three-dots.svg?react';
+import People from '@/assets/images/icons/people.svg?react';
+import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { DeckPublicToggleConfirmation, ButtonIconed } from '@/components';
 import { useApp, deckStore } from '@/context';
 

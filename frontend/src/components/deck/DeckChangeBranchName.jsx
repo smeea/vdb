@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Check2 from '@/assets/images/icons/check2.svg';
-import PaletteFill from '@/assets/images/icons/palette-fill.svg';
+import Check2 from '@/assets/images/icons/check2.svg?react';
+import PaletteFill from '@/assets/images/icons/palette-fill.svg?react';
 import { Input, InputPreLabel, Button } from '@/components';
 import { deckUpdate } from '@/context';
 

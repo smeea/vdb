@@ -1,6 +1,6 @@
 import React from 'react';
-import Check2 from '@/assets/images/icons/check2.svg';
-import Spinner from '@/assets/images/icons/three-dots.svg';
+import Check2 from '@/assets/images/icons/check2.svg?react';
+import Spinner from '@/assets/images/icons/three-dots.svg?react';
 import { ButtonFloat, ErrorOverlay } from '@/components';
 
 const ButtonFloatSearch = ({ handleSearch, error, isLoading }) => {

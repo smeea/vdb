@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PlayFill from '@/assets/images/icons/play-fill.svg';
+import PlayFill from '@/assets/images/icons/play-fill.svg?react';
 import { ButtonIconed } from '@/components';
 
 const TwdOpenDeckButton = ({ deckid, url, noText }) => {

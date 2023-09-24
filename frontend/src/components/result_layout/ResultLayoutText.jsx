@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import X from '@/assets/images/icons/x.svg';
-import SearchHeartFill from '@/assets/images/icons/search-heart-fill.svg';
+import X from '@/assets/images/icons/x.svg?react';
+import SearchHeartFill from '@/assets/images/icons/search-heart-fill.svg?react';
 import {
   ButtonCardCopyUrl,
   ButtonIconed,

@@ -1,5 +1,5 @@
 import React from 'react';
-import PeopleFill from '@/assets/images/icons/people-fill.svg';
+import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 
 const TwdResultDescriptionPlayers = ({ players }) => {
   return (

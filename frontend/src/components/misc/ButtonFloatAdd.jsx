@@ -1,5 +1,5 @@
 import React from 'react';
-import Plus from '@/assets/images/icons/plus.svg';
+import Plus from '@/assets/images/icons/plus.svg?react';
 import { ButtonFloat } from '@/components';
 import { useApp } from '@/context';
 

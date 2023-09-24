@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import At from '@/assets/images/icons/at.svg';
-import Shuffle from '@/assets/images/icons/shuffle.svg';
-import SearchHeartFill from '@/assets/images/icons/search-heart-fill.svg';
-import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
-import ImageAlt from '@/assets/images/icons/image-alt.svg';
+import At from '@/assets/images/icons/at.svg?react';
+import Shuffle from '@/assets/images/icons/shuffle.svg?react';
+import SearchHeartFill from '@/assets/images/icons/search-heart-fill.svg?react';
+import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
+import ImageAlt from '@/assets/images/icons/image-alt.svg?react';
 import { Banner } from '@/components';
 
 const Title = ({ children, id }) => {

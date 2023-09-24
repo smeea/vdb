@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg';
+import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg?react';
 import {
   AccountEmailForm,
   AccountPasswordForm,

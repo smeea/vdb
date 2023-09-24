@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import Cart4 from '@/assets/images/icons/cart4.svg';
+import Cart4 from '@/assets/images/icons/cart4.svg?react';
 import { ButtonIconed, DeckMissingModal } from '@/components';
 import { useApp, inventoryStore } from '@/context';
 

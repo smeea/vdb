@@ -1,5 +1,5 @@
 import React from 'react';
-import Spinner from '@/assets/images/icons/three-dots.svg';
+import Spinner from '@/assets/images/icons/three-dots.svg?react';
 import {
   ResultCryptTable,
   DeckRecommendationLibrary,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import Folder2Open from '@/assets/images/icons/folder2-open.svg';
+import Folder2Open from '@/assets/images/icons/folder2-open.svg?react';
 import {
   InventoryImport,
   DeckExportButton,
@@ -11,7 +11,7 @@ import {
   ButtonIconed,
   ButtonFloatClose,
 } from '@/components';
-import FolderPlus from '@/assets/images/icons/folder-plus.svg';
+import FolderPlus from '@/assets/images/icons/folder-plus.svg?react';
 import { useApp, deckStore } from '@/context';
 
 const InventoryButtons = ({

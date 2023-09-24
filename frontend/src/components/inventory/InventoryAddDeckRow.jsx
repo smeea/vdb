@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import EyeFill from '@/assets/images/icons/eye-fill.svg';
-import Shuffle from '@/assets/images/icons/shuffle.svg';
-import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
-import At from '@/assets/images/icons/at.svg';
+import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
+import Shuffle from '@/assets/images/icons/shuffle.svg?react';
+import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
+import At from '@/assets/images/icons/at.svg?react';
 import {
   DeckPreview,
   DeckTags,

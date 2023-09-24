@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Check2 from '@/assets/images/icons/check2.svg';
-import Plus from '@/assets/images/icons/plus.svg';
+import Check2 from '@/assets/images/icons/check2.svg?react';
+import Plus from '@/assets/images/icons/plus.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
 import { useApp, inventoryCardsAdd } from '@/context';
 

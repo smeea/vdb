@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
-import ClipboardPlus from '@/assets/images/icons/clipboard-plus.svg';
+import ClipboardPlus from '@/assets/images/icons/clipboard-plus.svg?react';
 import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
 import { useApp } from '@/context';
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg';
-import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg';
-import ChevronCompactRight from '@/assets/images/icons/chevron-compact-right.svg';
+import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
+import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg?react';
+import ChevronCompactRight from '@/assets/images/icons/chevron-compact-right.svg?react';
 import {
   ButtonFloat,
   ButtonFloatClose,

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import LightningFill from '@/assets/images/icons/lightning-fill.svg';
-import PersonFill from '@/assets/images/icons/person-fill.svg';
-import ToggleOn from '@/assets/images/icons/toggle-on.svg';
-import ToggleOff from '@/assets/images/icons/toggle-off.svg';
+import LightningFill from '@/assets/images/icons/lightning-fill.svg?react';
+import PersonFill from '@/assets/images/icons/person-fill.svg?react';
+import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
+import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
 import { useApp } from '@/context';
 import { NavMobileMenu, LanguageSelectButton, ThemeSelect } from '@/components';
 import cryptDefaults from '@/components/search_forms/forms_data/defaultsCryptForm.json';

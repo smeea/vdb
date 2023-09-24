@@ -2,12 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
-import Gem from '@/assets/images/icons/gem.svg';
-import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
-import ClockHistory from '@/assets/images/icons/clock-history.svg';
-import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg';
-import Calendar2EventFill from '@/assets/images/icons/calendar2-event-fill.svg';
-import PieChartFill from '@/assets/images/icons/pie-chart-fill.svg';
+import Gem from '@/assets/images/icons/gem.svg?react';
+import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
+import ClockHistory from '@/assets/images/icons/clock-history.svg?react';
+import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg?react';
+import Calendar2EventFill from '@/assets/images/icons/calendar2-event-fill.svg?react';
+import PieChartFill from '@/assets/images/icons/pie-chart-fill.svg?react';
 
 const TwdMoreButton = ({ noText }) => {
   const navigate = useNavigate();

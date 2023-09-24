@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components';
-import PeopleFill from '@/assets/images/icons/people-fill.svg';
-import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
+import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
+import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import { clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
 
 const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {

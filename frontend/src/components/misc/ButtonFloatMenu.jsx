@@ -1,5 +1,5 @@
 import React from 'react';
-import List from '@/assets/images/icons/list.svg';
+import List from '@/assets/images/icons/list.svg?react';
 import { ButtonFloat } from '@/components';
 import { useApp } from '@/context';
 

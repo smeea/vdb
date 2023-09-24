@@ -1,6 +1,6 @@
 import React from 'react';
-import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
-import StarFill from '@/assets/images/icons/star-fill.svg';
+import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
+import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import {
   DeckCloneButton,
   TwdOpenDeckButton,

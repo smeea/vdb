@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TrashFill from '@/assets/images/icons/trash-fill.svg';
+import TrashFill from '@/assets/images/icons/trash-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
 import { inventoryCardsAdd } from '@/context';
 

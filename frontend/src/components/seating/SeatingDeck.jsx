@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PlayFill from '@/assets/images/icons/play-fill.svg';
-import X from '@/assets/images/icons/x.svg';
+import PlayFill from '@/assets/images/icons/play-fill.svg?react';
+import X from '@/assets/images/icons/x.svg?react';
 import { Toggle } from '@/components';
 
 const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {

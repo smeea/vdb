@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Menu } from '@headlessui/react';
 import { useSnapshot } from 'valtio';
-import Download from '@/assets/images/icons/download.svg';
+import Download from '@/assets/images/icons/download.svg?react';
 import {
   DeckSelectAdvModalTotal,
   DeckSelectAdvModalTableRow,

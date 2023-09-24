@@ -1,7 +1,7 @@
 import React from 'react';
-import ArrowDown from '@/assets/images/icons/arrow-down.svg';
-import ArrowUp from '@/assets/images/icons/arrow-up.svg';
-import XLg from '@/assets/images/icons/x-lg.svg';
+import ArrowDown from '@/assets/images/icons/arrow-down.svg?react';
+import ArrowUp from '@/assets/images/icons/arrow-up.svg?react';
+import XLg from '@/assets/images/icons/x-lg.svg?react';
 
 const DiffQuantityDiff = ({ qFrom, qTo }) => {
   return (

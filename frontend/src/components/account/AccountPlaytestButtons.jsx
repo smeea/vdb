@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Wrench from '@/assets/images/icons/wrench.svg';
+import Wrench from '@/assets/images/icons/wrench.svg?react';
 import { AccountPlaytestModal, ButtonIconed, Toggle } from '@/components';
 import { useApp } from '@/context';
 

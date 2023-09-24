@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import TrashFill from '@/assets/images/icons/trash-fill.svg';
+import TrashFill from '@/assets/images/icons/trash-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
 import { deckStore, useApp } from '@/context';
 import { byTimestamp } from '@/utils';

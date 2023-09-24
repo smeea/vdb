@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import ClipboardPlus from '@/assets/images/icons/clipboard-plus.svg';
+import ClipboardPlus from '@/assets/images/icons/clipboard-plus.svg?react';
 import {
   ButtonIconed,
   ErrorOverlay,

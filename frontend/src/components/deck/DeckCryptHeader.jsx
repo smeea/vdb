@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import InfoCircle from '@/assets/images/icons/info-circle.svg';
+import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
 import {
   DeckCryptTotalInfo,
   DeckNewCard,

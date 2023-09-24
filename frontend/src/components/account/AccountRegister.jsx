@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PersonPlusFill from '@/assets/images/icons/person-plus-fill.svg';
+import PersonPlusFill from '@/assets/images/icons/person-plus-fill.svg?react';
 import {
   AccountEmailForm,
   AccountPasswordForm,

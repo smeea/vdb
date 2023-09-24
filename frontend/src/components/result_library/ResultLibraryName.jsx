@@ -1,5 +1,5 @@
 import React from 'react';
-import Hammer from '@/assets/images/icons/hammer.svg';
+import Hammer from '@/assets/images/icons/hammer.svg?react';
 
 const ResultLibraryName = ({ card, colored = true }) => {
   return (

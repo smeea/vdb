@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Activity from '@/assets/images/icons/activity.svg';
+import Activity from '@/assets/images/icons/activity.svg?react';
 import { Modal, ButtonIconed, TextWithLinks } from '@/components';
 import { useFetch } from '@/hooks';
 import lastChange from '@/LAST_CHANGE.json';

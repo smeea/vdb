@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { setMany } from 'idb-keyval';
-import Download from '@/assets/images/icons/download.svg';
-import Upload from '@/assets/images/icons/upload.svg';
+import Download from '@/assets/images/icons/download.svg?react';
+import Upload from '@/assets/images/icons/upload.svg?react';
 import {
   AccountLimitedSetSelection,
   AccountLimitedCardSelection,

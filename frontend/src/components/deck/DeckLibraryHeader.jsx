@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import InfoCircle from '@/assets/images/icons/info-circle.svg';
-import Exclamation from '@/assets/images/icons/exclamation-triangle.svg';
+import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
+import Exclamation from '@/assets/images/icons/exclamation-triangle.svg?react';
 import {
   Button,
   DeckNewCard,

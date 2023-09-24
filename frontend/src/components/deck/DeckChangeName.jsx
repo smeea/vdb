@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Check2 from '@/assets/images/icons/check2.svg';
-import Snow from '@/assets/images/icons/snow.svg';
-import TagFill from '@/assets/images/icons/tag-fill.svg';
-import PeopleFill from '@/assets/images/icons/people-fill.svg';
-import TrophyFill from '@/assets/images/icons/trophy-fill.svg';
+import Check2 from '@/assets/images/icons/check2.svg?react';
+import Snow from '@/assets/images/icons/snow.svg?react';
+import TagFill from '@/assets/images/icons/tag-fill.svg?react';
+import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
+import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import { deckUpdate } from '@/context';
 import { Input, InputPreLabel, Button, DeckFreezeButton } from '@/components';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Check2 from '@/assets/images/icons/check2.svg';
+import Check2 from '@/assets/images/icons/check2.svg?react';
 import { Input, Button } from '@/components';
 
 const SeatingRandomDeckAddForm = ({ addDeck }) => {

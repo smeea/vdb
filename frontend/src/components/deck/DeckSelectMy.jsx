@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { Select } from '@/components';
-import Shuffle from '@/assets/images/icons/shuffle.svg';
-import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg';
-import At from '@/assets/images/icons/at.svg';
+import Shuffle from '@/assets/images/icons/shuffle.svg?react';
+import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
+import At from '@/assets/images/icons/at.svg?react';
 import { deckStore, useApp } from '@/context';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {

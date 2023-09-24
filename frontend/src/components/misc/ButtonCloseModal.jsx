@@ -1,5 +1,5 @@
 import React from 'react';
-import X from '@/assets/images/icons/x.svg';
+import X from '@/assets/images/icons/x.svg?react';
 
 const ButtonClose = ({ handleClose }) => {
   return (

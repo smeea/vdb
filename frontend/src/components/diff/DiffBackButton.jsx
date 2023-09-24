@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Folder2Open from '@/assets/images/icons/folder2-open.svg';
+import Folder2Open from '@/assets/images/icons/folder2-open.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 

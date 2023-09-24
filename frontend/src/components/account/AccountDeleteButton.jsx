@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TrashFill from '@/assets/images/icons/trash-fill.svg';
+import TrashFill from '@/assets/images/icons/trash-fill.svg?react';
 import { AccountDeleteConfirmation, ButtonIconed } from '@/components';
 
 const AccountDeleteButton = () => {

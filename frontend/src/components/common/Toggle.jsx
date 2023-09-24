@@ -1,6 +1,6 @@
 import React from 'react';
-import ToggleOn from '@/assets/images/icons/toggle-on.svg';
-import ToggleOff from '@/assets/images/icons/toggle-off.svg';
+import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
+import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
 
 const Toggle = ({ isOn, toggle, size = 'md', disabled = false, children }) => {
   const customSize = {

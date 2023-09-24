@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components';
-import X from '@/assets/images/icons/x.svg';
+import X from '@/assets/images/icons/x.svg?react';
 import { ResultLibraryTypeImage, SortButton } from '@/components';
 import { setLibraryCompare } from '@/context';
 

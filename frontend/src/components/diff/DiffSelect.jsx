@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import ArrowLeftRight from '@/assets/images/icons/arrow-left-right.svg';
+import ArrowLeftRight from '@/assets/images/icons/arrow-left-right.svg?react';
 import { DiffSelectDeck, Button } from '@/components';
 
 const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
