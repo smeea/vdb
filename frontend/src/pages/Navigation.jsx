@@ -3,10 +3,13 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import LightningFill from '@/assets/images/icons/lightning-fill.svg?react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
-import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
-import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
 import { useApp } from '@/context';
-import { NavMobileMenu, LanguageSelectButton, ThemeSelect } from '@/components';
+import {
+  NavToggle,
+  NavMobileMenu,
+  LanguageSelectButton,
+  ThemeSelect,
+} from '@/components';
 import cryptDefaults from '@/components/search_forms/forms_data/defaultsCryptForm.json';
 import libraryDefaults from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
 import twdDefaults from '@/components/search_forms/forms_data/defaultsTwdForm.json';
@@ -51,6 +54,9 @@ const Navigation = () => {
     toggleLimitedMode,
     isMobile,
     username,
+    playtestSwitch,
+    playtestMode,
+    togglePlaytestMode,
   } = useApp();
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
@@ -116,45 +122,24 @@ const Navigation = () => {
             location.pathname !== '/documentation' &&
             location.pathname !== '/inventory' && (
               <>
-                <div
-                  className={`flex h-full items-center space-x-1 ${
-                    inventoryMode
-                      ? 'text-white dark:text-whiteDark'
-                      : 'text-lightGray dark:text-lightGrayDark'
-                  }`}
-                  onClick={() => {
-                    toggleInventoryMode();
-                  }}
-                >
-                  <div className="flex min-w-[36px] justify-center">
-                    {inventoryMode ? (
-                      <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
-                    ) : (
-                      <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
-                    )}
-                  </div>
-                  <div className="pb-[2px]">Inventory Mode</div>
-                </div>
+                <NavToggle
+                  isOn={inventoryMode}
+                  onToggle={toggleInventoryMode}
+                  text="Inventory Mode"
+                />
                 {limitedSwitch && (
-                  <div
-                    className={`flex h-full items-center space-x-1 ${
-                      limitedMode
-                        ? 'text-white dark:text-whiteDark'
-                        : 'text-lightGray dark:text-lightGrayDark'
-                    }`}
-                    onClick={() => {
-                      toggleLimitedMode();
-                    }}
-                  >
-                    <div className="flex min-w-[36px] justify-center">
-                      {limitedMode ? (
-                        <ToggleOn width="26" height="26" viewBox="0 0 16 16" />
-                      ) : (
-                        <ToggleOff width="26" height="26" viewBox="0 0 16 16" />
-                      )}
-                    </div>
-                    <div className="pb-[2px]">Limited Mode</div>
-                  </div>
+                  <NavToggle
+                    isOn={limitedMode}
+                    onToggle={toggleLimitedMode}
+                    text="Limited Mode"
+                  />
+                )}
+                {playtestSwitch && (
+                  <NavToggle
+                    isOn={playtestMode}
+                    onToggle={togglePlaytestMode}
+                    text="Playtest Mode"
+                  />
                 )}
               </>
             )}

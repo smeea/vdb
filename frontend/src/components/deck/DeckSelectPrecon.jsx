@@ -5,11 +5,11 @@ import { ResultPreconClan } from '@/components';
 import { useApp } from '@/context';
 
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
-  const { isMobile, playtest } = useApp();
+  const { isMobile, playtestMode } = useApp();
 
   const options = [];
   Object.keys(setsAndPrecons)
-    .filter((i) => playtest || i !== 'PLAYTEST')
+    .filter((i) => playtestMode || i !== 'PLAYTEST')
     .map((set) => {
       if (setsAndPrecons[set].precons) {
         const year = setsAndPrecons[set].date.slice(2, 4);

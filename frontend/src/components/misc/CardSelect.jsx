@@ -17,9 +17,9 @@ const CardSelect = React.forwardRef(
       autoFocus,
       onChange,
     },
-    ref,
+    ref
   ) => {
-    const { isMobile, cryptCardBase, libraryCardBase, playtest } = useApp();
+    const { isMobile, cryptCardBase, libraryCardBase, playtestMode } = useApp();
     const { filterCrypt } = useFilters(cryptCardBase);
     const { filterLibrary } = useFilters(libraryCardBase);
 
@@ -54,7 +54,7 @@ const CardSelect = React.forwardRef(
         const exactLibraryMatches = [];
 
         const filteredCryptCards = filterCrypt(input)
-          .filter((card) => playtest || card.Id < 210000)
+          .filter((card) => playtestMode || card.Id < 210000)
           .filter((card) => {
             if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
               exactCryptMatches.push({ value: card.Id });
@@ -67,7 +67,7 @@ const CardSelect = React.forwardRef(
           }));
 
         const filteredLibraryCards = filterLibrary(input)
-          .filter((card) => playtest || card.Id < 110000)
+          .filter((card) => playtestMode || card.Id < 110000)
           .filter((card) => {
             if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
               exactLibraryMatches.push({ value: card.Id });
@@ -110,7 +110,7 @@ const CardSelect = React.forwardRef(
         value={value}
       />
     );
-  },
+  }
 );
 CardSelect.displayName = 'CardSelect';
 

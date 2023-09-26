@@ -31,14 +31,14 @@ const DeckButtons = ({
   setQrUrl,
   setShowRecommendation,
 }) => {
-  const { playtest, inventoryMode, username } = useApp();
+  const { playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = { ...deck };
 
   return (
     <div className="flex flex-col space-y-1">
       <DeckImport setShowInfo={setShowInfo} />
       {deck &&
-        (playtest ||
+        (playtestMode ||
           !(
             Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
             Object.keys(deck.library).some((cardid) => cardid > 110000)

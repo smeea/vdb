@@ -10,7 +10,7 @@ import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const InventoryAddPreconModal = ({ handleClose }) => {
-  const { preconDecks, playtest, isDesktop, isMobile } = useApp();
+  const { preconDecks, playtestMode, isDesktop, isMobile } = useApp();
   const [sortMethod, setSortMethod] = useState('byDate');
   const [nameFilter, setNameFilter] = useState('');
   const [setFilter, setSetFilter] = useState('');
@@ -27,7 +27,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
     if (Object.values(preconDecks).length > 0) {
       let filtered = Object.values(preconDecks).filter((i) => {
         const set = i.deckid.split(':')[0];
-        return playtest || set !== 'PLAYTEST';
+        return playtestMode || set !== 'PLAYTEST';
       });
 
       if (nameFilter) {

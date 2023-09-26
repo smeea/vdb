@@ -12,7 +12,7 @@ import vampireClansList from '@/assets/data/vampireClansList.json';
 import { useApp } from '@/context';
 
 const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
-  const { playtest, isXWide, isMobile } = useApp();
+  const { playtestMode, isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'clan';
 
@@ -22,7 +22,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
     ...vampireClansList,
     ...imbuedClansList,
   ]
-    .filter((clan) => playtest || clan !== 'Hecata')
+    .filter((clan) => playtestMode || clan !== 'Hecata')
     .map((i) => {
       if (i == 'ANY' || i == 'Not Required') {
         return {
@@ -84,7 +84,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
             onChange={onChange}
           />

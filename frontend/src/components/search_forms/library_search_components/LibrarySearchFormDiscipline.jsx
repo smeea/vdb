@@ -12,7 +12,7 @@ import virtuesList from '@/assets/data/virtuesList.json';
 import { useApp } from '@/context';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
-  const { playtest, isXWide, isMobile } = useApp();
+  const { playtestMode, isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'discipline';
   const disciplinesExtendedList = [
@@ -28,7 +28,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     ...disciplinesExtendedList,
     ...Object.keys(virtuesList),
   ]
-    .filter((discipline) => playtest || discipline !== 'Oblivion')
+    .filter((discipline) => playtestMode || discipline !== 'Oblivion')
     .map((i) => {
       if (i == 'ANY' || i == 'Not Required') {
         return {
@@ -91,7 +91,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
             onChange={onChange}
           />

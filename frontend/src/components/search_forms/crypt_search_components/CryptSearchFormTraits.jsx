@@ -3,7 +3,7 @@ import { Checkbox } from '@/components';
 import { useApp } from '@/context';
 
 const CryptSearchFormTraits = ({ value, onChange }) => {
-  const { playtest } = useApp();
+  const { playtestMode } = useApp();
 
   return (
     <div className="space-y-1">
@@ -49,7 +49,7 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             ['non-twd', 'Not in TWD'],
             ['playtest', 'Playtest'],
           ]
-            .filter((i) => i[0] !== 'playtest' || playtest)
+            .filter((i) => i[0] !== 'playtest' || playtestMode)
             .map((i, index) => {
               return (
                 <Checkbox

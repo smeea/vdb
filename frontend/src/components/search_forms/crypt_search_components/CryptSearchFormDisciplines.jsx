@@ -4,12 +4,12 @@ import disciplinesList from '@/assets/data/disciplinesList.json';
 import { useApp } from '@/context';
 
 const CryptSearchFormDisciplines = ({ value, onChange }) => {
-  const { playtest } = useApp();
+  const { playtestMode } = useApp();
 
   return (
     <div className="flex flex-wrap">
       {Object.keys(disciplinesList)
-        .filter((discipline) => playtest || discipline !== 'Oblivion')
+        .filter((discipline) => playtestMode || discipline !== 'Oblivion')
         .map((i) => (
           <div
             key={i}

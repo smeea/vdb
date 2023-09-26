@@ -51,7 +51,8 @@ export const AppProvider = (props) => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
-  const [playtest, setPlaytest] = useState();
+  const [playtestSwitch, setPlaytestSwitch] = useState();
+  const [playtestMode, setPlaytestMode] = useState();
   const [showImage, setShowImage] = useState();
   const [addMode, setAddMode] = useState();
   const [inventoryMode, setInventoryMode] = useState();
@@ -199,7 +200,7 @@ export const AppProvider = (props) => {
     setInventoryKey(data.inventory_key);
     setIsPlaytester(data.playtester);
     setIsPlaytestAdmin(data.playtest_admin);
-    if (!data.playtester && !data.playtest_admin) setPlaytest(false);
+    if (!data.playtester && !data.playtest_admin) setPlaytestMode(false);
     setInventoryCrypt(inventory.crypt);
     setInventoryLibrary(inventory.library);
     deckStore.decks = parseDecksData(data.decks);
@@ -211,7 +212,7 @@ export const AppProvider = (props) => {
     setLimitedMode(false);
     setIsPlaytester(false);
     setIsPlaytestAdmin(false);
-    setPlaytest(false);
+    setPlaytestMode(false);
     setInventoryCrypt({});
     setInventoryLibrary({});
     setUsername(null);
@@ -241,7 +242,7 @@ export const AppProvider = (props) => {
   const changeBaseTextToLocalizedText = (
     setCardBase,
     localizedInfo,
-    nativeInfo,
+    nativeInfo
   ) => {
     setCardBase((draft) => {
       Object.keys(draft).map((k) => {
@@ -274,7 +275,7 @@ export const AppProvider = (props) => {
       changeBaseTextToLocalizedText(
         setLibraryCardBase,
         data.library,
-        nativeLibrary,
+        nativeLibrary
       );
     });
   };
@@ -287,12 +288,12 @@ export const AppProvider = (props) => {
         changeBaseTextToLocalizedText(
           setCryptCardBase,
           localizedCrypt[lang],
-          nativeCrypt,
+          nativeCrypt
         );
         changeBaseTextToLocalizedText(
           setLibraryCardBase,
           localizedLibrary[lang],
-          nativeLibrary,
+          nativeLibrary
         );
       }
     }
@@ -312,7 +313,7 @@ export const AppProvider = (props) => {
         localizedCrypt[lang],
         nativeCrypt,
         localizedLibrary[lang],
-        nativeLibrary,
+        nativeLibrary
       );
     }
   }, [deck, lang, localizedCrypt, localizedLibrary]);
@@ -353,6 +354,31 @@ export const AppProvider = (props) => {
     }
   };
 
+  const togglePlaytestMode = () => {
+    setPlaytestMode(!playtestMode);
+    setLocalStorage('playtestMode', !playtestMode);
+
+    if (playtestSwitch && playtestMode) {
+      setPlaytestMode(false);
+      setLocalStorage('playtestMode', false);
+    }
+  };
+
+  const togglePlaytestSwitch = () => {
+    setPlaytestSwitch(!playtestSwitch);
+    setLocalStorage('playtestSwitch', !playtestSwitch);
+
+    if (playtestSwitch && playtestMode) {
+      setPlaytestMode(false);
+      setLocalStorage('playtestMode', false);
+    }
+  };
+
+  const toggleAddMode = () => {
+    setAddMode(!addMode);
+    setLocalStorage('addMode', !addMode);
+  };
+
   const changeCryptDeckSort = (method) => {
     setCryptDeckSort(method);
     setLocalStorage('cryptDeckSort', method);
@@ -381,16 +407,6 @@ export const AppProvider = (props) => {
   const changeAnalyzeSearchSort = (method) => {
     setAnalyzeSearchSort(method);
     setLocalStorage('analyzeSearchSort', method);
-  };
-
-  const toggleAddMode = () => {
-    setAddMode(!addMode);
-    setLocalStorage('addMode', !addMode);
-  };
-
-  const togglePlaytest = () => {
-    setPlaytest(!playtest);
-    setLocalStorage('playtest', !playtest);
   };
 
   const addRecentDeck = (deck) => {
@@ -428,7 +444,7 @@ export const AppProvider = (props) => {
     initFromStorage(
       'cryptSearchSort',
       'Capacity - Min to Max',
-      setCryptSearchSort,
+      setCryptSearchSort
     );
     initFromStorage('cryptDeckSort', 'Quantity ', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
@@ -437,7 +453,7 @@ export const AppProvider = (props) => {
     initFromStorage(
       'analyzeSearchSort',
       'Rank - High to Low',
-      setAnalyzeSearchSort,
+      setAnalyzeSearchSort
     );
     initFromStorage('lang', 'en-EN', setLang);
     initFromStorage('addMode', isDesktop, setAddMode);
@@ -446,7 +462,8 @@ export const AppProvider = (props) => {
     initFromStorage('limitedSwitch', false, setLimitedSwitch);
     initFromStorage('showImage', true, setShowImage);
     initFromStorage('recentDecks', [], setRecentDecks);
-    initFromStorage('playtest', false, setPlaytest);
+    initFromStorage('playtestMode', false, setPlaytestMode);
+    initFromStorage('playtestSwitch', false, setPlaytestSwitch);
   }, []);
 
   // DECKS
@@ -456,7 +473,7 @@ export const AppProvider = (props) => {
         const cardsData = useDeck(
           decksData[deckid].cards,
           cryptCardBase,
-          libraryCardBase,
+          libraryCardBase
         );
         decksData[deckid] = { ...decksData[deckid], ...cardsData };
         if (decksData[deckid].usedInInventory) {
@@ -489,7 +506,7 @@ export const AppProvider = (props) => {
   useEffect(() => {
     if (decks || username === null) {
       const d = recentDecks.filter(
-        (v) => username === null || !decks[v.deckid],
+        (v) => username === null || !decks[v.deckid]
       );
       if (d.length < recentDecks.length) {
         updateRecentDecks(d);
@@ -565,8 +582,10 @@ export const AppProvider = (props) => {
         changeLang,
         isPlaytester,
         isPlaytestAdmin,
-        playtest,
-        togglePlaytest,
+        playtestMode,
+        togglePlaytestMode,
+        playtestSwitch,
+        togglePlaytestSwitch,
         hideMissing,
         setHideMissing,
         inventoryMode,

@@ -24,6 +24,8 @@ export { default as SelectLabelCrypt } from './SelectLabelCrypt.jsx';
 export { default as SelectLabelLibrary } from './SelectLabelLibrary.jsx';
 export { default as SortButton } from './SortButton.jsx';
 export { default as ThemeSelect } from './ThemeSelect.jsx';
+export { default as NavToggle } from './NavToggle.jsx';
+export { default as NavMobileToggle } from './NavMobileToggle.jsx';
 export { default as UpdateNotification } from './UpdateNotification.jsx';
 export { default as UsedDescription } from './UsedDescription.jsx';
 export { default as UsedPopover } from './UsedPopover.jsx';

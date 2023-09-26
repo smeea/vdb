@@ -6,10 +6,10 @@ import vampireClansList from '@/assets/data/vampireClansList.json';
 import { useApp } from '@/context';
 
 const TwdSearchFormClan = ({ value, onChange }) => {
-  const { playtest, isMobile, isXWide } = useApp();
+  const { playtestMode, isMobile, isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const options = ['ANY', ...vampireClansList, ...imbuedClansList]
-    .filter((clan) => playtest || clan !== 'Hecata')
+    .filter((clan) => playtestMode || clan !== 'Hecata')
     .map((i) => {
       if (i == 'ANY' || i == 'NONE') {
         return {

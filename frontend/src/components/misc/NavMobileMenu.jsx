@@ -5,7 +5,7 @@ import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg?react';
 import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
 import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
 import List from '@/assets/images/icons/list.svg?react';
-import { LanguageMenu, ThemeSelect, Hr } from '@/components';
+import { NavMobileToggle, LanguageMenu, ThemeSelect, Hr } from '@/components';
 import { useApp } from '@/context';
 
 const NavMobileMenu = ({ showMenu, setShowMenu }) => {
@@ -87,28 +87,14 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             </div>
           </div>
           {limitedSwitch && (
-            <div
-              className="flex items-center space-x-2 px-3 py-1.5"
-              onClick={() => {
+            <NavMobileToggle
+              isOn={limitedMode}
+              onToggle={() => {
                 toggleLimitedMode();
                 setShowMenu(false);
               }}
-            >
-              <div className="flex min-w-[30px] justify-center">
-                {limitedMode ? (
-                  <ToggleOn height="26" width="26" viewBox="0 0 16 16" />
-                ) : (
-                  <ToggleOff height="26" width="26" viewBox="0 0 16 16" />
-                )}
-              </div>
-              <div
-                className={`whitespace-nowrap ${
-                  limitedMode ? '' : 'text-midGray dark:text-midGrayDark'
-                }`}
-              >
-                Limited Mode
-              </div>
-            </div>
+              text="Limited Mode"
+            />
           )}
           <div className="px-3.5 pt-2.5">
             <Hr />

@@ -31,7 +31,7 @@ const Decks = () => {
   const {
     addRecentDeck,
     isMobile,
-    playtest,
+    playtestMode,
     preconDecks,
     showFloatingButtons,
     setShowFloatingButtons,
@@ -248,7 +248,7 @@ const Decks = () => {
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
             <div className="flex max-sm:flex-col sm:gap-4 lg:gap-6 xl:gap-8">
-              {playtest ||
+              {playtestMode ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
                 Object.keys(deck.library).some((cardid) => cardid > 110000)

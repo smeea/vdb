@@ -37,14 +37,14 @@ const CryptSearchForm = () => {
     setShowCryptSearch,
     inventoryMode,
     isMobile,
-    playtest,
+    playtestMode,
     limitedMode,
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const limitedCrypt = useSnapshot(limitedStore).crypt;
   const cryptFormState = useSnapshot(searchCryptForm);
   const { filterCrypt } = useFilters(
-    limitedMode ? limitedCrypt : cryptCardBase,
+    limitedMode ? limitedCrypt : cryptCardBase
   );
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
@@ -147,13 +147,13 @@ const CryptSearchForm = () => {
     navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterCrypt(sanitizedForm).filter(
-      (card) => playtest || card.Id < 210000,
+      (card) => playtestMode || card.Id < 210000
     );
 
     if (!isMobile) {
       if (hideMissing && inventoryMode) {
         setPreresults(() =>
-          filteredCards.filter((card) => inventoryCrypt[card.Id]),
+          filteredCards.filter((card) => inventoryCrypt[card.Id])
         );
       } else {
         setPreresults(filteredCards);
@@ -161,7 +161,7 @@ const CryptSearchForm = () => {
     } else {
       if (hideMissing && inventoryMode) {
         setCryptResults(
-          filteredCards.filter((card) => inventoryCrypt[card.Id]),
+          filteredCards.filter((card) => inventoryCrypt[card.Id])
         );
       } else {
         setCryptResults(filteredCards);
@@ -214,9 +214,10 @@ const CryptSearchForm = () => {
       cryptFormState.votes,
       hideMissing,
       inventoryMode,
-      cryptCardBase,
       limitedMode,
-    ],
+      playtestMode,
+      cryptCardBase,
+    ]
   );
 
   useDebounce(() => testInputsAndSearch(), 400, [
@@ -224,6 +225,8 @@ const CryptSearchForm = () => {
     cryptFormState.text,
     hideMissing,
     inventoryMode,
+    limitedMode,
+    playtestMode,
     cryptCardBase,
   ]);
 

@@ -4,14 +4,14 @@ import { AccountPlaytestModal, ButtonIconed, Toggle } from '@/components';
 import { useApp } from '@/context';
 
 const AccountPlaytestButtons = () => {
-  const { playtest, isPlaytestAdmin, togglePlaytest } = useApp();
+  const { playtestSwitch, isPlaytestAdmin, togglePlaytestSwitch } = useApp();
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       <div className="flex items-center justify-between">
-        <Toggle isOn={playtest} toggle={togglePlaytest}>
-          Playtest Mode
+        <Toggle isOn={playtestSwitch} toggle={togglePlaytestSwitch}>
+          Playtest
         </Toggle>
         {isPlaytestAdmin && (
           <ButtonIconed

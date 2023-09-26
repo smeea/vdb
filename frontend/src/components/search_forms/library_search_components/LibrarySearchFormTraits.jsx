@@ -3,7 +3,7 @@ import { Checkbox } from '@/components';
 import { useApp } from '@/context';
 
 const LibrarySearchFormTraits = ({ value, onChange }) => {
-  const { playtest } = useApp();
+  const { playtestMode } = useApp();
 
   return (
     <div className="space-y-1">
@@ -53,7 +53,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ['no-requirements', 'No Requirement'],
             ['playtest', 'Playtest'],
           ]
-            .filter((i) => i[0] !== 'playtest' || playtest)
+            .filter((i) => i[0] !== 'playtest' || playtestMode)
             .map((i, index) => (
               <Checkbox
                 key={index}

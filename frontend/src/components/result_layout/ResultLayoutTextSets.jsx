@@ -45,13 +45,13 @@ const PopoverText = ({ sets, set }) => {
 };
 
 const Sets = ({ sets, setImageSet, setSelectedSet }) => {
-  const { playtest, isMobile } = useApp();
+  const { playtestMode, isMobile } = useApp();
   const byDate = (a, b) => {
     return setsAndPrecons[a].date > setsAndPrecons[b].date;
   };
 
   return Object.keys(sets)
-    .filter((set) => playtest || set !== 'PLAYTEST')
+    .filter((set) => playtestMode || set !== 'PLAYTEST')
     .sort(byDate)
     .map((set, index) => {
       const preconsShort = Object.keys(sets[set]).join('/');

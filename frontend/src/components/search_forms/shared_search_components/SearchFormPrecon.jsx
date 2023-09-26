@@ -11,7 +11,7 @@ import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
-  const { playtest, isMobile, isXWide } = useApp();
+  const { playtestMode, isMobile, isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'precon';
 
@@ -39,7 +39,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   ];
 
   Object.keys(setsAndPrecons)
-    .filter((i) => playtest || i !== 'PLAYTEST')
+    .filter((i) => playtestMode || i !== 'PLAYTEST')
     .map((set) => {
       if (setsAndPrecons[set].precons) {
         const year = setsAndPrecons[set].date.slice(2, 4);
