@@ -2,6 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import ArchiveFill from '@/assets/images/icons/archive-fill.svg?react';
 import CalculatorFill from '@/assets/images/icons/calculator-fill.svg?react';
+import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
 import { Hr, UsedDescription } from '@/components';
 import { deckStore, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
@@ -17,13 +18,13 @@ const UsedPopover = ({ cardid }) => {
   const hardUsedTotal = getHardTotal(usedCards.hard[cardid]);
   let inInventory =
     cardid > 200000 ? inventoryCrypt[cardid]?.q : inventoryLibrary[cardid]?.q;
+  const text =
+    cardid > 200000 ? inventoryCrypt[cardid]?.t : inventoryLibrary[cardid]?.t;
   if (!inInventory) inInventory = 0;
 
   return (
     <div className="max-w-[250px] space-y-1">
-      {softUsedMax == 0 && hardUsedTotal == 0 ? (
-        <div>Not used in inventory decks</div>
-      ) : (
+      {(softUsedMax !== 0 || hardUsedTotal !== 0) && (
         <>
           {softUsedMax > 0 && (
             <UsedDescription
@@ -39,9 +40,9 @@ const UsedPopover = ({ cardid }) => {
               inventoryType="h"
             />
           )}
+          <Hr />
         </>
       )}
-      <Hr />
       <div className="flex items-center space-x-1">
         <div className="opacity-40">
           <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
@@ -56,6 +57,17 @@ const UsedPopover = ({ cardid }) => {
         <b>{inInventory}</b>
         <div>- In Inventory</div>
       </div>
+      {text && (
+        <>
+          <Hr />
+          <div className="flex items-center space-x-1">
+            <div className="opacity-40">
+              <ChatLeftQuoteFill width="14" height="14" viewBox="0 0 16 16" />
+            </div>
+            <div>{text}</div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
