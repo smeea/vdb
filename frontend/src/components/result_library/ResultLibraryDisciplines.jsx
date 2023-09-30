@@ -5,7 +5,7 @@ const ResultLibraryDisciplines = ({ value }) => {
   if (value.indexOf('&') != -1) {
     const disciplines = value.split(' & ');
     return (
-      <div className="flex flex-wrap items-center justify-center">
+      <div className="flex flex-wrap items-center justify-center min-w-[55px]">
         <ResultDisciplineImage value={disciplines[0]} />+
         <ResultDisciplineImage value={disciplines[1]} />
       </div>
