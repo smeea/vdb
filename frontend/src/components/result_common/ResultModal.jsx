@@ -122,13 +122,13 @@ const ResultModal = ({
         )}
         <div
           onClick={() => handleModalCardChange(-1)}
-          className="absolute bottom-1/2 left-0 h-[50px] text-darkGray/50 dark:text-midGray/50 sm:left-[-40px] sm:text-white sm:dark:text-bgCheckboxDark"
+          className="absolute bottom-1/2 left-0 h-[50px] text-darkGray/50 dark:text-midGray/50 sm:left-[-40px] sm:text-white sm:dark:text-whiteDark"
         >
           <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
         </div>
         <div
           onClick={() => handleModalCardChange(1)}
-          className="absolute bottom-1/2 right-0 h-[50px] text-darkGray/50 dark:text-midGray/50 sm:right-[-40px] sm:text-white sm:dark:text-bgCheckboxDark"
+          className="absolute bottom-1/2 right-0 h-[50px] text-darkGray/50 dark:text-midGray/50 sm:right-[-40px] sm:text-white sm:dark:text-whiteDark"
         >
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>

@@ -27,7 +27,7 @@ const ResultUsed = ({ card }) => {
         <div
           className={`mx-1 flex items-center space-x-1 px-0.5 ${
             inInventory < softUsedMax + hardUsedTotal
-              ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
+              ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
               : ''
           }
                   `}

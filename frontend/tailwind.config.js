@@ -47,8 +47,6 @@ module.exports = {
       bgButtonDark: '#404050',
       bgButtonSecondary: '#ffffff',
       bgButtonSecondaryDark: '#303040',
-      bgCheckbox: '#ffffff',
-      bgCheckboxDark: '#eeeeee',
       bgCheckboxSelected: '#7070ff',
       bgCheckboxSelectedDark: '#6060d0',
       bgError: '#f04040',

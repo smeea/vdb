@@ -47,7 +47,7 @@ const TwdResultLibraryKeyCardsTableRow = ({
             <div
               className={`flex justify-center text-lg ${
                 inInventory < card.q
-                  ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
+                  ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
                   : inInventory - hardUsedTotal < card.q
                   ? 'bg-bgWarning dark:bg-bgWarningDark'
                   : ''

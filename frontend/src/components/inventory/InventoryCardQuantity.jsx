@@ -56,7 +56,7 @@ const InventoryCardQuantity = ({
           <div
             className={
               state < softUsedMax + hardUsedTotal
-                ? 'mx-1 flex w-full justify-center bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
+                ? 'mx-1 flex w-full justify-center bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
                 : null
             }
           >
@@ -95,7 +95,7 @@ const InventoryCardQuantity = ({
                 ? ''
                 : `mx-1 flex w-full justify-center ${
                     state < softUsedMax + hardUsedTotal
-                      ? 'bg-bgError text-bgCheckbox dark:bg-bgErrorDark dark:text-bgCheckboxDark'
+                      ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
                       : ''
                   }`
             }

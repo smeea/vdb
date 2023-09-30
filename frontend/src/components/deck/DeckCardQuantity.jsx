@@ -40,20 +40,20 @@ const DeckCardQuantity = ({
         if (inProxy) {
           return inInventory + (isSelected ? q : 0) <
             softUsedMax + hardUsedTotal
-            ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
+            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
             : '';
         } else {
           return inInventory >= softUsedMax + hardUsedTotal
             ? ''
             : inInventory < q
-            ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
+            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
             : 'bg-bgWarning dark:bg-bgWarningDark';
         }
       } else {
         return inInventory - softUsedMax - hardUsedTotal >= q
           ? ''
           : inInventory < q
-          ? 'bg-bgError dark:bg-bgErrorDark text-bgCheckbox dark:text-bgCheckboxDark'
+          ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
           : 'bg-bgWarning dark:bg-bgWarningDark';
       }
     } else {
