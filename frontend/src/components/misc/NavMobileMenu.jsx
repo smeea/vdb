@@ -2,8 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg?react';
-import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
-import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
 import List from '@/assets/images/icons/list.svg?react';
 import { NavMobileToggle, LanguageMenu, ThemeSelect, Hr } from '@/components';
 import { useApp } from '@/context';
@@ -15,6 +13,9 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
     inventoryMode,
     toggleLimitedMode,
     toggleInventoryMode,
+    playtestSwitch,
+    playtestMode,
+    togglePlaytestMode,
     username,
   } = useApp();
 
@@ -64,28 +65,14 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             </NavLink>
           </div>
           <ThemeSelect setShowMenu={setShowMenu} />
-          <div
-            className="flex items-center space-x-2 px-3 py-1.5"
-            onClick={() => {
+          <NavMobileToggle
+            isOn={inventoryMode}
+            onToggle={() => {
               toggleInventoryMode();
               setShowMenu(false);
             }}
-          >
-            <div className="flex min-w-[30px] justify-center">
-              {inventoryMode ? (
-                <ToggleOn height="26" width="26" viewBox="0 0 16 16" />
-              ) : (
-                <ToggleOff height="26" width="26" viewBox="0 0 16 16" />
-              )}
-            </div>
-            <div
-              className={`whitespace-nowrap ${
-                inventoryMode ? '' : 'text-midGray dark:text-midGrayDark'
-              }`}
-            >
-              Inventory Mode
-            </div>
-          </div>
+            text="Inventory Mode"
+          />
           {limitedSwitch && (
             <NavMobileToggle
               isOn={limitedMode}
@@ -94,6 +81,16 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
                 setShowMenu(false);
               }}
               text="Limited Mode"
+            />
+          )}
+          {playtestSwitch && (
+            <NavMobileToggle
+              isOn={playtestMode}
+              onToggle={() => {
+                togglePlaytestMode();
+                setShowMenu(false);
+              }}
+              text="Playtest Mode"
             />
           )}
           <div className="px-3.5 pt-2.5">
