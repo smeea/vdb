@@ -3,20 +3,20 @@ from deck_import import deck_import
 
 
 playtest_files = {
-    # "playtest-precon-ravnos-round3.txt": "PR",
-    # "playtest-precon-tzimisce-round3.txt": "PTz",
-    # "playtest-precon-salubri-round3.txt": "PSal",
-    # "playtest-precon-hecata-round1.txt": "PH",
-    # "playtest-precon-lasombra-round1.txt": "PL",
-    # "playtest-tod-banuhaqim.txt": "TBh",
-    # "playtest-tod-brujah.txt": "TBr",
-    # "playtest-tod-gangrel.txt": "TG",
-    # "playtest-tod-malkavian.txt": "TMa",
-    # "playtest-tod-ministry.txt": "TMi",
-    # "playtest-tod-nosferatu.txt": "TN",
+    "playtest-precon-ravnos-round3.txt": "PR",
+    "playtest-precon-tzimisce-round3.txt": "PTz",
+    "playtest-precon-salubri-round3.txt": "PSal",
+    "playtest-precon-hecata-round1.txt": "PH",
+    "playtest-precon-lasombra-round1.txt": "PL",
+    "playtest-tod-banuhaqim.txt": "TBh",
+    "playtest-tod-brujah.txt": "TBr",
+    "playtest-tod-gangrel.txt": "TG",
+    "playtest-tod-malkavian.txt": "TMa",
+    "playtest-tod-ministry.txt": "TMi",
+    "playtest-tod-nosferatu.txt": "TN",
     "playtest-tod-toreador.txt": "TTo",
-    # "playtest-tod-tremere.txt": "TTr",
-    # "playtest-tod-ventrue.txt": "TV",
+    "playtest-tod-tremere.txt": "TTr",
+    "playtest-tod-ventrue.txt": "TV",
 }
 
 playtest_cards = {}
