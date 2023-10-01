@@ -117,9 +117,7 @@ export const AppProvider = (props) => {
       cardServices
         .getPreconDecks(data.crypt, data.library)
         .then((preconData) => {
-          if (isIndexedDB) {
-            set('preconDecks', preconData);
-          }
+          if (isIndexedDB) set('preconDecks', preconData);
           setPreconDecks(preconData);
         });
     });

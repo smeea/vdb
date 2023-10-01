@@ -9813,6 +9813,9 @@
         "Set":{
             "NB":{
                 "PTo":"1"
+            },
+            "PLAYTEST":{
+                "TTo":1
             }
         },
         "Title":"",
@@ -10246,6 +10249,9 @@
             },
             "NB":{
                 "PTo":"1"
+            },
+            "PLAYTEST":{
+                "TTo":1
             }
         },
         "Title":"prince",
@@ -18455,6 +18461,9 @@
             },
             "NB":{
                 "PTo":"1"
+            },
+            "PLAYTEST":{
+                "TTo":2
             }
         },
         "Title":"prince",
@@ -34715,6 +34724,9 @@
         "Set":{
             "Promo":{
                 "2022-07-30":true
+            },
+            "PLAYTEST":{
+                "TTo":1
             }
         },
         "Title":"primogen",
@@ -38886,6 +38898,9 @@
             },
             "NB":{
                 "PTo":"1"
+            },
+            "PLAYTEST":{
+                "TTo":2
             }
         },
         "Title":"prince",

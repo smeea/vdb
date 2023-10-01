@@ -162,6 +162,15 @@ playtest_bundles = {
         "PR": {},
         "PSal": {},
         "PTz": {},
+        "TBh": {},
+        "TBr": {},
+        "TG": {},
+        "TMa": {},
+        "TMi": {},
+        "TN": {},
+        "TTo": {},
+        "TTr": {},
+        "TV": {},
     },
 }
 

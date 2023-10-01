@@ -4,8 +4,8 @@
 - Backend update_deck_route and remove_deck_route errors
 
 # FEATURES
-- TWD Deck check documentation
 - Mark inventory notes + sort
+- TWD Deck check documentation
 
 # MAYBE LATER FEATURES
 - Offline decks/inventory storage

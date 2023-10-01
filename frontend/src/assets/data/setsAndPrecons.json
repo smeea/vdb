@@ -30,6 +30,42 @@
       "PTz": {
         "name": "Tzimisce",
         "clan": "Tzimisce"
+      },
+      "TBh": {
+        "name": "ToD - Banu Haqim",
+        "clan": "Banu Haqim"
+      },
+      "TBr": {
+        "name": "ToD - Brujah",
+        "clan": "Brujah"
+      },
+      "TG": {
+        "name": "ToD - Gangrel",
+        "clan": "Gangrel"
+      },
+      "TMa": {
+        "name": "ToD - Malkavian",
+        "clan": "Malkavian"
+      },
+      "TMi": {
+        "name": "ToD - Ministry",
+        "clan": "Ministry"
+      },
+      "TN": {
+        "name": "ToD - Nosferatu",
+        "clan": "Nosferatu"
+      },
+      "TTo": {
+        "name": "ToD - Toreador",
+        "clan": "Toreador"
+      },
+      "TTr": {
+        "name": "ToD - Tremere",
+        "clan": "Tremere"
+      },
+      "TV": {
+        "name": "ToD - Ventrue",
+        "clan": "Ventrue"
       }
     }
   },

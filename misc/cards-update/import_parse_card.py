@@ -42,6 +42,7 @@ def import_parse_card(i, cardbase):
                     id = cardbase[cardname][group]
 
     elif cardMatch := re.match(r"^\s*([0-9]+)x?\s+(.*?)(\s+\d+.*):(.*)", i):
+
         quantity = int(cardMatch.group(1))
         cardname = cardMatch.group(2)
         group = cardMatch.group(4)
