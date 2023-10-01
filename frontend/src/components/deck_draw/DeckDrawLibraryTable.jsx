@@ -3,6 +3,7 @@ import { ResultLibraryTableRowCommon, DeckDrawProbability } from '@/components';
 
 const DeckDrawLibraryTable = ({
   handleClick,
+  shouldShowModal,
   restCards,
   resultCards,
   ashHeap,
@@ -40,6 +41,7 @@ const DeckDrawLibraryTable = ({
               <ResultLibraryTableRowCommon
                 card={card}
                 handleClick={() => handleClick(idx)}
+                shouldShowModal={shouldShowModal}
               />
               <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
                 {!ashHeap && (

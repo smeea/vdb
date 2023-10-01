@@ -4,6 +4,7 @@ import { useKeyDisciplines } from '@/hooks';
 
 const DeckDrawCryptTable = ({
   handleClick,
+  shouldShowModal,
   restCards,
   resultCards,
   ashHeap,
@@ -43,6 +44,7 @@ const DeckDrawCryptTable = ({
             >
               <ResultCryptTableRowCommon
                 card={card}
+                shouldShowModal={shouldShowModal}
                 handleClick={() => handleClick(idx)}
                 keyDisciplines={keyDisciplines}
                 disciplinesSet={disciplinesSet}

@@ -200,6 +200,7 @@ const DeckDrawModal = ({
                   </div>
                   <DeckDrawCryptTable
                     handleClick={handleModalCardOpen}
+                    shouldShowModal={shouldShowModal}
                     resultCards={burnedCrypt}
                     ashHeap
                   />
@@ -236,6 +237,7 @@ const DeckDrawModal = ({
                   </div>
                   <DeckDrawLibraryTable
                     handleClick={handleModalSideCardOpen}
+                    shouldShowModal={shouldShowModal}
                     resultCards={burnedLibrary}
                     placement={isNarrow ? 'bottom' : 'right'}
                     ashHeap
