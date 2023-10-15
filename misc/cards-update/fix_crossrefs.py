@@ -37,8 +37,9 @@ with open("cardbase_crypt.json", "r+") as crypt_file, open(
 
             if name not in blacklist and name not in card[
                     'Name'] and name in card['Card Text']:
-                if f"/{name}/" in card['Card Text'] or name in ['Flash', 'Grenade'] and 'Flash Grenade' in card['Card Text']:
+                if f"/{name}/" in card['Card Text'] or name in ['Hazimel'] and 'Eye of Hazimel' in card['Card Text'] or name in ['Flash', 'Grenade'] and 'Flash Grenade' in card['Card Text']:
                     pass
+
                     # print(f"OK: {card['Name']} -> /{other_card['Name']}/")
                 else:
                     if int(id) > 200000:
