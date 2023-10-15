@@ -127,7 +127,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               <InventoryAddDeckRow
                 key={deck.deckid}
                 deck={deck}
-                defaultTagsOptions={defaultTagsOptions}
+                allTagsOptions={defaultTagsOptions}
                 idx={idx}
               />
             );

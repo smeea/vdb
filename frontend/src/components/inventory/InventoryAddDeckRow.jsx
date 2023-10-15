@@ -16,7 +16,7 @@ import { getClan } from '@/utils';
 import { useDeckInInventory } from '@/hooks';
 import { useApp, deckUpdate } from '@/context';
 
-const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
+const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
   const { isDesktop, isMobile } = useApp();
   const [showDeck, setShowDeck] = useState();
   const inInventory = useDeckInInventory(deck);
@@ -104,7 +104,7 @@ const InventoryAddDeckRow = ({ deck, defaultTagsOptions, idx }) => {
       )}
       {!isMobile && (
         <td className="w-full">
-          <DeckTags deck={deck} defaultTagsOptions={defaultTagsOptions} />
+          <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered />
         </td>
       )}
       <td className="min-w-[110px]">
