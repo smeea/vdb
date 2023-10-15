@@ -155,7 +155,7 @@ const DeckSelectAdvModalTableRow = ({
       {!short && (
         <>
           <td className="w-full">
-            <DeckTags deck={deck} allTagsOptions={allTagsOptions} />
+            <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered />
           </td>
           <td>
             <div className="flex justify-end space-x-1">
