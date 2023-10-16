@@ -18,6 +18,7 @@ const Diff = () => {
   const {
     addRecentDeck,
     preconDecks,
+    playtestMode,
     cryptCardBase,
     libraryCardBase,
     isMobile,
@@ -55,7 +56,7 @@ const Diff = () => {
         const cardsData = useDeck(
           deckData.cards,
           cryptCardBase,
-          libraryCardBase,
+          libraryCardBase
         );
 
         const d = {
@@ -200,22 +201,36 @@ const Diff = () => {
 
           {deck && deckTo && (
             <div className="flex max-sm:flex-col sm:gap-4 lg:gap-6 xl:gap-8">
-              <div className="basis-full sm:basis-5/9">
-                <DiffCrypt
-                  deckid={deck.deckid}
-                  isEditable={deck.isAuthor && !deck.isPublic && !deck.isFrozen}
-                  cardsFrom={deck.crypt}
-                  cardsTo={deckTo.crypt}
-                />
-              </div>
-              <div className="basis-full sm:basis-4/9">
-                <DiffLibrary
-                  deckid={deck.deckid}
-                  isEditable={deck.isAuthor && !deck.isPublic && !deck.isFrozen}
-                  cardsFrom={deck.library}
-                  cardsTo={deckTo.library}
-                />
-              </div>
+              {playtestMode ||
+              !(
+                Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
+                Object.keys(deck.library).some((cardid) => cardid > 110000)
+              ) ? (
+                <>
+                  <div className="basis-full sm:basis-5/9">
+                    <DiffCrypt
+                      deckid={deck.deckid}
+                      isEditable={
+                        deck.isAuthor && !deck.isPublic && !deck.isFrozen
+                      }
+                      cardsFrom={deck.crypt}
+                      cardsTo={deckTo.crypt}
+                    />
+                  </div>
+                  <div className="basis-full sm:basis-4/9">
+                    <DiffLibrary
+                      deckid={deck.deckid}
+                      isEditable={
+                        deck.isAuthor && !deck.isPublic && !deck.isFrozen
+                      }
+                      cardsFrom={deck.library}
+                      cardsTo={deckTo.library}
+                    />
+                  </div>
+                </>
+              ) : (
+                <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
+              )}
             </div>
           )}
         </div>
