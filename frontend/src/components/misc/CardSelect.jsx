@@ -16,6 +16,7 @@ const CardSelect = React.forwardRef(
       placeholder = 'Enter Card Name',
       autoFocus,
       onChange,
+      placement,
     },
     ref
   ) => {
@@ -103,7 +104,7 @@ const CardSelect = React.forwardRef(
         cacheOptions
         getOptionLabel={getOptionLabel}
         loadOptions={loadOptions}
-        menuPlacement={isMobile ? 'top' : 'bottom'}
+        menuPlacement={placement ? placement : isMobile ? 'top' : 'bottom'}
         onChange={onChange}
         placeholder={placeholder}
         ref={ref}
