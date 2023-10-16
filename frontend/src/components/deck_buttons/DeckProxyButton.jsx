@@ -27,15 +27,6 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState();
 
-  const checkImage = async (url) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onload = () => {
-      if (xhr.readyState === 4) return xhr.status === 200;
-    };
-    xhr.send(null);
-  };
-
   const proxyCards = async (crypt, library, format) => {
     setIsLoading(true);
 
@@ -84,14 +75,8 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     let counterY = 0;
     let page = 1;
 
-    Object.values(cards).map((card) => {
+    Object.values(cards).map(async (card) => {
       const img = new Image();
-
-      if (card.url.otherUrl && checkImage(`${card.url.otherUrl}.jpg`)) {
-        img.src = `${card.url.otherUrl}.jpg`;
-      } else {
-        img.src = `${card.url.baseUrl}.jpg`;
-      }
 
       for (let i = 0; i < card.q; i++) {
         pdf.rect(
@@ -102,14 +87,27 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           'F'
         );
 
-        pdf.addImage(
-          img,
-          'JPEG',
-          (w + gap) * counterX + marginLeft,
-          (h + gap) * counterY + marginTop,
-          w,
-          h
-        );
+        try {
+          img.src = `${card.url.otherUrl}.jpg`;
+          pdf.addImage(
+            img,
+            'JPEG',
+            (w + gap) * counterX + marginLeft,
+            (h + gap) * counterY + marginTop,
+            w,
+            h
+          );
+        } catch {
+          img.src = `${card.url.baseUrl}.jpg`;
+          pdf.addImage(
+            img,
+            'JPEG',
+            (w + gap) * counterX + marginLeft,
+            (h + gap) * counterY + marginTop,
+            w,
+            h
+          );
+        }
 
         counterX += 1;
 
