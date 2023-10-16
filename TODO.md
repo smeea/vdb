@@ -6,7 +6,6 @@
 - Debounce to add note + notes indicator
 - Twd card search autocompletion mobile bottom
 - Compare deck (email)
-- Switch to Precons on select of Recent deck
 
 # FEATURES
 - Mark inventory notes + sort

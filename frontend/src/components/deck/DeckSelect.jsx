@@ -50,7 +50,7 @@ const DeckSelect = ({
     } else if (decks?.[deckid]) {
       setSelectFrom('my');
     } else {
-      setSelectFrom('precons');
+      setSelectFrom('recent');
     }
   }, [deckid, decks]);
 
