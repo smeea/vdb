@@ -5,8 +5,8 @@
 - Playtest cards in inventory - don't allow add, don't show
 - Debounce to add note + notes indicator
 - Twd card search autocompletion mobile bottom
-- Clan icon to custom deck
 - Compare deck (email)
+- Switch to Precons on select of Recent deck
 
 # FEATURES
 - Mark inventory notes + sort

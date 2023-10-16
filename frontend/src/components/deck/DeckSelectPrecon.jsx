@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Select } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { ResultPreconClan } from '@/components';
@@ -7,17 +7,18 @@ import { useApp } from '@/context';
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const { isMobile, playtestMode } = useApp();
 
-  const options = [];
-  Object.keys(setsAndPrecons)
-    .filter((i) => playtestMode || i !== 'PLAYTEST')
-    .map((set) => {
-      if (setsAndPrecons[set].precons) {
+  const options = useMemo(() => {
+    const opts = [];
+    Object.keys(setsAndPrecons)
+      .filter((i) => playtestMode || i !== 'PLAYTEST')
+      .filter((i) => setsAndPrecons[i].precons)
+      .map((set) => {
         const year = setsAndPrecons[set].date.slice(2, 4);
         Object.keys(setsAndPrecons[set].precons).map((precon) => {
           const fullName = setsAndPrecons[set].precons[precon].name;
           const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
-          options.push({
+          opts.push({
             value: `${set}:${precon}`,
             name: 'precon',
             label: (
@@ -41,8 +42,9 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
             ),
           });
         });
-      }
-    });
+      });
+    return opts;
+  }, []);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1];
@@ -55,18 +57,16 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   };
 
   return (
-    <>
-      <Select
-        options={options}
-        isSearchable={!isMobile}
-        name="decks"
-        maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
-        filterOption={filterOption}
-        placeholder="Select Deck"
-        value={options.find((obj) => obj.value === deckid)}
-        onChange={handleSelect}
-      />
-    </>
+    <Select
+      options={options}
+      isSearchable={!isMobile}
+      name="decks"
+      maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
+      filterOption={filterOption}
+      placeholder="Select Deck"
+      value={options.find((obj) => obj.value === deckid)}
+      onChange={handleSelect}
+    />
   );
 };
 
