@@ -23,9 +23,9 @@ const DeckSelectRecent = ({ deckid, handleSelect }) => {
       label: (
         <div className="flex justify-between">
           {i.name}
-          <span className="text-midGray dark:text-midGrayDark">
+          <div className="flex w-[20px] items-center justify-center text-midGray dark:text-midGrayDark">
             {getIcon(i.src)}
-          </span>
+          </div>
         </div>
       ),
     };
