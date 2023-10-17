@@ -31,7 +31,7 @@ const DeckLibraryTableRow = ({
   inMissing,
   shouldShowModal,
 }) => {
-  const { limitedMode, inventoryMode, isMobile } = useApp();
+  const { limitedMode, inventoryMode, isDesktop } = useApp();
   const decks = useSnapshot(deckStore).decks;
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
@@ -95,7 +95,7 @@ const DeckLibraryTableRow = ({
         deck.inventoryType &&
         !inMissing &&
         !inSearch &&
-        !isMobile && (
+        isDesktop && (
           <td className="max-w-0">
             <div className="relative flex items-center">
               <div
