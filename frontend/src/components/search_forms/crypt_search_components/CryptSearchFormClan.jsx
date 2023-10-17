@@ -78,7 +78,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase()
+              (obj) => obj.value === value.value[0].toLowerCase(),
             )}
             onChange={onChange}
           />

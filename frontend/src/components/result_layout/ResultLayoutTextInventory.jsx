@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import ArchiveFill from '@/assets/images/icons/archive-fill.svg?react';
 import CalculatorFill from '@/assets/images/icons/calculator-fill.svg?react';
-import { Hr, InventoryText, UsedDescription } from '@/components';
+import { InventoryText, UsedDescription } from '@/components';
 import { inventoryStore, usedStore, deckStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
 

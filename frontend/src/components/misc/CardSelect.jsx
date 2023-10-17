@@ -18,13 +18,11 @@ const CardSelect = React.forwardRef(
       onChange,
       placement,
     },
-    ref
+    ref,
   ) => {
     const { isMobile, cryptCardBase, libraryCardBase, playtestMode } = useApp();
     const { filterCrypt } = useFilters(cryptCardBase);
     const { filterLibrary } = useFilters(libraryCardBase);
-
-    console.log(inInventory);
 
     const getOptionLabel = (option) => {
       const cardid = option.value;
@@ -113,7 +111,7 @@ const CardSelect = React.forwardRef(
         value={value}
       />
     );
-  }
+  },
 );
 CardSelect.displayName = 'CardSelect';
 
