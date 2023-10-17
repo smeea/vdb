@@ -10,7 +10,7 @@ const useInventoryLibrary = (
   category = 'ok',
   compact,
   type,
-  discipline,
+  discipline
 ) => {
   const usedLibrary = useSnapshot(usedStore).library;
   const { libraryCardBase } = useApp();
@@ -39,7 +39,7 @@ const useInventoryLibrary = (
     (i) => {
       cardsByDiscipline[i] = {};
       missingByDiscipline[i] = {};
-    },
+    }
   );
 
   if (compact) {
@@ -127,145 +127,149 @@ const useInventoryLibrary = (
       }
     });
 
-    Object.keys(usedLibrary.soft).map((cardid) => {
-      if (!cards[cardid]) {
-        const types = libraryCardBase[cardid].Type.split('/');
-        const d = libraryCardBase[cardid].Discipline;
-        let disciplines = ['None'];
-        if (d.includes('/')) {
-          disciplines = d.split('/');
-        } else if (d.includes(' & ')) {
-          disciplines = d.split(' & ');
-        } else if (d) {
-          disciplines = [d];
-        }
+    Object.keys(usedLibrary.soft)
+      .filter((cardid) => !cardid > 110000)
+      .map((cardid) => {
+        if (!cards[cardid]) {
+          const types = libraryCardBase[cardid].Type.split('/');
+          const d = libraryCardBase[cardid].Discipline;
+          let disciplines = ['None'];
+          if (d.includes('/')) {
+            disciplines = d.split('/');
+          } else if (d.includes(' & ')) {
+            disciplines = d.split(' & ');
+          } else if (d) {
+            disciplines = [d];
+          }
 
-        if (category != 'ok') {
-          types.map((t) => {
-            cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
-          });
-          cardsByType['All'][cardid] = { q: 0, c: libraryCardBase[cardid] };
-          cardsByDiscipline['All'][cardid] = {
-            q: 0,
-            c: libraryCardBase[cardid],
-          };
-
-          if (disciplines) {
-            disciplines.map((i) => {
-              cardsByDiscipline[i][cardid] = {
-                q: 0,
-                c: libraryCardBase[cardid],
-              };
+          if (category != 'ok') {
+            types.map((t) => {
+              cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
             });
-          } else {
-            cardsByDiscipline['None'][cardid] = {
+            cardsByType['All'][cardid] = { q: 0, c: libraryCardBase[cardid] };
+            cardsByDiscipline['All'][cardid] = {
               q: 0,
               c: libraryCardBase[cardid],
             };
+
+            if (disciplines) {
+              disciplines.map((i) => {
+                cardsByDiscipline[i][cardid] = {
+                  q: 0,
+                  c: libraryCardBase[cardid],
+                };
+              });
+            } else {
+              cardsByDiscipline['None'][cardid] = {
+                q: 0,
+                c: libraryCardBase[cardid],
+              };
+            }
           }
-        }
 
-        const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
+          const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
 
-        types.map((t) => {
-          missingByType[t][cardid] = {
+          types.map((t) => {
+            missingByType[t][cardid] = {
+              q: softUsedMax,
+              c: libraryCardBase[cardid],
+            };
+          });
+          missingByType['All'][cardid] = {
             q: softUsedMax,
             c: libraryCardBase[cardid],
           };
-        });
-        missingByType['All'][cardid] = {
-          q: softUsedMax,
-          c: libraryCardBase[cardid],
-        };
-
-        if (disciplines) {
-          disciplines.map((i) => {
-            missingByDiscipline[i][cardid] = {
-              q: softUsedMax,
-              c: libraryCardBase[cardid],
-            };
-            missingByDiscipline['All'][cardid] = {
-              q: softUsedMax,
-              c: libraryCardBase[cardid],
-            };
-          });
-        }
-      }
-    });
-
-    Object.keys(usedLibrary.hard).map((cardid) => {
-      if (!cards[cardid]) {
-        const types = libraryCardBase[cardid].Type.split('/');
-        const d = libraryCardBase[cardid].Discipline;
-        let disciplines = ['None'];
-        if (d.includes('/')) {
-          disciplines = d.split('/');
-        } else if (d.includes(' & ')) {
-          disciplines = d.split(' & ');
-        } else if (d) {
-          disciplines = [d];
-        }
-
-        if (category != 'ok') {
-          types.map((t) => {
-            cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
-          });
-          cardsByType['All'][cardid] = { q: 0, c: libraryCardBase[cardid] };
-          cardsByDiscipline['All'][cardid] = {
-            q: 0,
-            c: libraryCardBase[cardid],
-          };
 
           if (disciplines) {
             disciplines.map((i) => {
-              cardsByDiscipline[i][cardid] = {
-                q: 0,
+              missingByDiscipline[i][cardid] = {
+                q: softUsedMax,
+                c: libraryCardBase[cardid],
+              };
+              missingByDiscipline['All'][cardid] = {
+                q: softUsedMax,
                 c: libraryCardBase[cardid],
               };
             });
-          } else {
-            cardsByDiscipline['None'][cardid] = {
+          }
+        }
+      });
+
+    Object.keys(usedLibrary.hard)
+      .filter((cardid) => !cardid > 110000)
+      .map((cardid) => {
+        if (!cards[cardid]) {
+          const types = libraryCardBase[cardid].Type.split('/');
+          const d = libraryCardBase[cardid].Discipline;
+          let disciplines = ['None'];
+          if (d.includes('/')) {
+            disciplines = d.split('/');
+          } else if (d.includes(' & ')) {
+            disciplines = d.split(' & ');
+          } else if (d) {
+            disciplines = [d];
+          }
+
+          if (category != 'ok') {
+            types.map((t) => {
+              cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
+            });
+            cardsByType['All'][cardid] = { q: 0, c: libraryCardBase[cardid] };
+            cardsByDiscipline['All'][cardid] = {
               q: 0,
               c: libraryCardBase[cardid],
             };
-          }
-        }
 
-        const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
-
-        types.map((t) => {
-          if (missingByType[t][cardid]) {
-            missingByType[t][cardid].q += hardUsedTotal;
-          } else {
-            missingByType[t][cardid] = {
-              q: hardUsedTotal,
-              c: libraryCardBase[cardid],
-            };
-          }
-        });
-        missingByType['All'][cardid] = {
-          q: hardUsedTotal,
-          c: libraryCardBase[cardid],
-        };
-
-        if (disciplines) {
-          disciplines.map((i) => {
-            if (missingByDiscipline[i][cardid]) {
-              missingByDiscipline[i][cardid].q += hardUsedTotal;
+            if (disciplines) {
+              disciplines.map((i) => {
+                cardsByDiscipline[i][cardid] = {
+                  q: 0,
+                  c: libraryCardBase[cardid],
+                };
+              });
             } else {
-              missingByDiscipline[i][cardid] = {
+              cardsByDiscipline['None'][cardid] = {
+                q: 0,
+                c: libraryCardBase[cardid],
+              };
+            }
+          }
+
+          const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
+
+          types.map((t) => {
+            if (missingByType[t][cardid]) {
+              missingByType[t][cardid].q += hardUsedTotal;
+            } else {
+              missingByType[t][cardid] = {
                 q: hardUsedTotal,
                 c: libraryCardBase[cardid],
               };
             }
           });
+          missingByType['All'][cardid] = {
+            q: hardUsedTotal,
+            c: libraryCardBase[cardid],
+          };
+
+          if (disciplines) {
+            disciplines.map((i) => {
+              if (missingByDiscipline[i][cardid]) {
+                missingByDiscipline[i][cardid].q += hardUsedTotal;
+              } else {
+                missingByDiscipline[i][cardid] = {
+                  q: hardUsedTotal,
+                  c: libraryCardBase[cardid],
+                };
+              }
+            });
+          }
+          missingByDiscipline['All'][cardid] = {
+            q: hardUsedTotal,
+            c: libraryCardBase[cardid],
+          };
         }
-        missingByDiscipline['All'][cardid] = {
-          q: hardUsedTotal,
-          c: libraryCardBase[cardid],
-        };
-      }
-    });
+      });
   }
 
   const cardsFilteredByType = {};

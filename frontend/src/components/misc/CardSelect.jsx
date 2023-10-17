@@ -24,6 +24,8 @@ const CardSelect = React.forwardRef(
     const { filterCrypt } = useFilters(cryptCardBase);
     const { filterLibrary } = useFilters(libraryCardBase);
 
+    console.log(inInventory);
+
     const getOptionLabel = (option) => {
       const cardid = option.value;
 
@@ -55,7 +57,7 @@ const CardSelect = React.forwardRef(
         const exactLibraryMatches = [];
 
         const filteredCryptCards = filterCrypt(input)
-          .filter((card) => playtestMode || card.Id < 210000)
+          .filter((card) => (playtestMode && !inInventory) || card.Id < 210000)
           .filter((card) => {
             if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
               exactCryptMatches.push({ value: card.Id });
@@ -68,7 +70,7 @@ const CardSelect = React.forwardRef(
           }));
 
         const filteredLibraryCards = filterLibrary(input)
-          .filter((card) => playtestMode || card.Id < 110000)
+          .filter((card) => (playtestMode && !inInventory) || card.Id < 110000)
           .filter((card) => {
             if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
               exactLibraryMatches.push({ value: card.Id });

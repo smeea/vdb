@@ -2,7 +2,6 @@
 - Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Backend update_deck_route and remove_deck_route errors
-- Playtest cards in inventory - don't allow add, don't show
 - Debounce to add note + notes indicator
 
 # FEATURES
