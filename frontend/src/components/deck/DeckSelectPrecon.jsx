@@ -44,7 +44,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
         });
       });
     return opts;
-  }, []);
+  }, [playtestMode]);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1];

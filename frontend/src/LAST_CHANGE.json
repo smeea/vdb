@@ -1,7 +1,8 @@
 {
-  "version": "2023-10-01",
+  "version": "2023-10-16",
   "changes": [
-    "Update Playtest",
+    "Add clan icon to My Decks selector",
+    "Fix PDF proxy for other than English languages",
     "Small other fixes and improvements"
   ]
 }
