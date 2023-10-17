@@ -28,7 +28,6 @@ const Inventory = () => {
     setShowFloatingButtons,
     cryptCardBase,
     libraryCardBase,
-    playtestMode,
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;

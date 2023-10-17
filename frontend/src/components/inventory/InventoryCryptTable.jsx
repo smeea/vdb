@@ -14,7 +14,7 @@ const InventoryCryptTable = ({
   newFocus,
   inShared,
 }) => {
-  const { setShowFloatingButtons } = useApp();
+  const { playtestMode, setShowFloatingButtons } = useApp();
   const sortedCards = cryptSort(cards, sortMethod);
 
   const {
@@ -30,18 +30,20 @@ const InventoryCryptTable = ({
     setShowFloatingButtons(false);
   };
 
-  const cardRows = sortedCards.map((card) => {
-    return (
-      <InventoryCryptTableRow
-        key={card.c.Id}
-        card={card}
-        compact={compact}
-        newFocus={newFocus}
-        inShared={inShared}
-        handleClick={handleClick}
-      />
-    );
-  });
+  const cardRows = sortedCards
+    .filter((card) => playtestMode || card.c.Id < 210000)
+    .map((card) => {
+      return (
+        <InventoryCryptTableRow
+          key={card.c.Id}
+          card={card}
+          compact={compact}
+          newFocus={newFocus}
+          inShared={inShared}
+          handleClick={handleClick}
+        />
+      );
+    });
 
   const Rows = ({ index, style }) => (
     <div

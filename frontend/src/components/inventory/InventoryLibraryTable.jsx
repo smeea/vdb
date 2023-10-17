@@ -14,7 +14,7 @@ const InventoryLibraryTable = ({
   newFocus,
   inShared,
 }) => {
-  const { setShowFloatingButtons } = useApp();
+  const { playtestMode, setShowFloatingButtons } = useApp();
   const sortedCards = librarySort(cards, sortMethod);
 
   const {
@@ -30,18 +30,20 @@ const InventoryLibraryTable = ({
     setShowFloatingButtons(false);
   };
 
-  const cardRows = sortedCards.map((card) => {
-    return (
-      <InventoryLibraryTableRow
-        key={card.c.Id}
-        card={card}
-        compact={compact}
-        newFocus={newFocus}
-        inShared={inShared}
-        handleClick={handleClick}
-      />
-    );
-  });
+  const cardRows = sortedCards
+    .filter((card) => playtestMode || card.c.Id < 110000)
+    .map((card) => {
+      return (
+        <InventoryLibraryTableRow
+          key={card.c.Id}
+          card={card}
+          compact={compact}
+          newFocus={newFocus}
+          inShared={inShared}
+          handleClick={handleClick}
+        />
+      );
+    });
 
   const Rows = ({ index, style }) => (
     <div

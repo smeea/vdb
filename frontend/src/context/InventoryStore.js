@@ -39,12 +39,21 @@ export const inventoryCardsAdd = (cards) => {
     JSON.stringify(inventoryStore.library)
   );
 
-  inventoryServices.addCards(cards).catch(() => {
+  const filteredCards = {};
+  Object.keys(cards)
+    .filter(
+      (cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000))
+    )
+    .map((cardid) => {
+      filteredCards[cardid] = cards[cardid];
+    });
+
+  inventoryServices.addCards(filteredCards).catch(() => {
     inventoryStore.crypt = initialCryptState;
     inventoryStore.library = initialLibraryState;
   });
 
-  Object.values(cards).map((card) => {
+  Object.values(filteredCards).map((card) => {
     const { q, c } = card;
 
     const store = c.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
@@ -65,6 +74,8 @@ export const inventoryCardsAdd = (cards) => {
 };
 
 export const inventoryCardChange = (card, q) => {
+  if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
+
   const initialState =
     card.Id > 200000
       ? JSON.parse(JSON.stringify(inventoryStore.crypt))
@@ -96,6 +107,8 @@ export const inventoryCardChange = (card, q) => {
 };
 
 export const inventoryCardTextChange = (card, text) => {
+  if (card.Id > 210000) return;
+
   const initialState =
     card.Id > 200000
       ? JSON.parse(JSON.stringify(inventoryStore.crypt))
