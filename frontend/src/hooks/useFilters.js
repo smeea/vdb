@@ -132,7 +132,6 @@ const missingTextQuery = (query, card) => {
       (query.in !== 'name' && cardText.includes(search));
   }
 
-  // matches the result with the logic
   return !((match && hasToMatch) || (!match && !hasToMatch));
 };
 
@@ -163,6 +162,12 @@ const missingTrait = (trait, card, traitsRegexMap) => {
       return !card['Banned'];
     case 'non-twd':
       return card['Twd'];
+    case 'multi-discipline':
+      return !(
+        card['Discipline'].includes('/') || card['Discipline'].includes('&')
+      );
+    case 'multi-type':
+      return !card['Type'].includes('/');
     case 'burn':
       return !card['Burn Option'];
     case 'no-requirements':
@@ -567,7 +572,6 @@ const missingNameOrInitials = (filter, card) => {
   );
 };
 
-// checks and filter with multiple items and logic againts the a requirements list.
 const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
   switch (logic) {
     case 'and':

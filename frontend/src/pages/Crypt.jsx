@@ -86,9 +86,7 @@ const Crypt = () => {
               <CryptSearchForm />
             </div>
             <div
-              className={`hidden ${
-                deck && addMode ? '' : 'lg:flex lg:basis-1/12'
-              }`}
+              className={deck && addMode ? 'hidden' : 'lg:flex lg:basis-1/12'}
             />
           </>
         )}

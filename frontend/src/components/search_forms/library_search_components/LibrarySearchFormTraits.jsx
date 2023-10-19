@@ -11,7 +11,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
         Traits:
       </div>
       <div className="flex">
-        <div className="w-7/12 space-y-0.5">
+        <div className="flex flex-col basis-5/9 gap-0.5">
           {[
             ['intercept', '+Intercept / -Stealth'],
             ['stealth', '+Stealth / -Intercept'],
@@ -25,7 +25,8 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ['prevent', 'Prevent'],
             ['press', 'Press'],
             ['combat ends', 'Combat Ends'],
-            ['enter combat', 'Enter Combat'],
+            ['multi-type', 'Multi-Type'],
+            ['multi-discipline', 'Multi-Discipline'],
           ].map((i, index) => (
             <Checkbox
               key={index}
@@ -37,8 +38,10 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             />
           ))}
         </div>
-        <div className="w-5/12 space-y-0.5">
+        <div className="flex flex-col basis-4/9 gap-0.5">
           {[
+            ['enter combat', 'Enter Combat'],
+            ['embrace', 'Create Vampire'],
             ['bloat', 'Blood to Uncontrolled'],
             ['bounce bleed', 'Bounce Bleed'],
             ['reduce bleed', 'Reduce Bleed'],
@@ -46,7 +49,6 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ['black hand', 'Black Hand'],
             ['seraph', 'Seraph'],
             ['infernal', 'Infernal'],
-            ['embrace', 'Create vampire'],
             ['burn', 'Burn Option'],
             ['banned', 'Banned'],
             ['non-twd', 'Not in TWD'],

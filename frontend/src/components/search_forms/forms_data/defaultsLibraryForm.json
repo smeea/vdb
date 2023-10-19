@@ -75,6 +75,8 @@
     "banned": false,
     "burn": false,
     "non-twd": false,
+    "multi-discipline": false,
+    "multi-type": false,
     "no-requirements": false,
     "playtest": false
   },
