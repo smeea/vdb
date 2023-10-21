@@ -4,7 +4,6 @@
 - Backend update_deck_route and remove_deck_route errors
 
 # FEATURES
-- Mark inventory notes + sort
 - TWD Deck check documentation
 
 # MAYBE LATER FEATURES

@@ -4,6 +4,7 @@ export { default as InventoryAddPreconModal } from './InventoryAddPreconModal.js
 export { default as InventoryAddPreconRow } from './InventoryAddPreconRow.jsx';
 export { default as InventoryButtons } from './InventoryButtons.jsx';
 export { default as InventoryCardQuantity } from './InventoryCardQuantity.jsx';
+export { default as InventoryCardQuantityDiff } from './InventoryCardQuantityDiff.jsx';
 export { default as InventoryCrypt } from './InventoryCrypt.jsx';
 export { default as InventoryCryptTable } from './InventoryCryptTable.jsx';
 export { default as InventoryCryptTableRow } from './InventoryCryptTableRow.jsx';

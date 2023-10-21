@@ -3,8 +3,8 @@ import { useSnapshot } from 'valtio';
 import { useSwipeable } from 'react-swipeable';
 import {
   CardPopover,
-  UsedPopover,
   InventoryCardQuantity,
+  InventoryCardQuantityDiff,
   ResultCryptCapacity,
   ResultCryptDisciplines,
   ResultName,
@@ -66,7 +66,7 @@ const InventoryCryptTableRow = ({
           {card.q || null}
         </div>
       ) : (
-        <div className="flex min-w-[75px] px-0.5">
+        <div className="flex min-w-[80px] px-0.5">
           <InventoryCardQuantity
             card={card}
             softUsedMax={softUsedMax}
@@ -78,27 +78,11 @@ const InventoryCryptTableRow = ({
       )}
       {!inShared && (
         <div className="flex min-w-[40px] justify-center">
-          <ConditionalTooltip
-            placement="bottom"
-            overlay={<UsedPopover cardid={card.c.Id} />}
-            disabled={isMobile}
-          >
-            <div
-              className={`${
-                card.q == softUsedMax + hardUsedTotal
-                  ? 'text-midGray dark:text-midGrayDark'
-                  : card.q >= softUsedMax + hardUsedTotal
-                  ? 'text-fgGreen dark:text-fgGreenDark'
-                  : 'text-fgRed dark:text-fgRedDark'
-              }`}
-            >
-              {card.q === softUsedMax + hardUsedTotal
-                ? '='
-                : card.q > softUsedMax + hardUsedTotal
-                ? `+${card.q - softUsedMax - hardUsedTotal}`
-                : card.q - softUsedMax - hardUsedTotal}
-            </div>
-          </ConditionalTooltip>
+          <InventoryCardQuantityDiff
+            card={card}
+            softUsedMax={softUsedMax}
+            hardUsedTotal={hardUsedTotal}
+          />
         </div>
       )}
       <div

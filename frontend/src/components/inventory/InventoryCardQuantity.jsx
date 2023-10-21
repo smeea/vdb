@@ -114,7 +114,11 @@ const InventoryCardQuantity = ({
                 />
               </form>
             ) : (
-              <>{state == 0 ? <>&nbsp;</> : state}</>
+              <>
+                {card.t && <div className="min-w-[4px]"></div>}
+                {state == 0 ? <>&nbsp;</> : state}
+                {card.t && <div className="max-w-[4px] text-xs">*</div>}
+              </>
             )}
           </div>
           {!manual && (
