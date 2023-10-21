@@ -1,8 +1,9 @@
 {
-  "version": "2023-10-16",
+  "version": "2023-10-21",
   "changes": [
-    "Add clan icon to My Decks selector",
-    "Fix PDF proxy for other than English languages",
-    "Small other fixes and improvements"
+    "Add 'Multi-discipline' and 'Multi-type' trait to library search",
+    "Add note mark (*) to card quantity in inventory",
+    "Fix missing cards in inventory",
+    "Fix card autocompletion freeze when entering non-latin letters"
   ]
 }

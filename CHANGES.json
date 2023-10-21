@@ -1,5 +1,14 @@
 [
   {
+    "version": "2023-10-21",
+    "changes": [
+      "Add 'Multi-discipline' and 'Multi-type' trait to library search",
+      "Add note mark (*) to card quantity in inventory",
+      "Fix missing cards in inventory",
+      "Fix card autocompletion freeze when entering non-latin letters"
+    ]
+  },
+  {
     "version": "2023-10-16",
     "changes": [
       "Add clan icon to My Decks selector",
