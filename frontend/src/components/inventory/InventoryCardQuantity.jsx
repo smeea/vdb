@@ -54,13 +54,15 @@ const InventoryCardQuantity = ({
             </Button>
           </a>
           <div
-            className={
+            className={`flex w-full justify-center mx-1 ${
               state < softUsedMax + hardUsedTotal
-                ? 'mx-1 flex w-full justify-center bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
-                : null
-            }
+                ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
+                : ''
+            }`}
           >
+            {card.t && <div className="min-w-[4px]"></div>}
             {state == 0 ? <>&nbsp;</> : state}
+            {card.t && <div className="max-w-[4px] text-xs">*</div>}
           </div>
           <a
             className="relative before:absolute before:inset-[-12px] before:content-[''] hover:no-underline"
