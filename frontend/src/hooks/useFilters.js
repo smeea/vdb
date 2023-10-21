@@ -457,12 +457,11 @@ const missingType = (filter, card) => {
 
 const BCP_START = '2018-01-01';
 const FUTURE = '2077-01-01';
-const PAST = '1984-01-01';
 
 const missingSet = (filter, card) => {
   const sets = filter.value;
-  const print = filter.print ? filter.print : null;
-  const age = filter.age ? filter.age : null;
+  const print = filter.print ?? null;
+  const age = filter.age ?? null;
 
   const dates = cardDates(card, true);
 
@@ -472,35 +471,45 @@ const missingSet = (filter, card) => {
         return true;
       else if (dates.max >= BCP_START) return true;
     } else {
-      let counter = 0;
-      const setDate = set !== 'bcp' ? setsAndPrecons[set].date : null;
+      const setDate = setsAndPrecons[set].date ?? FUTURE;
 
-      if (age) {
-        if (
-          (age === 'or-newer' && setDate <= dates.max) ||
-          (age === 'or-older' && setDate >= dates.min) ||
-          (age === 'not-newer' && setDate >= dates.max) ||
-          (age === 'not-older' && setDate <= dates.min)
-        )
-          counter += 1;
-      } else if (set in card.Set) counter += 1;
-
-      if (print) {
-        counter -= 1;
-
-        if (print === 'only' && Object.keys(card.Set).length === 1)
-          counter += 1;
-
-        if (
-          print === 'first' &&
-          ((set === 'Promo' && dates.minPromo <= dates.min) ||
-            dates.min === setDate)
-        )
-          counter += 1;
-
-        if (print === 'reprint' && dates.min < setDate) counter += 1;
+      switch (age) {
+        case 'or-newer':
+          if (setDate > dates.max) return false;
+          break;
+        case 'or-older':
+          if (setDate < dates.min) return false;
+          break;
+        case 'not-newer':
+          if (setDate < dates.max) return false;
+          break;
+        case 'not-older':
+          if (setDate > dates.min) return false;
+          break;
+        default:
+          if (!(set in card.Set)) return false;
       }
-      return counter === 1;
+
+      switch (print) {
+        case 'only':
+          if (Object.keys(card.Set).length !== 1) return false;
+          break;
+
+        case 'first':
+          if (
+            !(
+              (set === 'Promo' && dates.minPromo <= dates.min) ||
+              dates.min === setDate
+            )
+          )
+            return false;
+          break;
+        case 'reprint':
+          if (dates.min >= setDate) return false;
+          break;
+      }
+
+      return true;
     }
   });
 };
@@ -620,8 +629,8 @@ const cardDates = (card, addPromo = false) => {
     addPromo && promoDates ? setsDates.concat(promoDates) : setsDates;
   allDates.sort();
 
-  const minDate = allDates ? allDates[0] : FUTURE;
-  const maxDate = allDates ? allDates[allDates.length - 1] : PAST;
+  const minDate = allDates.length > 0 ? allDates[0] : FUTURE;
+  const maxDate = allDates.length > 0 ? allDates[allDates.length - 1] : FUTURE;
   const minPromoDate = promoDates.length >= 1 ? promoDates[0] : FUTURE;
 
   return { min: minDate, max: maxDate, minPromo: minPromoDate };

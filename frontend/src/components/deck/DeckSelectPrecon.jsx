@@ -10,10 +10,14 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const options = useMemo(() => {
     const opts = [];
     Object.keys(setsAndPrecons)
-      .filter((i) => playtestMode || i !== 'PLAYTEST')
-      .filter((i) => setsAndPrecons[i].precons)
+      .filter(
+        (i) => (playtestMode || i !== 'PLAYTEST') && setsAndPrecons[i].precons
+      )
       .map((set) => {
-        const year = setsAndPrecons[set].date.slice(2, 4);
+        const year = setsAndPrecons[set].date
+          ? setsAndPrecons[set].date.slice(2, 4)
+          : null;
+
         Object.keys(setsAndPrecons[set].precons).map((precon) => {
           const fullName = setsAndPrecons[set].precons[precon].name;
           const clans = setsAndPrecons[set].precons[precon].clan.split('/');
@@ -37,7 +41,9 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
                   </div>
                   {fullName}
                 </div>
-                <div className="text-sm">{`${set} '${year}`}</div>
+                <div className="text-sm">
+                  {set} {year && `'${year}`}
+                </div>
               </div>
             ),
           });

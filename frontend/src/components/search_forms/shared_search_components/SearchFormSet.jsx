@@ -38,13 +38,14 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   ];
 
   Object.keys(setsAndPrecons)
-    .filter((i) => playtestMode || i !== 'PLAYTEST')
-    .map((i) => {
-      const year = setsAndPrecons[i].date.slice(2, 4);
-      const fullName = setsAndPrecons[i].name;
+    .filter((set) => playtestMode || set !== 'PLAYTEST')
+    .map((set) => {
+      const year =
+        set === 'PLAYTEST' ? null : setsAndPrecons[set].date.slice(2, 4);
+      const fullName = setsAndPrecons[set].name;
 
       options.push({
-        value: i,
+        value: set,
         name: name,
         label: (
           <div className="flex items-center justify-between">
@@ -58,7 +59,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const filterOption = ({ label, value }, string) => {
     let name;
     let year;
-    if (value == 'any' || value == 'bcp') {
+    if (['any', 'bcp', 'Promo', 'POD', 'PLAYTEST'].includes(value)) {
       name = label.props.children[1];
     } else {
       name = label.props.children[0].props.children;

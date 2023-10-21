@@ -39,10 +39,13 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   ];
 
   Object.keys(setsAndPrecons)
-    .filter((i) => playtestMode || i !== 'PLAYTEST')
+    .filter((set) => playtestMode || set !== 'PLAYTEST')
     .map((set) => {
       if (setsAndPrecons[set].precons) {
-        const year = setsAndPrecons[set].date.slice(2, 4);
+        const year = setsAndPrecons[set].date
+          ? setsAndPrecons[set].date.slice(2, 4)
+          : null;
+
         Object.keys(setsAndPrecons[set].precons).map((precon) => {
           const fullName = setsAndPrecons[set].precons[precon].name;
           const clans = setsAndPrecons[set].precons[precon].clan.split('/');
@@ -66,7 +69,9 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                   </div>
                   {fullName}
                 </div>
-                <div className="text-sm">{`${set} '${year}`}</div>
+                <div className="text-sm">
+                  {set} {year && `'${year}`}
+                </div>
               </div>
             ),
           });
@@ -75,18 +80,15 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     });
 
   const filterOption = ({ label, value }, string) => {
-    let name;
-    let set;
-    if (value == 'any' || value == 'bcp') {
-      name = label.props.children[1];
-    } else {
-      name = label.props.children[0].props.children[1];
-      set = label.props.children[1].props.children;
-    }
+    const name = ['any', 'bcp'].includes(value)
+      ? label.props.children[1]
+      : label.props.children[0].props.children[1];
 
-    if (name) {
-      return `${name} ${set}`.toLowerCase().includes(string);
-    }
+    const set = ['any', 'bcp'].includes(value)
+      ? null
+      : label.props.children[1].props.children;
+
+    if (name) return `${name} ${set}`.toLowerCase().includes(string);
     return true;
   };
 
