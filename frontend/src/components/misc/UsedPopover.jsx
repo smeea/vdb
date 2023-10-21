@@ -23,7 +23,7 @@ const UsedPopover = ({ cardid }) => {
   if (!inInventory) inInventory = 0;
 
   return (
-    <div className="max-w-[250px] space-y-1">
+    <div className="flex flex-col max-w-[250px] gap-1">
       {(softUsedMax !== 0 || hardUsedTotal !== 0) && (
         <>
           {softUsedMax > 0 && (
@@ -43,7 +43,7 @@ const UsedPopover = ({ cardid }) => {
           <Hr />
         </>
       )}
-      <div className="flex items-center space-x-1">
+      <div className="flex items-center gap-1">
         <div className="opacity-40">
           <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
         </div>
@@ -60,11 +60,11 @@ const UsedPopover = ({ cardid }) => {
       {text && (
         <>
           <Hr />
-          <div className="flex items-center space-x-1">
-            <div className="opacity-40">
+          <div className="flex items-top gap-1.5">
+            <div className="opacity-40 pt-1">
               <ChatLeftQuoteFill width="14" height="14" viewBox="0 0 16 16" />
             </div>
-            <div>{text}</div>
+            <div className="text-sm">{text}</div>
           </div>
         </>
       )}
