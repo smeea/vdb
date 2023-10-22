@@ -13,7 +13,13 @@ import {
   ResultLayoutTextText,
 } from '@/components';
 
-const ResultCryptLayoutText = ({ card, setCard, handleClose, inPopover }) => {
+const ResultCryptLayoutText = ({
+  card,
+  setCard,
+  handleClose,
+  noClose,
+  inPopover,
+}) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
 
   return (
@@ -60,7 +66,7 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, inPopover }) => {
           <ResultCryptGroup value={card.Group} />
           <div
             className={
-              inPopover || isNarrow
+              noClose || inPopover || isNarrow
                 ? 'hidden max-h-0 max-w-0 opacity-0'
                 : 'flex justify-center'
             }

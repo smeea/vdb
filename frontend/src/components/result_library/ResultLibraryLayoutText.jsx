@@ -14,7 +14,7 @@ import {
 import { isTrifle } from '@/utils';
 import { useApp } from '@/context';
 
-const ResultLibraryLayoutText = ({ card, handleClose, inPopover }) => {
+const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   const { isNarrow } = useApp();
 
   return (
@@ -44,7 +44,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, inPopover }) => {
           )}
           <div
             className={
-              inPopover || isNarrow
+              noClose || inPopover || isNarrow
                 ? 'hidden max-h-0 max-w-0 opacity-0'
                 : 'flex justify-center'
             }
