@@ -1,5 +1,5 @@
 {
-  "version": "2023-10-21",
+  "version": "2023-10-22",
   "changes": [
     "Add 'Multi-discipline' and 'Multi-type' trait to library search",
     "Add note mark (*) to card quantity in inventory",

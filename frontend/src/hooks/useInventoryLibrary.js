@@ -128,7 +128,7 @@ const useInventoryLibrary = (
     });
 
     Object.keys(usedLibrary.soft)
-      .filter((cardid) => cardid < 110000 && cards[cardid])
+      .filter((cardid) => cardid < 110000 && !cards[cardid])
       .map((cardid) => {
         const types = libraryCardBase[cardid].Type.split('/');
         const d = libraryCardBase[cardid].Discipline;
@@ -321,6 +321,7 @@ const useInventoryLibrary = (
         missingFilteredTotal += missingByType[type][cardid].q;
       });
   }
+
   return {
     cardsByType: cardsByType,
     missingByType: missingByType,
