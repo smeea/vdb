@@ -49,7 +49,7 @@ Start backend:
 
 Start frontend:
 ```
-    cd backend
+    cd frontend
     npm install                                          # ONLY ON FIRST RUN
     npm run start
 ```
@@ -78,10 +78,11 @@ To update with new Set/Precons edit the following files:
     vim frontend/src/assets/data/setsAndPrecons.json     # ADD SET/PRECONS
 ```
 
-To update with new Playtest edit the following files:
+To update with new Playtest add resources and edit the following files:
 ```
-    vim misc/cards-update/generate_precons.py            # EDIT PLAYTEST PRECONS
-    vim misc/cards-update/generate_playtest_precons.py   # EDIT PLAYTEST FILES
+    cp $NEW_PRECONS misc/cards-update/precon_decks/
+    cp $NEW_CRYPT_FILE.csv $NEW_LIB_FILE.csv misc/cards-update/
+    vim misc/cards-update/generate_playtest_precons.py   # ADD PLAYTEST PRECONS
 ```
 
 Download source files from upstream and create new resources (it will copy files where necessary):
