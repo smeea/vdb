@@ -1,5 +1,6 @@
 import React from 'react';
 import { ResultLibraryTableRowCommon, DeckDrawProbability } from '@/components';
+import { useApp } from '@/context';
 
 const DeckDrawLibraryTable = ({
   handleClick,
@@ -8,14 +9,13 @@ const DeckDrawLibraryTable = ({
   resultCards,
   ashHeap,
 }) => {
-  let N = 0;
-  let n = 0;
+  const { isMobile } = useApp();
+
+  const N = restCards && resultCards ? restCards.length + resultCards.length : 0;
+  const n = resultCards ? resultCards.length : 0;
   const nonPlayed = {};
 
   if (restCards && resultCards) {
-    N = restCards.length + resultCards.length;
-    n = resultCards.length;
-
     [...restCards, ...resultCards].forEach((c) => {
       if (c.Id in nonPlayed) {
         nonPlayed[c.Id] += 1;
@@ -43,16 +43,18 @@ const DeckDrawLibraryTable = ({
                 handleClick={() => handleClick(idx)}
                 shouldShowModal={shouldShowModal}
               />
-              <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
-                {!ashHeap && (
-                  <DeckDrawProbability
-                    cardName={card.Name}
-                    N={N}
-                    n={n}
-                    k={nonPlayed[card.Id]}
-                  />
-                )}
-              </td>
+              {(!ashHeap || !isMobile) && (
+                <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
+                  {!ashHeap &&
+                   <DeckDrawProbability
+                     cardName={card.Name}
+                     N={N}
+                     n={n}
+                     k={nonPlayed[card.Id]}
+                   />
+                  }
+                </td>
+              )}
             </tr>
           );
         })}

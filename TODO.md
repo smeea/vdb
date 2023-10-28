@@ -2,6 +2,7 @@
 - Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Backend update_deck_route and remove_deck_route errors
+- Iron glare to vote trait in lib
 
 # FEATURES
 - TWD Deck check documentation
@@ -18,3 +19,6 @@
 - Migration from screen width (isWide, etc) to container queries
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
+- <Dialog> instead of modal
+- structuredClone instead of json parse
+- Array.at

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ResultCryptTableRowCommon, DeckDrawProbability } from '@/components';
 import { useKeyDisciplines } from '@/hooks';
+import { useApp } from '@/context';
 
 const DeckDrawCryptTable = ({
   handleClick,
@@ -10,14 +11,14 @@ const DeckDrawCryptTable = ({
   ashHeap,
   crypt,
 }) => {
-  let N = 0;
-  let n = 0;
+  const { isMobile } = useApp();
+  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
+
+  const N = restCards && resultCards ? restCards.length + resultCards.length : 0;
+  const n = resultCards ? resultCards.length : 0;
   const nonPlayed = {};
 
   if (restCards && resultCards) {
-    N = restCards.length + resultCards.length;
-    n = resultCards.length;
-
     [...restCards, ...resultCards].forEach((c) => {
       if (c.Id in nonPlayed) {
         nonPlayed[c.Id] += 1;
@@ -26,8 +27,6 @@ const DeckDrawCryptTable = ({
       }
     });
   }
-
-  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
@@ -50,16 +49,18 @@ const DeckDrawCryptTable = ({
                 disciplinesSet={disciplinesSet}
                 inDeck
               />
-              <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
-                {!ashHeap && (
-                  <DeckDrawProbability
-                    cardName={card.Name}
-                    N={N}
-                    n={n}
-                    k={nonPlayed[card.Id]}
-                  />
-                )}
-              </td>
+              {(!ashHeap || !isMobile) && (
+                <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
+                  {!ashHeap &&
+                   <DeckDrawProbability
+                     cardName={card.Name}
+                     N={N}
+                     n={n}
+                     k={nonPlayed[card.Id]}
+                   />
+                  }
+                </td>
+              )}
             </tr>
           );
         })}
