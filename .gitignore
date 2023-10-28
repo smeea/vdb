@@ -14,5 +14,4 @@ misc/cards-update/vtescrypt_tod.csv
 misc/cards-update/vteslib_playtest.csv
 misc/cards-update/cardbase_crypt_playtest.json
 misc/cards-update/cardbase_lib_playtest.json
-misc/cards-update/playtest-precon-*
-misc/cards-update/playtest-tod-*
+misc/cards-update/playtest_precons/

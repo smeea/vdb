@@ -3,27 +3,27 @@ from deck_import import deck_import
 
 
 playtest_files = {
-    "playtest-precon-ravnos-round3.txt": "PR",
-    "playtest-precon-tzimisce-round3.txt": "PTz",
-    "playtest-precon-salubri-round3.txt": "PSal",
-    "playtest-precon-hecata-round1.txt": "PH",
-    "playtest-precon-lasombra-round1.txt": "PL",
-    "playtest-tod-banuhaqim.txt": "TBh",
-    "playtest-tod-brujah.txt": "TBr",
-    "playtest-tod-gangrel.txt": "TG",
-    "playtest-tod-malkavian.txt": "TMa",
-    "playtest-tod-ministry.txt": "TMi",
-    "playtest-tod-nosferatu.txt": "TN",
-    "playtest-tod-toreador.txt": "TTo",
-    "playtest-tod-tremere.txt": "TTr",
-    "playtest-tod-ventrue.txt": "TV",
+    "precon-ravnos-round3.txt": "PR",
+    "precon-tzimisce-round3.txt": "PTz",
+    "precon-salubri-round3.txt": "PSal",
+    "precon-hecata-round1.txt": "PH",
+    "precon-lasombra-round1.txt": "PL",
+    "tod-banuhaqim.txt": "TBh",
+    "tod-brujah.txt": "TBr",
+    "tod-gangrel.txt": "TG",
+    "tod-malkavian.txt": "TMa",
+    "tod-ministry.txt": "TMi",
+    "tod-nosferatu.txt": "TN",
+    "tod-toreador.txt": "TTo",
+    "tod-tremere.txt": "TTr",
+    "tod-ventrue.txt": "TV",
 }
 
 playtest_cards = {}
 
 for file, precon in playtest_files.items():
     try:
-        with open(file, "r", encoding="utf8") as deck_file:
+        with open(f"playtest_precons/{file}", "r", encoding="utf8") as deck_file:
             precon_deck = " ".join(str(x) for x in deck_file.readlines())
             precon_cards = deck_import(precon_deck)["cards"]
             for cardid, q in precon_cards.items():
