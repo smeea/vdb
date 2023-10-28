@@ -32,10 +32,9 @@ const PopoverText = ({ sets, set }) => {
   return (
     <div className="max-w-[400px] space-y-1">
       <b>{setsAndPrecons[set].name}</b>
-      {set !== 'POD' &&
-        set !== 'Promo' &&
+      {!['POD', 'Promo', 'PLAYTEST'].includes(set) &&
         ' - ' + setsAndPrecons[set].date.slice(0, 4)}
-      {set !== 'POD' && set !== 'Promo' && (
+      {!['POD', 'Promo'].includes(set) && (
         <ul className="space-y-1">
           <PreconsDetailed sets={sets} set={set} />
         </ul>
