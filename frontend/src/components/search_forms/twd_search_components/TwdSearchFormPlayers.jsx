@@ -9,7 +9,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
   const fromOptions = [];
   const toOptions = [];
 
-  ['ANY', '100', '50', '30', '20', '10'].map((i) => {
+  ['ANY', '100', '50', '25', '12'].map((i) => {
     if (i === 'ANY' || value.to === 'any' || parseInt(i) < value.to) {
       fromOptions.push({
         value: i.toLowerCase(),
