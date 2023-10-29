@@ -7,7 +7,7 @@ import { useApp } from '@/context';
 
 const TwdSearchFormClan = ({ value, onChange }) => {
   const { playtestMode, isMobile, isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
+  const maxMenuHeight = isXWide ? 400 : 350;
   const options = ['ANY', ...vampireClansList, ...imbuedClansList]
     .filter((clan) => playtestMode || clan !== 'Hecata')
     .map((i) => {

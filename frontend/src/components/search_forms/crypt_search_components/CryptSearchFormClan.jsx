@@ -13,7 +13,7 @@ import { useApp } from '@/context';
 
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { playtestMode, isXWide, isMobile } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
+  const maxMenuHeight = isXWide ? 450 : 350;
   const name = 'clan';
   const options = ['ANY', ...vampireClansList, ...imbuedClansList]
     .filter((clan) => playtestMode || clan !== 'Hecata')
