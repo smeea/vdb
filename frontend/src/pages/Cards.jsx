@@ -84,6 +84,7 @@ const Cards = () => {
                     <ResultLayoutText
                       card={card}
                       setImageSet={setImageSet}
+                      setCard={handleSetCard}
                       noClose
                     />
                   </div>
