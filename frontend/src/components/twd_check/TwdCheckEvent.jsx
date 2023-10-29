@@ -118,8 +118,8 @@ const TwdCheckEvent = ({ deckData }) => {
   const libraryQtyError = libraryTotal > 90 || libraryTotal < 60;
 
   const deckLocation = deckData.location.split(', ');
-  const deckCountry = deckLocation[deckLocation.length - 1];
-  const deckCity = deckLocation[deckLocation.length - 2];
+  const deckCountry = deckLocation.at(-1);
+  const deckCity = deckLocation.at(-2);
   const isUniqueCity =
     deckCity && cities && !cities.includes(`${deckCity}, ${deckCountry}`);
   const isUniqueCountry = countries && !countries.includes(deckCountry);

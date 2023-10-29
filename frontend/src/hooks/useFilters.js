@@ -630,7 +630,7 @@ const cardDates = (card, addPromo = false) => {
   allDates.sort();
 
   const minDate = allDates.length > 0 ? allDates[0] : FUTURE;
-  const maxDate = allDates.length > 0 ? allDates[allDates.length - 1] : FUTURE;
+  const maxDate = allDates.length > 0 ? allDates.at(-1) : FUTURE;
   const minPromoDate = promoDates.length >= 1 ? promoDates[0] : FUTURE;
 
   return { min: minDate, max: maxDate, minPromo: minPromoDate };
