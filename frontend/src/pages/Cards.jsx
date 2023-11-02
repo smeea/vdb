@@ -9,6 +9,7 @@ import {
   ButtonIconed,
   CardImage,
   ButtonFloat,
+  ErrorMessage,
 } from '@/components';
 import { useApp, searchResults } from '@/context';
 
@@ -65,8 +66,8 @@ const Cards = () => {
     if (cryptCardBase && libraryCardBase) {
       searchResults.quickCard =
         params.cardid > 200000
-          ? cryptCardBase[params.cardid]
-          : libraryCardBase[params.cardid];
+        ? cryptCardBase[params.cardid]
+        : libraryCardBase[params.cardid];
     }
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
@@ -76,25 +77,33 @@ const Cards = () => {
         {isMobile ? (
           <>
             {card && (
-              <div className="pb-[59px]">
-                {showImage ? (
-                  <CardImage className="w-full" card={card} set={imageSet} />
+              <>
+                {playtestMode || (card.Id < 110000 || (card.Id > 200000 && card.Id < 210000)) ? (
+                  <div className="pb-[59px]">
+                    {showImage ? (
+                      <CardImage className="w-full" card={card} set={imageSet} />
+                    ) : (
+                      <div className="p-3 pb-0">
+                        <ResultLayoutText
+                          card={card}
+                          setImageSet={setImageSet}
+                          setCard={handleSetCard}
+                          noClose
+                        />
+                      </div>
+                    )}
+                    <div className="fixed z-30">
+                      <ButtonFloat onClick={toggleShowImage} variant="primary">
+                        <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
+                      </ButtonFloat>
+                    </div>
+                  </div>
                 ) : (
-                  <div className="p-3 pb-0">
-                    <ResultLayoutText
-                      card={card}
-                      setImageSet={setImageSet}
-                      setCard={handleSetCard}
-                      noClose
-                    />
+                  <div className="flex">
+                    <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
                   </div>
                 )}
-                <div className="fixed z-30">
-                  <ButtonFloat onClick={toggleShowImage} variant="primary">
-                    <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
-                  </ButtonFloat>
-                </div>
-              </div>
+              </>
             )}
             <div className="fixed bottom-[44px] z-20 flex w-full flex-row bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
               <div className="w-full md:basis-8/12">
@@ -148,19 +157,28 @@ const Cards = () => {
                 </div>
               )}
               {card && (
-                <div className="flex border border-bgSecondary dark:border-bgSecondaryDark">
-                  <div>
-                    <CardImage card={card} set={imageSet} />
-                  </div>
-                  <div className="w-full p-5">
-                    <ResultLayoutText
-                      card={card}
-                      setImageSet={setImageSet}
-                      setCard={handleSetCard}
-                      noClose
-                    />
-                  </div>
-                </div>
+                <>
+                  {playtestMode || (card.Id < 110000 || (card.Id > 200000 && card.Id < 210000))
+                   ? (
+                     <div className="flex border border-bgSecondary dark:border-bgSecondaryDark">
+                       <div>
+                         <CardImage card={card} set={imageSet} />
+                       </div>
+                       <div className="w-full p-5">
+                         <ResultLayoutText
+                           card={card}
+                           setImageSet={setImageSet}
+                           setCard={handleSetCard}
+                           noClose
+                         />
+                       </div>
+                     </div>
+                   ) : (
+                     <div className="flex">
+                       <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
+                     </div>
+                   )}
+                </>
               )}
             </div>
             <div className="min-w-[175px] max-sm:hidden">

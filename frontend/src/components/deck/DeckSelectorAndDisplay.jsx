@@ -8,11 +8,12 @@ import {
   DeckCrypt,
   DeckLibrary,
   ButtonIconed,
+  ErrorMessage,
 } from '@/components';
 import { setDeck, deckStore, useApp } from '@/context';
 
 const DeckSelectorAndDisplay = () => {
-  const { isDesktop, addMode, toggleAddMode } = useApp();
+  const { playtestMode, isDesktop, addMode, toggleAddMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const decks = useSnapshot(deckStore).decks;
 
@@ -54,8 +55,20 @@ const DeckSelectorAndDisplay = () => {
       </div>
       {deck && addMode && (
         <>
-          <DeckCrypt deck={deck} inSearch />
-          <DeckLibrary deck={deck} inSearch />
+          {playtestMode ||
+           !(
+             Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
+               Object.keys(deck.library).some((cardid) => cardid > 110000)
+           ) ? (
+             <>
+               <DeckCrypt deck={deck} inSearch />
+               <DeckLibrary deck={deck} inSearch />
+             </>
+           ) : (
+             <div className="flex">
+             <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
+             </div>
+           )}
         </>
       )}
     </div>
