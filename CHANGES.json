@@ -1,5 +1,14 @@
 [
   {
+    "version": "2023-11-01",
+    "changes": [
+      "Improved +votes library trait",
+      "Fixed missing cards in inventory",
+      "Changed first TWD search by-players bracket to start with 12 (to exclude multidecks tournaments)",
+      "Many small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2023-10-22",
     "changes": [
       "Add 'Multi-discipline' and 'Multi-type' trait to library search",
