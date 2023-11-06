@@ -75,7 +75,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
           withWrittenConfirmation={deck.isBranches}
           handleConfirm={handleConfirm}
           handleCancel={handleCancel}
-          title={`Delete deck "${deck.name} and all its revisions"`}
+          title={`Delete deck "${deck.name}" and all its revisions`}
           buttonText="Delete"
         >
           THIS CANNOT BE UNDONE!
