@@ -18,6 +18,8 @@ const ResultUsed = ({ card }) => {
   const hardUsedTotal = getHardTotal(used.hard[card.Id]);
   const inInventory = inventory[card.Id]?.q || 0;
 
+  const isInventoryNote = inventory[card.Id].t
+
   return (
     <Tooltip
       placement={isDesktop ? 'left' : 'bottom'}
@@ -25,7 +27,7 @@ const ResultUsed = ({ card }) => {
     >
       {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
         <div
-          className={`mx-1 flex items-center space-x-1 px-0.5 ${
+          className={`mx-1 flex items-center gap-0.5 px-0.5 ${
             inInventory < softUsedMax + hardUsedTotal
               ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
               : ''
@@ -33,13 +35,15 @@ const ResultUsed = ({ card }) => {
                   `}
         >
           <div className="flex basis-full justify-center text-lg">
+            {isInventoryNote && <div className="min-w-[4px]"></div>}
             {inInventory}
+            {isInventoryNote && <div className="max-w-[4px] text-xs">*</div>}
           </div>
           <div
             className={`flex basis-full justify-center text-sm ${
               inInventory >= softUsedMax + hardUsedTotal
                 ? 'text-midGray dark:text-midGrayDark'
-                : 'text-white dark:text-white'
+                : 'text-lightGray dark:text-white'
             } `}
           >
             {inInventory >= softUsedMax + hardUsedTotal
