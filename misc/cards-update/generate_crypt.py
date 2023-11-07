@@ -67,9 +67,7 @@ useless_fields = ["Aka"]
 
 
 def generate_artists(cardbase_csv, artist_file, artist_file_min):
-    reader_main = csv.reader(cardbase_csv)
-    fieldnames_main = next(reader_main)
-    csv_cards = csv.DictReader(cardbase_csv, fieldnames_main)
+    csv_cards = csv.DictReader(cardbase_csv)
 
     artists = set()
     for card in csv_cards:
@@ -83,16 +81,8 @@ def generate_artists(cardbase_csv, artist_file, artist_file_min):
     json.dump(sorted(artists), artists_file, indent=4, separators=(",", ":"))
 
 
-def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
-    reader_main = csv.reader(cardbase_csv)
-    fieldnames_main = next(reader_main)
-    csv_cards = csv.DictReader(cardbase_csv, fieldnames_main)
-
+def generate_cards(cards, cardbase_file, cardbase_file_min, ref_cards = None):
     cardbase = {}
-
-    cards = []
-    for card in csv_cards:
-        cards.append(card)
 
     for card in cards:
         # Convert some fields values to integers
@@ -282,12 +272,13 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
                     and c["Id"] != card["Id"]
                     and c["Group"] == card["Group"]
             ):
-                isAdv = True if card["Adv"] else False
+                isAdv = bool(card["Adv"])
                 card["Advancement"] = [isAdv, int(c["Id"])]
 
         # Add new revision info
         card["New"] = False
-        for c in cards:
+
+        for c in ref_cards if ref_cards else cards:
             if (
                     c["Name"] == card["Name"]
                     and int(c["Id"]) < card["Id"]
@@ -345,22 +336,24 @@ with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
 ) as cardbase_file, open(
     "cardbase_crypt.min.json", "w", encoding="utf8"
 ) as cardbase_file_min:
-    generate_cards(cardbase_csv, cardbase_file, cardbase_file_min)
+    cards = list(csv.DictReader(cardbase_csv))
+    generate_cards(cards, cardbase_file, cardbase_file_min)
 
-try:
-    with open(
-            "vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
-    ) as cardbase_csv, open(
-        "cardbase_crypt_playtest.json", "w", encoding="utf8"
-    ) as cardbase_file, open(
-        "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
-    ) as cardbase_file_min:
-        generate_cards(cardbase_csv, cardbase_file, cardbase_file_min)
+    try:
+        with open(
+                        "vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
+        ) as cardbase_csv_playtest, open(
+                "cardbase_crypt_playtest.json", "w", encoding="utf8"
+        ) as cardbase_file_playtest, open(
+                "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
+        ) as cardbase_file_min_playtest:
+                cards_playtest = list(csv.DictReader(cardbase_csv_playtest))
+                generate_cards(cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest, cards)
 
-except Exception:
-    print(
-        "PLAYTEST DISABLED - NO CRYPT PLAYTEST FILES FOUND (CONTACT PLAYTEST COORDINATOR TO GET IT)"
-    )
+    except Exception:
+            print(
+                    "PLAYTEST DISABLED - NO CRYPT PLAYTEST FILES FOUND (CONTACT PLAYTEST COORDINATOR TO GET IT)"
+            )
 
 with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
         "artistsCrypt.json", "w", encoding="utf8"
