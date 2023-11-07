@@ -1,9 +1,7 @@
 {
-  "version": "2023-11-01",
+  "version": "2023-11-06",
   "changes": [
-    "Improved +votes library trait",
-    "Fixed missing cards in inventory",
-    "Changed first TWD search by-players bracket to start with 12 (to exclude multidecks tournaments)",
-    "Many small other fixes and improvements"
+    "Update TWDA",
+    "Small other fixes and improvements"
   ]
 }
