@@ -63,22 +63,23 @@ export const clearSearchForm = (target) => {
       break;
     case 'library':
       searchLibraryForm.text = structuredClone(defaultsLibraryForm.text);
+      searchLibraryForm.artist = 'any';
 
       Object.keys(defaultsLibraryForm).forEach((k) => {
         if (['text', 'artist'].includes(k)) return;
         Object.keys(defaultsLibraryForm[k]).forEach((v) => {
-          searchLibraryForm[k][v] = deepClone(defaultsLibraryForm[k][v]);
+          searchLibraryForm[k][v] = structuredClone(defaultsLibraryForm[k][v]);
         });
       });
       break;
     case 'twd':
       Object.keys(defaultsTwdForm).map((k) => {
-        searchTwdForm[k] = deepClone(defaultsTwdForm[k]);
+        searchTwdForm[k] = structuredClone(defaultsTwdForm[k]);
       });
       break;
     case 'pda':
       Object.keys(defaultsPdaForm).map((k) => {
-        searchPdaForm[k] = deepClone(defaultsPdaForm[k]);
+        searchPdaForm[k] = structuredClone(defaultsPdaForm[k]);
       });
       break;
   }
