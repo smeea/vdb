@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 import react from '@vitejs/plugin-react-swc';
 import svgr from 'vite-plugin-svgr';
 import { VitePWA } from 'vite-plugin-pwa';
@@ -38,9 +39,7 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    alias: {
-      '@': require('path').resolve(__dirname, 'src'),
-    },
+    alias: [{ find: '@', replacement: resolve(__dirname, 'src') }],
   },
   build: {
     chunkSizeWarningLimit: 1024,
