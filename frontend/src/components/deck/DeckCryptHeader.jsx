@@ -22,14 +22,11 @@ const DeckCryptHeader = ({
   cardChange,
   cards,
 }) => {
-  const { isMobile } = useApp();
+  const { limitedMode, isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
   const { disciplinesDetailed } = useKeyDisciplines(cards);
-  const { hasBanned, cryptTotal, hasWrongGroups, cryptGroups } = useDeckCrypt(
-    cards,
-    null,
-    null,
-  );
+  const { hasBanned, hasLimited, cryptTotal, hasWrongGroups, cryptGroups } =
+    useDeckCrypt(cards, null, null);
 
   return (
     <>
@@ -47,6 +44,7 @@ const DeckCryptHeader = ({
                 <div className="inline">{cryptGroups}</div>
               )}
               {hasBanned && <Warning value="BANNED" />}
+              {limitedMode && hasLimited && <Warning value="LIMITED" />}
             </>
           )}
         </div>

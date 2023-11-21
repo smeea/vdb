@@ -9,7 +9,6 @@
 - TWD Deck check documentation
 - Inventory cards with notes filter to crypt/library/inventory
 - Clear search form buttons
-- Limited to Deck Crypt/Library header (same as Banned)
 
 # MAYBE LATER FEATURES
 - Offline decks/inventory storage

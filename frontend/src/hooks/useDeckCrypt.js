@@ -1,45 +1,46 @@
 import { useMemo } from 'react';
+import { useSnapshot } from 'valtio';
 import { countCards, containCard, cryptSort } from '@/utils';
 import { ANY } from '@/utils/constants';
+import { limitedStore } from '@/context';
 
 const useDeckCrypt = (
   cardsList,
   sortMethod = 'byName',
   timer,
-  cardsToList = {},
+  cardsToList = {}
 ) => {
+  const limitedCrypt = useSnapshot(limitedStore).crypt;
+
   const cardsFrom = Object.values(cardsList);
   const cardsTo = Object.values(cardsToList);
-
   const cryptFrom = Object.values(cardsFrom).filter((card) => card.q > 0);
   const cryptTo = Object.values(cardsTo).filter(
-    (card) => card.q > 0 && !containCard(cryptFrom, card),
+    (card) => card.q > 0 && !containCard(cryptFrom, card)
   );
 
   const cryptFromSide = Object.values(cardsFrom).filter(
-    (card) => card.q <= 0 && !containCard(cryptTo, card),
+    (card) => card.q <= 0 && !containCard(cryptTo, card)
   );
   const cryptToSide = Object.values(cardsTo).filter(
     (card) =>
       card.q <= 0 &&
       !containCard(cryptFrom, card) &&
-      !containCard(cryptFromSide, card),
+      !containCard(cryptFromSide, card)
   );
 
   const crypt = [...cryptFrom, ...cryptTo.map((card) => ({ q: 0, c: card.c }))];
-
   const cryptSide = [
     ...cryptFromSide,
     ...cryptToSide.map((card) => ({ q: 0, c: card.c })),
   ];
   const hasBanned = cryptFrom.filter((card) => card.c.Banned).length > 0;
-
+  const hasLimited =
+    cryptFrom.filter((card) => !limitedCrypt[card.c.Id]).length > 0;
   const cryptTotal = countCards(cryptFrom);
-
   const cryptGroupMin = cryptFrom
     .filter((card) => card.c.Group !== ANY)
     .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc), 10);
-
   const cryptGroupMax = cryptFrom
     .filter((card) => card.c.Group !== ANY)
     .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
@@ -74,6 +75,7 @@ const useDeckCrypt = (
     crypt,
     cryptSide,
     hasBanned,
+    hasLimited,
     cryptTotal,
     cryptGroups,
     hasWrongGroups,

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
-import Exclamation from '@/assets/images/icons/exclamation-triangle.svg?react';
 import {
   Button,
   DeckNewCard,
   DeckLibraryTotalInfo,
   ResultLibraryCost,
+  Warning,
 } from '@/components';
 import { useApp } from '@/context';
 
@@ -15,6 +15,7 @@ const DeckLibraryHeader = ({
   bloodTotal,
   poolTotal,
   hasBanned,
+  hasLimited,
   isEditable,
   cards,
   deckid,
@@ -39,17 +40,8 @@ const DeckLibraryHeader = ({
               ' of 60-90'}
             ]
           </div>
-          {!inMissing && hasBanned && (
-            <div className="inline items-center text-fgRed dark:text-fgRedDark">
-              <Exclamation
-                width="17"
-                heigth="17"
-                viewBox="0 2 16 16"
-                className="inline pr-1"
-              />
-              BANNED
-            </div>
-          )}
+          {!inMissing && hasBanned && <Warning value="BANNED" />}
+          {!inMissing && hasLimited && <Warning value="LIMITED" />}
         </div>
         {!inMissing && (
           <div className="flex space-x-3">
