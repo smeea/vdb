@@ -16,7 +16,12 @@ import {
 } from '@/components';
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
 import { isTrifle, getHardTotal, getSoftMax } from '@/utils';
-import { useApp, usedStore, inventoryCardChange } from '@/context';
+import {
+  useApp,
+  usedStore,
+  limitedStore,
+  inventoryCardChange,
+} from '@/context';
 import { useDebounce } from '@/hooks';
 
 const InventoryLibraryTableRow = ({
@@ -26,8 +31,12 @@ const InventoryLibraryTableRow = ({
   inShared,
   handleClick,
 }) => {
+  const { isMobile, isNarrow, limitedMode } = useApp();
   const usedLibrary = useSnapshot(usedStore).library;
-  const { isMobile, isNarrow } = useApp();
+  const limitedLibrary = useSnapshot(limitedStore).library;
+  const inLimited = limitedLibrary[card.c.Id];
+  const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
+  const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
 
   const [isSwiped, setIsSwiped] = useState();
   useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
@@ -48,9 +57,6 @@ const InventoryLibraryTableRow = ({
       }
     },
   });
-
-  const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
-  const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
 
   const trBg = isSwiped
     ? isSwiped === 'right'
@@ -100,7 +106,7 @@ const InventoryLibraryTableRow = ({
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultName card={card.c} />
+            <ResultName card={card.c} isBanned={limitedMode && !inLimited} />
           </div>
         </ConditionalTooltip>
       </div>

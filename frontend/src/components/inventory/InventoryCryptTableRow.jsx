@@ -15,7 +15,12 @@ import {
   ConditionalTooltip,
 } from '@/components';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { useApp, usedStore, inventoryCardChange } from '@/context';
+import {
+  useApp,
+  usedStore,
+  limitedStore,
+  inventoryCardChange,
+} from '@/context';
 import { useDebounce } from '@/hooks';
 
 const InventoryCryptTableRow = ({
@@ -25,8 +30,12 @@ const InventoryCryptTableRow = ({
   inShared,
   handleClick,
 }) => {
+  const { isMobile, isNarrow, isWide, limitedMode } = useApp();
   const usedCrypt = useSnapshot(usedStore).crypt;
-  const { isMobile, isNarrow, isWide } = useApp();
+  const limitedCrypt = useSnapshot(limitedStore).crypt;
+  const inLimited = limitedCrypt[card.c.Id];
+  const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]);
+  const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
 
   const [isSwiped, setIsSwiped] = useState();
   useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
@@ -47,9 +56,6 @@ const InventoryCryptTableRow = ({
       }
     },
   });
-
-  const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]);
-  const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
 
   const trBg = isSwiped
     ? isSwiped === 'right'
@@ -107,7 +113,7 @@ const InventoryCryptTableRow = ({
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultName card={card.c} />
+            <ResultName card={card.c} isBanned={limitedMode && !inLimited} />
           </div>
         </ConditionalTooltip>
       </div>
