@@ -39,7 +39,7 @@
     "react-swipeable": "^7.0.1",
     "react-virtualized-auto-sizer": "^1.0.20",
     "react-window": "^1.8.9",
-    "recharts": "^2.9.3",
+    "recharts": "^2.10.1",
     "stylelint": "^15.11.0",
     "stylelint-config-recommended-scss": "^13.1.0",
     "stylelint-order": "^6.0.3",
@@ -48,7 +48,7 @@
     "unidecode": "^0.1.8",
     "use-immer": "^0.9.0",
     "valtio": "^1.12.0",
-    "vite": "^5.0.0",
+    "vite": "^5.0.2",
     "vite-plugin-pwa": "^0.17.0",
     "vite-plugin-svgr": "^4.2.0",
     "xlsx": "^0.18.5"
