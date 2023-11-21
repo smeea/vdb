@@ -1,7 +1,7 @@
 import React from 'react';
 import Hammer from '@/assets/images/icons/hammer.svg?react';
 
-const ResultCryptName = ({ card, colored = true }) => {
+const ResultCryptName = ({ card, colored = true, isBanned }) => {
   return (
     <div
       className={`inline space-x-1 ${
@@ -11,7 +11,7 @@ const ResultCryptName = ({ card, colored = true }) => {
       <div className="inline space-x-1 whitespace-nowrap">
         <div
           className={`inline space-x-1 whitespace-normal ${
-            card.Banned ? 'line-through' : ''
+            card.Banned || isBanned ? 'line-through' : ''
           }`}
         >
           {card['Name']}
@@ -24,9 +24,15 @@ const ResultCryptName = ({ card, colored = true }) => {
           />
         )}
       </div>
-      {card['Banned'] && (
+      {(card.Banned || isBanned) && (
         <div className="inline whitespace-nowrap">
-          [{card['Banned']} <Hammer className="inline h-[20px]" />]
+          {card.Banned ? (
+            <>
+              [{card.Banned} <Hammer className="inline h-[20px]" />]
+            </>
+          ) : (
+            <>[Limited]</>
+          )}
         </div>
       )}
     </div>

@@ -20,12 +20,9 @@ const TwdResultCryptTableRow = ({
   const { limitedMode, inventoryMode, isMobile } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const limitedCrypt = useSnapshot(limitedStore).crypt;
+  const inLimited = limitedCrypt[card.c.Id];
+  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
   const usedCrypt = useSnapshot(usedStore).crypt;
-  const inInventory = limitedMode
-    ? limitedCrypt[card.c.Id]
-      ? 99
-      : 0
-    : inventoryCrypt[card.c.Id]?.q ?? 0;
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
 
   return (
@@ -38,7 +35,7 @@ const TwdResultCryptTableRow = ({
       }`}
     >
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
-        {limitedMode || inventoryMode ? (
+        {inventoryMode ? (
           <ConditionalTooltip
             overlay={<UsedPopover cardid={card.c.Id} />}
             disabled={isMobile}
@@ -75,7 +72,7 @@ const TwdResultCryptTableRow = ({
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultName card={card.c} />
+            <ResultName card={card.c} isBanned={limitedMode && !inLimited} />
           </div>
         </ConditionalTooltip>
       </td>

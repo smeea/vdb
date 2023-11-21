@@ -65,11 +65,8 @@ const DeckCryptTableRow = ({
     },
   });
 
-  const inInventory = limitedMode
-    ? limitedCrypt[card.c.Id]
-      ? 99
-      : 0
-    : inventoryCrypt[card.c.Id]?.q ?? 0;
+  const inLimited = limitedCrypt[card.c.Id];
+  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
   const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
 
@@ -125,6 +122,7 @@ const DeckCryptTableRow = ({
         softUsedMax={softUsedMax}
       />
       <ResultCryptTableRowCommon
+        isBanned={limitedMode && !inLimited}
         card={card.c}
         handleClick={handleClick}
         keyDisciplines={keyDisciplines}

@@ -22,11 +22,8 @@ const TwdResultLibraryKeyCardsTableRow = ({
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const limitedLibrary = useSnapshot(limitedStore).library;
   const usedLibrary = useSnapshot(usedStore).library;
-  const inInventory = limitedMode
-    ? limitedLibrary[card.c.Id]
-      ? 99
-      : 0
-    : inventoryLibrary[card.c.Id]?.q ?? 0;
+  const inLimited = limitedLibrary[card.c.Id];
+  const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
 
   return (
@@ -39,7 +36,7 @@ const TwdResultLibraryKeyCardsTableRow = ({
       }`}
     >
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
-        {limitedMode || inventoryMode ? (
+        {inventoryMode ? (
           <ConditionalTooltip
             overlay={<UsedPopover cardid={card.c.Id} />}
             disabled={isMobile}
@@ -72,7 +69,7 @@ const TwdResultLibraryKeyCardsTableRow = ({
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultName card={card.c} />
+            <ResultName card={card.c} isBanned={limitedMode && !inLimited} />
           </div>
         </ConditionalTooltip>
       </td>

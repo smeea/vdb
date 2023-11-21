@@ -45,7 +45,7 @@ const Cost = ({ card, handleClick }) => {
   );
 };
 
-const Name = ({ card, handleClick, shouldShowModal }) => {
+const Name = ({ card, handleClick, shouldShowModal, isBanned }) => {
   const { isMobile } = useApp();
 
   return (
@@ -56,7 +56,7 @@ const Name = ({ card, handleClick, shouldShowModal }) => {
         noPadding
       >
         <div className="flex cursor-pointer px-1">
-          <ResultName card={card} />
+          <ResultName card={card} isBanned={isBanned} />
         </div>
       </ConditionalTooltip>
     </td>
@@ -98,6 +98,7 @@ const ResultLibraryTableRowCommon = ({
   inDeck,
   shouldShowModal,
   noBurn,
+  isBanned,
 }) => {
   const { isDesktop, isNarrow, isWide } = useApp();
 
@@ -109,6 +110,7 @@ const ResultLibraryTableRowCommon = ({
             card={card}
             handleClick={handleClick}
             shouldShowModal={shouldShowModal}
+            isBanned={isBanned}
           />
           {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <Cost card={card} handleClick={handleClick} />
@@ -127,6 +129,7 @@ const ResultLibraryTableRowCommon = ({
             card={card}
             handleClick={handleClick}
             shouldShowModal={shouldShowModal}
+            isBanned={isBanned}
           />
           {!noBurn && <Burn card={card} handleClick={handleClick} />}
         </>

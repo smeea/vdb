@@ -6,14 +6,13 @@ import List from '@/assets/images/icons/list.svg?react';
 import { NavMobileToggle, LanguageMenu, ThemeSelect, Hr } from '@/components';
 import { useApp } from '@/context';
 
-const NavMobileMenu = ({ showMenu, setShowMenu }) => {
+const NavMobileMenu = ({ isLimited, showMenu, setShowMenu }) => {
   const {
-    limitedSwitch,
     limitedMode,
     inventoryMode,
     toggleLimitedMode,
     toggleInventoryMode,
-    playtestSwitch,
+    isPlaytester,
     playtestMode,
     togglePlaytestMode,
     username,
@@ -73,7 +72,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
             }}
             text="Inventory Mode"
           />
-          {limitedSwitch && (
+          {isLimited && (
             <NavMobileToggle
               isOn={limitedMode}
               onToggle={() => {
@@ -83,7 +82,7 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               text="Limited Mode"
             />
           )}
-          {playtestSwitch && (
+          {isPlaytester && (
             <NavMobileToggle
               isOn={playtestMode}
               onToggle={() => {

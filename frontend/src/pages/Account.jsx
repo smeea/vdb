@@ -7,14 +7,14 @@ import {
   AccountChangeEmail,
   AccountChangeName,
   AccountDeleteButton,
-  AccountPlaytestButtons,
-  AccountLimitedButtons,
+  AccountPlaytestButton,
+  AccountLimitedButton,
 } from '@/components';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
 const Account = () => {
-  const { username, isPlaytester, isPlaytestAdmin } = useApp();
+  const { username, isPlaytestAdmin } = useApp();
 
   return (
     <div
@@ -30,7 +30,7 @@ const Account = () => {
             </div>
             <div className="text-lg">Logged as: &lt;{username}&gt;</div>
           </div>
-          <div className="w-full space-y-6 p-2 sm:p-0">
+          <div className="flex flex-col gap-5 sm:gap-6 p-2 sm:p-0">
             <div>
               <AccountChangeName />
             </div>
@@ -40,14 +40,16 @@ const Account = () => {
             <div>
               <AccountChangeEmail />
             </div>
-            {(isPlaytester || isPlaytestAdmin) && <AccountPlaytestButtons />}
-            <AccountLimitedButtons />
-            <div className="flex space-x-6">
-              <div className="w-full">
-                <AccountDeleteButton />
-              </div>
-              <div className="w-full">
-                <AccountLogoutButton />
+            <div className="flex flex-col gap-3 sm:gap-4">
+              {isPlaytestAdmin && <AccountPlaytestButton />}
+              <AccountLimitedButton />
+              <div className="flex gap-3 sm:gap-4">
+                <div className="w-full">
+                  <AccountDeleteButton />
+                </div>
+                <div className="w-full">
+                  <AccountLogoutButton />
+                </div>
               </div>
             </div>
           </div>

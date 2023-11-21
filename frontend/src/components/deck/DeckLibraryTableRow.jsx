@@ -63,11 +63,8 @@ const DeckLibraryTableRow = ({
     },
   });
 
-  const inInventory = limitedMode
-    ? limitedLibrary[card.c.Id]
-      ? 99
-      : 0
-    : inventoryLibrary[card.c.Id]?.q ?? 0;
+  const inLimited = limitedLibrary[card.c.Id];
+  const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
   const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
 
@@ -122,6 +119,7 @@ const DeckLibraryTableRow = ({
         softUsedMax={softUsedMax}
       />
       <ResultLibraryTableRowCommon
+        isBanned={limitedMode && !inLimited}
         card={card.c}
         handleClick={handleClick}
         inSearch={inSearch}

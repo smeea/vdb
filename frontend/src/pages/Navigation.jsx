@@ -21,6 +21,7 @@ import {
   searchTwdForm,
   searchPdaForm,
   searchResults,
+  limitedStore,
   deckStore,
 } from '@/context';
 
@@ -49,12 +50,11 @@ const Navigation = () => {
   const {
     inventoryMode,
     toggleInventoryMode,
-    limitedSwitch,
     limitedMode,
     toggleLimitedMode,
     isMobile,
     username,
-    playtestSwitch,
+    isPlaytester,
     playtestMode,
     togglePlaytestMode,
   } = useApp();
@@ -66,6 +66,7 @@ const Navigation = () => {
   const libraryFormState = useSnapshot(searchLibraryForm);
   const twdFormState = useSnapshot(searchTwdForm);
   const pdaFormState = useSnapshot(searchPdaForm);
+  const limitedStoreState = useSnapshot(limitedStore);
 
   let pdaUrl = '/pda';
   let twdUrl = '/twd';
@@ -73,6 +74,11 @@ const Navigation = () => {
   let libraryUrl = '/library';
   let decksUrl = '/decks';
   let cardsUrl = '/cards';
+
+  const isLimited =
+    Object.keys(limitedStoreState.crypt).length +
+      Object.keys(limitedStoreState.library).length >
+    0;
 
   if (!isMobile) {
     if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
@@ -104,7 +110,11 @@ const Navigation = () => {
       <div className="navbar-container mx-auto flex h-10 justify-between">
         <div className="flex items-center space-x-6">
           {isMobile ? (
-            <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
+            <NavMobileMenu
+              isLimited={isLimited}
+              showMenu={showMenu}
+              setShowMenu={setShowMenu}
+            />
           ) : (
             <>
               <LanguageSelectButton
@@ -119,22 +129,21 @@ const Navigation = () => {
             location.pathname !== '/account' &&
             location.pathname !== '/' &&
             location.pathname !== '/changelog' &&
-            location.pathname !== '/documentation' &&
-            location.pathname !== '/inventory' && (
+            location.pathname !== '/documentation' && (
               <>
                 <NavToggle
                   isOn={inventoryMode}
                   onToggle={toggleInventoryMode}
                   text="Inventory Mode"
                 />
-                {limitedSwitch && (
+                {isLimited && (
                   <NavToggle
                     isOn={limitedMode}
                     onToggle={toggleLimitedMode}
                     text="Limited Mode"
                   />
                 )}
-                {playtestSwitch && (
+                {isPlaytester && (
                   <NavToggle
                     isOn={playtestMode}
                     onToggle={togglePlaytestMode}

@@ -51,12 +51,10 @@ export const AppProvider = (props) => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
-  const [playtestSwitch, setPlaytestSwitch] = useState();
   const [playtestMode, setPlaytestMode] = useState();
   const [showImage, setShowImage] = useState();
   const [addMode, setAddMode] = useState();
   const [inventoryMode, setInventoryMode] = useState();
-  const [limitedSwitch, setLimitedSwitch] = useState();
   const [limitedMode, setLimitedMode] = useState();
   const [hideMissing, setHideMissing] = useState();
   const [cryptDeckSort, setCryptDeckSort] = useState();
@@ -240,7 +238,7 @@ export const AppProvider = (props) => {
   const changeBaseTextToLocalizedText = (
     setCardBase,
     localizedInfo,
-    nativeInfo,
+    nativeInfo
   ) => {
     setCardBase((draft) => {
       Object.keys(draft).map((k) => {
@@ -273,7 +271,7 @@ export const AppProvider = (props) => {
       changeBaseTextToLocalizedText(
         setLibraryCardBase,
         data.library,
-        nativeLibrary,
+        nativeLibrary
       );
     });
   };
@@ -286,12 +284,12 @@ export const AppProvider = (props) => {
         changeBaseTextToLocalizedText(
           setCryptCardBase,
           localizedCrypt[lang],
-          nativeCrypt,
+          nativeCrypt
         );
         changeBaseTextToLocalizedText(
           setLibraryCardBase,
           localizedLibrary[lang],
-          nativeLibrary,
+          nativeLibrary
         );
       }
     }
@@ -311,7 +309,7 @@ export const AppProvider = (props) => {
         localizedCrypt[lang],
         nativeCrypt,
         localizedLibrary[lang],
-        nativeLibrary,
+        nativeLibrary
       );
     }
   }, [deck, lang, localizedCrypt, localizedLibrary]);
@@ -325,51 +323,16 @@ export const AppProvider = (props) => {
   const toggleInventoryMode = () => {
     setInventoryMode(!inventoryMode);
     setLocalStorage('inventoryMode', !inventoryMode);
-
-    if (!inventoryMode && limitedMode) {
-      setLimitedMode(false);
-      setLocalStorage('limitedMode', false);
-    }
   };
 
   const toggleLimitedMode = () => {
     setLimitedMode(!limitedMode);
     setLocalStorage('limitedMode', !limitedMode);
-
-    if (!limitedMode && inventoryMode) {
-      setInventoryMode(false);
-      setLocalStorage('inventoryMode', false);
-    }
-  };
-
-  const toggleLimitedSwitch = () => {
-    setLimitedSwitch(!limitedSwitch);
-    setLocalStorage('limitedSwitch', !limitedSwitch);
-
-    if (limitedSwitch && limitedMode) {
-      setLimitedMode(false);
-      setLocalStorage('limitedMode', false);
-    }
   };
 
   const togglePlaytestMode = () => {
     setPlaytestMode(!playtestMode);
     setLocalStorage('playtestMode', !playtestMode);
-
-    if (playtestSwitch && playtestMode) {
-      setPlaytestMode(false);
-      setLocalStorage('playtestMode', false);
-    }
-  };
-
-  const togglePlaytestSwitch = () => {
-    setPlaytestSwitch(!playtestSwitch);
-    setLocalStorage('playtestSwitch', !playtestSwitch);
-
-    if (playtestSwitch && playtestMode) {
-      setPlaytestMode(false);
-      setLocalStorage('playtestMode', false);
-    }
   };
 
   const toggleAddMode = () => {
@@ -442,7 +405,7 @@ export const AppProvider = (props) => {
     initFromStorage(
       'cryptSearchSort',
       'Capacity - Min to Max',
-      setCryptSearchSort,
+      setCryptSearchSort
     );
     initFromStorage('cryptDeckSort', 'Quantity ', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
@@ -451,17 +414,15 @@ export const AppProvider = (props) => {
     initFromStorage(
       'analyzeSearchSort',
       'Rank - High to Low',
-      setAnalyzeSearchSort,
+      setAnalyzeSearchSort
     );
     initFromStorage('lang', 'en-EN', setLang);
     initFromStorage('addMode', isDesktop, setAddMode);
     initFromStorage('inventoryMode', false, setInventoryMode);
     initFromStorage('limitedMode', false, setLimitedMode);
-    initFromStorage('limitedSwitch', false, setLimitedSwitch);
     initFromStorage('showImage', true, setShowImage);
     initFromStorage('recentDecks', [], setRecentDecks);
     initFromStorage('playtestMode', false, setPlaytestMode);
-    initFromStorage('playtestSwitch', false, setPlaytestSwitch);
   }, []);
 
   // DECKS
@@ -471,7 +432,7 @@ export const AppProvider = (props) => {
         const cardsData = useDeck(
           decksData[deckid].cards,
           cryptCardBase,
-          libraryCardBase,
+          libraryCardBase
         );
         decksData[deckid] = { ...decksData[deckid], ...cardsData };
         if (decksData[deckid].usedInInventory) {
@@ -504,7 +465,7 @@ export const AppProvider = (props) => {
   useEffect(() => {
     if (decks || username === null) {
       const d = recentDecks.filter(
-        (v) => username === null || !decks[v.deckid],
+        (v) => username === null || !decks[v.deckid]
       );
       if (d.length < recentDecks.length) {
         updateRecentDecks(d);
@@ -582,16 +543,12 @@ export const AppProvider = (props) => {
         isPlaytestAdmin,
         playtestMode,
         togglePlaytestMode,
-        playtestSwitch,
-        togglePlaytestSwitch,
         hideMissing,
         setHideMissing,
         inventoryMode,
         toggleInventoryMode,
         limitedMode,
         toggleLimitedMode,
-        limitedSwitch,
-        toggleLimitedSwitch,
         setLimitedFormat,
         setInventoryMode,
         addMode,

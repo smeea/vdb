@@ -16,7 +16,7 @@ const DeckCardQuantity = ({
   isEditable,
   inMissing,
 }) => {
-  const { limitedMode, inventoryMode, isMobile } = useApp();
+  const { inventoryMode, isMobile } = useApp();
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(q ? q : '');
 
@@ -35,7 +35,7 @@ const DeckCardQuantity = ({
   };
 
   const getInventoryColor = () => {
-    if ((limitedMode || inventoryMode) && !inMissing) {
+    if (inventoryMode && !inMissing) {
       if (inventoryType) {
         if (inProxy) {
           return inInventory + (isSelected ? q : 0) <
