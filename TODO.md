@@ -3,7 +3,6 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Backend update_deck_route and remove_deck_route errors
 - Twd card preview in search not hide floating buttons, same in crypt lib search
-- Rulings references on Cavalier
 
 # FEATURES
 - Autotag my deck button

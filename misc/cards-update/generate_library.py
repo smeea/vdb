@@ -263,6 +263,10 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
                         text = match.group(1)
                         text = re.sub(r"{The (.+?)}", r"{\1, The}", text)
                         text = text.replace("Thaumaturgy", "Blood Sorcery")
+                        text = text.replace("Assamites", "Banu Haqim")
+                        text = text.replace("Assamite", "Banu Haqim")
+                        text = text.replace("Followers of Set", "Ministers")
+                        text = text.replace("Follower of Set", "Minister")
                         text = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", text)
                         card["Rulings"].append(
                             {
