@@ -261,7 +261,7 @@ def generate_cards(cardbase_csv, cardbase_file, cardbase_file_min):
                 for rule in c["rulings"]["text"]:
                     if match := re.match(r"(.*?)\[... \S+\].*", rule):
                         text = match.group(1)
-                        text = re.sub(r"{The (\w+)}", r"{\1, The}", text)
+                        text = re.sub(r"{The (.+?)}", r"{\1, The}", text)
                         text = text.replace("Thaumaturgy", "Blood Sorcery")
                         text = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", text)
                         card["Rulings"].append(

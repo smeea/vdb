@@ -3769,7 +3769,7 @@
                 }
             },
             {
-                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Paradox}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Paradox, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -9015,7 +9015,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"It's still an equip action (eg. can benefit from {The British Museum, London} or {Filchware's Pawn Shop}). ",
+                "text":"It's still an equip action (eg. can benefit from {British Museum, London, The} or {Filchware's Pawn Shop}). ",
                 "refs":{
                     "[LSJ 20050313]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ",
                     "[ANK 20230408]":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810"
@@ -11253,7 +11253,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[NEC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Bone}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[NEC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Bone, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -12562,7 +12562,7 @@
                 }
             },
             {
-                "text":"Takes the modified cost into account if it has been modified (eg. by {The Slow Withering} or {The Ankara Citadel, Turkey}). ",
+                "text":"Takes the modified cost into account if it has been modified (eg. by {Slow Withering, The} or {Ankara Citadel, Turkey, The}). ",
                 "refs":{
                     "[PIB 20150725]":"http://www.vekn.net/forum/rules-questions/72184-cavalier#72185",
                     "[LSJ 20100429]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/OUcf-1EMXXA/DOGZdKnJ1zgJ"
@@ -14051,7 +14051,7 @@
                 }
             },
             {
-                "text":"[VIC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Metamorphosis}, {Dragos}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[VIC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Metamorphosis, The}, {Dragos}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -15988,7 +15988,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[dai], [DAI] Once played, it continues to apply even if the vampire stops being Infernal (eg. {The Textbook Damnation}) ",
+                "text":"[dai], [DAI] Once played, it continues to apply even if the vampire stops being Infernal (eg. {Textbook Damnation, The}) ",
                 "refs":{
                     "[LSJ 20090207]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0UGI9W2sSpk/m/An-ZYLIxAiwJ"
                 }
@@ -19407,7 +19407,7 @@
                 }
             },
             {
-                "text":"The damage is not applied if the action is canceled before resolution (eg. {Tangle Atropos' Hand}, {The Kiss of Ra}). ",
+                "text":"The damage is not applied if the action is canceled before resolution (eg. {Tangle Atropos' Hand}, {Kiss of Ra, The}). ",
                 "refs":{
                     "[ANK 20210124]":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
                     "[ANK 20220401]":"https://www.vekn.net/forum/rules-questions/79720-daring-the-dawn-and-mirror-walk?start=6#104927",
@@ -20688,7 +20688,7 @@
                 }
             },
             {
-                "text":"It retrieves the political action card before it is burned (eg. if it was played from {The Erciyes Fragments}, it is still returned into its owner's hand). ",
+                "text":"It retrieves the political action card before it is burned (eg. if it was played from {Erciyes Fragments, The}, it is still returned into its owner's hand). ",
                 "refs":{
                     "[LSJ 20050324]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vhSqnoAt_Bs/m/4yurSS3iyqAJ"
                 }
@@ -24151,7 +24151,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[pro] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of the Feral Heart}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[pro] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of the Feral Heart, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -30674,7 +30674,7 @@
                 }
             },
             {
-                "text":"The damage is not applied if the action is canceled before resolution (eg. {Tangle Atropos' Hand}, {The Kiss of Ra}). ",
+                "text":"The damage is not applied if the action is canceled before resolution (eg. {Tangle Atropos' Hand}, {Kiss of Ra, The}). ",
                 "refs":{
                     "[ANK 20210124]":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
                     "[ANK 20220401]":"https://www.vekn.net/forum/rules-questions/79720-daring-the-dawn-and-mirror-walk?start=6#104927",
@@ -35609,7 +35609,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Paradox}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Paradox, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -38370,7 +38370,7 @@
                 }
             },
             {
-                "text":"[DAI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Textbook Damnation}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[DAI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Textbook Damnation, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -49164,7 +49164,7 @@
         "Requirement":"black hand",
         "Rulings":[
             {
-                "text":"The additional intercept is gained or lost if the acting vampire changes sect during the action (eg. with {The Red Question} or {Mask of a Thousand Faces}). ",
+                "text":"The additional intercept is gained or lost if the acting vampire changes sect during the action (eg. with {Red Question, The} or {Mask of a Thousand Faces}). ",
                 "refs":{
                     "[ANK 20190416]":"http://www.vekn.net/forum/rules-questions/77560-conditional-intercepts#94528"
                 }
@@ -49896,7 +49896,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[SPI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Harmony}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[SPI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Harmony, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -56549,7 +56549,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[obt] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Night}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[obt] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Night, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -60082,7 +60082,7 @@
         "Requirement":"anarch",
         "Rulings":[
             {
-                "text":"The additional intercept is gained or lost if the acting vampire changes sect during the action (eg. with {The Red Question} or {Mask of a Thousand Faces}). ",
+                "text":"The additional intercept is gained or lost if the acting vampire changes sect during the action (eg. with {Red Question, The} or {Mask of a Thousand Faces}). ",
                 "refs":{
                     "[ANK 20190416]":"http://www.vekn.net/forum/rules-questions/77560-conditional-intercepts#94528"
                 }
@@ -62902,7 +62902,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[TEM] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Ankara Citadel, Turkey}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[TEM] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Ankara Citadel, Turkey, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -68262,7 +68262,7 @@
                 }
             },
             {
-                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Ankara Citadel, Turkey}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Ankara Citadel, Turkey, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -68673,7 +68673,7 @@
                 }
             },
             {
-                "text":"[QUI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Blood}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[QUI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Blood, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[LSJ 19970224]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/80KRDjVFkyg/TBJso9Ra_9QJ",
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
@@ -69191,7 +69191,7 @@
                 }
             },
             {
-                "text":"[PRE][SER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Typhon}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[PRE][SER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Typhon, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -70002,7 +70002,7 @@
                 }
             },
             {
-                "text":"[OBT] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Night}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[OBT] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Night, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -75214,7 +75214,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[obt] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Night}). The card cannot be played if the minion cannot afford to burn the blood. ",
+                "text":"[obt] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Path of Night, The}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -76020,7 +76020,7 @@
                 }
             },
             {
-                "text":"If no copy of a named card is in the ash heap upon resolution (eg. {The Erciyes Fragments} was used to take it), the effect still resolves for the other copies and the acting Methuselah discards 3 cards. ",
+                "text":"If no copy of a named card is in the ash heap upon resolution (eg. {Erciyes Fragments, The} was used to take it), the effect still resolves for the other copies and the acting Methuselah discards 3 cards. ",
                 "refs":{
                     "[LSJ 20090722]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/r-N65rA52uo/OXW8xk1r1iMJ"
                 }
@@ -83362,7 +83362,7 @@
                 }
             },
             {
-                "text":"If {The Kiss of Ra} or {Elder Impersonation} are used, the block does not happen. ",
+                "text":"If {Kiss of Ra, The} or {Elder Impersonation} are used, the block does not happen. ",
                 "refs":{
                     "[LSJ 20100210]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HHJfsSbIEf0/6UxQ3UJT9aEJ"
                 }
