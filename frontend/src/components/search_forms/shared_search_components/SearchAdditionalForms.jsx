@@ -16,6 +16,7 @@ const SearchAdditionalForms = ({
   menuPlacement,
   searchForm,
   maxMenuHeight,
+  isClearable = false,
 }) => {
   const { isMobile } = useApp();
 
@@ -45,7 +46,7 @@ const SearchAdditionalForms = ({
                 menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
                 name={i}
                 value={morelessOptions.find(
-                  (obj) => obj.value === value.value[i].moreless,
+                  (obj) => obj.value === value.value[i].moreless
                 )}
                 onChange={onChange}
               />
@@ -67,7 +68,7 @@ const SearchAdditionalForms = ({
                 menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
                 name={i}
                 value={options.find(
-                  (obj) => obj.value === value.value[i].capacity,
+                  (obj) => obj.value === value.value[i].capacity
                 )}
                 onChange={onChange}
                 autoFocus
@@ -79,6 +80,7 @@ const SearchAdditionalForms = ({
             <Select
               options={options}
               isSearchable={!isMobile}
+              isClearable={isClearable && value.value[i] !== 'any'}
               defaultMenuIsOpen={value.value[i] === 'any'}
               menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
               maxMenuHeight={
@@ -86,12 +88,14 @@ const SearchAdditionalForms = ({
               }
               name={i}
               value={options.find((obj) => obj.value === value.value[i])}
-              onChange={onChange}
+              onChange={(e, id) =>
+                e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
+              }
               autoFocus
             />
           </div>
         )}
-      </div>,
+      </div>
     );
   }
 

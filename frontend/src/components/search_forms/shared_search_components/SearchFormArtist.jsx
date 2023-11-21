@@ -6,21 +6,20 @@ import { useApp } from '@/context';
 
 const SearchFormArtist = ({ target, value, onChange }) => {
   const { isXWide } = useApp();
+  const name = 'artist';
   const maxMenuHeight = isXWide ? 500 : 350;
-
-  let artists;
-  target == 'crypt' ? (artists = cryptArtists) : (artists = libraryArtists);
+  const artists = target == 'crypt' ? cryptArtists : libraryArtists;
 
   const options = artists.map((artist) => {
     return {
-      name: 'artist',
+      name: name,
       value: artist,
       label: artist,
     };
   });
 
   options.unshift({
-    name: 'artist',
+    name: name,
     value: 'any',
     label: (
       <div className="flex items-center">
@@ -40,12 +39,13 @@ const SearchFormArtist = ({ target, value, onChange }) => {
       <div className="w-3/4">
         <Select
           options={options}
-          onChange={onChange}
           menuPlacement="top"
+          isClearable={value !== 'any'}
           maxMenuHeight={maxMenuHeight}
-          name="artist"
+          name={name}
           placeholder="Artist"
           value={options.find((obj) => obj.value === value)}
+          onChange={(e) => onChange(e ?? { name: name, value: 'any' })}
         />
       </div>
     </div>

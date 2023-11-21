@@ -97,16 +97,20 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
           <Select
             options={options}
             isSearchable={!isMobile}
+            isClearable={value.value[0] !== 'any'}
             menuPlacement="top"
             filterOption={filterOption}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
-            onChange={onChange}
+            onChange={(e, id) =>
+              e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
+            }
           />
         </div>
       </div>
       <SearchAdditionalForms
+        isClearable
         value={value}
         name={name}
         searchForm={searchForm}

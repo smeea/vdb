@@ -79,7 +79,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
               isSearchable={false}
               name={0}
               value={morelessOptions.find(
-                (obj) => obj.value === value.value[0].moreless,
+                (obj) => obj.value === value.value[0].moreless
               )}
               onChange={onChange}
             />
@@ -88,15 +88,19 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
             <Select
               options={options}
               isSearchable={false}
+              isClearable={value.value[0][name] !== 'any'}
               name={0}
               maxMenuHeight={maxMenuHeight}
               value={options.find((obj) => obj.value === value.value[0][name])}
-              onChange={onChange}
+              onChange={(e, id) =>
+                e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
+              }
             />
           </div>
         </div>
       </div>
       <SearchAdditionalForms
+        isClearable
         name={name}
         value={value}
         options={options}

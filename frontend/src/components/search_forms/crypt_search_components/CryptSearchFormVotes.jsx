@@ -4,6 +4,7 @@ import { useApp } from '@/context';
 
 const CryptSearchFormVotes = ({ value, onChange }) => {
   const { isXWide } = useApp();
+  const name = 'votes';
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const options = [
@@ -15,7 +16,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
     ['4', '4+'],
   ].map((i) => ({
     value: i[0],
-    name: 'votes',
+    name: name,
     label: (
       <div className="flex items-center">
         <div className="flex w-[40px]" />
@@ -35,10 +36,11 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
         <Select
           options={options}
           isSearchable={false}
-          name="votes"
+          isClearable={value !== 'any'}
+          name={name}
           maxMenuHeight={maxMenuHeight}
           value={options.find((obj) => obj.value === value.toLowerCase())}
-          onChange={onChange}
+          onChange={(e) => onChange(e ?? { name: name, value: 'any' })}
         />
       </div>
     </div>

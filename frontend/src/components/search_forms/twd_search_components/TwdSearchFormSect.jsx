@@ -35,12 +35,13 @@ const TwdSearchFormSect = ({ value, onChange }) => {
       </div>
       <div className="w-3/4">
         <Select
+          isClearable={value !== 'any'}
           options={options}
           isSearchable={!isMobile}
           name={name}
           maxMenuHeight={maxMenuHeight}
           value={options.find((obj) => obj.value === value.toLowerCase())}
-          onChange={onChange}
+          onChange={(e) => onChange(e ?? { name: name, value: 'any' })}
         />
       </div>
     </div>

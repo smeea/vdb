@@ -37,7 +37,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
               isSearchable={false}
               name={`${name}-moreless`}
               value={morelessOptions.find(
-                (obj) => obj.value === value.moreless,
+                (obj) => obj.value === value.moreless
               )}
               onChange={onChange}
             />
@@ -46,10 +46,13 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
             <Select
               options={options}
               isSearchable={false}
+              isClearable={value[name] !== 'any'}
               name={name}
               maxMenuHeight={maxMenuHeight}
               value={options.find((obj) => obj.value === value[name])}
-              onChange={onChange}
+              onChange={(e, id) =>
+                e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
+              }
             />
           </div>
         </div>

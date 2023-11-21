@@ -8,7 +8,6 @@
 - Autotag my deck button
 - TWD Deck check documentation
 - Inventory cards with notes filter to crypt/library/inventory
-- Clear search form buttons
 
 # MAYBE LATER FEATURES
 - Offline decks/inventory storage

@@ -16,7 +16,7 @@ const SelectAsync = React.forwardRef(
       placeholder,
       value,
     },
-    ref,
+    ref
   ) => {
     return (
       <AsyncSelect
@@ -53,8 +53,8 @@ const SelectAsync = React.forwardRef(
             state.isFocused
               ? 'bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-                ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
-                : ''
+              ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
+              : ''
           }
 `,
           noOptionsMessage: () => 'rounded p-2',
@@ -62,12 +62,12 @@ const SelectAsync = React.forwardRef(
           placeholder: () => 'text-midGray dark:text-midGrayDark',
           valueContainer: () =>
             'px-2 min-h-[40px] bg-bgPrimary dark:bg-bgPrimaryDark rounded',
-          clearIndicator: () => 'text-lightGray dark:text-lightGrayDark px-2',
-          loadingIndicator: () => 'text-lightGray dark:text-lightGrayDark px-2',
+          clearIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
+          loadingIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
         }}
       />
     );
-  },
+  }
 );
 SelectAsync.displayName = 'SelectAsync';
 

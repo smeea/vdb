@@ -55,10 +55,13 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
           <Select
             options={options}
             isSearchable={false}
+            isClearable={value[name] !== 'any'}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value[name])}
-            onChange={onChange}
+            onChange={(e, id) =>
+              e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
+            }
           />
         </div>
       </div>

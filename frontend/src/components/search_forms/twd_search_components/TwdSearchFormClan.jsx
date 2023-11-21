@@ -8,13 +8,14 @@ import { useApp } from '@/context';
 const TwdSearchFormClan = ({ value, onChange }) => {
   const { playtestMode, isMobile, isXWide } = useApp();
   const maxMenuHeight = isXWide ? 400 : 350;
+  const name = 'clan';
   const options = ['ANY', ...vampireClansList, ...imbuedClansList]
     .filter((clan) => playtestMode || clan !== 'Hecata')
     .map((i) => {
       if (i == 'ANY' || i == 'NONE') {
         return {
           value: i.toLowerCase(),
-          name: 'clan',
+          name: name,
           label: (
             <div className="flex items-center">
               <div className="flex w-[40px]" />
@@ -25,7 +26,7 @@ const TwdSearchFormClan = ({ value, onChange }) => {
       } else {
         return {
           value: i.toLowerCase(),
-          name: 'clan',
+          name: name,
           label: (
             <div className="flex items-center">
               <div className="flex w-[40px]">
@@ -49,10 +50,11 @@ const TwdSearchFormClan = ({ value, onChange }) => {
         <Select
           options={options}
           isSearchable={!isMobile}
-          name="clan"
+          isClearable={value !== 'any'}
+          name={name}
           maxMenuHeight={maxMenuHeight}
           value={options.find((obj) => obj.value === value.toLowerCase())}
-          onChange={onChange}
+          onChange={(e) => onChange(e ?? { name: name, value: 'any' })}
         />
       </div>
     </div>

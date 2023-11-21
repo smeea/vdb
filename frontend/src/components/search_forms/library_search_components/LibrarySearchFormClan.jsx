@@ -81,16 +81,20 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
           <Select
             options={options}
             isSearchable={!isMobile}
+            isClearable={value.value[0] !== 'any'}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
-            onChange={onChange}
+            onChange={(e, id) =>
+              e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
+            }
           />
         </div>
       </div>
       <SearchAdditionalForms
+        isClearable
         value={value}
         name={name}
         searchForm={searchForm}
