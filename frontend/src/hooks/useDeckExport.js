@@ -21,7 +21,7 @@ const getCryptTitle = (crypt) => {
   const counter = capacityList.length >= 4 ? 4 : capacityList.length;
   for (let i = 0; i < counter; i++) {
     cryptMin += capacityList[i];
-    cryptMax += capacityList.at(- 1 - i);
+    cryptMax += capacityList.at(-1 - i);
   }
 
   const title = `Crypt (${cryptTotalCards} cards, min=${cryptMin} max=${cryptMax} avg=${cryptAvg})`;

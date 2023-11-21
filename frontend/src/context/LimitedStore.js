@@ -115,8 +115,8 @@ export const limitedCardChange = (card, isAllowed, isAdd) => {
         ? limitedFullStore.allowed.crypt
         : limitedFullStore.banned.crypt
       : isAllowed
-      ? limitedFullStore.allowed.library
-      : limitedFullStore.banned.library;
+        ? limitedFullStore.allowed.library
+        : limitedFullStore.banned.library;
 
   const idbStore =
     card.Id > 200000
@@ -124,8 +124,8 @@ export const limitedCardChange = (card, isAllowed, isAdd) => {
         ? 'limitedAllowedCrypt'
         : 'limitedBannedCrypt'
       : isAllowed
-      ? 'limitedAllowedLibrary'
-      : 'limitedBannedLibrary';
+        ? 'limitedAllowedLibrary'
+        : 'limitedBannedLibrary';
 
   if (isAdd) {
     store[card.Id] = card;

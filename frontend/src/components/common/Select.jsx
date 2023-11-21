@@ -45,8 +45,8 @@ const Select = React.forwardRef(
               noBorder
                 ? ''
                 : state.isFocused
-                ? 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
-                : 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark'
+                  ? 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
+                  : 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark'
             }`,
           dropdownIndicator: () =>
             noDropdown
@@ -64,8 +64,8 @@ const Select = React.forwardRef(
             state.isFocused
               ? 'bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-              ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
-              : ''
+                ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
+                : ''
           }
 `,
           placeholder: () => 'text-midGray dark:text-midGrayDark',

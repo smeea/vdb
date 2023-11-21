@@ -39,8 +39,8 @@ const SelectCreatable = React.forwardRef(
               noBorder
                 ? ''
                 : state.isFocused
-                ? 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
-                : 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark'
+                  ? 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
+                  : 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark'
             }`,
           dropdownIndicator: () => 'max-w-[0px] max-h-[0px]',
           indicatorsContainer: () => 'rounded max-h-[0px] max-w-[0px]',
@@ -52,8 +52,8 @@ const SelectCreatable = React.forwardRef(
             state.isFocused
               ? 'bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-              ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
-              : ''
+                ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
+                : ''
           }
 `,
           valueContainer: () => 'flex px-[5px] min-h-[40px] gap-1 p-1',

@@ -76,8 +76,8 @@ const DeckCloneButton = ({ deck, inTwdPda, noText }) => {
         success
           ? 'success'
           : inTwdPda || noText || !isDesktop
-          ? 'primary'
-          : 'secondary'
+            ? 'primary'
+            : 'secondary'
       }
       onClick={cloneDeck}
       title="Clone Deck to your account for editing"

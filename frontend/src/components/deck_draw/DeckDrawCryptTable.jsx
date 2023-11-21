@@ -14,7 +14,8 @@ const DeckDrawCryptTable = ({
   const { isMobile } = useApp();
   const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
 
-  const N = restCards && resultCards ? restCards.length + resultCards.length : 0;
+  const N =
+    restCards && resultCards ? restCards.length + resultCards.length : 0;
   const n = resultCards ? resultCards.length : 0;
   const nonPlayed = {};
 
@@ -51,14 +52,14 @@ const DeckDrawCryptTable = ({
               />
               {(!ashHeap || !isMobile) && (
                 <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
-                  {!ashHeap &&
-                   <DeckDrawProbability
-                     cardName={card.Name}
-                     N={N}
-                     n={n}
-                     k={nonPlayed[card.Id]}
-                   />
-                  }
+                  {!ashHeap && (
+                    <DeckDrawProbability
+                      cardName={card.Name}
+                      N={N}
+                      n={n}
+                      k={nonPlayed[card.Id]}
+                    />
+                  )}
                 </td>
               )}
             </tr>

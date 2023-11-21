@@ -18,7 +18,7 @@ const ResultUsed = ({ card }) => {
   const hardUsedTotal = getHardTotal(used.hard[card.Id]);
   const inInventory = inventory[card.Id]?.q || 0;
 
-  const isInventoryNote = inventory[card.Id]?.t
+  const isInventoryNote = inventory[card.Id]?.t;
 
   return (
     <Tooltip

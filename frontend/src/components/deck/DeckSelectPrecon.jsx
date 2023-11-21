@@ -11,7 +11,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
     const opts = [];
     Object.keys(setsAndPrecons)
       .filter(
-        (i) => (playtestMode || i !== 'PLAYTEST') && setsAndPrecons[i].precons
+        (i) => (playtestMode || i !== 'PLAYTEST') && setsAndPrecons[i].precons,
       )
       .map((set) => {
         const year = setsAndPrecons[set].date

@@ -84,8 +84,8 @@ const DeckSelect = ({
                 !deck?.inventoryType
                   ? 'VIRTUAL\nDo not use Inventory'
                   : deck?.inventoryType === 's'
-                  ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
-                  : 'FIXED\nUse unique copies of cards from Inventory'
+                    ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
+                    : 'FIXED\nUse unique copies of cards from Inventory'
               }`}
               variant="primary"
               onClick={() => toggleInventoryState(deck?.deckid)}

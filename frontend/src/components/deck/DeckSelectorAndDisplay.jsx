@@ -56,19 +56,19 @@ const DeckSelectorAndDisplay = () => {
       {deck && addMode && (
         <>
           {playtestMode ||
-           !(
-             Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
-               Object.keys(deck.library).some((cardid) => cardid > 110000)
-           ) ? (
-             <>
-               <DeckCrypt deck={deck} inSearch />
-               <DeckLibrary deck={deck} inSearch />
-             </>
-           ) : (
-             <div className="flex">
-             <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
-             </div>
-           )}
+          !(
+            Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
+            Object.keys(deck.library).some((cardid) => cardid > 110000)
+          ) ? (
+            <>
+              <DeckCrypt deck={deck} inSearch />
+              <DeckLibrary deck={deck} inSearch />
+            </>
+          ) : (
+            <div className="flex">
+              <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
+            </div>
+          )}
         </>
       )}
     </div>

@@ -16,15 +16,15 @@ const InventoryCardQuantityDiff = ({ card, softUsedMax, hardUsedTotal }) => {
           card.q == softUsedMax + hardUsedTotal
             ? 'text-midGray dark:text-midGrayDark'
             : card.q >= softUsedMax + hardUsedTotal
-            ? 'text-fgGreen dark:text-fgGreenDark'
-            : 'text-fgRed dark:text-fgRedDark'
+              ? 'text-fgGreen dark:text-fgGreenDark'
+              : 'text-fgRed dark:text-fgRedDark'
         }`}
       >
         {card.q === softUsedMax + hardUsedTotal
           ? '='
           : card.q > softUsedMax + hardUsedTotal
-          ? `+${card.q - softUsedMax - hardUsedTotal}`
-          : card.q - softUsedMax - hardUsedTotal}
+            ? `+${card.q - softUsedMax - hardUsedTotal}`
+            : card.q - softUsedMax - hardUsedTotal}
       </div>
     </ConditionalTooltip>
   );

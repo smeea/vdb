@@ -53,8 +53,8 @@ const SelectAsync = React.forwardRef(
             state.isFocused
               ? 'bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-              ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
-              : ''
+                ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
+                : ''
           }
 `,
           noOptionsMessage: () => 'rounded p-2',

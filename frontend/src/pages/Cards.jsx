@@ -66,8 +66,8 @@ const Cards = () => {
     if (cryptCardBase && libraryCardBase) {
       searchResults.quickCard =
         params.cardid > 200000
-        ? cryptCardBase[params.cardid]
-        : libraryCardBase[params.cardid];
+          ? cryptCardBase[params.cardid]
+          : libraryCardBase[params.cardid];
     }
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
@@ -78,10 +78,16 @@ const Cards = () => {
           <>
             {card && (
               <>
-                {playtestMode || (card.Id < 110000 || (card.Id > 200000 && card.Id < 210000)) ? (
+                {playtestMode ||
+                card.Id < 110000 ||
+                (card.Id > 200000 && card.Id < 210000) ? (
                   <div className="pb-[59px]">
                     {showImage ? (
-                      <CardImage className="w-full" card={card} set={imageSet} />
+                      <CardImage
+                        className="w-full"
+                        card={card}
+                        set={imageSet}
+                      />
                     ) : (
                       <div className="p-3 pb-0">
                         <ResultLayoutText
@@ -94,7 +100,11 @@ const Cards = () => {
                     )}
                     <div className="fixed z-30">
                       <ButtonFloat onClick={toggleShowImage} variant="primary">
-                        <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
+                        <ArrowRepeat
+                          width="40"
+                          height="40"
+                          viewBox="0 0 16 16"
+                        />
                       </ButtonFloat>
                     </div>
                   </div>
@@ -158,26 +168,27 @@ const Cards = () => {
               )}
               {card && (
                 <>
-                  {playtestMode || (card.Id < 110000 || (card.Id > 200000 && card.Id < 210000))
-                   ? (
-                     <div className="flex border border-bgSecondary dark:border-bgSecondaryDark">
-                       <div>
-                         <CardImage card={card} set={imageSet} />
-                       </div>
-                       <div className="w-full p-5">
-                         <ResultLayoutText
-                           card={card}
-                           setImageSet={setImageSet}
-                           setCard={handleSetCard}
-                           noClose
-                         />
-                       </div>
-                     </div>
-                   ) : (
-                     <div className="flex">
-                       <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
-                     </div>
-                   )}
+                  {playtestMode ||
+                  card.Id < 110000 ||
+                  (card.Id > 200000 && card.Id < 210000) ? (
+                    <div className="flex border border-bgSecondary dark:border-bgSecondaryDark">
+                      <div>
+                        <CardImage card={card} set={imageSet} />
+                      </div>
+                      <div className="w-full p-5">
+                        <ResultLayoutText
+                          card={card}
+                          setImageSet={setImageSet}
+                          setCard={handleSetCard}
+                          noClose
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex">
+                      <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
+                    </div>
+                  )}
                 </>
               )}
             </div>
