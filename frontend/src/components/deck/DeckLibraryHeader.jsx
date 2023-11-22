@@ -26,7 +26,7 @@ const DeckLibraryHeader = ({
   byTypes,
   byDisciplines,
 }) => {
-  const { isMobile } = useApp();
+  const { limitedMode, isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
 
   return (
@@ -40,8 +40,12 @@ const DeckLibraryHeader = ({
               ' of 60-90'}
             ]
           </div>
-          {!inMissing && hasBanned && <Warning value="BANNED" />}
-          {!inMissing && hasLimited && <Warning value="LIMITED" />}
+          {!inMissing && (
+            <>
+              {hasBanned && <Warning value="BANNED" />}
+              {limitedMode && hasLimited && <Warning value="LIMITED" />}
+            </>
+          )}
         </div>
         {!inMissing && (
           <div className="flex space-x-3">
