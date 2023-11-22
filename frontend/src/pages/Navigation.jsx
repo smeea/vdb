@@ -136,7 +136,7 @@ const Navigation = () => {
                   onToggle={toggleInventoryMode}
                   text="Inventory Mode"
                 />
-                {isLimited && (
+                {(isLimited || limitedMode) && (
                   <NavToggle
                     isOn={limitedMode}
                     onToggle={toggleLimitedMode}
