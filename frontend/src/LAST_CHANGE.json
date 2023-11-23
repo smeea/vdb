@@ -1,6 +1,7 @@
 {
-  "version": "2023-11-21",
+  "version": "2023-11-22",
   "changes": [
+    "HOTFIX: PDF proxy bug introduced by original (yesterday's) update below",
     "Improve Inventory and Limited modes to work together: when enabled Inventory mode will highlight card quantity and Limited mode will affect card names. For card search Limited mode will filter results to only limited cards, while Inventory mode will show inventory quantity for all cards and show checkbox under main text field to search in Inventory instead of all VTES cards",
     "Show Limited warning (similar to Banned) if some cards in Deck are not compatible (useful for organizers to quickly see if decks of participants are good)",
     "Add clear buttons to many search fields (smallest one will be without it at least for now)",

@@ -38,7 +38,6 @@ export const cardtypeSorted = [
 ];
 
 export const GROUPED_TYPE = 'GroupedType';
-
 export const POOL_COST = 'Pool Cost';
 export const BLOOD_COST = 'Blood Cost';
 export const BANNED = 'Banned';

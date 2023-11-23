@@ -9,9 +9,9 @@ import {
   ButtonIconed,
   DeckProxySelectModal,
 } from '@/components';
-import { cryptSort } from '@/utils';
-import { useCardImageUrl, useDeckLibrary } from '@/hooks';
-import { cardtypeSortedFull } from '@/utils/constants';
+import { countCards, cryptSort, librarySort } from '@/utils';
+import { useCardImageUrl } from '@/hooks';
+import { GROUPED_TYPE } from '@/utils/constants';
 import { useApp } from '@/context';
 
 const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
@@ -32,34 +32,24 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
 
     const cryptSorted = cryptSort(
       Object.values(crypt).filter((card) => card.q > 0),
-      cryptDeckSort,
+      cryptDeckSort
     );
-    const { libraryByType } = useDeckLibrary(library);
-    const cards = [];
-    let cardsTotal = 0;
 
-    cryptSorted.map((card) => {
-      cards.push({ url: useCardImageUrl(card.c, card.set, lang), q: card.q });
-      cardsTotal += card.q;
-    });
+    const librarySorted = librarySort(
+      Object.values(library).filter((card) => card.q > 0),
+      GROUPED_TYPE
+    );
 
-    cardtypeSortedFull.map((type) => {
-      if (libraryByType[type]) {
-        libraryByType[type].map((card) => {
-          cards.push({
-            url: useCardImageUrl(card.c, card.set, lang),
-            q: card.q,
-          });
-          cardsTotal += card.q;
-        });
-      }
+    const cardsTotal = countCards([...cryptSorted, ...librarySorted]);
+    const cards = [...cryptSorted, ...librarySorted].map((card) => {
+      return { url: useCardImageUrl(card.c, card.set, lang), q: card.q };
     });
 
     let { jsPDF } = await import('jspdf');
     const pdf = new jsPDF(
       'p',
       'mm',
-      format.isLetter ? [215.9, 279.4] : [210, 297],
+      format.isLetter ? [215.9, 279.4] : [210, 297]
     );
     format.isWhiteGaps
       ? pdf.setFillColor(255, 255, 255)
@@ -84,7 +74,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           marginTop + counterY * (h + gap),
           w + gap,
           h + gap,
-          'F',
+          'F'
         );
 
         try {
@@ -96,7 +86,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
             (w + gap) * counterX + marginLeft,
             (h + gap) * counterY + marginTop,
             w,
-            h,
+            h
           );
         } catch {
           img.src = `${card.url.baseUrl}.jpg`;
@@ -106,7 +96,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
             (w + gap) * counterX + marginLeft,
             (h + gap) * counterY + marginTop,
             w,
-            h,
+            h
           );
         }
 
