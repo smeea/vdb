@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   CardPopover,
   ResultName,
@@ -8,16 +8,35 @@ import {
 } from '@/components';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from '@/context';
+import { useModalCardController } from '@/hooks';
 
 const TwdSearchFormLibrary = ({ value, form }) => {
-  const { libraryCardBase, isMobile } = useApp();
-  const [modalCard, setModalCard] = useState();
+  const { libraryCardBase, setShowFloatingButtons, isMobile } = useApp();
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(
+    Object.keys(value).map((id) => libraryCardBase[id])
+  );
 
   const handleAdd = (event) => {
     form[event.value] = {
       q: 1,
       m: 'gt',
     };
+  };
+
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -30,6 +49,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
         {Object.keys(value)
           .filter((id) => value[id].q >= 0)
           .map((id) => {
+            const card = libraryCardBase[id];
             return (
               <div key={id} className="flex items-center space-x-2">
                 <TwdSearchFormQuantityButtons
@@ -39,26 +59,26 @@ const TwdSearchFormLibrary = ({ value, form }) => {
                 />
                 <ConditionalTooltip
                   placement="left"
-                  overlay={<CardPopover card={libraryCardBase[id]} />}
+                  overlay={<CardPopover card={card} />}
                   disabled={isMobile}
                   noPadding
                 >
                   <div
                     className="flex cursor-pointer"
-                    onClick={() => setModalCard(libraryCardBase[id])}
+                    onClick={() => handleModalCardOpen(card)}
                   >
-                    <ResultName card={libraryCardBase[id]} />
+                    <ResultName card={card} />
                   </div>
                 </ConditionalTooltip>
               </div>
             );
           })}
       </div>
-      {modalCard && (
+      {shouldShowModal && (
         <ResultModal
-          card={modalCard}
-          handleModalCardChange={() => {}}
-          handleClose={() => setModalCard(false)}
+          card={currentModalCard}
+          handleModalCardChange={handleModalCardChange}
+          handleClose={handleClose}
         />
       )}
     </div>

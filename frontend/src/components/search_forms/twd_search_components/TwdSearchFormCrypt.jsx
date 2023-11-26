@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   CardPopover,
   ResultName,
@@ -8,16 +8,33 @@ import {
 } from '@/components';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from '@/context';
+import { useModalCardController } from '@/hooks';
 
 const TwdSearchFormCrypt = ({ value, form }) => {
-  const { cryptCardBase, isMobile } = useApp();
-  const [modalCard, setModalCard] = useState();
+  const { cryptCardBase, setShowFloatingButtons, isMobile } = useApp();
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(Object.keys(value).map((id) => cryptCardBase[id]));
 
   const handleAdd = (event) => {
     form[event.value] = {
       q: 1,
       m: 'gt',
     };
+  };
+
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -30,6 +47,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
         {Object.keys(value)
           .filter((id) => value[id].q >= 0)
           .map((id) => {
+            const card = cryptCardBase[id];
             return (
               <div key={id} className="flex items-center space-x-2">
                 <TwdSearchFormQuantityButtons
@@ -39,18 +57,18 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                 />
                 <ConditionalTooltip
                   placement="left"
-                  overlay={<CardPopover card={cryptCardBase[id]} />}
+                  overlay={<CardPopover card={card} />}
                   disabled={isMobile}
                   noPadding
                 >
                   <div
                     className="flex cursor-pointer gap-1"
-                    onClick={() => setModalCard(cryptCardBase[id])}
+                    onClick={() => handleClick(card)}
                   >
-                    <ResultName card={cryptCardBase[id]} />
-                    {cryptCardBase[id]['New'] && (
+                    <ResultName card={card} />
+                    {card.New && (
                       <div className="text-midGray  dark:text-midGrayDark">
-                        [G{cryptCardBase[id].Group}]
+                        [G{card.Group}]
                       </div>
                     )}
                   </div>
@@ -59,11 +77,11 @@ const TwdSearchFormCrypt = ({ value, form }) => {
             );
           })}
       </div>
-      {modalCard && (
+      {shouldShowModal && (
         <ResultModal
-          show={!!modalCard}
-          card={modalCard}
-          handleClose={() => setModalCard(false)}
+          card={currentModalCard}
+          handleModalCardChange={handleModalCardChange}
+          handleClose={handleClose}
         />
       )}
     </div>
