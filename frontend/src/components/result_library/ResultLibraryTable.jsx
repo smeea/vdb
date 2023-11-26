@@ -5,7 +5,6 @@ import { useModalCardController } from '@/hooks';
 
 const ResultLibraryTable = ({ resultCards, inLimited }) => {
   const { setShowFloatingButtons } = useApp();
-
   const {
     currentModalCard,
     shouldShowModal,

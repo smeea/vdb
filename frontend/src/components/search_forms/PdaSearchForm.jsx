@@ -28,8 +28,14 @@ import {
 } from '@/context';
 
 const PdaSearchForm = ({ error, setError }) => {
-  const { username, cryptCardBase, libraryCardBase, inventoryMode, isMobile } =
-    useApp();
+  const {
+    username,
+    cryptCardBase,
+    libraryCardBase,
+    showFloatingButtons,
+    inventoryMode,
+    isMobile,
+  } = useApp();
   const pdaFormState = useSnapshot(searchPdaForm);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -309,7 +315,7 @@ const PdaSearchForm = ({ error, setError }) => {
         form={searchPdaForm}
         inPda
       />
-      {isMobile && (
+      {isMobile && showFloatingButtons && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />
           <ButtonFloatSearch

@@ -65,7 +65,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
                 >
                   <div
                     className="flex cursor-pointer"
-                    onClick={() => handleModalCardOpen(card)}
+                    onClick={() => handleClick(card)}
                   >
                     <ResultName card={card} />
                   </div>

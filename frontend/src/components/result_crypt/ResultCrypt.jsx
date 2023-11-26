@@ -81,9 +81,11 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
         </>
       )}
       {isMobile && showFloatingButtons && (
-        <ButtonFloatClose handleClose={handleClear} />
+        <>
+          <ButtonFloatClose handleClose={handleClear} />
+          {isEditable && <ButtonFloatAdd />}
+        </>
       )}
-      {isMobile && isEditable && <ButtonFloatAdd />}
     </>
   );
 };

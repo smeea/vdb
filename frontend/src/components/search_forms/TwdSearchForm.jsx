@@ -30,7 +30,13 @@ import {
 } from '@/context';
 
 const TwdSearchForm = ({ error, setError }) => {
-  const { cryptCardBase, libraryCardBase, inventoryMode, isMobile } = useApp();
+  const {
+    cryptCardBase,
+    libraryCardBase,
+    showFloatingButtons,
+    inventoryMode,
+    isMobile,
+  } = useApp();
   const twdFormState = useSnapshot(searchTwdForm);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -314,7 +320,7 @@ const TwdSearchForm = ({ error, setError }) => {
         form={searchTwdForm}
       />
       <TwdSearchFormPlayer value={twdFormState.author} form={searchTwdForm} />
-      {isMobile && (
+      {isMobile && showFloatingButtons && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />
           <ButtonFloatSearch

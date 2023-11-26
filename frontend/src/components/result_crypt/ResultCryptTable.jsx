@@ -1,8 +1,10 @@
 import React from 'react';
 import { ResultModal, ResultCryptTableRow } from '@/components';
+import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 
 const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
+  const { setShowFloatingButtons } = useApp();
   const {
     currentModalCard,
     shouldShowModal,
@@ -10,6 +12,16 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
     handleModalCardChange,
     handleModalCardClose,
   } = useModalCardController(resultCards);
+
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    setShowFloatingButtons(false);
+  };
+
+  const handleClose = () => {
+    handleModalCardClose();
+    setShowFloatingButtons(true);
+  };
 
   return (
     <>
@@ -20,7 +32,7 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
               <ResultCryptTableRow
                 key={card.Id}
                 card={card}
-                handleClick={handleModalCardOpen}
+                handleClick={handleClick}
                 idx={idx}
                 inRecommendation={inRecommendation}
                 inLimited={inLimited}
@@ -34,7 +46,7 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </>
