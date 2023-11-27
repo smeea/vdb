@@ -6,6 +6,25 @@ import List from '@/assets/images/icons/list.svg?react';
 import { NavMobileToggle, LanguageMenu, ThemeSelect, Hr } from '@/components';
 import { useApp } from '@/context';
 
+const LinkItem = ({ target, icon, text, setShowMenu }) => {
+  return (
+    <div className="w-full">
+      <NavLink
+        to={target}
+        onClick={() => setShowMenu(false)}
+        className={({ isActive }) =>
+          `flex items-center space-x-2 px-3 py-1.5 text-fgPrimary dark:text-fgPrimaryDark ${
+            isActive ? 'bg-borderPrimary dark:bg-borderPrimaryDark' : ''
+          }`
+        }
+      >
+        <div className="flex min-w-[30px] justify-center">{icon}</div>
+        <div>{text}</div>
+      </NavLink>
+    </div>
+  );
+};
+
 const NavMobileMenu = ({ isLimited, showMenu, setShowMenu }) => {
   const {
     limitedMode,
@@ -25,54 +44,31 @@ const NavMobileMenu = ({ isLimited, showMenu, setShowMenu }) => {
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
       {showMenu && (
-        <div className="absolute bottom-10 space-y-0 rounded-lg border border-borderPrimary bg-bgPrimary text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
-          <div className="w-full">
-            <NavLink
-              to="/account"
-              onClick={() => setShowMenu(false)}
-              className={({ isActive }) =>
-                `flex items-center space-x-2 px-3 py-1.5 text-fgPrimary dark:text-fgPrimaryDark ${
-                  isActive
-                    ? 'bg-borderNestModal dark:bg-borderNestModalDark'
-                    : ''
-                }`
-              }
-            >
-              <div className="flex min-w-[30px] justify-center">
-                <PersonFill height="20" width="20" viewBox="0 0 16 16" />
-              </div>
-              <div>{username ? 'Account' : 'Login'}</div>
-            </NavLink>
-          </div>
-          <div className="w-full">
-            <NavLink
-              to="/"
-              end
-              onClick={() => setShowMenu(false)}
-              className={({ isActive }) =>
-                `flex items-center space-x-2 px-3 py-1.5 text-fgPrimary dark:text-fgPrimaryDark ${
-                  isActive
-                    ? 'bg-borderNestModal dark:bg-borderNestModalDark'
-                    : ''
-                }`
-              }
-            >
-              <div className="flex min-w-[30px] justify-center">
-                <InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />
-              </div>
-              <div>About</div>
-            </NavLink>
-          </div>
-          <ThemeSelect setShowMenu={setShowMenu} />
-          <NavMobileToggle
-            isOn={inventoryMode}
-            onToggle={() => {
-              toggleInventoryMode();
-              setShowMenu(false);
-            }}
-            text="Inventory Mode"
+        <div className="absolute bottom-10 space-y-0 rounded-lg border border-borderPrimary text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary text-lg dark:border-borderPrimaryDark dark:bg-bgPrimaryDark">
+          <LinkItem
+            target="/account"
+            text={username ? 'Account' : 'Login'}
+            icon={<PersonFill height="20" width="20" viewBox="0 0 16 16" />}
+            setShowMenu={setShowMenu}
           />
-          {isLimited && (
+          <LinkItem
+            target="/"
+            text="About"
+            icon={<InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />}
+            setShowMenu={setShowMenu}
+          />
+          <ThemeSelect setShowMenu={setShowMenu} />
+          {username && (
+            <NavMobileToggle
+              isOn={inventoryMode}
+              onToggle={() => {
+                toggleInventoryMode();
+                setShowMenu(false);
+              }}
+              text="Inventory Mode"
+            />
+          )}
+          {(isLimited || limitedMode) && (
             <NavMobileToggle
               isOn={limitedMode}
               onToggle={() => {

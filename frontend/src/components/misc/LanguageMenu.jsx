@@ -15,7 +15,7 @@ const LanguageMenu = ({ setShowMenu }) => {
     'pt-PT': FlagBr,
   };
 
-  const onClick = (l) => {
+  const handleClick = (l) => {
     changeLang(l);
     setShowMenu(false);
   };
@@ -31,10 +31,10 @@ const LanguageMenu = ({ setShowMenu }) => {
               key={l}
               className={`${
                 lang == l
-                  ? 'rounded-full border-4 border-borderPrimary dark:border-borderPrimaryDark'
+                  ? 'rounded-full border-double border-4 border-fgSecondary dark:border-fgSecondaryDark'
                   : ''
               }`}
-              onClick={() => onClick(l)}
+              onClick={() => handleClick(l)}
             >
               <Flag width="22" height="22" viewBox="0 0 500 500" />
             </div>
