@@ -124,18 +124,19 @@ const Navigation = () => {
               <ThemeSelect />
             </>
           )}
-          {username &&
-            !isMobile &&
+          {!isMobile &&
             location.pathname !== '/account' &&
             location.pathname !== '/' &&
             location.pathname !== '/changelog' &&
             location.pathname !== '/documentation' && (
               <>
-                <NavToggle
-                  isOn={inventoryMode}
-                  onToggle={toggleInventoryMode}
-                  text="Inventory Mode"
-                />
+                {username && (
+                  <NavToggle
+                    isOn={inventoryMode}
+                    onToggle={toggleInventoryMode}
+                    text="Inventory Mode"
+                  />
+                )}
                 {(isLimited || limitedMode) && (
                   <NavToggle
                     isOn={limitedMode}

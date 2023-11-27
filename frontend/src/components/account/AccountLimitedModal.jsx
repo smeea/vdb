@@ -1,18 +1,17 @@
 import React, { useRef } from 'react';
 import { useSnapshot } from 'valtio';
-import { setMany } from 'idb-keyval';
 import Download from '@/assets/images/icons/download.svg?react';
 import Upload from '@/assets/images/icons/upload.svg?react';
 import {
   AccountLimitedSetSelection,
   AccountLimitedCardSelection,
+  AccountLimitedUrlButton,
   Modal,
   ButtonIconed,
 } from '@/components';
-import { limitedFullStore, useApp } from '@/context';
+import { limitedFullStore } from '@/context';
 
-const AccountLimitedModal = ({ setShow }) => {
-  const { setLimitedFormat } = useApp();
+const AccountLimitedModal = ({ setShow, setFormat }) => {
   const limitedAllowedCrypt = useSnapshot(limitedFullStore).allowed.crypt;
   const limitedAllowedLibrary = useSnapshot(limitedFullStore).allowed.library;
   const limitedBannedCrypt = useSnapshot(limitedFullStore).banned.crypt;
@@ -30,23 +29,7 @@ const AccountLimitedModal = ({ setShow }) => {
     reader.readAsText(file);
     reader.onload = async () => {
       const formatText = reader.result;
-      const f = JSON.parse(formatText);
-
-      setLimitedFormat(
-        f.allowed.crypt,
-        f.allowed.library,
-        f.banned.crypt,
-        f.banned.library,
-        f.sets,
-      );
-
-      setMany([
-        ['limitedAllowedCrypt', f.allowed.crypt],
-        ['limitedAllowedLibrary', f.allowed.library],
-        ['limitedBannedCrypt', f.banned.crypt],
-        ['limitedBannedLibrary', f.banned.library],
-        ['limitedSets', f.sets],
-      ]);
+      setFormat(JSON.parse(formatText));
     };
   };
 
@@ -100,6 +83,9 @@ const AccountLimitedModal = ({ setShow }) => {
         <AccountLimitedCardSelection />
         <AccountLimitedCardSelection inBanned />
         <div className="flex justify-end gap-2">
+          <AccountLimitedUrlButton
+            format={JSON.stringify(minifyFormat(), null, '').replace(/\n/g, '')}
+          />
           <ButtonIconed
             variant="primary"
             onClick={handleFileInputClick}

@@ -12,7 +12,6 @@
 - Offline decks/inventory storage
 - Playable by crypt filter to library
 - Card change history
-- Limited formats by url
 - Promo Packs into Bundles
 - Q-ty in card selection
 

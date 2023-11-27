@@ -10,6 +10,7 @@ export { default as AccountLimitedDelCard } from './AccountLimitedDelCard';
 export { default as AccountLimitedModal } from './AccountLimitedModal';
 export { default as AccountLimitedSet } from './AccountLimitedSet';
 export { default as AccountLimitedSetSelection } from './AccountLimitedSetSelection';
+export { default as AccountLimitedUrlButton } from './AccountLimitedUrlButton';
 export { default as AccountLogin } from './AccountLogin';
 export { default as AccountLogoutButton } from './AccountLogoutButton';
 export { default as AccountPasswordForm } from './AccountPasswordForm';

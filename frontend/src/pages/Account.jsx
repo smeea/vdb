@@ -14,8 +14,7 @@ import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
 const Account = () => {
-  const { username, isPlaytestAdmin } = useApp();
-
+  const { username, setLimitedFormat, isPlaytestAdmin } = useApp();
   return (
     <div
       className={`account-container mx-auto grid place-items-center ${
@@ -58,6 +57,7 @@ const Account = () => {
         <div className="flex w-full flex-col gap-16">
           <AccountLogin />
           <AccountRegister />
+          <AccountLimitedButton />
         </div>
       )}
     </div>
