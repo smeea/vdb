@@ -187,7 +187,9 @@ def get_deck_route(deckid):
 @login_required
 def remove_deck_route(deckid):
     d = Deck.query.get(deckid)
-    if d.author != current_user:
+    if not d:
+        abort(400)
+    elif d.author != current_user:
         abort(401)
 
     if d.master:
