@@ -4,15 +4,11 @@
 - Backend update_deck_route errors
 
 # FEATURES
-- Autotag my deck button
-- TWD Deck check documentation
 - Inventory cards with notes filter to crypt/library/inventory
 
 # MAYBE LATER FEATURES
 - Offline decks/inventory storage
 - Playable by crypt filter to library
-- Card change history
-- Promo Packs into Bundles
 - Q-ty in card selection
 
 # POSSIBLE IMPROVEMENTS

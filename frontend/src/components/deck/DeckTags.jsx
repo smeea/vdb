@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
-import { SelectCreatable } from '@/components';
+import Spellcheck from '@/assets/images/icons/spellcheck.svg?react';
+import { SelectCreatable, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
+import { useTags } from '@/hooks';
 
 const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
   const { deckid, tags, isPublic, isAuthor, isFrozen } = deck;
@@ -34,18 +36,35 @@ const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
     deckUpdate(deckid, 'tags', v);
   };
 
+  const handleAutotagClick = () => {
+    const tags = useTags(deck.crypt, deck.library)
+    deckUpdate(deckid, 'tags', [...tags.superior, ...tags.base]);
+  }
+
   return (
-    <SelectCreatable
-      noBorder={!isBordered}
-      noRemove={!isEditable}
-      isMulti
-      isDisabled={!isEditable}
-      options={allTagsOptions}
-      onChange={handleChange}
-      value={tagList}
-      placeholder="Click to add tags"
-      noOptionsMessage={() => 'Enter new tag'}
-    />
+    <div className="flex">
+      <SelectCreatable
+        className="w-full"
+        noBorder={!isBordered}
+        noRemove={!isEditable}
+        isMulti
+        isDisabled={!isEditable}
+        options={allTagsOptions}
+        onChange={handleChange}
+        value={tagList}
+        placeholder="Click to add tags"
+        noOptionsMessage={() => 'Enter new tag'}
+        roundedStyle={isEditable ? 'rounded-r-none rounded' : 'rounded'}
+      />
+      {isEditable &&
+       <ButtonIconed
+         className="rounded-l-none"
+         onClick={handleAutotagClick}
+         title="Autotag Deck"
+         icon={<Spellcheck width="22" height="23" viewBox="0 0 16 16" />}
+       />
+      }
+    </div>
   );
 };
 

@@ -16,6 +16,8 @@ const SelectCreatable = React.forwardRef(
       options,
       placeholder,
       value,
+      className = '',
+      roundedStyle = 'rounded',
     },
     ref
   ) => {
@@ -39,13 +41,14 @@ const SelectCreatable = React.forwardRef(
               noBorder
                 ? ''
                 : state.isFocused
-                ? 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
-                : 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark'
-            }`,
+                ? `${roundedStyle} border bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
+                : `${roundedStyle} border bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
+            }
+          `,
           dropdownIndicator: () => 'max-w-[0px] max-h-[0px]',
           indicatorsContainer: () => 'rounded max-h-[0px] max-w-[0px]',
           menu: () =>
-            'my-2 rounded border border-bgThird dark:border-bgThirdDark',
+          'my-2 rounded border border-bgThird dark:border-bgThirdDark',
           menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2
           ${
@@ -57,20 +60,23 @@ const SelectCreatable = React.forwardRef(
           }
 `,
           valueContainer: () => 'flex px-[5px] min-h-[40px] gap-1 p-1',
-          container: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
+          container: () => `bg-bgPrimary dark:bg-bgPrimaryDark
+          ${roundedStyle}
+          ${className}
+`,
           input: () => (noRemove ? 'max-w-[0px] max-h-[0px]' : ''),
           multiValue: () => 'bg-bgButton dark:bg-bgButtonDark rounded',
           multiValueLabel:
-            () => `text-sm px-[5px] py-1 border-borderSecondary dark:border-borderSecondaryDark
+          () => `text-sm px-[5px] py-1 border-borderSecondary dark:border-borderSecondaryDark
           ${
             noRemove
               ? 'border rounded'
               : 'border-l border-y border-borderSecondary dark:border-borderSecondaryDark rounded-l rounded-y'
           }`,
           multiValueRemove: () =>
-            noRemove
-              ? 'max-w-[0px] max-h-[0px] hidden'
-              : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark',
+          noRemove
+            ? 'max-w-[0px] max-h-[0px] hidden'
+            : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark',
           noOptionsMessage: () => 'rounded p-2',
           placeholder: () => 'text-midGray dark:text-midGrayDark',
           clearIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
