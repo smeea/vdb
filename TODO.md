@@ -1,5 +1,4 @@
 # FIX
-- Fix icon-text alignment in Library total header
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Backend update_deck_route errors
 
