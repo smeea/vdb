@@ -15,4 +15,3 @@
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
 - Back button behavior
-- Add multi-threading for card update

@@ -2,13 +2,13 @@ import csv
 import re
 import json
 import unicodedata
+import multiprocessing
 
 
 with open("../../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_file, open(
-        "../../frontend/src/assets/data/virtuesList.json", "r") as virtues_file, open(
-            "vtes.json", "r", encoding="utf8") as krcg_file, open(
-                "twda.json", "r") as twda_input:
-
+                "../../frontend/src/assets/data/virtuesList.json", "r") as virtues_file, open(
+                        "vtes.json", "r", encoding="utf8") as krcg_file, open(
+                                "twda.json", "r") as twda_input:
         krcg_cards = json.load(krcg_file)
         twda = json.load(twda_input)
         disciplines_list = json.load(disciplines_file)
@@ -66,9 +66,7 @@ integer_fields = ["Id", "Capacity"]
 useless_fields = ["Aka"]
 
 
-def generate_artists(cardbase_csv, artist_file, artist_file_min):
-    csv_cards = csv.DictReader(cardbase_csv)
-
+def generate_artists(csv_cards, artists_file, artists_file_min):
     artists = set()
     for card in csv_cards:
         for artist in re.split("; | & ", card["Artist"]):
@@ -81,10 +79,7 @@ def generate_artists(cardbase_csv, artist_file, artist_file_min):
     json.dump(sorted(artists), artists_file, indent=4, separators=(",", ":"))
 
 
-def generate_cards(cards, cardbase_file, cardbase_file_min, ref_cards = None):
-    cardbase = {}
-
-    for card in cards:
+def generate_card(card):
         # Convert some fields values to integers
         for k in integer_fields:
             try:
@@ -270,10 +265,10 @@ def generate_cards(cards, cardbase_file, cardbase_file_min, ref_cards = None):
 
         # Add Advancement info
         card["Advancement"] = ""
-        for c in cards:
+        for c in csv_cards_main:
             if (
                     c["Name"] == card["Name"]
-                    and c["Id"] != card["Id"]
+                    and int(c["Id"]) != card["Id"]
                     and c["Group"] == card["Group"]
             ):
                 isAdv = bool(card["Adv"])
@@ -282,7 +277,7 @@ def generate_cards(cards, cardbase_file, cardbase_file_min, ref_cards = None):
         # Add new revision info
         card["New"] = False
 
-        for c in ref_cards if ref_cards else cards:
+        for c in csv_cards_main:
             if (
                     c["Name"] == card["Name"]
                     and int(c["Id"]) < card["Id"]
@@ -309,9 +304,7 @@ def generate_cards(cards, cardbase_file, cardbase_file_min, ref_cards = None):
         # Rename Thaumaturgy
         card["Card Text"] = card["Card Text"].replace("Thaumaturgy", "Blood Sorcery")
 
-        # Prepare for export
-
-        cardbase[card["Id"]] = {
+        card_ready = {
             "ASCII Name": card["ASCII Name"],
             "Adv": card["Advancement"],
             "Artist": card["Artist"],
@@ -331,37 +324,47 @@ def generate_cards(cards, cardbase_file, cardbase_file_min, ref_cards = None):
             "Twd": card["Twd"],
         }
 
+        return card_ready
+
+def generate_cards(csv_cards, cardbase_file, cardbase_file_min):
+    pool = multiprocessing.Pool(processes=4)
+    fixed_cards = pool.map(generate_card, csv_cards)
+
+    cardbase = {}
+    for card in fixed_cards:
+        cardbase[card['Id']] = card
+
     json.dump(cardbase, cardbase_file_min, separators=(",", ":"))
     json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))
 
 
-with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
+with open("artistsCrypt.json", "w", encoding="utf8") as artists_file, open(
+                "artistsCrypt.min.json", "w", encoding="utf8"
+) as artists_file_min, open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv_main, open(
         "cardbase_crypt.json", "w", encoding="utf8"
 ) as cardbase_file, open(
-    "cardbase_crypt.min.json", "w", encoding="utf8"
+        "cardbase_crypt.min.json", "w", encoding="utf8"
 ) as cardbase_file_min:
-    cards = list(csv.DictReader(cardbase_csv))
-    generate_cards(cards, cardbase_file, cardbase_file_min)
+        reader_main = csv.reader(cardbase_csv_main)
+        fieldnames_main = next(reader_main)
+        csv_cards_main = list(csv.DictReader(cardbase_csv_main, fieldnames_main))
+        generate_cards(csv_cards_main, cardbase_file, cardbase_file_min)
+        generate_artists(csv_cards_main, artists_file, artists_file_min)
 
-    try:
-        with open(
-                        "vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
-        ) as cardbase_csv_playtest, open(
-                "cardbase_crypt_playtest.json", "w", encoding="utf8"
-        ) as cardbase_file_playtest, open(
-                "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
-        ) as cardbase_file_min_playtest:
-                cards_playtest = list(csv.DictReader(cardbase_csv_playtest))
-                generate_cards(cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest, cards)
+        try:
+                with open(
+                                "vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
+                ) as cardbase_csv_playtest, open(
+                        "cardbase_crypt_playtest.json", "w", encoding="utf8"
+                ) as cardbase_file_playtest, open(
+                        "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
+                ) as cardbase_file_min_playtest:
+                        reader_playtest = csv.reader(cardbase_csv_playtest)
+                        fieldnames_playtest = next(reader_playtest)
+                        csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
+                        generate_cards(csv_cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest)
 
-    except Exception:
-            print(
-                    "PLAYTEST DISABLED - NO CRYPT PLAYTEST FILES FOUND (CONTACT PLAYTEST COORDINATOR TO GET IT)"
-            )
-
-with open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv, open(
-        "artistsCrypt.json", "w", encoding="utf8"
-) as artists_file, open(
-    "artistsCrypt.min.json", "w", encoding="utf8"
-) as artists_file_min:
-    generate_artists(cardbase_csv, artists_file, artists_file_min)
+        except Exception:
+                print(
+                        "PLAYTEST DISABLED - NO CRYPT PLAYTEST FILES FOUND (CONTACT PLAYTEST COORDINATOR TO GET IT)"
+                )
