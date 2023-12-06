@@ -33,8 +33,10 @@ const ResultLibraryTotal = ({
         {Object.keys(byTypes).map((k) => {
           return (
             <div key={k} className="inline-block whitespace-nowrap px-2">
-              <ResultLibraryTypeImage value={k} />
-              {byTypes[k]}
+              <div className="flex items-center space-x-1">
+                <ResultLibraryTypeImage value={k} />
+                {byTypes[k]}
+              </div>
             </div>
           );
         })}
