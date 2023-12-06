@@ -14,7 +14,7 @@ import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
 const Account = () => {
-  const { username, setLimitedFormat, isPlaytestAdmin } = useApp();
+  const { username, isPlaytestAdmin } = useApp();
   return (
     <div
       className={`account-container mx-auto grid place-items-center ${

@@ -1,8 +1,6 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Backend update_deck_route errors
-- Deck name selector length on mobile
-- Add playtest deck to inventory
 
 # FEATURES
 - Inventory cards with notes filter to crypt/library/inventory

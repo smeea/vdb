@@ -85,8 +85,8 @@ const DeckSelectAdvModalTableRow = ({
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
+                  ? 'Fixed'
+                  : 'Virtual'
               }
             >
               {deck.inventoryType == 's' ? (
@@ -155,7 +155,12 @@ const DeckSelectAdvModalTableRow = ({
       {!short && (
         <>
           <td className="w-full">
-            <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered />
+            <DeckTags
+              deck={deck}
+              allTagsOptions={allTagsOptions}
+              isBordered
+              noAutotags={isMobile}
+            />
           </td>
           <td>
             <div className="flex justify-end space-x-1">

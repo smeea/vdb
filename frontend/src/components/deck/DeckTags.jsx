@@ -4,7 +4,13 @@ import { SelectCreatable, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
 import { useTags } from '@/hooks';
 
-const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
+const DeckTags = ({
+  deck,
+  tagsSuperior,
+  noAutotags,
+  isBordered,
+  allTagsOptions,
+}) => {
   const { deckid, tags, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
@@ -37,9 +43,9 @@ const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
   };
 
   const handleAutotagClick = () => {
-    const tags = useTags(deck.crypt, deck.library)
+    const tags = useTags(deck.crypt, deck.library);
     deckUpdate(deckid, 'tags', [...tags.superior, ...tags.base]);
-  }
+  };
 
   return (
     <div className="flex">
@@ -56,14 +62,14 @@ const DeckTags = ({ deck, tagsSuperior, isBordered, allTagsOptions }) => {
         noOptionsMessage={() => 'Enter new tag'}
         roundedStyle={isEditable ? 'rounded-r-none rounded' : 'rounded'}
       />
-      {isEditable &&
-       <ButtonIconed
-         className="rounded-l-none"
-         onClick={handleAutotagClick}
-         title="Autotag Deck"
-         icon={<Spellcheck width="22" height="23" viewBox="0 0 16 16" />}
-       />
-      }
+      {!noAutotags && isEditable && (
+        <ButtonIconed
+          className="rounded-l-none"
+          onClick={handleAutotagClick}
+          title="Autotag Deck"
+          icon={<Spellcheck width="22" height="23" viewBox="0 0 16 16" />}
+        />
+      )}
     </div>
   );
 };
