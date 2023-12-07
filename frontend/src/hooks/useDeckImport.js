@@ -25,7 +25,7 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
     if (name.startsWith('the ')) {
       name = `${name.replace(/^the /, '')}, the`;
     }
-    return name.replace(/\W/g, '');
+    return name.replace(/--.*$/, '').replace(/\W/g, '');
   };
 
   const parseCard = (i) => {
