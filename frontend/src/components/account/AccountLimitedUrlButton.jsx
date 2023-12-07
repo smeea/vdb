@@ -19,7 +19,7 @@ const AccountLimitedUrlButton = ({ format }) => {
     <ButtonIconed
       onClick={copyUrl}
       title="Copy URL"
-      icon={<Link45Deg />}
+      icon={<Link45Deg width="21" height="21" viewBox="0 0 15 15" />}
       variant={success ? 'success' : isDesktop ? 'primary' : 'secondary'}
       text={success ? 'Copied' : 'Copy URL'}
     />
