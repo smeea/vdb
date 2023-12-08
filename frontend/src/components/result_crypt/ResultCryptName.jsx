@@ -18,7 +18,7 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
         </div>
         {card.Adv[0] && (
           <img
-            className="inline h-[22px] align-text-bottom"
+            className="inline h-[25px] items-center pb-1"
             src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
             title="Advanced"
           />

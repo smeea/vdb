@@ -77,6 +77,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
           handleCancel={handleCancel}
           title={`Delete deck "${deck.name}" and all its revisions`}
           buttonText="Delete"
+          buttonVariant="danger"
         >
           THIS CANNOT BE UNDONE!
         </ModalConfirmation>

@@ -35,7 +35,6 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
           handleCancel={handleCancel}
           buttonText="Add"
           title={'Add deck ' + deck.name + ' to Inventory?'}
-          bordered
         />
       )}
     </>

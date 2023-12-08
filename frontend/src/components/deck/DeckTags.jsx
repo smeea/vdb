@@ -60,7 +60,10 @@ const DeckTags = ({
         value={tagList}
         placeholder="Click to add tags"
         noOptionsMessage={() => 'Enter new tag'}
-        roundedStyle={isEditable ? 'rounded-r-none rounded' : 'rounded'}
+        roundedStyle={`rounded
+          ${isEditable ? 'rounded-r-none' : ''}`}
+        borderStyle={`
+          ${isEditable ? 'border-y border-l border-r-none' : 'border'}`}
       />
       {!noAutotags && isEditable && (
         <ButtonIconed

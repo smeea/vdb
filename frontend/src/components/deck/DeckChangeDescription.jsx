@@ -61,11 +61,10 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!isEditable}
-          borderStyle={
-            isAuthor
-              ? 'border-y max-sm:border-r rounded-l-none rounded-r-none'
-              : 'border-y max-sm:border-r rounded-l-none sm:rounded-r-none'
-          }
+          roundedStyle={`rounded rounded-l-none
+          ${isEditable ? 'max-sm:rounded-r-none' : ''}`}
+          borderStyle={`border-y sm:border-r
+          ${isEditable ? '' : 'max-sm:border-r'}`}
         />
       )}
       <Button
@@ -76,7 +75,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
       >
         {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
       </Button>
-      {isAuthor && (
+      {isEditable && (
         <Button
           className="rounded-l-none sm:hidden"
           variant={success ? 'success' : 'primary'}

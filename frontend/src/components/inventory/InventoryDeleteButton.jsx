@@ -46,6 +46,7 @@ const InventoryDelete = () => {
           handleCancel={handleCancel}
           title={`Delete Inventory`}
           buttonText="Delete"
+          buttonVariant="danger"
           nested={isMobile}
         >
           THIS CANNOT BE UNDONE!

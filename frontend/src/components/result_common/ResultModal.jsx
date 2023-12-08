@@ -16,7 +16,7 @@ const ResultModal = ({
   card,
   handleModalCardChange,
   handleClose,
-  bordered,
+  nested,
   forceInventoryMode,
 }) => {
   const { showImage, toggleShowImage, isMobile, isNarrow } = useApp();
@@ -70,7 +70,7 @@ const ResultModal = ({
   return (
     <Modal
       handleClose={handleClose}
-      bordered={bordered}
+      nested={nested}
       size="card"
       centered
       noPadding

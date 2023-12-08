@@ -100,7 +100,6 @@ const ResultLayoutTextSets = ({ sets, setImageSet }) => {
           size="xs"
           handleClose={() => setSelectedSet(null)}
           title="Sets"
-          bordered
           centered
         >
           <PopoverText sets={sets} set={selectedSet} />

@@ -94,6 +94,7 @@ const DeckChangeName = ({ deck }) => {
       {isAuthor && !isPublic && (
         <DeckFreezeButton
           className="rounded-l-none max-sm:rounded-r-none"
+          borderStyle="border-l border-y sm:border-r"
           deck={deck}
         />
       )}

@@ -8,11 +8,12 @@ const ModalConfirmation = ({
   withWrittenConfirmation,
   handleConfirm,
   handleCancel,
-  bordered,
+  nested,
   centered,
   size = 'sm',
   disabled,
   children,
+  buttonVariant = 'primary',
 }) => {
   const { isMobile } = useApp();
   const [confirmation, setConfirmation] = useState('');
@@ -44,7 +45,7 @@ const ModalConfirmation = ({
       centered={centered ?? isMobile}
       size={size}
       title={title}
-      bordered={bordered}
+      nested={nested}
     >
       <div className="flex flex-col gap-3 sm:gap-5">
         {children && (
@@ -70,7 +71,11 @@ const ModalConfirmation = ({
             </form>
           )}
           <div className="flex justify-between gap-2">
-            <Button disabled={disabled} variant="primary" onClick={handleClick}>
+            <Button
+              disabled={disabled}
+              variant={buttonVariant}
+              onClick={handleClick}
+            >
               {buttonText}
             </Button>
             <Button variant="primary" onClick={handleClose}>

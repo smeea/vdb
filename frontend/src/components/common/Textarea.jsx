@@ -8,20 +8,19 @@ const Textarea = React.forwardRef(
       placeholder,
       onChange,
       onBlur,
-      className,
       autoComplete = 'off',
       spellCheck = false,
       autoFocus = false,
       readOnly = false,
-      borderStyle,
+      className = '',
+      borderStyle = 'border',
+      roundedStyle = 'rounded',
     },
-    ref,
+    ref
   ) => {
     return (
       <textarea
-        className={`w-full rounded border-borderSecondary bg-bgPrimary px-1.5 py-1 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${
-          className ?? ''
-        } ${borderStyle ?? 'border'}
+        className={`w-full rounded border-borderSecondary bg-bgPrimary px-1.5 py-1 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${className} ${borderStyle} ${roundedStyle}
 `}
         rows={rows}
         value={value}
@@ -35,7 +34,7 @@ const Textarea = React.forwardRef(
         ref={ref}
       />
     );
-  },
+  }
 );
 Textarea.displayName = 'Textarea';
 

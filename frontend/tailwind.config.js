@@ -51,7 +51,7 @@ module.exports = {
       bgCheckboxSelectedDark: '#6060d0',
       bgError: '#f04040',
       bgErrorDark: '#901000',
-      bgErrorSecondary: '#ff8080',
+      bgErrorSecondary: '#ff6060',
       bgErrorSecondaryDark: '#b03525',
       bgGreen: '#659065',
       bgGreenDark: '#709570',

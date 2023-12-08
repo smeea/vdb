@@ -9,23 +9,21 @@ const Input = React.forwardRef(
       onChange,
       onBlur,
       id,
-      className,
       required = false,
       type = 'text',
       autoComplete = 'off',
       spellCheck = false,
       autoFocus = false,
       readOnly = false,
-      borderStyle,
-      roundedStyle,
+      className = '',
+      borderStyle = 'border',
+      roundedStyle = 'rounded',
     },
-    ref,
+    ref
   ) => {
     return (
       <input
-        className={`min-h-[42px] w-full border-borderSecondary bg-bgPrimary px-2 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${
-          className ?? ''
-        } ${borderStyle ?? 'border'} ${roundedStyle ?? 'rounded'}
+        className={`min-h-[42px] w-full border-borderSecondary bg-bgPrimary px-2 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${className} ${borderStyle} ${roundedStyle}
 `}
         placeholder={placeholder}
         type={type}
@@ -42,7 +40,7 @@ const Input = React.forwardRef(
         ref={ref}
       />
     );
-  },
+  }
 );
 Input.displayName = 'Input';
 

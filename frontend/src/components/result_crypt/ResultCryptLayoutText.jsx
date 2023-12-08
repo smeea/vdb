@@ -33,6 +33,7 @@ const ResultCryptLayoutText = ({
               <ConditionalTooltip
                 overlay={<CardPopover card={cryptCardBase[card.Adv[1]]} />}
                 disabled={isMobile}
+                noPadding
               >
                 <div
                   className="inline text-fgSecondary dark:text-fgSecondaryDark"
@@ -44,7 +45,7 @@ const ResultCryptLayoutText = ({
                         <>
                           [has
                           <img
-                            className="inline h-[22px] ps-1 align-text-bottom"
+                            className="inline h-[25px] ps-1 pb-1"
                             src={`${
                               import.meta.env.VITE_BASE_URL
                             }/images/misc/advanced.svg`}

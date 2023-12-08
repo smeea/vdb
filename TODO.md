@@ -15,5 +15,4 @@
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
 - Back button behavior
-- Modal bordered property
 - Improve light theme colors (fgPrimary and fgSecondary to be more distinctive?)
