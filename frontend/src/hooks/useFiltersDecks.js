@@ -38,7 +38,6 @@ export default useFiltersDecks;
 
 const missingRank = (filter, deck) => {
   const { to, from } = filter;
-
   let miss = false;
 
   if (from) {
@@ -47,7 +46,6 @@ const missingRank = (filter, deck) => {
         miss = true;
       }
     } else {
-      console.log('from', to, from, deck.score.rank);
       if (deck.score.rank > from) miss = true;
     }
   }
