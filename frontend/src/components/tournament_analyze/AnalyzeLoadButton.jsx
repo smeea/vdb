@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import { read, utils } from 'xlsx';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import Upload from '@/assets/images/icons/upload.svg?react';
 import X from '@/assets/images/icons/x.svg?react';
@@ -97,7 +96,8 @@ const AnalyzeLoadButton = () => {
     });
   };
 
-  const loadArchon = (file) => {
+  const loadArchon = async (file) => {
+    const { read, utils } = await import('xlsx');
     const wb = read(file);
 
     const wsInfo = wb.Sheets['Tournament Info'];

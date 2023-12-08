@@ -11,7 +11,9 @@ const RootLayout = () => {
         <Navigation />
         <OfflineNotification />
       </ThemeProvider>
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <UpdateNotification />
     </AppProvider>
   );
