@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import {
   AnalyzeTournamentDeck,
   AnalyzeTournamentResultTotal,
@@ -8,13 +7,7 @@ import { useApp } from '@/context';
 import { decksSort } from '@/utils';
 
 const AnalyzerTournamentResult = ({ decks }) => {
-  const {
-    // isMobile,
-    // showFloatingButtons,
-    analyzeSearchSort,
-    changeAnalyzeSearchSort,
-  } = useApp();
-  // const navigate = useNavigate();
+  const { analyzeSearchSort, changeAnalyzeSearchSort } = useApp();
 
   const sortMethods = {
     'Rank - High to Low': 'R↓',

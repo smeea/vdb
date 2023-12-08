@@ -31,7 +31,7 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>
-      {(deck.tags.superior.length > 0 || deck.base.length > 0) && (
+      {(deck.tags.superior.length > 0 || deck.tags.base.length > 0) && (
         <TwdResultTags tags={deck.tags} />
       )}
       <div className="flex gap-2">

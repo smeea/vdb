@@ -37,21 +37,32 @@ const useFiltersDecks = (decks = {}) => {
 export default useFiltersDecks;
 
 const missingRank = (filter, deck) => {
-  if (filter.from) {
-    const from = filter.from.split('%');
-    if (from.length > 1) {
-      if (deck.score.rank <= (deck.score.players * from[0]) / 100) return false;
-    } else if (deck.score.rank <= from[0]) return false;
+  const { to, from } = filter;
+
+  let miss = false;
+
+  if (from) {
+    if (from.includes('%')) {
+      if (deck.score.rank > (deck.score.players * from.split('%')[0]) / 100) {
+        miss = true;
+      }
+    } else {
+      console.log('from', to, from, deck.score.rank);
+      if (deck.score.rank > from) miss = true;
+    }
   }
 
-  if (filter.to) {
-    const to = filter.to.split('%');
-    if (to.length > 1) {
-      if (deck.score.rank >= (deck.score.players * to[0]) / 100) return false;
-    } else if (deck.score.rank >= to[0]) return false;
+  if (to) {
+    if (to.includes('%')) {
+      if (deck.score.rank < (deck.score.players * to.split('%')[0]) / 100) {
+        miss = true;
+      }
+    } else {
+      if (deck.score.rank < to) miss = true;
+    }
   }
 
-  return true;
+  return miss;
 };
 
 const missingCrypt = (filter, deck) => {

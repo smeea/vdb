@@ -105,20 +105,24 @@ const AnalyzeLoadButton = () => {
     const wsScores = wb.Sheets['Methuselahs'];
     const dataScores = utils.sheet_to_csv(wsScores).split('\n');
 
-    const totalPlayers = parseInt(dataInfo[9].split(',')[1]);
-
+    let totalPlayers = 0;
     let totalGw = 0;
     let totalVp = 0;
     let medianVp = 0;
     let medianGw = 0;
     let reportedRanks = [];
 
-    dataScores.forEach((n, idx) => {
-      if (idx < 6 || n[0] === ',') return;
+    dataInfo.forEach((n) => {
+      const array = n.split(',');
+      if (array[0] === 'Number of Players:') totalPlayers = array[1];
+    });
+
+    dataScores.forEach((n) => {
+      if (!(n[0] > 0)) return;
       const array = n.split(',');
       const veknId = parseInt(array[4]);
       const rank =
-        parseInt(array[21]) !== 2 ? parseInt(array[21]) : parseInt(array[18]);
+        parseInt(array[20]) !== 2 ? parseInt(array[20]) : parseInt(array[17]);
 
       const score = {
         gw: parseInt(array[7]),
@@ -205,10 +209,18 @@ const AnalyzeLoadButton = () => {
                 <ButtonIconed
                   className="w-full"
                   variant="primary"
+                  onClick={() => loadPrepared(11023)}
+                  title="Finnish Nationals 2023"
+                  icon={<StarFill />}
+                  text="Finnish Nationals 2023 [2023-11-04]"
+                />
+                <ButtonIconed
+                  className="w-full"
+                  variant="primary"
                   onClick={() => loadPrepared(10367)}
                   title="Finnish Nationals 2022"
                   icon={<StarFill />}
-                  text="Finnish Nationals 2022"
+                  text="Finnish Nationals 2022 [2022-11-05]"
                 />
                 <ButtonIconed
                   className="w-full"
