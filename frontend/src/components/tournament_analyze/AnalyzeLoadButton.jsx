@@ -123,11 +123,13 @@ const AnalyzeLoadButton = () => {
       const veknId = parseInt(array[4]);
       const rank =
         parseInt(array[20]) !== 2 ? parseInt(array[20]) : parseInt(array[17]);
+      const name = `${array[1]} ${array[2]}`;
 
       const score = {
+        name: name,
+        rank: rank,
         gw: parseInt(array[7]),
         vp: parseInt(array[8]),
-        rank: rank,
         players: totalPlayers,
       };
 

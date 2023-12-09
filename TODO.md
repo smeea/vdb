@@ -4,6 +4,7 @@
 
 # FEATURES
 - Inventory cards with notes filter to crypt/library/inventory
+- Tournament analyze urls
 
 # MAYBE LATER FEATURES
 - Offline decks/inventory storage

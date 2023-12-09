@@ -1,5 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
+import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import {
   DeckCloneButton,
@@ -7,13 +9,19 @@ import {
   TwdResultTags,
   TwdResultDescriptionTextTr,
 } from '@/components';
-import { useApp } from '@/context';
+import { useApp, searchTwdForm, clearSearchForm } from '@/context';
 import { getDeckInUrl } from '@/utils';
 
 const AnalyzeTournamentDeckDescription = ({ deck }) => {
   const { username, isMobile } = useApp();
-
+  const navigate = useNavigate();
   const deckInUrl = getDeckInUrl(deck);
+
+  const handlePlayerClick = (value) => {
+    clearSearchForm('twd');
+    searchTwdForm['author'] = value;
+    navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ author: value }))}`);
+  };
 
   return (
     <>
@@ -23,6 +31,16 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
             title={isMobile ? <TrophyFill /> : <>Place:</>}
           >
             {deck.score.rank}
+          </TwdResultDescriptionTextTr>
+          <TwdResultDescriptionTextTr
+            title={isMobile ? <PersonFill /> : <>Player:</>}
+          >
+            <div
+              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+              onClick={() => handlePlayerClick(deck.score.name)}
+            >
+              {deck.score.name}
+            </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
             title={isMobile ? <StarFill /> : <>GW + VP:</>}
