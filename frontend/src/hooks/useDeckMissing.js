@@ -9,11 +9,12 @@ const getMissing = (cards, inventoryType, used, inventory) => {
     const softUsedMax = getSoftMax(used.soft[card]);
     const hardUsedTotal = getHardTotal(used.hard[card]);
 
-    // TODO make it readable
-    let miss = softUsedMax + hardUsedTotal;
-    if (!inventoryType && cards[card].q > softUsedMax)
-      miss += cards[card].q - softUsedMax;
-    if (inventory[card]) miss -= inventory[card].q;
+    let miss;
+    if (!inventoryType && cards[card].q > softUsedMax) {
+      miss = hardUsedTotal + cards[card].q - inventory[card]?.q;
+    } else {
+      miss = hardUsedTotal + softUsedMax - inventory[card]?.q;
+    }
 
     if (miss > 0) {
       crypt[card] = { ...cards[card] };
@@ -36,13 +37,13 @@ const useDeckMissing = (deck) => {
     deck.crypt,
     deck.inventoryType,
     usedCrypt,
-    inventoryCrypt,
+    inventoryCrypt
   );
   const missingLibrary = getMissing(
     deck.library,
     deck.inventoryType,
     usedLibrary,
-    inventoryLibrary,
+    inventoryLibrary
   );
 
   return { missingCrypt, missingLibrary };

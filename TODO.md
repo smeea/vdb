@@ -8,7 +8,6 @@
 # MAYBE LATER FEATURES
 - Offline decks/inventory storage
 - Playable by crypt filter to library
-- Q-ty in card selection
 
 # POSSIBLE IMPROVEMENTS
 - Migration from screen width (isWide, etc) to container queries

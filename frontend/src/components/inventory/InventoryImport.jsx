@@ -25,18 +25,11 @@ const InventoryImport = () => {
     const file = fileInput.current.files[0];
     reader.readAsText(file);
     reader.onload = async () => {
-      let deckText;
-
-      if (file.type === 'text/plain') {
-        deckText = reader.result;
-      } else {
-        // TODO import from xlsx
-      }
-
+      const deckText = reader.result;
       const deck = await useDeckImport(
         deckText,
         cryptCardBase,
-        libraryCardBase,
+        libraryCardBase
       );
 
       setBadCards(deck.badCards);
