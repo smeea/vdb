@@ -1,9 +1,9 @@
 {
-  "version": "2023-12-05",
+  "version": "2023-12-10",
   "changes": [
-    "Add share limited format settings by URL",
-    "Make limited format not require account to search cards",
-    "Add Autotag button which will fill tags to the deck (will clear previous tags!)",
+    "Add Finnish National 2023 to Tournament Analyze. Check it out: https://vdb.im/tournament_analyze/11023, and if you like it help your event organizer to collect deck lists! Many thanks to Rune (and everybody else involved) for provided data!",
+    "Improvements to Tournament Analyzer",
+    "Minor color updates in day/light theme",
     "Small other fixes and improvements"
   ]
 }
