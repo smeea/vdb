@@ -62,7 +62,7 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
   return (
     <RadarChart
       width={450}
-      height={360}
+      height={365}
       cx="50%"
       cy="50%"
       outerRadius={150}

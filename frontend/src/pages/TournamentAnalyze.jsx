@@ -92,6 +92,8 @@ const TournamentAnalyze = () => {
     const dataScores = utils.sheet_to_csv(wsScores).split('\n');
 
     let totalPlayers = 0;
+    let totalRounds = 0;
+    let totalMatches = 0;
     let totalGw = 0;
     let totalVp = 0;
     let medianVp = 0;
@@ -101,12 +103,16 @@ const TournamentAnalyze = () => {
     dataInfo.forEach((n) => {
       const array = n.split(',');
       if (array[0] === 'Number of Players:') totalPlayers = array[1];
+      if (array[0] === 'Number of Rounds (including final):')
+        totalRounds = array[1];
+      if (array[0] === 'Number of Event Matches:') totalMatches = array[1];
     });
 
     dataScores.forEach((n) => {
-      if (!(n[0] > 0)) return;
       const array = n.split(',');
       const veknId = parseInt(array[4]);
+      if (!veknId) return;
+
       const rank =
         parseInt(array[20]) !== 2 ? parseInt(array[20]) : parseInt(array[17]);
       const name = `${array[1]} ${array[2]}`;
@@ -147,10 +153,14 @@ const TournamentAnalyze = () => {
       date: dataInfo[3].split(',')[1],
       location: dataInfo[6].split(',')[1],
       players: totalPlayers,
+      matches: totalMatches,
+      rounds: totalRounds,
       totalGw: totalGw,
       totalVp: totalVp,
-      medianGw: medianGw,
-      medianVp: medianVp,
+      avgMatchGw: Math.round((totalGw / totalMatches) * 10) / 10,
+      avgMatchVp: Math.round((totalVp / totalMatches) * 10) / 10,
+      medianPlayerGw: medianGw,
+      medianPlayerVp: medianVp,
       medianRank: totalPlayers / 2,
       medianReportedRank: medianReportedRank,
     };
