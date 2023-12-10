@@ -69,7 +69,7 @@ const Sets = ({ sets, setImageSet, setSelectedSet }) => {
             placement="bottom"
           >
             <div
-              className="inline"
+              className="inline text-fgSecondary dark:text-fgPrimaryDark"
               onClick={() => isMobile && setSelectedSet(set)}
             >
               {set}

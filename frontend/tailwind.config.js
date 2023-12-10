@@ -39,7 +39,7 @@ module.exports = {
       darkGrayDark: '#404050',
       lightGray: '#a8a8a8',
       lightGrayDark: '#959595',
-      midGray: '#9090a0',
+      midGray: '#858595',
       midGrayDark: '#808090',
       white: '#ffffff',
       whiteDark: '#eeeeee',

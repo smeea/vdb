@@ -39,7 +39,9 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
         })}
       </div>
       <div className="flex flex-col gap-1">
-        <div>Excluding Master / Event:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark">
+          Excluding Master / Event:
+        </div>
         <div>
           {byDisciplinesSorted.map((d, idx) => {
             return (
