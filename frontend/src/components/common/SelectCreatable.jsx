@@ -20,7 +20,7 @@ const SelectCreatable = React.forwardRef(
       borderStyle = 'border',
       roundedStyle = 'rounded',
     },
-    ref
+    ref,
   ) => {
     return (
       <ReactSelectCreatable
@@ -42,8 +42,8 @@ const SelectCreatable = React.forwardRef(
               noBorder
                 ? ''
                 : state.isFocused
-                ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
-                : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
+                  ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
+                  : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
             }
           `,
           dropdownIndicator: () => 'max-w-[0px] max-h-[0px]',
@@ -55,8 +55,8 @@ const SelectCreatable = React.forwardRef(
             state.isFocused
               ? 'bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-              ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
-              : ''
+                ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
+                : ''
           }
 `,
           valueContainer: () => 'flex px-[5px] min-h-[40px] gap-1 p-1',
@@ -83,7 +83,7 @@ const SelectCreatable = React.forwardRef(
         }}
       />
     );
-  }
+  },
 );
 SelectCreatable.displayName = 'SelectCreatable';
 

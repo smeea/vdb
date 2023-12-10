@@ -19,7 +19,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
     handleModalCardChange,
     handleModalCardClose,
   } = useModalCardController(
-    Object.keys(value).map((id) => libraryCardBase[id])
+    Object.keys(value).map((id) => libraryCardBase[id]),
   );
 
   const handleAdd = (event) => {

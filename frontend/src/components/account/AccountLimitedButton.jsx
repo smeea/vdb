@@ -18,7 +18,7 @@ const AccountLimitedButton = () => {
       format.allowed.library,
       format.banned.crypt,
       format.banned.library,
-      format.sets
+      format.sets,
     );
 
     setMany([

@@ -8,7 +8,7 @@ const useDeckCrypt = (
   cardsList,
   sortMethod = 'byName',
   timer,
-  cardsToList = {}
+  cardsToList = {},
 ) => {
   const limitedCrypt = useSnapshot(limitedStore).crypt;
 
@@ -16,17 +16,17 @@ const useDeckCrypt = (
   const cardsTo = Object.values(cardsToList);
   const cryptFrom = Object.values(cardsFrom).filter((card) => card.q > 0);
   const cryptTo = Object.values(cardsTo).filter(
-    (card) => card.q > 0 && !containCard(cryptFrom, card)
+    (card) => card.q > 0 && !containCard(cryptFrom, card),
   );
 
   const cryptFromSide = Object.values(cardsFrom).filter(
-    (card) => card.q <= 0 && !containCard(cryptTo, card)
+    (card) => card.q <= 0 && !containCard(cryptTo, card),
   );
   const cryptToSide = Object.values(cardsTo).filter(
     (card) =>
       card.q <= 0 &&
       !containCard(cryptFrom, card) &&
-      !containCard(cryptFromSide, card)
+      !containCard(cryptFromSide, card),
   );
 
   const crypt = [...cryptFrom, ...cryptTo.map((card) => ({ q: 0, c: card.c }))];

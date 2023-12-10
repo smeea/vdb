@@ -45,7 +45,7 @@ const LibrarySearchForm = () => {
   const limitedLibrary = useSnapshot(limitedStore).library;
   const libraryFormState = useSnapshot(searchLibraryForm);
   const { filterLibrary } = useFilters(
-    limitedMode ? limitedLibrary : libraryCardBase
+    limitedMode ? limitedLibrary : libraryCardBase,
   );
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
@@ -141,13 +141,13 @@ const LibrarySearchForm = () => {
     navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterLibrary(sanitizedForm).filter(
-      (card) => playtestMode || card.Id < 110000
+      (card) => playtestMode || card.Id < 110000,
     );
 
     if (!isMobile) {
       if (hideMissing && inventoryMode) {
         setPreresults(() =>
-          filteredCards.filter((card) => inventoryLibrary[card.Id])
+          filteredCards.filter((card) => inventoryLibrary[card.Id]),
         );
       } else {
         setPreresults(filteredCards);
@@ -155,7 +155,7 @@ const LibrarySearchForm = () => {
     } else {
       if (hideMissing && inventoryMode) {
         setLibraryResults(
-          filteredCards.filter((card) => inventoryLibrary[card.Id])
+          filteredCards.filter((card) => inventoryLibrary[card.Id]),
         );
       } else {
         setLibraryResults(filteredCards);
@@ -213,7 +213,7 @@ const LibrarySearchForm = () => {
       limitedMode,
       playtestMode,
       libraryCardBase,
-    ]
+    ],
   );
 
   useDebounce(() => testInputsAndSearch(), 400, [
