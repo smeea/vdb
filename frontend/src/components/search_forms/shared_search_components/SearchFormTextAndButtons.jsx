@@ -68,6 +68,7 @@ const SearchFormTextAndButtons = ({
               {preresults > showLimit && (
                 <ButtonIconed
                   className="whitespace-nowrap rounded-l-none rounded-r-none"
+                  borderStyle="border-y border-l border-r-none"
                   variant="primary"
                   onClick={handleShowResults}
                   text={`SHOW ${preresults}`}

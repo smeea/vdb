@@ -3,6 +3,7 @@ import {
   InventoryCryptTable,
   InventoryFilterForm,
   SortButton,
+  Header,
 } from '@/components';
 import { useInventoryCrypt } from '@/hooks';
 
@@ -47,7 +48,7 @@ const InventoryCrypt = ({
   return (
     <>
       {!compact && (
-        <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+        <Header>
           <div className="w-3/4 p-1">
             <InventoryFilterForm
               value={clan}
@@ -73,7 +74,7 @@ const InventoryCrypt = ({
             sortMethod={sortMethod}
             setSortMethod={setSortMethod}
           />
-        </div>
+        </Header>
       )}
       <InventoryCryptTable
         sortMethod={sortMethod}

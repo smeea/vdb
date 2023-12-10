@@ -3,6 +3,7 @@ import {
   DeckProxyLibraryTable,
   ResultLibraryType,
   ResultModal,
+  Header,
 } from '@/components';
 import { useApp } from '@/context';
 import { countCards } from '@/utils';
@@ -103,14 +104,18 @@ const DeckProxyLibrary = ({
   ));
 
   return (
-    <>
-      <div className="flex min-h-[38px] items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
-        Library [{libraryTotalSelected}]
+    <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+      <div className="space-y-2">
+        <Header>
+          <div className="px-2 font-bold">Library [{libraryTotalSelected}]</div>
+        </Header>
+        {LibraryDeck}
       </div>
-      {LibraryDeck}
       {librarySide.length > 0 && (
-        <div className=" opacity-60 dark:opacity-50">
-          <b>Side Library</b>
+        <div className="opacity-60 dark:opacity-50 space-y-2">
+          <Header>
+            <div className="px-2 font-bold">Side Library</div>
+          </Header>
           {LibrarySideDeck}
         </div>
       )}
@@ -122,7 +127,7 @@ const DeckProxyLibrary = ({
           nested
         />
       )}
-    </>
+    </div>
   );
 };
 

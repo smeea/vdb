@@ -1,5 +1,5 @@
 import React from 'react';
-import { SortButton } from '@/components';
+import { SortButton, Header } from '@/components';
 import { useApp } from '@/context';
 
 const TwdResultTotal = ({
@@ -23,10 +23,10 @@ const TwdResultTotal = ({
   });
 
   return (
-    <div
-      className={`${
+    <Header
+      className={`sm:space-x-2${
         isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'
-      } items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark sm:space-x-2`}
+      }`}
     >
       <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
       <div>
@@ -48,7 +48,7 @@ const TwdResultTotal = ({
           setSortMethod={setSortMethod}
         />
       </div>
-    </div>
+    </Header>
   );
 };
 export default TwdResultTotal;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { DeckProxyCryptTable, ResultModal } from '@/components';
+import { DeckProxyCryptTable, ResultModal, Header } from '@/components';
 import { useApp } from '@/context';
 import { countCards } from '@/utils';
 import { deckStore } from '@/context';
@@ -58,24 +58,26 @@ const DeckProxyCrypt = ({
   };
 
   return (
-    <>
-      <div className="flex min-h-[38px] items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
-        Crypt [{cryptTotalSelected}]
+    <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+      <div>
+        <Header>
+          <div className="px-2 font-bold">Crypt [{cryptTotalSelected}]</div>
+        </Header>
+        <DeckProxyCryptTable
+          inventoryType={deck.inventoryType}
+          handleClick={handleClick}
+          cards={sortedCards}
+          handleProxySelector={handleProxySelector}
+          handleSetSelector={handleSetSelector}
+          handleProxyCounter={handleProxyCounter}
+          proxySelected={proxySelected}
+        />
       </div>
-      <DeckProxyCryptTable
-        inventoryType={deck.inventoryType}
-        handleClick={handleClick}
-        cards={sortedCards}
-        handleProxySelector={handleProxySelector}
-        handleSetSelector={handleSetSelector}
-        handleProxyCounter={handleProxyCounter}
-        proxySelected={proxySelected}
-      />
       {Object.keys(cryptSide).length > 0 && (
-        <div className=" opacity-60 dark:opacity-50">
-          <div className="flex items-center justify-between ">
-            <b>Side Crypt</b>
-          </div>
+        <div className="opacity-60 dark:opacity-50">
+          <Header>
+            <div className="px-2 font-bold">Side Crypt</div>
+          </Header>
           <DeckProxyCryptTable
             inventoryType={deck.inventoryType}
             handleClick={handleClickSide}
@@ -95,7 +97,7 @@ const DeckProxyCrypt = ({
           nested
         />
       )}
-    </>
+    </div>
   );
 };
 

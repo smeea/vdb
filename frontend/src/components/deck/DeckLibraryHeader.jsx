@@ -6,6 +6,7 @@ import {
   DeckLibraryTotalInfo,
   ResultLibraryCost,
   Warning,
+  Header,
 } from '@/components';
 import { useApp } from '@/context';
 
@@ -31,7 +32,7 @@ const DeckLibraryHeader = ({
 
   return (
     <>
-      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+      <Header>
         <div className="space-x-2 p-2 font-bold">
           <div className="inline">
             Library [{libraryTotal}
@@ -83,7 +84,7 @@ const DeckLibraryHeader = ({
             </Button>
           )}
         </div>
-      </div>
+      </Header>
       {showInfo && (
         <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
           <DeckLibraryTotalInfo

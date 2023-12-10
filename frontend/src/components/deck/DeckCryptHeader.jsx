@@ -6,6 +6,7 @@ import {
   Warning,
   Button,
   SortButton,
+  Header,
 } from '@/components';
 import { useApp } from '@/context';
 import { useKeyDisciplines, useDeckCrypt } from '@/hooks';
@@ -30,7 +31,7 @@ const DeckCryptHeader = ({
 
   return (
     <>
-      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+      <Header>
         <div className="flex gap-1.5 p-2 font-bold">
           <div className="inline">
             Crypt [{cryptTotal}
@@ -73,7 +74,7 @@ const DeckCryptHeader = ({
             </Button>
           )}
         </div>
-      </div>
+      </Header>
       {showInfo && (
         <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
           <DeckCryptTotalInfo

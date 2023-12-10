@@ -17,11 +17,11 @@ const Banner = () => {
           width="48"
           height="48"
         />
-        <div className="inline pl-2 text-[30px] font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="inline pl-2 text-[30px] font-bold text-fgThird dark:text-fgSecondaryDark">
           VDB
         </div>
       </div>
-      <div className="inline space-y-1 px-2 text-sm italic">
+      <div className="inline space-y-1 px-2 text-fgSecondary dark:text-whiteDark text-sm italic">
         <div className="flex justify-end">If only I had a laptop...</div>
         <div className="flex justify-end">- Enkidu, The Noah</div>
       </div>

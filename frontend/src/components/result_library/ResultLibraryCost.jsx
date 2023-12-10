@@ -1,11 +1,11 @@
 import React from 'react';
 
-const ResultLibraryCost = ({ valueBlood, valuePool, className }) => {
+const ResultLibraryCost = ({ valueBlood, valuePool, className = '' }) => {
   return (
     <>
       {valueBlood ? (
         <img
-          className={`optimize-contrast max-h-[30px] ${className ?? ''}`}
+          className={`optimize-contrast max-h-[30px] ${className}`}
           src={`${
             import.meta.env.VITE_BASE_URL
           }/images/misc/blood${valueBlood}.gif`}
@@ -13,7 +13,7 @@ const ResultLibraryCost = ({ valueBlood, valuePool, className }) => {
         />
       ) : (
         <img
-          className={`optimize-contrast max-h-[35px] ${className ?? ''}`}
+          className={`optimize-contrast max-h-[35px] ${className}`}
           src={`${
             import.meta.env.VITE_BASE_URL
           }/images/misc/pool${valuePool}.gif`}

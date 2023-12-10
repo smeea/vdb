@@ -3,6 +3,7 @@ import {
   InventoryLibraryTable,
   InventoryFilterForm,
   SortButton,
+  Header,
 } from '@/components';
 import { useInventoryLibrary } from '@/hooks';
 
@@ -56,7 +57,7 @@ const InventoryLibrary = ({
     <>
       {!compact && (
         <>
-          <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+          <Header>
             <div className="w-3/4 p-1">
               <div className="flex flex-col space-y-1">
                 <InventoryFilterForm
@@ -94,7 +95,7 @@ const InventoryLibrary = ({
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
             />
-          </div>
+          </Header>
         </>
       )}
       <InventoryLibraryTable

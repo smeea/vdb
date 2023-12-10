@@ -3,7 +3,7 @@ import { Button } from '@/components';
 import X from '@/assets/images/icons/x.svg?react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
 import { ANY } from '@/utils/constants';
-import { SortButton } from '@/components';
+import { SortButton, Header } from '@/components';
 import { setCryptCompare } from '@/context';
 
 const ResultCryptTotal = ({
@@ -34,7 +34,7 @@ const ResultCryptTotal = ({
   });
 
   return (
-    <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+    <Header>
       <div className="whitespace-nowrap p-2 font-bold">
         {inHoF ? 'CRYPT' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
       </div>
@@ -92,7 +92,7 @@ const ResultCryptTotal = ({
           </div>
         )}
       </div>
-    </div>
+    </Header>
   );
 };
 

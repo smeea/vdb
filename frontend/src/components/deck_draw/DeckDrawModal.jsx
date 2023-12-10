@@ -10,6 +10,7 @@ import {
   ResultLibraryCost,
   ResultCryptCapacity,
   ErrorMessage,
+  Header,
 } from '@/components';
 
 import { useApp } from '@/context';
@@ -59,7 +60,7 @@ const DeckDrawModal = ({
         <div className="flex gap-3 max-md:flex-col sm:gap-5">
           <div className="basis-full sm:basis-5/9">
             <div>
-              <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+              <Header>
                 <div className="flex w-full justify-between px-2">
                   <div className="flex items-center font-bold">
                     Uncontrolled
@@ -111,7 +112,7 @@ const DeckDrawModal = ({
                     +1
                   </Button>
                 </div>
-              </div>
+              </Header>
               {cryptTotal < 4 && (
                 <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>
               )}
@@ -124,7 +125,7 @@ const DeckDrawModal = ({
             </div>
           </div>
           <div className="basis-full sm:basis-4/9">
-            <div className="flex h-10 justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+            <Header>
               <div className="flex w-full justify-between px-2">
                 <div className="flex items-center font-bold">Hand</div>
                 <div
@@ -169,7 +170,7 @@ const DeckDrawModal = ({
                   +1
                 </Button>
               </div>
-            </div>
+            </Header>
             {libraryTotal < 7 && (
               <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>
             )}
@@ -186,7 +187,7 @@ const DeckDrawModal = ({
             <div className="md:basis-5/9">
               {burnedCrypt.length > 0 && (
                 <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary px-2 dark:bg-bgSecondaryDark">
+                  <div className="flex h-10 justify-between bg-bgSecondary px-2 dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgPrimaryDark">
                     <div className="flex items-center font-bold">
                       Controlled
                     </div>
@@ -210,7 +211,7 @@ const DeckDrawModal = ({
             <div className="md:basis-4/9">
               {burnedLibrary.length > 0 && (
                 <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary px-2 dark:bg-bgSecondaryDark">
+                  <div className="flex h-10 justify-between bg-bgSecondary px-2 dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgPrimaryDark">
                     <div className="flex items-center font-bold">Ash Heap</div>
                     <div className="flex items-center font-bold">
                       {burnedLibrary.length}

@@ -6,6 +6,7 @@ export { default as ConditionalTooltip } from './ConditionalTooltip.jsx';
 export { default as ConditionalTooltipOrModal } from './ConditionalTooltipOrModal.jsx';
 export { default as ErrorMessage } from './ErrorMessage.jsx';
 export { default as ErrorOverlay } from './ErrorOverlay.jsx';
+export { default as Header } from './Header.jsx';
 export { default as Hr } from './Hr.jsx';
 export { default as Input } from './Input.jsx';
 export { default as InputPreLabel } from './InputPreLabel.jsx';

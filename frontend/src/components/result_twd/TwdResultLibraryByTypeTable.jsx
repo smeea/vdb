@@ -63,7 +63,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-3 px-1 font-bold">
+      <div className="flex h-[30px] items-center justify-between gap-3 px-1 text-fgSecondary dark:text-fgSecondaryDark font-bold">
         <div className="whitespace-nowrap">
           Library [{libraryTotal}] {hasBanned && <Warning value="BANNED" />}
         </div>

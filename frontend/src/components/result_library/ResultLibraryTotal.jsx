@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components';
 import X from '@/assets/images/icons/x.svg?react';
-import { ResultLibraryTypeImage, SortButton } from '@/components';
+import { ResultLibraryTypeImage, SortButton, Header } from '@/components';
 import { setLibraryCompare } from '@/context';
 
 const ResultLibraryTotal = ({
@@ -25,7 +25,7 @@ const ResultLibraryTotal = ({
   });
 
   return (
-    <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+    <Header>
       <div className="whitespace-nowrap p-2 font-bold">
         {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
       </div>
@@ -60,7 +60,7 @@ const ResultLibraryTotal = ({
           </div>
         )}
       </div>
-    </div>
+    </Header>
   );
 };
 

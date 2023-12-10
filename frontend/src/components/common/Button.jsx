@@ -35,7 +35,7 @@ const Button = ({
     <button
       className={`${outlineStyle} ${
         customStyle[variant]
-      } flex items-center justify-center ${
+      } flex items-center justify-center font-normal ${
         noPadding ? '' : 'px-3 py-1.5'
       } ${className} ${borderStyle}`}
       onClick={onClick}

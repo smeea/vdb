@@ -4,6 +4,7 @@ import {
   ResultCryptTable,
   DeckRecommendationLibrary,
   Modal,
+  Header,
 } from '@/components';
 
 const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
@@ -11,9 +12,9 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
     <Modal handleClose={handleClose} size="lg" title="Card Ideas">
       <div className="flex gap-3 max-sm:flex-col sm:gap-5">
         <div className="basis-full sm:basis-7/12">
-          <div className="flex h-10 items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
-            Crypt
-          </div>
+          <Header>
+            <div className="px-2 font-bold">Crypt</div>
+          </Header>
           {crypt.length > 0 ? (
             <ResultCryptTable resultCards={crypt} inRecommendation />
           ) : (
@@ -22,10 +23,10 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
             </div>
           )}
         </div>
-        <div className="basis-full sm:basis-5/12">
-          <div className="flex h-10 items-center justify-between bg-bgSecondary px-2 font-bold dark:bg-bgSecondaryDark">
-            Library
-          </div>
+        <div className="basis-full sm:basis-5/12 space-y-2">
+          <Header>
+            <div className="px-2 font-bold">Library</div>
+          </Header>
           {library.length > 0 ? (
             <DeckRecommendationLibrary cards={library} />
           ) : (
