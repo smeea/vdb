@@ -26,8 +26,8 @@ const Twd = lazy(() => import('./pages/Twd.jsx'));
 const Documentation = lazy(() => import('./pages/Documentation.jsx'));
 const TournamentAnalyze = lazy(() => import('./pages/TournamentAnalyze.jsx'));
 const TwdHallOfFameCards = lazy(() => import('./pages/TwdHallOfFameCards.jsx'));
-const TwdHallOfFameTournaments = lazy(
-  () => import('./pages/TwdHallOfFameTournaments.jsx'),
+const TwdHallOfFameTournaments = lazy(() =>
+  import('./pages/TwdHallOfFameTournaments.jsx')
 );
 const TwdCardsHistory = lazy(() => import('./pages/TwdCardsHistory.jsx'));
 const TwdCheck = lazy(() => import('./pages/TwdCheck.jsx'));
@@ -50,7 +50,6 @@ const App = () => {
           element={<Decks />}
           loader={deckServices.deckLoader}
         />
-
         <Route
           path="documentation"
           element={
@@ -164,9 +163,18 @@ const App = () => {
               <TournamentAnalyze />
             </Suspense>
           }
-        />
-      </Route>,
-    ),
+        >
+          <Route
+            path=":tournamentid"
+            element={
+              <Suspense fallback={<div />}>
+                <TournamentAnalyze />
+              </Suspense>
+            }
+          />
+        </Route>
+      </Route>
+    )
   );
 
   return <RouterProvider router={router} />;
