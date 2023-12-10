@@ -324,7 +324,8 @@ def get_decks_by_similar(deckid, decks):
 
     if len(deckid) == 32:
         deck = Deck.query.get(deckid)
-        cards = deck.cards
+        if deck:
+            cards = deck.cards
 
     elif ":" in deckid:
         set, precon = deckid.split(":")

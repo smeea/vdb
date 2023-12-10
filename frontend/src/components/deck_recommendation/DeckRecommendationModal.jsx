@@ -15,7 +15,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
           <Header>
             <div className="px-2 font-bold">Crypt</div>
           </Header>
-          {crypt.length > 0 ? (
+          {crypt ? (
             <ResultCryptTable resultCards={crypt} inRecommendation />
           ) : (
             <div className="flex justify-center pt-5">
@@ -27,7 +27,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
           <Header>
             <div className="px-2 font-bold">Library</div>
           </Header>
-          {library.length > 0 ? (
+          {library ? (
             <DeckRecommendationLibrary cards={library} />
           ) : (
             <div className="flex justify-center pt-5">

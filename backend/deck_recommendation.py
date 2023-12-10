@@ -19,16 +19,19 @@ def deck_recommendation(cards):
     crypt_total = 0
     library = {}
 
-    for k, v in cards.items():
-        if v < 1:
-            continue
+    empty_cards = [k for k,v in cards.items() if v < 1]
+    for k in empty_cards:
+        del cards[k]
 
+    for k, v in cards.items():
         k = int(k)
         if k > 200000:
             crypt[k] = {"c": cardbase_crypt[str(k)], "q": v}
             crypt_total += v
         else:
             library[k] = {"c": cardbase_lib[str(k)], "q": v}
+
+
 
     discipline_multiplier = {}
     group_multiplier = {}

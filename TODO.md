@@ -1,6 +1,5 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
-- Backend update_deck_route errors
 
 # FEATURES
 - Inventory cards with notes filter to crypt/library/inventory

@@ -8,16 +8,16 @@ const DeckRecommendation = ({ setShow, deck }) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${
     deck.deckid
   }/recommendation`;
-
   const { value } = useFetch(url, {}, []);
-  const crypt = [];
-  const library = [];
+
+  let crypt;
+  let library;
   if (value) {
-    Object.keys(value.crypt).map((i) => {
-      crypt.push(cryptCardBase[value.crypt[i]]);
+    crypt = value.crypt.map((cardid) => {
+      return cryptCardBase[cardid];
     });
-    Object.keys(value.library).map((i) => {
-      library.push(libraryCardBase[value.library[i]]);
+    library = value.library.map((cardid) => {
+      return libraryCardBase[cardid];
     });
   }
 
