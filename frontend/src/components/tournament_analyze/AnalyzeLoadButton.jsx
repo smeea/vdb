@@ -11,6 +11,7 @@ import {
   setAnalyzeResults,
   clearAnalyzeForm,
   analyzeStore,
+  useApp,
 } from '@/context';
 
 const AnalyzeLoadButton = ({
@@ -21,6 +22,7 @@ const AnalyzeLoadButton = ({
   setError,
   getDeck,
 }) => {
+  const { username } = useApp();
   const info = useSnapshot(analyzeStore).info;
   const navigate = useNavigate();
   const fileInputDecks = useRef();
@@ -105,14 +107,17 @@ const AnalyzeLoadButton = ({
                   icon={<StarFill />}
                   text="Finnish Nationals 2022 [2022-11-05]"
                 />
-                <ButtonIconed
-                  className="w-full"
-                  variant="primary"
-                  onClick={() => fileInputDecks.current.click()}
-                  title="Import Decks"
-                  icon={<Upload />}
-                  text="Import Decks (.txt)"
-                />
+                {/* TODO REMOVE USERNAME CHECK WHEN STABLE */}
+                {username == '1' && (
+                  <ButtonIconed
+                    className="w-full"
+                    variant="primary"
+                    onClick={() => fileInputDecks.current.click()}
+                    title="Import Decks"
+                    icon={<Upload />}
+                    text="Import Decks (.txt)"
+                  />
+                )}
               </>
             ) : (
               !info && (
