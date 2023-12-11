@@ -1,7 +1,7 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
-- Tags to clan name in TWD analyze
+- Card q-ty color to blue in day theme
 
 # FEATURES
 - Inventory cards with notes filter to crypt/library/inventory
