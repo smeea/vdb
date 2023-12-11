@@ -1,5 +1,6 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
+- Mobile support for Tournament Analyze
 
 # FEATURES
 - Inventory cards with notes filter to crypt/library/inventory

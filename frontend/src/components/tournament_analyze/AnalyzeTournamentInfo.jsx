@@ -21,7 +21,7 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
           <TwdResultDescriptionTextTr
             title={isMobile ? <TrophyFill /> : <>Event:</>}
           >
-            {info.name}
+            {info.event}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
             title={isMobile ? <GeoAltFill /> : <>Place:</>}

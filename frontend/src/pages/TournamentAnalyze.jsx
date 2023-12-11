@@ -99,6 +99,9 @@ const TournamentAnalyze = () => {
     let medianVp = 0;
     let medianGw = 0;
     let reportedRanks = [];
+    let event;
+    let date;
+    let location;
 
     dataInfo.forEach((n) => {
       const array = n.split(',');
@@ -106,6 +109,9 @@ const TournamentAnalyze = () => {
       if (array[0] === 'Number of Rounds (including final):')
         totalRounds = array[1];
       if (array[0] === 'Number of Event Matches:') totalMatches = array[1];
+      if (array[0] === 'Event Name:') event = array[1];
+      if (array[0] === 'Event Date (DD-MON-YY):') date = array[1];
+      if (array[0] === 'City:') location = array[1];
     });
 
     dataScores.forEach((n) => {
@@ -149,9 +155,9 @@ const TournamentAnalyze = () => {
     }
 
     const info = {
-      name: dataInfo[2].split(',')[1],
-      date: dataInfo[3].split(',')[1],
-      location: dataInfo[6].split(',')[1],
+      event: event,
+      date: date,
+      location: location,
       players: totalPlayers,
       matches: totalMatches,
       rounds: totalRounds,
