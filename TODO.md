@@ -1,7 +1,6 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
-- Card q-ty color to blue in day theme
 
 # FEATURES
 - Inventory cards with notes filter to crypt/library/inventory

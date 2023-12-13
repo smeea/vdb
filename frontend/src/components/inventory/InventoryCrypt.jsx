@@ -60,7 +60,7 @@ const InventoryCrypt = ({
               byUnique={cardsByClanUnique}
               target="crypt"
             />
-            <div className="flex justify-end font-bold  text-midGray dark:text-midGrayDark">
+            <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
               {missingByClanTotal[clan] ? (
                 <>
                   {missingByClanTotal[clan]} (

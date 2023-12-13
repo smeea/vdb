@@ -67,7 +67,7 @@ const AnalyzeTournamentResultTotal = ({
           {Object.keys(byTags).map((i) => {
             return (
               <div key={i} className="inline-block whitespace-nowrap px-2">
-                <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                <div className="inline pr-0.5 text-fgSecondary dark:text-fgSecondaryDark">
                   {i}:
                 </div>
                 {byTags[i]}

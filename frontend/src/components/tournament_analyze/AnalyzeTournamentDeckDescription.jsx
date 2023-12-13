@@ -17,6 +17,7 @@ import {
 import { getDeckInUrl } from '@/utils';
 
 const AnalyzeTournamentDeckDescription = ({ deck }) => {
+  // TODO REMOVE NAME CODE IS NAMES ARE FORBIDDEN TO USE
   const { username, isMobile } = useApp();
   // const navigate = useNavigate();
   const deckInUrl = getDeckInUrl(deck);

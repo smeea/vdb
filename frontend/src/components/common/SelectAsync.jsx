@@ -11,12 +11,15 @@ const SelectAsync = React.forwardRef(
       isDisabled = false,
       loadOptions,
       menuPlacement,
+      noBorder,
       noDropdown,
       onChange,
       placeholder,
       value,
+      borderStyle = 'border',
+      roundedStyle = 'rounded',
     },
-    ref,
+    ref
   ) => {
     return (
       <AsyncSelect
@@ -33,10 +36,14 @@ const SelectAsync = React.forwardRef(
         unstyled
         value={value}
         classNames={{
-          control: (state) =>
-            state.isFocused
-              ? 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
-              : 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark',
+          control: (state) => `
+            ${
+              noBorder
+                ? ''
+                : state.isFocused
+                ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
+                : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
+            }`,
           dropdownIndicator: () =>
             noDropdown
               ? 'max-w-[0px] max-h-[0px]'
@@ -46,28 +53,28 @@ const SelectAsync = React.forwardRef(
           indicatorSeparator: () =>
             'bg-borderSecondary dark:bg-borderSecondaryDark',
           menu: () =>
-            'my-2 rounded border border-bgThird dark:border-bgThirdDark',
+            'my-2 rounded border border-borderThird dark:border-borderThirdDark',
           menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
-          option: (state) => `p-2
+          option: (state) => `p-2 text-fgPrimary dark:text-fgPrimaryDark
           ${
             state.isFocused
               ? 'bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-                ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
-                : ''
+              ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
+              : ''
           }
 `,
           noOptionsMessage: () => 'rounded p-2',
           loadingMessage: () => 'rounded p-2',
           placeholder: () => 'text-midGray dark:text-midGrayDark',
           valueContainer: () =>
-            'px-2 min-h-[40px] bg-bgPrimary dark:bg-bgPrimaryDark rounded',
+            'px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark rounded',
           clearIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
           loadingIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
         }}
       />
     );
-  },
+  }
 );
 SelectAsync.displayName = 'SelectAsync';
 

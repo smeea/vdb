@@ -20,7 +20,7 @@ const SelectCreatable = React.forwardRef(
       borderStyle = 'border',
       roundedStyle = 'rounded',
     },
-    ref,
+    ref
   ) => {
     return (
       <ReactSelectCreatable
@@ -42,24 +42,26 @@ const SelectCreatable = React.forwardRef(
               noBorder
                 ? ''
                 : state.isFocused
-                  ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
-                  : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
+                ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
+                : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
             }
           `,
           dropdownIndicator: () => 'max-w-[0px] max-h-[0px]',
           indicatorsContainer: () => 'rounded max-h-[0px] max-w-[0px]',
-          menu: () => 'my-2 rounded border-bgThird dark:border-bgThirdDark',
+          menu: () =>
+            'my-2 rounded border border-borderThird dark:border-borderThirdDark',
           menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2
           ${
             state.isFocused
-              ? 'bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark'
+              ? 'bg-borderPrimary dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-                ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
-                : ''
+              ? 'bg-borderSecondary dark:bg-borderPrimaryDark'
+              : ''
           }
 `,
-          valueContainer: () => 'flex px-[5px] min-h-[40px] gap-1 p-1',
+          valueContainer: () =>
+            'flex px-[5px] min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark gap-1 p-1',
           container: () => `bg-bgPrimary dark:bg-bgPrimaryDark
           ${roundedStyle}
           ${className}
@@ -77,13 +79,13 @@ const SelectCreatable = React.forwardRef(
             noRemove
               ? 'max-w-[0px] max-h-[0px] hidden'
               : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark',
-          noOptionsMessage: () => 'rounded p-2',
           placeholder: () => 'text-midGray dark:text-midGrayDark',
+          noOptionsMessage: () => 'rounded p-2',
           clearIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
         }}
       />
     );
-  },
+  }
 );
 SelectCreatable.displayName = 'SelectCreatable';
 

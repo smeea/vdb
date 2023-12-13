@@ -19,8 +19,10 @@ const Select = React.forwardRef(
       options,
       placeholder,
       value,
+      borderStyle = 'border',
+      roundedStyle = 'rounded',
     },
-    ref,
+    ref
   ) => {
     return (
       <ReactSelect
@@ -45,8 +47,8 @@ const Select = React.forwardRef(
               noBorder
                 ? ''
                 : state.isFocused
-                  ? 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
-                  : 'rounded border bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark'
+                ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
+                : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
             }`,
           dropdownIndicator: () =>
             noDropdown
@@ -57,26 +59,26 @@ const Select = React.forwardRef(
           indicatorSeparator: () =>
             'bg-borderSecondary dark:bg-borderSecondaryDark',
           menu: () =>
-            'my-2 rounded border border-bgThird dark:border-bgThirdDark',
+            'my-2 rounded border border-borderThird dark:border-borderThirdDark',
           menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
-          option: (state) => `p-2
+          option: (state) => `p-2 text-fgPrimary dark:text-fgPrimaryDark
           ${
             state.isFocused
-              ? 'bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark'
+              ? 'bg-borderPrimary dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-                ? 'bg-borderPrimary dark:bg-borderPrimaryDark'
-                : ''
+              ? 'bg-borderSecondary dark:bg-borderPrimaryDark'
+              : ''
           }
 `,
           placeholder: () => 'text-midGray dark:text-midGrayDark',
           valueContainer: () =>
-            'px-2 min-h-[40px] bg-bgPrimary dark:bg-bgPrimaryDark rounded',
+            'px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark rounded',
           noOptionsMessage: () => 'rounded p-2',
           clearIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
         }}
       />
     );
-  },
+  }
 );
 Select.displayName = 'Select';
 
