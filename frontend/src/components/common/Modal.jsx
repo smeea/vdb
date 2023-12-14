@@ -10,8 +10,8 @@ const Modal = ({
   size = 'md',
   noPadding = false,
   centered = false,
-  nested = false,
   initialFocus,
+  noBorder,
 }) => {
   const { isNarrow } = useApp();
 
@@ -41,12 +41,10 @@ const Modal = ({
           }`}
         >
           <Dialog.Panel
-            className={`
-            ${
-              nested
-                ? 'border-borderNestModal dark:border-borderNestModalDark'
-                : 'border-bgSecondary dark:border-bgSecondaryDark '
-            } ${widthClass[size]} rounded border bg-bgPrimary ${
+            className={`border-bgSecondary dark:border-bgSecondaryDark
+            ${widthClass[size]} rounded ${
+              noBorder ? '' : 'border'
+            } bg-bgPrimary ${
               noPadding ? '' : 'p-3 sm:p-5'
             } dark:bg-bgPrimaryDark`}
           >

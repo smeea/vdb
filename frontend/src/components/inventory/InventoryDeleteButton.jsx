@@ -4,8 +4,7 @@ import { ButtonIconed, ModalConfirmation } from '@/components';
 import { useApp, setInventoryCrypt, setInventoryLibrary } from '@/context';
 
 const InventoryDelete = () => {
-  const { isDesktop, setShowMenuButtons, setShowFloatingButtons, isMobile } =
-    useApp();
+  const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
@@ -47,7 +46,6 @@ const InventoryDelete = () => {
           title={`Delete Inventory`}
           buttonText="Delete"
           buttonVariant="danger"
-          nested={isMobile}
         >
           THIS CANNOT BE UNDONE!
         </ModalConfirmation>

@@ -8,7 +8,6 @@ const ModalConfirmation = ({
   withWrittenConfirmation,
   handleConfirm,
   handleCancel,
-  nested,
   centered,
   size = 'sm',
   disabled,
@@ -45,7 +44,6 @@ const ModalConfirmation = ({
       centered={centered ?? isMobile}
       size={size}
       title={title}
-      nested={nested}
     >
       <div className="flex flex-col gap-3 sm:gap-5">
         {children && (

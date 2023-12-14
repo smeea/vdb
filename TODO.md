@@ -1,8 +1,6 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
-- Popup and modal borders in day theme
-- Trim url at first card in deck-in-url
 
 # FEATURES
 - Inventory cards with notes filter to crypt/library/inventory

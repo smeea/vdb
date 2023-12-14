@@ -16,7 +16,6 @@ const ResultModal = ({
   card,
   handleModalCardChange,
   handleClose,
-  nested,
   forceInventoryMode,
 }) => {
   const { showImage, toggleShowImage, isMobile, isNarrow } = useApp();
@@ -68,13 +67,7 @@ const ResultModal = ({
   });
 
   return (
-    <Modal
-      handleClose={handleClose}
-      nested={nested}
-      size="card"
-      centered
-      noPadding
-    >
+    <Modal handleClose={handleClose} size="card" centered noBorder noPadding>
       <div className="relative">
         <div className="max-h-0 max-w-0 opacity-0">
           <button />
@@ -102,14 +95,14 @@ const ResultModal = ({
           </div>
         ) : (
           <div className="flex">
-            <div className="bg-black">
+            <div className="bg-black border-y border-l border-bgSecondaryDark dark:border-bgSecondaryDark">
               <CardImage
                 card={activeCard}
                 set={imageSet}
                 onClick={handleClose}
               />
             </div>
-            <div className="w-full p-5">
+            <div className="w-full p-5 border-y border-r rounded-r border-bgSecondary dark:border-bgSecondaryDark">
               <ResultLayoutText
                 card={activeCard}
                 setCard={setActiveCard}
