@@ -12,7 +12,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const handleStandard = () => {
     const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(
       ' ',
-      '_',
+      '_'
     )}`;
 
     navigator.clipboard.writeText(url);
@@ -27,7 +27,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const handleStandardQr = () => {
     const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(
       ' ',
-      '_',
+      '_'
     )}`;
 
     setShowMenuButtons(false);
@@ -135,35 +135,33 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
               </MenuItem>
             </div>
           )}
-          <div>
-            {(deck.deckid.length === 32 || deck.deckid === 'deck') && (
-              <>
-                <div className="px-3 pt-2 text-sm text-midGray dark:text-midGrayDark">
-                  Non-modifiable:
-                </div>
-                <MenuItem
-                  title="Copy long URL containing full deck info (will not follow deck changes)"
-                  onClick={handleDeckInUrl}
-                >
-                  Deck-in-URL
-                </MenuItem>
-                <MenuItem
-                  title="Create QR with long URL containing full deck info (will not follow deck changes)"
-                  onClick={handleDeckInQr}
-                >
-                  Deck-in-QR
-                </MenuItem>
-              </>
-            )}
-            {deck.deckid.length === 32 && (
+          {(deck.deckid.length === 32 || deck.deckid === 'deck') && (
+            <div>
+              <div className="px-3 pt-2 text-sm text-midGray dark:text-midGrayDark">
+                Non-modifiable:
+              </div>
               <MenuItem
-                title="Copy URL to snapshot of the deck (will not follow deck changes)"
-                onClick={handleSnapshot}
+                title="Copy long URL containing full deck info (will not follow deck changes)"
+                onClick={handleDeckInUrl}
               >
-                Snapshot URL
+                Deck-in-URL
               </MenuItem>
-            )}
-          </div>
+              <MenuItem
+                title="Create QR with long URL containing full deck info (will not follow deck changes)"
+                onClick={handleDeckInQr}
+              >
+                Deck-in-QR
+              </MenuItem>
+              {deck.deckid.length === 32 && (
+                <MenuItem
+                  title="Copy URL to snapshot of the deck (will not follow deck changes)"
+                  onClick={handleSnapshot}
+                >
+                  Snapshot URL
+                </MenuItem>
+              )}
+            </div>
+          )}
         </>
       </MenuItems>
     </Menu>
