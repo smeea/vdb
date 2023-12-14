@@ -56,7 +56,7 @@ const Diff = () => {
         const cardsData = useDeck(
           deckData.cards,
           cryptCardBase,
-          libraryCardBase,
+          libraryCardBase
         );
 
         const d = {
@@ -91,7 +91,7 @@ const Diff = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && decks !== undefined) {
-      if (deckidFrom && (deck?.deckid != deckidFrom || !deck)) {
+      if (deckidFrom && deck?.deckid != deckidFrom) {
         if (decks[deckidFrom]) {
           setDeck(decks[deckidFrom]);
         } else if (deckidFrom.includes(':')) {
@@ -110,7 +110,7 @@ const Diff = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && decks !== undefined) {
-      if (deckidTo && (deck?.deckid != deckidTo || !deckTo)) {
+      if (deckidTo && deckTo?.deckid != deckidTo) {
         if (decks[deckidTo]) {
           setDeckTo(decks[deckidTo]);
         } else if (deckidTo.includes(':')) {
