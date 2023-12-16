@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useImmer } from 'use-immer';
-import { Input, Checkbox } from '@/components';
 import {
+  Input,
+  Checkbox,
   SearchFormButtonAddText,
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
-} from '../shared_search_components';
+} from '@/components';
 
 const SearchAdditionalFormsText = ({
   value,

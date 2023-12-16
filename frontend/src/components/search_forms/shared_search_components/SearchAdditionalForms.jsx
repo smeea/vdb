@@ -1,9 +1,5 @@
 import React from 'react';
-import { Select } from '@/components';
-import {
-  SearchFormButtonAdd,
-  SearchFormButtonDel,
-} from '../shared_search_components';
+import { Select, SearchFormButtonAdd, SearchFormButtonDel } from '@/components';
 import { useApp } from '@/context';
 
 const SearchAdditionalForms = ({
@@ -46,7 +42,7 @@ const SearchAdditionalForms = ({
                 menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
                 name={i}
                 value={morelessOptions.find(
-                  (obj) => obj.value === value.value[i].moreless,
+                  (obj) => obj.value === value.value[i].moreless
                 )}
                 onChange={onChange}
               />
@@ -68,7 +64,7 @@ const SearchAdditionalForms = ({
                 menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
                 name={i}
                 value={options.find(
-                  (obj) => obj.value === value.value[i].capacity,
+                  (obj) => obj.value === value.value[i].capacity
                 )}
                 onChange={onChange}
                 autoFocus
@@ -95,7 +91,7 @@ const SearchAdditionalForms = ({
             />
           </div>
         )}
-      </div>,
+      </div>
     );
   }
 

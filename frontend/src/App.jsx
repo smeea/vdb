@@ -6,7 +6,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import { deckServices } from '@/services';
+import { deckServices, miscServices } from '@/services';
 import RootLayout from './pages/RootLayout.jsx';
 import About from './pages/About.jsx';
 import Account from './pages/Account.jsx';
@@ -14,10 +14,7 @@ import Cards from './pages/Cards.jsx';
 import Crypt from './pages/Crypt.jsx';
 import Library from './pages/Library.jsx';
 import Decks from './pages/Decks.jsx';
-import {
-  default as Changelog,
-  loader as changesLoader,
-} from './pages/Changelog.jsx';
+import { default as Changelog } from './pages/Changelog.jsx';
 const Diff = lazy(() => import('./pages/Diff.jsx'));
 const Inventory = lazy(() => import('./pages/Inventory.jsx'));
 const Review = lazy(() => import('./pages/Review.jsx'));
@@ -65,7 +62,7 @@ const App = () => {
               <Changelog />
             </Suspense>
           }
-          loader={changesLoader}
+          loader={miscServices.changesLoader}
         />
         <Route
           path="diff"
