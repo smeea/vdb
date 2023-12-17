@@ -48,8 +48,8 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
+                  ? 'Fixed'
+                  : 'Virtual'
               }
             >
               {deck.inventoryType == 's' && <Shuffle />}
@@ -104,7 +104,12 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
       )}
       {!isMobile && (
         <td className="w-full">
-          <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered />
+          <DeckTags
+            deck={deck}
+            allTagsOptions={allTagsOptions}
+            isBordered
+            noAutoTags
+          />
         </td>
       )}
       <td className="min-w-[110px]">
