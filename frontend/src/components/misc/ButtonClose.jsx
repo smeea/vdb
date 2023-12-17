@@ -1,5 +1,5 @@
 import React from 'react';
-import X from '@/assets/images/icons/x.svg?react';
+import XLg from '@/assets/images/icons/x-lg.svg?react';
 import { ButtonIconed } from '@/components';
 
 const ButtonClose = ({ handleClick, title, className }) => {
@@ -9,7 +9,7 @@ const ButtonClose = ({ handleClick, title, className }) => {
       title={title}
       variant="primary"
       onClick={handleClick}
-      icon={<X />}
+      icon={<XLg width="13" height="13" viewBox="0 0 16 16" />}
     />
   );
 };
