@@ -1,44 +1,68 @@
 import React from 'react';
-import { Select } from '@/components';
 import {
+  Select,
+  ResultDisciplineImage,
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-} from '../shared_search_components';
+} from '@/components';
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import virtuesList from '@/assets/data/virtuesList.json';
 import { useApp } from '@/context';
 
-const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
-  const { isXWide } = useApp();
+const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
+  const { playtestMode, isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'sect';
+  const name = 'discipline';
+  const disciplinesExtendedList = [
+    ...Object.keys(disciplinesList),
+    'Flight',
+    'Maleficia',
+    'Striga',
+  ].sort();
 
   const options = [
     'ANY',
     'Not Required',
-    'Camarilla',
-    'Sabbat',
-    'Laibon',
-    'Independent',
-    'Anarch',
-    'Imbued',
-  ].map((i) => ({
-    value: i.toLowerCase(),
-    name: name,
-    label: (
-      <div className="flex items-center">
-        <div className="flex w-[40px]" />
-        {i}
-      </div>
-    ),
-  }));
+    ...disciplinesExtendedList,
+    ...Object.keys(virtuesList),
+  ]
+    .filter((discipline) => playtestMode || discipline !== 'Oblivion')
+    .map((i) => {
+      if (i == 'ANY' || i == 'Not Required') {
+        return {
+          value: i.toLowerCase(),
+          name: name,
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px]" />
+              {i}
+            </div>
+          ),
+        };
+      } else {
+        return {
+          value: i.toLowerCase(),
+          name: name,
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px] justify-center">
+                <ResultDisciplineImage value={i} size="lg" />
+              </div>
+              {i}
+            </div>
+          ),
+        };
+      }
+    });
 
   return (
     <>
-      <div className=" flex flex-row items-center  ">
-        <div className="flex w-1/4 items-center justify-between ">
+      <div className="flex items-center">
+        <div className="w-1/4">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Sect:
+            Discipline:
           </div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
@@ -46,6 +70,7 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
                 name={name}
                 value={value.logic}
                 searchForm={searchForm}
+                withAnd
               />
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
@@ -62,12 +87,12 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
         <div className="w-3/4">
           <Select
             options={options}
-            isSearchable={false}
+            isSearchable={!isMobile}
             isClearable={value.value[0] !== 'any'}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
             onChange={(e, id) =>
               e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
@@ -88,4 +113,4 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
   );
 };
 
-export default LibrarySearchFormSect;
+export default LibrarySearchFormDiscipline;

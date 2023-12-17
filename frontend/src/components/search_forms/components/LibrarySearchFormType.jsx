@@ -1,68 +1,53 @@
 import React from 'react';
-import { Select } from '@/components';
-import { ResultDisciplineImage } from '@/components';
 import {
+  Select,
+  ResultLibraryTypeImage,
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-} from '../shared_search_components';
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import virtuesList from '@/assets/data/virtuesList.json';
+} from '@/components';
+import { cardtypeSorted } from '@/utils/constants';
 import { useApp } from '@/context';
 
-const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
-  const { playtestMode, isXWide, isMobile } = useApp();
+const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
+  const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'discipline';
-  const disciplinesExtendedList = [
-    ...Object.keys(disciplinesList),
-    'Flight',
-    'Maleficia',
-    'Striga',
-  ].sort();
-
-  const options = [
-    'ANY',
-    'Not Required',
-    ...disciplinesExtendedList,
-    ...Object.keys(virtuesList),
-  ]
-    .filter((discipline) => playtestMode || discipline !== 'Oblivion')
-    .map((i) => {
-      if (i == 'ANY' || i == 'Not Required') {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px]" />
-              {i}
+  const name = 'type';
+  const options = ['ANY', ...cardtypeSorted].map((i) => {
+    if (i == 'ANY') {
+      return {
+        value: i.toLowerCase(),
+        name: name,
+        label: (
+          <div className="flex items-center">
+            <div className="flex w-[40px]" />
+            {i}
+          </div>
+        ),
+      };
+    } else {
+      return {
+        value: i.toLowerCase(),
+        name: 'type',
+        label: (
+          <div className="flex items-center">
+            <div className="flex w-[40px] justify-center">
+              <ResultLibraryTypeImage value={i} />
             </div>
-          ),
-        };
-      } else {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px] justify-center">
-                <ResultDisciplineImage value={i} size="lg" />
-              </div>
-              {i}
-            </div>
-          ),
-        };
-      }
-    });
+            {i}
+          </div>
+        ),
+      };
+    }
+  });
 
   return (
     <>
       <div className="flex items-center">
-        <div className="w-1/4">
+        <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Discipline:
+            Type:
           </div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
@@ -87,12 +72,12 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
         <div className="w-3/4">
           <Select
             options={options}
-            isSearchable={!isMobile}
+            isSearchable={false}
             isClearable={value.value[0] !== 'any'}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
             onChange={(e, id) =>
               e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
@@ -113,4 +98,4 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   );
 };
 
-export default LibrarySearchFormDiscipline;
+export default LibrarySearchFormType;

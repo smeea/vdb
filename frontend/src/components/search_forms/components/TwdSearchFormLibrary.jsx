@@ -5,8 +5,8 @@ import {
   ResultModal,
   NewCardSelect,
   ConditionalTooltip,
+  TwdSearchFormQuantityButtons,
 } from '@/components';
-import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 
@@ -19,7 +19,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
     handleModalCardChange,
     handleModalCardClose,
   } = useModalCardController(
-    Object.keys(value).map((id) => libraryCardBase[id]),
+    Object.keys(value).map((id) => libraryCardBase[id])
   );
 
   const handleAdd = (event) => {

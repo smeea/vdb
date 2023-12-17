@@ -5,8 +5,8 @@ import {
   ResultModal,
   NewCardSelect,
   ConditionalTooltip,
+  TwdSearchFormQuantityButtons,
 } from '@/components';
-import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 

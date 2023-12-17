@@ -1,56 +1,44 @@
 import React from 'react';
-import { Select } from '@/components';
-import { ResultClanImage } from '@/components';
 import {
+  Select,
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-} from '../shared_search_components';
-import imbuedClansList from '@/assets/data/imbuedClansList.json';
-import vampireClansList from '@/assets/data/vampireClansList.json';
+} from '@/components';
 import { useApp } from '@/context';
 
-const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
-  const { playtestMode, isXWide, isMobile } = useApp();
-  const maxMenuHeight = isXWide ? 450 : 350;
-  const name = 'clan';
-  const options = ['ANY', ...vampireClansList, ...imbuedClansList]
-    .filter((clan) => playtestMode || clan !== 'Hecata')
-    .map((i) => {
-      if (i == 'ANY') {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px]" />
-              {i}
-            </div>
-          ),
-        };
-      } else {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px] justify-center">
-                <ResultClanImage value={i} />
-              </div>
-              {i}
-            </div>
-          ),
-        };
-      }
-    });
+const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
+  const { isXWide } = useApp();
+  const maxMenuHeight = isXWide ? 500 : 350;
+  const name = 'sect';
+
+  const options = [
+    'ANY',
+    'Not Required',
+    'Camarilla',
+    'Sabbat',
+    'Laibon',
+    'Independent',
+    'Anarch',
+    'Imbued',
+  ].map((i) => ({
+    value: i.toLowerCase(),
+    name: name,
+    label: (
+      <div className="flex items-center">
+        <div className="flex w-[40px]" />
+        {i}
+      </div>
+    ),
+  }));
 
   return (
     <>
-      <div className="flex items-center">
-        <div className="flex w-1/4 items-center justify-between">
+      <div className=" flex flex-row items-center  ">
+        <div className="flex w-1/4 items-center justify-between ">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Clan:
+            Sect:
           </div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
@@ -74,12 +62,12 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
         <div className="w-3/4">
           <Select
             options={options}
-            isSearchable={!isMobile}
+            isSearchable={false}
             isClearable={value.value[0] !== 'any'}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
             onChange={(e, id) =>
               e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
@@ -100,4 +88,4 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   );
 };
 
-export default CryptSearchFormClan;
+export default LibrarySearchFormSect;

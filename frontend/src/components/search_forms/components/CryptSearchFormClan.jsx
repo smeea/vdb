@@ -1,53 +1,56 @@
 import React from 'react';
-import { Select } from '@/components';
-import { ResultLibraryTypeImage } from '@/components';
 import {
+  Select,
+  ResultClanImage,
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-} from '../shared_search_components';
-import { cardtypeSorted } from '@/utils/constants';
+} from '@/components';
+import imbuedClansList from '@/assets/data/imbuedClansList.json';
+import vampireClansList from '@/assets/data/vampireClansList.json';
 import { useApp } from '@/context';
 
-const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
-  const { isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'type';
-  const options = ['ANY', ...cardtypeSorted].map((i) => {
-    if (i == 'ANY') {
-      return {
-        value: i.toLowerCase(),
-        name: name,
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px]" />
-            {i}
-          </div>
-        ),
-      };
-    } else {
-      return {
-        value: i.toLowerCase(),
-        name: 'type',
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px] justify-center">
-              <ResultLibraryTypeImage value={i} />
+const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
+  const { playtestMode, isXWide, isMobile } = useApp();
+  const maxMenuHeight = isXWide ? 450 : 350;
+  const name = 'clan';
+  const options = ['ANY', ...vampireClansList, ...imbuedClansList]
+    .filter((clan) => playtestMode || clan !== 'Hecata')
+    .map((i) => {
+      if (i == 'ANY') {
+        return {
+          value: i.toLowerCase(),
+          name: name,
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px]" />
+              {i}
             </div>
-            {i}
-          </div>
-        ),
-      };
-    }
-  });
+          ),
+        };
+      } else {
+        return {
+          value: i.toLowerCase(),
+          name: name,
+          label: (
+            <div className="flex items-center">
+              <div className="flex w-[40px] justify-center">
+                <ResultClanImage value={i} />
+              </div>
+              {i}
+            </div>
+          ),
+        };
+      }
+    });
 
   return (
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Type:
+            Clan:
           </div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
@@ -55,7 +58,6 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
                 name={name}
                 value={value.logic}
                 searchForm={searchForm}
-                withAnd
               />
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
@@ -72,12 +74,12 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
         <div className="w-3/4">
           <Select
             options={options}
-            isSearchable={false}
+            isSearchable={!isMobile}
             isClearable={value.value[0] !== 'any'}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
             onChange={(e, id) =>
               e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
@@ -98,4 +100,4 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   );
 };
 
-export default LibrarySearchFormType;
+export default CryptSearchFormClan;

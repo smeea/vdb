@@ -1,12 +1,12 @@
 import React from 'react';
-import { Select } from '@/components';
-import { useApp } from '@/context';
 import {
+  Select,
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-} from '../shared_search_components';
+} from '@/components';
+import { useApp } from '@/context';
 
 const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
@@ -79,7 +79,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
               isSearchable={false}
               name={0}
               value={morelessOptions.find(
-                (obj) => obj.value === value.value[0].moreless,
+                (obj) => obj.value === value.value[0].moreless
               )}
               onChange={onChange}
             />

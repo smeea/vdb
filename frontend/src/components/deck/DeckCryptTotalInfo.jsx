@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisciplinesCryptSummary } from '@/components/crypt';
+import { DisciplinesCryptSummary } from '@/components';
 import { useApp } from '@/context';
 import { drawUniqueProbability, countCards, countTotalCost } from '@/utils';
 import { CAPACITY } from '@/utils/constants';

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Select } from '@/components';
 import {
+  Select,
   SearchAdditionalForms,
   SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-} from '../shared_search_components';
+} from '@/components';
 import { useApp } from '@/context';
 
 const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
@@ -67,7 +67,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
+              (obj) => obj.value === value.value[0].toLowerCase()
             )}
             onChange={(e, id) =>
               e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
