@@ -2,21 +2,22 @@ from api import app, db
 from models import Deck, User
 import json
 
-# with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file:
-#     crypt_db = json.load(crypt_file)
-
 # NOT REQUIRED; USE ONLY AS TEMPLATE FOR FUTURE FIXES
+
+fixes = {
+    210001: 000000,
+}
+
 with app.app_context():
-    for user in User.query.filter(User.inventory != {}).all():
-        new_inventory = {}
-        for k, v in user.inventory.items():
-            new_inventory[k] = {
-                'q': v,
-                't': '',
-            }
+    for deck in Deck.query.all():
+        new_cards = {}
+        for k, v in deck.cards.items():
+            if k in fixes:
+                new_cards[fixes[k]] = v
+                print(f"{k} to {fixes[k]}")
+            else:
+                new_cards[k] = v
 
-        user.inventory = new_inventory
-
-    # for deck in Deck.query.filter(Deck.public_parent != None).all():
+        deck.cards = new_cards
 
     db.session.commit()
