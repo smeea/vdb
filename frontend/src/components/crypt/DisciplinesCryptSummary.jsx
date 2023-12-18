@@ -7,47 +7,47 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
     return disciplinesDetailed[b][0] - disciplinesDetailed[a][0];
   });
 
-  let withDisciplines = false;
-  let withVirtues = false;
-
-  const DisciplinesInfo = disciplinesSorted
-    .filter((d) => !virtuesList[d] && disciplinesDetailed[d][0] > 0)
-    .map((d, idx) => {
-      withDisciplines = true;
-      return (
-        <div key={idx} className="inline-block whitespace-nowrap pr-5">
-          <div className="flex items-center space-x-1">
-            <ResultDisciplineImage
-              title={`${d} Superior | Inferior`}
-              superior={true}
-              value={d}
-            />
-            <div>{disciplinesDetailed[d][2]}</div>
-            <div className="text-midGray dark:text-midGrayDark">|</div>
-            <div>{disciplinesDetailed[d][1]}</div>
-          </div>
-        </div>
-      );
-    });
-
-  const VirtuesInfo = disciplinesSorted
-    .filter((d) => virtuesList[d] && disciplinesDetailed[d][0] > 0)
-    .map((d, idx) => {
-      withVirtues = true;
-      return (
-        <div key={idx} className="inline-block whitespace-nowrap pr-5">
-          <div className="flex items-center space-x-1">
-            <ResultDisciplineImage value={d} />
-            <div className="flex">{disciplinesDetailed[d][1]}</div>
-          </div>
-        </div>
-      );
-    });
+  const withVirtues = disciplinesSorted.some(
+    (d) => virtuesList[d] && disciplinesDetailed[d][0] > 0
+  );
+  const withDisciplines = disciplinesSorted.some(
+    (d) => !virtuesList[d] && disciplinesDetailed[d][0] > 0
+  );
 
   return (
     <div className="space-y-2">
-      {withDisciplines && <>{DisciplinesInfo}</>}
-      {withVirtues && <>{VirtuesInfo}</>}
+      {withDisciplines &&
+        disciplinesSorted
+          .filter((d) => !virtuesList[d] && disciplinesDetailed[d][0] > 0)
+          .map((d, idx) => {
+            return (
+              <div key={idx} className="inline-block whitespace-nowrap pr-5">
+                <div className="flex items-center space-x-1">
+                  <ResultDisciplineImage
+                    title={`${d} Superior | Inferior`}
+                    superior={true}
+                    value={d}
+                  />
+                  <div>{disciplinesDetailed[d][2]}</div>
+                  <div className="text-midGray dark:text-midGrayDark">|</div>
+                  <div>{disciplinesDetailed[d][1]}</div>
+                </div>
+              </div>
+            );
+          })}
+      {withVirtues &&
+        disciplinesSorted
+          .filter((d) => virtuesList[d] && disciplinesDetailed[d][0] > 0)
+          .map((d, idx) => {
+            return (
+              <div key={idx} className="inline-block whitespace-nowrap pr-5">
+                <div className="flex items-center space-x-1">
+                  <ResultDisciplineImage value={d} />
+                  <div className="flex">{disciplinesDetailed[d][1]}</div>
+                </div>
+              </div>
+            );
+          })}
     </div>
   );
 };
