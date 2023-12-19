@@ -1,7 +1,10 @@
 import React from 'react';
-import { Button } from '@/components';
+import { ButtonGroup } from '@/components';
 
 const TwdSearchFormCapacity = ({ value, onChange }) => {
+  const name = 'capacity';
+  const options = ['1-4', '4-6', '6-8', '8-11'];
+
   return (
     <div className="flex items-center">
       <div className="w-1/4">
@@ -10,24 +13,19 @@ const TwdSearchFormCapacity = ({ value, onChange }) => {
         </div>
       </div>
       <div className="flex w-3/4 justify-end">
-        {['1-4', '4-6', '6-8', '8-11'].map((i, idx) => {
+        {options.map((i, idx) => {
           return (
-            <Button
-              className={`w-full ${
-                idx !== 0 ? 'rounded-l-none border-l-0' : ''
-              } ${idx !== 3 ? 'rounded-r-none' : ''} ${
-                !value[i]
-                  ? 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark'
-                  : 'border border-borderPrimary dark:border-borderPrimaryDark'
-              }`}
+            <ButtonGroup
+              isFirst={idx == 0}
+              isLast={idx == options.length - 1}
+              isSelected={value[i]}
               key={idx}
-              value={i}
-              name="capacity"
-              variant={value[i] ? 'third' : 'outline-primary'}
+              name={name}
               onClick={onChange}
+              value={i}
             >
               {i}
-            </Button>
+            </ButtonGroup>
           );
         })}
       </div>

@@ -25,6 +25,7 @@ export { default as LoginBlock } from './account/LoginBlock';
 export { default as Button } from './common/Button.jsx';
 export { default as ButtonFloat } from './common/ButtonFloat.jsx';
 export { default as ButtonIconed } from './common/ButtonIconed.jsx';
+export { default as ButtonGroup } from './common/ButtonGroup.jsx';
 export { default as Checkbox } from './common/Checkbox.jsx';
 export { default as ConditionalTooltip } from './common/ConditionalTooltip.jsx';
 export { default as ConditionalTooltipOrModal } from './common/ConditionalTooltipOrModal.jsx';

@@ -13,10 +13,14 @@ const Button = ({
   className = '',
   variant = 'primary',
   borderStyle = 'border',
+  roundedStyle = 'rounded',
   noPadding,
+  noOutline,
 }) => {
   const outlineStyle =
-    'rounded focus:outline outline-1 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
+    'focus:outline outline-1 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
+
+  const paddingStyle = 'px-3 py-1.5';
 
   const customStyle = {
     primary:
@@ -24,7 +28,9 @@ const Button = ({
     secondary:
       'text-fgThird dark:text-fgThirdDark bg-bgButtonSecondary dark:bg-bgButtonSecondaryDark border-borderThird dark:border-borderThirdDark hover:border-borderPrimary dark:hover:border-borderPrimaryDark hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark',
     third:
-      'border-fgThird dark:border-fgThirdDark bg-borderPrimary dark:bg-borderPrimaryDark text-black dark:text-fgPrimaryDark',
+      'border-fgThird dark:border-lightGrayDark bg-borderSecondary dark:bg-borderPrimaryDark text-black dark:text-fgPrimaryDark',
+    fourth:
+      'border-borderPrimary dark:border-borderPrimaryDark bg-borderPrimary dark:bg-borderPrimaryDark text-black dark:text-fgPrimaryDark',
     'outline-primary': 'border-borderSecondary dark:border-borderSecondaryDark',
     danger:
       'bg-bgError dark:bg-bgErrorDark hover:border-bgErrorSecondary hover:dark:border-bgErrorSecondaryDark hover:bg-bgErrorSecondary dark:hover:bg-bgErrorSecondaryDark text-white dark:text-whiteDark border-bgError dark:border-bgErrorDark',
@@ -34,11 +40,13 @@ const Button = ({
 
   return (
     <button
-      className={`${outlineStyle} ${
+      className={`${roundedStyle} ${
+        noOutline ? '' : outlineStyle
+      } ${borderStyle} ${
         customStyle[variant]
       } flex items-center justify-center font-normal ${
-        noPadding ? '' : 'px-3 py-1.5'
-      } ${className} ${borderStyle}`}
+        noPadding ? '' : paddingStyle
+      } ${className}`}
       onClick={onClick}
       title={title}
       disabled={disabled}

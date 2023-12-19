@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button } from '@/components';
+import { ButtonGroup } from '@/components';
 
 const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
   const name = 'libraryTotal';
+  const options = ['60-67', '68-75', '76-83', '84-90'];
 
   return (
     <div className="flex items-center">
@@ -12,24 +13,19 @@ const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
         </div>
       </div>
       <div className="flex w-3/4 justify-end">
-        {['60-67', '68-75', '76-83', '84-90'].map((i, idx) => {
+        {options.map((i, idx) => {
           return (
-            <Button
-              className={`w-full ${
-                idx !== 0 ? 'rounded-l-none border-l-0' : ''
-              } ${idx !== 3 ? 'rounded-r-none' : ''} ${
-                !value[i]
-                  ? 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark'
-                  : 'border border-borderPrimary dark:border-borderPrimaryDark'
-              }`}
+            <ButtonGroup
+              isFirst={idx == 0}
+              isLast={idx == options.length - 1}
+              isSelected={value[i]}
               key={idx}
-              value={i}
               name={name}
-              variant={value[i] ? 'third' : 'outline-primary'}
               onClick={onChange}
+              value={i}
             >
               {i}
-            </Button>
+            </ButtonGroup>
           );
         })}
       </div>

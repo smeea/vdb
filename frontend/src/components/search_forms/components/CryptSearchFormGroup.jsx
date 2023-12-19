@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button } from '@/components';
+import { ButtonGroup } from '@/components';
 
 const CryptSearchFormGroup = ({ value, onChange }) => {
-  const groups = [1, 2, 3, 4, 5, 6, 7];
+  const name = 'group';
+  const options = [1, 2, 3, 4, 5, 6, 7];
 
   return (
     <div className="flex items-center">
@@ -12,24 +13,19 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
         </div>
       </div>
       <div className="flex w-3/4 justify-end">
-        {groups.map((i, idx) => {
+        {options.map((i, idx) => {
           return (
-            <Button
-              className={`w-full ${
-                idx !== 0 ? 'rounded-l-none border-l-0' : ''
-              } ${idx !== groups.length - 1 ? 'rounded-r-none' : ''} ${
-                !value[i]
-                  ? 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark'
-                  : 'border border-borderPrimary dark:border-borderPrimaryDark'
-              }`}
+            <ButtonGroup
+              isFirst={idx == 0}
+              isLast={idx == options.length - 1}
+              isSelected={value[i]}
               key={idx}
-              value={i}
-              name="group"
-              variant={value[i] ? 'third' : 'outline-primary'}
+              name={name}
               onClick={onChange}
+              value={i}
             >
               {i}
-            </Button>
+            </ButtonGroup>
           );
         })}
       </div>
