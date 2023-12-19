@@ -63,16 +63,16 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-3 px-1 text-fgSecondary dark:text-fgSecondaryDark font-bold">
+      <div className="flex h-[30px] items-center justify-between gap-1.5 px-1 text-fgSecondary dark:text-whiteDark font-bold">
         <div className="whitespace-nowrap">
           Library [{libraryTotal}] {hasBanned && <Warning value="BANNED" />}
         </div>
-        <div className="flex space-x-3">
-          <div className="flex items-center space-x-1" title="Total Blood Cost">
+        <div className="flex gap-1.5 sm:gap-3">
+          <div className="flex items-center gap-1" title="Total Blood Cost">
             <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
             <b>{bloodTotal}</b>
           </div>
-          <div className="flex items-center space-x-1" title="Total Pool Cost">
+          <div className="flex items-center gap-1" title="Total Pool Cost">
             <ResultLibraryCost valuePool="X" className="h-[30px]" />
             <b>{poolTotal}</b>
           </div>

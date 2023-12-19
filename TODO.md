@@ -17,4 +17,4 @@
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
 - Back button behavior
-- Remove circular imports (blocking HMR)
+- Update to Vite 5 (when hmr circular import issue is resolved)
