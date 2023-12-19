@@ -22,10 +22,10 @@ export const getCardBase = async () => {
   };
 
   const crypt = await fetch(urlCrypt, options).then((response) =>
-    response.json(),
+    response.json()
   );
   const library = await fetch(urlLibrary, options).then((response) =>
-    response.json(),
+    response.json()
   );
 
   const cryptPlaytest = await fetch(urlCryptPlaytest, options).then(
@@ -35,7 +35,7 @@ export const getCardBase = async () => {
       } else {
         return {};
       }
-    },
+    }
   );
 
   const libraryPlaytest = await fetch(urlLibraryPlaytest, options).then(
@@ -45,7 +45,7 @@ export const getCardBase = async () => {
       } else {
         return {};
       }
-    },
+    }
   );
 
   const nativeCrypt = {};
@@ -79,10 +79,10 @@ export const getLocalizedCardBase = async (lang) => {
   };
 
   const crypt = await fetch(urlLocalizedCrypt(lang), options).then((response) =>
-    response.json(),
+    response.json()
   );
   const library = await fetch(urlLocalizedLibrary(lang), options).then(
-    (response) => response.json(),
+    (response) => response.json()
   );
 
   return {
@@ -99,7 +99,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
   };
 
   const preconDecksData = await fetch(urlPreconDecks, options).then(
-    (response) => response.json(),
+    (response) => response.json()
   );
 
   const preconDecks = {};
@@ -112,7 +112,9 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
         name: `${name}`,
         deckid: deckid,
         author: 'VTES Team',
-        description: `Preconstructed from "${setsAndPrecons[set]['name']}" [${setsAndPrecons[set]['date']}]`,
+        description: `Preconstructed from "${setsAndPrecons[set].name}"${
+          setsAndPrecons[set].date ? ` [${setsAndPrecons[set].date}]` : ''
+        }`,
         crypt: {},
         library: {},
       };
@@ -120,7 +122,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
       const cardsData = useDeck(
         preconDecksData[set][precon],
         cryptCardBase,
-        libraryCardBase,
+        libraryCardBase
       );
 
       let tags = [];
