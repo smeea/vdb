@@ -29,7 +29,7 @@ const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
   return (
     <>
       <ButtonIconed
-        variant={inInventory ? 'third' : 'primary'}
+        variant="primary"
         onClick={() => setShowConfirmation(true)}
         title="Remove Deck from Inventory"
         disabled={!inInventory}

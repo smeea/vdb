@@ -38,7 +38,8 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
           ? null
           : data.deckid;
 
-        navigate(`/decks/${isPublished ? deck.publicParent : data.deckid}`);
+        !inAdv &&
+          navigate(`/decks/${isPublished ? deck.publicParent : data.deckid}`);
       });
 
     setIsLoading(false);
@@ -52,7 +53,7 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
         title={`${isPublished ? 'In' : 'Not in'} Public Deck Archive`}
         icon={
           !isLoading ? (
-            inAdv && !isPublished ? (
+            (inAdv && !isPublished) || (!inAdv && isPublished) ? (
               <People width="16" height="23" viewBox="0 0 16 18" />
             ) : (
               <PeopleFill width="16" height="23" viewBox="0 0 16 18" />

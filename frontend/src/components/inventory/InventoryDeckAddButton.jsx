@@ -23,6 +23,7 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
   return (
     <>
       <ButtonIconed
+        className="min-w-[60px]"
         variant={inInventory ? 'third' : 'primary'}
         onClick={() => setShowConfirmation(true)}
         title={inInventory ? 'Already in Inventory' : 'Add Deck to Inventory'}
