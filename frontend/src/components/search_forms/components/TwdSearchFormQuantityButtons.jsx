@@ -1,7 +1,10 @@
 import React from 'react';
-import { Button } from '@/components';
+import { Button, ButtonCardChange } from '@/components';
+import { useApp } from '@/context';
 
 const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
+  const { isMobile } = useApp();
+
   const handleChangeQ = (q) => {
     if (q >= 0) {
       form[id].q = q;
@@ -51,23 +54,16 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
       >
         {getIconAndText(value[id].m)[0]}
       </Button>
-      <Button
-        className="h-[27px] w-[18px] text-sm"
-        variant="primary"
+      <ButtonCardChange
         onClick={() => handleChangeQ(value[id].q - 1)}
-        noPadding
-      >
-        -
-      </Button>
+        isLink={isMobile}
+        isNegative
+      />
       <div>{value[id].q}</div>
-      <Button
-        className="h-[27px] w-[18px] text-sm"
-        variant="primary"
+      <ButtonCardChange
         onClick={() => handleChangeQ(value[id].q + 1)}
-        noPadding
-      >
-        +
-      </Button>
+        isLink={isMobile}
+      />
     </div>
   );
 };

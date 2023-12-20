@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from '@/components';
+import { ButtonCardChange } from '@/components';
 import { useApp } from '@/context';
 
 const DeckCardQuantity = ({
@@ -46,15 +46,15 @@ const DeckCardQuantity = ({
           return inInventory >= softUsedMax + hardUsedTotal
             ? ''
             : inInventory < q
-              ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-              : 'bg-bgWarning dark:bg-bgWarningDark';
+            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
+            : 'bg-bgWarning dark:bg-bgWarningDark';
         }
       } else {
         return inInventory - softUsedMax - hardUsedTotal >= q
           ? ''
           : inInventory < q
-            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-            : 'bg-bgWarning dark:bg-bgWarningDark';
+          ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
+          : 'bg-bgWarning dark:bg-bgWarningDark';
       }
     } else {
       return '';
@@ -69,48 +69,28 @@ const DeckCardQuantity = ({
         <div className="flex items-center justify-between text-lg">
           {isMobile ? (
             <>
-              <a
-                className="relative before:absolute before:inset-[-12px] before:content-[''] hover:no-underline"
+              <ButtonCardChange
                 onClick={() => cardChange(deckid, card, q - 1)}
-              >
-                <Button
-                  variant="primary"
-                  className="h-[27px] w-[18px] text-sm"
-                  noPadding
-                >
-                  -
-                </Button>
-              </a>
+                isLink
+                isNegative
+              />
               <div
                 className={`mx-1 flex w-full justify-center ${inventoryColor}`}
               >
                 {q == 0 ? '' : q}
               </div>
-              <a
-                className="relative before:absolute before:inset-[-12px] before:content-[''] hover:no-underline"
+              <ButtonCardChange
                 onClick={() => cardChange(deckid, card, q + 1)}
-              >
-                <Button
-                  variant="primary"
-                  className="h-[27px] w-[18px] text-sm"
-                  noPadding
-                >
-                  +
-                </Button>
-              </a>
+                isLink
+              />
             </>
           ) : (
             <>
               {!manual && (
-                <Button
-                  className="h-[27px] min-w-[18px] text-sm"
-                  variant="primary"
+                <ButtonCardChange
                   onClick={() => cardChange(deckid, card, q - 1)}
-                  tabIndex={-1}
-                  noPadding
-                >
-                  -
-                </Button>
+                  isNegative
+                />
               )}
               <div
                 tabIndex={0}
@@ -138,15 +118,9 @@ const DeckCardQuantity = ({
                 )}
               </div>
               {!manual && (
-                <Button
-                  className="h-[27px] min-w-[18px] text-sm"
-                  variant="primary"
+                <ButtonCardChange
                   onClick={() => cardChange(deckid, card, q + 1)}
-                  tabIndex={-1}
-                  noPadding
-                >
-                  +
-                </Button>
+                />
               )}
             </>
           )}

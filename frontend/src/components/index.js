@@ -185,6 +185,7 @@ export { default as InventoryText } from './inventory/InventoryText.jsx';
 export { default as Banner } from './misc/Banner.jsx';
 export { default as ButtonAddCard } from './misc/ButtonAddCard.jsx';
 export { default as ButtonCardCopyUrl } from './misc/ButtonCardCopyUrl.jsx';
+export { default as ButtonCardChange } from './misc/ButtonCardChange.jsx';
 export { default as ButtonClose } from './misc/ButtonClose.jsx';
 export { default as ButtonCloseModal } from './misc/ButtonCloseModal.jsx';
 export { default as ButtonFloatAdd } from './misc/ButtonFloatAdd.jsx';

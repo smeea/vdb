@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '@/components';
+import { ButtonCardChange } from '@/components';
 import { useApp, inventoryCardChange } from '@/context';
 
 const InventoryCardQuantity = ({
@@ -41,18 +41,11 @@ const InventoryCardQuantity = ({
     <div className="flex w-full items-center justify-between text-lg">
       {isMobile ? (
         <>
-          <a
-            className="relative before:absolute before:inset-[-12px] before:content-[''] hover:no-underline"
+          <ButtonCardChange
             onClick={() => handleQuantityChange(-1)}
-          >
-            <Button
-              className="h-[27px] w-[18px] text-sm"
-              variant="primary"
-              noPadding
-            >
-              -
-            </Button>
-          </a>
+            isLink
+            isNegative
+          />
           <div
             className={`flex w-full justify-center mx-1 ${
               state < softUsedMax + hardUsedTotal
@@ -64,31 +57,15 @@ const InventoryCardQuantity = ({
             {state == 0 ? <>&nbsp;</> : state}
             {card.t && <div className="max-w-[4px] text-xs">*</div>}
           </div>
-          <a
-            className="relative before:absolute before:inset-[-12px] before:content-[''] hover:no-underline"
-            onClick={() => handleQuantityChange(1)}
-          >
-            <Button
-              className="h-[27px] w-[18px] text-sm"
-              variant="primary"
-              noPadding
-            >
-              +
-            </Button>
-          </a>
+          <ButtonCardChange onClick={() => handleQuantityChange(1)} isLink />
         </>
       ) : (
         <>
           {!manual && (
-            <Button
-              className="h-[27px] min-w-[18px] text-sm"
-              variant="primary"
+            <ButtonCardChange
               onClick={() => handleQuantityChange(-1)}
-              tabIndex={-1}
-              noPadding
-            >
-              -
-            </Button>
+              isNegative
+            />
           )}
           <div
             tabIndex={0}
@@ -124,15 +101,7 @@ const InventoryCardQuantity = ({
             )}
           </div>
           {!manual && (
-            <Button
-              className="h-[27px] min-w-[18px] text-sm"
-              variant="primary"
-              onClick={() => handleQuantityChange(1)}
-              tabIndex={-1}
-              noPadding
-            >
-              +
-            </Button>
+            <ButtonCardChange onClick={() => handleQuantityChange(1)} />
           )}
         </>
       )}

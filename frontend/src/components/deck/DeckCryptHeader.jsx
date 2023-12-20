@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
+import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
 import {
   DeckCryptTotalInfo,
   DeckNewCard,
@@ -49,7 +50,7 @@ const DeckCryptHeader = ({
             </>
           )}
         </div>
-        <div className="flex space-x-1">
+        <div className="flex space-x-1 min-h-[38px]">
           {!inMissing && (
             <SortButton
               sortMethods={sortMethods}
@@ -70,7 +71,7 @@ const DeckCryptHeader = ({
               variant="primary"
               onClick={() => setShowAdd(!showAdd)}
             >
-              +
+              <PlusLg width="15" height="15" viewBox="0 0 16 16" />
             </Button>
           )}
         </div>
