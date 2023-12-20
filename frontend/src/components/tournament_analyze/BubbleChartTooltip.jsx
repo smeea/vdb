@@ -6,13 +6,13 @@ import {
 } from '@/components';
 
 const BubbleChartTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    const value = payload[0].payload;
+  const value = payload?.[0]?.payload;
 
-    return (
-      <div
-        className={`z-50 flex flex-col gap-0.5 rounded-md border border-bgSecondary bg-bgPrimary p-1 text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark`}
-      >
+  return (
+    <div
+      className={`z-50 flex flex-col gap-0.5 rounded-md border border-bgSecondary bg-bgPrimary p-1 text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark`}
+    >
+      {active && (
         <div className="flex flex-col gap-2 p-1">
           <div className="flex items-center justify-between">
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
@@ -34,11 +34,9 @@ const BubbleChartTooltip = ({ active, payload }) => {
             <TwdResultLibraryKeyCardsTable withHeader library={value.library} />
           </div>
         </div>
-      </div>
-    );
-  }
-
-  return null;
+      )}
+    </div>
+  );
 };
 
 export default BubbleChartTooltip;

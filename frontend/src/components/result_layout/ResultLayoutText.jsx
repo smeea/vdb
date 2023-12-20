@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import X from '@/assets/images/icons/x.svg?react';
 import SearchHeartFill from '@/assets/images/icons/search-heart-fill.svg?react';
 import {
   ButtonCardCopyUrl,
   ButtonIconed,
+  ButtonClose,
   ButtonPlayableBy,
   ButtonSearchCardInDecks,
   ButtonToggleShowImage,
@@ -103,11 +103,9 @@ const ResultLayoutText = ({
           />
         </div>
         {!isNarrow && !noClose && (
-          <ButtonIconed
-            variant="primary"
-            onClick={() => !noClose && handleClose()}
+          <ButtonClose
+            handleClick={() => !noClose && handleClose()}
             title="Close"
-            icon={<X width="24" height="24" viewBox="0 0 16 16" />}
             text="Close"
           />
         )}

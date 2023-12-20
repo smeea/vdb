@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import {
-  AnalyzeLoadButton,
+  AnalyzeLoadButtons,
   AnalyzeTournamentInfo,
   AnalyzeTournamentCharts,
   AnalyzeTournamentResult,
@@ -232,7 +232,7 @@ const TournamentAnalyze = () => {
             )}
           </div>
           <div className="flex basis-3/12 flex-col sm:gap-4 lg:gap-6 xl:gap-8">
-            <AnalyzeLoadButton
+            <AnalyzeLoadButtons
               tempDecks={tempDecks}
               setTempDecks={setTempDecks}
               setTempArchon={setTempArchon}

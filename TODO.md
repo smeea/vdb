@@ -20,3 +20,4 @@
 - Back button behavior
 - Update to Vite 5 (when hmr circular import issue is resolved)
 - Use Dynamic Viewport Units (h-svh, -dvh, -lvh in tailwind)
+- Unify onClick and handleClick

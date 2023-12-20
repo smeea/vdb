@@ -356,7 +356,7 @@ export { default as SeatingSelectRandom } from './seating/SeatingSelectRandom.js
 
 export { default as BubbleChart } from './tournament_analyze/BubbleChart.jsx';
 export { default as BubbleChartTooltip } from './tournament_analyze/BubbleChartTooltip.jsx';
-export { default as AnalyzeLoadButton } from './tournament_analyze/AnalyzeLoadButton.jsx';
+export { default as AnalyzeLoadButtons } from './tournament_analyze/AnalyzeLoadButtons.jsx';
 export { default as AnalyzeTournamentCharts } from './tournament_analyze/AnalyzeTournamentCharts.jsx';
 export { default as AnalyzeTournamentChartsClan } from './tournament_analyze/AnalyzeTournamentChartsClan.jsx';
 export { default as AnalyzeTournamentChartsRankingClan } from './tournament_analyze/AnalyzeTournamentChartsRankingClan.jsx';

@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import Upload from '@/assets/images/icons/upload.svg?react';
-import X from '@/assets/images/icons/x.svg?react';
-import { ButtonIconed } from '@/components';
+import { ButtonIconed, ButtonClose } from '@/components';
 import {
   setAnalyzeDecks,
   setAnalyzeInfo,
@@ -14,7 +13,7 @@ import {
   useApp,
 } from '@/context';
 
-const AnalyzeLoadButton = ({
+const AnalyzeLoadButtons = ({
   tempDecks,
   setTempDecks,
   setTempArchon,
@@ -133,11 +132,9 @@ const AnalyzeLoadButton = ({
             )}
           </>
         )}
-        <ButtonIconed
-          variant="primary"
-          onClick={handleClear}
+        <ButtonClose
+          handleClick={handleClear}
           title="Clear Data"
-          icon={<X />}
           text="Clear"
         />
         <input
@@ -160,4 +157,4 @@ const AnalyzeLoadButton = ({
   );
 };
 
-export default AnalyzeLoadButton;
+export default AnalyzeLoadButtons;
