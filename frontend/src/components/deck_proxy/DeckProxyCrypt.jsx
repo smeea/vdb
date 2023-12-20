@@ -19,7 +19,7 @@ const DeckProxyCrypt = ({
   const { cryptSide, sortedCards, sortedCardsSide } = useDeckCrypt(
     deck.crypt,
     cryptDeckSort,
-    changeTimer
+    changeTimer,
   );
 
   const proxiesToPrint = Object.keys(proxySelected)
@@ -27,7 +27,7 @@ const DeckProxyCrypt = ({
       (cardid) =>
         cardid > 200000 &&
         proxySelected[cardid].print &&
-        proxySelected[cardid].q > 0
+        proxySelected[cardid].q > 0,
     )
     .map((cardid) => proxySelected[cardid]);
 

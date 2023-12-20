@@ -231,7 +231,7 @@ export const AppProvider = (props) => {
   const changeBaseTextToLocalizedText = (
     setCardBase,
     localizedInfo,
-    nativeInfo
+    nativeInfo,
   ) => {
     setCardBase((draft) => {
       Object.keys(draft).map((k) => {
@@ -264,7 +264,7 @@ export const AppProvider = (props) => {
       changeBaseTextToLocalizedText(
         setLibraryCardBase,
         data.library,
-        nativeLibrary
+        nativeLibrary,
       );
     });
   };
@@ -277,12 +277,12 @@ export const AppProvider = (props) => {
         changeBaseTextToLocalizedText(
           setCryptCardBase,
           localizedCrypt[lang],
-          nativeCrypt
+          nativeCrypt,
         );
         changeBaseTextToLocalizedText(
           setLibraryCardBase,
           localizedLibrary[lang],
-          nativeLibrary
+          nativeLibrary,
         );
       }
     }
@@ -302,7 +302,7 @@ export const AppProvider = (props) => {
         localizedCrypt[lang],
         nativeCrypt,
         localizedLibrary[lang],
-        nativeLibrary
+        nativeLibrary,
       );
     }
   }, [deck, lang, localizedCrypt, localizedLibrary]);
@@ -398,7 +398,7 @@ export const AppProvider = (props) => {
     initFromStorage(
       'cryptSearchSort',
       'Capacity - Min to Max',
-      setCryptSearchSort
+      setCryptSearchSort,
     );
     initFromStorage('cryptDeckSort', 'Quantity ', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
@@ -407,7 +407,7 @@ export const AppProvider = (props) => {
     initFromStorage(
       'analyzeSearchSort',
       'Rank - High to Low',
-      setAnalyzeSearchSort
+      setAnalyzeSearchSort,
     );
     initFromStorage('lang', 'en-EN', setLang);
     initFromStorage('addMode', isDesktop, setAddMode);
@@ -425,7 +425,7 @@ export const AppProvider = (props) => {
         const cardsData = useDeck(
           decksData[deckid].cards,
           cryptCardBase,
-          libraryCardBase
+          libraryCardBase,
         );
         decksData[deckid] = { ...decksData[deckid], ...cardsData };
         if (decksData[deckid].usedInInventory) {
@@ -458,7 +458,7 @@ export const AppProvider = (props) => {
   useEffect(() => {
     if (decks || username === null) {
       const d = recentDecks.filter(
-        (v) => username === null || !decks[v.deckid]
+        (v) => username === null || !decks[v.deckid],
       );
       if (d.length < recentDecks.length) {
         updateRecentDecks(d);

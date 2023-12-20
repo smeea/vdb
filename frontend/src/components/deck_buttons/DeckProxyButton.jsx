@@ -32,12 +32,12 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
 
     const cryptSorted = cryptSort(
       Object.values(crypt).filter((card) => card.q > 0),
-      cryptDeckSort
+      cryptDeckSort,
     );
 
     const librarySorted = librarySort(
       Object.values(library).filter((card) => card.q > 0),
-      GROUPED_TYPE
+      GROUPED_TYPE,
     );
 
     const cardsTotal = countCards([...cryptSorted, ...librarySorted]);
@@ -77,14 +77,14 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
         cutLineGap,
         marginTop + h * 3 + gap * 2,
         sheetW - cutLineGap,
-        marginTop + h * 3 + gap * 2
+        marginTop + h * 3 + gap * 2,
       );
       pdf.line(marginLeft, cutLineGap, marginLeft, sheetH - cutLineGap);
       pdf.line(
         marginLeft + w * 3 + gap * 2,
         cutLineGap,
         marginLeft + w * 3 + gap * 2,
-        sheetH - cutLineGap
+        sheetH - cutLineGap,
       );
     };
 
@@ -98,7 +98,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
           marginTop + counterY * (h + gap),
           w + (counterX < 2 ? gap : 0),
           h + (counterY < 2 ? gap : 0),
-          'F'
+          'F',
         );
 
         try {
@@ -110,7 +110,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
             (w + gap) * counterX + marginLeft,
             (h + gap) * counterY + marginTop,
             w,
-            h
+            h,
           );
         } catch {
           img.src = `${card.url.baseUrl}.jpg`;
@@ -120,7 +120,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
             (w + gap) * counterX + marginLeft,
             (h + gap) * counterY + marginTop,
             w,
-            h
+            h,
           );
         }
 

@@ -8,10 +8,10 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
   });
 
   const withVirtues = disciplinesSorted.some(
-    (d) => virtuesList[d] && disciplinesDetailed[d][0] > 0
+    (d) => virtuesList[d] && disciplinesDetailed[d][0] > 0,
   );
   const withDisciplines = disciplinesSorted.some(
-    (d) => !virtuesList[d] && disciplinesDetailed[d][0] > 0
+    (d) => !virtuesList[d] && disciplinesDetailed[d][0] > 0,
   );
 
   return (

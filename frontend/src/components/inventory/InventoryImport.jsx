@@ -29,7 +29,7 @@ const InventoryImport = () => {
       const deck = await useDeckImport(
         deckText,
         cryptCardBase,
-        libraryCardBase
+        libraryCardBase,
       );
 
       setBadCards(deck.badCards);
