@@ -132,7 +132,6 @@ export const deckUpdate = (deckid, field, value) => {
   ) {
     branchesUpdate(deckid, field, value);
   }
-
   changeMaster(deckid);
 
   if (field === 'cards') {
@@ -142,6 +141,10 @@ export const deckUpdate = (deckid, field, value) => {
     });
     value = cards;
   }
+
+  const now = new Date();
+  deckStore.decks[deckid].timestamp = now.toUTCString();
+
   deckServices.update(deckid, field, value).catch(() => {
     if (deckid === deckStore.deck?.deckid) {
       deckStore.deck = initialDeckState;
@@ -175,7 +178,7 @@ export const deckLocalize = (
   localizedCrypt,
   nativeCrypt,
   localizedLibrary,
-  nativeLibrary,
+  nativeLibrary
 ) => {
   Object.values(deckStore.deck.crypt).map((card) => {
     const id = card.c.Id;
