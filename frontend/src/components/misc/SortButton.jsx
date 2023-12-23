@@ -3,10 +3,16 @@ import { Menu } from '@headlessui/react';
 import SortDown from '@/assets/images/icons/sort-down.svg?react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
 
-const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
+const SortButton = ({
+  sortMethod,
+  setSortMethod,
+  sortMethods,
+  className = '',
+}) => {
   return (
-    <Menu as="div" className="relative">
+    <Menu as="div">
       <MenuButton
+        className={className}
         title="Sort"
         icon={<SortDown />}
         text={sortMethods[sortMethod]}

@@ -67,8 +67,9 @@ const DeckLibraryHeader = ({
             </div>
           </div>
         )}
-        <div className="flex space-x-1 min-h-[38px]">
+        <div className="flex items-center gap-1 min-h-[44px]">
           <Button
+            className="min-h-[44px]"
             title="Additional Info"
             variant="primary"
             onClick={() => setShowInfo(!showInfo)}
@@ -77,6 +78,7 @@ const DeckLibraryHeader = ({
           </Button>
           {isEditable && !isMobile && (
             <Button
+              className="min-h-[44px]"
               title="Add Card"
               variant="primary"
               onClick={() => setShowAdd(!showAdd)}

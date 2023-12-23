@@ -50,15 +50,17 @@ const DeckCryptHeader = ({
             </>
           )}
         </div>
-        <div className="flex space-x-1 min-h-[38px]">
+        <div className="flex items-center gap-1 min-h-[44px]">
           {!inMissing && (
             <SortButton
+              className="min-h-[44px]"
               sortMethods={sortMethods}
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
             />
           )}
           <Button
+            className="min-h-[44px]"
             title="Additional Info"
             variant="primary"
             onClick={() => setShowInfo(!showInfo)}
@@ -67,6 +69,7 @@ const DeckCryptHeader = ({
           </Button>
           {isEditable && !isMobile && (
             <Button
+              className="min-h-[44px]"
               title="Add Card"
               variant="primary"
               onClick={() => setShowAdd(!showAdd)}
