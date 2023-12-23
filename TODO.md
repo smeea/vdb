@@ -6,7 +6,6 @@
 
 # FEATURES
 - Inventory cards with notes filter to crypt/library/inventory
-- Show more reqs for library cards (like title)
 
 # MAYBE LATER FEATURES
 - Offline decks/inventory storage
@@ -20,3 +19,4 @@
 - Back button behavior
 - Update to Vite 5 (when hmr circular import issue is resolved)
 - Use Dynamic Viewport Units (h-svh, -dvh, -lvh in tailwind)
+- Political titles to constant list

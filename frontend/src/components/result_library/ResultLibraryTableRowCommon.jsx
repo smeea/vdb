@@ -5,6 +5,7 @@ import {
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
+  ResultRequirements,
   ResultName,
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
@@ -63,7 +64,7 @@ const Name = ({ card, handleClick, shouldShowModal, isBanned }) => {
   );
 };
 
-const Disciplines = ({ card, handleClick }) => {
+const Requirements = ({ card, handleClick }) => {
   return (
     <td
       className="min-w-[60px] sm:min-w-[90px]"
@@ -75,6 +76,8 @@ const Disciplines = ({ card, handleClick }) => {
         {card.Discipline && (
           <ResultLibraryDisciplines value={card.Discipline} />
         )}
+        {(card.Discipline || card.Clan) && card.Requirement && <>&nbsp;</>}
+        {card.Requirement && <ResultRequirements value={card.Requirement} />}
       </div>
     </td>
   );
@@ -115,7 +118,7 @@ const ResultLibraryTableRowCommon = ({
           {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <Cost card={card} handleClick={handleClick} />
           )}
-          <Disciplines card={card} handleClick={handleClick} />
+          <Requirements card={card} handleClick={handleClick} />
           {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <Burn card={card} handleClick={handleClick} />
           )}
@@ -124,7 +127,7 @@ const ResultLibraryTableRowCommon = ({
         <>
           <Cost card={card} handleClick={handleClick} />
           <Type card={card} handleClick={handleClick} />
-          <Disciplines card={card} handleClick={handleClick} />
+          <Requirements card={card} handleClick={handleClick} />
           <Name
             card={card}
             handleClick={handleClick}

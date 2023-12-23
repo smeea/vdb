@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ResultCryptTitle = ({ value }) => {
+const ResultCryptTitle = ({ value, noTitle }) => {
   const titles = {
     primogen: ['Primogen', 'Pg'],
     prince: ['Prince', 'Pc'],
@@ -19,8 +19,8 @@ const ResultCryptTitle = ({ value }) => {
 
   return (
     <div
-      className="text-fg-fgSecondary dark:text-fgSecondaryDark"
-      title={titles[value][0]}
+      className="inline text-fg-fgSecondary dark:text-fgSecondaryDark"
+      title={noTitle ? null : titles[value][0]}
     >
       {titles[value][1]}
     </div>
