@@ -9,7 +9,7 @@ const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
   const navigate = useNavigate();
   const value = { [cardid]: { q: 1, m: 'gt' } };
 
-  const onClick = () => {
+  const handleClick = () => {
     clearSearchForm(target);
     if (target === 'pda') {
       searchPdaForm[cardid > 200000 ? 'crypt' : 'library'] = value;
@@ -19,7 +19,7 @@ const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
     navigate(
       `/${target}?q={"${
         cardid > 200000 ? 'crypt' : 'library'
-      }"%3A{"${cardid}"%3A{"q"%3A1%2C"m"%3A"gt"}}}`,
+      }"%3A{"${cardid}"%3A{"q"%3A1%2C"m"%3A"gt"}}}`
     );
 
     handleClose && handleClose();
@@ -29,7 +29,7 @@ const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
     <Button
       title={`Search in ${target.toUpperCase()}`}
       variant="primary"
-      onClick={onClick}
+      onClick={handleClick}
     >
       {target === 'pda' ? <PeopleFill /> : <TrophyFill />}
     </Button>

@@ -6,7 +6,7 @@ const ButtonCardCopyUrl = ({ cardid }) => {
   const [success, setSuccess] = useState(false);
   const deckUrl = `${import.meta.env.VITE_BASE_URL}/cards/${cardid}`;
 
-  const onClick = () => {
+  const handleClick = () => {
     navigator.clipboard.writeText(deckUrl);
     setSuccess(true);
     setTimeout(() => {
@@ -18,7 +18,7 @@ const ButtonCardCopyUrl = ({ cardid }) => {
     <ButtonIconed
       icon={<Link45Deg width="22" height="22" viewBox="-1 0 16 16" />}
       variant={success ? 'success' : 'primary'}
-      onClick={onClick}
+      onClick={handleClick}
       title="Copy URL"
       text={success ? 'Copied' : null}
     />

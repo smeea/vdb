@@ -20,7 +20,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
     isBlackHand,
   } = useLibraryRequirements(card);
 
-  const onClick = () => {
+  const handleClick = () => {
     const queries = [];
     const traits = [];
 
@@ -32,7 +32,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
     if (isClan.length > 0) {
       const values = isClan.map((i) => `"${i.toLowerCase()}"`);
       queries.push(
-        `"clan"%3A{"value"%3A[${values.join('%2C')}]%2C"logic"%3A"or"}`,
+        `"clan"%3A{"value"%3A[${values.join('%2C')}]%2C"logic"%3A"or"}`
       );
     }
     if (isTitle.length > 0) {
@@ -44,7 +44,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
       queries.push(
         `"capacity"%3A{"value"%3A[{"capacity"%3A"${v}"%2C"moreless"%3A"${
           logic === 'more' ? 'ge' : 'le'
-        }"}]%2C"logic"%3A"or"}`,
+        }"}]%2C"logic"%3A"or"}`
       );
     }
     if (isSect) {
@@ -69,7 +69,11 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
   };
 
   return (
-    <Button title="Search Who Can Play It" variant="primary" onClick={onClick}>
+    <Button
+      title="Search Who Can Play It"
+      variant="primary"
+      onClick={handleClick}
+    >
       <Bullseye />
     </Button>
   );

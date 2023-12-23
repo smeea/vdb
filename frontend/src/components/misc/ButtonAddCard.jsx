@@ -7,7 +7,7 @@ import { deckStore, deckCardChange } from '@/context';
 const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
   const decks = useSnapshot(deckStore).decks;
 
-  const onClick = () => {
+  const handleClick = () => {
     deckCardChange(deckid, card, inDeck + 1);
   };
 
@@ -22,7 +22,7 @@ const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
     <Button
       className="h-[33px] w-[24px]"
       variant={inDeck ? 'third' : 'primary'}
-      onClick={onClick}
+      onClick={handleClick}
       title={title}
       noPadding
     >
