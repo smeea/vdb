@@ -124,4 +124,4 @@ There are no coding style or test requirements established.
 
 ## LICENSE
 MIT for everything, except:
-- Card texts, card images and game-related icons in `frontend/assets/images/`, which are copyrighted by Paradox Interactive AB and used under [Dark Pack](https://www.paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement) agreement.
+- Card texts, card images and game-related icons in `frontend/public/images/`, which are copyrighted by Paradox Interactive AB and used under [Dark Pack](https://www.paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement) agreement.

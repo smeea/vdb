@@ -7,7 +7,7 @@
 
 # FEATURES
 
-# MAYBE LATER FEATURES
+# BACKLOG FEATURES
 - Offline decks/inventory storage
 - Playable by crypt filter to library
 - OR search option for crypt by disciplines
