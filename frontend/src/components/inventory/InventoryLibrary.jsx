@@ -20,6 +20,7 @@ const InventoryLibrary = ({
   setMissingLibraryByType,
   setMissingLibraryByDiscipline,
   inShared,
+  onlyNotes,
 }) => {
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
@@ -44,7 +45,14 @@ const InventoryLibrary = ({
     cardsFilteredByDisciplineUnique,
     missingFiltered,
     missingFilteredTotal,
-  } = useInventoryLibrary(cards, category, compact, type, discipline);
+  } = useInventoryLibrary(
+    cards,
+    category,
+    compact,
+    type,
+    discipline,
+    onlyNotes
+  );
 
   useEffect(() => {
     if (!compact) {

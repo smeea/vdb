@@ -17,6 +17,7 @@ const InventoryCrypt = ({
   newFocus,
   setMissingCryptByClan,
   inShared,
+  onlyNotes,
 }) => {
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
@@ -39,7 +40,7 @@ const InventoryCrypt = ({
     cardsByClanUnique,
     missingByClan,
     missingByClanTotal,
-  } = useInventoryCrypt(cards, category, compact);
+  } = useInventoryCrypt(cards, category, compact, onlyNotes);
 
   useEffect(() => {
     if (!compact) setMissingCryptByClan(missingByClan);

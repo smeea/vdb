@@ -15,8 +15,9 @@ import {
   ButtonFloat,
   ButtonFloatMenu,
   ErrorMessage,
+  Checkbox,
 } from '@/components';
-import { useApp, inventoryStore, usedStore } from '@/context';
+import { useApp, inventoryStore } from '@/context';
 
 const Inventory = () => {
   const {
@@ -31,9 +32,6 @@ const Inventory = () => {
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const usedCrypt = useSnapshot(usedStore).crypt;
-  const usedLibrary = useSnapshot(usedStore).library;
-
   const [inventoryError, setInventoryError] = useState();
   const [inventoryKey, setInventoryKey] = useState();
   const query = new URLSearchParams(useLocation().search);
@@ -100,6 +98,7 @@ const Inventory = () => {
   const [clan, setClan] = useState('All');
   const [type, setType] = useState('All');
   const [discipline, setDiscipline] = useState('All');
+  const [onlyNotes, setOnlyNotes] = useState(false);
 
   const [missingCryptByClan, setMissingCryptByClan] = useState();
   const [missingLibraryByType, setMissingLibraryByType] = useState();
@@ -153,21 +152,20 @@ const Inventory = () => {
                 )}
               </>
             )}
-            {inventoryCrypt && (usedCrypt.soft || usedCrypt.hard) && (
-              <div>
-                <InventoryCrypt
-                  withCompact={newCryptId}
-                  category={sharedInventoryCrypt ? 'ok' : category}
-                  cards={
-                    sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
-                  }
-                  clan={clan}
-                  setClan={setClan}
-                  setMissingCryptByClan={setMissingCryptByClan}
-                  inShared={inShared}
-                />
-              </div>
-            )}
+            <div>
+              <InventoryCrypt
+                withCompact={newCryptId}
+                category={sharedInventoryCrypt ? 'ok' : category}
+                cards={
+                  sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
+                }
+                clan={clan}
+                setClan={setClan}
+                setMissingCryptByClan={setMissingCryptByClan}
+                inShared={inShared}
+                onlyNotes={onlyNotes}
+              />
+            </div>
           </div>
           <div
             className={`${
@@ -197,26 +195,25 @@ const Inventory = () => {
                 )}
               </>
             )}
-            {inventoryLibrary && (usedLibrary.soft || usedLibrary.hard) && (
-              <div>
-                <InventoryLibrary
-                  withCompact={newLibraryId}
-                  category={sharedInventoryLibrary ? 'ok' : category}
-                  cards={
-                    sharedInventoryLibrary
-                      ? sharedInventoryLibrary
-                      : inventoryLibrary
-                  }
-                  type={type}
-                  setType={setType}
-                  discipline={discipline}
-                  setDiscipline={setDiscipline}
-                  setMissingLibraryByType={setMissingLibraryByType}
-                  setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
-                  inShared={inShared}
-                />
-              </div>
-            )}
+            <div>
+              <InventoryLibrary
+                withCompact={newLibraryId}
+                category={sharedInventoryLibrary ? 'ok' : category}
+                cards={
+                  sharedInventoryLibrary
+                    ? sharedInventoryLibrary
+                    : inventoryLibrary
+                }
+                type={type}
+                setType={setType}
+                discipline={discipline}
+                setDiscipline={setDiscipline}
+                setMissingLibraryByType={setMissingLibraryByType}
+                setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
+                inShared={inShared}
+                onlyNotes={onlyNotes}
+              />
+            </div>
           </div>
           <div className="flex basis-full flex-col space-y-6 max-lg:hidden lg:basis-2/12">
             <InventoryButtons
@@ -244,6 +241,13 @@ const Inventory = () => {
               <InventoryShowSelect
                 category={category}
                 setCategory={setCategory}
+              />
+            </div>
+            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
+              <Checkbox
+                label="Only with Notes"
+                checked={onlyNotes}
+                onChange={() => setOnlyNotes(!onlyNotes)}
               />
             </div>
           </div>

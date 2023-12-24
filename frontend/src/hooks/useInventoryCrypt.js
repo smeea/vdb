@@ -4,10 +4,9 @@ import vampireClansList from '@/assets/data/vampireClansList.json';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, usedStore } from '@/context';
 
-const useInventoryCrypt = (cards = {}, category = 'ok', compact) => {
+const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
   const usedCrypt = useSnapshot(usedStore).crypt;
   const { cryptCardBase } = useApp();
-
   const cardsByClan = {};
   const cardsByClanTotal = {};
   const cardsByClanUnique = {};
@@ -15,7 +14,6 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact) => {
   const missingByClanTotal = {};
 
   const clansSorted = ['All', ...vampireClansList, ...imbuedClansList];
-
   clansSorted.map((clan) => {
     cardsByClan[clan] = {};
     cardsByClanTotal[clan] = 0;
@@ -31,31 +29,36 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact) => {
       };
     });
   } else {
-    Object.keys(cards).map((cardid) => {
-      const clan = cards[cardid].c.Clan;
+    Object.keys(cards)
+      .filter((cardid) => {
+        if (onlyNotes) return Boolean(cards[cardid].t);
+        return true;
+      })
+      .map((cardid) => {
+        const clan = cards[cardid].c.Clan;
 
-      const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
-      const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
-      const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
+        const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
+        const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
+        const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
 
-      if (miss > 0) {
-        missingByClan[clan][cardid] = { q: miss, c: cards[cardid].c };
-        missingByClan['All'][cardid] = {
-          q: miss,
-          c: cards[cardid].c,
-        };
-      }
-
-      if (category === 'nok') {
         if (miss > 0) {
+          missingByClan[clan][cardid] = { q: miss, c: cards[cardid].c };
+          missingByClan['All'][cardid] = {
+            q: miss,
+            c: cards[cardid].c,
+          };
+        }
+
+        if (category === 'nok') {
+          if (miss > 0) {
+            cardsByClan[clan][cardid] = cards[cardid];
+            cardsByClan['All'][cardid] = cards[cardid];
+          }
+        } else {
           cardsByClan[clan][cardid] = cards[cardid];
           cardsByClan['All'][cardid] = cards[cardid];
         }
-      } else {
-        cardsByClan[clan][cardid] = cards[cardid];
-        cardsByClan['All'][cardid] = cards[cardid];
-      }
-    });
+      });
 
     Object.keys(usedCrypt.soft)
       .filter((cardid) => cardid < 210000 && !cards[cardid])
