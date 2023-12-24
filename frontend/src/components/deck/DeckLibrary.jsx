@@ -56,56 +56,9 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
     setShowFloatingButtons(true);
   };
 
-  const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
-    <div key={cardtype}>
-      <div className="flex justify-between">
-        <ResultLibraryType
-          cardtype={cardtype}
-          total={libraryByTypeTotal[cardtype]}
-          trifleTotal={cardtype === MASTER && trifleTotal}
-        />
-        {showInfo && (
-          <DeckDrawProbability
-            cardName={cardtype}
-            N={libraryTotal}
-            n={7}
-            k={libraryByTypeTotal[cardtype]}
-          />
-        )}
-      </div>
-      <DeckLibraryTable
-        deck={deck}
-        handleClick={handleClick}
-        libraryTotal={libraryTotal}
-        showInfo={showInfo}
-        cards={libraryByType[cardtype]}
-        inMissing={inMissing}
-        shouldShowModal={shouldShowModal}
-      />
-    </div>
-  ));
-
-  const LibrarySideDeck = Object.keys(librarySideByType).map((cardtype) => (
-    <div key={cardtype}>
-      <ResultLibraryType
-        cardtype={cardtype}
-        total={0}
-        trifleTotal={cardtype === MASTER && trifleTotal}
-      />
-      <DeckLibraryTable
-        deck={deck}
-        handleClick={handleClickSide}
-        cards={librarySideByType[cardtype]}
-        inMissing={inMissing}
-        placement={isNarrow ? 'bottom' : 'right'}
-        shouldShowModal={shouldShowModal}
-      />
-    </div>
-  ));
-
   return (
     <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <div
           className={
             !inPreview && !inMissing && !inSearch && !isMobile
@@ -130,14 +83,65 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
             byDisciplines={libraryByDisciplinesTotal}
           />
         </div>
-        <div className="space-y-2">{LibraryDeck}</div>
+        <div className="flex flex-col gap-2">
+          {Object.keys(libraryByType).map((cardtype) => {
+            return (
+              <div key={cardtype}>
+                <div className="flex justify-between">
+                  <ResultLibraryType
+                    cardtype={cardtype}
+                    total={libraryByTypeTotal[cardtype]}
+                    trifleTotal={cardtype === MASTER && trifleTotal}
+                  />
+                  {showInfo && (
+                    <DeckDrawProbability
+                      cardName={cardtype}
+                      N={libraryTotal}
+                      n={7}
+                      k={libraryByTypeTotal[cardtype]}
+                    />
+                  )}
+                </div>
+                <DeckLibraryTable
+                  deck={deck}
+                  handleClick={handleClick}
+                  libraryTotal={libraryTotal}
+                  showInfo={showInfo}
+                  cards={libraryByType[cardtype]}
+                  inMissing={inMissing}
+                  shouldShowModal={shouldShowModal}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
       {librarySide.length > 0 && (
-        <div className="opacity-60 dark:opacity-50">
+        <div className="flex flex-col gap-2 opacity-60 dark:opacity-50">
           <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
             Side Library
           </div>
-          <div className="space-y-2">{LibrarySideDeck}</div>
+          <div className="flex flex-col gap-2">
+            {Object.keys(librarySideByType).map((cardtype) => {
+              return (
+                <div key={cardtype}>
+                  <ResultLibraryType
+                    cardtype={cardtype}
+                    total={0}
+                    trifleTotal={cardtype === MASTER && trifleTotal}
+                  />
+                  <DeckLibraryTable
+                    deck={deck}
+                    handleClick={handleClickSide}
+                    cards={librarySideByType[cardtype]}
+                    inMissing={inMissing}
+                    placement={isNarrow ? 'bottom' : 'right'}
+                    shouldShowModal={shouldShowModal}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
       {shouldShowModal && (
