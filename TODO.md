@@ -19,4 +19,3 @@
 - Back button behavior
 - Update to Vite 5 (when hmr circular import issue is resolved)
 - Update to Headlessui 2 (review new components)
-- Use Dynamic Viewport Units (h-svh, -dvh, -lvh in tailwind)

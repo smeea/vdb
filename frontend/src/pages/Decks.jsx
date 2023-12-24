@@ -282,25 +282,23 @@ const Decks = () => {
           </div>
         </div>
       </div>
-      {username === null && !deckid && !hash && (
-        <LoginBlock>Login to create your decks</LoginBlock>
-      )}
-      {username && decks && Object.keys(decks).length === 0 && !deck && (
-        <div className="flex h-[70vh] flex-col items-center justify-center space-y-8">
-          <div className="justify-center font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            <div className="flex justify-center text-lg">
-              You do not have any decks in your collection yet
+      <div className="grid h-[70vh] place-items-center max-sm:px-2">
+        {username === null && !deckid && !hash && (
+          <LoginBlock>Login to create your decks</LoginBlock>
+        )}
+        {username && decks && Object.keys(decks).length === 0 && !deck && (
+          <div className="flex flex-col items-center justify-center gap-6">
+            <div className="flex flex-col gap-4 text-center text-lg">
+              <div>You do not have any decks in your collection yet</div>
+              <div>
+                Start by creating new one, import from Lackey / Amaranth / Text
+                or browse official preconstructed decks
+              </div>
             </div>
-            <div className="flex justify-center text-lg">
-              Start by creating new one, import from Lackey / Amaranth / Text or
-              browse official preconstructed decks
-            </div>
-          </div>
-          <div className="flex justify-center">
             <DeckImport isOnlyNew={true} />
           </div>
-        </div>
-      )}
+        )}
+      </div>
       {isEditable && isMobile && showFloatingButtons && (
         <>
           <DeckNewCardFloating

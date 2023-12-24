@@ -266,7 +266,9 @@ const Inventory = () => {
       ) : inventoryError ? (
         <ErrorMessage>{inventoryError}</ErrorMessage>
       ) : (
-        <LoginBlock>Login to manage your inventory</LoginBlock>
+        <div className="grid h-[80vh] place-items-center max-sm:px-2">
+          <LoginBlock>Login to manage your inventory</LoginBlock>
+        </div>
       )}
       <ButtonFloatMenu />
       {showMenuButtons && (
