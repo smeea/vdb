@@ -1,7 +1,10 @@
 {
-  "version": "2023-12-23",
+  "version": "2023-12-29",
   "changes": [
-    "Update Playtest to Round 2",
-    "Small other fixes and improvements (mostly styling)"
+    "Update TWDA",
+    "Show title/capacity requirement for library card in search/deck card list",
+    "Add inventory filter to only show card with notes",
+    "Fix user decks containing playtest cards removed from testing",
+    "Small other fixes"
   ]
 }
