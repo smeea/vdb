@@ -282,11 +282,13 @@ const Decks = () => {
           </div>
         </div>
       </div>
-      <div className="grid h-[70vh] place-items-center max-sm:px-2">
-        {username === null && !deckid && !hash && (
+      {username === null && !deckid && !hash && (
+        <div className="grid h-[70vh] place-items-center max-sm:px-2">
           <LoginBlock>Login to create your decks</LoginBlock>
-        )}
-        {username && decks && Object.keys(decks).length === 0 && !deck && (
+        </div>
+      )}
+      {username && decks && Object.keys(decks).length === 0 && !deck && (
+        <div className="grid h-[70vh] place-items-center max-sm:px-2">
           <div className="flex flex-col items-center justify-center gap-6">
             <div className="flex flex-col gap-4 text-center text-lg">
               <div>You do not have any decks in your collection yet</div>
@@ -297,8 +299,8 @@ const Decks = () => {
             </div>
             <DeckImport isOnlyNew={true} />
           </div>
-        )}
-      </div>
+        </div>
+      )}
       {isEditable && isMobile && showFloatingButtons && (
         <>
           <DeckNewCardFloating

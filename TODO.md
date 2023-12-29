@@ -1,10 +1,8 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
-- Remove cards not in playtest from database
 - Convert card-ids from playtest to release
 - Remove tzi/sal/rav from playtest
-- Update TWDA
 
 # FEATURES
 
