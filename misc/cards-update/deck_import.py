@@ -13,8 +13,8 @@ try:
     with open("cardbase_lib_playtest.json", "r") as library_playtest_file, open(
         "cardbase_crypt_playtest.json", "r"
     ) as crypt_playtest_file:
-        crypt_db |= json.load(crypt_playtest_file)
-        library_db |= json.load(library_playtest_file)
+        crypt_db = json.load(crypt_playtest_file)
+        library_db = json.load(library_playtest_file)
 
 except Exception:
     print(
