@@ -7,7 +7,6 @@
 # FEATURES
 
 # BACKLOG FEATURES
-- Offline decks/inventory storage
 
 # TECH IMPROVEMENTS
 - Migration from screen width (isWide, etc) to container queries (when tailwild will support max-)

@@ -33,15 +33,18 @@ const UpdateNotification = () => {
                 ))}
               </ul>
             </div>
-            <div className="flex">
-              <ButtonIconed
-                variant="primary"
-                onClick={() => {
-                  window.location.reload(true);
-                }}
-                icon={<Activity />}
-                text="Apply Update"
-              />
+            <ButtonIconed
+              variant="primary"
+              onClick={() => {
+                window.location.reload(true);
+              }}
+              icon={<Activity />}
+              text="Apply Update"
+            />
+            <div className="text-sm text-fgRed dark:text-fgRedDark">
+              If this window show up again after clicking Apply Update, please
+              refresh the page (Ctrl+F5 on Windows/Linux, Command+Shift+R on
+              MacOS, swipe down on mobile)
             </div>
           </div>
         </Modal>

@@ -74,7 +74,8 @@ const About = () => {
           <Title>TROUBLESHOOTING</Title>
           <div>
             If you experience problems like white screen or strange behavior,
-            reload page (Ctrl+F5 on Windows/Linux or Command+Shift+R on MacOS)
+            reload the page (Ctrl+F5 on Windows/Linux, Command+Shift+R on MacOS,
+            swipe down on mobile)
           </div>
           <div>If this does not help, please contact me (see below)</div>
         </div>
