@@ -3,26 +3,26 @@ import { usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
 
 const getMissing = (cards, inventoryType, used, inventory) => {
-  const crypt = {};
+  const missingCards = {};
 
-  Object.keys(cards).map((card) => {
-    const softUsedMax = getSoftMax(used.soft[card]);
-    const hardUsedTotal = getHardTotal(used.hard[card]);
+  Object.keys(cards).map((cardid) => {
+    const softUsedMax = getSoftMax(used.soft[cardid]);
+    const hardUsedTotal = getHardTotal(used.hard[cardid]);
+    const inInventory = inventory?.[cardid]?.q ?? 0;
+    const q = cards[cardid].q;
 
-    let miss;
-    if (!inventoryType && cards[card].q > softUsedMax) {
-      miss = hardUsedTotal + cards[card].q - inventory[card]?.q;
-    } else {
-      miss = hardUsedTotal + softUsedMax - inventory[card]?.q;
-    }
+    const miss =
+      !inventoryType && q > softUsedMax
+        ? hardUsedTotal + q - inInventory
+        : hardUsedTotal + softUsedMax - inInventory;
 
     if (miss > 0) {
-      crypt[card] = { ...cards[card] };
-      crypt[card].q = miss > cards[card].q ? cards[card].q : miss;
+      missingCards[cardid] = { ...cards[cardid] };
+      missingCards[cardid].q = miss > q ? q : miss;
     }
   });
 
-  return crypt;
+  return missingCards;
 };
 
 const useDeckMissing = (deck) => {
@@ -37,13 +37,13 @@ const useDeckMissing = (deck) => {
     deck.crypt,
     deck.inventoryType,
     usedCrypt,
-    inventoryCrypt,
+    inventoryCrypt
   );
   const missingLibrary = getMissing(
     deck.library,
     deck.inventoryType,
     usedLibrary,
-    inventoryLibrary,
+    inventoryLibrary
   );
 
   return { missingCrypt, missingLibrary };

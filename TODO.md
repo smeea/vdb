@@ -6,8 +6,6 @@
 
 # FEATURES
 
-# BACKLOG FEATURES
-
 # TECH IMPROVEMENTS
 - Migration from screen width (isWide, etc) to container queries (when tailwild will support max-)
 - Explicit image width/height
