@@ -3,6 +3,11 @@ import { Menu } from '@headlessui/react';
 import SortDown from '@/assets/images/icons/sort-down.svg?react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
 
+const RelativeDiv = React.forwardRef((props, ref) => {
+  return <div className="relative" ref={ref} {...props} />;
+});
+RelativeDiv.displayName = 'RelativeDiv';
+
 const SortButton = ({
   sortMethod,
   setSortMethod,
@@ -10,7 +15,7 @@ const SortButton = ({
   className = '',
 }) => {
   return (
-    <Menu as="div">
+    <Menu as={RelativeDiv}>
       <MenuButton
         className={className}
         title="Sort"

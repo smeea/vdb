@@ -3,7 +3,6 @@
 - Mobile support for Tournament Analyze
 - Convert card-ids from playtest to release
 - Remove tzi/sal/rav from playtest
-- Sort button - search results and deck in search
 
 # FEATURES
 
