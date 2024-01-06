@@ -56,8 +56,8 @@ const DeckDrawModal = ({
       title="Deck Draw"
       noPadding={isMobile}
     >
-      <div className="flex flex-col gap-3 sm:gap-5">
-        <div className="flex gap-3 max-md:flex-col sm:gap-5">
+      <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
+        <div className="flex gap-3 sm:gap-4 lg:gap-6 xl:gap-8 max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
             <div>
               <Header>
@@ -183,7 +183,7 @@ const DeckDrawModal = ({
           </div>
         </div>
         {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-          <div className="flex gap-3 max-md:flex-col sm:gap-5">
+          <div className="flex gap-3 sm:gap-4 lg:gap-6 xl:gap-8 max-md:flex-col">
             <div className="md:basis-5/9">
               {burnedCrypt.length > 0 && (
                 <div>

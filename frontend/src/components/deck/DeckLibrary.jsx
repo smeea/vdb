@@ -57,7 +57,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
   };
 
   return (
-    <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+    <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
       <div className="flex flex-col gap-2">
         <div
           className={

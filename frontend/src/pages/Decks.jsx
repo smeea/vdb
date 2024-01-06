@@ -247,7 +247,7 @@ const Decks = () => {
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
-            <div className="flex max-sm:flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+            <div className="flex max-sm:flex-col gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
               {playtestMode ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
