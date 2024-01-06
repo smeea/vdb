@@ -3,9 +3,6 @@ from deck_import import deck_import
 
 
 playtest_files = {
-    "precon-ravnos-round3.txt": "PR",
-    "precon-tzimisce-round3.txt": "PTz",
-    "precon-salubri-round3.txt": "PSal",
     "precon-hecata-round2.txt": "PH",
     "precon-lasombra-round2.txt": "PL",
     "tod-banuhaqim.txt": "TBh",

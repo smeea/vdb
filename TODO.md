@@ -2,7 +2,6 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Convert card-ids from playtest to release
-- Remove tzi/sal/rav from playtest
 
 # FEATURES
 

@@ -1,6 +1,11 @@
 import json
 
 bundles = {
+    "V5C": {
+        "PR": {},
+        "PSal": {},
+        "PTz": {}
+    },
     "NB2": {
         "PB": {},
         "PBH": {},
@@ -159,9 +164,6 @@ playtest_bundles = {
     "PLAYTEST": {
         "PH": {},
         "PL": {},
-        "PR": {},
-        "PSal": {},
-        "PTz": {},
         "TBh": {},
         "TBr": {},
         "TG": {},

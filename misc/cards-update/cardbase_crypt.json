@@ -93,6 +93,37 @@
         "Title":"",
         "Twd":25
     },
+    "209048":{
+        "ASCII Name":"Abaddon",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Independent: Abaddon gets 1 optional maneuver and 1 optional press each combat.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Celerity":1,
+            "Potence":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2
+        },
+        "Group":"7",
+        "Id":209048,
+        "Name":"Abaddon",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200004":{
         "ASCII Name":"Abd al-Rashid",
         "Adv":"",
@@ -637,6 +668,36 @@
         },
         "Title":"",
         "Twd":2
+    },
+    "209021":{
+        "ASCII Name":"Adrino Manauara",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Anarch Baron of Manaus: Adrino gets 1 press (mandatory) each combat, only usable to continue combat.",
+        "Clan":"Tzimisce",
+        "Disciplines":{
+            "Potence":1,
+            "Animalism":2,
+            "Dominate":2,
+            "Protean":2
+        },
+        "Group":"6",
+        "Id":209021,
+        "Name":"Adrino Manauara",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PTz":"2"
+            }
+        },
+        "Title":"baron",
+        "Twd":0
     },
     "200017":{
         "ASCII Name":"Aeron",
@@ -3644,6 +3705,35 @@
         "Title":"",
         "Twd":3
     },
+    "209022":{
+        "ASCII Name":"Angel Guerrero",
+        "Adv":"",
+        "Artist":[
+            "Camille D\u00e9farge"
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Anarch Baron of Ciudad Ju\u00e1rez.",
+        "Clan":"Tzimisce",
+        "Disciplines":{
+            "Animalism":2,
+            "Dominate":2,
+            "Protean":2
+        },
+        "Group":"6",
+        "Id":209022,
+        "Name":"\u00c1ngel Guerrero",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PTz":"2"
+            }
+        },
+        "Title":"baron",
+        "Twd":0
+    },
     "200090":{
         "ASCII Name":"Angela Decker",
         "Adv":"",
@@ -3894,6 +3984,35 @@
         },
         "Title":"justicar",
         "Twd":16
+    },
+    "209045":{
+        "ASCII Name":"Aniel",
+        "Adv":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Independent: Aniel can burn 1 corruption counter or a card requiring a Discipline from another ready minion as a +1 stealth (D) action that costs 1 blood.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Fortitude":1,
+            "Auspex":2,
+            "Dominate":2
+        },
+        "Group":"7",
+        "Id":209045,
+        "Name":"Aniel",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200096":{
         "ASCII Name":"Anisa Marianna Lopez",
@@ -8687,6 +8806,36 @@
         "Title":"",
         "Twd":5
     },
+    "209023":{
+        "ASCII Name":"Branimira",
+        "Adv":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Anarch Baron of Sofia: While you have 9 or fewer pool, Branimira gets +1 intercept.",
+        "Clan":"Tzimisce",
+        "Disciplines":{
+            "Dominate":1,
+            "Presence":1,
+            "Protean":1,
+            "Animalism":2
+        },
+        "Group":"6",
+        "Id":209023,
+        "Name":"Branimira",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PTz":"2"
+            }
+        },
+        "Title":"baron",
+        "Twd":0
+    },
     "200217":{
         "ASCII Name":"Brazil",
         "Adv":"",
@@ -10189,6 +10338,36 @@
         "Title":"",
         "Twd":21
     },
+    "209049":{
+        "ASCII Name":"Castellan",
+        "Adv":"",
+        "Artist":[
+            "Helena Garc\u00eda Huang"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Independent: Castellan gets +1 intercept during directed actions and -1 intercept during non-directed actions.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Celerity":1,
+            "Dominate":1,
+            "Auspex":2,
+            "Fortitude":2
+        },
+        "Group":"7",
+        "Id":209049,
+        "Name":"Castellan",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200255":{
         "ASCII Name":"Castiel",
         "Adv":"",
@@ -11050,6 +11229,36 @@
         },
         "Title":"bishop",
         "Twd":8
+    },
+    "209025":{
+        "ASCII Name":"Clara Hjortsh\u00f8j",
+        "Adv":"",
+        "Artist":[
+            "Heather Kreiter"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Anarch.",
+        "Clan":"Tzimisce",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Dominate":1,
+            "Protean":2
+        },
+        "Group":"6",
+        "Id":209025,
+        "Name":"Clara Hjortsh\u00f8j",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PTz":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200276":{
         "ASCII Name":"Clarissa Steinburgen",
@@ -13870,6 +14079,36 @@
         "Title":"",
         "Twd":5
     },
+    "209009":{
+        "ASCII Name":"Doc Martina",
+        "Adv":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Anarch: Rescuing a vampire from torpor costs Doc Martina -1 blood.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Fortitude":1,
+            "Presence":1,
+            "Animalism":2,
+            "Obfuscate":2
+        },
+        "Group":"7",
+        "Id":209009,
+        "Name":"Doc Martina",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201584":{
         "ASCII Name":"Doctor Morocco",
         "Adv":"",
@@ -14094,6 +14333,34 @@
         },
         "Title":"",
         "Twd":3
+    },
+    "209041":{
+        "ASCII Name":"Dominica",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Independent: Dominica can search your library for a master archetype card, reveal it and move it to your hand as a +1 stealth action.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Auspex":1,
+            "Fortitude":1
+        },
+        "Group":"7",
+        "Id":209041,
+        "Name":"Dominica",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200357":{
         "ASCII Name":"Dominique",
@@ -19345,6 +19612,35 @@
         "Title":"",
         "Twd":1
     },
+    "209006":{
+        "ASCII Name":"Gathii",
+        "Adv":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Anarch: During an action Gathii performs, you can reveal the top card of your library. If it is a master card, he burns 1 blood; otherwise, he gets +1 stealth.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Animalism":2,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":209006,
+        "Name":"Gathii",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200496":{
         "ASCII Name":"Gatjil Munyarryun",
         "Adv":"",
@@ -23133,6 +23429,9 @@
         "Set":{
             "V5A":{
                 "PMin":"1"
+            },
+            "Promo":{
+                "2023-10-07":true
             }
         },
         "Title":"",
@@ -24336,6 +24635,36 @@
         },
         "Title":"",
         "Twd":9
+    },
+    "209050":{
+        "ASCII Name":"Ilonka",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Independent: Once each turn, if Ilonka is ready after a successful bleed against you, she can look at the acting minion's controller's hand, then she can discard 1 card at random from it.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Blood Sorcery":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2
+        },
+        "Group":"7",
+        "Id":209050,
+        "Name":"Ilonka",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200628":{
         "ASCII Name":"Ilse",
@@ -26457,6 +26786,35 @@
         "Title":"",
         "Twd":3
     },
+    "209005":{
+        "ASCII Name":"Jean-Francois",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Anarch.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Animalism":1,
+            "Obfuscate":1,
+            "Presence":1
+        },
+        "Group":"7",
+        "Id":209005,
+        "Name":"Jean-Fran\u00e7ois",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200686":{
         "ASCII Name":"Jefferson Foster",
         "Adv":"",
@@ -27241,6 +27599,34 @@
         "Title":"",
         "Twd":33
     },
+    "201595":{
+        "ASCII Name":"Joaquin de Cadiz",
+        "Adv":"",
+        "Artist":[
+            "Marta Ruiz Anguera"
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Anarch.",
+        "Clan":"Gangrel",
+        "Disciplines":{
+            "Fortitude":1,
+            "Protean":1
+        },
+        "Group":"6",
+        "Id":201595,
+        "Name":"Joaqu\u00edn de C\u00e1diz",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5A":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Twd":23
+    },
     "200708":{
         "ASCII Name":"Joaquin Murietta",
         "Adv":"",
@@ -27274,34 +27660,6 @@
         },
         "Title":"",
         "Twd":6
-    },
-    "201595":{
-        "ASCII Name":"Joaquin de Cadiz",
-        "Adv":"",
-        "Artist":[
-            "Marta Ruiz Anguera"
-        ],
-        "Banned":"",
-        "Capacity":3,
-        "Card Text":"Anarch.",
-        "Clan":"Gangrel",
-        "Disciplines":{
-            "Fortitude":1,
-            "Protean":1
-        },
-        "Group":"6",
-        "Id":201595,
-        "Name":"Joaqu\u00edn de C\u00e1diz",
-        "New":false,
-        "Rulings":[],
-        "Sect":"Anarch",
-        "Set":{
-            "V5A":{
-                "PG":"1"
-            }
-        },
-        "Title":"",
-        "Twd":23
     },
     "200709":{
         "ASCII Name":"Joaquina Amaya",
@@ -33686,6 +34044,35 @@
         "Title":"",
         "Twd":25
     },
+    "209010":{
+        "ASCII Name":"Luciano Carvalho",
+        "Adv":"",
+        "Artist":[
+            "Gabriel de G\u00f3es"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Anarch: During your discard phase, you can move an animal retainer from a vampire you control to another vampire you control.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Presence":1,
+            "Animalism":2,
+            "Obfuscate":2
+        },
+        "Group":"7",
+        "Id":209010,
+        "Name":"Luciano Carvalho",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200872":{
         "ASCII Name":"Lucina",
         "Adv":"",
@@ -34714,7 +35101,8 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2022-07-30":true
+                "2022-07-30":true,
+                "2022-11-05":true
             }
         },
         "Title":"primogen",
@@ -34817,6 +35205,35 @@
         },
         "Title":"",
         "Twd":1
+    },
+    "209046":{
+        "ASCII Name":"Malachi",
+        "Adv":"",
+        "Artist":[
+            "Mart\u00edn de Diego S\u00e1bada"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Independent.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2
+        },
+        "Group":"7",
+        "Id":209046,
+        "Name":"Malachi",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200902":{
         "ASCII Name":"Malcolm",
@@ -35638,6 +36055,35 @@
         },
         "Title":"",
         "Twd":1
+    },
+    "209027":{
+        "ASCII Name":"Marialena",
+        "Adv":"",
+        "Artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Anarch: If Marialena is blocked, she burns 1 blood before block resolution.",
+        "Clan":"Tzimisce",
+        "Disciplines":{
+            "Animalism":1,
+            "Dominate":2,
+            "Protean":2
+        },
+        "Group":"6",
+        "Id":209027,
+        "Name":"Marialena",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PTz":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200924":{
         "ASCII Name":"Mariana Gilbert",
@@ -40806,6 +41252,36 @@
         "Title":"",
         "Twd":12
     },
+    "209024":{
+        "ASCII Name":"Neserian",
+        "Adv":"",
+        "Artist":[
+            "Heather Kreiter"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Anarch: While you control no locations, Neserian gets -1 bleed. While you control 1 or more locations, Neserian gets +1 vote.",
+        "Clan":"Tzimisce",
+        "Disciplines":{
+            "Celerity":1,
+            "Protean":1,
+            "Animalism":2,
+            "Dominate":2
+        },
+        "Group":"6",
+        "Id":209024,
+        "Name":"Neserian",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PTz":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201050":{
         "ASCII Name":"Nestor Kaba",
         "Adv":"",
@@ -41795,6 +42271,34 @@
         "Title":"",
         "Twd":23
     },
+    "209002":{
+        "ASCII Name":"Oleg Kaprizov",
+        "Adv":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Anarch.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Presence":1
+        },
+        "Group":"7",
+        "Id":209002,
+        "Name":"Oleg Kaprizov",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201075":{
         "ASCII Name":"Olga Triminov",
         "Adv":"",
@@ -42135,6 +42639,35 @@
         },
         "Title":"",
         "Twd":5
+    },
+    "209044":{
+        "ASCII Name":"Opikun",
+        "Adv":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Independent: Once each combat involving a vampire you control, Opikun can burn 1 blood to prevent up to 2 non-aggravated damage to that vampire from the opposing minion's strike.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Fortitude":2
+        },
+        "Group":"7",
+        "Id":209044,
+        "Name":"Opikun",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201084":{
         "ASCII Name":"Orlando Oriundus",
@@ -43543,6 +44076,35 @@
         "Title":"",
         "Twd":9
     },
+    "209007":{
+        "ASCII Name":"Phaibun",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Anarch: Once each combat, Phaibun can discard a card at random to strike: dodge.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Animalism":1,
+            "Obfuscate":2,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":209007,
+        "Name":"Phaibun",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201120":{
         "ASCII Name":"Pherydima",
         "Adv":"",
@@ -44037,6 +44599,35 @@
         },
         "Title":"",
         "Twd":7
+    },
+    "209028":{
+        "ASCII Name":"Prentis Derby",
+        "Adv":"",
+        "Artist":[
+            "Christian Byrne"
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Anarch.",
+        "Clan":"Tzimisce",
+        "Disciplines":{
+            "Animalism":1,
+            "Dominate":1,
+            "Protean":1
+        },
+        "Group":"6",
+        "Id":209028,
+        "Name":"Prentis Derby",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PTz":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201133":{
         "ASCII Name":"Preston Varrick",
@@ -46285,6 +46876,35 @@
         "Title":"",
         "Twd":20
     },
+    "209008":{
+        "ASCII Name":"Roberto Rivamonte",
+        "Adv":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Anarch.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Animalism":2,
+            "Obfuscate":2,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":209008,
+        "Name":"Roberto Rivamonte",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201193":{
         "ASCII Name":"Robin Withers",
         "Adv":"",
@@ -46868,6 +47488,33 @@
         },
         "Title":"primogen",
         "Twd":2
+    },
+    "209001":{
+        "ASCII Name":"Roy",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":2,
+        "Card Text":"Anarch: If Roy is unlocked during your discard phase, lock him. He gets +1 strength in combat with titled vampires.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Obfuscate":1
+        },
+        "Group":"7",
+        "Id":209001,
+        "Name":"Roy",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201208":{
         "ASCII Name":"Royce",
@@ -47489,6 +48136,35 @@
         "Title":"",
         "Twd":11
     },
+    "209043":{
+        "ASCII Name":"Sakhar",
+        "Adv":"",
+        "Artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Independent: Sakhar can search your library for an equipment card, reveal it and move it to your hand as a +1 stealth action.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Dominate":1,
+            "Auspex":2,
+            "Fortitude":2
+        },
+        "Group":"7",
+        "Id":209043,
+        "Name":"Sakhar",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201658":{
         "ASCII Name":"Saku Pihlajamaki",
         "Adv":"",
@@ -47515,6 +48191,9 @@
         "Set":{
             "NB2":{
                 "PB":"1"
+            },
+            "Promo":{
+                "2023-07-29":true
             }
         },
         "Title":"baron",
@@ -49007,6 +49686,37 @@
         },
         "Title":"",
         "Twd":23
+    },
+    "209047":{
+        "ASCII Name":"Seraphina",
+        "Adv":"",
+        "Artist":[
+            "Felipe Headley"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Independent: Seraphina can add 2 blood or life to a minion you control as a +1 stealth action, not to exceed starting life.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Celerity":1,
+            "Blood Sorcery":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2
+        },
+        "Group":"7",
+        "Id":209047,
+        "Name":"Seraphina",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201265":{
         "ASCII Name":"Seren Sukardi",
@@ -50752,6 +51462,36 @@
         "Title":"",
         "Twd":28
     },
+    "209011":{
+        "ASCII Name":"Sreelekha",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Anarch: If Sreelekha is ready at the start of your discard phase, you get +1 discard phase action. +1 bleed.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Animalism":2,
+            "Fortitude":2,
+            "Obfuscate":2,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":209011,
+        "Name":"Sreelekha",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201652":{
         "ASCII Name":"Sri Sansa",
         "Adv":"",
@@ -51350,6 +52090,34 @@
         },
         "Title":"",
         "Twd":1
+    },
+    "209029":{
+        "ASCII Name":"Susie Kano",
+        "Adv":"",
+        "Artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Anarch.",
+        "Clan":"Tzimisce",
+        "Disciplines":{
+            "Animalism":1,
+            "Dominate":1
+        },
+        "Group":"6",
+        "Id":209029,
+        "Name":"Susie Kano",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PTz":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201327":{
         "ASCII Name":"Sutekh, The Dark God",
@@ -52853,6 +53621,9 @@
         "Set":{
             "V5A":{
                 "PB":"1"
+            },
+            "Promo":{
+                "2023-06-03":true
             }
         },
         "Title":"",
@@ -53795,6 +54566,33 @@
         },
         "Title":"",
         "Twd":4
+    },
+    "209003":{
+        "ASCII Name":"Trung Chau Pham",
+        "Adv":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Anarch.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Animalism":2
+        },
+        "Group":"7",
+        "Id":209003,
+        "Name":"Trung Chau Pham",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201390":{
         "ASCII Name":"Tryphosa",
@@ -56807,6 +57605,35 @@
         "Title":"",
         "Twd":41
     },
+    "209026":{
+        "ASCII Name":"Whisper",
+        "Adv":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Anarch.",
+        "Clan":"Tzimisce",
+        "Disciplines":{
+            "Protean":1,
+            "Animalism":2,
+            "Dominate":2
+        },
+        "Group":"6",
+        "Id":209026,
+        "Name":"Whisper",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PTz":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201467":{
         "ASCII Name":"White Lily",
         "Adv":"",
@@ -57412,6 +58239,35 @@
         },
         "Title":"archbishop",
         "Twd":5
+    },
+    "209042":{
+        "ASCII Name":"Yael",
+        "Adv":"",
+        "Artist":[
+            "Samuel Araya"
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Independent.",
+        "Clan":"Salubri",
+        "Disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Fortitude":1
+        },
+        "Group":"7",
+        "Id":209042,
+        "Name":"Yael",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Independent",
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201483":{
         "ASCII Name":"Yasmin the Black",
@@ -58031,6 +58887,34 @@
             },
             "KSU":{
                 "AU":"2"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
+    "209004":{
+        "ASCII Name":"Zafira",
+        "Adv":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Anarch.",
+        "Clan":"Ravnos",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":209004,
+        "Name":"Zafira",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Anarch",
+        "Set":{
+            "V5C":{
+                "PR":"1"
             }
         },
         "Title":"",

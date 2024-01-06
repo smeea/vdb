@@ -2067,7 +2067,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique. Requires a ready Anarch.\nPut this card in play. Lock to give an Anarch you control +1 intercept. Lock after an Anarch successfully hunts to add 1 blood to that Anarch.",
+        "Card Text":"Unique. Requires a ready Anarch.\nPut this card in play. You can lock this card to give an Anarch you control +1 intercept. You can lock this card after an Anarch successfully hunts to add 1 blood to that Anarch.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -2095,6 +2095,9 @@
             },
             "V5A":{
                 "PB":"1"
+            },
+            "V5C":{
+                "PTz":"1"
             }
         },
         "Twd":101,
@@ -2165,7 +2168,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play. A Methuselah who does not control a ready anarch burns 1 pool during his or her unlock phase. Any vampire can call a referendum to burn this card as a +1 stealth political action.",
+        "Card Text":"Put this card in play. A Methuselah not controlling a ready Anarch burns 1 pool during their unlock phase. Vampires can call a referendum to burn this card as a +1 stealth political action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -2205,6 +2208,9 @@
             },
             "Third":{
                 "U":true
+            },
+            "V5C":{
+                "PTz":"1"
             }
         },
         "Twd":171,
@@ -2273,7 +2279,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. During your unlock phase, you can give control of the Anarch Troublemaker to your prey and either lock up to two vampires they control or burn an equipment on one of their minions.",
+        "Card Text":"Unique.\nPut this card in play. During your unlock phase, you can give your prey control of the Anarch Troublemaker and either lock up to two vampires they control or burn an equipment on one of their minions.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -2307,6 +2313,9 @@
             },
             "V5":{
                 "PV":"1"
+            },
+            "V5C":{
+                "PSal":"1"
             }
         },
         "Twd":444,
@@ -3428,13 +3437,14 @@
     "100085":{
         "ASCII Name":"Archon Investigation",
         "Artist":[
+            "Lawrence Snelly",
             "Peter Bergting",
-            "Lawrence Snelly"
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: out-of-turn.\nOnly usable when a minion is attempting to bleed you and the bleed amount is 4 or more. Burn the acting minion. (The action is not successful.)",
+        "Card Text":"Out-of-turn. Only usable if a minion is bleeding you and the bleed amount is 4 or more, after blocks are declined.\nBurn the acting minion. (The action is not successful.)",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -3478,6 +3488,12 @@
             },
             "KoT":{
                 "U":true
+            },
+            "Promo":{
+                "2023-03-25":true
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":639,
@@ -5139,6 +5155,9 @@
                 "PB":"2",
                 "PG":"2",
                 "PMi":"2"
+            },
+            "V5C":{
+                "PTz":"3"
             }
         },
         "Twd":69,
@@ -5527,7 +5546,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nYou can lock this card to discard a card (draw afterward).",
+        "Card Text":"Unique location.\nYou can lock this card to discard a card (draw up afterward).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -5581,6 +5600,9 @@
             },
             "NB":{
                 "PM":"1"
+            },
+            "V5C":{
+                "PTz":"1"
             }
         },
         "Twd":435,
@@ -8029,6 +8051,11 @@
             },
             "NB2":{
                 "PG":"3"
+            },
+            "V5C":{
+                "PR":"3",
+                "PSal":"2",
+                "PTz":"3"
             }
         },
         "Twd":1245,
@@ -9512,6 +9539,9 @@
             },
             "NB":{
                 "PTr":"2"
+            },
+            "V5C":{
+                "PSal":"4"
             }
         },
         "Twd":407,
@@ -9773,6 +9803,9 @@
             },
             "V5":{
                 "PTr":"1"
+            },
+            "V5C":{
+                "PSal":"1"
             }
         },
         "Twd":494,
@@ -9938,6 +9971,31 @@
         },
         "Twd":2,
         "Type":"Master"
+    },
+    "102247":{
+        "ASCII Name":"Break the Bonds",
+        "Artist":[
+            "Cos Koniotis"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[ani] The bleed is with +1 bleed.\n[obf] If the bleed is successful, you can lock a minion controlled by the target Methuselah.\n[pre] If the bleed is successful, add 1 blood to a vampire in your uncontrolled region.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Animalism/Obfuscate/Presence",
+        "Id":102247,
+        "Name":"Break the Bonds",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PR":"8"
+            }
+        },
+        "Twd":0,
+        "Type":"Action"
     },
     "100248":{
         "ASCII Name":"Break the Code",
@@ -10660,7 +10718,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Do not replace until after this action.\n(D) Enter combat with a ready minion controlled by another Methuselah. The acting minion gets an optional maneuver during this combat.",
+        "Card Text":"Do not replace until after this action.\n(D) Enter combat with a minion. This acting minion gets 1 optional maneuver during that combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -10707,6 +10765,9 @@
             },
             "HttB":{
                 "PGar":"3"
+            },
+            "Promo":{
+                "2023-05-07":true
             }
         },
         "Twd":278,
@@ -12374,6 +12435,10 @@
             },
             "NB":{
                 "PN":"2"
+            },
+            "V5C":{
+                "PR":"4",
+                "PTz":"4"
             }
         },
         "Twd":365,
@@ -13708,6 +13773,9 @@
         "Set":{
             "NB2":{
                 "PB":"2"
+            },
+            "V5C":{
+                "PTz":"2"
             }
         },
         "Twd":1,
@@ -14155,7 +14223,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally can strike: 1R damage. This ally gets one optional maneuver each combat. This ally can lock to give a Ravnos you control +1 stealth.",
+        "Card Text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally can strike: 1R damage. This ally gets 1 optional maneuver each combat. This ally can lock to give a Ravnos you control +1 stealth.",
         "Clan":"Ravnos",
         "Conviction Cost":"",
         "Discipline":"",
@@ -14167,6 +14235,9 @@
         "Set":{
             "Promo":{
                 "2021-07-01":true
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":0,
@@ -14631,6 +14702,9 @@
             },
             "NB":{
                 "PM":"2"
+            },
+            "V5C":{
+                "PR":"4"
             }
         },
         "Twd":629,
@@ -14772,6 +14846,9 @@
             },
             "V5A":{
                 "PMin":"1"
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":62,
@@ -16640,7 +16717,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an Anarch. Unique.\nPut this card in play with 1 counter. During your unlock phase, add 1 counter to this card. During each other Methuselah's unlock phase, that Methuselah burns X pool and/or cards at random from their hand, where X is the number of counters on this card. Any vampire can burn this card as a (D) action that costs 1 pool.",
+        "Card Text":"+1 stealth action. Requires an Anarch. Unique.\nPut this card in play with 1 counter. During your unlock phase, add 1 counter to this card. During each other Methuselah's unlock phase, that Methuselah burns X pool and/or cards at random from their hand, where X is the number of counters on this card. Vampires can burn this card as a (D) action that costs 1 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -16662,6 +16739,9 @@
             },
             "V5A":{
                 "PG":"2"
+            },
+            "V5C":{
+                "PTz":"1"
             }
         },
         "Twd":75,
@@ -20475,6 +20555,10 @@
             "NB":{
                 "PM":"2",
                 "PV":"4"
+            },
+            "V5C":{
+                "PSal":"3",
+                "PTz":"3"
             }
         },
         "Twd":1387,
@@ -20489,7 +20573,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable during the polling step of a political action.\nCancel the referendum. Unlock the acting vampire. If a political action card was played to call this referendum, return it to its owner's hand (discard down afterward). Minions controlled by the acting Methuselah cannot perform the same political action again this turn.",
+        "Card Text":"Only usable during the polling step of a political action.\nCancel the referendum. Unlock the acting vampire. If a political action card [POLITICALACTION] was played to call this referendum, return it to its owner's hand (discard down afterward). Minions controlled by the acting Methuselah cannot perform the same political action again this turn.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -20554,6 +20638,9 @@
             },
             "V5A":{
                 "PB":"2"
+            },
+            "V5C":{
+                "PSal":"2"
             }
         },
         "Twd":911,
@@ -23945,6 +24032,9 @@
             },
             "SP":{
                 "PwN":"2"
+            },
+            "V5C":{
+                "PSal":"2"
             }
         },
         "Twd":502,
@@ -24021,6 +24111,9 @@
             },
             "NB2":{
                 "PG":"2"
+            },
+            "V5C":{
+                "PTz":"3"
             }
         },
         "Twd":183,
@@ -25846,6 +25939,9 @@
             },
             "NB":{
                 "PTr":"2"
+            },
+            "V5C":{
+                "PSal":"2"
             }
         },
         "Twd":468,
@@ -26208,6 +26304,9 @@
             },
             "NB":{
                 "PTo":"1"
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":583,
@@ -27246,6 +27345,9 @@
             "NB":{
                 "PM":"2",
                 "PTr":"2"
+            },
+            "V5C":{
+                "PSal":"4"
             }
         },
         "Twd":630,
@@ -28593,6 +28695,31 @@
         "Twd":2,
         "Type":"Combat"
     },
+    "102248":{
+        "ASCII Name":"Feast of the Soul's Secrets",
+        "Artist":[
+            "Camille D\u00e9farge"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"[dom] (D) Bleed with +2 bleed.\n[DOM] As above, and if the bleed is successful, add 2 blood to a younger vampire you control or in your uncontrolled region.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"Dominate",
+        "Id":102248,
+        "Name":"Feast of the Soul's Secrets",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PSal":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Action"
+    },
     "100712":{
         "ASCII Name":"Fee Stake: Boston",
         "Artist":[
@@ -28643,7 +28770,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch with capacity above 4. +1 stealth action. Title.\nPut this card on the acting anarch to represent the unique anarch title of Baron of Corte. This may lead to a contested title. Any vampire can call a referendum to burn this card as a +1 stealth political action. In that referendum, non-anarch titles are worth 1 fewer votes.",
+        "Card Text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Corte. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -28668,6 +28795,10 @@
         "Set":{
             "Anarchs":{
                 "R":true
+            },
+            "Promo":{
+                "2008-02-03":true,
+                "2022-11-01":true
             }
         },
         "Twd":26,
@@ -28681,7 +28812,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch with capacity above 4. +1 stealth action. Title.\nPut this card on the acting anarch to represent the unique anarch title of Baron of Los Angeles. This may lead to a contested title. Any vampire can call a referendum to burn this card as a +1 stealth political action. In that referendum, non-anarch titles are worth 1 fewer votes.",
+        "Card Text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Los Angeles. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -28706,6 +28837,10 @@
         "Set":{
             "Anarchs":{
                 "R":true
+            },
+            "Promo":{
+                "2008-02-03":true,
+                "2022-11-01":true
             }
         },
         "Twd":24,
@@ -28761,7 +28896,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch with capacity above 4. +1 stealth action. Title.\nPut this card on the acting anarch to represent the unique anarch title of Baron of Perth. This may lead to a contested title. Any vampire can call a referendum to burn this card as a +1 stealth political action. In that referendum, non-anarch titles are worth 1 fewer votes.",
+        "Card Text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Perth. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -28786,6 +28921,10 @@
         "Set":{
             "Anarchs":{
                 "R":true
+            },
+            "Promo":{
+                "2008-02-03":true,
+                "2022-11-01":true
             }
         },
         "Twd":25,
@@ -28942,6 +29081,31 @@
         "Twd":21,
         "Type":"Equipment"
     },
+    "102249":{
+        "ASCII Name":"Feral Hound",
+        "Artist":[
+            "Peter Scholtz"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Animal with 1 life.\n[ani] If the action to employ this retainer is successful, unlock this vampire during the next discard phase. You can lock this retainer to give the employer +1 intercept.\n[ANI] As above, but unlock this vampire after resolution of this action instead.",
+        "Clan":"Ravnos",
+        "Conviction Cost":"",
+        "Discipline":"Animalism",
+        "Id":102249,
+        "Name":"Feral Hound",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PR":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Retainer"
+    },
     "100721":{
         "ASCII Name":"Feral Spirit",
         "Artist":[
@@ -29016,7 +29180,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play. Each Sabbat vampire gets -1 stealth when hunting. Any Sabbat vampire who successfully hunts gains enough blood from the blood bank to reach full capacity. Burn this card during your unlock phase. Only one Festivo dello Estinto can be played during a game.",
+        "Card Text":"Only one Festivo dello Estinto can be played in a game.\nPut this card in play. Sabbat vampires get -1 stealth during hunt actions. Sabbat vampires successfully hunting gain enough blood from the blood bank to reach full capacity. During your unlock phase, burn this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -29049,6 +29213,9 @@
             "Third":{
                 "PTz":1,
                 "SKTz":"1"
+            },
+            "Promo":{
+                "2023-09-16":true
             }
         },
         "Twd":25,
@@ -30550,6 +30717,31 @@
         "Twd":623,
         "Type":"Reaction"
     },
+    "102250":{
+        "ASCII Name":"Forced Confessional",
+        "Artist":[
+            "Christian Byrne"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable if a minion attempts to block.\n[dom] The blocking minion gets -1 intercept.\n[DOM] That attempt fails and the blocking minion cannot attempt to block this action again.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"Dominate",
+        "Id":102250,
+        "Name":"Forced Confessional",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PSal":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
     "100761":{
         "ASCII Name":"Forced March",
         "Artist":[
@@ -30761,6 +30953,9 @@
             },
             "V5":{
                 "PM":"2"
+            },
+            "V5C":{
+                "PTz":"3"
             }
         },
         "Twd":379,
@@ -31040,6 +31235,9 @@
             "NB2":{
                 "PG":"2",
                 "PMi":"3"
+            },
+            "V5C":{
+                "PTz":"3"
             }
         },
         "Twd":268,
@@ -31068,6 +31266,9 @@
             },
             "NB2":{
                 "PG":"3"
+            },
+            "V5C":{
+                "PTz":"2"
             }
         },
         "Twd":47,
@@ -31303,7 +31504,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock to give any Ravnos +1 stealth.",
+        "Card Text":"Unique location.\nYou can lock this card to give a Ravnos +1 stealth.",
         "Clan":"Ravnos",
         "Conviction Cost":"",
         "Discipline":"",
@@ -31324,6 +31525,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":37,
@@ -31758,6 +31962,9 @@
             },
             "NB":{
                 "PV":"5"
+            },
+            "V5C":{
+                "PSal":"4"
             }
         },
         "Twd":619,
@@ -32515,6 +32722,9 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":60,
@@ -33962,6 +34172,10 @@
             "V5":{
                 "PM":"12",
                 "PTr":"12"
+            },
+            "V5C":{
+                "PSal":"4",
+                "PTz":"6"
             }
         },
         "Twd":1005,
@@ -34689,7 +34903,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable by a locked vampire during a bleed action against you.\n[ani] Unlock this vampire.\n[ANI] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
+        "Card Text":"Only usable by a locked vampire during a bleed action directed at you.\n[ani] Unlock this vampire.\n[ANI] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Animalism",
@@ -34742,6 +34956,9 @@
             },
             "V5":{
                 "PN":"4"
+            },
+            "V5C":{
+                "PR":"4"
             }
         },
         "Twd":132,
@@ -34862,6 +35079,9 @@
             },
             "V5A":{
                 "PB":"1"
+            },
+            "V5C":{
+                "PSal":"1"
             }
         },
         "Twd":187,
@@ -35968,7 +36188,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Put this card on a ready vampire. Any minion can enter combat with this vampire as a +1 stealth (D) action. This vampire can burn this card as a +1 stealth (D) action.",
+        "Card Text":"Put this card on a ready vampire. Minions can enter combat with this vampire as a +1 stealth (D) action. This vampire can burn this card as a +1 stealth (D) action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -36007,6 +36227,9 @@
             "V5A":{
                 "PB":"1",
                 "PG":"1"
+            },
+            "V5C":{
+                "PTz":"1"
             }
         },
         "Twd":282,
@@ -36856,6 +37079,9 @@
             },
             "V5A":{
                 "PG":"4"
+            },
+            "V5C":{
+                "PSal":"3"
             }
         },
         "Twd":213,
@@ -37370,6 +37596,9 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "V5C":{
+                "PTz":"1"
             }
         },
         "Twd":112,
@@ -39021,6 +39250,9 @@
             },
             "FB":{
                 "PV":"2"
+            },
+            "V5C":{
+                "PSal":"3"
             }
         },
         "Twd":152,
@@ -40149,6 +40381,31 @@
         "Twd":1,
         "Type":"Political Action"
     },
+    "102251":{
+        "ASCII Name":"Invigorate",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires an Anarch.\n[ani] This Anarch gets +1 strength this action.\n[dom] This Anarch cannot be blocked by allies this action.\n[pro] This Anarch's hand strikes are aggravated this action.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Animalism/Dominate/Protean",
+        "Id":102251,
+        "Name":"Invigorate",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PTz":"3"
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
     "101004":{
         "ASCII Name":"Invitation Accepted",
         "Artist":[
@@ -40580,6 +40837,9 @@
             },
             "NB":{
                 "PTr":"1"
+            },
+            "V5C":{
+                "PSal":"1"
             }
         },
         "Twd":658,
@@ -42664,7 +42924,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock to give a minion you control +1 intercept. Lock and burn 1 pool to give a minion controlled by another Methuselah +1 intercept.",
+        "Card Text":"Unique location.\nYou can lock this card to give a minion you control +1 intercept. You can lock this card and burn 1 pool to give a minion controlled by another Methuselah +1 intercept.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -42695,6 +42955,9 @@
             },
             "SP":{
                 "PwN":"1"
+            },
+            "V5C":{
+                "PSal":"1"
             }
         },
         "Twd":397,
@@ -44066,6 +44329,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5C":{
+                "PTz":"1"
             }
         },
         "Twd":73,
@@ -44532,7 +44798,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"While in play, this equipment card represents a location and does not count as equipment.\nThis vampire gets +1 bleed. They can burn this card before range is determined to end combat. A vampire can have only one Living Manse.",
+        "Card Text":"Location. While in play, this card does not count as equipment.\nThis vampire gets +1 bleed. They can burn this card before range is determined to end combat. A vampire can have only one Living Manse.",
         "Clan":"Tzimisce",
         "Conviction Cost":"",
         "Discipline":"",
@@ -44575,6 +44841,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5C":{
+                "PTz":"1"
             }
         },
         "Twd":29,
@@ -45011,6 +45280,9 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "V5C":{
+                "PR":"4"
             }
         },
         "Twd":860,
@@ -45868,6 +46140,9 @@
             "NB":{
                 "PTo":"6",
                 "PV":"6"
+            },
+            "V5C":{
+                "PR":"4"
             }
         },
         "Twd":681,
@@ -47772,6 +48047,31 @@
         },
         "Twd":21,
         "Type":"Action"
+    },
+    "102252":{
+        "ASCII Name":"Meditative Grove",
+        "Artist":[
+            "Peter Bergting"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready Salubri you control can gain 1 blood. You can lock this card to cancel a frenzy card as it is played on a Salubri you control (cost is still paid). A vampire can gain blood from only one hunting ground each turn.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102252,
+        "Name":"Meditative Grove",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
     },
     "101194":{
         "ASCII Name":"Mehemet of the Ahl-i-Batin",
@@ -49802,6 +50102,31 @@
         "Twd":48,
         "Type":"Master"
     },
+    "102253":{
+        "ASCII Name":"Monstrous Form",
+        "Artist":[
+            "Alan Mayoral"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[dom][pro] Only usable before range is determined. This vampire gets +1 strength this combat. A vampire can play only one Monstrous Form each round.\n[DOM][PRO] +1 stealth action. Put this card on this vampire. During combat, you can lock this card to give this vampire +1 strength this round, or 1 maneuver or press.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Dominate & Protean",
+        "Id":102253,
+        "Name":"Monstrous Form",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PTz":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Action/Combat"
+    },
     "101243":{
         "ASCII Name":"Morgue Hunting Ground",
         "Artist":[
@@ -50471,7 +50796,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] +1 intercept.\n[AUS] Only usable when a minion controlled by your predator is bleeding you, after blocks are declined. Lock this reacting vampire. The acting minion is now bleeding your predator's predator.",
+        "Card Text":"[aus] +1 intercept.\n[AUS] Only usable if a minion controlled by your predator is bleeding you, after blocks are declined. Not usable if there are only two Methuselahs left. Lock this reacting vampire. Change the target of the bleed to your predator's predator (that Methuselah can attempt to block).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex",
@@ -50514,6 +50839,9 @@
             },
             "Third":{
                 "U":true
+            },
+            "V5C":{
+                "PSal":"2"
             }
         },
         "Twd":608,
@@ -51449,6 +51777,31 @@
         },
         "Twd":24,
         "Type":"Action"
+    },
+    "102254":{
+        "ASCII Name":"Night Terrors",
+        "Artist":[
+            "Samuel Araya"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"[obf][pre] Reduce the acting minion's stealth to 0. (The minion can still increase their stealth.)\n[OBF][PRE] As above, and this vampire can strike: combat ends during the first round of the resulting combat if they block.",
+        "Clan":"Ravnos",
+        "Conviction Cost":"",
+        "Discipline":"Obfuscate & Presence",
+        "Id":102254,
+        "Name":"Night Terrors",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PR":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Reaction"
     },
     "101284":{
         "ASCII Name":"Nightmare Curse",
@@ -52449,6 +52802,31 @@
         "Twd":252,
         "Type":"Reaction"
     },
+    "102255":{
+        "ASCII Name":"Obedient Flesh",
+        "Artist":[
+            "Mart\u00edn de Diego S\u00e1bada"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"[dom][pro] [ACTIONMODIFIER] +1 stealth. Allies get -1 intercept.\n[DOM][PRO] [COMBAT] Only usable before range is determined. This round, this vampire gets +1 strength, 1 optional maneuver and can prevent 1 damage. A vampire can play only one Obedient Flesh each round.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Dominate & Protean",
+        "Id":102255,
+        "Name":"Obedient Flesh",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PTz":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier/Combat"
+    },
     "101310":{
         "ASCII Name":"Obfuscate",
         "Artist":[
@@ -52914,9 +53292,39 @@
             "NB2":{
                 "PBH":"1",
                 "PMi":"2"
+            },
+            "V5C":{
+                "PR":"4",
+                "PSal":"2",
+                "PTz":"4"
             }
         },
         "Twd":1738,
+        "Type":"Reaction"
+    },
+    "102256":{
+        "ASCII Name":"One With the Land",
+        "Artist":[
+            "Riccardo Fabiani"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable during an action directed at you (or a card you control).\n[pro] +2 intercept.\n[PRO] Only usable by a locked vampire. This vampire unlocks and attempts to block. If they block, neither combatant can strike during the first round of the resulting combat.",
+        "Clan":"Tzimisce",
+        "Conviction Cost":"",
+        "Discipline":"Protean",
+        "Id":102256,
+        "Name":"One With the Land",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PTz":"4"
+            }
+        },
+        "Twd":0,
         "Type":"Reaction"
     },
     "101322":{
@@ -53233,6 +53641,9 @@
             "NB2":{
                 "PB":"5",
                 "PG":"3"
+            },
+            "V5C":{
+                "PTz":"3"
             }
         },
         "Twd":51,
@@ -53788,6 +54199,9 @@
             },
             "NB2":{
                 "PG":"2"
+            },
+            "V5C":{
+                "PR":"2"
             }
         },
         "Twd":87,
@@ -54072,6 +54486,9 @@
             },
             "SP":{
                 "PoS":"1"
+            },
+            "V5C":{
+                "PTz":"1"
             }
         },
         "Twd":144,
@@ -54240,6 +54657,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":31,
@@ -55855,12 +56275,13 @@
     "101401":{
         "ASCII Name":"Piper",
         "Artist":[
-            "Andrew Trabbold"
+            "Andrew Trabbold",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master. Requires a ready anarch.\nA ready unlocked anarch you control employs or recruits a retainer or ally from your hand (requirements and cost apply as normal). This is not an action and cannot be blocked. Lock that anarch.",
+        "Card Text":"Requires a ready Anarch.\nLock a ready unlocked Anarch you control. That Anarch recruits or employs an ally or retainer from your hand (requirements and cost apply as normal). This is not an action and cannot be blocked.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -55905,6 +56326,9 @@
         "Set":{
             "TR":{
                 "R":true
+            },
+            "V5C":{
+                "PTz":"2"
             }
         },
         "Twd":33,
@@ -57263,6 +57687,9 @@
             },
             "NB2":{
                 "PB":"1"
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":59,
@@ -57389,6 +57816,9 @@
             },
             "NB2":{
                 "PG":"1"
+            },
+            "V5C":{
+                "PSal":"1"
             }
         },
         "Twd":809,
@@ -59581,6 +60011,9 @@
             },
             "NB2":{
                 "PB":"2"
+            },
+            "V5C":{
+                "PR":"4"
             }
         },
         "Twd":41,
@@ -64473,6 +64906,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5C":{
+                "PTz":"3"
             }
         },
         "Twd":47,
@@ -65366,6 +65802,9 @@
             },
             "FB":{
                 "PV":"2"
+            },
+            "V5C":{
+                "PSal":"2"
             }
         },
         "Twd":313,
@@ -66780,6 +67219,81 @@
         "Twd":31,
         "Type":"Equipment"
     },
+    "102257":{
+        "ASCII Name":"Saulot's Avenging Fist",
+        "Artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique archetype.\nPut this card on a Salubri you control. This Salubri gets +1 strength. This Salubri can enter combat with a non-Salubri vampire as a (D) action; if that vampire is Tremere, this is a +1 stealth action. A vampire can have only one archetype.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102257,
+        "Name":"Saulot's Avenging Fist",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
+    "102258":{
+        "ASCII Name":"Saulot's Guiding Wisdom",
+        "Artist":[
+            "Peter Bergting"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique archetype. Title.\nPut this card on an Independent Salubri you control to represent a unique Independent title worth 2 votes. This Salubri can lock during any referendum to force a vampire to abstain. Once each turn, this Salubri can lock before range is determined to end a combat involving another minion you control. A vampire can have only one archetype.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102258,
+        "Name":"Saulot's Guiding Wisdom",
+        "Pool Cost":"1",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
+    "102259":{
+        "ASCII Name":"Saulot's Healing Touch",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique archetype.\nPut this card on a Salubri you control. Rescuing a non-Tremere vampire from torpor costs this Salubri -2 blood, and if the action is successful, the rescued vampire gains 1 blood. This Salubri can add 1 blood or life to another ready minion, not to exceed starting life, as a +1 stealth action. A vampire can have only one archetype.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102259,
+        "Name":"Saulot's Healing Touch",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PSal":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
     "101683":{
         "ASCII Name":"Savannah Runner",
         "Artist":[
@@ -67554,6 +68068,31 @@
         "Twd":3,
         "Type":"Action Modifier"
     },
+    "102260":{
+        "ASCII Name":"Sculpt the Flesh",
+        "Artist":[
+            "Christian Byrne"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[pro] Strike: hand strike, aggravated.\n[PRO] Strike: hand strike at +1 damage, and put this card on the opposing minion. During their unlock phase, the attached minion burns 1 blood or life. Minions can burn this card as a +1 stealth action.",
+        "Clan":"Tzimisce",
+        "Conviction Cost":"",
+        "Discipline":"Protean",
+        "Id":102260,
+        "Name":"Sculpt the Flesh",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PTz":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Combat"
+    },
     "101703":{
         "ASCII Name":"Seal of Veddartha",
         "Artist":[
@@ -68020,6 +68559,9 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "V5C":{
+                "PSal":"2"
             }
         },
         "Twd":409,
@@ -70231,7 +70773,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nMove the top 2 cards of your library to this equipment, face down and out of play (you can look at the cards at any time). While this Ravnos is ready, if you would draw a card from your library, you can draw one of these cards instead. During your unlock phase, you can move the top card of your library to this card.",
+        "Card Text":"Unique.\nMove the top 2 cards of your library to this equipment, face down and out of play (you can look at the cards at any time). While this Ravnos is ready, if you would draw a card from your library, you can draw one of these cards instead. During your unlock phase, you can move the top card of your library to this equipment.",
         "Clan":"Ravnos",
         "Conviction Cost":"",
         "Discipline":"",
@@ -70278,6 +70820,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":33,
@@ -76157,6 +76702,9 @@
             "NB2":{
                 "PBH":"2",
                 "PMi":"1"
+            },
+            "V5C":{
+                "PR":"4"
             }
         },
         "Twd":697,
@@ -76419,6 +76967,31 @@
             },
             "KoT":{
                 "R":true
+            }
+        },
+        "Twd":0,
+        "Type":"Equipment"
+    },
+    "102261":{
+        "ASCII Name":"Sword of the Archangel",
+        "Artist":[
+            "Mart\u00edn de Diego S\u00e1bada"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique melee weapon.\nStrike: strength+1 aggravated damage. Once each combat, this Salubri can burn 1 blood to cancel a grapple or aim card as it is played by the opposing minion, and its cost is not paid. Once each turn, if the opposing vampire is burned during this weapon's strike resolution and the bearer remains ready, the bearer can unlock at the end of combat.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102261,
+        "Name":"Sword of the Archangel",
+        "Pool Cost":"2",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PSal":"1"
             }
         },
         "Twd":0,
@@ -77728,6 +78301,9 @@
                 "PM":"2",
                 "PTo":"2",
                 "PTr":"4"
+            },
+            "V5C":{
+                "PSal":"4"
             }
         },
         "Twd":1078,
@@ -79909,6 +80485,31 @@
         "Twd":10,
         "Type":"Reaction"
     },
+    "102262":{
+        "ASCII Name":"Touch of Valeren",
+        "Artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"[for] [ACTION] +1 stealth action. Add 3 blood or life to a minion, not to exceed starting life.\n[for] [COMBAT] Prevent all damage from the opposing minion's strike.\n[FOR] [COMBAT] Only usable by a ready vampire not involved in the combat involving another minion you control. Prevent all damage to that minion from the opposing minion's strike.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"Fortitude",
+        "Id":102262,
+        "Name":"Touch of Valeren",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PSal":"3"
+            }
+        },
+        "Twd":0,
+        "Type":"Action/Combat"
+    },
     "102000":{
         "ASCII Name":"Tourette's Voice",
         "Artist":[
@@ -80461,6 +81062,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":37,
@@ -82234,6 +82838,9 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "V5C":{
+                "PTz":"2"
             }
         },
         "Twd":29,
@@ -82732,6 +83339,31 @@
             }
         },
         "Twd":2,
+        "Type":"Action Modifier"
+    },
+    "102263":{
+        "ASCII Name":"Unleashing the Bestial Soul",
+        "Artist":[
+            "Riccardo Fabiani"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"Only usable as the action is announced.\n[dom] Choose a minion. The chosen minion cannot play reaction cards this action.\n[DOM] As above, and the next reaction card played this action costs +1 blood or life.",
+        "Clan":"Salubri",
+        "Conviction Cost":"",
+        "Discipline":"Dominate",
+        "Id":102263,
+        "Name":"Unleashing the Bestial Soul",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PSal":"4"
+            }
+        },
+        "Twd":0,
         "Type":"Action Modifier"
     },
     "102078":{
@@ -83516,7 +84148,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable by a ready unlocked vampire other than the acting minion. Only one Veil the Legions can be played each action.\n[obf] The acting minion gets +1 stealth.\n[OBF] As above, and this vampire can burn X blood to give the next X actions your minions perform this turn +1 stealth. Only one Veil the Legions can be played at superior each turn.",
+        "Card Text":"Only usable by a ready unlocked vampire other than the acting minion. Only one Veil the Legions can be played each action.\n[obf] The acting minion gets +1 stealth.\n[OBF] As above, and this vampire can burn X blood to give the next X actions minions you control perform this turn +1 stealth. Only one Veil the Legions can be played at superior each turn.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obfuscate",
@@ -83554,6 +84186,9 @@
             },
             "FB":{
                 "PM":"2"
+            },
+            "V5C":{
+                "PR":"3"
             }
         },
         "Twd":252,
@@ -84111,7 +84746,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Trifle.\nPut this card on any vampire, and you can burn a card named /Blood Doll/ (if any). During their unlock phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
+        "Card Text":"Trifle.\nPut this card on a vampire, and you can burn a card named /Blood Doll/ (if any). During their unlock phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -84153,6 +84788,9 @@
             "V5":{
                 "PN":"4",
                 "PTr":"4"
+            },
+            "V5C":{
+                "PSal":"2"
             }
         },
         "Twd":1119,
@@ -84594,6 +85232,56 @@
         "Twd":2,
         "Type":"Action"
     },
+    "102264":{
+        "ASCII Name":"Visions of Gehenna",
+        "Artist":[
+            "Felipe Headley"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[pre] Allies cannot block this action.\n[PRE] Only usable during a bleed action. As above, with +2 bleed (limited).",
+        "Clan":"Ravnos",
+        "Conviction Cost":"",
+        "Discipline":"Presence",
+        "Id":102264,
+        "Name":"Visions of Gehenna",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PR":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
+    "102265":{
+        "ASCII Name":"Visions of Zapathasura",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"[obf][pre] Reduce a bleed against you by 3.\n[OBF][PRE] Lock this vampire to reduce a bleed against you to 0. (The acting minion can still increase the bleed amount.)",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Obfuscate & Presence",
+        "Id":102265,
+        "Name":"Visions of Zapathasura",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PR":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Reaction"
+    },
     "102126":{
         "ASCII Name":"Visit from the Capuchin",
         "Artist":[
@@ -84788,6 +85476,31 @@
         "Twd":15,
         "Type":"Reaction"
     },
+    "102266":{
+        "ASCII Name":"Voracious Vermin",
+        "Artist":[
+            "Peter Scholtz"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[ani] Strike: dodge.\n[ANI] As above, with 1 additional ranged strike: burn weapon.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Animalism",
+        "Id":102266,
+        "Name":"Voracious Vermin",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PR":"2"
+            }
+        },
+        "Twd":0,
+        "Type":"Combat"
+    },
     "102131":{
         "ASCII Name":"Voter Captivation",
         "Artist":[
@@ -84942,6 +85655,31 @@
         },
         "Twd":0,
         "Type":"Master"
+    },
+    "102267":{
+        "ASCII Name":"Vozhd of Sofia",
+        "Artist":[
+            "Samuel Araya"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique ghoul with 5 life. 3 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. It can strike: 3R damage. It can enter combat with a minion as a (D) action. During your unlock phase, you can discard an ally or retainer card to add 2 life to this ally.",
+        "Clan":"Tzimisce",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102267,
+        "Name":"Vozhd of Sofia",
+        "Pool Cost":"3",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5C":{
+                "PTz":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Ally"
     },
     "102134":{
         "ASCII Name":"Vulnerability",
@@ -85433,6 +86171,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5C":{
+                "PTz":"2"
             }
         },
         "Twd":77,
@@ -86241,7 +86982,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only one Week of Nightmares can be played in a game.\nPut this card in play with 10 nightmare counters. Ravnos get +1 bleed and +1 strength and do not hunt as normal. Any Ravnos can steal 1 blood from another Ravnos as a +1 stealth hunt action. During each Methuselah's unlock phase, that Methuselah can move 1 nightmare counter from this card to any Ravnos. If this card has no counters, each Ravnos burns 1 blood for each nightmare counter on them or is burned, then burn this card and the nightmare counters.",
+        "Card Text":"Only one Week of Nightmares can be played in a game.\nPut this card in play with 10 nightmare counters. Ravnos get +1 bleed and +1 strength and do not hunt as normal. Any Ravnos can steal 1 blood from another Ravnos as a +1 stealth hunt action. During each Methuselah's unlock phase, that Methuselah can move 1 nightmare counter from this card to a Ravnos. If this card has no counters, each Ravnos burns 1 blood for each nightmare counter on them or is burned, then burn this card and the nightmare counters.",
         "Clan":"Ravnos",
         "Conviction Cost":"",
         "Discipline":"",
@@ -86273,6 +87014,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5C":{
+                "PR":"1"
             }
         },
         "Twd":49,
@@ -86361,7 +87105,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined during the first round of combat.\nPut this card with 5 counters on it on this minion; it becomes a melee weapon equipment that can strike: strength+1 damage. For each damage inflicted by this strike (even if prevented), burn 1 counter from this card. Burn this card if it has no counters. A minion can have only one Weighted Walking Stick.",
+        "Card Text":"Only usable before range is determined during the first round.\nPut this card with 5 counters on it on this minion; it becomes a melee weapon equipment that can strike: strength+1 damage. For each damage inflicted by this strike (even if prevented), burn 1 counter from this card. Burn this card if it has no counters. A minion can have only one Weighted Walking Stick.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -86399,6 +87143,9 @@
             },
             "FB":{
                 "PV":"3"
+            },
+            "V5C":{
+                "PSal":"4"
             }
         },
         "Twd":195,
