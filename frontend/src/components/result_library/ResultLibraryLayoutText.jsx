@@ -11,20 +11,29 @@ import {
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
 } from '@/components';
-import { isTrifle } from '@/utils';
+import { getLegality, isTrifle } from '@/utils';
 import { useApp } from '@/context';
 
 const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   const { isNarrow } = useApp();
+  const isLegal = getLegality(card);
 
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between whitespace-nowrap">
         <div className="flex items-center justify-between space-x-2 whitespace-nowrap">
           <ResultLibraryTypeImage value={card.Type} />
-          <div className="font-bold text-fgName  dark:text-fgNameDark">
+          <div className="space-x-1 font-bold text-fgName  dark:text-fgNameDark">
             <ResultName card={card} />
           </div>
+          {!isLegal && (
+            <div
+              className="inline text-fgRed dark:text-fgRedDark"
+              title="Not Tournament Legal Yet"
+            >
+              Not Legal Yet
+            </div>
+          )}
         </div>
         <div className="flex items-center space-x-3">
           <div className="flex items-center">

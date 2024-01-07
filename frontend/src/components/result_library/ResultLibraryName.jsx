@@ -1,7 +1,11 @@
 import React from 'react';
 import Hammer from '@/assets/images/icons/hammer.svg?react';
+import HourglassSplit from '@/assets/images/icons/hourglass-split.svg?react';
+import { getLegality } from '@/utils';
 
 const ResultLibraryName = ({ card, colored = true, isBanned }) => {
+  const isLegal = getLegality(card);
+
   return (
     <div
       className={`inline space-x-1 ${
@@ -22,6 +26,14 @@ const ResultLibraryName = ({ card, colored = true, isBanned }) => {
           ) : (
             <>[Limited]</>
           )}
+        </div>
+      )}
+      {!isLegal && (
+        <div
+          className="inline whitespace-nowrap text-fgRed dark:text-fgRedDark"
+          title="Not Tournament Legal Yet"
+        >
+          <HourglassSplit className="inline pb-[1px]" />
         </div>
       )}
     </div>

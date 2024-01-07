@@ -4,6 +4,7 @@
 - Convert card-ids from playtest to release
 
 # FEATURES
+- Show Deck legality deck based on new releases
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries (need tailwild support max-)

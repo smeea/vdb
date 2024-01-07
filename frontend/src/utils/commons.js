@@ -1,4 +1,5 @@
 import { CARD_TEXT, MASTER, ID } from '@/utils/constants';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 export const getCardProperty = (card, property) => {
   return card.c ? card.c[property] : card[property];
@@ -43,6 +44,21 @@ export const isTrifle = (card) => {
   );
 };
 
+export const getLegality = (card) => {
+  const onlyOneSet =
+    Object.keys(card.Set).length === 1 &&
+    !['PLAYTEST', 'POD', 'Promo'].includes(Object.keys(card.Set)[0])
+      ? Object.keys(card.Set)[0]
+      : null;
+
+  const setDate = onlyOneSet && new Date(setsAndPrecons[onlyOneSet].date);
+  const now = new Date();
+  const MS_TO_DAYS = 1000 * 60 * 60 * 24;
+  const isLegal = (now - setDate) / MS_TO_DAYS > 30;
+
+  return isLegal;
+};
+
 export const getTotalCardsGroupedBy = (cards, property) => {
   const propertyList = [
     ...new Set(cards.map((card) => getCardProperty(card, property))),
@@ -52,9 +68,9 @@ export const getTotalCardsGroupedBy = (cards, property) => {
     (propertyIndex) =>
       (resultObject[propertyIndex] = countCards(
         cards.filter(
-          (card) => getCardProperty(card, property) === propertyIndex,
-        ),
-      )),
+          (card) => getCardProperty(card, property) === propertyIndex
+        )
+      ))
   );
 
   return resultObject;
@@ -68,8 +84,8 @@ export const getCardsGroupedBy = (cards, property) => {
   propertyList.map(
     (propertyIndex) =>
       (resultObject[propertyIndex] = cards.filter(
-        (card) => getCardProperty(card, property) === propertyIndex,
-      )),
+        (card) => getCardProperty(card, property) === propertyIndex
+      ))
   );
 
   return resultObject;
@@ -127,7 +143,7 @@ export const getClan = (crypt) => {
         return { ...acc, t: t };
       }
     },
-    { clan: null, q: 0, t: 0 },
+    { clan: null, q: 0, t: 0 }
   );
 
   if (topClan.q / topClan.t > 0.5) {
@@ -160,7 +176,7 @@ export const getSect = (crypt) => {
         return { ...acc, t: t };
       }
     },
-    { sect: null, q: 0, t: 0 },
+    { sect: null, q: 0, t: 0 }
   );
 
   if (topSect.q / topSect.t > 0.65) {

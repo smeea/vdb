@@ -1,4 +1,5 @@
 import React from 'react';
+import HourglassSplit from '@/assets/images/icons/hourglass-split.svg?react';
 import { useApp } from '@/context';
 import {
   ButtonCloseModal,
@@ -12,6 +13,7 @@ import {
   ResultName,
   ResultLayoutTextText,
 } from '@/components';
+import { getLegality } from '@/utils';
 
 const ResultCryptLayoutText = ({
   card,
@@ -21,6 +23,7 @@ const ResultCryptLayoutText = ({
   inPopover,
 }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
+  const isLegal = getLegality(card);
 
   return (
     <div className="space-y-3">
@@ -62,6 +65,14 @@ const ResultCryptLayoutText = ({
               </ConditionalTooltip>
             )}
           </div>
+          {!isLegal && (
+            <div
+              className="text-fgRed dark:text-fgRedDark"
+              title="Not Tournament Legal Yet"
+            >
+              Not Legal Yet
+            </div>
+          )}
         </div>
         <div className="flex items-center space-x-3">
           <ResultCryptGroup value={card.Group} />
