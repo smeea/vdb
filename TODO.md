@@ -1,7 +1,7 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
-- Convert card-ids from playtest to release
+- Convert crypt card-ids from playtest to release
 
 # FEATURES
 - Show Deck legality deck based on new releases
