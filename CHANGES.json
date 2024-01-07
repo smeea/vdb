@@ -1,5 +1,14 @@
 [
   {
+    "version": "2024-01-07",
+    "changes": [
+      "Add new V5 (Companion) precons - Ravnos, Salubri, Tzimisce",
+      "Add indicator of not-yet-tournament-legal cards (less than 30 days from release date)",
+      "Fix deck/inventory missing",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2023-12-29",
     "changes": [
       "Update TWDA",

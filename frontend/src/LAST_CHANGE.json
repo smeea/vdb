@@ -1,10 +1,9 @@
 {
-  "version": "2023-12-29",
+  "version": "2024-01-07",
   "changes": [
-    "Update TWDA",
-    "Show title/capacity requirement for library card in search/deck card list",
-    "Add inventory filter to only show card with notes",
-    "Fix user decks containing playtest cards removed from testing",
+    "Add new V5 (Companion) precons - Ravnos, Salubri, Tzimisce",
+    "Add indicator of not-yet-tournament-legal cards (less than 30 days from release date)",
+    "Fix deck/inventory missing",
     "Small other fixes"
   ]
 }
