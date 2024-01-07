@@ -1,10 +1,8 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
-- Convert crypt card-ids from playtest to release
 
 # FEATURES
-- Show Deck legality deck based on new releases
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries (need tailwild support max-)

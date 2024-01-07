@@ -26,14 +26,6 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
           <div className="space-x-1 font-bold text-fgName  dark:text-fgNameDark">
             <ResultName card={card} />
           </div>
-          {!isLegal && (
-            <div
-              className="inline text-fgRed dark:text-fgRedDark"
-              title="Not Tournament Legal Yet"
-            >
-              Not Legal Yet
-            </div>
-          )}
         </div>
         <div className="flex items-center space-x-3">
           <div className="flex items-center">
@@ -77,6 +69,14 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
           </div>
           <Hr />
         </>
+      )}
+      {isLegal && (
+        <div
+          className="text-fgRed dark:text-fgRedDark"
+          title={`Not Tournament Legal until ${isLegal}`}
+        >
+          Not Tournament Legal until {isLegal}
+        </div>
       )}
     </div>
   );

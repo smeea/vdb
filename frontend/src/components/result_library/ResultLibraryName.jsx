@@ -28,10 +28,10 @@ const ResultLibraryName = ({ card, colored = true, isBanned }) => {
           )}
         </div>
       )}
-      {!isLegal && (
+      {isLegal && (
         <div
           className="inline whitespace-nowrap text-fgRed dark:text-fgRedDark"
-          title="Not Tournament Legal Yet"
+          title={`Not Tournament Legal until ${isLegal}`}
         >
           <HourglassSplit className="inline pb-[1px]" />
         </div>

@@ -51,12 +51,18 @@ export const getLegality = (card) => {
       ? Object.keys(card.Set)[0]
       : null;
 
-  const setDate = onlyOneSet && new Date(setsAndPrecons[onlyOneSet].date);
-  const now = new Date();
-  const MS_TO_DAYS = 1000 * 60 * 60 * 24;
-  const isLegal = (now - setDate) / MS_TO_DAYS > 30;
+  if (!onlyOneSet) return false;
 
-  return isLegal;
+  const MS_TO_DAYS = 1000 * 60 * 60 * 24;
+  const setDate = new Date(setsAndPrecons[onlyOneSet].date);
+  const now = new Date();
+  if ((now - setDate) / MS_TO_DAYS > 30) {
+    return false;
+  } else {
+    setDate.setDate(setDate.getDate() + 30);
+    const dateIso = setDate.toISOString().split('T')[0];
+    return dateIso;
+  }
 };
 
 export const getTotalCardsGroupedBy = (cards, property) => {

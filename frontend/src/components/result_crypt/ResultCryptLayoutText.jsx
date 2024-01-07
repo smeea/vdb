@@ -65,14 +65,6 @@ const ResultCryptLayoutText = ({
               </ConditionalTooltip>
             )}
           </div>
-          {!isLegal && (
-            <div
-              className="text-fgRed dark:text-fgRedDark"
-              title="Not Tournament Legal Yet"
-            >
-              Not Legal Yet
-            </div>
-          )}
         </div>
         <div className="flex items-center space-x-3">
           <ResultCryptGroup value={card.Group} />
@@ -97,6 +89,14 @@ const ResultCryptLayoutText = ({
         <ResultCryptCapacity card={card} />
       </div>
       <Hr />
+      {isLegal && (
+        <div
+          className="text-fgRed dark:text-fgRedDark"
+          title={`Not Tournament Legal until ${isLegal}`}
+        >
+          Not Tournament Legal until {isLegal}
+        </div>
+      )}
     </div>
   );
 };
