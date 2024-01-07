@@ -84,10 +84,13 @@ const About = () => {
           <Title>VERSION</Title>
           <div>
             Card text based on{' '}
-            <a href="https://www.vekn.net/card-lists">VEKN official list</a>:{' '}
-            <span className="whitespace-nowrap">
-              {import.meta.env.VITE_CARD_VERSION}
-            </span>
+            <a href="https:www.vekn.net/card-lists">VEKN official list</a> and
+            new cards from Fifth Edition (Companion) set released 2024-01-01
+            (tournament legal on 2024-01-31)
+            {/* :{' '} */}
+            {/* <span className="whitespace-nowrap"> */}
+            {/*   {import.meta.env.VITE_CARD_VERSION} */}
+            {/* </span> */}
           </div>
           <div className="py-2">
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
