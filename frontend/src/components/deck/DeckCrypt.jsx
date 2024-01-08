@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { DeckCryptTable, DeckCryptHeader, ResultModal } from '@/components';
+import {
+  DeckCryptTable,
+  DeckCryptHeader,
+  ResultModal,
+  FlexGapped,
+} from '@/components';
 import { useApp, deckStore } from '@/context';
 import {
   useModalCardController,
@@ -59,8 +64,8 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
   };
 
   return (
-    <div
-      className={`flex flex-col gap-3 sm:gap-4 lg:gap-6 xl:gap-8 ${
+    <FlexGapped
+      className={`flex-col ${
         !inPreview && !inMissing && !inSearch && !isMobile
           ? 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[44px]'
           : ''
@@ -119,7 +124,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
           handleClose={handleClose}
         />
       )}
-    </div>
+    </FlexGapped>
   );
 };
 

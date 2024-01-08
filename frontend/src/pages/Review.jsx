@@ -16,6 +16,7 @@ import {
   ReviewButtons,
   ReviewCrypt,
   ReviewLibrary,
+  FlexGapped,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { useDeck, useTags } from '@/hooks';
@@ -110,7 +111,7 @@ const Review = () => {
   useEffect(() => {
     const diff = getDiff(
       { ...deckFrom?.crypt, ...deckFrom?.library },
-      { ...deckTo?.crypt, ...deckTo?.library },
+      { ...deckTo?.crypt, ...deckTo?.library }
     );
 
     if (Object.keys(diff).length) {
@@ -141,7 +142,7 @@ const Review = () => {
   useEffect(() => {
     if (hash && deckTo) {
       const deckWithHash = JSON.parse(
-        JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library }),
+        JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library })
       );
       hash
         .slice(1)
@@ -198,15 +199,15 @@ const Review = () => {
 
   const parentId = deckFrom?.description.replace(
     `Review of ${import.meta.env.VITE_BASE_URL}/decks/`,
-    '',
+    ''
   );
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
 
   return (
     <div className="deck-container mx-auto">
-      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+      <FlexGapped>
         <div className="min-w-[175px] max-xl:hidden" />
-        <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+        <FlexGapped className="flex-col">
           {deckFrom && (
             <DeckDetails
               deck={deckFrom}
@@ -216,7 +217,7 @@ const Review = () => {
           )}
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deckFrom && (
-            <div className="flex max-sm:flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+            <FlexGapped className="max-sm:flex-col">
               <div className="basis-full sm:basis-5/9">
                 <ReviewCrypt
                   cardsFrom={deckFrom.crypt}
@@ -231,9 +232,9 @@ const Review = () => {
                   cardChange={cardChange}
                 />
               </div>
-            </div>
+            </FlexGapped>
           )}
-        </div>
+        </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
           <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-[44px]">
             <ReviewButtons
@@ -243,7 +244,7 @@ const Review = () => {
             />
           </div>
         </div>
-      </div>
+      </FlexGapped>
       {isMobile && showFloatingButtons && (
         <>
           <DeckNewCardFloating

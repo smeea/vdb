@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { TwdResult, TwdSearchForm, ErrorMessage } from '@/components';
+import {
+  TwdResult,
+  TwdSearchForm,
+  ErrorMessage,
+  FlexGapped,
+} from '@/components';
 import { useApp, searchResults, setTwdResults } from '@/context';
 
 const Twd = () => {
@@ -10,7 +15,7 @@ const Twd = () => {
 
   return (
     <div className="twd-container mx-auto">
-      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+      <FlexGapped>
         {!(isMobile && (error || !twdResults)) && (
           <div className="basis-full sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
             {twdResults && (
@@ -24,7 +29,7 @@ const Twd = () => {
             <TwdSearchForm error={error} setError={setError} />
           </div>
         )}
-      </div>
+      </FlexGapped>
     </div>
   );
 };

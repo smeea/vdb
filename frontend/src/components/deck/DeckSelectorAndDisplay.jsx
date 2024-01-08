@@ -9,6 +9,7 @@ import {
   DeckLibrary,
   ButtonIconed,
   ErrorMessage,
+  FlexGapped,
 } from '@/components';
 import { setDeck, deckStore, useApp } from '@/context';
 
@@ -26,7 +27,7 @@ const DeckSelectorAndDisplay = () => {
   };
 
   return (
-    <div className="flex h-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+    <FlexGapped className="flex-col">
       <div className="sticky z-10 flex space-x-1 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[44px]">
         {addMode && (
           <>
@@ -71,7 +72,7 @@ const DeckSelectorAndDisplay = () => {
           )}
         </>
       )}
-    </div>
+    </FlexGapped>
   );
 };
 

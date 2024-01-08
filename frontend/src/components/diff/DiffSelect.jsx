@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ArrowLeftRight from '@/assets/images/icons/arrow-left-right.svg?react';
-import { DiffSelectDeck, Button } from '@/components';
+import { DiffSelectDeck, Button, FlexGapped } from '@/components';
 
 const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
   };
 
   return (
-    <div className="flex gap-2 max-sm:flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+    <FlexGapped className="max-sm:gap-1 max-sm:flex-col">
       <div className="basis-full sm:basis-1/2">
         <DiffSelectDeck
           target="from"
@@ -37,7 +37,7 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
           deckidTo={deckidTo}
         />
       </div>
-    </div>
+    </FlexGapped>
   );
 };
 

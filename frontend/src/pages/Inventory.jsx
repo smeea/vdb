@@ -16,6 +16,7 @@ import {
   ButtonFloatMenu,
   ErrorMessage,
   Checkbox,
+  FlexGapped,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
 
@@ -123,7 +124,7 @@ const Inventory = () => {
   return (
     <div className="inventory-container mx-auto">
       {(!inShared && username) || (inShared && !inventoryError) ? (
-        <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+        <FlexGapped>
           <div
             className={`${
               showCryptOnMobile ? 'flex' : 'hidden'
@@ -262,7 +263,7 @@ const Inventory = () => {
               </div>
             </ButtonFloat>
           )}
-        </div>
+        </FlexGapped>
       ) : inventoryError ? (
         <ErrorMessage>{inventoryError}</ErrorMessage>
       ) : (

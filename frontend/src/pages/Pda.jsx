@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { PdaResult, PdaSearchForm, ErrorMessage } from '@/components';
+import {
+  FlexGapped,
+  PdaResult,
+  PdaSearchForm,
+  ErrorMessage,
+} from '@/components';
 import { useApp, searchResults, setPdaResults } from '@/context';
 
 const Pda = () => {
@@ -10,7 +15,7 @@ const Pda = () => {
 
   return (
     <div className="twd-container mx-auto">
-      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+      <FlexGapped>
         {!(isMobile && (error || !pdaResults)) && (
           <div className="basis-full sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
             {pdaResults && (
@@ -24,7 +29,7 @@ const Pda = () => {
             <PdaSearchForm error={error} setError={setError} />
           </div>
         )}
-      </div>
+      </FlexGapped>
     </div>
   );
 };

@@ -11,6 +11,7 @@ import {
   ResultCryptCapacity,
   ErrorMessage,
   Header,
+  FlexGapped,
 } from '@/components';
 
 import { useApp } from '@/context';
@@ -56,8 +57,8 @@ const DeckDrawModal = ({
       title="Deck Draw"
       noPadding={isMobile}
     >
-      <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
-        <div className="flex gap-3 sm:gap-4 lg:gap-6 xl:gap-8 max-md:flex-col">
+      <FlexGapped className="flex-col">
+        <FlexGapped className="max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
             <div>
               <Header>
@@ -181,9 +182,9 @@ const DeckDrawModal = ({
               placement={isNarrow ? 'bottom' : 'right'}
             />
           </div>
-        </div>
+        </FlexGapped>
         {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
-          <div className="flex gap-3 sm:gap-4 lg:gap-6 xl:gap-8 max-md:flex-col">
+          <FlexGapped className="max-md:flex-col">
             <div className="md:basis-5/9">
               {burnedCrypt.length > 0 && (
                 <div>
@@ -246,9 +247,9 @@ const DeckDrawModal = ({
                 </div>
               )}
             </div>
-          </div>
+          </FlexGapped>
         )}
-      </div>
+      </FlexGapped>
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}

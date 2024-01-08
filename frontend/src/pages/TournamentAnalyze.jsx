@@ -9,6 +9,7 @@ import {
   AnalyzeSearchForm,
   ErrorMessage,
   Header,
+  FlexGapped,
 } from '@/components';
 import {
   analyzeStore,
@@ -213,8 +214,8 @@ const TournamentAnalyze = () => {
           </div>
         </div>
       </Header>
-      <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
-        <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+      <FlexGapped className="flex-col">
+        <FlexGapped>
           <div className="flex basis-9/12">
             <div className="basis-full">
               {error && (
@@ -231,7 +232,7 @@ const TournamentAnalyze = () => {
               />
             )}
           </div>
-          <div className="flex basis-3/12 flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+          <FlexGapped className="basis-3/12 flex-col">
             <AnalyzeLoadButtons
               tempDecks={tempDecks}
               setTempDecks={setTempDecks}
@@ -243,10 +244,10 @@ const TournamentAnalyze = () => {
             {decks && info && (
               <AnalyzeTournamentInfo info={info} decks={decks} />
             )}
-          </div>
-        </div>
+          </FlexGapped>
+        </FlexGapped>
         {decks && info && (
-          <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+          <FlexGapped>
             <div className="flex flex-col gap-4 sm:basis-7/12 sm:p-0 lg:basis-8/12 xl:basis-9/12">
               <AnalyzeTournamentResult
                 decks={results ?? Object.values(decks)}
@@ -255,9 +256,9 @@ const TournamentAnalyze = () => {
             <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
               <AnalyzeSearchForm />
             </div>
-          </div>
+          </FlexGapped>
         )}
-      </div>
+      </FlexGapped>
     </div>
   );
 };

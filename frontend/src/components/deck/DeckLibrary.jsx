@@ -5,6 +5,7 @@ import {
   ResultModal,
   DeckDrawProbability,
   DeckLibraryHeader,
+  FlexGapped,
 } from '@/components';
 import { useApp } from '@/context';
 import { MASTER } from '@/utils/constants';
@@ -57,7 +58,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
   };
 
   return (
-    <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
+    <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
         <div
           className={
@@ -151,7 +152,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
           handleClose={handleClose}
         />
       )}
-    </div>
+    </FlexGapped>
   );
 };
 

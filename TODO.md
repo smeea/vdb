@@ -2,6 +2,7 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Fix Card Version in About after V5C release
+- Copy URL and Back to Decks buttons on mobile
 
 # FEATURES
 
@@ -12,4 +13,4 @@
 - Back button behavior
 - Update to Vite 5 (when hmr circular import issue is resolved)
 - Update to Headlessui 2 (review new components)
-- Unify gaps between panes (const with 'gap-3 sm:gap-4 md:gap-6 xl:gap-8')
+- Check and unify w-full vs basis-full vs nothing

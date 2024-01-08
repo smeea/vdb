@@ -8,6 +8,7 @@ import {
   ResultLayoutText,
   ButtonIconed,
   CardImage,
+  FlexGapped,
   ButtonFloat,
   ErrorMessage,
 } from '@/components';
@@ -42,9 +43,9 @@ const Cards = () => {
         Math.random() *
           Math.floor(
             Object.keys(cryptCardBase).filter(
-              (cardid) => playtestMode || cardid < 210000,
-            ).length,
-          ),
+              (cardid) => playtestMode || cardid < 210000
+            ).length
+          )
       ) + 200000;
     navigate(`/cards/${cardid}`);
   };
@@ -55,9 +56,9 @@ const Cards = () => {
         Math.random() *
           Math.floor(
             Object.keys(libraryCardBase).filter(
-              (cardid) => playtestMode || cardid < 110000,
-            ).length,
-          ),
+              (cardid) => playtestMode || cardid < 110000
+            ).length
+          )
       ) + 100000;
     navigate(`/cards/${cardid}`);
   };
@@ -154,9 +155,9 @@ const Cards = () => {
             </div>
           </>
         ) : (
-          <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+          <FlexGapped>
             <div className="block lg:min-w-[175px]" />
-            <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+            <FlexGapped className="basis-full flex-col">
               {cryptCardBase && libraryCardBase && (
                 <div>
                   <CardSelect
@@ -191,7 +192,7 @@ const Cards = () => {
                   )}
                 </>
               )}
-            </div>
+            </FlexGapped>
             <div className="min-w-[175px] max-sm:hidden">
               <div className="sticky z-30 flex w-full flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark lg:top-[44px]">
                 <ButtonIconed
@@ -210,7 +211,7 @@ const Cards = () => {
                 />
               </div>
             </div>
-          </div>
+          </FlexGapped>
         )}
       </>
     </div>

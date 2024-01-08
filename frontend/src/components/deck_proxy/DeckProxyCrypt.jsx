@@ -1,9 +1,13 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { DeckProxyCryptTable, ResultModal, Header } from '@/components';
-import { useApp } from '@/context';
+import {
+  DeckProxyCryptTable,
+  ResultModal,
+  Header,
+  FlexGapped,
+} from '@/components';
 import { countCards } from '@/utils';
-import { deckStore } from '@/context';
+import { useApp, deckStore } from '@/context';
 import { useModalCardController, useDeckCrypt } from '@/hooks';
 
 const DeckProxyCrypt = ({
@@ -19,7 +23,7 @@ const DeckProxyCrypt = ({
   const { cryptSide, sortedCards, sortedCardsSide } = useDeckCrypt(
     deck.crypt,
     cryptDeckSort,
-    changeTimer,
+    changeTimer
   );
 
   const proxiesToPrint = Object.keys(proxySelected)
@@ -27,7 +31,7 @@ const DeckProxyCrypt = ({
       (cardid) =>
         cardid > 200000 &&
         proxySelected[cardid].print &&
-        proxySelected[cardid].q > 0,
+        proxySelected[cardid].q > 0
     )
     .map((cardid) => proxySelected[cardid]);
 
@@ -58,7 +62,7 @@ const DeckProxyCrypt = ({
   };
 
   return (
-    <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+    <FlexGapped className="flex-col">
       <div>
         <Header>
           <div className="px-2 font-bold">Crypt [{cryptTotalSelected}]</div>
@@ -96,7 +100,7 @@ const DeckProxyCrypt = ({
           handleClose={handleClose}
         />
       )}
-    </div>
+    </FlexGapped>
   );
 };
 

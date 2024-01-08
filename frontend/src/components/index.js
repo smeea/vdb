@@ -31,6 +31,7 @@ export { default as ConditionalTooltip } from './common/ConditionalTooltip.jsx';
 export { default as ConditionalTooltipOrModal } from './common/ConditionalTooltipOrModal.jsx';
 export { default as ErrorMessage } from './common/ErrorMessage.jsx';
 export { default as ErrorOverlay } from './common/ErrorOverlay.jsx';
+export { default as FlexGapped } from './common/FlexGapped.jsx';
 export { default as Header } from './common/Header.jsx';
 export { default as Hr } from './common/Hr.jsx';
 export { default as Input } from './common/Input.jsx';

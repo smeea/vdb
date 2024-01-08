@@ -5,6 +5,7 @@ import {
   CryptSearchForm,
   DeckSelectorAndDisplay,
   ButtonFloatDeckOrSearch,
+  FlexGapped,
 } from '@/components';
 import {
   useApp,
@@ -50,7 +51,7 @@ const Crypt = () => {
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
+      <FlexGapped>
         {!isMobile && (
           <div
             className={`${
@@ -90,7 +91,7 @@ const Crypt = () => {
             />
           </>
         )}
-      </div>
+      </FlexGapped>
       {showToggleAddMode && (
         <ButtonFloatDeckOrSearch
           addMode={addMode}

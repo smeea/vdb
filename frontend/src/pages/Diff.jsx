@@ -8,6 +8,7 @@ import {
   DiffSelect,
   DeckNewCardFloating,
   ButtonFloatMenu,
+  FlexGapped,
   Modal,
   ErrorMessage,
 } from '@/components';
@@ -56,7 +57,7 @@ const Diff = () => {
         const cardsData = useDeck(
           deckData.cards,
           cryptCardBase,
-          libraryCardBase,
+          libraryCardBase
         );
 
         const d = {
@@ -179,8 +180,8 @@ const Diff = () => {
 
   return (
     <div className="deck-container mx-auto">
-      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-        <div className="flex w-full flex-col sm:gap-4 lg:basis-10/12 lg:gap-6 xl:gap-8">
+      <FlexGapped>
+        <FlexGapped className="w-full flex-col lg:basis-10/12">
           <DiffSelect
             decks={decks}
             deck={deck}
@@ -200,7 +201,7 @@ const Diff = () => {
           )}
 
           {deck && deckTo && (
-            <div className="flex max-sm:flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+            <FlexGapped className="max-sm:flex-col">
               {playtestMode ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
@@ -231,9 +232,9 @@ const Diff = () => {
               ) : (
                 <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
               )}
-            </div>
+            </FlexGapped>
           )}
-        </div>
+        </FlexGapped>
         {!isMobile && (
           <div className="basis-2/12 max-lg:hidden">
             <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
@@ -246,7 +247,7 @@ const Diff = () => {
             </div>
           </div>
         )}
-      </div>
+      </FlexGapped>
       {isEditable && isMobile && showFloatingButtons && (
         <>
           <DeckNewCardFloating

@@ -30,25 +30,15 @@ const Account = () => {
             <div className="text-lg">Logged as: &lt;{username}&gt;</div>
           </div>
           <div className="flex flex-col gap-5 sm:gap-6 p-2 sm:p-0">
-            <div>
-              <AccountChangeName />
-            </div>
-            <div>
-              <AccountChangePassword />
-            </div>
-            <div>
-              <AccountChangeEmail />
-            </div>
+            <AccountChangeName />
+            <AccountChangePassword />
+            <AccountChangeEmail />
             <div className="flex flex-col gap-3 sm:gap-4">
               {isPlaytestAdmin && <AccountPlaytestButton />}
               <AccountLimitedButton />
               <div className="flex gap-3 sm:gap-4">
-                <div className="w-full">
-                  <AccountDeleteButton />
-                </div>
-                <div className="w-full">
-                  <AccountLogoutButton />
-                </div>
+                <AccountDeleteButton />
+                <AccountLogoutButton />
               </div>
             </div>
           </div>

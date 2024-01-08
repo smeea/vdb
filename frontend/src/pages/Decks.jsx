@@ -19,6 +19,7 @@ import {
   DeckRecommendation,
   DeckSelect,
   DeckSelectAdvModal,
+  FlexGapped,
   ErrorMessage,
   LoginBlock,
   Modal,
@@ -220,10 +221,10 @@ const Decks = () => {
 
   return (
     <div className="deck-container mx-auto">
-      <div className="flex sm:gap-4 lg:gap-6 xl:gap-8">
-        <div className="flex basis-full flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+      <FlexGapped>
+        <FlexGapped className="basis-full flex-col">
           <div className="flex gap-2 max-sm:flex-col max-sm:p-2 sm:gap-4">
-            <div className="basis-full sm:basis-5/12">
+            <div className="sm:basis-5/12">
               <DeckSelect
                 deckid={deckid}
                 deck={deck}
@@ -235,7 +236,7 @@ const Decks = () => {
               />
             </div>
             {deck && (showInfo || !isMobile) && (
-              <div className="basis-full sm:basis-7/12">
+              <div className="sm:basis-7/12">
                 <DeckDetails
                   deck={deck}
                   folded={foldedDescription}
@@ -247,26 +248,26 @@ const Decks = () => {
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
-            <div className="flex max-sm:flex-col gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
+            <FlexGapped className="max-sm:flex-col">
               {playtestMode ||
               !(
                 Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
                 Object.keys(deck.library).some((cardid) => cardid > 110000)
               ) ? (
                 <>
-                  <div className="basis-full sm:basis-5/9">
+                  <div className="sm:basis-5/9">
                     <DeckCrypt deck={deck} />
                   </div>
-                  <div className="basis-full sm:basis-4/9">
+                  <div className="sm:basis-4/9">
                     <DeckLibrary deck={deck} />
                   </div>
                 </>
               ) : (
                 <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
               )}
-            </div>
+            </FlexGapped>
           )}
-        </div>
+        </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
           <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-[44px]">
             <DeckButtons
@@ -281,7 +282,7 @@ const Decks = () => {
             />
           </div>
         </div>
-      </div>
+      </FlexGapped>
       {username === null && !deckid && !hash && (
         <div className="grid h-[70vh] place-items-center max-sm:px-2">
           <LoginBlock>Login to create your decks</LoginBlock>

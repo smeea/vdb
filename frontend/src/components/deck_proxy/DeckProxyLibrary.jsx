@@ -4,6 +4,7 @@ import {
   ResultLibraryType,
   ResultModal,
   Header,
+  FlexGapped,
 } from '@/components';
 import { useApp } from '@/context';
 import { countCards } from '@/utils';
@@ -33,7 +34,7 @@ const DeckProxyLibrary = ({
       (cardid) =>
         cardid < 200000 &&
         proxySelected[cardid].print &&
-        proxySelected[cardid].q > 0,
+        proxySelected[cardid].q > 0
     )
     .map((cardid) => proxySelected[cardid]);
 
@@ -104,7 +105,7 @@ const DeckProxyLibrary = ({
   ));
 
   return (
-    <div className="flex flex-col sm:gap-4 lg:gap-6 xl:gap-8">
+    <FlexGapped className="flex-col">
       <div className="space-y-2">
         <Header>
           <div className="px-2 font-bold">Library [{libraryTotalSelected}]</div>
@@ -126,7 +127,7 @@ const DeckProxyLibrary = ({
           handleClose={handleClose}
         />
       )}
-    </div>
+    </FlexGapped>
   );
 };
 
