@@ -4,7 +4,7 @@ import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const DiffCopyUrlButton = ({ deckFromId, deckToId }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
@@ -23,7 +23,7 @@ const DiffCopyUrlButton = ({ deckFromId, deckToId }) => {
 
   return (
     <ButtonIconed
-      variant={success ? 'success' : 'secondary'}
+      variant={success ? 'success' : isDesktop ? 'secondary' : 'primary'}
       onClick={handleStandard}
       title="Copy Standard Deck URL (will follow future deck changes)"
       icon={<Link45Deg width="19" height="19" viewBox="0 0 15 15" />}

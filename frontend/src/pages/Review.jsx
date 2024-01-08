@@ -270,9 +270,9 @@ const Review = () => {
           size="sm"
         >
           <ReviewButtons
-            backDeckid={deck?.deckid}
-            deckid={deckFrom?.deckid}
+            deck={deckFrom}
             urlDiff={urlDiff}
+            parentId={inDecks ? parentId : null}
           />
         </Modal>
       )}

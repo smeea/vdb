@@ -5,13 +5,12 @@ import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const DiffBackButton = ({ deckid }) => {
-  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
-
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
 
   return (
     <ButtonIconed
-      variant="secondary"
+      variant={isDesktop ? 'secondary' : 'primary'}
       onClick={() => {
         setShowMenuButtons(false);
         setShowFloatingButtons(true);

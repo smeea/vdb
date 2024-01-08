@@ -2,7 +2,6 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Fix Card Version in About after V5C release
-- Copy URL and Back to Decks buttons on mobile
 
 # FEATURES
 
