@@ -38,7 +38,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
     max = max === 'any' || !max ? 100 : max;
     onChange(
       { name: e.target.name, value: `${min},${max}` },
-      { name: 'cardtypes' },
+      { name: 'cardtypes' }
     );
   };
 
@@ -113,27 +113,23 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
         <div className="w-5/6">
           {isManual ? (
             <div className="flex items-center justify-between gap-1">
-              <div className="basis-full">
-                <input
-                  className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
-                  type="number"
-                  value={min}
-                  name={i[0].toLowerCase()}
-                  id="min"
-                  onChange={handleManual}
-                />
-              </div>
+              <input
+                className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+                type="number"
+                value={min}
+                name={i[0].toLowerCase()}
+                id="min"
+                onChange={handleManual}
+              />
               -
-              <div className="basis-full">
-                <input
-                  className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
-                  type="number"
-                  name={i[0].toLowerCase()}
-                  id="max"
-                  value={max}
-                  onChange={handleManual}
-                />
-              </div>
+              <input
+                className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+                type="number"
+                name={i[0].toLowerCase()}
+                id="max"
+                value={max}
+                onChange={handleManual}
+              />
             </div>
           ) : (
             <Select
@@ -142,7 +138,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
               name={name}
               maxMenuHeight={maxMenuHeight}
               value={options.find(
-                (obj) => obj.value === value[i[0].toLowerCase()],
+                (obj) => obj.value === value[i[0].toLowerCase()]
               )}
               onChange={onChange}
             />

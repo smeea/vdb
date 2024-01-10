@@ -14,7 +14,7 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
   const { isMobile } = useApp();
 
   return (
-    <div className="flex basis-full flex-col py-2">
+    <div className="flex flex-col py-2">
       <Title>General Info</Title>
       <table>
         <tbody>

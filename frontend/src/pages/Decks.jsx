@@ -222,7 +222,7 @@ const Decks = () => {
   return (
     <div className="deck-container mx-auto">
       <FlexGapped>
-        <FlexGapped className="basis-full flex-col">
+        <FlexGapped className="flex w-full flex-col">
           <div className="flex gap-2 max-sm:flex-col max-sm:p-2 sm:gap-4">
             <div className="sm:basis-5/12">
               <DeckSelect

@@ -27,20 +27,20 @@ const ResultUsed = ({ card }) => {
     >
       {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
         <div
-          className={`mx-1 flex items-center gap-0.5 px-0.5 ${
+          className={`mx-1 flex items-center px-0.5 ${
             inInventory < softUsedMax + hardUsedTotal
               ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
               : ''
           }
                   `}
         >
-          <div className="flex basis-full justify-center text-lg">
+          <div className="flex basis-3/5 justify-center text-lg">
             {isInventoryNote && <div className="min-w-[4px]"></div>}
             {inInventory}
-            {isInventoryNote && <div className="max-w-[4px] text-xs">*</div>}
+            {isInventoryNote && <div className="max-w-[4px] text-sm">*</div>}
           </div>
           <div
-            className={`flex basis-full justify-center text-sm ${
+            className={`flex basis-2/5 justify-center text-sm ${
               inInventory >= softUsedMax + hardUsedTotal
                 ? 'text-midGray dark:text-midGrayDark'
                 : 'text-lightGray dark:text-white'

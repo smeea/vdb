@@ -12,7 +12,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
   const { isMobile } = useApp();
 
   return (
-    <div className="flex basis-full flex-col gap-2">
+    <div className="flex w-full flex-col gap-2">
       <div className="flex gap-2 max-sm:flex-col">
         <div
           className={`basis-full ${
