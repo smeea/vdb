@@ -19,7 +19,7 @@ const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
     navigate(
       `/${target}?q={"${
         cardid > 200000 ? 'crypt' : 'library'
-      }"%3A{"${cardid}"%3A{"q"%3A1%2C"m"%3A"gt"}}}`
+      }"%3A{"${cardid}"%3A{"q"%3A1%2C"m"%3A"gt"}}}`,
     );
 
     handleClose && handleClose();

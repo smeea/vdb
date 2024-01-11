@@ -51,7 +51,7 @@ const InventoryLibrary = ({
     compact,
     type,
     discipline,
-    onlyNotes
+    onlyNotes,
   );
 
   useEffect(() => {

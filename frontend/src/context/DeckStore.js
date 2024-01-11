@@ -178,7 +178,7 @@ export const deckLocalize = (
   localizedCrypt,
   nativeCrypt,
   localizedLibrary,
-  nativeLibrary
+  nativeLibrary,
 ) => {
   Object.values(deckStore.deck.crypt).map((card) => {
     const id = card.c.Id;

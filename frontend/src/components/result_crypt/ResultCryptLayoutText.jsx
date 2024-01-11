@@ -1,5 +1,4 @@
 import React from 'react';
-import HourglassSplit from '@/assets/images/icons/hourglass-split.svg?react';
 import { useApp } from '@/context';
 import {
   ButtonCloseModal,

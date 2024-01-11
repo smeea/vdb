@@ -43,9 +43,9 @@ const Cards = () => {
         Math.random() *
           Math.floor(
             Object.keys(cryptCardBase).filter(
-              (cardid) => playtestMode || cardid < 210000
-            ).length
-          )
+              (cardid) => playtestMode || cardid < 210000,
+            ).length,
+          ),
       ) + 200000;
     navigate(`/cards/${cardid}`);
   };
@@ -56,9 +56,9 @@ const Cards = () => {
         Math.random() *
           Math.floor(
             Object.keys(libraryCardBase).filter(
-              (cardid) => playtestMode || cardid < 110000
-            ).length
-          )
+              (cardid) => playtestMode || cardid < 110000,
+            ).length,
+          ),
       ) + 100000;
     navigate(`/cards/${cardid}`);
   };

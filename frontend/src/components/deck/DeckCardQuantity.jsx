@@ -46,15 +46,15 @@ const DeckCardQuantity = ({
           return inInventory >= softUsedMax + hardUsedTotal
             ? ''
             : inInventory < q
-            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-            : 'bg-bgWarning dark:bg-bgWarningDark';
+              ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
+              : 'bg-bgWarning dark:bg-bgWarningDark';
         }
       } else {
         return inInventory - softUsedMax - hardUsedTotal >= q
           ? ''
           : inInventory < q
-          ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-          : 'bg-bgWarning dark:bg-bgWarningDark';
+            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
+            : 'bg-bgWarning dark:bg-bgWarningDark';
       }
     } else {
       return '';

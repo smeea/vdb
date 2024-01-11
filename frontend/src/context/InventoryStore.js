@@ -20,13 +20,13 @@ export const usedStore = proxy({
 export const inventoryCardsAdd = (cards) => {
   const initialCryptState = JSON.parse(JSON.stringify(inventoryStore.crypt));
   const initialLibraryState = JSON.parse(
-    JSON.stringify(inventoryStore.library)
+    JSON.stringify(inventoryStore.library),
   );
 
   const filteredCards = {};
   Object.keys(cards)
     .filter(
-      (cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000))
+      (cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000)),
     )
     .map((cardid) => {
       filteredCards[cardid] = cards[cardid];

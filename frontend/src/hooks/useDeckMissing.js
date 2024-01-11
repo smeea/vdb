@@ -37,13 +37,13 @@ const useDeckMissing = (deck) => {
     deck.crypt,
     deck.inventoryType,
     usedCrypt,
-    inventoryCrypt
+    inventoryCrypt,
   );
   const missingLibrary = getMissing(
     deck.library,
     deck.inventoryType,
     usedLibrary,
-    inventoryLibrary
+    inventoryLibrary,
   );
 
   return { missingCrypt, missingLibrary };

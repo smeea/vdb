@@ -11,7 +11,7 @@ const useInventoryLibrary = (
   compact,
   type,
   discipline,
-  onlyNotes
+  onlyNotes,
 ) => {
   const usedLibrary = useSnapshot(usedStore).library;
   const { libraryCardBase } = useApp();
@@ -37,7 +37,7 @@ const useInventoryLibrary = (
     (i) => {
       cardsByDiscipline[i] = {};
       missingByDiscipline[i] = {};
-    }
+    },
   );
 
   if (compact) {

@@ -74,9 +74,9 @@ export const getTotalCardsGroupedBy = (cards, property) => {
     (propertyIndex) =>
       (resultObject[propertyIndex] = countCards(
         cards.filter(
-          (card) => getCardProperty(card, property) === propertyIndex
-        )
-      ))
+          (card) => getCardProperty(card, property) === propertyIndex,
+        ),
+      )),
   );
 
   return resultObject;
@@ -90,8 +90,8 @@ export const getCardsGroupedBy = (cards, property) => {
   propertyList.map(
     (propertyIndex) =>
       (resultObject[propertyIndex] = cards.filter(
-        (card) => getCardProperty(card, property) === propertyIndex
-      ))
+        (card) => getCardProperty(card, property) === propertyIndex,
+      )),
   );
 
   return resultObject;
@@ -149,7 +149,7 @@ export const getClan = (crypt) => {
         return { ...acc, t: t };
       }
     },
-    { clan: null, q: 0, t: 0 }
+    { clan: null, q: 0, t: 0 },
   );
 
   if (topClan.q / topClan.t > 0.5) {
@@ -182,7 +182,7 @@ export const getSect = (crypt) => {
         return { ...acc, t: t };
       }
     },
-    { sect: null, q: 0, t: 0 }
+    { sect: null, q: 0, t: 0 },
   );
 
   if (topSect.q / topSect.t > 0.65) {
