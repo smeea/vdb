@@ -4,6 +4,7 @@
 - Fix Card Version in About after V5C release
 
 # FEATURES
+- Include missing in Crypt/Library search In Inventory
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries (need tailwild support max-)

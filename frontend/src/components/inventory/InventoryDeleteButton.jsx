@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TrashFill from '@/assets/images/icons/trash-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
-import { useApp, setInventoryCrypt, setInventoryLibrary } from '@/context';
+import { useApp, inventoryStore } from '@/context';
 
 const InventoryDelete = () => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
@@ -24,8 +24,8 @@ const InventoryDelete = () => {
     };
 
     fetch(url, options).then(() => {
-      setInventoryCrypt({});
-      setInventoryLibrary({});
+      inventoryStore.crypt = {};
+      inventoryStore.library = {};
     });
   };
 

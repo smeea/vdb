@@ -8,12 +8,6 @@ import {
 } from '@/services/storageServices.js';
 import { cardServices } from '@/services';
 import { useDeck, useWindowSize } from '@/hooks';
-import {
-  setInventoryCrypt,
-  setInventoryLibrary,
-  setUsedCrypt,
-  setUsedLibrary,
-} from '@/context';
 import { byTimestamp } from '@/utils';
 import {
   setLimitedSets,
@@ -23,6 +17,8 @@ import {
   setLimitedBannedLibrary,
   limitedFullStore,
   deckStore,
+  usedStore,
+  inventoryStore,
   deckLocalize,
 } from '@/context';
 
@@ -182,7 +178,6 @@ export const AppProvider = (props) => {
   };
 
   const initializeUserData = (data) => {
-    const inventory = parseInventoryData(data.inventory);
     setUsername(data.username);
     setPublicName(data.public_name);
     setEmail(data.email);
@@ -190,8 +185,9 @@ export const AppProvider = (props) => {
     setIsPlaytester(data.playtester);
     setIsPlaytestAdmin(data.playtest_admin);
     if (!data.playtester && !data.playtest_admin) setPlaytestMode(false);
-    setInventoryCrypt(inventory.crypt);
-    setInventoryLibrary(inventory.library);
+    const { crypt, library } = parseInventoryData(data.inventory);
+    inventoryStore.crypt = crypt;
+    inventoryStore.library = library;
     deckStore.decks = parseDecksData(data.decks);
   };
 
@@ -202,10 +198,10 @@ export const AppProvider = (props) => {
     setIsPlaytester(false);
     setIsPlaytestAdmin(false);
     setPlaytestMode(false);
-    setInventoryCrypt({});
-    setInventoryLibrary({});
     setUsername(null);
     setEmail(undefined);
+    inventoryStore.crypt = {};
+    inventoryStore.library = {};
     if (decks?.[deck?.deckid]) {
       deckStore.deck = undefined;
     }
@@ -420,38 +416,38 @@ export const AppProvider = (props) => {
 
   // DECKS
   const parseDecksData = (decksData) => {
-    if (cryptCardBase && libraryCardBase) {
-      Object.keys(decksData).map((deckid) => {
-        const cardsData = useDeck(
-          decksData[deckid].cards,
-          cryptCardBase,
-          libraryCardBase
-        );
-        decksData[deckid] = { ...decksData[deckid], ...cardsData };
-        if (decksData[deckid].usedInInventory) {
-          Object.keys(decksData[deckid].usedInInventory).map((cardid) => {
-            if (cardid > 200000) {
-              if (decksData[deckid].crypt[cardid]) {
-                decksData[deckid].crypt[cardid].i =
-                  decksData[deckid].usedInInventory[cardid];
-              }
-            } else {
-              if (decksData[deckid].library[cardid]) {
-                decksData[deckid].library[cardid].i =
-                  decksData[deckid].usedInInventory[cardid];
-              }
+    Object.keys(decksData).map((deckid) => {
+      const cardsData = useDeck(
+        decksData[deckid].cards,
+        cryptCardBase,
+        libraryCardBase
+      );
+
+      decksData[deckid] = { ...decksData[deckid], ...cardsData };
+      if (decksData[deckid].usedInInventory) {
+        Object.keys(decksData[deckid].usedInInventory).map((cardid) => {
+          if (cardid > 200000) {
+            if (decksData[deckid].crypt[cardid]) {
+              decksData[deckid].crypt[cardid].i =
+                decksData[deckid].usedInInventory[cardid];
             }
-          });
-        }
-        decksData[deckid].isAuthor = true;
-        decksData[deckid].master =
-          decksData[deckid].master !== '' ? decksData[deckid].master : null;
-        decksData[deckid].isBranches = !!(
-          decksData[deckid].master || decksData[deckid].branches?.length > 0
-        );
-        delete decksData[deckid].cards;
-      });
-    }
+          } else {
+            if (decksData[deckid].library[cardid]) {
+              decksData[deckid].library[cardid].i =
+                decksData[deckid].usedInInventory[cardid];
+            }
+          }
+        });
+      }
+      decksData[deckid].isAuthor = true;
+      decksData[deckid].master =
+        decksData[deckid].master !== '' ? decksData[deckid].master : null;
+      decksData[deckid].isBranches = !!(
+        decksData[deckid].master || decksData[deckid].branches?.length > 0
+      );
+      delete decksData[deckid].cards;
+    });
+
     return decksData;
   };
 
@@ -468,10 +464,18 @@ export const AppProvider = (props) => {
 
   const parseInventoryData = (inventoryData) => {
     Object.keys(inventoryData.crypt).map((i) => {
-      inventoryData.crypt[i].c = cryptCardBase[i];
+      if (cryptCardBase[i]) {
+        inventoryData.crypt[i].c = cryptCardBase[i];
+      } else {
+        delete inventoryData.crypt[i];
+      }
     });
     Object.keys(inventoryData.library).map((i) => {
-      inventoryData.library[i].c = libraryCardBase[i];
+      if (libraryCardBase[i]) {
+        inventoryData.library[i].c = libraryCardBase[i];
+      } else {
+        delete inventoryData.library[i];
+      }
     });
 
     return { crypt: inventoryData.crypt, library: inventoryData.library };
@@ -511,14 +515,14 @@ export const AppProvider = (props) => {
       }
     });
 
-    setUsedCrypt({
+    usedStore.crypt = {
       soft: softCrypt,
       hard: hardCrypt,
-    });
-    setUsedLibrary({
+    };
+    usedStore.library = {
       soft: softLibrary,
       hard: hardLibrary,
-    });
+    };
   };
 
   return (
