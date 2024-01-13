@@ -2,6 +2,7 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Fix Card Version in About after V5C release
+- Add new playtest NB
 
 # FEATURES
 - Include missing in Crypt/Library search In Inventory

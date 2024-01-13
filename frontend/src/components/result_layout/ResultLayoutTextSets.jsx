@@ -12,7 +12,7 @@ const PreconsDetailed = ({ sets, set }) => {
       V: 'Vampire',
     };
 
-    if (setsAndPrecons[set].precons && setsAndPrecons[set].precons[i]) {
+    if (setsAndPrecons[set].precons?.[i]) {
       return (
         <li key={idx}>
           {setsAndPrecons[set].precons[i].name} - {sets[set][i]}x

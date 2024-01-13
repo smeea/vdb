@@ -162,6 +162,13 @@ bundles = {
 
 playtest_bundles = {
     "PLAYTEST": {
+        "30th": {},
+        "30thE": {},
+        "NR": {},
+        "NSal": {},
+        "NTz": {},
+        "NH": {},
+        "NL": {},
         "PH": {},
         "PL": {},
         "TBh": {},

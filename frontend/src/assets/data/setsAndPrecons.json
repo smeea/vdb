@@ -19,6 +19,34 @@
         "name": "Lasombra",
         "clan": "Lasombra"
       },
+      "30th": {
+        "name": "30th Anniversary: Deck",
+        "clan": "Toreador"
+      },
+      "30thE": {
+        "name": "30th Anniversary: Extra",
+        "clan": "Bundle"
+      },
+      "NR": {
+        "name": "New Blood: Ravnos",
+        "clan": "Ravnos"
+      },
+      "NSal": {
+        "name": "New Blood: Salubri",
+        "clan": "Salubri"
+      },
+      "NTz": {
+        "name": "New Blood: Tzimisce",
+        "clan": "Tzimisce"
+      },
+      "NH": {
+        "name": "New Blood: Hecata",
+        "clan": "Hecata"
+      },
+      "NL": {
+        "name": "New Blood: Lasombra",
+        "clan": "Lasombra"
+      },
       "TBh": {
         "name": "ToD - Banu Haqim",
         "clan": "Banu Haqim"

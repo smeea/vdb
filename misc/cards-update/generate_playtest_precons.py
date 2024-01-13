@@ -3,6 +3,13 @@ from deck_import import deck_import
 
 
 playtest_files = {
+    "precon-30th-round1.txt": "30th",
+    "precon-30th-extra-round1.txt": "30thE",
+    "precon-nb-ravnos-round1.txt": "NR",
+    "precon-nb-salubri-round1.txt": "NSal",
+    "precon-nb-tzimisce-round1.txt": "NTz",
+    "precon-nb-hecata-round1.txt": "NH",
+    "precon-nb-lasombra-round1.txt": "NL",
     "precon-hecata-round2.txt": "PH",
     "precon-lasombra-round2.txt": "PL",
     "tod-banuhaqim.txt": "TBh",
@@ -31,7 +38,7 @@ for file, precon in playtest_files.items():
                     playtest_cards[cardid] = {precon: q}
 
     except Exception:
-        pass
+        print(f"{file} NOT FOUND")
 
 try:
     with open("cardbase_crypt.json", "r+", encoding="utf8") as crypt_file, open(
