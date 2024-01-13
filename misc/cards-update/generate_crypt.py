@@ -191,12 +191,13 @@ def generate_card(card):
                 card["Sect"] = text[0]
 
         # ASCII-fication of name
-        if card["Id"] == 201528:
-            card["ASCII Name"] = "Boleslaw Gutowski"
-        elif card["Id"] == 210025:
-            card["ASCII Name"] = "Clara Hjortshoj"
-        else:
-            card["ASCII Name"] = letters_to_ascii(card["Name"])
+        match card["Id"]:
+            case 201528:
+                card["ASCII Name"] = "Boleslaw Gutowski"
+            case 201669:
+                card["ASCII Name"] = "Clara Hjortshoj"
+            case _:
+                card["ASCII Name"] = letters_to_ascii(card["Name"])
 
         # Remove useless fields
         for k in useless_fields:
