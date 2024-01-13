@@ -33,47 +33,45 @@ const Text = ({ text }) => {
     isMobile,
   } = useApp();
 
-  const textWithIcons = reactStringReplace(
-    text,
-    /\[(\w+?)\]/g,
+  let textWithIcons = reactStringReplace(text, /\[(\w+?)\]/g, (match, idx) => {
+    return (
+      <div key={`${match}-${idx}`} className="inline pr-0.5">
+        <ResultMiscImage value={match} />
+      </div>
+    );
+  });
+
+  textWithIcons = reactStringReplace(
+    textWithIcons,
+    /{(.*?)}/g,
     (match, idx) => {
-      return (
-        <div key={`icon-${idx}`} className="inline pr-0.5">
-          <ResultMiscImage value={match} />
-        </div>
+      const cardBase = { ...nativeCrypt, ...nativeLibrary };
+      const cardid = Object.keys(cardBase).find(
+        (j) => cardBase[j]['Name'] == match
       );
-    },
-  );
 
-  return (
-    <>
-      {reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
-        const cardBase = { ...nativeCrypt, ...nativeLibrary };
-        const cardid = Object.keys(cardBase).find(
-          (j) => cardBase[j]['Name'] == match,
+      const card =
+        cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+
+      if (card) {
+        return (
+          <span key={`${match}-${idx}`}>
+            <ConditionalTooltip
+              overlay={<CardPopover card={card} />}
+              disabled={isMobile}
+              noPadding
+            >
+              <ResultName card={card} />
+            </ConditionalTooltip>
+          </span>
         );
-
-        const card =
-          cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-
-        if (card) {
-          return (
-            <span key={idx}>
-              <ConditionalTooltip
-                overlay={<CardPopover card={card} />}
-                disabled={isMobile}
-                noPadding
-              >
-                <ResultName card={card} />
-              </ConditionalTooltip>
-            </span>
-          );
-        } else {
-          return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
-        }
-      })}
-    </>
+      } else {
+        return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
+      }
+    }
   );
+
+  return <>{textWithIcons}</>;
 };
 
 const ResultLayoutTextRulings = ({ rulings }) => {
@@ -85,7 +83,7 @@ const ResultLayoutTextRulings = ({ rulings }) => {
         return (
           <li key={idx}>
             {text.map((i, idxText) => {
-              return <Text key={idxText} text={i} />;
+              return <Text key={`x${idxText}`} text={i} />;
             })}
             <div
               className={
