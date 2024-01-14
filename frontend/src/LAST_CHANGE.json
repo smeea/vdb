@@ -1,9 +1,7 @@
 {
-  "version": "2024-01-07",
+  "version": "2024-01-13",
   "changes": [
-    "Add new V5 (Companion) precons - Ravnos, Salubri, Tzimisce",
-    "Add indicator of not-yet-tournament-legal cards (less than 30 days from release date)",
-    "Fix deck/inventory missing",
+    "Update playtest to Round 1 New Blood",
     "Small other fixes"
   ]
 }
