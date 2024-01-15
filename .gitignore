@@ -9,9 +9,6 @@ frontend/dist/
 frontend/public/data/cardbase_crypt_playtest.json
 frontend/public/data/cardbase_lib_playtest.json
 frontend/public/images/cards/playtest/
-misc/cards-update/vtescrypt_playtest.csv
-misc/cards-update/vtescrypt_tod.csv
-misc/cards-update/vteslib_playtest.csv
+misc/cards-update/playtest/
 misc/cards-update/cardbase_crypt_playtest.json
 misc/cards-update/cardbase_lib_playtest.json
-misc/cards-update/playtest_precons/

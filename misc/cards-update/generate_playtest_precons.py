@@ -27,7 +27,7 @@ playtest_cards = {}
 
 for file, precon in playtest_files.items():
     try:
-        with open(f"playtest_precons/{file}", "r", encoding="utf8") as deck_file:
+        with open(f"playtest/precons/{file}", "r", encoding="utf8") as deck_file:
             precon_deck = " ".join(str(x) for x in deck_file.readlines())
             precon_cards = deck_import(precon_deck)["cards"]
             for cardid, q in precon_cards.items():

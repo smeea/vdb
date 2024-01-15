@@ -349,7 +349,7 @@ with open("vteslib.csv", "r", encoding="utf-8-sig") as cardbase_csv_main, open(
     generate_artists(csv_cards, artists_file, artists_file_min)
 
 try:
-    with open("vteslib_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv_playtest, open(
+    with open("playtest/vteslib_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv_playtest, open(
         "cardbase_lib_playtest.json", "w", encoding="utf8"
     ) as cardbase_file, open(
         "cardbase_lib_playtest.min.json", "w", encoding="utf8"
