@@ -20,7 +20,7 @@ import {
 import { useDeckImport, useTags } from '@/hooks';
 
 const TournamentAnalyze = () => {
-  const { cryptCardBase, libraryCardBase } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const decks = useSnapshot(analyzeStore).all;
   const results = useSnapshot(analyzeStore).results;
   const info = useSnapshot(analyzeStore).info;
@@ -215,8 +215,8 @@ const TournamentAnalyze = () => {
         </div>
       </Header>
       <FlexGapped className="flex-col">
-        <FlexGapped>
-          <div className="flex basis-9/12">
+        <FlexGapped className="max-sm:flex-col">
+          <div className="flex basis-9/12 max-sm:order-last">
             <div className="w-full">
               {error && (
                 <ErrorMessage>
@@ -253,9 +253,11 @@ const TournamentAnalyze = () => {
                 decks={results ?? Object.values(decks)}
               />
             </div>
-            <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
-              <AnalyzeSearchForm />
-            </div>
+            {!(isMobile && decks && info) && (
+              <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
+                <AnalyzeSearchForm />
+              </div>
+            )}
           </FlexGapped>
         )}
       </FlexGapped>

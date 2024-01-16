@@ -1,12 +1,14 @@
 import React, { useMemo } from 'react';
 import { BubbleChart } from '@/components';
 import { getClan } from '@/utils';
+import { useApp } from '@/context';
 
 const AnalyzeTournamentChartsRankingStyle = ({
   info,
   decks,
   searchResults,
 }) => {
+  const { isMobile } = useApp();
   const allowedTags = [
     'bleed',
     'stealth',
@@ -31,7 +33,7 @@ const AnalyzeTournamentChartsRankingStyle = ({
     Object.values(decks).map((deck) => {
       const position = info.players - deck.score.rank;
       const inSearch = Object.values(searchResults).some(
-        (d) => d.author === deck.author,
+        (d) => d.author === deck.author
       );
       const def = {
         clan: getClan(deck.crypt) || 'Multi',
@@ -64,7 +66,7 @@ const AnalyzeTournamentChartsRankingStyle = ({
   }, [searchResults, decks, info]);
 
   return (
-    <div className="flex basis-full flex-col py-4">
+    <div className="flex basis-full flex-col sm:py-4">
       {Object.keys(data).map((s) => {
         return (
           <BubbleChart
@@ -73,7 +75,7 @@ const AnalyzeTournamentChartsRankingStyle = ({
             name={s[0].toUpperCase() + s.slice(1)}
             refLine={info.medianReportedRank}
             titleWidth={80}
-            width={600}
+            width={isMobile ? 370 : 600}
           />
         );
       })}

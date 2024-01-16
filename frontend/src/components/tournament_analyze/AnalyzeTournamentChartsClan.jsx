@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
 import { PieChart, Pie, Tooltip } from 'recharts';
 import { getClan } from '@/utils';
+import { useApp } from '@/context';
 
 const AnalyzeTournamentChartsClan = ({ decks }) => {
+  const { isMobile } = useApp();
   const data = useMemo(() => {
     const result = {};
 
@@ -18,7 +20,10 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
     return Object.keys(result)
       .map((c) => {
         return {
-          name: c,
+          name:
+            isMobile && c.includes('antitribu')
+              ? '!' + c.replace(' antitribu', '')
+              : c,
           value: result[c],
         };
       })
@@ -27,14 +32,14 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
   }, [decks]);
 
   return (
-    <PieChart width={620} height={365}>
+    <PieChart width={isMobile ? 400 : 620} height={isMobile ? 250 : 365}>
       <Pie
         isAnimationActive={false}
         data={data}
         dataKey="value"
         cx="50%"
         cy="50%"
-        outerRadius={150}
+        outerRadius={isMobile ? 90 : 150}
         fill="#8884d8"
         label={({ index }) => data[index].name}
       />

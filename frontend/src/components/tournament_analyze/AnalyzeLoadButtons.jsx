@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import Upload from '@/assets/images/icons/upload.svg?react';
-import { ButtonIconed, ButtonClose } from '@/components';
+import { ButtonIconed, ButtonClose, ButtonFloatClose } from '@/components';
 import {
   setAnalyzeDecks,
   setAnalyzeInfo,
@@ -21,7 +21,7 @@ const AnalyzeLoadButtons = ({
   setError,
   getDeck,
 }) => {
-  const { username } = useApp();
+  const { isMobile, username } = useApp();
   const info = useSnapshot(analyzeStore).info;
   const navigate = useNavigate();
   const fileInputDecks = useRef();
@@ -132,11 +132,15 @@ const AnalyzeLoadButtons = ({
             )}
           </>
         )}
-        <ButtonClose
-          handleClick={handleClear}
-          title="Clear Data"
-          text="Clear"
-        />
+        {isMobile ? (
+          <ButtonFloatClose handleClose={handleClear} />
+        ) : (
+          <ButtonClose
+            handleClick={handleClear}
+            title="Clear Data"
+            text="Clear"
+          />
+        )}
         <input
           multiple
           ref={fileInputDecks}

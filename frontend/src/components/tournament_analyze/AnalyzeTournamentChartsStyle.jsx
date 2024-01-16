@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
+import { useApp } from '@/context';
 
 const AnalyzeTournamentChartsStyle = ({ decks }) => {
+  const { isMobile } = useApp();
   const data = useMemo(() => {
     const qty = Object.keys(decks).length;
     const result = {};
@@ -61,11 +63,11 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
 
   return (
     <RadarChart
-      width={450}
-      height={365}
+      width={isMobile ? 300 : 450}
+      height={isMobile ? 230 : 365}
       cx="50%"
       cy="50%"
-      outerRadius={150}
+      outerRadius={isMobile ? 90 : 150}
       data={data}
     >
       <PolarGrid />

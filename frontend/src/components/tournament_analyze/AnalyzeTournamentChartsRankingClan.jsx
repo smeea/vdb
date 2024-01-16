@@ -1,15 +1,17 @@
 import React, { useMemo } from 'react';
 import { BubbleChart } from '@/components';
 import { getClan } from '@/utils';
+import { useApp } from '@/context';
 
 const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
+  const { isMobile } = useApp();
   const data = useMemo(() => {
     const d = {};
 
     Object.values(decks).map((deck) => {
       const position = info.players - deck.score.rank;
       const inSearch = Object.values(searchResults).some(
-        (d) => d.author === deck.author,
+        (d) => d.author === deck.author
       );
       const clan = getClan(deck.crypt) || 'Multi';
 
@@ -36,18 +38,23 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   }, [searchResults, decks, info]);
 
   return (
-    <div className="flex basis-full flex-col py-4">
+    <div className="flex basis-full flex-col sm:py-4">
       {Object.keys(data)
         .sort((a, b) => a.localeCompare(b))
         .map((s) => {
+          const clan =
+            isMobile && s.includes('antitribu')
+              ? '!' + s.replace(' antitribu', '')
+              : s;
+
           return (
             <BubbleChart
               key={s}
               data={data[s]}
-              name={s[0].toUpperCase() + s.slice(1)}
+              name={clan}
               refLine={info.medianReportedRank}
-              titleWidth={160}
-              width={600}
+              titleWidth={isMobile ? 105 : 160}
+              width={isMobile ? 370 : 600}
             />
           );
         })}
