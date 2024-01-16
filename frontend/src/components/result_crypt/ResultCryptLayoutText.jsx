@@ -74,7 +74,7 @@ const ResultCryptLayoutText = ({
                 : 'flex justify-center'
             }
           >
-            <ButtonCloseModal handleClose={handleClose} />
+            <ButtonCloseModal handleClick={handleClose} />
           </div>
         </div>
       </div>

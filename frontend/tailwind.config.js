@@ -32,7 +32,6 @@ module.exports = {
       lg: '10rem',
     },
     colors: {
-      transparent: 'transparent',
       black: '#000000',
       blue: '#0000aa',
       darkGray: '#606070',
@@ -81,14 +80,15 @@ module.exports = {
       borderSecondaryDark: '#404050',
       borderThird: '#b5c5ff',
       borderThirdDark: '#303040',
-      fgName: '#3060c0',
+      fgName: '#1515b0',
       fgNameDark: '#d59000',
-      fgPrimary: '#202040',
+      fgPrimary: '#000000',
       fgPrimaryDark: '#eeeeee',
-      fgSecondary: '#4040c0',
+      fgSecondary: '#1515b0',
       fgSecondaryDark: '#80b0ff',
-      fgThird: '#6060c0',
-      fgThirdDark: '#c0c0e0',
+      fgThird: '#1515b0',
+      fgThirdDark: '#eeeeee',
+      fgFourth: '#3535c0',
     },
     extend: {
       flexBasis: {

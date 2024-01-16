@@ -7,7 +7,7 @@
 - Include missing in Crypt/Library search In Inventory
 
 # TECH IMPROVEMENTS
-- Migration from isWide, etc to container queries (need tailwild support max-)
+- Migration from isWide, etc to container queries
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
 - Back button behavior

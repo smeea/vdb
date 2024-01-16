@@ -50,7 +50,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
                 : 'flex justify-center'
             }
           >
-            <ButtonCloseModal handleClose={handleClose} />
+            <ButtonCloseModal handleClick={handleClose} />
           </div>
         </div>
       </div>

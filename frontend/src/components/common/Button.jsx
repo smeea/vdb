@@ -20,7 +20,7 @@ const Button = ({
   const outlineStyle =
     'focus:outline outline-1 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
 
-  const paddingStyle = 'px-3 py-1.5';
+  const paddingStyle = noPadding ? '' : 'px-3 py-1.5';
 
   const customStyle = {
     primary:
@@ -44,9 +44,7 @@ const Button = ({
         noOutline ? '' : outlineStyle
       } ${borderStyle} ${
         customStyle[variant]
-      } flex items-center justify-center font-normal ${
-        noPadding ? '' : paddingStyle
-      } ${className}`}
+      } flex items-center justify-center font-normal ${paddingStyle} ${className}`}
       onClick={onClick}
       title={title}
       disabled={disabled}
