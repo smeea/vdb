@@ -70,7 +70,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
           <Hr />
         </>
       )}
-      {isLegal && (
+      {isLegal && isLegal !== 'PLAYTEST' && (
         <div
           className="text-fgRed dark:text-fgRedDark"
           title={`Not Tournament Legal until ${isLegal}`}

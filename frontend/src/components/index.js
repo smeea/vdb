@@ -219,6 +219,7 @@ export { default as Warning } from './misc/Warning.jsx';
 
 export { default as ResultClanImage } from './result_common/ResultClanImage.jsx';
 export { default as ResultDisciplineImage } from './result_common/ResultDisciplineImage.jsx';
+export { default as ResultLegalIcon } from './result_common/ResultLegalIcon.jsx';
 export { default as ResultMiscImage } from './result_common/ResultMiscImage.jsx';
 export { default as ResultModal } from './result_common/ResultModal.jsx';
 export { default as ResultName } from './result_common/ResultName.jsx';

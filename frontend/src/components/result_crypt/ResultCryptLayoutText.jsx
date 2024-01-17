@@ -88,7 +88,7 @@ const ResultCryptLayoutText = ({
         <ResultCryptCapacity card={card} />
       </div>
       <Hr />
-      {isLegal && (
+      {isLegal && isLegal !== 'PLAYTEST' && (
         <div
           className="text-fgRed dark:text-fgRedDark"
           title={`Not Tournament Legal until ${isLegal}`}
