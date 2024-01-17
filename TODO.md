@@ -2,9 +2,7 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Fix Card Version in About after V5C release
-- Borders in selector corners
-- Playtest modifier
-- Update images
+- Show playtest icon
 - Remove ToD cards
 
 # FEATURES
