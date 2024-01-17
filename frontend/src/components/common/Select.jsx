@@ -22,7 +22,7 @@ const Select = React.forwardRef(
       borderStyle = 'border',
       roundedStyle = 'rounded',
     },
-    ref,
+    ref
   ) => {
     return (
       <ReactSelect
@@ -47,8 +47,8 @@ const Select = React.forwardRef(
               noBorder
                 ? ''
                 : state.isFocused
-                  ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
-                  : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
+                ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
+                : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
             }`,
           dropdownIndicator: () =>
             noDropdown
@@ -60,14 +60,14 @@ const Select = React.forwardRef(
             'bg-borderSecondary dark:bg-borderSecondaryDark',
           menu: () =>
             'my-2 rounded border border-borderThird dark:border-borderThirdDark',
-          menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
+          menuList: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2 text-fgPrimary dark:text-fgPrimaryDark
           ${
             state.isFocused
               ? 'bg-borderPrimary dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-                ? 'bg-borderSecondary dark:bg-borderPrimaryDark'
-                : ''
+              ? 'bg-borderSecondary dark:bg-borderPrimaryDark'
+              : ''
           }
 `,
           placeholder: () => 'text-midGray dark:text-midGrayDark',
@@ -78,7 +78,7 @@ const Select = React.forwardRef(
         }}
       />
     );
-  },
+  }
 );
 Select.displayName = 'Select';
 

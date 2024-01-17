@@ -20,7 +20,7 @@ const SelectCreatable = React.forwardRef(
       borderStyle = 'border',
       roundedStyle = 'rounded',
     },
-    ref,
+    ref
   ) => {
     return (
       <ReactSelectCreatable
@@ -42,22 +42,22 @@ const SelectCreatable = React.forwardRef(
               noBorder
                 ? ''
                 : state.isFocused
-                  ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
-                  : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
+                ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
+                : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
             }
           `,
           dropdownIndicator: () => 'max-w-[0px] max-h-[0px]',
           indicatorsContainer: () => 'rounded max-h-[0px] max-w-[0px]',
           menu: () =>
             'my-2 rounded border border-borderThird dark:border-borderThirdDark',
-          menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
+          menuList: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2
           ${
             state.isFocused
               ? 'bg-borderPrimary dark:bg-bgCheckboxSelectedDark'
               : state.isSelected
-                ? 'bg-borderSecondary dark:bg-borderPrimaryDark'
-                : ''
+              ? 'bg-borderSecondary dark:bg-borderPrimaryDark'
+              : ''
           }
 `,
           valueContainer: () =>
@@ -85,7 +85,7 @@ const SelectCreatable = React.forwardRef(
         }}
       />
     );
-  },
+  }
 );
 SelectCreatable.displayName = 'SelectCreatable';
 

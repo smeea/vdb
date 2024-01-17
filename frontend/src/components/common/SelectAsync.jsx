@@ -54,7 +54,7 @@ const SelectAsync = React.forwardRef(
             'bg-borderSecondary dark:bg-borderSecondaryDark',
           menu: () =>
             'my-2 rounded border border-borderThird dark:border-borderThirdDark',
-          menuList: () => 'bg-bgPrimary dark:bg-bgPrimaryDark',
+          menuList: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2 text-fgPrimary dark:text-fgPrimaryDark
           ${
             state.isFocused
