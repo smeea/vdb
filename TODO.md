@@ -3,7 +3,6 @@
 - Mobile support for Tournament Analyze
 - Fix Card Version in About after V5C release
 - Show playtest icon
-- Remove ToD cards
 
 # FEATURES
 - Include missing in Crypt/Library search In Inventory

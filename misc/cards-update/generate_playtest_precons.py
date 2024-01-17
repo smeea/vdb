@@ -12,15 +12,6 @@ playtest_files = {
     "precon-nb-lasombra-round1.txt": "NL",
     "precon-hecata-round2.txt": "PH",
     "precon-lasombra-round2.txt": "PL",
-    "tod-banuhaqim.txt": "TBh",
-    "tod-brujah.txt": "TBr",
-    "tod-gangrel.txt": "TG",
-    "tod-malkavian.txt": "TMa",
-    "tod-ministry.txt": "TMi",
-    "tod-nosferatu.txt": "TN",
-    "tod-toreador.txt": "TTo",
-    "tod-tremere.txt": "TTr",
-    "tod-ventrue.txt": "TV",
 }
 
 playtest_cards = {}
