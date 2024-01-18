@@ -87,7 +87,7 @@ module.exports = {
       fgSecondary: '#2020a0',
       fgSecondaryDark: '#80b0ff',
       fgThird: '#2020a0',
-      fgThirdDark: '#eeeeee',
+      fgThirdDark: '#d0d0ee',
       fgFourth: '#4040a0',
     },
     extend: {

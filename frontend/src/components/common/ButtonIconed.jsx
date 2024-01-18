@@ -23,7 +23,7 @@ const ButtonIconed = ({
       borderStyle={borderStyle}
     >
       <div className="flex items-center justify-center gap-2">
-        <div className="flex text-fgFourth dark:text-fgPrimaryDark items-center">
+        <div className="flex text-fgFourth dark:text-fgThirdDark items-center">
           {icon}
         </div>
         {text && <div className="font-normal">{text}</div>}
