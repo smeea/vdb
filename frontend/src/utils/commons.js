@@ -45,14 +45,12 @@ export const isTrifle = (card) => {
 };
 
 export const getLegality = (card) => {
-  if (Object.keys(card.Set).length !== 1) return false;
-
-  const onlySet = Object.keys(card.Set)[0];
-  if (['POD', 'Promo'].includes(onlySet)) return false;
-  if (onlySet === 'PLAYTEST') return 'PLAYTEST';
+  const sets = Object.keys(card.Set).filter((s) => s !== 'PLAYTEST');
+  if (sets.length > 1 || ['POD', 'Promo'].includes(sets[0])) return false;
+  if (sets.length == 0) return 'PLAYTEST';
 
   const MS_TO_DAYS = 1000 * 60 * 60 * 24;
-  const setDate = new Date(setsAndPrecons[onlySet].date);
+  const setDate = new Date(setsAndPrecons[sets[0]].date);
   const now = new Date();
   if ((now - setDate) / MS_TO_DAYS > 30) return false;
   setDate.setDate(setDate.getDate() + 30);
