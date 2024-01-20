@@ -18,7 +18,7 @@ export default defineConfig({
         description:
           'Card search and deck building app for Vampire the Eternal Struggle (VTES).',
         lang: 'en-US',
-        start_url: '/crypt',
+        start_url: '/decks',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#404060',
