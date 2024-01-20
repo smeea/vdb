@@ -17,7 +17,7 @@ const Banner = () => {
           width="48"
           height="48"
         />
-        <div className="inline pl-2 text-[30px] font-bold text-fgThird dark:text-fgSecondaryDark">
+        <div className="inline pl-2 text-[30px] font-bold text-bgCheckboxSelectedDark dark:text-fgSecondaryDark">
           VDB
         </div>
       </div>

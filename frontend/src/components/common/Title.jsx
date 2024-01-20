@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Title = ({ center, children }) => {
+const Title = ({ center, id, children }) => {
   return (
     <div
-      className={`flex text-xl font-bold text-fgSecondary underline dark:text-fgSecondaryDark ${
+      id={id}
+      className={`flex text-xl font-bold text-fgFourth underline dark:text-fgSecondaryDark ${
         center ? 'justify-center' : ''
       }`}
     >

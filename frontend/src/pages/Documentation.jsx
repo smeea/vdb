@@ -5,18 +5,7 @@ import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import SearchHeartFill from '@/assets/images/icons/search-heart-fill.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import ImageAlt from '@/assets/images/icons/image-alt.svg?react';
-import { Banner } from '@/components';
-
-const Title = ({ children, id }) => {
-  return (
-    <div
-      id={id}
-      className="text-lg font-bold text-fgSecondary underline dark:text-fgSecondaryDark"
-    >
-      {children}
-    </div>
-  );
-};
+import { Title, Banner } from '@/components';
 
 const SubTitle = ({ children }) => {
   return (
