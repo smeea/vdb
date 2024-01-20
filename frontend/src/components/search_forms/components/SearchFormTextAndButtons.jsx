@@ -21,8 +21,8 @@ const SearchFormTextAndButtons = ({
   onChangeOptions,
   handleShowResults,
   handleClear,
-  hideMissing,
-  setHideMissing,
+  searchInventoryMode,
+  setSearchInventoryMode,
 }) => {
   const { inventoryMode, isMobile } = useApp();
   const [text, setText] = useState('');
@@ -132,10 +132,10 @@ const SearchFormTextAndButtons = ({
       {inventoryMode && (
         <Checkbox
           name={0}
-          value="hideMissing"
+          value="searchInventoryMode"
           label="Search In Inventory"
-          checked={!!hideMissing}
-          onChange={() => setHideMissing(!hideMissing)}
+          checked={!!searchInventoryMode}
+          onChange={() => setSearchInventoryMode(!searchInventoryMode)}
         />
       )}
     </div>

@@ -33,8 +33,8 @@ import {
 const CryptSearchForm = () => {
   const {
     cryptCardBase,
-    hideMissing,
-    setHideMissing,
+    searchInventoryMode,
+    setSearchInventoryMode,
     setShowCryptSearch,
     showFloatingButtons,
     inventoryMode,
@@ -154,7 +154,7 @@ const CryptSearchForm = () => {
     );
 
     if (!isMobile) {
-      if (hideMissing && inventoryMode) {
+      if (searchInventoryMode && inventoryMode) {
         setPreresults(
           filteredCards.filter((card) => {
             return (
@@ -168,7 +168,7 @@ const CryptSearchForm = () => {
         setPreresults(filteredCards);
       }
     } else {
-      if (hideMissing && inventoryMode) {
+      if (searchInventoryMode && inventoryMode) {
         setPreresults(
           filteredCards.filter((card) => {
             return (
@@ -227,7 +227,7 @@ const CryptSearchForm = () => {
       cryptFormState.titles,
       cryptFormState.traits,
       cryptFormState.votes,
-      hideMissing,
+      searchInventoryMode,
       inventoryMode,
       limitedMode,
       playtestMode,
@@ -238,7 +238,7 @@ const CryptSearchForm = () => {
   useDebounce(() => testInputsAndSearch(), 400, [
     cryptFormState.disciplines,
     cryptFormState.text,
-    hideMissing,
+    searchInventoryMode,
     inventoryMode,
     limitedMode,
     playtestMode,
@@ -266,8 +266,8 @@ const CryptSearchForm = () => {
         handleClear={handleClear}
         preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
-        hideMissing={hideMissing}
-        setHideMissing={setHideMissing}
+        searchInventoryMode={searchInventoryMode}
+        setSearchInventoryMode={setSearchInventoryMode}
       />
       <CryptSearchFormDisciplines
         value={cryptFormState.disciplines}

@@ -33,8 +33,8 @@ import {
 const LibrarySearchForm = () => {
   const {
     libraryCardBase,
-    hideMissing,
-    setHideMissing,
+    searchInventoryMode,
+    setSearchInventoryMode,
     setShowLibrarySearch,
     showFloatingButtons,
     inventoryMode,
@@ -147,7 +147,7 @@ const LibrarySearchForm = () => {
     );
 
     if (!isMobile) {
-      if (hideMissing && inventoryMode) {
+      if (searchInventoryMode && inventoryMode) {
         setLibraryResults(
           filteredCards.filter((card) => {
             return (
@@ -161,7 +161,7 @@ const LibrarySearchForm = () => {
         setPreresults(filteredCards);
       }
     } else {
-      if (hideMissing && inventoryMode) {
+      if (searchInventoryMode && inventoryMode) {
         setLibraryResults(
           filteredCards.filter((card) => {
             return (
@@ -222,7 +222,7 @@ const LibrarySearchForm = () => {
       libraryFormState.title,
       libraryFormState.traits,
       libraryFormState.type,
-      hideMissing,
+      searchInventoryMode,
       inventoryMode,
       limitedMode,
       playtestMode,
@@ -232,7 +232,7 @@ const LibrarySearchForm = () => {
 
   useDebounce(() => testInputsAndSearch(), 400, [
     libraryFormState.text,
-    hideMissing,
+    searchInventoryMode,
     inventoryMode,
     limitedMode,
     playtestMode,
@@ -260,8 +260,8 @@ const LibrarySearchForm = () => {
         handleClear={handleClear}
         preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
-        hideMissing={hideMissing}
-        setHideMissing={setHideMissing}
+        searchInventoryMode={searchInventoryMode}
+        setSearchInventoryMode={setSearchInventoryMode}
       />
       <LibrarySearchFormType
         value={libraryFormState.type}
