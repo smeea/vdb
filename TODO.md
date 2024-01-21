@@ -2,8 +2,9 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Fix Card Version in About after V5C release
-- Fix alignment/wraping in ResultCryptName (and Library)
+- Fix alignment/wraping in ResultCryptName (and Library) - advanced, indicators
 - Fix alignment in DeckCrypHeader (and Library) with warnings
+- Show banned in card modal similar to legal notice
 
 # FEATURES
 
