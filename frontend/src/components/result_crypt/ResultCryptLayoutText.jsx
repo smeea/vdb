@@ -22,7 +22,7 @@ const ResultCryptLayoutText = ({
   inPopover,
 }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
-  const isLegal = getLegality(card);
+  const legalRestriction = getLegality(card);
 
   return (
     <div className="space-y-3">
@@ -88,12 +88,12 @@ const ResultCryptLayoutText = ({
         <ResultCryptCapacity card={card} />
       </div>
       <Hr />
-      {isLegal && isLegal !== 'PLAYTEST' && (
+      {legalRestriction && legalRestriction !== PLAYTEST && (
         <div
           className="text-fgRed dark:text-fgRedDark"
-          title={`Not Tournament Legal until ${isLegal}`}
+          title={`Not Tournament Legal until ${legalRestriction}`}
         >
-          Not Tournament Legal until {isLegal}
+          Not Tournament Legal until {legalRestriction}
         </div>
       )}
     </div>

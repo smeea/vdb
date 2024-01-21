@@ -1,4 +1,5 @@
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import { PLAYTEST } from '@/utils/constants';
 import { useDeck, useTags } from '@/hooks';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
@@ -22,10 +23,10 @@ export const getCardBase = async () => {
   };
 
   const crypt = await fetch(urlCrypt, options).then((response) =>
-    response.json(),
+    response.json()
   );
   const library = await fetch(urlLibrary, options).then((response) =>
-    response.json(),
+    response.json()
   );
 
   const cryptPlaytest = await fetch(urlCryptPlaytest, options).then(
@@ -35,7 +36,7 @@ export const getCardBase = async () => {
       } else {
         return {};
       }
-    },
+    }
   );
 
   const libraryPlaytest = await fetch(urlLibraryPlaytest, options).then(
@@ -45,7 +46,7 @@ export const getCardBase = async () => {
       } else {
         return {};
       }
-    },
+    }
   );
 
   const nativeCrypt = {};
@@ -79,10 +80,10 @@ export const getLocalizedCardBase = async (lang) => {
   };
 
   const crypt = await fetch(urlLocalizedCrypt(lang), options).then((response) =>
-    response.json(),
+    response.json()
   );
   const library = await fetch(urlLocalizedLibrary(lang), options).then(
-    (response) => response.json(),
+    (response) => response.json()
   );
 
   return {
@@ -99,7 +100,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
   };
 
   const preconDecksData = await fetch(urlPreconDecks, options).then(
-    (response) => response.json(),
+    (response) => response.json()
   );
 
   const preconDecks = {};
@@ -122,12 +123,12 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
       const cardsData = useDeck(
         preconDecksData[set][precon],
         cryptCardBase,
-        libraryCardBase,
+        libraryCardBase
       );
 
       let tags = [];
       if (
-        set !== 'PLAYTEST' ||
+        set !== PLAYTEST ||
         (cryptCardBase[210001] && libraryCardBase[110001])
       ) {
         Object.values(useTags(cardsData.crypt, cardsData.library)).map((v) => {

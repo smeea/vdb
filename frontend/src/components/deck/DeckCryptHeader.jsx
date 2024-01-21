@@ -8,9 +8,11 @@ import {
   Button,
   SortButton,
   Header,
+  ResultLegalIcon,
 } from '@/components';
 import { useApp } from '@/context';
 import { useKeyDisciplines, useDeckCrypt } from '@/hooks';
+import { PLAYTEST } from '@/utils/constants';
 
 const DeckCryptHeader = ({
   deckid,
@@ -27,8 +29,15 @@ const DeckCryptHeader = ({
   const { limitedMode, isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
   const { disciplinesDetailed } = useKeyDisciplines(cards);
-  const { hasBanned, hasLimited, cryptTotal, hasWrongGroups, cryptGroups } =
-    useDeckCrypt(cards, null, null);
+  const {
+    hasBanned,
+    hasLimited,
+    hasPlaytest,
+    hasIllegalDate,
+    cryptTotal,
+    hasWrongGroups,
+    cryptGroups,
+  } = useDeckCrypt(cards, null, null);
 
   return (
     <>
@@ -47,6 +56,20 @@ const DeckCryptHeader = ({
               )}
               {hasBanned && <Warning value="BANNED" />}
               {limitedMode && hasLimited && <Warning value="LIMITED" />}
+              {hasPlaytest && (
+                <Warning
+                  value="PLAYTEST"
+                  icon={<ResultLegalIcon value={PLAYTEST} className="flex" />}
+                />
+              )}
+              {hasIllegalDate && (
+                <Warning
+                  value="NOT LEGAL YET"
+                  icon={
+                    <ResultLegalIcon value={hasIllegalDate} className="flex" />
+                  }
+                />
+              )}
             </>
           )}
         </div>

@@ -4,7 +4,7 @@ import { ResultLegalIcon } from '@/components';
 import { getLegality } from '@/utils';
 
 const ResultCryptName = ({ card, colored = true, isBanned }) => {
-  const isLegal = getLegality(card);
+  const legalRestriction = getLegality(card);
 
   return (
     <div
@@ -39,7 +39,7 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
           )}
         </div>
       )}
-      {isLegal && <ResultLegalIcon value={isLegal} />}
+      {legalRestriction && <ResultLegalIcon value={legalRestriction} />}
     </div>
   );
 };

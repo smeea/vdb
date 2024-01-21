@@ -24,6 +24,8 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
     librarySideByType,
     hasBanned,
     hasLimited,
+    hasPlaytest,
+    hasIllegalDate,
     trifleTotal,
     libraryTotal,
     poolTotal,
@@ -74,6 +76,8 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
             poolTotal={poolTotal}
             hasBanned={hasBanned}
             hasLimited={hasLimited}
+            hasPlaytest={hasPlaytest}
+            hasIllegalDate={hasIllegalDate}
             isEditable={isEditable}
             showInfo={showInfo}
             setShowInfo={setShowInfo}

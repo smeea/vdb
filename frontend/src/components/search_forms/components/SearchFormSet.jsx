@@ -1,12 +1,13 @@
 import React from 'react';
-import { Select } from '@/components';
 import {
+  Select,
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
   Checkbox,
 } from '@/components';
 import { useApp } from '@/context';
+import { PLAYTEST } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
@@ -38,10 +39,10 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   ];
 
   Object.keys(setsAndPrecons)
-    .filter((set) => playtestMode || set !== 'PLAYTEST')
+    .filter((set) => playtestMode || set !== PLAYTEST)
     .map((set) => {
       const year =
-        set === 'PLAYTEST' ? null : setsAndPrecons[set].date.slice(2, 4);
+        set === PLAYTEST ? null : setsAndPrecons[set].date.slice(2, 4);
       const fullName = setsAndPrecons[set].name;
 
       options.push({
@@ -59,7 +60,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const filterOption = ({ label, value }, string) => {
     let name;
     let year;
-    if (['any', 'bcp', 'Promo', 'POD', 'PLAYTEST'].includes(value)) {
+    if (['any', 'bcp', 'Promo', 'POD', PLAYTEST].includes(value)) {
       name = label.props.children[1];
     } else {
       name = label.props.children[0].props.children;

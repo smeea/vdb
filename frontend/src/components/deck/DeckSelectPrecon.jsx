@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-import { Select } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { ResultPreconClan } from '@/components';
+import { Select, ResultPreconClan } from '@/components';
 import { useApp } from '@/context';
+import { PLAYTEST } from '@/utils/constants';
 
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const { isMobile, playtestMode } = useApp();
@@ -11,7 +11,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
     const opts = [];
     Object.keys(setsAndPrecons)
       .filter(
-        (i) => (playtestMode || i !== 'PLAYTEST') && setsAndPrecons[i].precons,
+        (i) => (playtestMode || i !== PLAYTEST) && setsAndPrecons[i].precons
       )
       .map((set) => {
         const year = setsAndPrecons[set].date

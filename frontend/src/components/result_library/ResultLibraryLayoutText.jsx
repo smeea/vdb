@@ -13,10 +13,11 @@ import {
 } from '@/components';
 import { getLegality, isTrifle } from '@/utils';
 import { useApp } from '@/context';
+import { PLAYTEST } from '@/utils/constants';
 
 const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   const { isNarrow } = useApp();
-  const isLegal = getLegality(card);
+  const legalRestriction = getLegality(card);
 
   return (
     <div className="space-y-3">
@@ -70,12 +71,12 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
           <Hr />
         </>
       )}
-      {isLegal && isLegal !== 'PLAYTEST' && (
+      {legalRestriction && legalRestriction !== PLAYTEST && (
         <div
           className="text-fgRed dark:text-fgRedDark"
-          title={`Not Tournament Legal until ${isLegal}`}
+          title={`Not Tournament Legal until ${legalRestriction}`}
         >
-          Not Tournament Legal until {isLegal}
+          Not Tournament Legal until {legalRestriction}
         </div>
       )}
     </div>

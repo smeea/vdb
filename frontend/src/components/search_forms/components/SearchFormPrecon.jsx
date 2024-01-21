@@ -1,13 +1,14 @@
 import React from 'react';
-import { Select } from '@/components';
 import {
   ResultPreconClan,
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
   Checkbox,
+  Select,
 } from '@/components';
 import { useApp } from '@/context';
+import { PLAYTEST } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
@@ -39,7 +40,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   ];
 
   Object.keys(setsAndPrecons)
-    .filter((set) => playtestMode || set !== 'PLAYTEST')
+    .filter((set) => playtestMode || set !== PLAYTEST)
     .map((set) => {
       if (setsAndPrecons[set].precons) {
         const year = setsAndPrecons[set].date

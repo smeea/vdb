@@ -6,6 +6,7 @@ import {
   Input,
 } from '@/components';
 import { decksSort } from '@/utils';
+import { PLAYTEST } from '@/utils/constants';
 import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
@@ -26,7 +27,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
   const sortedDecks = useMemo(() => {
     if (Object.values(preconDecks).length > 0) {
       let filtered = Object.values(preconDecks).filter((i) => {
-        return !i.deckid.includes('PLAYTEST');
+        return !i.deckid.includes(PLAYTEST);
       });
 
       if (nameFilter) {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal, ConditionalTooltip } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useApp } from '@/context';
+import { PLAYTEST } from '@/utils/constants';
 
 const PreconsDetailed = ({ sets, set }) => {
   return Object.keys(sets[set]).map((i, idx) => {
@@ -32,7 +33,7 @@ const PopoverText = ({ sets, set }) => {
   return (
     <div className="max-w-[400px] space-y-1">
       <b>{setsAndPrecons[set].name}</b>
-      {!['POD', 'Promo', 'PLAYTEST'].includes(set) &&
+      {!['POD', 'Promo', PLAYTEST].includes(set) &&
         ' - ' + setsAndPrecons[set].date.slice(0, 4)}
       {!['POD', 'Promo'].includes(set) && (
         <ul className="space-y-1">
@@ -50,7 +51,7 @@ const Sets = ({ sets, setImageSet, setSelectedSet }) => {
   };
 
   return Object.keys(sets)
-    .filter((set) => playtestMode || set !== 'PLAYTEST')
+    .filter((set) => playtestMode || set !== PLAYTEST)
     .sort(byDate)
     .map((set, index) => {
       const preconsShort = Object.keys(sets[set]).join('/');

@@ -8,8 +8,10 @@ import {
   ResultLibraryCost,
   Warning,
   Header,
+  ResultLegalIcon,
 } from '@/components';
 import { useApp } from '@/context';
+import { PLAYTEST } from '@/utils/constants';
 
 const DeckLibraryHeader = ({
   libraryTotal,
@@ -18,6 +20,8 @@ const DeckLibraryHeader = ({
   poolTotal,
   hasBanned,
   hasLimited,
+  hasPlaytest,
+  hasIllegalDate,
   isEditable,
   cards,
   deckid,
@@ -34,7 +38,7 @@ const DeckLibraryHeader = ({
   return (
     <>
       <Header>
-        <div className="space-x-2 p-2 font-bold">
+        <div className="flex gap-1.5 p-2 font-bold">
           <div className="inline">
             Library [{libraryTotal}
             {!inMissing &&
@@ -46,6 +50,20 @@ const DeckLibraryHeader = ({
             <>
               {hasBanned && <Warning value="BANNED" />}
               {limitedMode && hasLimited && <Warning value="LIMITED" />}
+              {hasPlaytest && (
+                <Warning
+                  value="PLAYTEST"
+                  icon={<ResultLegalIcon value={PLAYTEST} className="flex" />}
+                />
+              )}
+              {hasIllegalDate && (
+                <Warning
+                  value="NOT LEGAL YET"
+                  icon={
+                    <ResultLegalIcon value={hasIllegalDate} className="flex" />
+                  }
+                />
+              )}
             </>
           )}
         </div>

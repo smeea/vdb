@@ -52,3 +52,4 @@ export const ID = 'Id';
 export const BURN_OPTION = 'Burn Option';
 export const CAPACITY = 'Capacity';
 export const ASCII_NAME = 'ASCII Name';
+export const PLAYTEST = 'PLAYTEST';
