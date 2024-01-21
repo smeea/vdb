@@ -1,5 +1,15 @@
 [
   {
+    "version": "2024-01-21",
+    "changes": [
+      "Add indicators to mark decks with banned, not-yet-legal, playtested cards",
+      "Crypt/Library search with Search-in-Inventory checkbox will now show cards you don't have in inventory but use in your inventory decks (e.g. to search if they are among set POD cards)",
+      "Slightly update theme colors",
+      "Remove obsolete playtest cards",
+      "Small other fixes"
+    ]
+  },
+  {
     "version": "2024-01-13",
     "changes": [
       "Update playtest to Round 1 New Blood",
