@@ -4,6 +4,7 @@
 - Fix Card Version in About after V5C release
 
 # FEATURES
+- Add playtest/banned/etc indicators to standard deck selector
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries

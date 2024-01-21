@@ -1920,9 +1920,6 @@
             },
             "NB":{
                 "PV":"1"
-            },
-            "PLAYTEST":{
-                "TV":1
             }
         },
         "Title":"prince",
@@ -1956,9 +1953,6 @@
             },
             "NB":{
                 "PM":"1"
-            },
-            "PLAYTEST":{
-                "TMa":1
             }
         },
         "Title":"prince",
@@ -2188,9 +2182,6 @@
             },
             "NB":{
                 "PV":"1"
-            },
-            "PLAYTEST":{
-                "TV":2
             }
         },
         "Title":"prince",
@@ -3340,9 +3331,6 @@
             },
             "NB":{
                 "PM":"1"
-            },
-            "PLAYTEST":{
-                "TMa":2
             }
         },
         "Title":"prince",
@@ -6352,9 +6340,6 @@
             },
             "NB":{
                 "PTr":"1"
-            },
-            "PLAYTEST":{
-                "TTr":2
             }
         },
         "Title":"prince",
@@ -7688,9 +7673,6 @@
         "Set":{
             "V5":{
                 "PN":"2"
-            },
-            "PLAYTEST":{
-                "TN":1
             }
         },
         "Title":"prince",
@@ -9983,9 +9965,6 @@
         "Set":{
             "NB":{
                 "PTo":"1"
-            },
-            "PLAYTEST":{
-                "TTo":1
             }
         },
         "Title":"",
@@ -10256,9 +10235,6 @@
             },
             "NB2":{
                 "PG":"1"
-            },
-            "PLAYTEST":{
-                "TG":1
             }
         },
         "Title":"baron",
@@ -10452,9 +10428,6 @@
             },
             "NB":{
                 "PTo":"1"
-            },
-            "PLAYTEST":{
-                "TTo":1
             }
         },
         "Title":"prince",
@@ -11197,9 +11170,6 @@
             },
             "NB":{
                 "PTr":"1"
-            },
-            "PLAYTEST":{
-                "TTr":1
             }
         },
         "Title":"primogen",
@@ -12410,9 +12380,6 @@
             },
             "NB2":{
                 "PMi":"1"
-            },
-            "PLAYTEST":{
-                "TMi":1
             }
         },
         "Title":"",
@@ -13004,9 +12971,6 @@
         "Set":{
             "V5A":{
                 "PG":"1"
-            },
-            "PLAYTEST":{
-                "TG":2
             }
         },
         "Title":"",
@@ -14863,9 +14827,6 @@
             },
             "NB":{
                 "PM":"1"
-            },
-            "PLAYTEST":{
-                "TMa":2
             }
         },
         "Title":"prince",
@@ -16588,9 +16549,6 @@
             },
             "NB2":{
                 "PMi":"1"
-            },
-            "PLAYTEST":{
-                "TMi":1
             }
         },
         "Title":"baron",
@@ -17786,9 +17744,6 @@
         "Set":{
             "NB":{
                 "PM":"1"
-            },
-            "PLAYTEST":{
-                "TMa":1
             }
         },
         "Title":"",
@@ -18247,9 +18202,6 @@
             },
             "NB2":{
                 "PBH":"1"
-            },
-            "PLAYTEST":{
-                "TBh":1
             }
         },
         "Title":"prince",
@@ -18679,9 +18631,6 @@
         "Set":{
             "Promo":{
                 "2021-10-15":true
-            },
-            "PLAYTEST":{
-                "TV":2
             }
         },
         "Title":"",
@@ -18782,9 +18731,6 @@
             },
             "NB":{
                 "PTo":"1"
-            },
-            "PLAYTEST":{
-                "TTo":2
             }
         },
         "Title":"prince",
@@ -19799,9 +19745,6 @@
         "Set":{
             "V5":{
                 "PM":"1"
-            },
-            "PLAYTEST":{
-                "TMa":1
             }
         },
         "Title":"",
@@ -23498,9 +23441,6 @@
             },
             "Promo":{
                 "2023-10-07":true
-            },
-            "PLAYTEST":{
-                "TMi":2
             }
         },
         "Title":"",
@@ -23780,9 +23720,6 @@
             },
             "NB":{
                 "PN":"1"
-            },
-            "PLAYTEST":{
-                "TN":1
             }
         },
         "Title":"",
@@ -23966,9 +23903,6 @@
         "Set":{
             "V5":{
                 "PV":"2"
-            },
-            "PLAYTEST":{
-                "TV":1
             }
         },
         "Title":"prince",
@@ -29109,9 +29043,6 @@
         "Set":{
             "V5A":{
                 "PG":"1"
-            },
-            "PLAYTEST":{
-                "TG":1
             }
         },
         "Title":"",
@@ -29411,9 +29342,6 @@
         "Set":{
             "Promo":{
                 "2021-10-15":true
-            },
-            "PLAYTEST":{
-                "TTr":2
             }
         },
         "Title":"2 votes",
@@ -29598,9 +29526,6 @@
             },
             "NB2":{
                 "PBH":"2"
-            },
-            "PLAYTEST":{
-                "TBh":2
             }
         },
         "Title":"justicar",
@@ -29630,9 +29555,6 @@
         "Set":{
             "V5A":{
                 "PBh":"2"
-            },
-            "PLAYTEST":{
-                "TBh":1
             }
         },
         "Title":"prince",
@@ -31133,9 +31055,6 @@
             },
             "NB2":{
                 "PG":"1"
-            },
-            "PLAYTEST":{
-                "TG":2
             }
         },
         "Title":"baron",
@@ -32668,9 +32587,6 @@
             },
             "NB2":{
                 "PB":"1"
-            },
-            "PLAYTEST":{
-                "TBr":1
             }
         },
         "Title":"baron",
@@ -33174,9 +33090,6 @@
             },
             "NB":{
                 "PTr":"1"
-            },
-            "PLAYTEST":{
-                "TTr":1
             }
         },
         "Title":"primogen",
@@ -35134,9 +35047,6 @@
             },
             "NB":{
                 "PV":"1"
-            },
-            "PLAYTEST":{
-                "TV":1
             }
         },
         "Title":"",
@@ -35205,9 +35115,6 @@
             "Promo":{
                 "2022-07-30":true,
                 "2022-11-05":true
-            },
-            "PLAYTEST":{
-                "TTo":1
             }
         },
         "Title":"primogen",
@@ -37376,9 +37283,6 @@
             },
             "NB2":{
                 "PG":"1"
-            },
-            "PLAYTEST":{
-                "TG":1
             }
         },
         "Title":"baron",
@@ -39443,9 +39347,6 @@
             },
             "NB":{
                 "PTo":"1"
-            },
-            "PLAYTEST":{
-                "TTo":2
             }
         },
         "Title":"prince",
@@ -42356,9 +42257,6 @@
         "Set":{
             "Promo":{
                 "2021-10-15":true
-            },
-            "PLAYTEST":{
-                "TN":1
             }
         },
         "Title":"",
@@ -42582,9 +42480,6 @@
         "Set":{
             "NB2":{
                 "PBH":"1"
-            },
-            "PLAYTEST":{
-                "TBh":2
             }
         },
         "Title":"prince",
@@ -43381,9 +43276,6 @@
         "Set":{
             "V5":{
                 "PTr":"1"
-            },
-            "PLAYTEST":{
-                "TTr":1
             }
         },
         "Title":"",
@@ -46760,9 +46652,6 @@
         "Set":{
             "FoL":{
                 "":"2"
-            },
-            "PLAYTEST":{
-                "TN":1
             }
         },
         "Title":"",
@@ -48332,9 +48221,6 @@
             },
             "Promo":{
                 "2023-07-29":true
-            },
-            "PLAYTEST":{
-                "TBr":2
             }
         },
         "Title":"baron",
@@ -50021,9 +49907,6 @@
         "Set":{
             "NB2":{
                 "PMi":"1"
-            },
-            "PLAYTEST":{
-                "TMi":2
             }
         },
         "Title":"baron",
@@ -50705,9 +50588,6 @@
         "Set":{
             "V5A":{
                 "PB":"1"
-            },
-            "PLAYTEST":{
-                "TBr":1
             }
         },
         "Title":"",
@@ -55936,9 +55816,6 @@
             },
             "NB2":{
                 "PB":"1"
-            },
-            "PLAYTEST":{
-                "TBr":2
             }
         },
         "Title":"baron",
@@ -57209,9 +57086,6 @@
             },
             "NB2":{
                 "PMi":"1"
-            },
-            "PLAYTEST":{
-                "TMi":1
             }
         },
         "Title":"baron",
@@ -57604,9 +57478,6 @@
             },
             "NB2":{
                 "PBH":"1"
-            },
-            "PLAYTEST":{
-                "TBh":1
             }
         },
         "Title":"prince",
