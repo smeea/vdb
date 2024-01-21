@@ -4,7 +4,6 @@
 - Fix Card Version in About after V5C release
 
 # FEATURES
-- Banned/Tested/Not Legal indicators to adv deck selector
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries

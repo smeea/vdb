@@ -52,8 +52,8 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
   const libraryByType = getCardsGroupedBy(library, TYPE);
   const librarySideByType = getCardsGroupedBy(librarySide, TYPE);
   const hasBanned = library.filter((card) => card.c.Banned).length > 0;
-  let hasPlaytest;
-  let hasIllegalDate;
+  let hasPlaytest = false;
+  let hasIllegalDate = false;
   library.map((card) => {
     const legalRestriction = getLegality(card.c);
     if (legalRestriction && legalRestriction === PLAYTEST) {

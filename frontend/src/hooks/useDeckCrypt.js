@@ -36,8 +36,8 @@ const useDeckCrypt = (
   ];
   const hasBanned = cryptFrom.some((card) => card.c.Banned);
 
-  let hasPlaytest;
-  let hasIllegalDate;
+  let hasPlaytest = false;
+  let hasIllegalDate = false;
   cryptFrom.map((card) => {
     const legalRestriction = getLegality(card.c);
     if (legalRestriction && legalRestriction === PLAYTEST) {

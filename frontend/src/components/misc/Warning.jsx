@@ -1,9 +1,12 @@
 import React from 'react';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg?react';
 
-const Warning = ({ value, icon }) => {
+const Warning = ({ value, title = '', icon }) => {
   return (
-    <div className="flex items-center gap-0.5 dark:text-fgedDark whitespace-nowrap text-fgRed">
+    <div
+      className="flex items-center gap-0.5 dark:text-fgedDark whitespace-nowrap text-fgRed"
+      title={value ?? title}
+    >
       {icon ? (
         icon
       ) : (
@@ -14,7 +17,7 @@ const Warning = ({ value, icon }) => {
           className="inline"
         />
       )}
-      <div className="flex items-center">{value}</div>
+      {value && <div className="flex items-center">{value}</div>}
     </div>
   );
 };

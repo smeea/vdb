@@ -17,8 +17,12 @@ import {
   Tooltip,
   Button,
   Checkbox,
+  Warning,
+  ResultLegalIcon,
 } from '@/components';
 import { useApp, deckUpdate } from '@/context';
+import { useDeckCrypt, useDeckLibrary } from '@/hooks';
+import { PLAYTEST } from '@/utils/constants';
 import { getClan } from '@/utils';
 
 const DeckSelectAdvModalTableRow = ({
@@ -32,9 +36,29 @@ const DeckSelectAdvModalTableRow = ({
   revFilter,
   short,
 }) => {
-  const { inventoryMode, isMobile, isNarrow, isDesktop } = useApp();
+  const { limitedMode, inventoryMode, isMobile, isNarrow, isDesktop } =
+    useApp();
   const navigate = useNavigate();
   const [showDeck, setShowDeck] = useState();
+
+  const {
+    hasBanned: cryptHasBanned,
+    hasLimited: cryptHasLimited,
+    hasPlaytest: cryptHasPlaytest,
+    hasIllegalDate: cryptHasIllegalDate,
+  } = useDeckCrypt(deck.crypt, null, null);
+
+  const {
+    hasBanned: libraryHasBanned,
+    hasLimited: libraryHasLimited,
+    hasPlaytest: libraryHasPlaytest,
+    hasIllegalDate: libraryHasIllegalDate,
+  } = useDeckLibrary(deck.library);
+
+  const hasBanned = cryptHasBanned || libraryHasBanned;
+  const hasLimited = cryptHasLimited || libraryHasLimited;
+  const hasPlaytest = cryptHasPlaytest || libraryHasPlaytest;
+  const hasIllegalDate = cryptHasIllegalDate || libraryHasIllegalDate;
 
   const handleClick = () => {
     if (onClick) {
@@ -85,8 +109,8 @@ const DeckSelectAdvModalTableRow = ({
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
+                  ? 'Fixed'
+                  : 'Virtual'
               }
             >
               {deck.inventoryType == 's' ? (
@@ -125,6 +149,12 @@ const DeckSelectAdvModalTableRow = ({
                 {deck.branchName}
               </div>
             )}
+          <div className="flex items-center justify-end gap-2">
+            {hasBanned && <Warning title="Banned" />}
+            {limitedMode && hasLimited && <Warning title="Limited" />}
+            {hasPlaytest && <ResultLegalIcon value={PLAYTEST} />}
+            {hasIllegalDate && <ResultLegalIcon value={hasIllegalDate} />}
+          </div>
         </div>
       </td>
       {isDesktop && (
