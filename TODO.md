@@ -4,7 +4,6 @@
 - Fix Card Version in About after V5C release
 
 # FEATURES
-- Add playtest/banned/etc indicators to standard deck selector
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
@@ -13,4 +12,5 @@
 - Back button behavior
 - Update to Vite 5 (when hmr circular import issue is resolved)
 - Update to Headlessui 2 (review new components)
-- Refactor Banned into hasLegalRestriction
+- Refactor Banned, Groups into getRestriction
+- Refactor Warnings to include standard icons from ResultLegalIcon (more const to utils?)

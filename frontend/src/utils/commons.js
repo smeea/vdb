@@ -44,6 +44,40 @@ export const isTrifle = (card) => {
   );
 };
 
+export const getRestrictions = (deck, limitedCards) => {
+  let hasPlaytest;
+  let hasIllegalDate;
+  let hasBanned;
+  let hasLimited;
+  [...Object.values(deck.crypt), ...Object.values(deck.library)].map((card) => {
+    if (card.c.Banned) hasBanned = true;
+    if (
+      limitedCards &&
+      ![
+        ...Object.keys(limitedCards.crypt),
+        ...Object.keys(limitedCards.library),
+      ].includes(card.c.Id)
+    ) {
+      hasLimited = true;
+    }
+
+    const legalRestriction = getLegality(card.c);
+    if (legalRestriction && legalRestriction === PLAYTEST) {
+      hasPlaytest = true;
+    }
+    if (legalRestriction && legalRestriction !== PLAYTEST) {
+      hasIllegalDate = legalRestriction;
+    }
+  });
+
+  return {
+    hasBanned: hasBanned,
+    hasLimited: hasLimited,
+    hasPlaytest: hasPlaytest,
+    hasIllegalDate: hasIllegalDate,
+  };
+};
+
 export const getLegality = (card) => {
   const sets = Object.keys(card.Set).filter((s) => s !== PLAYTEST);
   if (sets.length > 1 || ['POD', 'Promo'].includes(sets[0])) return false;

@@ -3,13 +3,20 @@ import { useSnapshot } from 'valtio';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import At from '@/assets/images/icons/at.svg?react';
-import { Select, ResultPreconClan } from '@/components';
-import { deckStore, useApp } from '@/context';
-import { getClan } from '@/utils';
+import {
+  Select,
+  ResultPreconClan,
+  Warning,
+  ResultLegalIcon,
+} from '@/components';
+import { limitedStore, deckStore, useApp } from '@/context';
+import { getRestrictions, getClan } from '@/utils';
+import { PLAYTEST } from '@/utils/constants';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
-  const { inventoryMode, isMobile, isWide } = useApp();
+  const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
   const decks = useSnapshot(deckStore).decks;
+  const limitedCards = useSnapshot(limitedStore);
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
@@ -20,8 +27,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
       .filter((i) => !decks[i].master && !decks[i].isHidden)
       .map((i) => {
         const diffDays = Math.round(
-          (new Date() - new Date(decks[i]['timestamp'])) /
-            (1000 * 60 * 60 * 24),
+          (new Date() - new Date(decks[i]['timestamp'])) / (1000 * 60 * 60 * 24)
         );
 
         let lastEdit;
@@ -39,6 +45,9 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
         const clan = getClan(decks[i].crypt);
 
+        const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
+          getRestrictions(decks[i], limitedCards);
+
         return [
           {
             value: i,
@@ -51,11 +60,27 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   <div className="inline">
                     {decks[i]['name'].slice(
                       0,
-                      inventoryMode ? (isWide ? 28 : 23) : 32,
+                      inventoryMode ? (isWide ? 28 : 23) : 32
                     )}
                   </div>
                 </div>
+
                 <div className="flex items-center space-x-1">
+                  <div className="flex items-center justify-end gap-2">
+                    {hasBanned && (
+                      <Warning
+                        title="Banned"
+                        icon={
+                          <ResultLegalIcon value={'BANNED'} className="flex" />
+                        }
+                      />
+                    )}
+                    {limitedMode && hasLimited && <Warning title="Limited" />}
+                    {hasPlaytest && <ResultLegalIcon value={PLAYTEST} />}
+                    {hasIllegalDate && (
+                      <ResultLegalIcon value={hasIllegalDate} />
+                    )}
+                  </div>
                   {inventoryMode && (
                     <div>
                       {decks[i].inventoryType == 's' && <Shuffle />}

@@ -54,7 +54,12 @@ const DeckCryptHeader = ({
               ) : (
                 <div className="inline">{cryptGroups}</div>
               )}
-              {hasBanned && <Warning value="BANNED" />}
+              {hasBanned && (
+                <Warning
+                  value="BANNED"
+                  icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
+                />
+              )}
               {limitedMode && hasLimited && <Warning value="LIMITED" />}
               {hasPlaytest && (
                 <Warning
@@ -64,7 +69,7 @@ const DeckCryptHeader = ({
               )}
               {hasIllegalDate && (
                 <Warning
-                  value="NOT LEGAL YET"
+                  value="LEGAL DATE"
                   icon={
                     <ResultLegalIcon value={hasIllegalDate} className="flex" />
                   }

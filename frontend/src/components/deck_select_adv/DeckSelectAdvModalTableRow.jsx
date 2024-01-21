@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
@@ -20,10 +21,9 @@ import {
   Warning,
   ResultLegalIcon,
 } from '@/components';
-import { useApp, deckUpdate } from '@/context';
-import { useDeckCrypt, useDeckLibrary } from '@/hooks';
+import { limitedStore, useApp, deckUpdate } from '@/context';
 import { PLAYTEST } from '@/utils/constants';
-import { getClan } from '@/utils';
+import { getClan, getRestrictions } from '@/utils';
 
 const DeckSelectAdvModalTableRow = ({
   deck,
@@ -38,27 +38,12 @@ const DeckSelectAdvModalTableRow = ({
 }) => {
   const { limitedMode, inventoryMode, isMobile, isNarrow, isDesktop } =
     useApp();
+  const limitedCards = useSnapshot(limitedStore);
   const navigate = useNavigate();
   const [showDeck, setShowDeck] = useState();
 
-  const {
-    hasBanned: cryptHasBanned,
-    hasLimited: cryptHasLimited,
-    hasPlaytest: cryptHasPlaytest,
-    hasIllegalDate: cryptHasIllegalDate,
-  } = useDeckCrypt(deck.crypt, null, null);
-
-  const {
-    hasBanned: libraryHasBanned,
-    hasLimited: libraryHasLimited,
-    hasPlaytest: libraryHasPlaytest,
-    hasIllegalDate: libraryHasIllegalDate,
-  } = useDeckLibrary(deck.library);
-
-  const hasBanned = cryptHasBanned || libraryHasBanned;
-  const hasLimited = cryptHasLimited || libraryHasLimited;
-  const hasPlaytest = cryptHasPlaytest || libraryHasPlaytest;
-  const hasIllegalDate = cryptHasIllegalDate || libraryHasIllegalDate;
+  const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
+    getRestrictions(deck, limitedCards);
 
   const handleClick = () => {
     if (onClick) {
@@ -150,7 +135,12 @@ const DeckSelectAdvModalTableRow = ({
               </div>
             )}
           <div className="flex items-center justify-end gap-2">
-            {hasBanned && <Warning title="Banned" />}
+            {hasBanned && (
+              <Warning
+                title="Banned"
+                icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
+              />
+            )}
             {limitedMode && hasLimited && <Warning title="Limited" />}
             {hasPlaytest && <ResultLegalIcon value={PLAYTEST} />}
             {hasIllegalDate && <ResultLegalIcon value={hasIllegalDate} />}

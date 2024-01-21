@@ -7,16 +7,7 @@ const Warning = ({ value, title = '', icon }) => {
       className="flex items-center gap-0.5 dark:text-fgedDark whitespace-nowrap text-fgRed"
       title={value ?? title}
     >
-      {icon ? (
-        icon
-      ) : (
-        <Exclamation
-          width="14"
-          heigth="14"
-          viewBox="0 0 16 16"
-          className="inline"
-        />
-      )}
+      {icon ? icon : <Exclamation width="15" height="15" viewBox="0 0 16 16" />}
       {value && <div className="flex items-center">{value}</div>}
     </div>
   );

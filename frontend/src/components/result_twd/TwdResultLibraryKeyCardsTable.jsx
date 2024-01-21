@@ -3,6 +3,7 @@ import {
   ResultModal,
   TwdResultLibraryKeyCardsTableRow,
   ResultLibraryCost,
+  ResultLegalIcon,
   Warning,
 } from '@/components';
 import { GROUPED_TYPE, ASCII_NAME } from '@/utils/constants';
@@ -45,7 +46,12 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
             <div className="whitespace-nowrap">
               {isMobile ? 'Lib' : 'Library'} [{libraryTotal}], Keys:
             </div>
-            {hasBanned && <Warning value={isMobile ? 'B' : 'BANNED'} />}
+            {hasBanned && (
+              <Warning
+                value={isMobile ? 'B' : 'BANNED'}
+                icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
+              />
+            )}
             <div className="flex gap-1.5 sm:gap-3">
               <div className="flex items-center gap-1" title="Total Blood Cost">
                 <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />

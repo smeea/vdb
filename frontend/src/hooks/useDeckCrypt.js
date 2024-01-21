@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { countCards, containCard, cryptSort, getLegality } from '@/utils';
-import { ANY, PLAYTEST } from '@/utils/constants';
+import { countCards, containCard, cryptSort, getRestrictions } from '@/utils';
+import { ANY } from '@/utils/constants';
 import { limitedStore } from '@/context';
 
 const useDeckCrypt = (
@@ -10,7 +10,7 @@ const useDeckCrypt = (
   timer,
   cardsToList = {}
 ) => {
-  const limitedCrypt = useSnapshot(limitedStore).crypt;
+  const limitedCards = useSnapshot(limitedStore);
 
   const cardsFrom = Object.values(cardsList);
   const cardsTo = Object.values(cardsToList);
@@ -34,22 +34,10 @@ const useDeckCrypt = (
     ...cryptFromSide,
     ...cryptToSide.map((card) => ({ q: 0, c: card.c })),
   ];
-  const hasBanned = cryptFrom.some((card) => card.c.Banned);
 
-  let hasPlaytest = false;
-  let hasIllegalDate = false;
-  cryptFrom.map((card) => {
-    const legalRestriction = getLegality(card.c);
-    if (legalRestriction && legalRestriction === PLAYTEST) {
-      hasPlaytest = true;
-    }
-    if (legalRestriction && legalRestriction !== PLAYTEST) {
-      hasIllegalDate = legalRestriction;
-    }
-  });
+  const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
+    getRestrictions({ crypt: cryptFrom, library: {} }, limitedCards);
 
-  const hasLimited =
-    cryptFrom.filter((card) => !limitedCrypt[card.c.Id]).length > 0;
   const cryptTotal = countCards(cryptFrom);
   const cryptGroupMin = cryptFrom
     .filter((card) => card.c.Group !== ANY)

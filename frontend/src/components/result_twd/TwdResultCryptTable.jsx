@@ -1,5 +1,10 @@
 import React from 'react';
-import { ResultModal, TwdResultCryptTableRow, Warning } from '@/components';
+import {
+  ResultLegalIcon,
+  ResultModal,
+  TwdResultCryptTableRow,
+  Warning,
+} from '@/components';
 import { useApp } from '@/context';
 import { countCards, countTotalCost } from '@/utils';
 import { useDeckCrypt, useModalCardController } from '@/hooks';
@@ -42,7 +47,12 @@ const TwdResultCryptTable = ({ crypt }) => {
           ) : (
             <div className="inline">{cryptGroups}</div>
           )}
-          {hasBanned && <Warning value="BANNED" />}
+          {hasBanned && (
+            <Warning
+              value="BANNED"
+              icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
+            />
+          )}
         </div>
         <div title="Average capacity">~{cryptAvg}</div>
       </div>

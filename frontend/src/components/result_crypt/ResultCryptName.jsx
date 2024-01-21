@@ -8,13 +8,13 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
 
   return (
     <div
-      className={`inline space-x-1 ${
+      className={`inline-flex gap-1 ${
         colored ? 'text-fgName dark:text-fgNameDark' : ''
       }`}
     >
-      <div className="inline space-x-1 whitespace-nowrap">
+      <div className="inline-flex gap-1 whitespace-nowrap">
         <div
-          className={`inline space-x-1 whitespace-normal ${
+          className={`inline-flex gap-1 whitespace-normal ${
             card.Banned || isBanned ? 'line-through' : ''
           }`}
         >
@@ -22,17 +22,19 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
         </div>
         {card.Adv[0] && (
           <img
-            className="inline h-[25px] items-center pb-1"
+            className="inline-flex items-center"
             src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
             title="Advanced"
+            width="12"
           />
         )}
       </div>
       {(card.Banned || isBanned) && (
-        <div className="inline whitespace-nowrap">
+        <div className="inline-flex items-center whitespace-nowrap">
           {card.Banned ? (
             <>
-              [{card.Banned} <Hammer className="inline h-[20px]" />]
+              [{card.Banned}
+              <Hammer width="15" height="15" viewBox="0 0 16 16" />]
             </>
           ) : (
             <>[Limited]</>

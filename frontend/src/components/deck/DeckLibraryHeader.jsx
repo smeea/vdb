@@ -48,7 +48,12 @@ const DeckLibraryHeader = ({
           </div>
           {!inMissing && (
             <>
-              {hasBanned && <Warning value="BANNED" />}
+              {hasBanned && (
+                <Warning
+                  value="BANNED"
+                  icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
+                />
+              )}
               {limitedMode && hasLimited && <Warning value="LIMITED" />}
               {hasPlaytest && (
                 <Warning
@@ -58,7 +63,7 @@ const DeckLibraryHeader = ({
               )}
               {hasIllegalDate && (
                 <Warning
-                  value="NOT LEGAL YET"
+                  value="LEGAL DATE"
                   icon={
                     <ResultLegalIcon value={hasIllegalDate} className="flex" />
                   }

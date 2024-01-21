@@ -7,7 +7,7 @@ import {
   getTotalCardsGroupedBy,
   getCardsGroupedBy,
   containCard,
-  getLegality,
+  getRestrictions,
 } from '@/utils';
 import {
   GROUPED_TYPE,
@@ -19,12 +19,11 @@ import {
   MASTER,
   EVENT,
   CLAN,
-  PLAYTEST,
 } from '@/utils/constants';
 import { limitedStore } from '@/context';
 
 const useDeckLibrary = (cardsList, cardsToList = {}) => {
-  const limitedLibrary = useSnapshot(limitedStore).library;
+  const limitedCards = useSnapshot(limitedStore);
 
   const cardsFrom = Object.values(cardsList);
   const cardsTo = Object.values(cardsToList);
@@ -51,20 +50,9 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
   );
   const libraryByType = getCardsGroupedBy(library, TYPE);
   const librarySideByType = getCardsGroupedBy(librarySide, TYPE);
-  const hasBanned = library.filter((card) => card.c.Banned).length > 0;
-  let hasPlaytest = false;
-  let hasIllegalDate = false;
-  library.map((card) => {
-    const legalRestriction = getLegality(card.c);
-    if (legalRestriction && legalRestriction === PLAYTEST) {
-      hasPlaytest = true;
-    }
-    if (legalRestriction && legalRestriction !== PLAYTEST) {
-      hasIllegalDate = legalRestriction;
-    }
-  });
-  const hasLimited =
-    library.filter((card) => !limitedLibrary[card.c.Id]).length > 0;
+
+  const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
+    getRestrictions({ crypt: {}, library: library }, limitedCards);
 
   const trifleTotal = countCards(library.filter((card) => isTrifle(card.c)));
   const libraryTotal = countCards(library);

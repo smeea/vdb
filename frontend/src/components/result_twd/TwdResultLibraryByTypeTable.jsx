@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  ResultLegalIcon,
   ResultLibraryTypeImage,
   DeckLibraryTable,
   ResultModal,
@@ -64,8 +65,14 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
   return (
     <div>
       <div className="flex h-[30px] items-center justify-between gap-1.5 px-1 text-fgSecondary dark:text-whiteDark font-bold">
-        <div className="whitespace-nowrap">
-          Library [{libraryTotal}] {hasBanned && <Warning value="BANNED" />}
+        <div className="flex items-center whitespace-nowrap gap-1.5">
+          Library [{libraryTotal}]{' '}
+          {hasBanned && (
+            <Warning
+              value="BANNED"
+              icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
+            />
+          )}
         </div>
         <div className="flex gap-1.5 sm:gap-3">
           <div className="flex items-center gap-1" title="Total Blood Cost">
