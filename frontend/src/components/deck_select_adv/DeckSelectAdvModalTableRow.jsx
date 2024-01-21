@@ -22,7 +22,7 @@ import {
   ResultLegalIcon,
 } from '@/components';
 import { limitedStore, useApp, deckUpdate } from '@/context';
-import { PLAYTEST } from '@/utils/constants';
+import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 import { getClan, getRestrictions } from '@/utils';
 
 const DeckSelectAdvModalTableRow = ({
@@ -138,12 +138,14 @@ const DeckSelectAdvModalTableRow = ({
             {hasBanned && (
               <Warning
                 title="Banned"
-                icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
+                icon={<ResultLegalIcon type={BANNED} className="flex" />}
               />
             )}
             {limitedMode && hasLimited && <Warning title="Limited" />}
-            {hasPlaytest && <ResultLegalIcon value={PLAYTEST} />}
-            {hasIllegalDate && <ResultLegalIcon value={hasIllegalDate} />}
+            {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
+            {hasIllegalDate && (
+              <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />
+            )}
           </div>
         </div>
       </td>

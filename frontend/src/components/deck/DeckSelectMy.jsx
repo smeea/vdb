@@ -11,7 +11,7 @@ import {
 } from '@/components';
 import { limitedStore, deckStore, useApp } from '@/context';
 import { getRestrictions, getClan } from '@/utils';
-import { PLAYTEST } from '@/utils/constants';
+import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
@@ -71,14 +71,14 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                       <Warning
                         title="Banned"
                         icon={
-                          <ResultLegalIcon value={'BANNED'} className="flex" />
+                          <ResultLegalIcon type={BANNED} className="flex" />
                         }
                       />
                     )}
                     {limitedMode && hasLimited && <Warning title="Limited" />}
-                    {hasPlaytest && <ResultLegalIcon value={PLAYTEST} />}
+                    {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
                     {hasIllegalDate && (
-                      <ResultLegalIcon value={hasIllegalDate} />
+                      <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />
                     )}
                   </div>
                   {inventoryMode && (

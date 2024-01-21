@@ -1,7 +1,7 @@
 import React from 'react';
-import Hammer from '@/assets/images/icons/hammer.svg?react';
 import { ResultLegalIcon } from '@/components';
 import { getLegality } from '@/utils';
+import { BANNED, LEGAL } from '@/utils/constants';
 
 const ResultLibraryName = ({ card, colored = true, isBanned }) => {
   const legalRestriction = getLegality(card);
@@ -20,15 +20,15 @@ const ResultLibraryName = ({ card, colored = true, isBanned }) => {
       {(card.Banned || isBanned) && (
         <div className="inline whitespace-nowrap">
           {card.Banned ? (
-            <>
-              [{card.Banned} <Hammer className="inline h-[20px]" />]
-            </>
+            <ResultLegalIcon type={BANNED} value={card.Banned} />
           ) : (
             <>[Limited]</>
           )}
         </div>
       )}
-      {legalRestriction && <ResultLegalIcon value={legalRestriction} />}
+      {legalRestriction && (
+        <ResultLegalIcon type={LEGAL} value={legalRestriction} />
+      )}
     </div>
   );
 };

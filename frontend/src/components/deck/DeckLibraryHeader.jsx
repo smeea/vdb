@@ -11,7 +11,7 @@ import {
   ResultLegalIcon,
 } from '@/components';
 import { useApp } from '@/context';
-import { PLAYTEST } from '@/utils/constants';
+import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckLibraryHeader = ({
   libraryTotal,
@@ -51,23 +51,29 @@ const DeckLibraryHeader = ({
               {hasBanned && (
                 <Warning
                   value="BANNED"
-                  icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
+                  icon={<ResultLegalIcon type={BANNED} className="flex" />}
                 />
               )}
               {limitedMode && hasLimited && <Warning value="LIMITED" />}
               {hasPlaytest && (
                 <Warning
                   value="PLAYTEST"
-                  icon={<ResultLegalIcon value={PLAYTEST} className="flex" />}
+                  icon={<ResultLegalIcon type={PLAYTEST} className="flex" />}
                 />
               )}
               {hasIllegalDate && (
-                <Warning
-                  value="LEGAL DATE"
-                  icon={
-                    <ResultLegalIcon value={hasIllegalDate} className="flex" />
-                  }
-                />
+                <>
+                  <Warning
+                    value="LEGAL DATE"
+                    icon={
+                      <ResultLegalIcon
+                        type={LEGAL}
+                        value={hasIllegalDate}
+                        className="flex"
+                      />
+                    }
+                  />
+                </>
               )}
             </>
           )}

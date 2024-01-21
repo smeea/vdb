@@ -2,6 +2,8 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Fix Card Version in About after V5C release
+- Fix alignment/wraping in ResultCryptName (and Library)
+- Fix alignment in DeckCrypHeader (and Library) with warnings
 
 # FEATURES
 
@@ -13,4 +15,5 @@
 - Update to Vite 5 (when hmr circular import issue is resolved)
 - Update to Headlessui 2 (review new components)
 - Refactor Banned, Groups into getRestriction
-- Refactor Warnings to include standard icons from ResultLegalIcon (more const to utils?)
+- Refactor Warnings and ResultLegalIcons container
+- Refactor utils/consts to include 'POD', 'Promo', 'bcp' (check for 'any')

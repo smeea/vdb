@@ -45,17 +45,18 @@ const ResultCryptLayoutText = ({
                   {inPopover ? (
                     <>
                       {!card.Adv[0] && (
-                        <>
+                        <div className="inline-flex items-center">
                           [has
                           <img
-                            className="inline h-[25px] ps-1 pb-1"
+                            className="inline-flex items-center ml-1"
                             src={`${
                               import.meta.env.VITE_BASE_URL
                             }/images/misc/advanced.svg`}
                             title="Advanced"
+                            width="12"
                           />
                           ]
-                        </>
+                        </div>
                       )}
                     </>
                   ) : (

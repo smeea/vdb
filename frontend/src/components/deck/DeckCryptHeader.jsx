@@ -12,7 +12,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { useKeyDisciplines, useDeckCrypt } from '@/hooks';
-import { PLAYTEST } from '@/utils/constants';
+import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckCryptHeader = ({
   deckid,
@@ -57,21 +57,31 @@ const DeckCryptHeader = ({
               {hasBanned && (
                 <Warning
                   value="BANNED"
-                  icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
+                  icon={
+                    <ResultLegalIcon
+                      type={BANNED}
+                      value={BANNED}
+                      className="flex"
+                    />
+                  }
                 />
               )}
               {limitedMode && hasLimited && <Warning value="LIMITED" />}
               {hasPlaytest && (
                 <Warning
                   value="PLAYTEST"
-                  icon={<ResultLegalIcon value={PLAYTEST} className="flex" />}
+                  icon={<ResultLegalIcon type={PLAYTEST} className="flex" />}
                 />
               )}
               {hasIllegalDate && (
                 <Warning
                   value="LEGAL DATE"
                   icon={
-                    <ResultLegalIcon value={hasIllegalDate} className="flex" />
+                    <ResultLegalIcon
+                      type={LEGAL}
+                      value={hasIllegalDate}
+                      className="flex"
+                    />
                   }
                 />
               )}
