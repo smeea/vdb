@@ -6,6 +6,8 @@
 - Fix alignment in DeckCrypHeader (and Library) with warnings
 - Show banned in card modal similar to legal notice
 - Move lock button to selector (at least on Desktop)
+- Indicator gaps with inventory icons in selector
+- Recommendation for playtest (see backend errors)
 
 # FEATURES
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResultLegalIcon } from '@/components';
 import { getLegality } from '@/utils';
-import { BANNED, LEGAL } from '@/utils/constants';
+import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const ResultLibraryName = ({ card, colored = true, isBanned }) => {
   const legalRestriction = getLegality(card);
@@ -27,7 +27,10 @@ const ResultLibraryName = ({ card, colored = true, isBanned }) => {
         </div>
       )}
       {legalRestriction && (
-        <ResultLegalIcon type={LEGAL} value={legalRestriction} />
+        <ResultLegalIcon
+          type={legalRestriction === PLAYTEST ? PLAYTEST : LEGAL}
+          value={legalRestriction}
+        />
       )}
     </div>
   );
