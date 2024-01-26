@@ -50,6 +50,7 @@ export const getRestrictions = (deck, limitedCards) => {
   let hasBanned;
   let hasLimited;
   [...Object.values(deck.crypt), ...Object.values(deck.library)].map((card) => {
+    if (card.q < 1) return;
     if (card.c.Banned) hasBanned = true;
     if (
       limitedCards &&

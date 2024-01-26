@@ -65,7 +65,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-1">
+                <div className="flex items-center gap-2">
                   <div className="flex items-center justify-end gap-2">
                     {hasBanned && (
                       <Warning
@@ -126,7 +126,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           label: (
             <div className="flex items-center justify-between">
               <div className="inline">{decks[deckid].name}</div>
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center gap-1">
                 {inventoryMode && (
                   <div>
                     {decks[deckid].inventoryType == 's' && <Shuffle />}
