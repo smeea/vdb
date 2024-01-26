@@ -90,6 +90,14 @@ const ResultCryptLayoutText = ({
         <ResultCryptCapacity card={card} />
       </div>
       <Hr />
+      {card.Banned && (
+        <div
+          className="text-fgRed dark:text-fgRedDark"
+          title={`Banned in ${card.Banned}`}
+        >
+          Banned in {card.Banned}
+        </div>
+      )}
       {legalRestriction && legalRestriction !== PLAYTEST && (
         <div
           className="text-fgRed dark:text-fgRedDark"
