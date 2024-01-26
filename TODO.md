@@ -7,7 +7,6 @@
 - Show banned in card modal similar to legal notice
 - Move lock button to selector (at least on Desktop)
 - Indicator gaps with inventory icons in selector
-- Recommendation for playtest (see backend errors)
 - Capacity gap in draw same as in crypt
 
 # FEATURES
@@ -22,3 +21,4 @@
 - Refactor Banned, Groups into getRestriction
 - Refactor Warnings and ResultLegalIcons container
 - Refactor utils/consts to include 'POD', 'Promo', 'bcp' (check for other constants in code)
+- Text text-wrap:balance for card names

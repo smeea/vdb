@@ -20,11 +20,11 @@ def deck_recommendation(cards):
     library = {}
 
     empty_cards = [k for k,v in cards.items() if v < 1]
-    for k in empty_cards:
-        del cards[k]
+    playtest_cards = [k for k in cards.keys() if k > 210000 or (k > 110000 and k < 200000)]
+    for k in empty_cards + playtest_cards:
+        del cards[int(k)]
 
     for k, v in cards.items():
-        k = int(k)
         if k > 200000:
             crypt[k] = {"c": cardbase_crypt[str(k)], "q": v}
             crypt_total += v
@@ -53,7 +53,6 @@ def deck_recommendation(cards):
     recommended_library = {}
 
     for c in cards:
-        c = int(c)
         for r in compatibility[str(c)]:
             r = int(r)
             if r in cards:
