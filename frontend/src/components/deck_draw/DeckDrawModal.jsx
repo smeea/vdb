@@ -79,7 +79,7 @@ const DeckDrawModal = ({
                     {initialTransfers}t
                   </div>
                 </div>
-                <div className="flex flex-row space-x-1">
+                <div className="flex gap-1">
                   <Button
                     variant="primary"
                     title="Draw All"
@@ -137,7 +137,7 @@ const DeckDrawModal = ({
                 </div>
                 <div />
               </div>
-              <div className="flex flex-row space-x-1">
+              <div className="flex gap-1">
                 <Button
                   title="Draw All"
                   variant="primary"
@@ -195,7 +195,10 @@ const DeckDrawModal = ({
                     <div className="flex items-center font-bold">
                       {burnedCrypt.length}
                     </div>
-                    <div className="flex items-center" title="Total Capacity">
+                    <div
+                      className="flex gap-1 items-center"
+                      title="Total Capacity"
+                    >
                       <ResultCryptCapacity card={{ Capacity: 'X' }} />
                       <b>{burnedCapacityTotal}</b>
                     </div>
@@ -217,9 +220,9 @@ const DeckDrawModal = ({
                     <div className="flex items-center font-bold">
                       {burnedLibrary.length}
                     </div>
-                    <div className="flex space-x-3">
+                    <div className="flex gap-3">
                       <div
-                        className="flex items-center space-x-1"
+                        className="flex items-center gap-1"
                         title="Total Blood Cost"
                       >
                         <ResultLibraryCost
@@ -229,7 +232,7 @@ const DeckDrawModal = ({
                         <b>{burnedBloodTotal}</b>
                       </div>
                       <div
-                        className="flex items-center space-x-1"
+                        className="flex items-center gap-1"
                         title="Total Pool Cost"
                       >
                         <ResultLibraryCost valuePool="X" className="h-[30px]" />

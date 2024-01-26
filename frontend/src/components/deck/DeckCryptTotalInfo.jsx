@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisciplinesCryptSummary } from '@/components';
+import { DisciplinesCryptSummary, ResultCryptCapacity } from '@/components';
 import { useApp } from '@/context';
 import { drawUniqueProbability, countCards, countTotalCost } from '@/utils';
 import { CAPACITY } from '@/utils/constants';
@@ -43,19 +43,20 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
   return (
     <>
       <div className="flex justify-between">
-        <div className="flex space-x-1" title="Average capacity">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark">
-            Avg. cap:
+        <div className="flex gap-0.5" title="Average capacity">
+          <div className="flex items-center gap-1 text-fgSecondary dark:text-fgSecondaryDark">
+            Avg.
+            <ResultCryptCapacity card={{ Capacity: 'X' }} />
           </div>
-          <div>{cryptAvg}</div>
+          <div>: {cryptAvg}</div>
         </div>
-        <div className="flex space-x-3">
+        <div className="flex gap-3">
           <div className="text-fgSecondary dark:text-fgSecondaryDark">
             Uniq:
           </div>
           <div
             className={`flex flex-row ${
-              isMobile && uniqueDraw.length > 2 ? 'space-x-2' : 'space-x-3'
+              isMobile && uniqueDraw.length > 2 ? 'gap-2' : 'gap-3'
             }`}
           >
             {uniqueDraw}
