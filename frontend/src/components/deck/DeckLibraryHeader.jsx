@@ -38,83 +38,89 @@ const DeckLibraryHeader = ({
   return (
     <>
       <Header>
-        <div className="flex gap-1.5 p-2 font-bold">
-          <div className="inline">
-            Library [{libraryTotal}
-            {!inMissing &&
-              (libraryTotal < 60 || libraryTotal > 90) &&
-              ' of 60-90'}
-            ]
-          </div>
-          {!inMissing && (
-            <>
-              {hasBanned && (
-                <Warning
-                  value="BANNED"
-                  icon={<ResultLegalIcon type={BANNED} className="flex" />}
-                />
-              )}
-              {limitedMode && hasLimited && <Warning value="LIMITED" />}
-              {hasPlaytest && (
-                <Warning
-                  value="PLAYTEST"
-                  icon={<ResultLegalIcon type={PLAYTEST} className="flex" />}
-                />
-              )}
-              {hasIllegalDate && (
+        <div className="flex basis-full justify-between">
+          <div className="flex basis-full items-center justify-between gap-2 px-2 font-bold">
+            <div className="flex">
+              Library [{libraryTotal}
+              {!inMissing &&
+                (libraryTotal < 60 || libraryTotal > 90) &&
+                ' of 60-90'}
+              ]
+            </div>
+            <div className="flex gap-2">
+              {!inMissing && (
                 <>
-                  <Warning
-                    value="LEGAL DATE"
-                    icon={
-                      <ResultLegalIcon
-                        type={LEGAL}
-                        value={hasIllegalDate}
-                        className="flex"
+                  {hasBanned && (
+                    <Warning
+                      value="BANNED"
+                      icon={<ResultLegalIcon type={BANNED} className="flex" />}
+                    />
+                  )}
+                  {limitedMode && hasLimited && <Warning value="LIMITED" />}
+                  {hasPlaytest && (
+                    <Warning
+                      value="PLAYTEST"
+                      icon={
+                        <ResultLegalIcon type={PLAYTEST} className="flex" />
+                      }
+                    />
+                  )}
+                  {hasIllegalDate && (
+                    <>
+                      <Warning
+                        value="LEGAL DATE"
+                        icon={
+                          <ResultLegalIcon
+                            type={LEGAL}
+                            value={hasIllegalDate}
+                            className="flex"
+                          />
+                        }
                       />
-                    }
-                  />
+                    </>
+                  )}
                 </>
               )}
-            </>
-          )}
-        </div>
-        {!inMissing && (
-          <div className="flex space-x-3">
-            <div
-              className="flex items-center space-x-1"
-              title="Total Blood Cost"
-            >
-              <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
-              <b>{bloodTotal}</b>
             </div>
-            <div
-              className="flex items-center space-x-1"
-              title="Total Pool Cost"
-            >
-              <ResultLibraryCost valuePool="X" className="h-[30px]" />
-              <b>{poolTotal}</b>
-            </div>
+            {!inMissing && (
+              <div className="flex gap-3">
+                <div
+                  className="flex items-center gap-1"
+                  title="Total Blood Cost"
+                >
+                  <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
+                  <b>{bloodTotal}</b>
+                </div>
+                <div
+                  className="flex items-center gap-1"
+                  title="Total Pool Cost"
+                >
+                  <ResultLibraryCost valuePool="X" className="h-[30px]" />
+                  <b>{poolTotal}</b>
+                </div>
+              </div>
+            )}
           </div>
-        )}
-        <div className="flex items-center gap-1 min-h-[44px]">
-          <Button
-            className="min-h-[44px]"
-            title="Additional Info"
-            variant="primary"
-            onClick={() => setShowInfo(!showInfo)}
-          >
-            <InfoCircle />
-          </Button>
-          {isEditable && !isMobile && (
+          <div className="flex items-center gap-1 min-h-[44px]">
             <Button
               className="min-h-[44px]"
-              title="Add Card"
+              title="Additional Info"
               variant="primary"
-              onClick={() => setShowAdd(!showAdd)}
+              onClick={() => setShowInfo(!showInfo)}
             >
-              <PlusLg width="15" height="15" viewBox="0 0 16 16" />
+              <InfoCircle />
             </Button>
-          )}
+            {isEditable && !isMobile && (
+              <Button
+                className="min-h-[44px]"
+                title="Add Card"
+                variant="primary"
+                onClick={() => setShowAdd(!showAdd)}
+              >
+                <PlusLg width="15" height="15" viewBox="0 0 16 16" />
+              </Button>
+            )}
+          </div>
         </div>
       </Header>
       {showInfo && (

@@ -42,79 +42,82 @@ const DeckCryptHeader = ({
   return (
     <>
       <Header>
-        <div className="flex gap-1.5 p-2 font-bold">
-          <div className="inline">
-            Crypt [{cryptTotal}
-            {!inMissing && cryptTotal < 12 && ' of 12+'}]
+        <div className="flex basis-full justify-between">
+          <div className="flex basis-full items-center justify-between gap-2 px-2 font-bold">
+            <div className="flex">
+              Crypt [{cryptTotal}
+              {!inMissing && cryptTotal < 12 && ' of 12+'}] {cryptGroups}
+            </div>
+            <div className="flex gap-2">
+              {!inMissing && (
+                <>
+                  {hasWrongGroups && <Warning value="GROUPS" />}
+                  {hasBanned && (
+                    <Warning
+                      value="BANNED"
+                      icon={
+                        <ResultLegalIcon
+                          type={BANNED}
+                          value={BANNED}
+                          className="flex"
+                        />
+                      }
+                    />
+                  )}
+                  {limitedMode && hasLimited && <Warning value="LIMITED" />}
+                  {hasPlaytest && (
+                    <Warning
+                      value="PLAYTEST"
+                      icon={
+                        <ResultLegalIcon type={PLAYTEST} className="flex" />
+                      }
+                    />
+                  )}
+                  {hasIllegalDate && (
+                    <Warning
+                      value="LEGAL DATE"
+                      icon={
+                        <ResultLegalIcon
+                          type={LEGAL}
+                          value={hasIllegalDate}
+                          className="flex"
+                        />
+                      }
+                    />
+                  )}
+                </>
+              )}
+            </div>
+            <div />
           </div>
-          {!inMissing && (
-            <>
-              {hasWrongGroups ? (
-                <Warning value="GROUPS" />
-              ) : (
-                <div className="inline">{cryptGroups}</div>
-              )}
-              {hasBanned && (
-                <Warning
-                  value="BANNED"
-                  icon={
-                    <ResultLegalIcon
-                      type={BANNED}
-                      value={BANNED}
-                      className="flex"
-                    />
-                  }
-                />
-              )}
-              {limitedMode && hasLimited && <Warning value="LIMITED" />}
-              {hasPlaytest && (
-                <Warning
-                  value="PLAYTEST"
-                  icon={<ResultLegalIcon type={PLAYTEST} className="flex" />}
-                />
-              )}
-              {hasIllegalDate && (
-                <Warning
-                  value="LEGAL DATE"
-                  icon={
-                    <ResultLegalIcon
-                      type={LEGAL}
-                      value={hasIllegalDate}
-                      className="flex"
-                    />
-                  }
-                />
-              )}
-            </>
-          )}
-        </div>
-        <div className="flex items-center gap-1 min-h-[44px]">
-          {!inMissing && (
-            <SortButton
-              className="min-h-[44px]"
-              sortMethods={sortMethods}
-              sortMethod={sortMethod}
-              setSortMethod={setSortMethod}
-            />
-          )}
-          <Button
-            className="min-h-[44px]"
-            title="Additional Info"
-            variant="primary"
-            onClick={() => setShowInfo(!showInfo)}
-          >
-            <InfoCircle />
-          </Button>
-          {isEditable && !isMobile && (
+          <div className="flex items-center gap-1 min-h-[44px]">
+            {!inMissing && (
+              <SortButton
+                className="min-h-[44px]"
+                sortMethods={sortMethods}
+                sortMethod={sortMethod}
+                setSortMethod={setSortMethod}
+              />
+            )}
             <Button
               className="min-h-[44px]"
-              title="Add Card"
+              title="Additional Info"
               variant="primary"
-              onClick={() => setShowAdd(!showAdd)}
+              onClick={() => setShowInfo(!showInfo)}
             >
-              <PlusLg width="15" height="15" viewBox="0 0 16 16" />
+              <InfoCircle />
             </Button>
-          )}
+            {isEditable && !isMobile && (
+              <Button
+                className="min-h-[44px]"
+                title="Add Card"
+                variant="primary"
+                onClick={() => setShowAdd(!showAdd)}
+              >
+                <PlusLg width="15" height="15" viewBox="0 0 16 16" />
+              </Button>
+            )}
+          </div>
         </div>
       </Header>
       {showInfo && (

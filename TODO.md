@@ -2,7 +2,6 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Fix alignment/wraping in ResultCryptName (and Library) - advanced, indicators
-- Fix alignment in DeckCrypHeader (and Library) with warnings
 
 # FEATURES
 
