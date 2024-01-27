@@ -1,7 +1,6 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
-- Fix alignment/wraping in ResultCryptName (and Library) - advanced, indicators
 
 # FEATURES
 
@@ -15,4 +14,3 @@
 - Refactor Banned, Groups into getRestriction
 - Refactor Warnings and ResultLegalIcons container
 - Refactor utils/consts to include 'POD', 'Promo', 'bcp' (check for other constants in code)
-- Text text-wrap:balance for card names

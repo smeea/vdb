@@ -8,24 +8,19 @@ const ResultLibraryName = ({ card, colored = true, isBanned }) => {
 
   return (
     <div
-      className={`inline space-x-1 ${
+      className={`inline whitespace-nowrap space-x-1 ${
         colored ? 'text-fgName dark:text-fgNameDark' : ''
       }`}
     >
       <div
-        className={`inline ${card.Banned || isBanned ? 'line-through' : ''}`}
+        className={`inline whitespace-normal ${
+          card.Banned || isBanned ? 'line-through' : ''
+        }`}
       >
         {card['Name']}
       </div>
-      {(card.Banned || isBanned) && (
-        <div className="inline whitespace-nowrap">
-          {card.Banned ? (
-            <ResultLegalIcon type={BANNED} value={card.Banned} />
-          ) : (
-            <>[Limited]</>
-          )}
-        </div>
-      )}
+      {card.Banned && <ResultLegalIcon type={BANNED} value={card.Banned} />}
+      {isBanned && <>[Limited]</>}
       {legalRestriction && (
         <ResultLegalIcon
           type={legalRestriction === PLAYTEST ? PLAYTEST : LEGAL}
