@@ -8,11 +8,10 @@ import {
   Button,
   SortButton,
   Header,
-  ResultLegalIcon,
 } from '@/components';
 import { useApp } from '@/context';
 import { useKeyDisciplines, useDeckCrypt } from '@/hooks';
-import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckCryptHeader = ({
   deckid,
@@ -51,39 +50,12 @@ const DeckCryptHeader = ({
             <div className="flex gap-2">
               {!inMissing && (
                 <>
-                  {hasWrongGroups && <Warning value="GROUPS" />}
-                  {hasBanned && (
-                    <Warning
-                      value="BANNED"
-                      icon={
-                        <ResultLegalIcon
-                          type={BANNED}
-                          value={BANNED}
-                          className="flex"
-                        />
-                      }
-                    />
-                  )}
-                  {limitedMode && hasLimited && <Warning value="LIMITED" />}
-                  {hasPlaytest && (
-                    <Warning
-                      value="PLAYTEST"
-                      icon={
-                        <ResultLegalIcon type={PLAYTEST} className="flex" />
-                      }
-                    />
-                  )}
+                  {hasWrongGroups && <Warning type={GROUPS} />}
+                  {hasBanned && <Warning type={BANNED} />}
+                  {limitedMode && hasLimited && <Warning type={LIMITED} />}
+                  {hasPlaytest && <Warning type={PLAYTEST} />}
                   {hasIllegalDate && (
-                    <Warning
-                      value="LEGAL DATE"
-                      icon={
-                        <ResultLegalIcon
-                          type={LEGAL}
-                          value={hasIllegalDate}
-                          className="flex"
-                        />
-                      }
-                    />
+                    <Warning value={hasIllegalDate} type={LEGAL} />
                   )}
                 </>
               )}

@@ -106,7 +106,7 @@ const AnalyzeLoadButtons = ({
                   icon={<StarFill />}
                   text="Finnish Nationals 2022 [2022-11-05]"
                 />
-                {/* TODO REMOVE USERNAME CHECK WHEN STABLE */}
+                {/* TO TEST FILES BEFORE BUNDLING INTO ARCHIVE */}
                 {username == '1' && (
                   <ButtonIconed
                     className="w-full"

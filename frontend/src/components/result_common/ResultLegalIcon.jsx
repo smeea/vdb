@@ -9,7 +9,6 @@ const ResultLegalIcon = ({ value, type = 'default', className = '' }) => {
     PLAYTEST: 'Playtest',
     BANNED: `Banned in ${value}`,
     LEGAL: `Not Tournament Legal until ${value}`,
-    default: 'Warning',
   };
 
   const icons = {
@@ -32,15 +31,16 @@ const ResultLegalIcon = ({ value, type = 'default', className = '' }) => {
         viewBox="0 0 16 16"
       />
     ),
-    default: <Exclamation width="15" height="15" viewBox="0 0 16 16" />,
   };
 
   return (
     <div
       className={`inline-flex items-center whitespace-nowrap text-fgRed dark:text-fgRedDark ${className}`}
-      title={title[type]}
+      title={title[type] ?? ''}
     >
-      {icons[type]}
+      {icons[type] ?? (
+        <Exclamation width="15" height="15" viewBox="0 0 16 16" />
+      )}
     </div>
   );
 };

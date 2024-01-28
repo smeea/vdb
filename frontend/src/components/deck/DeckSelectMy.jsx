@@ -3,12 +3,7 @@ import { useSnapshot } from 'valtio';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import At from '@/assets/images/icons/at.svg?react';
-import {
-  Select,
-  ResultPreconClan,
-  Warning,
-  ResultLegalIcon,
-} from '@/components';
+import { Select, ResultPreconClan, ResultLegalIcon } from '@/components';
 import { limitedStore, deckStore, useApp } from '@/context';
 import { getRestrictions, getClan } from '@/utils';
 import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
@@ -67,15 +62,8 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
                 <div className="flex items-center gap-2">
                   <div className="flex items-center justify-end gap-2">
-                    {hasBanned && (
-                      <Warning
-                        title="Banned"
-                        icon={
-                          <ResultLegalIcon type={BANNED} className="flex" />
-                        }
-                      />
-                    )}
-                    {limitedMode && hasLimited && <Warning title="Limited" />}
+                    {hasBanned && <ResultLegalIcon type={BANNED} />}
+                    {limitedMode && hasLimited && <ResultLegalIcon />}
                     {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
                     {hasIllegalDate && (
                       <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />
