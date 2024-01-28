@@ -8,7 +8,7 @@ import {
   Select,
 } from '@/components';
 import { useApp } from '@/context';
-import { PLAYTEST } from '@/utils/constants';
+import { PLAYTEST, BCP } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
@@ -28,7 +28,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       ),
     },
     {
-      value: 'bcp',
+      value: BCP,
       name: name,
       label: (
         <div className="flex items-center">
@@ -81,11 +81,11 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     });
 
   const filterOption = ({ label, value }, string) => {
-    const name = ['any', 'bcp'].includes(value)
+    const name = ['any', BCP].includes(value)
       ? label.props.children[1]
       : label.props.children[0].props.children[1];
 
-    const set = ['any', 'bcp'].includes(value)
+    const set = ['any', BCP].includes(value)
       ? null
       : label.props.children[1].props.children;
 
@@ -166,7 +166,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
               value={i.value}
               label={i.label}
               title={i.title}
-              disabled={value.value[0] === 'bcp' && i.value === 'reprint'}
+              disabled={value.value[0] === BCP && i.value === 'reprint'}
               checked={value['print'] === i.value}
               onChange={onChangeOptions}
             />

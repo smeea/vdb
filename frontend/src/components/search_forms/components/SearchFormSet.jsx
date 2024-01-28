@@ -7,7 +7,7 @@ import {
   Checkbox,
 } from '@/components';
 import { useApp } from '@/context';
-import { PLAYTEST } from '@/utils/constants';
+import { PLAYTEST, POD, BCP, PROMO } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
@@ -27,7 +27,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       ),
     },
     {
-      value: 'bcp',
+      value: BCP,
       name: name,
       label: (
         <div className="flex items-center">
@@ -60,7 +60,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const filterOption = ({ label, value }, string) => {
     let name;
     let year;
-    if (['any', 'bcp', 'Promo', 'POD', PLAYTEST].includes(value)) {
+    if (['any', BCP, PROMO, POD, PLAYTEST].includes(value)) {
       name = label.props.children[1];
     } else {
       name = label.props.children[0].props.children;
@@ -156,9 +156,9 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
                 title={i.title}
                 disabled={
                   value.value.length > 1 ||
-                  value.value[0] === 'bcp' ||
-                  value.value[0] === 'Promo' ||
-                  value.value[0] === 'POD'
+                  value.value[0] === BCP ||
+                  value.value[0] === PROMO ||
+                  value.value[0] === POD
                 }
                 checked={value['age'] === i.value}
                 onChange={onChangeOptions}
@@ -193,9 +193,9 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
                 label={i.label}
                 title={i.title}
                 disabled={
-                  (value.value[0] === 'bcp' ||
-                    value.value[0] === 'Promo' ||
-                    value.value[0] === 'POD') &&
+                  (value.value[0] === BCP ||
+                    value.value[0] === PROMO ||
+                    value.value[0] === POD) &&
                   i.value === 'reprint'
                 }
                 checked={value['print'] === i.value}

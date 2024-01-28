@@ -1,4 +1,4 @@
-import { PLAYTEST, CARD_TEXT, MASTER, ID } from '@/utils/constants';
+import { POD, PLAYTEST, PROMO, CARD_TEXT, MASTER, ID } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 export const getCardProperty = (card, property) => {
@@ -81,7 +81,7 @@ export const getRestrictions = (deck, limitedCards) => {
 
 export const getLegality = (card) => {
   const sets = Object.keys(card.Set).filter((s) => s !== PLAYTEST);
-  if (sets.length > 1 || ['POD', 'Promo'].includes(sets[0])) return false;
+  if (sets.length > 1 || [POD, PROMO].includes(sets[0])) return false;
   if (sets.length == 0) return PLAYTEST;
 
   const MS_TO_DAYS = 1000 * 60 * 60 * 24;

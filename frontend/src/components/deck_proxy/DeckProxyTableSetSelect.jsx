@@ -2,6 +2,7 @@ import React from 'react';
 import { Select } from '@/components';
 import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import { CardImage, Tooltip } from '@/components';
+import { POD } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
@@ -14,7 +15,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
   ];
 
   Object.keys(setsAndPrecons).map((i) => {
-    if (card['Set'][i] && i !== 'POD') {
+    if (card['Set'][i] && i !== POD) {
       setOptions.push({
         value: i.toLowerCase(),
         id: card.Id,
@@ -39,7 +40,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
           name="set"
           placeholder="Set"
           value={setOptions.find(
-            (obj) => value && obj.value === value.toLowerCase,
+            (obj) => value && obj.value === value.toLowerCase
           )}
           onChange={handleSetSelector}
         />

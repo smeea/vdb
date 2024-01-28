@@ -3,6 +3,7 @@ import { Disclosure, Tab } from '@headlessui/react';
 import { TabButton, TwdHallFameCardsPlayer } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
+import { POD, PROMO } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdHallOfFameCards = () => {
@@ -31,10 +32,10 @@ const TwdHallOfFameCards = () => {
         let releaseDate = null;
 
         Object.keys(card.Set)
-          .filter((set) => set !== 'POD')
+          .filter((set) => set !== POD)
           .map((set) => {
             const d =
-              set === 'Promo'
+              set === PROMO
                 ? Object.keys(card.Set.Promo)[0]
                 : setsAndPrecons[set].date;
 
@@ -136,7 +137,7 @@ const TwdHallOfFameCards = () => {
                   .sort(byInnovation)
                   .filter(
                     (player) =>
-                      Object.keys(getInnovationCards(players[player])).length,
+                      Object.keys(getInnovationCards(players[player])).length
                   )
                   .map((player) => (
                     <Disclosure key={player}>

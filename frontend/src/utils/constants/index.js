@@ -54,3 +54,5 @@ export const ASCII_NAME = 'ASCII Name';
 export const PLAYTEST = 'PLAYTEST';
 export const BANNED = 'BANNED';
 export const LEGAL = 'LEGAL';
+export const POD = 'POD';
+export const PROMO = 'Promo';

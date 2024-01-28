@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, ConditionalTooltip } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useApp } from '@/context';
-import { PLAYTEST } from '@/utils/constants';
+import { POD, PLAYTEST, PROMO } from '@/utils/constants';
 
 const PreconsDetailed = ({ sets, set }) => {
   return Object.keys(sets[set]).map((i, idx) => {
@@ -20,7 +20,7 @@ const PreconsDetailed = ({ sets, set }) => {
         </li>
       );
     } else {
-      if (set === 'Promo') {
+      if (set === PROMO) {
         return <li key={idx}>{i}</li>;
       } else if (i !== 'DTC') {
         return <li key={idx}>{abbrevs[i]}</li>;
@@ -33,9 +33,9 @@ const PopoverText = ({ sets, set }) => {
   return (
     <div className="max-w-[400px] space-y-1">
       <b>{setsAndPrecons[set].name}</b>
-      {!['POD', 'Promo', PLAYTEST].includes(set) &&
+      {![POD, PROMO, PLAYTEST].includes(set) &&
         ' - ' + setsAndPrecons[set].date.slice(0, 4)}
-      {!['POD', 'Promo'].includes(set) && (
+      {![POD, PROMO].includes(set) && (
         <ul className="space-y-1">
           <PreconsDetailed sets={sets} set={set} />
         </ul>
@@ -60,7 +60,7 @@ const Sets = ({ sets, setImageSet, setSelectedSet }) => {
         <div
           className="inline-block whitespace-nowrap"
           onClick={() => {
-            if (set !== 'POD') setImageSet(set.toLowerCase());
+            if (set !== POD) setImageSet(set.toLowerCase());
           }}
           key={index}
         >

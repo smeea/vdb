@@ -3,6 +3,7 @@
 - Mobile support for Tournament Analyze
 
 # FEATURES
+- Playtest reports
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
@@ -13,4 +14,3 @@
 - Update to Headlessui 2 (review new components)
 - Refactor Banned, Groups into getRestriction
 - Refactor Warnings and ResultLegalIcons container
-- Refactor utils/consts to include 'POD', 'Promo', 'bcp' (check for other constants in code)

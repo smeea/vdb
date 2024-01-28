@@ -8,6 +8,7 @@ import {
 import { useApp } from '@/context';
 import { byName } from '@/utils';
 import { useFetch } from '@/hooks';
+import { POD, PROMO } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdCardsHistory = () => {
@@ -28,10 +29,10 @@ const TwdCardsHistory = () => {
         target[cardid] = { ...value[cardid], ...cardBase[cardid] };
 
         Object.keys(cardBase[cardid].Set)
-          .filter((set) => set !== 'POD')
+          .filter((set) => set !== POD)
           .map((set) => {
             const d =
-              set === 'Promo'
+              set === PROMO
                 ? Object.keys(cardBase[cardid].Set.Promo)[0]
                 : setsAndPrecons[set].date;
 

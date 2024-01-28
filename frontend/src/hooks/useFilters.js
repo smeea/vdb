@@ -3,7 +3,7 @@
 // in case of missing filter or matching them the method returns false, meaning there's no missing criteria
 // if the filter is present and the card dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that card check.
-import { PLAYTEST } from '@/utils/constants';
+import { PLAYTEST, BCP, PROMO } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const useFilters = (cards = {}) => {
@@ -468,7 +468,7 @@ const missingSet = (filter, card) => {
   const dates = cardDates(card, true);
 
   return !sets.some((set) => {
-    if (set === 'bcp') {
+    if (set === BCP) {
       if ((print === 'only' || print === 'first') && dates.min >= BCP_START)
         return true;
       else if (dates.max >= BCP_START) return true;
@@ -500,7 +500,7 @@ const missingSet = (filter, card) => {
         case 'first':
           if (
             !(
-              (set === 'Promo' && dates.minPromo <= dates.min) ||
+              (set === PROMO && dates.minPromo <= dates.min) ||
               dates.min === setDate
             )
           )
@@ -525,7 +525,7 @@ const missingPrecon = (filter, card) => {
   return !setsAndSub.some((setAndSub) => {
     const [set, subSet] = setAndSub.split(':');
 
-    if (setAndSub === 'bcp') {
+    if (setAndSub === BCP) {
       if (print) {
         if (print === 'only' && dates.min >= BCP_START) return true;
         else if (
@@ -540,7 +540,7 @@ const missingPrecon = (filter, card) => {
       Object.keys(card.Set[set]).includes(subSet)
     ) {
       if (print) {
-        const setDate = set !== 'bcp' ? setsAndPrecons[set].date : null;
+        const setDate = set !== BCP ? setsAndPrecons[set].date : null;
         switch (print) {
           case 'only':
             return (
@@ -619,7 +619,7 @@ const missingCostCheck = (logic, filter, cardCost) => {
 
 const cardDates = (card, addPromo = false) => {
   const cardSets = Object.keys(card.Set).filter(
-    (set) => set !== 'Promo' && set !== PLAYTEST
+    (set) => set !== PROMO && set !== PLAYTEST
   );
   const setsDates = cardSets
     .map((key) => setsAndPrecons[key].date)
