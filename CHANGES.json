@@ -1,5 +1,11 @@
 [
   {
+    "version": "2024-01-28",
+    "changes": [
+      "Fix performance issue affecting users with many decks"
+    ]
+  },
+  {
     "version": "2024-01-21",
     "changes": [
       "Add indicators to mark decks with banned, not-yet-legal, playtested cards",
