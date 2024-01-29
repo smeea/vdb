@@ -16,13 +16,12 @@ export const setDeck = (v) => {
 export const deckCardChange = (deckid, card, q) => {
   const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
   const initialDeckState = JSON.parse(JSON.stringify(deckStore.deck));
-  const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks));
 
   deckServices.cardChange(deckid, card.Id, q).catch(() => {
     if (deckid === deckStore.deck.deckid) {
       deckStore.deck = initialDeckState;
+      deckStore.decks[deckid] = initialDeckState;
     }
-    deckStore.decks = initialDecksState;
   });
 
   if (q >= 0) {
@@ -178,7 +177,7 @@ export const deckLocalize = (
   localizedCrypt,
   nativeCrypt,
   localizedLibrary,
-  nativeLibrary,
+  nativeLibrary
 ) => {
   Object.values(deckStore.deck.crypt).map((card) => {
     const id = card.c.Id;

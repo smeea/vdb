@@ -10,7 +10,6 @@ import {
   usedStore,
   inventoryStore,
   limitedStore,
-  deckStore,
 } from '@/context';
 import {
   DeckCardQuantityTd,
@@ -32,7 +31,6 @@ const DeckLibraryTableRow = ({
   shouldShowModal,
 }) => {
   const { limitedMode, inventoryMode, isDesktop } = useApp();
-  const decks = useSnapshot(deckStore).decks;
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const limitedLibrary = useSnapshot(limitedStore).library;
@@ -80,8 +78,8 @@ const DeckLibraryTableRow = ({
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
     : idx % 2
-      ? 'bg-bgThird dark:bg-bgThirdDark'
-      : 'bg-bgPrimary dark:bg-bgPrimaryDark';
+    ? 'bg-bgThird dark:bg-bgThirdDark'
+    : 'bg-bgPrimary dark:bg-bgPrimaryDark';
 
   return (
     <tr
@@ -113,7 +111,7 @@ const DeckLibraryTableRow = ({
         hardUsedTotal={hardUsedTotal}
         inInventory={inInventory}
         inMissing={inMissing}
-        inventoryType={decks?.[deckid]?.inventoryType}
+        inventoryType={deck.inventoryType}
         isEditable={isEditable}
         q={card.q}
         softUsedMax={softUsedMax}

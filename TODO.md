@@ -1,7 +1,6 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
-- Performance regression
 
 # FEATURES
 - Playtest reports
@@ -14,3 +13,4 @@
 - Update to Vite 5 (when hmr circular import issue is resolved)
 - Update to Headlessui 2 (review new components)
 - Refactor Banned, Groups into getRestriction
+- Refactor useDeckMissing in deck proxy/missing
