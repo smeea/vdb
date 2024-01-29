@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Activity from '@/assets/images/icons/activity.svg?react';
-import { Modal, ButtonIconed, TextWithLinks } from '@/components';
+import { Hr, Modal, ButtonIconed, TextWithLinks } from '@/components';
 import { useFetch } from '@/hooks';
 import lastChange from '@/LAST_CHANGE.json';
 
@@ -20,12 +20,12 @@ const UpdateNotification = () => {
           title="Update available!"
           centered
         >
-          <div className="flex flex-col gap-3 sm:gap-5">
-            <div>
+          <div className="flex flex-col gap-4 sm:gap-5">
+            <div className="flex flex-col gap-1.5">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 Changes [{update.version}]:
               </div>
-              <ul className="space-y-1">
+              <ul className="flex flex-col gap-1.5">
                 {update.changes.map((change, idx) => (
                   <li key={idx}>
                     <TextWithLinks>{change}</TextWithLinks>
@@ -33,6 +33,7 @@ const UpdateNotification = () => {
                 ))}
               </ul>
             </div>
+            <Hr />
             <ButtonIconed
               variant="primary"
               onClick={() => {

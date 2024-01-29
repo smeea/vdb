@@ -10,19 +10,19 @@ const Changelog = () => {
       <div className="sm:mb-6">
         <Banner />
       </div>
-      <div className="space-y-4 max-sm:p-3">
-        <Await resolve={loaderData.changes}>
-          {(changes) => (
-            <>
-              <div className="text-xl font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
-                CHANGELOG
-              </div>
+      <Await resolve={loaderData.changes}>
+        {(changes) => (
+          <div className="flex flex-col gap-3 max-sm:p-3">
+            <div className="text-xl font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
+              CHANGELOG
+            </div>
+            <div className="flex flex-col gap-5">
               {changes.map((item) => (
-                <div key={item.version}>
+                <div className="flex flex-col gap-1.5" key={item.version}>
                   <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
                     {item.version}:
                   </div>
-                  <ul className="space-y-1">
+                  <ul className="flex flex-col gap-1.5">
                     {item.changes.map((change, idx) => (
                       <li key={idx}>
                         <TextWithLinks>{change}</TextWithLinks>
@@ -31,10 +31,10 @@ const Changelog = () => {
                   </ul>
                 </div>
               ))}
-            </>
-          )}
-        </Await>
-      </div>
+            </div>
+          </div>
+        )}
+      </Await>
     </div>
   );
 };
