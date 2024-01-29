@@ -18,7 +18,6 @@ import {
   Tooltip,
   Button,
   Checkbox,
-  Warning,
   ResultLegalIcon,
 } from '@/components';
 import { limitedStore, useApp, deckUpdate } from '@/context';
@@ -135,13 +134,8 @@ const DeckSelectAdvModalTableRow = ({
               </div>
             )}
           <div className="flex items-center justify-end gap-2">
-            {hasBanned && (
-              <Warning
-                title="Banned"
-                icon={<ResultLegalIcon type={BANNED} className="flex" />}
-              />
-            )}
-            {limitedMode && hasLimited && <Warning title="Limited" />}
+            {hasBanned && <ResultLegalIcon type={BANNED} />}
+            {limitedMode && hasLimited && <ResultLegalIcon />}
             {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
             {hasIllegalDate && (
               <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />

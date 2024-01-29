@@ -1,14 +1,9 @@
 import React from 'react';
-import {
-  ResultLegalIcon,
-  ResultModal,
-  TwdResultCryptTableRow,
-  Warning,
-} from '@/components';
+import { ResultModal, TwdResultCryptTableRow, Warning } from '@/components';
 import { useApp } from '@/context';
 import { countCards, countTotalCost } from '@/utils';
 import { useDeckCrypt, useModalCardController } from '@/hooks';
-import { CAPACITY } from '@/utils/constants';
+import { BANNED, GROUPS, CAPACITY } from '@/utils/constants';
 
 const TwdResultCryptTable = ({ crypt }) => {
   const { cryptDeckSort, setShowFloatingButtons } = useApp();
@@ -39,20 +34,13 @@ const TwdResultCryptTable = ({ crypt }) => {
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-1.5 px-1 text-fgSecondary dark:text-whiteDark font-bold">
-        <div className="flex items-center gap-1.5">
-          <div>Crypt [{cryptTotal}]</div>
-          {hasWrongGroups ? (
-            <Warning value="GROUPS" />
-          ) : (
-            <div className="inline">{cryptGroups}</div>
-          )}
-          {hasBanned && (
-            <Warning
-              value="BANNED"
-              icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
-            />
-          )}
+      <div className="flex h-[30px] items-center justify-between gap-2 px-1 text-fgSecondary dark:text-fgPrimaryDark font-bold">
+        <div className="flex">
+          Crypt [{cryptTotal}] {cryptGroups}
+        </div>
+        <div className="flex gap-2">
+          {hasWrongGroups && <Warning type={GROUPS} />}
+          {hasBanned && <Warning type={BANNED} />}
         </div>
         <div title="Average capacity">~{cryptAvg}</div>
       </div>

@@ -3,10 +3,10 @@ import {
   ResultModal,
   TwdResultLibraryKeyCardsTableRow,
   ResultLibraryCost,
-  ResultLegalIcon,
   Warning,
+  ResultLegalIcon,
 } from '@/components';
-import { GROUPED_TYPE, ASCII_NAME } from '@/utils/constants';
+import { BANNED, GROUPED_TYPE, ASCII_NAME } from '@/utils/constants';
 import { useApp } from '@/context';
 import { librarySort } from '@/utils';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
@@ -47,10 +47,13 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
               {isMobile ? 'Lib' : 'Library'} [{libraryTotal}], Keys:
             </div>
             {hasBanned && (
-              <Warning
-                value={isMobile ? 'B' : 'BANNED'}
-                icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
-              />
+              <>
+                {isMobile ? (
+                  <ResultLegalIcon type={BANNED} />
+                ) : (
+                  <Warning type={BANNED} />
+                )}
+              </>
             )}
             <div className="flex gap-1.5 sm:gap-3">
               <div className="flex items-center gap-1" title="Total Blood Cost">

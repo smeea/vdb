@@ -4,6 +4,7 @@
 
 # FEATURES
 - Playtest reports
+- Performance improvement for inventory-related and all-deck related features triggered at every deck/card
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries

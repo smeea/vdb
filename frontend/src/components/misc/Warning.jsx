@@ -30,18 +30,17 @@ const Warning = ({ type, value = 'WARNING', title = '' }) => {
       text: 'LIMITED',
       title: 'Cards Excluded in Limited Format',
     },
-    default: {},
   };
 
   return (
     <div
       className="flex items-center gap-0.5 dark:text-fgedDark whitespace-nowrap text-fgRed"
-      title={types?.[type].title ?? title}
+      title={types?.[type]?.title ?? title}
     >
-      {types?.[type].icon ?? (
+      {types?.[type]?.icon ?? (
         <Exclamation width="15" height="15" viewBox="0 0 16 16" />
       )}
-      <div className="flex items-center">{types[type].text ?? value}</div>
+      <div className="flex items-center">{types?.[type]?.text ?? value}</div>
     </div>
   );
 };

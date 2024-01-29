@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  ResultLegalIcon,
   ResultLibraryTypeImage,
   DeckLibraryTable,
   ResultModal,
@@ -9,7 +8,7 @@ import {
   ResultLibraryCost,
 } from '@/components';
 import { useApp } from '@/context';
-import { cardtypeSortedFull } from '@/utils/constants';
+import { BANNED, cardtypeSortedFull } from '@/utils/constants';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryByTypeTable = ({ library }) => {
@@ -64,16 +63,11 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-1.5 px-1 text-fgSecondary dark:text-whiteDark font-bold">
+      <div className="flex h-[30px] items-center justify-between gap-2 px-1 text-fgSecondary dark:text-whiteDark font-bold">
         <div className="flex items-center whitespace-nowrap gap-1.5">
-          Library [{libraryTotal}]{' '}
-          {hasBanned && (
-            <Warning
-              value="BANNED"
-              icon={<ResultLegalIcon value={'BANNED'} className="flex" />}
-            />
-          )}
+          Library [{libraryTotal}]
         </div>
+        <div className="flex">{hasBanned && <Warning type={BANNED} />}</div>
         <div className="flex gap-1.5 sm:gap-3">
           <div className="flex items-center gap-1" title="Total Blood Cost">
             <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
