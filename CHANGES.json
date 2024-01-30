@@ -1,5 +1,12 @@
 [
   {
+    "version": "2024-01-29",
+    "changes": [
+      "Fix TWD/PDA bugs with decks containing banned cards",
+      "Another performance improvement for users with many decks (it may still not be enough, please do not hesitate to tell about it)"
+    ]
+  },
+  {
     "version": "2024-01-28",
     "changes": [
       "Fix performance issue affecting users with many decks"
