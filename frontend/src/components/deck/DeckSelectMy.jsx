@@ -14,13 +14,14 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
   const limitedCards = useSnapshot(limitedStore);
 
   const byTimestamp = (a, b) => {
-    return new Date(b[1]) - new Date(a[1]);
+    return new Date(decks[b].timestamp) - new Date(decks[a].timestamp);
   };
 
   const options = useMemo(() => {
     return Object.keys(decks)
       .filter((i) => !decks[i].master && !decks[i].isHidden)
-      .map((i) => {
+      .sort(byTimestamp)
+      .map((i, idx) => {
         const diffDays = Math.round(
           (new Date() - new Date(decks[i]['timestamp'])) / (1000 * 60 * 60 * 24)
         );
@@ -40,52 +41,54 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
         const clan = getClan(decks[i].crypt);
 
-        const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
-          getRestrictions(decks[i], limitedCards);
+        let hasBanned;
+        let hasLimited;
+        let hasPlaytest;
+        let hasIllegalDate;
+        // TODO REMOVE AFTER VIRTUALIZATION FOR SELECT
+        if (diffDays < 90) {
+          ({ hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
+            getRestrictions(decks[i], limitedCards));
+        }
 
-        return [
-          {
-            value: i,
-            label: (
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="flex w-[40px] items-center justify-center">
-                    {clan && <ResultPreconClan clan={clan} />}
-                  </div>
-                  <div className="inline">
-                    {decks[i]['name'].slice(
-                      0,
-                      inventoryMode ? (isWide ? 28 : 23) : 32
-                    )}
-                  </div>
+        return {
+          value: i,
+          label: (
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <div className="flex w-[40px] items-center justify-center">
+                  {clan && <ResultPreconClan clan={clan} />}
                 </div>
-
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center justify-end gap-2">
-                    {hasBanned && <ResultLegalIcon type={BANNED} />}
-                    {limitedMode && hasLimited && <ResultLegalIcon />}
-                    {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
-                    {hasIllegalDate && (
-                      <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />
-                    )}
-                  </div>
-                  {inventoryMode && (
-                    <div>
-                      {decks[i].inventoryType == 's' && <Shuffle />}
-                      {decks[i].inventoryType == 'h' && <PinAngleFill />}
-                      {!decks[i].inventoryType && <At />}
-                    </div>
+                <div className="inline">
+                  {decks[i]['name'].slice(
+                    0,
+                    inventoryMode ? (isWide ? 28 : 23) : 32
                   )}
-                  <div className="text-sm">{lastEdit}</div>
                 </div>
               </div>
-            ),
-          },
-          decks[i]['timestamp'],
-        ];
-      })
-      .sort(byTimestamp)
-      .map((i) => i[0]);
+
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-end gap-2">
+                  {hasBanned && <ResultLegalIcon type={BANNED} />}
+                  {limitedMode && hasLimited && <ResultLegalIcon />}
+                  {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
+                  {hasIllegalDate && (
+                    <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />
+                  )}
+                </div>
+                {inventoryMode && (
+                  <div>
+                    {decks[i].inventoryType == 's' && <Shuffle />}
+                    {decks[i].inventoryType == 'h' && <PinAngleFill />}
+                    {!decks[i].inventoryType && <At />}
+                  </div>
+                )}
+                <div className="text-sm">{lastEdit}</div>
+              </div>
+            </div>
+          ),
+        };
+      });
   }, [decks, inventoryMode]);
 
   const filterOption = ({ label }, string) => {

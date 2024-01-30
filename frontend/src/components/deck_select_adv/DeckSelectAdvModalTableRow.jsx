@@ -123,23 +123,23 @@ const DeckSelectAdvModalTableRow = ({
         onClick={handleClick}
       >
         <div
-          className="flex justify-between text-fgName dark:text-fgNameDark"
+          className="flex justify-between gap-2 text-fgName dark:text-fgNameDark"
           title={deck.name}
         >
           {deck.name}
-          {deck.branchName &&
-            (deck.master || (deck.branches && deck.branches.length > 0)) && (
-              <div className="inline" title={deck.branchName}>
-                {deck.branchName}
-              </div>
-            )}
-          <div className="flex items-center justify-end gap-2">
+          <div className="flex items-center justify-end gap-3">
             {hasBanned && <ResultLegalIcon type={BANNED} />}
             {limitedMode && hasLimited && <ResultLegalIcon />}
             {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
             {hasIllegalDate && (
               <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />
             )}
+            {deck.branchName &&
+              (deck.master || (deck.branches && deck.branches.length > 0)) && (
+                <div className="inline" title={deck.branchName}>
+                  {deck.branchName}
+                </div>
+              )}
           </div>
         </div>
       </td>

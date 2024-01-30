@@ -16,13 +16,7 @@ export const setDeck = (v) => {
 export const deckCardChange = (deckid, card, q) => {
   const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
   const initialDeckState = JSON.parse(JSON.stringify(deckStore.deck));
-
-  deckServices.cardChange(deckid, card.Id, q).catch(() => {
-    if (deckid === deckStore.deck.deckid) {
-      deckStore.deck = initialDeckState;
-      deckStore.decks[deckid] = initialDeckState;
-    }
-  });
+  const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks[deckid]));
 
   if (q >= 0) {
     deckStore.decks[deckid][cardSrc][card.Id] = {
@@ -65,14 +59,16 @@ export const deckCardChange = (deckid, card, q) => {
     deckStore.cryptTimers = [...deckStore.cryptTimers, timerId];
   };
   startTimer();
+
+  deckServices.cardChange(deckid, card.Id, q).catch(() => {
+    deckStore.deck = initialDeckState;
+    deckStore.decks[deckid] = initialDecksState;
+  });
 };
 
 export const deckUpdate = (deckid, field, value) => {
-  const initialDeckState =
-    deckid === deckStore.deck?.deckid
-      ? JSON.parse(JSON.stringify(deckStore.deck))
-      : null;
-  const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks));
+  const initialDeckState = JSON.parse(JSON.stringify(deckStore.deck));
+  const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks[deckid]));
 
   if (field === 'usedInInventory') {
     Object.keys(value).map((cardid) => {
@@ -83,7 +79,7 @@ export const deckUpdate = (deckid, field, value) => {
       }
     });
 
-    if (deckid === deckStore.deck?.deckid) {
+    if (deckid === deckStore.deck.deckid) {
       Object.keys(value).map((cardid) => {
         if (cardid > 200000) {
           deckStore.deck.crypt[cardid].i = value[cardid];
@@ -96,7 +92,7 @@ export const deckUpdate = (deckid, field, value) => {
     deckStore.decks[deckid].crypt = value.crypt;
     deckStore.decks[deckid].library = value.library;
 
-    if (deckid === deckStore.deck?.deckid) {
+    if (deckid === deckStore.deck.deckid) {
       deckStore.deck.crypt = value.crypt;
       deckStore.deck.library = value.library;
     }
@@ -111,7 +107,7 @@ export const deckUpdate = (deckid, field, value) => {
       });
     }
 
-    if (deckid === deckStore.deck?.deckid) {
+    if (deckid === deckStore.deck.deckid) {
       deckStore.deck[field] = value;
       if (field === 'inventoryType') {
         Object.keys(deckStore.deck.crypt).map((cardid) => {
@@ -145,10 +141,8 @@ export const deckUpdate = (deckid, field, value) => {
   deckStore.decks[deckid].timestamp = now.toUTCString();
 
   deckServices.update(deckid, field, value).catch(() => {
-    if (deckid === deckStore.deck?.deckid) {
-      deckStore.deck = initialDeckState;
-    }
-    deckStore.decks = initialDecksState;
+    deckStore.deck = initialDeckState;
+    deckStore.decks[deckid] = initialDecksState;
   });
 };
 
