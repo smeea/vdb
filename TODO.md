@@ -8,7 +8,6 @@
 # FEATURES
 - Playtest reports
 - Change password to UI
-- Accept JOL import pattern (Q-ty x Card Name)
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
