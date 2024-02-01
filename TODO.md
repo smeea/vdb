@@ -2,7 +2,6 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Remove proxy missing from compare
-- Click on Author in PDA
 - Capacity icon on MacOS
 
 # FEATURES

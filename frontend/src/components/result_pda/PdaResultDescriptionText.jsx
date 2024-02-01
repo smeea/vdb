@@ -4,7 +4,7 @@ import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import TagFill from '@/assets/images/icons/tag-fill.svg?react';
 import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
-import { useApp, searchTwdForm, clearSearchForm } from '@/context';
+import { useApp, searchPdaForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';
 
 const PdaResultDescriptionText = ({ deck }) => {
@@ -13,12 +13,10 @@ const PdaResultDescriptionText = ({ deck }) => {
   const tags = useTags(deck.crypt, deck.library);
   const lastUpdated = new Date(deck['timestamp']).toISOString().split('T')[0];
 
-  const handleClick = (target, value) => {
-    clearSearchForm('twd');
-    searchTwdForm[target] = value;
-    navigate(
-      `/pda?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`,
-    );
+  const handleClick = (value) => {
+    clearSearchForm('pda');
+    searchPdaForm['author'] = value;
+    navigate(`/pda?q=${encodeURIComponent(JSON.stringify({ author: value }))}`);
   };
 
   return (
