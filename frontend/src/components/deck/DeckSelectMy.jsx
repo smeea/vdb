@@ -46,7 +46,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
         let hasPlaytest;
         let hasIllegalDate;
         // TODO REMOVE AFTER VIRTUALIZATION FOR SELECT
-        if (diffDays < 90) {
+        if (idx < 15 || diffDays < 90) {
           ({ hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
             getRestrictions(decks[i], limitedCards));
         }

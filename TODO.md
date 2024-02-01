@@ -3,9 +3,12 @@
 - Mobile support for Tournament Analyze
 - Remove proxy missing from compare
 - Click on Author in PDA
+- Capacity icon on MacOS
 
 # FEATURES
 - Playtest reports
+- Change password to UI
+- Accept JOL import pattern (Q-ty x Card Name)
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
@@ -17,5 +20,4 @@
 - Refactor useDeckMissing in deck proxy/missing
 - Refactor DeckSelectMy to use virtualized
 - Review DeckSelectAdv performance
-- Refactor DeckSelectAdv to use virtualized
 - Performance improvement for inventory-related and all-deck related features triggered at every deck/card
