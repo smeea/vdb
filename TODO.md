@@ -1,7 +1,6 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
-- Remove proxy missing from compare
 - Capacity icon on MacOS
 
 # FEATURES
