@@ -20,11 +20,10 @@ const DeckDeleteButton = ({ deck, noText }) => {
   const getLastDeckExcept = () => {
     const lastDecks = Object.values(decks)
       .filter((d) => {
-        return (
-          !d?.branches.includes(deck.deckid) &&
-          !d.master &&
-          d.deckid !== deck.deckid
-        );
+        if (d.branches && d.branches.includes(deck.deckid)) return false;
+        if (d.master) return false;
+        if (d.deckid === deck.deckid) return false;
+        return true;
       })
       .sort(byTimestamp)
       .map((d) => d.deckid);
