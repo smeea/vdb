@@ -1,5 +1,7 @@
+import { deepClone } from '@/utils';
+
 const sanitizeFormState = (target, state) => {
-  const input = JSON.parse(JSON.stringify(state));
+  const input = deepClone(state);
   let forms = [];
 
   switch (target) {

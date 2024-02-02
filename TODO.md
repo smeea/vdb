@@ -17,4 +17,4 @@
 - Refactor useDeckMissing in deck proxy/missing
 - Refactor DeckSelectMy to use virtualized
 - Review DeckSelectAdv performance
-- Performance improvement for inventory-related and all-deck related features triggered at every deck/card
+- Performance improvement for inventory-related and all-deck related features triggered at every deck/card (useMemo?)

@@ -1,4 +1,5 @@
 import { proxy } from 'valtio';
+import { deepClone } from '@/utils';
 import { inventoryServices } from '@/services';
 
 export const inventoryStore = proxy({
@@ -18,15 +19,13 @@ export const usedStore = proxy({
 });
 
 export const inventoryCardsAdd = (cards) => {
-  const initialCryptState = JSON.parse(JSON.stringify(inventoryStore.crypt));
-  const initialLibraryState = JSON.parse(
-    JSON.stringify(inventoryStore.library),
-  );
+  const initialCryptState = deepClone(inventoryStore.crypt);
+  const initialLibraryState = deepClone(inventoryStore.library);
 
   const filteredCards = {};
   Object.keys(cards)
     .filter(
-      (cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000)),
+      (cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000))
     )
     .map((cardid) => {
       filteredCards[cardid] = cards[cardid];
@@ -59,12 +58,9 @@ export const inventoryCardsAdd = (cards) => {
 
 export const inventoryCardChange = (card, q) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-
-  const initialState =
-    card.Id > 200000
-      ? JSON.parse(JSON.stringify(inventoryStore.crypt))
-      : JSON.parse(JSON.stringify(inventoryStore.library));
-
+  const initialState = deepClone(
+    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library
+  );
   const store =
     card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
 
@@ -91,13 +87,10 @@ export const inventoryCardChange = (card, q) => {
 };
 
 export const inventoryCardTextChange = (card, text) => {
-  if (card.Id > 210000) return;
-
-  const initialState =
-    card.Id > 200000
-      ? JSON.parse(JSON.stringify(inventoryStore.crypt))
-      : JSON.parse(JSON.stringify(inventoryStore.library));
-
+  if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
+  const initialState = deepClone(
+    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library
+  );
   const store =
     card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
 

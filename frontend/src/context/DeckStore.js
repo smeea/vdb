@@ -1,4 +1,5 @@
 import { proxy } from 'valtio';
+import { deepClone } from '@/utils';
 import { deckServices } from '@/services';
 
 export const deckStore = proxy({
@@ -15,8 +16,8 @@ export const setDeck = (v) => {
 
 export const deckCardChange = (deckid, card, q) => {
   const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
-  const initialDeckState = JSON.parse(JSON.stringify(deckStore.deck));
-  const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks[deckid]));
+  const initialDeckState = deepClone(deckStore.deck);
+  const initialDecksState = deepClone(deckStore.decks[deckid]);
 
   if (q >= 0) {
     deckStore.decks[deckid][cardSrc][card.Id] = {
@@ -67,8 +68,8 @@ export const deckCardChange = (deckid, card, q) => {
 };
 
 export const deckUpdate = (deckid, field, value) => {
-  const initialDeckState = JSON.parse(JSON.stringify(deckStore.deck));
-  const initialDecksState = JSON.parse(JSON.stringify(deckStore.decks[deckid]));
+  const initialDeckState = deepClone(deckStore.deck);
+  const initialDecksState = deepClone(deckStore.decks[deckid]);
 
   if (field === 'usedInInventory') {
     Object.keys(value).map((cardid) => {
