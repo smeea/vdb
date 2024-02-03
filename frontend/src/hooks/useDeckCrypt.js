@@ -1,7 +1,12 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { countCards, containCard, cryptSort, getRestrictions } from '@/utils';
-import { ANY } from '@/utils/constants';
+import {
+  countCards,
+  containCard,
+  getGroups,
+  cryptSort,
+  getRestrictions,
+} from '@/utils';
 import { limitedStore } from '@/context';
 
 const useDeckCrypt = (
@@ -54,28 +59,7 @@ const useDeckCrypt = (
       getRestrictions({ crypt: cryptFrom, library: {} }, limitedCards);
 
     const cryptTotal = countCards(cryptFrom);
-    const cryptGroupMin = cryptFrom
-      .filter((card) => card.c.Group !== ANY)
-      .reduce(
-        (acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc),
-        10
-      );
-    const cryptGroupMax = cryptFrom
-      .filter((card) => card.c.Group !== ANY)
-      .reduce(
-        (acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc),
-        0
-      );
-
-    let cryptGroups;
-    let hasWrongGroups;
-    if (cryptGroupMax - cryptGroupMin == 1) {
-      cryptGroups = `- G${cryptGroupMin}-${cryptGroupMax}`;
-    } else if (cryptGroupMax - cryptGroupMin == 0) {
-      cryptGroups = `- G${cryptGroupMax}`;
-    } else if (cryptGroupMin && cryptGroupMax) {
-      hasWrongGroups = true;
-    }
+    const { hasWrongGroups, cryptGroups } = getGroups(cryptFrom);
 
     return {
       crypt,

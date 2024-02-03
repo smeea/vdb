@@ -45,7 +45,8 @@ const DeckCryptHeader = ({
           <div className="flex basis-full items-center justify-between gap-2 px-2 font-bold">
             <div className="flex">
               Crypt [{cryptTotal}
-              {!inMissing && cryptTotal < 12 && ' of 12+'}] {cryptGroups}
+              {!inMissing && cryptTotal < 12 && ' of 12+'}]{' '}
+              {cryptGroups && <>G{cryptGroups}</>}
             </div>
             <div className="flex gap-2">
               {!inMissing && (

@@ -1,4 +1,12 @@
-import { POD, PLAYTEST, PROMO, CARD_TEXT, MASTER, ID } from '@/utils/constants';
+import {
+  ANY,
+  POD,
+  PLAYTEST,
+  PROMO,
+  CARD_TEXT,
+  MASTER,
+  ID,
+} from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 export const getCardProperty = (card, property) => {
@@ -91,6 +99,24 @@ export const getLegality = (card) => {
   setDate.setDate(setDate.getDate() + 30);
   const dateIso = setDate.toISOString().split('T')[0];
   return dateIso;
+};
+
+export const getGroups = (cards) => {
+  const cryptGroupMin = cards
+    .filter((card) => card.c.Group !== ANY)
+    .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc), 10);
+
+  const cryptGroupMax = cards
+    .filter((card) => card.c.Group !== ANY)
+    .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
+
+  if (cryptGroupMax - cryptGroupMin == 1) {
+    return { cryptGroups: `${cryptGroupMin}-${cryptGroupMax}` };
+  } else if (cryptGroupMax - cryptGroupMin == 0) {
+    return { cryptGroups: cryptGroupMax };
+  }
+
+  return { hasWrongGroups: true };
 };
 
 export const getTotalCardsGroupedBy = (cards, property) => {
