@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import Cart4 from '@/assets/images/icons/cart4.svg?react';
 import { ButtonIconed, DeckMissingModal } from '@/components';
 import { useApp } from '@/context';
+import { useDeckMissing } from '@/hooks';
 
-const DeckMissing = ({ deck, missingCrypt, missingLibrary }) => {
+const DeckMissing = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { missingCrypt, missingLibrary } = useDeckMissing(deck);
   const [showModal, setShowModal] = useState();
 
   const handleClick = () => {

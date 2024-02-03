@@ -6,15 +6,14 @@ import {
   MenuButton,
   MenuItems,
   MenuItem,
-  ButtonIconed,
   DeckProxySelectModal,
 } from '@/components';
 import { countCards, cryptSort, librarySort } from '@/utils';
-import { useCardImageUrl } from '@/hooks';
+import { useDeckMissing, useCardImageUrl } from '@/hooks';
 import { GROUPED_TYPE } from '@/utils/constants';
 import { useApp } from '@/context';
 
-const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
+const DeckProxyButton = ({ deck, inDiff }) => {
   const {
     inventoryMode,
     setShowFloatingButtons,
@@ -23,6 +22,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
     isDesktop,
     lang,
   } = useApp();
+  const { missingCrypt, missingLibrary } = useDeckMissing(deck);
 
   const [isLoading, setIsLoading] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState();
@@ -278,16 +278,4 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
   );
 };
 
-// <ButtonIconed
-//   variant={isDesktop ? 'secondary' : 'primary'}
-//   onClick={() =>
-//     proxyCards(missingCrypt, missingLibrary, {
-//       isWhiteGaps: false,
-//       isLetter: false,
-//     })
-//   }
-//   title="Proxy Missing Cards to PDF ready for print"
-//   icon={<Printer />}
-//   text="Proxy Missing"
-// />
 export default DeckProxyButton;

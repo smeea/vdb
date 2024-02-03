@@ -14,7 +14,6 @@
 - Back button behavior
 - Update to Vite 5 (when hmr circular import issue is resolved)
 - Update to Headlessui 2 (review new components)
-- Refactor useDeckMissing in deck proxy/missing
 - Refactor DeckSelectMy to use virtualized
 - Review DeckSelectAdv performance
 - Performance improvement for inventory-related and all-deck related features triggered at every deck/card (useMemo?)

@@ -23,8 +23,6 @@ import { useApp } from '@/context';
 
 const DeckButtons = ({
   deck,
-  missingCrypt,
-  missingLibrary,
   setShowInfo,
   setShowDraw,
   setShowSeating,
@@ -59,23 +57,13 @@ const DeckButtons = ({
             <DeckDiffButton deckid={deck.deckid} />
             <DeckReviewButton deck={deck} />
             <DeckCopyUrlButton setQrUrl={setQrUrl} deck={deck} />
-            <DeckProxyButton
-              deck={deck}
-              missingCrypt={missingCrypt}
-              missingLibrary={missingLibrary}
-            />
+            <DeckProxyButton deck={deck} />
             <DeckRecommendationButton
               setShowRecommendation={setShowRecommendation}
             />
             <DeckSearchSimilarButton deck={deck} />
             <DeckDrawButton setShow={setShowDraw} />
-            {inventoryMode && (
-              <DeckMissingButton
-                deck={deck}
-                missingCrypt={missingCrypt}
-                missingLibrary={missingLibrary}
-              />
-            )}
+            {inventoryMode && <DeckMissingButton deck={deck} />}
           </>
         )}
       <SeatingButton setShow={setShowSeating} />

@@ -26,7 +26,7 @@ import {
   Seating,
 } from '@/components';
 import { deckStore, useApp, setDeck } from '@/context';
-import { useDeck, useDeckMissing, useTags } from '@/hooks';
+import { useDeck, useTags } from '@/hooks';
 
 const Decks = () => {
   const {
@@ -116,8 +116,6 @@ const Decks = () => {
   const handleSelect = (e) => {
     navigate(`/decks/${e.value.replace(' ', '_')}`, { replace: true });
   };
-
-  const { missingCrypt, missingLibrary } = useDeckMissing(deck);
 
   const allTagsOptions = useMemo(() => {
     const allTags = new Set();
@@ -277,8 +275,6 @@ const Decks = () => {
               setShowSeating={setShowSeating}
               setShowRecommendation={setShowRecommendation}
               setQrUrl={setQrUrl}
-              missingCrypt={missingCrypt}
-              missingLibrary={missingLibrary}
             />
           </div>
         </div>
@@ -333,8 +329,6 @@ const Decks = () => {
             setShowSeating={setShowSeating}
             setShowRecommendation={setShowRecommendation}
             setQrUrl={setQrUrl}
-            missingCrypt={missingCrypt}
-            missingLibrary={missingLibrary}
           />
         </Modal>
       )}
