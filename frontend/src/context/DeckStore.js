@@ -59,7 +59,7 @@ export const deckCardChange = (deckid, card, q) => {
 
     deckStore.cryptTimers = [...deckStore.cryptTimers, timerId];
   };
-  startTimer();
+  if (cardSrc === 'crypt') startTimer();
 
   deckServices.cardChange(deckid, card.Id, q).catch(() => {
     deckStore.deck = initialDeckState;

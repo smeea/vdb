@@ -12,17 +12,15 @@ const useDeckCrypt = (
 ) => {
   const limitedCards = useSnapshot(limitedStore);
 
-  const cardsFrom = Object.values(cardsList);
-  const cardsTo = Object.values(cardsToList);
-  const cryptFrom = Object.values(cardsFrom).filter((card) => card.q > 0);
-  const cryptTo = Object.values(cardsTo).filter(
+  const cryptFrom = Object.values(cardsList).filter((card) => card.q > 0);
+  const cryptTo = Object.values(cardsToList).filter(
     (card) => card.q > 0 && !containCard(cryptFrom, card)
   );
 
-  const cryptFromSide = Object.values(cardsFrom).filter(
+  const cryptFromSide = Object.values(cardsList).filter(
     (card) => card.q <= 0 && !containCard(cryptTo, card)
   );
-  const cryptToSide = Object.values(cardsTo).filter(
+  const cryptToSide = Object.values(cardsToList).filter(
     (card) =>
       card.q <= 0 &&
       !containCard(cryptFrom, card) &&
@@ -34,27 +32,6 @@ const useDeckCrypt = (
     ...cryptFromSide,
     ...cryptToSide.map((card) => ({ q: 0, c: card.c })),
   ];
-
-  const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
-    getRestrictions({ crypt: cryptFrom, library: {} }, limitedCards);
-
-  const cryptTotal = countCards(cryptFrom);
-  const cryptGroupMin = cryptFrom
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc), 10);
-  const cryptGroupMax = cryptFrom
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
-
-  let cryptGroups;
-  let hasWrongGroups;
-  if (cryptGroupMax - cryptGroupMin == 1) {
-    cryptGroups = `- G${cryptGroupMin}-${cryptGroupMax}`;
-  } else if (cryptGroupMax - cryptGroupMin == 0) {
-    cryptGroups = `- G${cryptGroupMax}`;
-  } else if (cryptGroupMin && cryptGroupMax) {
-    hasWrongGroups = true;
-  }
 
   const sortedState = useMemo(() => {
     return cryptSort(crypt, sortMethod).map((c) => c.c.Id);
@@ -72,19 +49,50 @@ const useDeckCrypt = (
     return sortedSideState.indexOf(a.c.Id) - sortedSideState.indexOf(b.c.Id);
   });
 
-  return {
-    crypt,
-    cryptSide,
-    hasBanned,
-    hasLimited,
-    hasPlaytest,
-    hasIllegalDate,
-    cryptTotal,
-    cryptGroups,
-    hasWrongGroups,
-    sortedCards,
-    sortedCardsSide,
-  };
+  const value = useMemo(() => {
+    const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
+      getRestrictions({ crypt: cryptFrom, library: {} }, limitedCards);
+
+    const cryptTotal = countCards(cryptFrom);
+    const cryptGroupMin = cryptFrom
+      .filter((card) => card.c.Group !== ANY)
+      .reduce(
+        (acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc),
+        10
+      );
+    const cryptGroupMax = cryptFrom
+      .filter((card) => card.c.Group !== ANY)
+      .reduce(
+        (acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc),
+        0
+      );
+
+    let cryptGroups;
+    let hasWrongGroups;
+    if (cryptGroupMax - cryptGroupMin == 1) {
+      cryptGroups = `- G${cryptGroupMin}-${cryptGroupMax}`;
+    } else if (cryptGroupMax - cryptGroupMin == 0) {
+      cryptGroups = `- G${cryptGroupMax}`;
+    } else if (cryptGroupMin && cryptGroupMax) {
+      hasWrongGroups = true;
+    }
+
+    return {
+      crypt,
+      cryptSide,
+      hasBanned,
+      hasLimited,
+      hasPlaytest,
+      hasIllegalDate,
+      cryptTotal,
+      cryptGroups,
+      hasWrongGroups,
+      sortedCards,
+      sortedCardsSide,
+    };
+  }, [cardsList, timer]);
+
+  return value;
 };
 
 export default useDeckCrypt;

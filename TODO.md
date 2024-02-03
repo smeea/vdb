@@ -17,3 +17,4 @@
 - Refactor DeckSelectMy to use virtualized
 - Review DeckSelectAdv performance
 - Performance improvement for inventory-related and all-deck related features triggered at every deck/card (useMemo?)
+- Refactor groups in useDeckCrypt
