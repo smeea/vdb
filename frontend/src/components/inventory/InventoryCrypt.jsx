@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   InventoryCryptTable,
   InventoryFilterForm,
@@ -15,7 +15,6 @@ const InventoryCrypt = ({
   clan,
   setClan,
   newFocus,
-  setMissingCryptByClan,
   inShared,
   onlyNotes,
 }) => {
@@ -41,10 +40,6 @@ const InventoryCrypt = ({
     missingByClan,
     missingByClanTotal,
   } = useInventoryCrypt(cards, category, compact, onlyNotes);
-
-  useEffect(() => {
-    if (!compact) setMissingCryptByClan(missingByClan);
-  }, [cards]);
 
   return (
     <>

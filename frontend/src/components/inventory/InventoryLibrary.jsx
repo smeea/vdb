@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   InventoryLibraryTable,
   InventoryFilterForm,
@@ -17,8 +17,6 @@ const InventoryLibrary = ({
   discipline,
   setDiscipline,
   newFocus,
-  setMissingLibraryByType,
-  setMissingLibraryByDiscipline,
   inShared,
   onlyNotes,
 }) => {
@@ -34,9 +32,7 @@ const InventoryLibrary = ({
 
   const {
     cardsByType,
-    missingByType,
     cardsByDiscipline,
-    missingByDiscipline,
     cardsFilteredByType,
     cardsFilteredByTypeTotal,
     cardsFilteredByTypeUnique,
@@ -51,15 +47,8 @@ const InventoryLibrary = ({
     compact,
     type,
     discipline,
-    onlyNotes,
+    onlyNotes
   );
-
-  useEffect(() => {
-    if (!compact) {
-      setMissingLibraryByType(missingByType);
-      setMissingLibraryByDiscipline(missingByDiscipline);
-    }
-  }, [cards]);
 
   return (
     <>

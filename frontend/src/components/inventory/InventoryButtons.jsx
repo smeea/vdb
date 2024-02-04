@@ -20,14 +20,14 @@ const InventoryButtons = ({
   clan,
   type,
   discipline,
-  missingCryptByClan,
-  missingLibraryByType,
-  missingLibraryByDiscipline,
+  category,
+  onlyNotes,
   crypt,
   library,
   setShowShareModal,
   inShared,
-  setInventoryKey,
+  setSharedInventoryCrypt,
+  setSharedInventoryLibrary,
 }) => {
   const {
     preconDecks,
@@ -54,7 +54,8 @@ const InventoryButtons = ({
             onClick={() => {
               setShowMenuButtons(false);
               setShowFloatingButtons(true);
-              setInventoryKey(undefined);
+              setSharedInventoryCrypt(null);
+              setSharedInventoryLibrary(null);
               navigate('/inventory');
             }}
             title="Back to My Inventory"
@@ -102,9 +103,10 @@ const InventoryButtons = ({
             )}
             <InventoryDeleteButton />
             <InventoryMissingButton
-              missingCryptByClan={missingCryptByClan}
-              missingLibraryByType={missingLibraryByType}
-              missingLibraryByDiscipline={missingLibraryByDiscipline}
+              crypt={crypt}
+              library={library}
+              category={category}
+              onlyNotes={onlyNotes}
               clan={clan}
               type={type}
               discipline={discipline}

@@ -3,14 +3,16 @@ import { useSnapshot } from 'valtio';
 import Cart4 from '@/assets/images/icons/cart4.svg?react';
 import { ButtonIconed, DeckMissingModal } from '@/components';
 import { useApp, inventoryStore } from '@/context';
+import { useInventoryCrypt, useInventoryLibrary } from '@/hooks';
 
 const InventoryMissingButton = ({
   clan,
   type,
   discipline,
-  missingCryptByClan,
-  missingLibraryByType,
-  missingLibraryByDiscipline,
+  crypt,
+  library,
+  category,
+  onlyNotes,
 }) => {
   const {
     isDesktop,
@@ -30,24 +32,39 @@ const InventoryMissingButton = ({
     setShowFloatingButtons(true);
   };
 
+  const { missingByClan } = useInventoryCrypt(
+    crypt,
+    category,
+    false,
+    onlyNotes
+  );
+
+  const { missingByType, missingByDiscipline } = useInventoryLibrary(
+    library,
+    category,
+    false,
+    type,
+    discipline,
+    onlyNotes
+  );
+
   const missingCrypt = useMemo(() => {
-    if (missingCryptByClan) return missingCryptByClan[clan];
-    else return {};
-  }, [clan, missingCryptByClan]);
+    if (missingByClan) return missingByClan[clan];
+    return {};
+  }, [clan, missingByClan]);
 
   const missingLibrary = useMemo(() => {
-    if (missingLibraryByDiscipline && missingLibraryByType) {
+    if (missingByDiscipline && missingByType) {
       const missing = {};
-      Object.values(missingLibraryByType[type])
+      Object.values(missingByType[type])
         .filter((i) => {
-          return missingLibraryByDiscipline[discipline][i.c.Id];
+          return missingByDiscipline[discipline][i.c.Id];
         })
         .map((i) => (missing[i.c.Id] = i));
       return missing;
-    } else {
-      return {};
     }
-  }, [type, discipline, missingLibraryByType, missingLibraryByDiscipline]);
+    return {};
+  }, [type, discipline, missingByType, missingByDiscipline]);
 
   const missAllVtesCrypt = {};
   const missAllVtesLibrary = {};
@@ -61,7 +78,7 @@ const InventoryMissingButton = ({
     })
     .map(
       (cardid) =>
-        (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] }),
+        (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] })
     );
 
   Object.keys(libraryCardBase)
@@ -73,7 +90,7 @@ const InventoryMissingButton = ({
     })
     .map(
       (cardid) =>
-        (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] }),
+        (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] })
     );
 
   return (

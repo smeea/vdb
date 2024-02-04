@@ -34,12 +34,12 @@ const Inventory = () => {
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const [inventoryError, setInventoryError] = useState();
-  const [inventoryKey, setInventoryKey] = useState();
   const query = new URLSearchParams(useLocation().search);
   const [sharedInventoryCrypt, setSharedInventoryCrypt] = useState();
   const [sharedInventoryLibrary, setSharedInventoryLibrary] = useState();
   const [showShareModal, setShowShareModal] = useState(false);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
+  const inShared = sharedInventoryCrypt && sharedInventoryLibrary;
 
   const getInventory = (key) => {
     const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
@@ -77,19 +77,10 @@ const Inventory = () => {
   };
 
   useEffect(() => {
-    if (query.get('key')) setInventoryKey(query.get('key'));
-  }, [query]);
-
-  useEffect(() => {
-    if (cryptCardBase && libraryCardBase) {
-      if (inventoryKey) {
-        getInventory(inventoryKey);
-      } else {
-        setSharedInventoryCrypt(undefined);
-        setSharedInventoryLibrary(undefined);
-      }
+    if (query.get('key') && !inShared && cryptCardBase && libraryCardBase) {
+      getInventory(query.get('key'));
     }
-  }, [inventoryKey, cryptCardBase, libraryCardBase]);
+  }, [query, cryptCardBase, libraryCardBase]);
 
   const [newCryptId, setNewCryptId] = useState();
   const [newLibraryId, setNewLibraryId] = useState();
@@ -101,17 +92,10 @@ const Inventory = () => {
   const [discipline, setDiscipline] = useState('All');
   const [onlyNotes, setOnlyNotes] = useState(false);
 
-  const [missingCryptByClan, setMissingCryptByClan] = useState();
-  const [missingLibraryByType, setMissingLibraryByType] = useState();
-  const [missingLibraryByDiscipline, setMissingLibraryByDiscipline] =
-    useState();
-
   const newCryptFocus = () => newCryptRef.current.focus();
   const newCryptRef = useRef();
   const newLibraryFocus = () => newLibraryRef.current.focus();
   const newLibraryRef = useRef();
-
-  const inShared = !!inventoryKey;
 
   const handleNewCard = (event) => {
     if (event.value > 200000) {
@@ -156,14 +140,11 @@ const Inventory = () => {
             <div>
               <InventoryCrypt
                 withCompact={newCryptId}
-                category={sharedInventoryCrypt ? 'ok' : category}
-                cards={
-                  sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
-                }
+                cards={inShared ? sharedInventoryCrypt : inventoryCrypt}
                 clan={clan}
                 setClan={setClan}
-                setMissingCryptByClan={setMissingCryptByClan}
                 inShared={inShared}
+                category={inShared ? 'ok' : category}
                 onlyNotes={onlyNotes}
               />
             </div>
@@ -199,18 +180,12 @@ const Inventory = () => {
             <div>
               <InventoryLibrary
                 withCompact={newLibraryId}
-                category={sharedInventoryLibrary ? 'ok' : category}
-                cards={
-                  sharedInventoryLibrary
-                    ? sharedInventoryLibrary
-                    : inventoryLibrary
-                }
+                category={inShared ? 'ok' : category}
+                cards={inShared ? sharedInventoryLibrary : inventoryLibrary}
                 type={type}
                 setType={setType}
                 discipline={discipline}
                 setDiscipline={setDiscipline}
-                setMissingLibraryByType={setMissingLibraryByType}
-                setMissingLibraryByDiscipline={setMissingLibraryByDiscipline}
                 inShared={inShared}
                 onlyNotes={onlyNotes}
               />
@@ -218,24 +193,18 @@ const Inventory = () => {
           </div>
           <div className="flex basis-full flex-col space-y-6 max-lg:hidden lg:basis-2/12">
             <InventoryButtons
-              crypt={
-                sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
-              }
-              library={
-                sharedInventoryLibrary
-                  ? sharedInventoryLibrary
-                  : inventoryLibrary
-              }
+              crypt={inShared ? sharedInventoryCrypt : inventoryCrypt}
+              library={inShared ? sharedInventoryLibrary : inventoryLibrary}
               setShowAddDeck={setShowAddDeck}
               setShowAddPrecon={setShowAddPrecon}
               setShowShareModal={setShowShareModal}
               clan={clan}
               discipline={discipline}
               type={type}
-              missingCryptByClan={missingCryptByClan}
-              missingLibraryByType={missingLibraryByType}
-              missingLibraryByDiscipline={missingLibraryByDiscipline}
-              setInventoryKey={setInventoryKey}
+              category={inShared ? 'ok' : category}
+              onlyNotes={onlyNotes}
+              setSharedInventoryCrypt={setSharedInventoryCrypt}
+              setSharedInventoryLibrary={setSharedInventoryLibrary}
               inShared={inShared}
             />
             <div>
@@ -283,22 +252,18 @@ const Inventory = () => {
         >
           <div className="space-y-3">
             <InventoryButtons
-              crypt={
-                sharedInventoryCrypt ? sharedInventoryCrypt : inventoryCrypt
-              }
-              library={
-                sharedInventoryCrypt ? sharedInventoryLibrary : inventoryLibrary
-              }
+              crypt={inShared ? sharedInventoryCrypt : inventoryCrypt}
+              library={inShared ? sharedInventoryLibrary : inventoryLibrary}
               setShowAddDeck={setShowAddDeck}
               setShowAddPrecon={setShowAddPrecon}
               setShowShareModal={setShowShareModal}
               clan={clan}
               discipline={discipline}
               type={type}
-              missingCryptByClan={missingCryptByClan}
-              missingLibraryByType={missingLibraryByType}
-              missingLibraryByDiscipline={missingLibraryByDiscipline}
-              setInventoryKey={setInventoryKey}
+              category={inShared ? 'ok' : category}
+              onlyNotes={onlyNotes}
+              setSharedInventoryCrypt={setSharedInventoryCrypt}
+              setSharedInventoryLibrary={setSharedInventoryLibrary}
               inShared={inShared}
             />
             <div>
