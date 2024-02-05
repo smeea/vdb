@@ -37,17 +37,11 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
                   : 'top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
               }
             >
-              <DeckCrypt
-                deck={{ ...deck, crypt: crypt, library: library }}
-                inMissing
-              />
+              <DeckCrypt deck={{ crypt: crypt, library: library }} inMissing />
             </div>
           </div>
           <div className="basis-full md:basis-4/9">
-            <DeckLibrary
-              deck={{ ...deck, crypt: crypt, library: library }}
-              inMissing
-            />
+            <DeckLibrary deck={{ crypt: crypt, library: library }} inMissing />
           </div>
         </div>
         <div className="flex flex-col justify-end gap-2 max-sm:p-2 max-sm:pt-0 sm:flex-row">
@@ -60,7 +54,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
             />
           )}
           <DeckExportButton
-            deck={{ ...deck, crypt: crypt, library: library }}
+            deck={{ name: deck.name, crypt: crypt, library: library }}
             inMissing
           />
         </div>

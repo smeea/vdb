@@ -4,7 +4,7 @@ import { ButtonIconed, DeckMissingModal } from '@/components';
 import { useApp } from '@/context';
 import { useDeckMissing } from '@/hooks';
 
-const DeckMissing = ({ deck }) => {
+const DeckMissingButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const { missingCrypt, missingLibrary } = useDeckMissing(deck);
   const [showModal, setShowModal] = useState();
@@ -45,4 +45,4 @@ const DeckMissing = ({ deck }) => {
   );
 };
 
-export default DeckMissing;
+export default DeckMissingButton;
