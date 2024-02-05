@@ -2,6 +2,7 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Capacity icon on MacOS
+- Swipes in inventory to change bg-colors (swipes disabled until fixes)
 
 # FEATURES
 - Playtest reports

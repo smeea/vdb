@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { useSwipeable } from 'react-swipeable';
+// import { useSwipeable } from 'react-swipeable';
 import {
   CardPopover,
   InventoryCardQuantity,
@@ -20,9 +21,9 @@ import {
   useApp,
   usedStore,
   limitedStore,
-  inventoryCardChange,
+  // inventoryCardChange,
 } from '@/context';
-import { useDebounce } from '@/hooks';
+// import { useDebounce } from '@/hooks';
 
 const InventoryLibraryTableRow = ({
   card,
@@ -38,34 +39,38 @@ const InventoryLibraryTableRow = ({
   const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
 
-  const [isSwiped, setIsSwiped] = useState();
-  useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
-  const SWIPE_THRESHOLD = 50;
-  const SWIPE_IGNORED_LEFT_EDGE = 30;
-  const swipeHandlers = useSwipeable({
-    swipeDuration: 250,
-    onSwipedLeft: (e) => {
-      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD) {
-        setIsSwiped('left');
-        inventoryCardChange(card.c, card.q - 1);
-      }
-    },
-    onSwipedRight: (e) => {
-      if (e.absX > SWIPE_THRESHOLD) {
-        setIsSwiped('right');
-        inventoryCardChange(card.c, card.q + 1);
-      }
-    },
-  });
+  // TODO fix bg-color changes on swipes (not working probably because of virtualized as same code work in Decks)
+  // removed as without bg-color it is very easy to mistakenly swipe and not even notice
+  //
+  // const [isSwiped, setIsSwiped] = useState();
+  // useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
+  // const SWIPE_THRESHOLD = 50;
+  // const SWIPE_IGNORED_LEFT_EDGE = 30;
+  // const swipeHandlers = useSwipeable({
+  //   swipeDuration: 250,
+  //   onSwipedLeft: (e) => {
+  //     if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD) {
+  //       setIsSwiped('left');
+  //       inventoryCardChange(card.c, card.q - 1);
+  //     }
+  //   },
+  //   onSwipedRight: (e) => {
+  //     if (e.absX > SWIPE_THRESHOLD) {
+  //       setIsSwiped('right');
+  //       inventoryCardChange(card.c, card.q + 1);
+  //     }
+  //   },
+  // });
 
-  const trBg = isSwiped
-    ? isSwiped === 'right'
-      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
-      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : '';
+  // const trBg = isSwiped
+  //   ? isSwiped === 'right'
+  //     ? 'bg-bgSuccess dark:bg-bgSuccessDark'
+  //     : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
+  //   : '';
 
   return (
-    <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>
+    // <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>
+    <div className="flex w-full items-center">
       {inShared ? (
         <div
           className={`flex h-full min-w-[45px] items-center justify-center border-r border-bgSecondary bg-blue/5 text-lg dark:border-bgSecondaryDark`}
