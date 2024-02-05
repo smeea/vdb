@@ -11,14 +11,7 @@ import { useApp } from '@/context';
 
 const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
   const { isMobile } = useApp();
-
-  const [crypt, setCrypt] = useState(deck.crypt);
-  const [library, setLibrary] = useState(deck.library);
-
-  const handleMissAllVtes = () => {
-    setCrypt(missAllVtes.crypt);
-    setLibrary(missAllVtes.library);
-  };
+  const [showMissAll, setShowMissAll] = useState();
 
   return (
     <Modal
@@ -37,24 +30,42 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
                   : 'top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
               }
             >
-              <DeckCrypt deck={{ crypt: crypt, library: library }} inMissing />
+              <DeckCrypt
+                deck={{
+                  crypt: showMissAll ? missAllVtes.crypt : deck.crypt,
+                }}
+                inMissing
+              />
             </div>
           </div>
           <div className="basis-full md:basis-4/9">
-            <DeckLibrary deck={{ crypt: crypt, library: library }} inMissing />
+            <DeckLibrary
+              deck={{
+                library: showMissAll ? missAllVtes.library : deck.library,
+              }}
+              inMissing
+            />
           </div>
         </div>
         <div className="flex flex-col justify-end gap-2 max-sm:p-2 max-sm:pt-0 sm:flex-row">
           {inInventory && (
             <ButtonIconed
               variant="primary"
-              onClick={handleMissAllVtes}
-              text="Missing for Complete VTES Collection (SLOW!)"
+              onClick={() => setShowMissAll(!showMissAll)}
+              text={
+                showMissAll
+                  ? 'Show Missing In Inventory'
+                  : 'Show Missing for Complete Collection (SLOW!)'
+              }
               icon={<Gem />}
             />
           )}
           <DeckExportButton
-            deck={{ name: deck.name, crypt: crypt, library: library }}
+            deck={{
+              name: deck.name,
+              crypt: showMissAll ? missAllVtes.crypt : deck.crypt,
+              library: showMissAll ? missAllVtes.library : deck.library,
+            }}
             inMissing
           />
         </div>
