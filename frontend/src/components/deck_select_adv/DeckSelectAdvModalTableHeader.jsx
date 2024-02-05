@@ -3,18 +3,12 @@ import { Select } from '@/components';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import At from '@/assets/images/icons/at.svg?react';
-import {
-  DeckSortButton,
-  DeckSelectAdvModalTagsFilter,
-  Checkbox,
-  Input,
-} from '@/components';
+import { DeckSelectAdvModalTagsFilter, Checkbox, Input } from '@/components';
 import { useApp } from '@/context';
 
 const DeckSelectAdvModalTableHeader = ({
   allTagsOptions,
   clanOptions,
-  setSortMethod,
   setClanFilter,
   setInvFilter,
   setNameFilter,
@@ -66,7 +60,7 @@ const DeckSelectAdvModalTableHeader = ({
   return (
     <thead>
       <tr>
-        {!short && (
+        {!(short || isMobile) && (
           <th className="min-w-[30px]">
             <Checkbox
               name="selectAll"
@@ -93,7 +87,7 @@ const DeckSelectAdvModalTableHeader = ({
               options={clanOptions}
               onChange={(e) => setClanFilter(e.value)}
               value={clanOptions.find(
-                (obj) => obj.value === clanFilter.toLowerCase(),
+                (obj) => obj.value === clanFilter.toLowerCase()
               )}
               isSearchable
               noDropdown
@@ -111,8 +105,10 @@ const DeckSelectAdvModalTableHeader = ({
             onChange={handleChangeNameFilter}
           />
         </th>
-        {!short && isDesktop && <th />}
-        {!short && !isNarrow && <th />}
+        {!short && isDesktop && <th className="min-w-[30px] sm:min-w-[45px]" />}
+        {!short && !isNarrow && (
+          <th className="min-w-[100px] sm:min-w-[105px]" />
+        )}
         {!short && (
           <th className="w-full">
             <DeckSelectAdvModalTagsFilter
@@ -123,16 +119,21 @@ const DeckSelectAdvModalTableHeader = ({
           </th>
         )}
         <th colSpan={short ? 2 : 1}>
-          <div className="flex justify-end gap-2 max-sm:flex-col">
-            <div className="flex items-center ps-1">
-              <Checkbox
-                name="revFilter"
-                label={isDesktop ? 'Show Revisions' : 'Rev'}
-                checked={revFilter}
-                onChange={() => setRevFilter(!revFilter)}
-              />
-            </div>
-            <DeckSortButton onChange={setSortMethod} />
+          <div className="flex items-center justify-end p-1">
+            <Checkbox
+              name="revFilter"
+              label={
+                isDesktop ? (
+                  <div className="whitespace-nowrap">Show Revisions</div>
+                ) : isMobile ? (
+                  'R'
+                ) : (
+                  'Rev'
+                )
+              }
+              checked={revFilter}
+              onChange={() => setRevFilter(!revFilter)}
+            />
           </div>
         </th>
       </tr>

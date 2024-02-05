@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import Cart4 from '@/assets/images/icons/cart4.svg?react';
 import { ButtonIconed, InventoryMissingModalWrapper } from '@/components';
-import { useApp, inventoryStore } from '@/context';
+import { useApp } from '@/context';
 
 const InventoryMissingButton = ({
   clan,
@@ -42,21 +42,6 @@ const InventoryMissingButton = ({
           handleClose={handleClose}
         />
       )}
-      {/* {showModal && ( */}
-      {/*   <DeckMissingModal */}
-      {/*     deck={{ */}
-      {/*       name: 'Missing cards for Inventory', */}
-      {/*       author: publicName, */}
-      {/*       description: '', */}
-      {/*       crypt: missingCrypt, */}
-      {/*       library: missingLibrary, */}
-      {/*       deckid: 'missingInInventory', */}
-      {/*     }} */}
-      {/*     missAllVtes={{ crypt: missAllVtesCrypt, library: missAllVtesLibrary }} */}
-      {/*     show={showModal} */}
-      {/*     handleClose={handleClose} */}
-      {/*     inInventory */}
-      {/*   /> */}
     </>
   );
 };

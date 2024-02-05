@@ -1,8 +1,13 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { deckStore } from '@/context';
+import { DeckSortButton } from '@/components';
 
-const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
+const DeckSelectAdvModalTotal = ({
+  setSortMethod,
+  tagsFilter,
+  setTagsFilter,
+}) => {
   const decks = useSnapshot(deckStore).decks;
   const byTags = {};
   let total = 0;
@@ -49,7 +54,7 @@ const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
             );
           })}
       </div>
-      <div />
+      <DeckSortButton onChange={setSortMethod} />
     </div>
   );
 };

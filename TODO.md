@@ -17,5 +17,4 @@
 - Update to Headlessui 2 (review new components)
 - Refactor DeckSelectMy to use virtualized
 - Review DeckSelectAdv performance
-- Review Inventory performance
 - Refactor PDF Proxy to call useDeckMissing on click

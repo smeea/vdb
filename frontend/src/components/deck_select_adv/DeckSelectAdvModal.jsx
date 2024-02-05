@@ -200,13 +200,13 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
             <DeckSelectAdvModalTotal
               tagsFilter={tagsFilter}
               setTagsFilter={setTagsFilter}
+              setSortMethod={setSortMethod}
             />
           )}
           <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
             <DeckSelectAdvModalTableHeader
               allTagsOptions={allTagsOptions}
               clanOptions={clanOptions}
-              setSortMethod={setSortMethod}
               setClanFilter={setClanFilter}
               setInvFilter={setInvFilter}
               setNameFilter={setNameFilter}
@@ -241,7 +241,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
             </tbody>
           </table>
         </div>
-        {!short && (
+        {!(short || isMobile) && (
           <div className="flex justify-end max-sm:flex-col max-sm:p-2 max-sm:pt-0">
             <Menu as="div" className="relative">
               <MenuButton

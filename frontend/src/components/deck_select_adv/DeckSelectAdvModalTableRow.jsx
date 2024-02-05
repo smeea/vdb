@@ -74,7 +74,7 @@ const DeckSelectAdvModalTableRow = ({
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
-      {!short && (
+      {!(short || isMobile) && (
         <td className="min-w-[30px]">
           <Checkbox
             checked={selectedDecks[deck.deckid] ?? false}
@@ -181,14 +181,10 @@ const DeckSelectAdvModalTableRow = ({
           <td>
             <div className="flex justify-end space-x-1">
               <DeckHideButton deck={deck} />
-              {!isNarrow && (
-                <>
-                  <DeckFreezeButton deck={deck} />
-                  <DeckPublicToggleButton deck={deck} inAdv />
-                </>
-              )}
+              {!isMobile && <DeckFreezeButton deck={deck} />}
               {isDesktop && (
                 <>
+                  <DeckPublicToggleButton deck={deck} inAdv />
                   <DeckCopyUrlButton deck={deck} noText isAuthor />
                   {revFilter &&
                   (deck.master ||
