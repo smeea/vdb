@@ -58,7 +58,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200003":{
         "ASCII Name":"Aaron Duggan, Cameron's Toady",
@@ -350,7 +350,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "200009":{
         "ASCII Name":"Abu Nuwasi",
@@ -437,7 +437,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Card with multiple types (eg. Combat/Action Modifer) are considered of the type they are played as, not both. ",
+                "text":"Card with multiple types (eg. Combat/Action Modifier) are considered of the type they are played as, not both. ",
                 "refs":{
                     "[PIB 20150924-2]":"http://www.vekn.net/forum/rules-questions/73293-adana-de-sforza-combo-cards#73307"
                 }
@@ -453,7 +453,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":73
+        "Twd":75
     },
     "200012":{
         "ASCII Name":"Adelaide Davis",
@@ -604,7 +604,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "200015":{
         "ASCII Name":"Adri, The Seeker",
@@ -1358,7 +1358,7 @@
             }
         },
         "Title":"",
-        "Twd":75
+        "Twd":77
     },
     "200035":{
         "ASCII Name":"Al-Ashrad, Amr of Alamut",
@@ -1956,7 +1956,7 @@
             }
         },
         "Title":"prince",
-        "Twd":7
+        "Twd":8
     },
     "200049":{
         "ASCII Name":"Alexandra",
@@ -2248,7 +2248,7 @@
             }
         },
         "Title":"prince",
-        "Twd":0
+        "Twd":1
     },
     "201576":{
         "ASCII Name":"Aline Gadeke",
@@ -2520,7 +2520,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200062":{
         "ASCII Name":"Alu",
@@ -2580,7 +2580,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":16
     },
     "200063":{
         "ASCII Name":"Alvaro, The Scion of Angelica",
@@ -3071,7 +3071,7 @@
             }
         },
         "Title":"",
-        "Twd":9
+        "Twd":10
     },
     "200074":{
         "ASCII Name":"Amisa",
@@ -3196,7 +3196,7 @@
             }
         },
         "Title":"",
-        "Twd":337
+        "Twd":346
     },
     "200077":{
         "ASCII Name":"Anastasia Grey",
@@ -3334,7 +3334,7 @@
             }
         },
         "Title":"prince",
-        "Twd":13
+        "Twd":14
     },
     "200080":{
         "ASCII Name":"Andre LeRoux",
@@ -3395,7 +3395,7 @@
             }
         },
         "Title":"",
-        "Twd":53
+        "Twd":54
     },
     "200081":{
         "ASCII Name":"Andre the Manipulator",
@@ -3426,7 +3426,7 @@
             }
         },
         "Title":"",
-        "Twd":14
+        "Twd":16
     },
     "200082":{
         "ASCII Name":"Andrea Giovanni",
@@ -3503,7 +3503,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":3
+        "Twd":4
     },
     "200084":{
         "ASCII Name":"Andrei Puxon",
@@ -3575,7 +3575,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":41
+        "Twd":42
     },
     "200086":{
         "ASCII Name":"Andrew Stuart",
@@ -3599,7 +3599,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His ability needs to be applied before anyone has an opportunity to play another cancelation effect (eg. {Direct Intervention}). ",
+                "text":"His ability needs to be applied before anyone has an opportunity to play another cancellation effect (eg. {Direct Intervention}). ",
                 "refs":{
                     "[LSJ 20100728]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mzzPS-cOprI/m/BRBR4OBUOaQJ",
                     "[LSJ 20090213]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hkTPcLPgZk4/m/WPZLiL2A91sJ"
@@ -3706,7 +3706,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "201665":{
         "ASCII Name":"Angel Guerrero",
@@ -4393,7 +4393,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200106":{
         "ASCII Name":"Anneke",
@@ -4473,7 +4473,7 @@
             }
         },
         "Title":"prince",
-        "Twd":137
+        "Twd":138
     },
     "200108":{
         "ASCII Name":"Antara",
@@ -4574,7 +4574,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":19
+        "Twd":20
     },
     "200111":{
         "ASCII Name":"Antoinette Dubois",
@@ -4712,7 +4712,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":18
+        "Twd":19
     },
     "200115":{
         "ASCII Name":"Antonino",
@@ -5029,7 +5029,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "200124":{
         "ASCII Name":"Appius Claudius Corvus",
@@ -5071,7 +5071,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200125":{
         "ASCII Name":"Appolonius",
@@ -5478,7 +5478,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":118
+        "Twd":119
     },
     "200136":{
         "ASCII Name":"Arishat",
@@ -5837,7 +5837,7 @@
             }
         },
         "Title":"",
-        "Twd":25
+        "Twd":26
     },
     "200145":{
         "ASCII Name":"Asguresh",
@@ -5996,7 +5996,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "201578":{
         "ASCII Name":"Asmin Kobane",
@@ -6587,7 +6587,7 @@
             }
         },
         "Title":"",
-        "Twd":41
+        "Twd":42
     },
     "200159":{
         "ASCII Name":"Badger",
@@ -6661,7 +6661,7 @@
             }
         },
         "Title":"",
-        "Twd":14
+        "Twd":15
     },
     "200161":{
         "ASCII Name":"Badr al-Budur",
@@ -6722,7 +6722,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200162":{
         "ASCII Name":"Bajazet al-Nasir",
@@ -6871,7 +6871,7 @@
             }
         },
         "Title":"",
-        "Twd":65
+        "Twd":67
     },
     "200166":{
         "ASCII Name":"Barbaro Lucchese",
@@ -7571,7 +7571,7 @@
             }
         },
         "Title":"",
-        "Twd":78
+        "Twd":82
     },
     "200186":{
         "ASCII Name":"Bela",
@@ -7879,7 +7879,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200193":{
         "ASCII Name":"Beth Malcolm",
@@ -8363,7 +8363,7 @@
             }
         },
         "Title":"",
-        "Twd":93
+        "Twd":94
     },
     "200205":{
         "ASCII Name":"Blaise",
@@ -8463,7 +8463,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":14
     },
     "200208":{
         "ASCII Name":"Bloodfeud",
@@ -8491,7 +8491,7 @@
             }
         },
         "Title":"",
-        "Twd":26
+        "Twd":27
     },
     "200209":{
         "ASCII Name":"Bloody Mary",
@@ -8524,7 +8524,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":23
+        "Twd":24
     },
     "200210":{
         "ASCII Name":"Blythe Candeleria",
@@ -8583,7 +8583,7 @@
             }
         },
         "Title":"",
-        "Twd":89
+        "Twd":93
     },
     "201528":{
         "ASCII Name":"Boleslaw Gutowski",
@@ -9393,7 +9393,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "200231":{
         "ASCII Name":"Cagliostro, The Grand Copht",
@@ -10238,7 +10238,7 @@
             }
         },
         "Title":"baron",
-        "Twd":38
+        "Twd":44
     },
     "200252":{
         "ASCII Name":"Casino Reeds",
@@ -10431,7 +10431,7 @@
             }
         },
         "Title":"prince",
-        "Twd":5
+        "Twd":6
     },
     "200256":{
         "ASCII Name":"Catherine du Bois",
@@ -10467,7 +10467,7 @@
             }
         },
         "Title":"",
-        "Twd":82
+        "Twd":83
     },
     "200257":{
         "ASCII Name":"Cedric",
@@ -10477,7 +10477,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Camarilla. Tremere slave: If Cedric successfully blocks a (D) action, he may burn 1 blood when the action ends (after combat, if any) to unlock. Flight [FLIGHT].",
+        "Card Text":"Camarilla. Tremere slave: If Cedric successfully blocks a directed action, he may burn 1 blood when the action ends (after combat, if any) to unlock. Flight [FLIGHT].",
         "Clan":"Gargoyle",
         "Disciplines":{
             "Obfuscate":1,
@@ -10590,7 +10590,7 @@
             }
         },
         "Title":"",
-        "Twd":63
+        "Twd":65
     },
     "200260":{
         "ASCII Name":"Celine Chevalier",
@@ -10699,7 +10699,7 @@
         ],
         "Banned":"",
         "Capacity":10,
-        "Card Text":"Advanced, Laibon magaji: During a (D) action against you, Cesewayo may lock an /Aye/ on him to unlock.\n[MERGED] Cesewayo gets two additional votes.",
+        "Card Text":"Advanced, Laibon magaji: During an action directed at you, Cesewayo may lock an /Aye/ on him to unlock.\n[MERGED] Cesewayo gets two additional votes.",
         "Clan":"Osebo",
         "Disciplines":{
             "Animalism":1,
@@ -11661,7 +11661,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":12
     },
     "200286":{
         "ASCII Name":"Colin Flynn",
@@ -11695,7 +11695,7 @@
             }
         },
         "Title":"",
-        "Twd":18
+        "Twd":19
     },
     "200287":{
         "ASCII Name":"Colonel, The",
@@ -11787,7 +11787,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Card with multiple types (eg. Reaction/Action Modifer) are considered of the type they are played as, not both. ",
+                "text":"Card with multiple types (eg. Reaction/Action Modifier) are considered of the type they are played as, not both. ",
                 "refs":{
                     "[PIB 20150924-2]":"http://www.vekn.net/forum/rules-questions/73293-adana-de-sforza-combo-cards#73307"
                 }
@@ -11803,7 +11803,7 @@
             }
         },
         "Title":"",
-        "Twd":25
+        "Twd":27
     },
     "200289":{
         "ASCII Name":"Constanza Vinti",
@@ -12315,7 +12315,7 @@
             }
         },
         "Title":"",
-        "Twd":16
+        "Twd":17
     },
     "200304":{
         "ASCII Name":"Crusher",
@@ -12383,7 +12383,7 @@
             }
         },
         "Title":"",
-        "Twd":19
+        "Twd":21
     },
     "200305":{
         "ASCII Name":"Cybele",
@@ -12419,7 +12419,7 @@
             }
         },
         "Title":"",
-        "Twd":83
+        "Twd":85
     },
     "200306":{
         "ASCII Name":"Cynthia Ingold",
@@ -12616,7 +12616,7 @@
             }
         },
         "Title":"",
-        "Twd":82
+        "Twd":83
     },
     "200312":{
         "ASCII Name":"Dan Murdock",
@@ -12974,7 +12974,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "201640":{
         "ASCII Name":"Darius Shirazi",
@@ -13003,7 +13003,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200320":{
         "ASCII Name":"Darius Styx",
@@ -13356,7 +13356,7 @@
             }
         },
         "Title":"",
-        "Twd":12
+        "Twd":13
     },
     "200330":{
         "ASCII Name":"Delilah Easton",
@@ -13603,7 +13603,7 @@
             }
         },
         "Title":"",
-        "Twd":29
+        "Twd":30
     },
     "200337":{
         "ASCII Name":"DeSalle",
@@ -14830,7 +14830,7 @@
             }
         },
         "Title":"prince",
-        "Twd":6
+        "Twd":7
     },
     "200368":{
         "ASCII Name":"Dorian Strack",
@@ -14994,7 +14994,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":3
+        "Twd":4
     },
     "200372":{
         "ASCII Name":"Doyle Fincher",
@@ -15202,7 +15202,7 @@
             }
         },
         "Title":"prince",
-        "Twd":23
+        "Twd":24
     },
     "200378":{
         "ASCII Name":"Dr. Julius Sutphen",
@@ -16137,7 +16137,7 @@
             }
         },
         "Title":"",
-        "Twd":30
+        "Twd":31
     },
     "200403":{
         "ASCII Name":"Edward Vignes",
@@ -16552,7 +16552,7 @@
             }
         },
         "Title":"baron",
-        "Twd":31
+        "Twd":34
     },
     "200413":{
         "ASCII Name":"Elizabeth Conde",
@@ -17142,7 +17142,7 @@
             }
         },
         "Title":"",
-        "Twd":34
+        "Twd":35
     },
     "200429":{
         "ASCII Name":"Eric Kressida",
@@ -17333,7 +17333,7 @@
             }
         },
         "Title":"",
-        "Twd":28
+        "Twd":29
     },
     "200435":{
         "ASCII Name":"Ermenegildo, The Rake",
@@ -17376,7 +17376,7 @@
             }
         },
         "Title":"",
-        "Twd":82
+        "Twd":85
     },
     "200436":{
         "ASCII Name":"Esau",
@@ -17778,7 +17778,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "200446":{
         "ASCII Name":"Evangeline",
@@ -18205,7 +18205,7 @@
             }
         },
         "Title":"prince",
-        "Twd":20
+        "Twd":21
     },
     "200457":{
         "ASCII Name":"Faruq",
@@ -18417,7 +18417,7 @@
             }
         },
         "Title":"",
-        "Twd":35
+        "Twd":36
     },
     "200462":{
         "ASCII Name":"Feo Ramos",
@@ -18478,7 +18478,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "200464":{
         "ASCII Name":"Ferox, The Rock Lord",
@@ -18524,7 +18524,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Advanced, Independent: Minions opposing Ferox in combat cannot play cards that require Necromancy [nec] or Blood Sorcery [tha]. He cannot commit diablerie. Flight [FLIGHT].\n[MERGED] Ferox gets +1 intercept when attempting to block (D) actions.",
+        "Card Text":"Advanced, Independent: Minions opposing Ferox in combat cannot play cards that require Necromancy [nec] or Blood Sorcery [tha]. He cannot commit diablerie. Flight [FLIGHT].\n[MERGED] Ferox gets +1 intercept when attempting to block directed actions.",
         "Clan":"Gargoyle",
         "Disciplines":{
             "Animalism":1,
@@ -18663,7 +18663,7 @@
             }
         },
         "Title":"",
-        "Twd":47
+        "Twd":49
     },
     "200469":{
         "ASCII Name":"Flavia, Avenging Angel",
@@ -18734,7 +18734,7 @@
             }
         },
         "Title":"prince",
-        "Twd":6
+        "Twd":7
     },
     "200470":{
         "ASCII Name":"Fleurdumal",
@@ -19085,7 +19085,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200481":{
         "ASCII Name":"Frank Weisshadel",
@@ -19361,7 +19361,7 @@
             }
         },
         "Title":"",
-        "Twd":12
+        "Twd":13
     },
     "201527":{
         "ASCII Name":"Gabriel Tremblay",
@@ -19425,7 +19425,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":37
+        "Twd":39
     },
     "200490":{
         "ASCII Name":"Gabrin",
@@ -19748,7 +19748,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "200498":{
         "ASCII Name":"Gem Ghastly",
@@ -19790,7 +19790,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":21
+        "Twd":22
     },
     "200499":{
         "ASCII Name":"Gemini",
@@ -19834,7 +19834,7 @@
         ],
         "Banned":"",
         "Capacity":5,
-        "Card Text":"Sabbat bishop: Perfidio may burn 1 blood to unlock and attempt to block a (D) action that targets a location you control.",
+        "Card Text":"Sabbat bishop: Perfidio may burn 1 blood to unlock and attempt to block an action directed at a location you control.",
         "Clan":"Malkavian antitribu",
         "Disciplines":{
             "Dementation":1,
@@ -19908,7 +19908,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":46
+        "Twd":48
     },
     "200502":{
         "ASCII Name":"Gengis",
@@ -20176,7 +20176,7 @@
             }
         },
         "Title":"",
-        "Twd":41
+        "Twd":43
     },
     "200509":{
         "ASCII Name":"Gerard",
@@ -20507,7 +20507,7 @@
             }
         },
         "Title":"baron",
-        "Twd":9
+        "Twd":10
     },
     "200518":{
         "ASCII Name":"Gillespi Giovanni",
@@ -20608,7 +20608,7 @@
             }
         },
         "Title":"",
-        "Twd":18
+        "Twd":21
     },
     "200521":{
         "ASCII Name":"Giovanni del Georgio",
@@ -21072,7 +21072,7 @@
             }
         },
         "Title":"prince",
-        "Twd":76
+        "Twd":77
     },
     "200534":{
         "ASCII Name":"Gratiano",
@@ -21955,7 +21955,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "201642":{
         "ASCII Name":"Gwenllian Arwyn",
@@ -22289,7 +22289,7 @@
             }
         },
         "Title":"",
-        "Twd":26
+        "Twd":31
     },
     "200564":{
         "ASCII Name":"Hanna Redmonds",
@@ -22700,7 +22700,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":39
+        "Twd":42
     },
     "200576":{
         "ASCII Name":"Hasani",
@@ -23112,7 +23112,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"[MERGED] Is Independant. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
+                "text":"[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
                 "refs":{
                     "[ANK 20180524]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
                 }
@@ -23723,7 +23723,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200603":{
         "ASCII Name":"Horatio",
@@ -24841,7 +24841,7 @@
             }
         },
         "Title":"",
-        "Twd":30
+        "Twd":36
     },
     "201551":{
         "ASCII Name":"Ines Tristao",
@@ -24986,7 +24986,7 @@
             }
         },
         "Title":"prince",
-        "Twd":82
+        "Twd":85
     },
     "200635":{
         "ASCII Name":"Ingrid Russo",
@@ -25254,7 +25254,7 @@
             }
         },
         "Title":"",
-        "Twd":130
+        "Twd":131
     },
     "200643":{
         "ASCII Name":"Isabel Giovanni",
@@ -25319,7 +25319,7 @@
             }
         },
         "Title":"",
-        "Twd":60
+        "Twd":61
     },
     "200645":{
         "ASCII Name":"Ismitta",
@@ -25566,7 +25566,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":7
+        "Twd":8
     },
     "200652":{
         "ASCII Name":"Jack",
@@ -26235,7 +26235,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"[MERGED] Is Independant. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
+                "text":"[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
                 "refs":{
                     "[ANK 20180524]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
                 }
@@ -26272,7 +26272,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Card with multiple types (eg. Combat/Action Modifer) are considered of the type they are played as, not both. ",
+                "text":"Card with multiple types (eg. Combat/Action Modifier) are considered of the type they are played as, not both. ",
                 "refs":{
                     "[PIB 20150924-2]":"http://www.vekn.net/forum/rules-questions/73293-adana-de-sforza-combo-cards#73307"
                 }
@@ -26454,7 +26454,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":12
     },
     "200677":{
         "ASCII Name":"Jara Drory",
@@ -26793,7 +26793,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "201674":{
         "ASCII Name":"Jean-Francois",
@@ -26855,7 +26855,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":75
+        "Twd":76
     },
     "200687":{
         "ASCII Name":"Jeffrey Mullins",
@@ -27008,7 +27008,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":22
     },
     "200691":{
         "ASCII Name":"Jephta Hester",
@@ -27040,7 +27040,7 @@
             }
         },
         "Title":"",
-        "Twd":94
+        "Twd":95
     },
     "200692":{
         "ASCII Name":"Jeremiah Noble",
@@ -27634,7 +27634,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":27
     },
     "200708":{
         "ASCII Name":"Joaquin Murietta",
@@ -27744,7 +27744,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":12
     },
     "200711":{
         "ASCII Name":"Johan Wrede",
@@ -27872,7 +27872,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":5
+        "Twd":6
     },
     "200715":{
         "ASCII Name":"John \"Cop90\" O'Malley",
@@ -28053,7 +28053,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His ability can be used multiple times if one hase multiple discard phase actions. ",
+                "text":"His ability can be used multiple times if one has multiple discard phase actions. ",
                 "refs":{
                     "[ANK 20190725]":"https://www.vekn.net/forum/rules-questions/77813-card-questions#95969"
                 }
@@ -28775,7 +28775,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Her ability inflicts a total of one damage to a a minion with one or more corruption counters. ",
+                "text":"Her ability inflicts a total of one damage to a minion with one or more corruption counters. ",
                 "refs":{
                     "[LSJ 20030820]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zjmffk-EbJw/m/ExNZqDUNQt8J"
                 }
@@ -28837,7 +28837,7 @@
         ],
         "Banned":"",
         "Capacity":3,
-        "Card Text":"Camarilla: Kalila gets +1 stealth on (D) actions against a location.",
+        "Card Text":"Camarilla: Kalila gets +1 stealth during actions directed at a location.",
         "Clan":"Malkavian",
         "Disciplines":{
             "Auspex":1,
@@ -28958,7 +28958,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":14
     },
     "200747":{
         "ASCII Name":"Kamaria",
@@ -29046,7 +29046,7 @@
             }
         },
         "Title":"",
-        "Twd":34
+        "Twd":40
     },
     "200749":{
         "ASCII Name":"Kamiri wa Itherero",
@@ -29210,7 +29210,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"She keeps her title if {Fall of the Camarilla} is played. She can be chosen for {Recalled to the Founder}, but does not burn. Allies still benefit trom {Unmasking, The} intercept when trying to block her. ",
+                "text":"She keeps her title if {Fall of the Camarilla} is played. She can be chosen for {Recalled to the Founder}, but does not burn. Allies still benefit from {Unmasking, The} intercept when trying to block her. ",
                 "refs":{
                     "[LSJ 20081120-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/e2PNDpg-l_c/wqEDxGHKJQgJ"
                 }
@@ -29529,7 +29529,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":13
+        "Twd":14
     },
     "201604":{
         "ASCII Name":"Kassandra Tassaki",
@@ -29558,7 +29558,7 @@
             }
         },
         "Title":"prince",
-        "Twd":22
+        "Twd":23
     },
     "200760":{
         "ASCII Name":"Kassiym Malikhair",
@@ -29749,7 +29749,7 @@
             }
         },
         "Title":"",
-        "Twd":35
+        "Twd":37
     },
     "201552":{
         "ASCII Name":"Kathy Glens",
@@ -29852,7 +29852,7 @@
             }
         },
         "Title":"",
-        "Twd":22
+        "Twd":23
     },
     "201659":{
         "ASCII Name":"Keegan",
@@ -29883,7 +29883,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":3
     },
     "200767":{
         "ASCII Name":"Keith Moody",
@@ -30020,7 +30020,7 @@
                 }
             },
             {
-                "text":"[MERGED] When playing a card requiring Camarilla, Ventrue and/or justicar, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play. ",
+                "text":"[MERGED] When playing a card requiring Camarilla, Ventrue and/or Justicar, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play. ",
                 "refs":{
                     "[ANK 20190228]":"http://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
                     "[LSJ 20101013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J"
@@ -30041,7 +30041,7 @@
                 }
             },
             {
-                "text":"[MERGED] When considered a justicar, she is also implicitly considered Camarilla. ",
+                "text":"[MERGED] When considered a Justicar, she is also implicitly considered Camarilla. ",
                 "refs":{
                     "[LSJ 20050128]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HVy8iPUxNbI/ZHGTnprQjGUJ"
                 }
@@ -30200,7 +30200,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Sabbat. Black Hand: Kestrelle gets +1 stealth on (D) actions directed at a Methuselah who doesn't control a ready Sabbat vampire.",
+        "Card Text":"Sabbat. Black Hand: Kestrelle gets +1 stealth during actions directed at a Methuselah who doesn't control a ready Sabbat vampire.",
         "Clan":"Ventrue antitribu",
         "Disciplines":{
             "Dominate":1,
@@ -30331,7 +30331,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":2
+        "Twd":3
     },
     "200777":{
         "ASCII Name":"Khalil Anvari",
@@ -30500,7 +30500,7 @@
             }
         },
         "Title":"",
-        "Twd":17
+        "Twd":18
     },
     "200782":{
         "ASCII Name":"Kij Dansky",
@@ -31058,7 +31058,7 @@
             }
         },
         "Title":"baron",
-        "Twd":30
+        "Twd":35
     },
     "200797":{
         "ASCII Name":"Kyle Strathcona, Cardinal of Canada",
@@ -31250,7 +31250,7 @@
             }
         },
         "Title":"",
-        "Twd":17
+        "Twd":19
     },
     "200802":{
         "ASCII Name":"Lachlan, Noddist",
@@ -31668,7 +31668,7 @@
                 }
             },
             {
-                "text":"[MERGED] Is Independant. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
+                "text":"[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
                 "refs":{
                     "[ANK 20180524]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
                 }
@@ -31778,7 +31778,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":3
+        "Twd":4
     },
     "200814":{
         "ASCII Name":"Larry",
@@ -32270,7 +32270,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":60
+        "Twd":61
     },
     "200827":{
         "ASCII Name":"Lectora",
@@ -32465,7 +32465,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":3
+        "Twd":4
     },
     "200831":{
         "ASCII Name":"Leo Washington",
@@ -32686,7 +32686,7 @@
             }
         },
         "Title":"",
-        "Twd":21
+        "Twd":22
     },
     "200837":{
         "ASCII Name":"Lin Jun",
@@ -32776,7 +32776,7 @@
             }
         },
         "Title":"",
-        "Twd":40
+        "Twd":44
     },
     "200840":{
         "ASCII Name":"Lisandro Giovanni",
@@ -33447,7 +33447,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "200857":{
         "ASCII Name":"Lord Vauxhall",
@@ -33483,7 +33483,7 @@
             }
         },
         "Title":"",
-        "Twd":35
+        "Twd":36
     },
     "200858":{
         "ASCII Name":"Lorenzo Detuono",
@@ -34051,7 +34051,7 @@
             }
         },
         "Title":"",
-        "Twd":25
+        "Twd":26
     },
     "201675":{
         "ASCII Name":"Luciano Carvalho",
@@ -34154,7 +34154,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":54
+        "Twd":56
     },
     "200874":{
         "ASCII Name":"Lucita",
@@ -34339,7 +34339,7 @@
             }
         },
         "Title":"",
-        "Twd":65
+        "Twd":67
     },
     "200879":{
         "ASCII Name":"Ludmijla Rakoczy",
@@ -34758,7 +34758,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":119
+        "Twd":121
     },
     "200891":{
         "ASCII Name":"Lydia, Grand Praetor",
@@ -34889,7 +34889,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Camarilla: Other Tremere get +1 intercept during (D) actions against MacAlister.",
+        "Card Text":"Camarilla: Other Tremere get +1 intercept during actions directed at MacAlister.",
         "Clan":"Tremere",
         "Disciplines":{
             "Auspex":1,
@@ -35118,7 +35118,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":3
+        "Twd":4
     },
     "200899":{
         "ASCII Name":"Makarios, The Seducer",
@@ -35183,7 +35183,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":11
+        "Twd":12
     },
     "200901":{
         "ASCII Name":"Malachai",
@@ -35310,7 +35310,7 @@
             }
         },
         "Title":"",
-        "Twd":42
+        "Twd":43
     },
     "200904":{
         "ASCII Name":"Maldavis",
@@ -35376,7 +35376,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":45
+        "Twd":46
     },
     "200906":{
         "ASCII Name":"Mamadou Keita",
@@ -35507,7 +35507,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":22
     },
     "200909":{
         "ASCII Name":"Marcel de Breau",
@@ -35771,7 +35771,7 @@
             }
         },
         "Title":"prince",
-        "Twd":78
+        "Twd":80
     },
     "200916":{
         "ASCII Name":"Marcus Vitel",
@@ -36197,7 +36197,7 @@
             }
         },
         "Title":"",
-        "Twd":16
+        "Twd":17
     },
     "200927":{
         "ASCII Name":"Marie Faucigny",
@@ -36284,7 +36284,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200929":{
         "ASCII Name":"Mariel, Lady Thunder",
@@ -36538,7 +36538,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":55
+        "Twd":58
     },
     "200936":{
         "ASCII Name":"Mark",
@@ -36606,7 +36606,7 @@
             }
         },
         "Title":"prince",
-        "Twd":23
+        "Twd":25
     },
     "200938":{
         "ASCII Name":"Marla Kenyon",
@@ -36846,7 +36846,7 @@
             }
         },
         "Title":"",
-        "Twd":27
+        "Twd":33
     },
     "200944":{
         "ASCII Name":"Martino della Passaglia",
@@ -37094,7 +37094,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":18
+        "Twd":19
     },
     "200951":{
         "ASCII Name":"Masika",
@@ -37286,7 +37286,7 @@
             }
         },
         "Title":"baron",
-        "Twd":28
+        "Twd":34
     },
     "201558":{
         "ASCII Name":"Massimo Falconi",
@@ -37402,7 +37402,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":13
+        "Twd":14
     },
     "200956":{
         "ASCII Name":"Matasuntha",
@@ -37442,7 +37442,7 @@
             }
         },
         "Title":"",
-        "Twd":21
+        "Twd":22
     },
     "200957":{
         "ASCII Name":"Matata",
@@ -37501,7 +37501,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200958":{
         "ASCII Name":"Mateusz Gryzbowsky",
@@ -37652,7 +37652,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "200962":{
         "ASCII Name":"Matthew Romans",
@@ -38271,7 +38271,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"[MERGED] Is Independant. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
+                "text":"[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
                 "refs":{
                     "[ANK 20180524]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
                 }
@@ -38466,7 +38466,7 @@
             }
         },
         "Title":"",
-        "Twd":14
+        "Twd":15
     },
     "200982":{
         "ASCII Name":"Michael Luther",
@@ -38576,7 +38576,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":12
     },
     "200984":{
         "ASCII Name":"Mictlantecuhtli",
@@ -39152,7 +39152,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200999":{
         "ASCII Name":"Mistress Fanchon",
@@ -39187,7 +39187,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":79
+        "Twd":81
     },
     "201000":{
         "ASCII Name":"Mitchell, The Headhunter",
@@ -39350,7 +39350,7 @@
             }
         },
         "Title":"prince",
-        "Twd":7
+        "Twd":8
     },
     "201003":{
         "ASCII Name":"Monica Chang",
@@ -39501,7 +39501,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":16
+        "Twd":17
     },
     "201007":{
         "ASCII Name":"Montecalme",
@@ -39638,7 +39638,7 @@
             }
         },
         "Title":"",
-        "Twd":41
+        "Twd":42
     },
     "201011":{
         "ASCII Name":"Morlock",
@@ -39779,7 +39779,7 @@
             }
         },
         "Title":"",
-        "Twd":46
+        "Twd":50
     },
     "201015":{
         "ASCII Name":"Mowgli",
@@ -40331,7 +40331,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "201031":{
         "ASCII Name":"Nahum Enosh",
@@ -40414,7 +40414,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "201033":{
         "ASCII Name":"Nakhthorheb",
@@ -40513,7 +40513,7 @@
             }
         },
         "Title":"",
-        "Twd":107
+        "Twd":112
     },
     "201036":{
         "ASCII Name":"Nangila Were",
@@ -40705,7 +40705,7 @@
             }
         },
         "Title":"",
-        "Twd":31
+        "Twd":37
     },
     "201632":{
         "ASCII Name":"Nathaniel Bordruff",
@@ -40796,7 +40796,7 @@
             }
         },
         "Title":"",
-        "Twd":16
+        "Twd":17
     },
     "201040":{
         "ASCII Name":"Nedal, The Careless",
@@ -41114,7 +41114,7 @@
             }
         },
         "Title":"",
-        "Twd":109
+        "Twd":110
     },
     "201047":{
         "ASCII Name":"Nepata",
@@ -41184,7 +41184,7 @@
                 }
             },
             {
-                "text":"If he lost a blood during the course of an action that he could have paid for when announced, he can choose wether or not to use his ability to be able to pay for it. ",
+                "text":"If he lost a blood during the course of an action that he could have paid for when announced, he can choose whether or not to use his ability to be able to pay for it. ",
                 "refs":{
                     "[LSJ 20091021-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5oG5J7Egtg/m/yafJrZAoqjgJ"
                 }
@@ -41248,7 +41248,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Card with multiple types (eg. Reaction/Action Modifer) are considered of the type they are played as, not both. ",
+                "text":"Card with multiple types (eg. Reaction/Action Modifier) are considered of the type they are played as, not both. ",
                 "refs":{
                     "[PIB 20150924-2]":"http://www.vekn.net/forum/rules-questions/73293-adana-de-sforza-combo-cards#73307"
                 }
@@ -41411,7 +41411,7 @@
             }
         },
         "Title":"",
-        "Twd":33
+        "Twd":36
     },
     "201053":{
         "ASCII Name":"Ngozi Ekwensu",
@@ -41572,7 +41572,7 @@
             }
         },
         "Title":"",
-        "Twd":41
+        "Twd":43
     },
     "201058":{
         "ASCII Name":"Nigel the Shunned",
@@ -41887,7 +41887,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":17
     },
     "201065":{
         "ASCII Name":"Normal",
@@ -41960,7 +41960,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "201067":{
         "ASCII Name":"Nu, The Pillar",
@@ -42287,7 +42287,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":24
     },
     "201679":{
         "ASCII Name":"Oleg Kaprizov",
@@ -42483,7 +42483,7 @@
             }
         },
         "Title":"prince",
-        "Twd":2
+        "Twd":3
     },
     "201079":{
         "ASCII Name":"Omaya",
@@ -42617,7 +42617,7 @@
             }
         },
         "Title":"",
-        "Twd":57
+        "Twd":59
     },
     "201083":{
         "ASCII Name":"Ondine \"Boudicca\" Sinclair",
@@ -42718,7 +42718,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":48
+        "Twd":50
     },
     "201565":{
         "ASCII Name":"Oshri Dahan",
@@ -42818,7 +42818,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "201086":{
         "ASCII Name":"Otieno",
@@ -42851,7 +42851,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "201087":{
         "ASCII Name":"Owain Evans, The Wanderer",
@@ -42895,7 +42895,7 @@
             }
         },
         "Title":"",
-        "Twd":95
+        "Twd":96
     },
     "201088":{
         "ASCII Name":"Ox, Viceroy of the Hollows",
@@ -43163,7 +43163,7 @@
                 }
             },
             {
-                "text":"If two are influenced in the same turn, the second is burned (self-contestinging on the predator's end). ",
+                "text":"If two are influenced in the same turn, the second is burned (self-contesting on the predator's end). ",
                 "refs":{
                     "[LSJ 20010623-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/65IHHAii7ms/m/uoIs8B1vdToJ"
                 }
@@ -43590,7 +43590,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":21
     },
     "201107":{
         "ASCII Name":"Pedrag Hasek",
@@ -43753,7 +43753,7 @@
             }
         },
         "Title":"",
-        "Twd":27
+        "Twd":28
     },
     "201111":{
         "ASCII Name":"Persia, The Beautiful Statue",
@@ -43884,7 +43884,7 @@
                 }
             },
             {
-                "text":"[MERGED] Is Independant. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
+                "text":"[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
                 "refs":{
                     "[ANK 20180524]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
                 }
@@ -43993,7 +43993,7 @@
             }
         },
         "Title":"",
-        "Twd":46
+        "Twd":50
     },
     "201117":{
         "ASCII Name":"Petru Sipos",
@@ -44395,7 +44395,7 @@
             }
         },
         "Title":"",
-        "Twd":71
+        "Twd":72
     },
     "201127":{
         "ASCII Name":"Pochtli",
@@ -44861,7 +44861,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "201139":{
         "ASCII Name":"Queen Anne",
@@ -44895,7 +44895,7 @@
             }
         },
         "Title":"prince",
-        "Twd":75
+        "Twd":76
     },
     "201647":{
         "ASCII Name":"Queen Anne",
@@ -45101,7 +45101,7 @@
             }
         },
         "Title":"",
-        "Twd":21
+        "Twd":22
     },
     "201145":{
         "ASCII Name":"Quinton McDonnell",
@@ -45180,7 +45180,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent. Red List: Rabbat may send a vampire to torpor or burn an ally as a strike. If she hunts, you may move 1 of the blood she gains to your pool. She cannot take (D) actions or block actions that aren't directed at her or at a card on her.",
+        "Card Text":"Independent. Red List: Rabbat may send a vampire to torpor or burn an ally as a strike. If she hunts, you may move 1 of the blood she gains to your pool. She cannot take directed actions or block actions that aren't directed at her or at a card on her.",
         "Clan":"Nosferatu",
         "Disciplines":{
             "Potence":1,
@@ -45255,7 +45255,7 @@
             }
         },
         "Title":"prince",
-        "Twd":40
+        "Twd":42
     },
     "201149":{
         "ASCII Name":"Radeyah",
@@ -45356,7 +45356,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":92
+        "Twd":94
     },
     "201152":{
         "ASCII Name":"Rafaele Giovanni",
@@ -45459,7 +45459,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "201154":{
         "ASCII Name":"Rain",
@@ -46152,7 +46152,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His ability is activated after he equips with the equipment. He cannot use his ability to move the {Eye of Hazimel}, or an equipment that is a locatino while in play. ",
+                "text":"His ability is activated after he equips with the equipment. He cannot use his ability to move the {Eye of Hazimel}, or an equipment that is a location while in play. ",
                 "refs":{
                     "[LSJ 20020211]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ubqDaLeG3qo/m/TGKL07dP8NkJ",
                     "[LSJ 20060221]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/OC41YQYfJO4/g_y0RPVpXNkJ"
@@ -46240,7 +46240,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "201175":{
         "ASCII Name":"Regina Giovanni, The Right Hand of Augustus",
@@ -46314,7 +46314,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":25
+        "Twd":26
     },
     "201177":{
         "ASCII Name":"Reiner Stoschka",
@@ -46378,7 +46378,7 @@
             }
         },
         "Title":"",
-        "Twd":94
+        "Twd":95
     },
     "201179":{
         "ASCII Name":"Renenet",
@@ -46565,7 +46565,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Card with multiple types (eg. Combat/Action Modifer) are considered of the type they are played as, not both. ",
+                "text":"Card with multiple types (eg. Combat/Action Modifier) are considered of the type they are played as, not both. ",
                 "refs":{
                     "[PIB 20150924-2]":"http://www.vekn.net/forum/rules-questions/73293-adana-de-sforza-combo-cards#73307"
                 }
@@ -46686,7 +46686,7 @@
             }
         },
         "Title":"",
-        "Twd":37
+        "Twd":38
     },
     "201187":{
         "ASCII Name":"Richter, The Templar of Du Mont",
@@ -47122,7 +47122,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "201199":{
         "ASCII Name":"Roland Bishop",
@@ -47696,7 +47696,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":22
     },
     "201211":{
         "ASCII Name":"Rusticus",
@@ -47877,7 +47877,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "201215":{
         "ASCII Name":"Ryder",
@@ -47887,7 +47887,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Independent: When Ryder is in combat, before range is chosen on the first round, you may look at the opposing minion's controller's hand. Ryder gets +1 intercept when blocking (D) actions.",
+        "Card Text":"Independent: When Ryder is in combat, before range is chosen on the first round, you may look at the opposing minion's controller's hand. Ryder gets +1 intercept when blocking directed actions.",
         "Clan":"Gangrel",
         "Disciplines":{
             "Animalism":1,
@@ -48681,7 +48681,7 @@
         ],
         "Banned":"",
         "Capacity":3,
-        "Card Text":"Sabbat: Sarah gets -1 stealth on every (D) action she performs against a Methuselah who controls a ready bishop or archbishop.",
+        "Card Text":"Sabbat: Sarah gets -1 stealth during actions directed at a Methuselah who controls a ready bishop or archbishop.",
         "Clan":"Brujah antitribu",
         "Disciplines":{
             "Celerity":2
@@ -49095,7 +49095,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "201248":{
         "ASCII Name":"Saulot, The Wanderer",
@@ -49292,7 +49292,7 @@
                 }
             },
             {
-                "text":"Card with multiple types (eg. Reaction/Action Modifer) are considered of the type they are played as, not both. ",
+                "text":"Card with multiple types (eg. Reaction/Action Modifier) are considered of the type they are played as, not both. ",
                 "refs":{
                     "[PIB 20150924-2]":"http://www.vekn.net/forum/rules-questions/73293-adana-de-sforza-combo-cards#73307"
                 }
@@ -49533,7 +49533,7 @@
         ],
         "Banned":"",
         "Capacity":7,
-        "Card Text":"Advanced, Sabbat Archbishop of Rome: Sela gets +1 stealth on (D) actions directed at a Methuselah who controls a ready bishop.",
+        "Card Text":"Advanced, Sabbat Archbishop of Rome: Sela gets +1 stealth on actions directed at a Methuselah who controls a ready bishop.",
         "Clan":"Brujah antitribu",
         "Disciplines":{
             "Celerity":1,
@@ -49836,7 +49836,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "201267":{
         "ASCII Name":"Sergei Voshkov, The Eye",
@@ -49910,7 +49910,7 @@
             }
         },
         "Title":"baron",
-        "Twd":3
+        "Twd":5
     },
     "201268":{
         "ASCII Name":"Servius Marius Pustula",
@@ -49942,7 +49942,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "201269":{
         "ASCII Name":"Seterpenre",
@@ -50997,7 +50997,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "201298":{
         "ASCII Name":"Slag",
@@ -51265,7 +51265,7 @@
             }
         },
         "Title":"",
-        "Twd":48
+        "Twd":49
     },
     "201306":{
         "ASCII Name":"Sonja Blue",
@@ -51583,7 +51583,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":72
+        "Twd":75
     },
     "201313":{
         "ASCII Name":"Stavros",
@@ -51786,7 +51786,7 @@
             }
         },
         "Title":"",
-        "Twd":95
+        "Twd":99
     },
     "201319":{
         "ASCII Name":"Stravinsky",
@@ -51981,7 +51981,7 @@
             }
         },
         "Title":"",
-        "Twd":9
+        "Twd":10
     },
     "201324":{
         "ASCII Name":"Sundervere, The Devil Brahmin",
@@ -52919,7 +52919,7 @@
                 }
             },
             {
-                "text":"[MERGED] When he merges (in whatever way), he becomes independant and any Anarch token is burned. ",
+                "text":"[MERGED] When he merges (in whatever way), he becomes independent and any Anarch token is burned. ",
                 "refs":{
                     "[ANK 20180523]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=54#87370"
                 }
@@ -53012,7 +53012,7 @@
             }
         },
         "Title":"prince",
-        "Twd":37
+        "Twd":38
     },
     "201348":{
         "ASCII Name":"Tatiana Stepanova, Alastor",
@@ -53242,6 +53242,37 @@
         "Title":"",
         "Twd":2
     },
+    "201654":{
+        "ASCII Name":"Tegyrius, Vizier",
+        "Adv":"",
+        "Artist":[
+            "Kera Now"
+        ],
+        "Banned":"",
+        "Capacity":10,
+        "Card Text":"Camarilla. 2 votes (titled): While //Victoria/ Ash/ is in your ready region, Tegyrius gets +2 votes. +1 strength.",
+        "Clan":"Banu Haqim",
+        "Disciplines":{
+            "Auspex":2,
+            "Celerity":2,
+            "Fortitude":2,
+            "Presence":2,
+            "Blood Sorcery":2
+        },
+        "Group":"6",
+        "Id":201654,
+        "Name":"Tegyrius, Vizier",
+        "New":true,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "Promo":{
+                "2023-05-01":true
+            }
+        },
+        "Title":"2 votes",
+        "Twd":0
+    },
     "201354":{
         "ASCII Name":"Teresita, The Godmother",
         "Adv":"",
@@ -53285,7 +53316,7 @@
             }
         },
         "Title":"",
-        "Twd":17
+        "Twd":18
     },
     "201355":{
         "ASCII Name":"Tereza Rostas",
@@ -53600,7 +53631,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"[MERGED] Is Independant. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
+                "text":"[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
                 "refs":{
                     "[ANK 20180524]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
                 }
@@ -54295,7 +54326,7 @@
                 }
             },
             {
-                "text":"When using her abilty, pay only for the original equipment. Neither costs nor requirements apply for the one taken from the prey's hand. ",
+                "text":"When using her ability, pay only for the original equipment. Neither costs nor requirements apply for the one taken from the prey's hand. ",
                 "refs":{
                     "[LSJ 20080702-4]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sCHpPQkjeAE/m/9GGAf6TbiP0J"
                 }
@@ -54562,7 +54593,7 @@
             }
         },
         "Title":"prince",
-        "Twd":17
+        "Twd":18
     },
     "201389":{
         "ASCII Name":"Truman",
@@ -54937,7 +54968,7 @@
             }
         },
         "Title":"",
-        "Twd":27
+        "Twd":30
     },
     "201399":{
         "ASCII Name":"Ubende",
@@ -55087,7 +55118,7 @@
             }
         },
         "Title":"",
-        "Twd":84
+        "Twd":85
     },
     "201404":{
         "ASCII Name":"Ulugh Beg, The Watcher",
@@ -55366,7 +55397,7 @@
             }
         },
         "Title":"",
-        "Twd":52
+        "Twd":53
     },
     "201412":{
         "ASCII Name":"Unre, Keeper of Golgotha",
@@ -56193,7 +56224,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":25
     },
     "201434":{
         "ASCII Name":"Velya, The Flayer",
@@ -56542,7 +56573,7 @@
             }
         },
         "Title":"",
-        "Twd":68
+        "Twd":70
     },
     "201444":{
         "ASCII Name":"Victoria Ash",
@@ -56575,7 +56606,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":17
+        "Twd":18
     },
     "201619":{
         "ASCII Name":"Victoria Ash",
@@ -56951,7 +56982,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":35
+        "Twd":37
     },
     "201453":{
         "ASCII Name":"Viri",
@@ -57089,7 +57120,7 @@
             }
         },
         "Title":"baron",
-        "Twd":27
+        "Twd":30
     },
     "201456":{
         "ASCII Name":"Vlad Tepes",
@@ -57157,6 +57188,12 @@
                 "text":"He cannot use a card as a vampire of a sect or with a title if the card does not require the sect or title to be played. (eg. he cannot benefit from {Powerbase: Madrid} as a Sabbat vampire) ",
                 "refs":{
                     "[PIB 20150306]":"http://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=12#69696"
+                }
+            },
+            {
+                "text":"If Vlad gains a title via a title card (eg. {Fee Stake: Perth}), as long as Vlad is not the correct sect, the title is dormant. He counts as untitled if he has a dormant title. He cannot \"use\" his title to become titled. ",
+                "refs":{
+                    "[ANK 20190211]":"https://www.vekn.net/forum/rules-questions/76865-vlad-tepes-anarch-secession?start=12#93409"
                 }
             }
         ],
@@ -57481,7 +57518,7 @@
             }
         },
         "Title":"prince",
-        "Twd":22
+        "Twd":23
     },
     "201464":{
         "ASCII Name":"Watenda",
@@ -57937,7 +57974,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "201474":{
         "ASCII Name":"Wolfgang",
@@ -58133,7 +58170,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":22
+        "Twd":25
     },
     "201479":{
         "ASCII Name":"Xendil Charmer",
@@ -58420,7 +58457,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "201486":{
         "ASCII Name":"Yazid Tamari",
@@ -59244,7 +59281,7 @@
             }
         },
         "Title":"",
-        "Twd":61
+        "Twd":65
     },
     "201508":{
         "ASCII Name":"Zizi",
@@ -59304,7 +59341,7 @@
             }
         },
         "Title":"",
-        "Twd":130
+        "Twd":131
     },
     "201510":{
         "ASCII Name":"Zubeida",

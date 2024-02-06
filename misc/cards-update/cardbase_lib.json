@@ -18,7 +18,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Provides only ony maneuver each combat, even if the bearer changes. ",
+                "text":"Provides only only maneuver each combat, even if the bearer changes. ",
                 "refs":{
                     "[LSJ 19980302-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9YVFkeiL3Js/4UZXMyicluwJ"
                 }
@@ -56,7 +56,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":355,
+        "Twd":357,
         "Type":"Equipment"
     },
     "100002":{
@@ -268,7 +268,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a Sabbat vampire.\nPut this card on this acting Sabbat vampire and unlock him or her. This Sabbat vampire gets +1 intercept against (D) actions directed at his or her controller. A vampire may have only one Abbot.",
+        "Card Text":"+1 stealth action. Requires a Sabbat vampire.\nPut this card on this acting Sabbat vampire and unlock him or her. This Sabbat vampire gets +1 intercept during actions directed at his or her controller. A vampire may have only one Abbot.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -686,7 +686,7 @@
                 "DTC":true
             }
         },
-        "Twd":21,
+        "Twd":22,
         "Type":"Action Modifier"
     },
     "100017":{
@@ -951,7 +951,7 @@
                 "U":true
             }
         },
-        "Twd":11,
+        "Twd":12,
         "Type":"Master"
     },
     "100024":{
@@ -1108,7 +1108,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Unique.\nPut this card in play, and this Ahrimane may burn 1 blood to unlock at the end of the action. You may burn this card to cause a (D) action directed at an ally or location you control to fail. You may burn this card during a (D) action against you to give an Ahrimane you control +1 intercept.",
+        "Card Text":"+1 stealth action. Unique.\nPut this card in play, and this Ahrimane may burn 1 blood to unlock at the end of the action. You may burn this card to cause an action directed at an ally or location you control to fail. You may burn this card during an action against you to give an Ahrimane you control +1 intercept.",
         "Clan":"Ahrimane",
         "Conviction Cost":"",
         "Discipline":"",
@@ -1177,7 +1177,7 @@
                 "NR":3
             }
         },
-        "Twd":219,
+        "Twd":225,
         "Type":"Combat"
     },
     "100030":{
@@ -1255,7 +1255,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":252,
+        "Twd":256,
         "Type":"Action Modifier"
     },
     "100032":{
@@ -1482,7 +1482,7 @@
                 "PBH":"1"
             }
         },
-        "Twd":44,
+        "Twd":45,
         "Type":"Master"
     },
     "100038":{
@@ -1598,7 +1598,7 @@
                 "C":true
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Combat"
     },
     "100041":{
@@ -1866,7 +1866,7 @@
                 "PN":"3"
             }
         },
-        "Twd":89,
+        "Twd":90,
         "Type":"Action"
     },
     "100047":{
@@ -2109,7 +2109,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":101,
+        "Twd":105,
         "Type":"Master"
     },
     "100053":{
@@ -2165,7 +2165,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":104,
+        "Twd":110,
         "Type":"Master"
     },
     "100055":{
@@ -2222,7 +2222,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":171,
+        "Twd":173,
         "Type":"Master"
     },
     "100056":{
@@ -2327,7 +2327,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":444,
+        "Twd":449,
         "Type":"Master"
     },
     "100059":{
@@ -2378,7 +2378,7 @@
                 "PM":"1"
             }
         },
-        "Twd":336,
+        "Twd":342,
         "Type":"Political Action"
     },
     "100060":{
@@ -2457,7 +2457,7 @@
                 "30thE":2
             }
         },
-        "Twd":50,
+        "Twd":51,
         "Type":"Political Action"
     },
     "100061":{
@@ -2619,7 +2619,7 @@
                 "30th":1
             }
         },
-        "Twd":393,
+        "Twd":400,
         "Type":"Political Action"
     },
     "100065":{
@@ -2674,7 +2674,7 @@
                 "PL":1
             }
         },
-        "Twd":346,
+        "Twd":353,
         "Type":"Political Action"
     },
     "100066":{
@@ -2724,7 +2724,7 @@
                 "DTC":true
             }
         },
-        "Twd":32,
+        "Twd":33,
         "Type":"Combat"
     },
     "100067":{
@@ -2862,7 +2862,7 @@
                 "PN":"1"
             }
         },
-        "Twd":94,
+        "Twd":98,
         "Type":"Master"
     },
     "100071":{
@@ -2884,7 +2884,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Concerning the cost of the cards, multiplications and divisions are applied first, followed by additions and substractions. ",
+                "text":"Concerning the cost of the cards, multiplications and divisions are applied first, followed by additions and subtractions. ",
                 "refs":{
                     "[RTR 20070707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/vSOt2c1uRzQ/MsRAv47Cd4YJ"
                 }
@@ -3010,7 +3010,7 @@
                 "2004-04-11":true
             }
         },
-        "Twd":317,
+        "Twd":321,
         "Type":"Event"
     },
     "100075":{
@@ -3245,7 +3245,7 @@
                 "NR":1
             }
         },
-        "Twd":477,
+        "Twd":481,
         "Type":"Action"
     },
     "100080":{
@@ -3456,7 +3456,7 @@
                 "PBH":"1"
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Political Action"
     },
     "100085":{
@@ -3521,7 +3521,7 @@
                 "PR":"1"
             }
         },
-        "Twd":639,
+        "Twd":656,
         "Type":"Master"
     },
     "100086":{
@@ -3546,7 +3546,7 @@
                 "2007-06-01":true
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Equipment"
     },
     "100087":{
@@ -3584,7 +3584,7 @@
                 "C":true
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Combat"
     },
     "100088":{
@@ -3605,7 +3605,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[vis], [VIS] Can be used by a non-slave Gragoyle. ",
+                "text":"[vis], [VIS] Can be used by a non-slave Gargoyle. ",
                 "refs":{
                     "[LSJ 20011204-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0gKrr9ChclY/m/WYNIe2IgrCoJ"
                 }
@@ -3832,7 +3832,7 @@
                 "PG":"1"
             }
         },
-        "Twd":259,
+        "Twd":262,
         "Type":"Action"
     },
     "100094":{
@@ -3935,7 +3935,7 @@
                 "30th":1
             }
         },
-        "Twd":99,
+        "Twd":100,
         "Type":"Master"
     },
     "100096":{
@@ -4003,7 +4003,7 @@
                 }
             },
             {
-                "text":"Can be used ot retrieve the action card itself (if any). ",
+                "text":"Can be used to retrieve the action card itself (if any). ",
                 "refs":{
                     "[LSJ 20041115]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZCmZl5xUhis/m/YoKKqsiFLFgJ"
                 }
@@ -4026,7 +4026,7 @@
                 "U":true
             }
         },
-        "Twd":17,
+        "Twd":19,
         "Type":"Action Modifier"
     },
     "100098":{
@@ -4384,7 +4384,7 @@
                 "":"3"
             }
         },
-        "Twd":393,
+        "Twd":404,
         "Type":"Master"
     },
     "100107":{
@@ -4474,7 +4474,7 @@
                 "PM":"1"
             }
         },
-        "Twd":76,
+        "Twd":80,
         "Type":"Master"
     },
     "100109":{
@@ -4664,7 +4664,7 @@
                 "U":true
             }
         },
-        "Twd":99,
+        "Twd":101,
         "Type":"Combat"
     },
     "100114":{
@@ -4888,7 +4888,7 @@
                 "30th":2
             }
         },
-        "Twd":204,
+        "Twd":206,
         "Type":"Action Modifier"
     },
     "100120":{
@@ -5153,7 +5153,7 @@
                 "PG":"1"
             }
         },
-        "Twd":112,
+        "Twd":120,
         "Type":"Master"
     },
     "102218":{
@@ -5194,7 +5194,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":69,
+        "Twd":77,
         "Type":"Reaction"
     },
     "100127":{
@@ -5466,7 +5466,7 @@
                 "30th":2
             }
         },
-        "Twd":514,
+        "Twd":521,
         "Type":"Political Action"
     },
     "100132":{
@@ -5553,7 +5553,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[mal] is unaffected by {Orun}. [MAL] is affected by {Orun} (add and substract before applying the minimum of 1). ",
+                "text":"[mal] is unaffected by {Orun}. [MAL] is affected by {Orun} (add and subtract before applying the minimum of 1). ",
                 "refs":{
                     "[ANK 20180719-1]":"http://www.vekn.net/forum/rules-questions/76836-orun-barrenness-rtr?start=6#89073"
                 }
@@ -5642,7 +5642,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":435,
+        "Twd":439,
         "Type":"Master"
     },
     "100136":{
@@ -6047,7 +6047,7 @@
                 "NTz":2
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Action Modifier"
     },
     "100147":{
@@ -6483,7 +6483,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":241,
+        "Twd":242,
         "Type":"Action Modifier"
     },
     "100158":{
@@ -6618,7 +6618,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a minion with a /Kerrie/. Usable by a locked minion.\nPlay during a (D) action directed at this minion or a card on this minion. Only usable when a vampire without Auspex [aus] is acting. The action ends (unsuccessfully), and no cost is paid. A minion may play only one Bind the Night-Walker each turn.",
+        "Card Text":"Requires a minion with a /Kerrie/. Usable by a locked minion.\nPlay during an action directed at this minion or a card on this minion. Only usable when a vampire without Auspex [aus] is acting. The action ends (unsuccessfully), and no cost is paid. A minion may play only one Bind the Night-Walker each turn.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -6673,7 +6673,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":29,
+        "Twd":30,
         "Type":"Action"
     },
     "100163":{
@@ -6705,7 +6705,7 @@
                 "R":true
             }
         },
-        "Twd":62,
+        "Twd":64,
         "Type":"Event"
     },
     "100164":{
@@ -6825,7 +6825,7 @@
                 "R":true
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Action"
     },
     "100168":{
@@ -6850,7 +6850,7 @@
                 "C":true
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Action"
     },
     "100169":{
@@ -6974,7 +6974,7 @@
                 "DTC":true
             }
         },
-        "Twd":28,
+        "Twd":29,
         "Type":"Reaction"
     },
     "100172":{
@@ -7018,7 +7018,7 @@
                 "PBH":"1"
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Master"
     },
     "100173":{
@@ -7202,7 +7202,7 @@
                 "DTC":true
             }
         },
-        "Twd":86,
+        "Twd":87,
         "Type":"Action Modifier"
     },
     "100178":{
@@ -7230,7 +7230,7 @@
                 "PM":1
             }
         },
-        "Twd":61,
+        "Twd":62,
         "Type":"Master"
     },
     "100179":{
@@ -7500,7 +7500,7 @@
                 "PSal":1
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Action"
     },
     "100186":{
@@ -7658,7 +7658,7 @@
                 }
             },
             {
-                "text":"[val] Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike. ",
+                "text":"[val] Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combatant going to torpor during first strike. ",
                 "refs":{
                     "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
                     "[TOM 19951216]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0G-jqB_fcyE/8jUhfCXRtPUJ",
@@ -7722,7 +7722,7 @@
                 "PSal":1
             }
         },
-        "Twd":11,
+        "Twd":12,
         "Type":"Combat"
     },
     "100191":{
@@ -8102,7 +8102,7 @@
                 "NL":2
             }
         },
-        "Twd":1245,
+        "Twd":1254,
         "Type":"Master"
     },
     "100200":{
@@ -8385,7 +8385,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a ready archbishop, priscus, cardinal or regent.\nPut this card on a Sabbat vampire other than the acting vampire. The vampire with this card gains 1 blood after each successful (D) action he or she performs. A vampire may have only one Blood of the Sabbat.",
+        "Card Text":"+1 stealth action. Requires a ready archbishop, priscus, cardinal or regent.\nPut this card on a Sabbat vampire other than the acting vampire. The vampire with this card gains 1 blood after each successful directed action he or she performs. A vampire may have only one Blood of the Sabbat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -8499,7 +8499,7 @@
                 "PBh":"2"
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Combat"
     },
     "100209":{
@@ -8738,7 +8738,7 @@
                 "":"1"
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Event"
     },
     "100216":{
@@ -8776,7 +8776,7 @@
                 "R":true
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Master"
     },
     "100217":{
@@ -9009,7 +9009,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"It's still an equip action (eg. can benefit from {British Museum, London, The} or {Filchware's Pawn Shop}). ",
+                "text":"It's still an equip action (eg. It can benefit from {British Museum, London, The} or {Filchware's Pawn Shop}). ",
                 "refs":{
                     "[LSJ 20050313]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ",
                     "[ANK 20230408]":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810"
@@ -9042,7 +9042,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
@@ -9162,7 +9162,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":211,
+        "Twd":213,
         "Type":"Combat"
     },
     "100228":{
@@ -9270,7 +9270,7 @@
                 "PG":"1"
             }
         },
-        "Twd":28,
+        "Twd":29,
         "Type":"Combat"
     },
     "100231":{
@@ -9588,7 +9588,7 @@
                 "PSal":"4"
             }
         },
-        "Twd":407,
+        "Twd":410,
         "Type":"Action Modifier"
     },
     "100237":{
@@ -9852,7 +9852,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":494,
+        "Twd":497,
         "Type":"Equipment"
     },
     "100244":{
@@ -9919,7 +9919,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Only transfers are forbidden, other mouvements are not affected (eg. {Govern the Unaligned} at superior [DOM]). The vampire can become controlled if it reaches capacity, Brainwash stays on it (if {Banishment} is used, the effect resumes). ",
+                "text":"Only transfers are forbidden, other movements are not affected (eg. {Govern the Unaligned} at superior [DOM]). The vampire can become controlled if it reaches capacity, Brainwash stays on it (if {Banishment} is used, the effect resumes). ",
                 "refs":{
                     "[LSJ 20010211]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Fd9tcsKTzjE/m/dtIxb5Mof50J"
                 }
@@ -10063,7 +10063,7 @@
                 "R":true
             }
         },
-        "Twd":63,
+        "Twd":64,
         "Type":"Event"
     },
     "100249":{
@@ -10091,7 +10091,7 @@
                 "DTC":true
             }
         },
-        "Twd":65,
+        "Twd":66,
         "Type":"Action Modifier/Combat"
     },
     "100250":{
@@ -10367,7 +10367,7 @@
                 "":"1"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Master"
     },
     "100256":{
@@ -10814,7 +10814,7 @@
                 "2023-05-07":true
             }
         },
-        "Twd":278,
+        "Twd":279,
         "Type":"Action"
     },
     "100267":{
@@ -11277,7 +11277,7 @@
                 "DTC":true
             }
         },
-        "Twd":208,
+        "Twd":209,
         "Type":"Action Modifier"
     },
     "100280":{
@@ -11608,7 +11608,7 @@
                 "PSam":"3"
             }
         },
-        "Twd":105,
+        "Twd":107,
         "Type":"Equipment"
     },
     "100288":{
@@ -11731,7 +11731,7 @@
                 "SKTz":"1"
             }
         },
-        "Twd":271,
+        "Twd":276,
         "Type":"Combat"
     },
     "100291":{
@@ -11967,7 +11967,7 @@
                 "PB":"1"
             }
         },
-        "Twd":75,
+        "Twd":81,
         "Type":"Master"
     },
     "100298":{
@@ -12017,7 +12017,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":750,
+        "Twd":752,
         "Type":"Ally"
     },
     "100299":{
@@ -12146,7 +12146,7 @@
                 "NR":3
             }
         },
-        "Twd":389,
+        "Twd":396,
         "Type":"Combat"
     },
     "100302":{
@@ -12210,7 +12210,7 @@
                 "PB":"1"
             }
         },
-        "Twd":63,
+        "Twd":66,
         "Type":"Master"
     },
     "100304":{
@@ -12491,7 +12491,7 @@
                 "PTz":"4"
             }
         },
-        "Twd":365,
+        "Twd":372,
         "Type":"Reaction"
     },
     "100309":{
@@ -12581,7 +12581,7 @@
                 "R":true
             }
         },
-        "Twd":9,
+        "Twd":10,
         "Type":"Master"
     },
     "100311":{
@@ -13013,7 +13013,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[REACTION] [2CONVICTION] Only usable when a monster controlled by another Methuselah is taking a (D) action against you or against an imbued controlled by any player. The action fails and the acting monster enters combat with this imbued instead.",
+        "Card Text":"[REACTION] [2CONVICTION] Only usable when a monster controlled by another Methuselah is taking an action directed at you or an imbued controlled by any player. The action fails and the acting monster enters combat with this imbued instead.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Defense",
@@ -13170,7 +13170,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":222,
+        "Twd":224,
         "Type":"Action Modifier"
     },
     "100324":{
@@ -13210,7 +13210,7 @@
                 "DTC":true
             }
         },
-        "Twd":94,
+        "Twd":95,
         "Type":"Action Modifier"
     },
     "100325":{
@@ -13314,7 +13314,7 @@
                 "DoF":"1"
             }
         },
-        "Twd":147,
+        "Twd":149,
         "Type":"Master"
     },
     "100328":{
@@ -13510,7 +13510,7 @@
                 "NTz":1
             }
         },
-        "Twd":134,
+        "Twd":135,
         "Type":"Master"
     },
     "100333":{
@@ -13560,7 +13560,7 @@
                 "30th":2
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Combat"
     },
     "100334":{
@@ -13679,7 +13679,7 @@
                 "U":true
             }
         },
-        "Twd":26,
+        "Twd":27,
         "Type":"Action"
     },
     "100335":{
@@ -14128,7 +14128,7 @@
                 "R":true
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Action"
     },
     "100347":{
@@ -14317,7 +14317,7 @@
         "Requirement":"same circle",
         "Rulings":[
             {
-                "text":"The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
@@ -14390,7 +14390,7 @@
                 "C":true
             }
         },
-        "Twd":12,
+        "Twd":15,
         "Type":"Action"
     },
     "100354":{
@@ -14514,7 +14514,7 @@
                 "PG":"2"
             }
         },
-        "Twd":132,
+        "Twd":135,
         "Type":"Combat"
     },
     "100357":{
@@ -14763,7 +14763,7 @@
                 "PR":"4"
             }
         },
-        "Twd":629,
+        "Twd":632,
         "Type":"Action Modifier"
     },
     "100363":{
@@ -14907,7 +14907,7 @@
                 "PR":"1"
             }
         },
-        "Twd":62,
+        "Twd":66,
         "Type":"Master"
     },
     "100367":{
@@ -15236,7 +15236,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready vampire who has blocked a (D) action. Only usable in the resulting combat. Only usable at long range.\n[tha] Strike: 2R damage, with an optional press.\n[vis] Strike: 4R damage. This strike cannot be dodged.\n[VIS] As [vis] above, with first strike.",
+        "Card Text":"Requires a ready vampire who has blocked a directed action. Only usable in the resulting combat. Only usable at long range.\n[tha] Strike: 2R damage, with an optional press.\n[vis] Strike: 4R damage. This strike cannot be dodged.\n[VIS] As [vis] above, with first strike.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Blood Sorcery/Visceratika",
@@ -15327,7 +15327,7 @@
                 "PM":"1"
             }
         },
-        "Twd":35,
+        "Twd":36,
         "Type":"Combat"
     },
     "100379":{
@@ -15435,7 +15435,7 @@
                 "U":true
             }
         },
-        "Twd":73,
+        "Twd":75,
         "Type":"Action Modifier"
     },
     "100382":{
@@ -15559,7 +15559,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: location.\nEach Sabbat vampire you control gets +1 intercept when attempting to block (D) actions directed against Sabbat vampires you control. A Methuselah may have only one Communal Haven: Temple in play.",
+        "Card Text":"Master: location.\nEach Sabbat vampire you control gets +1 intercept when attempting to block actions directed against Sabbat vampires you control. A Methuselah may have only one Communal Haven: Temple in play.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -15775,7 +15775,7 @@
                 "PN":"3"
             }
         },
-        "Twd":126,
+        "Twd":127,
         "Type":"Action"
     },
     "100391":{
@@ -15897,7 +15897,7 @@
                 "PT":"2"
             }
         },
-        "Twd":210,
+        "Twd":212,
         "Type":"Combat"
     },
     "100393":{
@@ -16222,7 +16222,7 @@
                 "PV":"4"
             }
         },
-        "Twd":981,
+        "Twd":990,
         "Type":"Action Modifier"
     },
     "100402":{
@@ -16359,7 +16359,7 @@
                 "PM":"4"
             }
         },
-        "Twd":138,
+        "Twd":139,
         "Type":"Action Modifier"
     },
     "100406":{
@@ -16598,7 +16598,7 @@
                 }
             },
             {
-                "text":"[vis] Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike. ",
+                "text":"[vis] Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combatant going to torpor during first strike. ",
                 "refs":{
                     "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
                     "[TOM 19951216]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0G-jqB_fcyE/8jUhfCXRtPUJ",
@@ -16721,7 +16721,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":198,
+        "Twd":199,
         "Type":"Political Action"
     },
     "100415":{
@@ -16803,7 +16803,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":75,
+        "Twd":77,
         "Type":"Action"
     },
     "100417":{
@@ -16864,7 +16864,7 @@
                 "DTC":true
             }
         },
-        "Twd":60,
+        "Twd":62,
         "Type":"Action"
     },
     "100419":{
@@ -16993,7 +16993,7 @@
                 "PM":"3"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Equipment"
     },
     "100423":{
@@ -17097,7 +17097,7 @@
                 "C":true
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Master"
     },
     "100426":{
@@ -17130,7 +17130,7 @@
                 "PSal":1
             }
         },
-        "Twd":78,
+        "Twd":79,
         "Type":"Master"
     },
     "100427":{
@@ -17459,7 +17459,7 @@
                 }
             },
             {
-                "text":"The predator must take control of it when he gets the the opportunity to play effects. If the controller declares his turn ends, he does not get the opportunity to use The Coven before it is moved to his predator, even retroactively if the mandatory effect was forgotten. ",
+                "text":"The predator must take control of it when he gets the opportunity to play effects. If the controller declares his turn ends, he does not get the opportunity to use The Coven before it is moved to his predator, even retroactively if the mandatory effect was forgotten. ",
                 "refs":{
                     "[LSJ 20100723]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0u5KQWiutdg/lAZoy4vIwiIJ",
                     "[PIB 20111002]":"http://www.vekn.net/forum/rules-questions/8235-re-coven-timing?start=18#11317"
@@ -17480,7 +17480,7 @@
                 "":"1"
             }
         },
-        "Twd":454,
+        "Twd":466,
         "Type":"Master"
     },
     "100436":{
@@ -17775,7 +17775,7 @@
                 "PN":"2"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Action"
     },
     "100444":{
@@ -17809,7 +17809,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":231,
+        "Twd":232,
         "Type":"Master"
     },
     "100445":{
@@ -17834,7 +17834,7 @@
                 "2006-10-26":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Master"
     },
     "100446":{
@@ -17883,7 +17883,7 @@
                 "DTC":true
             }
         },
-        "Twd":27,
+        "Twd":29,
         "Type":"Action Modifier"
     },
     "100447":{
@@ -18016,7 +18016,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":64,
+        "Twd":65,
         "Type":"Action Modifier"
     },
     "100451":{
@@ -19118,7 +19118,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":25,
+        "Twd":28,
         "Type":"Master"
     },
     "100486":{
@@ -19505,7 +19505,7 @@
                 "U":true
             }
         },
-        "Twd":126,
+        "Twd":127,
         "Type":"Master"
     },
     "100494":{
@@ -19571,7 +19571,7 @@
                 "DM":"4"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Combat"
     },
     "102235":{
@@ -19617,7 +19617,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[MYT] Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike. ",
+                "text":"[MYT] Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combatant going to torpor during first strike. ",
                 "refs":{
                     "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
                     "[TOM 19951216]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0G-jqB_fcyE/8jUhfCXRtPUJ",
@@ -19952,7 +19952,7 @@
                 "DTC":true
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Combat"
     },
     "100504":{
@@ -20079,7 +20079,7 @@
                 "PG":1
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Combat"
     },
     "100508":{
@@ -20385,7 +20385,7 @@
                 "PG":"3"
             }
         },
-        "Twd":37,
+        "Twd":44,
         "Type":"Reaction"
     },
     "100515":{
@@ -20453,7 +20453,7 @@
                 "NR":5
             }
         },
-        "Twd":239,
+        "Twd":247,
         "Type":"Action"
     },
     "100516":{
@@ -20505,7 +20505,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nPut this card on a slave Gargoyle with a capacity above 4. This Gargoyle gets +2 intercept against (D) actions. A Gargoyle can have only one Defender of the Haven.",
+        "Card Text":"+1 stealth action.\nPut this card on a slave Gargoyle with a capacity above 4. This Gargoyle gets +2 intercept against directed actions. A Gargoyle can have only one Defender of the Haven.",
         "Clan":"Tremere/Tremere antitribu",
         "Conviction Cost":"",
         "Discipline":"",
@@ -20631,7 +20631,7 @@
                 "PL":6
             }
         },
-        "Twd":1387,
+        "Twd":1399,
         "Type":"Reaction"
     },
     "100519":{
@@ -20713,7 +20713,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":911,
+        "Twd":930,
         "Type":"Reaction"
     },
     "100520":{
@@ -20884,7 +20884,7 @@
                 "PM":"2"
             }
         },
-        "Twd":90,
+        "Twd":91,
         "Type":"Action Modifier/Combat"
     },
     "100525":{
@@ -20958,7 +20958,7 @@
                 "PGar":1
             }
         },
-        "Twd":65,
+        "Twd":66,
         "Type":"Master"
     },
     "100527":{
@@ -21004,7 +21004,7 @@
                 }
             },
             {
-                "text":"When removed, the vampire goes back ot its underlying clan. ",
+                "text":"When removed, the vampire goes back to its underlying clan. ",
                 "refs":{
                     "[RTR 20201130]":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/",
                     "[ANK 20200415]":"http://www.vekn.net/forum/rules-questions/7516-re-derange-titles-and-bloodbrothers?start=6#99609"
@@ -21073,7 +21073,7 @@
                 }
             },
             {
-                "text":"All cards on the vamipre come back unlocked. ",
+                "text":"All cards on the vampire come back unlocked. ",
                 "refs":{
                     "[LSJ 20060908]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CTy2GjM6-Dc/m/9OPulYVGaFcJ"
                 }
@@ -21103,7 +21103,7 @@
                 "DTC":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Action"
     },
     "100529":{
@@ -21132,7 +21132,7 @@
                 "PT":"3"
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Equipment"
     },
     "100530":{
@@ -21619,7 +21619,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[DAI] The opponent burns pool wether or not the pact counters reach capacity. ",
+                "text":"[DAI] The opponent burns pool whether or not the pact counters reach capacity. ",
                 "refs":{
                     "[LSJ 20100205-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKb2e3940BI/m/2Uwzk6TJtJ8J",
                     "[ANK 20221007]":"https://www.vekn.net/forum/rules-questions/80064-diabolic-lure-superior-burn-pool#106494"
@@ -21804,7 +21804,7 @@
                 "DTC":true
             }
         },
-        "Twd":1175,
+        "Twd":1191,
         "Type":"Master"
     },
     "100546":{
@@ -22082,7 +22082,7 @@
                 "":"4"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Action"
     },
     "100553":{
@@ -22216,7 +22216,7 @@
                 "PO":1
             }
         },
-        "Twd":62,
+        "Twd":63,
         "Type":"Combat"
     },
     "100556":{
@@ -22322,7 +22322,7 @@
                 "PB":"1"
             }
         },
-        "Twd":188,
+        "Twd":189,
         "Type":"Political Action"
     },
     "100558":{
@@ -22527,7 +22527,7 @@
                 "PB":"3"
             }
         },
-        "Twd":43,
+        "Twd":45,
         "Type":"Combat"
     },
     "100564":{
@@ -22726,7 +22726,7 @@
                 "PG":"1"
             }
         },
-        "Twd":22,
+        "Twd":25,
         "Type":"Retainer"
     },
     "100569":{
@@ -23063,7 +23063,7 @@
                 "AU":"3"
             }
         },
-        "Twd":33,
+        "Twd":37,
         "Type":"Combat"
     },
     "102220":{
@@ -23301,7 +23301,7 @@
                 "DoF":"1"
             }
         },
-        "Twd":278,
+        "Twd":283,
         "Type":"Event"
     },
     "100582":{
@@ -23562,7 +23562,7 @@
                 "PS":"4"
             }
         },
-        "Twd":21,
+        "Twd":22,
         "Type":"Action"
     },
     "100588":{
@@ -23649,7 +23649,7 @@
                 "NH":1
             }
         },
-        "Twd":1788,
+        "Twd":1816,
         "Type":"Master"
     },
     "100589":{
@@ -24114,7 +24114,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":502,
+        "Twd":505,
         "Type":"Reaction"
     },
     "100599":{
@@ -24196,7 +24196,7 @@
                 "NTz":2
             }
         },
-        "Twd":183,
+        "Twd":190,
         "Type":"Action Modifier"
     },
     "100601":{
@@ -24244,7 +24244,7 @@
                 "PG":"3"
             }
         },
-        "Twd":275,
+        "Twd":285,
         "Type":"Combat"
     },
     "100602":{
@@ -24556,7 +24556,7 @@
                 "PG":"1"
             }
         },
-        "Twd":147,
+        "Twd":154,
         "Type":"Master"
     },
     "100610":{
@@ -24827,7 +24827,7 @@
                 "PGar":"2"
             }
         },
-        "Twd":221,
+        "Twd":222,
         "Type":"Master"
     },
     "100617":{
@@ -24879,7 +24879,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":664,
+        "Twd":672,
         "Type":"Action Modifier"
     },
     "100618":{
@@ -25022,7 +25022,7 @@
                 "PM":"1"
             }
         },
-        "Twd":116,
+        "Twd":117,
         "Type":"Master"
     },
     "100621":{
@@ -25352,7 +25352,7 @@
                 "PL":1
             }
         },
-        "Twd":117,
+        "Twd":118,
         "Type":"Master"
     },
     "100630":{
@@ -25425,7 +25425,7 @@
                 "PM":1
             }
         },
-        "Twd":72,
+        "Twd":73,
         "Type":"Master"
     },
     "100632":{
@@ -25467,7 +25467,7 @@
                 "30th":1
             }
         },
-        "Twd":51,
+        "Twd":52,
         "Type":"Master"
     },
     "100633":{
@@ -25556,7 +25556,7 @@
                 "":"4"
             }
         },
-        "Twd":74,
+        "Twd":80,
         "Type":"Ally"
     },
     "100635":{
@@ -25719,7 +25719,7 @@
                 "C":true
             }
         },
-        "Twd":17,
+        "Twd":18,
         "Type":"Action Modifier"
     },
     "100640":{
@@ -25789,7 +25789,7 @@
                 "PV":"4"
             }
         },
-        "Twd":243,
+        "Twd":245,
         "Type":"Action"
     },
     "100641":{
@@ -25862,7 +25862,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":24,
+        "Twd":27,
         "Type":"Action Modifier"
     },
     "100642":{
@@ -26033,7 +26033,7 @@
                 "PH":3
             }
         },
-        "Twd":468,
+        "Twd":473,
         "Type":"Reaction"
     },
     "100645":{
@@ -26084,7 +26084,7 @@
                 "":"1"
             }
         },
-        "Twd":389,
+        "Twd":402,
         "Type":"Action Modifier"
     },
     "100646":{
@@ -26128,7 +26128,7 @@
                 "":"1"
             }
         },
-        "Twd":56,
+        "Twd":63,
         "Type":"Master"
     },
     "100647":{
@@ -26181,7 +26181,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[vis] [ACTION] +1 stealth action. Put this card on a location and unlock this vampire. While this vampire is ready, their controller can burn this card during a (D) action against the attached location to have the action fail, and the acting minion and this vampire enter combat.\n[VIS] [REACTION] Only usable during a (D) action against any location. This vampire unlocks, the action fails, and the acting minion and this vampire enter combat.",
+        "Card Text":"[vis] [ACTION] +1 stealth action. Put this card on a location and unlock this vampire. While this vampire is ready, their controller can burn this card during an action directed at the attached location to have the action fail, and the acting minion and this vampire enter combat.\n[VIS] [REACTION] Only usable during an action directed at a location. This vampire unlocks, the action fails, and the acting minion and this vampire enter combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Visceratika",
@@ -26344,7 +26344,7 @@
                 "DTC":true
             }
         },
-        "Twd":55,
+        "Twd":56,
         "Type":"Combat"
     },
     "100652":{
@@ -26398,7 +26398,7 @@
                 "PR":"1"
             }
         },
-        "Twd":583,
+        "Twd":588,
         "Type":"Action"
     },
     "100653":{
@@ -26538,7 +26538,7 @@
                 "2004-03-01":true
             }
         },
-        "Twd":173,
+        "Twd":174,
         "Type":"Master"
     },
     "100657":{
@@ -26797,7 +26797,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable at the end of a successful (D) action directed at the Methuselah with the edge.\nYou gain the edge.",
+        "Card Text":"Only usable at the end of a successful action directed at the Methuselah with the edge.\nYou gain the edge.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -27346,7 +27346,7 @@
                 "DTC":true
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Equipment"
     },
     "100679":{
@@ -27374,7 +27374,7 @@
                 "PSal":1
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Combat"
     },
     "100680":{
@@ -27445,7 +27445,7 @@
                 "PH":4
             }
         },
-        "Twd":630,
+        "Twd":642,
         "Type":"Reaction"
     },
     "100681":{
@@ -27525,7 +27525,7 @@
                 "PM":"4"
             }
         },
-        "Twd":137,
+        "Twd":138,
         "Type":"Action Modifier"
     },
     "100683":{
@@ -27676,7 +27676,7 @@
                 "PG":"3"
             }
         },
-        "Twd":35,
+        "Twd":41,
         "Type":"Reaction"
     },
     "100687":{
@@ -27752,7 +27752,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":707,
+        "Twd":719,
         "Type":"Action Modifier"
     },
     "100688":{
@@ -27832,7 +27832,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"Only usable if an ally or younger vampire is taking a (D) action against you (or a card you control).\n[aus] +2 intercept.\n[myt] The action fails. Lock this reacting vampire.\n[MYT] As [myt] above, and the acting minion does not unlock as normal during their next unlock phase.",
+        "Card Text":"Only usable if an ally or younger vampire is taking an action directed at you (or a card you control).\n[aus] +2 intercept.\n[myt] The action fails. Lock this reacting vampire.\n[MYT] As [myt] above, and the acting minion does not unlock as normal during their next unlock phase.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex/Mytherceria",
@@ -27963,7 +27963,7 @@
                 "PAG":1
             }
         },
-        "Twd":109,
+        "Twd":110,
         "Type":"Combat"
     },
     "100694":{
@@ -28033,13 +28033,13 @@
         "Requirement":"3 Gehenna",
         "Rulings":[
             {
-                "text":"Cards that change a vampire's sect to Camarilla can still be played, but he becomes Independant until the Fall is removed from play. ",
+                "text":"Cards that change a vampire's sect to Camarilla can still be played, but he becomes Independent until the Fall is removed from play. ",
                 "refs":{
                     "[LSJ 20040519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fz-EAPmmqZY/bj4sR5CxnmQJ"
                 }
             },
             {
-                "text":"Is a temporary effect that overrides the underlying sect. The most recent override takes precendence, but if a more recent would set the sect to Camarilla, it sets it to Independant instead while the Fall is in play. If the Fall leaves play, the vampire retrieves his underlying sect. ",
+                "text":"Is a temporary effect that overrides the underlying sect. The most recent override takes precedence, but if a more recent would set the sect to Camarilla, it sets it to Independent instead while the Fall is in play. If the Fall leaves play, the vampire retrieves his underlying sect. ",
                 "refs":{
                     "[LSJ 20080510]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/67g8kq3F_uw/MAAoEV0Jf_kJ",
                     "[LSJ 20100811]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kGKWcs3k6vI/Uwx7TGC8lgYJ",
@@ -28088,13 +28088,13 @@
         "Requirement":"3 Gehenna",
         "Rulings":[
             {
-                "text":"Cards that change a vampire's sect to Sabbat can still be played, but he becomes Independant until the Fall is removed from play. ",
+                "text":"Cards that change a vampire's sect to Sabbat can still be played, but he becomes Independent until the Fall is removed from play. ",
                 "refs":{
                     "[LSJ 20040519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fz-EAPmmqZY/bj4sR5CxnmQJ"
                 }
             },
             {
-                "text":"Is a temporary effect that overrides the underlying sect. The most recent override takes precendence, but if a more recent would set the sect to Sabbat, it sets it to Independant instead while the Fall is in play. If the Fall leaves play, the vampire retrieves his underlying sect. ",
+                "text":"Is a temporary effect that overrides the underlying sect. The most recent override takes precedence, but if a more recent would set the sect to Sabbat, it sets it to Independent instead while the Fall is in play. If the Fall leaves play, the vampire retrieves his underlying sect. ",
                 "refs":{
                     "[LSJ 20080510]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/67g8kq3F_uw/MAAoEV0Jf_kJ",
                     "[LSJ 20100811]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kGKWcs3k6vI/Uwx7TGC8lgYJ",
@@ -28251,7 +28251,7 @@
                 "NR":1
             }
         },
-        "Twd":681,
+        "Twd":689,
         "Type":"Master"
     },
     "100699":{
@@ -28430,7 +28430,7 @@
                 "R":true
             }
         },
-        "Twd":198,
+        "Twd":199,
         "Type":"Action"
     },
     "100704":{
@@ -28490,7 +28490,7 @@
                 "U":true
             }
         },
-        "Twd":58,
+        "Twd":59,
         "Type":"Combat"
     },
     "100705":{
@@ -28714,7 +28714,7 @@
                 "":"1"
             }
         },
-        "Twd":195,
+        "Twd":196,
         "Type":"Event"
     },
     "100710":{
@@ -28902,7 +28902,7 @@
                 "2022-11-01":true
             }
         },
-        "Twd":26,
+        "Twd":27,
         "Type":"Action"
     },
     "100714":{
@@ -29028,7 +29028,7 @@
                 "2022-11-01":true
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Action"
     },
     "100717":{
@@ -29372,7 +29372,7 @@
         "Requirement":"anarch",
         "Rulings":[
             {
-                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precendence and if it does, this card burns (eg. {Writ of Acceptance}). ",
+                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns (eg. {Writ of Acceptance}). ",
                 "refs":{
                     "[LSJ 20100811]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kGKWcs3k6vI/Uwx7TGC8lgYJ"
                 }
@@ -29473,7 +29473,7 @@
                 "PV":"1"
             }
         },
-        "Twd":76,
+        "Twd":77,
         "Type":"Action"
     },
     "100728":{
@@ -29505,7 +29505,7 @@
                 "R":true
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Master"
     },
     "100729":{
@@ -30086,7 +30086,7 @@
                 "PBh":"5"
             }
         },
-        "Twd":138,
+        "Twd":139,
         "Type":"Combat"
     },
     "100745":{
@@ -30293,7 +30293,7 @@
                 "PG":"2"
             }
         },
-        "Twd":94,
+        "Twd":95,
         "Type":"Combat"
     },
     "100750":{
@@ -30661,7 +30661,7 @@
                 "C":true
             }
         },
-        "Twd":80,
+        "Twd":81,
         "Type":"Action Modifier/Combat"
     },
     "100759":{
@@ -30730,7 +30730,7 @@
                 "C":true
             }
         },
-        "Twd":24,
+        "Twd":25,
         "Type":"Action"
     },
     "100760":{
@@ -30892,7 +30892,7 @@
                 "":"3"
             }
         },
-        "Twd":190,
+        "Twd":196,
         "Type":"Action Modifier"
     },
     "100762":{
@@ -30903,7 +30903,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[for] Only usable by a locked vampire immediately after he or she blocks (play after combat, if any). Unlock this reacting vampire.\n[FOR] Only usable by a locked vampire during a (D) action directed against you (or something you control). Unlock this vampire.",
+        "Card Text":"[for] Only usable by a locked vampire immediately after he or she blocks (play after combat, if any). Unlock this reacting vampire.\n[FOR] Only usable by a locked vampire during an action directed at you (or something you control). Unlock this vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude",
@@ -31065,7 +31065,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":379,
+        "Twd":385,
         "Type":"Action Modifier"
     },
     "100766":{
@@ -31216,7 +31216,7 @@
                 "PM":"2"
             }
         },
-        "Twd":414,
+        "Twd":418,
         "Type":"Action Modifier"
     },
     "100770":{
@@ -31350,7 +31350,7 @@
                 "NTz":3
             }
         },
-        "Twd":268,
+        "Twd":278,
         "Type":"Combat"
     },
     "102223":{
@@ -31384,7 +31384,7 @@
                 "NTz":3
             }
         },
-        "Twd":47,
+        "Twd":53,
         "Type":"Action Modifier/Reaction"
     },
     "102224":{
@@ -31580,7 +31580,7 @@
                 "R":true
             }
         },
-        "Twd":197,
+        "Twd":201,
         "Type":"Master"
     },
     "100776":{
@@ -31938,7 +31938,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":99,
+        "Twd":101,
         "Type":"Master"
     },
     "100786":{
@@ -32084,7 +32084,7 @@
                 "PH":4
             }
         },
-        "Twd":619,
+        "Twd":632,
         "Type":"Action Modifier"
     },
     "100789":{
@@ -32317,7 +32317,7 @@
                 "PB":"1"
             }
         },
-        "Twd":70,
+        "Twd":74,
         "Type":"Master"
     },
     "100795":{
@@ -32411,7 +32411,7 @@
                 "TUB":"4"
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Reaction"
     },
     "100798":{
@@ -32432,7 +32432,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precendence and if it does, this card burns (eg. {Writ of Acceptance}). ",
+                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns (eg. {Writ of Acceptance}). ",
                 "refs":{
                     "[LSJ 20100811]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kGKWcs3k6vI/Uwx7TGC8lgYJ"
                 }
@@ -32519,7 +32519,7 @@
                 "PM":"1"
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Master"
     },
     "100801":{
@@ -32773,7 +32773,7 @@
                 "PG":"1"
             }
         },
-        "Twd":26,
+        "Twd":31,
         "Type":"Master"
     },
     "100808":{
@@ -32844,7 +32844,7 @@
                 "PR":"1"
             }
         },
-        "Twd":60,
+        "Twd":66,
         "Type":"Master"
     },
     "100810":{
@@ -33496,7 +33496,7 @@
                 "NH":1
             }
         },
-        "Twd":1446,
+        "Twd":1464,
         "Type":"Master"
     },
     "100825":{
@@ -33597,7 +33597,7 @@
                 "TUB":"4"
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Action"
     },
     "100828":{
@@ -33618,7 +33618,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[obe] [ACTIONMODIFIER][REACTION] The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"[obe] [ACTIONMODIFIER][REACTION] The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
@@ -33636,7 +33636,7 @@
                 "DTC":true
             }
         },
-        "Twd":35,
+        "Twd":37,
         "Type":"Action Modifier/Reaction"
     },
     "100829":{
@@ -33846,7 +33846,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":85,
+        "Twd":88,
         "Type":"Combat"
     },
     "100835":{
@@ -34053,7 +34053,7 @@
                 }
             },
             {
-                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precendence and if it does, this card burns (eg. {Writ of Acceptance}). ",
+                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns (eg. {Writ of Acceptance}). ",
                 "refs":{
                     "[LSJ 20100811]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kGKWcs3k6vI/Uwx7TGC8lgYJ"
                 }
@@ -34152,7 +34152,7 @@
                 "NSal":1
             }
         },
-        "Twd":385,
+        "Twd":386,
         "Type":"Master"
     },
     "100843":{
@@ -34306,7 +34306,7 @@
                 "PL":8
             }
         },
-        "Twd":1005,
+        "Twd":1017,
         "Type":"Action"
     },
     "100846":{
@@ -34382,7 +34382,7 @@
                 "2006-11-26":true
             }
         },
-        "Twd":63,
+        "Twd":64,
         "Type":"Equipment"
     },
     "100848":{
@@ -34647,7 +34647,7 @@
                 "R":true
             }
         },
-        "Twd":42,
+        "Twd":43,
         "Type":"Master"
     },
     "100854":{
@@ -34920,7 +34920,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":50,
+        "Twd":52,
         "Type":"Master"
     },
     "100861":{
@@ -34988,7 +34988,7 @@
                 "C":true
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Combat"
     },
     "100862":{
@@ -35092,7 +35092,7 @@
                 "PR":"4"
             }
         },
-        "Twd":132,
+        "Twd":135,
         "Type":"Reaction"
     },
     "100864":{
@@ -35103,7 +35103,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+2 stealth action.\nPut this card on the acting minion and choose a location. If the chosen location is the target of a (D) action (and you control the location), this minion can burn 1 blood or burn this card to unlock and attempt to block with +1 intercept.",
+        "Card Text":"+2 stealth action.\nPut this card on the acting minion and choose a location. If the chosen location is the target of a directed action (and you control the location), this minion can burn 1 blood or burn this card to unlock and attempt to block with +1 intercept.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -35168,7 +35168,7 @@
                 "R":true
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Equipment"
     },
     "100866":{
@@ -35312,7 +35312,7 @@
                 "AU":"3"
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Reaction"
     },
     "100869":{
@@ -35811,7 +35811,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The provided action is considered as an action that requires an Anarch or an Independant. (eg {CrimethInc.} can be used). ",
+                "text":"The provided action is considered as an action that requires an Anarch or an Independent. (eg {CrimethInc.} can be used). ",
                 "refs":{
                     "[ANK 20180529]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=66#87662"
                 }
@@ -35898,7 +35898,7 @@
                 "PBH":"1"
             }
         },
-        "Twd":27,
+        "Twd":29,
         "Type":"Master"
     },
     "100886":{
@@ -35956,7 +35956,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":107,
+        "Twd":108,
         "Type":"Action"
     },
     "100887":{
@@ -36063,7 +36063,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready cardinal or regent. Unique werewolf with 4 life. 2 strength, 0 bleed.\nHarzomatuili gets one optional maneuver each combat. Damage from his hand strikes is aggravated. Once during each (D) action, he can burn 1 life to get +1 intercept. If Harzomatuili has fewer than 4 life during your unlock phase, he gains 1 life from the blood bank.",
+        "Card Text":"Requires a ready cardinal or regent. Unique werewolf with 4 life. 2 strength, 0 bleed.\nHarzomatuili gets one optional maneuver each combat. Damage from his hand strikes is aggravated. Once during a directed action, he can burn 1 life to get +1 intercept. If Harzomatuili has fewer than 4 life during your unlock phase, he gains 1 life from the blood bank.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -36589,7 +36589,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":750,
+        "Twd":759,
         "Type":"Equipment"
     },
     "100904":{
@@ -36620,7 +36620,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":97,
+        "Twd":98,
         "Type":"Action"
     },
     "100905":{
@@ -36767,7 +36767,7 @@
                 }
             },
             {
-                "text":"Cannot be used after a diablerie or an {Abactor} resolution and before the Blood Hunt: the Blood Hunt is part of the action although it is independant from it. ",
+                "text":"Cannot be used after a diablerie or an {Abactor} resolution and before the Blood Hunt: the Blood Hunt is part of the action although it is independent from it. ",
                 "refs":{
                     "[LSJ 20090722-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Ry0xU4IuJmQ/6WqoTXkzrVUJ",
                     "[LSJ 20030618]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/AdfUNNicx-Y/SDYFb37pS-wJ"
@@ -36803,7 +36803,7 @@
                 "":"1"
             }
         },
-        "Twd":239,
+        "Twd":241,
         "Type":"Master"
     },
     "100909":{
@@ -36868,7 +36868,7 @@
                 "DTC":true
             }
         },
-        "Twd":33,
+        "Twd":36,
         "Type":"Combat"
     },
     "100911":{
@@ -37128,7 +37128,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[obf] Put this card in play. Your minions get +1 stealth on non-bleeding (D) actions against your prey. Any minion may burn this card as a (D) action. A Methuselah may have only one Hidden Pathways in play.\n[OBF] As above, but playing this card is a +1 stealth action.",
+        "Card Text":"[obf] Put this card in play. Your minions get +1 stealth on non-bleeding actions directed at your prey. Any minion may burn this card as a (D) action. A Methuselah may have only one Hidden Pathways in play.\n[OBF] As above, but playing this card is a +1 stealth action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obfuscate",
@@ -37221,7 +37221,7 @@
                 "PSal":"3"
             }
         },
-        "Twd":213,
+        "Twd":214,
         "Type":"Combat"
     },
     "100919":{
@@ -37232,7 +37232,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Not usable by an imbued with /Illuminate/.\n[ACTIONMODIFIER] [1CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1CONVICTION] Only usable during a monster's (D) action targeting this imbued. The action fails.",
+        "Card Text":"Not usable by an imbued with /Illuminate/.\n[ACTIONMODIFIER] [1CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1CONVICTION] Only usable during a monster's action directed at this imbued. The action fails.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Innocence",
@@ -37516,7 +37516,7 @@
                 "C":true
             }
         },
-        "Twd":29,
+        "Twd":30,
         "Type":"Combat"
     },
     "100926":{
@@ -37643,7 +37643,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Vehicle. Haven.\nThis minion gets an optional press to end combat on the first round of combat. If the bearer is an anarch, any vampire attempting a (D) action targeting this anarch doesn't unlock as normal on his or her next unlock phase (even if the action isn't successful). Any werewolf may burn this equipment and enter combat with this minion as a +1 stealth (D) action. A minion may have only one haven and only one vehicle.",
+        "Card Text":"Vehicle. Haven.\nThis minion gets an optional press to end combat on the first round of combat. If the bearer is an anarch, any vampire attempting an action directed at this anarch doesn't unlock as normal on his or her next unlock phase (even if the action isn't successful). Any werewolf may burn this equipment and enter combat with this minion as a +1 stealth (D) action. A minion may have only one haven and only one vehicle.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -37741,7 +37741,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":112,
+        "Twd":114,
         "Type":"Retainer"
     },
     "100933":{
@@ -38040,7 +38040,7 @@
                 "PSam":1
             }
         },
-        "Twd":11,
+        "Twd":12,
         "Type":"Master"
     },
     "100941":{
@@ -38188,7 +38188,7 @@
                 "PBH":"6"
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Combat"
     },
     "100945":{
@@ -38230,7 +38230,7 @@
                 "LB":"1"
             }
         },
-        "Twd":147,
+        "Twd":148,
         "Type":"Master"
     },
     "100946":{
@@ -38283,7 +38283,7 @@
                 "PBH":"3"
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Action"
     },
     "100947":{
@@ -38333,7 +38333,7 @@
                 "DTC":true
             }
         },
-        "Twd":73,
+        "Twd":74,
         "Type":"Action Modifier"
     },
     "100948":{
@@ -38880,7 +38880,7 @@
                 "NL":6
             }
         },
-        "Twd":287,
+        "Twd":289,
         "Type":"Combat"
     },
     "100960":{
@@ -39829,7 +39829,7 @@
                 "PL":1
             }
         },
-        "Twd":936,
+        "Twd":953,
         "Type":"Master"
     },
     "100985":{
@@ -40015,7 +40015,7 @@
                 "DM":"4"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Action"
     },
     "100991":{
@@ -40173,7 +40173,7 @@
                 "":"3"
             }
         },
-        "Twd":91,
+        "Twd":96,
         "Type":"Action Modifier"
     },
     "100995":{
@@ -40376,7 +40376,7 @@
                 "PV":"4"
             }
         },
-        "Twd":94,
+        "Twd":96,
         "Type":"Action"
     },
     "101000":{
@@ -40397,7 +40397,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precendence. ",
+                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precedence. ",
                 "refs":{
                     "[LSJ 20100811]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kGKWcs3k6vI/Uwx7TGC8lgYJ"
                 }
@@ -40453,7 +40453,7 @@
                 "PM":"6"
             }
         },
-        "Twd":171,
+        "Twd":173,
         "Type":"Action Modifier"
     },
     "101002":{
@@ -40989,7 +40989,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":658,
+        "Twd":660,
         "Type":"Equipment"
     },
     "101015":{
@@ -41033,7 +41033,7 @@
                 "PN":"1"
             }
         },
-        "Twd":226,
+        "Twd":228,
         "Type":"Retainer"
     },
     "101016":{
@@ -41199,7 +41199,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":519,
+        "Twd":525,
         "Type":"Master"
     },
     "101020":{
@@ -41748,7 +41748,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready vampire. Unique.\n(D) Put this card on a younger ready vampire. You still control this card. This vampire cannot block undirected actions. (D) actions cost this vampire an additional blood.",
+        "Card Text":"Requires a ready vampire. Unique.\n(D) Put this card on a younger ready vampire. You still control this card. This vampire cannot block undirected actions. Directed actions cost this vampire an additional blood.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -41809,7 +41809,7 @@
                 "DTC":true
             }
         },
-        "Twd":32,
+        "Twd":35,
         "Type":"Equipment"
     },
     "101036":{
@@ -42086,7 +42086,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":40,
+        "Twd":41,
         "Type":"Action"
     },
     "101044":{
@@ -42157,7 +42157,7 @@
                 "DTC":true
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Action"
     },
     "101046":{
@@ -42607,7 +42607,7 @@
                 "PM":"8"
             }
         },
-        "Twd":162,
+        "Twd":163,
         "Type":"Action"
     },
     "101056":{
@@ -42700,7 +42700,7 @@
                 "PL":4
             }
         },
-        "Twd":721,
+        "Twd":726,
         "Type":"Political Action"
     },
     "101057":{
@@ -42915,7 +42915,7 @@
                 "PI":1
             }
         },
-        "Twd":146,
+        "Twd":147,
         "Type":"Action Modifier"
     },
     "101063":{
@@ -43114,7 +43114,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":397,
+        "Twd":399,
         "Type":"Master"
     },
     "101068":{
@@ -43214,7 +43214,7 @@
                 "PN":"1"
             }
         },
-        "Twd":72,
+        "Twd":73,
         "Type":"Master"
     },
     "101071":{
@@ -43701,7 +43701,7 @@
                 "SKM":"2"
             }
         },
-        "Twd":162,
+        "Twd":163,
         "Type":"Equipment"
     },
     "101082":{
@@ -44120,7 +44120,7 @@
                 "":"1"
             }
         },
-        "Twd":123,
+        "Twd":124,
         "Type":"Master"
     },
     "101092":{
@@ -44335,7 +44335,7 @@
                 "C":true
             }
         },
-        "Twd":50,
+        "Twd":52,
         "Type":"Action Modifier"
     },
     "101099":{
@@ -44554,7 +44554,7 @@
                 "":"1"
             }
         },
-        "Twd":67,
+        "Twd":68,
         "Type":"Master"
     },
     "101104":{
@@ -44596,7 +44596,7 @@
                 "PV":"2"
             }
         },
-        "Twd":164,
+        "Twd":166,
         "Type":"Master"
     },
     "101105":{
@@ -44695,7 +44695,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":11,
+        "Twd":12,
         "Type":"Combat"
     },
     "101108":{
@@ -44720,7 +44720,7 @@
                 "2010-05-10":true
             }
         },
-        "Twd":162,
+        "Twd":165,
         "Type":"Master"
     },
     "101109":{
@@ -44916,7 +44916,7 @@
                 "":"1"
             }
         },
-        "Twd":241,
+        "Twd":251,
         "Type":"Master"
     },
     "101113":{
@@ -45219,7 +45219,7 @@
                 "PB":1
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Master"
     },
     "101121":{
@@ -45442,7 +45442,7 @@
                 "PR":"4"
             }
         },
-        "Twd":860,
+        "Twd":871,
         "Type":"Action Modifier"
     },
     "101126":{
@@ -45481,7 +45481,7 @@
                 "PA":1
             }
         },
-        "Twd":70,
+        "Twd":72,
         "Type":"Reaction"
     },
     "101127":{
@@ -45919,7 +45919,7 @@
                 "R":true
             }
         },
-        "Twd":17,
+        "Twd":18,
         "Type":"Master"
     },
     "101137":{
@@ -46016,7 +46016,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Malkavians do not have to be ready to take an action via the Network. (i.e. a Torpored Malk could rescue himself from Torpor) ",
+                "text":"Malkavians do not have to be ready to take an action via the Network. (i.e. a Malkavian in torpor could attempt to Leave Torpor) ",
                 "refs":{
                     "[RTR 19950509]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/_LKyR7pdMig/ZvwdGmIwUnsJ"
                 }
@@ -46054,7 +46054,7 @@
                 "R":true
             }
         },
-        "Twd":66,
+        "Twd":68,
         "Type":"Master"
     },
     "101140":{
@@ -46234,7 +46234,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":218,
+        "Twd":220,
         "Type":"Action"
     },
     "101144":{
@@ -46308,7 +46308,7 @@
                 "30th":6
             }
         },
-        "Twd":681,
+        "Twd":686,
         "Type":"Combat"
     },
     "101145":{
@@ -46393,7 +46393,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
@@ -47048,7 +47048,7 @@
                 "R":true
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Master"
     },
     "101164":{
@@ -47234,7 +47234,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable after a successful (D) action.\n[obf] Put this card on the acting vampire. During a (D) action against the same Methuselah (or same set of Methuselahs), this vampire may burn this card to get +1 stealth.\n[OBF] As above, but for +2 stealth.",
+        "Card Text":"Only usable after a successful directed action.\n[obf] Put this card on the acting vampire. During an action directed at the same Methuselah (or same set of Methuselahs), this vampire may burn this card to get +1 stealth.\n[OBF] As above, but for +2 stealth.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obfuscate",
@@ -47333,7 +47333,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":38,
+        "Twd":40,
         "Type":"Master"
     },
     "101172":{
@@ -47358,7 +47358,7 @@
                 "2009-04-01":true
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Master"
     },
     "101173":{
@@ -47696,7 +47696,7 @@
                 "PSam":"2"
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Action Modifier"
     },
     "101180":{
@@ -48459,7 +48459,7 @@
                 "AU":"2"
             }
         },
-        "Twd":11,
+        "Twd":12,
         "Type":"Action Modifier"
     },
     "101200":{
@@ -48515,7 +48515,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
@@ -48724,7 +48724,7 @@
                 "U":true
             }
         },
-        "Twd":190,
+        "Twd":194,
         "Type":"Master"
     },
     "102239":{
@@ -48933,7 +48933,7 @@
                 "PV":"2"
             }
         },
-        "Twd":116,
+        "Twd":118,
         "Type":"Action"
     },
     "101212":{
@@ -49152,7 +49152,7 @@
                 }
             },
             {
-                "text":"If the target has less blood at resolution than the amount annouced, you take what you can. ",
+                "text":"If the target has less blood at resolution than the amount announced, you take what you can. ",
                 "refs":{
                     "[LSJ 20100216]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/nrXTh1XKJJ8/KF7iiXQk3jsJ"
                 }
@@ -49194,7 +49194,7 @@
                 "NH":2
             }
         },
-        "Twd":438,
+        "Twd":441,
         "Type":"Master"
     },
     "101218":{
@@ -49421,7 +49421,7 @@
                 }
             },
             {
-                "text":"[THA] If the action is blocked, it ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards (eg. {Freak Drive}, slave rule, {Sowing Dissension}). ",
+                "text":"[THA] If the action is blocked, it ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards (eg. {Freak Drive}, slave rule, {Sowing Dissension}). ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906",
@@ -49457,7 +49457,7 @@
                 "PTr":"6"
             }
         },
-        "Twd":208,
+        "Twd":210,
         "Type":"Action Modifier"
     },
     "101224":{
@@ -49478,7 +49478,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[chi] The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"[chi] The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
@@ -50135,7 +50135,7 @@
                 "":"1"
             }
         },
-        "Twd":440,
+        "Twd":447,
         "Type":"Master"
     },
     "101239":{
@@ -50166,7 +50166,7 @@
                 "PG":"1"
             }
         },
-        "Twd":52,
+        "Twd":56,
         "Type":"Action Modifier"
     },
     "101240":{
@@ -50277,7 +50277,7 @@
                 "NL":1
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Master"
     },
     "102253":{
@@ -50592,7 +50592,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":391,
+        "Twd":392,
         "Type":"Retainer"
     },
     "101250":{
@@ -50826,7 +50826,7 @@
                 "PN":"1"
             }
         },
-        "Twd":80,
+        "Twd":81,
         "Type":"Retainer"
     },
     "101255":{
@@ -50906,7 +50906,7 @@
                 "2020-05-11":true
             }
         },
-        "Twd":154,
+        "Twd":157,
         "Type":"Action Modifier/Reaction"
     },
     "101257":{
@@ -51027,7 +51027,7 @@
                 "NH":1
             }
         },
-        "Twd":608,
+        "Twd":613,
         "Type":"Reaction"
     },
     "101260":{
@@ -51234,7 +51234,7 @@
                 "":"1"
             }
         },
-        "Twd":161,
+        "Twd":164,
         "Type":"Event"
     },
     "101266":{
@@ -51245,7 +51245,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a titled vampire.\nYou may not play this card if another National Guard Support is in play. If this referendum is successful, put this card in play. Minions get -1 stealth on (D) actions. During your unlock phase, put a counter on this card. Any vampire can call a referendum to burn this card as a +1 stealth political action; in that referendum, each counter represents a vote in favor of burning the card.",
+        "Card Text":"Requires a titled vampire.\nYou may not play this card if another National Guard Support is in play. If this referendum is successful, put this card in play. Minions get -1 stealth on directed actions. During your unlock phase, put a counter on this card. Any vampire can call a referendum to burn this card as a +1 stealth political action; in that referendum, each counter represents a vote in favor of burning the card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -51958,7 +51958,7 @@
                 "PSam":"3"
             }
         },
-        "Twd":24,
+        "Twd":25,
         "Type":"Action"
     },
     "102254":{
@@ -52334,7 +52334,7 @@
                 "PM":"2"
             }
         },
-        "Twd":93,
+        "Twd":95,
         "Type":"Combat"
     },
     "101293":{
@@ -52379,7 +52379,7 @@
                 "DTC":true
             }
         },
-        "Twd":67,
+        "Twd":70,
         "Type":"Ally"
     },
     "101294":{
@@ -52478,7 +52478,7 @@
                 "C":true
             }
         },
-        "Twd":87,
+        "Twd":88,
         "Type":"Action"
     },
     "101297":{
@@ -52791,7 +52791,7 @@
                 }
             },
             {
-                "text":"The minions who performed an equip action when it was in play unlock at the end of turn regardless of wether NRA PAC is still in play or not. ",
+                "text":"The minions who performed an equip action when it was in play unlock at the end of turn regardless of whether NRA PAC is still in play or not. ",
                 "refs":{
                     "[LSJ 20080619]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-JNytF94ST8/m/jOxRkvh8RGwJ"
                 }
@@ -52945,7 +52945,7 @@
                 }
             },
             {
-                "text":"The action ends unsuccessfuly immediately, combat does not happen, no other action modifier or reaction can be played afterwards. ",
+                "text":"The action ends unsuccessfully immediately, combat does not happen, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20170105]":"http://www.vekn.net/forum/rules-questions/75512-raptor-obedience#80020",
@@ -52985,7 +52985,7 @@
                 "PoS":"2"
             }
         },
-        "Twd":252,
+        "Twd":254,
         "Type":"Reaction"
     },
     "102255":{
@@ -53067,7 +53067,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":161,
+        "Twd":162,
         "Type":"Master"
     },
     "101311":{
@@ -53261,7 +53261,7 @@
                 "PSam":"2"
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action"
     },
     "101317":{
@@ -53333,7 +53333,7 @@
                 "PM":"2"
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Action Modifier"
     },
     "101319":{
@@ -53493,7 +53493,7 @@
                 "PH":4
             }
         },
-        "Twd":1738,
+        "Twd":1765,
         "Type":"Reaction"
     },
     "102256":{
@@ -53714,7 +53714,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":107,
+        "Twd":109,
         "Type":"Master"
     },
     "101327":{
@@ -53843,7 +53843,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":51,
+        "Twd":58,
         "Type":"Reaction"
     },
     "101330":{
@@ -53889,7 +53889,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: trifle.\nPut this card on a Laibon. For non-Orun cards played by Methuselahs other than this Laibon's controller, this Laibon is considered to have 2 additional capacity. A Laibon gets an additional vote for every three Orun he or she has. If this Laibon successfully bleeds for more than 2 or successfully performs a (D) action against a non-mortal minion, he or she burns one Orun. Burn this card if this Laibon has more Orun and /Aye/ than his or her capacity.",
+        "Card Text":"Master: trifle.\nPut this card on a Laibon. For non-Orun cards played by Methuselahs other than this Laibon's controller, this Laibon is considered to have 2 additional capacity. A Laibon gets an additional vote for every three Orun he or she has. If this Laibon successfully bleeds for more than 2 or successfully performs an action directed at a non-mortal minion, he or she burns one Orun. Burn this card if this Laibon has more Orun and /Aye/ than his or her capacity.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -54083,7 +54083,7 @@
                 "DTC":true
             }
         },
-        "Twd":57,
+        "Twd":58,
         "Type":"Combat"
     },
     "101335":{
@@ -54133,7 +54133,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precendence. ",
+                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precedence. ",
                 "refs":{
                     "[LSJ 20100811]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kGKWcs3k6vI/Uwx7TGC8lgYJ"
                 }
@@ -54401,7 +54401,7 @@
                 "PR":"2"
             }
         },
-        "Twd":87,
+        "Twd":89,
         "Type":"Combat"
     },
     "101343":{
@@ -54688,7 +54688,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":144,
+        "Twd":147,
         "Type":"Master"
     },
     "101351":{
@@ -54826,7 +54826,7 @@
                 "PL":2
             }
         },
-        "Twd":516,
+        "Twd":519,
         "Type":"Political Action"
     },
     "101354":{
@@ -54901,7 +54901,7 @@
                 "":"1"
             }
         },
-        "Twd":600,
+        "Twd":607,
         "Type":"Master"
     },
     "102231":{
@@ -54929,7 +54929,7 @@
                 "PMi":"4"
             }
         },
-        "Twd":23,
+        "Twd":26,
         "Type":"Reaction"
     },
     "101356":{
@@ -55243,7 +55243,7 @@
                 "DTC":true
             }
         },
-        "Twd":61,
+        "Twd":63,
         "Type":"Master"
     },
     "101366":{
@@ -55302,7 +55302,7 @@
                 "PSal":1
             }
         },
-        "Twd":9,
+        "Twd":10,
         "Type":"Master"
     },
     "101368":{
@@ -55810,7 +55810,7 @@
                 "DTC":true
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action Modifier/Combat"
     },
     "101383":{
@@ -55890,7 +55890,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":1653,
+        "Twd":1670,
         "Type":"Master"
     },
     "101385":{
@@ -56013,7 +56013,7 @@
                 "30th":2
             }
         },
-        "Twd":187,
+        "Twd":189,
         "Type":"Action Modifier"
     },
     "101388":{
@@ -56078,7 +56078,7 @@
                 "NTz":1
             }
         },
-        "Twd":486,
+        "Twd":490,
         "Type":"Master"
     },
     "101389":{
@@ -56205,7 +56205,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a titled vampire.\nChoose a non-titled or an Anarch vampire. Successful referendum means this card is put on the chosen vampire. This vampire cannot gain a non-Anarch title and gets -1 stealth on (D) actions. A vampire can have only one Persona Non Grata.",
+        "Card Text":"Requires a titled vampire.\nChoose a non-titled or an Anarch vampire. Successful referendum means this card is put on the chosen vampire. This vampire cannot gain a non-Anarch title and gets -1 stealth on directed actions. A vampire can have only one Persona Non Grata.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -56577,7 +56577,7 @@
                 "DTC":true
             }
         },
-        "Twd":71,
+        "Twd":72,
         "Type":"Action Modifier/Combat"
     },
     "102232":{
@@ -56619,7 +56619,7 @@
                 "PMi":"5"
             }
         },
-        "Twd":20,
+        "Twd":23,
         "Type":"Action"
     },
     "101403":{
@@ -57057,7 +57057,7 @@
                 "PL":1
             }
         },
-        "Twd":68,
+        "Twd":69,
         "Type":"Master"
     },
     "101416":{
@@ -57150,7 +57150,7 @@
                 "30th":1
             }
         },
-        "Twd":351,
+        "Twd":356,
         "Type":"Political Action"
     },
     "101418":{
@@ -57223,7 +57223,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique wraith with 1 life. 0 strength, 0 bleed.\nPonticulus gets +1 intercept during (D) actions against you. He can lock to give any Tremere +1 intercept. He is immune to non-aggravated damage. He cannot act and he cannot have or use equipment.",
+        "Card Text":"Unique wraith with 1 life. 0 strength, 0 bleed.\nPonticulus gets +1 intercept during actions directed at you. He can lock to give any Tremere +1 intercept. He is immune to non-aggravated damage. He cannot act and he cannot have or use equipment.",
         "Clan":"Tremere",
         "Conviction Cost":"",
         "Discipline":"",
@@ -57249,7 +57249,7 @@
                 "R":true
             }
         },
-        "Twd":98,
+        "Twd":99,
         "Type":"Ally"
     },
     "101420":{
@@ -57912,7 +57912,7 @@
                 "PR":"1"
             }
         },
-        "Twd":59,
+        "Twd":64,
         "Type":"Master"
     },
     "101436":{
@@ -58041,7 +58041,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":809,
+        "Twd":817,
         "Type":"Master"
     },
     "101440":{
@@ -59207,7 +59207,7 @@
                 "PH":3
             }
         },
-        "Twd":218,
+        "Twd":219,
         "Type":"Reaction"
     },
     "101476":{
@@ -59436,7 +59436,7 @@
                 "PV":1
             }
         },
-        "Twd":85,
+        "Twd":86,
         "Type":"Master"
     },
     "101481":{
@@ -59724,7 +59724,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":23,
+        "Twd":25,
         "Type":"Master"
     },
     "101488":{
@@ -59839,7 +59839,7 @@
                 "PI":"2"
             }
         },
-        "Twd":108,
+        "Twd":109,
         "Type":"Ally"
     },
     "101492":{
@@ -59933,7 +59933,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
@@ -60085,7 +60085,7 @@
                 "PG":"1"
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Master"
     },
     "101499":{
@@ -60141,7 +60141,7 @@
                 "PN":"2"
             }
         },
-        "Twd":8,
+        "Twd":10,
         "Type":"Reaction"
     },
     "101500":{
@@ -60245,7 +60245,7 @@
                 "NR":2
             }
         },
-        "Twd":41,
+        "Twd":43,
         "Type":"Reaction"
     },
     "101502":{
@@ -60297,7 +60297,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Can be used even if the target is burned ot if the contract is burned when the target leaves the ready region (eg. {Priority Contract}). ",
+                "text":"Can be used even if the target is burned of if the contract is burned when the target leaves the ready region (eg. {Priority Contract}). ",
                 "refs":{
                     "[PIB 20150512]":"http://www.vekn.net/forum/rules-questions/71020-priority-contract-and-provision-of-the-silsila#71053"
                 }
@@ -60740,7 +60740,7 @@
                 "PB":"2"
             }
         },
-        "Twd":81,
+        "Twd":82,
         "Type":"Action"
     },
     "101514":{
@@ -60875,7 +60875,7 @@
                 "PTr":1
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Reaction"
     },
     "101517":{
@@ -61136,7 +61136,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":262,
+        "Twd":264,
         "Type":"Combat"
     },
     "101524":{
@@ -61425,7 +61425,7 @@
                 "PO":"4"
             }
         },
-        "Twd":89,
+        "Twd":90,
         "Type":"Reaction"
     },
     "101532":{
@@ -61472,7 +61472,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":29,
+        "Twd":30,
         "Type":"Combat"
     },
     "101533":{
@@ -61656,7 +61656,7 @@
                 "NR":1
             }
         },
-        "Twd":571,
+        "Twd":581,
         "Type":"Master"
     },
     "101537":{
@@ -61855,7 +61855,7 @@
                 "NTz":2
             }
         },
-        "Twd":102,
+        "Twd":106,
         "Type":"Action Modifier/Combat"
     },
     "101543":{
@@ -61994,7 +61994,7 @@
                 "PG":"2"
             }
         },
-        "Twd":12,
+        "Twd":13,
         "Type":"Retainer"
     },
     "101546":{
@@ -62079,7 +62079,7 @@
                 "PN":"2"
             }
         },
-        "Twd":57,
+        "Twd":58,
         "Type":"Reaction"
     },
     "101548":{
@@ -62215,7 +62215,7 @@
                 "PN":"2"
             }
         },
-        "Twd":336,
+        "Twd":341,
         "Type":"Retainer"
     },
     "101551":{
@@ -62312,7 +62312,7 @@
                 }
             },
             {
-                "text":"How many counters are used from the Carnival must be annouced as part of the terms of the action. ",
+                "text":"How many counters are used from the Carnival must be announced as part of the terms of the action. ",
                 "refs":{
                     "[RTR 20111202]":"http://www.vekn.net/forum/rules-questions/16769-rules-team-rulings-02-dec-11#16769"
                 }
@@ -62480,7 +62480,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"When an effect that would change control of this imbued is played or announced, you may burn this card to cancel that effect. Burn this card to cancel either a (D) action against this imbued that requires Chimerstry [chi], Dementation [dem], Dominate [dom], Presence [pre], or Serpentis [ser] or a strike card that requires any of those Disciplines played by a minion opposing this imbued as it is announced. No cost is paid.",
+        "Card Text":"When an effect that would change control of this imbued is played or announced, you may burn this card to cancel that effect. Burn this card to cancel either an action directed at this imbued that requires Chimerstry [chi], Dementation [dem], Dominate [dom], Presence [pre], or Serpentis [ser] or a strike card that requires any of those Disciplines played by a minion opposing this imbued as it is announced. No cost is paid.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -62737,7 +62737,7 @@
                 "PSam":"3"
             }
         },
-        "Twd":9,
+        "Twd":10,
         "Type":"Ally"
     },
     "101564":{
@@ -62973,7 +62973,7 @@
                 "DM":"4"
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Action"
     },
     "101571":{
@@ -63161,7 +63161,7 @@
         "Requirement":"non-titled,non-anarch",
         "Rulings":[
             {
-                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precendence and if it does, this card burns (eg. {Writ of Acceptance}). ",
+                "text":"Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns (eg. {Writ of Acceptance}). ",
                 "refs":{
                     "[LSJ 20100811]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kGKWcs3k6vI/Uwx7TGC8lgYJ"
                 }
@@ -63300,7 +63300,7 @@
                 "NTz":1
             }
         },
-        "Twd":269,
+        "Twd":271,
         "Type":"Reaction"
     },
     "101579":{
@@ -63665,7 +63665,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":91,
+        "Twd":92,
         "Type":"Combat"
     },
     "101589":{
@@ -63791,7 +63791,7 @@
                 "30th":1
             }
         },
-        "Twd":379,
+        "Twd":385,
         "Type":"Political Action"
     },
     "101592":{
@@ -64181,7 +64181,7 @@
                 "DTC":true
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Action"
     },
     "101604":{
@@ -64289,7 +64289,7 @@
                 "DTC":true
             }
         },
-        "Twd":46,
+        "Twd":47,
         "Type":"Action Modifier"
     },
     "101607":{
@@ -64468,7 +64468,7 @@
                 "PBH":"3"
             }
         },
-        "Twd":141,
+        "Twd":142,
         "Type":"Action Modifier/Combat"
     },
     "101611":{
@@ -64847,7 +64847,7 @@
                 "C":true
             }
         },
-        "Twd":30,
+        "Twd":31,
         "Type":"Action"
     },
     "101622":{
@@ -64986,7 +64986,7 @@
                 "PMi":"3"
             }
         },
-        "Twd":24,
+        "Twd":27,
         "Type":"Action Modifier"
     },
     "101625":{
@@ -65120,7 +65120,7 @@
                 "PM":"4"
             }
         },
-        "Twd":106,
+        "Twd":107,
         "Type":"Action"
     },
     "101628":{
@@ -65263,7 +65263,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":25,
+        "Twd":27,
         "Type":"Political Action"
     },
     "101632":{
@@ -65306,7 +65306,7 @@
                 "PG":"1"
             }
         },
-        "Twd":33,
+        "Twd":38,
         "Type":"Action"
     },
     "101633":{
@@ -65872,7 +65872,7 @@
                 "PTr":1
             }
         },
-        "Twd":27,
+        "Twd":28,
         "Type":"Retainer"
     },
     "101645":{
@@ -66058,7 +66058,7 @@
                 "PH":3
             }
         },
-        "Twd":313,
+        "Twd":316,
         "Type":"Combat"
     },
     "101650":{
@@ -66303,7 +66303,7 @@
                 "PTz":1
             }
         },
-        "Twd":154,
+        "Twd":155,
         "Type":"Master"
     },
     "102215":{
@@ -66630,7 +66630,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Action"
     },
     "101662":{
@@ -66671,7 +66671,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":148,
+        "Twd":149,
         "Type":"Master"
     },
     "101663":{
@@ -66709,7 +66709,7 @@
                 "U":true
             }
         },
-        "Twd":129,
+        "Twd":131,
         "Type":"Political Action"
     },
     "101664":{
@@ -66756,7 +66756,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":118,
+        "Twd":119,
         "Type":"Action"
     },
     "101665":{
@@ -66803,7 +66803,7 @@
                 "TUB":"1"
             }
         },
-        "Twd":33,
+        "Twd":35,
         "Type":"Ally"
     },
     "101666":{
@@ -67073,13 +67073,13 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"If the target has a {Soul Gem of Etrius}, the Gem effect applies and it cannot be transfered. ",
+                "text":"If the target has a {Soul Gem of Etrius}, the Gem effect applies and it cannot be transferred. ",
                 "refs":{
                     "[LSJ 19970516]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8Vzkc74MvCs/R95JjEen3-AJ"
                 }
             },
             {
-                "text":"If the target does not burn (eg. {Byzar}'s ability) then no blood is gained and no equipment transfered. ",
+                "text":"If the target does not burn (eg. {Byzar}'s ability) then no blood is gained and no equipment transferred. ",
                 "refs":{
                     "[LSJ 20100423]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/YnQCu0GeMhc/m/ET__SGvjD7QJ"
                 }
@@ -67145,7 +67145,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"Usable by a locked Tremere. Cause a (D) action targeting a location you control to fail and put this card on that location. You may burn this card to cause a (D) action targeting this location to fail.",
+        "Card Text":"Usable by a locked Tremere. Cause an action directed at a location you control to fail and put this card on that location. You may burn this card to cause an action directed at this location to fail.",
         "Clan":"Tremere",
         "Conviction Cost":"",
         "Discipline":"",
@@ -67372,7 +67372,7 @@
                 "C":true
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Action"
     },
     "101681":{
@@ -67419,7 +67419,7 @@
                 "DTC":true
             }
         },
-        "Twd":96,
+        "Twd":97,
         "Type":"Equipment"
     },
     "101682":{
@@ -68122,7 +68122,7 @@
                 "R":true
             }
         },
-        "Twd":263,
+        "Twd":265,
         "Type":"Event"
     },
     "101698":{
@@ -68167,7 +68167,7 @@
                 "NL":4
             }
         },
-        "Twd":161,
+        "Twd":162,
         "Type":"Action"
     },
     "101699":{
@@ -68383,7 +68383,7 @@
                 "R":true
             }
         },
-        "Twd":40,
+        "Twd":42,
         "Type":"Equipment"
     },
     "101704":{
@@ -68531,7 +68531,7 @@
                 "PL":6
             }
         },
-        "Twd":487,
+        "Twd":490,
         "Type":"Reaction"
     },
     "101707":{
@@ -68614,7 +68614,7 @@
                 "R":true
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Master"
     },
     "101709":{
@@ -68650,7 +68650,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a ready minion you control. If this minion is the target of a (D) action while he or she is ready, you may burn this card to make the action fail. A minion can have only one Secret Passage.",
+        "Card Text":"Master.\nPut this card on a ready minion you control. If this minion is the target of a directed action while he or she is ready, you may burn this card to make the action fail. A minion can have only one Secret Passage.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -68761,7 +68761,7 @@
                 "NTz":1
             }
         },
-        "Twd":482,
+        "Twd":484,
         "Type":"Master"
     },
     "101712":{
@@ -68829,7 +68829,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":409,
+        "Twd":412,
         "Type":"Action Modifier"
     },
     "101713":{
@@ -68970,7 +68970,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":28,
+        "Twd":29,
         "Type":"Action"
     },
     "101717":{
@@ -69026,7 +69026,7 @@
                 "NTz":3
             }
         },
-        "Twd":208,
+        "Twd":215,
         "Type":"Reaction"
     },
     "101718":{
@@ -69276,7 +69276,7 @@
                 "R":true
             }
         },
-        "Twd":18,
+        "Twd":20,
         "Type":"Action Modifier"
     },
     "101725":{
@@ -69603,7 +69603,7 @@
                 "R":true
             }
         },
-        "Twd":16,
+        "Twd":18,
         "Type":"Equipment"
     },
     "101733":{
@@ -69805,7 +69805,7 @@
                 "DTC":true
             }
         },
-        "Twd":91,
+        "Twd":93,
         "Type":"Combat"
     },
     "101736":{
@@ -70186,7 +70186,7 @@
                 "DTC":true
             }
         },
-        "Twd":188,
+        "Twd":191,
         "Type":"Action Modifier"
     },
     "101744":{
@@ -70460,7 +70460,7 @@
                 "DTC":true
             }
         },
-        "Twd":83,
+        "Twd":84,
         "Type":"Ally"
     },
     "101752":{
@@ -70724,7 +70724,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"The action ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
@@ -71093,7 +71093,7 @@
                 "PR":"1"
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Equipment"
     },
     "101768":{
@@ -71352,7 +71352,7 @@
                 "DTC":true
             }
         },
-        "Twd":150,
+        "Twd":153,
         "Type":"Action Modifier"
     },
     "101775":{
@@ -71389,7 +71389,7 @@
                 "DTC":true
             }
         },
-        "Twd":129,
+        "Twd":130,
         "Type":"Action Modifier"
     },
     "101776":{
@@ -71621,7 +71621,7 @@
                 "":"1"
             }
         },
-        "Twd":59,
+        "Twd":60,
         "Type":"Equipment"
     },
     "101782":{
@@ -72076,7 +72076,7 @@
                 "PA":"2"
             }
         },
-        "Twd":182,
+        "Twd":183,
         "Type":"Combat"
     },
     "101793":{
@@ -72308,7 +72308,7 @@
                 "PB":"4"
             }
         },
-        "Twd":54,
+        "Twd":55,
         "Type":"Combat"
     },
     "101799":{
@@ -72479,7 +72479,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[obf] Only usable at the end of a successful action (after resolving the action). Put this card on this acting vampire. Minions without Auspex [aus] cannot direct (D) actions at the vampire with this card. Burn this card during your next unlock phase.\n[OBF] As above, but minions without superior Auspex [AUS] cannot direct (D) actions at this vampire.",
+        "Card Text":"[obf] Only usable at the end of a successful action (after resolving the action). Put this card on this acting vampire. Minions without Auspex [aus] cannot perform actions directed at the vampire with this card. Burn this card during your next unlock phase.\n[OBF] As above, but minions without superior Auspex [AUS] cannot perform actions directed at this vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obfuscate",
@@ -72683,7 +72683,7 @@
                 "PN":"1"
             }
         },
-        "Twd":38,
+        "Twd":39,
         "Type":"Master"
     },
     "101809":{
@@ -72811,7 +72811,7 @@
                 "PG":"1"
             }
         },
-        "Twd":434,
+        "Twd":438,
         "Type":"Master"
     },
     "101812":{
@@ -73017,7 +73017,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":257,
+        "Twd":259,
         "Type":"Equipment"
     },
     "101817":{
@@ -73242,7 +73242,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":55,
+        "Twd":57,
         "Type":"Master"
     },
     "101822":{
@@ -73318,7 +73318,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Do not replace until after the current turn.\n[pro] +1 intercept, only usable against a (D) action.\n[PRO] +1 intercept.",
+        "Card Text":"Do not replace until after the current turn.\n[pro] +1 intercept, only usable during a directed action.\n[PRO] +1 intercept.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Protean",
@@ -73551,7 +73551,7 @@
                 "PBh":"2"
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Combat"
     },
     "101830":{
@@ -73590,7 +73590,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[nec] Hunt, or burn a wraith to hunt with +3 hunt (this is a (D) action if you do not control the wraith).\n[NEC] As above, with an additional +1 hunt.",
+        "Card Text":"+1 stealth action.\n[nec] Hunt, or burn a wraith to hunt with +3 hunt (this is a directed action if you do not control the wraith).\n[NEC] As above, with an additional +1 hunt.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Necromancy",
@@ -73607,7 +73607,7 @@
                 "DTC":true
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Action"
     },
     "101832":{
@@ -73648,7 +73648,7 @@
                 }
             },
             {
-                "text":"If the drawn vampire (B) is younger and would be put into play with Gem but is burned instead (self-contestinging, for example), then the Gem activates again, drawing a new vampire (C) and comparing his capacity to B's capacity. ",
+                "text":"If the drawn vampire (B) is younger and would be put into play with Gem but is burned instead (self-contesting, for example), then the Gem activates again, drawing a new vampire (C) and comparing his capacity to B's capacity. ",
                 "refs":{
                     "[RTR 20010710]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GsI1UyH54jU/x9LfDZX1vR4J",
                     "[LSJ 20030918]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Lae6k2AG-1c/GOqdTox6CRsJ"
@@ -74026,7 +74026,7 @@
                 "R":true
             }
         },
-        "Twd":45,
+        "Twd":46,
         "Type":"Master"
     },
     "101843":{
@@ -74061,7 +74061,7 @@
                 "DTC":true
             }
         },
-        "Twd":170,
+        "Twd":171,
         "Type":"Action Modifier/Reaction"
     },
     "101844":{
@@ -74306,7 +74306,7 @@
                 "DTC":true
             }
         },
-        "Twd":42,
+        "Twd":43,
         "Type":"Action"
     },
     "101849":{
@@ -74420,7 +74420,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":218,
+        "Twd":219,
         "Type":"Reaction"
     },
     "101851":{
@@ -74567,7 +74567,7 @@
                 "DM":"4"
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Action Modifier"
     },
     "101855":{
@@ -74685,7 +74685,7 @@
                 }
             },
             {
-                "text":"Once in play, it must be burned on the next successful bleed against the same Methuselah, it cannot be used to increase an unsuccesful bleed of zero. ",
+                "text":"Once in play, it must be burned on the next successful bleed against the same Methuselah, it cannot be used to increase an unsuccessful bleed of zero. ",
                 "refs":{
                     "[TOM 19950620]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/XfsJaaWK9as/wgtWif3sEsAJ"
                 }
@@ -74756,7 +74756,7 @@
                 "PN":"1"
             }
         },
-        "Twd":457,
+        "Twd":462,
         "Type":"Action Modifier"
     },
     "101858":{
@@ -74992,7 +74992,7 @@
                 "R":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Action"
     },
     "101864":{
@@ -75003,7 +75003,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] Only usable during a (D) action against you (or a card you control). +1 intercept.\n[FOR] Reduce a bleed against you by 1.",
+        "Card Text":"[for] Only usable during an action directed at you (or a card you control). +1 intercept.\n[FOR] Reduce a bleed against you by 1.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude",
@@ -75194,7 +75194,7 @@
                 "DTC":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Action/Combat"
     },
     "101870":{
@@ -75412,7 +75412,7 @@
                 "DTC":true
             }
         },
-        "Twd":65,
+        "Twd":66,
         "Type":"Action Modifier"
     },
     "101876":{
@@ -76303,7 +76303,7 @@
                 "PL":2
             }
         },
-        "Twd":655,
+        "Twd":662,
         "Type":"Master"
     },
     "101897":{
@@ -76602,7 +76602,7 @@
                 }
             },
             {
-                "text":"Allows to play a card that could otherwise not be aforded: in this case it must be locked when the action is announced. ",
+                "text":"Allows to play a card that could otherwise not be afforded: in this case it must be locked when the action is announced. ",
                 "refs":{
                     "[LSJ 20090705]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/3Ekxk6uQ_wo/Y25g9tS6qSoJ",
                     "[LSJ 20030917]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/i3Ugq5AQWFI/m/TxPoXM78hFAJ"
@@ -76659,7 +76659,7 @@
                 "C":true
             }
         },
-        "Twd":111,
+        "Twd":112,
         "Type":"Combat"
     },
     "101906":{
@@ -76981,7 +76981,7 @@
                 "PR":"4"
             }
         },
-        "Twd":697,
+        "Twd":708,
         "Type":"Action Modifier/Combat"
     },
     "101914":{
@@ -77306,7 +77306,7 @@
                 "PSal":"3"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Combat"
     },
     "101922":{
@@ -77784,7 +77784,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card on a Gangrel antitribu you control. Damage from this vampire's hand strikes is aggravated. (D) actions cost this vampire an additional blood. This vampire's controller may use a master phase action to burn this card.",
+        "Card Text":"Unique master.\nPut this card on a Gangrel antitribu you control. Damage from this vampire's hand strikes is aggravated. Directed actions cost this vampire an additional blood. This vampire's controller may use a master phase action to burn this card.",
         "Clan":"Gangrel antitribu",
         "Conviction Cost":"",
         "Discipline":"",
@@ -78194,7 +78194,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":348,
+        "Twd":351,
         "Type":"Combat"
     },
     "101943":{
@@ -78228,7 +78228,7 @@
                 "R":true
             }
         },
-        "Twd":203,
+        "Twd":205,
         "Type":"Retainer"
     },
     "101944":{
@@ -78263,7 +78263,7 @@
                 "DTC":true
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Combat"
     },
     "101945":{
@@ -78366,7 +78366,7 @@
                 "NL":3
             }
         },
-        "Twd":729,
+        "Twd":741,
         "Type":"Combat"
     },
     "101946":{
@@ -78404,7 +78404,7 @@
                 "C":true
             }
         },
-        "Twd":29,
+        "Twd":31,
         "Type":"Action"
     },
     "101947":{
@@ -78505,7 +78505,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":139,
+        "Twd":140,
         "Type":"Reaction"
     },
     "101949":{
@@ -78590,7 +78590,7 @@
                 "PH":3
             }
         },
-        "Twd":1078,
+        "Twd":1092,
         "Type":"Reaction"
     },
     "101950":{
@@ -78660,7 +78660,7 @@
                 "NSal":2
             }
         },
-        "Twd":60,
+        "Twd":61,
         "Type":"Combat"
     },
     "101951":{
@@ -78848,7 +78848,7 @@
                 }
             },
             {
-                "text":"Multiple Temptations on the same minion are handled separately: effects do not stask, stealing the minion only burns the counters on one of them. ",
+                "text":"Multiple Temptations on the same minion are handled separately: effects do not stack, stealing the minion only burns the counters on one of them. ",
                 "refs":{
                     "[LSJ 20010227]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/rdkVAtZFC2I/rW1nXhSsyVcJ"
                 }
@@ -79013,7 +79013,7 @@
                 "DTC":true
             }
         },
-        "Twd":73,
+        "Twd":75,
         "Type":"Action Modifier"
     },
     "101958":{
@@ -79061,7 +79061,7 @@
                 "NSal":1
             }
         },
-        "Twd":188,
+        "Twd":194,
         "Type":"Master"
     },
     "101959":{
@@ -79152,7 +79152,7 @@
                 "NR":2
             }
         },
-        "Twd":100,
+        "Twd":105,
         "Type":"Combat"
     },
     "101961":{
@@ -79550,7 +79550,7 @@
         "Requirement":"non-sterile,capacity 2 or less",
         "Rulings":[
             {
-                "text":"When computing the cost of a card, multiplications and divisions are applied first, followed by additions and substractions. ",
+                "text":"When computing the cost of a card, multiplications and divisions are applied first, followed by additions and subtractions. ",
                 "refs":{
                     "[PIB 20150917]":"http://www.vekn.net/forum/rules-questions/73156-corner-case-thin-blooded-seer-question#73166",
                     "[RTR 20070707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/vSOt2c1uRzQ/MsRAv47Cd4YJ"
@@ -79608,7 +79608,7 @@
                 "PG":"5"
             }
         },
-        "Twd":39,
+        "Twd":44,
         "Type":"Action"
     },
     "101973":{
@@ -79671,7 +79671,7 @@
                 "30thE":1
             }
         },
-        "Twd":45,
+        "Twd":46,
         "Type":"Action"
     },
     "101974":{
@@ -79786,7 +79786,7 @@
                 }
             },
             {
-                "text":"[dom] Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike. ",
+                "text":"[dom] Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combatant going to torpor during first strike. ",
                 "refs":{
                     "[ANK 20200422]":"http://www.vekn.net/forum/rules-questions/78582-thoughts-betrayed-interaction-with-different-striking-situation#99680",
                     "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
@@ -79896,7 +79896,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":107,
+        "Twd":108,
         "Type":"Action Modifier"
     },
     "101979":{
@@ -80133,7 +80133,7 @@
                 "2022-10-22":true
             }
         },
-        "Twd":49,
+        "Twd":50,
         "Type":"Action"
     },
     "101985":{
@@ -80329,7 +80329,7 @@
                 "30th":6
             }
         },
-        "Twd":54,
+        "Twd":55,
         "Type":"Master"
     },
     "101990":{
@@ -80751,7 +80751,7 @@
                 "R":true
             }
         },
-        "Twd":45,
+        "Twd":46,
         "Type":"Action Modifier/Reaction"
     },
     "101999":{
@@ -81093,7 +81093,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique master.\nPut this card on a Laibon with at least three /Aye/ and three /Orun/. During your unlock phase, this Laibon gains 1 blood. Allies and younger vampires must burn 1 blood or life to attempt to block this Laibon or to target this Laibon with a (D) action. Burn this card if this minion is not ready or has fewer than three /Aye/ or three /Orun/.",
+        "Card Text":"Unique master.\nPut this card on a Laibon with at least three /Aye/ and three /Orun/. During your unlock phase, this Laibon gains 1 blood. Allies and younger vampires must burn 1 blood or life to attempt to block this Laibon or to perform an action directed at this Laibon. Burn this card if this minion is not ready or has fewer than three /Aye/ or three /Orun/.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -81247,7 +81247,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":152,
+        "Twd":154,
         "Type":"Combat"
     },
     "102013":{
@@ -81258,7 +81258,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a ready magaji.\nPut this card in play. When a vampire successfully takes a (D) action against you, that vampire takes 1 unpreventable damage (after resolving the action). Any vampire may burn this card (and take no damage from it) as a (D) action. A Methuselah may have only one Travelers Obey the Tenets.",
+        "Card Text":"+1 stealth action. Requires a ready magaji.\nPut this card in play. When a vampire successfully takes an action directed at you, that vampire takes 1 unpreventable damage (after resolving the action). Any vampire may burn this card (and take no damage from it) as a (D) action. A Methuselah may have only one Travelers Obey the Tenets.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -81673,7 +81673,7 @@
                 "C":true
             }
         },
-        "Twd":136,
+        "Twd":137,
         "Type":"Master"
     },
     "102024":{
@@ -81774,7 +81774,7 @@
                 "DTC":true
             }
         },
-        "Twd":65,
+        "Twd":66,
         "Type":"Action Modifier"
     },
     "102027":{
@@ -82219,7 +82219,7 @@
                 "PMin":"2"
             }
         },
-        "Twd":48,
+        "Twd":50,
         "Type":"Action Modifier"
     },
     "102042":{
@@ -82270,7 +82270,7 @@
                 "C":true
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Reaction"
     },
     "102044":{
@@ -82739,7 +82739,7 @@
                 "":"1"
             }
         },
-        "Twd":130,
+        "Twd":133,
         "Type":"Event"
     },
     "102058":{
@@ -82993,7 +82993,7 @@
                 "PSam":"2"
             }
         },
-        "Twd":12,
+        "Twd":14,
         "Type":"Action Modifier"
     },
     "102063":{
@@ -83097,7 +83097,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Action Modifier"
     },
     "102065":{
@@ -83148,7 +83148,7 @@
                 "PTz":"2"
             }
         },
-        "Twd":29,
+        "Twd":30,
         "Type":"Ally"
     },
     "102066":{
@@ -83187,7 +83187,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":38,
+        "Twd":39,
         "Type":"Master"
     },
     "102067":{
@@ -83391,7 +83391,7 @@
                 "PV":"2"
             }
         },
-        "Twd":115,
+        "Twd":116,
         "Type":"Combat"
     },
     "102072":{
@@ -83618,7 +83618,7 @@
                 "DTC":true
             }
         },
-        "Twd":157,
+        "Twd":163,
         "Type":"Action"
     },
     "102077":{
@@ -83703,7 +83703,7 @@
                 "NTz":1
             }
         },
-        "Twd":32,
+        "Twd":33,
         "Type":"Equipment"
     },
     "102079":{
@@ -83742,7 +83742,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":474,
+        "Twd":479,
         "Type":"Event"
     },
     "102080":{
@@ -83791,7 +83791,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Only usable during a (D) action directed at this vampire. Not usable if the acting minion is an older vampire. The action fails.\n[ABO] As above, but usable by a locked vampire.",
+        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Only usable during an action directed at this vampire. Not usable if the acting minion is an older vampire. The action fails.\n[ABO] As above, but usable by a locked vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Abombwe",
@@ -84414,7 +84414,7 @@
                 }
             },
             {
-                "text":"The effect needs to be applied before anyone has an opportunity to play another cancelation effect (eg. {Direct Intervention}). ",
+                "text":"The effect needs to be applied before anyone has an opportunity to play another cancellation effect (eg. {Direct Intervention}). ",
                 "refs":{
                     "[LSJ 20100728]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mzzPS-cOprI/m/BRBR4OBUOaQJ",
                     "[LSJ 20090213]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hkTPcLPgZk4/m/WPZLiL2A91sJ"
@@ -84426,7 +84426,7 @@
                 "R":true
             }
         },
-        "Twd":63,
+        "Twd":64,
         "Type":"Event"
     },
     "102096":{
@@ -84505,7 +84505,7 @@
                 "PR":"3"
             }
         },
-        "Twd":252,
+        "Twd":254,
         "Type":"Action Modifier"
     },
     "102098":{
@@ -84712,7 +84712,7 @@
                 "DTC":true
             }
         },
-        "Twd":79,
+        "Twd":80,
         "Type":"Ally"
     },
     "102104":{
@@ -84830,7 +84830,7 @@
                 "PSal":"3"
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Combat"
     },
     "102107":{
@@ -84878,7 +84878,7 @@
                 "":"4"
             }
         },
-        "Twd":27,
+        "Twd":28,
         "Type":"Retainer"
     },
     "102108":{
@@ -84950,7 +84950,7 @@
                 "PV":"1"
             }
         },
-        "Twd":142,
+        "Twd":143,
         "Type":"Master"
     },
     "102110":{
@@ -85111,7 +85111,7 @@
                 "NSal":2
             }
         },
-        "Twd":1119,
+        "Twd":1129,
         "Type":"Master"
     },
     "102114":{
@@ -85376,7 +85376,7 @@
                 }
             },
             {
-                "text":"If the target has less blood at resolution than the amount annouced, you take what you can. ",
+                "text":"If the target has less blood at resolution than the amount announced, you take what you can. ",
                 "refs":{
                     "[LSJ 20100216]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/nrXTh1XKJJ8/KF7iiXQk3jsJ",
                     "[ANK 20180512-2]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=24#86823"
@@ -85420,7 +85420,7 @@
                 "PL":3
             }
         },
-        "Twd":1095,
+        "Twd":1122,
         "Type":"Master"
     },
     "102122":{
@@ -85912,7 +85912,7 @@
                 "30th":6
             }
         },
-        "Twd":462,
+        "Twd":464,
         "Type":"Action Modifier"
     },
     "102132":{
@@ -86305,7 +86305,7 @@
                 "PBh":"2"
             }
         },
-        "Twd":59,
+        "Twd":60,
         "Type":"Combat"
     },
     "102140":{
@@ -86580,7 +86580,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: out-of-turn.\nPlay on a minion targeted by a (D) action to give that minion +1 intercept. Alternatively, play on a minion in combat. That minion gets an optional strike: dodge this round.",
+        "Card Text":"Master: out-of-turn.\nPlay on a minion targeted by a directed action to give that minion +1 intercept. Alternatively, play on a minion in combat. That minion gets an optional strike: dodge this round.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -86648,7 +86648,7 @@
                 "PN":"2"
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Reaction"
     },
     "102149":{
@@ -86669,7 +86669,7 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"Can be burned after the annoucement of a diablerie action to bring the target Nosferatu out of torpor. The action will still be successful if unblocked, but will have no effect: no diablerie happen. ",
+                "text":"Can be burned after the announcement of a diablerie action to bring the target Nosferatu out of torpor. The action will still be successful if unblocked, but will have no effect: no diablerie happen. ",
                 "refs":{
                     "[ANK 20220218]":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697",
                     "[ANK 20181107]":"http://www.vekn.net/forum/rules-questions/77152-warsaw-station-vs-diablerie#91708"
@@ -86822,7 +86822,7 @@
                 "LB":"1"
             }
         },
-        "Twd":495,
+        "Twd":503,
         "Type":"Master"
     },
     "102152":{
@@ -86910,7 +86910,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a Black Hand vampire. Only usable when attempting to block a (D) action.\n+1 intercept.",
+        "Card Text":"Requires a Black Hand vampire. Only usable when attempting to block a directed action.\n+1 intercept.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -87024,7 +87024,7 @@
                 "R":true
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Master"
     },
     "102159":{
@@ -87373,7 +87373,7 @@
                 "DTC":true
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Master"
     },
     "102168":{
@@ -87474,7 +87474,7 @@
                 "PSal":"4"
             }
         },
-        "Twd":195,
+        "Twd":197,
         "Type":"Combat"
     },
     "102170":{
@@ -87874,7 +87874,7 @@
                 "30th":1
             }
         },
-        "Twd":700,
+        "Twd":720,
         "Type":"Master"
     },
     "102181":{
@@ -88175,7 +88175,7 @@
                 "PN":"1"
             }
         },
-        "Twd":213,
+        "Twd":214,
         "Type":"Master"
     },
     "102190":{
@@ -88220,7 +88220,7 @@
                 "PG":"1"
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Combat"
     },
     "102191":{
@@ -88498,7 +88498,7 @@
                 }
             },
             {
-                "text":"Is a temporary effect that overrides the underlying sect. The most recent override takes precendence. It stays active if another effect changes the underlying sect, like using the default action to become Anarch. ",
+                "text":"Is a temporary effect that overrides the underlying sect. The most recent override takes precedence. It stays active if another effect changes the underlying sect, like using the default action to become Anarch. ",
                 "refs":{
                     "[LSJ 20100811]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/kGKWcs3k6vI/Uwx7TGC8lgYJ",
                     "[ANK 20190619]":"http://www.vekn.net/forum/rules-questions/77723-writ-of-acceptance-and-anarch-and-hackerspace#95462"
@@ -88722,7 +88722,7 @@
                 "PBH":"1"
             }
         },
-        "Twd":30,
+        "Twd":32,
         "Type":"Master"
     },
     "102202":{
@@ -88817,7 +88817,7 @@
                 "DTC":true
             }
         },
-        "Twd":35,
+        "Twd":36,
         "Type":"Equipment"
     },
     "102204":{
@@ -88909,7 +88909,7 @@
                 "":"4"
             }
         },
-        "Twd":12,
+        "Twd":13,
         "Type":"Action Modifier"
     },
     "102206":{
@@ -88981,7 +88981,7 @@
                 "30th":6
             }
         },
-        "Twd":343,
+        "Twd":352,
         "Type":"Master"
     },
     "102208":{
@@ -89180,7 +89180,7 @@
                 "PG":"1"
             }
         },
-        "Twd":85,
+        "Twd":88,
         "Type":"Master"
     }
 }
