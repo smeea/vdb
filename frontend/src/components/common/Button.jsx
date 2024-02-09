@@ -41,7 +41,7 @@ const Button = ({
   return (
     <button
       className={`${roundedStyle} ${
-        noOutline ? '' : outlineStyle
+        noOutline ? 'focus:outline outline-0' : outlineStyle
       } ${borderStyle} ${
         customStyle[variant]
       } flex items-center justify-center font-normal ${paddingStyle} ${className}`}

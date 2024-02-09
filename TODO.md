@@ -3,7 +3,6 @@
 - Mobile support for Tournament Analyze
 - Capacity icon on MacOS
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
-- ButtonGroup focus color from white
 
 # FEATURES
 - Playtest reports
