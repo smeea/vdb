@@ -3,6 +3,7 @@
 - Mobile support for Tournament Analyze
 - Capacity icon on MacOS
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
+- ButtonGroup focus color from white
 
 # FEATURES
 - Playtest reports
@@ -13,7 +14,6 @@
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
 - Back button behavior
-- Update to Vite 5 (when hmr circular import issue is resolved)
 - Update to Headlessui 2 (review new components)
 - Refactor DeckSelectMy to use virtualized
 - Review DeckSelectAdv performance
