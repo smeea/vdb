@@ -22,7 +22,10 @@ const DeckProxyButton = ({ deck, inDiff }) => {
     isDesktop,
     lang,
   } = useApp();
-  const { missingCrypt, missingLibrary } = useDeckMissing(deck);
+  const { missingCrypt, missingLibrary } = useDeckMissing(
+    deck,
+    !(inventoryMode || inDiff)
+  );
 
   const [isLoading, setIsLoading] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState();

@@ -26,28 +26,33 @@ const getMissing = (cards, inventoryType, used, inventory) => {
   return missingCards;
 };
 
-const useDeckMissing = (deck) => {
+const useDeckMissing = (deck, isEmpty) => {
   const usedCrypt = useSnapshot(usedStore).crypt;
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const usedLibrary = useSnapshot(usedStore).library;
   const inventoryLibrary = useSnapshot(inventoryStore).library;
 
-  if (!deck) return { missingCrypt: null, missingLibrary: null };
+  const missingCrypt = useMemo(() => {
+    if (isEmpty || !deck) return null;
 
-  const missingCrypt = useMemo(
-    () => getMissing(deck.crypt, deck.inventoryType, usedCrypt, inventoryCrypt),
-    [deck.crypt, deck.inventoryType]
-  );
-  const missingLibrary = useMemo(
-    () =>
-      getMissing(
-        deck.library,
-        deck.inventoryType,
-        usedLibrary,
-        inventoryLibrary
-      ),
-    [deck.library, deck.inventoryType]
-  );
+    return getMissing(
+      deck.crypt,
+      deck.inventoryType,
+      usedCrypt,
+      inventoryCrypt
+    );
+  }, [deck.crypt, deck.inventoryType, isEmpty]);
+
+  const missingLibrary = useMemo(() => {
+    if (isEmpty || !deck) return null;
+
+    return getMissing(
+      deck.library,
+      deck.inventoryType,
+      usedLibrary,
+      inventoryLibrary
+    );
+  }, [deck.library, deck.inventoryType, isEmpty]);
 
   return { missingCrypt, missingLibrary };
 };
