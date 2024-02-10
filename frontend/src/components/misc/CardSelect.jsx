@@ -115,7 +115,11 @@ const CardSelect = React.forwardRef(
     };
 
     const loadOptions = async (inputValue) => {
-      if (inputValue.length > 2) {
+      if (
+        (inputValue.length > 2 && !inputValue.startsWith('the')) ||
+        (inputValue.length > 3 && !inputValue.startsWith('the ')) ||
+        inputValue.length > 4
+      ) {
         const { cryptMatches, libraryMatches } = getAllMatches(
           inputValue,
           filterCrypt,
@@ -149,7 +153,6 @@ const CardSelect = React.forwardRef(
     return (
       <SelectAsync
         autoFocus={autoFocus}
-        cacheOptions
         getOptionLabel={getOptionLabel}
         loadOptions={loadOptions}
         menuPlacement={placement ? placement : isMobile ? 'top' : 'bottom'}
