@@ -342,7 +342,14 @@
         "Id":201634,
         "Name":"Abraham Mellon",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability does not let him fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally. ",
+                "refs":{
+                    "[LSJ 20050119]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NKWhBnp7uP4/6_56LlSV658J"
+                }
+            }
+        ],
         "Sect":"Camarilla",
         "Set":{
             "FoL":{
@@ -1994,7 +2001,7 @@
                 }
             },
             {
-                "text":"Her ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -3797,7 +3804,7 @@
                 }
             },
             {
-                "text":"Her ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -19276,7 +19283,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -19774,6 +19781,12 @@
                 "text":"When playing a card requiring a Ventrue, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play. ",
                 "refs":{
                     "[ANK 20190228]":"http://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
+                }
+            },
+            {
+                "text":"Her ability does not let her fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally. ",
+                "refs":{
+                    "[LSJ 20050119]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NKWhBnp7uP4/6_56LlSV658J"
                 }
             }
         ],
@@ -23820,7 +23833,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -25590,7 +25603,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -31384,6 +31397,12 @@
                 "refs":{
                     "[ANK 20220816-2]":"https://www.vekn.net/forum/rules-questions/79968-interaction-between-lady-scarlet-churchill-and-toreador-grand-ball#106003"
                 }
+            },
+            {
+                "text":"Her ability does not let her fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally. ",
+                "refs":{
+                    "[LSJ 20050119]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NKWhBnp7uP4/6_56LlSV658J"
+                }
             }
         ],
         "Sect":"Camarilla",
@@ -32811,6 +32830,12 @@
                 "text":"You can still use the burn options of cards with a requirement he could meet when you play them, but does not meet while in play. ",
                 "refs":{
                     "[LSJ 20050225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/OjszbddbvxM/eKkxVIJPoG4J"
+                }
+            },
+            {
+                "text":"His ability does not let him fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally. ",
+                "refs":{
+                    "[LSJ 20050119]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NKWhBnp7uP4/6_56LlSV658J"
                 }
             },
             {
@@ -37676,7 +37701,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -38083,7 +38108,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Her ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -38494,7 +38519,7 @@
                 }
             },
             {
-                "text":"His ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -41728,7 +41753,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"His ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -47831,7 +47856,7 @@
                 }
             },
             {
-                "text":"Her ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -50120,7 +50145,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Her ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -50331,7 +50356,7 @@
         "New":false,
         "Rulings":[
             {
-                "text":"Her ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
@@ -52490,7 +52515,7 @@
                 }
             },
             {
-                "text":"His ability can be used when in torpor. ",
+                "text":"The ability can be used when in torpor. ",
                 "refs":{
                     "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
