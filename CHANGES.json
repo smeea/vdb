@@ -1,5 +1,15 @@
 [
   {
+    "version": "2024-02-09",
+    "changes": [
+      "Update card texts to official V5C release",
+      "Update Rulings",
+      "Update TWDA",
+      "Few more performance improvements for users with many decks",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-01-29",
     "changes": [
       "Fix TWD/PDA bugs with decks containing banned cards",
