@@ -19,6 +19,15 @@ with open("cardbase_crypt.json", "r+") as crypt_file, open(
         'Nod', 'Crow', 'Contract', 'Luc', 'Monster', 'Inquisition', 'Angel'
     ] + disciplines + virtues
 
+    longer_name_exceptions = [
+        [['Flash', 'Grenade'], 'Flash Grenade'],
+        [['Hazimel'], 'Eye of Hazimel'],
+        [['Victoria'], 'Victoria Ash']
+    ]
+
+    def get_long_name_exception(name, text):
+        return any(name in i[0] and i[1] in text for i in longer_name_exceptions)
+
     def generate_crossref(card):
         for other_card in cards.values():
             if other_card['Id'] == card['Id']:
@@ -31,7 +40,9 @@ with open("cardbase_crypt.json", "r+") as crypt_file, open(
 
             if name not in blacklist and name not in card[
                     'Name'] and name in card['Card Text']:
-                if f"/{name}/" in card['Card Text'] or name in ['Hazimel'] and 'Eye of Hazimel' in card['Card Text'] or name in ['Flash', 'Grenade'] and 'Flash Grenade' in card['Card Text']:
+                is_long_name_exception = get_long_name_exception(name, card['Card Text'])
+
+                if f"/{name}/" in card['Card Text'] or is_long_name_exception:
                     pass
 
                 else:
