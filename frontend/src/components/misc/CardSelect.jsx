@@ -7,6 +7,73 @@ import {
 } from '@/components';
 import { useFilters } from '@/hooks';
 
+const getMatches = (
+  inputValue,
+  filterAction,
+  playtestId,
+  playtestMode,
+  inInventory
+) => {
+  const input = { name: inputValue };
+
+  const startingWith = [];
+  const other = filterAction(input)
+    .filter((card) => {
+      if (!((playtestMode && !inInventory) || card.Id < playtestId)) {
+        return false;
+      }
+
+      if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
+        startingWith.push({ value: card.Id });
+      } else {
+        return true;
+      }
+    })
+    .map((card) => ({
+      value: card.Id,
+    }));
+
+  return { startingWith, other };
+};
+
+const getAllMatches = (
+  inputValue,
+  filterCrypt,
+  filterLibrary,
+  target,
+  playtestMode,
+  inInventory
+) => {
+  const playtestId = target === 'crypt' ? 210000 : 110000;
+
+  const cryptMatches =
+    target !== 'library'
+      ? getMatches(
+          inputValue,
+          filterCrypt,
+          playtestId,
+          playtestMode,
+          inInventory
+        )
+      : [];
+
+  const libraryMatches =
+    target !== 'crypt'
+      ? getMatches(
+          inputValue,
+          filterLibrary,
+          playtestId,
+          playtestMode,
+          inInventory
+        )
+      : [];
+
+  return {
+    cryptMatches,
+    libraryMatches,
+  };
+};
+
 const CardSelect = React.forwardRef(
   (
     {
@@ -18,7 +85,7 @@ const CardSelect = React.forwardRef(
       onChange,
       placement,
     },
-    ref,
+    ref
   ) => {
     const { isMobile, cryptCardBase, libraryCardBase, playtestMode } = useApp();
     const { filterCrypt } = useFilters(cryptCardBase);
@@ -49,51 +116,32 @@ const CardSelect = React.forwardRef(
 
     const loadOptions = async (inputValue) => {
       if (inputValue.length > 2) {
-        const input = { name: inputValue };
-
-        const exactCryptMatches = [];
-        const exactLibraryMatches = [];
-
-        const filteredCryptCards = filterCrypt(input)
-          .filter((card) => (playtestMode && !inInventory) || card.Id < 210000)
-          .filter((card) => {
-            if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
-              exactCryptMatches.push({ value: card.Id });
-            } else {
-              return true;
-            }
-          })
-          .map((card) => ({
-            value: card.Id,
-          }));
-
-        const filteredLibraryCards = filterLibrary(input)
-          .filter((card) => (playtestMode && !inInventory) || card.Id < 110000)
-          .filter((card) => {
-            if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
-              exactLibraryMatches.push({ value: card.Id });
-            } else {
-              return true;
-            }
-          })
-          .map((card) => ({
-            value: card.Id,
-          }));
+        const { cryptMatches, libraryMatches } = getAllMatches(
+          inputValue,
+          filterCrypt,
+          filterLibrary,
+          target,
+          playtestMode,
+          inInventory
+        );
 
         if (target === 'crypt') {
           return [
-            ...exactCryptMatches.sort(byTwd),
-            ...filteredCryptCards.sort(byTwd),
+            ...cryptMatches.startingWith.sort(byTwd),
+            ...cryptMatches.other.sort(byTwd),
           ];
         } else if (target === 'library') {
           return [
-            ...exactLibraryMatches.sort(byTwd),
-            ...filteredLibraryCards.sort(byTwd),
+            ...libraryMatches.startingWith.sort(byTwd),
+            ...libraryMatches.other.sort(byTwd),
           ];
         }
         return [
-          ...[...exactCryptMatches, ...exactLibraryMatches].sort(byTwd),
-          ...[...filteredCryptCards, ...filteredLibraryCards].sort(byTwd),
+          ...[
+            ...cryptMatches.startingWith,
+            ...libraryMatches.startingWith,
+          ].sort(byTwd),
+          ...[...cryptMatches.other, ...libraryMatches.other].sort(byTwd),
         ];
       }
     };
@@ -111,7 +159,7 @@ const CardSelect = React.forwardRef(
         value={value}
       />
     );
-  },
+  }
 );
 CardSelect.displayName = 'CardSelect';
 
