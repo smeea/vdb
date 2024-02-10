@@ -1,13 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useSnapshot } from 'valtio';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   LoginBlock,
   InventoryAddDeckModal,
   InventoryAddPreconModal,
-  NewCardSelect,
-  InventoryCrypt,
-  InventoryLibrary,
+  InventoryCryptWrapper,
+  InventoryLibraryWrapper,
   InventoryButtons,
   InventoryShowSelect,
   InventoryShareModal,
@@ -18,7 +16,7 @@ import {
   Checkbox,
   FlexGapped,
 } from '@/components';
-import { useApp, inventoryStore } from '@/context';
+import { useApp } from '@/context';
 
 const Inventory = () => {
   const {
@@ -31,15 +29,13 @@ const Inventory = () => {
     cryptCardBase,
     libraryCardBase,
   } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
   const [inventoryError, setInventoryError] = useState();
   const query = new URLSearchParams(useLocation().search);
-  const [sharedInventoryCrypt, setSharedInventoryCrypt] = useState();
-  const [sharedInventoryLibrary, setSharedInventoryLibrary] = useState();
+  const [sharedCrypt, setSharedCrypt] = useState();
+  const [sharedLibrary, setSharedLibrary] = useState();
   const [showShareModal, setShowShareModal] = useState(false);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
-  const inShared = sharedInventoryCrypt && sharedInventoryLibrary;
+  const inShared = sharedCrypt && sharedLibrary;
 
   const getInventory = (key) => {
     const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
@@ -64,8 +60,8 @@ const Inventory = () => {
         Object.keys(data.library).map((k) => {
           library[k] = { ...data.library[k], c: libraryCardBase[k] };
         });
-        setSharedInventoryCrypt(crypt);
-        setSharedInventoryLibrary(library);
+        setSharedCrypt(crypt);
+        setSharedLibrary(library);
       })
       .catch((error) => {
         if (error.message == 401) {
@@ -82,8 +78,6 @@ const Inventory = () => {
     }
   }, [query, cryptCardBase, libraryCardBase]);
 
-  const [newCryptId, setNewCryptId] = useState();
-  const [newLibraryId, setNewLibraryId] = useState();
   const [category, setCategory] = useState('all');
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
@@ -91,19 +85,6 @@ const Inventory = () => {
   const [type, setType] = useState('All');
   const [discipline, setDiscipline] = useState('All');
   const [onlyNotes, setOnlyNotes] = useState(false);
-
-  const newCryptFocus = () => newCryptRef.current.focus();
-  const newCryptRef = useRef();
-  const newLibraryFocus = () => newLibraryRef.current.focus();
-  const newLibraryRef = useRef();
-
-  const handleNewCard = (event) => {
-    if (event.value > 200000) {
-      setNewCryptId(event.value);
-    } else {
-      setNewLibraryId(event.value);
-    }
-  };
 
   return (
     <div className="inventory-container mx-auto">
@@ -114,87 +95,35 @@ const Inventory = () => {
               showCryptOnMobile ? 'flex' : 'hidden'
             } basis-full flex-col sm:flex sm:basis-5/9 sm:gap-2 lg:gap-3 xl:gap-4`}
           >
-            {!inShared && (
-              <>
-                <div className="p-2 sm:p-0">
-                  <NewCardSelect
-                    onChange={handleNewCard}
-                    ref={newCryptRef}
-                    target="crypt"
-                    inInventory
-                  />
-                </div>
-                {newCryptId && (
-                  <InventoryCrypt
-                    cards={{
-                      [newCryptId]: inventoryCrypt[newCryptId]
-                        ? inventoryCrypt[newCryptId]
-                        : { c: cryptCardBase[newCryptId], q: 0 },
-                    }}
-                    newFocus={newCryptFocus}
-                    compact
-                  />
-                )}
-              </>
-            )}
-            <div>
-              <InventoryCrypt
-                withCompact={newCryptId}
-                cards={inShared ? sharedInventoryCrypt : inventoryCrypt}
-                clan={clan}
-                setClan={setClan}
-                inShared={inShared}
-                category={inShared ? 'ok' : category}
-                onlyNotes={onlyNotes}
-              />
-            </div>
+            <InventoryCryptWrapper
+              sharedCrypt={sharedCrypt}
+              category={category}
+              onlyNotes={onlyNotes}
+              clan={clan}
+              setClan={setClan}
+            />
           </div>
           <div
             className={`${
               showCryptOnMobile ? 'hidden' : 'flex'
             } basis-full flex-col sm:flex sm:basis-4/9 sm:gap-2 lg:gap-3 xl:gap-4`}
           >
-            {!inShared && (
-              <>
-                <div className="p-2 sm:p-0">
-                  <NewCardSelect
-                    onChange={handleNewCard}
-                    ref={newLibraryRef}
-                    target="library"
-                    inInventory
-                  />
-                </div>
-                {newLibraryId && (
-                  <InventoryLibrary
-                    cards={{
-                      [newLibraryId]: inventoryLibrary[newLibraryId]
-                        ? inventoryLibrary[newLibraryId]
-                        : { c: libraryCardBase[newLibraryId], q: 0 },
-                    }}
-                    newFocus={newLibraryFocus}
-                    compact
-                  />
-                )}
-              </>
-            )}
-            <div>
-              <InventoryLibrary
-                withCompact={newLibraryId}
-                category={inShared ? 'ok' : category}
-                cards={inShared ? sharedInventoryLibrary : inventoryLibrary}
-                type={type}
-                setType={setType}
-                discipline={discipline}
-                setDiscipline={setDiscipline}
-                inShared={inShared}
-                onlyNotes={onlyNotes}
-              />
-            </div>
+            <InventoryLibraryWrapper
+              sharedLibrary={sharedLibrary}
+              category={category}
+              onlyNotes={onlyNotes}
+              discipline={discipline}
+              setDiscipline={setDiscipline}
+              type={type}
+              setType={setType}
+            />
           </div>
           <div className="flex basis-full flex-col space-y-6 max-lg:hidden lg:basis-2/12">
             <InventoryButtons
-              crypt={inShared ? sharedInventoryCrypt : inventoryCrypt}
-              library={inShared ? sharedInventoryLibrary : inventoryLibrary}
+              sharedCrypt={sharedCrypt}
+              sharedLibrary={sharedLibrary}
+              setSharedCrypt={setSharedCrypt}
+              setSharedLibrary={setSharedLibrary}
               setShowAddDeck={setShowAddDeck}
               setShowAddPrecon={setShowAddPrecon}
               setShowShareModal={setShowShareModal}
@@ -203,9 +132,6 @@ const Inventory = () => {
               type={type}
               category={inShared ? 'ok' : category}
               onlyNotes={onlyNotes}
-              setSharedInventoryCrypt={setSharedInventoryCrypt}
-              setSharedInventoryLibrary={setSharedInventoryLibrary}
-              inShared={inShared}
             />
             <div>
               <InventoryShowSelect
@@ -252,8 +178,10 @@ const Inventory = () => {
         >
           <div className="space-y-3">
             <InventoryButtons
-              crypt={inShared ? sharedInventoryCrypt : inventoryCrypt}
-              library={inShared ? sharedInventoryLibrary : inventoryLibrary}
+              sharedCrypt={sharedCrypt}
+              sharedLibrary={sharedLibrary}
+              setSharedCrypt={setSharedCrypt}
+              setSharedLibrary={setSharedLibrary}
               setShowAddDeck={setShowAddDeck}
               setShowAddPrecon={setShowAddPrecon}
               setShowShareModal={setShowShareModal}
@@ -262,9 +190,6 @@ const Inventory = () => {
               type={type}
               category={inShared ? 'ok' : category}
               onlyNotes={onlyNotes}
-              setSharedInventoryCrypt={setSharedInventoryCrypt}
-              setSharedInventoryLibrary={setSharedInventoryLibrary}
-              inShared={inShared}
             />
             <div>
               <InventoryShowSelect

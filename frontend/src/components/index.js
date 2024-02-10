@@ -166,6 +166,7 @@ export { default as InventoryAddPreconRow } from './inventory/InventoryAddPrecon
 export { default as InventoryButtons } from './inventory/InventoryButtons.jsx';
 export { default as InventoryCardQuantity } from './inventory/InventoryCardQuantity.jsx';
 export { default as InventoryCardQuantityDiff } from './inventory/InventoryCardQuantityDiff.jsx';
+export { default as InventoryCryptWrapper } from './inventory/InventoryCryptWrapper.jsx';
 export { default as InventoryCrypt } from './inventory/InventoryCrypt.jsx';
 export { default as InventoryCryptTable } from './inventory/InventoryCryptTable.jsx';
 export { default as InventoryCryptTableRow } from './inventory/InventoryCryptTableRow.jsx';
@@ -176,6 +177,7 @@ export { default as InventoryFilterForm } from './inventory/InventoryFilterForm.
 export { default as InventoryImport } from './inventory/InventoryImport.jsx';
 export { default as InventoryImportButton } from './inventory/InventoryImportButton.jsx';
 export { default as InventoryLibrary } from './inventory/InventoryLibrary.jsx';
+export { default as InventoryLibraryWrapper } from './inventory/InventoryLibraryWrapper.jsx';
 export { default as InventoryLibraryTable } from './inventory/InventoryLibraryTable.jsx';
 export { default as InventoryLibraryTableRow } from './inventory/InventoryLibraryTableRow.jsx';
 export { default as InventoryMissingButton } from './inventory/InventoryMissingButton.jsx';

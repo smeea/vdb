@@ -12,7 +12,7 @@ import {
   ButtonFloatClose,
 } from '@/components';
 import FolderPlus from '@/assets/images/icons/folder-plus.svg?react';
-import { useApp, deckStore } from '@/context';
+import { useApp, deckStore, inventoryStore } from '@/context';
 
 const InventoryButtons = ({
   setShowAddDeck,
@@ -22,12 +22,12 @@ const InventoryButtons = ({
   discipline,
   category,
   onlyNotes,
-  crypt,
-  library,
-  setShowShareModal,
   inShared,
-  setSharedInventoryCrypt,
-  setSharedInventoryLibrary,
+  sharedCrypt,
+  sharedLibrary,
+  setSharedCrypt,
+  setSharedLibrary,
+  setShowShareModal,
 }) => {
   const {
     preconDecks,
@@ -37,8 +37,12 @@ const InventoryButtons = ({
     isNarrow,
     isDesktop,
   } = useApp();
+  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryLibrary = useSnapshot(inventoryStore).library;
   const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
+  const crypt = inShared ? sharedCrypt : inventoryCrypt;
+  const library = inShared ? sharedLibrary : inventoryLibrary;
 
   const handleClose = () => {
     setShowMenuButtons(false);
@@ -54,8 +58,8 @@ const InventoryButtons = ({
             onClick={() => {
               setShowMenuButtons(false);
               setShowFloatingButtons(true);
-              setSharedInventoryCrypt(null);
-              setSharedInventoryLibrary(null);
+              setSharedCrypt(null);
+              setSharedLibrary(null);
               navigate('/inventory');
             }}
             title="Back to My Inventory"
