@@ -6,7 +6,7 @@ import { getHardTotal, getSoftMax } from '@/utils';
 const getMissing = (cards, inventoryType, used, inventory) => {
   const missingCards = {};
 
-  Object.keys(cards).map((cardid) => {
+  Object.keys(cards).forEach((cardid) => {
     const softUsedMax = getSoftMax(used.soft[cardid]);
     const hardUsedTotal = getHardTotal(used.hard[cardid]);
     const inInventory = inventory?.[cardid]?.q ?? 0;

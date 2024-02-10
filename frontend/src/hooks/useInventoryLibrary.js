@@ -24,7 +24,7 @@ const useInventoryLibrary = (
     const missingByDiscipline = {};
 
     const typesSorted = ['All', ...cardtypeSorted];
-    typesSorted.map((i) => {
+    typesSorted.forEach((i) => {
       cardsByType[i] = {};
       missingByType[i] = {};
     });
@@ -41,13 +41,13 @@ const useInventoryLibrary = (
       'None',
       ...disciplinesExtendedList,
       ...Object.keys(virtuesList),
-    ].map((i) => {
+    ].forEach((i) => {
       cardsByDiscipline[i] = {};
       missingByDiscipline[i] = {};
     });
 
     if (compact) {
-      Object.keys(cards).map((card) => {
+      Object.keys(cards).forEach((card) => {
         cardsByType['All'] = {
           [card]: cards[card],
         };
@@ -61,7 +61,7 @@ const useInventoryLibrary = (
           if (onlyNotes) return cards[cardid].t;
           return true;
         })
-        .map((cardid) => {
+        .forEach((cardid) => {
           const types = cards[cardid].c.Type.split('/');
           const d = libraryCardBase[cardid].Discipline;
           let disciplines = ['None'];
@@ -78,7 +78,7 @@ const useInventoryLibrary = (
           const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
 
           if (miss > 0) {
-            types.map((t) => {
+            types.forEach((t) => {
               missingByType[t][cardid] = {
                 q: miss,
                 c: cards[cardid].c,
@@ -90,7 +90,7 @@ const useInventoryLibrary = (
             };
 
             if (disciplines) {
-              disciplines.map((i) => {
+              disciplines.forEach((i) => {
                 missingByDiscipline[i][cardid] = {
                   q: miss,
                   c: cards[cardid].c,
@@ -105,14 +105,14 @@ const useInventoryLibrary = (
 
           if (category == 'nok') {
             if (miss > 0) {
-              types.map((t) => {
+              types.forEach((t) => {
                 cardsByType[t][cardid] = cards[cardid];
               });
               cardsByType['All'][cardid] = cards[cardid];
               cardsByDiscipline['All'][cardid] = cards[cardid];
 
               if (disciplines) {
-                disciplines.map((i) => {
+                disciplines.forEach((i) => {
                   cardsByDiscipline[i][cardid] = cards[cardid];
                 });
               } else {
@@ -120,14 +120,14 @@ const useInventoryLibrary = (
               }
             }
           } else {
-            types.map((t) => {
+            types.forEach((t) => {
               cardsByType[t][cardid] = cards[cardid];
             });
             cardsByType['All'][cardid] = cards[cardid];
             cardsByDiscipline['All'][cardid] = cards[cardid];
 
             if (disciplines) {
-              disciplines.map((i) => {
+              disciplines.forEach((i) => {
                 cardsByDiscipline[i][cardid] = cards[cardid];
               });
             } else {
@@ -138,7 +138,7 @@ const useInventoryLibrary = (
 
       Object.keys(usedLibrary.soft)
         .filter((cardid) => cardid < 110000 && !cards[cardid])
-        .map((cardid) => {
+        .forEach((cardid) => {
           const types = libraryCardBase[cardid].Type.split('/');
           const d = libraryCardBase[cardid].Discipline;
           let disciplines = ['None'];
@@ -151,7 +151,7 @@ const useInventoryLibrary = (
           }
 
           if (category !== 'ok' && !onlyNotes) {
-            types.map((t) => {
+            types.forEach((t) => {
               cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
             });
             cardsByType['All'][cardid] = { q: 0, c: libraryCardBase[cardid] };
@@ -161,7 +161,7 @@ const useInventoryLibrary = (
             };
 
             if (disciplines) {
-              disciplines.map((i) => {
+              disciplines.forEach((i) => {
                 cardsByDiscipline[i][cardid] = {
                   q: 0,
                   c: libraryCardBase[cardid],
@@ -177,7 +177,7 @@ const useInventoryLibrary = (
 
           const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
 
-          types.map((t) => {
+          types.forEach((t) => {
             missingByType[t][cardid] = {
               q: softUsedMax,
               c: libraryCardBase[cardid],
@@ -189,7 +189,7 @@ const useInventoryLibrary = (
           };
 
           if (disciplines) {
-            disciplines.map((i) => {
+            disciplines.forEach((i) => {
               missingByDiscipline[i][cardid] = {
                 q: softUsedMax,
                 c: libraryCardBase[cardid],
@@ -204,7 +204,7 @@ const useInventoryLibrary = (
 
       Object.keys(usedLibrary.hard)
         .filter((cardid) => cardid < 110000 && !cards[cardid])
-        .map((cardid) => {
+        .forEach((cardid) => {
           const types = libraryCardBase[cardid].Type.split('/');
           const d = libraryCardBase[cardid].Discipline;
           let disciplines = ['None'];
@@ -217,7 +217,7 @@ const useInventoryLibrary = (
           }
 
           if (category !== 'ok' && !onlyNotes) {
-            types.map((t) => {
+            types.forEach((t) => {
               cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
             });
             cardsByType['All'][cardid] = { q: 0, c: libraryCardBase[cardid] };
@@ -227,7 +227,7 @@ const useInventoryLibrary = (
             };
 
             if (disciplines) {
-              disciplines.map((i) => {
+              disciplines.forEach((i) => {
                 cardsByDiscipline[i][cardid] = {
                   q: 0,
                   c: libraryCardBase[cardid],
@@ -243,7 +243,7 @@ const useInventoryLibrary = (
 
           const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
 
-          types.map((t) => {
+          types.forEach((t) => {
             if (missingByType[t][cardid]) {
               missingByType[t][cardid].q += hardUsedTotal;
             } else {
@@ -259,7 +259,7 @@ const useInventoryLibrary = (
           };
 
           if (disciplines) {
-            disciplines.map((i) => {
+            disciplines.forEach((i) => {
               if (missingByDiscipline[i][cardid]) {
                 missingByDiscipline[i][cardid].q += hardUsedTotal;
               } else {
@@ -287,14 +287,14 @@ const useInventoryLibrary = (
     let missingFilteredTotal = 0;
 
     if (!compact) {
-      Object.keys(cardsByDiscipline).map((d) => {
+      Object.keys(cardsByDiscipline).forEach((d) => {
         cardsFilteredByType[d] = {};
         cardsFilteredByTypeTotal[d] = 0;
         cardsFilteredByTypeUnique[d] = 0;
       });
 
-      Object.keys(cardsByType[type]).map((cardid) => {
-        Object.keys(cardsByDiscipline).map((d) => {
+      Object.keys(cardsByType[type]).forEach((cardid) => {
+        Object.keys(cardsByDiscipline).forEach((d) => {
           if (cardsByDiscipline[d][cardid]) {
             cardsFilteredByType[d][cardid] = cardsByDiscipline[d][cardid];
             cardsFilteredByTypeTotal[d] += cardsByDiscipline[d][cardid].q;
@@ -305,14 +305,14 @@ const useInventoryLibrary = (
         });
       });
 
-      Object.keys(cardsByType).map((t) => {
+      Object.keys(cardsByType).forEach((t) => {
         cardsFilteredByDiscipline[t] = {};
         cardsFilteredByDisciplineTotal[t] = 0;
         cardsFilteredByDisciplineUnique[t] = 0;
       });
 
-      Object.keys(cardsByDiscipline[discipline]).map((cardid) => {
-        Object.keys(cardsByType).map((t) => {
+      Object.keys(cardsByDiscipline[discipline]).forEach((cardid) => {
+        Object.keys(cardsByType).forEach((t) => {
           if (cardsByType[t][cardid]) {
             cardsFilteredByDiscipline[t][cardid] = cardsByType[t][cardid];
             cardsFilteredByDisciplineTotal[t] += cardsByType[t][cardid].q;
@@ -325,7 +325,7 @@ const useInventoryLibrary = (
 
       Object.keys(missingByType[type])
         .filter((card) => missingByDiscipline[discipline][card])
-        .map((cardid) => {
+        .forEach((cardid) => {
           missingFiltered[cardid] = missingByType[type][cardid];
           missingFilteredTotal += missingByType[type][cardid].q;
         });

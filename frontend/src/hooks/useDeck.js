@@ -2,7 +2,7 @@ const useDeck = (cards = {}, cryptCardBase, libraryCardBase) => {
   const crypt = {};
   const library = {};
 
-  Object.keys(cards).map((cardid) => {
+  Object.keys(cards).forEach((cardid) => {
     if (cryptCardBase[cardid]) {
       crypt[cardid] = {
         q: cards[cardid],
@@ -15,7 +15,7 @@ const useDeck = (cards = {}, cryptCardBase, libraryCardBase) => {
       };
     }
   });
-  return { crypt: crypt, library: library };
+  return { crypt, library };
 };
 
 export default useDeck;

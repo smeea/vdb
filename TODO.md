@@ -17,4 +17,3 @@
 - Update to Headlessui 2 (review new components)
 - Refactor DeckSelectMy to use virtualized
 - Review DeckSelectAdv performance
-- Improve Inventory performance

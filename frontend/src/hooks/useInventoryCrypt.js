@@ -17,7 +17,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
     const missingByClanTotal = {};
 
     const clansSorted = ['All', ...vampireClansList, ...imbuedClansList];
-    clansSorted.map((clan) => {
+    clansSorted.forEach((clan) => {
       cardsByClan[clan] = {};
       cardsByClanTotal[clan] = 0;
       cardsByClanUnique[clan] = 0;
@@ -26,7 +26,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
     });
 
     if (compact) {
-      Object.keys(cards).map((cardid) => {
+      Object.keys(cards).forEach((cardid) => {
         cardsByClan['All'] = {
           card: cards[cardid],
         };
@@ -37,7 +37,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
           if (onlyNotes) return cards[cardid].t;
           return true;
         })
-        .map((cardid) => {
+        .forEach((cardid) => {
           const clan = cards[cardid].c.Clan;
           const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
           const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
@@ -64,7 +64,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
 
       Object.keys(usedCrypt.soft)
         .filter((cardid) => cardid < 210000 && !cards[cardid])
-        .map((cardid) => {
+        .forEach((cardid) => {
           const clan = cryptCardBase[cardid].Clan;
 
           if (category !== 'ok' && !onlyNotes) {
@@ -92,7 +92,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
 
       Object.keys(usedCrypt.hard)
         .filter((cardid) => cardid < 210000 && !cards[cardid])
-        .map((cardid) => {
+        .forEach((cardid) => {
           const clan = cryptCardBase[cardid].Clan;
 
           if (category !== 'ok' && !onlyNotes) {
@@ -123,21 +123,21 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
           }
         });
 
-      Object.keys(missingByClan).map((clan) => {
-        Object.values(missingByClan[clan]).map((card) => {
+      Object.keys(missingByClan).forEach((clan) => {
+        Object.values(missingByClan[clan]).forEach((card) => {
           missingByClanTotal[clan] += card.q;
         });
       });
     }
 
     if (!compact) {
-      Object.keys(cardsByClan).map((c) => {
+      Object.keys(cardsByClan).forEach((c) => {
         cardsByClanTotal[c] = 0;
         cardsByClanUnique[c] = 0;
       });
 
-      Object.keys(cardsByClan).map((c) => {
-        Object.keys(cardsByClan[c]).map((cardid) => {
+      Object.keys(cardsByClan).forEach((c) => {
+        Object.keys(cardsByClan[c]).forEach((cardid) => {
           cardsByClanTotal[c] += cardsByClan[c][cardid].q;
           if (cardsByClan[c][cardid].q) {
             cardsByClanUnique[c] += 1;
