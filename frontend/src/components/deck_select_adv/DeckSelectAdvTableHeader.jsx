@@ -3,10 +3,10 @@ import { Select } from '@/components';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import At from '@/assets/images/icons/at.svg?react';
-import { DeckSelectAdvModalTagsFilter, Checkbox, Input } from '@/components';
+import { DeckSelectAdvTagsFilter, Checkbox, Input } from '@/components';
 import { useApp } from '@/context';
 
-const DeckSelectAdvModalTableHeader = ({
+const DeckSelectAdvTableHeader = ({
   allTagsOptions,
   clanOptions,
   setClanFilter,
@@ -111,7 +111,7 @@ const DeckSelectAdvModalTableHeader = ({
         )}
         {!short && (
           <th className="w-full">
-            <DeckSelectAdvModalTagsFilter
+            <DeckSelectAdvTagsFilter
               tagsFilter={tagsFilter}
               handleChangeTagsFilter={handleChangeTagsFilter}
               allTagsOptions={allTagsOptions}
@@ -141,4 +141,4 @@ const DeckSelectAdvModalTableHeader = ({
   );
 };
 
-export default DeckSelectAdvModalTableHeader;
+export default DeckSelectAdvTableHeader;

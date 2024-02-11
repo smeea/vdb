@@ -2,7 +2,7 @@ import React from 'react';
 import { SelectCreatable } from '@/components';
 import { useApp } from '@/context';
 
-const DeckSelectAdvModalTagsFilter = ({
+const DeckSelectAdvTagsFilter = ({
   tagsFilter,
   handleChangeTagsFilter,
   allTagsOptions,
@@ -28,4 +28,4 @@ const DeckSelectAdvModalTagsFilter = ({
   );
 };
 
-export default DeckSelectAdvModalTagsFilter;
+export default DeckSelectAdvTagsFilter;

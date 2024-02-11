@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import { deckStore } from '@/context';
 
-const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
+const DeckSelectAdvTotal = ({ tagsFilter, setTagsFilter }) => {
   const decks = useSnapshot(deckStore).decks;
   const byTags = {};
   let total = 0;
@@ -56,4 +56,4 @@ const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
   );
 };
 
-export default DeckSelectAdvModalTotal;
+export default DeckSelectAdvTotal;

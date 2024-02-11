@@ -141,10 +141,11 @@ export { default as DeckRecommendationLibraryTableRow } from './deck_recommendat
 export { default as DeckRecommendationModal } from './deck_recommendation/DeckRecommendationModal.jsx';
 
 export { default as DeckSelectAdvModal } from './deck_select_adv/DeckSelectAdvModal.jsx';
-export { default as DeckSelectAdvModalTableRow } from './deck_select_adv/DeckSelectAdvModalTableRow.jsx';
-export { default as DeckSelectAdvModalTableHeader } from './deck_select_adv/DeckSelectAdvModalTableHeader.jsx';
-export { default as DeckSelectAdvModalTagsFilter } from './deck_select_adv/DeckSelectAdvModalTagsFilter.jsx';
-export { default as DeckSelectAdvModalTotal } from './deck_select_adv/DeckSelectAdvModalTotal.jsx';
+export { default as DeckSelectAdvTable } from './deck_select_adv/DeckSelectAdvTable.jsx';
+export { default as DeckSelectAdvTableRow } from './deck_select_adv/DeckSelectAdvTableRow.jsx';
+export { default as DeckSelectAdvTableHeader } from './deck_select_adv/DeckSelectAdvTableHeader.jsx';
+export { default as DeckSelectAdvTagsFilter } from './deck_select_adv/DeckSelectAdvTagsFilter.jsx';
+export { default as DeckSelectAdvTotal } from './deck_select_adv/DeckSelectAdvTotal.jsx';
 
 export { default as DiffBackButton } from './diff/DiffBackButton.jsx';
 export { default as DiffButtons } from './diff/DiffButtons.jsx';

@@ -24,7 +24,7 @@ import { limitedStore, useApp, deckUpdate } from '@/context';
 import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 import { getClan, getRestrictions } from '@/utils';
 
-const DeckSelectAdvModalTableRow = ({
+const DeckSelectAdvTableRow = ({
   deck,
   idx,
   onClick,
@@ -203,4 +203,4 @@ const DeckSelectAdvModalTableRow = ({
   );
 };
 
-export default DeckSelectAdvModalTableRow;
+export default DeckSelectAdvTableRow;

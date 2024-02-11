@@ -3,11 +3,7 @@ import { useSnapshot } from 'valtio';
 import { deckStore } from '@/context';
 import { DeckSortButton } from '@/components';
 
-const DeckSelectAdvModalTotal = ({
-  setSortMethod,
-  tagsFilter,
-  setTagsFilter,
-}) => {
+const DeckSelectAdvTotal = ({ setSortMethod, tagsFilter, setTagsFilter }) => {
   const decks = useSnapshot(deckStore).decks;
   const byTags = {};
   let total = 0;
@@ -44,7 +40,7 @@ const DeckSelectAdvModalTotal = ({
               <div
                 key={i}
                 onClick={() => handleClick(i)}
-                className="inline-block whitespace-nowrap px-2"
+                className="inline-block cursor-pointer whitespace-nowrap px-2"
               >
                 <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
                   {i}:
@@ -59,4 +55,4 @@ const DeckSelectAdvModalTotal = ({
   );
 };
 
-export default DeckSelectAdvModalTotal;
+export default DeckSelectAdvTotal;
