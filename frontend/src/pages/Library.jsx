@@ -90,7 +90,9 @@ const Library = () => {
               <LibrarySearchForm />
             </div>
             <div
-              className={deck && addMode ? 'hidden' : 'lg:flex lg:basis-1/12'}
+              className={
+                deck && addMode ? 'hidden' : 'hidden lg:flex lg:basis-1/12'
+              }
             />
           </>
         )}

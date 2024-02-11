@@ -14,4 +14,3 @@
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
 - Back button behavior
 - Update to Headlessui 2 (review new components)
-- DeckSelectAdv to virtualized
