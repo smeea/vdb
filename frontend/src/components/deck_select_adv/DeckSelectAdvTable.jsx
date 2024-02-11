@@ -1,10 +1,13 @@
 import React, { useState, useMemo } from 'react';
 import { getClan, decksSort } from '@/utils';
-import { DeckSelectAdvTableRow, DeckSelectAdvTableHeader } from '@/components';
+import {
+  DeckSelectAdvTableRow,
+  DeckSelectAdvTableHeader,
+  ResultClanImage,
+} from '@/components';
 
 const DeckSelectAdvTable = ({
   allTagsOptions,
-  clanOptions,
   tagsFilter,
   setTagsFilter,
   short,
@@ -21,6 +24,36 @@ const DeckSelectAdvTable = ({
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
   const [clanFilter, setClanFilter] = useState('any');
+
+  const allDecksClans = [];
+  Object.values(decks).map((deck) => {
+    const clan = getClan(deck.crypt);
+
+    if (clan && !allDecksClans.includes(clan)) {
+      allDecksClans.push(clan);
+    }
+  });
+
+  const clanOptions = [
+    {
+      value: 'any',
+      name: 'clan',
+      label: 'ANY',
+    },
+    {
+      value: '',
+      name: 'clan',
+      label: 'NONE',
+    },
+  ];
+
+  allDecksClans.sort().forEach((i) => {
+    clanOptions.push({
+      value: i.toLowerCase(),
+      name: 'clan',
+      label: <ResultClanImage value={i} />,
+    });
+  });
 
   const cardInDeck = (deck, query) => {
     const normalizedQuery = query

@@ -5,13 +5,11 @@ import Download from '@/assets/images/icons/download.svg?react';
 import {
   DeckSelectAdvTotal,
   DeckSelectAdvTable,
-  ResultClanImage,
   Modal,
   MenuItems,
   MenuItem,
   MenuButton,
 } from '@/components';
-import { getClan } from '@/utils';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
 
@@ -27,36 +25,6 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
     setShow(false);
     setShowFloatingButtons(true);
   };
-
-  const allDecksClans = [];
-  Object.values(decks).map((deck) => {
-    const clan = getClan(deck.crypt);
-
-    if (clan && !allDecksClans.includes(clan)) {
-      allDecksClans.push(clan);
-    }
-  });
-
-  const clanOptions = [
-    {
-      value: 'any',
-      name: 'clan',
-      label: 'ANY',
-    },
-    {
-      value: '',
-      name: 'clan',
-      label: 'NONE',
-    },
-  ];
-
-  allDecksClans.sort().forEach((i) => {
-    clanOptions.push({
-      value: i.toLowerCase(),
-      name: 'clan',
-      label: <ResultClanImage value={i} />,
-    });
-  });
 
   const exportSelected = (format) => {
     const target = {};
@@ -87,7 +55,6 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
           )}
           <DeckSelectAdvTable
             allTagsOptions={allTagsOptions}
-            clanOptions={clanOptions}
             short={short}
             decks={decks}
             sortMethod={sortMethod}
