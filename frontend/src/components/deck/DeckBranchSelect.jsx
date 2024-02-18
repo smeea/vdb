@@ -8,7 +8,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
   const [branches, setBranches] = useState([]);
 
   const byTimestamp = (a, b) => {
-    return new Date(b[1]) - new Date(a[1]);
+    return new Date(decks[b].timestamp) - new Date(decks[a].timestamp);
   };
 
   const target = decks[deck.master] ?? deck;
@@ -40,18 +40,14 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
   const options = useMemo(() => {
     return Object.keys(branches)
       .filter((i) => decks[i])
+      .toSorted(byTimestamp)
       .map((i) => {
-        return [
-          {
-            value: i,
-            name: 'deck',
-            label: decks[i].branchName,
-          },
-          decks[i]['timestamp'],
-        ];
-      })
-      .sort(byTimestamp)
-      .map((i) => i[0]);
+        return {
+          value: i,
+          name: 'deck',
+          label: decks[i].branchName,
+        };
+      });
   }, [branches]);
 
   return (

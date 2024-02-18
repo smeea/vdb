@@ -3,9 +3,11 @@ import { ResultDisciplineImage } from '@/components';
 import virtuesList from '@/assets/data/virtuesList.json';
 
 const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
-  const disciplinesSorted = Object.keys(disciplinesDetailed).sort((a, b) => {
-    return disciplinesDetailed[b][0] - disciplinesDetailed[a][0];
-  });
+  const disciplinesSorted = Object.keys(disciplinesDetailed).toSorted(
+    (a, b) => {
+      return disciplinesDetailed[b][0] - disciplinesDetailed[a][0];
+    },
+  );
 
   const withVirtues = disciplinesSorted.some(
     (d) => virtuesList[d] && disciplinesDetailed[d][0] > 0,

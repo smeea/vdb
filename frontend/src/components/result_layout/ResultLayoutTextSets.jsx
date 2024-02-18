@@ -52,7 +52,7 @@ const Sets = ({ sets, setImageSet, setSelectedSet }) => {
 
   return Object.keys(sets)
     .filter((set) => playtestMode || set !== PLAYTEST)
-    .sort(byDate)
+    .toSorted(byDate)
     .map((set, index) => {
       const preconsShort = Object.keys(sets[set]).join('/');
 

@@ -14,14 +14,14 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
 
   const [proxySelected, setProxySelected] = useImmer(() => {
     const cards = {};
-    Object.keys(deck.crypt).map((cardid) => {
+    Object.keys(deck.crypt).forEach((cardid) => {
       cards[cardid] = {
         print: false,
         set: '',
         q: deck.crypt[cardid].q,
       };
     });
-    Object.keys(deck.library).map((cardid) => {
+    Object.keys(deck.library).forEach((cardid) => {
       cards[cardid] = {
         print: false,
         set: '',
@@ -36,7 +36,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
 
   const handleToggleSelect = () => {
     setProxySelected((draft) => {
-      Object.keys(draft).map((cardid) => {
+      Object.keys(draft).forEach((cardid) => {
         draft[cardid].print = !toggleState;
       });
     });
@@ -50,7 +50,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
 
     Object.keys(deck.crypt)
       .filter((cardid) => deck.crypt[cardid].q > 0)
-      .map((cardid) => {
+      .forEach((cardid) => {
         const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
         const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
 
@@ -72,7 +72,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
 
     Object.keys(deck.library)
       .filter((cardid) => deck.library[cardid].q > 0)
-      .map((cardid) => {
+      .forEach((cardid) => {
         const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
         const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
 
@@ -122,7 +122,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     const library = {};
     Object.keys(proxySelected)
       .filter((cardid) => proxySelected[cardid].print)
-      .map((cardid) => {
+      .forEach((cardid) => {
         if (proxySelected[cardid].q > 0) {
           const card = {
             c: cardid > 200000 ? deck.crypt[cardid].c : deck.library[cardid].c,

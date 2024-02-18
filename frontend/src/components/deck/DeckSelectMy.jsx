@@ -20,10 +20,11 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
   const options = useMemo(() => {
     return Object.keys(decks)
       .filter((i) => !decks[i].master && !decks[i].isHidden)
-      .sort(byTimestamp)
+      .toSorted(byTimestamp)
       .map((i, idx) => {
         const diffDays = Math.round(
-          (new Date() - new Date(decks[i]['timestamp'])) / (1000 * 60 * 60 * 24)
+          (new Date() - new Date(decks[i]['timestamp'])) /
+            (1000 * 60 * 60 * 24),
         );
 
         let lastEdit;
@@ -45,7 +46,6 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
         let hasLimited;
         let hasPlaytest;
         let hasIllegalDate;
-        // TODO REMOVE AFTER VIRTUALIZATION FOR SELECT
         if (idx < 15 || diffDays < 90) {
           ({ hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
             getRestrictions(decks[i], limitedCards));
@@ -62,7 +62,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                 <div className="inline">
                   {decks[i]['name'].slice(
                     0,
-                    inventoryMode ? (isWide ? 28 : 23) : 32
+                    inventoryMode ? (isWide ? 28 : 23) : 32,
                   )}
                 </div>
               </div>

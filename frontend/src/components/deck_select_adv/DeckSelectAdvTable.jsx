@@ -26,7 +26,7 @@ const DeckSelectAdvTable = ({
   const [clanFilter, setClanFilter] = useState('any');
 
   const allDecksClans = [];
-  Object.values(decks).map((deck) => {
+  Object.values(decks).forEach((deck) => {
     const clan = getClan(deck.crypt);
 
     if (clan && !allDecksClans.includes(clan)) {
@@ -47,7 +47,7 @@ const DeckSelectAdvTable = ({
     },
   ];
 
-  allDecksClans.sort().forEach((i) => {
+  allDecksClans.toSorted().forEach((i) => {
     clanOptions.push({
       value: i.toLowerCase(),
       name: 'clan',
@@ -61,7 +61,7 @@ const DeckSelectAdvTable = ({
       .normalize('NFD')
       .replace(/\p{Diacritic}/gu, '');
 
-    for (const id of Object.keys(deck.crypt)) {
+    Object.keys(deck.crypt).forEach((id) => {
       const normalizedCardName = deck.crypt[id].c['Name']
         .toLowerCase()
         .normalize('NFD')
@@ -70,9 +70,9 @@ const DeckSelectAdvTable = ({
       if (normalizedCardName.includes(normalizedQuery)) {
         return true;
       }
-    }
+    });
 
-    for (const id of Object.keys(deck.library)) {
+    Object.keys(deck.library).forEach((id) => {
       const normalizedCardName = deck.library[id].c['Name']
         .toLowerCase()
         .normalize('NFD')
@@ -81,7 +81,7 @@ const DeckSelectAdvTable = ({
       if (normalizedCardName.includes(normalizedQuery)) {
         return true;
       }
-    }
+    });
   };
 
   const sortedDecks = useMemo(() => {

@@ -20,8 +20,8 @@ const TwdHallOfFameTournaments = () => {
       {value && (
         <>
           {Object.keys(value)
-            .sort(byName)
-            .sort(byWins)
+            .toSorted(byName)
+            .toSorted(byWins)
             .map((player) => (
               <Disclosure key={player}>
                 <TwdHallFameTournamentsPlayer

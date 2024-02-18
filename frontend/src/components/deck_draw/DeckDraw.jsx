@@ -78,14 +78,14 @@ const DeckDraw = ({ deck, setShow }) => {
 
   const burnCrypt = (index) => {
     const hand = drawedCrypt;
-    setBurnedCrypt([...burnedCrypt, ...hand.splice(index, 1)]);
+    setBurnedCrypt([...burnedCrypt, hand.toSpliced(index, 1)]);
     setDrawedCrypt(hand);
     setCryptHandSize(cryptHandSize - 1);
   };
 
   const burnLibrary = (index) => {
     const hand = drawedLibrary;
-    setBurnedLibrary([...burnedLibrary, ...hand.splice(index, 1)]);
+    setBurnedLibrary([...burnedLibrary, hand.toSpliced(index, 1)]);
     let newDrawedCards = [];
     let newRestCards = [];
     if (restLibrary.length > 0) {

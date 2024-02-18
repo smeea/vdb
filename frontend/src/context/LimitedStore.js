@@ -35,7 +35,7 @@ export const limitedStore = derive({
           return true;
         }
       })
-      .map((card) => {
+      .forEach((card) => {
         cards[card.Id] = card;
       });
 
@@ -59,7 +59,7 @@ export const limitedStore = derive({
           return true;
         }
       })
-      .map((card) => {
+      .forEach((card) => {
         cards[card.Id] = card;
       });
 

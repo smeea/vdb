@@ -71,13 +71,13 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       if ((format === 'twd' || format === 'twdHints') && lang !== 'en-EN') {
         const enCrypt = {};
         const enLibrary = {};
-        Object.keys(deck.crypt).map((cardid) => {
+        Object.keys(deck.crypt).forEach((cardid) => {
           enCrypt[cardid] = {
             ...deck.crypt[cardid],
             c: { ...deck.crypt[cardid].c, Name: nativeCrypt[cardid].Name },
           };
         });
-        Object.keys(deck.library).map((cardid) => {
+        Object.keys(deck.library).forEach((cardid) => {
           enLibrary[cardid] = {
             ...deck.library[cardid],
             c: { ...deck.library[cardid].c, Name: nativeLibrary[cardid].Name },

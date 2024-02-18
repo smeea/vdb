@@ -30,10 +30,10 @@ const AnalyzeTournamentChartsRankingStyle = ({
       }
     });
 
-    Object.values(decks).map((deck) => {
+    Object.values(decks).forEach((deck) => {
       const position = info.players - deck.score.rank;
       const inSearch = Object.values(searchResults).some(
-        (d) => d.author === deck.author
+        (d) => d.author === deck.author,
       );
       const def = {
         clan: getClan(deck.crypt) || 'Multi',

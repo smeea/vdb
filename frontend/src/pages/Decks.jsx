@@ -88,9 +88,11 @@ const Decks = () => {
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
     if (deckid.length !== 32 || deckData.publicParent) {
       deckData.tags = [];
-      Object.values(useTags(cardsData.crypt, cardsData.library)).map((v) => {
-        deckData.tags = deckData.tags.concat(v);
-      });
+      Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
+        (v) => {
+          deckData.tags = deckData.tags.concat(v);
+        },
+      );
     }
     const d = {
       author: deckData.author,
@@ -121,9 +123,9 @@ const Decks = () => {
     const allTags = new Set();
 
     if (decks) {
-      Object.keys(decks).map((id) => {
+      Object.keys(decks).forEach((id) => {
         if (decks[id].tags) {
-          decks[id].tags.map((tag) => {
+          decks[id].tags.forEach((tag) => {
             allTags.add(tag);
           });
         }
@@ -146,7 +148,7 @@ const Decks = () => {
       hash
         .slice(1)
         .split(';')
-        .map((i) => {
+        .forEach((i) => {
           const j = i.split('=');
           if (j[0] > 200000) {
             crypt[j[0]] = {

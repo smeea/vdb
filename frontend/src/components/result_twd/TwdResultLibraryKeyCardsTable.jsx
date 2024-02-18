@@ -14,8 +14,9 @@ import { useDeckLibrary, useModalCardController } from '@/hooks';
 const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
   const sortedLibrary = librarySort(Object.values(library), GROUPED_TYPE);
-  const keyCards = sortedLibrary.filter((card) => card.q >= 4);
-  keyCards.sort((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
+  const keyCards = sortedLibrary
+    .filter((card) => card.q >= 4)
+    .toSorted((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
 
   const {
     currentModalCard,

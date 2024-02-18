@@ -1,6 +1,6 @@
 export const addCards = (cards) => {
   const c = {};
-  Object.values(cards).map((card) => {
+  Object.values(cards).forEach((card) => {
     if (card.q !== 0) {
       c[card.c.Id] = card.q;
     }

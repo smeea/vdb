@@ -11,14 +11,14 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
     const opts = [];
     Object.keys(setsAndPrecons)
       .filter(
-        (i) => (playtestMode || i !== PLAYTEST) && setsAndPrecons[i].precons
+        (i) => (playtestMode || i !== PLAYTEST) && setsAndPrecons[i].precons,
       )
-      .map((set) => {
+      .forEach((set) => {
         const year = setsAndPrecons[set].date
           ? setsAndPrecons[set].date.slice(2, 4)
           : null;
 
-        Object.keys(setsAndPrecons[set].precons).map((precon) => {
+        Object.keys(setsAndPrecons[set].precons).forEach((precon) => {
           const fullName = setsAndPrecons[set].precons[precon].name;
           const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 

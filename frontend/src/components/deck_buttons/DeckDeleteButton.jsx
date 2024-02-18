@@ -25,7 +25,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
         if (d.deckid === deck.deckid) return false;
         return true;
       })
-      .sort(byTimestamp)
+      .toSorted(byTimestamp)
       .map((d) => d.deckid);
 
     return lastDecks[0] || null;

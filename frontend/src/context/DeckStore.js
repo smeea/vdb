@@ -43,7 +43,7 @@ export const deckCardChange = (deckid, card, q) => {
 
   const startTimer = () => {
     let counter = 1;
-    deckStore.cryptTimers.map((timerId) => {
+    deckStore.cryptTimers.forEach((timerId) => {
       clearInterval(timerId);
     });
     deckStore.cryptTimers = [];
@@ -72,7 +72,7 @@ export const deckUpdate = (deckid, field, value) => {
   const initialDecksState = deepClone(deckStore.decks[deckid]);
 
   if (field === 'usedInInventory') {
-    Object.keys(value).map((cardid) => {
+    Object.keys(value).forEach((cardid) => {
       if (cardid > 200000) {
         deckStore.decks[deckid].crypt[cardid].i = value[cardid];
       } else {
@@ -81,7 +81,7 @@ export const deckUpdate = (deckid, field, value) => {
     });
 
     if (deckid === deckStore.deck.deckid) {
-      Object.keys(value).map((cardid) => {
+      Object.keys(value).forEach((cardid) => {
         if (cardid > 200000) {
           deckStore.deck.crypt[cardid].i = value[cardid];
         } else {
@@ -100,10 +100,10 @@ export const deckUpdate = (deckid, field, value) => {
   } else {
     deckStore.decks[deckid][field] = value;
     if (field === 'inventoryType') {
-      Object.keys(deckStore.decks[deckid].crypt).map((cardid) => {
+      Object.keys(deckStore.decks[deckid].crypt).forEach((cardid) => {
         deckStore.decks[deckid].crypt[cardid].i = '';
       });
-      Object.keys(deckStore.decks[deckid].library).map((cardid) => {
+      Object.keys(deckStore.decks[deckid].library).forEach((cardid) => {
         deckStore.decks[deckid].library[cardid].i = '';
       });
     }
@@ -111,10 +111,10 @@ export const deckUpdate = (deckid, field, value) => {
     if (deckid === deckStore.deck.deckid) {
       deckStore.deck[field] = value;
       if (field === 'inventoryType') {
-        Object.keys(deckStore.deck.crypt).map((cardid) => {
+        Object.keys(deckStore.deck.crypt).forEach((cardid) => {
           deckStore.deck.crypt[cardid].i = '';
         });
-        Object.keys(deckStore.deck.library).map((cardid) => {
+        Object.keys(deckStore.deck.library).forEach((cardid) => {
           deckStore.deck.library[cardid].i = '';
         });
       }
@@ -132,7 +132,7 @@ export const deckUpdate = (deckid, field, value) => {
 
   if (field === 'cards') {
     const cards = {};
-    Object.values({ ...value.crypt, ...value.library }).map((card) => {
+    Object.values({ ...value.crypt, ...value.library }).forEach((card) => {
       cards[card.c.Id] = card.q;
     });
     value = cards;
@@ -172,15 +172,15 @@ export const deckLocalize = (
   localizedCrypt,
   nativeCrypt,
   localizedLibrary,
-  nativeLibrary
+  nativeLibrary,
 ) => {
-  Object.values(deckStore.deck.crypt).map((card) => {
+  Object.values(deckStore.deck.crypt).forEach((card) => {
     const id = card.c.Id;
     const newInfo = localizedCrypt[id] ? localizedCrypt[id] : nativeCrypt[id];
     deckStore.deck.crypt[id].c['Name'] = newInfo['Name'];
     deckStore.deck.crypt[id].c['Card Text'] = newInfo['Card Text'];
   });
-  Object.values(deckStore.deck.library).map((card) => {
+  Object.values(deckStore.deck.library).forEach((card) => {
     const id = card.c.Id;
     const newInfo = localizedLibrary[id]
       ? localizedLibrary[id]
@@ -195,11 +195,13 @@ const changeMaster = (deckid) => {
   const oldMasterDeckid = deckStore.decks[deckid].master;
 
   if (oldMasterDeckid) {
-    const branches = [...deckStore.decks[oldMasterDeckid].branches];
-    branches.splice(branches.indexOf(deckid), 1);
+    const branches = [...deckStore.decks[oldMasterDeckid].branches].toSpliced(
+      branches.indexOf(deckid),
+      1,
+    );
     branches.push(oldMasterDeckid);
 
-    branches.map((b) => {
+    branches.forEach((b) => {
       deckStore.decks[b].master = deckid;
       deckStore.decks[b].branches = [];
     });
@@ -222,7 +224,7 @@ const branchesUpdate = (deckid, field, value) => {
     revisions = [deckid, ...deckStore.decks[deckid].branches];
   }
 
-  revisions.map((d) => {
+  revisions.forEach((d) => {
     deckStore.decks[d][field] = value;
   });
 };

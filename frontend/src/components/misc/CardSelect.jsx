@@ -12,7 +12,7 @@ const getMatches = (
   filterAction,
   playtestId,
   playtestMode,
-  inInventory
+  inInventory,
 ) => {
   const input = { name: inputValue };
 
@@ -42,7 +42,7 @@ const getAllMatches = (
   filterLibrary,
   target,
   playtestMode,
-  inInventory
+  inInventory,
 ) => {
   const playtestId = target === 'crypt' ? 210000 : 110000;
 
@@ -53,7 +53,7 @@ const getAllMatches = (
           filterCrypt,
           playtestId,
           playtestMode,
-          inInventory
+          inInventory,
         )
       : [];
 
@@ -64,7 +64,7 @@ const getAllMatches = (
           filterLibrary,
           playtestId,
           playtestMode,
-          inInventory
+          inInventory,
         )
       : [];
 
@@ -85,7 +85,7 @@ const CardSelect = React.forwardRef(
       onChange,
       placement,
     },
-    ref
+    ref,
   ) => {
     const { isMobile, cryptCardBase, libraryCardBase, playtestMode } = useApp();
     const { filterCrypt } = useFilters(cryptCardBase);
@@ -126,26 +126,26 @@ const CardSelect = React.forwardRef(
           filterLibrary,
           target,
           playtestMode,
-          inInventory
+          inInventory,
         );
 
         if (target === 'crypt') {
           return [
-            ...cryptMatches.startingWith.sort(byTwd),
-            ...cryptMatches.other.sort(byTwd),
+            ...cryptMatches.startingWith.toSorted(byTwd),
+            ...cryptMatches.other.toSorted(byTwd),
           ];
         } else if (target === 'library') {
           return [
-            ...libraryMatches.startingWith.sort(byTwd),
-            ...libraryMatches.other.sort(byTwd),
+            ...libraryMatches.startingWith.toSorted(byTwd),
+            ...libraryMatches.other.toSorted(byTwd),
           ];
         }
         return [
           ...[
             ...cryptMatches.startingWith,
             ...libraryMatches.startingWith,
-          ].sort(byTwd),
-          ...[...cryptMatches.other, ...libraryMatches.other].sort(byTwd),
+          ].toSorted(byTwd),
+          ...[...cryptMatches.other, ...libraryMatches.other].toSorted(byTwd),
         ];
       }
     };
@@ -162,7 +162,7 @@ const CardSelect = React.forwardRef(
         value={value}
       />
     );
-  }
+  },
 );
 CardSelect.displayName = 'CardSelect';
 

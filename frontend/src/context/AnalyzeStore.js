@@ -25,7 +25,7 @@ export const setAnalyzeResults = (v) => {
 };
 
 export const clearAnalyzeForm = () => {
-  Object.keys(defaultsAnalyzeForm).map((k) => {
+  Object.keys(defaultsAnalyzeForm).forEach((k) => {
     searchAnalyzeForm[k] = deepClone(defaultsAnalyzeForm[k]);
   });
 };

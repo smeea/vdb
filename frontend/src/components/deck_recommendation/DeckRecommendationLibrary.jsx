@@ -4,13 +4,13 @@ import {
   DeckRecommendationLibraryTable,
   ResultModal,
 } from '@/components';
-import { librarySort, getCardsGroupedBy } from '@/utils';
+import { librarySort } from '@/utils';
 import { useModalCardController } from '@/hooks';
 import { GROUPED_TYPE, TYPE } from '@/utils/constants';
 
 const DeckRecommendationLibrary = ({ cards }) => {
   const sortedLibrary = librarySort(cards, GROUPED_TYPE);
-  const libraryByType = getCardsGroupedBy(sortedLibrary, TYPE);
+  const libraryByType = Object.groupBy(sortedLibrary, (card) => card[TYPE]);
 
   const {
     currentModalCard,

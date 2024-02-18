@@ -50,9 +50,9 @@ const DeckImportAmaranth = ({ handleClose }) => {
   const branchesImport = async (master, revisions) => {
     const branches = [];
 
-    revisions.map((revision) => {
+    revisions.forEach((revision) => {
       const cards = {};
-      Object.keys(revision.cards).map((i) => {
+      Object.keys(revision.cards).forEach((i) => {
         if (idReference[i] !== undefined) {
           cards[idReference[i]] = revision.cards[i];
         }
@@ -87,7 +87,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
       timestamp: now.toUTCString(),
     };
 
-    Object.keys(amaranth_deck.cards).map((i) => {
+    Object.keys(amaranth_deck.cards).forEach((i) => {
       if (idReference[i] !== undefined) {
         if (idReference[i] > 200000) {
           deck.crypt[idReference[i]] = {
@@ -112,10 +112,10 @@ const DeckImportAmaranth = ({ handleClose }) => {
           const branches = {};
 
           branchesImport(deck, amaranth_deck.versions).then((brs) => {
-            brs.map((b) => {
+            brs.forEach((b) => {
               const bCrypt = {};
               const bLibrary = {};
-              Object.keys(b.cards).map((cardid) => {
+              Object.keys(b.cards).forEach((cardid) => {
                 if (cardid > 200000) {
                   bCrypt[cardid] = {
                     c: cryptCardBase[cardid],
@@ -147,7 +147,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
             });
 
             deck.branches = Object.keys(branches);
-            Object.values(branches).map((b) => {
+            Object.values(branches).forEach((b) => {
               deckAdd(b);
             });
             deckAdd(deck);

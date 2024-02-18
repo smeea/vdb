@@ -40,7 +40,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
           name="set"
           placeholder="Set"
           value={setOptions.find(
-            (obj) => value && obj.value === value.toLowerCase
+            (obj) => value && obj.value === value.toLowerCase,
           )}
           onChange={handleSetSelector}
         />

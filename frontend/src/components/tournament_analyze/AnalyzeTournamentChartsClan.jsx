@@ -8,7 +8,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
   const data = useMemo(() => {
     const result = {};
 
-    Object.values(decks).map((deck) => {
+    Object.values(decks).forEach((deck) => {
       const clan = getClan(deck.crypt) || 'Multi';
       if (result[clan]) {
         result[clan] += 1;
@@ -27,8 +27,8 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
           value: result[c],
         };
       })
-      .sort((a, b) => a.name > b.name)
-      .sort((a, b) => b.value > a.value);
+      .toSorted((a, b) => a.name > b.name)
+      .toSorted((a, b) => b.value > a.value);
   }, [decks]);
 
   return (

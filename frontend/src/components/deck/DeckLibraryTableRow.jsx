@@ -78,8 +78,8 @@ const DeckLibraryTableRow = ({
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
     : idx % 2
-    ? 'bg-bgThird dark:bg-bgThirdDark'
-    : 'bg-bgPrimary dark:bg-bgPrimaryDark';
+      ? 'bg-bgThird dark:bg-bgThirdDark'
+      : 'bg-bgPrimary dark:bg-bgPrimaryDark';
 
   return (
     <tr

@@ -68,9 +68,8 @@ export const AppProvider = (props) => {
   const deck = useSnapshot(deckStore).deck;
   const decks = useSnapshot(deckStore).decks;
 
-  const lastDeckArray = (decks && Object.values(decks).sort(byTimestamp)) ?? [
-    { deckid: undefined },
-  ];
+  const lastDeckArray = (decks &&
+    Object.values(decks).toSorted(byTimestamp)) ?? [{ deckid: undefined }];
   const lastDeckId = lastDeckArray[0]?.deckid;
 
   const [recentDecks, setRecentDecks] = useState([]);
@@ -227,10 +226,10 @@ export const AppProvider = (props) => {
   const changeBaseTextToLocalizedText = (
     setCardBase,
     localizedInfo,
-    nativeInfo
+    nativeInfo,
   ) => {
     setCardBase((draft) => {
-      Object.keys(draft).map((k) => {
+      Object.keys(draft).forEach((k) => {
         const newInfo = localizedInfo[k] ? localizedInfo[k] : nativeInfo[k];
         draft[k]['Name'] = newInfo['Name'];
         draft[k]['Card Text'] = newInfo['Card Text'];
@@ -260,7 +259,7 @@ export const AppProvider = (props) => {
       changeBaseTextToLocalizedText(
         setLibraryCardBase,
         data.library,
-        nativeLibrary
+        nativeLibrary,
       );
     });
   };
@@ -273,12 +272,12 @@ export const AppProvider = (props) => {
         changeBaseTextToLocalizedText(
           setCryptCardBase,
           localizedCrypt[lang],
-          nativeCrypt
+          nativeCrypt,
         );
         changeBaseTextToLocalizedText(
           setLibraryCardBase,
           localizedLibrary[lang],
-          nativeLibrary
+          nativeLibrary,
         );
       }
     }
@@ -298,7 +297,7 @@ export const AppProvider = (props) => {
         localizedCrypt[lang],
         nativeCrypt,
         localizedLibrary[lang],
-        nativeLibrary
+        nativeLibrary,
       );
     }
   }, [deck, lang, localizedCrypt, localizedLibrary]);
@@ -394,7 +393,7 @@ export const AppProvider = (props) => {
     initFromStorage(
       'cryptSearchSort',
       'Capacity - Min to Max',
-      setCryptSearchSort
+      setCryptSearchSort,
     );
     initFromStorage('cryptDeckSort', 'Quantity ', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
@@ -403,7 +402,7 @@ export const AppProvider = (props) => {
     initFromStorage(
       'analyzeSearchSort',
       'Rank - High to Low',
-      setAnalyzeSearchSort
+      setAnalyzeSearchSort,
     );
     initFromStorage('lang', 'en-EN', setLang);
     initFromStorage('addMode', isDesktop, setAddMode);
@@ -416,16 +415,16 @@ export const AppProvider = (props) => {
 
   // DECKS
   const parseDecksData = (decksData) => {
-    Object.keys(decksData).map((deckid) => {
+    Object.keys(decksData).forEach((deckid) => {
       const cardsData = useDeck(
         decksData[deckid].cards,
         cryptCardBase,
-        libraryCardBase
+        libraryCardBase,
       );
 
       decksData[deckid] = { ...decksData[deckid], ...cardsData };
       if (decksData[deckid].usedInInventory) {
-        Object.keys(decksData[deckid].usedInInventory).map((cardid) => {
+        Object.keys(decksData[deckid].usedInInventory).forEach((cardid) => {
           if (cardid > 200000) {
             if (decksData[deckid].crypt[cardid]) {
               decksData[deckid].crypt[cardid].i =
@@ -454,7 +453,7 @@ export const AppProvider = (props) => {
   useEffect(() => {
     if (decks || username === null) {
       const d = recentDecks.filter(
-        (v) => username === null || !decks[v.deckid]
+        (v) => username === null || !decks[v.deckid],
       );
       if (d.length < recentDecks.length) {
         updateRecentDecks(d);
@@ -463,14 +462,14 @@ export const AppProvider = (props) => {
   }, [decks, recentDecks]);
 
   const parseInventoryData = (inventoryData) => {
-    Object.keys(inventoryData.crypt).map((i) => {
+    Object.keys(inventoryData.crypt).forEach((i) => {
       if (cryptCardBase[i]) {
         inventoryData.crypt[i].c = cryptCardBase[i];
       } else {
         delete inventoryData.crypt[i];
       }
     });
-    Object.keys(inventoryData.library).map((i) => {
+    Object.keys(inventoryData.library).forEach((i) => {
       if (libraryCardBase[i]) {
         inventoryData.library[i].c = libraryCardBase[i];
       } else {
@@ -504,14 +503,14 @@ export const AppProvider = (props) => {
 
     Object.keys(decks).forEach((deckid) => {
       if (decks[deckid].inventoryType) {
-        for (const [id, card] of Object.entries(decks[deckid].crypt)) {
+        Object.entries(decks[deckid].crypt).forEach(([id, card]) => {
           const target = crypts[card.i || decks[deckid].inventoryType];
           addToTarget(target, deckid, id, card.q);
-        }
-        for (const [id, card] of Object.entries(decks[deckid].library)) {
+        });
+        Object.entries(decks[deckid].library).forEach(([id, card]) => {
           const target = libraries[card.i || decks[deckid].inventoryType];
           addToTarget(target, deckid, id, card.q);
-        }
+        });
       }
     });
 

@@ -47,7 +47,7 @@ const CryptSearchForm = () => {
   const limitedCrypt = useSnapshot(limitedStore).crypt;
   const cryptFormState = useSnapshot(searchCryptForm);
   const { filterCrypt } = useFilters(
-    limitedMode ? limitedCrypt : cryptCardBase
+    limitedMode ? limitedCrypt : cryptCardBase,
   );
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
@@ -57,9 +57,9 @@ const CryptSearchForm = () => {
 
   useEffect(() => {
     if (query) {
-      Object.keys(query).map((i) => {
+      Object.keys(query).forEach((i) => {
         if (typeof query[i] === 'object') {
-          Object.keys(query[i]).map((j) => {
+          Object.keys(query[i]).forEach((j) => {
             searchCryptForm[i][j] = query[i][j];
           });
         } else {
@@ -150,7 +150,7 @@ const CryptSearchForm = () => {
     navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterCrypt(sanitizedForm).filter(
-      (card) => playtestMode || card.Id < 210000
+      (card) => playtestMode || card.Id < 210000,
     );
 
     if (!isMobile) {
@@ -162,7 +162,7 @@ const CryptSearchForm = () => {
               usedCrypt.soft[card.Id] ||
               usedCrypt.hard[card.Id]
             );
-          })
+          }),
         );
       } else {
         setPreresults(filteredCards);
@@ -176,7 +176,7 @@ const CryptSearchForm = () => {
               usedCrypt.soft[card.Id] ||
               usedCrypt.hard[card.Id]
             );
-          })
+          }),
         );
       } else {
         setCryptResults(filteredCards);
@@ -232,7 +232,7 @@ const CryptSearchForm = () => {
       limitedMode,
       playtestMode,
       cryptCardBase,
-    ]
+    ],
   );
 
   useDebounce(() => testInputsAndSearch(), 400, [

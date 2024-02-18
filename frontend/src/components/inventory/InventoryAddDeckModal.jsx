@@ -29,9 +29,9 @@ const InventoryAddDeckModal = ({ handleClose }) => {
   };
 
   const allTags = new Set();
-  Object.keys(decks).map((deckid) => {
+  Object.keys(decks).forEach((deckid) => {
     if (decks[deckid].tags) {
-      decks[deckid].tags.map((tag) => {
+      decks[deckid].tags.forEach((tag) => {
         allTags.add(tag);
       });
     }
@@ -56,7 +56,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       if (tagsFilter) {
         filtered = filtered.filter((deck) => {
           let counter = 0;
-          tagsFilter.map((tag) => {
+          tagsFilter.forEach((tag) => {
             if (deck.tags && deck.tags.includes(tag)) counter += 1;
           });
           if (counter >= tagsFilter.length) return true;

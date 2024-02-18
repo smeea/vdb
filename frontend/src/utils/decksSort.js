@@ -25,21 +25,21 @@ const decksSort = (decks, sortMethod) => {
     decks = [...decks];
     switch (sortMethod) {
       case 'Rank - High to Low':
-        return decks.sort(byRank);
+        return decks.toSorted(byRank);
       case 'Rank - Low to High':
-        return decks.sort(byRank).reverse();
+        return decks.toSorted(byRank).toReversed();
       case 'byName':
-        return decks.sort(byName);
+        return decks.toSorted(byName);
       case 'byDate':
-        return decks.sort(byTimestamp);
+        return decks.toSorted(byTimestamp);
       case 'Date - New to Old':
-        return decks.sort(byDate);
+        return decks.toSorted(byDate);
       case 'Date - Old to New':
-        return decks.sort(byDate).reverse();
+        return decks.toSorted(byDate).toReversed();
       case 'Favorites':
-        return decks.sort(byDate).sort(byFavorites);
+        return decks.toSorted(byDate).toSorted(byFavorites);
       case 'Players':
-        return decks.sort(byDate).sort(byPlayers);
+        return decks.toSorted(byDate).toSorted(byPlayers);
       default:
         return decks;
     }

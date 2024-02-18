@@ -39,7 +39,7 @@ const useDeckMissing = (deck, isEmpty) => {
       deck.crypt,
       deck.inventoryType,
       usedCrypt,
-      inventoryCrypt
+      inventoryCrypt,
     );
   }, [deck.crypt, deck.inventoryType, isEmpty]);
 
@@ -50,7 +50,7 @@ const useDeckMissing = (deck, isEmpty) => {
       deck.library,
       deck.inventoryType,
       usedLibrary,
-      inventoryLibrary
+      inventoryLibrary,
     );
   }, [deck.library, deck.inventoryType, isEmpty]);
 

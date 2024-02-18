@@ -48,7 +48,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const cardsByType = {};
   const cardsByTypeTotal = {};
   const typesSorted = ['All', ...cardtypeSorted];
-  typesSorted.map((i) => {
+  typesSorted.forEach((i) => {
     cardsByType[i] = {};
     cardsByTypeTotal[i] = 0;
   });
@@ -60,16 +60,19 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     'Flight',
     'Maleficia',
     'Striga',
-  ].sort();
+  ].toSorted();
 
-  ['All', 'None', ...disciplinesExtendedList, ...Object.keys(virtuesList)].map(
-    (i) => {
-      cardsByDiscipline[i] = {};
-      cardsByDisciplineTotal[i] = 0;
-    },
-  );
+  [
+    'All',
+    'None',
+    ...disciplinesExtendedList,
+    ...Object.keys(virtuesList),
+  ].forEach((i) => {
+    cardsByDiscipline[i] = {};
+    cardsByDisciplineTotal[i] = 0;
+  });
 
-  cards.map((card) => {
+  cards.forEach((card) => {
     const types = card.Type.split('/');
     const d = card.Discipline;
     let disciplines = ['None'];
@@ -81,28 +84,28 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
       disciplines = [d];
     }
 
-    types.map((t) => {
+    types.forEach((t) => {
       cardsByTypeTotal[t] += 1;
     });
     cardsByTypeTotal['All'] += 1;
     cardsByDisciplineTotal['All'] += 1;
 
     if (disciplines) {
-      disciplines.map((i) => {
+      disciplines.forEach((i) => {
         cardsByDisciplineTotal[i] += 1;
       });
     } else {
       cardsByDisciplineTotal['None'] += 1;
     }
 
-    types.map((t) => {
+    types.forEach((t) => {
       cardsByType[t][card.Id] = card;
     });
     cardsByType['All'][card.Id] = card;
     cardsByDiscipline['All'][card.Id] = card;
 
     if (disciplines) {
-      disciplines.map((i) => {
+      disciplines.forEach((i) => {
         cardsByDiscipline[i][card.Id] = card;
       });
     } else {
@@ -115,13 +118,13 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const cardsFilteredByDiscipline = {};
   const cardsFilteredByDisciplineTotal = {};
 
-  Object.keys(cardsByDiscipline).map((d) => {
+  Object.keys(cardsByDiscipline).forEach((d) => {
     cardsFilteredByType[d] = {};
     cardsFilteredByTypeTotal[d] = 0;
   });
 
-  Object.keys(cardsByType[type]).map((cardid) => {
-    Object.keys(cardsByDiscipline).map((d) => {
+  Object.keys(cardsByType[type]).forEach((cardid) => {
+    Object.keys(cardsByDiscipline).forEach((d) => {
       if (cardsByDiscipline[d][cardid]) {
         cardsFilteredByType[d][cardid] = cardsByDiscipline[d][cardid];
         cardsFilteredByTypeTotal[d] += 1;
@@ -129,13 +132,13 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     });
   });
 
-  Object.keys(cardsByType).map((t) => {
+  Object.keys(cardsByType).forEach((t) => {
     cardsFilteredByDiscipline[t] = {};
     cardsFilteredByDisciplineTotal[t] = 0;
   });
 
-  Object.keys(cardsByDiscipline[discipline]).map((cardid) => {
-    Object.keys(cardsByType).map((t) => {
+  Object.keys(cardsByDiscipline[discipline]).forEach((cardid) => {
+    Object.keys(cardsByType).forEach((t) => {
       if (cardsByType[t][cardid]) {
         cardsFilteredByDiscipline[t][cardid] = cardsByType[t][cardid];
         cardsFilteredByDisciplineTotal[t] += 1;

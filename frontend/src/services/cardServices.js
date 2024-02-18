@@ -23,10 +23,10 @@ export const getCardBase = async () => {
   };
 
   const crypt = await fetch(urlCrypt, options).then((response) =>
-    response.json()
+    response.json(),
   );
   const library = await fetch(urlLibrary, options).then((response) =>
-    response.json()
+    response.json(),
   );
 
   const cryptPlaytest = await fetch(urlCryptPlaytest, options).then(
@@ -36,7 +36,7 @@ export const getCardBase = async () => {
       } else {
         return {};
       }
-    }
+    },
   );
 
   const libraryPlaytest = await fetch(urlLibraryPlaytest, options).then(
@@ -46,7 +46,7 @@ export const getCardBase = async () => {
       } else {
         return {};
       }
-    }
+    },
   );
 
   const nativeCrypt = {};
@@ -56,7 +56,7 @@ export const getCardBase = async () => {
     ...cryptPlaytest,
     ...library,
     ...libraryPlaytest,
-  }).map((card) => {
+  }).forEach((card) => {
     const target = card.Id > 200000 ? nativeCrypt : nativeLibrary;
     target[card.Id] = {
       Name: card['Name'],
@@ -80,10 +80,10 @@ export const getLocalizedCardBase = async (lang) => {
   };
 
   const crypt = await fetch(urlLocalizedCrypt(lang), options).then((response) =>
-    response.json()
+    response.json(),
   );
   const library = await fetch(urlLocalizedLibrary(lang), options).then(
-    (response) => response.json()
+    (response) => response.json(),
   );
 
   return {
@@ -100,12 +100,12 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
   };
 
   const preconDecksData = await fetch(urlPreconDecks, options).then(
-    (response) => response.json()
+    (response) => response.json(),
   );
 
   const preconDecks = {};
-  Object.keys(preconDecksData).map((set) => {
-    Object.keys(preconDecksData[set]).map((precon) => {
+  Object.keys(preconDecksData).forEach((set) => {
+    Object.keys(preconDecksData[set]).forEach((precon) => {
       const deckid = `${set}:${precon}`;
       const name = setsAndPrecons[set]['precons'][precon]['name'];
 
@@ -123,7 +123,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
       const cardsData = useDeck(
         preconDecksData[set][precon],
         cryptCardBase,
-        libraryCardBase
+        libraryCardBase,
       );
 
       let tags = [];
@@ -131,9 +131,11 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
         set !== PLAYTEST ||
         (cryptCardBase[210001] && libraryCardBase[110001])
       ) {
-        Object.values(useTags(cardsData.crypt, cardsData.library)).map((v) => {
-          tags = tags.concat(v);
-        });
+        Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
+          (v) => {
+            tags = tags.concat(v);
+          },
+        );
       }
 
       preconDecks[deckid].crypt = cardsData.crypt;

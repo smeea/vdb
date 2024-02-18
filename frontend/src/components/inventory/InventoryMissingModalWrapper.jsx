@@ -21,7 +21,7 @@ const InventoryMissingModalWrapper = ({
     crypt,
     category,
     false,
-    onlyNotes
+    onlyNotes,
   );
   const { missingByType, missingByDiscipline } = useInventoryLibrary(
     library,
@@ -29,7 +29,7 @@ const InventoryMissingModalWrapper = ({
     false,
     type,
     discipline,
-    onlyNotes
+    onlyNotes,
   );
 
   const missingCrypt = useMemo(() => {
@@ -62,7 +62,7 @@ const InventoryMissingModalWrapper = ({
     })
     .map(
       (cardid) =>
-        (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] })
+        (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] }),
     );
 
   Object.keys(libraryCardBase)
@@ -74,7 +74,7 @@ const InventoryMissingModalWrapper = ({
     })
     .map(
       (cardid) =>
-        (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] })
+        (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] }),
     );
 
   return (

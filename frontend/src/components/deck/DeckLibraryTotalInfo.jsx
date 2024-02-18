@@ -10,13 +10,13 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
   const totalExMasters = total - (byTypes['Master'] || 0);
 
   const byDisciplinesSorted = byDisciplines
-    ? Object.keys(byDisciplines).sort((a, b) => {
+    ? Object.keys(byDisciplines).toSorted((a, b) => {
         return byDisciplines[b] - byDisciplines[a];
       })
     : [];
 
   const byClansSorted = byClans
-    ? Object.keys(byClans).sort((a, b) => {
+    ? Object.keys(byClans).toSorted((a, b) => {
         return byClans[b] - byClans[a];
       })
     : [];

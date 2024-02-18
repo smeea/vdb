@@ -29,7 +29,9 @@ const Seating = ({ setShow }) => {
   const [customDecks, setCustomDecks] = useImmer([]);
   const [standardDecks, setStandardDecks] = useImmer(
     Object.keys(standardDecksData)
-      .sort((a, b) => standardDecksData[a].localeCompare(standardDecksData[b]))
+      .toSorted((a, b) =>
+        standardDecksData[a].localeCompare(standardDecksData[b]),
+      )
       .map((deckid) => ({
         deckid: deckid,
         name: standardDecksData[deckid],

@@ -95,7 +95,7 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
           xmlDoc.getElementsByTagName('deck')[0].childNodes[3].children;
 
         const crypt = {};
-        Object.values(xmlCrypt).map((i) => {
+        Object.values(xmlCrypt).forEach((i) => {
           const cardName = i.childNodes[0].childNodes[0].data;
           if (!crypt[cardName]) {
             crypt[cardName] = 0;
@@ -104,7 +104,7 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
         });
 
         const library = {};
-        Object.values(xmlLibrary).map((i) => {
+        Object.values(xmlLibrary).forEach((i) => {
           const cardName = i.childNodes[0].childNodes[0].data;
           if (!library[cardName]) {
             library[cardName] = 0;
@@ -114,11 +114,11 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
 
         deckText = '';
 
-        Object.keys(crypt).map((card) => {
+        Object.keys(crypt).forEach((card) => {
           deckText += `${crypt[card]} ${card}\n`;
         });
 
-        Object.keys(library).map((card) => {
+        Object.keys(library).forEach((card) => {
           deckText += `${library[card]} ${card}\n`;
         });
       }

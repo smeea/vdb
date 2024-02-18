@@ -39,7 +39,7 @@ export const cardChange = (deckid, cardid, q) => {
 
 export const deckImport = (deck) => {
   const cards = {};
-  Object.values({ ...deck.crypt, ...deck.library }).map((card) => {
+  Object.values({ ...deck.crypt, ...deck.library }).forEach((card) => {
     cards[card.c.Id] = card.q;
   });
 
@@ -86,7 +86,7 @@ export const branchesImport = async (masterId, branches) => {
       return response.json();
     })
     .then((data) => {
-      data.map((branch, idx) => {
+      data.forEach((branch, idx) => {
         branches[idx].deckid = branch.deckid;
         branches[idx].branchName = branch.branchName;
       });
@@ -126,7 +126,7 @@ export const exportDecks = async (decks, format) => {
 
     const folder = zip.folder(`Decks ${date} [${format}]`);
     Promise.all(fetchPromises).then((deckExports) => {
-      deckExports.map((d) => {
+      deckExports.forEach((d) => {
         folder.file(`${d.deckName}.xlsx`, d.file, {
           base64: true,
         });
@@ -137,7 +137,7 @@ export const exportDecks = async (decks, format) => {
         .then((blob) => saveFile(blob, `Decks ${date} [${format}].zip`));
     });
   } else {
-    Object.values(decks).map((deck) => {
+    Object.values(decks).forEach((deck) => {
       let deckName = deck.name;
       if (deck.branchName && (deck.master || deck.branches.length > 0)) {
         deckName += ` [${deck['branchName']}]`;

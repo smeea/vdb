@@ -1,4 +1,5 @@
 import React from 'react';
+import { ASCII_NAME } from '@/utils/constants';
 import { DeckLibraryTableRow } from '@/components';
 
 const DeckLibraryTable = ({
@@ -11,19 +12,14 @@ const DeckLibraryTable = ({
   inMissing,
   shouldShowModal,
 }) => {
-  cards.sort((a, b) => {
-    if (a.c['ASCII Name'] < b.c['ASCII Name']) {
-      return -1;
-    }
-    if (a.c['ASCII Name'] > b.c['ASCII Name']) {
-      return 1;
-    }
-  });
+  const sortedCards = cards.toSorted(
+    (a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME],
+  );
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
-        {cards.map((card, idx) => {
+        {sortedCards.map((card, idx) => {
           return (
             <DeckLibraryTableRow
               key={card.c.Id}

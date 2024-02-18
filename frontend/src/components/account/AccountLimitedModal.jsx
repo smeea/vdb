@@ -45,16 +45,16 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
         library: {},
       },
     };
-    Object.keys(limitedAllowedCrypt).map((c) => {
+    Object.keys(limitedAllowedCrypt).forEach((c) => {
       minified.allowed.crypt[c] = true;
     });
-    Object.keys(limitedAllowedLibrary).map((c) => {
+    Object.keys(limitedAllowedLibrary).forEach((c) => {
       minified.allowed.library[c] = true;
     });
-    Object.keys(limitedBannedCrypt).map((c) => {
+    Object.keys(limitedBannedCrypt).forEach((c) => {
       minified.banned.crypt[c] = true;
     });
-    Object.keys(limitedBannedLibrary).map((c) => {
+    Object.keys(limitedBannedLibrary).forEach((c) => {
       minified.banned.library[c] = true;
     });
     return minified;

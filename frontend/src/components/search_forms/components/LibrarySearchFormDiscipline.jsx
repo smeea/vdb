@@ -20,7 +20,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     'Flight',
     'Maleficia',
     'Striga',
-  ].sort();
+  ].toSorted();
 
   const options = [
     'ANY',

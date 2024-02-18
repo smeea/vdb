@@ -34,7 +34,7 @@ const DeckSelectAdvTotal = ({ setSortMethod, tagsFilter, setTagsFilter }) => {
       <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
       <div>
         {Object.keys(byTags)
-          .sort()
+          .toSorted()
           .map((i) => {
             return (
               <div

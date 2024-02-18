@@ -37,9 +37,9 @@ const AnalyzeSearchForm = () => {
 
   useEffect(() => {
     if (query) {
-      Object.keys(query).map((i) => {
+      Object.keys(query).forEach((i) => {
         if (typeof query[i] === 'object') {
-          Object.keys(query[i]).map((j) => {
+          Object.keys(query[i]).forEach((j) => {
             searchAnalyzeForm[i][j] = query[i][j];
           });
         } else {

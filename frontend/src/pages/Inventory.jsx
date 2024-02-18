@@ -54,10 +54,10 @@ const Inventory = () => {
       .then((data) => {
         const crypt = {};
         const library = {};
-        Object.keys(data.crypt).map((k) => {
+        Object.keys(data.crypt).forEach((k) => {
           crypt[k] = { ...data.crypt[k], c: cryptCardBase[k] };
         });
-        Object.keys(data.library).map((k) => {
+        Object.keys(data.library).forEach((k) => {
           library[k] = { ...data.library[k], c: libraryCardBase[k] };
         });
         setSharedCrypt(crypt);

@@ -13,7 +13,7 @@ const AnalyzeTournamentResultTotal = ({
   const byTags = {};
   let totalRank = 0;
 
-  results.map((deck) => {
+  results.forEach((deck) => {
     const rank = deck.score.rank;
     totalRank += rank;
 

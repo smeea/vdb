@@ -29,7 +29,7 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
           })}
           {disciplinesSet
             .slice(keyDisciplines)
-            .sort()
+            .toSorted()
             .map((d, index) => {
               if (value[d]) {
                 return (

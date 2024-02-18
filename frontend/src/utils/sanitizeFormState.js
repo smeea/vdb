@@ -12,9 +12,10 @@ const sanitizeFormState = (target, state) => {
     default:
       forms = [];
   }
-  forms.map((i) => {
-    input[i].map((j, idx) => {
-      for (const [key, value] of Object.entries(j)) {
+
+  forms.forEach((i) => {
+    input[i].forEach((j, idx) => {
+      Object.entries(j).forEach(([key, value]) => {
         switch (key) {
           case 'value':
             if (value === '') input[i].splice(idx, 1);
@@ -22,7 +23,7 @@ const sanitizeFormState = (target, state) => {
           default:
             if (input[i][idx] && !value) delete input[i][idx][key];
         }
-      }
+      });
     });
   });
 
@@ -68,7 +69,7 @@ const sanitizeFormState = (target, state) => {
     default:
       forms = [];
   }
-  forms.map((i) => {
+  forms.forEach((i) => {
     Object.keys(input[i]).forEach((k) => {
       (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k];
     });
@@ -82,7 +83,7 @@ const sanitizeFormState = (target, state) => {
     default:
       forms = [];
   }
-  forms.map((i) => {
+  forms.forEach((i) => {
     Object.keys(input[i]).forEach((k) => {
       (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k];
     });
@@ -99,10 +100,10 @@ const sanitizeFormState = (target, state) => {
     default:
       forms = [];
   }
-  forms.map((i) => {
+  forms.forEach((i) => {
     Object.keys(input[i]).forEach((k) => {
       input[i][k] === false && delete input[i][k];
-      input[i].value.map((j, idx) => {
+      input[i].value.forEach((j, idx) => {
         if (j === 'any') {
           input[i].value.splice(idx, 1);
         }
@@ -117,7 +118,7 @@ const sanitizeFormState = (target, state) => {
     default:
       forms = [];
   }
-  forms.map((i) => {
+  forms.forEach((i) => {
     if (input[i][i] == 'any') {
       delete input[i];
     }
@@ -131,8 +132,8 @@ const sanitizeFormState = (target, state) => {
       forms = [];
       break;
   }
-  forms.map((i) => {
-    input[i].value.map((j, idx) => {
+  forms.forEach((i) => {
+    input[i].value.forEach((j, idx) => {
       if (j[i] === 'any') {
         input[i].value.splice(idx, 1);
       }
@@ -142,8 +143,8 @@ const sanitizeFormState = (target, state) => {
   switch (target) {
     case 'crypt':
       forms = ['clan', 'sect'];
-      forms.map((i) => {
-        input[i].value.map((j, idx) => {
+      forms.forEach((i) => {
+        input[i].value.forEach((j, idx) => {
           if (j === 'any') {
             input[i].value.splice(idx, 1);
           }
@@ -152,8 +153,8 @@ const sanitizeFormState = (target, state) => {
       break;
     case 'library':
       forms = ['clan', 'sect', 'title'];
-      forms.map((i) => {
-        input[i].value.map((j, idx) => {
+      forms.forEach((i) => {
+        input[i].value.forEach((j, idx) => {
           if (j === 'any') {
             input[i].value.splice(idx, 1);
           }
@@ -164,7 +165,7 @@ const sanitizeFormState = (target, state) => {
     case 'pda':
     case 'twd':
       forms = ['crypt', 'library'];
-      forms.map((i) => {
+      forms.forEach((i) => {
         Object.keys(input[i]).forEach((k) => {
           input[i][k] == -1 && delete input[i][k];
         });

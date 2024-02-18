@@ -21,16 +21,16 @@ const TwdCardsHistory = () => {
     if (value && cryptCardBase && libraryCardBase) {
       const c = {};
       const l = {};
-      const p = {};
+      const players = {};
 
-      Object.keys(value).map((cardid) => {
+      Object.keys(value).forEach((cardid) => {
         const target = cardid > 200000 ? c : l;
         const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
         target[cardid] = { ...value[cardid], ...cardBase[cardid] };
 
         Object.keys(cardBase[cardid].Set)
           .filter((set) => set !== POD)
-          .map((set) => {
+          .forEach((set) => {
             const d =
               set === PROMO
                 ? Object.keys(cardBase[cardid].Set.Promo)[0]
@@ -45,24 +45,24 @@ const TwdCardsHistory = () => {
           });
 
         if (value[cardid].deckid) {
-          if (!p[value[cardid].player]) {
-            p[value[cardid].player] = { crypt: 0, library: 0 };
+          if (!players[value[cardid].player]) {
+            players[value[cardid].player] = { crypt: 0, library: 0 };
           }
           if (cardid > 200000) {
-            p[value[cardid].player].crypt += 1;
+            players[value[cardid].player].crypt += 1;
           } else {
-            p[value[cardid].player].library += 1;
+            players[value[cardid].player].library += 1;
           }
         }
       });
 
-      const crypt = Object.values(c).sort(byName);
-      const library = Object.values(l).sort(byName);
+      const crypt = Object.values(c).toSorted(byName);
+      const library = Object.values(l).toSorted(byName);
 
       return {
-        crypt: crypt,
-        library: library,
-        players: p,
+        crypt,
+        library,
+        players,
       };
     } else return {};
   }, [value, cryptCardBase, libraryCardBase]);

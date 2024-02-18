@@ -23,7 +23,7 @@ const TwdHallOfFameCards = () => {
     if (value && cryptCardBase && libraryCardBase) {
       const p = {};
 
-      Object.keys(value).map((cardid) => {
+      Object.keys(value).forEach((cardid) => {
         const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
         const card = cardBase[cardid];
         const player = value[cardid].player;
@@ -33,7 +33,7 @@ const TwdHallOfFameCards = () => {
 
         Object.keys(card.Set)
           .filter((set) => set !== POD)
-          .map((set) => {
+          .forEach((set) => {
             const d =
               set === PROMO
                 ? Object.keys(card.Set.Promo)[0]
@@ -84,7 +84,7 @@ const TwdHallOfFameCards = () => {
 
   const getInnovationCards = (cards) => {
     const innovationCards = {};
-    Object.values(cards).map((card) => {
+    Object.values(cards).forEach((card) => {
       if (isInnovation(card)) {
         innovationCards[card.Id] = card;
       }
@@ -111,8 +111,8 @@ const TwdHallOfFameCards = () => {
             <div className="flex flex-col gap-1.5">
               {players &&
                 Object.keys(players)
-                  .sort(byName)
-                  .sort(byTotal)
+                  .toSorted(byName)
+                  .toSorted(byTotal)
                   .map((player) => (
                     <Disclosure key={player}>
                       <TwdHallFameCardsPlayer
@@ -133,11 +133,11 @@ const TwdHallOfFameCards = () => {
               </div>
               {players &&
                 Object.keys(players)
-                  .sort(byName)
-                  .sort(byInnovation)
+                  .toSorted(byName)
+                  .toSorted(byInnovation)
                   .filter(
                     (player) =>
-                      Object.keys(getInnovationCards(players[player])).length
+                      Object.keys(getInnovationCards(players[player])).length,
                   )
                   .map((player) => (
                     <Disclosure key={player}>

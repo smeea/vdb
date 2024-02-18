@@ -22,61 +22,63 @@ const librarySort = (cards, sortMethod) => {
   };
 
   if (cards) {
-    cards = [...cards];
     switch (sortMethod) {
       case 'Name':
-        return cards.sort(byName);
+        return cards.toSorted(byName);
       case 'Quantity':
-        return cards.sort(byName).sort(byQuantity);
+        return cards.toSorted(byName).toSorted(byQuantity);
       case 'Clan / Discipline':
         return cards
-          .sort(byName)
-          .sort(byType)
-          .sort(byDiscipline)
-          .sort(byClanOpt);
+          .toSorted(byName)
+          .toSorted(byType)
+          .toSorted(byDiscipline)
+          .toSorted(byClanOpt);
       case 'Type':
         return cards
-          .sort(byName)
-          .sort(byDiscipline)
-          .sort(byClanOpt)
-          .sort(byType);
+          .toSorted(byName)
+          .toSorted(byDiscipline)
+          .toSorted(byClanOpt)
+          .toSorted(byType);
       case 'Type ': // SPACE SUFFIX IS INTENTIONAL
-        return cards.sort(byName).sort(byType);
+        return cards.toSorted(byName).toSorted(byType);
       case 'GroupedType':
-        return cards.sort(byName).sort(byGroupedType);
+        return cards.toSorted(byName).toSorted(byGroupedType);
       case 'Cost - Min to Max':
         return cards
-          .sort(byName)
-          .reverse()
-          .sort(byDiscipline)
-          .sort(byClanOpt)
-          .sort(byType)
-          .sort(byPoolCost)
-          .sort(byBloodCost)
-          .reverse();
+          .toSorted(byName)
+          .toReversed()
+          .toSorted(byDiscipline)
+          .toSorted(byClanOpt)
+          .toSorted(byType)
+          .toSorted(byPoolCost)
+          .toSorted(byBloodCost)
+          .toReversed();
       case 'Cost - Max to Min':
         return cards
-          .sort(byName)
-          .sort(byDiscipline)
-          .sort(byClanOpt)
-          .sort(byType)
-          .sort(byPoolCost)
-          .sort(byBloodCost);
+          .toSorted(byName)
+          .toSorted(byDiscipline)
+          .toSorted(byClanOpt)
+          .toSorted(byType)
+          .toSorted(byPoolCost)
+          .toSorted(byBloodCost);
       case 'Cost - Max to Min ': // SPACE SUFFIX IS INTENTIONAL
-        return cards.sort(byName).sort(byPoolCost).sort(byBloodCost);
+        return cards
+          .toSorted(byName)
+          .toSorted(byPoolCost)
+          .toSorted(byBloodCost);
       case 'Cost - Min to Max ': // SPACE SUFFIX IS INTENTIONAL
         return cards
-          .sort(byName)
-          .reverse()
-          .sort(byPoolCost)
-          .sort(byBloodCost)
-          .reverse();
+          .toSorted(byName)
+          .toReversed()
+          .toSorted(byPoolCost)
+          .toSorted(byBloodCost)
+          .toReversed();
       case 'Player':
-        return cards.sort(byName).sort(byPlayer);
+        return cards.toSorted(byName).toSorted(byPlayer);
       case 'Date - Print':
-        return cards.sort(byName).sort(byDatePrint);
+        return cards.toSorted(byName).toSorted(byDatePrint);
       case 'Date - Win':
-        return cards.sort(byName).sort(byDateWin);
+        return cards.toSorted(byName).toSorted(byDateWin);
       default:
         return cards;
     }

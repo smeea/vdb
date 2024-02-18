@@ -6,7 +6,7 @@ const getCryptTitle = (crypt) => {
   let cryptTotalCap = 0;
   const capacityList = [];
 
-  Object.values(crypt).map((card) => {
+  Object.values(crypt).forEach((card) => {
     cryptTotalCap += card.c['Capacity'] * card.q;
     for (let i = 0; i < card.q; i++) capacityList.push(card.c['Capacity']);
   });
@@ -36,7 +36,7 @@ const getCryptText = (crypt) => {
   const getDisciplines = (disciplines) => {
     const baseDisciplines = [];
     const supDisciplines = [];
-    Object.keys(disciplines).map((d) => {
+    Object.keys(disciplines).forEach((d) => {
       if (disciplines[d] === 1) {
         baseDisciplines.push(disciplinesAndVirtues[d].toLowerCase());
       } else {
@@ -53,7 +53,7 @@ const getCryptText = (crypt) => {
   let maxCapacityLength = 0;
   let maxDisciplinesLength = 0;
 
-  crypt.map((card) => {
+  crypt.forEach((card) => {
     const c = card.c;
     const q = card.q;
     let name = c['Name'];
@@ -79,7 +79,7 @@ const getCryptText = (crypt) => {
     }
   });
 
-  crypt.map((card) => {
+  crypt.forEach((card) => {
     const q = card.q;
     const c = card.c;
 
@@ -113,7 +113,7 @@ const getLibraryText = (library, format) => {
   let libraryTotal = 0;
   let triflesTotal = 0;
 
-  Object.values(library).map((card) => {
+  Object.values(library).forEach((card) => {
     libraryTotal += card.q;
     const cardType = card.c.Type;
     const cardName = card.c.Name;
@@ -164,7 +164,7 @@ const getLibraryText = (library, format) => {
     result += '\n';
   }
 
-  byTypeOrder.map((type) => {
+  byTypeOrder.forEach((type) => {
     if (byType[type]) {
       let typeTitle = `${type} (${byTypeTotal[type]}`;
       if (type === 'Master' && triflesTotal) {
@@ -178,9 +178,10 @@ const getLibraryText = (library, format) => {
         result += '\n';
       }
 
-      const sortedCards = Object.keys(byType[type]).sort();
-      sortedCards.map((card) => (result += `${byType[type][card]}x ${card}\n`));
-
+      const sortedCards = Object.keys(byType[type]).toSorted();
+      sortedCards.forEach((card) => {
+        result += `${byType[type][card]}x ${card}\n`;
+      });
       result += '\n';
     }
   });
@@ -195,7 +196,7 @@ const exportJol = (deck) => {
   const sortedCrypt = cryptSort(Object.values(deck.crypt), 'Name');
   const sortedLibrary = librarySort(Object.values(deck.library), 'Name');
 
-  sortedCrypt.map((card) => {
+  sortedCrypt.forEach((card) => {
     let name = card.c['ASCII Name'];
     if (card.c['Adv'] && card.c['Adv'][0]) {
       name += ' (ADV)';
@@ -206,7 +207,7 @@ const exportJol = (deck) => {
     result += `${card.q}x${name}\n`;
   });
 
-  sortedLibrary.map((card) => {
+  sortedLibrary.forEach((card) => {
     const name = card.c['ASCII Name'];
     result += `${card.q}x${name}\n`;
   });
@@ -219,7 +220,7 @@ const exportLackey = (deck) => {
   const sortedCrypt = cryptSort(Object.values(deck.crypt), 'Name');
   const sortedLibrary = librarySort(Object.values(deck.library), 'Name');
 
-  sortedLibrary.map((card) => {
+  sortedLibrary.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
     result += `${card.q}${' '.repeat(spaces)}`;
     result += `${card.c['ASCII Name'].replace(/\//g, '')}\n`;
@@ -227,7 +228,7 @@ const exportLackey = (deck) => {
 
   result += 'Crypt:\n';
 
-  sortedCrypt.map((card) => {
+  sortedCrypt.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
     let name = card.c['ASCII Name'];
     if (card.c['Adv'] && card.c['Adv'][0]) {

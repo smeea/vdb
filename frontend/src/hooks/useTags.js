@@ -36,16 +36,16 @@ const useTags = (crypt, library) => {
 
   if (crypt) {
     let cryptTotal = 0;
-    Object.values(crypt).map((card) => {
+    Object.values(crypt).forEach((card) => {
       cryptTotal += card.q;
     });
 
     const cryptSizeFactor = 12 / cryptTotal;
     const cryptValueFactor = 1.5;
-    Object.values(crypt).map((card) => {
+    Object.values(crypt).forEach((card) => {
       const { c, q } = card;
       const cardTags = getCryptTags(c);
-      cardTags.map((tag) => {
+      cardTags.forEach((tag) => {
         deckTags[tag] += q * cryptValueFactor * cryptSizeFactor;
       });
     });
@@ -54,16 +54,16 @@ const useTags = (crypt, library) => {
   if (library) {
     let libraryTotal = 0;
     let masterTotal = 0;
-    Object.values(library).map((card) => {
+    Object.values(library).forEach((card) => {
       libraryTotal += card.q;
       if (card.c['Type'] === 'Master') masterTotal += card.q;
     });
 
     const librarySizeFactor = 90 / libraryTotal;
-    Object.values(library).map((card) => {
+    Object.values(library).forEach((card) => {
       const { c, q } = card;
       const cardTags = getLibraryTags(c);
-      cardTags.map((tag) => {
+      cardTags.forEach((tag) => {
         deckTags[tag] += q * librarySizeFactor;
       });
     });
@@ -75,8 +75,8 @@ const useTags = (crypt, library) => {
 
   const superiorValueFactor = 1.5;
   Object.keys(deckTags)
-    .sort(byScores)
-    .map((tag) => {
+    .toSorted(byScores)
+    .forEach((tag) => {
       if (deckTags[tag] >= threshold[tag] * superiorValueFactor) {
         result.superior.push(tag);
       } else if (deckTags[tag] >= threshold[tag]) {

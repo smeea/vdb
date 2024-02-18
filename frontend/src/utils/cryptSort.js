@@ -12,51 +12,54 @@ import {
 
 const cryptSort = (cards, sortMethod) => {
   if (cards) {
-    cards = [...cards];
     switch (sortMethod) {
       case 'Name':
-        return cards.sort(byName);
+        return cards.toSorted(byName);
       case 'Capacity - Min to Max':
-        return cards.sort(byName).reverse().sort(byCapacity).reverse();
+        return cards
+          .toSorted(byName)
+          .toReversed()
+          .toSorted(byCapacity)
+          .toReversed();
       case 'Capacity - Min to Max > Group':
         return cards
-          .sort(byName)
-          .sort(byGroup)
-          .reverse()
-          .sort(byCapacity)
-          .reverse();
+          .toSorted(byName)
+          .toSorted(byGroup)
+          .toReversed()
+          .toSorted(byCapacity)
+          .toReversed();
       case 'Capacity - Max to Min':
-        return cards.sort(byName).sort(byCapacity);
+        return cards.toSorted(byName).toSorted(byCapacity);
       case 'Capacity - Max to Min > Group':
-        return cards.sort(byName).sort(byGroup).sort(byCapacity);
+        return cards.toSorted(byName).toSorted(byGroup).toSorted(byCapacity);
       case 'Capacity':
-        return cards.sort(byName).sort(byQuantity).sort(byCapacity);
+        return cards.toSorted(byName).toSorted(byQuantity).toSorted(byCapacity);
       case 'Quantity':
-        return cards.sort(byName).sort(byQuantity);
+        return cards.toSorted(byName).toSorted(byQuantity);
       case 'Quantity ': // SPACE SUFFIX IS INTENTIONAL
-        return cards.sort(byName).sort(byCapacity).sort(byQuantity);
+        return cards.toSorted(byName).toSorted(byCapacity).toSorted(byQuantity);
       case 'Quantity > Group':
-        return cards.sort(byName).sort(byGroup).sort(byQuantity);
+        return cards.toSorted(byName).toSorted(byGroup).toSorted(byQuantity);
       case 'Clan':
-        return cards.sort(byName).sort(byClan);
+        return cards.toSorted(byName).toSorted(byClan);
       case 'Clan > Group':
-        return cards.sort(byName).sort(byGroup).sort(byClan);
+        return cards.toSorted(byName).toSorted(byGroup).toSorted(byClan);
       case 'Clan ': // SPACE SUFFIX IS INTENTIONAL
-        return cards.sort(byName).sort(byCapacity).sort(byClan);
+        return cards.toSorted(byName).toSorted(byCapacity).toSorted(byClan);
       case 'Group':
-        return cards.sort(byName).sort(byGroup);
+        return cards.toSorted(byName).toSorted(byGroup);
       case 'Group > Clan':
-        return cards.sort(byName).sort(byClan).sort(byGroup);
+        return cards.toSorted(byName).toSorted(byClan).toSorted(byGroup);
       case 'Group ': // SPACE SUFFIX IS INTENTIONAL
-        return cards.sort(byName).sort(byCapacity).sort(byGroup);
+        return cards.toSorted(byName).toSorted(byCapacity).toSorted(byGroup);
       case 'Sect':
-        return cards.sort(byName).sort(byCapacity).sort(bySect);
+        return cards.toSorted(byName).toSorted(byCapacity).toSorted(bySect);
       case 'Player':
-        return cards.sort(byName).sort(byPlayer);
+        return cards.toSorted(byName).toSorted(byPlayer);
       case 'Date - Print':
-        return cards.sort(byName).sort(byDatePrint);
+        return cards.toSorted(byName).toSorted(byDatePrint);
       case 'Date - Win':
-        return cards.sort(byName).sort(byDateWin);
+        return cards.toSorted(byName).toSorted(byDateWin);
       default:
         return cards;
     }

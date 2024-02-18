@@ -1,10 +1,10 @@
 const getDeckInUrl = (deck) => {
   const cards = [];
 
-  Object.keys(deck.crypt).map((card) => {
+  Object.keys(deck.crypt).forEach((card) => {
     cards.push(`${card}=${deck.crypt[card].q};`);
   });
-  Object.keys(deck.library).map((card) => {
+  Object.keys(deck.library).forEach((card) => {
     cards.push(`${card}=${deck.library[card].q};`);
   });
 

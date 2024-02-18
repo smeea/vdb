@@ -8,7 +8,7 @@ const useDeckInInventory = (deck) => {
   let cryptInInventory;
   let libraryInInventory;
 
-  Object.keys(deck.crypt).map((cardid) => {
+  Object.keys(deck.crypt).forEach((cardid) => {
     if (deck.crypt[cardid].q > 0) {
       if (inventoryCrypt[cardid]) {
         const inInventory = Math.floor(
@@ -23,7 +23,7 @@ const useDeckInInventory = (deck) => {
     }
   });
 
-  Object.keys(deck.library).map((cardid) => {
+  Object.keys(deck.library).forEach((cardid) => {
     if (deck.library[cardid].q > 0) {
       if (inventoryLibrary[cardid] && deck.library[cardid].q > 0) {
         const inInventory = Math.floor(

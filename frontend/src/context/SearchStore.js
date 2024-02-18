@@ -73,12 +73,12 @@ export const clearSearchForm = (target) => {
       });
       break;
     case 'twd':
-      Object.keys(defaultsTwdForm).map((k) => {
+      Object.keys(defaultsTwdForm).forEach((k) => {
         searchTwdForm[k] = structuredClone(defaultsTwdForm[k]);
       });
       break;
     case 'pda':
-      Object.keys(defaultsPdaForm).map((k) => {
+      Object.keys(defaultsPdaForm).forEach((k) => {
         searchPdaForm[k] = structuredClone(defaultsPdaForm[k]);
       });
       break;

@@ -146,7 +146,7 @@ const Diff = () => {
 
       Object.keys(deck.crypt)
         .filter((card) => deck.crypt[card].q > 0)
-        .map((card) => {
+        .forEach((card) => {
           if (!deckTo.crypt[card]) {
             crypt[card] = { q: deck.crypt[card].q, c: cryptCardBase[card] };
           } else if (deck.crypt[card].q > deckTo.crypt[card].q) {
@@ -159,7 +159,7 @@ const Diff = () => {
 
       Object.keys(deck.library)
         .filter((card) => deck.library[card].q > 0)
-        .map((card) => {
+        .forEach((card) => {
           if (!deckTo.library[card]) {
             library[card] = {
               q: deck.library[card].q,

@@ -62,9 +62,11 @@ const Review = () => {
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
     if (deckid.length !== 32 || deckData.publicParent) {
       deckData.tags = [];
-      Object.values(useTags(cardsData.crypt, cardsData.library)).map((v) => {
-        deckData.tags = deckData.tags.concat(v);
-      });
+      Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
+        (v) => {
+          deckData.tags = deckData.tags.concat(v);
+        },
+      );
     }
     const d = {
       author: deckData.author,
@@ -89,7 +91,7 @@ const Review = () => {
   const getDiff = (cardsFrom, cardsTo) => {
     const diff = {};
 
-    [...Object.keys(cardsFrom), ...Object.keys(cardsTo)].map((cardid) => {
+    [...Object.keys(cardsFrom), ...Object.keys(cardsTo)].forEach((cardid) => {
       const fromQty = cardsFrom[cardid] ? cardsFrom[cardid].q : 0;
       const toQty = cardsTo[cardid] ? cardsTo[cardid].q : 0;
       if (fromQty !== toQty) {
@@ -103,12 +105,12 @@ const Review = () => {
   useEffect(() => {
     const diff = getDiff(
       { ...deckFrom?.crypt, ...deckFrom?.library },
-      { ...deckTo?.crypt, ...deckTo?.library }
+      { ...deckTo?.crypt, ...deckTo?.library },
     );
 
     if (Object.keys(diff).length) {
       const cards = [];
-      Object.keys(diff).map((card) => {
+      Object.keys(diff).forEach((card) => {
         cards.push(`${card}=${diff[card]};`);
       });
 
@@ -134,12 +136,12 @@ const Review = () => {
   useEffect(() => {
     if (hash && deckTo) {
       const deckWithHash = JSON.parse(
-        JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library })
+        JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library }),
       );
       hash
         .slice(1)
         .split(';')
-        .map((i) => {
+        .forEach((i) => {
           const j = i.split('=');
           if (j[0] > 200000) {
             deckWithHash.crypt[j[0]] = {
@@ -191,7 +193,7 @@ const Review = () => {
 
   const parentId = deckFrom?.description.replace(
     `Review of ${import.meta.env.VITE_BASE_URL}/decks/`,
-    ''
+    '',
   );
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
 

@@ -8,7 +8,7 @@ const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
 
   const inventoryDeckDelete = (deck) => {
     const cards = {};
-    Object.values({ ...deck.crypt, ...deck.library }).map((card) => {
+    Object.values({ ...deck.crypt, ...deck.library }).forEach((card) => {
       if (card.q) {
         cards[card.c.Id] = {
           c: card.c,

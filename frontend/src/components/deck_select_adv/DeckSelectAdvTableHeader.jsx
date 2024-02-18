@@ -87,7 +87,7 @@ const DeckSelectAdvTableHeader = ({
               options={clanOptions}
               onChange={(e) => setClanFilter(e.value)}
               value={clanOptions.find(
-                (obj) => obj.value === clanFilter.toLowerCase()
+                (obj) => obj.value === clanFilter.toLowerCase(),
               )}
               isSearchable
               noDropdown

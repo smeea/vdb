@@ -36,7 +36,7 @@ const AccountPlaytestModal = ({ setShow }) => {
         />
         <div>
           {value &&
-            [...newPlaytesters.reverse(), ...value.sort()]
+            [...newPlaytesters.toReversed(), ...value.toSorted()]
               .filter((u) => u != username)
               .map((u) => (
                 <AccountPlaytestPlayer

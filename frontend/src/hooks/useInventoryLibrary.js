@@ -12,7 +12,7 @@ const useInventoryLibrary = (
   compact,
   type,
   discipline,
-  onlyNotes
+  onlyNotes,
 ) => {
   const usedLibrary = useSnapshot(usedStore).library;
   const { libraryCardBase } = useApp();
@@ -34,7 +34,7 @@ const useInventoryLibrary = (
       'Flight',
       'Maleficia',
       'Striga',
-    ].sort();
+    ].toSorted();
 
     [
       'All',

@@ -17,7 +17,7 @@ const testStar = (eventName) => {
 const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
   const getStars = (decks) => {
     let stars = 0;
-    decks.map((deck) => {
+    decks.forEach((deck) => {
       if (testStar(deck['event'])) {
         stars += 1;
       }
@@ -57,7 +57,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
       </Disclosure.Button>
       <Disclosure.Panel>
         <div className="space-y-1.5 px-2">
-          {decks.sort(byDate).map((deck) => {
+          {decks.toSorted(byDate).map((deck) => {
             return (
               <TwdHallFameDeckHeader
                 key={deck.deckid}

@@ -5,9 +5,9 @@ const useKeyDisciplines = (crypt = {}) => {
   const disciplinesDetailed = {};
   const disciplinesDict = {};
 
-  for (const card of Object.keys(crypt)) {
+  Object.keys(crypt).forEach((card) => {
     cryptTotal += crypt[card].q;
-    for (const d of Object.keys(crypt[card].c.Disciplines)) {
+    Object.keys(crypt[card].c.Disciplines).forEach((d) => {
       const levelModifier = crypt[card].c.Disciplines[d] > 1 ? 1.5 : 1;
 
       if (disciplinesDict[d] === undefined) {
@@ -24,16 +24,16 @@ const useKeyDisciplines = (crypt = {}) => {
         disciplinesDetailed[d][crypt[card].c.Disciplines[d]] += crypt[card].q;
         disciplinesDetailed[d][0] += crypt[card].q * levelModifier;
       }
-    }
-  }
+    });
+  });
 
   const disciplinesForSort = [];
-  Object.keys(disciplinesDict).map((key) => {
+  Object.keys(disciplinesDict).forEach((key) => {
     disciplinesForSort.push([key, disciplinesDict[key]]);
   });
 
   const disciplinesSet = disciplinesForSort
-    .sort((a, b) => b[1] - a[1])
+    .toSorted((a, b) => b[1] - a[1])
     .map((i) => {
       return i[0];
     });
@@ -41,8 +41,8 @@ const useKeyDisciplines = (crypt = {}) => {
   let keyDisciplines = 0;
   const REQUIRED_FRACTION = 0.5;
   disciplinesForSort
-    .sort((a, b) => b[1] - a[1])
-    .map((i) => {
+    .toSorted((a, b) => b[1] - a[1])
+    .forEach((i) => {
       if (i[1] >= cryptTotal * REQUIRED_FRACTION) {
         keyDisciplines += 1;
       }

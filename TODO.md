@@ -7,6 +7,7 @@
 # FEATURES
 - Playtest reports
 - Change password to UI
+- More events to ETDA + permission for Rune
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
@@ -14,3 +15,4 @@
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
 - Back button behavior
 - Update to Headlessui 2 (review new components)
+- Refactor useless map to forEach

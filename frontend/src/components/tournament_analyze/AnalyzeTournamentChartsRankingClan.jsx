@@ -8,10 +8,10 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   const data = useMemo(() => {
     const d = {};
 
-    Object.values(decks).map((deck) => {
+    Object.values(decks).forEach((deck) => {
       const position = info.players - deck.score.rank;
       const inSearch = Object.values(searchResults).some(
-        (d) => d.author === deck.author
+        (d) => d.author === deck.author,
       );
       const clan = getClan(deck.crypt) || 'Multi';
 
@@ -40,7 +40,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   return (
     <div className="flex basis-full flex-col sm:py-4">
       {Object.keys(data)
-        .sort((a, b) => a.localeCompare(b))
+        .toSorted((a, b) => a.localeCompare(b))
         .map((s) => {
           const clan =
             isMobile && s.includes('antitribu')

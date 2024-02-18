@@ -47,7 +47,7 @@ const Text = ({ text }) => {
     (match, idx) => {
       const cardBase = { ...nativeCrypt, ...nativeLibrary };
       const cardid = Object.keys(cardBase).find(
-        (j) => cardBase[j]['Name'] == match
+        (j) => cardBase[j]['Name'] == match,
       );
 
       const card =
@@ -68,7 +68,7 @@ const Text = ({ text }) => {
       } else {
         return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
       }
-    }
+    },
   );
 
   return <>{textWithIcons}</>;

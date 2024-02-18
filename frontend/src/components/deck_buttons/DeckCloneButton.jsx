@@ -12,10 +12,10 @@ const DeckCloneButton = ({ deck, inTwdPda, noText }) => {
   const cloneDeck = () => {
     const name = `${deck.name} [by ${deck.author}]`;
     const cards = {};
-    Object.keys(deck.crypt).map((cardid) => {
+    Object.keys(deck.crypt).forEach((cardid) => {
       cards[cardid] = deck.crypt[cardid].q;
     });
-    Object.keys(deck.library).map((cardid) => {
+    Object.keys(deck.library).forEach((cardid) => {
       cards[cardid] = deck.library[cardid].q;
     });
 

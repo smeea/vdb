@@ -57,27 +57,29 @@ export const getRestrictions = (deck, limitedCards) => {
   let hasIllegalDate;
   let hasBanned;
   let hasLimited;
-  [...Object.values(deck.crypt), ...Object.values(deck.library)].map((card) => {
-    if (card.q < 1) return;
-    if (card.c.Banned) hasBanned = true;
-    if (
-      limitedCards &&
-      ![
-        ...Object.keys(limitedCards.crypt),
-        ...Object.keys(limitedCards.library),
-      ].includes(card.c.Id)
-    ) {
-      hasLimited = true;
-    }
+  [...Object.values(deck.crypt), ...Object.values(deck.library)].forEach(
+    (card) => {
+      if (card.q < 1) return;
+      if (card.c.Banned) hasBanned = true;
+      if (
+        limitedCards &&
+        ![
+          ...Object.keys(limitedCards.crypt),
+          ...Object.keys(limitedCards.library),
+        ].includes(card.c.Id)
+      ) {
+        hasLimited = true;
+      }
 
-    const legalRestriction = getLegality(card.c);
-    if (legalRestriction && legalRestriction === PLAYTEST) {
-      hasPlaytest = true;
-    }
-    if (legalRestriction && legalRestriction !== PLAYTEST) {
-      hasIllegalDate = legalRestriction;
-    }
-  });
+      const legalRestriction = getLegality(card.c);
+      if (legalRestriction && legalRestriction === PLAYTEST) {
+        hasPlaytest = true;
+      }
+      if (legalRestriction && legalRestriction !== PLAYTEST) {
+        hasIllegalDate = legalRestriction;
+      }
+    },
+  );
 
   return {
     hasBanned: hasBanned,
@@ -120,35 +122,18 @@ export const getGroups = (cards) => {
 };
 
 export const getTotalCardsGroupedBy = (cards, property) => {
-  const propertyList = [
-    ...new Set(cards.map((card) => getCardProperty(card, property))),
-  ];
+  const groupedCards = Object.groupBy(cards, (card) => {
+    return card.c[property];
+  });
   const resultObject = {};
-  propertyList.map(
-    (propertyIndex) =>
-      (resultObject[propertyIndex] = countCards(
-        cards.filter(
-          (card) => getCardProperty(card, property) === propertyIndex
-        )
-      ))
-  );
-
+  Object.entries(groupedCards).forEach(([k, v]) => {
+    resultObject[k] = countCards(v);
+  });
   return resultObject;
 };
 
 export const getCardsGroupedBy = (cards, property) => {
-  const propertyList = [
-    ...new Set(cards.map((card) => getCardProperty(card, property))),
-  ];
-  const resultObject = {};
-  propertyList.map(
-    (propertyIndex) =>
-      (resultObject[propertyIndex] = cards.filter(
-        (card) => getCardProperty(card, property) === propertyIndex
-      ))
-  );
-
-  return resultObject;
+  return Object.groupBy(cards, (card) => card.c[property]);
 };
 
 export const containCard = (cards, card) => {
@@ -171,7 +156,7 @@ export const getSoftMax = (softList) => {
 
 export const getCardsArray = (cardsList) => {
   const cryptArr = [];
-  Object.keys(cardsList).map((card) => {
+  Object.keys(cardsList).forEach((card) => {
     for (let i = 0; i < cardsList[card].q; i++) {
       cryptArr.push(cardsList[card].c);
     }
@@ -184,7 +169,7 @@ export const getClan = (crypt) => {
 
   Object.values(crypt)
     .filter((card) => card.c.Name !== 'Anarch Convert')
-    .map((card) => {
+    .forEach((card) => {
       const clan = card.c.Clan;
       if (clans[clan]) {
         clans[clan] += card.q;
@@ -203,7 +188,7 @@ export const getClan = (crypt) => {
         return { ...acc, t: t };
       }
     },
-    { clan: null, q: 0, t: 0 }
+    { clan: null, q: 0, t: 0 },
   );
 
   if (topClan.q / topClan.t > 0.5) {
@@ -218,7 +203,7 @@ export const getSect = (crypt) => {
 
   Object.values(crypt)
     .filter((card) => card.c.Name !== 'Anarch Convert')
-    .map((card) => {
+    .forEach((card) => {
       const sect = card.c.Sect;
       if (sects[sect]) {
         sects[sect] += card.q;
@@ -236,7 +221,7 @@ export const getSect = (crypt) => {
         return { ...acc, t: t };
       }
     },
-    { sect: null, q: 0, t: 0 }
+    { sect: null, q: 0, t: 0 },
   );
 
   if (topSect.q / topSect.t > 0.65) {

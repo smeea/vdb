@@ -2,7 +2,7 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
   const { default: unidecode } = await import('unidecode');
 
   const cardbase = {};
-  Object.values(cryptCardBase).map((card) => {
+  Object.values(cryptCardBase).forEach((card) => {
     const adv = !!card?.Adv[0];
     const name = card['ASCII Name'].toLowerCase().replace(/\W/g, '');
 
@@ -15,7 +15,7 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
     }
   });
 
-  Object.values(libraryCardBase).map((card) => {
+  Object.values(libraryCardBase).forEach((card) => {
     const name = card['ASCII Name'].toLowerCase().replace(/\W/g, '');
     cardbase[name] = { base: card.Id };
   });
@@ -89,7 +89,7 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
   };
 
   const deckArray = deckText.split(/\n/);
-  deckArray.map((i) => {
+  deckArray.forEach((i) => {
     i = i.trim();
     if (i.startsWith('Deck Name: ')) {
       deck.name = i.replace('Deck Name: ', '');

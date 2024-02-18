@@ -8,7 +8,7 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
     const qty = Object.keys(decks).length;
     const result = {};
 
-    Object.values(decks).map((deck) => {
+    Object.values(decks).forEach((deck) => {
       deck.tags.superior.forEach((t) => {
         if (result[t]) {
           result[t] += 1.5;
