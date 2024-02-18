@@ -93,6 +93,13 @@ const AnalyzeLoadButtons = ({
                 <ButtonIconed
                   className="w-full"
                   variant="primary"
+                  onClick={() => handlePrepared(11192)}
+                  title="White Turtle (Vác, Pest, Hungary)"
+                  text="White Turtle (Vác, Pest, Hungary) [2024-01-27]"
+                />
+                <ButtonIconed
+                  className="w-full"
+                  variant="primary"
                   onClick={() => handlePrepared(11023)}
                   title="Finnish Nationals 2023"
                   icon={<StarFill />}

@@ -92,6 +92,19 @@ const TournamentAnalyze = () => {
     const wsScores = wb.Sheets['Methuselahs'];
     const dataScores = utils.sheet_to_csv(wsScores).split('\n');
 
+    const getFinalPlace = (playerNumber) => {
+      const wsFinalTable = wb.Sheets['Final Round'];
+      const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split('\n');
+
+      const finalPlace = dataFinalTable
+        .filter((i) => {
+          const array = i.split(',');
+          return array[0] == playerNumber && array[21];
+        })[0]
+        .split(',')[21];
+      return parseInt(finalPlace);
+    };
+
     let totalPlayers = 0;
     let totalRounds = 0;
     let totalMatches = 0;
@@ -118,10 +131,16 @@ const TournamentAnalyze = () => {
     dataScores.forEach((n) => {
       const array = n.split(',');
       const veknId = parseInt(array[4]);
+      const playerNumber = parseInt(array[0]);
       if (!veknId) return;
 
       const rank =
-        parseInt(array[20]) !== 2 ? parseInt(array[20]) : parseInt(array[17]);
+        parseInt(array[20]) > 5
+          ? parseInt(array[20])
+          : wb.Sheets['Final Round']
+          ? getFinalPlace(playerNumber)
+          : parseInt(array[17]);
+
       const name = `${array[1]} ${array[2]}`;
 
       const score = {
