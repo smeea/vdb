@@ -94,27 +94,27 @@ const AnalyzeLoadButtons = ({
                   className="w-full"
                   variant="primary"
                   onClick={() => handlePrepared(11192)}
-                  title="White Turtle (Vác, Pest, Hungary)"
-                  text="White Turtle (Vác, Pest, Hungary) [2024-01-27]"
+                  title="White Turtle - Vác, Hungary"
+                  text="White Turtle - Vác, Hungary [2024-01-27]"
                 />
                 <ButtonIconed
                   className="w-full"
                   variant="primary"
                   onClick={() => handlePrepared(11023)}
-                  title="Finnish Nationals 2023"
+                  title="Finnish Nationals 2023 - Espoo, Finland"
                   icon={<StarFill />}
-                  text="Finnish Nationals 2023 [2023-11-04]"
+                  text="Finnish Nationals 2023 - Espoo, Finland [2023-11-04]"
                 />
                 <ButtonIconed
                   className="w-full"
                   variant="primary"
                   onClick={() => handlePrepared(10367)}
-                  title="Finnish Nationals 2022"
+                  title="Finnish Nationals 2022 - Espoo, Finland"
                   icon={<StarFill />}
-                  text="Finnish Nationals 2022 [2022-11-05]"
+                  text="Finnish Nationals 2022 - Espoo, Finland [2022-11-05]"
                 />
                 {/* TO TEST FILES BEFORE BUNDLING INTO ARCHIVE */}
-                {username == '1' && (
+                {['1', 'crauseon'].includes(username) && (
                   <ButtonIconed
                     className="w-full"
                     variant="primary"

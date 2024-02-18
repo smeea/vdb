@@ -7,7 +7,6 @@
 # FEATURES
 - Playtest reports
 - Change password to UI
-- More events to ETDA + permission for Rune
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
