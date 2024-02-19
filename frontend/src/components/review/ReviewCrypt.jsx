@@ -50,6 +50,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         setShowInfo={setShowInfo}
         cards={crypt}
         cardChange={cardChange}
+        isEditable
       />
       <DiffCryptTable
         isEditable
