@@ -42,8 +42,9 @@ const DeckDraw = ({ deck, setShow }) => {
   const [drawedLibrary, setDrawedLibrary] = useState([]);
   const [burnedCrypt, setBurnedCrypt] = useState([]);
   const [burnedLibrary, setBurnedLibrary] = useState([]);
-  const [initialTransfers, setInitialTransfers] =
-    useState(getRandomTransfers());
+  const [initialTransfers, setInitialTransfers] = useState(
+    getRandomTransfers()
+  );
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
@@ -78,14 +79,16 @@ const DeckDraw = ({ deck, setShow }) => {
 
   const burnCrypt = (index) => {
     const hand = drawedCrypt;
-    setBurnedCrypt([...burnedCrypt, hand.toSpliced(index, 1)]);
+    const burnedCard = hand.splice(index, 1)[0];
+    setBurnedCrypt([...burnedCrypt, burnedCard]);
     setDrawedCrypt(hand);
     setCryptHandSize(cryptHandSize - 1);
   };
 
   const burnLibrary = (index) => {
     const hand = drawedLibrary;
-    setBurnedLibrary([...burnedLibrary, hand.toSpliced(index, 1)]);
+    const burnedCard = hand.splice(index, 1)[0];
+    setBurnedLibrary([...burnedLibrary, burnedCard]);
     let newDrawedCards = [];
     let newRestCards = [];
     if (restLibrary.length > 0) {
@@ -99,7 +102,7 @@ const DeckDraw = ({ deck, setShow }) => {
   };
 
   let burnedCapacityTotal = 0;
-  burnedCrypt.map((card) => {
+  burnedCrypt.forEach((card) => {
     burnedCapacityTotal += parseInt(card.Capacity);
   });
 
