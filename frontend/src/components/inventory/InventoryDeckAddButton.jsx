@@ -27,7 +27,7 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
         variant={inInventory ? 'third' : 'primary'}
         onClick={() => setShowConfirmation(true)}
         title={inInventory ? 'Already in Inventory' : 'Add Deck to Inventory'}
-        text={inInventory ? inInventory : null}
+        text={inInventory ?? null}
         icon={inInventory ? <Check2 /> : <PlusLg />}
       />
       {showConfirmation && (

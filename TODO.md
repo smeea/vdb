@@ -15,3 +15,4 @@
 - Back button behavior
 - Update to Headlessui 2 (review new components)
 - Refactor useless map to forEach
+- Update prompt using vite-pwa
