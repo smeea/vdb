@@ -6,7 +6,7 @@ import {
   DeckCopyUrlButton,
   DeckImport,
   DeckExportButton,
-  DeckProxyButton,
+  DeckProxyButtonWrapper,
   DeckMissingButton,
   DeckRecommendationButton,
   DeckDrawButton,
@@ -57,7 +57,7 @@ const DeckButtons = ({
             <DeckDiffButton deckid={deck.deckid} />
             <DeckReviewButton deck={deck} />
             <DeckCopyUrlButton setQrUrl={setQrUrl} deck={deck} />
-            <DeckProxyButton deck={deck} />
+            <DeckProxyButtonWrapper deck={deck} />
             <DeckRecommendationButton
               setShowRecommendation={setShowRecommendation}
             />

@@ -102,7 +102,6 @@ export { default as DeckDrawButton } from './deck_buttons/DeckDrawButton.jsx';
 export { default as DeckExportButton } from './deck_buttons/DeckExportButton.jsx';
 export { default as DeckImportButton } from './deck_buttons/DeckImportButton.jsx';
 export { default as DeckMissingButton } from './deck_buttons/DeckMissingButton.jsx';
-export { default as DeckProxyButton } from './deck_buttons/DeckProxyButton.jsx';
 export { default as DeckPublicSwitchButton } from './deck_buttons/DeckPublicSwitchButton.jsx';
 export { default as DeckPublicSyncButton } from './deck_buttons/DeckPublicSyncButton.jsx';
 export { default as DeckPublicToggleButton } from './deck_buttons/DeckPublicToggleButton.jsx';
@@ -122,7 +121,8 @@ export { default as DeckImportAmaranth } from './deck_import/DeckImportAmaranth.
 export { default as DeckImportBadCardsModal } from './deck_import/DeckImportBadCardsModal.jsx';
 export { default as DeckImportText } from './deck_import/DeckImportText.jsx';
 
-export { default as DeckProxyTableSetSelect } from './deck_proxy/DeckProxyTableSetSelect.jsx';
+export { default as DeckProxyButton } from './deck_proxy/DeckProxyButton.jsx';
+export { default as DeckProxyButtonWrapper } from './deck_proxy/DeckProxyButton.jsx';
 export { default as DeckProxyCrypt } from './deck_proxy/DeckProxyCrypt.jsx';
 export { default as DeckProxyCryptTable } from './deck_proxy/DeckProxyCryptTable.jsx';
 export { default as DeckProxyCryptTableRow } from './deck_proxy/DeckProxyCryptTableRow.jsx';
@@ -130,6 +130,7 @@ export { default as DeckProxyLibrary } from './deck_proxy/DeckProxyLibrary.jsx';
 export { default as DeckProxyLibraryTable } from './deck_proxy/DeckProxyLibraryTable.jsx';
 export { default as DeckProxyLibraryTableRow } from './deck_proxy/DeckProxyLibraryTableRow.jsx';
 export { default as DeckProxySelectModal } from './deck_proxy/DeckProxySelectModal.jsx';
+export { default as DeckProxyTableSetSelect } from './deck_proxy/DeckProxyTableSetSelect.jsx';
 
 export { default as DeckPublicDiff } from './deck_public/DeckPublicDiff.jsx';
 export { default as DeckPublicToggleConfirmation } from './deck_public/DeckPublicToggleConfirmation.jsx';
@@ -156,6 +157,8 @@ export { default as DiffCryptTableRow } from './diff/DiffCryptTableRow.jsx';
 export { default as DiffLibrary } from './diff/DiffLibrary.jsx';
 export { default as DiffLibraryTable } from './diff/DiffLibraryTable.jsx';
 export { default as DiffLibraryTableRow } from './diff/DiffLibraryTableRow.jsx';
+export { default as DiffMissingModalWrapper } from './diff/DiffMissingModalWrapper.jsx';
+export { default as DiffProxyButtonWrapper } from './diff/DiffProxyButtonWrapper.jsx';
 export { default as DiffQuantityDiff } from './diff/DiffQuantityDiff.jsx';
 export { default as DiffSelect } from './diff/DiffSelect.jsx';
 export { default as DiffSelectDeck } from './diff/DiffSelectDeck.jsx';

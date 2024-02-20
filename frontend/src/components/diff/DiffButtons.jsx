@@ -2,32 +2,25 @@ import React from 'react';
 import {
   DiffCopyUrlButton,
   DiffBackButton,
-  DeckProxyButton,
+  DiffProxyButtonWrapper,
   DeckMissingButton,
 } from '@/components';
 
-const DiffButtons = ({ deckFrom, deckTo, missingCrypt, missingLibrary }) => {
+const DiffButtons = ({ deckFrom, deckTo }) => {
   return (
-    <>
-      <div className="flex flex-col space-y-1">
-        <DiffBackButton deckid={deckFrom?.deckid} />
-        <DiffCopyUrlButton
-          deckFromId={deckFrom?.deckid}
-          deckToId={deckTo?.deckid}
-        />
-        <DeckProxyButton
-          deck={deckFrom}
-          missingCrypt={missingCrypt}
-          missingLibrary={missingLibrary}
-          inDiff
-        />
-        <DeckMissingButton
-          deck={deckFrom}
-          missingCrypt={missingCrypt}
-          missingLibrary={missingLibrary}
-        />
-      </div>
-    </>
+    <div className="flex flex-col space-y-1">
+      <DiffBackButton deckid={deckFrom?.deckid} />
+      <DiffCopyUrlButton
+        deckFromId={deckFrom?.deckid}
+        deckToId={deckTo?.deckid}
+      />
+      {deckFrom && deckTo && (
+        <>
+          <DiffProxyButtonWrapper deckFrom={deckFrom} deckTo={deckTo} />
+          <DeckMissingButton deck={deckFrom} deckTo={deckTo} />
+        </>
+      )}
+    </div>
   );
 };
 

@@ -136,48 +136,6 @@ const Diff = () => {
     if (deckTo) setErrorTo(false);
   }, [deckTo?.deckid]);
 
-  const [missingCrypt, setMissingCrypt] = useState({});
-  const [missingLibrary, setMissingLibrary] = useState({});
-
-  useEffect(() => {
-    if (deck && deckTo) {
-      const crypt = {};
-      const library = {};
-
-      Object.keys(deck.crypt)
-        .filter((card) => deck.crypt[card].q > 0)
-        .forEach((card) => {
-          if (!deckTo.crypt[card]) {
-            crypt[card] = { q: deck.crypt[card].q, c: cryptCardBase[card] };
-          } else if (deck.crypt[card].q > deckTo.crypt[card].q) {
-            crypt[card] = {
-              q: deck.crypt[card].q - deckTo.crypt[card].q,
-              c: cryptCardBase[card],
-            };
-          }
-        });
-
-      Object.keys(deck.library)
-        .filter((card) => deck.library[card].q > 0)
-        .forEach((card) => {
-          if (!deckTo.library[card]) {
-            library[card] = {
-              q: deck.library[card].q,
-              c: libraryCardBase[card],
-            };
-          } else if (deck.library[card].q > deckTo.library[card].q) {
-            library[card] = {
-              q: deck.library[card].q - deckTo.library[card].q,
-              c: libraryCardBase[card],
-            };
-          }
-        });
-
-      setMissingCrypt(crypt);
-      setMissingLibrary(library);
-    }
-  }, [deck, deckTo]);
-
   return (
     <div className="deck-container mx-auto">
       <FlexGapped>
@@ -238,12 +196,7 @@ const Diff = () => {
         {!isMobile && (
           <div className="basis-2/12 max-lg:hidden">
             <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
-              <DiffButtons
-                missingCrypt={missingCrypt}
-                missingLibrary={missingLibrary}
-                deckFrom={deck}
-                deckTo={deckTo}
-              />
+              <DiffButtons deckFrom={deck} deckTo={deckTo} />
             </div>
           </div>
         )}
@@ -272,12 +225,7 @@ const Diff = () => {
           centered
           size="sm"
         >
-          <DiffButtons
-            missingCrypt={missingCrypt}
-            missingLibrary={missingLibrary}
-            deckFrom={deck}
-            deckTo={deckTo}
-          />
+          <DiffButtons deckFrom={deck} deckTo={deckTo} />
         </Modal>
       )}
     </div>

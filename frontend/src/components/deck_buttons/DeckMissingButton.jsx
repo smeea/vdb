@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import Cart4 from '@/assets/images/icons/cart4.svg?react';
-import { ButtonIconed, DeckMissingModalWrapper } from '@/components';
+import {
+  ButtonIconed,
+  DiffMissingModalWrapper,
+  DeckMissingModalWrapper,
+} from '@/components';
 import { useApp } from '@/context';
 
-const DeckMissingButton = ({ deck }) => {
+const DeckMissingButton = ({ deck, deckTo }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showModal, setShowModal] = useState();
 
@@ -27,7 +31,17 @@ const DeckMissingButton = ({ deck }) => {
         text="Missing Cards"
       />
       {showModal && (
-        <DeckMissingModalWrapper deck={deck} handleClose={handleClose} />
+        <>
+          {deckTo ? (
+            <DiffMissingModalWrapper
+              deckFrom={deck}
+              deckTo={deckTo}
+              handleClose={handleClose}
+            />
+          ) : (
+            <DeckMissingModalWrapper deck={deck} handleClose={handleClose} />
+          )}
+        </>
       )}
     </>
   );
