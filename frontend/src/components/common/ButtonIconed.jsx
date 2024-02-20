@@ -9,10 +9,20 @@ const ButtonIconed = ({
   text,
   title,
   type,
-  variant,
+  variant = 'primary',
   borderStyle,
   noOutline,
 }) => {
+  const iconStyle = {
+    primary: 'text-fgFourth dark:text-fgThirdDark',
+    secondary: 'text-fgFourth dark:text-fgThirdDark',
+    third: 'text-black dark:text-fgPrimaryDark',
+    fourth: 'text-black dark:text-fgPrimaryDark',
+    danger: 'text-white dark:text-whiteDark',
+    success:
+      'bg-bgSuccess dark:bg-bgSuccessDark border-bgSuccess dark:border-borderSuccessDark',
+  };
+
   return (
     <Button
       className={`min-h-[41px] ${className}`}
@@ -25,9 +35,7 @@ const ButtonIconed = ({
       noOutline={noOutline}
     >
       <div className="flex items-center justify-center gap-2">
-        <div className="flex text-fgFourth dark:text-fgThirdDark items-center">
-          {icon}
-        </div>
+        <div className={`flex ${iconStyle[variant]} items-center`}>{icon}</div>
         {text && <div className="font-normal">{text}</div>}
       </div>
     </Button>
