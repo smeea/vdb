@@ -1,5 +1,11 @@
 [
   {
+    "version": "2024-02-19",
+    "changes": [
+      "Fix bugs introduced by recent update"
+    ]
+  },
+  {
     "version": "2024-02-18",
     "changes": [
       "Performance improvements for users with big inventory",
