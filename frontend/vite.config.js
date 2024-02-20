@@ -1,11 +1,17 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react-swc';
+import legacy from '@vitejs/plugin-legacy';
 import svgr from 'vite-plugin-svgr';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   plugins: [
+    legacy({
+      targets: ['defaults', 'not IE 11'],
+      renderLegacyChunks: true,
+      modernPolyfills: true,
+    }),
     svgr({
       exportAsDefault: true,
     }),
