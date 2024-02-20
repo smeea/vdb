@@ -481,9 +481,7 @@ export const AppProvider = (props) => {
   };
 
   useEffect(() => {
-    if (decks && inventoryMode) {
-      setupHardAndSoftInventory();
-    }
+    if (decks) setupHardAndSoftInventory();
   }, [decks, inventoryMode]);
 
   const addToTarget = (target, deckid, id, quantity) => {

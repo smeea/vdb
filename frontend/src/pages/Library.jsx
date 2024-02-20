@@ -39,7 +39,7 @@ const Library = () => {
 
   const showToggleAddMode = useMemo(() => {
     return deck && libraryResults && !isMobile && !isDesktop;
-  }, [deck, isMobile, isDesktop, libraryResults]);
+  }, [deck?.deckid, isMobile, isDesktop, libraryResults]);
 
   const showResultCol = !(isMobile && showLibrarySearch);
 
@@ -47,7 +47,7 @@ const Library = () => {
     if (!deck && decks !== undefined && lastDeckId) {
       setDeck(decks[lastDeckId]);
     }
-  }, [deck, decks, lastDeckId]);
+  }, [deck?.deckid, decks, lastDeckId]);
 
   return (
     <div className="search-container mx-auto">

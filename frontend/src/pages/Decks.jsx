@@ -91,7 +91,7 @@ const Decks = () => {
       Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
         (v) => {
           deckData.tags = deckData.tags.concat(v);
-        },
+        }
       );
     }
     const d = {
@@ -217,7 +217,7 @@ const Decks = () => {
       setError(false);
       if (!deckid) navigate(`/decks/${deck.deckid}`);
     }
-  }, [deck]);
+  }, [deck?.deckid]);
 
   return (
     <div className="deck-container mx-auto">

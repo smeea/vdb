@@ -57,7 +57,7 @@ const Diff = () => {
         const cardsData = useDeck(
           deckData.cards,
           cryptCardBase,
-          libraryCardBase,
+          libraryCardBase
         );
 
         const d = {
@@ -130,11 +130,11 @@ const Diff = () => {
 
   useEffect(() => {
     if (deck) setErrorFrom(false);
-  }, [deck]);
+  }, [deck?.deckid]);
 
   useEffect(() => {
     if (deckTo) setErrorTo(false);
-  }, [deckTo]);
+  }, [deckTo?.deckid]);
 
   const [missingCrypt, setMissingCrypt] = useState({});
   const [missingLibrary, setMissingLibrary] = useState({});
