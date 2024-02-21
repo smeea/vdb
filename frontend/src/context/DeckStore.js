@@ -172,7 +172,7 @@ export const deckLocalize = (
   localizedCrypt,
   nativeCrypt,
   localizedLibrary,
-  nativeLibrary,
+  nativeLibrary
 ) => {
   Object.values(deckStore.deck.crypt).forEach((card) => {
     const id = card.c.Id;
@@ -195,9 +195,8 @@ const changeMaster = (deckid) => {
   const oldMasterDeckid = deckStore.decks[deckid].master;
 
   if (oldMasterDeckid) {
-    const branches = [...deckStore.decks[oldMasterDeckid].branches].toSpliced(
-      branches.indexOf(deckid),
-      1,
+    const branches = deckStore.decks[oldMasterDeckid].branches.filter(
+      (i) => i !== deckid
     );
     branches.push(oldMasterDeckid);
 

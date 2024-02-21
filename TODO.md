@@ -2,6 +2,10 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
+- Login page on mobile in decks
+- Precons group selected on mobile in decks when not logged
+- Nephtali to +votes filter
+- Crypt to quick search
 
 # FEATURES
 - Playtest reports
@@ -15,3 +19,6 @@
 - Update to Headlessui 2 (review new components)
 - Refactor useless map to forEach
 - Update prompt using vite-pwa
+- Remove legacy polyfills when Safari adopts groupBy
+- Tailwind 'divide' to capacity to ButtonGroup
+- Tailwind spinner animation
