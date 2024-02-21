@@ -5,7 +5,6 @@
 - Login page on mobile in decks
 - Precons group selected on mobile in decks when not logged
 - Nephtali to +votes filter
-- Crypt to quick search
 
 # FEATURES
 - Playtest reports
