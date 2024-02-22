@@ -43,7 +43,7 @@ const ResultUsed = ({ card }) => {
             className={`flex basis-2/5 justify-center text-sm ${
               inInventory >= softUsedMax + hardUsedTotal
                 ? 'text-midGray dark:text-midGrayDark'
-                : 'text-lightGray dark:text-white'
+                : 'text-white dark:text-white'
             } `}
           >
             {inInventory >= softUsedMax + hardUsedTotal
