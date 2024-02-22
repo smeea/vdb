@@ -217,6 +217,7 @@ export { default as OfflineNotification } from './misc/OfflineNotification.jsx';
 export { default as SelectLabelCrypt } from './misc/SelectLabelCrypt.jsx';
 export { default as SelectLabelLibrary } from './misc/SelectLabelLibrary.jsx';
 export { default as SortButton } from './misc/SortButton.jsx';
+export { default as Spinner } from './misc/Spinner.jsx';
 export { default as ThemeSelect } from './misc/ThemeSelect.jsx';
 export { default as NavToggle } from './misc/NavToggle.jsx';
 export { default as NavMobileToggle } from './misc/NavMobileToggle.jsx';

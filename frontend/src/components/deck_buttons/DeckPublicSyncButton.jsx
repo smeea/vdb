@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
-import Spinner from '@/assets/images/icons/three-dots.svg?react';
-import { ModalConfirmation, DeckPublicDiff, ButtonIconed } from '@/components';
+import {
+  Spinner,
+  ModalConfirmation,
+  DeckPublicDiff,
+  ButtonIconed,
+} from '@/components';
 import { useApp, deckStore } from '@/context';
 
 const DeckPublicSyncButton = ({ deck }) => {

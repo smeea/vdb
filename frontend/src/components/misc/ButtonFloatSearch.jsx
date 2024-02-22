@@ -1,7 +1,6 @@
 import React from 'react';
 import Check2 from '@/assets/images/icons/check2.svg?react';
-import Spinner from '@/assets/images/icons/three-dots.svg?react';
-import { ButtonFloat, ErrorOverlay } from '@/components';
+import { Spinner, ButtonFloat, ErrorOverlay } from '@/components';
 
 const ButtonFloatSearch = ({ handleSearch, error, isLoading }) => {
   return (
@@ -9,7 +8,7 @@ const ButtonFloatSearch = ({ handleSearch, error, isLoading }) => {
       {!isLoading ? (
         <Check2 width="35" height="35" viewBox="0 0 16 16" />
       ) : (
-        <Spinner width="35" height="35" viewBox="0 0 16 16" />
+        <Spinner className="size-7" />
       )}
       {error && <ErrorOverlay placement="left">{error}</ErrorOverlay>}
     </ButtonFloat>

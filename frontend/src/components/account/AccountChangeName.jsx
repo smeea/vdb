@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg?react';
-import Spinner from '@/assets/images/icons/three-dots.svg?react';
 import PenFill from '@/assets/images/icons/pen-fill.svg?react';
 import {
+  Spinner,
   Input,
   ConditionalTooltipOrModal,
   ErrorOverlay,

@@ -3,6 +3,8 @@
 - Mobile support for Tournament Analyze
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - InventoryUsed data for newly opened deck
+- Colors in Sync Public
+- Sync Public
 
 # FEATURES
 - Playtest reports
@@ -18,4 +20,3 @@
 - Update prompt using vite-pwa
 - Remove legacy polyfills when Safari adopts groupBy
 - Tailwind 'divide' to capacity to ButtonGroup
-- Tailwind spinner animation

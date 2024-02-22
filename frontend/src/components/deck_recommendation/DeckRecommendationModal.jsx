@@ -1,6 +1,6 @@
 import React from 'react';
-import Spinner from '@/assets/images/icons/three-dots.svg?react';
 import {
+  Spinner,
   ResultCryptTable,
   DeckRecommendationLibrary,
   Modal,
@@ -19,7 +19,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
             <ResultCryptTable resultCards={crypt} inRecommendation />
           ) : (
             <div className="flex justify-center pt-5">
-              <Spinner width="35" height="35" viewBox="0 0 16 16" />
+              <Spinner className="size-7" />
             </div>
           )}
         </div>
@@ -31,7 +31,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
             <DeckRecommendationLibrary cards={library} />
           ) : (
             <div className="flex justify-center pt-5">
-              <Spinner width="35" height="35" viewBox="0 0 16 16" />
+              <Spinner className="size-7" />
             </div>
           )}
         </div>

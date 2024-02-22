@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Spinner from '@/assets/images/icons/three-dots.svg?react';
-import { Modal, Input, Button, ErrorOverlay } from '@/components';
+import { Spinner, Modal, Input, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { deckServices } from '@/services';
 import { useFetch } from '@/hooks';
@@ -193,7 +192,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
           variant="primary"
           onClick={handleImport}
         >
-          {isLoading ? <Spinner /> : 'Import'}
+          {isLoading ? <Spinner className="size-5" /> : 'Import'}
         </Button>
       </div>
     </Modal>

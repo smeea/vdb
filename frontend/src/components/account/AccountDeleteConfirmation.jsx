@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import Spinner from '@/assets/images/icons/three-dots.svg?react';
 import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
-import { Input, Modal, Button, ErrorOverlay } from '@/components';
+import { Spinner, Input, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
 
