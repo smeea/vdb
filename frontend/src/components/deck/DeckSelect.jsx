@@ -13,7 +13,7 @@ import {
   Radio,
   Button,
 } from '@/components';
-import { useApp, deckUpdate } from '@/context';
+import { useApp, deckToggleInventoryState } from '@/context';
 
 const DeckSelect = ({
   deck,
@@ -32,20 +32,10 @@ const DeckSelect = ({
     username,
   } = useApp();
 
-  const toggleInventoryState = (id) => {
-    if (!deck.inventoryType) {
-      deckUpdate(id, 'inventoryType', 's');
-    } else if (deck.inventoryType === 's') {
-      deckUpdate(id, 'inventoryType', 'h');
-    } else if (deck.inventoryType === 'h') {
-      deckUpdate(id, 'inventoryType', '');
-    }
-  };
-
-  const [selectFrom, setSelectFrom] = useState('precons');
+  const [selectFrom, setSelectFrom] = useState();
 
   useEffect(() => {
-    if (deckid?.includes(':')) {
+    if (deckid?.includes(':') || !deckid) {
       setSelectFrom('precons');
     } else if (decks?.[deckid]) {
       setSelectFrom('my');
@@ -84,11 +74,11 @@ const DeckSelect = ({
                 !deck?.inventoryType
                   ? 'VIRTUAL\nDo not use Inventory'
                   : deck?.inventoryType === 's'
-                    ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
-                    : 'FIXED\nUse unique copies of cards from Inventory'
+                  ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
+                  : 'FIXED\nUse unique copies of cards from Inventory'
               }`}
               variant="primary"
-              onClick={() => toggleInventoryState(deck?.deckid)}
+              onClick={() => deckToggleInventoryState(deck?.deckid)}
             >
               <div className="flex items-center">
                 {!deck?.inventoryType && <At />}

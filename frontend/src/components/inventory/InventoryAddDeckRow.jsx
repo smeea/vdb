@@ -14,23 +14,13 @@ import {
 } from '@/components';
 import { getClan } from '@/utils';
 import { useDeckInInventory } from '@/hooks';
-import { useApp, deckUpdate } from '@/context';
+import { useApp, deckToggleInventoryState } from '@/context';
 
 const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
   const { isDesktop, isMobile } = useApp();
   const [showDeck, setShowDeck] = useState();
   const inInventory = useDeckInInventory(deck);
   const clan = getClan(deck.crypt);
-
-  const toggleInventoryState = (deckid) => {
-    if (!deck.inventoryType) {
-      deckUpdate(deckid, 'inventoryType', 's');
-    } else if (deck.inventoryType === 's') {
-      deckUpdate(deckid, 'inventoryType', 'h');
-    } else if (deck.inventoryType === 'h') {
-      deckUpdate(deckid, 'inventoryType', '');
-    }
-  };
 
   return (
     <tr
@@ -42,14 +32,14 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
     >
       {!isMobile && (
         <td>
-          <Button onClick={() => toggleInventoryState(deck.deckid)}>
+          <Button onClick={() => deckToggleInventoryState(deck.deckid)}>
             <div
               title={
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
+                  ? 'Fixed'
+                  : 'Virtual'
               }
             >
               {deck.inventoryType == 's' && <Shuffle />}

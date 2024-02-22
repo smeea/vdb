@@ -20,7 +20,7 @@ import {
   Checkbox,
   ResultLegalIcon,
 } from '@/components';
-import { limitedStore, useApp, deckUpdate } from '@/context';
+import { limitedStore, useApp, deckToggleInventoryState } from '@/context';
 import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 import { getClan, getRestrictions } from '@/utils';
 
@@ -55,17 +55,6 @@ const DeckSelectAdvTableRow = ({
 
   const clan = getClan(deck.crypt);
 
-  const inventoryType = deck.inventoryType;
-  const toggleInventoryState = (deckid) => {
-    if (!inventoryType) {
-      deckUpdate(deckid, 'inventoryType', 's');
-    } else if (inventoryType === 's') {
-      deckUpdate(deckid, 'inventoryType', 'h');
-    } else if (inventoryType === 'h') {
-      deckUpdate(deckid, 'inventoryType', '');
-    }
-  };
-
   return (
     <tr
       className={`h-[41px] border-y border-bgSecondary dark:border-bgSecondaryDark ${
@@ -88,13 +77,13 @@ const DeckSelectAdvTableRow = ({
           <div className="flex justify-center">
             <Button
               variant="primary"
-              onClick={() => toggleInventoryState(deck.deckid)}
+              onClick={() => deckToggleInventoryState(deck.deckid)}
               title={
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
+                  ? 'Fixed'
+                  : 'Virtual'
               }
             >
               {deck.inventoryType == 's' ? (

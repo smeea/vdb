@@ -147,6 +147,32 @@ export const deckUpdate = (deckid, field, value) => {
   });
 };
 
+export const deckToggleInventoryState = (deckid) => {
+  switch (deckStore.decks[deckid].inventoryType) {
+    case 's':
+      deckUpdate(deckid, 'inventoryType', 'h');
+      break;
+    case 'h':
+      deckUpdate(deckid, 'inventoryType', '');
+      break;
+    default:
+      deckUpdate(deckid, 'inventoryType', 's');
+  }
+};
+
+export const cardToggleInventoryState = (deckid, cardid) => {
+  const deck = deckStore.decks[deckid];
+  const target = cardid > 200000 ? 'crypt' : 'library';
+  const value = deck[target][cardid].i
+    ? ''
+    : deck.inventoryType === 's'
+    ? 'h'
+    : 's';
+  deckUpdate(deckid, 'usedInInventory', {
+    [cardid]: value,
+  });
+};
+
 export const deckAdd = (deck) => {
   const now = new Date();
   const d = {

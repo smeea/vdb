@@ -5,7 +5,7 @@ import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import {
   deckCardChange,
-  deckUpdate,
+  cardToggleInventoryState,
   useApp,
   usedStore,
   inventoryStore,
@@ -66,20 +66,13 @@ const DeckLibraryTableRow = ({
   const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
 
-  const toggleInventoryState = (deckid, cardid) => {
-    const value = card.i ? '' : deck.inventoryType === 's' ? 'h' : 's';
-    deckUpdate(deckid, 'usedInInventory', {
-      [cardid]: value,
-    });
-  };
-
   const trBg = isSwiped
     ? isSwiped === 'right'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
     : idx % 2
-      ? 'bg-bgThird dark:bg-bgThirdDark'
-      : 'bg-bgPrimary dark:bg-bgPrimaryDark';
+    ? 'bg-bgThird dark:bg-bgThirdDark'
+    : 'bg-bgPrimary dark:bg-bgPrimaryDark';
 
   return (
     <tr
@@ -97,7 +90,7 @@ const DeckLibraryTableRow = ({
                 className={`inventory-card-custom absolute left-[-24px]
                         ${card.i ? '' : 'not-selected opacity-0'}
                       `}
-                onClick={() => toggleInventoryState(deckid, card.c.Id)}
+                onClick={() => cardToggleInventoryState(deckid, card.c.Id)}
               >
                 {deck.inventoryType == 's' ? <PinAngleFill /> : <Shuffle />}
               </div>
