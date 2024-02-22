@@ -19,4 +19,3 @@
 - Refactor useless map to forEach
 - Update prompt using vite-pwa
 - Remove legacy polyfills when Safari adopts groupBy
-- Tailwind 'divide' to capacity to ButtonGroup

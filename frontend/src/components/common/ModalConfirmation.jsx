@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, Modal, Button, ErrorOverlay } from '@/components';
+import { FlexGapped, Input, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 
 const ModalConfirmation = ({
@@ -45,7 +45,7 @@ const ModalConfirmation = ({
       size={size}
       title={title}
     >
-      <div className="flex flex-col gap-3 sm:gap-5">
+      <FlexGapped className="flex-col">
         {children && (
           <div className="text-fgSecondary dark:text-fgSecondaryDark">
             {children}
@@ -81,7 +81,7 @@ const ModalConfirmation = ({
             </Button>
           </div>
         </div>
-      </div>
+      </FlexGapped>
     </Modal>
   );
 };

@@ -41,7 +41,7 @@ const DiffCryptTableRow = ({
 
   return (
     <tr
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
+      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${
         idx % 2
           ? 'bg-bgThird dark:bg-bgThirdDark'
           : 'bg-bgPrimary dark:bg-bgPrimaryDark'

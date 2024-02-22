@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
+  FlexGapped,
   ResultCryptTable,
   ResultLibraryTable,
   NewCardSelect,
@@ -37,7 +38,7 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
           )}
         </div>
       </div>
-      <div className="flex gap-3 max-sm:flex-col sm:gap-5">
+      <FlexGapped className="sm:flex-col">
         <div className="flex basis-full flex-col gap-2 sm:basis-7/12">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Crypt:
@@ -46,7 +47,7 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
           {Object.keys(limitedCrypt).length > 0 && (
             <ResultCryptTable
               resultCards={Object.values(cryptCardBase).filter(
-                (c) => limitedCrypt[c.Id],
+                (c) => limitedCrypt[c.Id]
               )}
               inLimited={inBanned ? 'banned' : 'allowed'}
             />
@@ -60,13 +61,13 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
           {Object.keys(limitedLibrary).length > 0 && (
             <ResultLibraryTable
               resultCards={Object.values(libraryCardBase).filter(
-                (c) => limitedLibrary[c.Id],
+                (c) => limitedLibrary[c.Id]
               )}
               inLimited={inBanned ? 'banned' : 'allowed'}
             />
           )}
         </div>
-      </div>
+      </FlexGapped>
     </div>
   );
 };

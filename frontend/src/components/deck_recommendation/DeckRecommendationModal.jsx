@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  FlexGapped,
   Spinner,
   ResultCryptTable,
   DeckRecommendationLibrary,
@@ -10,7 +11,7 @@ import {
 const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
   return (
     <Modal handleClose={handleClose} size="lg" title="Card Ideas">
-      <div className="flex gap-3 max-sm:flex-col sm:gap-5">
+      <FlexGapped className="sm:flex-col">
         <div className="basis-full sm:basis-7/12">
           <Header>
             <div className="px-2 font-bold">Crypt</div>
@@ -35,7 +36,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
             </div>
           )}
         </div>
-      </div>
+      </FlexGapped>
     </Modal>
   );
 };

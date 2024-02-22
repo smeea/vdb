@@ -3,6 +3,7 @@ import { Menu } from '@headlessui/react';
 import { useSnapshot } from 'valtio';
 import Download from '@/assets/images/icons/download.svg?react';
 import {
+  FlexGapped,
   DeckSelectAdvTotal,
   DeckSelectAdvTable,
   Modal,
@@ -44,7 +45,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
       size={short ? 'md' : 'xl'}
       title="Select Deck"
     >
-      <div className="flex flex-col gap-3 sm:gap-5">
+      <FlexGapped className="flex-col">
         <div>
           {!short && (
             <DeckSelectAdvTotal
@@ -89,7 +90,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
             </Menu>
           </div>
         )}
-      </div>
+      </FlexGapped>
     </Modal>
   );
 };

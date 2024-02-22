@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
-import { Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
+import {
+  FlexGapped,
+  Modal,
+  Button,
+  DeckProxyCrypt,
+  DeckProxyLibrary,
+} from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
 
@@ -59,8 +65,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         const miss = deck.inventoryType
           ? Math.min(inventoryMiss, deck.crypt[cardid].q)
           : inventoryMiss >= 0
-            ? deck.crypt[cardid].q
-            : deck.crypt[cardid].q + inventoryMiss;
+          ? deck.crypt[cardid].q
+          : deck.crypt[cardid].q + inventoryMiss;
 
         if (miss > 0) {
           crypt[cardid] = {
@@ -81,8 +87,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         const miss = deck.inventoryType
           ? Math.min(inventoryMiss, deck.library[cardid].q)
           : inventoryMiss >= 0
-            ? deck.library[cardid].q
-            : deck.library[cardid].q + inventoryMiss;
+          ? deck.library[cardid].q
+          : deck.library[cardid].q + inventoryMiss;
 
         if (miss > 0) {
           library[cardid] = {
@@ -149,7 +155,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       title="Create PDF with Card Proxies"
       noPadding={isMobile}
     >
-      <div className="flex flex-col gap-3 sm:gap-5">
+      <FlexGapped className="flex-col">
         <div className="flex gap-5 max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
             {deck.crypt && (
@@ -236,7 +242,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             </Button>
           )}
         </div>
-      </div>
+      </FlexGapped>
     </Modal>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link45Deg from '@/assets/images/icons/link-45deg.svg?react';
 import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg?react';
-import { Modal, Button, ButtonIconed } from '@/components';
+import { FlexGapped, Modal, Button, ButtonIconed } from '@/components';
 import { useApp } from '@/context';
 
 const InventoryShareModal = ({ setShow }) => {
@@ -15,7 +15,7 @@ const InventoryShareModal = ({ setShow }) => {
 
   const [success, setSuccess] = useState();
   const [shareUrl, setShareUrl] = useState(
-    `${import.meta.env.VITE_BASE_URL}/inventory?key=${inventoryKey}`,
+    `${import.meta.env.VITE_BASE_URL}/inventory?key=${inventoryKey}`
   );
 
   const createUrl = () => {
@@ -62,7 +62,7 @@ const InventoryShareModal = ({ setShow }) => {
       centered={isMobile}
       title="Inventory Share"
     >
-      <div className="flex flex-col gap-3 sm:gap-5">
+      <FlexGapped className="flex-col">
         <div>
           {inventoryKey ? (
             <>
@@ -96,7 +96,7 @@ const InventoryShareModal = ({ setShow }) => {
             Close
           </Button>
         </div>
-      </div>
+      </FlexGapped>
     </Modal>
   );
 };

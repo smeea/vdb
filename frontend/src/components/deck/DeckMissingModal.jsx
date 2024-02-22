@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Gem from '@/assets/images/icons/gem.svg?react';
 import {
+  FlexGapped,
   DeckCrypt,
   DeckLibrary,
   DeckExportButton,
@@ -20,8 +21,8 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
       title={deck.name}
       noPadding={isMobile}
     >
-      <div className="flex flex-col gap-3 sm:gap-5">
-        <div className="flex gap-3 max-sm:flex-col sm:gap-5">
+      <FlexGapped className="flex-col">
+        <FlexGapped className="max-sm:flex-col">
           <div className="basis-full md:basis-5/9">
             <div
               className={
@@ -46,7 +47,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
               inMissing
             />
           </div>
-        </div>
+        </FlexGapped>
         <div className="flex flex-col justify-end gap-2 max-sm:p-2 max-sm:pt-0 sm:flex-row">
           {inInventory && (
             <ButtonIconed
@@ -69,7 +70,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
             inMissing
           />
         </div>
-      </div>
+      </FlexGapped>
     </Modal>
   );
 };

@@ -1,6 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Textarea, Modal, Button, ErrorOverlay } from '@/components';
+import {
+  FlexGapped,
+  Textarea,
+  Modal,
+  Button,
+  ErrorOverlay,
+} from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
@@ -85,7 +91,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       size="lg"
       title="Import from Text"
     >
-      <div className="flex flex-col gap-3 sm:gap-5">
+      <FlexGapped className="flex-col">
         <div className="relative">
           <Textarea
             className="w-full font-mono"
@@ -107,7 +113,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
             Import
           </Button>
         </div>
-      </div>
+      </FlexGapped>
     </Modal>
   );
 };
