@@ -3,7 +3,7 @@ import { FlexGapped, DiffCrypt, DiffLibrary } from '@/components';
 
 const DeckPublicDiff = ({ deckFrom, deckTo }) => {
   return (
-    <FlexGapped className="flex-col">
+    <FlexGapped className="max-sm:flex-col">
       <div className="md:basis-7/12">
         <DiffCrypt cardsFrom={deckFrom.crypt} cardsTo={deckTo.crypt} />
       </div>

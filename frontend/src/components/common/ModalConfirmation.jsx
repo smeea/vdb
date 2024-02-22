@@ -46,11 +46,7 @@ const ModalConfirmation = ({
       title={title}
     >
       <FlexGapped className="flex-col">
-        {children && (
-          <div className="text-fgSecondary dark:text-fgSecondaryDark">
-            {children}
-          </div>
-        )}
+        {children && children}
         <div className="flex justify-end gap-2">
           {withWrittenConfirmation && (
             <form onSubmit={handleClick}>

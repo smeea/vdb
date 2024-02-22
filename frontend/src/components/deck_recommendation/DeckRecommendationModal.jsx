@@ -11,7 +11,7 @@ import {
 const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
   return (
     <Modal handleClose={handleClose} size="lg" title="Card Ideas">
-      <FlexGapped className="sm:flex-col">
+      <FlexGapped className="max-sm:flex-col">
         <div className="basis-full sm:basis-7/12">
           <Header>
             <div className="px-2 font-bold">Crypt</div>

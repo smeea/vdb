@@ -3,7 +3,6 @@
 - Mobile support for Tournament Analyze
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - InventoryUsed data for newly opened deck
-- Colors in Sync Public
 - Sync Public
 
 # FEATURES

@@ -10,16 +10,17 @@ const DeckRecommendation = ({ setShow, deck }) => {
   }/recommendation`;
   const { value } = useFetch(url, {}, []);
 
-  let crypt;
-  let library;
-  if (value) {
-    crypt = value.crypt.map((cardid) => {
-      return cryptCardBase[cardid];
-    });
-    library = value.library.map((cardid) => {
-      return libraryCardBase[cardid];
-    });
-  }
+  const crypt = value
+    ? value.crypt.map((cardid) => {
+        return cryptCardBase[cardid];
+      })
+    : null;
+
+  const library = value
+    ? value.library.map((cardid) => {
+        return libraryCardBase[cardid];
+      })
+    : null;
 
   const handleCloseModal = () => {
     setShow(false);
