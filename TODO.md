@@ -2,8 +2,6 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
-- InventoryUsed data for newly opened deck
-- Sync Public
 
 # FEATURES
 - Playtest reports
