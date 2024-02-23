@@ -1,5 +1,11 @@
 [
   {
+    "version": "2024-02-22",
+    "changes": [
+      "Fix more bugs introduced by recent update"
+    ]
+  },
+  {
     "version": "2024-02-19",
     "changes": [
       "Fix bugs introduced by recent update"
