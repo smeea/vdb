@@ -1,25 +1,10 @@
 import React from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { ResultModal, InventoryCryptTableRow } from '@/components';
+import { WindowRows, ResultModal, InventoryCryptTableRow } from '@/components';
 import { cryptSort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-
-const Rows = ({ index, style, data }) => {
-  return (
-    <div
-      style={style}
-      className={`flex border-b border-bgSecondary dark:border-bgSecondaryDark ${
-        index % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      }`}
-    >
-      {data[index]}
-    </div>
-  );
-};
 
 const InventoryCryptTable = ({
   cards,
@@ -84,7 +69,7 @@ const InventoryCryptTable = ({
                 itemSize={45}
                 itemData={cardRows}
               >
-                {Rows}
+                {WindowRows}
               </FixedSizeList>
             )}
           </AutoSizer>

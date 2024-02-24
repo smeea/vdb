@@ -225,6 +225,7 @@ export { default as UpdateNotification } from './misc/UpdateNotification.jsx';
 export { default as UsedDescription } from './misc/UsedDescription.jsx';
 export { default as UsedPopover } from './misc/UsedPopover.jsx';
 export { default as Warning } from './misc/Warning.jsx';
+export { default as WindowRows } from './misc/WindowRows.jsx';
 
 export { default as ResultClanImage } from './result_common/ResultClanImage.jsx';
 export { default as ResultDisciplineImage } from './result_common/ResultDisciplineImage.jsx';

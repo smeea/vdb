@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import {
+  WindowRows,
   TwdCardsHistoryLibraryRow,
   InventoryFilterForm,
   SortButton,
@@ -163,19 +164,6 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     );
   });
 
-  const Rows = ({ index, style }) => (
-    <div
-      style={style}
-      className={`flex border-b border-bgSecondary  dark:border-bgSecondaryDark ${
-        index % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      }`}
-    >
-      {cardRows[index]}
-    </div>
-  );
-
   return (
     <div className="h-[calc(100vh-174px)] sm:h-[calc(100vh-240px)]">
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
@@ -251,8 +239,9 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
             width={width}
             itemCount={cardRows.length}
             itemSize={45}
+            itemData={cardRows}
           >
-            {Rows}
+            {WindowRows}
           </FixedSizeList>
         )}
       </AutoSizer>
