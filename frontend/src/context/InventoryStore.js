@@ -25,7 +25,7 @@ export const inventoryCardsAdd = (cards) => {
   const filteredCards = {};
   Object.keys(cards)
     .filter(
-      (cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000)),
+      (cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000))
     )
     .forEach((cardid) => {
       filteredCards[cardid] = cards[cardid];
@@ -59,7 +59,7 @@ export const inventoryCardsAdd = (cards) => {
 export const inventoryCardChange = (card, q) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
   const initialState = deepClone(
-    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library,
+    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library
   );
   const store =
     card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
@@ -89,7 +89,7 @@ export const inventoryCardChange = (card, q) => {
 export const inventoryCardTextChange = (card, text) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
   const initialState = deepClone(
-    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library,
+    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library
   );
   const store =
     card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
@@ -111,4 +111,37 @@ export const inventoryCardTextChange = (card, text) => {
       t: text,
     };
   }
+};
+
+export const setupUsedInventory = (decks) => {
+  const softCrypt = {};
+  const softLibrary = {};
+  const hardCrypt = {};
+  const hardLibrary = {};
+  const crypts = { h: hardCrypt, s: softCrypt };
+  const libraries = { h: hardLibrary, s: softLibrary };
+
+  Object.keys(decks).forEach((deckid) => {
+    if (decks[deckid].inventoryType) {
+      Object.entries(decks[deckid].crypt).forEach(([id, card]) => {
+        const target = crypts[card.i || decks[deckid].inventoryType];
+        if (!target[id]) target[id] = {};
+        target[id][deckid] = card.q;
+      });
+      Object.entries(decks[deckid].library).forEach(([id, card]) => {
+        const target = libraries[card.i || decks[deckid].inventoryType];
+        if (!target[id]) target[id] = {};
+        target[id][deckid] = card.q;
+      });
+    }
+  });
+
+  usedStore.crypt = {
+    soft: softCrypt,
+    hard: hardCrypt,
+  };
+  usedStore.library = {
+    soft: softLibrary,
+    hard: hardLibrary,
+  };
 };

@@ -2,17 +2,9 @@ import React, { useState, useMemo } from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import {
-  TwdCardsHistoryCardAppearance,
+  TwdCardsHistoryCryptRow,
   InventoryFilterForm,
   SortButton,
-  CardPopover,
-  ConditionalTooltip,
-  ResultCryptCapacity,
-  ResultCryptDisciplines,
-  ResultName,
-  ResultClanImage,
-  ResultCryptGroup,
-  ResultCryptTitle,
   ResultModal,
 } from '@/components';
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
@@ -58,7 +50,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   const sortedCards = useMemo(
     () => cryptSort(Object.values(cardsByClan[clan]), sortMethod),
-    [cardsByClan, sortMethod],
+    [cardsByClan, sortMethod]
   );
 
   const {
@@ -71,58 +63,12 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   const cardRows = sortedCards.map((card) => {
     return (
-      <>
-        <div
-          className="flex min-w-[32px] items-center justify-center sm:min-w-[40px]"
-          onClick={() => handleModalCardOpen(card)}
-        >
-          <ResultCryptCapacity card={card} />
-        </div>
-        {!isMobile && (
-          <div
-            className="flex min-w-[170px] items-center lg:min-w-[180px]"
-            onClick={() => handleModalCardOpen(card)}
-          >
-            <ResultCryptDisciplines value={card.Disciplines} />
-          </div>
-        )}
-        <div
-          className={`flex w-full items-center justify-start ${
-            card.deckid ? '' : 'font-bold'
-          } `}
-          onClick={() => handleModalCardOpen(card)}
-        >
-          <ConditionalTooltip
-            placement={'right'}
-            overlay={<CardPopover card={card} />}
-            disabled={isMobile}
-          >
-            <ResultName card={card} />
-          </ConditionalTooltip>
-        </div>
-        {!isMobile && (
-          <div
-            className="min-w-[60px]"
-            onClick={() => handleModalCardOpen(card)}
-          >
-            <div className="flex justify-center">
-              <ResultClanImage value={card.Clan} />
-            </div>
-            <div className="flex justify-center space-x-1 text-sm">
-              <div className="flex w-full justify-end font-bold">
-                {card.Title && <ResultCryptTitle value={card.Title} />}
-              </div>
-              <div className="w-full">
-                <ResultCryptGroup value={card.Group} />
-              </div>
-            </div>
-          </div>
-        )}
-        <TwdCardsHistoryCardAppearance
-          card={card}
-          byPlayer={players[card.player]}
-        />
-      </>
+      <TwdCardsHistoryCryptRow
+        key={card.Id}
+        card={card}
+        players={players}
+        handleClick={handleModalCardOpen}
+      />
     );
   });
 
@@ -172,25 +118,27 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
         </div>
         {!isMobile && (
           <div
-            className="flex min-w-[45px] justify-center sm:min-w-[60px]"
+            className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]"
             title="First TWD Appearance Date"
           >
             Win
           </div>
         )}
         <div
-          className="flex min-w-[25px] justify-center sm:min-w-[65px]"
+          className="flex min-w-[25px] items-center justify-center sm:min-w-[65px]"
           title="Years to Win"
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
         <div
-          className="flex min-w-[90px] justify-center sm:min-w-[250px]"
+          className="flex min-w-[90px] items-center sm:min-w-[250px]"
           title="First Winner"
         >
           Player
         </div>
-        <div className="flex min-w-[45px] sm:min-w-[110px]" />
+        <div className="flex min-w-[45px] items-center justify-center sm:min-w-[110px]">
+          {isMobile ? 'D' : 'Deck'}
+        </div>
       </div>
       <AutoSizer>
         {({ width, height }) => (

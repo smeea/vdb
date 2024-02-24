@@ -2,25 +2,12 @@ import React, { useState, useMemo } from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import {
-  TwdCardsHistoryCardAppearance,
+  TwdCardsHistoryLibraryRow,
   InventoryFilterForm,
   SortButton,
-  CardPopover,
-  ConditionalTooltip,
-  ResultLibraryBurn,
-  ResultLibraryClan,
-  ResultLibraryCost,
-  ResultName,
-  ResultLibraryTypeImage,
-  ResultLibraryDisciplines,
   ResultModal,
 } from '@/components';
-import {
-  cardtypeSorted,
-  BURN_OPTION,
-  POOL_COST,
-  BLOOD_COST,
-} from '@/utils/constants';
+import { cardtypeSorted } from '@/utils/constants';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import { librarySort } from '@/utils';
@@ -152,9 +139,9 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         Object.values(cardsByType[type]).filter((i) => {
           return cardsByDiscipline[discipline][i.Id];
         }),
-        sortMethod,
+        sortMethod
       ),
-    [cardsByType, cardsByDiscipline, sortMethod],
+    [cardsByType, cardsByDiscipline, sortMethod]
   );
 
   const {
@@ -167,67 +154,12 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   const cardRows = sortedCards.map((card) => {
     return (
-      <>
-        {!isMobile && (
-          <>
-            <div
-              className={`flex min-w-[30px] items-center justify-center ${
-                card[BLOOD_COST] && 'pb-1'
-              }`}
-              onClick={() => handleModalCardOpen(card)}
-            >
-              {(card[BLOOD_COST] || card[POOL_COST]) && (
-                <ResultLibraryCost
-                  valueBlood={card[BLOOD_COST]}
-                  valuePool={card[POOL_COST]}
-                />
-              )}
-            </div>
-            <div
-              className="flex min-w-[40px] items-center justify-center"
-              onClick={() => handleModalCardOpen(card)}
-            >
-              <ResultLibraryTypeImage value={card.Type} />
-            </div>
-          </>
-        )}
-        <div
-          className="flex min-w-[32px] items-center justify-center sm:min-w-[80px]"
-          onClick={() => handleModalCardOpen(card)}
-        >
-          {card.Clan && <ResultLibraryClan value={card.Clan} />}
-          {card.Discipline && card.Clan && '+'}
-          {card.Discipline && (
-            <ResultLibraryDisciplines value={card.Discipline} />
-          )}
-        </div>
-        <div
-          className={`flex w-full items-center justify-start ${
-            card.deckid ? '' : 'font-bold'
-          } `}
-          onClick={() => handleModalCardOpen(card)}
-        >
-          <ConditionalTooltip
-            placement={'right'}
-            overlay={<CardPopover card={card} />}
-            disabled={isMobile}
-          >
-            <ResultName card={card} />
-          </ConditionalTooltip>
-        </div>
-        {!isMobile && (
-          <div
-            className="flex min-w-[30px] items-center justify-center"
-            onClick={() => handleModalCardOpen(card)}
-          >
-            {card[BURN_OPTION] && <ResultLibraryBurn />}
-          </div>
-        )}
-        <TwdCardsHistoryCardAppearance
-          card={card}
-          byPlayer={players[card.player]}
-        />
-      </>
+      <TwdCardsHistoryLibraryRow
+        key={card.Id}
+        card={card}
+        players={players}
+        handleClick={handleModalCardOpen}
+      />
     );
   });
 
@@ -307,7 +239,9 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         >
           Player
         </div>
-        <div className="flex min-w-[45px] sm:min-w-[110px]" />
+        <div className="flex min-w-[45px] items-center justify-center sm:min-w-[110px]">
+          {isMobile ? 'D' : 'Deck'}
+        </div>
       </div>
       <AutoSizer>
         {({ width, height }) => (

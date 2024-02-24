@@ -382,7 +382,9 @@ export { default as AnalyzeTournamentResult } from './tournament_analyze/Analyze
 export { default as AnalyzeTournamentResultTotal } from './tournament_analyze/AnalyzeTournamentResultTotal.jsx';
 
 export { default as TwdCardsHistoryCrypt } from './twd_cards_history/TwdCardsHistoryCrypt.jsx';
+export { default as TwdCardsHistoryCryptRow } from './twd_cards_history/TwdCardsHistoryCryptRow.jsx';
 export { default as TwdCardsHistoryLibrary } from './twd_cards_history/TwdCardsHistoryLibrary.jsx';
+export { default as TwdCardsHistoryLibraryRow } from './twd_cards_history/TwdCardsHistoryLibraryRow.jsx';
 export { default as TwdCardsHistoryCardAppearance } from './twd_cards_history/TwdCardsHistoryCardAppearance.jsx';
 
 export { default as TwdCheckEvent } from './twd_check/TwdCheckEvent.jsx';

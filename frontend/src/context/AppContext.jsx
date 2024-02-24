@@ -15,9 +15,9 @@ import {
   setLimitedAllowedLibrary,
   setLimitedBannedCrypt,
   setLimitedBannedLibrary,
+  setupUsedInventory,
   limitedFullStore,
   deckStore,
-  usedStore,
   inventoryStore,
   deckLocalize,
 } from '@/context';
@@ -52,6 +52,10 @@ export const AppProvider = (props) => {
   const [twdSearchSort, setTwdSearchSort] = useState();
   const [pdaSearchSort, setPdaSearchSort] = useState();
   const [analyzeSearchSort, setAnalyzeSearchSort] = useState();
+  const [showCryptSearch, setShowCryptSearch] = useState(true);
+  const [showLibrarySearch, setShowLibrarySearch] = useState(true);
+  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
+  const [showMenuButtons, setShowMenuButtons] = useState();
 
   const [cryptCardBase, setCryptCardBase] = useImmer();
   const [libraryCardBase, setLibraryCardBase] = useImmer();
@@ -59,23 +63,14 @@ export const AppProvider = (props) => {
   const [nativeLibrary, setNativeLibrary] = useState();
   const [localizedCrypt, setLocalizedCrypt] = useState();
   const [localizedLibrary, setLocalizedLibrary] = useState();
-
   const [preconDecks, setPreconDecks] = useState();
-
-  const [showCryptSearch, setShowCryptSearch] = useState(true);
-  const [showLibrarySearch, setShowLibrarySearch] = useState(true);
 
   const deck = useSnapshot(deckStore).deck;
   const decks = useSnapshot(deckStore).decks;
-
   const lastDeckArray = (decks &&
     Object.values(decks).toSorted(byTimestamp)) ?? [{ deckid: undefined }];
   const lastDeckId = lastDeckArray[0]?.deckid;
-
   const [recentDecks, setRecentDecks] = useState([]);
-
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
-  const [showMenuButtons, setShowMenuButtons] = useState();
 
   // CARD BASE
   const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
@@ -174,6 +169,25 @@ export const AppProvider = (props) => {
           setUserData(data);
         }
       });
+  };
+
+  const parseInventoryData = (inventoryData) => {
+    Object.keys(inventoryData.crypt).forEach((i) => {
+      if (cryptCardBase[i]) {
+        inventoryData.crypt[i].c = cryptCardBase[i];
+      } else {
+        delete inventoryData.crypt[i];
+      }
+    });
+    Object.keys(inventoryData.library).forEach((i) => {
+      if (libraryCardBase[i]) {
+        inventoryData.library[i].c = libraryCardBase[i];
+      } else {
+        delete inventoryData.library[i];
+      }
+    });
+
+    return { crypt: inventoryData.crypt, library: inventoryData.library };
   };
 
   const initializeUserData = (data) => {
@@ -461,64 +475,9 @@ export const AppProvider = (props) => {
     }
   }, [decks, recentDecks]);
 
-  const parseInventoryData = (inventoryData) => {
-    Object.keys(inventoryData.crypt).forEach((i) => {
-      if (cryptCardBase[i]) {
-        inventoryData.crypt[i].c = cryptCardBase[i];
-      } else {
-        delete inventoryData.crypt[i];
-      }
-    });
-    Object.keys(inventoryData.library).forEach((i) => {
-      if (libraryCardBase[i]) {
-        inventoryData.library[i].c = libraryCardBase[i];
-      } else {
-        delete inventoryData.library[i];
-      }
-    });
-
-    return { crypt: inventoryData.crypt, library: inventoryData.library };
-  };
-
   useEffect(() => {
-    if (decks && inventoryMode) setupHardAndSoftInventory();
-  }, [decks, deck, inventoryMode]);
-
-  const addToTarget = (target, deckid, id, quantity) => {
-    if (!target[id]) target[id] = {};
-    target[id][deckid] = quantity;
-  };
-
-  const setupHardAndSoftInventory = () => {
-    const softCrypt = {};
-    const softLibrary = {};
-    const hardCrypt = {};
-    const hardLibrary = {};
-    const crypts = { h: hardCrypt, s: softCrypt };
-    const libraries = { h: hardLibrary, s: softLibrary };
-
-    Object.keys(decks).forEach((deckid) => {
-      if (decks[deckid].inventoryType) {
-        Object.entries(decks[deckid].crypt).forEach(([id, card]) => {
-          const target = crypts[card.i || decks[deckid].inventoryType];
-          addToTarget(target, deckid, id, card.q);
-        });
-        Object.entries(decks[deckid].library).forEach(([id, card]) => {
-          const target = libraries[card.i || decks[deckid].inventoryType];
-          addToTarget(target, deckid, id, card.q);
-        });
-      }
-    });
-
-    usedStore.crypt = {
-      soft: softCrypt,
-      hard: hardCrypt,
-    };
-    usedStore.library = {
-      soft: softLibrary,
-      hard: hardLibrary,
-    };
-  };
+    if (decks && inventoryMode) setupUsedInventory(decks);
+  }, [deck, inventoryMode]);
 
   return (
     <AppContext.Provider
