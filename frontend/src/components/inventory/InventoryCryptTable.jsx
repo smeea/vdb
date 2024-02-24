@@ -6,6 +6,21 @@ import { cryptSort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 
+const Rows = ({ index, style, data }) => {
+  return (
+    <div
+      style={style}
+      className={`flex border-b border-bgSecondary dark:border-bgSecondaryDark ${
+        index % 2
+          ? 'bg-bgThird dark:bg-bgThirdDark'
+          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+      }`}
+    >
+      {data[index]}
+    </div>
+  );
+};
+
 const InventoryCryptTable = ({
   cards,
   sortMethod,
@@ -45,19 +60,6 @@ const InventoryCryptTable = ({
       );
     });
 
-  const Rows = ({ index, style }) => (
-    <div
-      style={style}
-      className={`flex border-b border-bgSecondary dark:border-bgSecondaryDark ${
-        index % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      }`}
-    >
-      {cardRows[index]}
-    </div>
-  );
-
   return (
     <>
       {compact ? (
@@ -80,6 +82,7 @@ const InventoryCryptTable = ({
                 width={width}
                 itemCount={cardRows.length}
                 itemSize={45}
+                itemData={cardRows}
               >
                 {Rows}
               </FixedSizeList>
