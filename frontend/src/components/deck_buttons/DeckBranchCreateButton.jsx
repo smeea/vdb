@@ -8,58 +8,20 @@ import {
   MenuItem,
   MenuButton,
 } from '@/components';
-import { deckStore, useApp } from '@/context';
+import { deckServices } from '@/services';
+import { useApp } from '@/context';
 
 const DeckBranchCreateButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
   const [showSelect, setShowSelect] = useState();
 
-  const master = deck.master ? deck.master : deck.deckid;
-  const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
-
-  const branchCreate = (d) => {
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        deckid: d.deckid,
-      }),
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        const now = new Date();
-        deckStore.decks[master].master = null;
-        deckStore.decks[master].isBranches = true;
-        deckStore.decks[master].branches = deckStore.decks[master].branches
-          ? [...deckStore.decks[master].branches, data[0].deckid]
-          : [data[0].deckid];
-
-        deckStore.decks[data[0].deckid] = {
-          ...deck,
-          deckid: data[0].deckid,
-          description: `[${now.toISOString().split('T')[0]}] \n${
-            d.description
-          }`,
-          crypt: { ...d.crypt },
-          library: { ...d.library },
-          inventoryType: '',
-          master: master,
-          branchName: data[0].branchName,
-          isPublic: false,
-          isBranches: true,
-          timestamp: now.toUTCString(),
-        };
-        navigate(`/decks/${data[0].deckid}`);
-        setShowMenuButtons(false);
-        setShowFloatingButtons(true);
-      });
+  const handleClick = (d) => {
+    deckServices.branchCreate(d).then((newDeckid) => {
+      navigate(`/decks/${newDeckid}`);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
+    });
   };
 
   return (
@@ -72,7 +34,7 @@ const DeckBranchCreateButton = ({ deck }) => {
           text="Add Revision"
         />
         <MenuItems>
-          <MenuItem onClick={() => branchCreate(deck)}>
+          <MenuItem onClick={() => handleClick(deck)}>
             From Active Deck
           </MenuItem>
           <MenuItem onClick={() => setShowSelect(true)}>
@@ -83,7 +45,7 @@ const DeckBranchCreateButton = ({ deck }) => {
       {showSelect && (
         <DeckSelectAdvModal
           setShow={setShowSelect}
-          onClick={branchCreate}
+          onClick={handleClick}
           short
         />
       )}

@@ -1,5 +1,6 @@
 import { useDeckExport } from '@/hooks';
 import { defer } from 'react-router-dom';
+import { deckStore } from '@/context';
 
 export const update = (deckid, field, value) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
@@ -92,6 +93,51 @@ export const branchesImport = async (masterId, branches) => {
       });
 
       return branches;
+    });
+};
+
+export const branchCreate = async (deck) => {
+  const master = deck.master ?? deck.deckid;
+  const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
+
+  const options = {
+    method: 'POST',
+    mode: 'cors',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      deckid: deck.deckid,
+    }),
+  };
+
+  return fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
+      const now = new Date();
+      deckStore.decks[master].master = null;
+      deckStore.decks[master].isBranches = true;
+      deckStore.decks[master].branches = deckStore.decks[master].branches
+        ? [...deckStore.decks[master].branches, data[0].deckid]
+        : [data[0].deckid];
+
+      deckStore.decks[data[0].deckid] = {
+        ...deck,
+        deckid: data[0].deckid,
+        description: `[${now.toISOString().split('T')[0]}] \n${
+          deck.description
+        }`,
+        crypt: { ...deck.crypt },
+        library: { ...deck.library },
+        inventoryType: '',
+        master: master,
+        branchName: data[0].branchName,
+        isPublic: false,
+        isBranches: true,
+        timestamp: now.toUTCString(),
+      };
+      return data[0].deckid;
     });
 };
 
