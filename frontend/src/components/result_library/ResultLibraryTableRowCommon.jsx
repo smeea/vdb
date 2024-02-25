@@ -103,7 +103,7 @@ const ResultLibraryTableRowCommon = ({
   noBurn,
   isBanned,
 }) => {
-  const { isDesktop, isNarrow, isWide } = useApp();
+  const { isNarrow } = useApp();
 
   return (
     <>
@@ -115,11 +115,11 @@ const ResultLibraryTableRowCommon = ({
             shouldShowModal={shouldShowModal}
             isBanned={isBanned}
           />
-          {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
+          {(!inSearch || !isNarrow) && (
             <Cost card={card} handleClick={handleClick} />
           )}
           <Requirements card={card} handleClick={handleClick} />
-          {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
+          {(!inSearch || !isNarrow) && (
             <Burn card={card} handleClick={handleClick} />
           )}
         </>

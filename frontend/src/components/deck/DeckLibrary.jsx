@@ -114,6 +114,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
                   showInfo={showInfo}
                   cards={libraryByType[cardtype]}
                   inMissing={inMissing}
+                  inSearch={inSearch}
                   shouldShowModal={shouldShowModal}
                 />
               </div>
@@ -140,6 +141,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
                     handleClick={handleClickSide}
                     cards={librarySideByType[cardtype]}
                     inMissing={inMissing}
+                    inSearch={inSearch}
                     placement={isNarrow ? 'bottom' : 'right'}
                     shouldShowModal={shouldShowModal}
                   />
