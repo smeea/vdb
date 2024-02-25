@@ -3,10 +3,10 @@
 - Mobile support for Tournament Analyze
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Image Gutowski
+- Inventory sort option
 
 # FEATURES
 - Playtest reports
-- Change password to UI
 
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
