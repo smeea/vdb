@@ -3,6 +3,7 @@ import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import TrashFill from '@/assets/images/icons/trash-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
+import { deckServices } from '@/services';
 import { deckStore, useApp } from '@/context';
 import { byTimestamp } from '@/utils';
 
@@ -27,23 +28,10 @@ const DeckDeleteButton = ({ deck, noText }) => {
   };
 
   const handleClick = () => {
-    const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
-    const options = {
-      method: 'DELETE',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-
-    fetch(url, options).then(() => {
-      delete deckStore.decks[deck.master ?? deck.deckid];
-
+    deckServices.deckDelete(deck).then(() => {
       setShowConfirmation(false);
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
-
       const lastDeckId = getLastDeckExcept();
       navigate(lastDeckId ? `/decks/${lastDeckId}` : '/decks');
     });

@@ -58,6 +58,17 @@ export const deckImport = (deck) => {
   });
 };
 
+export const deckDelete = (deck) => {
+  const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
+  const options = {
+    method: 'DELETE',
+  };
+
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(() => {
+    delete deckStore.decks[deck.master ?? deck.deckid];
+  });
+};
+
 export const deckClone = async (deck) => {
   const name = `${deck.name} [by ${deck.author}]`;
   const cards = {};
@@ -130,10 +141,7 @@ export const deckSnapshot = async (deck) => {
   };
 
   return fetch(url, { ...DEFAULT_OPTIONS, ...options })
-    .then((response) => {
-      if (!response.ok) throw Error(response.status);
-      return response.json();
-    })
+    .then((response) => response.json())
     .then((data) => data.deckid);
 };
 

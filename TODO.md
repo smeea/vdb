@@ -11,8 +11,9 @@
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
 - Explicit image width/height
-- Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
-- Refactor getDeck
+- Refactor async in DeckServices (leave only when needed)
+- Refactor fetches from buttons to services
+- Refactor getDeck function
 - Back button behavior
 - Update to Headlessui 2 (review new components)
 - Update prompt using vite-pwa
