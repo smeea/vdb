@@ -2,19 +2,20 @@ import { useDeckExport } from '@/hooks';
 import { defer } from 'react-router-dom';
 import { deckStore } from '@/context';
 
+const DEFAULT_OPTIONS = {
+  headers: { 'Content-Type': 'application/json' },
+  mode: 'cors',
+  credentials: 'include',
+};
+
 export const update = (deckid, field, value) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
   const options = {
     method: 'PUT',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify({ [field]: value }),
   };
 
-  return fetch(url, options).then((response) => {
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
     if (!response.ok) throw response;
     return response.json();
   });
@@ -24,15 +25,10 @@ export const cardChange = (deckid, cardid, q) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
   const options = {
     method: 'PUT',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify({ cardChange: { [cardid]: q } }),
   };
 
-  return fetch(url, options).then((response) => {
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
     if (!response.ok) throw response;
     return response.json();
   });
@@ -47,11 +43,6 @@ export const deckImport = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck`;
   const options = {
     method: 'POST',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify({
       name: deck.name,
       description: deck.description,
@@ -61,7 +52,7 @@ export const deckImport = (deck) => {
     }),
   };
 
-  return fetch(url, options).then((response) => {
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
     if (!response.ok) throw response;
     return response.json();
   });
@@ -80,11 +71,6 @@ export const deckClone = async (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck`;
   const options = {
     method: 'POST',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify({
       name: name,
       description: deck.description,
@@ -94,7 +80,7 @@ export const deckClone = async (deck) => {
     }),
   };
 
-  return fetch(url, options)
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
     .then((response) => response.json())
     .then((data) => {
       if (data.error === undefined) {
@@ -133,11 +119,6 @@ export const deckSnapshot = async (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck`;
   const options = {
     method: 'POST',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify({
       name: deck.name,
       description: deck.description,
@@ -148,7 +129,7 @@ export const deckSnapshot = async (deck) => {
     }),
   };
 
-  return fetch(url, options)
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
     .then((response) => {
       if (!response.ok) throw Error(response.status);
       return response.json();
@@ -160,17 +141,12 @@ export const branchesImport = async (masterId, branches) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${masterId}/branch`;
   const options = {
     method: 'POST',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify({
       branches: branches,
     }),
   };
 
-  return fetch(url, options)
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
     .then((response) => {
       if (!response.ok) throw response;
       return response.json();
@@ -189,14 +165,9 @@ export const branchDelete = async (deckid, decks) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}/branch`;
   const options = {
     method: 'DELETE',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
   };
 
-  return fetch(url, options).then(() => {
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(() => {
     let masterId = decks[deckid].master || null;
     const branches = masterId
       ? [...decks[masterId].branches]
@@ -226,17 +197,12 @@ export const branchCreate = async (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
   const options = {
     method: 'POST',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify({
       deckid: deck.deckid,
     }),
   };
 
-  return fetch(url, options)
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
     .then((response) => response.json())
     .then((data) => {
       const now = new Date();
@@ -269,14 +235,9 @@ export const publicSync = (deck, decks) => {
   const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
   const options = {
     method: 'PUT',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
   };
 
-  return fetch(url, options)
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
     .then((response) => response.json())
     .then(() => {
       deckStore.deck.crypt = { ...decks[deck.publicParent].crypt };
@@ -290,14 +251,9 @@ export const publicCreateOrDelete = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
   const options = {
     method: isPublished ? 'DELETE' : 'POST',
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
   };
 
-  return fetch(url, options)
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
     .then((response) => response.json())
     .then((data) => {
       deckStore.decks[parentId].publicChild = isPublished ? null : data.deckid;
@@ -398,14 +354,14 @@ export const deckLoader = async ({ params }) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${params.deckid}`;
   const options = {
     method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
   };
 
-  const response = fetch(url, options).then((response) => {
-    if (!response.ok) return { error: response.status };
-    return response.json();
-  });
+  const response = fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(
+    (response) => {
+      if (!response.ok) return { error: response.status };
+      return response.json();
+    }
+  );
 
   return defer({ deckData: response });
 };

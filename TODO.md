@@ -12,6 +12,7 @@
 - Migration from isWide, etc to container queries
 - Explicit image width/height
 - Refactor Deck Buttons (split in button ui and function incl. deckstore functions)
+- Refactor getDeck
 - Back button behavior
 - Update to Headlessui 2 (review new components)
 - Update prompt using vite-pwa

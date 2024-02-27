@@ -4,6 +4,11 @@ import { useDeck, useTags } from '@/hooks';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
 const BASE_URL = import.meta.env.VITE_BASE_URL;
+const DEFAULT_OPTIONS = {
+  method: 'GET',
+  mode: 'cors',
+  credentials: 'include',
+};
 
 const urlCrypt = `${BASE_URL}/data/cardbase_crypt.json?v=${CARD_VERSION}`;
 const urlLibrary = `${BASE_URL}/data/cardbase_lib.json?v=${CARD_VERSION}`;
@@ -16,37 +21,31 @@ const urlLocalizedLibrary = (lang) =>
 const urlPreconDecks = `${BASE_URL}/data/precon_decks.json?v=${CARD_VERSION}`;
 
 export const getCardBase = async () => {
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-  };
-
-  const crypt = await fetch(urlCrypt, options).then((response) =>
-    response.json(),
+  const crypt = await fetch(urlCrypt, DEFAULT_OPTIONS).then((response) =>
+    response.json()
   );
-  const library = await fetch(urlLibrary, options).then((response) =>
-    response.json(),
+  const library = await fetch(urlLibrary, DEFAULT_OPTIONS).then((response) =>
+    response.json()
   );
 
-  const cryptPlaytest = await fetch(urlCryptPlaytest, options).then(
+  const cryptPlaytest = await fetch(urlCryptPlaytest, DEFAULT_OPTIONS).then(
     (response) => {
       if (response.headers.get('content-type') === 'application/json') {
         return response.json();
       } else {
         return {};
       }
-    },
+    }
   );
 
-  const libraryPlaytest = await fetch(urlLibraryPlaytest, options).then(
+  const libraryPlaytest = await fetch(urlLibraryPlaytest, DEFAULT_OPTIONS).then(
     (response) => {
       if (response.headers.get('content-type') === 'application/json') {
         return response.json();
       } else {
         return {};
       }
-    },
+    }
   );
 
   const nativeCrypt = {};
@@ -73,17 +72,11 @@ export const getCardBase = async () => {
 };
 
 export const getLocalizedCardBase = async (lang) => {
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-  };
-
-  const crypt = await fetch(urlLocalizedCrypt(lang), options).then((response) =>
-    response.json(),
+  const crypt = await fetch(urlLocalizedCrypt(lang), DEFAULT_OPTIONS).then(
+    (response) => response.json()
   );
-  const library = await fetch(urlLocalizedLibrary(lang), options).then(
-    (response) => response.json(),
+  const library = await fetch(urlLocalizedLibrary(lang), DEFAULT_OPTIONS).then(
+    (response) => response.json()
   );
 
   return {
@@ -93,14 +86,8 @@ export const getLocalizedCardBase = async (lang) => {
 };
 
 export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-  };
-
-  const preconDecksData = await fetch(urlPreconDecks, options).then(
-    (response) => response.json(),
+  const preconDecksData = await fetch(urlPreconDecks, DEFAULT_OPTIONS).then(
+    (response) => response.json()
   );
 
   const preconDecks = {};
@@ -123,7 +110,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
       const cardsData = useDeck(
         preconDecksData[set][precon],
         cryptCardBase,
-        libraryCardBase,
+        libraryCardBase
       );
 
       let tags = [];
@@ -134,7 +121,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
         Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
           (v) => {
             tags = tags.concat(v);
-          },
+          }
         );
       }
 
