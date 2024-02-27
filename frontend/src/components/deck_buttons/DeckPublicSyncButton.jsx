@@ -7,45 +7,21 @@ import {
   DeckPublicDiff,
   ButtonIconed,
 } from '@/components';
+import { deckServices } from '@/services';
 import { useApp, deckStore } from '@/context';
 
 const DeckPublicSyncButton = ({ deck }) => {
-  const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
+  const { isDesktop } = useApp();
   const decks = useSnapshot(deckStore).decks;
-  const [showConfirmation, setShowConfirmation] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const handleSync = () => {
-    syncPublic();
-    setShowConfirmation(false);
-    setShowMenuButtons(false);
-    setShowFloatingButtons(true);
-  };
-
-  const handleCancel = () => {
-    setShowConfirmation(false);
-    setShowMenuButtons(false);
-    setShowFloatingButtons(true);
-  };
-
-  const syncPublic = () => {
-    const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
-    const options = {
-      method: 'PUT',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
+  const handleClick = () => {
     setIsLoading(true);
-    fetch(url, options)
-      .then((response) => response.json())
-      .then(() => {
-        deckStore.deck.crypt = { ...decks[deck.publicParent].crypt };
-        deckStore.deck.library = { ...decks[deck.publicParent].library };
-      });
-    setIsLoading(false);
+    deckServices.publicSync(deck, decks).then(() => {
+      setIsLoading(false);
+      setShowConfirmation(false);
+    });
   };
 
   return (
@@ -55,15 +31,15 @@ const DeckPublicSyncButton = ({ deck }) => {
         onClick={() => setShowConfirmation(true)}
         title="Sync Deck with Public Deck Archive"
         text="Sync Public Deck"
-        icon={!isLoading ? <PeopleFill /> : <Spinner />}
+        icon={isLoading ? <Spinner /> : <PeopleFill />}
       />
       {showConfirmation && (
         <ModalConfirmation
           size="xl"
           title={`Sync "${deck.name}" with Public Deck Archive?`}
           buttonText="Sync"
-          handleConfirm={handleSync}
-          handleCancel={handleCancel}
+          handleConfirm={handleClick}
+          handleCancel={() => setShowConfirmation(false)}
         >
           <div>
             <div className="font-bold text-fgSecondary  dark:text-fgSecondaryDark">

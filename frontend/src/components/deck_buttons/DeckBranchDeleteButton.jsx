@@ -4,54 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import NodeMinusFill from '@/assets/images/icons/node-minus-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
 import { deckStore, useApp } from '@/context';
+import { deckServices } from '@/services';
 
 const DeckBranchDeleteButton = ({ deck, noText }) => {
-  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
-  const decks = useSnapshot(deckStore).decks;
+  const { isDesktop } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
+  const decks = useSnapshot(deckStore).decks;
 
-  const handleCancel = () => setShowConfirmation(false);
-  const handleConfirm = () => {
-    deleteBranch(deck.deckid);
-    setShowConfirmation(false);
-    setShowMenuButtons(false);
-    setShowFloatingButtons(true);
-  };
-
-  const deleteBranch = (deckid) => {
-    const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}/branch`;
-    const options = {
-      method: 'DELETE',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-    fetch(url, options).then(() => {
-      const masterId = decks[deckid].master || null;
-      const branches = masterId
-        ? [...decks[masterId].branches]
-        : [...decks[deckid].branches];
-
-      if (masterId) {
-        branches.splice(branches.indexOf(deckid), 1);
-        deckStore.decks[masterId].branches = branches;
-        deckStore.decks[masterId].isBranches = branches.length > 0;
-        navigate(`/decks/${masterId}`);
-      } else {
-        const newMasterId = branches.pop();
-        deckStore.decks[newMasterId].branches = branches;
-        deckStore.decks[newMasterId].isBranches = branches.length > 0;
-        deckStore.decks[newMasterId].master = null;
-        branches.map((b) => {
-          deckStore.decks[b].master = newMasterId;
-        });
-        navigate(`/decks/${newMasterId}`);
-      }
-
-      delete deckStore.decks[deckid];
+  const handleClick = () => {
+    deckServices.branchDelete(deck.deckid, decks).then((deckid) => {
+      navigate(`/decks/${deckid}`);
+      setShowConfirmation(false);
     });
   };
 
@@ -72,8 +36,8 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
       />
       {showConfirmation && (
         <ModalConfirmation
-          handleConfirm={handleConfirm}
-          handleCancel={handleCancel}
+          handleConfirm={handleClick}
+          handleCancel={() => setShowConfirmation(false)}
           title={`Delete revision "${deck.branchName}" of deck "${deck.name}"`}
           buttonText="Delete"
         >

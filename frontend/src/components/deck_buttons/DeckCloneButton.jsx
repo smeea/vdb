@@ -6,7 +6,7 @@ import { deckServices } from '@/services';
 import { ButtonIconed } from '@/components';
 
 const DeckCloneButton = ({ deck, inTwdPda, noText }) => {
-  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
   const [success, setSuccess] = useState(false);
 
@@ -17,7 +17,6 @@ const DeckCloneButton = ({ deck, inTwdPda, noText }) => {
       setTimeout(() => {
         setSuccess(false);
         setShowMenuButtons(false);
-        setShowFloatingButtons(true);
       }, 1000);
     });
   };

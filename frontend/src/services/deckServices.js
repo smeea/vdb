@@ -121,6 +121,41 @@ export const deckClone = async (deck) => {
     });
 };
 
+export const deckSnapshot = async (deck) => {
+  const cards = {};
+  Object.keys(deck.crypt).forEach((cardid) => {
+    cards[cardid] = deck.crypt[cardid].q;
+  });
+  Object.keys(deck.library).forEach((cardid) => {
+    cards[cardid] = deck.library[cardid].q;
+  });
+
+  const url = `${import.meta.env.VITE_API_URL}/deck`;
+  const options = {
+    method: 'POST',
+    mode: 'cors',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: deck.name,
+      description: deck.description,
+      author: deck.author,
+      cards: cards,
+      tags: deck.tags,
+      anonymous: true,
+    }),
+  };
+
+  return fetch(url, options)
+    .then((response) => {
+      if (!response.ok) throw Error(response.status);
+      return response.json();
+    })
+    .then((data) => data.deckid);
+};
+
 export const branchesImport = async (masterId, branches) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${masterId}/branch`;
   const options = {
@@ -150,10 +185,45 @@ export const branchesImport = async (masterId, branches) => {
     });
 };
 
+export const branchDelete = async (deckid, decks) => {
+  const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}/branch`;
+  const options = {
+    method: 'DELETE',
+    mode: 'cors',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  return fetch(url, options).then(() => {
+    let masterId = decks[deckid].master || null;
+    const branches = masterId
+      ? [...decks[masterId].branches]
+      : [...decks[deckid].branches];
+
+    if (masterId) {
+      branches.splice(branches.indexOf(deckid), 1);
+      deckStore.decks[masterId].branches = branches;
+      deckStore.decks[masterId].isBranches = branches.length > 0;
+    } else {
+      masterId = branches.pop();
+      deckStore.decks[masterId].branches = branches;
+      deckStore.decks[masterId].isBranches = branches.length > 0;
+      deckStore.decks[masterId].master = null;
+      branches.map((b) => {
+        deckStore.decks[b].master = masterId;
+      });
+    }
+
+    delete deckStore.decks[deckid];
+    return masterId;
+  });
+};
+
 export const branchCreate = async (deck) => {
   const master = deck.master ?? deck.deckid;
   const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
-
   const options = {
     method: 'POST',
     mode: 'cors',
@@ -192,6 +262,46 @@ export const branchCreate = async (deck) => {
         timestamp: now.toUTCString(),
       };
       return data[0].deckid;
+    });
+};
+
+export const publicSync = (deck, decks) => {
+  const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
+  const options = {
+    method: 'PUT',
+    mode: 'cors',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  return fetch(url, options)
+    .then((response) => response.json())
+    .then(() => {
+      deckStore.deck.crypt = { ...decks[deck.publicParent].crypt };
+      deckStore.deck.library = { ...decks[deck.publicParent].library };
+    });
+};
+
+export const publicCreateOrDelete = (deck) => {
+  const isPublished = !!(deck.publicParent || deck.publicChild);
+  const parentId = deck.publicParent ?? deck.deckid;
+  const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
+  const options = {
+    method: isPublished ? 'DELETE' : 'POST',
+    mode: 'cors',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  return fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
+      deckStore.decks[parentId].publicChild = isPublished ? null : data.deckid;
+      return data.deckid;
     });
 };
 

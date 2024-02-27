@@ -12,11 +12,6 @@ const DeckDeleteButton = ({ deck, noText }) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
-  const handleCancel = () => setShowConfirmation(false);
-  const handleConfirm = () => {
-    deleteDeck();
-  };
-
   const getLastDeckExcept = () => {
     const lastDecks = Object.values(decks)
       .filter((d) => {
@@ -31,7 +26,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
     return lastDecks[0] || null;
   };
 
-  const deleteDeck = () => {
+  const handleClick = () => {
     const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
     const options = {
       method: 'DELETE',
@@ -72,8 +67,8 @@ const DeckDeleteButton = ({ deck, noText }) => {
       {showConfirmation && (
         <ModalConfirmation
           withWrittenConfirmation={deck.isBranches}
-          handleConfirm={handleConfirm}
-          handleCancel={handleCancel}
+          handleConfirm={handleClick}
+          handleCancel={() => setShowConfirmation(false)}
           title={`Delete deck "${deck.name}" and all its revisions`}
           buttonText="Delete"
           buttonVariant="danger"

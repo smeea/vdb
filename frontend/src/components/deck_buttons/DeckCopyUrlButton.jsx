@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
 import Link45Deg from '@/assets/images/icons/link-45deg.svg?react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
+import { deckServices } from '@/services';
 import { useApp } from '@/context';
 import { getDeckInUrl } from '@/utils';
 
@@ -12,9 +13,8 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const handleStandard = () => {
     const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(
       ' ',
-      '_',
+      '_'
     )}`;
-
     navigator.clipboard.writeText(url);
     setSuccess(true);
     setTimeout(() => {
@@ -27,7 +27,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const handleStandardQr = () => {
     const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(
       ' ',
-      '_',
+      '_'
     )}`;
 
     setShowMenuButtons(false);
@@ -37,7 +37,6 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
 
   const handleDeckInUrl = () => {
     const url = getDeckInUrl(deck);
-
     navigator.clipboard.writeText(url);
     setSuccess(true);
     setTimeout(() => {
@@ -49,56 +48,22 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
 
   const handleDeckInQr = () => {
     const url = getDeckInUrl(deck);
-
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
     setQrUrl(url);
   };
 
   const handleSnapshot = () => {
-    const cards = {};
-    Object.keys(deck.crypt).forEach((cardid) => {
-      cards[cardid] = deck.crypt[cardid].q;
+    deckServices.deckSnapshot(deck).then((deckid) => {
+      const url = `${import.meta.env.VITE_BASE_URL}/decks/${deckid}`;
+      navigator.clipboard.writeText(url);
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+      }, 1000);
     });
-    Object.keys(deck.library).forEach((cardid) => {
-      cards[cardid] = deck.library[cardid].q;
-    });
-
-    const url = `${import.meta.env.VITE_API_URL}/deck`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: deck.name,
-        description: deck.description,
-        author: deck.author,
-        cards: cards,
-        tags: deck.tags,
-        anonymous: true,
-      }),
-    };
-
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        const url = `${import.meta.env.VITE_BASE_URL}/decks/${data.deckid}`;
-        navigator.clipboard.writeText(url);
-      })
-      .then(() => {
-        setSuccess(true);
-        setTimeout(() => {
-          setSuccess(false);
-          setShowMenuButtons(false);
-          setShowFloatingButtons(true);
-        }, 1000);
-      });
   };
 
   return (

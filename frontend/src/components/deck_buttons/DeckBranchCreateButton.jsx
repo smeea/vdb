@@ -12,15 +12,14 @@ import { deckServices } from '@/services';
 import { useApp } from '@/context';
 
 const DeckBranchCreateButton = ({ deck }) => {
-  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
   const [showSelect, setShowSelect] = useState();
 
-  const handleClick = (d) => {
-    deckServices.branchCreate(d).then((newDeckid) => {
+  const handleClick = () => {
+    deckServices.branchCreate(deck).then((newDeckid) => {
       navigate(`/decks/${newDeckid}`);
       setShowMenuButtons(false);
-      setShowFloatingButtons(true);
     });
   };
 
@@ -34,9 +33,7 @@ const DeckBranchCreateButton = ({ deck }) => {
           text="Add Revision"
         />
         <MenuItems>
-          <MenuItem onClick={() => handleClick(deck)}>
-            From Active Deck
-          </MenuItem>
+          <MenuItem onClick={() => handleClick()}>From Active Deck</MenuItem>
           <MenuItem onClick={() => setShowSelect(true)}>
             Select From Decks
           </MenuItem>

@@ -7,7 +7,8 @@ import {
   DeckPublicToggleConfirmation,
   ButtonIconed,
 } from '@/components';
-import { useApp, deckStore } from '@/context';
+import { deckServices } from '@/services';
+import { useApp } from '@/context';
 
 const DeckPublicToggleButton = ({ deck, inAdv }) => {
   const { isDesktop } = useApp();
@@ -15,37 +16,16 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const isPublished = !!(deck.publicParent || deck.publicChild);
-  const parentId = deck.publicParent ?? deck.deckid;
 
-  const handleConfirmation = () => {
-    createOrDelete();
-    setShowConfirmation(false);
-  };
-
-  const createOrDelete = () => {
-    const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
-    const options = {
-      method: isPublished ? 'DELETE' : 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-
+  const handleClick = () => {
     setIsLoading(true);
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        deckStore.decks[parentId].publicChild = isPublished
-          ? null
-          : data.deckid;
-
-        !inAdv &&
-          navigate(`/decks/${isPublished ? deck.publicParent : data.deckid}`);
-      });
-
-    setIsLoading(false);
+    deckServices.publicCreateOrDelete(deck).then((deckid) => {
+      setShowConfirmation(false);
+      setIsLoading(false);
+      if (!inAdv) {
+        navigate(`/decks/${isPublished ? deck.publicParent : deckid}`);
+      }
+    });
   };
 
   return (
@@ -70,7 +50,7 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
       {showConfirmation && (
         <DeckPublicToggleConfirmation
           deck={deck}
-          handleConfirmation={handleConfirmation}
+          handleConfirmation={handleClick}
           setShow={setShowConfirmation}
         />
       )}
