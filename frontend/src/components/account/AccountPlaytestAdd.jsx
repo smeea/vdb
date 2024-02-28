@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg?react';
 import { Spinner, Input, Button, ErrorOverlay } from '@/components';
+import { miscServices } from '@/services';
 
 const AccountPlaytestAdd = ({
   playtesters,
@@ -13,20 +14,10 @@ const AccountPlaytestAdd = ({
 
   const addPlaytester = () => {
     setIsLoading(true);
-
-    const url = `${import.meta.env.VITE_API_URL}/playtest`;
-    const options = {
-      method: 'PUT',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username: username }),
-    };
-
     setError(false);
-    fetch(url, options)
+
+    miscServices
+      .changePlaytester(username)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
         if (
@@ -41,9 +32,8 @@ const AccountPlaytestAdd = ({
       })
       .catch(() => {
         setError('USER DOES NOT EXIST');
-      });
-
-    setIsLoading(false);
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const handleChange = (event) => {

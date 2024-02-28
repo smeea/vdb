@@ -9,25 +9,12 @@ const AccountPlaytestModal = ({ setShow }) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest`;
   const { value } = useFetch(url, {}, []);
 
-  const handleClose = () => setShow(false);
-
-  const changePlaytester = (user, isAdd) => {
-    const url = `${import.meta.env.VITE_API_URL}/playtest`;
-    const options = {
-      method: isAdd ? 'PUT' : 'DELETE',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username: user }),
-    };
-
-    fetch(url, options);
-  };
-
   return (
-    <Modal handleClose={handleClose} title="Manage Playtesters" size="sm">
+    <Modal
+      handleClose={() => setShow(false)}
+      title="Manage Playtesters"
+      size="sm"
+    >
       <div className="flex flex-col gap-3">
         <AccountPlaytestAdd
           playtesters={value}
@@ -38,13 +25,7 @@ const AccountPlaytestModal = ({ setShow }) => {
           {value &&
             [...newPlaytesters.toReversed(), ...value.toSorted()]
               .filter((u) => u != username)
-              .map((u) => (
-                <AccountPlaytestPlayer
-                  key={u}
-                  changePlaytester={changePlaytester}
-                  username={u}
-                />
-              ))}
+              .map((u) => <AccountPlaytestPlayer key={u} username={u} />)}
         </div>
       </div>
     </Modal>

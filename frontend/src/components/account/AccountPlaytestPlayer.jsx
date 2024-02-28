@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Toggle } from '@/components';
+import { miscServices } from '@/services';
 
-const AccountPlaytestPlayer = ({ changePlaytester, username }) => {
+const AccountPlaytestPlayer = ({ username }) => {
   const [state, setState] = useState(true);
 
   const handleClick = () => {
-    changePlaytester(username, !state);
+    miscServices.changePlaytester(username, !state);
     setState(!state);
   };
 

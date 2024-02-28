@@ -13,6 +13,7 @@
 - Explicit image width/height
 - Refactor fetches from buttons to services
 - Back button behavior
+- Refactor fetchew with catch to use finally
 - Update to Headlessui 2 (review new components)
 - Update prompt using vite-pwa
 - Remove legacy polyfills when Safari adopts groupBy
