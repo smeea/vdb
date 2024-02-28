@@ -144,16 +144,15 @@ const TwdSearchForm = ({ error, setError }) => {
         return response.json();
       })
       .then((data) => {
-        setIsLoading(false);
         setTwdResults(data);
       })
       .catch((error) => {
         handleError(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const getNewTwd = (q) => {
-    setIsLoading(true);
     setError(false);
     clearSearchForm('twd');
 
@@ -164,22 +163,22 @@ const TwdSearchForm = ({ error, setError }) => {
       credentials: 'include',
     };
 
+    setIsLoading(true);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
       .then((data) => {
-        setIsLoading(false);
         setTwdResults(data);
       })
       .catch((error) => {
         handleError(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const getRandomTwd = (q) => {
-    setIsLoading(true);
     setError(false);
     clearSearchForm('twd');
 
@@ -190,18 +189,19 @@ const TwdSearchForm = ({ error, setError }) => {
       credentials: 'include',
     };
 
+    setIsLoading(true);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
       .then((data) => {
-        setIsLoading(false);
         setTwdResults(data);
       })
       .catch((error) => {
         handleError(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {

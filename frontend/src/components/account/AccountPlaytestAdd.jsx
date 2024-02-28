@@ -30,9 +30,7 @@ const AccountPlaytestAdd = ({
           setError('ALREADY PLAYTESTER');
         }
       })
-      .catch(() => {
-        setError('USER DOES NOT EXIST');
-      })
+      .catch(() => setError('USER DOES NOT EXIST'))
       .finally(() => setIsLoading(false));
   };
 

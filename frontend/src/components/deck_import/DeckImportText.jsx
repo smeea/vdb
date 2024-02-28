@@ -38,8 +38,6 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
     setImportError(false);
 
     if (deckText) {
-      setEmptyError(false);
-
       const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase);
 
       deckServices
@@ -56,9 +54,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
           setDeckText('');
           handleClose();
         })
-        .catch(() => {
-          setImportError(true);
-        });
+        .catch(() => setImportError(true));
     } else {
       setEmptyError(true);
     }

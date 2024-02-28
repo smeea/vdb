@@ -24,7 +24,6 @@ const DeckImportAmaranth = ({ handleClose }) => {
     setImportError(false);
 
     if (/.*#deck\//.test(deckUrl)) {
-      setEmptyError(false);
       setIsLoading(true);
 
       if (idReference) {
@@ -33,13 +32,10 @@ const DeckImportAmaranth = ({ handleClose }) => {
           .then((deck) => importDeckFromAmaranth(deck))
           .then(() => {
             setDeckUrl('');
-            setIsLoading(false);
             handleClose();
           })
-          .catch(() => {
-            setImportError(true);
-            setIsLoading(false);
-          });
+          .catch(() => setImportError(true))
+          .finally(() => setIsLoading(false));
       }
     } else {
       setEmptyError(true);

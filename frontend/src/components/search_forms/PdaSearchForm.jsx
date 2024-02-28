@@ -141,16 +141,15 @@ const PdaSearchForm = ({ error, setError }) => {
         return response.json();
       })
       .then((data) => {
-        setIsLoading(false);
         setPdaResults(data);
       })
       .catch((error) => {
         handleError(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const getNewPda = (q) => {
-    setIsLoading(true);
     setError(false);
     clearSearchForm('pda');
 
@@ -161,22 +160,22 @@ const PdaSearchForm = ({ error, setError }) => {
       credentials: 'include',
     };
 
+    setIsLoading(true);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
       .then((data) => {
-        setIsLoading(false);
         setPdaResults(data);
       })
       .catch((error) => {
         handleError(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const getRandomPda = (q) => {
-    setIsLoading(true);
     setError(false);
     clearSearchForm('pda');
 
@@ -187,18 +186,19 @@ const PdaSearchForm = ({ error, setError }) => {
       credentials: 'include',
     };
 
+    setIsLoading(true);
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
         return response.json();
       })
       .then((data) => {
-        setIsLoading(false);
         setPdaResults(data);
       })
       .catch((error) => {
         handleError(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {

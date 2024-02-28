@@ -77,10 +77,8 @@ const TournamentAnalyze = () => {
           setTempDecks(d);
         });
       })
-      .catch(() => {
-        setIsLoading(false);
-        setError(id);
-      });
+      .catch(() => setError(id))
+      .finally(() => setIsLoading(false));
   };
 
   const loadArchon = async (file) => {
