@@ -26,6 +26,7 @@ import {
   searchPdaForm,
   clearSearchForm,
 } from '@/context';
+import { archiveServices } from '@/services';
 
 const PdaSearchForm = ({ error, setError }) => {
   const {
@@ -115,37 +116,16 @@ const PdaSearchForm = ({ error, setError }) => {
   const processSearch = () => {
     setError(false);
     const sanitizedForm = sanitizeFormState('pda', pdaFormState);
-
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;
     }
-
     navigate(`/pda?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
-    const url = `${import.meta.env.VITE_API_URL}/search/pda`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(sanitizedForm),
-    };
-
     setIsLoading(true);
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        setPdaResults(data);
-      })
-      .catch((error) => {
-        handleError(error);
-      })
+    archiveServices
+      .search(sanitizedForm, true)
+      .catch((error) => handleError(error))
       .finally(() => setIsLoading(false));
   };
 
@@ -153,25 +133,10 @@ const PdaSearchForm = ({ error, setError }) => {
     setError(false);
     clearSearchForm('pda');
 
-    const url = `${import.meta.env.VITE_API_URL}/pda/new/${q}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
     setIsLoading(true);
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        setPdaResults(data);
-      })
-      .catch((error) => {
-        handleError(error);
-      })
+    archiveServices
+      .getNewDecks(q, true)
+      .catch((error) => handleError(error))
       .finally(() => setIsLoading(false));
   };
 
@@ -179,25 +144,10 @@ const PdaSearchForm = ({ error, setError }) => {
     setError(false);
     clearSearchForm('pda');
 
-    const url = `${import.meta.env.VITE_API_URL}/pda/random/${q}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
     setIsLoading(true);
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        setPdaResults(data);
-      })
-      .catch((error) => {
-        handleError(error);
-      })
+    archiveServices
+      .getRandomDecks(q, true)
+      .catch((error) => handleError(error))
       .finally(() => setIsLoading(false));
   };
 

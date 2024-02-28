@@ -1,32 +1,18 @@
 import React, { useState } from 'react';
 import TrashFill from '@/assets/images/icons/trash-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
-import { useApp, inventoryStore } from '@/context';
+import { useApp } from '@/context';
+import { inventoryServices } from '@/services';
 
 const InventoryDelete = () => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const handleCancel = () => setShowConfirmation(false);
-  const handleConfirm = () => {
-    deleteInventory();
+  const handleClick = () => {
+    inventoryServices.deleteInventory();
     setShowConfirmation(false);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
-  };
-
-  const deleteInventory = () => {
-    const url = `${import.meta.env.VITE_API_URL}/inventory`;
-    const options = {
-      method: 'DELETE',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options).then(() => {
-      inventoryStore.crypt = {};
-      inventoryStore.library = {};
-    });
   };
 
   return (
@@ -41,8 +27,8 @@ const InventoryDelete = () => {
       {showConfirmation && (
         <ModalConfirmation
           withWrittenConfirmation={true}
-          handleConfirm={handleConfirm}
-          handleCancel={handleCancel}
+          handleConfirm={handleClick}
+          handleCancel={() => setShowConfirmation(false)}
           title={`Delete Inventory`}
           buttonText="Delete"
           buttonVariant="danger"

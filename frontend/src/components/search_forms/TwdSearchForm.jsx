@@ -28,6 +28,7 @@ import {
   searchTwdForm,
   clearSearchForm,
 } from '@/context';
+import { archiveServices } from '@/services';
 
 const TwdSearchForm = ({ error, setError }) => {
   const {
@@ -118,37 +119,16 @@ const TwdSearchForm = ({ error, setError }) => {
   const processSearch = () => {
     setError(false);
     const sanitizedForm = sanitizeFormState('twd', twdFormState);
-
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;
     }
-
     navigate(`/twd?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
-    const url = `${import.meta.env.VITE_API_URL}/search/twd`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(sanitizedForm),
-    };
-
     setIsLoading(true);
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        setTwdResults(data);
-      })
-      .catch((error) => {
-        handleError(error);
-      })
+    archiveServices
+      .search(sanitizedForm)
+      .catch((error) => handleError(error))
       .finally(() => setIsLoading(false));
   };
 
@@ -156,25 +136,10 @@ const TwdSearchForm = ({ error, setError }) => {
     setError(false);
     clearSearchForm('twd');
 
-    const url = `${import.meta.env.VITE_API_URL}/twd/new/${q}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
     setIsLoading(true);
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        setTwdResults(data);
-      })
-      .catch((error) => {
-        handleError(error);
-      })
+    archiveServices
+      .getNewDecks(q)
+      .catch((error) => handleError(error))
       .finally(() => setIsLoading(false));
   };
 
@@ -182,25 +147,10 @@ const TwdSearchForm = ({ error, setError }) => {
     setError(false);
     clearSearchForm('twd');
 
-    const url = `${import.meta.env.VITE_API_URL}/twd/random/${q}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
     setIsLoading(true);
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        setTwdResults(data);
-      })
-      .catch((error) => {
-        handleError(error);
-      })
+    archiveServices
+      .getRandomDecks(q)
+      .catch((error) => handleError(error))
       .finally(() => setIsLoading(false));
   };
 

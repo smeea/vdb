@@ -3,6 +3,7 @@ import Link45Deg from '@/assets/images/icons/link-45deg.svg?react';
 import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg?react';
 import { FlexGapped, Modal, Button, ButtonIconed } from '@/components';
 import { useApp } from '@/context';
+import { inventoryServices } from '@/services';
 
 const InventoryShareModal = ({ setShow }) => {
   const {
@@ -18,25 +19,15 @@ const InventoryShareModal = ({ setShow }) => {
     `${import.meta.env.VITE_BASE_URL}/inventory?key=${inventoryKey}`
   );
 
-  const createUrl = () => {
-    const url = `${import.meta.env.VITE_API_URL}/account`;
-    const newKey = Math.random().toString(36).substring(2, 10);
+  const handleClick = () => {
+    const key = Math.random().toString(36).substring(2, 10);
 
-    const options = {
-      method: 'PUT',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ inventoryKey: newKey }),
-    };
-
-    fetch(url, options)
+    inventoryServices
+      .createSharedInventory(key)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
-        setInventoryKey(newKey);
-        const u = `${import.meta.env.VITE_BASE_URL}/inventory?key=${newKey}`;
+        setInventoryKey(key);
+        const u = `${import.meta.env.VITE_BASE_URL}/inventory?key=${key}`;
         setShareUrl(u);
         navigator.clipboard.writeText(u);
       })
@@ -87,7 +78,7 @@ const InventoryShareModal = ({ setShow }) => {
         <div className="flex flex-col justify-end gap-2 sm:flex-row">
           <ButtonIconed
             variant={success ? 'success' : 'primary'}
-            onClick={createUrl}
+            onClick={handleClick}
             title="Create URL"
             icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
             text="Create URL"

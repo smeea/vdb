@@ -1,3 +1,5 @@
+import { inventoryStore } from '@/context';
+
 const DEFAULT_OPTIONS = {
   mode: 'cors',
   credentials: 'include',
@@ -64,4 +66,27 @@ export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
       });
       return { crypt, library };
     });
+};
+
+export const createSharedInventory = (key) => {
+  const url = `${import.meta.env.VITE_API_URL}/account`;
+
+  const options = {
+    method: 'PUT',
+    body: JSON.stringify({ inventoryKey: key }),
+  };
+
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options });
+};
+
+export const deleteInventory = () => {
+  const url = `${import.meta.env.VITE_API_URL}/inventory`;
+  const options = {
+    method: 'DELETE',
+  };
+
+  fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(() => {
+    inventoryStore.crypt = {};
+    inventoryStore.library = {};
+  });
 };

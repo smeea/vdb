@@ -358,18 +358,18 @@ const saveFile = async (file, name) => {
 
 export const deckLoader = ({ params }) => {
   if (params.deckid === 'deck' || params.deckid.includes(':')) return null;
+  const response = getDeck(params.deckid);
+  return defer({ deckData: response });
+};
 
-  const url = `${import.meta.env.VITE_API_URL}/deck/${params.deckid}`;
+export const getDeck = (deckid) => {
+  const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
   const options = {
     method: 'GET',
   };
 
-  const response = fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(
-    (response) => {
-      if (!response.ok) return { error: response.status };
-      return response.json();
-    }
-  );
-
-  return defer({ deckData: response });
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
+    if (!response.ok) return { error: response.status };
+    return response.json();
+  });
 };

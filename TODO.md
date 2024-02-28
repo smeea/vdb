@@ -11,7 +11,6 @@
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
 - Explicit image width/height
-- Refactor fetches from buttons to services
 - Back button behavior
 - Update to Headlessui 2 (review new components)
 - Update prompt using vite-pwa

@@ -14,6 +14,7 @@ import {
 } from '@/components';
 import { useApp, deckStore, setDeck } from '@/context';
 import { useDeck } from '@/hooks';
+import { deckServices } from '@/services';
 
 const Diff = () => {
   const {
@@ -39,20 +40,11 @@ const Diff = () => {
   const { isPublic, isAuthor, isFrozen } = deck || {};
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
-  const getDeck = (id, setD, setE) => {
+  const getDeck = async (id, setD, setE) => {
     setE(false);
-    const url = `${import.meta.env.VITE_API_URL}/deck/${id}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
 
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
+    deckServices
+      .getDeck(id)
       .then((deckData) => {
         const cardsData = useDeck(
           deckData.cards,

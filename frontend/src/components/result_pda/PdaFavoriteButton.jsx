@@ -3,6 +3,7 @@ import Star from '@/assets/images/icons/star.svg?react';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
+import { miscServices } from '@/services';
 
 const PdaFavoriteButton = ({ deck }) => {
   const { username } = useApp();
@@ -12,20 +13,10 @@ const PdaFavoriteButton = ({ deck }) => {
   const handleClick = () => {
     if (!username) return;
 
-    const url = `${import.meta.env.VITE_API_URL}/pda/favorite/${deck.deckid}`;
-    const options = {
-      method: isFavorited ? 'DELETE' : 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-
-    fetch(url, options).then(() => {
+    miscServices.pdaToggle(isFavorited).then(() => {
       setIsFavorited(!isFavorited);
       setFavoritedBy((prevState) =>
-        isFavorited ? prevState - 1 : prevState + 1,
+        isFavorited ? prevState - 1 : prevState + 1
       );
     });
   };
