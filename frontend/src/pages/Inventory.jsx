@@ -17,6 +17,7 @@ import {
   FlexGapped,
 } from '@/components';
 import { useApp } from '@/context';
+import { inventoryServices } from '@/services';
 
 const Inventory = () => {
   const {
@@ -31,35 +32,18 @@ const Inventory = () => {
   } = useApp();
   const [inventoryError, setInventoryError] = useState();
   const query = new URLSearchParams(useLocation().search);
+  const sharedKey = query.get('key');
   const [sharedCrypt, setSharedCrypt] = useState();
   const [sharedLibrary, setSharedLibrary] = useState();
   const [showShareModal, setShowShareModal] = useState(false);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
-  const inShared = sharedCrypt && sharedLibrary;
+  const isSharedInventory = sharedCrypt && sharedLibrary;
 
   const getInventory = (key) => {
-    const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
     setInventoryError(false);
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        const crypt = {};
-        const library = {};
-        Object.keys(data.crypt).forEach((k) => {
-          crypt[k] = { ...data.crypt[k], c: cryptCardBase[k] };
-        });
-        Object.keys(data.library).forEach((k) => {
-          library[k] = { ...data.library[k], c: libraryCardBase[k] };
-        });
+    inventoryServices
+      .getSharedInventory(key, cryptCardBase, libraryCardBase)
+      .then(({ crypt, library }) => {
         setSharedCrypt(crypt);
         setSharedLibrary(library);
       })
@@ -73,10 +57,10 @@ const Inventory = () => {
   };
 
   useEffect(() => {
-    if (query.get('key') && !inShared && cryptCardBase && libraryCardBase) {
+    if (sharedKey && !isSharedInventory && cryptCardBase && libraryCardBase) {
       getInventory(query.get('key'));
     }
-  }, [query, cryptCardBase, libraryCardBase]);
+  }, [sharedKey, cryptCardBase, libraryCardBase]);
 
   const [category, setCategory] = useState('all');
   const [showAddDeck, setShowAddDeck] = useState(false);
@@ -88,7 +72,7 @@ const Inventory = () => {
 
   return (
     <div className="inventory-container mx-auto">
-      {(!inShared && username) || (inShared && !inventoryError) ? (
+      {(!sharedKey && username) || isSharedInventory ? (
         <FlexGapped>
           <div
             className={`${
@@ -130,8 +114,9 @@ const Inventory = () => {
               clan={clan}
               discipline={discipline}
               type={type}
-              category={inShared ? 'ok' : category}
+              category={isSharedInventory ? 'ok' : category}
               onlyNotes={onlyNotes}
+              isSharedInventory={isSharedInventory}
             />
             <div>
               <InventoryShowSelect
@@ -188,8 +173,9 @@ const Inventory = () => {
               clan={clan}
               discipline={discipline}
               type={type}
-              category={inShared ? 'ok' : category}
+              category={isSharedInventory ? 'ok' : category}
               onlyNotes={onlyNotes}
+              isSharedInventory={isSharedInventory}
             />
             <div>
               <InventoryShowSelect

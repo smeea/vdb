@@ -22,7 +22,7 @@ const InventoryButtons = ({
   discipline,
   category,
   onlyNotes,
-  inShared,
+  isSharedInventory,
   sharedCrypt,
   sharedLibrary,
   setSharedCrypt,
@@ -41,8 +41,8 @@ const InventoryButtons = ({
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
-  const crypt = inShared ? sharedCrypt : inventoryCrypt;
-  const library = inShared ? sharedLibrary : inventoryLibrary;
+  const crypt = isSharedInventory ? sharedCrypt : inventoryCrypt;
+  const library = isSharedInventory ? sharedLibrary : inventoryLibrary;
 
   const handleClose = () => {
     setShowMenuButtons(false);
@@ -52,7 +52,7 @@ const InventoryButtons = ({
   return (
     <>
       <div className="flex flex-col space-y-1">
-        {inShared && (
+        {isSharedInventory && (
           <ButtonIconed
             variant={isDesktop ? 'secondary' : 'primary'}
             onClick={() => {
@@ -76,7 +76,7 @@ const InventoryButtons = ({
           }}
           inInventory
         />
-        {!inShared && (
+        {!isSharedInventory && (
           <>
             <InventoryImport />
             {decks && (

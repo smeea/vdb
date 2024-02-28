@@ -39,3 +39,29 @@ export const setCardText = (cardid, text) => {
   };
   return fetch(url, { ...DEFAULT_OPTIONS, ...options });
 };
+
+export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
+  const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+  };
+
+  return fetch(url, options)
+    .then((response) => {
+      if (!response.ok) throw Error(response.status);
+      return response.json();
+    })
+    .then((data) => {
+      const crypt = {};
+      const library = {};
+      Object.keys(data.crypt).forEach((k) => {
+        crypt[k] = { ...data.crypt[k], c: cryptCardBase[k] };
+      });
+      Object.keys(data.library).forEach((k) => {
+        library[k] = { ...data.library[k], c: libraryCardBase[k] };
+      });
+      return { crypt, library };
+    });
+};
