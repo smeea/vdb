@@ -69,7 +69,7 @@ export const deckDelete = (deck) => {
   });
 };
 
-export const deckClone = async (deck) => {
+export const deckClone = (deck) => {
   const name = `${deck.name} [by ${deck.author}]`;
   const cards = {};
   Object.keys(deck.crypt).forEach((cardid) => {
@@ -118,7 +118,7 @@ export const deckClone = async (deck) => {
     });
 };
 
-export const deckSnapshot = async (deck) => {
+export const deckSnapshot = (deck) => {
   const cards = {};
   Object.keys(deck.crypt).forEach((cardid) => {
     cards[cardid] = deck.crypt[cardid].q;
@@ -145,7 +145,7 @@ export const deckSnapshot = async (deck) => {
     .then((data) => data.deckid);
 };
 
-export const branchesImport = async (masterId, branches) => {
+export const branchesImport = (masterId, branches) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${masterId}/branch`;
   const options = {
     method: 'POST',
@@ -169,7 +169,7 @@ export const branchesImport = async (masterId, branches) => {
     });
 };
 
-export const branchDelete = async (deckid, decks) => {
+export const branchDelete = (deckid, decks) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}/branch`;
   const options = {
     method: 'DELETE',
@@ -200,7 +200,7 @@ export const branchDelete = async (deckid, decks) => {
   });
 };
 
-export const branchCreate = async (deck) => {
+export const branchCreate = (deck) => {
   const master = deck.master ?? deck.deckid;
   const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
   const options = {
@@ -356,7 +356,7 @@ const saveFile = async (file, name) => {
   saveAs(file, name);
 };
 
-export const deckLoader = async ({ params }) => {
+export const deckLoader = ({ params }) => {
   if (params.deckid === 'deck' || params.deckid.includes(':')) return null;
 
   const url = `${import.meta.env.VITE_API_URL}/deck/${params.deckid}`;
