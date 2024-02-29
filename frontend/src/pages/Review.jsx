@@ -41,7 +41,7 @@ const Review = () => {
   const [deckFrom, setDeckFrom] = useImmer();
   const [deckTo, setDeckTo] = useImmer();
   const [error, setError] = useState(false);
-  const [foldedDescription, setFoldedDescription] = useState(!isMobile);
+  const [foldedDescription, setFoldedDescription] = useState(isMobile);
   const [urlDiff, setUrlDiff] = useState();
 
   const getDeck = async () => {
@@ -75,7 +75,7 @@ const Review = () => {
       description: deckData.description,
       isAuthor: deckData.isAuthor,
       isBranches: !!(deckData.master || deckData.branches?.length > 0),
-      isNonEditable: deckData.isNonEditable,
+      isNonEditable: false,
       isPublic: !!deckData.publicParent,
       library: cardsData.library,
       name: deckData.name,
@@ -199,12 +199,12 @@ const Review = () => {
 
   return (
     <div className="deck-container mx-auto">
-      <FlexGapped>
+      <FlexGapped className="w-full">
         <div className="min-w-[175px] max-xl:hidden" />
-        <FlexGapped className="flex-col">
+        <FlexGapped className="w-full flex-col">
           {deckFrom && (
             <DeckDetails
-              deck={deckFrom}
+              deck={{ ...deckFrom, isNonEditable: false }}
               folded={foldedDescription}
               setFolded={setFoldedDescription}
             />

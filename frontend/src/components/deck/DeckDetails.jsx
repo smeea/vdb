@@ -44,7 +44,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
         <div className="basis-full sm:basis-6/12">
           <DeckChangeDescription
             deck={deck}
-            folded={isMobile ? false : folded}
+            folded={folded}
             setFolded={setFolded}
           />
         </div>
