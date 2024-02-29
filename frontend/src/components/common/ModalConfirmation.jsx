@@ -49,7 +49,7 @@ const ModalConfirmation = ({
         {children && children}
         <div className="flex justify-end gap-2">
           {withWrittenConfirmation && (
-            <form onSubmit={handleClick}>
+            <form onSubmit={handleClick} className="w-full">
               <Input
                 placeholder="Type 'YES' to confirm"
                 name="text"

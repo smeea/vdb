@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
-import { Spinner, Input, Modal, Button, ErrorOverlay } from '@/components';
+import {
+  FlexGapped,
+  Spinner,
+  Input,
+  Modal,
+  Button,
+  ErrorOverlay,
+} from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
 
@@ -55,14 +62,9 @@ const AccountDeleteConfirmation = ({ setShow }) => {
         centered={isMobile}
         title="Delete Account"
       >
-        <div className="space-y-3 sm:space-y-5">
-          <div>
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              THIS CANNOT BE UNDONE!
-            </div>
-            This will also delete all your decks and they will not be available
-            via URL anymore.
-          </div>
+        <FlexGapped className="flex-col">
+          This will also delete all your decks and they will not be available
+          via URL anymore.
           <div className="flex justify-end space-x-2">
             <form onSubmit={handleSubmit}>
               <div className="flex">
@@ -111,7 +113,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
               Cancel
             </Button>
           </div>
-        </div>
+        </FlexGapped>
       </Modal>
     </>
   );

@@ -32,9 +32,7 @@ const InventoryDelete = () => {
           title={`Delete Inventory`}
           buttonText="Delete"
           buttonVariant="danger"
-        >
-          THIS CANNOT BE UNDONE!
-        </ModalConfirmation>
+        />
       )}
     </>
   );

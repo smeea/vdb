@@ -7,10 +7,18 @@ import {
   Modal,
   Header,
 } from '@/components';
+import { useApp } from '@/context';
 
 const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
+  const { isMobile } = useApp();
+
   return (
-    <Modal handleClose={handleClose} size="lg" title="Card Ideas">
+    <Modal
+      handleClose={handleClose}
+      size="lg"
+      title="Card Ideas"
+      noPadding={isMobile}
+    >
       <FlexGapped className="max-sm:flex-col">
         <div className="basis-full sm:basis-7/12">
           <Header>
