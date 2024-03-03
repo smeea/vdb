@@ -65,7 +65,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
         <div
           className={
             !inPreview && !inMissing && !inSearch && !isMobile
-              ? 'sticky z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[44px]'
+              ? 'sticky z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10'
               : ''
           }
         >

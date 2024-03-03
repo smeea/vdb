@@ -67,7 +67,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
     <FlexGapped
       className={`flex-col ${
         !inPreview && !inMissing && !inSearch && !isMobile
-          ? 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-[44px]'
+          ? 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10'
           : ''
       }`}
     >

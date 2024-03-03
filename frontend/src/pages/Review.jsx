@@ -230,7 +230,7 @@ const Review = () => {
           )}
         </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
-          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-[44px]">
+          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-10">
             <ReviewButtons
               deck={deckFrom}
               urlDiff={urlDiff}

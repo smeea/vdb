@@ -223,7 +223,7 @@ const Decks = () => {
     <div className="deck-container mx-auto">
       <FlexGapped>
         <FlexGapped className="flex w-full flex-col">
-          <div className="flex gap-2 max-sm:flex-col max-sm:p-2 sm:gap-4">
+          <div className="flex gap-2 max-sm:flex-col max-sm:px-2 max-sm:pt-2 sm:gap-4">
             <div className="sm:basis-5/12">
               <DeckSelect
                 deckid={deckid}
@@ -269,7 +269,7 @@ const Decks = () => {
           )}
         </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
-          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-[44px]">
+          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-10">
             <DeckButtons
               deck={deck}
               setShowInfo={setShowInfo}
