@@ -3,6 +3,8 @@
 - Mobile support for Tournament Analyze
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Inventory sort option
+- Adv search deck by card name
+- Sticky 44px vs Navbar h-10
 
 # FEATURES
 - Playtest reports
