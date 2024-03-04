@@ -2,7 +2,6 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Mobile support for Tournament Analyze
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
-- Inventory sort option
 
 # FEATURES
 - Playtest reports

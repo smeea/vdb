@@ -13,13 +13,14 @@ import {
   getCardProperty,
 } from '@/utils';
 
-const librarySort = (cards, sortMethod) => {
-  const byGroupedType = (a, b) => {
-    return (
-      cardtypeSortedFull.indexOf(getCardProperty(a, 'Type')) -
+const byGroupedType = (a, b) => {
+  return (
+    cardtypeSortedFull.indexOf(getCardProperty(a, 'Type')) -
       cardtypeSortedFull.indexOf(getCardProperty(b, 'Type'))
-    );
-  };
+  );
+};
+
+const librarySort = (cards, sortMethod) => {
 
   if (cards) {
     switch (sortMethod) {
@@ -82,9 +83,9 @@ const librarySort = (cards, sortMethod) => {
       default:
         return cards;
     }
-  } else {
-    return null;
   }
+
+  return null;
 };
 
 export default librarySort;

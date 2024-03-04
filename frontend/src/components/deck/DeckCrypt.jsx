@@ -27,10 +27,10 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
 
   const sortMethods = {
     Capacity: 'C',
-    'Clan ': 'CL ', // SPACE SUFFIX IS INTENTIONAL
-    'Group ': 'G ', // SPACE SUFFIX IS INTENTIONAL
-    Name: 'N ',
-    'Quantity ': 'Q ', // SPACE SUFFIX IS INTENTIONAL
+    'Clan': 'CL',
+    'Group': 'G',
+    Name: 'N',
+    'Quantity ': 'Q', // SPACE SUFFIX IS INTENTIONAL
     Sect: 'S',
   };
 
