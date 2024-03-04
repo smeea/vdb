@@ -12,5 +12,4 @@
 - Explicit image width/height
 - Back button behavior
 - Update to Headlessui 2 (review new components)
-- Update prompt using vite-pwa
 - Remove legacy polyfills when Safari adopts groupBy
