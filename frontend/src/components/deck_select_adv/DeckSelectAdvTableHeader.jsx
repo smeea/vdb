@@ -1,9 +1,9 @@
-import React from 'react';
-import { Select } from '@/components';
+import React, { useState } from 'react';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import At from '@/assets/images/icons/at.svg?react';
-import { DeckSelectAdvTagsFilter, Checkbox, Input } from '@/components';
+import { DeckSelectAdvTagsFilter, Select, Checkbox, Input } from '@/components';
+import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
 
 const DeckSelectAdvTableHeader = ({
@@ -16,7 +16,6 @@ const DeckSelectAdvTableHeader = ({
   setTagsFilter,
   clanFilter,
   invFilter,
-  nameFilter,
   revFilter,
   tagsFilter,
   toggleSelectAll,
@@ -24,6 +23,11 @@ const DeckSelectAdvTableHeader = ({
   short,
 }) => {
   const { inventoryMode, isMobile, isNarrow, isDesktop } = useApp();
+
+  const [debouncedNameFilter, setDebouncedNameFilter] = useState('');
+  useDebounce(() => setNameFilter(debouncedNameFilter), 250, [
+    debouncedNameFilter,
+  ]);
 
   const invOptions = [
     {
@@ -49,7 +53,7 @@ const DeckSelectAdvTableHeader = ({
   ];
 
   const handleChangeNameFilter = (event) => {
-    setNameFilter(event.target.value);
+    setDebouncedNameFilter(event.target.value);
   };
 
   const handleChangeTagsFilter = (event) => {
@@ -101,7 +105,7 @@ const DeckSelectAdvTableHeader = ({
             name="text"
             autoComplete="off"
             spellCheck="false"
-            value={nameFilter}
+            value={debouncedNameFilter}
             onChange={handleChangeNameFilter}
           />
         </th>

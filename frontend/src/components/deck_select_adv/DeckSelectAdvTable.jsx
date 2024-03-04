@@ -55,34 +55,34 @@ const DeckSelectAdvTable = ({
     });
   });
 
-  const cardInDeck = (deck, query) => {
+  const isCardInDeck = (deck, query) => {
     const normalizedQuery = query
       .toLowerCase()
       .normalize('NFD')
       .replace(/\p{Diacritic}/gu, '');
 
-    Object.keys(deck.crypt).forEach((id) => {
-      const normalizedCardName = deck.crypt[id].c['Name']
+    return Object.values({...deck.crypt, ...deck.library}).some((card) => {
+      const normalizedCardName = card.c.Name
         .toLowerCase()
         .normalize('NFD')
         .replace(/\p{Diacritic}/gu, '');
 
-      if (normalizedCardName.includes(normalizedQuery)) {
-        return true;
-      }
-    });
-
-    Object.keys(deck.library).forEach((id) => {
-      const normalizedCardName = deck.library[id].c['Name']
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/\p{Diacritic}/gu, '');
-
-      if (normalizedCardName.includes(normalizedQuery)) {
-        return true;
-      }
+      return normalizedCardName.includes(normalizedQuery)
     });
   };
+
+  const isDeckNameMatch = (deck, query) => {
+    const normalizedNameFilter = query
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/\p{Diacritic}/gu, '');
+    const normalizedDeckName = deck.name
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/\p{Diacritic}/gu, '');
+
+    return normalizedDeckName.includes(normalizedNameFilter)
+  }
 
   const sortedDecks = useMemo(() => {
     if (Object.values(decks).length > 0) {
@@ -99,29 +99,17 @@ const DeckSelectAdvTable = ({
         });
       }
 
-      if (nameFilter) {
+      if (nameFilter.length > 2) {
         filtered = filtered.filter((deck) => {
-          const normalizedNameFilter = nameFilter
-            .toLowerCase()
-            .normalize('NFD')
-            .replace(/\p{Diacritic}/gu, '');
-          const normalizedDeckName = deck.name
-            .toLowerCase()
-            .normalize('NFD')
-            .replace(/\p{Diacritic}/gu, '');
-
-          if (normalizedDeckName.includes(normalizedNameFilter)) return true;
-
-          if (cardInDeck(deck, nameFilter)) {
-            return true;
-          }
+          if (isDeckNameMatch(deck, nameFilter)) return true
+          if (isCardInDeck(deck, nameFilter)) return true
         });
       }
 
       if (tagsFilter) {
         filtered = filtered.filter((deck) => {
           let counter = 0;
-          tagsFilter.map((tag) => {
+          tagsFilter.forEach((tag) => {
             if (deck.tags && deck.tags.includes(tag)) counter += 1;
           });
           if (counter >= tagsFilter.length) return true;
@@ -158,7 +146,7 @@ const DeckSelectAdvTable = ({
     } else {
       setSelectedDecks(() => {
         const selected = {};
-        sortedDecks.map((d) => {
+        sortedDecks.forEach((d) => {
           selected[d.deckid] = true;
         });
 
@@ -180,7 +168,6 @@ const DeckSelectAdvTable = ({
         setTagsFilter={setTagsFilter}
         clanFilter={clanFilter}
         invFilter={invFilter}
-        nameFilter={nameFilter}
         revFilter={revFilter}
         tagsFilter={tagsFilter}
         toggleSelectAll={toggleSelectAll}
