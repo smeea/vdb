@@ -69,11 +69,10 @@ const CryptSearchForm = () => {
     }
   }, []);
 
-  const handleTextChange = (event) => {
-    const { name, value } = event.target;
-    searchCryptForm.text[name].value = value;
+  const handleTextChange = (formId, value) => {
+    searchCryptForm.text[formId].value = value;
     // TODO idk why multiforms dont work without this:
-    if (cryptFormState.text[name].value) null;
+    if (cryptFormState.text[formId].value) null;
   };
 
   const handleTextCheckboxesChange = (event) => {
@@ -235,7 +234,7 @@ const CryptSearchForm = () => {
     ]
   );
 
-  useDebounce(() => testInputsAndSearch(), 400, [
+  useDebounce(() => testInputsAndSearch(), 300, [
     cryptFormState.disciplines,
     cryptFormState.text,
     searchInventoryMode,

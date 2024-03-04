@@ -69,11 +69,10 @@ const LibrarySearchForm = () => {
     }
   }, []);
 
-  const handleTextChange = (event) => {
-    const { name, value } = event.target;
-    searchLibraryForm.text[name].value = value;
+  const handleTextChange = (formId, value) => {
+    searchLibraryForm.text[formId].value = value;
     // TODO idk why multiforms dont work without this:
-    if (libraryFormState.text[name].value) null;
+    if (libraryFormState.text[formId].value) null;
   };
 
   const handleTextCheckboxesChange = (event) => {
@@ -210,18 +209,7 @@ const LibrarySearchForm = () => {
   useEffect(
     () => testInputsAndSearch(),
     [
-      libraryFormState.artist,
-      libraryFormState.blood,
-      libraryFormState.capacity,
-      libraryFormState.clan,
-      libraryFormState.discipline,
-      libraryFormState.pool,
-      libraryFormState.precon,
-      libraryFormState.sect,
-      libraryFormState.set,
-      libraryFormState.title,
-      libraryFormState.traits,
-      libraryFormState.type,
+      libraryFormState,
       searchInventoryMode,
       inventoryMode,
       limitedMode,
@@ -229,15 +217,6 @@ const LibrarySearchForm = () => {
       libraryCardBase,
     ]
   );
-
-  useDebounce(() => testInputsAndSearch(), 400, [
-    libraryFormState.text,
-    searchInventoryMode,
-    inventoryMode,
-    limitedMode,
-    playtestMode,
-    libraryCardBase,
-  ]);
 
   useEffect(() => {
     if (!isMobile && preresults) {

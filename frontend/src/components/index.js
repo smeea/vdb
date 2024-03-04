@@ -329,6 +329,7 @@ export { default as CryptSearchFormVotes } from './search_forms/components/Crypt
 export { default as PdaSearchFormSrcSelector } from './search_forms/components/PdaSearchFormSrcSelector.jsx';
 export { default as SearchAdditionalForms } from './search_forms/components/SearchAdditionalForms.jsx';
 export { default as SearchAdditionalFormsText } from './search_forms/components/SearchAdditionalFormsText.jsx';
+export { default as SearchAdditionalFormsTextForm } from './search_forms/components/SearchAdditionalFormsTextForm.jsx';
 export { default as SearchFormButtonAdd } from './search_forms/components/SearchFormButtonAdd.jsx';
 export { default as SearchFormButtonAddText } from './search_forms/components/SearchFormButtonAddText.jsx';
 export { default as SearchFormButtonLogicToggle } from './search_forms/components/SearchFormButtonLogicToggle.jsx';

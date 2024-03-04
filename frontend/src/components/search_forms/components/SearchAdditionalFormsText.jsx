@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { useImmer } from 'use-immer';
 import {
-  Input,
   Checkbox,
   SearchFormButtonAddText,
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
+  SearchAdditionalFormsTextForm,
 } from '@/components';
 
 const SearchAdditionalFormsText = ({
@@ -14,25 +13,6 @@ const SearchAdditionalFormsText = ({
   onChangeOptions,
   searchForm,
 }) => {
-  const [text, setText] = useImmer([]);
-
-  useEffect(() => {
-    setText((draft) => {
-      value.map((v, idx) => {
-        draft[idx] = v.value.toString();
-      });
-    });
-  }, [value]);
-
-  const onTextChange = (e) => {
-    const { name, value } = e.target;
-    setText((draft) => {
-      draft[name] = value;
-    });
-
-    onChange(e);
-  };
-
   const options = [
     {
       value: 'name',
@@ -56,12 +36,10 @@ const SearchAdditionalFormsText = ({
         const i = idx + 1;
         return (
           <div className="space-y-1" key={i}>
-            <Input
-              placeholder="Card Name / Text / RegEx"
-              name={i}
-              value={text[i] || ''}
-              onChange={onTextChange}
-              autoFocus
+            <SearchAdditionalFormsTextForm
+              id={i}
+              value={value[i]}
+              onChange={onChange}
             />
             <div className="flex">
               <div className="flex w-1/5 space-x-1">

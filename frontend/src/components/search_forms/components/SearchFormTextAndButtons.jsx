@@ -10,6 +10,7 @@ import {
   ButtonClose,
   ButtonIconed,
 } from '@/components';
+import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
 
 const SearchFormTextAndButtons = ({
@@ -31,6 +32,10 @@ const SearchFormTextAndButtons = ({
     setText(value[0].value ?? '');
   }, [value]);
 
+  useDebounce(() => onChange(0, text), 300, [
+    text,
+  ]);
+
   const options = [
     {
       value: 'name',
@@ -46,20 +51,14 @@ const SearchFormTextAndButtons = ({
     },
   ];
 
-  const onTextChange = (e) => {
-    onChange(e);
-    setText(e.target.value);
-  };
-
   return (
     <div className="space-y-2">
       <div className="space-y-1">
         <div className="flex">
           <Input
             placeholder="Card Name / Text / RegEx"
-            name={0}
             value={text}
-            onChange={onTextChange}
+            onChange={e => setText(e.target.value)}
             borderStyle="max-sm:border sm:border-y sm:border-l"
             roundedStyle="sm:rounded-r-none rounded"
           />
