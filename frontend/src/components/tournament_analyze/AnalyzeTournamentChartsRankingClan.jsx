@@ -4,7 +4,7 @@ import { getClan } from '@/utils';
 import { useApp } from '@/context';
 
 const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
-  const { isMobile } = useApp();
+  const { isMobile, isDesktop, isWide } = useApp();
   const data = useMemo(() => {
     const d = {};
 
@@ -38,7 +38,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   }, [searchResults, decks, info]);
 
   return (
-    <div className="flex basis-full flex-col sm:py-4">
+    <div className="flex basis-full flex-col">
       {Object.keys(data)
         .toSorted((a, b) => a.localeCompare(b))
         .map((s) => {
@@ -53,8 +53,8 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
               data={data[s]}
               name={clan}
               refLine={info.medianReportedRank}
-              titleWidth={isMobile ? 105 : 160}
-              width={isMobile ? 370 : 600}
+              titleWidth={isMobile || (isDesktop && !isWide) ? 105 : 160}
+              width={isMobile || (isDesktop && !isWide) ? 370 : 600}
             />
           );
         })}

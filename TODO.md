@@ -1,6 +1,5 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
-- Mid resolutions support for Tournament Analyze
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 
 # FEATURES

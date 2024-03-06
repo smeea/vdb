@@ -8,7 +8,7 @@ const AnalyzeTournamentChartsRankingStyle = ({
   decks,
   searchResults,
 }) => {
-  const { isMobile } = useApp();
+  const { isMobile, isDesktop, isWide } = useApp();
   const allowedTags = [
     'bleed',
     'stealth',
@@ -66,7 +66,7 @@ const AnalyzeTournamentChartsRankingStyle = ({
   }, [searchResults, decks, info]);
 
   return (
-    <div className="flex basis-full flex-col sm:py-4">
+    <div className="flex basis-full flex-col">
       {Object.keys(data).map((s) => {
         return (
           <BubbleChart
@@ -75,7 +75,7 @@ const AnalyzeTournamentChartsRankingStyle = ({
             name={s[0].toUpperCase() + s.slice(1)}
             refLine={info.medianReportedRank}
             titleWidth={80}
-            width={isMobile ? 370 : 600}
+            width={isMobile  || (isDesktop && !isWide) ? 370 : 600}
           />
         );
       })}
