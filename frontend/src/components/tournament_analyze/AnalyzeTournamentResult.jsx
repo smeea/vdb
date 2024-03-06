@@ -19,7 +19,7 @@ const AnalyzerTournamentResult = ({ decks }) => {
   }, [decks, analyzeSearchSort]);
 
   return (
-    <>
+    <div>
       <AnalyzeTournamentResultTotal
         results={decks}
         sortMethods={sortMethods}
@@ -35,7 +35,7 @@ const AnalyzerTournamentResult = ({ decks }) => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

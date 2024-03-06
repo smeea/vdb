@@ -15,25 +15,27 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
   const deckInUrl = getDeckInUrl(deck);
 
   return (
-    <>
-      <table>
-        <tbody>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <TrophyFill /> : <>Place:</>}
-          >
-            {deck.score.rank}
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <StarFill /> : <>GW + VP:</>}
-          >
-            {deck.score.gw}GW + {deck.score.vp}VP
-          </TwdResultDescriptionTextTr>
-        </tbody>
-      </table>
-      {(deck.tags.superior.length > 0 || deck.tags.base.length > 0) && (
-        <TwdResultTags tags={deck.tags} />
-      )}
-      <div className="flex gap-2">
+    <div className="flex lg:flex-col max-lg:py-1 max-sm:px-1">
+      <div className="basis-9/12">
+        <table>
+          <tbody>
+            <TwdResultDescriptionTextTr
+              title={isMobile ? <TrophyFill /> : <>Place:</>}
+            >
+              {deck.score.rank}
+            </TwdResultDescriptionTextTr>
+            <TwdResultDescriptionTextTr
+              title={isMobile ? <StarFill /> : <>GW + VP:</>}
+            >
+              {deck.score.gw}GW + {deck.score.vp}VP
+            </TwdResultDescriptionTextTr>
+          </tbody>
+        </table>
+        {(deck.tags.superior.length > 0 || deck.tags.base.length > 0) && (
+          <TwdResultTags tags={deck.tags} />
+        )}
+      </div>
+      <div className="flex basis-3/12 max-lg:flex-col gap-1 lg:gap-2">
         <div className="w-full">
           <TwdOpenDeckButton url={deckInUrl} />
         </div>
@@ -49,7 +51,7 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

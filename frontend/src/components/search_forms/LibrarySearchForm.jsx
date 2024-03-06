@@ -19,7 +19,7 @@ import {
   LibrarySearchFormCapacity,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
-import { useDebounce, useFilters } from '@/hooks';
+import { useFilters } from '@/hooks';
 import {
   useApp,
   setLibraryResults,

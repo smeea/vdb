@@ -257,6 +257,7 @@ const TournamentAnalyze = () => {
               isLoading={isLoading}
               getDeck={getDeck}
               setError={setError}
+              showLoadButtons={!(info && decks)}
             />
             {decks && info && (
               <AnalyzeTournamentInfo info={info} decks={decks} />

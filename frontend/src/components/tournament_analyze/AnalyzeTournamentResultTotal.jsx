@@ -42,7 +42,7 @@ const AnalyzeTournamentResultTotal = ({
         <div className="whitespace-nowrap font-bold">
           TOTAL: {results.length}
         </div>
-        <div className="whitespace-nowrap font-bold">
+        <div className="sm:whitespace-nowrap font-bold">
           AVG. PLACE: {Math.round((totalRank / results.length) * 10) / 10}
         </div>
       </div>

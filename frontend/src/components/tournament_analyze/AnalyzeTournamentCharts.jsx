@@ -9,7 +9,8 @@ import {
 
 const AnalyzeTournamentCharts = ({ info, decks, searchResults }) => {
   return (
-    <div className="flex max-sm:flex-col">
+
+    <div className="flex max-sm:flex-col max-sm:gap-3">
       <div className="flex basis-1/2 flex-col">
         <div className="flex flex-col items-center justify-center">
           <Title center>Playstyle</Title>

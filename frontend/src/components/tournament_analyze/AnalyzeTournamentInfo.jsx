@@ -14,8 +14,8 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
   const { isMobile } = useApp();
 
   return (
-    <div className="flex flex-col py-2">
-      <Title>General Info</Title>
+    <div className="flex flex-col max-sm:px-1">
+      {!isMobile &&<Title>General Info</Title>}
       <table>
         <tbody>
           <TwdResultDescriptionTextTr
