@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import {
   AnalyzeLoadButtons,
@@ -7,24 +8,29 @@ import {
   AnalyzeTournamentCharts,
   AnalyzeTournamentResult,
   AnalyzeSearchForm,
+  ButtonClose,
+  ButtonFloatClose,
   ErrorMessage,
-  Header,
   FlexGapped,
+  Header,
 } from '@/components';
 import {
   analyzeStore,
+  clearAnalyzeForm,
   setAnalyzeDecks,
   setAnalyzeInfo,
+  setAnalyzeResults,
   useApp,
 } from '@/context';
 import { useDeckImport, useTags } from '@/hooks';
 
 const TournamentAnalyze = () => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile, isDesktop } = useApp();
   const decks = useSnapshot(analyzeStore).all;
   const results = useSnapshot(analyzeStore).results;
   const info = useSnapshot(analyzeStore).info;
   const params = useParams();
+  const navigate = useNavigate();
 
   const [tempDecks, setTempDecks] = useState();
   const [tempArchon, setTempArchon] = useState();
@@ -62,11 +68,11 @@ const TournamentAnalyze = () => {
         });
 
         const decks = Object.values(zip.files)
-          .filter((f) => !f.name.includes('.xlsx'))
-          .map(async (f) => {
-            const d = await f.async('string');
-            return getDeck(d);
-          });
+              .filter((f) => !f.name.includes('.xlsx'))
+              .map(async (f) => {
+                const d = await f.async('string');
+                return getDeck(d);
+              });
 
         Promise.all(decks).then((v) => {
           const d = {};
@@ -95,11 +101,11 @@ const TournamentAnalyze = () => {
       const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split('\n');
 
       const finalPlace = dataFinalTable
-        .filter((i) => {
-          const array = i.split(',');
-          return array[0] == playerNumber && array[21];
-        })[0]
-        .split(',')[21];
+            .filter((i) => {
+              const array = i.split(',');
+              return array[0] == playerNumber && array[21];
+            })[0]
+            .split(',')[21];
       return parseInt(finalPlace);
     };
 
@@ -133,11 +139,11 @@ const TournamentAnalyze = () => {
       if (!veknId) return;
 
       const rank =
-        parseInt(array[20]) > 5
-          ? parseInt(array[20])
-          : wb.Sheets['Final Round']
-          ? getFinalPlace(playerNumber)
-          : parseInt(array[17]);
+            parseInt(array[20]) > 5
+            ? parseInt(array[20])
+            : wb.Sheets['Final Round']
+            ? getFinalPlace(playerNumber)
+            : parseInt(array[17]);
 
       const name = `${array[1]} ${array[2]}`;
 
@@ -194,6 +200,17 @@ const TournamentAnalyze = () => {
     setAnalyzeDecks(tempDecks);
   };
 
+  const handleClear = () => {
+    clearAnalyzeForm();
+    setError(false);
+    setTempArchon();
+    setTempDecks();
+    setAnalyzeInfo();
+    setAnalyzeDecks();
+    setAnalyzeResults();
+    navigate('/tournament_analyze');
+  };
+
   useEffect(() => {
     if (tempDecks && tempArchon) {
       loadArchon(tempArchon);
@@ -203,9 +220,9 @@ const TournamentAnalyze = () => {
   useEffect(() => {
     if (
       params.tournamentid &&
-      !(decks || info) &&
-      cryptCardBase &&
-      libraryCardBase
+        !(decks || info) &&
+        cryptCardBase &&
+        libraryCardBase
     ) {
       loadPrepared(params.tournamentid);
     }
@@ -233,14 +250,14 @@ const TournamentAnalyze = () => {
       </Header>
       <FlexGapped className="flex-col">
         <FlexGapped className="max-sm:flex-col">
-          <div className="flex basis-9/12 max-sm:order-last">
-            <div className="w-full">
-              {error && (
+          <div className="flex justify-center basis-9/12 max-sm:order-last">
+            {error && (
+              <div className="w-full">
                 <ErrorMessage>
                   NO DATA AVAILABLE FOR EVENT #{error}
                 </ErrorMessage>
-              )}
-            </div>
+              </div>
+            )}
             {decks && info && (
               <AnalyzeTournamentCharts
                 info={info}
@@ -250,15 +267,27 @@ const TournamentAnalyze = () => {
             )}
           </div>
           <FlexGapped className="basis-3/12 flex-col">
-            <AnalyzeLoadButtons
-              tempDecks={tempDecks}
-              setTempDecks={setTempDecks}
-              setTempArchon={setTempArchon}
-              isLoading={isLoading}
-              getDeck={getDeck}
-              setError={setError}
-              showLoadButtons={!(info && decks)}
-            />
+            {!(info && decks) ?
+             <AnalyzeLoadButtons
+               tempDecks={tempDecks}
+               setTempDecks={setTempDecks}
+               setTempArchon={setTempArchon}
+               isLoading={isLoading}
+               getDeck={getDeck}
+               setError={setError}
+             />
+             :
+             <>
+               {isDesktop ?
+                <ButtonClose
+                  handleClick={handleClear}
+                  title="Clear Data"
+                  text="Clear"
+                />
+                : <ButtonFloatClose handleClose={handleClear} />
+               }
+             </>
+            }
             {decks && info && (
               <AnalyzeTournamentInfo info={info} decks={decks} />
             )}

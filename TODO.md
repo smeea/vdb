@@ -1,6 +1,7 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
+- Analyze loading indicator
 
 # FEATURES
 - Playtest reports

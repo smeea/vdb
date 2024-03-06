@@ -38,7 +38,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   }, [searchResults, decks, info]);
 
   return (
-    <div className="flex basis-full flex-col">
+    <div className="flex basis-full items-center flex-col">
       {Object.keys(data)
         .toSorted((a, b) => a.localeCompare(b))
         .map((s) => {

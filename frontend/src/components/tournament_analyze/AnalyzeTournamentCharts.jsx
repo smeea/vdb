@@ -9,33 +9,28 @@ import {
 
 const AnalyzeTournamentCharts = ({ info, decks, searchResults }) => {
   return (
-
-    <div className="flex max-lg:flex-col max-lg:gap-3">
+    <div className="flex basis-full justify-between max-lg:flex-col max-lg:gap-3">
       <div className="flex basis-1/2 flex-col">
         <div className="flex flex-col items-center justify-center">
           <Title center>Playstyle</Title>
           <AnalyzeTournamentChartsStyle decks={decks} />
         </div>
-        <div className="flex flex-col justify-center">
-          <AnalyzeTournamentChartsRankingStyle
-            info={info}
-            decks={decks}
-            searchResults={searchResults}
-          />
-        </div>
+        <AnalyzeTournamentChartsRankingStyle
+          info={info}
+          decks={decks}
+          searchResults={searchResults}
+        />
       </div>
       <div className="flex basis-1/2 flex-col">
         <div className="flex flex-col items-center justify-center">
           <Title center>Clans</Title>
           <AnalyzeTournamentChartsClan decks={decks} />
         </div>
-        <div className="flex flex-col justify-center">
-          <AnalyzeTournamentChartsRankingClan
-            info={info}
-            decks={decks}
-            searchResults={searchResults}
-          />
-        </div>
+        <AnalyzeTournamentChartsRankingClan
+          info={info}
+          decks={decks}
+          searchResults={searchResults}
+        />
       </div>
     </div>
   );
