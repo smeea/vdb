@@ -16,7 +16,7 @@ const AccountLimitedDelCard = ({ cardid, target }) => {
   return (
     <Button
       className="h-[33px] w-[24px]"
-      variant="third"
+      variant="primary"
       onClick={() => (target === 'allowed' ? allowedDel() : bannedDel())}
       title="Remove card"
       noPadding

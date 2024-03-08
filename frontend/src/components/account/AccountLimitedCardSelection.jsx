@@ -38,7 +38,7 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
           )}
         </div>
       </div>
-      <FlexGapped className="sm:flex-col">
+      <FlexGapped className="max-sm:flex-col">
         <div className="flex basis-full flex-col gap-2 sm:basis-7/12">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Crypt:
