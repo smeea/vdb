@@ -29,14 +29,16 @@ const AccountPasswordForm = ({
       {!isOld && (
         <>
           <Button
-            className="rounded-none"
+            roundedStyle="rounded-none"
+            borderStyle="border-r border-y"
             tabIndex="-1"
             onClick={() => setHidePassword(!hidePassword)}
           >
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>
           <Button
-            className="rounded-l-none"
+            roundedStyle="rounded-r"
+            borderStyle="border-r border-y"
             variant={success ? 'success' : 'primary'}
             type="submit"
           >

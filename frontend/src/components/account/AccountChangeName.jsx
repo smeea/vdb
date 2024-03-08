@@ -92,7 +92,8 @@ const AccountChangeName = () => {
             roundedStyle="rounded rounded-r-none"
           />
           <Button
-            className="rounded-l-none"
+            roundedStyle="rounded-r"
+            borderStyle="border-r border-y"
             variant={success ? 'success' : 'primary'}
             type="submit"
           >

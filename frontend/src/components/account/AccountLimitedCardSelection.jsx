@@ -39,7 +39,7 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
         </div>
       </div>
       <FlexGapped className="max-sm:flex-col">
-        <div className="flex basis-full flex-col gap-2 sm:basis-7/12">
+        <div className="flex flex-col gap-2 sm:basis-5/9">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Crypt:
           </div>
@@ -53,7 +53,7 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
             />
           )}
         </div>
-        <div className="flex basis-full flex-col gap-2 sm:basis-5/12">
+        <div className="flex basis-full flex-col gap-2 sm:basis-4/9">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Library:
           </div>
