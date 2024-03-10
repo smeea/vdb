@@ -14,7 +14,7 @@ import Cards from './pages/Cards.jsx';
 import Crypt from './pages/Crypt.jsx';
 import Library from './pages/Library.jsx';
 import Decks from './pages/Decks.jsx';
-import { default as Changelog } from './pages/Changelog.jsx';
+import Changelog from './pages/Changelog.jsx';
 const Diff = lazy(() => import('./pages/Diff.jsx'));
 const Inventory = lazy(() => import('./pages/Inventory.jsx'));
 const Review = lazy(() => import('./pages/Review.jsx'));
@@ -23,8 +23,8 @@ const Twd = lazy(() => import('./pages/Twd.jsx'));
 const Documentation = lazy(() => import('./pages/Documentation.jsx'));
 const TournamentAnalyze = lazy(() => import('./pages/TournamentAnalyze.jsx'));
 const TwdHallOfFameCards = lazy(() => import('./pages/TwdHallOfFameCards.jsx'));
-const TwdHallOfFameTournaments = lazy(
-  () => import('./pages/TwdHallOfFameTournaments.jsx'),
+const TwdHallOfFameTournaments = lazy(() =>
+  import('./pages/TwdHallOfFameTournaments.jsx')
 );
 const TwdCardsHistory = lazy(() => import('./pages/TwdCardsHistory.jsx'));
 const TwdCheck = lazy(() => import('./pages/TwdCheck.jsx'));
@@ -170,8 +170,8 @@ const App = () => {
             }
           />
         </Route>
-      </Route>,
-    ),
+      </Route>
+    )
   );
 
   return <RouterProvider router={router} />;

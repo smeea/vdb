@@ -51,14 +51,6 @@ const Decks = () => {
   const query = new URLSearchParams(useLocation().search);
   const loaderData = useLoaderData();
 
-  if (hash && deckid !== 'deck') {
-    const name = query.get('name') ?? '';
-    const author = query.get('author') ?? '';
-    const description = query.get('description') ?? '';
-    const url = `/decks/deck?name=${name}&author=${author}&description=${description}${hash}`;
-    navigate(url);
-  }
-
   const [error, setError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
   const [qrUrl, setQrUrl] = useState(false);
@@ -205,12 +197,6 @@ const Decks = () => {
     cryptCardBase,
     libraryCardBase,
   ]);
-
-  useEffect(() => {
-    if (cryptCardBase && libraryCardBase && decks?.[deckid]) {
-      setDeck(decks[deckid]);
-    }
-  }, [username]);
 
   useEffect(() => {
     if (deck) {
