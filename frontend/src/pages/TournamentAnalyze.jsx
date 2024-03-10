@@ -141,8 +141,8 @@ const TournamentAnalyze = () => {
         parseInt(array[20]) > 5
           ? parseInt(array[20])
           : wb.Sheets['Final Round']
-            ? getFinalPlace(playerNumber)
-            : parseInt(array[17]);
+          ? getFinalPlace(playerNumber)
+          : parseInt(array[17]);
 
       const name = `${array[1]} ${array[2]}`;
 
@@ -229,7 +229,7 @@ const TournamentAnalyze = () => {
   return (
     <div className="twd-container mx-auto space-y-2">
       <Header>
-        <div className="w-full p-2 text-lg">
+        <div className="flex flex-col w-full max-sm:gap-2 p-2 text-lg">
           <div className="flex justify-center">
             Want more Tournaments here? Help your organizer to collect the data!
           </div>
@@ -247,6 +247,26 @@ const TournamentAnalyze = () => {
         </div>
       </Header>
       <FlexGapped className="flex-col">
+        {!(info && decks) && (
+          <div className="grid h-[70vh] place-items-center max-sm:px-2">
+            <div className="flex flex-col gap-2">
+              <AnalyzeLoadPreparedButtons
+                setTempDecks={setTempDecks}
+                setTempArchon={setTempArchon}
+                setError={setError}
+              />
+              {['1', 'crauseon'].includes(username) && (
+                <AnalyzeLoadCustomButtons
+                  tempDecks={tempDecks}
+                  setTempDecks={setTempDecks}
+                  setTempArchon={setTempArchon}
+                  getDeck={getDeck}
+                  setError={setError}
+                />
+              )}
+            </div>
+          </div>
+        )}
         <FlexGapped className="max-sm:flex-col">
           <div className="flex justify-center basis-9/12 max-sm:order-last">
             {error && (
@@ -265,24 +285,7 @@ const TournamentAnalyze = () => {
             )}
           </div>
           <FlexGapped className="basis-3/12 flex-col">
-            {!(info && decks) ? (
-              <div className="flex flex-col gap-2 max-sm:px-2">
-                <AnalyzeLoadPreparedButtons
-                  setTempDecks={setTempDecks}
-                  setTempArchon={setTempArchon}
-                  setError={setError}
-                />
-                {['1', 'crauseon'].includes(username) && (
-                  <AnalyzeLoadCustomButtons
-                    tempDecks={tempDecks}
-                    setTempDecks={setTempDecks}
-                    setTempArchon={setTempArchon}
-                    getDeck={getDeck}
-                    setError={setError}
-                  />
-                )}
-              </div>
-            ) : (
+            {info && decks && (
               <>
                 {isDesktop ? (
                   <ButtonClose
@@ -293,10 +296,8 @@ const TournamentAnalyze = () => {
                 ) : (
                   <ButtonFloatClose handleClose={handleClear} />
                 )}
+                <AnalyzeTournamentInfo info={info} decks={decks} />
               </>
-            )}
-            {decks && info && (
-              <AnalyzeTournamentInfo info={info} decks={decks} />
             )}
           </FlexGapped>
         </FlexGapped>
