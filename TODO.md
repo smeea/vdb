@@ -9,6 +9,5 @@
 # TECH IMPROVEMENTS
 - Migration from isWide, etc to container queries
 - Explicit image width/height
-- Back button behavior
 - Update to Headlessui 2 (review new components)
 - Remove legacy polyfills when Safari adopts groupBy

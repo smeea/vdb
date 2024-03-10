@@ -91,7 +91,7 @@ const Decks = () => {
       Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
         (v) => {
           deckData.tags = deckData.tags.concat(v);
-        },
+        }
       );
     }
     const d = {
@@ -116,7 +116,7 @@ const Decks = () => {
   };
 
   const handleSelect = (e) => {
-    navigate(`/decks/${e.value.replace(' ', '_')}`, { replace: true });
+    navigate(`/decks/${e.value.replace(' ', '_')}`);
   };
 
   const allTagsOptions = useMemo(() => {
