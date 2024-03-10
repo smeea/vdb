@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import {
-  AnalyzeLoadButtons,
+  AnalyzeLoadCustomButtons,
+  AnalyzeLoadPreparedButtons,
   AnalyzeTournamentInfo,
   AnalyzeTournamentCharts,
   AnalyzeTournamentResult,
@@ -25,7 +26,8 @@ import {
 import { useDeckImport, useTags } from '@/hooks';
 
 const TournamentAnalyze = () => {
-  const { cryptCardBase, libraryCardBase, isMobile, isDesktop } = useApp();
+  const { username, cryptCardBase, libraryCardBase, isMobile, isDesktop } =
+    useApp();
   const decks = useSnapshot(analyzeStore).all;
   const results = useSnapshot(analyzeStore).results;
   const info = useSnapshot(analyzeStore).info;
@@ -34,7 +36,6 @@ const TournamentAnalyze = () => {
 
   const [tempDecks, setTempDecks] = useState();
   const [tempArchon, setTempArchon] = useState();
-  const [isLoading, setIsLoading] = useState();
   const [error, setError] = useState(false);
 
   const getDeck = async (data) => {
@@ -45,7 +46,6 @@ const TournamentAnalyze = () => {
 
   const loadPrepared = async (id) => {
     const { default: JSZip } = await import('jszip');
-    setIsLoading(true);
     setError(false);
 
     const url = `${import.meta.env.VITE_BASE_URL}/tournaments/${id}.zip`;
@@ -68,11 +68,11 @@ const TournamentAnalyze = () => {
         });
 
         const decks = Object.values(zip.files)
-              .filter((f) => !f.name.includes('.xlsx'))
-              .map(async (f) => {
-                const d = await f.async('string');
-                return getDeck(d);
-              });
+          .filter((f) => !f.name.includes('.xlsx'))
+          .map(async (f) => {
+            const d = await f.async('string');
+            return getDeck(d);
+          });
 
         Promise.all(decks).then((v) => {
           const d = {};
@@ -83,8 +83,7 @@ const TournamentAnalyze = () => {
           setTempDecks(d);
         });
       })
-      .catch(() => setError(id))
-      .finally(() => setIsLoading(false));
+      .catch(() => setError(id));
   };
 
   const loadArchon = async (file) => {
@@ -101,11 +100,11 @@ const TournamentAnalyze = () => {
       const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split('\n');
 
       const finalPlace = dataFinalTable
-            .filter((i) => {
-              const array = i.split(',');
-              return array[0] == playerNumber && array[21];
-            })[0]
-            .split(',')[21];
+        .filter((i) => {
+          const array = i.split(',');
+          return array[0] == playerNumber && array[21];
+        })[0]
+        .split(',')[21];
       return parseInt(finalPlace);
     };
 
@@ -139,11 +138,11 @@ const TournamentAnalyze = () => {
       if (!veknId) return;
 
       const rank =
-            parseInt(array[20]) > 5
-            ? parseInt(array[20])
-            : wb.Sheets['Final Round']
-            ? getFinalPlace(playerNumber)
-            : parseInt(array[17]);
+        parseInt(array[20]) > 5
+          ? parseInt(array[20])
+          : wb.Sheets['Final Round']
+          ? getFinalPlace(playerNumber)
+          : parseInt(array[17]);
 
       const name = `${array[1]} ${array[2]}`;
 
@@ -195,7 +194,6 @@ const TournamentAnalyze = () => {
       medianReportedRank: medianReportedRank,
     };
 
-    setIsLoading(false);
     setAnalyzeInfo(info);
     setAnalyzeDecks(tempDecks);
   };
@@ -220,9 +218,9 @@ const TournamentAnalyze = () => {
   useEffect(() => {
     if (
       params.tournamentid &&
-        !(decks || info) &&
-        cryptCardBase &&
-        libraryCardBase
+      !(decks || info) &&
+      cryptCardBase &&
+      libraryCardBase
     ) {
       loadPrepared(params.tournamentid);
     }
@@ -267,27 +265,36 @@ const TournamentAnalyze = () => {
             )}
           </div>
           <FlexGapped className="basis-3/12 flex-col">
-            {!(info && decks) ?
-             <AnalyzeLoadButtons
-               tempDecks={tempDecks}
-               setTempDecks={setTempDecks}
-               setTempArchon={setTempArchon}
-               isLoading={isLoading}
-               getDeck={getDeck}
-               setError={setError}
-             />
-             :
-             <>
-               {isDesktop ?
-                <ButtonClose
-                  handleClick={handleClear}
-                  title="Clear Data"
-                  text="Clear"
+            {!(info && decks) ? (
+              <div className="flex flex-col gap-2 max-sm:px-2">
+                <AnalyzeLoadPreparedButtons
+                  setTempDecks={setTempDecks}
+                  setTempArchon={setTempArchon}
+                  setError={setError}
                 />
-                : <ButtonFloatClose handleClose={handleClear} />
-               }
-             </>
-            }
+                {['1', 'crauseon'].includes(username) && (
+                  <AnalyzeLoadCustomButtons
+                    tempDecks={tempDecks}
+                    setTempDecks={setTempDecks}
+                    setTempArchon={setTempArchon}
+                    getDeck={getDeck}
+                    setError={setError}
+                  />
+                )}
+              </div>
+            ) : (
+              <>
+                {isDesktop ? (
+                  <ButtonClose
+                    handleClick={handleClear}
+                    title="Clear Data"
+                    text="Clear"
+                  />
+                ) : (
+                  <ButtonFloatClose handleClose={handleClear} />
+                )}
+              </>
+            )}
             {decks && info && (
               <AnalyzeTournamentInfo info={info} decks={decks} />
             )}
