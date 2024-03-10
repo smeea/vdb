@@ -9,16 +9,12 @@ import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg?react';
 import Calendar2EventFill from '@/assets/images/icons/calendar2-event-fill.svg?react';
 import PieChartFill from '@/assets/images/icons/pie-chart-fill.svg?react';
 
-const TwdMoreButton = ({ noText }) => {
+const TwdMoreButton = () => {
   const navigate = useNavigate();
 
   return (
     <Menu as="div" className="relative">
-      <MenuButton
-        title="More interesting stuff"
-        icon={<Gem />}
-        text={noText ? null : 'More'}
-      />
+      <MenuButton title="More interesting stuff" icon={<Gem />} text="More" />
       <MenuItems>
         <MenuItem onClick={() => navigate('/twd/hall_of_fame/tournaments')}>
           <div className="flex items-center gap-2">

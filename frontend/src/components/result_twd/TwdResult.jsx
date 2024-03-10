@@ -47,7 +47,11 @@ const TwdResult = ({ results, setResults }) => {
       <div className="space-y-4">
         {showedDecks.map((d, idx) => {
           return (
-            <TwdDeck key={d.deckid} deck={d} withHr={idx + 1 < showCounter} />
+            <TwdDeck
+              key={d.deckid}
+              deck={d}
+              withHr={idx + 1 < showCounter && idx + 1 < showedDecks.length}
+            />
           );
         })}
         {deckCounter > showCounter && (

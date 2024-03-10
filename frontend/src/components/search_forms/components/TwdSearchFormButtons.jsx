@@ -8,16 +8,16 @@ import {
 } from '@/components';
 
 const TwdSearchFormButtons = ({ getRandom, getNew, handleClear, inPda }) => {
-  const { isMobile, isWide } = useApp();
+  const { isMobile } = useApp();
 
   return (
-    <div className="flex justify-between">
-      <div className="flex space-x-1">
+    <div className="flex justify-between gap-1">
+      <div className="flex gap-1">
         <TwdRandomButton getRandom={getRandom} />
         <TwdNewDecksButton getNew={getNew} />
       </div>
-      <div className="flex space-x-1">
-        {!inPda && <TwdMoreButton noText={!isWide} />}
+      <div className="flex gap-1">
+        {!inPda && <TwdMoreButton />}
         {!isMobile && (
           <ButtonClose
             title="Clear Forms & Results"
