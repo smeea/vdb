@@ -15,7 +15,7 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
 
   return (
     <div className="flex flex-col max-sm:px-1">
-      {!isMobile &&<Title>General Info</Title>}
+      {!isMobile && <Title>General Info</Title>}
       <table>
         <tbody>
           <TwdResultDescriptionTextTr

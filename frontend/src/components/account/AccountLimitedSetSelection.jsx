@@ -17,31 +17,31 @@ const AccountLimitedSetSelection = () => {
       <div className="flex max-sm:flex-col gap-2">
         <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
           {Object.keys(setsAndPrecons)
-           .filter((i) => i !== PLAYTEST && setsAndPrecons[i].date > BCP_START)
-           .map((i) => {
-             return (
-               <AccountLimitedSet
-                 key={i}
-                 isChecked={limitedSets[i]}
-                 handleSetChange={limitedSetChange}
-                 setid={i}
-               />
-             );
-           })}
+            .filter((i) => i !== PLAYTEST && setsAndPrecons[i].date > BCP_START)
+            .map((i) => {
+              return (
+                <AccountLimitedSet
+                  key={i}
+                  isChecked={limitedSets[i]}
+                  handleSetChange={limitedSetChange}
+                  setid={i}
+                />
+              );
+            })}
         </div>
         <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
           {Object.keys(setsAndPrecons)
-           .filter((i) => i !== PLAYTEST && setsAndPrecons[i].date < BCP_START)
-           .map((i) => {
-             return (
-               <AccountLimitedSet
-                 key={i}
-                 isChecked={limitedSets[i]}
-                 handleSetChange={limitedSetChange}
-                 setid={i}
-               />
-             );
-           })}
+            .filter((i) => i !== PLAYTEST && setsAndPrecons[i].date < BCP_START)
+            .map((i) => {
+              return (
+                <AccountLimitedSet
+                  key={i}
+                  isChecked={limitedSets[i]}
+                  handleSetChange={limitedSetChange}
+                  setid={i}
+                />
+              );
+            })}
         </div>
       </div>
     </div>

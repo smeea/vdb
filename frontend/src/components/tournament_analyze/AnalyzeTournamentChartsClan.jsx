@@ -32,14 +32,17 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
   }, [decks]);
 
   return (
-    <PieChart width={isMobile  || (isDesktop && !isWide)? 400 : 620} height={isMobile  || (isDesktop && !isWide)? 250 : 365}>
+    <PieChart
+      width={isMobile || (isDesktop && !isWide) ? 400 : 620}
+      height={isMobile || (isDesktop && !isWide) ? 250 : 365}
+    >
       <Pie
         isAnimationActive={false}
         data={data}
         dataKey="value"
         cx="50%"
         cy="50%"
-        outerRadius={isMobile  || (isDesktop && !isWide)? 90 : 150}
+        outerRadius={isMobile || (isDesktop && !isWide) ? 90 : 150}
         fill="#8884d8"
         label={({ index }) => data[index].name}
       />

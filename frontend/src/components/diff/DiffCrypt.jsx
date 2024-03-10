@@ -16,8 +16,8 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
 
   const sortMethods = {
     Capacity: 'C',
-    'Clan': 'CL',
-    'Group': 'G',
+    Clan: 'CL',
+    Group: 'G',
     Name: 'N',
     'Quantity ': 'Q', // SPACE SUFFIX IS INTENTIONAL
     Sect: 'S',

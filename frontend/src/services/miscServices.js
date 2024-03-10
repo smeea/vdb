@@ -16,7 +16,7 @@ export const changesLoader = () => {
     (response) => {
       if (!response.ok) return { error: response.status };
       return response.json();
-    }
+    },
   );
 
   return { changes: response };

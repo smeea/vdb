@@ -32,9 +32,7 @@ const SearchFormTextAndButtons = ({
     setText(value[0].value ?? '');
   }, [value]);
 
-  useDebounce(() => onChange(0, text), 300, [
-    text,
-  ]);
+  useDebounce(() => onChange(0, text), 300, [text]);
 
   const options = [
     {
@@ -58,7 +56,7 @@ const SearchFormTextAndButtons = ({
           <Input
             placeholder="Card Name / Text / RegEx"
             value={text}
-            onChange={e => setText(e.target.value)}
+            onChange={(e) => setText(e.target.value)}
             borderStyle="max-sm:border sm:border-y sm:border-l"
             roundedStyle="sm:rounded-r-none rounded"
           />

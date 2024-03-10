@@ -91,7 +91,7 @@ const Decks = () => {
       Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
         (v) => {
           deckData.tags = deckData.tags.concat(v);
-        }
+        },
       );
     }
     const d = {

@@ -166,8 +166,8 @@ export const cardToggleInventoryState = (deckid, cardid) => {
   const value = deck[target][cardid].i
     ? ''
     : deck.inventoryType === 's'
-    ? 'h'
-    : 's';
+      ? 'h'
+      : 's';
   deckUpdate(deckid, 'usedInInventory', {
     [cardid]: value,
   });
@@ -198,7 +198,7 @@ export const deckLocalize = (
   localizedCrypt,
   nativeCrypt,
   localizedLibrary,
-  nativeLibrary
+  nativeLibrary,
 ) => {
   Object.values(deckStore.deck.crypt).forEach((card) => {
     const id = card.c.Id;
@@ -222,7 +222,7 @@ const changeMaster = (deckid) => {
 
   if (oldMasterDeckid) {
     const branches = deckStore.decks[oldMasterDeckid].branches.filter(
-      (i) => i !== deckid
+      (i) => i !== deckid,
     );
     branches.push(oldMasterDeckid);
 

@@ -16,12 +16,11 @@ import {
 const byGroupedType = (a, b) => {
   return (
     cardtypeSortedFull.indexOf(getCardProperty(a, 'Type')) -
-      cardtypeSortedFull.indexOf(getCardProperty(b, 'Type'))
+    cardtypeSortedFull.indexOf(getCardProperty(b, 'Type'))
   );
 };
 
 const librarySort = (cards, sortMethod) => {
-
   if (cards) {
     switch (sortMethod) {
       case 'Name':

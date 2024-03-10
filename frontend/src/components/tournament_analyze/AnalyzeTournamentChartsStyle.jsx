@@ -63,11 +63,11 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
 
   return (
     <RadarChart
-      width={isMobile  || (isDesktop && !isWide)? 300 : 450}
-      height={isMobile  || (isDesktop && !isWide)? 230 : 365}
+      width={isMobile || (isDesktop && !isWide) ? 300 : 450}
+      height={isMobile || (isDesktop && !isWide) ? 230 : 365}
       cx="50%"
       cy="50%"
-      outerRadius={isMobile  || (isDesktop && !isWide)? 90 : 150}
+      outerRadius={isMobile || (isDesktop && !isWide) ? 90 : 150}
       data={data}
     >
       <PolarGrid />

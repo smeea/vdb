@@ -75,7 +75,7 @@ const AnalyzeTournamentChartsRankingStyle = ({
             name={s[0].toUpperCase() + s.slice(1)}
             refLine={info.medianReportedRank}
             titleWidth={80}
-            width={isMobile  || (isDesktop && !isWide) ? 370 : 600}
+            width={isMobile || (isDesktop && !isWide) ? 370 : 600}
           />
         );
       })}

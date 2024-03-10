@@ -12,7 +12,7 @@ const getMatches = (
   filterAction,
   playtestId,
   playtestMode,
-  inInventory
+  inInventory,
 ) => {
   const input = { name: inputValue };
 
@@ -42,7 +42,7 @@ const getAllMatches = (
   filterLibrary,
   target,
   playtestMode,
-  inInventory
+  inInventory,
 ) => {
   const cryptPlaytestId = 210000;
   const libraryPlaytestId = 110000;
@@ -54,7 +54,7 @@ const getAllMatches = (
           filterCrypt,
           cryptPlaytestId,
           playtestMode,
-          inInventory
+          inInventory,
         )
       : [];
 
@@ -65,7 +65,7 @@ const getAllMatches = (
           filterLibrary,
           libraryPlaytestId,
           playtestMode,
-          inInventory
+          inInventory,
         )
       : [];
 
@@ -86,7 +86,7 @@ const CardSelect = React.forwardRef(
       onChange,
       placement,
     },
-    ref
+    ref,
   ) => {
     const { isMobile, cryptCardBase, libraryCardBase, playtestMode } = useApp();
     const { filterCrypt } = useFilters(cryptCardBase);
@@ -127,7 +127,7 @@ const CardSelect = React.forwardRef(
           filterLibrary,
           target,
           playtestMode,
-          inInventory
+          inInventory,
         );
 
         if (target === 'crypt') {
@@ -163,7 +163,7 @@ const CardSelect = React.forwardRef(
         value={value}
       />
     );
-  }
+  },
 );
 CardSelect.displayName = 'CardSelect';
 

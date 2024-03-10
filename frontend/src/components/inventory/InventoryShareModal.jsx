@@ -16,7 +16,7 @@ const InventoryShareModal = ({ setShow }) => {
 
   const [success, setSuccess] = useState();
   const [shareUrl, setShareUrl] = useState(
-    `${import.meta.env.VITE_BASE_URL}/inventory?key=${inventoryKey}`
+    `${import.meta.env.VITE_BASE_URL}/inventory?key=${inventoryKey}`,
   );
 
   const handleClick = () => {

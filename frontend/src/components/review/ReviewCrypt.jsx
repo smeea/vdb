@@ -15,8 +15,8 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
 
   const sortMethods = {
     Capacity: 'C',
-    'Clan': 'CL',
-    'Group': 'G',
+    Clan: 'CL',
+    Group: 'G',
     Name: 'N',
     'Quantity ': 'Q ', // SPACE SUFFIX IS INTENTIONAL
     Sect: 'S',

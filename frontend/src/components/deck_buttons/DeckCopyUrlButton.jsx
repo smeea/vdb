@@ -13,7 +13,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const handleStandard = () => {
     const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(
       ' ',
-      '_'
+      '_',
     )}`;
     navigator.clipboard.writeText(url);
     setSuccess(true);
@@ -27,7 +27,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const handleStandardQr = () => {
     const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(
       ' ',
-      '_'
+      '_',
     )}`;
 
     setShowMenuButtons(false);

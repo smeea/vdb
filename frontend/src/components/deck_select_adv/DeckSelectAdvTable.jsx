@@ -61,28 +61,27 @@ const DeckSelectAdvTable = ({
       .normalize('NFD')
       .replace(/\p{Diacritic}/gu, '');
 
-    return Object.values({...deck.crypt, ...deck.library}).some((card) => {
-      const normalizedCardName = card.c.Name
-        .toLowerCase()
+    return Object.values({ ...deck.crypt, ...deck.library }).some((card) => {
+      const normalizedCardName = card.c.Name.toLowerCase()
         .normalize('NFD')
         .replace(/\p{Diacritic}/gu, '');
 
-      return normalizedCardName.includes(normalizedQuery)
+      return normalizedCardName.includes(normalizedQuery);
     });
   };
 
   const isDeckNameMatch = (deck, query) => {
     const normalizedNameFilter = query
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/\p{Diacritic}/gu, '');
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '');
     const normalizedDeckName = deck.name
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/\p{Diacritic}/gu, '');
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '');
 
-    return normalizedDeckName.includes(normalizedNameFilter)
-  }
+    return normalizedDeckName.includes(normalizedNameFilter);
+  };
 
   const sortedDecks = useMemo(() => {
     if (Object.values(decks).length > 0) {
@@ -101,8 +100,8 @@ const DeckSelectAdvTable = ({
 
       if (nameFilter.length > 2) {
         filtered = filtered.filter((deck) => {
-          if (isDeckNameMatch(deck, nameFilter)) return true
-          if (isCardInDeck(deck, nameFilter)) return true
+          if (isDeckNameMatch(deck, nameFilter)) return true;
+          if (isCardInDeck(deck, nameFilter)) return true;
         });
       }
 

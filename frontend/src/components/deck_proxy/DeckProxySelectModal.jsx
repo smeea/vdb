@@ -65,8 +65,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         const miss = deck.inventoryType
           ? Math.min(inventoryMiss, deck.crypt[cardid].q)
           : inventoryMiss >= 0
-          ? deck.crypt[cardid].q
-          : deck.crypt[cardid].q + inventoryMiss;
+            ? deck.crypt[cardid].q
+            : deck.crypt[cardid].q + inventoryMiss;
 
         if (miss > 0) {
           crypt[cardid] = {
@@ -87,8 +87,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         const miss = deck.inventoryType
           ? Math.min(inventoryMiss, deck.library[cardid].q)
           : inventoryMiss >= 0
-          ? deck.library[cardid].q
-          : deck.library[cardid].q + inventoryMiss;
+            ? deck.library[cardid].q
+            : deck.library[cardid].q + inventoryMiss;
 
         if (miss > 0) {
           library[cardid] = {

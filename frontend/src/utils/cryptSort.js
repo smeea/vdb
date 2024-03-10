@@ -32,11 +32,19 @@ const cryptSort = (cards, sortMethod) => {
       case 'Clan':
         return cards.toSorted(byName).toSorted(byCapacity).toSorted(byClan);
       case 'Clan ': // SPACE SUFFIX IS INTENTIONAL
-        return cards.toSorted(byName).toSorted(byCapacity).toSorted(byGroup).toSorted(byClan);
+        return cards
+          .toSorted(byName)
+          .toSorted(byCapacity)
+          .toSorted(byGroup)
+          .toSorted(byClan);
       case 'Group':
         return cards.toSorted(byName).toSorted(byCapacity).toSorted(byGroup);
       case 'Group ': // SPACE SUFFIX IS INTENTIONAL
-        return cards.toSorted(byName).toSorted(byCapacity).toSorted(byClan).toSorted(byGroup);
+        return cards
+          .toSorted(byName)
+          .toSorted(byCapacity)
+          .toSorted(byClan)
+          .toSorted(byGroup);
       case 'Sect':
         return cards.toSorted(byName).toSorted(byCapacity).toSorted(bySect);
       case 'Player':

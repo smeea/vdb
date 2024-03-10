@@ -51,7 +51,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   const sortedCards = useMemo(
     () => cryptSort(Object.values(cardsByClan[clan]), sortMethod),
-    [cardsByClan, sortMethod]
+    [cardsByClan, sortMethod],
   );
 
   const {

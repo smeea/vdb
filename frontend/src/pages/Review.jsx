@@ -65,7 +65,7 @@ const Review = () => {
       Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
         (v) => {
           deckData.tags = deckData.tags.concat(v);
-        }
+        },
       );
     }
     const d = {
@@ -105,7 +105,7 @@ const Review = () => {
   useEffect(() => {
     const diff = getDiff(
       { ...deckFrom?.crypt, ...deckFrom?.library },
-      { ...deckTo?.crypt, ...deckTo?.library }
+      { ...deckTo?.crypt, ...deckTo?.library },
     );
 
     if (Object.keys(diff).length) {
@@ -136,7 +136,7 @@ const Review = () => {
   useEffect(() => {
     if (hash && deckTo) {
       const deckWithHash = JSON.parse(
-        JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library })
+        JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library }),
       );
       hash
         .slice(1)
@@ -193,7 +193,7 @@ const Review = () => {
 
   const parentId = deckFrom?.description.replace(
     `Review of ${import.meta.env.VITE_BASE_URL}/decks/`,
-    ''
+    '',
   );
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
 
