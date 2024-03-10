@@ -35,7 +35,7 @@ export { default as FlexGapped } from './common/FlexGapped.jsx';
 export { default as Header } from './common/Header.jsx';
 export { default as Hr } from './common/Hr.jsx';
 export { default as Input } from './common/Input.jsx';
-export { default as InputPreLabel } from './common/InputPreLabel.jsx';
+export { default as InputLabel } from './common/InputLabel.jsx';
 export { default as MenuButton } from './common/MenuButton.jsx';
 export { default as MenuItem } from './common/MenuItem.jsx';
 export { default as MenuItemDivider } from './common/MenuItemDivider.jsx';

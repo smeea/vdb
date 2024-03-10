@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg?react';
 import PaletteFill from '@/assets/images/icons/palette-fill.svg?react';
-import { Input, InputPreLabel, Button } from '@/components';
+import { Input, InputLabel, Button } from '@/components';
 import { deckUpdate } from '@/context';
 
 const DeckChangeBranchName = ({ deck }) => {
@@ -39,9 +39,9 @@ const DeckChangeBranchName = ({ deck }) => {
 
   return (
     <form className="flex" onSubmit={handleSubmit}>
-      <InputPreLabel className="sm:hidden" title="Branch Name">
+      <InputLabel className="sm:hidden" title="Branch Name">
         <PaletteFill width="20" height="20" viewBox="0 0 16 16" />
-      </InputPreLabel>
+      </InputLabel>
       <Input
         value={value}
         onChange={handleChange}

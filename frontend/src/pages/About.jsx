@@ -55,7 +55,7 @@ const About = () => {
                 <Link to="/inventory">Manage your inventory</Link>
               </li>
               <li>
-                <Link to="/twd">Search Tournament-Winning Decks</Link>
+                <Link to="/twd">Search Tournament Winning Decks</Link>
               </li>
               <li>
                 <Link to="/pda">Search Public Deck Archive</Link>
