@@ -11,3 +11,4 @@
 - Explicit image width/height
 - Update to Headlessui 2 (review new components)
 - Remove legacy polyfills when Safari adopts groupBy
+- Update to SQLAlchemy 3

@@ -5,6 +5,7 @@ import {
   ResultLayoutTextSets,
   ResultLayoutTextRulings,
   ResultLayoutTextArtist,
+  ResultLayoutTextPlaytestReport,
   Hr,
 } from '@/components';
 
@@ -15,7 +16,8 @@ const ResultLayoutTextCommon = ({
   forceInventoryMode,
   inPopover,
 }) => {
-  const { inventoryMode } = useApp();
+  const { isPlaytester, inventoryMode } = useApp();
+  const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);
 
   return (
     <div className="space-y-3">
@@ -53,6 +55,17 @@ const ResultLayoutTextCommon = ({
               Inventory:
             </div>
             <ResultLayoutTextInventory card={card} inPopover={inPopover} />
+          </div>
+        </>
+      )}
+      {isPlaytester && isPlaytest && (
+        <>
+          <Hr />
+          <div className="flex flex-col gap-1">
+            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+              Playtest Report:
+            </div>
+            <ResultLayoutTextPlaytestReport cardid={card.Id} />
           </div>
         </>
       )}

@@ -251,13 +251,14 @@ export { default as ResultCryptTitle } from './result_crypt/ResultCryptTitle.jsx
 export { default as ResultCryptTotal } from './result_crypt/ResultCryptTotal.jsx';
 export { default as ResultCryptTotalInfo } from './result_crypt/ResultCryptTotalInfo.jsx';
 
+export { default as ResultLayoutText } from './result_layout/ResultLayoutText.jsx';
 export { default as ResultLayoutTextArtist } from './result_layout/ResultLayoutTextArtist.jsx';
+export { default as ResultLayoutTextCommon } from './result_layout/ResultLayoutTextCommon.jsx';
 export { default as ResultLayoutTextInventory } from './result_layout/ResultLayoutTextInventory.jsx';
+export { default as ResultLayoutTextPlaytestReport } from './result_layout/ResultLayoutTextPlaytestReport.jsx';
 export { default as ResultLayoutTextRulings } from './result_layout/ResultLayoutTextRulings.jsx';
 export { default as ResultLayoutTextSets } from './result_layout/ResultLayoutTextSets.jsx';
 export { default as ResultLayoutTextText } from './result_layout/ResultLayoutTextText.jsx';
-export { default as ResultLayoutTextCommon } from './result_layout/ResultLayoutTextCommon.jsx';
-export { default as ResultLayoutText } from './result_layout/ResultLayoutText.jsx';
 
 export { default as ResultLibrary } from './result_library/ResultLibrary.jsx';
 export { default as ResultLibraryBurn } from './result_library/ResultLibraryBurn.jsx';
