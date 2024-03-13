@@ -4,16 +4,15 @@ import ChevronBarContract from '@/assets/images/icons/chevron-bar-contract.svg?r
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
 import Star from '@/assets/images/icons/star.svg?react';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
-import { Input, InputLabel, Textarea, Button } from '@/components';
+import { ButtonClose, Input, InputLabel, Textarea, Button } from '@/components';
 import { useFetch } from '@/hooks';
-import { useApp } from '@/context';
 import { playtestServices } from '@/services';
 
 const Scores = ({ value, handleClick }) => {
   const SIZE = 24;
 
   return (
-    <div className="flex gap-2">
+    <div className="flex px-1 gap-2">
       {Array.apply(null, Array(10)).map((i, idx) => {
         return (
           <div
@@ -34,51 +33,56 @@ const Scores = ({ value, handleClick }) => {
 };
 
 const ResultLayoutPlaytestReport = ({ cardid }) => {
-  const { isMobile } = useApp();
   const [text, setText] = useState('');
   const [score, setScore] = useState(0);
   const [isFolded, setIsFolded] = useState(true);
 
   const url = `${import.meta.env.VITE_API_URL}/playtest/cards/${cardid}`;
-  const { value: dataValue } = useFetch(url, {}, []);
+  const { value: dataValue } = useFetch(url, {}, [cardid]);
 
   useEffect(() => {
     if (dataValue) {
       setScore(dataValue.score);
       setText(dataValue.text);
     }
-  }, [dataValue]);
+  }, [cardid, dataValue]);
 
   const handleTextChange = (event) => {
     setText(event.target.value);
   };
 
-  const submit = () => {
+  const submit = (t, s) => {
     playtestServices.submitReport(cardid, {
-      text: text,
-      score: score,
+      text: t,
+      score: s,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    submit();
+    submit(text, score);
   };
 
   const handleOnBlur = () => {
     if (text !== dataValue.text) {
-      submit();
+      submit(text, score);
     }
   };
 
   const handleScoreChange = (value) => {
     setScore(value);
-    // deckUpdate(deckid, 'description', value);
+    submit(text, value);
   };
 
   return (
     <div className="flex flex-col gap-3">
-      <Scores value={score} handleClick={handleScoreChange} />
+      <div className="flex items-center justify-between">
+        <Scores value={score} handleClick={handleScoreChange} />
+        <ButtonClose
+          title="Clear Score"
+          handleClick={() => handleScoreChange(0)}
+        />
+      </div>
       <form className="flex" onSubmit={handleSubmit}>
         <InputLabel title="Description">
           <ChatLeftQuoteFill width="20" height="18" viewBox="0 0 16 16" />
@@ -103,7 +107,7 @@ const ResultLayoutPlaytestReport = ({ cardid }) => {
           />
         )}
         <Button
-          roundedStyle={isMobile ? '' : 'rounded-r'}
+          roundedStyle="rounded-r"
           title="Collapse/Uncollapse Description"
           variant="primary"
           onClick={() => setIsFolded(!isFolded)}
