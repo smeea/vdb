@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Check2 from '@/assets/images/icons/check2.svg?react';
 import Snow from '@/assets/images/icons/snow.svg?react';
 import TagFill from '@/assets/images/icons/tag-fill.svg?react';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import { deckUpdate } from '@/context';
-import { Input, InputLabel, Button, DeckFreezeButton } from '@/components';
+import { Input, InputLabel, DeckFreezeButton } from '@/components';
 
 const DeckChangeName = ({ deck }) => {
   const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
   const [value, setValue] = useState(deck.name || '');
-  const [success, setSuccess] = useState(false);
   const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
 
   useEffect(() => {
@@ -23,10 +21,6 @@ const DeckChangeName = ({ deck }) => {
 
   const deckChangeName = () => {
     deckUpdate(deck.deckid, 'name', value);
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 1000);
   };
 
   const handleSubmit = (event) => {
@@ -90,19 +84,10 @@ const DeckChangeName = ({ deck }) => {
       )}
       {isAuthor && !isPublic && (
         <DeckFreezeButton
-          className="rounded-l-none max-sm:rounded-r-none"
+          roundedStyle="rounded-r"
           borderStyle="border-l border-y sm:border-r"
           deck={deck}
         />
-      )}
-      {isEditable && (
-        <Button
-          className="rounded-l-none sm:hidden"
-          variant={success ? 'success' : 'primary'}
-          type="submit"
-        >
-          <Check2 />
-        </Button>
       )}
     </form>
   );

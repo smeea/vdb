@@ -4,7 +4,7 @@ import LockFill from '@/assets/images/icons/lock-fill.svg?react';
 import UnlockFill from '@/assets/images/icons/unlock-fill.svg?react';
 import { deckUpdate } from '@/context';
 
-const DeckFreezeButton = ({ deck, className, borderStyle }) => {
+const DeckFreezeButton = ({ deck, className, roundedStyle, borderStyle }) => {
   const handleClick = () => {
     deckUpdate(deck.deckid, 'isFrozen', !deck.isFrozen);
   };
@@ -15,6 +15,7 @@ const DeckFreezeButton = ({ deck, className, borderStyle }) => {
       onClick={handleClick}
       title={`${deck.isFrozen ? 'Disabled' : 'Enabled'} Crypt/Library Editing`}
       className={className}
+      roundedStyle={roundedStyle}
       borderStyle={borderStyle}
     >
       <>

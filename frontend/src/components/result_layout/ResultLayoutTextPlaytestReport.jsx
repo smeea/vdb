@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Check2 from '@/assets/images/icons/check2.svg?react';
 import ChevronBarExpand from '@/assets/images/icons/chevron-bar-expand.svg?react';
 import ChevronBarContract from '@/assets/images/icons/chevron-bar-contract.svg?react';
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
@@ -38,7 +37,6 @@ const ResultLayoutPlaytestReport = ({ cardid }) => {
   const { isMobile } = useApp();
   const [text, setText] = useState('');
   const [score, setScore] = useState(0);
-  const [success, setSuccess] = useState(false);
   const [isFolded, setIsFolded] = useState(true);
 
   const url = `${import.meta.env.VITE_API_URL}/playtest/cards/${cardid}`;
@@ -60,10 +58,6 @@ const ResultLayoutPlaytestReport = ({ cardid }) => {
       text: text,
       score: score,
     });
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 1000);
   };
 
   const handleSubmit = (event) => {
@@ -104,24 +98,17 @@ const ResultLayoutPlaytestReport = ({ cardid }) => {
             value={text}
             onChange={handleTextChange}
             onBlur={handleOnBlur}
-            roundedStyle="rounded rounded-l-none"
-            borderStyle="border"
+            borderStyle="border-y"
+            roundedStyle="rounded-none"
           />
         )}
         <Button
-          roundedStyle={isMobile ? '' : 'rounded-l-none'}
+          roundedStyle={isMobile ? '' : 'rounded-r'}
           title="Collapse/Uncollapse Description"
           variant="primary"
           onClick={() => setIsFolded(!isFolded)}
         >
           {isFolded ? <ChevronBarExpand /> : <ChevronBarContract />}
-        </Button>
-        <Button
-          className="rounded-l-none sm:hidden"
-          variant={success ? 'success' : 'primary'}
-          type="submit"
-        >
-          <Check2 />
         </Button>
       </form>
     </div>
