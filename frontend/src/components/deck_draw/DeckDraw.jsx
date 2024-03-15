@@ -109,7 +109,7 @@ const DeckDraw = ({ deck, setShow }) => {
   let burnedPoolTotal = 0;
   let burnedBloodTotal = 0;
 
-  burnedLibrary.map((card) => {
+  burnedLibrary.forEach((card) => {
     if (card[BLOOD_COST] && !isNaN(card[BLOOD_COST])) {
       burnedBloodTotal += parseInt(card[BLOOD_COST]);
     }
