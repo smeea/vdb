@@ -5,11 +5,15 @@ import {
   DeckChangeBranchName,
   DeckChangeAuthor,
   DeckChangeDescription,
+  ResultLayoutTextPlaytestReport,
 } from '@/components';
 import { useApp } from '@/context';
 
 const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
   const { isMobile } = useApp();
+
+  const playtestPrecon =
+    deck.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
 
   return (
     <div className="flex w-full flex-col gap-2">
@@ -41,17 +45,29 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
           !folded || isMobile ? 'flex-col' : 'flex-row'
         } gap-2`}
       >
-        <div className="basis-full sm:basis-6/12">
-          <DeckChangeDescription
-            deck={deck}
-            folded={folded}
-            setFolded={setFolded}
-          />
-        </div>
-        {(deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
-          <div className="sm:z-20 basis-full sm:basis-6/12">
-            <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered />
+        {playtestPrecon ? (
+          <div className="basis-full">
+            <ResultLayoutTextPlaytestReport id={playtestPrecon} isPrecon />
           </div>
+        ) : (
+          <>
+            <div className="basis-full sm:basis-6/12">
+              <DeckChangeDescription
+                deck={deck}
+                folded={folded}
+                setFolded={setFolded}
+              />
+            </div>
+            {(deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
+              <div className="sm:z-20 basis-full sm:basis-6/12">
+                <DeckTags
+                  deck={deck}
+                  allTagsOptions={allTagsOptions}
+                  isBordered
+                />
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

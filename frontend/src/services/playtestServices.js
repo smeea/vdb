@@ -4,8 +4,10 @@ const DEFAULT_OPTIONS = {
   credentials: 'include',
 };
 
-export const submitReport = (cardid, value) => {
-  const url = `${import.meta.env.VITE_API_URL}/playtest/cards/${cardid}`;
+export const submitReport = (id, value, isPrecon) => {
+  const url = `${import.meta.env.VITE_API_URL}/playtest/${
+    isPrecon ? 'precons' : 'cards'
+  }/${id}`;
   const options = {
     method: 'PUT',
     body: JSON.stringify(value),

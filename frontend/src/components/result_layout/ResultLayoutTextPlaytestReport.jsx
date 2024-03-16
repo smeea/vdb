@@ -32,30 +32,36 @@ const Scores = ({ value, handleClick }) => {
   );
 };
 
-const ResultLayoutPlaytestReport = ({ cardid }) => {
+const ResultLayoutPlaytestReport = ({ id, isPrecon = false }) => {
   const [text, setText] = useState('');
   const [score, setScore] = useState(0);
   const [isFolded, setIsFolded] = useState(true);
 
-  const url = `${import.meta.env.VITE_API_URL}/playtest/cards/${cardid}`;
-  const { value: dataValue } = useFetch(url, {}, [cardid]);
+  const url = `${import.meta.env.VITE_API_URL}/playtest/${
+    isPrecon ? 'precons' : 'cards'
+  }/${id}`;
+  const { value: dataValue } = useFetch(url, {}, [id]);
 
   useEffect(() => {
     if (dataValue) {
       setScore(dataValue.score);
       setText(dataValue.text);
     }
-  }, [cardid, dataValue]);
+  }, [id, dataValue]);
 
   const handleTextChange = (event) => {
     setText(event.target.value);
   };
 
   const submit = (t, s) => {
-    playtestServices.submitReport(cardid, {
-      text: t,
-      score: s,
-    });
+    playtestServices.submitReport(
+      id,
+      {
+        text: t,
+        score: s,
+      },
+      isPrecon
+    );
   };
 
   const handleSubmit = (event) => {
@@ -76,12 +82,19 @@ const ResultLayoutPlaytestReport = ({ cardid }) => {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-between">
-        <Scores value={score} handleClick={handleScoreChange} />
-        <ButtonClose
-          title="Clear Score"
-          handleClick={() => handleScoreChange(0)}
-        />
+      <div className="flex items-center gap-3">
+        {isPrecon && (
+          <div className="whitespace-nowrap font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            Playtest Report:
+          </div>
+        )}
+        <div className="flex w-full items-center justify-between">
+          <Scores value={score} handleClick={handleScoreChange} />
+          <ButtonClose
+            title="Clear Score"
+            handleClick={() => handleScoreChange(0)}
+          />
+        </div>
       </div>
       <form className="flex" onSubmit={handleSubmit}>
         <InputLabel title="Description">
@@ -89,6 +102,7 @@ const ResultLayoutPlaytestReport = ({ cardid }) => {
         </InputLabel>
         {isFolded ? (
           <Input
+            placeholder="Write playtest report here"
             value={text}
             onChange={handleTextChange}
             onBlur={handleOnBlur}

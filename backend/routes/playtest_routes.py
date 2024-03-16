@@ -27,20 +27,21 @@ def playtesters_route():
         return jsonify(success=True)
 
 @login_required
-@app.route("/api/playtest/cards/<string:cardid>", methods=["GET", "PUT"])
-def report_route(cardid):
+@app.route("/api/playtest/<string:target>/<string:id>", methods=["GET", "PUT"])
+def report_route(target, id):
+    if target not in ['cards', 'precons']:
+        abort(400)
     if not current_user.playtester:
         abort(401)
 
-
     if request.method == "GET":
-            if not cardid in current_user.playtest_report['cards']:
+            if not id in current_user.playtest_report[target]:
                 return {'text': '', 'score': 0}
-            return current_user.playtest_report['cards'][cardid]
+            return current_user.playtest_report[target][id]
 
     if request.method == "PUT":
         report = copy.deepcopy(current_user.playtest_report)
-        report['cards'][cardid] = {
+        report[target][id] = {
             'text': request.json["text"],
             'score': request.json["score"],
         }

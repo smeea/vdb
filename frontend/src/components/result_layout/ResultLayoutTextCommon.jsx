@@ -65,7 +65,7 @@ const ResultLayoutTextCommon = ({
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               Playtest Report:
             </div>
-            <ResultLayoutTextPlaytestReport cardid={card.Id} />
+            <ResultLayoutTextPlaytestReport id={card.Id} />
           </div>
         </>
       )}
