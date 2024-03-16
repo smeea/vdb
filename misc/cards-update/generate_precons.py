@@ -194,8 +194,8 @@ with open("cardbase_crypt.json", "r") as crypt_file, open(
                 **bundles,
             }
 
-    except Exception:
-        pass
+    except Exception as e:
+        print(e)
 
     for card in crypt + library:
         for card_set, card_precons in card["Set"].items():

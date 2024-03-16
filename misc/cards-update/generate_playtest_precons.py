@@ -3,15 +3,15 @@ from deck_import import deck_import
 
 
 playtest_files = {
-    "precon-30th-round1.txt": "30th",
-    "precon-30th-extra-round1.txt": "30thE",
-    "precon-nb-ravnos-round1.txt": "NR",
-    "precon-nb-salubri-round1.txt": "NSal",
-    "precon-nb-tzimisce-round1.txt": "NTz",
-    "precon-nb-hecata-round1.txt": "NH",
-    "precon-nb-lasombra-round1.txt": "NL",
-    "precon-hecata-round2.txt": "PH",
-    "precon-lasombra-round2.txt": "PL",
+    "precon-30th-round2.txt": "30th",
+    "precon-30th-extra-round2.txt": "30thE",
+    "precon-nb-ravnos-round2.txt": "NR",
+    "precon-nb-salubri-round2.txt": "NSal",
+    "precon-nb-tzimisce-round2.txt": "NTz",
+    "precon-nb-hecata-round2.txt": "NH",
+    "precon-nb-lasombra-round2.txt": "NL",
+    "precon-hecata-round3.txt": "PH",
+    "precon-lasombra-round3.txt": "PL",
 }
 
 playtest_cards = {}
@@ -89,5 +89,5 @@ try:
             library_playtest, library_playtest_file, indent=4, separators=(",", ":")
         )
 
-except Exception:
-    pass
+except Exception as e:
+    print(e)
