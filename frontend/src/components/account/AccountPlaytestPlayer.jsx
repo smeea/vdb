@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
-import { Toggle } from '@/components';
-import { miscServices } from '@/services';
+import { Flag, Toggle } from '@/components';
+import { playtestServices } from '@/services';
 
-const AccountPlaytestPlayer = ({ username }) => {
+const AccountPlaytestPlayer = ({ username, lang }) => {
   const [state, setState] = useState(true);
 
   const handleClick = () => {
-    miscServices.changePlaytester(username, !state);
+    playtestServices.changePlaytester(username, !state);
     setState(!state);
   };
 
   return (
-    <Toggle isOn={state} toggle={handleClick}>
-      {username}
-    </Toggle>
+    <div className="flex justify-between">
+      <Toggle isOn={state} toggle={handleClick}>
+        <div className="flex items-center gap-2">
+          {username}
+          {lang && <Flag value={lang} />}
+        </div>
+      </Toggle>
+    </div>
   );
 };
 

@@ -1,38 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Globe from '@/assets/images/icons/globe.svg?react';
-import FlagEn from '@/assets/images/flags/en.svg?react';
-import FlagEs from '@/assets/images/flags/es.svg?react';
-import FlagFr from '@/assets/images/flags/fr.svg?react';
-import FlagBr from '@/assets/images/flags/br.svg?react';
-import { Select } from '@/components';
+import { Flag, Select } from '@/components';
 import { useFetch } from '@/hooks';
 import { playtestServices } from '@/services';
 
-const Flag = ({ value }) => {
-  const languages = {
-    'en-EN': FlagEn,
-    'es-ES': FlagEs,
-    'fr-FR': FlagFr,
-    'pt-PT': FlagBr,
-  };
-
-  const SelectedFlag = languages[value];
-  return (
-    <div>
-      <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
-    </div>
-  );
-};
-
-const PlaytestReportLanguageSelector = ({}) => {
-  const [lang, setLang] = useState('en-EN');
+const PlaytestReportLanguageSelector = () => {
+  const [lang, setLang] = useState();
 
   const url = `${import.meta.env.VITE_API_URL}/playtest/lang`;
-  const { value: dataValue } = useFetch(url, {}, []);
+  const { value } = useFetch(url, {}, []);
 
   useEffect(() => {
-    if (dataValue?.value) setLang(dataValue.value);
-  }, [dataValue]);
+    if (value?.value) setLang(value.value);
+  }, [value]);
 
   const languages = {
     'en-EN': 'English',

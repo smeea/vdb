@@ -1,19 +1,10 @@
 import React from 'react';
-import FlagEn from '@/assets/images/flags/en.svg?react';
-import FlagEs from '@/assets/images/flags/es.svg?react';
-import FlagFr from '@/assets/images/flags/fr.svg?react';
-import FlagBr from '@/assets/images/flags/br.svg?react';
+import { Flag } from '@/components';
 import { useApp } from '@/context';
 
 const LanguageMenu = ({ setShowMenu }) => {
   const { lang, changeLang } = useApp();
-
-  const languages = {
-    'en-EN': FlagEn,
-    'es-ES': FlagEs,
-    'fr-FR': FlagFr,
-    'pt-PT': FlagBr,
-  };
+  const languages = ['en-EN', 'es-ES', 'fr-FR', 'pt-PT'];
 
   const handleClick = (l) => {
     changeLang(l);
@@ -24,8 +15,7 @@ const LanguageMenu = ({ setShowMenu }) => {
     <div className="space-y-2">
       <div>Card Language:</div>
       <div className="flex items-center space-x-5">
-        {Object.keys(languages).map((l) => {
-          const Flag = languages[l];
+        {languages.map((l) => {
           return (
             <div
               key={l}
@@ -36,7 +26,7 @@ const LanguageMenu = ({ setShowMenu }) => {
               }`}
               onClick={() => handleClick(l)}
             >
-              <Flag width="22" height="22" viewBox="0 0 500 500" />
+              <Flag size={22} value={l} />
             </div>
           );
         })}

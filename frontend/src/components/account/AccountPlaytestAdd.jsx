@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg?react';
 import { Spinner, Input, Button, ErrorOverlay } from '@/components';
-import { miscServices } from '@/services';
+import { playtestServices } from '@/services';
 
 const AccountPlaytestAdd = ({
   playtesters,
@@ -13,22 +13,19 @@ const AccountPlaytestAdd = ({
   const [error, setError] = useState(false);
 
   const addPlaytester = () => {
+    if ([...newPlaytesters, ...Object.keys(playtesters)].includes(username)) {
+      setError('ALREADY PLAYTESTER');
+      return;
+    }
+
     setIsLoading(true);
     setError(false);
 
-    miscServices
+    playtestServices
       .changePlaytester(username)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        if (
-          !newPlaytesters.includes(username) &&
-          !playtesters.includes(username)
-        ) {
-          setNewPlaytesters([...newPlaytesters, username]);
-          setUsername('');
-        } else {
-          setError('ALREADY PLAYTESTER');
-        }
+      .then(() => {
+        setNewPlaytesters([...newPlaytesters, username]);
+        setUsername('');
       })
       .catch(() => setError('USER DOES NOT EXIST'))
       .finally(() => setIsLoading(false));

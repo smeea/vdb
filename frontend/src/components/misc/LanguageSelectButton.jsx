@@ -1,27 +1,16 @@
 import React from 'react';
-import FlagEn from '@/assets/images/flags/en.svg?react';
-import FlagEs from '@/assets/images/flags/es.svg?react';
-import FlagFr from '@/assets/images/flags/fr.svg?react';
-import FlagBr from '@/assets/images/flags/br.svg?react';
-import { LanguageMenu } from '@/components';
+import { Flag, LanguageMenu } from '@/components';
 import { useApp } from '@/context';
 
 const LanguageSelectButton = ({ showMenu, setShowMenu }) => {
   const { lang } = useApp();
-  const languages = {
-    'en-EN': FlagEn,
-    'es-ES': FlagEs,
-    'fr-FR': FlagFr,
-    'pt-PT': FlagBr,
-  };
-  const SelectedFlag = languages[lang];
 
   return (
     <div
       className="relative flex h-full min-w-[40px] items-center justify-center"
       onClick={() => setShowMenu(!showMenu)}
     >
-      <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
+      <Flag value={lang} />
       {showMenu && (
         <div className="absolute left-1 top-11 rounded border border-borderPrimary bg-bgPrimary p-3 dark:border-borderPrimaryDark dark:bg-bgPrimaryDark">
           <LanguageMenu setShowMenu={setShowMenu} />

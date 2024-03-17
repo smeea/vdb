@@ -6,7 +6,7 @@ import { useFetch } from '@/hooks';
 const AccountPlaytestModal = ({ setShow }) => {
   const { username } = useApp();
   const [newPlaytesters, setNewPlaytesters] = useState([]);
-  const url = `${import.meta.env.VITE_API_URL}/playtest`;
+  const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
   const { value } = useFetch(url, {}, []);
 
   return (
@@ -23,9 +23,11 @@ const AccountPlaytestModal = ({ setShow }) => {
         />
         <div>
           {value &&
-            [...newPlaytesters.toReversed(), ...value.toSorted()]
-              .filter((u) => u != username)
-              .map((u) => <AccountPlaytestPlayer key={u} username={u} />)}
+            [...newPlaytesters.toReversed(), ...Object.keys(value).toSorted()]
+              /* .filter((u) => u != username) */
+              .map((u) => (
+                <AccountPlaytestPlayer key={u} username={u} lang={value[u]} />
+              ))}
         </div>
       </div>
     </Modal>

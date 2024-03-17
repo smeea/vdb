@@ -16,20 +16,10 @@ export const changesLoader = () => {
     (response) => {
       if (!response.ok) return { error: response.status };
       return response.json();
-    },
+    }
   );
 
   return { changes: response };
-};
-
-export const changePlaytester = (user, isAdd = true) => {
-  const url = `${import.meta.env.VITE_API_URL}/playtest`;
-  const options = {
-    method: isAdd ? 'PUT' : 'DELETE',
-    body: JSON.stringify({ username: user }),
-  };
-
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options });
 };
 
 export const pdaToggle = (deckid, isDelete) => {
