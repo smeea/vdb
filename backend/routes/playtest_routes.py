@@ -34,6 +34,13 @@ def report_route(target, id):
     if not current_user.playtester:
         abort(401)
 
+    if not 'precons' in current_user.playtest_report and not 'cards' in current_user.playtest_report:
+        report = copy.deepcopy(current_user.playtest_report)
+        report['precons'] = {}
+        report['cards'] = {}
+        current_user.playtest_report = report
+        db.session.commit()
+
     if request.method == "GET":
             if not id in current_user.playtest_report[target]:
                 return {'text': '', 'score': 0}
@@ -55,6 +62,12 @@ def report_route(target, id):
 def report_lang_route():
     if not current_user.playtester:
         abort(401)
+
+    if not 'lang' in current_user.playtest_report:
+        report = copy.deepcopy(current_user.playtest_report)
+        report['lang'] = None
+        current_user.playtest_report = report
+        db.session.commit()
 
     if request.method == "GET":
         return jsonify({'value': current_user.playtest_report['lang']})
