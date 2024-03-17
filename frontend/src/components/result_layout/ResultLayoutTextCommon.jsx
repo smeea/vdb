@@ -5,7 +5,7 @@ import {
   ResultLayoutTextSets,
   ResultLayoutTextRulings,
   ResultLayoutTextArtist,
-  ResultLayoutTextPlaytestReport,
+  PlaytestReportForm,
   Hr,
 } from '@/components';
 
@@ -61,7 +61,7 @@ const ResultLayoutTextCommon = ({
       {!inPopover && isPlaytester && isPlaytest && (
         <>
           <Hr />
-          <ResultLayoutTextPlaytestReport id={card.Id} />
+          <PlaytestReportForm id={card.Id} />
         </>
       )}
     </div>

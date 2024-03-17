@@ -1,9 +1,9 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
+- Check database creation => playtest reports
 
 # FEATURES
-- Playtest reports language
 - Playtest reports export
 - Update random seating decks from Codex
 

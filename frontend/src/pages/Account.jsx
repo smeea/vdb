@@ -9,12 +9,13 @@ import {
   AccountDeleteButton,
   AccountPlaytestButton,
   AccountLimitedButton,
+  PlaytestLanguageSelector,
 } from '@/components';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
 const Account = () => {
-  const { username, isPlaytestAdmin } = useApp();
+  const { username, isPlaytestAdmin, isPlaytester } = useApp();
   return (
     <div
       className={`account-container mx-auto grid place-items-center ${
@@ -34,6 +35,7 @@ const Account = () => {
             <AccountChangePassword />
             <AccountChangeEmail />
             <div className="flex flex-col gap-3 sm:gap-4">
+              {isPlaytester && <PlaytestLanguageSelector />}
               {isPlaytestAdmin && <AccountPlaytestButton />}
               <AccountLimitedButton />
               <div className="flex gap-3 sm:gap-4">

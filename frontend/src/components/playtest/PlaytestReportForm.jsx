@@ -71,7 +71,7 @@ const Scores = ({ value, handleClick }) => {
   );
 };
 
-const ResultLayoutPlaytestReport = ({ id, isPrecon = false }) => {
+const PlaytestReportForm = ({ id, isPrecon = false }) => {
   const [text, setText] = useState('');
   const [score, setScore] = useState(0);
   const [isFolded, setIsFolded] = useState(true);
@@ -167,4 +167,4 @@ const ResultLayoutPlaytestReport = ({ id, isPrecon = false }) => {
   );
 };
 
-export default ResultLayoutPlaytestReport;
+export default PlaytestReportForm;

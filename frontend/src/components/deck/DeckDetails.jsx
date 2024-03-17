@@ -5,7 +5,7 @@ import {
   DeckChangeBranchName,
   DeckChangeAuthor,
   DeckChangeDescription,
-  ResultLayoutTextPlaytestReport,
+  PlaytestReportForm,
 } from '@/components';
 import { useApp } from '@/context';
 
@@ -47,7 +47,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
       >
         {playtestPrecon ? (
           <div className="basis-full">
-            <ResultLayoutTextPlaytestReport id={playtestPrecon} isPrecon />
+            <PlaytestReportForm id={playtestPrecon} isPrecon />
           </div>
         ) : (
           <>

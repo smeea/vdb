@@ -227,6 +227,9 @@ export { default as UsedPopover } from './misc/UsedPopover.jsx';
 export { default as Warning } from './misc/Warning.jsx';
 export { default as WindowRows } from './misc/WindowRows.jsx';
 
+export { default as PlaytestReportForm } from './playtest/PlaytestReportForm.jsx';
+export { default as PlaytestLanguageSelector } from './playtest/PlaytestLanguageSelector.jsx';
+
 export { default as ResultClanImage } from './result_common/ResultClanImage.jsx';
 export { default as ResultDisciplineImage } from './result_common/ResultDisciplineImage.jsx';
 export { default as ResultLegalIcon } from './result_common/ResultLegalIcon.jsx';
@@ -255,7 +258,6 @@ export { default as ResultLayoutText } from './result_layout/ResultLayoutText.js
 export { default as ResultLayoutTextArtist } from './result_layout/ResultLayoutTextArtist.jsx';
 export { default as ResultLayoutTextCommon } from './result_layout/ResultLayoutTextCommon.jsx';
 export { default as ResultLayoutTextInventory } from './result_layout/ResultLayoutTextInventory.jsx';
-export { default as ResultLayoutTextPlaytestReport } from './result_layout/ResultLayoutTextPlaytestReport.jsx';
 export { default as ResultLayoutTextRulings } from './result_layout/ResultLayoutTextRulings.jsx';
 export { default as ResultLayoutTextSets } from './result_layout/ResultLayoutTextSets.jsx';
 export { default as ResultLayoutTextText } from './result_layout/ResultLayoutTextText.jsx';

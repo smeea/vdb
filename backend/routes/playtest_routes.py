@@ -48,3 +48,20 @@ def report_route(target, id):
         current_user.playtest_report = report
         db.session.commit()
         return jsonify(success=True)
+
+
+@login_required
+@app.route("/api/playtest/lang", methods=["GET", "PUT"])
+def report_lang_route():
+    if not current_user.playtester:
+        abort(401)
+
+    if request.method == "GET":
+        return jsonify({'value': current_user.playtest_report['lang']})
+
+    if request.method == "PUT":
+        report = copy.deepcopy(current_user.playtest_report)
+        report['lang'] = request.json["lang"]
+        current_user.playtest_report = report
+        db.session.commit()
+        return jsonify(success=True)

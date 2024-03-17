@@ -18,3 +18,18 @@ export const submitReport = (id, value, isPrecon) => {
     return response.json();
   });
 };
+
+export const changeLang = (value) => {
+  const url = `${import.meta.env.VITE_API_URL}/playtest/lang`;
+  const options = {
+    method: 'PUT',
+    body: JSON.stringify({
+      lang: value,
+    }),
+  };
+
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
+    if (!response.ok) throw response;
+    return response.json();
+  });
+};
