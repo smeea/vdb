@@ -1,5 +1,17 @@
 [
   {
+    "version": "2024-03-16",
+    "changes": [
+      "Update TWDA & Rulings",
+      "Update card base to include Ashurs and Legionnaires fixes",
+      "Update Playtest to Round 3 and add report feature (BETA! please consult with your coordinator how to properly report this round)",
+      "Improve Tournament Analyze for mobile other less common screen sizes",
+      "Fix search decks by card in advanced deck selection window",
+      "Reverse order of ash heap cards in deck draw simulator to show recent at the top",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-02-22",
     "changes": [
       "Fix more bugs introduced by recent update"
