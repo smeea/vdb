@@ -61,12 +61,7 @@ const ResultLayoutTextCommon = ({
       {!inPopover && isPlaytester && isPlaytest && (
         <>
           <Hr />
-          <div className="flex flex-col gap-2">
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              Playtest Report:
-            </div>
-            <ResultLayoutTextPlaytestReport id={card.Id} />
-          </div>
+          <ResultLayoutTextPlaytestReport id={card.Id} />
         </>
       )}
     </div>

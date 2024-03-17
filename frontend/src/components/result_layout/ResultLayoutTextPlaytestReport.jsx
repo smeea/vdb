@@ -4,15 +4,54 @@ import ChevronBarContract from '@/assets/images/icons/chevron-bar-contract.svg?r
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
 import Star from '@/assets/images/icons/star.svg?react';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
-import { ButtonClose, Input, InputLabel, Textarea, Button } from '@/components';
+import {
+  Button,
+  ButtonClose,
+  Input,
+  InputLabel,
+  Textarea,
+  ConditionalTooltipOrModal,
+} from '@/components';
 import { useFetch } from '@/hooks';
+import { useApp } from '@/context';
 import { playtestServices } from '@/services';
 
-const Scores = ({ value, handleClick }) => {
-  const SIZE = 24;
+const Title = () => {
+  const { isMobile } = useApp();
 
   return (
-    <div className="flex px-1 gap-2">
+    <div className="flex whitespace-nowrap gap-3 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      Playtest Report:
+      <ConditionalTooltipOrModal
+        title="Public name"
+        isModal={isMobile}
+        overlay={
+          <div className="flex flex-col gap-2">
+            <div>
+              BETA FEATURE! Please consult with your playtest coordinator how to
+              properly report.
+            </div>
+            <div>
+              There is no &apos;submit&apos;. Your entry will be preserved
+              during playtest round and you can update it as you wish until the
+              round is over. At the end of the round coordinators will
+              automatically receive scores and text report you filled.
+            </div>
+          </div>
+        }
+      >
+        <div className="font-bold text-fgThird dark:text-fgThirdDark">[?]</div>
+      </ConditionalTooltipOrModal>
+    </div>
+  );
+};
+
+const Scores = ({ value, handleClick }) => {
+  const { isMobile } = useApp();
+  const SIZE = isMobile ? '22' : '24';
+
+  return (
+    <div className="flex px-1 gap-1.5 sm:gap-2">
       {Array.apply(null, Array(10)).map((i, idx) => {
         return (
           <div
@@ -81,20 +120,15 @@ const ResultLayoutPlaytestReport = ({ id, isPrecon = false }) => {
   };
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex items-center gap-3">
-        {isPrecon && (
-          <div className="whitespace-nowrap font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Playtest Report:
-          </div>
-        )}
-        <div className="flex w-full items-center justify-between">
-          <Scores value={score} handleClick={handleScoreChange} />
-          <ButtonClose
-            title="Clear Score"
-            handleClick={() => handleScoreChange(0)}
-          />
-        </div>
+    <div className="flex flex-col gap-2">
+      {!isPrecon && <Title />}
+      <div className="flex w-full items-center gap-3 justify-between">
+        {isPrecon && <Title />}
+        <Scores value={score} handleClick={handleScoreChange} />
+        <ButtonClose
+          title="Clear Score"
+          handleClick={() => handleScoreChange(0)}
+        />
       </div>
       <form className="flex" onSubmit={handleSubmit}>
         <InputLabel title="Description">

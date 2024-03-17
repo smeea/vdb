@@ -3,6 +3,7 @@
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 
 # FEATURES
+- Playtest reports language
 - Playtest reports export
 - Update random seating decks from Codex
 
