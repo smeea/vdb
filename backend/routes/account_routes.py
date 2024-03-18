@@ -32,11 +32,8 @@ def login_route():
             }
         )
 
-    except Exception as e:
-        if e.code:
-            abort(e.code)
-        else:
-            abort(400)
+    except Exception:
+        abort(400)
 
 
 @app.route("/api/login", methods=["DELETE"])
