@@ -200,13 +200,13 @@ export const branchDelete = (deckid, decks) => {
   });
 };
 
-export const branchCreate = (deck) => {
+export const branchCreate = (deck, branch) => {
   const master = deck.master ?? deck.deckid;
   const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
   const options = {
     method: 'POST',
     body: JSON.stringify({
-      deckid: deck.deckid,
+      deckid: branch.deckid,
     }),
   };
 
@@ -224,10 +224,11 @@ export const branchCreate = (deck) => {
         ...deck,
         deckid: data[0].deckid,
         description: `[${now.toISOString().split('T')[0]}] \n${
-          deck.description
+          branch.description
         }`,
-        crypt: { ...deck.crypt },
-        library: { ...deck.library },
+        tags: branch.tags,
+        crypt: { ...branch.crypt },
+        library: { ...branch.library },
         inventoryType: '',
         master: master,
         branchName: data[0].branchName,

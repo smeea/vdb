@@ -16,8 +16,8 @@ const DeckBranchCreateButton = ({ deck }) => {
   const navigate = useNavigate();
   const [showSelect, setShowSelect] = useState();
 
-  const handleClick = () => {
-    deckServices.branchCreate(deck).then((newDeckid) => {
+  const handleClick = (branch) => {
+    deckServices.branchCreate(deck, branch).then((newDeckid) => {
       navigate(`/decks/${newDeckid}`);
       setShowMenuButtons(false);
     });
@@ -33,7 +33,9 @@ const DeckBranchCreateButton = ({ deck }) => {
           text="Add Revision"
         />
         <MenuItems>
-          <MenuItem onClick={() => handleClick()}>From Active Deck</MenuItem>
+          <MenuItem onClick={() => handleClick(deck)}>
+            From Active Deck
+          </MenuItem>
           <MenuItem onClick={() => setShowSelect(true)}>
             Select From Decks
           </MenuItem>

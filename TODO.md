@@ -1,9 +1,6 @@
 # FIX
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
-- Report size
-- Copy snapshot revisions
-- Add revision from selected deck
 - Snapshot url in iOS
 
 # FEATURES

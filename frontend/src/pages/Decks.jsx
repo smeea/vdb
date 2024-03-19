@@ -97,6 +97,8 @@ const Decks = () => {
       isNonEditable: deckData.isNonEditable,
       isPublic: !!deckData.publicParent,
       library: cardsData.library,
+      branches: deckData.branches,
+      master: deckData.master,
       name: deckData.name,
       publicChild: deckData.publicChild,
       publicParent: deckData.publicParent,
