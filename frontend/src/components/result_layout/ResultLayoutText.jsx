@@ -26,6 +26,7 @@ const ResultLayoutText = ({
   setImageSet,
   forceInventoryMode,
   noClose,
+  setIsHotkeysDisabled,
 }) => {
   const { isMobile, isNarrow } = useApp();
   const cryptCompare = useSnapshot(searchResults).cryptCompare;
@@ -70,6 +71,7 @@ const ResultLayoutText = ({
         card={card}
         setImageSet={setImageSet}
         forceInventoryMode={forceInventoryMode}
+        setIsHotkeysDisabled={setIsHotkeysDisabled}
       />
       <div className="flex justify-between ">
         <div className="flex flex-row space-x-1">

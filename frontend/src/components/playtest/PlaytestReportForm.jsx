@@ -71,7 +71,7 @@ const Scores = ({ value, handleClick }) => {
   );
 };
 
-const PlaytestReportForm = ({ id, isPrecon = false }) => {
+const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   const [text, setText] = useState('');
   const [score, setScore] = useState(0);
   const [isFolded, setIsFolded] = useState(true);
@@ -111,6 +111,7 @@ const PlaytestReportForm = ({ id, isPrecon = false }) => {
   const handleOnBlur = () => {
     if (text !== dataValue.text) {
       submit(text, score);
+      setIsHotkeysDisabled(false);
     }
   };
 
@@ -142,6 +143,7 @@ const PlaytestReportForm = ({ id, isPrecon = false }) => {
             onBlur={handleOnBlur}
             borderStyle="border-y"
             roundedStyle="rounded-none"
+            onFocus={() => setIsHotkeysDisabled(true)}
           />
         ) : (
           <Textarea
@@ -152,6 +154,7 @@ const PlaytestReportForm = ({ id, isPrecon = false }) => {
             onBlur={handleOnBlur}
             borderStyle="border-y"
             roundedStyle="rounded-none"
+            onFocus={() => setIsHotkeysDisabled(true)}
           />
         )}
         <Button

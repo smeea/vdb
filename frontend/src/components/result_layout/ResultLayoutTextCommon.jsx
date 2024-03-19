@@ -15,6 +15,7 @@ const ResultLayoutTextCommon = ({
   setImageSet,
   forceInventoryMode,
   inPopover,
+  setIsHotkeysDisabled,
 }) => {
   const { isPlaytester, inventoryMode } = useApp();
   const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);
@@ -61,7 +62,10 @@ const ResultLayoutTextCommon = ({
       {!inPopover && isPlaytester && isPlaytest && (
         <>
           <Hr />
-          <PlaytestReportForm id={card.Id} />
+          <PlaytestReportForm
+            id={card.Id}
+            setIsHotkeysDisabled={setIsHotkeysDisabled}
+          />
         </>
       )}
     </div>

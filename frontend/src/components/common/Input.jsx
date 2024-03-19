@@ -9,6 +9,7 @@ const Input = React.forwardRef(
       onChange,
       onBlur,
       id,
+      onFocus,
       required = false,
       type = 'text',
       autoComplete = 'off',
@@ -19,7 +20,7 @@ const Input = React.forwardRef(
       borderStyle = 'border',
       roundedStyle = 'rounded',
     },
-    ref,
+    ref
   ) => {
     return (
       <input
@@ -33,6 +34,7 @@ const Input = React.forwardRef(
         value={value}
         onChange={onChange}
         onBlur={onBlur}
+        onFocus={onFocus}
         autoFocus={autoFocus}
         disabled={readOnly}
         required={required}
@@ -40,7 +42,7 @@ const Input = React.forwardRef(
         ref={ref}
       />
     );
-  },
+  }
 );
 Input.displayName = 'Input';
 

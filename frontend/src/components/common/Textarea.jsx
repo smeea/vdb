@@ -8,6 +8,7 @@ const Textarea = React.forwardRef(
       placeholder,
       onChange,
       onBlur,
+      onFocus,
       autoComplete = 'off',
       spellCheck = false,
       autoFocus = false,
@@ -16,7 +17,7 @@ const Textarea = React.forwardRef(
       borderStyle = 'border',
       roundedStyle = 'rounded',
     },
-    ref,
+    ref
   ) => {
     return (
       <textarea
@@ -28,13 +29,14 @@ const Textarea = React.forwardRef(
         onChange={onChange}
         autoFocus={autoFocus}
         onBlur={onBlur}
+        onFocus={onFocus}
         readOnly={readOnly}
         autoComplete={autoComplete}
         spellCheck={spellCheck}
         ref={ref}
       />
     );
-  },
+  }
 );
 Textarea.displayName = 'Textarea';
 

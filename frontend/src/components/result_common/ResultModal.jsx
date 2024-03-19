@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
 import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg?react';
@@ -22,6 +22,7 @@ const ResultModal = ({
 
   const [imageSet, setImageSet] = useState(null);
   const [activeCard, setActiveCard] = useState(card);
+  const [isHotkeysDisabled, setIsHotkeysDisabled] = useState(false);
 
   const handleKeyDown = (event) => {
     switch (event.key) {
@@ -41,14 +42,14 @@ const ResultModal = ({
   useEffect(() => {
     setActiveCard(card);
 
-    if (!isMobile) {
+    if (!isMobile && !isHotkeysDisabled) {
       window.addEventListener('keydown', handleKeyDown);
 
       return () => {
         window.removeEventListener('keydown', handleKeyDown);
       };
     }
-  }, [card]);
+  }, [card, isHotkeysDisabled]);
 
   const SWIPE_THRESHOLD = 50;
   const SWIPE_IGNORED_LEFT_EDGE = 30;
@@ -89,6 +90,7 @@ const ResultModal = ({
                   handleClose={handleClose}
                   setImageSet={setImageSet}
                   forceInventoryMode={forceInventoryMode}
+                  setIsHotkeysDisabled={setIsHotkeysDisabled}
                 />
               </div>
             )}
@@ -109,6 +111,7 @@ const ResultModal = ({
                 handleClose={handleClose}
                 setImageSet={setImageSet}
                 forceInventoryMode={forceInventoryMode}
+                setIsHotkeysDisabled={setIsHotkeysDisabled}
               />
             </div>
           </div>
