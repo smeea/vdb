@@ -301,6 +301,12 @@ def generate_card(card):
     )
     card["Discipline"] = card["Discipline"].replace("Thaumaturgy", "Blood Sorcery")
 
+    if card["Blood Cost"] == "0":
+        card["Blood Cost"] = ""
+
+    if card["Pool Cost"] == "0":
+        card["Pool Cost"] = ""
+
     card_ready = {
         "ASCII Name": card["ASCII Name"],
         "Artist": card["Artist"],

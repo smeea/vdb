@@ -321,7 +321,7 @@ def generate_card(card):
             "Rulings": card["Rulings"],
             "Sect": card["Sect"],
             "Set": card["Set"],
-            "Title": card["Title"],
+            "Title": card["Title"].lower(),
             "Twd": card["Twd"],
         }
 
