@@ -33,7 +33,7 @@ const PlaytestReportExportButton = ({ card, isPrecon = false }) => {
     Object.keys(result).forEach((id, idx) => {
       exportText += `User: <${id}>\n`;
       exportText += `Score: ${result[id].score}\n`;
-      exportText += `${result[id].text}>\n`;
+      exportText += `${result[id].text}\n`;
       if (idx + 1 < Object.keys(result).length) {
         exportText += '\n-----\n\n';
       }

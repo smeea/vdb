@@ -14,7 +14,11 @@ const Report = ({ id, text, score }) => {
           <PlaytestScores value={score} />
         </div>
       </div>
-      <div className="">{text}</div>
+      <div>
+        {text.split('\n').map((line, idx) => (
+          <div key={idx}>{line}</div>
+        ))}
+      </div>
     </div>
   );
 };
