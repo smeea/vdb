@@ -12,28 +12,26 @@ def unauthorized_handler():
 
 @app.route("/api/login", methods=["POST"])
 def login_route():
-    try:
-        user = User.query.filter_by(username=request.json["username"].lower()).one()
-        if not user.check_password(request.json["password"]):
-            abort(401)
-
-        login_user(user, remember=request.json["remember"])
-
-        return jsonify(
-            {
-                "username": current_user.username,
-                "email": current_user.email,
-                "playtester": current_user.playtester,
-                "playtest_admin": current_user.playtest_admin,
-                "public_name": current_user.public_name,
-                "decks": parse_user_decks(current_user.decks.all()),
-                "inventory": parse_user_inventory(current_user.inventory),
-                "inventory_key": current_user.inventory_key,
-            }
-        )
-
-    except Exception:
+    user = User.query.filter_by(username=request.json["username"].lower()).first()
+    if not user:
         abort(400)
+
+    if not user.check_password(request.json["password"]):
+        abort(401)
+
+    login_user(user, remember=request.json["remember"])
+    return jsonify(
+        {
+            "username": current_user.username,
+            "email": current_user.email,
+            "playtester": current_user.playtester,
+            "playtest_admin": current_user.playtest_admin,
+            "public_name": current_user.public_name,
+            "decks": parse_user_decks(current_user.decks.all()),
+            "inventory": parse_user_inventory(current_user.inventory),
+            "inventory_key": current_user.inventory_key,
+        }
+    )
 
 
 @app.route("/api/login", methods=["DELETE"])
