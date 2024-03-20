@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import ChevronBarExpand from '@/assets/images/icons/chevron-bar-expand.svg?react';
 import ChevronBarContract from '@/assets/images/icons/chevron-bar-contract.svg?react';
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
-import Star from '@/assets/images/icons/star.svg?react';
-import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import {
   Button,
   ButtonClose,
@@ -11,6 +9,7 @@ import {
   InputLabel,
   Textarea,
   ConditionalTooltipOrModal,
+  PlaytestScores,
 } from '@/components';
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
@@ -42,31 +41,6 @@ const Title = () => {
       >
         <div className="font-bold text-fgThird dark:text-fgThirdDark">[?]</div>
       </ConditionalTooltipOrModal>
-    </div>
-  );
-};
-
-const Scores = ({ value, handleClick }) => {
-  const { isMobile } = useApp();
-  const SIZE = isMobile ? '22' : '24';
-
-  return (
-    <div className="flex px-1 gap-1.5 sm:gap-2">
-      {Array.apply(null, Array(10)).map((i, idx) => {
-        return (
-          <div
-            className="flex cursor-pointer"
-            onClick={() => handleClick(idx + 1)}
-            key={idx}
-          >
-            {idx < value ? (
-              <StarFill width={SIZE} height={SIZE} />
-            ) : (
-              <Star width={SIZE} height={SIZE} />
-            )}
-          </div>
-        );
-      })}
     </div>
   );
 };
@@ -109,9 +83,9 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   };
 
   const handleOnBlur = () => {
+    setIsHotkeysDisabled(false);
     if (text !== dataValue.text) {
       submit(text, score);
-      setIsHotkeysDisabled(false);
     }
   };
 
@@ -125,7 +99,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
       {!isPrecon && <Title />}
       <div className="flex w-full items-center gap-3 justify-between">
         {isPrecon && <Title />}
-        <Scores value={score} handleClick={handleScoreChange} />
+        <PlaytestScores value={score} handleClick={handleScoreChange} />
         <ButtonClose
           title="Clear Score"
           handleClick={() => handleScoreChange(0)}

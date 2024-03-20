@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { AccountPlaytestPlayer, AccountPlaytestAdd, Modal } from '@/components';
-import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 
 const AccountPlaytestModal = ({ setShow }) => {
-  const { username } = useApp();
   const [newPlaytesters, setNewPlaytesters] = useState([]);
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
   const { value } = useFetch(url, {}, []);
@@ -23,11 +21,12 @@ const AccountPlaytestModal = ({ setShow }) => {
         />
         <div>
           {value &&
-            [...newPlaytesters.toReversed(), ...Object.keys(value).toSorted()]
-              /* .filter((u) => u != username) */
-              .map((u) => (
-                <AccountPlaytestPlayer key={u} username={u} lang={value[u]} />
-              ))}
+            [
+              ...newPlaytesters.toReversed(),
+              ...Object.keys(value).toSorted(),
+            ].map((u) => (
+              <AccountPlaytestPlayer key={u} username={u} lang={value[u]} />
+            ))}
         </div>
       </div>
     </Modal>

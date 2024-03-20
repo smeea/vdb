@@ -6,6 +6,7 @@ import {
   ResultLayoutTextRulings,
   ResultLayoutTextArtist,
   PlaytestReportForm,
+  PlaytestReportExportButton,
   Hr,
 } from '@/components';
 
@@ -17,7 +18,7 @@ const ResultLayoutTextCommon = ({
   inPopover,
   setIsHotkeysDisabled,
 }) => {
-  const { isPlaytester, inventoryMode } = useApp();
+  const { isPlaytestAdmin, isPlaytester, inventoryMode } = useApp();
   const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);
 
   return (
@@ -66,6 +67,7 @@ const ResultLayoutTextCommon = ({
             id={card.Id}
             setIsHotkeysDisabled={setIsHotkeysDisabled}
           />
+          {isPlaytestAdmin && <PlaytestReportExportButton card={card} />}
         </>
       )}
     </div>

@@ -228,6 +228,9 @@ export { default as UsedPopover } from './misc/UsedPopover.jsx';
 export { default as Warning } from './misc/Warning.jsx';
 export { default as WindowRows } from './misc/WindowRows.jsx';
 
+export { default as PlaytestScores } from './playtest/PlaytestScores.jsx';
+export { default as PlaytestReportExportButton } from './playtest/PlaytestReportExportButton.jsx';
+export { default as PlaytestReportExport } from './playtest/PlaytestReportExport.jsx';
 export { default as PlaytestReportForm } from './playtest/PlaytestReportForm.jsx';
 export { default as PlaytestLanguageSelector } from './playtest/PlaytestLanguageSelector.jsx';
 

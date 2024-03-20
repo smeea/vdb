@@ -32,6 +32,31 @@ def playtesters_route():
         return jsonify(success=True)
 
 @login_required
+@app.route("/api/playtest/export/<string:target>/<string:id>", methods=["GET"])
+def report_export_route(target, id):
+    if target not in ['cards', 'precons']:
+        abort(400)
+    if not current_user.playtest_admin:
+        abort(401)
+
+    lang = current_user.playtest_report['lang']
+    reports = {}
+    playtesters = User.query.filter_by(playtester=True).all()
+
+    for p in playtesters:
+        # defaulting lang to English if not specified
+        report_lang = p.playtest_report['lang'] if 'lang' in p.playtest_report else 'en-EN'
+        if report_lang != lang:
+            continue
+
+        try:
+            reports[p.username] = p.playtest_report[target][id]
+        except Exception:
+            pass
+
+    return jsonify(reports)
+
+@login_required
 @app.route("/api/playtest/<string:target>/<string:id>", methods=["GET", "PUT"])
 def report_route(target, id):
     if target not in ['cards', 'precons']:

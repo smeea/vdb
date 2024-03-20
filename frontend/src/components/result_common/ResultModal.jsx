@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
 import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg?react';
