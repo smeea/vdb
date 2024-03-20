@@ -39,20 +39,21 @@ def report_export_route(target, id):
     if not current_user.playtest_admin:
         abort(401)
 
-    lang = current_user.playtest_report['lang']
+    lang = current_user.playtest_report['lang'] if 'lang' in current_user.playtest_report else 'en-EN'
     reports = {}
     playtesters = User.query.filter_by(playtester=True).all()
 
     for p in playtesters:
         # defaulting lang to English if not specified
-        report_lang = p.playtest_report['lang'] if 'lang' in p.playtest_report else 'en-EN'
+        report = copy.deepcopy(p.playtest_report)
+        report_lang = report['lang'] if 'lang' in report else 'en-EN'
         if report_lang != lang:
             continue
 
-        try:
-            reports[p.username] = p.playtest_report[target][id]
-        except Exception:
-            pass
+        if target in report and id in report[target]:
+            if report[target][id]['score'] == 0 and report[target][id]['text'] == '':
+                continue
+            reports[p.username] = report[target][id]
 
     return jsonify(reports)
 
