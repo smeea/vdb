@@ -51,7 +51,7 @@ const PlaytestReportExportButton = ({ card, isPrecon = false }) => {
       <ButtonIconed
         onClick={() => setShow(true)}
         title="Show Playtest Reports"
-        text="Players Reports"
+        text="Reports"
         icon={<InboxesFill />}
       />
       {show && (

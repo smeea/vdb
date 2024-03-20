@@ -11,6 +11,7 @@ import {
   ResultCryptLayoutText,
   ResultLayoutTextCommon,
   ResultLibraryLayoutText,
+  PlaytestReportExportButton,
 } from '@/components';
 import {
   searchResults,
@@ -28,7 +29,7 @@ const ResultLayoutText = ({
   noClose,
   setIsHotkeysDisabled,
 }) => {
-  const { isMobile, isNarrow } = useApp();
+  const { isPlaytestAdmin, isMobile, isNarrow } = useApp();
   const cryptCompare = useSnapshot(searchResults).cryptCompare;
   const libraryCompare = useSnapshot(searchResults).libraryCompare;
   const compare = card.Id > 200000 ? cryptCompare : libraryCompare;
@@ -103,6 +104,7 @@ const ResultLayoutText = ({
               <SearchHeartFill width="16" height="24" viewBox="0 0 16 16" />
             }
           />
+          {isPlaytestAdmin && <PlaytestReportExportButton card={card} />}
         </div>
         {!isNarrow && !noClose && (
           <ButtonClose
