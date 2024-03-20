@@ -1,5 +1,14 @@
 [
   {
+    "version": "2024-03-19",
+    "changes": [
+      "Add language selector for playtest reports (in https://vdb.im/account)",
+      "Add view reports for playtesters",
+      "Fix create revision from selected deck",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-03-16",
     "changes": [
       "Update TWDA & Rulings",
