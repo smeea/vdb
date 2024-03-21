@@ -1,3 +1,4 @@
+import { DEFAULT_OPTIONS } from '@/utils/constants';
 const accountUrl = `${import.meta.env.VITE_API_URL}/account`;
 const loginUrl = `${import.meta.env.VITE_API_URL}/login`;
 
@@ -5,25 +6,40 @@ export const login = (
   username,
   password,
   onSuccess = () => {},
-  onError = () => {},
+  onError = () => {}
 ) => {
-  const method = 'POST';
-  const body = {
-    username: username,
-    password: password,
-    remember: 'True',
+  const options = {
+    method: 'POST',
+    body: JSON.stringify({
+      username: username,
+      password: password,
+      remember: 'True',
+    }),
   };
 
-  fetchWithCallbacks(loginUrl, defaultOption(body, method), onSuccess, onError);
+  fetchWithCallbacks(
+    loginUrl,
+    { ...DEFAULT_OPTIONS, ...options },
+    onSuccess,
+    onError
+  );
+};
+
+export const whoAmI = () => {
+  const url = `${import.meta.env.VITE_API_URL}/account`;
+  const options = {};
+
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
+    if (!response.ok) return { error: response.status };
+    return response.json();
+  });
 };
 
 export const logout = () => {
   const options = {
     method: 'DELETE',
-    mode: 'cors',
-    credentials: 'include',
   };
-  fetch(loginUrl, options);
+  fetch(loginUrl, { ...DEFAULT_OPTIONS, ...options });
 };
 
 export const register = (
@@ -31,20 +47,22 @@ export const register = (
   password,
   email,
   onSuccess = () => {},
-  onError = () => {},
+  onError = () => {}
 ) => {
-  const method = 'POST';
-  const body = {
-    username: username,
-    email: email,
-    password: password,
+  const options = {
+    method: 'POST',
+    body: JSON.stringify({
+      username: username,
+      email: email,
+      password: password,
+    }),
   };
 
   fetchWithCallbacks(
     accountUrl,
-    defaultOption(body, method),
+    { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError,
+    onError
   );
 };
 
@@ -52,19 +70,21 @@ export const changePassword = (
   password,
   newPassword,
   onSuccess = () => {},
-  onError = () => {},
+  onError = () => {}
 ) => {
-  const method = 'PUT';
-  const body = {
-    password: password,
-    newPassword: newPassword,
+  const options = {
+    method: 'PUT',
+    body: JSON.stringify({
+      password: password,
+      newPassword: newPassword,
+    }),
   };
 
   fetchWithCallbacks(
     accountUrl,
-    defaultOption(body, method),
+    { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError,
+    onError
   );
 };
 
@@ -72,69 +92,62 @@ export const changeEmail = (
   password,
   email,
   onSuccess = () => {},
-  onError = () => {},
+  onError = () => {}
 ) => {
-  const method = 'PUT';
-  const body = {
-    password: password,
-    email: email,
+  const options = {
+    method: 'PUT',
+    body: JSON.stringify({
+      password: password,
+      email: email,
+    }),
   };
 
   fetchWithCallbacks(
     accountUrl,
-    defaultOption(body, method),
+    { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError,
+    onError
   );
 };
 
 export const changeName = (
   publicName,
   onSuccess = () => {},
-  onError = () => {},
+  onError = () => {}
 ) => {
-  const method = 'PUT';
-  const body = {
-    publicName: publicName,
+  const options = {
+    method: 'PUT',
+    body: JSON.stringify({
+      publicName: publicName,
+    }),
   };
 
   fetchWithCallbacks(
     accountUrl,
-    defaultOption(body, method),
+    { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError,
+    onError
   );
 };
 
 export const deleteAccount = (
   password,
   onSuccess = () => {},
-  onError = () => {},
+  onError = () => {}
 ) => {
-  const method = 'DELETE';
-  const body = {
-    password: password,
+  const options = {
+    method: 'DELETE',
+    body: JSON.stringify({
+      password: password,
+    }),
   };
 
   fetchWithCallbacks(
     accountUrl,
-    defaultOption(body, method),
+    { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError,
+    onError
   );
-};
-
-// prebuilded options
-const defaultOption = (body, method) => {
-  return {
-    method: method,
-    mode: 'cors',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
-  };
 };
 
 // Performs a fetch and call onSuccess or onError callbacks
@@ -142,7 +155,7 @@ const fetchWithCallbacks = (
   url,
   options,
   onSuccessCallBack,
-  onErrorCallBack,
+  onErrorCallBack
 ) => {
   fetch(url, options)
     .then((response) => {

@@ -1,12 +1,5 @@
 import { setTwdResults, setPdaResults } from '@/context';
-
-const DEFAULT_OPTIONS = {
-  mode: 'cors',
-  credentials: 'include',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-};
+import { DEFAULT_OPTIONS } from '@/utils/constants';
 
 export const search = (query, inPda = false) => {
   const url = `${import.meta.env.VITE_API_URL}/search/${inPda ? 'pda' : 'twd'}`;
@@ -33,9 +26,7 @@ export const getNewDecks = (q, inPda = false) => {
   const url = `${import.meta.env.VITE_API_URL}/${
     inPda ? 'pda' : 'twd'
   }/new/${q}`;
-  const options = {
-    method: 'GET',
-  };
+  const options = {};
 
   return fetch(url, { ...DEFAULT_OPTIONS, ...options })
     .then((response) => {
@@ -55,9 +46,7 @@ export const getRandomDecks = (q, inPda = false) => {
   const url = `${import.meta.env.VITE_API_URL}/${
     inPda ? 'pda' : 'twd'
   }/random/${q}`;
-  const options = {
-    method: 'GET',
-  };
+  const options = {};
 
   return fetch(url, { ...DEFAULT_OPTIONS, ...options })
     .then((response) => {

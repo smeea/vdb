@@ -1,8 +1,4 @@
-const DEFAULT_OPTIONS = {
-  headers: { 'Content-Type': 'application/json' },
-  mode: 'cors',
-  credentials: 'include',
-};
+import { DEFAULT_OPTIONS } from '@/utils/constants';
 
 export const submitReport = (id, value, isPrecon) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/${

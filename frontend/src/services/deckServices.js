@@ -1,12 +1,7 @@
 import { useDeckExport } from '@/hooks';
 import { defer } from 'react-router-dom';
 import { deckStore } from '@/context';
-
-const DEFAULT_OPTIONS = {
-  headers: { 'Content-Type': 'application/json' },
-  mode: 'cors',
-  credentials: 'include',
-};
+import { DEFAULT_OPTIONS } from '@/utils/constants';
 
 export const update = (deckid, field, value) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
@@ -365,9 +360,7 @@ export const deckLoader = ({ params }) => {
 
 export const getDeck = (deckid) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
-  const options = {
-    method: 'GET',
-  };
+  const options = {};
 
   return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
     if (!response.ok) return { error: response.status };

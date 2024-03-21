@@ -1,11 +1,5 @@
 import { useAsync } from '@/hooks';
-
-const DEFAULT_OPTIONS = {
-  headers: { 'Content-Type': 'application/json' },
-  method: 'GET',
-  mode: 'cors',
-  credentials: 'include',
-};
+import { DEFAULT_OPTIONS } from '@/utils/constants';
 
 const useFetch = (url, options = {}, dependencies = []) => {
   return useAsync(() => {

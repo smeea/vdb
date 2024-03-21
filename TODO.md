@@ -6,6 +6,7 @@
 # FEATURES
 - Playtest reports export
 - Update random seating decks from Codex
+- Update portuguese translation
 
 # TECH IMPROVEMENTS
 - Update to SQLAlchemy 3

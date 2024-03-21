@@ -6,7 +6,7 @@ import {
   initFromStorage,
   setLocalStorage,
 } from '@/services/storageServices.js';
-import { cardServices } from '@/services';
+import { userServices, cardServices } from '@/services';
 import { useDeck, useWindowSize } from '@/hooks';
 import { byTimestamp } from '@/utils';
 import {
@@ -32,6 +32,7 @@ export const AppProvider = (props) => {
   const isWide = useMemo(() => screenSize >= 1440, [screenSize]);
   const isXWide = useMemo(() => screenSize >= 1920, [screenSize]);
 
+  const [userData, setUserData] = useState();
   const [username, setUsername] = useState();
   const [publicName, setPublicName] = useState();
   const [email, setEmail] = useState();
@@ -148,28 +149,14 @@ export const AppProvider = (props) => {
         fetchAndSetCardBase(false);
       });
 
-    whoAmI();
+    userServices.whoAmI().then((data) => {
+      if (data.success === false) {
+        setUserData(null);
+      } else {
+        setUserData(data);
+      }
+    });
   }, []);
-
-  // USER
-  const [userData, setUserData] = useState();
-  const whoAmI = () => {
-    const url = `${import.meta.env.VITE_API_URL}/account`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success === false) {
-          setUserData(null);
-        } else {
-          setUserData(data);
-        }
-      });
-  };
 
   const parseInventoryData = (inventoryData) => {
     Object.keys(inventoryData.crypt).forEach((i) => {
@@ -240,7 +227,7 @@ export const AppProvider = (props) => {
   const changeBaseTextToLocalizedText = (
     setCardBase,
     localizedInfo,
-    nativeInfo,
+    nativeInfo
   ) => {
     setCardBase((draft) => {
       Object.keys(draft).forEach((k) => {
@@ -273,7 +260,7 @@ export const AppProvider = (props) => {
       changeBaseTextToLocalizedText(
         setLibraryCardBase,
         data.library,
-        nativeLibrary,
+        nativeLibrary
       );
     });
   };
@@ -286,12 +273,12 @@ export const AppProvider = (props) => {
         changeBaseTextToLocalizedText(
           setCryptCardBase,
           localizedCrypt[lang],
-          nativeCrypt,
+          nativeCrypt
         );
         changeBaseTextToLocalizedText(
           setLibraryCardBase,
           localizedLibrary[lang],
-          nativeLibrary,
+          nativeLibrary
         );
       }
     }
@@ -311,7 +298,7 @@ export const AppProvider = (props) => {
         localizedCrypt[lang],
         nativeCrypt,
         localizedLibrary[lang],
-        nativeLibrary,
+        nativeLibrary
       );
     }
   }, [deck?.deckid, lang, localizedCrypt, localizedLibrary]);
@@ -407,7 +394,7 @@ export const AppProvider = (props) => {
     initFromStorage(
       'cryptSearchSort',
       'Capacity - Min to Max',
-      setCryptSearchSort,
+      setCryptSearchSort
     );
     initFromStorage('cryptDeckSort', 'Quantity ', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
@@ -416,7 +403,7 @@ export const AppProvider = (props) => {
     initFromStorage(
       'analyzeSearchSort',
       'Rank - High to Low',
-      setAnalyzeSearchSort,
+      setAnalyzeSearchSort
     );
     initFromStorage('lang', 'en-EN', setLang);
     initFromStorage('addMode', isDesktop, setAddMode);
@@ -433,7 +420,7 @@ export const AppProvider = (props) => {
       const cardsData = useDeck(
         decksData[deckid].cards,
         cryptCardBase,
-        libraryCardBase,
+        libraryCardBase
       );
 
       decksData[deckid] = { ...decksData[deckid], ...cardsData };
@@ -467,7 +454,7 @@ export const AppProvider = (props) => {
   useEffect(() => {
     if (decks || username === null) {
       const d = recentDecks.filter(
-        (v) => username === null || !decks[v.deckid],
+        (v) => username === null || !decks[v.deckid]
       );
       if (d.length < recentDecks.length) {
         updateRecentDecks(d);
@@ -514,7 +501,6 @@ export const AppProvider = (props) => {
         isOnline,
 
         // USER Context
-        whoAmI,
         username,
         setUsername,
         publicName,

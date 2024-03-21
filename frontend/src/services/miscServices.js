@@ -1,16 +1,8 @@
-const DEFAULT_OPTIONS = {
-  mode: 'cors',
-  credentials: 'include',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-};
+import { DEFAULT_OPTIONS } from '@/utils/constants';
 
 export const changesLoader = () => {
   const url = `${import.meta.env.VITE_API_URL}/changelog`;
-  const options = {
-    method: 'GET',
-  };
+  const options = {};
 
   const response = fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(
     (response) => {

@@ -1,12 +1,5 @@
 import { inventoryStore } from '@/context';
-
-const DEFAULT_OPTIONS = {
-  mode: 'cors',
-  credentials: 'include',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-};
+import { DEFAULT_OPTIONS } from '@/utils/constants';
 
 export const addCards = (cards) => {
   const c = {};
@@ -44,13 +37,9 @@ export const setCardText = (cardid, text) => {
 
 export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
   const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-  };
+  const options = {};
 
-  return fetch(url, options)
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
     .then((response) => {
       if (!response.ok) throw Error(response.status);
       return response.json();
@@ -70,7 +59,6 @@ export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
 
 export const createSharedInventory = (key) => {
   const url = `${import.meta.env.VITE_API_URL}/account`;
-
   const options = {
     method: 'PUT',
     body: JSON.stringify({ inventoryKey: key }),
