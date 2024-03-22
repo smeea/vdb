@@ -21,7 +21,7 @@ def deck_recommendation(cards):
 
     empty_cards = [k for k,v in cards.items() if v < 1]
     playtest_cards = [k for k in cards.keys() if k > 210000 or (k > 110000 and k < 200000)]
-    for k in empty_cards + playtest_cards:
+    for k in set(empty_cards + playtest_cards):
         del cards[int(k)]
 
     for k, v in cards.items():
