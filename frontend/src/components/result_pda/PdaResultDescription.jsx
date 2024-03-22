@@ -8,48 +8,29 @@ import {
 import { useApp } from '@/context';
 
 const PdaResultDescription = ({ deck }) => {
-  const { username, isDesktop } = useApp();
+  const { username } = useApp();
 
   return (
-    <>
-      {isDesktop ? (
-        <div className="space-y-3">
-          <div>
-            <PdaResultDescriptionText deck={deck} />
-          </div>
-          <div className="flex gap-2">
-            <div className="w-full">
-              <TwdOpenDeckButton deckid={deck['deckid']} />
+    <div className="flex justify-between lg:flex-col lg:gap-2">
+      <div>
+        <PdaResultDescriptionText deck={deck} />
+      </div>
+      <div className="flex justify-between lg:basis-full max-lg:p-1 max-lg:flex-col gap-1">
+        <div className="basis-full">
+          <TwdOpenDeckButton deckid={deck.deckid} />
+        </div>
+        {username && (
+          <>
+            <div className="basis-full">
+              <DeckCloneButton deck={deck} inTwdPda />
             </div>
-            {username && (
-              <>
-                <div className="w-full">
-                  <DeckCloneButton deck={deck} inTwdPda />
-                </div>
-                <div className="w-full">
-                  <PdaFavoriteButton deck={deck} />
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      ) : (
-        <div className="flex p-1 sm:px-0">
-          <div className="basis-9/12">
-            <PdaResultDescriptionText deck={deck} />
-          </div>
-          <div className="flex basis-3/12 flex-col gap-1">
-            <TwdOpenDeckButton deckid={deck['deckid']} />
-            {username && (
-              <>
-                <DeckCloneButton deck={deck} inTwdPda />
-                <PdaFavoriteButton deck={deck} />
-              </>
-            )}
-          </div>
-        </div>
-      )}
-    </>
+            <div className="basis-full">
+              <PdaFavoriteButton deck={deck} />
+            </div>
+          </>
+        )}
+      </div>
+    </div>
   );
 };
 
