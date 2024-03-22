@@ -10,8 +10,7 @@
 
 # TECH IMPROVEMENTS
 - Update to SQLAlchemy 3
-- Update to Vite 4
+- Update to TailwindCSS 4 (migrate from isWidth to container queries)
 - Update to HeadlessUI 2 (review new components)
-- Migration from isWide, etc to container queries
 - Explicit image width/height
 - Remove legacy polyfills when Safari adopts groupBy

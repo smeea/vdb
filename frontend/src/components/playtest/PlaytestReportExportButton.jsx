@@ -8,26 +8,13 @@ import {
   Modal,
   PlaytestReportExport,
 } from '@/components';
+import { playtestServices } from '@/services';
 
 const PlaytestReportExportButton = ({ card, isPrecon = false }) => {
   const [show, setShow] = useState();
 
-  const saveFile = async (file, name) => {
-    let { saveAs } = await import('file-saver');
-    saveAs(file, name);
-  };
-
   const exportReports = async () => {
-    const options = {
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    const url = `${import.meta.env.VITE_API_URL}/playtest/export/${
-      isPrecon ? 'precons' : 'cards'
-    }/${card.Id}`;
-    const request = fetch(url, options).then((response) => response.json());
-    const result = await request;
+    const result = await playtestServices.getReports(card, isPrecon);
 
     let exportText = '';
     Object.keys(result).forEach((id, idx) => {
@@ -43,7 +30,8 @@ const PlaytestReportExportButton = ({ card, isPrecon = false }) => {
       type: 'text/plain;charset=utf-8',
     });
 
-    saveFile(file);
+    let { saveAs } = await import('file-saver');
+    saveAs(file, name);
   };
 
   return (

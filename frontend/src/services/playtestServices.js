@@ -42,3 +42,15 @@ export const changePlaytester = (user, isAdd = true) => {
     return response.json();
   });
 };
+
+export const getReports = async (card, isPrecon) => {
+  const options = {};
+  const url = `${import.meta.env.VITE_API_URL}/playtest/export/${
+    isPrecon ? 'precons' : 'cards'
+  }/${card.Id}`;
+
+  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
+    if (!response.ok) throw response;
+    return response.json();
+  });
+};
