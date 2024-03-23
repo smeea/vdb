@@ -24,12 +24,9 @@ for lang in languages:
                 card["Card Text"] = re.sub(
                     r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"]
                 )
-                card_name = card[f"Name {lang}"]
-                if not card_name:
-                    card_name = card["Name"]
 
                 cards_localized[card["Id"]] = {
-                    "Name": card_name,
+                    "Name": card["Name"],
                     "Card Text": card["Card Text"],
                 }
 

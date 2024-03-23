@@ -4,9 +4,8 @@
 - Snapshot url in iOS
 
 # FEATURES
-- Playtest reports export
+- Playtest precon reports export
 - Update random seating decks from Codex
-- Update portuguese translation
 
 # TECH IMPROVEMENTS
 - Update to SQLAlchemy 3

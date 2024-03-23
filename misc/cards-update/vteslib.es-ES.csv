@@ -1,709 +1,587 @@
-"Id","Name","Name es-ES","Card Text","Flavor Text"
-"100001",".44 Magnum","Magnum .44","Arma: arma de fuego.
-Ataque: 2 de daño a distancia, con una maniobra opcional por combate.",""
-"102217","47th Street Royals","La Realeza de la calle 47","Mortal único con 2 de vida. 1 de fuerza, 0 de sangrado.
-Puedes quemar esta carta para reducir un sangrado contra ti en 3.","¿Las calles de quién? Pues las nuestras.
-Billy Navajas, líder de la Realeza de la calle 47"
-"100015","Academic Hunting Ground","Zona de caza: Academia","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"100018","Aching Beauty","Belleza dolorosa","
-Ponle esta carta a un Toreador. Si este Toreador es bloqueado, el controlador del siervo bloqueador quema 1 de reserva sanguínea antes de la resolución del bloqueo.","¿Vienes del cielo profundo o surges del abismo,
-Oh, Belleza? Tu mirada infernal y divina,
-Vuelca confusamente el beneficio y el crimen...
-Charles Baudelaire, ""Himno a la belleza"""
-"100029","Aid from Bats","Ayuda de murciélagos","[ani] Ataque: 1 de daño a distancia, con 1 maniobra opcional.
-[ANI] Como antes, con 1 acoso opcional.","Colgando boca abajo como hileras de trapos viejos y repugnantes
-Y sonriendo mientras duermen. ¡Murciélagos!
-D.H. Lawrence, ""Murciélago"""
-"100031","Aire of Elation","Aires de euforia","Sólo utilizable durante una acción de sangrado.
+Id,Name,Card Text
+100001,Magnum .44,"Arma: arma de fuego.
+Ataque: 2 de daño a distancia, con una maniobra opcional por combate."
+102217,La Realeza de la calle 47,"Mortal único con 2 de vida. 1 de fuerza, 0 de sangrado.
+Puedes quemar esta carta para reducir un sangrado contra ti en 3."
+100015,Zona de caza: Academia,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+100018,Belleza dolorosa,"
+Ponle esta carta a un Toreador. Si este Toreador es bloqueado, el controlador del siervo bloqueador quema 1 de reserva sanguínea antes de la resolución del bloqueo."
+100029,Ayuda de murciélagos,"[ani] Ataque: 1 de daño a distancia, con 1 maniobra opcional.
+[ANI] Como antes, con 1 acoso opcional."
+100031,Aires de euforia,"Sólo utilizable durante una acción de sangrado.
 [pre] +1 de sangrado, con +1 de sangrado adicional si este vampiro es Toreador (limitada).
-[PRE] +2 de sangrado, con +1 de sangrado adicional si este vampiro es Toreador (limitada).",""
-"100037","Alamut","Alamut","Lugar único.
-Después de que un Assamita que controles sangre con éxito a un Matusalén, pon en esta carta la reserva sanguínea perdida por ese Matusalén. Quema X de sangre de esta carta durante la fase de votación de una acción política para darle +X votos a un vampiro que controles.",""
-"100046","Ambush","Emboscada","(D) Entra en combate con un siervo girado. Este siervo activo obtiene 1 maniobra opcional durante ese combate.","Atacaremos desde las sombras cuando llegue el momento, y todo caerá ante nosotros.
-Cameron, Lasombra"
-"100052","Anarch Free Press, The","La Prensa Libre Anarquista","Única. Requiere a un Anarquista preparado.
-Pon esta carta en juego. Gírala para darle +1 de intercepción a un Anarquista que controles. Gírala después de que un Anarquista cace con éxito para añadir 1 de sangre a ese Anarquista.",""
-"100054","Anarch Railroad","Ferrocarril Anarquista","Lugar único.
-Gírala para darle +1 de sigilo a un Anarquista.","El Tren de la Libertad te llevará de regreso al este, al menos hasta Staten Island. Si quieres cruzar el puente cuando llegues allí, probablemente estarás por tu cuenta.
-Almiro Suarez, Anarquista Tremere"
-"100058","Anarch Troublemaker","Alborotador anarquista","Única.
-Pon esta carta en juego. Durante tu fase de enderezamiento, puedes darle el control del /Alborotador anarquista/ a tu presa y girar hasta dos vampiros que controle o bien quemar un equipo de uno de sus siervos.","Soy el acusador y vengador de la sangre...
-William Blake, ""El fantasma de Abel"""
-"100059","Anarchist Uprising","Alzamiento Anarquista","Si el referéndum prospera, cada Matusalén quema 1 de reserva sanguínea por cada siervo que controle.","Todos somos hermanos de la opresión, y hoy, los hermanos de la opresión se identifican entre sí en todo el mundo.
-Malcolm X."
-"100064","Ancient Influence","Influencia de los Ancianos","Sólo se puede jugar o proponer un ejemplar de esta carta por partida.
-Si el referéndum prospera, cada Matusalén puede elegir a un vampiro preparado que controle; cada Matusalén gana tanta reserva sanguínea como capacidad tenga el vampiro elegido, y luego quema 5 de reserva sanguínea.",""
-"100065","Ancilla Empowerment","Fortalecer a los Ancilla","Si el referéndum prospera, cada Matusalén quema 1 de reserva sanguínea por cada siervo que controle.",""
-"100070","Animalism","Animalismo","Disciplina.
-Ponle esta carta a un vampiro. Este vampiro obtiene +1 nivel de Animalismo [ani] y +1 de capacidad. No se le puede poner a un vampiro con Animalismo superior [ANI].",""
-"100071","Ankara Citadel, Turkey, The","La Ciudadela de Ankara, Turquía","Mientras esté en juego, esta carta de equipo representa un lugar y no cuenta como equipo. Única.
-Jugar cartas que cuesten sangre y no sean modificadores de acción le cuesta a este vampiro la mitad de sangre, redondeando hacia abajo (primero va la multiplicación y la división, y luego la suma y la resta).",""
-"100077","Apportation","Aportación","[tha] Acoso, sólo utilizable para continuar el combate.
-[THA] Maniobra.","El arma voló de mis manos como si Dios mismo hubiera intervenido.
-Jacob Bragg"
-"100081","Arcane Library","Biblioteca arcana","Lugar único.
-Gírala durante tu fase de influencia para añadir 1 de sangre a un Tremere de tu zona incontrolada.",""
-"100093","Army of Rats","Ejército de ratas","Acción con +1 de sigilo.
-[ani] Pon esta carta en juego. Durante tu fase de enderezamiento, tu presa quema 1 de reserva sanguínea. Puedes quemar sólo 1 de reserva sanguínea por turno a causa de cartas /Ejército de ratas/. Cualquier siervo puede quemar esta carta con una acción (D).","Luego, mientras el porquero se detenía un instante y se inclinaba para divisar su rebaño, un impresionante enjambre de ratas llovió del cielo sobre el hediondo abismo y se puso a devorar a animales y hombre.
-H.P. Lovecraft, ""Las ratas de las paredes"""
-"100095","Art Museum","Museo de arte","Lugar único.
-Gírala durante tu fase de influencia para añadir 1 de sangre a un Toreador de tu zona incontrolada.",""
-"100099","Art Scam","Fraude artístico","Acción con +1 de sigilo.
-Gana 2 de reserva sanguínea.","Es ingenioso, pero ¿es arte?
-Kipling, ""El acertijo de los talleres"""
-"100108","Asylum Hunting Ground","Zona de caza: Manicomio","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"100126","Backways","Atajo","Lugar único.
-Gírala para darle +1 de sigilo a un Gangrel que controles.",""
-"102218","Bait and Switch","Tácticas engañosas","Requiere a un barón. Sólo utilizable si un siervo te está sangrando, tras renunciar a bloquear.
-Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusalén que no sea el controlador del siervo activo (ese Matusalén puede intentar bloquear).",""
-"100131","Banishment","Destierro","Elige a un vampiro menor. Si el referéndum prospera, el vampiro elegido pasa a la zona incontrolada (rompiendo cualquier efecto de control temporal); las cartas y fichas que tenga el vampiro elegido permanecen con él pero están fuera de juego mientras el vampiro elegido siga incontrolado",""
-"100135","Barrens, The","Tierra infértil","Lugar único.
-Gírala para descartate de una carta (roba después).",""
-"100145","Bear's Skin","Piel del oso","Sólo utilizable antes de determinar la distancia. Un vampiro sólo puede jugar un ejemplar de esta carta por combate.
+[PRE] +2 de sangrado, con +1 de sangrado adicional si este vampiro es Toreador (limitada)."
+100037,Alamut,"Lugar único.
+Después de que un Assamita que controles sangre con éxito a un Matusalén, pon en esta carta la reserva sanguínea perdida por ese Matusalén. Quema X de sangre de esta carta durante la fase de votación de una acción política para darle +X votos a un vampiro que controles."
+100046,Emboscada,(D) Entra en combate con un siervo girado. Este siervo activo obtiene 1 maniobra opcional durante ese combate.
+100052,La Prensa Libre Anarquista,"Única. Requiere a un Anarquista preparado.
+Pon esta carta en juego. Gírala para darle +1 de intercepción a un Anarquista que controles. Gírala después de que un Anarquista cace con éxito para añadir 1 de sangre a ese Anarquista."
+100054,Ferrocarril Anarquista,"Lugar único.
+Gírala para darle +1 de sigilo a un Anarquista."
+100058,Alborotador anarquista,"Única.
+Pon esta carta en juego. Durante tu fase de enderezamiento, puedes darle el control del /Alborotador anarquista/ a tu presa y girar hasta dos vampiros que controle o bien quemar un equipo de uno de sus siervos."
+100059,Alzamiento Anarquista,"Si el referéndum prospera, cada Matusalén quema 1 de reserva sanguínea por cada siervo que controle."
+100064,Influencia de los Ancianos,"Sólo se puede jugar o proponer un ejemplar de esta carta por partida.
+Si el referéndum prospera, cada Matusalén puede elegir a un vampiro preparado que controle; cada Matusalén gana tanta reserva sanguínea como capacidad tenga el vampiro elegido, y luego quema 5 de reserva sanguínea."
+100065,Fortalecer a los Ancilla,"Si el referéndum prospera, cada Matusalén quema 1 de reserva sanguínea por cada siervo que controle."
+100070,Animalismo,"Disciplina.
+Ponle esta carta a un vampiro. Este vampiro obtiene +1 nivel de Animalismo [ani] y +1 de capacidad. No se le puede poner a un vampiro con Animalismo superior [ANI]."
+100071,"La Ciudadela de Ankara, Turquía","Mientras esté en juego, esta carta de equipo representa un lugar y no cuenta como equipo. Única.
+Jugar cartas que cuesten sangre y no sean modificadores de acción le cuesta a este vampiro la mitad de sangre, redondeando hacia abajo (primero va la multiplicación y la división, y luego la suma y la resta)."
+100077,Aportación,"[tha] Acoso, sólo utilizable para continuar el combate.
+[THA] Maniobra."
+100081,Biblioteca arcana,"Lugar único.
+Gírala durante tu fase de influencia para añadir 1 de sangre a un Tremere de tu zona incontrolada."
+100093,Ejército de ratas,"Acción con +1 de sigilo.
+[ani] Pon esta carta en juego. Durante tu fase de enderezamiento, tu presa quema 1 de reserva sanguínea. Puedes quemar sólo 1 de reserva sanguínea por turno a causa de cartas /Ejército de ratas/. Cualquier siervo puede quemar esta carta con una acción (D)."
+100095,Museo de arte,"Lugar único.
+Gírala durante tu fase de influencia para añadir 1 de sangre a un Toreador de tu zona incontrolada."
+100099,Fraude artístico,"Acción con +1 de sigilo.
+Gana 2 de reserva sanguínea."
+100108,Zona de caza: Manicomio,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+100126,Atajo,"Lugar único.
+Gírala para darle +1 de sigilo a un Gangrel que controles."
+102218,Tácticas engañosas,"Requiere a un barón. Sólo utilizable si un siervo te está sangrando, tras renunciar a bloquear.
+Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusalén que no sea el controlador del siervo activo (ese Matusalén puede intentar bloquear)."
+100131,Destierro,"Elige a un vampiro menor. Si el referéndum prospera, el vampiro elegido pasa a la zona incontrolada (rompiendo cualquier efecto de control temporal); las cartas y fichas que tenga el vampiro elegido permanecen con él pero están fuera de juego mientras el vampiro elegido siga incontrolado"
+100135,Tierra infértil,"Lugar único.
+Gírala para descartate de una carta (roba después)."
+100145,Piel del oso,"Sólo utilizable antes de determinar la distancia. Un vampiro sólo puede jugar un ejemplar de esta carta por combate.
 [ani][pro] En este asalto, este vampiro obtiene +1 de fuerza y puede prevenirse de 1 de daño.
-[ANI][PRO] En este combate, este vampiro obtiene +1 de fuerza y puede prevenirse de 1 de daño por asalto.",""
-"100146","Beast Meld","Fusión bestial","[ani][pro] +1 de sigilo. Si este vampiro es bloqueado, puede prevenirse de 1 de daño en el combate resultante.
-[ANI][PRO] Sólo utilizable al anunciar una acción que no sea de sangrado. Los vampiros no pueden bloquear esta acción.",""
-"100157","Bewitching Oration","Oración fascinante","Sólo utilizable durante la fase de votación de una acción política.
+[ANI][PRO] En este combate, este vampiro obtiene +1 de fuerza y puede prevenirse de 1 de daño por asalto."
+100146,Fusión bestial,"[ani][pro] +1 de sigilo. Si este vampiro es bloqueado, puede prevenirse de 1 de daño en el combate resultante.
+[ANI][PRO] Sólo utilizable al anunciar una acción que no sea de sangrado. Los vampiros no pueden bloquear esta acción."
+100157,Oración fascinante,"Sólo utilizable durante la fase de votación de una acción política.
 [pre] Este vampiro consigue +2 votos.
-[PRE] Este vampiro consigue +4 votos.","...las cosas han cambiado. Disentiré
-y no traicionaré mi pena, mas
-siempre me vestiré de negro y las criticaré.
-Christine de Pisan, ""Sin título"""
-"100162","Biothaumaturgic Experiment","Experimento biotaumatúrgico","Acción con +1 de sigilo.
+[PRE] Este vampiro consigue +4 votos."
+100162,Experimento biotaumatúrgico,"Acción con +1 de sigilo.
 [tha] Emplea a un criado animal de tu mano ignorando los requisitos (paga el costo normalmente).
-[THA] Ponle esta carta a un siervo que controles. El siervo adherido obtiene 1 maniobra opcional por combate y +1 de fuerza.",""
-"100169","Black Metamorphosis","Metamorfosis negra","Acción con +1 de sigilo.
+[THA] Ponle esta carta a un siervo que controles. El siervo adherido obtiene 1 maniobra opcional por combate y +1 de fuerza."
+100169,Metamorfosis negra,"Acción con +1 de sigilo.
 [obt] Ponle esta carta a este vampiro. Este vampiro obtiene 1 ataque adicional opcional (limitado) por combate. Un vampiro puede tener sólo un ejemplar de esta carta.
-[OBT] Como antes, y este vampiro obtiene 1 acoso opcional por combate.",""
-"100177","Blanket of Night","Capa de noche","[obt] +1 de sigilo.
-[OBT] Sólo utilizable por un vampiro preparado que no sea el siervo activo si un siervo intenta bloquear. Gira a este vampiro modificador para hacer que ese intento fracase; ese siervo bloqueador no puede volver a intentar bloquear esta acción.",""
-"100199","Blood Doll","Muñeca de sangre","
-Ponle esta carta a un vampiro que controles. Durante su fase heril, el controlador de este vampiro puede pasar 1 de sangre de este vampiro a su reserva sanguínea o de su reserva sanguínea a este vampiro.",""
-"100208","Blood Rage","Rabia sangrienta","Sólo utilizable de cerca.
+[OBT] Como antes, y este vampiro obtiene 1 acoso opcional por combate."
+100177,Capa de noche,"[obt] +1 de sigilo.
+[OBT] Sólo utilizable por un vampiro preparado que no sea el siervo activo si un siervo intenta bloquear. Gira a este vampiro modificador para hacer que ese intento fracase; ese siervo bloqueador no puede volver a intentar bloquear esta acción."
+100199,Muñeca de sangre,"
+Ponle esta carta a un vampiro que controles. Durante su fase heril, el controlador de este vampiro puede pasar 1 de sangre de este vampiro a su reserva sanguínea o de su reserva sanguínea a este vampiro."
+100208,Rabia sangrienta,"Sólo utilizable de cerca.
 [tha] Ataque: ataca con la mano. El daño de este ataque no se puede prevenir con cartas que requieran Fortaleza [for]. Los ataques del vampiro oponente con armas no infligen ningún daño en este asalto.
-[THA] Como antes, y este ataque con la mano se realiza con +1 de daño.",""
-"100236","Bonding","Vínculo afectivo","Sólo utilizable durante una acción de sangrado.
+[THA] Como antes, y este ataque con la mano se realiza con +1 de daño."
+100236,Vínculo afectivo,"Sólo utilizable durante una acción de sangrado.
 [dom] +1 de sangrado (limitada).
-[DOM] +1 de sigilo y +1 de sangrado (limitada).","En cada voz, en cada prohibición,
-escucho las cadenas forjadas por la mente.
-William Blake, ""Londres"""
-"100243","Bowl of Convergence","Cuenco de la Convergencia","Único.
-El portador con Áuspex [aus] obtiene +1 de intercepción. El portador con Áuspex superior [AUS] puede quemar 1 de sangre durante una acción para obtener +1 de intercepción adicional.",""
-"100250","Breath of the Dragon","Aliento del dragón","[vic] Ataque: 1 de daño agravado a distancia. Si este ataque se usa de cerca, este vampiro también recibe el daño.
-[VIC] Como antes, pero 2 de daño agravado a distancia.","Llevo llamas y muerte a mis enemigos.
-Dragos, Tzimisce"
-"100286","Camarilla Vitae Slave","Esclavo de Vitae de la Camarilla","Criado con 1 de vida.
-El empleador obtiene +1 de capacidad. Durante su fase heril, puede elegir una Disciplina de nivel básico que posea y obtener el nivel superior de dicha Disciplina hasta su próxima fase heril.",""
-"100297","Carfax Abbey","Abadía de Carfax","Requiere a un Anarquista preparado. Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un Anarquista preparado que controles puede ganar 1 de sangre, y, si controlas a un barón preparado, otro Anarquista preparado que controles también puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"100298","Carlton Van Wyk","Carlton Van Wyk","Mortal único con 2 de vida. 0 de fuerza, 0 de sangrado.
-Carlton puede atacar a distancia infligiendo 1 de daño. Una vez por combate, puede atacar esquivando. Carlton obtiene +1 de intercepción contra vampiros. Durante tu fase de descarte, puedes quemar a Carlton para quemar a un vampiro que haya cometido Diablerie desde tu último turno.",""
-"100301","Carrion Crows","Cornejas negras","Sólo utilizable antes de determinar la distancia. Un vampiro puede jugar sólo un ejemplar de esta carta por combate.
+[DOM] +1 de sigilo y +1 de sangrado (limitada)."
+100243,Cuenco de la Convergencia,"Único.
+El portador con Áuspex [aus] obtiene +1 de intercepción. El portador con Áuspex superior [AUS] puede quemar 1 de sangre durante una acción para obtener +1 de intercepción adicional."
+100250,Aliento del dragón,"[vic] Ataque: 1 de daño agravado a distancia. Si este ataque se usa de cerca, este vampiro también recibe el daño.
+[VIC] Como antes, pero 2 de daño agravado a distancia."
+100286,Esclavo de Vitae de la Camarilla,"Criado con 1 de vida.
+El empleador obtiene +1 de capacidad. Durante su fase heril, puede elegir una Disciplina de nivel básico que posea y obtener el nivel superior de dicha Disciplina hasta su próxima fase heril."
+100297,Abadía de Carfax,"Requiere a un Anarquista preparado. Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un Anarquista preparado que controles puede ganar 1 de sangre, y, si controlas a un barón preparado, otro Anarquista preparado que controles también puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+100298,Carlton Van Wyk,"Mortal único con 2 de vida. 0 de fuerza, 0 de sangrado.
+Carlton puede atacar a distancia infligiendo 1 de daño. Una vez por combate, puede atacar esquivando. Carlton obtiene +1 de intercepción contra vampiros. Durante tu fase de descarte, puedes quemar a Carlton para quemar a un vampiro que haya cometido Diablerie desde tu último turno."
+100301,Cornejas negras,"Sólo utilizable antes de determinar la distancia. Un vampiro puede jugar sólo un ejemplar de esta carta por combate.
 [ani] El siervo oponente recibe 1 de daño ambiental a distancia por asalto en este combate durante la resolución normal de ataques.
-[ANI] Como antes, pero recibe 2 de daño ambiental a distancia.",""
-"100303","Carver's Meat Packing and Storage","Cárnicas Carver","Lugar único.
-Después de que un vampiro con capacidad 3 o menos entre en letargo, ponle una ficha de rehén a él. Los vampiros con fichas de rehén no se pueden pasar a la zona preparada ni ser diabolizados. Gírala durante tu fase heril para añadir X de sangre a un vampiro preparado que controles, donde X es el número de vampiros en letargo con fichas de rehén. Durante cualquier fase de enderezamiento, cualquier vampiro preparado puede quemar 2 de sangre para quemar las fichas de rehén de cualquier vampiro. Después de que esta carta deje el juego, quema todas las fichas de rehén.",""
-"100308","Cats' Guidance","Guiado por gatos","[ani] Sólo utilizable por un vampiro girado que ha bloqueado, tras la resolución del bloqueo. Endereza a este vampiro.
-[ANI] +1 de intercepción.","Los amantes fervientes, los sabios venerables,
-Sienten, cuando maduros, igual predilección
-Por los gatos, orgullo de la casa, que son
-Como ellos sedentarios y al frío vulnerables.
-Charles Baudelaire, ""Los gatos"""
-"100323","Change of Target","Cambio de objetivo","Sólo utilizable si este siervo es bloqueado, antes de la resolución del bloqueo.
-Endereza a este siervo, y la acción termina (sin éxito). Este siervo no puede volver a realizar la misma acción en este turno.",""
-"100324","Changeling","Metamorfo","[vic] Sólo utilizable durante una acción de sangrado. +1 de sangrado (limitada).
-[VIC] +1 de sigilo.",""
-"100327","Channel 10","Canal 10","Lugar único.
-Gírala para darle a un siervo que controles +2 de intercepción. No se puede usar durante la primera acción de una fase servil.","Están muy contentos de ver una historia verídica que les ayude a pasar el tiempo, incluso aunque proceda de fuentes desconocidas. Ambos salimos ganando."
-"100329","Chantry","Capilla","Lugar único.
-Gira esta carta y quema 1 de reserva sanguínea o 1 de sangre de un Tremere preparado que controles durante tu fase heril para pasar un Tremere del letargo a la zona preparada de su controlador.","En libros que son como altares donde nos arrodillamos
-Para consagrar el parpadeo, no la llama.
-Edwin Arlington Robinson, ""George Crabbe"""
-"100335","Charnas the Imp","Charnas, el Diablillo","Demonio único con 1 de vida.
-Pon a Charnas en cualquier siervo (ésta es una acción (D) con +1 de sigilo si el siervo objetivo está controlado por otro Matusalén). Charnas inflige 1 de daño al empleador durante su fase de enderezamiento. Charnas es inmune al daño procedente del empleador. Si el empleador está a punto de ser quemado, su controlador puede poner a Charnas en cualquier siervo.",""
-"100344","Chiropteran Marauder","Merodeador quiróptero","[vic] Maniobra.
-[VIC] Quema 1 de sangre para convertir el daño de los ataques con la mano de este vampiro en agravado este asalto.",""
-"100356","Claws of the Dead","Garras letales","[pro] El daño de los ataques con la mano de este vampiro es agravado en este asalto.
-[PRO] Maniobra.","¡De su quijada y su feroz zarpazo!
-Lewis Carroll, ""Baraúndo"""
-"100362","Cloak the Gathering","Encubrir la concurrencia","[obf] +1 de sigilo.
-[OBF] Sólo utilizable por un vampiro preparado que no sea el siervo activo. El siervo activo obtiene +1 de sigilo.","La oscuridad me envolvió de pies a cabeza...
-Lord Tennyson, ""In Memoriam"""
-"100366","Club Illusion","Club Illusion","Lugar único.
-Un Anarquista puede quemar 1 de sangre una vez al anunciar una acción de sangrado para conseguir +1 de sangrado durante la misma.","Míralos. Entran ahí tan osados como se les antoja, desafiando abiertamente el edicto del príncipe.
-Lucas, Ventrue"
-"100374","Codex of the Edenic Groundskeepers","Códice de los Guardas Edénicos","Única.
-El portador obtiene -2 de sigilo cuando sangra. Este vampiro puede sangrar con una acción (D) que cuesta 1 de sangre; esta acción obtiene +3 de sangrado si el Matusalén objetivo no controla vampiros preparados enderezados.",""
-"100378","Coma","Coma","[dem] Ataque: envía al vampiro oponente al letargo.
-[DEM] Como antes, y ese vampiro oponente no se endereza normalmente durante su próxima fase de enderezamiento.","Dormir... tal vez soñar—¡Ay! allí hay algo que detiene al mejor.
-¡Qué sueños vendrán en ese sueño de la muerte!
-William Shakespeare, ""Hamlet"", acto III, escena 1"
-"100390","Computer Hacking","Pirateo informático","(D) Sangra con +1 de sangrado.","Mira, c00l3ga, esos piratas informáticos ""D3mons33d 3lit3"" no son g3nial35. No saben escribir...
-Synner-G, hacker Gangrel antitribu urbano"
-"100401","Conditioning","Condicionamiento","Sólo utilizable durante una acción de sangrado.
+[ANI] Como antes, pero recibe 2 de daño ambiental a distancia."
+100303,Cárnicas Carver,"Lugar único.
+Después de que un vampiro con capacidad 3 o menos entre en letargo, ponle una ficha de rehén a él. Los vampiros con fichas de rehén no se pueden pasar a la zona preparada ni ser diabolizados. Gírala durante tu fase heril para añadir X de sangre a un vampiro preparado que controles, donde X es el número de vampiros en letargo con fichas de rehén. Durante cualquier fase de enderezamiento, cualquier vampiro preparado puede quemar 2 de sangre para quemar las fichas de rehén de cualquier vampiro. Después de que esta carta deje el juego, quema todas las fichas de rehén."
+100308,Guiado por gatos,"[ani] Sólo utilizable por un vampiro girado que ha bloqueado, tras la resolución del bloqueo. Endereza a este vampiro.
+[ANI] +1 de intercepción."
+100323,Cambio de objetivo,"Sólo utilizable si este siervo es bloqueado, antes de la resolución del bloqueo.
+Endereza a este siervo, y la acción termina (sin éxito). Este siervo no puede volver a realizar la misma acción en este turno."
+100324,Metamorfo,"[vic] Sólo utilizable durante una acción de sangrado. +1 de sangrado (limitada).
+[VIC] +1 de sigilo."
+100327,Canal 10,"Lugar único.
+Gírala para darle a un siervo que controles +2 de intercepción. No se puede usar durante la primera acción de una fase servil."
+100329,Capilla,"Lugar único.
+Gira esta carta y quema 1 de reserva sanguínea o 1 de sangre de un Tremere preparado que controles durante tu fase heril para pasar un Tremere del letargo a la zona preparada de su controlador."
+100335,"Charnas, el Diablillo","Demonio único con 1 de vida.
+Pon a Charnas en cualquier siervo (ésta es una acción (D) con +1 de sigilo si el siervo objetivo está controlado por otro Matusalén). Charnas inflige 1 de daño al empleador durante su fase de enderezamiento. Charnas es inmune al daño procedente del empleador. Si el empleador está a punto de ser quemado, su controlador puede poner a Charnas en cualquier siervo."
+100344,Merodeador quiróptero,"[vic] Maniobra.
+[VIC] Quema 1 de sangre para convertir el daño de los ataques con la mano de este vampiro en agravado este asalto."
+100356,Garras letales,"[pro] El daño de los ataques con la mano de este vampiro es agravado en este asalto.
+[PRO] Maniobra."
+100362,Encubrir la concurrencia,"[obf] +1 de sigilo.
+[OBF] Sólo utilizable por un vampiro preparado que no sea el siervo activo. El siervo activo obtiene +1 de sigilo."
+100366,Club Illusion,"Lugar único.
+Un Anarquista puede quemar 1 de sangre una vez al anunciar una acción de sangrado para conseguir +1 de sangrado durante la misma."
+100374,Códice de los Guardas Edénicos,"Única.
+El portador obtiene -2 de sigilo cuando sangra. Este vampiro puede sangrar con una acción (D) que cuesta 1 de sangre; esta acción obtiene +3 de sangrado si el Matusalén objetivo no controla vampiros preparados enderezados."
+100378,Coma,"[dem] Ataque: envía al vampiro oponente al letargo.
+[DEM] Como antes, y ese vampiro oponente no se endereza normalmente durante su próxima fase de enderezamiento."
+100390,Pirateo informático,(D) Sangra con +1 de sangrado.
+100401,Condicionamiento,"Sólo utilizable durante una acción de sangrado.
 [dom] +2 de sangrado (limitada).
-[DOM] +3 de sangrado (limitada).",""
-"100405","Confusion","Confusión","Sólo utilizable durante una acción de sangrado.
+[DOM] +3 de sangrado (limitada)."
+100405,Confusión,"Sólo utilizable durante una acción de sangrado.
 [dem] +1 de sangrado (limitada).
-[DEM] +1 de sigilo y +1 de sangrado (limitada).","La confusión es una palabra que hemos inventado para explicar un orden que no se entiende.
-Henry Miller"
-"100410","Consanguineous Boon","Favor consanguíneo","Favor.
-Elige un clan. Si el referéndum prospera, cada Matusalén gana 1 de reserva sanguínea por cada vampiro del clan elegido que controle.","Hasta cuando juegues con tu hermano, ten un testigo.
-Hesíodo, ""Los trabajos y los días"""
-"100416","Constant Revolution","Revolución constante","Acción con +1 de sigilo. Requiere a un Anarquista. Única.
-Pon esta carta en juego con 1 ficha. Durante tu fase de enderezamiento, añade 1 ficha a esta carta. Durante la fase de enderezamiento de cada uno de los demás Matusalenes, ese Matusalén quema X de reserva sanguínea o cartas de la mano al azar, donde X es la cantidad de fichas que haya en esta carta. Cualquier vampiro puede quemar esta carta con una acción (D) que cuesta 1 de reserva sanguínea.",""
-"100435","Coven, The","La cofradía","Única. Nimiedad.
-Pon esta carta en juego. Gírala para añadir 2 de sangre a un vampiro preparado que controles. Durante tu fase de descarte, tu depredador toma el control de /La cofradía/.",""
-"102213","Creeping Sabotage","Sabotaje progresivo","Acción con +1 de sigilo.
-X es el número de /Sabotajes progresivos/ que controles. Pon esta carta en juego. Durante tu fase de enderezamiento, tu presa quema 1 de reserva sanguínea. Cualquier siervo puede quemar esta carta con una acción (D).",""
-"100444","Creepshow Casino","Casino de los Horrores","Lugar único.
-Gírala cuando un vampiro que controlas anuncia una acción indirecta para dar a dicho vampiro +1 de sigilo, aunque el sigilo no sea necesario.",""
-"100450","Crocodile's Tongue","Lengua de cocodrilo","Sólo utilizable si un aliado o vampiro menor intenta bloquear.
+[DEM] +1 de sigilo y +1 de sangrado (limitada)."
+100410,Favor consanguíneo,"Favor.
+Elige un clan. Si el referéndum prospera, cada Matusalén gana 1 de reserva sanguínea por cada vampiro del clan elegido que controle."
+100416,Revolución constante,"Acción con +1 de sigilo. Requiere a un Anarquista. Única.
+Pon esta carta en juego con 1 ficha. Durante tu fase de enderezamiento, añade 1 ficha a esta carta. Durante la fase de enderezamiento de cada uno de los demás Matusalenes, ese Matusalén quema X de reserva sanguínea o cartas de la mano al azar, donde X es la cantidad de fichas que haya en esta carta. Cualquier vampiro puede quemar esta carta con una acción (D) que cuesta 1 de reserva sanguínea."
+100435,La cofradía,"Única. Nimiedad.
+Pon esta carta en juego. Gírala para añadir 2 de sangre a un vampiro preparado que controles. Durante tu fase de descarte, tu depredador toma el control de /La cofradía/."
+102213,Sabotaje progresivo,"Acción con +1 de sigilo.
+X es el número de /Sabotajes progresivos/ que controles. Pon esta carta en juego. Durante tu fase de enderezamiento, tu presa quema 1 de reserva sanguínea. Cualquier siervo puede quemar esta carta con una acción (D)."
+100444,Casino de los Horrores,"Lugar único.
+Gírala cuando un vampiro que controlas anuncia una acción indirecta para dar a dicho vampiro +1 de sigilo, aunque el sigilo no sea necesario."
+100450,Lengua de cocodrilo,"Sólo utilizable si un aliado o vampiro menor intenta bloquear.
 [aus] Ese intento fracasa y el controlador de ese siervo bloqueador no puede volver a intentar bloquear esta acción. Ese siervo bloqueador puede quemar 1 de sangre o vida para cancelar esta carta al ser jugada.
-[AUS] Como antes, pero cancelar esta carta requiere 1 más de sangre o vida.",""
-"100492","Daring the Dawn","Desafiar al alba","[for] Los vampiros no pueden bloquear esta acción. Este vampiro recibe 2 de daño agravado ambiental imprevenible tras la resolución de la acción.
-[FOR] Como antes, pero este vampiro recibe 1 de daño agravado ambiental imprevenible.",""
-"102219","Deep Ecology","Ecología profunda","Requiere a un Anarquista.
+[AUS] Como antes, pero cancelar esta carta requiere 1 más de sangre o vida."
+100492,Desafiar al alba,"[for] Los vampiros no pueden bloquear esta acción. Este vampiro recibe 2 de daño agravado ambiental imprevenible tras la resolución de la acción.
+[FOR] Como antes, pero este vampiro recibe 1 de daño agravado ambiental imprevenible."
+102219,Ecología profunda,"Requiere a un Anarquista.
 [ani] Sólo utilizable durante una acción directa contra ti (o una carta que controles). +2 de intercepción.
 [for] Reduce un sangrado contra ti en 2.
-[pro] Sólo utilizable por un vampiro girado. Este vampiro quema 1 de sangre para enderezarse.",""
-"100515","Deep Song","Canción profunda","[ani] (D) Sangra con +1 de sangrado.
-[ANI] Frenesí. (D) Entra en combate con y gira a un vampiro. El vampiro objetivo se considera el siervo activo en ese combate.",""
-"100518","Deflection","Desviación","Sólo utilizable si un siervo te está sangrando, tras renunciar a bloquear.
+[pro] Sólo utilizable por un vampiro girado. Este vampiro quema 1 de sangre para enderezarse."
+100515,Canción profunda,"[ani] (D) Sangra con +1 de sangrado.
+[ANI] Frenesí. (D) Entra en combate con y gira a un vampiro. El vampiro objetivo se considera el siervo activo en ese combate."
+100518,Desviación,"Sólo utilizable si un siervo te está sangrando, tras renunciar a bloquear.
 [dom] Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusalén que no sea el controlador del siervo activo (ese Matusalén puede intentar bloquear).
-[DOM] Como antes, pero no gires a este vampiro.",""
-"100519","Delaying Tactics","Tácticas dilatorias","Sólo utilizable durante la fase de votación de una acción política.
-Cancela el referéndum. Endereza al vampiro activo. Si se ha jugado una carta de acción política para proponer este referéndum, devuélvela a la mano de su propietario (descartándose después). Los siervos controlados por el Matusalén activo no pueden volver a realizar la misma acción política este turno.",""
-"100541","Día de los Muertos","Día de los Muertos","Sólo se puede jugar un ejemplar de esta carta por partida.
-El primer referéndum que un vampiro Sabbat que controles proponga este turno prospera automáticamente (sáltate la fase de votación).","Jugamos muy peligrosamente con la vida y nadie conoce nuestras reglas.
-Parke Godwin"
-"100573","Dominate Kine","Dominar al ganado","[dom] Acción con +1 de sigilo. (D) Sangra con +1 de sangrado.
-[DOM] (D) Roba un lugar controlado por otro Matusalén.","Quien no hurta en el mundo, no vive.
-Francisco de Quevedo, ""El Buscón"""
-"102220","Double Deuce","Peineta Doble","Hombre lobo único con 3 de vida. 1 de fuerza, 1 de sangrado.
-Peineta Doble tiene +1 de sigilo. Si Peineta Doble tiene 2 de vida o menos durante tu fase de enderezamiento, gana 1 de vida.",""
-"100581","Dragonbound","Encadenado al Dragón","Gehenna. No la reemplaces mientras esta carta esté en juego.
-Durante la fase de descarte de cada Matusalén, ese Matusalén quema 1 de reserva sanguínea por cada vampiro en letargo que controle.","¿Es así como es al final? Quizás me quede.
-Ramona, Gangrel"
-"100588","Dreams of the Sphinx","Sueños de la Esfinge","Única.
-Pon esta carta en juego. Añade 1 ficha a esta carta cada vez que la gires. Gírala para obtener +2 a la mano hasta el final de este turno. Gírala durante tu fase de enderezamiento para ganar 1 de reserva sanguínea si tienes la Ventaja. Gírala para añadir 1 de sangre a un vampiro de tu zona incontrolada. Quema esta carta si tiene 3 fichas.",""
-"100597","Dust Up","Pelea","Requiere a un Anarquista.
+[DOM] Como antes, pero no gires a este vampiro."
+100519,Tácticas dilatorias,"Sólo utilizable durante la fase de votación de una acción política.
+Cancela el referéndum. Endereza al vampiro activo. Si se ha jugado una carta de acción política para proponer este referéndum, devuélvela a la mano de su propietario (descartándose después). Los siervos controlados por el Matusalén activo no pueden volver a realizar la misma acción política este turno."
+100541,Día de los Muertos,"Sólo se puede jugar un ejemplar de esta carta por partida.
+El primer referéndum que un vampiro Sabbat que controles proponga este turno prospera automáticamente (sáltate la fase de votación)."
+100573,Dominar al ganado,"[dom] Acción con +1 de sigilo. (D) Sangra con +1 de sangrado.
+[DOM] (D) Roba un lugar controlado por otro Matusalén."
+102220,Peineta Doble,"Hombre lobo único con 3 de vida. 1 de fuerza, 1 de sangrado.
+Peineta Doble tiene +1 de sigilo. Si Peineta Doble tiene 2 de vida o menos durante tu fase de enderezamiento, gana 1 de vida."
+100581,Encadenado al Dragón,"Gehenna. No la reemplaces mientras esta carta esté en juego.
+Durante la fase de descarte de cada Matusalén, ese Matusalén quema 1 de reserva sanguínea por cada vampiro en letargo que controle."
+100588,Sueños de la Esfinge,"Única.
+Pon esta carta en juego. Añade 1 ficha a esta carta cada vez que la gires. Gírala para obtener +2 a la mano hasta el final de este turno. Gírala durante tu fase de enderezamiento para ganar 1 de reserva sanguínea si tienes la Ventaja. Gírala para añadir 1 de sangre a un vampiro de tu zona incontrolada. Quema esta carta si tiene 3 fichas."
+100597,Pelea,"Requiere a un Anarquista.
 [ani] Ataque: ataca con la mano con +1 de daño. Este ataque no se puede esquivar.
 [cel] Ataque: esquiva, con 1 ataque adicional (limitada).
-[pot] Ataque: ataca con la mano con +2 de daño.",""
-"100598","Eagle's Sight","Vista de águila","[aus] +1 de intercepción.
-[AUS] Este vampiro intenta bloquear la acción en curso, ignorando las restricciones normales de presa, depredador u objetivo para bloquear acciones.",""
-"100600","Earth Control","Control de la tierra","[pro] +1 de sigilo.
-[PRO] +2 de sigilo.","Lo que ha nacido de la tierra a la tierra retoma.
-Marco Aurelio"
-"100601","Earth Meld","Fusión con la tierra","[pro] Ataque: el combate termina.
-[PRO] Como antes, y endereza a este vampiro antes de que el combate termine.","A través del espesor de la tierra y de la roca,
-A través del montón confuso de vuestra ceniza.
-Charles Baudelaire, ""Lo imprevisto"""
-"100609","Ecoterrorists","Ecoterroristas","Lugar único.
-Gírala durante tu fase de influencia para añadir 1 de sangre a un Gangrel de tu zona incontrolada.","... hoy puedes matar tierras para lucrarte. Puedes dejar el cadáver a la vista de todos, y nadie llama a la policía.
-Paul Brooks, ""La búsqueda de la naturaleza"""
-"100617","Elder Impersonation","Suplantar a un Antiguo","[obf] +1 de sigilo.
-[OBF] Sólo utilizable si un siervo intenta bloquear. Ese intento fracasa y el siervo bloqueador no puede volver a intentar bloquear esta acción.",""
-"100620","Elder Library","Biblioteca antigua","Lugar único.
-+1 a la mano.","Mi biblioteca era un ducado suficientemente grande.
-William Shakespeare, ""La Tempestad"", acto I, escena II."
-"100632","Elysium: The Palace of Versailles","Elíseo: Palacio de Versalles","Lugar único.
-Gírala durante la fase de votación de una acción política para dar +1 voto a cada vampiro Camarilla titulado preparado que controles.",""
-"100633","Embrace, The","Abrazo, El","Acción con +1 de sigilo. Requiere a un vampiro que no sea estéril.
-Pon esta carta en juego. Se convierte en un vampiro no único con 1 de capacidad del mismo clan y secta que el vampiro activo, y debe cazar este turno.",""
-"100640","Enchant Kindred","Encantar a los Vástagos","[pre] (D) Sangra con +1 de sangrado.
-[PRE] Acción con +1 de sigilo. Añade 2 de sangre a un vampiro menor de tu zona incontrolada.","Vi pálidos reyes, y princesas también,
-Pálidos guerreros, todos con la palidez de la muerte;
-Ellos gritaban – ""¡La bella dama sin piedad
-Te ha esclavizado!""
-John Keats, ""La bella dama sin piedad"""
-"102221","Enchanting Gaze","Mirada cautivadora","[pre][pro] +1 de sigilo.
-[PRE][PRO] Como antes, y una vez en esta acción puedes quemar 1 de tus fichas de corrupción de un siervo bloqueador para hacer que su intento de bloqueo fracase, y no pueda intentar bloquear esta acción de nuevo.",""
-"100644","Enhanced Senses","Sentidos agudizados","[aus] +1 de intercepción.
-[AUS] +2 de intercepción.","Las cosas dan a nuestros sentidos sólo lo que rechazan. La flor abandona su olor.
-Paul Valéry"
-"100645","Enkil Cog","Vasallo de Enkil","Única. Requiere a un vampiro con capacidad 10 o más. Sólo utilizable tras la resolución de un sangrado exitoso contra tu presa.
-Ponle esta carta a este vampiro. Este vampiro obtiene +1 de sangrado. Durante la fase servil de cualquier Matusalén, este vampiro puede girar esta carta para realizar una acción.",""
-"100646","Ennoia's Theater","Teatro de Ennoia","Lugar único.
-Gírala para obtener +1 a la mano este turno. Gírala durante tu fase de influencia para obtener +1 transferencia.",""
-"100651","Entombment","Sepultura","[obt] Ataque: quema al aliado oponente.
-[OBT] Ataque: envía al vampiro oponente al letargo.","Olvidaráse de ellos el seno materno; de ellos sentirán los gusanos dulzura; Nunca más habrá de ellos memoria.
-Job 24:20 (VRJ)"
-"100652","Entrancement","Trance","[pre] (D) Sangra con +1 de sangrado.
-[PRE] Acción (D) con +1 de sigilo. Roba un aliado controlado por otro Matusalén.","Tu fresco perfume me desconcierta
-Y en tu opalescencia
-Veo los habitados cielos de antaño,
-Como por una puerta abierta.
-Raoul Ponchon, ""La absenta"""
-"100680","Eyes of Argus","Ojos de Argos","[aus] Sólo utilizable durante una acción directa contra ti (o una carta que controles). +2 de intercepción.
-[AUS] Sólo utilizable por un vampiro girado. Este vampiro se despierta (ignora el requisito de estar enderezado para jugar cartas de reacción e intentar bloquear hasta el final de la acción).",""
-"100682","Eyes of Chaos","Ojos del caos","Sólo utilizable durante una acción de sangrado.
+[pot] Ataque: ataca con la mano con +2 de daño."
+100598,Vista de águila,"[aus] +1 de intercepción.
+[AUS] Este vampiro intenta bloquear la acción en curso, ignorando las restricciones normales de presa, depredador u objetivo para bloquear acciones."
+100600,Control de la tierra,"[pro] +1 de sigilo.
+[PRO] +2 de sigilo."
+100601,Fusión con la tierra,"[pro] Ataque: el combate termina.
+[PRO] Como antes, y endereza a este vampiro antes de que el combate termine."
+100609,Ecoterroristas,"Lugar único.
+Gírala durante tu fase de influencia para añadir 1 de sangre a un Gangrel de tu zona incontrolada."
+100617,Suplantar a un Antiguo,"[obf] +1 de sigilo.
+[OBF] Sólo utilizable si un siervo intenta bloquear. Ese intento fracasa y el siervo bloqueador no puede volver a intentar bloquear esta acción."
+100620,Biblioteca antigua,"Lugar único.
++1 a la mano."
+100632,Elíseo: Palacio de Versalles,"Lugar único.
+Gírala durante la fase de votación de una acción política para dar +1 voto a cada vampiro Camarilla titulado preparado que controles."
+100633,"Abrazo, El","Acción con +1 de sigilo. Requiere a un vampiro que no sea estéril.
+Pon esta carta en juego. Se convierte en un vampiro no único con 1 de capacidad del mismo clan y secta que el vampiro activo, y debe cazar este turno."
+100640,Encantar a los Vástagos,"[pre] (D) Sangra con +1 de sangrado.
+[PRE] Acción con +1 de sigilo. Añade 2 de sangre a un vampiro menor de tu zona incontrolada."
+102221,Mirada cautivadora,"[pre][pro] +1 de sigilo.
+[PRE][PRO] Como antes, y una vez en esta acción puedes quemar 1 de tus fichas de corrupción de un siervo bloqueador para hacer que su intento de bloqueo fracase, y no pueda intentar bloquear esta acción de nuevo."
+100644,Sentidos agudizados,"[aus] +1 de intercepción.
+[AUS] +2 de intercepción."
+100645,Vasallo de Enkil,"Única. Requiere a un vampiro con capacidad 10 o más. Sólo utilizable tras la resolución de un sangrado exitoso contra tu presa.
+Ponle esta carta a este vampiro. Este vampiro obtiene +1 de sangrado. Durante la fase servil de cualquier Matusalén, este vampiro puede girar esta carta para realizar una acción."
+100646,Teatro de Ennoia,"Lugar único.
+Gírala para obtener +1 a la mano este turno. Gírala durante tu fase de influencia para obtener +1 transferencia."
+100651,Sepultura,"[obt] Ataque: quema al aliado oponente.
+[OBT] Ataque: envía al vampiro oponente al letargo."
+100652,Trance,"[pre] (D) Sangra con +1 de sangrado.
+[PRE] Acción (D) con +1 de sigilo. Roba un aliado controlado por otro Matusalén."
+100680,Ojos de Argos,"[aus] Sólo utilizable durante una acción directa contra ti (o una carta que controles). +2 de intercepción.
+[AUS] Sólo utilizable por un vampiro girado. Este vampiro se despierta (ignora el requisito de estar enderezado para jugar cartas de reacción e intentar bloquear hasta el final de la acción)."
+100682,Ojos del caos,"Sólo utilizable durante una acción de sangrado.
 [dem] +1 de sangrado (limitada).
-[DEM] +2 de sangrado (limitada).","Vivimos en un arco iris de caos.
-Paul Cézanne"
-"102222","Eyes of the Wild","Ojos de la naturaleza","Sólo utilizable por un Gangrel girado.
-Este Gangrel se endereza e intenta bloquear. Durante esta acción, este Gangrel puede quemar 1 de sangre para obtener +1 de intercepción. Gira a este Gangrel tras la resolución de la acción si no bloqueó esta acción.",""
-"100687","Faceless Night","Noche sin rostro","[obf] +1 de sigilo.
-[OBF] Como antes, y cualquier siervo que intente bloquear esta acción y fracase se gira antes de la resolución de la acción.","Que de lo eterno tú eres el rehén
-En la prisión del tiempo.
-Boris Pasternak, ""Noche"""
-"100698","Fame","Fama","Única.
-Ponle esta carta a un vampiro preparado. El controlador de este vampiro quema 3 de reserva sanguínea después de que este vampiro entre en letargo. Durante la fase de enderezamiento de cada Matusalén, si este vampiro está en letargo, ese Matusalén quema 1 de reserva sanguínea.",""
-"100710","Fear of Mekhet","Miedo a Mekhet","Ponle esta carta a un justicar o miembro del Círculo Interior preparado y gíralo. Durante la fase de enderezamiento de este vampiro, éste quema 5 de sangre. Si no puede quemar la sangre, se quema; de lo contrario, su controlador pasa esta carta a otro justicar o miembro del Círculo Interior, o quema esta carta si no hay más.",""
-"100720","Femur of Toomler","Fémur de Toomler","Arma blanca única.
-Ataque: fuerza+1 de daño agravado.","Fue con este hueso que destruímos a uno de los fundadores de los Tremere, así que te sugiero que lo trates con un poco más de respeto.
-Meshenka, Tzimisce"
-"100744","Flash","Como una centella","[cel] Maniobra o acoso.
-[CEL] Maniobra con 1 acoso opcional.",""
-"100747","Fleetness","Presteza","Acción con +1 de sigilo.
+[DEM] +2 de sangrado (limitada)."
+102222,Ojos de la naturaleza,"Sólo utilizable por un Gangrel girado.
+Este Gangrel se endereza e intenta bloquear. Durante esta acción, este Gangrel puede quemar 1 de sangre para obtener +1 de intercepción. Gira a este Gangrel tras la resolución de la acción si no bloqueó esta acción."
+100687,Noche sin rostro,"[obf] +1 de sigilo.
+[OBF] Como antes, y cualquier siervo que intente bloquear esta acción y fracase se gira antes de la resolución de la acción."
+100698,Fama,"Única.
+Ponle esta carta a un vampiro preparado. El controlador de este vampiro quema 3 de reserva sanguínea después de que este vampiro entre en letargo. Durante la fase de enderezamiento de cada Matusalén, si este vampiro está en letargo, ese Matusalén quema 1 de reserva sanguínea."
+100710,Miedo a Mekhet,"Ponle esta carta a un justicar o miembro del Círculo Interior preparado y gíralo. Durante la fase de enderezamiento de este vampiro, éste quema 5 de sangre. Si no puede quemar la sangre, se quema; de lo contrario, su controlador pasa esta carta a otro justicar o miembro del Círculo Interior, o quema esta carta si no hay más."
+100720,Fémur de Toomler,"Arma blanca única.
+Ataque: fuerza+1 de daño agravado."
+100744,Como una centella,"[cel] Maniobra o acoso.
+[CEL] Maniobra con 1 acoso opcional."
+100747,Presteza,"Acción con +1 de sigilo.
 [cel] (D) Sangra.
-[CEL] (D) Entra en combate con un siervo girado. Este vampiro obtiene 1 maniobra opcional durante ese combate.",""
-"100760","Forced Awakening","Despertar forzado","Sólo utilizable por un vampiro girado.
-Este vampiro se despierta (ignora el requisito de estar enderezado para jugar cartas de reacción e intentar bloquear hasta el final de la acción). Si no bloquea esta acción, quema 1 de sangre antes de la resolución de la acción.",""
-"100761","Forced March","Marcha forzada","Un vampiro puede jugar sólo un ejemplar de esta carta por turno.
+[CEL] (D) Entra en combate con un siervo girado. Este vampiro obtiene 1 maniobra opcional durante ese combate."
+100760,Despertar forzado,"Sólo utilizable por un vampiro girado.
+Este vampiro se despierta (ignora el requisito de estar enderezado para jugar cartas de reacción e intentar bloquear hasta el final de la acción). Si no bloquea esta acción, quema 1 de sangre antes de la resolución de la acción."
+100761,Marcha forzada,"Un vampiro puede jugar sólo un ejemplar de esta carta por turno.
 [cel][for] Sólo utilizable tras la resolución de una acción exitosa. Endereza a este vampiro.
-[CEL][FOR] +1 de sigilo. Tras la resolución de la acción, si ha tenido éxito, este vampiro puede quemar 1 de sangre para enderezarse.",""
-"100765","Foreshadowing Destruction","Presagiar la destrucción","Sólo utilizable durante una acción de sangrado.
+[CEL][FOR] +1 de sigilo. Tras la resolución de la acción, si ha tenido éxito, este vampiro puede quemar 1 de sangre para enderezarse."
+100765,Presagiar la destrucción,"Sólo utilizable durante una acción de sangrado.
 [dom] +1 de sangrado (limitada).
-[DOM] +3 de sangrado si el Matusalén objetivo tiene 9 o menos de reserva sanguínea (limitada).",""
-"100770","Form of Corruption","Forma de corrupción","[ser] Pon esta carta en juego. Cada vez que tu presa obtenga la Ventaja, añade 1 ficha a esta carta. Si el número de fichas de esta carta iguala o supera la cantidad de sangre de un vampiro controlado por tu presa durante tu fase heril, puedes quemar esta carta para robar ese vampiro. Un Matusalén puede tener sólo una /Forma de corrupción/.
-[SER] Como antes, y tu presa quema 1 de reserva sanguínea después de que quemes esta carta.",""
-"100771","Form of Mist","Forma de niebla","[pro] Ataque: esquiva.
-[PRO] Ataque: el combate termina. Si este vampiro está actuando y la acción fue bloqueada, puede quemar 1 de sangre después de que termine el combate para continuar la acción con +1 de sigilo como si no hubiera sido bloqueada, aunque el sigilo no sea necesario. Un vampiro puede jugar sólo un ejemplar de esta carta a superior por acción.","¡Y sin embargo, yo soy! Y vivo como las sombras echadas.
-John Clare, ""Yo soy"""
-"102223","Form of the Bat","Forma del murciélago","[pro] [ACTION MODIFIER] Sólo utilizable si un siervo intenta bloquear. El siervo bloqueador obtiene -1 de intercepción. Si esta acción es bloqueada, este vampiro obtiene 1 maniobra opcional y no puede usar equipo durante el combate resultante.
-[PRO] [REACTION] +1 de intercepción. Si este vampiro bloquea, obtiene 1 maniobra opcional y no puede usar equipo durante el combate resultante.",""
-"102224","Form of the Cobra","Forma de la cobra","[pro] [COMBAT] Ataque: roba 1 de sangre o vida (convirtiéndose en sangre).
-[PRO] [ACTION MODIFIER] Sólo utilizable al anunciar la acción. +1 de sigilo, aunque el sigilo no sea necesario.",""
-"102225","Form of the Wolf","Forma del lobo","Sólo utilizable antes de determinar la distancia. Un vampiro puede jugar sólo un ejemplar de esta carta por combate.
+[DOM] +3 de sangrado si el Matusalén objetivo tiene 9 o menos de reserva sanguínea (limitada)."
+100770,Forma de corrupción,"[ser] Pon esta carta en juego. Cada vez que tu presa obtenga la Ventaja, añade 1 ficha a esta carta. Si el número de fichas de esta carta iguala o supera la cantidad de sangre de un vampiro controlado por tu presa durante tu fase heril, puedes quemar esta carta para robar ese vampiro. Un Matusalén puede tener sólo una /Forma de corrupción/.
+[SER] Como antes, y tu presa quema 1 de reserva sanguínea después de que quemes esta carta."
+100771,Forma de niebla,"[pro] Ataque: esquiva.
+[PRO] Ataque: el combate termina. Si este vampiro está actuando y la acción fue bloqueada, puede quemar 1 de sangre después de que termine el combate para continuar la acción con +1 de sigilo como si no hubiera sido bloqueada, aunque el sigilo no sea necesario. Un vampiro puede jugar sólo un ejemplar de esta carta a superior por acción."
+102223,Forma del murciélago,"[pro] [ACTION MODIFIER] Sólo utilizable si un siervo intenta bloquear. El siervo bloqueador obtiene -1 de intercepción. Si esta acción es bloqueada, este vampiro obtiene 1 maniobra opcional y no puede usar equipo durante el combate resultante.
+[PRO] [REACTION] +1 de intercepción. Si este vampiro bloquea, obtiene 1 maniobra opcional y no puede usar equipo durante el combate resultante."
+102224,Forma de la cobra,"[pro] [COMBAT] Ataque: roba 1 de sangre o vida (convirtiéndose en sangre).
+[PRO] [ACTION MODIFIER] Sólo utilizable al anunciar la acción. +1 de sigilo, aunque el sigilo no sea necesario."
+102225,Forma del lobo,"Sólo utilizable antes de determinar la distancia. Un vampiro puede jugar sólo un ejemplar de esta carta por combate.
 [pro] Este vampiro obtiene +1 de fuerza en este combate.
-[PRO] Como antes, y este vampiro obtiene 1 acoso opcional en este combate.",""
-"100779","Foundation Exhibit","Exposición de la Fundación","Lugar único.
-Cada Toreador antitribu no titulado que controles consigue +1 voto. Cualquier vampiro puede quemar esta carta con una acción (D) que cuesta 1 de sangre.","Es como una tortura tener que ver el espectáculo.
-Waldorf, Toreador antitribu"
-"100788","Freak Drive","Impulso sobrenatural","Sólo utilizable tras la resolución de la acción.
+[PRO] Como antes, y este vampiro obtiene 1 acoso opcional en este combate."
+100779,Exposición de la Fundación,"Lugar único.
+Cada Toreador antitribu no titulado que controles consigue +1 voto. Cualquier vampiro puede quemar esta carta con una acción (D) que cuesta 1 de sangre."
+100788,Impulso sobrenatural,"Sólo utilizable tras la resolución de la acción.
 [for] Sólo utilizable si la acción tuvo éxito. Endereza a este vampiro.
-[FOR] Sólo utilizable si la acción fue bloqueada. Endereza a este vampiro.",""
-"100794","Frontal Assault","Ataque frontal","Pon esta carta en juego. Cada siervo preparado que controles puede entrar en combate con un siervo controlado por tu presa con una acción (D). Ganas 1 de reserva sanguínea después de que un siervo preparado controlado por tu presa se queme o sea enviado al letargo. Durante tu fase de influencia, quema esta carta y quema 1 de reserva sanguínea por cada siervo preparado controlado por tu presa.",""
-"100800","Game of Malkav","Juego de Malkav","
-Cada uno de los demás Matusalenes elige en secreto un número entre 1 y 5 inclusive; tú eliges un número entre 1 y 6 inclusive. Cada Matusalén extiende el puño cerrado con el número de fichas elegido dentro. Revela las elecciones simultáneamente. Cada Matusalén gana la cantidad de reserva sanguínea que haya elegido, a no ser que otro Matusalén haya elegido exactamente una ficha menos que él, en cuyo caso, quema esa cantidad de reserva sanguínea en vez de ganarla.",""
-"100824","Giant's Blood","Sangre del gigante","Sólo se puede jugar un ejemplar de esta carta por partida.
-Rellena a un vampiro hasta su plena capacidad con sangre del banco de sangre.","Ox ya es difícil de manejar. Habría sido imparable si hubiera bebido la sangre del gigante. ¡No podíamos permitirlo!
-Ventrue, Trondheim, Trama de 2002"
-"100834","Glancing Blow","Golpe de refilón","No la reemplaces hasta tu fase de enderezamiento.
-Prevente de 1 de daño del ataque del siervo oponente.",""
-"100845","Govern the Unaligned","Regir a los no alineados","[dom] (D) Sangra con +2 de sangrado.
-[DOM] Acción con +1 de sigilo. Añade 3 de sangre a un vampiro menor de tu zona incontrolada.",""
-"100855","Gregory Winter","Gregory Winter","Ghoul único con 4 de vida. 1 de fuerza, 1 de sangrado.
-Gregory puede robarle 1 de sangre (convirtiéndose en vida) a un vampiro controlado por otro Matusalén con una acción (D) con +1 de sigilo. Él puede quemar a un vampiro en letargo para ganar 2 de vida con una acción (D). Durante tu fase de enderezamiento, Gregory quema 1 de vida.",""
-"100863","Guard Dogs","Perros guardianes","Sólo utilizable por un vampiro girado durante un sangrado contra ti.
+[FOR] Sólo utilizable si la acción fue bloqueada. Endereza a este vampiro."
+100794,Ataque frontal,"Pon esta carta en juego. Cada siervo preparado que controles puede entrar en combate con un siervo controlado por tu presa con una acción (D). Ganas 1 de reserva sanguínea después de que un siervo preparado controlado por tu presa se queme o sea enviado al letargo. Durante tu fase de influencia, quema esta carta y quema 1 de reserva sanguínea por cada siervo preparado controlado por tu presa."
+100800,Juego de Malkav,"
+Cada uno de los demás Matusalenes elige en secreto un número entre 1 y 5 inclusive; tú eliges un número entre 1 y 6 inclusive. Cada Matusalén extiende el puño cerrado con el número de fichas elegido dentro. Revela las elecciones simultáneamente. Cada Matusalén gana la cantidad de reserva sanguínea que haya elegido, a no ser que otro Matusalén haya elegido exactamente una ficha menos que él, en cuyo caso, quema esa cantidad de reserva sanguínea en vez de ganarla."
+100824,Sangre del gigante,"Sólo se puede jugar un ejemplar de esta carta por partida.
+Rellena a un vampiro hasta su plena capacidad con sangre del banco de sangre."
+100834,Golpe de refilón,"No la reemplaces hasta tu fase de enderezamiento.
+Prevente de 1 de daño del ataque del siervo oponente."
+100845,Regir a los no alineados,"[dom] (D) Sangra con +2 de sangrado.
+[DOM] Acción con +1 de sigilo. Añade 3 de sangre a un vampiro menor de tu zona incontrolada."
+100855,Gregory Winter,"Ghoul único con 4 de vida. 1 de fuerza, 1 de sangrado.
+Gregory puede robarle 1 de sangre (convirtiéndose en vida) a un vampiro controlado por otro Matusalén con una acción (D) con +1 de sigilo. Él puede quemar a un vampiro en letargo para ganar 2 de vida con una acción (D). Durante tu fase de enderezamiento, Gregory quema 1 de vida."
+100863,Perros guardianes,"Sólo utilizable por un vampiro girado durante un sangrado contra ti.
 [ani] Endereza a este vampiro.
-[ANI] Como antes, con 1 maniobra opcional en el combate resultante si este vampiro bloquea.",""
-"100866","Guardian Angel","Ángel guardián","Ponle esta carta a un vampiro preparado que controles. Este vampiro obtiene +1 de intercepción durante acciones de sangrado contra ti. Este vampiro puede prevenirse de 1 de daño por combate. Quema esta carta si este vampiro entra en letargo.",""
-"100882","Hand of Conrad","Mano de Conrad","Único.
-Este vampiro obtiene Potencia superior [POT]. Este vampiro puede pasar a un vampiro de tu montón de ceniza a tu zona incontrolada con una acción.",""
-"102226","Haqim's Law: Retribution","Ley de Haqim: Castigo","Pon esta carta en juego. Durante una acción de sangrado, un Banu Haqim que controles puede descartarse de una carta de combate para obtener +1 de sangrado.",""
-"100886","Harass","Hostigar","(D) Entra en combate con un vampiro que tenga 3 o menos de sangre o con un siervo girado. Este siervo activo obtiene 1 acoso opcional, sólo utilizable para continuar el combate, durante ese combate.",""
-"100897","Haven Uncovered","Refugio descubierto","Ponle esta carta a un vampiro preparado. Cualquier siervo puede entrar en combate con este vampiro con una acción (D) con +1 de sigilo. Este vampiro puede quemar esta carta con una acción (D) con +1 de sigilo.","A través de mi ruina id pues sin que os remuerda.
-Charles Baudelaire, ""El muerto alegre"""
-"100903","Heart of Nizchetus","Corazón de Nizchetus","Único.
-Si el portador está preparado durante tu fase de enderezamiento, puedes robar hasta 3 cartas sin descartarte y luego pasar la misma cantidad de cartas de tu mano al fondo de tu biblioteca.","En ocasiones, creo que lo veo latir. Tan sólo sombras danzantes, quizás, pero a continuación la fortuna me sonríe.
-Radu Bistri, Tzimisce"
-"100904","Heart of the City","Corazón de la ciudad","Acción con +1 de sigilo.
+[ANI] Como antes, con 1 maniobra opcional en el combate resultante si este vampiro bloquea."
+100866,Ángel guardián,Ponle esta carta a un vampiro preparado que controles. Este vampiro obtiene +1 de intercepción durante acciones de sangrado contra ti. Este vampiro puede prevenirse de 1 de daño por combate. Quema esta carta si este vampiro entra en letargo.
+100882,Mano de Conrad,"Único.
+Este vampiro obtiene Potencia superior [POT]. Este vampiro puede pasar a un vampiro de tu montón de ceniza a tu zona incontrolada con una acción."
+102226,Ley de Haqim: Castigo,"Pon esta carta en juego. Durante una acción de sangrado, un Banu Haqim que controles puede descartarse de una carta de combate para obtener +1 de sangrado."
+100886,Hostigar,"(D) Entra en combate con un vampiro que tenga 3 o menos de sangre o con un siervo girado. Este siervo activo obtiene 1 acoso opcional, sólo utilizable para continuar el combate, durante ese combate."
+100897,Refugio descubierto,Ponle esta carta a un vampiro preparado. Cualquier siervo puede entrar en combate con este vampiro con una acción (D) con +1 de sigilo. Este vampiro puede quemar esta carta con una acción (D) con +1 de sigilo.
+100903,Corazón de Nizchetus,"Único.
+Si el portador está preparado durante tu fase de enderezamiento, puedes robar hasta 3 cartas sin descartarte y luego pasar la misma cantidad de cartas de tu mano al fondo de tu biblioteca."
+100904,Corazón de la ciudad,"Acción con +1 de sigilo.
 [pre] Ponle esta carta a este vampiro. Este vampiro obtiene +1 de sangrado. Un vampiro puede tener sólo un ejemplar de esta carta.
-[PRE] Como antes, pero este vampiro obtiene +2 de sangrado.","Somos nuestro propio demonio y hacemos de este mundo nuestro propio infierno.
-Oscar Wilde"
-"100908","Heidelberg Castle, Germany","Castillo de Heidelberg, Alemania","Lugar único.
-Gírala para pasar sangre, equipo o criados entre dos vampiros preparados que controles. No se puede usar durante una acción.","La noche. La lluvia. Un cielo incoloro que desgarra
-De flechas y de torres a plena luz la silueta
-De una ciudad gótica apagada en la gris lejanía.
-Paul Verlaine, ""Efecto nocturno"""
-"100913","Heroic Might","El poder de un héroe","Acción con +3 de sigilo.
+[PRE] Como antes, pero este vampiro obtiene +2 de sangrado."
+100908,"Castillo de Heidelberg, Alemania","Lugar único.
+Gírala para pasar sangre, equipo o criados entre dos vampiros preparados que controles. No se puede usar durante una acción."
+100913,El poder de un héroe,"Acción con +3 de sigilo.
 [pot] Ponle esta carta a este vampiro. Este vampiro obtiene +1 de fuerza. Este vampiro puede atacar quemando equipo. Quema esta carta si este vampiro está en letargo. Un vampiro puede tener sólo un ejemplar de esta carta.
-[POT] Como antes, con +1 de fuerza adicional, y este vampiro puede atacar con 2 de daño a distancia.",""
-"100918","Hidden Strength","Fuerza oculta","[for] Prevente de X+1 de daño.
-[FOR] Como antes, con 1 acoso opcional.",""
-"100932","Homunculus","Homúnculo","Criado con 1 de vida.
+[POT] Como antes, con +1 de fuerza adicional, y este vampiro puede atacar con 2 de daño a distancia."
+100918,Fuerza oculta,"[for] Prevente de X+1 de daño.
+[FOR] Como antes, con 1 acoso opcional."
+100932,Homúnculo,"Criado con 1 de vida.
 [pro] Durante la fase de enderezamiento de cualquier Matusalén, este vampiro puede quemar 1 de sangre para enderezarse.
-[PRO] Como antes, pero el /Homúnculo/ tiene 2 de vida.","Un montón de huesos en un saco de piel, un globo desinflado; un bulto horrible.
-R. Chetwynd-Hayes, ""Buscando algo que chupar"""
-"100934","Horrid Form","Forma horrenda","Sólo utilizable antes de determinar la distancia.
+[PRO] Como antes, pero el /Homúnculo/ tiene 2 de vida."
+100934,Forma horrenda,"Sólo utilizable antes de determinar la distancia.
 [vic] Este vampiro obtiene +1 de fuerza en este combate.
-[VIC] Como antes, y este vampiro puede prevenirse de 1 de daño por asalto.","¿De dónde sales y quién eres, forma execrable?
-John Milton, ""El paraíso perdido"""
-"102227","Hunger of Marduk","El hambre de Marduk","Sólo utilizable antes de determinar la distancia.
+[VIC] Como antes, y este vampiro puede prevenirse de 1 de daño por asalto."
+102227,El hambre de Marduk,"Sólo utilizable antes de determinar la distancia.
 [tha] En este asalto, este vampiro puede atacar a distancia robando 1 de sangre o vida (convirtiéndose en sangre).
-[THA] Como antes, pero 2 de sangre o vida (convirtiéndose en sangre).",""
-"100945","Hungry Coyote, The","Coyote Hambriento, El","Lugar único.
-Los vampiros Sabbat que controles obtienen +1 a la caza.",""
-"102228","Hunter's Mark","La marca del cazador","[cel][tha] (D) Entra en combate con un siervo. Este vampiro activo obtiene 1 acoso opcional durante ese combate.
-[CEL][THA] Como antes, y el siervo oponente no puede atacar terminando el combate durante el primer asalto de ese combate.",""
-"100959","Immortal Grapple","Agarre inmortal","Agarre. Sólo utilizable de cerca antes de elegir ataques. Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
+[THA] Como antes, pero 2 de sangre o vida (convirtiéndose en sangre)."
+100945,"Coyote Hambriento, El","Lugar único.
+Los vampiros Sabbat que controles obtienen +1 a la caza."
+102228,La marca del cazador,"[cel][tha] (D) Entra en combate con un siervo. Este vampiro activo obtiene 1 acoso opcional durante ese combate.
+[CEL][THA] Como antes, y el siervo oponente no puede atacar terminando el combate durante el primer asalto de ese combate."
+100959,Agarre inmortal,"Agarre. Sólo utilizable de cerca antes de elegir ataques. Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
 [pot] Los ataques que no sean con la mano no se pueden usar en este asalto (por parte de ninguno de los dos combatientes).
-[POT] Como antes, con 1 acoso opcional. Si hay otro asalto de combate, será de cerca (sáltate la etapa de determinar la distancia de ese asalto).",""
-"100973","Indomitability","Indomabilidad","[for] Prevente de 1 de daño.
-[FOR] Acoso, o prevente de 1 de daño con 1 acoso opcional.",""
-"100984","Information Highway","Autopista de la información","Lugar único.
-+2 transferencias.",""
-"100986","Inner Essence","Esencia interior","Sólo utilizable antes de determinar la distancia. Un vampiro puede jugar sólo un ejemplar de esta carta por combate.
+[POT] Como antes, con 1 acoso opcional. Si hay otro asalto de combate, será de cerca (sáltate la etapa de determinar la distancia de ese asalto)."
+100973,Indomabilidad,"[for] Prevente de 1 de daño.
+[FOR] Acoso, o prevente de 1 de daño con 1 acoso opcional."
+100984,Autopista de la información,"Lugar único.
++2 transferencias."
+100986,Esencia interior,"Sólo utilizable antes de determinar la distancia. Un vampiro puede jugar sólo un ejemplar de esta carta por combate.
 [vic] Una vez durante este combate, este vampiro puede reducir el costo de una carta de combate que juegue en 1 de sangre.
-[VIC] Como antes, y este vampiro gana 1 de sangre.",""
-"100994","Instantaneous Transformation","Transformación instantánea","[cel][pro] +1 de sigilo.
-[CEL][PRO] Sólo utilizable tras la resolución de una acción exitosa. Endereza a este vampiro. Un vampiro puede jugar sólo un ejemplar de esta carta a superior por turno.",""
-"100995","Instinctive Reaction","Reacción instintiva","Sólo utilizable si un siervo controlado por tu depredador está actuando.
+[VIC] Como antes, y este vampiro gana 1 de sangre."
+100994,Transformación instantánea,"[cel][pro] +1 de sigilo.
+[CEL][PRO] Sólo utilizable tras la resolución de una acción exitosa. Endereza a este vampiro. Un vampiro puede jugar sólo un ejemplar de esta carta a superior por turno."
+100995,Reacción instintiva,"Sólo utilizable si un siervo controlado por tu depredador está actuando.
 [ani] +1 de intercepción.
-[ANI] Como antes, con 1 maniobra opcional durante el combate resultante si este vampiro bloquea.","Hacía mucho que Beckett había aprendido a confiar en sus instintos. Eran tan agudos, aumentados por sus capacidades de no muerto, que a menudo le avisaban de peligros que ni si siquiera su visión nocturna y sentidos agudizados podían detectar."
-"100999","Intimidation","Intimidación","[pre] (D) Sangra con +1 de sangrado.
-[PRE] Sangra con +2 de sangrado.","Son débiles y fáciles de intimidar.
-Enséñales los colmillos y huirán.
-Gerard, Ventrue /antitribu/"
-"101014","Ivory Bow","Arco de marfil","Arma única.
-Ataque: 1 de daño agravado a distancia.",""
-"101015","J. S. Simmons, Esq.","Don J. S. Simmons","Mortal único con 1 de vida.
-El empleador obtiene +1 de sangrado.",""
-"101019","Jake Washington","Jake Washington","Única.
-Pon esta carta en juego; se convierte en un aliado mortal único con 1 de vida, 0 de fuerza y 0 de sangrado y no cuenta como carta heril mientras esté en juego. Durante tu fase de enderezamiento, puedes quemar a Jake para añadir hasta 4 de sangre a un vampiro preparado sin sangre.",""
-"101040","Kevlar Vest","Chaleco de kevlar","Una vez por combate, el portador puede prevenirse de 2 de daño procedente de ataques con armas de fuego o de 1 de daño procedente de otras fuentes. Un siervo puede tener sólo un /Chaleco de kevlar/.",""
-"101048","Khobar Towers, Al-Khubar","Torres Jobar, Al Jubar","Lugar único.
-Gírala durante tu fase de enderezamiento para retirar de la partida a un siervo preparado que controles y ganar X de reserva sanguínea, donde X es la capacidad de ese vampiro o el costo de sangre o reserva sanguínea de ese aliado.",""
-"101055","Kindred Spirits","Almas gemelas","[dem] (D) Sangra a cualquier Matusalén. Gana 1 de reserva sanguínea si este sangrado tiene éxito (de 1 o más).
-[DEM] Como antes, con +1 de sangrado.","Como gotas de agua, mezcladas en una.
-William Cowper, ""El reloj"""
-"101056","Kine Resources Contested","Disputa de recursos ganaderos","Asigna 4 puntos entre dos o más Matusalenes. Si el referéndum prospera, cada Matusalén quema 1 de reserva sanguínea por cada punto asignado.",""
-"101067","KRCG News Radio","Radio de noticias KRCG","Lugar único.
-Gírala para darle a un siervo que controles +1 de intercepción. Gírala y quema 1 de reserva sanguínea para darle a un siervo controlado por otro Matusalén +1 de intercepción.",""
-"101070","Labyrinth, The","El laberinto","Lugar único.
-Gírala para darle +1 de sigilo a un Nosferatu que controles.","Pero de manera vaga, anhelo locamente
-Encontrarme con algo delgado, enano, fétido y peludo
-Con piel repugnante y ojos saltones y legañosos.
-Francis Saltus, ""El capricho de una cortesana"""
-"101073","Laptop Computer","Ordenador portátil","Electrónico.
-El portador obtiene +1 de sangrado. Un siervo puede tener sólo un ejemplar de esta carta.",""
-"101089","Legal Manipulations","Manipulaciones legales","[pre] (D) Sangra con +2 de sangrado.
-[PRE] Como antes, y gana 1 de reserva sanguínea si el sangrado tiene éxito (de 1 o más).","Créeme... Si hay algo que no puedo soportar es el engaño.
-Christopher Hampton, ""Las amistades peligrosas"", acto I, escena 5"
-"101091","Legendary Vampire","Vampiro legendario","Única.
-Ponle esta carta a un vampiro con capacidad 7 o más que haya entrado en tu zona preparada durante tu última fase de influencia. Este vampiro obtiene +2 de sangrado y +2 votos. Cualquier vampiro puede proponer un referéndum para quemar esta carta con una acción política con +1 de sigilo.",""
-"101102","Library Hunting Ground","Zona de caza: Biblioteca","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"101103","Life Boon","Favor de por vida","Fuera de turno. Favor.
-Dale reserva sanguínea a un Matusalén sin reserva sanguínea para mantenerlo en la partida, y pon esta carta en juego. Durante cada una de sus fases de enderezamiento, puedes robarle 1 de reserva sanguínea a ese Matusalén. Cualquier punto de victoria que gane ese Matusalén lo ganas tú en su lugar, hasta que seas eliminado o hasta que hayas ganado 1 punto de victoria por esta carta. Quema esta carta después de que hayas ganado 1 punto de victoria por ella.",""
-"101104","Life in the City","Vida en la ciudad","Nimiedad.
-Añade 1 de sangre a un vampiro preparado.","Evito pagar a clientes que puedan echar en falta, pero los solitarios son un buen blanco. Los contrabandistas creen que, además, trafico con esclavos.
-Ingrid Galt, anarquista."
-"102229","Line Brawl","Pelea entre bandas","Requiere a un Anarquista.
+[ANI] Como antes, con 1 maniobra opcional durante el combate resultante si este vampiro bloquea."
+100999,Intimidación,"[pre] (D) Sangra con +1 de sangrado.
+[PRE] Sangra con +2 de sangrado."
+101014,Arco de marfil,"Arma única.
+Ataque: 1 de daño agravado a distancia."
+101015,Don J. S. Simmons,"Mortal único con 1 de vida.
+El empleador obtiene +1 de sangrado."
+101019,Jake Washington,"Única.
+Pon esta carta en juego; se convierte en un aliado mortal único con 1 de vida, 0 de fuerza y 0 de sangrado y no cuenta como carta heril mientras esté en juego. Durante tu fase de enderezamiento, puedes quemar a Jake para añadir hasta 4 de sangre a un vampiro preparado sin sangre."
+101040,Chaleco de kevlar,"Una vez por combate, el portador puede prevenirse de 2 de daño procedente de ataques con armas de fuego o de 1 de daño procedente de otras fuentes. Un siervo puede tener sólo un /Chaleco de kevlar/."
+101048,"Torres Jobar, Al Jubar","Lugar único.
+Gírala durante tu fase de enderezamiento para retirar de la partida a un siervo preparado que controles y ganar X de reserva sanguínea, donde X es la capacidad de ese vampiro o el costo de sangre o reserva sanguínea de ese aliado."
+101055,Almas gemelas,"[dem] (D) Sangra a cualquier Matusalén. Gana 1 de reserva sanguínea si este sangrado tiene éxito (de 1 o más).
+[DEM] Como antes, con +1 de sangrado."
+101056,Disputa de recursos ganaderos,"Asigna 4 puntos entre dos o más Matusalenes. Si el referéndum prospera, cada Matusalén quema 1 de reserva sanguínea por cada punto asignado."
+101067,Radio de noticias KRCG,"Lugar único.
+Gírala para darle a un siervo que controles +1 de intercepción. Gírala y quema 1 de reserva sanguínea para darle a un siervo controlado por otro Matusalén +1 de intercepción."
+101070,El laberinto,"Lugar único.
+Gírala para darle +1 de sigilo a un Nosferatu que controles."
+101073,Ordenador portátil,"Electrónico.
+El portador obtiene +1 de sangrado. Un siervo puede tener sólo un ejemplar de esta carta."
+101089,Manipulaciones legales,"[pre] (D) Sangra con +2 de sangrado.
+[PRE] Como antes, y gana 1 de reserva sanguínea si el sangrado tiene éxito (de 1 o más)."
+101091,Vampiro legendario,"Única.
+Ponle esta carta a un vampiro con capacidad 7 o más que haya entrado en tu zona preparada durante tu última fase de influencia. Este vampiro obtiene +2 de sangrado y +2 votos. Cualquier vampiro puede proponer un referéndum para quemar esta carta con una acción política con +1 de sigilo."
+101102,Zona de caza: Biblioteca,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+101103,Favor de por vida,"Fuera de turno. Favor.
+Dale reserva sanguínea a un Matusalén sin reserva sanguínea para mantenerlo en la partida, y pon esta carta en juego. Durante cada una de sus fases de enderezamiento, puedes robarle 1 de reserva sanguínea a ese Matusalén. Cualquier punto de victoria que gane ese Matusalén lo ganas tú en su lugar, hasta que seas eliminado o hasta que hayas ganado 1 punto de victoria por esta carta. Quema esta carta después de que hayas ganado 1 punto de victoria por ella."
+101104,Vida en la ciudad,"Nimiedad.
+Añade 1 de sangre a un vampiro preparado."
+102229,Pelea entre bandas,"Requiere a un Anarquista.
 [cel] (D) Roba 1 de reserva sanguínea a otro Matusalén.
 [pot] (D) Entra en combate con un siervo.
-[pre] (D) Sangra con +1 de sangrado.",""
-"101114","Living Manse","Mansión viviente","Mientras esté en juego, esta carta de equipo representa un lugar y no cuenta como equipo.
-Este vampiro obtiene +1 de sangrado. Puede quemar esta carta antes de determinar la distancia para terminar el combate. Un vampiro puede tener sólo un ejemplar de esta carta.",""
-"101125","Lost in Crowds","Perdido en multitudes","[obf] +1 de sigilo. /Desaparecer/ y /Perdido en multitudes/ no se pueden jugar en la misma acción.
-[OBF] Como antes, pero +2 de sigilo.","...sabe que un temible demonio
-Va cerca detrás de él.
-Samuel Taylor Coleridge, ""La balada del viejo marinero"""
-"101143","Magic of the Smith","Magia del herrero","Acción con +1 de sigilo.
+[pre] (D) Sangra con +1 de sangrado."
+101114,Mansión viviente,"Mientras esté en juego, esta carta de equipo representa un lugar y no cuenta como equipo.
+Este vampiro obtiene +1 de sangrado. Puede quemar esta carta antes de determinar la distancia para terminar el combate. Un vampiro puede tener sólo un ejemplar de esta carta."
+101125,Perdido en multitudes,"[obf] +1 de sigilo. /Desaparecer/ y /Perdido en multitudes/ no se pueden jugar en la misma acción.
+[OBF] Como antes, pero +2 de sigilo."
+101143,Magia del herrero,"Acción con +1 de sigilo.
 [tha] Busca en tu biblioteca una carta de equipo y equipa a este vampiro activo con ella (los requisitos y el coste se aplican normalmente; baraja después).
-[THA] Como antes, pero ésta es una acción con +3 de sigilo.",""
-"101144","Majesty","Majestad","[pre] Ataque: el combate termina.
-[PRE] Como antes, y endereza a este vampiro antes de que el combate termine.","Todo esto te daré, si postrado me adorares.
-Mateo 4:9 (RVR)"
-"101171","Market Square","Mercado","Lugar único.
-Gírala para darle a un Banu Haqim que controles +1 de intercepción.",""
-"101216","Mind Tricks","Trucos mentales","[dem] +1 de sigilo.
-[DEM] Como antes, con 1 maniobra o acoso opcionales durante el combate resultante si esta acción es bloqueada.","El poder del pensamiento - ¡Fuerza oculta en el fondo de la mente!
-Lord Byron, ""El corsario"""
-"101223","Mirror Walk","Atravesar el espejo","No la reemplaces hasta tu fase de descarte.
+[THA] Como antes, pero ésta es una acción con +3 de sigilo."
+101144,Majestad,"[pre] Ataque: el combate termina.
+[PRE] Como antes, y endereza a este vampiro antes de que el combate termine."
+101171,Mercado,"Lugar único.
+Gírala para darle a un Banu Haqim que controles +1 de intercepción."
+101216,Trucos mentales,"[dem] +1 de sigilo.
+[DEM] Como antes, con 1 maniobra o acoso opcionales durante el combate resultante si esta acción es bloqueada."
+101223,Atravesar el espejo,"No la reemplaces hasta tu fase de descarte.
 [tha] +1 de sigilo.
-[THA] Como antes, y si esta acción es bloqueada, gira al siervo bloqueador y termina la acción antes de la resolución de bloqueos.",""
-"101225","Misdirection","Dirección incorrecta","
-Gira a un siervo.",""
-"101235","Molotov Cocktail","Cóctel mólotov","Ataque a distancia: ponle esta carta a este siervo; se convierte en un equipo arma con el se que puede atacar a distancia infligiendo 2 de daño agravado, no utilizable en el asalto en el que se pone en juego. Quémala tras usarla o al final del combate.","Este mundo siempre fue, es y será fuego eternamente vivo.
-Heráclito"
-"101238","Monastery of Shadows","Monasterio de las Sombras","Lugar único.
-+1 a la mano. Gírala para darle a un vampiro con capacidad 8 o más +1 de sigilo.",""
-"101239","Monkey Wrench","Planes frustrados","Requiere a un Anarquista. Sólo utilizable durante una acción de sangrado.
-+X de sangrado (limitada). X debe ser 1, 2 o 3.","Sin embargo, el arma principal de los piratas era su capacidad de asombrar. Nadie más podía creerse lo crueles y codiciosos que eran, hasta que era demasiado tarde.
-Kurt Vonnegut, ""El desayuno de los campeones"""
-"101249","Mr. Winthrop","Sr. Winthrop","Mortal único con 1 de vida.
-El empleador obtiene +1 de intercepción.",""
-"101254","Murder of Crows","Bandada de cuervos","Animal con 1 de vida.
+[THA] Como antes, y si esta acción es bloqueada, gira al siervo bloqueador y termina la acción antes de la resolución de bloqueos."
+101225,Dirección incorrecta,"
+Gira a un siervo."
+101235,Cóctel mólotov,"Ataque a distancia: ponle esta carta a este siervo; se convierte en un equipo arma con el se que puede atacar a distancia infligiendo 2 de daño agravado, no utilizable en el asalto en el que se pone en juego. Quémala tras usarla o al final del combate."
+101238,Monasterio de las Sombras,"Lugar único.
++1 a la mano. Gírala para darle a un vampiro con capacidad 8 o más +1 de sigilo."
+101239,Planes frustrados,"Requiere a un Anarquista. Sólo utilizable durante una acción de sangrado.
++X de sangrado (limitada). X debe ser 1, 2 o 3."
+101249,Sr. Winthrop,"Mortal único con 1 de vida.
+El empleador obtiene +1 de intercepción."
+101254,Bandada de cuervos,"Animal con 1 de vida.
 [ani] La /Bandada de cuervos/ inflige 1 de daño a distancia al siervo oponente en cada asalto de combate durante la resolución de ataques normal.
-[ANI] Como antes, pero la /Bandada de cuervos/ tiene 2 de vida.","Y en el fondo del hoyo y de la fosa,
-¡dispersaos!, ¡uníos!
-Arthur Rimbaud, ""Los cuervos"""
-"101256","Murmur of the False Will","Murmullo de la falsa voluntad","[dom] [ACTION MODIFIER] Sólo utilizable durante una acción de sangrado. +1 de sangrado (limitada).
-[DOM] [REACTION] Sólo utilizable si un vampiro menor te está sangrando, tras renunciar a bloquear. Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusalén que no sea el controlador del vampiro activo (ese Matusalén puede intentar bloquear).",""
-"101261","Mylan Horseed","Mylan Horseed","Changeling único con 1 de vida. 0 de fuerza, 1 de sangrado.
-Una vez por combate, Mylan puede atacar esquivando. Puede enderezar a un vampiro preparado que no sea Camarilla con capacidad 8 o más con una acción con +1 de sigilo. Mylan no puede bloquear vampiros.",""
-"101271","Neonate Breach","Infracción de los Neonatos","Elige a uno o más Matusalenes. Si el referéndum prospera, cada Matusalén elegido quema 1 de reserva sanguínea, más 3 de reserva sanguínea adicionales si controla a un vampiro con capacidad 4 o menos.",""
-"101272","Nephandus","Nefando","Mago con 2 de vida. 0 de fuerza, 1 de sangrado.
-El Nefando puede atacar a distancia infligiendo 1 de daño. El Nefando obtiene 1 acoso opcional por combate. El Nefando puede quemar a un vampiro en letargo para ganar 1 de vida con una acción (D). Cada ataque o efecto dañino efectuado por el siervo oponente contra el Nefando en combate inflige 1 menos de daño.",""
-"101292","No Trace","Sin rastro","[obf] Sólo utilizable de lejos. Ataque: el combate termina.
-[OBF] Ataque: el combate termina.",""
-"101309","Obedience","Obediencia","Sólo utilizable si este vampiro está a punto de entrar en combate con un vampiro activo menor.
+[ANI] Como antes, pero la /Bandada de cuervos/ tiene 2 de vida."
+101256,Murmullo de la falsa voluntad,"[dom] [ACTION MODIFIER] Sólo utilizable durante una acción de sangrado. +1 de sangrado (limitada).
+[DOM] [REACTION] Sólo utilizable si un vampiro menor te está sangrando, tras renunciar a bloquear. Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusalén que no sea el controlador del vampiro activo (ese Matusalén puede intentar bloquear)."
+101261,Mylan Horseed,"Changeling único con 1 de vida. 0 de fuerza, 1 de sangrado.
+Una vez por combate, Mylan puede atacar esquivando. Puede enderezar a un vampiro preparado que no sea Camarilla con capacidad 8 o más con una acción con +1 de sigilo. Mylan no puede bloquear vampiros."
+101271,Infracción de los Neonatos,"Elige a uno o más Matusalenes. Si el referéndum prospera, cada Matusalén elegido quema 1 de reserva sanguínea, más 3 de reserva sanguínea adicionales si controla a un vampiro con capacidad 4 o menos."
+101272,Nefando,"Mago con 2 de vida. 0 de fuerza, 1 de sangrado.
+El Nefando puede atacar a distancia infligiendo 1 de daño. El Nefando obtiene 1 acoso opcional por combate. El Nefando puede quemar a un vampiro en letargo para ganar 1 de vida con una acción (D). Cada ataque o efecto dañino efectuado por el siervo oponente contra el Nefando en combate inflige 1 menos de daño."
+101292,Sin rastro,"[obf] Sólo utilizable de lejos. Ataque: el combate termina.
+[OBF] Ataque: el combate termina."
+101309,Obediencia,"Sólo utilizable si este vampiro está a punto de entrar en combate con un vampiro activo menor.
 [dom] Endereza al vampiro activo y termina la acción. (No gires a este vampiro si está bloqueando). El vampiro activo no puede realizar la misma acción este turno.
-[DOM] Como antes, pero no endereces al vampiro activo.",""
-"101321","On the Qui Vive","En estado de alerta","Sólo utilizable por un siervo girado. Un siervo puede jugar sólo un ejemplar de esta carta entre sus fases de enderezamiento.
-Este siervo se despierta (ignora el requisito de estar enderezado para jugar cartas de reacción e intentar bloquear hasta el final de la acción). Si este siervo es un aliado, no se endereza normalmente durante su siguiente fase de enderezamiento.",""
-"101326","Opium Den","Fumadero de opio","Lugar único.
-Gírala para darle a un Ministro que controles +1 de sigilo.","El opio agranda lo que no tiene límites,
-alarga lo ilimitado,
-hace más profundo el momento, aumenta el deleite,
-y de placeres negros y lúgubres
-colma el alma más allá de su capacidad
-Charles Baudelaire, ""El veneno"""
-"102230","Organized Resistance","Resistencia organizada","Requiere a un barón. Utilizable por un barón girado.
-Un Anarquista que controles obtiene +1 de intercepción. También utilizable para enderezar a un Anarquista girado que controles; ese Anarquista intenta bloquear con +1 de intercepción, aunque la intercepción no sea necesaria.",""
-"101334","Oubliette","Mazmorra","[obt] Ataque: el combate termina.
-[OBT] Como antes, y el siervo oponente quema 1 de sangre o vida después de que el combate termine (incluso de lejos).",""
-"101346","Palla Grande","Palla Grande","Única.
-Pon esta carta en juego con 3 fichas. Los Toreadores antitribu obtienen +1 de sangrado. Durante tu fase de descarte, quema 1 ficha de esta carta. Quema esta carta cuando ya no tenga fichas.",""
-"101350","Papillon","Papillon","Lugar único. Zona de caza. Requiere a un vampiro preparado con un título de ciudad.
-Durante tu fase de enderezamiento, un vampiro titulado preparado que controles puede ganar 2 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"101353","Parity Shift","Cambio de paridad","Requiere a un príncipe o justicar.
-Elige a un Matusalén que tenga más reserva sanguínea que tú, y asigna 3 de su reserva sanguínea entre 1 o más de los demás Matusalenes (incluyéndote a ti). Si el referéndum prospera, el Matusalén elegido pierde esa reserva sanguínea, que es asignada como hayas elegido.",""
-"102231","Party Out Of Bounds","Fiesta privada","Requiere a un Anarquista.
+[DOM] Como antes, pero no endereces al vampiro activo."
+101321,En estado de alerta,"Sólo utilizable por un siervo girado. Un siervo puede jugar sólo un ejemplar de esta carta entre sus fases de enderezamiento.
+Este siervo se despierta (ignora el requisito de estar enderezado para jugar cartas de reacción e intentar bloquear hasta el final de la acción). Si este siervo es un aliado, no se endereza normalmente durante su siguiente fase de enderezamiento."
+101326,Fumadero de opio,"Lugar único.
+Gírala para darle a un Ministro que controles +1 de sigilo."
+102230,Resistencia organizada,"Requiere a un barón. Utilizable por un barón girado.
+Un Anarquista que controles obtiene +1 de intercepción. También utilizable para enderezar a un Anarquista girado que controles; ese Anarquista intenta bloquear con +1 de intercepción, aunque la intercepción no sea necesaria."
+101334,Mazmorra,"[obt] Ataque: el combate termina.
+[OBT] Como antes, y el siervo oponente quema 1 de sangre o vida después de que el combate termine (incluso de lejos)."
+101346,Palla Grande,"Única.
+Pon esta carta en juego con 3 fichas. Los Toreadores antitribu obtienen +1 de sangrado. Durante tu fase de descarte, quema 1 ficha de esta carta. Quema esta carta cuando ya no tenga fichas."
+101350,Papillon,"Lugar único. Zona de caza. Requiere a un vampiro preparado con un título de ciudad.
+Durante tu fase de enderezamiento, un vampiro titulado preparado que controles puede ganar 2 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+101353,Cambio de paridad,"Requiere a un príncipe o justicar.
+Elige a un Matusalén que tenga más reserva sanguínea que tú, y asigna 3 de su reserva sanguínea entre 1 o más de los demás Matusalenes (incluyéndote a ti). Si el referéndum prospera, el Matusalén elegido pierde esa reserva sanguínea, que es asignada como hayas elegido."
+102231,Fiesta privada,"Requiere a un Anarquista.
 [obf] Reduce un sangrado contra ti en 2.
 [pre] Sólo utilizable durante la fase de votación de una acción política. Este vampiro consigue +2 votos.
-[pro] +1 de intercepción.",""
-"101384","Pentex(TM) Subversion","La subversión de Pentex(TM)","Única.
-Ponle esta carta a un siervo preparado. Este siervo no puede bloquear. Cualquier otro siervo puede quemar esta carta con una acción (D).",""
-"101387","Perfect Paragon","Ejemplo de perfección","[pre] Sólo utilizable durante la fase de votación de una acción política. Este vampiro consigue +3 votos.
-[PRE] Los aliados y vampiros menores obtienen -1 de intercepción.",""
-"101388","Perfectionist","Perfeccionista","Arquetipo.
-Ponle esta carta a un vampiro que controles. Una vez por turno, este vampiro puede ganar 1 de sangre tras realizar una acción exitosa durante la cual no se hayan jugado cartas de reacción.",""
-"101390","Permanent Vacation","Vacaciones permanentes","Elige a un aliado preparado. Si el referéndum prospera, el aliado elegido se retira de la partida.","It's only forever
-It's not long at all
-Lost and lonely.
-David Bowie, ""Underground"""
-"102232","Platinum Protocol, The","El protocolo de platino","Requiere a un Anarquista. Se puede usar más de una disciplina para jugar esta carta. (D) Sangra.
+[pro] +1 de intercepción."
+101384,La subversión de Pentex(TM),"Única.
+Ponle esta carta a un siervo preparado. Este siervo no puede bloquear. Cualquier otro siervo puede quemar esta carta con una acción (D)."
+101387,Ejemplo de perfección,"[pre] Sólo utilizable durante la fase de votación de una acción política. Este vampiro consigue +3 votos.
+[PRE] Los aliados y vampiros menores obtienen -1 de intercepción."
+101388,Perfeccionista,"Arquetipo.
+Ponle esta carta a un vampiro que controles. Una vez por turno, este vampiro puede ganar 1 de sangre tras realizar una acción exitosa durante la cual no se hayan jugado cartas de reacción."
+101390,Vacaciones permanentes,"Elige a un aliado preparado. Si el referéndum prospera, el aliado elegido se retira de la partida."
+102232,El protocolo de platino,"Requiere a un Anarquista. Se puede usar más de una disciplina para jugar esta carta. (D) Sangra.
 [obf] Ésta es una acción con +1 de sigilo.
 [pre] Ésta es una acción con +1 de sangrado.
-[pro] Ponle 1 ficha de corrupción a un siervo controlado por el Matusalén objetivo si el sangrado tiene éxito (1 o más).",""
-"101415","Political Hunting Ground","Zona de caza: Ámbito político","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"101417","Political Stranglehold","Control político absoluto","Sólo se puede jugar o proponer un ejemplar de esta carta por partida.
-Si el referéndum prospera, cada Matusalén gana 3 de reserva sanguínea por cada vampiro que controle con capacidad 8 o más.",""
-"101430","Power Structure","Estructura de poder","Única.
-Pon esta carta en juego. Gírala durante la fase de votación de una acción política para darle a cada Lasombra que controles +1 voto.","Toda estructura política se basa en el poder.
-Weber, ""Economía y sociedad"""
-"101437","Powerbase: Madrid","Base de poder: Madrid","Lugar único.
-Si esta carta tiene 3 o menos fichas durante tu fase de enderezamiento, puedes añadirle 1 ficha. Gírala durante la fase de votación de cualquier referéndum para darle a un vampiro Sabbat titulado +1 voto por cada ficha de esta carta. Cualquier vampiro controlado por otro Matusalén puede quemar todas las fichas de esta carta con una acción (D).",""
-"101439","Powerbase: Montreal","Base de poder: Montreal","Lugar único.
-Durante tu fase de influencia, puedes añadir 1 de sangre a un vampiro de tu zona incontrolada. Cualquier vampiro puede robar este lugar con una acción (D).",""
-"101475","Precognition","Precognición","[aus] +1 de intercepción.
-[AUS] Como antes, y este vampiro puede prevenirse de 1 de daño durante el primer asalto del combate resultante si bloquea.","""Mala memoria, la que sólo funciona hacia atrás"", censuró la Reina.
-Lewis Carroll, ""A través del espejo"""
-"101483","Preternatural Strength","Fuerza sobrenatural","Acción con +2 de sigilo.
+[pro] Ponle 1 ficha de corrupción a un siervo controlado por el Matusalén objetivo si el sangrado tiene éxito (1 o más)."
+101415,Zona de caza: Ámbito político,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+101417,Control político absoluto,"Sólo se puede jugar o proponer un ejemplar de esta carta por partida.
+Si el referéndum prospera, cada Matusalén gana 3 de reserva sanguínea por cada vampiro que controle con capacidad 8 o más."
+101430,Estructura de poder,"Única.
+Pon esta carta en juego. Gírala durante la fase de votación de una acción política para darle a cada Lasombra que controles +1 voto."
+101437,Base de poder: Madrid,"Lugar único.
+Si esta carta tiene 3 o menos fichas durante tu fase de enderezamiento, puedes añadirle 1 ficha. Gírala durante la fase de votación de cualquier referéndum para darle a un vampiro Sabbat titulado +1 voto por cada ficha de esta carta. Cualquier vampiro controlado por otro Matusalén puede quemar todas las fichas de esta carta con una acción (D)."
+101439,Base de poder: Montreal,"Lugar único.
+Durante tu fase de influencia, puedes añadir 1 de sangre a un vampiro de tu zona incontrolada. Cualquier vampiro puede robar este lugar con una acción (D)."
+101475,Precognición,"[aus] +1 de intercepción.
+[AUS] Como antes, y este vampiro puede prevenirse de 1 de daño durante el primer asalto del combate resultante si bloquea."
+101483,Fuerza sobrenatural,"Acción con +2 de sigilo.
 [pot] Ponle esta carta a este vampiro. Este vampiro obtiene +1 de fuerza, y no puede jugar /Poste arrancado/. Un vampiro puede tener sólo un ejemplar de esta carta.
-[POT] Como antes, pero este vampiro obtiene +2 de fuerza.",""
-"101487","Priority Contract","Contrato prioritario","Contrato único. Nimiedad.
-Elige a un Banu Haqim preparado que controles y ponle esta carta a un siervo controlado por tu presa. El Banu Haqim elegido puede entrar en combate con el siervo adherido con una acción (D) con +1 de sigilo. Si el siervo adherido está a punto de dejar la zona preparada, puedes quemar esta carta para ganar 3 de reserva sanguínea.",""
-"102214","Protected District","Distrito protegido","Requiere a un primogénito. Sólo utilizable durante una acción de sangrado contra ti o durante la fase de votación de una acción política.
-Reduce la cantidad de sangrado en 3 o este vampiro consigue +3 votos contra el referéndum.",""
-"101501","Protection Racket","Chantaje a comerciantes","Requiere a un Anarquista.
-+1 de intercepción, con +1 de intercepción adicional si el vampiro activo tiene título.",""
-"101523","Pursuit","Persecución","[cel] Maniobra.
-[CEL] Ataque adicional (limitada).","¿Qué loco propósito?
-¿Qué lucha por escapar?
-John Keats, ""Oda a una urna griega"""
-"101532","Quickness","Rapidez","Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
+[POT] Como antes, pero este vampiro obtiene +2 de fuerza."
+101487,Contrato prioritario,"Contrato único. Nimiedad.
+Elige a un Banu Haqim preparado que controles y ponle esta carta a un siervo controlado por tu presa. El Banu Haqim elegido puede entrar en combate con el siervo adherido con una acción (D) con +1 de sigilo. Si el siervo adherido está a punto de dejar la zona preparada, puedes quemar esta carta para ganar 3 de reserva sanguínea."
+102214,Distrito protegido,"Requiere a un primogénito. Sólo utilizable durante una acción de sangrado contra ti o durante la fase de votación de una acción política.
+Reduce la cantidad de sangrado en 3 o este vampiro consigue +3 votos contra el referéndum."
+101501,Chantaje a comerciantes,"Requiere a un Anarquista.
++1 de intercepción, con +1 de intercepción adicional si el vampiro activo tiene título."
+101523,Persecución,"[cel] Maniobra.
+[CEL] Ataque adicional (limitada)."
+101532,Rapidez,"Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
 [cel] Ataque adicional (limitada).
-[CEL] Ataque adicional que no se toma en cuenta para el límite.","No existe discreción comparable a la celeridad.
-Francis Bacon, ""Sobre las demoras"""
-"101536","Rack, The","Coto, El","Lugar único.
-Al jugar esta carta o cuando el controlador de la misma cambie, el controlador elige a un vampiro preparado que controle. Durante la fase de enderezamiento del controlador, el vampiro elegido puede ganar 2 de sangre. Un vampiro controlado por otro Matusalén puede robar este lugar con una acción (D).",""
-"101542","Rapid Change","Cambio rápido","[pro] [ACTION MODIFIER] +1 de sigilo.
-[PRO] [COMBAT] Ataque: el combate termina.","Nuestra naturaleza está en el movimiento; el reposo completo es la muerte.
-Blaise Pascal, ""Pensamientos"""
-"101550","Raven Spy","Cuervo espía","Animal con 1 de vida.
+[CEL] Ataque adicional que no se toma en cuenta para el límite."
+101536,"Coto, El","Lugar único.
+Al jugar esta carta o cuando el controlador de la misma cambie, el controlador elige a un vampiro preparado que controle. Durante la fase de enderezamiento del controlador, el vampiro elegido puede ganar 2 de sangre. Un vampiro controlado por otro Matusalén puede robar este lugar con una acción (D)."
+101542,Cambio rápido,"[pro] [ACTION MODIFIER] +1 de sigilo.
+[PRO] [COMBAT] Ataque: el combate termina."
+101550,Cuervo espía,"Animal con 1 de vida.
 [ani] El empleador obtiene +1 de intercepción.
-[ANI] Como antes, pero el /Cuervo espía/ tiene 2 de vida.",""
-"101559","Read the Winds","Leer los vientos","No la reemplaces hasta después de esta acción.
+[ANI] Como antes, pero el /Cuervo espía/ tiene 2 de vida."
+101559,Leer los vientos,"No la reemplaces hasta después de esta acción.
 [ani][aus] +1 de intercepción. Este vampiro no se gira por el bloqueo.
-[ANI][AUS] Sólo utilizable por un vampiro girado. Este vampiro se endereza e intenta bloquear con +1 de intercepción, aunque la intercepción no sea necesaria.","Ya no hay sorpresas. La noche tiene mil ojos, y yo he tenido mil noches.
-Stravinsky, Arzobispo Tzimisce de Ciudad de México"
-"101564","Rebel","Rebelde","Arquetipo. Nimiedad.
-Ponle esta carta a un vampiro que controles. Una vez por turno, si bloquea a un vampiro titulado o una acción política, este vampiro gana 1 de sangre antes de la resolución del bloqueo. Un vampiro puede tener sólo un arquetipo.","Ella sabe que he estado combatiendo a los Camarillejos durante mucho tiempo y que sé cómo hacerlo.
-Jack Drake, Brujah Anarquista"
-"101588","Rego Motum","Rego motum","Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
+[ANI][AUS] Sólo utilizable por un vampiro girado. Este vampiro se endereza e intenta bloquear con +1 de intercepción, aunque la intercepción no sea necesaria."
+101564,Rebelde,"Arquetipo. Nimiedad.
+Ponle esta carta a un vampiro que controles. Una vez por turno, si bloquea a un vampiro titulado o una acción política, este vampiro gana 1 de sangre antes de la resolución del bloqueo. Un vampiro puede tener sólo un arquetipo."
+101588,Rego motum,"Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
 [tha] Prevente de 2 de daño del ataque del siervo oponente.
-[THA] Prevente de 4 de daño del ataque del siervo oponente.",""
-"101591","Reins of Power","Riendas del poder","Sólo se puede jugar o proponer un ejemplar de esta carta por partida.
-Si el referéndum prospera, cada Matusalén puede elegir a un vampiro preparado que controle. Cada Matusalén gana 6 de reserva sanguínea, y luego quema tanta reserva sanguínea como capacidad tenga el vampiro elegido por su depredador.",""
-"101610","Resist Earth's Grasp","Resistir la gravedad","[cel] [COMBAT] Acoso, o maniobra con 1 acoso opcional.
-[CEL] [ACTION MODIFIER] +1 de sigilo.",""
-"102233","Revelation of the Serpent","Revelación de la serpiente","Sólo utilizable durante una acción de sangrado.
+[THA] Prevente de 4 de daño del ataque del siervo oponente."
+101591,Riendas del poder,"Sólo se puede jugar o proponer un ejemplar de esta carta por partida.
+Si el referéndum prospera, cada Matusalén puede elegir a un vampiro preparado que controle. Cada Matusalén gana 6 de reserva sanguínea, y luego quema tanta reserva sanguínea como capacidad tenga el vampiro elegido por su depredador."
+101610,Resistir la gravedad,"[cel] [COMBAT] Acoso, o maniobra con 1 acoso opcional.
+[CEL] [ACTION MODIFIER] +1 de sigilo."
+102233,Revelación de la serpiente,"Sólo utilizable durante una acción de sangrado.
 [pre][pro] +1 de sangrado (limitada), o +1 de sigilo y +1 de sangrado (limitada).
-[PRE][PRO] Como antes, y si el sangrado tiene éxito, este vampiro puede quemar 2 de tus fichas de corrupción de un siervo controlado por el Matusalén objetivo para enderezarse.",""
-"101627","Revelations","Revelaciones","Acción con +1 de sigilo.
+[PRE][PRO] Como antes, y si el sangrado tiene éxito, este vampiro puede quemar 2 de tus fichas de corrupción de un siervo controlado por el Matusalén objetivo para enderezarse."
+101627,Revelaciones,"Acción con +1 de sigilo.
 [aus] (D) Mira la mano de tu presa y descarta de ella una carta de tu elección.
-[AUS] Pon esta carta en juego. Tu presa juega con la mano abierta. Cualquier siervo puede quemar esta carta con una acción (D).",""
-"101632","Rewilding","Retorno a la vida silvestre","(D) Quema un lugar y quema 2 de reserva sanguínea de su controlador.","Ciudades, tronos y poderes
-perduran en el ojo del tiempo
-casi tanto como las flores
-que mueren a diario
-Rudyard Kipling, ""Puck de la colina de Pook"""
-"101649","Rolling with the Punches","Encajar los golpes","[for] Prevente de 1 de daño.
-[FOR] Quema 1 de sangre para prevenirte de todo el daño procedente de los ataques del siervo oponente este asalto.",""
-"102215","Roundhouse","Gancho lateral","[pot] Ataque: ataca con la mano con +2 de daño.
-[POT] Ataque: ataca con la mano con +3 de daño.",""
-"101664","Rutor's Hand","La mano de Rutor","Acción con +1 de sigilo.
+[AUS] Pon esta carta en juego. Tu presa juega con la mano abierta. Cualquier siervo puede quemar esta carta con una acción (D)."
+101632,Retorno a la vida silvestre,(D) Quema un lugar y quema 2 de reserva sanguínea de su controlador.
+101649,Encajar los golpes,"[for] Prevente de 1 de daño.
+[FOR] Quema 1 de sangre para prevenirte de todo el daño procedente de los ataques del siervo oponente este asalto."
+102215,Gancho lateral,"[pot] Ataque: ataca con la mano con +2 de daño.
+[POT] Ataque: ataca con la mano con +3 de daño."
+101664,La mano de Rutor,"Acción con +1 de sigilo.
 [tha] Ponle esta carta a este vampiro, y este vampiro recibe 1 de daño agravado ambiental imprevenible. A partir de tu próximo turno, este vampiro puede enderezarse durante tu fase servil. Un vampiro puede tener sólo un ejemplar de esta carta.
-[THA] Como antes, y este vampiro puede quemar 3 de sangre para ser inmune a este daño agravado.",""
-"101681","Sargon Fragment, The","El fragmento de Sargón","Único.
-Este vampiro obtiene Nigromancia superior [NEC]. Este vampiro puede pasar una carta de biblioteca de tu montón de ceniza a tu mano con una acción que cuesta 1 de sangre (descártate después).",""
-"101686","Scalpel Tongue","Lengua de escalpelo","Sólo utilizable durante la fase de votación de una acción política.
+[THA] Como antes, y este vampiro puede quemar 3 de sangre para ser inmune a este daño agravado."
+101681,El fragmento de Sargón,"Único.
+Este vampiro obtiene Nigromancia superior [NEC]. Este vampiro puede pasar una carta de biblioteca de tu montón de ceniza a tu mano con una acción que cuesta 1 de sangre (descártate después)."
+101686,Lengua de escalpelo,"Sólo utilizable durante la fase de votación de una acción política.
 [cel][pre] Elige a un vampiro que haya emitido votos en este referéndum. El vampiro elegido se gira y se abstiene (esto cancela los votos y papeletas del vampiro elegido).
-[CEL][PRE] Como antes, y el vampiro elegido quema 1 de sangre.",""
-"101692","Scorn of Adonis","El desprecio de Adonis","Sólo utilizable durante la fase de votación de una acción política.
-Cualquier Matusalén que emita (incluso que tenga a un vampiro que emita) al menos 1 voto o papeleta contra el referéndum quema 1 de reserva sanguínea una vez se cuenten los resultados.",""
-"101706","Second Tradition: Domain","Segunda tradición: El Dominio","Requiere a un príncipe o justicar.
-+2 de intercepción. También utilizable por un príncipe o justicar girado, aunque aún no se necesite intercepción, para quemar 1 de sangre para enderezarse e intentar bloquear con +2 de intercepción.","Nadie podrá desafiar tu juicio mientras se halle en tu dominio."
-"101712","Seduction","Seducción","Sólo utilizable al anunciar la acción.
+[CEL][PRE] Como antes, y el vampiro elegido quema 1 de sangre."
+101692,El desprecio de Adonis,"Sólo utilizable durante la fase de votación de una acción política.
+Cualquier Matusalén que emita (incluso que tenga a un vampiro que emita) al menos 1 voto o papeleta contra el referéndum quema 1 de reserva sanguínea una vez se cuenten los resultados."
+101706,Segunda tradición: El Dominio,"Requiere a un príncipe o justicar.
++2 de intercepción. También utilizable por un príncipe o justicar girado, aunque aún no se necesite intercepción, para quemar 1 de sangre para enderezarse e intentar bloquear con +2 de intercepción."
+101712,Seducción,"Sólo utilizable al anunciar la acción.
 [dom] Elige a un vampiro menor. El vampiro elegido no puede bloquear esta acción.
-[DOM] Como antes, pero elige a cualquier vampiro.","Dejarse llevar es el secreto; renunciar a mí es el mayor placer de todos...
-Robbi Sommers, ""Lilit"""
-"101735","Shadow Body","Cuerpo sombrío","[obt] Ataque: el combate termina.
-[OBT] Como antes, y si este vampiro fue bloqueado mientras realizaba una acción que no era de sangrado ni política, la acción continúa como si no hubiera sido bloqueada.","La abrumadora sombra de algún poder no visto
-Entre nosotros flota, aun sin verse.
-Percy Bysshe Shelley, ""Himno a la belleza intelectual"""
-"101743","Shadow Play","Juego de sombras","[obt] +1 de sigilo.
-[OBT] +2 de sigilo.","Cerrarás los ojos
-para no mirar por los cristales
-la noche y sus negras muecas.
-Arthur Rimbaud, ""Sueño para el invierno"""
-"101772","Show of Force","Demostración de fuerza","[pot][pre] (D) Sangra con +1 de sangrado. Si esta acción es bloqueada, antes de determinar la distancia durante el primer asalto del combate resultante, este vampiro puede obtener +1 de fuerza en ese combate.
-[POT][PRE] Como antes, pero con +2 de sangrado y este vampiro puede obtener +2 de fuerza.",""
-"101774","Shroud of Absence","Velo de ausencia","[dom][obt] +1 de sigilo.
-[DOM][OBT] Como antes, y este vampiro puede atacar terminando el combate durante el primer asalto del combate resultante si esta acción es bloqueada.","¡Oh! No me di cuenta de que habías llegado, Marconius. Pillas a la ciudad durmiendo, contra su naturaleza.
-Andrea Giovanni"
-"101775","Shroud of Night","Sudario de la noche","[obt] +1 de sigilo, no utilizable durante una acción de sangrado.
-[OBT] +1 de sigilo.","Ya con sus alas
-el  nocturno dragón la tierra encubre.
-William Shakespeare, ""Troilo y Crésida"""
-"101781","Signet of King Saul, The","El sello del rey Saúl","Único.
-Los vampiros con capacidad 8 o más no pueden intentar bloquear al portador.",""
-"101798","Slam","Golpear","[pot] Ataque: ataca con la mano con +2 de daño.
-[POT] Como antes, con 1 maniobra opcional, sólo utilizable para acercarse.",""
-"101808","Slum Hunting Ground","Zona de caza: Suburbio","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"101811","Smiling Jack, The Anarch","Jack Sonrisas, el Anarquista","Única.
-Pon esta carta en juego. Durante tu fase de enderezamiento, pasa 1 ficha de tu reserva sanguínea a esta carta. Durante la fase de enderezamiento de cada uno de los demás Matusalenes, por cada ficha de esta carta, ese Matusalén quema 1 de reserva sanguínea o quema 1 de sangre de un vampiro que controle. Cualquier vampiro puede quemar esta carta con una acción (D).",""
-"101817","Soak","Absorber","Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
+[DOM] Como antes, pero elige a cualquier vampiro."
+101735,Cuerpo sombrío,"[obt] Ataque: el combate termina.
+[OBT] Como antes, y si este vampiro fue bloqueado mientras realizaba una acción que no era de sangrado ni política, la acción continúa como si no hubiera sido bloqueada."
+101743,Juego de sombras,"[obt] +1 de sigilo.
+[OBT] +2 de sigilo."
+101772,Demostración de fuerza,"[pot][pre] (D) Sangra con +1 de sangrado. Si esta acción es bloqueada, antes de determinar la distancia durante el primer asalto del combate resultante, este vampiro puede obtener +1 de fuerza en ese combate.
+[POT][PRE] Como antes, pero con +2 de sangrado y este vampiro puede obtener +2 de fuerza."
+101774,Velo de ausencia,"[dom][obt] +1 de sigilo.
+[DOM][OBT] Como antes, y este vampiro puede atacar terminando el combate durante el primer asalto del combate resultante si esta acción es bloqueada."
+101775,Sudario de la noche,"[obt] +1 de sigilo, no utilizable durante una acción de sangrado.
+[OBT] +1 de sigilo."
+101781,El sello del rey Saúl,"Único.
+Los vampiros con capacidad 8 o más no pueden intentar bloquear al portador."
+101798,Golpear,"[pot] Ataque: ataca con la mano con +2 de daño.
+[POT] Como antes, con 1 maniobra opcional, sólo utilizable para acercarse."
+101808,Zona de caza: Suburbio,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+101811,"Jack Sonrisas, el Anarquista","Única.
+Pon esta carta en juego. Durante tu fase de enderezamiento, pasa 1 ficha de tu reserva sanguínea a esta carta. Durante la fase de enderezamiento de cada uno de los demás Matusalenes, por cada ficha de esta carta, ese Matusalén quema 1 de reserva sanguínea o quema 1 de sangre de un vampiro que controle. Cualquier vampiro puede quemar esta carta con una acción (D)."
+101817,Absorber,"Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
 [for] Prevente de 2 de daño no agravado.
-[FOR] Prevente de 4 de daño no agravado.","Las heridas que ha sufrido habrían matado a un mortal y habrían destruído a muchos Vástagos. Jan sólo podía dar gracias a la sangre de Hardestadt y de los antiguos del clan Ventrue por haber sobrevivido tanto tiempo."
-"101821","Society Hunting Ground","Zona de caza: Alta sociedad","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.","Los Toreadores son prisioneros de su deseo por la vida nocturna que, cual sirena, los atrae con promesas de placeres prohibidos."
-"101829","Soul Burn","Quemadura del alma","[tha] Ataque: 1 de daño a distancia. Este daño no se puede prevenir con cartas que requieran Fortaleza [for]. Los ataques del vampiro oponente con armas no infligen ningún daño en este asalto.
-[THA] Como antes, pero 2 de daño a distancia.",""
-"101850","Spirit's Touch","Toque del espíritu","[aus] +1 de intercepción.
-[AUS] Como antes, con 1 maniobra opcional durante el combate resultante si este vampiro bloquea.","Somos eternos; y para nosotros, el pasado
-Es, como el futuro, presente.
-Lord Byron, ""Manfred"", acto I, escena 1"
-"101856","Sport Bike","Moto deportiva","Vehículo.
-Este siervo obtiene +1 de intercepción. Un siervo puede tener sólo un vehículo.",""
-"101857","Spying Mission","Misión de espionaje","[obf] +1 de sigilo.
-[OBF] Sólo utilizable si un sangrado va a tener éxito. En vez de eso, el sangrado no quema reserva sanguínea, no tiene éxito, y esta carta se le pone a este vampiro. La próxima vez que este vampiro vaya a sangrar con éxito al mismo Matusalén, quema esta carta y este vampiro obtiene +2 de sangrado.","Me reúno con mi sombra en la cada vez más profunda sombra...
-Theodore Roethke, ""En un oscuro tiempo"""
-"101896","Sudden Reversal","Revés repentino","Fuera de turno.
-Cancela una carta heril jugada por otro Matusalén al ser jugada, y su costo no se paga.",""
-"101913","Swallowed by the Night","Tragado por la noche","[obf] [ACTION MODIFIER] +1 de sigilo.
-[OBF] [COMBAT] Maniobra.","¿Para perecer sepultados y perdidos en las anchurosas entrañas de una noche increada?
-John Milton, ""El paraíso perdido"""
-"101931","Talbot's Chainsaw","La motosierra de Talbot","Arma única.
-Ataque: 3 de daño. Si el portador está preparado durante tu fase de enderezamiento, esta arma inflige 3 de daño imprevenible a un siervo preparado que controles. El portador no puede cazar. El portador puede entrar en combate con un siervo con una acción (D) con +1 de sigilo. El portador obtiene 1 acoso (obligatorio), sólo utilizable para continuar el combate durante el primer asalto, y puede prevenirse de 1 de daño por combate.",""
-"101942","Target Vitals","Apuntar a los puntos vitales","Puntería. Sólo utilizable cuando este siervo elija un ataque. Un siervo puede jugar sólo una puntería por ataque.
-Si este ataque inflige daño con éxito al siervo oponente, este último recibe +2 de daño de este ataque, y no puede acosar en este asalto. El siervo oponente puede descartarse de dos cartas de combate para cancelar esta carta al ser jugada.",""
-"101945","Taste of Vitae","Saborear la Vitae","Sólo utilizable al final de un asalto de combate. No utilizable por un vampiro que se esté quemando o entrando en letargo. Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
-Este vampiro gana tanta sangre como sangre haya perdido el vampiro oponente debido al daño en este asalto.",""
-"101949","Telepathic Misdirection","Distracción telepática","[aus] +1 de intercepción.
-[AUS] Sólo utilizable si un siervo te está sangrando, tras renunciar a bloquear. Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusalén que no sea el controlador del siervo activo (ese Matusalén puede intentar bloquear).",""
-"101950","Telepathic Tracking","Rastreo telepático","[aus] Acoso, sólo utilizable para continuar el combate. Si hay otro asalto de combate, este vampiro obtiene 1 maniobra opcional en ese asalto.
-[AUS] Sólo utilizable si ambos combatientes aún están preparados y el combate está a punto de terminar. En lugar de eso, un nuevo asalto comienza.",""
-"101953","Temple Hunting Ground","Zona de caza: Templo","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"101957","Tenebrous Form","Forma tenebrosa","[obt] +1 de sigilo.
-[OBT] Como antes, y los siervos sin Obtenebración [obt] deben quemar 1 de sangre para intentar bloquear","Sé como una sombra en una noche oscura; invisible, silenciosa, no dejes señales de tus idas o venidas.
-Las advertencias"
-"101958","Tension in the Ranks","Tensión en la tropa","Única.
-Pon esta carta en juego. Cualquier Matusalén quema 1 de reserva sanguínea después de que un siervo preparado que controle se queme o sea enviado al letargo. Cualquier Matusalén puede usar una acción de fase heril y descartarse de dos cartas heriles para quemar esta carta.","Hasta los ghouls de guerra parecen nerviosos.
-Banu Haqim, Trama de 2002, Seekonk."
-"101963","Thadius Zho","Thadius Zho","Mago único con 2 de vida. 0 de fuerza, 2 de sangrado.
-Thadius Zho puede atacar: 2 de daño a distancia. Obtiene 1 maniobra opcional por combate. Puede quemarle 1 de sangre a cualquier vampiro con una acción (D) con +1 de sigilo.",""
-"101966","Theft of Vitae","Robo de Vitae","[tha] Ataque a distancia: roba 1 de sangre o vida (convirtiéndose en sangre).
-[THA] Ataque a distancia: roba 2 de sangre o vida (convirtiéndose en sangre).","¡La sangre es la vida!
-¡La sangre es la vida!
-Bram Stoker, ""Drácula"""
-"101972","Thing","Thing","Acción con +1 de sigilo.
-Añade 2 de sangre a un Gangrel de tu zona incontrolada.",""
-"101989","Toreador Grand Ball","Gran baile Toreador","Elige a dos Toreadores preparados que controles, pon esta carta en juego, y gira a uno de los dos. El Toreador girado no se endereza normalmente. Las acciones que no sean de sangrado del otro Toreador no se pueden bloquear. Cualquier siervo puede quemar esta carta con una acción (D); los Nosferatu obtienen -1 de sigilo en esa acción.",""
-"101990","Toreador Justicar","Justicar Toreador","Título.
-Elige a un Toreador preparado. Si el referéndum prospera, esta carta se pone en el Toreador elegido para representar el título Camarilla único de Justicar Toreador. En este referéndum, cada Toreador preparado obtiene +1 voto.",""
-"101993","Torn Signpost","Poste arrancado","Sólo utilizable antes de determinar la distancia.
+[FOR] Prevente de 4 de daño no agravado."
+101821,Zona de caza: Alta sociedad,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+101829,Quemadura del alma,"[tha] Ataque: 1 de daño a distancia. Este daño no se puede prevenir con cartas que requieran Fortaleza [for]. Los ataques del vampiro oponente con armas no infligen ningún daño en este asalto.
+[THA] Como antes, pero 2 de daño a distancia."
+101850,Toque del espíritu,"[aus] +1 de intercepción.
+[AUS] Como antes, con 1 maniobra opcional durante el combate resultante si este vampiro bloquea."
+101856,Moto deportiva,"Vehículo.
+Este siervo obtiene +1 de intercepción. Un siervo puede tener sólo un vehículo."
+101857,Misión de espionaje,"[obf] +1 de sigilo.
+[OBF] Sólo utilizable si un sangrado va a tener éxito. En vez de eso, el sangrado no quema reserva sanguínea, no tiene éxito, y esta carta se le pone a este vampiro. La próxima vez que este vampiro vaya a sangrar con éxito al mismo Matusalén, quema esta carta y este vampiro obtiene +2 de sangrado."
+101896,Revés repentino,"Fuera de turno.
+Cancela una carta heril jugada por otro Matusalén al ser jugada, y su costo no se paga."
+101913,Tragado por la noche,"[obf] [ACTION MODIFIER] +1 de sigilo.
+[OBF] [COMBAT] Maniobra."
+101931,La motosierra de Talbot,"Arma única.
+Ataque: 3 de daño. Si el portador está preparado durante tu fase de enderezamiento, esta arma inflige 3 de daño imprevenible a un siervo preparado que controles. El portador no puede cazar. El portador puede entrar en combate con un siervo con una acción (D) con +1 de sigilo. El portador obtiene 1 acoso (obligatorio), sólo utilizable para continuar el combate durante el primer asalto, y puede prevenirse de 1 de daño por combate."
+101942,Apuntar a los puntos vitales,"Puntería. Sólo utilizable cuando este siervo elija un ataque. Un siervo puede jugar sólo una puntería por ataque.
+Si este ataque inflige daño con éxito al siervo oponente, este último recibe +2 de daño de este ataque, y no puede acosar en este asalto. El siervo oponente puede descartarse de dos cartas de combate para cancelar esta carta al ser jugada."
+101945,Saborear la Vitae,"Sólo utilizable al final de un asalto de combate. No utilizable por un vampiro que se esté quemando o entrando en letargo. Un vampiro puede jugar sólo un ejemplar de esta carta por asalto.
+Este vampiro gana tanta sangre como sangre haya perdido el vampiro oponente debido al daño en este asalto."
+101949,Distracción telepática,"[aus] +1 de intercepción.
+[AUS] Sólo utilizable si un siervo te está sangrando, tras renunciar a bloquear. Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusalén que no sea el controlador del siervo activo (ese Matusalén puede intentar bloquear)."
+101950,Rastreo telepático,"[aus] Acoso, sólo utilizable para continuar el combate. Si hay otro asalto de combate, este vampiro obtiene 1 maniobra opcional en ese asalto.
+[AUS] Sólo utilizable si ambos combatientes aún están preparados y el combate está a punto de terminar. En lugar de eso, un nuevo asalto comienza."
+101953,Zona de caza: Templo,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+101957,Forma tenebrosa,"[obt] +1 de sigilo.
+[OBT] Como antes, y los siervos sin Obtenebración [obt] deben quemar 1 de sangre para intentar bloquear"
+101958,Tensión en la tropa,"Única.
+Pon esta carta en juego. Cualquier Matusalén quema 1 de reserva sanguínea después de que un siervo preparado que controle se queme o sea enviado al letargo. Cualquier Matusalén puede usar una acción de fase heril y descartarse de dos cartas heriles para quemar esta carta."
+101963,Thadius Zho,"Mago único con 2 de vida. 0 de fuerza, 2 de sangrado.
+Thadius Zho puede atacar: 2 de daño a distancia. Obtiene 1 maniobra opcional por combate. Puede quemarle 1 de sangre a cualquier vampiro con una acción (D) con +1 de sigilo."
+101966,Robo de Vitae,"[tha] Ataque a distancia: roba 1 de sangre o vida (convirtiéndose en sangre).
+[THA] Ataque a distancia: roba 2 de sangre o vida (convirtiéndose en sangre)."
+101972,Thing,"Acción con +1 de sigilo.
+Añade 2 de sangre a un Gangrel de tu zona incontrolada."
+101989,Gran baile Toreador,"Elige a dos Toreadores preparados que controles, pon esta carta en juego, y gira a uno de los dos. El Toreador girado no se endereza normalmente. Las acciones que no sean de sangrado del otro Toreador no se pueden bloquear. Cualquier siervo puede quemar esta carta con una acción (D); los Nosferatu obtienen -1 de sigilo en esa acción."
+101990,Justicar Toreador,"Título.
+Elige a un Toreador preparado. Si el referéndum prospera, esta carta se pone en el Toreador elegido para representar el título Camarilla único de Justicar Toreador. En este referéndum, cada Toreador preparado obtiene +1 voto."
+101993,Poste arrancado,"Sólo utilizable antes de determinar la distancia.
 [pot] Este vampiro obtiene una fuerza de 2 en este combate.
-[POT] Este vampiro obtiene una fuerza de 3 en este combate.",""
-"102012","Trap","Trampa","Sólo utilizable antes de determinar la distancia durante el primer asalto del combate.
-Pon esta carta en juego con 3 fichas. Cada vez que se juegue una carta en este combate, restaura el número de fichas de esta carta a 3. Durante la etapa de acosos de cada asalto de este combate, esta /Trampa/ automáticamente quema 1 de sus fichas para proporcionar un acoso para continuar el combate (cualquiera de los dos combatientes puede acosar para terminar el combate). Quema esta carta al final del combate.",""
-"102041","True Love's Face","Rostro del amor verdadero","[obf][pre] Sólo utilizable durante una acción de sangrado. +1 de sangrado (limitada).
-[OBF][PRE] Sólo utilizable si un siervo intenta bloquear. Ese intento fracasa y el siervo bloqueador no puede intentar bloquear esta acción de nuevo. El controlador del siervo bloqueador puede quemar 1 de reserva sanguínea para cancelar esta carta al ser jugada.",""
-"102063","Under Siege","Bajo asedio","Acción con +1 de sigilo. Requiere a un vampiro Sabbat titulado. Única.
-Pon esta carta en juego con 3 fichas. Una vez por acción, un vampiro Sabbat que controles puede quemar 1 ficha de esta carta para enderezarse e intentar bloquear con +1 de intercepción, aunque la intercepción no sea necesaria. Quema esta carta cuando ya no tenga fichas.",""
-"102065","Underbridge Stray","Perro callejero","Animal con 1 de vida. 0 de fuerza, 0 de sangrado.
+[POT] Este vampiro obtiene una fuerza de 3 en este combate."
+102012,Trampa,"Sólo utilizable antes de determinar la distancia durante el primer asalto del combate.
+Pon esta carta en juego con 3 fichas. Cada vez que se juegue una carta en este combate, restaura el número de fichas de esta carta a 3. Durante la etapa de acosos de cada asalto de este combate, esta /Trampa/ automáticamente quema 1 de sus fichas para proporcionar un acoso para continuar el combate (cualquiera de los dos combatientes puede acosar para terminar el combate). Quema esta carta al final del combate."
+102041,Rostro del amor verdadero,"[obf][pre] Sólo utilizable durante una acción de sangrado. +1 de sangrado (limitada).
+[OBF][PRE] Sólo utilizable si un siervo intenta bloquear. Ese intento fracasa y el siervo bloqueador no puede intentar bloquear esta acción de nuevo. El controlador del siervo bloqueador puede quemar 1 de reserva sanguínea para cancelar esta carta al ser jugada."
+102063,Bajo asedio,"Acción con +1 de sigilo. Requiere a un vampiro Sabbat titulado. Única.
+Pon esta carta en juego con 3 fichas. Una vez por acción, un vampiro Sabbat que controles puede quemar 1 ficha de esta carta para enderezarse e intentar bloquear con +1 de intercepción, aunque la intercepción no sea necesaria. Quema esta carta cuando ya no tenga fichas."
+102065,Perro callejero,"Animal con 1 de vida. 0 de fuerza, 0 de sangrado.
 [ani] Este aliado puede quemar 1 de vida para dar 1 acoso a un siervo que controles. Durante una acción directa contra ti (o una carta que controles), puedes quemar a este aliado, si no está bloqueando, para enderezar a un siervo preparado que controles.
-[ANI] Como antes, pero este aliado tiene 2 de vida y 1 de fuerza.",""
-"102066","Underworld Hunting Ground","Zona de caza: Submundo","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"102071","Unflinching Persistence","Persistencia inquebrantable","[for] Prevente de 1 de daño.
-[FOR] Maniobra, y este vampiro puede prevenirse de 1 de daño más tarde en este asalto.",""
-"102075","University Hunting Ground","Zona de caza: Universidad","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"102079","Unmasking, The","Desenmascaramiento, El","Gehenna. No la reemplaces hasta tu siguiente fase de descarte.
-Los aliados obtienen +1 de intercepción contra vampiros.","Los que son presas del pánico tienen el desafortunado hábito de olvidar nuestras tradiciones de Mascarada"
-"102084","Uptown Hunting Ground","Zona de caza: Parte alta","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"102092","Vast Wealth","Gran riqueza","
-Ponle esta carta a un siervo preparado que controles. Si controlas a este siervo, puede equiparse con el primer equipo que encuentres en tu biblioteca con una acción con +1 de sigilo (procediendo de arriba hacia abajo; los requisitos y el coste se aplican normalmente; baraja después).",""
-"102097","Veil the Legions","Legiones veladas","Sólo utilizable por un vampiro enderezado preparado que no sea el siervo activo. Sólo se puede jugar un ejemplar de esta carta por acción.
+[ANI] Como antes, pero este aliado tiene 2 de vida y 1 de fuerza."
+102066,Zona de caza: Submundo,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+102071,Persistencia inquebrantable,"[for] Prevente de 1 de daño.
+[FOR] Maniobra, y este vampiro puede prevenirse de 1 de daño más tarde en este asalto."
+102075,Zona de caza: Universidad,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+102079,"Desenmascaramiento, El","Gehenna. No la reemplaces hasta tu siguiente fase de descarte.
+Los aliados obtienen +1 de intercepción contra vampiros."
+102084,Zona de caza: Parte alta,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+102092,Gran riqueza,"
+Ponle esta carta a un siervo preparado que controles. Si controlas a este siervo, puede equiparse con el primer equipo que encuentres en tu biblioteca con una acción con +1 de sigilo (procediendo de arriba hacia abajo; los requisitos y el coste se aplican normalmente; baraja después)."
+102097,Legiones veladas,"Sólo utilizable por un vampiro enderezado preparado que no sea el siervo activo. Sólo se puede jugar un ejemplar de esta carta por acción.
 [obf] El siervo activo obtiene +1 de sigilo.
-[OBF] Como antes, y este vampiro puede quemar X de sangre para dar +1 de sigilo a las siguientes X acciones que los siervos que controlas realicen en este turno. Sólo se puede jugar un ejemplar de esta carta a superior por turno.",""
-"102109","Ventrue Headquarters","Cuartel general Ventrue","Lugar único.
-Gírala durante la fase de votación de cualquier referéndum para conseguir +3 votos.","El clan Ventrue está organizado como si se tratara de una corporación multinacional. Cada ciudad importante tiene un lugar de reunión donde los Ventrue pueden buscar lealtades y obtener información."
-"102113","Vessel","Recipiente","Nimiedad.
-Ponle esta carta a cualquier vampiro, y puedes quemar una /Muñeca de sangre/ (si la hay). Durante su fase de enderezamiento, el controlador de este vampiro puede pasar 1 de sangre de este vampiro a su reserva sanguínea o de su reserva sanguínea a este vampiro.",""
-"102121","Villein","Villano","Nimiedad.
-Ponle esta carta a un vampiro que controles que tenga cualquier cantidad de sangre y pasa de 2 a 5 de sangre de ese vampiro a tu reserva sanguínea. /Drenar al siervo/ te cuesta 1 más de reserva sanguínea. Jugarle un /Villano/ a este vampiro cuesta 1 más de reserva sanguínea.",""
-"102126","Visit from the Capuchin","Visita del Capuchino","Única.
-Pon esta carta en juego con 4 fichas. Obtienes +1 a la mano por cada ficha de esta carta. Cada vez que vayas a reemplazar una carta que no sea ésta, en vez de eso quema 1 ficha de esta carta. Quema esta carta cuando ya no tenga fichas.",""
-"102131","Voter Captivation","Cautivar al votante","Sólo utilizable tras la resolución de una acción política cuyo referéndum haya prosperado.
+[OBF] Como antes, y este vampiro puede quemar X de sangre para dar +1 de sigilo a las siguientes X acciones que los siervos que controlas realicen en este turno. Sólo se puede jugar un ejemplar de esta carta a superior por turno."
+102109,Cuartel general Ventrue,"Lugar único.
+Gírala durante la fase de votación de cualquier referéndum para conseguir +3 votos."
+102113,Recipiente,"Nimiedad.
+Ponle esta carta a cualquier vampiro, y puedes quemar una /Muñeca de sangre/ (si la hay). Durante su fase de enderezamiento, el controlador de este vampiro puede pasar 1 de sangre de este vampiro a su reserva sanguínea o de su reserva sanguínea a este vampiro."
+102121,Villano,"Nimiedad.
+Ponle esta carta a un vampiro que controles que tenga cualquier cantidad de sangre y pasa de 2 a 5 de sangre de ese vampiro a tu reserva sanguínea. /Drenar al siervo/ te cuesta 1 más de reserva sanguínea. Jugarle un /Villano/ a este vampiro cuesta 1 más de reserva sanguínea."
+102126,Visita del Capuchino,"Única.
+Pon esta carta en juego con 4 fichas. Obtienes +1 a la mano por cada ficha de esta carta. Cada vez que vayas a reemplazar una carta que no sea ésta, en vez de eso quema 1 ficha de esta carta. Quema esta carta cuando ya no tenga fichas."
+102131,Cautivar al votante,"Sólo utilizable tras la resolución de una acción política cuyo referéndum haya prosperado.
 [pre] Este vampiro gana 1 de sangre por cada voto de diferencia por el cual el referéndum haya prosperado.
-[PRE] Como antes, pero pasa hasta 2 de esa sangre a tu reserva sanguínea en vez de a este vampiro.",""
-"102137","Wake with Evening's Freshness","Despertar con frescura","Sólo utilizable por un vampiro girado. No la reemplaces hasta tu fase de enderezamiento.
-Este vampiro se despierta (ignora el requisito de estar enderezado para jugar cartas de reacción e intentar bloquear hasta el final de la acción).",""
-"102139","Walk of Flame","Paseo por las llamas","No utilizable durante el primer asalto del combate.
+[PRE] Como antes, pero pasa hasta 2 de esa sangre a tu reserva sanguínea en vez de a este vampiro."
+102137,Despertar con frescura,"Sólo utilizable por un vampiro girado. No la reemplaces hasta tu fase de enderezamiento.
+Este vampiro se despierta (ignora el requisito de estar enderezado para jugar cartas de reacción e intentar bloquear hasta el final de la acción)."
+102139,Paseo por las llamas,"No utilizable durante el primer asalto del combate.
 [tha] Ataque: 1 de daño agravado a distancia.
-[THA] Ataque: 2 de daño agravado a distancia.","Ahora que sois llamas, os diré cómo quemar
-Y purgar el éter de nuestros enemigos.
-John Keats, ""Hiperión"""
-"102216","Warrens, The","Entramado de túneles","Sólo utilizable durante una acción directa contra ti (o una carta que controles).
-+2 de intercepción, con +1 de intercepción adicional si este Nosferatu tiene título.",""
-"102149","Warsaw Station","Estación Varsovia","Lugar único.
-Puedes girar esta carta cuando un Nosferatu anuncie una acción indirecta. Tras resolverse la acción, si ésta ha tenido éxito, endereza al Nosferatu activo. Puedes quemar esta carta (aunque esté girada) para pasar a un Nosferatu en letargo a tu zona preparada.",""
-"102150","Warzone Hunting Ground","Zona de caza: Barrio violento","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
-"102151","Wash","Eliminar","Fuera de turno. Nimiedad. No la reemplaces hasta tu fase de enderezamiento.
-Cancela una carta heril jugada por tu depredador o presa al ser jugada, y su coste no se paga. Ese Matusalén obtiene +1 acción de fase heril inmediatamente, o al principio de su siguiente fase heril si la carta cancelada es una heril fuera de turno.",""
-"102152","Wasserschloss Anif, Austria","Palacio del Agua Anif, Austria","Lugar único.
-Durante tu fase heril, un Tremere que controles puede pasar 1 de sangre de sí mismo a esta carta. Gírala durante tu fase de influencia para pasar todas las fichas de esta carta a un Tremere de tu zona incontrolada. Cualquier siervo puede quemar esta carta con una acción (D); los Malkavian obtienen +1 de sigilo en esa acción.",""
-"102169","Weighted Walking Stick","Bastón lastrado","Sólo utilizable antes de determinar la distancia durante el primer asalto del combate.
-Ponle esta carta a este siervo y pon 5 fichas en esta carta; se convierte en un arma blanca (equipo) que puede atacar: fuerza+1 de daño. Por cada punto de daño infligido por este ataque (incluso si es prevenido), quema 1 ficha de esta carta. Quema esta carta cuando no tenga fichas. Un siervo puede tener sólo un ejemplar de esta carta.",""
-"102180","Wider View","Perspectiva más amplia","Nimiedad.
-Pon esta carta en juego. Puedes usar 1 transferencia para robar 1 carta de tu cripta y luego retirar del juego una carta de cripta de tu zona incontrolada. Puedes usar 4 transferencias para quemar esta carta y ganar 2 de reserva sanguínea.",""
-"102207","Zillah's Valley","Valle de Zillah, El","Añade 4 de sangre a un vampiro de tu zona incontrolada con capacidad 8 o más.","Y cada noche, durante tres noches, Zillah bebió de su Sire, sin saberlo. Y, a la tercera noche, Caín anunció que se casaría con ella, su chiquilla más dulce, y ella aceptó.
-El libro de Nod"
-"102212","Zoo Hunting Ground","Zona de caza: Zoo","Lugar único. Zona de caza.
-Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno.",""
+[THA] Ataque: 2 de daño agravado a distancia."
+102216,Entramado de túneles,"Sólo utilizable durante una acción directa contra ti (o una carta que controles).
++2 de intercepción, con +1 de intercepción adicional si este Nosferatu tiene título."
+102149,Estación Varsovia,"Lugar único.
+Puedes girar esta carta cuando un Nosferatu anuncie una acción indirecta. Tras resolverse la acción, si ésta ha tenido éxito, endereza al Nosferatu activo. Puedes quemar esta carta (aunque esté girada) para pasar a un Nosferatu en letargo a tu zona preparada."
+102150,Zona de caza: Barrio violento,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."
+102151,Eliminar,"Fuera de turno. Nimiedad. No la reemplaces hasta tu fase de enderezamiento.
+Cancela una carta heril jugada por tu depredador o presa al ser jugada, y su coste no se paga. Ese Matusalén obtiene +1 acción de fase heril inmediatamente, o al principio de su siguiente fase heril si la carta cancelada es una heril fuera de turno."
+102152,"Palacio del Agua Anif, Austria","Lugar único.
+Durante tu fase heril, un Tremere que controles puede pasar 1 de sangre de sí mismo a esta carta. Gírala durante tu fase de influencia para pasar todas las fichas de esta carta a un Tremere de tu zona incontrolada. Cualquier siervo puede quemar esta carta con una acción (D); los Malkavian obtienen +1 de sigilo en esa acción."
+102169,Bastón lastrado,"Sólo utilizable antes de determinar la distancia durante el primer asalto del combate.
+Ponle esta carta a este siervo y pon 5 fichas en esta carta; se convierte en un arma blanca (equipo) que puede atacar: fuerza+1 de daño. Por cada punto de daño infligido por este ataque (incluso si es prevenido), quema 1 ficha de esta carta. Quema esta carta cuando no tenga fichas. Un siervo puede tener sólo un ejemplar de esta carta."
+102180,Perspectiva más amplia,"Nimiedad.
+Pon esta carta en juego. Puedes usar 1 transferencia para robar 1 carta de tu cripta y luego retirar del juego una carta de cripta de tu zona incontrolada. Puedes usar 4 transferencias para quemar esta carta y ganar 2 de reserva sanguínea."
+102207,"Valle de Zillah, El",Añade 4 de sangre a un vampiro de tu zona incontrolada con capacidad 8 o más.
+102212,Zona de caza: Zoo,"Lugar único. Zona de caza.
+Durante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de sólo una zona de caza por turno."

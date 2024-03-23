@@ -1,4 +1,4 @@
-"Id","Name pt-PT","Card Text"
+Id,Name,Card Text
 201661,"""Treinador"" Tyrone Soros",Anarquista.
 200001,Membro Aabbt,Independente: Aabbt não pode realizar ações diretas a menos que /Nefertiti/ esteja pronta. Aabbt pode prevenir 1 de dano por combate. Não único.
 200002,Aaron Bathurst,Sabá.
@@ -547,7 +547,7 @@
 200465,"Ferox, Senhor das Roxas","Avançado, Independente: Servos se opondo a Ferox em combate não podem jogar cartas que requerem Necromância [nec], ou Feitiçaria de Sangue [tha]. Ele não pode cometer diablerie. Vôo [FLIGHT].
 [MERGED] Ferox recebe +1 de percepção quando tenta bloquear ações direcionadas."
 200466,Fida'i,"Independente: Fida'i não destrava normalmente. Durante sua fase de destravar, qualquer Assamita pronto que você controla com capacidade 7 ou mais pode queimar 1 de sangue para destravar este Fida'i. Sangue amaldiçoado. Não-único."
-200467,"Fidus, a Besta Encolhida",Escravo de Tremeere da Camarilla: Fidus recebe +1 de furtividade em ações não-direcionadas. -1 de força. Vôo [FLIGHT];
+200467,"Fidus, a Besta Encolhida",Escravo de Tremeere da Camarilla: Fidus recebe +1 de furtividade em ações não-direcionadas. -1 de força. Vôo [FLIGHT]
 201616,Fiorenza Savona,"Camarilla: Se você queimar a Vantagem para receber um voto, você recebe +1 voto. Se você queimar uma carta de ação política para receber um voto, você recebe +1 voto."
 200468,Fish,Laibon.
 200469,"Flavia,  Anjo Vingador",Independente: Sangue Amaldiçoado.
