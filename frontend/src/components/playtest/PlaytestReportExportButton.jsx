@@ -7,14 +7,17 @@ import {
   ButtonIconed,
   Modal,
   PlaytestReportExport,
+  DeckCrypt,
 } from '@/components';
+import { useApp } from '@/context';
 import { playtestServices } from '@/services';
 
-const PlaytestReportExportButton = ({ card, isPrecon = false }) => {
+const PlaytestReportExportButton = ({ value, isPrecon = false }) => {
+  const { isMobile, isDesktop } = useApp();
   const [show, setShow] = useState();
 
   const exportReports = async () => {
-    const result = await playtestServices.getReports(card, isPrecon);
+    const result = await playtestServices.getReports(value, isPrecon);
 
     let exportText = '';
     Object.keys(result).forEach((id, idx) => {
@@ -26,7 +29,7 @@ const PlaytestReportExportButton = ({ card, isPrecon = false }) => {
       }
     });
 
-    const file = new File([exportText], `${card.Name}.txt`, {
+    const file = new File([exportText], `${value.Name}.txt`, {
       type: 'text/plain;charset=utf-8',
     });
 
@@ -37,6 +40,7 @@ const PlaytestReportExportButton = ({ card, isPrecon = false }) => {
   return (
     <>
       <ButtonIconed
+        variant={isDesktop && isPrecon ? 'secondary' : 'primary'}
         onClick={() => setShow(true)}
         title="Show Playtest Reports"
         text="Reports"
@@ -45,12 +49,22 @@ const PlaytestReportExportButton = ({ card, isPrecon = false }) => {
       {show && (
         <Modal
           size="cardPlus"
-          title="Playtest Report"
+          title={`Playtest Report - ${value.Name}`}
           handleClose={() => setShow(false)}
         >
           <FlexGapped className="max-sm:flex-col">
             <div className="flex flex-col gap-2 sm:gap-4">
-              <CardImage card={card} onClick={() => setShow(false)} />
+              {!isMobile && (
+                <>
+                  {isPrecon ? (
+                    <div className="w-[370px]">
+                      <DeckCrypt deck={value.deck} noDisciplines />
+                    </div>
+                  ) : (
+                    <CardImage card={value} onClick={() => setShow(false)} />
+                  )}
+                </>
+              )}
               <ButtonIconed
                 onClick={() => exportReports()}
                 title="Save Reports"
@@ -58,7 +72,7 @@ const PlaytestReportExportButton = ({ card, isPrecon = false }) => {
                 icon={<Download />}
               />
             </div>
-            <PlaytestReportExport id={card.Id} isPrecon={isPrecon} />
+            <PlaytestReportExport id={value.Id} isPrecon={isPrecon} />
           </FlexGapped>
         </Modal>
       )}

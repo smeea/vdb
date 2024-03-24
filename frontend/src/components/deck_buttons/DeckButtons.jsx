@@ -18,6 +18,7 @@ import {
   DeckPublicSyncButton,
   DeckPublicToggleButton,
   SeatingButton,
+  PlaytestReportExportButton,
 } from '@/components';
 import { useApp } from '@/context';
 
@@ -29,11 +30,14 @@ const DeckButtons = ({
   setQrUrl,
   setShowRecommendation,
 }) => {
-  const { playtestMode, inventoryMode, username } = useApp();
+  const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = { ...deck };
 
+  const playtestPrecon =
+    deck?.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
+
   return (
-    <div className="flex flex-col space-y-1">
+    <div className="flex flex-col gap-1">
       <DeckImport setShowInfo={setShowInfo} />
       {deck &&
         (playtestMode ||
@@ -42,6 +46,12 @@ const DeckButtons = ({
             Object.keys(deck.library).some((cardid) => cardid > 110000)
           )) && (
           <>
+            {playtestPrecon && isPlaytestAdmin && (
+              <PlaytestReportExportButton
+                value={{ deck: deck, Name: deck.name, Id: playtestPrecon }}
+                isPrecon
+              />
+            )}
             {username && <DeckCloneButton deck={deck} />}
             <DeckExportButton deck={deck} />
             {isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}

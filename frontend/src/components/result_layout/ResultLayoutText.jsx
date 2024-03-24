@@ -104,7 +104,7 @@ const ResultLayoutText = ({
               <SearchHeartFill width="16" height="24" viewBox="0 0 16 16" />
             }
           />
-          {isPlaytestAdmin && <PlaytestReportExportButton card={card} />}
+          {isPlaytestAdmin && <PlaytestReportExportButton value={card} />}
         </div>
         {!isNarrow && !noClose && (
           <ButtonClose

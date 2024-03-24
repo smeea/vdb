@@ -13,7 +13,7 @@ import {
   useDeckCrypt,
 } from '@/hooks';
 
-const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
+const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const {
     setShowFloatingButtons,
     cryptDeckSort,
@@ -97,6 +97,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
           keyDisciplines={keyDisciplines}
           inSearch={inSearch}
           inMissing={inMissing}
+          noDisciplines={noDisciplines}
           shouldShowModal={shouldShowModal}
         />
       </div>
@@ -111,6 +112,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, deck }) => {
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             keyDisciplines={keyDisciplines}
+            noDisciplines={noDisciplines}
             inSearch={inSearch}
             inMissing={inMissing}
             shouldShowModal={shouldShowModal}

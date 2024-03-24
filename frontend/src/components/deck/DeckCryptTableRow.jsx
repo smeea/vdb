@@ -30,6 +30,7 @@ const DeckCryptTableRow = ({
   cryptTotal,
   inSearch,
   inMissing,
+  noDisciplines,
   shouldShowModal,
 }) => {
   const { limitedMode, inventoryMode, isDesktop } = useApp();
@@ -73,8 +74,8 @@ const DeckCryptTableRow = ({
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
     : idx % 2
-      ? 'bg-bgThird dark:bg-bgThirdDark'
-      : 'bg-bgPrimary dark:bg-bgPrimaryDark';
+    ? 'bg-bgThird dark:bg-bgThirdDark'
+    : 'bg-bgPrimary dark:bg-bgPrimaryDark';
 
   return (
     <tr
@@ -120,6 +121,7 @@ const DeckCryptTableRow = ({
         disciplinesSet={disciplinesSet}
         inSearch={inSearch}
         shouldShowModal={shouldShowModal}
+        noDisciplines={noDisciplines}
         inDeck
       />
       {showInfo && (

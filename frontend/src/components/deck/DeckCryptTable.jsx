@@ -11,6 +11,7 @@ const DeckCryptTable = ({
   handleClick,
   inSearch,
   inMissing,
+  noDisciplines,
   shouldShowModal,
 }) => {
   return (
@@ -29,6 +30,7 @@ const DeckCryptTable = ({
               showInfo={showInfo}
               cryptTotal={cryptTotal}
               inSearch={inSearch}
+              noDisciplines={noDisciplines}
               inMissing={inMissing}
               shouldShowModal={shouldShowModal}
             />
