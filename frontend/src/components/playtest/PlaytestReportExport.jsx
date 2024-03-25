@@ -11,7 +11,7 @@ const Report = ({ id, text, score }) => {
           {id.length > 20 && '...'}&gt;
         </div>{' '}
         <div className="flex justify-end">
-          <PlaytestScores value={score} />
+          <PlaytestScores value={score} isSmall />
         </div>
       </div>
       <div>

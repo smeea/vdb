@@ -3,9 +3,9 @@ import Star from '@/assets/images/icons/star.svg?react';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import { useApp } from '@/context';
 
-const PlaytestScores = ({ value, handleClick }) => {
+const PlaytestScores = ({ value, handleClick, isSmall }) => {
   const { isMobile } = useApp();
-  const SIZE = isMobile ? '22' : '24';
+  const SIZE = isSmall ? (isMobile ? '16' : '20') : isMobile ? '22' : '24';
 
   return (
     <div className="flex px-1 gap-1.5 sm:gap-2">

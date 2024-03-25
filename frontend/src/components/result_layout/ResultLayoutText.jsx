@@ -37,6 +37,7 @@ const ResultLayoutText = ({
   const inCompare = compare
     ? compare.map((i) => i.Id).includes(card.Id)
     : false;
+  const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);
 
   const handleCompare = () => {
     if (!compare) {
@@ -104,7 +105,9 @@ const ResultLayoutText = ({
               <SearchHeartFill width="16" height="24" viewBox="0 0 16 16" />
             }
           />
-          {isPlaytestAdmin && <PlaytestReportExportButton value={card} />}
+          {isPlaytestAdmin && isPlaytest && (
+            <PlaytestReportExportButton value={card} />
+          )}
         </div>
         {!isNarrow && !noClose && (
           <ButtonClose

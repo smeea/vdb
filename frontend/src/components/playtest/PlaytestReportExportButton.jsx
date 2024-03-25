@@ -48,7 +48,7 @@ const PlaytestReportExportButton = ({ value, isPrecon = false }) => {
       />
       {show && (
         <Modal
-          size="cardPlus"
+          size="card"
           title={`Playtest Report - ${value.Name}`}
           handleClose={() => setShow(false)}
         >
