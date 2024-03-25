@@ -26,7 +26,10 @@ def playtesters_route():
         return jsonify(result)
 
     if request.method == "PUT" or request.method == "DELETE":
-        user = User.query.filter_by(username=request.json["username"].lower()).one()
+        user = User.query.filter_by(username=request.json["username"].lower()).first()
+        if not user:
+            abort(400)
+
         user.playtester = True if request.method == "PUT" else False
         db.session.commit()
         return jsonify(success=True)
