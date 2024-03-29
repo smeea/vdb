@@ -3,7 +3,7 @@ import Check2 from '@/assets/images/icons/check2.svg?react';
 import { Spinner, Input, Button, ErrorOverlay } from '@/components';
 import { playtestServices } from '@/services';
 
-const AccountPlaytestAdd = ({
+const PlaytestManageAdd = ({
   playtesters,
   newPlaytesters,
   setNewPlaytesters,
@@ -63,4 +63,4 @@ const AccountPlaytestAdd = ({
   );
 };
 
-export default AccountPlaytestAdd;
+export default PlaytestManageAdd;

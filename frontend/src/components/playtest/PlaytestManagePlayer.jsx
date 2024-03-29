@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Flag, Toggle } from '@/components';
 import { playtestServices } from '@/services';
 
-const AccountPlaytestPlayer = ({ username, lang }) => {
+const PlaytestManagePlayer = ({ username, lang }) => {
   const [state, setState] = useState(true);
 
   const handleClick = () => {
@@ -22,4 +22,4 @@ const AccountPlaytestPlayer = ({ username, lang }) => {
   );
 };
 
-export default AccountPlaytestPlayer;
+export default PlaytestManagePlayer;

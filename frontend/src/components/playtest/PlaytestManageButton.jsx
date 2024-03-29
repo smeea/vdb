@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Wrench from '@/assets/images/icons/wrench.svg?react';
-import { AccountPlaytestModal, ButtonIconed } from '@/components';
+import { PlaytestManageModal, ButtonIconed } from '@/components';
 
-const AccountPlaytestButton = () => {
+const PlaytestManageButton = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -15,9 +15,9 @@ const AccountPlaytestButton = () => {
         icon={<Wrench />}
         text="Manage Playtesters"
       />
-      {showModal && <AccountPlaytestModal setShow={setShowModal} />}
+      {showModal && <PlaytestManageModal setShow={setShowModal} />}
     </>
   );
 };
 
-export default AccountPlaytestButton;
+export default PlaytestManageButton;

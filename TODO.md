@@ -4,7 +4,6 @@
 - Snapshot url in iOS
 
 # FEATURES
-- Playtest precon reports export
 - Update random seating decks from Codex
 
 # TECH IMPROVEMENTS

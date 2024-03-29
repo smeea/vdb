@@ -14,10 +14,6 @@ export { default as AccountLimitedUrlButton } from './account/AccountLimitedUrlB
 export { default as AccountLogin } from './account/AccountLogin';
 export { default as AccountLogoutButton } from './account/AccountLogoutButton';
 export { default as AccountPasswordForm } from './account/AccountPasswordForm';
-export { default as AccountPlaytestAdd } from './account/AccountPlaytestAdd';
-export { default as AccountPlaytestButton } from './account/AccountPlaytestButton';
-export { default as AccountPlaytestModal } from './account/AccountPlaytestModal';
-export { default as AccountPlaytestPlayer } from './account/AccountPlaytestPlayer';
 export { default as AccountRegister } from './account/AccountRegister';
 export { default as AccountUsernameForm } from './account/AccountUsernameForm';
 export { default as LoginBlock } from './account/LoginBlock';
@@ -228,7 +224,12 @@ export { default as UsedPopover } from './misc/UsedPopover.jsx';
 export { default as Warning } from './misc/Warning.jsx';
 export { default as WindowRows } from './misc/WindowRows.jsx';
 
+export { default as PlaytestManageAdd } from './playtest/PlaytestManageAdd';
+export { default as PlaytestManageButton } from './playtest/PlaytestManageButton';
+export { default as PlaytestManageModal } from './playtest/PlaytestManageModal';
+export { default as PlaytestManagePlayer } from './playtest/PlaytestManagePlayer';
 export { default as PlaytestScores } from './playtest/PlaytestScores.jsx';
+export { default as PlaytestReportExportAllButton } from './playtest/PlaytestReportExportAllButton.jsx';
 export { default as PlaytestReportExportButton } from './playtest/PlaytestReportExportButton.jsx';
 export { default as PlaytestReportExport } from './playtest/PlaytestReportExport.jsx';
 export { default as PlaytestReportForm } from './playtest/PlaytestReportForm.jsx';

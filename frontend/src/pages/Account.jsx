@@ -7,8 +7,9 @@ import {
   AccountChangeEmail,
   AccountChangeName,
   AccountDeleteButton,
-  AccountPlaytestButton,
   AccountLimitedButton,
+  PlaytestReportExportAllButton,
+  PlaytestManageButton,
   PlaytestLanguageSelector,
 } from '@/components';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
@@ -36,7 +37,12 @@ const Account = () => {
             <AccountChangeEmail />
             <div className="flex flex-col gap-3 sm:gap-4">
               {isPlaytester && <PlaytestLanguageSelector />}
-              {isPlaytestAdmin && <AccountPlaytestButton />}
+              {isPlaytestAdmin && (
+                <div className="flex max-sm:flex-col gap-3 sm:gap-4">
+                  <PlaytestManageButton />
+                  <PlaytestReportExportAllButton />
+                </div>
+              )}
               <AccountLimitedButton />
               <div className="flex gap-3 sm:gap-4">
                 <AccountDeleteButton />

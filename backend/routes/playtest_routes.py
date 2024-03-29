@@ -37,7 +37,7 @@ def playtesters_route():
 @login_required
 @app.route("/api/playtest/export/<string:target>/<string:id>", methods=["GET"])
 def report_export_route(target, id):
-    if target not in ['cards', 'precons']:
+    if target not in ['cards', 'precons', 'all']:
         abort(400)
     if not current_user.playtest_admin:
         abort(401)
@@ -53,10 +53,23 @@ def report_export_route(target, id):
         if report_lang != lang:
             continue
 
-        if target in report and id in report[target]:
-            if report[target][id]['score'] == 0 and report[target][id]['text'] == '':
-                continue
-            reports[p.username] = report[target][id]
+        if target in report:
+            if id == 'all':
+                for k, v in report[target].items():
+                    if v['score'] == 0 and v['text'] == '':
+                        continue
+
+                    if k in reports:
+                        reports[k][p.username] = v
+                    else:
+                        reports[k] = {
+                           p.username: v
+                        }
+
+            elif id in report[target]:
+                if report[target][id]['score'] == 0 and report[target][id]['text'] == '':
+                    continue
+                reports[p.username] = report[target][id]
 
     return jsonify(reports)
 
