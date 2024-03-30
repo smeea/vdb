@@ -57,7 +57,7 @@ const PlaytestReportExportButton = ({ value, isPrecon = false }) => {
               {!isMobile && (
                 <>
                   {isPrecon ? (
-                    <div className="w-[370px]">
+                    <div className="w-[358px]">
                       <DeckCrypt deck={value.deck} noDisciplines />
                     </div>
                   ) : (

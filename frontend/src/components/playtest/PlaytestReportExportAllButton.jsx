@@ -113,7 +113,7 @@ const PlaytestReportExportAllButton = () => {
                         {!isMobile && (
                           <>
                             {playtestPrecon ? (
-                              <div className="flex flex-col w-[370px] gap-1">
+                              <div className="flex flex-col w-[358px] gap-1">
                                 <div className="flex text-fgSecondary dark:text-fgSecondaryDark font-bold">
                                   {i.name}
                                 </div>
