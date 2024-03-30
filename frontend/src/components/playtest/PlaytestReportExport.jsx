@@ -7,8 +7,8 @@ const Report = ({ id, text, score }) => {
     <div className="flex flex-col gap-3">
       <div className="flex w-full justify-between items-center">
         <div title={id} className="text-fgName dark:text-fgNameDark">
-          &lt;{id.substring(0, 20)}
-          {id.length > 20 && '...'}&gt;
+          &lt;{id.substring(0, 15)}
+          {id.length > 15 && '...'}&gt;
         </div>{' '}
         <div className="flex justify-end">
           <PlaytestScores value={score} isSmall />
