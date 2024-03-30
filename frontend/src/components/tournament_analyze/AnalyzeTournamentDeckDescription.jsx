@@ -15,8 +15,8 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
   const deckInUrl = getDeckInUrl(deck);
 
   return (
-    <div className="flex lg:flex-col max-lg:py-1 max-sm:px-1">
-      <div className="basis-9/12">
+    <div className="flex justify-between lg:flex-col lg:gap-2">
+      <div>
         <table>
           <tbody>
             <TwdResultDescriptionTextTr
@@ -35,12 +35,12 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
           <TwdResultTags tags={deck.tags} />
         )}
       </div>
-      <div className="flex basis-3/12 max-lg:flex-col gap-1 lg:gap-2">
-        <div className="w-full">
+      <div className="flex max-lg:p-1 max-lg:flex-col justify-between lg:basis-full max-lg:flex-col gap-1">
+        <div className="basis-full">
           <TwdOpenDeckButton url={deckInUrl} />
         </div>
         {username && (
-          <div className="w-full">
+          <div className="basis-full">
             <DeckCloneButton
               deck={{
                 ...deck,
