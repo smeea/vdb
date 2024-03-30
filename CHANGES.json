@@ -1,5 +1,13 @@
 [
   {
+    "version": "2024-03-29",
+    "changes": [
+      "Add Salut Brie! event in Norwich, UK to Tournament Analyze - https://vdb.im/tournament_analyze/11196",
+      "Add overall playtest reports view/export for coordinators",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-03-23",
     "changes": [
       "Update Brazilian Portuguese translation. Thanks to Estel Matiazi for great job!"
