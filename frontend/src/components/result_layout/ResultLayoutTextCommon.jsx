@@ -21,7 +21,7 @@ const ResultLayoutTextCommon = ({
   const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);
 
   return (
-    <div className="space-y-3">
+    <div className="flex flex-col gap-3">
       <div className="flex gap-2">
         <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
           Sets:
@@ -41,7 +41,7 @@ const ResultLayoutTextCommon = ({
         </div>
       </div>
       {Object.keys(card['Rulings']).length > 0 && (
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Rulings:
           </div>

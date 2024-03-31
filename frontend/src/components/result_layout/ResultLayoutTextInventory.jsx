@@ -45,24 +45,30 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
             <div>- In Inventory</div>
           </div>
         </div>
-        <div className="flex flex-col basis-full md:basis-2/3 gap-0.5">
-          {softUsedMax > 0 && (
-            <UsedDescription
-              usedCards={usedCards.soft[card.Id]}
-              decks={decks}
-              inventoryType="s"
-            />
-          )}
-          {hardUsedTotal > 0 && (
-            <UsedDescription
-              usedCards={usedCards.hard[card.Id]}
-              decks={decks}
-              inventoryType="h"
-            />
-          )}
-        </div>
+        {(softUsedMax > 0 || hardUsedTotal > 0) && (
+          <>
+            <div className="flex flex-col basis-full md:basis-2/3 gap-0.5">
+              {softUsedMax > 0 && (
+                <UsedDescription
+                  usedCards={usedCards.soft[card.Id]}
+                  decks={decks}
+                  inventoryType="s"
+                />
+              )}
+              {hardUsedTotal > 0 && (
+                <UsedDescription
+                  usedCards={usedCards.hard[card.Id]}
+                  decks={decks}
+                  inventoryType="h"
+                />
+              )}
+            </div>
+          </>
+        )}
       </div>
-      <InventoryText text={text} card={card} inPopover={inPopover} />
+      {(!inPopover || text) && (
+        <InventoryText text={text} card={card} inPopover={inPopover} />
+      )}
     </div>
   );
 };
