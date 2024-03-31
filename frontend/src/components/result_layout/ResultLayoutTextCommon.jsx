@@ -48,7 +48,7 @@ const ResultLayoutTextCommon = ({
           <ResultLayoutTextRulings rulings={card['Rulings']} />
         </div>
       )}
-      {(forceInventoryMode || inventoryMode) && (
+      {!isPlaytest && (forceInventoryMode || inventoryMode) && (
         <>
           <Hr />
           <div className="flex flex-col gap-1">
