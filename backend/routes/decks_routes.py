@@ -3,11 +3,9 @@ from flask_login import current_user, login_required
 from datetime import date, datetime, timedelta
 import uuid
 import json
-
 from deck_recommendation import deck_recommendation
 from api import app, db, login
 from models import Deck
-
 
 def parse_user_decks(user_decks):
     decks = {}
@@ -346,36 +344,15 @@ def update_deck_route(deckid):
             branch_deck.master = d.deckid
 
     db.session.commit()
-
     return jsonify(success=True)
 
 
-@app.route("/api/deck/<string:deckid>/recommendation", methods=["GET"])
-def get_recommendation_route(deckid):
+@app.route("/api/deck/recommendation", methods=["POST"])
+def get_recommendation_route():
     cards = {}
-
-    if len(deckid) == 32:
-        deck = Deck.query.get(deckid)
-        cards = deck.cards
-
-    elif ":" in deckid:
-        set, precon = deckid.split(":")
-
-        with open("../frontend/public/data/precon_decks.json", "r") as precons_file:
-            precon_decks = json.load(precons_file)
-            cards = {}
-            for k, v in precon_decks[set][precon].items():
-                cards[int(k)] = v
-
-    else:
-        with open("twd_decks.json", "r") as twd_decks_file:
-            twd_decks = json.load(twd_decks_file)
-            cards = {}
-            for k, v in twd_decks[deckid]["cards"].items():
-                cards[int(k)] = v
-
+    for k, v in request.json["cards"].items():
+        cards[int(k)] = v
     recommends = deck_recommendation(cards)
-
     return {"crypt": recommends["crypt"], "library": recommends["library"]}
 
 
@@ -432,7 +409,6 @@ def create_branch_route(deckid):
 
     master.branches = branches_deckids
     db.session.commit()
-
     return jsonify(branches)
 
 

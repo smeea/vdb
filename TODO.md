@@ -3,7 +3,6 @@
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Snapshot url in iOS
 - Deck compare crypt
-- Recommendations to deck-in-url
 
 # FEATURES
 - Update random seating decks from Codex

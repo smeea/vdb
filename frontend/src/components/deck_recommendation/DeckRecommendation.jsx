@@ -5,10 +5,22 @@ import { useFetch } from '@/hooks';
 
 const DeckRecommendation = ({ setShow, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();
-  const url = `${import.meta.env.VITE_API_URL}/deck/${
-    deck.deckid
-  }/recommendation`;
-  const { value } = useFetch(url, {}, []);
+  const cards = {};
+  [...Object.values(deck.crypt), ...Object.values(deck.library)].forEach(
+    (card) => {
+      if (card.q) cards[card.c.Id] = card.q;
+    }
+  );
+
+  const url = `${import.meta.env.VITE_API_URL}/deck/recommendation`;
+  const { value } = useFetch(
+    url,
+    {
+      method: 'POST',
+      body: JSON.stringify({ cards: cards }),
+    },
+    [deck]
+  );
 
   const crypt = value
     ? value.crypt.map((cardid) => {
