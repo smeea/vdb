@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import {
   DeckSortButton,
   InventoryAddPreconRow,
+  ConditionalTooltipOrModal,
   Modal,
   Input,
 } from '@/components';
@@ -9,6 +10,28 @@ import { decksSort } from '@/utils';
 import { PLAYTEST } from '@/utils/constants';
 import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+
+const TooltipText = () => {
+  return (
+    <div className="flex flex-col gap-1">
+      <div>
+        Numbers below represent maximum quantity of particular precon you can
+        assemble from your inventory.
+      </div>
+      <div>
+        Every precon calculated separately using your entire inventory, meaning
+        real number of precons you will be able to assemble is smaller as every
+        other precon will consume some cards and they will not be available
+        anymore.
+      </div>
+      <div>
+        VDB does not track particular precons you added, and calculation
+        performed from just card numbers in the inventory regardless of how they
+        appeared there.
+      </div>
+    </div>
+  );
+};
 
 const InventoryAddPreconModal = ({ handleClose }) => {
   const { preconDecks, isDesktop, isMobile } = useApp();
@@ -90,7 +113,17 @@ const InventoryAddPreconModal = ({ handleClose }) => {
                 />
               </th>
               <th className="min-w-[110px]">
-                <div className="flex items-center justify-end">
+                <div className="flex items-center justify-end gap-1">
+                  <ConditionalTooltipOrModal
+                    className="basis-full"
+                    title="Precon Quantity"
+                    isModal={isMobile}
+                    overlay={<TooltipText />}
+                  >
+                    <div className="flex basis-full justify-center text-fgThird dark:text-fgThirdDark">
+                      [?]
+                    </div>
+                  </ConditionalTooltipOrModal>
                   <DeckSortButton onChange={setSortMethod} />
                 </div>
               </th>

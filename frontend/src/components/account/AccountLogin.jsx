@@ -11,19 +11,19 @@ import { userServices } from '@/services';
 
 const LoginTooltipText = () => {
   return (
-    <>
+    <div className="flex flex-col gap-1">
       <div>Account is required for Deck Building and Inventory.</div>
       <div>
         Decks and Inventory are stored on the server and you can access them
         from any device.
       </div>
-    </>
+    </div>
   );
 };
 
 const PasswordTooltipText = () => {
   return (
-    <>
+    <div className="flex flex-col gap-1">
       <div>There is no automatic password restoration yet.</div>
       <div>
         Please{' '}
@@ -35,7 +35,7 @@ const PasswordTooltipText = () => {
       <div>
         Usually I do it within a day, but sometimes it takes a bit more.
       </div>
-    </>
+    </div>
   );
 };
 

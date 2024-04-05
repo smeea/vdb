@@ -13,7 +13,7 @@ const Checkbox = ({
   const htmlId = id ?? `${prefix ?? ''}-${name}-${value}`;
 
   return (
-    <div className={`flex items-center space-x-1.5 ${className}`}>
+    <div className={`flex items-center gap-1.5 ${className}`}>
       <input
         name={name}
         value={value}

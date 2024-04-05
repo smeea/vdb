@@ -7,6 +7,7 @@ const ConditionalTooltipOrModal = ({
   placement,
   overlay,
   isModal,
+  className = '',
   centered = true,
 }) => {
   const [showModal, setShowModal] = useState();
@@ -14,9 +15,11 @@ const ConditionalTooltipOrModal = ({
   return (
     <>
       {isModal ? (
-        <div onClick={() => setShowModal(true)}>{children}</div>
+        <div className={className} onClick={() => setShowModal(true)}>
+          {children}
+        </div>
       ) : (
-        <Tooltip placement={placement} overlay={overlay}>
+        <Tooltip className={className} placement={placement} overlay={overlay}>
           {children}
         </Tooltip>
       )}

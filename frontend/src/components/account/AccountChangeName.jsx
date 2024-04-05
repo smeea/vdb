@@ -13,7 +13,7 @@ import { userServices } from '@/services';
 
 const TooltipText = () => {
   return (
-    <>
+    <div className="flex flex-col gap-1">
       <div>Public name is default author name for new decks.</div>
       <div>
         Author name is per-deck and can be changed anytime for each deck.
@@ -26,7 +26,7 @@ const TooltipText = () => {
         Public name is <b>not</b> your account username (the one you login with,
         which cannot be changed).
       </div>
-    </>
+    </div>
   );
 };
 
