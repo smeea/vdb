@@ -36,7 +36,7 @@ const DeckCryptHeader = ({
     cryptTotal,
     hasWrongGroups,
     cryptGroups,
-  } = useDeckCrypt(cards, null, null);
+  } = useDeckCrypt(cards);
 
   return (
     <>
