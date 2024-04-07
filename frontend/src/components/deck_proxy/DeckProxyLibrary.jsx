@@ -34,7 +34,7 @@ const DeckProxyLibrary = ({
       (cardid) =>
         cardid < 200000 &&
         proxySelected[cardid].print &&
-        proxySelected[cardid].q > 0,
+        proxySelected[cardid].q > 0
     )
     .map((cardid) => proxySelected[cardid]);
 
@@ -64,60 +64,62 @@ const DeckProxyLibrary = ({
     setShowFloatingButtons(true);
   };
 
-  const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
-    <div key={cardtype}>
-      <div className="flex justify-between ">
-        <ResultLibraryType
-          cardtype={cardtype}
-          total={libraryByTypeTotal[cardtype]}
-          trifleTotal={cardtype == MASTER && trifleTotal}
-        />
-      </div>
-      <DeckProxyLibraryTable
-        inventoryType={deck.inventoryType}
-        handleClick={handleClick}
-        cards={libraryByType[cardtype]}
-        handleProxySelector={handleProxySelector}
-        handleSetSelector={handleSetSelector}
-        handleProxyCounter={handleProxyCounter}
-        proxySelected={proxySelected}
-      />
-    </div>
-  ));
-
-  const LibrarySideDeck = Object.keys(librarySideByType).map((cardtype) => (
-    <div key={cardtype}>
-      <ResultLibraryType
-        cardtype={cardtype}
-        total={0}
-        trifleTotal={cardtype == MASTER && trifleTotal}
-      />
-      <DeckProxyLibraryTable
-        inventoryType={deck.inventoryType}
-        handleClick={handleClickSide}
-        cards={librarySideByType[cardtype]}
-        handleProxySelector={handleProxySelector}
-        handleSetSelector={handleSetSelector}
-        handleProxyCounter={handleProxyCounter}
-        proxySelected={proxySelected}
-      />
-    </div>
-  ));
-
   return (
     <FlexGapped className="flex-col">
       <div className="space-y-2">
         <Header>
           <div className="px-2 font-bold">Library [{libraryTotalSelected}]</div>
         </Header>
-        {LibraryDeck}
+        {Object.keys(libraryByType).map((cardtype) => {
+          return (
+            <div key={cardtype}>
+              <div className="flex justify-between ">
+                <ResultLibraryType
+                  cardtype={cardtype}
+                  total={libraryByTypeTotal[cardtype]}
+                  trifleTotal={cardtype == MASTER && trifleTotal}
+                />
+              </div>
+              <DeckProxyLibraryTable
+                inventoryType={deck.inventoryType}
+                handleClick={handleClick}
+                cards={libraryByType[cardtype]}
+                handleProxySelector={handleProxySelector}
+                handleSetSelector={handleSetSelector}
+                handleProxyCounter={handleProxyCounter}
+                proxySelected={proxySelected}
+              />
+            </div>
+          );
+        })}
+        ;
       </div>
       {librarySide.length > 0 && (
         <div className="opacity-60 dark:opacity-50 space-y-2">
           <Header>
             <div className="px-2 font-bold">Side Library</div>
           </Header>
-          {LibrarySideDeck}
+          {Object.keys(librarySideByType).map((cardtype) => {
+            return (
+              <div key={cardtype}>
+                <ResultLibraryType
+                  cardtype={cardtype}
+                  total={0}
+                  trifleTotal={cardtype == MASTER && trifleTotal}
+                />
+                <DeckProxyLibraryTable
+                  inventoryType={deck.inventoryType}
+                  handleClick={handleClickSide}
+                  cards={librarySideByType[cardtype]}
+                  handleProxySelector={handleProxySelector}
+                  handleSetSelector={handleSetSelector}
+                  handleProxyCounter={handleProxyCounter}
+                  proxySelected={proxySelected}
+                />
+              </div>
+            );
+          })}
+          ;
         </div>
       )}
       {shouldShowModal && (
