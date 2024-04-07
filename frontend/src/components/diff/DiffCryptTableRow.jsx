@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import {
   DeckCardQuantityTd,
   DeckDrawProbability,
-  DiffQuantityDiff,
+  DiffQuantityDiffCard,
   ResultCryptTableRowCommon,
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
@@ -59,7 +59,7 @@ const DiffCryptTableRow = ({
         q={qFrom}
         softUsedMax={softUsedMax}
       />
-      <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
+      <DiffQuantityDiffCard qFrom={qFrom} qTo={qTo} />
       <ResultCryptTableRowCommon
         card={card.c}
         handleClick={handleClick}

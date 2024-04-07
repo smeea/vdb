@@ -9,6 +9,37 @@ import {
 import { MASTER } from '@/utils/constants';
 import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
+import { DiffQuantityDiff } from '@/components';
+
+const BloodPoolDifference = ({ qTo, qFrom }) => {
+  return (
+    <>
+      {qTo === qFrom ? (
+        <>{qTo}</>
+      ) : (
+        <div className="flex">
+          {qFrom}
+          <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
+        </div>
+      )}
+    </>
+  );
+};
+
+const LibraryTotalDifference = ({ qTo, qFrom }) => {
+  return (
+    <>
+      {qTo === qFrom ? (
+        <>{qTo}</>
+      ) : (
+        <div className="flex">
+          {qFrom}
+          <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
+        </div>
+      )}
+    </>
+  );
+};
 
 const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   const { setShowFloatingButtons } = useApp();
@@ -22,8 +53,11 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
     hasBanned,
     trifleTotal,
     libraryTotal,
+    libraryToTotal,
     poolTotal,
+    poolToTotal,
     bloodTotal,
+    bloodToTotal,
     libraryByTypeTotal,
     libraryByClansTotal,
     libraryByDisciplinesTotal,
@@ -56,9 +90,13 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   return (
     <>
       <DeckLibraryHeader
-        libraryTotal={libraryTotal}
-        bloodTotal={bloodTotal}
-        poolTotal={poolTotal}
+        libraryTotal={
+          <LibraryTotalDifference qTo={libraryToTotal} qFrom={libraryTotal} />
+        }
+        bloodTotal={
+          <BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />
+        }
+        poolTotal={<BloodPoolDifference qTo={poolToTotal} qFrom={poolTotal} />}
         hasBanned={hasBanned}
         isEditable={isEditable}
         showInfo={showInfo}

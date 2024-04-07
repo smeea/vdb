@@ -156,6 +156,7 @@ export { default as DiffLibraryTableRow } from './diff/DiffLibraryTableRow.jsx';
 export { default as DiffMissingModalWrapper } from './diff/DiffMissingModalWrapper.jsx';
 export { default as DiffProxyButtonWrapper } from './diff/DiffProxyButtonWrapper.jsx';
 export { default as DiffQuantityDiff } from './diff/DiffQuantityDiff.jsx';
+export { default as DiffQuantityDiffCard } from './diff/DiffQuantityDiffCard.jsx';
 export { default as DiffSelect } from './diff/DiffSelect.jsx';
 export { default as DiffSelectDeck } from './diff/DiffSelectDeck.jsx';
 
