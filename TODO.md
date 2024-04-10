@@ -4,7 +4,6 @@
 - Snapshot url in iOS
 
 # FEATURES
-- Show loading indicator in reports
 - Add new decks from Codex to seating simulator
 - Update random seating decks from Codex
 - TWD search with % V5-compatibility - after BCP clarify V5
