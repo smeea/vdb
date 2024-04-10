@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hr, PlaytestScores } from '@/components';
+import { Spinner, Hr, PlaytestScores } from '@/components';
 import { useFetch } from '@/hooks';
 
 const Report = ({ id, text, score }) => {
@@ -27,23 +27,24 @@ const PlaytestReportExport = ({ id, isPrecon = false }) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/export/${
     isPrecon ? 'precons' : 'cards'
   }/${id}`;
-  const { value: dataValue } = useFetch(url, {}, [id]);
+  const { value } = useFetch(url, {}, [id]);
 
   return (
     <div className="flex basis-full flex-col gap-4">
-      {dataValue &&
-        Object.keys(dataValue).map((id, idx) => {
+      {value ? (
+        Object.keys(value).map((id, idx) => {
           return (
             <React.Fragment key={id}>
-              <Report
-                id={id}
-                text={dataValue[id].text}
-                score={dataValue[id].score}
-              />
-              {idx + 1 < Object.keys(dataValue).length && <Hr />}
+              <Report id={id} text={value[id].text} score={value[id].score} />
+              {idx + 1 < Object.keys(value).length && <Hr />}
             </React.Fragment>
           );
-        })}
+        })
+      ) : (
+        <div className="flex h-full items-center justify-center pt-5">
+          <Spinner className="size-7" />
+        </div>
+      )}
     </div>
   );
 };
