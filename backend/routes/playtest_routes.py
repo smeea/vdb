@@ -74,7 +74,6 @@ def report_export_route(target, id):
                         continue
                     reports[p.username] = report[t][id]
 
-    print(reports)
     return jsonify(reports)
 
 @login_required
