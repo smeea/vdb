@@ -45,6 +45,7 @@ def report_export_route(target, id):
     lang = current_user.playtest_report['lang'] if 'lang' in current_user.playtest_report else 'en-EN'
     reports = {}
     playtesters = User.query.filter_by(playtester=True).all()
+    targets = ['cards', 'precons'] if target == 'all' else [target]
 
     for p in playtesters:
         # defaulting lang to English if not specified
@@ -53,24 +54,27 @@ def report_export_route(target, id):
         if report_lang != lang:
             continue
 
-        if target in report:
-            if id == 'all':
-                for k, v in report[target].items():
-                    if v['score'] == 0 and v['text'] == '':
+
+        for t in targets:
+            if t in report:
+                if id == 'all':
+                    for k, v in report[t].items():
+                        if v['score'] == 0 and v['text'] == '':
+                            continue
+
+                        if k in reports:
+                            reports[k][p.username] = v
+                        else:
+                            reports[k] = {
+                                p.username: v
+                            }
+
+                elif id in report[t]:
+                    if report[t][id]['score'] == 0 and report[t][id]['text'] == '':
                         continue
+                    reports[p.username] = report[t][id]
 
-                    if k in reports:
-                        reports[k][p.username] = v
-                    else:
-                        reports[k] = {
-                           p.username: v
-                        }
-
-            elif id in report[target]:
-                if report[target][id]['score'] == 0 and report[target][id]['text'] == '':
-                    continue
-                reports[p.username] = report[target][id]
-
+    print(reports)
     return jsonify(reports)
 
 @login_required

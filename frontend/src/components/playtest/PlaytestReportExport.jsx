@@ -1,6 +1,5 @@
 import React from 'react';
 import { Spinner, Hr, PlaytestScores } from '@/components';
-import { useFetch } from '@/hooks';
 
 const Report = ({ id, text, score }) => {
   return (
@@ -23,12 +22,7 @@ const Report = ({ id, text, score }) => {
   );
 };
 
-const PlaytestReportExport = ({ id, isPrecon = false }) => {
-  const url = `${import.meta.env.VITE_API_URL}/playtest/export/${
-    isPrecon ? 'precons' : 'cards'
-  }/${id}`;
-  const { value } = useFetch(url, {}, [id]);
-
+const PlaytestReportExport = ({ value }) => {
   return (
     <div className="flex basis-full flex-col gap-4">
       {value ? (

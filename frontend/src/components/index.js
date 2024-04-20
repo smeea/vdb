@@ -231,8 +231,10 @@ export { default as PlaytestManageModal } from './playtest/PlaytestManageModal';
 export { default as PlaytestManagePlayer } from './playtest/PlaytestManagePlayer';
 export { default as PlaytestScores } from './playtest/PlaytestScores.jsx';
 export { default as PlaytestReportExportAllButton } from './playtest/PlaytestReportExportAllButton.jsx';
+export { default as PlaytestReportExportAllWrapper } from './playtest/PlaytestReportExportAllWrapper.jsx';
 export { default as PlaytestReportExportButton } from './playtest/PlaytestReportExportButton.jsx';
 export { default as PlaytestReportExport } from './playtest/PlaytestReportExport.jsx';
+export { default as PlaytestReportExportWrapper } from './playtest/PlaytestReportExportWrapper.jsx';
 export { default as PlaytestReportForm } from './playtest/PlaytestReportForm.jsx';
 export { default as PlaytestLanguageSelector } from './playtest/PlaytestLanguageSelector.jsx';
 

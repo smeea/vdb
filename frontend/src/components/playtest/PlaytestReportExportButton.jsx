@@ -6,7 +6,7 @@ import {
   FlexGapped,
   ButtonIconed,
   Modal,
-  PlaytestReportExport,
+  PlaytestReportExportWrapper,
   DeckCrypt,
 } from '@/components';
 import { useApp } from '@/context';
@@ -34,7 +34,7 @@ const PlaytestReportExportButton = ({ value, isPrecon = false }) => {
     });
 
     let { saveAs } = await import('file-saver');
-    saveAs(file, name);
+    saveAs(file);
   };
 
   return (
@@ -72,7 +72,7 @@ const PlaytestReportExportButton = ({ value, isPrecon = false }) => {
                 icon={<Download />}
               />
             </div>
-            <PlaytestReportExport id={value.Id} isPrecon={isPrecon} />
+            <PlaytestReportExportWrapper id={value.Id} isPrecon={isPrecon} />
           </FlexGapped>
         </Modal>
       )}
