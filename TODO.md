@@ -4,7 +4,6 @@
 - Snapshot url in iOS
 
 # FEATURES
-- Playtest grade scale explanation
 - TWD search with % V5-compatibility - after BCP clarify V5
 - Deck details show % V5-compatibility - after BCP clarify V5
 
