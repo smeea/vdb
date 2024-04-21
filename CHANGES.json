@@ -1,5 +1,15 @@
 [
   {
+    "version": "2024-04-20",
+    "changes": [
+      "Update TWDA",
+      "Deck Compare to show diff in Library total cards, blood and pool cost",
+      "Update Table Seating simulator with modern archetypes from Codex (https://codex-of-the-damned.org)",
+      "Add sorting by Name or Clan/Discipline in playtest reports for coordinators (and improve loading speed)",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-03-29",
     "changes": [
       "Add Salut Brie! event in Norwich, UK to Tournament Analyze - https://vdb.im/tournament_analyze/11196",
