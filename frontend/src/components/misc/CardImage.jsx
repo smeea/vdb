@@ -17,7 +17,7 @@ const CardImage = ({ card, set, className = 'min-w-[358px]', onClick }) => {
       {lang !== 'en-EN' || set ? (
         <img
           className={className}
-          src={`${otherUrl}.jpg`}
+          src={`${otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
           alt={card['Name']}
           onClick={onClick}
           onError={resetImgSrc}
