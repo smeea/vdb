@@ -118,7 +118,7 @@ export { default as DeckImportBadCardsModal } from './deck_import/DeckImportBadC
 export { default as DeckImportText } from './deck_import/DeckImportText.jsx';
 
 export { default as DeckProxyButton } from './deck_proxy/DeckProxyButton.jsx';
-export { default as DeckProxyButtonWrapper } from './deck_proxy/DeckProxyButton.jsx';
+export { default as DeckProxyButtonWrapper } from './deck_proxy/DeckProxyButtonWrapper.jsx';
 export { default as DeckProxyCrypt } from './deck_proxy/DeckProxyCrypt.jsx';
 export { default as DeckProxyCryptTable } from './deck_proxy/DeckProxyCryptTable.jsx';
 export { default as DeckProxyCryptTableRow } from './deck_proxy/DeckProxyCryptTableRow.jsx';
