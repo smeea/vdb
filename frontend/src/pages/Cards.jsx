@@ -43,9 +43,9 @@ const Cards = () => {
         Math.random() *
           Math.floor(
             Object.keys(cryptCardBase).filter(
-              (cardid) => playtestMode || cardid < 210000,
-            ).length,
-          ),
+              (cardid) => playtestMode || cardid < 210000
+            ).length
+          )
       ) + 200000;
     navigate(`/cards/${cardid}`);
   };
@@ -56,9 +56,9 @@ const Cards = () => {
         Math.random() *
           Math.floor(
             Object.keys(libraryCardBase).filter(
-              (cardid) => playtestMode || cardid < 110000,
-            ).length,
-          ),
+              (cardid) => playtestMode || cardid < 110000
+            ).length
+          )
       ) + 100000;
     navigate(`/cards/${cardid}`);
   };
@@ -172,11 +172,11 @@ const Cards = () => {
                   {playtestMode ||
                   card.Id < 110000 ||
                   (card.Id > 200000 && card.Id < 210000) ? (
-                    <div className="flex border border-bgSecondary dark:border-bgSecondaryDark">
+                    <div className="flex brder border-bgSecondary dark:border-bgSecondaryDark">
                       <div>
                         <CardImage card={card} set={imageSet} />
                       </div>
-                      <div className="w-full p-5">
+                      <div className="w-full pt-1 pl-5">
                         <ResultLayoutText
                           card={card}
                           setImageSet={setImageSet}
