@@ -1,5 +1,12 @@
 [
   {
+    "version": "2024-04-24",
+    "changes": [
+      "Update card images (mostly for V5C)",
+      "Fix pdf proxy for inventory missing"
+    ]
+  },
+  {
     "version": "2024-04-20",
     "changes": [
       "Update TWDA",

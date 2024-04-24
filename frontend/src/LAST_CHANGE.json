@@ -1,10 +1,7 @@
 {
-  "version": "2024-04-20",
+  "version": "2024-04-24",
   "changes": [
-    "Update TWDA",
-    "Deck Compare to show diff in Library total cards, blood and pool cost",
-    "Update Table Seating simulator with modern archetypes from Codex (https://codex-of-the-damned.org)",
-    "Add sorting by Name or Clan/Discipline in playtest reports for coordinators (and improve loading speed)",
-    "Small other fixes and improvements"
+    "Update card images (mostly for V5C)",
+    "Fix pdf proxy for inventory missing"
   ]
 }
