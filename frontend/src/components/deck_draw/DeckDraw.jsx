@@ -42,9 +42,8 @@ const DeckDraw = ({ deck, setShow }) => {
   const [drawedLibrary, setDrawedLibrary] = useState([]);
   const [burnedCrypt, setBurnedCrypt] = useState([]);
   const [burnedLibrary, setBurnedLibrary] = useState([]);
-  const [initialTransfers, setInitialTransfers] = useState(
-    getRandomTransfers()
-  );
+  const [initialTransfers, setInitialTransfers] =
+    useState(getRandomTransfers());
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);

@@ -14,7 +14,7 @@ const InventoryText = ({ card, text, inPopover }) => {
       inventoryCardTextChange(card, newText);
     },
     300,
-    [newText]
+    [newText],
   );
 
   return (

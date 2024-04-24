@@ -141,8 +141,8 @@ const TournamentAnalyze = () => {
         parseInt(array[20]) > 5
           ? parseInt(array[20])
           : wb.Sheets['Final Round']
-          ? getFinalPlace(playerNumber)
-          : parseInt(array[17]);
+            ? getFinalPlace(playerNumber)
+            : parseInt(array[17]);
 
       const name = `${array[1]} ${array[2]}`;
 

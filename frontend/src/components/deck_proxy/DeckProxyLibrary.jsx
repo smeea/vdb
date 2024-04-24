@@ -34,7 +34,7 @@ const DeckProxyLibrary = ({
       (cardid) =>
         cardid < 200000 &&
         proxySelected[cardid].print &&
-        proxySelected[cardid].q > 0
+        proxySelected[cardid].q > 0,
     )
     .map((cardid) => proxySelected[cardid]);
 

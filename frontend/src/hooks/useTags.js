@@ -134,7 +134,7 @@ const testCryptCombat = (card) => {
     haveTraits(
       ['1 strength', 'optional press', 'additional strike', 'prevent'],
       card,
-      CryptTraitsRegexMap
+      CryptTraitsRegexMap,
     )
   ) {
     return true;
@@ -144,7 +144,7 @@ const testCryptCombat = (card) => {
 const testCryptMmpa = (card) => {
   if (
     ['Anson', 'Cybele', 'Nana Buruku', 'Huitzilopochtli', 'Isanwayen'].includes(
-      card['Name']
+      card['Name'],
     )
   )
     return true;
@@ -203,7 +203,7 @@ const testLibraryCombat = (card) => {
     haveTraits(
       ['strength', 'aggravated', 'prevent', 'press', 'additional strike'],
       card,
-      LibraryTraitsRegexMap
+      LibraryTraitsRegexMap,
     )
   ) {
     return true;

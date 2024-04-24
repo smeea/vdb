@@ -8,9 +8,7 @@ const PlaytestReportExportWrapper = ({ id, isPrecon }) => {
   }/${id}`;
   const { value } = useFetch(url, {}, [id]);
 
-  return (
-    <PlaytestReportExport value={value} />
-  );
+  return <PlaytestReportExport value={value} />;
 };
 
 export default PlaytestReportExportWrapper;

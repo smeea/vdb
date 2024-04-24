@@ -6,7 +6,7 @@ export const login = (
   username,
   password,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const options = {
     method: 'POST',
@@ -21,7 +21,7 @@ export const login = (
     loginUrl,
     { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError
+    onError,
   );
 };
 
@@ -47,7 +47,7 @@ export const register = (
   password,
   email,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const options = {
     method: 'POST',
@@ -62,7 +62,7 @@ export const register = (
     accountUrl,
     { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError
+    onError,
   );
 };
 
@@ -70,7 +70,7 @@ export const changePassword = (
   password,
   newPassword,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const options = {
     method: 'PUT',
@@ -84,7 +84,7 @@ export const changePassword = (
     accountUrl,
     { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError
+    onError,
   );
 };
 
@@ -92,7 +92,7 @@ export const changeEmail = (
   password,
   email,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const options = {
     method: 'PUT',
@@ -106,14 +106,14 @@ export const changeEmail = (
     accountUrl,
     { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError
+    onError,
   );
 };
 
 export const changeName = (
   publicName,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const options = {
     method: 'PUT',
@@ -126,14 +126,14 @@ export const changeName = (
     accountUrl,
     { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError
+    onError,
   );
 };
 
 export const deleteAccount = (
   password,
   onSuccess = () => {},
-  onError = () => {}
+  onError = () => {},
 ) => {
   const options = {
     method: 'DELETE',
@@ -146,7 +146,7 @@ export const deleteAccount = (
     accountUrl,
     { ...DEFAULT_OPTIONS, ...options },
     onSuccess,
-    onError
+    onError,
   );
 };
 
@@ -155,7 +155,7 @@ const fetchWithCallbacks = (
   url,
   options,
   onSuccessCallBack,
-  onErrorCallBack
+  onErrorCallBack,
 ) => {
   fetch(url, options)
     .then((response) => {

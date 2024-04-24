@@ -15,7 +15,7 @@ import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
 
-const Title = ({isPrecon}) => {
+const Title = ({ isPrecon }) => {
   const { isMobile } = useApp();
 
   return (
@@ -27,24 +27,28 @@ const Title = ({isPrecon}) => {
         overlay={
           <div className="flex flex-col gap-2">
             <div>
-              Please consult with your playtest coordinator how to
-              properly report. They may have more specific guidelines.
+              Please consult with your playtest coordinator how to properly
+              report. They may have more specific guidelines.
             </div>
             <div>
-              Score represent how STRONG {isPrecon ? 'precon' : 'card'} is, not how balanced or well-designed it is:
+              Score represent how STRONG {isPrecon ? 'precon' : 'card'} is, not
+              how balanced or well-designed it is:
             </div>
             <div>
               1-Star is Useless/Unplayable, 10-Star is Overpowered/Broken.
-              Please leave more detailed feedback in report field to backup your score, especially if it is very low or high.
+              Please leave more detailed feedback in report field to backup your
+              score, especially if it is very low or high.
             </div>
             <div>
-              Your entry will be preserved
-              during playtest round and you can update it as you wish until the
-              round is over. At the end of the round coordinators will
-              automatically receive scores and text report you filled.
+              Your entry will be preserved during playtest round and you can
+              update it as you wish until the round is over. At the end of the
+              round coordinators will automatically receive scores and text
+              report you filled.
             </div>
             <div>
-              You can leave many different thoughts ('reports') in the text field. Please separate them by empty line to make it easier for coordinators to understand.
+              You can leave many different thoughts (&apos;reports&apos;) in the
+              text field. Please separate them by empty line to make it easier
+              for coordinators to understand.
             </div>
           </div>
         }
@@ -106,9 +110,9 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      {!isPrecon && <Title isPrecon={isPrecon}/>}
+      {!isPrecon && <Title isPrecon={isPrecon} />}
       <div className="flex w-full items-center gap-3 justify-between">
-        {isPrecon && <Title isPrecon={isPrecon}/>}
+        {isPrecon && <Title isPrecon={isPrecon} />}
         <PlaytestScores value={score} handleClick={handleScoreChange} />
         <ButtonClose
           title="Clear Score"

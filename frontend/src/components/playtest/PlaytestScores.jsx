@@ -18,7 +18,7 @@ const PlaytestScores = ({ value, handleClick, isSmall }) => {
     'Very strong',
     'Extremely Strong',
     'Overpowered / Broken',
-  ]
+  ];
 
   return (
     <div className="flex px-1 gap-1.5 sm:gap-2">

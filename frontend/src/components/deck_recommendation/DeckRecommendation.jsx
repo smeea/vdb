@@ -9,7 +9,7 @@ const DeckRecommendation = ({ setShow, deck }) => {
   [...Object.values(deck.crypt), ...Object.values(deck.library)].forEach(
     (card) => {
       if (card.q) cards[card.c.Id] = card.q;
-    }
+    },
   );
 
   const url = `${import.meta.env.VITE_API_URL}/deck/recommendation`;
@@ -19,7 +19,7 @@ const DeckRecommendation = ({ setShow, deck }) => {
       method: 'POST',
       body: JSON.stringify({ cards: cards }),
     },
-    [deck]
+    [deck],
   );
 
   const crypt = value
