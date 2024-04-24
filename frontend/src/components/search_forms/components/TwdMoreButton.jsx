@@ -43,7 +43,7 @@ const TwdMoreButton = () => {
         <MenuItem onClick={() => navigate('/tournament_analyze')}>
           <div className="flex items-center gap-2">
             <PieChartFill />
-            Analyze Tournament
+            Analyze Tournaments
           </div>
         </MenuItem>
       </MenuItems>

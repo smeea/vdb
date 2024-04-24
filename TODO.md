@@ -2,7 +2,6 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Snapshot url in iOS
-- Tournament Analyze to Abour
 - Fix Analyze Nationals 2023
 
 # FEATURES

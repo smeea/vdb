@@ -58,6 +58,9 @@ const About = () => {
                 <Link to="/twd">Search Tournament Winning Decks</Link>
               </li>
               <li>
+                <Link to="/tournament_analyze">Tournaments analyze</Link>
+              </li>
+              <li>
                 <Link to="/pda">Search Public Deck Archive</Link>
               </li>
               <li>
