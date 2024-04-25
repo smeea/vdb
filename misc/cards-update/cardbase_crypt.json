@@ -4884,6 +4884,18 @@
         "New":false,
         "Rulings":[
             {
+                "text":"Her ability cannot be used during combat. ",
+                "refs":{
+                    "[ANK 20231124]":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917"
+                }
+            },
+            {
+                "text":"Her ability can only be used on an acting bleeding minion. ",
+                "refs":{
+                    "[ANK 20220502]":"https://www.vekn.net/forum/rules-questions/79757-haqim-s-law-retribution-and-anu-diptinatpa#105140"
+                }
+            },
+            {
                 "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}). ",
                 "refs":{
                     "[LSJ 20011015]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
@@ -9356,6 +9368,20 @@
                 "text":"If {Amaranth} burns him and he comes back in torpor, another {Amaranth} can be played. ",
                 "refs":{
                     "[ANK 20210424]":"https://www.vekn.net/forum/rules-questions/79121-burning-byzar-during-combat#102140"
+                }
+            },
+            {
+                "text":"His ability does not apply if he's not controlled (ie. uncontrolled or yielded in a contest). ",
+                "refs":{
+                    "[LSJ 20100423]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/YnQCu0GeMhc/m/ET__SGvjD7QJ",
+                    "[LSJ 20100127]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/YnQCu0GeMhc/m/ET__SGvjD7QJ"
+                }
+            },
+            {
+                "text":"His ability is a replacement effect. It prevents any effect triggering after the vampire burns (eg. {Sacrificial Lamb}), but still allows burn conditions to be met (eg. {Judgment: Camarilla Segregation}). ",
+                "refs":{
+                    "[LSJ 20091217]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Xa8dbfnAbv0/m/xNtPZla9Py4J",
+                    "[LSJ 20091217-2]":"http://groups.google.com/group/rec.games.trading-cards.jyhad/msg/fc284dfba7dfa9c5"
                 }
             }
         ],
@@ -22160,6 +22186,13 @@
                 }
             },
             {
+                "text":"The \"do not replace\" effect effectively reduces the hand size: additional draws (eg. {Ashur Tablets}) require a discard. ",
+                "refs":{
+                    "[ANK 20180318]":"http://www.vekn.net/forum/rules-questions/76464-dnr-counts-against-hand-size-meddling-of-semsith-and-raptor#85841",
+                    "[ANK 20231229]":"https://www.vekn.net/forum/rules-questions/81077-do-not-replace-rule-question#110227"
+                }
+            },
+            {
                 "text":"Black Hand is not a title, it is a trait unrelated to any sect. The trait is not lost if the vampire changes sect. ",
                 "refs":{
                     "[LSJ 20070322]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Ww-4rYJxi4w/P3QchWVq2o4J",
@@ -22936,7 +22969,14 @@
         "Id":200582,
         "Name":"Hector Trelane",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The opponent gains pool if he's burned because of a bloodhunt during combat (eg. after {Amaranth}). ",
+                "refs":{
+                    "[LSJ 20091210]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6gInH1jtvkc/m/T_LRjaQw7kQJ"
+                }
+            }
+        ],
         "Sect":"Independent",
         "Set":{
             "Gehenna":{
@@ -30037,6 +30077,13 @@
                 "refs":{
                     "[ANK 20190228]":"http://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
                     "[LSJ 20101013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J"
+                }
+            },
+            {
+                "text":"[MERGED] She can play a card requiring Camarilla and/or Justicar even if the sect does not exist anymore (eg. {Fall of the Camarilla}). ",
+                "refs":{
+                    "[LSJ 20050124]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ",
+                    "[ANK 20230503]":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971"
                 }
             },
             {
@@ -48340,7 +48387,15 @@
         "Id":201226,
         "Name":"Salvador Garcia",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A card requiring a Baron (eg. {Open War}) is a card requiring an Anarch. ",
+                "refs":{
+                    "[LSJ 20050128]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HVy8iPUxNbI/ZHGTnprQjGUJ",
+                    "[LSJ 20080603]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ"
+                }
+            }
+        ],
         "Sect":"Anarch",
         "Set":{
             "AU":{
@@ -56759,6 +56814,19 @@
                 }
             },
             {
+                "text":"When meeting a title requirement for a political action, he does not get the title's votes for the subsequent referendum. ",
+                "refs":{
+                    "[ANK 20231221]":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
+                }
+            },
+            {
+                "text":"He can meet a title requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}). ",
+                "refs":{
+                    "[LSJ 20050124]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ",
+                    "[ANK 20230503]":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971"
+                }
+            },
+            {
                 "text":"If a contract chooses him when played (eg. {Dirty Contract}), he is \"chosen for the contract\" for other cards (eg. {Open Dossier}). If the contract choice is an effect of the card in play (eg. {Clandestine Contract}), he's not chosen. ",
                 "refs":{
                     "[LSJ 20070708]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
@@ -57204,6 +57272,19 @@
                 }
             },
             {
+                "text":"When meeting a title requirement for a political action, he does not get the title's votes for the subsequent referendum. ",
+                "refs":{
+                    "[ANK 20231221]":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
+                }
+            },
+            {
+                "text":"He can meet a title requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}). ",
+                "refs":{
+                    "[LSJ 20050124]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ",
+                    "[ANK 20230503]":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971"
+                }
+            },
+            {
                 "text":"He can use a card requiring a sect or titled to be played (eg. use {Abbot} intercept bonus as a Sabbat vampire, perform {Archon} action to burn it as a Prince or Justicar). ",
                 "refs":{
                     "[PIB 20150306]":"http://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=12#69696"
@@ -57212,7 +57293,7 @@
             {
                 "text":"He cannot use a card as a vampire of a sect or with a title if the card does not require the sect or title to be played. (eg. he cannot benefit from {Powerbase: Madrid} as a Sabbat vampire) ",
                 "refs":{
-                    "[PIB 20150306]":"http://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=12#69696"
+                    "[PIB 20150304]":"https://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=6#69653"
                 }
             },
             {
