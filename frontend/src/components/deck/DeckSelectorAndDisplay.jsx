@@ -7,6 +7,7 @@ import {
   DeckBranchSelect,
   DeckCrypt,
   DeckLibrary,
+  DeckFreezeButton,
   ButtonIconed,
   ErrorMessage,
   FlexGapped,
@@ -41,6 +42,9 @@ const DeckSelectorAndDisplay = () => {
               <div className="w-1/4">
                 <DeckBranchSelect deck={deck ?? null} />
               </div>
+            )}
+            {deck?.isAuthor && !deck?.isPublic && (
+              <DeckFreezeButton deck={deck} />
             )}
           </>
         )}
