@@ -1,9 +1,8 @@
 import { proxy } from 'valtio';
-import { deepClone } from '@/utils';
 import defaultsAnalyzeForm from '@/components/search_forms/forms_data/defaultsAnalyzeForm.json';
 
 export const searchAnalyzeForm = proxy({
-  ...deepClone(defaultsAnalyzeForm),
+  ...structuredClone(defaultsAnalyzeForm),
 });
 
 export const analyzeStore = proxy({
@@ -26,6 +25,6 @@ export const setAnalyzeResults = (v) => {
 
 export const clearAnalyzeForm = () => {
   Object.keys(defaultsAnalyzeForm).forEach((k) => {
-    searchAnalyzeForm[k] = deepClone(defaultsAnalyzeForm[k]);
+    searchAnalyzeForm[k] = structuredClone(defaultsAnalyzeForm[k]);
   });
 };

@@ -1,5 +1,4 @@
 import { proxy } from 'valtio';
-import { deepClone } from '@/utils';
 import defaultsPdaForm from '@/components/search_forms/forms_data/defaultsPdaForm.json';
 import defaultsTwdForm from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from '@/components/search_forms/forms_data/defaultsCryptForm.json';
@@ -8,19 +7,19 @@ import defaultsLibraryForm from '@/components/search_forms/forms_data/defaultsLi
 export const searchResults = proxy({});
 
 export const searchCryptForm = proxy({
-  ...deepClone(defaultsCryptForm),
+  ...structuredClone(defaultsCryptForm),
 });
 
 export const searchLibraryForm = proxy({
-  ...deepClone(defaultsLibraryForm),
+  ...structuredClone(defaultsLibraryForm),
 });
 
 export const searchTwdForm = proxy({
-  ...deepClone(defaultsTwdForm),
+  ...structuredClone(defaultsTwdForm),
 });
 
 export const searchPdaForm = proxy({
-  ...deepClone(defaultsPdaForm),
+  ...structuredClone(defaultsPdaForm),
 });
 
 export const setCryptResults = (v) => {

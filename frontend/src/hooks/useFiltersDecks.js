@@ -4,8 +4,7 @@
 // if the filter is present and the deck dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that deck check.
 
-import { getClan, getSect } from '@/utils';
-import { useDeckLibrary } from '@/hooks';
+import { countCards, getClan, getSect } from '@/utils';
 
 const useFiltersDecks = (decks = {}) => {
   const filterDecks = (filter) => {
@@ -92,7 +91,7 @@ const missingLibrary = (filter, deck) => {
 };
 
 const missingLibraryTotal = (filter, deck) => {
-  const { libraryTotal } = useDeckLibrary(deck.library);
+  const libraryTotal = countCards(Object.values(deck.library));
 
   if (
     Object.keys(filter).some((i) => {
@@ -121,13 +120,13 @@ const missingSect = (filter, deck) => {
 };
 
 const missingCapacity = (filter, deck) => {
-  let totalCapacity = 0;
-  let totalCrypt = 0;
+  let capacityTotal = 0;
+  let cryptTotal = 0;
   Object.values(deck.crypt).forEach((card) => {
-    totalCrypt += card.q;
-    totalCapacity += card.q * card.c.Capacity;
+    cryptTotal += card.q;
+    capacityTotal += card.q * card.c.Capacity;
   });
-  const avgCapacity = totalCapacity / totalCrypt;
+  const avgCapacity = capacityTotal / cryptTotal;
 
   if (
     Object.keys(filter).some((i) => {
@@ -156,10 +155,10 @@ const missingDisciplines = (filter, deck) => {
 
 const missingCardtypes = (filter, deck) => {
   let cardTypes = {};
-  let totalLibrary = 0;
+  let libraryTotal = 0;
 
   Object.values(deck.library).forEach((card) => {
-    totalLibrary += card.q;
+    libraryTotal += card.q;
     const type = card.c['Type'].toLowerCase();
     if (cardTypes[type]) {
       cardTypes[type] += card.q;
@@ -171,7 +170,7 @@ const missingCardtypes = (filter, deck) => {
   if (
     Object.keys(filter).every((t) => {
       const value = filter[t].split(',');
-      const typeRatio = (cardTypes[t] / totalLibrary) * 100;
+      const typeRatio = (cardTypes[t] / libraryTotal) * 100;
       if (typeRatio >= value[0] && typeRatio <= value[1]) return true;
     })
   ) {

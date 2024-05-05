@@ -99,8 +99,8 @@ const AnalyzeSearchForm = () => {
 
     navigate(
       `/tournament_analyze?q=${encodeURIComponent(
-        JSON.stringify(sanitizedForm),
-      )}`,
+        JSON.stringify(sanitizedForm)
+      )}`
     );
 
     const filteredDecks = filterDecks(sanitizedForm);

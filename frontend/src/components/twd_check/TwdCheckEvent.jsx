@@ -111,7 +111,7 @@ const TwdCheckEvent = ({ deckData }) => {
   } = useDeckCrypt(deckData.deck.crypt);
 
   const { hasBanned: libraryHasBanned, libraryTotal } = useDeckLibrary(
-    deckData.deck.library,
+    deckData.deck.library
   );
 
   const cryptQtyError = cryptTotal < 12;
