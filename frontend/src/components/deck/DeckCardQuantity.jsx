@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { ButtonCardChange } from '@/components';
+import {
+  ConditionalTooltip,
+  UsedPopover,
+  ButtonCardChange,
+} from '@/components';
 import { useApp } from '@/context';
 
 const DeckCardQuantity = ({
@@ -46,15 +50,15 @@ const DeckCardQuantity = ({
           return inInventory >= softUsedMax + hardUsedTotal
             ? ''
             : inInventory < q
-              ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-              : 'bg-bgWarning dark:bg-bgWarningDark';
+            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
+            : 'bg-bgWarning dark:bg-bgWarningDark';
         }
       } else {
         return inInventory - softUsedMax - hardUsedTotal >= q
           ? ''
           : inInventory < q
-            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-            : 'bg-bgWarning dark:bg-bgWarningDark';
+          ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
+          : 'bg-bgWarning dark:bg-bgWarningDark';
       }
     } else {
       return '';
@@ -101,21 +105,27 @@ const DeckCardQuantity = ({
                 }
                 onFocus={() => setManual(true)}
               >
-                {manual ? (
-                  <form onSubmit={handleSubmit}>
-                    <input
-                      className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
-                      placeholder=""
-                      type="number"
-                      value={state}
-                      onBlur={handleSubmit}
-                      onChange={handleManualChange}
-                      autoFocus
-                    />
-                  </form>
-                ) : (
-                  <>{q == 0 ? <>&nbsp;&nbsp;</> : q}</>
-                )}
+                <ConditionalTooltip
+                  placement="bottom"
+                  overlay={<UsedPopover cardid={card.Id} />}
+                  disabled={!inventoryMode || isMobile}
+                >
+                  {manual ? (
+                    <form onSubmit={handleSubmit}>
+                      <input
+                        className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+                        placeholder=""
+                        type="number"
+                        value={state}
+                        onBlur={handleSubmit}
+                        onChange={handleManualChange}
+                        autoFocus
+                      />
+                    </form>
+                  ) : (
+                    <>{q == 0 ? <>&nbsp;&nbsp;</> : q}</>
+                  )}
+                </ConditionalTooltip>
               </div>
               {!manual && (
                 <ButtonCardChange
@@ -126,9 +136,15 @@ const DeckCardQuantity = ({
           )}
         </div>
       ) : (
-        <div className={`flex justify-center text-lg ${inventoryColor}`}>
-          {q || null}
-        </div>
+        <ConditionalTooltip
+          placement="bottom"
+          overlay={<UsedPopover cardid={card.Id} />}
+          disabled={!inventoryMode || isMobile}
+        >
+          <div className={`flex justify-center text-lg ${inventoryColor}`}>
+            {q || null}
+          </div>
+        </ConditionalTooltip>
       )}
     </>
   );
