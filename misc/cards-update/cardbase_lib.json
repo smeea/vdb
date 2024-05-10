@@ -292,7 +292,7 @@
                 "PSal":"3"
             }
         },
-        "Twd":201,
+        "Twd":202,
         "Type":"Action"
     },
     "100007":{
@@ -2116,7 +2116,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":114,
+        "Twd":117,
         "Type":"Master"
     },
     "100053":{
@@ -2172,7 +2172,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":121,
+        "Twd":126,
         "Type":"Master"
     },
     "100055":{
@@ -2385,7 +2385,7 @@
                 "PM":"1"
             }
         },
-        "Twd":346,
+        "Twd":347,
         "Type":"Political Action"
     },
     "100060":{
@@ -2681,7 +2681,7 @@
                 "PL":1
             }
         },
-        "Twd":355,
+        "Twd":356,
         "Type":"Political Action"
     },
     "100066":{
@@ -3249,7 +3249,7 @@
                 "NR":1
             }
         },
-        "Twd":482,
+        "Twd":484,
         "Type":"Action"
     },
     "100080":{
@@ -3525,7 +3525,7 @@
                 "PR":"1"
             }
         },
-        "Twd":664,
+        "Twd":665,
         "Type":"Master"
     },
     "100086":{
@@ -4484,7 +4484,7 @@
                 "PM":"1"
             }
         },
-        "Twd":81,
+        "Twd":82,
         "Type":"Master"
     },
     "100109":{
@@ -4759,7 +4759,7 @@
                 "C":true
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Political Action"
     },
     "100116":{
@@ -5163,7 +5163,7 @@
                 "PG":"1"
             }
         },
-        "Twd":124,
+        "Twd":126,
         "Type":"Master"
     },
     "102218":{
@@ -5204,7 +5204,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":90,
+        "Twd":95,
         "Type":"Reaction"
     },
     "100127":{
@@ -5658,7 +5658,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":445,
+        "Twd":446,
         "Type":"Master"
     },
     "100136":{
@@ -6182,7 +6182,7 @@
                 "U":true
             }
         },
-        "Twd":59,
+        "Twd":60,
         "Type":"Combat"
     },
     "100150":{
@@ -8124,7 +8124,7 @@
                 "NL":2
             }
         },
-        "Twd":1261,
+        "Twd":1262,
         "Type":"Master"
     },
     "100200":{
@@ -8653,7 +8653,7 @@
                 "PG":"2"
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Equipment"
     },
     "100213":{
@@ -10060,7 +10060,7 @@
                 "PR":"8"
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Action"
     },
     "100248":{
@@ -10389,7 +10389,7 @@
                 "":"1"
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Master"
     },
     "100256":{
@@ -10574,7 +10574,7 @@
                 "PB":"3"
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Master"
     },
     "100261":{
@@ -11630,7 +11630,7 @@
                 "PSam":"3"
             }
         },
-        "Twd":107,
+        "Twd":108,
         "Type":"Equipment"
     },
     "100288":{
@@ -11753,7 +11753,7 @@
                 "SKTz":"1"
             }
         },
-        "Twd":276,
+        "Twd":277,
         "Type":"Combat"
     },
     "100291":{
@@ -11989,7 +11989,7 @@
                 "PB":"1"
             }
         },
-        "Twd":96,
+        "Twd":102,
         "Type":"Master"
     },
     "100298":{
@@ -12513,7 +12513,7 @@
                 "PTz":"4"
             }
         },
-        "Twd":374,
+        "Twd":375,
         "Type":"Reaction"
     },
     "100309":{
@@ -13216,7 +13216,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":228,
+        "Twd":229,
         "Type":"Action Modifier"
     },
     "100324":{
@@ -13887,7 +13887,7 @@
                 "PTz":"2"
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Action"
     },
     "100338":{
@@ -14573,7 +14573,7 @@
                 "PG":"2"
             }
         },
-        "Twd":137,
+        "Twd":138,
         "Type":"Combat"
     },
     "100357":{
@@ -14822,7 +14822,7 @@
                 "PR":"4"
             }
         },
-        "Twd":641,
+        "Twd":642,
         "Type":"Action Modifier"
     },
     "100363":{
@@ -14969,7 +14969,7 @@
                 "NTz":1
             }
         },
-        "Twd":81,
+        "Twd":84,
         "Type":"Master"
     },
     "100367":{
@@ -16284,7 +16284,7 @@
                 "PV":"4"
             }
         },
-        "Twd":1003,
+        "Twd":1005,
         "Type":"Action Modifier"
     },
     "100402":{
@@ -16605,7 +16605,7 @@
                 "PB":"3"
             }
         },
-        "Twd":234,
+        "Twd":236,
         "Type":"Political Action"
     },
     "100411":{
@@ -17055,7 +17055,7 @@
                 "PM":"3"
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Equipment"
     },
     "100423":{
@@ -17542,7 +17542,7 @@
                 "":"1"
             }
         },
-        "Twd":474,
+        "Twd":475,
         "Type":"Master"
     },
     "100436":{
@@ -17945,7 +17945,7 @@
                 "DTC":true
             }
         },
-        "Twd":32,
+        "Twd":33,
         "Type":"Action Modifier"
     },
     "100447":{
@@ -18851,7 +18851,7 @@
                 "R":true
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Retainer"
     },
     "100477":{
@@ -19186,7 +19186,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":33,
+        "Twd":35,
         "Type":"Master"
     },
     "100486":{
@@ -19507,7 +19507,7 @@
                 "PV":"1"
             }
         },
-        "Twd":271,
+        "Twd":272,
         "Type":"Action Modifier"
     },
     "100493":{
@@ -20466,7 +20466,7 @@
                 "PG":"3"
             }
         },
-        "Twd":49,
+        "Twd":52,
         "Type":"Reaction"
     },
     "100515":{
@@ -20534,7 +20534,7 @@
                 "NR":5
             }
         },
-        "Twd":248,
+        "Twd":249,
         "Type":"Action"
     },
     "100516":{
@@ -20712,7 +20712,7 @@
                 "PL":6
             }
         },
-        "Twd":1417,
+        "Twd":1421,
         "Type":"Reaction"
     },
     "100519":{
@@ -20800,7 +20800,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":947,
+        "Twd":949,
         "Type":"Reaction"
     },
     "100520":{
@@ -21897,7 +21897,7 @@
                 "DTC":true
             }
         },
-        "Twd":1210,
+        "Twd":1211,
         "Type":"Master"
     },
     "100546":{
@@ -22065,7 +22065,7 @@
                 "NL":1
             }
         },
-        "Twd":188,
+        "Twd":189,
         "Type":"Combat"
     },
     "100550":{
@@ -22620,7 +22620,7 @@
                 "PB":"3"
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Combat"
     },
     "100564":{
@@ -22774,7 +22774,7 @@
                 "C":true
             }
         },
-        "Twd":93,
+        "Twd":94,
         "Type":"Combat"
     },
     "100568":{
@@ -22819,7 +22819,7 @@
                 "PG":"1"
             }
         },
-        "Twd":26,
+        "Twd":27,
         "Type":"Retainer"
     },
     "100569":{
@@ -23061,7 +23061,7 @@
                 "PV":"2"
             }
         },
-        "Twd":173,
+        "Twd":174,
         "Type":"Action"
     },
     "100574":{
@@ -23156,7 +23156,7 @@
                 "AU":"3"
             }
         },
-        "Twd":42,
+        "Twd":44,
         "Type":"Combat"
     },
     "102220":{
@@ -23577,7 +23577,7 @@
                 "SKTz":"2"
             }
         },
-        "Twd":87,
+        "Twd":88,
         "Type":"Combat"
     },
     "100586":{
@@ -23742,7 +23742,7 @@
                 "NH":1
             }
         },
-        "Twd":1840,
+        "Twd":1843,
         "Type":"Master"
     },
     "100589":{
@@ -24289,7 +24289,7 @@
                 "NTz":2
             }
         },
-        "Twd":201,
+        "Twd":205,
         "Type":"Action Modifier"
     },
     "100601":{
@@ -24337,7 +24337,7 @@
                 "PG":"3"
             }
         },
-        "Twd":299,
+        "Twd":304,
         "Type":"Combat"
     },
     "100602":{
@@ -24649,7 +24649,7 @@
                 "PG":"1"
             }
         },
-        "Twd":158,
+        "Twd":160,
         "Type":"Master"
     },
     "100610":{
@@ -24920,7 +24920,7 @@
                 "PGar":"2"
             }
         },
-        "Twd":225,
+        "Twd":227,
         "Type":"Master"
     },
     "100617":{
@@ -24972,7 +24972,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":682,
+        "Twd":685,
         "Type":"Action Modifier"
     },
     "100618":{
@@ -25183,7 +25183,7 @@
                 "DTC":true
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Action Modifier/Reaction"
     },
     "100623":{
@@ -25611,7 +25611,7 @@
                 "LB":"9"
             }
         },
-        "Twd":165,
+        "Twd":166,
         "Type":"Action"
     },
     "100634":{
@@ -25882,7 +25882,7 @@
                 "PV":"4"
             }
         },
-        "Twd":250,
+        "Twd":251,
         "Type":"Action"
     },
     "100641":{
@@ -25955,7 +25955,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Action Modifier"
     },
     "100642":{
@@ -26228,7 +26228,7 @@
                 "":"1"
             }
         },
-        "Twd":63,
+        "Twd":64,
         "Type":"Master"
     },
     "100647":{
@@ -26498,7 +26498,7 @@
                 "PR":"1"
             }
         },
-        "Twd":593,
+        "Twd":594,
         "Type":"Action"
     },
     "100653":{
@@ -27782,7 +27782,7 @@
                 "PG":"3"
             }
         },
-        "Twd":45,
+        "Twd":46,
         "Type":"Reaction"
     },
     "100687":{
@@ -27858,7 +27858,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":730,
+        "Twd":732,
         "Type":"Action Modifier"
     },
     "100688":{
@@ -28372,7 +28372,7 @@
                 "NTz":1
             }
         },
-        "Twd":693,
+        "Twd":694,
         "Type":"Master"
     },
     "100699":{
@@ -29191,7 +29191,7 @@
                 "":"1"
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Action"
     },
     "100718":{
@@ -29531,7 +29531,7 @@
                 "":"4"
             }
         },
-        "Twd":15,
+        "Twd":17,
         "Type":"Action"
     },
     "100726":{
@@ -31483,7 +31483,7 @@
                 "NTz":3
             }
         },
-        "Twd":291,
+        "Twd":296,
         "Type":"Combat"
     },
     "102223":{
@@ -31531,7 +31531,7 @@
                 "NTz":3
             }
         },
-        "Twd":61,
+        "Twd":66,
         "Type":"Action Modifier/Reaction"
     },
     "102224":{
@@ -31702,7 +31702,7 @@
                 "PSal":1
             }
         },
-        "Twd":108,
+        "Twd":109,
         "Type":"Master"
     },
     "100775":{
@@ -32569,7 +32569,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master. Trifle.\nPut this card on a ready non-titled, non-Anarch vampire you control. The vampire with this card is considered Anarch. If this vampire changes sects, burn this card.",
+        "Card Text":"Trifle.\nPut this card on a ready non-titled, non-Anarch vampire you control to make them Anarch. If this vampire changes sects, burn this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -32998,7 +32998,7 @@
                 "PR":"1"
             }
         },
-        "Twd":81,
+        "Twd":85,
         "Type":"Master"
     },
     "100810":{
@@ -33672,7 +33672,7 @@
                 "NH":1
             }
         },
-        "Twd":1481,
+        "Twd":1488,
         "Type":"Master"
     },
     "100825":{
@@ -33900,7 +33900,7 @@
                 "PN":1
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Master"
     },
     "100832":{
@@ -34213,7 +34213,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a ready non-titled, non-Anarch vampire.\nPut this card on the acting vampire and unlock this vampire. This vampire is considered Anarch. If this vampire changes sects, burn this card.",
+        "Card Text":"+1 stealth action. Requires a ready non-titled, non-Anarch vampire.\nPut this card on the acting vampire; they become Anarch and unlock. If this vampire changes sects, burn this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -34482,7 +34482,7 @@
                 "PL":8
             }
         },
-        "Twd":1029,
+        "Twd":1032,
         "Type":"Action"
     },
     "100846":{
@@ -35268,7 +35268,7 @@
                 "PR":"4"
             }
         },
-        "Twd":138,
+        "Twd":139,
         "Type":"Reaction"
     },
     "100864":{
@@ -35394,7 +35394,7 @@
                 "NSal":1
             }
         },
-        "Twd":190,
+        "Twd":191,
         "Type":"Master"
     },
     "100867":{
@@ -36777,7 +36777,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":779,
+        "Twd":784,
         "Type":"Equipment"
     },
     "100904":{
@@ -37200,7 +37200,7 @@
                 "PB":"2"
             }
         },
-        "Twd":64,
+        "Twd":65,
         "Type":"Action"
     },
     "100914":{
@@ -39095,7 +39095,7 @@
                 "NL":6
             }
         },
-        "Twd":291,
+        "Twd":293,
         "Type":"Combat"
     },
     "100960":{
@@ -40044,7 +40044,7 @@
                 "PL":1
             }
         },
-        "Twd":964,
+        "Twd":966,
         "Type":"Master"
     },
     "100985":{
@@ -40072,7 +40072,7 @@
                 "R":true
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Master"
     },
     "100986":{
@@ -41204,7 +41204,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":668,
+        "Twd":669,
         "Type":"Equipment"
     },
     "101015":{
@@ -41434,7 +41434,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":531,
+        "Twd":534,
         "Type":"Master"
     },
     "101020":{
@@ -44655,7 +44655,7 @@
                 "PB":"1"
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Master"
     },
     "101101":{
@@ -44795,7 +44795,7 @@
                 "":"1"
             }
         },
-        "Twd":68,
+        "Twd":69,
         "Type":"Master"
     },
     "101104":{
@@ -44837,7 +44837,7 @@
                 "PV":"2"
             }
         },
-        "Twd":169,
+        "Twd":170,
         "Type":"Master"
     },
     "101105":{
@@ -45088,7 +45088,7 @@
                 "PB":"3"
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Action"
     },
     "101111":{
@@ -45244,7 +45244,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":29,
+        "Twd":30,
         "Type":"Equipment"
     },
     "101115":{
@@ -45683,7 +45683,7 @@
                 "PR":"4"
             }
         },
-        "Twd":883,
+        "Twd":886,
         "Type":"Action Modifier"
     },
     "101126":{
@@ -48719,7 +48719,7 @@
                 "AU":"2"
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Action Modifier"
     },
     "101200":{
@@ -49199,7 +49199,7 @@
                 "PV":"2"
             }
         },
-        "Twd":119,
+        "Twd":120,
         "Type":"Action"
     },
     "101212":{
@@ -50438,7 +50438,7 @@
                 "PG":"1"
             }
         },
-        "Twd":59,
+        "Twd":61,
         "Type":"Action Modifier"
     },
     "101240":{
@@ -50855,7 +50855,7 @@
                 "DTC":true
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Action"
     },
     "101249":{
@@ -51210,7 +51210,7 @@
                 "2020-05-11":true
             }
         },
-        "Twd":159,
+        "Twd":160,
         "Type":"Action Modifier/Reaction"
     },
     "101257":{
@@ -51532,7 +51532,7 @@
                 "":"1"
             }
         },
-        "Twd":168,
+        "Twd":169,
         "Type":"Event"
     },
     "101266":{
@@ -52671,7 +52671,7 @@
                 "PM":"2"
             }
         },
-        "Twd":97,
+        "Twd":98,
         "Type":"Combat"
     },
     "101293":{
@@ -52947,7 +52947,7 @@
                 "R":true
             }
         },
-        "Twd":24,
+        "Twd":25,
         "Type":"Master"
     },
     "101301":{
@@ -53063,7 +53063,7 @@
                 "R":true
             }
         },
-        "Twd":55,
+        "Twd":56,
         "Type":"Master"
     },
     "101304":{
@@ -53142,7 +53142,7 @@
                 "R":true
             }
         },
-        "Twd":49,
+        "Twd":50,
         "Type":"Event"
     },
     "101306":{
@@ -53350,7 +53350,7 @@
                 "NTz":2
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Action Modifier/Combat"
     },
     "101310":{
@@ -53830,7 +53830,7 @@
                 "PH":3
             }
         },
-        "Twd":1795,
+        "Twd":1798,
         "Type":"Reaction"
     },
     "102256":{
@@ -53872,7 +53872,7 @@
                 "NTz":1
             }
         },
-        "Twd":1,
+        "Twd":3,
         "Type":"Reaction"
     },
     "101322":{
@@ -53984,7 +53984,7 @@
                 "PB":"1"
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Action"
     },
     "101325":{
@@ -54065,7 +54065,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":114,
+        "Twd":115,
         "Type":"Master"
     },
     "101327":{
@@ -54200,7 +54200,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":69,
+        "Twd":75,
         "Type":"Reaction"
     },
     "101330":{
@@ -54868,7 +54868,7 @@
                 "SKM":"1"
             }
         },
-        "Twd":140,
+        "Twd":141,
         "Type":"Equipment"
     },
     "101346":{
@@ -55045,7 +55045,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":153,
+        "Twd":156,
         "Type":"Master"
     },
     "101351":{
@@ -55286,7 +55286,7 @@
                 "PMi":"4"
             }
         },
-        "Twd":32,
+        "Twd":33,
         "Type":"Reaction"
     },
     "101356":{
@@ -56247,7 +56247,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":1688,
+        "Twd":1691,
         "Type":"Master"
     },
     "101385":{
@@ -56976,7 +56976,7 @@
                 "PMi":"5"
             }
         },
-        "Twd":28,
+        "Twd":29,
         "Type":"Action"
     },
     "101403":{
@@ -57125,7 +57125,7 @@
                 "PM":"2"
             }
         },
-        "Twd":74,
+        "Twd":75,
         "Type":"Reaction"
     },
     "101407":{
@@ -58000,7 +58000,7 @@
                 "C":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Reaction"
     },
     "101429":{
@@ -58043,7 +58043,7 @@
                 "DTC":true
             }
         },
-        "Twd":27,
+        "Twd":28,
         "Type":"Action Modifier"
     },
     "101430":{
@@ -58125,7 +58125,7 @@
                 "PTz":1
             }
         },
-        "Twd":52,
+        "Twd":53,
         "Type":"Master"
     },
     "101432":{
@@ -58269,7 +58269,7 @@
                 "PR":"1"
             }
         },
-        "Twd":67,
+        "Twd":68,
         "Type":"Master"
     },
     "101436":{
@@ -58398,7 +58398,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":833,
+        "Twd":835,
         "Type":"Master"
     },
     "101440":{
@@ -58500,7 +58500,7 @@
                 "R":true
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Master"
     },
     "101443":{
@@ -60373,7 +60373,7 @@
                 "AU":"3"
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Action Modifier"
     },
     "101497":{
@@ -60602,7 +60602,7 @@
                 "NR":2
             }
         },
-        "Twd":49,
+        "Twd":50,
         "Type":"Reaction"
     },
     "101502":{
@@ -62033,7 +62033,7 @@
                 "NR":1
             }
         },
-        "Twd":591,
+        "Twd":593,
         "Type":"Master"
     },
     "101537":{
@@ -62232,7 +62232,7 @@
                 "NTz":2
             }
         },
-        "Twd":108,
+        "Twd":111,
         "Type":"Action Modifier/Combat"
     },
     "101543":{
@@ -62592,7 +62592,7 @@
                 "PN":"2"
             }
         },
-        "Twd":347,
+        "Twd":348,
         "Type":"Retainer"
     },
     "101551":{
@@ -62716,7 +62716,7 @@
                 "DTC":true
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Master"
     },
     "101554":{
@@ -63259,7 +63259,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":99,
+        "Twd":100,
         "Type":"Political Action"
     },
     "101568":{
@@ -63677,7 +63677,7 @@
                 "NTz":1
             }
         },
-        "Twd":272,
+        "Twd":274,
         "Type":"Reaction"
     },
     "101579":{
@@ -63875,7 +63875,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: out-of-turn.\nGive this card to another Methuselah during his or her unlock phase and move a reaction card from that Methuselah's ash heap to this card. The chosen reaction card costs that Methuselah's vampires an additional blood. That Methuselah may move 1 pool to this card as a master phase action. Burn this card when it has 2 pool counters. A Methuselah can have only 1 Regarhagan's Hold.",
+        "Card Text":"Master: out-of-turn.\nPut this card in play under the control of another Methuselah during his or her unlock phase and move a reaction card from that Methuselah's ash heap to this card. The chosen reaction card costs that Methuselah's vampires an additional blood. That Methuselah may move 1 pool to this card as a master phase action. Burn this card when it has 2 pool counters. A Methuselah can have only 1 Regarhagan's Hold.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -65364,7 +65364,7 @@
                 "PMi":"3"
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Action Modifier"
     },
     "101625":{
@@ -65642,7 +65642,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":31,
+        "Twd":34,
         "Type":"Political Action"
     },
     "101632":{
@@ -65685,7 +65685,7 @@
                 "PG":"1"
             }
         },
-        "Twd":41,
+        "Twd":43,
         "Type":"Action"
     },
     "101633":{
@@ -66714,7 +66714,7 @@
                 "PN":"6"
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Combat"
     },
     "101655":{
@@ -68502,7 +68502,7 @@
                 "R":true
             }
         },
-        "Twd":268,
+        "Twd":269,
         "Type":"Event"
     },
     "101698":{
@@ -69409,7 +69409,7 @@
                 "NTz":3
             }
         },
-        "Twd":215,
+        "Twd":216,
         "Type":"Reaction"
     },
     "101718":{
@@ -70907,7 +70907,7 @@
                 "PN":1
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Master"
     },
     "101754":{
@@ -73201,7 +73201,7 @@
                 "PG":"1"
             }
         },
-        "Twd":446,
+        "Twd":447,
         "Type":"Master"
     },
     "101812":{
@@ -73407,7 +73407,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":262,
+        "Twd":263,
         "Type":"Equipment"
     },
     "101817":{
@@ -75152,7 +75152,7 @@
                 "PN":"1"
             }
         },
-        "Twd":469,
+        "Twd":470,
         "Type":"Action Modifier"
     },
     "101858":{
@@ -75388,7 +75388,7 @@
                 "R":true
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action"
     },
     "101864":{
@@ -75590,7 +75590,7 @@
                 "DTC":true
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Action/Combat"
     },
     "101870":{
@@ -76310,7 +76310,7 @@
                 "C":true
             }
         },
-        "Twd":24,
+        "Twd":25,
         "Type":"Combat"
     },
     "101889":{
@@ -77377,7 +77377,7 @@
                 "PR":"4"
             }
         },
-        "Twd":717,
+        "Twd":721,
         "Type":"Action Modifier/Combat"
     },
     "101914":{
@@ -78770,7 +78770,7 @@
                 "NL":3
             }
         },
-        "Twd":746,
+        "Twd":748,
         "Type":"Combat"
     },
     "101946":{
@@ -79477,7 +79477,7 @@
                 "NSal":1
             }
         },
-        "Twd":194,
+        "Twd":195,
         "Type":"Master"
     },
     "101959":{
@@ -80024,7 +80024,7 @@
                 "PG":"5"
             }
         },
-        "Twd":48,
+        "Twd":50,
         "Type":"Action"
     },
     "101973":{
@@ -80549,7 +80549,7 @@
                 "2022-10-22":true
             }
         },
-        "Twd":50,
+        "Twd":51,
         "Type":"Action"
     },
     "101985":{
@@ -81788,7 +81788,7 @@
                 "PR":"1"
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Equipment"
     },
     "102016":{
@@ -82635,7 +82635,7 @@
                 "PMin":"2"
             }
         },
-        "Twd":50,
+        "Twd":51,
         "Type":"Action Modifier"
     },
     "102042":{
@@ -83155,7 +83155,7 @@
                 "":"1"
             }
         },
-        "Twd":135,
+        "Twd":137,
         "Type":"Event"
     },
     "102058":{
@@ -84928,7 +84928,7 @@
                 "PR":"3"
             }
         },
-        "Twd":257,
+        "Twd":258,
         "Type":"Action Modifier"
     },
     "102098":{
@@ -85534,7 +85534,7 @@
                 "NSal":2
             }
         },
-        "Twd":1151,
+        "Twd":1154,
         "Type":"Master"
     },
     "102114":{
@@ -85843,7 +85843,7 @@
                 "PL":3
             }
         },
-        "Twd":1147,
+        "Twd":1155,
         "Type":"Master"
     },
     "102122":{
@@ -86000,7 +86000,7 @@
                 "PR":"4"
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Action Modifier"
     },
     "102265":{
@@ -86025,7 +86025,7 @@
                 "PR":"4"
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Reaction"
     },
     "102126":{
@@ -87245,7 +87245,7 @@
                 "LB":"1"
             }
         },
-        "Twd":509,
+        "Twd":510,
         "Type":"Master"
     },
     "102152":{
@@ -87774,7 +87774,7 @@
                 "PR":"1"
             }
         },
-        "Twd":51,
+        "Twd":53,
         "Type":"Master"
     },
     "102167":{
@@ -88303,7 +88303,7 @@
                 "30th":1
             }
         },
-        "Twd":734,
+        "Twd":738,
         "Type":"Master"
     },
     "102181":{
@@ -89624,7 +89624,7 @@
                 "PG":"1"
             }
         },
-        "Twd":90,
+        "Twd":92,
         "Type":"Master"
     }
 }
